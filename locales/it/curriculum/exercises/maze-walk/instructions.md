@@ -10,6 +10,6 @@ In questo esercizio, creerai una nuova funzione `walk(numSteps)` (cammina) che p
 
 Quindi usare `walk(5)` dovrebbe significare che esegui `move()` cinque volte.
 
-C'è del codice di esempio che risolve il labirinto sotto la tua funzione. Una volta scritta la tua funzione, il codice qui sotto la userà insieme a `turnLeft()` (gira a sinistra) e `turnRight()` (gira a destra) per navigare nel labirinto.
+C'è un esempio di codice che risolve il labirinto sotto la tua funzione. Una volta scritta la tua funzione, il codice qui sotto la userà insieme a `turnLeft()` (gira a sinistra) e `turnRight()` (gira a destra) per navigare nel labirinto.
 
 Buona fortuna!
