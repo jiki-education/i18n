@@ -4,13 +4,13 @@ description: "Cerca il tavolo a cui è seduto un ospite a partire dal piano dei 
 en_md5: b93bf1949411dbc2a19e5b48c3ae869a
 ---
 
-Sei tornato al tuo secondo lavoro come buttafuori. È la sera dopo l'After Party, e c'è un'altra festa. Questa volta è una cena formale, quindi stasera sei meno "uomo robusto alla porta" e più "persona con un bloc-notes e un bel panciotto".
+Sei tornato al tuo secondo lavoro come buttafuori. È la sera dopo l'After Party, e c'è un'altra festa. Questa volta è una cena formale, quindi stasera sei meno "uomo robusto alla porta" e più "persona con un bloc-notes ed un bel panciotto".
 
-Questo non è decisamente il posto per usare **solo** il tuo nome. Anzi, non è proprio il posto per usare il tuo nome. Qui, tutti vengono chiamati con un appellativo (_honorific_ in inglese) (Miss, Mr, Dr, ecc.) e il proprio cognome.
+Questo non è decisamente il posto per usare **solo** il tuo nome. Anzi, non è proprio il posto per usare il tuo nome. Qui, tutti vengono chiamati con un appellativo (_honorific_ in inglese) (Miss, Mr, Dr, ecc.) ed il proprio cognome.
 
-Gli organizzatori ti hanno consegnato il piano dei posti a tavola sotto forma di due liste separate. Una contiene i nomi completi degli invitati. L'altra contiene il nome del tavolo a cui ogni invitato è seduto (che prendono il nome da alberi e fiori). Come per "After Party", le due liste sono allineate: l'invitato alla posizione 3 della prima lista siede al tavolo alla posizione 3 della seconda.
+Gli organizzatori ti hanno consegnato il piano dei posti a tavola sotto forma di due liste separate. Una contiene i nomi completi degli invitati. L'altra contiene il nome del tavolo a cui ogni invitato è seduto (che prendono il nome da alberi e fiori). Come per "Dopo la festa", le due liste sono allineate: l'invitato alla posizione 3 della prima lista siede al tavolo alla posizione 3 della seconda.
 
-Quindi quando il signor Pitt fa il suo ingresso, devi capire che si tratta del "Brad Pitt" sulla tua lista, e poi dirgli a che tavolo è seduto.
+Quindi, quando il signor Pitt fa il suo ingresso, devi capire che si tratta del "Brad Pitt" sulla tua lista, e poi dirgli a che tavolo è seduto.
 
 Scrivi una funzione chiamata `tableFor` (cerca il tavolo a cui un ospite è seduto). La funzione ha tre input:
 
@@ -24,7 +24,7 @@ L'appellativo è sempre esattamente una parola, e tutto ciò che segue è il cog
 
 Fai attenzione, però. Molti cognomi somigliano molto ad altri cognomi.
 
-### Metodi e proprietà di stringhe e array
+### Metodi e proprietà di stringhe ed array
 
 Oltre alla proprietà `.length` che hai conosciuto nell'ultimo esercizio, ci sono quattro metodi che potresti trovare utili. Ci sono molti modi per risolvere questo esercizio, ma questi ti porteranno alla soluzione più breve possibile.
 
