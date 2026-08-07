@@ -131,7 +131,10 @@ locales/
 
 ## Scripts
 
-All Node ESM (`.mjs`), all **dependency-free**: they run on a bare `node` with no install step.
+All Node ESM (`.mjs`), and **dependency-free with one exception**: they run on a bare `node` with no
+install step, except for prose rendering, which needs `@jiki.io/content-renderer`. That import is
+lazy, so `sync-source`, `translate`, `stub`, `validate`, `coverage` and `test` still need no
+`node_modules` at all; only `publish` and `verify-renderer` do, and only when they reach prose.
 Shared helpers live in `scripts/lib/`.
 
 | Script | What it does |
@@ -145,6 +148,7 @@ Shared helpers live in `scripts/lib/`.
 | `coverage.mjs` | Per-locale translated / stale / missing / sentinel counts, per content type. `--json` for machines. |
 | `test.mjs` | The assertions guarding logic a mistake in would only surface on R2, above all the exercise family merge and its key order. Plain `node:assert`, no framework, non-zero exit on failure. `pnpm test`, and part of `pnpm check`. |
 | `verify-import.mjs` | Proves an import is complete and lossless against a source repo checkout: every translation present, byte-for-byte identical, every file under `locales/<target>/` mapping back to a tracked item, no English locale directory. Also counts both untranslated markers without judging either. |
+| `verify-renderer.mjs` | Proves this repo's prose pipeline and the front-end's produce identical bytes. Takes the front-end's OWN Markdown, renders it through this repo's publish path, and asserts the hash equals the filename the front-end's generator wrote, across the whole concept corpus. |
 
 - **`validate` errors block; warnings never do.** Same split as `translator/scripts/check-translation`:
   ERROR checks are structural facts, WARN checks are heuristics over prose that produce false
@@ -163,8 +167,9 @@ Shared helpers live in `scripts/lib/`.
 The paths and the hash come from the front-end and must stay in lockstep with it
 (`app/lib/assets-paths.ts` and `app/scripts/lib/cache-utils.js`). Every dimension is a directory,
 the leaf is `{kind}-{hash}.{ext}`, and **the hash is the first 12 hex chars of the SHA-256 of the
-exact bytes written**, where the content is `JSON.stringify(parsed)` so source formatting cannot
-move a hash.
+exact bytes written**. For a catalog the content is `JSON.stringify(parsed)`, so source formatting
+cannot move a hash. For a concept page it is the rendered HTML, so the renderer version can, which
+is why it is pinned and recorded.
 
 | Artifact | Path |
 |---|---|
@@ -244,10 +249,42 @@ seed corpus.
 
 ### Prose publishing
 
-Concept pages and exercise instructions are served as rendered **HTML**, produced by the curriculum
-renderer. `publish` writes them into `dist/export/` in the source repos' own layout so that renderer
-can consume them unchanged. Rendering Markdown to the front-end's exact HTML from here is not yet
-implemented; doing it in two places would be two renderers.
+**Concept pages are rendered here**, to `/static/concepts/{slug}/{locale}/content-{hash}.html`.
+
+- **The renderer is a package both repos depend on**, `@jiki.io/content-renderer`. The front-end's
+  `app/scripts/generate-concept-cache.js` renders English with it and `publish.mjs` renders
+  translations with it, so there is one implementation of "Markdown to the bytes Jiki serves" and
+  no way for two to drift. Reimplementing it here would be two renderers, and the drift would
+  surface as a wrong-looking page rather than as an error.
+- **The pinned version is the contract.** The filename IS the hash of the bytes, so HTML that
+  differs by one character sits at a URL the front-end never asks for and the page simply does not
+  appear. Both repos pin an exact version, never a range, and a rendering change is a version bump
+  both sides take deliberately.
+- **`publish` records the version it used** as `renderer` in `dist/manifest.json`, so a mismatch
+  between the two publishers is a diff between two numbers after the fact, rather than something
+  only reproducible by re-running both repos.
+- **`verify-renderer` is the proof, and it is corpus-wide.** It does not compare this repo's
+  Hungarian to the front-end's Hungarian: those are two revisions of a translation and differ
+  whenever a pass has landed on one side only, which says nothing about the renderers. It feeds the
+  front-end's own Markdown through this repo's pipeline and asserts the hash matches the filename
+  the front-end wrote.
+- **Only the Markdown body is rendered.** Frontmatter is metadata about the file and never reaches
+  the HTML, which is why the zero-dependency frontmatter parser in `scripts/lib/files.mjs` is
+  enough and the renderer package takes a body rather than a file.
+
+**TODO: pin the published version.** `@jiki.io/content-renderer` has not been published to npm yet,
+so `package.json` currently depends on it as `file:../front-end/content-renderer`, which resolves
+against a sibling front-end checkout exactly as `resolveSourceRepo` does. Once it is on the
+registry, replace that with the exact version (`"0.1.0"`, no caret): a range would let the renderer
+move under a translation pass, which is the whole failure the version pin exists to prevent. There
+is deliberately no lockfile committed yet, because one generated against a local path would record
+that path; commit it with the version pin.
+
+**Exercise instructions are not an artifact here.** The front-end caches them inside a per-language
+`content-{hash}.json` alongside that exercise's stub and solution, and those are code, which lives
+in the front-end. So `publish` still exports them verbatim to `dist/export/` in the source repos'
+own layout, for its generator to consume. It warns on any that carry `<define>`/`<literal>`
+authoring tags, which a translation should never have received.
 
 ### Handing hashes back
 
