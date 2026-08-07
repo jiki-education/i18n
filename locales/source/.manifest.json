@@ -1,15 +1,26 @@
 {
-  "$comment": "Written by scripts/sync-source.mjs. `files` is the md5 of every mirrored English file, used by the divergence guard; `items` is the corpus this repo has imported; `families` maps each imported exercise to its exercise-category base, or null when it has none. Do not hand-edit.",
-  "syncedFrom": "front-end",
-  "syncedAt": "2026-08-07T14:48:00.430Z",
+  "$comment": "Written by scripts/sync-source.mjs. `files` is the md5 of every mirrored English file, used by the divergence guard; `items` is the corpus this repo has imported; `corpus` is how many items of each type exist in the source repo, which is what publish measures completeness against; `families` maps each imported exercise to its exercise-category base, or null when it has none. Do not hand-edit.",
+  "syncedFrom": "ihid-fe-publish-all",
+  "syncedAt": "2026-08-07T22:18:17.092Z",
+  "corpus": {
+    "app-messages": 1,
+    "concept": 52,
+    "exercise-instructions": 106,
+    "exercise-messages": 106,
+    "video-lessons": 1,
+    "badges": 1,
+    "levels": 1,
+    "exercise-category": 7,
+    "interpreter-messages": 3,
+    "blog": 8,
+    "articles": 17,
+    "guides": 7,
+    "project-episodes": 2
+  },
   "items": [
     {
       "type": "app-messages",
-      "slug": null,
-      "namespaces": [
-        "common",
-        "dashboard"
-      ]
+      "slug": null
     },
     {
       "type": "badges",
@@ -53,7 +64,7 @@
     "maze-solve-basic": "maze"
   },
   "files": {
-    "app/messages.json": "fb3775ed02b9dae6e77cd491adfa0fae",
+    "app/messages.json": "020d526a81600326a1dc989100eb8e7f",
     "content/posts/blog/should-i-still-learn-to-code-in-2026/page.md": "4ecf7517f8db1814548f02940a202a01",
     "curriculum/badges/messages.json": "de3fb424bb246f6c19e91ae171287a00",
     "curriculum/concepts/using-functions/page.md": "fc671310093a081113a8f301b6ff53fe",
