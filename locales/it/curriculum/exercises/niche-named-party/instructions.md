@@ -6,7 +6,7 @@ en_md5: 3c03097aed9465c8f132574b033ad7ce
 
 Stasera c'è una festa molto esclusiva: possono entrare solo le persone con il nome che inizia con una specifica sequenza di lettere!
 
-Il tuo compito è scrivere una funzione chiamata `handleGuest` (gestisci l'ospite) che accetta due input:
+Il tuo compito è scrivere una funzione chiamata `handleGuest` (controllare l'ospite) che accetta due input:
 
 - `name`: il nome della persona alla porta
 - `allowedPrefix`: le lettere iniziali richieste per la festa di stasera
@@ -15,7 +15,7 @@ Dovrebbe restituire `true` se la persona può entrare, e `false` se non è ammes
 
 Per esempio:
 
-- Se il prefisso consentito per stasera è `"S"`, allora Sarah può entrare (restituisce `true`) ma Brad non può entrare (restituisce `false`).
+- Se il prefisso (la lettera iniziale) consentito per stasera è `"S"`, allora Sarah può entrare (restituisce `true`) ma Brad non può entrare (restituisce `false`).
 - Se il prefisso consentito è `"Brad"`, allora Brad e Bradley possono entrare, ma Brian non può entrare.
 
 ### Funzioni ausiliarie
