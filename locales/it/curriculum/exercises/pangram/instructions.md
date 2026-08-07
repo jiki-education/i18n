@@ -4,7 +4,7 @@ description: "Verifica se una frase contiene ogni lettera dell'alfabeto, senza d
 en_md5: 8fae2df6ec4385478e4236fa49e21256
 ---
 
-Benvenuto alla seconda parte della serie sul `Pangramma`. Ricorda: un pangramma è una frase che utilizza ogni lettera dell'alfabeto almeno una volta.
+Benvenuto alla seconda parte della serie sui pangrammi. Ricorda: un pangramma è una frase che utilizza ogni lettera dell'alfabeto almeno una volta.
 
 Questo esercizio è una versione più complessa del precedente esercizio sul pangramma che hai risolto, perché include anche le lettere maiuscole. Questo aggiunge una complessità inaspettata.
 
