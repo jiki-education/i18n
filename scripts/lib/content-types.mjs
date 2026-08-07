@@ -123,6 +123,51 @@ export const CONTENT_TYPES = {
       `curriculum/src/badges/locales/${sourceName(locale, { markdown: false })}/translation.json`,
     localPath: () => "curriculum/badges/messages.json",
     r2: (locale, _slug, hash) => `/static/i18n/badges/${locale}/messages-${hash}.json`
+  },
+
+  levels: {
+    label: "level copy",
+    format: "catalog",
+    slugged: false,
+    staleness: "sibling",
+    interpolation: "none",
+    sourceRepoPath: (locale) =>
+      `curriculum/src/levels/locales/${sourceName(locale, { markdown: false })}/translation.json`,
+    localPath: () => "curriculum/levels/messages.json",
+    r2: (locale, _slug, hash) => `/static/i18n/levels/${locale}/messages-${hash}.json`
+  },
+
+  "exercise-category": {
+    label: "exercise family base catalog",
+    format: "catalog",
+    slugged: true,
+    staleness: "sibling",
+    interpolation: "i18next",
+    // The slug is an exercise FAMILY (draw, maze, cityscape), not an exercise.
+    // The front-end deep-merges a family's catalog into every member exercise's
+    // own catalog at load, so these keys are shared defaults rather than an
+    // artifact of their own. publish.mjs does not do that merge yet, which is
+    // why there is no r2 entry here: publishing a member exercise's catalog
+    // straight from `exercise-messages` would under-merge.
+    sourceRepoPath: (locale, slug) =>
+      `curriculum/src/exercise-categories/${slug}/locales/${sourceName(locale, { markdown: false })}/translation.json`,
+    localPath: (slug) => `curriculum/exercise-categories/${slug}/messages.json`,
+    r2: null
+  },
+
+  "interpreter-messages": {
+    label: "interpreter message catalog",
+    format: "catalog",
+    slugged: true,
+    staleness: "sibling",
+    interpolation: "i18next",
+    // The slug is an interpreter LANGUAGE (javascript, jikiscript, python).
+    // The `system` locale beside English in that tree is a machine-readable
+    // key channel, not a translation, and is never mirrored or translated here.
+    sourceRepoPath: (locale, slug) =>
+      `interpreters/src/${slug}/locales/${sourceName(locale, { markdown: false })}/translation.json`,
+    localPath: (slug) => `interpreters/${slug}/messages.json`,
+    r2: (locale, slug, hash) => `/static/i18n/interpreter/${slug}/${locale}/messages-${hash}.json`
   }
 };
 
@@ -155,6 +200,38 @@ export function sourceRepoPath(sourceRepo, typeId, locale, slug) {
  */
 export function metaPath(itemPath) {
   return itemPath.replace(/\.json$/, ".meta.json");
+}
+
+/**
+ * Every item of one type that ENGLISH exists for in a source repo checkout.
+ *
+ * Discovery is by what is on disk, exactly as `listItems` discovers what this
+ * repo holds, and it is derived from the type's own `sourceRepoPath` so there is
+ * still only one place that knows a layout. A slugged type's slug is the single
+ * directory segment `sourceRepoPath` varies, so listing that directory and
+ * keeping the entries whose English file exists is the whole rule.
+ *
+ * `sync-source.mjs --discover` uses this to seed the tracked corpus, instead of
+ * one invocation per item across a 1300-exercise tree.
+ */
+export function discoverItems(sourceRepo, typeId) {
+  const type = contentType(typeId);
+  const exists = (slug) => fs.existsSync(sourceRepoPath(sourceRepo, typeId, SOURCE_LOCALE, slug));
+
+  if (!type.slugged) return exists(null) ? [{ type: typeId, slug: null }] : [];
+
+  const probe = type.sourceRepoPath(SOURCE_LOCALE, "__SLUG__");
+  const [prefix] = probe.split("__SLUG__");
+  const root = path.join(sourceRepo, prefix);
+  if (!fs.existsSync(root)) return [];
+
+  return fs
+    .readdirSync(root, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .sort()
+    .filter(exists)
+    .map((slug) => ({ type: typeId, slug }));
 }
 
 /**
