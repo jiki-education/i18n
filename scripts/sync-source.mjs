@@ -79,7 +79,6 @@ function sliceNamespaces(text, namespaces, from) {
 
 function main() {
   const args = parseArgs(process.argv.slice(2));
-  const sourceRepo = resolveSourceRepo(args.flags["source-repo"]);
   const manifest = readManifest();
 
   if (!args.flags.force) {
@@ -91,10 +90,16 @@ function main() {
     }
   }
 
+  // The guard compares the mirror against the hashes the manifest recorded, so
+  // it answers "has this been hand-edited" from this repo alone. Resolving the
+  // front-end is deferred until we know a sync is actually happening, which is
+  // what lets CI run --check without a front-end checkout.
   if (args.flags.check) {
     console.log(`locales/${SOURCE_LOCALE}/ is clean: ${Object.keys(manifest.files).length} mirrored files match.`);
     return;
   }
+
+  const sourceRepo = resolveSourceRepo(args.flags["source-repo"]);
 
   // The set to sync: an explicit --type/--slug adds or refreshes one item,
   // otherwise refresh everything the manifest already tracks.

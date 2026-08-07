@@ -25,8 +25,15 @@ jobs:
         with:
           node-version: 20
 
+      # The merge and hashing rules the published artifacts depend on. These run
+      # first because a break here invalidates every artifact the later steps
+      # build, and they need no corpus to be meaningful.
+      - name: Unit tests
+        run: node scripts/test.mjs
+
       # The mirror must still be a mirror. A PR that hand-edited locales/source/
       # fails here rather than silently becoming a second home for English.
+      # Reads only the manifest hashes, so it needs no front-end checkout.
       - name: Source mirror is unmodified
         run: node scripts/sync-source.mjs --check
 
