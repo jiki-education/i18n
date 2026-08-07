@@ -47,6 +47,13 @@
 // for a dry run over a partly translated corpus. Neither flag touches the English
 // guard, which has no override.
 //
+// ## Exercise families
+//
+// An exercise may belong to an exercise-category, whose base catalog holds the
+// strings every member of the family shares. The front-end's generator
+// deep-merges that base into each member's pack, so this does too, and the
+// published exercise catalog is self-contained. See exerciseCatalogs() below.
+//
 // ## Prose
 //
 // Concept pages and exercise instructions are served as rendered HTML
@@ -69,7 +76,8 @@ import {
   assertTargetLocale,
   fail
 } from "./lib/constants.mjs";
-import { CONTENT_TYPES, contentType, listItems, localPath } from "./lib/content-types.mjs";
+import { CONTENT_TYPES, FAMILY_TYPE_ID, contentType, listItems, localPath } from "./lib/content-types.mjs";
+import { mergeExerciseCatalogs } from "./lib/families.mjs";
 import { contentHash, flatten, parseFrontmatter, readJson, readText } from "./lib/files.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 import { parseArgs } from "./lib/args.mjs";
@@ -142,14 +150,9 @@ function publishLocale(locale, { allowPartial, allowIncomplete }) {
 
   // --- exercise message catalogs, one artifact per exercise -----------------
   manifest.exercises = {};
-  for (const item of listItems("exercise-messages", locale)) {
-    const catalog = readJson(item.path);
-    if (!checkNoSentinels(`${locale} exercise catalog ${item.slug}`, catalog, allowIncomplete)) continue;
-    manifest.exercises[item.slug] = emit(
-      artifacts,
-      (hash) => CONTENT_TYPES["exercise-messages"].r2(locale, item.slug, hash),
-      catalog
-    );
+  for (const { slug, catalog } of exerciseCatalogs(locale)) {
+    if (!checkNoSentinels(`${locale} exercise catalog ${slug}`, catalog, allowIncomplete)) continue;
+    manifest.exercises[slug] = emit(artifacts, (hash) => CONTENT_TYPES["exercise-messages"].r2(locale, slug, hash), catalog);
   }
 
   // --- merged curriculum copy ----------------------------------------------
@@ -199,6 +202,43 @@ function publishLocale(locale, { allowPartial, allowIncomplete }) {
   return { artifacts, manifest, exported };
 }
 
+/**
+ * Every exercise message catalog to publish for one locale, already merged with
+ * its exercise family's base catalog. See scripts/lib/families.mjs for what the
+ * merge is and why.
+ *
+ * This half is the disk half: which family each exercise belongs to comes from
+ * the sync manifest, because it is derived from the exercise's TypeScript
+ * imports and this repo holds no TypeScript. An exercise the manifest has no
+ * record for is a HARD FAIL rather than an unmerged publish: a catalog missing
+ * its inherited keys renders raw key names like `errors.hitWall` to a learner,
+ * and on R2 it would look exactly like a good one.
+ */
+function exerciseCatalogs(locale) {
+  const families = readManifest().families ?? {};
+  const own = new Map(listItems("exercise-messages", locale).map((item) => [item.slug, readJson(item.path)]));
+
+  const unrecorded = [...own.keys()].filter((slug) => !(slug in families));
+  if (unrecorded.length > 0) {
+    fail(
+      `no family record for ${unrecorded.length} exercise(s) (first: ${unrecorded[0]}). ` +
+        `Publishing them would under-merge any exercise-category base catalog. ` +
+        `Run \`node scripts/sync-source.mjs\` against a front-end checkout to record them.`
+    );
+  }
+
+  const bases = new Map();
+  const baseFor = (family) => {
+    if (!bases.has(family)) {
+      const file = localPath(FAMILY_TYPE_ID, locale, family);
+      bases.set(family, fs.existsSync(file) ? readJson(file) : null);
+    }
+    return bases.get(family);
+  };
+
+  return mergeExerciseCatalogs({ families, own, baseFor });
+}
+
 const isVideoSlug = (slug, locale) => {
   const file = localPath("video-lessons", locale);
   return fs.existsSync(file) && slug in readJson(file);
@@ -206,10 +246,19 @@ const isVideoSlug = (slug, locale) => {
 
 const countSourceExercises = () => listItems("exercise-instructions", SOURCE_LOCALE).length;
 
+/**
+ * The sync manifest, which publish reads for two things English defines: which
+ * catalogs were imported as namespace slices, and which family each exercise
+ * belongs to. Both are written by sync-source.mjs, so publish needs no front-end
+ * checkout of its own.
+ */
+function readManifest() {
+  const file = path.join(REPO_ROOT, "locales", SOURCE_LOCALE, ".manifest.json");
+  return fs.existsSync(file) ? JSON.parse(readText(file)) : { items: [], families: {} };
+}
+
 function readSlicedTypes() {
-  const manifestPath = path.join(REPO_ROOT, "locales", SOURCE_LOCALE, ".manifest.json");
-  if (!fs.existsSync(manifestPath)) return [];
-  return JSON.parse(readText(manifestPath)).items.filter((item) => item.namespaces).map((item) => item.type);
+  return readManifest().items.filter((item) => item.namespaces).map((item) => item.type);
 }
 
 function main() {
