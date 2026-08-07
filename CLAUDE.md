@@ -54,6 +54,10 @@ locales/
       exercises/<slug>/messages.json               <- .../exercises/<slug>/locales/en/translation.json
       video-lessons/messages.json                  <- .../video-lessons/locales/en/translation.json
       badges/messages.json                         <- .../badges/locales/en/translation.json
+      levels/messages.json                         <- .../levels/locales/en/translation.json
+      exercise-categories/<family>/messages.json   <- .../exercise-categories/<family>/locales/en/translation.json
+    interpreters/
+      <language>/messages.json                     <- interpreters/src/<language>/locales/en/translation.json
   hu/                                              one directory per target locale, same shape
     app/messages.json
     curriculum/
@@ -63,6 +67,9 @@ locales/
       exercises/bouncer-dress-code/messages.meta.json    staleness stamp
       video-lessons/messages.json + messages.meta.json
       badges/messages.json + messages.meta.json
+      levels/messages.json + messages.meta.json
+      exercise-categories/draw/messages.json + messages.meta.json
+    interpreters/javascript/messages.json + messages.meta.json
 ```
 
 - **The one place that mapping lives is `scripts/lib/content-types.mjs`.** Adding a content type is
@@ -100,6 +107,11 @@ locales/
   exactly why a locale is not shippable until its count is zero. `publish` refuses any catalog
   containing one; `validate --shippable` is the gate; `coverage` is the running count.
 - Prose has no sentinel state: a Markdown page is either translated or absent.
+- **The imported corpus predates that rule and carries both markers.** Catalogs that came across in
+  the cutover include keys whose value is English verbatim, which is the state the old world used.
+  Nothing here rewrites them: the ambiguity is already in the file and a translation that legitimately
+  matches English is indistinguishable from a gap. `verify-import` and `validate` both count them, as
+  a heuristic WARN, so the size of the problem is visible without anything guessing at it.
 
 ## Staleness
 
@@ -123,13 +135,14 @@ Shared helpers live in `scripts/lib/`.
 
 | Script | What it does |
 |--------|--------------|
-| `sync-source.mjs` | Pulls English from the source repos into `locales/source/`, one-way. Hard-fails if the mirror has been hand-edited. `--check` verifies without writing. `--namespaces=a,b` imports a catalog as a slice. |
+| `sync-source.mjs` | Pulls English from the source repos into `locales/source/`, one-way. Hard-fails if the mirror has been hand-edited. `--check` verifies without writing. `--namespaces=a,b` imports a catalog as a slice. `--discover` widens the tracked corpus to every item English exists for, and `--only-translated` narrows that to items some locale already has a translation of. |
 | `import-existing.mjs` | **Cutover only.** Lifts translations that still live in the source repos into `locales/<locale>/`. Deliberately separate from `sync-source`, so "did this come from the source repo or from a pass?" stays answerable. |
 | `translate.mjs` | LLM-backed translation of added and changed items. Modes `outdated` / `all` / `missing`, meaning exactly what they mean in `translator`. Hands off to `validate` when it finishes. |
 | `stub.mjs` | Brings every catalog to full key parity with `source`, sentinel-filling anything untranslated. Existing values are reproduced byte for byte. |
 | `validate.mjs` | Key parity, ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the English write guard. Stamps on success. Exit 1 on any ERROR. |
 | `publish.mjs` | Builds the content-hashed artifacts and `dist/sync.sh`. Refuses any English R2 key, and any catalog still holding a sentinel. |
 | `coverage.mjs` | Per-locale translated / stale / missing / sentinel counts, per content type. `--json` for machines. |
+| `verify-import.mjs` | Proves an import is complete and lossless against a source repo checkout: every translation present, byte-for-byte identical, every file under `locales/<target>/` mapping back to a tracked item, no English locale directory. Also counts both untranslated markers without judging either. |
 
 - **`validate` errors block; warnings never do.** Same split as `translator/scripts/check-translation`:
   ERROR checks are structural facts, WARN checks are heuristics over prose that produce false
@@ -177,6 +190,15 @@ so an upload is always an add, never a replace).
 - **`validate` exercises the guard** rather than trusting it: it asserts the guard refuses every
   English spelling and still permits a legitimate key. A guard meant never to fire only stays
   honest if something makes it fire.
+
+### Exercise family base catalogs are not published yet
+
+`curriculum/src/exercise-categories/<family>/` holds the keys every exercise in a family shares
+(`draw`, `maze`, `cityscape`, and four others). The front-end **deep-merges** a family's catalog into
+each member exercise's own catalog when it loads one. `publish.mjs` does not do that merge, so the
+`exercise-category` content type has no R2 entry, and publishing a family member's
+`exercise-messages` artifact on its own would serve a catalog missing every inherited key. The merge
+has to land in `publish.mjs` before any family exercise is shipped in a non-English locale.
 
 ### Two artifacts are assembled, not copied
 

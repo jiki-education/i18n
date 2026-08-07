@@ -4,11 +4,12 @@
 //
 // Usage:
 //   node scripts/sync-source.mjs [--source-repo=<path>] [--type=<id>] [--slug=<slug>]
-//                                [--check] [--force]
+//                                [--discover] [--only-translated] [--check] [--force]
 //
 // Examples:
 //   node scripts/sync-source.mjs                       # sync everything already tracked
 //   node scripts/sync-source.mjs --type=concept --slug=arrays   # add / refresh one item
+//   node scripts/sync-source.mjs --discover            # track every item English exists for
 //   node scripts/sync-source.mjs --check               # verify only, write nothing
 //
 // ## One-way, always
@@ -35,8 +36,15 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { REPO_ROOT, SOURCE_LOCALE, fail } from "./lib/constants.mjs";
-import { CONTENT_TYPE_IDS, contentType, localPath, resolveSourceRepo, sourceRepoPath } from "./lib/content-types.mjs";
+import { REPO_ROOT, SOURCE_LOCALE, TARGET_LOCALES, fail } from "./lib/constants.mjs";
+import {
+  CONTENT_TYPE_IDS,
+  contentType,
+  discoverItems,
+  localPath,
+  resolveSourceRepo,
+  sourceRepoPath
+} from "./lib/content-types.mjs";
 import { md5File, readText } from "./lib/files.mjs";
 import { GuardViolation, assertMirrorClean, guardedWrite } from "./lib/guard.mjs";
 import { parseArgs } from "./lib/args.mjs";
@@ -81,7 +89,23 @@ function main() {
   // The set to sync: an explicit --type/--slug adds or refreshes one item,
   // otherwise refresh everything the manifest already tracks.
   let items;
-  if (args.flags.type) {
+  if (args.flags.discover) {
+    // Widen the tracked corpus to every item English exists for, rather than one
+    // invocation per item. `--type` narrows the discovery to a single type.
+    const typeIds = args.flags.type ? [args.flags.type] : CONTENT_TYPE_IDS;
+    items = typeIds.flatMap((typeId) => discoverItems(sourceRepo, typeId));
+
+    // The corpus this repo carries is the corpus it has translations for, not
+    // every English item that exists. Mirroring the whole 1300-exercise tree
+    // would bury the items someone is actually working on under thousands of
+    // pages nobody has started, and coverage would read as one enormous gap.
+    if (args.flags["only-translated"]) {
+      items = items.filter((item) =>
+        TARGET_LOCALES.some((locale) => fs.existsSync(sourceRepoPath(sourceRepo, item.type, locale, item.slug)))
+      );
+    }
+    if (items.length === 0) fail(`--discover found no English items in ${sourceRepo}`);
+  } else if (args.flags.type) {
     const type = contentType(args.flags.type);
     if (type.slugged && !args.flags.slug) fail(`--type=${args.flags.type} needs --slug`);
     items = [{ type: args.flags.type, slug: args.flags.slug ?? null }];

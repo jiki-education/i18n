@@ -16,6 +16,7 @@
     "validate": "node scripts/validate.mjs",
     "validate:shippable": "node scripts/validate.mjs all --shippable --no-stamp",
     "coverage": "node scripts/coverage.mjs",
+    "verify-import": "node scripts/verify-import.mjs",
     "publish:build": "node scripts/publish.mjs",
     "publish:upload": "node scripts/publish.mjs all --upload",
     "check": "node scripts/sync-source.mjs --check && node scripts/validate.mjs all --no-stamp"
