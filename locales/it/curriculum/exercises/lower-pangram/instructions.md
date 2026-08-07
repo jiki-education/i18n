@@ -8,7 +8,7 @@ Un pangramma è una frase che utilizza **ogni lettera dell'alfabeto almeno una v
 
 I prossimi tre esercizi saranno tutti dedicati a stabilire se una frase è un pangramma.
 
-In questo primo esercizio, devi solo gestire le lettere minuscole. L'input conterrà solo lettere minuscole e altri caratteri come spazi, numeri o punteggiatura, ma nessuna lettera maiuscola.
+In questo primo esercizio, devi solo gestire le lettere minuscole. L'input conterrà solo lettere minuscole ed altri caratteri come spazi, numeri o punteggiatura, ma nessuna lettera maiuscola.
 
 Il tuo compito è scrivere `isPangram(sentence)` (una funzione che verifica se una frase è un pangramma), che riceve una frase come input e restituisce `true` se contiene ogni lettera dalla «a» alla «z» almeno una volta, oppure `false` altrimenti.
 
@@ -16,7 +16,7 @@ Il tuo compito è scrivere `isPangram(sentence)` (una funzione che verifica se u
 
 Per superare l'esercizio, non ti è consentito usare cicli annidati. Invece, come nell'esercizio precedente, la chiave è creare una **funzione ausiliaria** che `isPangram(...)` utilizza.
 
-Questa funzione ausiliaria ti aiuterà a determinare se una stringa ne contiene un'altra. Ti consigliamo di chiamare questa funzione `includes` e i suoi input `haystack` (il pagliaio) e `needle` (l'ago). L'idea è che vogliamo «trovare l'ago nel pagliaio», un vecchio detto inglese.
+Questa funzione ausiliaria ti aiuterà a determinare se una stringa ne contiene un'altra. Ti consigliamo di chiamare questa funzione `includes` ed i suoi input `haystack` (il pagliaio) e `needle` (l'ago). L'idea è che vogliamo «trovare l'ago nel pagliaio», un vecchio detto inglese.
 
 Se creare più funzioni ti sembra opprimente, potresti risolvere l'esercizio prima senza la funzione ausiliaria, usando un ciclo annidato, e poi pensare a come suddividerlo in una funzione ausiliaria in un secondo momento.
 
