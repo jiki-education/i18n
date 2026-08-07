@@ -220,7 +220,7 @@ function checkNoSentinels(label, value) {
   return false;
 }
 
-async function publishLocale(locale) {
+async function publishLocale(locale, { exportSources }) {
   const artifacts = [];
   const manifest = {};
   const sliced = new Set(readSlicedTypes());
@@ -455,10 +455,12 @@ async function publishLocale(locale) {
   // --- exercise instructions, also exported in the source repo's layout -------
   //
   // The authored file, frontmatter included, for tooling that wants the source
-  // rather than the published bytes.
+  // rather than the published bytes. Only for a publish: under --out-dir the
+  // destination is a front-end's public/, where an export/ tree would be a
+  // directory of Markdown served to the internet.
   let exported = 0;
   const instructions = contentType("exercise-instructions");
-  for (const item of instructionItems) {
+  for (const item of exportSources ? instructionItems : []) {
     const to = path.join(DIST, "export", instructions.sourceRepoPath(locale, item.slug));
     fs.mkdirSync(path.dirname(to), { recursive: true });
     fs.copyFileSync(item.path, to);
@@ -570,7 +572,7 @@ async function main() {
 
   for (const locale of locales) {
     console.log(`\n${locale}:`);
-    const result = await publishLocale(locale);
+    const result = await publishLocale(locale, { exportSources: outDir === undefined });
     for (const artifact of result.artifacts) console.log(`  ${artifact.key}  (${artifact.bytes} bytes)`);
     all.push(...result.artifacts);
     manifests[locale] = result.manifest;
