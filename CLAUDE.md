@@ -46,7 +46,8 @@ so mapping back to a source path is mechanical.
 ```
 locales/
   source/                                          READ-ONLY mirror of English
-    .manifest.json                                 md5 of every mirrored file + the tracked corpus
+    .manifest.json                                 md5 of every mirrored file, the tracked corpus,
+                                                   and each exercise's family
     app/messages.json                              <- app/messages/en.json
     curriculum/
       concepts/<slug>/page.md                      <- curriculum/src/concepts/<slug>/source.md
@@ -135,13 +136,14 @@ Shared helpers live in `scripts/lib/`.
 
 | Script | What it does |
 |--------|--------------|
-| `sync-source.mjs` | Pulls English from the source repos into `locales/source/`, one-way. Hard-fails if the mirror has been hand-edited. `--check` verifies without writing. `--namespaces=a,b` imports a catalog as a slice. `--discover` widens the tracked corpus to every item English exists for, and `--only-translated` narrows that to items some locale already has a translation of. |
+| `sync-source.mjs` | Pulls English from the source repos into `locales/source/`, one-way. Hard-fails if the mirror has been hand-edited. `--check` verifies without writing. `--namespaces=a,b` imports a catalog as a slice. `--discover` widens the tracked corpus to every item English exists for, and `--only-translated` narrows that to items some locale already has a translation of. Also records each imported exercise's family, which only the front-end knows. |
 | `import-existing.mjs` | **Cutover only.** Lifts translations that still live in the source repos into `locales/<locale>/`. Deliberately separate from `sync-source`, so "did this come from the source repo or from a pass?" stays answerable. |
 | `translate.mjs` | LLM-backed translation of added and changed items. Modes `outdated` / `all` / `missing`, meaning exactly what they mean in `translator`. Hands off to `validate` when it finishes. |
 | `stub.mjs` | Brings every catalog to full key parity with `source`, sentinel-filling anything untranslated. Existing values are reproduced byte for byte. |
 | `validate.mjs` | Key parity, ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the English write guard. Stamps on success. Exit 1 on any ERROR. |
 | `publish.mjs` | Builds the content-hashed artifacts and `dist/sync.sh`. Refuses any English R2 key, and any catalog still holding a sentinel. |
 | `coverage.mjs` | Per-locale translated / stale / missing / sentinel counts, per content type. `--json` for machines. |
+| `test.mjs` | The assertions guarding logic a mistake in would only surface on R2, above all the exercise family merge and its key order. Plain `node:assert`, no framework, non-zero exit on failure. `pnpm test`, and part of `pnpm check`. |
 | `verify-import.mjs` | Proves an import is complete and lossless against a source repo checkout: every translation present, byte-for-byte identical, every file under `locales/<target>/` mapping back to a tracked item, no English locale directory. Also counts both untranslated markers without judging either. |
 
 - **`validate` errors block; warnings never do.** Same split as `translator/scripts/check-translation`:
@@ -191,14 +193,43 @@ so an upload is always an add, never a replace).
   English spelling and still permits a legitimate key. A guard meant never to fire only stays
   honest if something makes it fire.
 
-### Exercise family base catalogs are not published yet
+### Exercise families and the base catalog merge
 
 `curriculum/src/exercise-categories/<family>/` holds the keys every exercise in a family shares
-(`draw`, `maze`, `cityscape`, and four others). The front-end **deep-merges** a family's catalog into
-each member exercise's own catalog when it loads one. `publish.mjs` does not do that merge, so the
-`exercise-category` content type has no R2 entry, and publishing a family member's
-`exercise-messages` artifact on its own would serve a catalog missing every inherited key. The merge
-has to land in `publish.mjs` before any family exercise is shipped in a non-English locale.
+(`maze`, `draw`, `cityscape` and nine others), typically a base class's logic-error messages and its
+describers. They are authored and translated once rather than copied into each member.
+
+- **A family catalog is a merge input, never an artifact.** The front-end's
+  `app/scripts/generate-exercise-cache.js` deep-merges a family's catalog into each member's emitted
+  pack and emits nothing for the family itself, so the runtime dict a learner fetches is
+  self-contained. `publish.mjs` does the same merge, which is why the `exercise-category` content
+  type has no R2 entry and `exercise-messages` needs no second fetch.
+- **Member keys win, objects merge, everything else replaces.** On a colliding leaf the exercise's
+  own value wins. Nested objects merge recursively; arrays and scalars replace wholesale. A key in
+  both keeps the **family's** position and a key only in the member is appended, because the artifact
+  is `JSON.stringify` of the merged object and the filename is a hash of exactly those bytes, so
+  insertion order moves URLs.
+- **The published locale set is the union of both sides.** A member with no catalog of its own in a
+  locale is still published, built from its family's; a member whose family has nothing in that
+  locale publishes its own unchanged.
+- **The merge itself lives in `scripts/lib/families.mjs`** as pure functions, so it is testable
+  without disk. `publish.mjs` holds only the disk half.
+
+#### The family map
+
+An exercise's family is whichever `exercise-categories/<family>/` module its `.ts` files import, so
+it is a fact about **code**, and code stays in the front-end. It cannot be derived at publish time,
+because publishing runs in CI here with no front-end checkout.
+
+- **`sync-source.mjs` captures it** and records it as a `families` block in
+  `locales/source/.manifest.json`, beside `items` and `files`. The manifest is already the registry
+  of what English this repo has imported, and the family is a fact about that English's source, so it
+  belongs in the same record rather than in a second file that could drift from it.
+- **A standalone exercise is recorded as an explicit `null`**, so "scanned, has no family" stays
+  distinguishable from "never scanned".
+- **An exercise with no record at all is a hard fail in `publish`**, never an unmerged publish. A
+  catalog missing its inherited keys renders raw key names like `errors.hitWall` to a learner, and on
+  R2 it would look exactly like a good one.
 
 ### Two artifacts are assembled, not copied
 
