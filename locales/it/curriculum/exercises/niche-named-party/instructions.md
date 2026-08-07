@@ -1,17 +1,17 @@
 ---
-title: "Festa Esclusiva per Nomi"
+title: "Festa per Nomi Specifici"
 description: "Scopri chi può entrare ad una festa molto esclusiva."
 en_md5: 3c03097aed9465c8f132574b033ad7ce
 ---
 
-Stasera c'è una festa molto esclusiva: possono entrare solo le persone il cui nome inizia con una specifica sequenza di lettere!
+Stasera c'è una festa molto esclusiva: possono entrare solo le persone con il nome che inizia con una specifica sequenza di lettere!
 
 Il tuo compito è scrivere una funzione chiamata `handleGuest` (gestisci l'ospite) che accetta due input:
 
 - `name`: il nome della persona alla porta
 - `allowedPrefix`: le lettere iniziali richieste per la festa di stasera
 
-Dovrebbe restituire `true` se la persona può entrare, e `false` se deve essere respinta.
+Dovrebbe restituire `true` se la persona può entrare, e `false` se non è ammessa.
 
 Per esempio:
 
