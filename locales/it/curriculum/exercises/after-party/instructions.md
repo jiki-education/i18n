@@ -8,11 +8,11 @@ Siamo di nuovo nei panni di un buttafuori. Ma questa volta abbiamo a che fare co
 
 Quando queste persone si presentano alla tua festa, si aspettano che tu le conosca solo per nome. Brad Pitt non sprecherà fiato a dirti il cognome: dirà solo «Brad» e poi ti guarderà come se fossi tu quello impacciato.
 
-Stasera sul tuo blocco degli appunti ci sono due liste. La prima è `names`, i nomi completi di tutti gli invitati. La seconda è `plusOnes`, quante persone extra ciascun invitato è autorizzato a portare con sé (i loro _plus-ones_ in inglese). Le due liste sono state scritte insieme, voce per voce, nello stesso ordine, in modo che siano allineate. Per esempio, la terza voce della lista dei nomi corrisponde alla stessa persona della terza voce della lista `plusOnes`.
+Stasera sul tuo blocco degli appunti ci sono due liste. La prima è `names`, i nomi completi di tutti gli invitati. La seconda è `plusOnes`, quante persone extra ciascun invitato è autorizzato a portare con sé (i loro _plus-ones_ in inglese). Le due liste sono state scritte insieme, voce per voce, nello stesso ordine, in modo che siano allineate. Per esempio, la terza voce della lista `names` corrisponde alla stessa persona della terza voce della lista `plusOnes`.
 
-Scrivi una funzione chiamata `plusOnesFor` (ospiti aggiuntivi per). La funzione ha tre input: la lista `names`, la lista `plusOnes` e il **nome** di chi ti sta davanti in questo momento. Devi restituire il numero di ospiti extra che quella persona è autorizzata a portare con sé.
+Scrivi una funzione chiamata `plusOnesFor` (ospiti aggiuntivi per). La funzione ha tre input: la lista `names`, la lista `plusOnes` ed il **nome** di chi ti sta davanti in questo momento. Devi restituire il numero di ospiti extra che quella persona è autorizzata a portare con sé.
 
-Fai attenzione, però. Si sta formando una coda, e queste persone non fanno la fila in silenzio. «Brad» significa Brad Pitt, non Bradley Cooper. E uno o due di loro sono abbastanza famosi da aver abbandonato del tutto il cognome.
+Fai attenzione, però. Si sta formando una coda, e queste persone non fanno la fila in silenzio. «Brad» significa Brad Pitt, non Bradley Cooper. Ed uno o due di loro sono abbastanza famosi da aver abbandonato del tutto il cognome.
 
 Alcuni invitati sono presenti nella lista ma non possono portare nessuno con sé, quindi `0` è una risposta perfettamente valida per un nome che è sulla lista. Chi non è affatto sulla lista è tutta un'altra storia: per loro devi restituire la stringa `"Not on the list!"`, esattamente come scritto.
 

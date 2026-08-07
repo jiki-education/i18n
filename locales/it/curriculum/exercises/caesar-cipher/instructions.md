@@ -8,9 +8,9 @@ Il cifrario di Cesare è una delle tecniche di cifratura più antiche e semplici
 
 Il cifrario funziona spostando ciascuna lettera del messaggio di un numero fisso di posizioni dell'alfabeto. Ad esempio, con uno spostamento di 3, 'a' diventa 'd', 'b' diventa 'e' e così via. Se lo spostamento supera la 'z', ricomincia dall'inizio dell'alfabeto.
 
-Gli spazi devono rimanere spazi (non vengono spostati).
+Gli spazi devono rimanere tali (non vengono spostati).
 
-Crea una funzione chiamata `encode(message, shift)` (codifica un messaggio con uno spostamento) che prende un messaggio in minuscolo e un valore di spostamento, e restituisce il messaggio codificato.
+Crea una funzione chiamata `encode(message, shift)` (codifica un messaggio con uno spostamento) che prende un messaggio in minuscolo ed un valore di spostamento, e restituisce il messaggio codificato.
 
 Per esempio:
 
@@ -22,7 +22,7 @@ Suggerimento: conviene suddividere il problema in funzioni ausiliarie più picco
 
 ### Curiosità
 
-Una volta facevo da presentatore a una conferenza tech a Braga, in Portogallo. Cinque minuti prima di salire sul palco, gli organizzatori si avvicinarono e, un po' imbarazzati, mi chiesero se mi dispiacesse vestirmi da Giulio Cesare per la prima parte della giornata, per celebrare l'eredità romana di Braga. Ce l'ho fatta...?
+Una volta facevo da presentatore ad una conferenza tech a Braga, in Portogallo. Cinque minuti prima di salire sul palco, gli organizzatori si avvicinarono e, un po' imbarazzati, mi chiesero se mi dispiacesse vestirmi da Giulio Cesare per la prima parte della giornata, per celebrare l'eredità romana di Braga. Ce l'ho fatta...?
 
 <img
   src="/static/images/exercise-assets/caesar-cipher/jeremy-as-caesar.webp"
