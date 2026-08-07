@@ -19,7 +19,7 @@ Raindrops 是经典编程面试题 FizzBuzz 的一个变体。
 
 你需要创建一个名为 `raindrops(num)`（输入数字，返回雨滴声）的函数，它接收一个数字作为输入，并返回对应的雨滴声。
 
-使用拼接（英语：concatenation）（`+`）或模板字符串（英语：template string）来构建结果字符串。
+使用拼接（英文：concatenation）（`+`）或模板字符串（英文：template string）来构建结果字符串。
 
 ### 示例
 
