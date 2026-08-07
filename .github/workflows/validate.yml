@@ -24,6 +24,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
+
+      # Only prose publishing has dependencies: it renders Markdown through the
+      # same package the front-end uses, so the HTML matches byte for byte. The
+      # rest of scripts/ is dependency-free and would run without this.
+      - name: Install
+        run: npm ci
 
       # The merge and hashing rules the published artifacts depend on. These run
       # first because a break here invalidates every artifact the later steps
