@@ -1,0 +1,289 @@
+#!/usr/bin/env node
+//
+// publish — build the content-hashed artifacts and prepare the R2 sync.
+//
+// Usage:
+//   node scripts/publish.mjs [<locale|all>] [--allow-partial] [--allow-incomplete] [--upload]
+//
+// Examples:
+//   node scripts/publish.mjs hu                # build into dist/, print the plan
+//   node scripts/publish.mjs all --upload      # ...and run the aws s3 sync
+//
+// ## The path convention is the front-end's, byte for byte
+//
+// Artifact paths and the hash come from app/lib/assets-paths.ts and
+// app/scripts/lib/cache-utils.js in the front-end: every dimension is a
+// directory, the leaf is `{kind}-{hash}.{ext}`, and the hash is the first 12 hex
+// chars of the SHA-256 of the exact bytes written. The content hashed is
+// `JSON.stringify(parsed)` (compact, no whitespace), so source formatting cannot
+// move a hash. Those two sides must stay in lockstep; scripts/lib/content-types.mjs
+// is where this half of it lives.
+//
+// ## The English guard
+//
+// Every key goes through assertPublishableKey() before it is written, and again
+// before it is uploaded. A key with an English locale segment is a HARD FAIL that
+// aborts the whole run, never a skipped file: a publish that quietly dropped
+// English would be indistinguishable from a successful one.
+//
+// This replaces credential scoping, which cannot express the rule. The key that
+// must not be written (`static/i18n/app/en/...`) sits INSIDE the prefix this repo
+// legitimately writes (`static/i18n/app/`), so no bucket policy can separate them.
+//
+// The front-end publishes English itself, atomically with its worker deploy, so
+// the code and the copy it renders go live together.
+//
+// ## Partial catalogs
+//
+// Two artifacts are assembled from a whole corpus rather than one file: the app
+// UI catalog (the full 1300-key tree) and the merged curriculum copy catalog
+// (every exercise's frontmatter plus every video lesson). Publishing either from
+// a partial import would serve a catalog with keys missing, so this refuses
+// unless --allow-partial is passed. That is the expected state while this repo
+// carries a seed corpus rather than the full one.
+//
+// Separately, a catalog still holding the untranslated sentinel is not servable
+// and is refused. --allow-incomplete downgrades that one refusal to a loud skip,
+// for a dry run over a partly translated corpus. Neither flag touches the English
+// guard, which has no override.
+//
+// ## Prose
+//
+// Concept pages and exercise instructions are served as rendered HTML
+// (/static/concepts/<slug>/<locale>/content-<hash>.html), produced by the
+// curriculum renderer, not here. This script writes them into dist/export/ in the
+// source repos' own layout so that renderer can consume them unchanged. See
+// CLAUDE.md § "Prose publishing".
+
+import fs from "node:fs";
+import path from "node:path";
+import { execFileSync } from "node:child_process";
+import {
+  R2_BUCKET,
+  R2_ENDPOINT,
+  R2_PREFIX,
+  REPO_ROOT,
+  SENTINEL,
+  SOURCE_LOCALE,
+  TARGET_LOCALES,
+  assertTargetLocale,
+  fail
+} from "./lib/constants.mjs";
+import { CONTENT_TYPES, contentType, listItems, localPath } from "./lib/content-types.mjs";
+import { contentHash, flatten, parseFrontmatter, readJson, readText } from "./lib/files.mjs";
+import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
+import { parseArgs } from "./lib/args.mjs";
+
+const DIST = path.join(REPO_ROOT, "dist");
+
+/** Write one artifact, hashed the front-end's way, with the guard in front of it. */
+function emit(artifacts, r2Path, value) {
+  const content = JSON.stringify(value);
+  const hash = contentHash(content);
+  const resolved = typeof r2Path === "function" ? r2Path(hash) : r2Path;
+  const key = assertPublishableKey(resolved);
+
+  const file = path.join(DIST, key);
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, content);
+  artifacts.push({ key, hash, bytes: content.length });
+  return hash;
+}
+
+/**
+ * Refuse to serve a catalog that still contains the untranslated sentinel.
+ *
+ * `--allow-incomplete` downgrades this to a loud skip, for a dry run that wants
+ * to exercise the rest of the pipeline on a partly translated corpus. It does
+ * NOT touch the English guard, which has no override at all.
+ *
+ * Returns false when the artifact must be skipped.
+ */
+function checkNoSentinels(label, value, allowIncomplete) {
+  const stubbed = Object.entries(flatten(value)).filter(([, v]) => v === SENTINEL);
+  if (stubbed.length === 0) return true;
+
+  const message =
+    `${label}: ${stubbed.length} keys are still the untranslated sentinel "${SENTINEL}" ` +
+    `(first: ${stubbed[0][0]}). The sentinel renders as a visible replacement glyph, so this ` +
+    `catalog is not servable. Run \`node scripts/coverage.mjs\` to see what is left.`;
+
+  if (!allowIncomplete) fail(message);
+  console.log(`  SKIPPED ${message}`);
+  return false;
+}
+
+function publishLocale(locale, { allowPartial, allowIncomplete }) {
+  const artifacts = [];
+  const manifest = {};
+  const sliced = new Set(readSlicedTypes());
+
+  // --- app UI catalog -------------------------------------------------------
+  const appPath = localPath("app-messages", locale);
+  if (fs.existsSync(appPath)) {
+    if (sliced.has("app-messages") && !allowPartial) {
+      console.log(`  skipped app catalog: imported as a namespace slice, not the whole tree (--allow-partial to publish anyway)`);
+    } else {
+      const catalog = readJson(appPath);
+      if (checkNoSentinels(`${locale} app catalog`, catalog, allowIncomplete)) {
+        manifest.app = emit(artifacts, (hash) => CONTENT_TYPES["app-messages"].r2(locale, null, hash), catalog);
+      }
+    }
+  }
+
+  // --- badges ---------------------------------------------------------------
+  const badgesPath = localPath("badges", locale);
+  if (fs.existsSync(badgesPath)) {
+    const catalog = readJson(badgesPath);
+    if (checkNoSentinels(`${locale} badge catalog`, catalog, allowIncomplete)) {
+      manifest.badges = emit(artifacts, (hash) => CONTENT_TYPES.badges.r2(locale, null, hash), catalog);
+    }
+  }
+
+  // --- exercise message catalogs, one artifact per exercise -----------------
+  manifest.exercises = {};
+  for (const item of listItems("exercise-messages", locale)) {
+    const catalog = readJson(item.path);
+    if (!checkNoSentinels(`${locale} exercise catalog ${item.slug}`, catalog, allowIncomplete)) continue;
+    manifest.exercises[item.slug] = emit(
+      artifacts,
+      (hash) => CONTENT_TYPES["exercise-messages"].r2(locale, item.slug, hash),
+      catalog
+    );
+  }
+
+  // --- merged curriculum copy ----------------------------------------------
+  // ONE flat catalog keyed by slug: every exercise's frontmatter title +
+  // description, merged with the video lessons. Exercises and videos share one
+  // collision-free slug namespace, so consumers resolve copy by slug alone and
+  // never branch on what they are rendering. A collision is a hard error, exactly
+  // as in the front-end generator.
+  const copy = {};
+  for (const item of listItems("exercise-instructions", locale)) {
+    const { data } = parseFrontmatter(readText(item.path));
+    if (!data.title) fail(`${item.path}: no title in frontmatter`);
+    copy[item.slug] = { title: data.title, description: data.description || "" };
+  }
+  const videoPath = localPath("video-lessons", locale);
+  if (fs.existsSync(videoPath)) {
+    const videos = readJson(videoPath);
+    if (!checkNoSentinels(`${locale} video lesson catalog`, videos, allowIncomplete)) return { artifacts, manifest, exported: 0 };
+    for (const [slug, entry] of Object.entries(videos)) {
+      if (slug in copy) fail(`slug "${slug}" is both an exercise and a video lesson (locale ${locale}); the namespace must stay collision-free`);
+      copy[slug] = entry;
+    }
+  }
+  if (Object.keys(copy).length > 0) {
+    const isPartial = countSourceExercises() !== Object.keys(copy).filter((slug) => !isVideoSlug(slug, locale)).length;
+    if (isPartial && !allowPartial) {
+      console.log(`  skipped curriculum copy: assembled from a partial exercise corpus (--allow-partial to publish anyway)`);
+    } else {
+      // Sorted, so the hash moves only when the copy does.
+      const sorted = Object.fromEntries(Object.keys(copy).sort().map((slug) => [slug, copy[slug]]));
+      manifest.curriculum = emit(artifacts, (hash) => `/static/i18n/curriculum/${locale}/messages-${hash}.json`, sorted);
+    }
+  }
+
+  // --- prose, exported for the curriculum renderer ---------------------------
+  let exported = 0;
+  for (const typeId of ["concept", "exercise-instructions"]) {
+    const type = contentType(typeId);
+    for (const item of listItems(typeId, locale)) {
+      const to = path.join(DIST, "export", type.sourceRepoPath(locale, item.slug));
+      fs.mkdirSync(path.dirname(to), { recursive: true });
+      fs.copyFileSync(item.path, to);
+      exported += 1;
+    }
+  }
+
+  return { artifacts, manifest, exported };
+}
+
+const isVideoSlug = (slug, locale) => {
+  const file = localPath("video-lessons", locale);
+  return fs.existsSync(file) && slug in readJson(file);
+};
+
+const countSourceExercises = () => listItems("exercise-instructions", SOURCE_LOCALE).length;
+
+function readSlicedTypes() {
+  const manifestPath = path.join(REPO_ROOT, "locales", SOURCE_LOCALE, ".manifest.json");
+  if (!fs.existsSync(manifestPath)) return [];
+  return JSON.parse(readText(manifestPath)).items.filter((item) => item.namespaces).map((item) => item.type);
+}
+
+function main() {
+  const args = parseArgs(process.argv.slice(2));
+  const requested = args.positional[0] ?? "all";
+  const locales = requested === "all" ? TARGET_LOCALES : [requested];
+  locales.forEach(assertTargetLocale);
+
+  if (fs.existsSync(DIST)) fs.rmSync(DIST, { recursive: true });
+  fs.mkdirSync(DIST, { recursive: true });
+
+  const all = [];
+  const manifests = {};
+  let exported = 0;
+
+  for (const locale of locales) {
+    console.log(`\n${locale}:`);
+    const result = publishLocale(locale, {
+      allowPartial: Boolean(args.flags["allow-partial"]),
+      allowIncomplete: Boolean(args.flags["allow-incomplete"])
+    });
+    for (const artifact of result.artifacts) console.log(`  ${artifact.key}  (${artifact.bytes} bytes)`);
+    all.push(...result.artifacts);
+    manifests[locale] = result.manifest;
+    exported += result.exported;
+  }
+
+  // The hash manifest. The front-end resolves a locale's catalog URL from a hash
+  // it holds at build time (lib/generated/*-hashes.ts), so a locale published from
+  // here is unreachable until the front-end learns its hashes. This file is the
+  // hand-back: the workflow dispatches it to the front-end, which commits it.
+  fs.writeFileSync(
+    path.join(DIST, "manifest.json"),
+    `${JSON.stringify({ generatedAt: new Date().toISOString(), locales: manifests }, null, 2)}\n`
+  );
+
+  // Re-run the guard over the finished tree. Cheap, and it catches a key that
+  // reached disk by a route that skipped emit().
+  for (const file of walk(path.join(DIST, R2_PREFIX))) {
+    assertPublishableKey(path.relative(DIST, file));
+  }
+
+  const plan = all
+    .map((artifact) => path.dirname(artifact.key))
+    .filter((dir, index, list) => list.indexOf(dir) === index)
+    .map(
+      (dir) =>
+        `aws s3 sync dist/${dir} s3://${R2_BUCKET}/${dir} --endpoint-url ${R2_ENDPOINT} ` +
+        `--cache-control 'public, max-age=31536000, immutable' --size-only`
+    );
+  fs.writeFileSync(path.join(DIST, "sync.sh"), `#!/usr/bin/env bash\nset -euo pipefail\n\n${plan.join("\n")}\n`, { mode: 0o755 });
+
+  console.log(`\npublish: ${all.length} artifacts, ${exported} prose files exported, ${plan.length} sync commands in dist/sync.sh.`);
+
+  if (args.flags.upload) {
+    console.log("\nUploading...\n");
+    execFileSync("bash", [path.join(DIST, "sync.sh")], { cwd: REPO_ROOT, stdio: "inherit" });
+  } else if (all.length > 0) {
+    console.log("Nothing uploaded. Re-run with --upload, or run dist/sync.sh.");
+  }
+}
+
+function* walk(dir) {
+  if (!fs.existsSync(dir)) return;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) yield* walk(full);
+    else yield full;
+  }
+}
+
+try {
+  main();
+} catch (error) {
+  if (error instanceof GuardViolation) fail(error.message);
+  throw error;
+}
