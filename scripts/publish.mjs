@@ -19,6 +19,16 @@
 // move a hash. Those two sides must stay in lockstep; scripts/lib/content-types.mjs
 // is where this half of it lives.
 //
+// ## Pointers, and why they exist
+//
+// Beside every immutable artifact this writes a mutable pointer at a stable
+// path, `.../current.json` holding `{ "hash": "..." }`. The front-end resolves a
+// non-English catalog URL by reading that pointer at runtime, so publishing a
+// translation is rewriting one small object, not rebuilding and redeploying the
+// worker. Each pointer object has exactly ONE writer, so the two repos cannot
+// lose each other's updates: this repo owns every non-English pointer, and
+// English has none at all (see the English guard below).
+//
 // ## The English guard
 //
 // Every key goes through assertPublishableKey() before it is written, and again
@@ -76,7 +86,27 @@ import { parseArgs } from "./lib/args.mjs";
 
 const DIST = path.join(REPO_ROOT, "dist");
 
-/** Write one artifact, hashed the front-end's way, with the guard in front of it. */
+/** The mutable pointer that sits beside an artifact: `.../messages-<hash>.json` -> `.../current.json`. */
+const pointerKeyFor = (artifactKey) => `${path.dirname(artifactKey)}/current.json`;
+
+/**
+ * Write one artifact, hashed the front-end's way, with the guard in front of it.
+ *
+ * Every artifact gets a POINTER written beside it: a tiny mutable `current.json`
+ * holding `{ "hash": "<this artifact's hash>" }` at a stable URL. The artifact
+ * stays immutable and content-addressed; the pointer is what moves.
+ *
+ * That indirection is what makes this repo independent of the front-end's
+ * release cycle. Without it the front-end can only reach an artifact whose hash
+ * was compiled into the worker at build time, so a locale published here is
+ * invisible until the front-end rebuilds and redeploys. With it, rewriting one
+ * ~24-byte object publishes a translation.
+ *
+ * The English guard applies to the pointer exactly as it does to the artifact,
+ * so this can no more overwrite English's pointer than English's catalog. In
+ * practice English has no pointer at all: the front-end compiles its hash in and
+ * ships the catalog with the deploy, so its render path never looks one up.
+ */
 function emit(artifacts, r2Path, value) {
   const content = JSON.stringify(value);
   const hash = contentHash(content);
@@ -87,6 +117,12 @@ function emit(artifacts, r2Path, value) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, content);
   artifacts.push({ key, hash, bytes: content.length });
+
+  const pointerKey = assertPublishableKey(pointerKeyFor(key));
+  const pointer = `${JSON.stringify({ hash })}\n`;
+  fs.writeFileSync(path.join(DIST, pointerKey), pointer);
+  artifacts.push({ key: pointerKey, hash, bytes: pointer.length, pointer: true });
+
   return hash;
 }
 
@@ -237,10 +273,10 @@ function main() {
     exported += result.exported;
   }
 
-  // The hash manifest. The front-end resolves a locale's catalog URL from a hash
-  // it holds at build time (lib/generated/*-hashes.ts), so a locale published from
-  // here is unreachable until the front-end learns its hashes. This file is the
-  // hand-back: the workflow dispatches it to the front-end, which commits it.
+  // The hash manifest, for humans and for CI. The front-end no longer needs it
+  // to reach a locale: it resolves non-English hashes from the pointers written
+  // above. This is the record of what a run published, so a deploy can be
+  // audited and a bad publish identified by hash.
   fs.writeFileSync(
     path.join(DIST, "manifest.json"),
     `${JSON.stringify({ generatedAt: new Date().toISOString(), locales: manifests }, null, 2)}\n`
@@ -252,17 +288,47 @@ function main() {
     assertPublishableKey(path.relative(DIST, file));
   }
 
-  const plan = all
+  // Two kinds of object, two sets of headers, and two different commands.
+  //
+  // The hashed artifacts are immutable, so they sync with a year-long TTL and
+  // `--size-only` (their name already encodes their content).
+  //
+  // The pointers are the opposite in every respect. They are copied, never
+  // synced: `--size-only` compares byte counts, and one hash is exactly as long
+  // as another, so a sync would silently skip the single object whose whole job
+  // is to change. And they carry a short TTL plus a long
+  // stale-while-revalidate, so the steady state is an edge cache hit, a
+  // republish propagates in about a minute, and a slow origin is never on the
+  // critical path of a render.
+  //
+  // The artifact always lands before the pointer that names it, so a reader can
+  // never follow a pointer to an object that is not there yet.
+  const dirs = all
+    .filter((artifact) => !artifact.pointer)
     .map((artifact) => path.dirname(artifact.key))
-    .filter((dir, index, list) => list.indexOf(dir) === index)
-    .map(
+    .filter((dir, index, list) => list.indexOf(dir) === index);
+
+  const plan = [
+    ...dirs.map(
       (dir) =>
         `aws s3 sync dist/${dir} s3://${R2_BUCKET}/${dir} --endpoint-url ${R2_ENDPOINT} ` +
-        `--cache-control 'public, max-age=31536000, immutable' --size-only`
-    );
+        `--cache-control 'public, max-age=31536000, immutable' --size-only --exclude 'current.json'`
+    ),
+    ...all
+      .filter((artifact) => artifact.pointer)
+      .map(
+        (artifact) =>
+          `aws s3 cp dist/${artifact.key} s3://${R2_BUCKET}/${artifact.key} --endpoint-url ${R2_ENDPOINT} ` +
+          `--cache-control 'public, max-age=60, stale-while-revalidate=86400'`
+      )
+  ];
   fs.writeFileSync(path.join(DIST, "sync.sh"), `#!/usr/bin/env bash\nset -euo pipefail\n\n${plan.join("\n")}\n`, { mode: 0o755 });
 
-  console.log(`\npublish: ${all.length} artifacts, ${exported} prose files exported, ${plan.length} sync commands in dist/sync.sh.`);
+  const pointerCount = all.filter((artifact) => artifact.pointer).length;
+  console.log(
+    `\npublish: ${all.length - pointerCount} artifacts, ${pointerCount} pointers, ` +
+      `${exported} prose files exported, ${plan.length} sync commands in dist/sync.sh.`
+  );
 
   if (args.flags.upload) {
     console.log("\nUploading...\n");
