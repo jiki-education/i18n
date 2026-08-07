@@ -110,7 +110,8 @@ locales/
 - **It renders as a visible replacement glyph**, which is the intent on the review site and is
   exactly why a locale is not shippable until its count is zero. `publish` refuses any catalog
   containing one; `validate --shippable` is the gate; `coverage` is the running count.
-- Prose has no sentinel state: a Markdown page is either translated or absent.
+- Prose has no sentinel state, but it has **three untranslated conventions**, none of which is a
+  missing file, and `publish` refuses all three (see § "Untranslated prose").
 - **The imported corpus predates that rule and carries both markers.** Catalogs that came across in
   the cutover include keys whose value is English verbatim, which is the state the old world used.
   Nothing here rewrites them: the ambiguity is already in the file and a translation that legitimately
@@ -137,7 +138,8 @@ locales/
 All Node ESM (`.mjs`), and **dependency-free with one exception**: they run on a bare `node` with no
 install step, except for prose rendering, which needs `@jiki.io/content-renderer`. That import is
 lazy, so `sync-source`, `translate`, `stub`, `validate`, `coverage` and `test` still need no
-`node_modules` at all; only `publish` and `verify-renderer` do, and only when they reach prose.
+`node_modules` at all; only `publish` and `verify-renderer` do. `publish` loads it up front rather
+than on first use, because the image resolver inside a post render has to be synchronous.
 Shared helpers live in `scripts/lib/`.
 
 | Script | What it does |
@@ -147,7 +149,7 @@ Shared helpers live in `scripts/lib/`.
 | `translate.mjs` | LLM-backed translation of added and changed items. Modes `outdated` / `all` / `missing`, meaning exactly what they mean in `translator`. Hands off to `validate` when it finishes. |
 | `stub.mjs` | Brings every catalog to full key parity with `source`, sentinel-filling anything untranslated. Existing values are reproduced byte for byte. |
 | `validate.mjs` | Key parity, ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the English write guard. Stamps on success. Exit 1 on any ERROR. |
-| `publish.mjs` | Builds the content-hashed artifacts and `dist/sync.sh`. Refuses any English R2 key, and any catalog still holding a sentinel. |
+| `publish.mjs` | Builds the content-hashed artifacts, their pointers and `dist/sync.sh`. Refuses any English R2 key, any catalog still holding a sentinel, any prose that is untranslated by one of the three conventions, and any assembled artifact built from a partial corpus. No flag loosens any of that. `--out-dir=<path>` writes the same tree into a front-end checkout instead, for local dev. |
 | `coverage.mjs` | Per-locale translated / stale / missing / sentinel counts, per content type. `--json` for machines. |
 | `test.mjs` | The assertions guarding logic a mistake in would only surface on R2, above all the exercise family merge and its key order. Plain `node:assert`, no framework, non-zero exit on failure. `pnpm test`, and part of `pnpm check`. |
 | `verify-import.mjs` | Proves an import is complete and lossless against a source repo checkout: every translation present, byte-for-byte identical, every file under `locales/<target>/` mapping back to a tracked item, no English locale directory. Also counts both untranslated markers without judging either. |
@@ -183,6 +185,10 @@ is why it is pinned and recorded.
 | Levels | `/static/i18n/levels/{locale}/messages-{hash}.json` |
 | Interpreters | `/static/i18n/interpreter/{language}/{locale}/messages-{hash}.json` |
 | Concept pages | `/static/concepts/{slug}/{locale}/content-{hash}.html` |
+| Exercise prose index | `/static/exercises/{locale}/index-{hash}.json` |
+| Exercise instructions | `/static/exercises/{slug}/{locale}/prose-{hash}.json` |
+| Posts (blog, articles, guides) | `/static/content/{kind}/{slug}/{locale}/content-{hash}.html` |
+| Pointer (beside every artifact) | `.../current.json`, `{ "hash": "..." }` |
 
 Bucket `s3://assets`, key prefix `static/`, uploaded with
 `--cache-control 'public, max-age=31536000, immutable' --size-only` (every file is content-hashed,
@@ -239,16 +245,58 @@ because publishing runs in CI here with no front-end checkout.
   catalog missing its inherited keys renders raw key names like `errors.hitWall` to a learner, and on
   R2 it would look exactly like a good one.
 
-### Two artifacts are assembled, not copied
+### Nothing partial ships, and there is no flag to say otherwise
 
-- **Curriculum copy** is one flat slug-keyed catalog per locale, merging every exercise's
-  frontmatter `title`/`description` with the video lessons. Exercises and videos share one
-  collision-free slug namespace; a collision is a hard error.
-- **The app catalog** is the whole 1300-key tree.
+Three artifacts are **assembled from a whole corpus** rather than copied from one file:
 
-Publishing either from a partial corpus would serve a catalog with keys missing, so `publish`
-refuses unless `--allow-partial` is passed. That is the expected state while this repo carries a
-seed corpus.
+- **Curriculum copy**, one flat slug-keyed catalog per locale, merging every exercise's frontmatter
+  `title`/`description` with the video lessons. Exercises and videos share one collision-free slug
+  namespace; a collision is a hard error.
+- **The app catalog**, the whole 1300-key tree.
+- **The exercise prose index**, which names every exercise's prose artifact.
+
+Any of them built from a partial corpus has entries missing, and on R2 that is indistinguishable
+from a good one. All three are **skipped, loudly**, and the run carries on.
+
+Skipping rather than aborting is deliberate: aborting would let one unfinished locale stop every
+finished one from publishing, and on a merge-triggered publish it would turn `main` red on most
+merges. **A run with nothing shippable exits 0** — a green no-op, not a failure.
+
+What there is no way to do is publish one anyway. This used to be a matter of how `publish` was
+invoked (`--allow-partial`, `--allow-incomplete`); it is now a property of the script, which is the
+only place a rule like this survives. That mirrors the English guard, which has never had an
+override.
+
+**Completeness is measured against the real source corpus, not the mirror.** `locales/source/` is a
+subset by design, so measuring against it asks "have you translated everything you imported", which
+any locale satisfies by importing one exercise — and it passed most convincingly exactly when the
+mirror was smallest, which is when it mattered most. `sync-source` records the true per-type corpus
+size in `.manifest.json` as `corpus`, on the same terms as the family map: a fact only the front-end
+holds, captured at sync time so `publish` needs no front-end checkout. **A manifest with no `corpus`
+is treated as unknowable, not as complete**, and the assembled artifacts are skipped.
+
+### Untranslated prose
+
+Prose has three untranslated conventions and `publish` classifies all three before emitting
+anything. Each is skipped and counted, never published:
+
+1. **The sentinel** (`�`). Machine-readable, handled on the catalog path.
+2. **Copied English.** The body is byte-identical to English. Exact, and the most dangerous of the
+   three: it satisfies every structural check trivially, carries a valid staleness stamp, and would
+   publish as a perfectly healthy artifact serving English from a translated URL.
+3. **A translation notice.** Fully translated frontmatter over a one-line body saying the page is
+   not translated yet. Nothing in the file marks it as a placeholder.
+
+The third has no marker of its own, so it is caught **corpus-wide** rather than per-file, by
+`findRepeatedBodies`: group a locale's items by their translated body, and any group with more than
+one member whose English bodies differ is untranslated, all of it. Two items whose English differs
+cannot both have the same correct translation.
+
+That is exact, not heuristic. It has no thresholds, knows no language, and needs no phrase list, so
+it works on the first locale as well as the thirtieth. The alternatives — a per-locale list of
+phrasings, or a length-and-structure score — are respectively stale on contact and only ever
+approximately right. Its one blind spot is a notice used exactly **once** in a locale, which is
+indistinguishable from a very short translation and is left alone.
 
 ### Prose publishing
 
@@ -283,18 +331,71 @@ move under a translation pass, which is the whole failure the version pin exists
 is deliberately no lockfile committed yet, because one generated against a local path would record
 that path; commit it with the version pin.
 
-**Exercise instructions are not an artifact here.** The front-end caches them inside a per-language
-`content-{hash}.json` alongside that exercise's stub and solution, and those are code, which lives
-in the front-end. So `publish` still exports them verbatim to `dist/export/` in the source repos'
-own layout, for its generator to consume. It warns on any that carry `<define>`/`<literal>`
-authoring tags, which a translation should never have received.
+**Posts are rendered here too**, to `/static/content/{kind}/{slug}/{locale}/content-{hash}.html`
+for `kind` in blog, articles and guides, using the renderer package's **second** pipeline,
+`renderPost`. It differs from the concept one in ways that are load-bearing (footnotes, the stock
+highlight.js grammars rather than Jiki's own, image fingerprinting), which is why the package
+exports two configured renderers and neither repo configures Markdown itself. Project episodes are
+**not** published here: their source layout (a UUID directory that is not the slug, metadata in a
+per-episode `config.json`) does not fit this repo's `(type, locale, slug)` coordinates.
 
-### Handing hashes back
+Posts may reference `/images/...`, and the fingerprinted URL contains a hash of the image BYTES,
+which live in the front-end's `content` package. `publish` **resolves** those, lazily and only when
+a post actually references one, and never copies them: English references the same images, so the
+front-end has already published every one at exactly that URL. A translation referencing an image
+English does not is a hard error rather than a dead link.
 
-The front-end resolves a catalog URL from a hash it holds at **build** time
-(`lib/generated/*-hashes.ts`), so a locale published from here is unreachable until the front-end
-learns its hashes. `publish` writes `dist/manifest.json`, and the workflow dispatches it back to the
-front-end.
+**Exercise instructions ARE an artifact here**, which they could not be until recently. The
+front-end used to cache them inside one `content-{hash}.json` per `(slug, locale, language)`
+alongside that exercise's stub and solution — and stubs and solutions are code, which lives in the
+front-end. It now splits them along their real keys, prose by `(slug, locale)` and code by
+`(slug, language)`, so this repo publishes the prose half plus the per-locale prose index that names
+it, and never touches the code half. The index carries `title`, `description` and `proseHash` per
+exercise and deliberately **no code hashes**: an artifact one publisher owns must never need a fact
+only the other knows.
+
+The published bytes are the **prepared** body (trimmed, with `<define>`/`<literal>` stripped), via
+the renderer package's `prepareInstructions`, so they are the bytes the front-end caches. `publish`
+still also exports the authored file verbatim to `dist/export/` in the source repos' own layout, and
+warns on any carrying authoring tags a translation should never have received.
+
+**Category concepts are skipped.** A concept whose body is empty (`arrays-group`, `loops-group`, ...)
+is a heading in the concept tree, not a page, and the front-end renders no HTML for it. The test is
+the empty body rather than the `category` flag, which lives in a `config.json` this repo does not
+mirror.
+
+### Pointers: how a translation goes live without a front-end deploy
+
+Beside every immutable artifact, `publish` writes a mutable **pointer** at a stable path,
+`.../current.json` holding `{ "hash": "..." }`. The front-end resolves a non-English URL by reading
+that pointer at runtime (`app/lib/i18n/catalogPointer.ts`), so publishing a translation is
+rewriting one ~24-byte object rather than rebuilding and redeploying the worker.
+
+**Each pointer object has exactly one writer.** This repo owns every non-English pointer; English
+has none at all, because the front-end compiles its hash in and ships its artifacts atomically with
+the deploy. The front-end does write non-English pointers into its **local** tree so `pnpm dev`
+works without an `i18n` checkout, but excludes them from `static:upload`, so on R2 the single-writer
+rule holds.
+
+Artifacts sync immutably with `--size-only`; pointers are **copied**, never synced (`--size-only`
+compares byte counts and one hash is exactly as long as another), with a short TTL plus a long
+`stale-while-revalidate`. The artifact always lands before the pointer that names it.
+
+`dist/manifest.json` is now a record for humans and CI — what a run published, and which renderer
+version produced the HTML — rather than a hand-back the front-end needs in order to reach a locale.
+
+### Building into a front-end checkout (`--out-dir`)
+
+`node scripts/publish.mjs all --out-dir=<front-end>/app/public` writes the same tree, byte for byte,
+into a local front-end instead of `dist/`. That is what the front-end's `pnpm dev` runs (via
+`app/scripts/generate-i18n-content.js`) so a developer sees translated pages locally, produced by
+this script rather than by a third pipeline.
+
+With `--out-dir` the output directory is **not** wiped first (it is a tree the front-end's own
+generators also write, and wiping it would delete every English artifact), and no `manifest.json`,
+`sync.sh` or upload is produced. The final guard re-walk is also skipped: that tree is full of
+English this repo did not write, and the guard's question is "did *this repo* write English", which
+every key already answered at `emit()`.
 
 ## Relationship to the `translator` repo
 

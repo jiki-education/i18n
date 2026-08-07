@@ -25,6 +25,9 @@
 // `coverage`, `sync-source` and `test` keep running with no `node_modules` at
 // all. Only `publish` needs the install, and only when it reaches prose.
 
+import fs from "node:fs";
+import path from "node:path";
+
 let renderer = null;
 
 async function load() {
@@ -65,4 +68,66 @@ export async function prepareInstructions(markdownBody) {
 export async function rendererVersion() {
   const { RENDERER_VERSION } = await load();
   return RENDERER_VERSION;
+}
+
+/**
+ * Markdown body to the exact HTML Jiki serves for a post (blog, article, guide).
+ *
+ * A different pipeline from `renderConcept`, not a variant of it: posts carry
+ * footnotes, the stock highlight.js grammars rather than Jiki's own, and images.
+ * Both live in the renderer package, so the difference is one both repos share
+ * rather than one either repo invented.
+ */
+export async function renderPostHtml(markdownBody, resolveImage) {
+  const { renderPost } = await load();
+  return renderPost(markdownBody, { resolveImage });
+}
+
+/**
+ * Resolve an authored `/images/...` reference to its fingerprinted URL.
+ *
+ * The URL contains a hash of the image BYTES, and those bytes live in the
+ * front-end's content package, not here. So this needs a source-repo checkout,
+ * and it takes one lazily: a locale whose posts reference no images publishes
+ * with no checkout at all, which is the common case.
+ *
+ * It resolves rather than copies. English references the same images, so the
+ * front-end has already published every one of them at exactly this URL; a
+ * translation that referenced an image English does not is the one case this
+ * cannot serve, and it says so rather than emitting a dead link.
+ */
+export function makeImageResolver(resolveSourceRepo) {
+  const cache = new Map();
+  let sourceRepo = null;
+
+  return (ref) => {
+    if (cache.has(ref)) return cache.get(ref);
+
+    sourceRepo ??= resolveSourceRepo();
+    const relative = ref.slice("/images/".length);
+    const file = path.join(sourceRepo, "content", "images", relative);
+    if (!fs.existsSync(file)) {
+      throw new Error(
+        `image ${ref} is referenced by a translated post but does not exist in the source repo ` +
+          `(looked in ${file}). Only images English also uses can be served: the front-end publishes ` +
+          `the image bytes, this repo only names them.`
+      );
+    }
+
+    const url = postImageUrlSync(relative, fs.readFileSync(file));
+    cache.set(ref, url);
+    return url;
+  };
+}
+
+// The renderer package is loaded lazily everywhere else here, but the image URL
+// is needed synchronously from inside a render, so it is warmed once up front.
+let postImageUrlSync = () => {
+  throw new Error("renderer not loaded; call warmRenderer() before rendering posts");
+};
+
+/** Load the renderer eagerly, so the image resolver can run synchronously. */
+export async function warmRenderer() {
+  const { postImageUrlFromBytes } = await load();
+  postImageUrlSync = postImageUrlFromBytes;
 }

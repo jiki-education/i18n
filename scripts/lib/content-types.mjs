@@ -86,7 +86,15 @@ export const CONTENT_TYPES = {
     sourceRepoPath: (locale, slug) =>
       `curriculum/src/exercises/${slug}/instructions/${sourceName(locale, { markdown: true })}.md`,
     localPath: (slug) => `curriculum/exercises/${slug}/instructions.md`,
-    r2: null
+    // Instructions are cached as Markdown inside a JSON artifact and rendered by
+    // the browser at runtime, so the published bytes are the prepared body (the
+    // trim and the <define>/<literal> strip) and nothing else. `prose` rather
+    // than `content` in the filename because it sits beside a `code-<hash>.json`
+    // holding that exercise's stub and solution, which vary by programming
+    // language and not by locale, and which this repo neither holds nor
+    // publishes. Splitting them along those two keys is what makes translated
+    // instructions publishable from here at all.
+    r2: (locale, slug, hash) => `/static/exercises/${slug}/${locale}/prose-${hash}.json`
   },
 
   "exercise-messages": {
@@ -174,25 +182,52 @@ export const CONTENT_TYPES = {
     r2: (locale, slug, hash) => `/static/i18n/interpreter/${slug}/${locale}/messages-${hash}.json`
   },
 
-  "blog-post": {
-    label: "blog post",
-    format: "markdown",
-    slugged: true,
-    staleness: "frontmatter",
-    frontmatterTranslated: ["title", "excerpt"],
-    // The `content` package holds four post categories (blog, articles, guides,
-    // projects) and a slug here is one directory segment, so this entry covers
-    // the blog only. The broader `content` type that addresses all four needs a
-    // category dimension this map cannot express as a single slug, and it lands
-    // with the shared renderer work. When it does, this entry is superseded by
-    // it rather than kept beside it.
-    sourceRepoPath: (locale, slug) => `content/src/posts/blog/${slug}/${sourceName(locale, { markdown: true })}.md`,
-    localPath: (slug) => `content/posts/blog/${slug}/page.md`,
-    // Posts are served as rendered HTML, produced by the content renderer, on
-    // the same terms as concept pages. See CLAUDE.md § "Prose publishing".
-    r2: null
-  }
+  // --- posts: blog, articles, guides ----------------------------------------
+  //
+  // Three entries rather than one, because the model here is one entry per
+  // LAYOUT and these are three sibling directories in the content package, each
+  // with its own slug namespace. Everything else about them is identical, which
+  // is why they are built from one factory below rather than written out three
+  // times.
+  //
+  // Project episodes are deliberately NOT here. Their source path carries a UUID
+  // directory that is not the slug, and their metadata lives in a per-episode
+  // config.json, so they do not fit the (type, locale, slug) coordinate system
+  // this file is. They stay front-end published until that is worth doing
+  // properly.
+  ...postType("blog"),
+  ...postType("articles"),
+  ...postType("guides")
 };
+
+/**
+ * One `posts/<kind>/` directory as a content type.
+ *
+ * Posts are served as rendered HTML, produced by @jiki.io/content-renderer's
+ * `renderPost` — a different pipeline from the concept one (footnotes, the stock
+ * highlight.js grammars, image fingerprinting), and the same one the front-end's
+ * generate-content-cache.js renders English with, so the two publishers cannot
+ * drift.
+ *
+ * `excerpt` rather than `description`: that is what a post's frontmatter calls
+ * the same thing, and the field names here are the source's, never a
+ * normalisation of it.
+ */
+function postType(kind) {
+  return {
+    [kind]: {
+      label: `${kind} post`,
+      format: "markdown",
+      slugged: true,
+      staleness: "frontmatter",
+      frontmatterTranslated: ["title", "excerpt"],
+      sourceRepoPath: (locale, slug) => `content/src/posts/${kind}/${slug}/${sourceName(locale, { markdown: true })}.md`,
+      localPath: (slug) => `content/posts/${kind}/${slug}/page.md`,
+      r2: (locale, slug, hash) => `/static/content/${kind}/${slug}/${locale}/content-${hash}.html`
+    }
+  };
+}
+
 
 export const CONTENT_TYPE_IDS = Object.keys(CONTENT_TYPES);
 
