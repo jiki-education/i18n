@@ -1,0 +1,54 @@
+{
+  "checks": {
+    "leftCheek": "A bochecha esquerda deve ser um triângulo branco no sítio certo.",
+    "rightCheek": "A bochecha direita deve ser um triângulo branco no sítio certo.",
+    "leftEar": "A orelha esquerda deve ser um triângulo castanho no sítio certo.",
+    "rightEar": "A orelha direita deve ser um triângulo castanho no sítio certo.",
+    "leftFace": "A metade esquerda da cara deve ser um triângulo cor de laranja no sítio certo.",
+    "rightFace": "A metade direita da cara deve ser um triângulo cor de laranja no sítio certo.",
+    "nose": "O nariz precisa de dois triângulos cor de carvão. Podes dividi-lo em cima/baixo ou esquerda/direita.",
+    "leftFaceAboveEar": "A metade esquerda da cara deve ser desenhada **por cima** da orelha esquerda.",
+    "rightFaceAboveEar": "A metade direita da cara deve ser desenhada **por cima** da orelha direita.",
+    "noseAboveFace": "O nariz deve ficar **por cima** da cara."
+  },
+  "tasks": {
+    "drawFox": {
+      "name": "Desenha a cara da raposa",
+      "description": "Usa triângulos para construir uma cara de raposa geométrica sobre o fundo cinzento."
+    }
+  },
+  "scenarios": {
+    "drawFox": {
+      "name": "Desenha a cara da raposa",
+      "description": "Constrói uma cara de raposa geométrica com triângulos."
+    }
+  },
+  "hints": {
+    "callTriangle": {
+      "question": "Como chamo a função `triangle`?",
+      "answer": "Passa 7 argumentos por ordem: os três pontos dos cantos (`x1, y1, x2, y2, x3, y3`) e depois a string da cor, por exemplo `triangle(50, 10, 30, 50, 70, 50, \"orange\")`."
+    },
+    "drawOrder": {
+      "question": "Por que ordem devo desenhar as partes para que se sobreponham corretamente?",
+      "answer": "As formas desenhadas depois ficam por cima das anteriores. Desenha primeiro as bochechas brancas, para que as metades cor de laranja da cara cubram a maior parte delas e deixem só as pontas das bochechas à vista."
+    },
+    "colors": {
+      "question": "Que cores vão em cada parte?",
+      "answer": "As orelhas são `\"brown\"`, as metades da cara são `\"orange\"`, as bochechas são `\"white\"` e o nariz é `\"charcoal\"`. Lembra-te de que as cores são strings, por isso precisam de aspas."
+    },
+    "symmetry": {
+      "question": "Como descubro as coordenadas do lado direito sem passar o rato por cima?",
+      "answer": "A raposa é simétrica em relação ao eixo vertical do meio. Se um ponto do lado esquerdo está em x=`30` e o centro está em x=`50`, o ponto espelhado está em x=`70` (à mesma distância do centro, do outro lado). Os valores de y mantêm-se."
+    },
+    "multiplesOf5": {
+      "question": "Porque é que as minhas coordenadas não funcionam?",
+      "answer": "Todos os valores de que precisas são múltiplos de 5. Se um canto parecer ligeiramente fora do sítio, provavelmente usaste um número como `12` ou `38`. Ajusta-o para o múltiplo de 5 mais próximo (`10`, `15`, `40`, etc.)."
+    }
+  },
+  "functions": {
+    "triangle": {
+      "description": "Desenha um triângulo com três pontos de canto e uma cor",
+      "category": "Desenhar formas"
+    }
+  }
+}

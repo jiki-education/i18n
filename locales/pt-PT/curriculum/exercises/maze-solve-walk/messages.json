@@ -1,0 +1,43 @@
+{
+  "errors": {
+    "walkExpectsNumber": "walk() espera um número de passos"
+  },
+  "describers": {
+    "walk": "Anda para a frente um determinado número de passos"
+  },
+  "checks": {
+    "notReachedEnd": "Não chegaste ao fim do labirinto."
+  },
+  "tasks": {
+    "solveMaze": {
+      "name": "Leva a personagem até ao fim do labirinto",
+      "description": "Percorre o labirinto usando walk(), turnLeft() e turnRight() para chegares à célula verde de destino."
+    }
+  },
+  "scenarios": {
+    "maze1": {
+      "name": "Leva a personagem até ao fim do labirinto",
+      "description": "A tua missão é chegar à meta."
+    }
+  },
+  "hints": {
+    "moveNotWorking": {
+      "question": "Porque é que o `move()` já não funciona?",
+      "answer": "Cada exercício no Jiki tem funções diferentes que podes usar. Neste exercício, tens a função `walk(...)`. Substitui o `n` pelo número de passos que queres andar. Assim, `walk(1)` faz exatamente o mesmo que o `move()` fazia da última vez."
+    }
+  },
+  "functions": {
+    "walk": {
+      "description": "Move a personagem **para a frente o número de passos indicado** na direção atual. Cada passo avança uma célula. A personagem para e comunica um erro se bater numa parede.",
+      "category": "Movimento"
+    },
+    "turnLeft": {
+      "description": "Vira a personagem **90 graus para a esquerda** (no sentido contrário ao dos ponteiros do relógio). Isto muda a direção para onde a personagem está virada.",
+      "category": "Movimento"
+    },
+    "turnRight": {
+      "description": "Vira a personagem **90 graus para a direita** (no sentido dos ponteiros do relógio). Isto muda a direção para onde a personagem está virada.",
+      "category": "Movimento"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "checks": {
+    "notReachedEnd": "Não chegaste ao fim do labirinto.",
+    "tooManyLines": "A tua solução tem demasiadas linhas de código. Procura grupos de chamadas move() consecutivas e substitui cada grupo por um ciclo repeat.",
+    "oneLineOver": "Estás só uma linha acima do limite! Um ciclo repeat nem sempre é mais curto: repetir algo apenas duas ou três vezes pode ocupar mais linhas do que escrever as chamadas uma a uma, por isso procura um repeat que não te esteja realmente a poupar nada."
+  },
+  "tasks": {
+    "solveMazeWithRepeat": {
+      "name": "Reescreve a solução do labirinto com ciclos repeat",
+      "description": "Substitui as chamadas `move()` consecutivas por ciclos repeat para tornares o código mais curto."
+    }
+  },
+  "scenarios": {
+    "mazeRepeat1": {
+      "name": "Reescreve a solução do labirinto com ciclos repeat",
+      "description": "Usa ciclos repeat para evitares chamadas `move()` consecutivas."
+    }
+  },
+  "hints": {
+    "noIdea": {
+      "question": "Não faço ideia do que fazer",
+      "answer": "Procura grupos de chamadas `move()` consecutivas. Por exemplo, em vez de:\n\n```javascript\nmove()\nmove()\nmove()\n```\n\nPodes escrever:\n\n```javascript\nrepeat(3) {\n  move()\n}\n```\n\nEncontra os grupos e substitui-os!"
+    },
+    "tooManyLines": {
+      "question": "Usaste ciclos repeat e mesmo assim tens linhas a mais?",
+      "answer": "Será que usar um repeat é sempre melhor? Nalguns casos, pode ser mais curto ter simplesmente duas chamadas move() seguidas."
+    }
+  },
+  "functions": {
+    "move": {
+      "description": "Move a personagem **um passo em frente** na direção atual. A personagem só se move se a posição de destino não estiver bloqueada por uma parede.",
+      "category": "Movimento"
+    },
+    "turnLeft": {
+      "description": "Vira a personagem **90 graus para a esquerda** (no sentido contrário ao dos ponteiros do relógio). Isto muda a direção para onde a personagem está virada.",
+      "category": "Movimento"
+    },
+    "turnRight": {
+      "description": "Vira a personagem **90 graus para a direita** (no sentido dos ponteiros do relógio). Isto muda a direção para onde a personagem está virada.",
+      "category": "Movimento"
+    }
+  }
+}

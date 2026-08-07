@@ -1,0 +1,43 @@
+{
+  "checks": {
+    "baseCircle": "O círculo da base (em baixo) não está correto.",
+    "bodyCircle": "O círculo do corpo (ao meio) não está correto.",
+    "headCircle": "O círculo da cabeça (em cima) não está correto."
+  },
+  "tasks": {
+    "buildSnowman": {
+      "name": "Constrói o boneco de neve",
+      "description": "Desenha três círculos para construir o boneco de neve."
+    }
+  },
+  "scenarios": {
+    "buildSnowman": {
+      "name": "Constrói o boneco de neve",
+      "description": "Desenha três círculos para construir o boneco de neve."
+    }
+  },
+  "hints": {
+    "howToDrawCircle": {
+      "question": "Como desenho um círculo na tela?",
+      "answer": "Chama `circle(centerX, centerY, radius)`, em que `centerX` e `centerY` são as coordenadas do centro e `radius` é o tamanho do círculo."
+    },
+    "circlesHorizontalPosition": {
+      "question": "Onde devem ficar os círculos na horizontal?",
+      "answer": "Os três círculos partilham o mesmo centro horizontal, por isso o `centerX` é `50` em todos (a tela tem `100` de largura)."
+    },
+    "howToStackCircles": {
+      "question": "Como empilho os três círculos?",
+      "answer": "O círculo da base é o maior e fica perto do fundo (um `centerY` alto). Cada círculo acima tem um `centerY` menor e um `radius` menor."
+    },
+    "whatNumbersForRadii": {
+      "question": "Que números devo usar para os raios?",
+      "answer": "Todos os números neste exercício são divisíveis por `5`. Experimenta um raio de cerca de `20` para a base, `15` para o corpo e `10` para a cabeça, e ajusta até coincidirem com a imagem-alvo."
+    }
+  },
+  "functions": {
+    "circle": {
+      "description": "Desenha um círculo centrado em (centerX, centerY) com o raio indicado",
+      "category": "Desenhar formas"
+    }
+  }
+}

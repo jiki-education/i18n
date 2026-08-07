@@ -1,0 +1,55 @@
+{
+  "checks": {
+    "sun": "O sol não está correto.",
+    "cloudBody": "O corpo da nuvem não está correto.",
+    "leftPuff": "O tufo esquerdo da nuvem não está correto.",
+    "leftCenterPuff": "O tufo central esquerdo da nuvem não está correto.",
+    "rightCenterPuff": "O tufo central direito da nuvem não está correto.",
+    "rightPuff": "O tufo direito da nuvem não está correto.",
+    "rainDrop": "Uma das gotas de chuva não está correta."
+  },
+  "tasks": {
+    "drawScene": {
+      "name": "Desenha o cenário meteorológico",
+      "description": "Cria um cenário meteorológico com um sol amarelo, uma nuvem branca e gotas de chuva azuis."
+    }
+  },
+  "scenarios": {
+    "drawScene": {
+      "name": "Desenha o cenário meteorológico",
+      "description": "Cria o cenário meteorológico completo, com sol, nuvem e chuva."
+    }
+  },
+  "hints": {
+    "cloudShape": {
+      "question": "Como construo a forma fofa da nuvem a partir de formas simples?",
+      "answer": "A nuvem é um retângulo (já desenhado para ti como base) com vários `circle` colocados ao longo da margem superior, para lhe dar o contorno ondulado."
+    },
+    "raindropShape": {
+      "question": "Como faço uma gota de chuva com `ellipse`?",
+      "answer": "As gotas de chuva são altas e finas, por isso o raio vertical é maior do que o horizontal. O raio horizontal é `3` (o único número que não é divisível por 5)."
+    },
+    "sunOnTop": {
+      "question": "Porque é que o meu sol aparece à frente da nuvem?",
+      "answer": "As formas desenhadas mais tarde ficam à frente das anteriores. Desenha primeiro o sol e depois a nuvem, para que a nuvem pareça estar à frente do sol."
+    },
+    "notMatchingTemplate": {
+      "question": "Porque é que o meu desenho não coincide com as linhas do modelo?",
+      "answer": "As tuas formas devem ficar mesmo por dentro das linhas de guia, não em cima delas. Quase todos os números de que precisas são divisíveis por 5, por isso experimenta o múltiplo de 5 mais próximo se uma forma parecer ligeiramente fora do sítio."
+    }
+  },
+  "functions": {
+    "rectangle": {
+      "description": "Desenha um retângulo na posição (esquerda, topo) com a largura, a altura e a cor indicadas",
+      "category": "Desenhar formas"
+    },
+    "circle": {
+      "description": "Desenha um círculo com o centro em (centerX, centerY), com o raio e a cor indicados",
+      "category": "Desenhar formas"
+    },
+    "ellipse": {
+      "description": "Desenha uma elipse com o centro em (centerX, centerY), com o raio horizontal radiusX, o raio vertical radiusY e a cor indicada",
+      "category": "Desenhar formas"
+    }
+  }
+}
