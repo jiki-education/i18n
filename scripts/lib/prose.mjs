@@ -131,3 +131,39 @@ export async function warmRenderer() {
   const { postImageUrlFromBytes } = await load();
   postImageUrlSync = postImageUrlFromBytes;
 }
+
+/** Build the exact search index Jiki serves for one locale and content type. */
+export async function buildSearch(items) {
+  const { buildSearchIndex } = await load();
+  return buildSearchIndex(items);
+}
+
+/**
+ * Estimate reading time exactly as the front-end's generator does.
+ *
+ * Counted over the IMAGE-REWRITTEN body, because that is what the front-end
+ * counts. The two happen to agree either way (a URL is one whitespace-delimited
+ * token before and after the rewrite), but matching the front-end's input rather
+ * than relying on that is the difference between a guarantee and a coincidence.
+ */
+export async function estimateReadingTime(markdownBody, resolveImage) {
+  const { rewriteImageRefs } = await load();
+  const words = rewriteImageRefs(markdownBody, resolveImage).trim().split(/\s+/).length;
+  return Math.max(1, Math.ceil(words / 200));
+}
+
+/**
+ * Frontmatter, parsed by the shared package rather than by this repo's minimal
+ * reader.
+ *
+ * The minimal reader in scripts/lib/files.mjs is still correct for what it was
+ * written for: `en_md5` stamps and flat scalar fields, read by scripts that must
+ * run with no node_modules. But `seo` is a nested mapping and `tags` is a
+ * sequence, and both now travel from frontmatter into a published artifact, so
+ * for anything that reaches the bytes the parser has to be the one the front-end
+ * uses. Publishing already requires the install; nothing else here does.
+ */
+export async function parseFrontmatterShared(source) {
+  const { parseFrontmatter } = await load();
+  return parseFrontmatter(source);
+}

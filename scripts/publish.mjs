@@ -134,6 +134,8 @@ import {
   renderConcept,
   renderPostHtml,
   rendererVersion,
+  estimateReadingTime,
+  parseFrontmatterShared,
   warmRenderer
 } from "./lib/prose.mjs";
 
@@ -256,7 +258,9 @@ async function publishLocale(locale, { exportSources }) {
   for (const typeId of PROSE_TYPE_IDS) {
     for (const item of listItems(typeId, locale)) {
       const key = `${typeId}/${item.slug}`;
-      const { data, body } = parseFrontmatter(readText(item.path));
+      // The SHARED parser: `seo` and `tags` reach a published artifact, so a
+      // reader that returned them as raw strings would move the artifact's hash.
+      const { data, body } = await parseFrontmatterShared(readText(item.path));
       const englishPath = localPath(typeId, SOURCE_LOCALE, item.slug);
       const englishBody = fs.existsSync(englishPath) ? parseFrontmatter(readText(englishPath)).body : "";
       prose.set(key, { key, data, body, englishBody, item });
@@ -399,11 +403,16 @@ async function publishLocale(locale, { exportSources }) {
   // (title, description, the en_md5 staleness stamp) and never reaches the HTML,
   // which is why this repo's own zero-dependency frontmatter parser is enough and
   // the renderer package takes a body rather than a file.
+  // The translated half of the concept index, on the same terms as posts: the
+  // hierarchy, ordering, icon and exercise links are locale-invariant and come
+  // from English config, so the front-end publishes them once and merges.
+  const conceptCopy = {};
+
   manifest.concepts = {};
   for (const item of listItems("concept", locale)) {
     const translated = translatedBody("concept", item);
     if (!translated) continue;
-    const { body } = translated;
+    const { data, body } = translated;
 
     // A CATEGORY concept (arrays-group, loops-group, ...) is a heading in the
     // concept tree, not a page. It carries a title and description and no body,
@@ -417,11 +426,14 @@ async function publishLocale(locale, { exportSources }) {
     if (body.trim().length === 0) continue;
 
     const html = await renderConcept(body);
-    manifest.concepts[item.slug] = emitBytes(
-      artifacts,
-      (hash) => CONTENT_TYPES.concept.r2(locale, item.slug, hash),
-      html
-    );
+    const hash = emitBytes(artifacts, (h) => CONTENT_TYPES.concept.r2(locale, item.slug, h), html);
+    manifest.concepts[item.slug] = hash;
+    conceptCopy[item.slug] = { title: data.title, description: data.description ?? "", contentHash: hash };
+  }
+
+  if (Object.keys(conceptCopy).length > 0) {
+    const sorted = Object.fromEntries(Object.keys(conceptCopy).sort().map((slug) => [slug, conceptCopy[slug]]));
+    manifest.conceptCopy = emit(artifacts, (hash) => `/static/concepts/${locale}/copy-${hash}.json`, sorted);
   }
 
   // --- posts: blog, articles and guides, rendered to HTML ---------------------
@@ -430,18 +442,47 @@ async function publishLocale(locale, { exportSources }) {
   // The resolver takes a source-repo checkout lazily, so a corpus whose posts
   // reference no images publishes without one.
   const resolveImage = makeImageResolver(() => resolveSourceRepo());
+
+  // The translated half of the post metadata index. Its other half (date,
+  // author, cover image, featured/listed/premium/order) comes from English
+  // config.json, does not vary by language, and is published by the front-end as
+  // one locale-invariant object. The two are merged at read time, which is what
+  // lets a locale published from here appear in listings and carry SEO metadata
+  // with no front-end build. Project episodes have no listing index of their own,
+  // so they contribute HTML only.
+  const postCopy = { blog: {}, articles: {}, guides: {} };
+
   for (const typeId of POST_TYPE_IDS) {
     manifest[typeId] = {};
     for (const item of listItems(typeId, locale)) {
       const translated = translatedBody(typeId, item);
       if (!translated) continue;
-      const { body } = translated;
-      manifest[typeId][item.slug] = emitBytes(
+      const { data, body } = translated;
+      const hash = emitBytes(
         artifacts,
         (hash) => CONTENT_TYPES[typeId].r2(locale, item.slug, hash),
         await renderPostHtml(body, resolveImage)
       );
+      manifest[typeId][item.slug] = hash;
+
+      if (postCopy[typeId]) {
+        postCopy[typeId][item.slug] = {
+          title: data.title,
+          excerpt: data.excerpt ?? "",
+          seo: data.seo ?? { description: data.excerpt ?? "", keywords: [] },
+          tags: data.tags ?? [],
+          readingTime: await estimateReadingTime(body, resolveImage),
+          contentHash: hash
+        };
+      }
     }
+  }
+
+  // Sorted, so the bytes move only when the copy does.
+  const sortKeys = (obj) => Object.fromEntries(Object.keys(obj).sort().map((k) => [k, obj[k]]));
+  for (const type of Object.keys(postCopy)) postCopy[type] = sortKeys(postCopy[type]);
+  if (Object.values(postCopy).some((entries) => Object.keys(entries).length > 0)) {
+    manifest.postCopy = emit(artifacts, (hash) => `/static/content/copy/${locale}/copy-${hash}.json`, postCopy);
   }
 
   // --- exercise instructions: one prose artifact each, plus the index ---------

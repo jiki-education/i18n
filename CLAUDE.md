@@ -185,6 +185,8 @@ is why it is pinned and recorded.
 | Levels | `/static/i18n/levels/{locale}/messages-{hash}.json` |
 | Interpreters | `/static/i18n/interpreter/{language}/{locale}/messages-{hash}.json` |
 | Concept pages | `/static/concepts/{slug}/{locale}/content-{hash}.html` |
+| Concept copy (index half) | `/static/concepts/{locale}/copy-{hash}.json` |
+| Post copy (index half) | `/static/content/copy/{locale}/copy-{hash}.json` |
 | Exercise prose index | `/static/exercises/{locale}/index-{hash}.json` |
 | Exercise instructions | `/static/exercises/{slug}/{locale}/prose-{hash}.json` |
 | Posts (blog, articles, guides) | `/static/content/{kind}/{slug}/{locale}/content-{hash}.html` |
@@ -366,6 +368,54 @@ warns on any carrying authoring tags a translation should never have received.
 is a heading in the concept tree, not a page, and the front-end renders no HTML for it. The test is
 the empty body rather than the `category` flag, which lives in a `config.json` this repo does not
 mirror.
+
+### Indexes are split: structure here, copy there
+
+A listing index mixes two different things, and publishing it whole from either
+repo makes the other one's half unreachable. So concepts and posts split exactly
+as the exercise cache does:
+
+- **Structure** is locale-invariant and front-end published. A concept's parent,
+  order, category, child count, icon and exercise links; a post's date, author,
+  cover image and featured/listed/premium/order flags. All of it comes from
+  English `config.json` and none of it varies by language, so one object serves
+  every locale.
+- **Copy** is per locale and published here. A concept's title, description and
+  content hash; a post's title, excerpt, seo, tags, reading time and content
+  hash.
+
+The front-end merges the two at read time and drops any entry a locale has no
+copy for, rather than filling it in from English. That is what lets a locale
+published from here appear in listings and carry SEO metadata with no front-end
+build, which was the last thing that still required one.
+
+**Search indexes are the exception, and it is not an oversight.** Their content
+is entirely translated, but their MEMBERSHIP is structural: the articles index
+contains only `listed` articles and `listed` comes from English config. An index
+built here would either drop that filter or need a fact this repo does not hold,
+so search stays front-end published. The BUILDER moved into
+`@jiki.io/content-renderer` anyway, because a lunr index is a serialised
+structure whose bytes depend on the lunr version, on field order and on boosts,
+so if it ever does move the bytes are already contractual.
+
+**Projects and testimonials stay front-end published too**, for a different
+reason: they are per-locale but are not Markdown. A project's localized title,
+description and tags are locale MAPS inside its own `config.json`, and
+testimonials are a per-locale JSON file. Neither is in the corpus this repo
+mirrors.
+
+### Frontmatter parsing is part of the byte contract
+
+`scripts/lib/files.mjs` has a minimal zero-dependency frontmatter reader, and it
+is still correct for what it was written for: `en_md5` stamps and flat scalar
+fields, read by scripts that must run with no `node_modules`.
+
+It is NOT correct for anything that reaches a published artifact. The copy
+artifacts carry `seo`, a nested mapping, and `tags`, a sequence, straight from
+frontmatter into content-hashed bytes. A reader that returns those as raw
+strings does not produce slightly-wrong metadata, it produces an artifact at a
+hash the front-end never asks for. So `parseFrontmatter` lives in the renderer
+package and both repos use it, on exactly the same terms as the renderers.
 
 ### Pointers: how a translation goes live without a front-end deploy
 
