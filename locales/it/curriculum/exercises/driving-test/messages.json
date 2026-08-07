@@ -5,7 +5,7 @@
   "tasks": {
     "didTheyPass": {
       "name": "Ha superato l'esame?",
-      "description": "Scrivi una funzione che analizza i simboli dell'esame di guida e determina se il candidato ha superato l'esame. Un candidato viene bocciato se ha qualsiasi errore grave (💥) o 5 o più errori minori (❌)."
+      "description": "Scrivi una funzione che analizza i simboli dell'esame di guida e determina se il candidato ha superato l'esame. Un candidato non supera l'esame se ha qualsiasi errore grave (💥) o 5 o più errori minori (❌)."
     },
     "solveInElevenLines": {
       "name": "Risolvi in 12 righe di codice",
@@ -23,7 +23,7 @@
     },
     "oneBigMistake": {
       "name": "Un solo errore grave",
-      "description": "Basta un solo errore grave per essere bocciati!"
+      "description": "Basta un solo errore grave per non superare l'esame!"
     },
     "scrapedThrough": {
       "name": "Per un pelo",
@@ -49,7 +49,7 @@
     },
     "majorFault": {
       "question": "Cosa devo fare quando vedo un 💥 (errore grave)?",
-      "answer": "Un solo errore grave fa bocciare all'esame, a prescindere da cos'altro è successo. Quindi puoi restituire `false` subito appena ne vedi uno. Non c'è bisogno di continuare a guardare."
+      "answer": "Con un solo errore grave non si supera l'esame, a prescindere da cos'altro è successo. Quindi puoi restituire `false` subito appena ne vedi uno. Non c'è bisogno di continuare a guardare."
     },
     "minorCount": {
       "question": "Come gestisco gli errori minori, dove il conteggio è importante?",
