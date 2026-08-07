@@ -6,7 +6,7 @@ en_md5: 629f74899d402283c34d3bfbb17777b8
 
 Questo è un classico esercizio di Exercism sulla biologia molecolare!
 
-Il tuo corpo è fatto di cellule che contengono DNA. Queste cellule si usurano regolarmente e devono essere sostituite, cosa che ottengono dividendosi in cellule figlie. Infatti, il corpo umano medio vive circa 10 biliardi di divisioni cellulari nell'arco di una vita!
+Il tuo corpo è fatto di cellule che contengono DNA. Queste cellule si usurano regolarmente e devono essere sostituite, cosa che ottengono dividendosi in cellule figlie. Infatti, il corpo umano medio sperimenta circa 10 biliardi di divisioni cellulari nell'arco di una vita!
 
 Quando le cellule si dividono, anche il loro DNA si replica. A volte, durante questo processo, si verificano errori e singoli pezzi di DNA vengono codificati con l'informazione sbagliata. Se confrontiamo due filamenti di DNA e contiamo le differenze tra loro, possiamo vedere quanti errori si sono verificati. Questa è nota come "distanza di Hamming".
 
