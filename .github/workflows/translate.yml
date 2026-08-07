@@ -1,0 +1,136 @@
+# Dispatch-receive → sync → translate → validate → commit → publish → dispatch-back.
+#
+# The source repo (front-end) fires a `repository_dispatch` when English changes
+# on main. It sends coordinates, never content: `en.json` alone is 94KB and a
+# repository_dispatch payload is capped well below that, so this workflow checks
+# out the SHA it was told about and reads English from there.
+#
+# Payload contract (client_payload):
+#   repo      string   the source repo, e.g. "jiki/front-end"
+#   sha       string   the commit to read English from
+#   pr        number   the PR that landed it, for the report comment (optional)
+#   packages  string[] which packages changed: app | curriculum | interpreters | content
+#   mode      string   outdated | all | missing, passed straight to translate
+#
+# `all` is what the front-end sends after a glossary or guide change, because
+# those do not touch English and so are invisible to the staleness stamps.
+
+name: Translate
+
+on:
+  repository_dispatch:
+    types: [source-changed]
+  workflow_dispatch:
+    inputs:
+      sha:
+        description: front-end SHA to read English from (default: main)
+        required: false
+        default: main
+      mode:
+        description: outdated | all | missing
+        required: false
+        default: outdated
+      locales:
+        description: comma-separated target locales, or "all"
+        required: false
+        default: all
+
+concurrency:
+  # One translate run at a time. Two concurrent runs would race on the same
+  # locales/<locale>/ files and the survivor's wording would be whichever
+  # finished last, which is the same contention the translator repo avoids by
+  # allowing exactly one writer per (family, language).
+  group: translate
+  cancel-in-progress: false
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out this repo
+        uses: actions/checkout@v4
+
+      - name: Check out the front-end at the dispatched SHA
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.client_payload.repo || 'jiki/front-end' }}
+          ref: ${{ github.event.client_payload.sha || inputs.sha || 'main' }}
+          token: ${{ secrets.SOURCE_REPO_TOKEN }}
+          path: .source/front-end
+
+      - name: Check out the translator repo
+        uses: actions/checkout@v4
+        with:
+          repository: jiki/translator
+          token: ${{ secrets.SOURCE_REPO_TOKEN }}
+          path: .source/translator
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # One-way. This is the only step that reads the front-end checkout, and
+      # nothing in this repo ever writes back to it.
+      - name: Sync English
+        env:
+          JIKI_SOURCE_REPO: .source/front-end
+        run: node scripts/sync-source.mjs
+
+      - name: Stub new keys across every locale
+        run: node scripts/stub.mjs all
+
+      - name: Translate
+        env:
+          JIKI_TRANSLATOR_REPO: .source/translator
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          node scripts/translate.mjs "${{ github.event.client_payload.locales || inputs.locales || 'all' }}" \
+            --mode="${{ github.event.client_payload.mode || inputs.mode || 'outdated' }}"
+
+      # translate already runs this, but re-running with --no-stamp proves the
+      # committed state passes on its own rather than only as a side effect.
+      - name: Validate
+        run: node scripts/validate.mjs all --no-stamp
+
+      - name: Commit
+        id: commit
+        run: |
+          git config user.name "jiki-i18n[bot]"
+          git config user.email "i18n@jiki.io"
+          git add locales
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "Translate: ${{ github.event.client_payload.repo || 'front-end' }}@${{ github.event.client_payload.sha || 'main' }}
+
+          Triggered by ${{ github.event.client_payload.repo || 'manual dispatch' }}.
+          Mode: ${{ github.event.client_payload.mode || inputs.mode || 'outdated' }}."
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Publish
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: node scripts/publish.mjs all --upload
+
+      # The front-end resolves a catalog URL from a hash it holds at build time,
+      # so a locale published here is unreachable until the front-end learns its
+      # hashes. This hands them back.
+      - name: Tell the front-end the new hashes
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.SOURCE_REPO_TOKEN }}
+        run: |
+          gh api "repos/${{ github.event.client_payload.repo || 'jiki/front-end' }}/dispatches" \
+            -f event_type=i18n-published \
+            -F client_payload[sha]="$(git rev-parse HEAD)" \
+            -F client_payload[manifest]="$(jq -c . dist/manifest.json)"
+
+      - name: Coverage report
+        if: always()
+        run: node scripts/coverage.mjs
