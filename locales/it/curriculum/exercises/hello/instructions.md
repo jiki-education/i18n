@@ -8,8 +8,8 @@ Nei prossimi due esercizi continueremo ad esercitarci a creare funzioni e inizie
 
 Per prima cosa vediamo il caso più semplice.
 
-Il tuo compito è creare una funzione di nome `sayHello(name)` (dire ciao col nome).
+Il tuo compito è creare una funzione di nome `sayHello(name)` (salutare usando il nome).
 
 Dovrebbe restituire un saluto per la persona: quindi, se scrivi `sayHello("Jeremy")`, la funzione dovrebbe restituire `"Hello, Jeremy!"`. Se scrivi `sayHello("Nicole")`, dovrebbe restituire `"Hello, Nicole!"`.
 
-Speriamo che questo esercizio sia veloce e getti le basi per il prossimo, più interessante.
+Questo esercizio dovrebbe essere veloce e gettare le basi per il prossimo, più interessante.
