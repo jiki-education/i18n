@@ -6,7 +6,7 @@ en_md5: fcd146eb38b49d8e4d096bff02e91ea7
 
 Quando fai l'esame di guida nel Regno Unito, vieni valutato in diverse aree come osservazioni, abilità tecniche, parcheggio e così via.
 
-Puoi fare alcune infrazioni minori ma non quelle gravi. Se commetti un errore grave, o 5 o più errori minori, non superi l'esame. Altrimenti, passi alla prova pratica su strada!
+Puoi commettere alcune infrazioni minori ma non quelle gravi. Se commetti un errore grave, o 5 o più errori minori, non superi l'esame. Altrimenti, passi alla prova di guida!
 
 Quando non svolgi il tuo lavoro principale, supervisioni gli esami di guida. Mentre il candidato guida, prendi appunti su ogni area:
 
