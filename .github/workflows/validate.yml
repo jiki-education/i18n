@@ -43,7 +43,7 @@ jobs:
       # Builds every artifact and re-runs the English-prefix guard over the
       # finished tree, without uploading anything.
       - name: Publish dry run
-        run: node scripts/publish.mjs all --allow-partial --allow-incomplete
+        run: node scripts/publish.mjs all
 
       - name: Coverage
         if: always()
