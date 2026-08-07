@@ -170,6 +170,25 @@ export const CONTENT_TYPES = {
       `interpreters/src/${slug}/locales/${sourceName(locale, { markdown: false })}/translation.json`,
     localPath: (slug) => `interpreters/${slug}/messages.json`,
     r2: (locale, slug, hash) => `/static/i18n/interpreter/${slug}/${locale}/messages-${hash}.json`
+  },
+
+  "blog-post": {
+    label: "blog post",
+    format: "markdown",
+    slugged: true,
+    staleness: "frontmatter",
+    frontmatterTranslated: ["title", "excerpt"],
+    // The `content` package holds four post categories (blog, articles, guides,
+    // projects) and a slug here is one directory segment, so this entry covers
+    // the blog only. The broader `content` type that addresses all four needs a
+    // category dimension this map cannot express as a single slug, and it lands
+    // with the shared renderer work. When it does, this entry is superseded by
+    // it rather than kept beside it.
+    sourceRepoPath: (locale, slug) => `content/src/posts/blog/${slug}/${sourceName(locale, { markdown: true })}.md`,
+    localPath: (slug) => `content/posts/blog/${slug}/page.md`,
+    // Posts are served as rendered HTML, produced by the content renderer, on
+    // the same terms as concept pages. See CLAUDE.md § "Prose publishing".
+    r2: null
   }
 };
 

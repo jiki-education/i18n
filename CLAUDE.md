@@ -59,6 +59,8 @@ locales/
       exercise-categories/<family>/messages.json   <- .../exercise-categories/<family>/locales/en/translation.json
     interpreters/
       <language>/messages.json                     <- interpreters/src/<language>/locales/en/translation.json
+    content/
+      posts/blog/<slug>/page.md                    <- content/src/posts/blog/<slug>/source.md
   hu/                                              one directory per target locale, same shape
     app/messages.json
     curriculum/
@@ -69,8 +71,9 @@ locales/
       video-lessons/messages.json + messages.meta.json
       badges/messages.json + messages.meta.json
       levels/messages.json + messages.meta.json
-      exercise-categories/draw/messages.json + messages.meta.json
+      exercise-categories/maze/messages.json + messages.meta.json
     interpreters/javascript/messages.json + messages.meta.json
+    content/posts/blog/<slug>/page.md
 ```
 
 - **The one place that mapping lives is `scripts/lib/content-types.mjs`.** Adding a content type is
@@ -244,8 +247,8 @@ seed corpus.
 
 ### Prose publishing
 
-Concept pages and exercise instructions are served as rendered **HTML**, produced by the curriculum
-renderer. `publish` writes them into `dist/export/` in the source repos' own layout so that renderer
+Concept pages, exercise instructions and blog posts are served as rendered **HTML**, produced by the
+curriculum renderer. `publish` writes them into `dist/export/` in the source repos' own layout so that renderer
 can consume them unchanged. Rendering Markdown to the front-end's exact HTML from here is not yet
 implemented; doing it in two places would be two renderers.
 

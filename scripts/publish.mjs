@@ -56,11 +56,11 @@
 //
 // ## Prose
 //
-// Concept pages and exercise instructions are served as rendered HTML
-// (/static/concepts/<slug>/<locale>/content-<hash>.html), produced by the
-// curriculum renderer, not here. This script writes them into dist/export/ in the
-// source repos' own layout so that renderer can consume them unchanged. See
-// CLAUDE.md § "Prose publishing".
+// Concept pages, exercise instructions and blog posts are served as rendered
+// HTML (/static/concepts/<slug>/<locale>/content-<hash>.html), produced by the
+// renderer, not here. This script writes them into dist/export/ in the source
+// repos' own layout so that renderer can consume them unchanged. See CLAUDE.md
+// § "Prose publishing".
 
 import fs from "node:fs";
 import path from "node:path";
@@ -189,7 +189,7 @@ function publishLocale(locale, { allowPartial, allowIncomplete }) {
 
   // --- prose, exported for the curriculum renderer ---------------------------
   let exported = 0;
-  for (const typeId of ["concept", "exercise-instructions"]) {
+  for (const typeId of ["concept", "exercise-instructions", "blog-post"]) {
     const type = contentType(typeId);
     for (const item of listItems(typeId, locale)) {
       const to = path.join(DIST, "export", type.sourceRepoPath(locale, item.slug));
