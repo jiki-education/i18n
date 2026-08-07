@@ -1,5 +1,5 @@
 ---
-title: "Érdemes még megtanulni programozni 2026-ban?"
+title: "Érdemes még megtanulni programozni 2026-ban? [élő teszt]"
 excerpt: "2026 van, és a Claude másodpercek alatt jobb kódot ír nálam. Akkor minek megtanulni programozni? Mert még mindig elég jól kell tudnod olvasni a kódot ahhoz, hogy kiszúrd a hibákat, amelyeket az LLM-ek magabiztosan elkövetnek."
 tags: ["jiki", "learn-to-code", "llms", "beginners"]
 seo:
