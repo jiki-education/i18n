@@ -13,6 +13,7 @@
 import assert from "node:assert/strict";
 import { deepMerge, mergeExerciseCatalogs } from "./lib/families.mjs";
 import { contentHash } from "./lib/files.mjs";
+import { findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
 
 let failures = 0;
 
@@ -94,6 +95,68 @@ test("the published set is the union of both sides, sorted", () => {
   const own = new Map([["bouncer-dress-code", {}], ["maze-walk", {}]]);
   const merged = mergeExerciseCatalogs({ families, own, baseFor: () => mazeBase });
   assert.deepEqual(merged.map((entry) => entry.slug), ["bouncer-dress-code", "maze-turn-around", "maze-walk"]);
+});
+
+
+// -------------------------------------------------------- untranslated prose
+
+// Prose has three untranslated conventions and publishing any of them serves
+// English, or an apology, from a URL a reader reached by asking for their own
+// language. The sentinel is covered by the catalog checks; these cover the other
+// two, which are the ones with no marker in the file.
+
+console.log("\nuntranslated prose:");
+
+test("a body byte-identical to English is untranslated", () => {
+  assert.equal(isCopiedEnglish("Roll the ball.", "Roll the ball."), true);
+});
+
+test("leading and trailing whitespace is not a translation", () => {
+  assert.equal(isCopiedEnglish("Roll the ball.", "\n  Roll the ball.  \n"), true);
+});
+
+test("a real translation is not flagged", () => {
+  assert.equal(isCopiedEnglish("Roll the ball.", "Gurítsd el a labdát."), false);
+});
+
+test("two empty bodies are not evidence of anything", () => {
+  // A category concept has no body in either language, and is skipped for being
+  // empty rather than for being untranslated.
+  assert.equal(isCopiedEnglish("", ""), false);
+});
+
+test("one placeholder body reused across items is untranslated, all of it", () => {
+  const repeated = findRepeatedBodies([
+    { key: "blog/a", englishBody: "A long English post.", targetBody: "Ez az oldal még nincs lefordítva." },
+    { key: "blog/b", englishBody: "A different English post.", targetBody: "Ez az oldal még nincs lefordítva." },
+    { key: "blog/c", englishBody: "A third English post.", targetBody: "Egy igazi fordítás." }
+  ]);
+  assert.deepEqual([...repeated].sort(), ["blog/a", "blog/b"]);
+});
+
+test("identical translations of identical English are correct, not evidence", () => {
+  // Two items whose English is the same SHOULD translate the same way. Flagging
+  // that would suppress a correct translation, which is worse than missing one.
+  const repeated = findRepeatedBodies([
+    { key: "blog/a", englishBody: "Coming soon.", targetBody: "Hamarosan." },
+    { key: "blog/b", englishBody: "Coming soon.", targetBody: "Hamarosan." }
+  ]);
+  assert.equal(repeated.size, 0);
+});
+
+test("a body used exactly once is left alone", () => {
+  const repeated = findRepeatedBodies([
+    { key: "blog/a", englishBody: "A long English post.", targetBody: "Rövid." }
+  ]);
+  assert.equal(repeated.size, 0);
+});
+
+test("empty bodies never group together", () => {
+  const repeated = findRepeatedBodies([
+    { key: "concept/a-group", englishBody: "", targetBody: "" },
+    { key: "concept/b-group", englishBody: "", targetBody: "" }
+  ]);
+  assert.equal(repeated.size, 0);
 });
 
 // ------------------------------------------------------------------- result

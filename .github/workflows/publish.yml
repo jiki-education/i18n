@@ -1,0 +1,67 @@
+# The only thing that writes to R2.
+#
+# Every route into this repo ends at a commit on main: a translation pass commits
+# there, a human merges a PR there. So publishing on push to main means there is
+# exactly one publish path, and everything that reaches the bucket has been
+# through validate first.
+#
+# Nothing is ever published partially. A locale carrying sentinels, or an artifact
+# assembled from a corpus this repo holds only a slice of, is skipped and logged.
+# publish.mjs owns that rule and offers no flag to loosen it, so it cannot be
+# loosened by how this workflow invokes it.
+#
+# A run that finds nothing shippable succeeds. Most merges are translation work in
+# progress, and a red main on every one of them would train everybody to ignore it.
+
+name: Publish
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "locales/**"
+      - "scripts/**"
+      - "locales.json"
+      - ".github/workflows/publish.yml"
+
+# Artifacts are immutable and content-hashed, so two runs uploading the same bytes
+# is harmless. Pointers are not: they are the one mutable object, and two runs
+# flipping them in either order could leave a pointer naming an older artifact than
+# the commit that ran last. Serialise, and never cancel a run mid-upload.
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # Only prose publishing has dependencies: it renders Markdown through the
+      # same package the front-end uses, so the HTML matches byte for byte. The
+      # rest of scripts/ is dependency-free and would run without this.
+      - name: Install
+        run: npm ci
+
+      # The same gate the PR ran, re-run against what actually landed on main.
+      # A merge can produce a tree neither PR had.
+      - name: Validate
+        run: node scripts/validate.mjs all --no-stamp
+
+      # Builds every artifact plus the pointer beside it, then uploads: artifacts
+      # first, pointers second, so a pointer never names an object that is not
+      # there yet. dist/ is rebuilt from the tree, never committed.
+      - name: Publish
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: node scripts/publish.mjs all --upload
+
+      - name: Coverage
+        if: always()
+        run: node scripts/coverage.mjs

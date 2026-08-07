@@ -1,4 +1,12 @@
-# Dispatch-receive → sync → translate → validate → commit → publish → dispatch-back.
+# Dispatch-receive → sync → translate → validate → commit.
+#
+# This workflow never uploads. Its commit lands on main, and the push to main is
+# what publishes (see publish.yml). One writer, one path, and everything that
+# reaches R2 has been through the same gate.
+#
+# It also hands nothing back to the front-end. The front-end resolves a catalog's
+# hash at runtime from the pointer published beside it, so a locale published here
+# is reachable without the front-end learning anything or being redeployed.
 #
 # The source repo (front-end) fires a `repository_dispatch` when English changes
 # on main. It sends coordinates, never content: `en.json` alone is 94KB and a
@@ -110,26 +118,6 @@ jobs:
           Mode: ${{ github.event.client_payload.mode || inputs.mode || 'outdated' }}."
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
-
-      - name: Publish
-        if: steps.commit.outputs.changed == 'true'
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-        run: node scripts/publish.mjs all --upload
-
-      # The front-end resolves a catalog URL from a hash it holds at build time,
-      # so a locale published here is unreachable until the front-end learns its
-      # hashes. This hands them back.
-      - name: Tell the front-end the new hashes
-        if: steps.commit.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.SOURCE_REPO_TOKEN }}
-        run: |
-          gh api "repos/${{ github.event.client_payload.repo || 'jiki/front-end' }}/dispatches" \
-            -f event_type=i18n-published \
-            -F client_payload[sha]="$(git rev-parse HEAD)" \
-            -F client_payload[manifest]="$(jq -c . dist/manifest.json)"
 
       - name: Coverage report
         if: always()

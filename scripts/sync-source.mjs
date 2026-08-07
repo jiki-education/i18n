@@ -185,13 +185,36 @@ function main() {
     }
   }
 
+  // How big the REAL English corpus is, per type, as opposed to how much of it
+  // this repo has imported. Recorded for the same reason the family map is: it
+  // is a fact only the front-end holds, and publish must know it without a
+  // front-end checkout.
+  //
+  // What it prevents is a specific and quiet failure. Some artifacts are
+  // assembled from a whole corpus (the merged curriculum copy, the exercise
+  // prose index), and publish refuses to ship one that is missing entries. It
+  // used to measure that against the mirror in locales/source/, which is a
+  // SUBSET, so a locale that had translated everything the mirror held looked
+  // complete and published an index covering a fraction of the real exercise
+  // tree. The check passed most convincingly exactly when it mattered most:
+  // the smaller the mirror, the more certainly it said "complete".
+  //
+  // Recomputed on every run, including a single --type/--slug sync, because it
+  // is a directory listing per type and a stale denominator is the bug.
+  const corpus = Object.fromEntries(
+    CONTENT_TYPE_IDS.map((typeId) => [typeId, discoverItems(sourceRepo, typeId).length]).filter(([, n]) => n > 0)
+  );
+
   const next = {
     $comment:
       "Written by scripts/sync-source.mjs. `files` is the md5 of every mirrored English file, " +
-      "used by the divergence guard; `items` is the corpus this repo has imported; `families` maps " +
-      "each imported exercise to its exercise-category base, or null when it has none. Do not hand-edit.",
+      "used by the divergence guard; `items` is the corpus this repo has imported; `corpus` is how " +
+      "many items of each type exist in the source repo, which is what publish measures " +
+      "completeness against; `families` maps each imported exercise to its exercise-category base, " +
+      "or null when it has none. Do not hand-edit.",
     syncedFrom: path.basename(sourceRepo),
     syncedAt: new Date().toISOString(),
+    corpus,
     items: [...tracked.values()].sort((a, b) => `${a.type}${a.slug}`.localeCompare(`${b.type}${b.slug}`)),
     families: Object.fromEntries(Object.entries(families).sort(([a], [b]) => a.localeCompare(b))),
     files: Object.fromEntries(Object.entries(files).sort(([a], [b]) => a.localeCompare(b)))

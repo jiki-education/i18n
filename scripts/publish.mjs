@@ -3,11 +3,15 @@
 // publish — build the content-hashed artifacts and prepare the R2 sync.
 //
 // Usage:
-//   node scripts/publish.mjs [<locale|all>] [--allow-partial] [--allow-incomplete] [--upload]
+//   node scripts/publish.mjs [<locale|all>] [--upload] [--out-dir=<path>]
 //
 // Examples:
-//   node scripts/publish.mjs hu                # build into dist/, print the plan
-//   node scripts/publish.mjs all --upload      # ...and run the aws s3 sync
+//   node scripts/publish.mjs hu                     # build into dist/, print the plan
+//   node scripts/publish.mjs all --upload           # ...and run the aws s3 sync
+//   node scripts/publish.mjs all --out-dir=../front-end/app/public/static
+//                                                   # ...write the same tree locally instead
+//
+// There are no flags that loosen what gets published. See "Nothing partial ships".
 //
 // ## The path convention is the front-end's, byte for byte
 //
@@ -18,6 +22,16 @@
 // `JSON.stringify(parsed)` (compact, no whitespace), so source formatting cannot
 // move a hash. Those two sides must stay in lockstep; scripts/lib/content-types.mjs
 // is where this half of it lives.
+//
+// ## Pointers, and why they exist
+//
+// Beside every immutable artifact this writes a mutable pointer at a stable
+// path, `.../current.json` holding `{ "hash": "..." }`. The front-end resolves a
+// non-English catalog URL by reading that pointer at runtime, so publishing a
+// translation is rewriting one small object, not rebuilding and redeploying the
+// worker. Each pointer object has exactly ONE writer, so the two repos cannot
+// lose each other's updates: this repo owns every non-English pointer, and
+// English has none at all (see the English guard below).
 //
 // ## The English guard
 //
@@ -33,19 +47,27 @@
 // The front-end publishes English itself, atomically with its worker deploy, so
 // the code and the copy it renders go live together.
 //
-// ## Partial catalogs
+// ## Nothing partial ships, and there is no flag to say otherwise
 //
-// Two artifacts are assembled from a whole corpus rather than one file: the app
-// UI catalog (the full 1300-key tree) and the merged curriculum copy catalog
-// (every exercise's frontmatter plus every video lesson). Publishing either from
-// a partial import would serve a catalog with keys missing, so this refuses
-// unless --allow-partial is passed. That is the expected state while this repo
-// carries a seed corpus rather than the full one.
+// Two kinds of artifact can be incomplete, and neither is publishable:
 //
-// Separately, a catalog still holding the untranslated sentinel is not servable
-// and is refused. --allow-incomplete downgrades that one refusal to a loud skip,
-// for a dry run over a partly translated corpus. Neither flag touches the English
-// guard, which has no override.
+//   - ASSEMBLED FROM A CORPUS. The app UI catalog, the merged curriculum copy
+//     catalog and the exercise prose index are each built from a whole corpus
+//     rather than one file, so a partial import produces an artifact with entries
+//     missing. On R2 that is indistinguishable from a good one.
+//   - STILL CARRYING THE SENTINEL. A catalog holding the untranslated sentinel
+//     renders a visible replacement glyph to a learner.
+//
+// Both are SKIPPED, loudly, and the run carries on. Skipping is deliberate on
+// both counts. Aborting would let one unfinished locale stop every finished one
+// from publishing, and on a merge-triggered publish it would turn main red on
+// most merges. A run with nothing shippable exits 0: a green no-op, not a
+// failure.
+//
+// What there is no way to do is publish either anyway. This used to be a matter
+// of how the script was invoked (--allow-partial, --allow-incomplete); it is now
+// a property of the script, which is the only place a rule like this survives.
+// That mirrors the English guard, which has never had an override.
 //
 // ## Exercise families
 //
@@ -56,11 +78,28 @@
 //
 // ## Prose
 //
-// Concept pages and exercise instructions are served as rendered HTML
-// (/static/concepts/<slug>/<locale>/content-<hash>.html), produced by the
-// curriculum renderer, not here. This script writes them into dist/export/ in the
-// source repos' own layout so that renderer can consume them unchanged. See
-// CLAUDE.md § "Prose publishing".
+// Concept pages are rendered here, to /static/concepts/<slug>/<locale>/content-<hash>.html,
+// using @jiki.io/content-renderer. That is the same package the front-end's
+// generate-concept-cache.js renders English with, and the pinned version is the
+// byte-identity contract between the two: the filename IS the hash of the bytes,
+// so HTML that differs by one character sits at a URL the front-end never asks
+// for. The version used is recorded in dist/manifest.json.
+//
+// Exercise instructions ARE an artifact here, which they could not be while an
+// exercise's cached content was one file holding instructions, stub and solution
+// together: stubs and solutions are code, which lives in the front-end and not in
+// this repo. The front-end now splits them along their real keys, prose by
+// (slug, locale) and code by (slug, language), so this publishes the prose half
+// plus the per-locale prose index that names it, and never touches the code half.
+//
+// Posts are rendered here too, with renderPost, the renderer package's second
+// pipeline. That includes project episodes: their UUID directory is a
+// namespacing device, not a different coordinate system, so their slug is simply
+// two parts rather than one. See scripts/lib/content-types.mjs.
+//
+// Instructions are still ALSO exported to dist/export/ in the source repo's
+// layout, for tooling that wants the authored file rather than the published
+// bytes. See CLAUDE.md § "Prose publishing".
 
 import fs from "node:fs";
 import path from "node:path";
@@ -76,17 +115,82 @@ import {
   assertTargetLocale,
   fail
 } from "./lib/constants.mjs";
-import { CONTENT_TYPES, FAMILY_TYPE_ID, contentType, listItems, localPath } from "./lib/content-types.mjs";
+import {
+  CONTENT_TYPES,
+  FAMILY_TYPE_ID,
+  contentType,
+  listItems,
+  localPath,
+  resolveSourceRepo
+} from "./lib/content-types.mjs";
 import { mergeExerciseCatalogs } from "./lib/families.mjs";
 import { contentHash, flatten, parseFrontmatter, readJson, readText } from "./lib/files.mjs";
+import { findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 import { parseArgs } from "./lib/args.mjs";
+import {
+  makeImageResolver,
+  prepareInstructions,
+  renderConcept,
+  renderPostHtml,
+  rendererVersion,
+  estimateReadingTime,
+  parseFrontmatterShared,
+  warmRenderer
+} from "./lib/prose.mjs";
 
-const DIST = path.join(REPO_ROOT, "dist");
+// Where the tree is written. `dist/` for a publish; a front-end's
+// public/static/ for a local dev build (--out-dir). Deliberately ONE generation
+// path with two destinations rather than two code paths: the local tree is only
+// worth having if it is the tree that would have been uploaded, byte for byte.
+let DIST = path.join(REPO_ROOT, "dist");
 
-/** Write one artifact, hashed the front-end's way, with the guard in front of it. */
+/**
+ * Every post type published from here, in content-types.mjs order.
+ *
+ * Project episodes are in this list like anything else. Their slug is two parts
+ * ("<project>/<uuid>") rather than one, and that is the whole of the difference:
+ * content-types.mjs expresses it with slugDepth, so nothing downstream special
+ * cases them.
+ */
+const POST_TYPE_IDS = ["blog", "articles", "guides", "project-episodes"];
+
+/** Every markdown type, which is every type the untranslated-prose rules apply to. */
+const PROSE_TYPE_IDS = ["concept", "exercise-instructions", ...POST_TYPE_IDS];
+
+/** The mutable pointer that sits beside an artifact: `.../messages-<hash>.json` -> `.../current.json`. */
+const pointerKeyFor = (artifactKey) => `${path.dirname(artifactKey)}/current.json`;
+
+/**
+ * Write one artifact, hashed the front-end's way, with the guard in front of it.
+ *
+ * Every artifact gets a POINTER written beside it: a tiny mutable `current.json`
+ * holding `{ "hash": "<this artifact's hash>" }` at a stable URL. The artifact
+ * stays immutable and content-addressed; the pointer is what moves.
+ *
+ * That indirection is what makes this repo independent of the front-end's
+ * release cycle. Without it the front-end can only reach an artifact whose hash
+ * was compiled into the worker at build time, so a locale published here is
+ * invisible until the front-end rebuilds and redeploys. With it, rewriting one
+ * ~24-byte object publishes a translation.
+ *
+ * The English guard applies to the pointer exactly as it does to the artifact,
+ * so this can no more overwrite English's pointer than English's catalog. In
+ * practice English has no pointer at all: the front-end compiles its hash in and
+ * ships the catalog with the deploy, so its render path never looks one up.
+ */
 function emit(artifacts, r2Path, value) {
-  const content = JSON.stringify(value);
+  return emitBytes(artifacts, r2Path, JSON.stringify(value));
+}
+
+/**
+ * Write one artifact from bytes that are already final.
+ *
+ * Catalogs go through emit(), which serialises them; rendered HTML is already a
+ * string and must not be JSON-encoded on the way past. Both hash exactly what
+ * reaches disk, which is the only rule that matters: the filename is that hash.
+ */
+function emitBytes(artifacts, r2Path, content) {
   const hash = contentHash(content);
   const resolved = typeof r2Path === "function" ? r2Path(hash) : r2Path;
   const key = assertPublishableKey(resolved);
@@ -95,45 +199,108 @@ function emit(artifacts, r2Path, value) {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, content);
   artifacts.push({ key, hash, bytes: content.length });
+
+  const pointerKey = assertPublishableKey(pointerKeyFor(key));
+  const pointer = `${JSON.stringify({ hash })}\n`;
+  fs.writeFileSync(path.join(DIST, pointerKey), pointer);
+  artifacts.push({ key: pointerKey, hash, bytes: pointer.length, pointer: true });
+
   return hash;
 }
 
 /**
- * Refuse to serve a catalog that still contains the untranslated sentinel.
+ * Whether a catalog is free of the untranslated sentinel, and therefore servable.
  *
- * `--allow-incomplete` downgrades this to a loud skip, for a dry run that wants
- * to exercise the rest of the pipeline on a partly translated corpus. It does
- * NOT touch the English guard, which has no override at all.
+ * A catalog that still holds it is SKIPPED, loudly, and the run continues. There
+ * is no flag to publish it anyway, and no flag to make this abort instead: one
+ * unfinished locale must not stop every finished one from shipping.
  *
  * Returns false when the artifact must be skipped.
  */
-function checkNoSentinels(label, value, allowIncomplete) {
+function checkNoSentinels(label, value) {
   const stubbed = Object.entries(flatten(value)).filter(([, v]) => v === SENTINEL);
   if (stubbed.length === 0) return true;
 
-  const message =
-    `${label}: ${stubbed.length} keys are still the untranslated sentinel "${SENTINEL}" ` +
-    `(first: ${stubbed[0][0]}). The sentinel renders as a visible replacement glyph, so this ` +
-    `catalog is not servable. Run \`node scripts/coverage.mjs\` to see what is left.`;
-
-  if (!allowIncomplete) fail(message);
-  console.log(`  SKIPPED ${message}`);
+  console.log(
+    `  SKIPPED ${label}: ${stubbed.length} keys are still the untranslated sentinel "${SENTINEL}" ` +
+      `(first: ${stubbed[0][0]}). The sentinel renders as a visible replacement glyph, so this ` +
+      `catalog is not servable. Run \`node scripts/coverage.mjs\` to see what is left.`
+  );
   return false;
 }
 
-function publishLocale(locale, { allowPartial, allowIncomplete }) {
+async function publishLocale(locale, { exportSources }) {
   const artifacts = [];
   const manifest = {};
   const sliced = new Set(readSlicedTypes());
+  // --- what is actually translated -------------------------------------------
+  //
+  // Prose has THREE untranslated conventions and none of them is a missing file.
+  // All three are classified here, once, before anything is emitted:
+  //
+  //   1. THE SENTINEL. Machine-readable, and handled on the catalog path rather
+  //      than here, since prose bodies do not carry it.
+  //   2. COPIED ENGLISH. The body is byte-identical to English. Exact, and the
+  //      most dangerous of the three: it satisfies every structural check
+  //      trivially, carries a valid staleness stamp, and would publish as a
+  //      perfectly healthy artifact serving English from a translated URL.
+  //   3. A TRANSLATION NOTICE. Real translated frontmatter over a one-line body
+  //      saying the page is not translated yet. Nothing in the file marks it, so
+  //      it is caught corpus-wide by findRepeatedBodies: one body reused across
+  //      items whose English differs cannot be a translation of all of them.
+  //
+  // Every one of them is SKIPPED and counted, never published, with no flag to
+  // say otherwise. Publishing any of them serves English, or an apology, from a
+  // URL the reader reached by asking for their own language.
+  const prose = new Map();
+  const untranslated = [];
+
+  for (const typeId of PROSE_TYPE_IDS) {
+    for (const item of listItems(typeId, locale)) {
+      const key = `${typeId}/${item.slug}`;
+      // The SHARED parser: `seo` and `tags` reach a published artifact, so a
+      // reader that returned them as raw strings would move the artifact's hash.
+      const { data, body } = await parseFrontmatterShared(readText(item.path));
+      const englishPath = localPath(typeId, SOURCE_LOCALE, item.slug);
+      const englishBody = fs.existsSync(englishPath) ? parseFrontmatter(readText(englishPath)).body : "";
+      prose.set(key, { key, data, body, englishBody, item });
+    }
+  }
+
+  const repeated = findRepeatedBodies([...prose.values()].map(({ key, englishBody, body }) => ({ key, englishBody, targetBody: body })));
+
+  for (const entry of prose.values()) {
+    if (isCopiedEnglish(entry.englishBody, entry.body)) entry.untranslated = "identical to English";
+    else if (repeated.has(entry.key)) entry.untranslated = "a repeated placeholder body";
+    if (entry.untranslated) untranslated.push({ key: entry.key, reason: entry.untranslated });
+  }
+
+  if (untranslated.length > 0) {
+    const byReason = {};
+    for (const { reason } of untranslated) byReason[reason] = (byReason[reason] ?? 0) + 1;
+    console.log(
+      `  SKIPPED ${untranslated.length} untranslated prose item(s): ` +
+        Object.entries(byReason)
+          .map(([reason, count]) => `${count} ${reason}`)
+          .join(", ")
+    );
+    for (const { key, reason } of untranslated) console.log(`    ${key} (${reason})`);
+  }
+
+  /** One markdown item's translated body, or null when there is nothing to ship. */
+  const translatedBody = (typeId, item) => {
+    const entry = prose.get(`${typeId}/${item.slug}`);
+    return entry && !entry.untranslated ? entry : null;
+  };
 
   // --- app UI catalog -------------------------------------------------------
   const appPath = localPath("app-messages", locale);
   if (fs.existsSync(appPath)) {
-    if (sliced.has("app-messages") && !allowPartial) {
-      console.log(`  skipped app catalog: imported as a namespace slice, not the whole tree (--allow-partial to publish anyway)`);
+    if (sliced.has("app-messages")) {
+      console.log(`  SKIPPED app catalog: imported as a namespace slice, not the whole tree`);
     } else {
       const catalog = readJson(appPath);
-      if (checkNoSentinels(`${locale} app catalog`, catalog, allowIncomplete)) {
+      if (checkNoSentinels(`${locale} app catalog`, catalog)) {
         manifest.app = emit(artifacts, (hash) => CONTENT_TYPES["app-messages"].r2(locale, null, hash), catalog);
       }
     }
@@ -143,15 +310,40 @@ function publishLocale(locale, { allowPartial, allowIncomplete }) {
   const badgesPath = localPath("badges", locale);
   if (fs.existsSync(badgesPath)) {
     const catalog = readJson(badgesPath);
-    if (checkNoSentinels(`${locale} badge catalog`, catalog, allowIncomplete)) {
+    if (checkNoSentinels(`${locale} badge catalog`, catalog)) {
       manifest.badges = emit(artifacts, (hash) => CONTENT_TYPES.badges.r2(locale, null, hash), catalog);
     }
+  }
+
+  // --- levels ---------------------------------------------------------------
+  const levelsPath = localPath("levels", locale);
+  if (fs.existsSync(levelsPath)) {
+    const catalog = readJson(levelsPath);
+    if (checkNoSentinels(`${locale} level catalog`, catalog)) {
+      manifest.levels = emit(artifacts, (hash) => CONTENT_TYPES.levels.r2(locale, null, hash), catalog);
+    }
+  }
+
+  // --- interpreter message catalogs, one artifact per interpreter language ---
+  //
+  // The slug is a LANGUAGE (javascript, jikiscript, python), not an exercise, so
+  // these are discovered the same way every other slugged type is and need no
+  // special case beyond that.
+  manifest.interpreters = {};
+  for (const item of listItems("interpreter-messages", locale)) {
+    const catalog = readJson(item.path);
+    if (!checkNoSentinels(`${locale} interpreter catalog ${item.slug}`, catalog)) continue;
+    manifest.interpreters[item.slug] = emit(
+      artifacts,
+      (hash) => CONTENT_TYPES["interpreter-messages"].r2(locale, item.slug, hash),
+      catalog
+    );
   }
 
   // --- exercise message catalogs, one artifact per exercise -----------------
   manifest.exercises = {};
   for (const { slug, catalog } of exerciseCatalogs(locale)) {
-    if (!checkNoSentinels(`${locale} exercise catalog ${slug}`, catalog, allowIncomplete)) continue;
+    if (!checkNoSentinels(`${locale} exercise catalog ${slug}`, catalog)) continue;
     manifest.exercises[slug] = emit(artifacts, (hash) => CONTENT_TYPES["exercise-messages"].r2(locale, slug, hash), catalog);
   }
 
@@ -162,44 +354,193 @@ function publishLocale(locale, { allowPartial, allowIncomplete }) {
   // never branch on what they are rendering. A collision is a hard error, exactly
   // as in the front-end generator.
   const copy = {};
-  for (const item of listItems("exercise-instructions", locale)) {
+  const instructionItems = listItems("exercise-instructions", locale);
+  for (const item of instructionItems) {
     const { data } = parseFrontmatter(readText(item.path));
     if (!data.title) fail(`${item.path}: no title in frontmatter`);
     copy[item.slug] = { title: data.title, description: data.description || "" };
   }
+
+  // A partial exercise corpus makes two artifacts unshippable, and only those
+  // two: the merged curriculum copy and the exercise prose index. Both are
+  // assembled from every exercise, so a gap in either is a lesson that renders
+  // its slug or an exercise that will not load at all. Per-exercise artifacts are
+  // unaffected, so they still publish.
+  const exerciseCorpus = sourceCorpusSize("exercise-instructions");
+  const translatedExercises = instructionItems.filter((item) => translatedBody("exercise-instructions", item)).length;
+  const exercisesArePartial = exerciseCorpus === null || translatedExercises !== exerciseCorpus;
+  if (exercisesArePartial) {
+    console.log(
+      `  SKIPPED curriculum copy and exercise prose index: ` +
+        (exerciseCorpus === null
+          ? `the sync manifest records no source corpus size, so completeness cannot be established. ` +
+            `Re-run sync-source.mjs against a front-end checkout.`
+          : `assembled from a partial exercise corpus (${translatedExercises} translated of ${exerciseCorpus} in the source repo)`)
+    );
+  }
+
+  let videosShippable = true;
   const videoPath = localPath("video-lessons", locale);
   if (fs.existsSync(videoPath)) {
     const videos = readJson(videoPath);
-    if (!checkNoSentinels(`${locale} video lesson catalog`, videos, allowIncomplete)) return { artifacts, manifest, exported: 0 };
-    for (const [slug, entry] of Object.entries(videos)) {
-      if (slug in copy) fail(`slug "${slug}" is both an exercise and a video lesson (locale ${locale}); the namespace must stay collision-free`);
-      copy[slug] = entry;
+    videosShippable = checkNoSentinels(`${locale} video lesson catalog`, videos);
+    if (videosShippable) {
+      for (const [slug, entry] of Object.entries(videos)) {
+        if (slug in copy) fail(`slug "${slug}" is both an exercise and a video lesson (locale ${locale}); the namespace must stay collision-free`);
+        copy[slug] = entry;
+      }
     }
   }
-  if (Object.keys(copy).length > 0) {
-    const isPartial = countSourceExercises() !== Object.keys(copy).filter((slug) => !isVideoSlug(slug, locale)).length;
-    if (isPartial && !allowPartial) {
-      console.log(`  skipped curriculum copy: assembled from a partial exercise corpus (--allow-partial to publish anyway)`);
-    } else {
-      // Sorted, so the hash moves only when the copy does.
-      const sorted = Object.fromEntries(Object.keys(copy).sort().map((slug) => [slug, copy[slug]]));
-      manifest.curriculum = emit(artifacts, (hash) => `/static/i18n/curriculum/${locale}/messages-${hash}.json`, sorted);
-    }
+  if (Object.keys(copy).length > 0 && !exercisesArePartial && videosShippable) {
+    // Sorted, so the hash moves only when the copy does.
+    const sorted = Object.fromEntries(Object.keys(copy).sort().map((slug) => [slug, copy[slug]]));
+    manifest.curriculum = emit(artifacts, (hash) => `/static/i18n/curriculum/${locale}/messages-${hash}.json`, sorted);
   }
 
-  // --- prose, exported for the curriculum renderer ---------------------------
-  let exported = 0;
-  for (const typeId of ["concept", "exercise-instructions"]) {
-    const type = contentType(typeId);
+  // --- concept pages, rendered to the bytes the front-end would have rendered --
+  //
+  // Only the Markdown BODY is rendered. Frontmatter is metadata about the file
+  // (title, description, the en_md5 staleness stamp) and never reaches the HTML,
+  // which is why this repo's own zero-dependency frontmatter parser is enough and
+  // the renderer package takes a body rather than a file.
+  // The translated half of the concept index, on the same terms as posts: the
+  // hierarchy, ordering, icon and exercise links are locale-invariant and come
+  // from English config, so the front-end publishes them once and merges.
+  const conceptCopy = {};
+
+  manifest.concepts = {};
+  for (const item of listItems("concept", locale)) {
+    const translated = translatedBody("concept", item);
+    if (!translated) continue;
+    const { data, body } = translated;
+
+    // A CATEGORY concept (arrays-group, loops-group, ...) is a heading in the
+    // concept tree, not a page. It carries a title and description and no body,
+    // and the front-end's generator renders no HTML for it at all. Publishing one
+    // from here would put an empty document at a URL nothing ever requests.
+    //
+    // The test is the empty body rather than the `category` flag because that
+    // flag lives in a config.json this repo does not mirror. The two agree today
+    // because a category concept is exactly a concept with no body; if one ever
+    // gains one, the front-end warns and ignores it, and this would publish it.
+    if (body.trim().length === 0) continue;
+
+    const html = await renderConcept(body);
+    const hash = emitBytes(artifacts, (h) => CONTENT_TYPES.concept.r2(locale, item.slug, h), html);
+    manifest.concepts[item.slug] = hash;
+    conceptCopy[item.slug] = { title: data.title, description: data.description ?? "", contentHash: hash };
+  }
+
+  if (Object.keys(conceptCopy).length > 0) {
+    const sorted = Object.fromEntries(Object.keys(conceptCopy).sort().map((slug) => [slug, conceptCopy[slug]]));
+    manifest.conceptCopy = emit(artifacts, (hash) => `/static/concepts/${locale}/copy-${hash}.json`, sorted);
+  }
+
+  // --- posts: blog, articles and guides, rendered to HTML ---------------------
+  //
+  // The second renderer pipeline, and the only one here that needs image bytes.
+  // The resolver takes a source-repo checkout lazily, so a corpus whose posts
+  // reference no images publishes without one.
+  const resolveImage = makeImageResolver(() => resolveSourceRepo());
+
+  // The translated half of the post metadata index. Its other half (date,
+  // author, cover image, featured/listed/premium/order) comes from English
+  // config.json, does not vary by language, and is published by the front-end as
+  // one locale-invariant object. The two are merged at read time, which is what
+  // lets a locale published from here appear in listings and carry SEO metadata
+  // with no front-end build. Project episodes have no listing index of their own,
+  // so they contribute HTML only.
+  const postCopy = { blog: {}, articles: {}, guides: {} };
+
+  for (const typeId of POST_TYPE_IDS) {
+    manifest[typeId] = {};
     for (const item of listItems(typeId, locale)) {
-      const to = path.join(DIST, "export", type.sourceRepoPath(locale, item.slug));
-      fs.mkdirSync(path.dirname(to), { recursive: true });
-      fs.copyFileSync(item.path, to);
-      exported += 1;
+      const translated = translatedBody(typeId, item);
+      if (!translated) continue;
+      const { data, body } = translated;
+      const hash = emitBytes(
+        artifacts,
+        (hash) => CONTENT_TYPES[typeId].r2(locale, item.slug, hash),
+        await renderPostHtml(body, resolveImage)
+      );
+      manifest[typeId][item.slug] = hash;
+
+      if (postCopy[typeId]) {
+        postCopy[typeId][item.slug] = {
+          title: data.title,
+          excerpt: data.excerpt ?? "",
+          seo: data.seo ?? { description: data.excerpt ?? "", keywords: [] },
+          tags: data.tags ?? [],
+          readingTime: await estimateReadingTime(body, resolveImage),
+          contentHash: hash
+        };
+      }
     }
   }
 
-  return { artifacts, manifest, exported };
+  // Sorted, so the bytes move only when the copy does.
+  const sortKeys = (obj) => Object.fromEntries(Object.keys(obj).sort().map((k) => [k, obj[k]]));
+  for (const type of Object.keys(postCopy)) postCopy[type] = sortKeys(postCopy[type]);
+  if (Object.values(postCopy).some((entries) => Object.keys(entries).length > 0)) {
+    manifest.postCopy = emit(artifacts, (hash) => `/static/content/copy/${locale}/copy-${hash}.json`, postCopy);
+  }
+
+  // --- exercise instructions: one prose artifact each, plus the index ---------
+  //
+  // The published bytes are what the front-end caches, which is the PREPARED
+  // body: trimmed, with the <define>/<literal> authoring tags stripped. Running
+  // the same prepare step here rather than assuming translations are already
+  // clean is what makes the bytes match; a warning is still worth printing,
+  // because a translated file carrying those tags means a translator was handed
+  // markup they should never have seen.
+  //
+  // The index is what names every prose artifact, and it carries the title and
+  // description too, so the front-end has an exercise's display copy before it
+  // fetches anything. It deliberately holds no code hashes: this repo has no
+  // code, and an artifact one publisher owns must never need a fact from the
+  // other.
+  manifest.exerciseProse = {};
+  const proseIndex = [];
+  for (const item of instructionItems) {
+    const translated = translatedBody("exercise-instructions", item);
+    if (!translated) continue;
+    const { data, body } = translated;
+    const prepared = await prepareInstructions(body);
+    if (prepared !== body.trim()) {
+      console.log(`  WARN ${item.path}: carries <define>/<literal> authoring tags, which translations should not`);
+    }
+    const hash = emit(
+      artifacts,
+      (h) => CONTENT_TYPES["exercise-instructions"].r2(locale, item.slug, h),
+      { instructions: prepared }
+    );
+    manifest.exerciseProse[item.slug] = hash;
+    proseIndex.push({ slug: item.slug, title: data.title, description: data.description || "", proseHash: hash });
+  }
+
+  if (proseIndex.length > 0 && !exercisesArePartial) {
+    // Sorted by slug, exactly as the front-end's generator sorts it: the index is
+    // one JSON array and its key order is part of its bytes.
+    proseIndex.sort((a, b) => (a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0));
+    manifest.exerciseIndex = emit(artifacts, (hash) => `/static/exercises/${locale}/index-${hash}.json`, proseIndex);
+  }
+
+  // --- exercise instructions, also exported in the source repo's layout -------
+  //
+  // The authored file, frontmatter included, for tooling that wants the source
+  // rather than the published bytes. Only for a publish: under --out-dir the
+  // destination is a front-end's public/, where an export/ tree would be a
+  // directory of Markdown served to the internet.
+  let exported = 0;
+  const instructions = contentType("exercise-instructions");
+  for (const item of exportSources ? instructionItems : []) {
+    const to = path.join(DIST, "export", instructions.sourceRepoPath(locale, item.slug));
+    fs.mkdirSync(path.dirname(to), { recursive: true });
+    fs.copyFileSync(item.path, to);
+    exported += 1;
+  }
+
+  return { artifacts, manifest, exported, untranslated: untranslated.length };
 }
 
 /**
@@ -239,12 +580,22 @@ function exerciseCatalogs(locale) {
   return mergeExerciseCatalogs({ families, own, baseFor });
 }
 
-const isVideoSlug = (slug, locale) => {
-  const file = localPath("video-lessons", locale);
-  return fs.existsSync(file) && slug in readJson(file);
-};
-
-const countSourceExercises = () => listItems("exercise-instructions", SOURCE_LOCALE).length;
+/**
+ * How many items of one type exist in the REAL source repo, or null when the
+ * manifest predates this being recorded.
+ *
+ * Not `listItems(..., SOURCE_LOCALE)`, which counts the MIRROR. The mirror is a
+ * subset of the source corpus by design, so measuring completeness against it
+ * asks "have you translated everything you imported", which any locale can
+ * satisfy by importing one exercise. The question that matters is "have you
+ * translated everything that EXISTS", and only the front-end knows that number,
+ * so sync-source records it.
+ *
+ * Null is deliberately not treated as complete. A denominator this repo cannot
+ * establish means the artifact is skipped, because the alternative is publishing
+ * a partial index that looks whole.
+ */
+const sourceCorpusSize = (typeId) => readManifest().corpus?.[typeId] ?? null;
 
 /**
  * The sync manifest, which publish reads for two things English defines: which
@@ -261,62 +612,151 @@ function readSlicedTypes() {
   return readManifest().items.filter((item) => item.namespaces).map((item) => item.type);
 }
 
-function main() {
+async function main() {
   const args = parseArgs(process.argv.slice(2));
   const requested = args.positional[0] ?? "all";
   const locales = requested === "all" ? TARGET_LOCALES : [requested];
   locales.forEach(assertTargetLocale);
 
-  if (fs.existsSync(DIST)) fs.rmSync(DIST, { recursive: true });
+  // --out-dir writes the same tree somewhere else, for a local dev build. The
+  // R2_PREFIX ("static") is part of every key, so an --out-dir of
+  // `<front-end>/app/public` lands exactly on `public/static/...`.
+  const outDir = args.flags["out-dir"];
+  if (typeof outDir === "string") DIST = path.resolve(process.cwd(), outDir);
+
+  if (outDir === undefined) {
+    // A publish owns dist/ entirely, so it starts from empty. An --out-dir does
+    // NOT: it is writing into a tree the front-end's own generators also write,
+    // and wiping that would delete every English artifact. The keys here are
+    // content-hashed and locale-scoped, so writing over an existing tree can only
+    // add or replace this repo's own objects.
+    if (fs.existsSync(DIST)) fs.rmSync(DIST, { recursive: true });
+  }
   fs.mkdirSync(DIST, { recursive: true });
+
+  // Loaded up front rather than on first use, because the image resolver inside
+  // a post render has to be synchronous.
+  await warmRenderer();
 
   const all = [];
   const manifests = {};
   let exported = 0;
+  let untranslated = 0;
 
   for (const locale of locales) {
     console.log(`\n${locale}:`);
-    const result = publishLocale(locale, {
-      allowPartial: Boolean(args.flags["allow-partial"]),
-      allowIncomplete: Boolean(args.flags["allow-incomplete"])
-    });
+    const result = await publishLocale(locale, { exportSources: outDir === undefined });
     for (const artifact of result.artifacts) console.log(`  ${artifact.key}  (${artifact.bytes} bytes)`);
     all.push(...result.artifacts);
     manifests[locale] = result.manifest;
     exported += result.exported;
+    untranslated += result.untranslated;
   }
 
-  // The hash manifest. The front-end resolves a locale's catalog URL from a hash
-  // it holds at build time (lib/generated/*-hashes.ts), so a locale published from
-  // here is unreachable until the front-end learns its hashes. This file is the
-  // hand-back: the workflow dispatches it to the front-end, which commits it.
-  fs.writeFileSync(
-    path.join(DIST, "manifest.json"),
-    `${JSON.stringify({ generatedAt: new Date().toISOString(), locales: manifests }, null, 2)}\n`
-  );
+  // The hash manifest, for humans and for CI. The front-end no longer needs it
+  // to reach a locale: it resolves non-English hashes from the pointers written
+  // above. This is the record of what a run published, so a deploy can be
+  // audited and a bad publish identified by hash.
+  //
+  // `renderer` is the version of @jiki.io/content-renderer that produced the
+  // concept HTML. It is recorded because the failure it guards against is silent:
+  // two publishers on different versions render different bytes, so a translated
+  // page lands at a URL the front-end never computes, and the page simply does not
+  // appear. Written down, that is a diff between two numbers. Not written down, it
+  // is only reproducible by re-running both repos with whatever their dependencies
+  // resolve to today, which is the state they were in when they disagreed.
+  // Only for a publish. An --out-dir is a front-end's public/static tree, and a
+  // manifest.json or a sync.sh dropped in there would be served to the internet.
+  if (outDir === undefined) {
+    fs.writeFileSync(
+      path.join(DIST, "manifest.json"),
+      `${JSON.stringify(
+        { generatedAt: new Date().toISOString(), renderer: await rendererVersion(), locales: manifests },
+        null,
+        2
+      )}\n`
+    );
+  }
 
   // Re-run the guard over the finished tree. Cheap, and it catches a key that
   // reached disk by a route that skipped emit().
-  for (const file of walk(path.join(DIST, R2_PREFIX))) {
-    assertPublishableKey(path.relative(DIST, file));
+  //
+  // Only for a publish, which owns dist/ outright and started it empty, so
+  // everything in it is something this run wrote. An --out-dir is a front-end's
+  // public/static, which is FULL of English this repo did not write and must not
+  // be blamed for: the guard's question is "did this repo write English", and
+  // over a shared tree the walk answers a different question and always says yes.
+  // Every key this run emitted was guarded at emit() either way.
+  if (outDir === undefined) {
+    for (const file of walk(path.join(DIST, R2_PREFIX))) {
+      assertPublishableKey(path.relative(DIST, file));
+    }
   }
 
-  const plan = all
+  // Two kinds of object, two sets of headers, and two different commands.
+  //
+  // The hashed artifacts are immutable, so they sync with a year-long TTL and
+  // `--size-only` (their name already encodes their content).
+  //
+  // The pointers are the opposite in every respect. They are copied, never
+  // synced: `--size-only` compares byte counts, and one hash is exactly as long
+  // as another, so a sync would silently skip the single object whose whole job
+  // is to change. And they carry a short TTL plus a long
+  // stale-while-revalidate, so the steady state is an edge cache hit, a
+  // republish propagates in about a minute, and a slow origin is never on the
+  // critical path of a render.
+  //
+  // The artifact always lands before the pointer that names it, so a reader can
+  // never follow a pointer to an object that is not there yet.
+  const dirs = all
+    .filter((artifact) => !artifact.pointer)
     .map((artifact) => path.dirname(artifact.key))
-    .filter((dir, index, list) => list.indexOf(dir) === index)
-    .map(
+    .filter((dir, index, list) => list.indexOf(dir) === index);
+
+  const plan = outDir !== undefined ? [] : [
+    ...dirs.map(
       (dir) =>
         `aws s3 sync dist/${dir} s3://${R2_BUCKET}/${dir} --endpoint-url ${R2_ENDPOINT} ` +
-        `--cache-control 'public, max-age=31536000, immutable' --size-only`
-    );
-  fs.writeFileSync(path.join(DIST, "sync.sh"), `#!/usr/bin/env bash\nset -euo pipefail\n\n${plan.join("\n")}\n`, { mode: 0o755 });
+        `--cache-control 'public, max-age=31536000, immutable' --size-only --exclude 'current.json'`
+    ),
+    ...all
+      .filter((artifact) => artifact.pointer)
+      .map(
+        (artifact) =>
+          `aws s3 cp dist/${artifact.key} s3://${R2_BUCKET}/${artifact.key} --endpoint-url ${R2_ENDPOINT} ` +
+          `--cache-control 'public, max-age=60, stale-while-revalidate=86400'`
+      )
+  ];
+  if (outDir === undefined) {
+    fs.writeFileSync(path.join(DIST, "sync.sh"), `#!/usr/bin/env bash\nset -euo pipefail\n\n${plan.join("\n")}\n`, { mode: 0o755 });
+  }
 
-  console.log(`\npublish: ${all.length} artifacts, ${exported} prose files exported, ${plan.length} sync commands in dist/sync.sh.`);
+  const pointerCount = all.filter((artifact) => artifact.pointer).length;
+  const artifactCount = all.length - pointerCount;
+
+  if (outDir !== undefined) {
+    console.log(`\npublish: ${artifactCount} artifacts and ${pointerCount} pointers written to ${DIST}.`);
+    return;
+  }
+
+  console.log(
+    `\npublish: ${artifactCount} artifacts, ${pointerCount} pointers, ` +
+      `${exported} prose files exported, ${untranslated} untranslated prose items skipped, ` +
+      `${plan.length} sync commands in dist/sync.sh.`
+  );
+
+  // Nothing shippable is a green no-op. Every locale being skipped is the
+  // expected state of a partly translated corpus, and a merge that produces it
+  // must not turn main red.
+  if (artifactCount === 0) {
+    console.log("Nothing shippable in any locale. Not an error; nothing to upload.");
+    return;
+  }
 
   if (args.flags.upload) {
     console.log("\nUploading...\n");
     execFileSync("bash", [path.join(DIST, "sync.sh")], { cwd: REPO_ROOT, stdio: "inherit" });
-  } else if (all.length > 0) {
+  } else {
     console.log("Nothing uploaded. Re-run with --upload, or run dist/sync.sh.");
   }
 }
@@ -330,9 +770,7 @@ function* walk(dir) {
   }
 }
 
-try {
-  main();
-} catch (error) {
+main().catch((error) => {
   if (error instanceof GuardViolation) fail(error.message);
   throw error;
-}
+});

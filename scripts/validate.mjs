@@ -132,7 +132,11 @@ function validateItem({ typeId, locale, slug, stamp, shippable }) {
     englishData: english.data,
     targetData: target.data,
     translatedKeys: type.frontmatterTranslated ?? [],
-    expectedMd5: expected
+    expectedMd5: expected,
+    // Symmetric with `allowSentinel` for catalogs above: an untranslated item is
+    // a normal state of a partly translated locale, and only blocks a shippable
+    // check, where it would serve English prose from a translated URL.
+    allowUntranslated: !shippable
   });
 
   const blockingOtherThanStamp = issues.filter(
