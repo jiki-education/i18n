@@ -78,6 +78,7 @@ export const CONTENT_TYPES = {
     label: "exercise instructions",
     format: "markdown",
     slugged: true,
+    exerciseScoped: true,
     staleness: "frontmatter",
     frontmatterTranslated: ["title", "description"],
     sourceRepoPath: (locale, slug) =>
@@ -90,6 +91,7 @@ export const CONTENT_TYPES = {
     label: "exercise message catalog",
     format: "catalog",
     slugged: true,
+    exerciseScoped: true,
     staleness: "sibling",
     interpolation: "i18next",
     sourceRepoPath: (locale, slug) =>
@@ -144,11 +146,11 @@ export const CONTENT_TYPES = {
     staleness: "sibling",
     interpolation: "i18next",
     // The slug is an exercise FAMILY (draw, maze, cityscape), not an exercise.
-    // The front-end deep-merges a family's catalog into every member exercise's
-    // own catalog at load, so these keys are shared defaults rather than an
-    // artifact of their own. publish.mjs does not do that merge yet, which is
-    // why there is no r2 entry here: publishing a member exercise's catalog
-    // straight from `exercise-messages` would under-merge.
+    // A family catalog is a MERGE INPUT and never an artifact of its own: the
+    // front-end's generator deep-merges it into each member exercise's emitted
+    // pack and emits nothing for the family itself, so there is no R2 key to
+    // mirror here. publish.mjs performs the same merge, which is why the
+    // exercise-messages artifact it writes is self-contained.
     sourceRepoPath: (locale, slug) =>
       `curriculum/src/exercise-categories/${slug}/locales/${sourceName(locale, { markdown: false })}/translation.json`,
     localPath: (slug) => `curriculum/exercise-categories/${slug}/messages.json`,
@@ -200,6 +202,45 @@ export function sourceRepoPath(sourceRepo, typeId, locale, slug) {
  */
 export function metaPath(itemPath) {
   return itemPath.replace(/\.json$/, ".meta.json");
+}
+
+/** The content type whose slug is an exercise FAMILY rather than an exercise. */
+export const FAMILY_TYPE_ID = "exercise-category";
+
+/** One exercise's own directory in a source repo checkout, derived from the type map. */
+function exerciseDir(sourceRepo, slug) {
+  const probe = CONTENT_TYPES["exercise-messages"].sourceRepoPath(SOURCE_LOCALE, "__SLUG__");
+  const [prefix] = probe.split("__SLUG__");
+  return path.join(sourceRepo, prefix, slug);
+}
+
+/**
+ * The exercise family one exercise belongs to, or null when it is standalone.
+ *
+ * The family is a fact about the exercise's CODE: it is whichever
+ * `exercise-categories/<family>/` module the exercise imports. That makes it
+ * underivable here, because this repo holds copy and never `.ts` files, so it is
+ * captured at sync time by sync-source.mjs and recorded in the manifest for
+ * publish to read. This function is the only thing that reads the source repo to
+ * work it out, and it mirrors the front-end's own derivation in
+ * app/scripts/generate-exercise-cache.js exactly: the same regex, over every
+ * `.ts` file in the exercise directory rather than only `Exercise.ts`, because
+ * some exercises name their class file differently. Files are visited in sorted
+ * order so the answer does not depend on directory iteration order.
+ */
+export function deriveFamily(sourceRepo, slug) {
+  const dir = exerciseDir(sourceRepo, slug);
+  let files;
+  try {
+    files = fs.readdirSync(dir).filter((file) => file.endsWith(".ts")).sort();
+  } catch {
+    return null;
+  }
+  for (const file of files) {
+    const match = fs.readFileSync(path.join(dir, file), "utf8").match(/exercise-categories\/([^/"'`\s]+)/);
+    if (match) return match[1];
+  }
+  return null;
 }
 
 /**

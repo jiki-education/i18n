@@ -86,7 +86,12 @@ function validateItem({ typeId, locale, slug, stamp, shippable }) {
   const englishPath = localPath(typeId, SOURCE_LOCALE, slug);
   const targetPath = localPath(typeId, locale, slug);
 
+  // An item a locale has not reached yet is a normal state, on the same terms as
+  // a remaining sentinel: this script answers "is what is here correct", and
+  // coverage.mjs answers "how much is here". It only blocks under --shippable,
+  // where a gap means the locale would render English in an RTL layout.
   if (!fs.existsSync(targetPath)) {
+    if (!shippable) return { issues: [], label: label(typeId, locale, slug), absent: true };
     return { issues: [{ level: ERROR, message: "not translated (no file)" }], label: label(typeId, locale, slug) };
   }
 

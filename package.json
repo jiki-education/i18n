@@ -19,6 +19,7 @@
     "verify-import": "node scripts/verify-import.mjs",
     "publish:build": "node scripts/publish.mjs",
     "publish:upload": "node scripts/publish.mjs all --upload",
-    "check": "node scripts/sync-source.mjs --check && node scripts/validate.mjs all --no-stamp"
+    "test": "node scripts/test.mjs",
+    "check": "node scripts/test.mjs && node scripts/sync-source.mjs --check && node scripts/validate.mjs all --no-stamp"
   }
 }
