@@ -4,7 +4,7 @@ description: "判断一个句子是否使用了字母表中的每一个字母。
 en_md5: 50b09bb1fbd35081cb842c55fc40e313
 ---
 
-一个全字母句（英文：_pangram_）是指一个句子，它使用了**字母表中的每一个字母至少一次**。最著名的英文全字母句是 "the quick brown fox jumps over the lazy dog"！
+一个全字母句（英语：_pangram_）是指一个句子，它使用了**字母表中的每一个字母至少一次**。最著名的英文全字母句是 "the quick brown fox jumps over the lazy dog"！
 
 接下来的三个练习都将用于判断句子是否为全字母句。
 
