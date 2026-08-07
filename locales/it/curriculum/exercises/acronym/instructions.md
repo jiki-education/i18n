@@ -22,6 +22,6 @@ Una nuova parola inizia dopo uno **spazio** o un **trattino** (`-`). Tutti gli a
 
 ## Attenzione
 
-Non ti abbiamo dato nessuno dei metodi JavaScript più avanzati che vedrai più avanti nel corso (niente per trasformare magicamente una lettera in maiuscolo o per dirti se un carattere è una lettera in primo luogo). Dovrai costruire da solo tutte queste funzioni di supporto prima di poter mettere insieme il tutto.
+Non ti abbiamo dato nessuno dei metodi JavaScript più avanzati che vedrai più avanti nel corso (niente per trasformare magicamente una lettera in maiuscolo o per dirti se un carattere è una lettera in primo luogo). Dovrai costruire da solo tutte queste funzioni ausiliarie prima di poter mettere insieme il tutto.
 
 Questo esercizio è più complicato di quanto sembri. Buon divertimento!

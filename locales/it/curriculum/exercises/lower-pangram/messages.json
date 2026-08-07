@@ -1,16 +1,16 @@
 {
   "checks": {
     "noNestedLoops": "Cerca di non mettere un ciclo dentro l'altro. Sposta la ricerca di una singola lettera in una sua funzione, poi chiamala da <code>isPangram</code>.",
-    "tooManyLines": "Quasi! Prova a risolverlo in meno righe appoggiandoti alla tua funzione helper."
+    "tooManyLines": "Quasi! Prova a risolverlo in meno righe appoggiandoti alla tua funzione ausiliaria."
   },
   "tasks": {
     "checkLowerPangram": {
       "name": "Verifica il pangramma minuscolo",
-      "description": "Scrivi una funzione che verifica se una frase in minuscolo contiene ogni lettera dell'alfabeto. Falle chiamare una piccola funzione helper per eseguire la ricerca lettera per lettera."
+      "description": "Scrivi una funzione che verifica se una frase in minuscolo contiene ogni lettera dell'alfabeto. Falle chiamare una piccola funzione ausiliaria per eseguire la ricerca lettera per lettera."
     },
     "decomposeTightly": {
       "name": "Risolvilo in 16 righe",
-      "description": "Bonus: con la ricerca spostata in una funzione helper, l'intera soluzione sta in 16 righe. Riesci a eguagliarla?"
+      "description": "Bonus: con la ricerca spostata in una funzione ausiliaria, l'intera soluzione sta in 16 righe. Riesci a eguagliarla?"
     }
   },
   "scenarios": {
@@ -61,8 +61,8 @@
       "answer": "Scorri `\"abcdefghijklmnopqrstuvwxyz\"`, una lettera alla volta. Per ogni lettera, verifica se la frase la contiene."
     },
     "avoidNestedLoops": {
-      "question": "Ho risolto l'esercizio ma non so come usare la funzione helper.",
-      "answer": "Se hai risolto l'esercizio, probabilmente hai un ciclo esterno e uno interno. Quel ciclo interno verifica se qualcosa include qualcos'altro. Estrarre il ciclo interno in una funzione helper chiamata `includes(...)` e poi usarla dal ciclo esterno è probabilmente un buon approccio. Una funzione helper è semplicemente una funzione normale definita nel modo normale."
+      "question": "Ho risolto l'esercizio ma non so come usare la funzione ausiliaria.",
+      "answer": "Se hai risolto l'esercizio, probabilmente hai un ciclo esterno e uno interno. Quel ciclo interno verifica se qualcosa include qualcos'altro. Estrarre il ciclo interno in una funzione ausiliaria chiamata `includes(...)` e poi usarla dal ciclo esterno è probabilmente un buon approccio. Una funzione ausiliaria è semplicemente una funzione normale definita nel modo normale."
     }
   }
 }

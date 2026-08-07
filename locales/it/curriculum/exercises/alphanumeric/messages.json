@@ -2,7 +2,7 @@
   "tasks": {
     "classifyString": {
       "name": "Classifica una stringa",
-      "description": "Scrivi funzioni di supporto per verificare se una stringa è alfabetica, numerica o alfanumerica, poi usale per classificare la stringa di input."
+      "description": "Scrivi funzioni ausiliarie per verificare se una stringa è alfabetica, numerica o alfanumerica, poi usale per classificare la stringa di input."
     },
     "useContinue": {
       "name": "Usa continue",
@@ -38,7 +38,7 @@
   "hints": {
     "whereToStart": {
       "question": "Da dove dovrei iniziare quando ci sono diverse funzioni da scrivere?",
-      "answer": "Scegli la funzione di supporto più piccola per prima. Ogni helper scorre i caratteri della stringa e fa lo stesso tipo di domanda sì/no su ciascuno di essi. Fanne funzionare una e le altre seguiranno la stessa struttura."
+      "answer": "Scegli la funzione ausiliaria più piccola per prima. Ogni funzione ausiliaria scorre i caratteri della stringa e fa lo stesso tipo di domanda sì/no su ciascuno di essi. Fanne funzionare una e le altre seguiranno la stessa struttura."
     },
     "checkAllLetters": {
       "question": "Come faccio a verificare se ogni carattere nell'input è una lettera?",
@@ -54,14 +54,14 @@
     },
     "pickingLabels": {
       "question": "Come faccio a scegliere tra le quattro etichette in whatAmI()?",
-      "answer": "Chiama tutte e tre le funzioni di supporto e usa if/else. L'ordine è importante. Controlla i casi più restrittivi ('solo lettere' e 'solo numeri') prima di 'alfanumerico', che è il caso più ampio."
+      "answer": "Chiama tutte e tre le funzioni ausiliarie e usa if/else. L'ordine è importante. Controlla i casi più restrittivi ('solo lettere' e 'solo numeri') prima di 'alfanumerico', che è il caso più ampio."
     }
   },
   "checks": {
     "mustUseContinue": "Ci sei quasi! Usa `continue` per passare al carattere successivo.",
     "tooManyLines": "Ci sei quasi! La tua soluzione funziona, ma è un po' lunga.",
-    "useIsAlpha": "Questo esercizio richiede di scrivere una funzione di supporto `isAlpha()` e usarla per classificare la stringa.",
-    "useIsNumeric": "Questo esercizio richiede di scrivere una funzione di supporto `isNumeric()` e usarla per classificare la stringa.",
-    "useIsAlphanumeric": "Questo esercizio richiede di scrivere una funzione di supporto `isAlphanumeric()` e usarla per classificare la stringa."
+    "useIsAlpha": "Questo esercizio richiede di scrivere una funzione ausiliaria `isAlpha()` e usarla per classificare la stringa.",
+    "useIsNumeric": "Questo esercizio richiede di scrivere una funzione ausiliaria `isNumeric()` e usarla per classificare la stringa.",
+    "useIsAlphanumeric": "Questo esercizio richiede di scrivere una funzione ausiliaria `isAlphanumeric()` e usarla per classificare la stringa."
   }
 }

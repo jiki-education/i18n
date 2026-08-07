@@ -4,7 +4,7 @@ description: "Aggiorna il tuo Pangram per usare i metodi integrati delle stringh
 en_md5: 61b73caa0318f68e9a0facca189e7abf
 ---
 
-Benvenuto al terzo esercizio Pangram, dove prenderemo tutte quelle funzioni di aiuto che hai creato e semplificheremo un bel po' le cose!
+Benvenuto al terzo esercizio Pangram, dove prenderemo tutte quelle funzioni ausiliarie che hai creato e semplificheremo un bel po' le cose!
 
 Ognuna delle funzioni che ti ho incoraggiato a scrivere (`includes`, `indexOf` e `toLowerCase`) è in realtà un metodo già integrato nelle stringhe.
 

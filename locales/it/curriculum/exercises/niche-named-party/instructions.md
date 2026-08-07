@@ -18,9 +18,9 @@ Per esempio:
 - Se il prefisso consentito per stasera è `"S"`, allora Sarah può entrare (restituisce `true`) ma Brad non può entrare (restituisce `false`).
 - Se il prefisso consentito è `"Brad"`, allora Brad e Bradley possono entrare, ma Brian non può entrare.
 
-### Funzioni di supporto
+### Funzioni ausiliarie
 
-Mentre lavori a questo esercizio, ti accorgerai che è necessario calcolare la lunghezza del nome dell'ospite e anche la lunghezza del prefisso consentito. Questa è l'occasione perfetta per creare una funzione di supporto chiamata `getLength(someString)`, che conta quante lettere ci sono nella stringa. Poi potrai usare questa funzione in diversi punti all'interno di `handleGuest(...)`.
+Mentre lavori a questo esercizio, ti accorgerai che è necessario calcolare la lunghezza del nome dell'ospite e anche la lunghezza del prefisso consentito. Questa è l'occasione perfetta per creare una funzione ausiliaria chiamata `getLength(someString)`, che conta quante lettere ci sono nella stringa. Poi potrai usare questa funzione in diversi punti all'interno di `handleGuest(...)`.
 
 Lo scenario bonus ti sfida a risolvere questo esercizio nel minor numero di righe possibile. Potresti anche trovare altre soluzioni che preferisci, che usano più righe. Va benissimo (e sei incoraggiato a esplorare approcci diversi), ma prova a trovare anche la versione più corta.
 

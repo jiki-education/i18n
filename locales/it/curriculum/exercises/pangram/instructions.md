@@ -12,9 +12,9 @@ Crea una funzione chiamata `isPangram` (verifica se la frase è un pangramma) ch
 
 Ti abbiamo fornito il tuo codice precedente come punto di partenza.
 
-### Funzioni di supporto
+### Funzioni ausiliarie
 
-Oltre alla tua funzione di supporto esistente (che ti abbiamo suggerito di chiamare `includes`), ti consigliamo di creare due nuove funzioni di supporto per aiutarti a risolvere questo esercizio. I nomi delle funzioni sono nomi standard, che ti raccomandiamo di mantenere:
+Oltre alla tua funzione ausiliaria esistente (che ti abbiamo suggerito di chiamare `includes`), ti consigliamo di creare due nuove funzioni ausiliarie per aiutarti a risolvere questo esercizio. I nomi delle funzioni sono nomi standard, che ti raccomandiamo di mantenere:
 
 1. `indexOf(haystack, needle)`: una funzione che calcola **in quale posizione** si trova l'ago nel pagliaio. Quindi, invece di restituire `true`/`false` come fa `includes`, restituisce l'**indice** dell'ago. Per esempio, `indexOf("Jeremy", "r")` restituirebbe `2` (ricorda che si conta a partire da 0).
 2. `toLowerCase(someString)`: una funzione che riceve una stringa e la restituisce convertita in minuscolo. Per esempio, `toLowerCase("JeReMy")` restituirebbe `"jeremy"`.
