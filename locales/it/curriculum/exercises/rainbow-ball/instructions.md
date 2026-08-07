@@ -4,15 +4,15 @@ description: "Crea una palla che rimbalza e lascia una scia color arcobaleno sul
 en_md5: 501aa30e85d8fceb38890c72be4a0b87
 ---
 
-Il tuo compito è creare una palla che rimbalza in modo casuale sull'area di disegno, disegnando un arcobaleno dietro di sé.
+Il tuo compito è creare una palla che rimbalza in modo casuale sull'area di disegno, lasciando una scia arcobaleno al suo passaggio.
 
 Dovrebbe apparire più o meno così:
 
 <img src="/static/images/exercise-assets/rainbow-ball/example.gif" alt="Palla arcobaleno animata che rimbalza sull'area di disegno lasciando una scia colorata" style="width: 100%; max-width: 200px; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 5px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); margin-bottom: 8px;" />
 
-Come parte di questo esercizio, hai a disposizione la funzione `Math.randomInt(min, max)` (restituisce un numero intero casuale tra i limiti forniti), che restituisce un numero intero casuale compreso tra i valori di `min` e `max` che le passi.
+In questo esercizio hai a disposizione la funzione `Math.randomInt(min, max)` (restituisce un numero intero casuale tra i limiti forniti), che restituisce un numero intero casuale compreso tra i valori di `min` e `max` che le passi.
 
-Prenditi qualche minuto per pensare a come potresti risolvere il problema. Questa è la parte più preziosa dell'esercizio, quindi prenditi il tuo tempo e **scrivi le tue idee prima di leggere la formula qui sotto.**
+Prenditi qualche minuto per pensare a come potresti risolvere il problema. Questa è la parte più importante dell'esercizio, quindi prenditi il tuo tempo e **scrivi le tue idee prima di leggere la formula qui sotto.**
 
 Quando hai un'idea del tuo approccio, prosegui con la lettura. Ma non continuare finché non ci hai pensato un po'!
 
@@ -28,7 +28,7 @@ Questo progetto consiste nell'avere alcune variabili che gestiscono la posizione
 
 ### Animazione
 
-- Per cominciare, ad ogni iterazione devi spostare la palla di `2` verso destra e `1` verso il basso.
+- Per iniziare, ad ogni iterazione devi spostare la palla di `2` verso destra e `1` verso il basso.
 - La tonalità deve aumentare di `1` ad ogni iterazione, fino a raggiungere il valore massimo (`360`), per poi iniziare a diminuire. Saturazione e luminosità non devono cambiare.
 
 ### Rimbalzo
