@@ -66,11 +66,20 @@
 //
 // ## Prose
 //
-// Concept pages and exercise instructions are served as rendered HTML
-// (/static/concepts/<slug>/<locale>/content-<hash>.html), produced by the
-// curriculum renderer, not here. This script writes them into dist/export/ in the
-// source repos' own layout so that renderer can consume them unchanged. See
-// CLAUDE.md § "Prose publishing".
+// Concept pages are rendered here, to /static/concepts/<slug>/<locale>/content-<hash>.html,
+// using @jiki.io/content-renderer. That is the same package the front-end's
+// generate-concept-cache.js renders English with, and the pinned version is the
+// byte-identity contract between the two: the filename IS the hash of the bytes,
+// so HTML that differs by one character sits at a URL the front-end never asks
+// for. The version used is recorded in dist/manifest.json.
+//
+// Exercise instructions are NOT an artifact here. The front-end caches them
+// inside a per-language content-<hash>.json alongside that exercise's stub and
+// solution, and stubs and solutions are code, which lives in the front-end and
+// not in this repo. So instructions are still exported to dist/export/ for the
+// front-end's generator to consume, put through the same prepare step the
+// generator applies so the exported bytes are the cached bytes. See CLAUDE.md
+// § "Prose publishing".
 
 import fs from "node:fs";
 import path from "node:path";
@@ -91,6 +100,7 @@ import { mergeExerciseCatalogs } from "./lib/families.mjs";
 import { contentHash, flatten, parseFrontmatter, readJson, readText } from "./lib/files.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 import { parseArgs } from "./lib/args.mjs";
+import { prepareInstructions, renderConcept, rendererVersion } from "./lib/prose.mjs";
 
 const DIST = path.join(REPO_ROOT, "dist");
 
@@ -116,7 +126,17 @@ const pointerKeyFor = (artifactKey) => `${path.dirname(artifactKey)}/current.jso
  * ships the catalog with the deploy, so its render path never looks one up.
  */
 function emit(artifacts, r2Path, value) {
-  const content = JSON.stringify(value);
+  return emitBytes(artifacts, r2Path, JSON.stringify(value));
+}
+
+/**
+ * Write one artifact from bytes that are already final.
+ *
+ * Catalogs go through emit(), which serialises them; rendered HTML is already a
+ * string and must not be JSON-encoded on the way past. Both hash exactly what
+ * reaches disk, which is the only rule that matters: the filename is that hash.
+ */
+function emitBytes(artifacts, r2Path, content) {
   const hash = contentHash(content);
   const resolved = typeof r2Path === "function" ? r2Path(hash) : r2Path;
   const key = assertPublishableKey(resolved);
@@ -157,7 +177,7 @@ function checkNoSentinels(label, value, allowIncomplete) {
   return false;
 }
 
-function publishLocale(locale, { allowPartial, allowIncomplete }) {
+async function publishLocale(locale, { allowPartial, allowIncomplete }) {
   const artifacts = [];
   const manifest = {};
   const sliced = new Set(readSlicedTypes());
@@ -223,16 +243,46 @@ function publishLocale(locale, { allowPartial, allowIncomplete }) {
     }
   }
 
-  // --- prose, exported for the curriculum renderer ---------------------------
+  // --- concept pages, rendered to the bytes the front-end would have rendered --
+  //
+  // Only the Markdown BODY is rendered. Frontmatter is metadata about the file
+  // (title, description, the en_md5 staleness stamp) and never reaches the HTML,
+  // which is why this repo's own zero-dependency frontmatter parser is enough and
+  // the renderer package takes a body rather than a file.
+  manifest.concepts = {};
+  for (const item of listItems("concept", locale)) {
+    const { body } = parseFrontmatter(readText(item.path));
+    const html = await renderConcept(body);
+    manifest.concepts[item.slug] = emitBytes(
+      artifacts,
+      (hash) => CONTENT_TYPES.concept.r2(locale, item.slug, hash),
+      html
+    );
+  }
+
+  // --- exercise instructions, exported for the front-end's generator ----------
+  //
+  // Not an artifact from here: the front-end caches instructions inside a
+  // per-language content-<hash>.json alongside that exercise's stub and solution,
+  // and those are code, which lives in the front-end. So the file is exported
+  // verbatim, frontmatter included, because its generator reads title and
+  // description from there and then applies prepareInstructions itself.
+  //
+  // The body is checked against that prepare step rather than rewritten by it.
+  // The step is idempotent, so a file it would change is one carrying authoring
+  // tags a translator was never meant to receive, and saying so is more useful
+  // than silently normalising it on the way out.
   let exported = 0;
-  for (const typeId of ["concept", "exercise-instructions"]) {
-    const type = contentType(typeId);
-    for (const item of listItems(typeId, locale)) {
-      const to = path.join(DIST, "export", type.sourceRepoPath(locale, item.slug));
-      fs.mkdirSync(path.dirname(to), { recursive: true });
-      fs.copyFileSync(item.path, to);
-      exported += 1;
+  const instructions = contentType("exercise-instructions");
+  for (const item of listItems("exercise-instructions", locale)) {
+    const { body } = parseFrontmatter(readText(item.path));
+    if ((await prepareInstructions(body)) !== body.trim()) {
+      console.log(`  WARN ${item.path}: carries <define>/<literal> authoring tags, which translations should not`);
     }
+    const to = path.join(DIST, "export", instructions.sourceRepoPath(locale, item.slug));
+    fs.mkdirSync(path.dirname(to), { recursive: true });
+    fs.copyFileSync(item.path, to);
+    exported += 1;
   }
 
   return { artifacts, manifest, exported };
@@ -297,7 +347,7 @@ function readSlicedTypes() {
   return readManifest().items.filter((item) => item.namespaces).map((item) => item.type);
 }
 
-function main() {
+async function main() {
   const args = parseArgs(process.argv.slice(2));
   const requested = args.positional[0] ?? "all";
   const locales = requested === "all" ? TARGET_LOCALES : [requested];
@@ -312,7 +362,7 @@ function main() {
 
   for (const locale of locales) {
     console.log(`\n${locale}:`);
-    const result = publishLocale(locale, {
+    const result = await publishLocale(locale, {
       allowPartial: Boolean(args.flags["allow-partial"]),
       allowIncomplete: Boolean(args.flags["allow-incomplete"])
     });
@@ -326,9 +376,21 @@ function main() {
   // to reach a locale: it resolves non-English hashes from the pointers written
   // above. This is the record of what a run published, so a deploy can be
   // audited and a bad publish identified by hash.
+  //
+  // `renderer` is the version of @jiki.io/content-renderer that produced the
+  // concept HTML. It is recorded because the failure it guards against is silent:
+  // two publishers on different versions render different bytes, so a translated
+  // page lands at a URL the front-end never computes, and the page simply does not
+  // appear. Written down, that is a diff between two numbers. Not written down, it
+  // is only reproducible by re-running both repos with whatever their dependencies
+  // resolve to today, which is the state they were in when they disagreed.
   fs.writeFileSync(
     path.join(DIST, "manifest.json"),
-    `${JSON.stringify({ generatedAt: new Date().toISOString(), locales: manifests }, null, 2)}\n`
+    `${JSON.stringify(
+      { generatedAt: new Date().toISOString(), renderer: await rendererVersion(), locales: manifests },
+      null,
+      2
+    )}\n`
   );
 
   // Re-run the guard over the finished tree. Cheap, and it catches a key that
@@ -396,9 +458,7 @@ function* walk(dir) {
   }
 }
 
-try {
-  main();
-} catch (error) {
+main().catch((error) => {
   if (error instanceof GuardViolation) fail(error.message);
   throw error;
-}
+});

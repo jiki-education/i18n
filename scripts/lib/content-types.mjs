@@ -69,9 +69,11 @@ export const CONTENT_TYPES = {
     frontmatterTranslated: ["title", "description"],
     sourceRepoPath: (locale, slug) => `curriculum/src/concepts/${slug}/${sourceName(locale, { markdown: true })}.md`,
     localPath: (slug) => `curriculum/concepts/${slug}/page.md`,
-    // Concept pages are served as rendered HTML, produced by the curriculum
-    // renderer, not by this repo. See CLAUDE.md § "Prose publishing".
-    r2: null
+    // Rendered HTML, not JSON, and the only artifact here that is not a catalog.
+    // The bytes come from @jiki.io/content-renderer, the same package the
+    // front-end's generate-concept-cache.js renders English with, so the two
+    // publishers cannot drift. See CLAUDE.md § "Prose publishing".
+    r2: (locale, slug, hash) => `/static/concepts/${slug}/${locale}/content-${hash}.html`
   },
 
   "exercise-instructions": {
