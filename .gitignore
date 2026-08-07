@@ -1,0 +1,15 @@
+# Generated publish artifacts. Rebuilt from locales/ by `pnpm publish:build`,
+# never committed: they are content-hashed derivatives, and committing them
+# would double every translation diff.
+dist/
+
+# Provider API keys for scripts/translate.mjs.
+.env
+.env.*
+!.env.example
+
+# Scratch output from a failed translate run.
+tmp/
+
+node_modules/
+.DS_Store

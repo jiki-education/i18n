@@ -1,0 +1,23 @@
+{
+  "name": "@jiki/i18n",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Jiki's translated output, and the scripts that produce and publish it.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "sync-source": "node scripts/sync-source.mjs",
+    "sync-source:check": "node scripts/sync-source.mjs --check",
+    "import-existing": "node scripts/import-existing.mjs",
+    "translate": "node scripts/translate.mjs",
+    "stub": "node scripts/stub.mjs",
+    "validate": "node scripts/validate.mjs",
+    "validate:shippable": "node scripts/validate.mjs all --shippable --no-stamp",
+    "coverage": "node scripts/coverage.mjs",
+    "publish:build": "node scripts/publish.mjs",
+    "publish:upload": "node scripts/publish.mjs all --upload",
+    "check": "node scripts/sync-source.mjs --check && node scripts/validate.mjs all --no-stamp"
+  }
+}
