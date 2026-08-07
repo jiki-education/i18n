@@ -1,5 +1,5 @@
 ---
-title: "Tête de renard"
+title: "La tête du renard"
 description: "Construis une tête de renard géométrique à partir de triangles colorés."
 en_md5: 095833a5b2117c2d26500103216bf247
 ---

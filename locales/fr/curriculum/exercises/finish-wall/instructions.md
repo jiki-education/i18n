@@ -1,10 +1,10 @@
 ---
-title: "Termine le mur"
+title: "Termine la construction du mur"
 description: "Pose une rangée de briques à l'aide d'une boucle et d'une variable de position."
 en_md5: 6d13bb1ad8a10de21422bd597308f7dd
 ---
 
-Dans le premier exercice de dessin que tu as terminé, tu as utilisé la fonction `rectangle` pour boucher quelques trous dans un mur. Dans cet exercice, on va plus loin en utilisant une boucle pour ajouter la rangée du haut d'un mur.
+Dans le premier exercice de dessin que tu as terminé, tu as utilisé la fonction `rectangle` pour combler quelques trous dans un mur. Dans cet exercice, on va plus loin en utilisant une boucle pour ajouter la rangée du haut d'un mur.
 
 Toutes les rangées sont déjà terminées, sauf celle du haut. Tu dois ajouter la dernière rangée, composée de 5 briques. Le mur final doit ressembler à ceci :
 
