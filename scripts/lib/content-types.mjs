@@ -197,7 +197,28 @@ export const CONTENT_TYPES = {
   // properly.
   ...postType("blog"),
   ...postType("articles"),
-  ...postType("guides")
+  ...postType("guides"),
+
+  "project-episodes": {
+    label: "project episode",
+    format: "markdown",
+    slugged: true,
+    // A TWO-PART slug: "<project-slug>/<episode-uuid>". The UUID exists purely to
+    // keep episode names from colliding across projects, so the honest key is the
+    // namespace and the name together, and writing it as one path-shaped string
+    // keeps the mapping mechanical and reversible in both directions.
+    //
+    // `slugDepth` is what makes that work: discovery walks two directory levels
+    // instead of one and joins them with "/". Everything else in this file, and
+    // every script that reads it, is unchanged, because a slug was always just
+    // the part of the path that varies.
+    slugDepth: 2,
+    staleness: "frontmatter",
+    frontmatterTranslated: ["title", "excerpt"],
+    sourceRepoPath: (locale, slug) => `content/src/posts/projects/${slug}/${sourceName(locale, { markdown: true })}.md`,
+    localPath: (slug) => `content/posts/projects/${slug}/page.md`,
+    r2: (locale, slug, hash) => `/static/content/projects/${slug}/${locale}/content-${hash}.html`
+  }
 };
 
 /**
@@ -320,15 +341,31 @@ export function discoverItems(sourceRepo, typeId) {
   const probe = type.sourceRepoPath(SOURCE_LOCALE, "__SLUG__");
   const [prefix] = probe.split("__SLUG__");
   const root = path.join(sourceRepo, prefix);
+
+  return slugsUnder(root, type.slugDepth ?? 1)
+    .filter(exists)
+    .map((slug) => ({ type: typeId, slug }));
+}
+
+/**
+ * Every slug under a directory, at the type's slug depth.
+ *
+ * Depth 1 is a single directory name, which is what every type but project
+ * episodes uses. Depth 2 joins two levels with "/", so an episode's slug is
+ * "<project>/<uuid>" and is still just "the part of the path that varies".
+ * Sorted at every level so the answer never depends on directory order.
+ */
+function slugsUnder(root, depth) {
   if (!fs.existsSync(root)) return [];
 
-  return fs
+  const names = fs
     .readdirSync(root, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
     .map((entry) => entry.name)
-    .sort()
-    .filter(exists)
-    .map((slug) => ({ type: typeId, slug }));
+    .sort();
+
+  if (depth === 1) return names;
+  return names.flatMap((name) => slugsUnder(path.join(root, name), depth - 1).map((rest) => `${name}/${rest}`));
 }
 
 /**
@@ -347,13 +384,8 @@ export function listItems(typeId, locale) {
   const probe = type.localPath("__SLUG__");
   const [prefix] = probe.split("__SLUG__");
   const root = path.join(REPO_ROOT, "locales", locale, prefix);
-  if (!fs.existsSync(root)) return [];
 
-  return fs
-    .readdirSync(root, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => entry.name)
-    .sort()
+  return slugsUnder(root, type.slugDepth ?? 1)
     .map((slug) => ({ type: typeId, locale, slug, path: localPath(typeId, locale, slug) }))
     .filter((item) => fs.existsSync(item.path));
 }

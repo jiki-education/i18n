@@ -335,9 +335,12 @@ that path; commit it with the version pin.
 for `kind` in blog, articles and guides, using the renderer package's **second** pipeline,
 `renderPost`. It differs from the concept one in ways that are load-bearing (footnotes, the stock
 highlight.js grammars rather than Jiki's own, image fingerprinting), which is why the package
-exports two configured renderers and neither repo configures Markdown itself. Project episodes are
-**not** published here: their source layout (a UUID directory that is not the slug, metadata in a
-per-episode `config.json`) does not fit this repo's `(type, locale, slug)` coordinates.
+exports two configured renderers and neither repo configures Markdown itself. Project episodes are published on
+exactly the same terms. Their `content/src/posts/projects/{project}/{uuid}/` layout gives them a
+**two-part slug**, `"{project}/{uuid}"`, because the UUID is a namespacing device that stops episode
+names colliding across projects, so the honest key is the namespace and the name together.
+`content-types.mjs` expresses that with `slugDepth: 2`, which makes discovery walk two directory
+levels and join them; nothing downstream special cases episodes.
 
 Posts may reference `/images/...`, and the fingerprinted URL contains a hash of the image BYTES,
 which live in the front-end's `content` package. `publish` **resolves** those, lazily and only when

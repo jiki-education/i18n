@@ -92,10 +92,10 @@
 // (slug, locale) and code by (slug, language), so this publishes the prose half
 // plus the per-locale prose index that names it, and never touches the code half.
 //
-// Posts (blog, articles, guides) are rendered here too, with renderPost, the
-// renderer package's second pipeline. Project episodes are not: their source
-// layout does not fit this repo's (type, locale, slug) coordinates. See
-// scripts/lib/content-types.mjs.
+// Posts are rendered here too, with renderPost, the renderer package's second
+// pipeline. That includes project episodes: their UUID directory is a
+// namespacing device, not a different coordinate system, so their slug is simply
+// two parts rather than one. See scripts/lib/content-types.mjs.
 //
 // Instructions are still ALSO exported to dist/export/ in the source repo's
 // layout, for tooling that wants the authored file rather than the published
@@ -143,8 +143,15 @@ import {
 // worth having if it is the tree that would have been uploaded, byte for byte.
 let DIST = path.join(REPO_ROOT, "dist");
 
-/** The kinds of post that are published from here, in content-types.mjs order. */
-const POST_TYPE_IDS = ["blog", "articles", "guides"];
+/**
+ * Every post type published from here, in content-types.mjs order.
+ *
+ * Project episodes are in this list like anything else. Their slug is two parts
+ * ("<project>/<uuid>") rather than one, and that is the whole of the difference:
+ * content-types.mjs expresses it with slugDepth, so nothing downstream special
+ * cases them.
+ */
+const POST_TYPE_IDS = ["blog", "articles", "guides", "project-episodes"];
 
 /** Every markdown type, which is every type the untranslated-prose rules apply to. */
 const PROSE_TYPE_IDS = ["concept", "exercise-instructions", ...POST_TYPE_IDS];
@@ -302,6 +309,31 @@ async function publishLocale(locale, { exportSources }) {
     if (checkNoSentinels(`${locale} badge catalog`, catalog)) {
       manifest.badges = emit(artifacts, (hash) => CONTENT_TYPES.badges.r2(locale, null, hash), catalog);
     }
+  }
+
+  // --- levels ---------------------------------------------------------------
+  const levelsPath = localPath("levels", locale);
+  if (fs.existsSync(levelsPath)) {
+    const catalog = readJson(levelsPath);
+    if (checkNoSentinels(`${locale} level catalog`, catalog)) {
+      manifest.levels = emit(artifacts, (hash) => CONTENT_TYPES.levels.r2(locale, null, hash), catalog);
+    }
+  }
+
+  // --- interpreter message catalogs, one artifact per interpreter language ---
+  //
+  // The slug is a LANGUAGE (javascript, jikiscript, python), not an exercise, so
+  // these are discovered the same way every other slugged type is and need no
+  // special case beyond that.
+  manifest.interpreters = {};
+  for (const item of listItems("interpreter-messages", locale)) {
+    const catalog = readJson(item.path);
+    if (!checkNoSentinels(`${locale} interpreter catalog ${item.slug}`, catalog)) continue;
+    manifest.interpreters[item.slug] = emit(
+      artifacts,
+      (hash) => CONTENT_TYPES["interpreter-messages"].r2(locale, item.slug, hash),
+      catalog
+    );
   }
 
   // --- exercise message catalogs, one artifact per exercise -----------------
