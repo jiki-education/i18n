@@ -6,7 +6,7 @@
     },
     "decode": {
       "name": "Decodifica una stringa",
-      "description": "Scrivi una funzione chiamata `decode` che inverte il processo. Leggi il numero davanti a un carattere e ripeti quel carattere quel numero di volte. I conteggi possono avere più di una cifra."
+      "description": "Scrivi una funzione chiamata `decode` che inverte il processo. Leggi il numero davanti ad un carattere e ripeti quel carattere quel numero di volte. I conteggi possono avere più di una cifra."
     }
   },
   "scenarios": {
@@ -20,7 +20,7 @@
     },
     "rleEncodeNoSingles": {
       "name": "Una stringa senza caratteri singoli",
-      "description": "Le sequenze di caratteri ripetuti vengono sostituite da un conteggio e il carattere."
+      "description": "Le sequenze di caratteri ripetuti vengono sostituite da un conteggio ed il carattere."
     },
     "rleEncodeMixed": {
       "name": "Caratteri singoli mescolati a sequenze",
@@ -66,10 +66,10 @@
     },
     "countRuns": {
       "question": "Come faccio a contare una sequenza di caratteri ripetuti?",
-      "answer": "Percorri la stringa tenendo traccia del carattere precedente e di quante volte si è ripetuto. Ogni volta che il carattere cambia, scrivi la sequenza completata e inizia a contare il nuovo carattere."
+      "answer": "Percorri la stringa tenendo traccia del carattere precedente e di quante volte si è ripetuto. Ogni volta che il carattere cambia, scrivi la sequenza completata ed inizia a contare il nuovo carattere."
     },
     "singleChars": {
-      "question": "Come faccio a evitare di scrivere un conteggio per i caratteri singoli?",
+      "question": "Come faccio ad evitare di scrivere un conteggio per i caratteri singoli?",
       "answer": "Metti il numero davanti solo quando il conteggio è maggiore di 1. Se un carattere è comparso una sola volta, scrivi solo il carattere."
     },
     "decodeDigits": {
@@ -82,7 +82,7 @@
     },
     "decodeRepeat": {
       "question": "Come faccio a ripetere il carattere il numero giusto di volte?",
-      "answer": "Una volta incontrato un carattere non numerico, usa un ciclo che venga eseguito `count` volte, aggiungendo il carattere al risultato ogni volta. Poi azzera il conteggio a 0, pronto per la prossima sequenza. Se non c'era un conteggio, consideralo come 1."
+      "answer": "Una volta incontrato un carattere non numerico, usa un ciclo che venga eseguito `count` volte, aggiungendo il carattere al risultato ogni volta. Poi azzera il conteggio, pronto per la prossima sequenza. Se non c'era un conteggio, consideralo come 1."
     }
   },
   "functions": {
