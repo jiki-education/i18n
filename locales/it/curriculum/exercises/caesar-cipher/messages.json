@@ -2,7 +2,7 @@
   "tasks": {
     "encodeMessage": {
       "name": "Codifica un messaggio",
-      "description": "Scrivi una funzione `encode` che sposta ciascuna lettera di un messaggio di uno spostamento dato. Gli spazi devono rimanere spazi. Le lettere che, dopo lo spostamento, superano la 'z' devono ricominciare dall'inizio dell'alfabeto."
+      "description": "Scrivi una funzione `encode` che sposta ciascuna lettera di un messaggio di uno spostamento dato. Gli spazi devono rimanere tali. Le lettere che, dopo lo spostamento, superano la 'z' devono ricominciare dall'inizio dell'alfabeto."
     }
   },
   "scenarios": {
@@ -20,7 +20,7 @@
     },
     "caesarWithSpaces": {
       "name": "Messaggio con spazi",
-      "description": "Gli spazi devono rimanere spazi, solo le lettere vengono spostate."
+      "description": "Gli spazi devono rimanere tali, solo le lettere vengono spostate."
     },
     "caesarRot13": {
       "name": "Cifratura ROT13",
@@ -41,8 +41,8 @@
       "answer": "La lettera deve ricominciare dalla 'a'. L'operatore modulo (`%`) è perfetto per questo. Calcolare il modulo 26 della posizione riporta qualsiasi numero nell'intervallo da 0 a 25."
     },
     "applyToWholeMessage": {
-      "question": "Come applico questo a un intero messaggio?",
-      "answer": "Scorri ciascun carattere del messaggio, spostalo usando la tua funzione ausiliaria per una singola lettera, e usa la concatenazione (`+`) per costruire la stringa risultante dalle lettere spostate."
+      "question": "Come applico questo ad un intero messaggio?",
+      "answer": "Scorri ciascun carattere del messaggio, spostalo usando la tua funzione ausiliaria per una singola lettera, ed usa la concatenazione (`+`) per costruire la stringa risultante dalle lettere spostate."
     }
   },
   "functions": {

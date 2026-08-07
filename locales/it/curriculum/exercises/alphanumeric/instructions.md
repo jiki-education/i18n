@@ -8,9 +8,9 @@ In questo esercizio, il tuo compito è creare funzioni che verifichino se una st
 
 Dovrai scrivere tre funzioni ausiliarie:
 
-- `isAlpha(string)` (verifica se la stringa contiene solo lettere ASCII): determina se una stringa è composta solo da lettere ASCII (ad es. "A", "a", "Hello")
-- `isNumeric(string)` (verifica se la stringa contiene solo numeri): determina se una stringa è composta solo da caratteri numerici (ad es. "0", "1", "456")
-- `isAlphanumeric(string)` (verifica se la stringa contiene solo lettere o numeri): determina se una stringa è composta solo da lettere ASCII o numeri (ad es. "Hello", "42", "Hello42")
+- `isAlpha(string)` (`sono lettere`): determina se una stringa è composta solo da lettere ASCII (ad es. "A", "a", "Hello")
+- `isNumeric(string)` (`sono numeri`): determina se una stringa è composta solo da caratteri numerici (ad es. "0", "1", "456")
+- `isAlphanumeric(string)` (`sono lettere o numeri`): determina se una stringa è composta solo da lettere ASCII o numeri (ad es. "Hello", "42", "Hello42")
 
 Per qualsiasi altro simbolo (ad es. "! ?") o carattere non ASCII (ad es. "じき", "正直"), tutte e tre le funzioni devono restituire false.
 
@@ -25,6 +25,6 @@ Poi scrivi una funzione `whatAmI(string)` (cosa sono) che utilizzi quelle funzio
 
 Anche se ci sono molti modi validi per risolvere questo esercizio, la soluzione che ti chiediamo di trovare utilizza un'istruzione `continue` e le tre funzioni precedenti.
 
-L'esercizio ti sfida anche a risolvere tutto in 42 righe di codice o meno. Quel limite non è necessariamente la soluzione più adatta alla produzione. Un paio di righe in più probabilmente danno una soluzione più elegante, e ci sono anche soluzioni più brevi. Ma è un buon obiettivo per spingere le tue capacità.
+L'esercizio ti sfida anche a risolvere tutto in 42 righe di codice o meno. Quel limite non è necessariamente la soluzione più adatta. Un paio di righe in più probabilmente danno una soluzione più elegante, e ci sono anche soluzioni più brevi. Ma è un buon obiettivo per spingere le tue capacità.
 
 Buon divertimento!
