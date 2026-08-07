@@ -33,6 +33,15 @@
 // The manifest doubles as the item registry: an item is tracked here once it has
 // been synced once, so a bare `sync-source` refreshes exactly the corpus this
 // repo has imported and never silently pulls in the whole 1300-exercise tree.
+//
+// ## The family map
+//
+// The manifest also records which exercise-category each imported exercise
+// belongs to. That is a fact about the exercise's TypeScript, not its copy, so
+// it can only be read from the front-end, and this is the one script that reads
+// the front-end. Recording it here is what keeps publish.mjs runnable in CI with
+// no front-end checkout while still merging family base catalogs exactly as the
+// front-end's generator does.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -40,6 +49,7 @@ import { REPO_ROOT, SOURCE_LOCALE, TARGET_LOCALES, fail } from "./lib/constants.
 import {
   CONTENT_TYPE_IDS,
   contentType,
+  deriveFamily,
   discoverItems,
   localPath,
   resolveSourceRepo,
@@ -52,8 +62,8 @@ import { parseArgs } from "./lib/args.mjs";
 const MANIFEST = path.join(REPO_ROOT, "locales", SOURCE_LOCALE, ".manifest.json");
 
 function readManifest() {
-  if (!fs.existsSync(MANIFEST)) return { files: {}, items: [] };
-  return JSON.parse(readText(MANIFEST));
+  if (!fs.existsSync(MANIFEST)) return { files: {}, items: [], families: {} };
+  return { families: {}, ...JSON.parse(readText(MANIFEST)) };
 }
 
 /** Keep only the named top-level namespaces of a JSON catalog, in their source order. */
@@ -122,6 +132,15 @@ function main() {
 
   const files = { ...manifest.files };
   const tracked = new Map(manifest.items.map((item) => [`${item.type}:${item.slug ?? ""}`, item]));
+
+  // The exercise-to-family map. An exercise's family is whichever
+  // `exercise-categories/<family>/` module its `.ts` files import, so it is a
+  // fact about code that only exists in the front-end. Capturing it here is what
+  // lets publish.mjs merge the family's base catalog into a member exercise's
+  // catalog without a front-end checkout, which CI does not have. A standalone
+  // exercise is recorded as an explicit null, so "scanned, no family" and "never
+  // scanned" stay distinguishable and publish can hard-fail on the second.
+  const families = { ...manifest.families };
   let written = 0;
   let unchanged = 0;
 
@@ -155,15 +174,21 @@ function main() {
       slug: item.slug ?? null,
       ...(namespaces ? { namespaces } : {})
     });
+
+    if (contentType(item.type).exerciseScoped) {
+      families[item.slug] = deriveFamily(sourceRepo, item.slug);
+    }
   }
 
   const next = {
     $comment:
       "Written by scripts/sync-source.mjs. `files` is the md5 of every mirrored English file, " +
-      "used by the divergence guard; `items` is the corpus this repo has imported. Do not hand-edit.",
+      "used by the divergence guard; `items` is the corpus this repo has imported; `families` maps " +
+      "each imported exercise to its exercise-category base, or null when it has none. Do not hand-edit.",
     syncedFrom: path.basename(sourceRepo),
     syncedAt: new Date().toISOString(),
     items: [...tracked.values()].sort((a, b) => `${a.type}${a.slug}`.localeCompare(`${b.type}${b.slug}`)),
+    families: Object.fromEntries(Object.entries(families).sort(([a], [b]) => a.localeCompare(b))),
     files: Object.fromEntries(Object.entries(files).sort(([a], [b]) => a.localeCompare(b)))
   };
   guardedWrite(MANIFEST, `${JSON.stringify(next, null, 2)}\n`, { syncingSource: true });
