@@ -8,7 +8,7 @@ Nell'ultimo livello, hai capito come spostare un cannone laser avanti e indietro
 
 Il codice precedente funzionava, ma la logica di sparo era mescolata con tutto il resto. Ciò che ti farà migliorare nella programmazione è dividere il codice in pezzi, ognuno dedicato a qualcosa.
 
-In questo esercizio, devi estrarre la logica di sparo in una propria funzione chiamata `shootIfAlienAbove` (spara se c'è un alieno sopra). Questa funzione ha il compito di verificare se c'è un alieno al di sopra del cannone laser e, in tal caso, colpirlo.
+In questo esercizio, devi estrarre la logica di sparo in una funzione dedicata chiamata `shootIfAlienAbove` (spara se c'è un alieno sopra). Questa funzione ha il compito di verificare se c'è un alieno al di sopra del cannone laser e, in tal caso, colpirlo.
 
 Il resto della logica di gioco (tracciare la posizione, cambiare direzione ai bordi, spostare il laser) rimane nel ciclo come prima.
 
