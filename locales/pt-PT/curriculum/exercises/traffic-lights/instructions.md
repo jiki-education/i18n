@@ -1,6 +1,7 @@
 ---
 title: "Semáforo"
 description: "Desenha um semáforo usando variáveis para a posição e o tamanho."
+en_md5: 716484ce59befe362bbc13b364265362
 ---
 
 A tua tarefa é completar o semáforo, desenhando as três luzes coloridas com as variáveis (_variables_ em inglês) que te fornecemos.

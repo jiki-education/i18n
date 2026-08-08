@@ -1,39 +1,39 @@
 {
   "checks": {
-    "baseCircle": "�",
-    "bodyCircle": "�",
-    "headCircle": "�"
+    "baseCircle": "O círculo da base (em baixo) não está certo. Verifica snowmanCenterX, baseCenterY e baseRadius.",
+    "bodyCircle": "O círculo do corpo (ao meio) não está certo. Verifica snowmanCenterX, bodyCenterY e bodyRadius.",
+    "headCircle": "O círculo da cabeça (no topo) não está certo. Verifica snowmanCenterX, headCenterY e headRadius."
   },
   "tasks": {
     "buildSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "Constrói o boneco de neve",
+      "description": "Define os valores das variáveis para que o boneco de neve corresponda à imagem-alvo."
     }
   },
   "scenarios": {
     "buildSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "Constrói o boneco de neve",
+      "description": "Define os valores corretos das variáveis para desenhar o boneco de neve."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Não sei por onde começar",
+      "answer": "O código original desenha um círculo branco do lado esquerdo. Tens de corrigir os valores de snowmanCenterX, baseCenterY e baseRadius para o colocares sobre o anel de baixo do modelo. Depois, acrescenta variáveis para os outros círculos."
     },
     "variableNotFoundError": {
-      "question": "�",
-      "answer": "�"
+      "question": "Recebo um erro do tipo \"Jiki could not find a variable called 'XXX'\"",
+      "answer": "Significa que ainda não criaste a variável (a caixa nas prateleiras do Jiki) com a palavra-chave `let`. Quando o Jiki lê o código que desenha os círculos, espera encontrar as caixas referidas, mas elas não estão lá. Por isso, tens de as acrescentar."
     },
     "stillNotDeclaredError": {
-      "question": "�",
-      "answer": "�"
+      "question": "Acrescentei as variáveis mas continuo a receber um erro de \"not declared\"",
+      "answer": "Verifica a ortografia: é provável que tenhas uma gralha. Lembra-te de que as maiúsculas e minúsculas fazem diferença: `bodycentery` não é o mesmo que `bodyCenterY`."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um círculo com o centro em (centerX, centerY), com o raio e a cor indicados",
+      "category": "Desenhar formas"
     }
   }
 }
