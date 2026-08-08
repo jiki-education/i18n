@@ -2,7 +2,7 @@
   "checks": {
     "fastAttack": {
       "should": "Annalyn <strong>devrait</strong> lancer une attaque éclair ici, mais elle ne l'a pas fait. Le chevalier dort, elle peut donc frapper avant qu'il ne se réveille.",
-      "shouldNot": "Annalyn <strong>ne devrait pas</strong> lancer d'attaque éclair ici. Le chevalier est éveillé : si elle attaque, elle se fera prendre.",
+      "shouldNot": "Annalyn <strong>ne devrait pas</strong> lancer d'attaque éclair ici. Le chevalier est éveillé : si elle attaque, elle se fera prendre.",
       "tooMany": "Annalyn <strong>devrait</strong> lancer une seule attaque éclair ici, mais elle l'a fait {{count}} fois."
     },
     "spy": {
@@ -12,7 +12,7 @@
     },
     "signal": {
       "should": "Annalyn <strong>devrait</strong> faire signe au prisonnier ici, mais elle ne l'a pas fait. Le prisonnier est éveillé et l'archère dort, le signal passera donc.",
-      "shouldNot": "Annalyn <strong>ne devrait pas</strong> faire signe au prisonnier ici. Soit le prisonnier dort, soit l'archère est éveillée : le signal échouerait.",
+      "shouldNot": "Annalyn <strong>ne devrait pas</strong> faire signe au prisonnier ici. Soit le prisonnier dort, soit l'archère est éveillée : le signal échouerait.",
       "tooMany": "Annalyn <strong>devrait</strong> faire signe au prisonnier une seule fois ici, mais elle l'a fait {{count}} fois."
     },
     "free": {
@@ -24,7 +24,7 @@
   "tasks": {
     "planTheRescue": {
       "name": "Planifie le sauvetage",
-      "description": "Pour chaque camp, effectue chaque action qu'Annalyn peut mener sans danger : lancer une attaque éclair si le chevalier dort, espionner si au moins une personne est éveillée, faire signe au prisonnier s'il est éveillé et que l'archère dort, et libérer le prisonnier soit grâce au chien (s'il se tient bien), soit en se faufilant elle-même."
+      "description": "Pour chaque camp, effectue chaque action qu'Annalyn peut mener sans danger : lancer une attaque éclair si le chevalier dort, espionner si au moins une personne est éveillée, faire signe au prisonnier s'il est éveillé et que l'archère dort, et libérer le prisonnier soit grâce au chien (s'il se tient bien), soit en se faufilant elle-même."
     }
   },
   "scenarios": {
@@ -55,28 +55,28 @@
   },
   "hints": {
     "checkCampState": {
-      "question": "Comment vérifier l'état du camp ?",
-      "answer": "Tu peux vérifier quatre choses, chacune avec une fonction qui renvoie `true` ou `false` :\n\n- Le chevalier est-il éveillé ? `knightIsAwake()`\n- L'archère est-elle éveillée ? `archerIsAwake()`\n- Le prisonnier est-il éveillé ? `prisonerIsAwake()`\n- Le chien se tient-il bien ? `dogIsBehaving()`"
+      "question": "Comment vérifier l'état du camp ?",
+      "answer": "Tu peux vérifier quatre choses, chacune avec une fonction qui renvoie `true` ou `false` :\n\n- Le chevalier est-il éveillé ? `knightIsAwake()`\n- L'archère est-elle éveillée ? `archerIsAwake()`\n- Le prisonnier est-il éveillé ? `prisonerIsAwake()`\n- Le chien se tient-il bien ? `dogIsBehaving()`"
     },
     "performActions": {
-      "question": "Comment demander à Annalyn d'effectuer chaque action ?",
-      "answer": "Il y a quatre actions, chacune avec sa propre fonction :\n\n- Lancer une attaque éclair : `fastAttack()`\n- Espionner le camp : `spy()`\n- Faire signe au prisonnier : `signalPrisoner()`\n- Libérer le prisonnier : `freePrisoner()`"
+      "question": "Comment demander à Annalyn d'effectuer chaque action ?",
+      "answer": "Il y a quatre actions, chacune avec sa propre fonction :\n\n- Lancer une attaque éclair : `fastAttack()`\n- Espionner le camp : `spy()`\n- Faire signe au prisonnier : `signalPrisoner()`\n- Libérer le prisonnier : `freePrisoner()`"
     },
     "knightAsleep": {
-      "question": "Une attaque éclair exige que le chevalier soit ENDORMI. Comment vérifier ça ?",
-      "answer": "Il n'existe pas de fonction `isAsleep()`, mais être endormi est simplement le contraire d'être éveillé. Utilise `!` pour inverser une condition. Imagine qu'on veuille dire à quelqu'un d'arrêter de manger quand il n'a plus faim, mais qu'on ne dispose que d'une fonction `isHungry()`. On peut l'inverser :\n\n```javascript\nif (!isHungry()) {\n  stopEating()\n}\n```\n\nApplique la même idée pour vérifier que le chevalier dort."
+      "question": "Une attaque éclair exige que le chevalier soit ENDORMI. Comment vérifier ça ?",
+      "answer": "Il n'existe pas de fonction `isAsleep()`, mais être endormi est simplement le contraire d'être éveillé. Utilise `!` pour inverser une condition. Imagine qu'on veuille dire à quelqu'un d'arrêter de manger quand il n'a plus faim, mais qu'on ne dispose que d'une fonction `isHungry()`. On peut l'inverser :\n\n```javascript\nif (!isHungry()) {\n  stopEating()\n}\n```\n\nApplique la même idée pour vérifier que le chevalier dort."
     },
     "spyAnyoneAwake": {
-      "question": "L'espionnage fonctionne si AU MOINS UNE personne est éveillée. Comment écrire ça ?",
-      "answer": "Utilise `||` (ou) entre les vérifications pour que la condition entière soit `true` dès qu'une seule d'entre elles est `true`. Par exemple, ce code s'exécute quand quelqu'un a faim, soif, ou les deux :\n\n```javascript\nif (isHungry() || isThirsty()) {\n  rest()\n}\n```"
+      "question": "L'espionnage fonctionne si AU MOINS UNE personne est éveillée. Comment écrire ça ?",
+      "answer": "Utilise `||` (ou) entre les vérifications pour que la condition entière soit `true` dès qu'une seule d'entre elles est `true`. Par exemple, ce code s'exécute quand quelqu'un a faim, soif, ou les deux :\n\n```javascript\nif (isHungry() || isThirsty()) {\n  rest()\n}\n```"
     },
     "signalBothConditions": {
-      "question": "Le signal exige que DEUX choses soient vraies en même temps. Comment les combiner ?",
-      "answer": "Utilise `&&` (et) : les deux côtés doivent alors être `true`. Par exemple, ce code ne s'exécute que quand quelqu'un a faim ET soif :\n\n```javascript\nif (isHungry() && isThirsty()) {\n  drink()\n}\n```"
+      "question": "Le signal exige que DEUX choses soient vraies en même temps. Comment les combiner ?",
+      "answer": "Utilise `&&` (et) : les deux côtés doivent alors être `true`. Par exemple, ce code ne s'exécute que quand quelqu'un a faim ET soif :\n\n```javascript\nif (isHungry() && isThirsty()) {\n  drink()\n}\n```"
     },
     "twoWaysToSucceed": {
-      "question": "Une action a deux façons complètement distinctes de réussir. Comment gérer ça ?",
-      "answer": "Chaque façon suffit à elle seule, tu as donc deux options.\n\nLa première consiste à écrire une instruction `if` distincte pour chaque façon, les deux effectuant la même action :\n\n```javascript\nif (isHungry() && hasSnack()) {\n  eat()\n}\nif (isThirsty() && hasSnack()) {\n  eat()\n}\n```\n\nLa seconde consiste à combiner les deux façons dans un seul `if` avec `||`, en entourant les vérifications de chaque façon de parenthèses pour que les parties en `&&` se regroupent avant que le `||` ne les sépare :\n\n```javascript\nif ((isHungry() && hasSnack()) || (isThirsty() && hasSnack())) {\n  eat()\n}\n```\n\nDétermine d'abord les conditions de chaque façon séparément, puis utilise le style qui te paraît le plus clair."
+      "question": "Une action a deux façons complètement distinctes de réussir. Comment gérer ça ?",
+      "answer": "Chaque façon suffit à elle seule, tu as donc deux options.\n\nLa première consiste à écrire une instruction `if` distincte pour chaque façon, les deux effectuant la même action :\n\n```javascript\nif (isHungry() && hasSnack()) {\n  eat()\n}\nif (isThirsty() && hasSnack()) {\n  eat()\n}\n```\n\nLa seconde consiste à combiner les deux façons dans un seul `if` avec `||`, en entourant les vérifications de chaque façon de parenthèses pour que les parties en `&&` se regroupent avant que le `||` ne les sépare :\n\n```javascript\nif ((isHungry() && hasSnack()) || (isThirsty() && hasSnack())) {\n  eat()\n}\n```\n\nDétermine d'abord les conditions de chaque façon séparément, puis utilise le style qui te paraît le plus clair."
     }
   },
   "describers": {

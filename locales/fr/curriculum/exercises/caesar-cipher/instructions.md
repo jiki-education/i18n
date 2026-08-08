@@ -1,6 +1,7 @@
 ---
 title: "Le chiffre de César"
 description: "Chiffre un message secret avec une méthode de chiffrement de la Rome antique."
+en_md5: 029bbd7050127405f5e67a3a20353139
 ---
 
 Le chiffre de César est l'une des techniques de chiffrement les plus anciennes et les plus simples. Jules César l'utilisait pour envoyer des messages secrets à ses généraux.

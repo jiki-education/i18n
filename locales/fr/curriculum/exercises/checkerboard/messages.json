@@ -1,80 +1,80 @@
 {
   "checks": {
-    "border": "�",
-    "topLeftWhite": "�",
-    "rightOfTopLeftDark": "�",
-    "bottomLeftDark": "�",
-    "bottomRightWhite": "�",
-    "charcoalPiece": "�",
-    "topRim": "�",
-    "whitePiece": "�",
-    "bottomRim": "�",
-    "rimRatio": "�",
-    "innerRatio": "�",
-    "noPieceOnLight": "�",
-    "middleRowsEmpty": "�"
+    "border": "Le plateau doit avoir une bordure noire tout autour.",
+    "topLeftWhite": "La case en haut à gauche doit être blanche (c'est une case claire).",
+    "rightOfTopLeftDark": "La case à droite de celle en haut à gauche doit être marron foncé (une case foncée).",
+    "bottomLeftDark": "La case en bas à gauche doit être marron foncé (une case foncée).",
+    "bottomRightWhite": "La case en bas à droite doit être blanche.",
+    "charcoalPiece": "Il doit y avoir un pion anthracite sur la case foncée de la rangée du haut.",
+    "topRim": "Les pions des rangées du haut doivent avoir un contour.",
+    "whitePiece": "Il doit y avoir un pion blanc sur la case foncée de la rangée du bas.",
+    "bottomRim": "Les pions des rangées du bas doivent avoir un contour.",
+    "rimRatio": "Le contour d'un pion doit faire 80 % de la largeur de sa case : vérifie le rayon du cercle extérieur.",
+    "innerRatio": "Le centre d'un pion doit faire 75 % de la largeur du pion entier : vérifie le rayon du cercle intérieur.",
+    "noPieceOnLight": "Il ne doit pas y avoir de pion sur la case en haut à gauche : les pions vont uniquement sur les cases foncées.",
+    "middleRowsEmpty": "Les rangées du milieu doivent être vides : seules les rangées du haut et du bas ont des pions."
   },
   "tasks": {
     "setUpTheBoard": {
-      "name": "�",
-      "description": "�"
+      "name": "Prépare le plateau",
+      "description": "Dessine le damier et place les pions sur les cases foncées des rangées du haut et du bas, en faisant en sorte que ça fonctionne pour n'importe quelle taille de plateau."
     }
   },
   "scenarios": {
     "board8": {
-      "name": "�",
-      "description": "�"
+      "name": "Prépare un plateau de 8×8",
+      "description": "Dessine le damier classique de 8×8 et dispose les pions, prêts à jouer."
     },
     "board6": {
-      "name": "�",
-      "description": "�"
+      "name": "Prépare un plateau de 6×6",
+      "description": "Le même code doit s'adapter à un plateau plus petit de 6×6."
     },
     "board10": {
-      "name": "�",
-      "description": "�"
+      "name": "Prépare un plateau de 10×10",
+      "description": "Et il doit aussi s'adapter à un plateau plus grand de 10×10."
     }
   },
   "hints": {
     "wholeGrid": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment dessiner toute une grille de cases plutôt qu'une seule ?",
+      "answer": "Utilise des boucles imbriquées : une boucle externe qui parcourt les rangées et une boucle interne qui parcourt les colonnes. Dessine une case à chaque tour de la boucle interne."
     },
     "anyBoardSize": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment faire pour que ça fonctionne quelle que soit la taille du plateau ?",
+      "answer": "Ne choisis pas une taille de case fixe. Demande à `getBoardSize()` combien il y a de cases, calcule une taille de `cell` unique à partir de ce nombre et de l'espace disponible, et construis chaque position comme un multiple de cette taille."
     },
     "alternateColours": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment faire alterner les couleurs des cases ?",
+      "answer": "Regarde la rangée et la colonne d'une case ensemble. L'opérateur modulo (`%`) te permet de répartir chaque case dans l'un de deux groupes en fonction de `row` et `col`, et ces deux groupes correspondent exactement aux cases claires et foncées."
     },
     "whichSquaresGetPieces": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quelles cases reçoivent des pions ?",
+      "answer": "Les pions se placent uniquement sur les cases **foncées**, donc tu peux réutiliser le test qui t'a servi à les colorier. Restreins-le ensuite aux seules rangées du haut et du bas, en laissant les deux du milieu vides."
     },
     "ridgedPiece": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment dessiner un pion à rebord ?",
+      "answer": "Dessine deux cercles au même centre : un plus grand pour le contour, puis un légèrement plus petit par-dessus, dans la couleur du pion. Base les deux rayons sur la taille de la cellule pour que les pions s'adaptent à la taille du plateau."
     },
     "rimSize": {
-      "question": "�",
-      "answer": "�"
+      "question": "La taille du contour ne ressemble pas au schéma d'exemple.",
+      "answer": "Vérifie que le cercle intérieur fait 75 % du cercle extérieur (et non 75 % de la case)."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Dessine un rectangle à la position (left, top) avec la largeur, la hauteur et la couleur données",
+      "category": "Dessin de formes"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Dessine un cercle centré en (centerX, centerY) avec le rayon et la couleur donnés",
+      "category": "Dessin de formes"
     },
     "getBoardSize": {
-      "description": "�",
-      "category": "�"
+      "description": "Renvoie la taille du plateau (le nombre de cases sur chaque côté) pour le puzzle en cours",
+      "category": "Information"
     }
   },
   "describers": {
-    "getBoardSize": "�"
+    "getBoardSize": "a récupéré la taille du plateau (le nombre de cases sur chaque côté)"
   }
 }

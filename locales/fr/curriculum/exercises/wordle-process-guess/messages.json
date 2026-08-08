@@ -1,10 +1,10 @@
 {
   "checks": {
     "allCorrect": "On s'attendait à ce que toutes les lettres soient vertes",
-    "absent": "On s'attendait à l'état absent pour le « a » et le « u »",
-    "present": "On s'attendait à l'état present pour le « l » et le « e ».",
-    "complex": "On s'attendait à : present, present, present, correct, absent",
-    "differentWord": "On s'attendait à : correct, present, present, present, absent"
+    "absent": "On s'attendait à l'état absent pour le « a » et le « u »",
+    "present": "On s'attendait à l'état present pour le « l » et le « e ».",
+    "complex": "On s'attendait à : present, present, present, correct, absent",
+    "differentWord": "On s'attendait à : correct, present, present, present, absent"
   },
   "tasks": {
     "processGuess": {
@@ -31,28 +31,28 @@
     },
     "differentWord": {
       "name": "Un autre mot",
-      "description": "Et pour finir, un autre mot !"
+      "description": "Et pour finir, un autre mot !"
     }
   },
   "hints": {
     "compareLetters": {
-      "question": "Comment comparer chaque lettre de l'essai avec le mot cible ?",
+      "question": "Comment comparer chaque lettre de l'essai avec le mot cible ?",
       "answer": "Parcours les positions `0` à `4`. Pour chaque position, compare `guess[i]` avec `target[i]`."
     },
     "stateRules": {
-      "question": "Quand une lettre est-elle `\"correct\"`, `\"present\"` ou `\"absent\"` ?",
+      "question": "Quand une lettre est-elle `\"correct\"`, `\"present\"` ou `\"absent\"` ?",
       "answer": "Si `guess[i]` est égal à `target[i]`, c'est `\"correct\"`. Sinon, si la lettre apparaît ailleurs dans `target`, c'est `\"present\"`. Dans le cas contraire, c'est `\"absent\"`."
     },
     "buildList": {
-      "question": "Comment construire le tableau des états ?",
+      "question": "Comment construire le tableau des états ?",
       "answer": "Commence avec un tableau vide, puis utilise `push(states, value)` dans la boucle pour ajouter chaque état dans l'ordre."
     },
     "checkPresence": {
-      "question": "Comment vérifier si une lettre apparaît quelque part dans le mot cible ?",
+      "question": "Comment vérifier si une lettre apparaît quelque part dans le mot cible ?",
       "answer": "Écris une petite fonction d'aide qui parcourt les lettres du mot cible et renvoie `true` si elle trouve une correspondance. Le code principal reste ainsi plus clair."
     },
     "finishedList": {
-      "question": "Où va le tableau une fois terminé ?",
+      "question": "Où va le tableau une fois terminé ?",
       "answer": "Passe-le à `colorRow(1, states)` pour colorier la première rangée de la grille avec les états que tu as calculés."
     }
   },

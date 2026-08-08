@@ -1,76 +1,76 @@
 {
   "checks": {
-    "totalCells": "�",
-    "groundWalls": "�",
-    "groundGlass": "�",
-    "groundEntrance": "�",
-    "floorWalls": "�",
-    "floorGlass": "�",
-    "roof": "�",
+    "totalCells": "On attendait {{expected}} cellules, mais on en a trouvé {{got}}.",
+    "groundWalls": "Le rez-de-chaussée devrait avoir des murs aux positions (17, 2) et (21, 2).",
+    "groundGlass": "Le rez-de-chaussée devrait avoir du verre aux positions (18, 2) et (20, 2).",
+    "groundEntrance": "Le rez-de-chaussée devrait avoir une entrée à la position (19, 2).",
+    "floorWalls": "L'étage {{y}} devrait avoir des murs aux positions (17, {{y}}) et (21, {{y}}).",
+    "floorGlass": "L'étage {{y}} devrait avoir du verre aux positions (18, {{y}}), (19, {{y}}) et (20, {{y}}).",
+    "roof": "Le toit à y={{roofY}} devrait être entièrement fait de murs.",
     "codeQuality": {
-      "allArgumentsAreVariables": "�"
+      "allArgumentsAreVariables": "Tu devrais utiliser des <strong>variables</strong> comme arguments des fonctions, pas des valeurs littérales. Commence par stocker les valeurs dans des variables, puis passe ces variables."
     }
   },
   "tasks": {
     "buildSkyscraper": {
-      "name": "�",
-      "description": "�"
+      "name": "Construis le gratte-ciel",
+      "description": "Construis un gratte-ciel avec le bon nombre d'étages, en incluant un rez-de-chaussée avec une entrée, des étages supérieurs en verre et un toit fait de murs."
     }
   },
   "scenarios": {
     "floors6": {
-      "name": "�",
-      "description": "�"
+      "name": "Gratte-ciel de 6 étages",
+      "description": "Construis un gratte-ciel de 6 étages."
     },
     "floors8": {
-      "name": "�",
-      "description": "�"
+      "name": "Gratte-ciel de 8 étages",
+      "description": "Construis un gratte-ciel de 8 étages."
     },
     "floors10": {
-      "name": "�",
-      "description": "�"
+      "name": "Gratte-ciel de 10 étages",
+      "description": "Construis un gratte-ciel de 10 étages."
     },
     "floors12": {
-      "name": "�",
-      "description": "�"
+      "name": "Gratte-ciel de 12 étages",
+      "description": "Construis un gratte-ciel de 12 étages."
     },
     "floors16": {
-      "name": "�",
-      "description": "�"
+      "name": "Gratte-ciel de 16 étages",
+      "description": "Construis un gratte-ciel de 16 étages."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Je ne sais pas par où commencer.",
+      "answer": "Commence par dessiner un mur, du verre et une entrée pour vérifier que tu comprends bien les fonctions. Dessine ensuite l'étage de base, qui est toujours le même. Utilise alors la fonction `numFloors()` pour savoir combien d'étages il y a en tout, dessine les étages restants, puis le toit."
     },
     "tooManyTooFewFloors": {
-      "question": "�",
-      "answer": "�"
+      "question": "J'ai trop ou pas assez d'étages.",
+      "answer": "Si `numFloors()` renvoie 5, cela correspond à un étage d'entrée, 4 étages de verre et 1 toit. Vérifie que ta logique est correcte !"
     }
   },
   "functions": {
     "buildWall": {
-      "description": "�",
-      "category": "�"
+      "description": "Place un **bloc de mur** à la position (x, y) de la grille.",
+      "category": "Construction"
     },
     "buildGlass": {
-      "description": "�",
-      "category": "�"
+      "description": "Place un **panneau de verre** à la position (x, y) de la grille.",
+      "category": "Construction"
     },
     "buildEntrance": {
-      "description": "�",
-      "category": "�"
+      "description": "Place une **porte d'entrée** à la position (x, y) de la grille.",
+      "category": "Construction"
     },
     "numFloors": {
-      "description": "�",
-      "category": "�"
+      "description": "Renvoie le **nombre d'étages** de ce bâtiment.",
+      "category": "Information"
     }
   },
   "describers": {
-    "buildWall": "�",
-    "buildEntrance": "�",
-    "buildGlass": "�",
-    "numFloors": "�"
+    "buildWall": "a construit un mur à la position (${arg1}, ${arg2})",
+    "buildEntrance": "a construit une entrée à la position (${arg1}, ${arg2})",
+    "buildGlass": "a construit un panneau de verre à la position (${arg1}, ${arg2})",
+    "numFloors": "a récupéré le nombre d'étages"
   }
 }

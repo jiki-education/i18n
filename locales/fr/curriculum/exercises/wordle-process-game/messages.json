@@ -1,0 +1,79 @@
+{
+  "checks": {
+    "holeInOne": {
+      "firstRow": "On attendait que toutes les lettres soient vertes"
+    },
+    "twoGuesses": {
+      "firstRow": "On attendait que la deuxième lettre soit à l'état « absent »",
+      "secondRow": "On attendait que toutes les lettres soient vertes"
+    },
+    "threeGuesses": {
+      "firstRow": "On attendait que la deuxième et la quatrième lettre soient à l'état « absent »",
+      "secondRow": "On attendait que la deuxième lettre soit à l'état « absent »",
+      "thirdRow": "On attendait que toutes les lettres soient vertes"
+    },
+    "phew": {
+      "firstRow": "On attendait que tout soit à l'état « absent ».",
+      "secondRow": "On attendait que tout soit à l'état « absent ».",
+      "thirdRow": "On attendait que les deux dernières lettres soient à l'état « present » et les autres à l'état « absent ».",
+      "fourthRow": "On attendait que la première lettre soit à l'état « present » et les autres à l'état « absent ».",
+      "fifthRow": "On attendait que la deuxième lettre soit à l'état « present » et les autres à l'état « absent »",
+      "sixthRow": "On attendait que toutes les lettres soient vertes"
+    }
+  },
+  "tasks": {
+    "processGame": {
+      "name": "Traite une partie complète",
+      "description": "Crée une fonction appelée processGame qui prend un mot secret et un tableau de propositions, puis appelle colorRow pour chaque proposition avec les bons états."
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "Du premier coup !",
+      "description": "Gère une première proposition correcte."
+    },
+    "twoGuesses": {
+      "name": "Trouvé en deux coups",
+      "description": "Gère deux propositions."
+    },
+    "threeGuesses": {
+      "name": "Trouvé en trois coups",
+      "description": "Gère trois propositions."
+    },
+    "phew": {
+      "name": "Ouf !",
+      "description": "Ouf ! Il était moins une !"
+    }
+  },
+  "hints": {
+    "reuseWork": {
+      "question": "Comment réutiliser mon travail de `processGuess` ?",
+      "answer": "La logique qui transforme une proposition en tableau d'états est la même. Déplace-la dans une fonction auxiliaire (ou copie-la), puis appelle-la pour chaque proposition du tableau."
+    },
+    "trackRow": {
+      "question": "Comment savoir à quelle rangée correspond chaque proposition ?",
+      "answer": "Parcours les propositions avec un indice. Le numéro de rangée est l'indice plus `1` (puisque `colorRow` attend des rangées numérotées `1-6`)."
+    },
+    "colourRow": {
+      "question": "Comment colorier chaque rangée, concrètement ?",
+      "answer": "Une fois que tu as le tableau `states` d'une proposition, appelle `colorRow(rowNumber, states)`."
+    },
+    "fewerGuesses": {
+      "question": "Et si le joueur a fait moins de 6 propositions ?",
+      "answer": "Ne colorie que les rangées des propositions qui existent. La longueur du tableau t'indique combien il faut en traiter, donc tu t'arrêtes naturellement au bon endroit."
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "Colorie une rangée de la grille Wordle avec les états donnés.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "Ajoute un élément à un tableau et renvoie le nouveau tableau. Ne modifie pas le tableau d'origine.",
+      "category": "Tableaux"
+    }
+  },
+  "describers": {
+    "colorRow": "a colorié une rangée de la grille Wordle"
+  }
+}

@@ -10,7 +10,7 @@
     "topRight": "Le rectangle en haut à droite n'est pas correct.",
     "brickCount": "Le mur doit être composé d'exactement 55 briques.",
     "codeQuality": {
-      "rectangleCalledOnce": "Tu utilises la fonction <code>rectangle</code> à plusieurs endroits dans ton code. Elle ne doit apparaître qu'une seule fois !"
+      "rectangleCalledOnce": "Tu utilises la fonction <code>rectangle</code> à plusieurs endroits dans ton code. Elle ne doit apparaître qu'une seule fois !"
     }
   },
   "tasks": {
@@ -27,23 +27,23 @@
   },
   "hints": {
     "onlyOneRectangleCall": {
-      "question": "Je ne peux appeler `rectangle` qu'une seule fois. Comment dessiner 55 briques ?",
+      "question": "Je ne peux appeler `rectangle` qu'une seule fois. Comment dessiner 55 briques ?",
       "answer": "Place l'unique appel à `rectangle` à l'intérieur d'une boucle. À chaque itération, les valeurs X et Y changent, et une nouvelle brique est donc dessinée à un nouvel endroit."
     },
     "wholeGrid": {
-      "question": "Comment dessiner une grille entière plutôt qu'une seule rangée ?",
+      "question": "Comment dessiner une grille entière plutôt qu'une seule rangée ?",
       "answer": "Utilise des boucles imbriquées. La boucle externe parcourt les rangées (en changeant Y), et la boucle interne parcourt les briques de cette rangée (en changeant X)."
     },
     "offsetRows": {
-      "question": "Comment gérer les rangées qui sont décalées différemment ?",
+      "question": "Comment gérer les rangées qui sont décalées différemment ?",
       "answer": "Regarde bien l'image. Une rangée sur deux est décalée sur le côté et compte un nombre de briques différent. Il faut donc traiter les deux types de rangée différemment, en choisissant pour chacun une position de départ et un nombre de briques."
     },
     "oddEven": {
-      "question": "Comment savoir si un numéro de rangée est pair ou impair ?",
+      "question": "Comment savoir si un numéro de rangée est pair ou impair ?",
       "answer": "L'opérateur `%` (modulo) te donne le reste après une division. En divisant un numéro de rangée par 2, tu obtiens un moyen de distinguer les rangées impaires des rangées paires, ce que tu peux ensuite tester dans un `if`."
     },
     "sizesAndSpacings": {
-      "question": "Quelles tailles et quels espacements utiliser ?",
+      "question": "Quelles tailles et quels espacements utiliser ?",
       "answer": "Chaque brique fait `20` de large et `10` de haut, donc X augmente de `20` d'une brique à l'autre dans une rangée, et Y change de `10` d'une rangée à l'autre."
     }
   },
