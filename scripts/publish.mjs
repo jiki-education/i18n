@@ -209,28 +209,54 @@ function emitBytes(artifacts, r2Path, content) {
 }
 
 /**
- * Whether a catalog is free of the untranslated sentinel, and therefore servable.
+ * Count a catalog's remaining untranslated sentinels, and record them.
  *
- * A catalog that still holds it is SKIPPED, loudly, and the run continues. There
- * is no flag to publish it anyway, and no flag to make this abort instead: one
- * unfinished locale must not stop every finished one from shipping.
+ * This used to REFUSE the artifact. It no longer does, and the change is the
+ * point rather than a relaxation. Publishing and serving are different
+ * questions: R2 carries whatever is on main, so a translator can see work in
+ * progress on staging, and a catalog full of replacement glyphs is exactly the
+ * state someone reviewing it needs to look at. Refusing to publish it made the
+ * WIP invisible in the only place it could be reviewed.
  *
- * Returns false when the artifact must be skipped.
+ * Strictness moved to serving. The front-end's PRODUCTION_LOCALES is where an
+ * incomplete locale is kept away from readers, and `gaps` in dist/manifest.json
+ * is the record it is checked against.
+ *
+ * Returns the number of sentinels found, so callers can record it.
  */
-function checkNoSentinels(label, value) {
-  const stubbed = Object.entries(flatten(value)).filter(([, v]) => v === SENTINEL);
-  if (stubbed.length === 0) return true;
+function countSentinels(gaps, typeId, label, value) {
+  const entries = Object.entries(flatten(value));
+  const stubbed = entries.filter(([, v]) => v === SENTINEL);
+  // `TBD: ` is a fourth untranslated convention, alongside the sentinel, copied
+  // English and the repeated placeholder body. It marks a key deliberately left
+  // in English with a note, so unlike the sentinel it renders as readable text
+  // and nothing else would ever notice it.
+  const todo = entries.filter(([, v]) => typeof v === "string" && v.startsWith("TBD: "));
 
-  console.log(
-    `  SKIPPED ${label}: ${stubbed.length} keys are still the untranslated sentinel "${SENTINEL}" ` +
-      `(first: ${stubbed[0][0]}). The sentinel renders as a visible replacement glyph, so this ` +
-      `catalog is not servable. Run \`node scripts/coverage.mjs\` to see what is left.`
-  );
-  return false;
+  if (stubbed.length > 0) {
+    gaps.push({
+      type: typeId,
+      count: stubbed.length,
+      detail: `${label}: ${stubbed.length} key(s) still the untranslated sentinel (first: ${stubbed[0][0]})`
+    });
+  }
+  if (todo.length > 0) {
+    gaps.push({
+      type: typeId,
+      count: todo.length,
+      detail: `${label}: ${todo.length} key(s) marked "TBD: " and still English (first: ${todo[0][0]})`
+    });
+  }
+  return stubbed.length + todo.length;
 }
 
 async function publishLocale(locale, { exportSources }) {
   const artifacts = [];
+  // Everything that stops this locale being COMPLETE. It does not stop anything
+  // being published: R2 carries whatever is on main so work in progress can be
+  // reviewed on staging. This is the record the front-end checks before adding a
+  // locale to PRODUCTION_LOCALES.
+  const gaps = [];
   const manifest = {};
   const sliced = new Set(readSlicedTypes());
   // --- what is actually translated -------------------------------------------
@@ -275,34 +301,31 @@ async function publishLocale(locale, { exportSources }) {
     if (entry.untranslated) untranslated.push({ key: entry.key, reason: entry.untranslated });
   }
 
-  if (untranslated.length > 0) {
-    const byReason = {};
-    for (const { reason } of untranslated) byReason[reason] = (byReason[reason] ?? 0) + 1;
-    console.log(
-      `  SKIPPED ${untranslated.length} untranslated prose item(s): ` +
-        Object.entries(byReason)
-          .map(([reason, count]) => `${count} ${reason}`)
-          .join(", ")
-    );
-    for (const { key, reason } of untranslated) console.log(`    ${key} (${reason})`);
+  // Recorded, not withheld. An untranslated page IS the thing a reviewer needs to
+  // see on staging: publishing English bytes under a translated URL is obvious
+  // there and harmless, because production will not serve the locale at all
+  // until these reach zero.
+  const untranslatedByType = {};
+  for (const { key } of untranslated) {
+    const typeId = key.slice(0, key.indexOf("/"));
+    (untranslatedByType[typeId] ??= []).push(key);
+  }
+  for (const [typeId, keys] of Object.entries(untranslatedByType)) {
+    gaps.push({ type: typeId, count: keys.length, detail: `${keys.length} item(s) untranslated (first: ${keys[0]})` });
   }
 
-  /** One markdown item's translated body, or null when there is nothing to ship. */
-  const translatedBody = (typeId, item) => {
-    const entry = prose.get(`${typeId}/${item.slug}`);
-    return entry && !entry.untranslated ? entry : null;
-  };
+  /** One markdown item's body and frontmatter. */
+  const translatedBody = (typeId, item) => prose.get(`${typeId}/${item.slug}`) ?? null;
 
   // --- app UI catalog -------------------------------------------------------
   const appPath = localPath("app-messages", locale);
   if (fs.existsSync(appPath)) {
     if (sliced.has("app-messages")) {
-      console.log(`  SKIPPED app catalog: imported as a namespace slice, not the whole tree`);
+      gaps.push({ type: "app-messages", count: 0, detail: "imported as a namespace slice, not the whole tree" });
     } else {
       const catalog = readJson(appPath);
-      if (checkNoSentinels(`${locale} app catalog`, catalog)) {
-        manifest.app = emit(artifacts, (hash) => CONTENT_TYPES["app-messages"].r2(locale, null, hash), catalog);
-      }
+      countSentinels(gaps, "app-messages", `${locale} app catalog`, catalog);
+      manifest.app = emit(artifacts, (hash) => CONTENT_TYPES["app-messages"].r2(locale, null, hash), catalog);
     }
   }
 
@@ -310,18 +333,16 @@ async function publishLocale(locale, { exportSources }) {
   const badgesPath = localPath("badges", locale);
   if (fs.existsSync(badgesPath)) {
     const catalog = readJson(badgesPath);
-    if (checkNoSentinels(`${locale} badge catalog`, catalog)) {
-      manifest.badges = emit(artifacts, (hash) => CONTENT_TYPES.badges.r2(locale, null, hash), catalog);
-    }
+    countSentinels(gaps, "badges", `${locale} badge catalog`, catalog);
+    manifest.badges = emit(artifacts, (hash) => CONTENT_TYPES.badges.r2(locale, null, hash), catalog);
   }
 
   // --- levels ---------------------------------------------------------------
   const levelsPath = localPath("levels", locale);
   if (fs.existsSync(levelsPath)) {
     const catalog = readJson(levelsPath);
-    if (checkNoSentinels(`${locale} level catalog`, catalog)) {
-      manifest.levels = emit(artifacts, (hash) => CONTENT_TYPES.levels.r2(locale, null, hash), catalog);
-    }
+    countSentinels(gaps, "levels", `${locale} level catalog`, catalog);
+    manifest.levels = emit(artifacts, (hash) => CONTENT_TYPES.levels.r2(locale, null, hash), catalog);
   }
 
   // --- interpreter message catalogs, one artifact per interpreter language ---
@@ -332,7 +353,7 @@ async function publishLocale(locale, { exportSources }) {
   manifest.interpreters = {};
   for (const item of listItems("interpreter-messages", locale)) {
     const catalog = readJson(item.path);
-    if (!checkNoSentinels(`${locale} interpreter catalog ${item.slug}`, catalog)) continue;
+    countSentinels(gaps, "interpreter-messages", `${locale} interpreter catalog ${item.slug}`, catalog);
     manifest.interpreters[item.slug] = emit(
       artifacts,
       (hash) => CONTENT_TYPES["interpreter-messages"].r2(locale, item.slug, hash),
@@ -343,7 +364,7 @@ async function publishLocale(locale, { exportSources }) {
   // --- exercise message catalogs, one artifact per exercise -----------------
   manifest.exercises = {};
   for (const { slug, catalog } of exerciseCatalogs(locale)) {
-    if (!checkNoSentinels(`${locale} exercise catalog ${slug}`, catalog)) continue;
+    countSentinels(gaps, "exercise-messages", `${locale} exercise catalog ${slug}`, catalog);
     manifest.exercises[slug] = emit(artifacts, (hash) => CONTENT_TYPES["exercise-messages"].r2(locale, slug, hash), catalog);
   }
 
@@ -366,32 +387,31 @@ async function publishLocale(locale, { exportSources }) {
   // assembled from every exercise, so a gap in either is a lesson that renders
   // its slug or an exercise that will not load at all. Per-exercise artifacts are
   // unaffected, so they still publish.
-  const exerciseCorpus = sourceCorpusSize("exercise-instructions");
-  const translatedExercises = instructionItems.filter((item) => translatedBody("exercise-instructions", item)).length;
-  const exercisesArePartial = exerciseCorpus === null || translatedExercises !== exerciseCorpus;
-  if (exercisesArePartial) {
-    console.log(
-      `  SKIPPED curriculum copy and exercise prose index: ` +
-        (exerciseCorpus === null
-          ? `the sync manifest records no source corpus size, so completeness cannot be established. ` +
-            `Re-run sync-source.mjs against a front-end checkout.`
-          : `assembled from a partial exercise corpus (${translatedExercises} translated of ${exerciseCorpus} in the source repo)`)
-    );
+  // Corpus completeness per prose type, against the REAL source corpus recorded
+  // at sync time. Recorded, never a refusal: an index covering the pages that
+  // exist is precisely what staging needs, and production is gated separately.
+  for (const typeId of PROSE_TYPE_IDS) {
+    const present = listItems(typeId, locale).length;
+    const expected = sourceCorpusSize(typeId);
+    if (expected === null) {
+      gaps.push({ type: typeId, count: 0, detail: "no source corpus size recorded (re-run sync-source.mjs)" });
+    } else if (present < expected) {
+      gaps.push({ type: typeId, count: expected - present, detail: `${present} of ${expected} present` });
+    }
   }
 
-  let videosShippable = true;
   const videoPath = localPath("video-lessons", locale);
   if (fs.existsSync(videoPath)) {
     const videos = readJson(videoPath);
-    videosShippable = checkNoSentinels(`${locale} video lesson catalog`, videos);
-    if (videosShippable) {
+    countSentinels(gaps, "video-lessons", `${locale} video lesson catalog`, videos);
+    {
       for (const [slug, entry] of Object.entries(videos)) {
         if (slug in copy) fail(`slug "${slug}" is both an exercise and a video lesson (locale ${locale}); the namespace must stay collision-free`);
         copy[slug] = entry;
       }
     }
   }
-  if (Object.keys(copy).length > 0 && !exercisesArePartial && videosShippable) {
+  if (Object.keys(copy).length > 0) {
     // Sorted, so the hash moves only when the copy does.
     const sorted = Object.fromEntries(Object.keys(copy).sort().map((slug) => [slug, copy[slug]]));
     manifest.curriculum = emit(artifacts, (hash) => `/static/i18n/curriculum/${locale}/messages-${hash}.json`, sorted);
@@ -518,7 +538,7 @@ async function publishLocale(locale, { exportSources }) {
     proseIndex.push({ slug: item.slug, title: data.title, description: data.description || "", proseHash: hash });
   }
 
-  if (proseIndex.length > 0 && !exercisesArePartial) {
+  if (proseIndex.length > 0) {
     // Sorted by slug, exactly as the front-end's generator sorts it: the index is
     // one JSON array and its key order is part of its bytes.
     proseIndex.sort((a, b) => (a.slug < b.slug ? -1 : a.slug > b.slug ? 1 : 0));
@@ -540,7 +560,7 @@ async function publishLocale(locale, { exportSources }) {
     exported += 1;
   }
 
-  return { artifacts, manifest, exported, untranslated: untranslated.length };
+  return { artifacts, manifest, exported, gaps };
 }
 
 /**
@@ -641,7 +661,7 @@ async function main() {
   const all = [];
   const manifests = {};
   let exported = 0;
-  let untranslated = 0;
+  const completeness = {};
 
   for (const locale of locales) {
     console.log(`\n${locale}:`);
@@ -650,7 +670,22 @@ async function main() {
     all.push(...result.artifacts);
     manifests[locale] = result.manifest;
     exported += result.exported;
-    untranslated += result.untranslated;
+    completeness[locale] = {
+      complete: result.gaps.length === 0,
+      gaps: result.gaps
+    };
+
+    if (result.gaps.length > 0) {
+      const types = [...new Set(result.gaps.map((gap) => gap.type))].sort();
+      const items = result.gaps.reduce((sum, gap) => sum + gap.count, 0);
+      console.log(
+        `  INCOMPLETE: published, but "${locale}" is not production-ready. ` +
+          `${types.length} content type(s), ${items} item(s) outstanding.`
+      );
+      for (const gap of result.gaps) console.log(`    ${gap.type}: ${gap.detail}`);
+    } else {
+      console.log(`  COMPLETE: "${locale}" is production-ready.`);
+    }
   }
 
   // The hash manifest, for humans and for CI. The front-end no longer needs it
@@ -665,13 +700,35 @@ async function main() {
   // appear. Written down, that is a diff between two numbers. Not written down, it
   // is only reproducible by re-running both repos with whatever their dependencies
   // resolve to today, which is the state they were in when they disagreed.
+  // The completeness record, published as its own object.
+  //
+  // MUTABLE and unhashed, like a pointer and for the same reason: the question
+  // it answers ("is this locale production-ready right now") has one current
+  // answer, not a version history. Exactly one writer, this repo, so the
+  // single-writer rule holds as it does for every pointer.
+  //
+  // This is what stops publishing being permissive from becoming a way to ship a
+  // half-translated locale. Publishing carries whatever is on main so staging can
+  // show it; the front-end reads THIS before allowing a locale into
+  // PRODUCTION_LOCALES, so nobody can add one by hand and have it silently ship.
+  const completenessKey = assertPublishableKey(`/${R2_PREFIX}/i18n/completeness.json`);
+  const completenessBody = `${JSON.stringify({ generatedAt: new Date().toISOString(), locales: completeness }, null, 2)}\n`;
+  fs.mkdirSync(path.dirname(path.join(DIST, completenessKey)), { recursive: true });
+  fs.writeFileSync(path.join(DIST, completenessKey), completenessBody);
+  all.push({ key: completenessKey, hash: "current", bytes: completenessBody.length, pointer: true });
+
   // Only for a publish. An --out-dir is a front-end's public/static tree, and a
   // manifest.json or a sync.sh dropped in there would be served to the internet.
   if (outDir === undefined) {
     fs.writeFileSync(
       path.join(DIST, "manifest.json"),
       `${JSON.stringify(
-        { generatedAt: new Date().toISOString(), renderer: await rendererVersion(), locales: manifests },
+        {
+        generatedAt: new Date().toISOString(),
+        renderer: await rendererVersion(),
+        completeness,
+        locales: manifests
+      },
         null,
         2
       )}\n`
@@ -741,8 +798,7 @@ async function main() {
 
   console.log(
     `\npublish: ${artifactCount} artifacts, ${pointerCount} pointers, ` +
-      `${exported} prose files exported, ${untranslated} untranslated prose items skipped, ` +
-      `${plan.length} sync commands in dist/sync.sh.`
+      `${exported} prose files exported, ${plan.length} sync commands in dist/sync.sh.`
   );
 
   // Nothing shippable is a green no-op. Every locale being skipped is the
