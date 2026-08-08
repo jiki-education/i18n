@@ -128,7 +128,7 @@ walk, and that failure would be silent on R2.
 
 A front-end checkout in every validate and publish run, where today they need
 nothing. The front-end is large, so it is a shallow, sparse checkout of the four
-directories English lives in, not a clone.
+paths English lives in, not a clone.
 
 Local runs need English too. `scripts/lib/english.mjs` resolves it from, in
 order: `--source-repo=`, `JIKI_SOURCE_REPO`, `.source/front-end`, and a sibling

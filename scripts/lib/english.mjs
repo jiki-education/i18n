@@ -10,14 +10,18 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
-import { REPO_ROOT, SOURCE_LOCALE, TARGET_LOCALES, fail } from "./constants.mjs";
-import { contentType, discoverItems, listItems, sourceRepoPath } from "./content-types.mjs";
+import { REPO_ROOT, TARGET_LOCALES, fail } from "./constants.mjs";
+import { CONTENT_TYPES, contentType, discoverItems, listItems, sourceRepoPath } from "./content-types.mjs";
 
 /** Where scripts/source-checkout.mjs and the CI checkout step put the front-end. */
 export const CHECKOUT_DIR = path.join(REPO_ROOT, ".source", "front-end");
 
-/** The probe that says a directory really is a front-end checkout. */
-const PROBE = path.join("app", "messages", "en.json");
+// The probe that says a directory really is a front-end checkout: one English
+// file the map knows
+// the path of. Read from the map rather than spelled out, so a source layout
+// change cannot leave the probe pointing at a path that no longer exists — which
+// would fail as "no checkout here", the least useful thing it could say.
+const PROBE = CONTENT_TYPES["app-messages"].sourceRepoPath();
 
 let cached = null;
 
@@ -83,12 +87,12 @@ export function englishSha() {
   }
 }
 
-/** The four directories English is authored in. Also what the sparse checkout takes. */
-export const ENGLISH_DIRS = ["app/messages", "curriculum/src", "interpreters/src", "content/src"];
+/** Where English is authored. Also exactly what the sparse checkout takes. */
+export const ENGLISH_DIRS = ["app/messages.json", "curriculum/src", "interpreters/src", "content/src"];
 
 /** Absolute path to one item's English original, inside the checkout. */
 export function englishPath(typeId, slug) {
-  return sourceRepoPath(englishRepo(), typeId, SOURCE_LOCALE, slug);
+  return sourceRepoPath(englishRepo(), typeId, slug);
 }
 
 /** Every item of one type that English exists for. The REAL corpus, all of it. */

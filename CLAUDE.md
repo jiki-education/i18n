@@ -39,10 +39,11 @@ Locale-first. Each locale mirrors the **source packages' own layout**, with two 
 and no other invention:
 
 - the package's `src/` segment is dropped (`curriculum/src/concepts` becomes `curriculum/concepts`)
-- the locale segment is hoisted to the top and removed from within the path
-  (`.../instructions/hu.md` becomes `locales/hu/.../instructions.md`)
+- the locale segment is hoisted to the top of the path
+  (`curriculum/exercises/<slug>/instructions.md` becomes `locales/hu/curriculum/…`)
 
-so mapping back to a source path is mechanical.
+so mapping back to a source path is mechanical. A source path carries no locale at all: the source
+repos hold English and nothing else, one file per item, so `sourceRepoPath` takes only a slug.
 
 ```
 .source/front-end/                                 gitignored, ephemeral: English, checked out

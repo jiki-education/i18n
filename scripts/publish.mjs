@@ -602,10 +602,15 @@ async function publishLocale(locale, { exportSources }) {
   // rather than the published bytes. Only for a publish: under --out-dir the
   // destination is a front-end's public/, where an export/ tree would be a
   // directory of Markdown served to the internet.
+  //
+  // Under `export/<locale>/`, because the source repo's layout has no per-locale
+  // slot to write into: it holds one English `instructions.md` per exercise and
+  // nothing else. Naming the locale in a directory above the mirrored path keeps
+  // the export unambiguous when several locales are published in one run.
   let exported = 0;
   const instructions = contentType("exercise-instructions");
   for (const item of exportSources ? instructionItems : []) {
-    const to = path.join(DIST, "export", instructions.sourceRepoPath(locale, item.slug));
+    const to = path.join(DIST, "export", locale, instructions.sourceRepoPath(item.slug));
     fs.mkdirSync(path.dirname(to), { recursive: true });
     fs.copyFileSync(item.path, to);
     exported += 1;

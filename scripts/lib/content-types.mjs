@@ -13,9 +13,14 @@
 //
 //   - the package's `src/` segment is dropped (`curriculum/src/concepts` →
 //     `curriculum/concepts`), because it says nothing here
-//   - the locale segment is HOISTED to the top and removed from within the path
-//     (`.../instructions/hu.md` → `locales/hu/.../instructions.md`), because
+//   - the locale segment is HOISTED to the top of the path
+//     (`curriculum/exercises/<slug>/instructions.md` → `locales/hu/…`), because
 //     encoding the locale twice makes a rename a two-place edit
+//
+// `sourceRepoPath` takes no locale. The source repos hold ENGLISH and nothing
+// else: there is one instructions file per exercise and one catalog per thing,
+// and every translation of them lives here. A source path is therefore a fact
+// about the item alone, and a caller that had a locale to hand never needed it.
 //
 // Adding a content type is adding one entry to CONTENT_TYPES. Nothing else
 // changes.
@@ -23,12 +28,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import { REPO_ROOT, SOURCE_LOCALE, SOURCE_REPO_LOCALE, fail } from "./constants.mjs";
-
-/** The file basename English uses in the source repos, per format. */
-const sourceName = (locale, { markdown }) => {
-  if (locale !== SOURCE_LOCALE) return locale;
-  return markdown ? "source" : SOURCE_REPO_LOCALE;
-};
 
 export const CONTENT_TYPES = {
   "app-messages": {
@@ -39,7 +38,7 @@ export const CONTENT_TYPES = {
     // (a whole-file hash cannot say which of 1300 keys moved).
     staleness: "sentinel",
     interpolation: "icu",
-    sourceRepoPath: (locale) => `app/messages/${sourceName(locale, { markdown: false })}.json`,
+    sourceRepoPath: () => "app/messages.json",
     localPath: () => "app/messages.json",
     r2: (locale, _slug, hash) => `/static/i18n/app/${locale}/messages-${hash}.json`
   },
@@ -50,7 +49,7 @@ export const CONTENT_TYPES = {
     slugged: true,
     staleness: "frontmatter",
     frontmatterTranslated: ["title", "description"],
-    sourceRepoPath: (locale, slug) => `curriculum/src/concepts/${slug}/${sourceName(locale, { markdown: true })}.md`,
+    sourceRepoPath: (slug) => `curriculum/src/concepts/${slug}/source.md`,
     localPath: (slug) => `curriculum/concepts/${slug}/page.md`,
     // Rendered HTML, not JSON, and the only artifact here that is not a catalog.
     // The bytes come from @jiki.io/content-renderer, the same package the
@@ -66,8 +65,7 @@ export const CONTENT_TYPES = {
     exerciseScoped: true,
     staleness: "frontmatter",
     frontmatterTranslated: ["title", "description"],
-    sourceRepoPath: (locale, slug) =>
-      `curriculum/src/exercises/${slug}/instructions/${sourceName(locale, { markdown: true })}.md`,
+    sourceRepoPath: (slug) => `curriculum/src/exercises/${slug}/instructions.md`,
     localPath: (slug) => `curriculum/exercises/${slug}/instructions.md`,
     // Instructions are cached as Markdown inside a JSON artifact and rendered by
     // the browser at runtime, so the published bytes are the prepared body (the
@@ -87,8 +85,7 @@ export const CONTENT_TYPES = {
     exerciseScoped: true,
     staleness: "sibling",
     interpolation: "i18next",
-    sourceRepoPath: (locale, slug) =>
-      `curriculum/src/exercises/${slug}/locales/${sourceName(locale, { markdown: false })}/translation.json`,
+    sourceRepoPath: (slug) => `curriculum/src/exercises/${slug}/messages.json`,
     localPath: (slug) => `curriculum/exercises/${slug}/messages.json`,
     r2: (locale, slug, hash) => `/static/i18n/exercises/${slug}/${locale}/messages-${hash}.json`
   },
@@ -99,8 +96,7 @@ export const CONTENT_TYPES = {
     slugged: false,
     staleness: "sibling",
     interpolation: "none",
-    sourceRepoPath: (locale) =>
-      `curriculum/src/video-lessons/locales/${sourceName(locale, { markdown: false })}/translation.json`,
+    sourceRepoPath: () => "curriculum/src/video-lessons/messages.json",
     localPath: () => "curriculum/video-lessons/messages.json",
     // Merged with every exercise's frontmatter title/description into ONE
     // curriculum catalog per locale, so it has no artifact of its own.
@@ -114,8 +110,7 @@ export const CONTENT_TYPES = {
     slugged: false,
     staleness: "sibling",
     interpolation: "none",
-    sourceRepoPath: (locale) =>
-      `curriculum/src/badges/locales/${sourceName(locale, { markdown: false })}/translation.json`,
+    sourceRepoPath: () => "curriculum/src/badges/messages.json",
     localPath: () => "curriculum/badges/messages.json",
     r2: (locale, _slug, hash) => `/static/i18n/badges/${locale}/messages-${hash}.json`
   },
@@ -126,8 +121,7 @@ export const CONTENT_TYPES = {
     slugged: false,
     staleness: "sibling",
     interpolation: "none",
-    sourceRepoPath: (locale) =>
-      `curriculum/src/levels/locales/${sourceName(locale, { markdown: false })}/translation.json`,
+    sourceRepoPath: () => "curriculum/src/levels/messages.json",
     localPath: () => "curriculum/levels/messages.json",
     r2: (locale, _slug, hash) => `/static/i18n/levels/${locale}/messages-${hash}.json`
   },
@@ -144,8 +138,7 @@ export const CONTENT_TYPES = {
     // pack and emits nothing for the family itself, so there is no R2 key to
     // mirror here. publish.mjs performs the same merge, which is why the
     // exercise-messages artifact it writes is self-contained.
-    sourceRepoPath: (locale, slug) =>
-      `curriculum/src/exercise-categories/${slug}/locales/${sourceName(locale, { markdown: false })}/translation.json`,
+    sourceRepoPath: (slug) => `curriculum/src/exercise-categories/${slug}/messages.json`,
     localPath: (slug) => `curriculum/exercise-categories/${slug}/messages.json`,
     r2: null
   },
@@ -159,8 +152,7 @@ export const CONTENT_TYPES = {
     // The slug is an interpreter LANGUAGE (javascript, jikiscript, python).
     // The `system` locale beside English in that tree is a machine-readable
     // key channel, not a translation, and is never mirrored or translated here.
-    sourceRepoPath: (locale, slug) =>
-      `interpreters/src/${slug}/locales/${sourceName(locale, { markdown: false })}/translation.json`,
+    sourceRepoPath: (slug) => `interpreters/src/${slug}/locales/en/translation.json`,
     localPath: (slug) => `interpreters/${slug}/messages.json`,
     r2: (locale, slug, hash) => `/static/i18n/interpreter/${slug}/${locale}/messages-${hash}.json`
   },
@@ -198,7 +190,7 @@ export const CONTENT_TYPES = {
     slugDepth: 2,
     staleness: "frontmatter",
     frontmatterTranslated: ["title", "excerpt"],
-    sourceRepoPath: (locale, slug) => `content/src/posts/projects/${slug}/${sourceName(locale, { markdown: true })}.md`,
+    sourceRepoPath: (slug) => `content/src/posts/projects/${slug}/source.md`,
     localPath: (slug) => `content/posts/projects/${slug}/page.md`,
     r2: (locale, slug, hash) => `/static/content/projects/${slug}/${locale}/content-${hash}.html`
   }
@@ -225,7 +217,7 @@ function postType(kind) {
       slugged: true,
       staleness: "frontmatter",
       frontmatterTranslated: ["title", "excerpt"],
-      sourceRepoPath: (locale, slug) => `content/src/posts/${kind}/${slug}/${sourceName(locale, { markdown: true })}.md`,
+      sourceRepoPath: (slug) => `content/src/posts/${kind}/${slug}/source.md`,
       localPath: (slug) => `content/posts/${kind}/${slug}/page.md`,
       r2: (locale, slug, hash) => `/static/content/${kind}/${slug}/${locale}/content-${hash}.html`
     }
@@ -258,9 +250,9 @@ export function localPath(typeId, locale, slug) {
 }
 
 /** Absolute path to the English original in the source repo. */
-export function sourceRepoPath(sourceRepo, typeId, locale, slug) {
+export function sourceRepoPath(sourceRepo, typeId, slug) {
   const type = contentType(typeId);
-  return path.join(sourceRepo, type.sourceRepoPath(locale, slug));
+  return path.join(sourceRepo, type.sourceRepoPath(slug));
 }
 
 /**
@@ -278,7 +270,7 @@ export const FAMILY_TYPE_ID = "exercise-category";
 
 /** One exercise's own directory in a source repo checkout, derived from the type map. */
 function exerciseDir(sourceRepo, slug) {
-  const probe = CONTENT_TYPES["exercise-messages"].sourceRepoPath(SOURCE_LOCALE, "__SLUG__");
+  const probe = CONTENT_TYPES["exercise-messages"].sourceRepoPath("__SLUG__");
   const [prefix] = probe.split("__SLUG__");
   return path.join(sourceRepo, prefix, slug);
 }
@@ -324,11 +316,11 @@ export function deriveFamily(sourceRepo, slug) {
  */
 export function discoverItems(sourceRepo, typeId) {
   const type = contentType(typeId);
-  const exists = (slug) => fs.existsSync(sourceRepoPath(sourceRepo, typeId, SOURCE_LOCALE, slug));
+  const exists = (slug) => fs.existsSync(sourceRepoPath(sourceRepo, typeId, slug));
 
   if (!type.slugged) return exists(null) ? [{ type: typeId, slug: null }] : [];
 
-  const probe = type.sourceRepoPath(SOURCE_LOCALE, "__SLUG__");
+  const probe = type.sourceRepoPath("__SLUG__");
   const [prefix] = probe.split("__SLUG__");
   const root = path.join(sourceRepo, prefix);
 

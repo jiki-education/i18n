@@ -23,18 +23,18 @@ export const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url
 export const SENTINEL = "�";
 
 /**
- * The token that means "English" when addressing a path in the SOURCE repos.
+ * The token that means "English" when a locale has to be named at all.
  *
  * It is not a locale and there is no `locales/source/` directory: English is
  * read from a front-end checkout at `.source/front-end`, never stored here. See
- * ENGLISH-SOURCE.md. The name survives as the argument content-types.mjs takes
- * to mean "the English spelling of this path" (`en.json` for a catalog,
- * `source.md` for prose), and as one more English spelling the R2 key guard
- * refuses.
+ * ENGLISH-SOURCE.md. Addressing an English file needs no locale now — a source
+ * repo holds exactly one, so `sourceRepoPath` takes only a slug — and what the
+ * name survives for is refusing English as a target: it is one of the spellings
+ * `assertTargetLocale` and the R2 key guard reject.
  */
 export const SOURCE_LOCALE = "source";
 
-/** The locale English is called in the SOURCE repos (app/messages/en.json, locales/en/). */
+/** The locale English is called wherever a locale segment names it (R2 keys, `locales/en/` in the interpreter tree). */
 export const SOURCE_REPO_LOCALE = "en";
 
 /** R2 bucket and key prefix the front-end's `static:upload` publishes into. */
