@@ -21,9 +21,12 @@
 
 name: Validate
 
+# Pull requests only. On main this compared translations against whatever English
+# front-end main had at that moment, which for a corpus translated earlier is a
+# report of the backlog rather than a defect: it went red and stayed red, and a
+# check that is always red stops being read. What each locale is missing is
+# published in completeness.json, which is the honest home for that number.
 on:
-  push:
-    branches: [main]
   pull_request:
     paths:
       - "locales/**"
