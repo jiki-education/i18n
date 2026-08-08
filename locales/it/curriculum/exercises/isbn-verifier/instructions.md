@@ -26,7 +26,7 @@ Ad esempio, per l'ISBN `3-598-21508-8`, verificheremmo se:
 
 Poiché il risultato è 0, questo prova che il nostro ISBN è valido.
 
-Un altro paio di note importanti:
+Alcune note importanti:
 
 - A volte un ISBN può terminare con una X. In quel caso, la X rappresenta `10`. Se la X compare in qualsiasi altra posizione, l'ISBN non è valido.
 - Gli ISBN possono essere scritti con o senza trattini.
@@ -38,13 +38,13 @@ Crea una funzione chiamata `isValidIsbn(isbn)` (verifica se l'ISBN è valido) ch
 
 ### La funzione Number(...)
 
-Una cosa che non abbiamo ancora trattato, ma che devi sapere, è la funzione `Number(str)`. È una funzione che prende una stringa e restituisce quella stringa come numero. Quindi se scrivi `Number("1234")` ottieni `1234`. È una funzione un po' strana perché inizia con la lettera maiuscola. Non preoccupartene per ora: spiegheremo il motivo molto più avanti.
+Una cosa che non abbiamo ancora trattato, ma che devi sapere, è la funzione `Number(str)`. È una funzione che prende una stringa e restituisce quella stringa come numero. Quindi se scrivi `Number("1234")` ottieni `1234`. È una funzione un po' particolare perché inizia con la lettera maiuscola. Non preoccupartene per ora: spiegheremo il motivo molto più avanti.
 
 Scopri di più sulla <a href="/concepts/type-conversion" target="_blank" rel="noopener noreferrer">pagina del concetto di conversione di tipo</a>.
 
 ### Usare ciò che hai appena imparato
 
-Come nell'esercizio precedente, anche se ci sono molti modi validi per risolvere questo esercizio, la soluzione che vogliamo che tu trovi utilizza un'istruzione `continue`.
+Come nell'esercizio precedente, anche se ci sono molti modi validi per risolvere questo esercizio, la soluzione che vogliamo che tu trovi utilizza l'istruzione `continue`.
 
 Lo scenario bonus ti sfida a risolverlo in 22 righe di codice. Ci sono soluzioni più brevi, ma se arrivi a 22 righe, hai fatto un buon lavoro di ottimizzazione.
 
