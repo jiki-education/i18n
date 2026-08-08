@@ -63,7 +63,7 @@ import path from "node:path";
 import { SENTINEL, TARGET_LOCALES, assertTargetLocale } from "./lib/constants.mjs";
 import { CONTENT_TYPE_IDS, contentType, listItems, localPath, metaPath } from "./lib/content-types.mjs";
 import { englishPath, englishRepo, scopeItems } from "./lib/english.mjs";
-import { countSentinels, md5File, parseFrontmatter, readJson, readText, serializeFrontmatter, writeJson, writeText } from "./lib/files.mjs";
+import { countSentinels, md5File, parseFrontmatter, readJson, readText, stampFrontmatter, writeJson, writeText } from "./lib/files.mjs";
 import { ERROR, WARN, checkCatalog, checkProse } from "./lib/checks.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 import { parseArgs } from "./lib/args.mjs";
@@ -167,7 +167,7 @@ function validateItem({ typeId, locale, slug, stamp, shippable }) {
   );
 
   if (stamp && blockingOtherThanStamp.length === 0 && target.data.en_md5 !== expected) {
-    writeText(targetPath, serializeFrontmatter({ ...target.data, en_md5: expected }, target.body));
+    writeText(targetPath, stampFrontmatter(target.raw, expected));
     return { issues: blockingOtherThanStamp, label: label(typeId, locale, slug), stamped: true };
   }
 

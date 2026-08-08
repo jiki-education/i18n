@@ -129,6 +129,7 @@ import { findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 import { parseArgs } from "./lib/args.mjs";
 import {
+  buildSearch,
   makeImageResolver,
   prepareInstructions,
   renderConcept,
@@ -248,6 +249,23 @@ function countSentinels(gaps, typeId, label, value) {
     });
   }
   return stubbed.length + todo.length;
+}
+
+/**
+ * Whether one post is `listed`, read from the English config beside its source.
+ *
+ * A post's flags (date, author, listed, premium, order) are English config and
+ * never copy, so they are not translated and do not live here. The front-end
+ * publishes them as one locale-invariant object; the search index needs one of
+ * them, so it reads it from the same file the front-end does.
+ *
+ * Absent means NOT listed, matching the front-end's plain truthiness test. Every
+ * article states it either way today, so this only decides the case neither repo
+ * has.
+ */
+function isListed(typeId, slug) {
+  const config = path.join(englishRepo(), "content", "src", "posts", typeId, slug, "config.json");
+  return fs.existsSync(config) ? Boolean(readJson(config).listed) : false;
 }
 
 async function publishLocale(locale, { exportSources }) {
@@ -496,6 +514,46 @@ async function publishLocale(locale, { exportSources }) {
   for (const type of Object.keys(postCopy)) postCopy[type] = sortKeys(postCopy[type]);
   if (Object.values(postCopy).some((entries) => Object.keys(entries).length > 0)) {
     manifest.postCopy = emit(artifacts, (hash) => `/static/content/copy/${locale}/copy-${hash}.json`, postCopy);
+  }
+
+  // A search index is derived ENTIRELY from translated copy, so it has to be
+  // published wherever the copy is. The front-end still builds English's, and
+  // built every locale's while the translations lived beside English there; once
+  // they moved here, nothing else can build them, and the front-end's reader
+  // resolves a missing one to an empty index, which is a search box that silently
+  // returns nothing rather than an error anyone would notice.
+  //
+  // Blog has no index; only articles and guides do. Articles index the `listed`
+  // ones only, and `listed` is English config, not copy, so it is read from the
+  // English checkout exactly as the front-end reads it. Guides index everything,
+  // premium included, so premium guides stay searchable.
+  //
+  // The bytes need not match the front-end's for the same type: these are
+  // different LOCALES, each resolved through its own pointer. What must match is
+  // the index SHAPE, which is why it is built by the shared renderer.
+  manifest.search = {};
+  for (const typeId of ["articles", "guides"]) {
+    const slugs = Object.keys(postCopy[typeId]);
+    const indexed = typeId === "articles" ? slugs.filter((slug) => isListed(typeId, slug)) : slugs;
+    if (indexed.length === 0) continue;
+
+    const index = await buildSearch(
+      indexed.map((slug) => {
+        const copy = postCopy[typeId][slug];
+        return {
+          slug,
+          title: copy.title,
+          excerpt: copy.excerpt,
+          description: copy.seo.description ?? "",
+          keywords: (copy.seo.keywords ?? []).join(" ")
+        };
+      })
+    );
+    manifest.search[typeId] = emit(
+      artifacts,
+      (hash) => `/static/content/search/${typeId}/${locale}/index-${hash}.json`,
+      index
+    );
   }
 
   // --- exercise instructions: one prose artifact each, plus the index ---------

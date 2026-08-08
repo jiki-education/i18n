@@ -75,16 +75,30 @@ export function parseFrontmatter(text) {
 }
 
 /**
- * Reassemble a Markdown file. Key order is preserved from `data`, so a caller
- * that mutates a parsed object leaves the diff minimal.
+ * Write one `en_md5` stamp into a Markdown file, changing nothing else.
+ *
+ * A surgical edit rather than a parse-and-reserialise, because the reader above
+ * is deliberately minimal: it flattens frontmatter to scalars, so `seo:` (a
+ * nested mapping) and `tags:` (a sequence) do not survive a round trip. Posts
+ * carry both, and both reach a published artifact, so reserialising to add one
+ * key would silently rewrite the frontmatter publish reads.
+ *
+ * Only the stamp line is touched: replaced where one exists, appended as the
+ * last frontmatter line where it does not. Every other byte, including quoting,
+ * indentation and line endings, is reproduced exactly.
  */
-export function serializeFrontmatter(data, body) {
-  const lines = Object.entries(data).map(([key, value]) => {
-    const needsQuotes = /[:#"']/.test(String(value)) || String(value).trim() !== String(value);
-    const rendered = needsQuotes ? `"${String(value).replace(/"/g, '\\"')}"` : String(value);
-    return `${key}: ${rendered}`;
-  });
-  return `---\n${lines.join("\n")}\n---\n${body}`;
+export function stampFrontmatter(raw, md5) {
+  const match = FRONTMATTER.exec(raw);
+  if (!match) fail("cannot stamp a file with no frontmatter");
+
+  const eol = match[0].includes("\r\n") ? "\r\n" : "\n";
+  const block = match[1];
+  const stamped = /^en_md5:.*$/m.test(block)
+    ? block.replace(/^en_md5:.*$/m, `en_md5: ${md5}`)
+    : `${block}${eol}en_md5: ${md5}`;
+
+  const trailing = match[0].slice(match[0].lastIndexOf("---") + 3);
+  return `---${eol}${stamped}${eol}---${trailing}${raw.slice(match[0].length)}`;
 }
 
 // ----------------------------------------------------------- catalog trees --
