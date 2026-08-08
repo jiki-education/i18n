@@ -6,7 +6,7 @@
     "rightWindowWrong": "La fenêtre de droite n'est pas positionnée correctement.",
     "doorWrong": "La porte n'est pas positionnée correctement.",
     "knobWrong": "La poignée de porte n'est pas positionnée correctement.",
-    "doesNotScale": "La maison ne se redimensionne pas correctement quand houseWidth={{houseWidth}} et houseHeight={{houseHeight}}. Chaque position et chaque taille doivent être calculées à partir de houseWidth et houseHeight, pas codées en dur."
+    "doesNotScale": "La maison ne se redimensionne pas correctement quand houseWidth={{houseWidth}} et houseHeight={{houseHeight}}. Chaque position et chaque taille doivent être calculées à partir de houseWidth et houseHeight, pas codées « en dur »."
   },
   "tasks": {
     "drawHouse": {
@@ -31,7 +31,7 @@
     },
     "keepPlantedOnGrass": {
       "question": "Comment garder la maison posée sur l'herbe ?",
-      "answer": "Trouve la valeur y où le bas de la maison doit se trouver (un peu en dessous du haut de l'herbe). Le haut du cadre se trouve alors une hauteur de maison au-dessus. En partant du bas vers le haut, une maison plus haute grandit vers le ciel au lieu de s'enfoncer dans l'herbe."
+      "answer": "Trouve la valeur Y où le bas de la maison doit se trouver (un peu en dessous du haut de l'herbe). Le haut du cadre se trouve alors une hauteur de maison au-dessus. En partant du bas vers le haut, une maison plus haute grandit vers le ciel au lieu de s'enfoncer dans l'herbe."
     },
     "sizeRoofWindowsDoor": {
       "question": "Comment dimensionner le toit, les fenêtres et la porte ?",
@@ -39,7 +39,7 @@
     },
     "breaksOnResize": {
       "question": "Tout est correct à la taille par défaut, mais ça casse quand je redimensionne. Pourquoi ?",
-      "answer": "Tu as probablement codé un nombre en dur quelque part au lieu de le calculer. Cherche le moindre nombre écrit tel quel qui n'est pas une valeur venue directement des instructions, comme la taille du canvas ou la hauteur de l'herbe. Il devrait presque certainement être calculé à partir d'une autre variable, que ce soit un ancrage ou quelque chose de déjà construit à partir d'un ancrage, comme la largeur de la porte."
+      "answer": "Tu as probablement mis un nombre « en dur » quelque part au lieu de le calculer. Cherche le moindre nombre écrit tel quel qui n'est pas une valeur venue directement des instructions, comme la taille du canvas ou la hauteur de l'herbe. Il devrait presque certainement être calculé à partir d'une autre variable, que ce soit un ancrage ou quelque chose de déjà construit à partir d'un ancrage, comme la largeur de la porte."
     }
   },
   "functions": {
