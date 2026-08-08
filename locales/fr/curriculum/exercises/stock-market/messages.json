@@ -1,8 +1,8 @@
 {
   "errors": {
     "yearNumber": "L'année doit être un nombre",
-    "yearInPast": "On ne peut pas consulter la Bourse pour des années passées ! {{year}} est déjà passée.",
-    "yearTooFarFuture": "On ne sait pas ce qui se passera dans plus de 20 ans ! {{year}} est trop loin dans le futur.",
+    "yearInPast": "On ne peut pas consulter les cours de la Bourse des années antérieures. {{year}} appartient au passé.",
+    "yearTooFarFuture": "On ne peut pas savoir ce qui se passera dans plus de 20 ans ! {{year}} est trop loin dans le futur.",
     "balanceNumber": "Le solde doit être un nombre",
     "moneyNumber": "L'argent doit être un nombre"
   },
@@ -32,7 +32,7 @@
     },
     "stillStuck": {
       "question": "Je bloque toujours complètement, je ne comprends pas.",
-      "answer": "OK, écrivons un peu de code pour te lancer. Imagine que l'année en cours est 2026. Tu dois faire quelque chose comme : \n\n```javascript\nlet money = 10\nlet growth = marketGrowth(2026)\n\n// Tu dois augmenter money de growth.\n// Consulte l'astuce suivante si tu as besoin de la formule.\nmoney = money + ???\nreportTax(2026, money)\n\n// Maintenant fais 2027\nlet growth = marketGrowth(2027)\nmoney = money + ???\nreportTax(2027, money)\n\n// Maintenant fais 2028\nlet growth = marketGrowth(2028)\nmoney = money + ???\nreportTax(2028, money)\n\n// Au bout de 20 ans, annonce-le à ta famille\nannounceToFamily(money)\n```"
+      "answer": "OK, écrivons un peu de code pour te lancer. Imagine que l'année en cours est 2026. Tu dois faire quelque chose comme : \n\n```javascript\nlet money = 10\nlet growth = marketGrowth(2026)\n\n// Tu dois augmenter money de growth.\n// Consulte l'astuce suivante si tu as besoin de la formule.\nmoney = money + ???\nreportTax(2026, money)\n\n// Maintenant fais l'année 2027\nlet growth = marketGrowth(2027)\nmoney = money + ???\nreportTax(2027, money)\n\n// Maintenant fais l'année 2028\nlet growth = marketGrowth(2028)\nmoney = money + ???\nreportTax(2028, money)\n\n// Au bout de 20 ans, dis-le à ta famille\nannounceToFamily(money)\n```"
     },
     "formula": {
       "question": "Quelle est la formule pour suivre la croissance ? Je n'arrive pas à la trouver moi-même.",
@@ -50,7 +50,7 @@
   },
   "functions": {
     "marketGrowth": {
-      "description": "Renvoie le pourcentage de croissance de la Bourse pour une année donnée (entre -25 et 40). Tu dois **augmenter** ton argent de ce nombre à chaque fois. (Donc 40 signifie que tes 10 $ doivent valoir 14 $, et -10 signifie que tes 10 $ descendent à 9 $)",
+      "description": "Renvoie le pourcentage de croissance de la Bourse pour une année donnée (entre -25 et 40). À chaque fois, tu devras **augmenter** de ce nombre la somme d'argent que tu possèdes. (Donc 40 signifie que tes 10 $ doivent valoir 14 $, et -10 signifie que tes 10 $ n'en valent plus que 9 $)",
       "category": "Action"
     },
     "reportTax": {
