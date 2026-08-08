@@ -19,27 +19,36 @@ export const REFS_DIR = path.join(REPO_ROOT, ".english-refs");
 
 export const DEFAULT_REPO = "jiki-education/front-end";
 
-const refFile = (pr) => path.join(REFS_DIR, `${pr}.json`);
+const refFile = (id) => path.join(REFS_DIR, `${String(id).replace(/[^A-Za-z0-9._-]/g, "-")}.json`);
 
-/** Write the ref for one front-end PR. The translate workflow is the only writer. */
+/**
+ * Write the ref for one dispatch. The translate workflow is the only writer.
+ *
+ * `pr` is normally the front-end PR number, and is the filename, so two open
+ * translation branches for two different front-end PRs cannot collide. A manual
+ * dispatch has no PR and passes `manual-<run id>`, which pins English just as
+ * firmly and simply never corresponds to a PR anyone can merge.
+ */
 export function writeEnglishRef({ pr, sha, repo = DEFAULT_REPO }) {
-  if (!pr) fail("an English ref needs the front-end PR number it came from");
-  if (!/^[0-9a-f]{40}$/.test(sha ?? "")) fail(`an English ref needs a full 40-character SHA, got "${sha}"`);
+  if (!pr) fail("an English ref needs the front-end PR number (or manual-<run id>) it came from");
+  if (!/^[0-9a-f]{40}$/.test(sha ?? "")) {
+    fail(`an English ref needs a full 40-character SHA, got "${sha}". A branch name would not pin anything.`);
+  }
 
   fs.mkdirSync(REFS_DIR, { recursive: true });
-  const body = { repo, sha, pr: Number(pr), dispatchedAt: new Date().toISOString() };
+  const body = { repo, sha, pr: String(pr), dispatchedAt: new Date().toISOString() };
   fs.writeFileSync(refFile(pr), `${JSON.stringify(body, null, 2)}\n`);
   return { file: refFile(pr), ...body };
 }
 
-/** Every ref currently on disk, newest PR first. */
+/** Every ref currently on disk, most recently dispatched first. */
 export function listEnglishRefs() {
   if (!fs.existsSync(REFS_DIR)) return [];
   return fs
     .readdirSync(REFS_DIR)
     .filter((name) => name.endsWith(".json"))
     .map((name) => ({ file: path.join(REFS_DIR, name), ...JSON.parse(fs.readFileSync(path.join(REFS_DIR, name), "utf8")) }))
-    .sort((a, b) => b.pr - a.pr);
+    .sort((a, b) => String(b.dispatchedAt).localeCompare(String(a.dispatchedAt)));
 }
 
 /**

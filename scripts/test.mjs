@@ -14,6 +14,7 @@ import assert from "node:assert/strict";
 import { deepMerge, mergeExerciseCatalogs } from "./lib/families.mjs";
 import { contentHash } from "./lib/files.mjs";
 import { findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
+import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 
 let failures = 0;
 
@@ -157,6 +158,43 @@ test("empty bodies never group together", () => {
     { key: "concept/b-group", englishBody: "", targetBody: "" }
   ]);
   assert.equal(repeated.size, 0);
+});
+
+// ---------------------------------------------------------- the R2 key guard
+
+// The one guard left after the English mirror was deleted. Publishing English
+// from a directory walk is impossible now; synthesising an English KEY from a
+// bad path template is not, and that failure is silent on R2.
+
+console.log("\nthe R2 key guard:");
+
+const refuses = (key) => {
+  try {
+    assertPublishableKey(key);
+    return false;
+  } catch (error) {
+    return error instanceof GuardViolation;
+  }
+};
+
+test("an English locale segment is refused", () => {
+  assert.equal(refuses("static/i18n/app/en/messages-abc123456789.json"), true);
+});
+
+test("`source`, this repo's old name for English, is refused too", () => {
+  assert.equal(refuses("static/i18n/app/source/messages-abc123456789.json"), true);
+});
+
+test("English is refused wherever the segment sits in the key", () => {
+  assert.equal(refuses("static/i18n/exercises/acronym/en/messages-abc123456789.json"), true);
+});
+
+test("a key outside the static/ prefix is refused", () => {
+  assert.equal(refuses("i18n/app/hu/messages-abc123456789.json"), true);
+});
+
+test("a legitimate target-locale key is permitted, and normalised", () => {
+  assert.equal(assertPublishableKey("/static/i18n/app/hu/messages-abc123456789.json"), "static/i18n/app/hu/messages-abc123456789.json");
 });
 
 // ------------------------------------------------------------------- result

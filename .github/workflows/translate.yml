@@ -1,27 +1,28 @@
-# Dispatch-receive → sync → translate → validate → commit.
+# Dispatch-receive → check out English → translate → validate → branch → PR.
 #
-# This workflow never uploads. Its commit lands on main, and the push to main is
-# what publishes (see publish.yml). One writer, one path, and everything that
-# reaches R2 has been through the same gate.
-#
-# It also hands nothing back to the front-end. The front-end resolves a catalog's
-# hash at runtime from the pointer published beside it, so a locale published here
-# is reachable without the front-end learning anything or being redeployed.
-#
-# The source repo (front-end) fires a `repository_dispatch` when English changes
-# on main. It sends coordinates, never content: `en.json` alone is 94KB and a
-# repository_dispatch payload is capped well below that, so this workflow checks
-# out the SHA it was told about and reads English from there.
+# The front-end fires a `repository_dispatch` when English changes. It sends
+# coordinates, never content: `en.json` alone is 94KB and a repository_dispatch
+# payload is capped well below that, so this checks out the SHA it was told about
+# and reads English from there.
 #
 # Payload contract (client_payload):
-#   repo      string   the source repo, e.g. "jiki/front-end"
+#   repo      string   the source repo, e.g. "jiki-education/front-end"
 #   sha       string   the commit to read English from
-#   pr        number   the PR that landed it, for the report comment (optional)
+#   pr        number   the front-end PR that landed it
 #   packages  string[] which packages changed: app | curriculum | interpreters | content
 #   mode      string   outdated | all | missing, passed straight to translate
 #
 # `all` is what the front-end sends after a glossary or guide change, because
 # those do not touch English and so are invisible to the staleness stamps.
+#
+# ## The branch, and the ref that pins it
+#
+# This opens a PR rather than pushing to main, and writes `.english-refs/<pr>.json`
+# in the SAME COMMIT as the work, so the branch and the English it was made
+# against can never disagree. One file per front-end PR, so two translation
+# branches open at once never touch the same file. See ENGLISH-SOURCE.md.
+#
+# This workflow never uploads. Merging the PR is what publishes (see publish.yml).
 
 name: Translate
 
@@ -34,6 +35,9 @@ on:
         description: "front-end SHA to read English from (default: main)"
         required: false
         default: main
+      pr:
+        description: "front-end PR number this is for (blank for a manual run)"
+        required: false
       mode:
         description: outdated | all | missing
         required: false
@@ -56,35 +60,48 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - name: Check out this repo
         uses: actions/checkout@v4
 
-      - name: Check out the front-end at the dispatched SHA
+      - name: Check out English at the dispatched SHA
         uses: actions/checkout@v4
         with:
-          repository: ${{ github.event.client_payload.repo || 'jiki/front-end' }}
+          repository: ${{ github.event.client_payload.repo || 'jiki-education/front-end' }}
           ref: ${{ github.event.client_payload.sha || inputs.sha || 'main' }}
           token: ${{ secrets.SOURCE_REPO_TOKEN }}
           path: .source/front-end
+          sparse-checkout: |
+            app/messages
+            curriculum/src
+            interpreters/src
+            content/src
 
       - name: Check out the translator repo
         uses: actions/checkout@v4
         with:
-          repository: jiki/translator
+          repository: jiki-education/translator
           token: ${{ secrets.SOURCE_REPO_TOKEN }}
           path: .source/translator
 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
-      # One-way. This is the only step that reads the front-end checkout, and
-      # nothing in this repo ever writes back to it.
-      - name: Sync English
-        env:
-          JIKI_SOURCE_REPO: .source/front-end
-        run: node scripts/sync-source.mjs
+      - name: Install
+        run: npm ci
+
+      # A dispatch may name a branch; the ref file must name a commit, because a
+      # branch name pins nothing. Resolve it from the checkout that just happened,
+      # which is by definition the English this run reads.
+      - name: Resolve what was checked out
+        id: english
+        run: |
+          echo "sha=$(git -C .source/front-end rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          PR="${{ github.event.client_payload.pr || inputs.pr }}"
+          echo "id=${PR:-manual-${{ github.run_id }}}" >> "$GITHUB_OUTPUT"
 
       - name: Stub new keys across every locale
         run: node scripts/stub.mjs all
@@ -102,22 +119,33 @@ jobs:
       - name: Validate
         run: node scripts/validate.mjs all --no-stamp
 
-      - name: Commit
-        id: commit
+      - name: Branch, record the English ref, and open a PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          BRANCH="translate/${{ steps.english.outputs.id }}"
           git config user.name "jiki-i18n[bot]"
           git config user.email "i18n@jiki.io"
-          git add locales
+          git checkout -b "$BRANCH"
+
+          node scripts/english-ref.mjs write \
+            --pr="${{ steps.english.outputs.id }}" \
+            --sha="${{ steps.english.outputs.sha }}" \
+            --repo="${{ github.event.client_payload.repo || 'jiki-education/front-end' }}"
+
+          git add locales .english-refs
           if git diff --cached --quiet; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Nothing to translate."
             exit 0
           fi
-          git commit -m "Translate: ${{ github.event.client_payload.repo || 'front-end' }}@${{ github.event.client_payload.sha || 'main' }}
 
-          Triggered by ${{ github.event.client_payload.repo || 'manual dispatch' }}.
+          git commit -m "Translate: ${{ github.event.client_payload.repo || 'front-end' }}@${{ steps.english.outputs.sha }}
+
+          English ref: .english-refs/${{ steps.english.outputs.id }}.json
           Mode: ${{ github.event.client_payload.mode || inputs.mode || 'outdated' }}."
-          git push
-          echo "changed=true" >> "$GITHUB_OUTPUT"
+          git push --force-with-lease --set-upstream origin "$BRANCH"
+
+          gh pr create --fill --head "$BRANCH" --base main || gh pr edit "$BRANCH" --add-label translation
 
       - name: Coverage report
         if: always()
