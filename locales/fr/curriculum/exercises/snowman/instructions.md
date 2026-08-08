@@ -1,6 +1,6 @@
 ---
 title: "Bonhomme de neige"
-description: "Définis les bonnes valeurs de variables pour construire un bonhomme de neige."
+description: "Attribue les bonnes valeurs aux variables pour construire un bonhomme de neige."
 en_md5: d95e1fcddba2afd556c42645352b910a
 ---
 
