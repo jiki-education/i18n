@@ -1,0 +1,40 @@
+{
+  "describers": {
+    "move": "moveu o canhão laser para a direita"
+  },
+  "checks": {
+    "notShotAllAliens": "Não abateste todos os alienígenas."
+  },
+  "tasks": {
+    "shootTheAliens": {
+      "name": "Abate todos os alienígenas",
+      "description": "Move o teu canhão laser para a direita e dispara contra cada alienígena ao passares por baixo dele. Não falhes nem te movas para fora do limite!"
+    }
+  },
+  "scenarios": {
+    "shootTheAliens": {
+      "name": "Abate os alienígenas",
+      "description": "Move-te para a direita e abate todos os alienígenas"
+    }
+  },
+  "hints": {
+    "whatDoINeedToDo": {
+      "question": "O que tenho de fazer?",
+      "answer": "Tal como no labirinto, tens de mover a tua personagem (desta vez um laser, não uma pessoa). Mas também tens de disparar com o laser! Move o laser para debaixo de um alienígena e depois dispara. A seguir, move-te outra vez até estares por baixo do alienígena seguinte e dispara de novo. Continua até teres abatido o último alienígena!"
+    },
+    "cantWasteAmmo": {
+      "question": "Aparece-me uma mensagem a dizer que não posso desperdiçar munições.",
+      "answer": "Só deves usar `shoot()` quando estiveres mesmo por baixo de um alienígena. Experimenta mover-te mais um passo (ou será que foste um passo longe demais?)"
+    }
+  },
+  "functions": {
+    "move": {
+      "description": "Move o canhão laser **uma posição para a direita**. Se te moveres para fora do limite direito do ecrã, perdes!",
+      "category": "Movimento"
+    },
+    "shoot": {
+      "description": "Dispara o laser para cima. **Dispara apenas quando houver um alienígena por cima de ti**, senão perdes o jogo!",
+      "category": "Ação"
+    }
+  }
+}

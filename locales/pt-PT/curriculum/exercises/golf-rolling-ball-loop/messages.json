@@ -1,0 +1,36 @@
+{
+  "checks": {
+    "ballNotAtEnd": "A bola rolou até {{ballX}}, que não fica a 60 do ponto de partida.",
+    "missingPositions": "A bola tem de passar por cada posição, um passo de cada vez, a começar em 29.",
+    "codeQuality": {
+      "tooManyLines": "A tua solução tem demasiadas linhas de código. Experimenta usar um ciclo para a encurtar."
+    }
+  },
+  "tasks": {
+    "rollBall": {
+      "name": "Faz rolar a bola até ao buraco",
+      "description": "Faz rolar a bola até ao buraco."
+    }
+  },
+  "scenarios": {
+    "rollBall": {
+      "name": "Faz rolar a bola até ao buraco",
+      "description": "Faz rolar a bola até ao buraco."
+    }
+  },
+  "hints": {
+    "icantWorkItOut": {
+      "question": "Não consigo resolver",
+      "answer": "Tens duas ferramentas à tua disposição:\n- Um ciclo repeat, que usas ao escrever `repeat(n) { }`, onde `n` é o número de vezes que queres fazer a bola rolar e onde podes pôr o que quiseres dentro das chavetas (`{ }`).\n- Uma função `roll()` que faz a bola rolar um passo para a direita.\n\nComo podes combiná-las?"
+    }
+  },
+  "functions": {
+    "roll": {
+      "description": "Faz a bola rolar **um passo para a direita**.",
+      "category": "Movimento"
+    }
+  },
+  "describers": {
+    "roll": "fez a bola rolar um passo para a direita"
+  }
+}
