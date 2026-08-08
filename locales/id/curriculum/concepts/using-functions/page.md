@@ -1,7 +1,7 @@
 ---
-title: "Menggunakan fungsi"
-description: "Menyuruh Jiki menjalankan salah satu mesin kecilnya dengan menulis namanya diikuti dua tanda kurung."
-en_md5: 007a425ced42fd3550bfdf9fe6f7b391
+title: Menggunakan fungsi
+description: Menyuruh Jiki menjalankan salah satu mesin kecilnya dengan menulis namanya diikuti dua tanda kurung.
+en_md5: fc671310093a081113a8f301b6ff53fe
 ---
 
 Saat kamu menulis kode, yang sebenarnya kamu lakukan adalah menyampaikan apa yang kamu inginkan terjadi, dalam bahasa yang dimengerti komputer. Ada banyak sekali bahasa pemrograman, dan ada banyak sekali juga _interpreter_ (penerjemah) yang mengambil apa yang kamu tulis lalu mengubahnya menjadi angka satu dan nol yang bisa dipahami komputer. Di kursus ini, interpreter-mu adalah Jiki. Seluruh kursus ini dinamai dari Jiki. Inilah Jiki. Jiki akan menjadi temanmu dalam perjalanan belajar pemrograman ini. Tugasnya adalah menerjemahkan kode yang kamu tulis dan mengubahnya menjadi angka satu dan nol yang benar-benar bisa dijalankan komputer.

@@ -1,7 +1,7 @@
 ---
-title: "Változók létrehozása és használata"
+title: Változók létrehozása és használata
 description: "Dobozok Jiki polcain: egy-egy értéket őriznek felcímkézve, hogy később bármikor elővehesd őket a kódodban."
-en_md5: 6fca9aed7a4f51de337288e739f8b44a
+en_md5: dd0834017a8d42c22cca25966c1fdd91
 ---
 
 Az információ tárolására a változók (_variables_ angolul) szolgálnak. Programozás közben gyakran el kell tennünk egy számot vagy egy stringet későbbre, és pontosan erre valók a változók. Nézzük hát egy kicsit távolabbról Jiki raktárát! Látni fogod, hogy van benne egy másik polcsor is. Az elsőt már ismerjük: azon sorakoznak a függvények, ezek a kis gépek, mint a `move` vagy a `rectangle`. Ezen a második polcsoron viszont gépek helyett rengeteg dobozt látsz, és ezeket a dobozokat hívjuk változóknak. Jikinek bármit odaadhatsz, hogy tegye el egy ilyen dobozba, később pedig megkérheted, hogy vegye elő újra. Minden doboznak van neve, pontosan úgy, ahogy a függvényeknek is, és minden dobozban pontosan egy dolog van. Egyelőre egy szám vagy egy string, de a kurzus későbbi részében azt is megnézzük, hogyan tárolhatunk bennük összetettebb dolgokat.

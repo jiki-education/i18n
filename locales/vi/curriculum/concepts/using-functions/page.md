@@ -1,7 +1,7 @@
 ---
-title: "Sử dụng hàm"
-description: "Bảo Jiki chạy một trong những cái máy nhỏ của cậu ấy bằng cách viết tên máy rồi thêm hai dấu ngoặc đơn."
-en_md5: 007a425ced42fd3550bfdf9fe6f7b391
+title: Sử dụng hàm
+description: Bảo Jiki chạy một trong những cái máy nhỏ của cậu ấy bằng cách viết tên máy rồi thêm hai dấu ngoặc đơn.
+en_md5: fc671310093a081113a8f301b6ff53fe
 ---
 
 Khi bạn viết code, thật ra bạn đang diễn đạt điều mình muốn xảy ra bằng một ngôn ngữ mà máy tính hiểu được. Có rất nhiều ngôn ngữ lập trình khác nhau, và cũng có rất nhiều thông dịch viên (tiếng Anh: _interpreters_) khác nhau. Chúng nhận những gì bạn viết rồi chuyển thành các số 0 và 1 mà máy tính hiểu được. Trong khóa học này, thông dịch viên của bạn là Jiki. Cả khóa học được đặt tên theo Jiki. Đây là Jiki. Jiki sẽ là người bạn đồng hành trên hành trình học lập trình này. Việc của cậu ấy là thông dịch đoạn code bạn viết và chuyển nó thành các số 0 và 1 mà máy tính thực sự làm việc được.

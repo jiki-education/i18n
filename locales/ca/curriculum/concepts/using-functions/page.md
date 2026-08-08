@@ -1,7 +1,7 @@
 ---
-title: "Utilitzar funcions"
+title: Utilitzar funcions
 description: "Digues al Jiki que engegui una de les seves petites màquines: escriu-ne el nom i, tot seguit, els dos parèntesis."
-en_md5: 007a425ced42fd3550bfdf9fe6f7b391
+en_md5: fc671310093a081113a8f301b6ff53fe
 ---
 
 Quan escrius codi, el que fas realment és comunicar què vols que passi en un llenguatge que l'ordinador entén. Hi ha molts llenguatges de programació diferents, i també molts intèrprets diferents que agafen el que escrius i ho converteixen en els uns i zeros que l'ordinador pot entendre. En aquest curs, el teu intèrpret és el Jiki. Tot el curs porta el seu nom. Aquest és el Jiki. El Jiki serà el teu amic en aquest viatge per la programació. La seva feina és interpretar el codi que escrius i convertir-lo en els uns i zeros amb què l'ordinador pot treballar de debò.

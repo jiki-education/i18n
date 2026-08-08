@@ -1,7 +1,7 @@
 ---
-title: "Dizionari"
-description: "Una pagina di un blocco note a spirale in cui ogni voce ha una chiave a sinistra e il suo valore a destra, per avere dati etichettati invece di una lista."
-en_md5: 3b1b01f6a914ffe1ce4a54e023e46bdd
+title: Dizionari
+description: Una pagina di un blocco note a spirale in cui ogni voce ha una chiave a sinistra e il suo valore a destra, per avere dati etichettati invece di una lista.
+en_md5: b8a26ad63301df1d00ce08e1e429cf05
 ---
 
 Gli array sono la nostra prima scelta quando abbiamo una lista di qualcosa: una lista di mentori, una lista di punteggi, una lista di ingredienti. Per qualsiasi lista, ti conviene usare un array.

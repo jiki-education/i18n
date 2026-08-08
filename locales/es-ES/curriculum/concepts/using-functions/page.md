@@ -1,7 +1,7 @@
 ---
-title: "Usar funciones"
-description: "Decirle a Jiki que ponga en marcha una de sus pequeñas máquinas escribiendo su nombre seguido de dos paréntesis."
-en_md5: 007a425ced42fd3550bfdf9fe6f7b391
+title: Usar funciones
+description: Decirle a Jiki que ponga en marcha una de sus pequeñas máquinas escribiendo su nombre seguido de dos paréntesis.
+en_md5: fc671310093a081113a8f301b6ff53fe
 ---
 
 Cuando escribes código, lo que en realidad estás haciendo es comunicar lo que quieres que ocurra en un lenguaje que el ordenador entiende. Existen muchos lenguajes de programación distintos, y también muchos intérpretes (_interpreters_ en inglés) distintos que toman lo que escribes y lo convierten en los unos y ceros que el ordenador puede entender. En este curso, tu intérprete es Jiki. Todo el curso lleva su nombre. Este es Jiki. Jiki va a ser tu amigo en este viaje por la programación. Su trabajo es interpretar el código que escribes y convertirlo en los unos y ceros con los que el ordenador puede trabajar de verdad.

@@ -1,7 +1,7 @@
 ---
-title: "Variabelen maken en gebruiken"
+title: Variabelen maken en gebruiken
 description: "Dozen op Jiki's planken die een waarde met een label bewaren, zodat je die later in je code weer kunt ophalen."
-en_md5: 6fca9aed7a4f51de337288e739f8b44a
+en_md5: dd0834017a8d42c22cca25966c1fdd91
 ---
 
 Variabelen zijn de manier om informatie op te slaan. Tijdens het programmeren willen we vaak een getal of een string bewaren om later te gebruiken, en dat doen we met variabelen. Laten we dus wat uitzoomen in Jiki's loods, dan zie je dat hij nog een set planken heeft. De eerste planken kennen we al: daar staan de functies op, die kleine machines zoals `move` en `rectangle`. Maar op deze tweede set planken staan geen machines, maar allemaal dozen, en die dozen noemen we variabelen. Je kunt Jiki van alles in deze dozen laten opbergen en hem later vragen om het er weer uit te halen. Elke doos heeft een naam, precies zoals functies een naam hebben, en in elke doos zit precies één ding. Voorlopig is dat een getal of een string, maar verderop in de cursus kijken we naar het opslaan van complexere dingen.

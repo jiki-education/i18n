@@ -1,7 +1,7 @@
 ---
-title: "Funktioner som returnerar saker"
-description: "Fånga ett värde som kommer ut ur en funktions rutschkana och använd det i din kod."
-en_md5: 5d8a17a37be570bc9c63df0c854ba774
+title: Funktioner som returnerar saker
+description: Fånga ett värde som kommer ut ur en funktions rutschkana och använd det i din kod.
+en_md5: 830f19fb6aaf184c1f32ade792b60a12
 ---
 
 Hittills har vi tittat på funktioner som gör något ute i världen. Funktionen circle ritar en cirkel, och funktionen move flyttar din figur. Men vissa funktioner fungerar annorlunda. I stället för att göra något utåt ger de dig något tillbaka som du kan använda i din kod. När en funktion ger något tillbaka som Jiki kan använda i koden säger vi att funktionen returnerar (_return_ på engelska) något. Den skickar alltså tillbaka något ut till Jiki. Du kan tänka dig att de här maskinerna har en rutschkana. Vi har redan våra inkast som vi lägger saker i, men en maskin kan också ha en enda utgång, en rutschkana som något kan komma tillbaka ut genom. När Jiki trycker på maskinens knapp surrar den igång, och till slut trillar något ut ur rutschkanan. Det kan vara ett tal. Det kan vara en sträng. Det är något som Jiki kan fånga och använda.

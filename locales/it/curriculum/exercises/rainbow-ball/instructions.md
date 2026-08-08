@@ -14,7 +14,7 @@ In questo esercizio hai a disposizione la funzione `Math.randomInt(min, max)` (r
 
 Prenditi qualche minuto per pensare a come potresti risolvere il problema. Questa è la parte più importante dell'esercizio, quindi prenditi il tuo tempo e **scrivi le tue idee prima di leggere la formula qui sotto.**
 
-Quando hai un'idea del tuo approccio, prosegui con la lettura. Ma non continuare finché non ci hai pensato un po'!
+Quando hai un'idea su come risolvere l'esercizio, prosegui con la lettura. Ma non continuare finché non ci hai riflettuto un po'!
 
 ## La formula
 

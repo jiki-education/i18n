@@ -1,7 +1,7 @@
 ---
-title: "Criando e usando variáveis"
-description: "Caixas nas prateleiras do Jiki que guardam um valor com uma etiqueta, para você pegar de volta depois no seu código."
-en_md5: 6fca9aed7a4f51de337288e739f8b44a
+title: Criando e usando variáveis
+description: Caixas nas prateleiras do Jiki que guardam um valor com uma etiqueta, para você pegar de volta depois no seu código.
+en_md5: dd0834017a8d42c22cca25966c1fdd91
 ---
 
 As variáveis (_variables_ em inglês) são o que nos permite guardar informações. Quando estamos programando, muitas vezes precisamos guardar algum número ou alguma string para usar depois, e as variáveis são como fazemos isso. Então vamos nos afastar um pouco no galpão do Jiki, e você vai ver que ele tem outro conjunto de prateleiras. Já conhecemos as primeiras prateleiras, que guardam as funções, aquelas maquininhas como `move` e `rectangle`. Mas nessas segundas prateleiras, em vez de máquinas, você pode ver um monte de caixas, e essas caixas são o que chamamos de variáveis. Você pode pedir ao Jiki para guardar qualquer coisa nessas caixas e, mais tarde, pedir para ele tirar de lá de novo. Cada caixa tem um nome, exatamente como as funções têm um nome, e cada caixa contém só uma coisa. Por enquanto, um número ou uma string. Mas vamos ver como guardar coisas mais complexas nelas mais adiante no curso.

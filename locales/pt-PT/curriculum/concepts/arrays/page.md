@@ -1,7 +1,7 @@
 ---
-title: "Arrays"
-description: "Uma corrente ordenada de elementos (strings, números, Booleans ou qualquer outra coisa) unidos num só valor que o Jiki pode transportar."
-en_md5: 012da550948ba2ebcfaf953cd0906f3f
+title: Arrays
+description: Uma corrente ordenada de elementos (strings, números, Booleans ou qualquer outra coisa) unidos num só valor que o Jiki pode transportar.
+en_md5: d26ccb9e04fbc77129f3199d63a95017
 ---
 
 Tens usado números, strings e Booleans, o nome pomposo para verdadeiro e falso, e chamamos a estas coisas diferentes tipos de dados (_data types_ em inglês). Agora vamos acrescentar o nosso primeiro tipo de dados composto (_compound data type_ em inglês).
