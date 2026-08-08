@@ -1,0 +1,88 @@
+{
+  "tasks": {
+    "createAcronymFunction": {
+      "name": "Crée la fonction acronym",
+      "description": "Écris une fonction qui prend une phrase et renvoie son acronyme : la première lettre de chaque mot, en majuscules. Les mots sont séparés par des espaces et des traits d'union, et toute autre ponctuation est ignorée."
+    },
+    "solveTightly": {
+      "name": "Résous-le en 46 lignes",
+      "description": "Bonus : si tu extrais le test des lettres et le passage en majuscules dans des fonctions auxiliaires que `acronym` réutilise, la solution entière tient en 46 lignes. Peux-tu faire aussi bien ?"
+    }
+  },
+  "scenarios": {
+    "png": {
+      "name": "Acronyme simple : PNG",
+      "description": "Convertis 'Portable Network Graphics' en 'PNG'."
+    },
+    "ror": {
+      "name": "Mots en minuscules : ROR",
+      "description": "Convertis 'Ruby on Rails' en 'ROR'."
+    },
+    "gimp": {
+      "name": "Mot tout en majuscules : GIMP",
+      "description": "Convertis 'GNU Image Manipulation Program' en 'GIMP'."
+    },
+    "firstWordOnly": {
+      "name": "Un seul mot : H",
+      "description": "Convertis 'HyperText' en 'H'."
+    },
+    "hyphenated": {
+      "name": "Phrase avec trait d'union : CMOS",
+      "description": "Convertis 'Complementary metal-oxide semiconductor' en 'CMOS'."
+    },
+    "fifo": {
+      "name": "Séparé par des virgules : FIFO",
+      "description": "Convertis 'First In, First Out' en 'FIFO'."
+    },
+    "punctuation": {
+      "name": "Avec de la ponctuation : PHT",
+      "description": "Convertis 'Portable, HyperText, Transmitter' en 'PHT'."
+    },
+    "hc": {
+      "name": "Avec une apostrophe : HC",
+      "description": "Convertis 'Halley's Comet' en 'HC'."
+    },
+    "simufta": {
+      "name": "Séparateurs consécutifs : SIMUFTA",
+      "description": "Convertis 'Something - I made up from thin air' en 'SIMUFTA'."
+    },
+    "trnt": {
+      "name": "Emphase avec tirets bas : TRNT",
+      "description": "Convertis 'The Road _Not_ Taken' en 'TRNT'."
+    },
+    "long": {
+      "name": "Un très long acronyme : ROTFLSHTMDCOALM",
+      "description": "Convertis 'Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me' en 'ROTFLSHTMDCOALM'."
+    },
+    "emoji": {
+      "name": "Avec un emoji : HW",
+      "description": "Convertis 'Hello 👋 World' en 'HW'."
+    },
+    "acronymBonusLineCount": {
+      "name": "Propre et soigné",
+      "description": "La solution la plus soignée réutilise ses fonctions auxiliaires et tient en 46 lignes. Peux-tu la trouver ?"
+    }
+  },
+  "checks": {
+    "tooManyLines": "Continue ! Essaie de le résoudre en moins de lignes.",
+    "noMethods": "Dans cet exercice, le but est de construire les outils toi-même. Résous-le sans utiliser de méthodes intégrées."
+  },
+  "hints": {
+    "pickLetters": {
+      "question": "Comment savoir quelles lettres forment l'acronyme ?",
+      "answer": "L'acronyme est construit à partir de la lettre qui commence chaque mot : la toute première lettre de la phrase, plus la première lettre après chaque espace ou trait d'union."
+    },
+    "findWordStarts": {
+      "question": "Comment savoir quand un nouveau mot commence ?",
+      "answer": "Parcours la phrase caractère par caractère et garde en mémoire si tu es au début d'un nouveau mot. C'est le cas au tout début, puis juste après chaque espace ou trait d'union. Tout ce qui n'est pas une lettre (ponctuation, tirets bas, apostrophes) doit être ignoré plutôt que compté comme le début d'un mot."
+    },
+    "buildResult": {
+      "question": "Comment construire le résultat au fur et à mesure ?",
+      "answer": "Commence avec une string vide et ajoute chaque lettre choisie à la fin avec `+`."
+    },
+    "uppercaseLetters": {
+      "question": "Comment mettre une lettre en majuscule sans fonction intégrée ?",
+      "answer": "Il n'y a pas de convertisseur tout prêt ici. Comme dans Pangram, tu peux aligner un alphabet en minuscules avec un alphabet en majuscules et échanger une lettre contre celle qui se trouve à la même position. Les lettres déjà en majuscules peuvent rester telles quelles."
+    }
+  }
+}

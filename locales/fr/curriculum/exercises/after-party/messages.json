@@ -1,0 +1,78 @@
+{
+  "tasks": {
+    "lookUpPlusOnes": {
+      "name": "Vérifie les +1",
+      "description": "Quelqu'un te donne son prénom. Renvoie le nombre d'invités supplémentaires qu'il a le droit de faire entrer, ou `\"Not on the list!\"` s'il n'est pas invité."
+    }
+  },
+  "scenarios": {
+    "emptyList": {
+      "name": "Registre vide",
+      "description": "Personne ne fait entrer qui que ce soit quand la liste est vide."
+    },
+    "nameMissing": {
+      "name": "Brad est refoulé",
+      "description": "Le nom n'est pas du tout sur la liste."
+    },
+    "namePresent": {
+      "name": "Brad peut entrer",
+      "description": "Brad est invité, et il ne vient pas seul."
+    },
+    "similarName": {
+      "name": "Presque, mais non",
+      "description": "Bradley n'est pas Brad, alors Brad reste du mauvais côté du cordon."
+    },
+    "doubleBarrelled": {
+      "name": "Un Néerlandais",
+      "description": "Le nom est sur la liste, mais il contient un trait d'union."
+    },
+    "allowedNobody": {
+      "name": "Brad en solo",
+      "description": "Brad est bel et bien invité. Simplement, il n'amène personne avec lui."
+    },
+    "twoBrads": {
+      "name": "Deux Brad",
+      "description": "Il y a plus d'un Brad sur la liste ce soir, et c'est le premier de la liste qui se tient devant la porte."
+    },
+    "cher": {
+      "name": "Cher est en ville",
+      "description": "Certaines personnes n'ont qu'un seul nom, et elle a amené toute sa troupe."
+    },
+    "cheryl": {
+      "name": "Ça se corse",
+      "description": "Cheryl Crow et Cher sont-elles amies ? Peu importe : Cheryl n'est pas Cher."
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Par où commencer ?",
+      "answer": "Imagine-toi vraiment en train de le faire à l'entrée. Quelqu'un te donne un prénom, et tu parcours ton porte-bloc jusqu'à repérer la personne. Remarque au passage que la réponse que tu dois lui donner n'est pas écrite à côté de son nom sur la liste que tu es en train de lire."
+    },
+    "twoLists": {
+      "question": "Il y a deux listes. Quel est le rapport entre elles ?",
+      "answer": "Ce que tu découvres sur l'endroit *où* se trouve quelqu'un dans une liste est tout aussi vrai dans l'autre. Une position, c'est plus utile à garder sous la main qu'un nom."
+    },
+    "whatCountsAsAMatch": {
+      "question": "Quand est-ce qu'un prénom compte vraiment comme une correspondance ?",
+      "answer": "« Brad » doit faire entrer Brad Pitt, mais pas Bradley Cooper. Réfléchis à ce qui distingue ces deux entrées à l'endroit précis où les lettres qu'on t'a données s'arrêtent. Il y a plusieurs façons raisonnables de faire cette comparaison : choisis celle que tu sais t'expliquer à toi-même."
+    },
+    "noSurname": {
+      "question": "Cher n'a pas de nom de famille. Est-ce que ça pose un problème ?",
+      "answer": "Regarde à nouveau ce que ton test de correspondance suppose à propos d'une entrée de la liste. S'il suppose qu'il y a toujours quelque chose après le prénom, une entrée qui n'est *qu'un* prénom ne passera pas. Et dans l'autre sens, un nom plus long ne doit pas pouvoir s'approprier une entrée plus courte."
+    },
+    "notOnTheList": {
+      "question": "Que faire quand la personne n'est pas sur la liste ?",
+      "answer": "Dans ce cas, elle reçoit la string `\"Not on the list!\"`, exactement comme elle est écrite. Deux choses méritent réflexion ici. D'abord, à quel moment peux-tu être *certain* que quelqu'un n'est pas sur la liste ? Ensuite, remarque que c'est une réponse vraiment différente de celle d'un invité qui figure sur la liste mais qui a droit à 0 invité supplémentaire : assure-toi que ta fonction ne confonde jamais les deux."
+    }
+  },
+  "functions": {
+    "length": {
+      "description": "Le nombre d'éléments dans un tableau : la même propriété length que tu as déjà utilisée sur les strings (fournie par la stdlib du niveau)",
+      "category": "Opérations sur les tableaux"
+    },
+    "startsWith": {
+      "description": "Vérifie si une string commence par une string plus courte (fournie par la stdlib du niveau)",
+      "category": "Opérations sur les strings"
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "errors": {
+    "alreadyIssued": "Tu as déjà donné un bracelet à cette personne : chacun ne doit en recevoir qu'un seul."
+  },
+  "checks": {
+    "childWristband": "La personne a 8 ans. Elle devrait recevoir un bracelet enfant, mais elle a reçu : {{got}}.",
+    "teenWristband": "La personne a 15 ans. Elle devrait recevoir un bracelet ado, mais elle a reçu : {{got}}.",
+    "adultWristband": "La personne a 30 ans. Elle devrait recevoir un bracelet adulte, mais elle a reçu : {{got}}.",
+    "seniorWristband": "La personne a 70 ans. Elle devrait recevoir un bracelet senior, mais elle a reçu : {{got}}.",
+    "boundary13": "La personne a 13 ans. Elle devrait recevoir un bracelet ado (13 n'est pas inférieur à 13), mais elle a reçu : {{got}}.",
+    "boundary18": "La personne a 18 ans. Elle devrait recevoir un bracelet adulte (18 n'est pas inférieur à 18), mais elle a reçu : {{got}}.",
+    "boundary65": "La personne a 65 ans. Elle devrait recevoir un bracelet senior (65 n'est pas inférieur à 65), mais elle a reçu : {{got}}."
+  },
+  "tasks": {
+    "assignWristband": {
+      "name": "Attribue le bon bracelet",
+      "description": "Récupère l'âge de la personne et donne-lui le bon bracelet : enfant (moins de 13 ans), ado (13-17 ans), adulte (18-64 ans) ou senior (65 ans et plus)."
+    }
+  },
+  "scenarios": {
+    "childAge8": {
+      "name": "8 ans (enfant)",
+      "description": "Une personne de 8 ans. Elle doit recevoir un bracelet enfant."
+    },
+    "teenAge15": {
+      "name": "15 ans (ado)",
+      "description": "Une personne de 15 ans. Elle doit recevoir un bracelet ado."
+    },
+    "adultAge30": {
+      "name": "30 ans (adulte)",
+      "description": "Une personne de 30 ans. Elle doit recevoir un bracelet adulte."
+    },
+    "seniorAge70": {
+      "name": "70 ans (senior)",
+      "description": "Une personne de 70 ans. Elle doit recevoir un bracelet senior."
+    },
+    "boundary13": {
+      "name": "13 ans (ado)",
+      "description": "Exactement 13 ans. C'est un ado, pas un enfant."
+    },
+    "boundary18": {
+      "name": "18 ans (adulte)",
+      "description": "Exactement 18 ans. C'est un adulte, pas un ado."
+    },
+    "boundary65": {
+      "name": "65 ans (senior)",
+      "description": "Exactement 65 ans. C'est un senior, pas un adulte."
+    }
+  },
+  "hints": {
+    "gettingAge": {
+      "question": "Comment récupérer l'âge de la personne ?",
+      "answer": "Appelle `getAge()` et range le résultat dans une variable, par exemple `let age = getAge()`. Tu peux ensuite comparer `age` à des nombres dans tes conditions."
+    },
+    "structureForRanges": {
+      "question": "Quelle structure utiliser quand il y a plusieurs tranches d'âge ?",
+      "answer": "Un enchaînement `if` / `else if` / `else`. Chaque branche s'occupe d'un bracelet, et une seule branche s'exécutera."
+    },
+    "branchOrder": {
+      "question": "L'ordre des branches a-t-il de l'importance ?",
+      "answer": "Oui. Commence par les plus jeunes (`age < 13`), puis `age < 18`, puis `age < 65`. Comme chaque branche ne s'exécute que si les précédentes ont échoué, tu n'as pas besoin d'écrire des conditions comme `age >= 13 && age < 18`."
+    },
+    "seniorsElse": {
+      "question": "Et pour les seniors, à la fin ?",
+      "answer": "Pas besoin de condition pour eux. Un simple `else` qui appelle `giveSeniorWristband()` couvre toutes les personnes de 65 ans et plus."
+    }
+  },
+  "describers": {
+    "getAge": "a récupéré l'âge de la personne",
+    "giveChildWristband": "a donné un bracelet enfant",
+    "giveTeenWristband": "a donné un bracelet ado",
+    "giveAdultWristband": "a donné un bracelet adulte",
+    "giveSeniorWristband": "a donné un bracelet senior"
+  },
+  "functions": {
+    "getAge": {
+      "description": "Renvoie l'**âge** de la personne qui attend à l'entrée.",
+      "category": "Information"
+    },
+    "giveChildWristband": {
+      "description": "Donne à la personne un bracelet **enfant** (moins de 13 ans).",
+      "category": "Bracelets"
+    },
+    "giveTeenWristband": {
+      "description": "Donne à la personne un bracelet **ado** (13-17 ans).",
+      "category": "Bracelets"
+    },
+    "giveAdultWristband": {
+      "description": "Donne à la personne un bracelet **adulte** (18-64 ans).",
+      "category": "Bracelets"
+    },
+    "giveSeniorWristband": {
+      "description": "Donne à la personne un bracelet **senior** (65 ans et plus).",
+      "category": "Bracelets"
+    }
+  }
+}

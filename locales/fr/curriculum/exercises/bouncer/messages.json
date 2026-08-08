@@ -1,0 +1,56 @@
+{
+  "checks": {
+    "age25NotLetIn": "La personne a 25 ans : tu aurais dû la faire entrer, mais elle n'est pas entrée.",
+    "age18LetIn": "La personne a 18 ans : tu n'aurais pas dû la faire entrer, mais elle est entrée.",
+    "age21NotLetIn": "La personne a 21 ans : tu aurais dû la faire entrer, mais elle n'est pas entrée.",
+    "age20LetIn": "La personne a exactement 20 ans : ce n'est pas plus de 20 ans, donc tu n'aurais pas dû la faire entrer, mais elle est entrée."
+  },
+  "tasks": {
+    "checkAge": {
+      "name": "Vérifie l'âge de la personne",
+      "description": "Demande l'âge de la personne et vérifie si elle a plus de 20 ans. Si c'est le cas, fais-la entrer."
+    }
+  },
+  "scenarios": {
+    "age25": {
+      "name": "25 ans",
+      "description": "La personne a 25 ans : elle devrait pouvoir entrer."
+    },
+    "age18": {
+      "name": "18 ans",
+      "description": "La personne a 18 ans : elle ne devrait pas pouvoir entrer."
+    },
+    "age21": {
+      "name": "21 ans",
+      "description": "La personne a 21 ans, juste au-dessus de 20 : elle devrait pouvoir entrer."
+    },
+    "age20": {
+      "name": "20 ans",
+      "description": "La personne a exactement 20 ans : ce n'est pas plus de 20 ans, donc elle ne devrait pas pouvoir entrer."
+    }
+  },
+  "hints": {
+    "askAge": {
+      "question": "Comment connaître l'âge de la personne ?",
+      "answer": "Utilise la fonction `askAge()`. Elle renvoie une valeur différente dans chaque scénario."
+    },
+    "ifStatement": {
+      "question": "Comment agir différemment selon les cas ?",
+      "answer": "Utilise une instruction `if`. Consulte le concept si tu as besoin d'aide !"
+    }
+  },
+  "describers": {
+    "askAge": "a demandé l'âge de la personne",
+    "letIn": "a fait entrer la personne"
+  },
+  "functions": {
+    "askAge": {
+      "description": "Renvoie l'**âge** de la personne qui attend dehors.",
+      "category": "Information"
+    },
+    "letIn": {
+      "description": "Fait entrer la personne.",
+      "category": "Action"
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "checks": {
+    "fastAttack": {
+      "should": "Annalyn <strong>devrait</strong> lancer une attaque éclair ici, mais elle ne l'a pas fait. Le chevalier dort, elle peut donc frapper avant qu'il ne se réveille.",
+      "shouldNot": "Annalyn <strong>ne devrait pas</strong> lancer d'attaque éclair ici. Le chevalier est éveillé : si elle attaque, elle se fera prendre.",
+      "tooMany": "Annalyn <strong>devrait</strong> lancer une seule attaque éclair ici, mais elle l'a fait {{count}} fois."
+    },
+    "spy": {
+      "should": "Annalyn <strong>devrait</strong> espionner ici, mais elle ne l'a pas fait. Au moins une personne du camp est éveillée, il y a donc quelque chose à observer.",
+      "shouldNot": "Annalyn <strong>ne devrait pas</strong> espionner ici. Tout le monde dort, il n'y a donc rien à apprendre.",
+      "tooMany": "Annalyn <strong>devrait</strong> espionner une seule fois ici, mais elle l'a fait {{count}} fois."
+    },
+    "signal": {
+      "should": "Annalyn <strong>devrait</strong> faire signe au prisonnier ici, mais elle ne l'a pas fait. Le prisonnier est éveillé et l'archère dort, le signal passera donc.",
+      "shouldNot": "Annalyn <strong>ne devrait pas</strong> faire signe au prisonnier ici. Soit le prisonnier dort, soit l'archère est éveillée : le signal échouerait.",
+      "tooMany": "Annalyn <strong>devrait</strong> faire signe au prisonnier une seule fois ici, mais elle l'a fait {{count}} fois."
+    },
+    "free": {
+      "should": "Annalyn <strong>devrait</strong> libérer le prisonnier ici, mais elle ne l'a pas fait. Elle peut le faire ici sans se faire prendre.",
+      "shouldNot": "Annalyn <strong>ne devrait pas</strong> essayer de libérer le prisonnier ici. Elle se ferait prendre.",
+      "tooMany": "Annalyn <strong>devrait</strong> libérer le prisonnier une seule fois ici, mais elle l'a fait {{count}} fois."
+    }
+  },
+  "tasks": {
+    "planTheRescue": {
+      "name": "Planifie le sauvetage",
+      "description": "Pour chaque camp, effectue chaque action qu'Annalyn peut mener sans danger : lancer une attaque éclair si le chevalier dort, espionner si au moins une personne est éveillée, faire signe au prisonnier s'il est éveillé et que l'archère dort, et libérer le prisonnier soit grâce au chien (s'il se tient bien), soit en se faufilant elle-même."
+    }
+  },
+  "scenarios": {
+    "allAsleepNaughtyDog": {
+      "name": "Tout le monde dort, le chien fait des bêtises",
+      "description": "Tout le camp dort, mais le chien d'Annalyn fait des bêtises et n'est donc d'aucune aide."
+    },
+    "allAsleepBehavingDog": {
+      "name": "Tout le monde dort, le chien se tient bien",
+      "description": "Tout le camp dort et le chien d'Annalyn se tient bien."
+    },
+    "knightAwakeNaughtyDog": {
+      "name": "Seul le chevalier est éveillé",
+      "description": "Le chevalier monte la garde pendant que l'archère et le prisonnier dorment. Le chien fait des bêtises."
+    },
+    "prisonerAwakeNaughtyDog": {
+      "name": "Seul le prisonnier est éveillé",
+      "description": "Les deux ravisseurs dorment tandis que le prisonnier est éveillé. Le chien fait des bêtises, mais la voie discrète est ouverte."
+    },
+    "archerAndPrisonerAwakeBehavingDog": {
+      "name": "L'archère et le prisonnier sont éveillés",
+      "description": "L'archère monte la garde et le prisonnier est éveillé lui aussi. Le chien se tient bien."
+    },
+    "allAwakeBehavingDog": {
+      "name": "Tout le monde est éveillé, le chien se tient bien",
+      "description": "Tout le camp est bien réveillé. Même si le chien se tient bien, libérer le prisonnier est trop risqué."
+    }
+  },
+  "hints": {
+    "checkCampState": {
+      "question": "Comment vérifier l'état du camp ?",
+      "answer": "Tu peux vérifier quatre choses, chacune avec une fonction qui renvoie `true` ou `false` :\n\n- Le chevalier est-il éveillé ? `knightIsAwake()`\n- L'archère est-elle éveillée ? `archerIsAwake()`\n- Le prisonnier est-il éveillé ? `prisonerIsAwake()`\n- Le chien se tient-il bien ? `dogIsBehaving()`"
+    },
+    "performActions": {
+      "question": "Comment demander à Annalyn d'effectuer chaque action ?",
+      "answer": "Il y a quatre actions, chacune avec sa propre fonction :\n\n- Lancer une attaque éclair : `fastAttack()`\n- Espionner le camp : `spy()`\n- Faire signe au prisonnier : `signalPrisoner()`\n- Libérer le prisonnier : `freePrisoner()`"
+    },
+    "knightAsleep": {
+      "question": "Une attaque éclair exige que le chevalier soit ENDORMI. Comment vérifier ça ?",
+      "answer": "Il n'existe pas de fonction `isAsleep()`, mais être endormi est simplement le contraire d'être éveillé. Utilise `!` pour inverser une condition. Imagine qu'on veuille dire à quelqu'un d'arrêter de manger quand il n'a plus faim, mais qu'on ne dispose que d'une fonction `isHungry()`. On peut l'inverser :\n\n```javascript\nif (!isHungry()) {\n  stopEating()\n}\n```\n\nApplique la même idée pour vérifier que le chevalier dort."
+    },
+    "spyAnyoneAwake": {
+      "question": "L'espionnage fonctionne si AU MOINS UNE personne est éveillée. Comment écrire ça ?",
+      "answer": "Utilise `||` (ou) entre les vérifications pour que la condition entière soit `true` dès qu'une seule d'entre elles est `true`. Par exemple, ce code s'exécute quand quelqu'un a faim, soif, ou les deux :\n\n```javascript\nif (isHungry() || isThirsty()) {\n  rest()\n}\n```"
+    },
+    "signalBothConditions": {
+      "question": "Le signal exige que DEUX choses soient vraies en même temps. Comment les combiner ?",
+      "answer": "Utilise `&&` (et) : les deux côtés doivent alors être `true`. Par exemple, ce code ne s'exécute que quand quelqu'un a faim ET soif :\n\n```javascript\nif (isHungry() && isThirsty()) {\n  drink()\n}\n```"
+    },
+    "twoWaysToSucceed": {
+      "question": "Une action a deux façons complètement distinctes de réussir. Comment gérer ça ?",
+      "answer": "Chaque façon suffit à elle seule, tu as donc deux options.\n\nLa première consiste à écrire une instruction `if` distincte pour chaque façon, les deux effectuant la même action :\n\n```javascript\nif (isHungry() && hasSnack()) {\n  eat()\n}\nif (isThirsty() && hasSnack()) {\n  eat()\n}\n```\n\nLa seconde consiste à combiner les deux façons dans un seul `if` avec `||`, en entourant les vérifications de chaque façon de parenthèses pour que les parties en `&&` se regroupent avant que le `||` ne les sépare :\n\n```javascript\nif ((isHungry() && hasSnack()) || (isThirsty() && hasSnack())) {\n  eat()\n}\n```\n\nDétermine d'abord les conditions de chaque façon séparément, puis utilise le style qui te paraît le plus clair."
+    }
+  },
+  "describers": {
+    "knightIsAwake": "a vérifié si le chevalier était éveillé",
+    "archerIsAwake": "a vérifié si l'archère était éveillée",
+    "prisonerIsAwake": "a vérifié si le prisonnier était éveillé",
+    "dogIsBehaving": "a vérifié si le chien d'Annalyn se tenait bien",
+    "fastAttack": "a lancé une attaque éclair contre le chevalier",
+    "spy": "a espionné le groupe",
+    "signalPrisoner": "a fait signe au prisonnier",
+    "freePrisoner": "a libéré le prisonnier"
+  },
+  "functions": {
+    "knightIsAwake": {
+      "description": "Renvoie `true` si le chevalier est éveillé, `false` s'il dort.",
+      "category": "Information"
+    },
+    "archerIsAwake": {
+      "description": "Renvoie `true` si l'archère est éveillée, `false` si elle dort.",
+      "category": "Information"
+    },
+    "prisonerIsAwake": {
+      "description": "Renvoie `true` si le prisonnier est éveillé, `false` s'il dort.",
+      "category": "Information"
+    },
+    "dogIsBehaving": {
+      "description": "Renvoie `true` si le chien (un peu polisson) d'Annalyn se tient bien.",
+      "category": "Information"
+    },
+    "fastAttack": {
+      "description": "Lance une attaque éclair contre le chevalier.",
+      "category": "Action"
+    },
+    "spy": {
+      "description": "Espionne le groupe.",
+      "category": "Action"
+    },
+    "signalPrisoner": {
+      "description": "Fait signe au prisonnier avec des chants d'oiseaux.",
+      "category": "Action"
+    },
+    "freePrisoner": {
+      "description": "Se faufile dans le camp pour libérer le prisonnier.",
+      "category": "Action"
+    }
+  }
+}

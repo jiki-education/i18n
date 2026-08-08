@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "encodeMessage": {
+      "name": "Encode un message",
+      "description": "Écris une fonction encode qui décale chaque lettre d'un message d'un nombre donné de positions. Les espaces restent des espaces. Les lettres qui dépassent « z » repartent au début de l'alphabet."
+    }
+  },
+  "scenarios": {
+    "caesarSimpleShift": {
+      "name": "Décalage simple de 1",
+      "description": "Décale chaque lettre de 1 : a->b, b->c, c->d."
+    },
+    "caesarShiftBy3": {
+      "name": "Décalage de 3",
+      "description": "Décale chaque lettre de 3 : h->k, e->h, l->o, o->r."
+    },
+    "caesarWrapAround": {
+      "name": "Fais le tour de l'alphabet",
+      "description": "Quand le décalage dépasse « z », on repart au début : x->a, y->b, z->c."
+    },
+    "caesarWithSpaces": {
+      "name": "Message avec des espaces",
+      "description": "Les espaces restent des espaces, seules les lettres sont décalées."
+    },
+    "caesarRot13": {
+      "name": "Chiffrement ROT13",
+      "description": "ROT13 est un cas particulier du chiffre de César, avec un décalage de 13."
+    }
+  },
+  "hints": {
+    "shiftingLetterByN": {
+      "question": "Comment décaler une lettre de N positions ?",
+      "answer": "Chaque lettre a une position dans l'alphabet (a est à la position 0, b à la position 1, et ainsi de suite). Pour décaler, tu trouves cette position, tu ajoutes le décalage, puis tu transformes la nouvelle position en lettre en la cherchant dans l'alphabet."
+    },
+    "letterPosition": {
+      "question": "Comment trouver la position d'une lettre dans l'alphabet ?",
+      "answer": "Tu peux chercher un petit morceau dans une string avec `indexOf`. En l'appelant sur la string de l'alphabet, tu obtiens la position d'une lettre, ou -1 si la lettre n'est pas trouvée. Dans l'autre sens, utilise la position comme indice dans la string de l'alphabet pour retrouver la lettre."
+    },
+    "wrapPastZ": {
+      "question": "Que se passe-t-il quand le décalage dépasse « z » ?",
+      "answer": "Il faut repartir à « a ». L'opérateur modulo (`%`) est parfait pour ça. Prendre la position modulo 26 ramène n'importe quel nombre dans l'intervalle de 0 à 25."
+    },
+    "applyToWholeMessage": {
+      "question": "Comment appliquer ça à tout un message ?",
+      "answer": "Parcours chaque caractère du message, décale-le avec ta fonction auxiliaire pour une seule lettre, et utilise la concaténation (`+`) pour construire la string du résultat à partir des lettres décalées."
+    }
+  },
+  "functions": {
+    "indexOf": {
+      "description": "Trouve la position d'une petite string dans une string, ou -1 si elle n'est pas trouvée (fournie par la bibliothèque standard du niveau)",
+      "category": "Opérations sur les strings"
+    }
+  }
+}

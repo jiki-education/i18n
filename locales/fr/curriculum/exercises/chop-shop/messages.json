@@ -1,0 +1,48 @@
+{
+  "tasks": {
+    "canFitIn": {
+      "name": "Détermine si tu peux les caser",
+      "description": "Écris une fonction qui détermine si un nouveau client peut être servi avant la fermeture, en fonction de la file d'attente actuelle et du temps restant."
+    }
+  },
+  "scenarios": {
+    "emptyQueue": {
+      "name": "Personne dans la file",
+      "description": "Personne dans la file d'attente et tout le temps qu'il faut."
+    },
+    "emptyQueueButNoTime": {
+      "name": "Tard dans la journée",
+      "description": "Personne dans la file d'attente, mais pas assez de temps."
+    },
+    "busyDayNoTime": {
+      "name": "Une journée bien remplie",
+      "description": "Une file d'attente pleine et pas assez de temps."
+    },
+    "busyDayButTime": {
+      "name": "Ça passe tout juste",
+      "description": "Une journée bien remplie, mais juste assez de temps."
+    },
+    "stillEarly": {
+      "name": "Encore tôt",
+      "description": "Il est encore tôt dans la journée."
+    },
+    "cuttingItFine": {
+      "name": "Juste à temps",
+      "description": "La personne arrive juste à temps "
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Par où commencer  Par la file d'attente ou par le nouveau client ",
+      "answer": "Commence par calculer combien de temps la file d'attente va consommer, puis regarde ce qu'il reste pour le nouveau client. Une fonction auxiliaire qui transforme le nom d'une coupe en sa durée (en minutes) rendra le code beaucoup plus propre."
+    },
+    "subtractQueueTime": {
+      "question": "Comment soustraire la durée de chaque coupe du temps restant ",
+      "answer": "Parcours la file d'attente. Pour chaque coupe, récupère sa durée grâce à ta fonction auxiliaire et soustrais-la de ton total de temps restant dans la journée."
+    },
+    "decideIfFits": {
+      "question": "Comment décider si la nouvelle coupe rentre dans le temps restant ",
+      "answer": "Une fois la file d'attente traitée, compare le temps restant à la durée de la nouvelle coupe. Si la durée de la nouvelle coupe est inférieure ou égale au temps restant, ça rentre."
+    }
+  }
+}
