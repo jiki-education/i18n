@@ -10,7 +10,7 @@ Egy automata Scrabble-botot építesz. A botnak van egy betűtartója, amit egy 
 
 Ahhoz, hogy összeállítsd az eredménystringet, át kell alakítanod a pozíció számát stringgé, és össze kell fűznöd a részeket összefűzéssel (`+`) vagy template stringgel.
 
-### Példák
+Példák:
 
 - `findTile("ABCDE", "A")` visszaadja `"Move to position 1"`
 - `findTile("ABCDE", "C")` visszaadja `"Move to position 3"`
