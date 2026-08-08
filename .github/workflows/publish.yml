@@ -66,9 +66,16 @@ jobs:
       - name: Install
         run: npm ci
 
-      # The same gate the PR ran, re-run against what actually landed on main.
-      # A merge can produce a tree neither PR had.
-      - name: Validate
+      # Reported, never enforced. Publishing is deliberately permissive: work in
+      # progress has to reach R2 or nobody can review it on staging, and a locale
+      # being behind is the normal state rather than a fault. What a locale is
+      # missing is recorded in completeness.json, and the front-end's deploy is
+      # where that record actually blocks anything.
+      #
+      # Enforcing here would mean one stale item stops every locale publishing,
+      # including the ones that are fine.
+      - name: Validate (report only)
+        continue-on-error: true
         run: node scripts/validate.mjs all
 
       # Builds every artifact plus the pointer beside it, then uploads: artifacts
