@@ -1,0 +1,18 @@
+---
+title: "Vérification du coup"
+description: "Détermine si un coup de golf est arrivé assez près du trou pour y tomber."
+---
+
+Bienvenue à nouveau sur le parcours de golf. Jusqu'ici, tu n'as fait rouler la balle qu'horizontalement : quand elle arrivait au trou, elle restait simplement posée au-dessus. Cette fois, on va vraiment l'animer pour qu'elle descende dans le trou.
+
+Premier changement : la fonction `moveTo` (déplacer vers) a maintenant des entrées pour `x` (la position horizontale) et `y` (la position verticale). Comme avant, tu dois faire rouler la balle une position à la fois, sans la faire sauter directement à la fin. Mais cette fois, si le golfeur met la balle dans le trou, tu dois aussi animer cette dernière partie, en faisant descendre la balle dans le trou une fois qu'elle est arrivée au bon endroit.
+
+Et pour finir, **si la balle a atterri dans le trou**, une fois qu'elle est descendue tout en bas, c'est le moment de célébrer : tire un feu d'artifice avec la fonction `fireFireworks()` (tirer un feu d'artifice).
+
+Quelques points à connaître :
+
+1. La balle démarre sur le tee à `x = 28`, `y = 75`, et roule une position à la fois.
+2. Un coup réussi signifie que la longueur du coup est `58`, `59`, `60`, `61` ou `62`.
+3. Tu dois faire descendre la balle de `9` unités.
+
+Dans cet exercice, essaie de bien réfléchir à chaque étape et avance étape par étape. Bonne chance !

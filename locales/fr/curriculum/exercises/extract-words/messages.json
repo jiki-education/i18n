@@ -1,0 +1,58 @@
+{
+  "tasks": {
+    "extractWords": {
+      "name": "Extrais les mots",
+      "description": "Écris une fonction extract_words qui prend une phrase et renvoie un tableau de mots. Les mots sont séparés par des espaces, et les points doivent être ignorés."
+    }
+  },
+  "scenarios": {
+    "simpleTwoWords": {
+      "name": "Deux mots",
+      "description": "Extrais deux mots simples séparés par un espace."
+    },
+    "sentenceWithPeriod": {
+      "name": "Phrase avec un point",
+      "description": "Extrais les mots d'une phrase qui se termine par un point."
+    },
+    "longerSentence": {
+      "name": "Phrase plus longue",
+      "description": "Extrais les mots d'une phrase plus longue qui se termine par un point."
+    },
+    "singleWord": {
+      "name": "Mot seul",
+      "description": "Extrais un seul mot, sans espace ni point."
+    },
+    "singleWordWithPeriod": {
+      "name": "Mot seul avec un point",
+      "description": "Extrais un seul mot d'une string qui se termine par un point."
+    }
+  },
+  "hints": {
+    "buildingUpWord": {
+      "question": "Comment construire le tableau des mots au fur et à mesure ?",
+      "answer": "Garde deux choses côte à côte : un tableau vide pour les mots terminés, et une string vide que tu construis lettre par lettre. Quand le mot en cours est « terminé », ajoute-le au tableau et commence un nouveau mot vide."
+    },
+    "wordFinished": {
+      "question": "Comment savoir quand un mot est terminé ?",
+      "answer": "Parcours chaque caractère. Quand tu rencontres un espace, le mot en cours est terminé : ajoute-le au tableau et remets la string en construction à vide. Sinon, ajoute le caractère à la string en construction."
+    },
+    "doubleSpaces": {
+      "question": "Et s'il y a deux espaces à la suite ?",
+      "answer": "Cela te donnerait un mot vide. N'ajoute le mot en cours au tableau que s'il n'est pas vide ; sinon, passe au caractère suivant."
+    },
+    "punctuation": {
+      "question": "Et la ponctuation, comme un point ?",
+      "answer": "Ignore-la, tout simplement. N'ajoute pas les points au mot en cours : pendant la boucle, si le caractère est un point, ignore-le complètement."
+    },
+    "missingLastWord": {
+      "question": "Pourquoi le dernier mot manque-t-il ?",
+      "answer": "À la fin de la boucle, ton dernier mot se trouve encore dans la string en construction et n'a pas encore été ajouté au tableau. Ajoute-le (s'il n'est pas vide) une fois la boucle terminée."
+    }
+  },
+  "functions": {
+    "push": {
+      "description": "Renvoie un nouveau tableau avec l'élément ajouté à la fin (fournie par la bibliothèque standard du niveau)",
+      "category": "Opérations sur les tableaux"
+    }
+  }
+}

@@ -1,55 +1,55 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "Tu as utilisé plus de lignes que nécessaire. Essaie de raccourcir ton code."
   },
   "tasks": {
     "calculateHammingDistance": {
-      "name": "�",
-      "description": "�"
+      "name": "Calcule la distance de Hamming",
+      "description": "Écris une fonction qui calcule la distance de Hamming entre deux brins d'ADN de même longueur. La distance de Hamming est le nombre de positions où les caractères correspondants diffèrent."
     },
     "solveInElevenLines": {
-      "name": "�",
-      "description": "�"
+      "name": "Résous l'exercice en onze lignes de code",
+      "description": "Peux-tu résoudre cet exercice en onze lignes de code maximum ?"
     }
   },
   "scenarios": {
     "hammingEmptyStrands": {
-      "name": "�",
-      "description": "�"
+      "name": "Brins vides",
+      "description": "Des brins vides ont une distance de Hamming de 0."
     },
     "hammingSingleLetterIdentical": {
-      "name": "�",
-      "description": "�"
+      "name": "Brins identiques d'une seule lettre",
+      "description": "Des brins identiques d'une seule lettre ont une distance de Hamming de 0."
     },
     "hammingLongIdenticalStrands": {
-      "name": "�",
-      "description": "�"
+      "name": "Longs brins identiques",
+      "description": "De longs brins identiques ont une distance de Hamming de 0."
     },
     "hammingSingleLetterDifferent": {
-      "name": "�",
-      "description": "�"
+      "name": "Brins différents d'une seule lettre",
+      "description": "Des brins différents d'une seule lettre ont une distance de Hamming de 1."
     },
     "hammingLongDifferentStrands": {
-      "name": "�",
-      "description": "�"
+      "name": "Longs brins différents",
+      "description": "Pour de longs brins qui présentent des différences, la distance de Hamming est calculée."
     },
     "hammingBonusElevenLines": {
-      "name": "�",
-      "description": "�"
+      "name": "Onze lignes de code",
+      "description": "Résous l'exercice en onze lignes de code maximum."
     }
   },
   "hints": {
     "hammingDistanceMeaning": {
-      "question": "�",
-      "answer": "�"
+      "question": "Que signifie « distance de Hamming » concrètement ?",
+      "answer": "C'est le nombre de positions où les deux strings diffèrent. Par exemple, 'GAGA' et 'GATA' ne diffèrent qu'à la position 3, ce qui donne une distance de 1."
     },
     "compareCharactersAtPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment comparer les caractères à la même position dans les deux strings ?",
+      "answer": "Tu dois parcourir les deux strings en parallèle, pour pouvoir extraire au fur et à mesure le caractère qui se trouve au même endroit dans chaque string."
     },
     "trackDifferenceCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment compter le nombre de différences ?",
+      "answer": "Tu as besoin de quelque chose qui garde un total en cours, ajusté à chaque fois que tu repères une différence, pour pouvoir le renvoyer une fois toutes les positions vérifiées."
     }
   }
 }
