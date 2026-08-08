@@ -4,7 +4,7 @@ description: "Plante une rangée de fleurs dans le jardin, une par une."
 en_md5: aec4e105cc50c20f461c3554904e55f8
 ---
 
-Tu vas créer une machine automatique à planter les fleurs.
+Tu vas créer une machine pour planter des fleurs automatiquement.
 
 Elle doit planter des fleurs sur la pelouse à intervalles réguliers de `10`. La première fleur doit donc être à la position `10`, la deuxième à la position `20`, et ainsi de suite.
 

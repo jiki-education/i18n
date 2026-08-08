@@ -9,7 +9,7 @@ Dans cet exercice, ta mission est de positionner un soleil dans le coin en haut 
 On a prédéfini quatre variables pour toi en haut du fichier :
 
 - `canvasSize` (taille du canvas) : la taille du canvas, qui vaut `100`.
-- `color` (couleur) : définie sur `"yellow"`.
+- `color` (couleur) : définie sur `"yellow"` (jaune).
 - `gap` (écart) : la distance entre le bord du soleil et les bords supérieur et droit du canvas.
 - `radius` (rayon) : le rayon du soleil.
 
@@ -19,7 +19,7 @@ Pour résoudre cet exercice, il y a deux choses à faire.
 
 #### 1. Définis des variables dérivées
 
-Définis les variables `sunX` (position x du soleil) et `sunY` (position y du soleil), qui utilisent `gap`, `radius` et `canvasSize` pour placer le centre du soleil dans le coin en haut à droite.
+Définis les variables `sunX` (position X du soleil) et `sunY` (position Y du soleil), qui utilisent `gap`, `radius` et `canvasSize` pour placer le centre du soleil dans le coin en haut à droite.
 
 #### 2. Dessine le cercle
 
@@ -27,9 +27,9 @@ Dessine un cercle à l'aide de `sunX`, `sunY`, `radius` et `color`.
 
 ## Flexibilité
 
-Par défaut, `gap` vaut 10 et `radius` vaut 15. Commence par résoudre l'exercice avec ces valeurs, pour pouvoir t'appuyer sur l'arrière-plan et bien aligner les éléments. Quand ton code est correct, tu verras le cercle apparaître au bon endroit sur la page.
+Par défaut, `gap` vaut 10 et `radius` vaut 15. Commence par résoudre l'exercice avec ces valeurs pour pouvoir t'appuyer sur l'arrière-plan et bien aligner les éléments. Lorsque ton code sera correct, tu verras apparaître le cercle au bon endroit sur la page.
 
-Attention cependant : pour réussir l'exercice, tu ne peux pas te contenter de « coder en dur » la valeur (c'est-à-dire lui donner directement un simple nombre). `sunX` et `sunY` doivent être des calculs qui font intervenir d'autres variables.
+Attention cependant : pour réussir l'exercice, tu ne peux pas te contenter de « coder en dur » la valeur (c'est-à-dire lui donner directement un nombre). `sunX` et `sunY` doivent provenir de calculs qui font intervenir d'autres variables.
 
 Une fois l'exercice réussi, clique sur _« Nettoyer le code »_, puis change les valeurs de `gap` et de `radius` en haut du fichier et exécute à nouveau ton code : tu verras le soleil grossir ou se déplacer tout en restant dans le coin.
 
