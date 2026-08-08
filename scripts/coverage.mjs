@@ -7,7 +7,8 @@
 //   node scripts/coverage.mjs [<locale|all>] [--json] [--type=<id>]
 //
 // Coverage is derived entirely from the files themselves, never from a tracking
-// file that has to be kept in step with them. A catalog key is done unless it is
+// file that has to be kept in step with them. English is read from a front-end
+// checkout; see ENGLISH-SOURCE.md. A catalog key is done unless it is
 // the sentinel; a prose page is done unless it is absent or its en_md5 no longer
 // matches the English source. That is what makes "what is left?" a question the
 // repo can always answer, including for a locale nobody has touched in months.
@@ -16,8 +17,9 @@
 // every line here reads 100% and `validate --shippable` passes.
 
 import fs from "node:fs";
-import { SENTINEL, TARGET_LOCALES, SOURCE_LOCALE, assertTargetLocale } from "./lib/constants.mjs";
-import { CONTENT_TYPE_IDS, contentType, listItems, localPath, metaPath } from "./lib/content-types.mjs";
+import { SENTINEL, TARGET_LOCALES, assertTargetLocale } from "./lib/constants.mjs";
+import { CONTENT_TYPE_IDS, contentType, localPath, metaPath } from "./lib/content-types.mjs";
+import { corpusItems } from "./lib/english.mjs";
 import { countSentinels, md5File, parseFrontmatter, readJson, readText } from "./lib/files.mjs";
 import { parseArgs } from "./lib/args.mjs";
 
@@ -31,7 +33,7 @@ function coverageFor(locale, typeIds) {
     let stale = 0;
     let missing = 0;
 
-    for (const item of listItems(typeId, SOURCE_LOCALE)) {
+    for (const item of corpusItems(typeId)) {
       const target = localPath(typeId, locale, item.slug);
 
       if (type.format === "catalog") {

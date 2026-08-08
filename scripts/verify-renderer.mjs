@@ -37,7 +37,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fail } from "./lib/constants.mjs";
 import { contentHash, parseFrontmatter, readText } from "./lib/files.mjs";
-import { resolveSourceRepo } from "./lib/content-types.mjs";
+import { englishRepo } from "./lib/english.mjs";
 import { renderConcept, rendererVersion } from "./lib/prose.mjs";
 
 /**
@@ -80,7 +80,7 @@ function sourceMarkdown(sourceRepo, slug, locale) {
 
 async function main() {
   const explicit = process.argv.slice(2).find((arg) => arg.startsWith("--source-repo="));
-  const sourceRepo = resolveSourceRepo(explicit ? explicit.split("=")[1] : undefined);
+  const sourceRepo = englishRepo(explicit ? explicit.split("=")[1] : undefined);
 
   const artifacts = frontEndArtifacts(sourceRepo);
   if (artifacts.length === 0) fail(`the front-end concept cache at ${sourceRepo} is empty`);
