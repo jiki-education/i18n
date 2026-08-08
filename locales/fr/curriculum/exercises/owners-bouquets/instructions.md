@@ -4,7 +4,7 @@ description: "Plante des fleurs selon différentes dispositions du jardin."
 en_md5: bdb2a772a6549db0226a6c17326f20c6
 ---
 
-Bienvenue dans ton deuxième exercice avec des scénarios.
+Bienvenue dans ton deuxième exercice à scénarios.
 
 On retrouve notre machine de jardinage automatique. Jusqu'ici, on plantait toujours 9 fleurs, mais les choses changent : notre robot doit maintenant pouvoir planter le nombre de fleurs que lui demande le propriétaire de la maison.
 
