@@ -1,6 +1,7 @@
 ---
 title: "Hamming"
 description: "Compte les différences entre deux brins d'ADN."
+en_md5: 629f74899d402283c34d3bfbb17777b8
 ---
 
 C'est un exercice classique d'Exercism sur la biologie moléculaire !

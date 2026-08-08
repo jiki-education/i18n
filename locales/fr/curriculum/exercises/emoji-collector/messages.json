@@ -1,97 +1,97 @@
 {
   "errors": {
-    "directionMustBeString": "�",
-    "invalidDirection": "�",
-    "emojisMustBeDictionary": "�"
+    "directionMustBeString": "direction doit être une string",
+    "invalidDirection": "Direction invalide : {{dir}}. Utilise \"ahead\", \"left\", \"right\" ou \"down\".",
+    "emojisMustBeDictionary": "emojis doit être un dictionnaire"
   },
   "describers": {
-    "look": "�",
-    "removeEmoji": "�",
-    "announceEmojis": "�"
+    "look": "Regarde dans une direction pour voir ce qui s'y trouve",
+    "removeEmoji": "Retire l'emoji de la case actuelle",
+    "announceEmojis": "Annonce les emojis collectés"
   },
   "checks": {
-    "notReachedEnd": "�",
-    "wrongEmojis": "�",
-    "reportedIncorrectly": "�"
+    "notReachedEnd": "Tu n'as pas atteint la sortie du labyrinthe.",
+    "wrongEmojis": "Tu n'as pas annoncé correctement les emojis collectés. On s'attendait à ce que tu annonces : <br/><code>{{expected}}</code>",
+    "reportedIncorrectly": "Tu n'as pas annoncé correctement les emojis collectés."
   },
   "tasks": {
     "collectEmojis": {
-      "name": "�",
-      "description": "�"
+      "name": "Collecte les emojis",
+      "description": "Explore le labyrinthe en ramassant les emojis sur ton chemin, puis annonce ta collection quand tu atteins l'arrivée."
     },
     "randomEmojis": {
-      "name": "�",
-      "description": "�"
+      "name": "Emojis aléatoires",
+      "description": "Gère des labyrinthes avec des emojis aléatoires qui changent à chaque fois !"
     }
   },
   "scenarios": {
     "diamonds": {
-      "name": "�",
-      "description": "�"
+      "name": "Collecte les diamants",
+      "description": "Collecte les diamants et annonce-les."
     },
     "faces": {
-      "name": "�",
-      "description": "�"
+      "name": "Deux types d'emojis !",
+      "description": "Cette fois, collecte deux types d'emojis !"
     },
     "poo": {
-      "name": "�",
-      "description": "�"
+      "name": "Attention !",
+      "description": "Collecte les animaux, pas leurs crottes !"
     },
     "onlyOnce": {
-      "name": "�",
-      "description": "�"
+      "name": "Une seule fois !",
+      "description": "Assure-toi de ne collecter chaque chose qu'une seule fois !"
     },
     "randomEmojis": {
-      "name": "�",
-      "description": "�"
+      "name": "Emojis aléatoires !",
+      "description": "Des emojis différents à chaque fois !"
     }
   },
   "hints": {
     "seeCurrentSquare": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment voir ce qui se trouve sur la case où je me tiens ?",
+      "answer": "Utilise la nouvelle direction : `look(\"down\")`. Elle renvoie l'emoji de ta case actuelle, celui que tu voudras peut-être ramasser."
     },
     "specialEmojisToIgnore": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quels emojis spéciaux dois-je ignorer ?",
+      "answer": "Ignore tout ce qui figure dans la liste standard : `\"star\"`, `\"flag\"`, `\"white square\"`, `\"fire\"`, `\"poop\"`, `\"brick\"`. Tout autre emoji est bon à collecter."
     },
     "countingWithDictionary": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment compter les emojis avec un dictionnaire ?",
+      "answer": "Utilise `hasKey(dict, emoji)` pour savoir si tu l'as déjà vu. Si oui, ajoute `1` à `dict[emoji]`. Sinon, démarre le compte avec `dict[emoji] = 1`."
     },
     "avoidRecounting": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment éviter de ramasser le même emoji chaque fois que je marche sur sa case ?",
+      "answer": "Appelle `removeEmoji()` juste après l'avoir compté. La case devient vide, donc l'emoji ne sera pas compté à nouveau lors d'un prochain passage."
     },
     "reachingFlag": {
-      "question": "�",
-      "answer": "�"
+      "question": "Que faire une fois que j'ai atteint le drapeau ?",
+      "answer": "Appelle `announceEmojis(result)` avec ton dictionnaire comme argument. Fais-le une seule fois, après avoir rejoint la case d'arrivée."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Déplace le personnage **d'une case vers l'avant** dans la direction actuelle. Le personnage n'avance que si la case visée n'est pas bloquée par un mur.",
+      "category": "Déplacement"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Fait pivoter le personnage de **90 degrés vers la gauche** (dans le sens inverse des aiguilles d'une montre). Cela change la direction dans laquelle le personnage regarde.",
+      "category": "Déplacement"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Fait pivoter le personnage de **90 degrés vers la droite** (dans le sens des aiguilles d'une montre). Cela change la direction dans laquelle le personnage regarde.",
+      "category": "Déplacement"
     },
     "look": {
-      "description": "�",
-      "category": "�"
+      "description": "Renvoie l'**emoji** dans la direction donnée. Utilise `\"ahead\"`, `\"left\"` ou `\"right\"` pour regarder autour de toi, ou `\"down\"` pour voir la case actuelle.",
+      "category": "Détection"
     },
     "removeEmoji": {
-      "description": "�",
-      "category": "�"
+      "description": "Retire l'emoji de la **case actuelle**. Utilise cette fonction après avoir collecté un emoji pour éviter de le compter à nouveau.",
+      "category": "Collecte"
     },
     "announceEmojis": {
-      "description": "�",
-      "category": "�"
+      "description": "Annonce les emojis que tu as collectés. Passe un **dictionnaire** dont les clés sont les emojis (des strings) et les valeurs leurs quantités.",
+      "category": "Collecte"
     }
   }
 }

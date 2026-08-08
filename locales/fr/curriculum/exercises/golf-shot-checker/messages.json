@@ -1,82 +1,82 @@
 {
   "checks": {
-    "wrongDistance": "�",
-    "missingPositions": "�",
-    "stayOnGrassPlain": "�",
-    "stayOnGrassOvershot": "�",
-    "droppedIncorrectly": "�",
-    "noFireworksPeriod": "�",
-    "noFireworksNoPeriod": "�",
-    "noFireworksAtEnd": "�",
-    "shouldFireFireworks": "�"
+    "wrongDistance": "La balle n'a pas roulé sur la bonne distance pour ce coup. Elle doit parcourir exactement la longueur du coup depuis le tee.",
+    "missingPositions": "La balle doit rouler en passant par chaque position, une à la fois.",
+    "stayOnGrassPlain": "Pour ce coup, la balle doit rester sur l'herbe : elle ne doit pas tomber dans le trou.",
+    "stayOnGrassOvershot": "La balle a dépassé le trou, elle doit donc rester sur l'herbe et ne pas tomber dedans.",
+    "droppedIncorrectly": "La balle a atteint le trou, mais elle n'est pas descendue dedans correctement.",
+    "noFireworksPeriod": "Tu n'aurais pas dû tirer le feu d'artifice.",
+    "noFireworksNoPeriod": "Tu n'aurais pas dû tirer le feu d'artifice",
+    "noFireworksAtEnd": "Tu n'aurais pas dû tirer le feu d'artifice à la fin.",
+    "shouldFireFireworks": "Tu dois tirer le feu d'artifice à la fin."
   },
   "tasks": {
     "checkShot": {
-      "name": "�",
-      "description": "�"
+      "name": "Vérifie si le coup atterrit dans le trou",
+      "description": "Fais rouler la balle selon la longueur du coup et, si elle arrive au-dessus du trou, fais-la tomber dedans ! Tire ensuite un feu d'artifice."
     }
   },
   "scenarios": {
     "tooShort": {
-      "name": "�",
-      "description": "�"
+      "name": "Coup trop court",
+      "description": "Le golfeur frappe la balle de 23 : elle n'atteint pas le trou."
     },
     "justTooShort": {
-      "name": "�",
-      "description": "�"
+      "name": "Juste trop court",
+      "description": "Le golfeur frappe la balle de 57 et elle ne roule pas tout à fait jusque dans le trou."
     },
     "justTooFar": {
-      "name": "�",
-      "description": "�"
+      "name": "Juste trop loin",
+      "description": "Le golfeur frappe la balle de 63 et elle ressort juste de l'autre côté"
     },
     "tooLong": {
-      "name": "�",
-      "description": "�"
+      "name": "Coup trop long",
+      "description": "Le golfeur frappe la balle de 68 : elle dépasse le trou."
     },
     "justInsideLeft": {
-      "name": "�",
-      "description": "�"
+      "name": "Juste dans le trou",
+      "description": "Le golfeur frappe la balle de 58 : elle atteint tout juste le trou !"
     },
     "justInsideRight": {
-      "name": "�",
-      "description": "�"
+      "name": "Presque trop loin, mais ça passe !",
+      "description": "Le golfeur frappe la balle de 62 : elle reste tout juste dans le trou !"
     }
   },
   "hints": {
     "howDoIRollRightDistance": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment faire rouler la balle sur la bonne distance pour chaque coup ?",
+      "answer": "Utilise `getShotLength()` pour savoir à quelle distance le golfeur a frappé la balle, et range cette valeur dans une variable. Elle t'indique combien de fois faire rouler la balle."
     },
     "howDoIMoveOneStep": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment déplacer la balle une position à la fois au lieu de la faire sauter directement à la fin ?",
+      "answer": "Garde une variable pour la position `x` de la balle. À chaque tour de boucle, augmente-la de un, puis fais rouler la balle jusqu'à la nouvelle position."
     },
     "whenShouldBallDrop": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quand la balle doit-elle tomber dans le trou ?",
+      "answer": "Seulement quand le coup atterrit dans le trou. Vérifie si la longueur du coup est dans la plage gagnante en testant la borne inférieure et la borne supérieure ensemble, dans une seule condition."
     },
     "whenShouldFireworksFire": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quand le feu d'artifice doit-il partir ?",
+      "answer": "Seulement pour un coup qui a atterri dans le trou, et seulement une fois que la balle a fini de descendre tout en bas. Garde la descente et le feu d'artifice ensemble, dans la même condition."
     }
   },
   "functions": {
     "moveTo": {
-      "description": "�",
-      "category": "�"
+      "description": "Déplace la balle à la position **(x, y)**.",
+      "category": "Déplacement"
     },
     "getShotLength": {
-      "description": "�",
-      "category": "�"
+      "description": "Renvoie la **longueur du coup** : le nombre d'unités que la balle parcourt vers la droite.",
+      "category": "Information"
     },
     "fireFireworks": {
-      "description": "�",
-      "category": "�"
+      "description": "Tire un feu d'artifice de célébration !",
+      "category": "Action"
     }
   },
   "describers": {
-    "moveTo": "�",
-    "getShotLength": "�",
-    "fireFireworks": "�"
+    "moveTo": "a déplacé la balle à la position (${arg1}, ${arg2})",
+    "getShotLength": "a récupéré la longueur du coup",
+    "fireFireworks": "a tiré un feu d'artifice de célébration"
   }
 }

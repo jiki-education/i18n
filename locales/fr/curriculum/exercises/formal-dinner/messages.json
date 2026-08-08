@@ -1,0 +1,97 @@
+{
+  "tasks": {
+    "findGuestTable": {
+      "name": "Trouve la table de l'invité",
+      "description": "Écris une fonction qui prend la liste des noms complets des invités, la liste correspondante des noms de tables, et un invité qui arrive en s'annonçant par un titre de civilité et un nom de famille. Renvoie le nom de la table à laquelle cet invité est assis, ou `\"No table found\"` s'il ne figure pas sur le plan de table."
+    },
+    "solveTightly": {
+      "name": "Résous-le en version compacte",
+      "description": "Bonus : cela peut s'écrire bien plus court que tu ne le penses. Arrives-tu à faire tenir toute la solution en quelques lignes seulement ?"
+    }
+  },
+  "scenarios": {
+    "emptyList": {
+      "name": "Plan de table vide",
+      "description": "Personne n'est assis nulle part quand le plan est vide."
+    },
+    "nameMissing": {
+      "name": "Brad est refoulé",
+      "description": "Le nom ne figure pas sur le plan de table."
+    },
+    "namePresent": {
+      "name": "Brad est conduit à sa place",
+      "description": "Brad Pitt est sur le plan, donc Mr Pitt obtient sa table."
+    },
+    "differentHonorific": {
+      "name": "Chevalier du royaume",
+      "description": "Un autre titre de civilité, et un invité qui n'est pas en tête du plan."
+    },
+    "bondSeated": {
+      "name": "Mr Bond, je présume",
+      "description": "James Bond est sur le plan."
+    },
+    "bondNotSeated": {
+      "name": "Hmmm... Mr Bond, je présume",
+      "description": "Seul Jason Bourne est sur le plan, pas James Bond."
+    },
+    "partialSurname": {
+      "name": "Pas tout à fait Mr Pitt",
+      "description": "Ni Ada Spitt ni Hugo Ross-Pitt n'est Mr Pitt, donc il n'a pas de place ici."
+    },
+    "lloydWebber": {
+      "name": "Et pourquoi pas un Baron ?",
+      "description": "Baron Lloyd Webber a un nom de famille en deux mots."
+    },
+    "markWebber": {
+      "name": "Mark est-il le Baron ?",
+      "description": "Un autre Webber ne compte pas : le nom de famille doit correspondre en entier."
+    },
+    "formalDinnerBonusLineCount": {
+      "name": "Propre et net : Lord Doyle",
+      "description": "Le même plan de table qu'avant, mais cette fois ta solution doit tenir dans un nombre de lignes bien plus petit."
+    }
+  },
+  "hints": {
+    "twoLists": {
+      "question": "Quel est le lien entre les deux listes ?",
+      "answer": "Elles vont par paires. Le premier invité est assis à la première table, le deuxième invité à la deuxième table, et ainsi de suite. Il ne suffit donc pas de savoir *que* l'invité est sur le plan : il faut savoir *où* il se trouve sur le plan."
+    },
+    "comparingNames": {
+      "question": "L'invité dit « Mr Pitt », mais le plan indique « Brad Pitt ». Comment les comparer ?",
+      "answer": "Ces deux strings ne seront jamais égales, donc une comparaison directe ne te mènera nulle part. Réfléchis à la partie de ce que l'invité annonce qui apparaît réellement sur le plan, et à l'endroit de l'entrée du plan où tu t'attendrais à la trouver."
+    },
+    "lookalikeSurnames": {
+      "question": "Un nom de famille pourrait-il correspondre au mauvais invité ?",
+      "answer": "Absolument. Lis « Ada Spitt » et « Hugo Ross-Pitt » à voix haute, puis pense à Mr Pitt. Demande-toi ce qui fait qu'un nom de famille est un vrai nom de famille sur cette ligne-là, plutôt que quelques lettres qui se trouvent simplement à la fin."
+    },
+    "noMatch": {
+      "question": "Que dois-je renvoyer quand personne ne correspond ?",
+      "answer": "La string `\"No table found\"`, exactement comme elle est écrite. Le plus délicat, c'est de savoir quand tu as le droit de la renvoyer. Si tu as vérifié le tout premier invité du plan et que ce n'est pas le bon, sais-tu déjà avec certitude qu'il n'est assis nulle part ?"
+    }
+  },
+  "checks": {
+    "tooManyLines": "Continue ! Essaie de le résoudre en moins de lignes."
+  },
+  "functions": {
+    "length": {
+      "description": "Le nombre d'éléments dans une liste : la même propriété length que tu as déjà utilisée sur les strings (fournie par la stdlib du niveau)",
+      "category": "Opérations sur les tableaux"
+    },
+    "split": {
+      "description": "Découpe une string en une liste de morceaux, en coupant à chaque séparateur (fournie par la stdlib du niveau)",
+      "category": "Opérations sur les strings"
+    },
+    "slice": {
+      "description": "Crée une nouvelle liste à partir d'une partie d'une liste, en partant d'une position (fournie par la stdlib du niveau)",
+      "category": "Opérations sur les tableaux"
+    },
+    "join": {
+      "description": "Assemble les éléments d'une liste en une seule string, avec un séparateur entre eux (fournie par la stdlib du niveau)",
+      "category": "Opérations sur les tableaux"
+    },
+    "endsWith": {
+      "description": "Vérifie si une string se termine par une string plus courte (fournie par la stdlib du niveau)",
+      "category": "Opérations sur les strings"
+    }
+  }
+}

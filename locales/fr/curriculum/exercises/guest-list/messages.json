@@ -1,65 +1,65 @@
 {
   "tasks": {
     "countChancersInQueue": {
-      "name": "�",
-      "description": "�"
+      "name": "Compte les resquilleurs",
+      "description": "Écris une fonction qui prend la file d'attente et la liste des invités, et qui renvoie le nombre de personnes dans la file d'attente qui ne figurent pas sur la liste des invités."
     },
     "solveTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "Résous-le de façon compacte",
+      "description": "Bonus : cette fonction peut s'écrire de façon bien plus compacte que tu ne le penses. Arrives-tu à faire tenir toute la solution en quelques lignes seulement ?"
     }
   },
   "scenarios": {
     "emptyQueue": {
-      "name": "�",
-      "description": "�"
+      "name": "Personne n'est encore arrivé",
+      "description": "Une file d'attente vide, donc personne n'attend pour entrer."
     },
     "everyoneChancingIt": {
-      "name": "�",
-      "description": "�"
+      "name": "Toute la file d'attente tente sa chance",
+      "description": "Une file d'attente où aucune des personnes qui attendent ne figure sur la liste des invités."
     },
     "everyoneInvited": {
-      "name": "�",
-      "description": "�"
+      "name": "Tout le monde est invité",
+      "description": "Une file d'attente où chaque personne qui attend figure sur la liste des invités."
     },
     "mixedQueue": {
-      "name": "�",
-      "description": "�"
+      "name": "Une file d'attente mélangée",
+      "description": "Une file d'attente où certaines des personnes qui attendent sont invitées et d'autres non. L'un des resquilleurs a un nom qui ressemble beaucoup à un nom de la liste."
     },
     "guestsWhoHaventArrived": {
-      "name": "�",
-      "description": "�"
+      "name": "Des invités encore coincés dans les bouchons",
+      "description": "Une liste des invités avec beaucoup de noms, mais la plupart de ces personnes n'ont pas encore rejoint la file d'attente."
     },
     "longQueueShortList": {
-      "name": "�",
-      "description": "�"
+      "name": "Une longue file d'attente et une courte liste",
+      "description": "Une grande file d'attente dehors, mais seulement quelques noms sur la liste des invités."
     },
     "guestListBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "Propre et net : une file d'attente mélangée",
+      "description": "La même file d'attente mélangée que précédemment, mais cette fois ta solution doit tenir en beaucoup moins de lignes."
     }
   },
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "Continue ! Essaie de résoudre l'exercice en moins de lignes."
   },
   "hints": {
     "keepingTrack": {
-      "question": "�",
-      "answer": "�"
+      "question": "De quoi dois-je garder la trace au fur et à mesure ?",
+      "answer": "La réponse est un seul nombre, et tu ne le connais pas avant d'avoir vu tout le monde. Alors pose-toi deux questions : quelle doit être la valeur de ce nombre avant même d'avoir regardé qui que ce soit, et que doit-il lui arriver quand quelqu'un se révèle **ne pas** être invité ?"
     },
     "whichList": {
-      "question": "�",
-      "answer": "�"
+      "question": "Il y a deux listes ici. Laquelle dois-je parcourir ?",
+      "answer": "Réfléchis à ce que la réponse compte. C'est un nombre de personnes **dans la file d'attente**, donc c'est la file d'attente que tu dois parcourir, une personne à la fois. La liste des invités, elle, n'est pas quelque chose que tu parcours : c'est ce qui te permet de vérifier chaque personne."
     },
     "realLifeBouncer": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment un vrai videur ferait-il ça avec sa liste à la main ?",
+      "answer": "Imagine-le posté au début de la file d'attente, sa liste à la main, en train de remonter petit à petit vers le fond. Il n'annonce le nombre final qu'une fois arrivé à la dernière personne. Que fait-il pour chaque personne en chemin, et que fait-il pour celles dont il ne trouve pas le nom ?"
     }
   },
   "functions": {
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "Vérifie si un tableau contient un élément précis (fonction fournie par la bibliothèque standard du niveau)",
+      "category": "Opérations sur les tableaux"
     }
   }
 }
