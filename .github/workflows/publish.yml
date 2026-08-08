@@ -25,10 +25,6 @@ on:
       - "corpus.json"
       - ".github/workflows/publish.yml"
 
-# .english-refs/** is deliberately NOT in that list. This workflow prunes refs
-# and pushes the deletion, and a path filter that included them would make every
-# publish trigger the next one.
-
 # Artifacts are immutable and content-hashed, so two runs uploading the same bytes
 # is harmless. Pointers are not: they are the one mutable object, and two runs
 # flipping them in either order could leave a pointer naming an older artifact than
@@ -40,8 +36,6 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -86,23 +80,6 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
         run: node scripts/publish.mjs all --upload
-
-      # A ref whose front-end PR has merged has been published from main by this
-      # run, so it is no longer outstanding. What is left in .english-refs/ is
-      # work that has not landed, and a file that stays for a long time is an
-      # abandoned front-end PR. That visibility is the whole point of the
-      # directory. See ENGLISH-SOURCE.md.
-      - name: Prune landed English refs
-        env:
-          GH_TOKEN: ${{ secrets.SOURCE_REPO_TOKEN }}
-        run: |
-          node scripts/english-ref.mjs prune
-          git config user.name "jiki-i18n[bot]"
-          git config user.email "i18n@jiki.io"
-          git add .english-refs
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Prune English refs whose front-end PR has merged"
-          git push
 
       - name: Coverage
         if: always()

@@ -29,11 +29,15 @@ node scripts/stub.mjs all --type=concept --slug=arrays   # sentinel-fill it ever
 node scripts/translate.mjs hu --mode=outdated            # translate what changed
 ```
 
-Outstanding translation work, one file per dispatching front-end PR:
+## How work arrives
 
-```bash
-node scripts/english-ref.mjs list
-```
+Translation does not run in CI. A front-end PR marked ready for review opens an **issue here**
+carrying the front-end SHA; the orchestrator in the `translator` repo picks it up, runs the passes
+locally with whatever engine each language uses, pushes a branch whose commit carries an
+`English-Ref: <repo>@<sha>` trailer, and closes the issue. Issues are the queue.
+
+`validate` and `publish` stay in CI, because they gate what reaches R2 and must not depend on
+anyone's laptop.
 
 `node scripts/<name>.mjs --help` is not implemented; each script's header comment is its
 documentation, and is the first thing to read before changing one.

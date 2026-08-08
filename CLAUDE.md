@@ -78,10 +78,12 @@ Read [ENGLISH-SOURCE.md](./ENGLISH-SOURCE.md) first; this is the summary.
   `--source-repo=`, `JIKI_SOURCE_REPO`, `.source/front-end`, a sibling `../front-end`. Locally,
   `npm run source:checkout` fetches one, shallow and sparse over the four directories English lives
   in. In CI it is an `actions/checkout` step with the same destination.
-- **On a PR, English is the commit the work was dispatched for**, recorded in
-  `.english-refs/<pr>.json`. A translation branch validates against fixed English, so it cannot go
-  red because something merged next door. **On `main` it is front-end `main`**, which floats, and
-  publish stamps the SHA it used into `completeness.json`.
+- **On a PR, English is the commit the branch pins** with an `English-Ref: <repo>@<sha>` commit
+  trailer. A translation branch validates against fixed English, so it cannot go red because
+  something merged next door. **On `main` it is front-end `main`**, which floats, and publish stamps
+  the SHA it used into `completeness.json`. A trailer rather than a committed file because the pin
+  is only ever read on a PR, so a file would land on `main`, pin nothing, and need pruning, and two
+  open translation branches would both be editing it.
 - **There is no tracked corpus.** An item is in the working corpus when English exists for it and
   some target locale already holds a translation of it. Bringing a new item in is an explicit
   `--type`/`--slug`, which resolves against English directly. Exclusions are explicit, in
@@ -136,7 +138,7 @@ Shared helpers live in `scripts/lib/`.
 | Script | What it does |
 |--------|--------------|
 | `source-checkout.mjs` | Fetches the front-end into `.source/front-end`, shallow and sparse, so local runs have English to read. CI uses `actions/checkout` for the same job and the same destination. |
-| `english-ref.mjs` | Reads and writes `.english-refs/<pr>.json`. `write` (translate workflow), `resolve` (CI: prints the SHA this branch is pinned to, or `main`), `list` (outstanding work), `prune` (publish workflow: drops refs whose front-end PR has merged). |
+| `source-checkout.mjs --resolve` | Prints the SHA this branch pins with an `English-Ref:` trailer, or `main`. CI uses it to point its `actions/checkout` step at the right English. |
 | `translate.mjs` | LLM-backed translation of added and changed items. Modes `outdated` / `all` / `missing`, meaning exactly what they mean in `translator`. Hands off to `validate` when it finishes. |
 | `stub.mjs` | Brings every catalog in the corpus to full key parity with English, sentinel-filling anything untranslated. Existing values are reproduced byte for byte. An explicit `--type`/`--slug` seeds an item the corpus does not hold yet. |
 | `validate.mjs` | Key parity, ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the R2 key guard. Stamps on success. Exit 1 on any ERROR. |

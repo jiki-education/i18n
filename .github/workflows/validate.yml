@@ -9,10 +9,10 @@
 # This repo holds no English. It is checked out from the front-end, and WHICH
 # commit depends on where the run is:
 #
-#   - on a PR, the commit the work was dispatched for, recorded in
-#     .english-refs/<pr>.json by the translate workflow. The branch validates
-#     against fixed English, so it cannot go red because something merged next
-#     door while it was open.
+#   - on a PR, the commit the branch pins with an `English-Ref:` commit trailer,
+#     written by the orchestrator that produced the translations. The branch
+#     validates against fixed English, so it cannot go red because something
+#     merged next door while it was open.
 #   - on main, front-end main. This floats, knowingly. Publish records the SHA it
 #     used, so attribution survives the float.
 #
@@ -29,16 +29,15 @@ on:
       - "scripts/**"
       - "locales.json"
       - "corpus.json"
-      - ".english-refs/**"
       - ".github/workflows/validate.yml"
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      # The real branch head, not the merge commit: resolving the English ref is
-      # a diff of what this branch ADDED against the merge base, and a merge
-      # commit already contains the base.
+      # The real branch head, not the merge commit: the pin is read from the
+      # commits between the merge base and the head, and a merge commit already
+      # contains the base.
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
@@ -59,7 +58,7 @@ jobs:
             git fetch --no-tags --quiet origin "+refs/heads/${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}"
             BASE="origin/${{ github.base_ref }}"
           fi
-          REF=$(node scripts/english-ref.mjs resolve --base="$BASE")
+          REF=$(node scripts/source-checkout.mjs --resolve --base="$BASE")
           echo "English: $REF"
           echo "ref=$REF" >> "$GITHUB_OUTPUT"
 

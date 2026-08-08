@@ -6,12 +6,22 @@
 // Usage:
 //   node scripts/source-checkout.mjs [--ref=<sha|branch>] [--repo=<owner/name>]
 //                                    [--from-english-ref] [--base=<ref>] [--force]
+//   node scripts/source-checkout.mjs --resolve [--base=<ref>]
 //
 // Examples:
 //   node scripts/source-checkout.mjs                      # front-end main
 //   node scripts/source-checkout.mjs --ref=<sha>          # one exact commit
 //   node scripts/source-checkout.mjs --from-english-ref --base=origin/main
 //                                                         # whatever this branch pins
+//   node scripts/source-checkout.mjs --resolve --base=origin/main
+//                                                         # print that ref, check out nothing
+//
+// ## --resolve
+//
+// Prints one word and exits: the SHA this branch pins with an `English-Ref:`
+// commit trailer, or `main` when it pins nothing. CI uses that to point
+// actions/checkout, which handles credentials for a private repo better than
+// this script can. Same question, two answers, one implementation.
 //
 // ## Shallow and sparse, never a clone
 //
@@ -42,14 +52,20 @@ function main() {
   const args = parseArgs(process.argv.slice(2));
   const repo = args.flags.repo || DEFAULT_REPO;
 
+  if (args.flags.resolve) {
+    const pinned = branchEnglishRef(typeof args.flags.base === "string" ? args.flags.base : "origin/main");
+    console.log(pinned ? pinned.sha : "main");
+    return;
+  }
+
   let ref = args.flags.ref;
   if (args.flags["from-english-ref"]) {
     const pinned = branchEnglishRef(args.flags.base || "origin/main");
     if (pinned) {
       ref = pinned.sha;
-      console.log(`English ref: ${path.basename(pinned.file)} pins ${pinned.repo}@${pinned.sha} (front-end PR #${pinned.pr}).`);
+      console.log(`English-Ref trailer pins ${pinned.repo}@${pinned.sha}.`);
     } else {
-      console.log("No English ref on this branch. Reading English from front-end main.");
+      console.log("No English-Ref trailer on this branch. Reading English from front-end main.");
     }
   }
   ref ||= "main";

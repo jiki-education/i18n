@@ -11,34 +11,56 @@ nothing here can: there is no English directory under `locales/` to write to.
 
 Two cases, deliberately different.
 
-**On a pull request**, the exact front-end commit the work was dispatched for,
-recorded in `.english-refs/<pr>.json`. A translation branch validates against
-fixed English, so it cannot go red because something merged next door while the
-branch was open.
+**On a pull request**, the commit the branch was made against, named in an
+`English-Ref:` commit trailer. A translation branch validates against fixed
+English, so it cannot go red because something merged next door while the branch
+was open.
 
 **On `main`**, front-end `main`. This floats, knowingly. A publish stamps the
 front-end SHA it actually used into `completeness.json`, so attribution stays
 recoverable after the fact.
 
-## The ref file
+## The pin
 
-`.english-refs/<pr>.json` holds the dispatching repo, the SHA, and the front-end
-PR number it came from. `<pr>` is the **front-end** PR, because that is the unit
-of work being translated.
+A translation commit carries a trailer:
 
-One file per PR, never a shared list. A shared list conflicts whenever two
-translation branches are open at once, which is precisely the situation this
-scheme exists to survive. Separate files never touch.
+```
+English-Ref: jiki-education/front-end@<40-char sha>
+```
 
-The translate workflow writes the file as part of creating the branch, so the
-ref lands in the same commit as the work it describes. Two writers could
-disagree about which SHA a branch is for; one writer cannot.
+CI reads it from the commits between the merge base and the branch head, and
+points its front-end checkout at it. No trailer means no pin, which is the
+normal state of a PR that is not translation work, and it reads front-end `main`
+like `main` does.
 
-A ref file is removed once the English it pins has reached front-end `main` and
-has been published from here. What is left in `.english-refs/` on `main` is
-therefore outstanding translation work. An abandoned front-end PR leaves its file
-behind for as long as it is abandoned, which is how orphaned work becomes
-visible.
+A trailer rather than a committed file, because a file would need a lifecycle
+and this needs none. The pin is only ever read on a PR. On `main` there is no
+pin at all. So a file would land on `main` after every merge, pin nothing, and
+need something to come along and delete it, and two open translation branches
+would both be editing it. The trailer lives in the commit object rather than the
+tree: two branches can never conflict over it, it is in the same commit as the
+work it describes by construction, it is visible in review, and after the merge
+it is inert history.
+
+## Where work comes from
+
+Translation is not run in CI. Engines are chosen per language in the `translator`
+repo, and the default is a `fable` subagent fan-out, meaning Claude Code on a
+laptop. Only some engines are script-backed, so a CI workflow could only ever
+have done a minority of the work.
+
+So the integration is one API call. **A front-end PR marked ready for review
+opens an issue in this repo**, carrying the front-end SHA, a link to the PR, and
+which packages changed. The orchestrator in the `translator` repo picks the issue
+up, checks the front-end out at that SHA, runs the passes, validates, pushes a
+branch with the `English-Ref:` trailer, and closes the issue.
+
+**Issues are the queue.** What is outstanding, who has it, and when it was
+finished are all questions GitHub already answers, so nothing in this repo
+answers them a second time.
+
+What stays in CI is `validate` and `publish`, because they gate what reaches R2
+and must not depend on anyone's laptop.
 
 ## Two questions, two mechanisms
 
@@ -89,6 +111,8 @@ satisfy by starting one thing.
 - `sync-source.mjs`. Its syncing role is gone; its other roles (the tracked
   corpus, the corpus sizes, the exercise family map) are all derived from
   `.source/` now, so there is nothing left for it to record.
+- `translate.yml`. Translation runs from a laptop, so a CI workflow for it was
+  infrastructure for the case that mostly does not happen.
 - Namespace slicing. A catalog imported as a slice made key parity a comparison
   against a subset of English, which is a quieter failure than the disk saving
   was worth. Nothing used it.
