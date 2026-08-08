@@ -1,11 +1,12 @@
 ---
 title: "Ajouter une valeur de retour aux fonctions"
 description: "Utilise le mot-clé `return` pour donner à tes propres fonctions un tapis roulant qui renvoie une valeur à celui qui les appelle."
+en_md5: 51d31f709a7051c29b499a31ad68555e
 ---
 
-Tu sais maintenant créer des fonctions avec ou sans entrées. Il ne reste plus qu'une dernière chose à apprendre pour devenir un expert en fabrication de fonctions : comment donner un tapis roulant à tes fonctions.
+Tu sais maintenant créer des fonctions avec ou sans entrées. Il ne reste plus qu'une dernière chose à apprendre pour devenir un expert en fabrication de fonctions : comment donner un tapis roulant à tes fonctions.
 
-Tu as déjà utilisé plein de fonctions qui renvoient des choses. `isAlienAbove` (y a-t-il un alien au-dessus ?) te renvoie vrai ou faux. `Math.randomInt(1, 10)` (`Math` pour mathématiques, `randomInt` pour nombre entier aléatoire) te renvoie un nombre aléatoire.
+Tu as déjà utilisé plein de fonctions qui renvoient des choses. `isAlienAbove` (y a-t-il un alien au-dessus ?) te renvoie vrai ou faux. `Math.randomInt(1, 10)` (`Math` pour mathématiques, `randomInt` pour nombre entier aléatoire) te renvoie un nombre aléatoire.
 
 Quand Jiki utilise ces fonctions, quelque chose sort sur le tapis roulant, qu'il peut ensuite aller récupérer et utiliser.
 
@@ -17,7 +18,7 @@ Quand Jiki utilise ces fonctions, quelque chose sort sur le tapis roulant, qu'il
   height="312"
 />
 
-Pour faire ça, on a besoin d'un nouveau mot-clé : le mot-clé `return`.
+Pour faire ça, on a besoin d'un nouveau mot-clé : le mot-clé `return`.
 
 Le mot-clé `return` dit à Mini Jiki de pousser quelque chose sur le tapis roulant.
 
@@ -29,7 +30,7 @@ Le mot-clé `return` dit à Mini Jiki de pousser quelque chose sur le tapis roul
   height="335"
 />
 
-Alors créons une fonction, et appelons-la `meaningOfLife` (le sens de la vie). Le travail de cette fonction est toujours le même : renvoyer le nombre `42`. Elle n'a aucune entrée. On l'écrit comme ceci :
+Alors créons une fonction, et appelons-la `meaningOfLife` (le sens de la vie). Le travail de cette fonction est toujours le même : renvoyer le nombre `42`. Elle n'a aucune entrée. On l'écrit comme ceci :
 
 ```javascript
 function meaningOfLife() {
@@ -66,4 +67,4 @@ function ageBracket(age) {
   height="400"
 />
 
-C'est le cœur même de la programmation : on crée plein de ces petites briques, puis on les assemble pour en faire des programmes.
+C'est le cœur même de la programmation : on crée plein de ces petites briques, puis on les assemble pour en faire des programmes.

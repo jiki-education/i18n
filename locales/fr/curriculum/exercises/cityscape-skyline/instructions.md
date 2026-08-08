@@ -1,6 +1,7 @@
 ---
 title: "La skyline"
 description: "Construis toute une skyline de bâtiments aléatoires."
+en_md5: cb89a31566f55397d19e1375dbac44cc
 ---
 
 Dans l'exercice Gratte-ciel, tu as construit un seul gratte-ciel, de différentes hauteurs selon les scénarios. Cette fois, on va plus loin en créant une skyline de bâtiments de différentes hauteurs et de différentes largeurs.

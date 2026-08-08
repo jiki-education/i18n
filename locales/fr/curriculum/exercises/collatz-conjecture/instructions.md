@@ -1,6 +1,7 @@
 ---
 title: "La conjecture de Collatz"
 description: "Explore un célèbre casse-tête mathématique avec ta propre fonction."
+en_md5: e4f7ab61c163cdb7c2eb2b6541a2cedc
 ---
 
 Un soir, tu tombes sur un vieux carnet rempli de gribouillis énigmatiques, comme si quelqu'un avait poursuivi une idée de façon obsessionnelle. Sur une page, une question ressort : **Tout nombre finit-il par atteindre 1 ?** Elle est liée à ce qu'on appelle la **conjecture de Collatz**, un casse-tête qui déroute les penseurs depuis des décennies.
