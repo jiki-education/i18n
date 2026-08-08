@@ -25,15 +25,15 @@
     },
     "repeatingPattern": {
       "question": "Quel est le motif qui se répète dans les positions des aliens ?",
-      "answer": "Ton canon laser commence à gauche des aliens, et ceux-ci occupent une colonne sur deux, avec trois aliens empilés dans chacune. Le motif pour chaque colonne est donc : `move`, `move`, `shoot`, `shoot`, `shoot`. Tu traverses la colonne vide pour te placer sous la colonne d'aliens, puis tu abats les aliens des trois rangées. C'est ce groupe de cinq étapes que tu veux répéter."
+      "answer": "Ton canon laser commence à gauche des aliens, ceux-ci occupent une colonne sur deux et sont empilés par trois. Le motif pour chaque colonne est donc : `move`, `move`, `shoot`, `shoot`, `shoot`. Change de position lorsque la colonne est vide pour te placer sous celle des aliens, puis abats les trois rangées. C'est ce groupe de cinq étapes qu'il te faut répéter."
     },
     "howManyTimes": {
       "question": "Combien de fois dois-je répéter le motif ?",
       "answer": "Compte les groupes d'aliens sur l'écran et utilise ce nombre comme argument de `repeat`."
     },
     "why7Lines": {
-      "question": "Pourquoi l'objectif demande-t-il seulement 7 lignes ?",
-      "answer": "Une ligne pour l'en-tête du `repeat`, les cinq actions qui se répètent à l'intérieur, et une ligne pour l'accolade fermante : cela fait sept. Tout ce dont tu as besoin tient dans la boucle, sans rien en dehors. Si tu écris plus, c'est probablement que tu n'utilises pas encore la boucle."
+      "question": "Pourquoi l'objectif est de n'utiliser que 7 lignes ?",
+      "answer": "Une première ligne pour l'en-tête du `repeat`, les cinq suivantes pour les actions qui se répètent à l'intérieur, et une dernière ligne pour l'accolade fermante : cela fait sept. Tout ce dont tu as besoin tient dans la boucle, sans rien en dehors. Si tu écris plus, c'est probablement que tu n'utilises pas encore la boucle."
     }
   },
   "functions": {
