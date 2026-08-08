@@ -17,6 +17,6 @@ Per questo esercizio, te ne servono solo due:
 
 Non ti servirà più `indexOf`: l'hai scritto solo per aiutarti a costruire `toLowerCase`, ed ora il `toLowerCase` integrato fa quel lavoro per te.
 
-Quindi puoi cancellare tutte quelle funzioni che hai scritto (ma almeno ora sai come questi metodi funzionano realmente sotto il cofano, quindi non urlarmi troppo!) ed usare invece questi.
+Quindi puoi cancellare tutte le funzioni che hai scritto (se non altro ora sai come questi metodi funzionano realmente dietro le quinte, quindi non farmi la ramanzina!) e usa i metodi integrati al posto delle funzioni che avevi scritto.
 
 Divertiti!
