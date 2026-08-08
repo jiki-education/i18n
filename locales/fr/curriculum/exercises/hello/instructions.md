@@ -1,6 +1,7 @@
 ---
 title: "Hello"
 description: "Dis bonjour au monde avec ta première fonction qui manipule des strings."
+en_md5: f0c55b2c330b18ae05e22d967babbc9e
 ---
 
 Dans les deux prochains exercices, on va continuer à s'entraîner à créer des fonctions, et commencer à manipuler des strings.

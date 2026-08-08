@@ -1,75 +1,75 @@
 {
   "checks": {
-    "moreThanOneLine": "�"
+    "moreThanOneLine": "Tu as utilisé plus d'une ligne de code dans la fonction."
   },
   "tasks": {
     "determineLeapYear": {
-      "name": "�",
-      "description": "�"
+      "name": "Détermine si l'année est bissextile",
+      "description": "Écris une fonction appelée isLeapYear qui prend une année en entrée et renvoie true si elle est bissextile, ou false si elle ne l'est pas."
     },
     "solveInOneLine": {
-      "name": "�",
-      "description": "�"
+      "name": "Résous en une seule ligne de code",
+      "description": "Peux-tu résoudre cet exercice avec une seule ligne de code dans la fonction ?"
     }
   },
   "scenarios": {
     "year2015": {
-      "name": "�",
-      "description": "�"
+      "name": "Année 2015",
+      "description": "2015 n'est pas divisible par 4, ce n'est donc pas une année bissextile."
     },
     "year1970": {
-      "name": "�",
-      "description": "�"
+      "name": "Année 1970",
+      "description": "1970 n'est pas divisible par 4, ce n'est donc pas une année bissextile."
     },
     "year2100": {
-      "name": "�",
-      "description": "�"
+      "name": "Année 2100",
+      "description": "2100 est divisible par 100 mais pas par 400, ce n'est donc pas une année bissextile."
     },
     "year1900": {
-      "name": "�",
-      "description": "�"
+      "name": "Année 1900",
+      "description": "1900 est divisible par 100 mais pas par 400, ce n'est donc pas une année bissextile."
     },
     "year1800": {
-      "name": "�",
-      "description": "�"
+      "name": "Année 1800",
+      "description": "1800 est divisible par 100 mais pas par 400, ce n'est donc pas une année bissextile."
     },
     "year2000": {
-      "name": "�",
-      "description": "�"
+      "name": "Année 2000",
+      "description": "2000 est divisible par 400, c'est donc une année bissextile."
     },
     "year2400": {
-      "name": "�",
-      "description": "�"
+      "name": "Année 2400",
+      "description": "2400 est divisible par 400, c'est donc une année bissextile."
     },
     "year1996": {
-      "name": "�",
-      "description": "�"
+      "name": "Année 1996",
+      "description": "1996 est divisible par 4 mais pas par 100, c'est donc une année bissextile."
     },
     "year1960": {
-      "name": "�",
-      "description": "�"
+      "name": "Année 1960",
+      "description": "1960 est divisible par 4 mais pas par 100, c'est donc une année bissextile."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "Une seule ligne de code",
+      "description": "Résous l'exercice avec une seule ligne de code dans la fonction."
     }
   },
   "hints": {
     "basicRule": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quelle est la règle de base pour une année bissextile ?",
+      "answer": "Les années divisibles par 4 sont bissextiles. Le test de départ est donc `year % 4 === 0`."
     },
     "exceptions": {
-      "question": "�",
-      "answer": "�"
+      "question": "Y a-t-il des exceptions ?",
+      "answer": "Oui. Les années divisibles par 100 ne sont PAS bissextiles, même si elles sont divisibles par 4. Par exemple, 1900 n'est pas une année bissextile."
     },
     "exceptionsToExceptions": {
-      "question": "�",
-      "answer": "�"
+      "question": "Y a-t-il des exceptions à l'exception ?",
+      "answer": "Oui. Les années divisibles par 400 SONT bel et bien bissextiles. Par exemple, 2000 en est une. La règle s'enchaîne donc : divisible par 4, mais pas par 100, sauf si elle l'est aussi par 400."
     },
     "checkDivisibility": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment vérifier la divisibilité ?",
+      "answer": "Utilise l'opérateur modulo `%`. `year % 4 === 0` est vrai quand l'année se divise exactement par 4, sans reste. Même astuce avec 100 et 400."
     }
   }
 }

@@ -1,0 +1,70 @@
+{
+  "tasks": {
+    "findMatchingSocks": {
+      "name": "Trouve les paires de chaussettes",
+      "description": "Écris une fonction qui prend deux paniers de vêtements (sous forme de tableaux de strings) et renvoie un tableau de toutes les paires de chaussettes trouvées dans les deux paniers. Les articles qui sont des chaussettes se terminent par ' sock' et commencent toujours par 'left ' ou 'right '."
+    }
+  },
+  "scenarios": {
+    "emptyBaskets": {
+      "name": "Paniers vides",
+      "description": "Les deux paniers sont vides."
+    },
+    "nothingClean": {
+      "name": "Rien de propre",
+      "description": "Il n'y a rien de propre."
+    },
+    "nothingDirty": {
+      "name": "Rien de sale",
+      "description": "Il n'y a rien de sale."
+    },
+    "noSocks": {
+      "name": "Aucune chaussette",
+      "description": "Il n'y a aucune chaussette nulle part."
+    },
+    "oneInEach": {
+      "name": "Une dans chaque panier",
+      "description": "Il y a une chaussette assortie dans chaque panier."
+    },
+    "aBigMix": {
+      "name": "Un grand mélange !",
+      "description": "Un mélange de vêtements avec plusieurs paires assorties."
+    },
+    "someAddedPain": {
+      "name": "Bric-à-brac",
+      "description": "Quelques bizarreries se sont glissées dans les paniers."
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Par où commencer quand il y a autant d'éléments à gérer ?",
+      "answer": "Commence par écrire de petites fonctions utilitaires, comme `length()`, `startsWith()` et `endsWith()`, dont tu auras besoin partout. Fais-les fonctionner d'abord, avant de t'attaquer à la logique principale."
+    },
+    "isItASock": {
+      "question": "Comment savoir si un article du panier est vraiment une chaussette ?",
+      "answer": "Les chaussettes ont la forme `\"left X\"` ou `\"right X\"`. Une petite fonction utilitaire qui renvoie vrai uniquement quand l'article commence par l'un de ces préfixes t'évitera de refaire la vérification partout."
+    },
+    "compareSockPair": {
+      "question": "Comment comparer une chaussette gauche à sa partenaire droite ?",
+      "answer": "Deux fonctions utilitaires facilitent la tâche : une pour retirer le préfixe `\"left \"` ou `\"right \"` (pour ne comparer que la couleur ou le motif), et une autre pour échanger `\"left\"` et `\"right\"`, ce qui permet de construire la partenaire de n'importe quelle chaussette."
+    },
+    "avoidDuplicates": {
+      "question": "Comment éviter de compter deux fois la même paire ?",
+      "answer": "Une fonction utilitaire qui n'ajoute un élément à un tableau que s'il n'y figure pas déjà empêchera les doublons de se glisser dans ton résultat."
+    },
+    "overallPlan": {
+      "question": "Quelle stratégie globale adopter ?",
+      "answer": "Extrais toutes les chaussettes des deux paniers dans un seul tableau combiné, puis, pour chaque chaussette, construis à quoi ressemblerait sa partenaire et vérifie si cette partenaire figure aussi dans le tableau."
+    }
+  },
+  "functions": {
+    "push": {
+      "description": "Renvoie un nouveau tableau avec l'élément ajouté à la fin (fournie par la bibliothèque standard du niveau)",
+      "category": "Opérations sur les tableaux"
+    },
+    "concat": {
+      "description": "Prend deux tableaux, les assemble en un seul, puis renvoie le résultat (fournie par la bibliothèque standard du niveau)",
+      "category": "Opérations sur les tableaux"
+    }
+  }
+}

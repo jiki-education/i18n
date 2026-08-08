@@ -1,0 +1,68 @@
+{
+  "errors": {
+    "blockedUrl": "Oh non, tu as essayé de récupérer une URL inattendue, et la requête a été bloquée."
+  },
+  "describers": {
+    "fetch": "Récupère des données depuis une URL avec les paramètres donnés"
+  },
+  "tasks": {
+    "fetchAndFormatTime": {
+      "name": "Récupère et formate l'heure",
+      "description": "Écris une fonction qui prend un nom de ville, récupère les données de l'heure grâce à l'API et renvoie une string formatée avec l'heure."
+    },
+    "handleErrors": {
+      "name": "Gère les erreurs",
+      "description": "Gère les réponses d'erreur avec soin. Si la réponse contient une clé \"error\", renvoie le message d'erreur au lieu de construire la string de l'heure."
+    }
+  },
+  "scenarios": {
+    "amsterdam": {
+      "name": "Amsterdam",
+      "description": "Renvoie l'heure à Amsterdam."
+    },
+    "tokyo": {
+      "name": "Tokyo",
+      "description": "Renvoie l'heure à Tokyo."
+    },
+    "lima": {
+      "name": "Lima",
+      "description": "Renvoie l'heure à Lima."
+    },
+    "error": {
+      "name": "Gère l'erreur",
+      "description": "Gère correctement l'erreur quand la ville est introuvable."
+    }
+  },
+  "hints": {
+    "callApi": {
+      "question": "Comment appeler concrètement l'API ?",
+      "answer": "Utilise la fonction `fetch(url, params)`. L'URL t'est donnée, et `params` est un dictionnaire qui décrit ce que tu demandes."
+    },
+    "paramsShape": {
+      "question": "À quoi doivent ressembler les params ?",
+      "answer": "Un dictionnaire avec une seule clé `\"city\"`, dont la valeur est le nom de ville que tu as reçu en argument."
+    },
+    "responseShape": {
+      "question": "À quoi ressemble la réponse ?",
+      "answer": "C'est un dictionnaire. Si la ville n'a pas été trouvée, il aura une clé `\"error\"`. Sinon, il contiendra les informations d'heure qui te permettront de construire la string de résultat."
+    },
+    "handleError": {
+      "question": "Comment gérer le cas d'erreur ?",
+      "answer": "Vérifie la présence de la clé `\"error\"` avant d'essayer de construire la string de l'heure. Si cette clé est présente, renvoie ce que l'énoncé demande dans ce cas."
+    },
+    "buildString": {
+      "question": "Comment construire la string finale ?",
+      "answer": "Utilise la concaténation (`+`) ou une template string pour assembler les données de la réponse et le texte qui les entoure, dans le format attendu par l'exercice."
+    }
+  },
+  "functions": {
+    "fetch": {
+      "description": "Récupère des données depuis une URL avec les paramètres donnés et renvoie un dictionnaire",
+      "category": "API"
+    },
+    "hasKey": {
+      "description": "Vérifie si une clé existe dans un dictionnaire et renvoie true ou false (fournie par la bibliothèque standard du niveau)",
+      "category": "Opérations sur les dictionnaires"
+    }
+  }
+}

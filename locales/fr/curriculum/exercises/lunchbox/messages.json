@@ -1,54 +1,54 @@
 {
   "checks": {
-    "oneListOnly": "�",
-    "usePush": "�"
+    "oneListOnly": "Tu ne dois créer qu'un seul tableau. Vérifie que tu n'utilises <code>[]</code> qu'une seule fois.",
+    "usePush": "Tu dois utiliser <code>push()</code> pour ajouter des éléments à ton tableau."
   },
   "tasks": {
     "packALunch": {
-      "name": "�",
-      "description": "�"
+      "name": "Prépare un déjeuner",
+      "description": "Écris une fonction qui remplit une boîte à repas avec un sandwich, une boisson et un encas. Si la boisson est un milkshake, laisse-la en dehors de la boîte, car elle est trop grosse."
     }
   },
   "scenarios": {
     "regularLunch": {
-      "name": "�",
-      "description": "�"
+      "name": "Déjeuner classique",
+      "description": "Un déjeuner normal avec de l'eau : tout tient dans la boîte à repas."
     },
     "milkshakeLunch": {
-      "name": "�",
-      "description": "�"
+      "name": "Déjeuner avec milkshake",
+      "description": "Le milkshake est trop gros pour la boîte à repas, alors il reste en dehors."
     },
     "anotherRegular": {
-      "name": "�",
-      "description": "�"
+      "name": "Un autre déjeuner classique",
+      "description": "Un autre déjeuner normal où tout tient dans la boîte."
     },
     "anotherMilkshake": {
-      "name": "�",
-      "description": "�"
+      "name": "Un autre déjeuner avec milkshake",
+      "description": "Un autre déjeuner avec un milkshake qui ne tient pas dans la boîte."
     }
   },
   "hints": {
     "basicShape": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quelle est la forme générale de ma réponse ?",
+      "answer": "Un tableau. Commence avec un tableau vide et ajoutes-y les éléments autorisés un par un."
     },
     "addItems": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment ajouter des éléments à un tableau ?",
+      "answer": "Utilise `push()`. Cette fonction prend le tableau et l'élément, et renvoie le nouveau tableau (plus long)."
     },
     "leaveMilkshakeOut": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment laisser le milkshake en dehors ?",
+      "answer": "Utilise une instruction `if`. N'ajoute la boisson avec `push()` que si elle n'est pas égale à `\"milkshake\"`."
     },
     "listNotGrowing": {
-      "question": "�",
-      "answer": "�"
+      "question": "Pourquoi mon tableau ne grandit-il pas ?",
+      "answer": "`push()` ne modifie pas le tableau existant : elle renvoie le nouveau tableau. Tu dois réaffecter le résultat, par exemple `lunchbox = lunchbox.push(item)` (ou l'équivalent dans ton langage)."
     }
   },
   "functions": {
     "push": {
-      "description": "�",
-      "category": "�"
+      "description": "Renvoie un nouveau tableau avec l'élément ajouté à la fin (fournie par la bibliothèque standard du niveau)",
+      "category": "Opérations sur les tableaux"
     }
   }
 }

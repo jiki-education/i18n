@@ -1,6 +1,7 @@
 ---
 title: "Dîner de gala"
 description: "Retrouve la table d'un invité à partir du plan de table."
+en_md5: b93bf1949411dbc2a19e5b48c3ae869a
 ---
 
 On reprend notre petit boulot de videur. On est le lendemain de l'after, et il y a encore une sauterie. Cette fois, c'est un dîner de gala : ce soir, tu es moins « costaud posté devant la porte » et plus « personne au porte-bloc et au joli gilet ».
