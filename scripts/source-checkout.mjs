@@ -1,0 +1,81 @@
+#!/usr/bin/env node
+//
+// source-checkout — fetch the front-end into .source/front-end, so the scripts
+// here have English to read.
+//
+// Usage:
+//   node scripts/source-checkout.mjs [--ref=<sha|branch>] [--repo=<owner/name>]
+//                                    [--from-english-ref] [--base=<ref>] [--force]
+//
+// Examples:
+//   node scripts/source-checkout.mjs                      # front-end main
+//   node scripts/source-checkout.mjs --ref=<sha>          # one exact commit
+//   node scripts/source-checkout.mjs --from-english-ref --base=origin/main
+//                                                         # whatever this branch pins
+//
+// ## Shallow and sparse, never a clone
+//
+// The front-end is a large monorepo and English is four directories of it. This
+// fetches one commit with no history and checks out only those four, which is
+// seconds rather than minutes and is the same shape the CI checkout step uses.
+//
+// ## In CI this is not what runs
+//
+// The workflows use actions/checkout with `path: .source/front-end`, because it
+// already handles credentials for a private repo. This is the LOCAL story, and
+// the two agree on one thing that matters: where the checkout lands.
+
+import fs from "node:fs";
+import path from "node:path";
+import { execFileSync } from "node:child_process";
+import { fail } from "./lib/constants.mjs";
+import { CHECKOUT_DIR, ENGLISH_DIRS } from "./lib/english.mjs";
+import { DEFAULT_REPO, branchEnglishRef } from "./lib/english-ref.mjs";
+import { parseArgs } from "./lib/args.mjs";
+
+/** Only the directories English is authored in. Everything else is code. */
+const SPARSE_PATHS = ENGLISH_DIRS;
+
+const git = (args, cwd) => execFileSync("git", args, { cwd, stdio: ["ignore", "pipe", "inherit"], encoding: "utf8" }).trim();
+
+function main() {
+  const args = parseArgs(process.argv.slice(2));
+  const repo = args.flags.repo || DEFAULT_REPO;
+
+  let ref = args.flags.ref;
+  if (args.flags["from-english-ref"]) {
+    const pinned = branchEnglishRef(args.flags.base || "origin/main");
+    if (pinned) {
+      ref = pinned.sha;
+      console.log(`English ref: ${path.basename(pinned.file)} pins ${pinned.repo}@${pinned.sha} (front-end PR #${pinned.pr}).`);
+    } else {
+      console.log("No English ref on this branch. Reading English from front-end main.");
+    }
+  }
+  ref ||= "main";
+
+  if (fs.existsSync(CHECKOUT_DIR) && !args.flags.force) {
+    const head = git(["rev-parse", "HEAD"], CHECKOUT_DIR);
+    console.log(`${CHECKOUT_DIR} already exists at ${head}. Re-run with --force to replace it.`);
+    return;
+  }
+  if (fs.existsSync(CHECKOUT_DIR)) fs.rmSync(CHECKOUT_DIR, { recursive: true });
+
+  const url = process.env.JIKI_SOURCE_REMOTE || `https://github.com/${repo}.git`;
+  fs.mkdirSync(CHECKOUT_DIR, { recursive: true });
+
+  try {
+    git(["init", "--quiet"], CHECKOUT_DIR);
+    git(["remote", "add", "origin", url], CHECKOUT_DIR);
+    git(["sparse-checkout", "init", "--cone"], CHECKOUT_DIR);
+    git(["sparse-checkout", "set", ...SPARSE_PATHS], CHECKOUT_DIR);
+    git(["fetch", "--depth=1", "--filter=blob:none", "origin", ref], CHECKOUT_DIR);
+    git(["checkout", "--quiet", "FETCH_HEAD"], CHECKOUT_DIR);
+  } catch (error) {
+    fail(`could not check out ${repo}@${ref} into ${CHECKOUT_DIR}: ${error.message}`);
+  }
+
+  console.log(`Checked out ${repo}@${git(["rev-parse", "HEAD"], CHECKOUT_DIR)} into ${path.relative(process.cwd(), CHECKOUT_DIR)}.`);
+}
+
+main();
