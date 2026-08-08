@@ -34,7 +34,7 @@ Voici d'autres choses à savoir :
 - Les feuilles se situent à mi-hauteur de la tige.
 - Le `radiusX` (la largeur radiale) des feuilles représente 50 % du rayon de la fleur.
 - Le `radiusY` (la hauteur radiale) des feuilles représente 20 % du rayon de la fleur.
-- La tête de la fleur peut être `"red"` ou `"pink"`, selon tes goûts. Le pistil (le centre de la fleur) doit être `"yellow"`, l'herbe `"green"` et l'arrière-plan `"skyblue"`.
+- La tête de la fleur peut être `"red"` (rouge) ou `"pink"` (rose), selon tes goûts. Le pistil (le centre de la fleur) doit être `"yellow"` (jaune), l'herbe `"green"` (vert) et l'arrière-plan `"skyblue"` (bleu ciel).
 
 Il est **essentiel** de travailler sur une seule chose à la fois :
 
