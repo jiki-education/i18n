@@ -48,7 +48,6 @@ jobs:
         with:
           repository: jiki-education/front-end
           ref: main
-          token: ${{ secrets.SOURCE_REPO_TOKEN }}
           path: .source/front-end
           sparse-checkout: |
             app/messages
