@@ -1,0 +1,63 @@
+{
+  "checks": {
+    "tooManyLines": "Ta solution contient trop de lignes de code. Peux-tu la raccourcir ?"
+  },
+  "tasks": {
+    "didTheyPass": {
+      "name": "A-t-il réussi ?",
+      "description": "Écris une fonction qui analyse les notes d'un examen de conduite et détermine si le candidat a réussi. Un candidat échoue s'il a la moindre faute majeure (💥) ou 5 fautes mineures (❌) ou plus."
+    },
+    "solveInElevenLines": {
+      "name": "Résous l'exercice en 12 lignes de code",
+      "description": "Peux-tu résoudre cet exercice en seulement 12 lignes de code ?"
+    }
+  },
+  "scenarios": {
+    "perfectMarks": {
+      "name": "Le candidat parfait !",
+      "description": "Il a tout réussi, waouh !"
+    },
+    "dangerous": {
+      "name": "Danger public",
+      "description": "Impossible de laisser celui-là prendre la route !"
+    },
+    "oneBigMistake": {
+      "name": "Une grosse erreur",
+      "description": "Une seule grosse erreur suffit pour échouer !"
+    },
+    "scrapedThrough": {
+      "name": "Réussi de justesse",
+      "description": "C'était juste, mais il a réussi !"
+    },
+    "oneMistakeTooMany": {
+      "name": "Une erreur de trop !",
+      "description": "Toutes ces petites erreurs ont fini par s'accumuler."
+    },
+    "bonus1": {
+      "name": "12 lignes de code",
+      "description": "Résous l'exercice en seulement 12 lignes de code."
+    }
+  },
+  "hints": {
+    "lookAtEachMark": {
+      "question": "Comment examiner chaque note une par une ?",
+      "answer": "Parcours la string des notes caractère par caractère. Chaque caractère est soit ✅, soit ❌, soit 💥."
+    },
+    "emojiInQuotes": {
+      "question": "Pourquoi mon code se plaint-il du 💥 ?",
+      "answer": "Les emojis comme 💥 et ❌ doivent quand même être entourés de guillemets. Ce sont des caractères dans une string, exactement comme les lettres."
+    },
+    "majorFault": {
+      "question": "Que faire quand je vois un 💥 (faute majeure) ?",
+      "answer": "Une seule faute majeure fait échouer l'examen, quoi qu'il se soit passé par ailleurs. Tu peux donc renvoyer `false` dès que tu en vois une, pas besoin de continuer à regarder."
+    },
+    "minorCount": {
+      "question": "Comment gérer les fautes mineures, dont le nombre compte ?",
+      "answer": "Garde une variable compteur et ajoute-lui 1 chaque fois que tu vois un ❌. Ignore les ✅, ils ne changent rien."
+    },
+    "finalCheck": {
+      "question": "Que vérifier à la fin ?",
+      "answer": "Une fois la boucle terminée, si tu n'as pas vu de faute majeure, l'examen est réussi s'il y a eu moins de 5 fautes mineures. Renvoie `true` si le compteur de fautes mineures est inférieur à 5, sinon `false`."
+    }
+  }
+}

@@ -1,93 +1,93 @@
 {
   "checks": {
-    "totalCells": "�",
-    "wrongPosition": "�",
-    "wrongEntrance": "�",
-    "wrongGroundWalls": "�",
-    "wrongRoof": "�"
+    "totalCells": "On attendait {{expectedTotal}} cellules au total, mais on en a trouvé {{got}}.",
+    "wrongPosition": "Le bâtiment {{building}} n'est pas au bon endroit. Il commence à la colonne {{start}} alors qu'il devrait commencer à la colonne {{expected}}.",
+    "wrongEntrance": "Bâtiment {{building}} : l'entrée n'est pas au bon endroit.",
+    "wrongGroundWalls": "Bâtiment {{building}} : les murs latéraux du rez-de-chaussée ne sont pas corrects.",
+    "wrongRoof": "Bâtiment {{building}} : le toit n'est pas complet."
   },
   "tasks": {
     "buildSkyline": {
-      "name": "�",
-      "description": "�"
+      "name": "Construis la skyline de la ville",
+      "description": "Construis plusieurs bâtiments de largeurs et de hauteurs aléatoires pour créer la skyline de la ville."
     }
   },
   "scenarios": {
     "buildings1": {
-      "name": "�",
-      "description": "�"
+      "name": "1 bâtiment",
+      "description": "Construis un seul bâtiment de largeur et de hauteur aléatoires."
     },
     "buildings2": {
-      "name": "�",
-      "description": "�"
+      "name": "2 bâtiments",
+      "description": "Construis 2 bâtiments de largeurs et de hauteurs aléatoires."
     },
     "buildings3": {
-      "name": "�",
-      "description": "�"
+      "name": "3 bâtiments",
+      "description": "Construis 3 bâtiments de largeurs et de hauteurs aléatoires."
     },
     "buildings4": {
-      "name": "�",
-      "description": "�"
+      "name": "4 bâtiments",
+      "description": "Construis 4 bâtiments de largeurs et de hauteurs aléatoires."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Par où commencer avec un exercice aussi grand ?",
+      "answer": "Décompose le problème. La structure extérieure, c'est une boucle par bâtiment. À l'intérieur de cette boucle, tu construis trois éléments l'un après l'autre : le rez-de-chaussée (avec l'entrée), les étages supérieurs (uniquement des murs et du verre), puis le toit plat. Fais d'abord passer le premier scénario avec un seul bâtiment avant de te soucier des bâtiments multiples."
     },
     "buildingDimensions": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment savoir à quoi chaque bâtiment doit ressembler ?",
+      "answer": "Appelle `randomWidth()` et `randomNumFloors()` une seule fois au début de l'itération de chaque bâtiment, et stocke les deux valeurs dans des variables locales. Les appeler de nouveau te donne les valeurs du bâtiment *suivant*, donc ne les rappelle pas à l'intérieur des rangées."
     },
     "trackPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment savoir où placer le bâtiment suivant ?",
+      "answer": "Garde une seule variable pour la colonne de gauche du bâtiment en cours. Commence par l'écart de gauche indiqué dans les consignes. Une fois un bâtiment terminé, augmente-la de la largeur de ce bâtiment plus l'écart entre les bâtiments. Cette seule variable suffit pour gérer tout le positionnement horizontal."
     },
     "groundFloorLayout": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment construire le rez-de-chaussée avec l'entrée au milieu ?",
+      "answer": "Parcours le bâtiment colonne par colonne. La première et la dernière colonne sont des murs, tout ce qui se trouve entre les deux est du verre, et une colonne du milieu est l'entrée. La colonne de l'entrée se calcule à partir du bord gauche du bâtiment et de sa largeur."
     },
     "upperFloorsAndRoof": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment construire les étages supérieurs et le toit ?",
+      "answer": "Chaque étage supérieur suit le même motif que le rez-de-chaussée, sans l'entrée : des murs sur les côtés, du verre entre les deux. N'oublie pas que le rez-de-chaussée compte déjà comme un étage, donc tu n'empiles au-dessus que les étages restants, en montant en `y`. Le toit est ensuite une rangée pleine de murs sur toute la largeur, tout en haut, et il ne compte pas comme un étage."
     },
     "stuckError": {
-      "question": "�",
-      "answer": "�"
+      "question": "Mon deuxième bâtiment provoque l'erreur « les ouvriers sont bloqués, il y a déjà un mur ici ». Qu'est-ce qui ne va pas ?",
+      "answer": "Ton deuxième bâtiment essaie de se construire par-dessus le premier, parce que tu ne fais pas avancer ta variable de colonne entre les bâtiments. Après avoir construit chaque bâtiment, augmente-la de `width + gap` avant que l'itération suivante ne commence. Si tu l'oublies, chaque bâtiment part du même bord gauche et entre en collision avec le précédent."
     }
   },
   "functions": {
     "buildWall": {
-      "description": "�",
-      "category": "�"
+      "description": "Place un **bloc de mur** à la position (x, y) de la grille.",
+      "category": "Construction"
     },
     "buildGlass": {
-      "description": "�",
-      "category": "�"
+      "description": "Place un **panneau de verre** à la position (x, y) de la grille.",
+      "category": "Construction"
     },
     "buildEntrance": {
-      "description": "�",
-      "category": "�"
+      "description": "Place une **porte d'entrée** à la position (x, y) de la grille.",
+      "category": "Construction"
     },
     "numBuildings": {
-      "description": "�",
-      "category": "�"
+      "description": "Renvoie le **nombre de bâtiments** à construire.",
+      "category": "Information"
     },
     "randomWidth": {
-      "description": "�",
-      "category": "�"
+      "description": "Renvoie une **largeur de bâtiment aléatoire** : 3, 5 ou 7.",
+      "category": "Information"
     },
     "randomNumFloors": {
-      "description": "�",
-      "category": "�"
+      "description": "Renvoie un **nombre d'étages aléatoire** entre 1 et 12.",
+      "category": "Information"
     }
   },
   "describers": {
-    "buildWall": "�",
-    "buildEntrance": "�",
-    "buildGlass": "�",
-    "numBuildings": "�",
-    "randomWidth": "�",
-    "randomNumFloors": "�"
+    "buildWall": "a construit un mur à la position (${arg1}, ${arg2})",
+    "buildEntrance": "a construit une entrée à la position (${arg1}, ${arg2})",
+    "buildGlass": "a construit un panneau de verre à la position (${arg1}, ${arg2})",
+    "numBuildings": "a récupéré le nombre de bâtiments",
+    "randomWidth": "a récupéré une largeur de bâtiment aléatoire (3-7)",
+    "randomNumFloors": "a récupéré un nombre d'étages aléatoire (1-12)"
   }
 }

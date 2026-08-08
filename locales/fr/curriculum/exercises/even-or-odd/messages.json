@@ -1,59 +1,59 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "Ta solution contient trop de lignes de code. Peux-tu la raccourcir ?"
   },
   "tasks": {
     "identifyEvenOrOdd": {
-      "name": "�",
-      "description": "�"
+      "name": "Identifie les nombres pairs et impairs",
+      "description": "Écris une fonction appelée evenOrOdd qui prend un nombre et renvoie \"Even\" s'il est divisible par 2, ou \"Odd\" sinon. Zéro est pair."
     },
     "solveInSixLines": {
-      "name": "�",
-      "description": "�"
+      "name": "Résous l'exercice en 6 lignes de code",
+      "description": "Peux-tu résoudre cet exercice en seulement 6 lignes de code ?"
     }
   },
   "scenarios": {
     "number14": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 14",
+      "description": "14 est un nombre pair."
     },
     "number28": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 28",
+      "description": "28 est un nombre pair."
     },
     "numberMinus1": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre -1",
+      "description": "-1 est un nombre impair."
     },
     "number17": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 17",
+      "description": "17 est un nombre impair."
     },
     "number0": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 0",
+      "description": "Zéro est considéré comme pair."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "6 lignes de code",
+      "description": "Résous l'exercice en seulement 6 lignes de code."
     }
   },
   "hints": {
     "howToTell": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment savoir si un nombre est pair ou impair dans le code ?",
+      "answer": "Mathématiquement, un nombre est pair s'il se divise exactement par 2 sans rien laisser, et impair s'il y a un reste de 1. Il te faut donc un moyen de demander « que reste-t-il après avoir divisé par 2 ? »."
     },
     "remainderOperator": {
-      "question": "�",
-      "answer": "�"
+      "question": "Existe-t-il un opérateur qui me donne le reste d'une division ?",
+      "answer": "Oui. L'opérateur modulo (`%`) fait exactement cela. Par exemple, `14 % 2` donne `0` et `17 % 2` donne `1`. Il renvoie ce qui reste une fois le premier nombre divisé par le second."
     },
     "turnIntoEvenOdd": {
-      "question": "�",
-      "answer": "�"
+      "question": "J'ai le reste. Maintenant, comment le transformer en \"Even\" ou \"Odd\" ?",
+      "answer": "Utilise une instruction `if` pour comparer le reste à `0`. Si `number % 2` vaut `0`, renvoie `\"Even\"`. Sinon, renvoie `\"Odd\"`."
     },
     "zeroAndNegative": {
-      "question": "�",
-      "answer": "�"
+      "question": "Je n'arrive pas à savoir comment gérer 0 et les nombres négatifs",
+      "answer": "Tu n'as besoin d'aucun cas particulier pour eux. `0 % 2` vaut `0`, donc zéro est automatiquement considéré comme pair. Et `-1 % 2` est différent de zéro, donc `-1` est considéré comme impair, ce qui est exactement ce que tu veux."
     }
   }
 }

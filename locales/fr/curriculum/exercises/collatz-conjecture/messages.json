@@ -1,40 +1,40 @@
 {
   "tasks": {
     "calculateCollatzSteps": {
-      "name": "�",
-      "description": "�"
+      "name": "Calcule les étapes de Collatz",
+      "description": "Écris une fonction qui prend un nombre et renvoie le nombre d'étapes qu'il faut pour atteindre 1 en suivant les règles de la conjecture de Collatz : s'il est pair, divise-le par 2 ; s'il est impair, multiplie-le par 3 et ajoute 1."
     }
   },
   "scenarios": {
     "number1": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 1",
+      "description": "Zéro étape pour un."
     },
     "number16": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 16",
+      "description": "Divise si le nombre est pair."
     },
     "number12": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 12",
+      "description": "Des étapes avec des nombres pairs et impairs."
     },
     "number1000000": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 1000000",
+      "description": "Un grand nombre d'étapes avec des nombres pairs et impairs."
     }
   },
   "hints": {
     "loopUntilOne": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment continuer jusqu'à ce que le nombre atteigne 1 ?",
+      "answer": "Utilise une boucle `repeat()` sans nombre : elle se répète indéfiniment jusqu'à ce que tu en sortes avec `return`. Dans la boucle, remplace le nombre par le nombre suivant de la séquence, et renvoie le résultat une fois qu'il atteint 1."
     },
     "chooseRule": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment décider quelle règle appliquer à chaque étape ?",
+      "answer": "Vérifie si le nombre est pair. C'est le rôle de l'opérateur modulo. `number % 2 === 0` signifie qu'il est pair. S'il est pair, divise-le par deux. Sinon, calcule `3 * number + 1`."
     },
     "trackSteps": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment garder trace de la réponse (le nombre d'étapes) ?",
+      "answer": "Garde une variable compteur pour le nombre de fois où tu as appliqué les règles. Réfléchis à ce qui doit lui arriver à chaque tour de boucle, et à ce que ta fonction doit renvoyer quand le nombre atteint 1."
     }
   }
 }
