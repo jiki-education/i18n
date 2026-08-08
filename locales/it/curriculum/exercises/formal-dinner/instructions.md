@@ -1,10 +1,10 @@
 ---
-title: "Cena formale"
+title: "Cena di gala"
 description: "Cerca il tavolo a cui è seduto un ospite a partire dal piano dei posti a tavola."
 en_md5: b93bf1949411dbc2a19e5b48c3ae869a
 ---
 
-Sei tornato al tuo secondo lavoro come buttafuori. È la sera dopo l'After Party, e c'è un'altra festa. Questa volta è una cena formale, quindi stasera sei meno "uomo robusto alla porta" e più "persona con un bloc-notes ed un bel panciotto".
+Sei tornato al tuo secondo lavoro come buttafuori. È la sera dopo l'After Party, e c'è un'altra festa. Questa volta è una cena di gala, quindi stasera sei meno "uomo robusto alla porta" e più "persona con un bloc-notes ed un bel panciotto".
 
 Questo non è decisamente il posto per usare **solo** il tuo nome. Anzi, non è proprio il posto per usare il tuo nome. Qui, tutti vengono chiamati con un appellativo (_honorific_ in inglese) (Miss, Mr, Dr, ecc.) ed il proprio cognome.
 
