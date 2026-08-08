@@ -30,6 +30,13 @@
 // (`translation.meta.json`) and is invisible to every key-parity guard because
 // those address the catalog by exact filename.
 //
+// ## English
+//
+// Every English byte this reads comes from a front-end checkout, resolved by
+// scripts/lib/english.mjs. Nothing about the checks changed when the mirror was
+// deleted, only where they read English from. A run with no checkout to read
+// says so and says how to get one. See ENGLISH-SOURCE.md.
+//
 // `--shippable` additionally fails on any remaining sentinel. That is the
 // production gate: the sentinel renders as a visible replacement glyph, so a
 // locale is not servable until its count is zero. Ordinary runs allow sentinels,
@@ -37,45 +44,47 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { REPO_ROOT, SENTINEL, SOURCE_LOCALE, TARGET_LOCALES, assertTargetLocale, fail } from "./lib/constants.mjs";
+import { SENTINEL, TARGET_LOCALES, assertTargetLocale } from "./lib/constants.mjs";
 import { CONTENT_TYPE_IDS, contentType, listItems, localPath, metaPath } from "./lib/content-types.mjs";
-import { countSentinels, md5File, parseFrontmatter, readJson, readText, serializeFrontmatter } from "./lib/files.mjs";
+import { englishPath, englishRepo, scopeItems } from "./lib/english.mjs";
+import { countSentinels, md5File, parseFrontmatter, readJson, readText, serializeFrontmatter, writeJson, writeText } from "./lib/files.mjs";
 import { ERROR, WARN, checkCatalog, checkProse } from "./lib/checks.mjs";
-import { GuardViolation, assertPublishableKey, assertWritablePath, guardedWrite, guardedWriteJson } from "./lib/guard.mjs";
+import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 import { parseArgs } from "./lib/args.mjs";
 
 /**
- * The English write guard, exercised as a check rather than trusted.
+ * The R2 key guard, exercised rather than trusted.
  *
- * These assertions cost nothing and fail the build the moment the guard stops
- * guarding, which is the only way a guard that is meant to never fire stays
- * honest. A publish run enforces it for real; this proves it is still armed.
+ * This is all that is left of the English write guard, and it is here for the
+ * same reason the rest of it is gone: publishing English from a directory walk
+ * is now impossible, but synthesising an English KEY from a bad path template
+ * still is not, and that failure is silent. A guard meant never to fire only
+ * stays honest if something makes it fire.
  */
 function checkGuards() {
   const issues = [];
   const mustRefuse = [
-    () => assertWritablePath(path.join(REPO_ROOT, "locales", SOURCE_LOCALE, "app", "messages.json")),
-    () => assertPublishableKey("static/i18n/app/en/messages-abc123456789.json"),
-    () => assertPublishableKey("static/i18n/app/source/messages-abc123456789.json"),
-    () => assertPublishableKey("static/i18n/exercises/acronym/en/messages-abc123456789.json"),
-    () => assertPublishableKey("i18n/app/hu/messages-abc123456789.json")
+    "static/i18n/app/en/messages-abc123456789.json",
+    "static/i18n/app/source/messages-abc123456789.json",
+    "static/i18n/exercises/acronym/en/messages-abc123456789.json",
+    "i18n/app/hu/messages-abc123456789.json"
   ];
 
-  for (const [index, attempt] of mustRefuse.entries()) {
+  for (const key of mustRefuse) {
     let refused = false;
     try {
-      attempt();
+      assertPublishableKey(key);
     } catch (error) {
       refused = error instanceof GuardViolation;
     }
-    if (!refused) issues.push({ level: ERROR, message: `English write guard #${index + 1} did NOT fire; the guard is broken` });
+    if (!refused) issues.push({ level: ERROR, message: `the R2 key guard did NOT refuse "${key}"; the guard is broken` });
   }
 
   // ...and still permits a legitimate target-locale key.
   try {
     assertPublishableKey("static/i18n/app/hu/messages-abc123456789.json");
   } catch (error) {
-    issues.push({ level: ERROR, message: `English write guard rejects a legitimate key: ${error.message}` });
+    issues.push({ level: ERROR, message: `the R2 key guard rejects a legitimate key: ${error.message}` });
   }
 
   return issues;
@@ -83,7 +92,7 @@ function checkGuards() {
 
 function validateItem({ typeId, locale, slug, stamp, shippable }) {
   const type = contentType(typeId);
-  const englishPath = localPath(typeId, SOURCE_LOCALE, slug);
+  const english = englishPath(typeId, slug);
   const targetPath = localPath(typeId, locale, slug);
 
   // An item a locale has not reached yet is a normal state, on the same terms as
@@ -96,23 +105,23 @@ function validateItem({ typeId, locale, slug, stamp, shippable }) {
   }
 
   if (type.format === "catalog") {
-    const english = readJson(englishPath);
+    const source = readJson(english);
     const target = readJson(targetPath);
-    const issues = checkCatalog(english, target, {
+    const issues = checkCatalog(source, target, {
       icu: type.interpolation === "icu",
       allowSentinel: !shippable
     });
 
     // Catalog staleness: the sibling stamp against the current English file.
     if (type.staleness === "sibling") {
-      const expected = md5File(englishPath);
+      const expected = md5File(english);
       const meta = fs.existsSync(metaPath(targetPath)) ? readJson(metaPath(targetPath)) : null;
       if (!meta?.en_md5) issues.push({ level: ERROR, message: "no staleness stamp (missing sibling .meta.json)" });
       else if (meta.en_md5 !== expected) {
         issues.push({ level: ERROR, message: `stale: stamp is ${meta.en_md5}, English is now ${expected}` });
       }
       if (stamp && !issues.some((i) => i.level === ERROR && !i.message.startsWith("stale:") && !i.message.startsWith("no staleness"))) {
-        guardedWriteJson(metaPath(targetPath), { en_md5: expected });
+        writeJson(metaPath(targetPath), { en_md5: expected });
         // The stamp is now current, so the staleness findings above no longer apply.
         return { issues: issues.filter((i) => !i.message.startsWith("stale:") && !i.message.startsWith("no staleness")), label: label(typeId, locale, slug) };
       }
@@ -122,14 +131,12 @@ function validateItem({ typeId, locale, slug, stamp, shippable }) {
   }
 
   // Prose.
-  const englishText = readText(englishPath);
-  const targetText = readText(targetPath);
-  const english = parseFrontmatter(englishText);
-  const target = parseFrontmatter(targetText);
-  const expected = md5File(englishPath);
+  const source = parseFrontmatter(readText(english));
+  const target = parseFrontmatter(readText(targetPath));
+  const expected = md5File(english);
 
-  const issues = checkProse(english.body, target.body, {
-    englishData: english.data,
+  const issues = checkProse(source.body, target.body, {
+    englishData: source.data,
     targetData: target.data,
     translatedKeys: type.frontmatterTranslated ?? [],
     expectedMd5: expected,
@@ -144,7 +151,7 @@ function validateItem({ typeId, locale, slug, stamp, shippable }) {
   );
 
   if (stamp && blockingOtherThanStamp.length === 0 && target.data.en_md5 !== expected) {
-    guardedWrite(targetPath, serializeFrontmatter({ ...target.data, en_md5: expected }, target.body));
+    writeText(targetPath, serializeFrontmatter({ ...target.data, en_md5: expected }, target.body));
     return { issues: blockingOtherThanStamp, label: label(typeId, locale, slug), stamped: true };
   }
 
@@ -172,12 +179,12 @@ function main() {
     console.error(`  ${found.level}  guards: ${found.message}`);
     errors += 1;
   }
-  if (guardIssues.length === 0) console.log("guards: English write guard armed and refusing every English prefix.");
+  if (guardIssues.length === 0) console.log(`guards: the R2 key guard is armed and refusing every English prefix.`);
+  console.log(`english: read from ${englishRepo()}`);
 
   for (const locale of locales) {
     for (const typeId of typeIds) {
-      for (const item of listItems(typeId, SOURCE_LOCALE)) {
-        if (args.flags.slug && item.slug !== args.flags.slug) continue;
+      for (const item of scopeItems(typeId, { slug: args.flags.slug })) {
         checked += 1;
 
         const { issues, label: name, stamped } = validateItem({ typeId, locale, slug: item.slug, stamp, shippable });

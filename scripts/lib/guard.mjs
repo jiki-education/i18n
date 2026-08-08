@@ -1,24 +1,28 @@
-// The English write guard.
+// The one guard left: no English R2 key, ever.
 //
-// This repo mirrors English in as `locales/source/`, so every script here is one
-// bug away from writing over the copy the front-end authors, or from publishing
-// an English artifact to R2 and racing the front-end's own atomic deploy of it.
+// This repo used to hold a mirror of English under `locales/source/`, and with
+// it a write guard, a divergence check and a set of assertions proving both were
+// still armed. None of that exists now. English is read from a front-end
+// checkout outside this repo, so there is no English directory here to write to
+// and no mirror to diverge. Publishing English is structurally impossible rather
+// than defended against, which is the stronger version of the same rule.
 //
-// Credential scoping cannot express that: the R2 key that must not be written
-// (`static/i18n/app/en/...`) sits inside the prefix this repo legitimately writes
-// (`static/i18n/app/`). So the guard is at script level instead, and it is a HARD
-// FAIL by construction: it throws a GuardViolation, it is never a warning, never
-// a filter, and never a silent skip. A silent skip is the failure mode this
-// exists to prevent, because a publish that quietly dropped English would look
+// What survives is the R2 key check, because that failure mode is unchanged and
+// silent. Keys are built from path templates, not from a directory walk, so a
+// bad template could still synthesise `static/i18n/app/en/...` out of a locale
+// variable that was never a locale. Nothing downstream would notice: the object
+// would upload cleanly and land between the front-end's own English upload and
+// its worker deploy.
+//
+// Credential scoping cannot express the rule. The key that must not be written
+// sits INSIDE the prefix this repo legitimately writes, so no bucket policy can
+// separate them.
+//
+// It is a HARD FAIL by construction: it throws a GuardViolation, never a warning
+// and never a silent skip. A publish that quietly dropped English would look
 // exactly like a successful one.
-//
-// Every write in this repo goes through guardedWrite(). Every R2 key goes through
-// assertPublishableKey().
 
-import fs from "node:fs";
-import path from "node:path";
-import { REPO_ROOT, SOURCE_LOCALE, SOURCE_REPO_LOCALE, R2_PREFIX } from "./constants.mjs";
-import { writeText } from "./files.mjs";
+import { SOURCE_LOCALE, SOURCE_REPO_LOCALE, R2_PREFIX } from "./constants.mjs";
 
 export class GuardViolation extends Error {
   constructor(message) {
@@ -27,44 +31,10 @@ export class GuardViolation extends Error {
   }
 }
 
-const SOURCE_TREE = path.join(REPO_ROOT, "locales", SOURCE_LOCALE) + path.sep;
-
-/**
- * Refuse any write under locales/source/.
- *
- * `sync-source.mjs` is the ONE writer of that tree and opts out explicitly with
- * `{ syncingSource: true }`, which is greppable: if that flag appears anywhere
- * but sync-source.mjs, the guard has been routed around.
- */
-export function assertWritablePath(target, { syncingSource = false } = {}) {
-  const resolved = path.resolve(target);
-  if (resolved.startsWith(SOURCE_TREE) && !syncingSource) {
-    throw new GuardViolation(
-      `refusing to write ${path.relative(REPO_ROOT, resolved)}: locales/${SOURCE_LOCALE}/ is a read-only ` +
-        `mirror of English. English is authored in the front-end monorepo, beside the code. ` +
-        `Only scripts/sync-source.mjs may write here.`
-    );
-  }
-  if (!resolved.startsWith(REPO_ROOT + path.sep)) {
-    throw new GuardViolation(
-      `refusing to write ${resolved}: outside this repo. This repo never writes to a source repo.`
-    );
-  }
-}
-
-export function guardedWrite(target, content, options) {
-  assertWritablePath(target, options);
-  writeText(target, content);
-}
-
-export function guardedWriteJson(target, value, options) {
-  guardedWrite(target, `${JSON.stringify(value, null, 2)}\n`, options);
-}
-
-// R2 keys whose locale segment is English, in any spelling this repo could
-// plausibly produce. `source` is included because a mapping bug that forgot to
-// translate the locale name would otherwise publish `.../source/messages-*.json`
-// as a real locale.
+// Every spelling of English a path template could plausibly produce. `source` is
+// included because it was this repo's own name for English for a long time, and
+// a leftover reference to it would otherwise publish `.../source/messages-*.json`
+// as though it were a real locale.
 const ENGLISH_SEGMENTS = new Set([SOURCE_REPO_LOCALE, SOURCE_LOCALE, "en-US", "en-GB", "default"]);
 
 /**
@@ -89,34 +59,4 @@ export function assertPublishableKey(key) {
     }
   }
   return normalised;
-}
-
-/**
- * Verify the mirror has not been hand-edited.
- *
- * `locales/source/` is only trustworthy as a mirror if nothing here has ever
- * edited it, so sync-source.mjs records the md5 of everything it wrote and this
- * compares it back. Divergence is a hard error, never an auto-repair: an
- * overwrite would destroy the only evidence of what was changed and why.
- */
-export function assertMirrorClean(manifest, computeMd5) {
-  const diverged = [];
-  for (const [relative, expected] of Object.entries(manifest.files)) {
-    const file = path.join(REPO_ROOT, "locales", SOURCE_LOCALE, relative);
-    if (!fs.existsSync(file)) {
-      diverged.push(`${relative}: deleted since the last sync`);
-      continue;
-    }
-    const actual = computeMd5(file);
-    if (actual !== expected) diverged.push(`${relative}: edited since the last sync (${expected} -> ${actual})`);
-  }
-  if (diverged.length > 0) {
-    throw new GuardViolation(
-      `locales/${SOURCE_LOCALE}/ has been modified locally, which it never may be:\n` +
-        diverged.map((line) => `  - ${line}`).join("\n") +
-        `\n\nEnglish is authored in the front-end monorepo. Revert these files (git restore), make the ` +
-        `change there, and re-run sync-source. To overwrite the mirror from the source repo anyway, ` +
-        `re-run with --force.`
-    );
-  }
 }

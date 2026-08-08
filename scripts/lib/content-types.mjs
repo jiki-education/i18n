@@ -3,7 +3,8 @@
 // Every script maps between three coordinate systems, and does it HERE and
 // nowhere else:
 //
-//   1. source repo path   — where English is authored (front-end monorepo)
+//   1. source repo path   — where English is authored, read from a front-end
+//                            checkout at .source/front-end (see ENGLISH-SOURCE.md)
 //   2. local path         — where it lives in this repo, under locales/<locale>/
 //   3. R2 path            — where the published artifact is served from
 //
@@ -22,24 +23,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import { REPO_ROOT, SOURCE_LOCALE, SOURCE_REPO_LOCALE, fail } from "./constants.mjs";
-
-/**
- * Resolve the front-end monorepo checkout that English is read from.
- *
- * Order: --source-repo flag, then JIKI_SOURCE_REPO, then the sibling checkout.
- * This repo NEVER writes there; sync-source.mjs reads it and nothing else does.
- */
-export function resolveSourceRepo(explicit) {
-  const candidate = explicit || process.env.JIKI_SOURCE_REPO || path.resolve(REPO_ROOT, "..", "front-end");
-  const resolved = path.resolve(candidate);
-  if (!fs.existsSync(path.join(resolved, "app", "messages", "en.json"))) {
-    fail(
-      `no front-end checkout at ${resolved} (expected app/messages/en.json). ` +
-        `Pass --source-repo=<path> or set JIKI_SOURCE_REPO.`
-    );
-  }
-  return resolved;
-}
 
 /** The file basename English uses in the source repos, per format. */
 const sourceName = (locale, { markdown }) => {
@@ -258,9 +241,18 @@ export function contentType(id) {
   return type;
 }
 
-/** Absolute path to one item in THIS repo. */
+/**
+ * Absolute path to one item in THIS repo, which only ever holds target locales.
+ *
+ * English is not addressable here. It lives in a front-end checkout, and
+ * scripts/lib/english.mjs is the only thing that resolves a path to it. Asking
+ * for it here is a bug in the caller rather than a missing file, so it says so.
+ */
 export function localPath(typeId, locale, slug) {
   const type = contentType(typeId);
+  if (locale === SOURCE_LOCALE || locale === SOURCE_REPO_LOCALE) {
+    fail(`locales/${locale}/ does not exist: English is read from a front-end checkout, never from locales/.`);
+  }
   if (type.slugged && !slug) fail(`content type "${typeId}" needs a slug`);
   return path.join(REPO_ROOT, "locales", locale, type.localPath(slug));
 }
@@ -296,10 +288,8 @@ function exerciseDir(sourceRepo, slug) {
  *
  * The family is a fact about the exercise's CODE: it is whichever
  * `exercise-categories/<family>/` module the exercise imports. That makes it
- * underivable here, because this repo holds copy and never `.ts` files, so it is
- * captured at sync time by sync-source.mjs and recorded in the manifest for
- * publish to read. This function is the only thing that reads the source repo to
- * work it out, and it mirrors the front-end's own derivation in
+ * underivable from copy alone, so it is read from the front-end checkout at the
+ * moment publish needs it rather than recorded anywhere. It mirrors the front-end's own derivation in
  * app/scripts/generate-exercise-cache.js exactly: the same regex, over every
  * `.ts` file in the exercise directory rather than only `Exercise.ts`, because
  * some exercises name their class file differently. Files are visited in sorted
@@ -329,8 +319,8 @@ export function deriveFamily(sourceRepo, slug) {
  * directory segment `sourceRepoPath` varies, so listing that directory and
  * keeping the entries whose English file exists is the whole rule.
  *
- * `sync-source.mjs --discover` uses this to seed the tracked corpus, instead of
- * one invocation per item across a 1300-exercise tree.
+ * scripts/lib/english.mjs builds both the working corpus and completeness's
+ * denominator from this, so there is no tracked item list anywhere.
  */
 export function discoverItems(sourceRepo, typeId) {
   const type = contentType(typeId);
@@ -379,8 +369,6 @@ export function listItems(typeId, locale) {
     return fs.existsSync(file) ? [{ type: typeId, locale, slug: null, path: file }] : [];
   }
 
-  // Walk the type's own directory in the SOURCE locale so the slug list is
-  // always defined by English, exactly as key parity is.
   const probe = type.localPath("__SLUG__");
   const [prefix] = probe.split("__SLUG__");
   const root = path.join(REPO_ROOT, "locales", locale, prefix);

@@ -110,7 +110,6 @@ import {
   R2_PREFIX,
   REPO_ROOT,
   SENTINEL,
-  SOURCE_LOCALE,
   TARGET_LOCALES,
   assertTargetLocale,
   fail
@@ -119,10 +118,11 @@ import {
   CONTENT_TYPES,
   FAMILY_TYPE_ID,
   contentType,
+  deriveFamily,
   listItems,
-  localPath,
-  resolveSourceRepo
+  localPath
 } from "./lib/content-types.mjs";
+import { corpusItems, englishCorpusSize, englishPath, englishRepo, englishSha } from "./lib/english.mjs";
 import { mergeExerciseCatalogs } from "./lib/families.mjs";
 import { contentHash, flatten, parseFrontmatter, readJson, readText } from "./lib/files.mjs";
 import { findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
@@ -258,7 +258,6 @@ async function publishLocale(locale, { exportSources }) {
   // locale to PRODUCTION_LOCALES.
   const gaps = [];
   const manifest = {};
-  const sliced = new Set(readSlicedTypes());
   // --- what is actually translated -------------------------------------------
   //
   // Prose has THREE untranslated conventions and none of them is a missing file.
@@ -287,8 +286,8 @@ async function publishLocale(locale, { exportSources }) {
       // The SHARED parser: `seo` and `tags` reach a published artifact, so a
       // reader that returned them as raw strings would move the artifact's hash.
       const { data, body } = await parseFrontmatterShared(readText(item.path));
-      const englishPath = localPath(typeId, SOURCE_LOCALE, item.slug);
-      const englishBody = fs.existsSync(englishPath) ? parseFrontmatter(readText(englishPath)).body : "";
+      const english = englishPath(typeId, item.slug);
+      const englishBody = fs.existsSync(english) ? parseFrontmatter(readText(english)).body : "";
       prose.set(key, { key, data, body, englishBody, item });
     }
   }
@@ -320,13 +319,9 @@ async function publishLocale(locale, { exportSources }) {
   // --- app UI catalog -------------------------------------------------------
   const appPath = localPath("app-messages", locale);
   if (fs.existsSync(appPath)) {
-    if (sliced.has("app-messages")) {
-      gaps.push({ type: "app-messages", count: 0, detail: "imported as a namespace slice, not the whole tree" });
-    } else {
-      const catalog = readJson(appPath);
-      countSentinels(gaps, "app-messages", `${locale} app catalog`, catalog);
-      manifest.app = emit(artifacts, (hash) => CONTENT_TYPES["app-messages"].r2(locale, null, hash), catalog);
-    }
+    const catalog = readJson(appPath);
+    countSentinels(gaps, "app-messages", `${locale} app catalog`, catalog);
+    manifest.app = emit(artifacts, (hash) => CONTENT_TYPES["app-messages"].r2(locale, null, hash), catalog);
   }
 
   // --- badges ---------------------------------------------------------------
@@ -387,15 +382,13 @@ async function publishLocale(locale, { exportSources }) {
   // assembled from every exercise, so a gap in either is a lesson that renders
   // its slug or an exercise that will not load at all. Per-exercise artifacts are
   // unaffected, so they still publish.
-  // Corpus completeness per prose type, against the REAL source corpus recorded
-  // at sync time. Recorded, never a refusal: an index covering the pages that
+  // Corpus completeness per prose type, against the REAL English corpus in the
+  // checkout. Recorded, never a refusal: an index covering the pages that
   // exist is precisely what staging needs, and production is gated separately.
   for (const typeId of PROSE_TYPE_IDS) {
     const present = listItems(typeId, locale).length;
-    const expected = sourceCorpusSize(typeId);
-    if (expected === null) {
-      gaps.push({ type: typeId, count: 0, detail: "no source corpus size recorded (re-run sync-source.mjs)" });
-    } else if (present < expected) {
+    const expected = englishCorpusSize(typeId);
+    if (present < expected) {
       gaps.push({ type: typeId, count: expected - present, detail: `${present} of ${expected} present` });
     }
   }
@@ -461,7 +454,7 @@ async function publishLocale(locale, { exportSources }) {
   // The second renderer pipeline, and the only one here that needs image bytes.
   // The resolver takes a source-repo checkout lazily, so a corpus whose posts
   // reference no images publishes without one.
-  const resolveImage = makeImageResolver(() => resolveSourceRepo());
+  const resolveImage = makeImageResolver(() => englishRepo());
 
   // The translated half of the post metadata index. Its other half (date,
   // author, cover image, featured/listed/premium/order) comes from English
@@ -568,23 +561,34 @@ async function publishLocale(locale, { exportSources }) {
  * its exercise family's base catalog. See scripts/lib/families.mjs for what the
  * merge is and why.
  *
- * This half is the disk half: which family each exercise belongs to comes from
- * the sync manifest, because it is derived from the exercise's TypeScript
- * imports and this repo holds no TypeScript. An exercise the manifest has no
- * record for is a HARD FAIL rather than an unmerged publish: a catalog missing
- * its inherited keys renders raw key names like `errors.hitWall` to a learner,
- * and on R2 it would look exactly like a good one.
+ * Which family each exercise belongs to is a fact about the exercise's
+ * TypeScript imports, so it is read from the front-end checkout, for exactly the
+ * exercises in the corpus. It used to be recorded in the sync manifest so that
+ * publish could run without a checkout; publish has a checkout now, so the
+ * record is redundant and a derived answer cannot go stale.
+ *
+ * Derived over the CORPUS and not over all of English, deliberately. The union
+ * rule below publishes a family member from its family's base catalog even when
+ * the member has no catalog of its own, so a families map covering every
+ * exercise in the front-end would publish a catalog for every member of every
+ * translated family, including exercises nobody has started.
  */
 function exerciseCatalogs(locale) {
-  const families = readManifest().families ?? {};
+  const families = Object.fromEntries(
+    corpusItems("exercise-messages").map((item) => [item.slug, deriveFamily(englishRepo(), item.slug)])
+  );
   const own = new Map(listItems("exercise-messages", locale).map((item) => [item.slug, readJson(item.path)]));
 
-  const unrecorded = [...own.keys()].filter((slug) => !(slug in families));
-  if (unrecorded.length > 0) {
+  // An exercise this locale holds that English has no directory for is a HARD
+  // FAIL rather than an unmerged publish: a catalog missing its inherited keys
+  // renders raw key names like `errors.hitWall` to a learner, and on R2 it would
+  // look exactly like a good one.
+  const unknown = [...own.keys()].filter((slug) => !(slug in families));
+  if (unknown.length > 0) {
     fail(
-      `no family record for ${unrecorded.length} exercise(s) (first: ${unrecorded[0]}). ` +
+      `no exercise directory in the front-end checkout for ${unknown.length} exercise(s) (first: ${unknown[0]}). ` +
         `Publishing them would under-merge any exercise-category base catalog. ` +
-        `Run \`node scripts/sync-source.mjs\` against a front-end checkout to record them.`
+        `Check the checkout is at the right commit, or that the exercise has not been renamed.`
     );
   }
 
@@ -598,38 +602,6 @@ function exerciseCatalogs(locale) {
   };
 
   return mergeExerciseCatalogs({ families, own, baseFor });
-}
-
-/**
- * How many items of one type exist in the REAL source repo, or null when the
- * manifest predates this being recorded.
- *
- * Not `listItems(..., SOURCE_LOCALE)`, which counts the MIRROR. The mirror is a
- * subset of the source corpus by design, so measuring completeness against it
- * asks "have you translated everything you imported", which any locale can
- * satisfy by importing one exercise. The question that matters is "have you
- * translated everything that EXISTS", and only the front-end knows that number,
- * so sync-source records it.
- *
- * Null is deliberately not treated as complete. A denominator this repo cannot
- * establish means the artifact is skipped, because the alternative is publishing
- * a partial index that looks whole.
- */
-const sourceCorpusSize = (typeId) => readManifest().corpus?.[typeId] ?? null;
-
-/**
- * The sync manifest, which publish reads for two things English defines: which
- * catalogs were imported as namespace slices, and which family each exercise
- * belongs to. Both are written by sync-source.mjs, so publish needs no front-end
- * checkout of its own.
- */
-function readManifest() {
-  const file = path.join(REPO_ROOT, "locales", SOURCE_LOCALE, ".manifest.json");
-  return fs.existsSync(file) ? JSON.parse(readText(file)) : { items: [], families: {} };
-}
-
-function readSlicedTypes() {
-  return readManifest().items.filter((item) => item.namespaces).map((item) => item.type);
 }
 
 async function main() {
@@ -712,7 +684,16 @@ async function main() {
   // show it; the front-end reads THIS before allowing a locale into
   // PRODUCTION_LOCALES, so nobody can add one by hand and have it silently ship.
   const completenessKey = assertPublishableKey(`/${R2_PREFIX}/i18n/completeness.json`);
-  const completenessBody = `${JSON.stringify({ generatedAt: new Date().toISOString(), locales: completeness }, null, 2)}\n`;
+  // The front-end commit English was read from. On a PR that is the SHA the work
+  // was dispatched for; on main it is whatever front-end main was at that moment,
+  // which floats. Recording it is what makes the float acceptable: "which English
+  // was this measured against" stays answerable after the fact.
+  const englishRef = englishSha();
+  const completenessBody = `${JSON.stringify(
+    { generatedAt: new Date().toISOString(), english: { repo: "front-end", sha: englishRef }, locales: completeness },
+    null,
+    2
+  )}\n`;
   fs.mkdirSync(path.dirname(path.join(DIST, completenessKey)), { recursive: true });
   fs.writeFileSync(path.join(DIST, completenessKey), completenessBody);
   all.push({ key: completenessKey, hash: "current", bytes: completenessBody.length, pointer: true });
@@ -725,6 +706,7 @@ async function main() {
       `${JSON.stringify(
         {
         generatedAt: new Date().toISOString(),
+        english: { repo: "front-end", sha: englishRef },
         renderer: await rendererVersion(),
         completeness,
         locales: manifests

@@ -22,7 +22,7 @@
 // ## Why the import is lazy
 //
 // It is loaded on first use rather than at module load, so `validate`, `stub`,
-// `coverage`, `sync-source` and `test` keep running with no `node_modules` at
+// `coverage` and `test` keep running with no `node_modules` at
 // all. Only `publish` needs the install, and only when it reaches prose.
 
 import fs from "node:fs";

@@ -3,6 +3,20 @@
 # Runs with --no-stamp, so a PR cannot pass by stamping itself: the stamp is
 # written by a translate run, and CI only ever verifies it. A PR that edited a
 # translation without re-stamping fails here, which is the point.
+#
+# ## Which English this validates against
+#
+# This repo holds no English. It is checked out from the front-end, and WHICH
+# commit depends on where the run is:
+#
+#   - on a PR, the commit the branch pins with an `English-Ref:` commit trailer,
+#     written by the orchestrator that produced the translations. The branch
+#     validates against fixed English, so it cannot go red because something
+#     merged next door while it was open.
+#   - on main, front-end main. This floats, knowingly. Publish records the SHA it
+#     used, so attribution survives the float.
+#
+# See ENGLISH-SOURCE.md.
 
 name: Validate
 
@@ -14,41 +28,65 @@ on:
       - "locales/**"
       - "scripts/**"
       - "locales.json"
+      - "corpus.json"
       - ".github/workflows/validate.yml"
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
+      # The real branch head, not the merge commit: the pin is read from the
+      # commits between the merge base and the head, and a merge commit already
+      # contains the base.
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      # Only prose publishing has dependencies: it renders Markdown through the
-      # same package the front-end uses, so the HTML matches byte for byte. The
-      # rest of scripts/ is dependency-free and would run without this.
+      # Prints the pinned SHA, or "main" when this branch pins nothing, which is
+      # every push to main and every PR that is not translation work.
+      - name: Which English
+        id: english
+        run: |
+          BASE=""
+          if [ -n "${{ github.base_ref }}" ]; then
+            git fetch --no-tags --quiet origin "+refs/heads/${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}"
+            BASE="origin/${{ github.base_ref }}"
+          fi
+          REF=$(node scripts/source-checkout.mjs --resolve --base="$BASE")
+          echo "English: $REF"
+          echo "ref=$REF" >> "$GITHUB_OUTPUT"
+
+      # Sparse and shallow: English is four directories of a large monorepo, and
+      # this runs on every PR.
+      - name: Check out English
+        uses: actions/checkout@v4
+        with:
+          repository: jiki-education/front-end
+          ref: ${{ steps.english.outputs.ref }}
+          path: .source/front-end
+          sparse-checkout: |
+            app/messages
+            curriculum/src
+            interpreters/src
+            content/src
+
       - name: Install
         run: npm ci
 
-      # The merge and hashing rules the published artifacts depend on. These run
-      # first because a break here invalidates every artifact the later steps
-      # build, and they need no corpus to be meaningful.
-      - name: Unit tests
+      - name: Test
         run: node scripts/test.mjs
-
-      # The mirror must still be a mirror. A PR that hand-edited locales/source/
-      # fails here rather than silently becoming a second home for English.
-      # Reads only the manifest hashes, so it needs no front-end checkout.
-      - name: Source mirror is unmodified
-        run: node scripts/sync-source.mjs --check
 
       - name: Validate every locale
         run: node scripts/validate.mjs all --no-stamp
 
-      # Builds every artifact and re-runs the English-prefix guard over the
-      # finished tree, without uploading anything.
+      # Builds every artifact and re-runs the R2 key guard over the finished
+      # tree, without uploading anything.
       - name: Publish dry run
         run: node scripts/publish.mjs all
 

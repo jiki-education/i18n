@@ -19,9 +19,8 @@
 // order is load-bearing. Everything here exists to reproduce it.
 //
 // Which family an exercise belongs to is a fact about its TypeScript, not its
-// copy, so it cannot be derived here. sync-source.mjs captures it from the
-// front-end and records it in locales/source/.manifest.json; these functions
-// take it as data.
+// copy, so it cannot be derived here. publish.mjs reads it from the front-end
+// checkout; these functions take it as data.
 
 /**
  * Deep-merge two catalogs; keys in `override` win on collision.
@@ -50,8 +49,8 @@ export function deepMerge(base, override) {
 /**
  * Every exercise catalog to publish for one locale, already merged.
  *
- * - `families` maps every known exercise slug to its family, or null when it is
- *   standalone. It is the manifest's `families` block.
+ * - `families` maps every corpus exercise slug to its family, or null when it is
+ *   standalone.
  * - `own` maps slug to the exercise's own catalog for this locale, for the
  *   exercises that have one.
  * - `baseFor(family)` returns the family's catalog for this locale, or null.

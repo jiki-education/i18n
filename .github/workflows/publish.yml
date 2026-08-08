@@ -22,6 +22,7 @@ on:
       - "locales/**"
       - "scripts/**"
       - "locales.json"
+      - "corpus.json"
       - ".github/workflows/publish.yml"
 
 # Artifacts are immutable and content-hashed, so two runs uploading the same bytes
@@ -37,6 +38,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # main reads front-end main. This floats, knowingly: the alternative is a
+      # pin that nothing updates, which would quietly publish English that is
+      # months old. The SHA used is stamped into completeness.json below, so
+      # "which English was this" stays answerable after the fact.
+      - name: Check out English
+        uses: actions/checkout@v4
+        with:
+          repository: jiki-education/front-end
+          ref: main
+          path: .source/front-end
+          sparse-checkout: |
+            app/messages
+            curriculum/src
+            interpreters/src
+            content/src
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20

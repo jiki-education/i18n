@@ -8,7 +8,8 @@ This repo holds **Jiki's translated output**, and the scripts that produce and p
   instructions and message catalogs, video lesson and badge copy, in every target locale.
 - **The publisher of those translations to R2**, under the same content-hashed path convention
   the front-end already uses.
-- **A read-only mirror of the English those translations are made from**, under `locales/source/`.
+- **A consumer of English**, checked out from the front-end into `.source/front-end/` whenever a
+  script needs it. `locales/` holds nothing but target locales. See [ENGLISH-SOURCE.md](./ENGLISH-SOURCE.md).
 
 ## What this repo is not
 
@@ -44,24 +45,9 @@ and no other invention:
 so mapping back to a source path is mechanical.
 
 ```
+.source/front-end/                                 gitignored, ephemeral: English, checked out
 locales/
-  source/                                          READ-ONLY mirror of English
-    .manifest.json                                 md5 of every mirrored file, the tracked corpus,
-                                                   and each exercise's family
-    app/messages.json                              <- app/messages/en.json
-    curriculum/
-      concepts/<slug>/page.md                      <- curriculum/src/concepts/<slug>/source.md
-      exercises/<slug>/instructions.md             <- .../exercises/<slug>/instructions/source.md
-      exercises/<slug>/messages.json               <- .../exercises/<slug>/locales/en/translation.json
-      video-lessons/messages.json                  <- .../video-lessons/locales/en/translation.json
-      badges/messages.json                         <- .../badges/locales/en/translation.json
-      levels/messages.json                         <- .../levels/locales/en/translation.json
-      exercise-categories/<family>/messages.json   <- .../exercise-categories/<family>/locales/en/translation.json
-    interpreters/
-      <language>/messages.json                     <- interpreters/src/<language>/locales/en/translation.json
-    content/
-      posts/blog/<slug>/page.md                    <- content/src/posts/blog/<slug>/source.md
-  hu/                                              one directory per target locale, same shape
+  hu/                                              one directory per target locale
     app/messages.json
     curriculum/
       concepts/using-functions/page.md
@@ -78,25 +64,33 @@ locales/
 
 - **The one place that mapping lives is `scripts/lib/content-types.mjs`.** Adding a content type is
   one entry there. Nothing else changes, in any script.
-- **Item discovery is by what is on disk**, walked from `locales/source/`, so English defines the
-  corpus the same way it defines key parity. There is no registry to keep in step.
+- **Item discovery is by what is on disk**, in both trees: `locales/hu/curriculum/concepts/x/page.md`
+  translates `.source/front-end/curriculum/src/concepts/x/source.md`, and the mapping runs both ways.
+  There is no registry to keep in step.
 
-## `locales/source/` is read-only
+## English lives in a checkout, not here
 
-- **English is authored in the front-end monorepo**, beside the code that renders it. That does not
-  change.
-- **`scripts/sync-source.mjs` is the only writer of that tree.** It opts out of the guard with an
-  explicit `{ syncingSource: true }`, which is greppable: if that flag appears in any other file,
-  the guard has been routed around.
-- **Every other write goes through `guardedWrite()`**, which throws `GuardViolation` on anything
-  under `locales/source/` or anywhere outside this repo.
-- **A hand-edit is a hard failure, never an auto-repair.** Every sync records the md5 of what it
-  wrote; every later run compares them back. Overwriting a diverged file would destroy the only
-  evidence that someone tried to author English in the wrong place, and the real fix (make the
-  change in the front-end) is not something a script can do. `--force` exists for once you have
-  looked.
-- **Nothing but `sync-source` reads the front-end.** Every other script reads `locales/source/`, so
-  translate, validate and publish do not need a front-end checkout at all.
+Read [ENGLISH-SOURCE.md](./ENGLISH-SOURCE.md) first; this is the summary.
+
+- **English is authored in the front-end monorepo**, beside the code that renders it, and is read
+  from a checkout of it at `.source/front-end/`. That directory is gitignored and ephemeral.
+- **`scripts/lib/english.mjs` is the only thing that resolves a path to English.** Order:
+  `--source-repo=`, `JIKI_SOURCE_REPO`, `.source/front-end`, a sibling `../front-end`. Locally,
+  `npm run source:checkout` fetches one, shallow and sparse over the four directories English lives
+  in. In CI it is an `actions/checkout` step with the same destination.
+- **On a PR, English is the commit the branch pins** with an `English-Ref: <repo>@<sha>` commit
+  trailer. A translation branch validates against fixed English, so it cannot go red because
+  something merged next door. **On `main` it is front-end `main`**, which floats, and publish stamps
+  the SHA it used into `completeness.json`. A trailer rather than a committed file because the pin
+  is only ever read on a PR, so a file would land on `main`, pin nothing, and need pruning, and two
+  open translation branches would both be editing it.
+- **There is no tracked corpus.** An item is in the working corpus when English exists for it and
+  some target locale already holds a translation of it. Bringing a new item in is an explicit
+  `--type`/`--slug`, which resolves against English directly. Exclusions are explicit, in
+  `corpus.json`.
+- **Completeness measures against a different number**: every item English exists for, read straight
+  from the checkout. "Have you translated everything you started" is satisfiable by starting one
+  thing.
 
 ## The untranslated sentinel
 
@@ -115,8 +109,7 @@ locales/
 - **The imported corpus predates that rule and carries both markers.** Catalogs that came across in
   the cutover include keys whose value is English verbatim, which is the state the old world used.
   Nothing here rewrites them: the ambiguity is already in the file and a translation that legitimately
-  matches English is indistinguishable from a gap. `verify-import` and `validate` both count them, as
-  a heuristic WARN, so the size of the problem is visible without anything guessing at it.
+  matches English is indistinguishable from a gap. `validate` counts them, as a heuristic WARN, so the size of the problem is visible without anything guessing at it.
 
 ## Staleness
 
@@ -137,22 +130,21 @@ locales/
 
 All Node ESM (`.mjs`), and **dependency-free with one exception**: they run on a bare `node` with no
 install step, except for prose rendering, which needs `@jiki.io/content-renderer`. That import is
-lazy, so `sync-source`, `translate`, `stub`, `validate`, `coverage` and `test` still need no
+lazy, so `translate`, `stub`, `validate`, `coverage` and `test` still need no
 `node_modules` at all; only `publish` and `verify-renderer` do. `publish` loads it up front rather
 than on first use, because the image resolver inside a post render has to be synchronous.
 Shared helpers live in `scripts/lib/`.
 
 | Script | What it does |
 |--------|--------------|
-| `sync-source.mjs` | Pulls English from the source repos into `locales/source/`, one-way. Hard-fails if the mirror has been hand-edited. `--check` verifies without writing. `--namespaces=a,b` imports a catalog as a slice. `--discover` widens the tracked corpus to every item English exists for, and `--only-translated` narrows that to items some locale already has a translation of. Also records each imported exercise's family, which only the front-end knows. |
-| `import-existing.mjs` | **Cutover only.** Lifts translations that still live in the source repos into `locales/<locale>/`. Deliberately separate from `sync-source`, so "did this come from the source repo or from a pass?" stays answerable. |
+| `source-checkout.mjs` | Fetches the front-end into `.source/front-end`, shallow and sparse, so local runs have English to read. CI uses `actions/checkout` for the same job and the same destination. |
+| `source-checkout.mjs --resolve` | Prints the SHA this branch pins with an `English-Ref:` trailer, or `main`. CI uses it to point its `actions/checkout` step at the right English. |
 | `translate.mjs` | LLM-backed translation of added and changed items. Modes `outdated` / `all` / `missing`, meaning exactly what they mean in `translator`. Hands off to `validate` when it finishes. |
-| `stub.mjs` | Brings every catalog to full key parity with `source`, sentinel-filling anything untranslated. Existing values are reproduced byte for byte. |
-| `validate.mjs` | Key parity, ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the English write guard. Stamps on success. Exit 1 on any ERROR. |
+| `stub.mjs` | Brings every catalog in the corpus to full key parity with English, sentinel-filling anything untranslated. Existing values are reproduced byte for byte. An explicit `--type`/`--slug` seeds an item the corpus does not hold yet. |
+| `validate.mjs` | Key parity, ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the R2 key guard. Stamps on success. Exit 1 on any ERROR. |
 | `publish.mjs` | Builds the content-hashed artifacts, their pointers and `dist/sync.sh`. Refuses any English R2 key, any catalog still holding a sentinel, any prose that is untranslated by one of the three conventions, and any assembled artifact built from a partial corpus. No flag loosens any of that. `--out-dir=<path>` writes the same tree into a front-end checkout instead, for local dev. |
 | `coverage.mjs` | Per-locale translated / stale / missing / sentinel counts, per content type. `--json` for machines. |
 | `test.mjs` | The assertions guarding logic a mistake in would only surface on R2, above all the exercise family merge and its key order. Plain `node:assert`, no framework, non-zero exit on failure. `pnpm test`, and part of `pnpm check`. |
-| `verify-import.mjs` | Proves an import is complete and lossless against a source repo checkout: every translation present, byte-for-byte identical, every file under `locales/<target>/` mapping back to a tracked item, no English locale directory. Also counts both untranslated markers without judging either. |
 | `verify-renderer.mjs` | Proves this repo's prose pipeline and the front-end's produce identical bytes. Takes the front-end's OWN Markdown, renders it through this repo's publish path, and asserts the hash equals the filename the front-end's generator wrote, across the whole concept corpus. |
 
 - **`validate` errors block; warnings never do.** Same split as `translator/scripts/check-translation`:
@@ -196,18 +188,22 @@ Bucket `s3://assets`, key prefix `static/`, uploaded with
 `--cache-control 'public, max-age=31536000, immutable' --size-only` (every file is content-hashed,
 so an upload is always an add, never a replace).
 
-### The English write guard
+### The R2 key guard
 
-- **Every write goes through `assertWritablePath()`; every R2 key goes through
-  `assertPublishableKey()`.** Both throw `GuardViolation`, which aborts the run.
+- **Every R2 key goes through `assertPublishableKey()`**, on the way to disk and again on the way to
+  the bucket. It throws `GuardViolation`, which aborts the run.
 - **It is a hard fail, never a silent skip.** A publish that quietly dropped English would be
   indistinguishable from a successful one.
 - **This replaces credential scoping, which cannot express the rule.** The key that must not be
   written (`static/i18n/app/en/...`) sits *inside* the prefix this repo legitimately writes
   (`static/i18n/app/`), so no bucket policy can separate them.
-- **`validate` exercises the guard** rather than trusting it: it asserts the guard refuses every
-  English spelling and still permits a legitimate key. A guard meant never to fire only stays
-  honest if something makes it fire.
+- **It is all that is left of a larger guard, deliberately.** There was a write guard over
+  `locales/source/` and a divergence check keeping that mirror honest. With English outside this
+  repo, publishing it from a directory walk is impossible rather than defended against. Synthesising
+  an English KEY from a bad path template still is not, and that failure is silent, so this stays.
+- **`validate` exercises it** rather than trusting it: it asserts the guard refuses every English
+  spelling and still permits a legitimate key. A guard meant never to fire only stays honest if
+  something makes it fire.
 
 ### Exercise families and the base catalog merge
 
@@ -234,18 +230,20 @@ describers. They are authored and translated once rather than copied into each m
 #### The family map
 
 An exercise's family is whichever `exercise-categories/<family>/` module its `.ts` files import, so
-it is a fact about **code**, and code stays in the front-end. It cannot be derived at publish time,
-because publishing runs in CI here with no front-end checkout.
+it is a fact about **code**, and code stays in the front-end.
 
-- **`sync-source.mjs` captures it** and records it as a `families` block in
-  `locales/source/.manifest.json`, beside `items` and `files`. The manifest is already the registry
-  of what English this repo has imported, and the family is a fact about that English's source, so it
-  belongs in the same record rather than in a second file that could drift from it.
-- **A standalone exercise is recorded as an explicit `null`**, so "scanned, has no family" stays
-  distinguishable from "never scanned".
-- **An exercise with no record at all is a hard fail in `publish`**, never an unmerged publish. A
-  catalog missing its inherited keys renders raw key names like `errors.hitWall` to a learner, and on
-  R2 it would look exactly like a good one.
+- **`publish.mjs` reads it from the checkout** at the moment it needs it, with `deriveFamily()`. It
+  used to be recorded in the sync manifest so that publish could run without a front-end checkout;
+  publish has one now, and a derived answer cannot go stale.
+- **It is derived over the corpus, not over all of English.** The union rule above publishes a family
+  member from its family's base catalog even when the member has no catalog of its own, so a map
+  covering every exercise in the front-end would publish a catalog for every member of every
+  translated family, including exercises nobody has begun.
+- **A standalone exercise derives an explicit `null`**, so "has no family" stays distinguishable from
+  "not found".
+- **An exercise this repo holds but the checkout has no directory for is a hard fail in `publish`**,
+  never an unmerged publish. A catalog missing its inherited keys renders raw key names like
+  `errors.hitWall` to a learner, and on R2 it would look exactly like a good one.
 
 ### Nothing partial ships, and there is no flag to say otherwise
 
@@ -266,16 +264,14 @@ merges. **A run with nothing shippable exits 0** — a green no-op, not a failur
 
 What there is no way to do is publish one anyway. This used to be a matter of how `publish` was
 invoked (`--allow-partial`, `--allow-incomplete`); it is now a property of the script, which is the
-only place a rule like this survives. That mirrors the English guard, which has never had an
+only place a rule like this survives. That mirrors the R2 key guard, which has never had an
 override.
 
-**Completeness is measured against the real source corpus, not the mirror.** `locales/source/` is a
-subset by design, so measuring against it asks "have you translated everything you imported", which
-any locale satisfies by importing one exercise — and it passed most convincingly exactly when the
-mirror was smallest, which is when it mattered most. `sync-source` records the true per-type corpus
-size in `.manifest.json` as `corpus`, on the same terms as the family map: a fact only the front-end
-holds, captured at sync time so `publish` needs no front-end checkout. **A manifest with no `corpus`
-is treated as unknowable, not as complete**, and the assembled artifacts are skipped.
+**Completeness is measured against the real English corpus, not the working corpus.** The working
+corpus is what this repo has started, so measuring against it asks "have you translated everything
+you started", which any locale satisfies by starting one exercise, and which passes most
+convincingly exactly when the least has been done. The denominator is a directory listing of
+`.source/front-end`: every item English exists for, whether or not anyone has looked at it.
 
 ### Untranslated prose
 
@@ -434,8 +430,14 @@ Artifacts sync immutably with `--size-only`; pointers are **copied**, never sync
 compares byte counts and one hash is exactly as long as another), with a short TTL plus a long
 `stale-while-revalidate`. The artifact always lands before the pointer that names it.
 
-`dist/manifest.json` is now a record for humans and CI — what a run published, and which renderer
-version produced the HTML — rather than a hand-back the front-end needs in order to reach a locale.
+`dist/manifest.json` is now a record for humans and CI — what a run published, which renderer
+version produced the HTML, and which front-end commit English was read from — rather than a
+hand-back the front-end needs in order to reach a locale.
+
+`static/i18n/completeness.json` carries that same `english` block: `{ repo, sha }`. On a PR the SHA
+is the pin; on `main` it is whatever front-end `main` was at that moment, and recording it is what
+makes the float acceptable. It is `null` when the checkout has uncommitted changes to English, which
+is a local-only state, rather than reporting a SHA that is not the truth.
 
 ### Building into a front-end checkout (`--out-dir`)
 

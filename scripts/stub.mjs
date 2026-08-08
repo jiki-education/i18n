@@ -22,15 +22,22 @@
 //     is indistinguishable from a translation that legitimately matches English,
 //     and once that ambiguity is in a file it cannot be undone.
 //
+// Scope is the derived corpus: every item English exists for that some locale
+// already holds. Bringing a NEW item in is deliberate, and is what an explicit
+// --type/--slug does: it resolves against English directly, so the first locale
+// file for an item is always something someone asked for by name. Without that
+// rule a bare `stub all` would sentinel-fill the entire English tree into every
+// locale. See ENGLISH-SOURCE.md.
+//
 // Prose (concept pages, exercise instructions) has no stub state: a Markdown page
 // is either translated or absent. Only catalogs are stubbed.
 
 import fs from "node:fs";
 import path from "node:path";
-import { REPO_ROOT, SOURCE_LOCALE, TARGET_LOCALES, assertTargetLocale, fail } from "./lib/constants.mjs";
-import { contentType, localPath, listItems, CONTENT_TYPE_IDS } from "./lib/content-types.mjs";
-import { countSentinels, readJson, stubAgainst } from "./lib/files.mjs";
-import { guardedWriteJson } from "./lib/guard.mjs";
+import { REPO_ROOT, TARGET_LOCALES, assertTargetLocale, fail } from "./lib/constants.mjs";
+import { contentType, localPath, CONTENT_TYPE_IDS } from "./lib/content-types.mjs";
+import { scopeItems } from "./lib/english.mjs";
+import { countSentinels, readJson, stubAgainst, writeJson } from "./lib/files.mjs";
 import { parseArgs } from "./lib/args.mjs";
 
 function main() {
@@ -49,8 +56,7 @@ function main() {
       const type = contentType(typeId);
       if (type.format !== "catalog") continue;
 
-      for (const item of listItems(typeId, SOURCE_LOCALE)) {
-        if (args.flags.slug && item.slug !== args.flags.slug) continue;
+      for (const item of scopeItems(typeId, { slug: args.flags.slug })) {
 
         const english = readJson(item.path);
         const target = localPath(typeId, locale, item.slug);
@@ -68,7 +74,7 @@ function main() {
         }
 
         const changed = JSON.stringify(stubbed) !== JSON.stringify(existing);
-        if (changed) guardedWriteJson(target, stubbed);
+        if (changed) writeJson(target, stubbed);
         console.log(
           `${changed ? "wrote " : "ok    "} ${path.relative(REPO_ROOT, target)} ` +
             `(${counts.translated}/${counts.total} translated, ${counts.stubbed} stubbed)`

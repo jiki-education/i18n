@@ -11,19 +11,16 @@
     "@jiki.io/content-renderer": "0.4.0"
   },
   "scripts": {
-    "sync-source": "node scripts/sync-source.mjs",
-    "sync-source:check": "node scripts/sync-source.mjs --check",
-    "import-existing": "node scripts/import-existing.mjs",
+    "source:checkout": "node scripts/source-checkout.mjs",
     "translate": "node scripts/translate.mjs",
     "stub": "node scripts/stub.mjs",
     "validate": "node scripts/validate.mjs",
     "validate:shippable": "node scripts/validate.mjs all --shippable --no-stamp",
     "coverage": "node scripts/coverage.mjs",
-    "verify-import": "node scripts/verify-import.mjs",
     "verify-renderer": "node scripts/verify-renderer.mjs",
     "publish:build": "node scripts/publish.mjs",
     "publish:upload": "node scripts/publish.mjs all --upload",
     "test": "node scripts/test.mjs",
-    "check": "node scripts/test.mjs && node scripts/sync-source.mjs --check && node scripts/validate.mjs all --no-stamp"
+    "check": "node scripts/test.mjs && node scripts/validate.mjs all --no-stamp"
   }
 }

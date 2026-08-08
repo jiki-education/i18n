@@ -58,10 +58,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
-import { REPO_ROOT, SENTINEL, SOURCE_LOCALE, TARGET_LOCALES, assertTargetLocale, fail } from "./lib/constants.mjs";
-import { CONTENT_TYPE_IDS, contentType, listItems, localPath, metaPath } from "./lib/content-types.mjs";
-import { flatten, md5File, parseFrontmatter, readJson, readText, stubAgainst, unflatten } from "./lib/files.mjs";
-import { guardedWrite, guardedWriteJson } from "./lib/guard.mjs";
+import { REPO_ROOT, SENTINEL, TARGET_LOCALES, assertTargetLocale, fail } from "./lib/constants.mjs";
+import { CONTENT_TYPE_IDS, contentType, localPath, metaPath } from "./lib/content-types.mjs";
+import { scopeItems } from "./lib/english.mjs";
+import { flatten, md5File, parseFrontmatter, readJson, readText, stubAgainst, unflatten, writeText } from "./lib/files.mjs";
 import { resolveEngine } from "./lib/engines.mjs";
 import { parseArgs } from "./lib/args.mjs";
 
@@ -116,8 +116,7 @@ function resolveScope({ locale, typeIds, slug, mode }) {
 
   for (const typeId of typeIds) {
     const type = contentType(typeId);
-    for (const item of listItems(typeId, SOURCE_LOCALE)) {
-      if (slug && item.slug !== slug) continue;
+    for (const item of scopeItems(typeId, { slug })) {
       const target = localPath(typeId, locale, item.slug);
       const englishMd5 = md5File(item.path);
 
@@ -229,7 +228,7 @@ function applyResult({ item, text, keys }) {
       if (typeof returned[key] === "string" && returned[key].trim() !== "") merged[key] = returned[key].trim();
     }
     // Rebuild against English so key order and parity are structural, not trusted.
-    guardedWrite(item.target, `${JSON.stringify(stubAgainst(english, unflatten(merged)), null, 2)}\n`);
+    writeText(item.target, `${JSON.stringify(stubAgainst(english, unflatten(merged)), null, 2)}\n`);
     return;
   }
 
@@ -238,7 +237,7 @@ function applyResult({ item, text, keys }) {
   // Strip any fabricated stamp before it touches disk. validate.mjs writes the
   // real one, and only once the checks pass.
   delete parsed.data.en_md5;
-  guardedWrite(item.target, `${cleaned.startsWith("---") ? serialize(parsed) : cleaned}\n`.replace(/\n+$/, "\n"));
+  writeText(item.target, `${cleaned.startsWith("---") ? serialize(parsed) : cleaned}\n`.replace(/\n+$/, "\n"));
 }
 
 function serialize({ data, body }) {

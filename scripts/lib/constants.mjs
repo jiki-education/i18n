@@ -23,12 +23,14 @@ export const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url
 export const SENTINEL = "�";
 
 /**
- * The name English goes by in THIS repo. Not `en`.
+ * The token that means "English" when addressing a path in the SOURCE repos.
  *
- * `locales/source/` is a one-way mirror of the English authored in the source
- * repos. It is read-only here: every script hard-fails rather than write to it,
- * and `scripts/publish.mjs` refuses to put anything under the English prefix on
- * R2. The front-end publishes English itself, atomically with its worker deploy.
+ * It is not a locale and there is no `locales/source/` directory: English is
+ * read from a front-end checkout at `.source/front-end`, never stored here. See
+ * ENGLISH-SOURCE.md. The name survives as the argument content-types.mjs takes
+ * to mean "the English spelling of this path" (`en.json` for a catalog,
+ * `source.md` for prose), and as one more English spelling the R2 key guard
+ * refuses.
  */
 export const SOURCE_LOCALE = "source";
 
@@ -52,7 +54,7 @@ export function assertTargetLocale(locale) {
   if (locale === SOURCE_LOCALE || locale === SOURCE_REPO_LOCALE) {
     fail(
       `refusing to treat "${locale}" as a target locale. English is authored in the source repos ` +
-        `and mirrored read-only into locales/${SOURCE_LOCALE}/.`
+        `and read from a front-end checkout, never held here.`
     );
   }
   if (!TARGET_LOCALES.includes(locale)) {
