@@ -1,6 +1,7 @@
 ---
 title: "Nucléotide"
 description: "Compte combien de fois un nucléotide donné apparaît dans un brin d'ADN."
+en_md5: 7ab4068481d406fdfb6f598fabd042c1
 ---
 
 L'ADN est une longue chaîne de composants chimiques, dont les plus importants sont les quatre nucléotides : l'adénine, la cytosine, la guanine et la thymine. Un seul brin d'ADN peut contenir des milliards de ces quatre nucléotides, et l'ordre dans lequel ils apparaissent est important ! On représente une séquence d'ADN par une string de caractères telle que "ATTACG" : 'A' pour l'adénine, 'C' pour la cytosine, 'G' pour la guanine et 'T' pour la thymine.

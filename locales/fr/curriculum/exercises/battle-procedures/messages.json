@@ -1,55 +1,55 @@
 {
   "checks": {
-    "notShotAllAliens": "�",
-    "functionNotDefined": "�",
-    "functionNotCalled": "�"
+    "notShotAllAliens": "Tu n'as pas abattu tous les aliens.",
+    "functionNotDefined": "Tu dois définir une fonction <code>shootIfAlienAbove</code>.",
+    "functionNotCalled": "Tu as défini <code>shootIfAlienAbove</code>, mais tu dois aussi l'appeler dans ta solution."
   },
   "tasks": {
     "battleProcedures": {
-      "name": "�",
-      "description": "�"
+      "name": "Crée une fonction shootIfAlienAbove et utilise-la pour gagner la partie",
+      "description": "Extrais la logique de tir dans une fonction shootIfAlienAbove(), puis utilise-la avec la logique de déplacement pour abattre tous les aliens."
     }
   },
   "scenarios": {
     "battleProcedures": {
-      "name": "�",
-      "description": "�"
+      "name": "Procédures de combat",
+      "description": "Abats tous les aliens à l'aide de ta fonction shootIfAlienAbove"
     }
   },
   "hints": {
     "wherePutFunction": {
-      "question": "�",
-      "answer": "�"
+      "question": "Où dois-je placer la fonction `shootIfAlienAbove` ",
+      "answer": "Définis-la en haut du code, avant la boucle. Une fois qu'elle est définie, tu peux l'appeler depuis la boucle autant de fois que tu veux."
     },
     "whatGoesInside": {
-      "question": "�",
-      "answer": "�"
+      "question": "Que met-on à l'intérieur de `shootIfAlienAbove` ",
+      "answer": "Utilise une instruction `if` qui vérifie `isAlienAbove()`. Quand elle renvoie `true`, appelle `shoot()`. C'est tout le corps de la fonction."
     },
     "whatStaysInLoop": {
-      "question": "�",
-      "answer": "�"
+      "question": "Que reste-t-il dans la boucle ",
+      "answer": "Toute la logique de déplacement reste dans la boucle, comme dans l'exercice précédent. À chaque itération  appelle `shootIfAlienAbove()`, puis déplace le canon, puis change de direction aux bords."
     },
     "trackCannon": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment savoir où se trouve le canon et dans quelle direction il va ",
+      "answer": "Utilise deux variables que tu mets à jour à chaque itération. Par exemple, une variable `position` qui augmente ou diminue, et une variable `direction` qui vaut `\"right\"` ou `\"left\"` et qui bascule quand tu atteins un bord."
     }
   },
   "functions": {
     "moveLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Déplace le canon laser **d'une position vers la gauche**. Si tu essaies de dépasser le bord gauche de l'écran, tu perds la partie ",
+      "category": "Déplacement"
     },
     "moveRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Déplace le canon laser **d'une position vers la droite**. Si tu essaies de dépasser le bord droit de l'écran, tu perds la partie ",
+      "category": "Déplacement"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Tire au laser vers le haut. **Ne tire que lorsqu'il y a un alien au-dessus de toi**, sinon tu perds la partie  Le canon laser surchauffe facilement, alors tu dois te déplacer avant de tirer à nouveau.",
+      "category": "Action"
     },
     "isAlienAbove": {
-      "description": "�",
-      "category": "�"
+      "description": "Renvoie `true` s'il y a un alien juste au-dessus du canon laser, ou `false` sinon. Utilise-la pour vérifier avant de tirer ",
+      "category": "Détection"
     }
   }
 }

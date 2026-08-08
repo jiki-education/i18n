@@ -1,62 +1,62 @@
 {
   "tasks": {
     "countNucleotide": {
-      "name": "�",
-      "description": "�"
+      "name": "Compte un nucléotide",
+      "description": "Écris une fonction qui compte combien de fois un nucléotide donné (A, C, G ou T) apparaît dans un brin d'ADN. Renvoie -1 si le nucléotide ou un caractère du brin est invalide."
     }
   },
   "scenarios": {
     "nucleotideEmptyStrand": {
-      "name": "�",
-      "description": "�"
+      "name": "Brin vide",
+      "description": "Un brin vide doit renvoyer 0 pour n'importe quel nucléotide valide."
     },
     "nucleotideSingleMatch": {
-      "name": "�",
-      "description": "�"
+      "name": "Brin d'un seul nucléotide",
+      "description": "Un brin d'un seul caractère correspondant au nucléotide cherché doit renvoyer 1."
     },
     "nucleotideRepeated": {
-      "name": "�",
-      "description": "�"
+      "name": "Nucléotide répété",
+      "description": "Un brin composé du même nucléotide répété doit les compter tous."
     },
     "nucleotideMixedStrandA": {
-      "name": "�",
-      "description": "�"
+      "name": "Compte les A dans un brin mélangé",
+      "description": "Compte un nucléotide donné dans un brin mélangé."
     },
     "nucleotideMixedStrandT": {
-      "name": "�",
-      "description": "�"
+      "name": "Compte les T dans un brin mélangé",
+      "description": "Compte un autre nucléotide dans le même brin."
     },
     "nucleotideInvalidNucleotide": {
-      "name": "�",
-      "description": "�"
+      "name": "Nucléotide invalide",
+      "description": "Un caractère de nucléotide invalide doit renvoyer -1."
     },
     "nucleotideInvalidStrand": {
-      "name": "�",
-      "description": "�"
+      "name": "Brin invalide",
+      "description": "Un brin contenant des caractères invalides doit renvoyer -1."
     }
   },
   "hints": {
     "checkValid": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment vérifier que le caractère demandé est valide ?",
+      "answer": "Les strings ont une méthode `includes()` qui indique si une string apparaît dans une autre. C'est un moyen pratique de vérifier qu'un caractère fait partie des nucléotides valides. Valide l'entrée avant de commencer à compter."
     },
     "invalidNucleotide": {
-      "question": "�",
-      "answer": "�"
+      "question": "Que faire si le nucléotide est invalide ?",
+      "answer": "Renvoie `-1` immédiatement. L'énoncé utilise cette valeur pour signaler une entrée invalide."
     },
     "countOccurrences": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment compter les occurrences dans le brin ?",
+      "answer": "Parcours chaque caractère du brin. Si le caractère correspond au nucléotide que tu comptes, ajoute 1 à un compteur. Renvoie le compteur à la fin."
     },
     "validateStrand": {
-      "question": "�",
-      "answer": "�"
+      "question": "Faut-il aussi valider le brin ?",
+      "answer": "Oui. Si un caractère du brin n'est pas un nucléotide valide, renvoie `-1`. Vérifie chaque caractère avant de compter."
     }
   },
   "functions": {
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "Vérifie si une string en contient une autre plus courte (fournie par la bibliothèque standard du niveau)",
+      "category": "Opérations sur les strings"
     }
   }
 }

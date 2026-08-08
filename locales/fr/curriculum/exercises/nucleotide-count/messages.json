@@ -1,54 +1,54 @@
 {
   "tasks": {
     "countNucleotides": {
-      "name": "�",
-      "description": "�"
+      "name": "Compte les nucléotides",
+      "description": "Écris une fonction qui compte les occurrences de chaque nucléotide (A, C, G, T) dans un brin d'ADN et renvoie un dictionnaire contenant les comptes. Renvoie false si le brin contient des caractères invalides."
     }
   },
   "scenarios": {
     "nucleotideCountEmptyStrand": {
-      "name": "�",
-      "description": "�"
+      "name": "Brin vide",
+      "description": "Avec un brin vide, tous les comptes doivent être à zéro."
     },
     "nucleotideCountSingleNucleotide": {
-      "name": "�",
-      "description": "�"
+      "name": "Un seul nucléotide",
+      "description": "Un brin d'un seul caractère doit compter correctement le nucléotide."
     },
     "nucleotideCountRepeatedNucleotide": {
-      "name": "�",
-      "description": "�"
+      "name": "Nucléotide répété",
+      "description": "Un brin où un nucléotide se répète doit compter correctement les occurrences."
     },
     "nucleotideCountMixedStrand": {
-      "name": "�",
-      "description": "�"
+      "name": "Brin de nucléotides variés",
+      "description": "Un brin qui contient plusieurs nucléotides doit compter correctement chacun d'entre eux."
     },
     "nucleotideCountInvalidNucleotide": {
-      "name": "�",
-      "description": "�"
+      "name": "Nucléotide invalide",
+      "description": "Un brin qui contient des nucléotides invalides doit renvoyer false."
     }
   },
   "hints": {
     "setupCounts": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment mettre en place les comptes ?",
+      "answer": "Commence avec un dictionnaire où les quatre nucléotides (`A`, `C`, `G`, `T`) sont à 0. En parcourant le brin, tu ajouteras 1 au compte qui correspond."
     },
     "validChars": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment savoir quels caractères sont valides ?",
+      "answer": "Les caractères valides sont exactement les clés de ton dictionnaire. Utiliser `keys()` pour les récupérer t'évite d'écrire deux fois l'alphabet des nucléotides."
     },
     "checkEach": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment vérifier chaque caractère ?",
+      "answer": "Parcours le brin caractère par caractère. Pour chacun, vérifie qu'il s'agit d'un nucléotide valide avant de le compter."
     },
     "invalidChars": {
-      "question": "�",
-      "answer": "�"
+      "question": "Que faire des caractères invalides ?",
+      "answer": "L'énoncé demande de renvoyer `false` immédiatement. Une fois qu'un caractère invalide apparaît, il n'y a rien à rattraper : arrête-toi et renvoie false."
     }
   },
   "functions": {
     "keys": {
-      "description": "�",
-      "category": "�"
+      "description": "Renvoie un tableau de toutes les clés du dictionnaire (fonction fournie par la bibliothèque standard du niveau)",
+      "category": "Opérations sur les dictionnaires"
     }
   }
 }

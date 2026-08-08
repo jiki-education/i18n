@@ -1,38 +1,38 @@
 {
   "checks": {
-    "wrongPosition": "�",
-    "notResponsive": "�"
+    "wrongPosition": "O sol está no sítio errado ou tem o tamanho errado. Verifica os teus cálculos de `sunX` e `sunY` e certifica-te de que estás a passar `radius` à função `circle`.",
+    "notResponsive": "O teu código não se ajusta corretamente quando `gap` é {{gap}} e `radius` é {{radius}}. `sunX` e `sunY` devem ser derivados de `gap` e `radius`, e não números fixos."
   },
   "tasks": {
     "positionSun": {
-      "name": "�",
-      "description": "�"
+      "name": "Posiciona o sol",
+      "description": "Deriva `sunX` e `sunY` a partir de `canvasSize`, `gap` e `radius`, para que o sol se ajuste corretamente."
     }
   },
   "scenarios": {
     "positionSun": {
-      "name": "�",
-      "description": "�"
+      "name": "Posiciona o sol",
+      "description": "Deriva a posição do sol a partir de `gap` e `radius`, para que se ajuste."
     }
   },
   "hints": {
     "sunXPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como devo pensar na posição x do sol?",
+      "answer": "Imagina a borda direita da tela. A borda do sol fica `gap` à esquerda dessa borda. O *centro* do sol fica um raio mais para dentro do que isso."
     },
     "sunYPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como devo pensar na posição y do sol?",
+      "answer": "É a mesma ideia da posição x, mas medida para baixo a partir da borda superior da tela, em vez de para dentro a partir da borda direita."
     },
     "whyNotHardcode": {
-      "question": "�",
-      "answer": "�"
+      "question": "Porque é que não posso simplesmente escrever os números diretamente?",
+      "answer": "Se fixares `sunX` e `sunY` com números, o sol vai ficar no mesmo sítio quando `gap` ou `radius` mudarem. Construí-los a partir de `gap` e `radius` mantém o sol no canto, sejam quais forem os valores que escolheres."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um círculo com o centro em (centerX, centerY), com o raio e a cor indicados",
+      "category": "Desenhar formas"
     }
   }
 }
