@@ -747,24 +747,29 @@ async function main() {
   //
   // The artifact always lands before the pointer that names it, so a reader can
   // never follow a pointer to an object that is not there yet.
-  const dirs = all
-    .filter((artifact) => !artifact.pointer)
-    .map((artifact) => path.dirname(artifact.key))
-    .filter((dir, index, list) => list.indexOf(dir) === index);
-
+  // Two commands, not two per item. Every artifact is content-hashed, so one
+  // recursive sync over the whole tree is exactly as safe as thousands of
+  // directory-scoped ones, and the aws CLI is a fresh process each time it is
+  // invoked: at 33 locales the per-item plan was six thousand process launches
+  // and hours of startup cost for two seconds of actual work.
+  //
+  // The pointers still go separately, because they need the opposite of
+  // everything the artifacts need. They are copied rather than synced, since
+  // `--size-only` compares byte counts and one hash is exactly as long as
+  // another, so a sync would skip the single object whose whole job is to
+  // change. And they carry a short TTL with a long stale-while-revalidate, so
+  // the steady state is an edge hit and a republish propagates in about a
+  // minute.
+  //
+  // Artifacts land before pointers, so a reader can never follow a pointer to an
+  // object that is not there yet.
   const plan = outDir !== undefined ? [] : [
-    ...dirs.map(
-      (dir) =>
-        `aws s3 sync dist/${dir} s3://${R2_BUCKET}/${dir} --endpoint-url ${R2_ENDPOINT} ` +
-        `--cache-control 'public, max-age=31536000, immutable' --size-only --exclude 'current.json'`
-    ),
-    ...all
-      .filter((artifact) => artifact.pointer)
-      .map(
-        (artifact) =>
-          `aws s3 cp dist/${artifact.key} s3://${R2_BUCKET}/${artifact.key} --endpoint-url ${R2_ENDPOINT} ` +
-          `--cache-control 'public, max-age=60, stale-while-revalidate=86400'`
-      )
+    `aws s3 sync dist/static s3://${R2_BUCKET}/static --endpoint-url ${R2_ENDPOINT} ` +
+      `--cache-control 'public, max-age=31536000, immutable' --size-only ` +
+      `--exclude '*/current.json' --exclude 'completeness.json'`,
+    `aws s3 cp dist/static s3://${R2_BUCKET}/static --endpoint-url ${R2_ENDPOINT} --recursive ` +
+      `--cache-control 'public, max-age=60, stale-while-revalidate=86400' ` +
+      `--exclude '*' --include '*/current.json' --include 'completeness.json'`
   ];
   if (outDir === undefined) {
     fs.writeFileSync(path.join(DIST, "sync.sh"), `#!/usr/bin/env bash\nset -euo pipefail\n\n${plan.join("\n")}\n`, { mode: 0o755 });
