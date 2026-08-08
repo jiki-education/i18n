@@ -8,6 +8,7 @@ summary:
 seo:
   description: "A magyar fordítás hamarosan érkezik."
   keywords: ["html", "css", "navigation", "github", "deploy", "custom domain", "beginner"]
+en_md5: 16f46d4ae7b29304153c3c7c083cd982
 ---
 
 ## Bevezetés

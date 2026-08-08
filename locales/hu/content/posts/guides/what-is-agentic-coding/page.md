@@ -5,6 +5,7 @@ tags: ["agentic-coding"]
 seo:
   description: "An introduction to agentic coding for beginners. Learn what AI coding agents are, why they matter, and how to get set up with one while you learn to code."
   keywords: ["agentic coding", "ai coding", "coding agents", "llm", "learn to code", "opencode", "claude code"]
+en_md5: 96a2eaf8d00c3250901e06440a16253b
 ---
 
 ## Introduction

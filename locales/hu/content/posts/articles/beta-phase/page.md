@@ -5,6 +5,7 @@ tags: ["announcements"]
 seo:
   description: "Jiki is in beta throughout June 2026, with the aim of moving out of beta on July 1st."
   keywords: ["beta", "jiki", "launch"]
+en_md5: a9073efa72746590413a184fa5075556
 ---
 
 Jiki is currently in beta throughout June 2026, with the aim of moving out of beta on July 1st.

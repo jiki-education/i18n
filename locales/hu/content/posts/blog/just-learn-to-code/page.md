@@ -5,6 +5,7 @@ tags: ["jiki", "learn-to-code", "beginners", "languages"]
 seo:
   description: "Beginners don't need to pick JavaScript or Python. They need coding fundamentals. Here's why learning to code is not the same as learning a language."
   keywords: ["learn to code", "javascript or python", "programming for beginners", "jiki"]
+en_md5: bb8464cea9b839c8a14000fd208413ce
 ---
 
 One of the first decisions most beginners face is "What language should I choose?". Most land on JavaScript or Python.

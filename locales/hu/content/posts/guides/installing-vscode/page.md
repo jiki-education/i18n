@@ -5,6 +5,7 @@ tags: ["editors", "installation"]
 seo:
   description: "A beginner friendly guide to installing Visual Studio Code (VS Code) on Windows, macOS, and Linux, with clear step by step instructions for each system."
   keywords: ["install vscode", "visual studio code", "vs code download", "windows", "macos", "linux", "code editor"]
+en_md5: 188bcdb3716903b03032489e4454aaf9
 ---
 
 ## Introduction

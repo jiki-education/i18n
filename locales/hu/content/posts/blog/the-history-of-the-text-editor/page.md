@@ -5,6 +5,7 @@ tags: ["history", "text-editors", "vim", "emacs", "coding"]
 seo:
   description: "The history of the text editor, from punch cards and line editors to Vi, Emacs, VS Code and the AI era. How the gap between an idea and running code kept shrinking."
   keywords: ["history of text editors", "vi vs emacs", "text editor history", "history of code editors"]
+en_md5: 1746a724d6fb171afc5dc961c3519e37
 ---
 
 ## Introduction

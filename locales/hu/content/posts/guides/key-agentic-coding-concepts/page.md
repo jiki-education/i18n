@@ -5,6 +5,7 @@ tags: ["agentic-coding"]
 seo:
   description: "The core concepts behind agentic coding explained for beginners: what AI models and tokens are, how context windows work, and why agents sometimes get things wrong."
   keywords: ["agentic coding concepts", "llm", "tokens", "context window", "ai models", "prompts", "hallucinations"]
+en_md5: d963e01d7934f4003d436029d1808fc8
 ---
 
 ## Introduction

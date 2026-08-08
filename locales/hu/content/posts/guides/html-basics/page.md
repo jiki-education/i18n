@@ -5,6 +5,7 @@ tags: ["front-end-basics"]
 seo:
   description: "A beginner's guide to HTML. Learn what HTML is, how a web page is structured with a head and a body, and the most important tags to know."
   keywords: ["html", "html basics", "learn html", "html tags", "web page structure", "beginners"]
+en_md5: a3a8af4d009d64ef8339dc7e2661ef82
 ---
 
 ## Introduction

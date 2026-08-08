@@ -5,6 +5,7 @@ tags: ["jiki", "exercism", "i18n", "translatathon", "community"]
 seo:
   description: "Join the Jiki & Exercism Translatathon - a community weekend translating both platforms into as many languages as possible, July 31st to August 2nd."
   keywords: ["jiki", "exercism", "translatathon", "translation", "i18n", "learn to code"]
+en_md5: 7c65f35e78d02a36af1265d049cfe726
 ---
 
 ## TL;DR

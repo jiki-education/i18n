@@ -12,7 +12,7 @@
 
 import assert from "node:assert/strict";
 import { deepMerge, mergeExerciseCatalogs } from "./lib/families.mjs";
-import { contentHash } from "./lib/files.mjs";
+import { contentHash, stampFrontmatter } from "./lib/files.mjs";
 import { findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 
@@ -158,6 +158,40 @@ test("empty bodies never group together", () => {
     { key: "concept/b-group", englishBody: "", targetBody: "" }
   ]);
   assert.equal(repeated.size, 0);
+});
+
+// ------------------------------------------------------ the staleness stamp
+
+// The stamp is the one thing validate WRITES, and a post's frontmatter carries
+// a nested `seo` mapping and a `tags` sequence that reach a published artifact.
+// So the write has to be surgical: everything but the stamp line comes back
+// byte for byte, or adding one key silently rewrites what publish reads.
+
+console.log("\nthe staleness stamp:");
+
+test("a missing stamp is appended and nothing else moves", () => {
+  const raw = '---\ntitle: "A Post"\ntags: ["one", "two"]\nseo:\n  description: "Hi"\n---\n\nBody.\n';
+  assert.equal(
+    stampFrontmatter(raw, "abc123"),
+    '---\ntitle: "A Post"\ntags: ["one", "two"]\nseo:\n  description: "Hi"\nen_md5: abc123\n---\n\nBody.\n'
+  );
+});
+
+test("an existing stamp is replaced in place", () => {
+  const raw = "---\ntitle: T\nen_md5: old\ndescription: D\n---\nBody.\n";
+  assert.equal(stampFrontmatter(raw, "new"), "---\ntitle: T\nen_md5: new\ndescription: D\n---\nBody.\n");
+});
+
+test("quoting, indentation and multi-line sequences survive a stamp", () => {
+  const raw = '---\nseo:\n  keywords:\n    [\n      "a",\n      "b"\n    ]\n---\nBody.\n';
+  const stamped = stampFrontmatter(raw, "x");
+  assert.ok(stamped.includes('    [\n      "a",\n      "b"\n    ]'));
+  assert.equal(stamped.replace("\nen_md5: x", ""), raw);
+});
+
+test("the body is untouched, including a body that contains ---", () => {
+  const raw = "---\ntitle: T\n---\nBefore\n\n---\n\nAfter\n";
+  assert.equal(stampFrontmatter(raw, "y"), "---\ntitle: T\nen_md5: y\n---\nBefore\n\n---\n\nAfter\n");
 });
 
 // ---------------------------------------------------------- the R2 key guard

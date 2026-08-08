@@ -5,6 +5,7 @@ tags: ["editors"]
 seo:
   description: "Learn what a code editor is, why it is better than a word processor for writing code, and why we recommend Visual Studio Code for people learning to code."
   keywords: ["code editor", "text editor", "vscode", "visual studio code", "learn to code", "programming tools"]
+en_md5: 22d22e2479931e8bc503399c3a9110c9
 ---
 
 ## Introduction

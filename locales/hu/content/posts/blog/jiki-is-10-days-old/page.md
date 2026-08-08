@@ -5,6 +5,7 @@ tags: ["jiki", "beta", "update", "milestone"]
 seo:
   description: "Ten days into Jiki's open beta - thousands of signups, nearly 25,000 lessons completed, reworked exercises, and a look at what's coming next."
   keywords: ["jiki", "learn to code", "beta", "update"]
+en_md5: 0516f06c7acded488fce4e6788644ac0
 ---
 
 Jiki turns 10 days old today. An early milestone, but a good one to take a moment to reflect upon!
