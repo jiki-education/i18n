@@ -1,42 +1,42 @@
 {
   "checks": {
-    "notReachedEnd": "�",
-    "walkNotDefined": "�"
+    "notReachedEnd": "Tu n'as pas atteint la sortie du labyrinthe.",
+    "walkNotDefined": "Tu dois définir une fonction <code>walk</code> qui prend un nombre de pas et avance d'autant de pas."
   },
   "tasks": {
     "writeWalk": {
-      "name": "�",
-      "description": "�"
+      "name": "Écris une fonction walk",
+      "description": "Définis une fonction appelée walk qui prend un nombre de pas en entrée et avance d'autant de pas."
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "Guide le personnage dans le labyrinthe",
+      "description": "Avance de 3 pas, tourne à gauche, avance de 2 pas, tourne à droite, puis avance de 4 pas pour atteindre la cible."
     }
   },
   "hints": {
     "howToMoveForward": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment avancer ?",
+      "answer": "Utilise la fonction `move()`."
     },
     "howToMoveSpecificTimes": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment avancer d'un nombre précis de pas ?",
+      "answer": "Tu as déjà résolu d'autres exercices où il fallait faire quelque chose un certain nombre de fois (repense au moment où tu devais faire rouler la balle de golf sur une distance précise). Utilise les mêmes idées ici."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Déplace le personnage **d'une case vers l'avant** dans la direction actuelle. Le personnage n'avance que si la case visée n'est pas bloquée par un mur.",
+      "category": "Déplacement"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Fait pivoter le personnage de **90 degrés vers la gauche** (dans le sens inverse des aiguilles d'une montre). Cela change la direction vers laquelle le personnage regarde.",
+      "category": "Déplacement"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Fait pivoter le personnage de **90 degrés vers la droite** (dans le sens des aiguilles d'une montre). Cela change la direction vers laquelle le personnage regarde.",
+      "category": "Déplacement"
     }
   }
 }

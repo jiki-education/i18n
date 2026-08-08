@@ -1,6 +1,7 @@
 ---
 title: "Chaussettes assorties"
 description: "Trouve les paires de chaussettes réparties dans deux paniers de linge."
+en_md5: 83ac75dda52f42ed411bb64a715c6bf2
 ---
 
 Peu de choses dans la vie sont plus agaçantes qu'une chaussette orpheline dont on ne retrouve pas la partenaire. Alors un beau jour, tu décides enfin de mettre de l'ordre dans ces chaussettes !

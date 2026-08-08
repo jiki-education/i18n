@@ -1,68 +1,68 @@
 {
   "checks": {
-    "noNestedLoops": "�",
-    "tooManyLines": "�"
+    "noNestedLoops": "Essaie de ne pas mettre une boucle dans une autre. Déplace la recherche d'une seule lettre dans sa propre fonction, puis appelle-la depuis <code>isPangram</code>.",
+    "tooManyLines": "Presque ! Vois si tu peux résoudre l'exercice en moins de lignes en t'appuyant sur ta fonction auxiliaire."
   },
   "tasks": {
     "checkLowerPangram": {
-      "name": "�",
-      "description": "�"
+      "name": "Vérifie le pangramme en minuscules",
+      "description": "Écris une fonction qui vérifie si une phrase en minuscules contient chaque lettre de l'alphabet. Fais-lui appeler une petite fonction auxiliaire pour la recherche lettre par lettre."
     },
     "decomposeTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "Résous-le en 16 lignes",
+      "description": "Bonus : avec la recherche extraite dans une fonction auxiliaire, la solution entière tient en 16 lignes. Peux-tu faire aussi bien ?"
     }
   },
   "scenarios": {
     "lowerPangramEmpty": {
-      "name": "�",
-      "description": "�"
+      "name": "Phrase vide",
+      "description": "Une phrase vide n'est pas un pangramme."
     },
     "lowerPangramFullAlphabet": {
-      "name": "�",
-      "description": "�"
+      "name": "Alphabet minuscule complet",
+      "description": "L'alphabet complet en minuscules est un pangramme."
     },
     "lowerPangramClassic": {
-      "name": "�",
-      "description": "�"
+      "name": "Pangramme classique",
+      "description": "La phrase pangramme classique contient les 26 lettres."
     },
     "lowerPangramMissingX": {
-      "name": "�",
-      "description": "�"
+      "name": "Lettre « x » manquante",
+      "description": "Une phrase où il manque la lettre « x » n'est pas un pangramme."
     },
     "lowerPangramMissingH": {
-      "name": "�",
-      "description": "�"
+      "name": "Lettre « h » manquante",
+      "description": "Une phrase où il manque la lettre « h » n'est pas un pangramme."
     },
     "lowerPangramWithUnderscores": {
-      "name": "�",
-      "description": "�"
+      "name": "Avec des tirets bas",
+      "description": "Un pangramme avec des tirets bas à la place des espaces."
     },
     "lowerPangramWithNumbers": {
-      "name": "�",
-      "description": "�"
+      "name": "Avec des chiffres",
+      "description": "Un pangramme qui contient aussi des chiffres."
     },
     "lowerPangramNumbersReplacingLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "Des chiffres à la place des lettres",
+      "description": "Une phrase où des lettres sont remplacées par des chiffres n'est pas un pangramme."
     },
     "lowerPangramBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "Court et soigné",
+      "description": "La solution complète tient en 16 lignes quand la recherche est dans sa propre fonction."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Par où commencer ?",
+      "answer": "Tu dois vérifier que chaque lettre de l'alphabet est présente dans la string. Il va donc falloir boucler et comparer."
     },
     "checkEveryLetter": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment vérifier que chaque lettre de l'alphabet est présente ?",
+      "answer": "Parcours `\"abcdefghijklmnopqrstuvwxyz\"`, une lettre à la fois. Pour chaque lettre, vérifie si la phrase la contient."
     },
     "avoidNestedLoops": {
-      "question": "�",
-      "answer": "�"
+      "question": "J'ai résolu l'exercice, mais je ne sais pas comment utiliser la fonction auxiliaire.",
+      "answer": "Si tu as résolu l'exercice, tu as probablement une boucle externe et une boucle interne. Cette boucle interne vérifie si une chose en contient une autre. Une bonne approche consiste à extraire cette boucle interne dans une fonction auxiliaire appelée `includes(...)`, puis à l'appeler depuis la boucle externe. Une fonction auxiliaire est simplement une fonction normale, définie de la façon habituelle."
     }
   }
 }

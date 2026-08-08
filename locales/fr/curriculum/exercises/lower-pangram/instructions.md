@@ -1,6 +1,7 @@
 ---
 title: "Pangramme simple"
 description: "Vérifie si une phrase utilise toutes les lettres de l'alphabet."
+en_md5: 50b09bb1fbd35081cb842c55fc40e313
 ---
 
 Un pangramme est une phrase qui utilise **chaque lettre de l'alphabet au moins une fois**. Le pangramme anglais le plus connu est « the quick brown fox jumps over the lazy dog » !

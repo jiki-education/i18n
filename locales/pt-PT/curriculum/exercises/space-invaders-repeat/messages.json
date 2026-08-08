@@ -1,0 +1,49 @@
+{
+  "describers": {
+    "move": "moveu o canhão laser para a direita"
+  },
+  "checks": {
+    "notShotAllAliens": "Não abateste todos os alienígenas.",
+    "tooManyLines": "A tua solução tem demasiadas linhas de código. Experimenta usar um ciclo repeat para a tornares mais curta!"
+  },
+  "tasks": {
+    "repeatShoot": {
+      "name": "Usa um ciclo repeat para abateres todos os alienígenas",
+      "description": "Encontra o padrão nas posições dos alienígenas e usa um ciclo repeat para os destruíres a todos em 7 linhas de código ou menos."
+    }
+  },
+  "scenarios": {
+    "repeatShoot": {
+      "name": "Repete e dispara",
+      "description": "Usa um ciclo repeat para abateres todos os alienígenas"
+    }
+  },
+  "hints": {
+    "avoidRepeating": {
+      "question": "Como posso evitar escrever `move()` e `shoot()` vezes sem conta?",
+      "answer": "Usa um ciclo `repeat`. `repeat(n) { ... }` executa o mesmo bloco de código `n` vezes."
+    },
+    "repeatingPattern": {
+      "question": "Qual é o padrão que se repete nas posições dos alienígenas?",
+      "answer": "O teu canhão laser começa à esquerda dos alienígenas, e eles ocupam colunas alternadas, com três alienígenas empilhados em cada uma. Assim, o padrão para cada coluna é: `move`, `move`, `shoot`, `shoot`, `shoot`. Atravessas o espaço vazio até à coluna de alienígenas e depois disparas contra as três filas. É esse grupo de cinco passos que queres repetir."
+    },
+    "howManyTimes": {
+      "question": "Quantas vezes devo repetir o padrão?",
+      "answer": "Conta os grupos de alienígenas ao longo do ecrã e usa esse número como argumento do `repeat`."
+    },
+    "why7Lines": {
+      "question": "Porque é que o objetivo pede apenas 7 linhas?",
+      "answer": "Uma linha para o cabeçalho do `repeat`, as cinco ações que se repetem lá dentro e uma linha para a chaveta de fecho fazem sete. Tudo o que precisas cabe dentro do ciclo, sem nada fora dele. Se estás a escrever mais do que isso, provavelmente ainda não estás a usar o ciclo."
+    }
+  },
+  "functions": {
+    "move": {
+      "description": "Move o canhão laser **uma posição para a direita**. Se te moveres para fora do limite direito do ecrã, perdes!",
+      "category": "Movimento"
+    },
+    "shoot": {
+      "description": "Dispara o laser para cima. **Dispara apenas quando houver um alienígena por cima de ti**, senão perdes o jogo!",
+      "category": "Ação"
+    }
+  }
+}

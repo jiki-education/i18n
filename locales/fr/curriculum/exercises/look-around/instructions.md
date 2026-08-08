@@ -1,11 +1,12 @@
 ---
 title: "Regarde autour de toi"
 description: "Construis les fonctions qui vérifient ce qui se trouve autour du personnage dans le labyrinthe."
+en_md5: 9ca44b407519cf6b3d5fa9f3f0e3b3d3
 ---
 
-La dernière fois, tu as ajouté une nouvelle fonction pour aider le personnage à se repérer dans le labyrinthe : `turnAround()` (faire demi-tour). On a repris ton code à gauche pour que tu puisses continuer à travailler dessus.
+La dernière fois, tu as ajouté une nouvelle fonction pour aider le personnage à se repérer dans le labyrinthe : `turnAround()` (faire demi-tour). On a repris ton code à gauche pour que tu puisses continuer à travailler dessus.
 
-Cette fois, on a retiré trois des fonctions sur lesquelles tu t'appuyais jusqu'ici. Ton travail dans cet exercice, c'est de les implémenter toi-même !
+Cette fois, on a retiré trois des fonctions sur lesquelles tu t'appuyais jusqu'ici. Ton travail dans cet exercice, c'est de les implémenter toi-même !
 
 ### Les fonctions à écrire
 
@@ -13,14 +14,14 @@ Les trois fonctions que tu dois créer sont `canTurnLeft()` (peut tourner à gau
 
 Aucune de ces fonctions ne prend d'entrée. Toutes doivent renvoyer un booléen qui indique s'il est possible d'aller dans cette direction.
 
-Pour t'aider, on a ajouté une nouvelle fonction : `look(direction)` (regarder dans une direction). Cette fonction prend une entrée, une direction qui peut être `"left"`, `"right"` ou `"ahead"`. Elle renvoie l'une des valeurs suivantes :
+Pour t'aider, on a ajouté une nouvelle fonction : `look(direction)` (regarder dans une direction). Cette fonction prend une entrée, une direction qui peut être `"left"`, `"right"` ou `"ahead"`. Elle renvoie l'une des valeurs suivantes :
 
 - `"start"` (le point de départ)
 - `"target"` (l'endroit où le personnage doit arriver)
-- `"empty"` (le chemin à suivre !)
-- `"fire"` (prudence !)
+- `"empty"` (le chemin à suivre !)
+- `"fire"` (prudence !)
 - `"poop"` (beurk)
-- `"wall"` (aïe !)
+- `"wall"` (aïe !)
 
 ### Quelques notes pour t'aider
 

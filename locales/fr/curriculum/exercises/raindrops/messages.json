@@ -1,99 +1,99 @@
 {
   "checks": {
-    "moreThanSixteenLines": "�"
+    "moreThanSixteenLines": "Tu as utilisé plus de seize lignes de code."
   },
   "tasks": {
     "plings": {
-      "name": "�",
-      "description": "�"
+      "name": "Plings",
+      "description": "Commence par t'occuper des sons Pling. Si le nombre est divisible par 3, renvoie \"Pling\"."
     },
     "plangs": {
-      "name": "�",
-      "description": "�"
+      "name": "Plangs",
+      "description": "Passe maintenant aux sons Plang. Si le nombre est divisible par 5, ajoute \"Plang\" au résultat. S'il est divisible à la fois par 3 et par 5, renvoie \"PlingPlang\"."
     },
     "plongs": {
-      "name": "�",
-      "description": "�"
+      "name": "Plongs",
+      "description": "Occupe-toi maintenant des sons Plong. Si le nombre est divisible par 7, ajoute \"Plong\" au résultat. Un nombre peut être divisible par plusieurs facteurs."
     },
     "noSound": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombres sans son de goutte de pluie",
+      "description": "Enfin, si le nombre n'est divisible ni par 3, ni par 5, ni par 7, renvoie le nombre lui-même sous forme de string."
     },
     "solveInSixteenLines": {
-      "name": "�",
-      "description": "�"
+      "name": "Résous en seize lignes de code",
+      "description": "Peux-tu résoudre ceci en seulement seize lignes de code ?"
     }
   },
   "scenarios": {
     "number3": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 3",
+      "description": "Si l'entrée est 3, renvoie \"Pling\"."
     },
     "number27": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 27",
+      "description": "Si l'entrée est 27, renvoie \"Pling\"."
     },
     "number5": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 5",
+      "description": "Si l'entrée est 5, renvoie \"Plang\"."
     },
     "number3125": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 3125",
+      "description": "Si l'entrée est 3125, renvoie \"Plang\"."
     },
     "number15": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 15",
+      "description": "Si l'entrée est 15, renvoie \"PlingPlang\"."
     },
     "number7": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 7",
+      "description": "Si l'entrée est 7, renvoie \"Plong\"."
     },
     "number21": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 21",
+      "description": "Si l'entrée est 21, renvoie \"PlingPlong\"."
     },
     "number35": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 35",
+      "description": "Si l'entrée est 35, renvoie \"PlangPlong\"."
     },
     "number105": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 105",
+      "description": "Si l'entrée est 105, renvoie \"PlingPlangPlong\"."
     },
     "number8": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 8",
+      "description": "Si l'entrée est 8, renvoie \"8\"."
     },
     "number52": {
-      "name": "�",
-      "description": "�"
+      "name": "Nombre 52",
+      "description": "Si l'entrée est 52, renvoie \"52\"."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "Seize lignes de code",
+      "description": "Résous l'exercice en seulement seize lignes de code."
     }
   },
   "hints": {
     "onlyOneSound": {
-      "question": "�",
-      "answer": "�"
+      "question": "Pourquoi ma fonction ne renvoie-t-elle qu'un seul son ?",
+      "answer": "Si tu fais un `return` dans chaque `if`, tu t'arrêtes dès que le premier diviseur correspond. Or, tu veux combiner les sons. Au lieu de renvoyer tout de suite, ajoute le son à une string de résultat et continue."
     },
     "buildCombinedSound": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment construire le son combiné ?",
+      "answer": "Commence avec une string de résultat vide. Pour chaque diviseur (3, 5 et 7), s'il divise le nombre, ajoute le son correspondant à la fin du résultat par concaténation avec `+`."
     },
     "noneMatch": {
-      "question": "�",
-      "answer": "�"
+      "question": "Et si aucun des diviseurs ne correspond ?",
+      "answer": "Si le résultat est encore vide après les trois vérifications, la réponse est simplement le nombre lui-même sous forme de string. Convertis le nombre et renvoie-le."
     },
     "convertToString": {
-      "question": "�",
-      "answer": "�"
+      "question": "Je renvoie le nombre, mais il faut le renvoyer sous forme de string. Comment faire ?",
+      "answer": "Les nombres et les strings sont des types différents, même s'ils se ressemblent. Tu peux convertir un nombre en string en le plaçant dans une template string avec `${...}`."
     },
     "howManyReturns": {
-      "question": "�",
-      "answer": "�"
+      "question": "Combien d'instructions `return` devrais-je avoir ?",
+      "answer": "En général, une ou deux seulement. Tout l'intérêt est de laisser les instructions `if` modifier la string de résultat, puis de renvoyer ce résultat une seule fois à la fin."
     }
   }
 }

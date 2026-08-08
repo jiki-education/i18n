@@ -20,7 +20,7 @@ On a préparé pour toi les couleurs, la largeur du canvas et les deux variables
 - La maison est toujours centrée horizontalement sur le canvas.
 - Le bas de la maison se trouve `5` en dessous du haut de l'herbe, et la maison grandit vers le haut à partir de là.
 - Le toit repose sur le cadre de la maison. Il dépasse du cadre, à gauche et à droite, de `1/10` de la largeur du cadre, sa hauteur vaut `1/2` de la hauteur du cadre, et sa pointe est centrée horizontalement.
-- Les fenêtres ont chacune une largeur de `1/5` de la largeur du cadre et une hauteur de `1/3` de sa hauteur. Elles se trouvent à `1/8e` de la hauteur du cadre en dessous du haut du cadre, et sont en retrait de `1/7` de la largeur du cadre par rapport à chacun de ses côtés.
+- Les fenêtres ont chacune une largeur de `1/5` de la largeur du cadre et une hauteur de `1/3` de sa hauteur. Elles se trouvent à `1/8` de la hauteur du cadre en dessous du haut du cadre, et sont en retrait de `1/7` de la largeur du cadre par rapport à chacun de ses côtés.
 - La porte a une largeur de `1/5` de la largeur du cadre et une hauteur de `1/2` de sa hauteur. Elle est centrée horizontalement, et son bas se trouve en bas de la maison.
 - Le rayon de la poignée de porte est de `1/10` de la largeur de la porte. Il y a un écart de `1/10` de la largeur de la porte entre la poignée et le bord droit de la porte. La poignée est centrée verticalement dans la porte.
 

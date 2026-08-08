@@ -1,103 +1,103 @@
 {
   "describers": {
-    "canMove": "�",
-    "canTurnLeft": "�",
-    "canTurnRight": "�"
+    "canMove": "Vérifie si le personnage peut avancer",
+    "canTurnLeft": "Vérifie s'il y a un passage à gauche du personnage",
+    "canTurnRight": "Vérifie s'il y a un passage à droite du personnage"
   },
   "checks": {
-    "reachedEnd": "�",
-    "extraTurn": "�"
+    "reachedEnd": "Tu n'as pas atteint la sortie du labyrinthe.",
+    "extraTurn": "On dirait que tu as pivoté une fois de trop à la fin."
   },
   "tasks": {
     "straightPath": {
-      "name": "�",
-      "description": "�"
+      "name": "Un chemin tout droit",
+      "description": "Avance jusqu'à la sortie du labyrinthe."
     },
     "turnLeft": {
-      "name": "�",
-      "description": "�"
+      "name": "Tourne à gauche si tu peux",
+      "description": "S'il y a un passage à gauche, prends-le !"
     },
     "turnRight": {
-      "name": "�",
-      "description": "�"
+      "name": "Tourne à droite si tu ne peux pas aller tout droit ni à gauche",
+      "description": "S'il n'y a pas de passage à gauche ni tout droit, prends celui de droite."
     },
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "Fais demi-tour si nécessaire",
+      "description": "Gère les impasses en faisant demi-tour. Si tu ne peux aller ni à gauche, ni tout droit, ni à droite, fais demi-tour et avance."
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "Guide le personnage jusqu'à la sortie du labyrinthe",
+      "description": "Un chemin tout droit vers le bas"
     },
     "leftTurn": {
-      "name": "�",
-      "description": "�"
+      "name": "Un seul virage à gauche",
+      "description": "Négocie un virage à gauche"
     },
     "rightTurn": {
-      "name": "�",
-      "description": "�"
+      "name": "Un seul virage à droite",
+      "description": "Négocie un virage à droite"
     },
     "forks": {
-      "name": "�",
-      "description": "�"
+      "name": "Choisis la gauche si tu peux, sinon la droite",
+      "description": "Un labyrinthe avec des bifurcations qui teste la priorité à gauche"
     },
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "Fais demi-tour dans une impasse",
+      "description": "Un labyrinthe qui oblige à faire demi-tour"
     },
     "forks2": {
-      "name": "�",
-      "description": "�"
+      "name": "Labyrinthe complexe avec bifurcations et impasses",
+      "description": "Un labyrinthe complexe qui teste l'algorithme en entier"
     }
   },
   "hints": {
     "solveEachMaze": {
-      "question": "�",
-      "answer": "�"
+      "question": "Est-ce que je dois écrire une solution différente pour chaque labyrinthe ?",
+      "answer": "Non. Tu écris un seul algorithme qui fonctionne pour n'importe quel labyrinthe, et le même code s'exécute dans chaque scénario."
     },
     "runEveryStep": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment faire pour que mon code s'exécute à chaque pas dans le labyrinthe ?",
+      "answer": "Place ta logique dans la boucle repeat. Elle exécute ton code encore et encore jusqu'à ce que tu atteignes la sortie, donc tu n'as qu'à décrire ce qu'il faut faire pour un seul pas."
     },
     "oneCheckPerStep": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment m'assurer qu'une seule de mes vérifications s'exécute à chaque pas ?",
+      "answer": "Utilise un seul enchaînement `if` / `else if` / `else` plutôt que plusieurs `if` séparés. Ainsi, une seule branche s'exécute à chaque passage dans la boucle."
     },
     "stuckAfterTurn": {
-      "question": "�",
-      "answer": "�"
+      "question": "Je tourne, mais le personnage reste bloqué au même endroit.",
+      "answer": "Tourner change seulement la direction dans laquelle le personnage regarde, ça ne le fait pas avancer. Après avoir tourné, il faut encore appeler `move()`."
     },
     "turnAroundDeadEnd": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment faire demi-tour dans une impasse ?",
+      "answer": "Il n'existe pas de fonction pour faire demi-tour. Tourner deux fois du même côté (deux fois à gauche, ou deux fois à droite) remet le personnage face à la direction d'où il vient."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Déplace le personnage **d'une case vers l'avant** dans la direction actuelle. Le personnage n'avance que si la case visée n'est pas bloquée par un mur.",
+      "category": "Déplacement"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Fait pivoter le personnage de **90 degrés vers la gauche** (dans le sens inverse des aiguilles d'une montre). Cela change la direction dans laquelle le personnage regarde.",
+      "category": "Déplacement"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Fait pivoter le personnage de **90 degrés vers la droite** (dans le sens des aiguilles d'une montre). Cela change la direction dans laquelle le personnage regarde.",
+      "category": "Déplacement"
     },
     "canMove": {
-      "description": "�",
-      "category": "�"
+      "description": "Renvoie **true** si la case devant le personnage n'est pas un mur, et **false** sinon.",
+      "category": "Détection"
     },
     "canTurnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Renvoie **true** si la case à gauche du personnage n'est pas un mur, et **false** sinon.",
+      "category": "Détection"
     },
     "canTurnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Renvoie **true** si la case à droite du personnage n'est pas un mur, et **false** sinon.",
+      "category": "Détection"
     }
   }
 }
