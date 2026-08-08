@@ -69,7 +69,7 @@ jobs:
       # The same gate the PR ran, re-run against what actually landed on main.
       # A merge can produce a tree neither PR had.
       - name: Validate
-        run: node scripts/validate.mjs all --no-stamp
+        run: node scripts/validate.mjs all
 
       # Builds every artifact plus the pointer beside it, then uploads: artifacts
       # first, pointers second, so a pointer never names an object that is not
