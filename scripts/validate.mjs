@@ -5,11 +5,12 @@
 //
 // Usage:
 //   node scripts/validate.mjs [<locale|all>] [--type=<id>] [--slug=<slug>]
-//                             [--shippable] [--no-stamp]
+//                             [--shippable] [--stamp]
 //
 // Examples:
-//   node scripts/validate.mjs all          # CI gate
+//   node scripts/validate.mjs all          # CI gate, reads only
 //   node scripts/validate.mjs hu --shippable   # also fail on any remaining sentinel
+//   node scripts/validate.mjs hu --type=concept --slug=arrays --stamp   # after translating
 //
 // Exit codes: 0 all ERROR checks passed, 1 at least one ERROR.
 //
@@ -22,6 +23,21 @@
 // never to gate. Do not promote one.
 //
 // ## Stamping
+//
+// ## Stamping writes only when asked
+//
+// `--stamp` is required to write. Without it this reads and reports, nothing else.
+//
+// The default matters more than it looks. A stamp asserts "this translation
+// matches that English", and the checks here cannot see meaning: reword the
+// English while leaving its keys, gaps and links alone and every structural check
+// still passes, so the only complaint is staleness, which stamping then erases.
+// A bulk stamp therefore marks a whole locale current without anyone reading a
+// word of it. That is not hypothetical, it has happened here.
+//
+// So stamping belongs to a translation pass, next to the writing, one item at a
+// time. It has no place in CI: nothing automated should be able to declare a
+// translation current.
 //
 // The staleness stamp is written HERE and never by hand, because a hand-written
 // stamp looks like a passed check and is not one. Prose carries `en_md5` in its
@@ -167,7 +183,7 @@ function main() {
   locales.forEach(assertTargetLocale);
 
   const typeIds = args.flags.type ? [contentType(args.flags.type) && args.flags.type] : CONTENT_TYPE_IDS;
-  const stamp = !args.flags["no-stamp"];
+  const stamp = Boolean(args.flags.stamp);
   const shippable = Boolean(args.flags.shippable);
 
   let errors = 0;

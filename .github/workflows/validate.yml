@@ -1,8 +1,9 @@
 # The gate on every change to locales/.
 #
-# Runs with --no-stamp, so a PR cannot pass by stamping itself: the stamp is
-# written by a translate run, and CI only ever verifies it. A PR that edited a
-# translation without re-stamping fails here, which is the point.
+# CI never stamps. Stamping needs --stamp and belongs to a translation pass,
+# beside the writing, one item at a time. A stamp asserts a translation matches
+# its English, and nothing automated should be able to make that claim. A PR that
+# edited a translation without re-stamping fails here, which is the point.
 #
 # ## Which English this validates against
 #
@@ -83,7 +84,7 @@ jobs:
         run: node scripts/test.mjs
 
       - name: Validate every locale
-        run: node scripts/validate.mjs all --no-stamp
+        run: node scripts/validate.mjs all
 
       # Builds every artifact and re-runs the R2 key guard over the finished
       # tree, without uploading anything.
