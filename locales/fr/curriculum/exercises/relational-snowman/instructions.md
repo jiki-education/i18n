@@ -17,7 +17,7 @@ Selon la valeur de `size` que tu choisis, le bonhomme de neige doit grandir.
 ### Comment ça marche
 
 - Le coin en haut à gauche du canvas est `0,0`. Le coin en bas à droite est `100,100`.
-- Tu disposes d'une variable déjà écrite, `snowmanX` (le x du bonhomme de neige), qui donne le centre de l'image, et d'une variable `size` que tu peux faire varier de `1` à `5` pour faire grandir le bonhomme de neige.
+- Tu disposes d'une variable déjà écrite, `snowmanX` (le X du bonhomme de neige), qui donne le centre de l'image, et d'une variable `size` que tu peux faire varier de `1` à `5` pour faire grandir le bonhomme de neige.
 - Toutes les autres variables sont à calculer à l'aide d'expressions arithmétiques.
 - Le rayon de la tête vaut `size * 2`, celui du corps `size * 3` et celui de la base `size * 4`.
 - Les cercles doivent se toucher : le corps repose directement sur la base, et la tête directement sur le corps. (Notre bonhomme de neige est un peu plus précaire que dans les exercices précédents : chaque boule de neige est posée exactement sur celle du dessous, sans qu'elles fondent l'une dans l'autre. Il doit faire un froid glacial !)
@@ -31,9 +31,9 @@ Ta mission est de définir ces variables à partir des instructions ci-dessus.
 - `headRadius` (rayon de la tête) : à calculer à partir de `size`
 - `bodyRadius` (rayon du corps) : à calculer à partir de `size`
 - `baseRadius` (rayon de la base) : à calculer à partir de `size`
-- `baseY` (y de la base) : à calculer à partir de `size` et de `baseRadius` (la base repose sur le sol)
-- `bodyY` (y du corps) : à calculer à partir de `baseY`, `baseRadius` et `bodyRadius`
-- `headY` (y de la tête) : à calculer à partir de `bodyY`, `bodyRadius` et `headRadius`
+- `baseY` (le Y de la base) : à calculer à partir de `size` et de `baseRadius` (la base repose sur le sol)
+- `bodyY` (le Y du corps) : à calculer à partir de `baseY`, `baseRadius` et `bodyRadius`
+- `headY` (le Y de la tête) : à calculer à partir de `bodyY`, `bodyRadius` et `headRadius`
 
 ### Joue avec la taille
 

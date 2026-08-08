@@ -3,7 +3,7 @@
     "base": "Le cercle de la base (en bas) est soit au mauvais endroit, soit à la mauvaise taille. Vérifie `baseRadius` et `baseY`.",
     "body": "Le cercle du corps (au milieu) est soit au mauvais endroit, soit à la mauvaise taille. Vérifie `bodyRadius` et `bodyY`.",
     "head": "Le cercle de la tête (en haut) est soit au mauvais endroit, soit à la mauvaise taille. Vérifie `headRadius` et `headY`.",
-    "notResponsive": "Ton code ne s'adapte pas correctement quand `size` vaut {{size}}. Chaque rayon et chaque position y doivent être calculés à partir de `size`."
+    "notResponsive": "Ton code ne s'adapte pas correctement quand `size` vaut {{size}}. Chaque rayon et chaque position Y doivent être calculés à partir de `size`."
   },
   "tasks": {
     "buildRelationalSnowman": {
@@ -14,7 +14,7 @@
   "scenarios": {
     "buildRelationalSnowman": {
       "name": "Construis le bonhomme de neige relationnel",
-      "description": "Calcule chaque rayon et chaque position y à partir de `size`."
+      "description": "Calcule chaque rayon et chaque position Y à partir de `size`."
     }
   },
   "hints": {
@@ -23,7 +23,7 @@
       "answer": "Commence par la base, car c'est le seul cercle rattaché à quelque chose de fixe (le bas du canvas). Une fois que tu connais `baseY`, tu peux empiler le corps dessus, puis la tête sur le corps."
     },
     "baseSits": {
-      "question": "Comment savoir où se place la base ?",
+      "question": "Comment calculer la position de la base ?",
       "answer": "Le bord inférieur de la base se trouve à `size` au-dessus du sol (Y=100). Le centre de la base se situe un rayon de la base plus haut que son bord inférieur."
     },
     "stackBody": {
