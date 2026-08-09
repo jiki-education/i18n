@@ -12,6 +12,6 @@ Hai a disposizione tre funzioni:
 - `shoot()` (spara) spara il laser verso l'alto
 - `isAlienAbove()` (c'è un alieno sopra) restituisce `true` se c'è un alieno sopra di te, altrimenti `false`
 
-Devi spostarti lungo lo schermo, controllando ogni posizione. Se c'è un alieno sopra di te, sparagli! Altrimenti, vai avanti.
+Devi spostarti lungo lo schermo, controllando ogni posizione. Se c'è un alieno sopra di te, sparagli! Altrimenti, prosegui.
 
 **Non sparare quando non c'è un alieno sopra di te, o perdi!**
