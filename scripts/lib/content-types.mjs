@@ -3,10 +3,14 @@
 // Every script maps between three coordinate systems, and does it HERE and
 // nowhere else:
 //
-//   1. source repo path   — where English is authored, read from a front-end
-//                            checkout at .source/front-end (see ENGLISH-SOURCE.md)
+//   1. source repo path   — where English is authored, read from a checkout of
+//                            that type's `sourceRepo` at .source/<id>
+//                            (see ENGLISH-SOURCE.md)
 //   2. local path         — where it lives in this repo, under locales/<locale>/
 //   3. R2 path            — where the published artifact is served from
+//
+// `sourceRepo` names which repo English is authored in, and defaults to the
+// front-end. scripts/lib/english.mjs holds the list and resolves each one.
 //
 // The local layout MIRRORS each source package's own layout, with two
 // mechanical edits and no other invention:
@@ -155,6 +159,40 @@ export const CONTENT_TYPES = {
     sourceRepoPath: (slug) => `interpreters/src/${slug}/locales/en/translation.json`,
     localPath: (slug) => `interpreters/${slug}/messages.json`,
     r2: (locale, slug, hash) => `/static/i18n/interpreter/${slug}/${locale}/messages-${hash}.json`
+  },
+
+  "video-subtitles": {
+    label: "video subtitles",
+    format: "vtt",
+    slugged: true,
+    // The slug is a video KEY, the video's own directory name. Most sit directly
+    // under `videos/`; the promos sit a level down, under `videos/promos/`. So
+    // the slug is however many directory segments it takes to reach a
+    // `subtitles.vtt`, which is what `slugDepth: "any"` means.
+    slugDepth: "any",
+    // The only type whose English is not the front-end's. Subtitles are cut from
+    // the rendered video, so they are authored in `videos` beside the footage and
+    // the Mux pipeline. See SOURCE_REPOS in scripts/lib/english.mjs.
+    sourceRepo: "videos",
+    // WebVTT has no frontmatter and no sibling convention, so the stamp is a
+    // `NOTE en_md5 <hash>` line under the WEBVTT header. NOTE is WebVTT's own
+    // comment block, ignored by every player, so the stamp is inert in the file
+    // it stamps.
+    staleness: "note",
+    // The locale is hoisted into the path like every other type, so the filename
+    // is `subtitles.vtt` here and not `subtitles.<locale>.vtt`: naming the locale
+    // twice makes a rename a two-place edit.
+    sourceRepoPath: (slug) => `videos/${slug}/subtitles.vtt`,
+    localPath: (slug) => `videos/${slug}/subtitles.vtt`,
+    // Subtitles are not served from R2. A translated track is uploaded to Mux and
+    // served with the video it belongs to, by the `videos` repo's own
+    // `bin/attach-subtitles`, so there is no artifact for publish.mjs to build.
+    r2: null,
+    // Never a scripted API pass. Building a subtitle file is mapping the English
+    // transcript onto the already-translated concept page and re-cutting the
+    // result onto the English cue timings, which is judgment work and belongs to
+    // an opus worker running /translate-video-subtitles.
+    scriptedTranslation: false
   },
 
   // --- posts: blog, articles, guides ----------------------------------------
@@ -332,9 +370,14 @@ export function discoverItems(sourceRepo, typeId) {
 /**
  * Every slug under a directory, at the type's slug depth.
  *
- * Depth 1 is a single directory name, which is what every type but project
- * episodes uses. Depth 2 joins two levels with "/", so an episode's slug is
- * "<project>/<uuid>" and is still just "the part of the path that varies".
+ * Depth 1 is a single directory name, which is what most types use. Depth 2
+ * joins two levels with "/", so a project episode's slug is "<project>/<uuid>"
+ * and is still just "the part of the path that varies". Depth "any" returns
+ * every directory path at every level, for a tree that is not uniformly deep
+ * (the videos tree, where the promos sit one level below everything else); the
+ * callers already keep only the paths whose file exists, so a directory that is
+ * purely a container drops out on its own.
+ *
  * Sorted at every level so the answer never depends on directory order.
  */
 function slugsUnder(root, depth) {
@@ -347,6 +390,9 @@ function slugsUnder(root, depth) {
     .sort();
 
   if (depth === 1) return names;
+  if (depth === "any") {
+    return names.flatMap((name) => [name, ...slugsUnder(path.join(root, name), "any").map((rest) => `${name}/${rest}`)]);
+  }
   return names.flatMap((name) => slugsUnder(path.join(root, name), depth - 1).map((rest) => `${name}/${rest}`));
 }
 

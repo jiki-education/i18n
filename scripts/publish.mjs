@@ -159,6 +159,13 @@ const POST_TYPE_IDS = ["blog", "articles", "guides", "project-episodes"];
 /** Every markdown type, which is every type the untranslated-prose rules apply to. */
 const PROSE_TYPE_IDS = ["concept", "exercise-instructions", ...POST_TYPE_IDS];
 
+// Video subtitles are deliberately not published from here, and their content
+// type carries `r2: null` to say so. A translated subtitle track is uploaded to
+// Mux and served with the video it belongs to, by the `videos` repo's own
+// `bin/attach-subtitles`, so there is no R2 artifact to build and no pointer to
+// write. Publishing a copy to R2 would be a second home for bytes Mux already
+// serves, and nothing would read it.
+
 /** The mutable pointer that sits beside an artifact: `.../messages-<hash>.json` -> `.../current.json`. */
 const pointerKeyFor = (artifactKey) => `${path.dirname(artifactKey)}/current.json`;
 

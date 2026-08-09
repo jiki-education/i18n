@@ -101,6 +101,82 @@ export function stampFrontmatter(raw, md5) {
   return `---${eol}${stamped}${eol}---${trailing}${raw.slice(match[0].length)}`;
 }
 
+// ---------------------------------------------------------------- webvtt ----
+//
+// WebVTT has no frontmatter and no sibling convention, so a subtitle file
+// carries its staleness stamp as a `NOTE en_md5 <hash>` block under the header.
+// `NOTE` is WebVTT's own comment syntax: every player skips it, so the stamp is
+// inert in the file it stamps, and it needs no second file to go missing.
+
+const VTT_NOTE = /^NOTE (en_md5|tidied_md5) ([0-9a-f]{32})\s*$/gm;
+
+/** The `NOTE <key> <hash>` stamps of a VTT, as { en_md5, tidied_md5 }. */
+export function parseVttNotes(text) {
+  const data = {};
+  for (const match of text.matchAll(VTT_NOTE)) data[match[1]] = match[2];
+  return data;
+}
+
+/**
+ * Write one `NOTE en_md5` stamp into a VTT, changing nothing else.
+ *
+ * Surgical for the same reason stampFrontmatter is: this edits a file a human
+ * may have hand-tuned, and every cue, timing and blank line is reproduced
+ * exactly. The stamp is replaced where one exists and inserted as its own block
+ * directly under the `WEBVTT` header where it does not, which is the only place
+ * a NOTE may precede the first cue.
+ */
+export function stampVttNote(raw, md5) {
+  if (/^NOTE en_md5 .*$/m.test(raw)) return raw.replace(/^NOTE en_md5 .*$/m, `NOTE en_md5 ${md5}`);
+
+  const header = /^(﻿?WEBVTT[^\n]*\r?\n)/.exec(raw);
+  if (!header) fail("cannot stamp a file with no WEBVTT header");
+  const eol = header[1].includes("\r\n") ? "\r\n" : "\n";
+  const rest = raw.slice(header[1].length);
+  // A NOTE block ends at a blank line, so one is guaranteed after it rather than
+  // borrowed from whatever happened to follow the header.
+  const separated = /^\r?\n/.test(rest) ? rest : `${eol}${rest}`;
+  return `${header[1]}${eol}NOTE en_md5 ${md5}${eol}${separated}`;
+}
+
+/** The timestamp lines of a VTT, in order. One per cue, so also the cue count. */
+const VTT_TIMESTAMP = /^(\d{2,}:)?\d{2}:\d{2}[.,]\d{3}\s+-->\s+(\d{2,}:)?\d{2}:\d{2}[.,]\d{3}/;
+
+export function vttTimestamps(text) {
+  return text
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => VTT_TIMESTAMP.test(line));
+}
+
+/**
+ * A VTT's caption text alone: no header, no NOTE block, no timing lines.
+ *
+ * This is the VTT analogue of a prose body, and it is what the copied-English
+ * check compares. Comparing whole files would never fire, because the target
+ * carries a stamp English does not.
+ */
+export function vttBody(text) {
+  const lines = [];
+  let inNote = false;
+  for (const raw of text.split(/\r?\n/)) {
+    const line = raw.trim();
+    if (/^﻿?WEBVTT\b/.test(line)) continue;
+    if (/^NOTE\b/.test(line)) {
+      inNote = true;
+      continue;
+    }
+    if (line === "") {
+      inNote = false;
+      continue;
+    }
+    if (inNote) continue;
+    if (VTT_TIMESTAMP.test(line)) continue;
+    lines.push(line);
+  }
+  return lines.join("\n");
+}
+
 // ----------------------------------------------------------- catalog trees --
 
 /** Flatten a nested catalog to { "dotted.key": "value" }, in depth-first source order. */
