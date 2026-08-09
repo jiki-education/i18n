@@ -1,8 +1,9 @@
 // Where English comes from, and what "the corpus" means without a registry.
 //
-// English is not stored in this repo. It is checked out from the front-end into
-// `.source/front-end/`, which is gitignored and ephemeral. Every script that
-// needs English reads it from there, through this module and nowhere else.
+// English is not stored in this repo. It is checked out from the repo it is
+// authored in into `.source/<id>/`, which is gitignored and ephemeral. Every
+// script that needs English reads it from there, through this module and nowhere
+// else.
 //
 // See ENGLISH-SOURCE.md for the model: which commit gets checked out on a PR
 // versus on main, and why the corpus is derived rather than tracked.
@@ -13,54 +14,95 @@ import { execFileSync } from "node:child_process";
 import { REPO_ROOT, TARGET_LOCALES, fail } from "./constants.mjs";
 import { CONTENT_TYPES, contentType, discoverItems, listItems, sourceRepoPath } from "./content-types.mjs";
 
-/** Where scripts/source-checkout.mjs and the CI checkout step put the front-end. */
-export const CHECKOUT_DIR = path.join(REPO_ROOT, ".source", "front-end");
+/**
+ * The repos English is authored in.
+ *
+ * Almost all of it is the front-end, and a content type that names no
+ * `sourceRepo` means that one. Video subtitles are the exception: they are cut
+ * from the rendered video, so they are authored in `videos` beside the footage
+ * and the Mux publishing pipeline that serves them. A content type therefore
+ * names WHICH repo its English comes from, and everything downstream of that
+ * (the checkout directory, the sparse paths, the env override) is a fact about
+ * the repo rather than about the type.
+ *
+ * `probe` is one English file the content-type map already knows the path of, so
+ * a source layout change cannot leave the probe pointing at a path that no longer
+ * exists — which would fail as "no checkout here", the least useful thing it
+ * could say. `dirs` is exactly what the sparse checkout takes.
+ */
+export const SOURCE_REPOS = {
+  "front-end": {
+    remote: "jiki-education/front-end",
+    env: "JIKI_SOURCE_REPO",
+    sibling: "front-end",
+    dirs: ["app/messages.json", "curriculum/src", "interpreters/src", "content/src"],
+    probe: () => CONTENT_TYPES["app-messages"].sourceRepoPath()
+  },
+  videos: {
+    remote: "jiki-education/videos",
+    env: "JIKI_VIDEOS_REPO",
+    sibling: "videos",
+    dirs: ["videos"],
+    probe: () => CONTENT_TYPES["video-subtitles"].sourceRepoPath("using-functions")
+  }
+};
 
-// The probe that says a directory really is a front-end checkout: one English
-// file the map knows
-// the path of. Read from the map rather than spelled out, so a source layout
-// change cannot leave the probe pointing at a path that no longer exists — which
-// would fail as "no checkout here", the least useful thing it could say.
-const PROBE = CONTENT_TYPES["app-messages"].sourceRepoPath();
+/** The source repo a content type's English is authored in. */
+export const DEFAULT_SOURCE_REPO = "front-end";
 
-let cached = null;
+export const SOURCE_REPO_IDS = Object.keys(SOURCE_REPOS);
+
+export function sourceRepoSpec(id) {
+  const spec = SOURCE_REPOS[id];
+  if (!spec) fail(`unknown source repo "${id}". Known: ${SOURCE_REPO_IDS.join(", ")}`);
+  return spec;
+}
+
+/** Where scripts/source-checkout.mjs and the CI checkout step put one source repo. */
+export function checkoutDir(id = DEFAULT_SOURCE_REPO) {
+  sourceRepoSpec(id);
+  return path.join(REPO_ROOT, ".source", id);
+}
+
+const cached = new Map();
 
 /**
- * Resolve the front-end checkout English is read from.
+ * Resolve the checkout English is read from, for one source repo.
  *
- * Order: an explicit --source-repo, JIKI_SOURCE_REPO, the checkout this repo
- * manages at .source/front-end, then a sibling working copy. The sibling is last
+ * Order: an explicit --source-repo, the repo's env override, the checkout this
+ * repo manages at .source/<id>, then a sibling working copy. The sibling is last
  * because it is whatever the developer happens to have checked out, which is the
  * right convenience locally and the wrong answer in CI.
  *
  * Failing here is a normal state for a fresh clone, so it says how to fix it
  * rather than reporting a missing file from somewhere three calls down.
  */
-export function englishRepo(explicit) {
-  if (!explicit && cached) return cached;
+export function englishRepo(id = DEFAULT_SOURCE_REPO, explicit) {
+  const spec = sourceRepoSpec(id);
+  if (!explicit && cached.has(id)) return cached.get(id);
 
-  const candidates = [
-    explicit,
-    process.env.JIKI_SOURCE_REPO,
-    CHECKOUT_DIR,
-    path.resolve(REPO_ROOT, "..", "front-end")
-  ].filter(Boolean);
+  const candidates = [explicit, process.env[spec.env], checkoutDir(id), path.resolve(REPO_ROOT, "..", spec.sibling)].filter(Boolean);
 
   for (const candidate of candidates) {
     const resolved = path.resolve(candidate);
-    if (fs.existsSync(path.join(resolved, PROBE))) {
-      if (!explicit) cached = resolved;
+    if (fs.existsSync(path.join(resolved, spec.probe()))) {
+      if (!explicit) cached.set(id, resolved);
       return resolved;
     }
   }
 
   fail(
-    `no front-end checkout to read English from. This repo holds no English of its own.\n` +
+    `no ${id} checkout to read English from. This repo holds no English of its own.\n` +
       `  Looked in: ${candidates.map((c) => path.resolve(c)).join(", ")}\n` +
-      `  Fetch one:  npm run source:checkout            (front-end main)\n` +
-      `              npm run source:checkout -- --ref=<sha>\n` +
-      `  Or point at one you already have:  --source-repo=<path>, or JIKI_SOURCE_REPO=<path>.`
+      `  Fetch one:  npm run source:checkout -- --source=${id}\n` +
+      `              npm run source:checkout -- --source=${id} --ref=<sha>\n` +
+      `  Or point at one you already have:  --source-repo=<path>, or ${spec.env}=<path>.`
   );
+}
+
+/** The checkout one content type's English is read from. */
+export function repoFor(typeId) {
+  return englishRepo(contentType(typeId).sourceRepo ?? DEFAULT_SOURCE_REPO);
 }
 
 /**
@@ -71,12 +113,15 @@ export function englishRepo(explicit) {
  * recording it is the whole reason the float is acceptable. Null when the
  * checkout is a working copy with uncommitted changes to English, which is a
  * local-only state and says so rather than reporting a SHA that is not the truth.
+ *
+ * The front-end only. Publish serves nothing whose English comes from anywhere
+ * else, so a second SHA would record a repo no published artifact was built from.
  */
 export function englishSha() {
   const repo = englishRepo();
   try {
     const head = execFileSync("git", ["rev-parse", "HEAD"], { cwd: repo, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim();
-    const dirty = execFileSync("git", ["status", "--porcelain", "--", ...ENGLISH_DIRS], {
+    const dirty = execFileSync("git", ["status", "--porcelain", "--", ...SOURCE_REPOS["front-end"].dirs], {
       cwd: repo,
       encoding: "utf8",
       stdio: ["ignore", "pipe", "ignore"]
@@ -87,17 +132,14 @@ export function englishSha() {
   }
 }
 
-/** Where English is authored. Also exactly what the sparse checkout takes. */
-export const ENGLISH_DIRS = ["app/messages.json", "curriculum/src", "interpreters/src", "content/src"];
-
-/** Absolute path to one item's English original, inside the checkout. */
+/** Absolute path to one item's English original, inside its source repo's checkout. */
 export function englishPath(typeId, slug) {
-  return sourceRepoPath(englishRepo(), typeId, slug);
+  return sourceRepoPath(repoFor(typeId), typeId, slug);
 }
 
 /** Every item of one type that English exists for. The REAL corpus, all of it. */
 export function englishItems(typeId) {
-  return discoverItems(englishRepo(), typeId);
+  return discoverItems(repoFor(typeId), typeId);
 }
 
 /**
@@ -166,7 +208,7 @@ export function corpusItems(typeId) {
 export function englishItem(typeId, slug) {
   const file = englishPath(typeId, slug);
   if (!fs.existsSync(file)) {
-    fail(`no English for ${typeId}${slug ? `/${slug}` : ""} at ${path.relative(englishRepo(), file)} in ${englishRepo()}`);
+    fail(`no English for ${typeId}${slug ? `/${slug}` : ""} at ${path.relative(repoFor(typeId), file)} in ${repoFor(typeId)}`);
   }
   return { type: typeId, slug: slug ?? null, path: file, slugged: contentType(typeId).slugged };
 }

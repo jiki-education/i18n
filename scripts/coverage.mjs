@@ -7,11 +7,12 @@
 //   node scripts/coverage.mjs [<locale|all>] [--json] [--type=<id>]
 //
 // Coverage is derived entirely from the files themselves, never from a tracking
-// file that has to be kept in step with them. English is read from a front-end
+// file that has to be kept in step with them. English is read from a source-repo
 // checkout; see ENGLISH-SOURCE.md. A catalog key is done unless it is
-// the sentinel; a prose page is done unless it is absent or its en_md5 no longer
-// matches the English source. That is what makes "what is left?" a question the
-// repo can always answer, including for a locale nobody has touched in months.
+// the sentinel; a prose page or subtitle file is done unless it is absent or its
+// en_md5 no longer matches the English source. That is what makes "what is left?"
+// a question the repo can always answer, including for a locale nobody has
+// touched in months.
 //
 // A locale is shippable (addable to the front-end's SUPPORTED_LOCALES) when
 // every line here reads 100% and `validate --shippable` passes.
@@ -20,8 +21,11 @@ import fs from "node:fs";
 import { SENTINEL, TARGET_LOCALES, assertTargetLocale } from "./lib/constants.mjs";
 import { CONTENT_TYPE_IDS, contentType, localPath, metaPath } from "./lib/content-types.mjs";
 import { corpusItems } from "./lib/english.mjs";
-import { countSentinels, md5File, parseFrontmatter, readJson, readText } from "./lib/files.mjs";
+import { countSentinels, md5File, parseFrontmatter, parseVttNotes, readJson, readText } from "./lib/files.mjs";
 import { parseArgs } from "./lib/args.mjs";
+
+/** What one row of a type counts. A catalog counts keys; everything else counts whole files. */
+const UNITS = { catalog: "keys", markdown: "pages", vtt: "videos" };
 
 function coverageFor(locale, typeIds) {
   const rows = [];
@@ -57,13 +61,17 @@ function coverageFor(locale, typeIds) {
           missing += 1;
           continue;
         }
-        const { data } = parseFrontmatter(readText(target));
-        if (data.en_md5 === md5File(item.path)) done += 1;
+        // One stamp, read from wherever the format can carry one: prose puts it
+        // in frontmatter, a VTT in a `NOTE en_md5` block. The question either way
+        // is whether it still matches the English on disk.
+        const stamp =
+          type.staleness === "note" ? parseVttNotes(readText(target)).en_md5 : parseFrontmatter(readText(target)).data.en_md5;
+        if (stamp === md5File(item.path)) done += 1;
         else stale += 1;
       }
     }
 
-    rows.push({ type: typeId, unit: type.format === "catalog" ? "keys" : "pages", total, done, stale, missing });
+    rows.push({ type: typeId, unit: UNITS[type.format] ?? "items", total, done, stale, missing });
   }
 
   return rows;

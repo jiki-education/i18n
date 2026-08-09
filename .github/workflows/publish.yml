@@ -55,6 +55,18 @@ jobs:
             interpreters/src
             content/src
 
+      # Subtitles are the one content type whose English is not the front-end's:
+      # they are cut from the rendered video and authored beside it. Nothing here
+      # publishes them (Mux serves them), but the validate step below reads them.
+      - name: Check out English subtitles
+        uses: actions/checkout@v4
+        with:
+          repository: jiki-education/videos
+          ref: main
+          path: .source/videos
+          sparse-checkout: |
+            videos
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20

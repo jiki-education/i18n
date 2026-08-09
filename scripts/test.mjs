@@ -12,7 +12,7 @@
 
 import assert from "node:assert/strict";
 import { deepMerge, mergeExerciseCatalogs } from "./lib/families.mjs";
-import { contentHash, stampFrontmatter } from "./lib/files.mjs";
+import { contentHash, parseVttNotes, stampFrontmatter, stampVttNote, vttBody, vttTimestamps } from "./lib/files.mjs";
 import { findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 
@@ -192,6 +192,43 @@ test("quoting, indentation and multi-line sequences survive a stamp", () => {
 test("the body is untouched, including a body that contains ---", () => {
   const raw = "---\ntitle: T\n---\nBefore\n\n---\n\nAfter\n";
   assert.equal(stampFrontmatter(raw, "y"), "---\ntitle: T\nen_md5: y\n---\nBefore\n\n---\n\nAfter\n");
+});
+
+// ------------------------------------------------------------ the VTT stamp
+
+// Same job, a format with no frontmatter. The stamp is a WebVTT NOTE block, and
+// every cue and timing has to come back byte for byte: a subtitle file is
+// displayed against a video that was not re-cut for it.
+
+console.log("\nthe VTT staleness stamp:");
+
+const VTT = "WEBVTT\n\n00:00:00.000 --> 00:00:01.000\nHello\n";
+
+test("a missing stamp is inserted under the header, terminated by a blank line", () => {
+  assert.equal(stampVttNote(VTT, "abc"), "WEBVTT\n\nNOTE en_md5 abc\n\n00:00:00.000 --> 00:00:01.000\nHello\n");
+});
+
+test("a header with no blank line after it still gets a terminated NOTE block", () => {
+  const raw = "WEBVTT\n00:00:00.000 --> 00:00:01.000\nHello\n";
+  assert.equal(stampVttNote(raw, "abc"), "WEBVTT\n\nNOTE en_md5 abc\n\n00:00:00.000 --> 00:00:01.000\nHello\n");
+});
+
+test("an existing stamp is replaced in place, and stamping is idempotent", () => {
+  const once = stampVttNote(VTT, "abc");
+  assert.equal(stampVttNote(once, "abc"), once);
+  assert.equal(stampVttNote(once, "def"), once.replace("abc", "def"));
+});
+
+test("the stamp round-trips through the reader, and a human NOTE is not one", () => {
+  assert.deepEqual(parseVttNotes(stampVttNote(VTT, "d41d8cd98f00b204e9800998ecf8427e")), {
+    en_md5: "d41d8cd98f00b204e9800998ecf8427e"
+  });
+  assert.deepEqual(parseVttNotes("WEBVTT\n\nNOTE a human comment\n\n00:00:00.000 --> 00:00:01.000\nHi\n"), {});
+});
+
+test("cue timings and caption text survive a stamp", () => {
+  assert.equal(vttTimestamps(stampVttNote(VTT, "abc")).join(), "00:00:00.000 --> 00:00:01.000");
+  assert.equal(vttBody(stampVttNote(VTT, "abc")), "Hello");
 });
 
 // ---------------------------------------------------------- the R2 key guard

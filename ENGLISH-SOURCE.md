@@ -1,11 +1,30 @@
 # Where English comes from
 
-English is not stored in this repo. It is checked out from the front-end into
-`.source/front-end/`, which is gitignored and ephemeral, and `locales/` holds
-nothing but target locales.
+English is not stored in this repo. It is checked out from the repo it is
+authored in into `.source/<repo>/`, which is gitignored and ephemeral, and
+`locales/` holds nothing but target locales.
 
 Every script that needs English reads it from there. Nothing here writes it, and
 nothing here can: there is no English directory under `locales/` to write to.
+
+## Which repo
+
+Almost all English is the front-end's, authored beside the code that renders it,
+and a content type that names no `sourceRepo` means that one.
+
+Video subtitles are the exception. They are cut from the rendered video, so they
+are authored in the `videos` repo beside the footage and the Mux pipeline that
+serves them, and their content type names `sourceRepo: "videos"`. The list of
+repos, with each one's env override, sparse paths and probe file, is
+`SOURCE_REPOS` in `scripts/lib/english.mjs`. `npm run source:checkout -- --source=videos`
+fetches it locally, and CI has an `actions/checkout` step for the same
+destination.
+
+The `English-Ref:` pin below names a front-end commit, so it applies to the
+front-end alone. `videos` is read at `main` everywhere. English subtitles change
+only when a video is re-cut, which is rare and produces a new video key more
+often than it edits an existing one, so pinning it would be a lifecycle for a
+case that does not arise.
 
 ## Which English
 
@@ -130,7 +149,10 @@ A front-end checkout in every validate and publish run, where today they need
 nothing. The front-end is large, so it is a shallow, sparse checkout of the four
 paths English lives in, not a clone.
 
-Local runs need English too. `scripts/lib/english.mjs` resolves it from, in
-order: `--source-repo=`, `JIKI_SOURCE_REPO`, `.source/front-end`, and a sibling
-`../front-end` checkout. When it finds none it says so and says how to get one
-(`npm run source:checkout`), rather than reporting a missing file.
+Local runs need English too. `scripts/lib/english.mjs` resolves each source repo
+from, in order: `--source-repo=`, that repo's env override (`JIKI_SOURCE_REPO`,
+`JIKI_VIDEOS_REPO`), `.source/<repo>`, and a sibling checkout. When it finds none
+it says so and says how to get one (`npm run source:checkout`), rather than
+reporting a missing file. A repo is resolved only when something actually reads
+from it, so a run narrowed to one content type never demands a checkout it will
+not open.

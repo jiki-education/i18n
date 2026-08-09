@@ -2,8 +2,9 @@
 
 Jiki's translated output, and the scripts that produce and publish it.
 
-`locales/` holds nothing but target locales. English is authored in the front-end and read
-from a checkout of it at `.source/front-end`, which is gitignored and ephemeral. See
+`locales/` holds nothing but target locales. English is authored beside the code that renders
+it, and read from a checkout of that repo at `.source/<repo>`, which is gitignored and
+ephemeral: the front-end for almost everything, `videos` for the English subtitle track. See
 [ENGLISH-SOURCE.md](./ENGLISH-SOURCE.md) for that model, and [CLAUDE.md](./CLAUDE.md) for
 everything else.
 
@@ -12,14 +13,16 @@ everything else.
 ```bash
 npm install                              # only the prose renderer needs it
 npm run source:checkout                  # fetch English (front-end main, shallow + sparse)
+npm run source:checkout -- --source=videos   # ...and the English subtitle track
 
 node scripts/coverage.mjs                # what is translated, stale, missing
 node scripts/validate.mjs all --no-stamp # the CI gate
 node scripts/publish.mjs hu              # build the R2 artifacts into dist/
 ```
 
-Already have a front-end checkout? Point at it instead: `--source-repo=<path>`, or
-`JIKI_SOURCE_REPO=<path>`. A sibling `../front-end` is found automatically.
+Already have a checkout? Point at it instead: `--source-repo=<path>`, or the repo's env
+override (`JIKI_SOURCE_REPO`, `JIKI_VIDEOS_REPO`). A sibling `../front-end` or `../videos` is
+found automatically.
 
 Adding an item to the corpus. There is no registry: an explicit `--type`/`--slug` resolves
 against English directly, and the item is in the corpus from the moment a locale holds it.

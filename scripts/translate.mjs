@@ -116,6 +116,12 @@ function resolveScope({ locale, typeIds, slug, mode }) {
 
   for (const typeId of typeIds) {
     const type = contentType(typeId);
+    // A type that is not translated by a scripted API call is skipped outright
+    // rather than half-handled. Video subtitles are the only one: the pass maps
+    // the English transcript onto the already-translated concept page and re-cuts
+    // the result onto the English cue timings, which is judgment work an engine
+    // cannot do, so it runs as /translate-video-subtitles in the translator repo.
+    if (type.scriptedTranslation === false) continue;
     for (const item of scopeItems(typeId, { slug })) {
       const target = localPath(typeId, locale, item.slug);
       const englishMd5 = md5File(item.path);
@@ -257,6 +263,11 @@ async function main() {
   if (!["outdated", "all", "missing"].includes(mode)) fail(`unknown --mode "${mode}". Use outdated, all or missing.`);
 
   const typeIds = args.flags.type ? [contentType(args.flags.type) && args.flags.type] : CONTENT_TYPE_IDS;
+  // Asked for by name, a type this script does not translate is an error rather
+  // than a silent skip: "nothing to do" would read as "already up to date".
+  if (args.flags.type && contentType(args.flags.type).scriptedTranslation === false) {
+    fail(`"${args.flags.type}" is not translated by a scripted pass. Run /translate-video-subtitles in the translator repo.`);
+  }
   const translatorRepo = path.resolve(args.flags["translator-repo"] || process.env.JIKI_TRANSLATOR_REPO || path.join(REPO_ROOT, "..", "translator"));
   const dryRun = Boolean(args.flags["dry-run"]);
 
