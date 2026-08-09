@@ -1,0 +1,177 @@
+WEBVTT
+
+NOTE en_md5 a59a1b57ba6073109ec594f8e88d8ef2
+
+00:00:00.000 --> 00:00:03.662
+Zdravo ponovo. Do sada, kada pišeš funkcije,
+
+00:00:04.173 --> 00:00:06.032
+svaka je uglavnom stajala na svojim
+
+00:00:06.113 --> 00:00:08.353
+nogama i sadržavala svu logiku
+
+00:00:08.373 --> 00:00:11.003
+koja joj je potrebna za rad. U ovoj lekciji
+
+00:00:11.033 --> 00:00:13.453
+ćemo pogledati kako da razbijemo funkcije
+
+00:00:13.473 --> 00:00:16.493
+tako da imamo manje funkcije koje rade zajedno,
+
+00:00:16.563 --> 00:00:18.893
+umesto velikih funkcija sa mnogo toga
+
+00:00:18.953 --> 00:00:22.253
+unutra. Kao opšte pravilo u programiranju,
+
+00:00:22.293 --> 00:00:24.313
+želiš da svaka funkcija uradi
+
+00:00:24.413 --> 00:00:27.533
+što manje može. To nazivamo da funkcija ima
+
+00:00:27.713 --> 00:00:31.333
+jednu odgovornost. Svaka funkcija treba da radi
+
+00:00:31.413 --> 00:00:34.113
+samo jednu stvar i da koristi druge funkcije
+
+00:00:34.253 --> 00:00:36.913
+za različite poddelove toga. Hajde da pogledamo
+
+00:00:36.953 --> 00:00:40.393
+primer. Zamisli da imamo funkciju čiji je posao
+
+00:00:40.433 --> 00:00:43.613
+da vrati string koji opisuje
+
+00:00:43.653 --> 00:00:46.193
+ime. Jednostavna verzija bi izgledala
+
+00:00:46.233 --> 00:00:48.893
+ovako. Imamo petlju za brojanje, nešto
+
+00:00:48.933 --> 00:00:52.033
+što već umeš da napišeš, a zatim string šablon
+
+00:00:52.073 --> 00:00:55.553
+koji sklapa rezultat. Ovo radi
+
+00:00:55.573 --> 00:00:58.023
+dobro, ali radi dve stvari. Radi
+
+00:00:58.113 --> 00:01:01.723
+jednu prilično opštu stvar, brojanje, i drugu veoma
+
+00:01:01.893 --> 00:01:04.873
+specifičnu stvar, sastavljanje ovog stringa u
+
+00:01:04.893 --> 00:01:09.102
+određenom formatu. Bilo bi mnogo lepše razbiti
+
+00:01:09.133 --> 00:01:12.263
+ovo na dve funkcije, jednu koja je odgovorna
+
+00:01:12.293 --> 00:01:15.893
+za brojanje i drugu koja je odgovorna za opisivanje
+
+00:01:15.903 --> 00:01:19.133
+imena u ovom konkretnom formatu. I onda
+
+00:01:19.173 --> 00:01:23.323
+možemo ponovo iskoristiti tu opštu funkciju za brojanje
+
+00:01:23.333 --> 00:01:27.083
+u ovom formatiranju stringa, ali i na bilo kom
+
+00:01:27.173 --> 00:01:29.412
+drugom mestu gde nam zatreba. Kad god treba
+
+00:01:29.473 --> 00:01:32.333
+da prebrojimo slova u stringu, to je potpuno odvojeno
+
+00:01:32.393 --> 00:01:35.633
+od svega što ima veze sa ispisom. Obe funkcije
+
+00:01:35.653 --> 00:01:39.813
+možeš čitati izolovano i odmah razumeti
+
+00:01:39.873 --> 00:01:43.153
+šta svaka od njih radi. Kako tvoje funkcije
+
+00:01:43.193 --> 00:01:45.203
+postaju složenije i kako ih
+
+00:01:45.203 --> 00:01:47.513
+imaš više, ova tehnika je
+
+00:01:47.573 --> 00:01:51.793
+razlika između čistog, čitljivog koda i
+
+00:01:52.013 --> 00:01:54.833
+potpune zbrke i haosa. Ima jedna stvar
+
+00:01:54.853 --> 00:01:56.553
+koju sam već pomenuo nekoliko puta, ali
+
+00:01:56.593 --> 00:01:58.793
+želim da je ponovo pomenem ovde, a to je
+
+00:01:58.853 --> 00:02:02.213
+da bilo šta što napraviš unutar funkcije ne može
+
+00:02:02.253 --> 00:02:05.933
+da bude dostupno drugim funkcijama, osim ako to namerno
+
+00:02:05.973 --> 00:02:09.313
+ne vratiš. Pa ako pokušaš da referenciraš
+
+00:02:09.333 --> 00:02:14.053
+promenljivu count iz unutrašnjosti funkcije describeName,
+
+00:02:14.113 --> 00:02:15.763
+ne možeš to učiniti, jer pripada
+
+00:02:15.833 --> 00:02:19.633
+drugoj funkciji. U JavaScript-u možemo da napravimo
+
+00:02:19.693 --> 00:02:22.553
+promenljive na vrhu, iznad svega, koje su
+
+00:02:22.613 --> 00:02:25.713
+deljene između funkcija, ali stvarno preporučujem
+
+00:02:25.873 --> 00:02:27.973
+da to ne radiš osim ako nemaš stvarno dobar
+
+00:02:27.993 --> 00:02:32.193
+razlog. Što više držiš svaku funkciju nezavisnom,
+
+00:02:32.253 --> 00:02:34.253
+a tehnički termin za to je pure, čista,
+
+00:02:34.553 --> 00:02:38.393
+čiste funkcije, to će tvoj kod biti čistiji
+
+00:02:38.413 --> 00:02:40.493
+i manje ćeš grešaka praviti
+
+00:02:40.533 --> 00:02:42.763
+i imati. U narednih nekoliko vežbi
+
+00:02:42.773 --> 00:02:45.213
+pisaćeš funkcije koje rade zajedno da bi
+
+00:02:45.313 --> 00:02:48.613
+rešile probleme, jedna funkcija poziva drugu, svaka
+
+00:02:48.693 --> 00:02:51.613
+radi svoj mali posao. Ne žuri
+
+00:02:51.633 --> 00:02:53.113
+sa njima, i vidimo se ovde
+
+00:02:53.153 --> 00:02:53.433
+uskoro

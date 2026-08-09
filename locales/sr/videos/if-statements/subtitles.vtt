@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 01e55797f6d7badd90ea909a2a995db9
+
+00:00:00.280 --> 00:00:03.680
+Zdravo ponovo. Do sada znaš dve ključne reči,
+
+00:00:03.800 --> 00:00:07.760
+dve instrukcije koje Jiki razume: let i
+
+00:00:07.800 --> 00:00:10.720
+repeat. U ovom videu učimo još jednu
+
+00:00:10.820 --> 00:00:12.820
+novu ključnu reč, i to onu koja
+
+00:00:12.900 --> 00:00:15.570
+nam pomaže da kažemo Jikiju da nešto
+
+00:00:15.660 --> 00:00:20.400
+uradi samo u određenim situacijama. Možda pišeš
+
+00:00:20.420 --> 00:00:22.850
+kod koji čuva ulaz u
+
+00:00:22.860 --> 00:00:25.510
+bar, recimo da si izbacivač, i Jiki treba
+
+00:00:25.600 --> 00:00:28.880
+da otvori vrata samo ako je neko prikladno obučen.
+
+00:00:30.040 --> 00:00:32.470
+Ili možda pišeš kod u kome si
+
+00:00:32.500 --> 00:00:34.990
+zadužen da mahneš kariranom zastavicom na
+
+00:00:35.020 --> 00:00:38.110
+kraju trke, ali Jiki mora
+
+00:00:38.160 --> 00:00:39.740
+da zna da to treba da uradi
+
+00:00:39.780 --> 00:00:43.220
+samo u poslednjem krugu. U ovakvim
+
+00:00:43.320 --> 00:00:46.080
+situacijama koristićemo ključnu reč if.
+
+00:00:47.760 --> 00:00:50.160
+Ključnu reč if koristimo vrlo
+
+00:00:50.220 --> 00:00:53.320
+slično kao i repeat. U obične zagrade
+
+00:00:53.380 --> 00:00:56.400
+stavljamo neku informaciju. U ovom slučaju,
+
+00:00:56.940 --> 00:00:59.260
+ta informacija je uslov koji proveravamo.
+
+00:00:59.330 --> 00:01:00.600
+Više o tome uskoro.
+
+00:01:01.280 --> 00:01:03.040
+A zatim u vitičaste zagrade
+
+00:01:03.240 --> 00:01:06.100
+stavljamo blok koda koji se izvršava
+
+00:01:06.380 --> 00:01:10.520
+samo ako je taj uslov tačan. Pa kako
+
+00:01:10.540 --> 00:01:13.620
+ti uslovi izgledaju? Obično su to
+
+00:01:13.660 --> 00:01:16.580
+neka vrsta poređenja. Uporedimo dva broja
+
+00:01:16.680 --> 00:01:19.300
+ili stringa i proverimo da li je rezultat
+
+00:01:19.380 --> 00:01:23.580
+tačan ili netačan. Zamisli ih kao
+
+00:01:23.640 --> 00:01:26.580
+iskaze koje možeš da izgovoriš naglas. Tri
+
+00:01:26.640 --> 00:01:30.620
+je manje od pet. To je tačno. Sedam
+
+00:01:30.680 --> 00:01:35.420
+je manje od dva. To je netačno. Za zapisivanje
+
+00:01:35.500 --> 00:01:38.480
+ovih poređenja koristimo simbole. Verovatno su ti
+
+00:01:38.520 --> 00:01:41.040
+već poznati iz matematike. Imamo manje od,
+
+00:01:41.060 --> 00:01:44.140
+veće od, manje ili jednako,
+
+00:01:44.620 --> 00:01:46.940
+veće ili jednako, a imamo
+
+00:01:47.000 --> 00:01:48.600
+i proveru da li su dve
+
+00:01:48.610 --> 00:01:51.570
+stvari iste, da li su jednake.
+
+00:01:51.600 --> 00:01:54.360
+Ta provera je malo drugačija nego
+
+00:01:54.400 --> 00:01:58.440
+što verovatno očekuješ, jer pišemo tri
+
+00:01:58.500 --> 00:02:00.580
+znaka jednakosti zaredom da proverimo
+
+00:02:00.680 --> 00:02:04.040
+da li su dve stvari iste ili različite. A to
+
+00:02:04.080 --> 00:02:06.820
+nam pomaže da se ne pomešamo sa situacijama
+
+00:02:06.900 --> 00:02:09.720
+kada postavljamo ili menjamo promenljive, gde
+
+00:02:09.780 --> 00:02:11.540
+znak jednakosti znači stavi ovo u
+
+00:02:11.580 --> 00:02:15.900
+kutiju. Samo zapamti: tri znaka jednakosti za poređenje.
+
+00:02:17.720 --> 00:02:21.140
+Možeš da porediš i stringove. Dakle, hello
+
+00:02:21.400 --> 00:02:24.630
+jednako hello. To je tačno. Ta dva stringa su
+
+00:02:24.640 --> 00:02:27.300
+ista. Ali ovde budi na oprezu, jer Jiki
+
+00:02:27.380 --> 00:02:31.320
+poredi svaki pojedinačni karakter u oba stringa,
+
+00:02:31.360 --> 00:02:34.720
+na oba papirića. Zato Hello sa
+
+00:02:34.800 --> 00:02:38.420
+velikim H nije jednako hello sa
+
+00:02:38.430 --> 00:02:41.430
+malim h. To su različiti stringovi. Njihovo
+
+00:02:41.460 --> 00:02:44.000
+poređenje bi bilo netačno, jer su veliko H
+
+00:02:44.460 --> 00:02:49.290
+i malo h različiti karakteri.
+
+00:02:49.500 --> 00:02:51.390
+Uzgred, tačno i netačno se
+
+00:02:51.420 --> 00:02:56.230
+zovu Booleans, što je još jedna reč koja zvuči tehnički.
+
+00:02:56.280 --> 00:02:58.370
+Ali je vrlo jednostavna. To je samo
+
+00:02:58.480 --> 00:03:01.080
+formalan način da se kaže da je nešto
+
+00:03:01.140 --> 00:03:03.220
+ili tačno ili netačno. Ako čuješ mene
+
+00:03:03.260 --> 00:03:05.530
+ili nekog drugog da kaže Boolean, to znači
+
+00:03:05.580 --> 00:03:09.020
+tačno ili netačno. Hajde da vidimo ovo
+
+00:03:09.040 --> 00:03:12.660
+na delu. Zamisli da pravimo tog robota izbacivača
+
+00:03:12.740 --> 00:03:15.360
+za klub, i reći ćemo da izbacivač
+
+00:03:15.400 --> 00:03:18.220
+treba da otvori vrata samo ako osoba
+
+00:03:18.280 --> 00:03:22.560
+ima 21 godinu ili više. Imamo
+
+00:03:22.640 --> 00:03:25.000
+funkciju askAge, kojom možemo
+
+00:03:25.020 --> 00:03:27.320
+da saznamo nečije godine, a rezultat
+
+00:03:27.340 --> 00:03:29.660
+ćemo sačuvati u promenljivoj age.
+
+00:03:30.620 --> 00:03:32.620
+Onda možemo da kažemo: ako je age
+
+00:03:33.100 --> 00:03:35.840
+veće od 20, otvorićemo vrata.
+
+00:03:36.780 --> 00:03:40.260
+Dakle, ako askAge vrati 30, otvaramo
+
+00:03:40.300 --> 00:03:43.620
+ih, a ako vrati 12, ne otvaramo.
+
+00:03:45.440 --> 00:03:47.549
+U sledećoj vežbi koristićeš
+
+00:03:47.600 --> 00:03:50.920
+if naredbu da donosiš odluke u svom kodu.
+
+00:03:51.000 --> 00:03:54.120
+Proveravaćeš uslove i izvršavaćeš određeni kod
+
+00:03:54.160 --> 00:03:57.420
+samo kada su ti uslovi tačni. Sledeće dve
+
+00:03:57.430 --> 00:03:59.360
+su jednostavne, a onda prelazimo
+
+00:03:59.440 --> 00:04:02.210
+na nekoliko složenijih. Kao
+
+00:04:02.280 --> 00:04:05.109
+i uvek, sve u ovim vežbama koristi ono o čemu
+
+00:04:05.120 --> 00:04:07.240
+smo već pričali. Ako se malo izgubiš,
+
+00:04:07.420 --> 00:04:09.160
+pogledaj linkove ka konceptima
+
+00:04:09.180 --> 00:04:11.960
+na dnu uputstva i podseti se svega što
+
+00:04:12.000 --> 00:04:14.200
+ti je možda promaklo. Srećno, vidimo se
+
+00:04:14.220 --> 00:04:14.990
+ovde uskoro.

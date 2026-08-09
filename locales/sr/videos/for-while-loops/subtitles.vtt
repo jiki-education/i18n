@@ -1,0 +1,339 @@
+WEBVTT
+
+NOTE en_md5 d4b8c72f7a92dfb1d6fb4eb412fdc752
+
+00:00:00.400 --> 00:00:03.469
+Zdravo ponovo. Do sada znamo dve petlje,
+
+00:00:03.780 --> 00:00:06.580
+repeat petlju i for-of petlju.
+
+00:00:06.620 --> 00:00:08.109
+U ovoj lekciji ćemo pogledati
+
+00:00:08.200 --> 00:00:10.940
+još dve petlje i dve korisne tehnike sa
+
+00:00:11.000 --> 00:00:14.140
+petljama. Možda se sećaš da sam spomenuo
+
+00:00:14.200 --> 00:00:15.980
+na samom početku da repeat petlja
+
+00:00:16.020 --> 00:00:18.690
+zapravo ne postoji u JavaScriptu. To je samo nešto
+
+00:00:18.860 --> 00:00:20.340
+što sam dodao da ti malo
+
+00:00:20.380 --> 00:00:23.190
+olakšam život dok se zagrevamo. Pa šta
+
+00:00:23.200 --> 00:00:25.580
+onda koristimo umesto nje? Koristimo
+
+00:00:25.660 --> 00:00:28.150
+običnu for petlju, a ona izgleda ovako.
+
+00:00:29.380 --> 00:00:30.920
+Nadam se da ti je jasno zašto je ovo
+
+00:00:30.940 --> 00:00:32.940
+prvog dana moglo da deluje pomalo
+
+00:00:32.960 --> 00:00:35.120
+zastrašujuće. Ali sada imaš sve
+
+00:00:35.140 --> 00:00:37.280
+znanje koje ti treba da se navikneš na ovo.
+
+00:00:37.360 --> 00:00:40.340
+Zato hajde da je raščlanimo. for petlja
+
+00:00:40.360 --> 00:00:44.620
+ima tri dela: inicijalizator, uslov i
+
+00:00:44.640 --> 00:00:49.769
+uvećanje. Inicijalizator, ovaj deo let i =
+
+00:00:49.840 --> 00:00:52.220
+0, izvršava se na početku
+
+00:00:52.260 --> 00:00:54.920
+cele petlje. Izvrši se samo jednom, i
+
+00:00:54.980 --> 00:00:58.240
+ovde pravi kutiju po imenu i
+
+00:00:58.340 --> 00:01:02.520
+postavljenu na nulu. Sledeći deo, uslov,
+
+00:01:03.240 --> 00:01:08.600
+izvršava se pre svake iteracije petlje. Ako
+
+00:01:08.640 --> 00:01:11.100
+je uslov tačan, petlju izvršavamo
+
+00:01:11.110 --> 00:01:15.580
+ponovo. Ako nije, ne izvršavamo je. I onda
+
+00:01:15.660 --> 00:01:18.580
+na kraju dolazi uvećanje, ono i++.
+
+00:01:19.400 --> 00:01:21.420
+i++ znači isto
+
+00:01:21.460 --> 00:01:24.420
+što i i = i + 1. To je samo
+
+00:01:24.460 --> 00:01:26.880
+skraćeni zapis, način da se i svaki put
+
+00:01:26.940 --> 00:01:31.200
+uveća za jedan. Dakle, u ovom primeru
+
+00:01:31.280 --> 00:01:34.200
+postavljamo i na nulu. Proveravamo da li je i
+
+00:01:34.240 --> 00:01:36.300
+manje od dva, a jeste, pa
+
+00:01:36.380 --> 00:01:38.360
+izvršimo petlju. A onda na
+
+00:01:38.400 --> 00:01:41.640
+kraju uvećamo i za jedan, pa
+
+00:01:42.060 --> 00:01:44.380
+i postane jedan. Nula plus jedan je jedan.
+
+00:01:45.500 --> 00:01:47.400
+I onda idemo ponovo. Proveravamo da li je
+
+00:01:47.580 --> 00:01:50.780
+jedan manje od dva. Jeste, pa
+
+00:01:50.800 --> 00:01:52.580
+izvršimo petlju. A onda na
+
+00:01:52.620 --> 00:01:55.140
+kraju ponovo uvećamo i. Sada je
+
+00:01:55.240 --> 00:01:58.300
+dva, jedan plus jedan jednako je dva. I onda
+
+00:01:58.340 --> 00:02:00.440
+idemo treći put. Ovog puta
+
+00:02:00.480 --> 00:02:02.970
+proveravamo da li je dva manje od dva, a
+
+00:02:02.980 --> 00:02:05.680
+nije, pa petlju ne izvršavamo,
+
+00:02:05.780 --> 00:02:07.140
+i sa petljom smo, zapravo, gotovi.
+
+00:02:07.540 --> 00:02:10.539
+Samo prelazimo na kod koji sledi ispod.
+
+00:02:10.640 --> 00:02:13.360
+Dakle, petlja se izvršila dvaput, i
+
+00:02:13.400 --> 00:02:16.100
+to je korisno znati. Sve dok
+
+00:02:16.140 --> 00:02:18.320
+krećemo od nule i imamo
+
+00:02:18.360 --> 00:02:21.460
+uslov „manje od“, broj koji tu
+
+00:02:21.520 --> 00:02:23.780
+stavimo, ovde dva, jeste broj
+
+00:02:23.840 --> 00:02:26.530
+koliko će se puta petlja izvršiti. Dakle, ovo
+
+00:02:26.580 --> 00:02:28.900
+je isto kao da kažeš repeat dva.
+
+00:02:30.440 --> 00:02:33.020
+Znači, nije teško, ali je mnogo
+
+00:02:33.060 --> 00:02:38.120
+zamršenije nego da samo napišeš repeat dva. Sledeća
+
+00:02:38.180 --> 00:02:40.380
+petlja koju treba da upoznaš je while petlja.
+
+00:02:41.420 --> 00:02:45.800
+Ona kaže: „Dok važi neki uslov, izvršavaj petlju.“
+
+00:02:45.840 --> 00:02:47.190
+Recimo da imamo pravilo da
+
+00:02:47.190 --> 00:02:49.710
+u igri Space Invaders možeš da pucaš
+
+00:02:49.740 --> 00:02:52.130
+samo pet puta. Onda bismo ovde imali petlju
+
+00:02:52.160 --> 00:02:54.170
+koja kaže: dok je broj hitaca manji
+
+00:02:54.200 --> 00:02:56.940
+od pet, izvršavaj petlju koja igraču
+
+00:02:56.960 --> 00:03:00.340
+omogućava da igra igru. Svaki put kada neko puca,
+
+00:03:00.680 --> 00:03:04.000
+uvećamo numShots za jedan, i na kraju
+
+00:03:04.480 --> 00:03:06.040
+ćemo stići do pet i petlja će se završiti.
+
+00:03:07.100 --> 00:03:08.880
+E sad, jedan problem sa while petljama je
+
+00:03:08.920 --> 00:03:11.440
+to što je prilično lako napraviti bugove
+
+00:03:11.480 --> 00:03:14.040
+zbog kojih se petlja nikada ne završi. Takve petlje
+
+00:03:14.120 --> 00:03:15.890
+zovemo beskonačne petlje, i one su jedan
+
+00:03:15.940 --> 00:03:20.010
+od najčešćih bugova u programima. Kada ti se računar
+
+00:03:20.020 --> 00:03:23.020
+uspori, ventilatori počnu da se vrte i sve postane glasno,
+
+00:03:23.060 --> 00:03:25.860
+to je često zato što je neko u svom kodu
+
+00:03:25.880 --> 00:03:29.380
+ostavio beskonačnu petlju. Dobro, još dve
+
+00:03:29.460 --> 00:03:32.280
+ključne reči u ovom brzom videu. Prva
+
+00:03:32.320 --> 00:03:35.300
+je ključna reč break. Možeš da je koristiš
+
+00:03:35.320 --> 00:03:37.680
+bilo gde u telu bilo koje petlje.
+
+00:03:38.760 --> 00:03:40.720
+Deo između vitičastih zagrada, to je
+
+00:03:40.780 --> 00:03:43.840
+telo. I kada ga Jiki vidi, odmah će
+
+00:03:43.880 --> 00:03:46.100
+izaći iz petlje i preći
+
+00:03:46.160 --> 00:03:48.780
+na kod koji dolazi ispod petlje. Zato,
+
+00:03:48.880 --> 00:03:50.600
+ako imamo ograničenje da se ova petlja
+
+00:03:50.660 --> 00:03:53.280
+izvrši 50 puta, ali želimo da stanemo
+
+00:03:53.420 --> 00:03:55.960
+ako korisnik puca pet puta, mogli bismo
+
+00:03:56.000 --> 00:03:58.140
+da imamo for petlju na početku koja
+
+00:03:58.200 --> 00:04:00.940
+kaže: od i = 0 dok je manje od
+
+00:04:01.120 --> 00:04:03.300
+50. Ali zatim bismo mogli da imamo uslov
+
+00:04:03.340 --> 00:04:04.720
+u sredini petlje koji kaže:
+
+00:04:04.880 --> 00:04:07.720
+ako je numShots veće ili jednako
+
+00:04:07.780 --> 00:04:12.520
+pet, onda break, prekini petlju. Ponekad
+
+00:04:12.560 --> 00:04:14.880
+želimo da preskočimo
+
+00:04:14.890 --> 00:04:18.600
+određenu iteraciju petlje, umesto da iz nje izađemo. Zamisli da
+
+00:04:18.680 --> 00:04:20.780
+hoćemo da radimo samo sa neparnim brojevima.
+
+00:04:21.600 --> 00:04:22.930
+Hoćemo da možemo da kažemo: ako je
+
+00:04:23.020 --> 00:04:25.780
+i neparan, nemoj da pokrećeš petlju
+
+00:04:25.840 --> 00:04:28.380
+ovaj put. Ali ne želimo potpuno
+
+00:04:28.420 --> 00:04:30.280
+da izađemo iz petlje. Samo želimo da preskočimo
+
+00:04:30.320 --> 00:04:32.670
+ovu jednu iteraciju i onda pogledamo
+
+00:04:32.720 --> 00:04:35.600
+sledeću. Za to imamo još jednu
+
+00:04:35.640 --> 00:04:40.380
+ključnu reč koja se zove continue. Kada Jiki vidi continue,
+
+00:04:40.420 --> 00:04:42.180
+on samo skoči nazad na vrh
+
+00:04:42.220 --> 00:04:44.820
+petlje i započne sledeću iteraciju. Tako u
+
+00:04:44.860 --> 00:04:47.200
+for-of petlji, ako vidi continue,
+
+00:04:47.260 --> 00:04:48.580
+prelazi na sledeći element
+
+00:04:48.640 --> 00:04:51.780
+u nizu. U for petlji, nailazi na
+
+00:04:51.840 --> 00:04:54.400
+uvećanje i++, a onda
+
+00:04:54.480 --> 00:04:57.980
+započinje sledeću iteraciju. Dakle, imamo for
+
+00:04:58.060 --> 00:05:00.800
+petlje, while petlje, break i continue. Puno
+
+00:05:00.840 --> 00:05:02.440
+informacija u ovom videu, ali možeš da
+
+00:05:02.500 --> 00:05:04.550
+se vratiš i pogledaš ga kad god poželiš,
+
+00:05:04.580 --> 00:05:07.080
+a za svaku temu postoje i stranice s objašnjenjima.
+
+00:05:07.800 --> 00:05:09.800
+Probaj da primeniš sve ove ideje u
+
+00:05:09.820 --> 00:05:12.220
+narednih nekoliko vežbi. Srećno, zabavi se,
+
+00:05:12.680 --> 00:05:14.060
+i vidimo se ovde uskoro.

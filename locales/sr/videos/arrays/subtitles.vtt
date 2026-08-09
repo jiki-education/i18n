@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 9d89d6259cdafb0e4850d658df9bd781
+
+00:00:00.140 --> 00:00:02.440
+Zdravo ponovo. Stižeš do prilično važne
+
+00:00:02.520 --> 00:00:05.280
+etape na ovom kursu. Već neko vreme koristiš
+
+00:00:05.440 --> 00:00:08.060
+brojeve, stringove i Boolean vrednosti, a Boolean
+
+00:00:08.120 --> 00:00:10.500
+je otmena reč za tačno i netačno. Sve njih
+
+00:00:10.540 --> 00:00:13.350
+zovemo različitim tipovima podataka. A u ovom videu
+
+00:00:13.400 --> 00:00:16.260
+dodajemo naš prvi složeni tip
+
+00:00:16.340 --> 00:00:20.080
+podataka. To je tip podataka koji može
+
+00:00:20.180 --> 00:00:23.300
+da sadrži više stvari, ne samo jednu, i
+
+00:00:23.380 --> 00:00:26.780
+taj složeni tip podataka se zove niz.
+
+00:00:28.220 --> 00:00:30.280
+Kada čuješ reč niz, želim
+
+00:00:30.320 --> 00:00:33.060
+da zamisliš fizički lanac
+
+00:00:33.440 --> 00:00:36.800
+koji drži mnogo stvari na okupu. Stvari
+
+00:00:36.820 --> 00:00:39.520
+koje drži mogu biti bilo šta: stringovi, brojevi, Boolean vrednosti,
+
+00:00:40.100 --> 00:00:42.360
+čak i drugi nizovi, čak i stvari koje još
+
+00:00:42.440 --> 00:00:44.280
+ne poznaješ, ali nemoj sada da
+
+00:00:44.320 --> 00:00:47.440
+brineš o tome. Sve u ovom lancu
+
+00:00:47.500 --> 00:00:50.320
+ima određeni redosled, redosled kojim je povezano u lanac.
+
+00:00:51.180 --> 00:00:54.860
+Dakle, niz sadrži mnogo stvari, ali
+
+00:00:54.920 --> 00:00:58.800
+se posmatra kao jedna celina, jedan
+
+00:00:58.840 --> 00:01:01.440
+niz sa mnogo elemenata unutar sebe.
+
+00:01:03.320 --> 00:01:06.090
+Jiki može da uzme taj niz, taj lanac,
+
+00:01:06.160 --> 00:01:08.060
+i da ga stavi u kutiju, baš kao što
+
+00:01:08.120 --> 00:01:09.300
+to radi sa stringom ili
+
+00:01:09.320 --> 00:01:11.580
+sa brojem. Može da ga ubaci
+
+00:01:11.600 --> 00:01:13.340
+u ulazni otvor mašine.
+
+00:01:13.900 --> 00:01:15.320
+Može da ga izvuče iz izlaznog
+
+00:01:15.330 --> 00:01:18.860
+otvora. Ovaj niz je jedna stvar i Jiki
+
+00:01:18.900 --> 00:01:20.800
+radi sa njim na potpuno isti način
+
+00:01:21.280 --> 00:01:23.840
+kao sa stringovima, brojevima i svim ostalim
+
+00:01:23.880 --> 00:01:27.920
+što već poznaješ. E sada, u kodu niz
+
+00:01:28.020 --> 00:01:30.240
+takođe pomalo liči na lanac.
+
+00:01:30.300 --> 00:01:32.420
+Ima uglastu zagradu na svakom kraju,
+
+00:01:32.880 --> 00:01:34.770
+a između njih mnogo stavki povezanih
+
+00:01:34.800 --> 00:01:38.420
+u lanac, razdvojenih zapetama. Na primer, ako
+
+00:01:38.440 --> 00:01:40.590
+želimo da napravimo niz sa
+
+00:01:40.600 --> 00:01:42.480
+imenima nekih naših mentora,
+
+00:01:43.100 --> 00:01:46.440
+možemo da napravimo kutiju po imenu `mentors`
+
+00:01:46.460 --> 00:01:49.260
+i da stavimo taj lanac u nju.
+
+00:01:49.280 --> 00:01:52.900
+Napisali bismo `let mentors =`, potpuno isto
+
+00:01:53.140 --> 00:01:55.300
+kao i za bilo koju drugu kutiju, a
+
+00:01:55.320 --> 00:01:57.860
+zatim otvorenu uglastu zagradu, imena
+
+00:01:57.920 --> 00:02:00.480
+elemenata razdvojena zapetama, i na kraju
+
+00:02:00.500 --> 00:02:02.700
+zatvorenu uglastu zagradu. Kada Jiki ovo
+
+00:02:02.760 --> 00:02:04.730
+vidi, ode po četiri
+
+00:02:04.820 --> 00:02:07.760
+papirića, po jedan za svako ime, zatim uzme
+
+00:02:07.840 --> 00:02:10.650
+nov lanac i sve ih poveže u njega,
+
+00:02:10.680 --> 00:02:12.800
+pa taj lanac stavi u kutiju
+
+00:02:12.860 --> 00:02:16.580
+`mentors`. U niz možeš da staviš bilo šta: stringove,
+
+00:02:16.660 --> 00:02:19.820
+brojeve, Boolean vrednosti, čak i mešavinu svega toga.
+
+00:02:19.860 --> 00:02:22.900
+Sve su ovo primeri potpuno ispravnih nizova.
+
+00:02:24.800 --> 00:02:27.320
+Možeš da napraviš i prazan niz. To je
+
+00:02:27.380 --> 00:02:30.080
+prosto lanac bez elemenata. I dalje
+
+00:02:30.140 --> 00:02:31.760
+predstavlja zasebnu vrednost. I dalje ima
+
+00:02:31.820 --> 00:02:33.800
+oba svoja kraja. I dalje je lanac. Samo što
+
+00:02:33.860 --> 00:02:36.160
+u njemu nema nijedne stavke. Ali
+
+00:02:36.200 --> 00:02:38.400
+i takav prazan niz možeš da staviš
+
+00:02:38.420 --> 00:02:40.260
+u kutiju, pa da ga kasnije izvadiš
+
+00:02:40.280 --> 00:02:44.120
+i iskoristiš. Dobro, dakle, nizove pravimo
+
+00:02:44.160 --> 00:02:46.850
+pomoću uglastih zagrada, ali kako
+
+00:02:46.860 --> 00:02:48.820
+ih zapravo koristimo? Kako
+
+00:02:48.880 --> 00:02:50.910
+proveravamo šta je unutra i kako vadimo
+
+00:02:50.980 --> 00:02:53.829
+stvari napolje? Pa, na potpuno isti način
+
+00:02:53.860 --> 00:02:55.410
+na koji vadimo slova iz
+
+00:02:55.440 --> 00:02:58.040
+stringa. Možemo da koristimo uglaste zagrade
+
+00:02:58.100 --> 00:03:00.980
+sa brojevima unutra. Hajde da se vratimo
+
+00:03:01.020 --> 00:03:03.020
+na naš spisak mentora. Ako želimo
+
+00:03:03.060 --> 00:03:05.560
+da izvadimo prvog, napišemo `mentors`
+
+00:03:05.800 --> 00:03:08.720
+uglasta zagrada nula. Zapamti da brojimo od
+
+00:03:08.880 --> 00:03:13.280
+nule u JavaScriptu. Kroz niz možemo i da iteriramo,
+
+00:03:13.290 --> 00:03:15.190
+na potpuno isti način
+
+00:03:15.220 --> 00:03:18.460
+kao ranije kroz stringove, pomoću `for-of` petlje.
+
+00:03:19.400 --> 00:03:21.580
+Nizovi rade na potpuno isti način.
+
+00:03:21.680 --> 00:03:23.980
+Jedina razlika je što ovog puta, umesto
+
+00:03:24.040 --> 00:03:26.720
+slova, dobijamo ono što je stavka
+
+00:03:26.780 --> 00:03:28.900
+niza. U ovom primeru, to je
+
+00:03:28.940 --> 00:03:31.620
+ime mentora. Dakle, prvi put kada
+
+00:03:31.680 --> 00:03:34.280
+se nekome zahvaljujemo, zahvaljujemo se `"DJ"`. Drugi
+
+00:03:34.320 --> 00:03:38.400
+put `"Becky"`, i tako dalje. Na nizovima
+
+00:03:38.460 --> 00:03:41.500
+možemo da koristimo i svojstvo `length`,
+
+00:03:41.560 --> 00:03:43.940
+baš kao i na stringovima. Ako u
+
+00:03:43.980 --> 00:03:45.980
+kutiji `mentors` imamo niz sa četiri
+
+00:03:46.100 --> 00:03:50.040
+stringa i napišemo `mentors.length`, vratiće četiri.
+
+00:03:50.980 --> 00:03:53.500
+I `includes` radi potpuno isto
+
+00:03:53.520 --> 00:03:56.180
+i na nizovima. Možemo da napišemo
+
+00:03:56.540 --> 00:03:59.880
+`mentors.includes("DJ")` i vratiće `true`. Ali ako
+
+00:03:59.960 --> 00:04:03.600
+napišemo `mentors.includes("Frank")`, vratiće `false`.
+
+00:04:05.080 --> 00:04:07.360
+Sve radi potpuno isto kao sa stringovima.
+
+00:04:07.420 --> 00:04:09.640
+Samo što sada radimo sa elementima
+
+00:04:09.660 --> 00:04:12.160
+niza, a ne sa slovima stringa.
+
+00:04:14.140 --> 00:04:17.160
+U naredne dve vežbe isprobaćeš
+
+00:04:17.200 --> 00:04:19.540
+ove različite tehnike. Treba da
+
+00:04:19.560 --> 00:04:21.130
+razmisliš da li ti je potreban
+
+00:04:21.300 --> 00:04:23.680
+samo jedan element iz niza, pomoću
+
+00:04:23.720 --> 00:04:26.220
+uglastih zagrada, ili želiš da
+
+00:04:26.280 --> 00:04:28.820
+prođeš kroz sve elemente i proveriš ili uradiš
+
+00:04:28.880 --> 00:04:31.860
+nešto sa svakim redom. Kao i uvek, ako
+
+00:04:31.920 --> 00:04:34.040
+zapneš, pogledaj savete, a vidimo se
+
+00:04:34.080 --> 00:04:34.860
+ovde uskoro.

@@ -1,0 +1,270 @@
+WEBVTT
+
+NOTE en_md5 c5187b46923e87c2aac86912c90dfb53
+
+00:00:00.100 --> 00:00:03.140
+Zdravo ponovo. Nadam se da ti je sada
+
+00:00:03.180 --> 00:00:06.810
+jasnije šta su nizovi. Nizovi su naš prvi izbor
+
+00:00:06.840 --> 00:00:09.740
+kad god imamo listu bilo čega: listu
+
+00:00:09.760 --> 00:00:11.560
+mentora, listu rezultata, listu
+
+00:00:11.600 --> 00:00:14.420
+sastojaka. Koju god listu imaš, tu ćeš
+
+00:00:14.440 --> 00:00:17.630
+koristiti niz. Ali postoji još jedna struktura
+
+00:00:17.720 --> 00:00:20.060
+podataka koja se takođe vrlo često koristi kada ti treba
+
+00:00:20.070 --> 00:00:23.380
+nešto malo složenije od liste. Zamisli
+
+00:00:23.420 --> 00:00:24.780
+da želimo da sačuvamo neke informacije o meni:
+
+00:00:25.500 --> 00:00:27.580
+moje ime, moje godine, gde sam rođen.
+
+00:00:28.280 --> 00:00:30.140
+Mogao bi za to da upotrebiš niz,
+
+00:00:30.150 --> 00:00:32.200
+ali onda nije baš jasno šta se tu
+
+00:00:32.240 --> 00:00:34.850
+dešava. Da li je Engleska mesto gde sam
+
+00:00:34.880 --> 00:00:37.210
+rođen ili gde živim? Da li je 42 broj
+
+00:00:37.300 --> 00:00:40.120
+mojih godina ili nešto drugo? I ako želim
+
+00:00:40.160 --> 00:00:42.050
+to da koristim, moram da pamtim da je
+
+00:00:42.080 --> 00:00:44.740
+prva pozicija za ime, druga
+
+00:00:44.780 --> 00:00:47.900
+za godine, a treća za mesto rođenja.
+
+00:00:47.920 --> 00:00:49.840
+Sve je to pomalo neuredno, a neuredno je
+
+00:00:49.880 --> 00:00:52.420
+zato što ovo zapravo i nije lista stvari.
+
+00:00:52.480 --> 00:00:55.769
+Složenije je od toga. I tu
+
+00:00:55.800 --> 00:00:58.500
+na scenu stupaju rečnici. Rečnik je
+
+00:00:58.560 --> 00:01:00.340
+nova vrsta strukture podataka. To ti je peta
+
+00:01:00.420 --> 00:01:03.830
+po redu. Imaš stringove, brojeve, Boolean vrednosti, nizove, a
+
+00:01:03.880 --> 00:01:06.200
+sada i rečnike. I želim da rečnik
+
+00:01:06.260 --> 00:01:08.620
+zamišljaš kao list
+
+00:01:08.800 --> 00:01:12.180
+spiralne sveske. Sa leve strane stoje
+
+00:01:12.220 --> 00:01:15.460
+naslovi, reči name, age, birthplace, i
+
+00:01:15.500 --> 00:01:18.400
+njih zovemo ključevima. A sa desne
+
+00:01:18.480 --> 00:01:20.240
+strane, pored svakog naslova, stoje
+
+00:01:20.300 --> 00:01:24.520
+pravi podaci, Jeremy, 42, England, i njih
+
+00:01:24.600 --> 00:01:28.300
+zovemo vrednostima. Baš kao i niz,
+
+00:01:28.340 --> 00:01:31.180
+rečnik je jedna stvar. Jedna stranica iz
+
+00:01:31.190 --> 00:01:33.830
+sveske. I baš kao kod nizova, Jiki može
+
+00:01:33.840 --> 00:01:35.250
+da ga stavi u promenljivu, u kutiju,
+
+00:01:35.720 --> 00:01:37.930
+ili da posluži kao ulaz za funkciju, a
+
+00:01:37.980 --> 00:01:39.540
+može i da izvuče rečnik iz
+
+00:01:39.560 --> 00:01:42.200
+izlaznog otvora. Evo kako rečnik izgleda
+
+00:01:42.260 --> 00:01:45.080
+u kodu. Koristimo vitičaste zagrade da
+
+00:01:45.120 --> 00:01:47.490
+označimo početak i kraj, a
+
+00:01:47.520 --> 00:01:49.420
+unutra imaš parove: ključ sa leve
+
+00:01:49.480 --> 00:01:51.700
+strane, dvotačku, pa vrednost sa
+
+00:01:51.740 --> 00:01:53.860
+desne strane. Između svakog para stoji
+
+00:01:53.900 --> 00:01:56.260
+zarez. Jiki ovo vidi i
+
+00:01:56.280 --> 00:01:58.600
+vadi svoju spiralnu svesku. Piše name,
+
+00:01:58.960 --> 00:02:02.100
+Jeremy, age, 42, i tako redom za svaki
+
+00:02:02.140 --> 00:02:04.440
+par. A kada završi, otcepi
+
+00:02:04.480 --> 00:02:06.320
+list i stavi ga u kutiju
+
+00:02:06.420 --> 00:02:09.360
+sa oznakom person. Ima nekoliko pravila koja
+
+00:02:09.420 --> 00:02:12.060
+treba da znaš. Ključevi su uvek stringovi. Moraju
+
+00:02:12.140 --> 00:02:14.620
+da imaju navodnike oko sebe, i svaki ključ mora
+
+00:02:14.680 --> 00:02:18.170
+da bude jedinstven. Ne možeš imati dva ključa
+
+00:02:18.260 --> 00:02:21.420
+koja se zovu name u istom rečniku. Vrednosti
+
+00:02:21.480 --> 00:02:23.150
+mogu da budu iste ako želiš,
+
+00:02:23.280 --> 00:02:25.810
+ali ključevi moraju da se razlikuju. A
+
+00:02:25.820 --> 00:02:27.600
+vrednosti mogu da budu bilo šta. Mogu biti
+
+00:02:27.680 --> 00:02:31.000
+stringovi, brojevi, Boolean vrednosti, nizovi, pa čak i drugi rečnici.
+
+00:02:32.140 --> 00:02:34.540
+Možeš da imaš i prazan rečnik, baš
+
+00:02:34.600 --> 00:02:37.220
+kao što postoji i prazan niz,
+
+00:02:37.280 --> 00:02:38.800
+pa da kreneš od njega i kasnije
+
+00:02:38.820 --> 00:02:42.210
+ga dopunjuješ. Dakle, imaš
+
+00:02:42.260 --> 00:02:44.160
+rečnik, ali kako da izvučeš nešto
+
+00:02:44.220 --> 00:02:46.900
+iz njega? Koristimo istu sintaksu sa
+
+00:02:46.920 --> 00:02:48.960
+uglastim zagradama kao kod nizova i
+
+00:02:49.020 --> 00:02:52.980
+stringova, ali umesto broja pozicije
+
+00:02:53.020 --> 00:02:55.040
+upisujemo ključ. Ako želimo
+
+00:02:55.100 --> 00:02:57.390
+da iz rečnika izvučemo nečije ime,
+
+00:02:57.940 --> 00:03:01.620
+pišemo promenljivu person, uglaste zagrade, a
+
+00:03:01.640 --> 00:03:03.580
+onda ključ, u ovom slučaju name, pod
+
+00:03:03.660 --> 00:03:07.260
+navodnicima unutra. To govori Jikiju da pogleda
+
+00:03:07.300 --> 00:03:09.970
+u rečnik person, pronađe ključ
+
+00:03:10.080 --> 00:03:12.900
+name i izvuče njegovu vrednost. Jiki
+
+00:03:13.040 --> 00:03:15.000
+ode do kutije person, izvadi
+
+00:03:15.040 --> 00:03:17.340
+stranicu iz sveske, prolazi kroz sve
+
+00:03:17.400 --> 00:03:19.760
+ključeve dok ne pronađe name, zatim pročita
+
+00:03:19.800 --> 00:03:21.900
+vrednost Jeremy i stavi je u
+
+00:03:21.910 --> 00:03:27.540
+novu kutiju pod imenom name. Uglaste zagrade uvek
+
+00:03:27.580 --> 00:03:29.980
+znače isto. Posežeš u nešto
+
+00:03:29.990 --> 00:03:32.370
+i vadiš nešto iz toga. Kod nizova i stringova
+
+00:03:32.960 --> 00:03:34.720
+koristiš broj da kažeš sa koje pozicije
+
+00:03:34.760 --> 00:03:37.580
+želiš nešto da uzmeš. Kod rečnika
+
+00:03:37.700 --> 00:03:40.140
+koristiš string za ključ. Ista je to
+
+00:03:40.180 --> 00:03:43.340
+ideja, samo malo drugačija sintaksa. Dakle,
+
+00:03:43.380 --> 00:03:45.390
+čeka te nekoliko vežbi da uvežbaš
+
+00:03:45.500 --> 00:03:47.640
+pravljenje rečnika i čitanje vrednosti iz njih.
+
+00:03:48.260 --> 00:03:50.160
+Sve što ti treba je ovo što smo upravo prošli:
+
+00:03:50.580 --> 00:03:52.660
+vitičaste zagrade za pravljenje, uglaste zagrade
+
+00:03:52.680 --> 00:03:55.200
+za pristup. Ne žuri sa njima. Srećno,
+
+00:03:55.240 --> 00:03:56.820
+i vidimo se ovde uskoro

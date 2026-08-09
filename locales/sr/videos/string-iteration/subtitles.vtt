@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 488ab8c8dd77c6bec365ce44675868b7
+
+00:00:00.280 --> 00:00:02.640
+Zdravo ponovo. U prošloj lekciji smo
+
+00:00:02.680 --> 00:00:04.680
+naučili kako da pristupimo jednom slovu
+
+00:00:04.700 --> 00:00:08.300
+u stringu pomoću uglastih zagrada. U ovoj lekciji
+
+00:00:08.420 --> 00:00:10.120
+ćemo pogledati kako da prođemo
+
+00:00:10.160 --> 00:00:13.160
+kroz string, izvlačeći svako slovo
+
+00:00:13.200 --> 00:00:15.660
+jedno po jedno. A da bismo to uradili,
+
+00:00:15.720 --> 00:00:18.300
+potreban nam je novi tip petlje. Do sada
+
+00:00:18.360 --> 00:00:20.170
+smo koristili repeat petlju, a sada
+
+00:00:20.200 --> 00:00:22.720
+ćemo upotrebiti nešto što se zove for of petlja.
+
+00:00:22.760 --> 00:00:26.880
+To su dve nove ključne reči, for i of.
+
+00:00:27.000 --> 00:00:28.740
+Ključnu reč for ćemo sretati
+
+00:00:28.760 --> 00:00:30.360
+na dosta mesta kako napredujemo.
+
+00:00:30.790 --> 00:00:32.580
+Može da stoji sama, ili
+
+00:00:32.619 --> 00:00:35.380
+u paru sa in ili of.
+
+00:00:35.440 --> 00:00:37.160
+Za sada ćemo se fokusirati
+
+00:00:37.220 --> 00:00:40.120
+na ovu poslednju, of. Hajde da pogledamo
+
+00:00:40.160 --> 00:00:43.280
+neki kod. Počećemo tako što ćemo napraviti
+
+00:00:43.340 --> 00:00:47.310
+promenljivu pod nazivom name koja sadrži string Jeremy. Ništa
+
+00:00:47.380 --> 00:00:50.460
+novo ovde. Onda imamo ovu liniju, for
+
+00:00:50.540 --> 00:00:53.620
+let letter of name, i tu se dosta
+
+00:00:53.640 --> 00:00:55.480
+toga dešava, pa hajde da polako
+
+00:00:55.520 --> 00:00:59.240
+prođemo kroz nju. Najpre imamo ključnu reč for.
+
+00:00:59.320 --> 00:01:00.980
+Ona govori Jikiju da želimo
+
+00:01:01.060 --> 00:01:04.340
+da napravimo neku petlju. Zato pogleda napred, vidi of
+
+00:01:04.879 --> 00:01:06.320
+i zna da želimo da napravimo
+
+00:01:06.580 --> 00:01:09.600
+for of petlju. A to znači da, umesto
+
+00:01:09.720 --> 00:01:11.940
+da koristimo repeat petlju gde kažemo:
+
+00:01:12.020 --> 00:01:15.180
+„Hajde da prođemo kroz 10 ponavljanja“, kažemo:
+
+00:01:15.260 --> 00:01:17.380
+„Hajde da prođemo kroz sva slova u stringu.“
+
+00:01:17.440 --> 00:01:20.990
+To je ono što for of znači. Zatim imamo
+
+00:01:21.060 --> 00:01:24.080
+ovaj deo let letter. To je potpuno isto
+
+00:01:24.140 --> 00:01:25.860
+kao ono iznad sa
+
+00:01:26.020 --> 00:01:29.320
+let name. Samo pravimo promenljivu pod nazivom letter.
+
+00:01:30.240 --> 00:01:33.240
+Razlika je u tome što, umesto da eksplicitno kažemo
+
+00:01:33.280 --> 00:01:35.280
+šta ide u nju, govorimo Jikiju
+
+00:01:35.320 --> 00:01:37.850
+da u nju stavlja svako slovo iz stringa,
+
+00:01:37.900 --> 00:01:41.780
+jedno po jedno. Tako da Jiki vidi
+
+00:01:41.880 --> 00:01:44.460
+for, proveri of i krene. Pogleda
+
+00:01:44.480 --> 00:01:46.140
+prvo slovo u stringu,
+
+00:01:46.480 --> 00:01:48.380
+u ovom slučaju J, i stavi ga
+
+00:01:48.440 --> 00:01:50.840
+u novu kutiju pod nazivom letter. Inače, mogli smo
+
+00:01:50.880 --> 00:01:52.240
+da je nazovemo bilo kako.
+
+00:01:52.260 --> 00:01:53.920
+Ne mora biti letter. Odlučili smo
+
+00:01:53.960 --> 00:01:57.020
+da je ovde zovemo letter. Onda izvrši kod
+
+00:01:57.080 --> 00:01:58.960
+unutar vitičastih zagrada, a tu možeš
+
+00:01:59.000 --> 00:02:01.060
+da radiš sve kao i bilo gde drugde u kodu.
+
+00:02:01.540 --> 00:02:03.560
+Jedina razlika je što će se ovaj blok
+
+00:02:03.640 --> 00:02:06.320
+koda izvršiti po jednom za svako slovo u stringu,
+
+00:02:06.380 --> 00:02:07.900
+i imaće na raspolaganju
+
+00:02:07.960 --> 00:02:11.940
+ovu promenljivu. Svaki put kada Jiki dođe do
+
+00:02:12.040 --> 00:02:15.000
+zatvorene vitičaste zagrade, baci kutiju sa letter
+
+00:02:15.020 --> 00:02:16.740
+i napravi novu sa sledećim
+
+00:02:16.860 --> 00:02:19.220
+slovom u njoj. Tako da će prvi put
+
+00:02:19.340 --> 00:02:20.800
+baciti J i staviti
+
+00:02:20.920 --> 00:02:23.000
+e u kutiju umesto njega. Zatim će uraditi
+
+00:02:23.020 --> 00:02:25.740
+isto za r, pa za e, pa za m,
+
+00:02:26.080 --> 00:02:28.790
+pa za y. Šest slova, šest krugova
+
+00:02:28.840 --> 00:02:31.300
+kroz petlju. Nadam se da je jasno. Potrebno je
+
+00:02:31.340 --> 00:02:32.560
+malo vremena da se navikneš
+
+00:02:32.600 --> 00:02:34.900
+na sintaksu, ali sam koncept
+
+00:02:34.920 --> 00:02:37.730
+i nije toliko težak. Sledeće, imaš
+
+00:02:37.760 --> 00:02:40.250
+nekoliko vežbi u kojima se prolazi kroz
+
+00:02:40.250 --> 00:02:42.660
+stringove. Tražiće od tebe da uradiš nešto drugo
+
+00:02:42.680 --> 00:02:44.980
+sa slovima, možda da izbrojiš koliko ih
+
+00:02:45.000 --> 00:02:46.760
+ima ili da pronađeš poziciju
+
+00:02:46.800 --> 00:02:49.260
+određenog slova. Treba da iskoristiš različite
+
+00:02:49.320 --> 00:02:51.640
+tehnike koje smo obradili i da ih kombinuješ
+
+00:02:51.700 --> 00:02:57.060
+sa ovom petljom. Ove vežbe sada postaju
+
+00:02:57.100 --> 00:03:00.000
+zahtevnije. Kombinuješ mnogo različitih stvari
+
+00:03:00.020 --> 00:03:02.420
+koje smo do sada naučili. Ne žuri sa njima.
+
+00:03:02.500 --> 00:03:03.920
+Možda će ti trebati neko vreme
+
+00:03:03.960 --> 00:03:06.160
+da završiš svaku. Trudi se da ne žuriš
+
+00:03:06.200 --> 00:03:08.840
+i da se ne nerviraš ako ne uspeš odmah.
+
+00:03:08.900 --> 00:03:10.920
+Samo je posmatraj kao slagalicu. Ako
+
+00:03:10.940 --> 00:03:12.640
+zapneš, možeš da napraviš pauzu,
+
+00:03:12.650 --> 00:03:15.160
+odeš u šetnju i vratiš se posle. Imaš svo
+
+00:03:15.200 --> 00:03:16.790
+znanje koje ti je potrebno za ovo i
+
+00:03:16.820 --> 00:03:18.870
+veštine da to izvedeš, ali
+
+00:03:18.940 --> 00:03:21.520
+moraćeš da imaš strpljenja. I uvek zapamti,
+
+00:03:21.580 --> 00:03:23.320
+možeš da koristiš savete ako zatreba,
+
+00:03:23.900 --> 00:03:25.150
+ali pokušaj da ih čuvaš kao
+
+00:03:25.200 --> 00:03:27.540
+poslednje sredstvo. Srećno, i vidimo se
+
+00:03:27.560 --> 00:03:28.060
+ovde uskoro.

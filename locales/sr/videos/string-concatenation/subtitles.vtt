@@ -1,0 +1,207 @@
+WEBVTT
+
+NOTE en_md5 d39fabecd86df2df0d2b749f6d2241ba
+
+00:00:00.260 --> 00:00:02.070
+Drago mi je što si opet tu. Nadam se da ti je
+
+00:00:02.120 --> 00:00:04.900
+bila zabavna ova gomila vežbi. Napreduješ
+
+00:00:04.940 --> 00:00:07.970
+fantastično. Bravo. Ovaj video je
+
+00:00:08.000 --> 00:00:10.740
+kratak. Već znaš šta su stringovi.
+
+00:00:10.940 --> 00:00:12.800
+To su komadići papira sa tekstom
+
+00:00:12.840 --> 00:00:15.440
+na njima. Koristiš ih već čitav kurs.
+
+00:00:15.520 --> 00:00:18.960
+Ali do sada je svaki string koji koristiš
+
+00:00:19.100 --> 00:00:22.000
+onaj koji direktno otkucaš. Šta se dešava
+
+00:00:22.040 --> 00:00:24.620
+ako želiš da napraviš string
+
+00:00:24.660 --> 00:00:28.500
+na osnovu promenljivih ili uslova? Kako to
+
+00:00:28.560 --> 00:00:31.200
+da uradimo? Pa, postoje dva načina
+
+00:00:31.300 --> 00:00:34.520
+koja ću ti pokazati. Prvi se
+
+00:00:34.640 --> 00:00:38.370
+zove spajanje stringova (engl. string concatenation), otmen i
+
+00:00:38.460 --> 00:00:41.600
+pomalo zbunjujući način da se kaže spajanje dva
+
+00:00:41.640 --> 00:00:46.120
+stringa. Zamisli da imaš dve reči, „hello“ (zdravo)
+
+00:00:46.160 --> 00:00:48.420
+i „world“ (svet), i želiš da napraviš string
+
+00:00:48.440 --> 00:00:51.730
+koji sadrži „hello world“. Možeš jednostavno da napišeš
+
+00:00:51.940 --> 00:00:54.460
+„hello world“ kao jedan string, ali možeš
+
+00:00:54.540 --> 00:00:59.570
+i da napišeš „hello “ plus „world“, i to
+
+00:00:59.600 --> 00:01:03.260
+bi ti dalo isti string. Naravno,
+
+00:01:03.340 --> 00:01:05.340
+to u ovom slučaju nije baš korisno.
+
+00:01:05.940 --> 00:01:08.180
+Ali šta ako bismo imali promenljivu
+
+00:01:08.240 --> 00:01:10.420
+u kojoj se nalazi nečije ime i želeli
+
+00:01:10.460 --> 00:01:12.780
+da ih pozdravimo? Zamisli da imamo
+
+00:01:12.820 --> 00:01:16.020
+promenljivu pod nazivom name (ime), koja ponekad sadrži
+
+00:01:16.060 --> 00:01:18.860
+ime Jeremy, a ponekad ime Jiki. Želimo da kažemo
+
+00:01:18.920 --> 00:01:22.280
+„hello Jeremy“ ili „hello Jiki“ koristeći tu promenljivu.
+
+00:01:23.380 --> 00:01:25.860
+Pa, to možemo postići koristeći ovaj koncept
+
+00:01:25.920 --> 00:01:30.600
+spajanja, tako što napišemo „hello “ plus name, i to
+
+00:01:30.620 --> 00:01:33.480
+će nam dati ili „hello Jeremy“, ili „hello
+
+00:01:33.620 --> 00:01:37.320
+Jiki“, ili „hello “ plus bilo koje drugo ime, u zavisnosti od toga
+
+00:01:37.360 --> 00:01:41.000
+šta se nalazi u kutiji name. Možemo da koristimo i
+
+00:01:41.040 --> 00:01:44.220
+nešto što se zove šablonski literali (engl. template literals),
+
+00:01:44.280 --> 00:01:48.790
+da postignemo istu stvar. To je još jedna nepotrebno otmena i zbunjujuća reč
+
+00:01:48.840 --> 00:01:53.920
+koja znači umetanje stringova u druge stringove. Dakle, umesto
+
+00:01:53.960 --> 00:01:56.950
+da dodajemo stringove jedne na druge, možemo da imamo
+
+00:01:57.120 --> 00:02:00.830
+string ili šablon koji ima mesta za druge
+
+00:02:00.900 --> 00:02:04.020
+stringove. Da bismo to uradili,
+
+00:02:04.040 --> 00:02:09.800
+koristimo obrnute apostrofe (engl. backticks) umesto navodnika. Obrnuti apostrofi su,
+
+00:02:09.880 --> 00:02:12.420
+kao što ime kaže, okrenute kvačice, ali
+
+00:02:12.460 --> 00:02:15.080
+vrlo je moguće da su ti potpuno novi, pa
+
+00:02:15.120 --> 00:02:17.100
+moraš da pronađeš pravi taster
+
+00:02:17.140 --> 00:02:20.730
+na tastaturi. Koristimo ih da napravimo
+
+00:02:20.800 --> 00:02:24.150
+šablon koji može da sadrži druge stringove. A zatim,
+
+00:02:24.220 --> 00:02:27.220
+da umetnemo string u šablon,
+
+00:02:27.300 --> 00:02:30.540
+koristimo još jednu čudnu sintaksu sa dolarima i vitičastim zagradama.
+
+00:02:30.580 --> 00:02:33.160
+Tako na primer, da postignemo isti onaj
+
+00:02:33.180 --> 00:02:36.200
+„hello “ plus name koji smo malopre videli, mogli bismo
+
+00:02:36.420 --> 00:02:40.700
+da napišemo obrnuti apostrof, hello, znak za dolar,
+
+00:02:40.860 --> 00:02:45.180
+vitičasta zagrada, name, vitičasta zagrada, obrnuti apostrof. To izgleda mnogo
+
+00:02:45.220 --> 00:02:46.560
+bolje nego što zvuči dok ovako pričam.
+
+00:02:47.800 --> 00:02:50.520
+I to radi potpuno istu stvar kao
+
+00:02:50.580 --> 00:02:53.320
+i dodavanje stringova. Ali kada imaš
+
+00:02:53.390 --> 00:02:56.120
+više stringova koje treba sve ubaciti na jedno
+
+00:02:56.160 --> 00:02:58.320
+mesto, ovo može biti mnogo efikasnije.
+
+00:02:59.160 --> 00:03:00.049
+Trebaće ti malo
+
+00:03:00.100 --> 00:03:02.380
+vremena da se navikneš na ovu specifičnu sintaksu,
+
+00:03:02.900 --> 00:03:05.420
+ali tu zaista nema ničeg previše komplikovanog.
+
+00:03:07.000 --> 00:03:09.140
+Sada sam ti dao dve vežbe da
+
+00:03:09.180 --> 00:03:11.780
+ovo uvežbaš. Prva koristi isti onaj
+
+00:03:11.840 --> 00:03:14.420
+primer sa „hello “ i imenom koji smo upravo videli. Možeš
+
+00:03:14.460 --> 00:03:17.060
+da je uradiš spajanjem stringova ili preko ovih šablona,
+
+00:03:18.100 --> 00:03:20.640
+a oba načina ću staviti i u uputstvo
+
+00:03:20.680 --> 00:03:23.880
+kao podsetnik. Druga vežba je klasično
+
+00:03:24.100 --> 00:03:27.120
+pitanje sa razgovora za posao. Tako da će te ovo
+
+00:03:27.200 --> 00:03:29.760
+dobro pripremiti za buduće razgovore za posao.
+
+00:03:30.620 --> 00:03:31.980
+Srećno, vidimo se ponovo
+
+00:03:32.040 --> 00:03:32.380
+uskoro.
