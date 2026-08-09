@@ -10,7 +10,7 @@ Il cifrario funziona spostando ciascuna lettera del messaggio di un numero fisso
 
 Gli spazi devono rimanere tali (non vengono spostati).
 
-Crea una funzione chiamata `encode(message, shift)` (codifica un messaggio con uno spostamento) che prende un messaggio in minuscolo ed un valore di spostamento, e restituisce il messaggio codificato.
+Crea una funzione chiamata `encode(message, shift)` che prende un messaggio in minuscolo e un valore di spostamento, e restituisce il messaggio codificato.
 
 Per esempio:
 
