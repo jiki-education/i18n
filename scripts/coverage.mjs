@@ -16,11 +16,19 @@
 //
 // A locale is shippable (addable to the front-end's SUPPORTED_LOCALES) when
 // every line here reads 100% and `validate --shippable` passes.
+//
+// The last two rows are the api repo's: the level milestone emails and the
+// mailer / message YAML are translated there rather than here, because that copy
+// has not been migrated to this repo yet. Coverage reads them so that "is this
+// language complete?" has one answer covering everything. It only ever REPORTS
+// them: coverage gates nothing, and an api checkout that is absent or unreadable
+// produces a row saying so rather than a failure. See scripts/lib/api-copy.mjs.
 
 import fs from "node:fs";
-import { INAPPLICABLE, SENTINEL, TARGET_LOCALES, assertTargetLocale } from "./lib/constants.mjs";
+import { INAPPLICABLE, SENTINEL, TARGET_LOCALES, assertTargetLocale, fail } from "./lib/constants.mjs";
 import { CONTENT_TYPE_IDS, contentType, localPath, metaPath } from "./lib/content-types.mjs";
 import { corpusItems } from "./lib/english.mjs";
+import { API_ROW_IDS, apiCoverageFor, apiSourceLine } from "./lib/api-copy.mjs";
 import { countSentinels, md5File, parseFrontmatter, parseVttNotes, readJson, readText } from "./lib/files.mjs";
 import { parseArgs } from "./lib/args.mjs";
 
@@ -86,9 +94,18 @@ function main() {
   const requested = args.positional[0] ?? "all";
   const locales = requested === "all" ? TARGET_LOCALES : [requested];
   locales.forEach(assertTargetLocale);
-  const typeIds = args.flags.type ? [args.flags.type] : CONTENT_TYPE_IDS;
+  // `--type=` selects from both sets, because a reader asking for one row does
+  // not care which repo it is read from.
+  const requestedType = args.flags.type;
+  const typeIds = requestedType ? CONTENT_TYPE_IDS.filter((id) => id === requestedType) : CONTENT_TYPE_IDS;
+  const apiIds = requestedType ? API_ROW_IDS.filter((id) => id === requestedType) : API_ROW_IDS;
+  if (requestedType && typeIds.length + apiIds.length === 0) {
+    fail(`unknown content type "${requestedType}". Known: ${[...CONTENT_TYPE_IDS, ...API_ROW_IDS].join(", ")}`);
+  }
 
-  const report = Object.fromEntries(locales.map((locale) => [locale, coverageFor(locale, typeIds)]));
+  const report = Object.fromEntries(
+    locales.map((locale) => [locale, [...coverageFor(locale, typeIds), ...apiCoverageFor(locale, apiIds)]])
+  );
 
   if (args.flags.json) {
     console.log(JSON.stringify(report, null, 2));
@@ -110,7 +127,9 @@ function main() {
     console.log(`  ${stubbed} catalog keys still "${SENTINEL}"${stubbed === 0 ? "" : "  (not shippable until 0)"}`);
     const inapplicable = rows.reduce((sum, row) => sum + (row.inapplicable ?? 0), 0);
     if (inapplicable > 0) console.log(`  ${inapplicable} catalog keys "${INAPPLICABLE}" (unreachable in this language, never publishable)`);
+    for (const note of new Set(rows.map((row) => row.note).filter(Boolean))) console.log(`  note: ${note}`);
   }
+  if (apiIds.length > 0) console.log(`\n${apiSourceLine()}`);
   console.log("");
 }
 

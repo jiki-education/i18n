@@ -44,6 +44,22 @@ export const SOURCE_REPOS = {
     sibling: "videos",
     dirs: ["videos"],
     probe: () => CONTENT_TYPES["video-subtitles"].sourceRepoPath("using-functions")
+  },
+  // The api holds two bodies of user-facing copy that are translated IN the api
+  // rather than here: the level milestone emails and the mailer / message YAML.
+  // Neither has been migrated to this repo yet, and until that happens coverage
+  // has to read them there to answer "is this language complete?" at all. A
+  // known gap awaiting a migration, not the design.
+  //
+  // No content type names it, so nothing translates, validates or publishes from
+  // it: scripts/lib/api-copy.mjs is the only reader, and coverage.mjs the only
+  // caller. It is read at main, never at the working tree's branch.
+  api: {
+    remote: "jiki-education/api",
+    env: "JIKI_API_REPO",
+    sibling: "api",
+    dirs: ["config/locales", "config/initializers", "db/seeds"],
+    probe: () => "db/seeds/curriculum.json"
   }
 };
 
@@ -76,8 +92,12 @@ const cached = new Map();
  *
  * Failing here is a normal state for a fresh clone, so it says how to fix it
  * rather than reporting a missing file from somewhere three calls down.
+ *
+ * `optional` returns null instead of failing, for a caller that reports on a
+ * repo rather than translating from it. Coverage is the only one: it must never
+ * exit non-zero, and a clone with no api beside it is an ordinary state.
  */
-export function englishRepo(id = DEFAULT_SOURCE_REPO, explicit) {
+export function englishRepo(id = DEFAULT_SOURCE_REPO, explicit, { optional = false } = {}) {
   const spec = sourceRepoSpec(id);
   if (!explicit && cached.has(id)) return cached.get(id);
 
@@ -90,6 +110,8 @@ export function englishRepo(id = DEFAULT_SOURCE_REPO, explicit) {
       return resolved;
     }
   }
+
+  if (optional) return null;
 
   fail(
     `no ${id} checkout to read English from. This repo holds no English of its own.\n` +

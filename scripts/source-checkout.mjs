@@ -21,8 +21,10 @@
 //
 // Which repo English is being fetched from. `front-end` (the default) is where
 // almost all of it is authored; `videos` holds the English subtitles, because
-// they are cut from the rendered video. scripts/lib/english.mjs holds the list.
-// The `English-Ref:` pin names a front-end commit, so `--from-english-ref` is
+// they are cut from the rendered video. `api` is not English at all: it holds
+// copy that is translated there because it has not been migrated here yet, and
+// only coverage reads it. scripts/lib/english.mjs holds the list. The
+// `English-Ref:` pin names a front-end commit, so `--from-english-ref` is
 // meaningful only for that one.
 //
 // ## --resolve
