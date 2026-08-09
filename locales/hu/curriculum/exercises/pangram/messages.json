@@ -1,72 +1,72 @@
 {
   "tasks": {
     "checkPangram": {
-      "name": "Check Pangram",
-      "description": "Write a function that checks if a sentence is a pangram (contains every letter of the alphabet at least once). The check should be case-insensitive."
+      "name": "�",
+      "description": "�"
     }
   },
   "scenarios": {
     "pangramEmptySentence": {
-      "name": "Empty sentence",
-      "description": "An empty sentence is not a pangram."
+      "name": "�",
+      "description": "�"
     },
     "pangramPerfectLowercase": {
-      "name": "Perfect lowercase",
-      "description": "A perfect lowercase alphabet is a pangram."
+      "name": "�",
+      "description": "�"
     },
     "pangramOnlyLowercase": {
-      "name": "Only lowercase",
-      "description": "A sentence with only lowercase letters covering all letters is a pangram."
+      "name": "�",
+      "description": "�"
     },
     "pangramMissingX": {
-      "name": "Missing letter 'x'",
-      "description": "A sentence missing the letter 'x' is not a pangram."
+      "name": "�",
+      "description": "�"
     },
     "pangramMissingH": {
-      "name": "Missing letter 'h'",
-      "description": "A sentence missing the letter 'h' is not a pangram."
+      "name": "�",
+      "description": "�"
     },
     "pangramMissingAM": {
-      "name": "Missing letters beyond a-m",
-      "description": "A string with 'a' to 'm' in lowercase and uppercase is not a pangram."
+      "name": "�",
+      "description": "�"
     },
     "pangramWithUnderscores": {
-      "name": "With underscores",
-      "description": "A pangram sentence with underscores."
+      "name": "�",
+      "description": "�"
     },
     "pangramWithNumbers": {
-      "name": "With numbers",
-      "description": "A pangram sentence with numbers included."
+      "name": "�",
+      "description": "�"
     },
     "pangramNumbersReplacingLetters": {
-      "name": "Numbers replacing letters",
-      "description": "A sentence where letters are replaced by numbers is not a pangram."
+      "name": "�",
+      "description": "�"
     },
     "pangramMixedCasePunctuation": {
-      "name": "Mixed case and punctuation",
-      "description": "A pangram with mixed case and punctuation."
+      "name": "�",
+      "description": "�"
     },
     "pangramCaseInsensitive": {
-      "name": "Case insensitive missing letters",
-      "description": "A case-insensitive sentence without all letters is not a pangram."
+      "name": "�",
+      "description": "�"
     }
   },
   "hints": {
     "helpers": {
-      "question": "What helpers will save me trouble here?",
-      "answer": "A `includes()` helper (which asks 'does this character appear in this string?') and a `toLowerCase()` helper (so case differences don't trip you up) make the main logic short and clear."
+      "question": "�",
+      "answer": "�"
     },
     "whyLowercase": {
-      "question": "Why should I lowercase the sentence?",
-      "answer": "'The quick brown fox...' contains both 'T' and 't'. If you only check against lowercase letters, the capitals won't match. Convert the sentence to lowercase once at the start so every comparison is consistent."
+      "question": "�",
+      "answer": "�"
     },
     "checkEveryLetter": {
-      "question": "How do I check every letter is there?",
-      "answer": "Loop through each letter of the alphabet `\"abcdefghijklmnopqrstuvwxyz\"`. For each, use `includes()` to check if it appears in the lowercased sentence."
+      "question": "�",
+      "answer": "�"
     },
     "stopEarly": {
-      "question": "When can I stop early?",
-      "answer": "As soon as you find a letter that's missing, return `false`. There's no point checking the rest. Only return `true` after the entire alphabet has been confirmed."
+      "question": "�",
+      "answer": "�"
     }
   }
 }
