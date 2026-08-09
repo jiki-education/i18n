@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 b5959486af83f5baff4c0faf230ee97f
+
+00:00:00.220 --> 00:00:04.200
+Üdv újra! Eddig, amikor változókat hoztunk létre,
+
+00:00:04.520 --> 00:00:07.100
+értékeket tettünk dobozokba, aztán később
+
+00:00:07.140 --> 00:00:10.059
+kivettük őket. Ez nagyon hasznos volt:
+
+00:00:10.130 --> 00:00:13.080
+átláthatóbb lett tőle a kód, és megspórolt
+
+00:00:13.140 --> 00:00:15.520
+nekünk egy csomó fejszámolást, amit különben
+
+00:00:15.560 --> 00:00:18.720
+el kellett volna végeznünk. A változók igazi ereje
+
+00:00:18.780 --> 00:00:21.940
+viszont abban rejlik, hogy meg tudjuk változtatni,
+
+00:00:22.020 --> 00:00:24.760
+mi van a dobozban, mi van a változóban,
+
+00:00:24.800 --> 00:00:27.710
+a program futása közben. Így hiába futtatjuk
+
+00:00:27.740 --> 00:00:30.120
+ugyanazt a kódrészletet többször,
+
+00:00:30.660 --> 00:00:33.900
+mindig mást csinálhat attól függően, hogy éppen
+
+00:00:33.940 --> 00:00:38.540
+mi van a dobozokban. Tegyük fel, hogy virágot
+
+00:00:38.580 --> 00:00:41.020
+szeretnénk ültetni egy kertbe. Van egy
+
+00:00:41.030 --> 00:00:44.340
+praktikus plant függvényünk, amelynek egyetlen bemenete van:
+
+00:00:44.380 --> 00:00:46.060
+a pozíció, ahová a virágot
+
+00:00:46.100 --> 00:00:48.380
+tenni szeretnénk. Ha tehát
+
+00:00:48.400 --> 00:00:50.980
+a szélétől 10-re szeretnénk virágot ültetni, azt írjuk:
+
+00:00:52.010 --> 00:00:55.880
+plant(10). Szép és egyszerű. És mi van akkor, ha
+
+00:00:55.960 --> 00:00:59.340
+nyolc virágot szeretnénk ültetni? Nos, írhatnánk azt,
+
+00:00:59.360 --> 00:01:02.210
+hogy plant(10), plant(20), plant(30)
+
+00:01:02.260 --> 00:01:06.780
+és így tovább, de ez elég fárasztó. Márpedig már
+
+00:01:06.820 --> 00:01:10.350
+tanultunk valamit, ami pont az ilyen
+
+00:01:10.380 --> 00:01:13.120
+fárasztó kódot váltja ki. Remélhetőleg most az agyad
+
+00:01:13.160 --> 00:01:15.640
+pörög, és azt kiabálja: „Használj ciklust! Használj
+
+00:01:15.680 --> 00:01:19.440
+repeat blokkot!” És pontosan így van. Állítsuk be tehát
+
+00:01:19.480 --> 00:01:22.120
+a pozíciót 10-re, aztán
+
+00:01:22.180 --> 00:01:25.200
+egy repeat blokkban hívjuk meg
+
+00:01:25.240 --> 00:01:27.350
+a plant-et, vagyis használjuk a plant függvényt, nyolcszor.
+
+00:01:28.900 --> 00:01:32.160
+Szerinted mi fog történni? Nos,
+
+00:01:32.180 --> 00:01:35.180
+nyolc virágot fog ültetni, csakhogy mindet
+
+00:01:35.200 --> 00:01:38.000
+ugyanarra a helyre, ami
+
+00:01:38.060 --> 00:01:41.140
+nem igazán az, amit szeretnénk. Álljunk hát meg
+
+00:01:41.280 --> 00:01:42.960
+egy pillanatra, és gondoljuk végig, mit csinál
+
+00:01:43.000 --> 00:01:45.420
+itt Jiki. Készít egy dobozt
+
+00:01:45.460 --> 00:01:47.600
+position címkével. Beletesz 10-et.
+
+00:01:48.180 --> 00:01:50.330
+Aztán tízszer lefuttatja a plant gépet.
+
+00:01:51.420 --> 00:01:54.380
+Minden alkalommal kiveszi az értéket
+
+00:01:54.400 --> 00:01:57.730
+a position dobozból. Az mindig 10, és így
+
+00:01:57.760 --> 00:02:01.340
+mindig ugyanazt a 10-et adja be. Arra van tehát
+
+00:02:01.360 --> 00:02:03.400
+szükségünk, hogy minden alkalommal
+
+00:02:03.460 --> 00:02:06.490
+egy kicsit odébb lépjünk. Miután
+
+00:02:06.540 --> 00:02:08.820
+elültettünk egy virágot, azt szeretnénk mondani Jikinek,
+
+00:02:08.960 --> 00:02:12.200
+hogy vigye odébb a pozíciót 10-zel, hogy készen álljon
+
+00:02:12.300 --> 00:02:16.410
+a következő virág ültetésére. Felejtsük el
+
+00:02:16.500 --> 00:02:18.800
+egy pillanatra a kódot: logikailag hogyan
+
+00:02:18.900 --> 00:02:22.360
+néz ki mindez? Ha azt mondom
+
+00:02:22.440 --> 00:02:24.460
+neked: „Ültesd az első virágot 10-hez,
+
+00:02:24.620 --> 00:02:26.320
+a következőt 20-hoz, az utána
+
+00:02:26.360 --> 00:02:29.140
+következőt 30-hoz”, honnan tudja az agyad, hogy
+
+00:02:29.180 --> 00:02:31.549
+a következőt 40-hez kell ültetni,
+
+00:02:32.320 --> 00:02:33.940
+az azt követőt pedig
+
+00:02:33.960 --> 00:02:38.280
+50-hez? Az agyad azt csinálja, hogy
+
+00:02:38.340 --> 00:02:41.680
+észben tartja az aktuális számot, hozzáad
+
+00:02:41.740 --> 00:02:44.380
+10-et, majd frissíti ezt a számot
+
+00:02:44.440 --> 00:02:47.510
+a fejedben. És pontosan ugyanezt
+
+00:02:47.520 --> 00:02:50.950
+megtehetjük kódban is. Ehhez
+
+00:02:51.160 --> 00:02:54.380
+azt mondjuk: „Frissítsd a position dobozt úgy,
+
+00:02:54.440 --> 00:03:00.500
+hogy az aktuális pozícióérték plusz 10 legyen benne.” Amikor
+
+00:03:00.560 --> 00:03:03.040
+Jiki ezt meglátja, kiveszi az aktuális számot
+
+00:03:03.120 --> 00:03:05.460
+a position dobozból, hozzáad
+
+00:03:05.540 --> 00:03:08.570
+10-et, elvégzi a matekot, összeadja a kettőt,
+
+00:03:08.580 --> 00:03:10.720
+majd az eredményt visszateszi a dobozba
+
+00:03:10.800 --> 00:03:14.000
+a következő alkalomra. Ha ezt beépítjük
+
+00:03:14.060 --> 00:03:15.960
+a programunkba, vagyis most azt mondjuk:
+
+00:03:16.220 --> 00:03:18.680
+„A pozíció kezdőértéke
+
+00:03:18.700 --> 00:03:21.490
+legyen 10”, aztán nyolcszor ültetünk egy virágot
+
+00:03:22.040 --> 00:03:24.860
+a pozíciónál, majd a pozíciót
+
+00:03:24.920 --> 00:03:28.360
+10-zel nagyobbra állítjuk, mint előtte volt, a kódunk
+
+00:03:28.420 --> 00:03:30.640
+működik, és nyolc, szépen elosztott virágot kapunk.
+
+00:03:32.440 --> 00:03:35.400
+Figyeld meg, hogy nincs let, amikor
+
+00:03:35.410 --> 00:03:38.980
+a változót frissítjük. Ez nagyon fontos. Amikor Jiki
+
+00:03:39.140 --> 00:03:42.400
+egy let-et lát, új dobozt készít. Itt viszont
+
+00:03:42.420 --> 00:03:44.560
+nem új dobozt akarunk készíteni.
+
+00:03:44.600 --> 00:03:46.480
+Azt akarjuk megváltoztatni, ami a már
+
+00:03:46.540 --> 00:03:50.920
+meglévő dobozunkban van. Azt is vedd észre, hogy
+
+00:03:51.020 --> 00:03:54.320
+a dobozt csak egyszer, a cikluson kívül
+
+00:03:54.380 --> 00:03:57.500
+hozzuk létre. Ezt fontos megjegyezni. A dobozt
+
+00:03:57.620 --> 00:03:59.720
+egyszer, az elején hozod létre, aztán frissíted
+
+00:03:59.760 --> 00:04:03.500
+a ciklus minden futásakor. Rendben, elég sokat
+
+00:04:03.560 --> 00:04:05.850
+vettünk át ebben a videóban. Meg tudjuk
+
+00:04:05.900 --> 00:04:08.020
+változtatni, mi van a dobozokban, és ezzel
+
+00:04:08.080 --> 00:04:10.880
+az erővel nyomon követhetünk valamit, ami idővel
+
+00:04:10.940 --> 00:04:14.320
+változik. Ezt a mintát folyamatosan használni fogod:
+
+00:04:14.420 --> 00:04:17.300
+pozíciót követsz, megszámolod, hányszor történt meg
+
+00:04:17.340 --> 00:04:21.240
+valami, pontszámot vezetsz. Amikor csak olyasmit kell
+
+00:04:21.260 --> 00:04:24.780
+megjegyezned, ami a program futása közben változik,
+
+00:04:24.820 --> 00:04:27.520
+ezt így csinálod. Most jön
+
+00:04:27.620 --> 00:04:29.460
+néhány feladat, amikben ezt
+
+00:04:29.500 --> 00:04:32.060
+gyakorolhatod. Nyugodtan nézd vissza
+
+00:04:32.100 --> 00:04:33.760
+ezt a videót, ha elakadsz.
+
+00:04:33.800 --> 00:04:36.420
+Ez nem csalás. Ez a téma elég
+
+00:04:36.460 --> 00:04:38.830
+összetettnek tűnhet. Idővel világossá válik, de
+
+00:04:38.840 --> 00:04:40.510
+eleinte kicsit soknak érezheted. És
+
+00:04:40.540 --> 00:04:41.930
+remélhetőleg, mire pár feladat múlva
+
+00:04:41.930 --> 00:04:44.510
+találkozunk, már kezded
+
+00:04:44.540 --> 00:04:46.090
+egy kicsit jobban kiismerni
+
+00:04:46.120 --> 00:04:48.600
+ezt a mintát, és az önbizalmad is nőni fog.
+
+00:04:48.640 --> 00:04:48.800
+Sok sikert!

@@ -1,0 +1,168 @@
+WEBVTT
+
+NOTE en_md5 cc1cedf75df71450fa8e0da4a289c70e
+
+00:00:00.100 --> 00:00:03.520
+Üdv újra itt! Eddig olyan dolgokra használtunk
+
+00:00:03.740 --> 00:00:06.760
+változókat, amelyeknek van jelentésük: valakinek az életkora,
+
+00:00:06.860 --> 00:00:10.680
+az idő, egy szín. Frissítettük is őket, de
+
+00:00:10.700 --> 00:00:14.900
+alapvetően elég statikusak voltak. A programozásban viszont
+
+00:00:14.940 --> 00:00:18.320
+a változók egyik leggyakoribb feladata az,
+
+00:00:18.400 --> 00:00:22.020
+hogy nyomon kövessük, hol tartunk egy munkában.
+
+00:00:22.080 --> 00:00:24.280
+Képzeld el, hogy falat építesz, ezt nemsokára
+
+00:00:24.340 --> 00:00:26.880
+tényleg meg is teszed. A való életben tudnád,
+
+00:00:26.940 --> 00:00:29.560
+hogy éppen melyik téglasoron dolgozol:
+
+00:00:29.600 --> 00:00:31.540
+a legalsón, a legfelsőn vagy
+
+00:00:31.580 --> 00:00:34.380
+valamelyik középsőn, és azt is tudnád,
+
+00:00:34.420 --> 00:00:36.480
+hányadik téglát kell leraknod ezután:
+
+00:00:36.520 --> 00:00:40.240
+a harmadikat, a negyediket, és így tovább.
+
+00:00:40.250 --> 00:00:43.240
+Ugyanerre a digitális világban is szükségünk van. Vagy
+
+00:00:43.360 --> 00:00:47.070
+képzeld el, hogy egy automata Space
+
+00:00:47.140 --> 00:00:50.220
+Invaders-botot készítesz. Annak tudnia kell,
+
+00:00:50.320 --> 00:00:52.220
+hogy a képernyőn balról jobbra haladva
+
+00:00:52.260 --> 00:00:55.730
+éppen hol jár. A programozásban ezt állapotnak hívjuk,
+
+00:00:56.240 --> 00:00:59.840
+arra utalva, hogy „milyen állapotban van éppen”. Az állapot
+
+00:00:59.880 --> 00:01:02.510
+már önmagában is hasznos, mert tudjuk belőle,
+
+00:01:02.600 --> 00:01:05.099
+mi történik éppen. Igazán hasznossá viszont akkor
+
+00:01:05.140 --> 00:01:08.250
+válik, amikor elágazásokkal kombináljuk. Ha falat
+
+00:01:08.280 --> 00:01:10.660
+építünk, minden tégla után ellenőriznünk kell,
+
+00:01:10.680 --> 00:01:13.780
+hogy az adott sor utolsó tégláját
+
+00:01:13.820 --> 00:01:16.160
+raktuk-e le, és ha igen,
+
+00:01:16.240 --> 00:01:17.520
+akkor át kell lépnünk a
+
+00:01:17.560 --> 00:01:19.200
+következő sorra, és megint az első
+
+00:01:19.240 --> 00:01:22.310
+téglával kell kezdenünk. Ha a Space Invaders-botunkat
+
+00:01:22.440 --> 00:01:23.780
+építjük, mozgás előtt ellenőriznünk kell,
+
+00:01:23.820 --> 00:01:26.020
+hogy a képernyő szélén vagyunk-e,
+
+00:01:26.140 --> 00:01:29.700
+és ha igen, meg kell fordulnunk. Ráadásul
+
+00:01:29.780 --> 00:01:32.360
+az irány maga is állapot: azt rögzíti,
+
+00:01:32.380 --> 00:01:35.800
+hogy balra vagy jobbra haladunk-e. Ahogy
+
+00:01:35.900 --> 00:01:37.600
+haladsz tovább, az állapot a programozás
+
+00:01:37.660 --> 00:01:41.220
+egyik legfontosabb eleme lesz: annak a tudása,
+
+00:01:41.360 --> 00:01:44.100
+hogy valami hol tart, milyen állapotban van,
+
+00:01:44.500 --> 00:01:47.140
+vagy hogy a feladataink listájában
+
+00:01:47.300 --> 00:01:49.960
+hol járunk. A következő két gyakorlatban
+
+00:01:49.980 --> 00:01:52.140
+állapot segítségével fogsz falat építeni és
+
+00:01:52.180 --> 00:01:54.500
+Space Invaderst játszani, pontosan az imént
+
+00:01:54.560 --> 00:01:58.890
+megbeszélt ötletek alapján. Nagyon fontos, hogy ezeket
+
+00:01:58.940 --> 00:02:03.780
+a feladatokat apró lépésekre bontsd. Gondold végig,
+
+00:02:03.840 --> 00:02:05.660
+pontosan mit kell tudnod ahhoz,
+
+00:02:05.680 --> 00:02:07.740
+hogy megoldd őket: például hogy melyik téglasoron
+
+00:02:07.780 --> 00:02:09.360
+állsz, vagy hol van éppen
+
+00:02:09.420 --> 00:02:12.680
+az aktuális tégla. Gondold végig azokat a szabályokat is,
+
+00:02:12.740 --> 00:02:15.000
+amelyeket a számítógépnek követnie kell ahhoz,
+
+00:02:15.060 --> 00:02:18.780
+hogy felépítse az egész falat. Ez már igazi programozás.
+
+00:02:19.000 --> 00:02:20.760
+Pontosan az ilyesmit csináljuk
+
+00:02:20.800 --> 00:02:24.120
+programozóként nap mint nap.
+
+00:02:24.160 --> 00:02:26.700
+Egyre összetettebb, de egyre
+
+00:02:26.720 --> 00:02:29.860
+szórakoztatóbb is. Ezeket a mintákat eleinte
+
+00:02:29.940 --> 00:02:32.160
+időbe telik megszokni, úgyhogy
+
+00:02:32.180 --> 00:02:34.600
+ne siess, érezd jól magad, és hamarosan
+
+00:02:34.640 --> 00:02:35.320
+találkozunk!

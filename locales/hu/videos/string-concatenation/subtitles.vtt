@@ -1,0 +1,207 @@
+WEBVTT
+
+NOTE en_md5 d39fabecd86df2df0d2b749f6d2241ba
+
+00:00:00.260 --> 00:00:02.070
+Üdv újra itt. Remélem, jól szórakoztál
+
+00:00:02.120 --> 00:00:04.900
+azon a rakás feladaton. Fantasztikusan
+
+00:00:04.940 --> 00:00:07.970
+haladsz. Szép munka. Ez a videó most
+
+00:00:08.000 --> 00:00:10.740
+rövid lesz. Azt már tudod, mi az a string.
+
+00:00:10.940 --> 00:00:12.800
+Papírdarabok, amelyekre szöveg
+
+00:00:12.840 --> 00:00:15.440
+van írva. A kurzus során végig
+
+00:00:15.520 --> 00:00:18.960
+használtad őket. De eddig minden string, amit használtál,
+
+00:00:19.100 --> 00:00:22.000
+olyan volt, amit közvetlenül begépeltél. De mi van akkor,
+
+00:00:22.040 --> 00:00:24.620
+ha egy stringet változók vagy
+
+00:00:24.660 --> 00:00:28.500
+feltételek alapján szeretnél összeállítani? Hogyan
+
+00:00:28.560 --> 00:00:31.200
+csináljuk ezt? Nos, erre két módszer van,
+
+00:00:31.300 --> 00:00:34.520
+amit megmutatok. Az elsőt úgy hívják:
+
+00:00:34.640 --> 00:00:38.370
+string-összefűzés, ami csak egy flancos és
+
+00:00:38.460 --> 00:00:41.600
+kicsit zavarba ejtő neve annak, hogy két stringet
+
+00:00:41.640 --> 00:00:46.120
+összeadunk. Képzeld el, hogy van két szavad: hello és
+
+00:00:46.160 --> 00:00:48.420
+world, és egy olyan stringet szeretnél
+
+00:00:48.440 --> 00:00:51.730
+létrehozni, hogy hello world. Leírhatnád
+
+00:00:51.940 --> 00:00:54.460
+egyetlen stringként, hogy hello world, de írhatod
+
+00:00:54.540 --> 00:00:59.570
+úgy is, hogy hello szóköz, plusz world, és
+
+00:00:59.600 --> 00:01:03.260
+ugyanazt a stringet kapod. Ebben a
+
+00:01:03.340 --> 00:01:05.340
+helyzetben ez persze nem túl hasznos.
+
+00:01:05.940 --> 00:01:08.180
+De mi van akkor, ha egy változóban
+
+00:01:08.240 --> 00:01:10.420
+valakinek a neve van, és köszönni
+
+00:01:10.460 --> 00:01:12.780
+szeretnénk neki? Képzeld el, hogy van
+
+00:01:12.820 --> 00:01:16.020
+egy name nevű változónk, amiben hol Jeremy áll,
+
+00:01:16.060 --> 00:01:18.860
+hol Jiki. Ezt a változót használva
+
+00:01:18.920 --> 00:01:22.280
+szeretnénk azt mondani: hello Jeremy vagy hello Jiki.
+
+00:01:23.380 --> 00:01:25.860
+Nos, ezt pont az összefűzéssel
+
+00:01:25.920 --> 00:01:30.600
+érhetjük el: hello plusz name, és ez
+
+00:01:30.620 --> 00:01:33.480
+vagy hello Jeremy, vagy hello
+
+00:01:33.620 --> 00:01:37.320
+Jiki, vagy hello bárki más lesz, attól függően,
+
+00:01:37.360 --> 00:01:41.000
+hogy mi van a name dobozban. Használhatunk
+
+00:01:41.040 --> 00:01:44.220
+valami mást is, a template literalokat, hogy ugyanezt
+
+00:01:44.280 --> 00:01:48.790
+elérjük. Ez megint egy fölöslegesen flancos, zavaros szó,
+
+00:01:48.840 --> 00:01:53.920
+ami azt jelenti, hogy stringeket illesztünk be más stringekbe. Vagyis
+
+00:01:53.960 --> 00:01:56.950
+ahelyett, hogy a stringeket összeadnánk,
+
+00:01:57.120 --> 00:02:00.830
+készíthetünk egy olyan stringet, egyfajta sablont, amelyben helyet hagyunk
+
+00:02:00.900 --> 00:02:04.020
+más stringeknek. Ehhez pedig
+
+00:02:04.040 --> 00:02:09.800
+idézőjelek helyett backticket használunk. A backtick,
+
+00:02:09.880 --> 00:02:12.420
+ahogy az angol neve is mutatja, egy visszafelé dőlő vesszőcske, de
+
+00:02:12.460 --> 00:02:15.080
+könnyen lehet, hogy még sosem használtad, ezért
+
+00:02:15.120 --> 00:02:17.100
+meg kell keresned hozzá a megfelelő billentyűt
+
+00:02:17.140 --> 00:02:20.730
+a billentyűzeteden. Ezzel hozzuk létre
+
+00:02:20.800 --> 00:02:24.150
+a sablont, amelybe más stringek is kerülhetnek. Ahhoz pedig,
+
+00:02:24.220 --> 00:02:27.220
+hogy egy stringet beillesszünk a sablonba,
+
+00:02:27.300 --> 00:02:30.540
+egy másik furcsa szintaxist használunk: dollárjelet és kapcsos zárójelet.
+
+00:02:30.580 --> 00:02:33.160
+Ha például ugyanazt szeretnénk elérni, mint az imént
+
+00:02:33.180 --> 00:02:36.200
+látott hello plusz name, azt írhatjuk,
+
+00:02:36.420 --> 00:02:40.700
+hogy backtick, hello, dollárjel,
+
+00:02:40.860 --> 00:02:45.180
+kapcsos zárójel, name, kapcsos zárójel, backtick. Ez sokkal
+
+00:02:45.220 --> 00:02:46.560
+jobban néz ki, mint ahogy hangzik.
+
+00:02:47.800 --> 00:02:50.520
+És pontosan ugyanazt csinálja, mintha
+
+00:02:50.580 --> 00:02:53.320
+a stringeket összeadnánk. Amikor viszont
+
+00:02:53.390 --> 00:02:56.120
+több stringet kell egyetlen szövegbe
+
+00:02:56.160 --> 00:02:58.320
+beilleszteni, ez sokkal hatékonyabb tud lenni.
+
+00:02:59.160 --> 00:03:00.049
+Kell egy kis idő, mire
+
+00:03:00.100 --> 00:03:02.380
+ezt a pontos szintaxist megszokod,
+
+00:03:02.900 --> 00:03:05.420
+de igazából nincs benne semmi bonyolult.
+
+00:03:07.000 --> 00:03:09.140
+Most kaptál két feladatot, hogy
+
+00:03:09.180 --> 00:03:11.780
+ezeket gyakorold. Az első ugyanazt a
+
+00:03:11.840 --> 00:03:14.420
+hello név mintát használja, amit az imént láttunk.
+
+00:03:14.460 --> 00:03:17.060
+Megcsinálhatod stringek összefűzésével vagy template stringekkel,
+
+00:03:18.100 --> 00:03:20.640
+és emlékeztetőül mindkettőt beleírom
+
+00:03:20.680 --> 00:03:23.880
+a feladatleírásba. A második feladat egy klasszikus
+
+00:03:24.100 --> 00:03:27.120
+állásinterjús kérdés. Szóval ha ezt megtanulod,
+
+00:03:27.200 --> 00:03:29.760
+jól felkészült leszel bármilyen jövőbeli állásinterjúra.
+
+00:03:30.620 --> 00:03:31.980
+Sok szerencsét, és hamarosan
+
+00:03:32.040 --> 00:03:32.380
+találkozunk!

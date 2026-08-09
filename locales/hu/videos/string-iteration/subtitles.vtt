@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 488ab8c8dd77c6bec365ce44675868b7
+
+00:00:00.280 --> 00:00:02.640
+Üdv újra itt! Az előző videóban megtanultuk,
+
+00:00:02.680 --> 00:00:04.680
+hogyan érheted el egy string
+
+00:00:04.700 --> 00:00:08.300
+egy-egy betűjét szögletes zárójellel. Most azt nézzük meg,
+
+00:00:08.420 --> 00:00:10.120
+hogyan mehetsz végig
+
+00:00:10.160 --> 00:00:13.160
+egy stringen úgy, hogy a betűit
+
+00:00:13.200 --> 00:00:15.660
+egyenként veszed ki. Ehhez
+
+00:00:15.720 --> 00:00:18.300
+egy új fajta ciklusra lesz szükségünk. Eddig
+
+00:00:18.360 --> 00:00:20.170
+a repeat ciklust használtuk, most viszont
+
+00:00:20.200 --> 00:00:22.720
+egy úgynevezett for-of ciklus következik.
+
+00:00:22.760 --> 00:00:26.880
+Ez két új kulcsszót jelent: a for-t és az of-ot. A
+
+00:00:27.000 --> 00:00:28.740
+for kulcsszóval a későbbiekben is
+
+00:00:28.760 --> 00:00:30.360
+sok helyen találkozunk majd.
+
+00:00:30.790 --> 00:00:32.580
+Állhat önmagában, vagy
+
+00:00:32.619 --> 00:00:35.380
+párban az in-nel vagy az of-fal.
+
+00:00:35.440 --> 00:00:37.160
+Egyelőre az utóbbira,
+
+00:00:37.220 --> 00:00:40.120
+az of-ra koncentrálunk. Nézzünk is meg
+
+00:00:40.160 --> 00:00:43.280
+egy kis kódot. Először létrehozunk
+
+00:00:43.340 --> 00:00:47.310
+egy name nevű változót, amiben a Jeremy string van.
+
+00:00:47.380 --> 00:00:50.460
+Ebben nincs semmi újdonság. Aztán jön ez a sor:
+
+00:00:50.540 --> 00:00:53.620
+for let letter of name, és elég sok
+
+00:00:53.640 --> 00:00:55.480
+minden történik benne, úgyhogy vegyük végig
+
+00:00:55.520 --> 00:00:59.240
+szépen lassan. Először is ott a for kulcsszó. Ebből
+
+00:00:59.320 --> 00:01:00.980
+tudja Jiki, hogy ciklust
+
+00:01:01.060 --> 00:01:04.340
+szeretnénk. Előrenéz, meglátja az of-ot,
+
+00:01:04.879 --> 00:01:06.320
+és már tudja is, hogy
+
+00:01:06.580 --> 00:01:09.600
+for-of ciklusról van szó. Ez pedig azt jelenti, hogy nem
+
+00:01:09.720 --> 00:01:11.940
+egy repeat ciklust használunk, ahol azt mondjuk:
+
+00:01:12.020 --> 00:01:15.180
+„menjünk körbe tízszer”, hanem azt: „menjünk végig
+
+00:01:15.260 --> 00:01:17.380
+a string összes betűjén”.
+
+00:01:17.440 --> 00:01:20.990
+Ezt jelenti a for-of. Aztán ott ez a
+
+00:01:21.060 --> 00:01:24.080
+let letter rész. Ez pontosan ugyanaz,
+
+00:01:24.140 --> 00:01:25.860
+mint fentebb a
+
+00:01:26.020 --> 00:01:29.320
+let name: egyszerűen létrehozunk egy letter nevű változót.
+
+00:01:30.240 --> 00:01:33.240
+A különbség csak annyi, hogy nem mi mondjuk meg
+
+00:01:33.280 --> 00:01:35.280
+pontosan, mi kerüljön bele, hanem arra kérjük Jikit,
+
+00:01:35.320 --> 00:01:37.850
+hogy a string betűit tegye bele
+
+00:01:37.900 --> 00:01:41.780
+egyenként. Jiki tehát meglátja
+
+00:01:41.880 --> 00:01:44.460
+a for-t, megnézi, hogy ott van-e az of, aztán nekilát.
+
+00:01:44.480 --> 00:01:46.140
+Megnézi a string első betűjét,
+
+00:01:46.480 --> 00:01:48.380
+ami itt a J, és beleteszi
+
+00:01:48.440 --> 00:01:50.840
+egy új, letter nevű dobozba. Ezt egyébként
+
+00:01:50.880 --> 00:01:52.240
+bárhogy hívhatnánk. Nem kötelező
+
+00:01:52.260 --> 00:01:53.920
+letter-nek lennie. Itt egyszerűen
+
+00:01:53.960 --> 00:01:57.020
+így döntöttünk. Ezután lefuttatja a kódot
+
+00:01:57.080 --> 00:01:58.960
+a kapcsos zárójelek között, és ide bármit írhatsz,
+
+00:01:59.000 --> 00:02:01.060
+amit máshol is írnál a kódban.
+
+00:02:01.540 --> 00:02:03.560
+Az egyetlen különbség, hogy ez a kódblokk
+
+00:02:03.640 --> 00:02:06.320
+a string minden betűjére lefut egyszer,
+
+00:02:06.380 --> 00:02:07.900
+és közben ez a változó is
+
+00:02:07.960 --> 00:02:11.940
+elérhető benne. Valahányszor Jiki a záró
+
+00:02:12.040 --> 00:02:15.000
+kapcsos zárójelhez ér, kidobja a letter dobozt,
+
+00:02:15.020 --> 00:02:16.740
+és készít egy újat, benne
+
+00:02:16.860 --> 00:02:19.220
+a következő betűvel. Első alkalommal tehát
+
+00:02:19.340 --> 00:02:20.800
+kidobja a J-t, és helyette
+
+00:02:20.920 --> 00:02:23.000
+egy e-t tesz a dobozba. Aztán ugyanezt
+
+00:02:23.020 --> 00:02:25.740
+megcsinálja az r-rel, majd az e-vel, az m-mel,
+
+00:02:26.080 --> 00:02:28.790
+végül az y-nal. Hat betű, hatszor megyünk körbe
+
+00:02:28.840 --> 00:02:31.300
+a ciklusban. Remélem, világos. A szintaxist
+
+00:02:31.340 --> 00:02:32.560
+kicsit meg kell szokni,
+
+00:02:32.600 --> 00:02:34.900
+de maga az ötlet igazából nem
+
+00:02:34.920 --> 00:02:37.730
+olyan nehéz. Ezután néhány feladat következik,
+
+00:02:37.760 --> 00:02:40.250
+amelyekben végig kell lépkedned
+
+00:02:40.250 --> 00:02:42.660
+a stringeken. Mindegyikben mást kell csinálnod
+
+00:02:42.680 --> 00:02:44.980
+a betűkkel: például megszámolni, hány betű van,
+
+00:02:45.000 --> 00:02:46.760
+vagy megkeresni egy adott
+
+00:02:46.800 --> 00:02:49.260
+betű helyét. Ehhez az eddig tanult
+
+00:02:49.320 --> 00:02:51.640
+technikákat kell használnod, és összekapcsolnod
+
+00:02:51.700 --> 00:02:57.060
+őket ezzel a ciklussal. A feladatok most már
+
+00:02:57.100 --> 00:03:00.000
+egyre nagyobb kihívást jelentenek. Sok mindent kombinálsz,
+
+00:03:00.020 --> 00:03:02.420
+amit eddig tanultál. Kérlek, szánj rájuk elég időt.
+
+00:03:02.500 --> 00:03:03.920
+Lehet, hogy egy-egy feladat
+
+00:03:03.960 --> 00:03:06.160
+hosszabb időt vesz igénybe. Ne kapkodd el,
+
+00:03:06.200 --> 00:03:08.840
+és ne keseredj el, ha nem jössz rá.
+
+00:03:08.900 --> 00:03:10.920
+Kezeld úgy, mint egy rejtvényt. Ha
+
+00:03:10.940 --> 00:03:12.640
+elakadsz, tarts egy kis szünetet, menj el
+
+00:03:12.650 --> 00:03:15.160
+sétálni, és utána gyere vissza. Megvan minden
+
+00:03:15.200 --> 00:03:16.790
+tudásod, ami ehhez kell,
+
+00:03:16.820 --> 00:03:18.870
+és a készséged is, hogy megcsináld, de
+
+00:03:18.940 --> 00:03:21.520
+türelmesnek kell lenned. És ne feledd,
+
+00:03:21.580 --> 00:03:23.320
+használhatod a tippeket, ha szükséged van rájuk,
+
+00:03:23.900 --> 00:03:25.150
+de próbáld meg őket
+
+00:03:25.200 --> 00:03:27.540
+csak végső esetben elővenni. Sok sikert,
+
+00:03:27.560 --> 00:03:28.060
+hamarosan találkozunk!
