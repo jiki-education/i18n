@@ -1,0 +1,204 @@
+WEBVTT
+
+NOTE en_md5 54c871cb5fb9450d2d15334c3f48a372
+
+00:00:00.120 --> 00:00:02.700
+Üdv újra itt! Mostanra már tudod, hogyan
+
+00:00:02.760 --> 00:00:05.780
+hozhatsz döntéseket a kódodban if, else és else if
+
+00:00:05.820 --> 00:00:09.260
+elágazásokkal. Ha azt kérném tőled,
+
+00:00:09.340 --> 00:00:11.620
+hogy csak akkor nyisd ki az ajtót,
+
+00:00:11.720 --> 00:00:14.420
+ha valaki elmúlt 20 éves, valószínűleg tudnád,
+
+00:00:14.460 --> 00:00:17.080
+mit kell tenned. De mi van akkor,
+
+00:00:17.140 --> 00:00:20.250
+ha azt is ellenőrizned kell, hogy az illető elmúlt-e 20,
+
+00:00:20.560 --> 00:00:23.790
+és a megfelelő ruhát viseli-e? Ilyenkor két
+
+00:00:23.820 --> 00:00:27.120
+különböző feltételt kell egyszerre megvizsgálnod. Hogyan
+
+00:00:27.160 --> 00:00:30.940
+csinálnád? Gondolkodj el rajta. Rendben.
+
+00:00:31.100 --> 00:00:33.820
+Használhatnál például egymásba ágyazott
+
+00:00:33.880 --> 00:00:36.520
+elágazásokat, ahogy korábban az egymásba ágyazott ciklusoknál
+
+00:00:36.540 --> 00:00:39.680
+is láttuk. Mondhatnád azt, hogy ha az age
+
+00:00:39.720 --> 00:00:43.400
+nagyobb, mint 20, akkor belépünk ebbe a
+
+00:00:43.440 --> 00:00:47.360
+kódblokkba, aztán jön egy újabb if, hogy az outfit
+
+00:00:47.400 --> 00:00:50.660
+egyenlő-e a "disco" értékkel, majd még egy kapcsos zárójel
+
+00:00:50.700 --> 00:00:54.380
+és egy újabb kódblokk. Ez működne, de
+
+00:00:54.400 --> 00:00:57.200
+elég átláthatatlanná válik, főleg ha
+
+00:00:57.300 --> 00:01:00.350
+sok feltételt szeretnél kezelni. Szerencsére van egyszerűbb megoldás is,
+
+00:01:00.940 --> 00:01:02.760
+mégpedig az, hogy a feltétel
+
+00:01:02.820 --> 00:01:06.130
+több részből is állhat. Ahelyett, hogy csak
+
+00:01:06.220 --> 00:01:08.020
+egyetlen dolgot ellenőriznénk, ellenőrizhetünk
+
+00:01:08.080 --> 00:01:11.360
+kettőt, hármat vagy akár többet is. Ehhez
+
+00:01:11.400 --> 00:01:14.000
+az and kulcsszót kell
+
+00:01:14.100 --> 00:01:18.180
+használnunk. Sajnos a JavaScriptben az and kulcsszó
+
+00:01:18.280 --> 00:01:20.880
+valójában nem az „and” szóval írandó, pedig
+
+00:01:20.900 --> 00:01:23.480
+néhány más nyelvben igen. Ehelyett
+
+00:01:23.520 --> 00:01:26.800
+két és-jelet kell egymás mellé írnod. Ezt
+
+00:01:26.820 --> 00:01:29.180
+egyszerűen meg kell jegyezned. Bosszantó, de
+
+00:01:29.220 --> 00:01:30.640
+ez van, és hamar
+
+00:01:30.700 --> 00:01:33.830
+megszokod majd. Ezzel tehát
+
+00:01:33.860 --> 00:01:36.790
+összetettebb feltételt is írhatunk. Mondhatjuk azt,
+
+00:01:36.840 --> 00:01:40.080
+hogy ha az age nagyobb, mint 20, és
+
+00:01:40.600 --> 00:01:43.280
+az outfit értéke "disco", akkor továbbmegyünk.
+
+00:01:43.980 --> 00:01:46.440
+Ha az age kisebb, mint 20, vagy
+
+00:01:46.500 --> 00:01:49.360
+az outfit nem "disco", akkor az egész állítás,
+
+00:01:49.420 --> 00:01:52.360
+vagyis az egész feltétel hamis. Ha valaha
+
+00:01:52.380 --> 00:01:55.080
+tanultál logikát, esetleg foglalkoztál elektronikával vagy
+
+00:01:55.140 --> 00:01:57.560
+haladóbb matematikával, ez
+
+00:01:57.600 --> 00:01:59.920
+nagyon természetes lesz számodra. Ha nem,
+
+00:01:59.980 --> 00:02:02.620
+akkor is gyorsan bele fogsz jönni. A vagy
+
+00:02:02.680 --> 00:02:06.420
+kapcsolatot is használhatjuk, és sajnos ehhez sincs
+
+00:02:06.480 --> 00:02:09.479
+egy kedves or kulcsszó a JavaScriptben. Helyette
+
+00:02:09.520 --> 00:02:11.340
+ezt a két függőleges vonalat írjuk
+
+00:02:11.380 --> 00:02:14.360
+egymás mellé, ez jelenti azt, hogy vagy. Elsőre furán néz ki,
+
+00:02:14.560 --> 00:02:16.310
+de igazából nem az. Meg
+
+00:02:16.340 --> 00:02:19.600
+fogod szokni. Mondhatjuk tehát azt,
+
+00:02:19.680 --> 00:02:22.740
+hogy ha valaki elmúlt 20 éves, vagy
+
+00:02:22.780 --> 00:02:25.440
+diszkószerelésben van, akkor bejöhet. Lesz tehát
+
+00:02:25.480 --> 00:02:27.820
+egy jó kis bulink diszkóruhás
+
+00:02:27.920 --> 00:02:31.060
+gyerekekkel és rosszul öltözött felnőttekkel, ami észszerűen hangzik.
+
+00:02:32.240 --> 00:02:34.580
+Van egy dolog, ami sokakat megzavar
+
+00:02:34.640 --> 00:02:37.660
+az and és az or használatánál is, mégpedig az,
+
+00:02:37.760 --> 00:02:41.020
+hogy az és/vagy mindkét oldalán
+
+00:02:41.060 --> 00:02:44.200
+teljes összehasonlításnak kell állnia. Így még ha
+
+00:02:44.240 --> 00:02:47.500
+ugyanazt a változót hasonlítod is össze mindkét oldalon,
+
+00:02:47.620 --> 00:02:50.400
+akkor is meg kell ismételned. Nem írhatod azt, hogy
+
+00:02:50.420 --> 00:02:53.560
+if age is greater than 13 and less than
+
+00:02:53.780 --> 00:02:57.310
+20. Azt kell írnod, hogy if age is
+
+00:02:57.340 --> 00:03:00.840
+greater than 13 and age is less
+
+00:03:01.040 --> 00:03:04.200
+than 20. Mindkét oldalon teljes
+
+00:03:04.240 --> 00:03:09.040
+összehasonlításra van szükség. A következő feladatokban tovább
+
+00:03:09.080 --> 00:03:12.060
+fogod használni az and és az or kulcsszót feltételek
+
+00:03:12.100 --> 00:03:14.720
+összekapcsolására. Azt kell átgondolnod, hogy mikor
+
+00:03:14.740 --> 00:03:17.230
+számít mindkét feltétel, és mikor elég,
+
+00:03:17.260 --> 00:03:19.790
+ha csak az egyik igaz. Sok sikert,
+
+00:03:19.820 --> 00:03:20.660
+hamarosan találkozunk!
