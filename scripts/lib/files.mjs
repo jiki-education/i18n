@@ -7,7 +7,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
-import { SENTINEL, fail } from "./constants.mjs";
+import { INAPPLICABLE, SENTINEL, fail } from "./constants.mjs";
+import { isUnreachablePluralKey } from "./plurals.mjs";
 
 export function readText(file) {
   return fs.readFileSync(file, "utf8");
@@ -179,11 +180,31 @@ export function vttBody(text) {
 
 // ----------------------------------------------------------- catalog trees --
 
-/** Flatten a nested catalog to { "dotted.key": "value" }, in depth-first source order. */
+/**
+ * An empty object or array: catalog structure, not a translatable leaf.
+ *
+ * `{}` is a real thing a catalog holds (an exercise with a `functions` section
+ * and nothing in it yet), and it is the one value that flattens to no key at
+ * all. Every consumer of `flatten` has to know the difference between a key
+ * whose value is structure and a key whose value is a string, so the test lives
+ * here rather than being re-derived at each call site.
+ */
+export function isEmptyContainer(value) {
+  return value !== null && typeof value === "object" && Object.keys(value).length === 0;
+}
+
+/**
+ * Flatten a nested catalog to { "dotted.key": "value" }, in depth-first source order.
+ *
+ * An empty container is a LEAF, not a branch. Recursing into one yields nothing,
+ * which makes the key invisible to key parity, and anything rebuilding a tree
+ * from the flat map then drops it silently. Emitting the container itself keeps
+ * the key visible; `isEmptyContainer` is how a caller tells it from a string.
+ */
 export function flatten(tree, prefix = "", out = {}) {
   for (const [key, value] of Object.entries(tree)) {
     const dotted = prefix ? `${prefix}.${key}` : key;
-    if (value && typeof value === "object" && !Array.isArray(value)) {
+    if (value && typeof value === "object" && !Array.isArray(value) && Object.keys(value).length > 0) {
       flatten(value, dotted, out);
     } else {
       out[dotted] = value;
@@ -215,22 +236,57 @@ export function unflatten(flat) {
  * sentinel. Every other value is reproduced byte for byte, because it may be a
  * native speaker's decision and nothing here re-litigates one.
  *
+ * A key whose English value is an empty container is reproduced as that empty
+ * container. It is structure, not a missing translation: there is nothing to
+ * translate and a sentinel there would be a lie about the file's state.
+ *
+ * A plural key `locale` can never reach becomes `∅`. That is decided by the
+ * TARGET locale alone and never by what English holds: English carries the union
+ * of plural categories, so its own `∅` on a key another language needs must NOT
+ * propagate. A locale that has the category gets `�` there and the key counts as
+ * a real gap, which is correct: that language does need a string nobody has
+ * written yet.
+ *
  * This is the same rule as the translator repo's `scripts/catalog-stub`, applied
  * to every catalog type rather than only the app's.
  */
-export function stubAgainst(source, target) {
+export function stubAgainst(source, target, { locale = null } = {}) {
   const flatSource = flatten(source);
   const flatTarget = flatten(target);
   const out = {};
-  for (const key of Object.keys(flatSource)) {
+  for (const [key, english] of Object.entries(flatSource)) {
+    if (isEmptyContainer(english)) {
+      out[key] = Array.isArray(english) ? [] : {};
+      continue;
+    }
+    // Neither a string nor an empty container leaves no correct move: copying
+    // English is banned and a sentinel would destroy the value. Say so instead.
+    if (typeof english !== "string") {
+      fail(`${key} in English is ${english === null ? "null" : typeof english}; catalogs hold strings and empty containers only`);
+    }
+    if (locale && isUnreachablePluralKey(key, locale, flatSource)) {
+      out[key] = INAPPLICABLE;
+      continue;
+    }
+    // An existing `∅` that this run cannot justify is demoted to `�`, so a
+    // hand-written one on a reachable key becomes the gap it really is. No
+    // locale means nothing is provably unreachable, so nothing is written.
     const existing = flatTarget[key];
-    out[key] = typeof existing === "string" && existing !== SENTINEL ? existing : SENTINEL;
+    const keep = typeof existing === "string" && existing !== SENTINEL && existing !== INAPPLICABLE;
+    out[key] = keep ? existing : SENTINEL;
   }
   return unflatten(out);
 }
 
+/**
+ * Translatable keys only. An empty container is structure and an `∅` key is
+ * unreachable, so neither is a key anyone can fill and neither belongs in the
+ * denominator. `inapplicable` is reported alongside rather than hidden.
+ */
 export function countSentinels(tree) {
-  const values = Object.values(flatten(tree));
+  const values = Object.values(flatten(tree)).filter((value) => !isEmptyContainer(value));
+  const inapplicable = values.filter((value) => value === INAPPLICABLE).length;
   const stubbed = values.filter((value) => value === SENTINEL).length;
-  return { total: values.length, stubbed, translated: values.length - stubbed };
+  const total = values.length - inapplicable;
+  return { total, stubbed, translated: total - stubbed, inapplicable };
 }

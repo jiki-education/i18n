@@ -105,6 +105,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import {
+  INAPPLICABLE,
   R2_BUCKET,
   R2_ENDPOINT,
   R2_PREFIX,
@@ -188,7 +189,35 @@ const pointerKeyFor = (artifactKey) => `${path.dirname(artifactKey)}/current.jso
  * ships the catalog with the deploy, so its render path never looks one up.
  */
 function emit(artifacts, r2Path, value) {
-  return emitBytes(artifacts, r2Path, JSON.stringify(value));
+  return emitBytes(artifacts, r2Path, JSON.stringify(omitInapplicable(value)));
+}
+
+/**
+ * Drop every `∅` key on the way to an artifact.
+ *
+ * `∅` marks a key the language can never reach: i18next computes one plural
+ * suffix and does one lookup, so no count ever resolves to it. Shipping the
+ * character would put a glyph in a bundle that is read by nothing, and would put
+ * it one typo away from rendering. Omitting it is not lossy either, because the
+ * client cannot ask for the key: an absent key it can never look up and a present
+ * key it can never look up are the same artifact, minus the bytes.
+ *
+ * Unlike `�`, `∅` therefore never blocks a publish. It is not an unfinished
+ * translation, it is a key that does not apply, and a locale must not be held
+ * back forever by a string nobody can write.
+ *
+ * Every catalog reaches R2 through emit(), so this is the one place it happens.
+ */
+function omitInapplicable(value) {
+  if (Array.isArray(value)) return value;
+  if (value === null || typeof value !== "object") return value;
+
+  const out = {};
+  for (const [key, child] of Object.entries(value)) {
+    if (child === INAPPLICABLE) continue;
+    out[key] = omitInapplicable(child);
+  }
+  return out;
 }
 
 /**

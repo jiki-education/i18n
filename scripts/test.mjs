@@ -11,9 +11,22 @@
 // non-zero exit on failure. Add a `test(name, fn)` block, not a dependency.
 
 import assert from "node:assert/strict";
+import { INAPPLICABLE, SENTINEL } from "./lib/constants.mjs";
+import { isUnreachablePluralKey, parsePluralKey, reachableCategories } from "./lib/plurals.mjs";
 import { deepMerge, mergeExerciseCatalogs } from "./lib/families.mjs";
-import { contentHash, parseVttNotes, stampFrontmatter, stampVttNote, vttBody, vttTimestamps } from "./lib/files.mjs";
-import { findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
+import {
+  contentHash,
+  countSentinels,
+  flatten,
+  parseVttNotes,
+  stampFrontmatter,
+  stampVttNote,
+  stubAgainst,
+  unflatten,
+  vttBody,
+  vttTimestamps
+} from "./lib/files.mjs";
+import { ERROR, checkCatalog, findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 
 let failures = 0;
@@ -98,6 +111,228 @@ test("the published set is the union of both sides, sorted", () => {
   assert.deepEqual(merged.map((entry) => entry.slug), ["bouncer-dress-code", "maze-turn-around", "maze-walk"]);
 });
 
+
+// ------------------------------------------------------ catalog key parity
+
+// Parity with English is stub's whole contract, and a break in it is silent:
+// no error, no warning, and the resulting file still validates. The empty
+// container is the case that broke it. `{}` flattens to no leaf at all, so a key
+// holding one was invisible to the parity logic and was dropped on the way out
+// (English's exercises/triangle `"functions": {}` vanished from a locale).
+
+console.log("\ncatalog key parity:");
+
+test("an empty container is a leaf, not a branch that flattens to nothing", () => {
+  assert.deepEqual(flatten({ a: "x", fns: {}, list: [] }), { a: "x", fns: {}, list: [] });
+});
+
+test("a nested empty object keeps its whole dotted path, and round-trips", () => {
+  const tree = { checks: { ok: "x" }, scenarios: { one: { fns: {} } } };
+  assert.deepEqual(flatten(tree), { "checks.ok": "x", "scenarios.one.fns": {} });
+  assert.deepEqual(unflatten(flatten(tree)), tree);
+});
+
+test("an empty object in English survives stub as an empty object", () => {
+  assert.deepEqual(stubAgainst({ a: "en", fns: {} }, { a: "hu", fns: {} }), { a: "hu", fns: {} });
+});
+
+test("an empty object survives even when the target has never held the key", () => {
+  assert.deepEqual(stubAgainst({ a: "en", fns: {} }, { a: "hu" }), { a: "hu", fns: {} });
+});
+
+test("an empty container is never the sentinel: it is structure, not a gap", () => {
+  const stubbed = stubAgainst({ fns: {} }, {});
+  assert.deepEqual(stubbed, { fns: {} });
+  assert.equal(JSON.stringify(stubbed), '{"fns":{}}');
+});
+
+test("an empty array is structure the same way", () => {
+  assert.deepEqual(stubAgainst({ a: "en", list: [] }, {}), { a: SENTINEL, list: [] });
+});
+
+test("the stubbed empty container is a fresh one, not English's own object", () => {
+  const english = { fns: {} };
+  stubAgainst(english, {}).fns.leaked = true;
+  assert.deepEqual(english, { fns: {} });
+});
+
+test("an existing translation is still reproduced byte for byte", () => {
+  assert.deepEqual(stubAgainst({ a: "en", b: "en" }, { a: "  hu  ", b: "hu" }), { a: "  hu  ", b: "hu" });
+});
+
+test("a key English has deleted is still dropped, sentinel or not", () => {
+  assert.deepEqual(stubAgainst({ a: "en" }, { a: "hu", gone: "hu", also: SENTINEL }), { a: "hu" });
+});
+
+test("a missing key and an existing sentinel both stub to the sentinel", () => {
+  assert.deepEqual(stubAgainst({ a: "en", b: "en" }, { a: SENTINEL }), { a: SENTINEL, b: SENTINEL });
+});
+
+test("output key order still mirrors English, empty containers included", () => {
+  const stubbed = stubAgainst({ a: "en", fns: {}, z: "en" }, { z: "hu", a: "hu" });
+  assert.equal(JSON.stringify(stubbed), `{"a":"hu","fns":{},"z":"hu"}`);
+});
+
+test("an empty container is not counted as a translatable key", () => {
+  assert.deepEqual(countSentinels({ a: "hu", b: SENTINEL, fns: {} }), { total: 2, stubbed: 1, translated: 1, inapplicable: 0 });
+});
+
+test("a target missing English's empty container is a key-parity error", () => {
+  const issues = checkCatalog({ a: "en", fns: {} }, { a: "hu" });
+  assert.deepEqual(issues, [{ level: ERROR, message: "missing key: fns" }]);
+});
+
+test("a target holding the same empty container is clean, not a wrong-type error", () => {
+  assert.deepEqual(checkCatalog({ a: "en", fns: {} }, { a: "hu", fns: {} }), []);
+});
+
+test("a target that filled English's empty container with a string is an error", () => {
+  const issues = checkCatalog({ fns: {} }, { fns: SENTINEL });
+  assert.deepEqual(issues, [{ level: ERROR, message: "fns: source is an empty object, target is not" }]);
+});
+
+// ---------------------------------------------------- the inapplicable key
+
+// `∅` marks a key the language can never reach. Getting the reachable set wrong
+// in the permissive direction leaves a dead key blocking a publish forever;
+// getting it wrong in the strict direction BLANKS A REAL TRANSLATION, silently,
+// in every locale at once. It has already happened once: a sweep derived the set
+// from Intl alone and wiped 26 live `_zero` strings. These assertions are the
+// behaviour of i18next 25.10.10, measured, not reasoned about.
+
+console.log("\nthe inapplicable key:");
+
+test("a plural key splits into base, ordinality and category", () => {
+  assert.deepEqual(parsePluralKey("flowerCount_two"), { base: "flowerCount", ordinal: false, category: "two" });
+  assert.deepEqual(parsePluralKey("a.b.result_ordinal_few"), { base: "a.b.result", ordinal: true, category: "few" });
+  assert.equal(parsePluralKey("slotCount"), null);
+  assert.equal(parsePluralKey("thing_ordinal"), null);
+});
+
+test("`_zero` is reachable in EVERY language, whatever CLDR says", () => {
+  // i18next special-cases it: t(k, {count: 0}) renders k_zero in fr (categories
+  // one/many/other) and in ja (other alone). Deriving from Intl alone marks it
+  // dead and wipes the string. This is the assertion that stops that returning.
+  for (const locale of ["en", "fr", "ja", "ko", "zh-CN", "hi", "ru", "el", "hu"]) {
+    assert.ok(reachableCategories(locale).has("zero"), `${locale} cardinal zero`);
+  }
+});
+
+test("`_ordinal_zero` is NOT special-cased: ordinals follow CLDR alone", () => {
+  // With every _ordinal_* key present, count 0 renders _ordinal_other everywhere.
+  assert.equal(reachableCategories("en", { ordinal: true }).has("zero"), false);
+  assert.equal(reachableCategories("hi", { ordinal: true }).has("zero"), false);
+});
+
+test("the reachable set is CLDR's, per type", () => {
+  assert.deepEqual([...reachableCategories("ja")].sort(), ["other", "zero"]);
+  assert.deepEqual([...reachableCategories("hu", { ordinal: true })].sort(), ["one", "other"]);
+  assert.deepEqual([...reachableCategories("en", { ordinal: true })].sort(), ["few", "one", "other", "two"]);
+});
+
+test("an unknown locale answers null, so nothing is provably unreachable", () => {
+  assert.equal(reachableCategories("zz-XX"), null);
+  assert.equal(isUnreachablePluralKey("n_one", "zz-XX", { n_one: "x", n_other: "x" }), false);
+});
+
+const ENGLISH = {
+  "phrases.slotCount_zero": "no input slots",
+  "phrases.slotCount_one": "one input slot",
+  "phrases.slotCount_many": INAPPLICABLE,
+  "phrases.slotCount_other": "{{count}} input slots",
+  "result_ordinal_one": "1st",
+  "result_ordinal_two": "2nd",
+  "result_ordinal_other": "nth",
+  "step_one": "Open the editor"
+};
+
+test("a category the locale lacks is unreachable", () => {
+  assert.equal(isUnreachablePluralKey("phrases.slotCount_one", "ja", ENGLISH), true);
+  assert.equal(isUnreachablePluralKey("result_ordinal_two", "hu", ENGLISH), true);
+});
+
+test("a category the locale has is reachable", () => {
+  assert.equal(isUnreachablePluralKey("phrases.slotCount_one", "hu", ENGLISH), false);
+  assert.equal(isUnreachablePluralKey("result_ordinal_two", "en", ENGLISH), false);
+});
+
+test("`_zero` and `_other` are never unreachable", () => {
+  assert.equal(isUnreachablePluralKey("phrases.slotCount_zero", "ja", ENGLISH), false);
+  assert.equal(isUnreachablePluralKey("phrases.slotCount_other", "ja", ENGLISH), false);
+});
+
+test("a key that merely ENDS in a category word is not a plural key", () => {
+  // `step_one` has no `step_other` sibling, so i18next never plural-resolves it.
+  // Without this guard, stubbing ja would blank an ordinary instruction.
+  assert.equal(isUnreachablePluralKey("step_one", "ja", ENGLISH), false);
+});
+
+test("stub writes the inapplicable sentinel, not the untranslated one", () => {
+  const stubbed = stubAgainst({ n_one: "one", n_other: "many" }, {}, { locale: "ja" });
+  assert.deepEqual(stubbed, { n_one: INAPPLICABLE, n_other: SENTINEL });
+});
+
+test("with no locale nothing is provably unreachable, so stub writes no `∅`", () => {
+  assert.deepEqual(stubAgainst({ n_one: "one", n_other: "many" }, {}), { n_one: SENTINEL, n_other: SENTINEL });
+});
+
+test("English's `∅` does not propagate: a locale that reaches the key gets a gap", () => {
+  // fr has cardinal `many`; English does not, so English holds `∅` there. fr must
+  // show `�` and keep counting as untranslated, never inherit English's `∅`.
+  const stubbed = stubAgainst({ n_many: INAPPLICABLE, n_other: "many" }, {}, { locale: "fr" });
+  assert.deepEqual(stubbed, { n_many: SENTINEL, n_other: SENTINEL });
+});
+
+test("a locale that also lacks the category English lacks still gets `∅`", () => {
+  assert.deepEqual(stubAgainst({ n_many: INAPPLICABLE, n_other: "many" }, {}, { locale: "ja" }), {
+    n_many: INAPPLICABLE,
+    n_other: SENTINEL
+  });
+});
+
+test("an unjustified `∅` in a target is demoted to the untranslated sentinel", () => {
+  const stubbed = stubAgainst({ n_one: "one", n_other: "many" }, { n_one: INAPPLICABLE }, { locale: "hu" });
+  assert.deepEqual(stubbed, { n_one: SENTINEL, n_other: SENTINEL });
+});
+
+test("a real translation on a reachable plural key is left alone", () => {
+  const stubbed = stubAgainst({ n_zero: "none", n_other: "many" }, { n_zero: "nulla", n_other: "sok" }, { locale: "ja" });
+  assert.deepEqual(stubbed, { n_zero: "nulla", n_other: "sok" });
+});
+
+test("an inapplicable key is outside the coverage denominator", () => {
+  assert.deepEqual(countSentinels({ a: "hu", b: SENTINEL, c: INAPPLICABLE }), {
+    total: 2,
+    stubbed: 1,
+    translated: 1,
+    inapplicable: 1
+  });
+});
+
+test("validate accepts a justified `∅` and rejects an unjustified one", () => {
+  const english = { n_one: "one", n_other: "many" };
+  assert.deepEqual(checkCatalog(english, { n_one: INAPPLICABLE, n_other: "ja" }, { locale: "ja" }), []);
+  const issues = checkCatalog(english, { n_one: INAPPLICABLE, n_other: "hu" }, { locale: "hu" });
+  assert.deepEqual(issues, [{ level: ERROR, message: `n_one: "${INAPPLICABLE}" is not justified (the key is reachable in hu)` }]);
+});
+
+test("the guard fails closed: with no locale, every `∅` is an error", () => {
+  const issues = checkCatalog({ n_one: "one", n_other: "many" }, { n_one: INAPPLICABLE, n_other: "x" });
+  assert.equal(issues.length, 1);
+  assert.equal(issues[0].level, ERROR);
+});
+
+test("`∅` in English is an error where English reaches the key", () => {
+  const issues = checkCatalog({ n_zero: INAPPLICABLE, n_other: "many" }, { n_zero: "x", n_other: "y" }, { locale: "hu" });
+  assert.deepEqual(issues, [
+    { level: ERROR, message: `n_zero: source is "${INAPPLICABLE}" but the key is reachable in English` }
+  ]);
+});
+
+test("`∅` in English is fine where English lacks the category", () => {
+  // English has no cardinal `many`; fr does, so fr holds a real string there.
+  assert.deepEqual(checkCatalog({ n_many: INAPPLICABLE, n_other: "many" }, { n_many: "beaucoup", n_other: "autres" }, { locale: "fr" }), []);
+});
 
 // -------------------------------------------------------- untranslated prose
 

@@ -21,6 +21,12 @@
 //   - the filler is the sentinel and NEVER the English string. English-as-filler
 //     is indistinguishable from a translation that legitimately matches English,
 //     and once that ambiguity is in a file it cannot be undone.
+//   - a key with nothing to translate is not stubbed. An empty object in English
+//     is structure and is reproduced as one. A plural key this language can never
+//     reach gets the second sentinel, `∅`, not `�`: it is not a gap, nobody can
+//     ever fill it, and marking it `�` would block the locale from publishing
+//     forever. Which categories a language reaches is derived in
+//     scripts/lib/plurals.mjs. See CLAUDE.md § "The two sentinels".
 //
 // Scope is the derived corpus: every item English exists for that some locale
 // already holds. Bringing a NEW item in is deliberate, and is what an explicit
@@ -65,13 +71,14 @@ function main() {
         const english = readJson(item.path);
         const target = localPath(typeId, locale, item.slug);
         const existing = fs.existsSync(target) ? readJson(target) : {};
-        const stubbed = stubAgainst(english, existing);
+        const stubbed = stubAgainst(english, existing, { locale });
         const counts = countSentinels(stubbed);
+        const inapplicable = counts.inapplicable > 0 ? `, ${counts.inapplicable} inapplicable` : "";
         const label = `${locale} ${typeId}${item.slug ? `/${item.slug}` : ""}`;
 
         if (args.flags.count) {
           console.log(
-            `${label}: ${counts.total} keys, ${counts.translated} translated, ${counts.stubbed} stubbed`
+            `${label}: ${counts.total} keys, ${counts.translated} translated, ${counts.stubbed} stubbed${inapplicable}`
           );
           if (counts.stubbed > 0) exitCode = 1;
           continue;
@@ -81,7 +88,7 @@ function main() {
         if (changed) writeJson(target, stubbed);
         console.log(
           `${changed ? "wrote " : "ok    "} ${path.relative(REPO_ROOT, target)} ` +
-            `(${counts.translated}/${counts.total} translated, ${counts.stubbed} stubbed)`
+            `(${counts.translated}/${counts.total} translated, ${counts.stubbed} stubbed${inapplicable})`
         );
       }
     }

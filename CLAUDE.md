@@ -100,7 +100,49 @@ Read [ENGLISH-SOURCE.md](./ENGLISH-SOURCE.md) first; this is the summary.
   from the checkout. "Have you translated everything you started" is satisfiable by starting one
   thing.
 
-## The untranslated sentinel
+## The two sentinels
+
+There are two, and they mean different things. Both are defined once in
+`scripts/lib/constants.mjs` and never written as a literal anywhere else.
+
+| | means | who can fix it | publish |
+| --- | --- | --- | --- |
+| **`�`** U+FFFD, `SENTINEL` | not translated yet | a translator | refuses the catalog |
+| **`∅`** U+2205, `INAPPLICABLE` | the key is unreachable in this language | nobody, ever | omits the key |
+
+### `∅`, the inapplicable sentinel
+
+- **It marks a key the language can never reach**, so no translator can ever fill it. It is not a
+  gap and it is not progress. Every count treats it as outside the denominator.
+- **The known case, and currently the only justified one, is an i18next plural category the locale
+  has no rule for.** i18next computes ONE plural suffix and does ONE lookup: it never probes the
+  other categories and it does not fall back to `_other`. Hungarian's ordinals are `one` and
+  `other`, so `_ordinal_two` and `_ordinal_few` are dead by construction. English has four ordinal
+  categories, Greek one, Hindi five.
+- **English carries the union of plural keys across every supported locale**, holding `∅` itself
+  wherever a category does not apply to English. A locale can only hold keys English has, so
+  without the union a language needing a category English lacks (`fr` cardinal `many`, `sr` cardinal
+  `few`, `it` ordinal `many`) would have nowhere to put it.
+- **English's `∅` never propagates.** Reachability is asked per locale. A locale whose grammar does
+  reach the key has a real gap there, so it gets `�` and keeps counting as untranslated. The
+  English text to translate from is missing in that case, so filling it needs a native speaker
+  rather than an engine.
+- **`_zero` is reachable in EVERY language, whatever CLDR says**, because i18next special-cases it:
+  `t(k, {count: 0})` renders `k_zero` in `fr` and in `ja` alike. It must never be marked `∅`.
+  Cardinal only: `_ordinal_zero` is not special-cased. Deriving the reachable set from
+  `Intl.PluralRules` alone once wiped 26 live strings.
+- **`∅` must be justified or it becomes a way to silence a real gap.** `checkCatalog` accepts it
+  only where the key is provably unreachable for that locale, English included, and errors
+  everywhere else. It fails closed: with no locale to check against, every `∅` is an ERROR.
+- **Reachability is derived, never tabulated.** `scripts/lib/plurals.mjs` asks `Intl.PluralRules`,
+  whose CLDR data lives in the JS engine. There is no per-language table in this repo and there
+  must never be one.
+- **Publish omits `∅` keys from the artifact** rather than shipping the character. The client
+  cannot look the key up, so an absent key and a present one are the same artifact minus the bytes.
+  It therefore never blocks a publish: a locale must not be held back forever by a string nobody
+  can write.
+
+### `�`, the untranslated sentinel
 
 - The sentinel is **`�` (U+FFFD REPLACEMENT CHARACTER)**, defined once as `SENTINEL` in
   `scripts/lib/constants.mjs` and never written as a literal anywhere else.
@@ -148,10 +190,10 @@ Shared helpers live in `scripts/lib/`.
 | `source-checkout.mjs` | Fetches a source repo into `.source/<id>`, shallow and sparse, so local runs have English to read. `--source=<id>` picks which (`front-end` by default, `videos` for the English subtitle track). CI uses `actions/checkout` for the same job and the same destinations. |
 | `source-checkout.mjs --resolve` | Prints the SHA this branch pins with an `English-Ref:` trailer, or `main`. CI uses it to point its `actions/checkout` step at the right English. |
 | `translate.mjs` | LLM-backed translation of added and changed items. Modes `outdated` / `all` / `missing`, meaning exactly what they mean in `translator`. Hands off to `validate` when it finishes. |
-| `stub.mjs` | Brings every catalog in the corpus to full key parity with English, sentinel-filling anything untranslated. Existing values are reproduced byte for byte. An explicit `--type`/`--slug` seeds an item the corpus does not hold yet. |
+| `stub.mjs` | Brings every catalog in the corpus to full key parity with English, sentinel-filling anything untranslated and `∅`-filling any plural key the language cannot reach. Existing values are reproduced byte for byte, and an empty object in English stays an empty object. An explicit `--type`/`--slug` seeds an item the corpus does not hold yet. |
 | `validate.mjs` | Key parity, ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the R2 key guard. Stamps on success. Exit 1 on any ERROR. |
-| `publish.mjs` | Builds the content-hashed artifacts, their pointers and `dist/sync.sh`. Refuses any English R2 key, any catalog still holding a sentinel, any prose that is untranslated by one of the three conventions, and any assembled artifact built from a partial corpus. No flag loosens any of that. `--out-dir=<path>` writes the same tree into a front-end checkout instead, for local dev. |
-| `coverage.mjs` | Per-locale translated / stale / missing / sentinel counts, per content type. `--json` for machines. |
+| `publish.mjs` | Builds the content-hashed artifacts, their pointers and `dist/sync.sh`. Omits every `∅` key from the bytes it writes. Refuses any English R2 key, any catalog still holding a `�` sentinel, any prose that is untranslated by one of the three conventions, and any assembled artifact built from a partial corpus. No flag loosens any of that. `--out-dir=<path>` writes the same tree into a front-end checkout instead, for local dev. |
+| `coverage.mjs` | Per-locale translated / stale / missing / sentinel counts, per content type, with `∅` keys reported outside the fraction. `--json` for machines. |
 | `test.mjs` | The assertions guarding logic a mistake in would only surface on R2, above all the exercise family merge and its key order. Plain `node:assert`, no framework, non-zero exit on failure. `pnpm test`, and part of `pnpm check`. |
 | `verify-renderer.mjs` | Proves this repo's prose pipeline and the front-end's produce identical bytes. Takes the front-end's OWN Markdown, renders it through this repo's publish path, and asserts the hash equals the filename the front-end's generator wrote, across the whole concept corpus. |
 

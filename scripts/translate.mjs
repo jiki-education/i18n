@@ -58,10 +58,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
-import { REPO_ROOT, SENTINEL, TARGET_LOCALES, assertTargetLocale, fail } from "./lib/constants.mjs";
+import { INAPPLICABLE, REPO_ROOT, SENTINEL, TARGET_LOCALES, assertTargetLocale, fail } from "./lib/constants.mjs";
 import { CONTENT_TYPE_IDS, contentType, localPath, metaPath } from "./lib/content-types.mjs";
 import { scopeItems } from "./lib/english.mjs";
-import { flatten, md5File, parseFrontmatter, readJson, readText, stubAgainst, unflatten, writeText } from "./lib/files.mjs";
+import { flatten, isEmptyContainer, md5File, parseFrontmatter, readJson, readText, stubAgainst, unflatten, writeText } from "./lib/files.mjs";
+import { isUnreachablePluralKey } from "./lib/plurals.mjs";
 import { resolveEngine } from "./lib/engines.mjs";
 import { parseArgs } from "./lib/args.mjs";
 
@@ -110,6 +111,21 @@ function loadGuidance(translatorRepo, typeId, locale) {
   return { invariant: invariant.filter(Boolean).join(""), languageSpecific: languageSpecific.filter(Boolean).join("") };
 }
 
+/**
+ * Whether an engine can be asked for this key.
+ *
+ * Three kinds cannot. An empty container is structure. A plural category this
+ * locale never reaches is stub's `∅`. And a key English itself holds `∅` for has
+ * no English text to translate from: English carries the union of plural
+ * categories, so a locale whose grammar DOES reach that key has a genuine gap
+ * there, which stub leaves as `�` so it keeps counting, but filling it needs a
+ * native speaker rather than an engine handed a sentinel to translate.
+ */
+function translatableKey(key, source, flatEnglish, locale) {
+  if (isEmptyContainer(source) || source === INAPPLICABLE) return false;
+  return !isUnreachablePluralKey(key, locale, flatEnglish);
+}
+
 /** Which items are in scope, and why. */
 function resolveScope({ locale, typeIds, slug, mode }) {
   const scope = [];
@@ -138,7 +154,10 @@ function resolveScope({ locale, typeIds, slug, mode }) {
 
       if (type.format === "catalog") {
         const flat = flatten(readJson(target));
-        const gaps = Object.keys(flatten(readJson(item.path))).filter((key) => flat[key] === undefined || flat[key] === SENTINEL);
+        const english = flatten(readJson(item.path));
+        const gaps = Object.entries(english)
+          .filter(([key, source]) => translatableKey(key, source, english, locale) && (flat[key] === undefined || flat[key] === SENTINEL))
+          .map(([key]) => key);
         const meta = type.staleness === "sibling" && fs.existsSync(metaPath(target)) ? readJson(metaPath(target)) : null;
         const stale = type.staleness === "sibling" && meta?.en_md5 !== englishMd5;
 
@@ -170,11 +189,13 @@ function buildPrompt({ guidance, locale, item }) {
     // incremental pass costs output tokens proportional to the change and never
     // to the file size.
     const english = flatten(readJson(item.englishPath));
-    const keys = item.keys ?? Object.keys(english);
+    const keys = item.keys ?? Object.keys(english).filter((key) => translatableKey(key, english[key], english, locale));
     const work = Object.fromEntries(keys.map((key) => [key, english[key]]));
     const existing = fs.existsSync(item.target) ? flatten(readJson(item.target)) : {};
     const alreadyDone = Object.fromEntries(
-      Object.entries(existing).filter(([key, value]) => value !== SENTINEL && !keys.includes(key))
+      Object.entries(existing).filter(
+        ([key, value]) => value !== SENTINEL && value !== INAPPLICABLE && !isEmptyContainer(value) && !keys.includes(key)
+      )
     );
 
     return {
@@ -234,7 +255,7 @@ function applyResult({ item, text, keys }) {
       if (typeof returned[key] === "string" && returned[key].trim() !== "") merged[key] = returned[key].trim();
     }
     // Rebuild against English so key order and parity are structural, not trusted.
-    writeText(item.target, `${JSON.stringify(stubAgainst(english, unflatten(merged)), null, 2)}\n`);
+    writeText(item.target, `${JSON.stringify(stubAgainst(english, unflatten(merged), { locale }), null, 2)}\n`);
     return;
   }
 
