@@ -62,7 +62,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { SENTINEL, TARGET_LOCALES, assertTargetLocale } from "./lib/constants.mjs";
+import { INAPPLICABLE, SENTINEL, TARGET_LOCALES, assertTargetLocale } from "./lib/constants.mjs";
 import { CONTENT_TYPE_IDS, contentType, listItems, localPath, metaPath } from "./lib/content-types.mjs";
 import { DEFAULT_SOURCE_REPO, englishPath, englishRepo, scopeItems } from "./lib/english.mjs";
 import {
@@ -138,7 +138,8 @@ function validateItem({ typeId, locale, slug, stamp, shippable }) {
     const target = readJson(targetPath);
     const issues = checkCatalog(source, target, {
       icu: type.interpolation === "icu",
-      allowSentinel: !shippable
+      allowSentinel: !shippable,
+      locale
     });
 
     // Catalog staleness: the sibling stamp against the current English file.
@@ -263,15 +264,22 @@ function main() {
   for (const locale of locales) {
     let total = 0;
     let stubbed = 0;
+    let inapplicable = 0;
     for (const typeId of typeIds) {
       if (contentType(typeId).format !== "catalog") continue;
       for (const item of listItems(typeId, locale)) {
         const counts = countSentinels(readJson(item.path));
         total += counts.total;
         stubbed += counts.stubbed;
+        inapplicable += counts.inapplicable;
       }
     }
-    console.log(`\n${locale}: ${total - stubbed}/${total} catalog keys translated, ${stubbed} still "${SENTINEL}"`);
+    // Inapplicable keys are reported, not hidden, and sit outside the fraction:
+    // they are neither done nor missing.
+    console.log(
+      `\n${locale}: ${total - stubbed}/${total} catalog keys translated, ${stubbed} still "${SENTINEL}"` +
+        (inapplicable > 0 ? `, ${inapplicable} "${INAPPLICABLE}" (unreachable in this language)` : "")
+    );
   }
 
   console.log(`\nvalidate: ${checked} items, ${errors} errors, ${warnings} warnings.`);

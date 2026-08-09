@@ -23,6 +23,30 @@ export const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url
 export const SENTINEL = "�";
 
 /**
+ * The inapplicable sentinel: U+2205 EMPTY SET.
+ *
+ * A catalog value that is EXACTLY this string is a key the language can never
+ * reach, so nobody can ever fill it. It is not a gap and it is not progress: it
+ * is the honest answer for a key that exists only so the catalogs share one key
+ * set.
+ *
+ * The known case, and currently the only justified one, is an i18next plural
+ * category the locale has no rule for. English carries the UNION of plural keys
+ * across every supported locale, so a language whose grammar needs a category
+ * English lacks has somewhere to put it; English itself holds `∅` there, and so
+ * does every other locale the category does not apply to.
+ *
+ * `∅` must be JUSTIFIED, never a way to silence a real gap, so `checkCatalog`
+ * accepts it only where the key is provably unreachable for that locale and
+ * errors everywhere else. See scripts/lib/plurals.mjs for how "unreachable" is
+ * derived, and CLAUDE.md § "The two sentinels".
+ *
+ * Unlike `�`, it never blocks publishing: the key is provably never read, so
+ * publish omits it from the artifact rather than shipping the character.
+ */
+export const INAPPLICABLE = "∅";
+
+/**
  * The token that means "English" when a locale has to be named at all.
  *
  * It is not a locale and there is no `locales/source/` directory: English is
