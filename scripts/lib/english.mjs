@@ -196,7 +196,7 @@ function exclusions() {
  * list held, except that it is recomputed, so it cannot fall out of step with
  * the files it describes.
  *
- * Bringing a new item in is deliberate: `stub` and `translate` resolve an
+ * Bringing a new item in is deliberate: `stub` and `validate` resolve an
  * explicit --type/--slug against English directly, and the item is in the corpus
  * from the moment the first locale holds a file for it.
  */

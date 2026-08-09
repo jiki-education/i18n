@@ -121,7 +121,7 @@ that it is now recomputed rather than remembered, so it cannot fall out of step
 with the files.
 
 Bringing a new item into the corpus is a deliberate act: pass `--type` and
-`--slug` to `stub` or `translate`, which resolve the item from English directly
+`--slug` to `stub` or `validate`, which resolve the item from English directly
 rather than from the corpus, and the item is in the corpus from the moment the
 first locale holds a file for it.
 

@@ -12,6 +12,28 @@
 // `sourceRepo` names which repo English is authored in, and defaults to the
 // front-end. scripts/lib/english.mjs holds the list and resolves each one.
 //
+// `howto` names the translator repo's how-to file(s) for the type, under its
+// `content-types/` directory and WITHOUT the `.md` extension. It is the fourth
+// coordinate: given a type id, it says which guidance a pass must load. Every
+// type declares one, and scripts/test.mjs asserts it, because a type with no
+// route is a type a pass cannot be run for.
+//
+//   - a STRING is the usual case: one how-to, e.g. `concept` → "concept-pages"
+//   - an ARRAY is a how-to that only makes sense on top of another, and it is
+//     ORDERED: the shared doc first, the one that defers to it second. Order is
+//     load-bearing twice over. It is the order the docs are concatenated into a
+//     prompt, so the shared prefix stays byte-identical across every type that
+//     shares it and a provider's prompt cache can reuse it; and a doc that says
+//     "as blog.md, except…" is unreadable before the doc it excepts.
+//
+// `frontmatterTranslated` lists the frontmatter fields a translation must
+// actually translate, as DOTTED PATHS: `title`, and equally `seo.description`.
+// A bare leaf name is not a shorthand for a nested field and must never be used
+// as one. It only ever looked like one because the reader used to flatten a
+// nested block to its leaf names, and it fails two ways: leaf names collide
+// (`description` is a real top-level field on `concept`), and a list reflowed
+// across lines stops resolving. scripts/lib/files.mjs owns the reader.
+//
 // The local layout MIRRORS each source package's own layout, with two
 // mechanical edits and no other invention:
 //
@@ -36,6 +58,7 @@ import { REPO_ROOT, SOURCE_LOCALE, SOURCE_REPO_LOCALE, fail } from "./constants.
 export const CONTENT_TYPES = {
   "app-messages": {
     label: "app UI catalog",
+    howto: "website-keys",
     format: "catalog",
     slugged: false,
     // Per-key staleness via the sentinel; there is no stamp and none is possible
@@ -49,6 +72,7 @@ export const CONTENT_TYPES = {
 
   concept: {
     label: "concept page",
+    howto: "concept-pages",
     format: "markdown",
     slugged: true,
     staleness: "frontmatter",
@@ -64,6 +88,7 @@ export const CONTENT_TYPES = {
 
   "exercise-instructions": {
     label: "exercise instructions",
+    howto: "exercise",
     format: "markdown",
     slugged: true,
     exerciseScoped: true,
@@ -84,6 +109,7 @@ export const CONTENT_TYPES = {
 
   "exercise-messages": {
     label: "exercise message catalog",
+    howto: ["exercise", "exercise-messages"],
     format: "catalog",
     slugged: true,
     exerciseScoped: true,
@@ -96,6 +122,7 @@ export const CONTENT_TYPES = {
 
   "video-lessons": {
     label: "video lesson copy",
+    howto: "curriculum-copy",
     format: "catalog",
     slugged: false,
     staleness: "sibling",
@@ -110,6 +137,7 @@ export const CONTENT_TYPES = {
 
   badges: {
     label: "badge copy",
+    howto: "curriculum-copy",
     format: "catalog",
     slugged: false,
     staleness: "sibling",
@@ -121,6 +149,7 @@ export const CONTENT_TYPES = {
 
   levels: {
     label: "level copy",
+    howto: "curriculum-copy",
     format: "catalog",
     slugged: false,
     staleness: "sibling",
@@ -132,6 +161,7 @@ export const CONTENT_TYPES = {
 
   "exercise-category": {
     label: "exercise family base catalog",
+    howto: ["exercise", "exercise-messages"],
     format: "catalog",
     slugged: true,
     staleness: "sibling",
@@ -149,6 +179,7 @@ export const CONTENT_TYPES = {
 
   "interpreter-messages": {
     label: "interpreter message catalog",
+    howto: "interpreters",
     format: "catalog",
     slugged: true,
     staleness: "sibling",
@@ -163,6 +194,7 @@ export const CONTENT_TYPES = {
 
   "video-subtitles": {
     label: "video subtitles",
+    howto: "video-subtitles",
     format: "vtt",
     slugged: true,
     // The slug is a video KEY, the video's own directory name. Most sit directly
@@ -203,17 +235,17 @@ export const CONTENT_TYPES = {
   // is why they are built from one factory below rather than written out three
   // times.
   //
-  // Project episodes are deliberately NOT here. Their source path carries a UUID
-  // directory that is not the slug, and their metadata lives in a per-episode
-  // config.json, so they do not fit the (type, locale, slug) coordinate system
-  // this file is. They stay front-end published until that is worth doing
-  // properly.
+  // Project episodes are a fourth post layout, and they ARE here, below. They
+  // were once left out for not fitting the (type, locale, slug) coordinate
+  // system; `slugDepth` fixed that rather than working around it, and the
+  // entry's own comment says how.
   ...postType("blog"),
-  ...postType("articles"),
-  ...postType("guides"),
+  ...postType("articles", "blog"),
+  ...postType("guides", ["blog", "guides"]),
 
   "project-episodes": {
     label: "project episode",
+    howto: ["blog", "project-episodes"],
     format: "markdown",
     slugged: true,
     // A TWO-PART slug: "<project-slug>/<episode-uuid>". The UUID exists purely to
@@ -227,7 +259,18 @@ export const CONTENT_TYPES = {
     // the part of the path that varies.
     slugDepth: 2,
     staleness: "frontmatter",
-    frontmatterTranslated: ["title", "excerpt"],
+    // The `summary` block is not metadata. It is the from/to promise and the
+    // concept chips a learner reads to decide whether to watch the episode, so
+    // it is the most-read copy on the page and it is checked like it.
+    frontmatterTranslated: [
+      "title",
+      "excerpt",
+      "summary.from",
+      "summary.to",
+      "summary.keyConcepts",
+      "seo.description",
+      "seo.keywords"
+    ],
     sourceRepoPath: (slug) => `content/src/posts/projects/${slug}/source.md`,
     localPath: (slug) => `content/posts/projects/${slug}/page.md`,
     r2: (locale, slug, hash) => `/static/content/projects/${slug}/${locale}/content-${hash}.html`
@@ -247,14 +290,19 @@ export const CONTENT_TYPES = {
  * the same thing, and the field names here are the source's, never a
  * normalisation of it.
  */
-function postType(kind) {
+function postType(kind, howto = kind) {
   return {
     [kind]: {
       label: `${kind} post`,
+      howto,
       format: "markdown",
       slugged: true,
       staleness: "frontmatter",
-      frontmatterTranslated: ["title", "excerpt"],
+      // `tags` is deliberately absent: translator/content-types/blog.md keeps it
+      // as-is, and it is a slug namespace rather than copy. The two `seo` fields
+      // that guide HAS mandated since it was written are here, having gone
+      // unchecked until the reader could see into a nested block at all.
+      frontmatterTranslated: ["title", "excerpt", "seo.description", "seo.keywords"],
       sourceRepoPath: (slug) => `content/src/posts/${kind}/${slug}/source.md`,
       localPath: (slug) => `content/posts/${kind}/${slug}/page.md`,
       r2: (locale, slug, hash) => `/static/content/${kind}/${slug}/${locale}/content-${hash}.html`
