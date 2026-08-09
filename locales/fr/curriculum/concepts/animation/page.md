@@ -16,7 +16,7 @@ Tu as déjà vu un flip book ? C'était très populaire quand j'étais enfant, 
   height="274"
 />
 
-Prenons donc un bloc de code familier où on dessine des cercles à travers l'écran : on définit une variable `position`, et on a un bloc `repeat` où on dessine un cercle puis on déplace la `position` d'une unité vers la droite. Si on exécute ce bloc `repeat` 100 fois, on va voir 100 cercles à travers l'écran.
+Prenons donc un bloc de code familier où l'on dessine des cercles à l'écran : on définit une variable `position`, puis on utilise un bloc `repeat` qui dessine un cercle et décale cette `position` d'une unité vers la droite. Si on exécute cette boucle `repeat` 100 fois, on verra 100 cercles d'un bout à l'autre de l'écran.
 
 ```javascript
 let position = 0
@@ -34,7 +34,7 @@ repeat(100) {
   height="197"
 />
 
-Maintenant, regarde ce qui se passe si on ajoute simplement un rectangle tout simple avant de dessiner le cercle à chaque fois.
+Maintenant, regarde ce qui se passe si on ajoute simplement un rectangle plein avant de dessiner le cercle à chaque fois.
 
 ```javascript
 let position = 0
@@ -45,7 +45,7 @@ repeat(100) {
 }
 ```
 
-Au lieu d'une traînée de cercles, nos yeux se laissent maintenant tromper et voient un seul cercle qui semble glisser à travers l'écran.
+Au lieu d'une traînée de cercles, nos yeux se laissent maintenant tromper et voient un seul cercle qui semble glisser d'un bout à l'autre de l'écran.
 
 <img
   class="concept-image"
@@ -55,10 +55,10 @@ Au lieu d'une traînée de cercles, nos yeux se laissent maintenant tromper et v
   height="187"
 />
 
-À chaque passage dans la boucle, on peint un tout nouveau fond, qui recouvre tout ce qui était là avant, puis on dessine le cercle à son nouvel emplacement.
+À chaque passage dans la boucle, on peint un tout nouveau fond qui recouvre tout ce qui était là avant, puis on dessine le cercle à son nouvel emplacement.
 
 Chaque passage dans la boucle est comme une nouvelle page du flip book.
 
-Et la chose essentielle à comprendre ici, c'est qu'on ne déplace pas le cercle. Le cercle n'est pas un objet qui glisse. C'est juste un dessin. À chaque passage dans la boucle, on peint par-dessus l'ancien dessin, et on en fait un tout nouveau, légèrement plus à droite. Ton œil assemble le tout et voit du mouvement, mais en réalité, ce ne sont que des dessins séparés, l'un après l'autre.
+Et la chose essentielle à comprendre ici, c'est qu'on ne déplace pas le cercle. Le cercle n'est pas un objet qui glisse. C'est juste un dessin. À chaque passage dans la boucle, on peint par-dessus l'ancien dessin et on en fait un tout nouveau, légèrement plus à droite. Ton œil assemble le tout et y voit du mouvement, mais en réalité, ce ne sont que des dessins séparés, les uns après les autres.
 
-Tu peux utiliser cette idée pour créer un coucher de soleil. Tu fais bouger le soleil, tu changes sa taille, tu changes sa couleur. C'est toujours la même technique. On définit quelques variables, on peint un fond tout neuf, et on dessine tout. On met à jour les variables, et on recommence.
+Tu peux utiliser cette idée pour créer un coucher de soleil. Tu fais bouger le soleil, tu changes sa taille, tu changes sa couleur. C'est toujours la même technique. On définit quelques variables, on peint un fond tout neuf et on dessine tout. On met à jour les variables, et on recommence.
