@@ -22,6 +22,6 @@ Un nouveau mot commence après un **espace** ou un **trait d'union** (`-`). Tous
 
 ## Attention
 
-On ne t'a donné aucune des méthodes JavaScript plus avancées que tu verras plus tard dans le cours (rien pour mettre magiquement une lettre en majuscule, ni pour te dire si un caractère est une lettre). Tu devras construire toutes ces fonctions auxiliaires toi-même avant de pouvoir assembler l'ensemble.
+On ne t'a fourni aucune des méthodes JavaScript plus avancées que tu verras plus tard dans le cours (rien pour magiquement mettre une lettre en majuscule, ni pour te dire si un caractère est une lettre). Tu devras construire toutes ces fonctions auxiliaires toi-même avant de pouvoir assembler l'ensemble.
 
 Celui-ci est plus délicat qu'il n'y paraît. Amuse-toi bien !
