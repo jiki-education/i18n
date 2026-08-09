@@ -1,0 +1,189 @@
+WEBVTT
+
+NOTE en_md5 85b5a694c9e806f0735e3ee2c8b94eab
+
+00:00:00.240 --> 00:00:03.080
+Bentornato. Allora, finora abbiamo visto
+
+00:00:03.120 --> 00:00:06.580
+funzioni che fanno qualcosa nel mondo. Quindi
+
+00:00:06.620 --> 00:00:09.800
+la funzione circle disegna un cerchio. La funzione
+
+00:00:09.900 --> 00:00:13.640
+move sposta il tuo personaggio. Ma alcune funzioni
+
+00:00:13.840 --> 00:00:17.960
+funzionano in modo diverso. Invece di fare qualcosa di esterno,
+
+00:00:18.000 --> 00:00:20.430
+ti danno indietro qualcosa che puoi usare
+
+00:00:20.460 --> 00:00:24.700
+all'interno del tuo codice. Quando una funzione fornisce qualcosa
+
+00:00:24.740 --> 00:00:26.840
+a Jiki da usare nel codice,
+
+00:00:26.880 --> 00:00:29.640
+diciamo che questa funzione restituisce qualcosa.
+
+00:00:29.650 --> 00:00:34.310
+Restituisce qualcosa indietro a Jiki. Puoi
+
+00:00:34.340 --> 00:00:36.720
+pensare a queste macchine come se avessero
+
+00:00:36.760 --> 00:00:39.340
+uno scivolo di output. Abbiamo già le fessure di input
+
+00:00:39.390 --> 00:00:41.620
+in cui mettiamo le cose, ma possiamo anche avere
+
+00:00:41.700 --> 00:00:44.860
+una singola fessura di output, o uno scivolo,
+
+00:00:44.900 --> 00:00:47.560
+da cui qualcosa può tornare fuori. Quando
+
+00:00:47.600 --> 00:00:49.840
+Jiki preme il pulsante sulla macchina,
+
+00:00:49.880 --> 00:00:52.600
+la macchina si mette in moto e qualcosa salterà fuori
+
+00:00:52.640 --> 00:00:54.060
+da quello scivolo alla fine. Potrebbe
+
+00:00:54.100 --> 00:00:56.760
+essere un numero. Potrebbe essere una stringa.
+
+00:00:56.780 --> 00:00:59.600
+È qualcosa che Jiki può prendere
+
+00:00:59.780 --> 00:01:05.540
+e usare. La maggior parte delle funzioni, probabilmente il 95%,
+
+00:01:05.600 --> 00:01:08.740
+restituisce qualcosa. Potrebbero fare dei calcoli per te
+
+00:01:08.860 --> 00:01:11.460
+e restituire il valore, oppure potrebbero unire
+
+00:01:11.540 --> 00:01:13.980
+alcune stringhe e poi darti
+
+00:01:14.020 --> 00:01:16.900
+la stringa risultante. O forse ti restituiscono
+
+00:01:16.940 --> 00:01:19.140
+l'ora corrente ogni volta che esegui
+
+00:01:19.180 --> 00:01:21.690
+quella macchina. Vediamo quest'ultimo caso.
+
+00:01:21.690 --> 00:01:23.880
+Diciamo che abbiamo una funzione chiamata
+
+00:01:24.000 --> 00:01:27.690
+getCurrentTime. Ogni volta che Jiki esegue la macchina,
+
+00:01:27.720 --> 00:01:29.920
+un foglio di carta scivola fuori dallo
+
+00:01:29.980 --> 00:01:32.400
+scivolo di output con l'ora scritta sopra,
+
+00:01:32.460 --> 00:01:36.300
+ad esempio 14:35. E poi possiamo mettere
+
+00:01:36.340 --> 00:01:39.740
+quel valore restituito in una scatola usando let.
+
+00:01:39.780 --> 00:01:43.980
+Se scriviamo let time = getCurrentTime(), Jiki
+
+00:01:44.020 --> 00:01:46.820
+eseguirà la macchina, prenderà l'ora corrente
+
+00:01:46.840 --> 00:01:48.940
+dallo scivolo e la conserverà in una
+
+00:01:49.000 --> 00:01:53.640
+scatola chiamata time. Ora, è importante capire
+
+00:01:53.700 --> 00:01:56.080
+che il foglio di carta che Jiki mette
+
+00:01:56.180 --> 00:01:59.680
+nella scatola è fissato in quel momento.
+
+00:01:59.740 --> 00:02:01.940
+Anche se l'orario reale cambia mentre
+
+00:02:01.980 --> 00:02:04.500
+il tuo programma è in esecuzione, la scatola contiene ancora
+
+00:02:04.540 --> 00:02:08.380
+quel foglio con scritto 14:35.
+
+00:02:08.449 --> 00:02:10.920
+Una volta che qualcosa è nella scatola,
+
+00:02:11.000 --> 00:02:15.140
+è una cosa fissa lì dentro. Non cambia magicamente.
+
+00:02:15.200 --> 00:02:16.980
+Se in futuro vogliamo rimettere l'ora corrente
+
+00:02:17.040 --> 00:02:19.420
+nella scatola, dobbiamo usare di nuovo
+
+00:02:19.500 --> 00:02:22.860
+la nostra funzione getCurrentTime
+
+00:02:22.920 --> 00:02:27.100
+per ottenerla. La maggior parte delle funzioni che restituiscono qualcosa
+
+00:02:27.420 --> 00:02:29.950
+ha anche degli input. Per esempio, potremmo avere
+
+00:02:30.060 --> 00:02:33.430
+una funzione join che prende due stringhe
+
+00:02:33.480 --> 00:02:36.350
+come input e le restituisce unite
+
+00:02:36.420 --> 00:02:39.600
+con uno spazio. Quindi, se usiamo una macchina
+
+00:02:39.660 --> 00:02:43.920
+join con "Hello" e "World" come input,
+
+00:02:44.000 --> 00:02:46.160
+dallo scivolo uscirà un'unica stringa
+
+00:02:46.200 --> 00:02:50.710
+con scritto "Hello World".
+
+00:02:50.760 --> 00:02:55.100
+Nei prossimi esercizi userai funzioni che restituiscono qualcosa.
+
+00:02:55.160 --> 00:02:57.200
+Dovrai memorizzare i valori che
+
+00:02:57.220 --> 00:02:59.400
+restituiscono e usarli nei posti giusti
+
+00:02:59.480 --> 00:03:02.300
+del codice. Le istruzioni ti diranno
+
+00:03:02.360 --> 00:03:04.780
+tutto ciò che devi sapere, quindi non preoccuparti.
+
+00:03:04.800 --> 00:03:06.540
+Buona fortuna, e ci rivediamo
+
+00:03:06.580 --> 00:03:07.200
+qui a breve.

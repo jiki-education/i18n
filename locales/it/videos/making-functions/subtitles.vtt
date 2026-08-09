@@ -1,0 +1,234 @@
+WEBVTT
+
+NOTE en_md5 bd726eea0809593d0cd98aa7f3d0000e
+
+00:00:00.160 --> 00:00:03.260
+Bentornato. Finora hai usato funzioni
+
+00:00:03.300 --> 00:00:05.960
+che sono state create per te, funzioni come circle,
+
+00:00:06.080 --> 00:00:09.459
+rectangle, moveRight, shoot. Tutte queste sono
+
+00:00:09.500 --> 00:00:12.220
+funzioni che sono state create e messe
+
+00:00:12.260 --> 00:00:14.920
+sugli scaffali di Jiki. Ma ora è il momento
+
+00:00:14.960 --> 00:00:18.460
+di iniziare a creare le tue funzioni. Per
+
+00:00:18.500 --> 00:00:20.030
+mostrarti come fare, vediamo
+
+00:00:20.120 --> 00:00:23.180
+come costruire una nuova funzione
+
+00:00:23.220 --> 00:00:27.330
+per il labirinto chiamata walk5. Questa funzione
+
+00:00:27.340 --> 00:00:29.500
+sposterà sempre il personaggio di cinque passi in avanti.
+
+00:00:30.030 --> 00:00:32.220
+Ammettiamolo, non è la funzione più utile
+
+00:00:32.240 --> 00:00:34.200
+del mondo, ma è semplice e comoda
+
+00:00:34.240 --> 00:00:37.140
+per iniziare. Quindi
+
+00:00:37.740 --> 00:00:39.140
+se ti chiedessi di scrivere
+
+00:00:39.180 --> 00:00:42.040
+del codice per far avanzare il personaggio
+
+00:00:42.140 --> 00:00:46.190
+di cinque passi, potresti scrivere move cinque volte,
+
+00:00:46.260 --> 00:00:48.390
+oppure potresti usare un ciclo repeat. In
+
+00:00:48.420 --> 00:00:50.700
+questo esempio, per semplicità,
+
+00:00:50.740 --> 00:00:53.260
+useremo l'approccio di scrivere move
+
+00:00:53.320 --> 00:00:56.040
+cinque volte di seguito. Quindi questo è ciò
+
+00:00:56.100 --> 00:01:00.070
+che vogliamo all'interno della nostra funzione. Ora aggiungo
+
+00:01:00.220 --> 00:01:03.000
+una riga sotto che dice a Jiki
+
+00:01:03.100 --> 00:01:05.260
+di usare questa funzione. L'hai già visto molte volte.
+
+00:01:06.340 --> 00:01:08.100
+E poi il nostro compito sarà
+
+00:01:08.180 --> 00:01:10.840
+racchiudere tutte queste prime cinque righe
+
+00:01:11.020 --> 00:01:14.060
+in una funzione, in modo che quando Jiki usa
+
+00:01:14.120 --> 00:01:17.860
+walk5, siano proprio quelle prime cinque righe
+
+00:01:17.980 --> 00:01:21.400
+a essere eseguite. Ora, per trasformare queste cinque righe
+
+00:01:21.440 --> 00:01:23.640
+in una funzione, queste cinque move in una
+
+00:01:23.680 --> 00:01:26.290
+funzione, dobbiamo usare una nuova parola chiave:
+
+00:01:26.820 --> 00:01:30.280
+la parola chiave function. Quando usiamo
+
+00:01:30.300 --> 00:01:32.480
+la parola chiave function, dobbiamo fare due
+
+00:01:32.500 --> 00:01:36.100
+cose. Uno, specificare il nome della funzione.
+
+00:01:36.160 --> 00:01:39.660
+In questo caso, è walk5. E due, usare
+
+00:01:39.720 --> 00:01:42.310
+le parentesi graffe per racchiudere del codice che dice:
+
+00:01:42.410 --> 00:01:44.380
+«Questo è ciò che devi fare all'interno
+
+00:01:44.400 --> 00:01:47.540
+della funzione». Quindi possiamo aggiungerlo al nostro
+
+00:01:47.580 --> 00:01:49.960
+codice, dicendo a Jiki di creare
+
+00:01:50.000 --> 00:01:53.400
+una funzione chiamata walk5 e, quando walk5
+
+00:01:53.460 --> 00:01:56.080
+viene usata, deve eseguire queste cinque righe
+
+00:01:56.100 --> 00:02:00.340
+di codice. Quando Jiki vede la parola chiave function,
+
+00:02:00.380 --> 00:02:02.240
+andrà a costruire
+
+00:02:02.320 --> 00:02:05.560
+una nuova macchina, metterà quelle istruzioni su una lavagna
+
+00:02:05.600 --> 00:02:08.039
+al suo interno e poi attaccherà un'etichetta
+
+00:02:08.100 --> 00:02:10.580
+sulla macchina per walk5. E poi metterà
+
+00:02:10.660 --> 00:02:13.760
+quella macchina sugli scaffali insieme a tutte
+
+00:02:13.780 --> 00:02:14.760
+le altre che ci sono.
+
+00:02:15.580 --> 00:02:18.080
+Ora, non c'è niente di speciale in questa funzione
+
+00:02:18.140 --> 00:02:20.120
+che hai creato rispetto a quelle predefinite.
+
+00:02:20.489 --> 00:02:22.080
+Stanno tutte una accanto all'altra
+
+00:02:22.140 --> 00:02:25.700
+sui suoi scaffali. E quando usi la
+
+00:02:25.720 --> 00:02:29.600
+funzione, quando scrivi walk5 parentesi, parentesi, Jiki
+
+00:02:29.620 --> 00:02:31.340
+andrà semplicemente a prendere la macchina
+
+00:02:31.350 --> 00:02:33.960
+dagli scaffali e la userà esattamente
+
+00:02:34.040 --> 00:02:36.160
+come ha fatto con qualsiasi altra funzione.
+
+00:02:36.740 --> 00:02:39.380
+Puoi immaginare che ogni macchina abbia
+
+00:02:39.480 --> 00:02:42.329
+un mini Jiki che ci vive dentro. Mini Jiki
+
+00:02:42.360 --> 00:02:44.920
+ha sempre un bel cappello. E quel mini
+
+00:02:45.000 --> 00:02:47.450
+Jiki lavora esattamente come
+
+00:02:47.480 --> 00:02:50.600
+il Jiki normale all'esterno, seguendo le istruzioni
+
+00:02:50.640 --> 00:02:54.560
+allo stesso modo. Un aspetto fondamentale da capire
+
+00:02:54.580 --> 00:02:57.310
+qui è che quando Jiki crea la funzione,
+
+00:02:57.900 --> 00:03:00.560
+in realtà non esegue il codice. Sta solo
+
+00:03:00.580 --> 00:03:03.840
+scrivendo quel codice per usarlo dopo. Il
+
+00:03:03.880 --> 00:03:06.160
+personaggio nel labirinto non si muove
+
+00:03:06.200 --> 00:03:09.640
+a questo punto, quando scrivi la parola chiave function. Jiki
+
+00:03:09.650 --> 00:03:11.560
+ha costruito la macchina e l'ha messa
+
+00:03:11.600 --> 00:03:14.080
+sugli scaffali. È solo quando gli dici
+
+00:03:14.140 --> 00:03:16.960
+di usare la macchina scrivendo walk5 parentesi,
+
+00:03:17.020 --> 00:03:20.880
+parentesi che succede veramente. Ora ti do
+
+00:03:20.980 --> 00:03:24.340
+due esercizi per familiarizzare
+
+00:03:24.360 --> 00:03:27.080
+con questo concetto. Dovrai suddividere
+
+00:03:27.100 --> 00:03:30.280
+del codice più complesso in funzioni più piccole e,
+
+00:03:30.320 --> 00:03:32.740
+spero, vedrai quanto il codice
+
+00:03:32.780 --> 00:03:34.940
+risulta più bello alla fine. E poi
+
+00:03:34.980 --> 00:03:36.620
+ci rivediamo qui tra poco per vedere
+
+00:03:36.660 --> 00:03:38.660
+come possiamo creare funzioni con input.

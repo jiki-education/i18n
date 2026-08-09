@@ -1,0 +1,339 @@
+WEBVTT
+
+NOTE en_md5 d4b8c72f7a92dfb1d6fb4eb412fdc752
+
+00:00:00.400 --> 00:00:03.469
+Bentornato. Abbiamo già visto due cicli,
+
+00:00:03.780 --> 00:00:06.580
+il ciclo repeat e il ciclo for of.
+
+00:00:06.620 --> 00:00:08.109
+In questa lezione ne esploreremo
+
+00:00:08.200 --> 00:00:10.940
+altri due, più due tecniche utili con i
+
+00:00:11.000 --> 00:00:14.140
+cicli. Forse ricordi che avevo detto
+
+00:00:14.200 --> 00:00:15.980
+proprio all'inizio che il ciclo repeat
+
+00:00:16.020 --> 00:00:18.690
+non esiste davvero in JavaScript. È solo qualcosa
+
+00:00:18.860 --> 00:00:20.340
+che abbiamo aggiunto per renderti la vita
+
+00:00:20.380 --> 00:00:23.190
+un po' più facile all'inizio. Quindi cosa
+
+00:00:23.200 --> 00:00:25.580
+usiamo al suo posto? Usiamo un
+
+00:00:25.660 --> 00:00:28.150
+normale ciclo for, che ha questo aspetto.
+
+00:00:29.380 --> 00:00:30.920
+Capisci perché il primo giorno
+
+00:00:30.940 --> 00:00:32.940
+poteva intimidirti
+
+00:00:32.960 --> 00:00:35.120
+un po'. Ora però hai tutte
+
+00:00:35.140 --> 00:00:37.280
+le conoscenze che ti servono per prenderci confidenza.
+
+00:00:37.360 --> 00:00:40.340
+Analizziamolo insieme. Un ciclo for
+
+00:00:40.360 --> 00:00:44.620
+ha tre componenti: un inizializzatore, una condizione
+
+00:00:44.640 --> 00:00:49.769
+e un incremento. L'inizializzatore, la parte let i = 0,
+
+00:00:49.840 --> 00:00:52.220
+viene eseguito all'inizio
+
+00:00:52.260 --> 00:00:54.920
+dell'intero ciclo. Viene eseguito una volta sola e,
+
+00:00:54.980 --> 00:00:58.240
+in questo caso, crea una scatola chiamata i
+
+00:00:58.340 --> 00:01:02.520
+impostata a zero. La parte successiva, la condizione,
+
+00:01:03.240 --> 00:01:08.600
+viene eseguita prima di ogni iterazione del ciclo. Se
+
+00:01:08.640 --> 00:01:11.100
+la condizione è vera, eseguiamo di nuovo
+
+00:01:11.110 --> 00:01:15.580
+il ciclo. Se non lo è, ci fermiamo. E infine
+
+00:01:15.660 --> 00:01:18.580
+c'è l'incremento, cioè i++.
+
+00:01:19.400 --> 00:01:21.420
+Ora, i++ significa semplicemente la stessa
+
+00:01:21.460 --> 00:01:24.420
+cosa di i = i + 1. È solo
+
+00:01:24.460 --> 00:01:26.880
+una scorciatoia, un modo per aumentare i
+
+00:01:26.940 --> 00:01:31.200
+di uno ogni volta. Quindi, in questo esempio,
+
+00:01:31.280 --> 00:01:34.200
+impostiamo i a zero. Controlliamo se i
+
+00:01:34.240 --> 00:01:36.300
+è minore di due, e lo è,
+
+00:01:36.380 --> 00:01:38.360
+quindi eseguiamo il ciclo. Alla
+
+00:01:38.400 --> 00:01:41.640
+fine aumentiamo i di uno, così
+
+00:01:42.060 --> 00:01:44.380
+i diventa uno. Zero più uno fa uno.
+
+00:01:45.500 --> 00:01:47.400
+Poi ripartiamo. Controlliamo se
+
+00:01:47.580 --> 00:01:50.780
+uno è minore di due. Lo è, quindi
+
+00:01:50.800 --> 00:01:52.580
+eseguiamo il ciclo. E alla
+
+00:01:52.620 --> 00:01:55.140
+fine aumentiamo di nuovo i. Ora vale
+
+00:01:55.240 --> 00:01:58.300
+due: uno più uno fa due. Poi
+
+00:01:58.340 --> 00:02:00.440
+ci proviamo una terza volta. Questa volta
+
+00:02:00.480 --> 00:02:02.970
+controlliamo se due è minore di due, e
+
+00:02:02.980 --> 00:02:05.680
+non lo è, quindi non eseguiamo il ciclo:
+
+00:02:05.780 --> 00:02:07.140
+anzi, il ciclo è proprio finito.
+
+00:02:07.540 --> 00:02:10.539
+Passiamo semplicemente al codice che viene dopo.
+
+00:02:10.640 --> 00:02:13.360
+Quindi abbiamo eseguito il ciclo due volte, ed
+
+00:02:13.400 --> 00:02:16.100
+è una cosa utile da sapere. Finché
+
+00:02:16.140 --> 00:02:18.320
+partiamo da zero e abbiamo una
+
+00:02:18.360 --> 00:02:21.460
+condizione «minore di», il numero che mettiamo
+
+00:02:21.520 --> 00:02:23.780
+lì, due in questo caso, è il numero
+
+00:02:23.840 --> 00:02:26.530
+di volte che il ciclo verrà eseguito. Quindi
+
+00:02:26.580 --> 00:02:28.900
+equivale a scrivere repeat due.
+
+00:02:30.440 --> 00:02:33.020
+Non è difficile, ma è molto più
+
+00:02:33.060 --> 00:02:38.120
+macchinoso che scrivere repeat due. Il prossimo
+
+00:02:38.180 --> 00:02:40.380
+ciclo da conoscere è il ciclo while.
+
+00:02:41.420 --> 00:02:45.800
+Questo dice: «Finché una condizione è vera, esegui il ciclo».
+
+00:02:45.840 --> 00:02:47.190
+Per esempio, potremmo avere una regola
+
+00:02:47.190 --> 00:02:49.710
+per cui si può sparare solo cinque volte
+
+00:02:49.740 --> 00:02:52.130
+in Space Invaders. Quindi qui avremmo un ciclo
+
+00:02:52.160 --> 00:02:54.170
+che dice: finché il numero di colpi è
+
+00:02:54.200 --> 00:02:56.940
+minore di cinque, esegui un ciclo che permette
+
+00:02:56.960 --> 00:03:00.340
+di continuare a giocare. Ogni volta che qualcuno spara,
+
+00:03:00.680 --> 00:03:04.000
+aumentiamo numShots di uno. Prima o poi
+
+00:03:04.480 --> 00:03:06.040
+arriveremo a cinque e il ciclo terminerà.
+
+00:03:07.100 --> 00:03:08.880
+Ora, un problema dei cicli while è che
+
+00:03:08.920 --> 00:03:11.440
+è abbastanza facile avere bug che fanno
+
+00:03:11.480 --> 00:03:14.040
+sì che il ciclo non finisca mai. Questi si chiamano
+
+00:03:14.120 --> 00:03:15.890
+cicli infiniti, e sono uno dei bug
+
+00:03:15.940 --> 00:03:20.010
+più comuni nei programmi. Quando il tuo computer
+
+00:03:20.020 --> 00:03:23.020
+rallenta, le ventole girano, tutto diventa rumoroso:
+
+00:03:23.060 --> 00:03:25.860
+spesso è perché qualcuno ha lasciato un ciclo infinito
+
+00:03:25.880 --> 00:03:29.380
+che non finisce mai nel codice. Ok, altre due
+
+00:03:29.460 --> 00:03:32.280
+parole chiave in questo video lampo. La
+
+00:03:32.320 --> 00:03:35.300
+prima è la parola chiave break. Puoi usarla
+
+00:03:35.320 --> 00:03:37.680
+in qualsiasi punto del corpo di un ciclo.
+
+00:03:38.760 --> 00:03:40.720
+La parte tra le parentesi graffe, quello è
+
+00:03:40.780 --> 00:03:43.840
+il corpo. E quando Jiki la vede, esce
+
+00:03:43.880 --> 00:03:46.100
+immediatamente dal ciclo e passa
+
+00:03:46.160 --> 00:03:48.780
+al codice che si trova sotto il ciclo. Quindi,
+
+00:03:48.880 --> 00:03:50.600
+se abbiamo un vincolo che dice di eseguire
+
+00:03:50.660 --> 00:03:53.280
+questo ciclo 50 volte, ma vogliamo fermarci
+
+00:03:53.420 --> 00:03:55.960
+se l'utente spara cinque volte, potremmo
+
+00:03:56.000 --> 00:03:58.140
+avere un ciclo for all'inizio che
+
+00:03:58.200 --> 00:04:00.940
+parte da i = 0 e va fino a
+
+00:04:01.120 --> 00:04:03.300
+50. Ma poi potremmo avere una condizione
+
+00:04:03.340 --> 00:04:04.720
+al centro del ciclo che dice:
+
+00:04:04.880 --> 00:04:07.720
+se numShots è maggiore o uguale a
+
+00:04:07.780 --> 00:04:12.520
+cinque, allora break, ferma il ciclo. Ci sono
+
+00:04:12.560 --> 00:04:14.880
+situazioni in cui potremmo voler saltare
+
+00:04:14.890 --> 00:04:18.600
+un'iterazione specifica, invece di uscire. Immaginiamo di
+
+00:04:18.680 --> 00:04:20.780
+voler fare qualcosa solo con i numeri dispari.
+
+00:04:21.600 --> 00:04:22.930
+Vogliamo poter dire: se
+
+00:04:23.020 --> 00:04:25.780
+i è dispari, non eseguire il ciclo questa
+
+00:04:25.840 --> 00:04:28.380
+volta. Ma non vogliamo uscire
+
+00:04:28.420 --> 00:04:30.280
+completamente dal ciclo. Vogliamo solo saltare
+
+00:04:30.320 --> 00:04:32.670
+questa singola iterazione e poi passare
+
+00:04:32.720 --> 00:04:35.600
+alla successiva. E per questo abbiamo un'altra
+
+00:04:35.640 --> 00:04:40.380
+parola chiave: continue. Quando Jiki vede continue,
+
+00:04:40.420 --> 00:04:42.180
+torna semplicemente all'inizio del
+
+00:04:42.220 --> 00:04:44.820
+ciclo per l'iterazione successiva. Quindi in un
+
+00:04:44.860 --> 00:04:47.200
+ciclo for of, quando vede continue,
+
+00:04:47.260 --> 00:04:48.580
+passa all'elemento successivo
+
+00:04:48.640 --> 00:04:51.780
+della lista. In un ciclo for, esegue
+
+00:04:51.840 --> 00:04:54.400
+l'incremento i++ e poi
+
+00:04:54.480 --> 00:04:57.980
+avvia l'iterazione successiva. Quindi abbiamo visto i cicli
+
+00:04:58.060 --> 00:05:00.800
+for, i cicli while, break e continue. Tante
+
+00:05:00.840 --> 00:05:02.440
+cose in questo video, ma puoi tornare
+
+00:05:02.500 --> 00:05:04.550
+a rivederlo quando vuoi, e
+
+00:05:04.580 --> 00:05:07.080
+ci sono anche le pagine di approfondimento per ogni argomento.
+
+00:05:07.800 --> 00:05:09.800
+Prova a mettere in pratica tutte queste idee
+
+00:05:09.820 --> 00:05:12.220
+nei prossimi esercizi. Buon divertimento, in bocca al lupo,
+
+00:05:12.680 --> 00:05:14.060
+e ci rivediamo qui a breve.

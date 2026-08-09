@@ -1,0 +1,264 @@
+WEBVTT
+
+NOTE en_md5 d53eb0ea7bb0ec1daa64bb73829462f2
+
+00:00:00.240 --> 00:00:03.700
+Bentornato. Finora abbiamo scritto tutto
+
+00:00:03.720 --> 00:00:06.880
+in modo lineare: Jiki segue
+
+00:00:06.920 --> 00:00:10.660
+ogni istruzione in ordine, dall'alto
+
+00:00:10.670 --> 00:00:14.220
+verso il basso. Ora vediamo
+
+00:00:14.260 --> 00:00:16.330
+come Jiki può uscire da questo
+
+00:00:16.460 --> 00:00:19.690
+rigido flusso dall'alto verso il basso, e in particolare
+
+00:00:19.720 --> 00:00:21.800
+come possiamo dirgli di eseguire
+
+00:00:21.880 --> 00:00:24.320
+la stessa sezione di codice tante volte
+
+00:00:24.360 --> 00:00:28.680
+di fila. Per esempio, immagina di essere
+
+00:00:28.760 --> 00:00:31.180
+nel labirinto e di voler avanzare di 10
+
+00:00:31.240 --> 00:00:34.240
+passi. Prima ti avevo dato la funzione walk
+
+00:00:34.280 --> 00:00:36.690
+per aiutarti a farlo, ma se
+
+00:00:36.740 --> 00:00:39.670
+non esistesse? Se avessi solo
+
+00:00:39.920 --> 00:00:44.700
+la funzione move? Invece di scrivere move 10
+
+00:00:44.760 --> 00:00:48.000
+volte di fila, cosa che diventa molto ripetitiva,
+
+00:00:48.740 --> 00:00:50.420
+quello che ci serve è poter
+
+00:00:50.500 --> 00:00:54.000
+dire: «Ehi, Jiki, fai la prossima cosa
+
+00:00:54.120 --> 00:00:59.840
+che dico 10 volte. Move.» Per farlo
+
+00:00:59.900 --> 00:01:02.320
+nel codice, dobbiamo usare
+
+00:01:02.480 --> 00:01:07.300
+la nostra prima parola chiave. Le parole chiave sono istruzioni
+
+00:01:07.340 --> 00:01:10.180
+che Jiki capisce. Assomigliano un po'
+
+00:01:10.220 --> 00:01:13.980
+alle macchine, ma non lo sono. Quando Jiki vede
+
+00:01:14.020 --> 00:01:16.460
+una parola chiave, non cerca una macchina
+
+00:01:16.500 --> 00:01:18.920
+sullo scaffale: sa già
+
+00:01:18.960 --> 00:01:23.300
+cosa fare. È una cosa incorporata nel suo cervello. E
+
+00:01:23.320 --> 00:01:25.700
+durante il corso impareremo circa
+
+00:01:25.740 --> 00:01:28.480
+20 parole chiave diverse, e
+
+00:01:28.520 --> 00:01:32.560
+la prima è la parola chiave repeat. La
+
+00:01:32.580 --> 00:01:35.540
+parola chiave repeat fa esattamente quello che ho detto sopra.
+
+00:01:36.100 --> 00:01:40.580
+Dice a Jiki: «Ripeti questo numero di volte
+
+00:01:40.700 --> 00:01:42.990
+qualunque cosa io dica dopo.» Dai un'occhiata a questo
+
+00:01:43.080 --> 00:01:45.960
+codice. Per prima cosa usiamo
+
+00:01:46.000 --> 00:01:48.440
+la parola chiave repeat per dire a Jiki che
+
+00:01:48.480 --> 00:01:51.580
+dovrà fare qualcosa più volte. Poi
+
+00:01:51.680 --> 00:01:53.940
+indichiamo quante volte vogliamo che Jiki
+
+00:01:53.980 --> 00:01:57.070
+ripeta la cosa, tra parentesi tonde, e poi
+
+00:01:57.100 --> 00:02:00.030
+seguono queste parentesi graffe, e
+
+00:02:00.040 --> 00:02:02.850
+dentro di esse mettiamo le cose che
+
+00:02:02.860 --> 00:02:06.020
+vogliamo che Jiki ripeta. Questo schema
+
+00:02:06.100 --> 00:02:09.320
+è incredibilmente comune nella programmazione. Scriviamo una
+
+00:02:09.380 --> 00:02:12.400
+parola chiave, di solito con qualche informazione, come
+
+00:02:12.440 --> 00:02:14.549
+in questo caso il numero di volte
+
+00:02:14.580 --> 00:02:17.620
+in cui fare qualcosa, e poi un blocco di codice
+
+00:02:17.680 --> 00:02:20.880
+tra parentesi graffe. Tornando al mondo del labirinto,
+
+00:02:21.520 --> 00:02:25.220
+invece di scrivere move, move, move, move,
+
+00:02:25.260 --> 00:02:30.580
+possiamo scrivere «ripeti quattro volte move». Jiki
+
+00:02:30.590 --> 00:02:32.860
+vedrà quel codice e userà
+
+00:02:32.940 --> 00:02:36.870
+la macchina move quattro volte di fila. E
+
+00:02:36.900 --> 00:02:38.960
+non siamo limitati a una sola cosa
+
+00:02:39.000 --> 00:02:41.800
+tra quelle parentesi graffe. Jiki può fare
+
+00:02:41.900 --> 00:02:45.320
+più cose ripetutamente. Possiamo dirgli di fare
+
+00:02:45.460 --> 00:02:48.080
+move, poi turnLeft, e di ripetere
+
+00:02:48.120 --> 00:02:51.540
+tutto questo quattro volte. Se Jiki vede
+
+00:02:51.560 --> 00:02:54.000
+questo codice, userà la macchina move, poi
+
+00:02:54.060 --> 00:02:56.880
+la macchina turnLeft, poi la macchina move, poi
+
+00:02:56.920 --> 00:02:59.340
+la macchina turnLeft, poi la macchina move,
+
+00:02:59.430 --> 00:03:01.720
+e così via, finché non le avrà usate entrambe
+
+00:03:01.800 --> 00:03:07.160
+quattro volte. Queste istruzioni di ripetizione si chiamano cicli,
+
+00:03:07.840 --> 00:03:09.540
+e ci sono tanti cicli diversi
+
+00:03:09.580 --> 00:03:11.980
+che possiamo usare, ognuno con un funzionamento un po' diverso.
+
+00:03:12.000 --> 00:03:15.210
+Li esploreremo tutti in questo corso. Ora,
+
+00:03:15.220 --> 00:03:17.710
+c'è un'ultima cosa da sapere:
+
+00:03:17.760 --> 00:03:20.300
+tenere il codice in ordine
+
+00:03:20.480 --> 00:03:24.240
+diventa essenziale quando lavori con i cicli. Quando
+
+00:03:24.280 --> 00:03:26.800
+il codice ha una buona struttura visiva,
+
+00:03:26.860 --> 00:03:28.940
+è molto facile vedere cosa sta succedendo.
+
+00:03:29.660 --> 00:03:31.740
+Ma se non ce l'ha, se dimentichi
+
+00:03:31.780 --> 00:03:34.400
+di indentare bene o fai confusione con l'indentazione,
+
+00:03:34.460 --> 00:03:38.630
+le cose diventano confuse molto in fretta. Per questo
+
+00:03:38.660 --> 00:03:41.500
+nel corso abbiamo sempre una regola.
+
+00:03:41.600 --> 00:03:45.049
+Metti sempre la parentesi graffa di apertura
+
+00:03:45.080 --> 00:03:48.430
+sulla stessa riga dell'istruzione repeat.
+
+00:03:48.430 --> 00:03:50.860
+Metti sempre la parentesi graffa di chiusura
+
+00:03:50.940 --> 00:03:54.080
+su una riga a sé dopo l'istruzione, e
+
+00:03:54.120 --> 00:03:56.399
+indenta sempre di due spazi
+
+00:03:56.480 --> 00:04:00.120
+il codice tra le graffe. Così tutto resterà davvero in ordine,
+
+00:04:01.020 --> 00:04:02.560
+e se te ne dimentichi o provi a seguire
+
+00:04:02.620 --> 00:04:04.360
+uno schema diverso, otterrai un errore.
+
+00:04:06.100 --> 00:04:08.080
+Nei prossimi esercizi, il tuo obiettivo è
+
+00:04:08.120 --> 00:04:11.060
+risolvere alcune delle sfide usando
+
+00:04:11.100 --> 00:04:13.720
+il minor numero possibile di righe di codice, e
+
+00:04:13.780 --> 00:04:15.320
+puoi usare i cicli repeat per aiutarti
+
+00:04:15.380 --> 00:04:18.060
+in questo. Poi esploreremo come iniziare
+
+00:04:18.070 --> 00:04:19.990
+a usare il ciclo repeat insieme ad altri
+
+00:04:20.019 --> 00:04:23.270
+concetti, per cominciare a vedere tecniche davvero
+
+00:04:23.320 --> 00:04:25.540
+più potenti. Divertiti, e ci rivediamo
+
+00:04:25.580 --> 00:04:26.039
+qui presto.

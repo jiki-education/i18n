@@ -1,0 +1,246 @@
+WEBVTT
+
+NOTE en_md5 8f7393dfe843d0e2ba5227cef441168a
+
+00:00:00.140 --> 00:00:02.860
+Bene, bentornato. Ormai hai usato le istruzioni if
+
+00:00:03.240 --> 00:00:05.920
+per controllare delle condizioni ed eseguire codice solo
+
+00:00:05.960 --> 00:00:08.800
+quando qualcosa è vero. Adesso presentiamo
+
+00:00:09.080 --> 00:00:13.500
+il fedele complice di if: else. Con
+
+00:00:13.560 --> 00:00:16.100
+un'istruzione if, Jiki esegue il blocco di codice
+
+00:00:16.140 --> 00:00:19.310
+quando la condizione è vera, e lo salta
+
+00:00:19.340 --> 00:00:22.210
+quando è falsa. Ma cosa succede
+
+00:00:22.240 --> 00:00:24.060
+se vuoi che Jiki faccia una cosa
+
+00:00:24.100 --> 00:00:26.740
+quando la condizione è vera e una cosa
+
+00:00:26.750 --> 00:00:30.300
+diversa quando è falsa? È proprio a questo
+
+00:00:30.340 --> 00:00:33.180
+che serve else. Possiamo mettere una clausola else
+
+00:00:33.200 --> 00:00:36.440
+dopo la parentesi graffa di chiusura dell'if, e Jiki
+
+00:00:36.480 --> 00:00:39.230
+la eseguirà se la condizione dell'if è falsa.
+
+00:00:40.060 --> 00:00:42.370
+Tornando all'esempio del buttafuori del locale,
+
+00:00:42.930 --> 00:00:44.840
+adesso abbiamo la possibilità di aprire
+
+00:00:44.860 --> 00:00:48.670
+la porta oppure di mandare via la persona,
+
+00:00:48.680 --> 00:00:51.440
+il che è probabilmente meglio che ignorarla del tutto
+
+00:00:51.480 --> 00:00:54.560
+come facevamo prima. Pensa a
+
+00:00:54.580 --> 00:00:56.780
+un bivio. Jiki arriva al bivio,
+
+00:00:57.000 --> 00:00:58.820
+controlla la condizione, e poi può
+
+00:00:58.860 --> 00:01:01.020
+andare da una parte se è vera, oppure
+
+00:01:01.060 --> 00:01:03.000
+dall'altra se è falsa.
+
+00:01:03.760 --> 00:01:07.050
+Ma non va mai da entrambe le parti. E se
+
+00:01:07.100 --> 00:01:10.730
+le possibilità sono più di due? Immagina
+
+00:01:10.780 --> 00:01:14.340
+che il nostro buttafuori venda i biglietti. Sotto i tredici anni
+
+00:01:14.360 --> 00:01:17.460
+ricevi un biglietto bambini. Tra i tredici e i venti,
+
+00:01:17.520 --> 00:01:19.820
+un biglietto ragazzi. Da venti in su, è
+
+00:01:19.860 --> 00:01:21.920
+un biglietto adulti. Quindi adesso ci sono tre
+
+00:01:22.000 --> 00:01:25.700
+esiti diversi. Per questo caso possiamo aggiungere
+
+00:01:25.760 --> 00:01:28.640
+un'altra istruzione if dopo l'else. In pratica
+
+00:01:28.680 --> 00:01:32.420
+diciamo: «Se questo, fai questo. Altrimenti, se
+
+00:01:32.560 --> 00:01:36.160
+quest'altro, fai quello. Altrimenti, fai quest'altra cosa.»
+
+00:01:37.040 --> 00:01:39.120
+In questo esempio, Jiki vede
+
+00:01:39.280 --> 00:01:43.120
+l'if e controlla la prima condizione. Sedici
+
+00:01:43.460 --> 00:01:47.380
+è minore di tredici? No. Allora passa
+
+00:01:47.420 --> 00:01:51.000
+all'else if. Sedici è minore
+
+00:01:51.040 --> 00:01:55.800
+di venti? Sì, è vero. Quindi esegue
+
+00:01:55.820 --> 00:01:58.960
+quel blocco e consegna un biglietto ragazzi. E
+
+00:01:59.000 --> 00:02:02.340
+a quel punto ha finito. Non controlla nient'altro.
+
+00:02:03.020 --> 00:02:05.000
+Non guarda nemmeno
+
+00:02:05.080 --> 00:02:08.600
+l'else finale. Una volta che Jiki trova una condizione vera,
+
+00:02:09.080 --> 00:02:11.480
+esegue quel blocco e salta tutto
+
+00:02:11.540 --> 00:02:14.980
+quello che viene dopo. Questo è il punto chiave
+
+00:02:15.000 --> 00:02:18.380
+da capire. Viene sempre eseguito un solo blocco. Jiki
+
+00:02:18.390 --> 00:02:20.980
+scende lungo la sequenza, trova la prima condizione
+
+00:02:21.020 --> 00:02:24.400
+vera, esegue quel blocco e va avanti. Ora,
+
+00:02:24.420 --> 00:02:25.980
+c'è una cosa che voglio davvero
+
+00:02:26.020 --> 00:02:29.020
+che tu capisca, perché qui in tanti si confondono. C'è una
+
+00:02:29.220 --> 00:02:33.800
+differenza sottile ma molto importante tra scrivere due
+
+00:02:33.960 --> 00:02:39.120
+istruzioni if separate e usare else if. Quindi
+
+00:02:39.180 --> 00:02:41.390
+immagina di creare un programma che assegna
+
+00:02:41.440 --> 00:02:44.989
+un premio base o un premio bonus a seconda
+
+00:02:45.020 --> 00:02:48.660
+del punteggio di una persona. Guarda queste due possibilità.
+
+00:02:49.660 --> 00:02:53.360
+Una usa else e l'altra... else, scusa.
+
+00:02:53.460 --> 00:02:55.800
+Una usa else if e l'altra usa
+
+00:02:55.880 --> 00:03:00.240
+due else. Cosa cambierà nel comportamento? Prenditi
+
+00:03:00.280 --> 00:03:02.140
+un momento per pensarci. Magari metti
+
+00:03:02.180 --> 00:03:06.570
+in pausa il video. Nel primo caso, con
+
+00:03:06.600 --> 00:03:10.340
+l'else if, controlliamo se il punteggio è alto
+
+00:03:10.400 --> 00:03:12.860
+e assegniamo il premio, e a quel punto
+
+00:03:12.920 --> 00:03:15.720
+l'else if non viene eseguito. Quindi la persona, se
+
+00:03:15.760 --> 00:03:18.120
+ha un punteggio sopra i cento, riceve
+
+00:03:18.160 --> 00:03:21.850
+solo il premio bonus. Nel secondo
+
+00:03:21.880 --> 00:03:25.840
+esempio, invece, i due if sono del tutto indipendenti.
+
+00:03:25.920 --> 00:03:29.860
+Vengono eseguiti entrambi ed entrambe le condizioni sono vere. Quindi
+
+00:03:29.900 --> 00:03:33.280
+qui la persona riceve due premi. Nel
+
+00:03:33.340 --> 00:03:35.700
+primo caso, un premio. Nel secondo,
+
+00:03:35.840 --> 00:03:38.380
+due premi. Prenditi un momento per essere
+
+00:03:38.440 --> 00:03:42.990
+sicuro di averlo capito davvero. È anche interessante
+
+00:03:43.040 --> 00:03:45.850
+notare che entrambe le versioni potrebbero essere corrette,
+
+00:03:45.880 --> 00:03:48.060
+a seconda di come è pensato il gioco. Magari
+
+00:03:48.100 --> 00:03:50.600
+il concorrente riceve un premio normale più
+
+00:03:50.660 --> 00:03:54.160
+uno bonus, o magari passa direttamente
+
+00:03:54.200 --> 00:03:56.780
+al premio bonus. Nessuno dei due pezzi di codice
+
+00:03:56.820 --> 00:04:00.060
+è giusto o sbagliato. Sono semplicemente utili in situazioni
+
+00:04:00.120 --> 00:04:03.620
+diverse. Ma sai quale dei due... devi
+
+00:04:03.640 --> 00:04:05.560
+sapere quale dei due
+
+00:04:05.640 --> 00:04:08.960
+intendi usare. Quindi nei prossimi esercizi
+
+00:04:09.000 --> 00:04:11.320
+userai if, else if ed else per
+
+00:04:11.380 --> 00:04:14.340
+gestire situazioni diverse. Buona fortuna. Ci vediamo
+
+00:04:14.360 --> 00:04:15.040
+qui a breve.

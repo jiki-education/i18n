@@ -1,0 +1,405 @@
+WEBVTT
+
+NOTE en_md5 f8c737461bf364654b8a618e515caeb8
+
+00:00:00.140 --> 00:00:02.210
+Bentornato. Ok, adesso facciamo
+
+00:00:02.400 --> 00:00:04.400
+una piccola deviazione, una digressione,
+
+00:00:04.460 --> 00:00:06.480
+e vediamo una cosa che ti servirà
+
+00:00:06.540 --> 00:00:08.850
+sapere se mai farai qualcosa di visuale
+
+00:00:08.880 --> 00:00:10.860
+con il codice. E anche se vuoi
+
+00:00:10.900 --> 00:00:12.460
+fare il data scientist e pensi che tutta
+
+00:00:12.560 --> 00:00:16.180
+la roba di disegno sia noiosa, comunicare i dati
+
+00:00:16.219 --> 00:00:19.180
+attraverso le immagini è una competenza fondamentale,
+
+00:00:19.220 --> 00:00:21.790
+quindi vale la pena impararlo. In questo video
+
+00:00:21.840 --> 00:00:24.220
+vedremo due modi diversi per
+
+00:00:24.260 --> 00:00:28.670
+esprimere i colori. Hai già usato i colori
+
+00:00:28.680 --> 00:00:31.640
+con i loro nomi, come red o yellow,
+
+00:00:31.700 --> 00:00:33.800
+come ultimo input nelle funzioni di disegno,
+
+00:00:35.400 --> 00:00:37.300
+ed è stato un bel modo per usare
+
+00:00:37.360 --> 00:00:40.320
+i colori rapidamente, ma è piuttosto limitante.
+
+00:00:40.330 --> 00:00:42.350
+Ci sono solo una manciata di colori con nome
+
+00:00:42.380 --> 00:00:44.370
+che possiamo usare. Quindi adesso vedremo
+
+00:00:44.400 --> 00:00:46.880
+due modi per esprimere qualsiasi colore
+
+00:00:46.960 --> 00:00:49.960
+tu voglia, e questi due si chiamano RGB
+
+00:00:50.180 --> 00:00:54.920
+e HSL. RGB ci permette di pensare ai colori
+
+00:00:54.980 --> 00:00:57.100
+come a una miscela di rosso, verde e blu.
+
+00:00:57.300 --> 00:01:00.210
+RGB significa red, green, blue: rosso, verde, blu.
+
+00:01:01.280 --> 00:01:04.040
+Se ti ricordi di aver mescolato i colori a scuola,
+
+00:01:04.099 --> 00:01:06.730
+l'idea è simile, solo che invece della vernice
+
+00:01:06.760 --> 00:01:11.580
+mescoliamo luce. In molti degli esercizi che seguono
+
+00:01:11.640 --> 00:01:14.440
+avrai una funzione chiamata rgb,
+
+00:01:15.280 --> 00:01:16.960
+e prenderà tre numeri come
+
+00:01:17.000 --> 00:01:20.040
+input, uno per il rosso, uno per il verde,
+
+00:01:20.080 --> 00:01:22.240
+uno per il blu, e restituirà
+
+00:01:22.320 --> 00:01:26.900
+un colore. I numeri che puoi usare come
+
+00:01:26.980 --> 00:01:32.940
+input vanno da zero a 255. Zero significa
+
+00:01:33.040 --> 00:01:35.440
+che non voglio niente di quel colore, e
+
+00:01:35.620 --> 00:01:38.420
+255 significa mescolare più di quel colore
+
+00:01:38.460 --> 00:01:41.460
+possibile. Quindi se usiamo la
+
+00:01:41.540 --> 00:01:45.550
+funzione rgb con 255, zero e zero come
+
+00:01:45.600 --> 00:01:48.190
+input, stiamo dicendo che vogliamo
+
+00:01:48.240 --> 00:01:50.440
+tutto il rosso. Ricorda che 255 è
+
+00:01:50.460 --> 00:01:52.880
+il numero più grande che puoi mettere lì dentro.
+
+00:01:52.900 --> 00:01:54.800
+Ma non vogliamo verde né
+
+00:01:54.820 --> 00:01:57.420
+blu, quindi quelli sono entrambi zero. Quindi
+
+00:01:57.460 --> 00:02:00.880
+otteniamo rosso, e possiamo memorizzare
+
+00:02:00.900 --> 00:02:03.360
+quel rosso in una variabile e poi usarlo
+
+00:02:03.380 --> 00:02:05.340
+nella funzione circle, proprio come abbiamo già
+
+00:02:05.400 --> 00:02:08.840
+fatto con le stringhe con nome. E se
+
+00:02:08.880 --> 00:02:10.759
+usiamo la funzione rgb con
+
+00:02:10.900 --> 00:02:15.340
+zero, 255, zero? Ora stiamo dicendo niente rosso,
+
+00:02:15.880 --> 00:02:18.310
+tutto il verde, niente blu. Quindi otteniamo
+
+00:02:18.320 --> 00:02:21.440
+un cerchio verde. E se vogliamo
+
+00:02:21.640 --> 00:02:25.320
+il giallo? Il giallo è una miscela di rosso
+
+00:02:25.620 --> 00:02:27.940
+e verde. Quindi possiamo dire: dammi
+
+00:02:28.020 --> 00:02:29.840
+tutto il rosso, tutto il verde
+
+00:02:30.180 --> 00:02:32.120
+e niente blu, e questo ci darà
+
+00:02:32.200 --> 00:02:35.200
+il giallo. E possiamo usare
+
+00:02:35.240 --> 00:02:37.730
+numeri più piccoli. Se vogliamo un po' di rosso,
+
+00:02:38.300 --> 00:02:41.150
+niente verde e tanto blu, otterremo
+
+00:02:41.200 --> 00:02:45.080
+il viola. E tanto rosso, un po' di verde,
+
+00:02:45.380 --> 00:02:47.000
+un po' più di blu, ci dà un
+
+00:02:47.040 --> 00:02:51.360
+rosa. Ecco RGB. Mescoliamo rosso, verde
+
+00:02:51.500 --> 00:02:56.060
+e blu per ottenere combinazioni diverse. Ora
+
+00:02:56.100 --> 00:02:58.960
+vediamo HSL, che ci dà un modo
+
+00:02:58.980 --> 00:03:03.060
+completamente diverso di pensare ai colori. HSL sta
+
+00:03:03.100 --> 00:03:08.200
+per hue, saturation e lightness: tonalità, saturazione e luminosità. E come per
+
+00:03:08.280 --> 00:03:11.900
+RGB, hai una funzione chiamata hsl che
+
+00:03:11.920 --> 00:03:14.590
+prende tre numeri, uno per la tonalità, uno per
+
+00:03:14.640 --> 00:03:17.100
+la saturazione e uno per la luminosità, e
+
+00:03:17.120 --> 00:03:20.420
+restituirà un colore. Vediamo quindi
+
+00:03:20.480 --> 00:03:25.160
+cosa significano queste tre parole. La tonalità è
+
+00:03:25.200 --> 00:03:28.080
+la sfumatura di colore che desideri, e
+
+00:03:28.120 --> 00:03:32.300
+va da zero fino a 360. Forse
+
+00:03:32.320 --> 00:03:34.200
+immagina un arcobaleno. Ecco come
+
+00:03:34.260 --> 00:03:36.200
+ci penso io. A sinistra abbiamo il rosso,
+
+00:03:36.700 --> 00:03:39.220
+e poi abbiamo arancione, giallo, verde, blu,
+
+00:03:39.400 --> 00:03:41.320
+viola, e in realtà torniamo
+
+00:03:41.340 --> 00:03:44.760
+fino al rosso. Quindi se dici zero,
+
+00:03:45.140 --> 00:03:47.100
+inizi a sinistra, ed è
+
+00:03:47.180 --> 00:03:50.700
+rosso. Se dici 120, stai chiedendo
+
+00:03:50.740 --> 00:03:54.580
+il verde. 230 è il blu. Puoi anche pensarlo
+
+00:03:54.620 --> 00:03:57.470
+come una ruota dei colori, che è
+
+00:03:57.500 --> 00:03:59.500
+ciò che rappresentano i 360. È il numero
+
+00:03:59.540 --> 00:04:02.440
+di gradi in un cerchio. Io guardo sempre
+
+00:04:02.480 --> 00:04:04.360
+i numeri che mi servono, quindi
+
+00:04:04.440 --> 00:04:07.000
+non preoccuparti troppo di cercare di
+
+00:04:07.060 --> 00:04:09.340
+memorizzarli, ma è bello sapere
+
+00:04:09.380 --> 00:04:11.720
+cosa succede. Quindi ecco la tonalità,
+
+00:04:11.780 --> 00:04:16.019
+cioè la sfumatura. Poi abbiamo la saturazione, che indica
+
+00:04:16.060 --> 00:04:18.920
+quanto è vivido il colore. Va da zero
+
+00:04:19.019 --> 00:04:22.060
+a 100. A zero, ottieni solo grigio.
+
+00:04:22.400 --> 00:04:24.440
+Non c'è colore, nessun tono,
+
+00:04:24.500 --> 00:04:28.160
+proprio niente. A 100, ottieni un colore pieno,
+
+00:04:28.360 --> 00:04:32.660
+vivido, vibrante. E poi abbiamo la luminosità.
+
+00:04:32.700 --> 00:04:34.860
+La luminosità indica quanto è chiaro il colore,
+
+00:04:34.960 --> 00:04:37.600
+e anche questa va da zero a 100. A
+
+00:04:37.740 --> 00:04:40.200
+zero ottieni il nero. Qualunque tonalità
+
+00:04:40.260 --> 00:04:43.460
+tu abbia scelto, ottieni il nero. Non c'è
+
+00:04:43.480 --> 00:04:46.500
+luce dentro. E a 100 ottieni il bianco.
+
+00:04:46.980 --> 00:04:49.000
+A prescindere da tutto il resto, è pieno
+
+00:04:49.060 --> 00:04:52.420
+di luce, quindi è bianco. 50 è esattamente
+
+00:04:52.460 --> 00:04:55.490
+nel mezzo, il colore normale. Quindi puoi
+
+00:04:55.520 --> 00:04:57.550
+pensarlo come uno slider per rendere
+
+00:04:57.580 --> 00:05:01.260
+il colore più chiaro o più scuro. Quindi se
+
+00:05:01.320 --> 00:05:03.840
+vogliamo un cerchio rosso normale, che avremmo
+
+00:05:03.860 --> 00:05:07.680
+scritto come 255, zero, zero con RGB, tutto
+
+00:05:07.720 --> 00:05:10.640
+il rosso, niente verde, niente blu, qui
+
+00:05:10.680 --> 00:05:15.560
+useremmo zero, 100, 50. Zero per
+
+00:05:15.600 --> 00:05:19.290
+la tonalità rossa, 100 per la saturazione, colore pieno,
+
+00:05:19.800 --> 00:05:22.060
+e 50 per la luminosità, che è un livello
+
+00:05:22.080 --> 00:05:25.240
+di luminosità normale. Se vogliamo renderlo
+
+00:05:25.250 --> 00:05:27.800
+un cerchio verde, possiamo semplicemente cambiare
+
+00:05:27.880 --> 00:05:30.700
+quella tonalità a 120. Se vogliamo
+
+00:05:30.740 --> 00:05:33.260
+renderlo un verde più scuro, possiamo ridurre
+
+00:05:33.270 --> 00:05:37.340
+la luminosità a 25. Se vogliamo
+
+00:05:37.380 --> 00:05:39.360
+renderlo un verde più spento, possiamo
+
+00:05:39.440 --> 00:05:40.780
+togliere un po' di colore, un po' di
+
+00:05:40.920 --> 00:05:43.860
+saturazione, diciamo portarla a 30.
+
+00:05:46.500 --> 00:05:48.800
+Se vuoi un rosa acceso e brillante, una
+
+00:05:48.860 --> 00:05:52.080
+tonalità di circa 300 è il rosa, e poi
+
+00:05:52.120 --> 00:05:55.680
+alziamo la saturazione a 100 per
+
+00:05:55.720 --> 00:05:57.560
+renderlo davvero vivido, e aumentiamo
+
+00:05:57.620 --> 00:06:01.290
+anche la luminosità a circa 60. Quindi abbiamo
+
+00:06:01.340 --> 00:06:03.660
+due modi diversi per esprimere un colore, e sono
+
+00:06:03.760 --> 00:06:07.830
+utili in situazioni diverse. RGB è ottimo quando
+
+00:06:07.900 --> 00:06:12.160
+vuoi regolare una componente specifica:
+
+00:06:12.500 --> 00:06:14.380
+quanto rosso, quanto verde, quanto
+
+00:06:14.400 --> 00:06:17.540
+blu. HSL è ottimo quando vuoi
+
+00:06:17.600 --> 00:06:20.060
+scorrere tra i colori. Se vuoi un arcobaleno,
+
+00:06:20.100 --> 00:06:23.440
+puoi continuare ad aumentare la tonalità. Nei
+
+00:06:23.460 --> 00:06:25.360
+prossimi esercizi userai
+
+00:06:25.400 --> 00:06:27.500
+entrambi, insieme a dei cicli e
+
+00:06:27.960 --> 00:06:31.020
+aggiornando alcune variabili, per creare un arcobaleno e
+
+00:06:31.080 --> 00:06:33.280
+un tramonto. Ti ricorderò tutti i
+
+00:06:33.320 --> 00:06:36.400
+dettagli nelle istruzioni degli esercizi, quindi non preoccuparti
+
+00:06:36.460 --> 00:06:40.140
+se non hai ancora memorizzato tutto. Buona
+
+00:06:40.180 --> 00:06:41.640
+fortuna, divertiti, e ci vediamo
+
+00:06:41.660 --> 00:06:42.060
+presto qui.

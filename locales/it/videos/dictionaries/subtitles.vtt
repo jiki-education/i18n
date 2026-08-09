@@ -1,0 +1,270 @@
+WEBVTT
+
+NOTE en_md5 c5187b46923e87c2aac86912c90dfb53
+
+00:00:00.100 --> 00:00:03.140
+Bentornato. Ormai dovresti sentirti più a tuo agio
+
+00:00:03.180 --> 00:00:06.810
+con gli array. Gli array sono la nostra prima scelta
+
+00:00:06.840 --> 00:00:09.740
+quando abbiamo una lista di qualcosa: una lista
+
+00:00:09.760 --> 00:00:11.560
+di mentori, una lista di punteggi, una lista
+
+00:00:11.600 --> 00:00:14.420
+di ingredienti. Per qualsiasi lista, ti conviene usare
+
+00:00:14.440 --> 00:00:17.630
+un array. Ma c'è un'altra struttura dati
+
+00:00:17.720 --> 00:00:20.060
+molto comune per quando vuoi qualcosa
+
+00:00:20.070 --> 00:00:23.380
+di un po' più complesso di una lista. Immagina
+
+00:00:23.420 --> 00:00:24.780
+di voler salvare alcune informazioni su di me:
+
+00:00:25.500 --> 00:00:27.580
+il mio nome, la mia età, dove sono nato.
+
+00:00:28.280 --> 00:00:30.140
+Potresti anche usare un array,
+
+00:00:30.150 --> 00:00:32.200
+ma non sarebbe molto chiaro
+
+00:00:32.240 --> 00:00:34.850
+che cosa rappresenta. L'Inghilterra è dove sono
+
+00:00:34.880 --> 00:00:37.210
+nato o dove vivo? 42 è la mia
+
+00:00:37.300 --> 00:00:40.120
+età o qualcos'altro? E se voglio
+
+00:00:40.160 --> 00:00:42.050
+usare questi dati, devo ricordarmi che
+
+00:00:42.080 --> 00:00:44.740
+la prima posizione è per il nome, la seconda
+
+00:00:44.780 --> 00:00:47.900
+per l'età, la terza per il luogo di nascita.
+
+00:00:47.920 --> 00:00:49.840
+È tutto un po' confuso, ed è confuso
+
+00:00:49.880 --> 00:00:52.420
+perché questa non è davvero una lista di cose.
+
+00:00:52.480 --> 00:00:55.769
+È qualcosa di più complesso. Ed è qui
+
+00:00:55.800 --> 00:00:58.500
+che entrano in gioco i dizionari. Un dizionario è
+
+00:00:58.560 --> 00:01:00.340
+un nuovo tipo di struttura dati. È la quinta
+
+00:01:00.420 --> 00:01:03.830
+che incontri: hai le stringhe, i numeri, i booleani, gli array,
+
+00:01:03.880 --> 00:01:06.200
+e adesso i dizionari. E voglio che tu pensi
+
+00:01:06.260 --> 00:01:08.620
+a un dizionario come al foglio
+
+00:01:08.800 --> 00:01:12.180
+di un blocco note a spirale. Sul lato sinistro ci sono
+
+00:01:12.220 --> 00:01:15.460
+le intestazioni, le parole name, age, birthplace, e
+
+00:01:15.500 --> 00:01:18.400
+le chiamiamo chiavi. E sul lato destro,
+
+00:01:18.480 --> 00:01:20.240
+accanto a ogni intestazione, ci sono
+
+00:01:20.300 --> 00:01:24.520
+i dati veri e propri, Jeremy, 42, England, e
+
+00:01:24.600 --> 00:01:28.300
+li chiamiamo valori. Proprio come gli array, un
+
+00:01:28.340 --> 00:01:31.180
+dizionario è una cosa sola. È una pagina
+
+00:01:31.190 --> 00:01:33.830
+di un blocco note. E proprio come gli array, Jiki
+
+00:01:33.840 --> 00:01:35.250
+può metterlo in una variabile, in una scatola,
+
+00:01:35.720 --> 00:01:37.930
+o usarlo come input per una funzione, oppure
+
+00:01:37.980 --> 00:01:39.540
+può tirare fuori un dizionario
+
+00:01:39.560 --> 00:01:42.200
+dallo scivolo. Ecco quindi come appare un dizionario
+
+00:01:42.260 --> 00:01:45.080
+nel codice. Usiamo le parentesi graffe
+
+00:01:45.120 --> 00:01:47.490
+per segnare l'inizio e la fine, e poi
+
+00:01:47.520 --> 00:01:49.420
+all'interno ci sono le coppie: una chiave a
+
+00:01:49.480 --> 00:01:51.700
+sinistra, i due punti e poi il valore a
+
+00:01:51.740 --> 00:01:53.860
+destra. E tra una coppia e l'altra mettiamo
+
+00:01:53.900 --> 00:01:56.260
+una virgola. Jiki vede tutto questo e
+
+00:01:56.280 --> 00:01:58.600
+tira fuori il suo blocco note a spirale. Scrive name,
+
+00:01:58.960 --> 00:02:02.100
+Jeremy, age, 42, e così via per ogni
+
+00:02:02.140 --> 00:02:04.440
+coppia. E quando ha finito, strappa
+
+00:02:04.480 --> 00:02:06.320
+il foglio e lo mette in una scatola
+
+00:02:06.420 --> 00:02:09.360
+etichettata person. Ci sono alcune regole
+
+00:02:09.420 --> 00:02:12.060
+da conoscere. Le chiavi sono sempre stringhe. Devono avere
+
+00:02:12.140 --> 00:02:14.620
+le virgolette intorno, e ogni chiave deve essere
+
+00:02:14.680 --> 00:02:18.170
+unica. Non puoi avere due chiavi
+
+00:02:18.260 --> 00:02:21.420
+chiamate name nello stesso dizionario. I valori
+
+00:02:21.480 --> 00:02:23.150
+possono anche essere uguali, se vuoi,
+
+00:02:23.280 --> 00:02:25.810
+ma le chiavi devono essere diverse, e
+
+00:02:25.820 --> 00:02:27.600
+i valori possono essere qualsiasi cosa. Possono essere
+
+00:02:27.680 --> 00:02:31.000
+stringhe, numeri, booleani, array o perfino altri dizionari.
+
+00:02:32.140 --> 00:02:34.540
+Puoi anche avere un dizionario vuoto, proprio
+
+00:02:34.600 --> 00:02:37.220
+come avevamo un array vuoto,
+
+00:02:37.280 --> 00:02:38.800
+e possiamo partire da quello per
+
+00:02:38.820 --> 00:02:42.210
+costruirci sopra in seguito. Bene, adesso hai un
+
+00:02:42.260 --> 00:02:44.160
+dizionario, ma come tiri fuori
+
+00:02:44.220 --> 00:02:46.900
+qualcosa? Usiamo la stessa sintassi con le
+
+00:02:46.920 --> 00:02:48.960
+parentesi quadre che abbiamo usato con gli array
+
+00:02:49.020 --> 00:02:52.980
+e le stringhe, ma invece del numero di una posizione
+
+00:02:53.020 --> 00:02:55.040
+inseriamo una chiave. Quindi, se vogliamo
+
+00:02:55.100 --> 00:02:57.390
+tirare fuori il nome di qualcuno da un dizionario,
+
+00:02:57.940 --> 00:03:01.620
+scriviamo la variabile person, le parentesi quadre e
+
+00:03:01.640 --> 00:03:03.580
+poi la chiave, in questo caso name,
+
+00:03:03.660 --> 00:03:07.260
+tra virgolette. E questo dice a Jiki di guardare
+
+00:03:07.300 --> 00:03:09.970
+nel dizionario person, trovare la chiave
+
+00:03:10.080 --> 00:03:12.900
+name e tirare fuori il suo valore. Jiki
+
+00:03:13.040 --> 00:03:15.000
+va alla scatola person, tira fuori
+
+00:03:15.040 --> 00:03:17.340
+la pagina del blocco note, scorre tutte
+
+00:03:17.400 --> 00:03:19.760
+le chiavi finché non trova name, poi legge
+
+00:03:19.800 --> 00:03:21.900
+il valore Jeremy e lo mette
+
+00:03:21.910 --> 00:03:27.540
+in una nuova scatola chiamata name. Le parentesi quadre
+
+00:03:27.580 --> 00:03:29.980
+significano sempre la stessa cosa: stai frugando dentro
+
+00:03:29.990 --> 00:03:32.370
+qualcosa per tirarne fuori qualcos'altro.
+
+00:03:32.960 --> 00:03:34.720
+Con gli array e le stringhe usi un numero
+
+00:03:34.760 --> 00:03:37.580
+per dire da quale posizione prendere qualcosa.
+
+00:03:37.700 --> 00:03:40.140
+Con i dizionari usi una stringa per la chiave.
+
+00:03:40.180 --> 00:03:43.340
+L'idea è la stessa, cambia solo un po' la sintassi.
+
+00:03:43.380 --> 00:03:45.390
+Allora, hai un paio di esercizi per fare pratica
+
+00:03:45.500 --> 00:03:47.640
+a creare dizionari e a leggerne i valori.
+
+00:03:48.260 --> 00:03:50.160
+Ti serve solo quello che abbiamo appena visto:
+
+00:03:50.580 --> 00:03:52.660
+le parentesi graffe per creare, le parentesi quadre
+
+00:03:52.680 --> 00:03:55.200
+per accedere. Prenditi il tempo che ti serve. Buona
+
+00:03:55.240 --> 00:03:56.820
+fortuna, e ci vediamo qui a breve.

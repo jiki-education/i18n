@@ -1,0 +1,222 @@
+WEBVTT
+
+NOTE en_md5 10ad7187acecddbe0b148815fa3e3508
+
+00:00:00.180 --> 00:00:02.610
+Bentornato. Le funzioni che hai creato finora
+
+00:00:02.800 --> 00:00:05.430
+fanno sempre esattamente la stessa cosa
+
+00:00:05.460 --> 00:00:10.760
+ogni volta. turn_around fa sempre girare a sinistra due volte. shoot_if_alien_above
+
+00:00:10.800 --> 00:00:14.180
+controlla e spara sempre. Ma pensa alle funzioni
+
+00:00:14.240 --> 00:00:16.140
+che hai usato durante il corso, a come
+
+00:00:16.160 --> 00:00:19.480
+fanno cose diverse a seconda degli input. Rectangle
+
+00:00:19.520 --> 00:00:21.180
+prende left, top, width e
+
+00:00:21.240 --> 00:00:23.820
+height come input, e poi disegna un
+
+00:00:23.900 --> 00:00:27.040
+rettangolo diverso in base a ciò che gli dici.
+
+00:00:27.140 --> 00:00:29.200
+In questo video ti mostrerò come aggiungere
+
+00:00:29.320 --> 00:00:31.920
+le fessure di input anche alle tue funzioni.
+
+00:00:33.520 --> 00:00:35.020
+Per farlo, devi sapere due cose.
+
+00:00:35.060 --> 00:00:38.080
+La prima è come appare,
+
+00:00:38.140 --> 00:00:39.910
+cosa devi scrivere, e la
+
+00:00:40.040 --> 00:00:43.300
+seconda è cosa succede davvero. La prima parte
+
+00:00:43.360 --> 00:00:46.930
+è piuttosto semplice. Devi solo aggiungere delle normali
+
+00:00:46.940 --> 00:00:49.680
+parentesi tonde e poi i nomi degli input
+
+00:00:49.740 --> 00:00:52.720
+che vuoi. Immagina di creare una funzione
+
+00:00:52.840 --> 00:00:56.400
+che deve sparare molte volte. Chiamiamola
+
+00:00:56.440 --> 00:01:01.500
+shoot_many. Scriveremmo function shoot_many parentesi num_shots
+
+00:01:01.800 --> 00:01:06.280
+parentesi, parentesi graffe e poi del codice.
+
+00:01:06.300 --> 00:01:08.580
+Quando vuoi usare questa funzione, scrivi
+
+00:01:08.640 --> 00:01:10.640
+shoot_many 5 se vuoi sparare cinque
+
+00:01:10.680 --> 00:01:13.180
+colpi, oppure shoot_many 2 se ne vuoi
+
+00:01:13.300 --> 00:01:15.840
+sparare due. Ora arriva il punto
+
+00:01:15.920 --> 00:01:19.100
+chiave. Quando il codice viene eseguito, qualsiasi cosa
+
+00:01:19.160 --> 00:01:23.280
+tu abbia messo in quell'input, 5 o 2, mini-Jiki, con
+
+00:01:23.300 --> 00:01:27.080
+il cappello all'interno della funzione, prende quel valore
+
+00:01:27.260 --> 00:01:29.880
+e lo mette in una scatola chiamata num_shots,
+
+00:01:30.460 --> 00:01:32.670
+e poi mette quella scatola sugli scaffali
+
+00:01:32.740 --> 00:01:34.940
+all'interno della funzione, perché tu possa usarla
+
+00:01:34.960 --> 00:01:39.120
+nel codice della funzione. Lo ripeto. Quando
+
+00:01:39.180 --> 00:01:42.110
+scriviamo shoot_many 5 per usare la funzione,
+
+00:01:42.900 --> 00:01:45.520
+Jiki, all'esterno, va a prendere un
+
+00:01:46.040 --> 00:01:48.040
+5 e lo mette nella fessura di input
+
+00:01:48.180 --> 00:01:52.800
+di shoot_many. Dentro la macchina, mini-Jiki tira fuori
+
+00:01:52.840 --> 00:01:54.700
+quel 5 e lo mette in una scatola
+
+00:01:54.780 --> 00:01:57.180
+chiamata num_shots, perché è il nome che hai
+
+00:01:57.220 --> 00:01:59.340
+dato a quella fessura di input, e poi
+
+00:01:59.360 --> 00:02:02.300
+mette quella scatola sugli scaffali, dentro la
+
+00:02:02.340 --> 00:02:05.140
+funzione, dentro la macchina. E poi, all'interno
+
+00:02:05.200 --> 00:02:08.460
+della funzione, puoi usare la scatola num_shots
+
+00:02:09.340 --> 00:02:11.360
+come useresti qualsiasi altra scatola.
+
+00:02:11.380 --> 00:02:14.540
+Non c'è niente di magico nel nome num_shots. Avremmo
+
+00:02:14.560 --> 00:02:16.820
+potuto chiamarla come volevamo. È solo
+
+00:02:16.900 --> 00:02:19.780
+un'istruzione per mini-Jiki di creare sempre,
+
+00:02:19.880 --> 00:02:23.020
+all'interno della funzione, una scatola con
+
+00:02:23.030 --> 00:02:25.640
+quell'etichetta e di metterci dentro tutto ciò che
+
+00:02:25.720 --> 00:02:29.750
+viene passato in quella fessura. Ed una volta
+
+00:02:29.840 --> 00:02:31.170
+che hai un valore in quella scatola, puoi fare
+
+00:02:31.220 --> 00:02:33.590
+tutto quello che faresti normalmente con le scatole.
+
+00:02:33.620 --> 00:02:36.380
+Non ti rovino gli esercizi che arrivano, ma qui
+
+00:02:36.420 --> 00:02:39.100
+potresti usare la scatola num_shots in un
+
+00:02:39.140 --> 00:02:41.200
+ciclo repeat per sparare il numero corretto
+
+00:02:41.240 --> 00:02:44.100
+di volte. E puoi avere anche più
+
+00:02:44.200 --> 00:02:47.340
+di un input. Basta separarli con delle
+
+00:02:47.380 --> 00:02:49.580
+virgole. Quindi, se abbiamo una funzione chiamata
+
+00:02:49.640 --> 00:02:52.329
+draw_star che disegna una stella in base
+
+00:02:52.360 --> 00:02:55.000
+alla sua posizione in alto a sinistra, scriveresti function
+
+00:02:55.160 --> 00:03:00.060
+draw_star parentesi left virgola top parentesi, poi le
+
+00:03:00.080 --> 00:03:02.930
+parentesi graffe, e poi il codice. E poi, quando
+
+00:03:02.960 --> 00:03:05.600
+la funzione viene chiamata, mini-Jiki memorizza
+
+00:03:05.640 --> 00:03:07.320
+i valori passati agli
+
+00:03:07.380 --> 00:03:10.660
+input in scatole chiamate left e top, e poi
+
+00:03:10.680 --> 00:03:12.829
+le mette sugli scaffali all'interno
+
+00:03:12.829 --> 00:03:16.160
+delle funzioni. Ti ho preparato un esercizio
+
+00:03:16.200 --> 00:03:18.960
+per dopo: riprodurre la funzione walk
+
+00:03:19.420 --> 00:03:21.160
+che abbiamo visto in una delle prime lezioni,
+
+00:03:21.240 --> 00:03:24.120
+dove scrivendo walk 5 potrai muoverti
+
+00:03:24.160 --> 00:03:27.300
+di cinque passi in avanti. Qui scriverai praticamente
+
+00:03:27.320 --> 00:03:29.660
+esattamente lo stesso codice che ho scritto io
+
+00:03:29.700 --> 00:03:31.960
+per realizzarlo. Divertiti, e ci vediamo
+
+00:03:31.980 --> 00:03:32.620
+qui tra poco.

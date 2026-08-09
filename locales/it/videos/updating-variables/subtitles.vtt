@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 b5959486af83f5baff4c0faf230ee97f
+
+00:00:00.220 --> 00:00:04.200
+Bentornato. Finora, quando abbiamo creato delle variabili,
+
+00:00:04.520 --> 00:00:07.100
+abbiamo messo dei valori nelle scatole e poi
+
+00:00:07.140 --> 00:00:10.059
+li abbiamo ripresi più tardi. È stato molto utile
+
+00:00:10.130 --> 00:00:13.080
+per dare chiarezza al nostro codice e per ridurre
+
+00:00:13.140 --> 00:00:15.520
+un po' di calcoli mentali che
+
+00:00:15.560 --> 00:00:18.720
+altrimenti avremmo dovuto fare. Ma il vero valore
+
+00:00:18.780 --> 00:00:21.940
+delle variabili viene dalla possibilità di cambiare
+
+00:00:22.020 --> 00:00:24.760
+ciò che c'è dentro una scatola, dentro la variabile,
+
+00:00:24.800 --> 00:00:27.710
+nel corso del programma. Così, anche se
+
+00:00:27.740 --> 00:00:30.120
+eseguiamo lo stesso pezzo di codice più volte,
+
+00:00:30.660 --> 00:00:33.900
+quello che fa può cambiare a seconda di
+
+00:00:33.940 --> 00:00:38.540
+cosa c'è dentro le scatole. Supponiamo di voler piantare
+
+00:00:38.580 --> 00:00:41.020
+un fiore in un giardino. Abbiamo una
+
+00:00:41.030 --> 00:00:44.340
+comoda funzione plant che ha un solo input
+
+00:00:44.380 --> 00:00:46.060
+per la posizione in cui vogliamo mettere
+
+00:00:46.100 --> 00:00:48.380
+il fiore. Quindi, se vogliamo posizionare un
+
+00:00:48.400 --> 00:00:50.980
+fiore a 10 dal bordo, scriviamo plant
+
+00:00:52.010 --> 00:00:55.880
+di 10. Semplice e lineare. E se
+
+00:00:55.960 --> 00:00:59.340
+volessimo piantare otto fiori? Beh, potremmo
+
+00:00:59.360 --> 00:01:02.210
+scrivere plant 10, plant 20, plant 30 e
+
+00:01:02.260 --> 00:01:06.780
+così via, ma è piuttosto noioso. E abbiamo già
+
+00:01:06.820 --> 00:01:10.350
+imparato qualcosa che ci aiuta a sostituire
+
+00:01:10.380 --> 00:01:13.120
+questo tipo di codice noioso. Speriamo che il tuo cervello
+
+00:01:13.160 --> 00:01:15.640
+stia già frullando e gridando: «Usa un ciclo! Usa un
+
+00:01:15.680 --> 00:01:19.440
+blocco repeat!» Ed è esattamente così. Quindi
+
+00:01:19.480 --> 00:01:22.120
+impostiamo la posizione a 10, e
+
+00:01:22.180 --> 00:01:25.200
+poi mettiamo un blocco repeat in cui chiamiamo
+
+00:01:25.240 --> 00:01:27.350
+plant, usiamo la funzione plant, otto volte.
+
+00:01:28.900 --> 00:01:32.160
+Cosa pensi che succederà? Beh,
+
+00:01:32.180 --> 00:01:35.180
+pianterà otto fiori, ma li pianterà
+
+00:01:35.200 --> 00:01:38.000
+nello stesso punto ogni volta, che
+
+00:01:38.060 --> 00:01:41.140
+non è proprio ciò che vogliamo. Quindi
+
+00:01:41.280 --> 00:01:42.960
+prendiamoci un attimo per pensare a cosa
+
+00:01:43.000 --> 00:01:45.420
+sta facendo Jiki. Sta creando una scatola
+
+00:01:45.460 --> 00:01:47.600
+con l'etichetta position. Ci mette dentro 10.
+
+00:01:48.180 --> 00:01:50.330
+Poi esegue la macchina plant otto volte.
+
+00:01:51.420 --> 00:01:54.380
+Ogni volta, tira fuori il valore
+
+00:01:54.400 --> 00:01:57.730
+dalla scatola position. È sempre 10, e
+
+00:01:57.760 --> 00:02:01.340
+inserisce sempre quel 10. Quindi
+
+00:02:01.360 --> 00:02:03.400
+ciò di cui abbiamo bisogno è un modo
+
+00:02:03.460 --> 00:02:06.490
+per avanzare un po' ogni volta. Dopo aver
+
+00:02:06.540 --> 00:02:08.820
+piantato un fiore, vogliamo dire a Jiki
+
+00:02:08.960 --> 00:02:12.200
+di spostare la posizione avanti di 10, pronti
+
+00:02:12.300 --> 00:02:16.410
+per piantare il prossimo fiore. Allora, dimenticando
+
+00:02:16.500 --> 00:02:18.800
+il codice per un attimo, come
+
+00:02:18.900 --> 00:02:22.360
+appare logicamente farlo? Se
+
+00:02:22.440 --> 00:02:24.460
+ti dico: «Pianta il primo fiore a 10,
+
+00:02:24.620 --> 00:02:26.320
+poi il prossimo a 20, poi il prossimo
+
+00:02:26.360 --> 00:02:29.140
+a 30», come fa il tuo cervello a sapere
+
+00:02:29.180 --> 00:02:31.549
+che il prossimo dovrebbe essere piantato a 40
+
+00:02:32.320 --> 00:02:33.940
+e quello dopo dovrebbe essere piantato
+
+00:02:33.960 --> 00:02:38.280
+a 50? Quello che sta facendo il tuo cervello è
+
+00:02:38.340 --> 00:02:41.680
+tenere traccia del numero attuale e aggiungere
+
+00:02:41.740 --> 00:02:44.380
+10, e poi aggiornare quel numero
+
+00:02:44.440 --> 00:02:47.510
+nella tua testa. E possiamo fare esattamente
+
+00:02:47.520 --> 00:02:50.950
+la stessa cosa nel codice. Per farlo,
+
+00:02:51.160 --> 00:02:54.380
+diciamo: «Aggiorna la scatola position in modo
+
+00:02:54.440 --> 00:03:00.500
+che contenga il valore attuale della posizione più 10». Quando
+
+00:03:00.560 --> 00:03:03.040
+Jiki vede questa istruzione, prende il numero attuale
+
+00:03:03.120 --> 00:03:05.460
+dalla scatola position, aggiunge 10,
+
+00:03:05.540 --> 00:03:08.570
+fa il calcolo, li somma, e
+
+00:03:08.580 --> 00:03:10.720
+poi rimette il risultato nella scatola
+
+00:03:10.800 --> 00:03:14.000
+per la prossima volta. Quindi se aggiungiamo questa istruzione
+
+00:03:14.060 --> 00:03:15.960
+al nostro programma, in modo da dire:
+
+00:03:16.220 --> 00:03:18.680
+«Imposta il valore iniziale di position
+
+00:03:18.700 --> 00:03:21.490
+a 10», poi per otto volte piantiamo un fiore
+
+00:03:22.040 --> 00:03:24.860
+alla posizione, e poi cambiamo la posizione
+
+00:03:24.920 --> 00:03:28.360
+in modo che sia 10 più grande di prima, il nostro codice
+
+00:03:28.420 --> 00:03:30.640
+funziona, e otteniamo otto fiori distanziati.
+
+00:03:32.440 --> 00:03:35.400
+Nota che non c'è let quando aggiorniamo
+
+00:03:35.410 --> 00:03:38.980
+la variabile. Questo è molto importante. Quando Jiki vede
+
+00:03:39.140 --> 00:03:42.400
+let, crea una nuova scatola. Ma qui
+
+00:03:42.420 --> 00:03:44.560
+non vogliamo creare una nuova scatola.
+
+00:03:44.600 --> 00:03:46.480
+Vogliamo cambiare ciò che c'è nella scatola
+
+00:03:46.540 --> 00:03:50.920
+che abbiamo già. Nota anche che
+
+00:03:51.020 --> 00:03:54.320
+creiamo la scatola una sola volta, fuori dal
+
+00:03:54.380 --> 00:03:57.500
+ciclo. È importante da ricordare. Crea la scatola
+
+00:03:57.620 --> 00:03:59.720
+una volta all'inizio, e poi aggiornala
+
+00:03:59.760 --> 00:04:03.500
+ogni volta che il ciclo viene eseguito. Bene. Abbiamo visto
+
+00:04:03.560 --> 00:04:05.850
+parecchie cose in questo video. Possiamo
+
+00:04:05.900 --> 00:04:08.020
+aggiornare ciò che c'è nelle scatole, e possiamo usare
+
+00:04:08.080 --> 00:04:10.880
+questa capacità per tenere traccia di qualcosa che cambia
+
+00:04:10.940 --> 00:04:14.320
+nel tempo. Userai questo schema costantemente,
+
+00:04:14.420 --> 00:04:17.300
+per tracciare una posizione, contare quante volte è successo
+
+00:04:17.340 --> 00:04:21.240
+qualcosa, tenere il punteggio. Ogni volta che devi ricordare
+
+00:04:21.260 --> 00:04:24.780
+qualcosa che cambia mentre il tuo programma è in esecuzione,
+
+00:04:24.820 --> 00:04:27.520
+è così che si fa. Ora ci saranno
+
+00:04:27.620 --> 00:04:29.460
+alcuni esercizi che ti permetteranno
+
+00:04:29.500 --> 00:04:32.060
+di fare pratica. Sentiti libero di tornare
+
+00:04:32.100 --> 00:04:33.760
+a questo video se ti blocchi.
+
+00:04:33.800 --> 00:04:36.420
+Non è barare. Questo argomento può sembrare
+
+00:04:36.460 --> 00:04:38.830
+piuttosto complesso. Diventerà chiaro, ma all'inizio
+
+00:04:38.840 --> 00:04:40.510
+può sembrare un po' tanto. E
+
+00:04:40.540 --> 00:04:41.930
+speriamo che, quando ci rivedremo
+
+00:04:41.930 --> 00:04:44.510
+tra un paio di esercizi, inizierai
+
+00:04:44.540 --> 00:04:46.090
+a familiarizzare un po' di più con
+
+00:04:46.120 --> 00:04:48.600
+questo schema e la tua sicurezza aumenterà. Buona
+
+00:04:48.640 --> 00:04:48.800
+fortuna!

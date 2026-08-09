@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 488ab8c8dd77c6bec365ce44675868b7
+
+00:00:00.280 --> 00:00:02.640
+Bentornato. Nella lezione scorsa abbiamo
+
+00:00:02.680 --> 00:00:04.680
+visto come accedere a una singola lettera
+
+00:00:04.700 --> 00:00:08.300
+di una stringa con le parentesi quadre. Ora
+
+00:00:08.420 --> 00:00:10.120
+vediamo come scorrere
+
+00:00:10.160 --> 00:00:13.160
+una stringa, estraendo ciascuna lettera
+
+00:00:13.200 --> 00:00:15.660
+una alla volta. E per farlo,
+
+00:00:15.720 --> 00:00:18.300
+serve un nuovo tipo di ciclo. Finora
+
+00:00:18.360 --> 00:00:20.170
+abbiamo usato il ciclo repeat, e ora
+
+00:00:20.200 --> 00:00:22.720
+useremo qualcosa chiamato ciclo for of.
+
+00:00:22.760 --> 00:00:26.880
+Sono due nuove parole chiave, for e of. La
+
+00:00:27.000 --> 00:00:28.740
+parola chiave for è una di quelle che
+
+00:00:28.760 --> 00:00:30.360
+incontreremo in diversi posti, andando avanti.
+
+00:00:30.790 --> 00:00:32.580
+Può stare da sola, oppure
+
+00:00:32.619 --> 00:00:35.380
+può essere abbinata a in o of. Per
+
+00:00:35.440 --> 00:00:37.160
+ora, concentriamoci su
+
+00:00:37.220 --> 00:00:40.120
+quest'ultima, of. Allora diamo un'occhiata
+
+00:00:40.160 --> 00:00:43.280
+a un po' di codice. Cominciamo creando una
+
+00:00:43.340 --> 00:00:47.310
+variabile chiamata name contenente la stringa Jeremy. Niente
+
+00:00:47.380 --> 00:00:50.460
+di nuovo qui. Poi abbiamo questa riga, for
+
+00:00:50.540 --> 00:00:53.620
+let letter of name, e lì succedono
+
+00:00:53.640 --> 00:00:55.480
+molte cose, quindi parliamone
+
+00:00:55.520 --> 00:00:59.240
+con calma. Innanzitutto, abbiamo la parola chiave for. Questa
+
+00:00:59.320 --> 00:01:00.980
+dice a Jiki che vogliamo
+
+00:01:01.060 --> 00:01:04.340
+fare un ciclo. Allora lui guarda avanti, vede of
+
+00:01:04.879 --> 00:01:06.320
+e capisce che vogliamo fare
+
+00:01:06.580 --> 00:01:09.600
+un ciclo for of. E questo significa che invece
+
+00:01:09.720 --> 00:01:11.940
+di usare un ciclo repeat, in cui diciamo «Ripetiamo
+
+00:01:12.020 --> 00:01:15.180
+10 volte», diciamo «Scorriamo
+
+00:01:15.260 --> 00:01:17.380
+tutte le lettere della stringa».
+
+00:01:17.440 --> 00:01:20.990
+Questo è ciò che significa for of. Poi abbiamo
+
+00:01:21.060 --> 00:01:24.080
+questa parte let letter. È esattamente la stessa cosa
+
+00:01:24.140 --> 00:01:25.860
+che abbiamo sopra con let
+
+00:01:26.020 --> 00:01:29.320
+name. Stiamo solo creando una variabile chiamata letter.
+
+00:01:30.240 --> 00:01:33.240
+La differenza è che invece di essere espliciti
+
+00:01:33.280 --> 00:01:35.280
+sul contenuto, stiamo dicendo a Jiki
+
+00:01:35.320 --> 00:01:37.850
+di metterci dentro ciascuna lettera della stringa,
+
+00:01:37.900 --> 00:01:41.780
+una alla volta. Allora Jiki vede
+
+00:01:41.880 --> 00:01:44.460
+for, controlla se c'è of, poi parte.
+
+00:01:44.480 --> 00:01:46.140
+Guarda la prima lettera della stringa,
+
+00:01:46.480 --> 00:01:48.380
+la J in questo caso, e la mette
+
+00:01:48.440 --> 00:01:50.840
+in una nuova scatola chiamata letter. Potevamo
+
+00:01:50.880 --> 00:01:52.240
+chiamarla in qualsiasi altro modo, a proposito.
+
+00:01:52.260 --> 00:01:53.920
+Non doveva essere per forza letter. Abbiamo
+
+00:01:53.960 --> 00:01:57.020
+solo deciso di chiamarla letter qui. Poi esegue il codice
+
+00:01:57.080 --> 00:01:58.960
+all'interno delle parentesi graffe, e qui puoi
+
+00:01:59.000 --> 00:02:01.060
+fare qualsiasi cosa faresti in qualsiasi altro punto del codice.
+
+00:02:01.540 --> 00:02:03.560
+L'unica differenza è che questo blocco
+
+00:02:03.640 --> 00:02:06.320
+di codice verrà eseguito una volta per ogni lettera
+
+00:02:06.380 --> 00:02:07.900
+della stringa, e avrà a
+
+00:02:07.960 --> 00:02:11.940
+disposizione questa variabile. Ogni volta che Jiki arriva alla
+
+00:02:12.040 --> 00:02:15.000
+parentesi graffa di chiusura, butta via la scatola
+
+00:02:15.020 --> 00:02:16.740
+letter e ne crea una nuova con la
+
+00:02:16.860 --> 00:02:19.220
+lettera successiva dentro. Quindi la prima volta,
+
+00:02:19.340 --> 00:02:20.800
+butterà via la J e metterà
+
+00:02:20.920 --> 00:02:23.000
+invece una e nella scatola. Poi farà
+
+00:02:23.020 --> 00:02:25.740
+lo stesso per la r, poi la e, poi la m,
+
+00:02:26.080 --> 00:02:28.790
+poi la y. Sei lettere, sei giri
+
+00:02:28.840 --> 00:02:31.300
+del ciclo. Speriamo sia chiaro. Ci vuole
+
+00:02:31.340 --> 00:02:32.560
+un po' di tempo per abituarsi
+
+00:02:32.600 --> 00:02:34.900
+alla sintassi, ma in realtà non è
+
+00:02:34.920 --> 00:02:37.730
+un concetto così difficile. Poi troverai
+
+00:02:37.760 --> 00:02:40.250
+alcuni esercizi in cui dovrai scorrere
+
+00:02:40.250 --> 00:02:42.660
+le stringhe. Ti chiederanno di fare qualcosa
+
+00:02:42.680 --> 00:02:44.980
+con le lettere, per esempio contare quante
+
+00:02:45.000 --> 00:02:46.760
+ce ne sono o trovare la posizione
+
+00:02:46.800 --> 00:02:49.260
+di una lettera specifica. Dovrai usare le diverse
+
+00:02:49.320 --> 00:02:51.640
+tecniche che hai imparato finora e combinarle
+
+00:02:51.700 --> 00:02:57.060
+con questo ciclo. Questi esercizi stanno diventando
+
+00:02:57.100 --> 00:03:00.000
+più impegnativi. Stai combinando molte cose diverse
+
+00:03:00.020 --> 00:03:02.420
+che hai imparato. Prenditi tutto il tempo che serve.
+
+00:03:02.500 --> 00:03:03.920
+Potrebbe volerci un po' per completare
+
+00:03:03.960 --> 00:03:06.160
+ognuno. Cerca di non metterti fretta
+
+00:03:06.200 --> 00:03:08.840
+e di non frustrarti se non ci riesci.
+
+00:03:08.900 --> 00:03:10.920
+Prendilo come un puzzle. Se ti
+
+00:03:10.940 --> 00:03:12.640
+blocchi, puoi fare una pausa, andare a fare
+
+00:03:12.650 --> 00:03:15.160
+una passeggiata e tornare dopo. Hai tutte
+
+00:03:15.200 --> 00:03:16.790
+le conoscenze necessarie e
+
+00:03:16.820 --> 00:03:18.870
+le capacità per farcela, ma
+
+00:03:18.940 --> 00:03:21.520
+dovrai avere pazienza. E ricorda sempre che
+
+00:03:21.580 --> 00:03:23.320
+puoi usare i suggerimenti, se ne hai bisogno,
+
+00:03:23.900 --> 00:03:25.150
+ma cerca di tenerli come
+
+00:03:25.200 --> 00:03:27.540
+ultima risorsa. Buona fortuna, ci vediamo
+
+00:03:27.560 --> 00:03:28.060
+qui tra poco.

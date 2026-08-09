@@ -1,0 +1,147 @@
+WEBVTT
+
+NOTE en_md5 a26df9872fb37da3ea6ffd743faaaa6f
+
+00:00:00.380 --> 00:00:02.420
+Bentornato. In questo video vedremo
+
+00:00:02.480 --> 00:00:05.020
+come trovare una lettera specifica
+
+00:00:05.060 --> 00:00:08.640
+in una stringa. Immagina di avere
+
+00:00:08.680 --> 00:00:11.040
+il mio nome, Jeremy, e di voler estrarre
+
+00:00:11.060 --> 00:00:14.120
+la mia iniziale J. Come
+
+00:00:14.160 --> 00:00:17.300
+potremmo farlo? Beh, puoi
+
+00:00:17.320 --> 00:00:19.620
+pensare a una stringa come a una serie
+
+00:00:19.660 --> 00:00:24.960
+di lettere. Quindi Jeremy ha sei lettere, J-E-R-E-M-Y,
+
+00:00:25.980 --> 00:00:28.540
+e ognuna ha una posizione. J è
+
+00:00:28.600 --> 00:00:30.270
+nella prima posizione, Y è nell'ultima
+
+00:00:30.320 --> 00:00:34.480
+posizione. Ora, in JavaScript e nella maggior parte
+
+00:00:34.520 --> 00:00:38.240
+dei linguaggi di programmazione, queste posizioni partono da zero. Quindi
+
+00:00:38.360 --> 00:00:41.769
+la prima lettera J è alla posizione zero, e
+
+00:00:41.780 --> 00:00:43.510
+poi abbiamo E, che è alla
+
+00:00:43.520 --> 00:00:46.780
+posizione uno, R alla due, E alla tre,
+
+00:00:46.900 --> 00:00:50.380
+M alla quattro e Y alla cinque. Ora,
+
+00:00:50.420 --> 00:00:52.700
+questa cosa di partire da zero è piuttosto strana,
+
+00:00:52.720 --> 00:00:54.660
+e onestamente la vita sarebbe più facile se
+
+00:00:54.700 --> 00:00:57.360
+cominciassimo a contare da uno, come nel
+
+00:00:57.380 --> 00:01:00.660
+mondo normale. Ma non lo facciamo. Nella maggior parte
+
+00:01:00.700 --> 00:01:04.140
+dei linguaggi di programmazione si comincia a contare da zero, quindi
+
+00:01:04.160 --> 00:01:06.640
+devi solo impararlo. Quindi, se
+
+00:01:06.680 --> 00:01:08.220
+vogliamo estrarre una lettera in una
+
+00:01:08.260 --> 00:01:12.730
+posizione specifica, possiamo usare le parentesi quadre
+
+00:01:12.760 --> 00:01:16.560
+con il numero all'interno. Quindi, se scriviamo Jeremy,
+
+00:01:16.940 --> 00:01:19.860
+parentesi quadre con dentro uno zero, stiamo dicendo:
+
+00:01:20.120 --> 00:01:22.340
+dammi la prima lettera della parola
+
+00:01:22.420 --> 00:01:26.200
+Jeremy. Se scriviamo Jeremy, parentesi quadre uno,
+
+00:01:26.760 --> 00:01:30.460
+stiamo dicendo: dammi la seconda lettera. E
+
+00:01:30.500 --> 00:01:32.960
+possiamo farlo anche con le variabili. Quindi,
+
+00:01:32.980 --> 00:01:34.990
+se creiamo una variabile chiamata name e
+
+00:01:35.040 --> 00:01:38.020
+le assegniamo come valore la stringa Jeremy, allora
+
+00:01:38.040 --> 00:01:41.700
+possiamo fare name, parentesi quadre zero, e
+
+00:01:41.740 --> 00:01:44.940
+otteniamo di nuovo J. Una cosa
+
+00:01:45.000 --> 00:01:47.720
+da chiarire: ciò che ottieni da name,
+
+00:01:47.820 --> 00:01:52.080
+parentesi quadre zero è semplicemente un'altra stringa. È
+
+00:01:52.120 --> 00:01:53.980
+un, un altro pezzo di carta con sopra
+
+00:01:54.020 --> 00:01:56.700
+la J. Non ha niente di speciale. È una
+
+00:01:56.820 --> 00:01:59.600
+stringa esattamente come Jeremy è una stringa.
+
+00:01:59.640 --> 00:02:01.200
+Semplicemente, ha una lettera sopra
+
+00:02:01.260 --> 00:02:04.400
+invece di sei. E fare questo non influisce
+
+00:02:04.440 --> 00:02:06.500
+per niente sulla stringa originale. Non stiamo, tipo,
+
+00:02:06.660 --> 00:02:09.250
+strappando via la J o qualcosa del genere. Stiamo solo
+
+00:02:09.280 --> 00:02:11.860
+individuando qualcosa, individuando quale lettera
+
+00:02:11.940 --> 00:02:14.489
+vogliamo, e poi creando una nuova stringa
+
+00:02:14.520 --> 00:02:19.140
+con quella dentro. In questo prossimo esercizio, dovrai
+
+00:02:19.220 --> 00:02:23.800
+usare tutto ciò per costruire un acronimo. In bocca
+
+00:02:23.840 --> 00:02:25.560
+al lupo, ci vediamo qui tra poco.
