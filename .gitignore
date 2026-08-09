@@ -3,12 +3,14 @@
 # would double every translation diff.
 dist/
 
-# Provider API keys for scripts/translate.mjs.
+# Local secrets and overrides. No script here calls an LLM provider (the one
+# translation engine lives in the `translator` repo), but an ignored .env is
+# cheap insurance against a key ever being committed from a local experiment.
 .env
 .env.*
 !.env.example
 
-# Scratch output from a failed translate run.
+# Scratch output.
 tmp/
 
 node_modules/

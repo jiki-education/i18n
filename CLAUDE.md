@@ -172,8 +172,8 @@ There are two, and they mean different things. Both are defined once in
   convention `translator` already uses (`translation.meta.json`). A sibling file is invisible to
   every key-parity guard and cache generator, all of which address the catalog by exact filename.
 - **The stamp is written by `validate`, never by hand.** A hand-written stamp looks like a passed
-  check and is not one, and models fabricate plausible hashes. `translate` explicitly strips any
-  stamp a model emits before it reaches disk.
+  check and is not one, and models fabricate plausible hashes. A translation pass never writes one
+  either: it writes the file and runs `validate --stamp`.
 - **Catalog staleness is whole-file; app catalog staleness is per-key** via the sentinel. A whole-file
   hash cannot say which of 1300 keys moved.
 
@@ -181,7 +181,7 @@ There are two, and they mean different things. Both are defined once in
 
 All Node ESM (`.mjs`), and **dependency-free with one exception**: they run on a bare `node` with no
 install step, except for prose rendering, which needs `@jiki.io/content-renderer`. That import is
-lazy, so `translate`, `stub`, `validate`, `coverage` and `test` still need no
+lazy, so `stub`, `validate`, `coverage` and `test` still need no
 `node_modules` at all; only `publish` and `verify-renderer` do. `publish` loads it up front rather
 than on first use, because the image resolver inside a post render has to be synchronous.
 Shared helpers live in `scripts/lib/`.
@@ -190,7 +190,6 @@ Shared helpers live in `scripts/lib/`.
 |--------|--------------|
 | `source-checkout.mjs` | Fetches a source repo into `.source/<id>`, shallow and sparse, so local runs have English to read. `--source=<id>` picks which (`front-end` by default, `videos` for the English subtitle track). CI uses `actions/checkout` for the same job and the same destinations. |
 | `source-checkout.mjs --resolve` | Prints the SHA this branch pins with an `English-Ref:` trailer, or `main`. CI uses it to point its `actions/checkout` step at the right English. |
-| `translate.mjs` | LLM-backed translation of added and changed items. Modes `outdated` / `all` / `missing`, meaning exactly what they mean in `translator`. Hands off to `validate` when it finishes. |
 | `stub.mjs` | Brings every catalog in the corpus to full key parity with English, sentinel-filling anything untranslated and `∅`-filling any plural key the language cannot reach. Existing values are reproduced byte for byte, and an empty object in English stays an empty object. An explicit `--type`/`--slug` seeds an item the corpus does not hold yet. |
 | `validate.mjs` | Key parity, ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the R2 key guard. Stamps on success. Exit 1 on any ERROR. |
 | `publish.mjs` | Builds the content-hashed artifacts, their pointers and `dist/sync.sh`. Omits every `∅` key from the bytes it writes. Publishes whatever is on `main` and records what is outstanding (remaining `�` sentinels, prose untranslated by one of the three conventions, partial corpora) in the completeness object. Refuses any English R2 key, with no override. `--out-dir=<path>` writes the same tree into a front-end checkout instead, for local dev. |
@@ -201,14 +200,9 @@ Shared helpers live in `scripts/lib/`.
 - **`validate` errors block; warnings never do.** Same split as `translator/scripts/check-translation`:
   ERROR checks are structural facts, WARN checks are heuristics over prose that produce false
   positives by design. Read a warning; never promote it to an error.
-- **The provider is never hardcoded.** `engines.json` sets the default engine and model, with a
-  `byLocale` override, mirroring `translator`'s per-language `translation_engine` block. `--engine`
-  and `--model` override for one run. Adding a provider is one entry in `scripts/lib/engines.mjs`.
-- **Prompt order is load-bearing.** The language-invariant guidance goes first so a provider's prompt
-  cache can reuse the prefix across every locale and every item of a type. Anything language- or
-  item-specific added to the front of the prompt throws that away.
-- **One item, one call, no self-review.** The mechanical problems a review pass would catch are
-  `validate`'s job, and the judgement ones do not survive a model grading its own output.
+- **No script here calls an LLM.** There is one translation engine and it lives in `translator`,
+  for the reason given under "Relationship to the `translator` repo" below. This repo's scripts
+  only ever read, check, and publish what a pass has already written.
 
 ## The api repo's copy, in coverage only
 
@@ -218,8 +212,8 @@ and the **mailer / message YAML** (`config/locales/**/<name>.en.yml` → `<name>
 Neither has been migrated to this repo yet. That is a known gap awaiting a migration, not the
 design, and until it closes a language's completeness cannot be read off `locales/` alone.
 
-- **`coverage.mjs` reports them, and nothing else touches them.** `validate`, `publish`, `stub` and
-  `translate` own `locales/`; the api's own test suite guards its seeds and its locale parity.
+- **`coverage.mjs` reports them, and nothing else touches them.** `validate`, `publish` and `stub`
+  own `locales/`; the api's own test suite guards its seeds and its locale parity.
   `scripts/lib/api-copy.mjs` is the only reader, and it only ever reads.
 - **Coverage never gates.** No api checkout, no `main` ref, a file the checkout lacks: each is a row
   with a note and a total of 0, which reads as "not measured" rather than as done or missing.
@@ -526,29 +520,43 @@ every key already answered at `emit()`.
 
 ## Relationship to the `translator` repo
 
-- **`translator` is the brain; this repo is the hands.** It decides *how* to translate; this decides
-  *what is out of date*, runs it, checks it, and ships it.
-- **`translate.mjs` reads `translator`'s guidance from a checkout of it** and never copies it here:
+- **`translator` is the brain and the hands that write; this repo is the hands that check and
+  ship.** `translator` decides *how* to translate and *runs* the translation; this decides *what is
+  out of date*, checks what came back, and ships it.
+- **The one LLM engine lives in `translator`, not here.** `translator/scripts/translate-via-llm-api`
+  drives the deepseek and gemini path and its `/translate-via-fable` command drives the fable path,
+  both over a shared `translator/scripts/lib/pass.js`. It lives there because **engine selection is
+  governance, not plumbing**: which model may translate a language is driven by that repo's
+  `languages/<lang>/tracking.json` `translation_engine` block, which records a native speaker's
+  confirmed choice, and its absence means no model is confirmed for that language. An engine here
+  would have no sight of that, and any default it picked would quietly overrule it.
+- **A pass reads `translator`'s guidance from a checkout of `translator`** and never copies it here:
   `global/rules.md`, `global/voice.md`, `global/translating.md`, `content-types/<type>.md`,
   `languages/<lang>/guide.md` and `glossary.md`, plus the family files where the locale belongs to a
-  family. Point it with `--translator-repo=` or `JIKI_TRANSLATOR_REPO`.
-- **Content type ids map to `translator`'s how-to filenames** in one table at the top of
-  `translate.mjs`. `concept` is its `concept-pages`, `app-messages` is its `website-keys`, and both
-  `video-lessons` and `badges` are its `curriculum-copy`.
+  family.
+- **Content type ids map to `translator`'s how-to filenames** through the `howto` field on each
+  entry in `scripts/lib/content-types.mjs`, so the route lives beside the paths rather than in a
+  second table. `concept` is its `concept-pages`, `app-messages` is its `website-keys`, and
+  `video-lessons`, `badges` and `levels` are all its `curriculum-copy`. The value is a filename
+  under `content-types/` without the `.md`, or an ordered array where a type needs a shared how-to
+  plus its own. `scripts/test.mjs` asserts every type declares one.
 - **`validate.mjs` mirrors `translator/scripts/check-translation`'s contract** (the ERROR/WARN split,
   `--no-stamp`, stamp-only-on-pass) rather than calling it. It cannot call it: that script's
   `CONTENT_TYPES` map addresses paths inside the front-end monorepo by construction, so it cannot be
   pointed at `locales/<locale>/`. If it is ever refactored to take a root, switch to calling it.
-- **Modes mean the same thing in both repos.** `outdated` is missing or stale, `all` forces
-  everything (use it after a glossary or guide change, which do not touch English and so are
-  invisible to the stamps), `missing` fills catalog gaps only.
+- **Modes mean the same thing in both repos.** A pass runs in `translator` and is told `outdated`
+  (missing or stale), `all` (force everything, which is what a glossary or guide change needs,
+  since neither touches English and so both are invisible to the stamps), or `missing` (catalog
+  gaps only). This repo's `coverage` and `validate` are what answer which items each of those
+  resolves to.
 
 ## House rules
 
 - **No em dashes** in prose, here or in translated content. Use separate sentences, commas, or
   parentheses.
 - **Never hand-write a staleness stamp.** `validate` writes them.
-- **Never hand-assemble catalog JSON.** `stub` and `translate` write catalogs; both rebuild against
-  `source` so key parity and order are structural rather than trusted.
+- **Never hand-assemble catalog JSON.** `stub` writes catalogs, rebuilding against `source` so key
+  parity and order are structural rather than trusted, and a translation pass fills the values it
+  laid down.
 - **Never fill an untranslated key with English.** The sentinel exists for that.
 - **Never make a warning an error.** They are heuristics, and they false-positive on purpose.

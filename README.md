@@ -35,8 +35,11 @@ against English directly, and the item is in the corpus from the moment a locale
 
 ```bash
 node scripts/stub.mjs all --type=concept --slug=arrays   # sentinel-fill it everywhere
-node scripts/translate.mjs hu --mode=outdated            # translate what changed
+node scripts/validate.mjs hu --type=concept --slug=arrays --stamp   # check it and stamp it
 ```
+
+Translating is not done from here. The `translator` repo owns the one translation engine and
+runs the passes; this repo says what is out of date, checks the result, and ships it.
 
 ## How work arrives
 

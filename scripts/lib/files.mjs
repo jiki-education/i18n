@@ -1,8 +1,9 @@
 // Reading and writing the two file formats this repo holds: JSON catalogs and
 // Markdown-with-frontmatter prose. Deliberately dependency-free (no gray-matter,
-// no yaml): the frontmatter this repo handles is a flat block of `key: value`
-// scalars, every writer of it is in this repo, and a zero-dependency scripts/
-// directory runs on a bare `node` with no install step.
+// no yaml): the frontmatter this repo handles is the small subset of YAML the
+// content packages actually use, every writer of it is in this repo or the
+// front-end, and a zero-dependency scripts/ directory runs on a bare `node`
+// with no install step.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -54,25 +55,227 @@ export function contentHash(content) {
 
 const FRONTMATTER = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/;
 
-/** Split a Markdown file into { data, body, raw }. */
+/**
+ * Split a Markdown file into { data, body, raw }.
+ *
+ * `data` is NESTED, mirroring the frontmatter's own shape: a mapping is an
+ * object, a sequence is an array of strings, everything else is a string. It
+ * was once flat, and the flattening was a silent bug rather than a
+ * simplification: indentation was stripped before the split, so `seo:`'s
+ * `description` landed at top level as if it had been written there, and a
+ * caller asking for the dotted path `seo.description` got `undefined` and no
+ * complaint. Anything checking a nested field therefore checked nothing.
+ *
+ * Read it with `frontmatterValue(data, "seo.description")` rather than by
+ * indexing, so a caller never has to know which fields happen to be nested.
+ *
+ * The supported subset is exactly what `content/` and `curriculum/` contain,
+ * and no more: scalars (optionally quoted, and a quoted scalar may itself
+ * contain a colon), nested mappings, `- ` block sequences, and `[...]` flow
+ * sequences whether written on one line or wrapped across several. A shape
+ * outside that subset is not silently dropped: it reaches the key-parity check
+ * as a leaf whose path does not match English, which is an ERROR that names it.
+ */
 export function parseFrontmatter(text) {
   const match = FRONTMATTER.exec(text);
   if (!match) return { data: {}, body: text, raw: text };
 
-  const data = {};
-  for (const line of match[1].split(/\r?\n/)) {
-    if (!line.trim() || line.trimStart().startsWith("#")) continue;
-    const sep = line.indexOf(":");
-    if (sep === -1) continue;
-    const key = line.slice(0, sep).trim();
-    let value = line.slice(sep + 1).trim();
-    if (/^"[\s\S]*"$/.test(value) || /^'[\s\S]*'$/.test(value)) {
-      value = value.slice(1, -1).replace(/\\"/g, '"');
+  return { data: parseBlock(frontmatterLines(match[1]), 0).value, body: text.slice(match[0].length), raw: text };
+}
+
+/**
+ * Frontmatter as `{ indent, text }`, blanks and comments dropped, and any flow
+ * collection wrapped across lines joined back onto the line that opened it.
+ *
+ * The join is what makes wrapping invisible to everything downstream. Prettier
+ * reflows a long `keywords: [...]` in the front-end whenever it crosses the
+ * print width, so the same field is one line in one post and four in the next,
+ * and a reader that saw the difference would report a phantom empty value for
+ * whichever posts happened to be long.
+ */
+function frontmatterLines(block) {
+  const lines = [];
+
+  for (const raw of block.split(/\r?\n/)) {
+    if (!raw.trim() || raw.trimStart().startsWith("#")) continue;
+
+    const previous = lines[lines.length - 1];
+    if (previous && unclosed(previous.text)) {
+      // A continuation, not a line of its own: it belongs to the collection the
+      // previous line opened, however deeply that one is indented.
+      previous.text = `${previous.text} ${raw.trim()}`;
+      continue;
     }
-    data[key] = value;
+
+    lines.push({ indent: raw.length - raw.trimStart().length, text: raw.trim() });
   }
 
-  return { data, body: text.slice(match[0].length), raw: text };
+  // A bare `key:` whose flow collection was written on the line BELOW it, which
+  // is what Prettier produces once the one-line form crosses the print width.
+  // Pulling it back up is what stops it reading as an empty mapping, which is
+  // how it would silently lose the field: an empty mapping has no leaves, so it
+  // vanishes from the parity check rather than failing it.
+  for (let i = lines.length - 1; i > 0; i -= 1) {
+    const opensFlow = lines[i].text.startsWith("[") || lines[i].text.startsWith("{");
+    if (opensFlow && lines[i].indent > lines[i - 1].indent && lines[i - 1].text.endsWith(":")) {
+      lines[i - 1].text = `${lines[i - 1].text} ${lines[i].text}`;
+      lines.splice(i, 1);
+    }
+  }
+
+  return lines;
+}
+
+/** Whether a line leaves a `[` or `{` open, counting only brackets outside quotes. */
+function unclosed(text) {
+  let depth = 0;
+  let quote = null;
+
+  for (let i = 0; i < text.length; i += 1) {
+    const char = text[i];
+    if (quote) {
+      if (char === "\\") i += 1;
+      else if (char === quote) quote = null;
+      continue;
+    }
+    if (char === '"' || char === "'") quote = char;
+    else if (char === "[" || char === "{") depth += 1;
+    else if (char === "]" || char === "}") depth -= 1;
+  }
+
+  return depth > 0;
+}
+
+/**
+ * One indentation level, from `start`, as { value, next }.
+ *
+ * Returns an array when the level is `- ` items and an object otherwise, and
+ * hands back the index it stopped at so the caller can carry on. Indentation is
+ * the only thing that decides nesting, matching YAML and matching how these
+ * files are actually written.
+ */
+function parseBlock(lines, start) {
+  const indent = lines[start].indent;
+  const asSequence = lines[start].text.startsWith("- ") || lines[start].text === "-";
+  const value = asSequence ? [] : {};
+  let i = start;
+
+  while (i < lines.length && lines[i].indent >= indent) {
+    // Deeper than this level and not consumed by the line above: a shape the
+    // subset does not cover. Skipping it keeps the reader total, and the
+    // key-parity check is what makes the omission visible.
+    if (lines[i].indent > indent) {
+      i += 1;
+      continue;
+    }
+
+    const { text } = lines[i];
+
+    if (asSequence) {
+      value.push(scalar(text.replace(/^-\s*/, "")));
+      i += 1;
+      continue;
+    }
+
+    const sep = text.indexOf(":");
+    if (sep === -1) {
+      i += 1;
+      continue;
+    }
+
+    const key = text.slice(0, sep).trim();
+    const rest = text.slice(sep + 1).trim();
+    i += 1;
+
+    // A value on the same line wins; only a bare `key:` looks below itself, and
+    // only when something is actually indented under it. `key:` with nothing
+    // under it stays the empty string it has always been.
+    if (rest !== "") value[key] = scalar(rest);
+    else if (i < lines.length && lines[i].indent > indent) {
+      const nested = parseBlock(lines, i);
+      value[key] = nested.value;
+      i = nested.next;
+    } else value[key] = "";
+  }
+
+  return { value, next: i };
+}
+
+/** One scalar: a flow sequence becomes an array, anything else an unquoted string. */
+function scalar(text) {
+  if (text.startsWith("[") && text.endsWith("]")) return splitFlow(text.slice(1, -1)).map(unquote);
+  return unquote(text);
+}
+
+function unquote(text) {
+  const value = text.trim();
+  if (/^"[\s\S]*"$/.test(value) || /^'[\s\S]*'$/.test(value)) return value.slice(1, -1).replace(/\\"/g, '"');
+  return value;
+}
+
+/**
+ * Split a flow sequence's body on the commas that are not inside a quoted item.
+ *
+ * Items are handed back with their quotes still on, for `unquote` to take off,
+ * so a deliberately empty `""` survives and the separator-only debris of `[]`
+ * or of a trailing comma does not.
+ */
+function splitFlow(body) {
+  const items = [];
+  let current = "";
+  let quote = null;
+
+  for (let i = 0; i < body.length; i += 1) {
+    const char = body[i];
+    current += char;
+    if (quote) {
+      if (char === "\\") current += body[++i] ?? "";
+      else if (char === quote) quote = null;
+      continue;
+    }
+    if (char === '"' || char === "'") quote = char;
+    else if (char === ",") {
+      items.push(current.slice(0, -1));
+      current = "";
+    }
+  }
+  items.push(current);
+
+  return items.filter((item) => item.trim() !== "");
+}
+
+/**
+ * One frontmatter field by dotted path: `frontmatterValue(data, "seo.description")`.
+ *
+ * The whole point of the nested reader. Every caller that names a field names
+ * it this way, so `title` and `seo.description` are written the same and a
+ * field moving into a block is not a silent loss of coverage.
+ */
+export function frontmatterValue(data, dottedPath) {
+  let node = data;
+  for (const segment of dottedPath.split(".")) {
+    if (node === null || typeof node !== "object" || Array.isArray(node) || !(segment in node)) return undefined;
+    node = node[segment];
+  }
+  return node;
+}
+
+/**
+ * Every leaf of a frontmatter object as a dotted path, in document order.
+ *
+ * An array is a LEAF, not a branch: `seo.keywords` is one field whose value
+ * happens to be a list, and a translation is free to hold a different number of
+ * keywords than English does. Descending into it would turn that freedom into a
+ * parity error.
+ */
+export function frontmatterPaths(data, prefix = "") {
+  const paths = [];
+  for (const [key, value] of Object.entries(data)) {
+    const path = prefix ? `${prefix}.${key}` : key;
+    if (value !== null && typeof value === "object" && !Array.isArray(value)) paths.push(...frontmatterPaths(value, path));
+    else paths.push(path);
+  }
+  return paths;
 }
 
 /**

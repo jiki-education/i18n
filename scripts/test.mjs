@@ -11,13 +11,19 @@
 // non-zero exit on failure. Add a `test(name, fn)` block, not a dependency.
 
 import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
 import { INAPPLICABLE, SENTINEL } from "./lib/constants.mjs";
+import { CONTENT_TYPES, CONTENT_TYPE_IDS } from "./lib/content-types.mjs";
 import { isUnreachablePluralKey, parsePluralKey, reachableCategories } from "./lib/plurals.mjs";
 import { deepMerge, mergeExerciseCatalogs } from "./lib/families.mjs";
 import {
   contentHash,
   countSentinels,
   flatten,
+  frontmatterPaths,
+  frontmatterValue,
+  parseFrontmatter,
   parseVttNotes,
   stampFrontmatter,
   stampVttNote,
@@ -26,7 +32,7 @@ import {
   vttBody,
   vttTimestamps
 } from "./lib/files.mjs";
-import { ERROR, checkCatalog, findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
+import { ERROR, checkCatalog, checkProse, findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 import { localeFileLeaves, railsKnownLocales, railsLocale } from "./lib/api-copy.mjs";
 
@@ -396,6 +402,160 @@ test("empty bodies never group together", () => {
   assert.equal(repeated.size, 0);
 });
 
+// ------------------------------------------------------- the frontmatter reader
+
+// The reader was flat, and the flattening was silent: it stripped indentation
+// before splitting, so `seo:`'s `description` landed at top level as if it had
+// been written there, and a type asking for `seo.description` got undefined and
+// no complaint. Nothing nested was checked by anything, for as long as that was
+// true. These pin the nesting, and above all the shapes that LOOK fine under
+// the old reader and are not.
+
+console.log("\nthe frontmatter reader:");
+
+test("a nested mapping is an object, not leaves promoted to the top", () => {
+  const { data } = parseFrontmatter('---\ntitle: "T"\nseo:\n  description: "D"\n---\nBody.\n');
+  assert.deepEqual(data, { title: "T", seo: { description: "D" } });
+});
+
+test("a colon inside a quoted scalar is not a key separator", () => {
+  const { data } = parseFrontmatter('---\ntitle: "Episode 1: Agentic Coding 101"\n---\nB\n');
+  assert.equal(data.title, "Episode 1: Agentic Coding 101");
+});
+
+test("an inline flow sequence is an array of strings", () => {
+  const { data } = parseFrontmatter('---\ntags: ["one", "two", "three"]\n---\nB\n');
+  assert.deepEqual(data.tags, ["one", "two", "three"]);
+});
+
+// The trap. Prettier reflows a long `keywords:` onto the next line, so the same
+// field is inline in one post and wrapped in the next. Read naively the wrapped
+// form is a key with an empty mapping under it, which has no leaves at all: the
+// field does not fail the check, it DISAPPEARS from it. Every post that happened
+// to be long would have gone unchecked.
+test("a flow sequence wrapped onto the next line is still that sequence", () => {
+  const { data } = parseFrontmatter('---\nseo:\n  keywords:\n    ["a", "b"]\n---\nB\n');
+  assert.deepEqual(data.seo.keywords, ["a", "b"]);
+});
+
+test("a flow sequence spread over many lines is still that sequence", () => {
+  const { data } = parseFrontmatter('---\nseo:\n  keywords:\n    [\n      "a",\n      "b",\n      "c"\n    ]\n---\nB\n');
+  assert.deepEqual(data.seo.keywords, ["a", "b", "c"]);
+});
+
+test("a comma inside a quoted item does not split it", () => {
+  const { data } = parseFrontmatter('---\ntags: ["one, and a half", "two"]\n---\nB\n');
+  assert.deepEqual(data.tags, ["one, and a half", "two"]);
+});
+
+test("a block sequence is an array too", () => {
+  const { data } = parseFrontmatter('---\ntags:\n  - one\n  - "two"\n---\nB\n');
+  assert.deepEqual(data.tags, ["one", "two"]);
+});
+
+test("a bare key with nothing under it is still the empty string", () => {
+  const { data } = parseFrontmatter("---\ntitle: T\nseo:\n---\nB\n");
+  assert.equal(data.seo, "");
+});
+
+test("an empty flow sequence is an empty array, not a one-item one", () => {
+  assert.deepEqual(parseFrontmatter("---\ntags: []\n---\nB\n").data.tags, []);
+});
+
+test("a dotted path reads a nested field, and undefined means absent", () => {
+  const { data } = parseFrontmatter('---\ntitle: "T"\nseo:\n  description: "D"\n---\nB\n');
+  assert.equal(frontmatterValue(data, "seo.description"), "D");
+  assert.equal(frontmatterValue(data, "title"), "T");
+  assert.equal(frontmatterValue(data, "seo.keywords"), undefined);
+  assert.equal(frontmatterValue(data, "summary.from"), undefined);
+});
+
+test("a dotted path does not descend into a string or an array", () => {
+  const { data } = parseFrontmatter('---\ntitle: "T"\ntags: ["a"]\n---\nB\n');
+  assert.equal(frontmatterValue(data, "title.length"), undefined);
+  assert.equal(frontmatterValue(data, "tags.0"), undefined);
+});
+
+test("leaf paths are dotted, and an array is a leaf rather than a branch", () => {
+  const { data } = parseFrontmatter('---\ntitle: "T"\ntags: ["a", "b"]\nseo:\n  description: "D"\n  keywords: ["k"]\n---\nB\n');
+  assert.deepEqual(frontmatterPaths(data), ["title", "tags", "seo.description", "seo.keywords"]);
+});
+
+// -------------------------------------------- the translatable frontmatter check
+
+// checkProse's frontmatter half, driven by the type's `frontmatterTranslated`
+// list. Two things are being pinned: that a DOTTED path is checked at all, and
+// that a list-valued field does not blow the run up on `.trim()`.
+
+console.log("\nthe translatable frontmatter check:");
+
+const POST_KEYS = ["title", "excerpt", "seo.description", "seo.keywords"];
+
+function frontmatterIssues(englishFm, targetFm, translatedKeys = POST_KEYS) {
+  const english = `---\n${englishFm}\n---\nBody.\n`;
+  const target = `---\n${targetFm}\nen_md5: abc\n---\nMás szöveg.\n`;
+  return checkProse(parseFrontmatter(english).body, parseFrontmatter(target).body, {
+    englishData: parseFrontmatter(english).data,
+    targetData: parseFrontmatter(target).data,
+    translatedKeys,
+    expectedMd5: "abc"
+  })
+    .filter((i) => i.message.startsWith("frontmatter:"))
+    .map((i) => `${i.level} ${i.message}`);
+}
+
+const EN_POST = 'title: "T"\nexcerpt: "E"\nseo:\n  description: "D"\n  keywords: ["a", "b"]';
+
+test("a fully translated post has nothing to say about its frontmatter", () => {
+  assert.deepEqual(frontmatterIssues(EN_POST, 'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: ["x", "y"]'), []);
+});
+
+// The bug in one assertion: before the nested reader, this passed silently.
+test("an empty nested field is an ERROR rather than nothing at all", () => {
+  assert.deepEqual(frontmatterIssues(EN_POST, 'title: "C"\nexcerpt: "K"\nseo:\n  description: ""\n  keywords: ["x"]'), [
+    'ERROR frontmatter: missing "seo.description"'
+  ]);
+});
+
+test("a list-valued field is checked item by item, not trimmed as a string", () => {
+  assert.deepEqual(frontmatterIssues(EN_POST, 'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: ["x ", "y"]'), [
+    'ERROR frontmatter: leading or trailing whitespace in "seo.keywords"'
+  ]);
+});
+
+test("an empty list is as missing as an empty string", () => {
+  assert.deepEqual(frontmatterIssues(EN_POST, 'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: []'), [
+    'ERROR frontmatter: missing "seo.keywords"'
+  ]);
+});
+
+test("a wrapped list is accepted, not reported as an empty mapping", () => {
+  assert.deepEqual(frontmatterIssues(EN_POST, 'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords:\n    ["x", "y"]'), []);
+});
+
+test("a dropped nested key is caught by parity, not swallowed by its block", () => {
+  assert.deepEqual(frontmatterIssues(EN_POST, 'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"'), [
+    'ERROR frontmatter: missing "seo.keywords"',
+    'ERROR frontmatter: key "seo.keywords" dropped (only en_md5/tidied_md5 may be added)'
+  ]);
+});
+
+test("an invented nested key is caught too", () => {
+  assert.deepEqual(frontmatterIssues(EN_POST, 'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: ["x"]\n  author: "Nobody"'), [
+    'ERROR frontmatter: invented key "seo.author"'
+  ]);
+});
+
+test("a field the type does not declare translatable is left alone", () => {
+  // `tags` stays English on purpose, and saying so is the point of the list.
+  const english = `${EN_POST}\ntags: ["one", "two"]`;
+  assert.deepEqual(frontmatterIssues(english, 'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: ["x"]\ntags: ["one", "two"]'), []);
+});
+
+test("a path English does not have is not demanded of the translation", () => {
+  assert.deepEqual(frontmatterIssues('title: "T"\nexcerpt: "E"', 'title: "C"\nexcerpt: "K"'), []);
+});
+
 // ------------------------------------------------------ the staleness stamp
 
 // The stamp is the one thing validate WRITES, and a post's frontmatter carries
@@ -564,6 +724,53 @@ test("a locale file takes RAILS' spelling of the locale, not this repo's", () =>
 test("a locale Rails has never heard of keeps its own spelling and is flagged", () => {
   assert.deepEqual(railsLocale("fi", ["de", "hu"]), { locale: "fi", knownToRails: false });
 });
+
+// -------------------------------------------------------- the how-to routing
+
+// Every content type names the `translator` how-to a pass must load for it. A
+// type with no `howto` is a type nobody can be told how to translate, and the
+// omission is invisible: every other script keeps working, and the gap only
+// surfaces when someone tries to run a pass. `levels`, `blog`, `articles`,
+// `guides`, `project-episodes` and `exercise-category` were each added without
+// one. This is the assertion that would have caught all six on the day.
+
+console.log("\nthe how-to routing:");
+
+function howtoNames(howto) {
+  return Array.isArray(howto) ? howto : [howto];
+}
+
+test("every content type declares a howto", () => {
+  const missing = CONTENT_TYPE_IDS.filter((id) => {
+    const { howto } = CONTENT_TYPES[id];
+    if (typeof howto === "string") return howto.length === 0;
+    if (Array.isArray(howto)) {
+      return howto.length === 0 || howto.some((name) => typeof name !== "string" || name.length === 0);
+    }
+    return true;
+  });
+  assert.deepEqual(missing, [], `content types with no usable howto: ${missing.join(", ")}`);
+});
+
+// Only runnable where a translator checkout exists. CI has none, so this is
+// skipped there, and the skip is PRINTED: a check that quietly passes when it
+// did not run is worse than no check.
+const TRANSLATOR_REPO = process.env.JIKI_TRANSLATOR_REPO;
+
+if (!TRANSLATOR_REPO) {
+  console.log("  SKIP  every howto names a file that exists (set JIKI_TRANSLATOR_REPO to run it)");
+} else {
+  test("every howto names a file that exists in the translator repo", () => {
+    const absent = [];
+    for (const id of CONTENT_TYPE_IDS) {
+      for (const name of howtoNames(CONTENT_TYPES[id].howto)) {
+        const file = path.join(TRANSLATOR_REPO, "content-types", `${name}.md`);
+        if (!fs.existsSync(file)) absent.push(`${id} → content-types/${name}.md`);
+      }
+    }
+    assert.deepEqual(absent, [], `how-to files that do not exist:\n${absent.join("\n")}`);
+  });
+}
 
 // ------------------------------------------------------------------- result
 
