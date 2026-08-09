@@ -1,6 +1,7 @@
 ---
 title: "À procura de ouro"
 description: "Procura pepitas de ouro num rio e vende o que encontrares."
+en_md5: 8bde716ada0b3c0edb30f1ae680448f0
 ---
 
 Antes de ser a terra do setor tecnológico, a Califórnia foi a terra do ouro! Mais de 300 000 pessoas chegaram e começaram a procurar pequenas pepitas de ouro nos rios para as vender.
