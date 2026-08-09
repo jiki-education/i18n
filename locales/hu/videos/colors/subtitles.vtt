@@ -1,0 +1,405 @@
+WEBVTT
+
+NOTE en_md5 f8c737461bf364654b8a618e515caeb8
+
+00:00:00.140 --> 00:00:02.210
+Üdv újra! Most egy kicsit
+
+00:00:02.400 --> 00:00:04.400
+elkanyarodunk, teszünk egy kitérőt,
+
+00:00:04.460 --> 00:00:06.480
+és megnézünk valamit, amire szükséged lesz,
+
+00:00:06.540 --> 00:00:08.850
+ha valaha bármi vizuálisat csinálsz
+
+00:00:08.880 --> 00:00:10.860
+kóddal. És még ha adattudós
+
+00:00:10.900 --> 00:00:12.460
+szeretnél is lenni, és a rajzolgatást
+
+00:00:12.560 --> 00:00:16.180
+kicsit unalmasnak tartod, az adatok
+
+00:00:16.219 --> 00:00:19.180
+vizuális bemutatása kulcsfontosságú készség,
+
+00:00:19.220 --> 00:00:21.790
+úgyhogy érdemes megtanulni. Ebben a videóban
+
+00:00:21.840 --> 00:00:24.220
+két különböző módszert nézünk meg
+
+00:00:24.260 --> 00:00:28.670
+a színek megadására. Eddig a színeket
+
+00:00:28.680 --> 00:00:31.640
+a nevükkel használtad, például red vagy yellow,
+
+00:00:31.700 --> 00:00:33.800
+a rajzoló függvények utolsó bemeneteként.
+
+00:00:35.400 --> 00:00:37.300
+Ez kényelmes módja volt a színek
+
+00:00:37.360 --> 00:00:40.320
+gyors használatának, de elég korlátozott.
+
+00:00:40.330 --> 00:00:42.350
+Csak egy maroknyi névvel ellátott szín van,
+
+00:00:42.380 --> 00:00:44.370
+amit használhatunk. Ezért most megnézünk
+
+00:00:44.400 --> 00:00:46.880
+két módszert, amivel bármilyen színt
+
+00:00:46.960 --> 00:00:49.960
+megadhatsz. Ezt a kettőt RGB-nek és
+
+00:00:50.180 --> 00:00:54.920
+HSL-nek hívják. Az RGB úgy tekint a színekre,
+
+00:00:54.980 --> 00:00:57.100
+mint a piros, a zöld és a kék keverékére.
+
+00:00:57.300 --> 00:01:00.210
+Ezt jelenti az RGB rövidítés: piros, zöld, kék.
+
+00:01:01.280 --> 00:01:04.040
+Ha emlékszel az iskolai festékkeverésre,
+
+00:01:04.099 --> 00:01:06.730
+hasonló az ötlet, csak festék helyett
+
+00:01:06.760 --> 00:01:11.580
+fényt keverünk. Az ezutáni feladatok közül
+
+00:01:11.640 --> 00:01:14.440
+sokban lesz egy rgb nevű függvényed,
+
+00:01:15.280 --> 00:01:16.960
+ami három számot vár
+
+00:01:17.000 --> 00:01:20.040
+bemenetként: egyet a piroshoz, egyet a zöldhöz,
+
+00:01:20.080 --> 00:01:22.240
+egyet a kékhez, és egy színt
+
+00:01:22.320 --> 00:01:26.900
+ad vissza. A bemenetként használható
+
+00:01:26.980 --> 00:01:32.940
+számok nullától 255-ig terjednek. A nulla azt jelenti,
+
+00:01:33.040 --> 00:01:35.440
+hogy abból a színből semennyit nem kérek,
+
+00:01:35.620 --> 00:01:38.420
+a 255 pedig azt, hogy amennyit csak lehet,
+
+00:01:38.460 --> 00:01:41.460
+keverjünk bele. Ha tehát az
+
+00:01:41.540 --> 00:01:45.550
+rgb függvényt a 255, nulla, nulla
+
+00:01:45.600 --> 00:01:48.190
+bemenetekkel használjuk, azt mondjuk vele:
+
+00:01:48.240 --> 00:01:50.440
+kérem az összes pirosat. Ne feledd, a 255
+
+00:01:50.460 --> 00:01:52.880
+a legnagyobb szám, amit ide beírhatsz.
+
+00:01:52.900 --> 00:01:54.800
+Zöldet és kéket viszont egyáltalán
+
+00:01:54.820 --> 00:01:57.420
+nem kérünk, ezért az a kettő nulla.
+
+00:01:57.460 --> 00:02:00.880
+Így pirosat kapunk, ezt a pirosat pedig
+
+00:02:00.900 --> 00:02:03.360
+eltárolhatjuk egy változóban, és utána
+
+00:02:03.380 --> 00:02:05.340
+ugyanúgy használhatjuk a circle függvényben,
+
+00:02:05.400 --> 00:02:08.840
+ahogy eddig a színneveket tartalmazó stringekkel tettük.
+
+00:02:08.880 --> 00:02:10.759
+Na és mi történik, ha az rgb függvényt
+
+00:02:10.900 --> 00:02:15.340
+a nulla, 255, nulla értékekkel használjuk? Most azt mondjuk:
+
+00:02:15.880 --> 00:02:18.310
+pirosat nem, zöldet mind, kéket nem.
+
+00:02:18.320 --> 00:02:21.440
+Zöld kört kapunk. És ha
+
+00:02:21.640 --> 00:02:25.320
+sárgát szeretnénk? A sárga a piros
+
+00:02:25.620 --> 00:02:27.940
+és a zöld keveréke. Mondhatjuk tehát:
+
+00:02:28.020 --> 00:02:29.840
+kérem az összes pirosat, az összes zöldet,
+
+00:02:30.180 --> 00:02:32.120
+kéket pedig semennyit, és ez
+
+00:02:32.200 --> 00:02:35.200
+sárgát ad. Kisebb
+
+00:02:35.240 --> 00:02:37.730
+számokat is használhatunk. Ha egy kis pirosat kérünk,
+
+00:02:38.300 --> 00:02:41.150
+zöldet nem, kékből pedig sokat,
+
+00:02:41.200 --> 00:02:45.080
+lilát kapunk. Sok piros, egy kevés zöld
+
+00:02:45.380 --> 00:02:47.000
+és valamivel több kék pedig
+
+00:02:47.040 --> 00:02:51.360
+rózsaszínt ad. Ez tehát az RGB: pirosat, zöldet
+
+00:02:51.500 --> 00:02:56.060
+és kéket keverünk különböző kombinációkban. Most nézzük
+
+00:02:56.100 --> 00:02:58.960
+a HSL-t, ami egészen
+
+00:02:58.980 --> 00:03:03.060
+másképp közelíti meg a színeket. A HSL rövidítés jelentése:
+
+00:03:03.100 --> 00:03:08.200
+színárnyalat, telítettség és világosság. Az RGB-hez
+
+00:03:08.280 --> 00:03:11.900
+hasonlóan itt is van egy hsl nevű függvény,
+
+00:03:11.920 --> 00:03:14.590
+ami három számot vár: egyet a színárnyalathoz,
+
+00:03:14.640 --> 00:03:17.100
+egyet a telítettséghez, egyet a világossághoz,
+
+00:03:17.120 --> 00:03:20.420
+és egy színt ad vissza. Nézzük meg,
+
+00:03:20.480 --> 00:03:25.160
+mit jelent ez a három szó. A színárnyalat
+
+00:03:25.200 --> 00:03:28.080
+azt az árnyalatot adja meg, amilyet szeretnél,
+
+00:03:28.120 --> 00:03:32.300
+és nullától 360-ig terjed.
+
+00:03:32.320 --> 00:03:34.200
+Képzelj el egy szivárványt, én is
+
+00:03:34.260 --> 00:03:36.200
+így szoktam gondolni rá. Bal oldalon a piros van,
+
+00:03:36.700 --> 00:03:39.220
+utána jön a narancs, a sárga, a zöld, a kék,
+
+00:03:39.400 --> 00:03:41.320
+a lila, és végül
+
+00:03:41.340 --> 00:03:44.760
+visszaérünk a piroshoz. Ha tehát nullát adsz meg,
+
+00:03:45.140 --> 00:03:47.100
+a bal szélen kezdesz,
+
+00:03:47.180 --> 00:03:50.700
+az a piros. Ha 120-at, akkor
+
+00:03:50.740 --> 00:03:54.580
+zöldet kérsz. A 230 a kék. Gondolhatsz
+
+00:03:54.620 --> 00:03:57.470
+erre úgy is, mint egy színkörre,
+
+00:03:57.500 --> 00:03:59.500
+valójában ezt jelenti a 360:
+
+00:03:59.540 --> 00:04:02.440
+a kör fokainak száma. Én mindig
+
+00:04:02.480 --> 00:04:04.360
+egyszerűen kikeresem a számokat, amikre szükségem van,
+
+00:04:04.440 --> 00:04:07.000
+úgyhogy ne aggódj, nem kell mindezt
+
+00:04:07.060 --> 00:04:09.340
+memorizálni, de jó tudni,
+
+00:04:09.380 --> 00:04:11.720
+mi történik a háttérben. Ez tehát a színárnyalat,
+
+00:04:11.780 --> 00:04:16.019
+vagyis hogy milyen árnyalatú a szín. Következik a telítettség,
+
+00:04:16.060 --> 00:04:18.920
+ami azt adja meg, mennyire élénk a szín.
+
+00:04:19.019 --> 00:04:22.060
+Nullától 100-ig terjed. Nullánál csak szürkét kapsz.
+
+00:04:22.400 --> 00:04:24.440
+Nincs benne semmi szín,
+
+00:04:24.500 --> 00:04:28.160
+semmi tónus. 100-nál teljes, élénk,
+
+00:04:28.360 --> 00:04:32.660
+ragyogó színt kapsz. Végül ott a világosság.
+
+00:04:32.700 --> 00:04:34.860
+A világosság azt adja meg, mennyire fényes a szín,
+
+00:04:34.960 --> 00:04:37.600
+és szintén nullától 100-ig terjed.
+
+00:04:37.740 --> 00:04:40.200
+Nullánál feketét kapsz, bármilyen
+
+00:04:40.260 --> 00:04:43.460
+színárnyalatot választottál is. Nincs
+
+00:04:43.480 --> 00:04:46.500
+benne fény. 100-nál pedig fehéret kapsz.
+
+00:04:46.980 --> 00:04:49.000
+Minden mástól függetlenül csupa
+
+00:04:49.060 --> 00:04:52.420
+fény az egész, tehát fehér. Az 50 pont
+
+00:04:52.460 --> 00:04:55.490
+középen van, ez a normál szín.
+
+00:04:55.520 --> 00:04:57.550
+Gondolhatsz erre úgy, mint egy csúszkára,
+
+00:04:57.580 --> 00:05:01.260
+amivel világosabbá vagy sötétebbé teszed a színt.
+
+00:05:01.320 --> 00:05:03.840
+Ha tehát egy normál piros kört szeretnénk,
+
+00:05:03.860 --> 00:05:07.680
+amit RGB-vel a 255, nulla, nulla számokkal írtunk volna le,
+
+00:05:07.720 --> 00:05:10.640
+vagyis az összes piros, se zöld, se kék,
+
+00:05:10.680 --> 00:05:15.560
+itt a nulla, 100, 50 értékeket használnánk. Nulla
+
+00:05:15.600 --> 00:05:19.290
+a piros színárnyalathoz, 100 a telítettséghez, vagyis teljes szín,
+
+00:05:19.800 --> 00:05:22.060
+és 50 a világossághoz, ami
+
+00:05:22.080 --> 00:05:25.240
+a normál fényerő. Ha ebből
+
+00:05:25.250 --> 00:05:27.800
+zöld kört akarunk csinálni, elég
+
+00:05:27.880 --> 00:05:30.700
+a színárnyalatot 120-ra átírni. Ha
+
+00:05:30.740 --> 00:05:33.260
+sötétebb zöldet szeretnénk, vigyük le
+
+00:05:33.270 --> 00:05:37.340
+a világosságot 25-re. Ha
+
+00:05:37.380 --> 00:05:39.360
+fakóbb zöldet szeretnénk,
+
+00:05:39.440 --> 00:05:40.780
+vegyünk ki belőle egy kis színt,
+
+00:05:40.920 --> 00:05:43.860
+egy kis telítettséget, mondjuk vigyük le 30-ra.
+
+00:05:46.500 --> 00:05:48.800
+Ha élénk, harsány rózsaszínt szeretnél,
+
+00:05:48.860 --> 00:05:52.080
+a 300 körüli színárnyalat a rózsaszín,
+
+00:05:52.120 --> 00:05:55.680
+a telítettséget pedig felvisszük 100-ra,
+
+00:05:55.720 --> 00:05:57.560
+hogy igazán élénk legyen, és a világosságot is
+
+00:05:57.620 --> 00:06:01.290
+megemeljük nagyjából 60-ra. Két különböző
+
+00:06:01.340 --> 00:06:03.660
+módszerünk van tehát a színek megadására,
+
+00:06:03.760 --> 00:06:07.830
+és más-más helyzetben hasznosak. Az RGB akkor nagyszerű,
+
+00:06:07.900 --> 00:06:12.160
+ha egy adott összetevőt szeretnél állítani:
+
+00:06:12.500 --> 00:06:14.380
+mennyi legyen a piros, mennyi a zöld,
+
+00:06:14.400 --> 00:06:17.540
+mennyi a kék. A HSL akkor nagyszerű, ha
+
+00:06:17.600 --> 00:06:20.060
+végig akarsz lépkedni a színeken. Ha szivárványt szeretnél,
+
+00:06:20.100 --> 00:06:23.440
+elég folyamatosan növelni a színárnyalatot.
+
+00:06:23.460 --> 00:06:25.360
+A következő pár feladatban mindkettőt
+
+00:06:25.400 --> 00:06:27.500
+használni fogod, néhány ciklussal és
+
+00:06:27.960 --> 00:06:31.020
+pár változó frissítésével, hogy szivárványt
+
+00:06:31.080 --> 00:06:33.280
+és naplementét hozz létre. A feladatleírásokban
+
+00:06:33.320 --> 00:06:36.400
+majd emlékeztetlek minden részletre, úgyhogy ne aggódj,
+
+00:06:36.460 --> 00:06:40.140
+ha még nem jegyezted meg mindet.
+
+00:06:40.180 --> 00:06:41.640
+Sok sikert, érezd jól magad,
+
+00:06:41.660 --> 00:06:42.060
+és hamarosan találkozunk!

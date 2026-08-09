@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 01e55797f6d7badd90ea909a2a995db9
+
+00:00:00.280 --> 00:00:03.680
+Üdv újra! Eddig két kulcsszót tanultál meg,
+
+00:00:03.800 --> 00:00:07.760
+két utasítást, amit Jiki megért: a let-et és
+
+00:00:07.800 --> 00:00:10.720
+a repeat-et. Ebben a videóban egy újat tanulunk,
+
+00:00:10.820 --> 00:00:12.820
+egy új kulcsszót, amivel
+
+00:00:12.900 --> 00:00:15.570
+megmondhatjuk Jikinek, hogy csak
+
+00:00:15.660 --> 00:00:20.400
+bizonyos helyzetekben csináljon valamit. Képzeld el, hogy egy
+
+00:00:20.420 --> 00:00:22.850
+bár bejáratát őrző kódot írsz,
+
+00:00:22.860 --> 00:00:25.510
+mondjuk te vagy a kidobó, és Jiki csak akkor
+
+00:00:25.600 --> 00:00:28.880
+nyithatja ki az ajtót, ha valaki megfelelően van felöltözve.
+
+00:00:30.040 --> 00:00:32.470
+Vagy éppen te intheted le
+
+00:00:32.500 --> 00:00:34.990
+a kockás zászlóval a versenyt a célban,
+
+00:00:35.020 --> 00:00:38.110
+de Jikinek tudnia kell,
+
+00:00:38.160 --> 00:00:39.740
+hogy ezt csak az utolsó körben
+
+00:00:39.780 --> 00:00:43.220
+szabad megtennie. Az ilyen helyzetekben
+
+00:00:43.320 --> 00:00:46.080
+az if kulcsszót fogjuk használni.
+
+00:00:47.760 --> 00:00:50.160
+Az if kulcsszót nagyon hasonlóan
+
+00:00:50.220 --> 00:00:53.320
+használjuk, mint a repeat-et.
+
+00:00:53.380 --> 00:00:56.400
+A zárójelek közé írunk valamit:
+
+00:00:56.940 --> 00:00:59.260
+ez lesz a feltétel, amit ellenőrzünk.
+
+00:00:59.330 --> 00:01:00.600
+Mindjárt beszélünk róla.
+
+00:01:01.280 --> 00:01:03.040
+A kapcsos zárójelek közé pedig
+
+00:01:03.240 --> 00:01:06.100
+egy kódblokk kerül, amit csak akkor
+
+00:01:06.380 --> 00:01:10.520
+futtatunk le, ha ez a feltétel igaz. Na de hogy
+
+00:01:10.540 --> 00:01:13.620
+néznek ki ezek a feltételek? Általában
+
+00:01:13.660 --> 00:01:16.580
+valamilyen összehasonlítások. Két számot
+
+00:01:16.680 --> 00:01:19.300
+vagy két stringet hasonlítunk össze, és megnézzük,
+
+00:01:19.380 --> 00:01:23.580
+hogy az eredmény igaz vagy hamis. Gondolj ezekre úgy,
+
+00:01:23.640 --> 00:01:26.580
+mint állításokra, amiket hangosan is kimondhatsz.
+
+00:01:26.640 --> 00:01:30.620
+Három kisebb, mint öt. Ez igaz.
+
+00:01:30.680 --> 00:01:35.420
+Hét kisebb, mint kettő. Ez hamis. Ezeket az
+
+00:01:35.500 --> 00:01:38.480
+összehasonlításokat jelekkel írjuk le.
+
+00:01:38.520 --> 00:01:41.040
+Valószínűleg ismered már őket matekból.
+
+00:01:41.060 --> 00:01:44.140
+Van kisebb, nagyobb, kisebb vagy egyenlő,
+
+00:01:44.620 --> 00:01:46.940
+nagyobb vagy egyenlő, és van még egy,
+
+00:01:47.000 --> 00:01:48.600
+ami azt ellenőrzi,
+
+00:01:48.610 --> 00:01:51.570
+hogy két dolog ugyanaz-e, vagyis egyenlő-e.
+
+00:01:51.600 --> 00:01:54.360
+Ez viszont kicsit másképp működik,
+
+00:01:54.400 --> 00:01:58.440
+mint amit megszoktál, mert három
+
+00:01:58.500 --> 00:02:00.580
+egyenlőségjelet írunk egymás után,
+
+00:02:00.680 --> 00:02:04.040
+ha azt vizsgáljuk, hogy két dolog ugyanaz vagy különböző.
+
+00:02:04.080 --> 00:02:06.820
+Így nem keverjük össze azzal, amikor
+
+00:02:06.900 --> 00:02:09.720
+változót hozunk létre vagy frissítünk. Ilyenkor
+
+00:02:09.780 --> 00:02:11.540
+az egyenlőségjel azt jelenti,
+
+00:02:11.580 --> 00:02:15.900
+hogy „ezt tedd a dobozba”. Összehasonlításhoz három egyenlőségjel kell.
+
+00:02:17.720 --> 00:02:21.140
+Stringeket is összehasonlíthatsz. A „hello”
+
+00:02:21.400 --> 00:02:24.630
+egyenlő a „hello”-val: ez igaz, a két string
+
+00:02:24.640 --> 00:02:27.300
+ugyanaz. De itt légy óvatos, mert Jiki
+
+00:02:27.380 --> 00:02:31.320
+a két papírlapon lévő stringek minden egyes
+
+00:02:31.360 --> 00:02:34.720
+karakterét összehasonlítja. A nagy H-s „Hello”
+
+00:02:34.800 --> 00:02:38.420
+nem ugyanaz, mint a kis h-s „hello”:
+
+00:02:38.430 --> 00:02:41.430
+két különböző string. Az összehasonlításuk
+
+00:02:41.460 --> 00:02:44.000
+ezért hamis lenne, mert a nagy H
+
+00:02:44.460 --> 00:02:49.290
+és a kis h különböző karakterek.
+
+00:02:49.500 --> 00:02:51.390
+Ja, és mellesleg: az igaz és a hamis
+
+00:02:51.420 --> 00:02:56.230
+értékeket Boolean-nek hívják. Ez egy szakzsargonnak hangzó szó,
+
+00:02:56.280 --> 00:02:58.370
+de valójában nagyon egyszerű:
+
+00:02:58.480 --> 00:03:01.080
+csak egy hivatalos elnevezés arra, hogy
+
+00:03:01.140 --> 00:03:03.220
+valami vagy igaz, vagy hamis. Szóval
+
+00:03:03.260 --> 00:03:05.530
+ha hallod a Boolean szót valakitől,
+
+00:03:05.580 --> 00:03:09.020
+az csak annyit jelent: igaz vagy hamis. Nézzük meg
+
+00:03:09.040 --> 00:03:12.660
+mindezt működés közben. Képzeld el,
+
+00:03:12.740 --> 00:03:15.360
+hogy a robotkidobót készítjük el egy klubnak,
+
+00:03:15.400 --> 00:03:18.220
+és azt mondjuk, hogy a kidobó csak akkor
+
+00:03:18.280 --> 00:03:22.560
+nyithatja ki az ajtót, ha az illető legalább 21 éves.
+
+00:03:22.640 --> 00:03:25.000
+Van egy askAge függvényünk, amivel
+
+00:03:25.020 --> 00:03:27.320
+megkérdezhetjük valakinek az életkorát,
+
+00:03:27.340 --> 00:03:29.660
+és az eredményt egy age nevű változóba mentjük.
+
+00:03:30.620 --> 00:03:32.620
+Utána mondhatjuk, hogy ha ez az age
+
+00:03:33.100 --> 00:03:35.840
+nagyobb, mint 20, akkor kinyitjuk az ajtót.
+
+00:03:36.780 --> 00:03:40.260
+Ha tehát az askAge 30-at ad vissza, akkor kinyitjuk,
+
+00:03:40.300 --> 00:03:43.620
+ha pedig 12-t, akkor nem.
+
+00:03:45.440 --> 00:03:47.549
+A következő feladatban az elágazást
+
+00:03:47.600 --> 00:03:50.920
+fogod használni, hogy döntéseket hozz a kódodban.
+
+00:03:51.000 --> 00:03:54.120
+Feltételeket ellenőrzöl, és csak akkor futtatsz
+
+00:03:54.160 --> 00:03:57.420
+bizonyos kódot, ha azok a feltételek igazak.
+
+00:03:57.430 --> 00:03:59.360
+A következő kettő elég egyszerű,
+
+00:03:59.440 --> 00:04:02.210
+aztán áttérünk néhány bonyolultabbra.
+
+00:04:02.280 --> 00:04:05.109
+Ahogy mindig, ezekben a feladatokban is minden
+
+00:04:05.120 --> 00:04:07.240
+a már megbeszélt dolgokra épül.
+
+00:04:07.420 --> 00:04:09.160
+Ha kicsit elvesztél, nézd meg
+
+00:04:09.180 --> 00:04:11.960
+a fogalmak linkjeit az utasítások alján,
+
+00:04:12.000 --> 00:04:14.200
+és idézd fel, amit elfelejtettél. Sok sikert,
+
+00:04:14.220 --> 00:04:14.990
+hamarosan találkozunk!

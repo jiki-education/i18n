@@ -1,0 +1,141 @@
+WEBVTT
+
+NOTE en_md5 bda06700bc7cace998c9ec1d94e9d2aa
+
+00:00:00.160 --> 00:00:03.500
+Üdv újra itt! A programozásban gyakran szeretnénk úgy
+
+00:00:03.660 --> 00:00:06.940
+használni egy függvényt, hogy minden alkalommal más
+
+00:00:07.020 --> 00:00:11.400
+véletlenszámot kapjunk vissza. Ez rengeteg
+
+00:00:11.460 --> 00:00:13.960
+helyzetben jól jön, de különösen
+
+00:00:14.020 --> 00:00:16.370
+a kriptográfiában, vagyis a titkosítás világában. Ott
+
+00:00:16.379 --> 00:00:19.270
+gyakran készítünk kódokat, amiket gépek osztanak meg egymással,
+
+00:00:20.040 --> 00:00:21.660
+és ezeknek a kódoknak véletlenszerűnek kell lenniük,
+
+00:00:21.680 --> 00:00:24.980
+hogy ne lehessen feltörni őket. Ehhez
+
+00:00:25.320 --> 00:00:27.160
+a kurzus hátralévő részében rendelkezésedre áll
+
+00:00:27.200 --> 00:00:33.420
+egy `Math.randomInt` nevű függvény. Talán feltűnt,
+
+00:00:33.440 --> 00:00:34.920
+hogy a közepén egy pont van.
+
+00:00:36.240 --> 00:00:38.660
+Ahogy egyre több függvényhez férsz hozzá,
+
+00:00:38.700 --> 00:00:41.040
+a rend kedvéért csoportokba rendezzük őket,
+
+00:00:41.080 --> 00:00:43.980
+és a `Math` annak a csoportnak
+
+00:00:44.100 --> 00:00:46.720
+a neve, amelyikhez ez a függvény
+
+00:00:46.780 --> 00:00:49.550
+tartozik. Ez mondja meg Jikinek, hogy a polcok
+
+00:00:49.600 --> 00:00:51.340
+melyik részlegén keressen, ebben az esetben
+
+00:00:51.350 --> 00:00:54.490
+a `Math` részlegen. A pont annyit jelent:
+
+00:00:54.520 --> 00:00:57.440
+menj ehhez a részleghez, és keresd meg a függvényt.
+
+00:00:57.480 --> 00:00:59.920
+Emiatt most ne aggódj túl sokat. A feladatok
+
+00:00:59.940 --> 00:01:03.020
+leírása mindig megmondja, milyen függvények
+
+00:01:03.060 --> 00:01:06.740
+érhetők el, és hogyan kell használni őket. A lényeg,
+
+00:01:06.800 --> 00:01:09.940
+hogy amikor Jiki ezt a függvényt használja,
+
+00:01:09.980 --> 00:01:12.380
+minden futtatáskor más számot
+
+00:01:12.460 --> 00:01:15.400
+kap tőle, egyetlen
+
+00:01:15.440 --> 00:01:19.760
+megkötéssel. A függvénynek két bemenete van. Az első
+
+00:01:19.940 --> 00:01:22.120
+a legkisebb szám, amit a gép
+
+00:01:22.160 --> 00:01:25.220
+visszaadhat, a második pedig a legnagyobb
+
+00:01:25.300 --> 00:01:28.160
+szám, amit a gép visszaadhat. Ha tehát
+
+00:01:28.240 --> 00:01:31.740
+a `Math.randomInt` függvényt a `10`
+
+00:01:32.080 --> 00:01:36.820
+és a `13` értékekkel használod, mindig `10`-et, `11`-et, `12`-t
+
+00:01:37.200 --> 00:01:40.280
+vagy `13`-at kapsz vissza. De minden
+
+00:01:40.340 --> 00:01:44.120
+alkalommal másikat. Képzeld el például,
+
+00:01:44.160 --> 00:01:46.200
+hogy egy kört szeretnél rajzolni
+
+00:01:46.240 --> 00:01:49.420
+a rajzvászon egy véletlenszerű pontjára. A `Math.randomInt`
+
+00:01:49.500 --> 00:01:52.500
+segítségével minden futáskor más értéket adhatsz a `left`-nek
+
+00:01:52.640 --> 00:01:56.920
+és a `top`-nak, mondjuk `10` és `90` közötti
+
+00:01:56.960 --> 00:01:59.500
+határokkal, hogy a kör soha
+
+00:01:59.560 --> 00:02:02.960
+ne lógjon ki a vászonról. Így valahányszor
+
+00:02:03.020 --> 00:02:05.020
+lefuttatod ezt a kódot, a kör mindig
+
+00:02:05.060 --> 00:02:08.460
+egy kicsit máshol jelenik meg. Egy egyszerű
+
+00:02:08.560 --> 00:02:12.320
+salátakészítős feladattal kezdünk, hogy
+
+00:02:12.460 --> 00:02:14.680
+megismerkedj a véletlenszámok fogalmával,
+
+00:02:15.400 --> 00:02:17.600
+utána pedig a következő feladatokban
+
+00:02:17.640 --> 00:02:20.120
+elkezdünk velük néhány igazán mókás
+
+00:02:20.160 --> 00:02:22.019
+dolgot csinálni. Hamarosan találkozunk!

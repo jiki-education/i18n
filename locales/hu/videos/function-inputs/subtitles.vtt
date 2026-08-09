@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 2a23c8bcc4af2ee7d5bd8d5613681427
+
+00:00:00.200 --> 00:00:03.800
+Üdv újra! Remélem, mostanra már elég
+
+00:00:03.860 --> 00:00:07.160
+könnyen kezeled a gépeket. Eddig az összes
+
+00:00:07.180 --> 00:00:09.140
+gép, amit használtál,
+
+00:00:09.380 --> 00:00:12.160
+a move, a turn left és a shoot,
+
+00:00:12.240 --> 00:00:15.260
+mindig ugyanazt csinálta. Vagyis ha
+
+00:00:15.340 --> 00:00:18.520
+meghívod a move-ot, a figurád mozog. Ha
+
+00:00:18.560 --> 00:00:22.010
+meghívod a shoot-ot, a figurád lő. A gépekben,
+
+00:00:22.080 --> 00:00:25.560
+vagyis a függvényekben az az egyik legnagyszerűbb dolog,
+
+00:00:25.580 --> 00:00:27.520
+hogy sokukba információt is
+
+00:00:27.560 --> 00:00:30.810
+betehetsz, és ettől futáskor
+
+00:00:31.000 --> 00:00:34.380
+mást és mást csinálnak. Nézzünk egy
+
+00:00:34.420 --> 00:00:38.420
+példát! Eddig olyan gépeket láttunk, amik
+
+00:00:38.460 --> 00:00:40.480
+leginkább egy egyszerű dobozra hasonlítanak,
+
+00:00:40.490 --> 00:00:43.360
+mint például a move. Néhány gépen viszont
+
+00:00:43.540 --> 00:00:47.200
+nyílások is vannak, mint ezen a walk gépen.
+
+00:00:47.240 --> 00:00:49.260
+A walk gép majdnem ugyanolyan, mint a move:
+
+00:00:49.280 --> 00:00:52.780
+előre mozgatja a figurát, csakhogy Jiki a nyílás
+
+00:00:52.860 --> 00:00:56.320
+segítségével azt is megadhatja, hány lépést
+
+00:00:56.340 --> 00:00:59.340
+menjen előre a figurád. Így ahelyett, hogy
+
+00:00:59.440 --> 00:01:02.120
+a move függvényt háromszor egymás után
+
+00:01:02.160 --> 00:01:05.920
+használnád (move, move, move), elég egyszer
+
+00:01:05.960 --> 00:01:08.620
+használnod a walk függvényt, és megmondanod Jikinek,
+
+00:01:08.640 --> 00:01:11.200
+hogy tegye be a gépbe a hármas számot.
+
+00:01:12.960 --> 00:01:15.320
+Kódban ehhez továbbra is leírjuk
+
+00:01:15.380 --> 00:01:17.260
+a függvény nevét, ebben az
+
+00:01:17.320 --> 00:01:19.920
+esetben a walk-ot, és továbbra is kitesszük
+
+00:01:19.940 --> 00:01:23.740
+a nyitó zárójelet. A csukó zárójel előtt viszont
+
+00:01:23.780 --> 00:01:25.920
+megadjuk, hogy mi legyen a bemenet.
+
+00:01:25.960 --> 00:01:27.690
+Itt most azt szeretnénk, hogy a bemenet
+
+00:01:27.720 --> 00:01:30.920
+a három legyen, vagyis hogy a figura három
+
+00:01:30.960 --> 00:01:34.240
+lépést sétáljon előre. Amikor Jiki ezt meglátja, fogja
+
+00:01:34.260 --> 00:01:35.930
+a hármas számot (képzeld el úgy,
+
+00:01:35.960 --> 00:01:38.310
+mint egy kis érmét),
+
+00:01:38.340 --> 00:01:40.300
+bedobja a gép bemeneti
+
+00:01:40.320 --> 00:01:43.200
+nyílásába, és csak utána húzza meg a kart,
+
+00:01:43.220 --> 00:01:46.660
+hogy elindítsa a gépet. Hamarosan olyan
+
+00:01:46.700 --> 00:01:49.660
+feladatokat oldasz meg, amikben téglalapokat és
+
+00:01:49.700 --> 00:01:53.000
+köröket rajzolsz. Ezeknél a függvényeknél több
+
+00:01:53.080 --> 00:01:57.110
+különböző számot is meg kell adnod Jikinek: például
+
+00:01:57.180 --> 00:01:59.380
+hogy milyen messze legyen az alakzat
+
+00:01:59.420 --> 00:02:00.840
+a bal széltől, milyen messze a tetejétől,
+
+00:02:00.920 --> 00:02:03.160
+milyen széles és milyen
+
+00:02:03.240 --> 00:02:07.140
+magas legyen a téglalap. Jiki világában ezek
+
+00:02:07.160 --> 00:02:10.120
+egyszerűen külön nyílások:
+
+00:02:10.160 --> 00:02:12.880
+mindegyik számnak jut egy. A kódban ilyenkor
+
+00:02:12.900 --> 00:02:15.120
+egyszerűen egymás után írjuk a számokat,
+
+00:02:15.200 --> 00:02:18.460
+és vesszőt teszünk közéjük. Tehát: a függvény neve,
+
+00:02:18.540 --> 00:02:20.980
+egy nyitó zárójel, egy-egy szám minden bemenetnek,
+
+00:02:21.300 --> 00:02:24.180
+vesszőkkel elválasztva, végül pedig
+
+00:02:24.260 --> 00:02:27.380
+a csukó zárójel. Ha egy függvényt nem
+
+00:02:27.420 --> 00:02:29.810
+a megfelelő számú bemenettel próbálsz használni,
+
+00:02:29.840 --> 00:02:31.620
+hibát kapsz. Ha például
+
+00:02:31.660 --> 00:02:33.660
+olyan gépbe próbálsz bemenetet tenni,
+
+00:02:33.680 --> 00:02:36.080
+amin nincs nyílás, Jiki szól,
+
+00:02:36.140 --> 00:02:38.060
+hogy ezt nem lehet. És ha egy olyan
+
+00:02:38.120 --> 00:02:39.640
+gépet használsz, amin van
+
+00:02:39.680 --> 00:02:41.840
+bemeneti nyílás, de nem mondod meg Jikinek,
+
+00:02:41.880 --> 00:02:43.920
+mit tegyen bele, akkor is megáll
+
+00:02:44.000 --> 00:02:46.960
+és reklamál. Ha egy kicsit lázadó
+
+00:02:47.020 --> 00:02:50.380
+kedvedben vagy, próbáld ki, és nézd meg, mi történik!
+
+00:02:50.440 --> 00:02:52.370
+Ahogy a dolgok egyre
+
+00:02:52.400 --> 00:02:54.940
+bonyolultabbak lesznek, sok ilyen hibát ejtesz majd.
+
+00:02:54.980 --> 00:02:57.170
+Próbáld meg nem stresszelni miatta!
+
+00:02:57.200 --> 00:03:00.080
+Mindannyian a hibáinkból tanulunk, szó szerint így
+
+00:03:00.100 --> 00:03:03.600
+rögzíti az agyunk a leggyorsabban a dolgokat. És ilyen
+
+00:03:03.660 --> 00:03:06.320
+hibákat mindenki elkövet. Mindannyian nulláról indultunk,
+
+00:03:06.600 --> 00:03:10.340
+úgyhogy semmi pánik. Mielőtt belevágsz,
+
+00:03:10.860 --> 00:03:12.910
+még egy dolgot érdemes megemlíteni.
+
+00:03:13.780 --> 00:03:16.400
+A feladatokban néha olyan sorokat
+
+00:03:16.500 --> 00:03:19.660
+fogsz látni, amik két perjellel kezdődnek. Ezeket
+
+00:03:19.700 --> 00:03:23.040
+kommenteknek hívjuk. Csak neked szóló
+
+00:03:23.140 --> 00:03:26.420
+privát jegyzetek, amiket Jiki teljesen figyelmen kívül hagy.
+
+00:03:26.480 --> 00:03:28.500
+Ha Jiki egy két perjellel
+
+00:03:28.540 --> 00:03:31.130
+kezdődő sort lát, egyszerűen átlépi,
+
+00:03:31.140 --> 00:03:32.670
+és a következő
+
+00:03:32.700 --> 00:03:36.320
+sorral folytatja. A kommentekkel saját magadnak
+
+00:03:36.340 --> 00:03:38.650
+írhatsz jegyzeteket. Nagyon
+
+00:03:38.700 --> 00:03:40.800
+hasznosak emlékeztetőnek, hogyan működik valami.
+
+00:03:41.580 --> 00:03:43.430
+Gyakran én is írok neked kommenteket,
+
+00:03:43.560 --> 00:03:45.630
+így egy feladat elején
+
+00:03:45.660 --> 00:03:48.120
+megmutathatják, hova kell kódot írnod,
+
+00:03:48.160 --> 00:03:50.109
+vagy tippet adhatnak a megoldáshoz.
+
+00:03:50.160 --> 00:03:51.880
+De nyugodtan írd hozzá
+
+00:03:51.980 --> 00:03:55.480
+a sajátjaidat is. Ahogy haladsz előre,
+
+00:03:55.520 --> 00:03:58.310
+nézd meg a feladat leírásának alján,
+
+00:03:58.380 --> 00:04:00.980
+hogy milyen függvényeket
+
+00:04:01.020 --> 00:04:03.280
+használhatsz, és pontosan milyen
+
+00:04:03.320 --> 00:04:05.520
+bemeneteket kell megadnod nekik. Jó szórakozást
+
+00:04:05.600 --> 00:04:07.020
+a bemenetek kipróbálásához,
+
+00:04:07.060 --> 00:04:07.740
+hamarosan találkozunk!

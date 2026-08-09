@@ -1,0 +1,195 @@
+WEBVTT
+
+NOTE en_md5 e47167fc1482d0b37cf8c1318d2bbbbb
+
+00:00:00.100 --> 00:00:04.260
+Üdv újra itt! Eddig, amikor a repeat
+
+00:00:04.300 --> 00:00:06.910
+ciklussal rajzoltunk, minden új rajz
+
+00:00:06.920 --> 00:00:10.310
+hozzáadott valamit a képhez. Ha
+
+00:00:10.340 --> 00:00:12.360
+új téglát rajzoltunk egy falba,
+
+00:00:12.520 --> 00:00:15.840
+az betöltött egy rést. Ha 10
+
+00:00:15.900 --> 00:00:18.500
+kört rajzoltunk, 10 kört láttunk a képernyőn.
+
+00:00:19.300 --> 00:00:22.220
+Olyan ez, mint egy festmény. Ha egyszer
+
+00:00:22.240 --> 00:00:24.580
+festéket teszel a falra, nem tűnik el attól,
+
+00:00:24.640 --> 00:00:26.440
+hogy mellé festesz valami újat. Ott
+
+00:00:26.480 --> 00:00:30.320
+marad. De mi van akkor, ha azt szeretnénk,
+
+00:00:30.380 --> 00:00:33.980
+hogy valami mozogni látsszon? Láttál már
+
+00:00:34.000 --> 00:00:36.150
+pörgetős füzetet? Gyerekkoromban nagyon
+
+00:00:36.160 --> 00:00:38.339
+népszerűek voltak, ma már kevésbé.
+
+00:00:38.380 --> 00:00:40.640
+A pörgetős füzet egy kis füzet, amelynek
+
+00:00:40.680 --> 00:00:44.440
+minden oldalán egy kicsit más rajz van. Ahogy
+
+00:00:44.540 --> 00:00:47.640
+gyorsan végigpörgeted a lapokat, a szemed látja,
+
+00:00:47.720 --> 00:00:51.170
+hogy a rajzok változnak, az agyad pedig azt hiszi,
+
+00:00:51.340 --> 00:00:54.020
+hogy valami mozog. Pedig valójában nem mozog semmi.
+
+00:00:54.060 --> 00:00:58.530
+Csak sok, egymástól kicsit különböző kép követi egymást. És
+
+00:00:58.560 --> 00:01:02.400
+a kódban pontosan így működik az animáció.
+
+00:01:02.589 --> 00:01:05.500
+A trükk ugyanaz. Mielőtt új
+
+00:01:05.560 --> 00:01:08.920
+jelenetet rajzolnánk, az egész vásznat
+
+00:01:08.960 --> 00:01:11.920
+átfestjük egy háttérszínnel, kicsit olyan,
+
+00:01:11.960 --> 00:01:14.400
+mintha új lapot kezdenénk a pörgetős füzetben,
+
+00:01:15.320 --> 00:01:18.140
+aztán egy kicsit változtatunk
+
+00:01:18.180 --> 00:01:21.740
+a jeleneten, hogy mozgásnak tűnjön. Vegyünk
+
+00:01:21.780 --> 00:01:24.040
+egy ismerős kódrészletet, amelyben
+
+00:01:24.080 --> 00:01:27.520
+köröket rajzolunk a képernyőre:
+
+00:01:27.560 --> 00:01:29.820
+beállítunk egy position változót, van
+
+00:01:29.840 --> 00:01:31.900
+egy repeat blokkunk: rajzolunk egy kört,
+
+00:01:31.940 --> 00:01:33.640
+majd a position-t eggyel jobbra toljuk.
+
+00:01:34.680 --> 00:01:37.110
+Ha ezt a repeat blokkot 100-szor futtatjuk le,
+
+00:01:37.500 --> 00:01:39.940
+100 kört fogunk látni a
+
+00:01:39.960 --> 00:01:43.320
+képernyőn. Most nézd meg, mi történik, ha
+
+00:01:43.340 --> 00:01:47.440
+minden kör elé csupán egyetlen
+
+00:01:47.500 --> 00:01:51.260
+sima téglalapot rajzolunk. Körökből álló
+
+00:01:51.300 --> 00:01:54.210
+csík helyett a szemünk most
+
+00:01:54.380 --> 00:01:57.440
+egyetlen kört lát, amely mintha végigsiklana
+
+00:01:57.520 --> 00:02:01.000
+a képernyőn. A ciklus minden ismétlésénél
+
+00:02:01.020 --> 00:02:04.060
+teljesen új hátteret festünk, eltakarunk
+
+00:02:04.260 --> 00:02:06.860
+mindent, ami addig ott volt, aztán
+
+00:02:06.960 --> 00:02:11.120
+az új helyére rajzoljuk a kört. A ciklus
+
+00:02:11.200 --> 00:02:14.540
+minden ismétlése olyan, mint egy új
+
+00:02:14.600 --> 00:02:17.720
+lap a pörgetős füzetben. És itt
+
+00:02:17.740 --> 00:02:19.570
+a legfontosabb, amit meg kell értened:
+
+00:02:19.640 --> 00:02:22.390
+nem a kört mozgatjuk. A kör nem egy tárgy,
+
+00:02:22.400 --> 00:02:25.250
+ami végigcsúszik a képernyőn. Csak egy rajz. A
+
+00:02:25.340 --> 00:02:27.220
+ciklus minden ismétlésénél átfestjük
+
+00:02:27.280 --> 00:02:29.350
+a régi rajzot, és készítünk egy vadonatújat,
+
+00:02:29.980 --> 00:02:32.120
+egy kicsit jobbra. A szemed
+
+00:02:32.180 --> 00:02:35.280
+mindezt összerakja, és mozgást lát, pedig
+
+00:02:35.360 --> 00:02:38.390
+valójában csak sok különálló rajz követi egymást.
+
+00:02:40.080 --> 00:02:42.160
+A következő feladatban ezt az ötletet
+
+00:02:42.200 --> 00:02:45.420
+fogod használni egy naplemente megrajzolásához.
+
+00:02:45.460 --> 00:02:47.829
+Mozgatod majd a napot, változtatod a méretét
+
+00:02:47.880 --> 00:02:50.100
+és a színét. A technika mindig ugyanaz:
+
+00:02:50.220 --> 00:02:53.900
+változókat állítasz be, friss hátteret festesz, és megrajzolsz mindent.
+
+00:02:53.940 --> 00:02:57.190
+Frissíted a változókat, aztán ismételsz. Ha
+
+00:02:57.240 --> 00:02:59.170
+pedig prémium tag vagy, a naplemente
+
+00:02:59.170 --> 00:03:01.750
+teljesítésével egy összetettebb
+
+00:03:01.800 --> 00:03:05.860
+projektet is feloldasz, a neve Sprouting Flower,
+
+00:03:05.940 --> 00:03:08.180
+amelyben igazán próbára teheted magad,
+
+00:03:08.220 --> 00:03:11.360
+ha mindezt egyszerre használod. Nagyon jó feladat. Sok
+
+00:03:11.400 --> 00:03:13.240
+sikert, és hamarosan találkozunk!

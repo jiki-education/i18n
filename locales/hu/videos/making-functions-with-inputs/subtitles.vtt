@@ -1,0 +1,222 @@
+WEBVTT
+
+NOTE en_md5 10ad7187acecddbe0b148815fa3e3508
+
+00:00:00.180 --> 00:00:02.610
+Üdv újra! Az eddig elkészített függvényeid
+
+00:00:02.800 --> 00:00:05.430
+mindig pontosan ugyanazt csinálják, minden
+
+00:00:05.460 --> 00:00:10.760
+alkalommal. A turn_around mindig kétszer fordul balra. A shoot_if_alien_above mindig
+
+00:00:10.800 --> 00:00:14.180
+ellenőriz és lő. De gondolj azokra a függvényekre,
+
+00:00:14.240 --> 00:00:16.140
+amelyeket a kurzus során végig használtál:
+
+00:00:16.160 --> 00:00:19.480
+azok a bemeneteiktől függően mást és mást csinálnak. A Rectangle
+
+00:00:19.520 --> 00:00:21.180
+bemenetként kap egy bal oldali pozíciót, egy felsőt,
+
+00:00:21.240 --> 00:00:23.820
+egy szélességet és egy magasságot, majd attól függően rajzol
+
+00:00:23.900 --> 00:00:27.040
+más és más téglalapot, hogy mit adsz meg neki.
+
+00:00:27.140 --> 00:00:29.200
+Ebben a videóban megmutatom, hogyan adhatsz
+
+00:00:29.320 --> 00:00:31.920
+bemeneti nyílásokat a saját függvényeidhez is.
+
+00:00:33.520 --> 00:00:35.020
+Ehhez két dolgot kell tudnod.
+
+00:00:35.060 --> 00:00:38.080
+Az első az, hogy ez hogyan néz ki,
+
+00:00:38.140 --> 00:00:39.910
+mit kell leírnod. A második az,
+
+00:00:40.040 --> 00:00:43.300
+hogy közben valójában mi történik. Az első rész
+
+00:00:43.360 --> 00:00:46.930
+egészen egyszerű. Csak leírsz egy sima
+
+00:00:46.940 --> 00:00:49.680
+zárójelet, bele pedig a kívánt bemenetek
+
+00:00:49.740 --> 00:00:52.720
+neveit. Képzeljük el, hogy egy olyan függvényt készítünk,
+
+00:00:52.840 --> 00:00:56.400
+amelyiknek sokszor kell lőnie. Nevezzük
+
+00:00:56.440 --> 00:01:01.500
+shoot_many-nek. Azt írnánk, hogy function shoot_many, nyitó zárójel, num_shots,
+
+00:01:01.800 --> 00:01:06.280
+csukó zárójel, kapcsos zárójel, aztán a kód. Amikor
+
+00:01:06.300 --> 00:01:08.580
+használni akarod ezt a függvényt, azt írod,
+
+00:01:08.640 --> 00:01:10.640
+hogy shoot_many 5, ha ötször
+
+00:01:10.680 --> 00:01:13.180
+akarsz lőni, vagy shoot_many 2, ha
+
+00:01:13.300 --> 00:01:15.840
+kétszer. És most jön
+
+00:01:15.920 --> 00:01:19.100
+a lényeg. Amikor a kód lefut, bármit adsz is meg
+
+00:01:19.160 --> 00:01:23.280
+ebben a bemenetben, 5-öt vagy 2-t, a függvényen belül
+
+00:01:23.300 --> 00:01:27.080
+a kalapos mini-Jiki fogja ezt a bemenetet,
+
+00:01:27.260 --> 00:01:29.880
+és beleteszi egy num_shots nevű dobozba,
+
+00:01:30.460 --> 00:01:32.670
+a dobozt pedig felteszi a polcokra
+
+00:01:32.740 --> 00:01:34.940
+a függvényen belül, hogy használni tudd
+
+00:01:34.960 --> 00:01:39.120
+a függvény kódjában. Elmondom még egyszer. Amikor
+
+00:01:39.180 --> 00:01:42.110
+a függvény használatához leírjuk, hogy shoot_many 5,
+
+00:01:42.900 --> 00:01:45.520
+a kinti Jiki fog
+
+00:01:46.040 --> 00:01:48.040
+egy 5-öst, és beteszi a shoot_many
+
+00:01:48.180 --> 00:01:52.800
+bemeneti nyílásába. A gépen belül mini-Jiki kiveszi
+
+00:01:52.840 --> 00:01:54.700
+ezt az 5-öst, és beleteszi
+
+00:01:54.780 --> 00:01:57.180
+egy num_shots nevű dobozba, mert te ezt a nevet
+
+00:01:57.220 --> 00:01:59.340
+adtad annak a bemeneti nyílásnak, aztán
+
+00:01:59.360 --> 00:02:02.300
+felteszi a dobozt a polcokra,
+
+00:02:02.340 --> 00:02:05.140
+a gépben lévő függvény belsejében. A függvényen
+
+00:02:05.200 --> 00:02:08.460
+belül pedig a num_shots dobozt
+
+00:02:09.340 --> 00:02:11.360
+ugyanúgy használhatod, mint bármelyik másikat.
+
+00:02:11.380 --> 00:02:14.540
+A num_shots névben semmi varázslat nincs.
+
+00:02:14.560 --> 00:02:16.820
+Bárminek elnevezhettük volna. Ez csak
+
+00:02:16.900 --> 00:02:19.780
+egy utasítás mini-Jikinek, hogy
+
+00:02:19.880 --> 00:02:23.020
+a függvényen belül mindig hozzon létre egy ilyen feliratú dobozt,
+
+00:02:23.030 --> 00:02:25.640
+és tegye bele azt, amit abba
+
+00:02:25.720 --> 00:02:29.750
+a nyílásba bedobnak. És ha egyszer
+
+00:02:29.840 --> 00:02:31.170
+érték van abban a dobozban,
+
+00:02:31.220 --> 00:02:33.590
+bármit megtehetsz vele, amit dobozokkal amúgy is szoktál.
+
+00:02:33.620 --> 00:02:36.380
+Nem lövöm le a következő feladatok poénját, de
+
+00:02:36.420 --> 00:02:39.100
+használhatod például a num_shots dobozt
+
+00:02:39.140 --> 00:02:41.200
+egy repeat ciklus részeként, hogy pontosan
+
+00:02:41.240 --> 00:02:44.100
+a megfelelő számú lövést add le. Ráadásul
+
+00:02:44.200 --> 00:02:47.340
+egynél több bemeneted is lehet. Csak válaszd el őket
+
+00:02:47.380 --> 00:02:49.580
+vesszővel. Ha tehát van egy
+
+00:02:49.640 --> 00:02:52.329
+draw_star nevű függvényünk, amely a bal felső
+
+00:02:52.360 --> 00:02:55.000
+sarkának pozíciója alapján rajzol egy csillagot, így írnád:
+
+00:02:55.160 --> 00:03:00.060
+function draw_star, nyitó zárójel, left vessző top, csukó zárójel, aztán
+
+00:03:00.080 --> 00:03:02.930
+kapcsos zárójel, majd a kódod. Amikor pedig
+
+00:03:02.960 --> 00:03:05.600
+a függvényt meghívod, mini-Jiki egyszerűen
+
+00:03:05.640 --> 00:03:07.320
+a bemenetekbe adott értékeket
+
+00:03:07.380 --> 00:03:10.660
+left és top nevű dobozokba teszi, és
+
+00:03:10.680 --> 00:03:12.829
+felteszi őket a polcokra a
+
+00:03:12.829 --> 00:03:16.160
+függvényeken belül. Összeállítottam neked egy feladatot
+
+00:03:16.200 --> 00:03:18.960
+a következő lépésre: reprodukáld azt a walk függvényt,
+
+00:03:19.420 --> 00:03:21.160
+amit az első leckék egyikében használtunk.
+
+00:03:21.240 --> 00:03:24.120
+Ha beírtad, hogy walk 5, öt lépést
+
+00:03:24.160 --> 00:03:27.300
+lépett előre. Most pedig lényegében
+
+00:03:27.320 --> 00:03:29.660
+pontosan ugyanazt a kódot írod meg, amit
+
+00:03:29.700 --> 00:03:31.960
+én is. Jó szórakozást, és
+
+00:03:31.980 --> 00:03:32.620
+hamarosan találkozunk!

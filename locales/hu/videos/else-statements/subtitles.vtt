@@ -1,0 +1,246 @@
+WEBVTT
+
+NOTE en_md5 8f7393dfe843d0e2ba5227cef441168a
+
+00:00:00.140 --> 00:00:02.860
+Oké, üdv újra itt. Az elágazások segítségével
+
+00:00:03.240 --> 00:00:05.920
+feltételeket ellenőrizhetsz, és csak akkor
+
+00:00:05.960 --> 00:00:08.800
+futtatsz le kódot, ha valami igaz. Most pedig
+
+00:00:09.080 --> 00:00:13.500
+ismerd meg az if cinkostársát, az else-t.
+
+00:00:13.560 --> 00:00:16.100
+Egy elágazásnál Jiki akkor futtatja le a kódblokkot,
+
+00:00:16.140 --> 00:00:19.310
+ha a feltétel igaz, ha pedig hamis,
+
+00:00:19.340 --> 00:00:22.210
+egyszerűen átugorja. De mi van akkor,
+
+00:00:22.240 --> 00:00:24.060
+ha azt szeretnéd, hogy Jiki az egyik dolgot
+
+00:00:24.100 --> 00:00:26.740
+csinálja, amikor a feltétel igaz, és egy
+
+00:00:26.750 --> 00:00:30.300
+másikat, amikor hamis? Pontosan erre való
+
+00:00:30.340 --> 00:00:33.180
+az else. Az if záró kapcsos zárójele után
+
+00:00:33.200 --> 00:00:36.440
+tehetünk egy else ágat, és Jiki akkor
+
+00:00:36.480 --> 00:00:39.230
+futtatja le, ha az if feltétele hamis.
+
+00:00:40.060 --> 00:00:42.370
+Ha visszatérünk a klubos kidobóemberes példához,
+
+00:00:42.930 --> 00:00:44.840
+most már választhatunk: kinyitjuk az ajtót,
+
+00:00:44.860 --> 00:00:48.670
+vagy elküldjük az illetőt. Ez valószínűleg
+
+00:00:48.680 --> 00:00:51.440
+jobb, mint eddig, amikor egyszerűen
+
+00:00:51.480 --> 00:00:54.560
+levegőnek néztük. Gondolj rá úgy, mint egy
+
+00:00:54.580 --> 00:00:56.780
+útelágazásra. Jiki odaér az elágazáshoz,
+
+00:00:57.000 --> 00:00:58.820
+ellenőrzi a feltételt, és ha igaz,
+
+00:00:58.860 --> 00:01:01.020
+az egyik irányba megy tovább,
+
+00:01:01.060 --> 00:01:03.000
+ha hamis, akkor a másikba.
+
+00:01:03.760 --> 00:01:07.050
+Mindkét irányba viszont sosem megy. De mi van,
+
+00:01:07.100 --> 00:01:10.730
+ha kettőnél több lehetőség van? Képzeld el,
+
+00:01:10.780 --> 00:01:14.340
+hogy a kidobóemberünk jegyeket árul. Tizenhárom év alatt
+
+00:01:14.360 --> 00:01:17.460
+gyerekjegyet kapsz. Tizenhárom és húsz között
+
+00:01:17.520 --> 00:01:19.820
+ifjúsági jegyet. Húsz évtől pedig
+
+00:01:19.860 --> 00:01:21.920
+felnőttjegyet. Így már három különböző
+
+00:01:22.000 --> 00:01:25.700
+kimenetel van. Ehhez az else után
+
+00:01:25.760 --> 00:01:28.640
+hozzáadhatunk egy újabb elágazást. Mondhatjuk azt,
+
+00:01:28.680 --> 00:01:32.420
+hogy: „Ha ez igaz, csináld ezt. Különben, ha ez igaz,
+
+00:01:32.560 --> 00:01:36.160
+csináld azt. Különben csináld ezt a harmadik dolgot.”
+
+00:01:37.040 --> 00:01:39.120
+Ebben a példában Jiki meglátja
+
+00:01:39.280 --> 00:01:43.120
+az if-et, és ellenőrzi az első feltételt. Kisebb
+
+00:01:43.460 --> 00:01:47.380
+a tizenhat tizenháromnál? Nem. Így továbblép
+
+00:01:47.420 --> 00:01:51.000
+az else if-re. Kisebb a tizenhat
+
+00:01:51.040 --> 00:01:55.800
+húsznál? Igen, ez igaz. Lefuttatja tehát
+
+00:01:55.820 --> 00:01:58.960
+azt a blokkot, és kiad egy ifjúsági jegyet.
+
+00:01:59.000 --> 00:02:02.340
+Ezzel viszont végzett is. Semmi mást nem ellenőriz.
+
+00:02:03.020 --> 00:02:05.000
+A legvégső else-re rá se
+
+00:02:05.080 --> 00:02:08.600
+néz. Amint Jiki talál egy igaz feltételt,
+
+00:02:09.080 --> 00:02:11.480
+lefuttatja a hozzá tartozó blokkot, és minden
+
+00:02:11.540 --> 00:02:14.980
+alatta lévőt átugrik. Ez a legfontosabb,
+
+00:02:15.000 --> 00:02:18.380
+amit meg kell értened: mindig csak egyetlen blokk fut le.
+
+00:02:18.390 --> 00:02:20.980
+Jiki végigmegy a láncon, megkeresi az első
+
+00:02:21.020 --> 00:02:24.400
+igaz feltételt, lefuttatja azt a blokkot, aztán továbbmegy.
+
+00:02:24.420 --> 00:02:25.980
+Van még valami, amit fontos igazán megérteni,
+
+00:02:26.020 --> 00:02:29.020
+mert sokakat megzavar. Finom,
+
+00:02:29.220 --> 00:02:33.800
+de nagyon fontos különbség van aközött, hogy két
+
+00:02:33.960 --> 00:02:39.120
+külön elágazást írsz, vagy else if-et használsz.
+
+00:02:39.180 --> 00:02:41.390
+Képzeld el, hogy egy olyan programot készítünk,
+
+00:02:41.440 --> 00:02:44.989
+amely valakinek a pontszáma alapján vagy egy
+
+00:02:45.020 --> 00:02:48.660
+alapnyereményt, vagy bónusznyereményt ad. Nézd meg ezt a két lehetőséget.
+
+00:02:49.660 --> 00:02:53.360
+Az egyik else-t használ, a másik… bocsánat.
+
+00:02:53.460 --> 00:02:55.800
+Az egyik else if-et használ, a másik pedig
+
+00:02:55.880 --> 00:03:00.240
+két külön if-et. Mi fog másképp történni? Szánj
+
+00:03:00.280 --> 00:03:02.140
+rá egy percet, és gondold végig. Akár
+
+00:03:02.180 --> 00:03:06.570
+állítsd is meg a videót. Az első esetben,
+
+00:03:06.600 --> 00:03:10.340
+az else if-fel, ellenőrizzük a magas pontszámot,
+
+00:03:10.400 --> 00:03:12.860
+odaadjuk a nyereményt, az else if-et pedig
+
+00:03:12.920 --> 00:03:15.720
+már nem futtatjuk le. Így aki
+
+00:03:15.760 --> 00:03:18.120
+száz pont felett teljesít,
+
+00:03:18.160 --> 00:03:21.850
+csak a bónusznyereményt kapja meg. A második
+
+00:03:21.880 --> 00:03:25.840
+példában viszont a két if teljesen független. Mindkettő
+
+00:03:25.920 --> 00:03:29.860
+lefut, és mindkettő igaz lesz. Így
+
+00:03:29.900 --> 00:03:33.280
+itt az illető két nyereményt kap. Az első
+
+00:03:33.340 --> 00:03:35.700
+változatban egy nyeremény, a másodikban
+
+00:03:35.840 --> 00:03:38.380
+kettő. Szánj rá egy percet,
+
+00:03:38.440 --> 00:03:42.990
+hogy ezt tényleg megértsd. Az is érdekes,
+
+00:03:43.040 --> 00:03:45.850
+hogy bármelyik lehet a helyes megoldás,
+
+00:03:45.880 --> 00:03:48.060
+a játék felépítésétől függően. Lehet,
+
+00:03:48.100 --> 00:03:50.600
+hogy a versenyző egy sima és egy
+
+00:03:50.660 --> 00:03:54.160
+bónusznyereményt is kap, de az is lehet, hogy csak
+
+00:03:54.200 --> 00:03:56.780
+átminősítik a nyereményét bónuszra. Egyik kód sem
+
+00:03:56.820 --> 00:04:00.060
+jó vagy rossz önmagában, csak más-más
+
+00:04:00.120 --> 00:04:03.620
+helyzetben hasznosak. Neked viszont tudnod
+
+00:04:03.640 --> 00:04:05.560
+kell, hogy melyiket akarod éppen
+
+00:04:05.640 --> 00:04:08.960
+használni. A következő gyakorlatokban
+
+00:04:09.000 --> 00:04:11.320
+if-et, else if-et és else-t fogsz használni
+
+00:04:11.380 --> 00:04:14.340
+különböző helyzetek kezelésére. Sok sikert! Hamarosan
+
+00:04:14.360 --> 00:04:15.040
+találkozunk.

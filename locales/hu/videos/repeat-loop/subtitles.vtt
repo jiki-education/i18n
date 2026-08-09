@@ -1,0 +1,264 @@
+WEBVTT
+
+NOTE en_md5 d53eb0ea7bb0ec1daa64bb73829462f2
+
+00:00:00.240 --> 00:00:03.700
+Üdv újra! Eddig minden kódunk
+
+00:00:03.720 --> 00:00:06.880
+lineáris volt: Jiki minden utasítást
+
+00:00:06.920 --> 00:00:10.660
+sorban, fentről lefelé
+
+00:00:10.670 --> 00:00:14.220
+hajtott végre. Most azt nézzük meg,
+
+00:00:14.260 --> 00:00:16.330
+hogyan léphet ki Jiki ebből a
+
+00:00:16.460 --> 00:00:19.690
+szigorú, fentről lefelé haladó rendből, pontosabban azt,
+
+00:00:19.720 --> 00:00:21.800
+hogyan mondhatjuk meg neki, hogy ugyanazt
+
+00:00:21.880 --> 00:00:24.320
+a kódrészletet többször egymás után
+
+00:00:24.360 --> 00:00:28.680
+futtassa le. Képzeld el például, hogy a
+
+00:00:28.760 --> 00:00:31.180
+labirintusban vagy, és 10 lépést szeretnél
+
+00:00:31.240 --> 00:00:34.240
+előre menni. Ebben segítene a walk
+
+00:00:34.280 --> 00:00:36.690
+függvény, de mi lenne, ha
+
+00:00:36.740 --> 00:00:39.670
+az nem létezne? Mi lenne, ha csak a
+
+00:00:39.920 --> 00:00:44.700
+move függvényed volna? Ahelyett, hogy tízszer
+
+00:00:44.760 --> 00:00:48.000
+egymás után leírnánk, hogy move (ami elég fárasztó),
+
+00:00:48.740 --> 00:00:50.420
+arra van szükségünk, hogy
+
+00:00:50.500 --> 00:00:54.000
+azt mondhassuk: „Hé, Jiki, amit most mondok,
+
+00:00:54.120 --> 00:00:59.840
+azt csináld meg tízszer! Move.” Ehhez
+
+00:00:59.900 --> 00:01:02.320
+a kódban az első
+
+00:01:02.480 --> 00:01:07.300
+kulcsszavunkat kell használnunk. A kulcsszavak olyan utasítások,
+
+00:01:07.340 --> 00:01:10.180
+amelyeket Jiki magától megért. Kicsit úgy néznek ki,
+
+00:01:10.220 --> 00:01:13.980
+mint a gépek, de nem azok. Amikor Jiki
+
+00:01:14.020 --> 00:01:16.460
+meglát egy kulcsszót, nem keres hozzá gépet
+
+00:01:16.500 --> 00:01:18.920
+a polcon, hanem egyszerűen tudja,
+
+00:01:18.960 --> 00:01:23.300
+mit kell tennie. Ez be van építve az agyába. A
+
+00:01:23.320 --> 00:01:25.700
+kurzus során nagyjából 20 különböző kulcsszót
+
+00:01:25.740 --> 00:01:28.480
+fogunk megtanulni, és
+
+00:01:28.520 --> 00:01:32.560
+az első közülük a repeat. A
+
+00:01:32.580 --> 00:01:35.540
+repeat kulcsszó pontosan azt csinálja, amit fent leírtam.
+
+00:01:36.100 --> 00:01:40.580
+Azt mondja Jikinek: „Amit ezután mondok,
+
+00:01:40.700 --> 00:01:42.990
+azt ismételd meg ennyiszer.” Nézd meg ezt
+
+00:01:43.080 --> 00:01:45.960
+a kódot. Először a
+
+00:01:46.000 --> 00:01:48.440
+repeat kulcsszóval közöljük Jikivel, hogy
+
+00:01:48.480 --> 00:01:51.580
+valamit többször fog megcsinálni. Utána
+
+00:01:51.680 --> 00:01:53.940
+sima zárójelbe írjuk, hányszor szeretnénk, hogy Jiki
+
+00:01:53.980 --> 00:01:57.070
+megismételje a dolgot, majd
+
+00:01:57.100 --> 00:02:00.030
+jönnek ezek a kapcsos zárójelek, és
+
+00:02:00.040 --> 00:02:02.850
+a kapcsos zárójelek között van mindaz,
+
+00:02:02.860 --> 00:02:06.020
+amit Jikinek ismételnie kell. Ez a minta
+
+00:02:06.100 --> 00:02:09.320
+egyébként hihetetlenül gyakori a programozásban: megadunk egy
+
+00:02:09.380 --> 00:02:12.400
+kulcsszót, általában valamilyen információval, például azzal,
+
+00:02:12.440 --> 00:02:14.549
+hányszor csináljon meg valamit
+
+00:02:14.580 --> 00:02:17.620
+ebben az esetben, utána pedig egy kódblokkot
+
+00:02:17.680 --> 00:02:20.880
+kapcsos zárójelek között. Visszatérve a labirintushoz:
+
+00:02:21.520 --> 00:02:25.220
+ahelyett, hogy leírnánk, hogy move, move, move, move,
+
+00:02:25.260 --> 00:02:30.580
+azt írhatjuk, hogy négyszer ismételje meg a move-ot. Jiki
+
+00:02:30.590 --> 00:02:32.860
+meglátja ezt a kódot, és
+
+00:02:32.940 --> 00:02:36.870
+négyszer egymás után használja majd a move gépet. És
+
+00:02:36.900 --> 00:02:38.960
+nem csak egyetlen dolgot tehetünk
+
+00:02:39.000 --> 00:02:41.800
+a kapcsos zárójelek közé. Jiki
+
+00:02:41.900 --> 00:02:45.320
+több dolgot is tud ismételten csinálni. Mondhatjuk neki,
+
+00:02:45.460 --> 00:02:48.080
+hogy hajtsa végre a move-ot, aztán a turnLeft-et, és ezt
+
+00:02:48.120 --> 00:02:51.540
+az egészet ismételje meg négyszer. Ha Jiki
+
+00:02:51.560 --> 00:02:54.000
+ezt látja, használja a move gépet, aztán
+
+00:02:54.060 --> 00:02:56.880
+a turnLeft gépet, aztán a move gépet, aztán
+
+00:02:56.920 --> 00:02:59.340
+a turnLeft gépet, aztán a move gépet,
+
+00:02:59.430 --> 00:03:01.720
+és így tovább, amíg mindkettőt meg nem
+
+00:03:01.800 --> 00:03:07.160
+csinálta négyszer. Ezeket az ismétlő utasításokat ciklusnak hívjuk,
+
+00:03:07.840 --> 00:03:09.540
+és sokféle ciklus létezik,
+
+00:03:09.580 --> 00:03:11.980
+amelyek mind egy kicsit másképp működnek.
+
+00:03:12.000 --> 00:03:15.210
+Mindegyiket megnézzük ebben a kurzusban. Nos,
+
+00:03:15.220 --> 00:03:17.710
+még egy dolgot érdemes tudni:
+
+00:03:17.760 --> 00:03:20.300
+amikor ciklusokkal dolgozol, elengedhetetlen,
+
+00:03:20.480 --> 00:03:24.240
+hogy a kódod rendezett maradjon. Ha
+
+00:03:24.280 --> 00:03:26.800
+a kódodnak jó a vizuális szerkezete,
+
+00:03:26.860 --> 00:03:28.940
+ránézésre látszik, mi történik benne.
+
+00:03:29.660 --> 00:03:31.740
+Ha viszont nem, ha elfelejted
+
+00:03:31.780 --> 00:03:34.400
+szépen behúzni a sorokat, vagy összevissza
+
+00:03:34.460 --> 00:03:38.630
+húzod be őket, minden gyorsan zavarossá válik. Ezért
+
+00:03:38.660 --> 00:03:41.500
+ezen a kurzuson mindig egy szabályt követünk. A
+
+00:03:41.600 --> 00:03:45.049
+nyitó kapcsos zárójelet mindig
+
+00:03:45.080 --> 00:03:48.430
+ugyanabba a sorba írod, mint a repeat utasítást. A
+
+00:03:48.430 --> 00:03:50.860
+záró kapcsos zárójelet mindig
+
+00:03:50.940 --> 00:03:54.080
+külön sorba írod az utasítás után, a
+
+00:03:54.120 --> 00:03:56.399
+köztük lévő kódot pedig mindig két
+
+00:03:56.480 --> 00:04:00.120
+szóközzel húzod be. Így minden szépen rendezett marad,
+
+00:04:01.020 --> 00:04:02.560
+és ha ezt elfelejted, vagy más
+
+00:04:02.620 --> 00:04:04.360
+mintát próbálsz követni, hibát kapsz.
+
+00:04:06.100 --> 00:04:08.080
+A következő néhány feladatban az a célod,
+
+00:04:08.120 --> 00:04:11.060
+hogy minél kevesebb kódsorral
+
+00:04:11.100 --> 00:04:13.720
+oldd meg a kihívásokat, és
+
+00:04:13.780 --> 00:04:15.320
+ebben segíthetnek a repeat
+
+00:04:15.380 --> 00:04:18.060
+ciklusok. Aztán megnézzük, hogyan
+
+00:04:18.070 --> 00:04:19.990
+használhatod a repeat ciklust
+
+00:04:20.019 --> 00:04:23.270
+más fogalmakkal együtt, hogy igazán
+
+00:04:23.320 --> 00:04:25.540
+hatékony technikákat láss. Jó szórakozást,
+
+00:04:25.580 --> 00:04:26.039
+hamarosan találkozunk!

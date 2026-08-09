@@ -1,0 +1,270 @@
+WEBVTT
+
+NOTE en_md5 c5187b46923e87c2aac86912c90dfb53
+
+00:00:00.100 --> 00:00:03.140
+Üdv újra! Remélhetőleg már otthonosabban mozogsz
+
+00:00:03.180 --> 00:00:06.810
+a tömbök között. A tömb a bevett választásunk, amikor
+
+00:00:06.840 --> 00:00:09.740
+bármiből listánk van: mentorok listája,
+
+00:00:09.760 --> 00:00:11.560
+pontszámok listája, hozzávalók listája.
+
+00:00:11.600 --> 00:00:14.420
+Bármilyen listához tömböt érdemes
+
+00:00:14.440 --> 00:00:17.630
+használni. De van egy másik adatszerkezet is,
+
+00:00:17.720 --> 00:00:20.060
+ami szintén nagyon gyakori, amikor valami
+
+00:00:20.070 --> 00:00:23.380
+kicsit összetettebbre van szükséged egy listánál. Képzeld el,
+
+00:00:23.420 --> 00:00:24.780
+hogy el akarunk tárolni rólam néhány információt:
+
+00:00:25.500 --> 00:00:27.580
+a nevemet, a koromat, azt, hogy hol születtem.
+
+00:00:28.280 --> 00:00:30.140
+Használhatnál erre tömböt is,
+
+00:00:30.150 --> 00:00:32.200
+de úgy nem igazán világos,
+
+00:00:32.240 --> 00:00:34.850
+mi micsoda. Anglia az, ahol
+
+00:00:34.880 --> 00:00:37.210
+születtem, vagy ahol élek? A 42 a
+
+00:00:37.300 --> 00:00:40.120
+korom, vagy valami más? És ha
+
+00:00:40.160 --> 00:00:42.050
+használni akarom, észben kell tartanom, hogy
+
+00:00:42.080 --> 00:00:44.740
+az első hely a névé, a második
+
+00:00:44.780 --> 00:00:47.900
+a koré, a harmadik a születési helyé.
+
+00:00:47.920 --> 00:00:49.840
+Elég kusza az egész, és azért kusza,
+
+00:00:49.880 --> 00:00:52.420
+mert ez valójában nem egy lista.
+
+00:00:52.480 --> 00:00:55.769
+Ennél összetettebb dologról van szó. És itt
+
+00:00:55.800 --> 00:00:58.500
+jönnek képbe a szótárak. A szótár egy
+
+00:00:58.560 --> 00:01:00.340
+újfajta adatszerkezet. Ez már az ötödik:
+
+00:01:00.420 --> 00:01:03.830
+megvan a string, a szám, a Boolean, a tömb,
+
+00:01:03.880 --> 00:01:06.200
+most pedig jön a szótár. És azt szeretném,
+
+00:01:06.260 --> 00:01:08.620
+ha úgy gondolnál rá, mint egy
+
+00:01:08.800 --> 00:01:12.180
+spirálfüzet egy lapjára. A bal oldalon vannak
+
+00:01:12.220 --> 00:01:15.460
+a címszavak: a name, az age, a birthplace,
+
+00:01:15.500 --> 00:01:18.400
+ezeket hívjuk kulcsoknak. A jobb oldalon pedig,
+
+00:01:18.480 --> 00:01:20.240
+minden címszó mellett, ott a
+
+00:01:20.300 --> 00:01:24.520
+tényleges adat: Jeremy, 42, England. Ezeket hívjuk
+
+00:01:24.600 --> 00:01:28.300
+értékeknek. Ahogy a tömb, a
+
+00:01:28.340 --> 00:01:31.180
+szótár is egyetlen dolog. Egyetlen lap
+
+00:01:31.190 --> 00:01:33.830
+egy füzetből. És ahogy a tömböt, Jiki
+
+00:01:33.840 --> 00:01:35.250
+a szótárt is belerakhatja egy változóba, egy dobozba,
+
+00:01:35.720 --> 00:01:37.930
+beadhatja egy függvény bemeneteként, vagy
+
+00:01:37.980 --> 00:01:39.540
+kivehet egy szótárt a kimeneti
+
+00:01:39.560 --> 00:01:42.200
+csúszdából. Íme, így néz ki egy szótár
+
+00:01:42.260 --> 00:01:45.080
+kódban. Kapcsos zárójelekkel jelöljük
+
+00:01:45.120 --> 00:01:47.490
+az elejét és a végét, belül
+
+00:01:47.520 --> 00:01:49.420
+pedig párok vannak: bal oldalt egy kulcs,
+
+00:01:49.480 --> 00:01:51.700
+utána egy kettőspont, jobb oldalt pedig
+
+00:01:51.740 --> 00:01:53.860
+az érték. A párok közé
+
+00:01:53.900 --> 00:01:56.260
+vesszőt teszünk. Jiki ránéz erre, és
+
+00:01:56.280 --> 00:01:58.600
+előveszi a spirálfüzetét. Felírja: name,
+
+00:01:58.960 --> 00:02:02.100
+Jeremy; age, 42; és így tovább,
+
+00:02:02.140 --> 00:02:04.440
+minden párra. Amikor kész, letépi
+
+00:02:04.480 --> 00:02:06.320
+a lapot, és beleteszi egy
+
+00:02:06.420 --> 00:02:09.360
+person feliratú dobozba. Van néhány szabály,
+
+00:02:09.420 --> 00:02:12.060
+amit érdemes tudni. A kulcs mindig string.
+
+00:02:12.140 --> 00:02:14.620
+Idézőjelek közé kell tenni, és minden kulcsnak
+
+00:02:14.680 --> 00:02:18.170
+egyedinek kell lennie. Nem lehet két
+
+00:02:18.260 --> 00:02:21.420
+name nevű kulcs ugyanabban a szótárban. Az értékek
+
+00:02:21.480 --> 00:02:23.150
+lehetnek egyformák, ha úgy alakul,
+
+00:02:23.280 --> 00:02:25.810
+de a kulcsoknak különbözniük kell.
+
+00:02:25.820 --> 00:02:27.600
+És az érték bármi lehet:
+
+00:02:27.680 --> 00:02:31.000
+string, szám, Boolean, tömb, vagy akár egy másik szótár.
+
+00:02:32.140 --> 00:02:34.540
+Üres szótárad is lehet,
+
+00:02:34.600 --> 00:02:37.220
+ahogy üres tömbünk is volt:
+
+00:02:37.280 --> 00:02:38.800
+kezdhetünk azzal, és később
+
+00:02:38.820 --> 00:02:42.210
+építkezhetünk rá. Megvan tehát a
+
+00:02:42.260 --> 00:02:44.160
+szótár, de hogyan szedsz ki belőle
+
+00:02:44.220 --> 00:02:46.900
+valamit? Ugyanazt a szögletes zárójeles
+
+00:02:46.920 --> 00:02:48.960
+írásmódot használjuk, mint a tömböknél és
+
+00:02:49.020 --> 00:02:52.980
+a stringeknél, csak pozíciószám helyett
+
+00:02:53.020 --> 00:02:55.040
+egy kulcsot írunk bele. Ha tehát
+
+00:02:55.100 --> 00:02:57.390
+valakinek a nevét akarjuk kiszedni egy szótárból,
+
+00:02:57.940 --> 00:03:01.620
+ezt írjuk: a person változó, szögletes zárójel,
+
+00:03:01.640 --> 00:03:03.580
+benne pedig a kulcs, jelen esetben a name,
+
+00:03:03.660 --> 00:03:07.260
+idézőjelben. Ez azt mondja Jikinek, hogy nézzen
+
+00:03:07.300 --> 00:03:09.970
+bele a person szótárba, keresse meg a
+
+00:03:10.080 --> 00:03:12.900
+name kulcsot, és vegye ki az értékét. Jiki
+
+00:03:13.040 --> 00:03:15.000
+odamegy a person dobozhoz, kiveszi belőle
+
+00:03:15.040 --> 00:03:17.340
+a füzetlapot, végigpásztázza a
+
+00:03:17.400 --> 00:03:19.760
+kulcsokat, amíg meg nem találja a name-et, aztán
+
+00:03:19.800 --> 00:03:21.900
+leolvassa az értékét, Jeremy, és belerakja
+
+00:03:21.910 --> 00:03:27.540
+egy új, name nevű dobozba. A szögletes zárójel mindig
+
+00:03:27.580 --> 00:03:29.980
+ugyanazt jelenti: belenyúlsz valamibe,
+
+00:03:29.990 --> 00:03:32.370
+és kiveszel belőle valamit. Tömböknél és stringeknél
+
+00:03:32.960 --> 00:03:34.720
+számmal mondod meg, melyik pozícióból
+
+00:03:34.760 --> 00:03:37.580
+akarsz kivenni valamit. Szótáraknál pedig
+
+00:03:37.700 --> 00:03:40.140
+stringet használsz, a kulcsot. Ugyanaz
+
+00:03:40.180 --> 00:03:43.340
+az ötlet, csak kicsit más az írásmód. Szóval
+
+00:03:43.380 --> 00:03:45.390
+itt van pár feladat, amiben gyakorolhatod
+
+00:03:45.500 --> 00:03:47.640
+a szótárak létrehozását és az értékek kiolvasását.
+
+00:03:48.260 --> 00:03:50.160
+Minden, ami kell, az, amit most vettünk át:
+
+00:03:50.580 --> 00:03:52.660
+kapcsos zárójel a létrehozáshoz, szögletes zárójel
+
+00:03:52.680 --> 00:03:55.200
+az eléréshez. Szánj rájuk időt.
+
+00:03:55.240 --> 00:03:56.820
+Sok sikert, és hamarosan itt találkozunk!

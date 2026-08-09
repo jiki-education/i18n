@@ -1,0 +1,396 @@
+WEBVTT
+
+NOTE en_md5 9ba87f0c52699c431570792318049b06
+
+00:00:00.220 --> 00:00:04.109
+Üdv újra! Mostanra remélhetőleg magabiztosan
+
+00:00:04.280 --> 00:00:07.870
+használod a függvényeket és a repeat ciklusokat.
+
+00:00:07.900 --> 00:00:10.080
+Ebben a részben egy újabb, alapvetően
+
+00:00:10.100 --> 00:00:12.610
+fontos témára térünk át, amit valószínűleg
+
+00:00:12.640 --> 00:00:14.880
+minden programodban használni fogsz, és ez
+
+00:00:14.940 --> 00:00:19.220
+a téma a változó. Az információ tárolására
+
+00:00:19.460 --> 00:00:22.700
+a változók szolgálnak. Programozás közben gyakran
+
+00:00:22.760 --> 00:00:25.420
+el kell tennünk egy számot vagy egy
+
+00:00:25.500 --> 00:00:27.780
+stringet későbbre, és pontosan erre valók
+
+00:00:27.800 --> 00:00:30.480
+a változók. Nézzük hát egy kicsit
+
+00:00:30.580 --> 00:00:32.880
+távolabbról Jiki raktárát! Látni fogod, hogy
+
+00:00:32.940 --> 00:00:35.780
+van benne egy másik polcsor is. Az elsőt már ismerjük:
+
+00:00:35.800 --> 00:00:37.160
+azon sorakoznak a függvények,
+
+00:00:37.180 --> 00:00:39.680
+ezek a kis gépek, mint a move
+
+00:00:39.700 --> 00:00:42.140
+vagy a rectangle. Ezen a második
+
+00:00:42.160 --> 00:00:44.710
+polcsoron viszont gépek helyett rengeteg
+
+00:00:44.760 --> 00:00:47.860
+dobozt látsz, és ezeket a dobozokat
+
+00:00:47.900 --> 00:00:50.080
+hívjuk változóknak. Jikinek bármit odaadhatsz,
+
+00:00:50.140 --> 00:00:52.460
+hogy tegye el egy ilyen dobozba,
+
+00:00:52.580 --> 00:00:54.940
+később pedig megkérheted, hogy vegye elő újra.
+
+00:00:54.980 --> 00:00:57.480
+Minden doboznak van neve, pontosan úgy,
+
+00:00:57.520 --> 00:01:00.020
+ahogy a függvényeknek is, és minden dobozban
+
+00:01:00.140 --> 00:01:03.000
+pontosan egy dolog van. Egyelőre egy szám
+
+00:01:03.380 --> 00:01:05.320
+vagy egy string, de a kurzus
+
+00:01:05.340 --> 00:01:07.480
+későbbi részében azt is megnézzük, hogyan
+
+00:01:07.540 --> 00:01:10.800
+tárolhatunk bennük összetettebb dolgokat. Na de hogyan
+
+00:01:10.860 --> 00:01:12.500
+mondjuk meg Jikinek, hogy dobozt készítsen, és tegyen bele valamit?
+
+00:01:13.240 --> 00:01:16.920
+A let kulcsszóval. A let kulcsszó azt jelzi
+
+00:01:17.000 --> 00:01:19.200
+Jikinek, hogy új dobozt kell készítenie.
+
+00:01:19.300 --> 00:01:21.860
+Képzeld el, ahogy kibontja a kartondobozt
+
+00:01:21.900 --> 00:01:23.760
+a csomagolásából, összeállítja,
+
+00:01:23.800 --> 00:01:26.320
+majd megnézi, mi áll
+
+00:01:26.440 --> 00:01:28.840
+a let szó után: ez lesz a címke,
+
+00:01:28.880 --> 00:01:30.620
+amit a dobozra tesz,
+
+00:01:30.720 --> 00:01:32.940
+jelen esetben a name. Fogja hát a tollát,
+
+00:01:33.220 --> 00:01:36.260
+és ráírja a címkére, hogy name. Ezután
+
+00:01:36.320 --> 00:01:38.360
+megnézi, mi áll az egyenlőségjel
+
+00:01:38.440 --> 00:01:41.020
+után. Ez most az én nevem, a Jeremy,
+
+00:01:41.740 --> 00:01:43.960
+és mivel a Jeremy egy string,
+
+00:01:44.340 --> 00:01:45.640
+Jiki fog egy papírlapot,
+
+00:01:45.660 --> 00:01:48.830
+és ráírja, hogy Jeremy. Ez csak egy string,
+
+00:01:48.900 --> 00:01:50.460
+ugyanolyan, mint a színek,
+
+00:01:50.520 --> 00:01:52.660
+amikkel eddig dolgoztál, a papírlapot pedig
+
+00:01:52.700 --> 00:01:56.410
+beleteszi a dobozba. Megkértük tehát,
+
+00:01:56.460 --> 00:01:58.260
+hogy készítsen egy dobozt,
+
+00:01:58.300 --> 00:02:00.120
+címkézze fel, és tegyen bele valamit,
+
+00:02:00.640 --> 00:02:02.300
+ő pedig felteszi a dobozt
+
+00:02:02.380 --> 00:02:05.140
+a polcra. A programod bármelyik
+
+00:02:05.220 --> 00:02:07.980
+későbbi pontján Jiki le tudja venni
+
+00:02:08.020 --> 00:02:09.840
+a dobozt a polcról, és megnézi,
+
+00:02:09.979 --> 00:02:11.900
+mi van benne. Erre mindjárt
+
+00:02:11.940 --> 00:02:14.580
+visszatérünk. Most viszont azt szeretném,
+
+00:02:14.660 --> 00:02:16.540
+hogy kezdd el felépíteni magadban
+
+00:02:16.580 --> 00:02:19.120
+ezt a képet. Én ősidők óta programozok, és
+
+00:02:19.180 --> 00:02:21.790
+kódírás közben még ma is azt képzelem el,
+
+00:02:21.820 --> 00:02:23.680
+hogy beleteszek valamit egy dobozba,
+
+00:02:23.720 --> 00:02:26.340
+amit később majd kiveszek. Amikor meglátod
+
+00:02:26.400 --> 00:02:28.570
+a let kulcsszót, tényleg gondolj arra:
+
+00:02:28.690 --> 00:02:31.460
+„Rendben, ez azt jelenti, hogy új dobozt készítek.”
+
+00:02:33.520 --> 00:02:34.530
+Néhány szó a változók
+
+00:02:34.580 --> 00:02:37.210
+nevéről, vagyis a dobozok
+
+00:02:37.260 --> 00:02:40.140
+címkéiről. Ezekre van pár szabályunk.
+
+00:02:40.180 --> 00:02:44.740
+Először is, a változónevekben nem lehet szóköz.
+
+00:02:44.780 --> 00:02:47.580
+Ha egy doboz címkéjéhez több szót
+
+00:02:47.700 --> 00:02:49.859
+szeretnél használni, a szavakat
+
+00:02:49.920 --> 00:02:51.900
+egyszerűen egymáshoz fűzzük, és
+
+00:02:51.980 --> 00:02:55.180
+minden szó első betűjét
+
+00:02:55.220 --> 00:02:57.520
+nagybetűre cseréljük. Ezt hívjuk
+
+00:02:57.680 --> 00:03:00.660
+camel case-nek. Képzeld el, ahogy a teve púpjai
+
+00:03:00.740 --> 00:03:02.540
+minden új szó első betűjét
+
+00:03:02.580 --> 00:03:05.260
+nagybetűvé tolják fel. Ha tehát
+
+00:03:05.340 --> 00:03:08.290
+a my name címkét szeretnéd,
+
+00:03:08.320 --> 00:03:10.920
+két külön szó helyett egyetlen szót írunk,
+
+00:03:10.960 --> 00:03:13.400
+nagy N-nel: myName.
+
+00:03:15.200 --> 00:03:17.960
+Emellett minden változónévnek egyedinek kell lennie.
+
+00:03:18.020 --> 00:03:20.180
+Nem lehet két dobozod ugyanazzal a címkével,
+
+00:03:20.860 --> 00:03:23.180
+és egy változó nem kaphatja ugyanazt a nevet,
+
+00:03:23.240 --> 00:03:26.140
+mint egy függvény. Ha ez mégis megtörténik,
+
+00:03:26.180 --> 00:03:28.040
+Jiki összezavarodik, és hibaüzenetet ad.
+
+00:03:29.660 --> 00:03:31.210
+Nézzük meg, hol jöhet
+
+00:03:31.280 --> 00:03:34.160
+jól egy változó. Tegyük fel, hogy
+
+00:03:34.200 --> 00:03:36.920
+egy napot rajzolunk az égre. Tudjuk,
+
+00:03:36.980 --> 00:03:39.490
+hogy használhatjuk a circle függvényt,
+
+00:03:39.580 --> 00:03:43.480
+és négy bemenetet adhatunk neki: left, top, radius
+
+00:03:43.680 --> 00:03:47.000
+és color. Ahogy azonban egyre több mindent rajzolunk,
+
+00:03:47.040 --> 00:03:49.160
+és ezek a számok szétszórva
+
+00:03:49.180 --> 00:03:51.740
+hevernek a kódban, egyre nehezebb
+
+00:03:51.780 --> 00:03:55.020
+átlátni és követni őket. Ehelyett
+
+00:03:55.280 --> 00:03:57.500
+létrehozhatunk egy-egy változót a
+
+00:03:57.600 --> 00:04:00.760
+left, a top, a radius és a color értékének,
+
+00:04:00.860 --> 00:04:04.560
+és később ezekre a változókra hivatkozunk. A végcélunk az,
+
+00:04:04.620 --> 00:04:06.380
+hogy a circle függvénynek
+
+00:04:06.420 --> 00:04:11.200
+szép, olvasható dobozneveket adhassunk meg,
+
+00:04:11.220 --> 00:04:14.590
+és amikor Jiki meglátja ezeket a neveket,
+
+00:04:14.620 --> 00:04:16.480
+tudja, hogy le kell vennie a dobozokat a polcról,
+
+00:04:16.560 --> 00:04:20.459
+és azt kell használnia, ami bennük van. Hozzunk hát
+
+00:04:20.519 --> 00:04:22.550
+létre néhány változót. Kezdjük
+
+00:04:22.550 --> 00:04:25.050
+a nap bal oldali pozíciójával.
+
+00:04:25.580 --> 00:04:27.350
+A let kulcsszóval szólunk Jikinek,
+
+00:04:27.350 --> 00:04:29.700
+hogy készítsen egy új dobozt,
+
+00:04:29.740 --> 00:04:32.310
+leftPosition néven. Figyeld meg itt is a camel case-t
+
+00:04:32.500 --> 00:04:35.180
+a nagy P-vel. Azt is megmondjuk
+
+00:04:35.260 --> 00:04:38.560
+Jikinek, milyen szám kerüljön a dobozba. Ő
+
+00:04:38.580 --> 00:04:40.340
+felteszi a polcra, majd ugyanígy
+
+00:04:40.420 --> 00:04:43.020
+elkészíti a topPosition, a radius
+
+00:04:43.180 --> 00:04:46.540
+és a color dobozát is. A kódunkban
+
+00:04:46.620 --> 00:04:48.870
+bármikor hivatkozhatunk ezekre a változókra,
+
+00:04:49.000 --> 00:04:51.400
+Jiki pedig kiveszi az értékeket, és
+
+00:04:51.440 --> 00:04:53.530
+belerakja őket egy gépbe. A változók
+
+00:04:53.640 --> 00:04:56.120
+másik nagy előnye, hogy ha bármikor
+
+00:04:56.160 --> 00:04:58.960
+a nappal azonos pozícióba
+
+00:04:59.000 --> 00:05:01.620
+szeretnénk rajzolni valamit, egyszerűen újra
+
+00:05:01.680 --> 00:05:04.980
+használhatjuk ugyanazt a leftPosition és topPosition változót. Vegyünk
+
+00:05:05.000 --> 00:05:07.660
+egy másik példát. Képzeld el, hogy falat építesz,
+
+00:05:07.700 --> 00:05:10.200
+30 téglából, és azt szeretnéd, hogy
+
+00:05:10.220 --> 00:05:11.840
+minden tégla ugyanolyan széles
+
+00:05:11.880 --> 00:05:14.270
+és ugyanolyan magas legyen. Sokkal jobb,
+
+00:05:14.360 --> 00:05:17.100
+ha a kódod elején létrehozol egy-egy változót
+
+00:05:17.280 --> 00:05:19.580
+a szélességnek és a magasságnak,
+
+00:05:19.660 --> 00:05:21.590
+és a továbbiakban
+
+00:05:21.640 --> 00:05:23.900
+ezekre hivatkozol. Ha ugyanis később
+
+00:05:23.980 --> 00:05:25.960
+módosítani akarod a szélességet vagy a magasságot,
+
+00:05:26.020 --> 00:05:28.260
+elég egyetlen helyen átírnod, és minden más
+
+00:05:28.380 --> 00:05:33.100
+automatikusan frissül. A következő néhány feladatban
+
+00:05:33.260 --> 00:05:35.980
+változókkal fogsz letisztultabb
+
+00:05:36.060 --> 00:05:38.840
+és olvashatóbb kódot írni. Ha pedig már
+
+00:05:38.880 --> 00:05:41.910
+magabiztosan hozol létre és használsz változókat,
+
+00:05:41.960 --> 00:05:44.280
+megnézzük, hogyan hivatkozhatnak a változók
+
+00:05:44.320 --> 00:05:46.920
+más változókra, és ott válnak igazán izgalmassá a dolgok.
+
+00:05:47.620 --> 00:05:50.110
+Most viszont gyakorolj ezekkel a feladatokkal,
+
+00:05:50.520 --> 00:05:51.880
+hamarosan találkozunk!
