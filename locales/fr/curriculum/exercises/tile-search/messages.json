@@ -1,0 +1,71 @@
+{
+  "checks": {
+    "tooManyLines": "Ta solution contient trop de lignes de code. Peux-tu la raccourcir ?"
+  },
+  "tasks": {
+    "searchForTile": {
+      "name": "Cherche un jeton",
+      "description": "Écris une fonction qui vérifie si le jeton d'une lettre précise se trouve sur le chevalet. Renvoie true si tu la trouves, false sinon."
+    },
+    "solveInEightLines": {
+      "name": "Résous en 8 lignes de code",
+      "description": "Peux-tu résoudre cet exercice en seulement 8 lignes de code ?"
+    }
+  },
+  "scenarios": {
+    "letterFoundAtStart": {
+      "name": "Lettre au début",
+      "description": "La lettre est le premier jeton du chevalet."
+    },
+    "letterFoundInMiddle": {
+      "name": "Lettre au milieu",
+      "description": "La lettre se trouve au milieu du chevalet."
+    },
+    "letterFoundAtEnd": {
+      "name": "Lettre à la fin",
+      "description": "La lettre est le dernier jeton du chevalet."
+    },
+    "letterNotFound": {
+      "name": "Lettre introuvable",
+      "description": "La lettre n'est pas sur le chevalet."
+    },
+    "emptyRack": {
+      "name": "Chevalet vide",
+      "description": "Un chevalet vide ne contient aucun jeton à trouver."
+    },
+    "duplicateLetters": {
+      "name": "Chevalet avec doublons",
+      "description": "La lettre apparaît parmi des jetons en double."
+    },
+    "singleTileFound": {
+      "name": "Jeton unique trouvé",
+      "description": "Un chevalet avec un seul jeton, qui correspond."
+    },
+    "singleTileNotFound": {
+      "name": "Jeton unique introuvable",
+      "description": "Un chevalet avec un seul jeton, qui ne correspond pas."
+    },
+    "bonus1": {
+      "name": "8 lignes de code",
+      "description": "Résous l'exercice en seulement 8 lignes de code."
+    }
+  },
+  "hints": {
+    "byHand": {
+      "question": "Comment est-ce que je ferais ça à la main ?",
+      "answer": "Tu parcourrais la botte de foin lettre par lettre, en comparant chaque lettre à l'aiguille. Dès que tu trouverais une correspondance, tu t'arrêterais. Si tu arrivais au bout sans avoir trouvé de correspondance, c'est que l'aiguille n'y est pas."
+    },
+    "loopAndCompare": {
+      "question": "Comment boucler et comparer ?",
+      "answer": "Une boucle `for-of` te donne chaque lettre de la string l'une après l'autre. À l'intérieur, une instruction `if` compare la lettre courante à l'aiguille."
+    },
+    "returnTrue": {
+      "question": "Quand renvoyer true ?",
+      "answer": "Dès que tu trouves une correspondance. Inutile de vérifier les lettres restantes."
+    },
+    "returnFalse": {
+      "question": "Quand renvoyer false ?",
+      "answer": "SEULEMENT après la fin de la boucle, si aucune correspondance n'a été trouvée. Une erreur courante consiste à placer `return false` à l'intérieur de la boucle. La fonction abandonne alors dès la première lettre qui ne correspond pas, avant même d'avoir vérifié le reste."
+    }
+  }
+}

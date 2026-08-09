@@ -1,0 +1,47 @@
+{
+  "checks": {
+    "tooManyLines": "Ta solution a trop de lignes de code. Peux-tu la raccourcir ?"
+  },
+  "tasks": {
+    "createAcronymFunction": {
+      "name": "Crée la fonction acronym",
+      "description": "Écris une fonction acronym qui prend trois mots et renvoie un acronyme de trois lettres formé en prenant la première lettre de chaque mot."
+    },
+    "solveInThreeLines": {
+      "name": "Résous en 3 lignes de code",
+      "description": "Peux-tu résoudre cet exercice en seulement 3 lignes de code ?"
+    }
+  },
+  "scenarios": {
+    "png": {
+      "name": "Portable Network Graphics",
+      "description": "Crée l'acronyme « PNG » à partir de « Portable », « Network » et « Graphics »."
+    },
+    "css": {
+      "name": "Cascading Style Sheets",
+      "description": "Crée l'acronyme « CSS » à partir de « Cascading », « Style » et « Sheets »."
+    },
+    "www": {
+      "name": "World Wide Web",
+      "description": "Crée l'acronyme « WWW » à partir de « World », « Wide » et « Web »."
+    },
+    "lol": {
+      "name": "Mots en minuscules",
+      "description": "Crée l'acronyme « lol » à partir de « laugh », « out » et « loud »."
+    },
+    "bonus1": {
+      "name": "3 lignes de code",
+      "description": "Résous l'exercice en seulement 3 lignes de code."
+    }
+  },
+  "hints": {
+    "firstCharacter": {
+      "question": "Comment obtenir uniquement le premier caractère d'un mot ?",
+      "answer": "Utilise l'indexation sur la string. Le premier caractère se trouve à l'indice `[0]`."
+    },
+    "buildResult": {
+      "question": "Comment construire le résultat de trois lettres ?",
+      "answer": "Prends le premier caractère de chaque mot et assemble-les dans l'ordre à l'aide de la concaténation (`+`) ou d'une template string."
+    }
+  }
+}

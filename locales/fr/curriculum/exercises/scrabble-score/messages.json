@@ -1,0 +1,94 @@
+{
+  "tasks": {
+    "createLetterValuesFunction": {
+      "name": "Crée la fonction letterValues",
+      "description": "Écris une fonction letterValues qui renvoie un dictionnaire associant chaque lettre majuscule à sa valeur en points au Scrabble. Pars de la liste fournie de groupes de lettres et de leurs valeurs, et convertis-la en dictionnaire."
+    },
+    "singleLetters": {
+      "name": "Calcule le score de lettres seules",
+      "description": "Écris une fonction scrabbleScore qui prend un mot et renvoie son score total au Scrabble. Commence par la faire fonctionner pour des lettres seules."
+    },
+    "words": {
+      "name": "Calcule le score de mots",
+      "description": "Fais maintenant fonctionner scrabbleScore avec des mots entiers de différentes longueurs."
+    },
+    "edgeCases": {
+      "name": "Gère les cas limites",
+      "description": "Pour finir, assure-toi que ta fonction gère les cas limites comme les strings vides et l'alphabet complet."
+    }
+  },
+  "scenarios": {
+    "letterValues": {
+      "name": "La fonction letterValues",
+      "description": "La fonction letterValues doit renvoyer un dictionnaire complet des valeurs des lettres."
+    },
+    "scrabbleLowercaseLetter": {
+      "name": "Lettre minuscule",
+      "description": "Calcule le score d'une seule lettre minuscule."
+    },
+    "scrabbleUppercaseLetter": {
+      "name": "Lettre majuscule",
+      "description": "Calcule le score d'une seule lettre majuscule."
+    },
+    "scrabbleValuableLetter": {
+      "name": "Lettre de grande valeur",
+      "description": "Calcule le score d'une lettre de grande valeur."
+    },
+    "scrabbleShortWord": {
+      "name": "Mot court",
+      "description": "Calcule le score d'un mot court."
+    },
+    "scrabbleShortValuableWord": {
+      "name": "Mot court de grande valeur",
+      "description": "Calcule le score d'un mot court qui contient des lettres de grande valeur."
+    },
+    "scrabbleMediumWord": {
+      "name": "Mot de longueur moyenne",
+      "description": "Calcule le score d'un mot de longueur moyenne."
+    },
+    "scrabbleMediumValuableWord": {
+      "name": "Mot moyen de grande valeur",
+      "description": "Calcule le score d'un mot de longueur moyenne qui contient des lettres de grande valeur."
+    },
+    "scrabbleLongMixedCaseWord": {
+      "name": "Mot long, casse mélangée",
+      "description": "Calcule le score d'un mot long qui mélange majuscules et minuscules."
+    },
+    "scrabbleEnglishLikeWord": {
+      "name": "Mot qui ressemble à de l'anglais",
+      "description": "Calcule le score d'un mot qui ressemble à de l'anglais."
+    },
+    "scrabbleEmptyInput": {
+      "name": "Entrée vide",
+      "description": "Calcule le score d'une string vide."
+    },
+    "scrabbleEntireAlphabet": {
+      "name": "Alphabet complet",
+      "description": "Calcule le score d'une string qui contient toutes les lettres de l'alphabet."
+    }
+  },
+  "hints": {
+    "startingPoint": {
+      "question": "Par où commencer avec les valeurs des lettres ?",
+      "answer": "N'écris pas à la main une table de 26 lignes. Pars d'une liste de groupes, par exemple `[\"AEIOULNRST\", \"DG\", \"BCMP\", \"FHVWY\", \"K\", \"JX\", \"QZ\"]`, et de leurs valeurs correspondantes `[1, 2, 3, 4, 5, 8, 10]`."
+    },
+    "buildLookup": {
+      "question": "Comment transformer ces groupes en un outil de recherche utilisable ?",
+      "answer": "Construis un dictionnaire en parcourant les lettres de chaque groupe et en associant chaque lettre à la valeur de son groupe. Ensuite, `dict[\"A\"]` te donne directement `1`."
+    },
+    "lowercaseInput": {
+      "question": "Pourquoi mes recherches ne fonctionnent-elles pas avec des minuscules ?",
+      "answer": "Si les clés de ton dictionnaire sont en majuscules, chercher `'a'` ne correspondra pas à `'A'`. Convertis chaque lettre en majuscule avant de chercher sa valeur."
+    },
+    "addUpScore": {
+      "question": "Comment additionner les points ?",
+      "answer": "Parcours le mot, cherche la valeur de chaque lettre dans ton dictionnaire et ajoute-la à un total courant. Renvoie le total à la fin."
+    }
+  },
+  "functions": {
+    "toUpperCase": {
+      "description": "Convertit une string en majuscules (fournie par la stdlib du niveau)",
+      "category": "Opérations sur les strings"
+    }
+  }
+}

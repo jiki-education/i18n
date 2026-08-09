@@ -1,0 +1,51 @@
+{
+  "checks": {
+    "stripe1Purple": "La rayure 1 est une rayure d'extrémité, elle devrait donc être violette.",
+    "stripe2Blue": "La rayure 2 devrait être bleue (son numéro est pair, mais pas un multiple de 4).",
+    "stripe3Yellow": "La rayure 3 devrait être jaune (son numéro est impair, et ce n'est pas une rayure d'extrémité).",
+    "stripe4Green": "La rayure 4 devrait être verte. Son numéro est un multiple de 4 : vérifie donc la règle des multiples de 4 avant celle des nombres pairs.",
+    "stripe5Yellow": "La rayure 5 devrait être jaune (son numéro est impair, et ce n'est pas une rayure d'extrémité).",
+    "stripe6Blue": "La rayure 6 devrait être bleue (son numéro est pair, mais pas un multiple de 4).",
+    "stripe8Green": "La rayure 8 devrait être verte (son numéro est un multiple de 4).",
+    "stripe12Green": "La rayure 12 devrait être verte (son numéro est un multiple de 4).",
+    "stripe19Yellow": "La rayure 19 devrait être jaune (son numéro est impair, et ce n'est pas une rayure d'extrémité).",
+    "stripe20Purple": "La rayure 20 est une rayure d'extrémité, elle devrait donc être violette (même si son numéro est pair).",
+    "rectangleOnce": "Tu utilises la fonction <code>rectangle</code> à plusieurs endroits. Elle ne devrait apparaître qu'une seule fois, à l'intérieur d'une boucle : n'écris pas les 20 rayures une par une !"
+  },
+  "tasks": {
+    "weaveTheFabric": {
+      "name": "Tisse le tissu",
+      "description": "Dessine 20 rayures verticales. Les deux rayures d'extrémité sont violettes ; sinon, les multiples de 4 sont verts, les autres rayures paires sont bleues, et les rayures impaires sont jaunes."
+    }
+  },
+  "scenarios": {
+    "weaveTheFabric": {
+      "name": "Tisse le tissu à rayures",
+      "description": "Dessine les 20 rayures avec les bonnes couleurs."
+    }
+  },
+  "hints": {
+    "howToDraw20Stripes": {
+      "question": "Comment dessiner 20 rayures à des endroits différents ?",
+      "answer": "Garde un compteur (appelle-le `i`) et augmente-le de un à l'intérieur d'une boucle `repeat`. La rayure numéro `i` fait `5` de large, son bord gauche est donc à `(i - 1) * 5`. Dessine à cet endroit un `rectangle` de `5` de large et `100` de haut."
+    },
+    "endStripesPurple": {
+      "question": "Comment rendre violettes uniquement les deux rayures d'extrémité ?",
+      "answer": "Les rayures d'extrémité sont la première et la dernière. Une seule comparaison ne peut pas exprimer « une valeur OU une autre », alors utilise `||` (ou) : quelque chose comme `if (n === 3 || n === 7)` est vrai pour l'une ou l'autre valeur. Applique cela aux numéros des deux rayures d'extrémité."
+    },
+    "multipleOf4VsEven": {
+      "question": "Comment distinguer un multiple de 4 d'un nombre pair ordinaire ?",
+      "answer": "Utilise l'opérateur `%` (modulo) : `n % 4 === 0` n'est vrai que pour les multiples de 4, alors que `n % 2 === 0` est vrai pour tous les nombres pairs. Les multiples de 4 sont aussi pairs, alors vérifie d'abord la règle la plus stricte, celle des multiples de 4."
+    },
+    "stripe4Blue": {
+      "question": "La rayure 4 ressort bleue alors qu'elle devrait être verte. Pourquoi ?",
+      "answer": "L'ordre compte dans un enchaînement `if` / `else if`. 4 est un multiple de 4 ET un nombre pair, donc si tu vérifies `i % 2 === 0` en premier, la rayure devient bleue et n'atteint jamais la règle du vert. Vérifie la règle des multiples de 4 avant celle des nombres pairs."
+    }
+  },
+  "functions": {
+    "rectangle": {
+      "description": "Dessine un rectangle à la position (left, top) avec la largeur, la hauteur et la couleur données",
+      "category": "Dessin de formes"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "implementSieve": {
+      "name": "Implémente le crible",
+      "description": "Écris une fonction appelée sieve qui prend un nombre et renvoie un tableau de tous les nombres premiers jusqu'à ce nombre inclus, en utilisant l'algorithme du crible d'Ératosthène."
+    }
+  },
+  "scenarios": {
+    "sieveNoPrimesUnderTwo": {
+      "name": "Aucun nombre premier sous 2",
+      "description": "Il n'y a pas de nombre premier inférieur à 2."
+    },
+    "sieveFirstPrime": {
+      "name": "Trouve le premier nombre premier",
+      "description": "Le premier nombre premier est 2."
+    },
+    "sievePrimesUpTo10": {
+      "name": "Trouve les nombres premiers jusqu'à 10",
+      "description": "Trouve les nombres premiers jusqu'à 10."
+    },
+    "sieveLimitIsPrime": {
+      "name": "La limite est un nombre premier",
+      "description": "Trouve les nombres premiers jusqu'à une limite qui est elle-même un nombre premier."
+    },
+    "sievePrimesUpTo100": {
+      "name": "Trouve les nombres premiers jusqu'à 100",
+      "description": "Trouve tous les nombres premiers jusqu'à 100."
+    }
+  },
+  "hints": {
+    "basicIdea": {
+      "question": "Quelle est l'idée de base du crible ?",
+      "answer": "Écris tous les nombres de 2 jusqu'à ta limite. Prends 2. C'est un nombre premier, mais barre tous ses multiples (4, 6, 8, et ainsi de suite). Passe au prochain nombre non marqué (3). C'est un nombre premier, alors barre tous ses multiples. Répète. Tout ce qui n'est pas encore marqué à la fin est premier."
+    },
+    "representMarked": {
+      "question": "Comment représenter « marqué » ou « non marqué » ?",
+      "answer": "Un dictionnaire dont les clés sont les nombres, avec la valeur vrai ou faux pour « marqué ». Consulter `marked[n]` te dit si n a été barré."
+    },
+    "crossOutMultiples": {
+      "question": "Comment barrer les multiples d'un nombre ?",
+      "answer": "Parcours les multiples (n*2, n*3, n*4, ...) jusqu'à la limite, en marquant chacun d'eux dans ton dictionnaire comme non premier."
+    },
+    "collectAnswer": {
+      "question": "Comment rassembler le résultat à la fin ?",
+      "answer": "Après la phase de marquage, boucle de 2 jusqu'à la limite. Pour chaque nombre encore non marqué, ajoute-le au tableau des résultats avec `push()`."
+    }
+  },
+  "functions": {
+    "push": {
+      "description": "Renvoie un nouveau tableau avec l'élément ajouté à la fin (fonction fournie par la bibliothèque standard du niveau)",
+      "category": "Opérations sur les tableaux"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "describers": {
+    "move": "a déplacé le canon laser vers la droite"
+  },
+  "checks": {
+    "notShotAllAliens": "Tu n'as pas abattu tous les aliens.",
+    "tooManyLines": "Ta solution comporte trop de lignes de code. Essaie d'utiliser une boucle repeat à l'intérieur d'une autre boucle repeat pour la raccourcir !"
+  },
+  "tasks": {
+    "nestedRepeatShoot": {
+      "name": "Utilise des boucles repeat imbriquées pour abattre tous les aliens",
+      "description": "Trouve le motif dans les positions des aliens et utilise une boucle repeat à l'intérieur d'une autre boucle repeat pour tous les détruire en 7 lignes de code ou moins."
+    }
+  },
+  "scenarios": {
+    "nestedRepeatShoot": {
+      "name": "Imbrique les boucles et tire",
+      "description": "Utilise des boucles repeat imbriquées pour abattre tous les aliens"
+    }
+  },
+  "hints": {
+    "cantGetTo7Lines": {
+      "question": "Je n'arrive pas à descendre à 7 lignes de code.",
+      "answer": "Vois ce niveau comme deux blocs d'actions à enchaîner.\n\n- Le premier bloc est le bloc intérieur, celui où l'on tire 4 fois : fais en sorte qu'il tienne en trois lignes.\n- Le bloc extérieur est ce bloc intérieur entouré de quelques déplacements. Ce bloc extérieur doit lui aussi être répété plusieurs fois.\n\nSi tu structures le code de cette façon, il devrait naturellement tenir en 7 lignes de code."
+    }
+  },
+  "functions": {
+    "move": {
+      "description": "Déplace le canon laser **d'une position vers la droite**. Si tu te déplaces au-delà du bord droit de l'écran, tu perds !",
+      "category": "Déplacement"
+    },
+    "shoot": {
+      "description": "Tire au laser vers le haut. **Ne tire que lorsqu'il y a un alien au-dessus de toi**, sinon tu perds la partie !",
+      "category": "Action"
+    }
+  }
+}

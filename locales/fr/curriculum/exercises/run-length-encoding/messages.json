@@ -1,0 +1,101 @@
+{
+  "tasks": {
+    "encode": {
+      "name": "Encode une string",
+      "description": "Écris une fonction appelée encode qui parcourt la string en comptant combien de fois chaque caractère se répète d'affilée. Remplace chaque plage de deux caractères ou plus par le nombre suivi du caractère, et laisse les caractères isolés tels quels."
+    },
+    "decode": {
+      "name": "Décode une string",
+      "description": "Écris une fonction appelée decode qui inverse le processus. Lis le nombre placé devant un caractère et répète ce caractère autant de fois. Les nombres peuvent avoir plusieurs chiffres."
+    }
+  },
+  "scenarios": {
+    "rleEncodeEmpty": {
+      "name": "Encode une string vide",
+      "description": "Encoder une string vide renvoie une string vide."
+    },
+    "rleEncodeSingles": {
+      "name": "Les caractères isolés ne sont pas comptés",
+      "description": "Les caractères qui n'apparaissent qu'une fois sont encodés sans nombre devant eux."
+    },
+    "rleEncodeNoSingles": {
+      "name": "Une string sans caractères isolés",
+      "description": "Les plages de caractères répétés sont remplacées par un nombre suivi du caractère."
+    },
+    "rleEncodeMixed": {
+      "name": "Des caractères isolés mêlés à des plages",
+      "description": "Plages et caractères isolés peuvent se mélanger dans une même string."
+    },
+    "rleEncodeWhitespace": {
+      "name": "Des espaces dans la string",
+      "description": "Les espaces sont traités comme n'importe quel autre caractère, y compris dans les plages."
+    },
+    "rleEncodeLowercase": {
+      "name": "Des caractères en minuscules",
+      "description": "L'encodage fonctionne de la même façon pour les lettres minuscules."
+    },
+    "rleDecodeEmpty": {
+      "name": "Décode une string vide",
+      "description": "Décoder une string vide renvoie une string vide."
+    },
+    "rleDecodeSingles": {
+      "name": "Décode des caractères isolés",
+      "description": "Les caractères sans nombre devant eux n'apparaissent qu'une fois."
+    },
+    "rleDecodeNoSingles": {
+      "name": "Décode une string composée de plages",
+      "description": "Un nombre suivi d'un caractère produit autant de copies de ce caractère."
+    },
+    "rleDecodeMixed": {
+      "name": "Décode des caractères isolés mêlés à des plages",
+      "description": "Les nombres de plusieurs chiffres doivent être lus en entier avant de développer la plage."
+    },
+    "rleDecodeWhitespace": {
+      "name": "Décode des espaces",
+      "description": "Les espaces sont développés comme n'importe quel autre caractère."
+    },
+    "rleDecodeLowercase": {
+      "name": "Décode des caractères en minuscules",
+      "description": "Le décodage fonctionne de la même façon pour les lettres minuscules."
+    }
+  },
+  "hints": {
+    "whatIsRle": {
+      "question": "Que fait le codage par plages, concrètement ?",
+      "answer": "Il compresse les plages d'un même caractère en un nombre suivi du caractère. `\"AAAA\"` devient `\"4A\"`. Un caractère seul reste tel quel, sans nombre devant lui : `\"B\"` reste donc `\"B\"`."
+    },
+    "countRuns": {
+      "question": "Comment compter une plage de caractères répétés ?",
+      "answer": "Parcours la string en gardant en mémoire le caractère précédent et le nombre de fois qu'il s'est répété. Chaque fois que le caractère change, écris la plage terminée dans le résultat et commence à compter le nouveau caractère."
+    },
+    "singleChars": {
+      "question": "Comment éviter d'écrire un nombre devant les caractères isolés ?",
+      "answer": "N'ajoute le nombre devant que lorsque le compte est supérieur à 1. Si un caractère n'est apparu qu'une fois, écris uniquement le caractère."
+    },
+    "decodeDigits": {
+      "question": "Comment savoir si un caractère est un chiffre pendant le décodage ?",
+      "answer": "Vérifie si le caractère fait partie de `0123456789`, par exemple avec `\"0123456789\".includes(char)`. Si oui, il fait partie d'un nombre. Sinon, c'est le caractère à répéter."
+    },
+    "decodeMultiDigit": {
+      "question": "Comment lire un nombre de plusieurs chiffres, comme 12 ?",
+      "answer": "Un nombre comme `12` arrive chiffre par chiffre : construis-le au fur et à mesure plutôt que de traiter chaque chiffre séparément. Chaque fois qu'un nouveau chiffre se présente, le nombre que tu as déjà doit être multiplié par dix pour lui faire de la place, avant d'y ajouter le nouveau chiffre. `Number()` transforme un caractère représentant un chiffre en un nombre avec lequel tu peux faire des calculs."
+    },
+    "decodeRepeat": {
+      "question": "Comment répéter le caractère le bon nombre de fois ?",
+      "answer": "Dès que tu rencontres un caractère qui n'est pas un chiffre, utilise une boucle qui s'exécute `count` fois et ajoute le caractère à ton résultat à chaque tour. Remets ensuite le compte à 0, prêt pour la plage suivante. S'il n'y avait pas de nombre, considère que c'est 1."
+    }
+  },
+  "functions": {
+    "number": {
+      "description": "Convertit une string contenant un chiffre en nombre",
+      "category": "Conversion de type"
+    },
+    "includes": {
+      "description": "Vérifie si une string en contient une autre plus petite",
+      "category": "Opérations sur les strings"
+    }
+  },
+  "checks": {
+    "mustUseFor": "Presque ! Pour cet exercice, on attend que tu utilises une boucle `for` pour répéter chaque caractère le bon nombre de fois."
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "tasks": {
+    "reverseStrings": {
+      "name": "Inverse des strings",
+      "description": "Inverse une string pour qu'elle se lise de droite à gauche plutôt que de gauche à droite."
+    }
+  },
+  "scenarios": {
+    "reverseEmptyString": {
+      "name": "String vide",
+      "description": "Une string vide doit renvoyer une string vide une fois inversée."
+    },
+    "reverseWord": {
+      "name": "Un mot",
+      "description": "Inverse le mot 'robot'."
+    },
+    "reverseCapitalizedWord": {
+      "name": "Un mot avec une majuscule",
+      "description": "Inverse un mot qui commence par une majuscule : 'Ramen'."
+    },
+    "reverseSentencePunctuation": {
+      "name": "Phrase avec ponctuation",
+      "description": "Inverse une phrase avec de la ponctuation : 'I'm hungry!'"
+    },
+    "reversePalindrome": {
+      "name": "Palindrome",
+      "description": "Un palindrome reste identique une fois inversé."
+    },
+    "reverseEvenSizedWord": {
+      "name": "Mot de longueur paire",
+      "description": "Inverse un mot de longueur paire : 'drawer'."
+    },
+    "reverseWideCharacters": {
+      "name": "Caractères larges",
+      "description": "Inverse des caractères Unicode larges : '子猫'."
+    },
+    "reverseEmojiFamily": {
+      "name": "Emoji famille",
+      "description": "Inverse un emoji famille."
+    },
+    "reverseEmojiRainbowFlag": {
+      "name": "Drapeau arc-en-ciel",
+      "description": "Fabrique un drapeau arc-en-ciel en inversant."
+    }
+  },
+  "hints": {
+    "reverseByHand": {
+      "question": "Comment inverser un mot à la main ?",
+      "answer": "Tu le lirais de gauche à droite, mais tu l'écrirais de droite à gauche. Autrement dit, tu prendrais chaque lettre l'une après l'autre et tu la placerais devant ce que tu as déjà écrit."
+    },
+    "mapToCode": {
+      "question": "Comment traduire ça en code ?",
+      "answer": "Parcours la string d'entrée caractère par caractère. Pour chaque caractère, construis le résultat en l'ajoutant au début. Autrement dit, place-le au DÉBUT de ton résultat, pas à la fin."
+    },
+    "prepend": {
+      "question": "Comment ajouter au début plutôt qu'à la fin ?",
+      "answer": "Avec l'opérateur `+`, ajouter au début est juste une question d'ordre. Au lieu de `result + char` (qui ajoute à la fin), utilise `char + result` (qui ajoute au début)."
+    }
+  }
+}

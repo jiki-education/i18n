@@ -1,0 +1,74 @@
+{
+  "checks": {
+    "notShotAllAliens": "Tu n'as pas abattu tous les aliens.",
+    "noRepeatWithArg": "Tu ne peux pas utiliser <code>repeat(n) {}</code> dans cet exercice. Tu dois utiliser uniquement des boucles <code>repeat() {}</code> sans entrées."
+  },
+  "tasks": {
+    "scrollAndShoot": {
+      "name": "Balaie l'écran et abats chaque alien",
+      "description": "Déplace le canon laser d'un bord à l'autre de l'écran, en vérifiant s'il y a un alien au-dessus de toi pour l'abattre. Ne sors pas de l'écran et ne tire pas quand il n'y a pas d'alien, sinon tu perds ! Les vagues sont de plus en plus chargées."
+    }
+  },
+  "scenarios": {
+    "oneAlien": {
+      "name": "Un alien",
+      "description": "Un seul alien à abattre"
+    },
+    "oneRow": {
+      "name": "Une rangée clairsemée",
+      "description": "Quelques aliens éparpillés sur la rangée du bas"
+    },
+    "twoRows": {
+      "name": "Deux rangées",
+      "description": "Des aliens répartis sur deux rangées"
+    },
+    "threeRows": {
+      "name": "Trois rangées",
+      "description": "Des aliens sur les trois rangées"
+    },
+    "fullRows": {
+      "name": "Rangées pleines",
+      "description": "Trois rangées bien remplies. Les aliens ne cessent de revenir !"
+    }
+  },
+  "hints": {
+    "whereDoIStart": {
+      "question": "Par où commencer ? Ça fait beaucoup d'un coup.",
+      "answer": "Découpe le problème. Commence par faire aller et venir le canon laser d'un bord à l'autre, sans t'occuper des tirs. Une fois le déplacement au point, ajoute la logique de tir."
+    },
+    "trackLaserPosition": {
+      "question": "Comment savoir où se trouve le canon laser ?",
+      "answer": "Garde une variable pour la position du canon laser. Mets-la à jour à chaque itération de la boucle quand tu appelles `moveLeft()` ou `moveRight()`."
+    },
+    "whenToTurnAround": {
+      "question": "Comment savoir quand faire demi-tour ?",
+      "answer": "Garde une variable de direction (par exemple `1` pour la droite, `-1` pour la gauche). Quand la position atteint le bord gauche ou le bord droit, inverse la direction. C'est le même motif de rebond que dans Rainbow Ball."
+    },
+    "whenToShoot": {
+      "question": "Quand appeler `shoot()` ?",
+      "answer": "Avant d'appeler `shoot()`, vérifie `isAlienAbove()`. Ne tire que si elle renvoie `true`, sinon tu vas gaspiller les munitions et perdre."
+    },
+    "laserOverheating": {
+      "question": "Le canon laser n'arrête pas de surchauffer. Que faire ?",
+      "answer": "Ne tire pas à chaque itération. Déplace-toi au moins une fois entre deux tirs pour laisser au canon le temps de refroidir."
+    }
+  },
+  "functions": {
+    "moveLeft": {
+      "description": "Déplace le canon laser d'**une position vers la gauche**. Si tu essaies de sortir du bord gauche de l'écran, tu perds la partie !",
+      "category": "Déplacement"
+    },
+    "moveRight": {
+      "description": "Déplace le canon laser d'**une position vers la droite**. Si tu essaies de sortir du bord droit de l'écran, tu perds la partie !",
+      "category": "Déplacement"
+    },
+    "shoot": {
+      "description": "Tire au laser vers le haut. **Ne tire que lorsqu'il y a un alien au-dessus de toi**, sinon tu perds la partie ! Le canon laser surchauffe facilement, donc tu dois te déplacer avant de tirer à nouveau.",
+      "category": "Action"
+    },
+    "isAlienAbove": {
+      "description": "Renvoie `true` s'il y a un alien juste au-dessus du canon laser, ou `false` sinon. Utilise-la pour vérifier avant de tirer !",
+      "category": "Détection"
+    }
+  }
+}

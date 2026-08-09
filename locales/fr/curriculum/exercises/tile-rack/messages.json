@@ -1,0 +1,64 @@
+{
+  "tasks": {
+    "findTilePosition": {
+      "name": "Trouve la position du jeton",
+      "description": "Écris une fonction qui trouve la position d'un jeton de lettre précis sur le chevalet. Renvoie \"Move to position X\" si le jeton est trouvé, ou \"Error: Tile not on rack\" sinon."
+    }
+  },
+  "scenarios": {
+    "tileAtStart": {
+      "name": "Jeton au début",
+      "description": "La lettre est le premier jeton du chevalet."
+    },
+    "tileInMiddle": {
+      "name": "Jeton au milieu",
+      "description": "La lettre se trouve au milieu du chevalet."
+    },
+    "tileAtEnd": {
+      "name": "Jeton à la fin",
+      "description": "La lettre est le dernier jeton du chevalet."
+    },
+    "tileNotFound": {
+      "name": "Jeton introuvable",
+      "description": "La lettre n'est pas sur le chevalet."
+    },
+    "emptyRack": {
+      "name": "Chevalet vide",
+      "description": "Un chevalet vide n'a aucun jeton à trouver."
+    },
+    "firstOfDuplicates": {
+      "name": "Premier des doublons",
+      "description": "Quand la lettre apparaît plusieurs fois, renvoie la première position."
+    },
+    "longerRack": {
+      "name": "Chevalet plus long",
+      "description": "Trouve un jeton sur un chevalet plus long."
+    }
+  },
+  "hints": {
+    "trackPosition": {
+      "question": "Comment garder la trace de ma position sur le chevalet ?",
+      "answer": "Utilise une variable de position qui commence à 1. Chaque fois que tu regardes un nouveau jeton, augmente-la de 1."
+    },
+    "lookAtEachTile": {
+      "question": "Comment examiner chaque jeton ?",
+      "answer": "Une boucle for-each te donne tour à tour chaque caractère du chevalet."
+    },
+    "onFound": {
+      "question": "Que faire quand je trouve la lettre ?",
+      "answer": "Construis le message de réussite. Convertis le numéro de la position en string, puis assemble-le avec le texte demandé par l'exercice à l'aide de la concaténation (`+`) ou d'une template string. Renvoie le résultat immédiatement : inutile de continuer à chercher."
+    },
+    "addNumberToString": {
+      "question": "Je n'arrive pas à additionner un nombre et une string",
+      "answer": "Tu as appris deux façons d'assembler des strings. Plutôt que de les concaténer, essaie l'autre méthode que tu as apprise."
+    },
+    "positionAlwaysWrong": {
+      "question": "Pourquoi ma position est-elle toujours fausse ?",
+      "answer": "Vérifie que tu augmentes le compteur de position à chaque itération, et pas seulement de temps en temps. Sinon, chaque jeton indiquera la même position."
+    },
+    "notInRack": {
+      "question": "Et si la lettre n'est pas sur le chevalet ?",
+      "answer": "Ce n'est qu'une fois la boucle terminée sans avoir trouvé la lettre que tu dois renvoyer le message d'erreur. Si tu renvoies l'erreur à l'intérieur de la boucle, tu abandonnes dès le premier jeton qui ne correspond pas."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "errors": {
+    "positionNotNumber": "position tem de ser um número"
+  },
+  "checks": {
+    "ballNotAtEnd": "A bola não chegou ao buraco. Está na posição {{ballX}}, mas tem de estar na posição 88.",
+    "missingPositions": "A bola tem de rolar por cada posição, uma de cada vez, em vez de saltar diretamente para o fim."
+  },
+  "tasks": {
+    "rollBall": {
+      "name": "Faz rolar a bola até ao buraco",
+      "description": "Faz rolar a bola até ao buraco."
+    }
+  },
+  "scenarios": {
+    "rollBall": {
+      "name": "Faz rolar a bola até ao buraco",
+      "description": "Faz rolar a bola até ao buraco."
+    }
+  },
+  "hints": {
+    "dontKnowWhereToStart": {
+      "question": "Não sei por onde começar",
+      "answer": "O truque é mover a bola um passo de cada vez. Podes usar uma variável para isso. Pensa em como isso poderia funcionar."
+    },
+    "stillCantFigureItOut": {
+      "question": "Continuo sem conseguir resolver",
+      "answer": "Queres criar uma variável para acompanhar onde a bola está. Deve começar onde a bola está agora e depois aumentar uma unidade muitas vezes. Sempre que aumentar, deves usar `moveTo(...)` com a variável como valor de entrada."
+    }
+  },
+  "functions": {
+    "moveTo": {
+      "description": "Move a bola para **position**.",
+      "category": "Movimento"
+    }
+  },
+  "describers": {
+    "moveTo": "moveu a bola para a posição ${arg1}"
+  }
+}

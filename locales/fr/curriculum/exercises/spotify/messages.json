@@ -1,0 +1,57 @@
+{
+  "describers": {
+    "fetch": "a récupéré des données depuis l'URL fournie"
+  },
+  "tasks": {
+    "formatResponse": {
+      "name": "Mets en forme la réponse",
+      "description": "Crée une fonction favoriteArtists qui prend un nom d'utilisateur, récupère ses données depuis l'API Spotify et renvoie une phrase mise en forme qui liste ses artistes préférés."
+    }
+  },
+  "scenarios": {
+    "spotifyFred": {
+      "name": "Les favoris de Fred",
+      "description": "Récupère et mets en forme les artistes préférés de Fred."
+    },
+    "spotifyIhid": {
+      "name": "Les favoris d'iHiD",
+      "description": "Récupère et mets en forme les artistes préférés d'iHiD."
+    },
+    "spotifyGriffin": {
+      "name": "griffin se cache",
+      "description": "Gère proprement l'erreur d'utilisateur inconnu."
+    }
+  },
+  "hints": {
+    "fetchUserData": {
+      "question": "Comment récupérer les données de l'utilisateur ?",
+      "answer": "Utilise `fetch()` avec l'URL du point d'accès utilisateur. L'URL se construit en concaténant l'URL de base avec le nom d'utilisateur que tu reçois en entrée."
+    },
+    "handleUnknownUser": {
+      "question": "Comment gérer le cas où l'utilisateur n'existe pas ?",
+      "answer": "La réponse peut revenir avec une clé `\"error\"`. Utilise `hasKey()` pour vérifier sa présence avant d'essayer de traiter les éléments. Si elle est là, renvoie ce que la consigne demande dans ce cas."
+    },
+    "getArtistNames": {
+      "question": "Comment obtenir les noms des artistes à partir des éléments ?",
+      "answer": "Chaque élément contient l'URL d'API d'un artiste. Parcours les éléments, récupère chaque URL d'artiste une par une, et extrais le nom de l'artiste de chaque réponse."
+    },
+    "buildFinalSentence": {
+      "question": "Comment construire la phrase finale ?",
+      "answer": "Relie les noms des artistes par des virgules, mais place `\", and \"` avant le tout dernier (par exemple `\"Adele, Beyoncé, and Coldplay\"`). Il te faudra un traitement particulier pour le dernier élément de la boucle."
+    }
+  },
+  "functions": {
+    "fetch": {
+      "description": "Récupère des données depuis une API. Prend une URL sous forme de string et un dictionnaire de paramètres. Renvoie la réponse de l'API sous forme de dictionnaire.",
+      "category": "API"
+    },
+    "push": {
+      "description": "Ajoute un élément à un tableau et renvoie le nouveau tableau (fournie par la bibliothèque standard du niveau)",
+      "category": "Opérations sur les tableaux"
+    },
+    "hasKey": {
+      "description": "Vérifie si une clé existe dans un dictionnaire, renvoie vrai ou faux (fournie par la bibliothèque standard du niveau)",
+      "category": "Opérations sur les dictionnaires"
+    }
+  }
+}

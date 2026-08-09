@@ -1,0 +1,36 @@
+{
+  "checks": {
+    "leftBrick": "O tijolo da esquerda não está correto.",
+    "secondBrick": "O segundo tijolo não está correto.",
+    "middleBrick": "O tijolo do meio não está correto.",
+    "fourthBrick": "O quarto tijolo não está correto.",
+    "rightBrick": "O tijolo da direita não está correto.",
+    "codeQuality": {
+      "rectangleCalledOnce": "Estás a usar a função <code>rectangle</code> em vários sítios do teu código. Só deve aparecer uma vez!"
+    }
+  },
+  "tasks": {
+    "finishWall": {
+      "name": "Termina a parede",
+      "description": "Acrescenta uma camada de cima à parede!"
+    }
+  },
+  "scenarios": {
+    "finishWall": {
+      "name": "Acaba a parede",
+      "description": "Acrescenta uma camada de cima à parede!"
+    }
+  },
+  "hints": {
+    "positionSecondBrick": {
+      "question": "Não consigo perceber como posicionar o segundo tijolo mais à frente do primeiro",
+      "answer": "Se cada tijolo tem 20 de largura, precisas de colocar o primeiro em 0, o segundo em 20, o terceiro em 40, e assim por diante. Podes usar a multiplicação para o fazer. Que variável poderias acompanhar para conseguires o padrão 0, 20, depois 40, etc.?"
+    }
+  },
+  "functions": {
+    "rectangle": {
+      "description": "Desenha um retângulo na posição (left, top) com a largura, a altura e a cor indicadas",
+      "category": "Desenhar formas"
+    }
+  }
+}

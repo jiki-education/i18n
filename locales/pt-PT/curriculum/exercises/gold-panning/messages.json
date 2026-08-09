@@ -1,0 +1,55 @@
+{
+  "errors": {
+    "needsRecharge": "O robô precisa de recarregar depois de vender.",
+    "sellBeforeAnythingElse": "O robô precisa de ir vender antes de fazer qualquer outra coisa.",
+    "sellNumber": "Só podes vender um número de pepitas"
+  },
+  "checks": {
+    "notSold": "Não vendeste as tuas pepitas. Certifica-te de que chamas <code>sell()</code> depois de usares a bateia.",
+    "wrongSoldTotal": "Era esperado venderes {{expectedTotal}} pepitas ({{panValues}}), mas vendeste {{got}}. Certifica-te de que somas o resultado de cada vez ao teu total."
+  },
+  "tasks": {
+    "panAndSell": {
+      "name": "Procura ouro na bateia e vende o que apanhares",
+      "description": "Usa a bateia 5 vezes para recolher pepitas de ouro, vai somando o total, e depois vende tudo no entreposto."
+    }
+  },
+  "scenarios": {
+    "randomPans": {
+      "name": "Apanha ouro e vende",
+      "description": "Usa a bateia 5 vezes, encontrando de cada vez um número aleatório de pepitas, e depois vende o total."
+    }
+  },
+  "hints": {
+    "wrongSellAmount": {
+      "question": "Diz que estou a vender a quantidade errada de ouro.",
+      "answer": "Precisas de vender TODO o ouro que encontras nas 5 vezes de uma só vez, no final, em vez de venderes depois de cada utilização da bateia."
+    },
+    "trackingTotal": {
+      "question": "Estou a usar o pan várias vezes, mas não sei como levar a conta de quanto ouro tenho.",
+      "answer": "Pensa no que aprendeste nas últimas lições em vídeo. Precisas de usar uma variável para registar a quantidade **total** de ouro que recolheste em **todas** as utilizações da bateia."
+    },
+    "fiveLines": {
+      "question": "Já funciona, mas não consigo reduzir para 5 linhas.",
+      "answer": "Tens código repetitivo na tua solução? Se sim, o que podemos usar para reduzir essa repetição?"
+    },
+    "stillFiveLines": {
+      "question": "Continuo sem conseguir reduzir para 5 linhas de código.",
+      "answer": "Só deves precisar de usar uma variável. Estás a usar mais do que uma?"
+    }
+  },
+  "describers": {
+    "pan": "usou a bateia e encontrou ${return} pepitas",
+    "sell": "vendeu ${arg1} pepitas no entreposto"
+  },
+  "functions": {
+    "pan": {
+      "description": "Mergulha a tua bateia no rio e **devolve** o número de pepitas de ouro encontradas.",
+      "category": "Mineração"
+    },
+    "sell": {
+      "description": "Vende as tuas pepitas de ouro no entreposto.",
+      "category": "Ação"
+    }
+  }
+}

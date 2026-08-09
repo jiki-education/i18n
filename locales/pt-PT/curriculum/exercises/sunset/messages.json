@@ -1,0 +1,53 @@
+{
+  "checks": {
+    "sunWrongBeginning": "O sol não parece estar bem perto do início.",
+    "sunWrongMiddle": "O sol não parece estar bem perto do meio.",
+    "sunWrongEnd": "O sol não parece estar bem perto do fim.",
+    "skyNotChangingColor": "O céu não parece estar a mudar de cor.",
+    "sunNotChangingColor": "O sol não parece estar a mudar de cor."
+  },
+  "tasks": {
+    "drawScene": {
+      "name": "Anima o pôr do sol",
+      "description": "Anima o sol e o céu para parecer que o sol se está a pôr. O sol deve ficar maior e descer, enquanto tanto o sol como o céu mudam de cor."
+    }
+  },
+  "scenarios": {
+    "drawScene": {
+      "name": "Faz o sol pôr-se",
+      "description": "Anima o sol e o céu para parecer que o sol se está a pôr."
+    }
+  },
+  "hints": {
+    "howToAnimate": {
+      "question": "Como é que eu animo?",
+      "answer": "Para animar, seguimos o estilo flipbook: voltamos a desenhar a cena inteira de cada vez, por cima das versões anteriores."
+    },
+    "whereToStart": {
+      "question": "Não sei por onde começar.",
+      "answer": "Precisas de desenhar 100 vezes. Começa por mover as funções de desenho existentes para dentro de um ciclo repeat que corre 100 vezes. Depois precisas de alterar as variáveis (raio, cores, etc.) por cada vez que o ciclo corre."
+    },
+    "whereToPutVariables": {
+      "question": "Onde é que ponho as minhas variáveis?",
+      "answer": "Precisas de definir as tuas variáveis ANTES do ciclo e depois atualizá-las DENTRO do ciclo, ANTES de desenhares as formas. Pensa no Jiki a criar caixas e a atualizá-las de cada vez."
+    }
+  },
+  "functions": {
+    "circle": {
+      "description": "Desenha um círculo com o centro em (centerX, centerY), com o raio e a cor indicados",
+      "category": "Desenhar Formas"
+    },
+    "rectangle": {
+      "description": "Desenha um retângulo na posição (left, top) com a largura, a altura e a cor indicadas",
+      "category": "Desenhar Formas"
+    },
+    "rgb": {
+      "description": "Converte valores de cor RGB (cada um entre 0 e 255) numa string de cor hexadecimal",
+      "category": "Cores"
+    },
+    "hsl": {
+      "description": "Converte valores de cor HSL (matiz 0-360, saturação 0-100, luminosidade 0-100) numa string de cor hexadecimal",
+      "category": "Cores"
+    }
+  }
+}

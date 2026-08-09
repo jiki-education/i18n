@@ -1,0 +1,68 @@
+{
+  "describers": {
+    "move": "a déplacé le canon laser vers la droite"
+  },
+  "checks": {
+    "notShotAllAliens": "Tu n'as pas abattu tous les aliens."
+  },
+  "tasks": {
+    "conditionalShoot": {
+      "name": "Utilise une instruction if pour ne tirer que lorsqu'un alien est au-dessus",
+      "description": "Traverse l'écran en vérifiant chaque position. S'il y a un alien au-dessus de toi, abats-le. Sinon, continue d'avancer."
+    }
+  },
+  "scenarios": {
+    "conditional1": {
+      "name": "Aliens dispersés",
+      "description": "Des aliens dispersés sur deux rangées, avec des espaces vides"
+    },
+    "conditional2": {
+      "name": "Aliens clairsemés",
+      "description": "Moins d'aliens et des espaces plus larges"
+    },
+    "conditional3": {
+      "name": "Rangées alternées",
+      "description": "Des aliens qui alternent entre la rangée du haut et celle du bas"
+    },
+    "conditional4": {
+      "name": "Concentrés en bas",
+      "description": "La plupart des aliens dans la rangée du bas"
+    },
+    "conditional5": {
+      "name": "Formation dense",
+      "description": "De nombreux aliens serrés sur les deux rangées"
+    }
+  },
+  "hints": {
+    "howToDecide": {
+      "question": "Comment décider si je dois tirer ou non ?",
+      "answer": "Utilise une instruction `if` qui vérifie `isAlienAbove()`. N'appelle `shoot()` que lorsqu'elle renvoie `true`."
+    },
+    "whatIsAlienAboveGives": {
+      "question": "Que me renvoie `isAlienAbove()` ?",
+      "answer": "Elle renvoie `true` s'il y a un alien juste au-dessus du canon, et `false` sinon. Tu peux l'utiliser directement comme condition d'un `if`."
+    },
+    "checkEveryColumn": {
+      "question": "Comment vérifier chaque colonne sans écrire le même code encore et encore ?",
+      "answer": "Place ta logique « vérifier et tirer si besoin » dans une boucle `repeat`, en appelant `move()` à la fin de chaque itération pour passer à la colonne suivante."
+    },
+    "keepShootingEmpty": {
+      "question": "Je n'arrête pas de tirer sur des colonnes vides et je perds. Qu'est-ce qui ne va pas ?",
+      "answer": "Assure-toi que `shoot()` est à l'intérieur du bloc `if`, et pas après. L'appel ne doit avoir lieu que lorsque `isAlienAbove()` renvoie `true`."
+    }
+  },
+  "functions": {
+    "move": {
+      "description": "Déplace le canon laser **d'une position vers la droite**. Si tu te déplaces au-delà du bord droit de l'écran, tu perds !",
+      "category": "Déplacement"
+    },
+    "shoot": {
+      "description": "Tire au laser vers le haut. **Ne tire que lorsqu'il y a un alien au-dessus de toi**, sinon tu perds la partie !",
+      "category": "Action"
+    },
+    "isAlienAbove": {
+      "description": "Renvoie `true` s'il y a un alien juste au-dessus du canon laser, ou `false` sinon. Utilise-la pour vérifier avant de tirer !",
+      "category": "Détection"
+    }
+  }
+}
