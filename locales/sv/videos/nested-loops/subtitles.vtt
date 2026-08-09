@@ -1,0 +1,267 @@
+WEBVTT
+
+NOTE en_md5 49411a7db976297a17fb5f2e027fcaff
+
+00:00:00.100 --> 00:00:03.060
+Välkommen tillbaka. Så du har använt repeat-loopen
+
+00:00:03.120 --> 00:00:05.160
+ett tag nu, och förhoppningsvis känner
+
+00:00:05.220 --> 00:00:08.640
+du dig ganska bekväm med den. Nu ska vi
+
+00:00:08.680 --> 00:00:10.500
+titta på något som är lite mer komplext.
+
+00:00:10.520 --> 00:00:13.220
+Säg att vi vill ha en rad
+
+00:00:13.260 --> 00:00:15.740
+med blommor. Då kan vi skriva något i den
+
+00:00:16.180 --> 00:00:18.720
+här stilen. Vi sätter en position, vi
+
+00:00:18.760 --> 00:00:21.300
+planterar en blomma, vi ökar positionen
+
+00:00:22.000 --> 00:00:23.560
+med 10, vi upprepar, och till slut
+
+00:00:23.680 --> 00:00:26.640
+har vi en fin, prydlig rad med blommor.
+
+00:00:26.720 --> 00:00:30.240
+Men tänk om vi vill ha ett rutnät av blommor, med rader och
+
+00:00:30.320 --> 00:00:32.780
+kolumner? Kanske fyra rader med fem blommor i varje rad.
+
+00:00:35.000 --> 00:00:36.580
+Stanna upp en stund, pausa gärna videon
+
+00:00:36.620 --> 00:00:38.640
+en liten stund, och fundera på
+
+00:00:38.700 --> 00:00:42.380
+hur du skulle kunna göra det här.
+
+00:00:42.440 --> 00:00:44.880
+Vi har en loop som ritar en rad med blommor. Hur
+
+00:00:45.980 --> 00:00:48.240
+kan du använda den för att rita fyra rader? Eller
+
+00:00:48.320 --> 00:00:50.660
+vad skulle vi kunna göra för att rita fyra rader?
+
+00:00:50.700 --> 00:00:54.420
+Okej, förhoppningsvis har du hunnit fundera.
+
+00:00:55.440 --> 00:00:57.360
+Ett alternativ vore att helt enkelt kopiera
+
+00:00:57.380 --> 00:01:00.680
+och klistra in loopen fyra gånger och ändra
+
+00:01:00.740 --> 00:01:03.260
+positionen uppifrån för var och en. Och det
+
+00:01:03.320 --> 00:01:07.970
+skulle fungera. Det vore helt okej. Men
+
+00:01:07.980 --> 00:01:10.380
+det är repetitivt, och det finns ett bättre
+
+00:01:10.420 --> 00:01:13.420
+sätt. Vi vet ju att när kod är repetitiv kan
+
+00:01:13.460 --> 00:01:17.920
+vi använda en loop för att förenkla den.
+
+00:01:18.020 --> 00:01:21.840
+Så här kan vi använda en loop inuti en annan
+
+00:01:21.860 --> 00:01:24.840
+loop. En loop för raderna och en för blommorna
+
+00:01:24.880 --> 00:01:28.080
+på varje rad. Nu börjar vi med att lägga
+
+00:01:28.140 --> 00:01:30.360
+en repeat-loop runt vår befintliga kod, så
+
+00:01:30.380 --> 00:01:32.220
+att du får en känsla för hur det fungerar.
+
+00:01:32.260 --> 00:01:35.020
+Och till att börja med upprepar vi bara en gång.
+
+00:01:35.060 --> 00:01:38.680
+Vi säger alltså åt Jiki att göra allt som
+
+00:01:39.800 --> 00:01:41.920
+står innanför de yttre klammerparenteserna
+
+00:01:42.000 --> 00:01:44.220
+en gång. Det ger precis samma effekt som att
+
+00:01:44.280 --> 00:01:46.870
+inte ha den yttre loopen alls. Vi säger åt
+
+00:01:46.940 --> 00:01:48.440
+Jiki att upprepa något en gång, vilket är
+
+00:01:48.480 --> 00:01:51.000
+samma sak som att be Jiki göra det utan repeat.
+
+00:01:51.040 --> 00:01:53.000
+Men det är så här den här koden fungerar,
+
+00:01:53.060 --> 00:01:55.500
+det är det jag visar dig. Det är helt giltig
+
+00:01:55.560 --> 00:01:59.900
+kod. Vi har en loop inuti en annan loop.
+
+00:01:59.940 --> 00:02:02.960
+Vad händer då om vi ändrar den yttre loopen
+
+00:02:03.000 --> 00:02:06.520
+så att den upprepar två gånger? Jo,
+
+00:02:06.560 --> 00:02:10.400
+då kör Jiki hela det där plant fem gånger
+
+00:02:10.440 --> 00:02:14.460
+två gånger. Han planterar 10 blommor.
+
+00:02:14.500 --> 00:02:17.600
+Men alla blommorna hamnar på samma rad.
+
+00:02:17.660 --> 00:02:20.520
+På samma sätt som vi behöver flytta positionen
+
+00:02:20.580 --> 00:02:22.180
+från vänster till höger en bit varje
+
+00:02:23.100 --> 00:02:26.240
+gång, behöver vi också flytta positionen i
+
+00:02:26.300 --> 00:02:28.660
+höjdled när vi har ritat klart en hel rad.
+
+00:02:30.040 --> 00:02:32.540
+Så hur gör vi det? Jo, vi kan lägga till
+
+00:02:32.580 --> 00:02:35.480
+en yttre variabel för positionen uppifrån,
+
+00:02:35.560 --> 00:02:39.970
+använda den i vår plant-funktion och
+
+00:02:40.000 --> 00:02:42.880
+sedan öka den med 10 efter varje rad.
+
+00:02:45.200 --> 00:02:46.920
+Tänk igenom vad värdet är vid varje tillfälle.
+
+00:02:46.960 --> 00:02:50.480
+Positionen uppifrån börjar på 10.
+
+00:02:50.520 --> 00:02:53.360
+De första fem gångerna vi planterar ligger
+
+00:02:53.380 --> 00:02:56.720
+den kvar där. Positionen från vänster
+
+00:02:56.760 --> 00:02:59.720
+ökar. Sedan ökar vi positionen uppifrån
+
+00:02:59.800 --> 00:03:03.480
+med 10 till, och planterar fem blommor
+
+00:03:03.980 --> 00:03:07.120
+till lite längre ner. Vi sätter tillbaka
+
+00:03:07.140 --> 00:03:09.150
+positionen från vänster till 10 igen,
+
+00:03:09.180 --> 00:03:13.120
+och sedan ökar vi den igen varje gång.
+
+00:03:13.140 --> 00:03:16.030
+Och nu kan vi säga att det här ska upprepas fyra
+
+00:03:16.060 --> 00:03:20.360
+gånger, och då får vi fyra rader med fem plantor.
+
+00:03:20.420 --> 00:03:23.070
+Det viktiga att förstå är att Jiki gör klart allt
+
+00:03:23.260 --> 00:03:26.160
+arbete i den inre loopen (inner loop på engelska)
+
+00:03:26.220 --> 00:03:28.440
+innan han går tillbaka till den yttre loopen (outer
+
+00:03:28.500 --> 00:03:32.140
+loop på engelska). Han studsar inte fram och tillbaka.
+
+00:03:32.200 --> 00:03:34.130
+Han gör klart den inre loopen, och sedan
+
+00:03:34.260 --> 00:03:37.660
+går han vidare till nästa steg i den yttre loopen.
+
+00:03:37.680 --> 00:03:39.520
+I den här situationen kan du tänka på den yttre
+
+00:03:39.620 --> 00:03:41.880
+loopen som den som styr grupperna, eller
+
+00:03:41.980 --> 00:03:44.720
+raderna, och den inre loopen som den som
+
+00:03:44.820 --> 00:03:47.049
+styr varje sak i gruppen, eller varje sak på
+
+00:03:47.080 --> 00:03:50.549
+raden. I vårt exempel gör den yttre loopen
+
+00:03:50.600 --> 00:03:54.580
+alltså fyra rader, och den inre loopen sätter
+
+00:03:54.640 --> 00:03:57.760
+fem plantor, fem saker, i varje grupp.
+
+00:03:59.280 --> 00:04:02.100
+I de kommande övningarna kommer du att
+
+00:04:02.180 --> 00:04:05.520
+använda nästlade loopar för att bygga saker.
+
+00:04:05.580 --> 00:04:08.160
+De här nya övningarna ger dig funktioner
+
+00:04:08.540 --> 00:04:10.160
+som ritar de enskilda delarna.
+
+00:04:10.220 --> 00:04:11.829
+Din uppgift är bara att lista ut rätt
+
+00:04:11.860 --> 00:04:16.029
+struktur på looparna för att få det att
+
+00:04:16.060 --> 00:04:17.760
+fungera. Allt i övningarna finns med i
+
+00:04:17.800 --> 00:04:19.860
+det vi just har pratat om. Så om du kör
+
+00:04:20.660 --> 00:04:22.160
+fast, gå tillbaka till den här videon.
+
+00:04:22.180 --> 00:04:22.460
+Lycka till, så ses vi här snart igen.

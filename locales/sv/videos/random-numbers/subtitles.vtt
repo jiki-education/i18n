@@ -1,0 +1,141 @@
+WEBVTT
+
+NOTE en_md5 bda06700bc7cace998c9ec1d94e9d2aa
+
+00:00:00.160 --> 00:00:03.500
+Välkommen tillbaka. I programmering vill vi ofta
+
+00:00:03.660 --> 00:00:06.940
+använda en funktion och få tillbaka ett nytt slumptal
+
+00:00:07.020 --> 00:00:11.400
+(random number på engelska) varje gång.
+
+00:00:11.460 --> 00:00:13.960
+Det är användbart på alla möjliga sätt och ställen,
+
+00:00:14.020 --> 00:00:16.370
+men särskilt inom kryptografi. Där gör
+
+00:00:16.379 --> 00:00:19.270
+vi ofta saker som att skapa koder som maskiner
+
+00:00:20.040 --> 00:00:21.660
+delar med varandra, och de koderna måste
+
+00:00:21.680 --> 00:00:24.980
+vara slumpmässiga så att de inte kan hackas.
+
+00:00:25.320 --> 00:00:27.160
+Till din hjälp, för resten av kursen, finns
+
+00:00:27.200 --> 00:00:33.420
+en funktion som heter Math.randomInt (Math betyder
+
+00:00:33.440 --> 00:00:34.920
+matematik och randomInt slumpmässigt
+
+00:00:36.240 --> 00:00:38.660
+heltal). Du ser kanske att det finns en punkt
+
+00:00:38.700 --> 00:00:41.040
+i mitten. När du får tillgång till fler funktioner
+
+00:00:41.080 --> 00:00:43.980
+kan vi ordna dem i olika grupper för
+
+00:00:44.100 --> 00:00:46.720
+att hålla ordning, och Math-delen (kort för
+
+00:00:46.780 --> 00:00:49.550
+matematik) är namnet på den grupp som den
+
+00:00:49.600 --> 00:00:51.340
+här funktionen tillhör. Den talar om för Jiki
+
+00:00:51.350 --> 00:00:54.490
+vilken del av hyllorna han ska leta på, i
+
+00:00:54.520 --> 00:00:57.440
+det här fallet Math-sektionen. Punkten betyder
+
+00:00:57.480 --> 00:00:59.920
+bara: gå till den här sektionen och hitta
+
+00:00:59.940 --> 00:01:03.020
+funktionen. Bry dig inte så mycket om det här
+
+00:01:03.060 --> 00:01:06.740
+just nu. Instruktionerna i övningarna talar
+
+00:01:06.800 --> 00:01:09.940
+alltid om vilka funktioner som finns och
+
+00:01:09.980 --> 00:01:12.380
+hur du använder dem. Det viktiga att förstå
+
+00:01:12.460 --> 00:01:15.400
+är att när Jiki använder den här funktionen
+
+00:01:15.440 --> 00:01:19.760
+får han ett nytt tal varje gång han kör den,
+
+00:01:19.940 --> 00:01:22.120
+med en begränsning. Funktionen tar emot två
+
+00:01:22.160 --> 00:01:25.220
+indata. Det första värdet är det minsta tal
+
+00:01:25.300 --> 00:01:28.160
+maskinen får returnera, och det andra är det
+
+00:01:28.240 --> 00:01:31.740
+största tal maskinen får returnera. Så om
+
+00:01:32.080 --> 00:01:36.820
+du använder funktionen Math.randomInt med 10
+
+00:01:37.200 --> 00:01:40.280
+och 13 får du alltid tillbaka 10, 11, 12 eller
+
+00:01:40.340 --> 00:01:44.120
+13. Men du får ett annat tal varje gång.
+
+00:01:44.160 --> 00:01:46.200
+Nu ska vi tänka oss att du vill rita en cirkel
+
+00:01:46.240 --> 00:01:49.420
+på en slumpmässig position på canvasen.
+
+00:01:49.500 --> 00:01:52.500
+Då kan du använda Math.randomInt för
+
+00:01:52.640 --> 00:01:56.920
+att få olika värden för left och top varje
+
+00:01:56.960 --> 00:01:59.500
+gång, men med gränser på till exempel 10
+
+00:01:59.560 --> 00:02:02.960
+och 90, så att de aldrig hamnar utanför
+
+00:02:03.020 --> 00:02:05.020
+canvasen. Varje gång du kör den här koden
+
+00:02:05.060 --> 00:02:08.460
+ritas cirkeln på ett lite annat ställe.
+
+00:02:08.560 --> 00:02:12.320
+Vi börjar med en enkel övning där du bygger en
+
+00:02:12.460 --> 00:02:14.680
+sallad, så att du bekantar dig med begreppet
+
+00:02:15.400 --> 00:02:17.600
+slumptal. Sedan, under de kommande övningarna,
+
+00:02:17.640 --> 00:02:20.120
+ska vi börja göra en del riktigt roliga
+
+00:02:20.160 --> 00:02:22.019
+saker med dem. Vi ses här om en liten stund!

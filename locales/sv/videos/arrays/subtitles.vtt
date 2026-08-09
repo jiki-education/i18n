@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 9d89d6259cdafb0e4850d658df9bd781
+
+00:00:00.140 --> 00:00:02.440
+Välkommen tillbaka. Nu har du nått en
+
+00:00:02.520 --> 00:00:05.280
+riktigt viktig milstolpe i kursen.
+
+00:00:05.440 --> 00:00:08.060
+Du har använt tal och strängar och booleska
+
+00:00:08.120 --> 00:00:10.500
+värden, det fina ordet för sant och falskt,
+
+00:00:10.540 --> 00:00:13.350
+och de här olika sorterna kallar vi datatyper
+
+00:00:13.400 --> 00:00:16.260
+(data types på engelska). Nu ska vi lägga
+
+00:00:16.340 --> 00:00:20.080
+till vår första sammansatta datatyp (compound data
+
+00:00:20.180 --> 00:00:23.300
+type på engelska).
+
+00:00:23.380 --> 00:00:26.780
+Det är en datatyp som kan innehålla flera saker, inte bara en enda sak, och kallas array.
+
+00:00:28.220 --> 00:00:30.280
+När du hör ordet array vill jag att
+
+00:00:30.320 --> 00:00:33.060
+du tänker på en fysisk kedja som håller ihop en massa saker.
+
+00:00:33.440 --> 00:00:36.800
+Sakerna som den håller ihop kan vara vad
+
+00:00:36.820 --> 00:00:39.520
+som helst: strängar, tal, booleska värden, till och
+
+00:00:40.100 --> 00:00:42.360
+med andra arrayer, till och med saker du
+
+00:00:42.440 --> 00:00:44.280
+inte har lärt dig om än, men det
+
+00:00:44.320 --> 00:00:47.440
+bryr vi oss inte om just nu.
+
+00:00:47.500 --> 00:00:50.320
+Allt i den här kedjan ligger i ordning, i den ordning som sakerna är hopkedjade.
+
+00:00:51.180 --> 00:00:54.860
+En array innehåller alltså en massa saker, men
+
+00:00:54.920 --> 00:00:58.800
+den är ett enda helt element, en enda
+
+00:00:58.840 --> 00:01:01.440
+hel sak, en array med många element inuti.
+
+00:01:03.320 --> 00:01:06.090
+Jiki kan ta den där arrayen, den där
+
+00:01:06.160 --> 00:01:08.060
+kedjan, och lägga den i en låda, precis
+
+00:01:08.120 --> 00:01:09.300
+som han kan lägga en sträng i en
+
+00:01:09.320 --> 00:01:11.580
+låda eller ett tal i en låda.
+
+00:01:11.600 --> 00:01:13.340
+Han kan stoppa den i inkastet på en
+
+00:01:13.900 --> 00:01:15.320
+maskin. Han kan dra ut den ur en
+
+00:01:15.330 --> 00:01:18.860
+rutschkana. Den här arrayen är en enda sak,
+
+00:01:18.900 --> 00:01:20.800
+och Jiki jobbar med den på precis samma
+
+00:01:21.280 --> 00:01:23.840
+sätt som han jobbar med strängar, tal och
+
+00:01:23.880 --> 00:01:27.920
+allt annat du har sett hittills.
+
+00:01:28.020 --> 00:01:30.240
+I kod ser en array faktiskt också lite
+
+00:01:30.300 --> 00:01:32.420
+ut som en kedja. Den har hakparenteser ([])
+
+00:01:32.880 --> 00:01:34.770
+i ändarna och sedan en massa saker som
+
+00:01:34.800 --> 00:01:38.420
+är hopkedjade, åtskilda med kommatecken.
+
+00:01:38.440 --> 00:01:40.590
+Om vi till exempel vill skapa en array
+
+00:01:40.600 --> 00:01:42.480
+med namnen på några av våra mentorer kan
+
+00:01:43.100 --> 00:01:46.440
+vi göra i ordning en låda som heter
+
+00:01:46.460 --> 00:01:49.260
+mentors (mentorer) och lägga kedjan i den.
+
+00:01:49.280 --> 00:01:52.900
+Vi skriver let mentors =, precis som med
+
+00:01:53.140 --> 00:01:55.300
+vilken annan låda som helst, och sedan en
+
+00:01:55.320 --> 00:01:57.860
+inledande hakparentes, en massa element, namnen åtskilda
+
+00:01:57.920 --> 00:02:00.480
+med kommatecken, och till sist en avslutande hakparentes.
+
+00:02:00.500 --> 00:02:02.700
+När Jiki ser det här går han och
+
+00:02:02.760 --> 00:02:04.730
+hämtar fyra lappar, en för varje namn, sedan
+
+00:02:04.820 --> 00:02:07.760
+tar han fram en ny kedja och kedjar
+
+00:02:07.840 --> 00:02:10.650
+ihop dem allihop, och så lägger han kedjan
+
+00:02:10.680 --> 00:02:12.800
+i lådan mentors.
+
+00:02:12.860 --> 00:02:16.580
+Du kan lägga vad som helst i en array:
+
+00:02:16.660 --> 00:02:19.820
+strängar, tal, booleska värden, till och med en blandning av saker.
+
+00:02:19.860 --> 00:02:22.900
+De här är alla olika exempel på helt giltiga arrayer.
+
+00:02:24.800 --> 00:02:27.320
+Du kan också skapa en tom array. Det
+
+00:02:27.380 --> 00:02:30.080
+är bara en kedja utan element. Den är
+
+00:02:30.140 --> 00:02:31.760
+fortfarande en riktig sak. Den har fortfarande båda
+
+00:02:31.820 --> 00:02:33.800
+sina ändar. Den är fortfarande en kedja. Det
+
+00:02:33.860 --> 00:02:36.160
+är bara det att den inte har några
+
+00:02:36.200 --> 00:02:38.400
+saker i sig. Men du kan ändå lägga
+
+00:02:38.420 --> 00:02:40.260
+den tomma arrayen i en låda, hämta ut
+
+00:02:40.280 --> 00:02:44.120
+den och använda den senare.
+
+00:02:44.160 --> 00:02:46.850
+Du kan alltså skapa en array med hakparentessyntaxen,
+
+00:02:46.860 --> 00:02:48.820
+men hur använder vi dem egentligen? Hur kollar
+
+00:02:48.880 --> 00:02:50.910
+vi vad som finns i dem och hämtar
+
+00:02:50.980 --> 00:02:53.829
+ut saker? Jo, på precis samma sätt som
+
+00:02:53.860 --> 00:02:55.410
+när vi ville hämta ut bokstäver ur en
+
+00:02:55.440 --> 00:02:58.040
+sträng. Vi kan använda hakparentessyntaxen med tal
+
+00:02:58.100 --> 00:03:00.980
+inuti.
+
+00:03:01.020 --> 00:03:03.020
+Nu går vi tillbaka till våra mentorer. Om
+
+00:03:03.060 --> 00:03:05.560
+vi vill hämta ut den första skriver vi
+
+00:03:05.800 --> 00:03:08.720
+mentors[0]. Kom ihåg att vi räknar från
+
+00:03:08.880 --> 00:03:13.280
+noll i JavaScript. Och vi kan också loopa
+
+00:03:13.290 --> 00:03:15.190
+igenom en array på precis samma sätt som
+
+00:03:15.220 --> 00:03:18.460
+vi loopade igenom strängar tidigare, med for-of.
+
+00:03:19.400 --> 00:03:21.580
+Arrayer fungerar på precis samma sätt. Den
+
+00:03:21.680 --> 00:03:23.980
+enda skillnaden är att vi den här gången
+
+00:03:24.040 --> 00:03:26.720
+inte får ut en bokstav, utan det som
+
+00:03:26.780 --> 00:03:28.900
+låg på den platsen i arrayen. I det
+
+00:03:28.940 --> 00:03:31.620
+här exemplet namnet på mentorn. Så första gången
+
+00:03:31.680 --> 00:03:34.280
+vi tackar någon tackar vi DJ. Andra
+
+00:03:34.320 --> 00:03:38.400
+gången tackar vi Becky, och så vidare.
+
+00:03:38.460 --> 00:03:41.500
+Vi kan också använda egenskapen length på arrayer,
+
+00:03:41.560 --> 00:03:43.940
+precis som vi lärde oss på strängar. Om
+
+00:03:43.980 --> 00:03:45.980
+vi har en array med fyra strängar i
+
+00:03:46.100 --> 00:03:50.040
+lådan mentors och skriver mentors.length, så returnerar det fyra.
+
+00:03:50.980 --> 00:03:53.500
+Och vi kan använda includes på precis samma
+
+00:03:53.520 --> 00:03:56.180
+sätt på arrayer också. Vi kan skriva mentors.includes(DJ),
+
+00:03:56.540 --> 00:03:59.880
+och då returnerar det true. Men om vi
+
+00:03:59.960 --> 00:04:03.600
+skriver mentors.includes(Frank) returnerar det false.
+
+00:04:05.080 --> 00:04:07.360
+Allt fungerar precis som med strängar. Det
+
+00:04:07.420 --> 00:04:09.640
+är bara det att vi jobbar med elementen
+
+00:04:09.660 --> 00:04:12.160
+i en array, inte bokstäverna i en sträng.
+
+00:04:14.140 --> 00:04:17.160
+I de nästa två övningarna får du testa
+
+00:04:17.200 --> 00:04:19.540
+de här olika teknikerna. Du kommer att behöva
+
+00:04:19.560 --> 00:04:21.130
+tänka på om du behöver plocka ut ett
+
+00:04:21.300 --> 00:04:23.680
+enskilt element ur arrayen med hakparenteser, eller om
+
+00:04:23.720 --> 00:04:26.220
+du vill loopa igenom alla elementen och kolla
+
+00:04:26.280 --> 00:04:28.820
+eller göra något med varje i tur och
+
+00:04:28.880 --> 00:04:31.860
+ordning. Som vanligt, om du kör fast, kolla
+
+00:04:31.920 --> 00:04:34.040
+tipsen,
+
+00:04:34.080 --> 00:04:34.860
+så ses vi här igen om en stund.

@@ -1,0 +1,405 @@
+WEBVTT
+
+NOTE en_md5 f8c737461bf364654b8a618e515caeb8
+
+00:00:00.140 --> 00:00:02.210
+Zdravo, evo nas ponovo. Hajde da
+
+00:00:02.400 --> 00:00:04.400
+malo skrenemo sa puta, da napravimo digresiju
+
+00:00:04.460 --> 00:00:06.480
+i pogledamo nešto što će ti trebati
+
+00:00:06.540 --> 00:00:08.850
+ako ikada radiš nešto vizuelno sa
+
+00:00:08.880 --> 00:00:10.860
+kodom. Čak i ako želiš da budeš
+
+00:00:10.900 --> 00:00:12.460
+data scientist i misliš da je sve
+
+00:00:12.560 --> 00:00:16.180
+to crtanje pomalo dosadno, komuniciranje podataka
+
+00:00:16.219 --> 00:00:19.180
+kroz vizuelne prikaze je ključna veština, pa
+
+00:00:19.220 --> 00:00:21.790
+ga zaista vredi naučiti. U ovom videu
+
+00:00:21.840 --> 00:00:24.220
+pogledaćemo dva različita načina
+
+00:00:24.260 --> 00:00:28.670
+izražavanja boja. Već koristiš boje
+
+00:00:28.680 --> 00:00:31.640
+sa njihovim imenima, poput red ili yellow,
+
+00:00:31.700 --> 00:00:33.800
+kao poslednji ulaz u funkcijama za crtanje,
+
+00:00:35.400 --> 00:00:37.300
+i to je zgodan način da
+
+00:00:37.360 --> 00:00:40.320
+brzo koristiš boje, ali je ograničavajuće. Postoji
+
+00:00:40.330 --> 00:00:42.350
+samo mali broj imenovanih boja koje
+
+00:00:42.380 --> 00:00:44.370
+možemo da koristimo. Zato ćemo sada pogledati
+
+00:00:44.400 --> 00:00:46.880
+dva načina da izraziš bilo koju boju
+
+00:00:46.960 --> 00:00:49.960
+koju poželiš, a ta dva se zovu RGB
+
+00:00:50.180 --> 00:00:54.920
+i HSL. RGB nam omogućava da o bojama
+
+00:00:54.980 --> 00:00:57.100
+razmišljamo kao o mešavini crvene, zelene i plave.
+
+00:00:57.300 --> 00:01:00.210
+To je ono što RGB znači: crvena, zelena, plava.
+
+00:01:01.280 --> 00:01:04.040
+Ako se sećaš mešanja boja u školi,
+
+00:01:04.099 --> 00:01:06.730
+to je slična ideja, samo što ovde
+
+00:01:06.760 --> 00:01:11.580
+mešamo svetlost, a ne farbu. U mnogim vežbama
+
+00:01:11.640 --> 00:01:14.440
+koje slede imaćeš funkciju pod nazivom rgb,
+
+00:01:15.280 --> 00:01:16.960
+koja uzima tri broja kao
+
+00:01:17.000 --> 00:01:20.040
+ulaze: jedan za crvenu, jedan za zelenu, jedan
+
+00:01:20.080 --> 00:01:22.240
+za plavu, i vraća
+
+00:01:22.320 --> 00:01:26.900
+boju. Brojevi koje možeš da koristiš kao
+
+00:01:26.980 --> 00:01:32.940
+ulaze idu od nule do 255. Nula znači
+
+00:01:33.040 --> 00:01:35.440
+da ne želim ni malo te boje, a
+
+00:01:35.620 --> 00:01:38.420
+255 znači: dodaj što je više moguće
+
+00:01:38.460 --> 00:01:41.460
+te boje. Dakle, ako upotrebimo
+
+00:01:41.540 --> 00:01:45.550
+funkciju rgb sa 255, nulom i nulom kao
+
+00:01:45.600 --> 00:01:48.190
+ulazima, time kažemo: hoću
+
+00:01:48.240 --> 00:01:50.440
+svu crvenu. Zapamti da je 255
+
+00:01:50.460 --> 00:01:52.880
+najveći broj koji možeš da staviš tamo.
+
+00:01:52.900 --> 00:01:54.800
+Ali ne želimo ni malo zelene ni
+
+00:01:54.820 --> 00:01:57.420
+plave, tako da su obe nula. Tako
+
+00:01:57.460 --> 00:02:00.880
+dobijamo crvenu, i tu crvenu možemo
+
+00:02:00.900 --> 00:02:03.360
+da sačuvamo u promenljivu i zatim je koristimo
+
+00:02:03.380 --> 00:02:05.340
+u funkciji circle, baš kao što smo
+
+00:02:05.400 --> 00:02:08.840
+već radili sa imenovanim stringovima. A šta
+
+00:02:08.880 --> 00:02:10.759
+ako upotrebimo funkciju rgb sa
+
+00:02:10.900 --> 00:02:15.340
+nulom, 255, nulom? Sada kažemo: bez crvene,
+
+00:02:15.880 --> 00:02:18.310
+sva zelena, bez plave. Tako dobijamo
+
+00:02:18.320 --> 00:02:21.440
+zeleni krug. A šta ako želimo
+
+00:02:21.640 --> 00:02:25.320
+žutu? Žuta je mešavina crvene
+
+00:02:25.620 --> 00:02:27.940
+i zelene. Dakle, možemo reći: daj mi
+
+00:02:28.020 --> 00:02:29.840
+svu crvenu, svu zelenu,
+
+00:02:30.180 --> 00:02:32.120
+i bez plave, i to će nam dati
+
+00:02:32.200 --> 00:02:35.200
+žutu. I možemo da koristimo
+
+00:02:35.240 --> 00:02:37.730
+manje brojeve. Ako želimo malo crvene,
+
+00:02:38.300 --> 00:02:41.150
+bez zelene i puno plave, dobićemo
+
+00:02:41.200 --> 00:02:45.080
+ljubičastu. A mnogo crvene, malo zelene,
+
+00:02:45.380 --> 00:02:47.000
+još malo više plave, to nam daje
+
+00:02:47.040 --> 00:02:51.360
+roze. To je RGB. Mešamo crvenu, zelenu
+
+00:02:51.500 --> 00:02:56.060
+i plavu da bismo dobili različite kombinacije. Sada
+
+00:02:56.100 --> 00:02:58.960
+hajde da pogledamo HSL, koji nam daje
+
+00:02:58.980 --> 00:03:03.060
+potpuno drugačiji način razmišljanja o bojama. HSL znači
+
+00:03:03.100 --> 00:03:08.200
+nijansa, zasićenost i osvetljenost. Slično kao kod
+
+00:03:08.280 --> 00:03:11.900
+RGB-a, postoji funkcija pod nazivom hsl koja
+
+00:03:11.920 --> 00:03:14.590
+uzima tri broja: jedan za nijansu, jedan za
+
+00:03:14.640 --> 00:03:17.100
+zasićenost i jedan za osvetljenost, i ona
+
+00:03:17.120 --> 00:03:20.420
+vraća boju. Hajde da razložimo
+
+00:03:20.480 --> 00:03:25.160
+šta te tri reči znače. Nijansa je
+
+00:03:25.200 --> 00:03:28.080
+nijansa boje koju želiš, i
+
+00:03:28.120 --> 00:03:32.300
+ide od nule do 360. Možda
+
+00:03:32.320 --> 00:03:34.200
+zamisli dugu. Ovako ja o tome
+
+00:03:34.260 --> 00:03:36.200
+razmišljam. Na levoj strani imamo crvenu,
+
+00:03:36.700 --> 00:03:39.220
+a zatim narandžastu, žutu, zelenu, plavu,
+
+00:03:39.400 --> 00:03:41.320
+ljubičastu, i zapravo se vraćamo sve
+
+00:03:41.340 --> 00:03:44.760
+nazad do crvene. Ako kažeš nula,
+
+00:03:45.140 --> 00:03:47.100
+počinješ s leve strane, i to je
+
+00:03:47.180 --> 00:03:50.700
+crvena. Ako kažeš 120, tražiš
+
+00:03:50.740 --> 00:03:54.580
+zelenu. 230 je plava. Možeš ovo
+
+00:03:54.620 --> 00:03:57.470
+da zamisliš i kao krug boja, što
+
+00:03:57.500 --> 00:03:59.500
+360 zapravo i jeste. To je broj
+
+00:03:59.540 --> 00:04:02.440
+stepeni u krugu. Ja uvek
+
+00:04:02.480 --> 00:04:04.360
+samo potražim brojeve koji mi trebaju, tako
+
+00:04:04.440 --> 00:04:07.000
+da ne brini previše oko toga da
+
+00:04:07.060 --> 00:04:09.340
+ovo zapamtiš, ali je lepo znati šta
+
+00:04:09.380 --> 00:04:11.720
+se dešava. Dakle, to je nijansa, odnosno
+
+00:04:11.780 --> 00:04:16.019
+ton. Zatim imamo zasićenost, koja govori koliko
+
+00:04:16.060 --> 00:04:18.920
+je boja živa. Ide od nule
+
+00:04:19.019 --> 00:04:22.060
+do 100. Na nuli dobiješ samo sivu.
+
+00:04:22.400 --> 00:04:24.440
+Uopšte nema boje, nikakvog
+
+00:04:24.500 --> 00:04:28.160
+tona. Na 100 dobiješ punu, živu,
+
+00:04:28.360 --> 00:04:32.660
+vibrantnu boju. A onda imamo osvetljenost. Osvetljenost
+
+00:04:32.700 --> 00:04:34.860
+je koliko je boja svetla, i to
+
+00:04:34.960 --> 00:04:37.600
+takođe ide od nule do 100. Na
+
+00:04:37.740 --> 00:04:40.200
+nuli dobiješ crnu. Bez obzira koju nijansu
+
+00:04:40.260 --> 00:04:43.460
+odabereš, dobiješ crnu. U njoj nema
+
+00:04:43.480 --> 00:04:46.500
+svetlosti. A na 100 dobiješ belu.
+
+00:04:46.980 --> 00:04:49.000
+Bez obzira na sve ostalo, puna je
+
+00:04:49.060 --> 00:04:52.420
+svetlosti, pa je bela. 50 je tačno
+
+00:04:52.460 --> 00:04:55.490
+u sredini, normalna boja. Tako da ovo
+
+00:04:55.520 --> 00:04:57.550
+možeš da zamisliš kao klizač za
+
+00:04:57.580 --> 00:05:01.260
+podešavanje svetline boje. Dakle, ako
+
+00:05:01.320 --> 00:05:03.840
+želimo normalan crveni krug, koji bismo
+
+00:05:03.860 --> 00:05:07.680
+u RGB-u zapisali kao 255, nula, nula, svu
+
+00:05:07.720 --> 00:05:10.640
+crvenu, bez zelene, bez plave, ovde
+
+00:05:10.680 --> 00:05:15.560
+bismo koristili nula, 100, 50. Nula za
+
+00:05:15.600 --> 00:05:19.290
+crvenu nijansu, 100 za zasićenost, puna boja,
+
+00:05:19.800 --> 00:05:22.060
+i 50 za osvetljenost, što je normalan
+
+00:05:22.080 --> 00:05:25.240
+nivo osvetljenosti. Ako želimo da to bude
+
+00:05:25.250 --> 00:05:27.800
+zeleni krug, jednostavno možemo da promenimo tu
+
+00:05:27.880 --> 00:05:30.700
+nijansu na 120. Ako želimo
+
+00:05:30.740 --> 00:05:33.260
+tamniju zelenu, možemo da smanjimo
+
+00:05:33.270 --> 00:05:37.340
+osvetljenost na 25. Ako želimo
+
+00:05:37.380 --> 00:05:39.360
+zagasitiju zelenu, možemo
+
+00:05:39.440 --> 00:05:40.780
+da oduzmemo malo boje, malo
+
+00:05:40.920 --> 00:05:43.860
+zasićenosti, recimo da je spustimo na 30.
+
+00:05:46.500 --> 00:05:48.800
+Ako želiš jarko, žarko roze,
+
+00:05:48.860 --> 00:05:52.080
+nijansa od oko 300 je roze, a zatim
+
+00:05:52.120 --> 00:05:55.680
+povećamo zasićenost na 100 da
+
+00:05:55.720 --> 00:05:57.560
+bude stvarno živo, i pojačamo
+
+00:05:57.620 --> 00:06:01.290
+i osvetljenost, na otprilike 60. Dakle, imamo
+
+00:06:01.340 --> 00:06:03.660
+dva različita načina za izražavanje boje, i
+
+00:06:03.760 --> 00:06:07.830
+korisni su u različitim situacijama. RGB je odličan
+
+00:06:07.900 --> 00:06:12.160
+kada želiš da podešavaš jednu konkretnu komponentu:
+
+00:06:12.500 --> 00:06:14.380
+koliko crvene, koliko zelene, koliko
+
+00:06:14.400 --> 00:06:17.540
+plave. HSL je odličan kada želiš
+
+00:06:17.600 --> 00:06:20.060
+da prolaziš kroz boje. Ako želiš dugu,
+
+00:06:20.100 --> 00:06:23.440
+samo nastavi da povećavaš nijansu. U
+
+00:06:23.460 --> 00:06:25.360
+narednih nekoliko vežbi koristićeš
+
+00:06:25.400 --> 00:06:27.500
+i jedno i drugo, uz petlje i
+
+00:06:27.960 --> 00:06:31.020
+menjanje promenljivih, da napraviš dugu i
+
+00:06:31.080 --> 00:06:33.280
+zalazak sunca. Podsetiću te na sve
+
+00:06:33.320 --> 00:06:36.400
+detalje u uputstvima za vežbe, pa ne brini
+
+00:06:36.460 --> 00:06:40.140
+ako se još ne sećaš svega ovoga. Srećno,
+
+00:06:40.180 --> 00:06:41.640
+zabavi se i vidimo se
+
+00:06:41.660 --> 00:06:42.060
+uskoro ponovo ovde.

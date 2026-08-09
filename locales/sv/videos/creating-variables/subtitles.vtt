@@ -1,0 +1,396 @@
+WEBVTT
+
+NOTE en_md5 9ba87f0c52699c431570792318049b06
+
+00:00:00.220 --> 00:00:04.109
+Välkommen tillbaka. Nu kan du förhoppningsvis använda
+
+00:00:04.280 --> 00:00:07.870
+funktioner och repeat-loopar ganska säkert. I den här
+
+00:00:07.900 --> 00:00:10.080
+sessionen går vi vidare till ett annat
+
+00:00:10.100 --> 00:00:12.610
+helt avgörande ämne som du kommer att
+
+00:00:12.640 --> 00:00:14.880
+använda i nästan alla program du någonsin skriver,
+
+00:00:14.940 --> 00:00:19.220
+och det ämnet är variabler. Variabler är
+
+00:00:19.460 --> 00:00:22.700
+det som låter oss lagra information. När
+
+00:00:22.760 --> 00:00:25.420
+vi programmerar behöver vi ofta spara ett tal
+
+00:00:25.500 --> 00:00:27.780
+eller en sträng för att använda senare,
+
+00:00:27.800 --> 00:00:30.480
+och det är precis det variabler är
+
+00:00:30.580 --> 00:00:32.880
+till för. Så nu zoomar vi ut lite
+
+00:00:32.940 --> 00:00:35.780
+i Jikis lager, och då ser du
+
+00:00:35.800 --> 00:00:37.160
+att han har ännu en hylla. Den
+
+00:00:37.180 --> 00:00:39.680
+första hyllan känner vi redan till, den med
+
+00:00:39.700 --> 00:00:42.140
+funktionerna på, de här små maskinerna som
+
+00:00:42.160 --> 00:00:44.710
+move och rectangle. Men på den andra
+
+00:00:44.760 --> 00:00:47.860
+hyllan står det inga maskiner, utan massor av
+
+00:00:47.900 --> 00:00:50.080
+lådor, och de här lådorna är det
+
+00:00:50.140 --> 00:00:52.460
+vi kallar variabler. Du kan be Jiki
+
+00:00:52.580 --> 00:00:54.940
+att lägga vad som helst i lådorna och
+
+00:00:54.980 --> 00:00:57.480
+sedan be honom hämta ut det igen
+
+00:00:57.520 --> 00:01:00.020
+senare. Varje låda har ett namn, precis
+
+00:01:00.140 --> 00:01:03.000
+som funktioner har namn, och varje låda innehåller
+
+00:01:03.380 --> 00:01:05.320
+bara en enda sak. Än så länge
+
+00:01:05.340 --> 00:01:07.480
+antingen ett tal eller en sträng. Men
+
+00:01:07.540 --> 00:01:10.800
+längre fram i kursen ska vi titta på
+
+00:01:10.860 --> 00:01:12.500
+hur du lagrar mer komplexa saker i
+
+00:01:13.240 --> 00:01:16.920
+dem. Så hur säger vi åt Jiki
+
+00:01:17.000 --> 00:01:19.200
+att göra en låda och lägga något i
+
+00:01:19.300 --> 00:01:21.860
+den? Vi använder nyckelordet let. Nyckelordet let
+
+00:01:21.900 --> 00:01:23.760
+talar om för Jiki att han behöver
+
+00:01:23.800 --> 00:01:26.320
+göra en ny låda. Du kan föreställa dig
+
+00:01:26.440 --> 00:01:28.840
+hur han packar upp en kartong ur
+
+00:01:28.880 --> 00:01:30.620
+sitt emballage och viker ihop den, och
+
+00:01:30.720 --> 00:01:32.940
+sedan tittar han på vad som står efter
+
+00:01:33.220 --> 00:01:36.260
+ordet let, och det är etiketten han
+
+00:01:36.320 --> 00:01:38.360
+sätter på lådan, i det här fallet
+
+00:01:38.440 --> 00:01:41.020
+name. Så han tar fram sin penna och
+
+00:01:41.740 --> 00:01:43.960
+skriver name på etiketten. Sedan tittar han
+
+00:01:44.340 --> 00:01:45.640
+på vad som står efter likhetstecknet. I
+
+00:01:45.660 --> 00:01:48.830
+det här fallet är det mitt namn, Jeremy,
+
+00:01:48.900 --> 00:01:50.460
+och eftersom Jeremy är en sträng tar
+
+00:01:50.520 --> 00:01:52.660
+han en lapp och skriver Jeremy på
+
+00:01:52.700 --> 00:01:56.410
+den. Det är bara en sträng, precis samma
+
+00:01:56.460 --> 00:01:58.260
+sak som färgerna du har jobbat med,
+
+00:01:58.300 --> 00:02:00.120
+och sedan lägger han lappen i lådan.
+
+00:02:00.640 --> 00:02:02.300
+Vi har alltså sagt åt honom att göra
+
+00:02:02.380 --> 00:02:05.140
+en låda, sätta en etikett på den
+
+00:02:05.220 --> 00:02:07.980
+och lägga något i den, och nu
+
+00:02:08.020 --> 00:02:09.840
+går han och ställer lådan på hyllan. Sedan
+
+00:02:09.979 --> 00:02:11.900
+kan Jiki när som helst i ditt
+
+00:02:11.940 --> 00:02:14.580
+program gå och hämta lådan från hyllan
+
+00:02:14.660 --> 00:02:16.540
+och titta vad som ligger i den. Börja
+
+00:02:16.580 --> 00:02:19.120
+bygga upp den här tankemodellen. Jag har
+
+00:02:19.180 --> 00:02:21.790
+programmerat i hela mitt liv, och jag
+
+00:02:21.820 --> 00:02:23.680
+föreställer mig fortfarande, när jag skriver kod, att
+
+00:02:23.720 --> 00:02:26.340
+jag lägger något i en låda som
+
+00:02:26.400 --> 00:02:28.570
+jag ska hämta ut senare. När du
+
+00:02:28.690 --> 00:02:31.460
+ser nyckelordet let, tänk verkligen: ”Okej, det betyder
+
+00:02:33.520 --> 00:02:34.530
+att jag gör en ny låda.” Några
+
+00:02:34.580 --> 00:02:37.210
+ord om variablernas namn, alltså etiketterna på
+
+00:02:37.260 --> 00:02:40.140
+lådorna. Där har vi några regler. För det
+
+00:02:40.180 --> 00:02:44.740
+första får variabelnamn inte innehålla mellanslag. Om
+
+00:02:44.780 --> 00:02:47.580
+du vill använda flera ord som etikett
+
+00:02:47.700 --> 00:02:49.859
+på en låda trycker vi ihop orden mot
+
+00:02:49.920 --> 00:02:51.900
+varandra och gör om första bokstaven i
+
+00:02:51.980 --> 00:02:55.180
+varje nytt ord till en stor bokstav.
+
+00:02:55.220 --> 00:02:57.520
+Det här kallas camel case. Föreställ dig pucklarna
+
+00:02:57.680 --> 00:03:00.660
+på en kamel som knuffar upp första
+
+00:03:00.740 --> 00:03:02.540
+bokstaven i varje nytt ord så att
+
+00:03:02.580 --> 00:03:05.260
+den blir stor. Så om du vill ha
+
+00:03:05.340 --> 00:03:08.290
+en etikett som är mitt namn skriver
+
+00:03:08.320 --> 00:03:10.920
+vi det inte som två ord med
+
+00:03:10.960 --> 00:03:13.400
+mellanslag, utan som ett enda ord med stort
+
+00:03:15.200 --> 00:03:17.960
+N: myName. Dessutom måste varje variabelnamn vara
+
+00:03:18.020 --> 00:03:20.180
+unikt. Du kan inte ha två lådor
+
+00:03:20.860 --> 00:03:23.180
+med samma etikett, och variabler kan inte heller
+
+00:03:23.240 --> 00:03:26.140
+heta samma sak som funktioner. Om du
+
+00:03:26.180 --> 00:03:28.040
+glömmer det blir Jiki förvirrad och ger
+
+00:03:29.660 --> 00:03:31.210
+dig ett felmeddelande. Nu ska vi titta på
+
+00:03:31.280 --> 00:03:34.160
+var vi kan ha nytta av en
+
+00:03:34.200 --> 00:03:36.920
+variabel. Säg att vi ritar en sol
+
+00:03:36.980 --> 00:03:39.490
+på himlen. Vi vet att vi kan använda
+
+00:03:39.580 --> 00:03:43.480
+funktionen circle och ge den fyra indata:
+
+00:03:43.680 --> 00:03:47.000
+left, top, radius och color. Men när
+
+00:03:47.040 --> 00:03:49.160
+vi ritar många saker och har alla de
+
+00:03:49.180 --> 00:03:51.740
+här talen utspridda i koden kan det
+
+00:03:51.780 --> 00:03:55.020
+bli riktigt svårt att hålla reda på och
+
+00:03:55.280 --> 00:03:57.500
+läsa den. Så i stället kan vi
+
+00:03:57.600 --> 00:04:00.760
+skapa varsin variabel för left, top, radius
+
+00:04:00.860 --> 00:04:04.560
+och color och sedan hänvisa till variablerna senare.
+
+00:04:04.620 --> 00:04:06.380
+Målet här är alltså att kunna använda
+
+00:04:06.420 --> 00:04:11.200
+funktionen circle och ange fina, läsbara namn
+
+00:04:11.220 --> 00:04:14.590
+på lådor, och när Jiki ser namnen vet
+
+00:04:14.620 --> 00:04:16.480
+han att han ska hämta lådorna från
+
+00:04:16.560 --> 00:04:20.459
+hyllorna och använda det som ligger i
+
+00:04:20.519 --> 00:04:22.550
+dem. Nu skapar vi några variabler för det
+
+00:04:22.550 --> 00:04:25.050
+här. Vi börjar med solens vänsterposition. Vi
+
+00:04:25.580 --> 00:04:27.350
+använder nyckelordet let för att säga åt
+
+00:04:27.350 --> 00:04:29.700
+Jiki att skapa en ny låda som heter
+
+00:04:29.740 --> 00:04:32.310
+leftPosition. Lägg märke till camel case där,
+
+00:04:32.500 --> 00:04:35.180
+med stort P. Och vi talar om
+
+00:04:35.260 --> 00:04:38.560
+för Jiki vilket tal som ska ligga i
+
+00:04:38.580 --> 00:04:40.340
+lådan. Han ställer den på hyllan och
+
+00:04:40.420 --> 00:04:43.020
+gör sedan samma sak för topPosition, radius
+
+00:04:43.180 --> 00:04:46.540
+och color. När som helst i koden kan
+
+00:04:46.620 --> 00:04:48.870
+vi hänvisa tillbaka till de här variablerna,
+
+00:04:49.000 --> 00:04:51.400
+och då hämtar Jiki ut värdena och
+
+00:04:51.440 --> 00:04:53.530
+stoppar dem i en maskin. Det andra fina
+
+00:04:53.640 --> 00:04:56.120
+med variabler är att varje gång vi
+
+00:04:56.160 --> 00:04:58.960
+vill rita något på samma position som
+
+00:04:59.000 --> 00:05:01.620
+solen kan vi återanvända samma leftPosition- och topPosition-variabler.
+
+00:05:01.680 --> 00:05:04.980
+Ta ett annat exempel. Tänk dig att
+
+00:05:05.000 --> 00:05:07.660
+du bygger en mur med 30 tegelstenar,
+
+00:05:07.700 --> 00:05:10.200
+och du vill att alla tegelstenarna ska ha
+
+00:05:10.220 --> 00:05:11.840
+samma bredd och samma höjd. Då är
+
+00:05:11.880 --> 00:05:14.270
+det mycket bättre att skapa variabler för
+
+00:05:14.360 --> 00:05:17.100
+bredden och höjden i början av koden och
+
+00:05:17.280 --> 00:05:19.580
+sedan hänvisa tillbaka till dem i resten
+
+00:05:19.660 --> 00:05:21.590
+av koden. För om du sedan vill
+
+00:05:21.640 --> 00:05:23.900
+ändra bredden eller höjden behöver du bara ändra
+
+00:05:23.980 --> 00:05:25.960
+på ett ställe, så uppdateras allt annat.
+
+00:05:26.020 --> 00:05:28.260
+I de kommande övningarna kommer du att
+
+00:05:28.380 --> 00:05:33.100
+använda variabler för att skriva renare och mer
+
+00:05:33.260 --> 00:05:35.980
+läsbar kod. Och när du väl känner
+
+00:05:36.060 --> 00:05:38.840
+dig bekväm med att skapa och använda
+
+00:05:38.880 --> 00:05:41.910
+variabler tittar vi på hur variabler kan hänvisa
+
+00:05:41.960 --> 00:05:44.280
+till andra variabler, och det är då
+
+00:05:44.320 --> 00:05:46.920
+det börjar bli riktigt kraftfullt. Men gå
+
+00:05:47.620 --> 00:05:50.110
+och öva med de här övningarna för nu,
+
+00:05:50.520 --> 00:05:51.880
+så ses vi här igen strax.

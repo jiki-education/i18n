@@ -1,0 +1,267 @@
+WEBVTT
+
+NOTE en_md5 49411a7db976297a17fb5f2e027fcaff
+
+00:00:00.100 --> 00:00:03.060
+Zdravo ponovo. Već neko vreme koristiš
+
+00:00:03.120 --> 00:00:05.160
+`repeat` petlju i nadam se da se
+
+00:00:05.220 --> 00:00:08.640
+osećaš prilično sigurno s njom. Sada ćemo
+
+00:00:08.680 --> 00:00:10.500
+da pogledamo nešto u vezi s tim,
+
+00:00:10.520 --> 00:00:13.220
+malo složenije. Recimo da želimo red
+
+00:00:13.260 --> 00:00:15.740
+cveća. Možemo da napišemo nešto ovako.
+
+00:00:16.180 --> 00:00:18.720
+Postavimo poziciju, posadimo cvet,
+
+00:00:18.760 --> 00:00:21.300
+povećamo poziciju za 10, ponovimo,
+
+00:00:22.000 --> 00:00:23.560
+i na kraju dobijemo lep, uredan
+
+00:00:23.680 --> 00:00:26.640
+red cveća. Ali šta ako želimo
+
+00:00:26.720 --> 00:00:30.240
+mrežu cveća sa redovima i kolonama? Recimo
+
+00:00:30.320 --> 00:00:32.780
+četiri reda sa po pet cvetova u svakom redu.
+
+00:00:35.000 --> 00:00:36.580
+Stani na trenutak, možda pauziraj
+
+00:00:36.620 --> 00:00:38.640
+video na sekund i razmisli
+
+00:00:38.700 --> 00:00:42.380
+kako bi to moglo da se uradi. Imamo
+
+00:00:42.440 --> 00:00:44.880
+petlju koja crta jedan red cveća.
+
+00:00:45.980 --> 00:00:48.240
+Kako možeš da iskoristiš tu petlju da nacrtaš
+
+00:00:48.320 --> 00:00:50.660
+četiri reda? Ili šta bismo mogli da uradimo
+
+00:00:50.700 --> 00:00:54.420
+da nacrtamo četiri reda? Dobro, nadam se da imaš ideju.
+
+00:00:55.440 --> 00:00:57.360
+Jedna mogućnost je da jednostavno kopiraš
+
+00:00:57.380 --> 00:01:00.680
+i nalepiš tu petlju četiri puta i promeniš
+
+00:01:00.740 --> 00:01:03.260
+gornju poziciju za svaki. I to bi
+
+00:01:03.320 --> 00:01:07.970
+radilo. Bilo bi u redu. Ali ponavlja se, a
+
+00:01:07.980 --> 00:01:10.380
+postoji i bolji način. Znamo da kada se kod
+
+00:01:10.420 --> 00:01:13.420
+ponavlja, možemo da koristimo petlju da
+
+00:01:13.460 --> 00:01:17.920
+pojednostavimo stvari. Ovde možemo da koristimo jednu
+
+00:01:18.020 --> 00:01:21.840
+petlju unutar druge petlje. Jednu petlju za
+
+00:01:21.860 --> 00:01:24.840
+redove i drugu za cveće u tom
+
+00:01:24.880 --> 00:01:28.080
+redu. Hajde da počnemo tako što ćemo da dodamo `repeat`
+
+00:01:28.140 --> 00:01:30.360
+petlju oko postojećeg koda, da
+
+00:01:30.380 --> 00:01:32.220
+osetiš kako to radi. I
+
+00:01:32.260 --> 00:01:35.020
+ponovićemo samo jednom. Dakle, kažemo Jikiju
+
+00:01:35.060 --> 00:01:38.680
+da uradi sve unutar ovih spoljnih vitičastih zagrada jednom.
+
+00:01:39.800 --> 00:01:41.920
+To ima potpuno isti efekat kao
+
+00:01:42.000 --> 00:01:44.220
+da uopšte nemamo ovu spoljnu petlju.
+
+00:01:44.280 --> 00:01:46.870
+Kažemo Jikiju da ponovi nešto jednom, što je
+
+00:01:46.940 --> 00:01:48.440
+isto kao da mu kažemo da to
+
+00:01:48.480 --> 00:01:51.000
+uradi bez `repeat`-a. Ali pokazujem ti
+
+00:01:51.040 --> 00:01:53.000
+ovo da vidiš da ovaj kod
+
+00:01:53.060 --> 00:01:55.500
+ovako funkcioniše. To je ispravan, validan kod. Imamo
+
+00:01:55.560 --> 00:01:59.900
+jednu petlju unutar druge petlje. Dakle, šta se
+
+00:01:59.940 --> 00:02:02.960
+dešava ako promenimo tu spoljnu petlju da
+
+00:02:03.000 --> 00:02:06.520
+ponavlja dva puta? Sada će Jiki da izvrši
+
+00:02:06.560 --> 00:02:10.400
+čitavu stvar sa `plant` pet puta, dva puta. Posadiće
+
+00:02:10.440 --> 00:02:14.460
+10 cvetova. Ali svi ti cvetovi će
+
+00:02:14.500 --> 00:02:17.600
+biti u istom redu. Na isti
+
+00:02:17.660 --> 00:02:20.520
+način na koji moramo da pomeramo poziciju
+
+00:02:20.580 --> 00:02:22.180
+sa leva na desno malo svaki put,
+
+00:02:23.100 --> 00:02:26.240
+nakon što nacrtamo ceo red, moramo
+
+00:02:26.300 --> 00:02:28.660
+da pomerimo i vertikalnu poziciju.
+
+00:02:30.040 --> 00:02:32.540
+Pa kako to da uradimo? Pa,
+
+00:02:32.580 --> 00:02:35.480
+možemo da dodamo spoljnu promenljivu za gornju
+
+00:02:35.560 --> 00:02:39.970
+poziciju, koristimo je u našoj `plant` funkciji, a
+
+00:02:40.000 --> 00:02:42.880
+zatim je povećamo za 10 nakon svakog reda.
+
+00:02:45.200 --> 00:02:46.920
+Razmisli šta je vrednost u
+
+00:02:46.960 --> 00:02:50.480
+svakom trenutku. Gornja pozicija počinje od 10.
+
+00:02:50.520 --> 00:02:53.360
+Prvih pet puta kada sadimo, ostaje
+
+00:02:53.380 --> 00:02:56.720
+takva. Leva pozicija se povećava. A onda
+
+00:02:56.760 --> 00:02:59.720
+joj dodamo još 10, toj
+
+00:02:59.800 --> 00:03:03.480
+gornjoj poziciji, i posadimo još pet cvetova
+
+00:03:03.980 --> 00:03:07.120
+malo niže. Ponovo vraćamo tu levu
+
+00:03:07.140 --> 00:03:09.150
+poziciju na 10, a zatim je
+
+00:03:09.180 --> 00:03:13.120
+ponovo povećavamo svaki put. I sada
+
+00:03:13.140 --> 00:03:16.030
+možemo da kažemo ponovi ovo četiri puta, i
+
+00:03:16.060 --> 00:03:20.360
+dobićemo četiri reda sa po pet cvetova.
+
+00:03:20.420 --> 00:03:23.070
+Ključna stvar koju treba razumeti je da Jiki završi
+
+00:03:23.260 --> 00:03:26.160
+sav posao u unutrašnjoj petlji pre nego
+
+00:03:26.220 --> 00:03:28.440
+što se vrati na spoljnu petlju. On ne
+
+00:03:28.500 --> 00:03:32.140
+skače napred-nazad. Završi unutrašnju
+
+00:03:32.200 --> 00:03:34.130
+petlju, a zatim prelazi na
+
+00:03:34.260 --> 00:03:37.660
+sledeći korak spoljne petlje. U ovoj
+
+00:03:37.680 --> 00:03:39.520
+situaciji, možeš da zamisliš
+
+00:03:39.620 --> 00:03:41.880
+spoljnu petlju kao da upravlja grupama ili
+
+00:03:41.980 --> 00:03:44.720
+redovima, a unutrašnju petlju kao da upravlja svakom
+
+00:03:44.820 --> 00:03:47.049
+stavkom u toj grupi ili svakom stavkom u
+
+00:03:47.080 --> 00:03:50.549
+tom redu. Dakle, u našem primeru, spoljna
+
+00:03:50.600 --> 00:03:54.580
+petlja pravi četiri reda, a unutrašnja petlja
+
+00:03:54.640 --> 00:03:57.760
+stavlja pet cvetova, pet stavki u svaku grupu.
+
+00:03:59.280 --> 00:04:02.100
+U sledećim vežbama ćeš koristiti petlje unutar
+
+00:04:02.180 --> 00:04:05.520
+petlji da napraviš razne stvari. Ove nove vežbe
+
+00:04:05.580 --> 00:04:08.160
+ti daju funkcije za crtanje pojedinačnih delova.
+
+00:04:08.540 --> 00:04:10.160
+Tvoj posao je samo da smisliš
+
+00:04:10.220 --> 00:04:11.829
+ispravnu strukturu petlji da bi sve
+
+00:04:11.860 --> 00:04:16.029
+radilo. Sve u ovim vežbama je pokriveno onim
+
+00:04:16.060 --> 00:04:17.760
+o čemu smo malopre pričali. Zato, ako
+
+00:04:17.800 --> 00:04:19.860
+negde zapneš, vrati se na ovaj video.
+
+00:04:20.660 --> 00:04:22.160
+Srećno, i vidimo se ovde
+
+00:04:22.180 --> 00:04:22.460
+uskoro.

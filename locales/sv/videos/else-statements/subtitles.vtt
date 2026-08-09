@@ -1,0 +1,246 @@
+WEBVTT
+
+NOTE en_md5 8f7393dfe843d0e2ba5227cef441168a
+
+00:00:00.140 --> 00:00:02.860
+Okej, välkommen tillbaka. Med if-satser kan du kolla
+
+00:00:03.240 --> 00:00:05.920
+villkor och köra kod bara när något är
+
+00:00:05.960 --> 00:00:08.800
+sant. Nu ska vi presentera if-satsens trogna partner:
+
+00:00:09.080 --> 00:00:13.500
+else. Med en if-sats kör Jiki kodblocket när
+
+00:00:13.560 --> 00:00:16.100
+villkoret är sant, och han hoppar över kodblocket
+
+00:00:16.140 --> 00:00:19.310
+när det är falskt. Men tänk om du
+
+00:00:19.340 --> 00:00:22.210
+vill att Jiki ska göra en sak när
+
+00:00:22.240 --> 00:00:24.060
+villkoret är sant och en annan sak när
+
+00:00:24.100 --> 00:00:26.740
+det är falskt? Det är precis vad else
+
+00:00:26.750 --> 00:00:30.300
+är till för. Vi kan sätta en else-gren
+
+00:00:30.340 --> 00:00:33.180
+efter den avslutande klammerparentesen i if-satsen, och då
+
+00:00:33.200 --> 00:00:36.440
+kör Jiki den koden om villkoret är falskt.
+
+00:00:36.480 --> 00:00:39.230
+Om vi går tillbaka till exemplet med dörrvakten
+
+00:00:40.060 --> 00:00:42.370
+på klubben kan vi nu välja mellan att
+
+00:00:42.930 --> 00:00:44.840
+öppna dörren och att avvisa personen, vilket förmodligen
+
+00:00:44.860 --> 00:00:48.670
+är bättre än att totalt ignorera folk som
+
+00:00:48.680 --> 00:00:51.440
+vi gjorde tidigare. Tänk på det som ett
+
+00:00:51.480 --> 00:00:54.560
+vägskäl. Jiki kommer fram till vägskälet och kollar
+
+00:00:54.580 --> 00:00:56.780
+villkoret. Sedan kan han gå åt ena hållet
+
+00:00:57.000 --> 00:00:58.820
+om det är sant, eller åt andra hållet
+
+00:00:58.860 --> 00:01:01.020
+om det är falskt. Men han går aldrig
+
+00:01:01.060 --> 00:01:03.000
+åt båda hållen. Men vad gör du när
+
+00:01:03.760 --> 00:01:07.050
+du har fler än två möjligheter? Tänk dig
+
+00:01:07.100 --> 00:01:10.730
+att vår dörrvakt säljer biljetter. Är du under
+
+00:01:10.780 --> 00:01:14.340
+tretton får du en barnbiljett. Är du mellan
+
+00:01:14.360 --> 00:01:17.460
+tretton och tjugo får du en ungdomsbiljett. Är
+
+00:01:17.520 --> 00:01:19.820
+du tjugo eller äldre blir det en vuxenbiljett.
+
+00:01:19.860 --> 00:01:21.920
+Nu har vi alltså tre olika utfall. Då
+
+00:01:22.000 --> 00:01:25.700
+kan vi lägga till ytterligare en if-sats efter
+
+00:01:25.760 --> 00:01:28.640
+else. Så vi kan säga: Om det här
+
+00:01:28.680 --> 00:01:32.420
+är sant, gör det här. Annars, om det
+
+00:01:32.560 --> 00:01:36.160
+där är sant, gör det där. Annars, gör
+
+00:01:37.040 --> 00:01:39.120
+den tredje saken. I det här exemplet ser
+
+00:01:39.280 --> 00:01:43.120
+Jiki alltså if-satsen och kontrollerar det första villkoret.
+
+00:01:43.460 --> 00:01:47.380
+Är sexton mindre än tretton? Nej. Då går
+
+00:01:47.420 --> 00:01:51.000
+han vidare till else if. Är sexton mindre
+
+00:01:51.040 --> 00:01:55.800
+än tjugo? Ja, det är sant. Så han
+
+00:01:55.820 --> 00:01:58.960
+kör det blocket och delar ut en ungdomsbiljett.
+
+00:01:59.000 --> 00:02:02.340
+Men sedan är han klar. Han kontrollerar ingenting
+
+00:02:03.020 --> 00:02:05.000
+mer. Han tittar inte ens på den sista
+
+00:02:05.080 --> 00:02:08.600
+else-grenen. Så fort Jiki hittar ett villkor
+
+00:02:09.080 --> 00:02:11.480
+som är sant kör han det blocket och
+
+00:02:11.540 --> 00:02:14.980
+hoppar över allt som kommer efter. Det här
+
+00:02:15.000 --> 00:02:18.380
+är det viktigaste att förstå. Bara ett block
+
+00:02:18.390 --> 00:02:20.980
+körs, aldrig fler. Jiki arbetar sig nedåt i
+
+00:02:21.020 --> 00:02:24.400
+kedjan, hittar det första villkoret som är sant,
+
+00:02:24.420 --> 00:02:25.980
+kör det blocket och går sedan vidare. Nu
+
+00:02:26.020 --> 00:02:29.020
+kommer en sak som är viktig att verkligen
+
+00:02:29.220 --> 00:02:33.800
+förstå, för det är här många snubblar. Det
+
+00:02:33.960 --> 00:02:39.120
+finns en subtil men mycket viktig skillnad mellan
+
+00:02:39.180 --> 00:02:41.390
+att skriva två separata if-satser och att använda
+
+00:02:41.440 --> 00:02:44.989
+else if. Tänk dig att vi skapar ett
+
+00:02:45.020 --> 00:02:48.660
+program som delar ut antingen ett vanligt pris
+
+00:02:49.660 --> 00:02:53.360
+eller ett bonuspris beroende på hur många poäng
+
+00:02:53.460 --> 00:02:55.800
+någon har. Titta på de här två möjligheterna.
+
+00:02:55.880 --> 00:03:00.240
+Den ena använder else om, ursäkta, den ena
+
+00:03:00.280 --> 00:03:02.140
+använder else if och den andra använder två
+
+00:03:02.180 --> 00:03:06.570
+separata if-satser. Vad blir det för skillnad? Ta
+
+00:03:06.600 --> 00:03:10.340
+en stund och fundera på det. Pausa gärna
+
+00:03:10.400 --> 00:03:12.860
+videon. I det första fallet, med else if,
+
+00:03:12.920 --> 00:03:15.720
+kontrollerar vi om poängen är hög och delar
+
+00:03:15.760 --> 00:03:18.120
+ut bonuspriset, och sedan körs inte else if-grenen.
+
+00:03:18.160 --> 00:03:21.850
+Så den som har över hundra poäng får
+
+00:03:21.880 --> 00:03:25.840
+bara bonuspriset. Men i det andra exemplet är
+
+00:03:25.920 --> 00:03:29.860
+de två if-satserna helt oberoende av varandra. Båda
+
+00:03:29.900 --> 00:03:33.280
+kommer att köras och båda villkoren är sanna.
+
+00:03:33.340 --> 00:03:35.700
+Så här får personen två priser. I det
+
+00:03:35.840 --> 00:03:38.380
+första exemplet ett pris. I det andra två
+
+00:03:38.440 --> 00:03:42.990
+priser. Ta en stund och se till att
+
+00:03:43.040 --> 00:03:45.850
+du verkligen förstår det. Det är också intressant
+
+00:03:45.880 --> 00:03:48.060
+att notera att båda kan vara rätt, beroende
+
+00:03:48.100 --> 00:03:50.600
+på hur spelet är tänkt att fungera. Kanske
+
+00:03:50.660 --> 00:03:54.160
+ska deltagaren få både ett vanligt pris och
+
+00:03:54.200 --> 00:03:56.780
+ett bonuspris, eller så får hen bara bonuspriset
+
+00:03:56.820 --> 00:04:00.060
+i stället. Ingen av kodsnuttarna är rätt eller
+
+00:04:00.120 --> 00:04:03.620
+fel. De är bara användbara i olika situationer.
+
+00:04:03.640 --> 00:04:05.560
+Men du behöver veta vilken av dem du
+
+00:04:05.640 --> 00:04:08.960
+tänker använda. I de kommande övningarna kommer du
+
+00:04:09.000 --> 00:04:11.320
+att använda if, else if och else för
+
+00:04:11.380 --> 00:04:14.340
+att hantera olika situationer. Lycka till. Vi ses
+
+00:04:14.360 --> 00:04:15.040
+här igen strax.

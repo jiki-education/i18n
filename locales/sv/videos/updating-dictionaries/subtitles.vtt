@@ -1,0 +1,186 @@
+WEBVTT
+
+NOTE en_md5 5da11fa63c77f04329255ba0ae3d5fdf
+
+00:00:00.120 --> 00:00:02.480
+Välkommen tillbaka. Du vet nu hur du
+
+00:00:02.540 --> 00:00:05.300
+skapar en uppslagstabell och hämtar värden
+
+00:00:05.340 --> 00:00:08.840
+ur den. Men vad händer om datan ändras?
+
+00:00:08.880 --> 00:00:10.760
+Någon gång blir jag ju äldre.
+
+00:00:10.780 --> 00:00:13.060
+Då är jag inte `42` längre, utan `43`.
+
+00:00:14.000 --> 00:00:16.160
+Så hur uppdaterar vi uppslagstabellen? Jo,
+
+00:00:16.240 --> 00:00:18.000
+på ett sätt som är väldigt likt
+
+00:00:18.080 --> 00:00:20.600
+hur vi letar upp något. Du vet ju att vi hittar
+
+00:00:20.660 --> 00:00:22.860
+något genom att använda hakparenteser för att få ut värdet.
+
+00:00:23.620 --> 00:00:25.980
+Vi kan också använda hakparenteser följda
+
+00:00:26.020 --> 00:00:29.980
+av ett likhetstecken för att uppdatera uppslagstabellen.
+
+00:00:30.020 --> 00:00:32.920
+Jiki går till personlådan, tar ut
+
+00:00:32.960 --> 00:00:36.370
+bladet ur spiralblocket, hittar nyckeln `"age"`, och
+
+00:00:36.380 --> 00:00:38.560
+suddar sedan ut det `42` som stod där
+
+00:00:38.580 --> 00:00:41.200
+och skriver `43` i stället, och sedan
+
+00:00:41.780 --> 00:00:43.089
+åker bladet tillbaka ner i
+
+00:00:43.140 --> 00:00:47.800
+lådan. Det här ändrar själva uppslagstabellen. Jiki
+
+00:00:48.140 --> 00:00:50.880
+gör alltså ingen ny uppslagstabell, han ändrar
+
+00:00:50.890 --> 00:00:54.420
+blocket som redan låg i lådan.
+
+00:00:54.460 --> 00:00:56.310
+Och om du vill lägga till information som
+
+00:00:56.400 --> 00:00:59.530
+inte fanns där förut? Då gör du precis
+
+00:00:59.540 --> 00:01:02.160
+samma sak. Om du anger en nyckel
+
+00:01:02.200 --> 00:01:04.900
+som inte finns lägger Jiki bara till en
+
+00:01:04.960 --> 00:01:07.340
+ny nyckel längst ner, med det värdet.
+
+00:01:08.220 --> 00:01:10.200
+Så i det här fallet öppnar han blocket,
+
+00:01:10.580 --> 00:01:13.140
+letar efter `"country"`, ser att det inte finns där, och
+
+00:01:13.160 --> 00:01:14.680
+lägger sedan till en ny rad längst ner,
+
+00:01:15.000 --> 00:01:16.880
+`"country"` till vänster, `"England"` till höger.
+
+00:01:18.080 --> 00:01:20.580
+Alltså exakt samma syntax som när du
+
+00:01:20.620 --> 00:01:24.320
+ändrar ett värde. Jiki sköter båda delarna automatiskt. Om nyckeln
+
+00:01:24.360 --> 00:01:27.660
+finns uppdaterar han den. Om den inte finns,
+
+00:01:27.740 --> 00:01:29.290
+lägger han till den. Du behöver inte göra
+
+00:01:29.400 --> 00:01:33.040
+något särskilt. Och precis som du kan börja med
+
+00:01:33.080 --> 00:01:35.120
+en tom array och lägga in saker i den, kan du
+
+00:01:35.140 --> 00:01:37.240
+börja med en tom uppslagstabell och lägga till
+
+00:01:37.280 --> 00:01:40.340
+nycklar en i taget. Även det är ett väldigt
+
+00:01:40.400 --> 00:01:42.260
+vanligt mönster. Du kommer att se det hela tiden.
+
+00:01:43.800 --> 00:01:45.860
+Ett vanligt sätt att använda uppslagstabeller
+
+00:01:45.940 --> 00:01:49.260
+är att hålla räkningen på saker. Du låter nycklarna
+
+00:01:49.320 --> 00:01:50.720
+vara de saker du vill räkna
+
+00:01:50.800 --> 00:01:53.360
+och värdena vara hur många gånger de har dykt upp. Så
+
+00:01:53.400 --> 00:01:55.800
+tänk dig att du är ute och skådar fåglar
+
+00:01:55.860 --> 00:01:57.780
+och vill hålla koll på hur många du
+
+00:01:57.820 --> 00:02:00.180
+har sett av varje art. Varje gång du ser en fågel
+
+00:02:00.220 --> 00:02:02.740
+sätter du dess räknare till ett, och varje
+
+00:02:02.800 --> 00:02:04.480
+annan gång du ser den hämtar du dess
+
+00:02:04.540 --> 00:02:07.160
+aktuella värde och ökar det med ett. För
+
+00:02:07.200 --> 00:02:08.800
+att det här mönstret ska fungera behöver vi ett sätt
+
+00:02:08.840 --> 00:02:11.220
+att kolla om uppslagstabellen redan har
+
+00:02:11.300 --> 00:02:13.320
+den nyckeln. I så fall lägger vi till ett
+
+00:02:13.360 --> 00:02:16.260
+till den, och om den inte har nyckeln,
+
+00:02:16.620 --> 00:02:18.480
+behöver vi börja på ett.
+
+00:02:19.560 --> 00:02:21.250
+Och för det finns det
+
+00:02:21.380 --> 00:02:25.380
+en metod på uppslagstabeller, metoden `has`. Du anger
+
+00:02:25.440 --> 00:02:27.520
+en nyckel du är intresserad av, och Jiki
+
+00:02:27.560 --> 00:02:30.060
+kollar om uppslagstabellen har den nyckeln
+
+00:02:30.100 --> 00:02:33.020
+eller inte, och returnerar sedan sant eller falskt.
+
+00:02:34.600 --> 00:02:36.210
+Nu kommer några övningar där du
+
+00:02:36.220 --> 00:02:38.480
+ska använda allt det här. Lycka till
+
+00:02:38.520 --> 00:02:39.800
+med dem, och så ses vi här
+
+00:02:39.880 --> 00:02:40.130
+snart igen.

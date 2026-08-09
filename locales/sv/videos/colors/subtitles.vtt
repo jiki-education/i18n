@@ -1,0 +1,405 @@
+WEBVTT
+
+NOTE en_md5 f8c737461bf364654b8a618e515caeb8
+
+00:00:00.140 --> 00:00:02.210
+Välkommen tillbaka. Okej, nu tar vi en
+
+00:00:02.400 --> 00:00:04.400
+liten avstickare och kollar på något du
+
+00:00:04.460 --> 00:00:06.480
+kommer att behöva kunna. Om du någon gång
+
+00:00:06.540 --> 00:00:08.850
+gör något visuellt med kod (och även om du
+
+00:00:08.880 --> 00:00:10.860
+vill bli data scientist och
+
+00:00:10.900 --> 00:00:12.460
+tycker att allt det där med att rita verkar
+
+00:00:12.560 --> 00:00:16.180
+lite tråkigt, så är det en nyckelfärdighet att kunna
+
+00:00:16.219 --> 00:00:19.180
+kommunicera data visuellt) finns
+
+00:00:19.220 --> 00:00:21.790
+det två olika sätt att uttrycka färger på. Du
+
+00:00:21.840 --> 00:00:24.220
+har redan använt färger med namn som
+
+00:00:24.260 --> 00:00:28.670
+"red" eller "yellow" som sista indata i dina ritfunktioner,
+
+00:00:28.680 --> 00:00:31.640
+och det har varit ett smidigt sätt att
+
+00:00:31.700 --> 00:00:33.800
+snabbt använda färger, men det är ganska
+
+00:00:35.400 --> 00:00:37.300
+begränsande. Det finns bara en handfull
+
+00:00:37.360 --> 00:00:40.320
+namngivna färger vi kan använda. Så nu ska vi titta
+
+00:00:40.330 --> 00:00:42.350
+på två sätt att uttrycka precis vilken
+
+00:00:42.380 --> 00:00:44.370
+färg du vill, och de två kallas RGB
+
+00:00:44.400 --> 00:00:46.880
+och HSL. RGB låter oss tänka på färger
+
+00:00:46.960 --> 00:00:49.960
+som en blandning av rött, grönt och
+
+00:00:50.180 --> 00:00:54.920
+blått. Det är det RGB står för: röd (red
+
+00:00:54.980 --> 00:00:57.100
+(R) på engelska), grön (green (G) på
+
+00:00:57.300 --> 00:01:00.210
+engelska), blå (blue (B) på engelska). Om du
+
+00:01:01.280 --> 00:01:04.040
+minns hur du blandade färger i skolan är det en
+
+00:01:04.099 --> 00:01:06.730
+liknande idé, fast här blandar vi ljus i stället
+
+00:01:06.760 --> 00:01:11.580
+för färg. I många övningar kommer du att ha en
+
+00:01:11.640 --> 00:01:14.440
+funktion som heter rgb. Den tar tre tal som indata,
+
+00:01:15.280 --> 00:01:16.960
+ett för rött, ett för grönt och ett
+
+00:01:17.000 --> 00:01:20.040
+för blått, och returnerar en färg. Talen
+
+00:01:20.080 --> 00:01:22.240
+du kan använda som indata går från
+
+00:01:22.320 --> 00:01:26.900
+noll till 255. Noll betyder "jag vill
+
+00:01:26.980 --> 00:01:32.940
+inte ha något av den färgen alls", och 255
+
+00:01:33.040 --> 00:01:35.440
+betyder "blanda i så mycket av den
+
+00:01:35.620 --> 00:01:38.420
+färgen som möjligt". Så om vi använder
+
+00:01:38.460 --> 00:01:41.460
+rgb-funktionen med 255, noll och
+
+00:01:41.540 --> 00:01:45.550
+noll som indata säger vi: jag vill ha
+
+00:01:45.600 --> 00:01:48.190
+allt det röda. Kom ihåg att 255 är det
+
+00:01:48.240 --> 00:01:50.440
+största talet du kan skriva in där. Men
+
+00:01:50.460 --> 00:01:52.880
+vi vill inte ha något grönt eller blått,
+
+00:01:52.900 --> 00:01:54.800
+så de är båda noll. Då får vi ut
+
+00:01:54.820 --> 00:01:57.420
+rött, och det röda kan vi lagra i en
+
+00:01:57.460 --> 00:02:00.880
+variabel och sedan använda i
+
+00:02:00.900 --> 00:02:03.360
+circle-funktionen, precis som vi redan
+
+00:02:03.380 --> 00:02:05.340
+har gjort med de namngivna strängarna. Så vad
+
+00:02:05.400 --> 00:02:08.840
+händer om vi använder rgb-funktionen med noll,
+
+00:02:08.880 --> 00:02:10.759
+255, noll? Nu säger vi: inget rött,
+
+00:02:10.900 --> 00:02:15.340
+allt det gröna, inget blått. Då får vi en
+
+00:02:15.880 --> 00:02:18.310
+grön cirkel. Och om vi vill ha gult?
+
+00:02:18.320 --> 00:02:21.440
+Gult är en blandning av rött och
+
+00:02:21.640 --> 00:02:25.320
+grönt. Så vi kan säga: ge mig allt det
+
+00:02:25.620 --> 00:02:27.940
+röda, allt det gröna och inget blått,
+
+00:02:28.020 --> 00:02:29.840
+och då får vi gult. Vi kan också
+
+00:02:30.180 --> 00:02:32.120
+använda mindre tal. Om vi vill ha
+
+00:02:32.200 --> 00:02:35.200
+lite rött, inget grönt och mycket blått
+
+00:02:35.240 --> 00:02:37.730
+får vi lila. Och mycket rött, lite grönt
+
+00:02:38.300 --> 00:02:41.150
+och lite mer blått ger oss rosa. Så
+
+00:02:41.200 --> 00:02:45.080
+det är RGB. Vi blandar rött, grönt och blått
+
+00:02:45.380 --> 00:02:47.000
+för att få olika kombinationer. Nu
+
+00:02:47.040 --> 00:02:51.360
+ska vi titta på HSL, som ger oss ett
+
+00:02:51.500 --> 00:02:56.060
+helt annat sätt att tänka på färger. HSL står för
+
+00:02:56.100 --> 00:02:58.960
+färgton (hue (H) på engelska), mättnad
+
+00:02:58.980 --> 00:03:03.060
+(saturation (S) på engelska) och ljushet (lightness
+
+00:03:03.100 --> 00:03:08.200
+(L) på engelska). Precis som med RGB har du en funktion
+
+00:03:08.280 --> 00:03:11.900
+som heter hsl. Den tar tre tal, ett för
+
+00:03:11.920 --> 00:03:14.590
+färgton, ett för mättnad och ett för
+
+00:03:14.640 --> 00:03:17.100
+ljushet, och returnerar en färg. Så nu går vi igenom
+
+00:03:17.120 --> 00:03:20.420
+vad de tre orden betyder. Färgtonen är
+
+00:03:20.480 --> 00:03:25.160
+den nyans (shade på engelska) av färg du
+
+00:03:25.200 --> 00:03:28.080
+vill ha, och den går från noll upp
+
+00:03:28.120 --> 00:03:32.300
+till 360. Tänk dig en regnbåge. Det är
+
+00:03:32.320 --> 00:03:34.200
+så här jag brukar tänka. Längst till
+
+00:03:34.260 --> 00:03:36.200
+vänster har vi rött, och sedan kommer
+
+00:03:36.700 --> 00:03:39.220
+orange, gult, grönt, blått, lila, och till
+
+00:03:39.400 --> 00:03:41.320
+slut är vi faktiskt tillbaka på rött igen.
+
+00:03:41.340 --> 00:03:44.760
+Så om du säger noll börjar du
+
+00:03:45.140 --> 00:03:47.100
+längst till vänster, och det är rött.
+
+00:03:47.180 --> 00:03:50.700
+Säger du 120 ber du om grönt. 230 är
+
+00:03:50.740 --> 00:03:54.580
+blått. Du kan också tänka på det som en
+
+00:03:54.620 --> 00:03:57.470
+färgcirkel (color wheel på
+
+00:03:57.500 --> 00:03:59.500
+engelska), och det är det 360 egentligen handlar
+
+00:03:59.540 --> 00:04:02.440
+om. Det är antalet grader i cirkeln.
+
+00:04:02.480 --> 00:04:04.360
+Själv slår jag alltid upp de tal jag
+
+00:04:04.440 --> 00:04:07.000
+vill ha, så lägg inte för mycket energi på att
+
+00:04:07.060 --> 00:04:09.340
+memorera det här, men det är bra att
+
+00:04:09.380 --> 00:04:11.720
+veta vad som pågår. Så det är
+
+00:04:11.780 --> 00:04:16.019
+färgtonen, alltså nyansen. Sedan har vi mättnaden, som
+
+00:04:16.060 --> 00:04:18.920
+är hur kraftig färgen är. Den går från
+
+00:04:19.019 --> 00:04:22.060
+noll till 100. Vid noll får du bara
+
+00:04:22.400 --> 00:04:24.440
+grått. Det finns ingen färg, ingen
+
+00:04:24.500 --> 00:04:28.160
+ton alls. Vid 100 får du full,
+
+00:04:28.360 --> 00:04:32.660
+kraftig, levande färg. Och sedan har vi ljusheten. Ljusheten
+
+00:04:32.700 --> 00:04:34.860
+är hur ljus färgen är, och den går
+
+00:04:34.960 --> 00:04:37.600
+också från noll till 100. Vid noll
+
+00:04:37.740 --> 00:04:40.200
+får du svart. Oavsett vilken färgton du
+
+00:04:40.260 --> 00:04:43.460
+har valt får du svart. Det finns inget ljus i
+
+00:04:43.480 --> 00:04:46.500
+den. Och vid 100 får du vitt.
+
+00:04:46.980 --> 00:04:49.000
+Oavsett allt annat är den bara full av ljus, så
+
+00:04:49.060 --> 00:04:52.420
+den blir vit. 50 ligger precis i
+
+00:04:52.460 --> 00:04:55.490
+mitten, den normala färgen. Så du kan tänka på
+
+00:04:55.520 --> 00:04:57.550
+det här som ett reglage (slider på
+
+00:04:57.580 --> 00:05:01.260
+engelska) som gör färgen ljusare eller
+
+00:05:01.320 --> 00:05:03.840
+mörkare. Så om vi vill ha en vanlig röd
+
+00:05:03.860 --> 00:05:07.680
+cirkel, som vi skulle ha skrivit som 255,
+
+00:05:07.720 --> 00:05:10.640
+noll, noll med RGB (allt det röda,
+
+00:05:10.680 --> 00:05:15.560
+inget grönt, inget blått), använder vi här
+
+00:05:15.600 --> 00:05:19.290
+noll, 100, 50. Noll för den röda färgtonen,
+
+00:05:19.800 --> 00:05:22.060
+100 för mättnaden, full färg, och 50 för
+
+00:05:22.080 --> 00:05:25.240
+ljusheten, vilket är en normal nivå. Om vi
+
+00:05:25.250 --> 00:05:27.800
+vill göra den till en grön cirkel kan vi
+
+00:05:27.880 --> 00:05:30.700
+bara ändra färgtonen till
+
+00:05:30.740 --> 00:05:33.260
+120. Vill vi ha en mörkare grön kan vi
+
+00:05:33.270 --> 00:05:37.340
+sänka ljusheten till 25. Om vi vill
+
+00:05:37.380 --> 00:05:39.360
+göra den till en mattare grön kan vi
+
+00:05:39.440 --> 00:05:40.780
+ta bort lite av färgen, lite av
+
+00:05:40.920 --> 00:05:43.860
+mättnaden, säg ner till 30. Vill du ha en
+
+00:05:46.500 --> 00:05:48.800
+riktigt klar, skrikig rosa? En färgton
+
+00:05:48.860 --> 00:05:52.080
+på ungefär 300 är rosa, och sedan
+
+00:05:52.120 --> 00:05:55.680
+höjer vi mättnaden till 100 så att
+
+00:05:55.720 --> 00:05:57.560
+den blir riktigt kraftig, och vi ökar
+
+00:05:57.620 --> 00:06:01.290
+ljusheten också, till ungefär 60. Så nu har
+
+00:06:01.340 --> 00:06:03.660
+vi två olika sätt att uttrycka färg, och de är
+
+00:06:03.760 --> 00:06:07.830
+användbara i olika situationer. RGB är toppen när du
+
+00:06:07.900 --> 00:06:12.160
+vill justera en specifik komponent: hur mycket
+
+00:06:12.500 --> 00:06:14.380
+rött, hur mycket grönt, hur mycket
+
+00:06:14.400 --> 00:06:17.540
+blått. HSL är toppen när du vill stega
+
+00:06:17.600 --> 00:06:20.060
+dig genom färgerna. Vill du ha en regnbåge kan
+
+00:06:20.100 --> 00:06:23.440
+du bara fortsätta öka färgtonen. I de
+
+00:06:23.460 --> 00:06:25.360
+närmaste övningarna kommer du att använda båda de
+
+00:06:25.400 --> 00:06:27.500
+här, tillsammans med loopar och att
+
+00:06:27.960 --> 00:06:31.020
+uppdatera variabler, för att skapa en regnbåge och en
+
+00:06:31.080 --> 00:06:33.280
+solnedgång. Jag ska påminna dig om
+
+00:06:33.320 --> 00:06:36.400
+alla detaljer i övningsinstruktionerna, så oroa dig
+
+00:06:36.460 --> 00:06:40.140
+inte om du inte har lärt dig allt utantill än.
+
+00:06:40.180 --> 00:06:41.640
+Lycka till, ha roligt, och vi ses
+
+00:06:41.660 --> 00:06:42.060
+snart här igen.

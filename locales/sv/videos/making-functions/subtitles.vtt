@@ -1,0 +1,234 @@
+WEBVTT
+
+NOTE en_md5 bd726eea0809593d0cd98aa7f3d0000e
+
+00:00:00.160 --> 00:00:03.260
+Välkommen tillbaka. Hittills har du använt funktioner
+
+00:00:03.300 --> 00:00:05.960
+som redan har byggts åt dig, funktioner som `circle`,
+
+00:00:06.080 --> 00:00:09.459
+`rectangle`, `moveRight` och `shoot`. Alla de
+
+00:00:09.500 --> 00:00:12.220
+funktionerna har någon annan gjort och ställt
+
+00:00:12.260 --> 00:00:14.920
+på Jikis hyllor. Men nu är det dags för dig
+
+00:00:14.960 --> 00:00:18.460
+att börja göra egna funktioner. För att
+
+00:00:18.500 --> 00:00:20.030
+visa hur det går till ska vi
+
+00:00:20.120 --> 00:00:23.180
+bygga en ny funktion för
+
+00:00:23.220 --> 00:00:27.330
+labyrinten som heter `walk5` (gå 5 steg). Den här funktionen ska alltid
+
+00:00:27.340 --> 00:00:29.500
+flytta figuren fem steg framåt.
+
+00:00:30.030 --> 00:00:32.220
+Det är kanske inte världens mest användbara funktion
+
+00:00:32.240 --> 00:00:34.200
+i världen, men den är enkel
+
+00:00:34.240 --> 00:00:37.140
+och lagom att börja med. Så
+
+00:00:37.740 --> 00:00:39.140
+om jag skulle be dig skriva
+
+00:00:39.180 --> 00:00:42.040
+kod som flyttar figuren fem
+
+00:00:42.140 --> 00:00:46.190
+steg framåt kan du antingen skriva `move` fem gånger,
+
+00:00:46.260 --> 00:00:48.390
+eller använda en repeat-loop. I
+
+00:00:48.420 --> 00:00:50.700
+det här exemplet håller vi det enkelt och
+
+00:00:50.740 --> 00:00:53.260
+skriver `move` fem gånger i
+
+00:00:53.320 --> 00:00:56.040
+rad. Det är alltså det som ska
+
+00:00:56.100 --> 00:01:00.070
+finnas inuti vår funktion. Lägg nu till
+
+00:01:00.220 --> 00:01:03.000
+en rad under som säger åt Jiki att
+
+00:01:03.100 --> 00:01:05.260
+använda den här funktionen. Det har du sett många gånger.
+
+00:01:06.340 --> 00:01:08.100
+Sedan blir vårt jobb
+
+00:01:08.180 --> 00:01:10.840
+att bädda in de första fem raderna
+
+00:01:11.020 --> 00:01:14.060
+i en funktion, så att det är just de
+
+00:01:14.120 --> 00:01:17.860
+fem raderna som körs när Jiki använder `walk5`.
+
+00:01:17.980 --> 00:01:21.400
+För att förvandla de här fem raderna
+
+00:01:21.440 --> 00:01:23.640
+till en funktion, de fem flyttarna,
+
+00:01:23.680 --> 00:01:26.290
+behöver vi ett nytt nyckelord,
+
+00:01:26.820 --> 00:01:30.280
+nämligen nyckelordet `function`. När vi använder
+
+00:01:30.300 --> 00:01:32.480
+nyckelordet `function` behöver vi göra två
+
+00:01:32.500 --> 00:01:36.100
+saker. För det första ange funktionens namn.
+
+00:01:36.160 --> 00:01:39.660
+I det här fallet `walk5`. Och för det andra, använda
+
+00:01:39.720 --> 00:01:42.310
+klammerparenteser för att rama in kod som säger,
+
+00:01:42.410 --> 00:01:44.380
+”det här är vad du ska göra inuti
+
+00:01:44.400 --> 00:01:47.540
+funktionen”. Vi kan lägga till det i vår
+
+00:01:47.580 --> 00:01:49.960
+kod, och nu säger vi åt Jiki att skapa
+
+00:01:50.000 --> 00:01:53.400
+en funktion som heter `walk5`, och när `walk5`
+
+00:01:53.460 --> 00:01:56.080
+används ska han köra de här fem raderna
+
+00:01:56.100 --> 00:02:00.340
+kod. När Jiki ser nyckelordet `function`,
+
+00:02:00.380 --> 00:02:02.240
+bygger han en ny maskin,
+
+00:02:02.320 --> 00:02:05.560
+skriver ner instruktionerna på en tavla
+
+00:02:05.600 --> 00:02:08.039
+inuti den, och sätter sedan en etikett
+
+00:02:08.100 --> 00:02:10.580
+på maskinen där det står `walk5`. Sedan
+
+00:02:10.660 --> 00:02:13.760
+ställer han maskinen på hyllorna bredvid alla
+
+00:02:13.780 --> 00:02:14.760
+andra som redan står där.
+
+00:02:15.580 --> 00:02:18.080
+Det är faktiskt inget särskilt med den funktion
+
+00:02:18.140 --> 00:02:20.120
+du just har gjort jämfört med de inbyggda.
+
+00:02:20.489 --> 00:02:22.080
+De står helt enkelt sida vid sida
+
+00:02:22.140 --> 00:02:25.700
+på hans hyllor. Och när du använder
+
+00:02:25.720 --> 00:02:29.600
+funktionen, när du skriver `walk5()`, går Jiki
+
+00:02:29.620 --> 00:02:31.340
+bara och hämtar maskinen från
+
+00:02:31.350 --> 00:02:33.960
+hyllorna och använder den precis som
+
+00:02:34.040 --> 00:02:36.160
+han har gjort med alla andra funktioner.
+
+00:02:36.740 --> 00:02:39.380
+Du kan tänka dig att det bor en
+
+00:02:39.480 --> 00:02:42.329
+mini-Jiki inuti varje maskin. Mini-Jiki har alltid
+
+00:02:42.360 --> 00:02:44.920
+en cool hatt på sig. Och den där
+
+00:02:45.000 --> 00:02:47.450
+mini-Jiki jobbar på precis samma sätt som
+
+00:02:47.480 --> 00:02:50.600
+vanliga Jiki utanför och följer instruktioner på samma
+
+00:02:50.640 --> 00:02:54.560
+sätt. En viktig sak att förstå
+
+00:02:54.580 --> 00:02:57.310
+här är att Jiki inte kör koden när han skapar funktionen.
+
+00:02:57.900 --> 00:03:00.560
+Han skriver bara ner koden för
+
+00:03:00.580 --> 00:03:03.840
+att kunna använda den senare.
+
+00:03:03.880 --> 00:03:06.160
+Figuren i labyrinten flyttar sig
+
+00:03:06.200 --> 00:03:09.640
+alltså inte när du skriver nyckelordet `function`.
+
+00:03:09.650 --> 00:03:11.560
+Jiki har byggt maskinen och ställt den på
+
+00:03:11.600 --> 00:03:14.080
+hyllorna. Det är först när du säger åt honom
+
+00:03:14.140 --> 00:03:16.960
+att använda maskinen, genom att skriva `walk5()`,
+
+00:03:17.020 --> 00:03:20.880
+som det faktiskt händer. Nu ska du få
+
+00:03:20.980 --> 00:03:24.340
+två övningar för att vänja dig vid
+
+00:03:24.360 --> 00:03:27.080
+det här begreppet. Du kommer att behöva bryta
+
+00:03:27.100 --> 00:03:30.280
+ner lite mer komplex kod i mindre
+
+00:03:30.320 --> 00:03:32.740
+funktioner, och förhoppningsvis ser du hur mycket
+
+00:03:32.780 --> 00:03:34.940
+snyggare din kod ser ut till slut.
+
+00:03:34.980 --> 00:03:36.620
+Och sedan ses vi här igen om en
+
+00:03:36.660 --> 00:03:38.660
+liten stund för att titta på hur vi kan skapa funktioner med indata.

@@ -1,0 +1,204 @@
+WEBVTT
+
+NOTE en_md5 54c871cb5fb9450d2d15334c3f48a372
+
+00:00:00.120 --> 00:00:02.700
+Välkommen tillbaka. Nu vet du hur du
+
+00:00:02.760 --> 00:00:05.780
+använder if-, else- och else if-satser för att fatta beslut i koden.
+
+00:00:05.820 --> 00:00:09.260
+Om jag bad dig att bara öppna
+
+00:00:09.340 --> 00:00:11.620
+dörren om någon är över 20 år
+
+00:00:11.720 --> 00:00:14.420
+skulle du nog veta precis vad du
+
+00:00:14.460 --> 00:00:17.080
+skulle göra. Men om du i stället
+
+00:00:17.140 --> 00:00:20.250
+behövde kolla om någon är över 20
+
+00:00:20.560 --> 00:00:23.790
+och har rätt outfit på sig? Då
+
+00:00:23.820 --> 00:00:27.120
+behöver du kolla två olika villkor på
+
+00:00:27.160 --> 00:00:30.940
+en gång. Hur skulle du göra det? Fundera lite. Okej.
+
+00:00:31.100 --> 00:00:33.820
+Du skulle kanske kunna använda en nästlad
+
+00:00:33.880 --> 00:00:36.520
+if-sats (nested if statement på engelska), lite som när vi hade nästlade loopar
+
+00:00:36.540 --> 00:00:39.680
+tidigare. Då skulle du kunna säga: om age
+
+00:00:39.720 --> 00:00:43.400
+är större än 20 går vi in i
+
+00:00:43.440 --> 00:00:47.360
+det här blocket, och där inne en ny if som kollar om outfit är lika med
+
+00:00:47.400 --> 00:00:50.660
+disco, med ännu en klammerparentes och ett nytt
+
+00:00:50.700 --> 00:00:54.380
+block. Det skulle funka, men det blir
+
+00:00:54.400 --> 00:00:57.200
+ganska rörigt, särskilt när du vill ha
+
+00:00:57.300 --> 00:01:00.350
+många villkor. Som tur är finns det ett enklare sätt,
+
+00:01:00.940 --> 00:01:02.760
+nämligen villkor som består av flera delar.
+
+00:01:02.820 --> 00:01:06.130
+I stället för att bara kolla en sak
+
+00:01:06.220 --> 00:01:08.020
+i villkoret kan vi kolla två, tre eller
+
+00:01:08.080 --> 00:01:11.360
+ännu fler saker. För att göra det använder
+
+00:01:11.400 --> 00:01:14.000
+vi nyckelordet and. I JavaScript är nyckelordet
+
+00:01:14.100 --> 00:01:18.180
+tyvärr inte själva ordet and, som det är
+
+00:01:18.280 --> 00:01:20.880
+i en del andra språk. I stället skriver
+
+00:01:20.900 --> 00:01:23.480
+du två och-tecken (&) bredvid varandra. Det får
+
+00:01:23.520 --> 00:01:26.800
+du helt enkelt komma ihåg. Det är lite
+
+00:01:26.820 --> 00:01:29.180
+irriterande, men det är som det är,
+
+00:01:29.220 --> 00:01:30.640
+och du vänjer dig snart. Vi kan använda
+
+00:01:30.700 --> 00:01:33.830
+det här för att bygga ett mer komplext
+
+00:01:33.860 --> 00:01:36.790
+villkor. Vi kan säga: om age är större
+
+00:01:36.840 --> 00:01:40.080
+än 20 och outfit är disco, då fortsätter
+
+00:01:40.600 --> 00:01:43.280
+vi. Om age är mindre än 20, eller
+
+00:01:43.980 --> 00:01:46.440
+om outfit inte är disco, då är hela
+
+00:01:46.500 --> 00:01:49.360
+satsen, hela villkoret, falskt. Har du någon gång
+
+00:01:49.420 --> 00:01:52.360
+pluggat logik, kanske byggt lite elektronik eller läst
+
+00:01:52.380 --> 00:01:55.080
+lite mer avancerad matte, då kommer det här
+
+00:01:55.140 --> 00:01:57.560
+att kännas helt naturligt. Om inte kommer du
+
+00:01:57.600 --> 00:01:59.920
+snabbt att få kläm på det. Vi kan
+
+00:01:59.980 --> 00:02:02.620
+också använda or, och tyvärr finns det inte
+
+00:02:02.680 --> 00:02:06.420
+här heller något trevligt or-nyckelord i JavaScript.
+
+00:02:06.480 --> 00:02:09.479
+I stället måste vi skriva de här två
+
+00:02:09.520 --> 00:02:11.340
+lodstrecken (|) bredvid varandra, och det betyder eller.
+
+00:02:11.380 --> 00:02:14.360
+Det ser konstigt ut, men det är det
+
+00:02:14.560 --> 00:02:16.310
+egentligen inte. Du vänjer dig. Vi kan alltså
+
+00:02:16.340 --> 00:02:19.600
+säga att den som är över 20 eller
+
+00:02:19.680 --> 00:02:22.740
+är klädd i discokläder får komma in. Det
+
+00:02:22.780 --> 00:02:25.440
+blir alltså en rolig fest med discoklädda barn
+
+00:02:25.480 --> 00:02:27.820
+och illa klädda vuxna, vilket ju låter rimligt.
+
+00:02:27.920 --> 00:02:31.060
+Nu är det en sak som brukar ställa
+
+00:02:32.240 --> 00:02:34.580
+till det för folk, med både and och
+
+00:02:34.640 --> 00:02:37.660
+or, och det är att varje sida av
+
+00:02:37.760 --> 00:02:41.020
+and/or måste vara en fullständig jämförelse. Även om
+
+00:02:41.060 --> 00:02:44.200
+du jämför samma variabel på båda sidorna måste
+
+00:02:44.240 --> 00:02:47.500
+du ändå upprepa den. Du kan inte skriva
+
+00:02:47.620 --> 00:02:50.400
+if age is greater than 13 and less
+
+00:02:50.420 --> 00:02:53.560
+than 20. Du måste skriva if age is
+
+00:02:53.780 --> 00:02:57.310
+greater than 13 and age is less than
+
+00:02:57.340 --> 00:03:00.840
+20. Båda sidorna måste vara fullständiga jämförelser.
+
+00:03:01.040 --> 00:03:04.200
+I nästa övningar fortsätter du att använda
+
+00:03:04.240 --> 00:03:09.040
+and och or för att kombinera villkor. Du
+
+00:03:09.080 --> 00:03:12.060
+behöver fundera på när båda villkoren spelar roll
+
+00:03:12.100 --> 00:03:14.720
+och när det räcker att bara ett av
+
+00:03:14.740 --> 00:03:17.230
+dem är sant.
+
+00:03:17.260 --> 00:03:19.790
+Lycka till,
+
+00:03:19.820 --> 00:03:20.660
+vi ses här igen snart.

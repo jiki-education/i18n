@@ -1,0 +1,270 @@
+WEBVTT
+
+NOTE en_md5 c5187b46923e87c2aac86912c90dfb53
+
+00:00:00.100 --> 00:00:03.140
+Välkommen tillbaka. Förhoppningsvis känner du dig mer bekväm
+
+00:00:03.180 --> 00:00:06.810
+med arrayer nu. Arrayer är vårt förstahandsval
+
+00:00:06.840 --> 00:00:09.740
+när vi har en lista med någonting: en
+
+00:00:09.760 --> 00:00:11.560
+lista med mentorer, en lista med poäng, en
+
+00:00:11.600 --> 00:00:14.420
+lista med ingredienser. Så fort du har en
+
+00:00:14.440 --> 00:00:17.630
+lista vill du använda en array. Men
+
+00:00:17.720 --> 00:00:20.060
+det finns en annan datastruktur som också är
+
+00:00:20.070 --> 00:00:23.380
+väldigt vanlig, för när du vill ha något
+
+00:00:23.420 --> 00:00:24.780
+lite mer komplext än en lista. Tänk
+
+00:00:25.500 --> 00:00:27.580
+dig att vi vill lagra lite information om
+
+00:00:28.280 --> 00:00:30.140
+mig: mitt namn, min ålder, var jag föddes.
+
+00:00:30.150 --> 00:00:32.200
+Du skulle kunna använda en array, men
+
+00:00:32.240 --> 00:00:34.850
+då är det inte särskilt tydligt vad som
+
+00:00:34.880 --> 00:00:37.210
+pågår. Är England där jag föddes eller där
+
+00:00:37.300 --> 00:00:40.120
+jag bor? Är 42 min ålder eller något
+
+00:00:40.160 --> 00:00:42.050
+annat? Och om jag vill använda det
+
+00:00:42.080 --> 00:00:44.740
+här måste jag komma ihåg att första positionen
+
+00:00:44.780 --> 00:00:47.900
+är namnet, den andra är åldern och den
+
+00:00:47.920 --> 00:00:49.840
+tredje är födelseorten. Det blir lite rörigt,
+
+00:00:49.880 --> 00:00:52.420
+och det blir rörigt för att det här
+
+00:00:52.480 --> 00:00:55.769
+egentligen inte är en lista med saker. Det
+
+00:00:55.800 --> 00:00:58.500
+är mer komplext än så. Och det är
+
+00:00:58.560 --> 00:01:00.340
+där uppslagstabeller kommer in. En uppslagstabell är
+
+00:01:00.420 --> 00:01:03.830
+en ny typ av datastruktur. Det är din
+
+00:01:03.880 --> 00:01:06.200
+femte. Du har strängar, tal, booleska värden, arrayer
+
+00:01:06.260 --> 00:01:08.620
+och nu uppslagstabeller. Och jag vill att
+
+00:01:08.800 --> 00:01:12.180
+du tänker på en uppslagstabell som ett blad
+
+00:01:12.220 --> 00:01:15.460
+ur ett spiralblock. Till vänster har du rubrikerna,
+
+00:01:15.500 --> 00:01:18.400
+orden name, age, birthplace, och dem kallar vi
+
+00:01:18.480 --> 00:01:20.240
+nycklar. Och till höger, bredvid varje rubrik,
+
+00:01:20.300 --> 00:01:24.520
+har du själva datan, Jeremy, 42, England, och
+
+00:01:24.600 --> 00:01:28.300
+dem kallar vi värden. Precis som en array
+
+00:01:28.340 --> 00:01:31.180
+är en uppslagstabell en enda sak. Den
+
+00:01:31.190 --> 00:01:33.830
+är ett blad ur ett spiralblock. Och precis
+
+00:01:33.840 --> 00:01:35.250
+som med arrayer kan Jiki lägga den i
+
+00:01:35.720 --> 00:01:37.930
+en variabel, i en låda, eller använda
+
+00:01:37.980 --> 00:01:39.540
+den som indata till en funktion, eller få
+
+00:01:39.560 --> 00:01:42.200
+ut en uppslagstabell ur rutschkanan. Så här ser
+
+00:01:42.260 --> 00:01:45.080
+en uppslagstabell ut i kod. Vi använder klammerparenteser
+
+00:01:45.120 --> 00:01:47.490
+för att visa var den börjar och
+
+00:01:47.520 --> 00:01:49.420
+slutar, och inuti har du par: en nyckel
+
+00:01:49.480 --> 00:01:51.700
+till vänster, ett kolon och sedan värdet till
+
+00:01:51.740 --> 00:01:53.860
+höger, och mellan varje par sätter vi
+
+00:01:53.900 --> 00:01:56.260
+ett kommatecken. Så när Jiki ser det här
+
+00:01:56.280 --> 00:01:58.600
+tar han fram sitt spiralblock. Han skriver name,
+
+00:01:58.960 --> 00:02:02.100
+Jeremy, age, 42, och så vidare för varje
+
+00:02:02.140 --> 00:02:04.440
+par. Och när han är klar river
+
+00:02:04.480 --> 00:02:06.320
+han av bladet och lägger det i en
+
+00:02:06.420 --> 00:02:09.360
+låda med etiketten person. Nu finns det några
+
+00:02:09.420 --> 00:02:12.060
+regler att känna till. Nycklar är alltid
+
+00:02:12.140 --> 00:02:14.620
+strängar. De måste ha citattecken runt sig, och
+
+00:02:14.680 --> 00:02:18.170
+varje nyckel måste vara unik. Du kan inte
+
+00:02:18.260 --> 00:02:21.420
+ha två nycklar som heter name i samma
+
+00:02:21.480 --> 00:02:23.150
+uppslagstabell. Värdena får vara likadana om du
+
+00:02:23.280 --> 00:02:25.810
+vill, men nycklarna måste vara olika. Och värdena
+
+00:02:25.820 --> 00:02:27.600
+kan vara vad som helst. De kan vara
+
+00:02:27.680 --> 00:02:31.000
+strängar, tal, booleska värden, arrayer eller till
+
+00:02:32.140 --> 00:02:34.540
+och med andra uppslagstabeller. Du kan också ha
+
+00:02:34.600 --> 00:02:37.220
+en tom uppslagstabell, precis som vi hade en
+
+00:02:37.280 --> 00:02:38.800
+tom array, och du kan börja med
+
+00:02:38.820 --> 00:02:42.210
+den och bygga vidare på den senare. Okej,
+
+00:02:42.260 --> 00:02:44.160
+så nu har du en uppslagstabell, men hur
+
+00:02:44.220 --> 00:02:46.900
+får du ut något ur den igen? Vi
+
+00:02:46.920 --> 00:02:48.960
+använder samma syntax med hakparenteser som med
+
+00:02:49.020 --> 00:02:52.980
+arrayer och strängar, men i stället för ett
+
+00:02:53.020 --> 00:02:55.040
+positionstal skriver vi in en nyckel. Så om
+
+00:02:55.100 --> 00:02:57.390
+vi vill hämta ut någons namn ur
+
+00:02:57.940 --> 00:03:01.620
+en uppslagstabell skriver vi variabeln person, hakparenteser, och
+
+00:03:01.640 --> 00:03:03.580
+sedan nyckeln, i det här fallet name, i
+
+00:03:03.660 --> 00:03:07.260
+citattecken inuti. Och det säger åt Jiki att
+
+00:03:07.300 --> 00:03:09.970
+titta i uppslagstabellen person, hitta nyckeln för
+
+00:03:10.080 --> 00:03:12.900
+name och hämta ut dess värde. Jiki går
+
+00:03:13.040 --> 00:03:15.000
+till lådan person, tar ut bladet ur spiralblocket,
+
+00:03:15.040 --> 00:03:17.340
+letar igenom alla nycklar tills han hittar
+
+00:03:17.400 --> 00:03:19.760
+name, och läser sedan av värdet Jeremy och
+
+00:03:19.800 --> 00:03:21.900
+lägger det i en ny låda som heter
+
+00:03:21.910 --> 00:03:27.540
+name. Hakparenteser betyder alltid samma sak. Du sträcker
+
+00:03:27.580 --> 00:03:29.980
+dig in i någonting och hämtar ut
+
+00:03:29.990 --> 00:03:32.370
+någonting. Med arrayer och strängar använder du ett
+
+00:03:32.960 --> 00:03:34.720
+tal för att säga vilken position du vill
+
+00:03:34.760 --> 00:03:37.580
+hämta från. Med uppslagstabeller använder du en
+
+00:03:37.700 --> 00:03:40.140
+sträng, nyckeln. Det är samma idé, bara lite
+
+00:03:40.180 --> 00:03:43.340
+annorlunda syntax. Okej, du har ett par övningar
+
+00:03:43.380 --> 00:03:45.390
+där du får öva på att skapa
+
+00:03:45.500 --> 00:03:47.640
+uppslagstabeller och läsa ut värden ur dem. Allt
+
+00:03:48.260 --> 00:03:50.160
+du behöver är det vi just har gått
+
+00:03:50.580 --> 00:03:52.660
+igenom: klammerparenteserna för att skapa, hakparenteserna för att
+
+00:03:52.680 --> 00:03:55.200
+hämta ut. Ta god tid på dig.
+
+00:03:55.240 --> 00:03:56.820
+Lycka till, så ses vi här igen strax.

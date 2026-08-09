@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 2a23c8bcc4af2ee7d5bd8d5613681427
+
+00:00:00.200 --> 00:00:03.800
+Evo nas ponovo. Nadam se da ti je
+
+00:00:03.860 --> 00:00:07.160
+rad sa mašinama sada prilično lak. Do sada su
+
+00:00:07.180 --> 00:00:09.140
+sve različite vrste mašina koje koristiš,
+
+00:00:09.380 --> 00:00:12.160
+move, turn left, shoot, radile istu
+
+00:00:12.240 --> 00:00:15.260
+stvar svaki put. Dakle, svaki put kada
+
+00:00:15.340 --> 00:00:18.520
+pozoveš move, tvoj lik se pomera. Svaki put
+
+00:00:18.560 --> 00:00:22.010
+kada pucaš, tvoj lik puca. Ali, jedna od
+
+00:00:22.080 --> 00:00:25.560
+moćnijih stvari kod mašina, kod funkcija, jeste
+
+00:00:25.580 --> 00:00:27.520
+što mnoge od njih dozvoljavaju da u njih
+
+00:00:27.560 --> 00:00:30.810
+ubaciš neku informaciju, koja, kada ih pokreneš,
+
+00:00:31.000 --> 00:00:34.380
+menja ono što rade. Hajde da pogledamo
+
+00:00:34.420 --> 00:00:38.420
+primer. Do sada smo videli mašine koje
+
+00:00:38.460 --> 00:00:40.480
+pomalo, pomalo liče na kutije, poput
+
+00:00:40.490 --> 00:00:43.360
+ove za move. Ali neke mašine imaju
+
+00:00:43.540 --> 00:00:47.200
+otvore, kao ova mašina walk. Mašina walk
+
+00:00:47.240 --> 00:00:49.260
+je sasvim slična mašini move. Ona pomera
+
+00:00:49.280 --> 00:00:52.780
+lik napred, s tim što Jiki može da iskoristi
+
+00:00:52.860 --> 00:00:56.320
+otvor da odredi koliko koraka tvoj lik
+
+00:00:56.340 --> 00:00:59.340
+treba da napravi napred. Dakle, umesto da moraš
+
+00:00:59.440 --> 00:01:02.120
+da koristiš funkciju move tri puta
+
+00:01:02.160 --> 00:01:05.920
+zaredom, move, move, move, sada možeš
+
+00:01:05.960 --> 00:01:08.620
+samo da upotrebiš funkciju walk i kažeš Jikiju
+
+00:01:08.640 --> 00:01:11.200
+da stavi broj tri u mašinu.
+
+00:01:12.960 --> 00:01:15.320
+Da bismo to uradili u kodu, i dalje
+
+00:01:15.380 --> 00:01:17.260
+pišemo ime funkcije, u ovom
+
+00:01:17.320 --> 00:01:19.920
+slučaju walk, i i dalje stavljamo otvorenu
+
+00:01:19.940 --> 00:01:23.740
+zagradu. Ali onda, pre zatvorene zagrade,
+
+00:01:23.780 --> 00:01:25.920
+kažemo šta želimo da ulaz bude.
+
+00:01:25.960 --> 00:01:27.690
+U ovom slučaju, želimo da ulaz
+
+00:01:27.720 --> 00:01:30.920
+bude tri, da kažemo walk tri koraka
+
+00:01:30.960 --> 00:01:34.240
+napred. Kada Jiki to vidi, uzeće
+
+00:01:34.260 --> 00:01:35.930
+broj tri, a taj broj možeš
+
+00:01:35.960 --> 00:01:38.310
+zamisliti kao mali novčić, i on će ga
+
+00:01:38.340 --> 00:01:40.300
+staviti u ulazni otvor
+
+00:01:40.320 --> 00:01:43.200
+mašine pre nego što povuče ručicu da je
+
+00:01:43.220 --> 00:01:46.660
+upali. Za koji trenutak ćeš raditi
+
+00:01:46.700 --> 00:01:49.660
+vežbe u kojima crtaš pravougaonike i
+
+00:01:49.700 --> 00:01:53.000
+krugove. Za te funkcije moraš da kažeš
+
+00:01:53.080 --> 00:01:57.110
+Jikiju da ubaci nekoliko različitih brojeva, određujući stvari
+
+00:01:57.180 --> 00:01:59.380
+poput toga koliko udaljeno od leve ivice
+
+00:01:59.420 --> 00:02:00.840
+treba da bude, koliko udaljeno od vrha
+
+00:02:00.920 --> 00:02:03.160
+treba da bude, ovaj, širinu pravougaonika,
+
+00:02:03.240 --> 00:02:07.140
+visinu pravougaonika. U Jikijevom svetu, to
+
+00:02:07.160 --> 00:02:10.120
+su samo različiti otvori, po jedan za svaki
+
+00:02:10.160 --> 00:02:12.880
+od tih brojeva. Dakle, u kodu samo
+
+00:02:12.900 --> 00:02:15.120
+napišemo svaki broj i onda stavimo zarez
+
+00:02:15.200 --> 00:02:18.460
+između njih. Ime funkcije,
+
+00:02:18.540 --> 00:02:20.980
+zagradu, broj za svaki od ulaza,
+
+00:02:21.300 --> 00:02:24.180
+sve razdvojeno zarezima, a zatim zatvorimo
+
+00:02:24.260 --> 00:02:27.380
+zagradu. Ako pokušaš da upotrebiš
+
+00:02:27.420 --> 00:02:29.810
+funkciju sa pogrešnim brojem ulaza,
+
+00:02:29.840 --> 00:02:31.620
+dobićeš grešku. Na primer, ako
+
+00:02:31.660 --> 00:02:33.660
+pokušaš da staviš jedan ulaz u
+
+00:02:33.680 --> 00:02:36.080
+mašinu koja nema otvor, Jiki će
+
+00:02:36.140 --> 00:02:38.060
+ti reći da ne možeš. A ako
+
+00:02:38.120 --> 00:02:39.640
+pokušaš da koristiš mašinu koja ima
+
+00:02:39.680 --> 00:02:41.840
+ulazni otvor, ali ne kažeš Jikiju šta
+
+00:02:41.880 --> 00:02:43.920
+da stavi u njega, i on će stati i
+
+00:02:44.000 --> 00:02:46.960
+žaliti se. Probaj ako si malo
+
+00:02:47.020 --> 00:02:50.380
+buntovno raspoložen i vidi šta se dešava. Pravićeš
+
+00:02:50.440 --> 00:02:52.370
+puno ovakvih grešaka kako stvari
+
+00:02:52.400 --> 00:02:54.940
+postaju složenije. Pokušaj da se ne stresiraš
+
+00:02:54.980 --> 00:02:57.170
+ili uznemiravaš zbog toga. Svi učimo
+
+00:02:57.200 --> 00:03:00.080
+iz grešaka. To je bukvalno najbrži način
+
+00:03:00.100 --> 00:03:03.600
+da naš mozak stvarno usvoji stvari. I svi
+
+00:03:03.660 --> 00:03:06.320
+prave ove greške. Svi smo počeli od nule,
+
+00:03:06.600 --> 00:03:10.340
+tako da nemoj da se stresiraš. Pre nego što kreneš,
+
+00:03:10.860 --> 00:03:12.910
+želim da pomenem još jednu stvar.
+
+00:03:13.780 --> 00:03:16.400
+Ponekad ćeš u ovim vežbama videti
+
+00:03:16.500 --> 00:03:19.660
+linije koje počinju sa dve kose crte. One se
+
+00:03:19.700 --> 00:03:23.040
+zovu komentari. To su privatne beleške samo
+
+00:03:23.140 --> 00:03:26.420
+za tebe koje će Jiki potpuno ignorisati. Dakle, ako
+
+00:03:26.480 --> 00:03:28.500
+Jiki vidi liniju koja počinje sa ove
+
+00:03:28.540 --> 00:03:31.130
+dve kose crte, jednostavno će je preskočiti, i
+
+00:03:31.140 --> 00:03:32.670
+preći će na liniju koja
+
+00:03:32.700 --> 00:03:36.320
+sledi. Ovi komentari ti daju način da
+
+00:03:36.340 --> 00:03:38.650
+pišeš sopstvene beleške. Veoma su
+
+00:03:38.700 --> 00:03:40.800
+korisni da te podsete kako stvari funkcionišu.
+
+00:03:41.580 --> 00:03:43.430
+Često i ja pišem komentare za tebe,
+
+00:03:43.560 --> 00:03:45.630
+tako da kada započneš vežbu, oni mogu
+
+00:03:45.660 --> 00:03:48.120
+da ti sugerišu gde treba da napišeš kod
+
+00:03:48.160 --> 00:03:50.109
+ili kako da rešiš nešto. Ali želim
+
+00:03:50.160 --> 00:03:51.880
+da slobodno dodaješ
+
+00:03:51.980 --> 00:03:55.480
+i svoje komentare. Kako
+
+00:03:55.520 --> 00:03:58.310
+napreduješ, pogledaj dno uputstava
+
+00:03:58.380 --> 00:04:00.980
+i videćeš informacije o funkcijama koje
+
+00:04:01.020 --> 00:04:03.280
+možeš da koristiš, tačno koji su ulazi
+
+00:04:03.320 --> 00:04:05.520
+koje treba da uneseš. Zabavi se
+
+00:04:05.600 --> 00:04:07.020
+isprobavajući te ulaze, i vidimo se
+
+00:04:07.060 --> 00:04:07.740
+ovde uskoro

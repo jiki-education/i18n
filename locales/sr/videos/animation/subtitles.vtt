@@ -1,0 +1,195 @@
+WEBVTT
+
+NOTE en_md5 e47167fc1482d0b37cf8c1318d2bbbbb
+
+00:00:00.100 --> 00:00:04.260
+Zdravo ponovo. Do sada, kada smo koristili repeat
+
+00:00:04.300 --> 00:00:06.910
+petlju za crtanje stvari, svaka nova stvar
+
+00:00:06.920 --> 00:00:10.310
+koju smo nacrtali dodala je nešto slici. Ako
+
+00:00:10.340 --> 00:00:12.360
+smo nacrtali novu ciglu u zidu,
+
+00:00:12.520 --> 00:00:15.840
+popunila je prazninu. Ako smo nacrtali 10
+
+00:00:15.900 --> 00:00:18.500
+krugova, vidimo 10 krugova na ekranu.
+
+00:00:19.300 --> 00:00:22.220
+To je kao slika. Kada staviš boju
+
+00:00:22.240 --> 00:00:24.580
+na zid, ona ne nestane kada pored nje
+
+00:00:24.640 --> 00:00:26.440
+naslikaš nešto novo. Ostaje
+
+00:00:26.480 --> 00:00:30.320
+tu. Ali šta ako želimo da nešto
+
+00:00:30.380 --> 00:00:33.980
+izgleda kao da se kreće? Da li znaš šta je
+
+00:00:34.000 --> 00:00:36.150
+flip book? Bili su jako popularni
+
+00:00:36.160 --> 00:00:38.339
+kad sam bio mali, sada manje.
+
+00:00:38.380 --> 00:00:40.640
+Flip book je mala knjiga u kojoj svaka
+
+00:00:40.680 --> 00:00:44.440
+stranica ima malo drugačiji crtež. Kada brzo
+
+00:00:44.540 --> 00:00:47.640
+okrećeš stranice, tvoje oči vide
+
+00:00:47.720 --> 00:00:51.170
+promenu crteža, a mozak pomisli da se
+
+00:00:51.340 --> 00:00:54.020
+nešto kreće. Zapravo se ne kreće. To su samo
+
+00:00:54.060 --> 00:00:58.530
+mnogo malo drugačijih slika, jedna za drugom. I
+
+00:00:58.560 --> 00:01:02.400
+upravo tako animacija funkcioniše u kodu.
+
+00:01:02.589 --> 00:01:05.500
+Trik je isti. Pre nego što nacrtamo
+
+00:01:05.560 --> 00:01:08.920
+novu scenu, obojimo celo
+
+00:01:08.960 --> 00:01:11.920
+platno pozadinskom bojom, pomalo kao da
+
+00:01:11.960 --> 00:01:14.400
+počinjemo novu stranicu u našem flip book-u,
+
+00:01:15.320 --> 00:01:18.140
+a zatim napravimo malu izmenu
+
+00:01:18.180 --> 00:01:21.740
+na sceni da bi izgledala kao pokret. Ako
+
+00:01:21.780 --> 00:01:24.040
+uzmemo poznati blok koda gde
+
+00:01:24.080 --> 00:01:27.520
+crtamo krugove po ekranu,
+
+00:01:27.560 --> 00:01:29.820
+postavimo promenljivu position, i imamo
+
+00:01:29.840 --> 00:01:31.900
+repeat blok u kome crtamo krug, a zatim
+
+00:01:31.940 --> 00:01:33.640
+pomeramo position jedno mesto udesno.
+
+00:01:34.680 --> 00:01:37.110
+Ako pokrenemo taj repeat blok 100 puta,
+
+00:01:37.500 --> 00:01:39.940
+videćemo 100 krugova po
+
+00:01:39.960 --> 00:01:43.320
+ekranu. Sada, pogledaj šta se dešava ako
+
+00:01:43.340 --> 00:01:47.440
+samo dodamo jedan običan pravougaonik pre nego što
+
+00:01:47.500 --> 00:01:51.260
+svaki put nacrtamo krug. Umesto traga
+
+00:01:51.300 --> 00:01:54.210
+krugova, naše oči su sada prevarene da vide
+
+00:01:54.380 --> 00:01:57.440
+jedan krug koji izgleda kao da klizi po
+
+00:01:57.520 --> 00:02:01.000
+ekranu. Svaki put kada prođemo kroz petlju,
+
+00:02:01.020 --> 00:02:04.060
+bojimo celu novu pozadinu, prekrivajući
+
+00:02:04.260 --> 00:02:06.860
+sve što je bilo tu pre, a zatim crtamo
+
+00:02:06.960 --> 00:02:11.120
+krug na njegovom novom mestu. Svaki
+
+00:02:11.200 --> 00:02:14.540
+prolazak kroz petlju je kao nova
+
+00:02:14.600 --> 00:02:17.720
+stranica u flip book-u. A ključna
+
+00:02:17.740 --> 00:02:19.570
+stvar koju ovde treba razumeti je da ne
+
+00:02:19.640 --> 00:02:22.390
+pomeramo krug. Krug nije objekat
+
+00:02:22.400 --> 00:02:25.250
+koji klizi. To je samo crtež. Svaki
+
+00:02:25.340 --> 00:02:27.220
+put kroz petlju, bojimo preko
+
+00:02:27.280 --> 00:02:29.350
+starog crteža i pravimo potpuno novi
+
+00:02:29.980 --> 00:02:32.120
+malo udesno. Tvoje oko sve to
+
+00:02:32.180 --> 00:02:35.280
+spaja i vidi pokret, ali zapravo, to su
+
+00:02:35.360 --> 00:02:38.390
+samo mnogo odvojenih crteža, jedan za drugim.
+
+00:02:40.080 --> 00:02:42.160
+U ovoj sledećoj vežbi iskoristićeš
+
+00:02:42.200 --> 00:02:45.420
+ovu ideju za kreiranje zalaska sunca. Pusti da se
+
+00:02:45.460 --> 00:02:47.829
+sunce kreće, promeni njegovu veličinu, promeni njegovu
+
+00:02:47.880 --> 00:02:50.100
+boju. Sve je to ista tehnika. Postavi nekoliko
+
+00:02:50.220 --> 00:02:53.900
+promenljivih, oboji svežu pozadinu i nacrtaj sve.
+
+00:02:53.940 --> 00:02:57.190
+Ažuriraj promenljive, a zatim ponovi. A onda,
+
+00:02:57.240 --> 00:02:59.170
+ako si Premium član, kada završiš
+
+00:02:59.170 --> 00:03:01.750
+zalazak sunca, otključaćeš i
+
+00:03:01.800 --> 00:03:05.860
+složeniji projekat „Cvet koji niče“, gde možeš
+
+00:03:05.940 --> 00:03:08.180
+zaista da se oprobaš tako što ćeš sve ovo
+
+00:03:08.220 --> 00:03:11.360
+spojiti na jednom mestu. To je baš zabavno. Srećno,
+
+00:03:11.400 --> 00:03:13.240
+i vidimo se ovde uskoro.

@@ -1,0 +1,195 @@
+WEBVTT
+
+NOTE en_md5 e47167fc1482d0b37cf8c1318d2bbbbb
+
+00:00:00.100 --> 00:00:04.260
+Välkommen tillbaka. Hittills, när vi har använt
+
+00:00:04.300 --> 00:00:06.910
+en repeat-loop (upprepa) för att rita saker,
+
+00:00:06.920 --> 00:00:10.310
+har varje ny sak vi ritat lagt till
+
+00:00:10.340 --> 00:00:12.360
+något i bilden. Om vi har ritat en
+
+00:00:12.520 --> 00:00:15.840
+ny tegelsten i en mur har den fyllt
+
+00:00:15.900 --> 00:00:18.500
+en lucka. Om vi har ritat 10 cirklar
+
+00:00:19.300 --> 00:00:22.220
+ser vi 10 cirklar på skärmen. Det är
+
+00:00:22.240 --> 00:00:24.580
+som en målning. När du väl har satt
+
+00:00:24.640 --> 00:00:26.440
+färg på väggen försvinner den inte när du
+
+00:00:26.480 --> 00:00:30.320
+målar något nytt bredvid. Den sitter kvar.
+
+00:00:30.380 --> 00:00:33.980
+Men tänk om vi vill få något att se ut som att det rör sig?
+
+00:00:34.000 --> 00:00:36.150
+Har du någon gång sett en blädderbok? De
+
+00:00:36.160 --> 00:00:38.339
+var riktigt populära när jag var liten,
+
+00:00:38.380 --> 00:00:40.640
+mindre så i dag. En blädderbok är en
+
+00:00:40.680 --> 00:00:44.440
+liten bok där varje sida har en teckning
+
+00:00:44.540 --> 00:00:47.640
+som skiljer sig lite från den förra. När
+
+00:00:47.720 --> 00:00:51.170
+du bläddrar snabbt genom sidorna ser dina ögon
+
+00:00:51.340 --> 00:00:54.020
+teckningarna förändras, och din hjärna tror att något
+
+00:00:54.060 --> 00:00:58.530
+rör sig. Det rör sig inte på riktigt.
+
+00:00:58.560 --> 00:01:02.400
+Det är bara många lite olika bilder, en
+
+00:01:02.589 --> 00:01:05.500
+efter en. Och det är precis så animation
+
+00:01:05.560 --> 00:01:08.920
+fungerar i kod. Tricket är detsamma. Innan vi
+
+00:01:08.960 --> 00:01:11.920
+ritar en ny scen målar vi över hela
+
+00:01:11.960 --> 00:01:14.400
+canvasen med en bakgrundsfärg, ungefär som att
+
+00:01:15.320 --> 00:01:18.140
+börja på en ny sida i vår blädderbok,
+
+00:01:18.180 --> 00:01:21.740
+och sedan gör vi en liten ändring i scenen så att det ser ut som rörelse.
+
+00:01:21.780 --> 00:01:24.040
+Så om vi tar ett välbekant kodblock där
+
+00:01:24.080 --> 00:01:27.520
+vi ritar cirklar över skärmen: vi sätter en
+
+00:01:27.560 --> 00:01:29.820
+variabel position, och vi har ett repeat-block
+
+00:01:29.840 --> 00:01:31.900
+där vi ritar en cirkel och sedan flyttar
+
+00:01:31.940 --> 00:01:33.640
+position ett steg åt höger.
+
+00:01:34.680 --> 00:01:37.110
+Om vi kör det där repeat-blocket 100 gånger
+
+00:01:37.500 --> 00:01:39.940
+kommer vi att se 100 cirklar över
+
+00:01:39.960 --> 00:01:43.320
+skärmen. Titta nu vad som händer om vi bara
+
+00:01:43.340 --> 00:01:47.440
+lägger till en enkel rektangel innan vi ritar
+
+00:01:47.500 --> 00:01:51.260
+cirkeln varje gång. I stället för ett spår
+
+00:01:51.300 --> 00:01:54.210
+av cirklar luras våra ögon nu att se
+
+00:01:54.380 --> 00:01:57.440
+en enda cirkel som verkar glida över skärmen.
+
+00:01:57.520 --> 00:02:01.000
+Varje gång vi går igenom loopen,
+
+00:02:01.020 --> 00:02:04.060
+målar vi en helt ny bakgrund, som täcker
+
+00:02:04.260 --> 00:02:06.860
+allt som fanns där innan, och sedan ritar
+
+00:02:06.960 --> 00:02:11.120
+vi cirkeln på dess nya plats. Varje varv
+
+00:02:11.200 --> 00:02:14.540
+i loopen är som en ny sida i
+
+00:02:14.600 --> 00:02:17.720
+blädderboken. Och det viktiga att förstå här är
+
+00:02:17.740 --> 00:02:19.570
+att vi inte flyttar cirkeln. Cirkeln är inget
+
+00:02:19.640 --> 00:02:22.390
+objekt som glider fram. Den är bara en
+
+00:02:22.400 --> 00:02:25.250
+teckning. Varje varv i loopen målar vi över
+
+00:02:25.340 --> 00:02:27.220
+den gamla teckningen och gör en helt ny,
+
+00:02:27.280 --> 00:02:29.350
+lite längre till höger. Ditt öga sätter ihop
+
+00:02:29.980 --> 00:02:32.120
+alltihop och ser rörelse, men egentligen är det
+
+00:02:32.180 --> 00:02:35.280
+bara många separata teckningar, en efter en.
+
+00:02:35.360 --> 00:02:38.390
+I den här övningen använder du den här
+
+00:02:40.080 --> 00:02:42.160
+idén för att skapa en solnedgång. Du får
+
+00:02:42.200 --> 00:02:45.420
+solen att röra sig, ändrar dess storlek, ändrar
+
+00:02:45.460 --> 00:02:47.829
+dess färg. Allt är samma teknik. Sätt några
+
+00:02:47.880 --> 00:02:50.100
+variabler, måla en ny bakgrund och rita allting.
+
+00:02:50.220 --> 00:02:53.900
+Uppdatera variablerna, och upprepa sedan.
+
+00:02:53.940 --> 00:02:57.190
+Och sen, när du slutför Solnedgång, så låser
+
+00:02:57.240 --> 00:02:59.170
+du, om du är premiummedlem, också upp ett
+
+00:02:59.170 --> 00:03:01.750
+mer komplext projekt som heter Spirande blomma.
+
+00:03:01.800 --> 00:03:05.860
+Där kan du verkligen utmana dig själv genom
+
+00:03:05.940 --> 00:03:08.180
+att sätta ihop allt det här. Det är
+
+00:03:08.220 --> 00:03:11.360
+ett riktigt roligt projekt.
+
+00:03:11.400 --> 00:03:13.240
+Lycka till, och vi ses snart igen här.

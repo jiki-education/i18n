@@ -1,0 +1,177 @@
+WEBVTT
+
+NOTE en_md5 a59a1b57ba6073109ec594f8e88d8ef2
+
+00:00:00.000 --> 00:00:03.662
+Välkommen tillbaka. Hittills har de funktioner du skrivit
+
+00:00:04.173 --> 00:00:06.032
+i stort sett stått på egna ben
+
+00:00:06.113 --> 00:00:08.353
+och innehållit all logik
+
+00:00:08.373 --> 00:00:11.003
+de behöver för att fungera. Nu ska vi
+
+00:00:11.033 --> 00:00:13.453
+titta på hur du kan dela upp funktioner,
+
+00:00:13.473 --> 00:00:16.493
+så att vi får mindre funktioner som jobbar tillsammans
+
+00:00:16.563 --> 00:00:18.893
+i stället för stora funktioner
+
+00:00:18.953 --> 00:00:22.253
+där det händer mycket på en gång. En bra tumregel i programmering
+
+00:00:22.293 --> 00:00:24.313
+är att varje funktion ska göra
+
+00:00:24.413 --> 00:00:27.533
+så lite som möjligt. Vi säger att en funktion ska ha ett
+
+00:00:27.713 --> 00:00:31.333
+enda ansvar (_single responsibility_ på engelska). Varje funktion ska bara göra en
+
+00:00:31.413 --> 00:00:34.113
+sak och använda andra funktioner för de olika
+
+00:00:34.253 --> 00:00:36.913
+delmomenten. Nu tittar vi på ett
+
+00:00:36.953 --> 00:00:40.393
+exempel. Tänk dig att vi har en funktion vars jobb
+
+00:00:40.433 --> 00:00:43.613
+är att returnera en sträng som beskriver
+
+00:00:43.653 --> 00:00:46.193
+ett namn. En enkel version skulle se ut
+
+00:00:46.233 --> 00:00:48.893
+så här. Vi har en loop som räknar, något
+
+00:00:48.933 --> 00:00:52.033
+du redan har skrivit, och sedan en strängmall
+
+00:00:52.073 --> 00:00:55.553
+som sätter ihop resultatet. Det här fungerar
+
+00:00:55.573 --> 00:00:58.023
+fint, men funktionen gör två saker. Den gör
+
+00:00:58.113 --> 00:01:01.723
+dels en ganska generell sak, att räkna, dels en väldigt
+
+00:01:01.893 --> 00:01:04.873
+specifik sak, att bygga upp den här strängen i ett
+
+00:01:04.893 --> 00:01:09.102
+visst format. Det vore mycket snyggare att dela upp
+
+00:01:09.133 --> 00:01:12.263
+det här i två funktioner: en som ansvarar för
+
+00:01:12.293 --> 00:01:15.893
+räknandet och en som ansvarar för att beskriva
+
+00:01:15.903 --> 00:01:19.133
+ett namn i just det här formatet. Sedan kan vi
+
+00:01:19.173 --> 00:01:23.323
+återanvända den generella räknefunktionen i
+
+00:01:23.333 --> 00:01:27.083
+strängformateringen, men också överallt annars där
+
+00:01:27.173 --> 00:01:29.412
+vi behöver den. När vi behöver räkna
+
+00:01:29.473 --> 00:01:32.333
+bokstäver i en sträng är det helt frikopplat från
+
+00:01:32.393 --> 00:01:35.633
+allt som har med utskriften att göra. Du kan
+
+00:01:35.653 --> 00:01:39.813
+läsa varje funktion för sig och direkt förstå
+
+00:01:39.873 --> 00:01:43.153
+vad den gör. När dina funktioner
+
+00:01:43.193 --> 00:01:45.203
+blir mer komplexa och fler till
+
+00:01:45.203 --> 00:01:47.513
+antalet är den här tekniken
+
+00:01:47.573 --> 00:01:51.793
+skillnaden mellan prydlig, läsbar kod och totalt
+
+00:01:52.013 --> 00:01:54.833
+kaos. En sak är värd att nämna
+
+00:01:54.853 --> 00:01:56.553
+igen här:
+
+00:01:56.593 --> 00:01:58.793
+det du skapar inuti en funktion
+
+00:01:58.853 --> 00:02:02.213
+kan inte nås av andra funktioner
+
+00:02:02.253 --> 00:02:05.933
+om du inte medvetet
+
+00:02:05.973 --> 00:02:09.313
+returnerar det. Om du försöker använda
+
+00:02:09.333 --> 00:02:14.053
+variabeln `count` (antal) inifrån `describeName` (beskriv namnet),
+
+00:02:14.113 --> 00:02:15.763
+går det alltså inte, eftersom den tillhör
+
+00:02:15.833 --> 00:02:19.633
+den andra funktionen. I JavaScript kan vi skapa
+
+00:02:19.693 --> 00:02:22.553
+variabler högst upp, ovanför allt annat, som
+
+00:02:22.613 --> 00:02:25.713
+delas mellan funktioner, men jag rekommenderar verkligen att du
+
+00:02:25.873 --> 00:02:27.973
+låter bli om du inte har ett riktigt bra
+
+00:02:27.993 --> 00:02:32.193
+skäl. Ju mer du håller varje funktion oberoende,
+
+00:02:32.253 --> 00:02:34.253
+det tekniska ordet för det är ren,
+
+00:02:34.553 --> 00:02:38.393
+(_pure function_ på engelska), rena funktioner, desto snyggare blir din kod
+
+00:02:38.413 --> 00:02:40.493
+och desto färre buggar skapar du
+
+00:02:40.533 --> 00:02:42.763
+och har. I de kommande övningarna kommer du
+
+00:02:42.773 --> 00:02:45.213
+att skriva funktioner som jobbar tillsammans för att
+
+00:02:45.313 --> 00:02:48.613
+lösa problem, en funktion som anropar en annan, var och en
+
+00:02:48.693 --> 00:02:51.613
+gör sin egen lilla del. Ta den tid du behöver
+
+00:02:51.633 --> 00:02:53.113
+med dem, så ses vi här igen
+
+00:02:53.153 --> 00:02:53.433
+strax

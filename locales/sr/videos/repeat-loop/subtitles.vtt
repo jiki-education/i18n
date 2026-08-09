@@ -1,0 +1,264 @@
+WEBVTT
+
+NOTE en_md5 d53eb0ea7bb0ec1daa64bb73829462f2
+
+00:00:00.240 --> 00:00:03.700
+Zdravo ponovo. Do sada je sve što smo radili
+
+00:00:03.720 --> 00:00:06.880
+bilo napisano linearno: Jiki prati
+
+00:00:06.920 --> 00:00:10.660
+svaku instrukciju redom, od vrha
+
+00:00:10.670 --> 00:00:14.220
+ka dnu. U ovoj lekciji ćemo pogledati
+
+00:00:14.260 --> 00:00:16.330
+kako Jiki može da izađe iz tog
+
+00:00:16.460 --> 00:00:19.690
+strogog toka od vrha ka dnu, tačnije kako
+
+00:00:19.720 --> 00:00:21.800
+možemo da mu kažemo da izvrši isti
+
+00:00:21.880 --> 00:00:24.320
+deo koda mnogo puta
+
+00:00:24.360 --> 00:00:28.680
+zaredom. Na primer, zamisli da si u
+
+00:00:28.760 --> 00:00:31.180
+lavirintu i želiš da se pomeriš 10 koraka
+
+00:00:31.240 --> 00:00:34.240
+napred. Ranije sam ti dao funkciju walk
+
+00:00:34.280 --> 00:00:36.690
+da ti pomogne oko toga, ali šta ako
+
+00:00:36.740 --> 00:00:39.670
+ona ne postoji? Šta ako imaš samo
+
+00:00:39.920 --> 00:00:44.700
+funkciju move? Umesto da pišemo move 10
+
+00:00:44.760 --> 00:00:48.000
+puta zaredom, što brzo postaje veoma zamorno,
+
+00:00:48.740 --> 00:00:50.420
+ono što nam treba jeste način da
+
+00:00:50.500 --> 00:00:54.000
+kažemo: „Hej, Jiki, uradi sledeće što
+
+00:00:54.120 --> 00:00:59.840
+kažem 10 puta. Move.“ Da bismo ovo
+
+00:00:59.900 --> 00:01:02.320
+uradili u kodu, potrebna nam je
+
+00:01:02.480 --> 00:01:07.300
+naša prva ključna reč, a ključne reči su instrukcije
+
+00:01:07.340 --> 00:01:10.180
+koje Jiki razume. Malo liče
+
+00:01:10.220 --> 00:01:13.980
+na mašine, ali to nisu. Kada Jiki vidi
+
+00:01:14.020 --> 00:01:16.460
+ključnu reč, ne traži mašinu
+
+00:01:16.500 --> 00:01:18.920
+na polici, već jednostavno zna šta
+
+00:01:18.960 --> 00:01:23.300
+treba da uradi. To mu je ugrađeno u mozak.
+
+00:01:23.320 --> 00:01:25.700
+Postoji dvadesetak različitih ključnih reči koje ćemo
+
+00:01:25.740 --> 00:01:28.480
+naučiti tokom kursa, a
+
+00:01:28.520 --> 00:01:32.560
+prva od njih je ključna reč repeat. Ključna reč
+
+00:01:32.580 --> 00:01:35.540
+repeat radi tačno ono što sam gore rekao.
+
+00:01:36.100 --> 00:01:40.580
+Ona govori Jikiju: „Ponovi ovoliko puta ono
+
+00:01:40.700 --> 00:01:42.990
+što sledeće kažem.“ Pogledaj ovaj
+
+00:01:43.080 --> 00:01:45.960
+kod. Prvo koristimo ključnu reč
+
+00:01:46.000 --> 00:01:48.440
+repeat da kažemo Jikiju da će nešto
+
+00:01:48.480 --> 00:01:51.580
+raditi više puta. Zatim upisujemo
+
+00:01:51.680 --> 00:01:53.940
+koliko puta želimo da Jiki
+
+00:01:53.980 --> 00:01:57.070
+to ponovi, u obične zagrade, a onda
+
+00:01:57.100 --> 00:02:00.030
+otvaramo vitičaste zagrade, i
+
+00:02:00.040 --> 00:02:02.850
+unutar tih vitičastih zagrada je ono što
+
+00:02:02.860 --> 00:02:06.020
+želimo da Jiki ponavlja. Ovaj šablon
+
+00:02:06.100 --> 00:02:09.320
+je neverovatno čest u programiranju. Navedemo
+
+00:02:09.380 --> 00:02:12.400
+ključnu reč, obično uz neku informaciju, kao što je
+
+00:02:12.440 --> 00:02:14.549
+u ovom slučaju koliko puta
+
+00:02:14.580 --> 00:02:17.620
+nešto treba uraditi, a zatim blok koda u vitičastim
+
+00:02:17.680 --> 00:02:20.880
+zagradama. Vratimo se u svet lavirinta:
+
+00:02:21.520 --> 00:02:25.220
+umesto da pišemo move, move, move, move,
+
+00:02:25.260 --> 00:02:30.580
+možemo da napišemo „ponovi četiri puta move“. Jiki će
+
+00:02:30.590 --> 00:02:32.860
+videti taj kod i upotrebiće
+
+00:02:32.940 --> 00:02:36.870
+mašinu move četiri puta zaredom.
+
+00:02:36.900 --> 00:02:38.960
+A nismo ograničeni ni na samo jednu stvar
+
+00:02:39.000 --> 00:02:41.800
+u tim vitičastim zagradama. Jiki može
+
+00:02:41.900 --> 00:02:45.320
+više stvari da radi iznova. Možemo mu reći
+
+00:02:45.460 --> 00:02:48.080
+da uradi move, pa turnLeft, i da sve to
+
+00:02:48.120 --> 00:02:51.540
+zajedno ponovi četiri puta. Ako Jiki
+
+00:02:51.560 --> 00:02:54.000
+vidi ovo, upotrebiće mašinu move, pa
+
+00:02:54.060 --> 00:02:56.880
+mašinu turnLeft, pa mašinu move, pa
+
+00:02:56.920 --> 00:02:59.340
+mašinu turnLeft, pa mašinu move,
+
+00:02:59.430 --> 00:03:01.720
+i tako dalje, dok obe ne uradi
+
+00:03:01.800 --> 00:03:07.160
+po četiri puta. Ove instrukcije za ponavljanje zovemo petlje,
+
+00:03:07.840 --> 00:03:09.540
+a postoji mnogo različitih petlji koje
+
+00:03:09.580 --> 00:03:11.980
+možemo da koristimo, a svaka radi malo drugačije.
+
+00:03:12.000 --> 00:03:15.210
+Sve ćemo ih istražiti na ovom kursu. Sada,
+
+00:03:15.220 --> 00:03:17.710
+još jedna važna stvar koju treba znati, a to
+
+00:03:17.760 --> 00:03:20.300
+je da je urednost tvog koda
+
+00:03:20.480 --> 00:03:24.240
+veoma bitna kada radiš sa petljama. Kada
+
+00:03:24.280 --> 00:03:26.800
+tvoj kod ima dobru vizuelnu strukturu,
+
+00:03:26.860 --> 00:03:28.940
+lako je videti šta se dešava.
+
+00:03:29.660 --> 00:03:31.740
+Ali ako nema, ako zaboraviš
+
+00:03:31.780 --> 00:03:34.400
+da lepo uvučeš redove ili pomešaš uvlačenje,
+
+00:03:34.460 --> 00:03:38.630
+stvari vrlo brzo postanu zbunjujuće. Zato
+
+00:03:38.660 --> 00:03:41.500
+na ovom kursu imamo pravilo.
+
+00:03:41.600 --> 00:03:45.049
+Početnu vitičastu zagradu uvek stavljaš
+
+00:03:45.080 --> 00:03:48.430
+u isti red sa repeat naredbom.
+
+00:03:48.430 --> 00:03:50.860
+Završnu vitičastu zagradu uvek stavljaš
+
+00:03:50.940 --> 00:03:54.080
+u zaseban red posle naredbe, a
+
+00:03:54.120 --> 00:03:56.399
+kod između njih uvek uvlačiš za dva
+
+00:03:56.480 --> 00:04:00.120
+razmaka. Tako će sve ostati zaista uredno,
+
+00:04:01.020 --> 00:04:02.560
+a ako zaboraviš ili pokušaš da pratiš
+
+00:04:02.620 --> 00:04:04.360
+drugačiji šablon, dobićeš grešku.
+
+00:04:06.100 --> 00:04:08.080
+U narednih nekoliko vežbi tvoj cilj je
+
+00:04:08.120 --> 00:04:11.060
+da rešiš neke od izazova koristeći
+
+00:04:11.100 --> 00:04:13.720
+što manje redova koda, a
+
+00:04:13.780 --> 00:04:15.320
+u tome ti mogu pomoći repeat petlje.
+
+00:04:15.380 --> 00:04:18.060
+Zatim ćemo istražiti kako da
+
+00:04:18.070 --> 00:04:19.990
+repeat petlju počneš da koristiš zajedno sa
+
+00:04:20.019 --> 00:04:23.270
+još nekim konceptima, pa ćeš videti mnogo
+
+00:04:23.320 --> 00:04:25.540
+moćnije tehnike. Zabavi se, i vidimo se
+
+00:04:25.580 --> 00:04:26.039
+uskoro.

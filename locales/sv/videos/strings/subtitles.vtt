@@ -1,0 +1,261 @@
+WEBVTT
+
+NOTE en_md5 e7238c6ce2c79f908f0260c1c2c286e0
+
+00:00:00.160 --> 00:00:02.980
+Välkommen tillbaka. Förhoppningsvis känner
+
+00:00:03.040 --> 00:00:05.620
+du dig nu trygg med att använda
+
+00:00:05.660 --> 00:00:09.380
+funktioner och skicka in indata i dem.
+
+00:00:09.560 --> 00:00:11.340
+Hittills har du bara använt tal,
+
+00:00:11.780 --> 00:00:12.820
+men ofta vill du
+
+00:00:12.900 --> 00:00:15.180
+kunna skicka in text i
+
+00:00:15.220 --> 00:00:18.340
+funktioner också. Som du har sett, om du vill
+
+00:00:18.520 --> 00:00:20.800
+använda ett tal kan du bara
+
+00:00:20.810 --> 00:00:22.980
+skriva talet, så förstår Jiki
+
+00:00:23.040 --> 00:00:25.320
+vad du menar. Men hur gör du om du vill
+
+00:00:25.420 --> 00:00:27.390
+använda en bokstav, ett ord eller
+
+00:00:27.420 --> 00:00:30.620
+en mening? Tänk dig till exempel att funktionen `rectangle` eller
+
+00:00:30.640 --> 00:00:32.619
+funktionen `circle` hade ett extra
+
+00:00:32.720 --> 00:00:36.840
+inkast där du angav färgen. Hur
+
+00:00:36.880 --> 00:00:38.540
+skulle vi skriva färgen för att
+
+00:00:38.600 --> 00:00:40.620
+stoppa in den i maskinen? Om vi bara skriver
+
+00:00:40.660 --> 00:00:43.760
+ordet `green` eller `blue` tror Jiki att vi
+
+00:00:43.800 --> 00:00:46.449
+menar en maskin på hyllorna, och
+
+00:00:46.480 --> 00:00:48.940
+då säger han: ”Det finns ingen maskin som heter green.
+
+00:00:49.540 --> 00:00:51.900
+Jag vet inte vad jag ska göra.” Därför
+
+00:00:51.960 --> 00:00:54.280
+har vi en regel: när vi
+
+00:00:54.320 --> 00:00:56.660
+behöver använda text sätter vi
+
+00:00:56.740 --> 00:00:59.760
+den inom citattecken, dubbla citattecken.
+
+00:01:01.000 --> 00:01:03.080
+Och när du sätter något inom citattecken
+
+00:01:03.140 --> 00:01:05.679
+på det här sättet tar Jiki fram en lapp
+
+00:01:05.720 --> 00:01:07.620
+och skriver det som står mellan
+
+00:01:07.640 --> 00:01:10.820
+citattecknen på den lappen, och
+
+00:01:10.860 --> 00:01:15.290
+de här lapparna kallar vi strängar (_strings_ på engelska). Strängar
+
+00:01:15.320 --> 00:01:18.980
+kan vara enskilda bokstäver, ord, meningar, stycken, till och med
+
+00:01:19.120 --> 00:01:22.800
+hela böcker. Regeln är: om det är text
+
+00:01:22.840 --> 00:01:25.020
+sätter vi den inom citattecken, och då blir den en
+
+00:01:25.120 --> 00:01:28.160
+sträng. Så om vi vill ha en
+
+00:01:28.200 --> 00:01:30.820
+blå rektangel skriver vi talen för dess
+
+00:01:30.860 --> 00:01:32.810
+vänsterposition, topposition, bredd, och
+
+00:01:32.840 --> 00:01:35.830
+höjd. Men i det femte inkastet ska
+
+00:01:35.860 --> 00:01:40.200
+vi skriva `"blue"` inom citattecken. Jiki skulle
+
+00:01:40.240 --> 00:01:42.040
+ta ner maskinen från hyllan och lägga mynt i
+
+00:01:42.180 --> 00:01:45.000
+de fyra första inkasten. Sedan
+
+00:01:45.020 --> 00:01:47.380
+skriver han blue på en lapp, och
+
+00:01:47.400 --> 00:01:49.180
+stoppar lappen i det femte inkastet
+
+00:01:49.460 --> 00:01:52.600
+och kör sedan igång maskinen. Sträng är
+
+00:01:52.660 --> 00:01:55.120
+ett sånt där tekniskt ord som många tycker
+
+00:01:55.160 --> 00:01:57.800
+är lite skrämmande i början, men egentligen
+
+00:01:57.880 --> 00:01:59.940
+betyder det bara text. Du vänjer dig
+
+00:02:00.020 --> 00:02:04.180
+snabbt vid det. Det är inget magiskt med det.
+
+00:02:04.220 --> 00:02:06.160
+I de kommande övningarna ska du
+
+00:02:06.200 --> 00:02:09.389
+rita lite mer och ange färger, och
+
+00:02:09.420 --> 00:02:11.480
+de färger du förväntas använda
+
+00:02:11.500 --> 00:02:13.660
+står skrivna i instruktionerna. Så läs
+
+00:02:13.680 --> 00:02:17.020
+instruktionerna noga. Okej, innan vi ger oss på
+
+00:02:17.040 --> 00:02:19.160
+övningarna vill jag snabbt ta upp
+
+00:02:19.200 --> 00:02:23.400
+en sak till, en sak som är riktigt viktig. Den här kursen
+
+00:02:23.460 --> 00:02:26.260
+har tre olika mål. Det första är att
+
+00:02:26.340 --> 00:02:29.300
+du lär dig de tekniska grunderna i programmering,
+
+00:02:29.320 --> 00:02:31.860
+alltså vad en sträng eller en funktion är.
+
+00:02:31.920 --> 00:02:33.920
+Det andra är att du bygger upp
+
+00:02:34.100 --> 00:02:35.960
+en tankemodell som du kan bygga vidare
+
+00:02:36.100 --> 00:02:38.310
+på när du lär dig mer komplexa
+
+00:02:38.360 --> 00:02:41.720
+idéer framöver. Det är precis vad Jiki och
+
+00:02:41.760 --> 00:02:45.380
+hans fabrik ger dig. Men det tredje målet är lite
+
+00:02:45.500 --> 00:02:48.220
+mer subtilt, men förmodligen det viktigaste,
+
+00:02:48.280 --> 00:02:51.800
+och det är att lära sig tänka som en
+
+00:02:51.860 --> 00:02:54.590
+utvecklare. I längden är det det som
+
+00:02:54.620 --> 00:02:57.260
+avgör om du blir en medelmåttig utvecklare
+
+00:02:57.300 --> 00:02:59.320
+eller en expert. Så om du inte bryr dig
+
+00:02:59.380 --> 00:03:02.450
+om att bli en expertutvecklare kan du
+
+00:03:02.480 --> 00:03:03.690
+typ strunta i det här. Men
+
+00:03:03.700 --> 00:03:05.480
+för de flesta av er är det ert
+
+00:03:05.520 --> 00:03:09.760
+mål, och det är just den här biten jag vill
+
+00:03:09.800 --> 00:03:12.460
+att ni ska lägga mest uppmärksamhet på. När
+
+00:03:12.500 --> 00:03:14.440
+du löser de kommande övningarna vill jag
+
+00:03:14.460 --> 00:03:16.960
+verkligen att du anstränger dig för att inte
+
+00:03:16.980 --> 00:03:19.420
+gissa svaren eller försöka hacka dig
+
+00:03:19.430 --> 00:03:22.320
+fram till lösningen. Jag vill att du tar dig
+
+00:03:22.400 --> 00:03:25.400
+an de här problemen med logik. Allt du behöver
+
+00:03:25.440 --> 00:03:27.920
+veta för att hitta lösningen finns i
+
+00:03:28.100 --> 00:03:31.220
+instruktionerna. Jag har lagt ner mycket jobb på
+
+00:03:31.260 --> 00:03:34.640
+att ge dig tydliga instruktioner med den
+
+00:03:34.900 --> 00:03:38.380
+information du behöver. Så ta god tid på dig när du läser
+
+00:03:38.440 --> 00:03:41.960
+instruktionerna, och tänk efter noga innan
+
+00:03:42.020 --> 00:03:44.120
+du börjar koda. Om du märker att du
+
+00:03:44.200 --> 00:03:47.300
+börjar gissa, sakta ner lite, läs
+
+00:03:47.320 --> 00:03:49.480
+instruktionerna igen, ta fram papper och penna
+
+00:03:49.640 --> 00:03:51.900
+och rita upp det, och försök sedan igen med koden.
+
+00:03:53.580 --> 00:03:55.780
+Okej, nu får du lösa några övningar,
+
+00:03:55.820 --> 00:03:56.520
+och så ses vi här snart igen.

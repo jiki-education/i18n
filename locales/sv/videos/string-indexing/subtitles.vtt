@@ -1,0 +1,147 @@
+WEBVTT
+
+NOTE en_md5 a26df9872fb37da3ea6ffd743faaaa6f
+
+00:00:00.380 --> 00:00:02.420
+Välkommen tillbaka. I den här videon ska vi
+
+00:00:02.480 --> 00:00:05.020
+titta på hur du kan hitta en specifik
+
+00:00:05.060 --> 00:00:08.640
+bokstav i en sträng. Tänk dig att du har
+
+00:00:08.680 --> 00:00:11.040
+mitt namn, Jeremy, och vill plocka ut
+
+00:00:11.060 --> 00:00:14.120
+min initial J ur det. Hur skulle
+
+00:00:14.160 --> 00:00:17.300
+vi bära oss åt? Du kan
+
+00:00:17.320 --> 00:00:19.620
+tänka på en sträng som en rad
+
+00:00:19.660 --> 00:00:24.960
+bokstäver. `"Jeremy"` har sex bokstäver, J-E-R-E-M-Y,
+
+00:00:25.980 --> 00:00:28.540
+och var och en har en position. `"J"` står
+
+00:00:28.600 --> 00:00:30.270
+på första positionen och `"y"` på den
+
+00:00:30.320 --> 00:00:34.480
+sista. I JavaScript, och i de flesta programmerings-
+
+00:00:34.520 --> 00:00:38.240
+språk, börjar de här positionerna på noll. Den
+
+00:00:38.360 --> 00:00:41.769
+första bokstaven `"J"` står alltså på position noll, sedan
+
+00:00:41.780 --> 00:00:43.510
+kommer `"e"` på position
+
+00:00:43.520 --> 00:00:46.780
+ett, `"r"` på två, `"e"` på tre,
+
+00:00:46.900 --> 00:00:50.380
+`"m"` på fyra och `"y"` på fem.
+
+00:00:50.420 --> 00:00:52.700
+Det här med att börja på noll är ganska konstigt,
+
+00:00:52.720 --> 00:00:54.660
+och ärligt talat hade livet varit enklare om vi
+
+00:00:54.700 --> 00:00:57.360
+bara räknade från ett, som i den
+
+00:00:57.380 --> 00:01:00.660
+vanliga världen. Men det gör vi inte. I de flesta programmerings-
+
+00:01:00.700 --> 00:01:04.140
+språk börjar vi räkna från noll i stället, så
+
+00:01:04.160 --> 00:01:06.640
+det är helt enkelt något du får lära dig. Så om
+
+00:01:06.680 --> 00:01:08.220
+vi vill hämta bokstaven på en
+
+00:01:08.260 --> 00:01:12.730
+viss position använder vi hakparenteser med
+
+00:01:12.760 --> 00:01:16.560
+numret inuti. Skriver vi `"Jeremy"[0]`,
+
+00:01:16.940 --> 00:01:19.860
+säger vi:
+
+00:01:20.120 --> 00:01:22.340
+ge mig den första bokstaven i ordet
+
+00:01:22.420 --> 00:01:26.200
+`"Jeremy"`. Skriver vi `"Jeremy"[1]`,
+
+00:01:26.760 --> 00:01:30.460
+säger vi: ge mig den andra bokstaven.
+
+00:01:30.500 --> 00:01:32.960
+Det här fungerar med variabler också. Om
+
+00:01:32.980 --> 00:01:34.990
+vi skapar en variabel som heter `name` och
+
+00:01:35.040 --> 00:01:38.020
+sätter dess värde till strängen `"Jeremy"`,
+
+00:01:38.040 --> 00:01:41.700
+kan vi skriva `name[0]`, och
+
+00:01:41.740 --> 00:01:44.940
+få `"J"` igen. En sak som är viktig
+
+00:01:45.000 --> 00:01:47.720
+att förstå: det du får tillbaka från `name[0]`,
+
+00:01:47.820 --> 00:01:52.080
+är bara en annan sträng. Det är
+
+00:01:52.120 --> 00:01:53.980
+en annan lapp med ett J på
+
+00:01:54.020 --> 00:01:56.700
+den. Det är inget speciellt med den. Den är en
+
+00:01:56.820 --> 00:01:59.600
+sträng precis som `"Jeremy"` är en sträng. Den
+
+00:01:59.640 --> 00:02:01.200
+råkar bara ha en bokstav på sig
+
+00:02:01.260 --> 00:02:04.400
+i stället för sex. Och det här påverkar inte
+
+00:02:04.440 --> 00:02:06.500
+den ursprungliga strängen alls. Vi river liksom
+
+00:02:06.660 --> 00:02:09.250
+inte loss J:et eller något sådant. Vi tar bara
+
+00:02:09.280 --> 00:02:11.860
+reda på vilken bokstav vi
+
+00:02:11.940 --> 00:02:14.489
+vill ha och skapar en ny sträng med
+
+00:02:14.520 --> 00:02:19.140
+den i. I nästa övning kommer du att behöva
+
+00:02:19.220 --> 00:02:23.800
+använda det här för att bygga en akronym. Lycka
+
+00:02:23.840 --> 00:02:25.560
+till, vi ses här snart igen.

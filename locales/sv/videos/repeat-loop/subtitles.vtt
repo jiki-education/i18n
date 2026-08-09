@@ -1,0 +1,264 @@
+WEBVTT
+
+NOTE en_md5 d53eb0ea7bb0ec1daa64bb73829462f2
+
+00:00:00.240 --> 00:00:03.700
+Välkommen tillbaka. Hittills har
+
+00:00:03.720 --> 00:00:06.880
+allt varit skrivet linjärt:
+
+00:00:06.920 --> 00:00:10.660
+Jiki följer varje instruktion
+
+00:00:10.670 --> 00:00:14.220
+i ordning, uppifrån och ner.
+
+00:00:14.260 --> 00:00:16.330
+Nu ska vi titta på hur Jiki kan
+
+00:00:16.460 --> 00:00:19.690
+bryta det strikta flödet uppifrån
+
+00:00:19.720 --> 00:00:21.800
+och ner, och framför allt hur vi
+
+00:00:21.880 --> 00:00:24.320
+kan säga åt Jiki att köra samma
+
+00:00:24.360 --> 00:00:28.680
+kodavsnitt många gånger i rad.
+
+00:00:28.760 --> 00:00:31.180
+Tänk dig till exempel att du är i labyrinten
+
+00:00:31.240 --> 00:00:34.240
+och vill gå 10 steg framåt. Det finns en
+
+00:00:34.280 --> 00:00:36.690
+funktion som heter walk som hjälper till
+
+00:00:36.740 --> 00:00:39.670
+med det, men tänk om den inte fanns? Tänk
+
+00:00:39.920 --> 00:00:44.700
+om du bara hade funktionen move (flytta)?
+
+00:00:44.760 --> 00:00:48.000
+I stället för att skriva move 10 gånger
+
+00:00:48.740 --> 00:00:50.420
+i rad, vilket blir väldigt enformigt,
+
+00:00:50.500 --> 00:00:54.000
+behöver vi kunna säga: Du Jiki, gör
+
+00:00:54.120 --> 00:00:59.840
+det jag säger härnäst 10 gånger. Move.
+
+00:00:59.900 --> 00:01:02.320
+För att göra det i kod behöver vi använda vårt
+
+00:01:02.480 --> 00:01:07.300
+första nyckelord (keyword på engelska), och
+
+00:01:07.340 --> 00:01:10.180
+nyckelord är instruktioner som Jiki förstår.
+
+00:01:10.220 --> 00:01:13.980
+De ser lite ut som maskiner, men det är de
+
+00:01:14.020 --> 00:01:16.460
+inte. När Jiki ser ett nyckelord letar han inte
+
+00:01:16.500 --> 00:01:18.920
+efter någon maskin på hyllan, han vet direkt
+
+00:01:18.960 --> 00:01:23.300
+vad han ska göra i stället. Det sitter i hans
+
+00:01:23.320 --> 00:01:25.700
+hjärna. Det finns ungefär 20 olika nyckelord
+
+00:01:25.740 --> 00:01:28.480
+som vi kommer att lära oss under kursen,
+
+00:01:28.520 --> 00:01:32.560
+och det första av dem är nyckelordet repeat.
+
+00:01:32.580 --> 00:01:35.540
+Nyckelordet repeat gör precis det jag beskrev
+
+00:01:36.100 --> 00:01:40.580
+ovan. Det säger åt Jiki: Upprepa det jag säger
+
+00:01:40.700 --> 00:01:42.990
+härnäst så här många gånger. Titta på den
+
+00:01:43.080 --> 00:01:45.960
+här koden. Först använder vi nyckelordet repeat
+
+00:01:46.000 --> 00:01:48.440
+för att tala om för Jiki att han ska göra
+
+00:01:48.480 --> 00:01:51.580
+något flera gånger. Sedan skriver vi hur
+
+00:01:51.680 --> 00:01:53.940
+många gånger vi vill att Jiki ska upprepa saken
+
+00:01:53.980 --> 00:01:57.070
+mellan vanliga parenteser, och sedan har
+
+00:01:57.100 --> 00:02:00.030
+vi de här klammerparenteserna, och mellan dem
+
+00:02:00.040 --> 00:02:02.850
+står det som vi vill att Jiki ska upprepa.
+
+00:02:02.860 --> 00:02:06.020
+Det här mönstret är otroligt vanligt i programmering.
+
+00:02:06.100 --> 00:02:09.320
+Vi skriver ett nyckelord, oftast
+
+00:02:09.380 --> 00:02:12.400
+med lite information (i det här fallet hur
+
+00:02:12.440 --> 00:02:14.549
+många gånger något ska göras), och sedan ett
+
+00:02:14.580 --> 00:02:17.620
+kodblock mellan klammerparenteser. Så om vi
+
+00:02:17.680 --> 00:02:20.880
+går tillbaka till labyrintvärlden kan vi, i
+
+00:02:21.520 --> 00:02:25.220
+stället för att skriva move, move, move, move,
+
+00:02:25.260 --> 00:02:30.580
+skriva att move ska upprepas fyra gånger.
+
+00:02:30.590 --> 00:02:32.860
+Jiki ser koden och använder maskinen
+
+00:02:32.940 --> 00:02:36.870
+move fyra gånger i rad.
+
+00:02:36.900 --> 00:02:38.960
+Och vi är inte begränsade till en enda sak mellan
+
+00:02:39.000 --> 00:02:41.800
+klammerparenteserna. Jiki kan göra flera
+
+00:02:41.900 --> 00:02:45.320
+saker om och om igen. Vi kan säga åt Jiki
+
+00:02:45.460 --> 00:02:48.080
+att köra move, sedan turnLeft, och att upprepa
+
+00:02:48.120 --> 00:02:51.540
+alltihop fyra gånger. Om Jiki ser det här
+
+00:02:51.560 --> 00:02:54.000
+använder han maskinen move, sedan maskinen
+
+00:02:54.060 --> 00:02:56.880
+turnLeft, sedan maskinen move, sedan maskinen
+
+00:02:56.920 --> 00:02:59.340
+turnLeft, sedan maskinen move, och så vidare,
+
+00:02:59.430 --> 00:03:01.720
+tills han har gjort båda fyra gånger.
+
+00:03:01.800 --> 00:03:07.160
+De här upprepningsinstruktionerna kallar vi
+
+00:03:07.840 --> 00:03:09.540
+loopar, och det finns många olika loopar vi
+
+00:03:09.580 --> 00:03:11.980
+kan använda, som alla fungerar lite olika.
+
+00:03:12.000 --> 00:03:15.210
+Vi kommer att utforska dem alla under kursen.
+
+00:03:15.220 --> 00:03:17.710
+En sak till är bra att veta: när du jobbar
+
+00:03:17.760 --> 00:03:20.300
+med loopar blir det helt nödvändigt att hålla
+
+00:03:20.480 --> 00:03:24.240
+koden snygg och prydlig. När koden har en
+
+00:03:24.280 --> 00:03:26.800
+bra visuell struktur är det väldigt lätt
+
+00:03:26.860 --> 00:03:28.940
+att se vad som händer. Men om den inte har
+
+00:03:29.660 --> 00:03:31.740
+det, om du glömmer att göra fina indrag eller
+
+00:03:31.780 --> 00:03:34.400
+blandar ihop dina indrag, blir det rörigt
+
+00:03:34.460 --> 00:03:38.630
+väldigt fort. Därför har vi alltid en regel
+
+00:03:38.660 --> 00:03:41.500
+i den här kursen. Du sätter alltid den inledande
+
+00:03:41.600 --> 00:03:45.049
+klammerparentesen på samma rad som
+
+00:03:45.080 --> 00:03:48.430
+repeat-satsen (statement på engelska). Du
+
+00:03:48.430 --> 00:03:50.860
+sätter alltid den avslutande klammerparentesen
+
+00:03:50.940 --> 00:03:54.080
+på en egen rad efter satsen, och du gör
+
+00:03:54.120 --> 00:03:56.399
+alltid ett indrag på två mellanslag för koden
+
+00:03:56.480 --> 00:04:00.120
+däremellan. Då håller sig allt riktigt
+
+00:04:01.020 --> 00:04:02.560
+prydligt, och om du glömmer det eller försöker
+
+00:04:02.620 --> 00:04:04.360
+följa ett annat mönster får du ett fel.
+
+00:04:06.100 --> 00:04:08.080
+I de kommande övningarna är ditt mål att
+
+00:04:08.120 --> 00:04:11.060
+lösa några av utmaningarna med så få
+
+00:04:11.100 --> 00:04:13.720
+rader kod som möjligt, och du kan använda
+
+00:04:13.780 --> 00:04:15.320
+repeat-loopar för att hjälpa dig med
+
+00:04:15.380 --> 00:04:18.060
+det. Och sedan ska vi utforska hur du börjar
+
+00:04:18.070 --> 00:04:19.990
+använda repeat-loopen tillsammans
+
+00:04:20.019 --> 00:04:23.270
+med något annat begrepp för att börja
+
+00:04:23.320 --> 00:04:25.540
+se några riktigt kraftfulla tekniker. Ha
+
+00:04:25.580 --> 00:04:26.039
+det så kul, så ses vi här snart igen.

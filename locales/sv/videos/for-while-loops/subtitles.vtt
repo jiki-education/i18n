@@ -1,0 +1,339 @@
+WEBVTT
+
+NOTE en_md5 d4b8c72f7a92dfb1d6fb4eb412fdc752
+
+00:00:00.400 --> 00:00:03.469
+Välkommen tillbaka. Vi har nu tittat på två
+
+00:00:03.780 --> 00:00:06.580
+loopar: repeat-loopen och for of-loopen. I den
+
+00:00:06.620 --> 00:00:08.109
+här lektionen ska vi titta på två loopar
+
+00:00:08.200 --> 00:00:10.940
+till och två användbara tekniker för loopar. Du
+
+00:00:11.000 --> 00:00:14.140
+kanske minns att repeat-loopen egentligen inte finns
+
+00:00:14.200 --> 00:00:15.980
+i JavaScript. Den är bara något vi lagt
+
+00:00:16.020 --> 00:00:18.690
+till för att göra livet lite enklare för
+
+00:00:18.860 --> 00:00:20.340
+dig medan vi kommer igång. Så vad
+
+00:00:20.380 --> 00:00:23.190
+använder vi i stället? Jo, vi använder en
+
+00:00:23.200 --> 00:00:25.580
+vanlig for-loop, och den ser ut så här.
+
+00:00:25.660 --> 00:00:28.150
+Du förstår säkert varför den kunde kännas
+
+00:00:29.380 --> 00:00:30.920
+lite skrämmande allra första dagen. Men nu har
+
+00:00:30.940 --> 00:00:32.940
+du all kunskap du behöver för att bli
+
+00:00:32.960 --> 00:00:35.120
+bekväm med den. Så nu bryter vi
+
+00:00:35.140 --> 00:00:37.280
+ner den. En for-loop har tre delar: en
+
+00:00:37.360 --> 00:00:40.340
+initialisering, ett villkor och en ökning. Initialiseringen, den
+
+00:00:40.360 --> 00:00:44.620
+här let i = 0-biten, körs i
+
+00:00:44.640 --> 00:00:49.769
+början av hela loopen. Den körs bara en
+
+00:00:49.840 --> 00:00:52.220
+gång, och här skapar den en låda som
+
+00:00:52.260 --> 00:00:54.920
+heter i med värdet noll. Nästa del,
+
+00:00:54.980 --> 00:00:58.240
+villkoret, körs varje gång före varje iteration av
+
+00:00:58.340 --> 00:01:02.520
+loopen. Om villkoret är sant kör vi loopen
+
+00:01:03.240 --> 00:01:08.600
+igen. Om det inte är det kör
+
+00:01:08.640 --> 00:01:11.100
+vi den inte. Och sist kommer ökningen, i++.
+
+00:01:11.110 --> 00:01:15.580
+i++ betyder helt enkelt samma sak som i
+
+00:01:15.660 --> 00:01:18.580
+= i + 1. Det är bara
+
+00:01:19.400 --> 00:01:21.420
+en förkortning, ett sätt att öka i med
+
+00:01:21.460 --> 00:01:24.420
+ett varje gång. Så i det här exemplet
+
+00:01:24.460 --> 00:01:26.880
+sätter vi i till noll. Vi kollar
+
+00:01:26.940 --> 00:01:31.200
+om i är mindre än två, vilket det
+
+00:01:31.280 --> 00:01:34.200
+är, och då kör vi loopen. Och i
+
+00:01:34.240 --> 00:01:36.300
+slutet ökar vi i med ett, så
+
+00:01:36.380 --> 00:01:38.360
+i blir ett. Noll plus ett är ett.
+
+00:01:38.400 --> 00:01:41.640
+Sedan kör vi igen. Vi kollar om ett
+
+00:01:42.060 --> 00:01:44.380
+är mindre än två. Det är det,
+
+00:01:45.500 --> 00:01:47.400
+så vi kör loopen. Och i slutet ökar
+
+00:01:47.580 --> 00:01:50.780
+vi i igen. Nu är det två, ett
+
+00:01:50.800 --> 00:01:52.580
+plus ett är två. Och så går
+
+00:01:52.620 --> 00:01:55.140
+vi in en tredje gång. Den här gången
+
+00:01:55.240 --> 00:01:58.300
+kollar vi om två är mindre än två,
+
+00:01:58.340 --> 00:02:00.440
+och det är det inte, så vi
+
+00:02:00.480 --> 00:02:02.970
+kör inte loopen. Faktum är att vi är
+
+00:02:02.980 --> 00:02:05.680
+klara med loopen nu. Vi går bara vidare
+
+00:02:05.780 --> 00:02:07.140
+till koden nedanför. Så vi körde loopen
+
+00:02:07.540 --> 00:02:10.539
+två gånger, och det är bra att känna
+
+00:02:10.640 --> 00:02:13.360
+till: så länge vi börjar på noll och
+
+00:02:13.400 --> 00:02:16.100
+har ett villkor i mindre än n,
+
+00:02:16.140 --> 00:02:18.320
+är talet n antalet gånger loopen kommer att
+
+00:02:18.360 --> 00:02:21.460
+köras. Så det här är samma sak som
+
+00:02:21.520 --> 00:02:23.780
+att säga repeat två. Det är alltså
+
+00:02:23.840 --> 00:02:26.530
+inte svårt, men det är mycket krångligare än
+
+00:02:26.580 --> 00:02:28.900
+att bara skriva repeat två. Nästa loop du
+
+00:02:30.440 --> 00:02:33.020
+ska lära dig om är en while-loop,
+
+00:02:33.060 --> 00:02:38.120
+så länge. Den säger: Så länge ett villkor
+
+00:02:38.180 --> 00:02:40.380
+är sant, kör loopen. Vi kanske till exempel
+
+00:02:41.420 --> 00:02:45.800
+har en regel som säger att du
+
+00:02:45.840 --> 00:02:47.190
+bara får skjuta fem gånger i Space Invaders.
+
+00:02:47.190 --> 00:02:49.710
+Då skulle vi ha en loop här som
+
+00:02:49.740 --> 00:02:52.130
+säger: så länge antalet skott är mindre
+
+00:02:52.160 --> 00:02:54.170
+än fem, kör en loop som låter någon
+
+00:02:54.200 --> 00:02:56.940
+spela spelet. Varje gång någon skjuter ökar vi
+
+00:02:56.960 --> 00:03:00.340
+numShots med ett, och till slut når
+
+00:03:00.680 --> 00:03:04.000
+vi fem och loopen avslutas. Ett problem med
+
+00:03:04.480 --> 00:03:06.040
+while-loopar är dock att det är ganska lätt
+
+00:03:07.100 --> 00:03:08.880
+att råka skapa buggar som gör att loopen
+
+00:03:08.920 --> 00:03:11.440
+aldrig tar slut. De kallas oändliga loopar,
+
+00:03:11.480 --> 00:03:14.040
+och de är en av de vanligaste buggarna
+
+00:03:14.120 --> 00:03:15.890
+i program. När din dator blir seg, fläktarna
+
+00:03:15.940 --> 00:03:20.010
+börjar snurra och allt låter högt, då
+
+00:03:20.020 --> 00:03:23.020
+beror det ofta på att någon har lämnat
+
+00:03:23.060 --> 00:03:25.860
+kvar en oändlig loop som aldrig tar slut
+
+00:03:25.880 --> 00:03:29.380
+i sin kod. Okej, två nyckelord till
+
+00:03:29.460 --> 00:03:32.280
+i den här snabba genomgången. Det första är
+
+00:03:32.320 --> 00:03:35.300
+nyckelordet break. Nyckelordet break kan du använda var
+
+00:03:35.320 --> 00:03:37.680
+som helst i kroppen på vilken loop
+
+00:03:38.760 --> 00:03:40.720
+som helst. Delen mellan klammerparenteserna, det är kroppen.
+
+00:03:40.780 --> 00:03:43.840
+Och när Jiki ser ett break hoppar han
+
+00:03:43.880 --> 00:03:46.100
+ur loopen direkt och går vidare till
+
+00:03:46.160 --> 00:03:48.780
+koden som står under loopen. Säg att vi
+
+00:03:48.880 --> 00:03:50.600
+har ett krav som säger att loopen ska
+
+00:03:50.660 --> 00:03:53.280
+köras 50 gånger, men att vi vill
+
+00:03:53.420 --> 00:03:55.960
+stanna om spelaren har skjutit fem gånger. Då
+
+00:03:56.000 --> 00:03:58.140
+kan vi ha en for-loop högst upp som
+
+00:03:58.200 --> 00:04:00.940
+räknar upp mot 50. Men mitt i
+
+00:04:01.120 --> 00:04:03.300
+loopen kan vi ha ett villkor som kollar
+
+00:04:03.340 --> 00:04:04.720
+om spelaren har skjutit fem gånger, och om
+
+00:04:04.880 --> 00:04:07.720
+så är fallet använder vi break för
+
+00:04:07.780 --> 00:04:12.520
+att stoppa loopen. Ibland kan vi vilja hoppa
+
+00:04:12.560 --> 00:04:14.880
+över ett visst varv i en loop, i
+
+00:04:14.890 --> 00:04:18.600
+stället för att avbryta den helt. Tänk
+
+00:04:18.680 --> 00:04:20.780
+dig att vi bara vill göra saker för
+
+00:04:21.600 --> 00:04:22.930
+udda tal. Vi vill kunna säga att om
+
+00:04:23.020 --> 00:04:25.780
+i är udda ska loopen inte köras
+
+00:04:25.840 --> 00:04:28.380
+den här gången. Men vi vill inte hoppa
+
+00:04:28.420 --> 00:04:30.280
+ur loopen helt och hållet. Vi vill bara
+
+00:04:30.320 --> 00:04:32.670
+hoppa över just det här varvet och
+
+00:04:32.720 --> 00:04:35.600
+sedan titta på nästa. Och för det har
+
+00:04:35.640 --> 00:04:40.380
+vi ännu ett nyckelord: continue. När Jiki ser
+
+00:04:40.420 --> 00:04:42.180
+continue hoppar han bara tillbaka till början
+
+00:04:42.220 --> 00:04:44.820
+av loopen, till nästa varv. I en for-of-loop
+
+00:04:44.860 --> 00:04:47.200
+går han alltså vidare till nästa element i
+
+00:04:47.260 --> 00:04:48.580
+listan när han ser continue. I en
+
+00:04:48.640 --> 00:04:51.780
+for-loop kommer han i stället fram till ökningen
+
+00:04:51.840 --> 00:04:54.400
+i++ och börjar sedan på nästa varv. Så
+
+00:04:54.480 --> 00:04:57.980
+nu har vi gått igenom for-loopar, while-loopar,
+
+00:04:58.060 --> 00:05:00.800
+break och continue. Mycket information i den här
+
+00:05:00.840 --> 00:05:02.440
+videon, men du kan alltid komma tillbaka och
+
+00:05:02.500 --> 00:05:04.550
+kolla igen när du vill, och det
+
+00:05:04.580 --> 00:05:07.080
+finns egna sidor för varje ämne också. Testa
+
+00:05:07.800 --> 00:05:09.800
+att sätta alla de här idéerna i praktiken
+
+00:05:09.820 --> 00:05:12.220
+i de kommande övningarna. Lycka till, ha
+
+00:05:12.680 --> 00:05:14.060
+kul, och vi ses här igen strax.

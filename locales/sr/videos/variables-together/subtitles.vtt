@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 51f04781025bf1dbba2ded55c062926f
+
+00:00:00.140 --> 00:00:03.580
+Evo nas opet. Do sada, kada smo kreirali promenljive,
+
+00:00:03.740 --> 00:00:06.560
+koristili smo samo jednostavne vrednosti, broj poput
+
+00:00:06.840 --> 00:00:10.620
+50 ili string poput yellow. Promenljive
+
+00:00:10.660 --> 00:00:13.340
+postaju mnogo moćnije onda kada ih
+
+00:00:13.440 --> 00:00:16.460
+možemo koristiti u kombinaciji jedna s drugom.
+
+00:00:16.540 --> 00:00:19.000
+Na primer, kada možemo reći da leva ivica
+
+00:00:19.040 --> 00:00:22.030
+pravougaonika treba da bude na određenoj udaljenosti
+
+00:00:22.080 --> 00:00:25.660
+od ivice platna. U programiranju možemo da
+
+00:00:25.720 --> 00:00:28.810
+koristimo običnu, osnovnu matematiku: sabiranje,
+
+00:00:28.940 --> 00:00:32.340
+oduzimanje, množenje i deljenje, i možemo da koristimo
+
+00:00:32.380 --> 00:00:35.140
+promenljive koje smo već definisali
+
+00:00:35.200 --> 00:00:39.020
+kao deo toga. Hajde da počnemo tako što ćemo reći
+
+00:00:39.060 --> 00:00:41.300
+da želimo da nacrtamo pravougaonik na platnu,
+
+00:00:41.960 --> 00:00:43.800
+i da počne 10 unutra
+
+00:00:44.480 --> 00:00:46.980
+od leve i od desne ivice, i
+
+00:00:47.200 --> 00:00:48.960
+20 od gornje i donje ivice.
+
+00:00:49.900 --> 00:00:51.580
+Dakle, biće na sredini
+
+00:00:51.620 --> 00:00:53.900
+platna, malo duži nego što je
+
+00:00:53.960 --> 00:00:57.740
+visok. Setićeš se da, kada crtamo
+
+00:00:57.760 --> 00:01:00.430
+pravougaonik, moramo da znamo njegov left, top,
+
+00:01:00.600 --> 00:01:02.510
+width i height, kao i njegovu boju.
+
+00:01:03.360 --> 00:01:04.820
+Možemo početi tako što ćemo
+
+00:01:04.920 --> 00:01:08.320
+to zapisati. A sada treba da izračunamo
+
+00:01:08.420 --> 00:01:10.220
+koliki bi left, top, width i height
+
+00:01:10.240 --> 00:01:13.100
+trebalo da budu. Hajde da ih postavimo. Left je
+
+00:01:13.260 --> 00:01:15.660
+20. Ovaj, izvini, left je 10. Top je
+
+00:01:15.940 --> 00:01:18.920
+20. Width, pa, width je
+
+00:01:19.020 --> 00:01:22.020
+veličina platna, koja je 100, minus
+
+00:01:22.080 --> 00:01:23.340
+10 sa leve i 10
+
+00:01:23.360 --> 00:01:26.100
+sa desne strane, dakle to je 80. A
+
+00:01:26.180 --> 00:01:29.040
+height je visina platna, koja je
+
+00:01:29.080 --> 00:01:31.580
+takođe 100, minus 20 na
+
+00:01:31.640 --> 00:01:33.660
+vrhu i 20 na dnu, dakle
+
+00:01:33.960 --> 00:01:37.860
+60. Dakle, možemo postaviti te promenljive. Left
+
+00:01:37.920 --> 00:01:42.840
+10, top 20, width 80, height 60. I
+
+00:01:42.860 --> 00:01:44.880
+nadam se da ti je ovo poznato. To je
+
+00:01:44.920 --> 00:01:46.700
+ono što do sada radiš u
+
+00:01:46.740 --> 00:01:50.940
+vežbama. Ali šta se dogodi sada ako želimo
+
+00:01:50.960 --> 00:01:54.140
+da pomerimo pravougaonik malo unutra, da bude
+
+00:01:54.160 --> 00:01:55.400
+malo manji? Ako želimo
+
+00:01:55.460 --> 00:01:57.040
+da ga pomerimo 20 od leve i
+
+00:01:57.100 --> 00:01:59.040
+desne ivice i 30 od gornje i
+
+00:01:59.060 --> 00:02:02.620
+donje ivice? Morali bismo ponovo sve
+
+00:02:02.720 --> 00:02:06.320
+da izračunamo. Width je sada 100 minus
+
+00:02:06.560 --> 00:02:10.280
+20 minus 20, a height je 100
+
+00:02:10.360 --> 00:02:14.320
+minus 30 minus 30, i ovo je definitivno
+
+00:02:14.420 --> 00:02:17.280
+više posla i više matematike nego što ja želim
+
+00:02:17.320 --> 00:02:20.400
+da radim. Umesto toga, možemo reći
+
+00:02:20.420 --> 00:02:24.000
+računaru da to uradi za nas. Možemo
+
+00:02:24.060 --> 00:02:27.680
+postaviti width da bude 100 minus
+
+00:02:27.840 --> 00:02:31.620
+left minus left, a height da
+
+00:02:31.700 --> 00:02:34.720
+bude 100 minus top minus top,
+
+00:02:34.960 --> 00:02:37.580
+jer je isto na vrhu i na dnu. Ili
+
+00:02:37.600 --> 00:02:40.980
+bismo to mogli zapisati kao 100 minus
+
+00:02:41.240 --> 00:02:44.820
+left puta dva, ili 100 minus
+
+00:02:44.940 --> 00:02:48.620
+top puta dva. I sada ako promenimo
+
+00:02:48.660 --> 00:02:52.040
+left ili top, width i
+
+00:02:52.080 --> 00:02:54.860
+height će se takođe promeniti. Tako stvari
+
+00:02:54.900 --> 00:02:57.430
+počinju da zavise jedna od druge. A šta
+
+00:02:57.440 --> 00:03:00.960
+je sa platnom? Sada je 100. Ali šta
+
+00:03:01.020 --> 00:03:03.700
+ako naše platno postane 200 široko
+
+00:03:03.740 --> 00:03:06.540
+i visoko? Pa, verovatno bi trebalo da postavimo
+
+00:03:06.620 --> 00:03:09.560
+promenljivu canvasSize i dodeliti joj
+
+00:03:09.580 --> 00:03:13.230
+vrednost 100. I sada je naš left, izvini,
+
+00:03:13.260 --> 00:03:17.740
+naš width jednak canvasSize minus left puta dva,
+
+00:03:18.200 --> 00:03:22.160
+a height jednak canvasSize minus top puta
+
+00:03:22.200 --> 00:03:26.120
+dva. Hajde da razmislimo šta Jiki radi
+
+00:03:26.480 --> 00:03:30.580
+kada napišemo let height equals canvas minus
+
+00:03:30.700 --> 00:03:33.310
+top puta dva. Pa, on prvo uzima
+
+00:03:33.310 --> 00:03:35.220
+kutiju top sa police, i
+
+00:03:35.260 --> 00:03:37.660
+u njoj pronalazi 20, zatim vadi
+
+00:03:37.680 --> 00:03:40.160
+svoj džepni kalkulator i računa 20 puta dva,
+
+00:03:40.580 --> 00:03:42.740
+i pravi mentalnu belešku da je to 40.
+
+00:03:43.720 --> 00:03:45.860
+Zatim uzima kutiju canvas sa
+
+00:03:45.900 --> 00:03:49.540
+police, pronalazi u njoj 100, i
+
+00:03:49.600 --> 00:03:52.780
+izračunava da je 100 minus 40 jednako 60.
+
+00:03:53.840 --> 00:03:56.350
+I sada shvata da je ono što govorimo
+
+00:03:56.400 --> 00:04:00.000
+„neka height bude 60“. Dakle, on posluša
+
+00:04:00.040 --> 00:04:02.320
+let: uzima novu kutiju, na nju piše
+
+00:04:02.360 --> 00:04:04.440
+height, a zatim unutra stavlja 60.
+
+00:04:04.580 --> 00:04:06.900
+I kasnije, kada koristi height,
+
+00:04:07.040 --> 00:04:09.600
+on jednostavno ponovo izvadi taj 60.
+
+00:04:09.640 --> 00:04:13.720
+Probaj sve ovo da primeniš u
+
+00:04:13.820 --> 00:04:16.180
+narednih nekoliko vežbi i biće ti
+
+00:04:16.240 --> 00:04:18.649
+sve jasnije i jasnije. A kada ti
+
+00:04:18.700 --> 00:04:22.070
+sve bude radilo, poigraj se menjanjem vrednosti
+
+00:04:22.100 --> 00:04:25.200
+promenljivih i vidi šta se dešava. Gledaj kako
+
+00:04:25.220 --> 00:04:28.420
+rastu i kako se smanjuju. Ne
+
+00:04:28.480 --> 00:04:31.480
+žuri, razmisli o odnosima između stvari, i
+
+00:04:31.500 --> 00:04:32.670
+vidimo se uskoro.

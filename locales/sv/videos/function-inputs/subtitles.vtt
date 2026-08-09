@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 2a23c8bcc4af2ee7d5bd8d5613681427
+
+00:00:00.200 --> 00:00:03.800
+Välkommen tillbaka. Förhoppningsvis känns det
+
+00:00:03.860 --> 00:00:07.160
+ganska lätt att använda maskinerna nu. Hittills
+
+00:00:07.180 --> 00:00:09.140
+har alla olika sorters maskiner du använt,
+
+00:00:09.380 --> 00:00:12.160
+`move`, `turnLeft`, `shoot`, gjort samma sak
+
+00:00:12.240 --> 00:00:15.260
+varje gång. Varje gång du kör `move`
+
+00:00:15.340 --> 00:00:18.520
+flyttar sig din figur. Varje gång du
+
+00:00:18.560 --> 00:00:22.010
+kör `shoot` skjuter din figur. Men en av
+
+00:00:22.080 --> 00:00:25.560
+de mer kraftfulla sakerna med maskiner, med funktioner, är
+
+00:00:25.580 --> 00:00:27.520
+att många av dem låter dig stoppa in
+
+00:00:27.560 --> 00:00:30.810
+information i dem, och den informationen, när du kör dem,
+
+00:00:31.000 --> 00:00:34.380
+ändrar vad de gör. Nu ska vi titta på ett
+
+00:00:34.420 --> 00:00:38.420
+exempel. Hittills har vi sett maskiner som ser ut
+
+00:00:38.460 --> 00:00:40.480
+lite som lådor, som
+
+00:00:40.490 --> 00:00:43.360
+den här `move`-maskinen. Men vissa maskiner har
+
+00:00:43.540 --> 00:00:47.200
+inkast, som den här `walk`-maskinen. `walk`-maskinen
+
+00:00:47.240 --> 00:00:49.260
+är precis som `move`-maskinen. Den flyttar
+
+00:00:49.280 --> 00:00:52.780
+figuren framåt, men Jiki kan använda
+
+00:00:52.860 --> 00:00:56.320
+inkastet för att ange hur många steg din figur
+
+00:00:56.340 --> 00:00:59.340
+ska gå. Så i stället för att behöva
+
+00:00:59.440 --> 00:01:02.120
+använda funktionen `move` tre gånger i
+
+00:01:02.160 --> 00:01:05.920
+rad, `move`, `move`, `move`, kan du nu
+
+00:01:05.960 --> 00:01:08.620
+bara använda funktionen `walk` och säga åt Jiki
+
+00:01:08.640 --> 00:01:11.200
+att stoppa in talet tre i maskinen.
+
+00:01:12.960 --> 00:01:15.320
+För att göra det här i kod skriver vi
+
+00:01:15.380 --> 00:01:17.260
+fortfarande funktionens namn, i det här
+
+00:01:17.320 --> 00:01:19.920
+fallet `walk`, och vi skriver fortfarande vår
+
+00:01:19.940 --> 00:01:23.740
+inledande parentes. Men före den avslutande parentesen
+
+00:01:23.780 --> 00:01:25.920
+anger vi vad vi vill att indata ska vara.
+
+00:01:25.960 --> 00:01:27.690
+I det här fallet vill vi att indata
+
+00:01:27.720 --> 00:01:30.920
+ska vara tre, alltså att `walk` ska gå tre
+
+00:01:30.960 --> 00:01:34.240
+steg framåt. När Jiki ser det tar han
+
+00:01:34.260 --> 00:01:35.930
+talet tre, och du kan tänka på det
+
+00:01:35.960 --> 00:01:38.310
+talet som ett litet mynt. Han
+
+00:01:38.340 --> 00:01:40.300
+stoppar in det i maskinens inkast
+
+00:01:40.320 --> 00:01:43.200
+innan han vevar igång den. Om en
+
+00:01:43.220 --> 00:01:46.660
+liten stund ska du göra några övningar
+
+00:01:46.700 --> 00:01:49.660
+där du ritar rektanglar och cirklar. För de
+
+00:01:49.700 --> 00:01:53.000
+funktionerna behöver du säga åt Jiki att stoppa
+
+00:01:53.080 --> 00:01:57.110
+in flera olika tal, som anger sådant som
+
+00:01:57.180 --> 00:01:59.380
+hur långt från vänsterkanten den ska
+
+00:01:59.420 --> 00:02:00.840
+vara, hur långt från överkanten den ska
+
+00:02:00.920 --> 00:02:03.160
+vara, bredden på en rektangel,
+
+00:02:03.240 --> 00:02:07.140
+höjden på en rektangel. I Jikis värld är det
+
+00:02:07.160 --> 00:02:10.120
+bara olika inkast, ett för varje
+
+00:02:10.160 --> 00:02:12.880
+tal. Så i koden skriver vi bara
+
+00:02:12.900 --> 00:02:15.120
+varje tal och sedan sätter vi ett kommatecken
+
+00:02:15.200 --> 00:02:18.460
+emellan. Funktionens namn, en parentes,
+
+00:02:18.540 --> 00:02:20.980
+ett tal för varje indata,
+
+00:02:21.300 --> 00:02:24.180
+alla åtskilda med kommatecken, och sedan avslutar
+
+00:02:24.260 --> 00:02:27.380
+vi med en parentes. Om du försöker använda en
+
+00:02:27.420 --> 00:02:29.810
+funktion med fel antal indata får
+
+00:02:29.840 --> 00:02:31.620
+du ett fel. Om du till exempel
+
+00:02:31.660 --> 00:02:33.660
+försöker stoppa in indata i en
+
+00:02:33.680 --> 00:02:36.080
+maskin som inte har något inkast säger Jiki
+
+00:02:36.140 --> 00:02:38.060
+till att det inte går. Och om du
+
+00:02:38.120 --> 00:02:39.640
+använder en maskin som har ett
+
+00:02:39.680 --> 00:02:41.840
+inkast men inte talar om för Jiki vad
+
+00:02:41.880 --> 00:02:43.920
+han ska stoppa i det, då stannar
+
+00:02:44.000 --> 00:02:46.960
+han också och klagar. Testa själv om du
+
+00:02:47.020 --> 00:02:50.380
+känner dig lite rebellisk och se vad som händer.
+
+00:02:50.440 --> 00:02:52.370
+Du kommer att göra många sådana här
+
+00:02:52.400 --> 00:02:54.940
+misstag när saker blir mer komplicerade. Försök
+
+00:02:54.980 --> 00:02:57.170
+att inte bli stressad eller ledsen över det.
+
+00:02:57.200 --> 00:03:00.080
+Vi lär oss alla av våra misstag. Det är
+
+00:03:00.100 --> 00:03:03.600
+faktiskt det snabbaste sättet för hjärnan att
+
+00:03:03.660 --> 00:03:06.320
+verkligen ta till sig saker. Och alla gör
+
+00:03:06.600 --> 00:03:10.340
+de här misstagen. Vi har alla börjat från noll,
+
+00:03:10.860 --> 00:03:12.910
+så stressa inte. Innan du sätter i gång,
+
+00:03:13.780 --> 00:03:16.400
+är det en sak till jag vill nämna.
+
+00:03:16.500 --> 00:03:19.660
+Ibland kommer du att se rader i övningar
+
+00:03:19.700 --> 00:03:23.040
+som börjar med två snedstreck. De kallas
+
+00:03:23.140 --> 00:03:26.420
+kommentarer. De är privata anteckningar bara för
+
+00:03:26.480 --> 00:03:28.500
+dig, som Jiki helt ignorerar. Så om
+
+00:03:28.540 --> 00:03:31.130
+Jiki ser en rad som börjar med de
+
+00:03:31.140 --> 00:03:32.670
+här två snedstrecken kliver han bara
+
+00:03:32.700 --> 00:03:36.320
+över den och går vidare till nästa rad.
+
+00:03:36.340 --> 00:03:38.650
+Kommentarer ger dig ett sätt att skriva
+
+00:03:38.700 --> 00:03:40.800
+egna anteckningar till dig själv. De är
+
+00:03:41.580 --> 00:03:43.430
+väldigt användbara för att påminna dig om
+
+00:03:43.560 --> 00:03:45.630
+hur saker fungerar. Ofta finns det också
+
+00:03:45.660 --> 00:03:48.120
+färdigskrivna kommentarer, så att när du börjar en
+
+00:03:48.160 --> 00:03:50.109
+övning kan de föreslå var du behöver
+
+00:03:50.160 --> 00:03:51.880
+skriva kod eller hur du kan lösa
+
+00:03:51.980 --> 00:03:55.480
+något. Men lägg gärna till egna kommentarer
+
+00:03:55.520 --> 00:03:58.310
+också. Allt eftersom du går vidare, kolla längst
+
+00:03:58.380 --> 00:04:00.980
+ner i instruktionerna, så ser du information om
+
+00:04:01.020 --> 00:04:03.280
+vilka funktioner du kan använda, exakt vilka
+
+00:04:03.320 --> 00:04:05.520
+indata du behöver stoppa in. Ha kul med
+
+00:04:05.600 --> 00:04:07.020
+att testa de här indata, så ses vi
+
+00:04:07.060 --> 00:04:07.740
+här igen strax

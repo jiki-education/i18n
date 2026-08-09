@@ -1,0 +1,222 @@
+WEBVTT
+
+NOTE en_md5 6ff1da8907b7499eb2c565476fd62b73
+
+00:00:00.160 --> 00:00:02.940
+Välkommen tillbaka. Hittills har
+
+00:00:03.180 --> 00:00:05.540
+vi mest tänkt på strängar och
+
+00:00:05.600 --> 00:00:10.140
+tal som ganska statiska saker.
+
+00:00:10.180 --> 00:00:13.260
+Och det är de, men de har också massor av inbyggd
+
+00:00:13.540 --> 00:00:16.240
+funktionalitet som Jiki kan använda.
+
+00:00:16.320 --> 00:00:18.790
+Framöver ska vi lära oss mer om den här funktionaliteten,
+
+00:00:18.840 --> 00:00:20.940
+om de här förmågorna som de har
+
+00:00:20.980 --> 00:00:23.690
+och som gör livet mycket enklare för dig.
+
+00:00:23.700 --> 00:00:26.100
+Det finns två typer av förmågor vi ska
+
+00:00:26.160 --> 00:00:30.220
+titta på: egenskaper och metoder.
+
+00:00:30.240 --> 00:00:34.750
+Nu ska vi börja med att titta på egenskaper.
+
+00:00:34.800 --> 00:00:37.370
+Egenskaper är fakta som vi kan
+
+00:00:37.400 --> 00:00:40.800
+be Jiki berätta om saker.
+
+00:00:40.840 --> 00:00:43.500
+Strängar har till exempel en egenskap som heter length (längd),
+
+00:00:43.540 --> 00:00:46.020
+som Jiki kan använda för att tala om hur lång en sträng är.
+
+00:00:46.060 --> 00:00:48.100
+Så i stället för att behöva loopa över alla
+
+00:00:48.140 --> 00:00:50.380
+bokstäver för att räkna ut hur stor en
+
+00:00:50.400 --> 00:00:52.300
+sträng är kan vi bara be Jiki berätta det.
+
+00:00:53.700 --> 00:00:55.620
+Och för att göra det använder vi
+
+00:00:55.700 --> 00:00:59.080
+en ny form av syntax: en punkt.
+
+00:00:59.100 --> 00:01:01.460
+Om vi till exempel har strängen Jeremy
+
+00:01:01.500 --> 00:01:05.540
+och vill få fram dess längd kan vi skriva
+
+00:01:07.240 --> 00:01:10.200
+Jeremy.length, och det är allt.
+
+00:01:10.400 --> 00:01:12.500
+När Jiki skapar en sträng räknar han bokstäverna
+
+00:01:12.540 --> 00:01:14.240
+och skriver liksom bara en
+
+00:01:14.260 --> 00:01:16.580
+siffra i hörnet med hur många det är.
+
+00:01:16.620 --> 00:01:19.960
+Och när vi sedan använder egenskapen length
+
+00:01:20.040 --> 00:01:23.130
+går Jiki bara och kollar vad den siffran var.
+
+00:01:23.220 --> 00:01:27.480
+Så i vårt exempel Jeremy.length: när Jiki skapar
+
+00:01:27.560 --> 00:01:29.510
+strängen Jeremy räknar han bokstäverna, skriver
+
+00:01:29.540 --> 00:01:32.580
+siffran sex i hörnet, och när vi sedan
+
+00:01:33.060 --> 00:01:35.060
+skriver Jeremy.length går han och kollar den.
+
+00:01:35.080 --> 00:01:37.980
+Så du kan tänka på egenskaper
+
+00:01:38.020 --> 00:01:41.160
+som fakta om den saken.
+
+00:01:41.220 --> 00:01:44.880
+Jag sa att vi hade egenskaper och metoder, så vad är metoder då?
+
+00:01:44.920 --> 00:01:49.590
+Metoder är funktioner som hör till strängen.
+
+00:01:49.600 --> 00:01:52.120
+Så i stället för att vi skriver en funktion
+
+00:01:52.180 --> 00:01:54.960
+som vi stoppar in en sträng i som indata,
+
+00:01:55.060 --> 00:01:59.020
+kan vi använda en metod direkt på strängen.
+
+00:01:59.080 --> 00:02:01.700
+Kommer du till exempel ihåg funktionen
+
+00:02:01.760 --> 00:02:04.700
+du skrev där du kollade om en
+
+00:02:04.760 --> 00:02:07.580
+sträng innehöll en viss bokstav?
+
+00:02:07.720 --> 00:02:11.320
+Strängar har faktiskt en metod som heter includes (innehåller)
+
+00:02:11.360 --> 00:02:13.440
+som gör just det, och vi kan använda den
+
+00:02:13.480 --> 00:02:16.530
+med samma punktsyntax som du såg för egenskaperna.
+
+00:02:16.540 --> 00:02:18.280
+Skillnaden mot egenskaper är att när vi skriver metoder
+
+00:02:18.360 --> 00:02:21.989
+skriver vi dem som funktioner, med parenteser och indata.
+
+00:02:22.000 --> 00:02:26.520
+Så vi kan skriva Jeremy.includes("e"), och då får
+
+00:02:26.560 --> 00:02:28.840
+vi tillbaka true, eftersom Jeremy har ett e i sig.
+
+00:02:28.880 --> 00:02:31.840
+Metoder skiljer sig från egenskaper eftersom de inte är statiska fakta.
+
+00:02:32.500 --> 00:02:34.680
+De är faktiskt funktioner. Du kan
+
+00:02:34.720 --> 00:02:37.260
+tänka på dem som funktioner med en
+
+00:02:37.300 --> 00:02:40.850
+inbyggd låda där strängen ligger.
+
+00:02:40.880 --> 00:02:43.150
+Hur de fungerar spelar ingen roll just nu.
+
+00:02:43.160 --> 00:02:45.200
+Du kommer inte att bygga egna på ett bra tag.
+
+00:02:45.240 --> 00:02:47.720
+Allt du behöver veta är att du använder
+
+00:02:47.780 --> 00:02:50.200
+en metod med en punkt följd
+
+00:02:50.240 --> 00:02:53.070
+av den vanliga funktionssyntaxen.
+
+00:02:53.100 --> 00:02:55.160
+En sak att känna till med strängar är att
+
+00:02:55.200 --> 00:02:58.400
+metoderna inte ändrar något inuti strängen.
+
+00:02:58.480 --> 00:03:01.560
+Det finns till exempel en metod som heter toUpperCase (till versaler),
+
+00:03:01.660 --> 00:03:04.010
+som returnerar strängen med alla bokstäver som versaler.
+
+00:03:04.060 --> 00:03:06.960
+Men den ändrar inte den ursprungliga strängen.
+
+00:03:07.120 --> 00:03:10.100
+Den innehåller fortfarande Jeremy, skrivet med bara ett stort J.
+
+00:03:10.140 --> 00:03:13.120
+I stället skapar Jiki en ny sträng som är helt i versaler.
+
+00:03:14.480 --> 00:03:16.040
+Nu när vi går vidare ska jag
+
+00:03:16.120 --> 00:03:18.100
+visa dig en massa olika egenskaper
+
+00:03:18.140 --> 00:03:20.810
+och metoder du kan använda. Kolla
+
+00:03:20.840 --> 00:03:23.410
+noga igenom instruktionerna i övningarna
+
+00:03:23.440 --> 00:03:26.380
+så lär du dig allt det här. Men först
+
+00:03:26.420 --> 00:03:29.380
+ska vi titta på pangram-övningen
+
+00:03:29.420 --> 00:03:32.600
+från tidigare, fast med lite mer komplexitet. Ha så kul!
+
+00:03:32.640 --> 00:03:33.470
+Vi ses här snart igen.

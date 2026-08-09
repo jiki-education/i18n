@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 488ab8c8dd77c6bec365ce44675868b7
+
+00:00:00.280 --> 00:00:02.640
+Välkommen tillbaka. I förra lektionen
+
+00:00:02.680 --> 00:00:04.680
+lärde vi oss hur du kommer åt en
+
+00:00:04.700 --> 00:00:08.300
+enskild bokstav i en sträng med hakparenteser.
+
+00:00:08.420 --> 00:00:10.120
+I den här lektionen ska vi titta
+
+00:00:10.160 --> 00:00:13.160
+på hur du loopar igenom en sträng och
+
+00:00:13.200 --> 00:00:15.660
+plockar ut en bokstav i taget. Och för
+
+00:00:15.720 --> 00:00:18.300
+att göra det behöver vi en ny sorts
+
+00:00:18.360 --> 00:00:20.170
+loop. Hittills har vi använt `repeat`-loopen,
+
+00:00:20.200 --> 00:00:22.720
+och nu ska vi använda något som kallas
+
+00:00:22.760 --> 00:00:26.880
+en `for of`-loop. Det är två nya nyckelord, `for` och `of`.
+
+00:00:27.000 --> 00:00:28.740
+Nyckelordet `for` kommer vi att stöta
+
+00:00:28.760 --> 00:00:30.360
+på på fler ställen framöver.
+
+00:00:30.790 --> 00:00:32.580
+Det kan stå för sig självt, eller
+
+00:00:32.619 --> 00:00:35.380
+paras ihop med `in` eller `of`.
+
+00:00:35.440 --> 00:00:37.160
+Just nu fokuserar vi på det
+
+00:00:37.220 --> 00:00:40.120
+sista av dem, `of`. Så nu tar vi en titt
+
+00:00:40.160 --> 00:00:43.280
+på lite kod. Vi börjar med att skapa en
+
+00:00:43.340 --> 00:00:47.310
+variabel som heter `name` och som innehåller strängen `"Jeremy"`. Inget
+
+00:00:47.380 --> 00:00:50.460
+nytt så långt. Sedan har vi den här raden,
+
+00:00:50.540 --> 00:00:53.620
+`for let letter of name`, och där händer det en hel
+
+00:00:53.640 --> 00:00:55.480
+del, så vi går igenom den
+
+00:00:55.520 --> 00:00:59.240
+i lugn och ro. Först har vi nyckelordet `for`. Det
+
+00:00:59.320 --> 00:01:00.980
+talar om för Jiki att vi vill
+
+00:01:01.060 --> 00:01:04.340
+loopa. Då tittar han framåt och ser `of`
+
+00:01:04.879 --> 00:01:06.320
+och förstår att det är
+
+00:01:06.580 --> 00:01:09.600
+`for of`-loopande vi är ute efter. Och det
+
+00:01:09.720 --> 00:01:11.940
+betyder att i stället för att använda en
+
+00:01:12.020 --> 00:01:15.180
+`repeat`-loop, där vi säger ”loopa 10 gånger”, säger
+
+00:01:15.260 --> 00:01:17.380
+vi ”loopa igenom alla bokstäver i strängen”.
+
+00:01:17.440 --> 00:01:20.990
+Det är vad `for of` betyder. Sedan har vi
+
+00:01:21.060 --> 00:01:24.080
+den här biten, `let letter`. Det är precis samma
+
+00:01:24.140 --> 00:01:25.860
+sak som `let name` på
+
+00:01:26.020 --> 00:01:29.320
+raden ovanför. Vi skapar helt enkelt en variabel som heter `letter`.
+
+00:01:30.240 --> 00:01:33.240
+Skillnaden är att vi inte uttryckligen
+
+00:01:33.280 --> 00:01:35.280
+säger vad som ska ligga i den. I stället
+
+00:01:35.320 --> 00:01:37.850
+ber vi Jiki att lägga varje bokstav i
+
+00:01:37.900 --> 00:01:41.780
+strängen i den, en i taget. Så Jiki ser
+
+00:01:41.880 --> 00:01:44.460
+`for`, kollar att där står `of`, och sätter igång. Han
+
+00:01:44.480 --> 00:01:46.140
+tittar på den första bokstaven i strängen,
+
+00:01:46.480 --> 00:01:48.380
+`"J"` i det här fallet, och lägger den i
+
+00:01:48.440 --> 00:01:50.840
+en ny låda som heter `letter`. Vi hade förresten
+
+00:01:50.880 --> 00:01:52.240
+kunnat kalla den vad som helst. Den behöver
+
+00:01:52.260 --> 00:01:53.920
+inte heta `letter`. Vi har bara valt att kalla
+
+00:01:53.960 --> 00:01:57.020
+den `letter` här. Sedan kör han koden
+
+00:01:57.080 --> 00:01:58.960
+mellan klammerparenteserna, och där kan du göra
+
+00:01:59.000 --> 00:02:01.060
+precis allt du kan göra någon annanstans i kod.
+
+00:02:01.540 --> 00:02:03.560
+Den enda skillnaden är att det här blocket
+
+00:02:03.640 --> 00:02:06.320
+körs en gång för varje bokstav
+
+00:02:06.380 --> 00:02:07.900
+i strängen, och att variabeln finns
+
+00:02:07.960 --> 00:02:11.940
+tillgänglig i det. Varje gång Jiki når den
+
+00:02:12.040 --> 00:02:15.000
+avslutande klammerparentesen slänger han `letter`-lådan
+
+00:02:15.020 --> 00:02:16.740
+och skapar en ny med nästa
+
+00:02:16.860 --> 00:02:19.220
+bokstav i. Första gången slänger
+
+00:02:19.340 --> 00:02:20.800
+han alltså `"J"` och lägger ett
+
+00:02:20.920 --> 00:02:23.000
+`"e"` i lådan i stället. Sedan gör han
+
+00:02:23.020 --> 00:02:25.740
+samma sak med `"r"`, sedan `"e"`, sedan `"m"`,
+
+00:02:26.080 --> 00:02:28.790
+sedan `"y"`. Sex bokstäver, sex varv i
+
+00:02:28.840 --> 00:02:31.300
+loopen. Förhoppningsvis är det begripligt. Det tar en
+
+00:02:31.340 --> 00:02:32.560
+liten stund att vänja sig vid
+
+00:02:32.600 --> 00:02:34.900
+syntaxen, men själva idén är egentligen inte så svår.
+
+00:02:34.920 --> 00:02:37.730
+Sedan har du några övningar
+
+00:02:37.760 --> 00:02:40.250
+som alla handlar om att stega
+
+00:02:40.250 --> 00:02:42.660
+igenom strängar. De går ut på att du
+
+00:02:42.680 --> 00:02:44.980
+ska göra något annat med bokstäverna, kanske
+
+00:02:45.000 --> 00:02:46.760
+räkna hur många bokstäver det finns
+
+00:02:46.800 --> 00:02:49.260
+eller hitta positionen för en viss bokstav. Du
+
+00:02:49.320 --> 00:02:51.640
+måste använda de olika teknikerna du har
+
+00:02:51.700 --> 00:02:57.060
+lärt dig hittills och kombinera dem med att loopa. Övningarna
+
+00:02:57.100 --> 00:03:00.000
+börjar bli mer utmanande nu. Du kombinerar
+
+00:03:00.020 --> 00:03:02.420
+många olika saker du har lärt dig.
+
+00:03:02.500 --> 00:03:03.920
+Ta god tid på dig med dem. Det
+
+00:03:03.960 --> 00:03:06.160
+kan ta ett tag att bli klar med
+
+00:03:06.200 --> 00:03:08.840
+var och en. Försök att inte bli stressad
+
+00:03:08.900 --> 00:03:10.920
+eller frustrerad om du inte kommer på det.
+
+00:03:10.940 --> 00:03:12.640
+Se det som ett pussel. Om du
+
+00:03:12.650 --> 00:03:15.160
+fastnar kan du ta en paus, gå en
+
+00:03:15.200 --> 00:03:16.790
+promenad och komma tillbaka efteråt.
+
+00:03:16.820 --> 00:03:18.870
+Du har all kunskap du behöver för
+
+00:03:18.940 --> 00:03:21.520
+det här och färdigheterna för att klara av
+
+00:03:21.580 --> 00:03:23.320
+det, men du måste ha tålamod. Och kom
+
+00:03:23.900 --> 00:03:25.150
+ihåg att du kan använda ledtrådarna om
+
+00:03:25.200 --> 00:03:27.540
+du behöver, men försök att använda dem som en
+
+00:03:27.560 --> 00:03:28.060
+sista utväg. Lycka till, så ses vi här snart igen.

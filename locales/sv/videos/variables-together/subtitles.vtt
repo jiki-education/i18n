@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 51f04781025bf1dbba2ded55c062926f
+
+00:00:00.140 --> 00:00:03.580
+Välkommen tillbaka. Hittills när vi har skapat variabler
+
+00:00:03.740 --> 00:00:06.560
+har vi bara använt enkla värden, ett tal som
+
+00:00:06.840 --> 00:00:10.620
+`50` eller en sträng som `"yellow"`. Variabler
+
+00:00:10.660 --> 00:00:13.340
+blir mycket kraftfullare när vi kan
+
+00:00:13.440 --> 00:00:16.460
+använda dem i kombination med varandra. Då
+
+00:00:16.540 --> 00:00:19.000
+kan vi till exempel säga att rektangelns vänstra kant
+
+00:00:19.040 --> 00:00:22.030
+ska vara på ett visst avstånd från
+
+00:00:22.080 --> 00:00:25.660
+kanten på canvasen. I programmering kan vi
+
+00:00:25.720 --> 00:00:28.810
+använda vanlig, enkel matematik, sådant som att addera,
+
+00:00:28.940 --> 00:00:32.340
+subtrahera, multiplicera och dividera, och vi kan använda
+
+00:00:32.380 --> 00:00:35.140
+variablerna vi redan har satt som en del
+
+00:00:35.200 --> 00:00:39.020
+av det. Vi börjar med att säga att vi
+
+00:00:39.060 --> 00:00:41.300
+vill rita en rektangel på vår canvas,
+
+00:00:41.960 --> 00:00:43.800
+och att den ska börja 10 in
+
+00:00:44.480 --> 00:00:46.980
+från vänster och från höger, och
+
+00:00:47.200 --> 00:00:48.960
+20 in från toppen och botten.
+
+00:00:49.900 --> 00:00:51.580
+Den kommer alltså att hamna mitt
+
+00:00:51.620 --> 00:00:53.900
+på canvasen, lite bredare än vad den är
+
+00:00:53.960 --> 00:00:57.740
+hög. När vi ritar en
+
+00:00:57.760 --> 00:01:00.430
+rektangel behöver vi känna till dess `left` (vänsterkant), `top` (överkant),
+
+00:01:00.600 --> 00:01:02.510
+`width` (bredd) och `height` (höjd), och dess färg.
+
+00:01:03.360 --> 00:01:04.820
+Så vi kan börja med att skriva ut
+
+00:01:04.920 --> 00:01:08.320
+det. Och nu behöver vi faktiskt räkna
+
+00:01:08.420 --> 00:01:10.220
+ut vad dess `left`, `top`, `width` och `height`
+
+00:01:10.240 --> 00:01:13.100
+ska vara. Så nu sätter vi dem. `Left` är
+
+00:01:13.260 --> 00:01:15.660
+10. `Top` är
+
+00:01:15.940 --> 00:01:18.920
+20. Och `width`, ja, `width` är
+
+00:01:19.020 --> 00:01:22.020
+canvasens storlek, som är 100, minus
+
+00:01:22.080 --> 00:01:23.340
+de 10 till vänster och de 10
+
+00:01:23.360 --> 00:01:26.100
+till höger, alltså 80. Och
+
+00:01:26.180 --> 00:01:29.040
+`height` är canvasens höjd, som
+
+00:01:29.080 --> 00:01:31.580
+också är 100, minus de 20 överst
+
+00:01:31.640 --> 00:01:33.660
+och de 20 nederst, alltså
+
+00:01:33.960 --> 00:01:37.860
+60. Så vi kan sätta de här variablerna. `Left`,
+
+00:01:37.920 --> 00:01:42.840
+10, `top`, 20, `width`, 80, `height`, 60.
+
+00:01:42.860 --> 00:01:44.880
+Förhoppningsvis känns det här ganska bekant.
+
+00:01:44.920 --> 00:01:46.700
+Det är vad du redan har gjort i
+
+00:01:46.740 --> 00:01:50.940
+övningarna. Men vad händer nu om vi vill
+
+00:01:50.960 --> 00:01:54.140
+flytta in rektangeln en bit och göra
+
+00:01:54.160 --> 00:01:55.400
+den lite mindre? Om vi vill
+
+00:01:55.460 --> 00:01:57.040
+flytta den 20 från vänster och
+
+00:01:57.100 --> 00:01:59.040
+höger och 30 från toppen och
+
+00:01:59.060 --> 00:02:02.620
+botten? Då måste vi räkna ut allting
+
+00:02:02.720 --> 00:02:06.320
+igen. `width` är nu 100 minus
+
+00:02:06.560 --> 00:02:10.280
+20 minus 20, och `height` är 100
+
+00:02:10.360 --> 00:02:14.320
+minus 30 minus 30, och det här är definitivt
+
+00:02:14.420 --> 00:02:17.280
+mer jobb och mer matematik än jag vill
+
+00:02:17.320 --> 00:02:20.400
+göra. Så i stället kan vi säga åt
+
+00:02:20.420 --> 00:02:24.000
+datorn att göra det åt oss. Vi kan
+
+00:02:24.060 --> 00:02:27.680
+sätta `width` till 100 minus
+
+00:02:27.840 --> 00:02:31.620
+`left` minus `left`, och `height` till
+
+00:02:31.700 --> 00:02:34.720
+100 minus `top` minus `top`,
+
+00:02:34.960 --> 00:02:37.580
+eftersom det är samma sak upptill och nedtill. Eller
+
+00:02:37.600 --> 00:02:40.980
+så kan vi skriva det som 100 minus
+
+00:02:41.240 --> 00:02:44.820
+`left` gånger två, eller 100 minus
+
+00:02:44.940 --> 00:02:48.620
+`top` gånger två. Och om vi nu ändrar
+
+00:02:48.660 --> 00:02:52.040
+`left` eller `top` kommer `width` och
+
+00:02:52.080 --> 00:02:54.860
+`height` också att ändras. Sakerna börjar alltså
+
+00:02:54.900 --> 00:02:57.430
+hänga ihop med varandra. Och
+
+00:02:57.440 --> 00:03:00.960
+canvasen då? Den är 100 nu. Men
+
+00:03:01.020 --> 00:03:03.700
+tänk om vår canvas ändras till att vara 200 bred
+
+00:03:03.740 --> 00:03:06.540
+och hög i stället? Då borde vi nog skapa
+
+00:03:06.620 --> 00:03:09.560
+en variabel som heter `canvasSize` (canvasens storlek) och sätta den till
+
+00:03:09.580 --> 00:03:13.230
+100. Och nu är vår
+
+00:03:13.260 --> 00:03:17.740
+`width` `canvasSize` minus `left` gånger två,
+
+00:03:18.200 --> 00:03:22.160
+och vår `height` är `canvasSize` minus `top` gånger
+
+00:03:22.200 --> 00:03:26.120
+två. Nu ska vi fundera på vad Jiki gör
+
+00:03:26.480 --> 00:03:30.580
+när vi skriver let `height` lika med `canvasSize` minus
+
+00:03:30.700 --> 00:03:33.310
+`top` gånger två. Jo, han börjar med att ta ner
+
+00:03:33.310 --> 00:03:35.220
+lådan `top` från hyllan, och i den
+
+00:03:35.260 --> 00:03:37.660
+hittar han 20. Så han tar fram
+
+00:03:37.680 --> 00:03:40.160
+sin miniräknare, räknar ut 20 gånger två
+
+00:03:40.580 --> 00:03:42.740
+och lägger 40 på minnet.
+
+00:03:43.720 --> 00:03:45.860
+Sedan tar han ner lådan `canvasSize`
+
+00:03:45.900 --> 00:03:49.540
+från hyllan, hittar 100 i den och
+
+00:03:49.600 --> 00:03:52.780
+räknar ut att 100 minus 40 är 60.
+
+00:03:53.840 --> 00:03:56.350
+Och nu vet han att det vi egentligen säger
+
+00:03:56.400 --> 00:04:00.000
+är let `height` lika med 60. Så han gör
+
+00:04:00.040 --> 00:04:02.320
+som let säger: han hämtar en ny låda, skriver
+
+00:04:02.360 --> 00:04:04.440
+`height` på den och lägger sedan 60
+
+00:04:04.580 --> 00:04:06.900
+i den. Och när han använder `height`
+
+00:04:07.040 --> 00:04:09.600
+senare tar han bara fram 60
+
+00:04:09.640 --> 00:04:13.720
+igen. Testa att omsätta allt det här i praktiken under
+
+00:04:13.820 --> 00:04:16.180
+de kommande övningarna, så blir det
+
+00:04:16.240 --> 00:04:18.649
+tydligare och tydligare. Och när du väl har fått
+
+00:04:18.700 --> 00:04:22.070
+allt att fungera i en övning, testa att ändra värdena på
+
+00:04:22.100 --> 00:04:25.200
+variablerna och se vad som händer. Se hur
+
+00:04:25.220 --> 00:04:28.420
+de växer och hur de krymper. Ta
+
+00:04:28.480 --> 00:04:31.480
+god tid på dig och fundera över hur sakerna hänger ihop, och
+
+00:04:31.500 --> 00:04:32.670
+vi ses här igen strax

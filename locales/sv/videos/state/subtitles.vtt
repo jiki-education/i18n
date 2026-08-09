@@ -1,0 +1,168 @@
+WEBVTT
+
+NOTE en_md5 cc1cedf75df71450fa8e0da4a289c70e
+
+00:00:00.100 --> 00:00:03.520
+Välkommen tillbaka! Hittills har vi använt variabler
+
+00:00:03.740 --> 00:00:06.760
+för saker som har en egen betydelse: någons ålder,
+
+00:00:06.860 --> 00:00:10.680
+tiden, en färg. Vi har uppdaterat variabler, men
+
+00:00:10.700 --> 00:00:14.900
+de har varit ganska statiska. En av
+
+00:00:14.940 --> 00:00:18.320
+de vanligaste användningarna av variabler i programmering
+
+00:00:18.400 --> 00:00:22.020
+är att hålla koll på hur långt vi har kommit i ett jobb.
+
+00:00:22.080 --> 00:00:24.280
+Tänk dig att du bygger en mur, något du strax
+
+00:00:24.340 --> 00:00:26.880
+ska få göra. I verkliga livet skulle du
+
+00:00:26.940 --> 00:00:29.560
+veta vilken rad tegelstenar du håller på med,
+
+00:00:29.600 --> 00:00:31.540
+den nedersta, den översta eller någon
+
+00:00:31.580 --> 00:00:34.380
+i mitten, och du skulle veta
+
+00:00:34.420 --> 00:00:36.480
+vilken tegelsten du ska lägga härnäst:
+
+00:00:36.520 --> 00:00:40.240
+den tredje, den fjärde och så vidare. Samma sak behöver vi
+
+00:00:40.250 --> 00:00:43.240
+i den digitala världen. Eller
+
+00:00:43.360 --> 00:00:47.070
+tänk dig att du ska bygga en automatisk Space
+
+00:00:47.140 --> 00:00:50.220
+Invaders-bot. Den behöver veta var den
+
+00:00:50.320 --> 00:00:52.220
+befinner sig, från vänster till höger på
+
+00:00:52.260 --> 00:00:55.730
+skärmen. I programmering kallar vi det här tillstånd,
+
+00:00:56.240 --> 00:00:59.840
+en förkortning av frågan ”vilket tillstånd är det här i?”. Tillstånd
+
+00:00:59.880 --> 00:01:02.510
+är användbart för att veta vad som
+
+00:01:02.600 --> 00:01:05.099
+pågår, men riktigt användbart blir det först
+
+00:01:05.140 --> 00:01:08.250
+när vi kombinerar det med `if`-satser. Om vi
+
+00:01:08.280 --> 00:01:10.660
+bygger muren behöver vi efter varje
+
+00:01:10.680 --> 00:01:13.780
+tegelsten kontrollera om vi just har lagt
+
+00:01:13.820 --> 00:01:16.160
+den sista stenen på raden, och
+
+00:01:16.240 --> 00:01:17.520
+i så fall gå vidare till
+
+00:01:17.560 --> 00:01:19.200
+nästa rad och börja om med den
+
+00:01:19.240 --> 00:01:22.310
+första stenen. Om vi bygger vår Space Invaders-
+
+00:01:22.440 --> 00:01:23.780
+bot behöver vi kontrollera om vi är vid
+
+00:01:23.820 --> 00:01:26.020
+kanten av skärmen innan vi rör oss,
+
+00:01:26.140 --> 00:01:29.700
+och byta riktning om vi är det. Och
+
+00:01:29.780 --> 00:01:32.360
+riktningen är också tillstånd: något som håller koll på om
+
+00:01:32.380 --> 00:01:35.800
+vi är på väg åt vänster eller höger. När du går
+
+00:01:35.900 --> 00:01:37.600
+vidare kommer tillstånd att vara en av
+
+00:01:37.660 --> 00:01:41.220
+de allra viktigaste delarna av programmering: idén att
+
+00:01:41.360 --> 00:01:44.100
+veta var något befinner sig, vilket tillstånd det är i,
+
+00:01:44.500 --> 00:01:47.140
+eller hur långt vi har kommit i vår lista med uppgifter.
+
+00:01:47.300 --> 00:01:49.960
+I de två kommande övningarna ska du
+
+00:01:49.980 --> 00:01:52.140
+använda tillstånd för att bygga en mur och
+
+00:01:52.180 --> 00:01:54.500
+spela Space Invaders, med hjälp av idéerna vi
+
+00:01:54.560 --> 00:01:58.890
+just har pratat om. Det är verkligen viktigt att bryta ner de här
+
+00:01:58.940 --> 00:02:03.780
+övningarna i små steg. Tänk igenom exakt
+
+00:02:03.840 --> 00:02:05.660
+vad du behöver veta för att
+
+00:02:05.680 --> 00:02:07.740
+lösa dem, till exempel vilken rad tegelstenar
+
+00:02:07.780 --> 00:02:09.360
+du är på eller var den aktuella
+
+00:02:09.420 --> 00:02:12.680
+tegelstenen ska ligga. Tänk igenom vilka regler
+
+00:02:12.740 --> 00:02:15.000
+datorn behöver följa för att lägga hela
+
+00:02:15.060 --> 00:02:18.780
+muren. Det här är riktig programmering nu.
+
+00:02:19.000 --> 00:02:20.760
+Det är precis sådant här vi
+
+00:02:20.800 --> 00:02:24.120
+programmerare gör dag ut och dag in. Det
+
+00:02:24.160 --> 00:02:26.700
+blir mer komplext, men det blir också
+
+00:02:26.720 --> 00:02:29.860
+roligare. De här mönstren tar lite tid
+
+00:02:29.940 --> 00:02:32.160
+att vänja sig vid i början, så ta
+
+00:02:32.180 --> 00:02:34.600
+det lugnt och ha kul, vi ses
+
+00:02:34.640 --> 00:02:35.320
+här snart igen.

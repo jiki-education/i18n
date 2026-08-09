@@ -1,0 +1,396 @@
+WEBVTT
+
+NOTE en_md5 9ba87f0c52699c431570792318049b06
+
+00:00:00.220 --> 00:00:04.109
+Zdravo ponovo. Nadam se da sada prilično sigurno koristiš
+
+00:00:04.280 --> 00:00:07.870
+funkcije i repeat petlje. Zato ćemo u ovoj
+
+00:00:07.900 --> 00:00:10.080
+lekciji preći na još jednu izuzetno važnu
+
+00:00:10.100 --> 00:00:12.610
+temu, koju ćeš verovatno koristiti u
+
+00:00:12.640 --> 00:00:14.880
+skoro svakom programu koji ikada napišeš, a to
+
+00:00:14.940 --> 00:00:19.220
+su promenljive. Promenljive nam omogućavaju da
+
+00:00:19.460 --> 00:00:22.700
+čuvamo informacije. Dok programiramo, često treba
+
+00:00:22.760 --> 00:00:25.420
+da sačuvamo neki broj ili neki string
+
+00:00:25.500 --> 00:00:27.780
+da bismo ih kasnije koristili, a tome
+
+00:00:27.800 --> 00:00:30.480
+služe promenljive. Hajde da pogledamo Jikijevo
+
+00:00:30.580 --> 00:00:32.880
+skladište iz malo šire perspektive, pa ćeš videti
+
+00:00:32.940 --> 00:00:35.780
+da ima još jedan niz polica. Prvi niz
+
+00:00:35.800 --> 00:00:37.160
+polica već nam je poznat, na njemu
+
+00:00:37.180 --> 00:00:39.680
+se nalaze funkcije, one male mašine kao move
+
+00:00:39.700 --> 00:00:42.140
+i rectangle. Ali na ovom drugom nizu
+
+00:00:42.160 --> 00:00:44.710
+polica, umesto mašina, vidiš mnoštvo
+
+00:00:44.760 --> 00:00:47.860
+kutija, i te kutije nazivamo
+
+00:00:47.900 --> 00:00:50.080
+promenljivama. Možeš da kažeš Jikiju da u ove
+
+00:00:50.140 --> 00:00:52.460
+kutije smesti bilo šta, a kasnije
+
+00:00:52.580 --> 00:00:54.940
+da mu kažeš da izvadi ono što je unutra. Svaka
+
+00:00:54.980 --> 00:00:57.480
+kutija ima ime, baš kao što ga
+
+00:00:57.520 --> 00:01:00.020
+imaju i funkcije, i svaka kutija sadrži
+
+00:01:00.140 --> 00:01:03.000
+samo jednu stvar. Za sada, to može biti broj
+
+00:01:03.380 --> 00:01:05.320
+ili string. Ali kasnije u kursu ćemo
+
+00:01:05.340 --> 00:01:07.480
+pogledati kako se u njima čuvaju
+
+00:01:07.540 --> 00:01:10.800
+i složenije stvari. Pa kako da kažemo Jikiju
+
+00:01:10.860 --> 00:01:12.500
+da napravi kutiju i nešto stavi u nju?
+
+00:01:13.240 --> 00:01:16.920
+Koristimo ključnu reč let. Ključna reč let
+
+00:01:17.000 --> 00:01:19.200
+govori Jikiju da treba da napravi
+
+00:01:19.300 --> 00:01:21.860
+novu kutiju. Možeš da ga zamisliš kako uzima
+
+00:01:21.900 --> 00:01:23.760
+novu kartonsku kutiju i sklapa je,
+
+00:01:23.800 --> 00:01:26.320
+a onda pogleda šta stoji
+
+00:01:26.440 --> 00:01:28.840
+posle reči let, jer je to etiketa
+
+00:01:28.880 --> 00:01:30.620
+koju lepi na kutiju, u ovom
+
+00:01:30.720 --> 00:01:32.940
+slučaju name. Zatim uzima olovku
+
+00:01:33.220 --> 00:01:36.260
+i na etiketi piše name. Onda
+
+00:01:36.320 --> 00:01:38.360
+pogleda šta stoji posle znaka
+
+00:01:38.440 --> 00:01:41.020
+jednakosti. U ovom slučaju, to je moje ime, „Jeremy“,
+
+00:01:41.740 --> 00:01:43.960
+i pošto je „Jeremy“ string,
+
+00:01:44.340 --> 00:01:45.640
+uzima parče papira i
+
+00:01:45.660 --> 00:01:48.830
+na njemu piše „Jeremy“. To je samo string,
+
+00:01:48.900 --> 00:01:50.460
+baš kao stringovi za boje koje
+
+00:01:50.520 --> 00:01:52.660
+već koristiš, a zatim to parče
+
+00:01:52.700 --> 00:01:56.410
+papira stavlja u kutiju. Dakle, rekli smo
+
+00:01:56.460 --> 00:01:58.260
+mu da napravi kutiju, zalepi
+
+00:01:58.300 --> 00:02:00.120
+etiketu na nju i stavi nešto unutra,
+
+00:02:00.640 --> 00:02:02.300
+i on sada nosi kutiju i
+
+00:02:02.380 --> 00:02:05.140
+stavlja je na policu. Kasnije, u bilo kom
+
+00:02:05.220 --> 00:02:07.980
+trenutku tokom izvršavanja programa, Jiki može
+
+00:02:08.020 --> 00:02:09.840
+da ode po tu kutiju, skine je sa police
+
+00:02:09.979 --> 00:02:11.900
+i pogleda šta je u njoj, a o tome
+
+00:02:11.940 --> 00:02:14.580
+ćemo za koji trenutak. Ali za sada, zaista
+
+00:02:14.660 --> 00:02:16.540
+želim da počneš da gradiš ovaj mentalni
+
+00:02:16.580 --> 00:02:19.120
+model. Programiram već veoma dugo, i još uvek
+
+00:02:19.180 --> 00:02:21.790
+dok pišem kod zamišljam da nešto
+
+00:02:21.820 --> 00:02:23.680
+stavljam u kutiju iz koje ću to
+
+00:02:23.720 --> 00:02:26.340
+kasnije izvaditi. Kada vidiš tu
+
+00:02:26.400 --> 00:02:28.570
+ključnu reč let, stvarno želim da pomisliš:
+
+00:02:28.690 --> 00:02:31.460
+„U redu, to znači da pravim novu kutiju.“
+
+00:02:33.520 --> 00:02:34.530
+Hajde da kažem još nekoliko reči
+
+00:02:34.580 --> 00:02:37.210
+o imenima promenljivih, odnosno etiketama na
+
+00:02:37.260 --> 00:02:40.140
+ovim kutijama. Postoji nekoliko pravila
+
+00:02:40.180 --> 00:02:44.740
+za njihovo imenovanje. Prvo, imena promenljivih ne smeju
+
+00:02:44.780 --> 00:02:47.580
+da sadrže razmake. Ako želiš da upotrebiš više reči
+
+00:02:47.700 --> 00:02:49.859
+za etiketu kutije, pišemo ih
+
+00:02:49.920 --> 00:02:51.900
+spojeno, bez razmaka, a prvo slovo
+
+00:02:51.980 --> 00:02:55.180
+svake sledeće reči pišemo
+
+00:02:55.220 --> 00:02:57.520
+velikim slovom. Ovaj način pisanja zovemo camel
+
+00:02:57.680 --> 00:03:00.660
+case. Zamisli kamilje grbe koje podižu
+
+00:03:00.740 --> 00:03:02.540
+prvo slovo svake nove reči
+
+00:03:02.580 --> 00:03:05.260
+da postane veliko. Dakle, ako želiš
+
+00:03:05.340 --> 00:03:08.290
+etiketu koja znači „moje ime“, odnosno „my name“,
+
+00:03:08.320 --> 00:03:10.920
+umesto dve reči razdvojene razmakom, pišemo
+
+00:03:10.960 --> 00:03:13.400
+ih spojeno, pri čemu je slovo N veliko.
+
+00:03:15.200 --> 00:03:17.960
+Takođe, ime svake promenljive mora da bude jedinstveno.
+
+00:03:18.020 --> 00:03:20.180
+Ne možeš da imaš dve kutije sa istom etiketom,
+
+00:03:20.860 --> 00:03:23.180
+a promenljiva ne sme da ima isto ime
+
+00:03:23.240 --> 00:03:26.140
+kao funkcija. Ako to zaboraviš, Jiki će se
+
+00:03:26.180 --> 00:03:28.040
+zbuniti i prikazaće ti poruku o grešci.
+
+00:03:29.660 --> 00:03:31.210
+Hajde sada da pogledamo gde bi
+
+00:03:31.280 --> 00:03:34.160
+promenljiva mogla da nam zatreba. Recimo da
+
+00:03:34.200 --> 00:03:36.920
+crtamo sunce na nebu. Znamo
+
+00:03:36.980 --> 00:03:39.490
+da možemo da upotrebimo funkciju circle i
+
+00:03:39.580 --> 00:03:43.480
+da joj prosledimo četiri ulazne vrednosti: left, top, radius
+
+00:03:43.680 --> 00:03:47.000
+i color. Ali kako crtamo sve više
+
+00:03:47.040 --> 00:03:49.160
+stvari, svi ti brojevi rasuti su
+
+00:03:49.180 --> 00:03:51.740
+po kodu, pa postaje veoma teško
+
+00:03:51.780 --> 00:03:55.020
+pratiti ih i razumeti. Zato umesto toga
+
+00:03:55.280 --> 00:03:57.500
+možemo da napravimo promenljive za svaku od
+
+00:03:57.600 --> 00:04:00.760
+tih vrednosti, za left, top, radius i color, i da
+
+00:04:00.860 --> 00:04:04.560
+ih kasnije koristimo. Naš krajnji cilj
+
+00:04:04.620 --> 00:04:06.380
+je, dakle, da možemo da upotrebimo
+
+00:04:06.420 --> 00:04:11.200
+funkciju circle i da koristimo jasna, čitljiva imena
+
+00:04:11.220 --> 00:04:14.590
+kutija, a kada Jiki vidi ta imena, znaće
+
+00:04:14.620 --> 00:04:16.480
+da treba da uzme odgovarajuće kutije sa polica
+
+00:04:16.560 --> 00:04:20.459
+i upotrebi vrednosti u njima. Hajde da
+
+00:04:20.519 --> 00:04:22.550
+napravimo promenljive za ove vrednosti. Počinjemo od
+
+00:04:22.550 --> 00:04:25.050
+leve pozicije sunca.
+
+00:04:25.580 --> 00:04:27.350
+Ključnom rečju let kažemo
+
+00:04:27.350 --> 00:04:29.700
+Jikiju da napravi novu kutiju pod imenom
+
+00:04:29.740 --> 00:04:32.310
+leftPosition. Obrati pažnju na camel case zapis
+
+00:04:32.500 --> 00:04:35.180
+sa velikim slovom P. I kažemo
+
+00:04:35.260 --> 00:04:38.560
+Jikiju koji broj ide u kutiju. On je
+
+00:04:38.580 --> 00:04:40.340
+stavlja na policu, a zatim isto radi
+
+00:04:40.420 --> 00:04:43.020
+i za topPosition, radius
+
+00:04:43.180 --> 00:04:46.540
+i color. U bilo kom delu
+
+00:04:46.620 --> 00:04:48.870
+koda možemo da koristimo ove promenljive,
+
+00:04:49.000 --> 00:04:51.400
+a Jiki će izvaditi vrednosti iz kutija i
+
+00:04:51.440 --> 00:04:53.530
+proslediti ih mašini. Druga sjajna
+
+00:04:53.640 --> 00:04:56.120
+stvar kod promenljivih je to što, kad god
+
+00:04:56.160 --> 00:04:58.960
+želimo da nacrtamo nešto na istoj poziciji
+
+00:04:59.000 --> 00:05:01.620
+kao sunce, možemo ponovo da iskoristimo te iste
+
+00:05:01.680 --> 00:05:04.980
+promenljive leftPosition i topPosition. Pogledajmo
+
+00:05:05.000 --> 00:05:07.660
+drugi primer. Zamisli da zidaš zid
+
+00:05:07.700 --> 00:05:10.200
+od 30 cigala i želiš da sve
+
+00:05:10.220 --> 00:05:11.840
+cigle budu iste širine i
+
+00:05:11.880 --> 00:05:14.270
+iste visine. Mnogo je bolje
+
+00:05:14.360 --> 00:05:17.100
+da napraviš promenljive za širinu i visinu
+
+00:05:17.280 --> 00:05:19.580
+na početku koda, a zatim da
+
+00:05:19.660 --> 00:05:21.590
+ih koristiš u ostatku
+
+00:05:21.640 --> 00:05:23.900
+koda. Jer ako kasnije poželiš
+
+00:05:23.980 --> 00:05:25.960
+da promeniš širinu ili visinu, dovoljno je
+
+00:05:26.020 --> 00:05:28.260
+da to uradiš na jednom mestu, a sve
+
+00:05:28.380 --> 00:05:33.100
+ostalo će se ažurirati. U narednih nekoliko vežbi
+
+00:05:33.260 --> 00:05:35.980
+koristićeš promenljive da pišeš
+
+00:05:36.060 --> 00:05:38.840
+uredniji i čitljiviji kod. A kada se
+
+00:05:38.880 --> 00:05:41.910
+navikneš na kreiranje i korišćenje promenljivih,
+
+00:05:41.960 --> 00:05:44.280
+pogledaćemo kako promenljive mogu da upućuju na druge
+
+00:05:44.320 --> 00:05:46.920
+promenljive, i tada stvari postaju zaista moćne.
+
+00:05:47.620 --> 00:05:50.110
+Ali za sada, vežbaj kroz ove vežbe,
+
+00:05:50.520 --> 00:05:51.880
+i vidimo se uskoro.

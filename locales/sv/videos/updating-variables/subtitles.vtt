@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 b5959486af83f5baff4c0faf230ee97f
+
+00:00:00.220 --> 00:00:04.200
+Välkommen tillbaka. Hittills, när vi har skapat variabler,
+
+00:00:04.520 --> 00:00:07.100
+har vi lagt värden i lådor och
+
+00:00:07.140 --> 00:00:10.059
+tagit ut dem senare. Det har varit riktigt
+
+00:00:10.130 --> 00:00:13.080
+användbart: koden har blivit tydligare, och
+
+00:00:13.140 --> 00:00:15.520
+vi har sluppit en del av den huvudräkning
+
+00:00:15.560 --> 00:00:18.720
+vi annars hade fått göra. Men variablernas verkliga
+
+00:00:18.780 --> 00:00:21.940
+styrka ligger i att vi kan ändra
+
+00:00:22.020 --> 00:00:24.760
+vad som finns i en låda, vad som finns i variabeln,
+
+00:00:24.800 --> 00:00:27.710
+medan programmet kör. Så även om vi
+
+00:00:27.740 --> 00:00:30.120
+kör samma kodsnutt flera gånger,
+
+00:00:30.660 --> 00:00:33.900
+kan den göra olika saker beroende på vad som
+
+00:00:33.940 --> 00:00:38.540
+finns i lådorna. Säg att vi vill plantera
+
+00:00:38.580 --> 00:00:41.020
+en blomma i en trädgård. Vi har en
+
+00:00:41.030 --> 00:00:44.340
+praktisk funktion, `plant`, med en enda indata:
+
+00:00:44.380 --> 00:00:46.060
+positionen där vi vill placera
+
+00:00:46.100 --> 00:00:48.380
+blomman. Så om vi vill placera en
+
+00:00:48.400 --> 00:00:50.980
+blomma 10 från kanten skriver vi `plant`
+
+00:00:52.010 --> 00:00:55.880
+`(10)`. Enkelt och tydligt. Men om vi
+
+00:00:55.960 --> 00:00:59.340
+vill plantera åtta blommor då? Vi skulle
+
+00:00:59.360 --> 00:01:02.210
+kunna skriva `plant(10)`, `plant(20)`, `plant(30)`
+
+00:01:02.260 --> 00:01:06.780
+och så vidare, men det blir ganska tjatigt. Och vi har
+
+00:01:06.820 --> 00:01:10.350
+redan lärt oss något som hjälper oss att
+
+00:01:10.380 --> 00:01:13.120
+slippa den här sortens tjatiga kod. Förhoppningsvis surrar det
+
+00:01:13.160 --> 00:01:15.640
+i huvudet på dig: ”Använd en loop! Använd
+
+00:01:15.680 --> 00:01:19.440
+ett `repeat`-block!” Och det stämmer precis. Så nu
+
+00:01:19.480 --> 00:01:22.120
+sätter vi positionen till 10, och
+
+00:01:22.180 --> 00:01:25.200
+lägger sedan ett `repeat`-block där vi anropar
+
+00:01:25.240 --> 00:01:27.350
+`plant`, alltså använder `plant`-funktionen, åtta gånger.
+
+00:01:28.900 --> 00:01:32.160
+Vad tror du kommer att hända? Jo, den
+
+00:01:32.180 --> 00:01:35.180
+kommer att plantera åtta blommor, men den planterar
+
+00:01:35.200 --> 00:01:38.000
+dem på samma ställe varje gång, och
+
+00:01:38.060 --> 00:01:41.140
+det var ju inte riktigt det vi ville. Så nu
+
+00:01:41.280 --> 00:01:42.960
+stannar vi upp en stund och funderar på vad Jiki
+
+00:01:43.000 --> 00:01:45.420
+gör här. Han gör en låda med
+
+00:01:45.460 --> 00:01:47.600
+etiketten position. Han lägger 10 i den.
+
+00:01:48.180 --> 00:01:50.330
+Sedan kör han `plant`-maskinen åtta gånger.
+
+00:01:51.420 --> 00:01:54.380
+Varje gång tar han ut värdet ur
+
+00:01:54.400 --> 00:01:57.730
+position-lådan. Det är alltid 10, och han
+
+00:01:57.760 --> 00:02:01.340
+matar in samma 10 varje gång. Det vi
+
+00:02:01.360 --> 00:02:03.400
+behöver är alltså ett sätt att flytta
+
+00:02:03.460 --> 00:02:06.490
+oss en liten bit varje gång. När vi
+
+00:02:06.540 --> 00:02:08.820
+har planterat en blomma vill vi säga åt Jiki
+
+00:02:08.960 --> 00:02:12.200
+att flytta fram positionen 10, så att han är redo
+
+00:02:12.300 --> 00:02:16.410
+att plantera nästa blomma. Så om vi glömmer
+
+00:02:16.500 --> 00:02:18.800
+koden för en stund, hur ser det ut
+
+00:02:18.900 --> 00:02:22.360
+rent logiskt? Om jag säger till dig:
+
+00:02:22.440 --> 00:02:24.460
+”Plantera den första blomman vid 10,
+
+00:02:24.620 --> 00:02:26.320
+nästa vid 20 och nästa
+
+00:02:26.360 --> 00:02:29.140
+vid 30”, hur vet din hjärna att
+
+00:02:29.180 --> 00:02:31.549
+nästa ska planteras vid 40
+
+00:02:32.320 --> 00:02:33.940
+och den efter det ska
+
+00:02:33.960 --> 00:02:38.280
+planteras vid 50? Det din hjärna gör är
+
+00:02:38.340 --> 00:02:41.680
+att hålla koll på det aktuella talet och lägga till
+
+00:02:41.740 --> 00:02:44.380
+10, och sedan uppdatera det talet
+
+00:02:44.440 --> 00:02:47.510
+i huvudet. Och exakt samma sak
+
+00:02:47.520 --> 00:02:50.950
+kan vi göra i kod. Vi säger:
+
+00:02:51.160 --> 00:02:54.380
+”Uppdatera (_update_ på engelska) position-lådan så att den
+
+00:02:54.440 --> 00:03:00.500
+innehåller det aktuella positionsvärdet plus 10.” När
+
+00:03:00.560 --> 00:03:03.040
+Jiki ser det här tar han ut det aktuella talet
+
+00:03:03.120 --> 00:03:05.460
+ur position-lådan, lägger till 10,
+
+00:03:05.540 --> 00:03:08.570
+gör den matten och lägger ihop dem, och
+
+00:03:08.580 --> 00:03:10.720
+lägger sedan tillbaka resultatet i lådan
+
+00:03:10.800 --> 00:03:14.000
+inför nästa gång. Så om vi lägger in
+
+00:03:14.060 --> 00:03:15.960
+det här i vårt program, så att vi nu säger,
+
+00:03:16.220 --> 00:03:18.680
+”Sätt positionens startvärde till
+
+00:03:18.700 --> 00:03:21.490
+10”, sedan planterar en blomma vid positionen
+
+00:03:22.040 --> 00:03:24.860
+åtta gånger, och varje gång ändrar positionen
+
+00:03:24.920 --> 00:03:28.360
+till 10 mer än förut, då fungerar
+
+00:03:28.420 --> 00:03:30.640
+vår kod, och vi får åtta blommor med jämna mellanrum.
+
+00:03:32.440 --> 00:03:35.400
+Lägg märke till att det inte står något `let` (låt)
+
+00:03:35.410 --> 00:03:38.980
+när vi uppdaterar variabeln. Det är jätteviktigt. När Jiki ser
+
+00:03:39.140 --> 00:03:42.400
+`let`, skapar han en ny låda. Men här
+
+00:03:42.420 --> 00:03:44.560
+vill vi inte skapa en ny låda.
+
+00:03:44.600 --> 00:03:46.480
+Vi vill ändra vad som finns i lådan
+
+00:03:46.540 --> 00:03:50.920
+vi redan har. Notera också att vi
+
+00:03:51.020 --> 00:03:54.320
+bara skapar lådan en gång, utanför
+
+00:03:54.380 --> 00:03:57.500
+loopen. Det är viktigt att komma ihåg. Skapa lådan
+
+00:03:57.620 --> 00:03:59.720
+en gång högst upp, och uppdatera den sedan
+
+00:03:59.760 --> 00:04:03.500
+varje gång loopen kör. Okej. Vi har gått igenom
+
+00:04:03.560 --> 00:04:05.850
+en hel del i den här videon. Vi kan
+
+00:04:05.900 --> 00:04:08.020
+uppdatera vad som finns i lådor, och vi kan
+
+00:04:08.080 --> 00:04:10.880
+använda den kraften för att hålla koll på något som förändras
+
+00:04:10.940 --> 00:04:14.320
+över tid. Du kommer att använda det här mönstret hela tiden,
+
+00:04:14.420 --> 00:04:17.300
+hålla koll på en position, räkna hur många gånger något
+
+00:04:17.340 --> 00:04:21.240
+har hänt, hålla räkning på poäng. När du behöver
+
+00:04:21.260 --> 00:04:24.780
+komma ihåg något som förändras medan programmet kör,
+
+00:04:24.820 --> 00:04:27.520
+då är det så här du gör. Nu kommer det
+
+00:04:27.620 --> 00:04:29.460
+några övningar där du får öva
+
+00:04:29.500 --> 00:04:32.060
+på det här. Om du kör fast kan du gärna
+
+00:04:32.100 --> 00:04:33.760
+gå tillbaka till den här videon.
+
+00:04:33.800 --> 00:04:36.420
+Det är inget fusk. Ämnet kan kännas ganska
+
+00:04:36.460 --> 00:04:38.830
+komplicerat. Det kommer att klarna, men till en
+
+00:04:38.840 --> 00:04:40.510
+början kan det kännas lite mycket. Och
+
+00:04:40.540 --> 00:04:41.930
+förhoppningsvis, när vi ses igen om
+
+00:04:41.930 --> 00:04:44.510
+ett par övningar, har du börjat känna dig
+
+00:04:44.540 --> 00:04:46.090
+lite mer hemma med det här mönstret
+
+00:04:46.120 --> 00:04:48.600
+och ditt självförtroende har börjat växa.
+
+00:04:48.640 --> 00:04:48.800
+Lycka till.

@@ -1,0 +1,246 @@
+WEBVTT
+
+NOTE en_md5 8f7393dfe843d0e2ba5227cef441168a
+
+00:00:00.140 --> 00:00:02.860
+U redu, zdravo ponovo. Pomoću if naredbi
+
+00:00:03.240 --> 00:00:05.920
+možeš da proveriš uslove i izvršiš kod
+
+00:00:05.960 --> 00:00:08.800
+samo kada je nešto tačno. Hajde da sada
+
+00:00:09.080 --> 00:00:13.500
+upoznamo if-ovog saučesnika, else. Dakle, kod
+
+00:00:13.560 --> 00:00:16.100
+if naredbe, Jiki izvršava blok koda kada
+
+00:00:16.140 --> 00:00:19.310
+je uslov tačan, a preskače taj
+
+00:00:19.340 --> 00:00:22.210
+blok koda kada je netačan. Ali šta ako
+
+00:00:22.240 --> 00:00:24.060
+želiš da Jiki uradi jednu stvar
+
+00:00:24.100 --> 00:00:26.740
+kada je uslov tačan, a nešto drugo
+
+00:00:26.750 --> 00:00:30.300
+kada je netačan? Upravo tome
+
+00:00:30.340 --> 00:00:33.180
+služi else. Možemo da stavimo else klauzulu
+
+00:00:33.200 --> 00:00:36.440
+posle zatvorene vitičaste zagrade if-a, i Jiki
+
+00:00:36.480 --> 00:00:39.230
+će je izvršiti ako je uslov if-a netačan.
+
+00:00:40.060 --> 00:00:42.370
+Ako se vratimo na primer sa izbacivačem u klubu,
+
+00:00:42.930 --> 00:00:44.840
+sada imamo mogućnost da otvorimo
+
+00:00:44.860 --> 00:00:48.670
+vrata ili da nekoga odbijemo, što je
+
+00:00:48.680 --> 00:00:51.440
+verovatno bolje nego da ga potpuno ignorišemo
+
+00:00:51.480 --> 00:00:54.560
+kao do sada. Zamisli to kao
+
+00:00:54.580 --> 00:00:56.780
+račvanje na putu. Jiki stigne do tog račvanja,
+
+00:00:57.000 --> 00:00:58.820
+proveri uslov, i onda može
+
+00:00:58.860 --> 00:01:01.020
+da krene jednim putem ako je tačan, ili
+
+00:01:01.060 --> 00:01:03.000
+drugim ako je netačan.
+
+00:01:03.760 --> 00:01:07.050
+Ali nikada ne ide na obe strane. Ali šta
+
+00:01:07.100 --> 00:01:10.730
+ako imaš više od dve mogućnosti? Zamisli
+
+00:01:10.780 --> 00:01:14.340
+da naš izbacivač prodaje karte. Ispod trinaest
+
+00:01:14.360 --> 00:01:17.460
+godina dobijaš dečju kartu. Između trinaest i dvadeset,
+
+00:01:17.520 --> 00:01:19.820
+dobijaš tinejdžersku kartu. Sa dvadeset ili više,
+
+00:01:19.860 --> 00:01:21.920
+dobijaš kartu za odrasle. Dakle, sada imaš tri
+
+00:01:22.000 --> 00:01:25.700
+različita ishoda. Za ovo možemo da dodamo
+
+00:01:25.760 --> 00:01:28.640
+još jednu if naredbu posle else-a. Znači, možemo
+
+00:01:28.680 --> 00:01:32.420
+da kažemo: „Ako je ovo, uradi ovo. Inače, ako je
+
+00:01:32.560 --> 00:01:36.160
+ono, uradi ono. Inače, uradi ovu treću stvar.“
+
+00:01:37.040 --> 00:01:39.120
+U ovom primeru, Jiki će videti
+
+00:01:39.280 --> 00:01:43.120
+if i proveriti prvi uslov. Da li je šesnaest
+
+00:01:43.460 --> 00:01:47.380
+manje od trinaest? Nije. Zato prelazi
+
+00:01:47.420 --> 00:01:51.000
+na else if. Da li je šesnaest manje
+
+00:01:51.040 --> 00:01:55.800
+od dvadeset? Jeste, to je tačno. Zato izvršava
+
+00:01:55.820 --> 00:01:58.960
+taj blok i daje tinejdžersku kartu. Ali
+
+00:01:59.000 --> 00:02:02.340
+tu je gotov. Ne proverava ništa više.
+
+00:02:03.020 --> 00:02:05.000
+Uopšte ne gleda onaj poslednji
+
+00:02:05.080 --> 00:02:08.600
+else. Čim Jiki nađe uslov koji je tačan,
+
+00:02:09.080 --> 00:02:11.480
+izvrši taj blok i preskoči sve
+
+00:02:11.540 --> 00:02:14.980
+ostalo ispod njega. Ovo je ključna stvar
+
+00:02:15.000 --> 00:02:18.380
+koju treba razumeti. Uvek se izvrši samo jedan blok. Jiki
+
+00:02:18.390 --> 00:02:20.980
+ide redom niz ovaj lanac, nađe prvi tačan
+
+00:02:21.020 --> 00:02:24.400
+uslov, izvrši taj blok i nastavi dalje. E sad,
+
+00:02:24.420 --> 00:02:25.980
+postoji jedna stvar koju zaista
+
+00:02:26.020 --> 00:02:29.020
+treba razumeti, jer tu se ljudi često spotaknu. Postoji
+
+00:02:29.220 --> 00:02:33.800
+suptilna, ali veoma važna razlika između pisanja dve
+
+00:02:33.960 --> 00:02:39.120
+odvojene if naredbe i korišćenja else if-a. Dakle,
+
+00:02:39.180 --> 00:02:41.390
+zamisli da pravimo program koji daje ili
+
+00:02:41.440 --> 00:02:44.989
+osnovnu ili bonus nagradu, u zavisnosti
+
+00:02:45.020 --> 00:02:48.660
+od nečijeg rezultata. Pogledaj ove dve mogućnosti.
+
+00:02:49.660 --> 00:02:53.360
+Jedna koristi else, a druga... else, izvini.
+
+00:02:53.460 --> 00:02:55.800
+Jedna koristi else if, a druga koristi
+
+00:02:55.880 --> 00:03:00.240
+dva else-a. Šta će se desiti drugačije? Zastani
+
+00:03:00.280 --> 00:03:02.140
+na trenutak i razmisli o ovome. Možda
+
+00:03:02.180 --> 00:03:06.570
+pauziraj video. Dakle, u prvom slučaju, sa
+
+00:03:06.600 --> 00:03:10.340
+else if-om, proveravamo da li je rezultat visok
+
+00:03:10.400 --> 00:03:12.860
+i dajemo nagradu, a onda ne
+
+00:03:12.920 --> 00:03:15.720
+izvršavamo else if. Dakle, ako osoba
+
+00:03:15.760 --> 00:03:18.120
+ima rezultat preko sto, dobija
+
+00:03:18.160 --> 00:03:21.850
+samo bonus nagradu. Ali u drugom
+
+00:03:21.880 --> 00:03:25.840
+primeru, dva if-a su potpuno nezavisna. Oba
+
+00:03:25.920 --> 00:03:29.860
+će se izvršiti i oba će biti tačna. Znači,
+
+00:03:29.900 --> 00:03:33.280
+osoba ovde dobija dve nagrade. U prvom
+
+00:03:33.340 --> 00:03:35.700
+primeru, jednu nagradu. U drugom,
+
+00:03:35.840 --> 00:03:38.380
+dve nagrade. Zastani na trenutak i uveri se
+
+00:03:38.440 --> 00:03:42.990
+da ovo zaista razumeš. Zanimljivo je i to
+
+00:03:43.040 --> 00:03:45.850
+da oba mogu biti ispravna, u zavisnosti
+
+00:03:45.880 --> 00:03:48.060
+od toga kako je igra osmišljena. Možda
+
+00:03:48.100 --> 00:03:50.600
+takmičar dobija i običnu i
+
+00:03:50.660 --> 00:03:54.160
+bonus nagradu, a možda samo prelazi na
+
+00:03:54.200 --> 00:03:56.780
+bonus nagradu. Nijedan od ova dva koda
+
+00:03:56.820 --> 00:04:00.060
+nije ni ispravan ni pogrešan. Korisni su u različitim
+
+00:04:00.120 --> 00:04:03.620
+situacijama. Ali ti znaš koji... moraš
+
+00:04:03.640 --> 00:04:05.560
+da znaš koji od njih nameravaš
+
+00:04:05.640 --> 00:04:08.960
+da koristiš. U narednim vežbama ćeš
+
+00:04:09.000 --> 00:04:11.320
+koristiti if, else if i else da
+
+00:04:11.380 --> 00:04:14.340
+rešavaš različite situacije. Srećno! Vidimo se
+
+00:04:14.360 --> 00:04:15.040
+ovde uskoro.
