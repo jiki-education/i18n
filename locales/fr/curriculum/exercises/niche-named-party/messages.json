@@ -6,61 +6,61 @@
     },
     "solveTightly": {
       "name": "Résous-le en 20 lignes",
-      "description": "Bonus : si tu extrais le comptage des lettres dans une fonction utilitaire que `handleGuest` réutilise, la solution complète tient en 20 lignes. Sauras-tu en faire autant ?"
+      "description": "Bonus : si tu extrais le comptage des lettres dans une fonction utilitaire que `handleGuest` réutilise, la solution complète tient en 20 lignes. Sauras-tu en faire autant ?"
     }
   },
   "scenarios": {
     "sarahSParty": {
-      "name": "Soirée S : Sarah arrive",
-      "description": "Ce soir, seuls les noms qui commencent par « S » sont autorisés. Sarah doit pouvoir entrer !"
+      "name": "Soirée S : Sarah arrive",
+      "description": "Ce soir, seuls les noms qui commencent par « S » sont autorisés. Sarah doit pouvoir entrer !"
     },
     "bradSParty": {
-      "name": "Soirée S : Brad arrive",
-      "description": "Ce soir, seuls les noms qui commencent par « S » sont autorisés. Brad doit être refoulé."
+      "name": "Soirée S : Brad arrive",
+      "description": "Ce soir, seuls les noms qui commencent par « S » sont autorisés. Brad doit être refoulé."
     },
     "bradleyBradParty": {
-      "name": "Soirée Brad : Bradley arrive",
-      "description": "Ce soir, seuls les noms qui commencent par « Brad » sont autorisés. Bradley doit pouvoir entrer !"
+      "name": "Soirée Brad : Bradley arrive",
+      "description": "Ce soir, seuls les noms qui commencent par « Brad » sont autorisés. Bradley doit pouvoir entrer !"
     },
     "bradBradleyParty": {
-      "name": "Soirée Bradley : Brad arrive",
-      "description": "Ce soir, seuls les noms qui commencent par « Bradley » sont autorisés. Brad est trop court, il n'est donc pas admis."
+      "name": "Soirée Bradley : Brad arrive",
+      "description": "Ce soir, seuls les noms qui commencent par « Bradley » sont autorisés. Brad est trop court, il n'est donc pas admis."
     },
     "brianBradParty": {
-      "name": "Soirée Brad : Brian arrive",
-      "description": "Ce soir, seuls les noms qui commencent par « Brad » sont autorisés. Brian doit être refoulé."
+      "name": "Soirée Brad : Brian arrive",
+      "description": "Ce soir, seuls les noms qui commencent par « Brad » sont autorisés. Brian doit être refoulé."
     },
     "silence": {
-      "name": "Soirée S : Silence...",
-      "description": "La personne ne dit pas son nom. Un nom vide ne commence par rien du tout. Refoule-la !"
+      "name": "Soirée S : Silence...",
+      "description": "La personne ne dit pas son nom. Un nom vide ne commence par rien du tout. Refoule-la !"
     },
     "cherCherParty": {
-      "name": "Soirée Cher : Cher arrive",
-      "description": "Ce soir, seuls les noms qui commencent par « Cher » sont autorisés. Le nom de Cher est exactement « Cher », alors laisse-la entrer !"
+      "name": "Soirée Cher : Cher arrive",
+      "description": "Ce soir, seuls les noms qui commencent par « Cher » sont autorisés. Le nom de Cher est exactement « Cher », alors laisse-la entrer !"
     },
     "nicheNamedPartyBonusLineCount": {
       "name": "Court et net",
-      "description": "La solution la plus courte tient en 20 lignes. Sauras-tu la trouver ?"
+      "description": "La solution la plus courte tient en 20 lignes. Sauras-tu la trouver ?"
     }
   },
   "checks": {
-    "tooManyLines": "Continue ! Vois si tu peux le résoudre en moins de lignes."
+    "tooManyLines": "Continue ! Vois si tu peux le résoudre en moins de lignes."
   },
   "hints": {
     "checkStartsWith": {
-      "question": "Comment vérifier qu'un nom commence par certaines lettres ?",
+      "question": "Comment vérifier qu'un nom commence par certaines lettres ?",
       "answer": "Compare chaque caractère du préfixe autorisé avec le caractère à la même position dans le nom. Si un seul caractère diffère, le nom ne correspond pas."
     },
     "loopCharacters": {
-      "question": "Comment examiner un caractère à la fois ?",
+      "question": "Comment examiner un caractère à la fois ?",
       "answer": "Utilise l'itération sur les strings pour parcourir une string."
     },
     "findEquivalentLetter": {
-      "question": "Comment trouver la lettre équivalente dans l'autre mot ?",
+      "question": "Comment trouver la lettre équivalente dans l'autre mot ?",
       "answer": "Utilise l'indexation des strings pour trouver une lettre précise."
     },
     "longerAllowedPrefix": {
-      "question": "Et si le préfixe autorisé est plus long que le nom ?",
+      "question": "Et si le préfixe autorisé est plus long que le nom ?",
       "answer": "Cette personne ne peut pas correspondre, tu dois donc renvoyer `false`."
     }
   }
