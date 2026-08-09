@@ -1,72 +1,72 @@
 {
   "tasks": {
     "checkPangram": {
-      "name": "�",
-      "description": "�"
+      "name": "Vérifie le pangramme",
+      "description": "Écris une fonction qui vérifie si une phrase est un pangramme (elle contient chaque lettre de l'alphabet au moins une fois). La vérification ne doit pas tenir compte de la casse."
     }
   },
   "scenarios": {
     "pangramEmptySentence": {
-      "name": "�",
-      "description": "�"
+      "name": "Phrase vide",
+      "description": "Une phrase vide n'est pas un pangramme."
     },
     "pangramPerfectLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "Alphabet parfait en minuscules",
+      "description": "L'alphabet parfait en minuscules est un pangramme."
     },
     "pangramOnlyLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "Uniquement des minuscules",
+      "description": "Une phrase uniquement en minuscules qui couvre toutes les lettres est un pangramme."
     },
     "pangramMissingX": {
-      "name": "�",
-      "description": "�"
+      "name": "Lettre « x » manquante",
+      "description": "Une phrase où il manque la lettre « x » n'est pas un pangramme."
     },
     "pangramMissingH": {
-      "name": "�",
-      "description": "�"
+      "name": "Lettre « h » manquante",
+      "description": "Une phrase où il manque la lettre « h » n'est pas un pangramme."
     },
     "pangramMissingAM": {
-      "name": "�",
-      "description": "�"
+      "name": "Lettres manquantes au-delà de a-m",
+      "description": "Une string qui contient « a » à « m » en minuscules et en majuscules n'est pas un pangramme."
     },
     "pangramWithUnderscores": {
-      "name": "�",
-      "description": "�"
+      "name": "Avec des tirets bas",
+      "description": "Une phrase pangramme avec des tirets bas."
     },
     "pangramWithNumbers": {
-      "name": "�",
-      "description": "�"
+      "name": "Avec des chiffres",
+      "description": "Une phrase pangramme qui contient aussi des chiffres."
     },
     "pangramNumbersReplacingLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "Des chiffres à la place des lettres",
+      "description": "Une phrase où des lettres sont remplacées par des chiffres n'est pas un pangramme."
     },
     "pangramMixedCasePunctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "Casse mixte et ponctuation",
+      "description": "Un pangramme qui mélange majuscules, minuscules et ponctuation."
     },
     "pangramCaseInsensitive": {
-      "name": "�",
-      "description": "�"
+      "name": "Lettres manquantes malgré la casse",
+      "description": "Une phrase où toutes les lettres ne sont pas présentes, même sans tenir compte de la casse, n'est pas un pangramme."
     }
   },
   "hints": {
     "helpers": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quelles fonctions auxiliaires vont me faciliter la tâche ?",
+      "answer": "Une fonction auxiliaire `includes()` (qui demande « est-ce que ce caractère apparaît dans cette string ? ») et une fonction auxiliaire `toLowerCase()` (pour que les différences de casse ne te jouent pas de tours) rendent la logique principale courte et claire."
     },
     "whyLowercase": {
-      "question": "�",
-      "answer": "�"
+      "question": "Pourquoi devrais-je convertir la phrase en minuscules ?",
+      "answer": "« The quick brown fox... » contient à la fois « T » et « t ». Si tu compares uniquement avec des lettres minuscules, les majuscules ne correspondront pas. Convertis la phrase en minuscules une seule fois au début pour que chaque comparaison soit cohérente."
     },
     "checkEveryLetter": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment vérifier que chaque lettre est présente ?",
+      "answer": "Parcours chaque lettre de l'alphabet `\"abcdefghijklmnopqrstuvwxyz\"`. Pour chacune, utilise `includes()` pour vérifier si elle apparaît dans la phrase convertie en minuscules."
     },
     "stopEarly": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quand puis-je m'arrêter plus tôt ?",
+      "answer": "Dès que tu trouves une lettre manquante, renvoie `false`. Inutile de vérifier le reste. Ne renvoie `true` qu'une fois l'alphabet entier confirmé."
     }
   }
 }

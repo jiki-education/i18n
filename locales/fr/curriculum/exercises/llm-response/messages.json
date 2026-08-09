@@ -1,64 +1,64 @@
 {
   "errors": {
-    "blockedUrl": "�"
+    "blockedUrl": "Oh non, tu as essayé de récupérer une URL inattendue, qui a été bloquée."
   },
   "describers": {
-    "fetch": "�"
+    "fetch": "a récupéré des données depuis l'URL fournie"
   },
   "tasks": {
     "formatLlmResponse": {
-      "name": "�",
-      "description": "�"
+      "name": "Formate la réponse",
+      "description": "Crée une fonction askLlm qui prend une question, récupère la réponse du LLM, sélectionne la réponse avec la plus grande certitude et renvoie une string formatée."
     }
   },
   "scenarios": {
     "football": {
-      "name": "�",
-      "description": "�"
+      "name": "La Coupe du monde 1966",
+      "description": "Renvoie la réponse à une question très importante."
     },
     "cooking": {
-      "name": "�",
-      "description": "�"
+      "name": "Cuisine",
+      "description": "Renvoie la meilleure réponse à une question de cuisine !"
     },
     "ltc": {
-      "name": "�",
-      "description": "�"
+      "name": "Les sites pour apprendre à coder",
+      "description": "Renvoie la meilleure réponse à une question qui ne laisse aucun doute !"
     }
   },
   "hints": {
     "apiCall": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment faire l'appel à l'API ?",
+      "answer": "Utilise `fetch(url, params)`, où `params` est un dictionnaire `{ \"question\": question }`, en passant en argument la question que tu as reçue."
     },
     "responseShape": {
-      "question": "�",
-      "answer": "�"
+      "question": "À quoi ressemblent les données de la réponse ?",
+      "answer": "Elles sont imbriquées. Il y a une clé `\"response\"` qui contient un tableau `\"answers\"` (chaque réponse est un dictionnaire avec `\"text\"` et `\"certainty\"`), et une clé `\"meta\"` qui contient une string `\"time\"` comme `\"500ms\"`."
     },
     "pickBest": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment choisir la meilleure réponse ?",
+      "answer": "Parcours les réponses en gardant trace de celle dont la `certainty` est la plus élevée. Attention : les valeurs de certitude sont des strings, il faut donc convertir chacune en nombre avant de les comparer."
     },
     "convertMs": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment convertir '500ms' en secondes ?",
+      "answer": "Retire la partie 'ms' pour ne garder que les chiffres, convertis-les en nombre, puis divise le résultat par 1000."
     },
     "putTogether": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment tout assembler à la fin ?",
+      "answer": "Utilise la concaténation (`+`) ou une template string pour construire la string finale formatée à partir du texte de la réponse choisie et du temps converti."
     }
   },
   "functions": {
     "fetch": {
-      "description": "�",
-      "category": "�"
+      "description": "Récupère des données depuis une API. Prend une string d'URL et un dictionnaire de paramètres. Renvoie la réponse de l'API sous forme de dictionnaire.",
+      "category": "API"
     },
     "stringToNumber": {
-      "description": "�",
-      "category": "�"
+      "description": "Convertit une string en nombre (fournie par la stdlib du niveau)",
+      "category": "Conversion de type"
     },
     "numberToString": {
-      "description": "�",
-      "category": "�"
+      "description": "Convertit un nombre en string (fournie par la stdlib du niveau)",
+      "category": "Conversion de type"
     }
   }
 }

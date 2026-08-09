@@ -1,6 +1,7 @@
 ---
 title: "Procédures de combat"
 description: "Extrais ta logique de tir dans une fonction réutilisable."
+en_md5: 3f2bb9c8622396d8ee591087d949c3de
 ---
 
 Dans le niveau précédent, tu as trouvé comment faire des allers-retours avec un canon laser pour abattre des aliens. Nous avons repris ta solution pour que tu puisses continuer à partir de là.

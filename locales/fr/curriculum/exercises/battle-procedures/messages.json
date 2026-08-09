@@ -18,37 +18,37 @@
   },
   "hints": {
     "wherePutFunction": {
-      "question": "Où dois-je placer la fonction `shootIfAlienAbove` ",
+      "question": "Où dois-je placer la fonction `shootIfAlienAbove` ?",
       "answer": "Définis-la en haut du code, avant la boucle. Une fois qu'elle est définie, tu peux l'appeler depuis la boucle autant de fois que tu veux."
     },
     "whatGoesInside": {
-      "question": "Que met-on à l'intérieur de `shootIfAlienAbove` ",
+      "question": "Que met-on à l'intérieur de `shootIfAlienAbove` ?",
       "answer": "Utilise une instruction `if` qui vérifie `isAlienAbove()`. Quand elle renvoie `true`, appelle `shoot()`. C'est tout le corps de la fonction."
     },
     "whatStaysInLoop": {
-      "question": "Que reste-t-il dans la boucle ",
-      "answer": "Toute la logique de déplacement reste dans la boucle, comme dans l'exercice précédent. À chaque itération  appelle `shootIfAlienAbove()`, puis déplace le canon, puis change de direction aux bords."
+      "question": "Que reste-t-il dans la boucle ?",
+      "answer": "Toute la logique de déplacement reste dans la boucle, comme dans l'exercice précédent. À chaque itération : appelle `shootIfAlienAbove()`, puis déplace le canon, puis change de direction aux bords."
     },
     "trackCannon": {
-      "question": "Comment savoir où se trouve le canon et dans quelle direction il va ",
+      "question": "Comment savoir où se trouve le canon et dans quelle direction il va ?",
       "answer": "Utilise deux variables que tu mets à jour à chaque itération. Par exemple, une variable `position` qui augmente ou diminue, et une variable `direction` qui vaut `\"right\"` ou `\"left\"` et qui bascule quand tu atteins un bord."
     }
   },
   "functions": {
     "moveLeft": {
-      "description": "Déplace le canon laser **d'une position vers la gauche**. Si tu essaies de dépasser le bord gauche de l'écran, tu perds la partie ",
+      "description": "Déplace le canon laser **d'une position vers la gauche**. Si tu essaies de dépasser le bord gauche de l'écran, tu perds la partie !",
       "category": "Déplacement"
     },
     "moveRight": {
-      "description": "Déplace le canon laser **d'une position vers la droite**. Si tu essaies de dépasser le bord droit de l'écran, tu perds la partie ",
+      "description": "Déplace le canon laser **d'une position vers la droite**. Si tu essaies de dépasser le bord droit de l'écran, tu perds la partie !",
       "category": "Déplacement"
     },
     "shoot": {
-      "description": "Tire au laser vers le haut. **Ne tire que lorsqu'il y a un alien au-dessus de toi**, sinon tu perds la partie  Le canon laser surchauffe facilement, alors tu dois te déplacer avant de tirer à nouveau.",
+      "description": "Tire au laser vers le haut. **Ne tire que lorsqu'il y a un alien au-dessus de toi**, sinon tu perds la partie ! Le canon laser surchauffe facilement, alors tu dois te déplacer avant de tirer à nouveau.",
       "category": "Action"
     },
     "isAlienAbove": {
-      "description": "Renvoie `true` s'il y a un alien juste au-dessus du canon laser, ou `false` sinon. Utilise-la pour vérifier avant de tirer ",
+      "description": "Renvoie `true` s'il y a un alien juste au-dessus du canon laser, ou `false` sinon. Utilise-la pour vérifier avant de tirer !",
       "category": "Détection"
     }
   }

@@ -1,70 +1,70 @@
 {
   "checks": {
-    "notShotAlien": "�",
-    "notShotAllAliens": "�"
+    "notShotAlien": "Tu n'as pas abattu l'alien.",
+    "notShotAllAliens": "Tu n'as pas abattu tous les aliens."
   },
   "tasks": {
     "shootTheAliens": {
-      "name": "�",
-      "description": "�"
+      "name": "Garde la trace des aliens et abats-les tous",
+      "description": "Utilise getStartingAliensInRow() pour récupérer les positions des aliens, puis déplace-toi sur l'écran en les abattant. Garde la trace des aliens déjà abattus en mettant à jour les tableaux."
     }
   },
   "scenarios": {
     "oneAlien": {
-      "name": "�",
-      "description": "�"
+      "name": "Abats l'alien",
+      "description": "Un seul alien dans la rangée du bas"
     },
     "oneRow": {
-      "name": "�",
-      "description": "�"
+      "name": "Une rangée clairsemée",
+      "description": "Des aliens clairsemés dans la rangée du bas"
     },
     "twoRows": {
-      "name": "�",
-      "description": "�"
+      "name": "Deux rangées chargées",
+      "description": "Des aliens répartis sur deux rangées"
     },
     "threeRows": {
-      "name": "�",
-      "description": "�"
+      "name": "Trois rangées",
+      "description": "Des aliens répartis sur les trois rangées"
     },
     "fullRows": {
-      "name": "�",
-      "description": "�"
+      "name": "Trois rangées pleines",
+      "description": "Trois rangées entières d'aliens"
     }
   },
   "hints": {
     "knowWhereAliens": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment savoir où sont les aliens si `isAlienAbove()` n'existe plus ?",
+      "answer": "Appelle `getStartingAliensInRow(0)`, `getStartingAliensInRow(1)` et `getStartingAliensInRow(2)` une seule fois au début. Chacune renvoie un tableau de 11 booléens que tu peux stocker dans des variables et consulter plus tard."
     },
     "whichAlienAbove": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment déterminer quel alien se trouve au-dessus de moi à un moment donné ?",
+      "answer": "Garde la trace de ta position horizontale dans une variable, en la mettant à jour à chaque déplacement. Cette position sert d'indice dans les tableaux des rangées : `row1[position]` t'indique donc s'il y a un alien au-dessus de toi dans la rangée 1."
     },
     "stopDoubleShoot": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment éviter de tirer deux fois sur le même alien ?",
+      "answer": "Après avoir appelé `shoot()`, mets cet indice de la rangée à `false`. Au tour de boucle suivant, la même position indiquera qu'il n'y a plus d'alien à cet endroit."
     },
     "whichRowToShoot": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quelle rangée viser quand des aliens sont empilés au-dessus de moi ?",
+      "answer": "Vérifie les rangées de bas en haut. Tire sur l'alien encore présent le plus bas dans ta colonne, puis arrête de vérifier les rangées suivantes pour cette itération."
     }
   },
   "functions": {
     "moveLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Déplace le canon laser d'**une position vers la gauche**. Si tu essaies de sortir du bord gauche de l'écran, tu perds la partie !",
+      "category": "Déplacement"
     },
     "moveRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Déplace le canon laser d'**une position vers la droite**. Si tu essaies de sortir du bord droit de l'écran, tu perds la partie !",
+      "category": "Déplacement"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Tire au laser vers le haut. **Ne tire que lorsqu'il y a un alien au-dessus de toi**, sinon tu perds la partie ! Le canon laser surchauffe facilement, donc tu dois te déplacer avant de tirer à nouveau.",
+      "category": "Action"
     },
     "getStartingAliensInRow": {
-      "description": "�",
-      "category": "�"
+      "description": "Renvoie un tableau de 11 booléens représentant les positions des aliens dans la rangée donnée au **début** de l'exercice. La rangée `0` est celle du bas, la `1` celle du milieu et la `2` celle du haut.",
+      "category": "Détection"
     }
   }
 }

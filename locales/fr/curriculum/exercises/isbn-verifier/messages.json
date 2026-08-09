@@ -1,142 +1,142 @@
 {
   "tasks": {
     "validateBasicIsbn": {
-      "name": "�",
-      "description": "�"
+      "name": "Valide un ISBN simple",
+      "description": "Écris une fonction appelée isValidIsbn qui prend une string ISBN-10 et renvoie true si elle est valide, false sinon. Les ISBN-10 contiennent des tirets, qu'il faut sauter. Multiplie chaque chiffre par un poids qui décroît de 10 à 1, additionne le tout, et vérifie si le total est divisible par 11."
     },
     "handleXCheckDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "Gère le X comme chiffre de contrôle",
+      "description": "Un ISBN se termine parfois par un X, qui représente 10. Mets à jour ta fonction pour gérer un X en dernière position."
     },
     "handleEdgeCases": {
-      "name": "�",
-      "description": "�"
+      "name": "Gère les cas limites",
+      "description": "Rends ta fonction robuste : gère les ISBN sans tirets, rejette les caractères invalides, rejette un X ailleurs qu'en dernière position, et assure-toi que 10 chiffres exactement sont traités."
     },
     "useContinue": {
-      "name": "�",
-      "description": "�"
+      "name": "Bonus : saute les tirets avec continue",
+      "description": "Plutôt que de ne travailler que lorsqu'un caractère est un chiffre, utilise continue pour sauter directement les tirets et passer au caractère suivant."
     }
   },
   "scenarios": {
     "isbnValid": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN valide",
+      "description": "Un ISBN-10 valide doit renvoyer true."
     },
     "isbnValidCheckDigitX": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN valide avec X comme chiffre de contrôle",
+      "description": "Un ISBN-10 valide avec le chiffre de contrôle « X » doit renvoyer true."
     },
     "isbnValidNoDashes": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN valide sans tirets",
+      "description": "Un ISBN-10 valide sans tirets de séparation doit renvoyer true."
     },
     "isbnValidNoDashesXCheck": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN valide sans tirets et avec X comme chiffre de contrôle",
+      "description": "Un ISBN-10 valide sans tirets et avec le chiffre de contrôle « X » doit renvoyer true."
     },
     "isbnInvalidCheckDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "Chiffre de contrôle de l'ISBN invalide",
+      "description": "Un ISBN-10 avec un chiffre de contrôle incorrect doit renvoyer false."
     },
     "isbnInvalidCharacter": {
-      "name": "�",
-      "description": "�"
+      "name": "Le chiffre de contrôle est un caractère autre que X",
+      "description": "Un ISBN-10 contenant un caractère invalide doit renvoyer false."
     },
     "isbnInvalidCharacterNotZero": {
-      "name": "�",
-      "description": "�"
+      "name": "Chiffre de contrôle invalide non traité comme zéro",
+      "description": "Un chiffre de contrôle invalide ne doit pas être traité comme un zéro."
     },
     "isbnInvalidNonNumeric": {
-      "name": "�",
-      "description": "�"
+      "name": "Caractère invalide dans l'ISBN",
+      "description": "Les caractères invalides d'un ISBN ne doivent pas être ignorés."
     },
     "isbnInvalidXPosition": {
-      "name": "�",
-      "description": "�"
+      "name": "X valide uniquement comme chiffre de contrôle",
+      "description": "Un « X » ne doit être valide que comme chiffre de contrôle."
     },
     "isbnInvalidMissingCheckDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN sans chiffre de contrôle",
+      "description": "Un ISBN-10 sans chiffre de contrôle doit renvoyer false."
     },
     "isbnInvalidTooLong": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN trop long",
+      "description": "Un ISBN-10 trop long doit renvoyer false."
     },
     "isbnInvalidTooShort": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN trop court",
+      "description": "Un ISBN-10 trop court doit renvoyer false."
     },
     "isbnInvalidEmpty": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN vide",
+      "description": "Une string ISBN vide doit renvoyer false."
     },
     "isbnInvalidLengthNine": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN de 9 caractères",
+      "description": "Une entrée de 9 caractères doit renvoyer false."
     },
     "isbnInvalidNonNumericBeforeCheck": {
-      "name": "�",
-      "description": "�"
+      "name": "Caractère invalide avant la vérification de la longueur",
+      "description": "Les caractères invalides ne doivent pas être ignorés avant de vérifier la longueur."
     },
     "isbnInvalidExtraLength": {
-      "name": "�",
-      "description": "�"
+      "name": "Entrée trop longue mais contenant un ISBN valide",
+      "description": "Une entrée de plus de 10 caractères doit renvoyer false."
     },
     "isbnBonusUseContinue": {
-      "name": "�",
-      "description": "�"
+      "name": "Tirets sautés avec continue",
+      "description": "Ta solution fonctionne et utilise continue pour sauter les tirets."
     }
   },
   "hints": {
     "howChecked": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment un ISBN-10 est-il réellement vérifié ?",
+      "answer": "Chacun des 10 chiffres est multiplié par un poids décroissant. Le premier chiffre par 10, le deuxième par 9, et ainsi de suite jusqu'au dernier par 1. On additionne tous ces produits. Si le total est divisible par 11, l'ISBN est valide."
     },
     "dashes": {
-      "question": "�",
-      "answer": "�"
+      "question": "Que faire des tirets ?",
+      "answer": "Les tirets ne servent qu'à faciliter la lecture. Saute-les complètement. Ils ne comptent pas comme un chiffre et ne font pas non plus descendre le poids."
     },
     "trackWeight": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment garder la trace du poids ?",
+      "answer": "Commence avec une variable multiplicateur à 10. Chaque fois que tu traites un chiffre, multiplie-le par le multiplicateur courant, ajoute le produit à la somme en cours, puis diminue le multiplicateur de 1."
     },
     "stringToNumber": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment transformer la string en nombre ?",
+      "answer": "Tu as deux options. Premièrement, la méthode prévue dans cet exercice consiste à trouver une façon de faire avec la méthode `indexOf`. Réfléchis-y un peu. Si tu ne trouves pas, consulte l'astuce suivante pour la réponse."
     },
     "stringToNumberAgain": {
-      "question": "�",
-      "answer": "�"
+      "question": "Non mais sérieusement, comment transformer la string en nombre ?",
+      "answer": "Deux options. Premièrement, tu peux utiliser la fonction `Number()` (avec un « N » majuscule) : `Number(\"5\")` donne `5`. Relis la page de concept <a href=\"/concepts/type-conversion\" target=\"_blank\" rel=\"noopener noreferrer\">Conversion de type</a> si tu veux un rappel. Il existe aussi une astuce sympa avec `indexOf`, qui vaut le coup d'être explorée ensuite."
     },
     "handleX": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment gérer « X » ? Ce n'est pas un chiffre, si ?",
+      "answer": "« X » est spécial. Il représente la valeur 10, mais uniquement en toute dernière position. Traite-le comme un chiffre de valeur 10 quand tu le vois à la fin, et rejette l'ISBN si « X » apparaît n'importe où ailleurs."
     },
     "exactlyTenDigits": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment m'assurer qu'il y a exactement 10 chiffres ?",
+      "answer": "Ton multiplicateur a commencé à 10 et a diminué de 1 par chiffre. Si tu as traité exactement 10 chiffres, il termine à 0. Toute autre valeur signifie un mauvais nombre de chiffres : dans ce cas, rejette l'ISBN."
     },
     "finalCheck": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quelle est la vérification finale de validité ?",
+      "answer": "Une fois tout traité, l'ISBN est valide si la somme totale est divisible par 11 (c'est-à-dire `sum % 11 == 0`)."
     }
   },
   "checks": {
-    "mustUseContinue": "�",
-    "tooManyLines": "�"
+    "mustUseContinue": "Tu y es presque ! Pour ce bonus, utilise `continue` pour sauter les tirets.",
+    "tooManyLines": "Tu y es presque ! Ta solution fonctionne, mais elle est un peu longue."
   },
   "functions": {
     "number": {
-      "description": "�",
-      "category": "�"
+      "description": "Convertit une string contenant des chiffres en nombre",
+      "category": "Conversion de type"
     },
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "Vérifie si une string contient une string plus petite (fournie par la stdlib du niveau)",
+      "category": "Opérations sur les strings"
     },
     "indexOf": {
-      "description": "�",
-      "category": "�"
+      "description": "Trouve la position d'une string plus petite dans une string, ou -1 si elle n'est pas trouvée (fournie par la stdlib du niveau)",
+      "category": "Opérations sur les strings"
     }
   }
 }
