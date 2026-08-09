@@ -1,0 +1,47 @@
+{
+  "checks": {
+    "moreThanSixLines": "لقد استخدمت أكثر من 6 أسطر من الكود."
+  },
+  "tasks": {
+    "createTwoFerFunction": {
+      "name": "أنشئ دالة two-fer",
+      "description": "اكتب دالة `twoFer` تأخذ اسمًا وتُرجع 'One for [name], one for me.' إذا لم يُعطَ اسم (سلسلة نصية فارغة)، استخدم 'you' بدلاً من الاسم."
+    },
+    "solveInSixLines": {
+      "name": "حلّ في 6 أسطر من الكود",
+      "description": "هل يمكنك حل التمرين باستخدام 6 أسطر من الكود فقط؟"
+    }
+  },
+  "scenarios": {
+    "twoFerDefault": {
+      "name": "لم يُعطَ اسم",
+      "description": "لم يُعطَ اسم لذا أعد 'One for you, one for me.'"
+    },
+    "twoFerAlice": {
+      "name": "الاسم: Alice",
+      "description": "الاسم هو 'Alice' لذا أعد 'One for Alice, one for me.'"
+    },
+    "twoFerTom": {
+      "name": "الاسم: Tom",
+      "description": "الاسم هو 'Tom' لذا أعد 'One for Tom, one for me.'"
+    },
+    "bonus1": {
+      "name": "6 أسطر من الكود",
+      "description": "حل التمرين باستخدام 6 أسطر من الكود فقط."
+    }
+  },
+  "hints": {
+    "whatChanges": {
+      "question": "ما الذي يتغير بناءً على المُدخل؟",
+      "answer": "شيء واحد فقط. الاسم في منتصف الجملة. إذا أُعطيت اسمًا، استخدمه. وإلا، استخدم القيمة الافتراضية `\"you\"`."
+    },
+    "checkGivenName": {
+      "question": "كيف أتحقق مما إذا \"أُعطيت اسمًا\"؟",
+      "answer": "جملة شرطية تقارن المُدخل بالسلسلة النصية الفارغة `\"\"`. إذا كانت فارغة، استخدم `\"you\"`. وإلا، استخدم المُدخل."
+    },
+    "buildSentence": {
+      "question": "كيف أبني الجملة النهائية؟",
+      "answer": "ادمج الأجزاء الثلاثة (`\"One for \"`، الاسم المُختار، و`\", one for me.\"`) باستخدام الدمج (`+`) أو سلسلة نصية قالب."
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "checks": {
+    "noResult": "لم تعلن عن أي نتيجة!",
+    "paperVsPaperResult": "المفترض أن تكون نتيجة Paper ضد Paper تعادلاً لكن النتيجة كانت \"{{got}}\".",
+    "paperVsRockResult": "المفترض أن تكون نتيجة Paper ضد Rock فوزًا لـ Yuki لكن النتيجة كانت \"{{got}}\".",
+    "paperVsScissorsResult": "المفترض أن تكون نتيجة Paper ضد Scissors فوزًا لـ Ando لكن النتيجة كانت \"{{got}}\".",
+    "rockVsPaperResult": "المفترض أن تكون نتيجة Rock ضد Paper فوزًا لـ Ando لكن النتيجة كانت \"{{got}}\".",
+    "rockVsRockResult": "المفترض أن تكون نتيجة Rock ضد Rock تعادلاً لكن النتيجة كانت \"{{got}}\".",
+    "rockVsScissorsResult": "المفترض أن تكون نتيجة Rock ضد Scissors فوزًا لـ Yuki لكن النتيجة كانت \"{{got}}\".",
+    "scissorsVsPaperResult": "المفترض أن تكون نتيجة Scissors ضد Paper فوزًا لـ Yuki لكن النتيجة كانت \"{{got}}\".",
+    "scissorsVsRockResult": "المفترض أن تكون نتيجة Scissors ضد Rock فوزًا لـ Ando لكن النتيجة كانت \"{{got}}\".",
+    "scissorsVsScissorsResult": "المفترض أن تكون نتيجة Scissors ضد Scissors تعادلاً لكن النتيجة كانت \"{{got}}\"."
+  },
+  "tasks": {
+    "determineWinner": {
+      "name": "تحديد الفائز",
+      "description": "احصل على اختياري اللاعبين وأعلن النتيجة الصحيحة: \"Yuki\" أو \"Ando\" أو \"tie\"."
+    }
+  },
+  "scenarios": {
+    "paperVsPaper": {
+      "name": "Paper ضد Paper",
+      "description": "إنه تعادل. أعلن النتيجة بشكل صحيح!"
+    },
+    "paperVsRock": {
+      "name": "Paper ضد Rock",
+      "description": "يهزم `paper` الخاص بـ Yuki `rock` الخاص بـ Ando. أعلن فوز Yuki!"
+    },
+    "paperVsScissors": {
+      "name": "Paper ضد Scissors",
+      "description": "يهزم `scissors` الخاص بـ Ando `paper` الخاص بـ Yuki. أعلن فوز Ando!"
+    },
+    "rockVsPaper": {
+      "name": "Rock ضد Paper",
+      "description": "يهزم `paper` الخاص بـ Ando `rock` الخاص بـ Yuki. أعلن فوز Ando!"
+    },
+    "rockVsRock": {
+      "name": "Rock ضد Rock",
+      "description": "إنه تعادل. أعلن النتيجة بشكل صحيح!"
+    },
+    "rockVsScissors": {
+      "name": "Rock ضد Scissors",
+      "description": "يهزم `rock` الخاص بـ Yuki `scissors` الخاص بـ Ando. أعلن فوز Yuki!"
+    },
+    "scissorsVsPaper": {
+      "name": "Scissors ضد Paper",
+      "description": "يهزم `scissors` الخاص بـ Yuki `paper` الخاص بـ Ando. أعلن فوز Yuki!"
+    },
+    "scissorsVsRock": {
+      "name": "Scissors ضد Rock",
+      "description": "يهزم `rock` الخاص بـ Ando `scissors` الخاص بـ Yuki. أعلن فوز Ando!"
+    },
+    "scissorsVsScissors": {
+      "name": "Scissors ضد Scissors",
+      "description": "إنه تعادل. أعلن النتيجة بشكل صحيح!"
+    }
+  },
+  "hints": {
+    "howToStart": {
+      "question": "كيف أبدأ؟",
+      "answer": "احصل على اختيارَي Yuki و Ando باستخدام الدالتين المقدمتين وخزنهما في متغيرات لتتمكن من مقارنتهما."
+    },
+    "simplestCase": {
+      "question": "ما أبسط حالة يمكن التعامل معها أولاً؟",
+      "answer": "التعادل. إذا كان الخياران متساويين، يمكنك إعلان التعادل فوراً وتجاوز الباقي."
+    },
+    "checkCombination": {
+      "question": "كيف أتحقق من مجموعة فائزة محددة؟",
+      "answer": "استخدم `&&` (و) لدمج شرطين يجب أن يكون كلاهما صحيحاً، مثلاً \"Yuki اختار rock و Ando اختار scissors\" يعني فوز Yuki."
+    },
+    "shorterWay": {
+      "question": "أنتهي بكمية كبيرة من جمل `if` الشرطية. هل هناك طريقة أقصر؟",
+      "answer": "افترض فوز أحد اللاعبين بشكل افتراضي، ثم تحقق فقط من الحالات الثلاث التي يفوز فيها اللاعب الآخر. هذا يقلل الحالات إلى النصف تقريباً."
+    },
+    "invalidChoice": {
+      "question": "ماذا لو أدخل لاعب شيئاً غير rock أو paper أو scissors؟",
+      "answer": "لا تحتاج للقلق بشأن ذلك هنا. الدالتان المقدمتان لا تعيدان أبداً سوى أحد الخيارات الثلاثة الصالحة."
+    }
+  },
+  "functions": {
+    "getYukiChoice": {
+      "description": "تعيد اختيار Yuki — أحد الخيارات `\"rock\"` أو `\"paper\"` أو `\"scissors\"`.",
+      "category": "لعبة"
+    },
+    "getAndoChoice": {
+      "description": "تعيد اختيار Ando — أحد الخيارات `\"rock\"` أو `\"paper\"` أو `\"scissors\"`.",
+      "category": "لعبة"
+    },
+    "announceResult": {
+      "description": "تعلن نتيجة اللعبة. مرر `\"Yuki\"` أو `\"Ando\"` أو `\"tie\"`.",
+      "category": "لعبة"
+    }
+  }
+}

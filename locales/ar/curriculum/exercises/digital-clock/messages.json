@@ -1,0 +1,80 @@
+{
+  "errors": {
+    "hourNotNumber": "يجب أن يكون <code>hour</code> عددًا",
+    "minutesNotNumber": "يجب أن يكون <code>minutes</code> عددًا",
+    "indicatorNotString": "يجب أن يكون <code>indicator</code> سلسلة نصية"
+  },
+  "checks": {
+    "notUpdated": "لم يتم تحديث الساعة. تأكد من استخدام الدالة <code>displayTime</code>.",
+    "wrongTime": "المُتوقَّع \"{{expected}}\" ولكن الناتج \"{{got}}\""
+  },
+  "tasks": {
+    "displayTime": {
+      "name": "عرض الوقت على الساعة",
+      "description": "احصل على الساعة والدقيقة الحاليتين، وحوّلهما إلى صيغة 12 ساعة مع am/pm، واعرضهما باستخدام displayTime()."
+    }
+  },
+  "scenarios": {
+    "morning1": {
+      "name": "الصباح الباكر",
+      "description": "اعرض 6:35 كـ \"6:35am\""
+    },
+    "morning2": {
+      "name": "الصباح المتأخر",
+      "description": "اعرض 11:04 كـ \"11:04am\""
+    },
+    "afternoon1": {
+      "name": "بعد الظهر المبكر",
+      "description": "اعرض 12:19 كـ \"12:19pm\""
+    },
+    "afternoon2": {
+      "name": "المساء المتأخر",
+      "description": "اعرض 23:32 كـ \"11:32pm\""
+    },
+    "midnight": {
+      "name": "منتصف الليل",
+      "description": "اعرض منتصف الليل كـ \"12:00am\""
+    },
+    "noon": {
+      "name": "الظهيرة",
+      "description": "اعرض الظهيرة كـ \"12:00pm\""
+    },
+    "now": {
+      "name": "اعرض الوقت الحالي",
+      "description": "اعرض الوقت الحالي"
+    }
+  },
+  "hints": {
+    "gettingStarted": {
+      "question": "لا أعرف كيف أبدأ",
+      "answer": "استخدم `currentTimeHour()` و `currentTimeMinute()` للحصول على الوقت الحالي، ثم استخدم `displayTime(hour, minutes, \"am\")` مع قيمتيهما لترى ما يحدث. ثم اكتشف كيفية تعيين مؤشر الصباح/المساء الصحيح وعرض الساعة الصحيح."
+    },
+    "meridiem": {
+      "question": "كيف يعمل مؤشر الصباح/المساء؟",
+      "answer": "الساعات من 0 إلى 11 تكون 'am'، والساعات من 12 إلى 23 تكون 'pm'. يجب أن يُعرض منتصف الليل (الساعة 0) كـ 12am. ويجب أن تُعرض الظهيرة (الساعة 12) كـ 12pm."
+    },
+    "hourChange": {
+      "question": "متى ولماذا يجب تغيير الساعة؟",
+      "answer": "في نظام 12 ساعة، يتم تمثيل 13:00 كـ 1:00pm، ويتم تمثيل 14:00 كـ 2:00pm، لذا عليك أن تكتشف العلاقة بين 13->1 و 14->2 إلخ، وتعدّل الساعة وفقًا لذلك!"
+    }
+  },
+  "describers": {
+    "currentTimeHour": "أعاد الساعة الحالية",
+    "currentTimeMinute": "أعاد الدقيقة الحالية",
+    "displayTime": "عرض الوقت على الساعة"
+  },
+  "functions": {
+    "currentTimeHour": {
+      "description": "تعيد الساعة الحالية بنظام 24 ساعة (مثلاً، 23 للساعة 11 مساءً) كعدد.",
+      "category": "الوقت"
+    },
+    "currentTimeMinute": {
+      "description": "تعيد الدقيقة الحالية كعدد.",
+      "category": "الوقت"
+    },
+    "displayTime": {
+      "description": "تعرض الوقت على الساعة الرقمية. يجب أن يكون المؤشر \"am\" أو \"pm\".",
+      "category": "إجراء"
+    }
+  }
+}
