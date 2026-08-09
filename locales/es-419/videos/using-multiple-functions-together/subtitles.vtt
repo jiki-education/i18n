@@ -1,0 +1,177 @@
+WEBVTT
+
+NOTE en_md5 a59a1b57ba6073109ec594f8e88d8ef2
+
+00:00:00.000 --> 00:00:03.662
+Hola de nuevo. Hasta ahora, cuando escribías funciones,
+
+00:00:04.173 --> 00:00:06.032
+cada una más o menos se las arreglaba
+
+00:00:06.113 --> 00:00:08.353
+sola y contenía toda la lógica
+
+00:00:08.373 --> 00:00:11.003
+necesaria para funcionar. En esta lección,
+
+00:00:11.033 --> 00:00:13.453
+vamos a ver cómo dividir funciones
+
+00:00:13.473 --> 00:00:16.493
+para tener funciones más pequeñas que trabajen juntas,
+
+00:00:16.563 --> 00:00:18.893
+en lugar de funciones grandes con muchas
+
+00:00:18.953 --> 00:00:22.253
+cosas a la vez. Como regla general en programación,
+
+00:00:22.293 --> 00:00:24.313
+queremos que cada función haga lo mínimo
+
+00:00:24.413 --> 00:00:27.533
+posible. A esto lo llamamos una función con
+
+00:00:27.713 --> 00:00:31.333
+responsabilidad única. Cada función debe hacer
+
+00:00:31.413 --> 00:00:34.113
+una sola cosa y usar otras funciones para las
+
+00:00:34.253 --> 00:00:36.913
+distintas partes secundarias de eso. Veamos
+
+00:00:36.953 --> 00:00:40.393
+un ejemplo. Imagina que tenemos una función cuyo
+
+00:00:40.433 --> 00:00:43.613
+trabajo es devolver un string que describe
+
+00:00:43.653 --> 00:00:46.193
+un nombre. Una versión simple se vería
+
+00:00:46.233 --> 00:00:48.893
+así. Tenemos un bucle de conteo, algo
+
+00:00:48.933 --> 00:00:52.033
+que ya has escrito, y luego una plantilla de string
+
+00:00:52.073 --> 00:00:55.553
+que arma el resultado. Esto funciona
+
+00:00:55.573 --> 00:00:58.023
+bien, pero está haciendo dos cosas. Hace
+
+00:00:58.113 --> 00:01:01.723
+una cosa bastante genérica, contar, y otra muy
+
+00:01:01.893 --> 00:01:04.873
+específica: armar este string en un
+
+00:01:04.893 --> 00:01:09.102
+formato particular. Sería mucho más bonito dividir
+
+00:01:09.133 --> 00:01:12.263
+esto en dos funciones: una que se encargue
+
+00:01:12.293 --> 00:01:15.893
+de contar y otra que se encargue de describir
+
+00:01:15.903 --> 00:01:19.133
+un nombre en este formato particular. Así
+
+00:01:19.173 --> 00:01:23.323
+podemos reutilizar esa función genérica de contar en
+
+00:01:23.333 --> 00:01:27.083
+este formateo de string, y también en cualquier otro
+
+00:01:27.173 --> 00:01:29.412
+lugar que la necesitemos. Cuando necesitemos contar
+
+00:01:29.473 --> 00:01:32.333
+letras en un string, está totalmente separada de
+
+00:01:32.393 --> 00:01:35.633
+cualquier cosa relacionada con la impresión. Puedes
+
+00:01:35.653 --> 00:01:39.813
+leer ambas funciones por separado y entender enseguida
+
+00:01:39.873 --> 00:01:43.153
+lo que hace cada una. A medida que tus funciones
+
+00:01:43.193 --> 00:01:45.203
+se vuelven más complejas y tienes más
+
+00:01:45.203 --> 00:01:47.513
+de ellas, esta técnica es la
+
+00:01:47.573 --> 00:01:51.793
+diferencia entre tener código limpio y legible y un
+
+00:01:52.013 --> 00:01:54.833
+completo desorden y confusión. Hay algo
+
+00:01:54.853 --> 00:01:56.553
+que ya mencioné varias veces, pero
+
+00:01:56.593 --> 00:01:58.793
+que vale la pena repetir aquí, y es
+
+00:01:58.853 --> 00:02:02.213
+que todo lo que creas dentro de una función no
+
+00:02:02.253 --> 00:02:05.933
+puede ser accedido por otras funciones a menos que
+
+00:02:05.973 --> 00:02:09.313
+lo devuelvas explícitamente. Así que si intentas usar
+
+00:02:09.333 --> 00:02:14.053
+la variable count desde dentro de describeName,
+
+00:02:14.113 --> 00:02:15.763
+no puedes, porque pertenece a la
+
+00:02:15.833 --> 00:02:19.633
+otra función. En JavaScript, podemos crear
+
+00:02:19.693 --> 00:02:22.553
+variables al principio, arriba de todo, que se
+
+00:02:22.613 --> 00:02:25.713
+comparten entre funciones, pero realmente recomiendo
+
+00:02:25.873 --> 00:02:27.973
+que no lo hagas a menos que haya una muy buena
+
+00:02:27.993 --> 00:02:32.193
+razón. Mientras más mantengas cada función independiente,
+
+00:02:32.253 --> 00:02:34.253
+y la palabra técnica para eso es pura,
+
+00:02:34.553 --> 00:02:38.393
+funciones puras, más limpio será tu código
+
+00:02:38.413 --> 00:02:40.493
+y menos bugs vas a crear
+
+00:02:40.533 --> 00:02:42.763
+y tener. En los próximos ejercicios, vas
+
+00:02:42.773 --> 00:02:45.213
+a escribir funciones que trabajan juntas para
+
+00:02:45.313 --> 00:02:48.613
+resolver problemas: una función llamando a otra, cada una
+
+00:02:48.693 --> 00:02:51.613
+haciendo su propia pequeña tarea. Tómate tu tiempo
+
+00:02:51.633 --> 00:02:53.113
+con ellos, y te veo aquí
+
+00:02:53.153 --> 00:02:53.433
+en un rato

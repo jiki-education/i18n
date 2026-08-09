@@ -1,0 +1,168 @@
+WEBVTT
+
+NOTE en_md5 cc1cedf75df71450fa8e0da4a289c70e
+
+00:00:00.100 --> 00:00:03.520
+Te damos la bienvenida de nuevo. Hasta ahora hemos usado variables
+
+00:00:03.740 --> 00:00:06.760
+para cosas que tienen algún significado: la edad de alguien,
+
+00:00:06.860 --> 00:00:10.680
+la hora, un color. Hemos actualizado variables, pero
+
+00:00:10.700 --> 00:00:14.900
+han sido cosas relativamente estáticas. Sin embargo, uno
+
+00:00:14.940 --> 00:00:18.320
+de los usos más comunes de las variables en programación
+
+00:00:18.400 --> 00:00:22.020
+es llevar el control de nuestro progreso en una tarea.
+
+00:00:22.080 --> 00:00:24.280
+Imagina que estás construyendo una pared, algo que harás
+
+00:00:24.340 --> 00:00:26.880
+en un momento. En la vida real, serías
+
+00:00:26.940 --> 00:00:29.560
+consciente de qué capa de ladrillos estás construyendo,
+
+00:00:29.600 --> 00:00:31.540
+la de abajo o la de arriba, una
+
+00:00:31.580 --> 00:00:34.380
+del medio, y también sabrías
+
+00:00:34.420 --> 00:00:36.480
+qué ladrillo tienes que colocar a continuación,
+
+00:00:36.520 --> 00:00:40.240
+el tercero, el cuarto, etcétera. Necesitamos
+
+00:00:40.250 --> 00:00:43.240
+lo mismo en el mundo digital. O
+
+00:00:43.360 --> 00:00:47.070
+imagina que intentas crear un bot automático para Space
+
+00:00:47.140 --> 00:00:50.220
+Invaders. Ese bot necesita saber en qué
+
+00:00:50.320 --> 00:00:52.220
+posición está, de izquierda a derecha, en
+
+00:00:52.260 --> 00:00:55.730
+la pantalla. En programación, a esto lo llamamos estado
+
+00:00:56.240 --> 00:00:59.840
+(state en inglés), o sea, en qué estado se encuentra algo. El estado
+
+00:00:59.880 --> 00:01:02.510
+es útil para saber qué está
+
+00:01:02.600 --> 00:01:05.099
+pasando, pero donde se vuelve realmente útil es
+
+00:01:05.140 --> 00:01:08.250
+cuando lo combinamos con condicionales. Si estamos
+
+00:01:08.280 --> 00:01:10.660
+construyendo la pared, necesitamos revisar después
+
+00:01:10.680 --> 00:01:13.780
+de cada ladrillo si ya colocamos
+
+00:01:13.820 --> 00:01:16.160
+el último ladrillo de esa fila y, si
+
+00:01:16.240 --> 00:01:17.520
+es así, tenemos que pasar a la
+
+00:01:17.560 --> 00:01:19.200
+siguiente fila y volver a colocar el
+
+00:01:19.240 --> 00:01:22.310
+primer ladrillo. Si estamos creando nuestro bot de Space Invaders,
+
+00:01:22.440 --> 00:01:23.780
+tenemos que comprobar si estamos
+
+00:01:23.820 --> 00:01:26.020
+en el borde de la pantalla antes de movernos
+
+00:01:26.140 --> 00:01:29.700
+e invertir la dirección si es así, y esa
+
+00:01:29.780 --> 00:01:32.360
+dirección también es estado, un registro de si
+
+00:01:32.380 --> 00:01:35.800
+vamos hacia la izquierda o hacia la derecha. A medida que
+
+00:01:35.900 --> 00:01:37.600
+avances, el estado será una de las
+
+00:01:37.660 --> 00:01:41.220
+partes más importantes de la programación: la idea de
+
+00:01:41.360 --> 00:01:44.100
+saber dónde está algo, en qué estado se encuentra,
+
+00:01:44.500 --> 00:01:47.140
+o qué tan lejos estamos en nuestra lista
+
+00:01:47.300 --> 00:01:49.960
+de tareas. En los siguientes dos ejercicios,
+
+00:01:49.980 --> 00:01:52.140
+usarás el estado para construir una pared y
+
+00:01:52.180 --> 00:01:54.500
+para jugar a Space Invaders con las ideas que
+
+00:01:54.560 --> 00:01:58.890
+acabamos de ver. Es muy importante que dividas
+
+00:01:58.940 --> 00:02:03.780
+estos ejercicios en pasos pequeños. Piensa exactamente
+
+00:02:03.840 --> 00:02:05.660
+en lo que necesitas saber para
+
+00:02:05.680 --> 00:02:07.740
+resolverlos: cosas como la capa de ladrillos
+
+00:02:07.780 --> 00:02:09.360
+en la que estás o la posición del
+
+00:02:09.420 --> 00:02:12.680
+ladrillo actual. Piensa en las reglas que
+
+00:02:12.740 --> 00:02:15.000
+debe seguir la computadora para construir
+
+00:02:15.060 --> 00:02:18.780
+toda la pared. Esto ya es programación de verdad.
+
+00:02:19.000 --> 00:02:20.760
+Esto es lo que hacemos
+
+00:02:20.800 --> 00:02:24.120
+día tras día los programadores. Se está
+
+00:02:24.160 --> 00:02:26.700
+volviendo más complejo, pero también más
+
+00:02:26.720 --> 00:02:29.860
+divertido. Estos patrones requieren un poco
+
+00:02:29.940 --> 00:02:32.160
+de práctica al principio, así que
+
+00:02:32.180 --> 00:02:34.600
+tómate tu tiempo, diviértete y nos vemos
+
+00:02:34.640 --> 00:02:35.320
+de nuevo aquí muy pronto.

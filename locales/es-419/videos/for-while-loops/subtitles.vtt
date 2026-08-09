@@ -1,0 +1,339 @@
+WEBVTT
+
+NOTE en_md5 d4b8c72f7a92dfb1d6fb4eb412fdc752
+
+00:00:00.400 --> 00:00:03.469
+Hola de nuevo. Ya vimos dos bucles:
+
+00:00:03.780 --> 00:00:06.580
+el bucle repeat y el bucle for-of.
+
+00:00:06.620 --> 00:00:08.109
+En esta lección vamos a ver
+
+00:00:08.200 --> 00:00:10.940
+dos bucles más y dos técnicas útiles
+
+00:00:11.000 --> 00:00:14.140
+con bucles. Quizá recuerdes que mencioné
+
+00:00:14.200 --> 00:00:15.980
+justo al principio que el bucle repeat
+
+00:00:16.020 --> 00:00:18.690
+en realidad no existe en JavaScript. Es algo
+
+00:00:18.860 --> 00:00:20.340
+que agregué para facilitarte un poquito
+
+00:00:20.380 --> 00:00:23.190
+la vida mientras arrancamos. Entonces, ¿qué
+
+00:00:23.200 --> 00:00:25.580
+usamos en su lugar? Pues usamos un
+
+00:00:25.660 --> 00:00:28.150
+bucle for normal, y se ve así.
+
+00:00:29.380 --> 00:00:30.920
+Seguro ves por qué eso pudo
+
+00:00:30.940 --> 00:00:32.940
+haberte asustado un poco el primer
+
+00:00:32.960 --> 00:00:35.120
+día. Pero ahora ya tienes todo lo
+
+00:00:35.140 --> 00:00:37.280
+que necesitas para sentirte cómodo con esto.
+
+00:00:37.360 --> 00:00:40.340
+Así que vamos a desglosarlo. Un bucle for
+
+00:00:40.360 --> 00:00:44.620
+tiene tres partes: un inicializador, una condición
+
+00:00:44.640 --> 00:00:49.769
+y un incremento. El inicializador, esta parte
+
+00:00:49.840 --> 00:00:52.220
+de let i = 0, se ejecuta al inicio
+
+00:00:52.260 --> 00:00:54.920
+de todo el bucle. Solo se ejecuta una vez,
+
+00:00:54.980 --> 00:00:58.240
+y aquí crea una caja llamada i con
+
+00:00:58.340 --> 00:01:02.520
+valor cero. La siguiente parte, la condición,
+
+00:01:03.240 --> 00:01:08.600
+se evalúa antes de cada iteración del bucle. Si
+
+00:01:08.640 --> 00:01:11.100
+la condición es verdadera, ejecutamos el bucle
+
+00:01:11.110 --> 00:01:15.580
+de nuevo. Si no lo es, no lo ejecutamos. Y luego
+
+00:01:15.660 --> 00:01:18.580
+está el incremento, el i++.
+
+00:01:19.400 --> 00:01:21.420
+Ahora bien, i++ significa lo mismo
+
+00:01:21.460 --> 00:01:24.420
+que i = i + 1. Es solo
+
+00:01:24.460 --> 00:01:26.880
+una forma abreviada de aumentar i
+
+00:01:26.940 --> 00:01:31.200
+en uno cada vez. Entonces, en este ejemplo,
+
+00:01:31.280 --> 00:01:34.200
+ponemos i en cero. Revisamos si i
+
+00:01:34.240 --> 00:01:36.300
+es menor que dos, y lo es,
+
+00:01:36.380 --> 00:01:38.360
+así que ejecutamos el bucle. Y al
+
+00:01:38.400 --> 00:01:41.640
+final, aumentamos i en uno, así que
+
+00:01:42.060 --> 00:01:44.380
+i pasa a ser uno. Cero más uno es uno.
+
+00:01:45.500 --> 00:01:47.400
+Y luego volvemos. Revisamos si
+
+00:01:47.580 --> 00:01:50.780
+uno es menor que dos. Lo es, así que
+
+00:01:50.800 --> 00:01:52.580
+ejecutamos el bucle. Y al
+
+00:01:52.620 --> 00:01:55.140
+final, aumentamos i de nuevo. Ahora
+
+00:01:55.240 --> 00:01:58.300
+vale dos: uno más uno es dos. Y luego
+
+00:01:58.340 --> 00:02:00.440
+vamos por tercera vez. Esta vez
+
+00:02:00.480 --> 00:02:02.970
+revisamos si dos es menor que dos, y
+
+00:02:02.980 --> 00:02:05.680
+no lo es, así que no ejecutamos el bucle
+
+00:02:05.780 --> 00:02:07.140
+y, de hecho, terminamos con él.
+
+00:02:07.540 --> 00:02:10.539
+Simplemente pasamos al código que haya debajo.
+
+00:02:10.640 --> 00:02:13.360
+Así que ejecutamos el bucle dos veces, y
+
+00:02:13.400 --> 00:02:16.100
+eso es útil saberlo. Siempre
+
+00:02:16.140 --> 00:02:18.320
+que empecemos en cero y tengamos una
+
+00:02:18.360 --> 00:02:21.460
+condición «menor que», el número que pongamos
+
+00:02:21.520 --> 00:02:23.780
+ahí, dos en este caso, es la cantidad
+
+00:02:23.840 --> 00:02:26.530
+de veces que se ejecutará el bucle. Esto
+
+00:02:26.580 --> 00:02:28.900
+es lo mismo que decir repeat 2.
+
+00:02:30.440 --> 00:02:33.020
+Entonces no es difícil, pero sí es mucho
+
+00:02:33.060 --> 00:02:38.120
+más enredado que solo escribir repeat 2. El siguiente
+
+00:02:38.180 --> 00:02:40.380
+bucle que debes conocer es el bucle while.
+
+00:02:41.420 --> 00:02:45.800
+Esto significa: «Mientras se cumpla una condición, ejecuta el bucle».
+
+00:02:45.840 --> 00:02:47.190
+Así que podríamos tener una regla que diga
+
+00:02:47.190 --> 00:02:49.710
+que solo puedes disparar cinco veces en Space
+
+00:02:49.740 --> 00:02:52.130
+Invaders. Entonces tendríamos aquí un bucle que
+
+00:02:52.160 --> 00:02:54.170
+diga: mientras el número de disparos sea
+
+00:02:54.200 --> 00:02:56.940
+menor que cinco, y un bucle que le permita
+
+00:02:56.960 --> 00:03:00.340
+a alguien jugar. Cada vez que alguien dispara,
+
+00:03:00.680 --> 00:03:04.000
+aumentamos numShots en uno, y al final
+
+00:03:04.480 --> 00:03:06.040
+llegamos a cinco y el bucle termina.
+
+00:03:07.100 --> 00:03:08.880
+Ahora, un problema con los bucles while es
+
+00:03:08.920 --> 00:03:11.440
+que es muy fácil tener errores que hagan
+
+00:03:11.480 --> 00:03:14.040
+que el bucle nunca termine. Estos se llaman
+
+00:03:14.120 --> 00:03:15.890
+bucles infinitos, y son uno de los
+
+00:03:15.940 --> 00:03:20.010
+errores más comunes en los programas. Cuando tu computadora
+
+00:03:20.020 --> 00:03:23.020
+se pone lenta, los ventiladores giran, todo se vuelve ruidoso,
+
+00:03:23.060 --> 00:03:25.860
+a menudo es porque alguien dejó un bucle infinito
+
+00:03:25.880 --> 00:03:29.380
+que nunca termina en su código. Bueno, dos
+
+00:03:29.460 --> 00:03:32.280
+palabras clave más en este video rapidito. La
+
+00:03:32.320 --> 00:03:35.300
+primera es la palabra clave break. Puedes usarla
+
+00:03:35.320 --> 00:03:37.680
+en cualquier parte del cuerpo de cualquier bucle.
+
+00:03:38.760 --> 00:03:40.720
+La parte entre las llaves, ese es el
+
+00:03:40.780 --> 00:03:43.840
+cuerpo. Y cuando Jiki lo ve, sale
+
+00:03:43.880 --> 00:03:46.100
+del bucle de inmediato y pasa
+
+00:03:46.160 --> 00:03:48.780
+al código que esté después del bucle. Así que
+
+00:03:48.880 --> 00:03:50.600
+si tenemos una restricción que dice que ejecutemos
+
+00:03:50.660 --> 00:03:53.280
+este bucle 50 veces, pero queremos detenerlo
+
+00:03:53.420 --> 00:03:55.960
+si el usuario dispara cinco veces, podríamos
+
+00:03:56.000 --> 00:03:58.140
+tener un bucle for al inicio que
+
+00:03:58.200 --> 00:04:00.940
+diga desde i = 0 hasta menor que
+
+00:04:01.120 --> 00:04:03.300
+50. Pero luego podríamos tener una condición
+
+00:04:03.340 --> 00:04:04.720
+en medio del bucle que diga:
+
+00:04:04.880 --> 00:04:07.720
+si numShots es mayor o igual a
+
+00:04:07.780 --> 00:04:12.520
+cinco, entonces break, detén el bucle. Hay
+
+00:04:12.560 --> 00:04:14.880
+ocasiones en las que queremos omitir una
+
+00:04:14.890 --> 00:04:18.600
+iteración específica en lugar de salir del bucle. Imagina que
+
+00:04:18.680 --> 00:04:20.780
+solo queremos hacer cosas para los números impares.
+
+00:04:21.600 --> 00:04:22.930
+Queremos poder decir: si
+
+00:04:23.020 --> 00:04:25.780
+i es impar, no ejecutes el bucle esta
+
+00:04:25.840 --> 00:04:28.380
+vez. Pero no queremos salir del todo
+
+00:04:28.420 --> 00:04:30.280
+del bucle. Solo queremos omitir
+
+00:04:30.320 --> 00:04:32.670
+esta única iteración y luego pasar a la
+
+00:04:32.720 --> 00:04:35.600
+siguiente. Y para esto, tenemos otra
+
+00:04:35.640 --> 00:04:40.380
+palabra clave llamada continue. Cuando Jiki ve continue,
+
+00:04:40.420 --> 00:04:42.180
+simplemente salta de vuelta al principio del
+
+00:04:42.220 --> 00:04:44.820
+bucle para la siguiente iteración. Así que en un
+
+00:04:44.860 --> 00:04:47.200
+bucle for-of, si ve continue,
+
+00:04:47.260 --> 00:04:48.580
+pasa al siguiente elemento de la
+
+00:04:48.640 --> 00:04:51.780
+lista. En un bucle for, realiza el
+
+00:04:51.840 --> 00:04:54.400
+incremento de i++ y luego
+
+00:04:54.480 --> 00:04:57.980
+comienza la siguiente iteración. Entonces ya vimos los bucles
+
+00:04:58.060 --> 00:05:00.800
+for, los bucles while, break y continue. Hay mucha
+
+00:05:00.840 --> 00:05:02.440
+información en este video, pero puedes volver
+
+00:05:02.500 --> 00:05:04.550
+y repasarlo cuando quieras, y
+
+00:05:04.580 --> 00:05:07.080
+también hay páginas de concepto para cada tema.
+
+00:05:07.800 --> 00:05:09.800
+Intenta poner en práctica todas esas ideas
+
+00:05:09.820 --> 00:05:12.220
+en los próximos ejercicios. ¡Mucha suerte, diviértete!
+
+00:05:12.680 --> 00:05:14.060
+Te veo por aquí en un rato.
