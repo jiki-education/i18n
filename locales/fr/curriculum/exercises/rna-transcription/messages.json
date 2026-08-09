@@ -1,48 +1,48 @@
 {
   "tasks": {
     "transcribeDnaToRna": {
-      "name": "�",
-      "description": "�"
+      "name": "Transcris l'ADN en ARN",
+      "description": "Écris une fonction qui prend un brin d'ADN et renvoie son complément ARN. Chaque nucléotide doit être remplacé par son complément : G->C, C->G, T->A, A->U."
     }
   },
   "scenarios": {
     "rnaEmptySequence": {
-      "name": "�",
-      "description": "�"
+      "name": "Séquence d'ARN vide",
+      "description": "Une séquence d'ADN vide doit renvoyer une séquence d'ARN vide."
     },
     "rnaCytosineToGuanine": {
-      "name": "�",
-      "description": "�"
+      "name": "De la cytosine à la guanine",
+      "description": "Le complément ARN de la cytosine (C) est la guanine (G)."
     },
     "rnaGuanineToCytosine": {
-      "name": "�",
-      "description": "�"
+      "name": "De la guanine à la cytosine",
+      "description": "Le complément ARN de la guanine (G) est la cytosine (C)."
     },
     "rnaThymineToAdenine": {
-      "name": "�",
-      "description": "�"
+      "name": "De la thymine à l'adénine",
+      "description": "Le complément ARN de la thymine (T) est l'adénine (A)."
     },
     "rnaAdenineToUracil": {
-      "name": "�",
-      "description": "�"
+      "name": "De l'adénine à l'uracile",
+      "description": "Le complément ARN de l'adénine (A) est l'uracile (U)."
     },
     "rnaFullSequence": {
-      "name": "�",
-      "description": "�"
+      "name": "Complément ARN complet",
+      "description": "Convertis une séquence d'ADN complète en son complément ARN."
     }
   },
   "hints": {
     "transcriptionRule": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quelle est la règle de transcription ?",
+      "answer": "Chaque nucléotide de l'ADN correspond à un nucléotide de l'ARN : G devient C, C devient G, T devient A et A devient U. Ton travail consiste à appliquer cette règle à chaque caractère de l'entrée."
     },
     "mappingInCode": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment faire cette correspondance dans le code ?",
+      "answer": "Une option consiste à utiliser deux strings « parallèles », `\"GCTA\"` pour l'ADN et `\"CGAU\"` pour l'ARN. Le complément ARN d'une lettre d'ADN est la lettre située à la même position dans la string d'ARN. Il te faudra d'abord trouver sa position dans la string d'ADN."
     },
     "processStrand": {
-      "question": "�",
-      "answer": "�"
+      "question": "Comment traiter le brin en entier ?",
+      "answer": "Parcours chaque caractère de la string d'ADN, trouve son complément ARN et ajoute-le à une string de résultat en utilisant la concaténation avec `+`."
     }
   }
 }

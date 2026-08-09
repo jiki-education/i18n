@@ -1,0 +1,63 @@
+{
+  "checks": {
+    "tooManyLines": "Ta solution contient trop de lignes de code. Peux-tu la raccourcir ?"
+  },
+  "tasks": {
+    "calculateSignPrice": {
+      "name": "Calcule le prix de l'enseigne",
+      "description": "Écris une fonction qui calcule le prix d'une enseigne. Chaque lettre coûte 12 $. Les espaces sont gratuits et ne doivent pas être comptés. Renvoie le résultat sous forme de message formaté."
+    },
+    "solveInNineLines": {
+      "name": "Résous l'exercice en 9 lignes de code",
+      "description": "Peux-tu résoudre cet exercice en seulement 9 lignes de code ?"
+    }
+  },
+  "scenarios": {
+    "simpleWord": {
+      "name": "Mot simple",
+      "description": "Un seul mot, sans espace."
+    },
+    "singleLetter": {
+      "name": "Une seule lettre",
+      "description": "Une enseigne avec une seule lettre."
+    },
+    "twoWords": {
+      "name": "Deux mots",
+      "description": "Deux mots séparés par un espace qui ne doit pas être compté."
+    },
+    "multipleSpaces": {
+      "name": "Plusieurs espaces",
+      "description": "Plusieurs mots, avec plusieurs espaces à ne pas compter."
+    },
+    "longText": {
+      "name": "Texte long",
+      "description": "Une enseigne plus longue, avec plus de lettres."
+    },
+    "allSpaces": {
+      "name": "Espaces uniquement",
+      "description": "Une enseigne composée uniquement d'espaces n'a aucune lettre à facturer."
+    },
+    "bonus1": {
+      "name": "9 lignes de code",
+      "description": "Résous l'exercice en seulement 9 lignes de code."
+    }
+  },
+  "hints": {
+    "whatCounting": {
+      "question": "Qu'est-ce que je compte, au juste ?",
+      "answer": "Les lettres. Plus précisément, tout ce qui n'est pas un espace. Il te faut donc un compteur qui augmente pour chaque caractère du texte de l'enseigne qui n'est pas un espace."
+    },
+    "loopCharacters": {
+      "question": "Comment parcourir les caractères ?",
+      "answer": "Une boucle `for...of` te donne chaque caractère tour à tour, ce qui te permet de les examiner un par un."
+    },
+    "checkSpace": {
+      "question": "Comment vérifier si un caractère est un espace ?",
+      "answer": "Dans la boucle, utilise une instruction `if` pour comparer le caractère à `\" \"`. Ne compte le caractère que lorsqu'il ne s'agit pas d'un espace."
+    },
+    "buildResultString": {
+      "question": "Comment construire le message final ?",
+      "answer": "Utilise la concaténation de strings ou les template strings. Consulte les concepts si tu as besoin d'un rappel sur le sujet."
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "tasks": {
+    "basicTranslations": {
+      "name": "Traductions de base",
+      "description": "Traduis des codons individuels en leurs acides aminés correspondants."
+    },
+    "multipleCodons": {
+      "name": "Codons multiples",
+      "description": "Traduis des séquences d'ARN qui contiennent plusieurs codons."
+    },
+    "stopCodonBehavior": {
+      "name": "Comportement des codons STOP",
+      "description": "Gère correctement les codons STOP : la traduction doit s'arrêter dès qu'un codon STOP est rencontré."
+    }
+  },
+  "scenarios": {
+    "emptyRnaSequence": {
+      "name": "Séquence d'ARN vide",
+      "description": "Une séquence d'ARN vide doit donner un tableau de protéines vide."
+    },
+    "methionineSequence": {
+      "name": "Séquence d'ARN Methionine",
+      "description": "La séquence d'ARN 'AUG' doit se traduire par 'Methionine'."
+    },
+    "phenylalanineSequence1": {
+      "name": "Séquence d'ARN Phenylalanine 1",
+      "description": "La séquence d'ARN 'UUU' doit se traduire par 'Phenylalanine'."
+    },
+    "phenylalanineSequence2": {
+      "name": "Séquence d'ARN Phenylalanine 2",
+      "description": "La séquence d'ARN 'UUC' doit se traduire par 'Phenylalanine'."
+    },
+    "leucineSequence1": {
+      "name": "Séquence d'ARN Leucine 1",
+      "description": "La séquence d'ARN 'UUA' doit se traduire par 'Leucine'."
+    },
+    "leucineSequence2": {
+      "name": "Séquence d'ARN Leucine 2",
+      "description": "La séquence d'ARN 'UUG' doit se traduire par 'Leucine'."
+    },
+    "sequenceTwoProteins": {
+      "name": "Séquence de deux codons de protéines",
+      "description": "La séquence d'ARN 'UUUUUU' doit se traduire par ['Phenylalanine', 'Phenylalanine']."
+    },
+    "sequenceDifferentCodons": {
+      "name": "Séquence de deux codons de protéines différents",
+      "description": "La séquence d'ARN 'UUAUUG' doit se traduire par ['Leucine', 'Leucine']."
+    },
+    "sequenceThreeProteins": {
+      "name": "Séquence de trois protéines",
+      "description": "La séquence d'ARN 'AUGUUUUGG' doit se traduire par ['Methionine', 'Phenylalanine', 'Tryptophan']."
+    },
+    "stopCodonAtStart": {
+      "name": "Codon STOP au début",
+      "description": "La traduction doit s'arrêter si un codon STOP se trouve au début de la séquence."
+    },
+    "stopCodonAtEnd": {
+      "name": "Codon STOP à la fin",
+      "description": "La traduction doit s'arrêter si un codon STOP se trouve à la fin de la séquence."
+    },
+    "stopCodonInMiddle": {
+      "name": "Codon STOP au milieu",
+      "description": "La traduction doit s'arrêter si un codon STOP se trouve au milieu de la séquence."
+    }
+  },
+  "hints": {
+    "breakDown": {
+      "question": "Comment découper ce problème ?",
+      "answer": "Deux étapes indépendantes. D'abord, découpe la string d'ARN en codons (des groupes de 3 caractères). Ensuite, traduis chaque codon en son acide aminé correspondant. Les résoudre séparément est bien plus simple que de tout mélanger."
+    },
+    "lookup": {
+      "question": "Comment faire la correspondance entre codon et acide aminé ?",
+      "answer": "Un dictionnaire qui associe chaque codon (par exemple `\"AUG\"`) à son acide aminé (par exemple `\"Methionine\"`) est la bonne structure pour ça. Les codons STOP sont associés à `\"STOP\"`."
+    },
+    "splitChunks": {
+      "question": "Comment découper la string en morceaux de 3 ?",
+      "answer": "Parcours la string avec un compteur de position qui augmente de 3 à chaque fois. À chaque étape, prends les 3 caractères qui commencent à ta position : c'est le codon courant."
+    },
+    "stopCodon": {
+      "question": "Que faire quand je rencontre un codon STOP ?",
+      "answer": "Arrête complètement la traduction. Utilise `break` pour sortir de la boucle. N'ajoute pas STOP au tableau de protéines."
+    }
+  },
+  "functions": {
+    "push": {
+      "description": "Renvoie un nouveau tableau avec l'élément ajouté à la fin (fourni par la bibliothèque standard du niveau)",
+      "category": "Opérations sur les tableaux"
+    }
+  }
+}

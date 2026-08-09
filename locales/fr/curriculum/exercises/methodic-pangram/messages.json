@@ -1,0 +1,82 @@
+{
+  "tasks": {
+    "checkPangram": {
+      "name": "Vérifie le pangramme",
+      "description": "Écris une fonction qui vérifie si une phrase est un pangramme (elle contient chaque lettre de l'alphabet au moins une fois). La vérification ne doit pas tenir compte de la casse."
+    }
+  },
+  "scenarios": {
+    "pangramEmptySentence": {
+      "name": "Phrase vide",
+      "description": "Une phrase vide n'est pas un pangramme."
+    },
+    "pangramPerfectLowercase": {
+      "name": "Alphabet parfait en minuscules",
+      "description": "L'alphabet parfait en minuscules est un pangramme."
+    },
+    "pangramOnlyLowercase": {
+      "name": "Uniquement des minuscules",
+      "description": "Une phrase uniquement en minuscules qui couvre toutes les lettres est un pangramme."
+    },
+    "pangramMissingX": {
+      "name": "Lettre « x » manquante",
+      "description": "Une phrase où il manque la lettre « x » n'est pas un pangramme."
+    },
+    "pangramMissingH": {
+      "name": "Lettre « h » manquante",
+      "description": "Une phrase où il manque la lettre « h » n'est pas un pangramme."
+    },
+    "pangramMissingAM": {
+      "name": "Lettres manquantes au-delà de a-m",
+      "description": "Une string qui contient « a » à « m » en minuscules et en majuscules n'est pas un pangramme."
+    },
+    "pangramWithUnderscores": {
+      "name": "Avec des tirets bas",
+      "description": "Une phrase pangramme avec des tirets bas."
+    },
+    "pangramWithNumbers": {
+      "name": "Avec des chiffres",
+      "description": "Une phrase pangramme qui contient aussi des chiffres."
+    },
+    "pangramNumbersReplacingLetters": {
+      "name": "Des chiffres à la place des lettres",
+      "description": "Une phrase où des lettres sont remplacées par des chiffres n'est pas un pangramme."
+    },
+    "pangramMixedCasePunctuation": {
+      "name": "Casse mixte et ponctuation",
+      "description": "Un pangramme qui mélange majuscules, minuscules et ponctuation."
+    },
+    "pangramCaseInsensitive": {
+      "name": "Lettres manquantes malgré la casse",
+      "description": "Une phrase où toutes les lettres ne sont pas présentes, même sans tenir compte de la casse, n'est pas un pangramme."
+    }
+  },
+  "hints": {
+    "recall": {
+      "question": "J'ai déjà résolu cet exercice à la main. Qu'est-ce qui change vraiment ?",
+      "answer": "La logique est identique : mettre la phrase en minuscules, puis vérifier que chaque lettre de « a » à « z » est présente. La seule chose qui change, c'est *comment* tu fais ces deux étapes : tu peux maintenant utiliser les méthodes intégrées des strings au lieu de tes propres fonctions auxiliaires."
+    },
+    "lowercaseMethod": {
+      "question": "Existe-t-il une méthode intégrée pour mettre une string en minuscules ?",
+      "answer": "Oui. Les strings ont une méthode `toLowerCase()` qui renvoie une copie en minuscules. Appelle-la sur la phrase une seule fois au début, au lieu de parcourir les caractères toi-même. N'oublie pas qu'elle renvoie une *nouvelle* string, tu dois donc stocker le résultat."
+    },
+    "includesMethod": {
+      "question": "Ai-je encore besoin de ma propre fonction auxiliaire pour vérifier qu'une lettre est présente ?",
+      "answer": "Non. Les strings ont une méthode `includes()` qui indique si une string apparaît dans une autre. Utilise `sentence.includes(letter)` à la place de la fonction auxiliaire que tu as écrite la dernière fois."
+    },
+    "stopEarly": {
+      "question": "Quand puis-je m'arrêter plus tôt ?",
+      "answer": "Dès qu'une lettre manque, renvoie `false` : inutile de vérifier le reste. Ne renvoie `true` qu'une fois que tout l'alphabet a été confirmé."
+    }
+  },
+  "functions": {
+    "toLowerCase": {
+      "description": "Renvoie une copie en minuscules d'une string (fournie par la stdlib du niveau)",
+      "category": "Opérations sur les strings"
+    },
+    "includes": {
+      "description": "Vérifie si une string contient une string plus petite (fournie par la stdlib du niveau)",
+      "category": "Opérations sur les strings"
+    }
+  }
+}

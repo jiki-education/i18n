@@ -1,0 +1,57 @@
+{
+  "checks": {
+    "uniqueColoredCircles": "On attendait au moins 50 cercles de couleurs toutes différentes.",
+    "uniquePositionedCircles": "On attendait au moins 30 positions différentes.",
+    "canvasCoverage": "La balle n'a pas peint une assez grande partie du canvas. Elle doit rebondir jusqu'à en couvrir plus de 80 %.",
+    "hueBounced": "La teinte n'est pas montée jusqu'à 360 avant de redescendre.",
+    "hueSweep": "La traînée arc-en-ciel n'est pas passée par toutes les couleurs."
+  },
+  "tasks": {
+    "rainbowBall": {
+      "name": "Crée une balle arc-en-ciel qui rebondit",
+      "description": "Crée une balle qui rebondit dans le canvas, en laissant derrière elle une traînée de cercles colorés qui parcourent les couleurs de l'arc-en-ciel."
+    }
+  },
+  "scenarios": {
+    "rainbowBall": {
+      "name": "Balle arc-en-ciel",
+      "description": "Dessine une traînée arc-en-ciel à partir de cercles différents."
+    }
+  },
+  "hints": {
+    "stateToTrack": {
+      "question": "Quel état dois-je suivre ?",
+      "answer": "La position de la balle, et la façon dont elle se déplace. Garde les deux séparés : une variable pour savoir *où* se trouve la balle, une autre pour savoir *comment elle change*. La même idée s'applique à la teinte : il te faut sa valeur actuelle, plus la direction dans laquelle elle évolue."
+    },
+    "moveAndShift": {
+      "question": "Comment faire bouger la balle et changer la couleur à chaque image ?",
+      "answer": "Au début de chaque itération de la boucle, ajoute tes variables de direction à la position et à `hue`. Ainsi, les variables de direction contrôlent entièrement le mouvement : inverser leur signe ou modifier leur taille change instantanément la façon dont la balle se déplace et dont la couleur évolue."
+    },
+    "velocityTip": {
+      "question": "Je n'arrive pas à trouver comment faire. Un conseil ?",
+      "answer": "Que représentent ces nombres dont `x` et `y` changent ? Ils combinent une vitesse (la taille du nombre) et une direction (selon qu'ils déplacent la balle en avant ou en arrière). Ainsi, `2` correspond à une vitesse de 2 vers la droite ou vers le bas, et `-3` à une vitesse de 3 vers la gauche ou vers le haut. Un nombre qui est à la fois une vitesse et une direction s'appelle une **vélocité** (le moment de renommer tes variables ?). Quand tu veux changer la direction de la balle, tu inverses donc le signe de la vélocité, du positif au négatif ou l'inverse."
+    },
+    "bounceOffEdges": {
+      "question": "Comment faire rebondir la balle sur les bords ?",
+      "answer": "Après avoir mis à jour la position, vérifie si `x` ou `y` a dépassé la limite du canvas. Quand c'est le cas, inverse la variable de direction de cet axe. Les instructions indiquent les dimensions du canvas."
+    },
+    "randomBounceSpeed": {
+      "question": "Comment donner au rebond une nouvelle vitesse aléatoire à chaque fois ?",
+      "answer": "Quand la balle touche un bord, définis la variable de direction avec `Math.randomInt(min, max)` au lieu de simplement inverser son signe. Choisis une plage positive pour un rebond sur le bord gauche ou en haut, et une plage négative pour un rebond sur le bord droit ou en bas."
+    },
+    "cycleHue": {
+      "question": "Comment faire passer la teinte par toutes les couleurs de l'arc-en-ciel ?",
+      "answer": "Applique à `hue` la même astuce qu'à la position. Quand elle sort de sa plage valide, inverse `hueDirection`. La couleur montera alors toute seule jusqu'en haut du spectre, puis redescendra."
+    }
+  },
+  "functions": {
+    "circle": {
+      "description": "Dessine un cercle centré en (centerX, centerY) avec le rayon et la couleur donnés",
+      "category": "Dessin de formes"
+    },
+    "hsl": {
+      "description": "Convertit des valeurs de couleur HSL (teinte 0-360, saturation 0-100, luminosité 0-100) en une string de couleur hexadécimale",
+      "category": "Couleurs"
+    }
+  }
+}
