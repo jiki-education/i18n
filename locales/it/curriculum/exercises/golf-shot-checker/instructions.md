@@ -6,9 +6,9 @@ en_md5: 0585e8c489eca5a11da4df955e647456
 
 Bentornato al campo da golf. Finora hai fatto rotolare la palla solo in orizzontale. Quando arrivava alla buca, restava semplicemente sopra di essa. Ora la animeremo davvero facendola scendere nella buca.
 
-Il primo cambiamento è che la funzione `moveTo` (vai a) ora ha input per `x` (coordinata orizzontale) e `y` (coordinata verticale). Proprio come prima devi farla rotolare un passo alla volta, non semplicemente farla arrivare di colpo alla fine. Ma questa volta, se il giocatore riesce a mandare la palla in buca, devi animare anche quella parte finale, facendo scendere la palla nella buca dopo che ha raggiunto il punto giusto.
+Il primo cambiamento è che la funzione `moveTo` (vai a) ora ha input per x e y, le coordinate orizzontale e verticale. Proprio come prima devi farla rotolare un passo alla volta, non semplicemente farla arrivare di colpo alla fine. Ma questa volta, se il giocatore riesce a mandare la palla in buca, devi animare anche quella parte finale, facendo scendere la palla nella buca dopo che ha raggiunto il punto giusto.
 
-Poi, infine, **se la palla è atterrata in buca**, una volta rotolata fino in fondo, è il momento di festeggiare, quindi spara alcuni fuochi d’artificio usando la funzione `fireFireworks()` (spara fuochi d’artificio).
+Poi, infine, **se la palla entra in buca**, una volta rotolata fino in fondo, è il momento di festeggiare, quindi spara alcuni fuochi d’artificio usando la funzione `fireFireworks()` (spara fuochi d’artificio).
 
 Ecco alcune cose da sapere:
 
