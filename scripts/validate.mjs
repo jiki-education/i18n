@@ -40,15 +40,17 @@
 // translation current.
 //
 // The staleness stamp is written HERE and never by hand, because a hand-written
-// stamp looks like a passed check and is not one. Prose carries `en_md5` in its
-// own frontmatter; a catalog has no frontmatter, so it carries a sibling
-// `<name>.meta.json`, which is the convention the translator repo already uses
-// (`translation.meta.json`) and is invisible to every key-parity guard because
-// those address the catalog by exact filename.
+// stamp looks like a passed check and is not one. Each format carries it wherever
+// that format can. Prose carries `en_md5` in its own frontmatter; a subtitle file
+// carries a `NOTE en_md5` block, WebVTT's own comment syntax, under the header; a
+// catalog has neither, so it carries a sibling `<name>.meta.json`, which is the
+// convention the translator repo already uses (`translation.meta.json`) and is
+// invisible to every key-parity guard because those address the catalog by exact
+// filename.
 //
 // ## English
 //
-// Every English byte this reads comes from a front-end checkout, resolved by
+// Every English byte this reads comes from a source-repo checkout, resolved by
 // scripts/lib/english.mjs. Nothing about the checks changed when the mirror was
 // deleted, only where they read English from. A run with no checkout to read
 // says so and says how to get one. See ENGLISH-SOURCE.md.
@@ -62,9 +64,20 @@ import fs from "node:fs";
 import path from "node:path";
 import { SENTINEL, TARGET_LOCALES, assertTargetLocale } from "./lib/constants.mjs";
 import { CONTENT_TYPE_IDS, contentType, listItems, localPath, metaPath } from "./lib/content-types.mjs";
-import { englishPath, englishRepo, scopeItems } from "./lib/english.mjs";
-import { countSentinels, md5File, parseFrontmatter, readJson, readText, stampFrontmatter, writeJson, writeText } from "./lib/files.mjs";
-import { ERROR, WARN, checkCatalog, checkProse } from "./lib/checks.mjs";
+import { DEFAULT_SOURCE_REPO, englishPath, englishRepo, scopeItems } from "./lib/english.mjs";
+import {
+  countSentinels,
+  md5File,
+  parseFrontmatter,
+  parseVttNotes,
+  readJson,
+  readText,
+  stampFrontmatter,
+  stampVttNote,
+  writeJson,
+  writeText
+} from "./lib/files.mjs";
+import { ERROR, WARN, checkCatalog, checkProse, checkVtt } from "./lib/checks.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 import { parseArgs } from "./lib/args.mjs";
 
@@ -146,6 +159,29 @@ function validateItem({ typeId, locale, slug, stamp, shippable }) {
     return { issues, label: label(typeId, locale, slug) };
   }
 
+  if (type.format === "vtt") {
+    const sourceText = readText(english);
+    const targetText = readText(targetPath);
+    const expected = md5File(english);
+
+    const issues = checkVtt(sourceText, targetText, {
+      stamps: parseVttNotes(targetText),
+      expectedMd5: expected,
+      allowUntranslated: !shippable
+    });
+
+    const blockingOtherThanStamp = issues.filter(
+      (i) => i.level === ERROR && !i.message.startsWith("stale:") && !i.message.startsWith("no NOTE en_md5")
+    );
+
+    if (stamp && blockingOtherThanStamp.length === 0) {
+      writeText(targetPath, stampVttNote(targetText, expected));
+      return { issues: blockingOtherThanStamp.concat(issues.filter((i) => i.level === WARN)), label: label(typeId, locale, slug), stamped: true };
+    }
+
+    return { issues, label: label(typeId, locale, slug) };
+  }
+
   // Prose.
   const source = parseFrontmatter(readText(english));
   const target = parseFrontmatter(readText(targetPath));
@@ -196,7 +232,11 @@ function main() {
     errors += 1;
   }
   if (guardIssues.length === 0) console.log(`guards: the R2 key guard is armed and refusing every English prefix.`);
-  console.log(`english: read from ${englishRepo()}`);
+  // One line per source repo actually in scope, resolved lazily: a run narrowed
+  // to one type must not fail on a checkout it is never going to read.
+  for (const id of [...new Set(typeIds.map((typeId) => contentType(typeId).sourceRepo ?? DEFAULT_SOURCE_REPO))]) {
+    console.log(`english (${id}): read from ${englishRepo(id)}`);
+  }
 
   for (const locale of locales) {
     for (const typeId of typeIds) {

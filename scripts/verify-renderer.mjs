@@ -80,7 +80,7 @@ function sourceMarkdown(sourceRepo, slug, locale) {
 
 async function main() {
   const explicit = process.argv.slice(2).find((arg) => arg.startsWith("--source-repo="));
-  const sourceRepo = englishRepo(explicit ? explicit.split("=")[1] : undefined);
+  const sourceRepo = englishRepo("front-end", explicit ? explicit.split("=")[1] : undefined);
 
   const artifacts = frontEndArtifacts(sourceRepo);
   if (artifacts.length === 0) fail(`the front-end concept cache at ${sourceRepo} is empty`);

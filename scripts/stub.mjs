@@ -29,8 +29,12 @@
 // rule a bare `stub all` would sentinel-fill the entire English tree into every
 // locale. See ENGLISH-SOURCE.md.
 //
-// Prose (concept pages, exercise instructions) has no stub state: a Markdown page
-// is either translated or absent. Only catalogs are stubbed.
+// Only catalogs are stubbed, because only a catalog has a per-key state to
+// stub. Prose (concept pages, exercise instructions, posts) has none: a Markdown
+// page is either translated or absent. Neither do subtitles: a VTT with the
+// English caption text left in place under translated timings is copied English,
+// which is exactly the untranslated-but-plausible state the sentinel exists to
+// avoid, and a VTT of empty cues is not a file any player should be handed.
 
 import fs from "node:fs";
 import path from "node:path";

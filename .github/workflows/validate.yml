@@ -80,6 +80,18 @@ jobs:
             interpreters/src
             content/src
 
+      # Subtitles are the one content type whose English is not the front-end's:
+      # they are cut from the rendered video and authored beside it. See
+      # SOURCE_REPOS in scripts/lib/english.mjs. Always main, because there is no
+      # pin for it: the `English-Ref:` trailer names a front-end commit.
+      - name: Check out English subtitles
+        uses: actions/checkout@v4
+        with:
+          repository: jiki-education/videos
+          path: .source/videos
+          sparse-checkout: |
+            videos
+
       - name: Install
         run: npm ci
 

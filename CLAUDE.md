@@ -5,10 +5,11 @@ This repo holds **Jiki's translated output**, and the scripts that produce and p
 ## What this repo is
 
 - **The home of every non-English string Jiki ships.** App UI catalogs, concept pages, exercise
-  instructions and message catalogs, video lesson and badge copy, in every target locale.
+  instructions and message catalogs, video lesson and badge copy, video subtitles, in every target
+  locale. There are no exceptions: if it is not English, it lives here.
 - **The publisher of those translations to R2**, under the same content-hashed path convention
-  the front-end already uses.
-- **A consumer of English**, checked out from the front-end into `.source/front-end/` whenever a
+  the front-end already uses. Not every type has an R2 artifact: subtitles are served by Mux.
+- **A consumer of English**, checked out from its source repo into `.source/<repo>/` whenever a
   script needs it. `locales/` holds nothing but target locales. See [ENGLISH-SOURCE.md](./ENGLISH-SOURCE.md).
 
 ## What this repo is not
@@ -26,7 +27,7 @@ This repo holds **Jiki's translated output**, and the scripts that produce and p
 
 | Repo | Owns | Does not own |
 |------|------|--------------|
-| **source repos** (`front-end` monorepo: `app/`, `curriculum/`, `interpreters/`, `content/`) | English strings, the code, publishing English to R2, which locales are actually **served** (`SUPPORTED_LOCALES`) | any translated string |
+| **source repos** (`front-end` monorepo: `app/`, `curriculum/`, `interpreters/`, `content/`; plus `videos` for the English subtitle track) | English strings, the code, publishing English to R2, which locales are actually **served** (`SUPPORTED_LOCALES`) | any translated string |
 | **`i18n`** (this repo) | every translated string, the sync/translate/validate/publish scripts, publishing non-English to R2 | English, translation guidance, what is served |
 | **`translator`** | translation guides, glossaries, per-language style guides, per-content-type how-tos, forum review workflow | any translated output, any code that ships |
 
@@ -47,6 +48,7 @@ repos hold English and nothing else, one file per item, so `sourceRepoPath` take
 
 ```
 .source/front-end/                                 gitignored, ephemeral: English, checked out
+.source/videos/                                    the same, for the English subtitle track
 locales/
   hu/                                              one directory per target locale
     app/messages.json
@@ -61,6 +63,7 @@ locales/
       exercise-categories/maze/messages.json + messages.meta.json
     interpreters/javascript/messages.json + messages.meta.json
     content/posts/blog/<slug>/page.md
+    videos/using-functions/subtitles.vtt           stamp is a NOTE line inside the file
 ```
 
 - **The one place that mapping lives is `scripts/lib/content-types.mjs`.** Adding a content type is
@@ -73,12 +76,16 @@ locales/
 
 Read [ENGLISH-SOURCE.md](./ENGLISH-SOURCE.md) first; this is the summary.
 
-- **English is authored in the front-end monorepo**, beside the code that renders it, and is read
-  from a checkout of it at `.source/front-end/`. That directory is gitignored and ephemeral.
-- **`scripts/lib/english.mjs` is the only thing that resolves a path to English.** Order:
-  `--source-repo=`, `JIKI_SOURCE_REPO`, `.source/front-end`, a sibling `../front-end`. Locally,
-  `npm run source:checkout` fetches one, shallow and sparse over the four directories English lives
-  in. In CI it is an `actions/checkout` step with the same destination.
+- **English is authored beside the code that renders it**, and is read from a checkout of that repo
+  at `.source/<repo>/`. That directory is gitignored and ephemeral. Almost all of it is the
+  front-end monorepo; video subtitles are the exception, authored in `videos` because they are cut
+  from the rendered video.
+- **`scripts/lib/english.mjs` is the only thing that resolves a path to English**, and its
+  `SOURCE_REPOS` is the list of repos it resolves. A content type names its `sourceRepo` and
+  defaults to the front-end. Order per repo: `--source-repo=`, that repo's env override
+  (`JIKI_SOURCE_REPO`, `JIKI_VIDEOS_REPO`), `.source/<repo>`, a sibling checkout. Locally,
+  `npm run source:checkout [-- --source=videos]` fetches one, shallow and sparse over the
+  directories English lives in. In CI it is an `actions/checkout` step with the same destination.
 - **On a PR, English is the commit the branch pins** with an `English-Ref: <repo>@<sha>` commit
   trailer. A translation branch validates against fixed English, so it cannot go red because
   something merged next door. **On `main` it is front-end `main`**, which floats, and publish stamps
@@ -138,7 +145,7 @@ Shared helpers live in `scripts/lib/`.
 
 | Script | What it does |
 |--------|--------------|
-| `source-checkout.mjs` | Fetches the front-end into `.source/front-end`, shallow and sparse, so local runs have English to read. CI uses `actions/checkout` for the same job and the same destination. |
+| `source-checkout.mjs` | Fetches a source repo into `.source/<id>`, shallow and sparse, so local runs have English to read. `--source=<id>` picks which (`front-end` by default, `videos` for the English subtitle track). CI uses `actions/checkout` for the same job and the same destinations. |
 | `source-checkout.mjs --resolve` | Prints the SHA this branch pins with an `English-Ref:` trailer, or `main`. CI uses it to point its `actions/checkout` step at the right English. |
 | `translate.mjs` | LLM-backed translation of added and changed items. Modes `outdated` / `all` / `missing`, meaning exactly what they mean in `translator`. Hands off to `validate` when it finishes. |
 | `stub.mjs` | Brings every catalog in the corpus to full key parity with English, sentinel-filling anything untranslated. Existing values are reproduced byte for byte. An explicit `--type`/`--slug` seeds an item the corpus does not hold yet. |
@@ -271,8 +278,8 @@ override.
 **Completeness is measured against the real English corpus, not the working corpus.** The working
 corpus is what this repo has started, so measuring against it asks "have you translated everything
 you started", which any locale satisfies by starting one exercise, and which passes most
-convincingly exactly when the least has been done. The denominator is a directory listing of
-`.source/front-end`: every item English exists for, whether or not anyone has looked at it.
+convincingly exactly when the least has been done. The denominator is a directory listing of the
+source checkouts: every item English exists for, whether or not anyone has looked at it.
 
 ### Untranslated prose
 
