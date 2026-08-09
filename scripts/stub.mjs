@@ -24,7 +24,7 @@
 //   - a key with nothing to translate is not stubbed. An empty object in English
 //     is structure and is reproduced as one. A plural key this language can never
 //     reach gets the second sentinel, `∅`, not `�`: it is not a gap, nobody can
-//     ever fill it, and marking it `�` would block the locale from publishing
+//     ever fill it, and marking it `�` would keep the locale off production
 //     forever. Which categories a language reaches is derived in
 //     scripts/lib/plurals.mjs. See CLAUDE.md § "The two sentinels".
 //

@@ -11,7 +11,7 @@
 //   node scripts/publish.mjs all --out-dir=../front-end/app/public/static
 //                                                   # ...write the same tree locally instead
 //
-// There are no flags that loosen what gets published. See "Nothing partial ships".
+// Publishing never blocks on incompleteness. See "Publishing is unconditional".
 //
 // ## The path convention is the front-end's, byte for byte
 //
@@ -47,27 +47,24 @@
 // The front-end publishes English itself, atomically with its worker deploy, so
 // the code and the copy it renders go live together.
 //
-// ## Nothing partial ships, and there is no flag to say otherwise
+// ## Publishing is unconditional; completeness is a record
 //
-// Two kinds of artifact can be incomplete, and neither is publishable:
+// R2 carries whatever is on main. Incomplete work publishes on purpose, because
+// staging is the only place a translator can review it, and a locale half done
+// is exactly what a reviewer needs to look at.
 //
-//   - ASSEMBLED FROM A CORPUS. The app UI catalog, the merged curriculum copy
-//     catalog and the exercise prose index are each built from a whole corpus
-//     rather than one file, so a partial import produces an artifact with entries
-//     missing. On R2 that is indistinguishable from a good one.
-//   - STILL CARRYING THE SENTINEL. A catalog holding the untranslated sentinel
-//     renders a visible replacement glyph to a learner.
+// What incompleteness produces is a RECORD, not a refusal. Every gap found is
+// pushed onto `gaps` and written to the completeness object beside the
+// artifacts: catalogs still carrying the untranslated sentinel, prose that is
+// copied English or a placeholder body, and corpora with items missing. A locale
+// with no gaps is `complete`.
 //
-// Both are SKIPPED, loudly, and the run carries on. Skipping is deliberate on
-// both counts. Aborting would let one unfinished locale stop every finished one
-// from publishing, and on a merge-triggered publish it would turn main red on
-// most merges. A run with nothing shippable exits 0: a green no-op, not a
-// failure.
+// Strictness lives at serving. The front-end's PRODUCTION_LOCALES, gated by
+// app/scripts/verify-locale-completeness.js, reads that record and refuses to
+// build if a production locale is not complete. Staging serves everything.
 //
-// What there is no way to do is publish either anyway. This used to be a matter
-// of how the script was invoked (--allow-partial, --allow-incomplete); it is now
-// a property of the script, which is the only place a rule like this survives.
-// That mirrors the English guard, which has never had an override.
+// The English guard is the one thing here that does refuse, and it has no
+// override.
 //
 // ## Exercise families
 //
@@ -202,9 +199,9 @@ function emit(artifacts, r2Path, value) {
  * client cannot ask for the key: an absent key it can never look up and a present
  * key it can never look up are the same artifact, minus the bytes.
  *
- * Unlike `�`, `∅` therefore never blocks a publish. It is not an unfinished
- * translation, it is a key that does not apply, and a locale must not be held
- * back forever by a string nobody can write.
+ * Unlike `�`, `∅` is not a gap. It is not an unfinished translation, it is a key
+ * that does not apply, so it is never counted against completeness and a locale
+ * is never held back by a string nobody can write.
  *
  * Every catalog reaches R2 through emit(), so this is the one place it happens.
  */
@@ -248,27 +245,16 @@ function emitBytes(artifacts, r2Path, content) {
 /**
  * Count a catalog's remaining untranslated sentinels, and record them.
  *
- * This used to REFUSE the artifact. It no longer does, and the change is the
- * point rather than a relaxation. Publishing and serving are different
- * questions: R2 carries whatever is on main, so a translator can see work in
- * progress on staging, and a catalog full of replacement glyphs is exactly the
- * state someone reviewing it needs to look at. Refusing to publish it made the
- * WIP invisible in the only place it could be reviewed.
- *
- * Strictness moved to serving. The front-end's PRODUCTION_LOCALES is where an
- * incomplete locale is kept away from readers, and `gaps` in dist/manifest.json
- * is the record it is checked against.
+ * Recording is all this does. The catalog publishes either way, so a translator
+ * can see work in progress on staging, and strictness lives at serving: the
+ * front-end's PRODUCTION_LOCALES is where an incomplete locale is kept away from
+ * readers, and the completeness record is what it is checked against.
  *
  * Returns the number of sentinels found, so callers can record it.
  */
 function countSentinels(gaps, typeId, label, value) {
   const entries = Object.entries(flatten(value));
   const stubbed = entries.filter(([, v]) => v === SENTINEL);
-  // `TBD: ` is a fourth untranslated convention, alongside the sentinel, copied
-  // English and the repeated placeholder body. It marks a key deliberately left
-  // in English with a note, so unlike the sentinel it renders as readable text
-  // and nothing else would ever notice it.
-  const todo = entries.filter(([, v]) => typeof v === "string" && v.startsWith("TBD: "));
 
   if (stubbed.length > 0) {
     gaps.push({
@@ -277,14 +263,7 @@ function countSentinels(gaps, typeId, label, value) {
       detail: `${label}: ${stubbed.length} key(s) still the untranslated sentinel (first: ${stubbed[0][0]})`
     });
   }
-  if (todo.length > 0) {
-    gaps.push({
-      type: typeId,
-      count: todo.length,
-      detail: `${label}: ${todo.length} key(s) marked "TBD: " and still English (first: ${todo[0][0]})`
-    });
-  }
-  return stubbed.length + todo.length;
+  return stubbed.length;
 }
 
 /**
@@ -320,17 +299,17 @@ async function publishLocale(locale, { exportSources }) {
   //   1. THE SENTINEL. Machine-readable, and handled on the catalog path rather
   //      than here, since prose bodies do not carry it.
   //   2. COPIED ENGLISH. The body is byte-identical to English. Exact, and the
-  //      most dangerous of the three: it satisfies every structural check
-  //      trivially, carries a valid staleness stamp, and would publish as a
-  //      perfectly healthy artifact serving English from a translated URL.
+  //      one nothing else catches: it satisfies every structural check trivially
+  //      and carries a valid staleness stamp, so this comparison is the only
+  //      thing that tells it apart from a finished page.
   //   3. A TRANSLATION NOTICE. Real translated frontmatter over a one-line body
   //      saying the page is not translated yet. Nothing in the file marks it, so
   //      it is caught corpus-wide by findRepeatedBodies: one body reused across
   //      items whose English differs cannot be a translation of all of them.
   //
-  // Every one of them is SKIPPED and counted, never published, with no flag to
-  // say otherwise. Publishing any of them serves English, or an apology, from a
-  // URL the reader reached by asking for their own language.
+  // Every one of them is published and counted as a gap. Serving is what keeps
+  // English, or an apology, off a URL a reader reached by asking for their own
+  // language: production will not serve the locale until the count is zero.
   const prose = new Map();
   const untranslated = [];
 
@@ -431,14 +410,13 @@ async function publishLocale(locale, { exportSources }) {
     copy[item.slug] = { title: data.title, description: data.description || "" };
   }
 
-  // A partial exercise corpus makes two artifacts unshippable, and only those
-  // two: the merged curriculum copy and the exercise prose index. Both are
-  // assembled from every exercise, so a gap in either is a lesson that renders
-  // its slug or an exercise that will not load at all. Per-exercise artifacts are
-  // unaffected, so they still publish.
   // Corpus completeness per prose type, against the REAL English corpus in the
-  // checkout. Recorded, never a refusal: an index covering the pages that
-  // exist is precisely what staging needs, and production is gated separately.
+  // checkout. Recorded, never a refusal: an index covering the pages that exist
+  // is precisely what staging needs, and production is gated separately.
+  //
+  // A partial exercise corpus shows up in two assembled artifacts, the merged
+  // curriculum copy and the exercise prose index, as a lesson that renders its
+  // slug or an exercise that will not load. Per-exercise artifacts are unaffected.
   for (const typeId of PROSE_TYPE_IDS) {
     const present = listItems(typeId, locale).length;
     const expected = englishCorpusSize(typeId);
@@ -661,10 +639,9 @@ async function publishLocale(locale, { exportSources }) {
  * merge is and why.
  *
  * Which family each exercise belongs to is a fact about the exercise's
- * TypeScript imports, so it is read from the front-end checkout, for exactly the
- * exercises in the corpus. It used to be recorded in the sync manifest so that
- * publish could run without a checkout; publish has a checkout now, so the
- * record is redundant and a derived answer cannot go stale.
+ * TypeScript imports, so it is read from the front-end checkout at the moment it
+ * is needed, for exactly the exercises in the corpus. Nothing records it, because
+ * a derived answer cannot go stale.
  *
  * Derived over the CORPUS and not over all of English, deliberately. The union
  * rule below publishes a family member from its family's base catalog even when
@@ -887,11 +864,10 @@ async function main() {
       `${exported} prose files exported, ${plan.length} sync commands in dist/sync.sh.`
   );
 
-  // Nothing shippable is a green no-op. Every locale being skipped is the
-  // expected state of a partly translated corpus, and a merge that produces it
-  // must not turn main red.
+  // No artifacts is a green no-op. A locale with nothing translated yet produces
+  // nothing to build, and a merge that produces it must not turn main red.
   if (artifactCount === 0) {
-    console.log("Nothing shippable in any locale. Not an error; nothing to upload.");
+    console.log("No artifacts in any locale. Not an error; nothing to upload.");
     return;
   }
 

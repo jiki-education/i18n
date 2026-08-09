@@ -107,7 +107,7 @@ There are two, and they mean different things. Both are defined once in
 
 | | means | who can fix it | publish |
 | --- | --- | --- | --- |
-| **`�`** U+FFFD, `SENTINEL` | not translated yet | a translator | refuses the catalog |
+| **`�`** U+FFFD, `SENTINEL` | not translated yet | a translator | publishes it, counts it as a gap |
 | **`∅`** U+2205, `INAPPLICABLE` | the key is unreachable in this language | nobody, ever | omits the key |
 
 ### `∅`, the inapplicable sentinel
@@ -139,8 +139,8 @@ There are two, and they mean different things. Both are defined once in
   must never be one.
 - **Publish omits `∅` keys from the artifact** rather than shipping the character. The client
   cannot look the key up, so an absent key and a present one are the same artifact minus the bytes.
-  It therefore never blocks a publish: a locale must not be held back forever by a string nobody
-  can write.
+  It is never counted as a gap: a locale must not be held back forever by a string nobody can
+  write.
 
 ### `�`, the untranslated sentinel
 
@@ -152,10 +152,11 @@ There are two, and they mean different things. Both are defined once in
   translation that legitimately matches English, and once that ambiguity is in a file it cannot be
   undone.
 - **It renders as a visible replacement glyph**, which is the intent on the review site and is
-  exactly why a locale is not shippable until its count is zero. `publish` refuses any catalog
-  containing one; `validate --shippable` is the gate; `coverage` is the running count.
+  exactly why a locale is not production-ready until its count is zero. `publish` publishes the
+  catalog and records the count; `validate --shippable` is the gate; `coverage` is the running
+  count.
 - Prose has no sentinel state, but it has **three untranslated conventions**, none of which is a
-  missing file, and `publish` refuses all three (see § "Untranslated prose").
+  missing file, and `publish` counts all three as gaps (see § "Untranslated prose").
 - **The imported corpus predates that rule and carries both markers.** Catalogs that came across in
   the cutover include keys whose value is English verbatim, which is the state the old world used.
   Nothing here rewrites them: the ambiguity is already in the file and a translation that legitimately
@@ -192,7 +193,7 @@ Shared helpers live in `scripts/lib/`.
 | `translate.mjs` | LLM-backed translation of added and changed items. Modes `outdated` / `all` / `missing`, meaning exactly what they mean in `translator`. Hands off to `validate` when it finishes. |
 | `stub.mjs` | Brings every catalog in the corpus to full key parity with English, sentinel-filling anything untranslated and `∅`-filling any plural key the language cannot reach. Existing values are reproduced byte for byte, and an empty object in English stays an empty object. An explicit `--type`/`--slug` seeds an item the corpus does not hold yet. |
 | `validate.mjs` | Key parity, ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the R2 key guard. Stamps on success. Exit 1 on any ERROR. |
-| `publish.mjs` | Builds the content-hashed artifacts, their pointers and `dist/sync.sh`. Omits every `∅` key from the bytes it writes. Refuses any English R2 key, any catalog still holding a `�` sentinel, any prose that is untranslated by one of the three conventions, and any assembled artifact built from a partial corpus. No flag loosens any of that. `--out-dir=<path>` writes the same tree into a front-end checkout instead, for local dev. |
+| `publish.mjs` | Builds the content-hashed artifacts, their pointers and `dist/sync.sh`. Omits every `∅` key from the bytes it writes. Publishes whatever is on `main` and records what is outstanding (remaining `�` sentinels, prose untranslated by one of the three conventions, partial corpora) in the completeness object. Refuses any English R2 key, with no override. `--out-dir=<path>` writes the same tree into a front-end checkout instead, for local dev. |
 | `coverage.mjs` | Per-locale translated / stale / missing / sentinel counts, per content type, with `∅` keys reported outside the fraction. `--json` for machines. |
 | `test.mjs` | The assertions guarding logic a mistake in would only surface on R2, above all the exercise family merge and its key order. Plain `node:assert`, no framework, non-zero exit on failure. `pnpm test`, and part of `pnpm check`. |
 | `verify-renderer.mjs` | Proves this repo's prose pipeline and the front-end's produce identical bytes. Takes the front-end's OWN Markdown, renders it through this repo's publish path, and asserts the hash equals the filename the front-end's generator wrote, across the whole concept corpus. |
@@ -282,9 +283,8 @@ describers. They are authored and translated once rather than copied into each m
 An exercise's family is whichever `exercise-categories/<family>/` module its `.ts` files import, so
 it is a fact about **code**, and code stays in the front-end.
 
-- **`publish.mjs` reads it from the checkout** at the moment it needs it, with `deriveFamily()`. It
-  used to be recorded in the sync manifest so that publish could run without a front-end checkout;
-  publish has one now, and a derived answer cannot go stale.
+- **`publish.mjs` reads it from the checkout** at the moment it needs it, with `deriveFamily()`.
+  Nothing records it, because a derived answer cannot go stale.
 - **It is derived over the corpus, not over all of English.** The union rule above publishes a family
   member from its family's base catalog even when the member has no catalog of its own, so a map
   covering every exercise in the front-end would publish a catalog for every member of every
@@ -295,27 +295,28 @@ it is a fact about **code**, and code stays in the front-end.
   never an unmerged publish. A catalog missing its inherited keys renders raw key names like
   `errors.hitWall` to a learner, and on R2 it would look exactly like a good one.
 
-### Nothing partial ships, and there is no flag to say otherwise
+### Publishing is unconditional; completeness is a record
 
-Three artifacts are **assembled from a whole corpus** rather than copied from one file:
+**`publish` ships whatever is on `main`.** Incomplete work reaches R2 on purpose, because staging is
+the only place a translator can review it. What incompleteness produces is a **record**, not a
+refusal: every gap is written to the completeness object beside the artifacts, and a locale with no
+gaps is `complete`. A run with no artifacts at all exits 0, a green no-op rather than a failure.
+
+**Strictness lives at serving.** The front-end's `PRODUCTION_LOCALES`, gated by
+`app/scripts/verify-locale-completeness.js`, reads that record and fails the build if a production
+locale is not complete. Staging serves everything. A learner never sees a raw key or a replacement
+glyph because production will not serve the locale, not because publishing withheld it.
+
+The R2 key guard is the one thing in `publish` that does refuse, and it has no override.
+
+Three artifacts are **assembled from a whole corpus** rather than copied from one file, so a partial
+corpus shows up in them as missing entries:
 
 - **Curriculum copy**, one flat slug-keyed catalog per locale, merging every exercise's frontmatter
   `title`/`description` with the video lessons. Exercises and videos share one collision-free slug
   namespace; a collision is a hard error.
 - **The app catalog**, the whole 1300-key tree.
 - **The exercise prose index**, which names every exercise's prose artifact.
-
-Any of them built from a partial corpus has entries missing, and on R2 that is indistinguishable
-from a good one. All three are **skipped, loudly**, and the run carries on.
-
-Skipping rather than aborting is deliberate: aborting would let one unfinished locale stop every
-finished one from publishing, and on a merge-triggered publish it would turn `main` red on most
-merges. **A run with nothing shippable exits 0** — a green no-op, not a failure.
-
-What there is no way to do is publish one anyway. This used to be a matter of how `publish` was
-invoked (`--allow-partial`, `--allow-incomplete`); it is now a property of the script, which is the
-only place a rule like this survives. That mirrors the R2 key guard, which has never had an
-override.
 
 **Completeness is measured against the real English corpus, not the working corpus.** The working
 corpus is what this repo has started, so measuring against it asks "have you translated everything
@@ -326,12 +327,12 @@ source checkouts: every item English exists for, whether or not anyone has looke
 ### Untranslated prose
 
 Prose has three untranslated conventions and `publish` classifies all three before emitting
-anything. Each is skipped and counted, never published:
+anything. Each is published and counted as a gap:
 
 1. **The sentinel** (`�`). Machine-readable, handled on the catalog path.
-2. **Copied English.** The body is byte-identical to English. Exact, and the most dangerous of the
-   three: it satisfies every structural check trivially, carries a valid staleness stamp, and would
-   publish as a perfectly healthy artifact serving English from a translated URL.
+2. **Copied English.** The body is byte-identical to English. Exact, and the one nothing else
+   catches: it satisfies every structural check trivially and carries a valid staleness stamp, so
+   this comparison is the only thing that tells it apart from a finished page.
 3. **A translation notice.** Fully translated frontmatter over a one-line body saying the page is
    not translated yet. Nothing in the file marks it as a placeholder.
 
