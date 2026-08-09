@@ -1,0 +1,56 @@
+{
+  "checks": {
+    "flowerCount_one": "O dono esperava ver {{count}} flor plantada. Mas plantaste {{got}}.",
+    "flowerCount_other": "O dono esperava ver {{count}} flores plantadas. Mas plantaste {{got}}.",
+    "flowerAtPosition": "Era esperada uma flor na posição {{position}}, mas não encontrámos nenhuma.",
+    "strayFlower": "Encontrámos uma flor na posição {{position}}, que não é onde o dono queria uma. As flores devem ficar espaçadas de forma uniforme."
+  },
+  "tasks": {
+    "plantFlowersEvenly": {
+      "name": "Planta as flores de forma uniforme",
+      "description": "Usa askNumberOfFlowers() para saber quantas flores plantar, calcula o intervalo e planta-as com espaçamento uniforme."
+    }
+  },
+  "scenarios": {
+    "oneFlower": {
+      "name": "O dono quer 1 flor",
+      "description": "Neste cenário, `askNumberOfFlowers()` vai devolver 1. Planta 1 flor na posição 50."
+    },
+    "threeFlowers": {
+      "name": "O dono quer 3 flores",
+      "description": "Neste cenário, `askNumberOfFlowers()` vai devolver 3. Planta 3 flores nas posições 25, 50 e 75."
+    },
+    "fourFlowers": {
+      "name": "O dono quer 4 flores",
+      "description": "Neste cenário, `askNumberOfFlowers()` vai devolver 4. Planta 4 flores nas posições 20, 40, 60 e 80."
+    },
+    "nineFlowers": {
+      "name": "O dono quer 9 flores",
+      "description": "Neste cenário, `askNumberOfFlowers()` vai devolver 9. Planta 9 flores nas posições 10, 20, 30, 40, 50, 60, 70, 80 e 90."
+    }
+  },
+  "hints": {
+    "chooseGap": {
+      "question": "Como é que descubro onde plantar cada flor?",
+      "answer": "Primeiro calcula o intervalo entre as flores:\n\n```javascript\n100 / (numberOfFlowers + 1)\n```\n\nA primeira flor fica nessa posição, e cada flor seguinte fica um intervalo mais à frente. Portanto, se houver 3 flores, o intervalo é 25 e elas ficam em 25, 50 e 75."
+    },
+    "seeScenarios": {
+      "question": "Como é que vejo os diferentes cenários",
+      "answer": "Clica nos círculos do lado esquerdo, entre o teu código e os resultados."
+    }
+  },
+  "functions": {
+    "askNumberOfFlowers": {
+      "description": "Devolve o **número de flores** a plantar.",
+      "category": "Jardinagem"
+    },
+    "plant": {
+      "description": "Planta uma flor na **posição** indicada.",
+      "category": "Jardinagem"
+    }
+  },
+  "describers": {
+    "askNumberOfFlowers": "perguntou o número de flores a plantar",
+    "plant": "plantou uma flor na posição ${arg1}"
+  }
+}
