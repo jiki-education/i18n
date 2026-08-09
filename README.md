@@ -14,6 +14,7 @@ everything else.
 npm install                              # only the prose renderer needs it
 npm run source:checkout                  # fetch English (front-end main, shallow + sparse)
 npm run source:checkout -- --source=videos   # ...and the English subtitle track
+npm run source:checkout -- --source=api      # ...and the api copy coverage reports
 
 node scripts/coverage.mjs                # what is translated, stale, missing
 node scripts/validate.mjs all --no-stamp # the CI gate
@@ -21,8 +22,13 @@ node scripts/publish.mjs hu              # build the R2 artifacts into dist/
 ```
 
 Already have a checkout? Point at it instead: `--source-repo=<path>`, or the repo's env
-override (`JIKI_SOURCE_REPO`, `JIKI_VIDEOS_REPO`). A sibling `../front-end` or `../videos` is
-found automatically.
+override (`JIKI_SOURCE_REPO`, `JIKI_VIDEOS_REPO`, `JIKI_API_REPO`). A sibling `../front-end`,
+`../videos` or `../api` is found automatically.
+
+`coverage` also reports the level milestone emails and the mailer / message YAML, which are
+translated in the `api` repo because that copy has not been migrated here yet, so one run
+answers "is this language complete?" for everything. It reads the api at `main`, reports and
+never gates: with no api checkout those rows say so and nothing fails.
 
 Adding an item to the corpus. There is no registry: an explicit `--type`/`--slug` resolves
 against English directly, and the item is in the corpus from the moment a locale holds it.

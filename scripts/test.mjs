@@ -28,6 +28,7 @@ import {
 } from "./lib/files.mjs";
 import { ERROR, checkCatalog, findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
+import { localeFileLeaves, railsKnownLocales, railsLocale } from "./lib/api-copy.mjs";
 
 let failures = 0;
 
@@ -501,6 +502,67 @@ test("a key outside the static/ prefix is refused", () => {
 
 test("a legitimate target-locale key is permitted, and normalised", () => {
   assert.equal(assertPublishableKey("/static/i18n/app/hu/messages-abc123456789.json"), "static/i18n/app/hu/messages-abc123456789.json");
+});
+
+// -------------------------------------------------------- the api copy rows
+
+// Coverage reports two bodies of copy that are still translated in the api repo.
+// Both answers hang on reading a Rails locale file's keys without a YAML parser,
+// and on which locale name the api spells a file with, so those are what these
+// pin. Everything else in that module talks to git and belongs to a real
+// checkout, not to a unit test.
+
+console.log("\nthe api copy rows:");
+
+const MAILER_YML = `# a comment
+en:
+  account_mailer:
+    welcome:
+      subject: "Welcome to Jiki!"
+      body_markdown: |
+        Welcome to [Jiki](https://jiki.io)!
+
+        Cheers,
+      cta: ''
+    empty_map:
+`;
+
+test("leaf keys are dotted paths, and the locale key is stripped", () => {
+  assert.deepEqual(
+    [...localeFileLeaves(MAILER_YML).keys()],
+    ["account_mailer.welcome.subject", "account_mailer.welcome.body_markdown", "account_mailer.welcome.cta"]
+  );
+});
+
+test("a block scalar is one leaf, and its body does not leak in as keys", () => {
+  const body = localeFileLeaves(MAILER_YML).get("account_mailer.welcome.body_markdown");
+  assert.equal(body.split("\n")[0], "Welcome to [Jiki](https://jiki.io)!");
+});
+
+test("quotes come off a scalar, so an empty value reads as empty", () => {
+  assert.equal(localeFileLeaves(MAILER_YML).get("account_mailer.welcome.subject"), "Welcome to Jiki!");
+  assert.equal(localeFileLeaves(MAILER_YML).get("account_mailer.welcome.cta"), "");
+});
+
+test("two locales of the same file produce the same key set", () => {
+  const hu = MAILER_YML.replace("en:", "hu:").replace("Welcome to Jiki!", "Üdv a Jikiben!");
+  assert.deepEqual([...localeFileLeaves(hu).keys()], [...localeFileLeaves(MAILER_YML).keys()]);
+});
+
+test("Rails' own locale list is read from the initializer, both constants", () => {
+  const initializer = `  PRODUCTION_LOCALES = %w[en].freeze\n  WIP_LOCALES = %w[\n    de hu\n    pt-PT\n  ].freeze\n`;
+  assert.deepEqual(railsKnownLocales(initializer), ["en", "de", "hu", "pt-PT"]);
+});
+
+test("a locale file takes RAILS' spelling of the locale, not this repo's", () => {
+  // The two lists agree today. This is what keeps that a fact rather than an
+  // assumption: `pt-pt` here and `pt-PT` there are one locale.
+  assert.deepEqual(railsLocale("pt-pt", ["pt-PT"]), { locale: "pt-PT", knownToRails: true });
+  assert.deepEqual(railsLocale("zh_CN", ["zh-CN"]), { locale: "zh-CN", knownToRails: true });
+});
+
+test("a locale Rails has never heard of keeps its own spelling and is flagged", () => {
+  assert.deepEqual(railsLocale("fi", ["de", "hu"]), { locale: "fi", knownToRails: false });
 });
 
 // ------------------------------------------------------------------- result

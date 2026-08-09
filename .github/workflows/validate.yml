@@ -92,6 +92,24 @@ jobs:
           sparse-checkout: |
             videos
 
+      # Two bodies of user-facing copy are still translated in the api repo
+      # rather than here, so the coverage step reads them there to report a whole
+      # language. Always main: that copy has no pin, and a branch of it would
+      # report copy that does not exist yet. `continue-on-error` because coverage
+      # gates nothing and must never become the thing that fails a PR; without
+      # this checkout it prints api rows saying it could not read one.
+      - name: Check out api copy
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          repository: jiki-education/api
+          ref: main
+          path: .source/api
+          sparse-checkout: |
+            config/locales
+            config/initializers
+            db/seeds
+
       - name: Install
         run: npm ci
 

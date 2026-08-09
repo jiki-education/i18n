@@ -26,6 +26,18 @@ only when a video is re-cut, which is rare and produces a new video key more
 often than it edits an existing one, so pinning it would be a lifecycle for a
 case that does not arise.
 
+`SOURCE_REPOS` lists a third repo, `api`, which is not one of these. The level
+milestone emails and the mailer / message YAML are translated IN the api,
+because that copy has not been migrated here yet, so no content type names it
+and nothing translates, validates or publishes from it. `coverage.mjs` reads it,
+alone, so that "is this language complete?" has one answer covering everything;
+`scripts/lib/api-copy.mjs` is the only reader. It is read at `main`, and at
+`main` only: a local api checkout is usually on a feature branch, and a branch
+reports copy that does not exist yet. A checkout with no `origin/main` or `main`
+ref is reported as unreadable rather than read from its working tree, and no api
+checkout at all is an api row that says so. Coverage never gates, so none of
+those states fails anything.
+
 ## Which English
 
 Two cases, deliberately different.
