@@ -18,7 +18,7 @@
 // every line here reads 100% and `validate --shippable` passes.
 
 import fs from "node:fs";
-import { SENTINEL, TARGET_LOCALES, assertTargetLocale } from "./lib/constants.mjs";
+import { INAPPLICABLE, SENTINEL, TARGET_LOCALES, assertTargetLocale } from "./lib/constants.mjs";
 import { CONTENT_TYPE_IDS, contentType, localPath, metaPath } from "./lib/content-types.mjs";
 import { corpusItems } from "./lib/english.mjs";
 import { countSentinels, md5File, parseFrontmatter, parseVttNotes, readJson, readText } from "./lib/files.mjs";
@@ -36,6 +36,9 @@ function coverageFor(locale, typeIds) {
     let done = 0;
     let stale = 0;
     let missing = 0;
+    // Outside the fraction: an `∅` key is unreachable in this language, so it is
+    // neither done nor missing and counting it either way misreports coverage.
+    let inapplicable = 0;
 
     for (const item of corpusItems(typeId)) {
       const target = localPath(typeId, locale, item.slug);
@@ -50,6 +53,7 @@ function coverageFor(locale, typeIds) {
         const counts = countSentinels(readJson(target));
         total += counts.total;
         done += counts.translated;
+        inapplicable += counts.inapplicable;
 
         if (type.staleness === "sibling") {
           const meta = fs.existsSync(metaPath(target)) ? readJson(metaPath(target)) : null;
@@ -71,7 +75,7 @@ function coverageFor(locale, typeIds) {
       }
     }
 
-    rows.push({ type: typeId, unit: UNITS[type.format] ?? "items", total, done, stale, missing });
+    rows.push({ type: typeId, unit: UNITS[type.format] ?? "items", total, done, stale, missing, inapplicable });
   }
 
   return rows;
@@ -104,6 +108,8 @@ function main() {
     }
     const stubbed = rows.filter((row) => row.unit === "keys").reduce((sum, row) => sum + (row.total - row.done - row.missing), 0);
     console.log(`  ${stubbed} catalog keys still "${SENTINEL}"${stubbed === 0 ? "" : "  (not shippable until 0)"}`);
+    const inapplicable = rows.reduce((sum, row) => sum + (row.inapplicable ?? 0), 0);
+    if (inapplicable > 0) console.log(`  ${inapplicable} catalog keys "${INAPPLICABLE}" (unreachable in this language, never publishable)`);
   }
   console.log("");
 }
