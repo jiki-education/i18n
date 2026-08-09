@@ -2,71 +2,71 @@
   "tasks": {
     "findGuestTable": {
       "name": "Trova il tavolo dell'ospite",
-      "description": "Scrivi una funzione che prenda la lista dei nomi completi degli invitati, la lista corrispondente dei nomi dei tavoli e l'ospite in arrivo annunciato con un appellativo ed un cognome. Restituisci il nome del tavolo a cui è seduto quell'ospite, oppure `\"No table found\"` se non è nel piano dei posti a tavola."
+      "description": "Scrivi una funzione che riceva la lista dei nomi completi degli invitati, la lista corrispondente dei nomi dei tavoli e l'ospite in arrivo, indicato con il titolo e il cognome. Restituisci il nome del tavolo a cui è assegnato quell'ospite, oppure `\"No table found\"` se non compare nello schema dei posti a tavola."
     },
     "solveTightly": {
-      "name": "Risolvilo in modo compatto",
-      "description": "Bonus: questo può essere scritto in modo molto più compatto di quanto potresti aspettarti. Riesci a far stare l'intera soluzione in una manciata di righe?"
+      "name": "Risolvilo in modo conciso",
+      "description": "Bonus: questo può essere scritto in modo molto più conciso di quanto potresti aspettarti. Riesci a far stare l'intera soluzione in una manciata di righe?"
     }
   },
   "scenarios": {
     "emptyList": {
-      "name": "Piano dei posti vuoto",
-      "description": "Nessuno è seduto da nessuna parte quando il piano è vuoto."
+      "name": "Schema dei posti vuoto",
+      "description": "Nessuno è seduto da nessuna parte quando lo schema è vuoto."
     },
     "nameMissing": {
-      "name": "Brad viene respinto",
-      "description": "Il nome non è nel piano dei posti a tavola."
+      "name": "Brad viene mandato via",
+      "description": "Il nome non è nello schema dei posti a tavola."
     },
     "namePresent": {
       "name": "Brad viene accompagnato al suo tavolo",
-      "description": "Brad Pitt è nel piano, quindi il signor Pitt ottiene il suo tavolo."
+      "description": "Brad Pitt è nello schema dei posti, quindi gli viene assegnato il suo tavolo."
     },
     "differentHonorific": {
-      "name": "Cavaliere del regno",
-      "description": "Un appellativo diverso, ed un ospite che non è il primo nel piano."
+      "name": "Cavaliere del Regno Unito",
+      "description": "Un titolo diverso e un ospite che non occupa il primo posto nello schema dei posti."
     },
     "bondSeated": {
-      "name": "Il signor Bond, presumo",
-      "description": "James Bond è nel piano."
+      "name": "Dunque lei è il signor Bond, immagino.",
+      "description": "James Bond è nello schema dei posti."
     },
     "bondNotSeated": {
-      "name": "Hmmm... il signor Bond, presumo",
-      "description": "Solo Jason Bourne è nel piano, non James Bond."
+      "name": "Hmmm... dunque lei è il signor Bond, immagino.",
+      "description": "Solo Jason Bourne è nello schema dei posti, non James Bond."
     },
     "partialSurname": {
-      "name": "Non proprio il signor Pitt",
-      "description": "Né Ada Spitt né Hugo Ross-Pitt sono il signor Pitt, quindi non ha un posto qui."
+      "name": "Non è il signor Pitt",
+      "description": "Né la signora Ada Spitt né il signor Hugo Ross-Pitt sono il signor Pitt, quindi non hanno un posto qui."
     },
     "lloydWebber": {
-      "name": "Che ne dici di un barone?",
+      "name": "E se fosse un barone?",
       "description": "Il barone Lloyd Webber ha un cognome composto da due parole."
     },
     "markWebber": {
-      "name": "Mark è il barone?",
-      "description": "Un altro Webber non conta: il cognome deve corrispondere per intero."
+      "name": "Mark è un barone?",
+      "description": "Un'altra persona con il cognome Webber non vale: il cognome deve essere identico."
     },
     "formalDinnerBonusLineCount": {
-      "name": "Pulito ed ordinato: lord Doyle",
-      "description": "Lo stesso piano dei posti di prima, ma questa volta la tua soluzione deve stare in un numero molto più piccolo di righe."
+      "name": "La persona pulita e ordinata è Lord Doyle.",
+      "description": "Lo stesso schema dei posti di prima, ma questa volta devi scrivere la soluzione in molte meno righe."
     }
   },
   "hints": {
     "twoLists": {
       "question": "Come sono collegate le due liste tra loro?",
-      "answer": "Sono una coppia. Il primo invitato siede al primo tavolo, il secondo al secondo, e così via. Quindi non basta sapere *che* un invitato è nel piano: devi sapere *dove* si trova nel piano."
+      "answer": "Sono una coppia. Il primo invitato siede al primo tavolo, il secondo al secondo, e così via. Quindi non basta sapere *che* un invitato è nello schema dei posti: devi sapere *dove* si trova nello schema dei posti."
     },
     "comparingNames": {
-      "question": "L'ospite dice «Mr Pitt» ma il piano dice «Brad Pitt». Come faccio a confrontarli?",
-      "answer": "Quelle due stringhe non saranno mai uguali, quindi un confronto diretto non ti porterà da nessuna parte. Pensa a quale parte di ciò che l'ospite ha annunciato appare effettivamente nel piano, ed in quale punto della voce del piano ti aspetteresti di trovarla."
+      "question": "L'ospite si presenta come \"Mr Pitt\", ma nello schema dei posti compare \"Brad Pitt\". Come faccio a capire che sono la stessa persona?",
+      "answer": "Le due stringhe non saranno mai identiche, quindi un confronto diretto non serve. Devi capire quale parte del nome annunciato dall'ospite compare davvero nello schema dei posti e in quale punto della voce dello schema ti aspetteresti di trovarla."
     },
     "lookalikeSurnames": {
       "question": "Un cognome potrebbe corrispondere all'ospite sbagliato?",
-      "answer": "Assolutamente sì. Leggi «Ada Spitt» e «Hugo Ross-Pitt» ad alta voce, e poi pensa al signor Pitt. Chiediti che cosa rende un cognome un vero cognome su quella riga, piuttosto che solo alcune lettere che si trovano per caso alla fine."
+      "answer": "Assolutamente sì. Leggi «Ada Spitt» e «Hugo Ross-Pitt» ad alta voce, e poi pensa al signor Pitt. Chiediti che cosa, in quella riga, identifica davvero il cognome, invece di prendere semplicemente delle lettere che capitano alla fine."
     },
     "noMatch": {
-      "question": "Cosa devo restituire quando nessuno corrisponde?",
-      "answer": "La stringa `\"No table found\"`, esattamente come scritta. La parte più difficile è capire quando puoi dirlo. Se hai controllato il primissimo invitato nel piano e non è quello giusto, puoi già sapere con certezza che non è seduto da qualche parte?"
+      "question": "Che cosa devo restituire quando nessun nome corrisponde?",
+      "answer": "Devi restituire la stringa `\"No table found\"`, esattamente così com'è. La parte difficile è capire quando puoi farlo. Se controlli il primo invitato nello schema e non è quello giusto, puoi già dire con certezza che l'ospite non è seduto da nessuna parte?"
     }
   },
   "checks": {
