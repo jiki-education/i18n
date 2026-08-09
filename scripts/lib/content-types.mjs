@@ -109,7 +109,7 @@ export const CONTENT_TYPES = {
 
   "exercise-messages": {
     label: "exercise message catalog",
-    howto: "exercise-messages",
+    howto: ["exercise", "exercise-messages"],
     format: "catalog",
     slugged: true,
     exerciseScoped: true,
@@ -161,7 +161,7 @@ export const CONTENT_TYPES = {
 
   "exercise-category": {
     label: "exercise family base catalog",
-    howto: "exercise-messages",
+    howto: ["exercise", "exercise-messages"],
     format: "catalog",
     slugged: true,
     staleness: "sibling",
