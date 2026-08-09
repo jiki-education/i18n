@@ -1,5 +1,5 @@
 ---
-title: "Feu tricolore"
+title: "Feux tricolore"
 description: "Dessine un feu tricolore en utilisant des variables pour la position et la taille."
 en_md5: 716484ce59befe362bbc13b364265362
 ---
