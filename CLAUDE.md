@@ -83,7 +83,7 @@ Read [ENGLISH-SOURCE.md](./ENGLISH-SOURCE.md) first; this is the summary.
 - **`scripts/lib/english.mjs` is the only thing that resolves a path to English**, and its
   `SOURCE_REPOS` is the list of repos it resolves. A content type names its `sourceRepo` and
   defaults to the front-end. Order per repo: `--source-repo=`, that repo's env override
-  (`JIKI_SOURCE_REPO`, `JIKI_VIDEOS_REPO`), `.source/<repo>`, a sibling checkout. Locally,
+  (`JIKI_SOURCE_REPO`, `JIKI_VIDEOS_REPO`, `JIKI_API_REPO`), `.source/<repo>`, a sibling checkout. Locally,
   `npm run source:checkout [-- --source=videos]` fetches one, shallow and sparse over the
   directories English lives in. In CI it is an `actions/checkout` step with the same destination.
 - **On a PR, English is the commit the branch pins** with an `English-Ref: <repo>@<sha>` commit
@@ -194,7 +194,7 @@ Shared helpers live in `scripts/lib/`.
 | `stub.mjs` | Brings every catalog in the corpus to full key parity with English, sentinel-filling anything untranslated and `∅`-filling any plural key the language cannot reach. Existing values are reproduced byte for byte, and an empty object in English stays an empty object. An explicit `--type`/`--slug` seeds an item the corpus does not hold yet. |
 | `validate.mjs` | Key parity, ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the R2 key guard. Stamps on success. Exit 1 on any ERROR. |
 | `publish.mjs` | Builds the content-hashed artifacts, their pointers and `dist/sync.sh`. Omits every `∅` key from the bytes it writes. Publishes whatever is on `main` and records what is outstanding (remaining `�` sentinels, prose untranslated by one of the three conventions, partial corpora) in the completeness object. Refuses any English R2 key, with no override. `--out-dir=<path>` writes the same tree into a front-end checkout instead, for local dev. |
-| `coverage.mjs` | Per-locale translated / stale / missing / sentinel counts, per content type, with `∅` keys reported outside the fraction. `--json` for machines. |
+| `coverage.mjs` | Per-locale translated / stale / missing / sentinel counts, per content type, with `∅` keys reported outside the fraction. `--json` for machines. Also reports the two bodies of copy that are still translated in the api repo (see below), so one run answers "is this language complete?" for everything. It reports and never gates: `validate --shippable` is the gate. |
 | `test.mjs` | The assertions guarding logic a mistake in would only surface on R2, above all the exercise family merge and its key order. Plain `node:assert`, no framework, non-zero exit on failure. `pnpm test`, and part of `pnpm check`. |
 | `verify-renderer.mjs` | Proves this repo's prose pipeline and the front-end's produce identical bytes. Takes the front-end's OWN Markdown, renders it through this repo's publish path, and asserts the hash equals the filename the front-end's generator wrote, across the whole concept corpus. |
 
@@ -209,6 +209,27 @@ Shared helpers live in `scripts/lib/`.
   item-specific added to the front of the prompt throws that away.
 - **One item, one call, no self-review.** The mechanical problems a review pass would catch are
   `validate`'s job, and the judgement ones do not survive a model grading its own output.
+
+## The api repo's copy, in coverage only
+
+Two bodies of user-facing copy are authored and translated in the `api` repo rather than here: the
+**level milestone emails** (`db/seeds/curriculum.json` → `db/seeds/level_translations/<locale>.json`)
+and the **mailer / message YAML** (`config/locales/**/<name>.en.yml` → `<name>.<locale>.yml`).
+Neither has been migrated to this repo yet. That is a known gap awaiting a migration, not the
+design, and until it closes a language's completeness cannot be read off `locales/` alone.
+
+- **`coverage.mjs` reports them, and nothing else touches them.** `validate`, `publish`, `stub` and
+  `translate` own `locales/`; the api's own test suite guards its seeds and its locale parity.
+  `scripts/lib/api-copy.mjs` is the only reader, and it only ever reads.
+- **Coverage never gates.** No api checkout, no `main` ref, a file the checkout lacks: each is a row
+  with a note and a total of 0, which reads as "not measured" rather than as done or missing.
+- **Read at `main`, never at the working tree.** A local api checkout is usually on a feature
+  branch, and a branch reports copy that does not exist yet.
+- **The file is named with RAILS' spelling of the locale.** The list comes from the api's own
+  `config/initializers/i18n.rb`, matched case-insensitively with `_` and `-` treated alike, so
+  `pt-pt` here and `pt-PT` there stay one locale without either side assuming the other's names.
+- **Presence and completeness only**, the same questions every other row answers. A key or an email
+  is done when it exists, is non-empty and is not the sentinel. There is no quality check here.
 
 ## R2 path conventions
 
