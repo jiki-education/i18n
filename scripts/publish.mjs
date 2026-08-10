@@ -115,6 +115,7 @@ import {
 import {
   CONTENT_TYPES,
   FAMILY_TYPE_ID,
+  POST_TYPE_IDS,
   contentType,
   deriveFamily,
   listItems,
@@ -125,6 +126,7 @@ import { mergeExerciseCatalogs } from "./lib/families.mjs";
 import { contentHash, flatten, parseFrontmatter, readJson, readText } from "./lib/files.mjs";
 import { findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
+import { buildPostCopy } from "./lib/post-copy.mjs";
 import { parseArgs } from "./lib/args.mjs";
 import {
   buildSearch,
@@ -143,16 +145,6 @@ import {
 // path with two destinations rather than two code paths: the local tree is only
 // worth having if it is the tree that would have been uploaded, byte for byte.
 let DIST = path.join(REPO_ROOT, "dist");
-
-/**
- * Every post type published from here, in content-types.mjs order.
- *
- * Project episodes are in this list like anything else. Their slug is two parts
- * ("<project>/<uuid>") rather than one, and that is the whole of the difference:
- * content-types.mjs expresses it with slugDepth, so nothing downstream special
- * cases them.
- */
-const POST_TYPE_IDS = ["blog", "articles", "guides", "project-episodes"];
 
 /** Every markdown type, which is every type the untranslated-prose rules apply to. */
 const PROSE_TYPE_IDS = ["concept", "exercise-instructions", ...POST_TYPE_IDS];
@@ -504,21 +496,20 @@ async function publishLocale(locale, { exportSources }) {
     manifest.conceptCopy = emit(artifacts, (hash) => `/static/concepts/${locale}/copy-${hash}.json`, sorted);
   }
 
-  // --- posts: blog, articles and guides, rendered to HTML ---------------------
+  // --- posts: blog, articles, guides and project episodes, rendered to HTML ---
   //
   // The second renderer pipeline, and the only one here that needs image bytes.
   // The resolver takes a source-repo checkout lazily, so a corpus whose posts
   // reference no images publishes without one.
   const resolveImage = makeImageResolver(() => englishRepo());
 
-  // The translated half of the post metadata index. Its other half (date,
-  // author, cover image, featured/listed/premium/order) comes from English
-  // config.json, does not vary by language, and is published by the front-end as
-  // one locale-invariant object. The two are merged at read time, which is what
-  // lets a locale published from here appear in listings and carry SEO metadata
-  // with no front-end build. Project episodes have no listing index of their own,
-  // so they contribute HTML only.
-  const postCopy = { blog: {}, articles: {}, guides: {} };
+  // Every post type contributes both halves of what a reader sees: the rendered
+  // HTML behind the link, and the listing copy that IS the link. Project
+  // episodes are listed on their project's page exactly as a blog post is listed
+  // on the blog index, so they contribute both, and their two-part slug is the
+  // key like any other. scripts/lib/post-copy.mjs holds the index and says why
+  // it is derived from POST_TYPE_IDS rather than accumulated here.
+  const postEntries = [];
 
   for (const typeId of POST_TYPE_IDS) {
     manifest[typeId] = {};
@@ -533,22 +524,17 @@ async function publishLocale(locale, { exportSources }) {
       );
       manifest[typeId][item.slug] = hash;
 
-      if (postCopy[typeId]) {
-        postCopy[typeId][item.slug] = {
-          title: data.title,
-          excerpt: data.excerpt ?? "",
-          seo: data.seo ?? { description: data.excerpt ?? "", keywords: [] },
-          tags: data.tags ?? [],
-          readingTime: await estimateReadingTime(body, resolveImage),
-          contentHash: hash
-        };
-      }
+      postEntries.push({
+        typeId,
+        slug: item.slug,
+        data,
+        readingTime: await estimateReadingTime(body, resolveImage),
+        contentHash: hash
+      });
     }
   }
 
-  // Sorted, so the bytes move only when the copy does.
-  const sortKeys = (obj) => Object.fromEntries(Object.keys(obj).sort().map((k) => [k, obj[k]]));
-  for (const type of Object.keys(postCopy)) postCopy[type] = sortKeys(postCopy[type]);
+  const postCopy = buildPostCopy(POST_TYPE_IDS, postEntries);
   if (Object.values(postCopy).some((entries) => Object.keys(entries).length > 0)) {
     manifest.postCopy = emit(artifacts, (hash) => `/static/content/copy/${locale}/copy-${hash}.json`, postCopy);
   }
