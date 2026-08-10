@@ -1,7 +1,7 @@
 ---
-title: "Nyckelordet `and`"
+title: "Operatorn `&&` (och)"
 description: "Kombinera två villkor med `&&` så att hela villkoret bara är sant när båda delarna är sanna."
-en_md5: 6ea0de65a81d8e5c8d2eb89f3db29705
+en_md5: cef8d76c4235e85573c3eeede294ab72
 ---
 
 Om jag bad dig att bara öppna dörren om någon är över 20 år skulle du nog veta precis vad du skulle göra. Men om du i stället behövde kolla om någon är över 20 _och_ har rätt outfit på sig? Då behöver du kolla två olika villkor på en gång. Hur skulle du göra det?

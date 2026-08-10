@@ -1,7 +1,7 @@
 ---
-title: "Loopa igenom strängar"
+title: "Loopa igenom strängar med `for ... of`"
 description: "Med en `for of`-loop går du igenom varje bokstav i en sträng och gör något med var och en i tur och ordning."
-en_md5: 584ac0a187a9e5244b84f0fd417494f3
+en_md5: 09f399cc3f52b89380d3ed23fc6be513
 ---
 
 Du kan komma åt en enskild bokstav i en sträng med hakparenteser. Nu ska vi titta på hur du loopar igenom en sträng och plockar ut en bokstav i taget.

@@ -1,7 +1,7 @@
 ---
-title: "Else if"
+title: "Kedjor av `else if`-grenar"
 description: "Kedja `else if`-grenar så att flera villkor kontrolleras i tur och ordning och bara det första blocket vars villkor är sant körs."
-en_md5: 5e1c9b2e77abbd41708f4c33b9aabd8f
+en_md5: 64274945347d47d67baf3378cf219c9b
 ---
 
 Du har sett hur `if` och `else` ger dig två vägar: gör en sak när ett villkor är sant, och gör en annan när det är falskt. Men vad gör du när du har fler än två möjligheter?

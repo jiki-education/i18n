@@ -1,7 +1,7 @@
 ---
-title: "Rest"
+title: "Räkna ut rest med operatorn `%`"
 description: "Operatorn `%` ger dig det som blir över efter en division och används ofta för att kolla om ett tal är jämnt eller udda."
-en_md5: fe49222bd3f3a019dd9f74a960c5dede
+en_md5: 4955abecb626b8eff02ee7484e2065dd
 ---
 
 Hittills har vi använt addition, subtraktion, multiplikation och division när vi räknar. Nu ska vi introducera en till: restoperatorn (_remainder_ på engelska).

@@ -1,7 +1,7 @@
 ---
-title: "Else"
+title: "Nyckelordet `else`"
 description: "Lägg till en `else`-gren efter en `if`-sats så att ett annat kodblock körs när villkoret visar sig vara falskt."
-en_md5: 4dd08e94d86dd11cd54793cf64008e3d
+en_md5: a3d7b0672bd9c022675831044c5610ed
 ---
 
 Med `if`-satser kan du kolla villkor och köra kod bara när något är sant. Nu ska vi presentera `if`-satsens trogna partner: `else`.

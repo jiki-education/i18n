@@ -1,7 +1,7 @@
 ---
-title: "Nyckelordet `or`"
+title: "Operatorn `||` (eller)"
 description: "Kombinera två villkor med `||` så att hela villkoret är sant när minst en av delarna är sann."
-en_md5: 4c9ebc144707760d944e0cddfac5a561
+en_md5: e7bc3f103a37719cdf3a77920d09e24e
 ---
 
 Vi kan också använda `or`, och tyvärr finns det inte här heller något trevligt or-nyckelord i JavaScript. I stället måste vi skriva de här två lodstrecken (`|`) bredvid varandra, och det betyder eller. Det ser konstigt ut, men det är det egentligen inte. Du vänjer dig.

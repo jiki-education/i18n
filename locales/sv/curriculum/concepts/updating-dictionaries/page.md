@@ -1,7 +1,7 @@
 ---
-title: "Ändra uppslagstabeller"
+title: "Uppdatera uppslagstabeller"
 description: "Använd `dict[key] = value` för att uppdatera befintliga poster eller lägga till nya, plus metoden `has` för att kolla nycklar."
-en_md5: 254912c3c672aec40b2729cd005fb1a7
+en_md5: 5dfff7e37d863711be783b2fbe0873a4
 ---
 
 Du vet hur du skapar en uppslagstabell och hämtar värden ur den. Men vad händer om datan ändras? Någon gång blir jag ju äldre. Då är jag inte `42` längre, utan `43`.

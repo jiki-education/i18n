@@ -1,7 +1,7 @@
 ---
-title: "Strängar"
+title: "Introduktion till strängar"
 description: "Textbitar inom citattecken (en bokstav, ett ord, en mening eller ett helt stycke) som Jiki skriver på papper."
-en_md5: 89b04f3849f9388a46734924f35c913c
+en_md5: 4947f6ac1b3eb8eb85d2dea9b82ffc40
 ---
 
 När du vill använda ett tal kan du helt enkelt skriva talet, så förstår Jiki vad du menar. Men hur gör du om du vill använda en bokstav, ett ord eller en mening? Tänk dig till exempel att funktionen `rectangle` (rektangel) eller funktionen `circle` (cirkel) hade ett extra inkast där du angav färgen. Hur skulle vi skriva färgen för att stoppa in den i maskinen? Om vi bara skriver ordet `green` (grön) eller `blue` (blå) tror Jiki att vi menar en maskin på hyllorna, och då säger han: ”Det finns ingen maskin som heter green. Jag vet inte vad jag ska göra.”

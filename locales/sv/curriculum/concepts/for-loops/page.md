@@ -1,7 +1,7 @@
 ---
-title: "For-loopar"
+title: "Så fungerar `for`-loopar"
 description: "En loop med tre delar (en initialisering, ett villkor och en ökning) som ger dig full kontroll över iterationen."
-en_md5: e96f2e5a4106a88cfbca449c93a26108
+en_md5: 0ad4155ded18c2df27d29e5355bd0532
 ---
 
 Du kanske minns att repeat-loopen egentligen inte finns i JavaScript. Den är bara något vi lagt till för att göra livet lite enklare för dig medan vi kommer igång.

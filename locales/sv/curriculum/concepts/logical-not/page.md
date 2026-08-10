@@ -1,7 +1,7 @@
 ---
-title: "Operatorn `not`"
+title: "Operatorn `!` (inte)"
 description: "Så använder du `!` för att vända ett booleskt värde: sant blir falskt och falskt blir sant, praktiskt när du vill växla något eller vända på en kontroll."
-en_md5: 842c4a4e9cb1fd11c4318a1508296e27
+en_md5: 7cffbd1fa13317b3d6e6a71415413041
 ---
 
 Hittills har vi använt tre likhetstecken när vi har jämfört saker för att se om de är lika. Men ibland vill vi i stället kolla om saker _inte_ är lika, och då använder vi ett utropstecken följt av två likhetstecken. Inom programmering betyder ett utropstecken (eller _bang_, som jag tror att våra amerikanska vänner kallar det) i allmänhet ”inte”. Så tänk dig att du jobbar i en butik och att ledningen har bestämt att inga discokläder släpps in.

@@ -1,7 +1,7 @@
 ---
-title: "repeat-loopen"
+title: "`repeat`-loopen"
 description: "Med nyckelordet `repeat` säger du åt Jiki att köra koden mellan klammerparenteserna ett visst antal gånger."
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 Hittills har allt varit skrivet linjärt: Jiki följer varje instruktion i ordning, uppifrån och ner.

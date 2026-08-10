@@ -1,7 +1,7 @@
 ---
-title: "Repeat utan antal"
+title: "`repeat` utan antal"
 description: "Om du lämnar parenteserna i en repeat-loop tomma fortsätter Jiki tills något annat säger åt honom att stanna."
-en_md5: 5902e86c82b7bfe9ca519f9bdf8650ad
+en_md5: f1f98b46bedb1b5abc72aa1b856ee8ae
 ---
 
 Hittills, när du har använt repeat-loopen, har du alltid angett ett tal som säger hur många gånger den ska upprepas. Upprepa fem gånger, 10 gånger, 40 gånger. Ibland har du använt en variabel för att göra det. Men du har alltid talat om för Jiki exakt hur många gånger loopen ska köras. Ibland vet vi dock inte i förväg hur många gånger vi behöver upprepa. Tänk på labyrinten. Långt tillbaka i början av kursen löste du labyrinten genom att skriva ut varje drag för sig. Du kunde se labyrinten, räkna stegen och skriva exakt rätt antal drag.
