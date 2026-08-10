@@ -1,7 +1,7 @@
 ---
-title: "String"
+title: "Mengenal string"
 description: "Potongan teks yang diapit tanda kutip (satu huruf, satu kata, satu kalimat, atau satu paragraf utuh) yang ditulis Jiki di atas kertas."
-en_md5: 89b04f3849f9388a46734924f35c913c
+en_md5: 4947f6ac1b3eb8eb85d2dea9b82ffc40
 ---
 
 Saat kamu ingin menggunakan angka, kamu bisa langsung menuliskan angka itu, dan Jiki tahu maksudmu. Tapi bagaimana kalau kamu ingin menggunakan huruf, kata, atau kalimat? Misalnya, pada fungsi `rectangle` (persegi panjang) atau fungsi `circle` (lingkaran), bagaimana kalau ada input tambahan untuk menentukan warnanya? Bagaimana cara kita menuliskan warna itu supaya bisa dimasukkan ke dalam mesin? Kalau kita hanya menulis kata `green` (hijau) atau `blue` (biru), Jiki akan mengira kita sedang menunjuk sebuah mesin di rak, dan dia akan berkata, “Tidak ada mesin bernama green. Aku tidak tahu harus berbuat apa.”

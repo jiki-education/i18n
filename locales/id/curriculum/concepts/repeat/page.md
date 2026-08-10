@@ -1,7 +1,7 @@
 ---
-title: "Perulangan repeat"
+title: "Perulangan `repeat`"
 description: "Menggunakan kata kunci `repeat` untuk memberi tahu Jiki agar menjalankan kode di dalam tanda kurung kurawal sebanyak jumlah yang ditentukan."
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 Sejauh ini, semuanya ditulis secara linear: Jiki mengikuti setiap instruksi secara berurutan dari atas ke bawah.
