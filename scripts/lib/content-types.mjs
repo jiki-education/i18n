@@ -172,13 +172,13 @@ export const CONTENT_TYPES = {
     // a learner reads on the projects index before opening anything, and there is
     // one of it per locale rather than one per item, so it is unslugged.
     //
-    // It exists because that copy used to be authored LOCALE-KEYED beside the
-    // English, as `"title": {"en": "..."}` in each project's config.json, and the
-    // front-end derived its locale set from `Object.keys(title)`. Nothing but
-    // `en` was ever in there, so every non-English project listing rendered
-    // empty, and the shape invited translations into the front-end, which is the
-    // one place they may never live. English moves to a plain messages.json
-    // beside the projects; every translation of it lives here.
+    // A project's translated copy lives HERE and never in the front-end. The
+    // front-end authors English only, as a plain messages.json beside the
+    // projects; it holds no locale keys, and a project's config.json holds no
+    // copy at all. Anything shaped like `"title": {"en": "...", "de": "..."}`
+    // over there is an invitation to put translations in the one place they may
+    // never live, and a locale set derived from such a map is a set the
+    // front-end must not be able to compute.
     //
     // `tags` is an ARRAY, and the only array in any catalog this repo holds.
     // scripts/lib/files.mjs § flatten says what that costs and why an array is a
