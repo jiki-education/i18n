@@ -1,5 +1,5 @@
 ---
-title: "Continue"
+title: "La palabra clave `continue`"
 description: "Uso de la palabra clave `continue` dentro de un bucle para omitir el resto de esta iteración y saltar directamente a la siguiente iteración."
 en_md5: 6c3f7483826e27d44d6c404cc9f621dd
 ---

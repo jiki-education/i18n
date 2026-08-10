@@ -1,5 +1,5 @@
 ---
-title: "Break"
+title: "La palabra clave `break`"
 description: "Cómo usar la palabra clave `break` dentro del cuerpo de un bucle para salir del bucle de inmediato y pasar al código que viene después."
 en_md5: 30148766de67ae467ab1a4852ad35895
 ---

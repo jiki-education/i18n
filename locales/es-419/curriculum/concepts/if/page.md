@@ -1,5 +1,5 @@
 ---
-title: "Condicionales"
+title: "Cómo funcionan las sentencias `if`"
 description: "Usar la palabra clave `if` para ejecutar un bloque de código solo cuando una condición es verdadera, como un portero dejando pasar a la gente."
 en_md5: 8797e078e1ad90b7652373baf6f96f28
 ---
