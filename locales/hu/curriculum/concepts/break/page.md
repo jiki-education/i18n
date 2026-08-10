@@ -1,5 +1,5 @@
 ---
-title: "Break"
+title: "A `break` kulcsszó"
 description: "A `break` kulcsszó használata a ciklus törzsében: azonnal kilépünk a ciklusból, és a ciklus utáni kóddal folytatjuk."
 en_md5: 30148766de67ae467ab1a4852ad35895
 ---

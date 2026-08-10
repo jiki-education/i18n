@@ -1,5 +1,5 @@
 ---
-title: "Continue"
+title: "A `continue` kulcsszó"
 description: "A `continue` kulcsszó használata ciklusban: kihagyjuk az iteráció hátralévő részét, és rögtön a következő iterációra ugrunk."
 en_md5: 6c3f7483826e27d44d6c404cc9f621dd
 ---

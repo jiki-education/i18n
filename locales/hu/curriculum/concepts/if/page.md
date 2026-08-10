@@ -1,5 +1,5 @@
 ---
-title: "Elágazások"
+title: "Az `if` elágazás működése"
 description: "Az `if` kulcsszó használata, hogy egy kódblokk csak akkor fusson le, ha egy feltétel igaz. Olyan, mint amikor a kidobó eldönti, kit enged be."
 en_md5: 8797e078e1ad90b7652373baf6f96f28
 ---
