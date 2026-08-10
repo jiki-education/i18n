@@ -201,6 +201,28 @@ function exclusions() {
  * from the moment the first locale holds a file for it.
  */
 export function corpusItems(typeId) {
+  return partitionEnglish(typeId).inCorpus;
+}
+
+/**
+ * English items of one type that no target locale has begun, and that no
+ * exclusion accounts for.
+ *
+ * The complement of `corpusItems` within English, and the price of the corpus
+ * rule: an item outside the corpus is outside every locale's fraction, so a type
+ * nobody has started reads `0/0` and is indistinguishable from a type everybody
+ * has finished. This is what a reporter says alongside the fraction so the two
+ * states are told apart. It is a count of what exists and is untouched, never a
+ * denominator: putting it in the fraction is the "have you translated everything
+ * that exists" question, which `englishCorpusSize` and publish's completeness
+ * record answer.
+ */
+export function unstartedItems(typeId) {
+  return partitionEnglish(typeId).unstarted;
+}
+
+/** English's items for one type, split by whether the corpus rule admits them. */
+function partitionEnglish(typeId) {
   const type = contentType(typeId);
   const excluded = exclusions();
 
@@ -209,15 +231,15 @@ export function corpusItems(typeId) {
     for (const item of listItems(typeId, locale)) held.add(item.slug ?? "");
   }
 
-  return englishItems(typeId)
-    .filter((item) => held.has(item.slug ?? ""))
-    .filter((item) => !excluded.has(`${typeId}:${item.slug ?? ""}`))
-    .map((item) => ({
-      type: typeId,
-      slug: item.slug,
-      path: englishPath(typeId, item.slug),
-      slugged: type.slugged
-    }));
+  const inCorpus = [];
+  const unstarted = [];
+  for (const item of englishItems(typeId)) {
+    const key = item.slug ?? "";
+    if (excluded.has(`${typeId}:${key}`)) continue;
+    const resolved = { type: typeId, slug: item.slug, path: englishPath(typeId, item.slug), slugged: type.slugged };
+    (held.has(key) ? inCorpus : unstarted).push(resolved);
+  }
+  return { inCorpus, unstarted };
 }
 
 /**

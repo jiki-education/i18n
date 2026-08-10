@@ -16,7 +16,7 @@ npm run source:checkout                  # fetch English (front-end main, shallo
 npm run source:checkout -- --source=videos   # ...and the English subtitle track
 npm run source:checkout -- --source=api      # ...and the api copy coverage reports
 
-node scripts/coverage.mjs                # what is translated, stale, missing
+node scripts/coverage.mjs                # what is translated, stale, missing, never started
 node scripts/validate.mjs all --no-stamp # the CI gate
 node scripts/publish.mjs hu              # build the R2 artifacts into dist/
 ```
@@ -32,6 +32,8 @@ never gates: with no api checkout those rows say so and nothing fails.
 
 Adding an item to the corpus. There is no registry: an explicit `--type`/`--slug` resolves
 against English directly, and the item is in the corpus from the moment a locale holds it.
+Until then it is outside every locale's fraction, and `coverage` says how many such items
+each type has so that never started is never mistaken for finished.
 
 ```bash
 node scripts/stub.mjs all --type=concept --slug=arrays   # sentinel-fill it everywhere
