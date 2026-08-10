@@ -1,7 +1,7 @@
 ---
-title: "Else"
+title: "La palabra clave `else`"
 description: "Agregar una cláusula `else` después de un `if` para que se ejecute un bloque de código diferente cuando la condición resulta ser falsa."
-en_md5: 4dd08e94d86dd11cd54793cf64008e3d
+en_md5: a3d7b0672bd9c022675831044c5610ed
 ---
 
 Los condicionales te permiten verificar condiciones y ejecutar código solo cuando algo es verdadero. Ahora conozcamos al cómplice de `if`, el `else`.

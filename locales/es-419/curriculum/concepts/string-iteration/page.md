@@ -1,7 +1,7 @@
 ---
-title: "Iteración sobre strings"
+title: "Recorrer strings con `for ... of`"
 description: "Cómo usar un bucle `for of` para recorrer cada letra de un string y hacer algo con cada una."
-en_md5: 584ac0a187a9e5244b84f0fd417494f3
+en_md5: 09f399cc3f52b89380d3ed23fc6be513
 ---
 
 Puedes acceder a una sola letra de un string usando corchetes. Ahora vamos a ver cómo recorrer un string, sacando cada letra una por una.

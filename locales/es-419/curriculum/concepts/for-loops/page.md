@@ -1,7 +1,7 @@
 ---
-title: "Bucles `for`"
+title: "Cómo funcionan los bucles `for`"
 description: "Un bucle con tres partes (un inicializador, una condición y un incremento) que te da control total sobre la iteración."
-en_md5: e96f2e5a4106a88cfbca449c93a26108
+en_md5: 0ad4155ded18c2df27d29e5355bd0532
 ---
 
 Quizá recuerdes que el bucle `repeat` en realidad no existe en JavaScript. Es algo que agregamos para facilitarte un poquito la vida mientras arrancamos.

@@ -1,7 +1,7 @@
 ---
-title: "Repetir sin contar"
+title: "Usar `repeat` sin decir cuántas veces"
 description: "Dejar vacíos los paréntesis del bucle `repeat` para que Jiki siga adelante hasta que algo más le diga que se detenga."
-en_md5: 5902e86c82b7bfe9ca519f9bdf8650ad
+en_md5: f1f98b46bedb1b5abc72aa1b856ee8ae
 ---
 
 Hasta ahora, cuando usabas el bucle `repeat`, siempre especificabas un número que dice cuántas veces repetir. Repetir cinco veces, diez veces, cuarenta veces. A veces también has usado una variable para esto. Pero siempre le has dicho a Jiki exactamente cuántas veces repetir el bucle. Sin embargo, a veces no sabemos de antemano cuántas veces repetir. Piensa en el laberinto. Hace mucho, al principio de este curso, resolviste el laberinto escribiendo movimientos específicos. Podías ver el laberinto, contar los pasos y escribir la cantidad correcta de movimientos.

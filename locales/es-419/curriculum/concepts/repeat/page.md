@@ -1,7 +1,7 @@
 ---
-title: "Bucle de repetición"
+title: "El bucle `repeat`"
 description: "Uso de la palabra clave `repeat` para decirle a Jiki que ejecute el código dentro de las llaves un número específico de veces."
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 Hasta ahora, todo se ha escrito de forma lineal: Jiki sigue cada instrucción en orden, de arriba hacia abajo.

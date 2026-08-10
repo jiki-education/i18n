@@ -1,7 +1,7 @@
 ---
-title: "Strings"
+title: "Presentamos los strings"
 description: "Fragmentos de texto entre comillas (una letra, una palabra, una oración o un párrafo entero) que Jiki escribe en un papel."
-en_md5: 89b04f3849f9388a46734924f35c913c
+en_md5: 4947f6ac1b3eb8eb85d2dea9b82ffc40
 ---
 
 Cuando quieres usar un número, literalmente puedes escribirlo y Jiki entiende lo que quieres decir. Pero ¿qué pasa si quieres usar una letra, una palabra o una oración? Por ejemplo, con la función `rectangle` (rectángulo) o la función `circle` (círculo), ¿qué pasaría si tuvieras un argumento extra donde especificaras el color? ¿Cómo escribiríamos el color para meterlo en la máquina? Si simplemente escribimos la palabra verde (_green_ en inglés) o azul (_blue_ en inglés), Jiki va a pensar que nos referimos a una máquina en los estantes y dirá: «No hay ninguna máquina que se llame verde. No sé qué hacer.»

@@ -1,7 +1,7 @@
 ---
-title: "Residuo"
+title: "Usar el operador `%` para obtener residuos"
 description: "Usar el operador `%` para obtener lo que sobra después de una división, y a menudo se usa para comprobar si un número es par o impar."
-en_md5: fe49222bd3f3a019dd9f74a960c5dede
+en_md5: 4955abecb626b8eff02ee7484e2065dd
 ---
 
 Hasta ahora hemos usado la suma, la resta, la multiplicación y la división para hacer operaciones aritméticas. Ahora vamos a presentar uno más, el operador de residuo (_remainder_ en inglés).
