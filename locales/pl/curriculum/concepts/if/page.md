@@ -1,5 +1,5 @@
 ---
-title: "Instrukcje warunkowe"
+title: "Jak działają instrukcje `if`"
 description: "Jak za pomocą słowa kluczowego `if` uruchomić blok kodu tylko wtedy, gdy warunek jest prawdziwy, zupełnie jak ochroniarz wpuszczający gości do środka."
 en_md5: 8797e078e1ad90b7652373baf6f96f28
 ---
