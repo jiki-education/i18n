@@ -296,7 +296,22 @@ async function main() {
   const locales = requested === "all" ? TARGET_LOCALES : [requested];
   locales.forEach(assertTargetLocale);
 
-  const typeIds = args.flags.type ? [contentType(args.flags.type) && args.flags.type] : CONTENT_TYPE_IDS;
+  const requestedTypes = args.flags.type ? [contentType(args.flags.type) && args.flags.type] : CONTENT_TYPE_IDS;
+
+  // A source repo that is not checked out takes its content types out of scope
+  // rather than failing the run. `videos` is private, so CI cannot check it out
+  // on a fork or without a token, and a subtitle checked against no English is
+  // not a failed check, it is an unrun one. An explicit `--type` still resolves
+  // English directly and fails loudly if there is none: asking for a type by name
+  // is asking for it to be checked.
+  const typeIds = args.flags.type
+    ? requestedTypes
+    : requestedTypes.filter((typeId) => {
+        const repo = contentType(typeId).sourceRepo ?? DEFAULT_SOURCE_REPO;
+        if (englishRepo(repo, undefined, { optional: true })) return true;
+        console.log(`skip: ${typeId} (no ${repo} checkout to read English from)`);
+        return false;
+      });
   const stamp = Boolean(args.flags.stamp);
   const shippable = Boolean(args.flags.shippable);
 

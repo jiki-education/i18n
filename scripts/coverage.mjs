@@ -44,7 +44,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { INAPPLICABLE, SENTINEL, TARGET_LOCALES, assertTargetLocale, fail } from "./lib/constants.mjs";
 import { CONTENT_TYPE_IDS, contentType, localPath, metaPath } from "./lib/content-types.mjs";
-import { corpusItems, unstartedItems } from "./lib/english.mjs";
+import { DEFAULT_SOURCE_REPO, corpusItems, englishRepo, unstartedItems } from "./lib/english.mjs";
 import { API_ROW_IDS, apiCoverageFor, apiSourceLine } from "./lib/api-copy.mjs";
 import { countAgainstEnglish, md5File, parseFrontmatter, parseVttNotes, readJson, readText } from "./lib/files.mjs";
 import { parseArgs } from "./lib/args.mjs";
@@ -152,9 +152,16 @@ function main() {
   // `--type=` selects from both sets, because a reader asking for one row does
   // not care which repo it is read from.
   const requestedType = args.flags.type;
-  const typeIds = requestedType ? CONTENT_TYPE_IDS.filter((id) => id === requestedType) : CONTENT_TYPE_IDS;
+  const selectedTypes = requestedType ? CONTENT_TYPE_IDS.filter((id) => id === requestedType) : CONTENT_TYPE_IDS;
+  // A source repo with no checkout drops its types, on the same terms as a
+  // missing api checkout: this script must never exit non-zero, and CI cannot
+  // check out the private `videos` repo at all. The row is absent rather than
+  // reported as zero, which would read as "nothing translated".
+  const typeIds = selectedTypes.filter((id) =>
+    Boolean(englishRepo(contentType(id).sourceRepo ?? DEFAULT_SOURCE_REPO, undefined, { optional: true }))
+  );
   const apiIds = requestedType ? API_ROW_IDS.filter((id) => id === requestedType) : API_ROW_IDS;
-  if (requestedType && typeIds.length + apiIds.length === 0) {
+  if (requestedType && selectedTypes.length + apiIds.length === 0) {
     fail(`unknown content type "${requestedType}". Known: ${[...CONTENT_TYPE_IDS, ...API_ROW_IDS].join(", ")}`);
   }
 
