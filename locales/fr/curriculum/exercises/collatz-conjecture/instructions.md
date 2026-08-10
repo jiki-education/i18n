@@ -21,4 +21,4 @@ Par exemple, en partant de 12 :
 
 En comptant à partir du deuxième nombre (6), il a fallu 9 étapes pour atteindre 1.
 
-Crée une fonction appelée `collatzSteps` (étapes de Collatz) qui prend une entrée, un nombre. Renvoie **le nombre d'étapes** qu'il faut pour aller d'un nombre donné à 1, en suivant les règles de la conjecture de Collatz.
+Crée une fonction appelée `collatzSteps` (étapes de Collatz) qui prend un nombre en entrée. Renvoie **le nombre d'étapes** qu'il faut pour aller d'un nombre donné à 1, en suivant les règles de la conjecture de Collatz.
