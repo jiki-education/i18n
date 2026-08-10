@@ -6,7 +6,7 @@
   "tasks": {
     "scrollAndShoot": {
       "name": "Balaie l'écran et abats chaque alien",
-      "description": "Déplace le canon laser d'un bord à l'autre de l'écran, en vérifiant s'il y a un alien au-dessus de toi pour l'abattre. Ne sors pas de l'écran et ne tire pas quand il n'y a pas d'alien, sinon tu perds ! Les vagues sont de plus en plus chargées."
+      "description": "Déplace le canon laser d'un bord à l'autre de l'écran, en vérifiant s'il y a un alien au-dessus de toi pour l'abattre. Ne sors pas de l'écran et ne tire pas quand il n'y a pas d'alien, sinon tu perds ! Les vagues sont de plus en plus denses."
     }
   },
   "scenarios": {
@@ -42,7 +42,7 @@
     },
     "whenToTurnAround": {
       "question": "Comment savoir quand faire demi-tour ?",
-      "answer": "Garde une variable de direction (par exemple `1` pour la droite, `-1` pour la gauche). Quand la position atteint le bord gauche ou le bord droit, inverse la direction. C'est le même motif de rebond que dans Rainbow Ball."
+      "answer": "Garde une variable de direction (par exemple `1` pour la droite, `-1` pour la gauche). Quand la position atteint le bord gauche ou droit, inverse la direction. C'est le même motif de rebond que dans Rainbow Ball."
     },
     "whenToShoot": {
       "question": "Quand appeler `shoot()` ?",
@@ -55,11 +55,11 @@
   },
   "functions": {
     "moveLeft": {
-      "description": "Déplace le canon laser d'**une position vers la gauche**. Si tu essaies de sortir du bord gauche de l'écran, tu perds la partie !",
+      "description": "Déplace le canon laser d'**une position vers la gauche**. Si tu essaies de te déplacer au-delà du bord gauche de l'écran, tu perds la partie !",
       "category": "Déplacement"
     },
     "moveRight": {
-      "description": "Déplace le canon laser d'**une position vers la droite**. Si tu essaies de sortir du bord droit de l'écran, tu perds la partie !",
+      "description": "Déplace le canon laser d'**une position vers la droite**. Si tu essaies de te déplacer au-delà du bord droit de l'écran, tu perds la partie !",
       "category": "Déplacement"
     },
     "shoot": {
@@ -67,7 +67,7 @@
       "category": "Action"
     },
     "isAlienAbove": {
-      "description": "Renvoie `true` s'il y a un alien juste au-dessus du canon laser, ou `false` sinon. Utilise-la pour vérifier avant de tirer !",
+      "description": "Renvoie `true` si un alien se trouve directement au-dessus du canon laser, `false` dans le cas contraire. Sers-t'en pour vérifier avant de tirer !",
       "category": "Détection"
     }
   }

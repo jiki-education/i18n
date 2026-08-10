@@ -24,7 +24,7 @@
   "tasks": {
     "planTheRescue": {
       "name": "Planifie le sauvetage",
-      "description": "Pour chaque camp, effectue chaque action qu'Annalyn peut mener sans danger : lancer une attaque éclair si le chevalier dort, espionner si au moins une personne est éveillée, faire signe au prisonnier s'il est éveillé et que l'archère dort, et libérer le prisonnier soit grâce au chien (s'il se tient bien), soit en se faufilant elle-même."
+      "description": "Pour chaque camp, effectue chaque action qu'Annalyn peut mener sans danger : lancer une attaque éclair si le chevalier dort, espionner si au moins une personne est éveillée, faire signe au prisonnier s'il est éveillé et que l'archère dort, et libérer le prisonnier soit grâce au chien (s'il se comporte bien), soit en se faufilant elle-même."
     }
   },
   "scenarios": {
@@ -33,8 +33,8 @@
       "description": "Tout le camp dort, mais le chien d'Annalyn fait des bêtises et n'est donc d'aucune aide."
     },
     "allAsleepBehavingDog": {
-      "name": "Tout le monde dort, le chien se tient bien",
-      "description": "Tout le camp dort et le chien d'Annalyn se tient bien."
+      "name": "Tout le monde dort, le chien se comporte bien",
+      "description": "Tout le camp dort et le chien d'Annalyn se comporte bien."
     },
     "knightAwakeNaughtyDog": {
       "name": "Seul le chevalier est éveillé",
@@ -46,24 +46,24 @@
     },
     "archerAndPrisonerAwakeBehavingDog": {
       "name": "L'archère et le prisonnier sont éveillés",
-      "description": "L'archère monte la garde et le prisonnier est éveillé lui aussi. Le chien se tient bien."
+      "description": "L'archère monte la garde et le prisonnier est éveillé lui aussi. Le chien se comporte bien."
     },
     "allAwakeBehavingDog": {
-      "name": "Tout le monde est éveillé, le chien se tient bien",
-      "description": "Tout le camp est bien réveillé. Même si le chien se tient bien, libérer le prisonnier est trop risqué."
+      "name": "Tout le monde est éveillé, le chien se comporte bien",
+      "description": "Tout le camp est bien réveillé. Même si le chien se comporte bien, libérer le prisonnier est trop risqué."
     }
   },
   "hints": {
     "checkCampState": {
       "question": "Comment vérifier l'état du camp ?",
-      "answer": "Tu peux vérifier quatre choses, chacune avec une fonction qui renvoie `true` ou `false` :\n\n- Le chevalier est-il éveillé ? `knightIsAwake()`\n- L'archère est-elle éveillée ? `archerIsAwake()`\n- Le prisonnier est-il éveillé ? `prisonerIsAwake()`\n- Le chien se tient-il bien ? `dogIsBehaving()`"
+      "answer": "Tu peux vérifier quatre choses, chacune avec une fonction qui renvoie `true` ou `false` :\n\n- Le chevalier est-il éveillé ? `knightIsAwake()`\n- L'archère est-elle éveillée ? `archerIsAwake()`\n- Le prisonnier est-il éveillé ? `prisonerIsAwake()`\n- Le chien se comporte-t-il bien ? `dogIsBehaving()`"
     },
     "performActions": {
       "question": "Comment demander à Annalyn d'effectuer chaque action ?",
       "answer": "Il y a quatre actions, chacune avec sa propre fonction :\n\n- Lancer une attaque éclair : `fastAttack()`\n- Espionner le camp : `spy()`\n- Faire signe au prisonnier : `signalPrisoner()`\n- Libérer le prisonnier : `freePrisoner()`"
     },
     "knightAsleep": {
-      "question": "Une attaque éclair exige que le chevalier soit ENDORMI. Comment vérifier ça ?",
+      "question": "Une attaque éclair exige que le chevalier soit ENDORMI. Comment le vérifier ?",
       "answer": "Il n'existe pas de fonction `isAsleep()`, mais être endormi est simplement le contraire d'être éveillé. Utilise `!` pour inverser une condition. Imagine qu'on veuille dire à quelqu'un d'arrêter de manger quand il n'a plus faim, mais qu'on ne dispose que d'une fonction `isHungry()`. On peut l'inverser :\n\n```javascript\nif (!isHungry()) {\n  stopEating()\n}\n```\n\nApplique la même idée pour vérifier que le chevalier dort."
     },
     "spyAnyoneAwake": {
@@ -83,7 +83,7 @@
     "knightIsAwake": "a vérifié si le chevalier était éveillé",
     "archerIsAwake": "a vérifié si l'archère était éveillée",
     "prisonerIsAwake": "a vérifié si le prisonnier était éveillé",
-    "dogIsBehaving": "a vérifié si le chien d'Annalyn se tenait bien",
+    "dogIsBehaving": "a vérifié si le chien d'Annalyn se comportait bien",
     "fastAttack": "a lancé une attaque éclair contre le chevalier",
     "spy": "a espionné le groupe",
     "signalPrisoner": "a fait signe au prisonnier",
@@ -103,7 +103,7 @@
       "category": "Information"
     },
     "dogIsBehaving": {
-      "description": "Renvoie `true` si le chien (un peu polisson) d'Annalyn se tient bien.",
+      "description": "Renvoie `true` si le chien (un peu turbulent) d'Annalyn se comporte bien.",
       "category": "Information"
     },
     "fastAttack": {
@@ -115,7 +115,7 @@
       "category": "Action"
     },
     "signalPrisoner": {
-      "description": "Fait signe au prisonnier avec des chants d'oiseaux.",
+      "description": "Prévient le prisonnier en imitant le chant des oiseaux.",
       "category": "Action"
     },
     "freePrisoner": {

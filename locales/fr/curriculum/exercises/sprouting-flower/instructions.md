@@ -14,7 +14,7 @@ La clé de cet exercice, c'est de construire des relations entre les différents
 
 **Avant de lire la suite des instructions**, prends quelques minutes pour réfléchir à la façon d'y arriver. Note sur un bout de papier les étapes que tu penses devoir suivre.
 
-**Une fois que tu as une solution** qui te convient (ou que tu as abandonné), **fais défiler la page vers le bas** pour voir les instructions.
+**Une fois que tu as une solution** qui te convient (ou que tu as jeté l'éponge), **fais défiler la page vers le bas** pour voir les instructions.
 
 ---
 

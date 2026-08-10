@@ -12,7 +12,7 @@ Comme avant, à chaque déplacement, vérifie s'il y a un alien au-dessus de toi
 
 Le canon laser surchauffe facilement. Tu dois te déplacer entre deux tirs pour le laisser refroidir.
 
-Les vagues sont de plus en plus chargées. Dans la dernière vague, les aliens réapparaissent, donc impossible de savoir à l'avance combien de tirs il te faudra : ta boucle doit continuer à tourner jusqu'à ce qu'il ne reste plus aucun alien.
+Les vagues sont de plus en plus denses. Dans la dernière vague, les aliens réapparaissent, donc impossible de savoir à l'avance combien de tirs il te faudra : ta boucle doit continuer à tourner jusqu'à ce qu'il ne reste plus aucun alien.
 
 Une règle dans cet exercice : pour réussir le dernier scénario, tu ne peux pas utiliser une boucle `repeat` avec une entrée (autrement dit, tu **peux** utiliser `repeat() { ... }`, mais tu **ne peux pas** utiliser `repeat(10) { ... }`).
 
