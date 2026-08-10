@@ -4,7 +4,7 @@ description: "Usare la parola chiave `if` per eseguire un blocco di codice solo 
 en_md5: 8797e078e1ad90b7652373baf6f96f28
 ---
 
-C'è una parola chiave che ci aiuta a dire a Jiki di fare qualcosa solo in certe situazioni. Magari stai scrivendo del codice per sorvegliare l'ingresso di un bar, magari sei un buttafuori, e Jiki deve aprire la porta solo se una persona è vestita in modo adeguato. O magari stai scrivendo del codice in cui tocca a te sventolare la bandiera a scacchi alla fine di una gara, ma Jiki deve sapere che va sventolata solo all'ultimo giro. In situazioni come queste useremo la parola chiave `if`.
+C'è una parola chiave che ci aiuta a dire a Jiki di eseguire del codice solo in certe situazioni. Magari stai scrivendo del codice per sorvegliare l'ingresso di un bar, magari sei un buttafuori, e Jiki deve aprire la porta solo se una persona è vestita in modo adeguato. O magari stai scrivendo del codice in cui tocca a te sventolare la bandiera a scacchi alla fine di una gara, ma Jiki deve sapere che va sventolata solo all'ultimo giro. In situazioni come queste useremo la parola chiave `if`.
 
 <img
   class="concept-image"
@@ -33,7 +33,7 @@ E che aspetto hanno queste condizioni? Di solito sono una specie di confronto (_
 
 Pensa a questi confronti come a proposizioni (_statements_ in inglese) che potresti dire ad alta voce. Tre è minore di cinque. Vero. Sette è minore di due. Falso.
 
-Per scrivere questi confronti usiamo dei simboli. Probabilmente li conosci già dalla matematica. Abbiamo minore, maggiore, minore o uguale, maggiore o uguale, e c'è anche un controllo per vedere se due cose sono la stessa cosa, cioè se sono uguali. Quest'ultimo è un po' diverso da quello a cui sei abituato, perché usiamo tre segni di uguale di fila per verificare se due cose sono uguali o diverse.
+Per scrivere questi confronti usiamo dei simboli. Probabilmente li conosci già dalla matematica. Abbiamo minore, maggiore, minore o uguale, maggiore o uguale, e c'è anche un controllo per vedere se due cose sono le stesse, se sono uguali. Questo è un po' diverso da ciò a cui sei abituato: usiamo tre simboli di uguale consecutivi per controllare se due valori sono identici.
 
 <img
   class="concept-image"
@@ -43,7 +43,7 @@ Per scrivere questi confronti usiamo dei simboli. Probabilmente li conosci già 
   height="400"
 />
 
-Questo ci aiuta a non fare confusione con i momenti in cui impostiamo o aggiorniamo le variabili, dove usiamo un solo segno di uguale per dire "metti questo nella scatola". Ricorda: tre segni di uguale per confrontare.
+Questo ci evita confusione tra l'assegnazione e il confronto: per assegnare un valore usiamo un solo segno uguale, mentre per confrontare due valori usiamo tre segni uguale.
 
 Puoi confrontare anche le stringhe. Quindi `"hello"` uguale a `"hello"`: vero, le due stringhe sono identiche. Ma qui fai attenzione, perché Jiki confronta ogni singolo carattere delle due stringhe, su entrambi i fogli di carta. Quindi `"Hello"` con la H maiuscola non è uguale a `"hello"` con la h minuscola. Sono stringhe diverse. Confrontarle darebbe falso, perché la H maiuscola e la h minuscola sono caratteri diversi.
 
