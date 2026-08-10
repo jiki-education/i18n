@@ -1,7 +1,7 @@
 ---
-title: "Else"
+title: "`else`關鍵字"
 description: "在`if`之後加入`else`子句，這樣當條件為 false 時，就會執行另一個程式區塊。"
-en_md5: 4dd08e94d86dd11cd54793cf64008e3d
+en_md5: a3d7b0672bd9c022675831044c5610ed
 ---
 
 條件式讓你可以檢查條件，並且只有在條件為 true 時才執行程式碼。現在，我們來介紹 if 的好搭檔：`else`。

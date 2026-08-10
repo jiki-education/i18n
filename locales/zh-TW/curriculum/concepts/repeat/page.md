@@ -1,7 +1,7 @@
 ---
-title: "Repeat 迴圈"
+title: "`repeat`迴圈"
 description: "使用`repeat`關鍵字，告訴 Jiki 將大括號內的程式碼執行特定的次數。"
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 到目前為止，所有的程式碼都是以線性的方式撰寫，Jiki 會由上到下依序執行每一個指令。

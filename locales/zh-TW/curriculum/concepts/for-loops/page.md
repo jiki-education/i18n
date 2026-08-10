@@ -1,7 +1,7 @@
 ---
-title: "for 迴圈"
+title: "認識`for`迴圈"
 description: "包含三個部分（初始值設定、條件和遞增）的迴圈，讓你完全掌握疊代過程。"
-en_md5: e96f2e5a4106a88cfbca449c93a26108
+en_md5: 0ad4155ded18c2df27d29e5355bd0532
 ---
 
 你可能還記得，JavaScript 裡其實並沒有 repeat 迴圈。這只是為了讓你在剛開始學習時輕鬆一點，而特別加入的功能喔。

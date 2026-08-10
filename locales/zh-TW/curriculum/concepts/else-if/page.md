@@ -1,7 +1,7 @@
 ---
-title: "Else If"
+title: "使用`else if`串接條件"
 description: "將多個 `else if` 串聯起來，依序檢查數個條件，並只執行第一個條件為 `true` 的程式區塊。"
-en_md5: 5e1c9b2e77abbd41708f4c33b9aabd8f
+en_md5: 64274945347d47d67baf3378cf219c9b
 ---
 
 你已經看過`if`和`else`如何提供兩條路徑：當條件為`true`時做一件事，為`false`時做另一件事。但是，如果你有超過兩種可能性呢？

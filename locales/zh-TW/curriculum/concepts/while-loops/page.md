@@ -1,7 +1,7 @@
 ---
-title: "while 迴圈"
+title: "認識`while`迴圈"
 description: "當某個條件保持為真時，會持續執行的迴圈。"
-en_md5: daef89c6551b1d1cbc0e58668fd368bc
+en_md5: aeceed2abb1434307cfd7c9a0df55c81
 ---
 
 接下來要認識的迴圈是 `while` 迴圈。
