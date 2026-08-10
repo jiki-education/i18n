@@ -1,7 +1,7 @@
 ---
-title: "De repeat-loop"
+title: "De `repeat`-loop"
 description: "Met het sleutelwoord `repeat` vertel je Jiki dat hij de code tussen de accolades een bepaald aantal keren moet uitvoeren."
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 Tot nu toe is alles op een lineaire manier geschreven: Jiki volgt elke instructie op volgorde, van boven naar beneden.

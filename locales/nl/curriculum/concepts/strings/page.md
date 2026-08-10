@@ -1,7 +1,7 @@
 ---
-title: "Strings"
+title: "Kennismaken met strings"
 description: "Stukjes tekst tussen aanhalingstekens (een letter, een woord, een zin of een hele alinea) die Jiki op papier schrijft."
-en_md5: 89b04f3849f9388a46734924f35c913c
+en_md5: 4947f6ac1b3eb8eb85d2dea9b82ffc40
 ---
 
 Als je een getal wilt gebruiken, kun je dat getal gewoon opschrijven en weet Jiki wat je bedoelt. Maar wat als je een letter, een woord of een zin wilt gebruiken? Stel bijvoorbeeld dat de functie `rectangle` (rechthoek) of de functie `circle` (cirkel) een extra invoer had waarin je de kleur opgeeft. Hoe schrijven we die kleur op om die in de machine te stoppen? Als we gewoon het woord `green` (groen) of `blue` (blauw) schrijven, denkt Jiki dat we een machine op de planken bedoelen, en zegt hij: “Er is geen machine die green heet. Ik weet niet wat ik moet doen.”
