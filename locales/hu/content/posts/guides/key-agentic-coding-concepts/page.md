@@ -3,7 +3,7 @@ title: Az agentikus kódolás legfontosabb fogalmai
 excerpt: Modellek, tokenek, kontextusablakok és egyéb ötletek, amelyeket meg kell értened, hogy jól használhasd az AI kódoló ágenseket.
 tags: ["agentic-coding"]
 seo:
-  description: Az agentikus kódolás alapfogalmai kezdőknek magyarázva: mik az AI-modellek és a tokenek, hogyan működnek a kontextusablakok, és miért hibáznak néha az ágensek.
+  description: "Az agentikus kódolás alapfogalmai kezdőknek magyarázva: mik az AI-modellek és a tokenek, hogyan működnek a kontextusablakok, és miért hibáznak néha az ágensek."
   keywords: ["agentikus kódolási fogalmak", "LLM", "tokenek", "kontextusablak", "AI-modellek", "promptok", "hallucinációk"]
 en_md5: d963e01d7934f4003d436029d1808fc8
 ---

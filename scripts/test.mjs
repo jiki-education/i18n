@@ -18,10 +18,12 @@ import { CONTENT_TYPES, CONTENT_TYPE_IDS } from "./lib/content-types.mjs";
 import { isUnreachablePluralKey, parsePluralKey, reachableCategories } from "./lib/plurals.mjs";
 import { deepMerge, mergeExerciseCatalogs } from "./lib/families.mjs";
 import {
+  arrayPaths,
   contentHash,
   countSentinels,
   flatten,
   frontmatterPaths,
+  frontmatterSyntaxIssues,
   frontmatterValue,
   parseFrontmatter,
   parseVttNotes,
@@ -196,6 +198,169 @@ test("a target holding the same empty container is clean, not a wrong-type error
 test("a target that filled English's empty container with a string is an error", () => {
   const issues = checkCatalog({ fns: {} }, { fns: SENTINEL });
   assert.deepEqual(issues, [{ level: ERROR, message: "fns: source is an empty object, target is not" }]);
+});
+
+// ------------------------------------------------------ arrays in a catalog
+
+// Project metadata carries `tags`, the only ARRAY in any catalog this repo
+// holds, and every piece of catalog machinery was written for string leaves.
+// Getting it wrong is not loud: an array is never equal to `�`, so an entirely
+// untranslated `tags` would contribute ZERO gaps to publish's count and let the
+// locale publish as production-ready. flatten descends into it instead, so the
+// sentinel, the checks and the gap count all apply per element. These pin that,
+// and pin that the round trip puts an array back rather than an object.
+
+console.log("\narrays in a catalog:");
+
+const PROJECT_EN = {
+  "build-your-personal-homepage": {
+    title: "Build your Personal Homepage",
+    description: "Join Jeremy as he builds his own homepage from scratch.",
+    tags: ["Agentic Coding", "Git and GitHub", "HTML/CSS/JavaScript Basics"]
+  }
+};
+
+test("a non-empty array is a branch: each element is its own key", () => {
+  assert.deepEqual(flatten({ tags: ["a", "b"] }), { "tags.0": "a", "tags.1": "b" });
+});
+
+test("an empty array is still a leaf, and still structure rather than a gap", () => {
+  assert.deepEqual(flatten({ a: "x", list: [] }), { a: "x", list: [] });
+  assert.deepEqual(stubAgainst({ a: "en", list: [] }, {}), { a: SENTINEL, list: [] });
+});
+
+test("the array paths of a tree are exactly the branches flatten descended into", () => {
+  assert.deepEqual([...arrayPaths(PROJECT_EN)], ["build-your-personal-homepage.tags"]);
+  assert.deepEqual([...arrayPaths({ a: { b: [] }, c: { d: ["x"] } })], ["c.d"]);
+});
+
+test("an array round-trips as an array, not as an object with numeric keys", () => {
+  const tree = { tags: ["a", "b"], seo: { keywords: ["k"] } };
+  assert.deepEqual(unflatten(flatten(tree), arrayPaths(tree)), tree);
+  assert.equal(JSON.stringify(unflatten(flatten(tree), arrayPaths(tree))), '{"tags":["a","b"],"seo":{"keywords":["k"]}}');
+});
+
+test("without the array paths it rebuilds as an object, which is why they are passed", () => {
+  // Not a supported call, pinned so the reason `arrayPaths` exists stays visible.
+  assert.equal(JSON.stringify(unflatten(flatten({ tags: ["a"] }))), '{"tags":{"0":"a"}}');
+});
+
+test("a fresh locale stubs every tag element separately", () => {
+  assert.deepEqual(stubAgainst(PROJECT_EN, {}), {
+    "build-your-personal-homepage": {
+      title: SENTINEL,
+      description: SENTINEL,
+      tags: [SENTINEL, SENTINEL, SENTINEL]
+    }
+  });
+});
+
+test("a translated tag is reproduced byte for byte while its neighbours stay gaps", () => {
+  const target = { "build-your-personal-homepage": { title: "Készítsd el a saját honlapod", tags: ["Ágens kódolás"] } };
+  assert.deepEqual(stubAgainst(PROJECT_EN, target), {
+    "build-your-personal-homepage": {
+      title: "Készítsd el a saját honlapod",
+      description: SENTINEL,
+      tags: ["Ágens kódolás", SENTINEL, SENTINEL]
+    }
+  });
+});
+
+test("an untranslated tag is a COUNTED gap, not an opaque leaf that reads as done", () => {
+  // The bug this whole design exists to prevent. As one leaf, `tags` is never
+  // equal to `�`, so three missing translations counted as one finished key.
+  assert.deepEqual(countSentinels(stubAgainst(PROJECT_EN, {})), {
+    total: 5,
+    stubbed: 5,
+    translated: 0,
+    inapplicable: 0
+  });
+});
+
+test("validate checks each tag element, and a whitespace-padded one is an error", () => {
+  const target = {
+    "build-your-personal-homepage": {
+      title: "T",
+      description: "D",
+      tags: ["Ágens kódolás", " Git és GitHub", "HTML/CSS/JavaScript alapok"]
+    }
+  };
+  assert.deepEqual(checkCatalog(PROJECT_EN, target), [
+    { level: ERROR, message: "build-your-personal-homepage.tags.1: leading or trailing whitespace" }
+  ]);
+});
+
+test("a translation with the wrong number of tags is a key-parity error", () => {
+  const short = { "build-your-personal-homepage": { title: "T", description: "D", tags: ["a", "b"] } };
+  assert.deepEqual(checkCatalog(PROJECT_EN, short), [
+    { level: ERROR, message: "missing key: build-your-personal-homepage.tags.2" }
+  ]);
+  const long = { "build-your-personal-homepage": { title: "T", description: "D", tags: ["a", "b", "c", "d"] } };
+  assert.deepEqual(checkCatalog(PROJECT_EN, long), [
+    { level: ERROR, message: "key not in source: build-your-personal-homepage.tags.3" }
+  ]);
+});
+
+test("a translation that collapsed the array into one string is an error", () => {
+  const joined = { "build-your-personal-homepage": { title: "T", description: "D", tags: "a, b, c" } };
+  assert.deepEqual(checkCatalog(PROJECT_EN, joined).map((i) => i.message).sort(), [
+    "key not in source: build-your-personal-homepage.tags",
+    "missing key: build-your-personal-homepage.tags.0",
+    "missing key: build-your-personal-homepage.tags.1",
+    "missing key: build-your-personal-homepage.tags.2"
+  ]);
+});
+
+test("an array turned into an object has identical key parity, and is still caught", () => {
+  // The one break flatten cannot see: `{"0": …}` flattens to `tags.0` too. It
+  // would publish different bytes, so a different hash, so a URL nothing asks for.
+  const asObject = {
+    "build-your-personal-homepage": { title: "T", description: "D", tags: { 0: "a", 1: "b", 2: "c" } }
+  };
+  assert.deepEqual(checkCatalog(PROJECT_EN, asObject), [
+    { level: ERROR, message: "build-your-personal-homepage.tags: source is an array, target is an object" }
+  ]);
+});
+
+test("an object turned into an array is caught in the same way", () => {
+  const english = { seo: { 0: "a", 1: "b" } };
+  assert.deepEqual(checkCatalog(english, { seo: ["a", "b"] }), [
+    { level: ERROR, message: "seo: source is an object, target is an array" }
+  ]);
+});
+
+test("a correctly translated catalog is clean", () => {
+  const target = {
+    "build-your-personal-homepage": {
+      title: "Készítsd el a saját honlapod",
+      description: "Tarts Jeremyvel, ahogy a nulláról felépíti a saját honlapját.",
+      tags: ["Ágens kódolás", "Git és GitHub", "HTML/CSS/JavaScript alapok"]
+    }
+  };
+  assert.deepEqual(checkCatalog(PROJECT_EN, target), []);
+});
+
+test("the published bytes keep English's key AND element order", () => {
+  // publish emits JSON.stringify of the catalog and names the artifact after its
+  // hash, so element order is part of the URL. Stubbing from a target whose keys
+  // and tags arrived in a different order must still serialise in English's.
+  const scrambled = {
+    "build-your-personal-homepage": { tags: ["z", "y", "x"], description: "D", title: "T" }
+  };
+  assert.equal(
+    JSON.stringify(stubAgainst(PROJECT_EN, scrambled)),
+    '{"build-your-personal-homepage":{"title":"T","description":"D","tags":["z","y","x"]}}'
+  );
+});
+
+test("stubbing is idempotent, so a re-run never moves the published hash", () => {
+  const once = stubAgainst(PROJECT_EN, {});
+  assert.equal(JSON.stringify(stubAgainst(PROJECT_EN, once)), JSON.stringify(once));
+});
+
+test("the stubbed array is a fresh one, not English's own", () => {
+  stubAgainst(PROJECT_EN, {})["build-your-personal-homepage"].tags.push("leaked");
+  assert.equal(PROJECT_EN["build-your-personal-homepage"].tags.length, 3);
 });
 
 // ---------------------------------------------------- the inapplicable key
@@ -555,6 +720,125 @@ test("a field the type does not declare translatable is left alone", () => {
 test("a path English does not have is not demanded of the translation", () => {
   assert.deepEqual(frontmatterIssues('title: "T"\nexcerpt: "E"', 'title: "C"\nexcerpt: "K"'), []);
 });
+
+// ------------------------------------------------- the frontmatter YAML check
+
+// The check that stops a file passing validate and then killing publish.
+//
+// A real Hungarian guide carried an unquoted `seo.description` whose Hungarian
+// text contained a colon followed by a space. This repo's minimal reader splits
+// on the FIRST colon and was perfectly happy; js-yaml, which is what publishing
+// renders with, reads the second `: ` as a second key and throws. So the file
+// validated clean for weeks and then aborted `publish.mjs hu` in the prose phase,
+// with nothing anywhere pointing at the file or the line.
+//
+// Each sample below is checked TWICE: once against `frontmatterSyntaxIssues`, the
+// dependency-free reader that runs when there is no install, and once against
+// js-yaml itself where the install exists. The two verdicts must agree, which is
+// what stops the fallback drifting away from the parser that actually matters.
+
+console.log("\nthe frontmatter YAML check:");
+
+// `valid` means: js-yaml accepts it AND both parsers read the same document.
+// Anything else is a file validate must refuse, whichever half of that it fails.
+const YAML_SAMPLES = [
+  { name: "a quoted value may contain a colon", valid: true, text: 'title: "T"\nseo:\n  description: "Alapfogalmai: mik az AI-modellek"' },
+  {
+    name: "an unquoted colon-space value is refused",
+    valid: false,
+    text: "title: T\nseo:\n  description: Az alapfogalmai kezdőknek magyarázva: mik az AI-modellek és a tokenek"
+  },
+  { name: "a bare URL is fine: its colon has no space after it", valid: true, text: "title: T\nurl: https://jiki.io/x" },
+  { name: "commas and other punctuation in a plain scalar are fine", valid: true, text: "title: Modellek, tokenek és egyéb" },
+  { name: "a value ending in a colon is refused", valid: false, text: "title: Kezdőknek magyarázva:" },
+  { name: "a flow sequence is fine", valid: true, text: 'title: "T"\ntags: ["a", "b"]' },
+  { name: "an unterminated quote is refused", valid: false, text: 'title: "Kezdőknek magyarázva' },
+  { name: "a value opening with a YAML indicator is refused", valid: false, text: "title: *kezdo" },
+  { name: "a duplicated key is refused", valid: false, text: 'title: "A"\ntitle: "B"' },
+  { name: "the same key in two different blocks is not a duplicate", valid: true, text: 'seo:\n  description: "D"\nsummary:\n  description: "S"' }
+];
+
+for (const sample of YAML_SAMPLES) {
+  test(sample.name, () => {
+    const issues = frontmatterSyntaxIssues(`---\n${sample.text}\n---\nBody.\n`);
+    assert.equal(issues.length === 0, sample.valid, sample.valid ? `unexpected: ${issues.join("; ")}` : "expected this to be refused");
+  });
+}
+
+test("a stray second fence is refused: it silently ends the frontmatter", () => {
+  // A real Persian exercise looked exactly like this. Both parsers "succeeded":
+  // js-yaml read an EMPTY document and the minimal reader read the fields anyway,
+  // so publish would have shipped a page with no title and said nothing.
+  const issues = frontmatterSyntaxIssues('---\n---\n\ntitle: "شام رسمی"\nen_md5: abc\n\n---\n\nBody.\n');
+  assert.equal(issues.length > 0, true);
+  assert.match(issues[0], /"---" line inside the frontmatter/);
+});
+
+test("checkProse reports invalid YAML as a blocking ERROR naming the fix", () => {
+  const target = "---\ntitle: T\nseo:\n  description: Alapfogalmai kezdőknek: mik a tokenek\nen_md5: abc\n---\nMás szöveg.\n";
+  const issues = checkProse("Body.", "Más szöveg.", {
+    englishData: parseFrontmatter('---\ntitle: "T"\nseo:\n  description: "D"\n---\nBody.\n').data,
+    targetData: parseFrontmatter(target).data,
+    translatedKeys: ["title", "seo.description"],
+    expectedMd5: "abc",
+    targetRaw: target
+  });
+  const yaml = issues.filter((i) => i.message.startsWith("frontmatter: not valid YAML"));
+  assert.equal(yaml.length, 1, `expected one YAML error, got ${JSON.stringify(issues, null, 2)}`);
+  assert.equal(yaml[0].level, ERROR);
+  assert.match(yaml[0].message, /"seo.description"/);
+  assert.match(yaml[0].message, /Wrap the whole value in double quotes/);
+});
+
+test("a correctly quoted file says nothing about its YAML", () => {
+  const target = '---\ntitle: "T"\nseo:\n  description: "Alapfogalmai kezdőknek: mik a tokenek"\nen_md5: abc\n---\nMás szöveg.\n';
+  const issues = checkProse("Body.", "Más szöveg.", {
+    englishData: parseFrontmatter('---\ntitle: "T"\nseo:\n  description: "D"\n---\nBody.\n').data,
+    targetData: parseFrontmatter(target).data,
+    translatedKeys: ["title", "seo.description"],
+    expectedMd5: "abc",
+    targetRaw: target
+  });
+  assert.deepEqual(issues.filter((i) => i.message.startsWith("frontmatter: not valid YAML")), []);
+});
+
+// ------------------------------------------ ...and the same verdicts from js-yaml
+//
+// The tests above pin what the built-in reader SAYS. This pins that it says the
+// same thing as the parser publishing actually uses, so the fallback cannot
+// quietly drift into a second opinion. Skipped with no install, which is the same
+// condition under which the fallback is all validate has.
+
+const sharedVerdicts = await (async () => {
+  try {
+    const { parseFrontmatterShared } = await import("./lib/prose.mjs");
+    const signature = (data) => frontmatterPaths(data ?? {}).map((leaf) => `${leaf}=${JSON.stringify(frontmatterValue(data, leaf))}`).join("\n");
+    const verdicts = new Map();
+    for (const sample of YAML_SAMPLES) {
+      const text = `---\n${sample.text}\n---\nBody.\n`;
+      try {
+        const shared = await parseFrontmatterShared(text);
+        verdicts.set(sample.name, signature(shared.data) === signature(parseFrontmatter(text).data));
+      } catch {
+        verdicts.set(sample.name, false);
+      }
+    }
+    return verdicts;
+  } catch {
+    return null;
+  }
+})();
+
+if (sharedVerdicts === null) {
+  console.log("\nthe frontmatter YAML check, against js-yaml:\n  skip  no @jiki.io/content-renderer install");
+} else {
+  console.log("\nthe frontmatter YAML check, against js-yaml:");
+  for (const sample of YAML_SAMPLES) {
+    test(`js-yaml agrees: ${sample.name}`, () => {
+      assert.equal(sharedVerdicts.get(sample.name), sample.valid);
+    });
+  }
+}
 
 // ------------------------------------------------------ the staleness stamp
 

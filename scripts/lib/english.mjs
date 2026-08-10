@@ -240,9 +240,22 @@ export function englishItem(typeId, slug) {
  *
  * Every script that walks "everything English defines" goes through this, so the
  * corpus rule and the seed-a-new-item rule live in one place.
+ *
+ * `bootstrap` is how an UNSLUGGED type is named explicitly. A named --slug is
+ * what brings a new slugged item into the corpus, and an unslugged type has no
+ * slug to name, so before this it had no way in at all: `corpusItems` needs some
+ * locale to hold the file already, and the only thing that creates the first one
+ * is the run being asked for. A new unslugged catalog was therefore unstubbable,
+ * and the first file for it had to be written by hand, which is exactly what stub
+ * exists to stop. It stays opt-in and off by default, because the reason the
+ * corpus rule exists is unchanged: a bare `stub all` must never sentinel-fill the
+ * whole English tree into every locale.
  */
-export function scopeItems(typeId, { slug } = {}) {
-  if (!slug) return corpusItems(typeId);
+export function scopeItems(typeId, { slug, bootstrap = false } = {}) {
+  if (!slug) {
+    if (bootstrap && !contentType(typeId).slugged) return [englishItem(typeId, null)];
+    return corpusItems(typeId);
+  }
   // A slug filter cannot match a type that has no slugs, so it excludes them
   // rather than matching them all. `--slug=x` with no `--type` sweeps every
   // type, and the app catalog is not one of them.

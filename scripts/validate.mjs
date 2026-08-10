@@ -67,6 +67,8 @@ import { CONTENT_TYPE_IDS, contentType, listItems, localPath, metaPath } from ".
 import { DEFAULT_SOURCE_REPO, englishPath, englishRepo, scopeItems } from "./lib/english.mjs";
 import {
   countSentinels,
+  frontmatterPaths,
+  frontmatterValue,
   md5File,
   parseFrontmatter,
   parseVttNotes,
@@ -119,7 +121,79 @@ function checkGuards() {
   return issues;
 }
 
-function validateItem({ typeId, locale, slug, stamp, shippable }) {
+// ------------------------------------------ the frontmatter parser cross-check
+//
+// `checkProse` already runs `frontmatterSyntaxIssues`, this repo's own
+// dependency-free reader of what YAML will and will not accept. That is the
+// FLOOR: it runs with no node_modules, which is the point, but it is a second
+// opinion and a second opinion can drift from the first.
+//
+// The one that matters is the parser that actually gates publishing:
+// @jiki.io/content-renderer, which is js-yaml, and which the front-end renders
+// with too. So when the install is present, the file is put through THAT parser
+// and the verdict is taken from it directly. Two things are errors:
+//
+//   - it throws. The file is not YAML, and `publish` would have died on it,
+//     late, in an unrelated phase, on whichever locale happened to hold it.
+//     That is how the Hungarian guide was found.
+//   - it parses to something DIFFERENT from what this repo's reader saw. Nothing
+//     downstream is wrong in a way anyone can see: validate checked one document
+//     and publish shipped another.
+//
+// With no install this returns nothing and the floor stands alone.
+
+let sharedParser;
+
+async function loadSharedParser() {
+  if (sharedParser !== undefined) return sharedParser;
+  try {
+    const { parseFrontmatterShared } = await import("./lib/prose.mjs");
+    await parseFrontmatterShared("---\nprobe: value\n---\n"); // the import inside is itself lazy
+    sharedParser = parseFrontmatterShared;
+  } catch {
+    sharedParser = null;
+  }
+  return sharedParser;
+}
+
+/** Every leaf of a frontmatter object as `path=json`, for comparing two parses. */
+const leafSignature = (data) => frontmatterPaths(data).map((leaf) => `${leaf}=${JSON.stringify(frontmatterValue(data, leaf))}`);
+
+async function crossCheckFrontmatter(raw, ours) {
+  const parseShared = await loadSharedParser();
+  if (!parseShared) return [];
+
+  let shared;
+  try {
+    shared = await parseShared(raw);
+  } catch (error) {
+    return [
+      {
+        level: ERROR,
+        message:
+          "frontmatter: the renderer's YAML parser, which is what publishing uses, rejects this file: " +
+          `${error.message.split("\n")[0]}. Until it parses, this page cannot be published.`
+      }
+    ];
+  }
+
+  const theirs = leafSignature(shared.data ?? {});
+  const mine = leafSignature(ours);
+  if (theirs.join("\n") === mine.join("\n")) return [];
+
+  const differing = [...new Set([...mine, ...theirs])].filter((leaf) => !(mine.includes(leaf) && theirs.includes(leaf)));
+  return [
+    {
+      level: ERROR,
+      message:
+        "frontmatter: the two parsers read these bytes DIFFERENTLY, so validate is checking one document and " +
+        `publish would ship another (scripts/ reads ${mine.length} leaves, the renderer reads ${theirs.length}; ` +
+        `first difference: ${differing[0]}). Quote the value, or fix the block, until both agree.`
+    }
+  ];
+}
+
+async function validateItem({ typeId, locale, slug, stamp, shippable }) {
   const type = contentType(typeId);
   const english = englishPath(typeId, slug);
   const targetPath = localPath(typeId, locale, slug);
@@ -193,11 +267,14 @@ function validateItem({ typeId, locale, slug, stamp, shippable }) {
     targetData: target.data,
     translatedKeys: type.frontmatterTranslated ?? [],
     expectedMd5: expected,
+    targetRaw: target.raw,
     // Symmetric with `allowSentinel` for catalogs above: an untranslated item is
     // a normal state of a partly translated locale, and only blocks a shippable
     // check, where it would serve English prose from a translated URL.
     allowUntranslated: !shippable
   });
+
+  issues.push(...(await crossCheckFrontmatter(target.raw, target.data)));
 
   const blockingOtherThanStamp = issues.filter(
     (i) => i.level === ERROR && !i.message.startsWith("stale:") && !i.message.startsWith("frontmatter: no en_md5")
@@ -213,7 +290,7 @@ function validateItem({ typeId, locale, slug, stamp, shippable }) {
 
 const label = (typeId, locale, slug) => `${locale} ${typeId}${slug ? `/${slug}` : ""}`;
 
-function main() {
+async function main() {
   const args = parseArgs(process.argv.slice(2));
   const requested = args.positional[0] ?? "all";
   const locales = requested === "all" ? TARGET_LOCALES : [requested];
@@ -239,12 +316,21 @@ function main() {
     console.log(`english (${id}): read from ${englishRepo(id)}`);
   }
 
+  // Said out loud, because it changes how much this run can promise. With the
+  // renderer present, frontmatter is judged by the parser publishing uses; without
+  // it, only by this repo's own reader of what YAML accepts.
+  console.log(
+    (await loadSharedParser())
+      ? "frontmatter: cross-checked against @jiki.io/content-renderer, the parser publishing uses."
+      : "frontmatter: no @jiki.io/content-renderer install; checked by the built-in reader alone (run `npm install` for the real parser)."
+  );
+
   for (const locale of locales) {
     for (const typeId of typeIds) {
       for (const item of scopeItems(typeId, { slug: args.flags.slug })) {
         checked += 1;
 
-        const { issues, label: name, stamped } = validateItem({ typeId, locale, slug: item.slug, stamp, shippable });
+        const { issues, label: name, stamped } = await validateItem({ typeId, locale, slug: item.slug, stamp, shippable });
         const itemErrors = issues.filter((i) => i.level === ERROR);
         const itemWarnings = issues.filter((i) => i.level === WARN);
         errors += itemErrors.length;
@@ -286,4 +372,4 @@ function main() {
   if (errors > 0) process.exit(1);
 }
 
-main();
+await main();

@@ -159,6 +159,35 @@ export const CONTENT_TYPES = {
     r2: (locale, _slug, hash) => `/static/i18n/levels/${locale}/messages-${hash}.json`
   },
 
+  "project-metadata": {
+    label: "project metadata copy",
+    howto: "project-metadata",
+    format: "catalog",
+    slugged: false,
+    staleness: "sibling",
+    interpolation: "none",
+    // The listing copy for the three PROJECTS (title, description, tags), as one
+    // catalog keyed by project slug. Not to be confused with `project-episodes`
+    // below, which is the prose of one episode inside a project: this is the copy
+    // a learner reads on the projects index before opening anything, and there is
+    // one of it per locale rather than one per item, so it is unslugged.
+    //
+    // It exists because that copy used to be authored LOCALE-KEYED beside the
+    // English, as `"title": {"en": "..."}` in each project's config.json, and the
+    // front-end derived its locale set from `Object.keys(title)`. Nothing but
+    // `en` was ever in there, so every non-English project listing rendered
+    // empty, and the shape invited translations into the front-end, which is the
+    // one place they may never live. English moves to a plain messages.json
+    // beside the projects; every translation of it lives here.
+    //
+    // `tags` is an ARRAY, and the only array in any catalog this repo holds.
+    // scripts/lib/files.mjs § flatten says what that costs and why an array is a
+    // branch rather than a leaf.
+    sourceRepoPath: () => "content/src/posts/projects/messages.json",
+    localPath: () => "content/posts/projects/messages.json",
+    r2: (locale, _slug, hash) => `/static/content/projects/${locale}/meta-${hash}.json`
+  },
+
   "exercise-category": {
     label: "exercise family base catalog",
     howto: ["exercise", "exercise-messages"],
