@@ -4,15 +4,15 @@ description: "Usare i backtick e i segnaposto `${...}` per inserire direttamente
 en_md5: 7fd0e09ac3b32db5f159f8e772872104
 ---
 
-Possiamo usare qualcosa che si chiama stringhe interpolate (_template literals_ in inglese) per inserire stringhe in altre stringhe.
+Possiamo usare le stringhe interpolate (_template literals_ in inglese) per inserire valori dinamici come variabili o espressioni all'interno di una stringa.
 
-Quindi, invece di unire stringhe tra loro, possiamo avere una stringa (o modello) che ha spazi per altre stringhe al suo interno.
+Quindi, invece di concatenare più stringhe, possiamo usare una singola stringa-modello che contiene dei punti in cui inserire valori dinamici, come variabili o espressioni.
 
 Per farlo, usiamo i backtick invece delle virgolette.
 
 I backtick sono apici inversi, come suggerisce il nome, ma è probabile che tu non li abbia mai usati prima, quindi devi trovare il tasto giusto sulla tastiera.
 
-Li usiamo per creare un modello che può contenere altre stringhe. E poi, per inserire una stringa nel modello, usiamo un'altra strana sintassi fatta di dollari e parentesi graffe. Quindi, per esempio, per ottenere lo stesso effetto di `"hello " + name` che abbiamo appena visto con la concatenazione, potremmo scrivere:
+Li usiamo per creare una stringa-modello che contiene dei punti in cui inserire valori dinamici, come variabili o espressioni. E poi, per inserire un valore dinamico nel modello, usiamo una sintassi particolare. È fatta di dollari e parentesi graffe. Quindi, per esempio, per ottenere lo stesso effetto di `"hello " + name` che abbiamo appena visto con la concatenazione, potremmo scrivere:
 
 ```javascript
 `hello ${name}` // "ciao Jeremy" o "ciao Jiki"
@@ -26,8 +26,8 @@ Li usiamo per creare un modello che può contenere altre stringhe. E poi, per in
   height="400"
 />
 
-E questo fa esattamente la stessa cosa che unire le stringhe tra loro.
+E questo produce esattamente lo stesso risultato della concatenazione delle stringhe.
 
-Ma quando hai più stringhe che devono essere inserite in un unico posto, questo metodo può essere molto più efficiente.
+Quando hai più valori da inserire nella stessa stringa-modello, questo metodo può essere molto più efficiente.
 
-Ci vorrà un po' di tempo per abituarti a questa sintassi esatta, ma non c'è nulla di veramente complicato.
+All'inizio può sembrare strana, ma con un po' di pratica questa sintassi diventa naturale: non c'è nulla di complicato.
