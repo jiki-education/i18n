@@ -1,7 +1,7 @@
 ---
-title: "Ciclo repeat"
+title: "O ciclo `repeat`"
 description: "Usar a palavra-chave `repeat` para dizer ao Jiki que execute o código dentro das chavetas um número específico de vezes."
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 Até agora, tudo foi escrito de forma linear: o Jiki segue cada instrução por ordem, de cima para baixo.

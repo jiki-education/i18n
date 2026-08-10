@@ -1,7 +1,7 @@
 ---
-title: "Else If"
+title: "Usar `else if` em cadeia"
 description: "Encadear cláusulas `else if` para verificar várias condições por ordem, executando apenas o primeiro bloco cuja condição é verdadeira."
-en_md5: 5e1c9b2e77abbd41708f4c33b9aabd8f
+en_md5: 64274945347d47d67baf3378cf219c9b
 ---
 
 Já viste como o `if` e o `else` te dão dois caminhos: fazer uma coisa quando uma condição é verdadeira e fazer outra quando é falsa. Mas e se tiveres mais do que duas possibilidades?
