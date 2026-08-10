@@ -1,5 +1,5 @@
 ---
-title: "break"
+title: "`break`キーワード"
 description: "ループの本体で`break`キーワードを使い、ループを即座に抜けて、その後に続くコードに進む方法。"
 en_md5: 30148766de67ae467ab1a4852ad35895
 ---

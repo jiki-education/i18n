@@ -1,5 +1,5 @@
 ---
-title: "`continue`"
+title: "`continue`キーワード"
 description: "ループ内で`continue`キーワードを使い、今の繰り返しの残りを飛ばして、次の繰り返しに直接進む方法。"
 en_md5: 6c3f7483826e27d44d6c404cc9f621dd
 ---
