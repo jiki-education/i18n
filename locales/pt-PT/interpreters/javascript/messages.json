@@ -160,9 +160,15 @@
   "phrases": {
     "slotCount_zero": "zero fendas",
     "slotCount_one": "uma fenda",
+    "slotCount_two": "∅",
+    "slotCount_few": "∅",
+    "slotCount_many": "�",
     "slotCount_other": "{{count}} fendas",
     "inputCount_zero": "zero entradas",
     "inputCount_one": "uma entrada",
+    "inputCount_two": "∅",
+    "inputCount_few": "∅",
+    "inputCount_many": "�",
     "inputCount_other": "{{count}} entradas"
   },
   "description": {
@@ -201,6 +207,10 @@
     },
     "forInStatement": {
       "result_empty": "O objeto estava vazio, por isso esta linha não fez nada.",
+      "result_iteration_ordinal_one": "∅",
+      "result_iteration_ordinal_two": "∅",
+      "result_iteration_ordinal_few": "∅",
+      "result_iteration_ordinal_many": "∅",
       "result_iteration_ordinal_other": "Esta linha iniciou a {{count}}ª iteração com a variável {{name}} definida como {{value}}.",
       "step_create": "O Jiki criou uma nova caixa chamada {{name}}.",
       "step_empty": "O Jiki verificou o objeto, viu que estava vazio e decidiu não fazer mais nada nesta linha.",
@@ -208,6 +218,10 @@
     },
     "forOfStatement": {
       "result_empty": "O {{type}} estava vazio, por isso esta linha não fez nada.",
+      "result_iteration_ordinal_one": "∅",
+      "result_iteration_ordinal_two": "∅",
+      "result_iteration_ordinal_few": "∅",
+      "result_iteration_ordinal_many": "∅",
       "result_iteration_ordinal_other": "Esta linha iniciou a {{count}}ª iteração com a variável {{name}} definida como {{value}}.",
       "step_create": "O Jiki criou uma nova caixa chamada {{name}}.",
       "step_empty": "O Jiki verificou o {{type}}, viu que estava vazio e decidiu não fazer mais nada nesta linha.",
@@ -233,8 +247,20 @@
       "string": "O Jiki foi buscar o caráter no índice {{index}} da string e concluiu que era {{value}}."
     },
     "repeatStatement": {
+      "foreverResult_ordinal_one": "∅",
+      "foreverResult_ordinal_two": "∅",
+      "foreverResult_ordinal_few": "∅",
+      "foreverResult_ordinal_many": "∅",
       "foreverResult_ordinal_other": "Esta linha iniciou a {{count}}ª iteração deste bloco repeat.",
+      "foreverStep_ordinal_one": "∅",
+      "foreverStep_ordinal_two": "∅",
+      "foreverStep_ordinal_few": "∅",
+      "foreverStep_ordinal_many": "∅",
       "foreverStep_ordinal_other": "O Jiki iniciou a {{count}}ª iteração do ciclo repeat.",
+      "repeatResult_ordinal_one": "∅",
+      "repeatResult_ordinal_two": "∅",
+      "repeatResult_ordinal_few": "∅",
+      "repeatResult_ordinal_many": "∅",
       "repeatResult_ordinal_other": "Esta linha iniciou a {{count}}ª iteração deste bloco repeat.",
       "repeatStep": "O Jiki aumentou o seu contador interno deste ciclo para <code>{{iteration}}</code>, verificou <code>{{iteration}} &le; {{countValue}}</code> e decidiu correr o bloco de código.",
       "zeroResult": "Pediram ao bloco repeat para correr <code>0</code> vezes, por isso esta linha não fez nada.",

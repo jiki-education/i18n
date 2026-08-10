@@ -160,9 +160,15 @@
   "phrases": {
     "slotCount_zero": "0 個投入口",
     "slotCount_one": "∅",
+    "slotCount_two": "∅",
+    "slotCount_few": "∅",
+    "slotCount_many": "∅",
     "slotCount_other": "{{count}} 個投入口",
     "inputCount_zero": "0 個輸入",
     "inputCount_one": "∅",
+    "inputCount_two": "∅",
+    "inputCount_few": "∅",
+    "inputCount_many": "∅",
     "inputCount_other": "{{count}} 個輸入"
   },
   "description": {
@@ -201,6 +207,10 @@
     },
     "forInStatement": {
       "result_empty": "這個物件是空的，所以這行程式碼什麼都沒做。",
+      "result_iteration_ordinal_one": "∅",
+      "result_iteration_ordinal_two": "∅",
+      "result_iteration_ordinal_few": "∅",
+      "result_iteration_ordinal_many": "∅",
       "result_iteration_ordinal_other": "這行程式碼開始了第 {{count}} 次疊代，並把 {{name}} 變數設定為 {{value}}。",
       "step_create": "Jiki 建立了一個叫做 {{name}} 的新盒子。",
       "step_empty": "Jiki 檢查了這個物件，發現它是空的，所以決定在這行不再做任何事。",
@@ -208,6 +218,10 @@
     },
     "forOfStatement": {
       "result_empty": "這個 {{type}} 是空的，所以這行程式碼什麼都沒做。",
+      "result_iteration_ordinal_one": "∅",
+      "result_iteration_ordinal_two": "∅",
+      "result_iteration_ordinal_few": "∅",
+      "result_iteration_ordinal_many": "∅",
       "result_iteration_ordinal_other": "這行程式碼開始了第 {{count}} 次疊代，並把 {{name}} 變數設定為 {{value}}。",
       "step_create": "Jiki 建立了一個叫做 {{name}} 的新盒子。",
       "step_empty": "Jiki 檢查了這個 {{type}}，發現它是空的，所以決定在這行不再做任何事。",
@@ -233,8 +247,20 @@
       "string": "Jiki 取得了字串中索引為 {{index}} 的字元，並判斷它是 {{value}}。"
     },
     "repeatStatement": {
+      "foreverResult_ordinal_one": "∅",
+      "foreverResult_ordinal_two": "∅",
+      "foreverResult_ordinal_few": "∅",
+      "foreverResult_ordinal_many": "∅",
       "foreverResult_ordinal_other": "這行程式碼開始了這個 `repeat` 區塊的第 {{count}} 次疊代。",
+      "foreverStep_ordinal_one": "∅",
+      "foreverStep_ordinal_two": "∅",
+      "foreverStep_ordinal_few": "∅",
+      "foreverStep_ordinal_many": "∅",
       "foreverStep_ordinal_other": "Jiki 開始了 `repeat` 迴圈的第 {{count}} 次疊代。",
+      "repeatResult_ordinal_one": "∅",
+      "repeatResult_ordinal_two": "∅",
+      "repeatResult_ordinal_few": "∅",
+      "repeatResult_ordinal_many": "∅",
       "repeatResult_ordinal_other": "這行程式碼開始了這個 `repeat` 區塊的第 {{count}} 次疊代。",
       "repeatStep": "Jiki 把他這個迴圈的內部計數器增加到 <code>{{iteration}}</code>，檢查了 <code>{{iteration}} &le; {{countValue}}</code>，然後決定執行程式區塊。",
       "zeroResult": "這個 `repeat` 區塊被要求執行 <code>0</code> 次，所以這行程式碼什麼都沒做。",
