@@ -1,5 +1,5 @@
 ---
-title: "Naredba `if`"
+title: "Razumevanje `if` naredbi"
 description: "Korišćenje ključne reči `if` da se blok koda izvrši samo kada je neki uslov tačan, kao kada izbacivač odlučuje koga će pustiti unutra."
 en_md5: 8797e078e1ad90b7652373baf6f96f28
 ---

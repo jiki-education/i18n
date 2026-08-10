@@ -1,5 +1,5 @@
 ---
-title: "Prekid petlje"
+title: "Ključna reč `break`"
 description: "Korišćenje ključne reči `break` unutar tela petlje da bi se petlja odmah prekinula i nastavilo izvršavanje koda koji dolazi nakon nje."
 en_md5: 30148766de67ae467ab1a4852ad35895
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Continue"
+title: "Ključna reč `continue`"
 description: "Kako se koristi ključna reč `continue` unutar petlje da preskočiš ostatak iteracije i odmah pređeš na sledeću."
 en_md5: 6c3f7483826e27d44d6c404cc9f621dd
 ---
