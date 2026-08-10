@@ -1,5 +1,5 @@
 ---
-title: "Continue"
+title: "La parola chiave `continue`"
 description: "Usare la parola chiave `continue` all'interno di un ciclo per saltare il resto dell'iterazione corrente e passare direttamente alla successiva."
 en_md5: 6c3f7483826e27d44d6c404cc9f621dd
 ---

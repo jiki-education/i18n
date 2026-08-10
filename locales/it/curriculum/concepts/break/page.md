@@ -1,5 +1,5 @@
 ---
-title: "Break"
+title: "La parola chiave `break`"
 description: "Utilizzare la parola chiave `break` all'interno del corpo di un ciclo per uscire immediatamente dal ciclo e passare al codice che segue."
 en_md5: 30148766de67ae467ab1a4852ad35895
 ---

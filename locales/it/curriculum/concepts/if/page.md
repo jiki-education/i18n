@@ -1,5 +1,5 @@
 ---
-title: "Le istruzioni if"
+title: "Capire le istruzioni `if`"
 description: "Usare la parola chiave `if` per eseguire un blocco di codice solo quando una condizione è vera, come un buttafuori che decide chi far entrare."
 en_md5: 8797e078e1ad90b7652373baf6f96f28
 ---
