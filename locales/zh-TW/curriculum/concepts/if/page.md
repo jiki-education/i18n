@@ -1,5 +1,5 @@
 ---
-title: "If 敘述"
+title: "認識`if`敘述"
 description: "使用`if`關鍵字，讓程式碼只在特定條件為 true 時執行，就像保鑣只讓符合規定的人進門一樣。"
 en_md5: 8797e078e1ad90b7652373baf6f96f28
 ---
