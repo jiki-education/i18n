@@ -1,7 +1,7 @@
 ---
-title: "`while` लूप"
+title: "`while` लूप को समझना"
 description: "एक लूप जो तब तक चलता है जब तक कोई शर्त सही रहती है"
-en_md5: daef89c6551b1d1cbc0e58668fd368bc
+en_md5: aeceed2abb1434307cfd7c9a0df55c81
 ---
 
 अगला लूप जिसे हम जानेंगे, वह `while` लूप (_while loop_) है।
