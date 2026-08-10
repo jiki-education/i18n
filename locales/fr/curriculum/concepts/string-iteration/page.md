@@ -1,7 +1,7 @@
 ---
-title: "Parcourir les strings"
+title: "Parcourir les strings avec `for ... of`"
 description: "Utiliser une boucle `for of` pour passer sur chaque lettre d'une string et faire quelque chose avec chacune, l'une après l'autre."
-en_md5: 584ac0a187a9e5244b84f0fd417494f3
+en_md5: 09f399cc3f52b89380d3ed23fc6be513
 ---
 
 Tu peux accéder à une seule lettre d'une string avec des crochets (`[]`). Maintenant, on va voir comment parcourir une string avec une boucle, en récupérant chaque lettre une à la fois.

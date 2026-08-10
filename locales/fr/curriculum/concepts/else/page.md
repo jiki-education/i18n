@@ -1,7 +1,7 @@
 ---
-title: "Else"
+title: "Le mot-clé `else`"
 description: "Ajouter une clause `else` après un `if` pour qu'un autre bloc de code s'exécute quand la condition se révèle fausse."
-en_md5: 4dd08e94d86dd11cd54793cf64008e3d
+en_md5: a3d7b0672bd9c022675831044c5610ed
 ---
 
 Les instructions `if` te permettent de vérifier des conditions et de n'exécuter du code que quand quelque chose est vrai. Découvrons maintenant son acolyte, l'instruction `else` (« sinon »).

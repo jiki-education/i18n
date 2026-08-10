@@ -1,7 +1,7 @@
 ---
-title: "La boucle repeat"
+title: "La boucle `repeat`"
 description: "Utiliser le mot-clé `repeat` pour dire à Jiki d'exécuter le code entre les accolades un certain nombre de fois."
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 Jusqu'ici, tout a été écrit de façon linéaire : Jiki suit chaque instruction dans l'ordre, de haut en bas.

@@ -1,7 +1,7 @@
 ---
-title: "Les boucles for"
+title: "Comprendre les boucles `for`"
 description: "Une boucle en trois parties (une initialisation, une condition et une incrémentation) qui te donne un contrôle total sur l'itération."
-en_md5: e96f2e5a4106a88cfbca449c93a26108
+en_md5: 0ad4155ded18c2df27d29e5355bd0532
 ---
 
 Tu te souviens peut-être que la boucle repeat n'existe pas vraiment en JavaScript. C'est juste un ajout pour te simplifier un peu la vie pendant qu'on démarre.

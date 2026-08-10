@@ -1,7 +1,7 @@
 ---
-title: "La boucle repeat sans nombre"
+title: "Utiliser `repeat` sans nombre de répétitions"
 description: "Laisser les parenthèses d'une boucle repeat vides pour que Jiki continue jusqu'à ce que quelque chose d'autre lui dise de s'arrêter."
-en_md5: 5902e86c82b7bfe9ca519f9bdf8650ad
+en_md5: f1f98b46bedb1b5abc72aa1b856ee8ae
 ---
 
 Jusqu'ici, quand tu as utilisé la boucle repeat, tu as toujours précisé un nombre qui indique combien de fois répéter. Répéter cinq fois, 10 fois, 40 fois. Parfois, tu as même utilisé une variable pour ça. Mais tu as toujours dit à Jiki exactement combien de fois répéter la boucle. Pourtant, il arrive qu'on ne sache pas à l'avance combien de fois répéter. Pense au labyrinthe. Tout au début de ce cours, tu as fait sortir le personnage du labyrinthe en écrivant chaque déplacement un par un. Tu pouvais voir le labyrinthe, compter les pas et écrire exactement le bon nombre de déplacements.

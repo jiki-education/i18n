@@ -1,7 +1,7 @@
 ---
-title: "Les boucles while"
+title: "Comprendre les boucles `while`"
 description: "Une boucle qui continue de tourner tant qu'une condition reste vraie."
-en_md5: daef89c6551b1d1cbc0e58668fd368bc
+en_md5: aeceed2abb1434307cfd7c9a0df55c81
 ---
 
 La prochaine boucle à connaître est la boucle `while` (tant que).

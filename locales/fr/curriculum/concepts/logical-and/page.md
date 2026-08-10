@@ -1,7 +1,7 @@
 ---
-title: "Le mot-clé `and`"
+title: "L'opérateur `&&` (ET)"
 description: "Combiner deux conditions avec `&&` pour que la condition entière ne soit vraie que lorsque les deux parties sont vraies."
-en_md5: 6ea0de65a81d8e5c8d2eb89f3db29705
+en_md5: cef8d76c4235e85573c3eeede294ab72
 ---
 
 Si je te demandais d'ouvrir la porte seulement aux personnes de plus de 20 ans, tu saurais sans doute quoi faire. Mais que faire si tu devais vérifier qu'une personne a plus de 20 ans _et_ qu'elle porte la bonne tenue ? Il faudrait alors vérifier deux conditions différentes à la fois. Comment ferais-tu ?

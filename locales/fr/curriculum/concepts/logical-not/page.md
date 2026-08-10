@@ -1,7 +1,7 @@
 ---
-title: "L'opérateur `not`"
+title: "L'opérateur `!` (NON)"
 description: "Utiliser `!` pour inverser un booléen : vrai devient faux et faux devient vrai, pratique pour basculer une valeur ou inverser une vérification."
-en_md5: 842c4a4e9cb1fd11c4318a1508296e27
+en_md5: 7cffbd1fa13317b3d6e6a71415413041
 ---
 
 Jusqu'ici, quand on a comparé des choses pour voir si elles étaient égales, on a utilisé trois signes égal. Mais parfois, on veut vérifier que des choses ne sont pas égales, et pour ça, on utilise un point d'exclamation suivi de deux signes égal. Et de manière générale, en programmation, un point d'exclamation, ou _bang_ comme disent, je crois, nos amis américains, signifie « non ». Alors imagine que tu travailles dans un magasin et que la direction a décidé d'interdire l'entrée aux tenues disco.

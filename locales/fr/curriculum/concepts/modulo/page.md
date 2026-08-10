@@ -1,7 +1,7 @@
 ---
-title: "Le reste"
+title: "Utiliser l'opérateur `%` pour obtenir le reste"
 description: "Utiliser l'opérateur `%` pour obtenir ce qu'il reste après une division, souvent pour vérifier si un nombre est pair ou impair."
-en_md5: fe49222bd3f3a019dd9f74a960c5dede
+en_md5: 4955abecb626b8eff02ee7484e2065dd
 ---
 
 Jusqu'ici, on a utilisé l'addition, la soustraction, la multiplication et la division pour faire de l'arithmétique. On va maintenant en découvrir un de plus : l'opérateur de reste (_remainder_ en anglais).

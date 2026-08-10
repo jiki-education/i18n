@@ -1,7 +1,7 @@
 ---
 title: "Modifier les dictionnaires"
 description: "Utiliser `dict[key] = value` pour mettre à jour des entrées existantes ou en ajouter de nouvelles, et la méthode `has` pour vérifier la présence d'une clé."
-en_md5: 254912c3c672aec40b2729cd005fb1a7
+en_md5: 5dfff7e37d863711be783b2fbe0873a4
 ---
 
 Tu sais maintenant créer un dictionnaire et en récupérer des valeurs. Mais que se passe-t-il si les données changent ? À un moment, je vais vieillir. Je ne vais plus avoir `42` ans, j'en aurai `43`.

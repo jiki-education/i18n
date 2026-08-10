@@ -1,7 +1,7 @@
 ---
-title: "Le mot-clé `or`"
+title: "L'opérateur `||` (OU)"
 description: "Combiner deux conditions avec `||` pour que la condition entière soit vraie dès qu'au moins une des deux parties est vraie."
-en_md5: 4c9ebc144707760d944e0cddfac5a561
+en_md5: e7bc3f103a37719cdf3a77920d09e24e
 ---
 
 On peut aussi utiliser `or`, et là encore, hélas, il n'existe pas de joli mot-clé or en JavaScript. À la place, on doit écrire ces deux barres verticales (_bars_ en anglais) côte à côte pour signifier « ou ». Ça a l'air bizarre, mais pas tant que ça en réalité. Tu vas t'y habituer.

@@ -1,7 +1,7 @@
 ---
-title: "L'instruction `else if`"
+title: "Enchaîner les instructions `else if`"
 description: "Enchaîner des clauses `else if` pour vérifier plusieurs conditions dans l'ordre, en n'exécutant que le premier bloc dont la condition est vraie."
-en_md5: 5e1c9b2e77abbd41708f4c33b9aabd8f
+en_md5: 64274945347d47d67baf3378cf219c9b
 ---
 
 Tu as vu comment `if` et `else` t'offrent deux chemins : faire une chose quand une condition est vraie, en faire une autre quand elle est fausse. Mais que se passe-t-il si tu as plus de deux possibilités ?
