@@ -4,7 +4,7 @@ description: "Riempi lo schermo con righe e colonne di alieni, poi distruggili t
 en_md5: 86d826fafb0f610f2a0697bcfd29e8ff
 ---
 
-Sono comparsi ancora più alieni, e ora sono **quattro righe**!
+Sono comparsi ancora più alieni, e ora sono (disposti) su **quattro righe**!
 
 Hai a disposizione le stesse due funzioni di prima:
 
