@@ -67,16 +67,20 @@ jobs:
           sparse-checkout: |
             videos
 
+      # Before setup-node, so its pnpm cache has a pnpm to ask for a store path.
+      # The version comes from package.json's `packageManager` field.
+      - uses: pnpm/action-setup@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+          cache: pnpm
 
       # Only prose publishing has dependencies: it renders Markdown through the
       # same package the front-end uses, so the HTML matches byte for byte. The
       # rest of scripts/ is dependency-free and would run without this.
       - name: Install
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       # Reported, never enforced. Publishing is deliberately permissive: work in
       # progress has to reach R2 or nobody can review it on staging, and a locale

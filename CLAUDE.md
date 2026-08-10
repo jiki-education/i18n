@@ -84,7 +84,7 @@ Read [ENGLISH-SOURCE.md](./ENGLISH-SOURCE.md) first; this is the summary.
   `SOURCE_REPOS` is the list of repos it resolves. A content type names its `sourceRepo` and
   defaults to the front-end. Order per repo: `--source-repo=`, that repo's env override
   (`JIKI_SOURCE_REPO`, `JIKI_VIDEOS_REPO`, `JIKI_API_REPO`), `.source/<repo>`, a sibling checkout. Locally,
-  `npm run source:checkout [-- --source=videos]` fetches one, shallow and sparse over the
+  `pnpm source:checkout [--source=videos]` fetches one, shallow and sparse over the
   directories English lives in. In CI it is an `actions/checkout` step with the same destination.
 - **On a PR, English is the commit the branch pins** with an `English-Ref: <repo>@<sha>` commit
   trailer. A translation branch validates against fixed English, so it cannot go red because
@@ -185,6 +185,13 @@ lazy, so `stub`, `validate`, `coverage` and `test` still need no
 `node_modules` at all; only `publish` and `verify-renderer` do. `publish` loads it up front rather
 than on first use, because the image resolver inside a post render has to be synchronous.
 Shared helpers live in `scripts/lib/`.
+
+**The package manager is pnpm**, pinned by `packageManager` in `package.json` so CI and a laptop
+resolve the same one. `pnpm-lock.yaml` is the only lockfile: a second one is a second answer to
+what the renderer's transitive tree is, and the rendered bytes are content-hashed, so two answers
+means two sets of URLs. CI installs with `pnpm install --frozen-lockfile`, which fails rather than
+silently updating the lockfile. Note that pnpm passes arguments straight through, so it is
+`pnpm source:checkout --source=videos` with no `--` separator.
 
 | Script | What it does |
 |--------|--------------|
@@ -387,13 +394,11 @@ indistinguishable from a very short translation and is left alone.
   the HTML, which is why the zero-dependency frontmatter parser in `scripts/lib/files.mjs` is
   enough and the renderer package takes a body rather than a file.
 
-**TODO: pin the published version.** `@jiki.io/content-renderer` has not been published to npm yet,
-so `package.json` currently depends on it as `file:../front-end/content-renderer`, which resolves
-against a sibling front-end checkout exactly as `resolveSourceRepo` does. Once it is on the
-registry, replace that with the exact version (`"0.1.0"`, no caret): a range would let the renderer
-move under a translation pass, which is the whole failure the version pin exists to prevent. There
-is deliberately no lockfile committed yet, because one generated against a local path would record
-that path; commit it with the version pin.
+**The version is pinned exactly, never as a range.** `package.json` depends on the registry version
+(`"0.4.0"`, no caret), because a range would let the renderer move under a translation pass, which
+is the whole failure the version pin exists to prevent. `pnpm-lock.yaml` is committed, so the
+transitive tree is pinned too: a dependency of the renderer moving would change the rendered bytes
+just as surely as the renderer itself moving.
 
 **Posts are rendered here too**, to `/static/content/{kind}/{slug}/{locale}/content-{hash}.html`
 for `kind` in blog, articles and guides, using the renderer package's **second** pipeline,

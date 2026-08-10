@@ -322,7 +322,7 @@ async function main() {
   console.log(
     (await loadSharedParser())
       ? "frontmatter: cross-checked against @jiki.io/content-renderer, the parser publishing uses."
-      : "frontmatter: no @jiki.io/content-renderer install; checked by the built-in reader alone (run `npm install` for the real parser)."
+      : "frontmatter: no @jiki.io/content-renderer install; checked by the built-in reader alone (run `pnpm install` for the real parser)."
   );
 
   for (const locale of locales) {

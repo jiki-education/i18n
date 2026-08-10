@@ -37,7 +37,7 @@ async function load() {
   } catch (error) {
     throw new Error(
       `cannot load @jiki.io/content-renderer, which prose publishing needs: ${error.message}\n` +
-        `Run \`npm install\` in this repo. Unlike the rest of scripts/, publishing prose is not ` +
+        `Run \`pnpm install\` in this repo. Unlike the rest of scripts/, publishing prose is not ` +
         `dependency-free: the rendered HTML must match the front-end's byte for byte, so both ` +
         `repos share one renderer rather than each having their own.`
     );
