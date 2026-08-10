@@ -1,5 +1,5 @@
 ---
-title: "If-statements"
+title: "If-statements begrijpen"
 description: "Het sleutelwoord `if` gebruiken om een blok code alleen uit te voeren als een bepaalde voorwaarde waar is, zoals een uitsmijter die mensen binnenlaat."
 en_md5: 8797e078e1ad90b7652373baf6f96f28
 ---
