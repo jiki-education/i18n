@@ -1,7 +1,7 @@
 ---
 title: "Two-Fer"
 description: 'Oszd meg a sütit: „One for you, one for me.”'
-en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
+en_md5: fc7535ad0c12800ef580a7989f98150d
 ---
 
 Most az egyszerű „Hello” feladatra építünk, és néhány extra szabályt adunk hozzá.
@@ -12,8 +12,8 @@ Képzelj el egy pékséget, ahol ünnepi akció keretében két sütit vehetsz e
 
 A feladatod eldönteni, hogy mit mondasz, amikor odaadod a plusz sütit.
 
-- Ha ismered az illető nevét (pl. Alice), akkor ezt mondod: „One for Alice, one for me.”
-- Ha nem ismered a nevét, ezt mondod: „One for you, one for me.”
+- Ha ismered az illető nevét (pl. Alice), akkor ezt mondod: `„One for Alice, one for me.”`
+- Ha nem ismered a nevét, ezt mondod: `„One for you, one for me.”`
 
 Írj egy `twoFer(name)` (kettőt egyért; a `name` a név) nevű függvényt, amely a megfelelő mondatot adja vissza.
 

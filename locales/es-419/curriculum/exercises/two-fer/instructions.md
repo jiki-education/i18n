@@ -1,7 +1,7 @@
 ---
 title: "Two-Fer"
 description: "Comparte un pastel: 'One for you, one for me.'"
-en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
+en_md5: fc7535ad0c12800ef580a7989f98150d
 ---
 
 Ahora vamos a ampliar ese sencillo ejercicio «Hello» y a añadirle algunas reglas más.
@@ -12,8 +12,8 @@ Imagina una pastelería que tiene una oferta de temporada en la que puedes compr
 
 Tu tarea es elegir qué decir al regalar la galleta extra.
 
-- Si conoces el nombre de la persona (por ejemplo, Alice), dirás: "One for Alice, one for me."
-- Si no conoces el nombre de la persona, dirás: "One for you, one for me."
+- Si conoces el nombre de la persona (por ejemplo, Alice), dirás: `"One for Alice, one for me."`
+- Si no conoces el nombre de la persona, dirás: `"One for you, one for me."`
 
 Escribe una función llamada `twoFer(name)` (dos para uno) que devuelva el diálogo correspondiente.
 

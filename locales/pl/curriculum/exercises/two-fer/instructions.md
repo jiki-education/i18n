@@ -1,7 +1,7 @@
 ---
 title: "Two-Fer"
 description: 'Podziel się ciastkiem: „One for you, one for me.”'
-en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
+en_md5: fc7535ad0c12800ef580a7989f98150d
 ---
 
 Teraz rozbudujemy tamto proste ćwiczenie „Hello” i dodamy kilka dodatkowych reguł.
@@ -12,8 +12,8 @@ Wyobraź sobie piekarnię, która ma świąteczną ofertę: dwa ciastka w cenie 
 
 Twoim zadaniem jest ustalić, co powiesz, wręczając to dodatkowe ciastko.
 
-- Jeśli znasz imię tej osoby (np. Alice), powiesz: „One for Alice, one for me.”
-- Jeśli nie znasz jej imienia, powiesz: „One for you, one for me.”
+- Jeśli znasz imię tej osoby (np. Alice), powiesz: `„One for Alice, one for me.”`
+- Jeśli nie znasz jej imienia, powiesz: `„One for you, one for me.”`
 
 Napisz funkcję o nazwie `twoFer(name)` (`twoFer` oznacza „dwa dla”, a `name` to imię), która zwraca odpowiednią kwestię.
 

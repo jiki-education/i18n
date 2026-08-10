@@ -1,7 +1,7 @@
 ---
 title: "Two-Fer"
 description: 'Divida o bolo: "One for you, one for me."'
-en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
+en_md5: fc7535ad0c12800ef580a7989f98150d
 ---
 
 Agora vamos partir daquele exercício simples do "Hello" e acrescentar algumas regras extras.
@@ -12,8 +12,8 @@ Imagine uma padaria com uma promoção de festas em que você pode comprar dois 
 
 Sua tarefa é determinar o que você vai dizer ao entregar o biscoito extra.
 
-- Se você sabe o nome da pessoa (por exemplo, Alice), você dirá: "One for Alice, one for me."
-- Se você não sabe o nome da pessoa, você dirá: "One for you, one for me."
+- Se você sabe o nome da pessoa (por exemplo, Alice), você dirá: `"One for Alice, one for me."`
+- Se você não sabe o nome da pessoa, você dirá: `"One for you, one for me."`
 
 Escreva uma função chamada `twoFer(name)` (dois por um, sendo `name` o nome da pessoa) que retorna a fala apropriada.
 

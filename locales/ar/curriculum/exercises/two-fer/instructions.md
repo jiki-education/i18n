@@ -1,7 +1,7 @@
 ---
 title: "Two-Fer"
 description: 'شارك بعض الكعك: "One for you, one for me."'
-en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
+en_md5: fc7535ad0c12800ef580a7989f98150d
 ---
 
 الآن سنبني على تمرين "Hello" البسيط ذلك ونضيف بعض القواعد الإضافية.
@@ -12,8 +12,8 @@ en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
 
 مهمتك هي تحديد ما ستقوله بينما تمنح القطعة الإضافية.
 
-- إذا كنت تعرف اسم الشخص (مثلاً Alice)، فستقول: "One for Alice, one for me."
-- إذا كنت لا تعرف اسم الشخص، فستقول: "One for you, one for me."
+- إذا كنت تعرف اسم الشخص (مثلاً Alice)، فستقول: `"One for Alice, one for me."`
+- إذا كنت لا تعرف اسم الشخص، فستقول: `"One for you, one for me."`
 
 اكتب دالة اسمها `twoFer(name)` (أي عرض "اثنان بواحد") تعيد الحوار المناسب.
 

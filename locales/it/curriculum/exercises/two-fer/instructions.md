@@ -1,7 +1,7 @@
 ---
 title: "Two-Fer"
 description: 'Condividi la torta: "One for you, one for me."'
-en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
+en_md5: fc7535ad0c12800ef580a7989f98150d
 ---
 
 Adesso partiamo da quel semplice esercizio "Hello" e aggiungiamo qualche regola in più.
@@ -12,8 +12,8 @@ Immagina una pasticceria che ha un'offerta speciale per le feste: puoi comprare 
 
 Il tuo compito è decidere che cosa dirai mentre regali il biscotto in più.
 
-- Se conosci il nome della persona (per esempio Alice), dirai: "One for Alice, one for me."
-- Se non conosci il nome della persona, dirai: "One for you, one for me."
+- Se conosci il nome della persona (per esempio Alice), dirai: `"One for Alice, one for me."`
+- Se non conosci il nome della persona, dirai: `"One for you, one for me."`
 
 Scrivi una funzione chiamata `twoFer(name)` (due per uno, con `name` il nome della persona) che restituisca la frase giusta.
 

@@ -1,7 +1,7 @@
 ---
 title: "Two-Fer"
 description: 'Deel wat cake: "One for you, one for me."'
-en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
+en_md5: fc7535ad0c12800ef580a7989f98150d
 ---
 
 We bouwen nu verder op die eenvoudige “Hello”-opdracht en voegen een paar extra regels toe.
@@ -12,8 +12,8 @@ Stel je een bakkerij voor met een feestaanbieding: twee koekjes voor de prijs va
 
 Jouw taak is om te bepalen wat je zegt terwijl je het extra koekje weggeeft.
 
-- Ken je de naam van de persoon (bijvoorbeeld Alice), dan zeg je: “One for Alice, one for me.”
-- Ken je de naam van de persoon niet, dan zeg je: “One for you, one for me.”
+- Ken je de naam van de persoon (bijvoorbeeld Alice), dan zeg je: `“One for Alice, one for me.”`
+- Ken je de naam van de persoon niet, dan zeg je: `“One for you, one for me.”`
 
 Schrijf een functie met de naam `twoFer(name)` (letterlijk “twee voor”, waarbij `name` de naam is) die de juiste zin teruggeeft.
 

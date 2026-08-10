@@ -1,7 +1,7 @@
 ---
 title: "Two-Fer"
 description: 'ケーキを分け合いましょう："One for you, one for me."'
-en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
+en_md5: fc7535ad0c12800ef580a7989f98150d
 ---
 
 さて、あの簡単な「Hello」の演習を発展させて、もう少しルールを追加してみましょう。
@@ -12,8 +12,8 @@ en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
 
 この課題では、余ったクッキーを渡すときに言う言葉を決めます。
 
-- もし相手の名前（例：Alice）がわかっているなら、次のように言います："One for Alice, one for me."
-- もし相手の名前がわからなければ、次のように言います："One for you, one for me."
+- もし相手の名前（例：Alice）がわかっているなら、次のように言います：`"One for Alice, one for me."`
+- もし相手の名前がわからなければ、次のように言います：`"One for you, one for me."`
 
 `twoFer(name)`（「二つで一つ」の意味）という関数を書いて、適切な会話を返すようにしてください。
 

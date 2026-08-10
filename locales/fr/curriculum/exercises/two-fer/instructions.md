@@ -1,7 +1,7 @@
 ---
 title: "Two-Fer"
 description: 'Partage un peu de gâteau : "One for you, one for me."'
-en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
+en_md5: fc7535ad0c12800ef580a7989f98150d
 ---
 
 On va maintenant partir de ce simple exercice « Hello » et ajouter quelques règles supplémentaires.
@@ -12,8 +12,8 @@ Imagine une boulangerie qui propose une offre spéciale pour les fêtes : deux 
 
 Ta mission est de déterminer ce que tu vas dire en offrant ce cookie supplémentaire.
 
-- Si tu connais le nom de la personne (par exemple Alice), tu diras : "One for Alice, one for me."
-- Si tu ne connais pas le nom de la personne, tu diras : "One for you, one for me."
+- Si tu connais le nom de la personne (par exemple Alice), tu diras : `"One for Alice, one for me."`
+- Si tu ne connais pas le nom de la personne, tu diras : `"One for you, one for me."`
 
 Écris une fonction appelée `twoFer(name)` (littéralement « deux pour », `name` étant le nom) qui renvoie la réplique appropriée.
 

@@ -1,7 +1,7 @@
 ---
 title: "둘을 하나로"
 description: "케이크 나누기: \"One for you, one for me.\""
-en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
+en_md5: fc7535ad0c12800ef580a7989f98150d
 ---
 
 이번에는 간단한 "Hello" 연습 문제에 덧붙여서 몇 가지 규칙을 추가해볼게요.
@@ -12,8 +12,8 @@ en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
 
 이번 과제는 추가 쿠키를 건네면서 어떤 말을 해야 하는지 정하는 거예요.
 
-- 그 사람의 이름을 알고 있다면 (예: Alice), 이렇게 말해요: "One for Alice, one for me."
-- 이름을 모른다면, 이렇게 말해요: "One for you, one for me."
+- 그 사람의 이름을 알고 있다면 (예: Alice), 이렇게 말해요: `"One for Alice, one for me."`
+- 이름을 모른다면, 이렇게 말해요: `"One for you, one for me."`
 
 `twoFer(name)` (둘을 하나로) 함수를 작성해서 적절한 대화를 반환하도록 해요.
 

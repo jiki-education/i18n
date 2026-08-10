@@ -1,7 +1,7 @@
 ---
 title: "買一送一 (Two-Fer)"
 description: '分享一些蛋糕："One for you, one for me."'
-en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
+en_md5: fc7535ad0c12800ef580a7989f98150d
 ---
 
 現在，我們要以那個簡單的「Hello」練習為基礎，並加上一些額外的規則。
@@ -12,8 +12,8 @@ en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
 
 你的任務是決定在送出多出來的餅乾時，你要說些什麼。
 
-- 如果你知道對方的名字（例如 Alice），那麼你會說："One for Alice, one for me."
-- 如果你不知道對方的名字，你會說："One for you, one for me."
+- 如果你知道對方的名字（例如 Alice），那麼你會說：`"One for Alice, one for me."`
+- 如果你不知道對方的名字，你會說：`"One for you, one for me."`
 
 寫一個名為 `twoFer(name)`（買一送一）的函式，讓它回傳對應的對話。
 

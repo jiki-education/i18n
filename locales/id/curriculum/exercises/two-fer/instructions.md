@@ -1,7 +1,7 @@
 ---
 title: "Two-Fer"
 description: 'Bagi-bagi kue: "One for you, one for me."'
-en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
+en_md5: fc7535ad0c12800ef580a7989f98150d
 ---
 
 Sekarang kita akan melanjutkan latihan "Hello" yang sederhana itu dengan menambahkan beberapa aturan ekstra.
@@ -12,8 +12,8 @@ Bayangkan sebuah toko roti sedang mengadakan promo liburan: beli dua kue kering 
 
 Tugasmu adalah menentukan apa yang akan kamu ucapkan saat memberikan kue ekstra itu.
 
-- Kalau kamu tahu nama orangnya (misalnya Alice), kamu akan berkata: "One for Alice, one for me."
-- Kalau kamu tidak tahu namanya, kamu akan berkata: "One for you, one for me."
+- Kalau kamu tahu nama orangnya (misalnya Alice), kamu akan berkata: `"One for Alice, one for me."`
+- Kalau kamu tidak tahu namanya, kamu akan berkata: `"One for you, one for me."`
 
 Tulislah sebuah fungsi bernama `twoFer(name)` (artinya "dua untuk"; `name` berarti nama) yang mengembalikan kalimat yang sesuai.
 
