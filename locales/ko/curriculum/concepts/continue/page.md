@@ -1,5 +1,5 @@
 ---
-title: "Continue"
+title: "`continue` 키워드"
 description: "루프 안에서 `continue` 키워드를 사용해 현재 반복의 나머지를 건너뛰고 바로 다음 반복으로 넘어가는 방법"
 en_md5: 6c3f7483826e27d44d6c404cc9f621dd
 ---

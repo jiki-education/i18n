@@ -1,5 +1,5 @@
 ---
-title: "Break"
+title: "`break` 키워드"
 description: "루프 본문 안에서 `break` 키워드를 사용하여 루프를 즉시 종료하고, 그 아래에 오는 코드로 넘어가는 방법."
 en_md5: 30148766de67ae467ab1a4852ad35895
 ---
