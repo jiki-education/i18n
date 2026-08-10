@@ -1,7 +1,7 @@
 ---
-title: "Else"
+title: "`else`关键字"
 description: "在 `if` 之后添加 `else` 子句，以便当条件为假时运行另一段代码。"
-en_md5: 4dd08e94d86dd11cd54793cf64008e3d
+en_md5: a3d7b0672bd9c022675831044c5610ed
 ---
 
 `if` 语句让你检查条件，并只在条件为真时运行代码。现在，让我们介绍 `if` 的最佳搭档：`else`。

@@ -1,7 +1,7 @@
 ---
-title: "for 循环"
+title: "认识`for`循环"
 description: "一种由三部分（初始化、条件和自增）组成的循环，让你完全控制迭代。"
-en_md5: e96f2e5a4106a88cfbca449c93a26108
+en_md5: 0ad4155ded18c2df27d29e5355bd0532
 ---
 
 你也许记得，`repeat` 循环在 JavaScript 中并不真的存在。它只是为了在入门阶段给你行个方便而加入的。

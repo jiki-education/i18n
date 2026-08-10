@@ -1,7 +1,7 @@
 ---
-title: "Repeat 循环"
+title: "`repeat`循环"
 description: "使用 `repeat` 关键字告诉 Jiki 把花括号里的代码运行指定次数。"
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 到目前为止，所有指令都是线性编写的，Jiki 从上到下依次执行每一条指令。

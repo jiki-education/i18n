@@ -1,7 +1,7 @@
 ---
-title: "else if 语句"
+title: "串联多个`else if`"
 description: "将`else if`子句串联起来，按顺序检查多个条件，只运行第一个条件为真的代码块。"
-en_md5: 5e1c9b2e77abbd41708f4c33b9aabd8f
+en_md5: 64274945347d47d67baf3378cf219c9b
 ---
 
 你已经见过`if`和`else`如何给你两条路径了：条件为真时做一件事，条件为假时做另一件事。但如果你有两种以上的可能性呢？

@@ -1,7 +1,7 @@
 ---
-title: "While 循环"
+title: "认识`while`循环"
 description: "一种循环，只要某个条件保持为真就会持续运行。"
-en_md5: daef89c6551b1d1cbc0e58668fd368bc
+en_md5: aeceed2abb1434307cfd7c9a0df55c81
 ---
 
 下一个要了解的循环是 `while` 循环（英文：while loop）。
