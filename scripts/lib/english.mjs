@@ -116,8 +116,8 @@ export function englishRepo(id = DEFAULT_SOURCE_REPO, explicit, { optional = fal
   fail(
     `no ${id} checkout to read English from. This repo holds no English of its own.\n` +
       `  Looked in: ${candidates.map((c) => path.resolve(c)).join(", ")}\n` +
-      `  Fetch one:  npm run source:checkout -- --source=${id}\n` +
-      `              npm run source:checkout -- --source=${id} --ref=<sha>\n` +
+      `  Fetch one:  pnpm source:checkout --source=${id}\n` +
+      `              pnpm source:checkout --source=${id} --ref=<sha>\n` +
       `  Or point at one you already have:  --source-repo=<path>, or ${spec.env}=<path>.`
   );
 }

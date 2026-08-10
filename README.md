@@ -11,10 +11,10 @@ everything else.
 ## Quick start
 
 ```bash
-npm install                              # only the prose renderer needs it
-npm run source:checkout                  # fetch English (front-end main, shallow + sparse)
-npm run source:checkout -- --source=videos   # ...and the English subtitle track
-npm run source:checkout -- --source=api      # ...and the api copy coverage reports
+pnpm install                             # only the prose renderer needs it
+pnpm source:checkout                     # fetch English (front-end main, shallow + sparse)
+pnpm source:checkout --source=videos     # ...and the English subtitle track
+pnpm source:checkout --source=api        # ...and the api copy coverage reports
 
 node scripts/coverage.mjs                # what is translated, stale, missing, never started
 node scripts/validate.mjs all --no-stamp # the CI gate

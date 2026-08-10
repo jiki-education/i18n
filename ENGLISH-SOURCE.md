@@ -16,7 +16,7 @@ Video subtitles are the exception. They are cut from the rendered video, so they
 are authored in the `videos` repo beside the footage and the Mux pipeline that
 serves them, and their content type names `sourceRepo: "videos"`. The list of
 repos, with each one's env override, sparse paths and probe file, is
-`SOURCE_REPOS` in `scripts/lib/english.mjs`. `npm run source:checkout -- --source=videos`
+`SOURCE_REPOS` in `scripts/lib/english.mjs`. `pnpm source:checkout --source=videos`
 fetches it locally, and CI has an `actions/checkout` step for the same
 destination.
 
@@ -164,7 +164,7 @@ paths English lives in, not a clone.
 Local runs need English too. `scripts/lib/english.mjs` resolves each source repo
 from, in order: `--source-repo=`, that repo's env override (`JIKI_SOURCE_REPO`,
 `JIKI_VIDEOS_REPO`), `.source/<repo>`, and a sibling checkout. When it finds none
-it says so and says how to get one (`npm run source:checkout`), rather than
+it says so and says how to get one (`pnpm source:checkout`), rather than
 reporting a missing file. A repo is resolved only when something actually reads
 from it, so a run narrowed to one content type never demands a checkout it will
 not open.
