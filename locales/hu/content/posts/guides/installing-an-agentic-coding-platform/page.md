@@ -1,14 +1,14 @@
 ---
-title: "Agentikus kódolási platform telepítése"
+title: "Agentikus programozási platform telepítése"
 excerpt: "Lépésről lépésre útmutató az OpenCode telepítéséhez, a bejelentkezéshez és egy AI-modell kiválasztásához, beleértve az ingyenes lehetőségeket is."
 tags: ["agentic-coding", "installation"]
 seo:
-  description: "Kezdőbarát útmutató az OpenCode, az általunk ajánlott agentikus kódolási platform telepítéséhez, ingyenes AI-modell lehetőségekkel a Zenen keresztül és az alacsony költségű Go csomaggal."
+  description: "Kezdőbarát útmutató az OpenCode, az általunk ajánlott agentikus programozási platform telepítéséhez, ingyenes AI-modell lehetőségekkel a Zenen keresztül és az alacsony költségű Go csomaggal."
   keywords:
     [
       "opencode",
       "install opencode",
-      "agentic coding",
+      "agentikus programozás",
       "ai coding assistant",
       "opencode zen",
       "opencode go",
@@ -20,13 +20,13 @@ en_md5: a5c3efc92432a167085818beba5b6bc7
 
 ## Bevezetés
 
-Az agentikus kódolási platform egy olyan eszköz, amellyel egy AI veled együtt dolgozhat a kódon: fájlokat olvashat, módosításokat végezhet és parancsokat futtathat a számítógépeden. Ha ez a mondat új számodra, kezdd a [mi az agentikus kódolás](/guides/what-is-agentic-coding) útmutatónkkal, és gyere vissza ide, ha készen állsz a telepítésre.
+Az agentikus programozási platform egy olyan eszköz, amellyel egy AI veled együtt dolgozhat a kódon: fájlokat olvashat, módosításokat végezhet és parancsokat futtathat a számítógépeden. Ha ez a mondat új számodra, kezdd a [mi az agentikus programozás](/guides/what-is-agentic-coding) útmutatónkkal, és gyere vissza ide, ha készen állsz a telepítésre.
 
 Ez az útmutató végigvezet az **OpenCode** telepítésén, a bejelentkezésen és egy AI-modell kiválasztásán. Ezt csak egyszer kell megcsinálnod, és az egészet végigcsinálhatod anélkül, hogy egy fillért is költenél.
 
 ## Miért az OpenCode-ot ajánljuk
 
-Több jó agentikus kódolási eszköz is létezik, köztük a Claude Code (Anthropic) és a Codex (OpenAI). Használatuk nagyjából hasonló, így semmi sem vész kárba, amit megtanulsz, ha később váltanál. Mindemellett az **[OpenCode](https://opencode.ai)**-ot ajánljuk, amíg tanulsz, három okból:
+Több jó agentikus programozási eszköz is létezik, köztük a Claude Code (Anthropic) és a Codex (OpenAI). Használatuk nagyjából hasonló, így semmi sem vész kárba, amit megtanulsz, ha később váltanál. Mindemellett az **[OpenCode](https://opencode.ai)**-ot ajánljuk, amíg tanulsz, három okból:
 
 - **Ingyen használhatod.** Jelenleg ez az egyetlen ilyen eszköz, amelynek megbízható, stabil és valóban használható ingyenes szintje van, és ez a szint valószínűleg nem is fog eltűnni.
 - **Szinte bármilyen AI-modellel működik.** Kezdheted az ingyenes modellekkel, és később kipróbálhatod a fejlettebbeket is, ha szeretnél mélyebbre ásni, mindezt anélkül, hogy eszközt kellene váltanod.
@@ -46,7 +46,7 @@ Az OpenCode maga ingyenes. Amiért fizethetsz, az a gondolkodást végző AI-mod
 
 ## Melyik modellt válasszam?
 
-Ha nem vagy biztos benne, hogy egyáltalán mi az a „modell”, a [kulcsfontosságú agentikus kódolási fogalmakról](/guides/key-agentic-coding-concepts) szóló útmutatónk elmagyarázza. Röviden: a modell maga az AI „agya”, és a különböző modellek okosabbak, gyorsabbak vagy olcsóbbak egymásnál.
+Ha nem vagy biztos benne, hogy egyáltalán mi az a „modell”, a [kulcsfontosságú agentikus programozási fogalmakról](/guides/key-agentic-coding-concepts) szóló útmutatónk elmagyarázza. Röviden: a modell maga az AI „agya”, és a különböző modellek okosabbak, gyorsabbak vagy olcsóbbak egymásnál.
 
 Az OpenCode-on belül bármikor válthatsz modellt a `/models` beírásával. A tanácsunk:
 
@@ -128,7 +128,7 @@ Most kérdezz tőle valamit. Írj be egy ilyen üzenetet:
 
 > Nézd meg a fájlokat ebben a mappában, és magyarázd el, mit csinálnak.
 
-Figyeld meg, mi történik. Beolvassa a fájlokat, gondolkodik, majd visszajelez, és engedélyt kér, mielőtt bármit módosítana. Az olvasás, cselekvés és ellenőrzés ez a ciklusa az agentikus kódolás lényege.
+Figyeld meg, mi történik. Beolvassa a fájlokat, gondolkodik, majd visszajelez, és engedélyt kér, mielőtt bármit módosítana. Az olvasás, cselekvés és ellenőrzés ez a ciklusa az agentikus programozás lényege.
 
 <figure class="post-figure" style="max-width:700px">
   <img src="/images/guides/installing-an-agentic-coding-platform/first-conversation.webp" alt="Az OpenCode egyenként beolvassa a projekt fájljait, gondolkodik, majd elmagyarázza, mit csinálnak az egyes felső szintű mappák és fájlok" />
@@ -137,4 +137,4 @@ Figyeld meg, mi történik. Beolvassa a fájlokat, gondolkodik, majd visszajelez
 
 Ugyanez bármilyen terminálban működik, VS Code-dal vagy anélkül. Nyiss egy terminált, lépj be egy projektmappába, írd be, hogy `opencode`, és már kezdheted is. Vannak, akik imádnak így dolgozni. Próbáld ki mindkettőt, és nézd meg, melyik illik hozzád.
 
-Ennyi. Most már van egy működő agentikus kódolási környezeted, aminek a futtatása semmibe sem kerül. Hogy megértsd, mi is történik valójában a színfalak mögött, és mit jelentenek az olyan szavak, mint a token és a kontextus, folytasd a [kulcsfontosságú agentikus kódolási fogalmakkal](/guides/key-agentic-coding-concepts).
+Ennyi. Most már van egy működő agentikus programozási környezeted, aminek a futtatása semmibe sem kerül. Hogy megértsd, mi is történik valójában a színfalak mögött, és mit jelentenek az olyan szavak, mint a token és a kontextus, folytasd a [kulcsfontosságú agentikus programozási fogalmakkal](/guides/key-agentic-coding-concepts).

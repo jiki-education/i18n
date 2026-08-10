@@ -1,18 +1,18 @@
 ---
-title: Az agentikus kódolás legfontosabb fogalmai
+title: Az agentikus programozás legfontosabb fogalmai
 excerpt: Modellek, tokenek, kontextusablakok és egyéb ötletek, amelyeket meg kell értened, hogy jól használhasd az AI kódoló ágenseket.
 tags: ["agentic-coding"]
 seo:
-  description: "Az agentikus kódolás alapfogalmai kezdőknek magyarázva: mik az AI-modellek és a tokenek, hogyan működnek a kontextusablakok, és miért hibáznak néha az ágensek."
-  keywords: ["agentikus kódolási fogalmak", "LLM", "tokenek", "kontextusablak", "AI-modellek", "promptok", "hallucinációk"]
+  description: "Az agentikus programozás alapfogalmai kezdőknek magyarázva: mik az AI-modellek és a tokenek, hogyan működnek a kontextusablakok, és miért hibáznak néha az ágensek."
+  keywords: ["agentikus programozási fogalmak", "LLM", "tokenek", "kontextusablak", "AI-modellek", "promptok", "hallucinációk"]
 en_md5: d963e01d7934f4003d436029d1808fc8
 ---
 
 ## Bevezetés
 
-Ezen a ponton feltételezzük, hogy már telepítetted az OpenCode-ot vagy egy hasonló eszközt. Ha nem, először kövesd az [agentikus kódolási platform telepítéséről szóló útmutatónkat](/guides/installing-an-agentic-coding-platform).
+Ezen a ponton feltételezzük, hogy már telepítetted az OpenCode-ot vagy egy hasonló eszközt. Ha nem, először kövesd az [agentikus programozási platform telepítéséről szóló útmutatónkat](/guides/installing-an-agentic-coding-platform).
 
-Használhatsz egy agentikus kódolási eszközt anélkül, hogy értenéd, hogyan működik, ahogyan vezethetsz autót anélkül, hogy tudnád, mit csinál a kuplung. De egy kis megértés sokat segít. Megmagyarázza, hogy az eszköz néha miért tűnik ragyogónak, máskor miért zavarba ejtőnek, miért kerülnek bizonyos dolgok pénzbe, és hogyan érhetsz el sokkal jobb eredményeket. Ezek azok a fogalmak, amelyeket érdemes ismerni.
+Használhatsz egy agentikus programozási eszközt anélkül, hogy értenéd, hogyan működik, ahogyan vezethetsz autót anélkül, hogy tudnád, mit csinál a kuplung. De egy kis megértés sokat segít. Megmagyarázza, hogy az eszköz néha miért tűnik ragyogónak, máskor miért zavarba ejtőnek, miért kerülnek bizonyos dolgok pénzbe, és hogyan érhetsz el sokkal jobb eredményeket. Ezek azok a fogalmak, amelyeket érdemes ismerni.
 
 ## Modellek
 
@@ -43,7 +43,7 @@ Ebből két gyakorlati dolog következik:
 
 ## Promptok
 
-A promptod mindaz, amit a modellnek írsz. Az agentikus kódolásban a legnagyobb hatású készség a jó promptok írása. A különbség a „javítsd meg a kódomat” és a „ebben a mappában a tesztek ezzel a hibaüzenettel elhasalnak, és én azt vártam, hogy a függvény 5-öt adjon vissza, nem 3-at” között az, hogy az ágens találgat vagy tudja, mit kell tennie.
+A promptod mindaz, amit a modellnek írsz. Az agentikus programozásban a legnagyobb hatású készség a jó promptok írása. A különbség a „javítsd meg a kódomat” és a „ebben a mappában a tesztek ezzel a hibaüzenettel elhasalnak, és én azt vártam, hogy a függvény 5-öt adjon vissza, nem 3-at” között az, hogy az ágens találgat vagy tudja, mit kell tennie.
 
 Egy jó prompt három dolgot mond el: mit szeretnél elérni, mi történik valójában, és mit próbáltál már meg. Pontosan azt, amit egy segítséget kérő kollégától is elvárnál.
 

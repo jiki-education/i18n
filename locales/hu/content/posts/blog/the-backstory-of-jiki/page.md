@@ -76,7 +76,7 @@ Az utolsó döntés, amit meg kellett hoznom, az árazás volt.
 
 Úgy döntöttem, hogy a freemium modellt választom. A Jiki alapvető része ingyenes – a videók és a feladatok mindenki számára elérhetőek. De vannak néhány remek extra funkció (AI-támogatás, néhány bónusz projekt, élő közvetítések, kulisszák mögötti tartalmak, stb.), amelyeket az emberek egy kis havidíjért érhetnek el (9,99 USD, a [vásárlóerő-paritás](https://en.wikipedia.org/wiki/Purchasing_power_parity) alapján, helytől függően módosítva). Ez egy olyan összeg, ami a világ legtöbb embere számára megfizethető, így ha valaki szeretné támogatni, amit csinálunk, vagy hozzáférni ezekhez a funkciókhoz, az egy nagyszerű módja az indulásnak.
 
-## Aztán jött az agentikus kódolás
+## Aztán jött az agentikus programozás
 
 Éppen amikor készen álltam az indulásra, jött a Claude Code és társai, és örökre megváltoztatták a kódolást. Sokáig töprengtem azon, hogy egyáltalán elindítsam-e a Jikit – hogy a kódolás egyáltalán releváns-e még. De 6 hónappal később minden eddiginél jobban meg vagyok győződve: a kód marad, és a szoftverfejlesztők értékesebbek, mint valaha.
 

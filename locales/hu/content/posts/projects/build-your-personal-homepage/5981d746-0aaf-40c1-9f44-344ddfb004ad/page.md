@@ -1,13 +1,13 @@
 ---
-title: "Első epizód: Ágensalapú programozás 101"
-excerpt: "Elindítjuk ezt a projektet egy mélyreható betekintéssel az ágensalapú programozásba. Hogy mik az LLM-ek és az ágensek, hogyan működnek a modellek és az erőfeszítés, hogyan állíthatod be ingyenesen az OpenCode-ot, és hogyan építheted meg a legelső weboldaladat."
+title: "Első epizód: Agentikus programozás 101"
+excerpt: "Elindítjuk ezt a projektet egy mélyreható betekintéssel az agentikus programozásba. Hogy mik az LLM-ek és az ágensek, hogyan működnek a modellek és az erőfeszítés, hogyan állíthatod be ingyenesen az OpenCode-ot, és hogyan építheted meg a legelső weboldaladat."
 summary:
-  from: "Feltételezzük, hogy semmit sem tudsz a webről vagy az ágensalapú programozásról."
-  to: "Megérted az ágensalapú programozási ciklust, és megírod az első, alapvető honlapodat a böngészőben."
-  keyConcepts: ["Ágensalapú programozás", "Modellek és erőfeszítés", "Tokenek és kontextus", "HTML alapok"]
+  from: "Feltételezzük, hogy semmit sem tudsz a webről vagy az agentikus programozásról."
+  to: "Megérted az agentikus programozási ciklust, és megírod az első, alapvető honlapodat a böngészőben."
+  keyConcepts: ["Agentikus programozás", "Modellek és erőfeszítés", "Tokenek és kontextus", "HTML alapok"]
 seo:
-  description: "Ismerd meg, mi az ágensalapú programozás, hogyan működnek az LLM-ek, a modellek és a tokenek, és építsd meg az első weboldaladat az OpenCode segítségével."
-  keywords: ["ágensalapú programozás", "LLM", "HTML", "kezdő"]
+  description: "Ismerd meg, mi az agentikus programozás, hogyan működnek az LLM-ek, a modellek és a tokenek, és építsd meg az első weboldaladat az OpenCode segítségével."
+  keywords: ["agentikus programozás", "LLM", "HTML", "kezdő"]
 en_md5: 179b6fdc5bf4a07aac6f6fb60589af30
 ---
 
@@ -19,7 +19,7 @@ Hadd magyarázzam el, miről fog szólni ez a sorozat, mit veszünk át ma konkr
 
 ## Kinek szól ez
 
-Ez a sorozat igazából két csoportnak szól. Azoknak, akik teljesen újak a programozásban, újak ebben az egész világban, és csak el akarnak indulni, ki akarják találni, hogyan kezdhetnek el tanulni. De azoknak is szól, akik talán jóval tapasztaltabbak, akár senior fejlesztők is lehetnek, de még nem igazán mélyedtek bele az ágensalapú programozásban zajló változásokba, és szeretnék megérteni, mi történik, látni valamit működés közben, beszélgetni a dolgokról, és valódi megértést szerezni. Szóval bárhol is vagy ezen a skálán – a legelső programozós napodtól kezdve, amikor talán ma reggel döntöttél úgy, hogy kódolni fogsz, megtaláltad Jikit és itt vagy, egészen addig, hogy valaki nagyon senior –, ez neked szól.
+Ez a sorozat igazából két csoportnak szól. Azoknak, akik teljesen újak a programozásban, újak ebben az egész világban, és csak el akarnak indulni, ki akarják találni, hogyan kezdhetnek el tanulni. De azoknak is szól, akik talán jóval tapasztaltabbak, akár senior fejlesztők is lehetnek, de még nem igazán mélyedtek bele az agentikus programozásban zajló változásokba, és szeretnék megérteni, mi történik, látni valamit működés közben, beszélgetni a dolgokról, és valódi megértést szerezni. Szóval bárhol is vagy ezen a skálán – a legelső programozós napodtól kezdve, amikor talán ma reggel döntöttél úgy, hogy kódolni fogsz, megtaláltad Jikit és itt vagy, egészen addig, hogy valaki nagyon senior –, ez neked szól.
 
 Ebben a konkrét sorozatban (több sorozat is lesz) abból indulok ki, hogy semmit sem tudsz. Így ha senior fejlesztő vagy, sok minden, amit mondok, neked olyan lesz, mint a tenyeretek, és lehet, hogy kicsit unalmasnak találod. Ha ez az első napod, akkor nem feltételezek semmilyen előzetes tudást. Lehet, hogy lesznek dolgok, amik meghaladják a jelenlegi tudásodat, de úgy vezetem ezt az alkalmat, mintha neked szólna. Ha még nem csináltad ezt az új típusú programozást, és tapasztaltabb vagy, ez akkor is hasznos lesz.
 
@@ -51,9 +51,9 @@ Ezek a látható dolgok, amik nyilvánvalóak. Képzeld el, hány apró hiba, va
 
 Az internacionalizációt. A 18 az i és az n közötti betűk száma. Egy rövidítés.
 
-## Az ágensalapú programozás dióhéjban
+## Az agentikus programozás dióhéjban
 
-Nézzük meg, hogy néz ki egy kis ágensalapú programozás. Vegyük azt az indonéz fogalomtárat a hibás emojival. Készítek róla egy képernyőképet, átjövök a terminálba, és megnyitom a Claude Code-ot. Kicsit később beszélünk majd arról, hogyan kell beállítani. Lehet, hogy most még ijesztő, fekete-zöld dolognak tűnik, de mindjárt rátérünk.
+Nézzük meg, hogy néz ki egy kis agentikus programozás. Vegyük azt az indonéz fogalomtárat a hibás emojival. Készítek róla egy képernyőképet, átjövök a terminálba, és megnyitom a Claude Code-ot. Kicsit később beszélünk majd arról, hogyan kell beállítani. Lehet, hogy most még ijesztő, fekete-zöld dolognak tűnik, de mindjárt rátérünk.
 
 Amit most meg akarok mutatni, az a következő. Behúzom a képet, és azt mondom: „javítsd ki a hibás emojit”. Erre elindul a háttérben, gondolkodik és nagyon sok dolgot csinál. Láthatjuk, miket csinál. Parancsokat futtat. Megpróbálja kideríteni, mi történik. Miért hibás ez a zászló? Mit jelent ez a zászló? Hogyan jött létre ez a dolog? Most elkezd scripteket olvasni. Ez a fórum nyelvi kategóriáját létrehozó script, amit akkor futtatott, amikor létrehozta azt a kategóriát. Most átnézi az összes eddigi tevékenysége történetét, és megpróbálja kitalálni, mikor romlott el, hogyan romlott el, miért romlott el. Különböző fájlokat olvas. Különböző parancsokat futtat. Láthatod, hogy egyre több dolgot csinál, a negyedik parancsát futtatja, és így tovább.
 
@@ -63,7 +63,7 @@ Aztán közli, hogy megtalálta. A helyes emojinak az indonéz zászlónak kell 
 
 ![A Glossary for Indonesian téma a fórumon, most már a helyes indonéz zászlóval.](/images/projects/build-your-personal-homepage/setting-up-the-project/indonesian-flag-fixed.webp)
 
-Na, ez az ágensalapú programozás dióhéjban. Azt mondtuk neki: „csináld meg ezt az egy dolgot”. Erre ő elindult, futtatott különböző parancsokat, dokumentumokat olvasott, a háttérben nagyon bonyolult dolgokat intézett, olyan komplikált bash parancsokat, amiket nagyon fájdalmas lenne megírni. Kivéve, ha valaki Exercism maintainer, mert annak nagyon könnyű. De nekünk, halandóknak, lehet, hogy kicsit bonyolult lenne. Átnézte, megpróbálta kideríteni, mikor romlott el. Átolvasta a fájlok előzményeit. Megtalálta az indonéz bejegyzést és néhány naplóbejegyzést. Elolvasta a szabályokat, amiket adtam neki, talált néhány változót, amivel frissíteni tudja a fórumot, kiderítette, mi a baj, röviden megbeszélte velem, majd frissítette azt a dolgot.
+Na, ez az agentikus programozás dióhéjban. Azt mondtuk neki: „csináld meg ezt az egy dolgot”. Erre ő elindult, futtatott különböző parancsokat, dokumentumokat olvasott, a háttérben nagyon bonyolult dolgokat intézett, olyan komplikált bash parancsokat, amiket nagyon fájdalmas lenne megírni. Kivéve, ha valaki Exercism maintainer, mert annak nagyon könnyű. De nekünk, halandóknak, lehet, hogy kicsit bonyolult lenne. Átnézte, megpróbálta kideríteni, mikor romlott el. Átolvasta a fájlok előzményeit. Megtalálta az indonéz bejegyzést és néhány naplóbejegyzést. Elolvasta a szabályokat, amiket adtam neki, talált néhány változót, amivel frissíteni tudja a fórumot, kiderítette, mi a baj, röviden megbeszélte velem, majd frissítette azt a dolgot.
 
 Én így építettem a Jikit. Így dolgozik ma rengeteg modern szoftverfejlesztő, sőt, azt mondanám, a szoftverfejlesztők többsége. Észreveszünk egy ilyen problémát. Kiszúrjuk. Talán egy másik embertől érkező hibajegy alapján. Aztán odaadjuk valaminek, mint a Claude, vagy a számtalan más modell valamelyikének, és mindjárt rátérünk ezekre. Ők lefuttatják ezt a bonyolult, több lépésből álló folyamatot, aztán kijavítják a hibát.
 
@@ -119,9 +119,9 @@ Igen, ugyanazok. Minden egyes LLM cégnek más neve van mindezekre.
 
 ## Ágensek és modellek
 
-Szeretnék egy pillanatra megállni, és elgondolkodni azon, ami itt történt, mert ez kulcsfontosságú ahhoz, hogy megértsd a különbséget aközött, amikor megnyitod a Claude alkalmazást vagy a ChatGPT-t, és beszélgetsz vele, és aközött, amikor ilyen ágensalapú programozást használsz.
+Szeretnék egy pillanatra megállni, és elgondolkodni azon, ami itt történt, mert ez kulcsfontosságú ahhoz, hogy megértsd a különbséget aközött, amikor megnyitod a Claude alkalmazást vagy a ChatGPT-t, és beszélgetsz vele, és aközött, amikor ilyen agentikus programozást használsz.
 
-Amikor egy felhasználói felületen beszélgetsz a Claude-dal, felteszel egy kérdést, és gyakorlatilag egyetlen ügynökkel beszélgetsz, aki talán elmegy, leellenőriz valamit, aztán visszajön és folytatja az írást. Ez nagyon olyan, mint egy beszélgetés közted és egy személy, egy ügynök között. Amikor ebben az ágensalapú programozási modellben dolgozol, a háttérben az történik, hogy rengeteg ügynököt indítunk el, akik különböző dolgokat csinálnak. Lesznek ügynökök, akik kutatnak, akik terveznek, akik építenek. És saját ügynököket is készíthetünk. Olyan ügynököket, amik bizonyos módon tesztelnek, olyan ügynököket, amik azt ellenőrzik, hogy a dolgok megfelelnek-e bizonyos szabványoknak. És gyakran az az ügynök, akivel beszélünk, az irányítja az összes többi ügynököt.
+Amikor egy felhasználói felületen beszélgetsz a Claude-dal, felteszel egy kérdést, és gyakorlatilag egyetlen ügynökkel beszélgetsz, aki talán elmegy, leellenőriz valamit, aztán visszajön és folytatja az írást. Ez nagyon olyan, mint egy beszélgetés közted és egy személy, egy ügynök között. Amikor ebben az agentikus programozási modellben dolgozol, a háttérben az történik, hogy rengeteg ügynököt indítunk el, akik különböző dolgokat csinálnak. Lesznek ügynökök, akik kutatnak, akik terveznek, akik építenek. És saját ügynököket is készíthetünk. Olyan ügynököket, amik bizonyos módon tesztelnek, olyan ügynököket, amik azt ellenőrzik, hogy a dolgok megfelelnek-e bizonyos szabványoknak. És gyakran az az ügynök, akivel beszélünk, az irányítja az összes többi ügynököt.
 
 Ezek az ügynökök különböző modelleket használhatnak. Szóval itt az ideje, hogy a modellekről beszéljünk. Biztosan sokat hallottad már ezt a kifejezést. Valószínűleg van egy jó elképzelésed arról, mik a modellek, de gyorsan elmagyarázom.
 
@@ -179,7 +179,7 @@ Ez úgy működik, hogy megpróbál dolgokat csinálni, és egy másik LLM figye
 
 Ez volt az átfogó áttekintés arról, hogyan működik mindez. Most azt szeretném megmutatni, hogyan tudod ezt magadnak beállítani.
 
-Rengeteg különböző ágens és eszköz van, amit használhatsz. Tisztázzuk hát a szóhasználatunkat. A Claude Code, amit az előbb láttál a képernyőn, egy ágensalapú programozási eszköz, vagy talán ágensalapú programozási platform. A számítógépeden fut. Általában a terminálban fut, ahogy én is beállítottam. Futtathatjuk egy kódszerkesztőben is, amit mindjárt megnézünk. És ez a kapu közted és a modellek között. Mutattam, hogy válthatok Opus, Sonnet, Haiku között, és válthatok az erőfeszítési szintek között is.
+Rengeteg különböző ágens és eszköz van, amit használhatsz. Tisztázzuk hát a szóhasználatunkat. A Claude Code, amit az előbb láttál a képernyőn, egy agentikus programozási eszköz, vagy talán agentikus programozási platform. A számítógépeden fut. Általában a terminálban fut, ahogy én is beállítottam. Futtathatjuk egy kódszerkesztőben is, amit mindjárt megnézünk. És ez a kapu közted és a modellek között. Mutattam, hogy válthatok Opus, Sonnet, Haiku között, és válthatok az erőfeszítési szintek között is.
 
 Mindez a saját gépeden történik. Te a saját gépeden beszélsz. Az adatokat elküldi az Anthropicnak, valamelyik modelljüknek. Amit visszaküldenek, az nem csupán egy szöveg, ami megjelenik a képernyőn. Hanem egy csomó utasítást küldenek vissza, amit a Claude Code értelmezni tud, hogy csináljon dolgokat. Azt mondják: menj és futtasd ezt a scriptet az illető számítógépén. Menj és nézz bele ebbe a könyvtárba az illető számítógépén. Menj és érd el ezt a weboldalt, és csinálj dolgokat. Mindezek az utasítások a Claude-tól jönnek vissza.
 
@@ -225,13 +225,13 @@ Az Anthropicon kívül nem igazán tudok semmit a modellekről. Én személy sze
 
 ## Az első weboldalad megépítése
 
-Az első félidőben egy kicsit mélyre ástunk abban, hogy mik az LLM-ek, mi az ágensalapú programozás, és milyen a modern ciklus, amit mi, fejlesztők, használunk. Remélem, hogy az elkövetkező hónapokban, egy évben, ezzel kényelmesen fogsz tudni dolgozni. Annyira kényelmesen, hogy bármit megépíthess a nap alatt. De mielőtt továbbmennénk, szeretném hangsúlyozni azt a gondolatot, hogy a fontos az, hogy te megértsd, mi zajlik a motorháztető alatt.
+Az első félidőben egy kicsit mélyre ástunk abban, hogy mik az LLM-ek, mi az agentikus programozás, és milyen a modern ciklus, amit mi, fejlesztők, használunk. Remélem, hogy az elkövetkező hónapokban, egy évben, ezzel kényelmesen fogsz tudni dolgozni. Annyira kényelmesen, hogy bármit megépíthess a nap alatt. De mielőtt továbbmennénk, szeretném hangsúlyozni azt a gondolatot, hogy a fontos az, hogy te megértsd, mi zajlik a motorháztető alatt.
 
 Tudom, hogy elég sok információt adtam az első félidőben. Úgyhogy a második félidőben a saját honlapod megépítését nézzük meg. Azt gondoltam, hogy ma még más részekre is rátérünk, de szerintem ezeket hagyjuk a következő alkalomra. A következő alkalommal azt nézzük meg, hogyan telepítsük ki mindezt, és azt is, hogyan tolhatjuk fel a GitHubra. Van egy exkluzív ajánlatom is mindenkinek, aki a Jikit használja: kapsz egy ingyenes .tech domaint, és hamarosan ingyenes .online vagy .space domaint is kaphatsz. Így létrehozhatsz magadnak egy weboldalt ezzel a domainnel. Erről a következő alkalommal fogok többet beszélni. De ma folytatjuk az első weboldalad megépítését, és egy kicsit elgondolkodunk azon, mi minden jár ezzel.
 
 ## VS Code
 
-Beszéltünk egy kicsit arról, hogy az ágensalapú programozás egy terminálban zajlik, és csak beírod az utasításaidat a Claude-nak, vagy amelyik modellt, amelyik eszközt használsz. A régi iskola szerint mindezt egy kódszerkesztőben, egy szövegszerkesztőben csináltuk. A történelem során sok szövegszerkesztő volt, de amit ma a legtöbben használunk, az a VS Code. Ha még sosem használtál szövegszerkesztőt, kódszerkesztőt, azt javaslom, telepítsd a VS Code-ot. Az útmutatókban, amiket ehhez az adáshoz adok közre, lesz egy útmutató a VS Code telepítéséhez és használatához.
+Beszéltünk egy kicsit arról, hogy az agentikus programozás egy terminálban zajlik, és csak beírod az utasításaidat a Claude-nak, vagy amelyik modellt, amelyik eszközt használsz. A régi iskola szerint mindezt egy kódszerkesztőben, egy szövegszerkesztőben csináltuk. A történelem során sok szövegszerkesztő volt, de amit ma a legtöbben használunk, az a VS Code. Ha még sosem használtál szövegszerkesztőt, kódszerkesztőt, azt javaslom, telepítsd a VS Code-ot. Az útmutatókban, amiket ehhez az adáshoz adok közre, lesz egy útmutató a VS Code telepítéséhez és használatához.
 
 Amikor az előbb láttad, hogy fájlokat nézegetek, az a VS Code volt. Ez csak egy keret, egy vászonféle, ahol szöveges fájlokat szerkeszthetsz, és van egy kis polc az oldalán, ami a fájljaidat listázza.
 

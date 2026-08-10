@@ -1,31 +1,31 @@
 ---
-title: "Mi az agentic coding?"
-excerpt: "Mi az agentic coding, miért változtatja meg a szoftverfejlesztést, és hol kezdd, ha most tanulsz programozni."
+title: "Mi az agentikus programozás?"
+excerpt: "Mi az agentikus programozás, miért változtatja meg a szoftverfejlesztést, és hol kezdd, ha most tanulsz programozni."
 tags: ["agentic-coding"]
 seo:
-  description: "Bevezetés az agentic codingba kezdőknek. Ismerd meg, mik az AI kódolási ügynökök, miért fontosak, és hogyan állíts be egyet, miközben programozni tanulsz."
-  keywords: ["agentic coding", "ai coding", "coding agents", "llm", "learn to code", "opencode", "claude code"]
+  description: "Bevezetés az agentikus programozásba kezdőknek. Ismerd meg, mik az AI kódolási ügynökök, miért fontosak, és hogyan állíts be egyet, miközben programozni tanulsz."
+  keywords: ["agentikus programozás", "ai coding", "coding agents", "llm", "learn to code", "opencode", "claude code"]
 en_md5: 96a2eaf8d00c3250901e06440a16253b
 ---
 
 ## Bevezetés
 
-Azóta, hogy 30 évvel ezelőtt elkezdtem programozni, az eszközök sokszor változtak, de semmi sem változtatta meg őket olyan gyorsan vagy olyan mélyen, mint a mesterséges intelligencia. A szoftverfejlesztés módja 2026-ban nagyon másképp néz ki, mint akár három évvel ezelőtt, és a legnagyobb változás valami, amit **agentic coding**-nak hívnak.
+Azóta, hogy 30 évvel ezelőtt elkezdtem programozni, az eszközök sokszor változtak, de semmi sem változtatta meg őket olyan gyorsan vagy olyan mélyen, mint a mesterséges intelligencia. A szoftverfejlesztés módja 2026-ban nagyon másképp néz ki, mint akár három évvel ezelőtt, és a legnagyobb változás valami, amit **agentikus programozásnak** hívnak.
 
-Ha most tanulsz programozni, ez igazán izgalmas hír. Egyidejűleg sajátíthatod el a programozás alapjait és azokat az eszközöket, amelyek köré a profik teljes munkafolyamatukat építik. Ez az útmutató elmagyarázza, mi az agentic coding, és további útmutatókra mutat ebben a sorozatban, hogy elkezdhesd és kísérletezhess.
+Ha most tanulsz programozni, ez igazán izgalmas hír. Egyidejűleg sajátíthatod el a programozás alapjait és azokat az eszközöket, amelyek köré a profik teljes munkafolyamatukat építik. Ez az útmutató elmagyarázza, mi az agentikus programozás, és további útmutatókra mutat ebben a sorozatban, hogy elkezdhesd és kísérletezhess.
 
-## Mi az agentic coding?
+## Mi az agentikus programozás?
 
 Valószínűleg használtál már AI chatbotot, például ChatGPT-t vagy Claude-ot. Beírsz egy kérdést, az meg válaszol. Ez hasznos, de csupán beszélgetés, semmi több. Az AI nem tud *csinálni* semmit.
 
-Egy **agentic coding-eszköz** ugyanazt a fajta mesterséges intelligenciát (nagy nyelvi modellt, azaz **LLM**-et) veszi alapul, és kezet ad neki. A számítógépeden fut, általában a terminálban, és képes:
+Egy **agentikus programozási eszköz** ugyanazt a fajta mesterséges intelligenciát (nagy nyelvi modellt, azaz **LLM**-et) veszi alapul, és kezet ad neki. A számítógépeden fut, általában a terminálban, és képes:
 
 - **Olvassa a kódodat**, hogy megértse a projektedet.
 - **Ír és szerkeszt fájlokat** a változtatásokhoz.
 - **Parancsokat futtat**, hogy ellenőrizze, tényleg működnek-e a változtatások.
 - **Ciklusban halad tovább**: kipróbál valamit, ellenőrzi az eredményt, és kijavítja magát, amíg a munka el nem készül.
 
-Ez a ciklus az, ami „agentic”-ké teszi. Ahelyett, hogy csak kódot javasolna, amit kimásolhatsz és beilleszthetsz, az AI ügynökként dolgozik a nevedben. Leírod, mit szeretnél, ő pedig elvégzi a munkát, és közben mindent megmutat.
+Ez a ciklus az, ami „agentikussá” teszi. Ahelyett, hogy csak kódot javasolna, amit kimásolhatsz és beilleszthetsz, az AI ügynökként dolgozik a nevedben. Leírod, mit szeretnél, ő pedig elvégzi a munkát, és közben mindent megmutat.
 
 ## Szabad-e kezdőként használni?
 
@@ -41,8 +41,8 @@ Ha viszont jól használod, az egyik legjobb tanulási eszköz, ami valaha léte
 
 Ezt a sorozatot úgy írtuk meg, hogy sorrendben haladj végig rajta:
 
-1. **[Az agentic coding kulcsfogalmai](/guides/key-agentic-coding-concepts)** – elmagyarázza azokat a fogalmakat, amelyekkel folyton találkozni fogsz: modellek, tokenek, kontextus, és hogy ezek az eszközök miért tévednek néha magabiztosan. Itt kezdd, ha olyan szavak, mint „modell”, még semmit sem jelentenek számodra.
-2. **[Agentic coding-platform telepítése](/guides/installing-an-agentic-coding-platform)** – végigvezet az OpenCode, az általunk ajánlott eszköz telepítésén, és azon, hogyan működhet ingyenes AI modellel. Egy fillér nélkül is elindulhatsz.
+1. **[Az agentikus programozás kulcsfogalmai](/guides/key-agentic-coding-concepts)** – elmagyarázza azokat a fogalmakat, amelyekkel folyton találkozni fogsz: modellek, tokenek, kontextus, és hogy ezek az eszközök miért tévednek néha magabiztosan. Itt kezdd, ha olyan szavak, mint „modell”, még semmit sem jelentenek számodra.
+2. **[Agentikus programozási platform telepítése](/guides/installing-an-agentic-coding-platform)** – végigvezet az OpenCode, az általunk ajánlott eszköz telepítésén, és azon, hogyan működhet ingyenes AI modellel. Egy fillér nélkül is elindulhatsz.
 
 Szeretnél majd egy kódszerkesztőt is telepíteni, hogy te magad is tudj kódot olvasni és szerkeszteni. Ha ezt még nem intézted el, nézd meg a [kódszerkesztő használata](/guides/using-a-code-editor) és a [VS Code telepítése](/guides/installing-vscode) útmutatókat.
 
