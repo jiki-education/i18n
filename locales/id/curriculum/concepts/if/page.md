@@ -1,5 +1,5 @@
 ---
-title: "Percabangan `if`"
+title: "Memahami percabangan `if`"
 description: "Menggunakan kata kunci `if` untuk menjalankan blok kode hanya saat suatu kondisi benar, seperti penjaga pintu yang memutuskan siapa boleh masuk."
 en_md5: 8797e078e1ad90b7652373baf6f96f28
 ---
