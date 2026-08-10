@@ -1,5 +1,5 @@
 ---
-title: "Break"
+title: "Nyckelordet `break`"
 description: "Så använder du nyckelordet `break` i loopens kropp för att avsluta loopen direkt och gå vidare till koden som kommer efter den."
 en_md5: 30148766de67ae467ab1a4852ad35895
 ---

@@ -1,5 +1,5 @@
 ---
-title: "`if`-satser"
+title: "Så fungerar `if`-satser"
 description: "Använd nyckelordet `if` för att köra ett kodblock bara när ett villkor är sant, som en dörrvakt som bestämmer vem som kommer in."
 en_md5: 8797e078e1ad90b7652373baf6f96f28
 ---
