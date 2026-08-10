@@ -1,7 +1,7 @@
 ---
-title: "Repeat döngüsü"
+title: "`repeat` döngüsü"
 description: "Jiki'ye süslü parantezlerin içindeki kodu belirli sayıda çalıştırmasını söylemek için `repeat` anahtar kelimesini kullanmak."
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 Şimdiye kadar her şeyi doğrusal bir şekilde yazdık: Jiki her talimatı yukarıdan aşağıya sırayla takip etti.
