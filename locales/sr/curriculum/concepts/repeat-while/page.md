@@ -1,7 +1,7 @@
 ---
-title: "Ponavljanje bez broja"
+title: "Korišćenje `repeat`-a bez broja ponavljanja"
 description: "Ostavljanje zagrada `repeat` petlje praznim tako da Jiki nastavi sve dok mu nešto drugo ne kaže da stane."
-en_md5: 5902e86c82b7bfe9ca519f9bdf8650ad
+en_md5: f1f98b46bedb1b5abc72aa1b856ee8ae
 ---
 
 Dosad, kad god koristiš `repeat` petlju, uvek navodiš broj koji kaže koliko puta treba da se ponovi. Ponovi pet puta, 10 puta, 40 puta. Ponekad za ovo koristiš i promenljivu. Ali Jikiju uvek tačno kažeš koliko puta da ponovi petlju. Međutim, ponekad ne znamo unapred koliko puta treba ponoviti. Razmisli o lavirintu. Još na samom početku ovog kursa, rešavaš lavirint tako što napišeš konkretne poteze. Možeš da vidiš lavirint, izbrojiš korake i napišeš tačan broj poteza.

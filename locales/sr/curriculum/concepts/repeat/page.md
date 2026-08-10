@@ -1,7 +1,7 @@
 ---
 title: "Petlja `repeat`"
 description: "Kako pomoću ključne reči `repeat` kažeš Jikiju da izvrši kod unutar vitičastih zagrada određeni broj puta."
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 Do sada je sve bilo napisano linearno: Jiki prati svaku instrukciju redom, od vrha ka dnu.

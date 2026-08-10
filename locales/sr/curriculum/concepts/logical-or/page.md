@@ -1,7 +1,7 @@
 ---
-title: "`or` ključna reč"
+title: "Operator `||` (logičko ILI)"
 description: "Kombinovanje dva uslova pomoću `||` tako da ceo uslov bude tačan kada je bar jedan od delova tačan."
-en_md5: 4c9ebc144707760d944e0cddfac5a561
+en_md5: e7bc3f103a37719cdf3a77920d09e24e
 ---
 
 Možemo da koristimo i `or`, i opet, nažalost, ne postoji lepa reč za „ili“ u JavaScriptu. Umesto toga, moramo da koristimo ove dve vertikalne crte (engl. _bars_) jednu pored druge da bismo označili ili. Izgleda čudno, ali zaista nije. Navići ćeš se.

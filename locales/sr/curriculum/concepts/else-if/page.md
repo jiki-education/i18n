@@ -1,7 +1,7 @@
 ---
-title: "Naredba `else if`"
+title: "Ulančavanje `else if` naredbi"
 description: "Nadovezivanje `else if` grana da bi se redom proverilo više uslova, pri čemu se izvršava samo prvi blok čiji je uslov tačan."
-en_md5: 5e1c9b2e77abbd41708f4c33b9aabd8f
+en_md5: 64274945347d47d67baf3378cf219c9b
 ---
 
 Već znaš kako ti `if` i `else` daju dva puta: uradi jedno kada je uslov tačan, a drugo kada je netačan. Ali šta ako imaš više od dve mogućnosti?

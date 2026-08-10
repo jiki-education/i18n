@@ -1,7 +1,7 @@
 ---
-title: "Operator `not`"
+title: "Operator `!` (logičko NE)"
 description: "Korišćenje `!` za okretanje boolean vrednosti: tačno postaje netačno, a netačno postaje tačno, korisno za prebacivanje ili invertovanje provera."
-en_md5: 842c4a4e9cb1fd11c4318a1508296e27
+en_md5: 7cffbd1fa13317b3d6e6a71415413041
 ---
 
 Do sada, kada smo upoređivali stvari da vidimo da li su jednake, koristili smo tri znaka jednakosti. Međutim, ponekad želimo da proverimo da li stvari nisu jednake, i za to koristimo uzvičnik praćen sa dva znaka jednakosti. I generalno, u programiranju, uzvičnik ili bang, kako to zovu naši američki prijatelji, znači ne. Zamisli da radiš u prodavnici, i uprava je donela odluku da niko ne može ući u disko odeći.

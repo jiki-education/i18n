@@ -1,7 +1,7 @@
 ---
-title: "Izmena rečnika"
+title: "Ažuriranje rečnika"
 description: "Korišćenje `dict[key] = value` za ažuriranje postojećih unosa ili dodavanje novih, plus metoda `has` za proveru ključeva."
-en_md5: 254912c3c672aec40b2729cd005fb1a7
+en_md5: 5dfff7e37d863711be783b2fbe0873a4
 ---
 
 Znaš kako se pravi rečnik i kako se iz njega izvlače vrednosti. Ali šta se dešava kada se podaci promene? U jednom trenutku, ja ću ostariti. Neću više imati `42` godine, imaću `43`.

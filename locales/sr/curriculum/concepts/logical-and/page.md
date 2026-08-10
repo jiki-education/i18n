@@ -1,7 +1,7 @@
 ---
-title: "Ključna reč `and`"
+title: "Operator `&&` (logičko I)"
 description: "Kombinovanje dva uslova pomoću `&&` tako da je ceo uslov tačan samo kada su oba dela tačna."
-en_md5: 6ea0de65a81d8e5c8d2eb89f3db29705
+en_md5: cef8d76c4235e85573c3eeede294ab72
 ---
 
 Da te pitam da otvoriš vrata samo ako je neko stariji od 20 godina, verovatno bi znao šta da radiš. Ali šta ako treba da proveriš da li je neko stariji od 20 i da li je obučen u odgovarajuću odeću? Dakle, treba da proveriš dva različita uslova istovremeno. Kako bi to uradio?

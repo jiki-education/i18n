@@ -1,7 +1,7 @@
 ---
-title: "Ostatak"
+title: "Korišćenje operatora `%` za ostatak deljenja"
 description: "Korišćenje operatora `%` za dobijanje ostatka nakon deljenja; često se koristi za proveru da li je broj paran ili neparan."
-en_md5: fe49222bd3f3a019dd9f74a960c5dede
+en_md5: 4955abecb626b8eff02ee7484e2065dd
 ---
 
 Do sada smo koristili sabiranje, oduzimanje, množenje i deljenje kada radimo aritmetiku. Sada ćemo uvesti još jedan, operator ostatka (engl. _remainder_).

@@ -1,7 +1,7 @@
 ---
-title: "`for` petlje"
+title: "Razumevanje `for` petlji"
 description: "Petlja sa tri dela (inicijalizatorom, uslovom i uvećanjem) koja ti daje potpunu kontrolu nad iteracijom."
-en_md5: e96f2e5a4106a88cfbca449c93a26108
+en_md5: 0ad4155ded18c2df27d29e5355bd0532
 ---
 
 Možda se sećaš da repeat petlja zapravo ne postoji u JavaScriptu. To je samo nešto što smo dodali da ti malo olakšamo život dok se zagrevamo.

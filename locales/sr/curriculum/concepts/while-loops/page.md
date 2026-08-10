@@ -1,7 +1,7 @@
 ---
-title: "Petlja `while`"
+title: "Razumevanje `while` petlji"
 description: "Petlja koja se izvršava sve dok je neki uslov tačan."
-en_md5: daef89c6551b1d1cbc0e58668fd368bc
+en_md5: aeceed2abb1434307cfd7c9a0df55c81
 ---
 
 Sledeća petlja koju treba da upoznaš je `while` petlja (`while` znači „dok“).

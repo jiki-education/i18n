@@ -1,7 +1,7 @@
 ---
-title: "Iteriranje kroz stringove"
+title: "Prolazak kroz stringove pomoću `for ... of`"
 description: "Upotreba `for of` petlje za prolazak kroz svako slovo u stringu, obavljajući nešto sa svakim od njih."
-en_md5: 584ac0a187a9e5244b84f0fd417494f3
+en_md5: 09f399cc3f52b89380d3ed23fc6be513
 ---
 
 Pomoću uglastih zagrada možeš da pristupiš pojedinačnom slovu u stringu. Sada ćemo pogledati kako da prođemo kroz string, izvlačeći svako slovo jedno po jedno.
