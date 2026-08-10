@@ -2,8 +2,9 @@
 //
 // One object per locale, keyed by post type and then by slug, holding what a
 // listing needs before it fetches any HTML: the title and excerpt it renders,
-// the SEO block, the tags, the reading time, and the hash of the body the entry
-// points at. The other half of the metadata (date, author, cover image,
+// the SEO block, the tags, the reading time, the hash of the body the entry
+// points at, and the `summary` block for a post that authors one. The other
+// half of the metadata (date, author, cover image,
 // featured/listed/premium/order) is locale-invariant English config the
 // front-end publishes once, and the two are merged at read time.
 //
@@ -29,6 +30,13 @@
  * parts ("<project>/<uuid>"), which is a key with a slash in it and nothing
  * more: no reader of this index splits a slug, and one that did would be asking
  * a question about paths of a structure that holds names.
+ *
+ * `summary` is carried for any post whose frontmatter HAS one, which is a rule
+ * about the data rather than a list of types: only project episodes author one
+ * today, and a second type that grows one is published without an edit here.
+ * Branching on the type would be the second list this module exists not to
+ * have. It is emitted only when present, rather than as an explicit null, so
+ * the entries of a type that authors none keep the exact bytes they had.
  */
 export function buildPostCopy(typeIds, entries) {
   const copy = Object.fromEntries(typeIds.map((typeId) => [typeId, {}]));
@@ -46,7 +54,8 @@ export function buildPostCopy(typeIds, entries) {
       seo: entry.data.seo ?? { description: entry.data.excerpt ?? "", keywords: [] },
       tags: entry.data.tags ?? [],
       readingTime: entry.readingTime,
-      contentHash: entry.contentHash
+      contentHash: entry.contentHash,
+      ...(entry.data.summary == null ? {} : { summary: entry.data.summary })
     };
   }
 
