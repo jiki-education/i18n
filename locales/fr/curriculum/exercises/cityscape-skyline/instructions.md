@@ -1,10 +1,10 @@
 ---
-title: "La skyline"
-description: "Construis toute une skyline de bâtiments aléatoires."
+title: "La ligne d'horizon"
+description: "Construis toute une silhouette de bâtiments aléatoires."
 en_md5: cb89a31566f55397d19e1375dbac44cc
 ---
 
-Dans l'exercice Gratte-ciel, tu as construit un seul gratte-ciel, de différentes hauteurs selon les scénarios. Cette fois, on va plus loin en créant une skyline de bâtiments de différentes hauteurs et de différentes largeurs.
+Dans l'exercice Gratte-ciel, tu as construit un seul gratte-ciel, de hauteurs différentes selon les scénarios. Cette fois, on va plus loin en créant une silhouette de bâtiments de hauteurs différentes et de largeurs différentes.
 
 Tu disposes d'une fonction `numBuildings()` (nombre de bâtiments), qui t'indique combien de bâtiments tu dois créer pour le scénario. Tu as ensuite les fonctions `randomWidth()` (largeur aléatoire) et `randomNumFloors()` (nombre d'étages aléatoire). Utilise-les pour déterminer la largeur et le nombre d'étages de chaque bâtiment du scénario. Le premier appel de ces fonctions te donne les valeurs du premier bâtiment, et ainsi de suite.
 

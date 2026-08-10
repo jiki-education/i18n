@@ -1,7 +1,7 @@
 ---
 title: "Two-Fer"
 description: 'Podeli malo kolača: "One for you, one for me."'
-en_md5: 7f50f5fd7f96abe5acfd1776f66b68ad
+en_md5: fc7535ad0c12800ef580a7989f98150d
 ---
 
 Sada ćemo nadograditi onu jednostavnu vežbu „Hello“ i dodati nekoliko novih pravila.

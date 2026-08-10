@@ -707,3 +707,51 @@ export function countSentinels(tree) {
   const total = values.length - inapplicable;
   return { total, stubbed, translated: total - stubbed, inapplicable };
 }
+
+/**
+ * One locale's catalog counted against ENGLISH's key set.
+ *
+ * The denominator is English, so a key English defines and the target does not
+ * hold is `absent` and counts against the locale. Counting the target's own keys
+ * instead makes a deleted key vanish from both halves of the fraction, which
+ * reads as 100% precisely because the gap is total.
+ *
+ * `target` is null when the locale has no file at all, which is the same
+ * question asked of every key at once.
+ *
+ * Both ways a key can be untranslated are counted separately, because they need
+ * different work: `stubbed` is present holding `�` (translate it), `absent` is
+ * not in the file at all (`stub` it, then translate it). `total` is their sum
+ * plus `translated`.
+ *
+ * Outside the fraction: a key the target marks `∅`, and a key the target does
+ * not hold that this locale can never reach. Neither is a key anyone can fill.
+ * An unreachable key the target holds as `�` is NOT excluded: it is real
+ * remaining work (marking it `∅`), and `validate --shippable` blocks on it.
+ */
+export function countAgainstEnglish(english, target, { locale }) {
+  const flatEnglish = flatten(english);
+  const flatTarget = target === null ? null : flatten(target);
+
+  let translated = 0;
+  let stubbed = 0;
+  let absent = 0;
+  let inapplicable = 0;
+
+  for (const [key, source] of Object.entries(flatEnglish)) {
+    if (isEmptyContainer(source)) continue;
+
+    if (flatTarget === null || !(key in flatTarget)) {
+      if (isUnreachablePluralKey(key, locale, flatEnglish)) inapplicable += 1;
+      else absent += 1;
+      continue;
+    }
+
+    const value = flatTarget[key];
+    if (value === INAPPLICABLE) inapplicable += 1;
+    else if (value === SENTINEL || isEmptyContainer(value)) stubbed += 1;
+    else translated += 1;
+  }
+
+  return { total: translated + stubbed + absent, translated, stubbed, absent, inapplicable };
+}

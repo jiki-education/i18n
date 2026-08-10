@@ -8,8 +8,8 @@
   },
   "tasks": {
     "buildSkyline": {
-      "name": "Construis la skyline de la ville",
-      "description": "Construis plusieurs bâtiments de largeurs et de hauteurs aléatoires pour créer la skyline de la ville."
+      "name": "Construis la ligne d'horizon de la ville",
+      "description": "Construis plusieurs bâtiments de largeurs et de hauteurs aléatoires pour créer la ligne d'horizon de la ville."
     }
   },
   "scenarios": {
@@ -49,7 +49,7 @@
     },
     "upperFloorsAndRoof": {
       "question": "Comment construire les étages supérieurs et le toit ?",
-      "answer": "Chaque étage supérieur suit le même motif que le rez-de-chaussée, sans l'entrée : des murs sur les côtés, du verre entre les deux. N'oublie pas que le rez-de-chaussée compte déjà comme un étage, donc tu n'empiles au-dessus que les étages restants, en montant en `y`. Le toit est ensuite une rangée pleine de murs sur toute la largeur, tout en haut, et il ne compte pas comme un étage."
+      "answer": "Chaque étage supérieur suit le même motif que le rez-de-chaussée, sans l'entrée : des murs sur les côtés, du verre entre les deux. N'oublie pas que le rez-de-chaussée compte déjà comme un étage, donc tu n'empiles au-dessus que les étages restants, en montant en `Y`. Le toit est ensuite une rangée pleine de murs sur toute la largeur, tout en haut, et il ne compte pas comme un étage."
     },
     "stuckError": {
       "question": "Mon deuxième bâtiment provoque l'erreur « les ouvriers sont bloqués, il y a déjà un mur ici ». Qu'est-ce qui ne va pas ?",
@@ -58,15 +58,15 @@
   },
   "functions": {
     "buildWall": {
-      "description": "Place un **bloc de mur** à la position (x, y) de la grille.",
+      "description": "Place un **bloc de mur** à la position (X, Y) de la grille.",
       "category": "Construction"
     },
     "buildGlass": {
-      "description": "Place un **panneau de verre** à la position (x, y) de la grille.",
+      "description": "Place un **panneau de verre** à la position (X, Y) de la grille.",
       "category": "Construction"
     },
     "buildEntrance": {
-      "description": "Place une **porte d'entrée** à la position (x, y) de la grille.",
+      "description": "Place une **porte d'entrée** à la position (X, Y) de la grille.",
       "category": "Construction"
     },
     "numBuildings": {

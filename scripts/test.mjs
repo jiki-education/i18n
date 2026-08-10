@@ -13,14 +13,17 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
-import { INAPPLICABLE, SENTINEL } from "./lib/constants.mjs";
+import { INAPPLICABLE, REPO_ROOT, SENTINEL } from "./lib/constants.mjs";
 import { CONTENT_TYPES, CONTENT_TYPE_IDS, POST_TYPE_IDS } from "./lib/content-types.mjs";
+import { corpusItems, englishItems, englishRepo, unstartedItems } from "./lib/english.mjs";
+import { pct } from "./coverage.mjs";
 import { buildPostCopy } from "./lib/post-copy.mjs";
 import { isUnreachablePluralKey, parsePluralKey, reachableCategories } from "./lib/plurals.mjs";
 import { deepMerge, mergeExerciseCatalogs } from "./lib/families.mjs";
 import {
   arrayPaths,
   contentHash,
+  countAgainstEnglish,
   countSentinels,
   flatten,
   frontmatterPaths,
@@ -480,6 +483,78 @@ test("an inapplicable key is outside the coverage denominator", () => {
     translated: 1,
     inapplicable: 1
   });
+});
+
+// ------------------------------------------------ coverage counts English ---
+//
+// The denominator is English's key set. Counting the target's own keys makes a
+// key the target has lost leave the fraction with the gap inside it, so the row
+// reads 100% BECAUSE the key is gone, and no reader can tell that from finished.
+
+test("a key English defines and the target has lost is counted missing", () => {
+  const english = { a: "one", b: "two", c: "three" };
+  assert.deepEqual(countAgainstEnglish(english, { a: "egy", c: "három" }, { locale: "hu" }), {
+    total: 3,
+    translated: 2,
+    stubbed: 0,
+    absent: 1,
+    inapplicable: 0
+  });
+  // The counting this replaces: the target's own keys, which reads 2/2.
+  assert.equal(countSentinels({ a: "egy", c: "három" }).total, 2);
+});
+
+test("coverage tells an absent key from a sentinel one", () => {
+  const counts = countAgainstEnglish({ a: "one", b: "two", c: "three" }, { a: "egy", b: SENTINEL }, { locale: "hu" });
+  assert.deepEqual(counts, { total: 3, translated: 1, stubbed: 1, absent: 1, inapplicable: 0 });
+});
+
+test("a key the target marks `∅` stays outside the fraction", () => {
+  const english = { n_one: "one", n_other: "many" };
+  const counts = countAgainstEnglish(english, { n_one: INAPPLICABLE, n_other: "sok" }, { locale: "ja" });
+  assert.deepEqual(counts, { total: 1, translated: 1, stubbed: 0, absent: 0, inapplicable: 1 });
+});
+
+test("an absent key this locale can never reach is inapplicable, not missing", () => {
+  const english = { n_one: "one", n_other: "many" };
+  // ja reaches `other` alone, so `n_one` is dead there and is nobody's work.
+  assert.deepEqual(countAgainstEnglish(english, { n_other: "sok" }, { locale: "ja" }), {
+    total: 1,
+    translated: 1,
+    stubbed: 0,
+    absent: 0,
+    inapplicable: 1
+  });
+  // hu reaches `one`, so the same absent key is a real gap there.
+  assert.deepEqual(countAgainstEnglish(english, { n_other: "sok" }, { locale: "hu" }), {
+    total: 2,
+    translated: 1,
+    stubbed: 0,
+    absent: 1,
+    inapplicable: 0
+  });
+});
+
+test("an unreachable key still holding `�` is work, not `∅`", () => {
+  // Marking it `∅` is what remains, and `validate --shippable` blocks until it
+  // is marked, so it must not leave the fraction before anyone has done that.
+  const counts = countAgainstEnglish({ n_one: "one", n_other: "many" }, { n_one: SENTINEL, n_other: "沢山" }, { locale: "ja" });
+  assert.deepEqual(counts, { total: 2, translated: 1, stubbed: 1, absent: 0, inapplicable: 0 });
+});
+
+test("a locale with no file at all is counted against English", () => {
+  const counts = countAgainstEnglish({ a: "one", b: "two" }, null, { locale: "hu" });
+  assert.deepEqual(counts, { total: 2, translated: 0, stubbed: 0, absent: 2, inapplicable: 0 });
+});
+
+test("a key the target holds and English does not is outside coverage", () => {
+  const counts = countAgainstEnglish({ a: "one" }, { a: "egy", gone: "régi" }, { locale: "hu" });
+  assert.deepEqual(counts, { total: 1, translated: 1, stubbed: 0, absent: 0, inapplicable: 0 });
+});
+
+test("empty containers are structure on both sides", () => {
+  const counts = countAgainstEnglish({ a: "one", fns: {} }, { a: "egy", fns: {} }, { locale: "hu" });
+  assert.deepEqual(counts, { total: 1, translated: 1, stubbed: 0, absent: 0, inapplicable: 0 });
 });
 
 test("validate accepts a justified `∅` and rejects an unjustified one", () => {
@@ -1102,6 +1177,65 @@ test("slugs are sorted, so the artifact's bytes move only when the copy does", (
 test("an entry whose type has no bucket is a hard error, never a silent drop", () => {
   assert.throws(() => buildPostCopy(POST_TYPE_IDS, [postEntry("concept", "strings", { title: "T" })]), /not one of the post types/);
 });
+
+// ------------------------------------------- never started vs finished ------
+//
+// The working corpus is English filtered to what at least one locale has begun,
+// which is deliberate (see `corpusItems`) and which leaves a type nobody has
+// started contributing no items at all. Its row is then `0/0`, the same shape a
+// finished type has. `unstartedItems` is what tells the two apart, and these are
+// the assertions that it does.
+
+console.log("\nnever started vs finished:");
+
+/** How many items of one type `corpus.json` names as deliberately out of scope. */
+function excludedCount(typeId) {
+  const file = path.join(REPO_ROOT, "corpus.json");
+  if (!fs.existsSync(file)) return 0;
+  const { exclude = [] } = JSON.parse(fs.readFileSync(file, "utf8"));
+  return exclude.filter((entry) => entry.type === typeId).length;
+}
+
+test("an empty fraction with items outside the corpus does not read as finished", () => {
+  assert.equal(pct(0, 0, 2), "not started");
+  assert.equal(pct(0, 0, 0), "n/a");
+  assert.equal(pct(2, 2, 0), "100%");
+  // An item nobody has begun is reported beside a real fraction too, never
+  // folded into it: 2/2 stays 2/2 and the untouched item is named separately.
+  assert.equal(pct(2, 2, 1), "100%");
+});
+
+// English lives in a source-repo checkout, so the corpus split can only be
+// computed where one is resolvable. The skip is PRINTED, never silent.
+const ENGLISH_CHECKOUT = englishRepo("front-end", undefined, { optional: true });
+
+if (!ENGLISH_CHECKOUT) {
+  console.log("  SKIP  the corpus and the unstarted items account for all of English (no front-end checkout)");
+} else {
+  test("the corpus and the unstarted items account for all of English", () => {
+    for (const id of CONTENT_TYPE_IDS) {
+      if (CONTENT_TYPES[id].sourceRepo && !englishRepo(CONTENT_TYPES[id].sourceRepo, undefined, { optional: true })) continue;
+      const counted = corpusItems(id).length + unstartedItems(id).length;
+      assert.ok(counted <= englishItems(id).length, `${id}: counted ${counted} of ${englishItems(id).length} English items`);
+      assert.equal(
+        counted,
+        englishItems(id).length - excludedCount(id),
+        `${id}: the corpus and the unstarted items do not add up to English`
+      );
+    }
+  });
+
+  test("no content type English defines is silently empty on both sides", () => {
+    // The `levels`-at-0/20 and `project-episodes`-at-0/2 shape: English has
+    // items, no locale has begun any of them, and every row reads `0/0`. The
+    // count of unstarted items is what a reader sees instead of nothing.
+    const invisible = CONTENT_TYPE_IDS.filter((id) => {
+      if (CONTENT_TYPES[id].sourceRepo && !englishRepo(CONTENT_TYPES[id].sourceRepo, undefined, { optional: true })) return false;
+      return englishItems(id).length > 0 && corpusItems(id).length === 0 && unstartedItems(id).length === 0;
+    });
+    assert.deepEqual(invisible, [], `types English defines that no report would show: ${invisible.join(", ")}`);
+  });
+}
 
 // -------------------------------------------------------- the how-to routing
 

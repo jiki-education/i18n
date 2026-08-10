@@ -14,6 +14,21 @@
 // a question the repo can always answer, including for a locale nobody has
 // touched in months.
 //
+// ENGLISH IS THE DENOMINATOR, on both axes.
+//
+// Per key: a catalog is counted against English's key set, so a key English
+// defines and the locale does not hold is reported missing. Counting the
+// locale's own keys instead lets a deleted key leave both halves of the
+// fraction, and the row then reads 100% precisely because the gap is total.
+//
+// Per item: the fraction covers the working corpus (`corpusItems`), which is
+// English filtered to what at least one locale has begun, so a type nobody has
+// started contributes no items and its row reads `0/0`. That filter is
+// deliberate, and the reason is in `corpusItems`. What it cannot be allowed to
+// do is make never-started look like finished, so every row also carries how
+// many English items sit outside the corpus (`unstarted`), reported beside the
+// fraction and never inside it.
+//
 // A locale is shippable (addable to the front-end's SUPPORTED_LOCALES) when
 // every line here reads 100% and `validate --shippable` passes.
 //
@@ -25,15 +40,38 @@
 // produces a row saying so rather than a failure. See scripts/lib/api-copy.mjs.
 
 import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { INAPPLICABLE, SENTINEL, TARGET_LOCALES, assertTargetLocale, fail } from "./lib/constants.mjs";
 import { CONTENT_TYPE_IDS, contentType, localPath, metaPath } from "./lib/content-types.mjs";
-import { corpusItems } from "./lib/english.mjs";
+import { corpusItems, unstartedItems } from "./lib/english.mjs";
 import { API_ROW_IDS, apiCoverageFor, apiSourceLine } from "./lib/api-copy.mjs";
-import { countSentinels, md5File, parseFrontmatter, parseVttNotes, readJson, readText } from "./lib/files.mjs";
+import { countAgainstEnglish, md5File, parseFrontmatter, parseVttNotes, readJson, readText } from "./lib/files.mjs";
 import { parseArgs } from "./lib/args.mjs";
 
 /** What one row of a type counts. A catalog counts keys; everything else counts whole files. */
 const UNITS = { catalog: "keys", markdown: "pages", vtt: "videos" };
+
+/**
+ * What one ITEM of a type is, which is what the corpus is a set of. The same
+ * thing as `UNITS` for a type whose item is one file, and not for a catalog: a
+ * catalog row counts keys, while the corpus counts whole catalogs.
+ */
+const ITEM_UNITS = { catalog: "catalogs", markdown: "pages", vtt: "videos" };
+
+// Both halves of the corpus split are a fact about the two trees, not about any
+// one locale, so a run over 30 locales reads them once. Safe to hold for the
+// process because coverage only ever reads.
+const corpus = new Map();
+const unstarted = new Map();
+
+function itemsFor(typeId) {
+  if (!corpus.has(typeId)) {
+    corpus.set(typeId, corpusItems(typeId));
+    unstarted.set(typeId, unstartedItems(typeId).length);
+  }
+  return { items: corpus.get(typeId), unstarted: unstarted.get(typeId) };
+}
 
 function coverageFor(locale, typeIds) {
   const rows = [];
@@ -44,26 +82,30 @@ function coverageFor(locale, typeIds) {
     let done = 0;
     let stale = 0;
     let missing = 0;
+    // Untranslated, split by what it takes to fix. A catalog key holding `�` is
+    // in the file and needs translating; a key that is not in the file at all is
+    // counted in `missing` alongside the whole prose pages that are absent, and
+    // needs stubbing first. Both are outside `done`.
+    let stubbed = 0;
     // Outside the fraction: an `∅` key is unreachable in this language, so it is
     // neither done nor missing and counting it either way misreports coverage.
     let inapplicable = 0;
 
-    for (const item of corpusItems(typeId)) {
+    const scope = itemsFor(typeId);
+
+    for (const item of scope.items) {
       const target = localPath(typeId, locale, item.slug);
 
       if (type.format === "catalog") {
-        if (!fs.existsSync(target)) {
-          const counts = countSentinels(readJson(item.path));
-          total += counts.total;
-          missing += counts.total;
-          continue;
-        }
-        const counts = countSentinels(readJson(target));
+        const held = fs.existsSync(target) ? readJson(target) : null;
+        const counts = countAgainstEnglish(readJson(item.path), held, { locale });
         total += counts.total;
         done += counts.translated;
+        stubbed += counts.stubbed;
+        missing += counts.absent;
         inapplicable += counts.inapplicable;
 
-        if (type.staleness === "sibling") {
+        if (held !== null && type.staleness === "sibling") {
           const meta = fs.existsSync(metaPath(target)) ? readJson(metaPath(target)) : null;
           if (meta?.en_md5 && meta.en_md5 !== md5File(item.path)) stale += counts.total;
         }
@@ -83,7 +125,20 @@ function coverageFor(locale, typeIds) {
       }
     }
 
-    rows.push({ type: typeId, unit: UNITS[type.format] ?? "items", total, done, stale, missing, inapplicable });
+    rows.push({
+      type: typeId,
+      unit: UNITS[type.format] ?? "items",
+      itemUnit: ITEM_UNITS[type.format] ?? "items",
+      total,
+      done,
+      stale,
+      missing,
+      stubbed,
+      inapplicable,
+      // How many English items of this type no locale has begun, which is what
+      // tells a `0/0` row that is finished from one that has never started.
+      unstarted: scope.unstarted
+    });
   }
 
   return rows;
@@ -116,14 +171,17 @@ function main() {
     const total = rows.reduce((sum, row) => sum + row.total, 0);
     const done = rows.reduce((sum, row) => sum + row.done, 0);
     console.log(`\n${locale}  —  ${pct(done, total)} overall (${done}/${total})`);
-    console.log(`  ${"type".padEnd(24)}${"done".padStart(12)}${"stale".padStart(8)}${"missing".padStart(9)}${"".padStart(8)}`);
+    console.log(`  ${"type".padEnd(24)}${"done".padStart(12)}${"stale".padStart(8)}${"missing".padStart(9)}${"".padStart(12)}`);
     for (const row of rows) {
+      // Beside the fraction, never inside it: these items are outside the
+      // corpus, so `0/0  not started` says the opposite of `0/0` alone.
+      const outside = row.unstarted > 0 ? `  (+${row.unstarted} ${row.itemUnit} in English no locale has started)` : "";
       console.log(
         `  ${row.type.padEnd(24)}${`${row.done}/${row.total}`.padStart(12)}${String(row.stale).padStart(8)}` +
-          `${String(row.missing).padStart(9)}${pct(row.done, row.total).padStart(8)}  ${row.unit}`
+          `${String(row.missing).padStart(9)}${pct(row.done, row.total, row.unstarted).padStart(12)}  ${row.unit}${outside}`
       );
     }
-    const stubbed = rows.filter((row) => row.unit === "keys").reduce((sum, row) => sum + (row.total - row.done - row.missing), 0);
+    const stubbed = rows.reduce((sum, row) => sum + (row.stubbed ?? 0), 0);
     console.log(`  ${stubbed} catalog keys still "${SENTINEL}"${stubbed === 0 ? "" : "  (not shippable until 0)"}`);
     const inapplicable = rows.reduce((sum, row) => sum + (row.inapplicable ?? 0), 0);
     if (inapplicable > 0) console.log(`  ${inapplicable} catalog keys "${INAPPLICABLE}" (unreachable in this language, never publishable)`);
@@ -133,6 +191,15 @@ function main() {
   console.log("");
 }
 
-const pct = (done, total) => (total === 0 ? "n/a" : `${Math.round((done / total) * 100)}%`);
+/**
+ * An empty fraction has two readings, and the count of items outside the corpus
+ * is what separates them: nothing exists to translate, or nothing has been begun.
+ * Exported so the difference is asserted rather than eyeballed.
+ */
+export const pct = (done, total, unstarted = 0) => {
+  if (total > 0) return `${Math.round((done / total) * 100)}%`;
+  return unstarted > 0 ? "not started" : "n/a";
+};
 
-main();
+// Run only when run, so the assertions can import the pieces above.
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();
