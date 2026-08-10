@@ -1064,6 +1064,30 @@ test("a two-part slug is one key, not a nested object", () => {
   assert.equal(copy["project-episodes"][EPISODE_SLUG].title, "T");
 });
 
+test("an episode's summary reaches its listing copy", () => {
+  // The `summary` block (from/to/keyConcepts) is translated and validated, and
+  // it is the panel a learner reads on the episode page. Left out of the entry
+  // it is dropped in silence: the front-end defaults an absent summary to null,
+  // so a translated episode renders no panel at all rather than an English one
+  // or an error.
+  const summary = {
+    from: "Feltételezzük, hogy semmit sem tudsz a webről.",
+    to: "Megírod az első kezdőlapodat.",
+    keyConcepts: ["Agentic coding", "HTML-alapok"]
+  };
+  const copy = buildPostCopy(POST_TYPE_IDS, [postEntry("project-episodes", EPISODE_SLUG, { title: "T", summary })]);
+  assert.deepEqual(copy["project-episodes"][EPISODE_SLUG].summary, summary);
+});
+
+test("a post that authors no summary carries no summary key", () => {
+  // Carried by the DATA, not by the type: blog, articles and guides author no
+  // summary today, and their entries keep exactly the six fields they had, so
+  // adding this moved no published bytes for them.
+  const copy = buildPostCopy(POST_TYPE_IDS, [postEntry("blog", "hello", { title: "T", excerpt: "E" })]);
+  assert.deepEqual(Object.keys(copy.blog.hello), ["title", "excerpt", "seo", "tags", "readingTime", "contentHash"]);
+  assert.ok(!("summary" in copy.blog.hello));
+});
+
 test("a missing seo block falls back to the excerpt, and tags default to none", () => {
   const copy = buildPostCopy(POST_TYPE_IDS, [postEntry("blog", "hello", { title: "T", excerpt: "E" })]);
   assert.deepEqual(copy.blog.hello.seo, { description: "E", keywords: [] });
