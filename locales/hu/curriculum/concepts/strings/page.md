@@ -1,7 +1,7 @@
 ---
-title: "Stringek"
+title: "Ismerkedés a stringekkel"
 description: "Idézőjelek közé tett szövegdarabok (egy betű, egy szó, egy mondat vagy akár egy egész bekezdés), amelyeket Jiki papírra ír."
-en_md5: 89b04f3849f9388a46734924f35c913c
+en_md5: 4947f6ac1b3eb8eb85d2dea9b82ffc40
 tidied_md5: 89b04f3849f9388a46734924f35c913c
 ---
 

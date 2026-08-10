@@ -1,7 +1,7 @@
 ---
-title: "A repeat ciklus"
+title: "A `repeat` ciklus"
 description: "A `repeat` kulcsszóval megmondjuk Jikinek, hogy a kapcsos zárójelek közötti kódot hányszor futtassa le."
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 Eddig minden kódunk lineáris volt: Jiki minden utasítást sorban, fentről lefelé hajtott végre.

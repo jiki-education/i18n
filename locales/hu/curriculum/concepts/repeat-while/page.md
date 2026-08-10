@@ -1,7 +1,7 @@
 ---
-title: "Repeat szám nélkül"
+title: "A `repeat` használata szám nélkül"
 description: "A repeat ciklus zárójelét üresen hagyjuk, így Jiki addig megy tovább, amíg valami más meg nem állítja."
-en_md5: 5902e86c82b7bfe9ca519f9bdf8650ad
+en_md5: f1f98b46bedb1b5abc72aa1b856ee8ae
 ---
 
 Eddig, amikor a repeat ciklust használtad, mindig megadtál egy számot, ami megmondta, hányszor ismételjen. Ismételj ötször, 10-szer, 40-szer. Néha erre változót is használtál. De mindig pontosan megmondtad Jikinek, hányszor fusson le a ciklus. Csakhogy néha előre nem tudjuk, hányszor kell ismételni. Gondolj a labirintusra. Még a kurzus legelején úgy oldottad meg a labirintust, hogy egyesével leírtad a lépéseket. Láttad a labirintust, megszámoltad a lépéseket, és pontosan a megfelelő számú mozdulatot írtad le.

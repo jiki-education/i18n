@@ -1,7 +1,7 @@
 ---
-title: "A `not` operátor"
+title: "A `!` (nem) operátor"
 description: "A `!` segítségével átfordíthatsz egy Boolean értéket: az igazból hamis lesz, a hamisból igaz. Hasznos átkapcsoláshoz vagy egy ellenőrzés megfordításához."
-en_md5: 842c4a4e9cb1fd11c4318a1508296e27
+en_md5: 7cffbd1fa13317b3d6e6a71415413041
 ---
 
 Eddig, amikor azt vizsgáltuk, hogy két dolog egyenlő-e, három egyenlőségjelet használtunk. Néha viszont azt szeretnénk ellenőrizni, hogy két dolog nem egyenlő, és ehhez egy felkiáltójelet írunk, utána pedig két egyenlőségjelet. A programozásban a felkiáltójel (_bang_ angolul, ahogy szerintem amerikai barátaink hívják) általában azt jelenti: nem. Képzeld el, hogy egy boltban dolgozol, és a vezetőség úgy döntött, hogy diszkós szerelésben senki nem jöhet be.

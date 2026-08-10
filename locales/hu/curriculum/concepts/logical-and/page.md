@@ -1,7 +1,7 @@
 ---
-title: "Az `and` kulcsszó"
+title: "Az `&&` (és) operátor"
 description: "Két feltétel összekapcsolása a `&&` jellel, hogy a teljes feltétel csak akkor legyen igaz, ha mindkét fele igaz."
-en_md5: 6ea0de65a81d8e5c8d2eb89f3db29705
+en_md5: cef8d76c4235e85573c3eeede294ab72
 ---
 
 Ha azt kérném tőled, hogy csak akkor nyisd ki az ajtót, ha valaki elmúlt 20 éves, valószínűleg tudnád, mit kell tenned. De mi van akkor, ha azt is ellenőrizned kell, hogy az illető elmúlt-e 20, _és_ a megfelelő ruhát viseli-e? Ilyenkor két különböző feltételt kell egyszerre megvizsgálnod. Hogyan csinálnád?

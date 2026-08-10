@@ -1,7 +1,7 @@
 ---
-title: "Amíg-ciklusok"
+title: "A `while` ciklus működése"
 description: "Egy ciklus, amely addig fut, amíg egy feltétel igaz marad."
-en_md5: daef89c6551b1d1cbc0e58668fd368bc
+en_md5: aeceed2abb1434307cfd7c9a0df55c81
 ---
 
 A következő ciklus, amit meg kell ismerned, a `while` (amíg) ciklus.

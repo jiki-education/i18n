@@ -1,7 +1,7 @@
 ---
-title: "Else if"
+title: "Az `else if`-láncok használata"
 description: "`else if`-ek láncba fűzése, hogy több feltételt ellenőrizz sorban; mindig csak az első igaz feltételhez tartozó blokk fut le."
-en_md5: 5e1c9b2e77abbd41708f4c33b9aabd8f
+en_md5: 64274945347d47d67baf3378cf219c9b
 ---
 
 Már láttad, hogy az if és az else két utat kínál: ha a feltétel igaz, az egyik dolog történik, ha hamis, a másik. De mi van akkor, ha kettőnél több lehetőséged van?

@@ -1,7 +1,7 @@
 ---
-title: "For ciklusok"
+title: "A `for` ciklus működése"
 description: "Egy három részből álló ciklus (kezdőérték, feltétel és léptetés), amellyel teljesen kézben tarthatod az iterációt."
-en_md5: e96f2e5a4106a88cfbca449c93a26108
+en_md5: 0ad4155ded18c2df27d29e5355bd0532
 ---
 
 Talán emlékszel rá, hogy a repeat ciklus valójában nem is létezik a JavaScriptben. Csak azért kaptad, hogy az elején egy kicsit könnyebb legyen a dolgod.

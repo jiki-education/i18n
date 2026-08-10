@@ -1,7 +1,7 @@
 ---
-title: "Iterálás a stringeken"
+title: "Stringek bejárása `for ... of` ciklussal"
 description: "A `for of` ciklussal lépésről lépésre végigmegyünk egy string összes betűjén, és mindegyikkel csinálunk valamit."
-en_md5: 584ac0a187a9e5244b84f0fd417494f3
+en_md5: 09f399cc3f52b89380d3ed23fc6be513
 ---
 
 Egy string egy-egy betűjét szögletes zárójellel (`[]`) érheted el. Most azt nézzük meg, hogyan mehetsz végig egy stringen úgy, hogy a betűit egyenként veszed ki.

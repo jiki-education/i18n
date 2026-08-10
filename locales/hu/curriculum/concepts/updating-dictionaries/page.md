@@ -1,7 +1,7 @@
 ---
-title: "Szótárak módosítása"
+title: "Szótárak frissítése"
 description: "A `dict[key] = value` használata meglévő bejegyzések frissítésére vagy újak hozzáadására, valamint a `has` metódus a kulcsok ellenőrzésére."
-en_md5: 254912c3c672aec40b2729cd005fb1a7
+en_md5: 5dfff7e37d863711be783b2fbe0873a4
 ---
 
 Tudod már, hogyan hozol létre egy szótárt, és hogyan olvasol ki belőle értékeket. De mi történik, ha megváltoznak az adatok? Egyszer én is öregebb leszek. Nem `42` leszek, hanem `43`.

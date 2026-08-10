@@ -1,7 +1,7 @@
 ---
-title: "Maradék"
+title: "A `%` operátor használata maradékszámításhoz"
 description: "A `%` operátor használata az osztás után megmaradó rész kiszámítására, leggyakrabban annak eldöntésére, hogy egy szám páros vagy páratlan."
-en_md5: fe49222bd3f3a019dd9f74a960c5dede
+en_md5: 4955abecb626b8eff02ee7484e2065dd
 ---
 
 Eddig összeadást, kivonást, szorzást és osztást használtunk, amikor számoltunk. Most bevezetünk még egyet: a maradék (_remainder_ angolul) operátort.

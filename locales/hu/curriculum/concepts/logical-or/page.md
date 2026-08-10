@@ -1,7 +1,7 @@
 ---
-title: "Az `or` kulcsszó"
+title: "A `||` (vagy) operátor"
 description: "Két feltétel összekapcsolása a `||` operátorral, hogy a teljes feltétel akkor legyen igaz, ha legalább az egyik része igaz."
-en_md5: 4c9ebc144707760d944e0cddfac5a561
+en_md5: e7bc3f103a37719cdf3a77920d09e24e
 ---
 
 A vagy kapcsolatot is használhatjuk, és sajnos a JavaScriptben ehhez sincs egy kedves or kulcsszó. Helyette ezt a két függőleges vonalat (_bars_ angolul) írjuk egymás mellé, ez jelenti azt, hogy vagy. Elsőre furán néz ki, de igazából nem az. Meg fogod szokni.

@@ -1,7 +1,7 @@
 ---
-title: "Else"
+title: "Az `else` kulcsszó"
 description: "Egy `else` ág hozzáadása az `if` után, hogy egy másik kódblokk fusson le, ha a feltétel hamisnak bizonyul."
-en_md5: 4dd08e94d86dd11cd54793cf64008e3d
+en_md5: a3d7b0672bd9c022675831044c5610ed
 ---
 
 Az elágazások segítségével feltételeket ellenőrizhetsz, és csak akkor futtatsz le kódot, ha valami igaz. Most pedig ismerd meg az if cinkostársát, az `else`-t.
