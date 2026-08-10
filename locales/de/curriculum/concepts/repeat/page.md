@@ -1,7 +1,7 @@
 ---
-title: "Die repeat-Schleife"
+title: "Die `repeat`-Schleife"
 description: "Mit dem Schlüsselwort `repeat` sagst du Jiki, dass er den Code in den geschweiften Klammern eine bestimmte Anzahl von Malen ausführen soll."
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 Bisher war alles linear aufgebaut: Jiki befolgt jeden Befehl der Reihe nach, von oben nach unten.
