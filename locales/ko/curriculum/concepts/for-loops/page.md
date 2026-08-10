@@ -1,7 +1,7 @@
 ---
-title: "for문"
+title: "`for`문 이해하기"
 description: "초기화식, 조건, 증감식의 세 부분으로 구성된 루프로, 반복을 완전히 제어할 수 있어요."
-en_md5: e96f2e5a4106a88cfbca449c93a26108
+en_md5: 0ad4155ded18c2df27d29e5355bd0532
 ---
 
 JavaScript에는 repeat 루프라는 것이 실제로는 없어요. 처음 시작할 때 조금 더 쉽게 하기 위해 추가한 것일 뿐이에요.

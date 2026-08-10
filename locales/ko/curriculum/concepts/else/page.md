@@ -1,7 +1,7 @@
 ---
-title: "Else"
+title: "`else` 키워드"
 description: "조건이 거짓일 때 다른 코드 블록을 실행하도록 `if` 뒤에 `else` 절을 추가하기"
-en_md5: 4dd08e94d86dd11cd54793cf64008e3d
+en_md5: a3d7b0672bd9c022675831044c5610ed
 ---
 
 `if`문을 사용하면 조건을 검사해서 어떤 것이 참일 때만 코드를 실행할 수 있어요. 이제 if의 공범인 `else`를 소개할게요.

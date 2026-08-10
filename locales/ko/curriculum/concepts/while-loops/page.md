@@ -1,7 +1,7 @@
 ---
-title: "`while`문"
+title: "`while`문 이해하기"
 description: "어떤 조건이 참인 동안 계속 실행되는 루프예요."
-en_md5: daef89c6551b1d1cbc0e58668fd368bc
+en_md5: aeceed2abb1434307cfd7c9a0df55c81
 ---
 
 다음으로 알아볼 루프는 `while`문(영어: _while_)이에요.
