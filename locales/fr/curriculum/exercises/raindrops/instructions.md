@@ -6,7 +6,7 @@ en_md5: 93b85e63b3d48e4e7f6d249592b367a1
 
 Raindrops est une variante du classique FizzBuzz, un défi utilisé depuis toujours dans les entretiens d'embauche en programmation.
 
-Ta mission consiste à convertir un nombre en ses sons de gouttes de pluie.
+Ta mission consiste à convertir un nombre en des sons de gouttes de pluie correspondants.
 
 Pour cela, on regarde par quels nombres il est divisible (par exemple, 10 est divisible par 1, 2, 5 et 10, tandis que 12 est divisible par 1, 2, 3, 4, 6 et 12).
 
