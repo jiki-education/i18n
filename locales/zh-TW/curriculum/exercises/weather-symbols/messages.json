@@ -1,0 +1,68 @@
+{
+  "checks": {
+    "dayIsntCorrect": "第 {{day}} 天的天氣不對。"
+  },
+  "tasks": {
+    "drawForecast": {
+      "name": "繪製天氣預報",
+      "description": "將每一天的天氣畫進各自的盒子裡，使用該天在陣列中的位置作為盒子編號。"
+    }
+  },
+  "scenarios": {
+    "mixedWeek": {
+      "name": "混合的一週",
+      "description": "這六天裡什麼天氣都有。"
+    },
+    "sunnyWeek": {
+      "name": "晴朗的一週",
+      "description": "陽光普照，只有幾天雲比較多。"
+    },
+    "rainyWeek": {
+      "name": "多雨的一週",
+      "description": "充滿雲和雨的潮濕一週。"
+    },
+    "snowyWeek": {
+      "name": "下雪的一週",
+      "description": "充滿雪的寒冷一週。"
+    }
+  },
+  "hints": {
+    "loopWithIndex": {
+      "question": "我該如何逐一處理每一天，並知道每一天要放進哪個盒子裡？",
+      "answer": "使用一個從 `0` 到 `days.length - 1` 的計數器來對 `days` 執行迴圈。這個計數器就是每一天的盒子編號。"
+    },
+    "descriptionToSymbols": {
+      "question": "我該如何將像 `\"Miserable 😩\"` 這樣的描述轉換成符號？",
+      "answer": "將描述與每個可能的選項進行比對，並挑選出相符的符號陣列，例如 `[\"cloud\", \"rain\"]`。說明中列出了所有的描述及其對應的符號。"
+    },
+    "weekdaysList": {
+      "question": "我該如何取得每個盒子的星期幾名稱？",
+      "answer": "建立一個依序包含六個星期幾名稱的陣列，從 `\"Monday\"` 到 `\"Saturday\"`，並使用與盒子編號相同的計數器來讀取你目前位置的名稱。"
+    },
+    "passArgs": {
+      "question": "我要傳遞什麼給 `draw`？",
+      "answer": "三個東西：盒子編號（你的計數器）、該盒子的星期幾名稱，以及那一天的符號陣列。"
+    },
+    "tidyWithHelper": {
+      "question": "我的迴圈變得越來越長了。我該如何整理它？",
+      "answer": "你可以將「描述轉換為符號」的比對邏輯移到它專屬的函式中，然後在迴圈裡呼叫它。這不是強制的，但這樣可以讓迴圈保持簡短且易於閱讀。"
+    }
+  },
+  "functions": {
+    "draw": {
+      "description": "將給定的天氣符號畫進天氣預報的盒子裡。需要傳入盒子編號（0 到 5）、用來標示的星期幾名稱，以及符號陣列。",
+      "category": "繪圖"
+    }
+  },
+  "describers": {
+    "draw": "將 ${arg3} 畫進了 ${arg2} 的盒子裡"
+  },
+  "errors": {
+    "elementsMustBeList": "天氣符號（draw 的第三個輸入）必須是一個陣列，例如 [\"sun\", \"cloud\"]。",
+    "elementsMustBeStrings": "陣列中的天氣符號必須全部都是字串，例如 \"sun\" 或 \"rain\"。",
+    "unknownElement": "\"{{element}}\" 不是一個天氣符號。請使用 \"sun\"、\"cloud\"、\"rain\" 或 \"snow\"。",
+    "indexMustBeNumber": "盒子編號（draw 的第一個輸入）必須是一個數字。",
+    "indexOutOfRange": "盒子編號必須是介於 0 到 {{max}} 之間的整數。",
+    "dayMustBeString": "星期幾（draw 的第二個輸入）必須是文字，例如 \"Monday\"。"
+  }
+}

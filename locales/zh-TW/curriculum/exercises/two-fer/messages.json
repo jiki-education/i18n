@@ -1,0 +1,47 @@
+{
+  "checks": {
+    "moreThanSixLines": "你使用了超過 6 行程式碼。"
+  },
+  "tasks": {
+    "createTwoFerFunction": {
+      "name": "建立買一送一函式",
+      "description": "寫一個 twoFer 函式，它會接收一個名字並回傳 'One for [name], one for me.'。如果沒有提供名字（空字串），則使用 'you' 來代替名字。"
+    },
+    "solveInSixLines": {
+      "name": "用 6 行程式碼解決",
+      "description": "你能只用 6 行程式碼就解決這個問題嗎？"
+    }
+  },
+  "scenarios": {
+    "twoFerDefault": {
+      "name": "沒有提供名字",
+      "description": "沒有提供名字，所以回傳 'One for you, one for me.'"
+    },
+    "twoFerAlice": {
+      "name": "提供的名字為 Alice",
+      "description": "她的名字是 'Alice'，所以回傳 'One for Alice, one for me.'"
+    },
+    "twoFerTom": {
+      "name": "提供的名字為 Tom",
+      "description": "他的名字是 'Tom'，所以回傳 'One for Tom, one for me.'"
+    },
+    "bonus1": {
+      "name": "6 行程式碼",
+      "description": "只用 6 行程式碼來完成這個練習。"
+    }
+  },
+  "hints": {
+    "whatChanges": {
+      "question": "什麼會根據輸入而改變呢？",
+      "answer": "只有一個地方，就是句子中間的名字。如果有提供名字，就使用它。如果沒有，就使用預設的 `\"you\"`。"
+    },
+    "checkGivenName": {
+      "question": "我該如何檢查「是否有提供名字」呢？",
+      "answer": "使用 `if` 敘述將輸入與空字串 `\"\"` 進行比較。如果是空的，就使用 `\"you\"`。否則，就使用輸入的值。"
+    },
+    "buildSentence": {
+      "question": "我該如何組合出最後的句子呢？",
+      "answer": "使用字串串接（`+`）或樣板字串，將這三個部分（`\"One for \"`、選定的名字，以及 `\", one for me.\"`）連接起來。"
+    }
+  }
+}

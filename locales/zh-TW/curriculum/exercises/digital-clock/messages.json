@@ -1,0 +1,80 @@
+{
+  "errors": {
+    "hourNotNumber": "<code>hour</code> 必須是數字",
+    "minutesNotNumber": "<code>minutes</code> 必須是數字",
+    "indicatorNotString": "<code>indicator</code> 必須是字串"
+  },
+  "checks": {
+    "notUpdated": "時鐘沒有更新。請確定你有使用 <code>displayTime</code> 函式。",
+    "wrongTime": "預期為 \"{{expected}}\" 但得到 \"{{got}}\""
+  },
+  "tasks": {
+    "displayTime": {
+      "name": "在時鐘上顯示時間",
+      "description": "取得目前的小時與分鐘，轉換為帶有 am/pm 的 12 小時制，並使用 displayTime() 顯示出來。"
+    }
+  },
+  "scenarios": {
+    "morning1": {
+      "name": "清晨",
+      "description": "將 6:35 顯示為 \"6:35am\""
+    },
+    "morning2": {
+      "name": "上午",
+      "description": "將 11:04 顯示為 \"11:04am\""
+    },
+    "afternoon1": {
+      "name": "下午",
+      "description": "將 12:19 顯示為 \"12:19pm\""
+    },
+    "afternoon2": {
+      "name": "深夜",
+      "description": "將 23:32 顯示為 \"11:32pm\""
+    },
+    "midnight": {
+      "name": "午夜",
+      "description": "將午夜顯示為 \"12:00am\""
+    },
+    "noon": {
+      "name": "中午",
+      "description": "將中午顯示為 \"12:00pm\""
+    },
+    "now": {
+      "name": "顯示目前的時間",
+      "description": "顯示目前的時間"
+    }
+  },
+  "hints": {
+    "gettingStarted": {
+      "question": "我不知道該怎麼開始",
+      "answer": "使用 `currentTimeHour()` 和 `currentTimeMinute()` 來取得目前的時間，然後將它們的值放入 `displayTime(hour, minutes, \"am\")` 看看會發生什麼事。接著，想辦法設定正確的上下午（am/pm）以及正確的小時顯示方式。"
+    },
+    "meridiem": {
+      "question": "上下午（am/pm）是怎麼運作的？",
+      "answer": "0 到 11 時是 'am'，12 到 23 時是 'pm'。午夜（0 時）應該顯示為 12am。中午（12 時）應該顯示為 12pm。"
+    },
+    "hourChange": {
+      "question": "什麼時候需要改變小時的數字？為什麼？",
+      "answer": "在 12 小時制的時鐘上，13:00 會表示為 1:00pm，14:00 會表示為 2:00pm，所以你需要找出 13 變成 1、14 變成 2 等等之間的關聯，並相應地修改時鐘的顯示喔！"
+    }
+  },
+  "describers": {
+    "currentTimeHour": "取得了目前的小時",
+    "currentTimeMinute": "取得了目前的分鐘",
+    "displayTime": "在時鐘上顯示了時間"
+  },
+  "functions": {
+    "currentTimeHour": {
+      "description": "以 24 小時制回傳目前的小時數字（例如晚上 11 點會回傳 23）。",
+      "category": "時間"
+    },
+    "currentTimeMinute": {
+      "description": "回傳目前的分鐘數字。",
+      "category": "時間"
+    },
+    "displayTime": {
+      "description": "在數位時鐘上顯示時間。標示必須是 \"am\" 或 \"pm\"。",
+      "category": "動作"
+    }
+  }
+}
