@@ -160,9 +160,15 @@
   "phrases": {
     "slotCount_zero": "투입구 없음",
     "slotCount_one": "∅",
+    "slotCount_two": "∅",
+    "slotCount_few": "∅",
+    "slotCount_many": "∅",
     "slotCount_other": "투입구 {{count}}개",
     "inputCount_zero": "입력 없음",
     "inputCount_one": "∅",
+    "inputCount_two": "∅",
+    "inputCount_few": "∅",
+    "inputCount_many": "∅",
     "inputCount_other": "입력 {{count}}개"
   },
   "description": {
@@ -201,6 +207,10 @@
     },
     "forInStatement": {
       "result_empty": "객체가 비어 있어서 이 줄은 아무것도 하지 않았어요.",
+      "result_iteration_ordinal_one": "∅",
+      "result_iteration_ordinal_two": "∅",
+      "result_iteration_ordinal_few": "∅",
+      "result_iteration_ordinal_many": "∅",
       "result_iteration_ordinal_other": "이 줄에서 {{count}}번째 반복이 시작되었고, {{name}} 변수가 {{value}}로 설정되었어요.",
       "step_create": "Jiki가 {{name}}이라는 새 상자를 만들었어요.",
       "step_empty": "Jiki가 객체를 확인하고 비어 있는 것을 보고, 이 줄에서 더 이상 아무것도 하지 않기로 결정했어요.",
@@ -208,6 +218,10 @@
     },
     "forOfStatement": {
       "result_empty": "{{type}}이(가) 비어 있어서 이 줄은 아무것도 하지 않았어요.",
+      "result_iteration_ordinal_one": "∅",
+      "result_iteration_ordinal_two": "∅",
+      "result_iteration_ordinal_few": "∅",
+      "result_iteration_ordinal_many": "∅",
       "result_iteration_ordinal_other": "이 줄에서 {{count}}번째 반복이 시작되었고, {{name}} 변수가 {{value}}로 설정되었어요.",
       "step_create": "Jiki가 {{name}}이라는 새 상자를 만들었어요.",
       "step_empty": "Jiki가 {{type}}을(를) 확인하고 비어 있는 것을 보고, 이 줄에서 더 이상 아무것도 하지 않기로 결정했어요.",
@@ -233,8 +247,20 @@
       "string": "Jiki가 문자열에서 인덱스 {{index}}의 문자를 가져와서 {{value}}인 것으로 확인했어요."
     },
     "repeatStatement": {
+      "foreverResult_ordinal_one": "∅",
+      "foreverResult_ordinal_two": "∅",
+      "foreverResult_ordinal_few": "∅",
+      "foreverResult_ordinal_many": "∅",
       "foreverResult_ordinal_other": "이 줄에서 이 repeat 블록의 {{count}}번째 반복이 시작되었어요.",
+      "foreverStep_ordinal_one": "∅",
+      "foreverStep_ordinal_two": "∅",
+      "foreverStep_ordinal_few": "∅",
+      "foreverStep_ordinal_many": "∅",
       "foreverStep_ordinal_other": "Jiki가 repeat 루프의 {{count}}번째 반복을 시작했어요.",
+      "repeatResult_ordinal_one": "∅",
+      "repeatResult_ordinal_two": "∅",
+      "repeatResult_ordinal_few": "∅",
+      "repeatResult_ordinal_many": "∅",
       "repeatResult_ordinal_other": "이 줄에서 이 repeat 블록의 {{count}}번째 반복이 시작되었어요.",
       "repeatStep": "Jiki가 이 루프의 내부 카운터를 <code>{{iteration}}</code>까지 증가시키고, <code>{{iteration}} &le; {{countValue}}</code>을(를) 확인한 후 코드 블록을 실행하기로 결정했어요.",
       "zeroResult": "repeat 블록이 <code>0</code>번 실행하라고 되어 있어서 이 줄은 아무것도 하지 않았어요.",

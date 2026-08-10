@@ -160,9 +160,15 @@
   "phrases": {
     "slotCount_zero": "καμία θυρίδα εισόδου",
     "slotCount_one": "μία θυρίδα εισόδου",
+    "slotCount_two": "∅",
+    "slotCount_few": "∅",
+    "slotCount_many": "∅",
     "slotCount_other": "{{count}} θυρίδες εισόδου",
     "inputCount_zero": "καμία είσοδος",
     "inputCount_one": "μία είσοδος",
+    "inputCount_two": "∅",
+    "inputCount_few": "∅",
+    "inputCount_many": "∅",
     "inputCount_other": "{{count}} είσοδοι"
   },
   "description": {
@@ -201,6 +207,10 @@
     },
     "forInStatement": {
       "result_empty": "Το αντικείμενο ήταν κενό, οπότε αυτή η γραμμή δεν έκανε τίποτα.",
+      "result_iteration_ordinal_one": "∅",
+      "result_iteration_ordinal_two": "∅",
+      "result_iteration_ordinal_few": "∅",
+      "result_iteration_ordinal_many": "∅",
       "result_iteration_ordinal_other": "Αυτή η γραμμή ξεκίνησε την {{count}}η επανάληψη με τη μεταβλητή {{name}} να έχει οριστεί σε {{value}}.",
       "step_create": "Ο Jiki δημιούργησε ένα νέο κουτί με το όνομα {{name}}.",
       "step_empty": "Ο Jiki έλεγξε το αντικείμενο, είδε ότι ήταν κενό και αποφάσισε να μην κάνει τίποτα περαιτέρω σε αυτή τη γραμμή.",
@@ -208,6 +218,10 @@
     },
     "forOfStatement": {
       "result_empty": "Το {{type}} ήταν κενό, οπότε αυτή η γραμμή δεν έκανε τίποτα.",
+      "result_iteration_ordinal_one": "∅",
+      "result_iteration_ordinal_two": "∅",
+      "result_iteration_ordinal_few": "∅",
+      "result_iteration_ordinal_many": "∅",
       "result_iteration_ordinal_other": "Αυτή η γραμμή ξεκίνησε την {{count}}η επανάληψη με τη μεταβλητή {{name}} να έχει οριστεί σε {{value}}.",
       "step_create": "Ο Jiki δημιούργησε ένα νέο κουτί με το όνομα {{name}}.",
       "step_empty": "Ο Jiki έλεγξε το {{type}}, είδε ότι ήταν κενό και αποφάσισε να μην κάνει τίποτα περαιτέρω σε αυτή τη γραμμή.",
@@ -233,8 +247,20 @@
       "string": "Ο Jiki πήρε τον χαρακτήρα στη θέση {{index}} της συμβολοσειράς και διαπίστωσε ότι ήταν {{value}}."
     },
     "repeatStatement": {
+      "foreverResult_ordinal_one": "∅",
+      "foreverResult_ordinal_two": "∅",
+      "foreverResult_ordinal_few": "∅",
+      "foreverResult_ordinal_many": "∅",
       "foreverResult_ordinal_other": "Αυτή η γραμμή ξεκίνησε την {{count}}η επανάληψη αυτού του μπλοκ repeat.",
+      "foreverStep_ordinal_one": "∅",
+      "foreverStep_ordinal_two": "∅",
+      "foreverStep_ordinal_few": "∅",
+      "foreverStep_ordinal_many": "∅",
       "foreverStep_ordinal_other": "Ο Jiki ξεκίνησε την {{count}}η επανάληψη του βρόχου repeat.",
+      "repeatResult_ordinal_one": "∅",
+      "repeatResult_ordinal_two": "∅",
+      "repeatResult_ordinal_few": "∅",
+      "repeatResult_ordinal_many": "∅",
       "repeatResult_ordinal_other": "Αυτή η γραμμή ξεκίνησε την {{count}}η επανάληψη αυτού του μπλοκ repeat.",
       "repeatStep": "Ο Jiki αύξησε τον εσωτερικό μετρητή του για αυτόν τον βρόχο σε <code>{{iteration}}</code>, έλεγξε ότι <code>{{iteration}} &le; {{countValue}}</code> και αποφάσισε να εκτελέσει το μπλοκ κώδικα.",
       "zeroResult": "Το μπλοκ repeat κλήθηκε να εκτελεστεί <code>0</code> φορές, οπότε αυτή η γραμμή δεν έκανε τίποτα.",

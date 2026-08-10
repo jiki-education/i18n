@@ -160,9 +160,15 @@
   "phrases": {
     "slotCount_zero": "هیچ دهانه ورودی",
     "slotCount_one": "یک دهانه ورودی",
+    "slotCount_two": "∅",
+    "slotCount_few": "∅",
+    "slotCount_many": "∅",
     "slotCount_other": "{{count}} دهانه ورودی",
     "inputCount_zero": "هیچ ورودی",
     "inputCount_one": "یک ورودی",
+    "inputCount_two": "∅",
+    "inputCount_few": "∅",
+    "inputCount_many": "∅",
     "inputCount_other": "{{count}} ورودی"
   },
   "description": {
@@ -201,6 +207,10 @@
     },
     "forInStatement": {
       "result_empty": "شیء خالی بود، بنابراین این خط کاری انجام نداد.",
+      "result_iteration_ordinal_one": "∅",
+      "result_iteration_ordinal_two": "∅",
+      "result_iteration_ordinal_few": "∅",
+      "result_iteration_ordinal_many": "∅",
       "result_iteration_ordinal_other": "این خط تکرار {{count}}ام را با متغیر {{name}} که {{value}} بود شروع کرد.",
       "step_create": "جیکی یک جعبه‌ی جدید به نام {{name}} درست کرد.",
       "step_empty": "جیکی شیء را بررسی کرد، دید که خالی است و تصمیم گرفت در این خط کار دیگری انجام ندهد.",
@@ -208,6 +218,10 @@
     },
     "forOfStatement": {
       "result_empty": "{{type}} خالی بود، بنابراین این خط کاری انجام نداد.",
+      "result_iteration_ordinal_one": "∅",
+      "result_iteration_ordinal_two": "∅",
+      "result_iteration_ordinal_few": "∅",
+      "result_iteration_ordinal_many": "∅",
       "result_iteration_ordinal_other": "این خط تکرار {{count}}ام را با متغیر {{name}} که {{value}} بود شروع کرد.",
       "step_create": "جیکی یک جعبه‌ی جدید به نام {{name}} درست کرد.",
       "step_empty": "جیکی {{type}} را بررسی کرد، دید که خالی است و تصمیم گرفت در این خط کار دیگری انجام ندهد.",
@@ -233,8 +247,20 @@
       "string": "جیکی کاراکتر اندیس {{index}} از رشته را گرفت و فهمید که {{value}} است."
     },
     "repeatStatement": {
+      "foreverResult_ordinal_one": "∅",
+      "foreverResult_ordinal_two": "∅",
+      "foreverResult_ordinal_few": "∅",
+      "foreverResult_ordinal_many": "∅",
       "foreverResult_ordinal_other": "این خط تکرار {{count}}ام از این بلوک repeat را شروع کرد.",
+      "foreverStep_ordinal_one": "∅",
+      "foreverStep_ordinal_two": "∅",
+      "foreverStep_ordinal_few": "∅",
+      "foreverStep_ordinal_many": "∅",
       "foreverStep_ordinal_other": "جیکی تکرار {{count}}ام از حلقه‌ی repeat را شروع کرد.",
+      "repeatResult_ordinal_one": "∅",
+      "repeatResult_ordinal_two": "∅",
+      "repeatResult_ordinal_few": "∅",
+      "repeatResult_ordinal_many": "∅",
       "repeatResult_ordinal_other": "این خط تکرار {{count}}ام از این بلوک repeat را شروع کرد.",
       "repeatStep": "جیکی شمارنده‌ی داخلی خود را برای این حلقه به <code>{{iteration}}</code> افزایش داد، <code>{{iteration}} &le; {{countValue}}</code> را بررسی کرد و تصمیم گرفت بلوک کد را اجرا کند.",
       "zeroResult": "بلوک repeat خواسته شد که <code>۰</code> بار اجرا شود، بنابراین این خط کاری انجام نداد.",

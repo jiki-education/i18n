@@ -158,9 +158,17 @@
     }
   },
   "phrases": {
+    "slotCount_zero": "�",
     "slotCount_one": "una ranura de entrada",
+    "slotCount_two": "∅",
+    "slotCount_few": "∅",
+    "slotCount_many": "�",
     "slotCount_other": "{{count}} ranuras de entrada",
+    "inputCount_zero": "�",
     "inputCount_one": "una entrada",
+    "inputCount_two": "∅",
+    "inputCount_few": "∅",
+    "inputCount_many": "�",
     "inputCount_other": "{{count}} entradas"
   },
   "description": {
@@ -199,6 +207,10 @@
     },
     "forInStatement": {
       "result_empty": "El objeto estaba vacío, así que esta línea no hizo nada.",
+      "result_iteration_ordinal_one": "∅",
+      "result_iteration_ordinal_two": "∅",
+      "result_iteration_ordinal_few": "∅",
+      "result_iteration_ordinal_many": "∅",
       "result_iteration_ordinal_other": "Esta línea inició la {{count}}.ª iteración con la variable {{name}} establecida en {{value}}.",
       "step_create": "Jiki creó una nueva caja llamada {{name}}.",
       "step_empty": "Jiki revisó el objeto, vio que estaba vacío y decidió no hacer nada más en esta línea.",
@@ -206,6 +218,10 @@
     },
     "forOfStatement": {
       "result_empty": "El {{type}} estaba vacío, así que esta línea no hizo nada.",
+      "result_iteration_ordinal_one": "∅",
+      "result_iteration_ordinal_two": "∅",
+      "result_iteration_ordinal_few": "∅",
+      "result_iteration_ordinal_many": "∅",
       "result_iteration_ordinal_other": "Esta línea inició la {{count}}.ª iteración con la variable {{name}} establecida en {{value}}.",
       "step_create": "Jiki creó una nueva caja llamada {{name}}.",
       "step_empty": "Jiki revisó el {{type}}, vio que estaba vacío y decidió no hacer nada más en esta línea.",
@@ -231,8 +247,20 @@
       "string": "Jiki obtuvo el carácter en el índice {{index}} del string y determinó que era {{value}}."
     },
     "repeatStatement": {
+      "foreverResult_ordinal_one": "∅",
+      "foreverResult_ordinal_two": "∅",
+      "foreverResult_ordinal_few": "∅",
+      "foreverResult_ordinal_many": "∅",
       "foreverResult_ordinal_other": "Esta línea inició la {{count}}.ª iteración de este bloque repeat.",
+      "foreverStep_ordinal_one": "∅",
+      "foreverStep_ordinal_two": "∅",
+      "foreverStep_ordinal_few": "∅",
+      "foreverStep_ordinal_many": "∅",
       "foreverStep_ordinal_other": "Jiki inició la {{count}}.ª iteración del bucle repeat.",
+      "repeatResult_ordinal_one": "∅",
+      "repeatResult_ordinal_two": "∅",
+      "repeatResult_ordinal_few": "∅",
+      "repeatResult_ordinal_many": "∅",
       "repeatResult_ordinal_other": "Esta línea inició la {{count}}.ª iteración de este bloque repeat.",
       "repeatStep": "Jiki aumentó su contador interno para este bucle a <code>{{iteration}}</code>, verificó <code>{{iteration}} &le; {{countValue}}</code> y decidió ejecutar el bloque de código.",
       "zeroResult": "Se le pidió al bloque repeat que se ejecutara <code>0</code> veces, así que esta línea no hizo nada.",

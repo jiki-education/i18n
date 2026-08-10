@@ -158,11 +158,17 @@
     }
   },
   "phrases": {
+    "slotCount_zero": "�",
     "slotCount_one": "{{count}} ulazni otvor",
+    "slotCount_two": "∅",
     "slotCount_few": "{{count}} ulazna otvora",
+    "slotCount_many": "∅",
     "slotCount_other": "{{count}} ulaznih otvora",
+    "inputCount_zero": "�",
     "inputCount_one": "{{count}} ulaz",
+    "inputCount_two": "∅",
     "inputCount_few": "{{count}} ulaza",
+    "inputCount_many": "∅",
     "inputCount_other": "{{count}} ulaza"
   },
   "description": {
@@ -201,6 +207,10 @@
     },
     "forInStatement": {
       "result_empty": "Objekat je bio prazan, pa ova linija nije uradila ništa.",
+      "result_iteration_ordinal_one": "∅",
+      "result_iteration_ordinal_two": "∅",
+      "result_iteration_ordinal_few": "∅",
+      "result_iteration_ordinal_many": "∅",
       "result_iteration_ordinal_other": "Ova linija je započela {{count}}. iteraciju, sa promenljivom {{name}} postavljenom na {{value}}.",
       "step_create": "Jiki je napravio novu kutiju sa imenom {{name}}.",
       "step_empty": "Jiki je proverio objekat, video da je prazan i odlučio da na ovoj liniji ne radi ništa dalje.",
@@ -208,6 +218,10 @@
     },
     "forOfStatement": {
       "result_empty": "{{type}} je bio prazan, pa ova linija nije uradila ništa.",
+      "result_iteration_ordinal_one": "∅",
+      "result_iteration_ordinal_two": "∅",
+      "result_iteration_ordinal_few": "∅",
+      "result_iteration_ordinal_many": "∅",
       "result_iteration_ordinal_other": "Ova linija je započela {{count}}. iteraciju, sa promenljivom {{name}} postavljenom na {{value}}.",
       "step_create": "Jiki je napravio novu kutiju sa imenom {{name}}.",
       "step_empty": "Jiki je proverio {{type}}, video da je prazan i odlučio da na ovoj liniji ne radi ništa dalje.",
@@ -233,8 +247,20 @@
       "string": "Jiki je uzeo karakter sa indeksom {{index}} iz stringa i utvrdio da je to {{value}}."
     },
     "repeatStatement": {
+      "foreverResult_ordinal_one": "∅",
+      "foreverResult_ordinal_two": "∅",
+      "foreverResult_ordinal_few": "∅",
+      "foreverResult_ordinal_many": "∅",
       "foreverResult_ordinal_other": "Ova linija je započela {{count}}. iteraciju ovog repeat bloka.",
+      "foreverStep_ordinal_one": "∅",
+      "foreverStep_ordinal_two": "∅",
+      "foreverStep_ordinal_few": "∅",
+      "foreverStep_ordinal_many": "∅",
       "foreverStep_ordinal_other": "Jiki je započeo {{count}}. iteraciju repeat petlje.",
+      "repeatResult_ordinal_one": "∅",
+      "repeatResult_ordinal_two": "∅",
+      "repeatResult_ordinal_few": "∅",
+      "repeatResult_ordinal_many": "∅",
       "repeatResult_ordinal_other": "Ova linija je započela {{count}}. iteraciju ovog repeat bloka.",
       "repeatStep": "Jiki je povećao svoj interni brojač za ovu petlju na <code>{{iteration}}</code>, proverio <code>{{iteration}} &le; {{countValue}}</code> i odlučio da izvrši blok koda.",
       "zeroResult": "Od repeat bloka je traženo da se izvrši <code>0</code> puta, pa ova linija nije uradila ništa.",
