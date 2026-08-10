@@ -278,6 +278,162 @@ export function frontmatterPaths(data, prefix = "") {
   return paths;
 }
 
+// ------------------------------------------------- frontmatter syntax check --
+//
+// ## Two parsers read these bytes, and they must not disagree
+//
+// The reader above is a minimal one, on purpose (see its comment). Publishing
+// uses a different one: the shared @jiki.io/content-renderer, which is js-yaml.
+// A file the minimal reader accepts and js-yaml rejects therefore validates
+// clean and then blows up in publish, in an unrelated phase, on whichever locale
+// happens to hold it. That is exactly what happened: one Hungarian guide carried
+//
+//     seo:
+//       description: Az agentikus kódolás alapfogalmai kezdőknek magyarázva: mik ...
+//
+// The minimal reader splits on the FIRST colon and is happy. YAML reads the
+// second `: ` as a second key on the same line and errors. The translation was
+// fine; the quoting was not. Nothing between writing it and `publish.mjs` said a
+// word.
+//
+// This is the shape of mistake translation makes far more often than English
+// does, because a colon is ordinary punctuation in many languages where English
+// would use a dash or a comma.
+//
+// So `frontmatterSyntaxIssues` reports every construct that is either invalid
+// YAML or read DIFFERENTLY by the two parsers, and validate treats each as a
+// blocking ERROR. It is dependency-free, like the rest of this file, so it runs
+// with no node_modules at all; validate additionally cross-checks against the
+// real js-yaml whenever the install is present, and scripts/test.mjs pins the two
+// to the same verdict. The detector is the floor, not the authority.
+
+/** Plain-scalar first characters YAML reads as markup rather than as text. */
+const YAML_INDICATORS = ["|", ">", "&", "*", "!", "%", "@", "`", "}", "]", ","];
+
+const truncate = (text) => (text.length > 60 ? `${text.slice(0, 57)}...` : text);
+
+/**
+ * Why a file's frontmatter is not valid (or not unambiguous) YAML, as messages.
+ *
+ * Each message names the field and says what to do about it, because the fix is
+ * always the same shape and always trivial once you can see it: quote the value.
+ * A file with no frontmatter at all returns nothing; that is a different
+ * complaint, and checkProse's missing-stamp check already makes it.
+ */
+export function frontmatterSyntaxIssues(text) {
+  const match = FRONTMATTER.exec(text);
+  if (!match) return [];
+
+  const issues = [];
+  const block = match[1];
+
+  for (const raw of block.split(/\r?\n/)) {
+    if (raw.trim() === "---") {
+      issues.push(
+        'a "---" line inside the frontmatter: the block closed on the line above, so everything after it is body ' +
+          "text and every field below is invisible to the renderer. Delete the stray fence."
+      );
+    }
+    if (/^ *\t/.test(raw)) issues.push("a tab in the indentation. YAML forbids tabs there; use spaces.");
+  }
+
+  // A stack of open mappings, so a field can be named by its DOTTED path and a
+  // duplicate key can be told from a repeated one. `seo.description` and
+  // `summary.description` sit at the same indent and are not duplicates of each
+  // other, so tracking by indent alone would invent an error on a perfectly
+  // ordinary post. js-yaml rejects a real duplicate; the minimal reader silently
+  // keeps the last one, which is the same divergence in a quieter form.
+  const scopes = [{ indent: -1, keys: new Set(), prefix: "" }];
+  let opener = "";
+
+  for (const line of frontmatterLines(block)) {
+    if (line.text === "---") continue; // already reported above
+
+    while (scopes.length > 1 && line.indent < scopes.at(-1).indent) scopes.pop();
+    if (line.indent > scopes.at(-1).indent) scopes.push({ indent: line.indent, keys: new Set(), prefix: opener });
+    const scope = scopes.at(-1);
+
+    if (line.text.startsWith("- ") || line.text === "-") {
+      issues.push(...scalarIssues(line.text.replace(/^-\s*/, ""), scope.prefix ? `an item of "${scope.prefix}"` : "a list item"));
+      continue;
+    }
+
+    const sep = line.text.indexOf(":");
+    if (sep === -1) {
+      issues.push(`"${truncate(line.text)}" is neither a "key: value" pair nor a "- " list item.`);
+      continue;
+    }
+
+    const key = line.text.slice(0, sep).trim();
+    const rest = line.text.slice(sep + 1).trim();
+    const dotted = scope.prefix ? `${scope.prefix}.${key}` : key;
+    opener = dotted;
+
+    if (scope.keys.has(key)) issues.push(`"${dotted}" appears twice in the same block. YAML rejects a duplicated key.`);
+    scope.keys.add(key);
+
+    issues.push(...scalarIssues(rest, `"${dotted}"`));
+  }
+
+  return issues;
+}
+
+/** What is wrong with one scalar (or flow collection) written after a `key:` or a `- `. */
+function scalarIssues(value, what) {
+  if (value === "") return [];
+
+  if (value.startsWith("[") || value.startsWith("{")) {
+    return unclosed(value) ? [`${what}: a flow collection that is never closed.`] : [];
+  }
+
+  const first = value[0];
+  if (first === '"' || first === "'") {
+    if (closesQuote(value)) return [];
+    return [`${what}: a quoted value whose closing ${first === '"' ? "double" : "single"} quote is missing.`];
+  }
+
+  const issues = [];
+
+  if (YAML_INDICATORS.includes(first)) {
+    issues.push(`${what}: an unquoted value starting with "${first}", which YAML reads as markup rather than as text. Wrap the value in double quotes.`);
+  }
+
+  // The one this was written for. `: ` inside a plain scalar starts a second
+  // mapping pair, and a trailing `:` does the same thing with an empty value.
+  if (/:\s/.test(value) || value.endsWith(":")) {
+    issues.push(
+      `${what}: an unquoted value containing a colon followed by a space, which YAML reads as a second key rather ` +
+        "than as punctuation. Wrap the whole value in double quotes (escaping any double quote inside it)."
+    );
+  }
+
+  if (/\s#/.test(value)) {
+    issues.push(`${what}: an unquoted value containing " #", which YAML reads as the start of a comment. Wrap the value in double quotes.`);
+  }
+
+  return issues;
+}
+
+/** Whether a value that opens with a quote closes it, on that quote, at the very end. */
+function closesQuote(value) {
+  const quote = value[0];
+  for (let i = 1; i < value.length; i += 1) {
+    if (quote === '"' && value[i] === "\\") {
+      i += 1;
+      continue;
+    }
+    if (value[i] === quote) {
+      // `''` inside a single-quoted scalar is an escaped apostrophe, not the end.
+      if (quote === "'" && value[i + 1] === "'") {
+        i += 1;
+        continue;
+      }
+      return i === value.length - 1;
+    }
+  }
+  return false;
+}
+
 /**
  * Write one `en_md5` stamp into a Markdown file, changing nothing else.
  *
@@ -403,11 +559,33 @@ export function isEmptyContainer(value) {
  * which makes the key invisible to key parity, and anything rebuilding a tree
  * from the flat map then drops it silently. Emitting the container itself keeps
  * the key visible; `isEmptyContainer` is how a caller tells it from a string.
+ *
+ * A NON-EMPTY ARRAY is a BRANCH: `tags: ["a", "b"]` flattens to `tags.0` and
+ * `tags.1`, each an ordinary string leaf. That is the opposite of what
+ * `frontmatterPaths` does with an array, and deliberately so, because the two
+ * answer different questions. A post's `seo.keywords` is a free list whose length
+ * is the translator's business, so descending into it would turn that freedom
+ * into a parity error. A catalog array is a POSITIONAL, enumerated set (a
+ * project's `tags`, one per English tag, in English's order), and everything a
+ * catalog's machinery does assumes string leaves: the sentinel, per-key
+ * staleness, per-key placeholder and tag checks, and the gap count that decides
+ * whether a locale is production-ready.
+ *
+ * Treating an array as one opaque leaf breaks all of that at once, and the
+ * dangerous half is silent rather than loud. `stubAgainst` refuses outright and
+ * `checkCatalog` reports a wrong-type error, which are both fine. But publish's
+ * own sentinel count compares each leaf to `�`, and an array is never equal to
+ * it, so an entirely untranslated `tags` would contribute ZERO gaps and let the
+ * locale publish as production-ready. Descending is what makes every one of those
+ * mechanisms apply per element, with no per-type special case anywhere.
+ *
+ * An EMPTY array stays a leaf, exactly like an empty object: there is nothing to
+ * descend into, and it is structure rather than a gap.
  */
 export function flatten(tree, prefix = "", out = {}) {
   for (const [key, value] of Object.entries(tree)) {
     const dotted = prefix ? `${prefix}.${key}` : key;
-    if (value && typeof value === "object" && !Array.isArray(value) && Object.keys(value).length > 0) {
+    if (value && typeof value === "object" && Object.keys(value).length > 0) {
       flatten(value, dotted, out);
     } else {
       out[dotted] = value;
@@ -416,14 +594,47 @@ export function flatten(tree, prefix = "", out = {}) {
   return out;
 }
 
-/** Rebuild a nested catalog from a flat map, in the flat map's own key order. */
-export function unflatten(flat) {
+/**
+ * Every dotted path in a tree whose value is a NON-EMPTY ARRAY.
+ *
+ * The companion to `flatten`: flattening throws away the array/object
+ * distinction (both become dotted paths), so rebuilding needs it handed back.
+ * Deriving it from the SOURCE tree rather than guessing from key shape is what
+ * makes `unflatten` exact. The guess ("all keys are 0..n-1, so it is an array")
+ * is available and wrong: it would silently convert a catalog that legitimately
+ * holds numeric string keys into an array, moving the published bytes and so the
+ * artifact's hash, to a URL the front-end never asks for.
+ *
+ * Matches `flatten`'s descent rule exactly, empty arrays included, so the two
+ * cannot disagree about what a branch is.
+ */
+export function arrayPaths(tree, prefix = "", out = new Set()) {
+  for (const [key, value] of Object.entries(tree)) {
+    const dotted = prefix ? `${prefix}.${key}` : key;
+    if (!value || typeof value !== "object" || Object.keys(value).length === 0) continue;
+    if (Array.isArray(value)) out.add(dotted);
+    arrayPaths(value, dotted, out);
+  }
+  return out;
+}
+
+/**
+ * Rebuild a nested catalog from a flat map, in the flat map's own key order.
+ *
+ * `arrays` is the set of dotted paths that must come back as ARRAYS rather than
+ * objects, as produced by `arrayPaths` over the tree the flat map came from.
+ * Without it `tags.0`/`tags.1` would rebuild as `{"0": …, "1": …}`, which is a
+ * different published artifact from the one the front-end reads. Anything with no
+ * arrays in it (which is every catalog in this repo bar project metadata) passes
+ * an empty set and is unaffected.
+ */
+export function unflatten(flat, arrays = new Set()) {
   const out = {};
   for (const [dotted, value] of Object.entries(flat)) {
     const parts = dotted.split(".");
     let node = out;
-    for (const part of parts.slice(0, -1)) {
-      node[part] ??= {};
+    for (const [index, part] of parts.slice(0, -1).entries()) {
+      node[part] ??= arrays.has(parts.slice(0, index + 1).join(".")) ? [] : {};
       node = node[part];
     }
     node[parts.at(-1)] = value;
@@ -478,7 +689,10 @@ export function stubAgainst(source, target, { locale = null } = {}) {
     const keep = typeof existing === "string" && existing !== SENTINEL && existing !== INAPPLICABLE;
     out[key] = keep ? existing : SENTINEL;
   }
-  return unflatten(out);
+  // Rebuilt against ENGLISH's array shape, like everything else here: parity is
+  // defined by English, so an array in English comes back as an array however the
+  // target happened to hold it.
+  return unflatten(out, arrayPaths(source));
 }
 
 /**

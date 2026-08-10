@@ -66,7 +66,13 @@ function main() {
       const type = contentType(typeId);
       if (type.format !== "catalog") continue;
 
-      for (const item of scopeItems(typeId, { slug: args.flags.slug })) {
+      // An explicit --type is the unslugged half of "bringing a new item in is
+      // deliberate": --slug names a new slugged item, --type on its own names a
+      // new unslugged catalog. Without it the first locale file for a type like
+      // `badges` or `project-metadata` can never be stubbed, because the corpus
+      // is defined as "English exists AND some locale holds it" and nothing else
+      // creates that first file.
+      for (const item of scopeItems(typeId, { slug: args.flags.slug, bootstrap: Boolean(args.flags.type) })) {
 
         const english = readJson(item.path);
         const target = localPath(typeId, locale, item.slug);

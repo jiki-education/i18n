@@ -373,6 +373,29 @@ async function publishLocale(locale, { exportSources }) {
     manifest.levels = emit(artifacts, (hash) => CONTENT_TYPES.levels.r2(locale, null, hash), catalog);
   }
 
+  // --- project metadata -------------------------------------------------------
+  //
+  // The projects index copy: title, description and tags for each project, in one
+  // catalog. A CATALOG and not a post layout, so it is not in POST_TYPE_IDS and
+  // nothing renders it: the front-end merges it with the locale-invariant half
+  // (image, livestream, episode ids, stream dates) it publishes itself, exactly as
+  // it does for post copy.
+  //
+  // Separate from, and additional to, the project-episode HTML published below.
+  // An episode's artifact is keyed by project AND locale; this one is keyed by
+  // locale alone, so the two never collide even though both live under
+  // /static/content/projects/.
+  const projectMetaPath = localPath("project-metadata", locale);
+  if (fs.existsSync(projectMetaPath)) {
+    const catalog = readJson(projectMetaPath);
+    countSentinels(gaps, "project-metadata", `${locale} project metadata catalog`, catalog);
+    manifest.projectMetadata = emit(
+      artifacts,
+      (hash) => CONTENT_TYPES["project-metadata"].r2(locale, null, hash),
+      catalog
+    );
+  }
+
   // --- interpreter message catalogs, one artifact per interpreter language ---
   //
   // The slug is a LANGUAGE (javascript, jikiscript, python), not an exercise, so
