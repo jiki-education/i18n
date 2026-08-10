@@ -1,5 +1,5 @@
 ---
-title: "Condicionais"
+title: "Compreender as instruções `if`"
 description: "Usar a palavra-chave `if` para executar um bloco de código apenas quando uma condição é verdadeira, como um segurança a decidir quem entra."
 en_md5: 8797e078e1ad90b7652373baf6f96f28
 ---
