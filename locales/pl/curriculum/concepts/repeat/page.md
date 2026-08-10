@@ -1,7 +1,7 @@
 ---
 title: "Pętla `repeat`"
 description: "Jak za pomocą słowa kluczowego `repeat` kazać Jikiemu wykonać kod w nawiasach klamrowych określoną liczbę razy."
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 Do tej pory cały kod był zapisywany liniowo: Jiki wykonywał instrukcje po kolei, od góry do dołu.

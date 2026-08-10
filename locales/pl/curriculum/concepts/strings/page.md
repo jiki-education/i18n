@@ -1,7 +1,7 @@
 ---
-title: "Stringi"
+title: "Wprowadzenie do stringów"
 description: "Fragmenty tekstu ujęte w cudzysłów (litera, słowo, zdanie albo cały akapit), które Jiki zapisuje na papierze."
-en_md5: 89b04f3849f9388a46734924f35c913c
+en_md5: 4947f6ac1b3eb8eb85d2dea9b82ffc40
 ---
 
 Kiedy chcesz użyć liczby, możesz ją po prostu zapisać i Jiki wie, o co Ci chodzi. Ale co, jeśli chcesz użyć litery, słowa albo zdania? Na przykład: co by było, gdyby funkcja `rectangle` (prostokąt) albo funkcja `circle` (okrąg) miała dodatkowy otwór wejściowy, w którym podaje się kolor? Jak zapisać taki kolor, żeby włożyć go do maszyny? Jeśli po prostu napiszemy słowo `green` (zielony) albo `blue` (niebieski), Jiki pomyśli, że chodzi nam o maszynę stojącą na półkach, i powie: „Nie ma żadnej maszyny o nazwie green. Nie wiem, co mam zrobić”.
