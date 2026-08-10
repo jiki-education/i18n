@@ -1,7 +1,7 @@
 ---
-title: "L'operatore `not`"
+title: "L'operatore `!` (negazione)"
 description: "Usare `!` per invertire un booleano: true diventa false e false diventa true, utile per azionare o invertire i controlli."
-en_md5: 842c4a4e9cb1fd11c4318a1508296e27
+en_md5: 7cffbd1fa13317b3d6e6a71415413041
 ---
 
 Finora, quando abbiamo confrontato le cose per vedere se sono uguali, abbiamo usato tre segni di uguale. A volte, però, vogliamo controllare se le cose non sono uguali, e per questo usiamo un punto esclamativo seguito da due segni di uguale. E in generale, nella programmazione, un punto esclamativo, o _bang_ (punto esclamativo), come penso lo chiamino i nostri amici americani, significa non. Quindi immagina di lavorare in un negozio, e la direzione ha deciso che non sono ammessi abiti da discoteca.

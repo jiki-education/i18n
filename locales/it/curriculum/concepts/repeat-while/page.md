@@ -1,7 +1,7 @@
 ---
-title: "Ripetere senza contare"
+title: "Usare `repeat` senza un numero di ripetizioni"
 description: "Lasciare vuote le parentesi di un ciclo repeat in modo che Jiki continui finché qualcos'altro gli dice di fermarsi."
-en_md5: 5902e86c82b7bfe9ca519f9bdf8650ad
+en_md5: f1f98b46bedb1b5abc72aa1b856ee8ae
 ---
 
 Fino ad ora, quando hai usato il ciclo repeat, hai sempre specificato un numero che indica quante volte ripetere. Ripeti cinque volte, 10 volte, 40 volte. A volte hai usato anche una variabile per farlo. Ma hai sempre detto a Jiki esattamente quante volte ripetere il ciclo. Tuttavia, a volte non sappiamo in anticipo quante volte ripetere. Pensa al labirinto. All'inizio del corso, hai risolto il labirinto scrivendo le mosse specifiche. Potevi vedere il labirinto, contare i passi e scrivere il numero giusto di mosse.

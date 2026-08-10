@@ -1,7 +1,7 @@
 ---
-title: "La parola chiave `and`"
+title: "L'operatore `&&` (e logico)"
 description: "Combinare due condizioni con `&&`: l'intera condizione è vera solo se entrambe le parti sono vere."
-en_md5: 6ea0de65a81d8e5c8d2eb89f3db29705
+en_md5: cef8d76c4235e85573c3eeede294ab72
 ---
 
 Se ti chiedessi di aprire la porta solo se qualcuno ha più di 20 anni, probabilmente sapresti cosa fare. Ma se dovessi controllare se qualcuno ha più di 20 anni _e_ indossa l'abito giusto? Dovresti verificare due condizioni diverse contemporaneamente. Come faresti?

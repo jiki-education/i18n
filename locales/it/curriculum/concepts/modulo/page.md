@@ -1,7 +1,7 @@
 ---
-title: "Operatore modulo"
+title: "Usare l'operatore `%` per calcolare il resto"
 description: "Usare l'operatore `%` per ottenere il resto di una divisione, spesso usato per verificare se un numero è pari o dispari."
-en_md5: fe49222bd3f3a019dd9f74a960c5dede
+en_md5: 4955abecb626b8eff02ee7484e2065dd
 ---
 
 Finora abbiamo usato addizione, sottrazione, moltiplicazione e divisione per fare calcoli. Ora ne introduciamo un altro, l'operatore modulo.

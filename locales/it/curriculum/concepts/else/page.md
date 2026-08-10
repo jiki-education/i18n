@@ -1,7 +1,7 @@
 ---
-title: "Else"
+title: "La parola chiave `else`"
 description: "Aggiungere una clausola `else` dopo un `if` per eseguire un blocco di codice diverso quando la condizione risulta falsa."
-en_md5: 4dd08e94d86dd11cd54793cf64008e3d
+en_md5: a3d7b0672bd9c022675831044c5610ed
 ---
 
 Le istruzioni if ti permettono di controllare delle condizioni ed eseguire del codice solo quando qualcosa è vero. Adesso presentiamo il fedele complice di if: `else`.

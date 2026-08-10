@@ -1,7 +1,7 @@
 ---
-title: "Cicli while"
+title: "Capire i cicli `while`"
 description: "Un ciclo che continua a girare finché una condizione rimane vera."
-en_md5: daef89c6551b1d1cbc0e58668fd368bc
+en_md5: aeceed2abb1434307cfd7c9a0df55c81
 ---
 
 Il prossimo ciclo da conoscere è il ciclo `while` (mentre).

@@ -1,7 +1,7 @@
 ---
-title: "I cicli for"
+title: "Capire i cicli `for`"
 description: "Un ciclo con tre parti (un inizializzatore, una condizione e un incremento) che ti dà il pieno controllo sull'iterazione."
-en_md5: e96f2e5a4106a88cfbca449c93a26108
+en_md5: 0ad4155ded18c2df27d29e5355bd0532
 ---
 
 Forse ricordi che il ciclo repeat non esiste davvero in JavaScript. È solo qualcosa che abbiamo aggiunto per renderti la vita un po' più facile all'inizio.

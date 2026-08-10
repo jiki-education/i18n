@@ -1,7 +1,7 @@
 ---
-title: "Il ciclo repeat"
+title: "Il ciclo `repeat`"
 description: "Usare la parola chiave `repeat` per dire a Jiki di eseguire il codice tra le parentesi graffe un certo numero di volte."
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 Finora abbiamo scritto tutto in modo lineare: Jiki segue ogni istruzione in ordine, dall'alto verso il basso.

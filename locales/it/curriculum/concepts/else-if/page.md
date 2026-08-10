@@ -1,7 +1,7 @@
 ---
-title: "Else if"
+title: "Usare le sequenze di `else if`"
 description: "Concatenare clausole `else if` per controllare più condizioni in ordine, eseguendo solo il primo blocco la cui condizione è vera."
-en_md5: 5e1c9b2e77abbd41708f4c33b9aabd8f
+en_md5: 64274945347d47d67baf3378cf219c9b
 ---
 
 Hai visto come `if` ed `else` ti danno due strade: fare una cosa quando una condizione è vera, farne un'altra quando è falsa. Ma cosa succede se le possibilità sono più di due?

@@ -1,7 +1,7 @@
 ---
-title: "Stringhe"
+title: "Introduzione alle stringhe"
 description: "Pezzi di testo racchiusi tra virgolette (una lettera, una parola, una frase o un intero paragrafo) che Jiki scrive su carta."
-en_md5: 89b04f3849f9388a46734924f35c913c
+en_md5: 4947f6ac1b3eb8eb85d2dea9b82ffc40
 ---
 
 Quando vuoi usare un numero, ti basta scriverlo, e Jiki capisce cosa intendi. Ma se vuoi usare una lettera, una parola o una frase? Per esempio, con la funzione `rectangle` (rettangolo) o la funzione `circle` (cerchio), cosa succederebbe se ci fosse un input in più in cui specificare il colore? Come scriveremmo il colore da mettere nella macchina? Se scriviamo semplicemente la parola `green` (verde) o `blue` (blu), Jiki penserà che ci riferiamo a una macchina sugli scaffali, e dirà: "Non c'è nessuna macchina che si chiama green. Non so cosa fare."

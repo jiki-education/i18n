@@ -1,7 +1,7 @@
 ---
-title: "La parola chiave `or`"
+title: "L'operatore `||` (o logico)"
 description: "Combinare due condizioni con `||` in modo che l'intera condizione sia vera quando almeno una delle due parti è vera."
-en_md5: 4c9ebc144707760d944e0cddfac5a561
+en_md5: e7bc3f103a37719cdf3a77920d09e24e
 ---
 
 Possiamo usare anche `or`, ma purtroppo in JavaScript non esiste una parola chiave comoda per `or`. Dobbiamo invece usare queste due barre (_bars_ in inglese) una accanto all'altra per indicare «or». Sembra strano, ma non lo è. Ti ci abituerai.

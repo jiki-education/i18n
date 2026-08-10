@@ -1,7 +1,7 @@
 ---
-title: "Scorrere le stringhe"
+title: "Scorrere le stringhe con `for ... of`"
 description: "Usare un ciclo `for of` per scorrere ciascuna lettera di una stringa, facendo qualcosa con ciascuna di esse a turno."
-en_md5: 584ac0a187a9e5244b84f0fd417494f3
+en_md5: 09f399cc3f52b89380d3ed23fc6be513
 ---
 
 Puoi accedere a una singola lettera di una stringa usando le parentesi quadre. Ora vediamo come scorrere una stringa, estraendo ciascuna lettera una alla volta.

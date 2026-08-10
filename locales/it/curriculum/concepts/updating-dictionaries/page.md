@@ -1,7 +1,7 @@
 ---
-title: "Modificare i dizionari"
+title: "Aggiornare i dizionari"
 description: "Usare `dict[key] = value` per aggiornare voci esistenti o aggiungerne di nuove, e il metodo `has` per verificare le chiavi."
-en_md5: 254912c3c672aec40b2729cd005fb1a7
+en_md5: 5dfff7e37d863711be783b2fbe0873a4
 ---
 
 Sai come creare un dizionario e ottenere valori al suo interno. Ma cosa succede se i dati cambiano? A un certo punto, invecchierò. Non avrò più `42`, ma `43`.
