@@ -1,5 +1,5 @@
 ---
-title: "Continue"
+title: "`continue`关键字"
 description: "在循环中使用 `continue` 关键字，跳过本次迭代的剩余部分，直接进入下一次迭代。"
 en_md5: 6c3f7483826e27d44d6c404cc9f621dd
 ---

@@ -1,5 +1,5 @@
 ---
-title: "跳出循环"
+title: "`break`关键字"
 description: "在循环体中使用 `break` 关键字，立刻退出循环并继续执行后面的代码。"
 en_md5: 30148766de67ae467ab1a4852ad35895
 ---
