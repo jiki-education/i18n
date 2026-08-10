@@ -1,7 +1,7 @@
 ---
-title: "O laço repeat"
+title: "O laço `repeat`"
 description: "Usando a palavra-chave `repeat` para dizer ao Jiki que rode o código dentro das chaves um número específico de vezes."
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 Até agora, tudo foi escrito de forma linear: o Jiki segue cada instrução na ordem, de cima para baixo.

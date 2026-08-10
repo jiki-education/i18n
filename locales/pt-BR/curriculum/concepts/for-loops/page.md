@@ -1,7 +1,7 @@
 ---
-title: "Laços `for`"
+title: "Entendendo os laços `for`"
 description: "Um laço com três partes (um inicializador, uma condição e um incremento) que dá a você controle total sobre a iteração."
-en_md5: e96f2e5a4106a88cfbca449c93a26108
+en_md5: 0ad4155ded18c2df27d29e5355bd0532
 ---
 
 Você deve lembrar que o laço repeat não existe de verdade no JavaScript. Ele é só algo que adicionamos para facilitar um pouco a sua vida no começo.

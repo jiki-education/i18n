@@ -1,7 +1,7 @@
 ---
-title: "Strings"
+title: "Conhecendo as strings"
 description: "Pedaços de texto entre aspas (uma letra, uma palavra, uma frase ou um parágrafo inteiro) que o Jiki escreve em papel."
-en_md5: 89b04f3849f9388a46734924f35c913c
+en_md5: 4947f6ac1b3eb8eb85d2dea9b82ffc40
 ---
 
 Quando você quer usar um número, basta literalmente escrever esse número, e o Jiki entende o que você quer dizer. Mas e se você quiser usar uma letra, uma palavra ou uma frase? Por exemplo, com a função `rectangle` (retângulo) ou a função `circle` (círculo), e se existisse uma entrada extra onde você especificasse a cor? Como escreveríamos a cor para colocá-la na máquina? Se escrevermos só a palavra `green` (verde) ou `blue` (azul), o Jiki vai achar que estamos falando de uma máquina nas prateleiras, e vai dizer: "Não existe nenhuma máquina chamada green. Não sei o que fazer."

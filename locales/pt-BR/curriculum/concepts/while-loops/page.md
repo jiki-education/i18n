@@ -1,7 +1,7 @@
 ---
-title: "Laços while"
+title: "Entendendo os laços `while`"
 description: "Um laço que continua rodando enquanto uma condição se mantém verdadeira."
-en_md5: daef89c6551b1d1cbc0e58668fd368bc
+en_md5: aeceed2abb1434307cfd7c9a0df55c81
 ---
 
 O próximo laço que você precisa conhecer é o laço `while` (enquanto).
