@@ -10,6 +10,6 @@ Le code précédent fonctionnait, mais la logique de tir était mélangée à to
 
 Dans cet exercice, tu dois extraire la logique de tir dans une fonction dédiée, appelée `shootIfAlienAbove` (tirer si un alien est au-dessus). Cette fonction a la responsabilité de vérifier s'il y a un alien au-dessus du canon laser et, si c'est le cas, de l'abattre.
 
-Le reste de la logique du jeu (suivre la position, changer de direction aux bords, déplacer le laser) reste dans la boucle, comme avant.
+Le reste de la logique du jeu (mettre à jour la position, changer de direction aux bords, déplacer le laser) reste dans la boucle, comme avant.
 
-Crée ta fonction `shootIfAlienAbove`, puis utilise-la dans la boucle, avec la logique de déplacement.
+Crée ta fonction `shootIfAlienAbove`, puis utilise-la dans la boucle qui gère déjà la logique de déplacement.
