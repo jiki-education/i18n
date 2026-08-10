@@ -1,5 +1,5 @@
 ---
-title: "if-Anweisungen"
+title: "if-Anweisungen verstehen"
 description: "Mit dem Schlüsselwort `if` einen Block Code nur dann ausführen, wenn eine Bedingung wahr ist, wie ein Türsteher, der Leute hereinlässt."
 en_md5: 8797e078e1ad90b7652373baf6f96f28
 ---
