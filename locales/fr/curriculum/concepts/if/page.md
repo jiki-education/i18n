@@ -1,5 +1,5 @@
 ---
-title: "L'instruction `if`"
+title: "Comprendre les instructions `if`"
 description: "Utiliser le mot-clé `if` pour exécuter un bloc de code seulement quand une condition est vraie, comme un videur qui décide qui peut entrer."
 en_md5: 8797e078e1ad90b7652373baf6f96f28
 ---

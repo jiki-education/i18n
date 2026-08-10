@@ -1,5 +1,5 @@
 ---
-title: "Continue"
+title: "Le mot-clé `continue`"
 description: "Utiliser le mot-clé `continue` dans une boucle pour sauter le reste de l'itération en cours et passer directement à la suivante."
 en_md5: 6c3f7483826e27d44d6c404cc9f621dd
 ---

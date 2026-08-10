@@ -1,5 +1,5 @@
 ---
-title: "L'instruction break"
+title: "Le mot-clé `break`"
 description: "Utiliser le mot-clé `break` dans le corps d'une boucle pour en sortir immédiatement et passer au code qui vient après."
 en_md5: 30148766de67ae467ab1a4852ad35895
 ---
