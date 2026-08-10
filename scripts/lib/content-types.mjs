@@ -342,6 +342,21 @@ function postType(kind, howto = kind) {
 
 export const CONTENT_TYPE_IDS = Object.keys(CONTENT_TYPES);
 
+/**
+ * Every post type, in this file's order.
+ *
+ * A post is a Markdown page rendered to HTML and reached from a listing: the
+ * blog index, the articles and guides indexes, a project's episode list. Being
+ * on this list is what makes a type publish both halves of itself, the HTML and
+ * the listing copy, so the list is stated once here and read by everything that
+ * treats posts as a set.
+ *
+ * Project episodes are on it like anything else. Their slug is two parts
+ * ("<project>/<uuid>") rather than one, and that is the whole of the difference:
+ * `slugDepth` above expresses it, so nothing downstream special cases them.
+ */
+export const POST_TYPE_IDS = ["blog", "articles", "guides", "project-episodes"];
+
 export function contentType(id) {
   const type = CONTENT_TYPES[id];
   if (!type) fail(`unknown content type "${id}". Known: ${CONTENT_TYPE_IDS.join(", ")}`);

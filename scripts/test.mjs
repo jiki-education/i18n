@@ -14,7 +14,8 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { INAPPLICABLE, SENTINEL } from "./lib/constants.mjs";
-import { CONTENT_TYPES, CONTENT_TYPE_IDS } from "./lib/content-types.mjs";
+import { CONTENT_TYPES, CONTENT_TYPE_IDS, POST_TYPE_IDS } from "./lib/content-types.mjs";
+import { buildPostCopy } from "./lib/post-copy.mjs";
 import { isUnreachablePluralKey, parsePluralKey, reachableCategories } from "./lib/plurals.mjs";
 import { deepMerge, mergeExerciseCatalogs } from "./lib/families.mjs";
 import {
@@ -1007,6 +1008,75 @@ test("a locale file takes RAILS' spelling of the locale, not this repo's", () =>
 
 test("a locale Rails has never heard of keeps its own spelling and is flagged", () => {
   assert.deepEqual(railsLocale("fi", ["de", "hu"]), { locale: "fi", knownToRails: false });
+});
+
+// ----------------------------------------------------- the post listing copy
+
+// A post reaches a reader twice: as the HTML behind its link, and as the title
+// and excerpt of the link itself. Publishing one without the other is invisible
+// to every check there is, because a locale holding no listing entry for a post
+// looks exactly like a locale that has not translated that post yet. These
+// assert that the index covers every post type and keys each entry by the
+// item's whole slug, which for a project episode is two parts.
+
+console.log("\nthe post listing copy:");
+
+const EPISODE_SLUG = "build-your-personal-homepage/5981d746-0aaf-40c1-9f44-344ddfb004ad";
+
+const postEntry = (typeId, slug, data) => ({ typeId, slug, data, readingTime: 4, contentHash: `${typeId}-hash` });
+
+test("every post type gets a bucket, whether or not the locale holds any of it", () => {
+  assert.deepEqual(Object.keys(buildPostCopy(POST_TYPE_IDS, [])), POST_TYPE_IDS);
+});
+
+test("project episodes are a post type, so their listing copy publishes", () => {
+  // The one this exists for. `project-episodes` renders HTML like every other
+  // post type; if it is not also in the copy index, a project's episode list
+  // shows English titles in every locale while the pages behind them are
+  // translated.
+  assert.ok(POST_TYPE_IDS.includes("project-episodes"));
+  const copy = buildPostCopy(POST_TYPE_IDS, [
+    postEntry("project-episodes", EPISODE_SLUG, {
+      title: "Az első epizód",
+      excerpt: "Rövid összefoglaló.",
+      seo: { description: "Leírás", keywords: ["jiki"] },
+      tags: ["html"]
+    })
+  ]);
+  assert.deepEqual(copy["project-episodes"], {
+    [EPISODE_SLUG]: {
+      title: "Az első epizód",
+      excerpt: "Rövid összefoglaló.",
+      seo: { description: "Leírás", keywords: ["jiki"] },
+      tags: ["html"],
+      readingTime: 4,
+      contentHash: "project-episodes-hash"
+    }
+  });
+});
+
+test("a two-part slug is one key, not a nested object", () => {
+  // The artifact is keyed by slug, and a slug with a slash in it is still a
+  // name. Splitting it would file episodes under their project and change the
+  // shape the front-end reads.
+  const copy = buildPostCopy(POST_TYPE_IDS, [postEntry("project-episodes", EPISODE_SLUG, { title: "T" })]);
+  assert.deepEqual(Object.keys(copy["project-episodes"]), [EPISODE_SLUG]);
+  assert.equal(copy["project-episodes"][EPISODE_SLUG].title, "T");
+});
+
+test("a missing seo block falls back to the excerpt, and tags default to none", () => {
+  const copy = buildPostCopy(POST_TYPE_IDS, [postEntry("blog", "hello", { title: "T", excerpt: "E" })]);
+  assert.deepEqual(copy.blog.hello.seo, { description: "E", keywords: [] });
+  assert.deepEqual(copy.blog.hello.tags, []);
+});
+
+test("slugs are sorted, so the artifact's bytes move only when the copy does", () => {
+  const entries = ["p/z", "p/a", "q/b"].map((slug) => postEntry("project-episodes", slug, { title: slug }));
+  assert.deepEqual(Object.keys(buildPostCopy(POST_TYPE_IDS, entries)["project-episodes"]), ["p/a", "p/z", "q/b"]);
+});
+
+test("an entry whose type has no bucket is a hard error, never a silent drop", () => {
+  assert.throws(() => buildPostCopy(POST_TYPE_IDS, [postEntry("concept", "strings", { title: "T" })]), /not one of the post types/);
 });
 
 // -------------------------------------------------------- the how-to routing
