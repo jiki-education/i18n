@@ -1,5 +1,5 @@
 ---
-title: "`if` deyimleri"
+title: "`if` deyimlerini anlamak"
 description: "Bir kod bloğunu yalnızca bir koşul doğru olduğunda çalıştırmak için `if` anahtar kelimesini kullanıyoruz, tıpkı kimi içeri alacağına karar veren bir fedai gibi."
 en_md5: 8797e078e1ad90b7652373baf6f96f28
 ---
