@@ -1,7 +1,7 @@
 ---
-title: "repeatループ"
+title: "`repeat`ループ"
 description: "`repeat`キーワードを使って、Jikiに波括弧の中のコードを指定回数だけ実行させる方法。"
-en_md5: 8ae468aa2be428f22b6eef47b3bdea68
+en_md5: f37a63911f75934656cbf04a38ff2b60
 ---
 
 今までは、コードを上から下へ順番に書いてきました。Jikiは指示をひとつずつ、上から下へ順に実行します。
