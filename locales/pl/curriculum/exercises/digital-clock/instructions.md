@@ -6,8 +6,8 @@ en_md5: e3decc089d371b7113f2657f7571c001
 
 W tym ćwiczeniu użyjesz dwóch nowych funkcji do odczytywania czasu:
 
-- `currentTimeHour()` (aktualna godzina): zwraca aktualną godzinę w formacie 24-godzinnym (np. 15 minut przed północą zwróci `23`) jako liczbę.
-- `currentTimeMinute()` (aktualna minuta): zwraca aktualną minutę jako liczbę.
+- `currentTimeHour()` (bieżąca godzina): zwraca bieżącą godzinę w formacie 24-godzinnym (np. 15 minut przed północą zwróci `23`) jako liczbę.
+- `currentTimeMinute()` (bieżąca minuta): zwraca bieżącą minutę jako liczbę.
 
 Twoim zadaniem jest aktualizowanie zegara cyfrowego na podstawie liczb, które zwrócą te funkcje.
 
@@ -20,4 +20,4 @@ Na przykład:
 
 Aby wyświetlić czas na zegarze, używasz funkcji `displayTime(hour, minutes, meridiem)` (wyświetl czas).
 
-W każdym scenariuszu aktualny czas jest inny. Twoim zadaniem jest napisanie kodu, dzięki któremu wszystkie scenariusze zadziałają. W ostatnim scenariuszu używamy prawdziwego czasu, więc ten scenariusz będzie się zmieniał za każdym razem, gdy prawdziwy czas przesunie się o minutę!
+W każdym scenariuszu bieżący czas jest inny. Twoim zadaniem jest napisanie kodu, dzięki któremu wszystkie scenariusze zadziałają. W ostatnim scenariuszu używamy bieżącego czasu rzeczywistego, więc ten scenariusz będzie się zmieniał za każdym razem, gdy czas rzeczywisty przesunie się o minutę!

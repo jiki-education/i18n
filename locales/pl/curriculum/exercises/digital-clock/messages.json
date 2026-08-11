@@ -11,7 +11,7 @@
   "tasks": {
     "displayTime": {
       "name": "Wyświetl czas na zegarze",
-      "description": "Pobierz aktualną godzinę i minutę, przelicz je na format 12-godzinny z am/pm i wyświetl za pomocą displayTime()."
+      "description": "Pobierz bieżącą godzinę i minutę, przelicz je na format 12-godzinny z am/pm i wyświetl za pomocą displayTime()."
     }
   },
   "scenarios": {
@@ -40,14 +40,14 @@
       "description": "Wyświetl południe jako „12:00pm”"
     },
     "now": {
-      "name": "Wyświetl aktualny czas",
-      "description": "Wyświetl aktualny czas"
+      "name": "Wyświetl bieżący czas",
+      "description": "Wyświetl bieżący czas"
     }
   },
   "hints": {
     "gettingStarted": {
       "question": "Nie wiem, jak zacząć",
-      "answer": "Użyj `currentTimeHour()` i `currentTimeMinute()`, aby pobrać aktualny czas, a następnie przekaż ich wartości do `displayTime(hour, minutes, \"am\")` i zobacz, co się stanie. Potem zastanów się, jak ustawić prawidłowe meridiem i prawidłową godzinę na wyświetlaczu."
+      "answer": "Użyj `currentTimeHour()` i `currentTimeMinute()`, aby pobrać bieżący czas, a następnie przekaż ich wartości do `displayTime(hour, minutes, \"am\")` i zobacz, co się stanie. Potem zastanów się, jak ustawić prawidłowe meridiem i prawidłową godzinę na wyświetlaczu."
     },
     "meridiem": {
       "question": "Jak działa meridiem?",
@@ -59,17 +59,17 @@
     }
   },
   "describers": {
-    "currentTimeHour": "pobrano aktualną godzinę",
-    "currentTimeMinute": "pobrano aktualną minutę",
+    "currentTimeHour": "pobrano bieżącą godzinę",
+    "currentTimeMinute": "pobrano bieżącą minutę",
     "displayTime": "wyświetlono czas na zegarze"
   },
   "functions": {
     "currentTimeHour": {
-      "description": "Zwraca aktualną godzinę w formacie 24-godzinnym (np. 23 dla 11pm) jako liczbę.",
+      "description": "Zwraca bieżącą godzinę w formacie 24-godzinnym (np. 23 dla 11pm) jako liczbę.",
       "category": "Czas"
     },
     "currentTimeMinute": {
-      "description": "Zwraca aktualną minutę jako liczbę.",
+      "description": "Zwraca bieżącą minutę jako liczbę.",
       "category": "Czas"
     },
     "displayTime": {
