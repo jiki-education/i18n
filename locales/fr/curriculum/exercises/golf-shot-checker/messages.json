@@ -1,18 +1,18 @@
 {
   "checks": {
-    "wrongDistance": "La balle n'a pas roulé sur la bonne distance pour ce coup. Elle doit parcourir exactement la longueur du coup depuis le tee.",
+    "wrongDistance": "La balle n'a pas roulé sur la bonne distance pour ce coup. Elle doit parcourir exactement la longueur du coup à partir du tee.",
     "missingPositions": "La balle doit rouler en passant par chaque position, une à la fois.",
     "stayOnGrassPlain": "Pour ce coup, la balle doit rester sur l'herbe : elle ne doit pas tomber dans le trou.",
-    "stayOnGrassOvershot": "La balle a dépassé le trou, elle doit donc rester sur l'herbe et ne pas tomber dedans.",
+    "stayOnGrassOvershot": "La balle a dépassé le trou, donc elle aurait dû rester sur l'herbe et ne pas tomber dedans.",
     "droppedIncorrectly": "La balle a atteint le trou, mais elle n'est pas descendue dedans correctement.",
     "noFireworksPeriod": "Tu n'aurais pas dû tirer le feu d'artifice.",
     "noFireworksNoPeriod": "Tu n'aurais pas dû tirer le feu d'artifice",
     "noFireworksAtEnd": "Tu n'aurais pas dû tirer le feu d'artifice à la fin.",
-    "shouldFireFireworks": "Tu dois tirer le feu d'artifice à la fin."
+    "shouldFireFireworks": "Tu aurais dû tirer le feu d'artifice à la fin."
   },
   "tasks": {
     "checkShot": {
-      "name": "Vérifie si le coup atterrit dans le trou",
+      "name": "Vérifie si le coup atterrit sur la position du trou",
       "description": "Fais rouler la balle selon la longueur du coup et, si elle arrive au-dessus du trou, fais-la tomber dedans ! Tire ensuite un feu d'artifice."
     }
   },
@@ -53,10 +53,10 @@
     },
     "whenShouldBallDrop": {
       "question": "Quand la balle doit-elle tomber dans le trou ?",
-      "answer": "Seulement quand le coup atterrit dans le trou. Vérifie si la longueur du coup est dans la plage gagnante en testant la borne inférieure et la borne supérieure ensemble, dans une seule condition."
+      "answer": "Seulement quand le coup atterrit sur la position du trou. Vérifie si la longueur du coup est dans la plage gagnante en testant la borne inférieure et la borne supérieure ensemble, dans une seule condition."
     },
     "whenShouldFireworksFire": {
-      "question": "Quand le feu d'artifice doit-il partir ?",
+      "question": "Quand le feu d'artifice doit-il être déclenché ?",
       "answer": "Seulement pour un coup qui a atterri dans le trou, et seulement une fois que la balle a fini de descendre tout en bas. Garde la descente et le feu d'artifice ensemble, dans la même condition."
     }
   },
