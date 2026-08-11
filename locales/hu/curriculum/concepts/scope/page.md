@@ -1,5 +1,5 @@
 ---
-title: "Scope"
+title: "Hatókör"
 description: "Ismerd meg, hogyan kap minden kapcsos zárójel saját polcot, és miért él egy változó csak addig, amíg a kódblokkja."
 en_md5: 4d5fc2d1d304725660102e9aaceea4c3
 ---

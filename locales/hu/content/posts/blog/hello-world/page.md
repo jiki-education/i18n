@@ -1,5 +1,5 @@
 ---
-title: "Hello, World! 👋"
+title: "Helló, világ! 👋"
 excerpt: "Üdvözlünk a Jikinél! Ismerd meg, mi a Jiki, kinek szól, és hogyan segíthet megtanulni programozni."
 tags: ["introduction", "beginners", "getting-started"]
 seo:
