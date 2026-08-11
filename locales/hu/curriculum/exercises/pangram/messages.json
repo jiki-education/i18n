@@ -1,72 +1,72 @@
 {
   "tasks": {
     "checkPangram": {
-      "name": "�",
-      "description": "�"
+      "name": "Pangramma ellenőrzése",
+      "description": "Írj egy függvényt, ami ellenőrzi, hogy egy mondat pangramma-e (az ábécé minden betűjét tartalmazza-e legalább egyszer). Az ellenőrzésnek kis- és nagybetűtől függetlennek kell lennie."
     }
   },
   "scenarios": {
     "pangramEmptySentence": {
-      "name": "�",
-      "description": "�"
+      "name": "Üres mondat",
+      "description": "Egy üres mondat nem pangramma."
     },
     "pangramPerfectLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "Tökéletes kisbetűs",
+      "description": "Egy teljes, kisbetűs ábécé pangramma."
     },
     "pangramOnlyLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "Csak kisbetűs",
+      "description": "Egy olyan mondat, ami csak kisbetűket tartalmaz és az összes betűt lefedi, pangramma."
     },
     "pangramMissingX": {
-      "name": "�",
-      "description": "�"
+      "name": "Hiányzó 'x' betű",
+      "description": "Az a mondat, amelyből hiányzik az 'x' betű, nem pangramma."
     },
     "pangramMissingH": {
-      "name": "�",
-      "description": "�"
+      "name": "Hiányzó 'h' betű",
+      "description": "Az a mondat, amelyből hiányzik a 'h' betű, nem pangramma."
     },
     "pangramMissingAM": {
-      "name": "�",
-      "description": "�"
+      "name": "Hiányzó betűk a-m után",
+      "description": "Egy olyan string, ami csak 'a'-tól 'm'-ig tartalmaz kis- és nagybetűket, nem pangramma."
     },
     "pangramWithUnderscores": {
-      "name": "�",
-      "description": "�"
+      "name": "Aláhúzásokkal",
+      "description": "Egy pangramma mondat aláhúzásokkal."
     },
     "pangramWithNumbers": {
-      "name": "�",
-      "description": "�"
+      "name": "Számokkal",
+      "description": "Egy pangramma mondat, amiben számok is vannak."
     },
     "pangramNumbersReplacingLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "Számok betűk helyett",
+      "description": "Az a mondat, ahol betűk helyett számok vannak, nem pangramma."
     },
     "pangramMixedCasePunctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "Vegyes kis- és nagybetűk",
+      "description": "Egy pangramma vegyes kis- és nagybetűkkel és írásjelekkel."
     },
     "pangramCaseInsensitive": {
-      "name": "�",
-      "description": "�"
+      "name": "Hiányzó betűk kis- és nagybetűtől függetlenül",
+      "description": "Egy olyan mondat, ami kis- és nagybetűtől függetlenül sem tartalmazza az összes betűt, nem pangramma."
     }
   },
   "hints": {
     "helpers": {
-      "question": "�",
-      "answer": "�"
+      "question": "Milyen segédfüggvényekkel könnyíthetem meg a dolgom?",
+      "answer": "Az `includes()` segédfüggvény (amely azt kérdezi: „szerepel ez a karakter ebben a stringben?”) és a `toLowerCase()` segédfüggvény (hogy a kis- és nagybetűk különbsége ne zavarjon össze) rövid és világossá teszik a fő logikát."
     },
     "whyLowercase": {
-      "question": "�",
-      "answer": "�"
+      "question": "Miért kell kisbetűssé alakítanom a mondatot?",
+      "answer": "A „The quick brown fox...” tartalmazza a 'T'-t és a 't'-t is. Ha csak a kisbetűket ellenőrzöd, a nagybetűk nem fognak egyezni. Alakítsd át a mondatot kisbetűssé a legelején, hogy minden összehasonlítás következetes legyen."
     },
     "checkEveryLetter": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hogyan ellenőrizhetem, hogy minden betű megvan-e?",
+      "answer": "Menj végig az ábécé minden betűjén: `\"abcdefghijklmnopqrstuvwxyz\"`. Mindegyiknél használd az `includes()` függvényt annak ellenőrzésére, hogy szerepel-e a kisbetűssé alakított mondatban."
     },
     "stopEarly": {
-      "question": "�",
-      "answer": "�"
+      "question": "Mikor hagyhatom abba a keresést?",
+      "answer": "Amint találsz egy hiányzó betűt, adj vissza `false` értéket. Nincs értelme ellenőrizni a többit. Csak akkor adj vissza `true`-t, ha már a teljes ábécét ellenőrizted."
     }
   }
 }

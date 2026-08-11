@@ -1,74 +1,74 @@
 {
   "checks": {
-    "notShotAllAliens": "�",
-    "noRepeatWithArg": "�"
+    "notShotAllAliens": "Nem lőtted le az összes űrlényt.",
+    "noRepeatWithArg": "Ebben a feladatban nem használhatod a <code>repeat(n) {}</code>-t. Csak a bemenet nélküli <code>repeat() {}</code> ciklusokat használd."
   },
   "tasks": {
     "scrollAndShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "Görgess végig a képernyőn, és lődd le minden űrlényt!",
+      "description": "Mozgasd a lézert ide-oda a képernyőn. Ellenőrizd, hogy van-e fölötted űrlény, és ha van, lődd le! Ne mozdulj le a képernyő széléről, és ne lőj, ha nincs ott űrlény, különben veszítesz! A hullámok egyre sűrűbbé válnak, ahogy haladsz."
     }
   },
   "scenarios": {
     "oneAlien": {
-      "name": "�",
-      "description": "�"
+      "name": "Egy űrlény",
+      "description": "Egyetlen űrlényt kell leszedned."
     },
     "oneRow": {
-      "name": "�",
-      "description": "�"
+      "name": "Egy ritkás sor",
+      "description": "Elszórt űrlények az alsó sorban."
     },
     "twoRows": {
-      "name": "�",
-      "description": "�"
+      "name": "Két sor",
+      "description": "Űrlények két sorban elosztva."
     },
     "threeRows": {
-      "name": "�",
-      "description": "�"
+      "name": "Három sor",
+      "description": "Űrlények mind a három sorban."
     },
     "fullRows": {
-      "name": "�",
-      "description": "�"
+      "name": "Teli sorok",
+      "description": "Három sűrűn telepakolt sor. Az űrlények folyamatosan visszatérnek!"
     }
   },
   "hints": {
     "whereDoIStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hol kezdjem? Ez soknak tűnik.",
+      "answer": "Bontsd részekre. Először mozgasd a lézert ide-oda, a lövéssel még ne foglalkozz. Ha a mozgás már működik, add hozzá a lövés logikáját."
     },
     "trackLaserPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hogyan tartsam számon a lézer helyzetét?",
+      "answer": "Tárold a lézer helyzetét egy változóban. Frissítsd minden ciklusiterációban, amikor a `moveLeft()`-et vagy a `moveRight()`-ot hívod."
     },
     "whenToTurnAround": {
-      "question": "�",
-      "answer": "�"
+      "question": "Honnan tudom, mikor kell megfordulnom?",
+      "answer": "Tárolj egy irányváltozót (például `1` a jobbra, `-1` a balra). Amikor a pozíció eléri a bal vagy jobb szélső határt, fordítsd meg az irányt. Ez ugyanaz a pattogási minta, mint a Szivárványgolyóban."
     },
     "whenToShoot": {
-      "question": "�",
-      "answer": "�"
+      "question": "Mikor hívjam meg a `shoot()`-ot?",
+      "answer": "Mielőtt meghívod a `shoot()`-ot, ellenőrizd az `isAlienAbove()`-t. Csak akkor lőj, ha `true`-t ad vissza, különben elpazarolod a lőszert és veszítesz."
     },
     "laserOverheating": {
-      "question": "�",
-      "answer": "�"
+      "question": "A lézer folyamatosan túlmelegszik. Mit tegyek?",
+      "answer": "Ne lőj minden iterációban. Mozogj legalább egyszer a lövések között, hogy a lézerágyúnak legyen ideje lehűlni."
     }
   },
   "functions": {
     "moveLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "A lézerágyút **egy pozícióval balra** mozgatja. Ha megpróbálsz lelépni a képernyő bal széléről, elveszíted a játékot!",
+      "category": "Mozgás"
     },
     "moveRight": {
-      "description": "�",
-      "category": "�"
+      "description": "A lézerágyút **egy pozícióval jobbra** mozgatja. Ha megpróbálsz lelépni a képernyő jobb széléről, elveszíted a játékot!",
+      "category": "Mozgás"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Felfelé lő a lézerrel. **Csak akkor lőj, ha van fölötted űrlény**, különben elveszíted a játékot! A lézerágyú könnyen túlmelegszik, ezért mozognod kell, mielőtt újra lősz.",
+      "category": "Akció"
     },
     "isAlienAbove": {
-      "description": "�",
-      "category": "�"
+      "description": "`true`-t ad vissza, ha közvetlenül a lézerágyú fölött van űrlény, egyébként `false`-t. Használd ezt ellenőrzésre lövés előtt!",
+      "category": "Érzékelés"
     }
   }
 }
