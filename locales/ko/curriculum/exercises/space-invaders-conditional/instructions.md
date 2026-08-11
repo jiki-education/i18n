@@ -1,5 +1,5 @@
 ---
-title: "Space Invaders: 조건문"
+title: "스페이스 인베이더: 조건문"
 description: "위에 외계인이 있을 때만 쏘아요."
 en_md5: 4a603e339af722e912ab2ff9b25cc287
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Luhn"
+title: "ルーン"
 description: "Luhnチェックサムを使って、クレジットカード番号などの識別番号を検証します。"
 en_md5: 07b0aea3adc2353e50a26e5cbe5cd162
 ---

@@ -1,5 +1,5 @@
 ---
-title: "메서드 Pangram"
+title: "메서드 팬그램"
 description: "Pangram을 업데이트하여 내장된 문자열 메서드를 사용하도록 하세요."
 en_md5: 61b73caa0318f68e9a0facca189e7abf
 ---

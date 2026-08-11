@@ -1,5 +1,5 @@
 ---
-title: "太空侵略者：嵌套 Repeat"
+title: "太空入侵者：嵌套 Repeat"
 description: "用一排排、一列列的外星人填满屏幕，然后全部消灭。"
 en_md5: 86d826fafb0f610f2a0697bcfd29e8ff
 ---

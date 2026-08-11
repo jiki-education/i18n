@@ -1,5 +1,5 @@
 ---
-title: "Space Invaders: Repeat"
+title: "太空入侵者：Repeat"
 description: "使用循环高效地消灭一波外星人。"
 en_md5: 0fc2ae36efcc9d78d89873aafc7bd036
 ---

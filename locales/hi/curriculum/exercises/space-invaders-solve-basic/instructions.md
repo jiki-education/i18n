@@ -1,5 +1,5 @@
 ---
-title: "Space Invaders"
+title: "स्पेस इन्वेडर्स"
 description: "अपने Space Invaders के पहले स्वाद में कुछ एलियन मार गिराइए।"
 en_md5: 56b9b22488ae091b5f06cb5afc5bb441
 ---

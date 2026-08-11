@@ -1,5 +1,5 @@
 ---
-title: "Hamming"
+title: "हैमिंग"
 description: "दो DNA स्ट्रैंड के बीच अंतर गिनें।"
 en_md5: 629f74899d402283c34d3bfbb17777b8
 ---

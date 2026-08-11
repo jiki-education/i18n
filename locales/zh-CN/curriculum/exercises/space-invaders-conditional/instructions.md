@@ -1,5 +1,5 @@
 ---
-title: "Space Invaders：条件"
+title: "太空入侵者：条件"
 description: "只有在视线中有外星人时才射击。"
 en_md5: 4a603e339af722e912ab2ff9b25cc287
 ---

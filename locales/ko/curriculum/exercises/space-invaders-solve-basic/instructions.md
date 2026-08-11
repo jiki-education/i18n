@@ -1,5 +1,5 @@
 ---
-title: "Space Invaders"
+title: "스페이스 인베이더"
 description: "Space Invaders 첫 경험으로 외계인을 격추해 보세요."
 en_md5: 56b9b22488ae091b5f06cb5afc5bb441
 ---

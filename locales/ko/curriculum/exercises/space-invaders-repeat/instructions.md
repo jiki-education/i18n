@@ -1,5 +1,5 @@
 ---
-title: "Space Invaders: 반복"
+title: "스페이스 인베이더: 반복"
 description: "루프를 사용해 외계인 무리를 효율적으로 물리쳐요."
 en_md5: 0fc2ae36efcc9d78d89873aafc7bd036
 ---

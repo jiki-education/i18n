@@ -1,5 +1,5 @@
 ---
-title: "Space Invaders: शर्त"
+title: "स्पेस इन्वेडर्स: शर्त"
 description: "लेज़र तभी चलाएँ जब निशाने पर कोई एलियन हो।"
 en_md5: 4a603e339af722e912ab2ff9b25cc287
 ---

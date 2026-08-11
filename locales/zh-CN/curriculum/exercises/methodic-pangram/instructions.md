@@ -1,5 +1,5 @@
 ---
-title: "方法化的 Pangram"
+title: "方法化的全字母句"
 description: "更新你的 Pangram 练习，使用内置的字符串方法。"
 en_md5: 61b73caa0318f68e9a0facca189e7abf
 ---

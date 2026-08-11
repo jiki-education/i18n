@@ -1,5 +1,5 @@
 ---
-title: "Space Invaders"
+title: "スペースインベーダー"
 description: "初めてのSpace Invadersで、エイリアンを撃ち落としましょう。"
 en_md5: 56b9b22488ae091b5f06cb5afc5bb441
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Hamming"
+title: "해밍"
 description: "두 DNA 가닥의 차이를 세어보세요."
 en_md5: 629f74899d402283c34d3bfbb17777b8
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Acronym"
+title: "약어"
 description: "문구를 그 약어로 바꾸세요, 구두점은 무시하고."
 en_md5: 97e2adefc1da7867f5e218d0fe8c4fdb
 ---

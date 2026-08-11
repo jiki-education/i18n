@@ -1,5 +1,5 @@
 ---
-title: "Pangram"
+title: "팬그램"
 description: "대소문자 구분 없이 문장에 알파벳의 모든 글자가 포함되어 있는지 확인해 봐요."
 en_md5: 8fae2df6ec4385478e4236fa49e21256
 ---

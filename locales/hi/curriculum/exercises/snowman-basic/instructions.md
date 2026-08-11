@@ -1,5 +1,5 @@
 ---
-title: "Snowman"
+title: "स्नोमैन"
 description: "तीन वृत्तों से एक स्नोमैन बनाइए।"
 en_md5: b8c4b86ef84ef659b9e869fa6504c672
 ---

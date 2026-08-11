@@ -1,5 +1,5 @@
 ---
-title: "Scroll and Shoot"
+title: "स्क्रॉल एंड शूट"
 description: "Space Invaders में स्क्रॉल करके एलियनों का सफ़ाया कीजिए।"
 en_md5: a238bdc121bdfe425015d2e9e6b872d5
 ---
