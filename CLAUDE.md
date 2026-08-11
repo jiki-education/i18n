@@ -470,11 +470,14 @@ so search stays front-end published. The BUILDER moved into
 structure whose bytes depend on the lunr version, on field order and on boosts,
 so if it ever does move the bytes are already contractual.
 
-**Projects and testimonials stay front-end published too**, for a different
-reason: they are per-locale but are not Markdown. A project's localized title,
-description and tags are locale MAPS inside its own `config.json`, and
-testimonials are a per-locale JSON file. Neither is in the corpus this repo
-mirrors.
+**Projects and testimonials are translated here**, as catalogs rather than as
+prose. Neither is Markdown, so neither is in the corpus of pages this repo
+mirrors, but a title, a description, a tag and a student quote are all copy, so
+each is a registry type (`project-metadata`, `testimonials`) like anything else.
+What stays in the front-end is the half that is not copy: a project's image,
+livestream flag and stream dates, and a testimonial's person, avatar filename
+and page ordering. English is authored over there, this repo holds every other
+locale, and the front-end joins the two halves at read time.
 
 ### Frontmatter parsing is part of the byte contract
 

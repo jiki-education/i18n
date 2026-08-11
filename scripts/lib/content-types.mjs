@@ -180,12 +180,43 @@ export const CONTENT_TYPES = {
     // never live, and a locale set derived from such a map is a set the
     // front-end must not be able to compute.
     //
-    // `tags` is an ARRAY, and the only array in any catalog this repo holds.
-    // scripts/lib/files.mjs § flatten says what that costs and why an array is a
-    // branch rather than a leaf.
+    // `tags` is an ARRAY, one of only two in any catalog this repo holds (the
+    // other is `testimonials`' marquee). scripts/lib/files.mjs § flatten says
+    // what that costs and why an array is a branch rather than a leaf.
     sourceRepoPath: () => "content/src/posts/projects/messages.json",
     localPath: () => "content/posts/projects/messages.json",
     r2: (locale, _slug, hash) => `/static/content/projects/${locale}/meta-${hash}.json`
+  },
+
+  testimonials: {
+    label: "testimonial copy",
+    howto: "testimonials",
+    format: "catalog",
+    slugged: false,
+    staleness: "sibling",
+    interpolation: "none",
+    // The student quotes, as one catalog per locale: `heading`, `subheading`,
+    // `roles` keyed by person, `quotes` keyed by quote key, and the `marquee`
+    // lines that scroll across the hero. One catalog serves both places a
+    // testimonial appears, the landing section and the /testimonials page.
+    //
+    // What is NOT here is the point of the split. A person's name, their avatar
+    // filename, which person a quote belongs to and the order the two pages show
+    // them in are all locale-invariant, so they live in the front-end beside the
+    // components that render them (content/src/testimonials/structure.json) and
+    // are published in its structure artifact. A name is not copy and translating
+    // one is a bug, so a translator is never shown one.
+    //
+    // A quote key is a person's slug, or that slug plus `-short` where the
+    // landing grid shows a trimmed form of the same testimonial the /testimonials
+    // page shows in full. Keying by slug is what lets a locale translate a subset:
+    // the front-end drops any key it has no words for rather than reordering.
+    //
+    // `marquee` is an ARRAY, the second and last one in this repo; see
+    // `project-metadata` above.
+    sourceRepoPath: () => "content/src/testimonials/messages.json",
+    localPath: () => "content/testimonials/messages.json",
+    r2: (locale, _slug, hash) => `/static/content/testimonials/${locale}/meta-${hash}.json`
   },
 
   "exercise-category": {
