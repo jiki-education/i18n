@@ -31,7 +31,7 @@ let height = 60
 rectangle(left, top, width, height, "blue")
 ```
 
-On peut donc définir ces variables : `left`, 10 ; `top`, 20 ; `width`, 80 ; `height`, 60. Mais que se passe-t-il si on veut maintenant rapprocher le rectangle du centre, le rendre un peu plus petit ? Si on veut le placer à 20 unités des bords gauche et droit et à 30 unités du haut et du bas ? Il faut tout recalculer. La `width` devient 100 moins 20 moins 20, la `height` devient 100 moins 30 moins 30, et ça fait franchement plus de travail et plus de calculs que je n'ai envie d'en faire. Alors à la place, on peut demander à l'ordinateur de le faire pour nous.
+On peut donc définir ces variables : `left`, 10 ; `top`, 20 ; `width`, 80 ; `height`, 60. Mais que se passe-t-il si on veut maintenant rapprocher le rectangle du centre, le rendre un peu plus petit ? Si on veut le placer à 20 unités des bords gauche et droit et à 30 unités du haut et du bas ? Il faut tout recalculer. La `width` devient 100 moins 20 moins 20, la `height` devient 100 moins 30 moins 30, et ça fait franchement plus de travail et plus de calculs que je n'ai envie d'en faire. Alors autant demander à l'ordinateur de le faire à notre place.
 
 On peut définir la `width` comme 100 moins `left` moins `left`, et la `height` comme 100 moins `top` moins `top`, puisque la marge est la même en haut et en bas. Ou alors, on peut l'écrire comme 100 moins `left` fois deux, et 100 moins `top` fois deux.
 
@@ -62,7 +62,7 @@ Réfléchissons à ce que fait Jiki quand on écrit let `height` égale `canvasS
   height="400"
 />
 
-Ensuite, il prend la boîte `canvasSize` sur l'étagère, y trouve 100, et calcule que 100 moins 60 font 40. Il sait maintenant que ce qu'on lui dit en réalité, c'est let `height` égale 40. Il obéit donc au let : il prend une nouvelle boîte, écrit `height` dessus, puis met 40 à l'intérieur. Et quand il utilisera `height` plus tard, il n'aura qu'à ressortir le 40.
+Ensuite, il prend la boîte `canvasSize` sur l'étagère, y trouve 100, et calcule que 100 moins 60 font 40. Il sait maintenant que ce qu'on lui dit en réalité, c'est let `height` égale 40. Il obéit donc au `let` : il prend une nouvelle boîte, écrit `height` dessus, puis met 40 à l'intérieur. Et quand il utilisera `height` plus tard, il n'aura qu'à ressortir le 40.
 
 <img
   class="concept-image"
