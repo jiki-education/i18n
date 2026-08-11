@@ -388,6 +388,25 @@ async function publishLocale(locale, { exportSources }) {
     );
   }
 
+  // --- testimonials -----------------------------------------------------------
+  //
+  // The student quotes: headings, roles, quote text and the marquee lines, in one
+  // catalog. A CATALOG like project metadata above, so nothing renders it: the
+  // front-end merges it with the locale-invariant half it publishes itself (who
+  // said each quote, which avatar, and the order of the landing grid and the
+  // /testimonials page).
+  //
+  // A locale that publishes no testimonial catalog renders NO testimonials. There
+  // is no English fallback on the reading side and there must never be one, so a
+  // partial catalog here is a smaller grid over there, never a page of English
+  // quotes under a translated URL.
+  const testimonialsPath = localPath("testimonials", locale);
+  if (fs.existsSync(testimonialsPath)) {
+    const catalog = readJson(testimonialsPath);
+    countSentinels(gaps, "testimonials", `${locale} testimonial catalog`, catalog);
+    manifest.testimonials = emit(artifacts, (hash) => CONTENT_TYPES.testimonials.r2(locale, null, hash), catalog);
+  }
+
   // --- interpreter message catalogs, one artifact per interpreter language ---
   //
   // The slug is a LANGUAGE (javascript, jikiscript, python), not an exercise, so
