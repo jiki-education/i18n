@@ -29,4 +29,4 @@ Le centre du gratte-ciel doit se trouver à la colonne `19`. Le rez-de-chaussée
 
 Une règle essentielle de cet exercice : toutes les valeurs que tu donnes aux fonctions doivent être des variables ou des formules. Tu ne peux pas te contenter d'écrire un nombre comme `20`.
 
-Une fois cet exercice terminé, tu débloqueras un Projet dans lequel tu construiras des panoramas urbains complets, avec un nombre de bâtiments et des largeurs qui varient.
+Une fois cet exercice terminé, tu débloqueras un Projet dans lequel tu construiras des lignes d'horizon urbaines complètes, avec un nombre de bâtiments et des largeurs qui varient.
