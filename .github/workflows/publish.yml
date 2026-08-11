@@ -56,16 +56,17 @@ jobs:
             content/src
 
       # Subtitles are the one content type whose English is not the front-end's:
-      # they are cut from the rendered video and authored beside it. Nothing here
-      # publishes them (Mux serves them), but the validate step below reads them.
-      - name: Check out English subtitles
-        uses: actions/checkout@v4
-        with:
-          repository: jiki-education/videos
-          ref: main
-          path: .source/videos
-          sparse-checkout: |
-            videos
+      # they are cut from the rendered video and authored beside it (SOURCE_REPOS
+      # in scripts/lib/english.mjs). That repo is private, so this job does not
+      # check it out, exactly as validate.yml does not: the validate step below
+      # prints a `skip: video-subtitles` line rather than failing, and publish
+      # itself never reads it at all, because subtitles are served by Mux and
+      # their content type carries `r2: null`, so there is no artifact to build.
+      #
+      # It used to be checked out here, and when that checkout began failing it
+      # took the whole publish with it: one unreachable optional source stopped
+      # every locale's every type from reaching R2. A source no step in this job
+      # reads has no business being able to fail it.
 
       # Before setup-node, so its pnpm cache has a pnpm to ask for a store path.
       # The version comes from package.json's `packageManager` field.
