@@ -38,7 +38,7 @@ import {
   vttBody,
   vttTimestamps
 } from "./lib/files.mjs";
-import { ERROR, checkCatalog, checkProse, findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
+import { ERROR, checkCatalog, checkProse, findRepeatedBodies, isCopiedEnglish, isUntranslatedFrontmatter } from "./lib/checks.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 import { localeFileLeaves, railsKnownLocales, railsLocale } from "./lib/api-copy.mjs";
 
@@ -795,6 +795,89 @@ test("a field the type does not declare translatable is left alone", () => {
 
 test("a path English does not have is not demanded of the translation", () => {
   assert.deepEqual(frontmatterIssues('title: "T"\nexcerpt: "E"', 'title: "C"\nexcerpt: "K"'), []);
+});
+
+// ------------------------------------- the untranslated frontmatter warning
+
+// The gap this closes: Hungarian was days from going live with fifteen English
+// titles over fully translated bodies ("Snowman" above prose saying `hóember`).
+// Every structural check passed and every file carried a valid stamp, because a
+// title is invisible to a staleness hash. A WARN, never an ERROR: `Luhn` and
+// `Two-Fer` are legitimately identical, and blocking on those teaches people to
+// route around the check.
+
+console.log("\nthe untranslated frontmatter warning:");
+
+function identicalWarnings(englishFm, targetFm, translatedKeys = POST_KEYS) {
+  return frontmatterIssues(englishFm, targetFm, translatedKeys)
+    .filter((line) => line.includes("byte-identical to English"))
+    .sort();
+}
+
+const EN_EXERCISE = 'title: "Snowman"\ndescription: "Build a snowman, one shape at a time."';
+const EXERCISE_KEYS = ["title", "description"];
+
+test("an English title over a translated body is warned about, with the value", () => {
+  assert.deepEqual(identicalWarnings(EN_EXERCISE, 'title: "Snowman"\ndescription: "Építs egy hóembert, alakzatról alakzatra."', EXERCISE_KEYS), [
+    'WARN frontmatter: "title" is byte-identical to English ("Snowman"): untranslated, or legitimately the same ' +
+      "(a proper noun, a named work, untranslatable wordplay)"
+  ]);
+});
+
+test("a translated title says nothing", () => {
+  assert.deepEqual(identicalWarnings(EN_EXERCISE, 'title: "Hóember"\ndescription: "Építs egy hóembert, alakzatról alakzatra."', EXERCISE_KEYS), []);
+});
+
+test("a legitimately identical title still only WARNs, so it can be read and dismissed", () => {
+  // `Luhn` is a person. The check cannot know that, which is exactly why it does
+  // not block: a human reads the warning and moves on.
+  const issues = identicalWarnings('title: "Luhn"\ndescription: "Validate a number."', 'title: "Luhn"\ndescription: "Ellenőrizz egy számot."', EXERCISE_KEYS);
+  assert.equal(issues.length, 1);
+  assert.equal(issues[0].startsWith("WARN "), true);
+});
+
+test("a value with no word to translate is never reported as English", () => {
+  // A bare number, a symbol and a single letter are the same in every language.
+  for (const value of ["7", "3.14", "→", "A", "🎉"]) {
+    assert.deepEqual(identicalWarnings(`title: "${value}"\ndescription: "D."`, `title: "${value}"\ndescription: "L."`, ["title"]), [], value);
+  }
+});
+
+test("every translatable frontmatter field is covered, not just the title", () => {
+  // Driven by the type's own `frontmatterTranslated`, so a nested path is checked
+  // exactly as a top-level one is.
+  assert.deepEqual(identicalWarnings('title: "T"\nseo:\n  description: "Learn to code with Jiki."', 'title: "C"\nseo:\n  description: "Learn to code with Jiki."', ["title", "seo.description"]), [
+    'WARN frontmatter: "seo.description" is byte-identical to English ("Learn to code with Jiki."): untranslated, ' +
+      "or legitimately the same (a proper noun, a named work, untranslatable wordplay)"
+  ]);
+});
+
+test("a list-valued field is compared whole: shared entries are normal, a copied list is not", () => {
+  const english = 'title: "T"\nseo:\n  keywords: ["learn to code", "jiki"]';
+  const keys = ["seo.keywords"];
+  assert.deepEqual(identicalWarnings(english, 'title: "C"\nseo:\n  keywords: ["tanulj programozni", "jiki"]', keys), []);
+  assert.equal(identicalWarnings(english, 'title: "C"\nseo:\n  keywords: ["learn to code", "jiki"]', keys).length, 1);
+});
+
+test("the warning never blocks: it is a WARN in checkProse's own output", () => {
+  const english = '---\ntitle: "Snowman"\n---\nBody.\n';
+  const target = '---\ntitle: "Snowman"\nen_md5: abc\n---\nMás szöveg.\n';
+  const issues = checkProse(parseFrontmatter(english).body, parseFrontmatter(target).body, {
+    englishData: parseFrontmatter(english).data,
+    targetData: parseFrontmatter(target).data,
+    translatedKeys: ["title"],
+    expectedMd5: "abc"
+  });
+  assert.deepEqual(issues.filter((i) => i.level === ERROR), []);
+});
+
+test("isUntranslatedFrontmatter ignores a value that is not translatable copy", () => {
+  assert.equal(isUntranslatedFrontmatter(7, 7), false);
+  assert.equal(isUntranslatedFrontmatter(true, true), false);
+  assert.equal(isUntranslatedFrontmatter(undefined, undefined), false);
+  assert.equal(isUntranslatedFrontmatter([], []), false);
+  // A list and a string that happen to render the same text are not identical.
+  assert.equal(isUntranslatedFrontmatter(["learn", "to code"], "learn, to code"), false);
 });
 
 // ------------------------------------------------- the frontmatter YAML check

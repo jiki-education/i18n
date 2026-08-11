@@ -374,6 +374,25 @@ phrasings, or a length-and-structure score — are respectively stale on contact
 approximately right. Its one blind spot is a notice used exactly **once** in a locale, which is
 indistinguishable from a very short translation and is left alone.
 
+### Untranslated frontmatter
+
+A page can be untranslated in a **field** rather than in its body, and nothing above sees it.
+Hungarian was days from going live with fifteen English titles over fully translated bodies
+("Snowman" above prose saying `hóember` throughout): every structural check passed, every file
+carried a valid and current stamp, and no report said a word. A title is the most visible string on
+a page and the one a staleness hash can never see, so it survives indefinitely.
+
+`validate` therefore **WARNs when a translatable frontmatter value is byte-identical to English**,
+for every field the type declares in `frontmatterTranslated` (so `title` and `description`, and
+equally a nested `seo.description` or `seo.keywords`), driven by the registry rather than by a list
+of types. A list-valued field is compared whole, since sharing some entries with English is normal
+and repeating all of them is not, and a value with no word in it (a number, a symbol, a single
+letter) is never reported.
+
+It is a **WARN and must stay one**: `Luhn` and `Hamming` are people, `Space Invaders` is a named
+work, `Two-Fer` is untranslatable wordplay, and blocking on those would teach people to route
+around the check. Corpus-wide it fires around 110 times, which is a list a human reads.
+
 ### Prose publishing
 
 **Concept pages are rendered here**, to `/static/concepts/{slug}/{locale}/content-{hash}.html`.
