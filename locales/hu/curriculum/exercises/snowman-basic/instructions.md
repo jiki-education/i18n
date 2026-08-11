@@ -1,5 +1,5 @@
 ---
-title: "Snowman"
+title: "Hóember"
 description: "Építs hóembert három körből."
 en_md5: b8c4b86ef84ef659b9e869fa6504c672
 ---

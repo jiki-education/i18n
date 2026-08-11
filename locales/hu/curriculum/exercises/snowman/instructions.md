@@ -1,5 +1,5 @@
 ---
-title: "Snowman"
+title: "Hóember"
 description: "Állítsd be a megfelelő változóértékeket a hóember megépítéséhez."
 en_md5: d95e1fcddba2afd556c42645352b910a
 ---
@@ -12,4 +12,4 @@ Ahhoz, hogy megoldd a feladatot, definiálnod kell a megfelelő változókat (_v
 
 Elkezdtük neked azzal, hogy definiáltuk a hóember alapjához tartozó változókat, de rossz értékeket adtunk nekik. Ezeket ki kell javítanod, majd hasonló változókat kell hozzáadnod a törzshöz és a fejhez.
 
-Nyomd meg a „Run Code” gombot, hogy lásd a megrajzolt kiindulási kört. Hibát is fogsz kapni, mert hiányoznak változók, amiket a `let`-tel kell definiálnod.
+Nyomd meg a „Kód futtatása” gombot, hogy lásd a megrajzolt kiindulási kört. Hibát is fogsz kapni, mert hiányoznak változók, amiket a `let`-tel kell definiálnod.

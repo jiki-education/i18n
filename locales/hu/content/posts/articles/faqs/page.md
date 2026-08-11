@@ -14,7 +14,7 @@ en_md5: c773051f2136ec2c1a51efe1199e6e8a
 
 A Tanulj meg programozni feladatok – a programozástanulás központi része – teljesen ingyenesek. Nincs szükség bankkártyára, nincs próbaidőszak, és nem rejt semmilyen csalafintaságot.
 
-A Jiki Premium ára országonként változik, és teljes hozzáférést biztosít a Tanulj fejleszteni tanfolyamhoz, a Jiki Projects-hez, a korlátlan Ask Jiki AI-segítséghez, a rendszeres élő kérdés-felelet alkalmakhoz, amelyekbe becsatlakozhatsz, a kurzusok tanúsítványaihoz, a reklámmentes tanulási élményhez, valamint az új funkciók korai eléréséhez.
+A Jiki Premium ára országonként változik, és teljes hozzáférést biztosít a Tanulj fejleszteni tanfolyamhoz, a Jiki Projects-hez, a korlátlan Kérdezd Jikit AI-segítséghez, a rendszeres élő kérdés-felelet alkalmakhoz, amelyekbe becsatlakozhatsz, a kurzusok tanúsítványaihoz, a reklámmentes tanulási élményhez, valamint az új funkciók korai eléréséhez.
 
 ### Mennyi időt kell hetente a kurzusra fordítanom?
 

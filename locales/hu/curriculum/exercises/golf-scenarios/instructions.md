@@ -12,7 +12,7 @@ Az újdonság, hogy nem egy rögzített értékkel mozgunk, hanem attól függő
 
 ### Forgatókönyvek
 
-A bal oldalon négy szürke pontot látsz a négy különböző forgatókönyvhöz. **Mindegyik pontra kattintva** egy másik forgatókönyvet látsz – ahol a `getShotLength()` különböző számot ad vissza. Ha a `"Run Code"` gombra kattintasz, láthatod, hogy mind piros lesz.
+A bal oldalon négy szürke pontot látsz a négy különböző forgatókönyvhöz. **Mindegyik pontra kattintva** egy másik forgatókönyvet látsz – ahol a `getShotLength()` különböző számot ad vissza. Ha a „Kód futtatása” gombra kattintasz, láthatod, hogy mind piros lesz.
 
 A te feladatod, hogy írj egyetlen programot, amely működik a `getShotLength()` által visszaadott összes lehetséges értékre.
 

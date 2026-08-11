@@ -14,6 +14,6 @@ Egy salátát készítesz, amihez leveleket, paradicsomot, olajbogyót és kruto
 - Az olajbogyónak erős az íze: használd takarékosan, különben elnyomja az összes többi ízt. Legalább egy olajbogyót tegyél, de legfeljebb a paradicsomok számának a felét.
 - És a legfontosabb szabály: az összes hozzávaló mennyiségét véletlenszerűen kell előállítani!
 
-Először kattints párszor a **Run Code** gombra, hogy lásd, hogyan működik a saláta. Miután belejöttél a feladat ízébe (szándékos szóvicc), használd a `Math.randomInt`-et (véletlen egész szám), és kövesd a fenti szabályokat, hogy összeállítsd a megfelelő hozzávalókat:
+Először kattints párszor a **Kód futtatása** gombra, hogy lásd, hogyan működik a saláta. Miután belejöttél a feladat ízébe (szándékos szóvicc), használd a `Math.randomInt`-et (véletlen egész szám), és kövesd a fenti szabályokat, hogy összeállítsd a megfelelő hozzávalókat:
 
 Próbálj ki néhány különböző kombinációt, és érezd jól magad!

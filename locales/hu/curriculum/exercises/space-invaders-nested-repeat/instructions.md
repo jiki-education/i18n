@@ -1,5 +1,5 @@
 ---
-title: "Space Invaders: Nested Repeat"
+title: "Space Invaders: Egymásba ágyazott ismétlés"
 description: "Töltsd meg a képernyőt sorokba és oszlopokba rendezett űrlényekkel, majd semmisítsd meg mindet."
 en_md5: 86d826fafb0f610f2a0697bcfd29e8ff
 ---

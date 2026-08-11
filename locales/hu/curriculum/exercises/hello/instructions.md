@@ -1,5 +1,5 @@
 ---
-title: "Hello"
+title: "Üdvözlés"
 description: "Köszönj a világnak az első string függvényeddel."
 en_md5: f0c55b2c330b18ae05e22d967babbc9e
 ---

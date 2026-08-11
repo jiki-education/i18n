@@ -1,14 +1,14 @@
 ---
-title: "Pangram"
+title: "Pangramma"
 description: "Ellenőrizd, hogy egy mondat az ábécé minden betűjét tartalmazza-e, kis- és nagybetűtől függetlenül."
 en_md5: 8fae2df6ec4385478e4236fa49e21256
 ---
 
-Üdv a Pangram sorozat második részében! Emlékezz vissza: a pangram olyan mondat, amely az ábécé minden betűjét legalább egyszer tartalmazza.
+Üdv a Pangramma-sorozat második részében! Emlékezz vissza: a pangramma olyan mondat, amely az ábécé minden betűjét legalább egyszer tartalmazza.
 
-Ez a feladat egy összetettebb változata annak a korábbi Pangram feladatnak, amit már megoldottál, mert itt nagybetűket is használunk. Ez meglepően sok bonyodalmat okoz.
+Ez a feladat egy összetettebb változata a korábbi pangramma-feladatnak, amit már megoldottál, mert itt nagybetűket is használunk. Ez meglepően sok bonyodalmat okoz.
 
-Hozz létre egy `isPangram` (pangram?) nevű függvényt, amely egy mondatot kap stringként, és egy boolean-t ad vissza, ami megmondja, hogy a mondat pangram-e vagy sem.
+Hozz létre egy `isPangram` (pangramma?) nevű függvényt, amely egy mondatot kap stringként, és egy boolean-t ad vissza, ami megmondja, hogy a mondat pangramma-e vagy sem.
 
 Kiindulásként megkaptad a korábbi kódodat.
 

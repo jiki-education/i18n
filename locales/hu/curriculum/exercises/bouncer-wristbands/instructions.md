@@ -1,5 +1,5 @@
 ---
-title: "Bouncer: Karszalagok"
+title: "Kidobó: Karszalagok"
 description: "Adj a résztvevőknek a koruknak megfelelő színű karszalagot."
 en_md5: 64e55ffccf4bcef0bc3deb9770874dc8
 ---

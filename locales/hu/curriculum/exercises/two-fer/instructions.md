@@ -4,7 +4,7 @@ description: 'Oszd meg a sütit: „One for you, one for me.”'
 en_md5: fc7535ad0c12800ef580a7989f98150d
 ---
 
-Most az egyszerű „Hello” feladatra építünk, és néhány extra szabályt adunk hozzá.
+Most az egyszerű „Üdvözlés” feladatra építünk, és néhány extra szabályt adunk hozzá.
 
 Néhány angol akcentusban a gyorsan kimondott „two for” úgy hangzik, mint a „two fer”. A „two-for-one” kifejezés azt jelenti, hogy ha megveszel egyet, kapsz mellé még egyet ingyen.
 

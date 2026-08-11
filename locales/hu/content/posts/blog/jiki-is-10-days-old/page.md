@@ -14,9 +14,9 @@ Eddig nyílt bétában indultunk. Egy Discord-bejegyzésen kívül nem igazán j
 
 De… már így is ezrek regisztráltak, és közel 25 000 leckét fejeztek be, aminek nagyon örülök. Az emberek mintegy 60%-a befejez egy leckét, és ebből a csoportból 34% már az első napon legalább 8 leckét teljesít, aminek igazán örülök!
 
-A bétatesztelőink találtak néhány hibát, és néhány dolgot, amin lehetne javítani. Ennek eredményeként átdolgoztam a három „relációs” feladatot (hóember, nap és közlekedési lámpa), valamint a Structured House-t, a nagy relációs projektet is. Sok más apró javítást is kiadtam. Hatalmas köszönet mindenkinek, aki írt a fórumon!
+A bétatesztelőink találtak néhány hibát, és néhány dolgot, amin lehetne javítani. Ennek eredményeként átdolgoztam a három „relációs” feladatot (hóember, nap és jelzőlámpa), valamint a Strukturált házat, a nagy relációs projektet is. Sok más apró javítást is kiadtam. Hatalmas köszönet mindenkinek, aki írt a fórumon!
 
-Sokan használták az „Ask Jiki”-t is, több ezer beszélgetés zajlott. Alig várom, hogy átnézzek közülük jó néhányat, hogy az AI-t fejlesszem, de a mai napon a saját tesztjeim alapján kiadtam néhány fejlesztést, amitől remélhetőleg Jiki egy kicsit okosabb lesz!
+Sokan használták a „Kérdezd Jikit” funkciót is, több ezer beszélgetés zajlott. Alig várom, hogy átnézzek közülük jó néhányat, hogy az AI-t fejlesszem, de a mai napon a saját tesztjeim alapján kiadtam néhány fejlesztést, amitől remélhetőleg Jiki egy kicsit okosabb lesz!
 
 Néhány power-testerünk (tapasztaltabb fejlesztő) elérte a 7. mérföldkövet, ahol a tartalom egyelőre véget ér. A következő napokban kiadom a következő mérföldköveket, így hamarosan lesz még mivel játszanotok!
 

@@ -1,5 +1,5 @@
 ---
-title: "Type Conversion"
+title: "Típuskonverzió"
 description: "Egy érték átalakítása egyik típusból a másikba, például egy számjegyekből álló string számmá alakítása a `Number()` segítségével, vagy egy szám stringgé alakítása a `String()` segítségével."
 en_md5: 8d85e3d274a6cdfdb74bd0488b685f18
 ---

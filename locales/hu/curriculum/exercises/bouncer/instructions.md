@@ -1,5 +1,5 @@
 ---
-title: "Bouncer"
+title: "Kidobó"
 description: "Döntsd el, ki elég idős ahhoz, hogy beengedd a klubba."
 en_md5: f7bf0680fea03342247537523546e883
 ---
