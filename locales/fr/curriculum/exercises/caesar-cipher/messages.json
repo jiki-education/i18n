@@ -1,8 +1,8 @@
 {
   "tasks": {
     "encodeMessage": {
-      "name": "Encode un message",
-      "description": "Écris une fonction encode qui décale chaque lettre d'un message d'un nombre donné de positions. Les espaces restent des espaces. Les lettres qui dépassent « z » repartent au début de l'alphabet."
+      "name": "Chiffre un message",
+      "description": "Écris une fonction « encode » (« chiffrer ») qui décale chaque lettre d'un message d'un nombre de positions donné. Les espaces restent des espaces. Les lettres qui dépassent « z » repartent au début de l'alphabet."
     }
   },
   "scenarios": {
@@ -20,7 +20,7 @@
     },
     "caesarWithSpaces": {
       "name": "Message avec des espaces",
-      "description": "Les espaces restent des espaces, seules les lettres sont décalées."
+      "description": "Les espaces restent des espaces, seules les lettres subissent un décalage."
     },
     "caesarRot13": {
       "name": "Chiffrement ROT13",
@@ -34,7 +34,7 @@
     },
     "letterPosition": {
       "question": "Comment trouver la position d'une lettre dans l'alphabet ?",
-      "answer": "Tu peux chercher un petit morceau dans une string avec `indexOf`. En l'appelant sur la string de l'alphabet, tu obtiens la position d'une lettre, ou -1 si la lettre n'est pas trouvée. Dans l'autre sens, utilise la position comme indice dans la string de l'alphabet pour retrouver la lettre."
+      "answer": "Tu peux chercher un bout de texte dans une string avec `indexOf`. L'appeler sur la string de l'alphabet te donne la position d'une lettre, ou -1 si elle n'est pas trouvée. Pour retrouver une lettre, utilise la position comme indice dans la string de l'alphabet."
     },
     "wrapPastZ": {
       "question": "Que se passe-t-il quand le décalage dépasse « z » ?",

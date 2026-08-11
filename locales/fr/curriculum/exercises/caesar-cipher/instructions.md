@@ -8,9 +8,9 @@ Le chiffre de César est l'une des techniques de chiffrement les plus anciennes 
 
 Le principe consiste à décaler chaque lettre du message d'un nombre fixe de positions dans l'alphabet. Par exemple, avec un décalage de 3, « a » devient « d », « b » devient « e », et ainsi de suite. Si le décalage dépasse « z », on repart au début de l'alphabet.
 
-Les espaces restent des espaces (ils ne sont pas décalés).
+Les espaces doivent rester des espaces (la règle de décalage ne s'applique pas à eux).
 
-Crée une fonction appelée `encode(message, shift)` (encode = encoder, shift = décalage) qui prend un message en minuscules et un décalage, et renvoie le message encodé.
+Crée une fonction appelée `encode(message, shift)` (encode = chiffrer, shift = décalage) qui prend un message en minuscules et un décalage, et renvoie le message chiffré.
 
 Par exemple :
 
@@ -22,7 +22,7 @@ Astuce : tu auras tout intérêt à découper ce problème en petites fonctions
 
 ### Anecdote
 
-Un jour, j'animais une conférence tech à Braga, au Portugal. Cinq minutes avant mon entrée en scène, les organisateurs sont venus me voir et m'ont demandé, un peu gênés, si cela me dérangerait de me déguiser en Jules César pour la première partie de la journée, afin de célébrer le passé romain de Braga. Alors, convaincant... ?
+Un jour, j'animais une conférence tech à Braga, au Portugal. Cinq minutes avant mon entrée en scène, les organisateurs sont venus me voir et m'ont demandé, un peu gênés, si cela ne me dérangerait pas de me déguiser en Jules César pour la première partie de la journée, afin de célébrer le passé romain de Braga. Ai-je été convaincant... ?
 
 <img
   src="/static/images/exercise-assets/caesar-cipher/jeremy-as-caesar.webp"
