@@ -104,6 +104,20 @@ Read [ENGLISH-SOURCE.md](./ENGLISH-SOURCE.md) first; this is the summary.
   `(+N ... no locale has started)` in the table, and `not started` where the fraction is empty).
   Without that a type no locale has begun reads `0/0`, which is the same shape a finished type has.
   It is a count of what exists and is untouched, never a denominator.
+- **A current `en_md5` is necessary and not sufficient for a prose page to be `done`.** The stamp
+  hashes ENGLISH, so it answers "was this made against today's source?" and is structurally blind to
+  part of a translation going missing. `coverage` therefore also reads the fields a type declares in
+  `frontmatterTranslated`: a declared field English has and the translation does not makes the page
+  `stale`, not `done`. Before this, `hu` read `concept 52/52` with the English title "Scope" sitting
+  above a fully Hungarian body, and every tool downstream repeated it.
+- **A field that merely REPEATS English is its own bucket, `needsReview`, in neither `done` nor
+  `stale`.** Some titles are correctly identical (`Luhn` is a person, `Two-Fer` is wordplay) and no
+  rule can separate those from a skipped one. Counting them done hides real gaps; counting them
+  stale builds a percentage that can never reach 100% and so gets ignored within a month. As its own
+  column it is a queue a human drains once per item: translate it, or record the decision as a
+  glossary row in the translator repo, which `scripts/lib/kept-english.mjs` then honours for good.
+  That glossary read is optional and fails safe: with no translator checkout nothing is exempt, so a
+  run can under-credit a locale and never over-credit one.
 
 ## The two sentinels
 
@@ -205,7 +219,7 @@ silently updating the lockfile. Note that pnpm passes arguments straight through
 | `stub.mjs` | Brings every catalog in the corpus to full key parity with English, sentinel-filling anything untranslated and `∅`-filling any plural key the language cannot reach. Existing values are reproduced byte for byte, and an empty object in English stays an empty object. An explicit `--type`/`--slug` seeds an item the corpus does not hold yet. |
 | `validate.mjs` | Key parity, ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the R2 key guard. Stamps on success. Exit 1 on any ERROR. |
 | `publish.mjs` | Builds the content-hashed artifacts, their pointers and `dist/sync.sh`. Omits every `∅` key from the bytes it writes. Publishes whatever is on `main` and records what is outstanding (remaining `�` sentinels, prose untranslated by one of the three conventions, partial corpora) in the completeness object. Refuses any English R2 key, with no override. `--out-dir=<path>` writes the same tree into a front-end checkout instead, for local dev. |
-| `coverage.mjs` | Per-locale translated / stale / missing / sentinel counts, per content type, with `∅` keys reported outside the fraction. Counts a catalog against ENGLISH's key set, so a key the locale does not hold is reported missing rather than leaving the fraction with the gap inside it. Reports how many English items no locale has begun beside the fraction, so a never-started type is not a bare `0/0`. `--json` for machines. Also reports the two bodies of copy that are still translated in the api repo (see below), so one run answers "is this language complete?" for everything. It reports and never gates: `validate --shippable` is the gate. |
+| `coverage.mjs` | Per-locale translated / stale / missing / needs-review / sentinel counts, per content type, with `∅` keys reported outside the fraction. A prose page is `done` only when its declared `frontmatterTranslated` fields are actually translated, not merely when its `en_md5` is current. Counts a catalog against ENGLISH's key set, so a key the locale does not hold is reported missing rather than leaving the fraction with the gap inside it. Reports how many English items no locale has begun beside the fraction, so a never-started type is not a bare `0/0`. `--json` for machines. Also reports the two bodies of copy that are still translated in the api repo (see below), so one run answers "is this language complete?" for everything. It reports and never gates: `validate --shippable` is the gate. |
 | `test.mjs` | The assertions guarding logic a mistake in would only surface on R2, above all the exercise family merge and its key order. Plain `node:assert`, no framework, non-zero exit on failure. `pnpm test`, and part of `pnpm check`. |
 | `verify-renderer.mjs` | Proves this repo's prose pipeline and the front-end's produce identical bytes. Takes the front-end's OWN Markdown, renders it through this repo's publish path, and asserts the hash equals the filename the front-end's generator wrote, across the whole concept corpus. |
 
