@@ -38,7 +38,19 @@ import {
   vttBody,
   vttTimestamps
 } from "./lib/files.mjs";
-import { ERROR, checkCatalog, checkProse, findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
+import {
+  ERROR,
+  FIELDS_COMPLETE,
+  FIELDS_INCOMPLETE,
+  FIELDS_NEED_REVIEW,
+  checkCatalog,
+  checkProse,
+  findRepeatedBodies,
+  isCopiedEnglish,
+  isUntranslatedFrontmatter,
+  proseFieldStatus
+} from "./lib/checks.mjs";
+import { glossaryFiles, keptEnglishTermsIn } from "./lib/kept-english.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 import { localeFileLeaves, railsKnownLocales, railsLocale } from "./lib/api-copy.mjs";
 
@@ -797,6 +809,89 @@ test("a path English does not have is not demanded of the translation", () => {
   assert.deepEqual(frontmatterIssues('title: "T"\nexcerpt: "E"', 'title: "C"\nexcerpt: "K"'), []);
 });
 
+// ------------------------------------- the untranslated frontmatter warning
+
+// The gap this closes: Hungarian was days from going live with fifteen English
+// titles over fully translated bodies ("Snowman" above prose saying `hóember`).
+// Every structural check passed and every file carried a valid stamp, because a
+// title is invisible to a staleness hash. A WARN, never an ERROR: `Luhn` and
+// `Two-Fer` are legitimately identical, and blocking on those teaches people to
+// route around the check.
+
+console.log("\nthe untranslated frontmatter warning:");
+
+function identicalWarnings(englishFm, targetFm, translatedKeys = POST_KEYS) {
+  return frontmatterIssues(englishFm, targetFm, translatedKeys)
+    .filter((line) => line.includes("byte-identical to English"))
+    .sort();
+}
+
+const EN_EXERCISE = 'title: "Snowman"\ndescription: "Build a snowman, one shape at a time."';
+const EXERCISE_KEYS = ["title", "description"];
+
+test("an English title over a translated body is warned about, with the value", () => {
+  assert.deepEqual(identicalWarnings(EN_EXERCISE, 'title: "Snowman"\ndescription: "Építs egy hóembert, alakzatról alakzatra."', EXERCISE_KEYS), [
+    'WARN frontmatter: "title" is byte-identical to English ("Snowman"): untranslated, or legitimately the same ' +
+      "(a proper noun, a named work, untranslatable wordplay)"
+  ]);
+});
+
+test("a translated title says nothing", () => {
+  assert.deepEqual(identicalWarnings(EN_EXERCISE, 'title: "Hóember"\ndescription: "Építs egy hóembert, alakzatról alakzatra."', EXERCISE_KEYS), []);
+});
+
+test("a legitimately identical title still only WARNs, so it can be read and dismissed", () => {
+  // `Luhn` is a person. The check cannot know that, which is exactly why it does
+  // not block: a human reads the warning and moves on.
+  const issues = identicalWarnings('title: "Luhn"\ndescription: "Validate a number."', 'title: "Luhn"\ndescription: "Ellenőrizz egy számot."', EXERCISE_KEYS);
+  assert.equal(issues.length, 1);
+  assert.equal(issues[0].startsWith("WARN "), true);
+});
+
+test("a value with no word to translate is never reported as English", () => {
+  // A bare number, a symbol and a single letter are the same in every language.
+  for (const value of ["7", "3.14", "→", "A", "🎉"]) {
+    assert.deepEqual(identicalWarnings(`title: "${value}"\ndescription: "D."`, `title: "${value}"\ndescription: "L."`, ["title"]), [], value);
+  }
+});
+
+test("every translatable frontmatter field is covered, not just the title", () => {
+  // Driven by the type's own `frontmatterTranslated`, so a nested path is checked
+  // exactly as a top-level one is.
+  assert.deepEqual(identicalWarnings('title: "T"\nseo:\n  description: "Learn to code with Jiki."', 'title: "C"\nseo:\n  description: "Learn to code with Jiki."', ["title", "seo.description"]), [
+    'WARN frontmatter: "seo.description" is byte-identical to English ("Learn to code with Jiki."): untranslated, ' +
+      "or legitimately the same (a proper noun, a named work, untranslatable wordplay)"
+  ]);
+});
+
+test("a list-valued field is compared whole: shared entries are normal, a copied list is not", () => {
+  const english = 'title: "T"\nseo:\n  keywords: ["learn to code", "jiki"]';
+  const keys = ["seo.keywords"];
+  assert.deepEqual(identicalWarnings(english, 'title: "C"\nseo:\n  keywords: ["tanulj programozni", "jiki"]', keys), []);
+  assert.equal(identicalWarnings(english, 'title: "C"\nseo:\n  keywords: ["learn to code", "jiki"]', keys).length, 1);
+});
+
+test("the warning never blocks: it is a WARN in checkProse's own output", () => {
+  const english = '---\ntitle: "Snowman"\n---\nBody.\n';
+  const target = '---\ntitle: "Snowman"\nen_md5: abc\n---\nMás szöveg.\n';
+  const issues = checkProse(parseFrontmatter(english).body, parseFrontmatter(target).body, {
+    englishData: parseFrontmatter(english).data,
+    targetData: parseFrontmatter(target).data,
+    translatedKeys: ["title"],
+    expectedMd5: "abc"
+  });
+  assert.deepEqual(issues.filter((i) => i.level === ERROR), []);
+});
+
+test("isUntranslatedFrontmatter ignores a value that is not translatable copy", () => {
+  assert.equal(isUntranslatedFrontmatter(7, 7), false);
+  assert.equal(isUntranslatedFrontmatter(true, true), false);
+  assert.equal(isUntranslatedFrontmatter(undefined, undefined), false);
+  assert.equal(isUntranslatedFrontmatter([], []), false);
+  // A list and a string that happen to render the same text are not identical.
+  assert.equal(isUntranslatedFrontmatter(["learn", "to code"], "learn, to code"), false);
+});
+
 // ------------------------------------------------- the frontmatter YAML check
 
 // The check that stops a file passing validate and then killing publish.
@@ -1281,6 +1376,143 @@ if (!TRANSLATOR_REPO) {
       }
     }
     assert.deepEqual(absent, [], `how-to files that do not exist:\n${absent.join("\n")}`);
+  });
+}
+
+// ------------------------------- what coverage counts a prose page as -------
+//
+// The bug these guard: coverage counted a prose page done on `fs.existsSync` plus
+// a current `en_md5`, and `en_md5` hashes ENGLISH, so a page whose body was fully
+// translated under an English title counted as finished, forever, everywhere.
+// Hungarian read `concept 52/52` with "Scope" sitting at the top of
+// `concepts/scope/page.md`.
+//
+// Three answers rather than two, because a field identical to English is either a
+// gap or a proper noun and no rule can tell. See `proseFieldStatus`.
+
+console.log("\nwhat coverage counts a prose page as:");
+
+const EXERCISE_FIELDS = ["title", "description"];
+
+function fieldStatus(english, target, { keys = EXERCISE_FIELDS, keptEnglish = null } = {}) {
+  return proseFieldStatus({ englishData: english, targetData: target, translatedKeys: keys, keptEnglish }).status;
+}
+
+const EN_SNOWMAN = { title: "Snowman", description: "Build a snowman, one shape at a time." };
+
+test("a fully translated page is complete", () => {
+  assert.equal(fieldStatus(EN_SNOWMAN, { title: "Hóember", description: "Építs egy hóembert." }), FIELDS_COMPLETE);
+});
+
+test("a declared field English has and the translation does not is incomplete", () => {
+  assert.equal(fieldStatus(EN_SNOWMAN, { title: "Hóember" }), FIELDS_INCOMPLETE);
+  // Present but empty is the same gap: a field holding nothing is not a
+  // translation of a field that held a sentence.
+  assert.equal(fieldStatus(EN_SNOWMAN, { title: "Hóember", description: "   " }), FIELDS_INCOMPLETE);
+});
+
+test("a field copied from English needs review, and is NOT done", () => {
+  // The live case. The body is Hungarian, the stamp is current, every structural
+  // check passes, and the title still says Snowman.
+  assert.equal(fieldStatus(EN_SNOWMAN, { title: "Snowman", description: "Építs egy hóembert." }), FIELDS_NEED_REVIEW);
+});
+
+test("a legitimately identical title is not silently done either, until someone says so", () => {
+  // `Luhn` is a person, so this page is finished. Nothing on record says that
+  // yet, so it is reported for review rather than counted or discarded.
+  const luhn = { title: "Luhn", description: "Validate a number." };
+  assert.equal(fieldStatus(luhn, { title: "Luhn", description: "Ellenőrizz egy számot." }), FIELDS_NEED_REVIEW);
+  // Once the language records the decision, it counts as done from then on.
+  assert.equal(fieldStatus(luhn, { title: "Luhn", description: "Ellenőrizz egy számot." }, { keptEnglish: new Set(["luhn"]) }), FIELDS_COMPLETE);
+});
+
+test("a missing field beats an identical one: it needs no judgement at all", () => {
+  assert.equal(fieldStatus(EN_SNOWMAN, { title: "Snowman" }), FIELDS_INCOMPLETE);
+});
+
+test("a value with no word in it to translate is never held against a page", () => {
+  // Handled by isUntranslatedFrontmatter's 2+ letter rule, and asserted here
+  // because it is coverage's number that would move.
+  assert.equal(fieldStatus({ title: "42", description: "D." }, { title: "42", description: "L." }), FIELDS_COMPLETE);
+});
+
+test("a field the type does not declare translatable is nobody's business here", () => {
+  // Driven by the registry's `frontmatterTranslated`, never a list written out
+  // in coverage: `description` repeating English says nothing when only `title`
+  // is declared.
+  assert.equal(fieldStatus(EN_SNOWMAN, { title: "Hóember", description: "Build a snowman, one shape at a time." }, { keys: ["title"] }), FIELDS_COMPLETE);
+});
+
+test("a nested path and a list are judged exactly as a top-level string is", () => {
+  const en = { title: "T", seo: { description: "Learn to code.", keywords: ["learn to code", "jiki"] } };
+  const keys = ["title", "seo.description", "seo.keywords"];
+  assert.equal(fieldStatus(en, { title: "C", seo: { description: "Learn to code.", keywords: ["tanulj", "jiki"] } }, { keys }), FIELDS_NEED_REVIEW);
+  assert.equal(fieldStatus(en, { title: "C", seo: { description: "Tanulj.", keywords: ["learn to code", "jiki"] } }, { keys }), FIELDS_NEED_REVIEW);
+  // A keyword list SHARING entries with English is normal, not a finding.
+  assert.equal(fieldStatus(en, { title: "C", seo: { description: "Tanulj.", keywords: ["tanulj", "jiki"] } }, { keys }), FIELDS_COMPLETE);
+});
+
+// ------------------------------ the terms a language keeps in English -------
+//
+// The only human-backed exemption available to coverage, and the reason
+// `needs_review` is a queue that drains rather than a permanent tax. Read from
+// the translator repo's glossaries; see scripts/lib/kept-english.mjs.
+
+console.log("\nthe terms a language keeps in English:");
+
+const GLOSSARY = [
+  "| English | Hungarian | Use | Notes |",
+  "|---------|-----------|-----|-------|",
+  "| widget | widget | en | Kept. |",
+  "| string | **String** | en | Kept, and bold in the source. |",
+  "| input (to a function) | input | en | The parenthetical is not part of the term. |",
+  "| scope | _hatókör_ (or _láthatóság_) | hu | Translated, so NOT kept. |",
+  "| tee (golf) | tee / tí | en | Alternatives are separate candidates. |",
+  "not a table row at all"
+].join("\n");
+
+test("a row whose English and target columns hold the same text is a kept term", () => {
+  const terms = keptEnglishTermsIn(GLOSSARY);
+  assert.equal(terms.has("widget"), true);
+  assert.equal(terms.has("string"), true, "bold markup comes off the cell");
+  assert.equal(terms.has("input"), true, "the English column's parenthetical is not part of the term");
+  assert.equal(terms.has("tee"), true, "each alternative in a cell is its own candidate");
+});
+
+test("a row whose target column translates the term is NOT a kept term", () => {
+  const terms = keptEnglishTermsIn(GLOSSARY);
+  assert.equal(terms.has("hatókör"), false);
+  assert.equal(terms.has("scope"), false, "hu translates scope, so an English 'Scope' title is still a finding there");
+  assert.equal(terms.has("tí"), false);
+});
+
+test("terms are lowercased, so a glossary's `scope` covers a title's `Scope`", () => {
+  // Capitalisation is not what makes a title translated: a glossary writes a
+  // term as it appears in prose and a title writes it as a heading.
+  const terms = keptEnglishTermsIn("| English | Italian |\n|---|---|\n| scope | scope | en |");
+  assert.equal(terms.has("scope"), true);
+  assert.equal(terms.has("Scope"), false, "callers lowercase what they look up");
+  assert.equal(fieldStatus({ title: "Scope" }, { title: "Scope" }, { keys: ["title"], keptEnglish: terms }), FIELDS_COMPLETE);
+});
+
+test("the table's own rule row is never a term", () => {
+  assert.equal(keptEnglishTermsIn("| English | Hungarian |\n|---------|-----------|\n").size, 0);
+});
+
+test("with no translator checkout nothing is exempt, which under-credits rather than over-credits", () => {
+  // The dependency is optional and must fail in the safe direction: coverage
+  // runs in CI, must never exit non-zero, and must never call a locale more
+  // finished than it is.
+  assert.deepEqual(glossaryFiles("hu", null), []);
+});
+
+if (!TRANSLATOR_REPO) {
+  console.log("  SKIP  a family locale reads the family glossary too (set JIKI_TRANSLATOR_REPO to run it)");
+} else {
+  test("a family locale reads the family glossary and its own; a single-locale language reads one", () => {
+    // Family membership is by folder existence, not by the hyphen in the code.
+    assert.equal(glossaryFiles("pt-BR", TRANSLATOR_REPO).length, 2);
+    assert.equal(glossaryFiles("de", TRANSLATOR_REPO).length, 1);
   });
 }
 
