@@ -1,7 +1,7 @@
 ---
 title: "Ključna reč `continue`"
 description: "Kako se koristi ključna reč `continue` unutar petlje da preskočiš ostatak iteracije i odmah pređeš na sledeću."
-en_md5: 6c3f7483826e27d44d6c404cc9f621dd
+en_md5: 6cd21a2f25c493f61d000f865014709d
 ---
 
 Ponekad želimo da preskočimo određenu iteraciju petlje umesto da iz nje potpuno izađemo. Zamisli da hoćemo da radimo samo sa neparnim brojevima.

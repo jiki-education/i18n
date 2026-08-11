@@ -1,7 +1,7 @@
 ---
 title: "Memahami percabangan `if`"
 description: "Menggunakan kata kunci `if` untuk menjalankan blok kode hanya saat suatu kondisi benar, seperti penjaga pintu yang memutuskan siapa boleh masuk."
-en_md5: 8797e078e1ad90b7652373baf6f96f28
+en_md5: 81c99eea67b02e082ca6c9d7988a3914
 ---
 
 Ada sebuah kata kunci yang membantu kita memberi tahu Jiki agar hanya melakukan sesuatu dalam situasi tertentu. Misalnya kamu sedang menulis kode untuk menjaga pintu masuk sebuah bar, anggaplah kamu seorang penjaga pintu, dan Jiki hanya boleh membuka pintu jika pakaian orang yang datang sudah pantas. Atau mungkin kamu menulis kode ketika kamu bertugas mengibarkan bendera finis di akhir sebuah balapan, tapi Jiki perlu tahu bahwa ia hanya boleh mengibarkannya di putaran terakhir. Dalam situasi-situasi seperti inilah kita akan menggunakan kata kunci `if`.

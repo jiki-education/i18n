@@ -1,7 +1,7 @@
 ---
 title: "La parola chiave `break`"
 description: "Utilizzare la parola chiave `break` all'interno del corpo di un ciclo per uscire immediatamente dal ciclo e passare al codice che segue."
-en_md5: 30148766de67ae467ab1a4852ad35895
+en_md5: bd746b6c93016dcb2789bd26e38ab33a
 ---
 
 La parola chiave `break` può essere usata in qualsiasi punto del corpo di un ciclo.

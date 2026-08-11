@@ -1,7 +1,7 @@
 ---
 title: "Razumevanje `if` naredbi"
 description: "Korišćenje ključne reči `if` da se blok koda izvrši samo kada je neki uslov tačan, kao kada izbacivač odlučuje koga će pustiti unutra."
-en_md5: 8797e078e1ad90b7652373baf6f96f28
+en_md5: 81c99eea67b02e082ca6c9d7988a3914
 ---
 
 Postoji ključna reč koja nam pomaže da kažemo Jikiju da nešto uradi samo u određenim situacijama. Možda pišeš kod koji čuva ulaz u bar, recimo da si izbacivač, i Jiki treba da otvori vrata samo ako je neko prikladno obučen. Ili možda pišeš kod u kome si zadužen da mahneš kariranom zastavicom na kraju trke, ali Jiki mora da zna da to treba da uradi samo u poslednjem krugu. U ovakvim situacijama koristićemo ključnu reč `if`.

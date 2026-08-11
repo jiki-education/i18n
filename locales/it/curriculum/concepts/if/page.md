@@ -1,7 +1,7 @@
 ---
 title: "Capire le istruzioni `if`"
 description: "Usare la parola chiave `if` per eseguire un blocco di codice solo quando una condizione è vera, come un buttafuori che decide chi far entrare."
-en_md5: 8797e078e1ad90b7652373baf6f96f28
+en_md5: 81c99eea67b02e082ca6c9d7988a3914
 ---
 
 C'è una parola chiave che ci aiuta a dire a Jiki di eseguire del codice solo in certe situazioni. Immagina di scrivere del codice per controllare l'ingresso di un bar: sei un buttafuori e Jiki deve aprire la porta solo se una persona è vestita in modo adeguato. Immagina di scrivere del codice che gestisce la bandiera a scacchi di fine gara nell'ultimo giro di una gara automobilistica: Jiki deve sventolarla solo all'ultimo giro. In situazioni come questa si usa l'istruzione `if`.

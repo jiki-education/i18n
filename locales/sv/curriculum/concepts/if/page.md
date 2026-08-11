@@ -1,7 +1,7 @@
 ---
 title: "Så fungerar `if`-satser"
 description: "Använd nyckelordet `if` för att köra ett kodblock bara när ett villkor är sant, som en dörrvakt som bestämmer vem som kommer in."
-en_md5: 8797e078e1ad90b7652373baf6f96f28
+en_md5: 81c99eea67b02e082ca6c9d7988a3914
 ---
 
 Det finns ett nyckelord som hjälper oss att tala om för Jiki att han bara ska göra saker i vissa situationer. Kanske skriver du kod som ska vakta dörren till en bar, kanske är du dörrvakt, och Jiki ska bara öppna dörren om någon är rätt klädd. Eller kanske skriver du kod där du har ansvar för att vifta med målflaggan i slutet av ett lopp, men Jiki behöver veta att han bara ska göra det på sista varvet. I sådana situationer använder vi nyckelordet `if`.

@@ -1,7 +1,7 @@
 ---
 title: "A `continue` kulcsszó"
 description: "A `continue` kulcsszó használata ciklusban: kihagyjuk az iteráció hátralévő részét, és rögtön a következő iterációra ugrunk."
-en_md5: 6c3f7483826e27d44d6c404cc9f621dd
+en_md5: 6cd21a2f25c493f61d000f865014709d
 ---
 
 Néha előfordul, hogy egy ciklusnak csak egy adott iterációját szeretnénk kihagyni, nem pedig teljesen kilépni belőle. Képzeld el, hogy csak a páratlan számokkal akarunk csinálni valamit.

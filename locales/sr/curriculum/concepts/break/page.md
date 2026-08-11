@@ -1,7 +1,7 @@
 ---
 title: "Ključna reč `break`"
 description: "Korišćenje ključne reči `break` unutar tela petlje da bi se petlja odmah prekinula i nastavilo izvršavanje koda koji dolazi nakon nje."
-en_md5: 30148766de67ae467ab1a4852ad35895
+en_md5: bd746b6c93016dcb2789bd26e38ab33a
 ---
 
 Ključna reč `break` može da se koristi bilo gde u telu bilo koje petlje.

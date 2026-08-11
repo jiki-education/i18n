@@ -1,7 +1,7 @@
 ---
 title: "Nyckelordet `continue`"
 description: "Med nyckelordet `continue` i en loop hoppar du över resten av varvet och går direkt vidare till nästa."
-en_md5: 6c3f7483826e27d44d6c404cc9f621dd
+en_md5: 6cd21a2f25c493f61d000f865014709d
 ---
 
 Ibland kan vi vilja hoppa över ett visst varv i en loop, i stället för att avbryta den helt. Tänk dig att vi bara vill göra saker för udda tal.

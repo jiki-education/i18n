@@ -1,7 +1,7 @@
 ---
 title: "Le mot-clé `continue`"
 description: "Utiliser le mot-clé `continue` dans une boucle pour sauter le reste de l'itération en cours et passer directement à la suivante."
-en_md5: 6c3f7483826e27d44d6c404cc9f621dd
+en_md5: 6cd21a2f25c493f61d000f865014709d
 ---
 
 Il arrive parfois qu'on veuille sauter une itération précise d'une boucle plutôt que d'en sortir complètement. Imagine qu'on veuille agir uniquement sur les nombres impairs.

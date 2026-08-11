@@ -1,7 +1,7 @@
 ---
 title: "Compreender as instruções `if`"
 description: "Usar a palavra-chave `if` para executar um bloco de código apenas quando uma condição é verdadeira, como um segurança a decidir quem entra."
-en_md5: 8797e078e1ad90b7652373baf6f96f28
+en_md5: 81c99eea67b02e082ca6c9d7988a3914
 ---
 
 Há uma palavra-chave que nos ajuda a dizer ao Jiki para só fazer certas coisas em determinadas situações. Imagina que estás a escrever código para guardar a entrada de um bar, talvez sejas o segurança, e o Jiki só deve abrir a porta se a pessoa estiver vestida de forma adequada. Ou imagina que estás a escrever código em que és responsável por agitar a bandeira axadrezada no final de uma corrida, mas o Jiki precisa de saber que só o deve fazer na última volta. Nestes casos, vamos usar a palavra-chave `if`.

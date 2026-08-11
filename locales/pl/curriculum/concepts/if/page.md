@@ -1,7 +1,7 @@
 ---
 title: "Jak działają instrukcje `if`"
 description: "Jak za pomocą słowa kluczowego `if` uruchomić blok kodu tylko wtedy, gdy warunek jest prawdziwy, zupełnie jak ochroniarz wpuszczający gości do środka."
-en_md5: 8797e078e1ad90b7652373baf6f96f28
+en_md5: 81c99eea67b02e082ca6c9d7988a3914
 ---
 
 Istnieje słowo kluczowe, dzięki któremu możemy powiedzieć Jikiemu, żeby robił coś tylko w określonych sytuacjach. Wyobraź sobie, że piszesz kod pilnujący wejścia do baru: jesteś ochroniarzem, a Jiki ma otwierać drzwi tylko wtedy, gdy ktoś jest odpowiednio ubrany. Albo że na mecie wyścigu odpowiadasz za machnięcie flagą w szachownicę, ale Jiki musi wiedzieć, że robi się to dopiero na ostatnim okrążeniu. Właśnie w takich sytuacjach przyda się słowo kluczowe `if`.

@@ -1,7 +1,7 @@
 ---
 title: "`break`关键字"
 description: "在循环体中使用 `break` 关键字，立刻退出循环并继续执行后面的代码。"
-en_md5: 30148766de67ae467ab1a4852ad35895
+en_md5: bd746b6c93016dcb2789bd26e38ab33a
 ---
 
 `break` 关键字可以用在任何循环体中的任何位置。

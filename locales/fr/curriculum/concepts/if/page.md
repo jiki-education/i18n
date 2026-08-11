@@ -1,7 +1,7 @@
 ---
 title: "Comprendre les instructions `if`"
 description: "Utiliser le mot-clé `if` pour exécuter un bloc de code seulement quand une condition est vraie, comme un videur qui décide qui peut entrer."
-en_md5: 8797e078e1ad90b7652373baf6f96f28
+en_md5: 81c99eea67b02e082ca6c9d7988a3914
 ---
 
 Il existe un mot-clé qui nous permet de dire à Jiki de ne faire certaines choses que dans certaines situations. Imagine que tu écris du code pour garder l'entrée d'un bar, que tu es le videur, et que Jiki ne doit ouvrir la porte que si la personne est habillée comme il faut. Ou imagine que tu es chargé d'agiter le drapeau à damier à la fin d'une course, mais que Jiki doit savoir qu'il ne peut le faire qu'au dernier tour. Dans ce genre de situations, on va utiliser le mot-clé `if`.

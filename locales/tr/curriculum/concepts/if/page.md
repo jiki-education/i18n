@@ -1,7 +1,7 @@
 ---
 title: "`if` deyimlerini anlamak"
 description: "Bir kod bloğunu yalnızca bir koşul doğru olduğunda çalıştırmak için `if` anahtar kelimesini kullanıyoruz, tıpkı kimi içeri alacağına karar veren bir fedai gibi."
-en_md5: 8797e078e1ad90b7652373baf6f96f28
+en_md5: 81c99eea67b02e082ca6c9d7988a3914
 ---
 
 Jiki'ye bazı şeyleri yalnızca belirli durumlarda yapmasını söylememize yardımcı olan bir anahtar kelime var. Belki bir barın girişini korumak için kod yazıyorsunuz, belki bir fedaisiniz ve Jiki kapıyı yalnızca gelen kişi uygun giyinmişse açmalı. Ya da belki bir yarışın sonunda damalı bayrağı sallamaktan sorumlu olduğunuz bir kod yazıyorsunuz, ama Jiki bayrağı yalnızca son turda sallaması gerektiğini bilmeli. İşte bu tür durumlarda `if` anahtar kelimesini kullanacağız.

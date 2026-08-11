@@ -1,7 +1,7 @@
 ---
 title: "La palabra clave `continue`"
 description: "Uso de la palabra clave `continue` dentro de un bucle para omitir el resto de esta iteración y saltar directamente a la siguiente iteración."
-en_md5: 6c3f7483826e27d44d6c404cc9f621dd
+en_md5: 6cd21a2f25c493f61d000f865014709d
 ---
 
 Hay ocasiones en las que queremos omitir una iteración específica de un bucle en lugar de salir de él. Imagina que solo queremos hacer cosas para los números impares.

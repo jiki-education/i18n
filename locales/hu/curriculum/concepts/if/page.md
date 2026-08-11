@@ -1,7 +1,7 @@
 ---
 title: "Az `if` elágazás működése"
 description: "Az `if` kulcsszó használata, hogy egy kódblokk csak akkor fusson le, ha egy feltétel igaz. Olyan, mint amikor a kidobó eldönti, kit enged be."
-en_md5: 8797e078e1ad90b7652373baf6f96f28
+en_md5: 81c99eea67b02e082ca6c9d7988a3914
 ---
 
 Van egy kulcsszó, amivel megmondhatjuk Jikinek, hogy csak bizonyos helyzetekben csináljon valamit. Képzeld el, hogy egy bár bejáratát őrző kódot írsz, mondjuk te vagy a kidobó, és Jiki csak akkor nyithatja ki az ajtót, ha valaki megfelelően van felöltözve. Vagy éppen te intheted le a kockás zászlóval a versenyt a célban, de Jikinek tudnia kell, hogy ezt csak az utolsó körben szabad megtennie. Az ilyen helyzetekben az `if` kulcsszót fogjuk használni.

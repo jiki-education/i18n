@@ -1,7 +1,7 @@
 ---
 title: "Nyckelordet `break`"
 description: "Så använder du nyckelordet `break` i loopens kropp för att avsluta loopen direkt och gå vidare till koden som kommer efter den."
-en_md5: 30148766de67ae467ab1a4852ad35895
+en_md5: bd746b6c93016dcb2789bd26e38ab33a
 ---
 
 Nyckelordet `break` kan du använda var som helst i kroppen på vilken loop som helst.

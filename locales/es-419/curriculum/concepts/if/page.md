@@ -1,7 +1,7 @@
 ---
 title: "Cómo funcionan las sentencias `if`"
 description: "Usar la palabra clave `if` para ejecutar un bloque de código solo cuando una condición es verdadera, como un portero dejando pasar a la gente."
-en_md5: 8797e078e1ad90b7652373baf6f96f28
+en_md5: 81c99eea67b02e082ca6c9d7988a3914
 ---
 
 Hay una palabra clave que nos ayuda a decirle a Jiki que haga cosas solo en ciertas situaciones. Tal vez estás escribiendo código para vigilar la entrada de un bar, eres el portero, y Jiki solo debe abrir la puerta si alguien va vestido apropiadamente. O tal vez estás escribiendo código donde tú estás a cargo de agitar la bandera a cuadros al final de una carrera, pero Jiki necesita saber que solo debe hacerlo en la última vuelta. En este tipo de situaciones, usamos la palabra clave `if`.

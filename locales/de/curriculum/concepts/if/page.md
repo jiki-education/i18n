@@ -1,7 +1,7 @@
 ---
-title: "if-Anweisungen verstehen"
+title: "`if`-Anweisungen verstehen"
 description: "Mit dem Schlüsselwort `if` einen Block Code nur dann ausführen, wenn eine Bedingung wahr ist, wie ein Türsteher, der Leute hereinlässt."
-en_md5: 8797e078e1ad90b7652373baf6f96f28
+en_md5: 81c99eea67b02e082ca6c9d7988a3914
 ---
 
 Es gibt ein Schlüsselwort, mit dem wir Jiki sagen können, dass er bestimmte Dinge nur in bestimmten Situationen tun soll. Vielleicht schreibst du Code, der den Eingang einer Bar bewacht, vielleicht bist du Türsteher, und Jiki soll die Tür nur öffnen, wenn jemand passend angezogen ist. Oder vielleicht schreibst du Code, in dem du am Ende eines Rennens die Zielflagge schwenken darfst, aber Jiki muss wissen, dass er das nur in der letzten Runde tun soll. In solchen Situationen benutzen wir das Schlüsselwort `if`.

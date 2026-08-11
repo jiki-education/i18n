@@ -1,7 +1,7 @@
 ---
 title: "Le mot-clé `break`"
 description: "Utiliser le mot-clé `break` dans le corps d'une boucle pour en sortir immédiatement et passer au code qui vient après."
-en_md5: 30148766de67ae467ab1a4852ad35895
+en_md5: bd746b6c93016dcb2789bd26e38ab33a
 ---
 
 Le mot-clé `break` peut être utilisé n'importe où dans le corps de n'importe quelle boucle.

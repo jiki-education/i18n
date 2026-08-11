@@ -1,7 +1,7 @@
 ---
-title: "If-statements begrijpen"
+title: "`if`-statements begrijpen"
 description: "Het sleutelwoord `if` gebruiken om een blok code alleen uit te voeren als een bepaalde voorwaarde waar is, zoals een uitsmijter die mensen binnenlaat."
-en_md5: 8797e078e1ad90b7652373baf6f96f28
+en_md5: 81c99eea67b02e082ca6c9d7988a3914
 ---
 
 Er is een sleutelwoord waarmee we Jiki kunnen vertellen dat hij bepaalde dingen alleen in bepaalde situaties moet doen. Misschien schrijf je code om de ingang van een bar te bewaken, ben je de uitsmijter, en mag Jiki de deur alleen openen als iemand netjes gekleed is. Of misschien schrijf je code waarin jij aan het einde van een race met de finishvlag mag zwaaien, maar moet Jiki weten dat hij dat alleen in de laatste ronde moet doen. In dit soort situaties gebruiken we het sleutelwoord `if`.
