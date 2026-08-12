@@ -122,6 +122,7 @@ import {
   localPath
 } from "./lib/content-types.mjs";
 import { corpusItems, englishCorpusSize, englishPath, englishRepo, englishSha } from "./lib/english.mjs";
+import { isBodyExcluded } from "./lib/exclusions.mjs";
 import { mergeExerciseCatalogs } from "./lib/families.mjs";
 import { contentHash, flatten, parseFrontmatter, readJson, readText } from "./lib/files.mjs";
 import { findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
@@ -307,6 +308,15 @@ async function publishLocale(locale, { exportSources }) {
 
   for (const typeId of PROSE_TYPE_IDS) {
     for (const item of listItems(typeId, locale)) {
+      // An item whose BODY is out of the corpus (corpus.json, `"scope": "body"`)
+      // is in this repo for its frontmatter and nothing else: its body is English
+      // on purpose, so none of the three untranslated verdicts is a finding
+      // against it. Leaving it out of `prose` is also what keeps it out of the
+      // published prose artifact and out of the index, because both read from
+      // here. A translated title over an English body must never reach a reader:
+      // it looks finished, which is worse than not being there at all. Its title
+      // and description still publish, in the merged curriculum catalog below.
+      if (isBodyExcluded(typeId, item.slug)) continue;
       const key = `${typeId}/${item.slug}`;
       // The SHARED parser: `seo` and `tags` reach a published artifact, so a
       // reader that returned them as raw strings would move the artifact's hash.
@@ -436,6 +446,11 @@ async function publishLocale(locale, { exportSources }) {
   // collision-free slug namespace, so consumers resolve copy by slug alone and
   // never branch on what they are rendering. A collision is a hard error, exactly
   // as in the front-end generator.
+  //
+  // EVERY exercise is here, body-excluded ones included. This catalog is the card
+  // copy: it is what a listing or a level page renders, and one English title in
+  // an otherwise translated list is a visible hole. It is also the only artifact a
+  // body-excluded exercise contributes to.
   const copy = {};
   const instructionItems = listItems("exercise-instructions", locale);
   for (const item of instructionItems) {
@@ -651,7 +666,12 @@ async function publishLocale(locale, { exportSources }) {
   // the export unambiguous when several locales are published in one run.
   let exported = 0;
   const instructions = contentType("exercise-instructions");
-  for (const item of exportSources ? instructionItems : []) {
+  // Body-excluded pages are left out of the export too. The export is the authored
+  // file, and the authored file for one of these is a translated frontmatter over
+  // an English body: nothing downstream wants that as a source, and the rule that
+  // no half-translated instruction page leaves this repo is easier to keep if it
+  // has no exceptions.
+  for (const item of exportSources ? instructionItems.filter((item) => !isBodyExcluded("exercise-instructions", item.slug)) : []) {
     const to = path.join(DIST, "export", locale, instructions.sourceRepoPath(item.slug));
     fs.mkdirSync(path.dirname(to), { recursive: true });
     fs.copyFileSync(item.path, to);

@@ -135,13 +135,31 @@ publishes it. One reader, `scripts/lib/exclusions.mjs`, so the two sides cannot
 disagree. A translated file left behind for an excluded item is inert, never an
 error, and comes back into scope the moment the entry is deleted.
 
+An entry may narrow that to the item's **body**, with `"scope": "body"`. The item
+then stays in the corpus for its translatable frontmatter and leaves it for
+everything else:
+
+- its title and description are required, counted and published (they reach the
+  merged curriculum catalog, which is what a listing and a level page render),
+- its Markdown body is not required, not counted, and **never published**: no
+  prose artifact, no index entry, no export. A translated title over an English
+  body looks finished, which is worse for a reader than a page that is not there,
+- `validate` checks its frontmatter and stamps it, and says on the line that it
+  checked the frontmatter alone.
+
+That is what a not-yet-live exercise uses: its instructions are body-excluded and
+its message catalog, which is all insides, is excluded whole. The default when an
+entry names no scope is `"scope": "item"`, the whole-item exclusion above.
+
 `completeness.json`'s denominator is otherwise a different number and stays a
 different number: it is the size of the **real** English corpus, every item English
 exists for, read straight from `.source/`. Measuring completeness against the
 derived corpus would ask "have you translated everything you have started", which
-any locale can satisfy by starting one thing. An excluded item is the one thing it
-does not count, because it is English nobody is expected to translate, and counting
-it would put completeness out of reach by declaration rather than by omission.
+any locale can satisfy by starting one thing. An item excluded **whole** is the one
+thing it does not count, because it is English nobody is expected to translate, and
+counting it would put completeness out of reach by declaration rather than by
+omission. A body-excluded item is counted, because its frontmatter is expected: a
+locale with no file for it, or with no title in the file, is not complete.
 
 ## What this deletes
 

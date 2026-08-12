@@ -64,6 +64,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { INAPPLICABLE, SENTINEL, TARGET_LOCALES, assertTargetLocale } from "./lib/constants.mjs";
 import { CONTENT_TYPE_IDS, contentType, listItems, localPath, metaPath } from "./lib/content-types.mjs";
+import { isBodyExcluded } from "./lib/exclusions.mjs";
 import { DEFAULT_SOURCE_REPO, englishPath, englishRepo, scopeItems } from "./lib/english.mjs";
 import {
   countSentinels,
@@ -195,6 +196,11 @@ async function crossCheckFrontmatter(raw, ours) {
 
 async function validateItem({ typeId, locale, slug, stamp, shippable }) {
   const type = contentType(typeId);
+  // An item whose BODY is declared out of the corpus (corpus.json, `"scope":
+  // "body"`) is checked for its translatable frontmatter and not for its prose.
+  // See scripts/lib/exclusions.mjs. Nothing else about the item changes: it is
+  // still resolved, still checked, still stamped.
+  const bodyOutOfCorpus = isBodyExcluded(typeId, slug);
   const english = englishPath(typeId, slug);
   const targetPath = localPath(typeId, locale, slug);
 
@@ -271,7 +277,8 @@ async function validateItem({ typeId, locale, slug, stamp, shippable }) {
     // Symmetric with `allowSentinel` for catalogs above: an untranslated item is
     // a normal state of a partly translated locale, and only blocks a shippable
     // check, where it would serve English prose from a translated URL.
-    allowUntranslated: !shippable
+    allowUntranslated: !shippable,
+    bodyOutOfCorpus
   });
 
   issues.push(...(await crossCheckFrontmatter(target.raw, target.data)));
@@ -280,12 +287,17 @@ async function validateItem({ typeId, locale, slug, stamp, shippable }) {
     (i) => i.level === ERROR && !i.message.startsWith("stale:") && !i.message.startsWith("frontmatter: no en_md5")
   );
 
+  // Said out loud on every line it applies to: a page checked for its frontmatter
+  // alone has been checked for less than the line above it, and a reader must not
+  // have to know which slugs are in corpus.json to see that.
+  const note = bodyOutOfCorpus ? "frontmatter only; its body is out of the corpus" : null;
+
   if (stamp && blockingOtherThanStamp.length === 0 && target.data.en_md5 !== expected) {
     writeText(targetPath, stampFrontmatter(target.raw, expected));
-    return { issues: blockingOtherThanStamp, label: label(typeId, locale, slug), stamped: true };
+    return { issues: blockingOtherThanStamp, label: label(typeId, locale, slug), stamped: true, note };
   }
 
-  return { issues, label: label(typeId, locale, slug) };
+  return { issues, label: label(typeId, locale, slug), note };
 }
 
 const label = (typeId, locale, slug) => `${locale} ${typeId}${slug ? `/${slug}` : ""}`;
@@ -345,16 +357,17 @@ async function main() {
       for (const item of scopeItems(typeId, { slug: args.flags.slug })) {
         checked += 1;
 
-        const { issues, label: name, stamped } = await validateItem({ typeId, locale, slug: item.slug, stamp, shippable });
+        const { issues, label: name, stamped, note } = await validateItem({ typeId, locale, slug: item.slug, stamp, shippable });
+        const suffix = `${stamped ? " (stamped)" : ""}${note ? ` [${note}]` : ""}`;
         const itemErrors = issues.filter((i) => i.level === ERROR);
         const itemWarnings = issues.filter((i) => i.level === WARN);
         errors += itemErrors.length;
         warnings += itemWarnings.length;
 
         if (itemErrors.length === 0 && itemWarnings.length === 0) {
-          console.log(`ok    ${name}${stamped ? " (stamped)" : ""}`);
+          console.log(`ok    ${name}${suffix}`);
         } else {
-          console.log(`${itemErrors.length > 0 ? "FAIL " : "warn "} ${name}`);
+          console.log(`${itemErrors.length > 0 ? "FAIL " : "warn "} ${name}${suffix}`);
           for (const found of issues) console.log(`        ${found.level}  ${found.message}`);
         }
       }

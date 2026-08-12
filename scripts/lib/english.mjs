@@ -179,6 +179,10 @@ export function englishItems(typeId) {
  * expected to translate, and counting them would make completeness unreachable
  * by design rather than by omission. They drop out of the locale side too (see
  * `listItems`), so the fraction stays a comparison of like with like.
+ *
+ * An item excluded only for its BODY is still counted, because its frontmatter is
+ * still expected. Its file has to exist and carry a translated title, so a locale
+ * that has not written one is not complete.
  */
 export function englishCorpusSize(typeId) {
   return englishItems(typeId).filter((item) => !isExcluded(typeId, item.slug)).length;

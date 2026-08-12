@@ -524,12 +524,16 @@ function slugsUnder(root, depth) {
  * Every item of one type present for one locale, as { type, locale, slug, path }.
  * Discovery is by what is on disk, so a newly synced item needs no registration.
  *
- * With one subtraction: an item corpus.json declares out of the corpus is not
- * listed even when a file for it exists. An exclusion has to bind on both sides
- * or it binds on neither, because every report and every published index compares
- * this list against the English one (see `englishCorpusSize`). A leftover file for
- * an excluded item is therefore inert rather than an error: it stays on disk,
- * untouched, and comes back into scope the moment the exclusion is deleted.
+ * With one subtraction: an item corpus.json declares WHOLLY out of the corpus is
+ * not listed even when a file for it exists. An exclusion has to bind on both
+ * sides or it binds on neither, because every report and every published index
+ * compares this list against the English one (see `englishCorpusSize`). A leftover
+ * file for an excluded item is therefore inert rather than an error: it stays on
+ * disk, untouched, and comes back into scope the moment the exclusion is deleted.
+ *
+ * A `body`-scoped exclusion subtracts nothing here. The item is still expected,
+ * so it is still listed, and what its body is exempt from is a question its
+ * readers ask separately (see scripts/lib/exclusions.mjs).
  */
 export function listItems(typeId, locale) {
   const type = contentType(typeId);

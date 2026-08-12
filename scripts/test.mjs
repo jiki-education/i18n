@@ -14,8 +14,17 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { INAPPLICABLE, REPO_ROOT, SENTINEL } from "./lib/constants.mjs";
-import { CONTENT_TYPES, CONTENT_TYPE_IDS, POST_TYPE_IDS } from "./lib/content-types.mjs";
-import { corpusItems, englishItems, englishRepo, unstartedItems } from "./lib/english.mjs";
+import { CONTENT_TYPES, CONTENT_TYPE_IDS, POST_TYPE_IDS, listItems } from "./lib/content-types.mjs";
+import { corpusItems, englishCorpusSize, englishItems, englishRepo, unstartedItems } from "./lib/english.mjs";
+import {
+  SCOPE_BODY,
+  SCOPE_ITEM,
+  bodyExcludedCount,
+  excludedCount,
+  exclusionScope,
+  isBodyExcluded,
+  isExcluded
+} from "./lib/exclusions.mjs";
 import { pct } from "./coverage.mjs";
 import { buildPostCopy } from "./lib/post-copy.mjs";
 import { isUnreachablePluralKey, parsePluralKey, reachableCategories } from "./lib/plurals.mjs";
@@ -1283,13 +1292,10 @@ test("an entry whose type has no bucket is a hard error, never a silent drop", (
 
 console.log("\nnever started vs finished:");
 
-/** How many items of one type `corpus.json` names as deliberately out of scope. */
-function excludedCount(typeId) {
-  const file = path.join(REPO_ROOT, "corpus.json");
-  if (!fs.existsSync(file)) return 0;
-  const { exclude = [] } = JSON.parse(fs.readFileSync(file, "utf8"));
-  return exclude.filter((entry) => entry.type === typeId).length;
-}
+// How many items of one type are out of scope is read from the same library the
+// scripts read it from, never re-derived here: a local copy of the rule would go
+// on passing after the rule changed, which is exactly what a `body` scope did to
+// the copy that used to sit here (it counted one, and nothing was excluded).
 
 test("an empty fraction with items outside the corpus does not read as finished", () => {
   assert.equal(pct(0, 0, 2), "not started");
@@ -1515,6 +1521,145 @@ if (!TRANSLATOR_REPO) {
     assert.equal(glossaryFiles("de", TRANSLATOR_REPO).length, 1);
   });
 }
+
+// ------------------------------------------- what an exclusion's scope binds
+
+// corpus.json can put a whole item out of the corpus, or only its BODY. The
+// second is what a not-yet-live exercise uses: its title and description are
+// card copy and are still required, its instruction body and its message catalog
+// are not. Getting the two mixed up is invisible until it reaches R2 (a locale
+// declared complete with an English title on a level page, or the reverse: a
+// production deploy blocked by prose nobody is expected to have written), so it
+// is asserted from both ends here.
+
+console.log("\nwhat an exclusion's scope binds:");
+
+const BODY_TYPE = "exercise-instructions";
+const bodyExcludedSlugs = corpusEntries()
+  .filter((entry) => entry.scope === SCOPE_BODY)
+  .map((entry) => entry.slug);
+
+function corpusEntries() {
+  const file = path.join(REPO_ROOT, "corpus.json");
+  if (!fs.existsSync(file)) return [];
+  return JSON.parse(fs.readFileSync(file, "utf8")).exclude ?? [];
+}
+
+test("an entry with no scope is a whole-item exclusion, and one with `body` is not", () => {
+  for (const entry of corpusEntries()) {
+    const scope = exclusionScope(entry.type, entry.slug);
+    assert.equal(scope, entry.scope ?? SCOPE_ITEM, `${entry.type}/${entry.slug}`);
+    assert.equal(isExcluded(entry.type, entry.slug), scope === SCOPE_ITEM);
+    assert.equal(isBodyExcluded(entry.type, entry.slug), scope === SCOPE_BODY);
+  }
+  assert.equal(exclusionScope(BODY_TYPE, "a-slug-nobody-has-excluded"), null);
+});
+
+test("a `body` scope is only ever put on a type that HAS a body and translatable frontmatter", () => {
+  // On a catalog it would silently do nothing: there is no frontmatter to keep
+  // in the corpus, so the entry would read as an exclusion and exclude nothing.
+  const wrong = corpusEntries()
+    .filter((entry) => (entry.scope ?? SCOPE_ITEM) === SCOPE_BODY)
+    .filter((entry) => {
+      const type = CONTENT_TYPES[entry.type];
+      return !type || type.format !== "markdown" || !(type.frontmatterTranslated ?? []).length;
+    })
+    .map((entry) => `${entry.type}/${entry.slug}`);
+  assert.deepEqual(wrong, [], `body-scoped exclusions on a type with no translatable frontmatter: ${wrong.join(", ")}`);
+});
+
+test("a body-excluded item is still counted, so a locale that skips its title is not complete", () => {
+  if (!ENGLISH_CHECKOUT) return; // asserted where English can be read; see the skip above.
+  assert.ok(bodyExcludedSlugs.length > 0, "nothing is body-excluded, so this is asserting nothing");
+  const englishSlugs = new Set(englishItems(BODY_TYPE).map((item) => item.slug));
+  for (const slug of bodyExcludedSlugs) {
+    assert.ok(englishSlugs.has(slug), `${slug} is excluded but English has no such exercise`);
+  }
+  // The denominator completeness is measured against: every English exercise,
+  // MINUS only the ones excluded whole. A body-excluded one is still expected.
+  assert.equal(englishCorpusSize(BODY_TYPE), englishItems(BODY_TYPE).length - excludedCount(BODY_TYPE));
+  assert.equal(excludedCount(BODY_TYPE), 0, "no exercise instructions should be excluded whole");
+  assert.equal(bodyExcludedCount(BODY_TYPE), bodyExcludedSlugs.length);
+  // ...and the whole-item exclusions still bind, so the two are not the same knob.
+  assert.equal(bodyExcludedCount("exercise-messages"), 0);
+  assert.ok(excludedCount("exercise-messages") > 0);
+});
+
+test("a body-excluded item a locale HAS is listed on the locale side too", () => {
+  // Both sides or neither: `englishCorpusSize` counts it, so `listItems` must
+  // too, or publish reports a gap for a file that is sitting right there.
+  const held = new Set(listItems(BODY_TYPE, "hu").map((item) => item.slug));
+  for (const slug of bodyExcludedSlugs) {
+    const file = path.join(REPO_ROOT, "locales", "hu", CONTENT_TYPES[BODY_TYPE].localPath(slug));
+    assert.equal(held.has(slug), fs.existsSync(file), `${slug}: on disk and listed must agree`);
+  }
+});
+
+// checkProse's half of it: what a body-excluded page is and is not checked for.
+
+const EN_STARS_PAGE = '---\ntitle: "Stars"\ndescription: "Build a pattern."\n---\n# Stars\n\nEnglish prose.\n';
+
+function exerciseIssues(target, options = {}) {
+  const english = parseFrontmatter(EN_STARS_PAGE);
+  const parsed = parseFrontmatter(target);
+  return checkProse(english.body, parsed.body, {
+    englishData: english.data,
+    targetData: parsed.data,
+    translatedKeys: ["title", "description"],
+    expectedMd5: "abc",
+    allowUntranslated: false,
+    ...options
+  }).map((i) => `${i.level} ${i.message}`);
+}
+
+const BODY_EXCLUDED_PAGE = '---\ntitle: "Csillagok"\ndescription: "Építs mintát."\nen_md5: abc\n---\n# Stars\n\nEnglish prose.\n';
+
+test("an English body is a blocking finding normally, and no finding at all when the body is out of the corpus", () => {
+  assert.ok(exerciseIssues(BODY_EXCLUDED_PAGE).some((i) => i.startsWith("ERROR untranslated:")));
+  assert.deepEqual(exerciseIssues(BODY_EXCLUDED_PAGE, { bodyOutOfCorpus: true }), []);
+});
+
+test("a missing title is still a blocking ERROR when the body is out of the corpus", () => {
+  const noTitle = BODY_EXCLUDED_PAGE.replace('title: "Csillagok"', 'title: ""');
+  assert.ok(
+    exerciseIssues(noTitle, { bodyOutOfCorpus: true }).includes('ERROR frontmatter: missing "title"'),
+    "the frontmatter is the whole of what a body-excluded page promises"
+  );
+});
+
+test("English's own <define> markup in an untranslated body is not reported as a failed expansion", () => {
+  const tagged = EN_STARS_PAGE.replace("English prose.", "A <define>stack</define> of them.");
+  const english = parseFrontmatter(tagged);
+  const page = parseFrontmatter(BODY_EXCLUDED_PAGE.replace("English prose.", "A <define>stack</define> of them."));
+  const issues = checkProse(english.body, page.body, {
+    englishData: english.data,
+    targetData: page.data,
+    translatedKeys: ["title", "description"],
+    expectedMd5: "abc",
+    bodyOutOfCorpus: true
+  });
+  assert.deepEqual(issues, []);
+});
+
+test("a field ENGLISH leaves blank is nothing to translate, not an unfinished translation", () => {
+  // Four exercises ship `description: ""`. Demanding a translation of it made the
+  // only correct file (an empty string, copied) unstampable, so the page could
+  // never pass its checks at all.
+  const english = parseFrontmatter(EN_STARS_PAGE.replace('description: "Build a pattern."', 'description: ""'));
+  const page = parseFrontmatter(BODY_EXCLUDED_PAGE.replace('description: "Építs mintát."', 'description: ""'));
+  const issues = checkProse(english.body, page.body, {
+    englishData: english.data,
+    targetData: page.data,
+    translatedKeys: ["title", "description"],
+    expectedMd5: "abc",
+    bodyOutOfCorpus: true
+  });
+  assert.deepEqual(issues, []);
+  assert.equal(
+    proseFieldStatus({ englishData: english.data, targetData: page.data, translatedKeys: ["title", "description"] }).status,
+    FIELDS_COMPLETE
+  );
+});
 
 // ------------------------------------------------------------------- result
 

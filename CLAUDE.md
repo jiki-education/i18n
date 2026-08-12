@@ -95,7 +95,9 @@ Read [ENGLISH-SOURCE.md](./ENGLISH-SOURCE.md) first; this is the summary.
 - **There is no tracked corpus.** An item is in the working corpus when English exists for it and
   some target locale already holds a translation of it. Bringing a new item in is an explicit
   `--type`/`--slug`, which resolves against English directly. Exclusions are explicit, in
-  `corpus.json`.
+  `corpus.json`, and an entry drops either the whole item or only its **body** (`"scope":
+  "body"`: the page's title and description stay required, counted and published; its body is
+  none of the three and is never published). See `ENGLISH-SOURCE.md`.
 - **Completeness measures against a different number**: every item English exists for, read straight
   from the checkout. "Have you translated everything you started" is satisfiable by starting one
   thing.
