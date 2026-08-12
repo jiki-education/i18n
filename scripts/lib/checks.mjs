@@ -29,6 +29,45 @@ export const WARN = "WARN";
 
 const issue = (level, message) => ({ level, message });
 
+// ---------------------------------------------------------- the item verdict
+//
+// One item's status line, from its issues AND from whether it has a file at all.
+//
+// The second half is the whole reason this exists. Every check below reads a
+// translation, so a locale with NO file for an item produces no issues, and a
+// reporter that classifies on the issue list alone calls that `ok`. It did:
+// `validate.mjs it --type=exercise-instructions` printed `ok` for a locale
+// holding no instructions file of any kind, and a clean `validate.mjs <locale>`
+// therefore read as "this language is complete" for a language missing dozens
+// of files.
+//
+// Absence is a THIRD status rather than an error, on the terms the rest of the
+// repo already uses for a partly translated locale (see the untranslated
+// sentinel, and `coverage.mjs` on never-started versus finished): a young
+// language legitimately has almost nothing, and turning each gap into an error
+// buries the real problems under a wall of them. So `miss` is loud, counted and
+// never `ok`, and it blocks only under `--shippable`, where the gap would serve
+// English from a translated URL. That is `MISSING` below, and it is the caller's
+// job to make sure a missing item is never stamped.
+export const OK = "ok";
+export const MISSING = "miss";
+export const WARNED = "warn";
+export const FAILED = "FAIL";
+
+/**
+ * The status of one item, and its error/warning counts.
+ *
+ * `missing` means the target file does not exist. Under `--shippable` the caller
+ * has already turned that into an ERROR, so the status is `FAIL` and the item is
+ * still counted as missing: the two facts are independent.
+ */
+export function itemVerdict({ issues = [], missing = false } = {}) {
+  const errors = issues.filter((found) => found.level === ERROR).length;
+  const warnings = issues.filter((found) => found.level === WARN).length;
+  const status = errors > 0 ? FAILED : missing ? MISSING : warnings > 0 ? WARNED : OK;
+  return { status, errors, warnings, missing };
+}
+
 // --------------------------------------------------------------- placeholders
 
 // Three interpolation syntaxes live in this corpus and all three are immutable,

@@ -13,8 +13,9 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
-import { INAPPLICABLE, REPO_ROOT, SENTINEL } from "./lib/constants.mjs";
-import { CONTENT_TYPES, CONTENT_TYPE_IDS, POST_TYPE_IDS, listItems } from "./lib/content-types.mjs";
+import { execFileSync } from "node:child_process";
+import { INAPPLICABLE, REPO_ROOT, SENTINEL, TARGET_LOCALES } from "./lib/constants.mjs";
+import { CONTENT_TYPES, CONTENT_TYPE_IDS, POST_TYPE_IDS, listItems, localPath } from "./lib/content-types.mjs";
 import { corpusItems, englishCorpusSize, englishItems, englishRepo, unstartedItems } from "./lib/english.mjs";
 import {
   SCOPE_BODY,
@@ -49,14 +50,20 @@ import {
 } from "./lib/files.mjs";
 import {
   ERROR,
+  FAILED,
   FIELDS_COMPLETE,
   FIELDS_INCOMPLETE,
   FIELDS_NEED_REVIEW,
+  MISSING,
+  OK,
+  WARN,
+  WARNED,
   checkCatalog,
   checkProse,
   findRepeatedBodies,
   isCopiedEnglish,
   isUntranslatedFrontmatter,
+  itemVerdict,
   proseFieldStatus
 } from "./lib/checks.mjs";
 import { glossaryFiles, keptEnglishTermsIn } from "./lib/kept-english.mjs";
@@ -1336,6 +1343,132 @@ if (!ENGLISH_CHECKOUT) {
     });
     assert.deepEqual(invisible, [], `types English defines that no report would show: ${invisible.join(", ")}`);
   });
+}
+
+// --------------------------------------- a missing translation is not `ok` ---
+//
+// validate reads a translation to check it, so an item a locale holds no file
+// for produces no findings, and a reporter that classifies on findings alone
+// calls that `ok`. It did: `validate.mjs it --type=exercise-instructions`
+// printed `ok` for a locale with no instructions file at all, so a clean run
+// read as "this language is complete" for a language missing dozens of items.
+// These are the assertions that absence is its own status.
+
+console.log("\na missing translation file is not ok:");
+
+test("no findings and no file is `miss`, never `ok`", () => {
+  assert.equal(itemVerdict({ issues: [] }).status, OK);
+  assert.equal(itemVerdict({ issues: [], missing: true }).status, MISSING);
+});
+
+test("`miss` costs no errors and no warnings, so a young locale is not a wall of failures", () => {
+  const verdict = itemVerdict({ issues: [], missing: true });
+  assert.equal(verdict.errors, 0);
+  assert.equal(verdict.warnings, 0);
+  assert.equal(verdict.missing, true);
+});
+
+test("under --shippable the caller's ERROR wins the status, and the item is still counted missing", () => {
+  // The two facts are independent: the gate blocks, and the missing tally is
+  // still the number a reader needs.
+  const verdict = itemVerdict({ issues: [{ level: ERROR, message: "not translated (no file at x)" }], missing: true });
+  assert.equal(verdict.status, FAILED);
+  assert.equal(verdict.errors, 1);
+  assert.equal(verdict.missing, true);
+});
+
+test("a present file keeps the statuses it always had", () => {
+  assert.equal(itemVerdict({ issues: [{ level: WARN, message: "w" }] }).status, WARNED);
+  assert.equal(itemVerdict({ issues: [{ level: ERROR, message: "e" }] }).status, FAILED);
+  assert.equal(itemVerdict({ issues: [{ level: ERROR, message: "e" }, { level: WARN, message: "w" }] }).status, FAILED);
+});
+
+// And the same thing end to end, against real gaps this repo actually holds,
+// found rather than named so the tests cannot rot when a gap is filled.
+
+if (!ENGLISH_CHECKOUT) {
+  console.log("  SKIP  validate reports a real untranslated item as `miss` (no front-end checkout)");
+} else {
+  const gap = firstUntranslatedItem();
+  if (!gap) {
+    console.log("  SKIP  validate reports a real untranslated item as `miss` (every locale holds every corpus item)");
+  } else {
+    test(`validate reports a real untranslated item as \`miss\` (${gap.locale} ${gap.type}${gap.slug ? `/${gap.slug}` : ""})`, () => {
+      const output = runValidate(gap);
+      assert.match(output, /^miss {2}/m, `an item with no file must print \`miss\`:\n${output}`);
+      assert.doesNotMatch(output, /^ok {4}/m, `an item with no file must not print \`ok\`:\n${output}`);
+      assert.match(output, /no translation file/, "the miss line must say what is absent");
+      assert.match(output, /^validate: .*1 with no translation file/m, "the footer must count it");
+    });
+  }
+
+  // The two exemptions have to COMPOSE, and neither was written with the other
+  // in front of it. A `"scope": "body"` exclusion keeps a not-yet-live exercise
+  // in the corpus for its title and description while taking its body out; a
+  // missing file is `miss`. Together they must say: start this item, but only
+  // its frontmatter. Report it as a plain `miss` and a reader translates a body
+  // nothing will ever publish; drop it from the run entirely and the title never
+  // gets translated, which is the exact bug `body` scope was added to fix.
+  const bodyGap = firstUntranslatedItem({ bodyExcluded: true });
+  if (!bodyGap) {
+    console.log("  SKIP  a body-excluded item with no file asks for its frontmatter and not its body (no such gap)");
+  } else {
+    test(`a body-excluded item with no file asks for its frontmatter and not its body (${bodyGap.locale} ${bodyGap.type}/${bodyGap.slug})`, () => {
+      assert.equal(isBodyExcluded(bodyGap.type, bodyGap.slug), true, "the fixture must actually be body-excluded");
+      const output = runValidate(bodyGap);
+      // Still reported: its title and description are required, so it is not ok
+      // and it is not silently dropped.
+      assert.match(output, /^miss {2}/m, `a body-excluded item with no file must still print \`miss\`:\n${output}`);
+      assert.doesNotMatch(output, /^ok {4}/m, `it must not print \`ok\`:\n${output}`);
+      // ...and reported for the right amount of work. Without this note the line
+      // is indistinguishable from an item whose body IS wanted.
+      assert.match(
+        output,
+        /^miss .*\[frontmatter only; its body is out of the corpus\]/m,
+        `the miss line must say the body is not wanted:\n${output}`
+      );
+    });
+  }
+
+  // The other half of the same pair, so the note is not simply printed on
+  // everything: an item whose body IS in the corpus must not carry it.
+  const plainGap = firstUntranslatedItem({ bodyExcluded: false });
+  if (!plainGap) {
+    console.log("  SKIP  an ordinary missing item is not labelled frontmatter-only (no such gap)");
+  } else {
+    test(`an ordinary missing item is not labelled frontmatter-only (${plainGap.locale} ${plainGap.type}${plainGap.slug ? `/${plainGap.slug}` : ""})`, () => {
+      const output = runValidate(plainGap);
+      assert.match(output, /^miss {2}/m, `an item with no file must print \`miss\`:\n${output}`);
+      assert.doesNotMatch(output, /frontmatter only/, `its body is in the corpus, so it is wanted whole:\n${output}`);
+    });
+  }
+}
+
+/** Run validate over exactly one item, reading only (never stamping). */
+function runValidate({ locale, type, slug }) {
+  const args = ["scripts/validate.mjs", locale, `--type=${type}`];
+  if (slug) args.push(`--slug=${slug}`);
+  return execFileSync(process.execPath, args, { cwd: REPO_ROOT, encoding: "utf8" });
+}
+
+/**
+ * The first (locale, type, slug) in the corpus that the locale holds no file for.
+ *
+ * `bodyExcluded` narrows it to (or away from) an item whose body is out of the
+ * corpus, so the composition tests above pick their own fixtures out of the real
+ * tree instead of naming a slug that someone will eventually translate.
+ */
+function firstUntranslatedItem({ bodyExcluded = null } = {}) {
+  for (const type of CONTENT_TYPE_IDS) {
+    if (CONTENT_TYPES[type].sourceRepo && !englishRepo(CONTENT_TYPES[type].sourceRepo, undefined, { optional: true })) continue;
+    for (const item of corpusItems(type)) {
+      if (bodyExcluded !== null && isBodyExcluded(type, item.slug) !== bodyExcluded) continue;
+      for (const locale of TARGET_LOCALES) {
+        if (!fs.existsSync(localPath(type, locale, item.slug))) return { locale, type, slug: item.slug };
+      }
+    }
+  }
+  return null;
 }
 
 // -------------------------------------------------------- the how-to routing

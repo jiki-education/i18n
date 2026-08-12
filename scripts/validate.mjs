@@ -59,6 +59,27 @@
 // production gate: the sentinel renders as a visible replacement glyph, so a
 // locale is not servable until its count is zero. Ordinary runs allow sentinels,
 // because a partly translated locale is a normal, expected state here.
+//
+// ## An item with no file is `miss`, never `ok`
+//
+// Every check here reads a translation, so an item a locale holds NO file for
+// produces no findings at all. Reported on the findings alone that is an `ok`
+// line, which is what this printed for a locale missing the file entirely, and
+// a clean run then read as "this language is complete" for a language missing
+// dozens of items.
+//
+// The item list is derived from ENGLISH (`scopeItems` -> `corpusItems`), so the
+// gap is knowable: the run walks what English defines and asks each locale for
+// it. Absence is now its own status, counted separately and printed per locale
+// in the summary, and it stays non-blocking outside `--shippable` for the same
+// reason a sentinel does. See `itemVerdict` in scripts/lib/checks.mjs for why it
+// is a status and not an error.
+//
+// One caveat this cannot fix and does not pretend to: `corpusItems` is English
+// filtered to what at least one locale has begun, so an item NO locale has
+// started is not in any run's scope and cannot be reported missing by any of
+// them. `coverage.mjs`'s `unstarted` column is what answers that, and the
+// summary line here says so.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -80,7 +101,7 @@ import {
   writeJson,
   writeText
 } from "./lib/files.mjs";
-import { ERROR, WARN, checkCatalog, checkProse, checkVtt } from "./lib/checks.mjs";
+import { ERROR, FAILED, MISSING, OK, WARN, checkCatalog, checkProse, checkVtt, itemVerdict } from "./lib/checks.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 import { parseArgs } from "./lib/args.mjs";
 
@@ -208,9 +229,28 @@ async function validateItem({ typeId, locale, slug, stamp, shippable }) {
   // a remaining sentinel: this script answers "is what is here correct", and
   // coverage.mjs answers "how much is here". It only blocks under --shippable,
   // where a gap means the locale would render English in an RTL layout.
+  //
+  // It is REPORTED either way, as `miss`. Returning no findings is not the same
+  // as passing, and returning here before any of the format branches is also what
+  // makes a missing file unstampable: there is nothing to stamp and nothing that
+  // could write one.
+  //
+  // The two exemptions compose here, and getting that wrong is the whole point of
+  // `body` scope. A body-excluded item with no file still needs its title and
+  // description and still does NOT need its body, so it carries the same note a
+  // present one does: `miss` says "start this", the note says "only this much of
+  // it". Without the note a reader would translate a body nothing publishes.
   if (!fs.existsSync(targetPath)) {
-    if (!shippable) return { issues: [], label: label(typeId, locale, slug), absent: true };
-    return { issues: [{ level: ERROR, message: "not translated (no file)" }], label: label(typeId, locale, slug) };
+    const where = path.relative(process.cwd(), targetPath);
+    return {
+      issues: shippable
+        ? [{ level: ERROR, message: `not translated (no file at ${where})${bodyOutOfCorpus ? "; its frontmatter is required, its body is not" : ""}` }]
+        : [],
+      label: label(typeId, locale, slug),
+      missing: true,
+      note: bodyNote(bodyOutOfCorpus),
+      where
+    };
   }
 
   if (type.format === "catalog") {
@@ -287,10 +327,7 @@ async function validateItem({ typeId, locale, slug, stamp, shippable }) {
     (i) => i.level === ERROR && !i.message.startsWith("stale:") && !i.message.startsWith("frontmatter: no en_md5")
   );
 
-  // Said out loud on every line it applies to: a page checked for its frontmatter
-  // alone has been checked for less than the line above it, and a reader must not
-  // have to know which slugs are in corpus.json to see that.
-  const note = bodyOutOfCorpus ? "frontmatter only; its body is out of the corpus" : null;
+  const note = bodyNote(bodyOutOfCorpus);
 
   if (stamp && blockingOtherThanStamp.length === 0 && target.data.en_md5 !== expected) {
     writeText(targetPath, stampFrontmatter(target.raw, expected));
@@ -301,6 +338,14 @@ async function validateItem({ typeId, locale, slug, stamp, shippable }) {
 }
 
 const label = (typeId, locale, slug) => `${locale} ${typeId}${slug ? `/${slug}` : ""}`;
+
+/**
+ * Said out loud on every line it applies to, present file or missing one: an item
+ * checked (or wanted) for its frontmatter alone is held to less than the line
+ * above it, and a reader must not have to know which slugs are in corpus.json to
+ * see that.
+ */
+const bodyNote = (bodyOutOfCorpus) => (bodyOutOfCorpus ? "frontmatter only; its body is out of the corpus" : null);
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
@@ -330,6 +375,9 @@ async function main() {
   let errors = 0;
   let warnings = 0;
   let checked = 0;
+  let missing = 0;
+  /** Per locale, the missing items grouped by type, for the summary. */
+  const missingByLocale = new Map();
 
   const guardIssues = checkGuards();
   for (const found of guardIssues) {
@@ -357,17 +405,29 @@ async function main() {
       for (const item of scopeItems(typeId, { slug: args.flags.slug })) {
         checked += 1;
 
-        const { issues, label: name, stamped, note } = await validateItem({ typeId, locale, slug: item.slug, stamp, shippable });
+        const result = await validateItem({ typeId, locale, slug: item.slug, stamp, shippable });
+        const { issues, label: name, stamped, note, where } = result;
         const suffix = `${stamped ? " (stamped)" : ""}${note ? ` [${note}]` : ""}`;
-        const itemErrors = issues.filter((i) => i.level === ERROR);
-        const itemWarnings = issues.filter((i) => i.level === WARN);
-        errors += itemErrors.length;
-        warnings += itemWarnings.length;
+        const verdict = itemVerdict(result);
+        errors += verdict.errors;
+        warnings += verdict.warnings;
 
-        if (itemErrors.length === 0 && itemWarnings.length === 0) {
+        if (verdict.missing) {
+          missing += 1;
+          if (!missingByLocale.has(locale)) missingByLocale.set(locale, new Map());
+          const byType = missingByLocale.get(locale);
+          byType.set(typeId, (byType.get(typeId) ?? 0) + 1);
+        }
+
+        if (verdict.status === OK) {
           console.log(`ok    ${name}${suffix}`);
+        } else if (verdict.status === MISSING) {
+          // Not an error outside --shippable, and never silent: no file is a
+          // fact about the translation, not an absence of facts.
+          console.log(`miss  ${name}${suffix}`);
+          console.log(`        no translation file at ${where}`);
         } else {
-          console.log(`${itemErrors.length > 0 ? "FAIL " : "warn "} ${name}${suffix}`);
+          console.log(`${verdict.status === FAILED ? "FAIL " : "warn "} ${name}${suffix}`);
           for (const found of issues) console.log(`        ${found.level}  ${found.message}`);
         }
       }
@@ -390,13 +450,33 @@ async function main() {
     }
     // Inapplicable keys are reported, not hidden, and sit outside the fraction:
     // they are neither done nor missing.
+    //
+    // The fraction counts the catalogs the locale HOLDS, so a catalog it holds no
+    // file for contributes nothing to either half and a locale with none reads
+    // `0/0`, which is the same shape a finished one has. The missing line below
+    // is what tells those apart, and it is printed before the fraction so the two
+    // are read together.
+    const gaps = missingByLocale.get(locale);
+    if (gaps) {
+      const detail = [...gaps.entries()].map(([typeId, count]) => `${typeId}${count > 1 ? ` x${count}` : ""}`).join(", ");
+      const totalMissing = [...gaps.values()].reduce((sum, count) => sum + count, 0);
+      console.log(
+        `\n${locale}: ${totalMissing} ${totalMissing === 1 ? "item has" : "items have"} NO translation file (${detail}).` +
+          (shippable
+            ? `\n${locale}: blocking, because --shippable serves this locale and a gap would serve English from a translated URL.`
+            : `\n${locale}: not an error here (a partly translated locale is normal); --shippable blocks on them.`) +
+          `\n${locale}: this counts only items some locale has begun; coverage.mjs also counts the ones nobody has.`
+      );
+    }
     console.log(
-      `\n${locale}: ${total - stubbed}/${total} catalog keys translated, ${stubbed} still "${SENTINEL}"` +
+      `${gaps ? "" : "\n"}${locale}: ${total - stubbed}/${total} catalog keys translated, ${stubbed} still "${SENTINEL}"` +
         (inapplicable > 0 ? `, ${inapplicable} "${INAPPLICABLE}" (unreachable in this language)` : "")
     );
   }
 
-  console.log(`\nvalidate: ${checked} items, ${errors} errors, ${warnings} warnings.`);
+  console.log(
+    `\nvalidate: ${checked} items, ${missing} with no translation file, ${errors} errors, ${warnings} warnings.`
+  );
   if (errors > 0) process.exit(1);
 }
 

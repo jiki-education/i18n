@@ -219,7 +219,7 @@ silently updating the lockfile. Note that pnpm passes arguments straight through
 | `source-checkout.mjs` | Fetches a source repo into `.source/<id>`, shallow and sparse, so local runs have English to read. `--source=<id>` picks which (`front-end` by default, `videos` for the English subtitle track). CI uses `actions/checkout` for the same job and the same destinations. |
 | `source-checkout.mjs --resolve` | Prints the SHA this branch pins with an `English-Ref:` trailer, or `main`. CI uses it to point its `actions/checkout` step at the right English. |
 | `stub.mjs` | Brings every catalog in the corpus to full key parity with English, sentinel-filling anything untranslated and `∅`-filling any plural key the language cannot reach. Existing values are reproduced byte for byte, and an empty object in English stays an empty object. An explicit `--type`/`--slug` seeds an item the corpus does not hold yet. |
-| `validate.mjs` | Key parity, ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the R2 key guard. Stamps on success. Exit 1 on any ERROR. |
+| `validate.mjs` | Key parity, ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the R2 key guard. Stamps on success. An item the locale holds no file for is `miss`, never `ok`: counted per locale and in the footer, unstampable, and blocking only under `--shippable`. Exit 1 on any ERROR. |
 | `publish.mjs` | Builds the content-hashed artifacts, their pointers and `dist/sync.sh`. Omits every `∅` key from the bytes it writes. Publishes whatever is on `main` and records what is outstanding (remaining `�` sentinels, prose untranslated by one of the three conventions, partial corpora) in the completeness object. Refuses any English R2 key, with no override. `--out-dir=<path>` writes the same tree into a front-end checkout instead, for local dev. |
 | `coverage.mjs` | Per-locale translated / stale / missing / needs-review / sentinel counts, per content type, with `∅` keys reported outside the fraction. A prose page is `done` only when its declared `frontmatterTranslated` fields are actually translated, not merely when its `en_md5` is current. Counts a catalog against ENGLISH's key set, so a key the locale does not hold is reported missing rather than leaving the fraction with the gap inside it. Reports how many English items no locale has begun beside the fraction, so a never-started type is not a bare `0/0`. `--json` for machines. Also reports the two bodies of copy that are still translated in the api repo (see below), so one run answers "is this language complete?" for everything. It reports and never gates: `validate --shippable` is the gate. |
 | `test.mjs` | The assertions guarding logic a mistake in would only surface on R2, above all the exercise family merge and its key order. Plain `node:assert`, no framework, non-zero exit on failure. `pnpm test`, and part of `pnpm check`. |
@@ -228,6 +228,17 @@ silently updating the lockfile. Note that pnpm passes arguments straight through
 - **`validate` errors block; warnings never do.** Same split as `translator/scripts/check-translation`:
   ERROR checks are structural facts, WARN checks are heuristics over prose that produce false
   positives by design. Read a warning; never promote it to an error.
+- **`validate` has a third status, `miss`, for an item with no translation file at all.** Every
+  check reads a translation, so an item a locale holds no file for produces no findings, and
+  classifying on findings alone called that `ok`: a clean run then read as "this language is
+  complete" for a language missing dozens of files. It is not an error, for the same reason a
+  sentinel is not one (a partly translated locale is the normal state, and a wall of errors on a
+  young language hides the real ones), and it blocks only under `--shippable`. It is counted per
+  locale and in the footer, and a missing file is never stamped. A `miss` on a `"scope": "body"`
+  item carries the same frontmatter-only note a present one does, so the two exemptions compose:
+  the title and description are still wanted, the body is not. The scope is the working corpus, so
+  an item NO locale has begun is outside every `validate` run; `coverage.mjs`'s `unstarted` column
+  is what answers that half.
 - **No script here calls an LLM.** There is one translation engine and it lives in `translator`,
   for the reason given under "Relationship to the `translator` repo" below. This repo's scripts
   only ever read, check, and publish what a pass has already written.
