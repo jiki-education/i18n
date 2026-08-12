@@ -867,13 +867,31 @@ async function main() {
   //
   // Artifacts land before pointers, so a reader can never follow a pointer to an
   // object that is not there yet.
+  // The completeness record is a third kind, and it takes `no-cache`.
+  //
+  // Nothing a reader requests ever fetches it: its only consumers are the
+  // front-end's build-time locale guards, so it is read a handful of times per
+  // deploy rather than once per render, and there is no traffic argument for
+  // caching it at all. Against that, a cached copy is actively harmful, because
+  // the question it answers ("is this locale complete right now") is the one
+  // question a stale answer gets wrong while looking authoritative.
+  //
+  // Its patterns carry a leading `*` because the object is at `i18n/completeness.json`,
+  // and an `aws s3` pattern without one matches only at the root of the sync. A
+  // bare `completeness.json` silently matched nothing, so the record was swept
+  // into the immutable sync above and served with a year-long TTL: a deploy read
+  // a four-day-old record, believed Hungarian was incomplete, and refused to
+  // ship. Keep the wildcard.
   const plan = outDir !== undefined ? [] : [
     `aws s3 sync dist/static s3://${R2_BUCKET}/static --endpoint-url ${R2_ENDPOINT} ` +
       `--cache-control 'public, max-age=31536000, immutable' --size-only ` +
-      `--exclude '*/current.json' --exclude 'completeness.json'`,
+      `--exclude '*/current.json' --exclude '*completeness.json'`,
     `aws s3 cp dist/static s3://${R2_BUCKET}/static --endpoint-url ${R2_ENDPOINT} --recursive ` +
       `--cache-control 'public, max-age=60, stale-while-revalidate=86400' ` +
-      `--exclude '*' --include '*/current.json' --include 'completeness.json'`
+      `--exclude '*' --include '*/current.json'`,
+    `aws s3 cp dist/static s3://${R2_BUCKET}/static --endpoint-url ${R2_ENDPOINT} --recursive ` +
+      `--cache-control 'no-cache, must-revalidate' ` +
+      `--exclude '*' --include '*completeness.json'`
   ];
   if (outDir === undefined) {
     fs.writeFileSync(path.join(DIST, "sync.sh"), `#!/usr/bin/env bash\nset -euo pipefail\n\n${plan.join("\n")}\n`, { mode: 0o755 });
