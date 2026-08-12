@@ -1,6 +1,6 @@
 ---
 title: "Une petite marche"
-description: "Guide le personnage dans le labyrinthe grâce à une fonction qui avance de plusieurs pas d'un coup."
+description: "Guide le personnage dans le labyrinthe grâce à une fonction qui le fait avancer de plusieurs pas d'un seul coup."
 en_md5: 91ee3e60f948f052d7551029f5d6fdf7
 ---
 
