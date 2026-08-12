@@ -12,7 +12,7 @@ Comme son nom l'indique, cet opérateur te donne le reste quand tu divises deux 
 10 % 4 // 2
 ```
 
-on demande en fait : « Qu'est-ce qu'il reste quand on divise 10 par 4 ? » Et la réponse est deux. Imagine que tu as 10 bonbons ou 10 noix, et que tu veux les partager équitablement entre quatre personnes. Chaque personne en reçoit deux, et il en reste deux à la fin. Et ce qui reste à la fin, c'est justement le reste. C'est ce que ce signe pourcentage te donne.
+on demande en fait : « Qu'est-ce qu'il reste quand on divise 10 par 4 ? » Et la réponse est deux. Imagine que tu as 10 bonbons ou 10 noix, et que tu veux les partager équitablement entre quatre personnes. Chaque personne en reçoit deux, et il en reste deux à la fin. Et cette partie qui n'est pas distribuée, c'est le reste. C'est ce que calcule ce signe pourcentage.
 
 <img
   class="concept-image"
@@ -26,4 +26,4 @@ Si on l'utilise si souvent en code, c'est notamment parce qu'il permet de savoir
 
 Prends quatre, six ou huit : si tu les divises par deux, il ne reste rien, alors qu'avec cinq, sept ou neuf, il reste toujours un à la fin. Donc en écrivant `if something % 2 === 0`, on demande : « Est-ce que ce quelque chose est un nombre pair ? » Et ça peut servir dans des tonnes de situations. Imagine que tu crées des rayures de couleurs différentes, ou que tu partages une file d'attente en deux, en envoyant chaque personne d'un côté ou de l'autre à mesure qu'elle avance vers toi.
 
-Une chose à noter : tu entendras peut-être des gens appeler cet opérateur de reste l'opérateur modulo. Modulo et reste sont pratiquement identiques. Il existe quelques petites différences dont tu n'auras probablement jamais à te soucier, alors pour l'instant, on parlera de l'opérateur de reste, c'est tout simplement plus facile.
+Une chose à noter : tu entendras peut-être des gens appeler cet opérateur de reste l' « opérateur modulo ». « Modulo » et « reste » sont pratiquement identiques. Il existe quelques petites différences dont tu n'auras probablement jamais à te soucier, alors pour l'instant, on parlera de l'opérateur de reste, c'est tout simplement plus facile.
