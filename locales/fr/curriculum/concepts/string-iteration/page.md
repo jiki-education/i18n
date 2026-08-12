@@ -4,7 +4,7 @@ description: "Utiliser une boucle `for of` pour passer sur chaque lettre d'une s
 en_md5: 09f399cc3f52b89380d3ed23fc6be513
 ---
 
-Tu peux accéder à une seule lettre d'une string avec des crochets (`[]`). Maintenant, on va voir comment parcourir une string avec une boucle, en récupérant chaque lettre une à la fois.
+Tu peux accéder à une seule lettre d'une string avec des crochets (`[]`). Maintenant, on va voir comment parcourir une string avec une boucle, en récupérant chaque lettre une par une.
 
 Et pour ça, il nous faut un nouveau type de boucle. Jusqu'ici, on a utilisé la boucle `repeat`, et maintenant on va utiliser ce qu'on appelle une boucle `for of` (qui parcourt chaque élément d'une collection, l'un après l'autre). Ça fait deux nouveaux mots-clés, `for` et `of`.
 
@@ -29,7 +29,7 @@ Et ça veut dire qu'au lieu d'utiliser une boucle `repeat`, où on dit « Rép�
 
 Ensuite, on a ce `let letter` (lettre). C'est exactement la même chose que le `let name` juste au-dessus : on crée simplement une variable appelée `letter`.
 
-La différence, c'est qu'au lieu de dire explicitement ce qu'on y met, on demande à Jiki d'y placer chaque lettre de la string, une à la fois.
+La différence, c'est qu'au lieu de dire explicitement ce qu'on y met, on demande à Jiki d'y placer chaque lettre de la string, une par une.
 
 Donc Jiki voit `for`, vérifie qu'il y a bien `of`, puis se met au travail. Il regarde la première lettre de la string, `"J"` dans notre cas, et la met dans une nouvelle boîte appelée `letter`. Au passage, on aurait pu l'appeler autrement : rien n'oblige à choisir `letter`. On a juste décidé de l'appeler `letter` ici.
 
