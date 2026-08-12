@@ -1,5 +1,5 @@
 ---
-title: "Hamming"
+title: "Distance de Hamming"
 description: "Compte les différences entre deux brins d'ADN."
 en_md5: 629f74899d402283c34d3bfbb17777b8
 ---
@@ -10,7 +10,7 @@ Ton corps est composé de cellules qui contiennent de l'ADN. Ces cellules s'usen
 
 Quand les cellules se divisent, leur ADN se réplique aussi. Pendant ce processus, il arrive que des erreurs se produisent et que certains morceaux d'ADN soient encodés avec une information incorrecte. Si on compare deux brins d'ADN et qu'on compte les différences entre eux, on peut voir combien d'erreurs se sont produites. C'est ce qu'on appelle la « distance de Hamming ».
 
-La distance de Hamming est utile dans de nombreux domaines scientifiques, pas seulement en biologie, alors c'est une expression bonne à connaître !
+La distance de Hamming est utile dans de nombreux domaines scientifiques, pas seulement en biologie, c'est donc une notion vraiment intéressante à connaître !
 
 Ta tâche consiste à calculer la distance de Hamming entre deux brins d'ADN. L'ADN utilise les lettres C, A, G et T. Deux brins peuvent ressembler à ceci :
 
