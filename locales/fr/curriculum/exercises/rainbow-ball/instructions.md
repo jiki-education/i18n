@@ -12,7 +12,7 @@ Voilà à quoi ça devrait ressembler :
 
 Pour cet exercice, tu disposes de la fonction `Math.randomInt(min, max)` (« Math » pour les mathématiques, « randomInt » pour un nombre entier aléatoire), qui renvoie un nombre entier aléatoire compris entre le `min` et le `max` que tu lui donnes.
 
-Prends quelques minutes pour réfléchir à la façon dont tu pourrais t'y prendre. C'est la partie la plus précieuse de l'exercice, alors prends ton temps et **note tes idées avant de lire la formule ci-dessous.**
+Prends quelques minutes pour réfléchir à la façon dont tu pourrais t'y prendre. C'est la partie la plus enrichissante de l'exercice, alors prends ton temps et **note tes idées avant de lire la formule ci-dessous.**
 
 Quand tu as une idée de ton approche, poursuis ta lecture. Mais pas avant d'avoir vraiment pris le temps de réfléchir !
 
@@ -43,7 +43,7 @@ On te laisse beaucoup de liberté dans cet exercice. On vérifie que :
 - Les premiers cercles sont corrects.
 - Plus de 80 % du canvas est peint.
 
-Les nombres que tu choisis pour y arriver ne dépendent que de toi. Tu voudras probablement un bloc repeat qui itère entre `500` et `1000` fois.
+Les nombres que tu choisis pour y arriver, c'est toi qui vois. Tu vas probablement avoir besoin d'un bloc de répétition qui tourne entre `500` et `1000` fois.
 
 ## Décompose le problème...
 
