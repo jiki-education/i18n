@@ -1,5 +1,5 @@
 ---
-title: "Liste des invités"
+title: "La liste des invités"
 description: "Compte combien de personnes dans la file d'attente ne figurent pas sur la liste des invités."
 en_md5: 6d87b63b656a720f470f66520b181586
 ---
