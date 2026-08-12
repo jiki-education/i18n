@@ -12,10 +12,12 @@
 
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
-import { INAPPLICABLE, REPO_ROOT, SENTINEL } from "./lib/constants.mjs";
-import { CONTENT_TYPES, CONTENT_TYPE_IDS, POST_TYPE_IDS } from "./lib/content-types.mjs";
-import { corpusItems, englishItems, englishRepo, unstartedItems } from "./lib/english.mjs";
+import { spawnSync } from "node:child_process";
+import { INAPPLICABLE, REPO_ROOT, SENTINEL, TARGET_LOCALES } from "./lib/constants.mjs";
+import { CONTENT_TYPES, CONTENT_TYPE_IDS, POST_TYPE_IDS, localPath } from "./lib/content-types.mjs";
+import { corpusItems, englishItems, englishPath, englishRepo, unstartedItems } from "./lib/english.mjs";
 import { pct } from "./coverage.mjs";
 import { buildPostCopy } from "./lib/post-copy.mjs";
 import { isUnreachablePluralKey, parsePluralKey, reachableCategories } from "./lib/plurals.mjs";
@@ -31,6 +33,7 @@ import {
   frontmatterValue,
   parseFrontmatter,
   parseVttNotes,
+  readJson,
   stampFrontmatter,
   stampVttNote,
   stubAgainst,
@@ -40,6 +43,7 @@ import {
 } from "./lib/files.mjs";
 import {
   ERROR,
+  WARN,
   FIELDS_COMPLETE,
   FIELDS_INCOMPLETE,
   FIELDS_NEED_REVIEW,
@@ -311,20 +315,29 @@ test("a translation with the wrong number of tags is a key-parity error", () => 
   assert.deepEqual(checkCatalog(PROJECT_EN, short), [
     { level: ERROR, message: "missing key: build-your-personal-homepage.tags.2" }
   ]);
+  // An extra ELEMENT stays blocking, unlike an extra key: an array's length is a
+  // shape fact, and a fourth tag is a tag the translator invented rather than one
+  // English is about to grow.
   const long = { "build-your-personal-homepage": { title: "T", description: "D", tags: ["a", "b", "c", "d"] } };
   assert.deepEqual(checkCatalog(PROJECT_EN, long), [
-    { level: ERROR, message: "key not in source: build-your-personal-homepage.tags.3" }
+    {
+      level: ERROR,
+      message: 'key not in source: build-your-personal-homepage.tags.3 (an extra element of English\'s array "build-your-personal-homepage.tags")'
+    }
   ]);
 });
 
 test("a translation that collapsed the array into one string is an error", () => {
   const joined = { "build-your-personal-homepage": { title: "T", description: "D", tags: "a, b, c" } };
-  assert.deepEqual(checkCatalog(PROJECT_EN, joined).map((i) => i.message).sort(), [
-    "key not in source: build-your-personal-homepage.tags",
-    "missing key: build-your-personal-homepage.tags.0",
-    "missing key: build-your-personal-homepage.tags.1",
-    "missing key: build-your-personal-homepage.tags.2"
-  ]);
+  const issues = checkCatalog(PROJECT_EN, joined);
+  assert.deepEqual(
+    issues.filter((i) => i.level === ERROR).map((i) => i.message).sort(),
+    [
+      "missing key: build-your-personal-homepage.tags.0",
+      "missing key: build-your-personal-homepage.tags.1",
+      "missing key: build-your-personal-homepage.tags.2"
+    ]
+  );
 });
 
 test("an array turned into an object has identical key parity, and is still caught", () => {
@@ -378,6 +391,122 @@ test("the stubbed array is a fresh one, not English's own", () => {
   stubAgainst(PROJECT_EN, {})["build-your-personal-homepage"].tags.push("leaked");
   assert.equal(PROJECT_EN["build-your-personal-homepage"].tags.length, 3);
 });
+
+// ------------------------------------------------- key parity is asymmetric
+
+// English and the catalogs deploy separately, so during a deploy they are out of
+// step in BOTH directions and a catalog has to be allowed to be a superset for a
+// while: a key translated ahead of its English, or one English has just dropped
+// while the old bundle is still served. Blocking on that makes the safe thing
+// impossible. A key English HAS and the target does not is the opposite: with
+// `fallbackLng: false` it renders the raw key name to a learner, so it blocks.
+
+console.log("\nkey parity is asymmetric:");
+
+const EXTRA_KEY_WARN =
+  "key not in source: settings.language.label (fine while English catches up mid-deploy; stale if English never had it)";
+
+test("a key the target has and English does not is a WARN, not a blocking error", () => {
+  const english = { settings: { theme: "Theme" } };
+  const target = { settings: { theme: "Téma", language: { label: "A nyelved" } } };
+  assert.deepEqual(checkCatalog(english, target), [{ level: WARN, message: EXTRA_KEY_WARN }]);
+});
+
+test("the WARN names the key, because that is what tells the two cases apart", () => {
+  // Ahead-of-English and left-behind-by-a-deletion are indistinguishable
+  // mechanically. A human reading the key name can tell instantly, so the name is
+  // the whole point of the message.
+  const issues = checkCatalog({ settings: { theme: "Theme" } }, { settings: { theme: "T", language: { label: "L" } } });
+  assert.ok(issues[0].message.includes("settings.language.label"));
+});
+
+test("a key English has and the target does not is still an ERROR", () => {
+  const english = { settings: { theme: "Theme", sound: "Sound" } };
+  assert.deepEqual(checkCatalog(english, { settings: { theme: "Téma" } }), [
+    { level: ERROR, message: "missing key: settings.sound" }
+  ]);
+});
+
+test("a MISSPELLED key still blocks, because the key it meant to be is missing", () => {
+  // The case the old ERROR was really catching. A typo leaves the real key absent,
+  // so it is reported as a missing key and blocks; the extra WARN sits beside it.
+  const english = { checks: { tooManyLines: "Too many lines" } };
+  const issues = checkCatalog(english, { checks: { tooManyLnies: "Túl sok sor" } });
+  assert.deepEqual(issues.filter((i) => i.level === ERROR), [{ level: ERROR, message: "missing key: checks.tooManyLines" }]);
+  assert.equal(issues.filter((i) => i.level === WARN).length, 1);
+});
+
+test("an extra key does not silence the order check on the keys around it", () => {
+  const english = { a: "A", b: "B" };
+  const scrambled = { b: "B", extra: "x", a: "A" };
+  const messages = checkCatalog(english, scrambled).map((i) => i.message);
+  assert.ok(messages.includes("key order differs from source (diffs will be noisy)"));
+  const inOrder = { a: "A", extra: "x", b: "B" };
+  assert.ok(!checkCatalog(english, inOrder).some((i) => i.message.startsWith("key order")));
+});
+
+test("an extra key is outside the fraction: it is nobody's remaining work", () => {
+  // The count that was wrong: a 1490-key English read `1491/1491` because the
+  // catalog's own keys were the denominator.
+  const english = { a: "A", b: "B" };
+  const target = { a: "hu", b: SENTINEL, ahead: "hu" };
+  assert.deepEqual(countSentinels(target, { english }), { total: 2, stubbed: 1, translated: 1, inapplicable: 0 });
+  // Without English there is no way to know, and the file's own keys are counted.
+  assert.deepEqual(countSentinels(target), { total: 3, stubbed: 1, translated: 2, inapplicable: 0 });
+});
+
+// The whole point of the WARN is that the catalog still reaches R2. Asserted
+// end to end rather than by reading publish's code: publishing is a separate
+// script with its own gaps machinery, and "it warns" would be worth nothing if
+// something over there refused the file anyway.
+//
+// Self-maintaining, and gated three ways: publish needs an English checkout and
+// the renderer, and the assertion needs a locale that actually holds an extra
+// key. Any of the three missing is a printed SKIP, never a silent pass.
+const PUBLISH_CHECKOUT = englishRepo("front-end", undefined, { optional: true });
+
+/** The first locale whose app catalog holds a key English does not, with the key. */
+function localeWithExtraAppKey() {
+  const english = flatten(readJson(englishPath("app-messages", null)));
+  for (const locale of TARGET_LOCALES) {
+    const file = localPath("app-messages", locale);
+    if (!fs.existsSync(file)) continue;
+    const extra = Object.keys(flatten(readJson(file))).filter((key) => !(key in english));
+    if (extra.length > 0) return { locale, key: extra[0] };
+  }
+  return null;
+}
+
+const extraKeyLocale = PUBLISH_CHECKOUT ? localeWithExtraAppKey() : null;
+
+if (!extraKeyLocale) {
+  console.log(
+    PUBLISH_CHECKOUT
+      ? "  SKIP  a catalog carrying a key English does not have still publishes (no locale holds one right now)"
+      : "  SKIP  a catalog carrying a key English does not have still publishes (no front-end checkout)"
+  );
+} else {
+  test("a catalog carrying a key English does not have still publishes, key included", () => {
+    const { locale, key } = extraKeyLocale;
+    const out = fs.mkdtempSync(path.join(os.tmpdir(), "jiki-publish-extra-key-"));
+    const run = spawnSync(process.execPath, [path.join(REPO_ROOT, "scripts", "publish.mjs"), locale, `--out-dir=${out}`], {
+      cwd: REPO_ROOT,
+      encoding: "utf8"
+    });
+    if (run.status !== 0 && /content-renderer/.test(`${run.stdout}${run.stderr}`)) {
+      console.log("  (renderer not installed; publish could not run)");
+      fs.rmSync(out, { recursive: true, force: true });
+      return;
+    }
+    assert.equal(run.status, 0, `publish ${locale} exited ${run.status}: ${run.stderr}`);
+
+    const dir = path.join(out, "static", "i18n", "app", locale);
+    const { hash } = readJson(path.join(dir, "current.json"));
+    const published = flatten(readJson(path.join(dir, `messages-${hash}.json`)));
+    assert.ok(key in published, `${key} was dropped from ${locale}'s published app catalog`);
+    fs.rmSync(out, { recursive: true, force: true });
+  });
+}
 
 // ---------------------------------------------------- the inapplicable key
 
