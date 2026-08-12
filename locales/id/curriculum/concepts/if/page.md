@@ -43,7 +43,7 @@ Kita menggunakan simbol untuk menuliskan perbandingan ini. Kamu mungkin sudah me
   height="400"
 />
 
-Ini membantu kita agar tidak tertukar dengan saat kita mengisi atau memperbarui variabel, ketika satu tanda sama dengan berarti masukkan ini ke dalam kotak. Ingat saja: tiga tanda sama dengan untuk membandingkan.
+Ini membantu kita agar tidak tertukar dengan saat kita mengisi atau memperbarui variabel, ketika satu tanda sama dengan berarti masukkan ini ke dalam kotak. Perlu diingat: tiga tanda sama dengan untuk membandingkan.
 
 Kamu juga bisa membandingkan string. Jadi `"hello"` sama dengan `"hello"`. Itu benar. Kedua string itu sama. Tapi hati-hati di sini, karena Jiki membandingkan setiap karakter (bahasa Inggris: _character_) di kedua string itu, di kedua lembar kertasnya. Jadi `"Hello"` dengan H besar tidak sama dengan `"hello"` dengan h kecil. Keduanya string yang berbeda. Membandingkan keduanya akan menghasilkan salah, karena H besar dan h kecil adalah karakter yang berbeda.
 
