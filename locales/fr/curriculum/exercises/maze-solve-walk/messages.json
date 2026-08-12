@@ -1,6 +1,6 @@
 {
   "errors": {
-    "walkExpectsNumber": "walk() attend un nombre de pas"
+    "walkExpectsNumber": "walk() doit recevoir un nombre de pas"
   },
   "describers": {
     "walk": "Fait avancer le personnage du nombre de pas indiqué"
@@ -11,7 +11,7 @@
   "tasks": {
     "solveMaze": {
       "name": "Guide le personnage jusqu'à la sortie du labyrinthe",
-      "description": "Guide le personnage dans le labyrinthe avec walk(), turnLeft() et turnRight() pour atteindre la case cible verte."
+      "description": "Traverse le labyrinthe en utilisant walk(), turnLeft() et turnRight() pour atteindre la case cible verte."
     }
   },
   "scenarios": {
@@ -23,12 +23,12 @@
   "hints": {
     "moveNotWorking": {
       "question": "Pourquoi est-ce que `move()` ne fonctionne plus ?",
-      "answer": "Chaque exercice de Jiki propose des fonctions différentes. Dans cet exercice, tu disposes de la fonction `walk(...)`. Remplace le `n` par le nombre de pas que tu veux faire. Ainsi, `walk(1)` fait exactement la même chose que ce que `move()` faisait la dernière fois."
+      "answer": "Chaque exercice de Jiki propose des fonctions différentes à utiliser. Dans cet exercice, tu disposes de la fonction `walk(...)`. Remplace le `n` par le nombre de pas que tu veux faire. Ainsi, `walk(1)` fait exactement la même chose que ce que faisait `move()` la dernière fois."
     }
   },
   "functions": {
     "walk": {
-      "description": "Déplace le personnage **vers l'avant du nombre de pas indiqué** dans la direction actuelle. Chaque pas fait avancer d'une case. Le personnage s'arrête et signale une erreur s'il heurte un mur.",
+      "description": "Fait avancer le personnage **du nombre de pas indiqué** dans la direction actuelle. Chaque pas fait avancer d'une case. Le personnage s'arrêtera et signalera une erreur s'il heurte un mur.",
       "category": "Déplacement"
     },
     "turnLeft": {
