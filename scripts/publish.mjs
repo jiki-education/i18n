@@ -881,9 +881,20 @@ async function main() {
   // everything the artifacts need. They are copied rather than synced, since
   // `--size-only` compares byte counts and one hash is exactly as long as
   // another, so a sync would skip the single object whose whole job is to
-  // change. And they carry a short TTL with a long stale-while-revalidate, so
-  // the steady state is an edge hit and a republish propagates in about a
-  // minute.
+  // change.
+  //
+  // They carry a 30 second TTL and NO stale-while-revalidate. Revalidating a
+  // pointer is nearly free: it is a 22 byte object, the conditional request
+  // normally comes back 304, and the expensive object it names is immutable and
+  // already cached for a year. So there is no origin latency here worth insuring
+  // against, and the insurance was not free. Under
+  // `stale-while-revalidate=86400` the request that finds the pointer stale is
+  // served the OLD hash and the refresh happens behind it, so a quiet edge can
+  // sit on a superseded catalog for up to a day. What that looks like is a
+  // learner reading raw key names where copy should be, because a catalog older
+  // than the running front-end is missing whatever keys the front-end has since
+  // started asking for. That is the failure mode this trades away, and it is
+  // worth one conditional request per edge per half minute.
   //
   // Artifacts land before pointers, so a reader can never follow a pointer to an
   // object that is not there yet.
@@ -907,7 +918,7 @@ async function main() {
       `--cache-control 'public, max-age=31536000, immutable' --size-only ` +
       `--exclude '*/current.json' --exclude '*completeness.json'`,
     `aws s3 cp dist/static s3://${R2_BUCKET}/static --endpoint-url ${R2_ENDPOINT} --recursive ` +
-      `--cache-control 'public, max-age=60, stale-while-revalidate=86400' ` +
+      `--cache-control 'public, max-age=30' ` +
       `--exclude '*' --include '*/current.json'`,
     `aws s3 cp dist/static s3://${R2_BUCKET}/static --endpoint-url ${R2_ENDPOINT} --recursive ` +
       `--cache-control 'no-cache, must-revalidate' ` +
