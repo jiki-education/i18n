@@ -2,7 +2,7 @@
   "tasks": {
     "validateBasicIsbn": {
       "name": "Valide un ISBN simple",
-      "description": "Écris une fonction appelée isValidIsbn qui prend une string ISBN-10 et renvoie true si elle est valide, false sinon. Les ISBN-10 contiennent des tirets, qu'il faut sauter. Multiplie chaque chiffre par un poids qui décroît de 10 à 1, additionne le tout, et vérifie si le total est divisible par 11."
+      "description": "Écris une fonction appelée isValidIsbn qui prend une string ISBN-10 et renvoie true si elle est valide, false sinon. Les ISBN-10 contiennent des tirets, qu'il faut ignorer. Multiplie chaque chiffre par un poids qui décroît de 10 à 1, additionne le tout, et vérifie si le total est divisible par 11."
     },
     "handleXCheckDigit": {
       "name": "Gère le X comme chiffre de contrôle",
@@ -10,11 +10,11 @@
     },
     "handleEdgeCases": {
       "name": "Gère les cas limites",
-      "description": "Rends ta fonction robuste : gère les ISBN sans tirets, rejette les caractères invalides, rejette un X ailleurs qu'en dernière position, et assure-toi que 10 chiffres exactement sont traités."
+      "description": "Rends ta fonction robuste : gère les ISBN sans tirets, rejette les caractères invalides, rejette un X ailleurs qu'en dernière position, et veille à traiter exactement 10 chiffres."
     },
     "useContinue": {
-      "name": "Bonus : saute les tirets avec continue",
-      "description": "Plutôt que de ne travailler que lorsqu'un caractère est un chiffre, utilise continue pour sauter directement les tirets et passer au caractère suivant."
+      "name": "Bonus : ignorer les tirets avec `continue`",
+      "description": "Plutôt que de ne travailler que lorsqu'un caractère est un chiffre, utilise `continue` pour sauter directement les tirets et passer au caractère suivant."
     }
   },
   "scenarios": {

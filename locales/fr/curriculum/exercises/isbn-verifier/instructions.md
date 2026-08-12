@@ -46,6 +46,6 @@ Pour en savoir plus, consulte la <a href="/concepts/type-conversion" target="_bl
 
 Comme dans l'exercice précédent, il existe de nombreuses façons valables de résoudre cet exercice, mais la solution qu'on attend de toi utilise une instruction `continue`.
 
-Le scénario bonus te met au défi de le résoudre en 22 lignes de code. Il existe des solutions plus courtes, mais si tu tiens en 22 lignes, tu as déjà fait un beau travail d'optimisation.
+Le scénario bonus te met au défi de le résoudre en 22 lignes de code. Il y a des solutions plus courtes, mais si la tienne tiens en 22 lignes, tu auras déjà fait un beau travail d'optimisation.
 
 Amuse-toi bien !
