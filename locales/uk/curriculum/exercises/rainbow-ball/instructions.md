@@ -6,7 +6,7 @@ en_md5: 501aa30e85d8fceb38890c72be4a0b87
 
 Завдання цієї вправи: створити мʼячик, який випадково стрибає полотном, малюючи за собою райдугу.
 
-Ось приблизно як це має виглядати:
+Це матиме приблизно такий вигляд.
 
 <img src="/static/images/exercise-assets/rainbow-ball/example.gif" alt="Анімований райдужний мʼячик стрибає полотном, залишаючи кольоровий слід" style="width: 100%; max-width: 200px; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 5px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); margin-bottom: 8px;" />
 
