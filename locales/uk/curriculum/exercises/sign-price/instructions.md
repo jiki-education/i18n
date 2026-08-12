@@ -11,4 +11,4 @@ en_md5: 67d90aae9a896a879c20956e9afc9270
 - `signPrice("Burgers")` (7 літер) має повернути `"That will cost $84"`
 - `signPrice("Frank's Hotdogs")` (14 літер, пробіл пропущено) має повернути `"That will cost $168"`
 
-Гарної розваги!
+Розважайтеся!
