@@ -128,11 +128,20 @@ first locale holds a file for it.
 Exclusions are explicit, in `corpus.json`. An item listed there is dropped from
 the derived corpus whatever is on disk, and the reason is written beside it.
 
-`completeness.json`'s denominator is a different number and stays a different
-number: it is the size of the **real** English corpus, every item English exists
-for, read straight from `.source/`. Measuring completeness against the corpus
-would ask "have you translated everything you have started", which any locale can
-satisfy by starting one thing.
+An exclusion binds on **both** sides, and that is the whole of it: English
+discovery does not offer the item (`englishCorpusSize`), and locale discovery does
+not list a file for it either (`listItems`), so nothing counts it, validates it or
+publishes it. One reader, `scripts/lib/exclusions.mjs`, so the two sides cannot
+disagree. A translated file left behind for an excluded item is inert, never an
+error, and comes back into scope the moment the entry is deleted.
+
+`completeness.json`'s denominator is otherwise a different number and stays a
+different number: it is the size of the **real** English corpus, every item English
+exists for, read straight from `.source/`. Measuring completeness against the
+derived corpus would ask "have you translated everything you have started", which
+any locale can satisfy by starting one thing. An excluded item is the one thing it
+does not count, because it is English nobody is expected to translate, and counting
+it would put completeness out of reach by declaration rather than by omission.
 
 ## What this deletes
 

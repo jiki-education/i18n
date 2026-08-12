@@ -1,4 +1,273 @@
 {
-  "$comment": "Explicit exclusions from the derived corpus. The corpus itself is not listed anywhere: it is every item English exists for in .source/ that at least one target locale already holds a translation of. An entry here drops an item from that whatever is on disk, and must say why. See ENGLISH-SOURCE.md.",
-  "exclude": []
+  "$comment": [
+    "Explicit exclusions from the derived corpus. The corpus itself is not listed anywhere:",
+    "it is every item English exists for in .source/ that at least one target locale already",
+    "holds a translation of. An entry here drops an item from that whatever is on disk, and",
+    "must say why. See ENGLISH-SOURCE.md.",
+    "",
+    "An exclusion binds on BOTH sides: the item stops counting towards completeness, and it",
+    "stops being validated and published. A translated file for it stays on disk, inert, and",
+    "comes back into scope the moment its entry is deleted."
+  ],
+  "$reasons": {
+    "not-yet-live exercise": [
+      "TEMPORARY. This exercise is written in the front-end curriculum but is not part of the",
+      "course yet: it sits past the last shipped level, so no learner can reach it and no locale",
+      "is expected to translate it. This is not a judgement that it is untranslated, and it is",
+      "not a permanent opt-out.",
+      "",
+      "WHEN THE EXERCISE GOES LIVE, DELETE ITS LINES HERE, in the same change that adds it to the",
+      "course. An excluded exercise is invisible to completeness, so a live one left listed here",
+      "would let a locale be declared complete while that exercise renders untranslated (a",
+      "catalog has no English fallback: a learner sees raw key names). That is the risk this",
+      "trades against, deliberately, and only for as long as the exercise is unreachable.",
+      "",
+      "The live set is the 'Stage 3 exercise queue' in the translator repo's orchestrator.md,",
+      "which is every exercise up to and including exercise/formal-dinner. It is the source of",
+      "truth and is deliberately not copied here: these entries are the complement of it, so",
+      "this list is what needs regenerating when that queue moves, and nothing else."
+    ]
+  },
+  "exclude": [
+    {
+      "type": "exercise-instructions",
+      "slug": "alien-detector",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "alien-detector",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "anagram",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "anagram",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "boundaried-ball",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "boundaried-ball",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "chop-shop",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "chop-shop",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "emoji-collector",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "emoji-collector",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "extract-words",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "extract-words",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "llm-response",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "llm-response",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "lookup-time",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "lookup-time",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "lunchbox",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "lunchbox",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "matching-socks",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "matching-socks",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "meal-prep",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "meal-prep",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "nucleotide-count",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "nucleotide-count",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "protein-translation",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "protein-translation",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "rna-transcription",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "rna-transcription",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "scrabble-score",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "scrabble-score",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "sieve",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "sieve",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "smashing-blocks",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "smashing-blocks",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "spotify",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "spotify",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "stars",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "stars",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "tic-tac-toe",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "tic-tac-toe",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "word-count",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "word-count",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "wordle-process-game",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "wordle-process-game",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "wordle-process-guess",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "wordle-process-guess",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "wordle-solver",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "wordle-solver",
+      "reason": "not-yet-live exercise"
+    }
+  ]
 }

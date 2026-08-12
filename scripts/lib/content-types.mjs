@@ -54,6 +54,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { REPO_ROOT, SOURCE_LOCALE, SOURCE_REPO_LOCALE, fail } from "./constants.mjs";
+import { isExcluded } from "./exclusions.mjs";
 
 export const CONTENT_TYPES = {
   "app-messages": {
@@ -522,11 +523,19 @@ function slugsUnder(root, depth) {
 /**
  * Every item of one type present for one locale, as { type, locale, slug, path }.
  * Discovery is by what is on disk, so a newly synced item needs no registration.
+ *
+ * With one subtraction: an item corpus.json declares out of the corpus is not
+ * listed even when a file for it exists. An exclusion has to bind on both sides
+ * or it binds on neither, because every report and every published index compares
+ * this list against the English one (see `englishCorpusSize`). A leftover file for
+ * an excluded item is therefore inert rather than an error: it stays on disk,
+ * untouched, and comes back into scope the moment the exclusion is deleted.
  */
 export function listItems(typeId, locale) {
   const type = contentType(typeId);
   if (!type.slugged) {
     const file = localPath(typeId, locale);
+    if (isExcluded(typeId, null)) return [];
     return fs.existsSync(file) ? [{ type: typeId, locale, slug: null, path: file }] : [];
   }
 
@@ -535,6 +544,7 @@ export function listItems(typeId, locale) {
   const root = path.join(REPO_ROOT, "locales", locale, prefix);
 
   return slugsUnder(root, type.slugDepth ?? 1)
+    .filter((slug) => !isExcluded(typeId, slug))
     .map((slug) => ({ type: typeId, locale, slug, path: localPath(typeId, locale, slug) }))
     .filter((item) => fs.existsSync(item.path));
 }
