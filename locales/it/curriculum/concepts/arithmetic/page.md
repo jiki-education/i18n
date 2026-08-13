@@ -20,7 +20,10 @@ Disegniamo un rettangolo centrato nell'area di disegno, con 10 di margine a sini
 
 Quando disegniamo un rettangolo, abbiamo bisogno di conoscerne il `left` (sinistra), il `top` (alto), la `width` (larghezza) e la `height` (altezza), oltre al suo colore. Quindi possiamo iniziare scrivendo tutto questo.
 
-E ora dobbiamo effettivamente calcolare quali dovrebbero essere il suo `left`, il suo `top`, la sua `width` e la sua `height`. Quindi impostiamoli. `left` è 10. `top` è 20. La `width`, beh, la `width` è la dimensione dell'area di disegno, che è 100, meno il 10 a sinistra e il 10 a destra, quindi fa 80. E la `height` è l'altezza dell'area di disegno, che è sempre 100, meno il 20 in alto e il 20 in basso, quindi 60.
+Ora dobbiamo calcolare i valori del rettangolo: posizione e dimensioni. Impostiamo quindi i parametri.
+Il valore di `left` è 10, mentre `top` è 20.
+La `width` corrisponde alla larghezza dell'area di disegno (100), meno i 10 di margine a sinistra e i 10 a destra: in totale 80.
+La `height` è l'altezza dell'area (sempre 100), meno i 20 di margine superiore e i 20 inferiori: quindi 60.
 
 ```javascript
 let left = 10
