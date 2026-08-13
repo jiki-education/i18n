@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 9d89d6259cdafb0e4850d658df9bd781
+
+00:00:00.140 --> 00:00:02.440
+Bon retour parmi nous. Tu arrives à une étape
+
+00:00:02.520 --> 00:00:05.280
+vraiment importante du cours. Jusqu'ici, on a
+
+00:00:05.440 --> 00:00:08.060
+utilisé des nombres, des strings et des booléens,
+
+00:00:08.120 --> 00:00:10.500
+le terme savant pour vrai et faux, et
+
+00:00:10.540 --> 00:00:13.350
+on appelle tout ceci des types de données.
+
+00:00:13.400 --> 00:00:16.260
+Dans cette vidéo, on va ajouter notre premier
+
+00:00:16.340 --> 00:00:20.080
+type de données composé. C'est un type qui peut
+
+00:00:20.180 --> 00:00:23.300
+contenir plusieurs choses, pas juste une seule,
+
+00:00:23.380 --> 00:00:26.780
+et ce type de données s'appelle un tableau.
+
+00:00:28.220 --> 00:00:30.280
+Quand tu entends le mot tableau, je veux
+
+00:00:30.320 --> 00:00:33.060
+que tu penses à une chaîne physique
+
+00:00:33.440 --> 00:00:36.800
+qui relie plein de choses entre elles. Ces choses
+
+00:00:36.820 --> 00:00:39.520
+peuvent être n'importe quoi : strings, nombres, booléens,
+
+00:00:40.100 --> 00:00:42.360
+même d'autres tableaux, même des choses que tu
+
+00:00:42.440 --> 00:00:44.280
+n'as pas encore apprises, mais ne nous en
+
+00:00:44.320 --> 00:00:47.440
+occupons pas pour l'instant. Tout ce qui se trouve
+
+00:00:47.500 --> 00:00:50.320
+dans cette chaîne est ordonné, dans l'ordre de l'enchaînement.
+
+00:00:51.180 --> 00:00:54.860
+Donc, un tableau contient plein de choses, mais
+
+00:00:54.920 --> 00:00:58.800
+c'est un seul et unique tout, un seul
+
+00:00:58.840 --> 00:01:01.440
+tableau avec plein d'éléments à l'intérieur.
+
+00:01:03.320 --> 00:01:06.090
+Jiki peut prendre ce tableau, cette chaîne, et
+
+00:01:06.160 --> 00:01:08.060
+le mettre dans une boîte, exactement comme il
+
+00:01:08.120 --> 00:01:09.300
+peut y mettre une string
+
+00:01:09.320 --> 00:01:11.580
+ou un nombre. Il peut le glisser
+
+00:01:11.600 --> 00:01:13.340
+dans l'entonnoir d'une machine.
+
+00:01:13.900 --> 00:01:15.320
+Il peut le récupérer sur le
+
+00:01:15.330 --> 00:01:18.860
+tapis roulant. Ce tableau est une seule chose,
+
+00:01:18.900 --> 00:01:20.800
+et Jiki le manipule exactement de la même
+
+00:01:21.280 --> 00:01:23.840
+façon que les strings, les nombres et tout
+
+00:01:23.880 --> 00:01:27.920
+ce que tu as vu jusqu'ici. En code, un tableau
+
+00:01:28.020 --> 00:01:30.240
+ressemble d'ailleurs un peu à une chaîne, lui aussi.
+
+00:01:30.300 --> 00:01:32.420
+Il a un crochet à chaque extrémité,
+
+00:01:32.880 --> 00:01:34.770
+puis plein d'éléments enchaînés les uns aux autres,
+
+00:01:34.800 --> 00:01:38.420
+séparés par des virgules. Par exemple, si
+
+00:01:38.440 --> 00:01:40.590
+on voulait créer un tableau avec les noms
+
+00:01:40.600 --> 00:01:42.480
+de quelques-uns de nos mentors,
+
+00:01:43.100 --> 00:01:46.440
+on pourrait préparer une boîte appelée `mentors`
+
+00:01:46.460 --> 00:01:49.260
+et mettre cette chaîne à l'intérieur. On
+
+00:01:49.280 --> 00:01:52.900
+écrirait `let mentors =`, exactement comme
+
+00:01:53.140 --> 00:01:55.300
+pour n'importe quelle autre boîte, puis
+
+00:01:55.320 --> 00:01:57.860
+on aurait un crochet ouvrant, plein
+
+00:01:57.920 --> 00:02:00.480
+d'éléments, leurs noms séparés par des virgules,
+
+00:02:00.500 --> 00:02:02.700
+et enfin un crochet fermant. Quand Jiki voit
+
+00:02:02.760 --> 00:02:04.730
+ça, il va chercher quatre bouts de
+
+00:02:04.820 --> 00:02:07.760
+papier, un pour chaque nom, puis il prend
+
+00:02:07.840 --> 00:02:10.650
+une nouvelle chaîne, y attache le tout,
+
+00:02:10.680 --> 00:02:12.800
+et met cette chaîne dans la boîte
+
+00:02:12.860 --> 00:02:16.580
+`mentors`. Tu peux mettre ce que tu veux dans un tableau :
+
+00:02:16.660 --> 00:02:19.820
+strings, nombres, booléens, et même un mélange de tout ça.
+
+00:02:19.860 --> 00:02:22.900
+Voici différents exemples de tableaux parfaitement valides.
+
+00:02:24.800 --> 00:02:27.320
+Tu peux aussi créer un tableau vide.
+
+00:02:27.380 --> 00:02:30.080
+C'est juste une chaîne sans élément. Ça reste
+
+00:02:30.140 --> 00:02:31.760
+quand même une chaîne à part entière,
+
+00:02:31.820 --> 00:02:33.800
+toujours avec ses deux extrémités. Simplement,
+
+00:02:33.860 --> 00:02:36.160
+elle ne contient aucun élément. Mais
+
+00:02:36.200 --> 00:02:38.400
+tu peux quand même mettre ce tableau vide
+
+00:02:38.420 --> 00:02:40.260
+dans une boîte, le récupérer et
+
+00:02:40.280 --> 00:02:44.120
+l'utiliser plus tard. Tu sais donc créer un
+
+00:02:44.160 --> 00:02:46.850
+tableau avec la syntaxe des crochets, mais
+
+00:02:46.860 --> 00:02:48.820
+comment est-ce qu'on les utilise concrètement ?
+
+00:02:48.880 --> 00:02:50.910
+Comment vérifier ce qu'ils contiennent
+
+00:02:50.980 --> 00:02:53.829
+et en récupérer des choses ? Eh bien, exactement
+
+00:02:53.860 --> 00:02:55.410
+de la même façon que quand on voulait
+
+00:02:55.440 --> 00:02:58.040
+récupérer des lettres d'une string. On peut utiliser
+
+00:02:58.100 --> 00:03:00.980
+la syntaxe des crochets avec des nombres à l'intérieur.
+
+00:03:01.020 --> 00:03:03.020
+Alors revenons à notre tableau de mentors.
+
+00:03:03.060 --> 00:03:05.560
+Si on veut récupérer le premier, on écrit `mentors`
+
+00:03:05.800 --> 00:03:08.720
+crochet zéro. Souviens-toi qu'en JavaScript,
+
+00:03:08.880 --> 00:03:13.280
+on compte à partir de zéro. Et on peut aussi
+
+00:03:13.290 --> 00:03:15.190
+parcourir un tableau exactement comme
+
+00:03:15.220 --> 00:03:18.460
+on a parcouru des strings avant, avec `for-of`.
+
+00:03:19.400 --> 00:03:21.580
+Les tableaux fonctionnent exactement de la même façon.
+
+00:03:21.680 --> 00:03:23.980
+Cette fois, la seule différence, c'est qu'au lieu
+
+00:03:24.040 --> 00:03:26.720
+de récupérer une lettre, on récupère l'élément
+
+00:03:26.780 --> 00:03:28.900
+du tableau, quel qu'il soit. Dans cet exemple,
+
+00:03:28.940 --> 00:03:31.620
+c'est le nom du mentor. Donc, la première fois
+
+00:03:31.680 --> 00:03:34.280
+qu'on remercie quelqu'un, on remercie `"DJ"`. La deuxième
+
+00:03:34.320 --> 00:03:38.400
+fois, on remercie `"Becky"`, et ainsi de suite. On peut
+
+00:03:38.460 --> 00:03:41.500
+aussi utiliser la propriété `length` sur les tableaux,
+
+00:03:41.560 --> 00:03:43.940
+exactement comme on l'a appris avec les strings.
+
+00:03:43.980 --> 00:03:45.980
+Si on a un tableau avec quatre strings
+
+00:03:46.100 --> 00:03:50.040
+dans la boîte `mentors` et qu'on écrit `mentors.length`, ça renverra quatre.
+
+00:03:50.980 --> 00:03:53.500
+Et on peut utiliser `includes` exactement de la
+
+00:03:53.520 --> 00:03:56.180
+même manière sur les tableaux. On peut écrire `mentors`
+
+00:03:56.540 --> 00:03:59.880
+point `includes`, parenthèses `"DJ"`, et ça renverra `true`. Mais si
+
+00:03:59.960 --> 00:04:03.600
+on écrit `mentors.includes("Frank")`, ça renverra `false`.
+
+00:04:05.080 --> 00:04:07.360
+Tout fonctionne exactement pareil qu'avec les strings.
+
+00:04:07.420 --> 00:04:09.640
+Simplement, là, on travaille avec les éléments
+
+00:04:09.660 --> 00:04:12.160
+d'un tableau, et non pas avec les lettres d'une string.
+
+00:04:14.140 --> 00:04:17.160
+Les deux prochains exercices vont te faire
+
+00:04:17.200 --> 00:04:19.540
+essayer ces différentes techniques. Tu devras
+
+00:04:19.560 --> 00:04:21.130
+réfléchir à ce dont tu as besoin :
+
+00:04:21.300 --> 00:04:23.680
+récupérer un seul élément du tableau avec
+
+00:04:23.720 --> 00:04:26.220
+la syntaxe des crochets, ou bien
+
+00:04:26.280 --> 00:04:28.820
+parcourir tous les éléments pour les vérifier
+
+00:04:28.880 --> 00:04:31.860
+ou les traiter un par un. Comme toujours, si
+
+00:04:31.920 --> 00:04:34.040
+tu bloques, regarde les indices, et
+
+00:04:34.080 --> 00:04:34.860
+à très vite !

@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 2a23c8bcc4af2ee7d5bd8d5613681427
+
+00:00:00.200 --> 00:00:03.800
+Content de te revoir. J'espère qu'utiliser les machines
+
+00:00:03.860 --> 00:00:07.160
+commence à te sembler assez facile.
+
+00:00:07.180 --> 00:00:09.140
+Jusqu'ici, tous les types de machines
+
+00:00:09.380 --> 00:00:12.160
+que tu as utilisés, move, turn left, shoot,
+
+00:00:12.240 --> 00:00:15.260
+ont toujours fait la même chose. Donc à chaque fois
+
+00:00:15.340 --> 00:00:18.520
+que tu appelles move, ton personnage avance. À chaque
+
+00:00:18.560 --> 00:00:22.010
+fois que tu utilises shoot, il tire. Mais l'une
+
+00:00:22.080 --> 00:00:25.560
+des choses les plus puissantes avec les machines,
+
+00:00:25.580 --> 00:00:27.520
+et avec les fonctions,
+
+00:00:27.560 --> 00:00:30.810
+c'est que beaucoup d'entre elles te laissent y mettre
+
+00:00:31.000 --> 00:00:34.380
+des informations qui changent ce qu'elles font. Prenons un
+
+00:00:34.420 --> 00:00:38.420
+exemple. Jusqu'ici, on a vu des machines qui
+
+00:00:38.460 --> 00:00:40.480
+ressemblent un peu à des boîtes,
+
+00:00:40.490 --> 00:00:43.360
+comme cette machine move (avancer). Mais certaines
+
+00:00:43.540 --> 00:00:47.200
+machines ont des entonnoirs, comme la machine walk (marcher).
+
+00:00:47.240 --> 00:00:49.260
+Elle fonctionne comme la machine move :
+
+00:00:49.280 --> 00:00:52.780
+elle fait avancer le personnage. Sauf que Jiki peut
+
+00:00:52.860 --> 00:00:56.320
+utiliser l'entonnoir pour préciser de combien de pas
+
+00:00:56.340 --> 00:00:59.340
+ton personnage doit avancer. Ainsi, au lieu d'utiliser
+
+00:00:59.440 --> 00:01:02.120
+trois fois de suite la fonction move,
+
+00:01:02.160 --> 00:01:05.920
+move, move, move, tu peux maintenant
+
+00:01:05.960 --> 00:01:08.620
+utiliser la fonction walk et demander à Jiki
+
+00:01:08.640 --> 00:01:11.200
+de mettre le nombre trois dans la machine.
+
+00:01:12.960 --> 00:01:15.320
+Maintenant, pour faire ça dans le code,
+
+00:01:15.380 --> 00:01:17.260
+on écrit le nom de la fonction,
+
+00:01:17.320 --> 00:01:19.920
+ici walk, et on ouvre toujours la parenthèse.
+
+00:01:19.940 --> 00:01:23.740
+Mais avant de fermer la parenthèse, on indique
+
+00:01:23.780 --> 00:01:25.920
+ce qu'on veut donner comme entrée.
+
+00:01:25.960 --> 00:01:27.690
+Ici, l'entrée doit être trois,
+
+00:01:27.720 --> 00:01:30.920
+pour dire à Jiki d'avancer de trois pas avec walk.
+
+00:01:30.960 --> 00:01:34.240
+Quand Jiki voit ça, il prend le nombre trois,
+
+00:01:34.260 --> 00:01:35.930
+que tu peux imaginer
+
+00:01:35.960 --> 00:01:38.310
+comme une petite pièce de monnaie, et il le
+
+00:01:38.340 --> 00:01:40.300
+glisse dans l'entonnoir de la machine
+
+00:01:40.320 --> 00:01:43.200
+avant de tourner la manivelle pour la mettre
+
+00:01:43.220 --> 00:01:46.660
+en marche. Dans un instant, tu vas faire
+
+00:01:46.700 --> 00:01:49.660
+des exercices où tu dessines des rectangles
+
+00:01:49.700 --> 00:01:53.000
+et des cercles. Pour ces fonctions, tu dois demander
+
+00:01:53.080 --> 00:01:57.110
+à Jiki d'insérer plusieurs nombres différents, qui précisent
+
+00:01:57.180 --> 00:01:59.380
+par exemple à quelle distance du haut
+
+00:01:59.420 --> 00:02:00.840
+elle doit se trouver,
+
+00:02:00.920 --> 00:02:03.160
+à quelle distance de la gauche, la largeur,
+
+00:02:03.240 --> 00:02:07.140
+la hauteur. Dans le monde de Jiki, ce sont
+
+00:02:07.160 --> 00:02:10.120
+simplement des entonnoirs différents, un pour chacun
+
+00:02:10.160 --> 00:02:12.880
+de ces nombres. Donc, dans notre code, on écrit
+
+00:02:12.900 --> 00:02:15.120
+chaque nombre en mettant une virgule
+
+00:02:15.200 --> 00:02:18.460
+entre eux. Le nom de la fonction, une
+
+00:02:18.540 --> 00:02:20.980
+parenthèse, un nombre pour chaque entrée,
+
+00:02:21.300 --> 00:02:24.180
+le tout séparé par des virgules, et on ferme
+
+00:02:24.260 --> 00:02:27.380
+la parenthèse. Si tu essaies d'utiliser une
+
+00:02:27.420 --> 00:02:29.810
+fonction avec le mauvais nombre d'entrées,
+
+00:02:29.840 --> 00:02:31.620
+tu obtiens une erreur. Par exemple,
+
+00:02:31.660 --> 00:02:33.660
+si tu mets une entrée dans une machine
+
+00:02:33.680 --> 00:02:36.080
+qui n'a pas d'entonnoir, Jiki te dira
+
+00:02:36.140 --> 00:02:38.060
+que ce n'est pas possible.
+
+00:02:38.120 --> 00:02:39.640
+Et si tu utilises une machine
+
+00:02:39.680 --> 00:02:41.840
+qui a un entonnoir sans dire à Jiki
+
+00:02:41.880 --> 00:02:43.920
+quoi y mettre, il s'arrêtera aussi
+
+00:02:44.000 --> 00:02:46.960
+pour se plaindre. Essaie, si tu te sens
+
+00:02:47.020 --> 00:02:50.380
+l'âme rebelle, et regarde ce qui se passe. Tu vas
+
+00:02:50.440 --> 00:02:52.370
+faire beaucoup d'erreurs de ce genre
+
+00:02:52.400 --> 00:02:54.940
+à mesure que les choses se compliquent. Essaie
+
+00:02:54.980 --> 00:02:57.170
+de ne pas stresser ni de te décourager :
+
+00:02:57.200 --> 00:03:00.080
+on apprend tous en faisant des erreurs. C'est
+
+00:03:00.100 --> 00:03:03.600
+littéralement le moyen le plus rapide pour que notre cerveau
+
+00:03:03.660 --> 00:03:06.320
+assimile les choses. Tout le monde fait ces erreurs,
+
+00:03:06.600 --> 00:03:10.340
+on est tous partis de zéro, alors pas de panique.
+
+00:03:10.860 --> 00:03:12.910
+Avant de te lancer, encore une chose.
+
+00:03:13.780 --> 00:03:16.400
+Dans ces exercices, tu vas parfois voir des lignes
+
+00:03:16.500 --> 00:03:19.660
+qui commencent par deux barres obliques. On les
+
+00:03:19.700 --> 00:03:23.040
+appelle des commentaires. Ce sont des notes privées,
+
+00:03:23.140 --> 00:03:26.420
+juste pour toi, que Jiki ignore complètement. Si
+
+00:03:26.480 --> 00:03:28.500
+Jiki voit une ligne qui commence par ces
+
+00:03:28.540 --> 00:03:31.130
+deux barres obliques, il la saute et
+
+00:03:31.140 --> 00:03:32.670
+passe directement à la ligne
+
+00:03:32.700 --> 00:03:36.320
+suivante. Ces commentaires te donnent un moyen
+
+00:03:36.340 --> 00:03:38.650
+d'écrire tes propres notes. Ils sont
+
+00:03:38.700 --> 00:03:40.800
+utiles pour te rappeler comment ça marche.
+
+00:03:41.580 --> 00:03:43.430
+Souvent, j'écris des commentaires
+
+00:03:43.560 --> 00:03:45.630
+pour toi : quand tu commences un exercice,
+
+00:03:45.660 --> 00:03:48.120
+ils te suggèrent où écrire ton code
+
+00:03:48.160 --> 00:03:50.109
+ou comment résoudre quelque chose.
+
+00:03:50.160 --> 00:03:51.880
+Mais n'hésite pas à ajouter
+
+00:03:51.980 --> 00:03:55.480
+aussi tes propres commentaires. Au fur et à mesure
+
+00:03:55.520 --> 00:03:58.310
+que tu avances, regarde en bas des instructions :
+
+00:03:58.380 --> 00:04:00.980
+tu y trouveras des informations sur les fonctions
+
+00:04:01.020 --> 00:04:03.280
+que tu peux utiliser, et les entrées exactes
+
+00:04:03.320 --> 00:04:05.520
+que tu dois y mettre. Amuse-toi bien
+
+00:04:05.600 --> 00:04:07.020
+à tester ces entrées, on se revoit
+
+00:04:07.060 --> 00:04:07.740
+très vite.

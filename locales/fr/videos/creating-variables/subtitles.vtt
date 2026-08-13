@@ -1,0 +1,396 @@
+WEBVTT
+
+NOTE en_md5 9ba87f0c52699c431570792318049b06
+
+00:00:00.220 --> 00:00:04.109
+Bon retour parmi nous. Tu sais maintenant utiliser
+
+00:00:04.280 --> 00:00:07.870
+les fonctions et les boucles repeat avec assurance.
+
+00:00:07.900 --> 00:00:10.080
+Dans cette session, on passe donc à un autre sujet
+
+00:00:10.100 --> 00:00:12.610
+absolument essentiel, que tu utiliseras
+
+00:00:12.640 --> 00:00:14.880
+sans doute dans tous les programmes que tu écriras :
+
+00:00:14.940 --> 00:00:19.220
+les variables. Les variables nous permettent
+
+00:00:19.460 --> 00:00:22.700
+de stocker des informations. Quand on code, on a
+
+00:00:22.760 --> 00:00:25.420
+souvent besoin de garder un nombre ou une string
+
+00:00:25.500 --> 00:00:27.780
+pour plus tard, et c'est justement à ça
+
+00:00:27.800 --> 00:00:30.480
+que servent les variables. Prenons du recul dans
+
+00:00:30.580 --> 00:00:32.880
+l'entrepôt de Jiki : tu verras qu'il a
+
+00:00:32.940 --> 00:00:35.780
+un deuxième ensemble d'étagères. On connaît déjà
+
+00:00:35.800 --> 00:00:37.160
+les premières étagères, celles qui portent
+
+00:00:37.180 --> 00:00:39.680
+les fonctions, ces petites machines comme move
+
+00:00:39.700 --> 00:00:42.140
+et rectangle. Mais sur ce deuxième ensemble
+
+00:00:42.160 --> 00:00:44.710
+d'étagères, à la place des machines, tu vois plein
+
+00:00:44.760 --> 00:00:47.860
+de boîtes, et ces boîtes sont ce qu'on
+
+00:00:47.900 --> 00:00:50.080
+appelle des variables. Tu peux demander à Jiki
+
+00:00:50.140 --> 00:00:52.460
+d'y ranger n'importe quoi, puis, plus tard,
+
+00:00:52.580 --> 00:00:54.940
+de le ressortir. Chaque
+
+00:00:54.980 --> 00:00:57.480
+boîte a un nom, exactement comme
+
+00:00:57.520 --> 00:01:00.020
+les fonctions ont un nom, et chaque boîte
+
+00:01:00.140 --> 00:01:03.000
+ne contient qu'une chose. Pour l'instant, un nombre
+
+00:01:03.380 --> 00:01:05.320
+ou une string. Mais on verra comment y stocker
+
+00:01:05.340 --> 00:01:07.480
+des choses plus complexes plus loin
+
+00:01:07.540 --> 00:01:10.800
+dans le cours. Alors, comment dire à Jiki
+
+00:01:10.860 --> 00:01:12.500
+de fabriquer une boîte et d'y mettre quelque chose ?
+
+00:01:13.240 --> 00:01:16.920
+On utilise le mot-clé let (laisser). Le mot-clé let
+
+00:01:17.000 --> 00:01:19.200
+indique à Jiki qu'il doit fabriquer
+
+00:01:19.300 --> 00:01:21.860
+une nouvelle boîte. Imagine-le en train de sortir
+
+00:01:21.900 --> 00:01:23.760
+un carton de son emballage, de le monter,
+
+00:01:23.800 --> 00:01:26.320
+puis de regarder ce qui vient
+
+00:01:26.440 --> 00:01:28.840
+après le mot let : c'est l'étiquette
+
+00:01:28.880 --> 00:01:30.620
+qu'il va coller sur la boîte, ici
+
+00:01:30.720 --> 00:01:32.940
+name (nom). Il sort donc son stylo
+
+00:01:33.220 --> 00:01:36.260
+et écrit name sur l'étiquette. Puis
+
+00:01:36.320 --> 00:01:38.360
+il regarde ce qui vient après le signe
+
+00:01:38.440 --> 00:01:41.020
+égal. Ici, c'est mon prénom, Jeremy,
+
+00:01:41.740 --> 00:01:43.960
+et comme Jeremy est une string, une string,
+
+00:01:44.340 --> 00:01:45.640
+il prend un bout de papier et
+
+00:01:45.660 --> 00:01:48.830
+y écrit Jeremy. C'est juste une string,
+
+00:01:48.900 --> 00:01:50.460
+exactement comme les couleurs avec lesquelles
+
+00:01:50.520 --> 00:01:52.660
+tu as travaillé, et il met ce bout
+
+00:01:52.700 --> 00:01:56.410
+de papier dans la boîte. On lui a donc
+
+00:01:56.460 --> 00:01:58.260
+demandé de fabriquer une boîte, d'y coller
+
+00:01:58.300 --> 00:02:00.120
+une étiquette et d'y mettre quelque chose,
+
+00:02:00.640 --> 00:02:02.300
+et maintenant il va poser la boîte
+
+00:02:02.380 --> 00:02:05.140
+sur l'étagère. Ensuite, à n'importe quel autre
+
+00:02:05.220 --> 00:02:07.980
+moment de ton programme, Jiki peut aller
+
+00:02:08.020 --> 00:02:09.840
+chercher cette boîte sur l'étagère et regarder
+
+00:02:09.979 --> 00:02:11.900
+ce qu'elle contient, on y reviendra
+
+00:02:11.940 --> 00:02:14.580
+dans un instant. Mais pour l'instant, je veux
+
+00:02:14.660 --> 00:02:16.540
+vraiment que tu commences à construire ce
+
+00:02:16.580 --> 00:02:19.120
+modèle mental. Je code depuis toujours, et
+
+00:02:19.180 --> 00:02:21.790
+quand j'écris du code, j'imagine encore que je mets
+
+00:02:21.820 --> 00:02:23.680
+quelque chose dans une boîte pour le
+
+00:02:23.720 --> 00:02:26.340
+ressortir plus tard. Quand tu vois ce
+
+00:02:26.400 --> 00:02:28.570
+mot-clé let, pense vraiment :
+
+00:02:28.690 --> 00:02:31.460
+« D'accord, ça veut dire que je fabrique une nouvelle boîte. »
+
+00:02:33.520 --> 00:02:34.530
+Je voudrais dire un mot
+
+00:02:34.580 --> 00:02:37.210
+sur les noms de variables, les étiquettes
+
+00:02:37.260 --> 00:02:40.140
+de ces boîtes. Il y a quelques règles
+
+00:02:40.180 --> 00:02:44.740
+à leur sujet. D'abord, un nom de variable
+
+00:02:44.780 --> 00:02:47.580
+ne peut pas contenir d'espaces. Si tu veux
+
+00:02:47.700 --> 00:02:49.859
+utiliser plusieurs mots pour l'étiquette d'une boîte,
+
+00:02:49.920 --> 00:02:51.900
+il faut coller les mots les uns aux autres
+
+00:02:51.980 --> 00:02:55.180
+et mettre la première lettre de chaque mot
+
+00:02:55.220 --> 00:02:57.520
+en majuscule. C'est ce qu'on appelle le
+
+00:02:57.680 --> 00:03:00.660
+camelCase (camel = chameau, case = casse).
+
+00:03:00.740 --> 00:03:02.540
+Imagine les bosses du chameau qui poussent
+
+00:03:02.580 --> 00:03:05.260
+chaque initiale en majuscule. Donc si tu
+
+00:03:05.340 --> 00:03:08.290
+veux une étiquette avec « mon nom » dessus,
+
+00:03:08.320 --> 00:03:10.920
+plutôt que d'écrire deux mots séparés par un espace,
+
+00:03:10.960 --> 00:03:13.400
+on l'écrit en un seul mot, avec le N en majuscule.
+
+00:03:15.200 --> 00:03:17.960
+Autre règle : chaque nom de variable doit être unique.
+
+00:03:18.020 --> 00:03:20.180
+Tu ne peux pas avoir deux boîtes avec la même étiquette,
+
+00:03:20.860 --> 00:03:23.180
+et une variable ne peut pas non plus porter le même
+
+00:03:23.240 --> 00:03:26.140
+nom qu'une fonction. Si tu l'oublies, Jiki va
+
+00:03:26.180 --> 00:03:28.040
+s'embrouiller et te donnera un message d'erreur.
+
+00:03:29.660 --> 00:03:31.210
+Bon, voyons maintenant à quel moment
+
+00:03:31.280 --> 00:03:34.160
+on pourrait utiliser une variable. Disons qu'on
+
+00:03:34.200 --> 00:03:36.920
+dessine un soleil dans le ciel. On sait
+
+00:03:36.980 --> 00:03:39.490
+qu'on peut utiliser la fonction circle en
+
+00:03:39.580 --> 00:03:43.480
+lui donnant quatre entrées : left (gauche), top (haut), radius (rayon)
+
+00:03:43.680 --> 00:03:47.000
+et color (couleur). Mais à mesure qu'on dessine
+
+00:03:47.040 --> 00:03:49.160
+plein de choses et que tous ces nombres s'éparpillent
+
+00:03:49.180 --> 00:03:51.740
+dans le code, ça devient vraiment difficile
+
+00:03:51.780 --> 00:03:55.020
+à suivre et à lire. À la place,
+
+00:03:55.280 --> 00:03:57.500
+on peut créer une variable pour chacune
+
+00:03:57.600 --> 00:04:00.760
+de ces quatre valeurs, puis se référer
+
+00:04:00.860 --> 00:04:04.560
+à ces variables plus tard. Notre objectif
+
+00:04:04.620 --> 00:04:06.380
+ici est de pouvoir utiliser la fonction
+
+00:04:06.420 --> 00:04:11.200
+circle en lui passant des noms de boîtes
+
+00:04:11.220 --> 00:04:14.590
+clairs et lisibles ; quand Jiki verra ces noms,
+
+00:04:14.620 --> 00:04:16.480
+il saura qu'il doit aller chercher les boîtes
+
+00:04:16.560 --> 00:04:20.459
+sur les étagères et utiliser ce qu'elles contiennent.
+
+00:04:20.519 --> 00:04:22.550
+Créons donc ces variables. On commence par
+
+00:04:22.550 --> 00:04:25.050
+la position gauche du soleil. On utilise,
+
+00:04:25.580 --> 00:04:27.350
+euh, on utilise le mot-clé let pour
+
+00:04:27.350 --> 00:04:29.700
+dire à Jiki de créer une nouvelle boîte appelée
+
+00:04:29.740 --> 00:04:32.310
+leftPosition. Remarque le camelCase,
+
+00:04:32.500 --> 00:04:35.180
+avec le P en majuscule. Et on dit à
+
+00:04:35.260 --> 00:04:38.560
+Jiki quel nombre va dans la boîte. Il la
+
+00:04:38.580 --> 00:04:40.340
+pose sur les étagères, puis fait la même chose
+
+00:04:40.420 --> 00:04:43.020
+pour topPosition, radius
+
+00:04:43.180 --> 00:04:46.540
+et color. À tout moment dans
+
+00:04:46.620 --> 00:04:48.870
+le code, on peut se référer à ces variables,
+
+00:04:49.000 --> 00:04:51.400
+et Jiki ira sortir les valeurs pour les
+
+00:04:51.440 --> 00:04:53.530
+mettre dans une machine. L'autre grand
+
+00:04:53.640 --> 00:04:56.120
+avantage des variables, c'est que chaque fois
+
+00:04:56.160 --> 00:04:58.960
+qu'on veut dessiner quelque chose à la même
+
+00:04:59.000 --> 00:05:01.620
+position que le soleil, on peut réutiliser ces mêmes
+
+00:05:01.680 --> 00:05:04.980
+variables leftPosition et topPosition. Prends un
+
+00:05:05.000 --> 00:05:07.660
+autre exemple. Imagine que tu construis un mur
+
+00:05:07.700 --> 00:05:10.200
+de 30 briques, et que tu veux que
+
+00:05:10.220 --> 00:05:11.840
+toutes les briques aient la même largeur
+
+00:05:11.880 --> 00:05:14.270
+et la même hauteur. Il vaut bien mieux
+
+00:05:14.360 --> 00:05:17.100
+créer une variable pour la largeur et une pour la hauteur
+
+00:05:17.280 --> 00:05:19.580
+dès le début du code, puis
+
+00:05:19.660 --> 00:05:21.590
+s'y référer dans tout le reste
+
+00:05:21.640 --> 00:05:23.900
+du code. Parce que si tu veux ensuite
+
+00:05:23.980 --> 00:05:25.960
+changer cette largeur ou cette hauteur, il te suffit
+
+00:05:26.020 --> 00:05:28.260
+de la modifier en un seul endroit, et tout
+
+00:05:28.380 --> 00:05:33.100
+le reste se mettra à jour. Dans les prochains exercices,
+
+00:05:33.260 --> 00:05:35.980
+tu vas utiliser les variables pour écrire
+
+00:05:36.060 --> 00:05:38.840
+un code plus propre et plus lisible. Et une fois
+
+00:05:38.880 --> 00:05:41.910
+que tu seras à l'aise pour créer et utiliser des variables,
+
+00:05:41.960 --> 00:05:44.280
+on verra comment une variable peut faire référence
+
+00:05:44.320 --> 00:05:46.920
+à d'autres variables, et c'est là que ça devient puissant.
+
+00:05:47.620 --> 00:05:50.110
+Mais pour l'instant, va t'entraîner avec ces exercices,
+
+00:05:50.520 --> 00:05:51.880
+et on se retrouve très vite.

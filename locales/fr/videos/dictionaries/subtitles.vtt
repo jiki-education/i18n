@@ -1,0 +1,270 @@
+WEBVTT
+
+NOTE en_md5 c5187b46923e87c2aac86912c90dfb53
+
+00:00:00.100 --> 00:00:03.140
+Content de te revoir. J'espère que tu te sens
+
+00:00:03.180 --> 00:00:06.810
+plus à l'aise avec les tableaux. Ils sont notre premier réflexe
+
+00:00:06.840 --> 00:00:09.740
+dès qu'on a une liste de quelque chose : une liste
+
+00:00:09.760 --> 00:00:11.560
+de mentors, une liste de scores, une liste
+
+00:00:11.600 --> 00:00:14.420
+d'ingrédients. Peu importe la liste, c'est un tableau
+
+00:00:14.440 --> 00:00:17.630
+qu'il te faudra. Mais il existe une autre structure de données
+
+00:00:17.720 --> 00:00:20.060
+très courante elle aussi, pour les cas où on veut
+
+00:00:20.070 --> 00:00:23.380
+quelque chose d'un peu plus complexe qu'une liste. Imagine
+
+00:00:23.420 --> 00:00:24.780
+qu'on stocke des informations sur moi :
+
+00:00:25.500 --> 00:00:27.580
+mon nom, mon âge, mon lieu de naissance.
+
+00:00:28.280 --> 00:00:30.140
+On pourrait utiliser un tableau,
+
+00:00:30.150 --> 00:00:32.200
+mais ce qui se passe n'est plus très clair
+
+00:00:32.240 --> 00:00:34.850
+quand on fait ça. Est-ce que England est mon
+
+00:00:34.880 --> 00:00:37.210
+lieu de naissance ou l'endroit où je vis ? Et 42,
+
+00:00:37.300 --> 00:00:40.120
+c'est mon âge ou autre chose ? Et si je veux
+
+00:00:40.160 --> 00:00:42.050
+utiliser tout ça, je dois me souvenir
+
+00:00:42.080 --> 00:00:44.740
+que la première position est pour le nom, la deuxième
+
+00:00:44.780 --> 00:00:47.900
+pour l'âge, la troisième pour le lieu de naissance.
+
+00:00:47.920 --> 00:00:49.840
+C'est un peu le bazar, et c'est le bazar
+
+00:00:49.880 --> 00:00:52.420
+car ce n'est pas vraiment une liste de choses.
+
+00:00:52.480 --> 00:00:55.769
+C'est plus complexe que ça. Et c'est là
+
+00:00:55.800 --> 00:00:58.500
+que les dictionnaires entrent en jeu. Un dictionnaire est
+
+00:00:58.560 --> 00:01:00.340
+un nouveau type de structure de données.
+
+00:01:00.420 --> 00:01:03.830
+C'est le cinquième : les strings, les nombres, les booléens,
+
+00:01:03.880 --> 00:01:06.200
+les tableaux, et maintenant les dictionnaires.
+
+00:01:06.260 --> 00:01:08.620
+Et je veux que tu imagines un dictionnaire
+
+00:01:08.800 --> 00:01:12.180
+comme une feuille d'un carnet à spirale. Du côté gauche,
+
+00:01:12.220 --> 00:01:15.460
+tu as les intitulés, les mots name, age, birthplace,
+
+00:01:15.500 --> 00:01:18.400
+on les appelle des clés. Et du côté droit,
+
+00:01:18.480 --> 00:01:20.240
+à côté de chaque intitulé, tu as
+
+00:01:20.300 --> 00:01:24.520
+les données en elles-mêmes : Jeremy, 42, England,
+
+00:01:24.600 --> 00:01:28.300
+et on les appelle des valeurs. Tout comme pour les tableaux,
+
+00:01:28.340 --> 00:01:31.180
+un dictionnaire est une seule entité. C'est la page
+
+00:01:31.190 --> 00:01:33.830
+d'un carnet. Comme pour les tableaux, Jiki peut la mettre
+
+00:01:33.840 --> 00:01:35.250
+dans une variable, dans une boîte,
+
+00:01:35.720 --> 00:01:37.930
+ou comme entrée pour une fonction,
+
+00:01:37.980 --> 00:01:39.540
+ou bien récupérer un dictionnaire
+
+00:01:39.560 --> 00:01:42.200
+sur le tapis roulant. Voici à quoi ressemble
+
+00:01:42.260 --> 00:01:45.080
+un dictionnaire en code : on utilise des accolades
+
+00:01:45.120 --> 00:01:47.490
+pour marquer le début et la fin, et
+
+00:01:47.520 --> 00:01:49.420
+à l'intérieur, tu as des paires : une clé
+
+00:01:49.480 --> 00:01:51.700
+à gauche, deux-points, puis la valeur
+
+00:01:51.740 --> 00:01:53.860
+à droite. Et il y a une virgule entre
+
+00:01:53.900 --> 00:01:56.260
+chaque paire. Alors Jiki voit ça et
+
+00:01:56.280 --> 00:01:58.600
+sort son carnet à spirale. Il écrit name,
+
+00:01:58.960 --> 00:02:02.100
+Jeremy, age, 42, et ainsi de suite pour chaque
+
+00:02:02.140 --> 00:02:04.440
+paire. Et quand il a fini, il détache
+
+00:02:04.480 --> 00:02:06.320
+la feuille et la range dans une boîte
+
+00:02:06.420 --> 00:02:09.360
+étiquetée person. Il y a quelques règles
+
+00:02:09.420 --> 00:02:12.060
+à connaître. Les clés sont toujours des strings. Elles
+
+00:02:12.140 --> 00:02:14.620
+doivent être entourées de guillemets, et chaque clé
+
+00:02:14.680 --> 00:02:18.170
+doit être unique. Tu ne peux pas avoir deux clés
+
+00:02:18.260 --> 00:02:21.420
+appelées name dans le même dictionnaire. Si tu veux, tes valeurs
+
+00:02:21.480 --> 00:02:23.150
+peuvent être identiques,
+
+00:02:23.280 --> 00:02:25.810
+mais les clés, elles, doivent être différentes. Et
+
+00:02:25.820 --> 00:02:27.600
+les valeurs peuvent être n'importe quoi :
+
+00:02:27.680 --> 00:02:31.000
+strings, nombres, booléens, tableaux, ou même d'autres dictionnaires.
+
+00:02:32.140 --> 00:02:34.540
+Tu peux aussi avoir un dictionnaire vide,
+
+00:02:34.600 --> 00:02:37.220
+tout comme on avait un tableau vide,
+
+00:02:37.280 --> 00:02:38.800
+qu'on pourra compléter
+
+00:02:38.820 --> 00:02:42.210
+plus tard. Bien, maintenant que tu as un
+
+00:02:42.260 --> 00:02:44.160
+dictionnaire, comment en récupérer
+
+00:02:44.220 --> 00:02:46.900
+quelque chose ? On utilise la même syntaxe
+
+00:02:46.920 --> 00:02:48.960
+à crochets qu'avec les tableaux et les
+
+00:02:49.020 --> 00:02:52.980
+strings, mais au lieu d'un numéro de position,
+
+00:02:53.020 --> 00:02:55.040
+on utilise une clé. Donc si on veut
+
+00:02:55.100 --> 00:02:57.390
+récupérer le nom de quelqu'un dans un dictionnaire,
+
+00:02:57.940 --> 00:03:01.620
+on écrit la variable person, des crochets, et
+
+00:03:01.640 --> 00:03:03.580
+ensuite la clé, ici name, entre
+
+00:03:03.660 --> 00:03:07.260
+guillemets. Et ça indique à Jiki d'aller regarder
+
+00:03:07.300 --> 00:03:09.970
+dans le dictionnaire person, de trouver la clé
+
+00:03:10.080 --> 00:03:12.900
+name, et d'en récupérer la valeur. Jiki
+
+00:03:13.040 --> 00:03:15.000
+va à la boîte person, sort la
+
+00:03:15.040 --> 00:03:17.340
+page du carnet et parcourt toutes les
+
+00:03:17.400 --> 00:03:19.760
+clés jusqu'à ce qu'il trouve name. Puis il lit
+
+00:03:19.800 --> 00:03:21.900
+la valeur Jeremy et la met dans
+
+00:03:21.910 --> 00:03:27.540
+une nouvelle boîte appelée name. Les crochets veulent toujours
+
+00:03:27.580 --> 00:03:29.980
+dire la même chose : tu plonges la main dans quelque chose
+
+00:03:29.990 --> 00:03:32.370
+pour récupérer autre chose. Avec les tableaux et les strings,
+
+00:03:32.960 --> 00:03:34.720
+tu utilises un nombre pour la position
+
+00:03:34.760 --> 00:03:37.580
+où tu veux prendre quelque chose. Avec les dictionnaires,
+
+00:03:37.700 --> 00:03:40.140
+tu utilises une string pour la clé. C'est le
+
+00:03:40.180 --> 00:03:43.340
+même principe, juste une syntaxe légèrement différente. Bien,
+
+00:03:43.380 --> 00:03:45.390
+tu as quelques exercices pour t'entraîner
+
+00:03:45.500 --> 00:03:47.640
+à créer des dictionnaires et à en lire les valeurs.
+
+00:03:48.260 --> 00:03:50.160
+On vient de voir tout ce dont tu as besoin :
+
+00:03:50.580 --> 00:03:52.660
+les accolades pour créer, les crochets
+
+00:03:52.680 --> 00:03:55.200
+pour accéder. Prends ton temps.
+
+00:03:55.240 --> 00:03:56.820
+Bonne chance, et à très vite !

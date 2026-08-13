@@ -1,0 +1,207 @@
+WEBVTT
+
+NOTE en_md5 d39fabecd86df2df0d2b749f6d2241ba
+
+00:00:00.260 --> 00:00:02.070
+Bon retour parmi nous. J'espère que cette
+
+00:00:02.120 --> 00:00:04.900
+série d'exercices t'a plu. Tu fais des
+
+00:00:04.940 --> 00:00:07.970
+progrès fantastiques. Bravo. Cette vidéo sera
+
+00:00:08.000 --> 00:00:10.740
+courte. Tu sais déjà ce que sont les strings.
+
+00:00:10.940 --> 00:00:12.800
+Ce sont des bouts de papier avec du texte
+
+00:00:12.840 --> 00:00:15.440
+écrit dessus. Tu en utilises depuis le début
+
+00:00:15.520 --> 00:00:18.960
+du cours. Mais jusqu'ici, toutes les strings
+
+00:00:19.100 --> 00:00:22.000
+que tu as utilisées, tu les as tapées directement.
+
+00:00:22.040 --> 00:00:24.620
+Que se passe-t-il si on veut construire
+
+00:00:24.660 --> 00:00:28.500
+une string à partir de variables ou de conditions ?
+
+00:00:28.560 --> 00:00:31.200
+Comment faire ? Il existe deux façons de
+
+00:00:31.300 --> 00:00:34.520
+s'y prendre, que je vais te montrer. La première
+
+00:00:34.640 --> 00:00:38.370
+s'appelle la concaténation de strings, une façon
+
+00:00:38.460 --> 00:00:41.600
+savante et un peu déroutante de dire qu'on
+
+00:00:41.640 --> 00:00:46.120
+additionne deux strings. Imagine deux mots,
+
+00:00:46.160 --> 00:00:48.420
+"hello" (bonjour) et "world" (monde), et tu veux
+
+00:00:48.440 --> 00:00:51.730
+créer une string qui contient "hello world". Tu pourrais
+
+00:00:51.940 --> 00:00:54.460
+simplement écrire "hello world" en une seule string,
+
+00:00:54.540 --> 00:00:59.570
+mais tu pourrais aussi écrire "hello " + "world", et ça
+
+00:00:59.600 --> 00:01:03.260
+te donnerait exactement la même string. Bon, évidemment,
+
+00:01:03.340 --> 00:01:05.340
+ce n'est pas très utile dans ce cas précis.
+
+00:01:05.940 --> 00:01:08.180
+Mais imaginons qu'on ait une variable contenant
+
+00:01:08.240 --> 00:01:10.420
+le nom de quelqu'un et qu'on veuille
+
+00:01:10.460 --> 00:01:12.780
+lui dire bonjour ? Imagine donc qu'on a une
+
+00:01:12.820 --> 00:01:16.020
+variable appelée name, qui contient parfois "Jeremy"
+
+00:01:16.060 --> 00:01:18.860
+et parfois "Jiki". On veut dire
+
+00:01:18.920 --> 00:01:22.280
+"hello Jeremy" ou "hello Jiki" avec cette variable.
+
+00:01:23.380 --> 00:01:25.860
+Eh bien, on peut y arriver grâce à cette
+
+00:01:25.920 --> 00:01:30.600
+fameuse concaténation, en écrivant "hello " + name, ce qui
+
+00:01:30.620 --> 00:01:33.480
+nous donnera soit "hello Jeremy", soit
+
+00:01:33.620 --> 00:01:37.320
+"hello Jiki", ou un bonjour à n'importe qui d'autre,
+
+00:01:37.360 --> 00:01:41.000
+selon ce qui se trouve dans la boîte name. On peut aussi
+
+00:01:41.040 --> 00:01:44.220
+utiliser ce qu'on appelle des template literals (littéraux
+
+00:01:44.280 --> 00:01:48.790
+de gabarit) pour faire la même chose. Encore un mot
+
+00:01:48.840 --> 00:01:53.920
+savant et déroutant qui veut dire insérer des strings
+
+00:01:53.960 --> 00:01:56.950
+dans d'autres strings. Ainsi, plutôt que d'ajouter
+
+00:01:57.120 --> 00:02:00.830
+des strings les unes aux autres, on peut avoir
+
+00:02:00.900 --> 00:02:04.020
+une string, un template, avec des emplacements pour d'autres strings.
+
+00:02:04.040 --> 00:02:09.800
+Pour ça, on utilise des accents graves à la place des guillemets.
+
+00:02:09.880 --> 00:02:12.420
+Tu le connais sûrement des lettres comme « è » ou « à »,
+
+00:02:12.460 --> 00:02:15.080
+mais tu n'as probablement jamais eu à le taper tout seul,
+
+00:02:15.120 --> 00:02:17.100
+il va donc falloir trouver la bonne touche
+
+00:02:17.140 --> 00:02:20.730
+sur ton clavier. On s'en sert pour créer
+
+00:02:20.800 --> 00:02:24.150
+un template qui peut contenir d'autres strings. Ensuite,
+
+00:02:24.220 --> 00:02:27.220
+pour insérer une string dans le template, on utilise
+
+00:02:27.300 --> 00:02:30.540
+une autre syntaxe un peu étrange, faite d'un dollar et d'accolades.
+
+00:02:30.580 --> 00:02:33.160
+Par exemple, pour obtenir le même résultat que le
+
+00:02:33.180 --> 00:02:36.200
+"hello " + name qu'on vient de voir, on pourrait
+
+00:02:36.420 --> 00:02:40.700
+écrire : accent grave, hello, dollar,
+
+00:02:40.860 --> 00:02:45.180
+accolade, name, accolade, accent grave. Ça a l'air
+
+00:02:45.220 --> 00:02:46.560
+bien plus clair à l'écrit qu'à l'oral.
+
+00:02:47.800 --> 00:02:50.520
+Et ça fait exactement la même chose
+
+00:02:50.580 --> 00:02:53.320
+qu'ajouter les strings les unes aux autres. Mais quand
+
+00:02:53.390 --> 00:02:56.120
+plusieurs strings doivent venir s'assembler
+
+00:02:56.160 --> 00:02:58.320
+au même endroit, ça peut se révéler bien plus efficace.
+
+00:02:59.160 --> 00:03:00.049
+Il te faudra un peu de temps
+
+00:03:00.100 --> 00:03:02.380
+pour t'habituer à cette syntaxe,
+
+00:03:02.900 --> 00:03:05.420
+mais elle n'a rien de vraiment compliqué.
+
+00:03:07.000 --> 00:03:09.140
+Je t'ai préparé deux exercices pour
+
+00:03:09.180 --> 00:03:11.780
+t'entraîner. Le premier reprend le même genre de
+
+00:03:11.840 --> 00:03:14.420
+« hello name » qu'on vient de voir. Tu peux le faire
+
+00:03:14.460 --> 00:03:17.060
+soit en additionnant des strings, soit avec ces templates,
+
+00:03:18.100 --> 00:03:20.640
+et je mettrai les deux dans les instructions
+
+00:03:20.680 --> 00:03:23.880
+pour te rafraîchir la mémoire. Le second exercice est un grand
+
+00:03:24.100 --> 00:03:27.120
+classique des entretiens d'embauche. En apprenant ça,
+
+00:03:27.200 --> 00:03:29.760
+tu seras donc bien armé pour tes futurs entretiens.
+
+00:03:30.620 --> 00:03:31.980
+Bonne chance, et on se retrouve
+
+00:03:32.040 --> 00:03:32.380
+très vite.

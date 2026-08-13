@@ -1,0 +1,339 @@
+WEBVTT
+
+NOTE en_md5 d4b8c72f7a92dfb1d6fb4eb412fdc752
+
+00:00:00.400 --> 00:00:03.469
+Content de te revoir. On a maintenant vu deux boucles,
+
+00:00:03.780 --> 00:00:06.580
+la boucle repeat et la boucle for of.
+
+00:00:06.620 --> 00:00:08.109
+Dans cette leçon, on va découvrir
+
+00:00:08.200 --> 00:00:10.940
+deux autres boucles et deux techniques utiles
+
+00:00:11.000 --> 00:00:14.140
+avec les boucles. Tu te souviens peut-être que j'ai dit
+
+00:00:14.200 --> 00:00:15.980
+dès le tout début que la boucle repeat
+
+00:00:16.020 --> 00:00:18.690
+n'existe pas vraiment en JavaScript. C'est juste
+
+00:00:18.860 --> 00:00:20.340
+un ajout pour te simplifier un peu
+
+00:00:20.380 --> 00:00:23.190
+la vie pendant qu'on démarre. Alors,
+
+00:00:23.200 --> 00:00:25.580
+qu'est-ce qu'on utilise à la place ? Eh bien, on utilise
+
+00:00:25.660 --> 00:00:28.150
+une boucle for normale, et ça ressemble à ceci.
+
+00:00:29.380 --> 00:00:30.920
+Tu comprends sans doute pourquoi ça a pu
+
+00:00:30.940 --> 00:00:32.940
+te paraître un peu intimidant le premier
+
+00:00:32.960 --> 00:00:35.120
+jour. Mais aujourd'hui, tu as toutes les
+
+00:00:35.140 --> 00:00:37.280
+connaissances qu'il faut pour te sentir à l'aise avec ça.
+
+00:00:37.360 --> 00:00:40.340
+Alors, décomposons tout ça. Une boucle for
+
+00:00:40.360 --> 00:00:44.620
+se compose de trois parties : une initialisation, une condition
+
+00:00:44.640 --> 00:00:49.769
+et une incrémentation. L'initialisation, cette petite partie
+
+00:00:49.840 --> 00:00:52.220
+let i = 0, s'exécute au tout début
+
+00:00:52.260 --> 00:00:54.920
+de la boucle. Elle ne s'exécute qu'une seule fois,
+
+00:00:54.980 --> 00:00:58.240
+et ici elle crée une boîte appelée i
+
+00:00:58.340 --> 00:01:02.520
+qui vaut zéro. La partie suivante, la condition,
+
+00:01:03.240 --> 00:01:08.600
+s'exécute juste avant chaque itération de la boucle. Si
+
+00:01:08.640 --> 00:01:11.100
+la condition est vraie, on exécute la boucle
+
+00:01:11.110 --> 00:01:15.580
+une nouvelle fois. Sinon, on ne l'exécute pas. Et
+
+00:01:15.660 --> 00:01:18.580
+enfin vient l'incrémentation, le i++.
+
+00:01:19.400 --> 00:01:21.420
+i++ veut simplement dire la même chose
+
+00:01:21.460 --> 00:01:24.420
+que i = i + 1. C'est juste
+
+00:01:24.460 --> 00:01:26.880
+un raccourci, une façon d'augmenter i de
+
+00:01:26.940 --> 00:01:31.200
+un à chaque tour. Donc dans cet exemple, on met
+
+00:01:31.280 --> 00:01:34.200
+i à zéro. On vérifie si i
+
+00:01:34.240 --> 00:01:36.300
+est inférieur à deux, ce qui est le cas,
+
+00:01:36.380 --> 00:01:38.360
+donc on exécute la boucle. Puis, à
+
+00:01:38.400 --> 00:01:41.640
+la fin, on augmente i de un, donc
+
+00:01:42.060 --> 00:01:44.380
+i devient un. Zéro plus un, ça fait un.
+
+00:01:45.500 --> 00:01:47.400
+Et on recommence. On vérifie si
+
+00:01:47.580 --> 00:01:50.780
+un est inférieur à deux. C'est le cas, donc
+
+00:01:50.800 --> 00:01:52.580
+on exécute la boucle. Et à la
+
+00:01:52.620 --> 00:01:55.140
+fin, on augmente encore i. Il vaut maintenant
+
+00:01:55.240 --> 00:01:58.300
+deux, puisque un plus un font deux. Et
+
+00:01:58.340 --> 00:02:00.440
+on repart une troisième fois. Cette fois, on
+
+00:02:00.480 --> 00:02:02.970
+vérifie si deux est inférieur à deux, et
+
+00:02:02.980 --> 00:02:05.680
+ce n'est pas le cas, donc on n'exécute pas la boucle,
+
+00:02:05.780 --> 00:02:07.140
+et on en a terminé avec elle.
+
+00:02:07.540 --> 00:02:10.539
+On passe simplement au code suivant.
+
+00:02:10.640 --> 00:02:13.360
+Au final, on a exécuté la boucle deux fois, et
+
+00:02:13.400 --> 00:02:16.100
+c'est bon à savoir : tant
+
+00:02:16.140 --> 00:02:18.320
+qu'on part de zéro avec une
+
+00:02:18.360 --> 00:02:21.460
+condition « inférieur à », le nombre qu'on met
+
+00:02:21.520 --> 00:02:23.780
+là, deux dans ce cas, correspond au nombre
+
+00:02:23.840 --> 00:02:26.530
+de fois où la boucle s'exécutera. Donc,
+
+00:02:26.580 --> 00:02:28.900
+c'est la même chose que d'écrire repeat two.
+
+00:02:30.440 --> 00:02:33.020
+Ce n'est donc pas difficile, mais c'est bien plus
+
+00:02:33.060 --> 00:02:38.120
+alambiqué que d'écrire simplement repeat two. La prochaine
+
+00:02:38.180 --> 00:02:40.380
+boucle à connaître est la boucle while.
+
+00:02:41.420 --> 00:02:45.800
+Elle dit : « Tant qu'une condition est vraie, exécute la boucle. »
+
+00:02:45.840 --> 00:02:47.190
+Par exemple, on pourrait avoir une règle qui dit
+
+00:02:47.190 --> 00:02:49.710
+qu'on ne peut tirer que cinq fois dans Space
+
+00:02:49.740 --> 00:02:52.130
+Invaders. On aurait donc ici une boucle qui
+
+00:02:52.160 --> 00:02:54.170
+dit : tant que le nombre de tirs est inférieur
+
+00:02:54.200 --> 00:02:56.940
+à cinq, exécute une boucle qui permet
+
+00:02:56.960 --> 00:03:00.340
+de continuer à jouer. Chaque fois que quelqu'un tire,
+
+00:03:00.680 --> 00:03:04.000
+on augmente numShots de un, si bien qu'on
+
+00:03:04.480 --> 00:03:06.040
+finira par atteindre cinq et que la boucle s'arrêtera.
+
+00:03:07.100 --> 00:03:08.880
+Cela dit, les boucles while posent un problème :
+
+00:03:08.920 --> 00:03:11.440
+il est assez facile d'introduire des bugs qui font
+
+00:03:11.480 --> 00:03:14.040
+que la boucle ne se termine jamais. On appelle ça
+
+00:03:14.120 --> 00:03:15.890
+des boucles infinies, et c'est l'un des bugs les plus
+
+00:03:15.940 --> 00:03:20.010
+courants dans les programmes. Quand ton ordinateur
+
+00:03:20.020 --> 00:03:23.020
+ralentit, que les ventilateurs se mettent à tourner, que tout devient bruyant,
+
+00:03:23.060 --> 00:03:25.860
+c'est souvent parce que quelqu'un a laissé une boucle infinie
+
+00:03:25.880 --> 00:03:29.380
+qui ne se termine jamais dans son code. Bien, deux
+
+00:03:29.460 --> 00:03:32.280
+autres mots-clés dans cette vidéo express. Le
+
+00:03:32.320 --> 00:03:35.300
+premier, c'est le mot-clé break. Tu peux l'utiliser
+
+00:03:35.320 --> 00:03:37.680
+n'importe où dans le corps de n'importe quelle boucle.
+
+00:03:38.760 --> 00:03:40.720
+La partie entre les accolades, c'est le
+
+00:03:40.780 --> 00:03:43.840
+corps. Et quand Jiki le voit, il sort
+
+00:03:43.880 --> 00:03:46.100
+immédiatement de la boucle et passe
+
+00:03:46.160 --> 00:03:48.780
+au code qui se trouve en dessous. Imaginons
+
+00:03:48.880 --> 00:03:50.600
+donc une contrainte qui dit d'exécuter
+
+00:03:50.660 --> 00:03:53.280
+cette boucle 50 fois, mais qu'on veuille s'arrêter
+
+00:03:53.420 --> 00:03:55.960
+si l'utilisateur tire cinq fois. On pourrait
+
+00:03:56.000 --> 00:03:58.140
+avoir en haut une boucle for qui
+
+00:03:58.200 --> 00:04:00.940
+part de i = 0 et va jusqu'à moins de
+
+00:04:01.120 --> 00:04:03.300
+50. Mais on pourrait aussi placer une condition
+
+00:04:03.340 --> 00:04:04.720
+au milieu de la boucle qui dit :
+
+00:04:04.880 --> 00:04:07.720
+si numShots est supérieur ou égal à
+
+00:04:07.780 --> 00:04:12.520
+cinq, alors break, on arrête la boucle. Il arrive
+
+00:04:12.560 --> 00:04:14.880
+parfois qu'on veuille sauter une
+
+00:04:14.890 --> 00:04:18.600
+itération précise de la boucle. Imagine qu'on veuille
+
+00:04:18.680 --> 00:04:20.780
+agir uniquement sur les nombres impairs.
+
+00:04:21.600 --> 00:04:22.930
+On aimerait pouvoir dire : si
+
+00:04:23.020 --> 00:04:25.780
+i est impair, ne lance pas la boucle cette
+
+00:04:25.840 --> 00:04:28.380
+fois-ci. Mais on ne veut pas sortir complètement
+
+00:04:28.420 --> 00:04:30.280
+de la boucle. On veut juste sauter
+
+00:04:30.320 --> 00:04:32.670
+cette itération, puis passer à la
+
+00:04:32.720 --> 00:04:35.600
+suivante. Et pour ça, il existe un autre
+
+00:04:35.640 --> 00:04:40.380
+mot-clé : continue. Quand Jiki voit continue, il
+
+00:04:40.420 --> 00:04:42.180
+retourne directement en haut de la
+
+00:04:42.220 --> 00:04:44.820
+boucle pour l'itération suivante. Ainsi, dans une
+
+00:04:44.860 --> 00:04:47.200
+boucle for of, s'il voit continue, il
+
+00:04:47.260 --> 00:04:48.580
+passe à l'élément suivant du
+
+00:04:48.640 --> 00:04:51.780
+tableau. Dans une boucle for, il passe par
+
+00:04:51.840 --> 00:04:54.400
+l'incrémentation i++, puis
+
+00:04:54.480 --> 00:04:57.980
+démarre l'itération suivante. On a donc vu les boucles
+
+00:04:58.060 --> 00:05:00.800
+for, les boucles while, break et continue. Beaucoup
+
+00:05:00.840 --> 00:05:02.440
+d'informations dans cette vidéo, mais tu peux
+
+00:05:02.500 --> 00:05:04.550
+revenir la consulter quand tu veux, et
+
+00:05:04.580 --> 00:05:07.080
+il y a aussi une page de concept pour chaque sujet.
+
+00:05:07.800 --> 00:05:09.800
+Essaie de mettre tout ça en pratique dans
+
+00:05:09.820 --> 00:05:12.220
+les prochains exercices. Bonne chance, amuse-toi bien,
+
+00:05:12.680 --> 00:05:14.060
+et on se retrouve très vite.

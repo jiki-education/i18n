@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 488ab8c8dd77c6bec365ce44675868b7
+
+00:00:00.280 --> 00:00:02.640
+Content de te revoir. Dans la leçon précédente, on a
+
+00:00:02.680 --> 00:00:04.680
+vu comment accéder à une seule lettre d'une
+
+00:00:04.700 --> 00:00:08.300
+string avec des crochets (`[]`). Dans cette leçon,
+
+00:00:08.420 --> 00:00:10.120
+on va voir comment parcourir une string
+
+00:00:10.160 --> 00:00:13.160
+avec une boucle, en récupérant chaque lettre
+
+00:00:13.200 --> 00:00:15.660
+une par une. Et pour ça, il nous
+
+00:00:15.720 --> 00:00:18.300
+faut un nouveau type de boucle. Jusqu'ici,
+
+00:00:18.360 --> 00:00:20.170
+on a utilisé la boucle `repeat`, et maintenant
+
+00:00:20.200 --> 00:00:22.720
+on va utiliser ce qu'on appelle une boucle `for of`.
+
+00:00:22.760 --> 00:00:26.880
+Ça fait deux nouveaux mots-clés, `for` et `of`. Le
+
+00:00:27.000 --> 00:00:28.740
+mot-clé `for`, on va le retrouver
+
+00:00:28.760 --> 00:00:30.360
+à pas mal d'endroits par la suite.
+
+00:00:30.790 --> 00:00:32.580
+Il peut être utilisé seul, ou bien
+
+00:00:32.619 --> 00:00:35.380
+associé à `in` ou à `of`. Pour
+
+00:00:35.440 --> 00:00:37.160
+l'instant, on va se concentrer sur le
+
+00:00:37.220 --> 00:00:40.120
+dernier, `of`. Alors, regardons un peu
+
+00:00:40.160 --> 00:00:43.280
+de code. On commence par créer une
+
+00:00:43.340 --> 00:00:47.310
+variable appelée `name`, qui contient la string `"Jeremy"`. Rien
+
+00:00:47.380 --> 00:00:50.460
+de nouveau ici. Ensuite vient la ligne
+
+00:00:50.540 --> 00:00:53.620
+de la boucle, et il s'y passe beaucoup de choses,
+
+00:00:53.640 --> 00:00:55.480
+alors prenons le temps
+
+00:00:55.520 --> 00:00:59.240
+de la détailler. D'abord, on a le mot-clé `for`. Il
+
+00:00:59.320 --> 00:01:00.980
+indique à Jiki qu'on veut
+
+00:01:01.060 --> 00:01:04.340
+faire une boucle. Jiki regarde alors plus loin, voit `of`,
+
+00:01:04.879 --> 00:01:06.320
+et comprend qu'on veut faire
+
+00:01:06.580 --> 00:01:09.600
+une boucle « for of ». Et ça veut dire qu'au lieu
+
+00:01:09.720 --> 00:01:11.940
+d'utiliser une boucle `repeat`, où on dit
+
+00:01:12.020 --> 00:01:15.180
+« Répétons 10 fois », on dit « Parcourons
+
+00:01:15.260 --> 00:01:17.380
+toutes les lettres de la string ».
+
+00:01:17.440 --> 00:01:20.990
+C'est ça, le sens de « for of ». Ensuite, on a
+
+00:01:21.060 --> 00:01:24.080
+ce `let letter`. C'est exactement la même chose
+
+00:01:24.140 --> 00:01:25.860
+que le `let name` juste
+
+00:01:26.020 --> 00:01:29.320
+au-dessus : on crée simplement une variable appelée `letter`.
+
+00:01:30.240 --> 00:01:33.240
+La différence, c'est qu'au lieu de dire explicitement
+
+00:01:33.280 --> 00:01:35.280
+ce qu'on y met, on demande à Jiki
+
+00:01:35.320 --> 00:01:37.850
+d'y placer chaque lettre de la string,
+
+00:01:37.900 --> 00:01:41.780
+une par une. Donc Jiki voit `for`,
+
+00:01:41.880 --> 00:01:44.460
+vérifie qu'il y a bien `of`, puis se met au travail. Il
+
+00:01:44.480 --> 00:01:46.140
+regarde la première lettre de la string,
+
+00:01:46.480 --> 00:01:48.380
+`"J"` dans notre cas, et la met
+
+00:01:48.440 --> 00:01:50.840
+dans une nouvelle boîte appelée `letter`. Au passage,
+
+00:01:50.880 --> 00:01:52.240
+on aurait pu l'appeler autrement :
+
+00:01:52.260 --> 00:01:53.920
+rien n'oblige à choisir `letter`. On a juste
+
+00:01:53.960 --> 00:01:57.020
+décidé de l'appeler comme ça ici. Ensuite, il exécute le code
+
+00:01:57.080 --> 00:01:58.960
+entre les accolades, et tu peux y faire
+
+00:01:59.000 --> 00:02:01.060
+tout ce que tu ferais ailleurs dans du code.
+
+00:02:01.540 --> 00:02:03.560
+La seule différence, c'est que ce bloc
+
+00:02:03.640 --> 00:02:06.320
+de code va s'exécuter une fois pour chaque lettre
+
+00:02:06.380 --> 00:02:07.900
+de la string, et qu'il aura cette
+
+00:02:07.960 --> 00:02:11.940
+variable à disposition. Chaque fois que Jiki arrive
+
+00:02:12.040 --> 00:02:15.000
+à l'accolade fermante, il jette la boîte `letter`
+
+00:02:15.020 --> 00:02:16.740
+et en crée une nouvelle avec la
+
+00:02:16.860 --> 00:02:19.220
+lettre suivante dedans. La première fois,
+
+00:02:19.340 --> 00:02:20.800
+il jette donc le `"J"` et met
+
+00:02:20.920 --> 00:02:23.000
+un `"e"` dans la boîte à la place. Puis il fait
+
+00:02:23.020 --> 00:02:25.740
+pareil pour `"r"`, puis `"e"`, puis `"m"`,
+
+00:02:26.080 --> 00:02:28.790
+puis `"y"`. Six lettres, six tours
+
+00:02:28.840 --> 00:02:31.300
+de boucle. J'espère que c'est clair. Il faut
+
+00:02:31.340 --> 00:02:32.560
+un peu de temps pour s'habituer
+
+00:02:32.600 --> 00:02:34.900
+à la syntaxe, mais le concept
+
+00:02:34.920 --> 00:02:37.730
+en lui-même n'est pas si difficile. Ensuite, tu as
+
+00:02:37.760 --> 00:02:40.250
+quelques exercices qui consistent tous à parcourir
+
+00:02:40.250 --> 00:02:42.660
+des strings. On te demandera de faire quelque chose
+
+00:02:42.680 --> 00:02:44.980
+de différent avec les lettres : compter combien
+
+00:02:45.000 --> 00:02:46.760
+il y en a, ou trouver la position d'une
+
+00:02:46.800 --> 00:02:49.260
+lettre précise. Tu vas devoir utiliser les
+
+00:02:49.320 --> 00:02:51.640
+différentes techniques vues jusqu'ici et les combiner
+
+00:02:51.700 --> 00:02:57.060
+avec cette boucle. Ces exercices deviennent
+
+00:02:57.100 --> 00:03:00.000
+de plus en plus exigeants. Tu combines beaucoup de
+
+00:03:00.020 --> 00:03:02.420
+choses différentes que tu as apprises. Prends bien ton temps.
+
+00:03:02.500 --> 00:03:03.920
+Il te faudra peut-être un moment pour venir
+
+00:03:03.960 --> 00:03:06.160
+à bout de chacun. Essaie de ne pas te précipiter
+
+00:03:06.200 --> 00:03:08.840
+ni de t'agacer si tu ne trouves pas tout de suite.
+
+00:03:08.900 --> 00:03:10.920
+Prends ça comme un casse-tête. Si tu
+
+00:03:10.940 --> 00:03:12.640
+bloques, tu peux faire une pause, aller
+
+00:03:12.650 --> 00:03:15.160
+marcher un peu, et revenir après. Tu as toutes
+
+00:03:15.200 --> 00:03:16.790
+les connaissances qu'il te faut pour ça,
+
+00:03:16.820 --> 00:03:18.870
+et les compétences pour y arriver, mais il
+
+00:03:18.940 --> 00:03:21.520
+va falloir de la patience. Et n'oublie jamais : tu
+
+00:03:21.580 --> 00:03:23.320
+peux utiliser les indices si besoin,
+
+00:03:23.900 --> 00:03:25.150
+mais garde-les plutôt en dernier
+
+00:03:25.200 --> 00:03:27.540
+recours. Bonne chance, et on se retrouve
+
+00:03:27.560 --> 00:03:28.060
+très vite.
