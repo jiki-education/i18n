@@ -31,7 +31,7 @@ let height = 60
 rectangle(left, top, width, height, "blue")
 ```
 
-Quindi possiamo impostare quelle variabili. `left`, 10, `top`, 20, `width`, 80, `height`, 60. Ma cosa succede se invece vogliamo spostare il rettangolo un po' più all'interno, renderlo un po' più piccolo? Se vogliamo spostarlo a 20 dal bordo sinistro e destro e a 30 dall'alto e dal basso? Dobbiamo rifare tutti i calcoli. La `width` ora è 100 meno 20 meno 20, e la `height` è 100 meno 30 meno 30, e questo è decisamente più lavoro e più matematica di quanto io voglia fare. Quindi, invece, possiamo dire al computer di farlo per noi.
+Ora possiamo impostare i valori del rettangolo: `left` = 10, `top` = 20, `width` = 80 e `height` = 60. Se però decidiamo di spostarlo più verso l'interno, ad esempio 20 dai lati sinistro e destro e 30 dai lati superiore e inferiore, dobbiamo ricalcolare tutto da capo. La larghezza diventa 100 − 20 − 20, mentre l'altezza diventa 100 − 30 − 30. È un processo ripetitivo e richiede più calcoli del necessario. Per evitare di farli ogni volta, possiamo lasciare che sia il computer a occuparsene automaticamente.
 
 Possiamo impostare la `width` come 100 meno il `left` meno il `left`, e la `height` come 100 meno il `top` meno il `top`, perché il margine superiore e inferiore sono uguali. Oppure possiamo scriverlo come 100 meno `left` per due, o 100 meno `top` per due.
 
