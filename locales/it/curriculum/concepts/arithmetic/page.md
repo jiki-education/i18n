@@ -8,7 +8,7 @@ Finora, quando abbiamo creato variabili, abbiamo usato solo valori semplici: un 
 
 Nella programmazione possiamo usare la matematica di base, addizione, sottrazione, moltiplicazione e divisione, e possiamo usare nei calcoli le variabili che abbiamo definito in precedenza.
 
-Iniziamo dicendo che vogliamo disegnare un rettangolo sulla nostra area di disegno, e vogliamo che inizi a 10 di distanza dal bordo sinistro e dal bordo destro, e a 20 dal bordo superiore e dal bordo inferiore. Quindi sarà al centro dell'area di disegno, leggermente più largo che alto.
+Disegniamo un rettangolo centrato nell'area di disegno, con 10 di margine a sinistra e a destra, e 20 di margine in alto e in basso. Il risultato sarà un rettangolo più largo che alto.
 
 <img
   class="concept-image"
