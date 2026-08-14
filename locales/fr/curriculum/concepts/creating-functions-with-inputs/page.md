@@ -6,7 +6,7 @@ en_md5: f70d737888fcbda3306196ff069eb2f1
 
 Jusqu'ici, les fonctions que tu as créées font exactement la même chose à chaque fois. `turnAround` (faire demi-tour) tourne toujours deux fois à gauche. `shootIfAlienAbove` (tirer si un alien est au-dessus) vérifie toujours, puis tire.
 
-Mais pense aux fonctions que tu utilises depuis le début du cours : elles font des choses différentes selon leurs entrées. Rectangle prend en entrées une position en haut, une position à gauche, une largeur et une hauteur, puis dessine un rectangle différent selon ce que tu lui indiques.
+Mais pense aux fonctions que tu utilises depuis le début du cours : elles font des choses différentes selon leurs entrées. `Rectangle` prend en entrées une position en haut, une position à gauche, une largeur et une hauteur, puis dessine un rectangle différent selon ce que tu lui indiques.
 
 Maintenant, on va aussi ajouter des entonnoirs à tes propres fonctions.
 
