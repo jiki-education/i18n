@@ -43,7 +43,7 @@ let width = 100 - left * 2
 let height = 100 - top * 2
 ```
 
-E ora, se cambiamo il `left` o il `top`, anche la `width` e la `height` cambieranno. Quindi le cose iniziano a collegarsi tra loro. E per quanto riguarda l'area di disegno? Al momento è 100. Ma cosa succede se la nostra area di disegno diventa 200 di larghezza e di altezza, invece? Beh, probabilmente dovremmo impostare una variabile chiamata `canvasSize` (dimensione dell'area di disegno) e impostarla a 100. E ora la nostra `width` è `canvasSize` meno `left` per due, e la nostra `height` è `canvasSize` meno `top` per due.
+Ora, se cambiamo il valore di `left` o `top`, anche `width` e `height` cambieranno di conseguenza. Le variabili iniziano quindi a dipendere l'una dall'altra. E lo stesso vale per l'area di disegno: finora è 100, ma cosa succede se il nostro canvas diventa 200×200? A questo punto conviene creare una variabile chiamata `canvasSize` e impostarla a 100. In questo modo `width` diventa `canvasSize` − `left` × 2, e `height` diventa `canvasSize` − `top` × 2. Così tutto si aggiorna automaticamente quando cambiamo i margini.
 
 ```javascript
 let canvasSize = 100
