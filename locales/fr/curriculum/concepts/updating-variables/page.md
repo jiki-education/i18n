@@ -71,4 +71,4 @@ Remarque qu'il n'y a pas de `let` (laisser) quand on met à jour la variable. C'
 
 Note aussi qu'on ne crée la boîte qu'une seule fois, en dehors de la boucle. C'est important à retenir : crée la boîte une fois au début, puis mets-la à jour à chaque tour de boucle.
 
-On peut mettre à jour ce que contiennent les boîtes, et on peut se servir de ce pouvoir pour suivre quelque chose qui change au fil du temps. Tu vas utiliser ce schéma en permanence : suivre une position, compter combien de fois quelque chose s'est produit, tenir un score. Chaque fois que tu auras besoin de retenir quelque chose qui change pendant que ton programme tourne, c'est comme ça que tu feras.
+On peut mettre à jour ce que contiennent les boîtes, et se servir de cette capacité pour suivre quelque chose qui évolue au fil du temps. Tu vas utiliser ce schéma en permanence : suivre une position, compter combien de fois quelque chose s'est produit, tenir un score. Chaque fois que tu auras besoin de retenir quelque chose qui change pendant que ton programme tourne, c'est comme ça que tu feras.

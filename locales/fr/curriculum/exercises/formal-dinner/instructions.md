@@ -18,7 +18,7 @@ Alors quand Mr Pitt fait son entrée, à toi de comprendre qu'il s'agit du « B
 - La deuxième est la liste des noms de tables, dans le même ordre que les invités
 - La troisième est l'invité qui arrive, sous la forme d'un titre de civilité suivi de son nom de famille (par exemple « Mr Pitt »)
 
-Renvoie le nom de la table à laquelle l'invité est assis. S'il ne figure pas du tout sur le plan de table, renvoie à la place la string `"No table found"`, exactement comme elle est écrite (pas de resquilleurs ici !).
+Renvoie le nom de la table à laquelle l'invité est assis. S'il ne figure pas du tout sur le plan de table, renvoie à la place la string `"No table found"` (aucune table trouvée), exactement comme elle est écrite (pas de resquilleurs ici !).
 
 Le titre de civilité tient toujours en exactement un mot, et tout ce qui suit est le nom de famille de l'invité. La plupart des noms de famille tiennent en un seul mot, mais quelques noms prestigieux en comptent deux.
 
