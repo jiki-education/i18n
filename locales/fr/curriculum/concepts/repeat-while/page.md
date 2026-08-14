@@ -1,5 +1,5 @@
 ---
-title: "Utiliser `repeat` sans nombre de répétitions"
+title: "Utiliser `repeat` sans nombre"
 description: "Laisser les parenthèses d'une boucle repeat vides pour que Jiki continue jusqu'à ce que quelque chose d'autre lui dise de s'arrêter."
 en_md5: f1f98b46bedb1b5abc72aa1b856ee8ae
 ---
