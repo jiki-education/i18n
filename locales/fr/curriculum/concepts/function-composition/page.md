@@ -47,7 +47,7 @@ function describeName(name) {
 }
 ```
 
-On peut ensuite réutiliser cette fonction de comptage générique dans cette mise en forme de texte, mais aussi partout ailleurs où on en a besoin. Dès qu'on doit compter les lettres d'une string, c'est totalement détaché de tout ce qui touche à l'affichage.
+On peut ensuite réutiliser cette fonction de comptage générique dans cette mise en forme de texte, mais aussi partout où on en a besoin. Chaque fois que tu devras compter des lettres dans une string, ce sera totalement détaché de tout ce qui touche à l'affichage.
 
 Tu peux lire chacune des deux fonctions isolément et comprendre immédiatement ce qu'elle fait.
 
@@ -65,6 +65,6 @@ Donc si tu essaies d'accéder à la variable `count` (compte) depuis l'intérieu
   height="353"
 />
 
-En JavaScript, on peut créer des variables tout en haut, au-dessus de tout le reste, qui sont partagées entre les fonctions, mais je te recommande vraiment de ne pas le faire, sauf très bonne raison.
+En JavaScript, on peut créer des variables tout en haut, au-dessus de tout le reste, qui sont partagées entre les fonctions, mais je te recommande vraiment de ne pas le faire, à moins d'avoir une très bonne raison.
 
-Plus tu gardes chaque fonction indépendante, et le mot technique pour ça est « pure », des fonctions pures, plus ton code sera propre et moins tu créeras de bugs.
+Plus tu gardes chaque fonction indépendante (le terme technique pour ça est « pure », on parle de « fonctions pures »), plus ton code sera propre et moins tu créeras de bugs.
