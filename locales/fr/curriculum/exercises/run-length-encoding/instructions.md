@@ -17,7 +17,7 @@ Les espaces comptent comme des caractères à part entière : `"  hsqq qww  "` 
 - `encode` (encoder) prend une string et renvoie sa version encodée par plages.
 - `decode` (décoder) prend une string encodée et renvoie le texte d'origine.
 
-Le décodage inverse le processus : un nombre t'indique combien de fois répéter le caractère qui le suit. Garde en tête qu'une plage peut dépasser 9 caractères, et qu'un nombre peut donc avoir plusieurs chiffres (par exemple, `"12W"` signifie douze `W`).
+Le décodage inverse le processus : un nombre t'indique combien de fois répéter le caractère qui le suit. Garde en tête qu'une plage peut dépasser 9 caractères : un nombre peut donc avoir plusieurs chiffres (par exemple, `"12W"` signifie douze `W`).
 
 ### Mets en pratique ce que tu as appris.
 
