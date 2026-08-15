@@ -16,7 +16,7 @@ Exemples :
 - Transforme "strops" en "sports"
 - Transforme "racecar" en "racecar" (un palindrome)
 
-### Ces deux derniers scénarios...
+### Nos deux derniers scénarios...
 
 Les deux derniers scénarios ont l'air étranges, non ? Que se passe-t-il ?
 
@@ -26,4 +26,4 @@ L'emoji famille (👩‍👩‍👧‍👦) est composé de deux femmes et de de
 
 L'autre est un arc-en-ciel suivi d'un drapeau (🌈‍️🏳). Quand on inverse l'ordre pour obtenir le drapeau puis l'arc-en-ciel, ça devient un drapeau arc-en-ciel (🏳️‍🌈️) !
 
-Si tu construis ton résultat caractère par caractère, tout devrait fonctionner sans problème. Mais si tu essaies une astuce plus maligne, tu risques de voir les emojis se décomposer.
+Si tu construis ton résultat caractère par caractère, ça devrait aller comme sur des roulettes. Si tu optes pour une astuce plus futée, tu risques de voir les emojis se fragmenter.
