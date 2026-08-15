@@ -2,7 +2,7 @@
   "tasks": {
     "classifyString": {
       "name": "Classe une string",
-      "description": "Écris des fonctions auxiliaires pour vérifier si une string est alphabétique, numérique ou alphanumérique, puis utilise-les pour classer la string d'entrée."
+      "description": "Écris des fonctions auxiliaires pour vérifier si une string est alphabétique, numérique ou alphanumérique, puis utilise-les pour catégoriser la string d'entrée."
     },
     "useContinue": {
       "name": "Utilise `continue`",
@@ -38,7 +38,7 @@
   "hints": {
     "whereToStart": {
       "question": "Par où commencer quand il y a plusieurs fonctions à écrire ?",
-      "answer": "Commence par la fonction auxiliaire la plus petite. Chaque fonction auxiliaire parcourt les caractères de la string et pose la même question, oui ou non, sur chacun d'eux. Fais-en fonctionner une, et sers-toi du même schéma pour les autres."
+      "answer": "Commence par la fonction auxiliaire la plus petite. Chaque fonction auxiliaire parcourt les caractères de la string et pose le même type de question fermée (oui/non) sur chacun d'eux. Fais-en fonctionner une, et sers-toi du même schéma pour les autres."
     },
     "checkAllLetters": {
       "question": "Comment vérifier que chaque caractère de l'entrée est une lettre ?",
@@ -53,15 +53,15 @@
       "answer": "Alphanumérique signifie que chaque caractère est une lettre OU un chiffre. Donc pour chaque caractère, s'il est alphabétique, c'est bon, et s'il est numérique, c'est bon aussi. Utilise `continue` pour passer au suivant. Tu ne dois le rejeter que s'il n'est ni l'un ni l'autre."
     },
     "pickingLabels": {
-      "question": "Comment choisir entre les quatre étiquettes dans whatAmI() ?",
+      "question": "Comment choisir entre les quatre catégories dans whatAmI() ?",
       "answer": "Appelle les trois fonctions auxiliaires et utilise if/else. L'ordre compte : vérifie les cas les plus stricts (« uniquement des lettres » et « uniquement des chiffres ») avant « alphanumérique », qui est le cas le plus large."
     }
   },
   "checks": {
     "mustUseContinue": "Tu y es presque ! Utilise `continue` pour passer au caractère suivant.",
     "tooManyLines": "Tu y es presque ! Ta solution fonctionne, mais elle est un peu longue.",
-    "useIsAlpha": "Cet exercice te demande d'écrire une fonction auxiliaire `isAlpha()` et de l'utiliser pour classer la string.",
-    "useIsNumeric": "Cet exercice te demande d'écrire une fonction auxiliaire `isNumeric()` et de l'utiliser pour classer la string.",
-    "useIsAlphanumeric": "Cet exercice te demande d'écrire une fonction auxiliaire `isAlphanumeric()` et de l'utiliser pour classer la string."
+    "useIsAlpha": "Cet exercice te demande d'écrire une fonction auxiliaire `isAlpha()` et de l'utiliser pour catégoriser la string.",
+    "useIsNumeric": "Cet exercice te demande d'écrire une fonction auxiliaire `isNumeric()` et de l'utiliser pour catégoriser la string.",
+    "useIsAlphanumeric": "Cet exercice te demande d'écrire une fonction auxiliaire `isAlphanumeric()` et de l'utiliser pour catégoriser la string."
   }
 }

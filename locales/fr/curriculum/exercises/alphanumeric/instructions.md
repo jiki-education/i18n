@@ -14,7 +14,7 @@ Tu vas devoir écrire trois fonctions auxiliaires :
 
 Pour tout autre symbole (par exemple "! ?") et pour les caractères non ASCII (par exemple "じき", "正直"), les trois fonctions doivent renvoyer faux.
 
-Écris ensuite une fonction `whatAmI(string)` (que suis-je) qui utilise ces fonctions auxiliaires pour classer une string :
+Écris ensuite une fonction `whatAmI(string)` (que suis-je) qui utilise ces fonctions auxiliaires pour catégoriser une string :
 
 - Une string qui ne contient que des lettres doit renvoyer `"Alpha"`
 - Une string qui ne contient que des chiffres doit renvoyer `"Numeric"`
