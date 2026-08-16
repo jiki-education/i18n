@@ -4,7 +4,7 @@ description: "Retrouve combien d'invités une célébrité peut faire entrer, à
 en_md5: c31c0988af324530b986262f47d9a745
 ---
 
-On reprend notre rôle de videur. Mais cette fois, on a affaire à des stars de premier plan, à l'after.
+On reprend notre rôle de videur. Mais cette fois, on a affaire à des stars de premier plan pour l'after.
 
 Quand ces gens se présentent à ta soirée, ils s'attendent à ce que tu les reconnaisses rien qu'à leur prénom. Brad Pitt ne va pas perdre son temps à te donner son nom de famille : il dira juste « Brad », puis te regardera comme si c'était toi qui étais bizarre.
 
