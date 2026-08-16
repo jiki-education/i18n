@@ -20,7 +20,7 @@ Par exemple :
 
 ### Fonctions utilitaires
 
-Au fil de cet exercice, tu vas devoir déterminer la longueur du nom de l'invité, ainsi que celle du préfixe autorisé. C'est l'occasion parfaite de créer une fonction utilitaire appelée `getLength(someString)` (« obtenirLaLongueur(UneString) »), qui compte le nombre de lettres d'une string. Tu pourras ensuite l'utiliser à plusieurs endroits dans `handleGuest(...)`.
+Au fil de cet exercice, tu vas devoir déterminer la longueur du nom de l'invité, ainsi que celle du préfixe autorisé. C'est l'occasion parfaite de créer une fonction utilitaire appelée `getLength(someString)` (« obtenirLaLongueur(UneString) »), qui compte le nombre de lettres d'une _string_. Tu pourras ensuite l'utiliser à plusieurs endroits dans `handleGuest(...)`.
 
 Le scénario bonus te met au défi de résoudre l'exercice en un minimum de lignes. Tu trouveras peut-être d'autres solutions que tu préfères, qui utilisent davantage de lignes. C'est très bien aussi (n'hésite pas à explorer différentes approches), mais essaie également de trouver la version la plus courte.
 

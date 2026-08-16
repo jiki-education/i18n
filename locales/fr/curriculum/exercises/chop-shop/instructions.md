@@ -12,8 +12,8 @@ Tu proposes plusieurs prestations, de la simple mise en forme à la coupe compl�
 
 Écris une fonction appelée `canFitIn` (peut caser la personne) qui prend trois entrées :
 
-- La première correspond aux coupes déjà dans la file d'attente (un tableau de strings)
-- La deuxième est la coupe que la nouvelle personne souhaite (une string)
+- La première correspond aux coupes déjà dans la file d'attente (un tableau de _strings_)
+- La deuxième est la coupe que la nouvelle personne souhaite (une _string_)
 - La troisième est le nombre de minutes restantes dans la journée (un nombre)
 
 Renvoie un booléen qui indique si tu peux caser la personne.

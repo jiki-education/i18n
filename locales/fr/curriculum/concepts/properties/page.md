@@ -27,7 +27,7 @@ Quand Jiki crée une _string_, il compte les lettres et, mine de rien, écrit da
 <img
   class="concept-image"
   src="/static/images/concept-assets/properties/jiki-counting-letters.webp"
-  alt="Jiki compte les lettres de la _string_ Jeremy et écrit le nombre dans un coin"
+  alt="Jiki compte les lettres de la string Jeremy et écrit le nombre dans un coin"
   width="359"
   height="400"
 />

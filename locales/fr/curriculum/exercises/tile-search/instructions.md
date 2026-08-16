@@ -6,11 +6,11 @@ en_md5: bbbc77ef2c270fd4228d6a20e690a095
 
 Tu construis un bot qui joue au Scrabble. Avant de tenter de poser un mot, le bot doit vérifier s'il possède le jeton d'une lettre précise sur son chevalet.
 
-Le chevalet est représenté par une string de lettres (par exemple `"SCRAB"`).
+Le chevalet est représenté par une _string_ de lettres (par exemple `"SCRAB"`).
 
 Écris une fonction appelée `contains` (contient) qui prend deux entrées :
 
-- `haystack` (botte de foin) : le chevalet de jetons, sous forme de string
+- `haystack` (botte de foin) : le chevalet de jetons, sous forme de _string_
 - `needle` (aiguille) : la lettre à chercher
 
 Renvoie `true` si la lettre se trouve sur le chevalet, ou `false` sinon.

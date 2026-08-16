@@ -4,11 +4,11 @@ description: "Retourne un texte à l'envers."
 en_md5: 9d47faf87b2864284ed64ce1300073ea
 ---
 
-Inverser des strings (les lire de droite à gauche plutôt que de gauche à droite) est une tâche étonnamment courante en programmation.
+Inverser des _strings_ (les lire de droite à gauche plutôt que de gauche à droite) est une tâche étonnamment courante en programmation.
 
-Par exemple, en bio-informatique, inverser des strings d'ADN ou d'ARN est souvent important pour toutes sortes d'analyses, comme la recherche de brins complémentaires ou l'identification de séquences palindromiques.
+Par exemple, en bio-informatique, inverser des _strings_ d'ADN ou d'ARN est souvent important pour toutes sortes d'analyses, comme la recherche de brins complémentaires ou l'identification de séquences palindromiques.
 
-Ta mission est de créer une fonction appelée `reverse` (inverser), qui prend une string en entrée et renvoie sa version inversée.
+Ta mission est de créer une fonction appelée `reverse` (inverser), qui prend une _string_ en entrée et renvoie sa version inversée.
 
 Exemples :
 

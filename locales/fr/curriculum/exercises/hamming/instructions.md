@@ -20,6 +20,6 @@ Ta tâche consiste à calculer la distance de Hamming entre deux brins d'ADN. L'
 
 Ils présentent 7 différences, la distance de Hamming est donc de 7.
 
-Crée une fonction appelée `hammingDistance` (distance de Hamming) qui prend deux entrées : les deux brins d'ADN sous forme de strings. Elle doit renvoyer un nombre correspondant à la distance.
+Crée une fonction appelée `hammingDistance` (distance de Hamming) qui prend deux entrées : les deux brins d'ADN sous forme de _strings_. Elle doit renvoyer un nombre correspondant à la distance.
 
 Les deux brins d'ADN auront toujours la même longueur.

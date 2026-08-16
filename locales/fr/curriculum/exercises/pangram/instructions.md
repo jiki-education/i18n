@@ -8,7 +8,7 @@ Bienvenue dans la deuxième partie de la série Pangramme. Pour rappel, un pangr
 
 Cet exercice est une version plus complexe de l'exercice Pangramme précédent que tu as résolu, car cette fois la phrase contient aussi des majuscules. Cela ajoute un niveau de complexité surprenant.
 
-Crée une fonction appelée `isPangram` (« est un pangramme ») qui prend une phrase sous forme de string et renvoie un booléen qui indique si c'est un pangramme ou pas.
+Crée une fonction appelée `isPangram` (« est un pangramme ») qui prend une phrase sous forme de _string_ et renvoie un booléen qui indique si c'est un pangramme ou pas.
 
 On t'a fourni ton code précédent comme point de départ.
 
@@ -17,6 +17,6 @@ On t'a fourni ton code précédent comme point de départ.
 En plus de ta fonction auxiliaire existante (que l'on t'avait suggéré d'appeler `includes`), on te recommande d'en créer deux nouvelles pour t'aider à résoudre cet exercice. Leurs noms sont des noms standards, que l'on te conseille de conserver :
 
 1. `indexOf(haystack, needle)` : une fonction qui calcule **où** se trouve `needle` dans `haystack`. Ainsi, plutôt que de renvoyer `true`/`false` comme `includes`, elle renvoie l'**indice** de `needle`. Par exemple, `indexOf("Jeremy", "r")` renverrait `2` (rappelle-toi qu'on compte à partir de 0).
-2. `toLowerCase(someString)` (« enCasseMinuscule(uneString) ») : une fonction qui prend une string et la renvoie convertie en minuscules. Par exemple, `toLowerCase("JeReMy")` renverrait `"jeremy"`.
+2. `toLowerCase(someString)` (« enCasseMinuscule(uneString) ») : une fonction qui prend une _string_ et la renvoie convertie en minuscules. Par exemple, `toLowerCase("JeReMy")` renverrait `"jeremy"`.
 
 Amuse-toi bien !

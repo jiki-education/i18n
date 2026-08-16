@@ -50,4 +50,4 @@ Jiki va descendre la machine de l'étagère et mettre des pièces dans les quatr
   height="392"
 />
 
-« String », c'est un de ces mots techniques qui intimident un peu au début, mais en réalité ça veut juste dire du texte. Tu t'y habitueras très vite. Ça n'a rien de magique.
+« _String_ », c'est un de ces mots techniques qui intimident un peu au début, mais en réalité ça veut juste dire du texte. Tu t'y habitueras très vite. Ça n'a rien de magique.

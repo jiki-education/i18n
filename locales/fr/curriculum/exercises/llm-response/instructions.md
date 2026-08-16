@@ -12,7 +12,7 @@ Explore les données que tu reçois, puis transforme-les au format suivant :
 
 "The answer to 'Who won the 1966 Football Men's World Cup?' is 'England' (100% certainty in 0.5s)."
 
-Enfin, renvoie cette string.
+Enfin, renvoie cette _string_.
 
 Quelques remarques :
 

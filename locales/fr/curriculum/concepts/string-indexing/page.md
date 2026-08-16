@@ -14,7 +14,7 @@ Imagine que tu as mon prénom, Jeremy, et que tu veux en extraire mon initiale, 
   height="353"
 />
 
-Eh bien, tu peux voir une string comme une suite de lettres. `"Jeremy"` a donc six lettres, J-E-R-E-M-Y, et chacune a une position. `"J"` est en première position, `"y"` en dernière position.
+Eh bien, tu peux voir une _string_ comme une suite de lettres. `"Jeremy"` a donc six lettres, J-E-R-E-M-Y, et chacune a une position. `"J"` est en première position, `"y"` en dernière position.
 
 En JavaScript, comme dans la plupart des langages de programmation, ces positions commencent à zéro. La première lettre `"J"` est donc à la position zéro, puis vient `"e"`, à la position un, `"r"` à deux, `"e"` à trois, `"m"` à quatre, et `"y"` à cinq.
 
@@ -31,14 +31,14 @@ Si on écrit `"Jeremy"[1]`, on demande la deuxième lettre.
 "Jeremy"[1] // "e"
 ```
 
-Et ça marche aussi avec les variables. Si on crée une variable appelée `name` (nom) et qu'on lui affecte la string `"Jeremy"`, on peut ensuite écrire `name[0]`, et on obtient `"J"` à nouveau.
+Et ça marche aussi avec les variables. Si on crée une variable appelée `name` (nom) et qu'on lui affecte la _string_ `"Jeremy"`, on peut ensuite écrire `name[0]`, et on obtient `"J"` à nouveau.
 
 ```javascript
 let name = "Jeremy"
 name[0] // "J"
 ```
 
-Une chose à bien comprendre : ce que `name[0]` te renvoie est simplement une autre string. C'est un autre bout de papier avec un `"J"` écrit dessus. Il n'a rien de spécial. C'est une string, exactement comme `"Jeremy"` est une string.
+Une chose à bien comprendre : ce que `name[0]` te renvoie est simplement une autre _string_. C'est un autre bout de papier avec un `"J"` écrit dessus. Il n'a rien de spécial. C'est une _string_, exactement comme `"Jeremy"` est une _string_.
 
 <img
   class="concept-image"
@@ -50,4 +50,4 @@ Une chose à bien comprendre : ce que `name[0]` te renvoie est simplement une a
 
 C'est juste qu'il n'y a qu'une seule lettre dessus, au lieu de six.
 
-Et en faisant ça, on ne modifie absolument pas la string d'origine. On n'est pas en train de lui "arracher" le `"J"`, ou un truc dans le genre. On se contente de trouver les lettres qu'on veut, puis on crée une nouvelle string avec.
+Et en faisant ça, on ne modifie absolument pas la _string_ d'origine. On n'est pas en train de lui "arracher" le `"J"`, ou un truc dans le genre. On se contente de trouver les lettres qu'on veut, puis on crée une nouvelle _string_ avec.

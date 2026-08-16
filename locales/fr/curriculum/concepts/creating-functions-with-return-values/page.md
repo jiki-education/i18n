@@ -48,7 +48,7 @@ function meaningOfLife() {
 
 Désormais, partout où on utilise `meaningOfLife()` dans le code, on récupère le nombre `42`, qu'on peut utiliser comme n'importe quelle autre valeur. On peut le mettre dans une boîte avec `let`, le passer en entrée à une autre fonction, ou le comparer dans une instruction `if`.
 
-Les fonctions avec un `return` peuvent aussi prendre des entrées. Tu pourrais écrire une fonction `ageBracket(age)` (tranche d'âge) qui renvoie `"Sorry, too young"` quand `age` est inférieur à 18, et `"Welcome"` dans le cas contraire. Celui qui l'appelle récupère la string que la fonction a renvoyée.
+Les fonctions avec un `return` peuvent aussi prendre des entrées. Tu pourrais écrire une fonction `ageBracket(age)` (tranche d'âge) qui renvoie `"Sorry, too young"` quand `age` est inférieur à 18, et `"Welcome"` dans le cas contraire. Celui qui l'appelle récupère la _string_ que la fonction a renvoyée.
 
 ```javascript
 function ageBracket(age) {

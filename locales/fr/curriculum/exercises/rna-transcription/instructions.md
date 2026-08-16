@@ -19,4 +19,4 @@ Les quatre nucléotides présents dans l'ARN sont l'adénine (A), la cytosine (C
 - T -> A
 - A -> U
 
-Crée une fonction appelée `dnaToRna(dna)` (de l'ADN vers l'ARN) qui prend en entrée une string contenant l'ADN et renvoie une string représentant l'équivalent ARN.
+Crée une fonction appelée `dnaToRna(dna)` (de l'ADN vers l'ARN) qui prend en entrée une _string_ contenant l'ADN et renvoie une _string_ représentant l'équivalent ARN.

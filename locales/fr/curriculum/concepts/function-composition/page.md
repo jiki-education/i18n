@@ -12,9 +12,9 @@ En règle générale, en programmation, chaque fonction doit en faire le moins p
 
 Voyons un exemple.
 
-Imagine qu'on ait une fonction dont le travail est de renvoyer une string qui décrit un nom.
+Imagine qu'on ait une fonction dont le travail est de renvoyer une _string_ qui décrit un nom.
 
-Une version simple ressemblerait à ceci : une boucle de comptage, quelque chose que tu as déjà écrit, puis un template literal qui assemble le résultat.
+Une version simple ressemblerait à ceci : une boucle de comptage, quelque chose que tu as déjà écrit, puis un _template literal_ qui assemble le résultat.
 
 ```javascript
 function describeName(name) {
@@ -26,7 +26,7 @@ function describeName(name) {
 }
 ```
 
-Ça fonctionne très bien, mais cette fonction fait deux choses : une chose plutôt générique, compter, et une autre très spécifique, construire cette string dans un format particulier.
+Ça fonctionne très bien, mais cette fonction fait deux choses : une chose plutôt générique, compter, et une autre très spécifique, construire cette _string_ dans un format particulier.
 
 Ce serait bien plus élégant de découper tout ça en deux fonctions, une responsable du comptage et une responsable de la description d'un nom dans ce format particulier.
 
@@ -47,7 +47,7 @@ function describeName(name) {
 }
 ```
 
-On peut ensuite réutiliser cette fonction de comptage générique dans cette mise en forme de texte, mais aussi partout où on en a besoin. Chaque fois que tu devras compter des lettres dans une string, ce sera totalement détaché de tout ce qui touche à l'affichage.
+On peut ensuite réutiliser cette fonction de comptage générique dans cette mise en forme de texte, mais aussi partout où on en a besoin. Chaque fois que tu devras compter des lettres dans une _string_, ce sera totalement détaché de tout ce qui touche à l'affichage.
 
 Tu peux lire chacune des deux fonctions isolément et comprendre immédiatement ce qu'elle fait.
 

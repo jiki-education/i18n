@@ -23,9 +23,9 @@ Crée une fonction appelée `digitalRoot` qui prend un nombre et renvoie sa raci
 
 ### La fonction `String()`
 
-Au cours des dernières leçons, tu as eu accès à la fonction `Number(str)`, qui convertit une string en nombre.
+Au cours des dernières leçons, tu as eu accès à la fonction `Number(str)`, qui convertit une _string_ en nombre.
 
-Tu peux faire la même chose dans l'autre sens, et transformer un nombre en string grâce à la fonction `String(num)`. Par exemple :
+Tu peux faire la même chose dans l'autre sens, et transformer un nombre en _string_ grâce à la fonction `String(num)`. Par exemple :
 
 ```js
 String(147) === "147"

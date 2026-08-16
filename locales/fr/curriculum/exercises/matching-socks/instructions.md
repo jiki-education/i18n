@@ -10,7 +10,7 @@ Tu sors tous les vêtements propres de tes tiroirs et tu les mets dans un panier
 
 Te voilà avec deux paniers, et tu veux les passer en revue pour déterminer si chaque chaussette a sa paire ou non.
 
-Écris une fonction appelée `matchingSocks` (chaussettes assorties). Elle prend deux entrées, le panier propre et le panier sale, toutes deux sous forme de tableaux de strings. Renvoie un tableau de toutes les paires de chaussettes.
+Écris une fonction appelée `matchingSocks` (chaussettes assorties). Elle prend deux entrées, le panier propre et le panier sale, toutes deux sous forme de tableaux de _strings_. Renvoie un tableau de toutes les paires de chaussettes.
 
 Par exemple :
 
