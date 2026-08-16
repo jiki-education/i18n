@@ -10,28 +10,28 @@
     "stripe12Green": "La rayure 12 devrait être verte (son numéro est un multiple de 4).",
     "stripe19Yellow": "La rayure 19 devrait être jaune (son numéro est impair, et ce n'est pas une rayure d'extrémité).",
     "stripe20Purple": "La rayure 20 est une rayure d'extrémité, elle devrait donc être violette (même si son numéro est pair).",
-    "rectangleOnce": "Tu utilises la fonction <code>rectangle</code> à plusieurs endroits. Elle ne devrait apparaître qu'une seule fois, à l'intérieur d'une boucle : n'écris pas les 20 rayures une par une !"
+    "rectangleOnce": "Tu utilises la fonction <code>rectangle</code> à plusieurs endroits. Elle ne devrait apparaître qu'une seule fois, à l'intérieur d'une boucle : n'écris pas les `20` rayures une par une !"
   },
   "tasks": {
     "weaveTheFabric": {
-      "name": "Tisse le tissu",
-      "description": "Dessine 20 rayures verticales. Les deux rayures d'extrémité sont violettes ; sinon, les multiples de 4 sont verts, les autres rayures paires sont bleues, et les rayures impaires sont jaunes."
+      "name": "Tisse l'étoffe",
+      "description": "Dessine `20` rayures verticales. Les deux rayures aux extrémités sont violettes ; sinon, les multiples de 4 sont verts, les autres rayures paires sont bleues, et les rayures impaires sont jaunes."
     }
   },
   "scenarios": {
     "weaveTheFabric": {
-      "name": "Tisse le tissu à rayures",
-      "description": "Dessine les 20 rayures avec les bonnes couleurs."
+      "name": "Tisse l'étoffe rayée",
+      "description": "Dessine les `20` rayures avec les bonnes couleurs."
     }
   },
   "hints": {
     "howToDraw20Stripes": {
-      "question": "Comment dessiner 20 rayures à des endroits différents ?",
+      "question": "Comment dessiner `20` rayures à des endroits différents ?",
       "answer": "Garde un compteur (appelle-le `i`) et augmente-le de un à l'intérieur d'une boucle `repeat`. La rayure numéro `i` fait `5` de large, son bord gauche est donc à `(i - 1) * 5`. Dessine à cet endroit un `rectangle` de `5` de large et `100` de haut."
     },
     "endStripesPurple": {
-      "question": "Comment rendre violettes uniquement les deux rayures d'extrémité ?",
-      "answer": "Les rayures d'extrémité sont la première et la dernière. Une seule comparaison ne peut pas exprimer « une valeur OU une autre », alors utilise `||` (ou) : quelque chose comme `if (n === 3 || n === 7)` est vrai pour l'une ou l'autre valeur. Applique cela aux numéros des deux rayures d'extrémité."
+      "question": "Comment rendre violettes uniquement les deux rayures aux extrémités ?",
+      "answer": "Les rayures aux extrémités sont la première et la dernière. Une seule comparaison ne peut pas exprimer « une valeur OU une autre », alors utilise `||` (ou) : quelque chose comme `if (n === 3 || n === 7)` est vrai pour l'une ou l'autre valeur. Applique cela aux numéros des deux rayures aux extrémités."
     },
     "multipleOf4VsEven": {
       "question": "Comment distinguer un multiple de 4 d'un nombre pair ordinaire ?",
