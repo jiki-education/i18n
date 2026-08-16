@@ -4,7 +4,7 @@ description: "Dipingi un arcobaleno fatto di 100 barre verticali colorate."
 en_md5: 18cf1d57b1f3683a4484b507528f9acb
 ---
 
-Il tuo compito è creare un bellissimo arcobaleno formato da 100 barre verticali. Dovrebbe apparire così:
+Il tuo compito è creare un bell'arcobaleno composto da 100 barre verticali. Dovrebbe apparire così:
 
 <img src="/static/images/exercise-assets/rainbow/example.webp" alt="Arcobaleno" style="width: 100%; max-width: 300px; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 5px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); margin-bottom: 8px;" />
 

@@ -16,26 +16,26 @@
   "scenarios": {
     "drawRainbow": {
       "name": "Disegna l'arcobaleno",
-      "description": "Dipingi 100 bellissimi rettangoli per creare un arcobaleno."
+      "description": "Dipingi 100 bei rettangoli per creare un arcobaleno."
     }
   },
   "hints": {
     "hundredRectangles": {
       "question": "Devo disegnare 100 rettangoli diversi?",
-      "answer": "Sì, ma non scrivendo `rectangle(...)` 100 volte! Pensa a cosa facciamo quando abbiamo del codice ripetitivo."
+      "answer": "Sì, ma non scrivendo `rectangle(...)` 100 volte! Pensa a cosa facciamo quando abbiamo del codice che si ripete."
     },
     "colorIntoRectangle": {
       "question": "Come faccio a mettere il colore nel rettangolo?",
       "answer": "La funzione `hsl(...)` restituisce una stringa di colore. Dopo puoi passare quella stringa di colore alla funzione `rectangle(...)`, come hai già fatto in precedenza."
     },
     "hueRange": {
-      "question": "Come faccio a far andare la tonalità da 0 a 300?",
+      "question": "Come faccio a variare la tonalità da 0 a 300?",
       "answer": "Ci sono 100 linee, e la prima deve avere una tonalità di 0. Poi, per ogni linea successiva, dobbiamo aumentarla un po': la seconda linea potrebbe avere una tonalità di 3, la terza di 6, e così via. Alla fine arriveremo a 300."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "Disegna un rettangolo alla posizione (left, top) con la larghezza, l'altezza e il colore indicati",
+      "description": "Disegna un rettangolo nella posizione (left, top) con la larghezza, l'altezza e il colore indicati",
       "category": "Disegno di forme geometriche"
     },
     "hsl": {
