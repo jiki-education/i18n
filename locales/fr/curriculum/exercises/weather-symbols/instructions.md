@@ -10,7 +10,7 @@ Tu reçois un tableau (_Array_ en anglais) de six descriptions météo, une par 
 
 Les prévisions s'affichent sous la forme d'une grille de six boîtes, une pour chaque jour de la semaine, du lundi au samedi. Les descriptions se suivent dans l'ordre : la première (boîte `0`) correspond à la météo du lundi, la deuxième (boîte `1`) à celle du mardi, et ainsi de suite jusqu'au samedi (boîte `5`). (Ton patron ne sort jamais de chez lui le dimanche, donc la météo de ce jour-là lui est égale, et on ne peut donc jamais l'annoncer...)
 
-## Dessiner un jour
+## Dessiner la météo du jour
 
 On te fournit une fonction `draw` (dessiner) qui fait tout le travail artistique pour toi. Ton travail consiste à trouver les bons éléments à mettre dedans.
 
@@ -22,7 +22,7 @@ draw(box, day, elements)
 - `day` est le jour de la semaine à inscrire sur la boîte, par exemple `"Monday"`.
 - `elements` est un tableau de symboles météo à afficher (voir les détails plus bas).
 
-Les jours de la semaine, dans l'ordre, sont `"Monday"`, `"Tuesday"`, `"Wednesday"`, `"Thursday"`, `"Friday"` et `"Saturday"`.
+Les jours de la semaine sont, dans l'ordre, `"Monday"`, `"Tuesday"`, `"Wednesday"`, `"Thursday"`, `"Friday"` et `"Saturday"`.
 
 Donc si le premier jour est `"Exciting 🤩"`, tu écriras :
 
