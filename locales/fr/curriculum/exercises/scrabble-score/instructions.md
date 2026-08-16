@@ -4,7 +4,7 @@ description: "Calcule le score d'un mot au Scrabble."
 en_md5: 69e7c6f8e0aaacd0f5ea8ed34929a805
 ---
 
-Le Scrabble est un jeu de lettres où les joueurs posent des tuiles sur un plateau pour former des mots. Chaque lettre a une valeur, et le score d'un mot est la somme des valeurs de ses lettres.
+Le Scrabble est un jeu de lettres où les joueurs posent des jetons sur un plateau pour former des mots. Chaque lettre a une valeur, et le score d'un mot est la somme des valeurs de ses lettres.
 
 Ta tâche consiste à calculer le score d'un mot au Scrabble en additionnant les valeurs de ses lettres.
 
