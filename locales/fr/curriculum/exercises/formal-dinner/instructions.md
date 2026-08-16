@@ -20,9 +20,9 @@ Alors quand Mr Pitt fait son entrée, à toi de comprendre qu'il s'agit du « B
 
 Renvoie le nom de la table à laquelle l'invité est assis. S'il ne figure pas du tout sur le plan de table, renvoie à la place la string `"No table found"` (aucune table trouvée), exactement comme elle est écrite (pas de resquilleurs ici !).
 
-Le titre de civilité tient toujours en exactement un mot, et tout ce qui suit est le nom de famille de l'invité. La plupart des noms de famille tiennent en un seul mot, mais quelques noms prestigieux en comptent deux.
+Le titre de civilité tient toujours en un seul mot, et tout ce qui suit est le nom de famille de l'invité. La plupart des noms de famille tiennent en un seul mot, mais quelques noms prestigieux en comptent deux.
 
-Attention, cependant : bien des noms de famille ressemblent beaucoup à d'autres.
+Attention, cependant : de nombreux noms de famille se ressemblent beaucoup.
 
 ### Méthodes et propriétés des strings et des tableaux
 
