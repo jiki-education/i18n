@@ -1,43 +1,43 @@
 {
   "errors": {
-    "walkExpectsNumber": "�"
+    "walkExpectsNumber": "walk() verwacht een aantal stappen"
   },
   "describers": {
-    "walk": "�"
+    "walk": "Loop een opgegeven aantal stappen vooruit"
   },
   "checks": {
-    "notReachedEnd": "�"
+    "notReachedEnd": "Je hebt het einde van het doolhof niet bereikt."
   },
   "tasks": {
     "solveMaze": {
-      "name": "�",
-      "description": "�"
+      "name": "Leid de persoon naar het einde van het doolhof",
+      "description": "Navigeer door het doolhof met walk(), turnLeft() en turnRight() om de groene doelcel te bereiken."
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "Leid de persoon naar het einde van het doolhof",
+      "description": "Het is aan jou om het doel te bereiken."
     }
   },
   "hints": {
     "moveNotWorking": {
-      "question": "�",
-      "answer": "�"
+      "question": "Waarom werkt `move()` niet meer?",
+      "answer": "Elke opdracht in Jiki heeft andere functies die je kunt gebruiken. In deze opdracht heb je de functie `walk(...)`. Vervang de `n` door het aantal stappen dat je wilt lopen. `walk(1)` doet dus precies hetzelfde als `move()` de vorige keer."
     }
   },
   "functions": {
     "walk": {
-      "description": "�",
-      "category": "�"
+      "description": "Beweegt het personage **het opgegeven aantal stappen vooruit** in de huidige richting. Elke stap is één cel. Het personage stopt en geeft een fout als het tegen een muur loopt.",
+      "category": "Beweging"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Draait het personage **90 graden naar links** (tegen de klok in). Dit verandert de richting waarin het personage kijkt.",
+      "category": "Beweging"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Draait het personage **90 graden naar rechts** (met de klok mee). Dit verandert de richting waarin het personage kijkt.",
+      "category": "Beweging"
     }
   }
 }
