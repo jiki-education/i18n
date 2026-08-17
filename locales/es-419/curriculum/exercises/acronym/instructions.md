@@ -1,7 +1,7 @@
 ---
 title: "Acrónimo"
 description: "Convierte una frase en su acrónimo, ignorando la puntuación por el camino."
-en_md5: 97e2adefc1da7867f5e218d0fe8c4fdb
+en_md5: e8b8820be81476a13cb6a66781f95cc9
 ---
 
 Ya has resuelto acrónimos sencillos de tres letras, como convertir `Portable Network Graphics` en `PNG`.

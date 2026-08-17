@@ -1,7 +1,7 @@
 ---
 title: "頭字語"
 description: "フレーズを頭字語に変換します。ただし、途中の句読点は無視します。"
-en_md5: 97e2adefc1da7867f5e218d0fe8c4fdb
+en_md5: e8b8820be81476a13cb6a66781f95cc9
 ---
 
 以前に、`Portable Network Graphics` を `PNG` にするような、簡単な3文字の頭字語を解きましたね。

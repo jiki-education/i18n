@@ -1,7 +1,7 @@
 ---
 title: "Acronyme"
 description: "Transforme une phrase en son acronyme, en ignorant la ponctuation au passage."
-en_md5: 97e2adefc1da7867f5e218d0fe8c4fdb
+en_md5: e8b8820be81476a13cb6a66781f95cc9
 ---
 
 Tu as déjà résolu des acronymes simples de trois lettres, par exemple en transformant `Portable Network Graphics` en `PNG`.
