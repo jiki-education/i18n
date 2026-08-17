@@ -19,4 +19,4 @@ Ogni volta che qualcuno spara, aumentiamo `numShots` di uno. Prima o poi arriver
 
 Ora, un problema dei cicli while è che è abbastanza facile avere bug che fanno sì che il ciclo non finisca mai. Questi si chiamano cicli infiniti (_infinite loops_ in inglese) e sono uno dei bug più comuni nei programmi.
 
-Quando il tuo computer rallenta, le ventole iniziano a girare e tutto diventa rumoroso: spesso è perché qualcuno ha lasciato nel codice un ciclo infinito che non finisce mai.
+Quando il computer rallenta, le ventole iniziano a girare e tutto diventa rumoroso: spesso è perché nel codice c'è un ciclo infinito che non termina mai.
