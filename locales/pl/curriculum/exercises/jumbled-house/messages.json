@@ -1,58 +1,58 @@
 {
   "checks": {
-    "frame": "�",
-    "roof": "�",
-    "leftWindow": "�",
-    "rightWindow": "�",
-    "door": "�",
-    "doorKnob": "�"
+    "frame": "Rama domu jest nieprawidłowa.",
+    "roof": "Dach domu nie znajduje się we właściwym miejscu.",
+    "leftWindow": "Rama lewego okna nie jest umieszczona prawidłowo.",
+    "rightWindow": "Rama prawego okna nie jest umieszczona prawidłowo.",
+    "door": "Rama drzwi nie jest umieszczona prawidłowo.",
+    "doorKnob": "Klamka nie jest umieszczona prawidłowo."
   },
   "tasks": {
     "arrangeHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "Ułóż poprawnie dom",
+      "description": "Ułóż na nowo wszystkie elementy we właściwych miejscach, aby utworzyć dom. Pracuj nad każdym elementem metodycznie."
     }
   },
   "scenarios": {
     "drawTheHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "Narysuj dom",
+      "description": "Ułóż wszystkie elementy we właściwych miejscach, aby utworzyć kompletny dom."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Od czego zacząć?",
+      "answer": "Zajmij się każdym elementem po kolei - niebo, trawa, rama domu, dach, okna, drzwi, klamka. Ustaw poprawnie każdy z nich, zanim przejdziesz dalej."
     },
     "coordinates": {
-      "question": "�",
-      "answer": "�"
+      "question": "Jak działają współrzędne?",
+      "answer": "Współrzędne płótna zaczynają się od (0,0) w lewym górnym rogu i kończą na (100,100) w prawym dolnym rogu. W przypadku prostokątów, lewa i górna krawędź wyznaczają lewy górny róg."
     },
     "roofPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Jak ustalić pozycję dachu?",
+      "answer": "Dach to trójkąt, który leży na górnej części ramy domu. Zastanów się, gdzie muszą znajdować się lewy i prawy punkt podstawy, biorąc pod uwagę to, jak dach wystaje, oraz gdzie znajduje się jego czubek."
     },
     "windowPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Jak umieścić okna?",
+      "answer": "Każde okno jest odsunięte od krawędzi ramy domu. Użyj pozycji i rozmiaru ramy domu oraz wartości odsunięcia, aby obliczyć lewy górny róg każdego okna."
     },
     "centerDoor": {
-      "question": "�",
-      "answer": "�"
+      "question": "Jak wyśrodkować drzwi?",
+      "answer": "Aby wyśrodkować coś wewnątrz większego elementu, pomyśl o pozostałej przestrzeni. Jeśli dom jest szerszy niż drzwi, wolne miejsce jest dzielone po równo na obie strony."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Narysuj prostokąt na pozycji (left, top) o podanej szerokości, wysokości i kolorze",
+      "category": "Rysowanie kształtów"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Narysuj koło wyśrodkowane w punkcie (centerX, centerY) o podanym promieniu i kolorze",
+      "category": "Rysowanie kształtów"
     },
     "triangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Narysuj trójkąt o trzech punktach narożnych i podanym kolorze",
+      "category": "Rysowanie kształtów"
     }
   }
 }

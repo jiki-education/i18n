@@ -1,43 +1,43 @@
 {
   "errors": {
-    "walkExpectsNumber": "�"
+    "walkExpectsNumber": "`walk()` oczekuje liczby kroków"
   },
   "describers": {
-    "walk": "�"
+    "walk": "Idź do przodu o podaną liczbę kroków"
   },
   "checks": {
-    "notReachedEnd": "�"
+    "notReachedEnd": "Ludzik nie dotarł do końca labiryntu."
   },
   "tasks": {
     "solveMaze": {
-      "name": "�",
-      "description": "�"
+      "name": "Poprowadź ludzika do końca labiryntu",
+      "description": "Przejdź przez labirynt, używając `walk()`, `turnLeft()` oraz `turnRight()`, aby dotrzeć do zielonego pola docelowego."
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "Poprowadź ludzika do końca labiryntu",
+      "description": "Twoim zadaniem jest dotarcie do celu."
     }
   },
   "hints": {
     "moveNotWorking": {
-      "question": "�",
-      "answer": "�"
+      "question": "Dlaczego `move()` już nie działa?",
+      "answer": "Każde ćwiczenie w Jiki udostępnia inne funkcje. W tym ćwiczeniu masz do dyspozycji funkcję `walk(...)`. Zastąp `n` liczbą kroków, które chcesz przejść. Zatem `walk(1)` robi dokładnie to samo, co `move()` ostatnim razem."
     }
   },
   "functions": {
     "walk": {
-      "description": "�",
-      "category": "�"
+      "description": "Przesuwa ludzika **do przodu o podaną liczbę kroków** w aktualnym kierunku. Każdy krok to przesunięcie o jedno pole. Ludzik zatrzyma się i zgłosi błąd, jeśli uderzy w ścianę.",
+      "category": "Ruch"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Obraca ludzika o **90 stopni w lewo** (przeciwnie do ruchu wskazówek zegara). Zmienia to kierunek, w którym zwrócony jest ludzik.",
+      "category": "Ruch"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Obraca ludzika o **90 stopni w prawo** (zgodnie z ruchem wskazówek zegara). Zmienia to kierunek, w którym zwrócony jest ludzik.",
+      "category": "Ruch"
     }
   }
 }

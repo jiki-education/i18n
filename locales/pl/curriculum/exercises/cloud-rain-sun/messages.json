@@ -1,55 +1,55 @@
 {
   "checks": {
-    "sun": "�",
-    "cloudBody": "�",
-    "leftPuff": "�",
-    "leftCenterPuff": "�",
-    "rightCenterPuff": "�",
-    "rightPuff": "�",
-    "rainDrop": "�"
+    "sun": "Słońce nie jest prawidłowe.",
+    "cloudBody": "Główna część chmury nie jest prawidłowa.",
+    "leftPuff": "Lewy kłębek chmury nie jest prawidłowy.",
+    "leftCenterPuff": "Środkowo-lewy kłębek chmury nie jest prawidłowy.",
+    "rightCenterPuff": "Środkowo-prawy kłębek chmury nie jest prawidłowy.",
+    "rightPuff": "Prawy kłębek chmury nie jest prawidłowy.",
+    "rainDrop": "Jedna z kropel deszczu nie jest prawidłowa."
   },
   "tasks": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "Narysuj scenę pogodową",
+      "description": "Stwórz scenę pogodową z żółtym słońcem, białą chmurą i niebieskimi kroplami deszczu."
     }
   },
   "scenarios": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "Narysuj scenę pogodową",
+      "description": "Stwórz pełną scenę pogodową ze słońcem, chmurą i deszczem."
     }
   },
   "hints": {
     "cloudShape": {
-      "question": "�",
-      "answer": "�"
+      "question": "Jak zbudować puszysty kształt chmury z prostych kształtów?",
+      "answer": "Chmura to jeden prostokąt (już narysowany dla Ciebie jako podstawa) z okręgami (`circle`) umieszczonymi wzdłuż jej górnej krawędzi, aby nadać jej nierówny kontur."
     },
     "raindropShape": {
-      "question": "�",
-      "answer": "�"
+      "question": "Jak zrobić kroplę deszczu za pomocą funkcji `ellipse`?",
+      "answer": "Krople deszczu są wysokie i wąskie, więc promień pionowy jest większy niż poziomy. Promień poziomy wynosi `3` (to jedyna liczba niepodzielna przez 5)."
     },
     "sunOnTop": {
-      "question": "�",
-      "answer": "�"
+      "question": "Dlaczego moje słońce pojawia się na wierzchu chmury?",
+      "answer": "Kształty narysowane później znajdują się przed tymi narysowanymi wcześniej. Narysuj najpierw słońce, a następnie chmurę, dzięki czemu chmura będzie widoczna przed słońcem."
     },
     "notMatchingTemplate": {
-      "question": "�",
-      "answer": "�"
+      "question": "Dlaczego mój rysunek nie pasuje do linii szablonu?",
+      "answer": "Twoje kształty powinny mieścić się tuż wewnątrz linii pomocniczych, a nie na nich. Prawie każda potrzebna liczba jest podzielna przez 5, więc jeśli kształt wygląda na nieco przesunięty, spróbuj użyć najbliższej wielokrotności liczby 5."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Rysuje prostokąt na pozycji (left, top) o podanej szerokości, wysokości i kolorze",
+      "category": "Rysowanie kształtów"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Rysuje okrąg o środku w punkcie (centerX, centerY) o podanym promieniu i kolorze",
+      "category": "Rysowanie kształtów"
     },
     "ellipse": {
-      "description": "�",
-      "category": "�"
+      "description": "Rysuje elipsę o środku w punkcie (centerX, centerY) o promieniu poziomym radiusX, promieniu pionowym radiusY i podanym kolorze",
+      "category": "Rysowanie kształtów"
     }
   }
 }

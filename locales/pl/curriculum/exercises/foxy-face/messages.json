@@ -1,54 +1,54 @@
 {
   "checks": {
-    "leftCheek": "�",
-    "rightCheek": "�",
-    "leftEar": "�",
-    "rightEar": "�",
-    "leftFace": "�",
-    "rightFace": "�",
-    "nose": "�",
-    "leftFaceAboveEar": "�",
-    "rightFaceAboveEar": "�",
-    "noseAboveFace": "�"
+    "leftCheek": "Lewy policzek powinien być białym trójkątem we właściwym miejscu.",
+    "rightCheek": "Prawy policzek powinien być białym trójkątem we właściwym miejscu.",
+    "leftEar": "Lewe ucho powinno być brązowym trójkątem we właściwym miejscu.",
+    "rightEar": "Prawe ucho powinno być brązowym trójkątem we właściwym miejscu.",
+    "leftFace": "Lewa połowa pyszczka powinna być pomarańczowym trójkątem we właściwym miejscu.",
+    "rightFace": "Prawa połowa pyszczka powinna być pomarańczowym trójkątem we właściwym miejscu.",
+    "nose": "Nos wymaga dwóch trójkątów w kolorze \"charcoal\". Możesz podzielić go na górną i dolną lub lewą i prawą część.",
+    "leftFaceAboveEar": "Lewa połowa pyszczka powinna być narysowana **na wierzchu** lewego ucha.",
+    "rightFaceAboveEar": "Prawa połowa pyszczka powinna być narysowana **na wierzchu** prawego ucha.",
+    "noseAboveFace": "Nos powinien znajdować się **na wierzchu** pyszczka."
   },
   "tasks": {
     "drawFox": {
-      "name": "�",
-      "description": "�"
+      "name": "Narysuj lisi pyszczek",
+      "description": "Użyj trójkątów, aby zbudować geometryczny lisi pyszczek na szarym tle."
     }
   },
   "scenarios": {
     "drawFox": {
-      "name": "�",
-      "description": "�"
+      "name": "Narysuj lisi pyszczek",
+      "description": "Zbuduj geometryczny lisi pyszczek za pomocą trójkątów."
     }
   },
   "hints": {
     "callTriangle": {
-      "question": "�",
-      "answer": "�"
+      "question": "Jak wywołać funkcję `triangle`?",
+      "answer": "Przekaż 7 argumentów w odpowiedniej kolejności: trzy punkty narożne (`x1, y1, x2, y2, x3, y3`), a następnie ciąg znaków z kolorem, np. `triangle(50, 10, 30, 50, 70, 50, \"orange\")`."
     },
     "drawOrder": {
-      "question": "�",
-      "answer": "�"
+      "question": "W jakiej kolejności rysować części, aby prawidłowo na siebie nachodziły?",
+      "answer": "Kształty narysowane później znajdują się na wierzchu tych narysowanych wcześniej. Najpierw narysuj białe policzki, aby pomarańczowe połowy pyszczka zakryły ich większość, pozostawiając widoczne tylko końcówki policzków."
     },
     "colors": {
-      "question": "�",
-      "answer": "�"
+      "question": "Gdzie użyć poszczególnych kolorów?",
+      "answer": "Uszy są w kolorze `\"brown\"`, połowy pyszczka to `\"orange\"`, policzki to `\"white\"`, a nos to `\"charcoal\"`. Pamiętaj, że kolory to ciągi znaków, więc wymagają cudzysłowów."
     },
     "symmetry": {
-      "question": "�",
-      "answer": "�"
+      "question": "Jak obliczyć współrzędne po prawej stronie bez najeżdżania kursorem?",
+      "answer": "Lisi pyszczek jest symetryczny względem pionowego środka. Jeśli punkt po lewej stronie znajduje się na x=`30`, a środek na x=`50`, to jego lustrzane odbicie znajduje się na x=`70` (w tej samej odległości po drugiej stronie środka). Wartości y pozostają takie same."
     },
     "multiplesOf5": {
-      "question": "�",
-      "answer": "�"
+      "question": "Dlaczego moje współrzędne nie działają?",
+      "answer": "Wszystkie potrzebne wartości są wielokrotnościami liczby 5. Jeśli róg wygląda na lekko przesunięty, prawdopodobnie użyto liczby takiej jak `12` lub `38`. Zaokrąglij ją do najbliższej wielokrotności liczby 5 (`10`, `15`, `40` itd.)."
     }
   },
   "functions": {
     "triangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Narysuj trójkąt z trzema punktami narożnymi i kolorem",
+      "category": "Rysowanie kształtów"
     }
   }
 }
