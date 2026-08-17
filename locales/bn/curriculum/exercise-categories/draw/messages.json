@@ -1,46 +1,46 @@
 {
   "errors": {
-    "allInputsNumbers": "�",
-    "blueRange": "�",
-    "circleInputsNumbers": "�",
-    "colorNamedOrHex": "�",
-    "colorNotAllowed": "�",
-    "colorNotString": "�",
-    "ellipseInputsNumbers": "�",
-    "greenRange": "�",
-    "heightPositive": "�",
-    "hueRange": "�",
-    "lightnessRange": "�",
-    "lineInputsNumbers": "�",
-    "rectInputsNumbers": "�",
-    "redRange": "�",
-    "saturationRange": "�",
-    "triangleInputsNumbers": "�",
-    "widthPositive": "�"
+    "allInputsNumbers": "সব ইনপুট সংখ্যা হতে হবে",
+    "blueRange": "নীলের মান 0 থেকে 255-এর মধ্যে হতে হবে",
+    "circleInputsNumbers": "x, y এবং radius ইনপুটগুলো সংখ্যা হতে হবে",
+    "colorNamedOrHex": "রংটি নির্দেশে উল্লেখ করা কোনো নামযুক্ত রং (\"orange\", \"blue\", \"white\" ইত্যাদি) অথবা # দিয়ে শুরু হওয়া একটি হেক্স রং হতে হবে",
+    "colorNotAllowed": "এই অনুশীলনীতে রং নির্দিষ্ট করা উচিত নয়",
+    "colorNotString": "রং একটি স্ট্রিং হতে হবে",
+    "ellipseInputsNumbers": "x, y, rx এবং ry ইনপুটগুলো সংখ্যা হতে হবে",
+    "greenRange": "সবুজের মান 0 থেকে 255-এর মধ্যে হতে হবে",
+    "heightPositive": "height-এর মান 0-এর চেয়ে বড় হতে হবে",
+    "hueRange": "হিউয়ের মান 0 থেকে 360-এর মধ্যে হতে হবে",
+    "lightnessRange": "লাইটনেসের মান 0 থেকে 100-এর মধ্যে হতে হবে",
+    "lineInputsNumbers": "x1, y1, x2 এবং y2 ইনপুটগুলো সংখ্যা হতে হবে",
+    "rectInputsNumbers": "x, y, width এবং height ইনপুটগুলো সংখ্যা হতে হবে",
+    "redRange": "লালের মান 0 থেকে 255-এর মধ্যে হতে হবে",
+    "saturationRange": "স্যাচুরেশনের মান 0 থেকে 100-এর মধ্যে হতে হবে",
+    "triangleInputsNumbers": "x1, y1, x2, y2, x3 এবং y3 ইনপুটগুলো সংখ্যা হতে হবে",
+    "widthPositive": "width-এর মান 0-এর চেয়ে বড় হতে হবে"
   },
   "describers": {
     "rectangle": {
-      "default": "�",
-      "fixedColor": "�"
+      "default": "(${arg1}, ${arg2}) স্থানাঙ্কে ${arg3} প্রস্থ, ${arg4} উচ্চতা এবং ${arg5} রঙের একটি আয়তক্ষেত্র এঁকেছে",
+      "fixedColor": "(${arg1}, ${arg2}) স্থানাঙ্কে ${arg3} প্রস্থ এবং ${arg4} উচ্চতার একটি আয়তক্ষেত্র এঁকেছে"
     },
     "triangle": {
-      "default": "�",
-      "fixedColor": "�"
+      "default": "তিনটি বিন্দু (${arg1}, ${arg2}), (${arg3}, ${arg4}) এবং (${arg5}, ${arg6}) দিয়ে ${arg7} রঙের একটি ত্রিভুজ এঁকেছে",
+      "fixedColor": "তিনটি বিন্দু (${arg1}, ${arg2}), (${arg3}, ${arg4}) এবং (${arg5}, ${arg6}) দিয়ে একটি ত্রিভুজ এঁকেছে"
     },
     "circle": {
-      "default": "�",
-      "fixedColor": "�"
+      "default": "(${arg1}, ${arg2}) বিন্দুতে কেন্দ্র রেখে ${arg3} ব্যাসার্ধ এবং ${arg4} রঙের একটি বৃত্ত এঁকেছে",
+      "fixedColor": "(${arg1}, ${arg2}) বিন্দুতে কেন্দ্র রেখে ${arg3} ব্যাসার্ধের একটি বৃত্ত এঁকেছে"
     },
     "ellipse": {
-      "default": "�",
-      "fixedColor": "�"
+      "default": "(${arg1}, ${arg2}) বিন্দুতে কেন্দ্র রেখে ${arg3} অনুভূমিক ব্যাসার্ধ, ${arg4} উল্লম্ব ব্যাসার্ধ এবং ${arg5} রঙের একটি উপবৃত্ত এঁকেছে",
+      "fixedColor": "(${arg1}, ${arg2}) বিন্দুতে কেন্দ্র রেখে ${arg3} অনুভূমিক ব্যাসার্ধ এবং ${arg4} উল্লম্ব ব্যাসার্ধের একটি উপবৃত্ত এঁকেছে"
     },
     "line": {
-      "default": "�",
-      "fixedColor": "�"
+      "default": "(${arg1}, ${arg2}) থেকে (${arg3}, ${arg4}) পর্যন্ত ${arg5} রঙের একটি রেখা এঁকেছে",
+      "fixedColor": "(${arg1}, ${arg2}) থেকে (${arg3}, ${arg4}) পর্যন্ত একটি রেখা এঁকেছে"
     },
-    "clear": "�",
-    "hsl": "�",
-    "rgb": "�"
+    "clear": "ক্যানভাস মুছে ফেলেছে",
+    "hsl": "HSL রং (হিউ: ${arg1}, স্যাচুরেশন: ${arg2}, লাইটনেস: ${arg3}) একটি হেক্স স্ট্রিংয়ে রূপান্তর করেছে",
+    "rgb": "RGB রং (লাল: ${arg1}, সবুজ: ${arg2}, নীল: ${arg3}) একটি হেক্স স্ট্রিংয়ে রূপান্তর করেছে"
   }
 }
