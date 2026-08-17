@@ -6,7 +6,7 @@ en_md5: 0ad4155ded18c2df27d29e5355bd0532
 
 Forse ricordi che il ciclo repeat non esiste davvero in JavaScript. È solo qualcosa che abbiamo aggiunto per renderti la vita un po' più facile all'inizio.
 
-Quindi cosa usiamo al suo posto? Usiamo un normale ciclo `for`, che ha questo aspetto.
+Quindi cosa usiamo al suo posto? Usiamo un normale ciclo `for`, che `funziona così.`
 
 ```javascript
 for (let i = 0; i < 5; i++) {
@@ -14,25 +14,23 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
-Capisci perché il primo giorno poteva intimidirti un po'.
+Ora capisci perché il primo giorno avrebbe potuto sembrarti un po' complicato.
 
-Ora però hai tutte le conoscenze che ti servono per prenderci confidenza. Analizziamolo insieme.
+Ora hai tutte le conoscenze che ti servono per prendere familiarità con il concetto. Analizziamolo insieme.
 
 Un ciclo for ha tre componenti: un inizializzatore, una condizione e un incremento.
 
-L'inizializzatore, la parte `let i = 0`, viene eseguito all'inizio dell'intero ciclo. Viene eseguito una volta sola e, in questo caso, crea una scatola chiamata `i` impostata a zero. `i` è solo una lettera usata per tenere traccia di un valore mentre il ciclo va avanti: per tradizione si usa `i` o `x`.
+L'inizializzatore, cioè la parte `let i = 0`, viene eseguito all'inizio dell'intero ciclo. Viene eseguito una sola volta. In questo caso crea una "scatola" chiamata `i` impostata a zero. `i` è solo una lettera usata per tenere traccia di un valore mentre il ciclo procede: per tradizione si usa `i` o `x`.
 
 La parte successiva, la condizione, viene eseguita ogni volta, prima di ogni iterazione del ciclo.
 
-Se la condizione è vera, eseguiamo di nuovo il ciclo.
-
-Se non lo è, ci fermiamo.
+Se la condizione è vera, il ciclo continua; se è falsa, il ciclo si ferma.
 
 E infine c'è l'incremento, cioè `i++`.
 
 `i++` significa semplicemente la stessa cosa di `i = i + 1`. È solo una scorciatoia, un modo per aumentare `i` di uno ogni volta.
 
-Quindi, in questo esempio, impostiamo `i` a zero. Controlliamo se `i` è minore di due, e lo è, quindi eseguiamo il ciclo.
+Quindi, in questo esempio, impostiamo `i` a `0`. Controlliamo se `i` è minore di `2`, e lo è, `quindi il ciclo viene eseguito`.
 
 Alla fine aumentiamo `i` di uno, così `i` diventa uno. Zero più uno fa uno.
 
