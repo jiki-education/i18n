@@ -1,18 +1,18 @@
 WEBVTT
 
-NOTE en_md5 e9fe7e208c7aacef9ec6bae77773a83a
+NOTE en_md5 f4b6546cdc3ad8dde1f9b6b1f3ff5008
 
 00:00:00.120 --> 00:00:02.660
-Bon retour parmi nous. Tu sais maintenant créer
+Bon retour parmi nous. Tu sais maintenant
 
 00:00:02.740 --> 00:00:06.640
-des fonctions avec ou sans entrées. Il ne reste
+créer des fonctions avec ou sans entrées. Il reste
 
 00:00:06.780 --> 00:00:08.480
-plus qu'une dernière chose à apprendre pour
+une dernière chose à apprendre, et ensuite tu
 
 00:00:08.520 --> 00:00:11.780
-devenir un expert en fabrication de fonctions :
+seras un expert en fabrication de fonctions. Et c'est
 
 00:00:11.860 --> 00:00:14.160
 comment donner un tapis roulant à tes fonctions.
@@ -20,77 +20,170 @@ comment donner un tapis roulant à tes fonctions.
 00:00:15.000 --> 00:00:17.020
 Tu as déjà utilisé plein de fonctions qui
 
-00:00:17.060 --> 00:00:19.540
-renvoient des choses. `isAlienAbove` te renvoie vrai
+00:00:17.060 --> 00:00:20.400
+renvoient des choses. `isAlienAbove` te renvoie vrai ou faux.
 
-00:00:19.560 --> 00:00:23.850
-ou faux. `Math.randomInt(1, 10)` te renvoie
+00:00:20.500 --> 00:00:24.940
+`Math.randomInt(1, 10)` te renvoie un nombre aléatoire.
 
-00:00:24.000 --> 00:00:27.820
-un nombre aléatoire. Quand Jiki utilise ces fonctions,
+00:00:26.100 --> 00:00:28.780
+Quand Jiki utilise ces fonctions, quelque chose sort
 
-00:00:27.940 --> 00:00:30.360
-quelque chose sort sur le tapis roulant,
+00:00:28.860 --> 00:00:30.980
+sur le tapis roulant, et il peut
 
-00:00:30.600 --> 00:00:33.540
-qu'il peut ensuite aller récupérer et utiliser. Pour
+00:00:31.000 --> 00:00:34.180
+ensuite aller le récupérer. Alors pour faire ça,
 
-00:00:33.580 --> 00:00:35.870
-faire ça, on a besoin d'un nouveau mot-clé :
+00:00:34.220 --> 00:00:36.890
+on a besoin d'un nouveau mot-clé, et c'est
 
-00:00:36.140 --> 00:00:39.700
-le mot-clé `return`. Le mot-clé `return`
+00:00:36.920 --> 00:00:40.900
+le mot-clé `return`. Le mot-clé `return` dit à Mini
 
-00:00:39.740 --> 00:00:42.660
-dit à Mini Jiki de pousser quelque chose
+00:00:40.980 --> 00:00:43.320
+Jiki de pousser quelque chose sur le tapis
 
-00:00:42.700 --> 00:00:45.330
-sur le tapis roulant. Alors créons une
+00:00:43.330 --> 00:00:46.230
+roulant. Alors créons une fonction, et
 
-00:00:45.340 --> 00:00:47.460
-fonction, et appelons-la `meaningOfLife`.
+00:00:46.260 --> 00:00:48.760
+appelons-la `meaningOfLife`. Le travail de cette fonction
 
-00:00:48.130 --> 00:00:50.200
-Le travail de cette fonction est toujours le même :
+00:00:48.920 --> 00:00:51.089
+est toujours le même : renvoyer le nombre
 
-00:00:50.240 --> 00:00:52.650
-renvoyer le nombre `42`. Elle n'a
+00:00:51.360 --> 00:00:54.200
+`42`. Elle n'a aucune entrée. Tu peux donc
 
-00:00:52.720 --> 00:02:32.760
-aucune entrée. Tu peux donc écrire `function meaningOfLife()`,
+00:00:54.240 --> 00:00:58.839
+écrire `function meaningOfLife`, des accolades, et
 
-00:02:33.240 --> 00:02:35.480
-on récupérera la string `"Sorry, too young"`,
+00:00:58.879 --> 00:01:02.339
+ensuite une seule ligne dans cette fonction : `return
 
-00:02:36.480 --> 00:02:39.300
-et si on l'utilise avec `meaningOfLife()`,
+00:01:02.399 --> 00:01:06.539
+42`. Cette ligne dit à Mini Jiki de pousser le
 
-00:02:39.720 --> 00:02:43.340
-on récupérera le nombre `42`. C'est
+00:01:06.579 --> 00:01:09.539
+nombre `42` sur le tapis roulant, puis de
 
-00:02:43.400 --> 00:02:46.000
-le cœur même de la programmation : on crée
+00:01:09.679 --> 00:01:13.559
+s'arrêter. C'est important à entendre. Le mot-clé
 
-00:02:46.060 --> 00:02:48.910
-plein de ces petites briques, puis on les
+00:01:13.659 --> 00:01:17.079
+`return` dit à Mini Jiki de faire deux choses. D'abord,
 
-00:02:48.920 --> 00:02:52.600
-assemble pour en faire des programmes. Je vais
+00:01:17.500 --> 00:01:19.639
+mettre quelque chose sur le tapis roulant, et
 
-00:02:52.620 --> 00:02:54.730
-te donner plusieurs exercices d'affilée,
+00:01:19.779 --> 00:01:22.779
+ensuite, s'arrêter. Dès que tu
 
-00:02:54.800 --> 00:02:56.750
-sans doute la plus longue série jusqu'ici,
+00:01:22.920 --> 00:01:26.579
+utilises le mot-clé `return`, la fonction se termine. Mini Jiki
 
-00:02:57.410 --> 00:03:00.140
-qui utiliseront tout ce que tu viens d'apprendre
+00:01:26.619 --> 00:01:30.059
+ne fera rien d'autre. Maintenant, si tu ne
 
-00:03:00.240 --> 00:03:02.420
-et plein d'autres choses vues précédemment.
+00:01:30.139 --> 00:01:32.540
+connais pas la référence au sens de la vie, elle vient
 
-00:03:03.700 --> 00:03:05.620
-Amuse-toi bien. Bonne chance, et on se
+00:01:32.579 --> 00:01:34.880
+d'un livre célèbre, et aujourd'hui d'un film, appelé
 
-00:03:05.660 --> 00:03:06.310
-retrouve très vite par ici
+00:01:34.899 --> 00:01:37.840
+« Le Guide du voyageur galactique ». Je te recommande
+
+00:01:37.879 --> 00:01:39.819
+de le lire. Tu n'as pas besoin de trop
+
+00:01:39.860 --> 00:01:43.799
+t'inquiéter de ce que `42` veut dire pour l'instant.
+
+00:01:43.879 --> 00:01:47.819
+Regardons un exemple un peu plus complexe, où
+
+00:01:47.879 --> 00:01:50.439
+on a une fonction qui a une entrée
+
+00:01:50.520 --> 00:01:52.479
+et un tapis roulant. On reprend la
+
+00:01:52.539 --> 00:01:54.520
+même idée d'une fonction appelée
+
+00:01:54.599 --> 00:01:57.239
+`meaningOfLife`, et celle-ci a une entrée
+
+00:01:57.299 --> 00:02:00.439
+appelée `age`. Si quelqu'un a 18 ans ou plus,
+
+00:02:00.559 --> 00:02:01.839
+on va lui dire que le sens de
+
+00:02:01.939 --> 00:02:05.639
+la vie est `42`. Sinon, on va juste renvoyer
+
+00:02:05.699 --> 00:02:09.019
+la string `"Sorry, too young"`. La définition de la fonction
+
+00:02:09.059 --> 00:02:12.679
+est très similaire. `function meaningOfLife`, et ensuite
+
+00:02:12.699 --> 00:02:15.379
+l'entrée `age`, des parenthèses, et ensuite
+
+00:02:15.419 --> 00:02:18.339
+une accolade. Mais maintenant il nous faut un
+
+00:02:18.400 --> 00:02:20.459
+`if` à l'intérieur, pour pouvoir dire :
+
+00:02:20.619 --> 00:02:23.019
+« si l'âge est supérieur ou égal à
+
+00:02:23.080 --> 00:02:27.499
+18, on renvoie `42`. Sinon, on renvoie `'Sorry,
+
+00:02:27.540 --> 00:02:30.719
+too young'` ». Maintenant, si on utilise cette fonction
+
+00:02:30.779 --> 00:02:33.759
+en écrivant `meaningOfLife(15)`, on récupérera
+
+00:02:33.799 --> 00:02:37.119
+la string `"Sorry, too young"`. Et si on
+
+00:02:37.220 --> 00:02:40.060
+l'utilise avec `meaningOfLife(30)`, on récupérera
+
+00:02:40.100 --> 00:02:43.800
+le nombre `42`. C'est donc comme ça
+
+00:02:43.820 --> 00:02:46.800
+que la programmation fonctionne au fond. On crée plein
+
+00:02:46.900 --> 00:02:49.360
+de ces petites briques, puis on les
+
+00:02:49.370 --> 00:02:52.960
+assemble pour en faire des programmes. Je vais te donner
+
+00:02:53.140 --> 00:02:55.190
+plusieurs exercices d'affilée, c'est
+
+00:02:55.220 --> 00:02:57.700
+sans doute la plus longue série que tu aies eue, et elle
+
+00:02:57.780 --> 00:03:00.600
+utilisera tout ce que tu as appris ici, avec plein
+
+00:03:00.640 --> 00:03:04.120
+d'autres choses vues précédemment. Amuse-toi bien.
+
+00:03:04.560 --> 00:03:05.960
+Bonne chance, et on se retrouve très vite
+
+00:03:06.000 --> 00:03:06.310
+par ici

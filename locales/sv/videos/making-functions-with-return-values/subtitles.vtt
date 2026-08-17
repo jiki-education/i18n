@@ -1,96 +1,189 @@
 WEBVTT
 
-NOTE en_md5 e9fe7e208c7aacef9ec6bae77773a83a
+NOTE en_md5 f4b6546cdc3ad8dde1f9b6b1f3ff5008
 
 00:00:00.120 --> 00:00:02.660
-Välkommen tillbaka. Nu vet du hur du
+Välkommen tillbaka. Nu vet du
 
 00:00:02.740 --> 00:00:06.640
-skapar funktioner både med och utan indata. Det finns en
+hur du skapar funktioner både med och utan indata. Det finns en
 
 00:00:06.780 --> 00:00:08.480
-sista sak kvar att lära sig, och sedan är du
+sista sak kvar att lära sig, och sedan
 
 00:00:08.520 --> 00:00:11.780
-expert på att bygga funktioner, och den saken är
+är du expert på att bygga funktioner. Och den saken är
 
 00:00:11.860 --> 00:00:14.160
 hur du ger dina funktioner en rutschkana.
 
 00:00:15.000 --> 00:00:17.020
-Du har redan använt massor av funktioner som returnerar
+Du har redan använt massor av funktioner som
 
-00:00:17.060 --> 00:00:19.540
-saker. `isAlienAbove` ger dig tillbaka sant
+00:00:17.060 --> 00:00:20.400
+returnerar saker. `isAlienAbove` ger dig tillbaka sant eller falskt.
 
-00:00:19.560 --> 00:00:23.850
-eller falskt. `Math.randomInt(1, 10)` ger dig tillbaka
+00:00:20.500 --> 00:00:24.940
+`Math.randomInt(1, 10)` ger dig tillbaka ett slumptal.
 
-00:00:24.000 --> 00:00:27.820
-ett slumptal. När Jiki använder de här funktionerna,
+00:00:26.100 --> 00:00:28.780
+När Jiki använder de här funktionerna, kommer något
 
-00:00:27.940 --> 00:00:30.360
-kommer något ut ur rutschkanan,
+00:00:28.860 --> 00:00:30.980
+ut ur rutschkanan, som han sedan
 
-00:00:30.600 --> 00:00:33.540
-som han sedan kan gå vidare och använda. Så
+00:00:31.000 --> 00:00:34.180
+kan gå vidare och använda. Så för att göra det här,
 
-00:00:33.580 --> 00:00:35.870
-för att göra det här behöver vi ännu ett nytt nyckelord,
+00:00:34.220 --> 00:00:36.890
+behöver vi ännu ett nytt nyckelord, och det är
 
-00:00:36.140 --> 00:00:39.700
-och det är nyckelordet `return`. Nyckelordet `return`
+00:00:36.920 --> 00:00:40.900
+nyckelordet `return`. Nyckelordet `return` säger åt mini-Jiki
 
-00:00:39.740 --> 00:00:42.660
-säger åt mini-Jiki att knuffa ut något
+00:00:40.980 --> 00:00:43.320
+att knuffa ut något genom
 
-00:00:42.700 --> 00:00:45.330
-genom rutschkanan. Nu skapar vi en
+00:00:43.330 --> 00:00:46.230
+rutschkanan. Nu skapar vi en funktion, och
 
-00:00:45.340 --> 00:00:47.460
-funktion, och vi döper den till `meaningOfLife`,
+00:00:46.260 --> 00:00:48.760
+vi döper den till `meaningOfLife`, och den här funktionens
 
-00:00:48.130 --> 00:00:50.200
-och den här funktionens jobb är att alltid
+00:00:48.920 --> 00:00:51.089
+jobb är alltid bara att returnera talet
 
-00:00:50.240 --> 00:00:52.650
-returnera talet `42`. Den har ingen
+00:00:51.360 --> 00:00:54.200
+`42`. Den har ingen indata alls. Så du kan
 
-00:00:52.720 --> 00:02:32.760
-indata. Du kan alltså skriva `function meaningOfLife() { return 42 }`. Överallt där vi använder `meaningOfLife()`
+00:00:54.240 --> 00:00:58.839
+skriva `function meaningOfLife`, klammerparenteser, och
 
-00:02:33.240 --> 00:02:35.480
-får vi tillbaka strängen `"Sorry, too young"`,
+00:00:58.879 --> 00:01:02.339
+sedan en enda rad inuti funktionen: `return
 
-00:02:36.480 --> 00:02:39.300
-och om vi i stället använder `meaningOfLife`,
+00:01:02.399 --> 00:01:06.539
+42`. Den raden säger åt mini-Jiki att knuffa ut
 
-00:02:39.720 --> 00:02:43.340
-får vi tillbaka talet `42`. Det här är
+00:01:06.579 --> 00:01:09.539
+talet `42` genom rutschkanan och sedan
 
-00:02:43.400 --> 00:02:46.000
-hur programmering fungerar i grunden. Vi
+00:01:09.679 --> 00:01:13.559
+sluta. Det är viktigt att höra det. Nyckelordet
 
-00:02:46.060 --> 00:02:48.910
-skapar massor av såna här små byggstenar och
+00:01:13.659 --> 00:01:17.079
+`return` säger åt mini-Jiki att göra två saker. För det första,
 
-00:02:48.920 --> 00:02:52.600
-sätter sedan ihop dem till program. Nu ska jag
+00:01:17.500 --> 00:01:19.639
+lägga något på rutschkanan, och
 
-00:02:52.620 --> 00:02:54.730
-ge dig några övningar i rad
+00:01:19.779 --> 00:01:22.779
+för det andra, att sluta. Så snart du
 
-00:02:54.800 --> 00:02:56.750
-nu, förmodligen den längsta serien du haft,
+00:01:22.920 --> 00:01:26.579
+använder nyckelordet `return` avslutas funktionen. Mini-Jiki
 
-00:02:57.410 --> 00:03:00.140
-som kommer att använda allt du har lärt dig här tillsammans med
+00:01:26.619 --> 00:01:30.059
+gör ingenting mer. Om du nu inte
 
-00:03:00.240 --> 00:03:02.420
-mycket annat vi har gått igenom tidigare.
+00:01:30.139 --> 00:01:32.540
+känner till referensen till meningen med livet, så kommer den
 
-00:03:03.700 --> 00:03:05.620
-Ha kul. Lycka till, så ses vi
+00:01:32.579 --> 00:01:34.880
+från en berömd bok, och numera en film, som heter
 
-00:03:05.660 --> 00:03:06.310
+00:01:34.899 --> 00:01:37.840
+Liftarens guide till galaxen. Jag rekommenderar att
+
+00:01:37.879 --> 00:01:39.819
+läsa den. Du behöver inte bekymra dig så
+
+00:01:39.860 --> 00:01:43.799
+mycket om vad `42` betyder just nu.
+
+00:01:43.879 --> 00:01:47.819
+Nu tittar vi på ett lite mer komplext exempel, där
+
+00:01:47.879 --> 00:01:50.439
+vi har en funktion som har både indata
+
+00:01:50.520 --> 00:01:52.479
+och en rutschkana. Vi utgår från
+
+00:01:52.539 --> 00:01:54.520
+samma idé med en funktion som heter
+
+00:01:54.599 --> 00:01:57.239
+`meaningOfLife`, och den här har en indata
+
+00:01:57.299 --> 00:02:00.439
+som heter `age`. Om någon är 18 eller äldre,
+
+00:02:00.559 --> 00:02:01.839
+ska vi tala om för dem att meningen med
+
+00:02:01.939 --> 00:02:05.639
+livet är `42`. Annars returnerar vi bara
+
+00:02:05.699 --> 00:02:09.019
+strängen `"Sorry, too young"`. Funktionsdefinitionen
+
+00:02:09.059 --> 00:02:12.679
+är väldigt lik. `function meaningOfLife`, och sedan
+
+00:02:12.699 --> 00:02:15.379
+indataplatsen `age`, fler parenteser, och sedan
+
+00:02:15.419 --> 00:02:18.339
+en klammerparentes. Men nu behöver vi en
+
+00:02:18.400 --> 00:02:20.459
+`if`-sats inuti, så att vi kan säga:
+
+00:02:20.619 --> 00:02:23.019
+"om åldern är större än eller lika med
+
+00:02:23.080 --> 00:02:27.499
+18, returnerar vi `42`. Annars returnerar vi `'Sorry,
+
+00:02:27.540 --> 00:02:30.719
+too young'`". Om vi nu använder den funktionen
+
+00:02:30.779 --> 00:02:33.759
+genom att skriva `meaningOfLife(15)`, får vi tillbaka
+
+00:02:33.799 --> 00:02:37.119
+strängen `"Sorry, too young"`. Och om vi
+
+00:02:37.220 --> 00:02:40.060
+använder den med `meaningOfLife(30)`, får vi
+
+00:02:40.100 --> 00:02:43.800
+tillbaka talet `42`. Så det här är hur
+
+00:02:43.820 --> 00:02:46.800
+programmering fungerar i grunden. Vi skapar massor
+
+00:02:46.900 --> 00:02:49.360
+av såna här små byggstenar och sätter sedan
+
+00:02:49.370 --> 00:02:52.960
+ihop dem till program. Nu ska jag ge dig
+
+00:02:53.140 --> 00:02:55.190
+några övningar i rad,
+
+00:02:55.220 --> 00:02:57.700
+förmodligen den längsta serien du haft, och den
+
+00:02:57.780 --> 00:03:00.600
+kommer att använda allt du har lärt dig här tillsammans med mycket
+
+00:03:00.640 --> 00:03:04.120
+annat vi har gått igenom tidigare. Ha kul.
+
+00:03:04.560 --> 00:03:05.960
+Lycka till, så ses vi
+
+00:03:06.000 --> 00:03:06.310
 här igen strax
