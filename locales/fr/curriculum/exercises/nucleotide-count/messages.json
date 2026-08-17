@@ -2,13 +2,13 @@
   "tasks": {
     "countNucleotides": {
       "name": "Compte les nucléotides",
-      "description": "Écris une fonction qui compte les occurrences de chaque nucléotide (A, C, G, T) dans un brin d'ADN et renvoie un dictionnaire contenant les comptes. Renvoie false si le brin contient des caractères invalides."
+      "description": "Écris une fonction qui compte les occurrences de chaque nucléotide (A, C, G, T) dans un brin d'ADN et qui renvoie un dictionnaire avec les décomptes. Renvoie `false` si le brin contient des caractères invalides."
     }
   },
   "scenarios": {
     "nucleotideCountEmptyStrand": {
       "name": "Brin vide",
-      "description": "Avec un brin vide, tous les comptes doivent être à zéro."
+      "description": "Avec un brin vide, tous les décomptes doivent être à zéro."
     },
     "nucleotideCountSingleNucleotide": {
       "name": "Un seul nucléotide",
@@ -24,13 +24,13 @@
     },
     "nucleotideCountInvalidNucleotide": {
       "name": "Nucléotide invalide",
-      "description": "Un brin qui contient des nucléotides invalides doit renvoyer false."
+      "description": "Un brin qui contient des nucléotides invalides doit renvoyer `false`."
     }
   },
   "hints": {
     "setupCounts": {
-      "question": "Comment mettre en place les comptes ?",
-      "answer": "Commence avec un dictionnaire où les quatre nucléotides (`A`, `C`, `G`, `T`) sont à 0. En parcourant le brin, tu ajouteras 1 au compte qui correspond."
+      "question": "Comment initialiser les décomptes ?",
+      "answer": "Commence avec un dictionnaire où les quatre nucléotides (`A`, `C`, `G`, `T`) sont à 0. En parcourant le brin, tu ajouteras 1 au décompte correspondant."
     },
     "validChars": {
       "question": "Comment savoir quels caractères sont valides ?",
@@ -42,7 +42,7 @@
     },
     "invalidChars": {
       "question": "Que faire des caractères invalides ?",
-      "answer": "L'énoncé demande de renvoyer `false` immédiatement. Une fois qu'un caractère invalide apparaît, il n'y a rien à rattraper : arrête-toi et renvoie false."
+      "answer": "L'énoncé demande de renvoyer `false` immédiatement. Une fois qu'un caractère invalide apparaît, il n'y a rien à rattraper : arrête-toi et renvoie `false`."
     }
   },
   "functions": {

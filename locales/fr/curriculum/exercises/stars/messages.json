@@ -2,7 +2,7 @@
   "tasks": {
     "createStarsFunction": {
       "name": "Crée la fonction stars",
-      "description": "Écris une fonction stars qui prend un nombre et renvoie un tableau de strings, où chaque string contient un nombre croissant d'étoiles. Par exemple, stars(3) renvoie [\"*\", \"**\", \"***\"]."
+      "description": "Écris une fonction `stars` qui prend un nombre et renvoie un tableau de `strings`, où chaque `string` contient un nombre croissant d'étoiles. Par exemple, `stars(3)` renvoie [\"*\", \"**\", \"***\"]."
     }
   },
   "scenarios": {
@@ -12,21 +12,21 @@
     },
     "count1": {
       "name": "Le nombre est 1",
-      "description": "Une étoile renvoie un tableau avec une seule string d'étoile."
+      "description": "Une étoile renvoie un tableau avec une seule `string` d'étoile."
     },
     "count3": {
       "name": "Le nombre est 3",
-      "description": "Trois étoiles renvoient trois strings avec de plus en plus d'étoiles."
+      "description": "Trois étoiles renvoient trois `strings` avec de plus en plus d'étoiles."
     },
     "count5": {
       "name": "Le nombre est 5",
-      "description": "Cinq étoiles renvoient cinq strings avec de plus en plus d'étoiles."
+      "description": "Cinq étoiles renvoient cinq `strings` avec de plus en plus d'étoiles."
     }
   },
   "hints": {
     "shapeOfAnswer": {
       "question": "Quelle forme doit avoir ma réponse ?",
-      "answer": "Un tableau de strings, chacune un peu plus longue que la précédente. Commence avec un tableau vide et une string vide. À chaque itération, la string grandit d'une étoile, et la nouvelle string va dans le tableau."
+      "answer": "Un tableau de `strings`, chacune un peu plus longue que la précédente. Commence avec un tableau vide et une `string` vide. À chaque itération, la `string` grandit d'une étoile, et la nouvelle `string` va dans le tableau."
     },
     "loopCount": {
       "question": "Comment faire tourner la boucle le bon nombre de fois ?",
@@ -34,7 +34,7 @@
     },
     "insideLoop": {
       "question": "Que se passe-t-il dans la boucle ?",
-      "answer": "Deux étapes. D'abord, ajoute une étoile à la string qui grandit grâce à la concaténation avec `+`. Ensuite, ajoute cette string au tableau avec `push()`. L'ordre compte ici : fais la concaténation en premier, pour que la première string ajoutée au tableau soit `\"*\"`, et non la string vide."
+      "answer": "Deux étapes. D'abord, ajoute une étoile à la `string` qui grandit grâce à la concaténation avec `+`. Ensuite, ajoute cette `string` au tableau avec `push()`. L'ordre compte ici : fais la concaténation en premier, pour que la première `string` ajoutée au tableau soit `\"*\"`, et non la `string` vide."
     }
   },
   "functions": {
