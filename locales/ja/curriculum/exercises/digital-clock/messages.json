@@ -47,7 +47,7 @@
   "hints": {
     "gettingStarted": {
       "question": "どう始めたらいいかわかりません。",
-      "answer": "まず、`currentTimeHour()`と`currentTimeMinute()`で現在の時刻を取得し、その値で`displayTime(hour, minutes, \"am\")`を実行して結果を確認します。その後、正しい午前・午後（meridiem）と時刻表示の設定方法を考えてみてください。"
+      "answer": "まず、`currentTimeHour()`と`currentTimeMinute()`で現在の時刻を取得し、その値と3つ目の入力として`\"am\"`を渡して`displayTime`を呼び出し（例: `displayTime(hour, minutes, \"am\")`）、結果を確認します。その後、正しい午前・午後（meridiem）と時刻表示の設定方法を考えてみてください。"
     },
     "meridiem": {
       "question": "meridiemの仕組みはどうなっていますか？",
