@@ -1,7 +1,7 @@
 ---
 title: "Pangrama"
 description: "Verifica si una oración contiene todas las letras del alfabeto, sin importar mayúsculas o minúsculas."
-en_md5: 8fae2df6ec4385478e4236fa49e21256
+en_md5: 2f0271add2facf8e75ecb8afde53682e
 ---
 
 Te damos la bienvenida a la segunda parte de la serie de Pangramas. Recuerda, un pangrama es una oración que usa cada letra del alfabeto al menos una vez.

@@ -1,7 +1,7 @@
 ---
 title: "Pangramme"
 description: "Vérifie si une phrase contient toutes les lettres de l'alphabet, quelle que soit la casse."
-en_md5: 8fae2df6ec4385478e4236fa49e21256
+en_md5: 2f0271add2facf8e75ecb8afde53682e
 ---
 
 Bienvenue dans la deuxième partie de la série Pangramme. Pour rappel, un pangramme est une phrase qui utilise chaque lettre de l'alphabet au moins une fois.
