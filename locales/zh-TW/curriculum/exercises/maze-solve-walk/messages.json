@@ -1,43 +1,43 @@
 {
   "errors": {
-    "walkExpectsNumber": "�"
+    "walkExpectsNumber": "`walk()` 需要一個數字作為步數"
   },
   "describers": {
-    "walk": "�"
+    "walk": "往前走指定的步數"
   },
   "checks": {
-    "notReachedEnd": "�"
+    "notReachedEnd": "你還沒有抵達迷宮的終點喔。"
   },
   "tasks": {
     "solveMaze": {
-      "name": "�",
-      "description": "�"
+      "name": "引導角色抵達迷宮終點",
+      "description": "使用 `walk()`、`turnLeft()` 和 `turnRight()` 來通過迷宮，並抵達綠色的目標格子。"
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "引導角色抵達迷宮終點",
+      "description": "你的任務是抵達終點。"
     }
   },
   "hints": {
     "moveNotWorking": {
-      "question": "�",
-      "answer": "�"
+      "question": "為什麼 `move()` 不能用了呢？",
+      "answer": "Jiki 的每個練習都有不同的函式可以使用。在這個練習中，你可以使用 `walk(...)` 函式。把 `n` 替換成你想要走的步數。所以 `walk(1)` 的作用就和上次的 `move()` 完全一樣喔。"
     }
   },
   "functions": {
     "walk": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色朝目前的方向**往前走指定的步數**。每一步會移動一格。如果角色撞到牆壁，就會停下來並回報錯誤。",
+      "category": "移動"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色**向左轉 90 度**（逆時針）。這會改變角色面對的方向。",
+      "category": "移動"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色**向右轉 90 度**（順時針）。這會改變角色面對的方向。",
+      "category": "移動"
     }
   }
 }

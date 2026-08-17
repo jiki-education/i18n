@@ -1,54 +1,54 @@
 {
   "checks": {
-    "leftCheek": "�",
-    "rightCheek": "�",
-    "leftEar": "�",
-    "rightEar": "�",
-    "leftFace": "�",
-    "rightFace": "�",
-    "nose": "�",
-    "leftFaceAboveEar": "�",
-    "rightFaceAboveEar": "�",
-    "noseAboveFace": "�"
+    "leftCheek": "左臉頰應該是一個位於正確位置的白色三角形。",
+    "rightCheek": "右臉頰應該是一個位於正確位置的白色三角形。",
+    "leftEar": "左耳應該是一個位於正確位置的棕色三角形。",
+    "rightEar": "右耳應該是一個位於正確位置的棕色三角形。",
+    "leftFace": "左半臉應該是一個位於正確位置的橘色三角形。",
+    "rightFace": "右半臉應該是一個位於正確位置的橘色三角形。",
+    "nose": "鼻子需要兩個炭灰色的三角形。你可以將它分成上半部與下半部，或是左半邊與右半邊。",
+    "leftFaceAboveEar": "左半臉應該畫在左耳**之上**。",
+    "rightFaceAboveEar": "右半臉應該畫在右耳**之上**。",
+    "noseAboveFace": "鼻子應該位於臉**之上**。"
   },
   "tasks": {
     "drawFox": {
-      "name": "�",
-      "description": "�"
+      "name": "畫一張狐狸臉",
+      "description": "在灰色背景上，使用三角形拼出一張幾何狐狸臉。"
     }
   },
   "scenarios": {
     "drawFox": {
-      "name": "�",
-      "description": "�"
+      "name": "畫一張狐狸臉",
+      "description": "使用三角形拼出一張幾何狐狸臉。"
     }
   },
   "hints": {
     "callTriangle": {
-      "question": "�",
-      "answer": "�"
+      "question": "我該如何呼叫 `triangle` 函式？",
+      "answer": "依序傳入 7 個引數：三個頂點（`x1, y1, x2, y2, x3, y3`），接著是顏色字串，例如 `triangle(50, 10, 30, 50, 70, 50, \"orange\")`。"
     },
     "drawOrder": {
-      "question": "�",
-      "answer": "�"
+      "question": "我應該按照什麼順序來畫這些部分，它們才會正確地重疊呢？",
+      "answer": "後畫的形狀會覆蓋在先畫的形狀之上。先畫白色的臉頰，這樣橘色的半邊臉就能蓋住它們的大部分，只露出臉頰的尖端。"
     },
     "colors": {
-      "question": "�",
-      "answer": "�"
+      "question": "哪些顏色要用在哪裡？",
+      "answer": "耳朵是 `\"brown\"`，兩半的臉是 `\"orange\"`，臉頰是 `\"white\"`，而鼻子則是 `\"charcoal\"`。記住，顏色是字串，所以需要加上引號喔。"
     },
     "symmetry": {
-      "question": "�",
-      "answer": "�"
+      "question": "我該如何在不使用游標提示的情況下，算出右半邊的座標呢？",
+      "answer": "狐狸臉是以垂直中線對稱的。如果左半邊的某個點在 x=`30`，而中心點在 x=`50`，那麼對稱點就會在 x=`70`（距離中心點另一側相同距離的位置）。y 的值則保持不變。"
     },
     "multiplesOf5": {
-      "question": "�",
-      "answer": "�"
+      "question": "為什麼我的座標不對呢？",
+      "answer": "所有你需要的值都是 5 的倍數。如果某個頂點看起來有點偏差，你可能用到了像 `12` 或 `38` 這樣的數字。請將它調整到最接近的 5 的倍數（例如 `10`、`15`、`40` 等）。"
     }
   },
   "functions": {
     "triangle": {
-      "description": "�",
-      "category": "�"
+      "description": "使用三個頂點和一個顏色來畫出一個三角形",
+      "category": "繪製形狀"
     }
   }
 }

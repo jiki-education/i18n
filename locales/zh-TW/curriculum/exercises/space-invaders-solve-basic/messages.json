@@ -1,40 +1,40 @@
 {
   "describers": {
-    "move": "�"
+    "move": "將雷射砲向右移動"
   },
   "checks": {
-    "notShotAllAliens": "�"
+    "notShotAllAliens": "你沒有擊落所有的外星人。"
   },
   "tasks": {
     "shootTheAliens": {
-      "name": "�",
-      "description": "�"
+      "name": "擊落所有的外星人",
+      "description": "將你的雷射砲向右移動，並在經過每個外星人下方時射擊牠們。不要漏掉任何一個，也不要移動超出邊緣喔！"
     }
   },
   "scenarios": {
     "shootTheAliens": {
-      "name": "�",
-      "description": "�"
+      "name": "擊落外星人",
+      "description": "向右移動並擊落所有的外星人"
     }
   },
   "hints": {
     "whatDoINeedToDo": {
-      "question": "�",
-      "answer": "�"
+      "question": "我需要做什麼？",
+      "answer": "就像迷宮一樣，你需要移動你的角色（這次是雷射砲，不是人）。但你還需要發射雷射！將雷射砲移動到外星人下方然後射擊。接著再次移動，直到你位於下一個外星人下方，然後再次射擊。繼續這樣做，直到你擊落最後一個外星人為止！"
     },
     "cantWasteAmmo": {
-      "question": "�",
-      "answer": "�"
+      "question": "系統告訴我不能浪費彈藥。",
+      "answer": "你應該只在正下方有外星人時才呼叫 `shoot()`。試著再往前移動一步（或者你可能走得太遠了？）"
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "將雷射砲**向右移動一個位置**。如果你移動超出了螢幕的右側邊緣，你就會輸掉遊戲！",
+      "category": "移動"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "向上發射雷射。**只有在上方有外星人時才能射擊**，否則你就會輸掉遊戲！",
+      "category": "動作"
     }
   }
 }
