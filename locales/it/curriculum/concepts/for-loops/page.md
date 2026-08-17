@@ -34,9 +34,9 @@ Quindi, in questo esempio, impostiamo `i` a `0`. Controlliamo se `i` è minore d
 
 Alla fine aumentiamo `i` di uno, così `i` diventa uno. Zero più uno fa uno.
 
-Poi ripartiamo. Controlliamo se uno è minore di due.
+Poi il ciclo riparte. Controlliamo se `1` è minore di `2`.
 
-Lo è, quindi eseguiamo il ciclo. Alla fine aumentiamo di nuovo `i`. Ora vale due: uno più uno fa due.
+Lo è, quindi il ciclo viene eseguito. Alla fine aumentiamo di nuovo `i`. Ora vale `2`: `1` più `1` fa `2`.
 
 ```javascript
 i = 0
@@ -51,8 +51,8 @@ i = i + 1 // 2
 i < 2 // false - usciamo dal ciclo
 ```
 
-Poi ci proviamo una terza volta. Questa volta controlliamo se due è minore di due, e non lo è, quindi non eseguiamo il ciclo: anzi, il ciclo è proprio finito. Passiamo semplicemente al codice che viene dopo. In tutto abbiamo eseguito il ciclo due volte, ed è una cosa utile da sapere: finché partiamo da zero e usiamo una condizione `i < n`, il numero `n` è il numero di volte che il ciclo verrà eseguito.
+Poi ci proviamo una terza volta. Questa volta controlliamo se `2` è minore di `2`, e non lo è, quindi il ciclo non viene eseguito: anzi, il ciclo è proprio finito. Passiamo semplicemente al codice che viene dopo.
 
-Quindi equivale a scrivere repeat due.
+In totale abbiamo eseguito il ciclo due volte, ed è una cosa utile da sapere: finché partiamo da zero e usiamo una condizione `i < n`, il numero `n` corrisponde al numero di volte in cui il ciclo verrà eseguito.
 
-Non è difficile, ma è molto più macchinoso che scrivere semplicemente repeat due. Il vantaggio di un ciclo for è che in quelle tre posizioni puoi fare qualsiasi cosa. Puoi partire da un numero diverso, contare a passi maggiori di uno, contare all'indietro, o usare una condizione che dipende da qualcosa di diverso da un semplice contatore. È questa flessibilità a rendere i cicli for il cavallo di battaglia di JavaScript.
+Quindi equivale a scrivere `repeat 2`. Non è difficile, ma è molto più macchinoso che scrivere semplicemente `repeat 2`. Il vantaggio di un ciclo `for` è che in quelle tre posizioni puoi fare qualsiasi cosa: puoi partire da un numero diverso, contare a passi maggiori di uno, contare all'indietro, oppure usare una condizione che dipende da qualcosa di diverso da un semplice contatore. È questa flessibilità a rendere i cicli `for` il cavallo di battaglia di JavaScript.
