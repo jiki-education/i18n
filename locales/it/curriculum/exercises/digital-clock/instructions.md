@@ -20,4 +20,4 @@ Ad esempio:
 
 Per mostrare l'ora sull'orologio usi la funzione `displayTime(hour, minutes, meridiem)` (mostra l'ora).
 
-In ogni scenario l'ora attuale cambia. Il tuo compito è scrivere codice che faccia funzionare tutti gli scenari. Nell'ultimo scenario usiamo l'ora reale, quindi lo scenario cambierà ogni volta che l'ora reale avanza di un minuto!
+In ogni scenario l'ora attuale cambia. Il tuo compito è scrivere codice che gestisca correttamente tutti gli scenari. Nell'ultimo scenario usiamo l'ora reale, quindi lo scenario si aggiorna ogni volta che l'ora avanza di un minuto.
