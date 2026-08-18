@@ -4,7 +4,7 @@ description: "Concatenare clausole `else if` per controllare più condizioni in 
 en_md5: 64274945347d47d67baf3378cf219c9b
 ---
 
-Hai visto come `if` ed `else` ti danno due strade: fare una cosa quando una condizione è vera, farne un'altra quando è falsa. Ma cosa succede se le possibilità sono più di due?
+Hai visto come `if` ed `else` ti permettono di gestire due casi: uno quando la condizione è vera e uno quando è falsa. Ma cosa succede quando le possibilità sono più di due?
 
 Immagina che il nostro buttafuori venda i biglietti. Sotto i tredici anni ricevi un biglietto per bambini. Tra i tredici e i venti, un biglietto per ragazzi. A venti anni o più, un biglietto per adulti. Adesso quindi i risultati possibili sono tre. Per gestirli, possiamo aggiungere un'altra istruzione if dopo l'else. In pratica diciamo: "Se questa condizione è vera, fai questo. Altrimenti, se quest'altra è vera, fai quello. Altrimenti, fai quest'altra cosa ancora." In questo esempio Jiki vede l'if e controlla la prima condizione. Sedici è minore di tredici? No. Quindi passa all'else if. Sedici è minore di venti? Sì, è vero. Quindi esegue quel blocco e consegna un biglietto per ragazzi. E a quel punto ha finito. Non controlla nient'altro. Non guarda nemmeno l'else finale. Appena Jiki trova una condizione vera, esegue quel blocco e salta tutto quello che viene dopo.
 
