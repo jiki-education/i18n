@@ -4,7 +4,7 @@ description: "Riduci un numero a una sola cifra sommando ripetutamente le sue ci
 en_md5: 9847d9ea8c4a86ad65869e4f7b4c718e
 ---
 
-La radice numerica (_digital root_ in inglese) di un numero è ciò che ottieni continuando a sommare le sue cifre finché non resta una sola cifra.
+La radice numerica (_digital root_) di un numero è il risultato che ottieni sommando ripetutamente le sue cifre finché non rimane una sola cifra.
 
 Se sommando le cifre una volta ottieni ancora più di una cifra, sommi le cifre di _quel_ risultato, e vai avanti finché non rimane una sola cifra.
 
