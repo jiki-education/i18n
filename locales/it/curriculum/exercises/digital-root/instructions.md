@@ -15,9 +15,9 @@ Esempio: trovare la radice numerica di `942`:
 1 + 5 = 6
 ```
 
-Quindi la radice numerica di `942` è `6`.
+La radice numerica di `942` è `6`.
 
-Un numero che è già composto da una sola cifra (come `7`) è la propria radice numerica.
+Un numero che ha già una sola cifra (come `7`) è semplicemente la sua stessa radice numerica.
 
 Crea una funzione chiamata `digitalRoot` che prende un numero e restituisce la sua radice numerica.
 
