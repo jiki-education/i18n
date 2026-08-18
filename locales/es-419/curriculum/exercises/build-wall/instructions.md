@@ -1,7 +1,7 @@
 ---
 title: "Construye el muro"
 description: "Construye un muro desde cero, ladrillo a ladrillo, fila por fila."
-en_md5: f8972d95a07cefdda884ecba9431a61b
+en_md5: 1cad91fdd523a7af36acc157e3e626d6
 ---
 
 La última vez que viste el muro, le añadiste una capa superior para terminarlo. En este ejercicio, vas un paso más allá y construyes un muro entero desde cero, con un total de 55 ladrillos.
@@ -13,6 +13,7 @@ El muro terminado debería verse así:
 Lo que necesitas saber:
 
 - **Cada** ladrillo mide 10 de alto y 20 de ancho.
+- Los ladrillos pueden empezar o terminar **fuera** del lienzo si es necesario, pero no deben quedar **completamente** fuera del lienzo.
 - Las filas alternan entre empezar en el borde izquierdo (5 ladrillos) y empezar fuera de pantalla por la izquierda (6 ladrillos). (La fila inferior tiene 5, la superior tiene 6).
 - ¡La función `rectangle` (rectángulo) solo puede aparecer una vez en tu código!
 
