@@ -23,18 +23,18 @@ Crea una funzione chiamata `digitalRoot` che prende un numero e restituisce la s
 
 ### La funzione `String()`
 
-Nelle ultime lezioni hai avuto a disposizione la funzione `Number(str)`, che converte una stringa in un numero.
+Nelle ultime lezioni hai usato la funzione `Number(str)`, che converte una stringa in un numero.
 
-Puoi fare la stessa cosa al contrario e trasformare un numero in una stringa con la funzione `String(num)`. Per esempio:
+Allo stesso modo puoi trasformare un numero in una stringa usando la funzione `String(num)`. Esempio:
 
 ```js
 String(147) === "147"
 ```
 
-Anche qui, nota la lettera maiuscola all'inizio, e anche qui non preoccuparti del perché per ora!
+Anche qui, nota la lettera maiuscola all'inizio, e non preoccuparti del motivo per ora!
 
 ### Mettiamo in pratica quello che hai imparato.
 
-Anche se ci sono tanti modi per risolvere questo esercizio, la soluzione a cui vogliamo che tu arrivi usa un ciclo `while`.
+Anche se esistono diversi modi per risolvere questo esercizio, la soluzione che vogliamo che tu raggiunga utilizza un ciclo `while`.
 
 Buon divertimento!
