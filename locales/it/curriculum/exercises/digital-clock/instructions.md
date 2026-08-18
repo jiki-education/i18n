@@ -11,7 +11,7 @@ In questo esercizio userai due nuove funzioni per ottenere l'ora:
 
 Il tuo compito è aggiornare un orologio digitale in base ai numeri che queste funzioni restituiscono.
 
-L'orologio digitale si aspetta i numeri nel formato a 12 ore, con `am` o `pm` (il cosiddetto "meridiem").
+L'orologio digitale richiede numeri nel formato a 12 ore, con `am` o `pm` (il cosiddetto *meridiem*).
 
 Ad esempio:
 
