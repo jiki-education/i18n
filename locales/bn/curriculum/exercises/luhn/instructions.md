@@ -43,4 +43,4 @@ en_md5: 07b0aea3adc2353e50a26e5cbe5cd162
 
 এর পাশাপাশি আগের অনুশীলনীতে পরিচয় করিয়ে দেওয়া <a href="/concepts/type-conversion" target="_blank" rel="noopener noreferrer">`Number(str)`</a> ফাংশনটিও আপনার লাগবে।
 
-কাজটা উপভোগ করুন!
+শুভকামনা!
