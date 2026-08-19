@@ -33,7 +33,7 @@ repeat(8) {
 
 O que achas que vai acontecer?
 
-Bem, vai plantar oito flores, mas vai plantá-las no mesmo sítio de cada vez, o que não é bem o que queremos. Por isso, vamos parar um instante para pensar no que o Jiki está a fazer aqui. Está a criar uma caixa com o rótulo da posição. Está a pôr 10 lá dentro. Depois está a correr a máquina `plant` oito vezes. De cada vez, está a tirar o valor da caixa da posição. É sempre 10, e está a pôr esse mesmo 10 lá dentro de cada vez.
+Bem, vai plantar oito flores, mas vai plantá-las no mesmo sítio de cada vez, o que não é bem o que queremos. Por isso, vamos parar um instante para pensar no que o Jiki está a fazer aqui. Está a criar uma caixa com o rótulo position. Está a pôr 10 lá dentro. Depois está a correr a máquina `plant` oito vezes. De cada vez, está a tirar o valor da caixa da posição. É sempre 10, e está a pôr esse mesmo 10 lá dentro de cada vez.
 
 <img
   class="concept-image"
