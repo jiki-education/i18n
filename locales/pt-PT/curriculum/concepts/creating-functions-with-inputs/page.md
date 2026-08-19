@@ -10,7 +10,7 @@ Mas pensa nas funções que tens estado a usar ao longo do curso e em como fazem
 
 Agora também vamos adicionar fendas de entrada às tuas próprias funções.
 
-Para fazeres isto, precisas de saber duas coisas. A primeira é como é que isto aparece na prática, ou seja, o que tens de escrever; a segunda é o que está de facto a acontecer.
+Para fazeres isto, precisas de saber duas coisas. A primeira é como é que isto aparece na prática, ou seja, o que tens de escrever, a segunda é o que está de facto a acontecer.
 
 A primeira parte é bastante simples. Basta adicionares uns parênteses normais e, a seguir, os nomes dos parâmetros de entrada que quiseres.
 
