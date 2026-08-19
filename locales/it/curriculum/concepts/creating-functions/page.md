@@ -4,9 +4,10 @@ description: "Usare la parola chiave `function` per costruire le tue macchine ch
 en_md5: 93286a30a373b5604b60b3c109ad00a3
 ---
 
-Finora, hai usato funzioni che sono state create per te, funzioni come `circle`, `rectangle`, `moveRight`, `shoot`. Tutte queste sono funzioni che sono state create e messe sugli scaffali di Jiki.
+Finora hai usato funzioni già pronte, come `circle`, `rectangle`, `moveRight` e `shoot`.
+Sono funzioni che Jiki mette sugli scaffali per essere usate negli esercizi.
 
-Ma ora è il momento di iniziare a creare le tue funzioni.
+Ora è il momento di iniziare a creare le tue funzioni.
 
 Per mostrarti come fare, vediamo come costruire una nuova funzione per il labirinto chiamata `walk5` (cammina5).
 
