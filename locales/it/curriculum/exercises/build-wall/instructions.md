@@ -16,6 +16,6 @@ Cose che devi sapere:
 - Le file si alternano: partono dal bordo sinistro (5 mattoni) e partono fuori dallo schermo a sinistra (6 mattoni). (La fila in basso è da 5, quella in alto da 6)
 - La funzione `rectangle` (rettangolo) può comparire una sola volta nel tuo codice!
 
-Lo scopo di questo esercizio è farti sperimentare l'uso combinato dei blocchi `repeat` e dei condizionali. Ci sono molti modi diversi per risolvere questo esercizio. La tua sfida è risolverlo in modo da ottenere un codice pulito e soddisfacente.
+Lo scopo di questo esercizio è farti sperimentare l'uso combinato dei blocchi `repeat` e dei condizionali. Ci sono molti modi per risolvere questo esercizio. La tua sfida è ottenere un codice pulito e soddisfacente.
 
 Una buona domanda da porsi è: «Come farebbe un muratore nel mondo reale?»
