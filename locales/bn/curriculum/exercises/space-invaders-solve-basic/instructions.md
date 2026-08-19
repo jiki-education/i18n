@@ -1,5 +1,5 @@
 ---
-title: "Space Invaders"
+title: "স্পেস ইনভেডার্স"
 description: "আপনার প্রথম Space Invaders অভিজ্ঞতায় কিছু এলিয়েন গুলি করে নামান।"
 en_md5: 56b9b22488ae091b5f06cb5afc5bb441
 ---
