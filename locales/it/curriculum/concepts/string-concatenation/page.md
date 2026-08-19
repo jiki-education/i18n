@@ -4,19 +4,19 @@ description: "Concatenare stringhe con l'operatore `+` per unire testo fisso e v
 en_md5: 0e6c7a941a1fb1161445da27a4d7e818
 ---
 
-Sai già cosa sono le stringhe. Sono pezzi di carta con sopra del testo.
+Sai già cosa sono le stringhe: piccoli pezzi di carta con del testo sopra.
 
-Finora, ogni stringa che hai usato l'hai digitata direttamente. Cosa succede se vuoi costruire una stringa a partire da variabili o condizioni? Come facciamo?
+Finora hai sempre digitato le tue stringhe direttamente. Ma cosa succede se vuoi costruirne una usando variabili o condizioni? Come si fa?
 
 Ci sono due modi.
 
-Il primo si chiama concatenazione di stringhe, un modo un po' altisonante e leggermente confuso per dire di unire due stringhe tra loro.
+Il primo si chiama concatenazione di stringhe, un termine un po' tecnico e leggermente confuso che significa semplicemente unire due stringhe tra loro.
 
 Immagina di avere due parole, `"hello"` (ciao) e `"world"` (mondo), e di voler creare una stringa che contenga `"hello world"`.
 
-Potresti semplicemente scrivere `"hello world"` come un'unica stringa, ma potresti anche scrivere `"hello " + "world"`, e otterresti la stessa stringa.
+Potresti semplicemente scrivere `"hello world"` come un'unica stringa, ma potresti anche scrivere `"hello " + "world"`, ottenendo esattamente la stessa cosa.
 
-Certo, non è poi così utile in questo caso. Ma se avessimo una variabile con il nome di qualcuno e volessimo salutarlo?
+Certo, in questo caso non è molto utile. Ma se avessimo una variabile con il nome di qualcuno e volessimo salutarlo?
 
 Immaginiamo di avere una variabile chiamata `name` (nome), che contiene `"Jeremy"` (il nome Jeremy) a volte e `"Jiki"` (il nome Jiki) altre volte. Vogliamo dire `"hello Jeremy"` o `"hello Jiki"` usando quella variabile.
 
