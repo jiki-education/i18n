@@ -4,7 +4,7 @@ description: "Aggiungere fessure di input alle tue funzioni, così possono fare 
 en_md5: f70d737888fcbda3306196ff069eb2f1
 ---
 
-Le funzioni che hai creato finora fanno sempre esattamente la stessa cosa ogni volta. `turnAround` (girati) fa sempre girare a sinistra due volte. `shootIfAlienAbove` (spara se l'alieno è sopra) controlla e spara sempre.
+Le funzioni che hai creato finora fanno sempre la stessa cosa. `turnAround` (girati) fa sempre girare a sinistra due volte. `shootIfAlienAbove` (spara se l'alieno è sopra) controlla e spara sempre.
 
 Ma pensa alle funzioni che hai usato durante il corso, a come fanno cose diverse a seconda degli input. `Rectangle` prende left, top, width e height come input, e poi disegna un rettangolo diverso in base a ciò che gli dici.
 
