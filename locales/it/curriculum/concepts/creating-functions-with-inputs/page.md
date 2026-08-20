@@ -24,7 +24,7 @@ function shootMany(numShots) {
 }
 ```
 
-Quando vuoi usare questa funzione, la chiameresti con il numero di spari che vuoi:
+Quando vuoi utilizzare questa funzione, la richiami specificando il numero di spari desiderato:
 
 ```javascript
 shootMany(5)
