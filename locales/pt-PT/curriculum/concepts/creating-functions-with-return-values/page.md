@@ -8,7 +8,7 @@ Agora já sabes criar funções com e sem parâmetros de entrada. Só te falta a
 
 Já usaste muitas funções que devolvem coisas. A função `isAlienAbove` (_há um extraterrestre por cima_) devolve-te true ou false. A função `Math.randomInt(1, 10)` (em que `Math` significa matemática e `randomInt` significa inteiro aleatório) devolve-te um número aleatório.
 
-Quando o Jiki usa essas funções, alguma coisa sai da calha de saída e ele pode depois ir usá-la.
+Quando o Jiki usa essas funções, alguma coisa sai da calha de saída e ele pode depois usá-la.
 
 <img
   class="concept-image"
@@ -46,7 +46,7 @@ function meaningOfLife() {
   height="323"
 />
 
-Agora, em qualquer sítio onde usarmos `meaningOfLife()` no nosso código, recebemos o número `42` de volta para o usarmos como qualquer outro valor. Podemos guardá-lo numa caixa com `let`, passá-lo como valor de entrada a outra função e compará-lo numa condicional.
+Agora, em qualquer sítio onde usarmos `meaningOfLife()` no nosso código, recebemos o número `42` de volta para o usarmos como qualquer outro valor. Podemos guardá-lo numa caixa com `let`, passá-lo como valor de entrada a outra função ou compará-lo numa condição.
 
 As funções com `return` também podem receber parâmetros de entrada. Podes escrever uma função `ageBracket(age)` (`ageBracket` significa escalão etário; `age` significa idade). Essa função devolve `"Sorry, too young"` quando `age` for menor que 18, e `"Welcome"` caso contrário. Quem chamar a função recebe de volta a string que ela devolve.
 

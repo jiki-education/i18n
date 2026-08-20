@@ -8,11 +8,7 @@ Até agora, quando escreveste funções, cada uma praticamente se aguentava sozi
 
 Agora vamos ver como dividir funções para termos funções mais pequenas que trabalham em conjunto, em vez de funções grandes com muita coisa a acontecer lá dentro.
 
-Como regra geral em programação, queres que cada função faça o mínimo possível.
-
-Chamamos a isto uma função de responsabilidade única (_single responsibility_ em inglês).
-
-Cada função deve fazer apenas uma coisa e usar outras funções para as diferentes subpartes dessa tarefa.
+Como regra geral em programação, queres que cada função faça o mínimo possível. Chamamos a isto uma função de responsabilidade única (_single responsibility_ em inglês). Cada função deve fazer apenas uma coisa e usar outras funções para as diferentes subpartes dessa tarefa.
 
 Vamos então ver um exemplo.
 
@@ -51,9 +47,7 @@ function describeName(name) {
 }
 ```
 
-E podemos depois reutilizar essa função de contagem genérica nesta formatação de strings e também em qualquer outro lugar onde precisemos dela.
-
-Sempre que precisarmos de contar letras numa string, essa função fica totalmente separada de tudo o que tenha a ver com a impressão.
+E podemos depois reutilizar essa função de contagem genérica nesta formatação de strings e também em qualquer outro lugar onde precisemos dela. Sempre que precisarmos de contar letras numa string, essa função fica totalmente separada de tudo o que tenha a ver com a impressão.
 
 Consegues ler ambas as funções isoladamente e perceber imediatamente o que cada uma faz.
 
