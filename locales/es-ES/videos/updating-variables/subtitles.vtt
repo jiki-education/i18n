@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 e356df7bcabc2d9e377cede51ea7aaa5
+
+00:00:00.220 --> 00:00:04.200
+Hola de nuevo. Hasta ahora, cuando hemos creado variables,
+
+00:00:04.520 --> 00:00:07.100
+hemos puesto valores en cajas y luego los
+
+00:00:07.140 --> 00:00:10.059
+hemos sacado más tarde. Eso ha sido muy útil
+
+00:00:10.130 --> 00:00:13.080
+para dar claridad a nuestro código y para reducir
+
+00:00:13.140 --> 00:00:15.520
+algunos de los cálculos mentales que de otra
+
+00:00:15.560 --> 00:00:18.720
+forma habríamos tenido que hacer. Pero el verdadero valor
+
+00:00:18.780 --> 00:00:21.940
+de las variables viene de la capacidad de cambiar
+
+00:00:22.020 --> 00:00:24.760
+lo que hay en una caja, lo que hay en la variable,
+
+00:00:24.800 --> 00:00:27.710
+a lo largo de un programa. Así que, aunque
+
+00:00:27.740 --> 00:00:30.120
+ejecutemos el mismo fragmento de código varias veces,
+
+00:00:30.660 --> 00:00:33.900
+lo que hace puede cambiar según lo que
+
+00:00:33.940 --> 00:00:38.540
+haya dentro de las cajas. Supongamos que queremos plantar
+
+00:00:38.580 --> 00:00:41.020
+una flor en un jardín. Tenemos una
+
+00:00:41.030 --> 00:00:44.340
+práctica función plant que recibe un solo argumento:
+
+00:00:44.380 --> 00:00:46.060
+la posición donde queremos colocar la
+
+00:00:46.100 --> 00:00:48.380
+flor. Entonces, si queremos colocar una
+
+00:00:48.400 --> 00:00:52.010
+flor a 10 del borde, escribimos plant
+
+00:00:52.010 --> 00:00:55.880
+(10). Simple y directo. ¿Y si queremos
+
+00:00:55.960 --> 00:00:59.340
+plantar ocho flores? Bueno, podríamos
+
+00:00:59.360 --> 00:01:02.210
+escribir plant(10), plant(20), plant(30),
+
+00:01:02.260 --> 00:01:06.780
+etcétera, pero eso es bastante tedioso. Y ya
+
+00:01:06.820 --> 00:01:10.350
+hemos aprendido algo que nos ayuda a reemplazar
+
+00:01:10.380 --> 00:01:13.120
+este tipo de código tedioso. Ojalá tu cerebro esté
+
+00:01:13.160 --> 00:01:15.640
+dando vueltas y gritando: «¡Usa un bucle! ¡Usa
+
+00:01:15.680 --> 00:01:19.440
+un bloque repeat!». Y así es, exactamente. Así que
+
+00:01:19.480 --> 00:01:22.120
+pongamos la posición en 10 y luego
+
+00:01:22.180 --> 00:01:25.200
+tengamos un bloque repeat donde llamamos a
+
+00:01:25.240 --> 00:01:27.350
+plant, usamos la función plant, ocho veces.
+
+00:01:28.900 --> 00:01:32.160
+¿Qué crees que va a pasar? Bueno,
+
+00:01:32.180 --> 00:01:35.180
+va a plantar ocho flores, pero las va a
+
+00:01:35.200 --> 00:01:38.000
+plantar en el mismo lugar cada vez, que
+
+00:01:38.060 --> 00:01:41.140
+no es realmente lo que queremos. Así que
+
+00:01:41.280 --> 00:01:42.960
+tomémonos un momento para pensar qué está
+
+00:01:43.000 --> 00:01:45.420
+haciendo Jiki aquí. Está creando una caja con
+
+00:01:45.460 --> 00:01:47.600
+la etiqueta position. Le pone 10.
+
+00:01:48.180 --> 00:01:50.330
+Después, ejecuta la máquina plant ocho veces.
+
+00:01:51.420 --> 00:01:54.380
+Cada vez, saca el valor de la
+
+00:01:54.400 --> 00:01:57.730
+caja de posición. Siempre es 10, y cada vez
+
+00:01:57.760 --> 00:02:01.340
+vuelve a poner el mismo 10. Así que
+
+00:02:01.360 --> 00:02:03.400
+lo que necesitamos es una manera de
+
+00:02:03.460 --> 00:02:06.490
+avanzar un poco cada vez. Después de
+
+00:02:06.540 --> 00:02:08.820
+plantar una flor, queremos decirle a Jiki
+
+00:02:08.960 --> 00:02:12.200
+que avance la posición 10, lista para
+
+00:02:12.300 --> 00:02:16.410
+plantar la siguiente flor. Entonces, olvidando
+
+00:02:16.500 --> 00:02:18.800
+el código por un momento, ¿cómo sería
+
+00:02:18.900 --> 00:02:22.360
+hacer eso lógicamente? Si te digo:
+
+00:02:22.440 --> 00:02:24.460
+«Planta la primera flor en 10,
+
+00:02:24.620 --> 00:02:26.320
+después la siguiente en 20, después la siguiente
+
+00:02:26.360 --> 00:02:29.140
+en 30», ¿cómo sabe tu cerebro que
+
+00:02:29.180 --> 00:02:31.549
+la siguiente debería plantarse en 40
+
+00:02:32.320 --> 00:02:33.940
+y la que sigue debería plantarse
+
+00:02:33.960 --> 00:02:38.280
+en 50? Lo que hace tu cerebro es
+
+00:02:38.340 --> 00:02:41.680
+llevar la cuenta del número actual y
+
+00:02:41.740 --> 00:02:44.380
+sumarle 10, y luego actualizar ese número
+
+00:02:44.440 --> 00:02:47.510
+en tu mente. Y podemos hacer exactamente
+
+00:02:47.520 --> 00:02:50.950
+lo mismo en código. Para hacer esto,
+
+00:02:51.160 --> 00:02:54.380
+decimos: «actualizar la caja de posición
+
+00:02:54.440 --> 00:03:00.500
+para que tenga el valor actual de la posición más 10». Cuando
+
+00:03:00.560 --> 00:03:03.040
+Jiki ve esto, saca el número actual
+
+00:03:03.120 --> 00:03:05.460
+de la caja de posición, le suma
+
+00:03:05.540 --> 00:03:08.570
+10, hace el cálculo, los suma, y
+
+00:03:08.580 --> 00:03:10.720
+luego coloca el resultado de vuelta en la caja
+
+00:03:10.800 --> 00:03:14.000
+para la próxima vez. Entonces, si añadimos esto
+
+00:03:14.060 --> 00:03:15.960
+a nuestro programa, de manera que ahora digamos:
+
+00:03:16.220 --> 00:03:18.680
+«Establece el valor inicial de la posición
+
+00:03:18.700 --> 00:03:21.490
+en 10», luego, ocho veces, planta una flor
+
+00:03:22.040 --> 00:03:24.860
+en la posición, y después cambia la posición
+
+00:03:24.920 --> 00:03:28.360
+para que sea 10 mayor que antes, nuestro código
+
+00:03:28.420 --> 00:03:30.640
+funciona y obtenemos ocho flores espaciadas.
+
+00:03:32.440 --> 00:03:35.400
+Fíjate que no hay let cuando actualizamos
+
+00:03:35.410 --> 00:03:38.980
+la variable. Esto es muy importante. Cuando Jiki ve
+
+00:03:39.140 --> 00:03:42.400
+let, crea una caja nueva. Pero aquí
+
+00:03:42.420 --> 00:03:44.560
+no queremos crear una caja nueva.
+
+00:03:44.600 --> 00:03:46.480
+Queremos cambiar lo que hay dentro de la caja
+
+00:03:46.540 --> 00:03:50.920
+que ya tenemos. También nota que
+
+00:03:51.020 --> 00:03:54.320
+solo creamos la caja una vez, fuera del
+
+00:03:54.380 --> 00:03:57.500
+bucle. Es importante recordarlo. Crea la caja
+
+00:03:57.620 --> 00:03:59.720
+una vez al principio y luego actualízala
+
+00:03:59.760 --> 00:04:03.500
+cada vez que se ejecute el bucle. Bien. Cubrimos
+
+00:04:03.560 --> 00:04:05.850
+bastante en este vídeo. Podemos
+
+00:04:05.900 --> 00:04:08.020
+actualizar lo que hay en las cajas, y podemos usar
+
+00:04:08.080 --> 00:04:10.880
+ese poder para seguirle la pista a algo que
+
+00:04:10.940 --> 00:04:14.320
+cambia con el tiempo. Vas a usar este patrón constantemente:
+
+00:04:14.420 --> 00:04:17.300
+seguir una posición, contar cuántas veces ha
+
+00:04:17.340 --> 00:04:21.240
+pasado algo, llevar la puntuación. Siempre que necesites recordar
+
+00:04:21.260 --> 00:04:24.780
+algo que cambia mientras tu programa se ejecuta,
+
+00:04:24.820 --> 00:04:27.520
+esta es la manera de hacerlo. Ahora vienen
+
+00:04:27.620 --> 00:04:29.460
+varios ejercicios para que practiques
+
+00:04:29.500 --> 00:04:32.060
+esto. Si te trabas, puedes volver
+
+00:04:32.100 --> 00:04:33.760
+a ver este vídeo.
+
+00:04:33.800 --> 00:04:36.420
+Eso no es hacer trampa. Este tema puede parecer
+
+00:04:36.460 --> 00:04:38.830
+bastante complejo. Se va a aclarar, pero al
+
+00:04:38.840 --> 00:04:40.510
+principio puede ser abrumador. Y
+
+00:04:40.540 --> 00:04:41.930
+ojalá, para cuando nos veamos
+
+00:04:41.930 --> 00:04:44.510
+en un par de ejercicios, ya empieces
+
+00:04:44.540 --> 00:04:46.090
+a sentir más familiaridad con este
+
+00:04:46.120 --> 00:04:48.600
+patrón y tu confianza esté creciendo. Mucha
+
+00:04:48.640 --> 00:04:48.800
+suerte.

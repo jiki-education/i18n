@@ -1,60 +1,60 @@
 {
   "tasks": {
     "reverseStrings": {
-      "name": "�",
-      "description": "�"
+      "name": "Invertir strings",
+      "description": "Invertir un string para que se lea de derecha a izquierda en lugar de izquierda a derecha."
     }
   },
   "scenarios": {
     "reverseEmptyString": {
-      "name": "�",
-      "description": "�"
+      "name": "String vacío",
+      "description": "Un string vacío al invertirlo debe devolver un string vacío."
     },
     "reverseWord": {
-      "name": "�",
-      "description": "�"
+      "name": "Una palabra",
+      "description": "Invierte la palabra 'robot'."
     },
     "reverseCapitalizedWord": {
-      "name": "�",
-      "description": "�"
+      "name": "Palabra con mayúscula inicial",
+      "description": "Invierte la palabra con mayúscula inicial 'Ramen'."
     },
     "reverseSentencePunctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "Oración con puntuación",
+      "description": "Invierte la oración con puntuación 'I'm hungry!'."
     },
     "reversePalindrome": {
-      "name": "�",
-      "description": "�"
+      "name": "Palíndromo",
+      "description": "Un palíndromo se mantiene igual al invertirlo."
     },
     "reverseEvenSizedWord": {
-      "name": "�",
-      "description": "�"
+      "name": "Palabra de tamaño par",
+      "description": "Invierte la palabra de tamaño par 'drawer'."
     },
     "reverseWideCharacters": {
-      "name": "�",
-      "description": "�"
+      "name": "Caracteres anchos",
+      "description": "Invierte los caracteres anchos Unicode '子猫'."
     },
     "reverseEmojiFamily": {
-      "name": "�",
-      "description": "�"
+      "name": "Emoji de familia",
+      "description": "Invierte un emoji de familia."
     },
     "reverseEmojiRainbowFlag": {
-      "name": "�",
-      "description": "�"
+      "name": "Bandera arcoíris",
+      "description": "Crea una bandera arcoíris al invertir."
     }
   },
   "hints": {
     "reverseByHand": {
-      "question": "�",
-      "answer": "�"
+      "question": "¿Cómo invertirías una palabra a mano?",
+      "answer": "La lees de izquierda a derecha pero la escribes de derecha a izquierda. Equivale a tomar cada letra por turno y ponerla delante de lo que ya llevas escrito."
     },
     "mapToCode": {
-      "question": "�",
-      "answer": "�"
+      "question": "¿Cómo se traduce eso a código?",
+      "answer": "Recorre el string de entrada carácter por carácter. Para cada carácter, construye el resultado anteponiéndolo. Es decir, colócalo AL INICIO de tu resultado, no al final."
     },
     "prepend": {
-      "question": "�",
-      "answer": "�"
+      "question": "¿Cómo hago para anteponer en vez de añadir al final?",
+      "answer": "Con el operador `+`, anteponer es solo cuestión de orden. En lugar de `result + char` (que añade al final), usa `char + result` (que antepone)."
     }
   }
 }

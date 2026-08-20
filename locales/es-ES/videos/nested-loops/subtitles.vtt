@@ -1,0 +1,267 @@
+WEBVTT
+
+NOTE en_md5 49411a7db976297a17fb5f2e027fcaff
+
+00:00:00.100 --> 00:00:03.060
+¡Qué bueno verte de nuevo! Entonces, llevas
+
+00:00:03.120 --> 00:00:05.160
+un buen rato usando el bucle repeat, y
+
+00:00:05.220 --> 00:00:08.640
+espero que ya te sientas a gusto con él.
+
+00:00:08.680 --> 00:00:10.500
+Ahora vamos a ver algo parecido, pero
+
+00:00:10.520 --> 00:00:13.220
+un poco más complejo. Digamos que queremos
+
+00:00:13.260 --> 00:00:15.740
+una fila de flores. Podemos escribir algo así.
+
+00:00:16.180 --> 00:00:18.720
+Establecemos una posición, plantamos una flor,
+
+00:00:18.760 --> 00:00:21.300
+aumentamos la posición en 10, repetimos,
+
+00:00:22.000 --> 00:00:23.560
+y terminamos con una bonita fila
+
+00:00:23.680 --> 00:00:26.640
+ordenada de flores. Pero ¿y si queremos
+
+00:00:26.720 --> 00:00:30.240
+una cuadrícula de flores con filas y columnas? Quizás
+
+00:00:30.320 --> 00:00:32.780
+cuatro filas con cinco flores en cada una.
+
+00:00:35.000 --> 00:00:36.580
+Detente un segundo, quizás pausa el
+
+00:00:36.620 --> 00:00:38.640
+vídeo un momento, y piensa
+
+00:00:38.700 --> 00:00:42.380
+en cómo podrías hacer esto. Tenemos
+
+00:00:42.440 --> 00:00:44.880
+un bucle que dibuja una fila de flores.
+
+00:00:45.980 --> 00:00:48.240
+¿Cómo puedes usarlo para dibujar cuatro
+
+00:00:48.320 --> 00:00:50.660
+filas? O, ¿qué podríamos hacer para dibujar
+
+00:00:50.700 --> 00:00:54.420
+cuatro filas? Bueno, espero que lo hayas pensado.
+
+00:00:55.440 --> 00:00:57.360
+Una opción sería copiar
+
+00:00:57.380 --> 00:01:00.680
+y pegar ese bucle cuatro veces y cambiar
+
+00:01:00.740 --> 00:01:03.260
+la posición superior en cada una. Y eso
+
+00:01:03.320 --> 00:01:07.970
+funcionaría. Estaría bien. Pero es repetitivo, y
+
+00:01:07.980 --> 00:01:10.380
+hay una forma mejor. Sabemos que cuando el código
+
+00:01:10.420 --> 00:01:13.420
+es repetitivo, podemos usar un bucle para
+
+00:01:13.460 --> 00:01:17.920
+simplificar las cosas. Así que aquí podemos usar
+
+00:01:18.020 --> 00:01:21.840
+un bucle dentro de otro bucle. Un bucle para
+
+00:01:21.860 --> 00:01:24.840
+las filas y otro para las flores en esa
+
+00:01:24.880 --> 00:01:28.080
+fila. Empecemos añadiendo un bucle
+
+00:01:28.140 --> 00:01:30.360
+repeat alrededor de nuestro código existente para que
+
+00:01:30.380 --> 00:01:32.220
+te hagas una idea. Y vamos a
+
+00:01:32.260 --> 00:01:35.020
+repetir solo una vez. Le decimos a Jiki que
+
+00:01:35.060 --> 00:01:38.680
+haga todo lo que está dentro de estas llaves externas una vez.
+
+00:01:39.800 --> 00:01:41.920
+Esto tiene exactamente el mismo efecto que
+
+00:01:42.000 --> 00:01:44.220
+no tener ese bucle externo en absoluto. Le
+
+00:01:44.280 --> 00:01:46.870
+decimos a Jiki que repita algo una vez, lo que
+
+00:01:46.940 --> 00:01:48.440
+es lo mismo que pedirle que lo
+
+00:01:48.480 --> 00:01:51.000
+haga sin el repeat. Pero te muestro
+
+00:01:51.040 --> 00:01:53.000
+esto para que veas que así es como
+
+00:01:53.060 --> 00:01:55.500
+funciona este código. Es válido y legítimo. Tenemos
+
+00:01:55.560 --> 00:01:59.900
+un bucle dentro de otro bucle. Y ahora, ¿qué
+
+00:01:59.940 --> 00:02:02.960
+pasa si cambiamos ese bucle externo para
+
+00:02:03.000 --> 00:02:06.520
+que repita dos veces? Entonces Jiki ejecutará
+
+00:02:06.560 --> 00:02:10.400
+dos veces todo eso de plant cinco veces. Plantará
+
+00:02:10.440 --> 00:02:14.460
+10 flores. Pero todas esas flores
+
+00:02:14.500 --> 00:02:17.600
+estarán en la misma fila. De la
+
+00:02:17.660 --> 00:02:20.520
+misma forma que necesitamos mover la posición
+
+00:02:20.580 --> 00:02:22.180
+de izquierda a derecha un poco cada vez,
+
+00:02:23.100 --> 00:02:26.240
+después de dibujar cada fila completa, también
+
+00:02:26.300 --> 00:02:28.660
+necesitamos mover la posición vertical.
+
+00:02:30.040 --> 00:02:32.540
+¿Cómo lo hacemos? Bueno,
+
+00:02:32.580 --> 00:02:35.480
+podemos añadir una variable externa para la
+
+00:02:35.560 --> 00:02:39.970
+posición superior, usarla en nuestra función plant, y
+
+00:02:40.000 --> 00:02:42.880
+luego aumentarla en 10 después de cada fila.
+
+00:02:45.200 --> 00:02:46.920
+Piensa en cuál es el valor
+
+00:02:46.960 --> 00:02:50.480
+en cada momento. La posición superior empieza en 10.
+
+00:02:50.520 --> 00:02:53.360
+Durante las primeras cinco veces que plantamos,
+
+00:02:53.380 --> 00:02:56.720
+se queda igual. La posición izquierda aumenta. Luego
+
+00:02:56.760 --> 00:02:59.720
+le sumamos otros 10 a esa
+
+00:02:59.800 --> 00:03:03.480
+posición superior y plantamos cinco flores más
+
+00:03:03.980 --> 00:03:07.120
+un poco más abajo. Volvemos a dejar la posición
+
+00:03:07.140 --> 00:03:09.150
+izquierda en 10 otra vez, y luego
+
+00:03:09.180 --> 00:03:13.120
+la aumentamos de nuevo cada vez. Y ahora
+
+00:03:13.140 --> 00:03:16.030
+podemos decir que se repita esto cuatro veces, y
+
+00:03:16.060 --> 00:03:20.360
+obtendremos cuatro filas de cinco plantas. Lo
+
+00:03:20.420 --> 00:03:23.070
+clave para entender es que Jiki termina
+
+00:03:23.260 --> 00:03:26.160
+todo el trabajo del bucle interno antes
+
+00:03:26.220 --> 00:03:28.440
+de volver al bucle externo. No va
+
+00:03:28.500 --> 00:03:32.140
+y viene de un lado a otro. Completa el bucle
+
+00:03:32.200 --> 00:03:34.130
+interno, y luego pasa al
+
+00:03:34.260 --> 00:03:37.660
+siguiente paso del bucle externo. En esta
+
+00:03:37.680 --> 00:03:39.520
+situación, puedes pensar en el
+
+00:03:39.620 --> 00:03:41.880
+bucle externo como el que controla los grupos o la
+
+00:03:41.980 --> 00:03:44.720
+fila, y en el bucle interno como el que controla cada
+
+00:03:44.820 --> 00:03:47.049
+elemento de ese grupo o cada elemento de
+
+00:03:47.080 --> 00:03:50.549
+esa fila. En nuestro ejemplo, el bucle
+
+00:03:50.600 --> 00:03:54.580
+externo hace cuatro filas, y el bucle interno
+
+00:03:54.640 --> 00:03:57.760
+coloca cinco plantas, cinco elementos en cada grupo.
+
+00:03:59.280 --> 00:04:02.100
+En los próximos ejercicios, vas a usar bucles
+
+00:04:02.180 --> 00:04:05.520
+dentro de bucles para construir cosas. Estos ejercicios nuevos
+
+00:04:05.580 --> 00:04:08.160
+te van a dar funciones para dibujar cada pieza.
+
+00:04:08.540 --> 00:04:10.160
+Tu trabajo es simplemente averiguar la
+
+00:04:10.220 --> 00:04:11.829
+estructura correcta de los bucles para que
+
+00:04:11.860 --> 00:04:16.029
+funcione. Todo lo que hay en estos ejercicios ya lo
+
+00:04:16.060 --> 00:04:17.760
+cubrimos en lo que acabamos de hablar. Así que si
+
+00:04:17.800 --> 00:04:19.860
+te atascas, por favor, vuelve a ver este vídeo.
+
+00:04:20.660 --> 00:04:22.160
+¡Buena suerte! Te veo por aquí
+
+00:04:22.180 --> 00:04:22.460
+en un rato.

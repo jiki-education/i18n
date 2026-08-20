@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 2a23c8bcc4af2ee7d5bd8d5613681427
+
+00:00:00.200 --> 00:00:03.800
+¡Hola de nuevo! Ojalá usar las máquinas ya
+
+00:00:03.860 --> 00:00:07.160
+te resulte bastante fácil. Hasta ahora, todas
+
+00:00:07.180 --> 00:00:09.140
+las máquinas que has usado,
+
+00:00:09.380 --> 00:00:12.160
+move, turn left, shoot, siempre hicieron
+
+00:00:12.240 --> 00:00:15.260
+lo mismo cada vez. Así que cada vez
+
+00:00:15.340 --> 00:00:18.520
+que llamas a move, tu personaje se mueve. Cada vez
+
+00:00:18.560 --> 00:00:22.010
+que llamas a shoot, tu personaje dispara. Pero una de las
+
+00:00:22.080 --> 00:00:25.560
+cosas más poderosas de las máquinas, de las funciones,
+
+00:00:25.580 --> 00:00:27.520
+es que muchas te dejan
+
+00:00:27.560 --> 00:00:30.810
+ponerles información que, cuando las ejecutas,
+
+00:00:31.000 --> 00:00:34.380
+cambia lo que hacen. Veamos un
+
+00:00:34.420 --> 00:00:38.420
+ejemplo. Hasta ahora, hemos visto máquinas que
+
+00:00:38.460 --> 00:00:40.480
+se parecen un poco a cajas, como
+
+00:00:40.490 --> 00:00:43.360
+esta máquina move. Pero algunas máquinas tienen
+
+00:00:43.540 --> 00:00:47.200
+ranuras, como esta máquina walk. La máquina walk
+
+00:00:47.240 --> 00:00:49.260
+es igual que la máquina move. Mueve
+
+00:00:49.280 --> 00:00:52.780
+al personaje hacia delante, pero Jiki puede usar
+
+00:00:52.860 --> 00:00:56.320
+la ranura para indicar cuántos pasos debe
+
+00:00:56.340 --> 00:00:59.340
+avanzar el personaje. Así que en vez de
+
+00:00:59.440 --> 00:01:02.120
+usar la función move tres veces
+
+00:01:02.160 --> 00:01:05.920
+seguidas, move, move, move, ahora puedes
+
+00:01:05.960 --> 00:01:08.620
+usar la función walk y decirle a Jiki
+
+00:01:08.640 --> 00:01:11.200
+que ponga el número tres en la máquina.
+
+00:01:12.960 --> 00:01:15.320
+Ahora, para hacer esto en código, igual
+
+00:01:15.380 --> 00:01:17.260
+escribimos el nombre de la función, en este
+
+00:01:17.320 --> 00:01:19.920
+caso walk, y ponemos el paréntesis
+
+00:01:19.940 --> 00:01:23.740
+que abre. Luego, antes del paréntesis que cierra,
+
+00:01:23.780 --> 00:01:25.920
+indicamos qué queremos que sea el argumento.
+
+00:01:25.960 --> 00:01:27.690
+En este caso, queremos que el argumento
+
+00:01:27.720 --> 00:01:30.920
+sea tres, para decir walk tres pasos
+
+00:01:30.960 --> 00:01:34.240
+hacia delante. Cuando Jiki ve eso, toma el
+
+00:01:34.260 --> 00:01:35.930
+número tres, y puedes imaginarte ese
+
+00:01:35.960 --> 00:01:38.310
+número como una monedita, y él
+
+00:01:38.340 --> 00:01:40.300
+la mete en la ranura de la
+
+00:01:40.320 --> 00:01:43.200
+máquina antes de girar la manivela para
+
+00:01:43.220 --> 00:01:46.660
+encenderla. En un momento vas a
+
+00:01:46.700 --> 00:01:49.660
+hacer unos ejercicios donde dibujas rectángulos y
+
+00:01:49.700 --> 00:01:53.000
+círculos. Para esas funciones, tienes que indicarle
+
+00:01:53.080 --> 00:01:57.110
+a Jiki varios números distintos, especificando cosas
+
+00:01:57.180 --> 00:01:59.380
+como cómo de lejos de la izquierda
+
+00:01:59.420 --> 00:02:00.840
+debe estar, cómo de lejos de arriba
+
+00:02:00.920 --> 00:02:03.160
+debe estar, el ancho del rectángulo,
+
+00:02:03.240 --> 00:02:07.140
+la altura del rectángulo. En el mundo de Jiki,
+
+00:02:07.160 --> 00:02:10.120
+son solo ranuras diferentes, una para cada
+
+00:02:10.160 --> 00:02:12.880
+uno de esos números. Así que en nuestro código
+
+00:02:12.900 --> 00:02:15.120
+escribimos cada número y ponemos una coma
+
+00:02:15.200 --> 00:02:18.460
+entre ellos. El nombre de la función, un
+
+00:02:18.540 --> 00:02:20.980
+paréntesis, un número para cada argumento,
+
+00:02:21.300 --> 00:02:24.180
+separados por comas, y luego cerramos
+
+00:02:24.260 --> 00:02:27.380
+el paréntesis. Si intentas usar una
+
+00:02:27.420 --> 00:02:29.810
+función con un número incorrecto de argumentos,
+
+00:02:29.840 --> 00:02:31.620
+vas a recibir un error. Por ejemplo, si
+
+00:02:31.660 --> 00:02:33.660
+tratas de poner un argumento en una
+
+00:02:33.680 --> 00:02:36.080
+máquina que no tiene ranura, Jiki
+
+00:02:36.140 --> 00:02:38.060
+te dirá que no puedes. Y si
+
+00:02:38.120 --> 00:02:39.640
+intentas usar una máquina que sí tiene
+
+00:02:39.680 --> 00:02:41.840
+ranura, pero no le dices a Jiki qué
+
+00:02:41.880 --> 00:02:43.920
+poner dentro, también se detendrá y
+
+00:02:44.000 --> 00:02:46.960
+se quejará. Pruébalo si te sientes un poco
+
+00:02:47.020 --> 00:02:50.380
+rebelde y mira qué pasa. Vas a cometer
+
+00:02:50.440 --> 00:02:52.370
+muchos errores como este a medida que
+
+00:02:52.400 --> 00:02:54.940
+las cosas se complican. Trata de no estresarte
+
+00:02:54.980 --> 00:02:57.170
+ni frustrarte. Todos aprendemos
+
+00:02:57.200 --> 00:03:00.080
+de los errores. De hecho, es la forma más rápida
+
+00:03:00.100 --> 00:03:03.600
+de que nuestro cerebro internalice las cosas. Y todos
+
+00:03:03.660 --> 00:03:06.320
+cometemos estos errores. Todos empezamos desde cero,
+
+00:03:06.600 --> 00:03:10.340
+así que no te estreses. Antes de empezar,
+
+00:03:10.860 --> 00:03:12.910
+hay otra cosa que vale la pena mencionar.
+
+00:03:13.780 --> 00:03:16.400
+A veces en los ejercicios vas a ver
+
+00:03:16.500 --> 00:03:19.660
+líneas que empiezan con dos barras diagonales. Estas
+
+00:03:19.700 --> 00:03:23.040
+se llaman comentarios. Son notas privadas solo
+
+00:03:23.140 --> 00:03:26.420
+para ti que Jiki ignora por completo. Cuando
+
+00:03:26.480 --> 00:03:28.500
+Jiki ve una línea que empieza con estas
+
+00:03:28.540 --> 00:03:31.130
+dos barras, simplemente la salta y
+
+00:03:31.140 --> 00:03:32.670
+pasa a la línea que viene
+
+00:03:32.700 --> 00:03:36.320
+después. Los comentarios te permiten
+
+00:03:36.340 --> 00:03:38.650
+escribir tus propias notas. Son muy
+
+00:03:38.700 --> 00:03:40.800
+útiles para recordarte cómo funcionan las cosas.
+
+00:03:41.580 --> 00:03:43.430
+A menudo, yo también escribo comentarios para ti,
+
+00:03:43.560 --> 00:03:45.630
+así que cuando empieces un ejercicio, puede que
+
+00:03:45.660 --> 00:03:48.120
+te sugieran dónde escribir código
+
+00:03:48.160 --> 00:03:50.109
+o cómo resolver algo. Pero quiero
+
+00:03:50.160 --> 00:03:51.880
+que te sientas libre de
+
+00:03:51.980 --> 00:03:55.480
+añadir tus propios comentarios también. A medida que
+
+00:03:55.520 --> 00:03:58.310
+avances, revisa el final de las instrucciones,
+
+00:03:58.380 --> 00:04:00.980
+y verás información sobre las funciones que
+
+00:04:01.020 --> 00:04:03.280
+puedes usar, exactamente los argumentos
+
+00:04:03.320 --> 00:04:05.520
+que necesitas poner. Diviértete
+
+00:04:05.600 --> 00:04:07.020
+probando esos argumentos, y nos vemos
+
+00:04:07.060 --> 00:04:07.740
+de nuevo muy pronto
