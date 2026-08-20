@@ -1,0 +1,186 @@
+WEBVTT
+
+NOTE en_md5 5da11fa63c77f04329255ba0ae3d5fdf
+
+00:00:00.120 --> 00:00:02.480
+Hola de nuevo. Ya sabes cómo
+
+00:00:02.540 --> 00:00:05.300
+crear un diccionario y sacar valores de él.
+
+00:00:05.340 --> 00:00:08.840
+Pero ¿qué pasa si los datos cambian?
+
+00:00:08.880 --> 00:00:10.760
+En algún momento voy a cumplir años.
+
+00:00:10.780 --> 00:00:13.060
+No voy a tener 42, voy a tener 43.
+
+00:00:14.000 --> 00:00:16.160
+¿Cómo actualizamos el diccionario? Bueno, usamos
+
+00:00:16.240 --> 00:00:18.000
+un método muy parecido al que usamos
+
+00:00:18.080 --> 00:00:20.600
+para buscar algo. Sabes que encontramos algo
+
+00:00:20.660 --> 00:00:22.860
+usando corchetes para sacar el valor.
+
+00:00:23.620 --> 00:00:25.980
+Pues también podemos usar corchetes seguidos
+
+00:00:26.020 --> 00:00:29.980
+de un signo igual para actualizar el diccionario.
+
+00:00:30.020 --> 00:00:32.920
+Jiki va a la caja de person, saca
+
+00:00:32.960 --> 00:00:36.370
+la página de la libreta, encuentra la clave age,
+
+00:00:36.380 --> 00:00:38.560
+borra el 42 que estaba ahí
+
+00:00:38.580 --> 00:00:41.200
+y escribe 43 en su lugar, y luego
+
+00:00:41.780 --> 00:00:43.089
+la página de la libreta vuelve a la
+
+00:00:43.140 --> 00:00:47.800
+caja. Esto es cambiar el diccionario en sí. Jiki
+
+00:00:48.140 --> 00:00:50.880
+no está creando un diccionario nuevo, está cambiando
+
+00:00:50.890 --> 00:00:54.420
+la libreta que ya estaba dentro de la caja.
+
+00:00:54.460 --> 00:00:56.310
+¿Y si quieres agregar información que
+
+00:00:56.400 --> 00:00:59.530
+no estaba antes? Bueno, puedes hacer
+
+00:00:59.540 --> 00:01:02.160
+exactamente lo mismo. Si especificas una clave
+
+00:01:02.200 --> 00:01:04.900
+que no existe, Jiki simplemente añadirá
+
+00:01:04.960 --> 00:01:07.340
+una clave nueva al final con ese valor.
+
+00:01:08.220 --> 00:01:10.200
+Entonces, en este caso, abrirá la libreta,
+
+00:01:10.580 --> 00:01:13.140
+buscará country, verá que no está y
+
+00:01:13.160 --> 00:01:14.680
+agregará una línea nueva al final:
+
+00:01:15.000 --> 00:01:16.880
+country a la izquierda, England a la derecha.
+
+00:01:18.080 --> 00:01:20.580
+O sea, exactamente la misma sintaxis que para
+
+00:01:20.620 --> 00:01:24.320
+cambiar un valor. Jiki se encarga de ambas cosas automáticamente.
+
+00:01:24.360 --> 00:01:27.660
+Si la clave existe, la actualiza. Si no,
+
+00:01:27.740 --> 00:01:29.290
+la agrega. No necesitas hacer nada
+
+00:01:29.400 --> 00:01:33.040
+especial. Y tal como puedes empezar
+
+00:01:33.080 --> 00:01:35.120
+con un array vacío e ir agregándole cosas,
+
+00:01:35.140 --> 00:01:37.240
+puedes empezar con un diccionario vacío
+
+00:01:37.280 --> 00:01:40.340
+e ir añadiendo claves una por una. De nuevo,
+
+00:01:40.400 --> 00:01:42.260
+es un patrón muy común. Lo verás todo el tiempo.
+
+00:01:43.800 --> 00:01:45.860
+Uno de los usos más comunes de los diccionarios
+
+00:01:45.940 --> 00:01:49.260
+es llevar la cuenta de cosas. Puedes poner como claves
+
+00:01:49.320 --> 00:01:50.720
+las cosas que quieres contar
+
+00:01:50.800 --> 00:01:53.360
+y como valores sus cuentas. Así que
+
+00:01:53.400 --> 00:01:55.800
+imagina que estás observando aves y quieres
+
+00:01:55.860 --> 00:01:57.780
+llevar registro de cuántas has visto
+
+00:01:57.820 --> 00:02:00.180
+de cada una. Cada vez que ves un ave,
+
+00:02:00.220 --> 00:02:02.740
+pones su cuenta en uno, y cada vez
+
+00:02:02.800 --> 00:02:04.480
+siguiente que la ves, obtienes
+
+00:02:04.540 --> 00:02:07.160
+su valor actual y lo aumentas en uno. Para
+
+00:02:07.200 --> 00:02:08.800
+que este patrón funcione, necesitamos
+
+00:02:08.840 --> 00:02:11.220
+una forma de comprobar si el diccionario
+
+00:02:11.300 --> 00:02:13.320
+ya tiene esa clave, en cuyo caso
+
+00:02:13.360 --> 00:02:16.260
+le sumamos uno, y si no la tiene,
+
+00:02:16.620 --> 00:02:18.480
+necesitamos empezarla en uno.
+
+00:02:19.560 --> 00:02:21.250
+Y para eso tenemos
+
+00:02:21.380 --> 00:02:25.380
+un método en los diccionarios, el método has (verifica si la clave existe).
+
+00:02:25.440 --> 00:02:27.520
+Especificas una clave que te interesa, y Jiki
+
+00:02:27.560 --> 00:02:30.060
+comprobará si el diccionario tiene esa clave o no,
+
+00:02:30.100 --> 00:02:33.020
+y devolverá true o false según corresponda.
+
+00:02:34.600 --> 00:02:36.210
+Ahora vienen algunos ejercicios
+
+00:02:36.220 --> 00:02:38.480
+que usan todo esto. ¡Mucha suerte
+
+00:02:38.520 --> 00:02:39.800
+con ellos! Nos vemos aquí
+
+00:02:39.880 --> 00:02:40.130
+en un rato

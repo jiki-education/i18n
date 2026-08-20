@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 51f04781025bf1dbba2ded55c062926f
+
+00:00:00.140 --> 00:00:03.580
+Hola de nuevo. Hasta ahora, al crear variables,
+
+00:00:03.740 --> 00:00:06.560
+solo hemos usado valores simples: un número
+
+00:00:06.840 --> 00:00:10.620
+como 50 o un string como «yellow». Las variables
+
+00:00:10.660 --> 00:00:13.340
+se vuelven mucho más potentes cuando
+
+00:00:13.440 --> 00:00:16.460
+las combinamos entre sí. Por ejemplo,
+
+00:00:16.540 --> 00:00:19.000
+podemos decir que el borde izquierdo
+
+00:00:19.040 --> 00:00:22.030
+del rectángulo esté a cierta distancia
+
+00:00:22.080 --> 00:00:25.660
+del borde del lienzo. En programación,
+
+00:00:25.720 --> 00:00:28.810
+podemos usar matemáticas básicas comunes: sumar,
+
+00:00:28.940 --> 00:00:32.340
+restar, multiplicar y dividir, y podemos usar
+
+00:00:32.380 --> 00:00:35.140
+las variables que ya definimos como parte
+
+00:00:35.200 --> 00:00:39.020
+de eso. Empecemos por decir que
+
+00:00:39.060 --> 00:00:41.300
+queremos dibujar un rectángulo en nuestro lienzo,
+
+00:00:41.960 --> 00:00:43.800
+y queremos que empiece a 10
+
+00:00:44.480 --> 00:00:46.980
+desde la izquierda y desde la derecha, y
+
+00:00:47.200 --> 00:00:48.960
+a 20 desde arriba y desde abajo.
+
+00:00:49.900 --> 00:00:51.580
+Así que va a quedar en el medio
+
+00:00:51.620 --> 00:00:53.900
+del lienzo, un poco más ancho
+
+00:00:53.960 --> 00:00:57.740
+que alto. Recuerda que, cuando dibujamos un
+
+00:00:57.760 --> 00:01:00.430
+rectángulo, necesitamos saber su left, su top,
+
+00:01:00.600 --> 00:01:02.510
+su width y su height, además de su color.
+
+00:01:03.360 --> 00:01:04.820
+Así que podemos empezar
+
+00:01:04.920 --> 00:01:08.320
+escribiendo eso. Ahora necesitamos calcular
+
+00:01:08.420 --> 00:01:10.220
+cuánto deberían valer left, top,
+
+00:01:10.240 --> 00:01:13.100
+width y height. Así que asignémoslos. left es
+
+00:01:13.260 --> 00:01:15.660
+20. Perdón, left es 10. top es
+
+00:01:15.940 --> 00:01:18.920
+20. El width, bueno, el width es el
+
+00:01:19.020 --> 00:01:22.020
+tamaño del lienzo, que es 100, menos
+
+00:01:22.080 --> 00:01:23.340
+los 10 de la izquierda y los 10
+
+00:01:23.360 --> 00:01:26.100
+de la derecha, o sea 80. Y el
+
+00:01:26.180 --> 00:01:29.040
+height es la altura del lienzo, que
+
+00:01:29.080 --> 00:01:31.580
+también es 100, menos los 20 de
+
+00:01:31.640 --> 00:01:33.660
+arriba y los 20 de abajo, o sea
+
+00:01:33.960 --> 00:01:37.860
+60. Entonces podemos definir esas variables. left,
+
+00:01:37.920 --> 00:01:42.840
+10; top, 20; width, 80; height, 60. Y
+
+00:01:42.860 --> 00:01:44.880
+seguro ya te resulta bastante familiar. Es
+
+00:01:44.920 --> 00:01:46.700
+lo que has venido haciendo en
+
+00:01:46.740 --> 00:01:50.940
+los ejercicios. Pero, ¿qué pasa si queremos
+
+00:01:50.960 --> 00:01:54.140
+mover un poco el rectángulo,
+
+00:01:54.160 --> 00:01:55.400
+hacerlo más chico? ¿Si queremos
+
+00:01:55.460 --> 00:01:57.040
+que quede a 20 de la izquierda y la
+
+00:01:57.100 --> 00:01:59.040
+derecha y a 30 de arriba y
+
+00:01:59.060 --> 00:02:02.620
+abajo? Tendríamos que volver
+
+00:02:02.720 --> 00:02:06.320
+a calcular todo. El width ahora sería 100 menos
+
+00:02:06.560 --> 00:02:10.280
+20 menos 20, y el height sería 100
+
+00:02:10.360 --> 00:02:14.320
+menos 30 menos 30, y definitivamente es
+
+00:02:14.420 --> 00:02:17.280
+más trabajo y más matemáticas de lo que
+
+00:02:17.320 --> 00:02:20.400
+quiero hacer. En lugar de eso, podemos decirle
+
+00:02:20.420 --> 00:02:24.000
+a la computadora que lo haga por nosotros. Podemos
+
+00:02:24.060 --> 00:02:27.680
+hacer que el width sea 100 menos
+
+00:02:27.840 --> 00:02:31.620
+left menos left, y que el height
+
+00:02:31.700 --> 00:02:34.720
+sea 100 menos top menos top,
+
+00:02:34.960 --> 00:02:37.580
+porque arriba y abajo son iguales. O
+
+00:02:37.600 --> 00:02:40.980
+podríamos escribirlo como 100 menos
+
+00:02:41.240 --> 00:02:44.820
+left por dos, o 100 menos
+
+00:02:44.940 --> 00:02:48.620
+top por dos. Ahora, si cambiamos
+
+00:02:48.660 --> 00:02:52.040
+left o top, width y
+
+00:02:52.080 --> 00:02:54.860
+height también cambiarán. Las cosas
+
+00:02:54.900 --> 00:02:57.430
+empiezan a relacionarse entre sí. ¿Y
+
+00:02:57.440 --> 00:03:00.960
+el lienzo? Por ahora vale 100. Pero, ¿qué
+
+00:03:01.020 --> 00:03:03.700
+pasa si el lienzo cambia a 200 de ancho
+
+00:03:03.740 --> 00:03:06.540
+y de alto? Bueno, probablemente convenga crear
+
+00:03:06.620 --> 00:03:09.560
+una variable llamada canvasSize y ponerle
+
+00:03:09.580 --> 00:03:13.230
+100. Entonces nuestro left es, perdón,
+
+00:03:13.260 --> 00:03:17.740
+nuestro width es canvasSize menos left por dos,
+
+00:03:18.200 --> 00:03:22.160
+y nuestro height es canvasSize menos top por
+
+00:03:22.200 --> 00:03:26.120
+dos. Pensemos en lo que hace Jiki
+
+00:03:26.480 --> 00:03:30.580
+cuando escribimos let height igual a canvasSize menos
+
+00:03:30.700 --> 00:03:33.310
+top por dos. Bueno, empieza tomando
+
+00:03:33.310 --> 00:03:35.220
+la caja top del estante, y
+
+00:03:35.260 --> 00:03:37.660
+encuentra un 20 adentro, saca
+
+00:03:37.680 --> 00:03:40.160
+su calculadora de bolsillo, multiplica 20 por dos,
+
+00:03:40.580 --> 00:03:42.740
+y mentalmente anota 40.
+
+00:03:43.720 --> 00:03:45.860
+Después toma la caja canvasSize
+
+00:03:45.900 --> 00:03:49.540
+del estante, encuentra 100 adentro, y
+
+00:03:49.600 --> 00:03:52.780
+calcula que 100 menos 40 es 60.
+
+00:03:53.840 --> 00:03:56.350
+Ahora sabe que en realidad lo que decimos
+
+00:03:56.400 --> 00:04:00.000
+es que height valga 60. Así que obedece
+
+00:04:00.040 --> 00:04:02.320
+el let, agarra una caja nueva y le escribe
+
+00:04:02.360 --> 00:04:04.440
+height encima, y después mete un 60
+
+00:04:04.580 --> 00:04:06.900
+adentro. Más tarde, cuando usa height,
+
+00:04:07.040 --> 00:04:09.600
+simplemente vuelve a sacar el 60.
+
+00:04:09.640 --> 00:04:13.720
+Prueba a poner todo esto en práctica en
+
+00:04:13.820 --> 00:04:16.180
+los próximos ejercicios y se irá volviendo
+
+00:04:16.240 --> 00:04:18.649
+cada vez más claro. Además, cuando tengas
+
+00:04:18.700 --> 00:04:22.070
+todo funcionando, prueba a cambiar los valores de
+
+00:04:22.100 --> 00:04:25.200
+las variables y mira qué pasa. Observa cómo
+
+00:04:25.220 --> 00:04:28.420
+crecen y cómo se achican. Tómate
+
+00:04:28.480 --> 00:04:31.480
+tu tiempo, piensa en las relaciones entre las cosas, y
+
+00:04:31.500 --> 00:04:32.670
+nos vemos de nuevo por acá muy pronto

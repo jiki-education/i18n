@@ -1,0 +1,189 @@
+WEBVTT
+
+NOTE en_md5 f4b6546cdc3ad8dde1f9b6b1f3ff5008
+
+00:00:00.120 --> 00:00:02.660
+Hola de nuevo. Ya sabes
+
+00:00:02.740 --> 00:00:06.640
+crear funciones con y sin argumentos. Queda una
+
+00:00:06.780 --> 00:00:08.480
+última cosa por aprender, y luego
+
+00:00:08.520 --> 00:00:11.780
+serás un experto en hacer funciones. Y eso es
+
+00:00:11.860 --> 00:00:14.160
+cómo darle a tus funciones una rampa de salida.
+
+00:00:15.000 --> 00:00:17.020
+Ya has usado muchas funciones que
+
+00:00:17.060 --> 00:00:20.400
+devuelven cosas. isAlienAbove te devuelve true o false.
+
+00:00:20.500 --> 00:00:24.940
+Math.randomInt(1, 10) te devuelve un número al azar.
+
+00:00:26.100 --> 00:00:28.780
+Cuando Jiki usa esas funciones, algo sale
+
+00:00:28.860 --> 00:00:30.980
+disparado por la rampa de salida, y luego él
+
+00:00:31.000 --> 00:00:34.180
+puede ir y usarlo. Así que para hacer esto,
+
+00:00:34.220 --> 00:00:36.890
+necesitamos otra palabra clave nueva, y es
+
+00:00:36.920 --> 00:00:40.900
+la palabra clave return. La palabra clave return le dice a Mini
+
+00:00:40.980 --> 00:00:43.320
+Jiki que empuje algo fuera de la rampa
+
+00:00:43.330 --> 00:00:46.230
+de salida. Vamos a crear una función, y
+
+00:00:46.260 --> 00:00:48.760
+la vamos a llamar meaningOfLife, y el trabajo
+
+00:00:48.920 --> 00:00:51.089
+de esta función siempre es simplemente devolver el número
+
+00:00:51.360 --> 00:00:54.200
+42. No tiene ningún argumento. Así que puedes
+
+00:00:54.240 --> 00:00:58.839
+escribir function meaningOfLife, las llaves, y
+
+00:00:58.879 --> 00:01:02.339
+luego una sola línea dentro de esa función: return
+
+00:01:02.399 --> 00:01:06.539
+42. Esa línea le dice a Mini Jiki que empuje el
+
+00:01:06.579 --> 00:01:09.539
+número 42 por la rampa de salida y que luego
+
+00:01:09.679 --> 00:01:13.559
+se detenga. Es importante que escuches esto. La palabra clave
+
+00:01:13.659 --> 00:01:17.079
+return le dice a Mini Jiki que haga dos cosas. Primero,
+
+00:01:17.500 --> 00:01:19.639
+poner algo en la rampa de salida, y
+
+00:01:19.779 --> 00:01:22.779
+segundo, detenerse. En cuanto
+
+00:01:22.920 --> 00:01:26.579
+usas la palabra clave return, la función termina. Mini Jiki
+
+00:01:26.619 --> 00:01:30.059
+no hará nada más. Ahora, si no
+
+00:01:30.139 --> 00:01:32.540
+conoces la referencia al sentido de la vida, viene
+
+00:01:32.579 --> 00:01:34.880
+de un libro famoso, y hoy también de una película, llamada
+
+00:01:34.899 --> 00:01:37.840
+La guía del autoestopista galáctico. Te recomiendo
+
+00:01:37.879 --> 00:01:39.819
+leerla. No hace falta que te preocupes demasiado
+
+00:01:39.860 --> 00:01:43.799
+por lo que significa 42 en este momento.
+
+00:01:43.879 --> 00:01:47.819
+Veamos un ejemplo un poco más complejo, en el que
+
+00:01:47.879 --> 00:01:50.439
+tenemos una función que tiene un argumento
+
+00:01:50.520 --> 00:01:52.479
+y una rampa de salida. Vamos a usar la
+
+00:01:52.539 --> 00:01:54.520
+misma idea de una función llamada
+
+00:01:54.599 --> 00:01:57.239
+meaningOfLife, y esta tiene un argumento
+
+00:01:57.299 --> 00:02:00.439
+llamado age. Si alguien tiene 18 años o más,
+
+00:02:00.559 --> 00:02:01.839
+le vamos a decir que el sentido de
+
+00:02:01.939 --> 00:02:05.639
+la vida es 42. Si no, simplemente vamos a devolver
+
+00:02:05.699 --> 00:02:09.019
+el string «Sorry, too young». La definición de la función
+
+00:02:09.059 --> 00:02:12.679
+es muy parecida. Function meaningOfLife, y luego
+
+00:02:12.699 --> 00:02:15.379
+el espacio del argumento age, más paréntesis, y luego
+
+00:02:15.419 --> 00:02:18.339
+una llave. Pero ahora necesitamos un
+
+00:02:18.400 --> 00:02:20.459
+if adentro, para poder decir:
+
+00:02:20.619 --> 00:02:23.019
+«si la edad es mayor o igual que
+
+00:02:23.080 --> 00:02:27.499
+18, devolvemos 42. Si no, devolvemos "Sorry,
+
+00:02:27.540 --> 00:02:30.719
+too young"». Ahora, si usamos esa función
+
+00:02:30.779 --> 00:02:33.759
+escribiendo meaningOfLife(15), recibiremos de vuelta
+
+00:02:33.799 --> 00:02:37.119
+el string «Sorry, too young». Y si la
+
+00:02:37.220 --> 00:02:40.060
+usamos con meaningOfLife(30), recibiremos
+
+00:02:40.100 --> 00:02:43.800
+de vuelta el número 42. Así es como
+
+00:02:43.820 --> 00:02:46.800
+funciona la programación en esencia. Creamos muchos
+
+00:02:46.900 --> 00:02:49.360
+de estos pequeños bloques de construcción y luego los
+
+00:02:49.370 --> 00:02:52.960
+unimos para armar programas. Ahora voy a darte
+
+00:02:53.140 --> 00:02:55.190
+varios ejercicios seguidos,
+
+00:02:55.220 --> 00:02:57.700
+probablemente la serie más larga que hayas tenido, y
+
+00:02:57.780 --> 00:03:00.600
+usará todo lo que aprendiste aquí junto con muchas
+
+00:03:00.640 --> 00:03:04.120
+de las otras cosas que ya vimos. Diviértete.
+
+00:03:04.560 --> 00:03:05.960
+¡Suerte! Nos vemos de nuevo
+
+00:03:06.000 --> 00:03:06.310
+aquí en un ratito

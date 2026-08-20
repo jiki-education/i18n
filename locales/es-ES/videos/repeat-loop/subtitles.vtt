@@ -1,0 +1,264 @@
+WEBVTT
+
+NOTE en_md5 d53eb0ea7bb0ec1daa64bb73829462f2
+
+00:00:00.240 --> 00:00:03.700
+Hola de nuevo. Hasta ahora, todo lo que
+
+00:00:03.720 --> 00:00:06.880
+hemos hecho se ha escrito de forma lineal:
+
+00:00:06.920 --> 00:00:10.660
+Jiki sigue cada instrucción en orden, de arriba
+
+00:00:10.670 --> 00:00:14.220
+hacia abajo. En esta sesión vamos a ver
+
+00:00:14.260 --> 00:00:16.330
+cómo Jiki puede salir de este
+
+00:00:16.460 --> 00:00:19.690
+flujo estricto de arriba hacia abajo, y en concreto
+
+00:00:19.720 --> 00:00:21.800
+cómo podemos decirle a Jiki que ejecute
+
+00:00:21.880 --> 00:00:24.320
+la misma sección de código muchas veces
+
+00:00:24.360 --> 00:00:28.680
+seguidas. Por ejemplo, imagina que estás en el
+
+00:00:28.760 --> 00:00:31.180
+laberinto y quieres avanzar 10 pasos
+
+00:00:31.240 --> 00:00:34.240
+hacia adelante. Antes te di la función walk
+
+00:00:34.280 --> 00:00:36.690
+para ayudarte con esto, pero ¿y si
+
+00:00:36.740 --> 00:00:39.670
+no existiera? ¿Qué pasaría si solo tuvieras
+
+00:00:39.920 --> 00:00:44.700
+la función move? En lugar de escribir move 10
+
+00:00:44.760 --> 00:00:48.000
+veces seguidas, lo que se vuelve muy repetitivo,
+
+00:00:48.740 --> 00:00:50.420
+lo que necesitamos poder hacer
+
+00:00:50.500 --> 00:00:54.000
+es decir: «Oye, Jiki, haz lo siguiente
+
+00:00:54.120 --> 00:00:59.840
+que te diga 10 veces. Move». Para hacer esto
+
+00:00:59.900 --> 00:01:02.320
+con código, necesitamos poder
+
+00:01:02.480 --> 00:01:07.300
+usar nuestra primera palabra clave, y las palabras clave
+
+00:01:07.340 --> 00:01:10.180
+son instrucciones que Jiki entiende. Se parecen
+
+00:01:10.220 --> 00:01:13.980
+un poco a las máquinas, pero no lo son. Cuando Jiki ve
+
+00:01:14.020 --> 00:01:16.460
+una palabra clave, no busca una máquina
+
+00:01:16.500 --> 00:01:18.920
+en el estante; simplemente sabe
+
+00:01:18.960 --> 00:01:23.300
+qué hacer. Lo tiene integrado en su cerebro. Y
+
+00:01:23.320 --> 00:01:25.700
+hay unas 20 palabras clave distintas que
+
+00:01:25.740 --> 00:01:28.480
+vamos a aprender durante el curso, y la
+
+00:01:28.520 --> 00:01:32.560
+primera de ellas es la palabra clave repeat. La
+
+00:01:32.580 --> 00:01:35.540
+palabra clave repeat hace exactamente lo que dije antes.
+
+00:01:36.100 --> 00:01:40.580
+Le dice a Jiki: «Repite esto que te diga
+
+00:01:40.700 --> 00:01:42.990
+a continuación esta cantidad de veces». Echa un vistazo
+
+00:01:43.080 --> 00:01:45.960
+a este código. Primero, usamos la
+
+00:01:46.000 --> 00:01:48.440
+palabra clave repeat para decirle a Jiki que
+
+00:01:48.480 --> 00:01:51.580
+va a hacer algo varias veces. Luego ponemos
+
+00:01:51.680 --> 00:01:53.940
+cuántas veces queremos que Jiki
+
+00:01:53.980 --> 00:01:57.070
+repita la acción entre paréntesis, y después
+
+00:01:57.100 --> 00:02:00.030
+tenemos estas llaves, y
+
+00:02:00.040 --> 00:02:02.850
+dentro de esas llaves están las instrucciones
+
+00:02:02.860 --> 00:02:06.020
+que queremos que Jiki repita. Este patrón
+
+00:02:06.100 --> 00:02:09.320
+es increíblemente común en programación. Especificamos una
+
+00:02:09.380 --> 00:02:12.400
+palabra clave, generalmente con cierta información como la
+
+00:02:12.440 --> 00:02:14.549
+cantidad de veces que hay que hacer algo
+
+00:02:14.580 --> 00:02:17.620
+en este caso, y luego un bloque de código
+
+00:02:17.680 --> 00:02:20.880
+entre llaves. Volviendo al mundo del laberinto,
+
+00:02:21.520 --> 00:02:25.220
+en lugar de escribir move, move, move, move,
+
+00:02:25.260 --> 00:02:30.580
+podemos escribir: repite cuatro veces move. Jiki
+
+00:02:30.590 --> 00:02:32.860
+verá ese código y usará la
+
+00:02:32.940 --> 00:02:36.870
+máquina move cuatro veces seguidas. Y
+
+00:02:36.900 --> 00:02:38.960
+tampoco estamos limitados a tener una sola cosa
+
+00:02:39.000 --> 00:02:41.800
+dentro de esas llaves. Jiki puede hacer
+
+00:02:41.900 --> 00:02:45.320
+varias cosas de forma repetida. Podemos decirle a Jiki
+
+00:02:45.460 --> 00:02:48.080
+que haga move, luego turnLeft, y que repita
+
+00:02:48.120 --> 00:02:51.540
+todo eso cuatro veces. Si Jiki ve
+
+00:02:51.560 --> 00:02:54.000
+esto, usará la máquina move, luego la
+
+00:02:54.060 --> 00:02:56.880
+máquina turnLeft, luego la máquina move, luego
+
+00:02:56.920 --> 00:02:59.340
+la máquina turnLeft, luego la máquina move,
+
+00:02:59.430 --> 00:03:01.720
+etc., hasta que haya hecho ambas
+
+00:03:01.800 --> 00:03:07.160
+cuatro veces. A estas instrucciones de repetición las llamamos bucles,
+
+00:03:07.840 --> 00:03:09.540
+y hay muchos tipos de bucles distintos
+
+00:03:09.580 --> 00:03:11.980
+que podemos usar y que funcionan de manera un poco diferente.
+
+00:03:12.000 --> 00:03:15.210
+Los veremos todos en este curso. Ahora,
+
+00:03:15.220 --> 00:03:17.710
+hay una cosa más que saber, y es
+
+00:03:17.760 --> 00:03:20.300
+que mantener el código limpio y ordenado
+
+00:03:20.480 --> 00:03:24.240
+se vuelve esencial cuando trabajamos con bucles. Cuando
+
+00:03:24.280 --> 00:03:26.800
+tu código tiene una buena estructura visual,
+
+00:03:26.860 --> 00:03:28.940
+es muy fácil ver qué está pasando.
+
+00:03:29.660 --> 00:03:31.740
+Pero si no es así, si te olvidas
+
+00:03:31.780 --> 00:03:34.400
+de indentar bien o mezclas la indentación,
+
+00:03:34.460 --> 00:03:38.630
+las cosas se vuelven confusas muy rápido. Por eso en
+
+00:03:38.660 --> 00:03:41.500
+este curso siempre seguimos una regla.
+
+00:03:41.600 --> 00:03:45.049
+Siempre pones la llave de apertura en
+
+00:03:45.080 --> 00:03:48.430
+la misma línea que la sentencia repeat.
+
+00:03:48.430 --> 00:03:50.860
+Siempre pones la llave de cierre en
+
+00:03:50.940 --> 00:03:54.080
+su propia línea, después de la sentencia, y siempre
+
+00:03:54.120 --> 00:03:56.399
+indentas el código entre ellas con dos
+
+00:03:56.480 --> 00:04:00.120
+espacios. De esa forma todo se mantiene muy ordenado,
+
+00:04:01.020 --> 00:04:02.560
+y si te olvidas o intentas seguir
+
+00:04:02.620 --> 00:04:04.360
+otro patrón, te dará un error.
+
+00:04:06.100 --> 00:04:08.080
+En los próximos ejercicios, tu objetivo es
+
+00:04:08.120 --> 00:04:11.060
+resolver algunos de los desafíos usando
+
+00:04:11.100 --> 00:04:13.720
+la menor cantidad de líneas de código posible, y
+
+00:04:13.780 --> 00:04:15.320
+puedes usar bucles repeat para ayudarte
+
+00:04:15.380 --> 00:04:18.060
+con eso. Luego exploraremos cómo empezar
+
+00:04:18.070 --> 00:04:19.990
+a usar el bucle repeat junto con otros
+
+00:04:20.019 --> 00:04:23.270
+conceptos para empezar a ver técnicas mucho más
+
+00:04:23.320 --> 00:04:25.540
+poderosas. Diviértete, y te veo
+
+00:04:25.580 --> 00:04:26.039
+por aquí pronto.
