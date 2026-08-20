@@ -16,7 +16,7 @@ La prima parte è piuttosto semplice. Devi solo aggiungere delle normali parente
 
 Immagina di creare una funzione che deve sparare molte volte. Chiamiamola `shootMany` (spara più volte).
 
-La scriveremmo così:
+La scriveremo così:
 
 ```javascript
 function shootMany(numShots) {
