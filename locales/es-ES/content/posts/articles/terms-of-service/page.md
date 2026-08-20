@@ -26,7 +26,7 @@ Quizás también quieras leer:
 
 Nuestro enfoque general debería ser bastante fácil de entender:
 
-1. Nuestros servicios principales se ofrecen de forma gratuita y "tal cual". Hacemos todo lo posible por mantener nuestra plataforma operativa, pero no podemos ofrecer garantías al respecto.
+1. Nuestros servicios principales se ofrecen de forma gratuita y «tal cual». Hacemos todo lo posible por mantener nuestra plataforma operativa, pero no podemos ofrecer garantías al respecto.
 2. Buscamos tener un enfoque amigable con el usuario en cuanto a privacidad y seguridad.
 3. Incluiremos publicidad o patrocinio, pero no venderemos tus datos ni utilizaremos tus datos personales para dirigirte publicidad con fines de marketing.
 4. Queremos que Jiki sea un lugar agradable y seguro para todos, y tomaremos medidas contra los usuarios que perjudiquen nuestra Plataforma o nuestros valores comunitarios.
@@ -35,7 +35,7 @@ Nuestro enfoque general debería ser bastante fácil de entender:
 
 ## En detalle
 
-Jiki es operado y administrado por Jiki Ltd ("nosotros"), una empresa registrada en el Reino Unido.
+Jiki es operado y administrado por Jiki Ltd («nosotros»), una empresa registrada en el Reino Unido.
 Los siguientes Términos del servicio (los **Términos**) constituyen un acuerdo entre **Jiki Ltd** y tú, y regulan el uso permitido de nuestra **Plataforma**.
 
 Los títulos de las cláusulas, la numeración o el énfasis en estos Términos son solo para facilitar la referencia y no se tendrán en cuenta en la construcción o interpretación de las cláusulas a las que se refieren.
@@ -177,7 +177,7 @@ Cuando elimines tu cuenta, borramos todos los datos personales de la misma. Este
 
 De vez en cuando, podemos vender espacios publicitarios en nuestra plataforma. Algunos anuncios pueden ser a nivel de toda la plataforma, otros pueden limitarse a ciertas áreas del sitio web. No dirigimos publicidad basándonos en tus datos personales.
 
-De vez en cuando, podemos permitir que terceros "patrocinen" ciertas funciones de nuestra Plataforma. Por ejemplo, puedes ver esta información de patrocinio como un anuncio en varias funciones de la Plataforma (incluidas las notificaciones por correo electrónico).
+De vez en cuando, podemos permitir que terceros «patrocinen» ciertas funciones de nuestra Plataforma. Por ejemplo, puedes ver esta información de patrocinio como un anuncio en varias funciones de la Plataforma (incluidas las notificaciones por correo electrónico).
 
 Revisamos periódicamente el nivel de detalle que ofrecemos para controlar las funciones relacionadas con el marketing y podemos notificarte cualquier cambio por correo electrónico.
 
@@ -191,13 +191,13 @@ Cuando sea posible, podemos informar a los usuarios sobre las interrupciones pla
 
 #### Garantías del servicio
 
-Nuestros servicios y los datos y el contenido de nuestra Plataforma se ofrecen "tal cual".
+Nuestros servicios y los datos y el contenido de nuestra Plataforma se ofrecen «tal cual».
 
 En la máxima medida permitida por la ley, Jiki Ltd renuncia a todas las garantías y declaraciones de cualquier tipo, incluidas, entre otras, las garantías implícitas de adecuación para un fin determinado y de no infracción, ya sean expresas, implícitas o legales.
 
 #### Indemnización
 
-Por la presente, aceptas indemnizar, defender y mantener indemne a nosotros, nuestras filiales, directivos, directores, agentes, socios, empleados, representantes y proveedores externos frente a todas las pérdidas, gastos, daños, costos, reclamaciones y demandas razonablemente previsibles, incluidos los honorarios legales razonables y los costos y desembolsos asociados debidamente incurridos, que se deriven o surjan de tu incumplimiento de cualquier declaración o garantía en virtud de estos Términos.
+Por la presente, aceptas indemnizar, defender y mantener indemne a nosotros, nuestras filiales, directivos, directores, agentes, socios, empleados, representantes y proveedores externos frente a todas las pérdidas, gastos, daños, costes, reclamaciones y demandas razonablemente previsibles, incluidos los honorarios legales razonables y los costes y desembolsos asociados debidamente incurridos, que se deriven o surjan de tu incumplimiento de cualquier declaración o garantía en virtud de estos Términos.
 
 ### Nuestra comunicación contigo
 

@@ -6,7 +6,7 @@ en_md5: 18bc1bf16ffc94d81bfa81a93faa9a7f
 
 Te han pedido que hagas un pronóstico del clima para seis días. Sin embargo, en vez de recibir datos meteorológicos tradicionales, tu jefe te da descripciones del clima basadas en cómo se siente al respecto (por ejemplo, «Snowboarding time! 🏂» o «Miserable 😩»).
 
-Recibes un Array (_arreglo_) de seis descripciones del clima, una por día, y tu tarea es dibujar el clima de cada día en su propia caja.
+Recibes un Array (_matriz_) de seis descripciones del clima, una por día, y tu tarea es dibujar el clima de cada día en su propia caja.
 
 El pronóstico se muestra como una cuadrícula de seis cajas, una para cada día de la semana de lunes a sábado. Las descripciones van en orden: la primera (caja `0`) es el clima del lunes, la segunda (caja `1`) es el del martes, y así sucesivamente hasta el sábado (caja `5`). (Tu jefe no sale de casa los domingos, así que no le importa el clima de ese día, y por eso nunca lo podemos reportar...)
 

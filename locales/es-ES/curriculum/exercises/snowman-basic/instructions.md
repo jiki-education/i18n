@@ -8,7 +8,7 @@ Este ejercicio te presenta la función `circle`, la cual usamos con 3 argumentos
 
 - `centerX` (posición horizontal central del centro del círculo)
 - `centerY` (posición vertical central del centro del círculo)
-- `radius` (qué tan grande es el círculo)
+- `radius` (cómo de grande es el círculo)
 
 Esta imagen te lo aclarará mejor:
 

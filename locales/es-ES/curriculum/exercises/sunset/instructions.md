@@ -8,7 +8,7 @@ Tu tarea es animar una escena de atardecer que dure 100 iteraciones. Debería ve
 
 <img src="/static/images/exercise-assets/sunset/example.webp" alt="Atardecer" style="width: 100%; max-width: 300px; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 5px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); margin-bottom: 16px;" />
 
-Ya dibujamos la escena inicial para ti. Tienes que animar varias cosas, usando el estilo de libro animado que aprendiste en el último video:
+Ya dibujamos la escena inicial para ti. Tienes que animar varias cosas, usando el estilo de libro animado que aprendiste en el último vídeo:
 
 - **El tamaño del sol**: Debe empezar con un radio de 5 y crecer 0.2 en cada iteración.
 - **La posición del sol**: Tiene un centro inicial de (50, 10) y debe bajar en el cielo 1 en cada iteración.

@@ -4,7 +4,7 @@ description: "Un bucle con tres partes (un inicializador, una condición y un in
 en_md5: 0ad4155ded18c2df27d29e5355bd0532
 ---
 
-Quizá recuerdes que el bucle `repeat` en realidad no existe en JavaScript. Es algo que agregamos para facilitarte un poquito la vida mientras arrancamos.
+Quizá recuerdes que el bucle `repeat` en realidad no existe en JavaScript. Es algo que añadimos para facilitarte un poquito la vida mientras arrancamos.
 
 Entonces, ¿qué usamos en su lugar? Usamos un bucle `for` normal, y se ve así.
 

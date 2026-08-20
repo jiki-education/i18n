@@ -25,7 +25,7 @@ WGGGW
 WGEGW
 ```
 
-El centro del rascacielos debe estar en la columna `19`. La planta baja comienza en `2` (justo encima del piso de concreto) y va hacia arriba (así que en nuestro ejemplo anterior, eso sería un piso de entrada en `2` y un techo en `7`).
+El centro del rascacielos debe estar en la columna `19`. La planta baja comienza en `2` (justo encima del piso de hormigón) y va hacia arriba (así que en nuestro ejemplo anterior, eso sería un piso de entrada en `2` y un techo en `7`).
 
 Una regla clave en este ejercicio es que todos los valores que ingresas en las funciones deben ser variables o fórmulas. No puedes simplemente ingresar un número como `20`.
 

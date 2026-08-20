@@ -34,7 +34,7 @@ repeat(100) {
   height="197"
 />
 
-Ahora, mira lo que pasa si simplemente agregamos un rectángulo sencillo antes de dibujar el círculo cada vez.
+Ahora, mira lo que pasa si simplemente añadimos un rectángulo sencillo antes de dibujar el círculo cada vez.
 
 ```javascript
 let position = 0

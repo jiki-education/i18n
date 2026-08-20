@@ -1,6 +1,6 @@
 ---
-title: "Lonchera"
-description: "Llena una lonchera con la combinación correcta de alimentos."
+title: "Fiambrera"
+description: "Llena una fiambrera con la combinación correcta de alimentos."
 en_md5: ed0f289d44187f78ae14a9a916414fe9
 ---
 

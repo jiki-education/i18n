@@ -10,18 +10,18 @@ en_md5: 22d22e2479931e8bc503399c3a9110c9
 
 ## Introducción
 
-Cuando empiezas a escribir código en tu propia computadora, necesitas un lugar donde escribirlo. Ese «lugar» es un editor de código. Es una de las primeras herramientas que vas a usar, y donde pasarás mucho tiempo a lo largo de tu carrera. Seguramente cambiarás de editor y probarás nuevos con el tiempo, así que vale la pena entender qué es y cómo elegir uno bueno para empezar.
+Cuando empiezas a escribir código en tu propio ordenador, necesitas un lugar donde escribirlo. Ese «lugar» es un editor de código. Es una de las primeras herramientas que vas a usar, y donde pasarás mucho tiempo a lo largo de tu carrera. Seguramente cambiarás de editor y probarás nuevos con el tiempo, así que vale la pena entender qué es y cómo elegir uno bueno para empezar.
 
 ## Un editor de código no es un procesador de texto
 
 Es fácil suponer que cualquier programa que te deje escribir sirve. El error más común es abrir un procesador de texto como Microsoft Word o Google Docs. Esos programas están hechos para escribir documentos que leerán personas, así que modifican lo que escribes sin avisarte. Convierten las comillas rectas en comillas tipográficas «inteligentes», corrigen automáticamente tus palabras y guardan formato oculto. Todo eso rompe el código.
 
-Un editor de código es un tipo de editor de texto. Trabaja con texto plano y nunca agrega formato oculto, así que lo que escribes es exactamente lo que la computadora ve. La diferencia es que un editor de código es un editor de texto construido específicamente para programar. Sobre el texto plano, entiende la estructura de lo que estás escribiendo y te ayuda de formas que un procesador de texto nunca podría:
+Un editor de código es un tipo de editor de texto. Trabaja con texto plano y nunca añade formato oculto, así que lo que escribes es exactamente lo que el ordenador ve. La diferencia es que un editor de código es un editor de texto construido específicamente para programar. Sobre el texto plano, entiende la estructura de lo que estás escribiendo y te ayuda de formas que un procesador de texto nunca podría:
 
 - El **resaltado de sintaxis** colorea las distintas partes de tu código para que sea más fácil de leer y detectar errores.
 - La **indentación automática** mantiene tu código alineado de forma ordenada, lo que importa mucho en muchos lenguajes.
 - Las **pistas de error** señalan problemas, a menudo incluso antes de que ejecutes el programa.
-- El **autocompletado** te sugiere el resto de lo que estás escribiendo, así que escribes más rápido y cometes menos errores de tipeo.
+- El **autocompletado** te sugiere el resto de lo que estás escribiendo, así que escribes más rápido y cometes menos errores de tecleo.
 - Las **extensiones** te permiten añadir soporte para nuevos lenguajes y herramientas a medida que avanzas.
 
 ## El que recomendamos

@@ -10,7 +10,7 @@ Tienes una función `numBuildings()` (número de edificios), que te dice cuánto
 
 Los edificios comienzan con una separación de una columna a la izquierda, y tienen una separación de una columna entre ellos.
 
-Así que si tuvieras un escenario donde `numBuildings()` devuelve `2`, `randomWidth()` devuelve `5` y luego `7`, y `randomNumFloors()` devuelve `4` y luego `8`, obtendrías este diseño (donde `xxxxx` es el suelo de concreto)
+Así que si tuvieras un escenario donde `numBuildings()` devuelve `2`, `randomWidth()` devuelve `5` y luego `7`, y `randomNumFloors()` devuelve `4` y luego `8`, obtendrías este diseño (donde `xxxxx` es el suelo de hormigón)
 
 ```
        WWWWWWW

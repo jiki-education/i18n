@@ -20,7 +20,7 @@ Jiki Premium tiene un precio por país y te da acceso completo a Learn to Build,
 
 Puedes dedicar tanto tiempo como quieras. La mayoría completa Learn to Code en 12 a 20 semanas, dedicando de 5 a 10 horas por semana. Learn to Build es continuo: puedes entrar y salir cuando se publiquen nuevos episodios y unirte a las transmisiones en vivo cuando más te convenga.
 
-### ¿Qué tan difícil es el curso? ¿Qué tan inteligente hay que ser?
+### ¿Cómo de difícil es el curso? ¿Cómo de inteligente hay que ser?
 
 El curso está diseñado para ser accesible para todas las personas, sin importar tu experiencia previa. No creemos que tengas que ser «inteligente» para aprender a programar. Pero sí necesitas esforzarte y estar dispuesto a aceptar el desafío.
 
@@ -34,7 +34,7 @@ La primera sesión de Learn to Build será a mediados de junio. Puedes apuntarte
 
 ### Ya me registré en el Bootcamp, ¿esto es diferente?
 
-¡Gracias por ser parte del Bootcamp! Jiki es la siguiente etapa en la evolución de nuestro Bootcamp. La mayoría de los ejercicios que resolviste aparecerán en Jiki junto con muchos más. También dividimos los videos de 3 horas en segmentos más cortos, de 5 a 10 minutos, ¡para que sea más fácil verlos!
+¡Gracias por ser parte del Bootcamp! Jiki es la siguiente etapa en la evolución de nuestro Bootcamp. La mayoría de los ejercicios que resolviste aparecerán en Jiki junto con muchos más. También dividimos los vídeos de 3 horas en segmentos más cortos, de 5 a 10 minutos, ¡para que sea más fácil verlos!
 
 Como miembro del Bootcamp, recibirás automáticamente Jiki Premium de por vida. Esto aplica tanto al curso inicial de Learn to Code como a los cursos futuros.
 
@@ -54,7 +54,7 @@ Conservarás el acceso a Premium hasta el final del período de facturación act
 
 ### ¿Ofrecen descuentos para estudiantes o para quienes no pueden pagar Premium?
 
-Queremos que Jiki sea accesible para todas las personas. Si el costo es un obstáculo, [ponte en contacto](/articles/support) y haremos lo que esté a nuestro alcance para ayudar.
+Queremos que Jiki sea accesible para todas las personas. Si el coste es un obstáculo, [ponte en contacto](/articles/support) y haremos lo que esté a nuestro alcance para ayudar.
 
 ### ¿Puedo subir o bajar de plan más adelante?
 

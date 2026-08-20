@@ -31,7 +31,7 @@ let height = 60
 rectangle(left, top, width, height, "blue")
 ```
 
-Entonces podemos definir esas variables. `left`, 10; `top`, 20; `width`, 80; `height`, 60. Pero, ¿qué pasa si queremos mover un poco el rectángulo, hacerlo más chico? ¿Si queremos que quede a 20 de los bordes izquierdo y derecho y a 30 de arriba y abajo? Tendríamos que volver a calcular todo. El `width` ahora sería 100 menos 20 menos 20, y el `height` 100 menos 30 menos 30, y definitivamente es más trabajo y más matemáticas de lo que quiero hacer. En lugar de eso, podemos decirle a la computadora que lo haga por nosotros.
+Entonces podemos definir esas variables. `left`, 10; `top`, 20; `width`, 80; `height`, 60. Pero, ¿qué pasa si queremos mover un poco el rectángulo, hacerlo más pequeño? ¿Si queremos que quede a 20 de los bordes izquierdo y derecho y a 30 de arriba y abajo? Tendríamos que volver a calcular todo. El `width` ahora sería 100 menos 20 menos 20, y el `height` 100 menos 30 menos 30, y definitivamente es más trabajo y más matemáticas de lo que quiero hacer. En lugar de eso, podemos decirle al ordenador que lo haga por nosotros.
 
 Podemos hacer que `width` sea 100 menos `left` menos `left`, y `height` sea 100 menos `top` menos `top`, porque el margen de arriba y el de abajo son iguales. O podríamos escribirlo como 100 menos `left` por dos, o 100 menos `top` por dos.
 
@@ -52,22 +52,22 @@ let height = canvasSize - top * 2 // 40
 rectangle(left, top, width, height, "blue")
 ```
 
-Pensemos en lo que hace Jiki cuando escribimos `let height = canvasSize - top * 2`. Bueno, empieza tomando la caja `top` del estante, encuentra un 30 adentro, saca su calculadora de bolsillo, multiplica 30 por dos y mentalmente anota 60.
+Pensemos en lo que hace Jiki cuando escribimos `let height = canvasSize - top * 2`. Bueno, empieza tomando la caja `top` de la estantería, encuentra un 30 dentro, saca su calculadora de bolsillo, multiplica 30 por dos y mentalmente anota 60.
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/arithmetic/flow-of-images-1.webp"
-  alt="Jiki tomando la caja top del estante y calculando que 30 por dos es 60"
+  alt="Jiki tomando la caja top de la estantería y calculando que 30 por dos es 60"
   width="377"
   height="400"
 />
 
-Después, toma la caja `canvasSize` del estante, encuentra 100 adentro y calcula que 100 menos 60 es 40. Ahora sabe que en realidad lo que estamos diciendo es que `height` valga 40. Así que obedece el `let`, agarra una caja nueva, le escribe `height` encima y mete un 40 adentro. Más tarde, cuando usa `height`, simplemente vuelve a sacar el 40.
+Después, toma la caja `canvasSize` de la estantería, encuentra 100 dentro y calcula que 100 menos 60 es 40. Ahora sabe que en realidad lo que estamos diciendo es que `height` valga 40. Así que obedece el `let`, coge una caja nueva, le escribe `height` encima y mete un 40 adentro. Más tarde, cuando usa `height`, simplemente vuelve a sacar el 40.
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/arithmetic/flow-of-images-3.webp"
-  alt="Jiki agarrando una caja nueva, escribiéndole height encima y metiendo un 40 adentro"
+  alt="Jiki cogiendo una caja nueva, escribiéndole height encima y metiendo un 40 adentro"
   width="462"
   height="400"
 />

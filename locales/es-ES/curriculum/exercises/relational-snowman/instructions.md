@@ -37,4 +37,4 @@ Tu tarea consiste en asignar estas variables a partir de las instrucciones anter
 
 ### Juega con el tamaño
 
-Puedes cambiar el valor de `size` entre `1` y `5` y el muñeco de nieve debería crecer. Recuerda presionar «Ejecutar código» después de cambiarlo.
+Puedes cambiar el valor de `size` entre `1` y `5` y el muñeco de nieve debería crecer. Recuerda pulsar «Ejecutar código» después de cambiarlo.

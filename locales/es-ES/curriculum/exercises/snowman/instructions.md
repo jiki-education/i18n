@@ -10,6 +10,6 @@ Tienes el mismo punto de partida con el contorno de los círculos, y hemos escri
 
 Necesitas definir las variables correctas para resolver el ejercicio.
 
-Ya empezamos definiendo las variables para la base, pero les asignamos valores incorrectos. Corrígelos y luego agrega las variables equivalentes para el cuerpo y la cabeza.
+Ya empezamos definiendo las variables para la base, pero les asignamos valores incorrectos. Corrígelos y luego añade las variables equivalentes para el cuerpo y la cabeza.
 
-Presiona «Ejecutar código» para ver el círculo inicial que se está dibujando. También verás un error porque te faltan variables que necesitas definir usando `let`.
+Pulsa «Ejecutar código» para ver el círculo inicial que se está dibujando. También verás un error porque te faltan variables que necesitas definir usando `let`.

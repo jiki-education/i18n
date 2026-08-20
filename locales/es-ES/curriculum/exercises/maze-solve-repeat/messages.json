@@ -1,6 +1,6 @@
 {
   "checks": {
-    "notReachedEnd": "No llegaste al final del laberinto.",
+    "notReachedEnd": "No has llegado al final del laberinto.",
     "tooManyLines": "Tu solución tiene demasiadas líneas de código. Busca grupos de llamadas consecutivas a `move()` y reemplaza cada grupo con un bucle `repeat`.",
     "oneLineOver": "¡Te sobra solo una línea! Un bucle `repeat` no siempre es más corto: repetir algo solo dos o tres veces puede ocupar más líneas que escribir las llamadas, así que busca algún bucle `repeat` que en realidad no te esté ahorrando nada."
   },
@@ -28,7 +28,7 @@
   },
   "functions": {
     "move": {
-      "description": "Mueve al personaje **un paso hacia adelante** en la dirección actual. El personaje solo se moverá si la posición de destino no está bloqueada por una pared.",
+      "description": "Mueve al personaje **un paso hacia delante** en la dirección actual. El personaje solo se moverá si la posición de destino no está bloqueada por una pared.",
       "category": "Movimiento"
     },
     "turnLeft": {

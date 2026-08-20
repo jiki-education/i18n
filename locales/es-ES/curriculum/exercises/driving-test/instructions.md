@@ -1,14 +1,14 @@
 ---
-title: "Examen de manejo"
-description: "Califica un examen teórico de manejo y decide si aprobaron."
+title: "Examen de conducir"
+description: "Califica un examen teórico de conducir y decide si aprobaron."
 en_md5: fcd146eb38b49d8e4d096bff02e91ea7
 ---
 
-Cuando presentas tu examen de manejo en el Reino Unido, te califican en distintas áreas, como observación, habilidades técnicas, estacionamiento, etc.
+Cuando presentas tu examen de conducir en el Reino Unido, te califican en distintas áreas, como observación, habilidades técnicas, aparcamiento, etc.
 
-Tienes permitido cometer unos cuantos errores pequeños (llamados «minors»), pero no errores grandes («majors»). Si cometes un «major» o 5 o más «minors», repruebas. Si no, ¡te mandan a la carretera!
+Tienes permitido cometer unos cuantos errores pequeños (llamados «minors»), pero no errores grandes («majors»). Si cometes un «major» o 5 o más «minors», suspendes. Si no, ¡te mandan a la carretera!
 
-En tu tiempo libre, administras estos exámenes de manejo. Mientras el estudiante conduce, tomas nota en cada área:
+En tu tiempo libre, administras estos exámenes de conducir. Mientras el estudiante conduce, tomas nota en cada área:
 
 - Si comete un error leve, añades un ❌ al cuadro
 - Si comete un error grave, añades un 💥

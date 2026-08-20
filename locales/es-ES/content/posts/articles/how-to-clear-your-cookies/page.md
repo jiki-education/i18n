@@ -15,7 +15,7 @@ Si prefieres no perder los inicios de sesión de otros sitios, todos los navegad
 ## Google Chrome
 
 1. Abre Chrome y ve a [https://jiki.io](https://jiki.io).
-2. Haz clic en el candado (o el ícono de "ajustes") a la izquierda de la barra de direcciones.
+2. Haz clic en el candado (o el icono de «ajustes») a la izquierda de la barra de direcciones.
 3. Selecciona **Configuración del sitio**.
 4. Junto a **Cookies y datos de sitios**, haz clic en **Eliminar datos**.
 5. Recarga la página e inicia sesión de nuevo.
@@ -40,7 +40,7 @@ Si prefieres no perder los inicios de sesión de otros sitios, todos los navegad
 1. Abre Edge y ve a [https://jiki.io](https://jiki.io).
 2. Haz clic en el candado a la izquierda de la barra de direcciones.
 3. Selecciona **Cookies y permisos del sitio** y luego **Administrar cookies y datos del sitio**.
-4. Busca **jiki.io**, haz clic en el ícono de la papelera y confirma.
+4. Busca **jiki.io**, haz clic en el icono de la papelera y confirma.
 5. Recarga la página e inicia sesión de nuevo.
 
 ## Navegadores móviles

@@ -34,16 +34,16 @@ Estas son otras cosas que necesitas saber:
 - Las hojas están a la mitad del tallo.
 - El `radiusX` (radio en X) de las hojas es el 50% del radio de la flor.
 - El `radiusY` (radio en Y) de las hojas es el 20% del radio de la flor.
-- La cabeza de la flor puede ser `"red"` o `"pink"` según tu gusto. El pistilo (el centro de la flor) debe ser `"yellow"`. El pasto debe ser `"green"`. El fondo debe ser `"skyblue"`.
+- La cabeza de la flor puede ser `"red"` o `"pink"` según tu gusto. El pistilo (el centro de la flor) debe ser `"yellow"`. El césped debe ser `"green"`. El fondo debe ser `"skyblue"`.
 
 Es **esencial** trabajar en una sola cosa a la vez:
 
 - Empieza dibujando la flor rosa y haz que suba.
 - Luego haz que crezca.
-- Agrega el centro amarillo más pequeño.
-- Agrega el tallo.
-- Agrega la hoja izquierda.
-- Agrega la hoja derecha.
+- Añade el centro amarillo más pequeño.
+- Añade el tallo.
+- Añade la hoja izquierda.
+- Añade la hoja derecha.
 
 Usa la barra scrubber para recorrer el código y ver dónde están los errores.
 

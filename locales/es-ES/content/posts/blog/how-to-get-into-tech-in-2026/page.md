@@ -20,7 +20,7 @@ Y durante esos 30 años, **la ruta para entrar en el sector tech ha sido estable
 4. Crea cosas más complejas.
 5. Vuelve al paso 3 (¡y repite para siempre!).
 
-En algún momento estarías listo para solicitar un trabajo. Y te evaluarían según qué tan bien conocieras un lenguaje de programación o un algoritmo, o pudieras manipular estructuras de datos.
+En algún momento estarías listo para solicitar un trabajo. Y te evaluarían según cómo de bien conocieras un lenguaje de programación o un algoritmo, o pudieras manipular estructuras de datos.
 
 **El código siempre fue la barrera de entrada**. Aquello que tenías que dominar para poder hacer cualquier cosa. Literalmente, no podías usar una tecnología a menos que supieras cómo escribir código para hacerla funcionar. No podías conseguir un trabajo si no tenías habilidades sólidas de programación.
 
@@ -65,4 +65,4 @@ Necesitas **a alguien que te enseñe** cómo funciona todo y los caminos mentale
 
 Y [Jiki](https://jiki.io) te enseñará todo eso. Sigue nuestra ruta Aprende a Programar para dominar los fundamentos de la programación, y luego **ven a aprender a construir cosas conmigo**. Entiende por qué necesitas GitHub y cómo funciona, cómo Cloudflare te protegerá, cómo diseñar autenticación segura, cómo hacer bases de datos eficientes, cómo construir front-ends ultrarrápidos y back-ends sólidos como una roca. Aprende a desplegar cosas para que se recuperen si fallan. Aprende todo esto conmigo. **Y diviértete muchísimo en el camino.**
 
-¡Te veo adentro!
+¡Te veo dentro!

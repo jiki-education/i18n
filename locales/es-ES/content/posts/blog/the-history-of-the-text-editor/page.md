@@ -31,13 +31,13 @@ Si mi código tarda más de unos segundos en ejecutarse, me frustro mucho con el
   <figcaption>Una operadora de keypunch en los años 50. Foto por la Oficina del Censo de EE.UU. vía <a href="https://commons.wikimedia.org/wiki/File:Keypunch_operator_1950_census_IBM_016.jpg">Wikimedia Commons</a>, dominio público.</figcaption>
 </figure>
 
-## La computadora empieza a responder (años 60)
+## El ordenador empieza a responder (años 60)
 
 Dos invenciones arrastraron a la edición fuera de ese lento mundo por lotes y la llevaron a algo interactivo.
 
-La primera fue el **teletipo**. El teletipo reemplazó el concepto de lotes de tarjetas preperforadas. En su lugar, escribías en un teclado. Las pulsaciones de teclas se enviaban a la máquina en tiempo real, y esta imprimía sus respuestas directamente en un rollo de papel. Todavía no había pantalla, pero por primera vez tenías un canal vivo, de ida y vuelta, con la computadora en lugar de una pila de cartón.
+La primera fue el **teletipo**. El teletipo reemplazó el concepto de lotes de tarjetas preperforadas. En su lugar, escribías en un teclado. Las pulsaciones de teclas se enviaban a la máquina en tiempo real, y esta imprimía sus respuestas directamente en un rollo de papel. Todavía no había pantalla, pero por primera vez tenías un canal vivo, de ida y vuelta, con el ordenador en lugar de una pila de cartón.
 
-La segunda fue el **tiempo compartido**. Sin el tiempo compartido, una computadora seguiría estando conectada a una persona a la vez, limitada a la velocidad a la que esta podía escribir y procesar respuestas. Esto generaba una enorme cantidad de tiempo desperdiciado esperando a que el operador humano actuara. El tiempo compartido resolvió eso al permitir que la máquina alternara entre diferentes personas a la vez. Varias personas podían estar conectadas a una misma máquina, y esta cambiaba tan rápido que cada una tenía la ilusión de tener toda la computadora para sí.
+La segunda fue el **tiempo compartido**. Sin el tiempo compartido, un ordenador seguiría estando conectado a una persona a la vez, limitado a la velocidad a la que esta podía escribir y procesar respuestas. Esto generaba una enorme cantidad de tiempo desperdiciado esperando a que el operador humano actuara. El tiempo compartido resolvió eso al permitir que la máquina alternara entre diferentes personas a la vez. Varias personas podían estar conectadas a una misma máquina, y esta cambiaba tan rápido que cada una tenía la ilusión de tener todo el ordenador para sí.
 
 Junta esas dos y tienes una conversación de verdad con la máquina. Y una vez que puedes tener una conversación, puedes empezar a editar tu código mientras estás ahí sentado, línea por línea, en lugar de volver a perforar tarjetas y rezar. Que es exactamente lo que los primeros editores reales te permitían hacer.
 
@@ -48,9 +48,9 @@ Junta esas dos y tienes una conversación de verdad con la máquina. Y una vez q
 
 ## Los editores de línea: ed, QED y TECO (1962-1971)
 
-Los años 60 trajeron otro cambio de paradigma enorme. Tu programa dejó de ser un objeto físico que llevabas (una baraja de tarjetas en una caja) y se convirtió en un archivo con nombre que vivía en el disco de la computadora. En lugar de imprimir una nueva tarjeta para cambiar tu programa, ahora podías realmente editar tu programa.
+Los años 60 trajeron otro cambio de paradigma enorme. Tu programa dejó de ser un objeto físico que llevabas (una baraja de tarjetas en una caja) y se convirtió en un archivo con nombre que vivía en el disco del ordenador. En lugar de imprimir una nueva tarjeta para cambiar tu programa, ahora podías realmente editar tu programa.
 
-Sin embargo, todavía no teníamos pantallas. En su lugar, todo lo que ejecutabas y todo lo que se copiaba se imprimía en una hoja de papel. Esa impresión es lo que se conoce como una «copia impresa», un registro permanente de las instrucciones que le dabas a la computadora.
+Sin embargo, todavía no teníamos pantallas. En su lugar, todo lo que ejecutabas y todo lo que se copiaba se imprimía en una hoja de papel. Esa impresión es lo que se conoce como una «copia impresa», un registro permanente de las instrucciones que le dabas al ordenador.
 
 Esta fue la primera vez que tuvimos algo parecido a los editores modernos, pero todavía eran bastante extraños porque estaban **orientados a líneas**. Trabajabas una línea a la vez, y estaban basados en comandos. Emitías comandos (algunos de los cuales resultan muy reconocibles para quienes hemos usado Vim), y esos comandos hacían cambios. Por ejemplo, editar un poema para corregir un error tipográfico podría verse así:
 
@@ -88,12 +88,12 @@ Mientras tanto, en **Xerox PARC**, empezaba una rama diferente de la historia.
 
 En 1974, Butler Lampson y Charles Simonyi lanzaron **Bravo**, el primer editor **WYSIWYG** («lo que ves es lo que obtienes»). Mostraba texto con formato, con fuentes reales en una pantalla de mapa de bits, y usaba el **ratón** para seleccionar texto (la patente del ratón es en realidad mucho más antigua, ¡pero esa es una historia para otro momento!).
 
-Un poco como Vim, tenía dos modos: un «Modo comando» donde presionar las teclas _hacía_ cosas, y un «Modo inserción», donde presionar teclas escribía en la pantalla.
+Un poco como Vim, tenía dos modos: un «Modo comando» donde pulsar las teclas _hacía_ cosas, y un «Modo inserción», donde pulsar teclas escribía en la pantalla.
 
 Este es en realidad un punto clave en nuestra historia. Por un lado, Simonyi llevó estas ideas a Microsoft, donde construyó Word y nos dio los procesadores de texto. Y por otro lado, la pantalla, el ratón y la edición modal alimentaron directamente los editores de código que vinieron después.
 
 <figure class="post-figure">
-  <img src="/images/blog/the-history-of-the-text-editor/xerox-alto.webp" alt="Una computadora Xerox Alto, que ejecutaba Bravo, el primer editor WYSIWYG." />
+  <img src="/images/blog/the-history-of-the-text-editor/xerox-alto.webp" alt="Un ordenador Xerox Alto, que ejecutaba Bravo, el primer editor WYSIWYG." />
   <figcaption>Xerox Alto. Foto vía <a href="https://commons.wikimedia.org/wiki/File:Xerox_Alto.jpg">Wikimedia Commons</a>, CC BY-SA 2.5.</figcaption>
 </figure>
 

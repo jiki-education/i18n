@@ -19,4 +19,4 @@ Cada vez que alguien dispara, aumentamos `numShots` en uno, y al final llegamos 
 
 Ahora, un problema con los bucles `while` es que es muy fácil tener errores que hagan que el bucle nunca termine. Estos se llaman bucles infinitos (_infinite loops_ en inglés), y son uno de los errores más comunes en los programas.
 
-Cuando tu computadora se pone lenta, los ventiladores empiezan a girar, todo se vuelve ruidoso, a menudo es porque alguien dejó un bucle infinito que nunca termina en su código.
+Cuando tu ordenador se pone lento, los ventiladores empiezan a girar, todo se vuelve ruidoso, a menudo es porque alguien dejó un bucle infinito que nunca termina en su código.

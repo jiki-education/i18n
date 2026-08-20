@@ -16,7 +16,7 @@ _Vamos a traducir Jiki y Exercism a tantos idiomas como podamos durante el fin d
 
 [Más que nunca](https://jiki.io/blog/should-i-still-learn-to-code-in-2026), creo que las habilidades de programación y desarrollo [abren grandes oportunidades](https://jiki.io/blog/how-to-get-into-tech-in-2026). Queremos ayudar a que la mayor cantidad de personas posible adquieran esas habilidades, y poder aprender en **tu propio idioma** hace una gran diferencia.
 
-La mayoría de las personas en el mundo no hablan inglés, pero la mayoría de los recursos de programación están solo en inglés. Por eso estamos traduciendo todo Jiki: la interfaz, los videos, los ejercicios, incluso los **mensajes de error** que aparecen en el propio lenguaje de programación.
+La mayoría de las personas en el mundo no hablan inglés, pero la mayoría de los recursos de programación están solo en inglés. Por eso estamos traduciendo todo Jiki: la interfaz, los vídeos, los ejercicios, incluso los **mensajes de error** que aparecen en el propio lenguaje de programación.
 
 Y no es solo Jiki. Exercism también está listo para ser traducido, usando el mismo proceso y los mismos glosarios, así que trabajaremos en **ambas plataformas** al mismo tiempo.
 
@@ -36,13 +36,13 @@ Estamos usando modelos de lenguaje (LLMs, una mezcla de ellos) para traducir las
 
 Así es cómo va a funcionar:
 
-1. **Acordamos un glosario.** Son los términos técnicos que usaremos de forma consistente en todas partes: ¿cómo llamamos a una "function" o una "variable" en tu idioma? Aquí empezaremos el viernes.
-2. **Publico traducciones de muestra.** Una entrada de blog, una página de concepto, algunos subtítulos de video, generados usando tu glosario.
-3. **Tú nos dices qué está mal.** Esta palabra suena rara. Nadie lo dice así en realidad. Esta frase es demasiado formal. No necesitas explicar por qué: "esto simplemente no suena natural" es una retroalimentación muy útil.
+1. **Acordamos un glosario.** Son los términos técnicos que usaremos de forma consistente en todas partes: ¿cómo llamamos a una «function» o una «variable» en tu idioma? Aquí empezaremos el viernes.
+2. **Publico traducciones de muestra.** Una entrada de blog, una página de concepto, algunos subtítulos de vídeo, generados usando tu glosario.
+3. **Tú nos dices qué está mal.** Esta palabra suena rara. Nadie lo dice así en realidad. Esta frase es demasiado formal. No necesitas explicar por qué: «esto simplemente no suena natural» es una retroalimentación muy útil.
 4. **La IA aprende de tus correcciones** y publico una nueva muestra.
 5. **Repetimos** hasta que todo suene natural.
 
-Cuando un idioma llegue a ese punto, puedo traducir en masa todo Jiki a ese idioma: cada lección, cada ejercicio, cada mensaje de error y los subtítulos de todos los videos. Ese es el objetivo para cada idioma para el domingo por la tarde.
+Cuando un idioma llegue a ese punto, puedo traducir en masa todo Jiki a ese idioma: cada lección, cada ejercicio, cada mensaje de error y los subtítulos de todos los vídeos. Ese es el objetivo para cada idioma para el domingo por la tarde.
 
 Si viste el [Episodio 1 de Aprende a Construir](https://jiki.io/projects/build-your-personal-homepage), viste un poco de esto en acción cuando inicié el portugués europeo en vivo durante la transmisión.
 
@@ -66,7 +66,7 @@ Todas las personas que contribuyan recibirán una **insignia exclusiva de la Tra
 
 ## What's next
 
-Después del fin de semana, los idiomas se lanzarán tan pronto como estén listos. Luego empezaremos la siguiente fase: **doblaje de audio y video**. Usaremos [ElevenLabs](https://start.elevenlabs.io/c/exercism) para el audio, además de un doblaje de video personalizado que cambia mi boca, para que parezca que estoy hablando tu idioma de verdad.
+Después del fin de semana, los idiomas se lanzarán tan pronto como estén listos. Luego empezaremos la siguiente fase: **doblaje de audio y vídeo**. Usaremos [ElevenLabs](https://start.elevenlabs.io/c/exercism) para el audio, además de un doblaje de vídeo personalizado que cambia mi boca, para que parezca que estoy hablando tu idioma de verdad.
 
 ## Thank you
 

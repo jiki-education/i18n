@@ -1,6 +1,6 @@
 ---
 title: "Precio del letrero"
-description: "Calcula el costo de pintar un letrero, letra por letra."
+description: "Calcula el coste de pintar un letrero, letra por letra."
 en_md5: 67d90aae9a896a879c20956e9afc9270
 ---
 

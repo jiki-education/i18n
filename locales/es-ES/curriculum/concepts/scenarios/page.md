@@ -16,7 +16,7 @@ Los verás como pequeños botones justo encima de la salida de cada ejercicio. C
   height="318"
 />
 
-Pongamos un ejemplo de un juego de golf. Tal vez necesites variar la distancia que rueda una pelota según el valor de retorno (_return value_ en inglés) de una función llamada `getShotLength` (obtener la distancia del tiro), que te dice qué tan lejos el golfista ha golpeado la pelota. Imagina que el jugador ha tenido que deslizar el dedo en su teléfono para indicar qué tan lejos ha golpeado la pelota.
+Pongamos un ejemplo de un juego de golf. Tal vez necesites variar la distancia que rueda una pelota según el valor de retorno (_return value_ en inglés) de una función llamada `getShotLength` (obtener la distancia del tiro), que te dice cómo de lejos el golfista ha golpeado la pelota. Imagina que el jugador ha tenido que deslizar el dedo en su teléfono para indicar cómo de lejos ha golpeado la pelota.
 
 <img
   class="concept-image"
@@ -26,7 +26,7 @@ Pongamos un ejemplo de un juego de golf. Tal vez necesites variar la distancia q
   height="400"
 />
 
-El resultado que te llega es a través de esta función. Así que en un escenario, puedes usar la función `getShotLength` y esta devolverá `23`, un deslizamiento corto. En otro, devuelve `70`, un deslizamiento largo. En otro, devuelve `45`. Tu código necesita hacer rodar la pelota la distancia correcta para cada escenario con un solo programa, un solo conjunto de código. Vas a necesitar usar la función `getShotLength` para ver qué tan lejos fue el tiro y luego hacer rodar la pelota hasta ese punto.
+El resultado que te llega es a través de esta función. Así que en un escenario, puedes usar la función `getShotLength` y esta devolverá `23`, un deslizamiento corto. En otro, devuelve `70`, un deslizamiento largo. En otro, devuelve `45`. Tu código necesita hacer rodar la pelota la distancia correcta para cada escenario con un solo programa, un solo conjunto de código. Vas a necesitar usar la función `getShotLength` para ver cómo de lejos fue el tiro y luego hacer rodar la pelota hasta ese punto.
 
 ```javascript
 let distance = getShotLength()

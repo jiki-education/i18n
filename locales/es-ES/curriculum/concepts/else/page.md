@@ -1,6 +1,6 @@
 ---
 title: "La palabra clave `else`"
-description: "Agregar una cláusula `else` después de un `if` para que se ejecute un bloque de código diferente cuando la condición resulta ser falsa."
+description: "Añadir una cláusula `else` después de un `if` para que se ejecute un bloque de código diferente cuando la condición resulta ser falsa."
 en_md5: a3d7b0672bd9c022675831044c5610ed
 ---
 
@@ -24,7 +24,7 @@ if (age >= 21) {
   height="332"
 />
 
-Pero ¿qué pasa si tienes más de dos posibilidades? Imagina que nuestro portero está vendiendo entradas. Si tienes menos de trece, recibes una entrada infantil. Entre trece y veinte, una entrada juvenil. Veinte o más, una entrada de adulto. Ahora tienes tres resultados diferentes. Para esto, podemos agregar otro condicional después del `else`. Así que podemos decir: «Si esto, entonces haz esto. Si no, si esto otro, haz aquello. Si no, haz esta otra cosa». En este ejemplo, Jiki ve el `if` y verifica la primera condición. ¿Dieciséis es menor que trece? No. Entonces pasa al `else if`. ¿Dieciséis es menor que veinte? Sí, es verdadero. Entonces ejecuta ese bloque y entrega una entrada juvenil. Y ya está. No verifica nada más. No mira ese `else` final para nada. Cuando Jiki encuentra una condición que es verdadera, ejecuta ese bloque y se salta todo lo demás que haya debajo.
+Pero ¿qué pasa si tienes más de dos posibilidades? Imagina que nuestro portero está vendiendo entradas. Si tienes menos de trece, recibes una entrada infantil. Entre trece y veinte, una entrada juvenil. Veinte o más, una entrada de adulto. Ahora tienes tres resultados diferentes. Para esto, podemos añadir otro condicional después del `else`. Así que podemos decir: «Si esto, entonces haz esto. Si no, si esto otro, haz aquello. Si no, haz esta otra cosa». En este ejemplo, Jiki ve el `if` y verifica la primera condición. ¿Dieciséis es menor que trece? No. Entonces pasa al `else if`. ¿Dieciséis es menor que veinte? Sí, es verdadero. Entonces ejecuta ese bloque y entrega una entrada juvenil. Y ya está. No verifica nada más. No mira ese `else` final para nada. Cuando Jiki encuentra una condición que es verdadera, ejecuta ese bloque y se salta todo lo demás que haya debajo.
 
 ```javascript
 if (age < 13) {

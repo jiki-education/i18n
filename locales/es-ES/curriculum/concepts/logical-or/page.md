@@ -4,7 +4,7 @@ description: "Combinar dos condiciones con `||` para que la condición completa 
 en_md5: e7bc3f103a37719cdf3a77920d09e24e
 ---
 
-También podemos usar `or`, pero lamentablemente, de nuevo, no hay una palabra clave `or` bonita en JavaScript. En su lugar, tenemos que usar estas dos barras (_bars_ en inglés) juntas para indicar "o". Se ve raro, pero en realidad no lo es. Te vas a acostumbrar.
+También podemos usar `or`, pero lamentablemente, de nuevo, no hay una palabra clave `or` bonita en JavaScript. En su lugar, tenemos que usar estas dos barras (_bars_ en inglés) juntas para indicar «o». Se ve raro, pero en realidad no lo es. Te vas a acostumbrar.
 
 Así que podemos decir: si alguien tiene más de 20 años o va vestido de disco, entonces puede entrar. Vamos a tener una fiesta divertida con chicos vestidos de disco y adultos mal vestidos, lo cual suena razonable.
 

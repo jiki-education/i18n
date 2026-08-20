@@ -48,7 +48,7 @@ No necesitas leer esto a menos que te interese activamente lo que sucede detrás
 
 | Funcionalidad                                              | Por qué está excluida                                                                                                                           |
 | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `var`                                                      | Usa `let` o `const` en su lugar. `var` tiene reglas de ámbito confusas que causan errores incluso a desarrolladores experimentados.            |
+| `var`                                                      | Usa `let` o `const` en su lugar. `var` tiene reglas de scope confusas que causan errores incluso a desarrolladores experimentados.            |
 | `with`                                                     | Obsoleto y confuso. Crea código ambiguo sobre el que es difícil razonar.                                                                       |
 | `debugger`                                                 | Herramienta de desarrollo, no necesaria para aprender.                                                                                         |
 | `void`                                                     | Rara vez útil y confuso para principiantes.                                                                                                    |
@@ -62,7 +62,7 @@ No necesitas leer esto a menos que te interese activamente lo que sucede detrás
 | Funcionalidad | Por qué está excluida                                                                                                                                |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `global`      | Modificar variables globales desde dentro de las funciones genera código confuso. Aprende mejor a pasar valores como argumentos.                    |
-| `nonlocal`    | Funcionalidad de ámbito avanzada para funciones anidadas. No se necesita al aprender los fundamentos.                                                |
+| `nonlocal`    | Funcionalidad de scope avanzada para funciones anidadas. No se necesita al aprender los fundamentos.                                                |
 | `assert`      | Herramienta de depuración que puede desactivarse en producción. En su lugar, aprende un manejo de errores adecuado.                                 |
 
 ## ¿Qué pasa si necesito una funcionalidad?

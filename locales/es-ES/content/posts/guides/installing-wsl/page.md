@@ -24,19 +24,19 @@ WSL (el **Subsistema de Windows para Linux**) es una funcionalidad de Windows, c
 
 Necesitas:
 
-- **Windows 10 (versión 2004 o posterior) o Windows 11.** Cualquier computadora con Windows de los últimos años funciona.
-- **Acceso de administrador** a la computadora. Si es una computadora familiar, tal vez necesites que quien la configuró escriba su contraseña.
+- **Windows 10 (versión 2004 o posterior) o Windows 11.** Cualquier ordenador con Windows de los últimos años funciona.
+- **Acceso de administrador** al ordenador. Si es un ordenador familiar, tal vez necesites que quien la configuró escriba su contraseña.
 
 ## Instalar WSL
 
 1. Haz clic en el botón **Inicio** y escribe «powershell». Verás aparecer **Windows PowerShell**.
 2. No lo abras simplemente. En su lugar, haz clic derecho sobre él y elige **Ejecutar como administrador**. Windows te preguntará si quieres permitir que haga cambios: haz clic en **Sí**.
-3. En la ventana azul que aparece, escribe lo siguiente y presiona Enter:
+3. En la ventana azul que aparece, escribe lo siguiente y pulsa Enter:
    ```
    wsl --install
    ```
 4. Windows descargará y configurará todo, incluido un sistema Linux llamado **Ubuntu** (la versión más popular de Linux). Esto puede tardar unos minutos.
-5. Cuando te lo pida, **reinicia tu computadora**.
+5. Cuando te lo pida, **reinicia tu ordenador**.
 
 <!-- SCREENSHOT: PowerShell running wsl --install -->
 
@@ -46,10 +46,10 @@ Tras el reinicio, se abrirá automáticamente una ventana de terminal para termi
 
 Te pedirá que crees un **nombre de usuario** y una **contraseña** para tu sistema Linux:
 
-1. Escribe un nombre de usuario (en minúsculas, sin espacios) y presiona Enter.
-2. Escribe una contraseña y presiona Enter, luego vuelve a escribirla para confirmar.
+1. Escribe un nombre de usuario (en minúsculas, sin espacios) y pulsa Enter.
+2. Escribe una contraseña y pulsa Enter, luego vuelve a escribirla para confirmar.
 
-Hay algo que despista a todo el mundo aquí: **cuando escribes la contraseña, no aparece nada en la pantalla**. Ni puntos, ni asteriscos, nada. Es una medida de seguridad de Linux, no un fallo. Lo que escribes sí se está registrando; simplemente escribe la contraseña y presiona Enter.
+Hay algo que despista a todo el mundo aquí: **cuando escribes la contraseña, no aparece nada en la pantalla**. Ni puntos, ni asteriscos, nada. Es una medida de seguridad de Linux, no un fallo. Lo que escribes sí se está registrando; simplemente escribe la contraseña y pulsa Enter.
 
 No olvides esta contraseña. La necesitarás de vez en cuando al instalar cosas.
 
@@ -59,7 +59,7 @@ No olvides esta contraseña. La necesitarás de vez en cuando al instalar cosas.
 
 Cierra todo, luego haz clic en **Inicio**, escribe «ubuntu» y ábrela. Deberías ver una ventana con un indicador que termina en `$`, esperando a que escribas. ¡Felicidades! Esa es una terminal Linux real, y ahora tienes el mismo entorno de desarrollo que los profesionales.
 
-Prueba a escribir `ls` y presiona Enter. Lista los archivos de tu carpeta actual (todavía no habrá muchos).
+Prueba a escribir `ls` y pulsa Enter. Lista los archivos de tu carpeta actual (todavía no habrá muchos).
 
 ## Usar WSL desde VS Code
 
@@ -67,12 +67,12 @@ Si tienes [VS Code instalado](/guides/installing-vscode), puede conectarse a WSL
 
 1. Abre VS Code.
 2. Abre el panel de Extensiones (el icono de los cuatro cuadros a la izquierda, o Ctrl+Shift+X), busca **WSL** e instala la extensión creada por Microsoft.
-3. Presiona Ctrl+Shift+P, escribe «WSL» y elige **WSL: Connect to WSL**. VS Code se reiniciará, conectado a Ubuntu.
+3. Pulsa Ctrl+Shift+P, escribe «WSL» y elige **WSL: Connect to WSL**. VS Code se reiniciará, conectado a Ubuntu.
 
 De ahora en adelante, cualquier terminal que abras dentro de VS Code (menú Terminal, luego Nuevo terminal) será una terminal Linux. Esta es la configuración que recomendamos para el resto de nuestras guías.
 
 ## Si algo sale mal
 
-El problema más común es un error que mencione **virtualización** (o «VT-x», «AMD-V» o «plataforma de máquina virtual»). WSL depende de una funcionalidad de hardware que está desactivada en algunas computadoras. Activarla implica cambiar un ajuste en la BIOS de tu computadora, que varía según el fabricante. Busca el nombre del modelo de tu laptop junto con «enable virtualisation» para obtener instrucciones, o pregunta en <a href="https://forum.jiki.io" target="_blank" rel="noopener noreferrer">nuestro foro</a> y te ayudaremos.
+El problema más común es un error que mencione **virtualización** (o «VT-x», «AMD-V» o «plataforma de máquina virtual»). WSL depende de una funcionalidad de hardware que está desactivada en algunos ordenadores. Activarla implica cambiar un ajuste en la BIOS de tu ordenador, que varía según el fabricante. Busca el nombre del modelo de tu portátil junto con «enable virtualisation» para obtener instrucciones, o pregunta en <a href="https://forum.jiki.io" target="_blank" rel="noopener noreferrer">nuestro foro</a> y te ayudaremos.
 
 Para cualquier otra cosa, la <a href="https://learn.microsoft.com/en-us/windows/wsl/install" target="_blank" rel="noopener noreferrer">guía oficial de instalación de WSL</a> de Microsoft tiene una sección de solución de problemas y, de nuevo, el foro siempre está disponible.

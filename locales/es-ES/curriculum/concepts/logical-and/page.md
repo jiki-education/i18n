@@ -10,7 +10,7 @@ Tal vez podrías usar un condicional `if` anidado (_nested_ en inglés), parecid
 
 Por suerte, hay una forma más fácil: tener condiciones con varias partes. En lugar de revisar una sola cosa en la condición, podemos revisar dos, tres o más cosas. Y para hacerlo necesitamos la palabra clave `and`. Lamentablemente, en JavaScript la palabra clave `and` no es la palabra "and", como sí ocurre en otros lenguajes. En su lugar tienes que poner dos ampersands uno al lado del otro. Vas a tener que recordarlo. Es molesto, pero así es, y te acostumbrarás.
 
-Así que podemos usar esto para armar una condición más compleja. Podemos decir: si `age` es mayor que `20` y el `outfit` es `"disco"`, entonces seguimos. Si `age` es menor que `20` o el `outfit` no es `"disco"`, toda la sentencia, toda la condición es falsa. Si alguna vez estudiaste lógica, hiciste algo de electrónica o matemática más avanzada, esto te va a resultar muy natural. Si no, lo entenderás rápido.
+Así que podemos usar esto para armar una condición más compleja. Podemos decir: si `age` es mayor que `20` y el `outfit` es `"disco"`, entonces seguimos. Si `age` es menor que `20` o el `outfit` no es `"disco"`, toda la instrucción, toda la condición es falsa. Si alguna vez estudiaste lógica, hiciste algo de electrónica o matemática más avanzada, esto te va a resultar muy natural. Si no, lo entenderás rápido.
 
 ```javascript
 if (age > 20 && outfit === "disco") {

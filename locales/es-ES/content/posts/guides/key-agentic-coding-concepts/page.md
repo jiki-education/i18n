@@ -22,7 +22,7 @@ Hay muchos modelos, creados por distintas empresas, y se diferencian en tres asp
 
 - **Capacidad.** Los modelos más grandes y recientes entienden mejor los problemas enredados y escriben código más correcto. Los mejores (a menudo llamados modelos «de vanguardia», o «frontier» en inglés) son notablemente más inteligentes que el resto.
 - **Velocidad.** Los modelos más pequeños responden más rápido. Para preguntas sencillas, un modelo rápido suele dar una experiencia más agradable.
-- **Costo.** Los mejores modelos pueden costar cincuenta veces más de ejecutar que otros perfectamente decentes. Por eso los planes gratuitos usan modelos más pequeños o promocionales.
+- **Coste.** Los mejores modelos pueden costar cincuenta veces más de ejecutar que otros perfectamente decentes. Por eso los planes gratuitos usan modelos más pequeños o promocionales.
 
 No existe un «mejor modelo» permanente. La tabla de clasificación se reordena cada pocos meses, y esa es una de las razones por las que recomendamos una herramienta que te deje cambiar de modelo libremente (en OpenCode, escribe `/models`).
 

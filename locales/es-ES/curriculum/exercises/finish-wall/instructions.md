@@ -4,9 +4,9 @@ description: "Coloca una hilera de ladrillos usando un bucle y una variable de p
 en_md5: 6d13bb1ad8a10de21422bd597308f7dd
 ---
 
-En el primer ejercicio de dibujo que completaste, usaste la función `rectangle` (rectángulo) para rellenar algunos huecos en una pared. En este ejercicio, vamos a ampliar eso usando un bucle para agregar la capa superior a una pared.
+En el primer ejercicio de dibujo que completaste, usaste la función `rectangle` (rectángulo) para rellenar algunos huecos en una pared. En este ejercicio, vamos a ampliar eso usando un bucle para añadir la capa superior a una pared.
 
-Todas las capas, excepto la superior, ya están completas. Tienes que agregar la última capa de 5 ladrillos. La pared final debería verse así:
+Todas las capas, excepto la superior, ya están completas. Tienes que añadir la última capa de 5 ladrillos. La pared final debería verse así:
 
 <img src="/static/images/exercise-assets/finish-wall/completed-wall.webp" alt="Pared completada" style="width: 100%; max-width: 300px; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 5px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); margin-bottom: 8px;" />
 

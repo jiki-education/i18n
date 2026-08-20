@@ -14,7 +14,7 @@ Hasta ahora, cuando comparábamos cosas para ver si son iguales, usábamos tres 
   height="400"
 />
 
-Podemos decir: «Si el atuendo no es disco, abre la puerta». La sentencia if funciona exactamente igual.
+Podemos decir: «Si el atuendo no es disco, abre la puerta». La instrucción if funciona exactamente igual.
 
 ```javascript
 if (outfit !== "disco") {
@@ -52,4 +52,4 @@ movingRight = !movingRight
 
 Y eso lo invierte. `!movingRight` significa lo opuesto de lo que era antes.
 
-Así que si `movingRight` era true, ahora es false. Si era false, ahora es true. Jiki obtiene lo que hay actualmente en la caja, y ese bang le dice que encuentre lo opuesto. Entonces lo opuesto de true es false. Lo opuesto de false es true, y luego lo vuelve a poner en la caja. Esto es exactamente lo mismo que esa sentencia if/else más larga, pero es mucho más ordenado y conciso de escribir.
+Así que si `movingRight` era true, ahora es false. Si era false, ahora es true. Jiki obtiene lo que hay actualmente en la caja, y ese bang le dice que encuentre lo opuesto. Entonces lo opuesto de true es false. Lo opuesto de false es true, y luego lo vuelve a poner en la caja. Esto es exactamente lo mismo que esa instrucción if/else más larga, pero es mucho más ordenado y conciso de escribir.

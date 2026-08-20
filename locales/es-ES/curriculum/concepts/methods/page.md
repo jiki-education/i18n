@@ -36,7 +36,7 @@ Y obtendremos `true`, porque `"Jeremy"` tiene una `"e"` dentro.
   height="400"
 />
 
-Los métodos son diferentes a las propiedades porque no son datos estáticos. En realidad son funciones. Puedes imaginarlos como funciones que tienen una caja incorporada con el string adentro.
+Los métodos son diferentes a las propiedades porque no son datos estáticos. En realidad son funciones. Puedes imaginarlos como funciones que tienen una caja incorporada con el string dentro.
 
 Cómo funcionan no importa mucho por ahora. No vas a estar construyéndolos por un buen tiempo. Lo único que necesitas saber es que usas un método poniendo un punto y luego la sintaxis normal de una función.
 

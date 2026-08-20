@@ -23,9 +23,9 @@ for (let letter of name) {
 }
 ```
 
-Primero tenemos la palabra clave `for`. Eso le dice a Jiki que queremos hacer un bucle. Entonces Jiki mira hacia adelante, ve `of` y sabe que queremos hacer un bucle "for of".
+Primero tenemos la palabra clave `for`. Eso le dice a Jiki que queremos hacer un bucle. Entonces Jiki mira hacia delante, ve `of` y sabe que queremos hacer un bucle «for of».
 
-Y eso significa que, en lugar de usar un bucle `repeat` donde decimos "recorramos esto 10 veces", estamos diciendo "recorramos todas las letras del string". Eso es lo que significa "for of".
+Y eso significa que, en lugar de usar un bucle `repeat` donde decimos «recorramos esto 10 veces», estamos diciendo «recorramos todas las letras del string». Eso es lo que significa «for of».
 
 Después tenemos esta parte `let letter` (que crea la variable `letter`). Es exactamente igual que lo que tenemos arriba con `let name`. Simplemente estamos creando una variable llamada `letter`.
 
@@ -35,7 +35,7 @@ Entonces Jiki ve `for`, busca el `of` y se pone en marcha. Mira la primera letra
 
 Luego ejecuta el código dentro de las llaves, y aquí puedes hacer cualquier cosa que harías en cualquier otro lugar del código. La única diferencia es que este bloque de código se va a ejecutar una vez por cada letra del string, y tendrá disponible esta variable.
 
-Cada vez que Jiki llega a la llave de cierre, descarta la caja `letter` y crea una nueva con la siguiente letra adentro. Así que la primera vez descarta la `"J"` y pone una `"e"` en la caja. Después hace lo mismo con la `"r"`, luego con la `"e"`, la `"m"` y la `"y"`. Seis letras, seis vueltas al bucle. Toma un poco de tiempo acostumbrarse a la sintaxis, pero no es un concepto realmente difícil.
+Cada vez que Jiki llega a la llave de cierre, descarta la caja `letter` y crea una nueva con la siguiente letra dentro. Así que la primera vez descarta la `"J"` y pone una `"e"` en la caja. Después hace lo mismo con la `"r"`, luego con la `"e"`, la `"m"` y la `"y"`. Seis letras, seis vueltas al bucle. Toma un poco de tiempo acostumbrarse a la sintaxis, pero no es un concepto realmente difícil.
 
 <img
   class="concept-image"

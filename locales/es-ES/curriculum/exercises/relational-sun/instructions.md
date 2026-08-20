@@ -10,7 +10,7 @@ Hemos predefinido cuatro variables para ti al inicio del archivo:
 
 - `canvasSize` (tamaño del lienzo): el tamaño del lienzo, que es `100`.
 - `color`: configurado en `"yellow"`.
-- `gap` (separación): qué tan lejos queda el borde del sol de los bordes superior y derecho del lienzo.
+- `gap` (separación): cómo de lejos queda el borde del sol de los bordes superior y derecho del lienzo.
 - `radius` (radio): el radio del sol.
 
 ### Un proceso de dos pasos

@@ -1,5 +1,5 @@
 ---
-title: "Agregando devoluciones a las funciones"
+title: "Añadiendo devoluciones a las funciones"
 description: "Usar la palabra clave `return` para dar a tus funciones una rampa de salida que entregue un valor de vuelta a quien la llama."
 en_md5: 51d31f709a7051c29b499a31ad68555e
 ---

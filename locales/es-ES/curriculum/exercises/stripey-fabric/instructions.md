@@ -37,6 +37,6 @@ El lienzo sobre el que diseñas mide `100` de ancho y `100` de alto. Necesitas d
 
 No puedes resolver este ejercicio simplemente escribiendo 20 instrucciones de rectángulo. ¡Tu código debe escalar a cualquier tamaño de tela! De hecho, ¡solo puedes usar la función `rectangle(...)` (que dibuja un rectángulo) una vez en tu código!
 
-En su lugar, necesitas hacer un bucle y usar el residuo (de la división) (_remainder_ en inglés) y el operador (_operator_ en inglés) que vimos en la lección en video anterior. Piensa con cuidado en el orden de las instrucciones: esa es la clave para tener éxito en este ejercicio.
+En su lugar, necesitas hacer un bucle y usar el residuo (de la división) (_remainder_ en inglés) y el operador (_operator_ en inglés) que vimos en la lección en vídeo anterior. Piensa con cuidado en el orden de las instrucciones: esa es la clave para tener éxito en este ejercicio.
 
 ¡Tómate tu tiempo y diviértete!

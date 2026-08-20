@@ -17,7 +17,7 @@ Hemos creado nuestro sitio web con los siguientes objetivos:
 - Debes poder navegar por la mayor parte del sitio usando software de reconocimiento de voz.
 - Debes poder escuchar la mayor parte del sitio con un lector de pantalla (incluidas las versiones más recientes de JAWS, NVDA y VoiceOver).
 
-## ¿Qué tan accesible es nuestro sitio web?
+## ¿Cómo de accesible es nuestro sitio web?
 
 Nuestro sitio web cumple con las Pautas de Accesibilidad para el Contenido Web (WCAG) versión 2.1 nivel AA.
 

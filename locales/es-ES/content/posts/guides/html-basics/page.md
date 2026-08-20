@@ -22,7 +22,7 @@ HTML significa **HyperText Markup Language** («lenguaje de marcado de hipertext
 
 ## Etiquetas
 
-HTML es famoso por tener **etiquetas**, que empiezan con `<` y terminan con `>`. Entre esos paréntesis angulares ponemos aquello de lo que trata la etiqueta. Luego viene algo de contenido y después una etiqueta de cierre, que es igual a la de apertura pero con una barra diagonal.
+HTML es famoso por tener **etiquetas**, que empiezan con `<` y terminan con `>`. Entre esos corchetes angulares ponemos aquello de lo que trata la etiqueta. Luego viene algo de contenido y después una etiqueta de cierre, que es igual a la de apertura pero con una barra diagonal.
 
 Veamos un ejemplo:
 

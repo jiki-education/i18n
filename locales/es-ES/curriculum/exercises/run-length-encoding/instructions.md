@@ -21,6 +21,6 @@ Decodificar invierte el proceso: un número te dice cuántas veces debes repetir
 
 ### Poner en práctica lo aprendido
 
-Aunque hay muchas formas de resolver este ejercicio, la solución que queremos que logres utiliza el tipo de bucle `for` que aprendiste en el último video. Revisa los conceptos al final si necesitas un recordatorio de la sintaxis, ¡porque es bastante fea!
+Aunque hay muchas formas de resolver este ejercicio, la solución que queremos que logres utiliza el tipo de bucle `for` que aprendiste en el último vídeo. Revisa los conceptos al final si necesitas un recordatorio de la sintaxis, ¡porque es bastante fea!
 
 ¡Diviértete!

@@ -4,7 +4,7 @@ description: "Fragmentos de texto entre comillas (una letra, una palabra, una or
 en_md5: 4947f6ac1b3eb8eb85d2dea9b82ffc40
 ---
 
-Cuando quieres usar un número, literalmente puedes escribirlo y Jiki entiende lo que quieres decir. Pero ¿qué pasa si quieres usar una letra, una palabra o una oración? Por ejemplo, con la función `rectangle` (rectángulo) o la función `circle` (círculo), ¿qué pasaría si tuvieras un argumento extra donde especificaras el color? ¿Cómo escribiríamos el color para meterlo en la máquina? Si simplemente escribimos la palabra verde (_green_ en inglés) o azul (_blue_ en inglés), Jiki va a pensar que nos referimos a una máquina en los estantes y dirá: «No hay ninguna máquina que se llame verde. No sé qué hacer.»
+Cuando quieres usar un número, literalmente puedes escribirlo y Jiki entiende lo que quieres decir. Pero ¿qué pasa si quieres usar una letra, una palabra o una oración? Por ejemplo, con la función `rectangle` (rectángulo) o la función `circle` (círculo), ¿qué pasaría si tuvieras un argumento extra donde especificaras el color? ¿Cómo escribiríamos el color para meterlo en la máquina? Si simplemente escribimos la palabra verde (_green_ en inglés) o azul (_blue_ en inglés), Jiki va a pensar que nos referimos a una máquina en las estanterías y dirá: «No hay ninguna máquina que se llame verde. No sé qué hacer.»
 
 <img
   class="concept-image"
@@ -29,7 +29,7 @@ Los strings pueden ser letras sueltas, palabras, oraciones, párrafos e incluso 
 <img
   class="concept-image"
   src="/static/images/concept-assets/strings/string-examples.webp"
-  alt="Un pizarrón que muestra strings de distintos tamaños entre comillas: una sola letra, una palabra, una oración y una dirección de varias líneas"
+  alt="Una pizarra que muestra strings de distintos tamaños entre comillas: una sola letra, una palabra, una oración y una dirección de varias líneas"
   width="500"
   height="398"
 />
@@ -40,7 +40,7 @@ Entonces, si queremos un rectángulo azul, escribimos el número de su posición
 rectangle(10, 20, 30, 40, "blue")
 ```
 
-Jiki tomaría la máquina del estante, pondría unas monedas en las primeras cuatro ranuras. Luego escribiría blue en un papel y pondría ese papel en la quinta ranura y después ejecutaría la máquina.
+Jiki tomaría la máquina de la estantería, pondría unas monedas en las primeras cuatro ranuras. Luego escribiría blue en un papel y pondría ese papel en la quinta ranura y después ejecutaría la máquina.
 
 <img
   class="concept-image"

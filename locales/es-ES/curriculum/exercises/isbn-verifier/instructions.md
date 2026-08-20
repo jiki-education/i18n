@@ -44,7 +44,7 @@ Aprende más en la <a href="/concepts/type-conversion" target="_blank" rel="noop
 
 ### Usar lo que acabas de aprender
 
-Como en el ejercicio anterior, aunque hay muchas formas válidas de resolver este ejercicio, la solución que queremos que crees usa una sentencia `continue`.
+Como en el ejercicio anterior, aunque hay muchas formas válidas de resolver este ejercicio, la solución que queremos que crees usa una instrucción `continue`.
 
 El escenario adicional te desafía a resolver esto en 22 líneas de código. Hay soluciones más cortas, pero si llegas a 22 líneas, has hecho un buen trabajo de optimización.
 

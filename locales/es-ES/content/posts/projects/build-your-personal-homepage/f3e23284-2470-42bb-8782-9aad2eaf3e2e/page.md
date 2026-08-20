@@ -1,6 +1,6 @@
 ---
 title: "Episodio 2: navegación, estilos y publicación en la web"
-excerpt: "Conectamos nuestras páginas con una navegación, les agregamos algunos estilos y publicamos el sitio en internet con GitHub. Hasta puede que consigas un dominio propio gratis."
+excerpt: "Conectamos nuestras páginas con una navegación, les añadimos algunos estilos y publicamos el sitio en internet con GitHub. Hasta puede que consigas un dominio propio gratis."
 summary:
   from: "Una serie de páginas HTML sueltas y sin estilos."
   to: "Un sitio web con estilos y bien enlazado, publicado en internet."
@@ -16,6 +16,6 @@ Ahora que ya tenemos algunas páginas muy básicas, vamos a convertirlas en un s
 ## Qué vamos a ver
 
 - Conectar nuestras páginas con una navegación
-- Agregar algunos estilos
+- Añadir algunos estilos
 - Publicar el sitio con GitHub
 - Conseguir un dominio propio gratis

@@ -14,7 +14,7 @@ En lugar de escribir `move` 10 veces seguidas, lo que se vuelve muy repetitivo, 
 
 `Move`».
 
-Para hacer esto con código, necesitamos usar nuestra primera palabra clave (_keyword_ en inglés), y las palabras clave son instrucciones que Jiki entiende. Se parecen un poco a las máquinas, pero no lo son. Cuando Jiki ve una palabra clave, no busca una máquina en el estante; simplemente sabe qué hacer. Lo tiene integrado en su cerebro. Hay unas 20 palabras clave distintas que vamos a aprender durante el curso, y la primera de ellas es la palabra clave `repeat`.
+Para hacer esto con código, necesitamos usar nuestra primera palabra clave (_keyword_ en inglés), y las palabras clave son instrucciones que Jiki entiende. Se parecen un poco a las máquinas, pero no lo son. Cuando Jiki ve una palabra clave, no busca una máquina en la estantería; simplemente sabe qué hacer. Lo tiene integrado en su cerebro. Hay unas 20 palabras clave distintas que vamos a aprender durante el curso, y la primera de ellas es la palabra clave `repeat`.
 
 <img
   class="concept-image"
@@ -61,7 +61,7 @@ repeat(4) {
 
 A estas instrucciones de repetición las llamamos bucles (_loops_ en inglés), y hay muchos tipos de bucles distintos que podemos usar y que funcionan de manera un poco diferente.
 
-Hay una cosa más que saber: mantener el código limpio y ordenado se vuelve esencial cuando trabajamos con bucles. Cuando tu código tiene una buena estructura visual, es muy fácil ver qué está pasando. Pero si no es así, si te olvidas de indentar bien o mezclas la indentación, las cosas se vuelven confusas muy rápido. Por eso en este curso siempre seguimos una regla. Siempre pones la llave de apertura en la misma línea que la sentencia (_statement_ en inglés) `repeat`. Siempre pones la llave de cierre en su propia línea, después de la sentencia, y siempre indentas el código entre ellas con dos espacios. De esa forma todo se mantiene muy ordenado, y si te olvidas o intentas seguir otro patrón, te dará un error.
+Hay una cosa más que saber: mantener el código limpio y ordenado se vuelve esencial cuando trabajamos con bucles. Cuando tu código tiene una buena estructura visual, es muy fácil ver qué está pasando. Pero si no es así, si te olvidas de indentar bien o mezclas la indentación, las cosas se vuelven confusas muy rápido. Por eso en este curso siempre seguimos una regla. Siempre pones la llave de apertura en la misma línea que la instrucción (_statement_ en inglés) `repeat`. Siempre pones la llave de cierre en su propia línea, después de la instrucción, y siempre indentas el código entre ellas con dos espacios. De esa forma todo se mantiene muy ordenado, y si te olvidas o intentas seguir otro patrón, te dará un error.
 
 <img
   class="concept-image"

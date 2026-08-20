@@ -40,7 +40,7 @@ Además de los límites diario y mensual, limitamos la velocidad a la que puedes
 
 Estos límites existen por varias razones:
 
-- **Mantener a Jiki sostenible.** Cada respuesta de IA tiene un costo real. Unos límites justos nos permiten ofrecer una ayuda de IA generosa sin que se vuelva insostenible.
+- **Mantener a Jiki sostenible.** Cada respuesta de IA tiene un coste real. Unos límites justos nos permiten ofrecer una ayuda de IA generosa sin que se vuelva insostenible.
 - **Mantener a Jiki rápido para todos.** Limitar el uso extremo mantiene el servicio ágil para todos los estudiantes.
 - **Fomentar buenos hábitos de aprendizaje.** El objetivo es que Jiki te ayude a desbloquearte y seguir avanzando, no sustituir el esfuerzo productivo que construye una comprensión real.
 

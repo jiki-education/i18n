@@ -4,7 +4,7 @@ description: "Sumar strings con `+` para unir texto fijo y variables en un strin
 en_md5: 0e6c7a941a1fb1161445da27a4d7e818
 ---
 
-Ya sabes lo que son los strings. Son pedazos de papel con texto en ellos.
+Ya sabes lo que son los strings. Son trozos de papel con texto en ellos.
 
 Hasta ahora, cada string que has usado lo escribiste directamente. ¿Qué pasa si quieres construir un string a partir de variables o condiciones? ¿Cómo lo hacemos?
 

@@ -14,7 +14,7 @@ en_md5: f024dd986a24647780bec67033c04514
 
 ## ¿Qué es Jiki?
 
-Jiki es una plataforma interactiva diseñada para ayudarte a aprender a programar. Se basa en una idea simple: **aprendes a programar programando**, no viendo videos, resolviendo cuestionarios ni haciendo ejercicios simples.
+Jiki es una plataforma interactiva diseñada para ayudarte a aprender a programar. Se basa en una idea simple: **aprendes a programar programando**, no viendo vídeos, resolviendo cuestionarios ni haciendo ejercicios simples.
 
 Desde el primer día estarás construyendo proyectos reales: juegos, animaciones y herramientas, escribiendo **docenas, luego cientos (quizás incluso miles)** de líneas de código. Hay un personaje llamado **Jiki** que ejecuta tu código y te muestra exactamente lo que sucede mientras tus programas se ejecutan. Esto hace visible lo invisible, ayudándote a entender cómo funciona realmente el código.
 
@@ -29,7 +29,7 @@ Jiki está pensado para **principiantes absolutos**: personas que nunca antes ha
 Puede que seas:
 
 - **Completamente nuevo en la programación** y quieras una forma estructurada de empezar
-- **Atrapado en el «infierno de los tutoriales»**: has visto montones de videos pero no logras construir nada
+- **Atrapado en el «infierno de los tutoriales»**: has visto montones de vídeos pero no logras construir nada
 - **Alguien que probó otros cursos** pero le parecieron demasiado rápidos, demasiado lentos o demasiado teóricos
 - **Un programador intermedio** que quiere afianzar sus fundamentos (¡cerca del 50 % de nuestros estudiantes!)
 
@@ -37,7 +37,7 @@ Si alguna vez sentiste que los cursos de programación te enseñan sintaxis pero
 
 ## ¿Por qué creamos Jiki?
 
-Creemos que aprender a programar es valioso para casi todo el mundo. La mayoría de los recursos para aprender a programar no llegan al corazón de lo que realmente es la programación: **resolver problemas de forma divertida**. Te dan videos para ver y cuestionarios para responder, pero no te ponen a _crear_ cosas. Así que creamos Jiki para cambiar eso.
+Creemos que aprender a programar es valioso para casi todo el mundo. La mayoría de los recursos para aprender a programar no llegan al corazón de lo que realmente es la programación: **resolver problemas de forma divertida**. Te dan vídeos para ver y cuestionarios para responder, pero no te ponen a _crear_ cosas. Así que creamos Jiki para cambiar eso.
 
 ¿Quieres conocer la historia completa? Lee nuestra publicación: **[La historia de Jiki](/blog/the-backstory-of-jiki)**.
 
@@ -45,10 +45,10 @@ Creemos que aprender a programar es valioso para casi todo el mundo. La mayoría
 
 Jiki no existiría sin el apoyo de muchísimas personas.
 
-- **Aron y Nicole**: gracias por todo el trabajo que hicieron construyendo esto conmigo. Ha sido todo un viaje y no podría haberlo hecho sin ustedes.
-- **Nuestros estudiantes del bootcamp**: ¡gracias por ser nuestros conejillos de indias! Sus comentarios, paciencia y entusiasmo ayudaron a darle forma a Jiki hasta lo que es hoy.
-- **La comunidad de Exercism**: a todos los que han donado a Exercism, contribuido con código, mantenido rutas o mentorado estudiantes a lo largo de los años: gracias. Su apoyo hizo posible que asumiéramos este nuevo desafío.
-- **Mentores del bootcamp**: un último agradecimiento a quienes ayudaron a moldear el bootcamp a través de la mentoría. No tienen idea del apoyo que sentí de su parte durante esos seis meses y de cuánto me ayudaron a pensar en todo esto.
+- **Aron y Nicole**: gracias por todo el trabajo que hicisteis construyendo esto conmigo. Ha sido todo un viaje y no podría haberlo hecho sin vosotros.
+- **Nuestros estudiantes del bootcamp**: ¡gracias por ser nuestros conejillos de indias! Vuestros comentarios, paciencia y entusiasmo ayudaron a darle forma a Jiki hasta lo que es hoy.
+- **La comunidad de Exercism**: a todos los que han donado a Exercism, contribuido con código, mantenido rutas o mentorado estudiantes a lo largo de los años: gracias. Vuestro apoyo hizo posible que asumiéramos este nuevo desafío.
+- **Mentores del bootcamp**: un último agradecimiento a quienes ayudaron a moldear el bootcamp a través de la mentoría. No tenéis idea del apoyo que sentí de vuestra parte durante esos seis meses y de cuánto me ayudasteis a pensar en todo esto.
 
 ## ¡Pruébalo!
 

@@ -23,7 +23,7 @@ Luego, escribe una función `whatAmI(string)` (qué soy) que use esos ayudantes 
 
 ### Usa lo que acabas de aprender
 
-Aunque hay muchas formas válidas de resolver este ejercicio, la solución que queremos que crees usa una sentencia `continue` y las tres funciones anteriores.
+Aunque hay muchas formas válidas de resolver este ejercicio, la solución que queremos que crees usa una instrucción `continue` y las tres funciones anteriores.
 
 Este ejercicio también te reta a resolver todo en 42 líneas de código o menos. Ese objetivo no es necesariamente la solución de mayor calidad de producción. Un par de líneas adicionales probablemente den una más bonita, y también hay soluciones más cortas. Pero es una buena meta para ampliar tus capacidades.
 

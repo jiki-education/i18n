@@ -16,7 +16,7 @@ Hasta ahora, hemos visto máquinas que se parecen un poco a cajas, como la máqu
   height="400"
 />
 
-Pero algunas máquinas tienen ranuras, como esta máquina `walk` (caminar). La máquina `walk` es igual que la `move`. Mueve al personaje (_character_ en inglés) hacia adelante, pero Jiki puede usar la ranura para indicar cuántos pasos debe avanzar el personaje. Así que en vez de usar la función `move` tres veces seguidas: `move`, `move`, `move`, ahora puedes usar la función `walk` y decirle a Jiki que ponga el número tres en la máquina.
+Pero algunas máquinas tienen ranuras, como esta máquina `walk` (caminar). La máquina `walk` es igual que la `move`. Mueve al personaje (_character_ en inglés) hacia delante, pero Jiki puede usar la ranura para indicar cuántos pasos debe avanzar el personaje. Así que en vez de usar la función `move` tres veces seguidas: `move`, `move`, `move`, ahora puedes usar la función `walk` y decirle a Jiki que ponga el número tres en la máquina.
 
 <img
   class="concept-image"
@@ -42,7 +42,7 @@ Cuando Jiki ve eso, toma el número tres; puedes imaginarte ese número como una
   height="400"
 />
 
-Para funciones que dibujan rectángulos y círculos, tienes que indicarle a Jiki varios números distintos, especificando cosas como qué tan lejos de la izquierda debe estar, qué tan lejos de arriba debe estar, el ancho y la altura del rectángulo.
+Para funciones que dibujan rectángulos y círculos, tienes que indicarle a Jiki varios números distintos, especificando cosas como cómo de lejos de la izquierda debe estar, cómo de lejos de arriba debe estar, el ancho y la altura del rectángulo.
 
 En el mundo de Jiki, son solo ranuras diferentes, una para cada uno de esos números.
 

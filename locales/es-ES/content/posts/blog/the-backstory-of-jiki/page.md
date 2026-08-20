@@ -26,7 +26,7 @@ Mi motivación con Exercism siempre ha sido la **movilidad social**: ayudar a qu
 
 Empecé a explorar el mundo de «aprender a programar» para entender qué había para ellos. Hablé con muchos de los principiantes que se registraban y empecé a explorar los recursos que hay disponibles. Y al probar esos recursos, me di cuenta de que faltaba algo. La mayoría no llega al corazón de lo que creo que realmente es la programación: **resolver problemas de forma divertida**.
 
-En cambio, te dan videos para ver, cuestionarios para responder, quizás un pequeño ejercicio de programación y un certificado al final. Te enseñan sintaxis y teoría, pero no te llevan realmente a **crear** cosas. Y creo que por eso tanta gente abandona. No es que programar sea demasiado difícil, es que la forma en que se les enseña no se parece en nada a programar.
+En cambio, te dan vídeos para ver, cuestionarios para responder, quizás un pequeño ejercicio de programación y un certificado al final. Te enseñan sintaxis y teoría, pero no te llevan realmente a **crear** cosas. Y creo que por eso tanta gente abandona. No es que programar sea demasiado difícil, es que la forma en que se les enseña no se parece en nada a programar.
 
 Así que decidí hacer algo al respecto.
 
@@ -46,7 +46,7 @@ En enero de 2025, hice un Bootcamp para 1,000 estudiantes. Aprendieron un lengua
 
 Fue una experiencia muy divertida y aprendí muchísimo. También fue increíblemente intenso porque estaba escribiendo un lenguaje de programación, ejercicios y lecciones, además de hacer 6 horas de transmisión en vivo y docenas de horas de soporte cada semana. ¡Un enorme agradecimiento a los voluntarios que me ayudaron con esto!
 
-Lo más importante que aprendí es que el ritmo que creé era demasiado rápido. Hice algo que pensé que sería suave y fácil, y aún así era muuuuuuy rápido y difícil para la gente. Así que lo he incorporado en Jiki, desacelerando aún más las cosas, agregando más ejercicios que van a un ritmo más lento. Si te resulta fácil, pasarás rápido por esos ejercicios extra, pero si te cuesta, ¡(con suerte) serán un salvavidas!
+Lo más importante que aprendí es que el ritmo que creé era demasiado rápido. Hice algo que pensé que sería suave y fácil, y aún así era muuuuuuy rápido y difícil para la gente. Así que lo he incorporado en Jiki, desacelerando aún más las cosas, añadiendo más ejercicios que van a un ritmo más lento. Si te resulta fácil, pasarás rápido por esos ejercicios extra, pero si te cuesta, ¡(con suerte) serán un salvavidas!
 
 ### Eliminando las trampas
 
@@ -64,19 +64,19 @@ Escribí intérpretes personalizados para ambos lenguajes que simplemente elimin
 
 ### i18n
 
-Otra funcionalidad clave que sabía que necesitaba agregar era hacer Jiki multilingüe.
+Otra funcionalidad clave que sabía que necesitaba añadir era hacer Jiki multilingüe.
 
 La mayoría de las personas no habla inglés. La mayoría de los recursos de programación están en inglés. Esa es una barrera enorme para las personas que a menudo tienen menos dinero para gastar en recursos. Y es algo que realmente quiero solucionar.
 
-Así que, al crear Jiki, lo diseñamos para que todo pudiera ser multilingüe: el contenido, los ejercicios, el asistente de IA y los videos. Mi plan es lanzar con inglés para la beta, y luego ir sacando unos cuantos idiomas nuevos cada mes, hasta cubrir el 95% del mundo para fin de año.
+Así que, al crear Jiki, lo diseñamos para que todo pudiera ser multilingüe: el contenido, los ejercicios, el asistente de IA y los vídeos. Mi plan es lanzar con inglés para la beta, y luego ir sacando unos cuantos idiomas nuevos cada mes, hasta cubrir el 95% del mundo para fin de año.
 
 ### Freemium
 
 La última decisión que tuve que tomar fue el precio.
 
-Sabía al 100% que quería que Jiki fuera gratuito. El objetivo principal es ayudar a las personas que lo necesitan. Pero también aprendí de Exercism que es muy difícil mantener algo cuando no entra suficiente dinero para financiarlo (**GRACIAS** a todas las personas que donan a Exercism: ¡ustedes hicieron posible Jiki!).
+Sabía al 100% que quería que Jiki fuera gratuito. El objetivo principal es ayudar a las personas que lo necesitan. Pero también aprendí de Exercism que es muy difícil mantener algo cuando no entra suficiente dinero para financiarlo (**GRACIAS** a todas las personas que donan a Exercism: ¡vosotros hicisteis posible Jiki!).
 
-Así que decidí adoptar un modelo Freemium. El núcleo de Jiki es gratuito: los videos y ejercicios están disponibles para todo el mundo. Pero hay algunas funcionalidades extra interesantes (asistente de IA, algunos proyectos adicionales, transmisiones en vivo, contenido detrás de cámaras, etc.) a las que se puede acceder por una pequeña tarifa mensual ($9.99 ajustados según la ubicación usando la [Paridad del Poder Adquisitivo](https://en.wikipedia.org/wiki/Purchasing_power_parity)). Es una cantidad asequible para la mayoría de las personas del mundo, así que si quieren apoyar lo que hacemos o acceder a esas funcionalidades, es una excelente forma de empezar.
+Así que decidí adoptar un modelo Freemium. El núcleo de Jiki es gratuito: los vídeos y ejercicios están disponibles para todo el mundo. Pero hay algunas funcionalidades extra interesantes (asistente de IA, algunos proyectos adicionales, transmisiones en vivo, contenido detrás de cámaras, etc.) a las que se puede acceder por una pequeña tarifa mensual ($9.99 ajustados según la ubicación usando la [Paridad del Poder Adquisitivo](https://en.wikipedia.org/wiki/Purchasing_power_parity)). Es una cantidad asequible para la mayoría de las personas del mundo, así que si queréis apoyar lo que hacemos o acceder a esas funcionalidades, es una excelente forma de empezar.
 
 ## Luego llegó la programación agentiva
 
@@ -92,7 +92,7 @@ Así que Jiki enseña ambas cosas. Enseña los fundamentos de la programación, 
 
 Jiki es una plataforma para aprender a programar, diseñada para ser altamente interactiva y divertida. Está hecha para principiantes: personas que llevan programando menos de un año y quieren construir bases realmente sólidas. Aprendes creando proyectos en un entorno personalizado diseñado específicamente para ayudarte a entender lo que sucede.
 
-Todo está estructurado en niveles. En cada uno, ves un video corto que enseña un concepto nuevo, y luego tienes una serie de proyectos para ponerlo en práctica. En el centro del aprendizaje está **Jiki**, un personaje que ejecuta tu código. Todo lo que enseño es a través de los ojos de Jiki: cómo ve tu código, cómo lo ejecuta. Cuando ejecutas tu código, puedes ver exactamente lo que Jiki está viendo: por qué hace lo que hace.
+Todo está estructurado en niveles. En cada uno, ves un vídeo corto que enseña un concepto nuevo, y luego tienes una serie de proyectos para ponerlo en práctica. En el centro del aprendizaje está **Jiki**, un personaje que ejecuta tu código. Todo lo que enseño es a través de los ojos de Jiki: cómo ve tu código, cómo lo ejecuta. Cuando ejecutas tu código, puedes ver exactamente lo que Jiki está viendo: por qué hace lo que hace.
 
 Pero más que las funcionalidades, lo que realmente me importa es la filosofía que hay detrás. No todo el mundo necesita convertirse en desarrollador de software, pero entender cómo descomponer problemas y construir soluciones es una habilidad que sirve para todo. Y esa es la clave del curso: ir más despacio y pensar de verdad y a fondo sobre cómo resolver problemas. Al principio es muy difícil (¡vivimos en una era impulsada por la dopamina!), pero es una habilidad increíble cuando todo encaja.
 

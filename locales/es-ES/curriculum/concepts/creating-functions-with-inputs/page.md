@@ -31,7 +31,7 @@ shootMany(5)
 shootMany(2)
 ```
 
-Ahora, este es el punto clave. Cuando el código se ejecuta, lo que pongas en esa ranura, `5` o `2`, mini-Jiki, con el sombrero dentro de la función, toma ese argumento y lo pone en una caja llamada `numShots` (número de disparos), y luego coloca esa caja en los estantes dentro de la función para que la uses en el código de la función.
+Ahora, este es el punto clave. Cuando el código se ejecuta, lo que pongas en esa ranura, `5` o `2`, mini-Jiki, con el sombrero dentro de la función, toma ese argumento y lo pone en una caja llamada `numShots` (número de disparos), y luego coloca esa caja en las estanterías dentro de la función para que la uses en el código de la función.
 
 <img
   class="concept-image"
@@ -43,12 +43,12 @@ Ahora, este es el punto clave. Cuando el código se ejecuta, lo que pongas en es
 
 Lo diré otra vez.
 
-Cuando escribimos `shootMany(5)` para usar la función, Jiki, desde afuera, va y obtiene un `5` y lo coloca en la ranura de entrada de `shootMany`. Dentro de la máquina, mini-Jiki toma ese `5` y lo guarda en una caja llamada `numShots`, porque ese es el nombre que le diste a esa ranura de entrada, y luego coloca esa caja en los estantes dentro de la función, dentro de la máquina.
+Cuando escribimos `shootMany(5)` para usar la función, Jiki, desde fuera, va y obtiene un `5` y lo coloca en la ranura de entrada de `shootMany`. Dentro de la máquina, mini-Jiki toma ese `5` y lo guarda en una caja llamada `numShots`, porque ese es el nombre que le diste a esa ranura de entrada, y luego coloca esa caja en las estanterías dentro de la función, dentro de la máquina.
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/creating-functions-with-inputs/numshots-on-shelf.webp"
-  alt="Mini-Jiki colocando la caja numShots en los estantes dentro de la máquina shootMany"
+  alt="Mini-Jiki colocando la caja numShots en las estanterías dentro de la máquina shootMany"
   width="500"
   height="302"
 />
@@ -71,12 +71,12 @@ function drawStar(left, top) {
   height="400"
 />
 
-Y luego, cuando se llama a la función, mini-Jiki simplemente va a guardar los valores que se pasan a las entradas en cajas llamadas `left` (izquierda) y `top` (arriba), y luego las coloca en los estantes dentro de las funciones.
+Y luego, cuando se llama a la función, mini-Jiki simplemente va a guardar los valores que se pasan a las entradas en cajas llamadas `left` (izquierda) y `top` (arriba), y luego las coloca en las estanterías dentro de las funciones.
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/creating-functions-with-inputs/draw-star-boxes-shelf.webp"
-  alt="Mini-Jiki guardando los dos argumentos en cajas etiquetadas left y top en los estantes dentro de la máquina drawStar"
+  alt="Mini-Jiki guardando los dos argumentos en cajas etiquetadas left y top en las estanterías dentro de la máquina drawStar"
   width="431"
   height="400"
 />

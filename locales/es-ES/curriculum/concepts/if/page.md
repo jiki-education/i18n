@@ -1,5 +1,5 @@
 ---
-title: "Cómo funcionan las sentencias `if`"
+title: "Cómo funcionan las instrucciones `if`"
 description: "Usar la palabra clave `if` para ejecutar un bloque de código solo cuando una condición es verdadera, como un portero dejando pasar a la gente."
 en_md5: 81c99eea67b02e082ca6c9d7988a3914
 ---
@@ -45,9 +45,9 @@ Usamos símbolos para escribir estas comparaciones. Probablemente ya los conoces
 
 Y esto nos ayuda a no confundirnos con cuando estamos asignando o actualizando variables, y usamos un signo de igual para significar «pon esto en la caja». Solo recuerda: tres signos de igual para comparar.
 
-Puedes comparar strings también. Así que `"hello"` es igual a `"hello"`. Eso es verdadero. Los dos strings son iguales. Pero ten cuidado aquí, porque Jiki compara cada carácter (_character_ en inglés) en ambos strings en ambos pedazos de papel. Así que `"Hello"` con H mayúscula no es igual a `"hello"` con h minúscula. Son strings diferentes. Así que compararlos sería falso, porque la H mayúscula y la h minúscula son caracteres diferentes.
+Puedes comparar strings también. Así que `"hello"` es igual a `"hello"`. Eso es verdadero. Los dos strings son iguales. Pero ten cuidado aquí, porque Jiki compara cada carácter (_character_ en inglés) en ambos strings en ambos trozos de papel. Así que `"Hello"` con H mayúscula no es igual a `"hello"` con h minúscula. Son strings diferentes. Así que compararlos sería falso, porque la H mayúscula y la h minúscula son caracteres diferentes.
 
-Por cierto, verdadero y falso se llaman _Booleans_ (booleanos), y esa es otra palabra que suena técnica. Pero en realidad es muy simple. Es solo una forma formal de decir que algo es verdadero o falso. Así que si te encuentras con la palabra Boolean, solo significa verdadero o falso. Veamos esto en acción. Imagina que estamos construyendo ese robot portero para un club, y vamos a decir que el portero solo debe abrir la puerta si la persona tiene 21 años o más. Así que tenemos una función `askAge` (pedir edad), que podemos usar para obtener la edad de alguien, y vamos a guardar el resultado en una variable llamada `age` (edad). Y luego podemos decir, si esa `age` es mayor que 20, abriremos la puerta. Así que si `askAge` devuelve `30`, la abrimos, y si devuelve `12`, no la abrimos.
+Por cierto, verdadero y falso se llaman _Booleans_ (valores booleanos), y esa es otra palabra que suena técnica. Pero en realidad es muy simple. Es solo una forma formal de decir que algo es verdadero o falso. Así que si te encuentras con la palabra Boolean, solo significa verdadero o falso. Veamos esto en acción. Imagina que estamos construyendo ese robot portero para un club, y vamos a decir que el portero solo debe abrir la puerta si la persona tiene 21 años o más. Así que tenemos una función `askAge` (pedir edad), que podemos usar para obtener la edad de alguien, y vamos a guardar el resultado en una variable llamada `age` (edad). Y luego podemos decir, si esa `age` es mayor que 20, abriremos la puerta. Así que si `askAge` devuelve `30`, la abrimos, y si devuelve `12`, no la abrimos.
 
 ```javascript
 let age = askAge()

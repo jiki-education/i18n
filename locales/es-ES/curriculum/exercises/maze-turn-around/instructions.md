@@ -14,6 +14,6 @@ Una de las cosas buenas de la solución es que el código se lee de forma muy na
 
 Crea una nueva función llamada `turnAround` al inicio de tu código. No recibe argumentos y no devuelve nada. Simplemente debe llamar a `turnLeft()` dos veces.
 
-Luego usa esa función en la solución, en la última sentencia `else`.
+Luego usa esa función en la solución, en la última instrucción `else`.
 
 Intenta que tu programa final completo tenga 17 líneas de código.

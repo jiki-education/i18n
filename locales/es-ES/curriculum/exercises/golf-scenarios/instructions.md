@@ -8,7 +8,7 @@ en_md5: 5dea6a4869e39840c7d3644f320a9fac
 
 Estamos de vuelta en la cancha de golf. En este ejercicio, vas a construir sobre los ejercicios anteriores pero con un nuevo giro. Como antes, necesitas mover la pelota usando la función `moveTo(x)` (mover a una posición x), moviéndola **un paso a la vez**, no solo saltando hasta el final. La pelota **comienza en el tee en la posición 28.**
 
-Lo nuevo es que, en lugar de mover una cantidad fija, moveremos una cantidad distinta según qué tan lejos haya golpeado la pelota el golfista. Para obtener la distancia a la que el golfista ha golpeado la pelota, puedes usar la función `getShotLength()` (obtener la distancia del golpe), que devuelve un número.
+Lo nuevo es que, en lugar de mover una cantidad fija, moveremos una cantidad distinta según cómo de lejos haya golpeado la pelota el golfista. Para obtener la distancia a la que el golfista ha golpeado la pelota, puedes usar la función `getShotLength()` (obtener la distancia del golpe), que devuelve un número.
 
 ### Escenarios
 

@@ -6,7 +6,7 @@ en_md5: 64274945347d47d67baf3378cf219c9b
 
 Ya viste cómo `if` y `else` te dan dos caminos: hacer una cosa cuando una condición es verdadera y otra cuando es falsa. Pero, ¿qué pasa si tienes más de dos posibilidades?
 
-Imagina que nuestro portero está vendiendo boletos. Si tienes menos de trece años, recibes un boleto infantil. Si tienes entre trece y veinte, un boleto juvenil. Con veinte o más, un boleto para adultos. Ahora tienes tres resultados distintos. Para esto, podemos agregar otro condicional después del `else`. Entonces podemos decir: «Si se cumple esto, haz esto. Si no, si se cumple esto otro, haz aquello. Si no, haz esto otro». En este ejemplo, Jiki ve el `if` y verifica la primera condición. ¿Dieciséis es menor que trece? No. Así que pasa al `else if`. ¿Dieciséis es menor que veinte? Sí, es verdad. Entonces ejecuta ese bloque y entrega un boleto juvenil. Y ahí termina. No verifica nada más. Ni siquiera mira el `else` final. Cuando Jiki encuentra una condición verdadera, ejecuta ese bloque y se salta todo lo demás que haya abajo.
+Imagina que nuestro portero está vendiendo entradas. Si tienes menos de trece años, recibes una entrada infantil. Si tienes entre trece y veinte, una entrada juvenil. Con veinte o más, una entrada para adultos. Ahora tienes tres resultados distintos. Para esto, podemos añadir otro condicional después del `else`. Entonces podemos decir: «Si se cumple esto, haz esto. Si no, si se cumple esto otro, haz aquello. Si no, haz esto otro». En este ejemplo, Jiki ve el `if` y verifica la primera condición. ¿Dieciséis es menor que trece? No. Así que pasa al `else if`. ¿Dieciséis es menor que veinte? Sí, es verdad. Entonces ejecuta ese bloque y entrega una entrada juvenil. Y ahí termina. No verifica nada más. Ni siquiera mira el `else` final. Cuando Jiki encuentra una condición verdadera, ejecuta ese bloque y se salta todo lo demás que haya abajo.
 
 ```javascript
 if (age < 13) {
@@ -21,7 +21,7 @@ if (age < 13) {
 <img
   class="concept-image"
   src="/static/images/concept-assets/else-if/tickets.webp"
-  alt="Tres boletos etiquetados como CHILD, TEEN y ADULT, uno por cada resultado de la verificación de edad"
+  alt="Tres entradas etiquetadas como CHILD, TEEN y ADULT, una por cada resultado de la verificación de edad"
   width="500"
   height="142"
 />

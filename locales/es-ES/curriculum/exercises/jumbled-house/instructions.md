@@ -17,6 +17,6 @@ Intenta colocar cada pieza en el orden en que se enumeran más abajo. Cuando tod
 - La esquina superior izquierda del lienzo es `0,0`. La esquina inferior derecha es `100,100`.
 - El marco de la casa (el rectángulo grande) debe tener `60` de ancho y `40` de altura (_height_ en inglés). Debe tener su esquina superior izquierda en `20`x`50`.
 - El techo se asienta justo encima del marco de la casa. Debe sobresalir `4` del lado izquierdo y `4` del lado derecho. Debe tener una altura de `20`, y su punta debe estar centrada horizontalmente.
-- Las ventanas son del mismo tamaño, con un ancho (_width_ en inglés) de `12` y una altura de `13`. Ambas se ubican a `5` desde la parte superior del marco de la casa, y a `10` hacia adentro desde los costados.
+- Las ventanas son del mismo tamaño, con un ancho (_width_ en inglés) de `12` y una altura de `13`. Ambas se ubican a `5` desde la parte superior del marco de la casa, y a `10` hacia dentro desde los costados.
 - La puerta tiene `14` de ancho y `18` de alto, y está ubicada en la parte inferior de la casa, en el centro.
 - La pequeña perilla de la puerta tiene un radio de `1`, está a `1` del borde derecho y está centrada verticalmente en la puerta.

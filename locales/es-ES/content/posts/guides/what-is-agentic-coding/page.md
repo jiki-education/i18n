@@ -18,7 +18,7 @@ Si estás aprendiendo a programar justo ahora, esa es una noticia realmente emoc
 
 Probablemente hayas usado un chatbot de IA como ChatGPT o Claude. Escribes una pregunta y el chatbot te da una respuesta. Eso es útil, pero es una conversación, nada más. La IA no puede _hacer_ nada.
 
-Una **herramienta de programación agéntica** toma el mismo tipo de IA (lo que se llama un modelo de lenguaje grande, o **LLM** por sus siglas en inglés) y le da manos. Se ejecuta en tu computadora, normalmente en la terminal, y puede:
+Una **herramienta de programación agéntica** toma el mismo tipo de IA (lo que se llama un modelo de lenguaje grande, o **LLM** por sus siglas en inglés) y le da manos. Se ejecuta en tu ordenador, normalmente en la terminal, y puede:
 
 - **Leer tu código** para entender tu proyecto.
 - **Escribir y editar archivos** para hacer cambios.

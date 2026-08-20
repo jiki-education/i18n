@@ -38,12 +38,12 @@ let name = "Jeremy"
 name[0] // "J"
 ```
 
-Una cosa que debes tener clara: lo que obtienes de `name[0]` es simplemente otro string. Es otro pedazo de papel con la J. No tiene nada de especial. Es un string igual que `"Jeremy"` es un string.
+Una cosa que debes tener clara: lo que obtienes de `name[0]` es simplemente otro string. Es otro trozo de papel con la J. No tiene nada de especial. Es un string igual que `"Jeremy"` es un string.
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/string-indexing/jiki-holding-j.webp"
-  alt="Jiki sosteniendo un pedazo de papel nuevo con solo la letra J"
+  alt="Jiki sosteniendo un trozo de papel nuevo con solo la letra J"
   width="500"
   height="289"
 />

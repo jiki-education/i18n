@@ -12,9 +12,9 @@ Tu tarea es crear una función llamada `reverse` (invertir), que toma un string 
 
 Ejemplos:
 
-- Convierte "stressed" en "desserts"
-- Convierte "strops" en "sports"
-- Convierte "racecar" en "racecar" (un palíndromo)
+- Convierte «stressed» en «desserts»
+- Convierte «strops» en «sports»
+- Convierte «racecar» en «racecar» (un palíndromo)
 
 ### Esos dos últimos escenarios...
 

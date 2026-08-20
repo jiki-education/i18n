@@ -34,4 +34,4 @@ Como de costumbre, el lienzo siempre tiene `100` de ancho y `100` de altura. Sig
 
 ## Piensa de manera relacional
 
-La clave de este ejercicio es **nunca codificar de forma fija** los tamaños y posiciones. Calcula un único tamaño de "celda" a partir del tamaño del tablero y después construye cada cuadrado y cada ficha a partir de él. Si lo haces bien, el mismo código dibujará un tablero pequeño de 6×6 y uno más grande de 10×10 sin cambiar un solo número.
+La clave de este ejercicio es **nunca codificar de forma fija** los tamaños y posiciones. Calcula un único tamaño de «celda» a partir del tamaño del tablero y después construye cada cuadrado y cada ficha a partir de él. Si lo haces bien, el mismo código dibujará un tablero pequeño de 6×6 y uno más grande de 10×10 sin cambiar un solo número.

@@ -15,7 +15,7 @@ plant(10)
 <img
   class="concept-image"
   src="/static/images/concept-assets/updating-variables/flowers-same-spot.webp"
-  alt="Una flor plantada en un jardín junto al pizarrón de Jiki"
+  alt="Una flor plantada en un jardín junto a la pizarra de Jiki"
   width="406"
   height="400"
 />
@@ -38,7 +38,7 @@ Bueno, va a plantar ocho flores, pero las va a plantar en el mismo lugar cada ve
 <img
   class="concept-image"
   src="/static/images/concept-assets/updating-variables/jiki-loop-walkthrough.webp"
-  alt="Jiki tomando la caja de posición del estante y pasando su valor 10 a la máquina plant"
+  alt="Jiki tomando la caja de posición de la estantería y pasando su valor 10 a la máquina plant"
   width="400"
   height="400"
 />

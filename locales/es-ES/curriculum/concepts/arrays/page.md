@@ -4,9 +4,9 @@ description: "Una cadena ordenada de elementos (strings, números, Booleans o cu
 en_md5: d26ccb9e04fbc77129f3199d63a95017
 ---
 
-Has estado usando números, strings y Booleans, la palabra elegante para verdadero y falso, y a todos estos los llamamos tipos de datos (_data types_ en inglés). Ahora vamos a agregar nuestro primer tipo de dato compuesto (_compound data type_ en inglés).
+Has estado usando números, strings y Booleans, la palabra elegante para verdadero y falso, y a todos estos los llamamos tipos de datos (_data types_ en inglés). Ahora vamos a añadir nuestro primer tipo de dato compuesto (_compound data type_ en inglés).
 
-Es un tipo de dato que puede contener varias cosas, no solo una, y este tipo de dato se llama arreglo (_array_ en inglés).
+Es un tipo de dato que puede contener varias cosas, no solo una, y este tipo de dato se llama matriz (_array_ en inglés).
 
 Cuando escuchas la palabra array, quiero que pienses en una cadena física que mantiene juntas un montón de cosas.
 
@@ -14,7 +14,7 @@ Esas cosas que sostiene pueden ser cualquier cosa: strings, números, Booleans, 
 
 Todo en esta cadena tiene un orden: el orden en el que las cosas se fueron encadenando.
 
-Así que un array contiene muchas cosas, pero es un solo elemento (_element_ en inglés), una sola cosa sólida: un único array que lleva muchos elementos adentro.
+Así que un array contiene muchas cosas, pero es un solo elemento (_element_ en inglés), una sola cosa sólida: un único array que lleva muchos elementos dentro.
 
 Jiki puede tomar ese array, esa cadena, y ponerlo en una caja, igual que puede poner un string en una caja o un número en una caja.
 
@@ -24,7 +24,7 @@ Ahora, en el código, un array también se ve un poco como una cadena. Tiene un 
 
 Entonces, por ejemplo, si quisiéramos crear un array con los nombres de algunos de nuestros mentores, podríamos armar una caja llamada `mentors` (_mentores_) y poner esa cadena dentro de ella.
 
-Escribiríamos `let mentors =`, exactamente igual que con cualquier otra caja, y luego tendríamos un corchete de apertura, muchos elementos, sus nombres separados por comas, y luego un corchete de cierre. Cuando Jiki ve esto, va y toma cuatro pedazos de papel, uno para cada nombre, luego toma una cadena nueva y los encadena a todos, y después pone esa cadena en la caja `mentors`.
+Escribiríamos `let mentors =`, exactamente igual que con cualquier otra caja, y luego tendríamos un corchete de apertura, muchos elementos, sus nombres separados por comas, y luego un corchete de cierre. Cuando Jiki ve esto, va y toma cuatro trozos de papel, uno para cada nombre, luego toma una cadena nueva y los encadena a todos, y después pone esa cadena en la caja `mentors`.
 
 Puedes poner cualquier cosa en un array: strings, números, Booleans, incluso una mezcla de cosas.
 

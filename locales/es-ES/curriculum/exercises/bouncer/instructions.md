@@ -8,7 +8,7 @@ Estás programando un portero robótico para el bar The Neon Gates. La tarea del
 
 Tienes dos funciones:
 
-- `askAge()` (pide la edad) devuelve la edad de la persona que espera afuera
+- `askAge()` (pide la edad) devuelve la edad de la persona que espera fuera
 - `letIn()` (deja entrar) permite que la persona entre
 
 La política del local es que solo se permite la entrada a personas de **21 años en adelante**.
