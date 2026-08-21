@@ -1,55 +1,55 @@
 {
   "checks": {
-    "sun": "�",
-    "cloudBody": "�",
-    "leftPuff": "�",
-    "leftCenterPuff": "�",
-    "rightCenterPuff": "�",
-    "rightPuff": "�",
-    "rainDrop": "�"
+    "sun": "O sol não está correto.",
+    "cloudBody": "O corpo da nuvem não está correto.",
+    "leftPuff": "O tufo esquerdo da nuvem não está correto.",
+    "leftCenterPuff": "O tufo central esquerdo da nuvem não está correto.",
+    "rightCenterPuff": "O tufo central direito da nuvem não está correto.",
+    "rightPuff": "O tufo direito da nuvem não está correto.",
+    "rainDrop": "Uma das gotas de chuva não está correta."
   },
   "tasks": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "Desenhe o cenário meteorológico",
+      "description": "Crie um cenário meteorológico com um sol amarelo, uma nuvem branca e gotas de chuva azuis."
     }
   },
   "scenarios": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "Desenhe o cenário meteorológico",
+      "description": "Crie o cenário meteorológico completo, com sol, nuvem e chuva."
     }
   },
   "hints": {
     "cloudShape": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como construo a forma fofa da nuvem a partir de formas simples?",
+      "answer": "A nuvem é um retângulo (já desenhado para você como base) com vários `circle` colocados ao longo da margem superior, para dar a ela o contorno ondulado."
     },
     "raindropShape": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como faço uma gota de chuva com `ellipse`?",
+      "answer": "As gotas de chuva são altas e finas, então o raio vertical é maior do que o horizontal. O raio horizontal é `3` (o único número que não é divisível por 5)."
     },
     "sunOnTop": {
-      "question": "�",
-      "answer": "�"
+      "question": "Por que o meu sol aparece na frente da nuvem?",
+      "answer": "As formas desenhadas depois ficam na frente das anteriores. Desenhe primeiro o sol e depois a nuvem, para que a nuvem pareça estar na frente do sol."
     },
     "notMatchingTemplate": {
-      "question": "�",
-      "answer": "�"
+      "question": "Por que o meu desenho não coincide com as linhas do modelo?",
+      "answer": "As suas formas devem ficar bem por dentro das linhas de guia, não em cima delas. Quase todos os números de que você precisa são divisíveis por 5, então experimente o múltiplo de 5 mais próximo se uma forma parecer levemente fora do lugar."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um retângulo na posição (esquerda, topo) com a largura, a altura e a cor indicadas",
+      "category": "Desenhar formas"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um círculo com o centro em (centerX, centerY), com o raio e a cor indicados",
+      "category": "Desenhar formas"
     },
     "ellipse": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha uma elipse com o centro em (centerX, centerY), com o raio horizontal radiusX, o raio vertical radiusY e a cor indicada",
+      "category": "Desenhar formas"
     }
   }
 }

@@ -1,65 +1,65 @@
 {
   "tasks": {
     "countChancersInQueue": {
-      "name": "�",
-      "description": "�"
+      "name": "Conte os penetras",
+      "description": "Escreva uma função que recebe a fila e a lista de convidados e retorna quantas das pessoas na fila não estão na lista de convidados."
     },
     "solveTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "Resolva em 9 linhas",
+      "description": "Bônus: isto pode ser escrito de um jeito muito mais compacto do que você imagina. Tente resolver isto em 9 linhas de código ou menos."
     }
   },
   "scenarios": {
     "emptyQueue": {
-      "name": "�",
-      "description": "�"
+      "name": "Ainda não apareceu ninguém",
+      "description": "Uma fila vazia, então não tem ninguém esperando para entrar."
     },
     "everyoneChancingIt": {
-      "name": "�",
-      "description": "�"
+      "name": "A fila inteira está tentando a sorte",
+      "description": "Uma fila onde nenhuma das pessoas que estão esperando está na lista de convidados."
     },
     "everyoneInvited": {
-      "name": "�",
-      "description": "�"
+      "name": "Todo mundo está convidado",
+      "description": "Uma fila onde todas as pessoas que estão esperando estão na lista de convidados."
     },
     "mixedQueue": {
-      "name": "�",
-      "description": "�"
+      "name": "Uma fila mista",
+      "description": "Uma fila onde algumas das pessoas que estão esperando foram convidadas e outras não. Um dos penetras tem um nome muito parecido com um nome da lista."
     },
     "guestsWhoHaventArrived": {
-      "name": "�",
-      "description": "�"
+      "name": "Convidados ainda presos no trânsito",
+      "description": "Uma lista de convidados com muitos nomes, mas a maioria dessas pessoas ainda não chegou à fila."
     },
     "longQueueShortList": {
-      "name": "�",
-      "description": "�"
+      "name": "Uma fila longa e uma lista curta",
+      "description": "Uma fila grande lá fora, mas apenas alguns nomes na lista de convidados."
     },
     "guestListBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "Enxuto e organizado: uma fila mista",
+      "description": "A mesma fila mista de antes, mas desta vez tente resolver isto em 9 linhas de código ou menos."
     }
   },
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "Continue! Veja se você consegue chegar a 9 linhas de código."
   },
   "hints": {
     "keepingTrack": {
-      "question": "�",
-      "answer": "�"
+      "question": "O que eu preciso acompanhar enquanto avanço?",
+      "answer": "A resposta é um único número, e você não sabe qual é até ter visto todo mundo. Então se pergunte duas coisas: que valor esse número deve ter antes de você olhar para qualquer pessoa, e o que deve acontecer com ele quando alguém se revela **não** convidado?"
     },
     "whichList": {
-      "question": "�",
-      "answer": "�"
+      "question": "Tem duas listas aqui. Qual delas eu devo percorrer?",
+      "answer": "Pense no que a resposta está contando. É um número de pessoas **na fila**, então é a fila que você precisa percorrer uma pessoa de cada vez. A lista de convidados não é algo que você percorre, é aquilo contra o qual você verifica cada pessoa."
     },
     "realLifeBouncer": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como um segurança de verdade faria isto com uma prancheta?",
+      "answer": "Imagine ele de pé na frente da fila com a prancheta numa mão, avançando em direção ao fundo. Ele só grita o número final quando chega à última pessoa. O que ele está fazendo com cada pessoa pelo caminho, e o que ele faz em relação àquelas cujos nomes ele não consegue encontrar?"
     }
   },
   "functions": {
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "Verifica se uma lista contém um item específico (fornecido pela biblioteca padrão do nível).",
+      "category": "Operações com Listas"
     }
   }
 }

@@ -1,117 +1,117 @@
 {
   "errors": {
-    "walkedIntoFire": "�",
-    "steppedInPoop": "�",
-    "lookDirectionType": "�",
-    "lookDirectionValue": "�"
+    "walkedIntoFire": "Você entrou no fogo!",
+    "steppedInPoop": "Você pisou no cocô!",
+    "lookDirectionType": "look() espera uma direção em string: \"left\", \"right\" ou \"ahead\"",
+    "lookDirectionValue": "A direção de look() tem que ser \"left\", \"right\" ou \"ahead\""
   },
   "describers": {
-    "look": "�"
+    "look": "Olha numa direção e vê o que está lá"
   },
   "checks": {
-    "notReachedEnd": "�",
-    "extraTurn": "�",
-    "canTurnLeftMissing": "�",
-    "canTurnRightMissing": "�",
-    "canMoveMissing": "�",
-    "turnAroundMissing": "�",
-    "lookOnlyOnce": "�",
-    "maxExtraLines": "�"
+    "notReachedEnd": "Você não chegou ao fim do labirinto.",
+    "extraTurn": "Parece que você fez uma curva extra desnecessária no final.",
+    "canTurnLeftMissing": "Você deve definir uma função <code>canTurnLeft</code>.",
+    "canTurnRightMissing": "Você deve definir uma função <code>canTurnRight</code>.",
+    "canMoveMissing": "Você deve definir uma função <code>canMove</code>.",
+    "turnAroundMissing": "Você deve definir uma função <code>turnAround</code>.",
+    "lookOnlyOnce": "<code>look()</code> só deve aparecer uma vez em todo o seu programa.",
+    "maxExtraLines": "Você não deve adicionar mais de 13 linhas de código."
   },
   "tasks": {
     "straightPath": {
-      "name": "�",
-      "description": "�"
+      "name": "Um caminho reto",
+      "description": "Implemente canMove() para que o bonequinho possa avançar até o fim do labirinto."
     },
     "turnLeft": {
-      "name": "�",
-      "description": "�"
+      "name": "Vire à esquerda se puder",
+      "description": "Implemente canTurnLeft() para que o bonequinho vire à esquerda quando houver caminho."
     },
     "turnRight": {
-      "name": "�",
-      "description": "�"
+      "name": "Vire à direita se não puder seguir em frente nem para a esquerda",
+      "description": "Implemente canTurnRight() para que o bonequinho vire à direita quando não puder ir para a esquerda nem em frente."
     },
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "Dê a volta se for preciso",
+      "description": "Lide com os becos sem saída dando a volta. As três funções de percepção devem agora funcionar em conjunto para resolver qualquer labirinto."
     },
     "bonusChallenges": {
-      "name": "�",
-      "description": "�"
+      "name": "Desafios bônus",
+      "description": "Você consegue usar a função look() apenas uma vez em todo o programa? E consegue resolvê-lo acrescentando apenas 13 linhas de código?"
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "Leve o bonequinho até o fim do labirinto",
+      "description": "Um caminho reto para baixo"
     },
     "leftTurn": {
-      "name": "�",
-      "description": "�"
+      "name": "Uma única curva à esquerda",
+      "description": "Percorra uma curva à esquerda"
     },
     "rightTurn": {
-      "name": "�",
-      "description": "�"
+      "name": "Uma única curva à direita",
+      "description": "Percorra uma curva à direita"
     },
     "forks": {
-      "name": "�",
-      "description": "�"
+      "name": "Escolha a esquerda se puder, senão escolha a direita",
+      "description": "Um labirinto com bifurcações que testa a prioridade à esquerda"
     },
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "Dê a volta num beco sem saída",
+      "description": "Um labirinto que exige dar a volta"
     },
     "forks2": {
-      "name": "�",
-      "description": "�"
+      "name": "Labirinto complexo com bifurcações e becos sem saída",
+      "description": "Um labirinto complexo que testa o algoritmo completo"
     },
     "coverOldGround": {
-      "name": "�",
-      "description": "�"
+      "name": "Volte atrás se precisar",
+      "description": "Um labirinto onde você tem que voltar atrás para encontrar a saída"
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "Escreva look() apenas uma vez",
+      "description": "Resolva o labirinto com look() aparecendo apenas uma vez no seu código"
     },
     "bonus2": {
-      "name": "�",
-      "description": "�"
+      "name": "Adicione apenas 13 linhas",
+      "description": "Resolva o labirinto adicionando apenas 13 linhas de código"
     }
   },
   "hints": {
     "start": {
-      "question": "�",
-      "answer": "�"
+      "question": "Por onde eu começo quando o programa nem sequer roda?",
+      "answer": "Defina `canTurnLeft()`, `canTurnRight()` e `canMove()` no topo do seu código, cada uma retornando apenas `false` por enquanto. O programa vai passar a rodar e você pode substituir o corpo de cada uma, uma de cada vez."
     },
     "findDirection": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu descubro o que está numa determinada direção?",
+      "answer": "Use a nova função `look(direction)`. Passe `\"left\"`, `\"right\"` ou `\"ahead\"` e ela retorna uma string como `\"empty\"`, `\"wall\"`, `\"fire\"` ou `\"poop\"`."
     },
     "safeResults": {
-      "question": "�",
-      "answer": "�"
+      "question": "Que resultados significam que é seguro ir nessa direção?",
+      "answer": "Das seis coisas que `look()` pode retornar, três são coisas nas quais você não quer mesmo entrar. A sua função deve retornar `true` apenas quando o que você vê não é nenhuma dessas três."
     },
     "avoidRepetition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Estou repetindo a mesma lógica em três funções. Como eu evito isso?",
+      "answer": "As três funções diferem apenas na direção para a qual olham. Você poderia escrever uma função extra que recebesse uma direção como entrada e fazer com que as três a usassem?"
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Move o bonequinho **um passo em frente** na direção atual. Bater numa parede, entrar no fogo ou pisar no cocô termina o programa com um erro, então verifique o que está à frente antes de avançar!",
+      "category": "Movimento"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Gira o bonequinho **90 graus para a esquerda** (no sentido contrário ao dos ponteiros do relógio). Isso muda a direção para a qual o bonequinho está olhando.",
+      "category": "Movimento"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Gira o bonequinho **90 graus para a direita** (no sentido dos ponteiros do relógio). Isso muda a direção para a qual o bonequinho está olhando.",
+      "category": "Movimento"
     },
     "look": {
-      "description": "�",
-      "category": "�"
+      "description": "Olha na direção indicada e retorna o que está lá. A direção tem que ser `\"left\"`, `\"right\"` ou `\"ahead\"`. Retorna um destes valores: `\"empty\"`, `\"wall\"`, `\"fire\"`, `\"poop\"`, `\"start\"` ou `\"target\"`.",
+      "category": "Percepção"
     }
   }
 }

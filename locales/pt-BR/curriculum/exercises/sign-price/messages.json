@@ -1,63 +1,63 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "A sua solução tem linhas de código demais. Você consegue torná-la mais curta?"
   },
   "tasks": {
     "calculateSignPrice": {
-      "name": "�",
-      "description": "�"
+      "name": "Calcule o preço do letreiro",
+      "description": "Escreva uma função que calcula o preço de um letreiro. Cada letra custa $12. Os espaços são grátis e não devem ser contados. Retorne o resultado como uma string formatada."
     },
     "solveInNineLines": {
-      "name": "�",
-      "description": "�"
+      "name": "Resolva em 9 linhas de código",
+      "description": "Você consegue resolver este exercício com apenas 9 linhas de código?"
     }
   },
   "scenarios": {
     "simpleWord": {
-      "name": "�",
-      "description": "�"
+      "name": "Palavra simples",
+      "description": "Uma única palavra sem espaços."
     },
     "singleLetter": {
-      "name": "�",
-      "description": "�"
+      "name": "Letra única",
+      "description": "Um letreiro com apenas uma letra."
     },
     "twoWords": {
-      "name": "�",
-      "description": "�"
+      "name": "Duas palavras",
+      "description": "Duas palavras com um espaço que deve ser ignorado."
     },
     "multipleSpaces": {
-      "name": "�",
-      "description": "�"
+      "name": "Vários espaços",
+      "description": "Várias palavras com vários espaços para ignorar."
     },
     "longText": {
-      "name": "�",
-      "description": "�"
+      "name": "Texto longo",
+      "description": "Um letreiro mais longo com mais letras."
     },
     "allSpaces": {
-      "name": "�",
-      "description": "�"
+      "name": "Só espaços",
+      "description": "Um letreiro só com espaços não tem letras para cobrar."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "9 linhas de código",
+      "description": "Resolva o exercício com apenas 9 linhas de código."
     }
   },
   "hints": {
     "whatCounting": {
-      "question": "�",
-      "answer": "�"
+      "question": "O que eu estou contando de verdade?",
+      "answer": "Letras. Especificamente, tudo o que não é um espaço. Então você quer um contador que aumenta a cada caractere que não é um espaço no texto do letreiro."
     },
     "loopCharacters": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu percorro os caracteres?",
+      "answer": "Um laço `for...of` te dá cada caractere por vez, para você poder olhar para eles um de cada vez."
     },
     "checkSpace": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu verifico se um caractere é um espaço?",
+      "answer": "Dentro do laço, use uma condicional para comparar o caractere com `\" \"`. Só conte o caractere quando ele não é um espaço."
     },
     "buildResultString": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu construo a string de resultado?",
+      "answer": "Use a concatenação de strings ou template strings. Confira os conceitos se você precisar de um lembrete sobre eles."
     }
   }
 }

@@ -1,59 +1,59 @@
 {
   "checks": {
-    "frameWrong": "�",
-    "roofWrong": "�",
-    "leftWindowWrong": "�",
-    "rightWindowWrong": "�",
-    "doorWrong": "�",
-    "knobWrong": "�",
-    "doesNotScale": "�"
+    "frameWrong": "O corpo da casa não está na posição correta.",
+    "roofWrong": "O telhado da casa não está na posição correta.",
+    "leftWindowWrong": "A janela esquerda não está bem posicionada.",
+    "rightWindowWrong": "A janela direita não está bem posicionada.",
+    "doorWrong": "A porta não está bem posicionada.",
+    "knobWrong": "A maçaneta da porta não está bem posicionada.",
+    "doesNotScale": "A sua casa não redimensiona corretamente quando houseWidth={{houseWidth}} e houseHeight={{houseHeight}}. Cada posição e tamanho deve ser calculado a partir de houseWidth e houseHeight, e não de números fixos."
   },
   "tasks": {
     "drawHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "Desenhe a casa",
+      "description": "Construa a casa a partir de `houseWidth` e `houseHeight` para que ela fique centralizada, apoiada na grama e com as proporções corretas em qualquer tamanho."
     }
   },
   "scenarios": {
     "drawTheHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "Desenhe a casa",
+      "description": "Construa a casa a partir de houseWidth e houseHeight para que ela redimensione corretamente."
     }
   },
   "hints": {
     "whereDoIStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Por onde eu começo?",
+      "answer": "Você tem `houseWidth`, `houseHeight` e `canvasWidth`. Comece calculando os dois valores de que o corpo precisa: a borda esquerda (para a casa ficar centralizada) e a borda superior (para ela ficar apoiada na grama). Todas as outras formas podem depois ser construídas a partir do corpo."
     },
     "keepCentered": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu mantenho a casa centralizada quando a largura muda?",
+      "answer": "O centro da tela é sempre `canvasWidth / 2`. Se o corpo estiver centralizado nesse ponto, a borda esquerda dele fica meia largura à esquerda do centro. Qualquer outra coisa que esteja centralizada (o topo do telhado, a porta) pode usar esse mesmo ponto central."
     },
     "keepPlantedOnGrass": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu mantenho a casa apoiada na grama?",
+      "answer": "Encontre o valor de y onde a parte de baixo da casa deve ficar (um pouco abaixo do topo da grama). O topo do corpo fica então uma altura de casa acima disso. Trabalhar de baixo para cima faz com que uma casa mais alta cresça para o céu em vez de descer pela grama."
     },
     "sizeRoofWindowsDoor": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu defino o tamanho do telhado, das janelas e da porta?",
+      "answer": "Cada tamanho nas instruções é uma fração da largura ou da altura do corpo (por exemplo, '1/5 da largura' é `houseWidth / 5`). Construa cada largura a partir de `houseWidth` e cada altura a partir de `houseHeight`, para que tudo redimensione junto."
     },
     "breaksOnResize": {
-      "question": "�",
-      "answer": "�"
+      "question": "Fica bom no tamanho padrão, mas fica ruim quando eu redimensiono. Por quê?",
+      "answer": "Provavelmente você fixou um número em algum lugar em vez de calculá-lo. Procure qualquer valor que não seja tirado diretamente das instruções, como o tamanho da tela ou a altura da grama. É quase certo que ele deve ser calculado a partir de outra variável. Pode ser uma âncora, ou algo já construído a partir de uma âncora, como a largura da porta."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um retângulo na posição (left, top) com a largura, a altura e a cor fornecidas.",
+      "category": "Desenho de Formas"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um círculo centrado em (centerX, centerY) com o raio e a cor fornecidos.",
+      "category": "Desenho de Formas"
     },
     "triangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um triângulo com três vértices e uma cor.",
+      "category": "Desenho de Formas"
     }
   }
 }

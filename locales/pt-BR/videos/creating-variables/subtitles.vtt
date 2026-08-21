@@ -1,0 +1,396 @@
+WEBVTT
+
+NOTE en_md5 9ba87f0c52699c431570792318049b06
+
+00:00:00.220 --> 00:00:04.109
+Bem-vindo de volta. Espero que você já consiga usar funções
+
+00:00:04.280 --> 00:00:07.870
+e laços repeat com bastante confiança. Nesta
+
+00:00:07.900 --> 00:00:10.080
+sessão, vamos passar a outro tema absolutamente
+
+00:00:10.100 --> 00:00:12.610
+essencial, que você vai usar
+
+00:00:12.640 --> 00:00:14.880
+provavelmente em todos os programas que escrever, e esse
+
+00:00:14.940 --> 00:00:19.220
+tema são as variáveis. As variáveis são o que nos permite
+
+00:00:19.460 --> 00:00:22.700
+guardar informação. Quando estamos programando, muitas vezes precisamos
+
+00:00:22.760 --> 00:00:25.420
+guardar um número ou uma string para
+
+00:00:25.500 --> 00:00:27.780
+usar mais tarde, e as variáveis são a forma
+
+00:00:27.800 --> 00:00:30.480
+de fazer isso. Vamos então nos afastar um pouco no
+
+00:00:30.580 --> 00:00:32.880
+galpão do Jiki, e você vai ver que ele tem
+
+00:00:32.940 --> 00:00:35.780
+outro conjunto de prateleiras. Já conhecemos
+
+00:00:35.800 --> 00:00:37.160
+o primeiro conjunto de prateleiras, o que tem
+
+00:00:37.180 --> 00:00:39.680
+as funções, aquelas pequenas máquinas como move
+
+00:00:39.700 --> 00:00:42.140
+e rectangle. Mas neste segundo conjunto de
+
+00:00:42.160 --> 00:00:44.710
+prateleiras, em vez de máquinas, você pode ver muitas
+
+00:00:44.760 --> 00:00:47.860
+caixas, e estas caixas são o que
+
+00:00:47.900 --> 00:00:50.080
+chamamos de variáveis. Você pode dizer ao Jiki para guardar
+
+00:00:50.140 --> 00:00:52.460
+qualquer coisa nestas caixas e, mais tarde,
+
+00:00:52.580 --> 00:00:54.940
+pedir para ele ir buscar. Cada
+
+00:00:54.980 --> 00:00:57.480
+caixa tem um nome, exatamente como
+
+00:00:57.520 --> 00:01:00.020
+as funções têm um nome, e cada caixa contém
+
+00:01:00.140 --> 00:01:03.000
+apenas uma coisa. Por agora, um número
+
+00:01:03.380 --> 00:01:05.320
+ou uma string. Mas vamos ver como guardar
+
+00:01:05.340 --> 00:01:07.480
+nelas coisas mais complexas mais à frente no
+
+00:01:07.540 --> 00:01:10.800
+curso. Então, como dizemos ao Jiki para
+
+00:01:10.860 --> 00:01:12.500
+criar uma caixa e pôr algo lá dentro?
+
+00:01:13.240 --> 00:01:16.920
+Usamos a palavra-chave let. A palavra-chave let
+
+00:01:17.000 --> 00:01:19.200
+diz ao Jiki que ele precisa criar uma
+
+00:01:19.300 --> 00:01:21.860
+caixa nova. Você pode imaginar ele desembalando uma
+
+00:01:21.900 --> 00:01:23.760
+caixa de papelão, montando ela,
+
+00:01:23.800 --> 00:01:26.320
+e depois ele olha para o que vem
+
+00:01:26.440 --> 00:01:28.840
+a seguir à palavra let, e essa é a etiqueta
+
+00:01:28.880 --> 00:01:30.620
+que ele cola na caixa, neste
+
+00:01:30.720 --> 00:01:32.940
+caso, name. Então ele pega na caneta
+
+00:01:33.220 --> 00:01:36.260
+e escreve name na etiqueta. Depois
+
+00:01:36.320 --> 00:01:38.360
+olha para o que vem a seguir ao sinal
+
+00:01:38.440 --> 00:01:41.020
+de igual. Neste caso, é o meu nome, Jeremy,
+
+00:01:41.740 --> 00:01:43.960
+e como Jeremy é uma string,
+
+00:01:44.340 --> 00:01:45.640
+ele pega num pedaço de papel e
+
+00:01:45.660 --> 00:01:48.830
+escreve Jeremy nele. É apenas uma string,
+
+00:01:48.900 --> 00:01:50.460
+exatamente igual às cores com que você
+
+00:01:50.520 --> 00:01:52.660
+esteve trabalhando, e depois ele põe esse
+
+00:01:52.700 --> 00:01:56.410
+pedaço de papel dentro da caixa. Portanto,
+
+00:01:56.460 --> 00:01:58.260
+dissemos para ele criar uma caixa, colocar uma
+
+00:01:58.300 --> 00:02:00.120
+etiqueta nela e guardar algo lá dentro,
+
+00:02:00.640 --> 00:02:02.300
+e agora ele vai pôr a caixa
+
+00:02:02.380 --> 00:02:05.140
+na prateleira. E depois, em qualquer outro
+
+00:02:05.220 --> 00:02:07.980
+momento do seu programa, o Jiki pode ir
+
+00:02:08.020 --> 00:02:09.840
+buscar essa caixa na prateleira e ver
+
+00:02:09.979 --> 00:02:11.900
+o que está lá dentro. Já chegamos lá
+
+00:02:11.940 --> 00:02:14.580
+num instante. Mas, por agora, quero
+
+00:02:14.660 --> 00:02:16.540
+mesmo que você comece a construir este modelo
+
+00:02:16.580 --> 00:02:19.120
+mental. Eu programo há uma eternidade e ainda
+
+00:02:19.180 --> 00:02:21.790
+hoje, quando escrevo código, imagino que estou colocando
+
+00:02:21.820 --> 00:02:23.680
+algo numa caixa e que vou
+
+00:02:23.720 --> 00:02:26.340
+buscar isso mais tarde. Quando você vir a
+
+00:02:26.400 --> 00:02:28.570
+palavra-chave let, pense mesmo:
+
+00:02:28.690 --> 00:02:31.460
+“Ok, isso quer dizer que estou criando uma caixa nova.”
+
+00:02:33.520 --> 00:02:34.530
+Vamos falar um pouco
+
+00:02:34.580 --> 00:02:37.210
+sobre os nomes das variáveis, as etiquetas destas
+
+00:02:37.260 --> 00:02:40.140
+caixas. Temos algumas regras sobre
+
+00:02:40.180 --> 00:02:44.740
+eles. Primeiro, os nomes das variáveis não podem ter
+
+00:02:44.780 --> 00:02:47.580
+espaços. Se você quiser usar várias palavras
+
+00:02:47.700 --> 00:02:49.859
+na etiqueta de uma caixa, juntamos
+
+00:02:49.920 --> 00:02:51.900
+as palavras umas às outras e
+
+00:02:51.980 --> 00:02:55.180
+mudamos a primeira letra de cada palavra
+
+00:02:55.220 --> 00:02:57.520
+para maiúscula. Chamamos isso de camel
+
+00:02:57.680 --> 00:03:00.660
+case. Imagine as corcovas de um camelo empurrando
+
+00:03:00.740 --> 00:03:02.540
+para cima a primeira letra de cada nova palavra,
+
+00:03:02.580 --> 00:03:05.260
+tornando ela maiúscula. Então, se
+
+00:03:05.340 --> 00:03:08.290
+você quiser uma etiqueta que seja my name, em vez
+
+00:03:08.320 --> 00:03:10.920
+de escrever duas palavras separadas por um espaço, escrevemos
+
+00:03:10.960 --> 00:03:13.400
+tudo numa só palavra com o N maiúsculo.
+
+00:03:15.200 --> 00:03:17.960
+Além disso, o nome de cada variável precisa ser único.
+
+00:03:18.020 --> 00:03:20.180
+Você não pode ter duas caixas com a mesma etiqueta,
+
+00:03:20.860 --> 00:03:23.180
+e as variáveis também não podem ter o mesmo nome
+
+00:03:23.240 --> 00:03:26.140
+que as funções. Se você esquecer, o Jiki fica
+
+00:03:26.180 --> 00:03:28.040
+confuso e te dá uma mensagem de erro.
+
+00:03:29.660 --> 00:03:31.210
+Vamos então ver onde podemos
+
+00:03:31.280 --> 00:03:34.160
+querer usar uma variável. Imagine que estamos
+
+00:03:34.200 --> 00:03:36.920
+desenhando um sol no céu.
+
+00:03:36.980 --> 00:03:39.490
+Sabemos que podemos usar a função circle e
+
+00:03:39.580 --> 00:03:43.480
+dar quatro entradas a ela: left, top, radius
+
+00:03:43.680 --> 00:03:47.000
+e color. Mas à medida que desenhamos muitas
+
+00:03:47.040 --> 00:03:49.160
+coisas e temos todos estes números espalhados
+
+00:03:49.180 --> 00:03:51.740
+pelo código, pode se tornar muito difícil
+
+00:03:51.780 --> 00:03:55.020
+de acompanhar e de ler. Em vez disso,
+
+00:03:55.280 --> 00:03:57.500
+podemos criar variáveis para cada um destes valores,
+
+00:03:57.600 --> 00:04:00.760
+left, top, radius e color, e depois usar
+
+00:04:00.860 --> 00:04:04.560
+essas variáveis mais tarde. O nosso objetivo final
+
+00:04:04.620 --> 00:04:06.380
+é conseguir usar a
+
+00:04:06.420 --> 00:04:11.200
+função circle com nomes de caixas claros e
+
+00:04:11.220 --> 00:04:14.590
+legíveis, e, quando o Jiki vir esses nomes,
+
+00:04:14.620 --> 00:04:16.480
+ele sabe que precisa ir buscar as caixas nas prateleiras
+
+00:04:16.560 --> 00:04:20.459
+e usar o que estiver lá dentro. Vamos então
+
+00:04:20.519 --> 00:04:22.550
+criar algumas variáveis para isso. Começamos pela
+
+00:04:22.550 --> 00:04:25.050
+posição esquerda do sol.
+
+00:04:25.580 --> 00:04:27.350
+Usamos a palavra-chave let para
+
+00:04:27.350 --> 00:04:29.700
+dizer ao Jiki para criar uma caixa nova chamada
+
+00:04:29.740 --> 00:04:32.310
+leftPosition. Repare ali no camel case,
+
+00:04:32.500 --> 00:04:35.180
+com o P maiúsculo. E dizemos
+
+00:04:35.260 --> 00:04:38.560
+ao Jiki que número vai dentro da caixa. Ele
+
+00:04:38.580 --> 00:04:40.340
+coloca ela nas prateleiras e depois faz
+
+00:04:40.420 --> 00:04:43.020
+o mesmo para topPosition, radius
+
+00:04:43.180 --> 00:04:46.540
+e color. Em qualquer momento do nosso
+
+00:04:46.620 --> 00:04:48.870
+código, podemos voltar a chamar estas variáveis,
+
+00:04:49.000 --> 00:04:51.400
+e o Jiki vai buscar os valores e
+
+00:04:51.440 --> 00:04:53.530
+coloca eles numa máquina. A outra grande
+
+00:04:53.640 --> 00:04:56.120
+vantagem das variáveis é que, sempre que
+
+00:04:56.160 --> 00:04:58.960
+quisermos desenhar algo na mesma posição
+
+00:04:59.000 --> 00:05:01.620
+do sol, podemos reutilizar as mesmas
+
+00:05:01.680 --> 00:05:04.980
+variáveis leftPosition e topPosition. Veja um
+
+00:05:05.000 --> 00:05:07.660
+exemplo diferente. Imagine que você está construindo uma parede
+
+00:05:07.700 --> 00:05:10.200
+com 30 tijolos e quer que todos
+
+00:05:10.220 --> 00:05:11.840
+os tijolos tenham a mesma largura e
+
+00:05:11.880 --> 00:05:14.270
+a mesma altura. É muito melhor
+
+00:05:14.360 --> 00:05:17.100
+criar variáveis para a largura e a altura
+
+00:05:17.280 --> 00:05:19.580
+no início do código e depois
+
+00:05:19.660 --> 00:05:21.590
+voltar a chamá-las ao longo do resto do
+
+00:05:21.640 --> 00:05:23.900
+código. Porque, se depois você quiser
+
+00:05:23.980 --> 00:05:25.960
+mudar a largura ou a altura,
+
+00:05:26.020 --> 00:05:28.260
+basta mudar num único lugar, e tudo
+
+00:05:28.380 --> 00:05:33.100
+o resto se atualiza. Nos próximos exercícios,
+
+00:05:33.260 --> 00:05:35.980
+você vai usar variáveis para escrever
+
+00:05:36.060 --> 00:05:38.840
+código mais organizado e mais legível. E assim que
+
+00:05:38.880 --> 00:05:41.910
+você se sentir à vontade criando e usando variáveis,
+
+00:05:41.960 --> 00:05:44.280
+vamos ver como as variáveis podem se referir a outras
+
+00:05:44.320 --> 00:05:46.920
+variáveis, e é aí que as coisas ficam mesmo poderosas.
+
+00:05:47.620 --> 00:05:50.110
+Mas, por agora, vá praticar com estes exercícios,
+
+00:05:50.520 --> 00:05:51.880
+e a gente se vê aqui em breve.

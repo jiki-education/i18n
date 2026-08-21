@@ -1,49 +1,49 @@
 {
   "describers": {
-    "move": "�"
+    "move": "moveu o canhão laser para a direita"
   },
   "checks": {
-    "notShotAllAliens": "�",
-    "tooManyLines": "�"
+    "notShotAllAliens": "Você não abateu todos os alienígenas.",
+    "tooManyLines": "Sua solução tem linhas de código demais. Tente usar um laço repeat para deixá-la mais curta!"
   },
   "tasks": {
     "repeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "Use um laço repeat para abater todos os alienígenas",
+      "description": "Encontre o padrão nas posições dos alienígenas e use um laço repeat para destruir todos eles em 7 linhas de código ou menos."
     }
   },
   "scenarios": {
     "repeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "Repita e dispare",
+      "description": "Use um laço repeat para abater todos os alienígenas"
     }
   },
   "hints": {
     "avoidRepeating": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como posso evitar escrever `move()` e `shoot()` um monte de vezes?",
+      "answer": "Use um laço `repeat`. `repeat(n) { ... }` executa o mesmo bloco de código `n` vezes."
     },
     "repeatingPattern": {
-      "question": "�",
-      "answer": "�"
+      "question": "Qual é o padrão que se repete nas posições dos alienígenas?",
+      "answer": "Seu canhão laser começa à esquerda dos alienígenas, e eles ocupam colunas alternadas, com três alienígenas empilhados em cada uma. Assim, o padrão para cada coluna é: `move`, `move`, `shoot`, `shoot`, `shoot`. Você atravessa o espaço vazio até a coluna de alienígenas e depois dispara contra as três filas. É esse grupo de cinco passos que você quer repetir."
     },
     "howManyTimes": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quantas vezes devo repetir o padrão?",
+      "answer": "Conte os grupos de alienígenas ao longo da tela e use esse número como argumento do `repeat`."
     },
     "why7Lines": {
-      "question": "�",
-      "answer": "�"
+      "question": "Por que o objetivo pede só 7 linhas?",
+      "answer": "Uma linha para o cabeçalho do `repeat`, as cinco ações que se repetem lá dentro e uma linha para a chave de fechamento dão sete. Tudo o que você precisa cabe dentro do laço, sem nada fora dele. Se você está escrevendo mais do que isso, provavelmente ainda não está usando o laço."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Move o canhão laser **uma posição para a direita**. Se você se mover para fora do limite direito da tela, você perde!",
+      "category": "Movimento"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Dispara o laser para cima. **Dispare só quando houver um alienígena acima de você**, senão você perde o jogo!",
+      "category": "Ação"
     }
   }
 }

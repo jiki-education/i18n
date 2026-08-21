@@ -1,88 +1,88 @@
 {
   "tasks": {
     "createAcronymFunction": {
-      "name": "�",
-      "description": "�"
+      "name": "Crie a função de sigla",
+      "description": "Escreva uma função que recebe uma frase e retorna a sigla dela: a primeira letra de cada palavra, em maiúscula. As palavras são separadas por espaços e hifens, e qualquer outra pontuação é ignorada."
     },
     "solveTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "Resolva em 46 linhas",
+      "description": "Bônus: com a verificação de letras e a troca de maiúsculas/minúsculas extraídas para funções auxiliares que a função `acronym` reutiliza, a solução completa cabe em 46 linhas. Você consegue igualá-la?"
     }
   },
   "scenarios": {
     "png": {
-      "name": "�",
-      "description": "�"
+      "name": "Sigla básica: PNG",
+      "description": "Converta 'Portable Network Graphics' para 'PNG'."
     },
     "ror": {
-      "name": "�",
-      "description": "�"
+      "name": "Palavras em minúsculas: ROR",
+      "description": "Converta 'Ruby on Rails' para 'ROR'."
     },
     "gimp": {
-      "name": "�",
-      "description": "�"
+      "name": "Palavra em maiúsculas: GIMP",
+      "description": "Converta 'GNU Image Manipulation Program' para 'GIMP'."
     },
     "firstWordOnly": {
-      "name": "�",
-      "description": "�"
+      "name": "Uma única palavra: H",
+      "description": "Converta 'HyperText' para 'H'."
     },
     "hyphenated": {
-      "name": "�",
-      "description": "�"
+      "name": "Frase com hífen: CMOS",
+      "description": "Converta 'Complementary metal-oxide semiconductor' para 'CMOS'."
     },
     "fifo": {
-      "name": "�",
-      "description": "�"
+      "name": "Separado por vírgulas: FIFO",
+      "description": "Converta 'First In, First Out' para 'FIFO'."
     },
     "punctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "Com pontuação: PHT",
+      "description": "Converta 'Portable, HyperText, Transmitter' para 'PHT'."
     },
     "hc": {
-      "name": "�",
-      "description": "�"
+      "name": "Com apóstrofo: HC",
+      "description": "Converta 'Halley's Comet' para 'HC'."
     },
     "simufta": {
-      "name": "�",
-      "description": "�"
+      "name": "Delimitadores consecutivos: SIMUFTA",
+      "description": "Converta 'Something - I made up from thin air' para 'SIMUFTA'."
     },
     "trnt": {
-      "name": "�",
-      "description": "�"
+      "name": "Ênfase com sublinhado: TRNT",
+      "description": "Converta 'The Road _Not_ Taken' para 'TRNT'."
     },
     "long": {
-      "name": "�",
-      "description": "�"
+      "name": "Uma frase muito longa: ROTFLSHTMDCOALM",
+      "description": "Converta 'Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me' para 'ROTFLSHTMDCOALM'."
     },
     "emoji": {
-      "name": "�",
-      "description": "�"
+      "name": "Com um emoji: HW",
+      "description": "Converta 'Hello 👋 World' para 'HW'."
     },
     "acronymBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "Limpo e organizado",
+      "description": "A solução mais organizada reutiliza as suas funções auxiliares e cabe em 46 linhas. Você consegue encontrá-la?"
     }
   },
   "checks": {
-    "tooManyLines": "�",
-    "noMethods": "�"
+    "tooManyLines": "Continue! Veja se você consegue resolvê-lo em menos linhas.",
+    "noMethods": "Este exercício é sobre você construir as ferramentas por conta própria. Resolva-o sem usar nenhum método incorporado."
   },
   "hints": {
     "pickLetters": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como escolho quais letras compõem a sigla?",
+      "answer": "A sigla é construída a partir da letra que inicia cada palavra: a primeira letra da frase, mais a primeira letra depois de cada espaço ou hífen."
     },
     "findWordStarts": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como sei quando começa uma nova palavra?",
+      "answer": "Percorra a frase um caractere de cada vez e registre se você está no início de uma nova palavra. Você está no início absoluto e de novo logo depois de qualquer espaço ou hífen. Tudo o que não for uma letra (pontuação, sublinhados, apóstrofos) deve ser ignorado em vez de ser contado como início de palavra."
     },
     "buildResult": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como vou construindo o resultado à medida que avanço?",
+      "answer": "Comece com uma string vazia e adicione cada letra escolhida ao final usando `+`."
     },
     "uppercaseLetters": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como transformo uma letra em maiúscula quando não existe nenhum método incorporado para isso?",
+      "answer": "Não há aqui nenhum conversor de maiúsculas pronto para usar. Assim como no Pangram, você pode alinhar um alfabeto em minúsculas contra um em maiúsculas e trocar uma letra pela que está na mesma posição. As letras que já são maiúsculas podem continuar como estão."
     }
   }
 }

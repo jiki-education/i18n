@@ -1,0 +1,306 @@
+WEBVTT
+
+NOTE en_md5 dbfde1b9a925870aa288cbb83eacc2ca
+
+00:00:00.120 --> 00:00:02.909
+Ok, bem-vindo de volta. Você acabou de resolver o seu
+
+00:00:02.960 --> 00:00:06.720
+primeiro exercício no Jiki. Parabéns. É o exercício mais fácil
+
+00:00:06.780 --> 00:00:09.060
+que você vai ter na vida. Talvez até
+
+00:00:09.120 --> 00:00:11.360
+tenha parecido fácil demais para você. Talvez você esteja
+
+00:00:11.420 --> 00:00:14.340
+se perguntando se isso é mesmo programar,
+
+00:00:14.360 --> 00:00:16.720
+onde está a programação de verdade. Pois bem,
+
+00:00:16.860 --> 00:00:19.590
+só para te dar uma amostra do que vem por aí:
+
+00:00:19.800 --> 00:00:23.060
+daqui a uns 20 ou 30 exercícios, você já vai saber
+
+00:00:23.100 --> 00:00:26.290
+o suficiente para criar um programa em que
+
+00:00:26.320 --> 00:00:29.380
+o seu bonequinho se orienta sozinho pelo labirinto.
+
+00:00:29.580 --> 00:00:30.670
+Ele vai conseguir verificar por onde
+
+00:00:30.720 --> 00:00:33.250
+anda, vai conseguir se deslocar
+
+00:00:33.320 --> 00:00:35.800
+e encontrar a saída completamente sozinho.
+
+00:00:35.840 --> 00:00:38.440
+É isso que você vai conseguir criar.
+
+00:00:38.480 --> 00:00:41.300
+Este curso é feito de construir pouco
+
+00:00:41.380 --> 00:00:45.180
+a pouco, passo a passo, deixando o conhecimento se acumular
+
+00:00:45.200 --> 00:00:47.960
+na sua cabeça até você conseguir mesmo
+
+00:00:48.000 --> 00:00:51.900
+construir coisas que impressionam você. Então,
+
+00:00:51.940 --> 00:00:53.680
+nesta lição vamos nos concentrar no que
+
+00:00:53.700 --> 00:00:56.640
+aconteceu quando você executou o código que
+
+00:00:56.660 --> 00:01:00.000
+escreveu. Quando você escreve código, o que
+
+00:01:00.060 --> 00:01:03.280
+você está fazendo de verdade é comunicar o que quer
+
+00:01:03.320 --> 00:01:05.820
+que aconteça, numa linguagem que o computador
+
+00:01:05.860 --> 00:01:08.700
+entende. Existem muitas linguagens de programação
+
+00:01:08.740 --> 00:01:11.820
+diferentes e existem muitos intérpretes diferentes,
+
+00:01:12.400 --> 00:01:14.800
+que pegam aquilo que você escreve e transformam
+
+00:01:14.880 --> 00:01:17.760
+nos uns e zeros que um computador
+
+00:01:17.780 --> 00:01:21.540
+consegue entender. Neste curso, o seu intérprete é
+
+00:01:21.580 --> 00:01:23.960
+o Jiki. O curso todo tem o nome dele.
+
+00:01:24.380 --> 00:01:27.300
+Este é o Jiki. O Jiki vai ser o seu
+
+00:01:27.380 --> 00:01:30.280
+amigo nesta viagem pela programação. O trabalho dele
+
+00:01:30.360 --> 00:01:33.860
+é interpretar o código que você escreve e
+
+00:01:34.040 --> 00:01:35.700
+transformá-lo nos uns e zeros
+
+00:01:35.740 --> 00:01:39.460
+sobre os quais o computador consegue realmente agir.
+
+00:01:39.480 --> 00:01:42.460
+O objetivo da programação é dar ao intérprete,
+
+00:01:42.520 --> 00:01:46.280
+neste caso o Jiki, as instruções certas. E há
+
+00:01:46.300 --> 00:01:49.710
+muitas instruções diferentes que você pode
+
+00:01:50.140 --> 00:01:53.600
+dar para ele, muitas que ele entende. Ele consegue
+
+00:01:53.680 --> 00:01:55.830
+juntar coisas, consegue fazer algo
+
+00:01:55.860 --> 00:01:58.810
+muitas vezes, consegue dizer: “Se isso acontecer,
+
+00:01:58.840 --> 00:02:00.880
+então eu preciso fazer aquilo.” Ele consegue
+
+00:02:00.920 --> 00:02:03.480
+guardar coisas e usá-las outra vez mais tarde.
+
+00:02:03.540 --> 00:02:05.200
+Ele consegue te dar um erro se algo
+
+00:02:05.260 --> 00:02:07.720
+não estiver certo. Vamos ver tudo isso
+
+00:02:07.760 --> 00:02:11.740
+ao longo do curso. Mas o mais
+
+00:02:11.780 --> 00:02:16.670
+importante é você entender que tudo o que vai
+
+00:02:16.760 --> 00:02:20.300
+fazer é escrever instruções num
+
+00:02:20.340 --> 00:02:23.040
+quadro, para o Jiki vir depois segui-las.
+
+00:02:24.860 --> 00:02:28.120
+Quando aprendi a programar, há 34 anos,
+
+00:02:29.140 --> 00:02:30.640
+foi este o modelo mental que construí,
+
+00:02:31.280 --> 00:02:32.960
+e é o que ainda tenho hoje.
+
+00:02:33.480 --> 00:02:35.800
+Entendo como os computadores funcionam até
+
+00:02:35.840 --> 00:02:38.540
+o nível dos uns e dos zeros, mas,
+
+00:02:38.600 --> 00:02:41.520
+sinceramente, nunca penso nisso. Na minha
+
+00:02:41.560 --> 00:02:43.600
+cabeça, vive um homenzinho dentro
+
+00:02:43.620 --> 00:02:47.360
+do computador e eu digo para ele o que fazer.
+
+00:02:47.420 --> 00:02:48.549
+Então, me acompanhe
+
+00:02:48.580 --> 00:02:51.440
+neste raciocínio. É um modelo mental poderoso,
+
+00:02:51.500 --> 00:02:53.820
+que você também pode construir, e se
+
+00:02:53.880 --> 00:02:55.540
+você começar a pensar de um jeito
+
+00:02:55.620 --> 00:02:57.970
+bem visual no que a pessoa dentro
+
+00:02:58.000 --> 00:03:00.380
+do computador está fazendo, isso vai te dar
+
+00:03:00.420 --> 00:03:02.020
+uma boa base enquanto você aprende
+
+00:03:02.140 --> 00:03:04.220
+a programar. Vamos então começar olhando para
+
+00:03:04.280 --> 00:03:07.240
+um dos conceitos fundamentais da programação:
+
+00:03:07.340 --> 00:03:11.740
+as funções. As funções são como pequenas máquinas que
+
+00:03:11.780 --> 00:03:14.040
+você pode pedir ao Jiki para usar e, se
+
+00:03:14.080 --> 00:03:16.630
+a gente olhar dentro do galpão do Jiki, que é onde
+
+00:03:16.720 --> 00:03:18.580
+ele fica, você vai ver que ele tem uma prateleira
+
+00:03:18.620 --> 00:03:21.480
+com três máquinas diferentes: move, turnLeft
+
+00:03:21.600 --> 00:03:23.820
+e turnRight. No exercício que você acabou
+
+00:03:23.900 --> 00:03:26.380
+de resolver, quando você escreveu move e depois aqueles
+
+00:03:26.440 --> 00:03:29.220
+dois parênteses, o que você estava fazendo era dizer
+
+00:03:29.280 --> 00:03:31.380
+ao Jiki para ir buscar a máquina move
+
+00:03:31.440 --> 00:03:34.040
+na prateleira, girar a manivela,
+
+00:03:34.080 --> 00:03:35.860
+ligá-la e usá-la. Quando
+
+00:03:35.880 --> 00:03:39.000
+você escreveu turnLeft e depois os parênteses,
+
+00:03:39.020 --> 00:03:40.880
+estava dizendo ao Jiki para tirar a máquina
+
+00:03:40.940 --> 00:03:44.049
+turnLeft da prateleira e usá-la. E
+
+00:03:44.060 --> 00:03:45.440
+este é o padrão que você vai usar
+
+00:03:45.520 --> 00:03:48.380
+uma e outra vez. Sempre que você quiser
+
+00:03:48.420 --> 00:03:50.500
+usar uma máquina, escreve o nome dela
+
+00:03:50.600 --> 00:03:52.980
+e depois aqueles parênteses, e isso diz ao Jiki
+
+00:03:53.020 --> 00:03:54.820
+para ir buscar a máquina e
+
+00:03:54.900 --> 00:03:59.170
+usá-la. Agora, como a máquina funciona por dentro,
+
+00:03:59.240 --> 00:04:01.440
+o que acontece lá dentro, não precisamos
+
+00:04:01.480 --> 00:04:03.260
+nos preocupar com isso por agora. Prometo
+
+00:04:03.320 --> 00:04:04.340
+que vamos ver isso com muito mais
+
+00:04:04.380 --> 00:04:06.460
+detalhe mais tarde. Na verdade, não vai demorar muito
+
+00:04:06.500 --> 00:04:08.360
+até você conseguir construir as suas próprias
+
+00:04:08.400 --> 00:04:11.030
+máquinas. Mas, por agora, não se preocupe
+
+00:04:11.080 --> 00:04:14.340
+com isso. Em cada exercício, você vai saber quais
+
+00:04:14.380 --> 00:04:17.060
+são as máquinas que estão na prateleira do Jiki.
+
+00:04:17.079 --> 00:04:19.680
+Serão diferentes em cada exercício, e você vai poder
+
+00:04:19.780 --> 00:04:22.680
+usá-las para resolver os exercícios.
+
+00:04:23.120 --> 00:04:25.660
+Por exemplo, neste próximo exercício, você vai
+
+00:04:25.680 --> 00:04:28.920
+ter duas máquinas, move e shoot, e
+
+00:04:28.960 --> 00:04:30.320
+vai usá-las para abater
+
+00:04:30.380 --> 00:04:32.810
+alguns alienígenas. Divirta-se com isso e
+
+00:04:32.840 --> 00:04:34.270
+a gente se vê aqui em breve, para
+
+00:04:34.300 --> 00:04:36.080
+mergulharmos no próximo conceito.

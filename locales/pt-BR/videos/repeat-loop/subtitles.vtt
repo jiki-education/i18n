@@ -1,0 +1,264 @@
+WEBVTT
+
+NOTE en_md5 d53eb0ea7bb0ec1daa64bb73829462f2
+
+00:00:00.240 --> 00:00:03.700
+Bem-vindo de volta. Até agora, tudo o que fizemos
+
+00:00:03.720 --> 00:00:06.880
+foi escrito de forma linear: o Jiki
+
+00:00:06.920 --> 00:00:10.660
+segue cada instrução em ordem, de cima
+
+00:00:10.670 --> 00:00:14.220
+para baixo. Nesta sessão, vamos ver
+
+00:00:14.260 --> 00:00:16.330
+como o Jiki pode sair deste
+
+00:00:16.460 --> 00:00:19.690
+fluxo rígido de cima para baixo e, em concreto,
+
+00:00:19.720 --> 00:00:21.800
+como podemos dizer a ele para executar a mesma
+
+00:00:21.880 --> 00:00:24.320
+seção de código muitas vezes
+
+00:00:24.360 --> 00:00:28.680
+seguidas. Por exemplo, imagine que você está no
+
+00:00:28.760 --> 00:00:31.180
+labirinto e quer avançar 10 passos
+
+00:00:31.240 --> 00:00:34.240
+em frente. Antes, eu te dei a função walk
+
+00:00:34.280 --> 00:00:36.690
+para ajudar com isso, mas e se
+
+00:00:36.740 --> 00:00:39.670
+ela não existisse? E se você só tivesse
+
+00:00:39.920 --> 00:00:44.700
+a função move? Em vez de escrever move 10
+
+00:00:44.760 --> 00:00:48.000
+vezes seguidas, o que se torna muito repetitivo,
+
+00:00:48.740 --> 00:00:50.420
+o que precisamos conseguir
+
+00:00:50.500 --> 00:00:54.000
+dizer é: “Ei, Jiki, faça 10 vezes a próxima
+
+00:00:54.120 --> 00:00:59.840
+coisa que eu disser. Move.” Para fazer isso
+
+00:00:59.900 --> 00:01:02.320
+em código, precisamos conseguir
+
+00:01:02.480 --> 00:01:07.300
+usar a nossa primeira palavra-chave, e as palavras-chave
+
+00:01:07.340 --> 00:01:10.180
+são instruções que o Jiki entende. Parecem
+
+00:01:10.220 --> 00:01:13.980
+um pouco máquinas, mas não são. Quando o Jiki vê
+
+00:01:14.020 --> 00:01:16.460
+uma palavra-chave, não procura uma máquina
+
+00:01:16.500 --> 00:01:18.920
+na prateleira; sabe simplesmente
+
+00:01:18.960 --> 00:01:23.300
+o que fazer. Está gravado no cérebro dele. E
+
+00:01:23.320 --> 00:01:25.700
+há cerca de 20 palavras-chave diferentes que vamos
+
+00:01:25.740 --> 00:01:28.480
+aprender ao longo do curso, e a
+
+00:01:28.520 --> 00:01:32.560
+primeira delas é a palavra-chave repeat. A
+
+00:01:32.580 --> 00:01:35.540
+palavra-chave repeat faz exatamente o que eu disse acima.
+
+00:01:36.100 --> 00:01:40.580
+Diz ao Jiki: “Repita este número de vezes o que
+
+00:01:40.700 --> 00:01:42.990
+eu disser a seguir.” Olhe para este
+
+00:01:43.080 --> 00:01:45.960
+código. Primeiro, vamos usar a
+
+00:01:46.000 --> 00:01:48.440
+palavra-chave repeat para dizer ao Jiki que ele vai
+
+00:01:48.480 --> 00:01:51.580
+fazer algo várias vezes. Depois colocamos
+
+00:01:51.680 --> 00:01:53.940
+entre parênteses redondos quantas vezes
+
+00:01:53.980 --> 00:01:57.070
+queremos que o Jiki repita a coisa, e a seguir
+
+00:01:57.100 --> 00:02:00.030
+temos estas chaves, e
+
+00:02:00.040 --> 00:02:02.850
+dentro dessas chaves estão as coisas que
+
+00:02:02.860 --> 00:02:06.020
+queremos que o Jiki repita. Este padrão
+
+00:02:06.100 --> 00:02:09.320
+é incrivelmente comum em programação. Especificamos uma
+
+00:02:09.380 --> 00:02:12.400
+palavra-chave, geralmente com alguma informação, como
+
+00:02:12.440 --> 00:02:14.549
+neste caso o número de vezes que algo
+
+00:02:14.580 --> 00:02:17.620
+deve ser feito, e depois um bloco de código entre
+
+00:02:17.680 --> 00:02:20.880
+chaves. Voltando ao mundo do labirinto,
+
+00:02:21.520 --> 00:02:25.220
+em vez de escrever move, move, move, move,
+
+00:02:25.260 --> 00:02:30.580
+podemos escrever “repita quatro vezes move”. O Jiki
+
+00:02:30.590 --> 00:02:32.860
+vai ver esse código e vai usar a
+
+00:02:32.940 --> 00:02:36.870
+máquina move quatro vezes seguidas. E
+
+00:02:36.900 --> 00:02:38.960
+também não estamos limitados a ter só uma coisa
+
+00:02:39.000 --> 00:02:41.800
+dentro dessas chaves. O Jiki pode fazer
+
+00:02:41.900 --> 00:02:45.320
+várias coisas repetidamente. Podemos dizer ao Jiki
+
+00:02:45.460 --> 00:02:48.080
+que faça move, depois turnLeft, e que repita
+
+00:02:48.120 --> 00:02:51.540
+tudo isso quatro vezes. Se o Jiki vir
+
+00:02:51.560 --> 00:02:54.000
+este código, vai usar a máquina move, depois a
+
+00:02:54.060 --> 00:02:56.880
+máquina turnLeft, depois a máquina move, depois
+
+00:02:56.920 --> 00:02:59.340
+a máquina turnLeft, depois a máquina move,
+
+00:02:59.430 --> 00:03:01.720
+e assim por diante, até ter feito as duas
+
+00:03:01.800 --> 00:03:07.160
+quatro vezes. Chamamos estas instruções de repetição de laços,
+
+00:03:07.840 --> 00:03:09.540
+e há muitos laços diferentes
+
+00:03:09.580 --> 00:03:11.980
+que podemos usar, cada um um pouco diferente.
+
+00:03:12.000 --> 00:03:15.210
+Vamos explorá-los todos neste curso. Agora,
+
+00:03:15.220 --> 00:03:17.710
+há mais uma coisa a saber, e
+
+00:03:17.760 --> 00:03:20.300
+é que manter o seu código limpo e organizado
+
+00:03:20.480 --> 00:03:24.240
+se torna essencial quando você trabalha com laços. Quando
+
+00:03:24.280 --> 00:03:26.800
+o seu código tem uma boa estrutura visual,
+
+00:03:26.860 --> 00:03:28.940
+é muito fácil ver o que está acontecendo.
+
+00:03:29.660 --> 00:03:31.740
+Mas se não tiver, se você esquecer de
+
+00:03:31.780 --> 00:03:34.400
+indentar bem as coisas ou misturar a indentação,
+
+00:03:34.460 --> 00:03:38.630
+tudo fica confuso muito rápido. Então, neste
+
+00:03:38.660 --> 00:03:41.500
+curso temos sempre uma regra. Você coloca
+
+00:03:41.600 --> 00:03:45.049
+sempre a chave de abertura na
+
+00:03:45.080 --> 00:03:48.430
+mesma linha da instrução repeat. Você coloca
+
+00:03:48.430 --> 00:03:50.860
+sempre a chave de fechamento em uma linha
+
+00:03:50.940 --> 00:03:54.080
+própria depois da instrução, e indenta
+
+00:03:54.120 --> 00:03:56.399
+sempre o código entre elas com dois
+
+00:03:56.480 --> 00:04:00.120
+espaços. Assim tudo fica bem organizado,
+
+00:04:01.020 --> 00:04:02.560
+e se você esquecer ou tentar seguir
+
+00:04:02.620 --> 00:04:04.360
+outro padrão, vai ter um erro.
+
+00:04:06.100 --> 00:04:08.080
+Nos próximos exercícios, o seu objetivo é
+
+00:04:08.120 --> 00:04:11.060
+resolver alguns dos desafios usando
+
+00:04:11.100 --> 00:04:13.720
+o menor número de linhas de código possível,
+
+00:04:13.780 --> 00:04:15.320
+e você pode usar laços repeat para te ajudar
+
+00:04:15.380 --> 00:04:18.060
+nisso. Depois vamos ver como começar
+
+00:04:18.070 --> 00:04:19.990
+a usar o laço repeat em conjunto com outros
+
+00:04:20.019 --> 00:04:23.270
+conceitos, para você descobrir técnicas
+
+00:04:23.320 --> 00:04:25.540
+muito mais poderosas. Divirta-se, e até
+
+00:04:25.580 --> 00:04:26.039
+breve.

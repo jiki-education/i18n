@@ -1,70 +1,70 @@
 {
   "checks": {
-    "firstFlowerHeadWrong": "�",
-    "finalFlowerHeadWrong": "�",
-    "firstPistilWrong": "�",
-    "finalPistilWrong": "�",
-    "firstStemWrong": "�",
-    "finalStemWrong": "�",
-    "firstLeftLeafWrong": "�",
-    "finalLeftLeafWrong": "�",
-    "firstRightLeafWrong": "�",
-    "finalRightLeafWrong": "�"
+    "firstFlowerHeadWrong": "A cabeça da flor no primeiro quadro não está correta.",
+    "finalFlowerHeadWrong": "A cabeça da flor no último quadro não está correta.",
+    "firstPistilWrong": "O pistilo no primeiro quadro não está correto.",
+    "finalPistilWrong": "O pistilo no último quadro não está correto.",
+    "firstStemWrong": "O caule no primeiro quadro não está correto.",
+    "finalStemWrong": "O caule no último quadro não está correto.",
+    "firstLeftLeafWrong": "A folha da esquerda no primeiro quadro não está correta.",
+    "finalLeftLeafWrong": "A folha da esquerda no último quadro não está correta.",
+    "firstRightLeafWrong": "A folha da direita no primeiro quadro não está correta.",
+    "finalRightLeafWrong": "A folha da direita no último quadro não está correta."
   },
   "tasks": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "Desenhe a cena",
+      "description": "Faça a flor brotar. Vá um passo de cada vez!"
     }
   },
   "scenarios": {
     "drawSproutingFlower": {
-      "name": "�",
-      "description": "�"
+      "name": "Faça a flor brotar",
+      "description": "Vá um passo de cada vez!"
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Por onde devo começar a organizar a cena?",
+      "answer": "Escolha um ponto central. O centro da flor é uma boa âncora. O caule, o pistilo e as folhas podem todos ser derivados a partir dele. Dessa forma, a flor inteira se mantém ligada enquanto é animada."
     },
     "growEachIteration": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu faço a flor subir e crescer em cada iteração?",
+      "answer": "No topo do corpo do laço, antes de qualquer desenho, atualize `flowerCenterY` e `flowerRadius` para os novos valores deste quadro. As instruções dão as quantidades. O que importa é atualizar *antes* das chamadas de desenho, não depois."
     },
     "stemAttached": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu mantenho o caule ligado à flor enquanto ela sobe?",
+      "answer": "Não dê ao caule um topo fixo. O topo dele *é* `flowerCenterY`. A base dele é o chão. Portanto, a altura dele é a distância entre os dois. A largura pode depois ser derivada dessa altura."
     },
     "leafSizing": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu dimensiono as folhas para que cresçam com a flor?",
+      "answer": "O `radiusX` e o `radiusY` das folhas são frações de `flowerRadius`. Dessa forma, crescem juntas. Ligue a posição vertical delas ao caule, não a um Y fixo da tela, para que subam com a flor."
     },
     "flowerNeverChanges": {
-      "question": "�",
-      "answer": "�"
+      "question": "A minha flor desenha uma vez e nunca muda. O que está errado?",
+      "answer": "Provavelmente você está definindo os valores iniciais uma vez antes do laço, mas não está atualizando eles *dentro* do laço. O corpo do laço tem que alterar as suas variáveis em cada iteração, antes das chamadas de desenho."
     },
     "firstFlowerCoords": {
-      "question": "�",
-      "answer": "�"
+      "question": "Você pode me dar as coordenadas da primeira flor para eu comparar?",
+      "answer": "Na primeira iteração, as formas devem ser:\n\n- Flor: `circle(50, 89, 0.4)`\n- Pistilo: `circle(50, 89, 0.1)`\n- Caule: `rectangle(49.95, 89, 0.1, 1)`\n- Folha da esquerda: `ellipse(49.75, 89.5, 0.2, 0.08)`\n- Folha da direita: `ellipse(50.25, 89.5, 0.2, 0.08)`\n\nAtive o botão de informação na barra de reprodução para ver os seus próprios valores nesse quadro."
     },
     "finalFlowerCoords": {
-      "question": "�",
-      "answer": "�"
+      "question": "Você pode me dar as coordenadas da última flor para eu comparar?",
+      "answer": "Na última iteração, as formas devem ser:\n\n- Flor: `circle(50, 30, 24)`\n- Pistilo: `circle(50, 30, 6)`\n- Caule: `rectangle(47, 30, 6, 60)`\n- Folha da esquerda: `ellipse(35, 60, 12, 4.8)`\n- Folha da direita: `ellipse(65, 60, 12, 4.8)`\n\nAtive o botão de informação na barra de reprodução para ver os seus próprios valores nesse quadro."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um **retângulo** na posição (left, top) com a largura, altura e cor especificadas. A posição representa o canto superior esquerdo do retângulo.",
+      "category": "Desenhar Formas"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um **círculo** na posição central (centerX, centerY) com o raio e a cor especificados.",
+      "category": "Desenhar Formas"
     },
     "ellipse": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha uma **elipse** na posição central (centerX, centerY) com o radiusX, o radiusY e a cor especificados.",
+      "category": "Desenhar Formas"
     }
   }
 }

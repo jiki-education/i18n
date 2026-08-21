@@ -1,65 +1,65 @@
 {
   "errors": {
-    "yearNumber": "�",
-    "yearInPast": "�",
-    "yearTooFarFuture": "�",
-    "balanceNumber": "�",
-    "moneyNumber": "�"
+    "yearNumber": "O ano precisa ser um número",
+    "yearInPast": "Não podemos verificar o mercado de ações para anos passados! {{year}} está no passado.",
+    "yearTooFarFuture": "Não sabemos nada sobre mais de 20 anos a partir de agora! {{year}} está longe demais no futuro.",
+    "balanceNumber": "O saldo precisa ser um número",
+    "moneyNumber": "O dinheiro precisa ser um número"
   },
   "checks": {
-    "taxReportCount": "�",
-    "taxReportWrongYear": "�",
-    "taxReportWrongBalance": "�",
-    "wrongFinalBalance": "�",
-    "announcedMultipleTimes": "�"
+    "taxReportCount": "Eram esperadas 20 declarações de imposto (uma por ano), mas você obteve {{got}}. Certifique-se de que você chama <code>reportTax()</code> dentro do laço.",
+    "taxReportWrongYear": "A declaração de imposto #{{index}} era para o ano {{actualYear}}, mas deveria ter sido para o ano {{expectedYear}}.",
+    "taxReportWrongBalance": "Você declarou o imposto errado para {{year}}. Deveria ter sido ${{expected}}, mas foi ${{actual}}.",
+    "wrongFinalBalance": "Esperava-se um montante final de aproximadamente ${{expected}}, mas você obteve ${{got}}. Certifique-se de que você chama <code>announceToFamily()</code> depois do laço.",
+    "announcedMultipleTimes": "Você só deve anunciar à sua família <strong>uma vez</strong>, depois que os 20 anos terminarem, não todos os anos. Você chamou <code>announceToFamily()</code> {{count}} {{times}}."
   },
   "tasks": {
     "growInvestment": {
-      "name": "�",
-      "description": "�"
+      "name": "Faça seu investimento crescer ao longo de 20 anos",
+      "description": "Comece com $10, simule 20 anos de crescimento do mercado de ações, declare ao fisco todos os anos e anuncie o montante final à sua família."
     }
   },
   "scenarios": {
     "twentyYears": {
-      "name": "�",
-      "description": "�"
+      "name": "20 anos de crescimento",
+      "description": "Invista $10 e acompanhe seu saldo ao longo de 20 anos de crescimento do mercado."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Não sei por onde começar",
+      "answer": "Você precisa usar `marketGrowth()` para cada ano ao longo dos próximos 20 anos (começando de agora). Isso retorna um valor como 5 (para um crescimento do mercado de 5%). Depois você precisa acompanhar quanto dinheiro você tem, a partir dos $10 com que você começou, alterado pela taxa de juro que for."
     },
     "stillStuck": {
-      "question": "�",
-      "answer": "�"
+      "question": "Continuo mesmo travado, não entendo.",
+      "answer": "OK, então vamos mostrar algum código para te ajudar a começar. Imagine que o ano atual é 2026. Você precisa fazer algo como: \n\n```javascript\nlet money = 10\nlet growth = marketGrowth(2026)\n\n// Você precisa aumentar o dinheiro de acordo com o crescimento.\n// Veja a próxima pista se precisar da fórmula para isso.\nmoney = money + ???\nreportTax(2026, money)\n\n// Agora faça 2027\nlet growth = marketGrowth(2027)\nmoney = money + ???\nreportTax(2027, money)\n\n// Agora faça 2028\nlet growth = marketGrowth(2028)\nmoney = money + ???\nreportTax(2028, money)\n\n// Ao fim de 20 anos, anuncie à sua família\nannounceToFamily(money)\n```"
     },
     "formula": {
-      "question": "�",
-      "answer": "�"
+      "question": "Qual é a fórmula para acompanhar o crescimento? Não consigo descobrir por conta própria.",
+      "answer": "A fórmula é: \n\n```javascript\nmoney = money * (100 + marketGrowth(year)) / 100\n```"
     },
     "wrongTaxReportCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "Diz que não declarei o número certo de declarações de imposto.",
+      "answer": "Você deve declarar 20 declarações de imposto ao longo de 20 anos. Use o scrubber para contar quantas vezes você usa a função `reportTax()`."
     }
   },
   "describers": {
-    "marketGrowth": "�",
-    "reportTax": "�",
-    "announceToFamily": "�"
+    "marketGrowth": "obteve um crescimento do mercado de ${return}% no ano ${arg1}",
+    "reportTax": "declarou imposto para o ano ${arg1}: $${arg2}",
+    "announceToFamily": "anunciou $${arg1} à família"
   },
   "functions": {
     "marketGrowth": {
-      "description": "�",
-      "category": "�"
+      "description": "Retorna a porcentagem de crescimento do mercado para um determinado ano (entre -25 e 40). Você precisa **aumentar** a quantidade de dinheiro que você tem por este número de cada vez. (Assim, 40 significa que seus $10 devem valer $14, e -10 significa que seus $10 descem para $9)",
+      "category": "Ação"
     },
     "reportTax": {
-      "description": "�",
-      "category": "�"
+      "description": "Declara o imposto para um determinado ano. Você deve chamar esta função todos os anos, com o ano e a quantia atual de dinheiro que você tem.",
+      "category": "Ação"
     },
     "announceToFamily": {
-      "description": "�",
-      "category": "�"
+      "description": "Anuncia o montante final à sua família.",
+      "category": "Ação"
     }
   }
 }

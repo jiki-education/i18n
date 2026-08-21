@@ -1,72 +1,72 @@
 {
   "tasks": {
     "checkPangram": {
-      "name": "�",
-      "description": "�"
+      "name": "Verifique o Pangrama",
+      "description": "Escreva uma função que verifica se uma frase é um pangrama (contém todas as letras do alfabeto pelo menos uma vez). A verificação não deve distinguir maiúsculas de minúsculas."
     }
   },
   "scenarios": {
     "pangramEmptySentence": {
-      "name": "�",
-      "description": "�"
+      "name": "Frase vazia",
+      "description": "Uma frase vazia não é um pangrama."
     },
     "pangramPerfectLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "Minúsculas perfeitas",
+      "description": "Um alfabeto perfeito em minúsculas é um pangrama."
     },
     "pangramOnlyLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "Apenas minúsculas",
+      "description": "Uma frase só com letras minúsculas e que contém todas as letras é um pangrama."
     },
     "pangramMissingX": {
-      "name": "�",
-      "description": "�"
+      "name": "Falta a letra 'x'",
+      "description": "Uma frase sem a letra 'x' não é um pangrama."
     },
     "pangramMissingH": {
-      "name": "�",
-      "description": "�"
+      "name": "Falta a letra 'h'",
+      "description": "Uma frase sem a letra 'h' não é um pangrama."
     },
     "pangramMissingAM": {
-      "name": "�",
-      "description": "�"
+      "name": "Faltam as letras além de a-m",
+      "description": "Uma string com as letras de 'a' a 'm' em minúsculas e maiúsculas não é um pangrama."
     },
     "pangramWithUnderscores": {
-      "name": "�",
-      "description": "�"
+      "name": "Com sublinhados",
+      "description": "Uma frase pangrama com sublinhados."
     },
     "pangramWithNumbers": {
-      "name": "�",
-      "description": "�"
+      "name": "Com números",
+      "description": "Uma frase pangrama que inclui números."
     },
     "pangramNumbersReplacingLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "Números substituindo letras",
+      "description": "Uma frase em que as letras são substituídas por números não é um pangrama."
     },
     "pangramMixedCasePunctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "Mistura de maiúsculas, minúsculas e pontuação",
+      "description": "Um pangrama com maiúsculas, minúsculas e pontuação."
     },
     "pangramCaseInsensitive": {
-      "name": "�",
-      "description": "�"
+      "name": "Faltam letras sem distinguir maiúsculas de minúsculas",
+      "description": "Uma frase que não distingue maiúsculas de minúsculas e que não contém todas as letras não é um pangrama."
     }
   },
   "hints": {
     "helpers": {
-      "question": "�",
-      "answer": "�"
+      "question": "Que funções auxiliares vão me poupar trabalho aqui?",
+      "answer": "Uma função auxiliar `includes()` (que pergunta 'este caractere aparece nesta string?') e uma função auxiliar `toLowerCase()` (para que as diferenças de maiúsculas e minúsculas não te atrapalhem) tornam a lógica principal curta e clara."
     },
     "whyLowercase": {
-      "question": "�",
-      "answer": "�"
+      "question": "Por que devo converter a frase para minúsculas?",
+      "answer": "A frase 'The quick brown fox...' contém tanto 'T' como 't'. Se você só verificar contra letras minúsculas, as maiúsculas não vão coincidir. Converta a frase para minúsculas uma vez no início, para que todas as comparações sejam consistentes."
     },
     "checkEveryLetter": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como verifico se todas as letras estão presentes?",
+      "answer": "Percorra cada letra do alfabeto `\"abcdefghijklmnopqrstuvwxyz\"`. Para cada uma, use `includes()` para verificar se aparece na frase convertida para minúsculas."
     },
     "stopEarly": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quando posso parar mais cedo?",
+      "answer": "Assim que encontrar uma letra em falta, retorne `false`. Não vale a pena verificar o resto. Só retorne `true` depois de confirmar o alfabeto inteiro."
     }
   }
 }

@@ -1,99 +1,99 @@
 {
   "checks": {
-    "moreThanSixteenLines": "�"
+    "moreThanSixteenLines": "Você usou mais de dezesseis linhas de código."
   },
   "tasks": {
     "plings": {
-      "name": "�",
-      "description": "�"
+      "name": "Plings",
+      "description": "Comece acertando os sons Pling. Se o número for divisível por 3, retorne \"Pling\"."
     },
     "plangs": {
-      "name": "�",
-      "description": "�"
+      "name": "Plangs",
+      "description": "Agora acerte os sons Plang. Se o número for divisível por 5, acrescente \"Plang\" ao resultado. Se for divisível por 3 e por 5, retorne \"PlingPlang\"."
     },
     "plongs": {
-      "name": "�",
-      "description": "�"
+      "name": "Plongs",
+      "description": "Agora acerte os sons Plong. Se o número for divisível por 7, acrescente \"Plong\" ao resultado. Os números podem ser divisíveis por vários fatores."
     },
     "noSound": {
-      "name": "�",
-      "description": "�"
+      "name": "Números sem som de gota de chuva",
+      "description": "Finalmente, se o número não for divisível por 3, 5 ou 7, retorne o próprio número como string."
     },
     "solveInSixteenLines": {
-      "name": "�",
-      "description": "�"
+      "name": "Resolva em dezesseis linhas de código",
+      "description": "Você consegue resolver isto com apenas dezesseis linhas de código?"
     }
   },
   "scenarios": {
     "number3": {
-      "name": "�",
-      "description": "�"
+      "name": "Número 3",
+      "description": "Se 3 for o valor de entrada, retorne \"Pling\"."
     },
     "number27": {
-      "name": "�",
-      "description": "�"
+      "name": "Número 27",
+      "description": "Se 27 for o valor de entrada, retorne \"Pling\"."
     },
     "number5": {
-      "name": "�",
-      "description": "�"
+      "name": "Número 5",
+      "description": "Se 5 for o valor de entrada, retorne \"Plang\"."
     },
     "number3125": {
-      "name": "�",
-      "description": "�"
+      "name": "Número 3125",
+      "description": "Se 3125 for o valor de entrada, retorne \"Plang\"."
     },
     "number15": {
-      "name": "�",
-      "description": "�"
+      "name": "Número 15",
+      "description": "Se 15 for o valor de entrada, retorne \"PlingPlang\"."
     },
     "number7": {
-      "name": "�",
-      "description": "�"
+      "name": "Número 7",
+      "description": "Se 7 for o valor de entrada, retorne \"Plong\"."
     },
     "number21": {
-      "name": "�",
-      "description": "�"
+      "name": "Número 21",
+      "description": "Se 21 for o valor de entrada, retorne \"PlingPlong\"."
     },
     "number35": {
-      "name": "�",
-      "description": "�"
+      "name": "Número 35",
+      "description": "Se 35 for o valor de entrada, retorne \"PlangPlong\"."
     },
     "number105": {
-      "name": "�",
-      "description": "�"
+      "name": "Número 105",
+      "description": "Se 105 for o valor de entrada, retorne \"PlingPlangPlong\"."
     },
     "number8": {
-      "name": "�",
-      "description": "�"
+      "name": "Número 8",
+      "description": "Se 8 for o valor de entrada, retorne \"8\"."
     },
     "number52": {
-      "name": "�",
-      "description": "�"
+      "name": "Número 52",
+      "description": "Se 52 for o valor de entrada, retorne \"52\"."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "Dezesseis linhas de código",
+      "description": "Resolva o exercício com apenas dezesseis linhas de código."
     }
   },
   "hints": {
     "onlyOneSound": {
-      "question": "�",
-      "answer": "�"
+      "question": "Por que a minha função só retorna um som?",
+      "answer": "Se você fizer `return` dentro de cada `if`, desiste assim que o primeiro divisor corresponder. O que você quer é combiná-los. Em vez de retornar, acrescente o som a uma string de resultado e continue."
     },
     "buildCombinedSound": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu construo o som combinado?",
+      "answer": "Comece com uma string de resultado vazia. Para cada divisor (3, 5, 7), se dividir o número, acrescente o som correspondente ao final do resultado usando concatenação com `+`."
     },
     "noneMatch": {
-      "question": "�",
-      "answer": "�"
+      "question": "E se nenhum dos divisores corresponder?",
+      "answer": "Se o resultado ainda estiver vazio depois das três verificações, a resposta é apenas o próprio número como string. Converta o número e retorne isso."
     },
     "convertToString": {
-      "question": "�",
-      "answer": "�"
+      "question": "Retorno o número, mas quer que eu o retorne como string. Como eu faço isso?",
+      "answer": "Números e strings são tipos diferentes, mesmo que pareçam iguais. Você pode converter um número numa string colocando-o dentro de uma template string com `${...}`."
     },
     "howManyReturns": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quantas instruções return devo ter?",
+      "answer": "Normalmente, apenas uma ou duas. A ideia é deixar que as instruções if modifiquem a string de resultado e, no final, retornar esse resultado apenas uma vez."
     }
   }
 }

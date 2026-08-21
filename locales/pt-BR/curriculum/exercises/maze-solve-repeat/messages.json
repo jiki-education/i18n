@@ -1,43 +1,43 @@
 {
   "checks": {
-    "notReachedEnd": "�",
-    "tooManyLines": "�",
-    "oneLineOver": "�"
+    "notReachedEnd": "Você não chegou ao fim do labirinto.",
+    "tooManyLines": "Sua solução tem linhas de código demais. Procure grupos de chamadas move() consecutivas e substitua cada grupo por um laço repeat.",
+    "oneLineOver": "Você está só uma linha acima do limite! Um laço repeat nem sempre é mais curto: repetir algo só duas ou três vezes pode ocupar mais linhas do que escrever as chamadas uma a uma, então procure um repeat que não esteja realmente te poupando nada."
   },
   "tasks": {
     "solveMazeWithRepeat": {
-      "name": "�",
-      "description": "�"
+      "name": "Reescreva a solução do labirinto com laços repeat",
+      "description": "Substitua as chamadas `move()` consecutivas por laços repeat para deixar o código mais curto."
     }
   },
   "scenarios": {
     "mazeRepeat1": {
-      "name": "�",
-      "description": "�"
+      "name": "Reescreva a solução do labirinto com laços repeat",
+      "description": "Use laços repeat para evitar chamadas `move()` consecutivas."
     }
   },
   "hints": {
     "noIdea": {
-      "question": "�",
-      "answer": "�"
+      "question": "Não faço ideia do que fazer",
+      "answer": "Procure grupos de chamadas `move()` consecutivas. Por exemplo, em vez de:\n\n```javascript\nmove()\nmove()\nmove()\n```\n\nVocê pode escrever:\n\n```javascript\nrepeat(3) {\n  move()\n}\n```\n\nEncontre os grupos e substitua eles!"
     },
     "tooManyLines": {
-      "question": "�",
-      "answer": "�"
+      "question": "Você usou laços repeat e mesmo assim tem linhas demais?",
+      "answer": "Será que usar um repeat é sempre melhor? Em alguns casos, pode ser mais curto ter simplesmente duas chamadas move() seguidas."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Move o bonequinho **um passo para a frente** na direção atual. O bonequinho só se move se a posição de destino não estiver bloqueada por uma parede.",
+      "category": "Movimento"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Vira o bonequinho **90 graus para a esquerda** (no sentido anti-horário). Isso muda a direção para onde o bonequinho está olhando.",
+      "category": "Movimento"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Vira o bonequinho **90 graus para a direita** (no sentido horário). Isso muda a direção para onde o bonequinho está olhando.",
+      "category": "Movimento"
     }
   }
 }

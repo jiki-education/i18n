@@ -1,67 +1,67 @@
 {
   "tasks": {
     "checkTheName": {
-      "name": "�",
-      "description": "�"
+      "name": "Verifique o nome",
+      "description": "Escreva uma função `handleGuest` que verifica se o nome da pessoa começa com as letras permitidas para a festa desta noite. Retorne `true` se começar, ou `false` se não começar."
     },
     "solveTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "Resolva em 20 linhas",
+      "description": "Bônus: com a contagem do comprimento extraída para uma função auxiliar que o `handleGuest` reutiliza, a solução completa cabe em 20 linhas. Você consegue igualar?"
     }
   },
   "scenarios": {
     "sarahSParty": {
-      "name": "�",
-      "description": "�"
+      "name": "Festa do S: a Sarah chega",
+      "description": "Esta noite, só são permitidos nomes que começam com \"S\". A Sarah deve entrar!"
     },
     "bradSParty": {
-      "name": "�",
-      "description": "�"
+      "name": "Festa do S: o Brad chega",
+      "description": "Esta noite, só são permitidos nomes que começam com \"S\". O Brad deve ser barrado!"
     },
     "bradleyBradParty": {
-      "name": "�",
-      "description": "�"
+      "name": "Festa do Brad: o Bradley chega",
+      "description": "Esta noite, só são permitidos nomes que começam com \"Brad\". O Bradley deve entrar!"
     },
     "bradBradleyParty": {
-      "name": "�",
-      "description": "�"
+      "name": "Festa do Bradley: o Brad chega",
+      "description": "Esta noite, só são permitidos nomes que começam com \"Bradley\". O nome Brad é curto demais, então não é permitido."
     },
     "brianBradParty": {
-      "name": "�",
-      "description": "�"
+      "name": "Festa do Brad: o Brian chega",
+      "description": "Esta noite, só são permitidos nomes que começam com \"Brad\". O Brian deve ser barrado!"
     },
     "silence": {
-      "name": "�",
-      "description": "�"
+      "name": "Festa do S: silêncio...",
+      "description": "A pessoa não diz o nome. Um nome vazio não pode começar com nada. Barre a pessoa!"
     },
     "cherCherParty": {
-      "name": "�",
-      "description": "�"
+      "name": "Festa do Cher: a Cher chega",
+      "description": "Esta noite, só são permitidos nomes que começam com \"Cher\". O nome da Cher é exatamente \"Cher\", então deixe-a entrar!"
     },
     "nicheNamedPartyBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "Limpo e organizado",
+      "description": "A solução mais curta cabe em 20 linhas. Você consegue encontrá-la?"
     }
   },
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "Continue! Veja se você consegue resolvê-lo em menos linhas."
   },
   "hints": {
     "checkStartsWith": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu verifico se um nome começa com determinadas letras?",
+      "answer": "Compare cada caractere do prefixo permitido com o caractere na mesma posição do nome. Se algum caractere for diferente, o nome não corresponde."
     },
     "loopCharacters": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu vejo um caractere de cada vez?",
+      "answer": "Use iteração de strings para percorrer uma string."
     },
     "findEquivalentLetter": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu encontro a letra equivalente na outra palavra?",
+      "answer": "Use indexação de strings para encontrar uma letra específica."
     },
     "longerAllowedPrefix": {
-      "question": "�",
-      "answer": "�"
+      "question": "E se o prefixo permitido for mais longo do que o nome?",
+      "answer": "Essa pessoa não pode corresponder, então você deve retornar `false`."
     }
   }
 }
