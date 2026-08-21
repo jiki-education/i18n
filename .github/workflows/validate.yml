@@ -70,8 +70,16 @@ jobs:
           echo "English: $REF"
           echo "ref=$REF" >> "$GITHUB_OUTPUT"
 
-      # Sparse and shallow: English is four directories of a large monorepo, and
+      # Sparse and shallow: English is five directories of a large monorepo, and
       # this runs on every PR.
+      #
+      # `content/images` is in the sparse list even though this repo publishes no
+      # image bytes, because the publish dry run below renders every translated
+      # post, and rendering one resolves each `/images/...` reference against the
+      # source repo to prove English uses that image too
+      # (scripts/lib/prose.mjs). Without the directory checked out, that
+      # resolution cannot tell "English does not have this image" from "this
+      # checkout did not fetch it", and it reports the former.
       - name: Check out English
         uses: actions/checkout@v4
         with:
@@ -83,6 +91,7 @@ jobs:
             curriculum/src
             interpreters/src
             content/src
+            content/images
 
       # Subtitles are the one content type whose English is not the front-end's:
       # they are cut from the rendered video and authored beside it (SOURCE_REPOS
