@@ -17,7 +17,7 @@ pnpm source:checkout --source=videos     # ...and the English subtitle track
 pnpm source:checkout --source=api        # ...and the api copy coverage reports
 
 node scripts/coverage.mjs                # what is translated, stale, missing, never started
-node scripts/validate.mjs all --no-stamp # the CI gate
+node scripts/validate.mjs all --no-stamp # the CI gate (production locales)
 node scripts/publish.mjs hu              # build the R2 artifacts into dist/
 ```
 
@@ -52,6 +52,13 @@ locally with whatever engine each language uses, pushes a branch whose commit ca
 
 `validate` and `publish` stay in CI, because they gate what reaches R2 and must not depend on
 anyone's laptop.
+
+`validate` checks every locale and reports every error, but only errors in a **production locale**
+(`locales.json`'s `productionTargets`) fail the run. A gate covering thirty-odd locales at wildly
+different stages is permanently red, and a permanently red gate is ignored. The summary line prints
+the production and non-production counts side by side so nothing hides behind the scoping, and
+`--gate=all` holds every locale to the exit code when you want to sweep the whole corpus. See
+CLAUDE.md and the header of `scripts/validate.mjs`.
 
 `node scripts/<name>.mjs --help` is not implemented; each script's header comment is its
 documentation, and is the first thing to read before changing one.

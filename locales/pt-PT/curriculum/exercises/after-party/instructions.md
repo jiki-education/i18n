@@ -18,9 +18,7 @@ Há convidados que, mesmo estando convidados, não podem trazer ninguém consigo
 
 ### Métodos e propriedades de arrays
 
-Tal como as strings, os arrays também têm métodos e propriedades. Neste exercício, podes querer usar a propriedade `.length`. Funciona exatamente da mesma forma que a versão para strings, só que agora diz-te quantos elementos existem no array, em vez de quantas letras existem na string.
-
-Por exemplo:
+Tal como as strings, os arrays também têm métodos e propriedades. Neste exercício, podes querer usar a propriedade `.length`. Funciona exatamente da mesma forma que a versão para strings, só que agora diz-te quantos elementos existem no array, em vez de quantas letras existem na string. Por exemplo:
 
 ```js
 ["Jeremy", "Erik", "Aron"].length
