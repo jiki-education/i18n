@@ -2,96 +2,96 @@
   "tasks": {
     "findGuestTable": {
       "name": "Trova il tavolo dell'ospite",
-      "description": "Scrivi una funzione che riceva la lista dei nomi completi degli invitati, la lista corrispondente dei nomi dei tavoli e l'ospite in arrivo, indicato con il titolo e il cognome. Restituisci il nome del tavolo a cui è assegnato quell'ospite, oppure `\"No table found\"` se non compare nello schema dei posti a tavola."
+      "description": "Scrivi una funzione che prende la lista dei nomi completi degli invitati, la lista corrispondente dei nomi dei tavoli e un ospite in arrivo annunciato con un titolo ed il proprio cognome. Restituisci il nome del tavolo a cui è seduto quell'ospite, oppure `\"No table found\"` se non è nello schema dei posti a tavola."
     },
     "solveTightly": {
-      "name": "Risolvilo in modo conciso",
-      "description": "Bonus: questo può essere scritto in modo molto più conciso di quanto potresti aspettarti. Riesci a far stare l'intera soluzione in una manciata di righe?"
+      "name": "Risolvilo in 9 righe",
+      "description": "Bonus: questo può essere scritto in modo molto più compatto di quanto potresti aspettarti. Prova a risolverlo in 9 righe di codice o meno."
     }
   },
   "scenarios": {
     "emptyList": {
-      "name": "Schema dei posti vuoto",
+      "name": "Schema dei posti a tavola vuoto",
       "description": "Nessuno è seduto da nessuna parte quando lo schema è vuoto."
     },
     "nameMissing": {
-      "name": "Brad viene mandato via",
+      "name": "Brad viene respinto",
       "description": "Il nome non è nello schema dei posti a tavola."
     },
     "namePresent": {
-      "name": "Brad viene accompagnato al suo tavolo",
-      "description": "Brad Pitt è nello schema dei posti, quindi gli viene assegnato il suo tavolo."
+      "name": "Brad viene accompagnato al suo posto",
+      "description": "Brad Pitt è nello schema, quindi il signor Pitt riceve il suo tavolo."
     },
     "differentHonorific": {
-      "name": "Cavaliere del Regno Unito",
-      "description": "Un titolo diverso e un ospite che non occupa il primo posto nello schema dei posti."
+      "name": "Cavaliere del regno",
+      "description": "Un titolo diverso, ed un ospite che non è il primo nello schema."
     },
     "bondSeated": {
-      "name": "Dunque lei è il signor Bond, immagino.",
-      "description": "James Bond è nello schema dei posti."
+      "name": "Signor Bond, presumo",
+      "description": "James Bond è nello schema."
     },
     "bondNotSeated": {
-      "name": "Hmmm... dunque lei è il signor Bond, immagino.",
-      "description": "Solo Jason Bourne è nello schema dei posti, non James Bond."
+      "name": "Hmmm... Signor Bond, presumo",
+      "description": "Solo Jason Bourne è nello schema, non James Bond."
     },
     "partialSurname": {
-      "name": "Non è il signor Pitt",
-      "description": "Né la signora Ada Spitt né il signor Hugo Ross-Pitt sono il signor Pitt, quindi non hanno un posto qui."
+      "name": "Non proprio il signor Pitt",
+      "description": "Né Ada Spitt né Hugo Ross-Pitt sono il signor Pitt, quindi non ha un posto qui."
     },
     "lloydWebber": {
-      "name": "E se fosse un barone?",
-      "description": "Il barone Lloyd Webber ha un cognome composto da due parole."
+      "name": "Che ne dici di un barone?",
+      "description": "Il barone Lloyd Webber ha due parole nel proprio cognome."
     },
     "markWebber": {
-      "name": "Mark è un barone?",
-      "description": "Un'altra persona con il cognome Webber non vale: il cognome deve essere identico."
+      "name": "Mark è il barone?",
+      "description": "Un Webber diverso non conta: il cognome deve corrispondere per intero."
     },
     "formalDinnerBonusLineCount": {
-      "name": "La persona pulita e ordinata è Lord Doyle.",
-      "description": "Lo stesso schema dei posti di prima, ma questa volta devi scrivere la soluzione in molte meno righe."
+      "name": "Pulito ed ordinato: Lord Doyle",
+      "description": "Lo stesso schema dei posti a tavola di prima, ma questa volta prova a risolverlo in 9 righe di codice o meno."
     }
   },
   "hints": {
     "twoLists": {
-      "question": "Come sono collegate le due liste tra loro?",
-      "answer": "Sono una coppia. Il primo invitato siede al primo tavolo, il secondo al secondo, e così via. Quindi non basta sapere *che* un invitato è nello schema dei posti: devi sapere *dove* si trova nello schema dei posti."
+      "question": "Come sono collegate tra loro le due liste?",
+      "answer": "Sono una coppia. Il primo invitato siede al primo tavolo, il secondo invitato siede al secondo tavolo, e così via. Quindi non basta sapere *che* un invitato è nello schema: devi sapere *dove* si trova nello schema."
     },
     "comparingNames": {
-      "question": "L'ospite si presenta come \"Mr Pitt\", ma nello schema dei posti compare \"Brad Pitt\". Come faccio a capire che sono la stessa persona?",
-      "answer": "Le due stringhe non saranno mai identiche, quindi un confronto diretto non serve. Devi capire quale parte del nome annunciato dall'ospite compare davvero nello schema dei posti e in quale punto della voce dello schema ti aspetteresti di trovarla."
+      "question": "L'ospite dice «Mr Pitt» ma lo schema dice «Brad Pitt». Come faccio a confrontarli?",
+      "answer": "Quelle due stringhe non saranno mai uguali, quindi un confronto diretto non ti porterà da nessuna parte. Pensa a quale parte di ciò che l'ospite ha annunciato compare effettivamente nello schema, ed in quale punto della voce dello schema ti aspetteresti di trovarla."
     },
     "lookalikeSurnames": {
       "question": "Un cognome potrebbe corrispondere all'ospite sbagliato?",
-      "answer": "Assolutamente sì. Leggi «Ada Spitt» e «Hugo Ross-Pitt» ad alta voce, e poi pensa al signor Pitt. Chiediti che cosa, in quella riga, identifica davvero il cognome, invece di prendere semplicemente delle lettere che capitano alla fine."
+      "answer": "Potrebbe eccome. Leggi ad alta voce «Ada Spitt» e «Hugo Ross-Pitt», e poi pensa al signor Pitt. Chiediti cosa rende un cognome un vero cognome in quella riga, piuttosto che solo alcune lettere che si trovano per caso alla fine."
     },
     "noMatch": {
-      "question": "Che cosa devo restituire quando nessun nome corrisponde?",
-      "answer": "Devi restituire la stringa `\"No table found\"`, esattamente così com'è. La parte difficile è capire quando puoi farlo. Se controlli il primo invitato nello schema e non è quello giusto, puoi già dire con certezza che l'ospite non è seduto da nessuna parte?"
+      "question": "Cosa devo restituire quando nessuno corrisponde?",
+      "answer": "La stringa `\"No table found\"`, così com'è scritta. La parte più difficile è sapere quando puoi dirla. Se hai controllato il primissimo invitato nello schema e non è lui, sai già con certezza che non è seduto da nessuna parte?"
     }
   },
   "checks": {
-    "tooManyLines": "Continua! Vedi se riesci a risolverlo in meno righe."
+    "tooManyLines": "Continua! Vedi se riesci a scendere a 9 righe di codice."
   },
   "functions": {
     "length": {
-      "description": "Il numero di elementi in un array: la stessa proprietà length che hai usato sulle stringhe (fornito dal livello stdlib)",
-      "category": "Operazioni su array"
+      "description": "Il numero di elementi in un array: la stessa proprietà length che hai usato sulle stringhe (fornito da level stdlib)",
+      "category": "Operazioni sugli array"
     },
     "split": {
-      "description": "Suddivide una stringa in una lista di parti, separandola in corrispondenza di ogni separatore (fornito dal livello stdlib)",
-      "category": "Operazioni su stringhe"
+      "description": "Divide una stringa in un array di parti, spezzandola a ogni separatore (fornito da level stdlib)",
+      "category": "Operazioni sulle stringhe"
     },
     "slice": {
-      "description": "Crea un nuovo array da una parte di un array, a partire da una posizione (fornito dal livello stdlib)",
-      "category": "Operazioni su array"
+      "description": "Crea un nuovo array da una parte di un array, a partire da una posizione (fornito da level stdlib)",
+      "category": "Operazioni sugli array"
     },
     "join": {
-      "description": "Unisce gli elementi di un array in una stringa, con un separatore tra loro (fornito dal livello stdlib)",
-      "category": "Operazioni su array"
+      "description": "Unisci gli elementi di un array in un'unica stringa, con un separatore tra loro (fornito da level stdlib)",
+      "category": "Operazioni sugli array"
     },
     "endsWith": {
-      "description": "Verifica se una stringa termina con un'altra stringa (fornito dal livello stdlib)",
-      "category": "Operazioni su stringhe"
+      "description": "Controlla se una stringa termina con una stringa più corta (fornito da level stdlib)",
+      "category": "Operazioni sulle stringhe"
     }
   }
 }

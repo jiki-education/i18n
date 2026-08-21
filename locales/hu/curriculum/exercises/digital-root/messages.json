@@ -2,15 +2,15 @@
   "tasks": {
     "sumTheDigits": {
       "name": "Add össze a számjegyeket",
-      "description": "Írj egy `digitalRoot` nevű függvényt, amely egy számot fogad, és összeadja a számjegyeit. Azoknál a számoknál, amelyek már egyjegyűek, illetve amelyeknek a számjegyei egyjegyűre összegződnek, ez elég is."
+      "description": "Írj egy digitalRoot nevű függvényt, amely egy számot fogad, és összeadja a számjegyeit. Azoknál a számoknál, amelyek már eleve egyjegyűek, és azoknál, amelyeknek a számjegyei egyetlen számjegyre adódnak össze, ez elég is."
     },
     "collapseToSingleDigit": {
-      "name": "Add össze, amíg egyjegyű nem lesz",
-      "description": "Néha a számjegyek egyszeri összeadása után még mindig több számjegy marad (például a 942 15-re összegződik). Add össze az eredmény számjegyeit, amíg egyetlen számjegy nem marad."
+      "name": "Addig összegezz, amíg egyjegyű nem lesz",
+      "description": "Néha a számjegyek egyszeri összeadása után még mindig több számjegy marad (például a 942 összege 15). Add össze az eredmény számjegyeit mindaddig, amíg egyetlen számjegy nem marad."
     },
     "keepItTight": {
-      "name": "Bónusz: legyen rövid",
-      "description": "A megoldásod már működik. Ennél a bónusznál tisztogasd meg úgy, hogy a függvény elférjen néhány sorban, felesleges dolgok nélkül."
+      "name": "Oldd meg 10 sorban",
+      "description": "A megoldásod már működik. Ebben a bónuszban próbáld meg 10 vagy annál kevesebb sorból álló kóddal megoldani."
     }
   },
   "scenarios": {
@@ -23,50 +23,50 @@
       "description": "Egy már eleve egyjegyű szám önmaga digitális gyöke."
     },
     "drTwoDigits": {
-      "name": "Két számjegy",
-      "description": "A 16 egy menetben 7-re összegződik (1 + 6)."
+      "name": "Kétjegyű",
+      "description": "A 16 egyetlen menetben 7-re adódik össze (1 + 6)."
     },
     "drThreeDigits": {
-      "name": "Három számjegy, egy menet",
-      "description": "A 132 egy menetben 6-ra összegződik (1 + 3 + 2)."
+      "name": "Háromjegyű, egy menet",
+      "description": "A 132 egyetlen menetben 6-ra adódik össze (1 + 3 + 2)."
     },
     "drThirtyNine": {
-      "name": "Két menet szükséges",
-      "description": "A 39 12-re összegződik, ami aztán 3-ra összegződik."
+      "name": "Két menet kell",
+      "description": "A 39 összege 12, ami aztán 3-ra adódik össze."
     },
     "drTwoPasses": {
-      "name": "Egy szám, amelyik második menetet igényel",
-      "description": "A 942 15-re összegződik, ami aztán 6-ra összegződik."
+      "name": "Egy szám, amelyikhez második menet kell",
+      "description": "A 942 összege 15, ami aztán 6-ra adódik össze."
     },
     "drLarge": {
       "name": "Egy nagyobb szám",
-      "description": "A 493193 egészen 2-re összegződik."
+      "description": "A 493193 egészen 2-ig adódik össze."
     },
     "drNines": {
       "name": "Csupa kilences",
-      "description": "A 99999 45-re összegződik, ami aztán 9-re összegződik."
+      "description": "A 99999 összege 45, ami aztán 9-ra adódik össze."
     },
     "drBonusTight": {
-      "name": "Egy tiszta, rövid megoldás",
-      "description": "A 12345 6-ra összegződik (1 + 2 + 3 + 4 + 5 = 15, majd 1 + 5 = 6)."
+      "name": "Egy tömör, rövid megoldás",
+      "description": "Próbáld meg 10 vagy annál kevesebb sorból álló kóddal megoldani. A 12345 egészen 6-ig adódik össze (1 + 2 + 3 + 4 + 5 = 15, majd 1 + 5 = 6)."
     }
   },
   "hints": {
     "whatIsIt": {
-      "question": "Pontosan mi a digitális gyök?",
-      "answer": "Add össze a szám összes számjegyét. Ha ez egyjegyű számot ad, az a válasz. Ha egynél több számjegyet kapsz, add össze ennek az eredménynek a számjegyeit is, és folytasd, amíg csak egy számjegy marad."
+      "question": "Mi is pontosan a digitális gyök?",
+      "answer": "Add össze a szám összes számjegyét. Ha egyetlen számjegyet kapsz, az a válasz. Ha egynél több számjegyet kapsz, add össze annak az eredménynek a számjegyeit is, és folytasd, amíg csak egy számjegy nem marad."
     },
     "sumDigits": {
-      "question": "Hogyan adjam össze egy szám számjegyeit?",
-      "answer": "Alakítsd a számot stringgé, hogy egy `for...of` ciklussal karakterenként végig tudj menni rajta. Tarts nyilván egy futó összeget, és minden számjegyet adj hozzá."
+      "question": "Hogyan adom össze egy szám számjegyeit?",
+      "answer": "Alakítsd a számot stringgé, hogy egy `for...of` ciklussal karakterenként végig tudj rajta menni. Tarts nyilván egy futó összeget, és közben add hozzá az egyes számjegyeket."
     },
     "digitsToNumbers": {
       "question": "De minden számjegy karakter, nem szám.",
-      "answer": "Amikor végigmész a stringen, minden karakter (például `\"4\"`) szöveg. Használd a `Number(char)`-t, hogy átalakítsd a `4`-et számmá, mielőtt hozzáadnád az összeghez."
+      "answer": "Amikor végigmész a stringen, minden karakter (például `\"4\"`) szöveg. Használd a `Number(char)`-t, hogy a `4`-et számmá alakítsd át, mielőtt hozzáadnád az összeghez."
     },
     "whichLoop": {
-      "question": "Hogyan haladjak tovább, ha nem tudom, hány menetre van szükség?",
-      "answer": "Előre nem tudod, hányszor kell összeadnod a számjegyeket, ezért a `while` ciklus remek választás. Addig fusson a ciklus, amíg a számnak egynél több számjegye van."
+      "question": "Hogyan folytassam, ha nem tudom, hány menetre van szükségem?",
+      "answer": "Nem tudod előre, hányszor kell összeadnod a számjegyeket, ezért a `while` ciklus remek választás. Addig fusson a ciklus, amíg a számnak egynél több számjegye van."
     },
     "keepGoing": {
       "question": "Mikor álljak meg?",
@@ -74,16 +74,16 @@
     }
   },
   "checks": {
-    "mustUseWhile": "Majdnem! Ebben a feladatban azt szeretnénk, hogy egy `while` ciklust használj, hogy addig összegezz, amíg egy számjegy marad.",
-    "tooManyLines": "Nagyon közel! A megoldásod működik, de egy kicsit hosszú. Nézd meg, hogy tudod-e egyszerűsíteni."
+    "mustUseWhile": "Majdnem! Ehhez a feladathoz azt szeretnénk, hogy egy `while` ciklust használj, és addig összegezz, amíg egy számjegy marad.",
+    "tooManyLines": "Folytasd! Nézd meg, le tudod-e rövidíteni 10 sornyi kódra."
   },
   "functions": {
     "number": {
-      "description": "Számjegyeket tartalmazó string átalakítása számmá",
+      "description": "Alakíts át egy számjegyeket tartalmazó stringet számmá.",
       "category": "Típuskonverzió"
     },
     "string": {
-      "description": "Szám átalakítása stringgé",
+      "description": "Alakíts át egy számot stringgé.",
       "category": "Típuskonverzió"
     }
   }

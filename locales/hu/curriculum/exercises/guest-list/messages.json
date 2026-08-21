@@ -1,64 +1,64 @@
 {
   "tasks": {
     "countChancersInQueue": {
-      "name": "Beugrók száma",
-      "description": "Írj egy függvényt, amely a sor és a vendéglista alapján visszaadja, hogy a sorban állók közül hányan nincsenek a vendéglistán."
+      "name": "Számold meg a beugrókat",
+      "description": "Írj egy függvényt, ami megkapja a sort és a vendéglistát, és visszaadja, hogy a sorban állók közül hányan nincsenek a vendéglistán."
     },
     "solveTightly": {
-      "name": "Tömör megoldás",
-      "description": "Bónusz: ezt sokkal tömörebben is meg lehet írni, mint gondolnád. Le tudod redukálni a teljes megoldást pár sorra?"
+      "name": "Oldd meg 9 sorban",
+      "description": "Bónusz: ezt sokkal tömörebben is meg lehet írni, mint gondolnád. Próbáld meg 9 sor kóddal vagy annál kevesebbel megoldani."
     }
   },
   "scenarios": {
     "emptyQueue": {
-      "name": "Még senki sem érkezett meg",
-      "description": "Üres sor, így senki sem vár a bejutásra."
+      "name": "Még senki nem érkezett meg",
+      "description": "Üres sor, így senki sem vár arra, hogy bejusson."
     },
     "everyoneChancingIt": {
-      "name": "Mindenki beugró",
+      "name": "Az egész sor beugrókból áll",
       "description": "Egy sor, ahol a várakozók közül senki sincs a vendéglistán."
     },
     "everyoneInvited": {
-      "name": "Mindenki meghívott",
-      "description": "Egy sor, ahol a várakozók mindegyike rajta van a vendéglistán."
+      "name": "Mindenki meg van hívva",
+      "description": "Egy sor, ahol minden várakozó rajta van a vendéglistán."
     },
     "mixedQueue": {
       "name": "Vegyes sor",
-      "description": "Egy sor, ahol a várakozók egy része meghívott, más része nem. Az egyik beugró neve nagyon hasonlít egy vendéglistán szereplő névre."
+      "description": "Egy sor, ahol a várakozók egy része rajta van a vendéglistán, más része nem. Az egyik beugró neve nagyon hasonlít egy listán szereplő névre."
     },
     "guestsWhoHaventArrived": {
-      "name": "Vendégek még dugóban",
-      "description": "Egy vendéglista rengeteg névvel, de a legtöbbjük még nem ért a sorhoz."
+      "name": "Dugóban ragadt vendégek",
+      "description": "Egy vendéglista, amelyen sok név szerepel, de a legtöbb ember még nem érte el a sort."
     },
     "longQueueShortList": {
       "name": "Hosszú sor, rövid lista",
-      "description": "Nagy sor kint, de csak pár név a vendéglistán."
+      "description": "Kint hosszú a sor, de a vendéglistán csak néhány név szerepel."
     },
     "guestListBonusLineCount": {
-      "name": "Tiszta, rendezett: vegyes sor",
-      "description": "Ugyanaz a vegyes sor, mint korábban, de ezúttal a megoldásodnak sokkal kevesebb sorba kell férnie."
+      "name": "Tiszta és rendezett: vegyes sor",
+      "description": "Ugyanaz a vegyes sor, mint korábban, de ezúttal próbáld meg 9 sor kóddal vagy annál kevesebbel megoldani."
     }
   },
   "checks": {
-    "tooManyLines": "Folytasd! Próbáld meg kevesebb sorban megoldani."
+    "tooManyLines": "Csak így tovább! Nézd meg, le tudsz-e menni 9 sor kódra."
   },
   "hints": {
     "keepingTrack": {
-      "question": "Mit kell számon tartanom menet közben?",
-      "answer": "A válasz egyetlen szám, és addig nem tudod, amíg mindenkit meg nem néztél. Kérdezd meg magadtól két dolgot: mi legyen ez a szám, mielőtt bárkire is ránéztél, és mi történjen vele, amikor kiderül, hogy valaki **nincs** meghívva?"
+      "question": "Mit kell nyomon követnem, ahogy haladok?",
+      "answer": "A válasz egyetlen szám, és addig nem tudod, amíg mindenkit meg nem néztél. Ezért kérdezd meg magadtól két dolgot: mi legyen ez a szám, mielőtt bárkit is megnéztél volna, és mi történjen vele, amikor kiderül, hogy valaki **nincs** meghívva?"
     },
     "whichList": {
-      "question": "Itt két lista van. Melyiken megyek végig?",
-      "answer": "Gondold át, mit számol a válasz. A **sorban** álló emberek számát, tehát a soron kell végigmenned egyesével. A vendéglistán nem mész végig, azt csak ellenőrzésre használod minden egyes embernél."
+      "question": "Két lista van itt. Melyiken haladok végig?",
+      "answer": "Gondold végig, mit számol a válasz. Ez a **sorban** álló emberek számát jelenti, tehát a sort kell egyesével bejárnod. A vendéglista nem olyan, amin végigmész, hanem az, amivel mindenkit összehasonlítasz."
     },
     "realLifeBouncer": {
-      "question": "Hogyan csinálná ezt egy igazi kidobó egy vágólappal?",
-      "answer": "Képzeld el, ahogy a sor elején áll, egyik kezében a vágólap, és lépked hátrafelé. Csak a legvégén kiabálja be a végső számot, miután az utolsó emberhez is elért. Mit csinál közben minden egyes emberrel, és mit kezd azokkal, akiknek a nevét nem találja?"
+      "question": "Hogyan csinálná ezt egy igazi kidobó vágólappal?",
+      "answer": "Képzeld el, ahogy a sor elején áll, egyik kezében a vágólappal, és hátrafelé halad. Csak akkor kiáltja ki a végső számot, amikor eljutott az utolsó emberhez is. Mit csinál minden egyes emberrel útközben, és mit tesz azokkal, akiknek a nevét nem találja?"
     }
   },
   "functions": {
     "includes": {
-      "description": "Ellenőrzi, hogy egy lista tartalmaz-e egy adott elemet (a feladat stdlib-je biztosítja).",
+      "description": "Ellenőrizd, hogy egy lista tartalmaz-e egy adott elemet (a feladat stdlib-je biztosítja)",
       "category": "Listaműveletek"
     }
   }

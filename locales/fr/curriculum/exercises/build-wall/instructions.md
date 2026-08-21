@@ -1,10 +1,10 @@
 ---
 title: "Construis le mur"
 description: "Construis un mur en partant de zéro, brique par brique, rangée par rangée."
-en_md5: f8972d95a07cefdda884ecba9431a61b
+en_md5: 1cad91fdd523a7af36acc157e3e626d6
 ---
 
-La dernière fois que tu as vu le mur, tu avais ajouté la rangée du haut pour le terminer. Dans cet exercice, on va plus loin : tu construis un mur entier en partant de zéro, soit 55 briques au total.
+La dernière fois que tu as vu le mur, tu avais ajouté la rangée du haut pour le terminer. Dans cet exercice, on va plus loin : tu vas construire un mur entier en partant de zéro, soit 55 briques au total.
 
 Le mur final doit ressembler à ceci :
 
@@ -13,9 +13,10 @@ Le mur final doit ressembler à ceci :
 Ce qu'il faut savoir :
 
 - **Chaque** brique fait 10 de haut et 20 de large.
+- Les briques peuvent commencer ou se terminer **en dehors** du _canvas_ si besoin, mais elles ne doivent pas se trouver **entièrement** en dehors du _canvas_.
 - Les rangées alternent entre celles qui commencent au bord gauche (5 briques) et celles qui commencent hors de l'écran, à gauche (6 briques). (La rangée du bas en compte 5, celle du haut 6.)
 - La fonction `rectangle` ne peut apparaître qu'une seule fois dans ton code !
 
-Le but de cet exercice est de te faire expérimenter l'utilisation combinée des blocs `repeat` et des conditions. Il existe de nombreuses façons de résoudre cet exercice. Ton défi est de le résoudre de façon à obtenir un code propre et satisfaisant.
+Le but de cet exercice est de te faire expérimenter en combinant des blocs `repeat` et des conditions. Il existe de nombreuses façons de résoudre cet exercice, et ton défi est de le résoudre d'une manière qui aboutisse à un code propre et satisfaisant.
 
-Une bonne question à se poser est : « Comment un maçon s'y prendrait-il dans la vraie vie ? »
+Une bonne question à se poser : « Comment un maçon s'y prendrait-il dans la vraie vie ? »
