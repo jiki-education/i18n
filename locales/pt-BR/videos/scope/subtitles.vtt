@@ -1,0 +1,255 @@
+WEBVTT
+
+NOTE en_md5 06d0de241694c5f7ca95fb260eaf98a7
+
+00:00:00.400 --> 00:00:02.620
+Olá, bem-vindo de volta. Vamos retomar
+
+00:00:02.680 --> 00:00:04.960
+onde ficamos no último vídeo. Então,
+
+00:00:05.040 --> 00:00:07.870
+tínhamos este código que desenhava um círculo
+
+00:00:07.900 --> 00:00:09.940
+num lugar diferente sempre que rodava.
+
+00:00:11.600 --> 00:00:14.220
+Se quisermos desenhar 10 círculos
+
+00:00:14.400 --> 00:00:17.240
+em lugares diferentes, podíamos combinar isso
+
+00:00:17.300 --> 00:00:21.710
+com um laço. Espero que isso já te pareça
+
+00:00:21.760 --> 00:00:24.180
+bastante simples. Mas, se você está prestando
+
+00:00:24.240 --> 00:00:27.500
+muita atenção, deve ter reparado numa coisa
+
+00:00:27.800 --> 00:00:30.760
+estranha aqui. Se você não vê logo qual é o
+
+00:00:30.820 --> 00:00:32.640
+problema, dê uma pausa no vídeo uns
+
+00:00:32.680 --> 00:00:35.100
+segundos e tente entender o que é que
+
+00:00:35.140 --> 00:00:40.100
+parece estranho aqui. Pronto, espero que você tenha
+
+00:00:40.160 --> 00:00:42.900
+entendido. Se não, dê uma pausa agora. Se
+
+00:00:42.920 --> 00:00:44.540
+você não descobrir, não tem problema.
+
+00:00:44.800 --> 00:00:47.080
+É sutil, é normal você não ter visto.
+
+00:00:48.560 --> 00:00:50.320
+Lá atrás, disse que havia uma regra:
+
+00:00:50.680 --> 00:00:54.340
+as caixas nas prateleiras do Jiki precisam ter
+
+00:00:54.460 --> 00:00:59.880
+nomes únicos, e a palavra-chave let cria
+
+00:00:59.940 --> 00:01:02.060
+uma caixa nova cada vez que você a usa.
+
+00:01:03.840 --> 00:01:05.960
+Mas, como o let está dentro de um laço,
+
+00:01:06.880 --> 00:01:09.780
+o Jiki vai criar uma caixa nova sempre
+
+00:01:09.900 --> 00:01:13.460
+que o laço roda. Então, o código está
+
+00:01:13.500 --> 00:01:16.720
+errado ou tem outra coisa estranha acontecendo aqui?
+
+00:01:18.360 --> 00:01:19.840
+Afinal, o código está correto.
+
+00:01:20.840 --> 00:01:24.540
+Isso é JavaScript perfeitamente válido e funciona
+
+00:01:24.580 --> 00:01:27.400
+por causa de um conceito chamado escopo, ou scoping.
+
+00:01:28.940 --> 00:01:31.620
+O escopo é algo que, no início, provavelmente
+
+00:01:31.700 --> 00:01:35.000
+parece bastante simples, mas eu te garanto que ele
+
+00:01:35.040 --> 00:01:37.370
+vai causar dores de cabeça durante o resto
+
+00:01:37.420 --> 00:01:41.030
+da sua carreira. Até os desenvolvedores mais
+
+00:01:41.080 --> 00:01:44.830
+experientes têm problemas com o escopo, e o JavaScript
+
+00:01:44.860 --> 00:01:48.060
+é uma das linguagens mais complicadas neste aspecto.
+
+00:01:48.120 --> 00:01:50.200
+Estou te dizendo isso para que, quando
+
+00:01:50.240 --> 00:01:53.000
+você tiver problemas com o escopo, não se sinta
+
+00:01:53.060 --> 00:01:55.520
+mal com você mesmo. Mas também quero
+
+00:01:55.560 --> 00:01:57.730
+que você preste mesmo atenção a esta parte,
+
+00:01:57.780 --> 00:02:02.400
+porque é importante. Quando você vê uma chave
+
+00:02:02.960 --> 00:02:06.460
+no código, ela cria aquilo a que se chama
+
+00:02:06.720 --> 00:02:09.759
+um novo escopo. O que quer dizer isso? Bem,
+
+00:02:09.820 --> 00:02:12.920
+você pode imaginar que o Jiki cria um novo
+
+00:02:12.980 --> 00:02:15.420
+conjunto pequeno de prateleiras na sua oficina
+
+00:02:15.460 --> 00:02:18.740
+sempre que vê uma chave. E todas as caixas
+
+00:02:18.800 --> 00:02:22.370
+que ele cria enquanto está trabalhando, rodando
+
+00:02:22.400 --> 00:02:26.580
+código dentro dessas chaves, essas caixas, as caixas novas,
+
+00:02:26.640 --> 00:02:29.340
+vão para o novo conjunto pequeno de prateleiras,
+
+00:02:29.440 --> 00:02:32.680
+e não para as principais. E quando o Jiki
+
+00:02:32.720 --> 00:02:37.140
+chega à chave de fechamento correspondente, joga
+
+00:02:37.240 --> 00:02:39.660
+fora todas as caixas que estão nesse
+
+00:02:39.700 --> 00:02:43.660
+conjunto secundário de prateleiras. Portanto, sempre que
+
+00:02:43.680 --> 00:02:45.840
+temos um laço como este, podemos
+
+00:02:45.920 --> 00:02:49.320
+criar caixas que duram apenas o tempo
+
+00:02:49.440 --> 00:02:53.380
+de cada duração do laço. As caixas left
+
+00:02:53.420 --> 00:02:55.829
+e top que você está vendo aqui só
+
+00:02:55.880 --> 00:02:59.440
+duram até chegarmos à chave de fechamento,
+
+00:03:00.040 --> 00:03:03.320
+e depois são jogadas fora. E o Jiki
+
+00:03:03.380 --> 00:03:06.280
+chega a essa chave de fechamento sempre que
+
+00:03:06.340 --> 00:03:09.200
+o laço roda. Neste programa, são 10
+
+00:03:09.220 --> 00:03:12.600
+vezes. Portanto, ele cria uma caixa chamada
+
+00:03:12.640 --> 00:03:14.769
+left 10 vezes e volta a jogá-la fora.
+
+00:03:16.480 --> 00:03:18.500
+Então, quando você cria uma variável, precisa
+
+00:03:18.520 --> 00:03:20.260
+decidir quanto tempo você quer que ela
+
+00:03:20.320 --> 00:03:22.760
+dure. Se você quer que ela viva por
+
+00:03:22.820 --> 00:03:24.780
+muito tempo, ela tem que ficar fora de
+
+00:03:24.820 --> 00:03:28.180
+quaisquer chaves. Se você quer que dure
+
+00:03:28.240 --> 00:03:30.960
+apenas uma iteração, uma duração do laço,
+
+00:03:31.040 --> 00:03:33.000
+então você pode colocá-la dentro das
+
+00:03:33.060 --> 00:03:36.250
+chaves. Está vendo como isso pode
+
+00:03:36.280 --> 00:03:37.700
+ficar um pouco confuso?
+
+00:03:37.840 --> 00:03:41.390
+Então, uma boa regra para manter isso
+
+00:03:41.460 --> 00:03:43.960
+simples quando você está começando é manter
+
+00:03:44.080 --> 00:03:45.920
+todas as variáveis perto do topo do
+
+00:03:45.940 --> 00:03:48.590
+seu código, fora das chaves, e
+
+00:03:48.640 --> 00:03:51.420
+só atualizá-las lá dentro. Por exemplo,
+
+00:03:51.440 --> 00:03:54.350
+podíamos escrever o código acima com apenas
+
+00:03:54.400 --> 00:03:56.700
+uma caixa left e uma caixa top, colocadas em
+
+00:03:56.820 --> 00:03:59.600
+zero no início e atualizadas de cada vez
+
+00:03:59.609 --> 00:04:02.200
+dentro do laço. Também é perfeitamente válido.
+
+00:04:03.580 --> 00:04:05.480
+Nenhuma das duas está certa ou errada.
+
+00:04:05.500 --> 00:04:08.380
+Há boas práticas, mas vamos aprender
+
+00:04:08.420 --> 00:04:11.660
+sobre elas mais tarde. Por enquanto, experimente,
+
+00:04:11.720 --> 00:04:13.900
+divirta-se, veja o que te parece mais
+
+00:04:13.920 --> 00:04:16.190
+confortável e não se preocupe com isso. Até
+
+00:04:16.200 --> 00:04:16.700
+o próximo vídeo.

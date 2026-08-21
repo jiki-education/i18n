@@ -1,101 +1,101 @@
 {
   "tasks": {
     "encode": {
-      "name": "�",
-      "description": "�"
+      "name": "Codifique uma string",
+      "description": "Escreva uma função chamada `encode` que percorre a string, contando quantas vezes cada caractere se repete em sequência. Substitua cada sequência de dois ou mais caracteres pelo número seguido do caractere e deixe os caracteres isolados como estão."
     },
     "decode": {
-      "name": "�",
-      "description": "�"
+      "name": "Decodifique uma string",
+      "description": "Escreva uma função chamada `decode` que inverte o processo. Leia o número à frente de um caractere e repita esse caractere esse número de vezes. Os números podem ter mais de um dígito."
     }
   },
   "scenarios": {
     "rleEncodeEmpty": {
-      "name": "�",
-      "description": "�"
+      "name": "Codificar uma string vazia",
+      "description": "Codificar uma string vazia retorna uma string vazia."
     },
     "rleEncodeSingles": {
-      "name": "�",
-      "description": "�"
+      "name": "Caracteres isolados não são contados",
+      "description": "Os caracteres que aparecem apenas uma vez são codificados sem número."
     },
     "rleEncodeNoSingles": {
-      "name": "�",
-      "description": "�"
+      "name": "Uma string sem caracteres isolados",
+      "description": "As sequências de caracteres repetidos são substituídas por um número e o caractere."
     },
     "rleEncodeMixed": {
-      "name": "�",
-      "description": "�"
+      "name": "Caracteres isolados misturados com sequências",
+      "description": "Sequências e caracteres isolados podem aparecer misturados na mesma string."
     },
     "rleEncodeWhitespace": {
-      "name": "�",
-      "description": "�"
+      "name": "Espaços em branco na string",
+      "description": "Os espaços são tratados como qualquer outro caractere, incluindo em sequências."
     },
     "rleEncodeLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "Caracteres minúsculos",
+      "description": "A codificação funciona da mesma forma para letras minúsculas."
     },
     "rleDecodeEmpty": {
-      "name": "�",
-      "description": "�"
+      "name": "Decodificar uma string vazia",
+      "description": "Decodificar uma string vazia retorna uma string vazia."
     },
     "rleDecodeSingles": {
-      "name": "�",
-      "description": "�"
+      "name": "Decodificar caracteres isolados",
+      "description": "Os caracteres sem número à frente aparecem uma vez."
     },
     "rleDecodeNoSingles": {
-      "name": "�",
-      "description": "�"
+      "name": "Decodificar uma string de sequências",
+      "description": "Um número seguido de um caractere se expande nesse número de cópias do caractere."
     },
     "rleDecodeMixed": {
-      "name": "�",
-      "description": "�"
+      "name": "Decodificar caracteres isolados misturados com sequências",
+      "description": "Os números com mais de um dígito têm que ser lidos por completo antes de expandir."
     },
     "rleDecodeWhitespace": {
-      "name": "�",
-      "description": "�"
+      "name": "Decodificar espaços em branco",
+      "description": "Os espaços são expandidos como qualquer outro caractere."
     },
     "rleDecodeLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "Decodificar caracteres minúsculos",
+      "description": "A decodificação funciona da mesma forma para letras minúsculas."
     }
   },
   "hints": {
     "whatIsRle": {
-      "question": "�",
-      "answer": "�"
+      "question": "O que faz a codificação por comprimento de sequência, afinal?",
+      "answer": "Comprime sequências do mesmo caractere num número mais o caractere. `\"AAAA\"` se transforma em `\"4A\"`. Um caractere isolado fica como está, sem número à frente, então `\"B\"` continua `\"B\"`."
     },
     "countRuns": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como conto uma sequência de caracteres repetidos?",
+      "answer": "Percorra a string mantendo registro do caractere anterior e do número de vezes que ele se repetiu. Sempre que o caractere muda, escreva a sequência concluída e comece a contar o novo caractere."
     },
     "singleChars": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como evito escrever um número para caracteres isolados?",
+      "answer": "Só coloque o número à frente quando a contagem for maior do que 1. Se um caractere apareceu apenas uma vez, escreva apenas o caractere."
     },
     "decodeDigits": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como sei se um caractere é um dígito durante a decodificação?",
+      "answer": "Verifique se o caractere é um dos `0123456789`, por exemplo com `\"0123456789\".includes(char)`. Se for, faz parte de uma contagem. Se não for, é o caractere a repetir."
     },
     "decodeMultiDigit": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como leio uma contagem com mais de um dígito, como 12?",
+      "answer": "Uma contagem como `12` chega um dígito de cada vez, então construa-a à medida que você avança em vez de tratar cada dígito separadamente. Sempre que surge outro dígito, o número que você tem até agora precisa crescer por um fator de dez para lhe dar espaço antes de você adicionar o novo dígito. `Number()` transforma um caractere de dígito num número com o qual você pode fazer contas."
     },
     "decodeRepeat": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como repito o caractere o número certo de vezes?",
+      "answer": "Assim que você encontra um caractere que não é um dígito, use um laço que se repete `count` vezes, adicionando o caractere ao seu resultado a cada vez. Depois redefina a contagem para 0, pronta para a próxima sequência. Se não havia contagem, trate-a como 1."
     }
   },
   "functions": {
     "number": {
-      "description": "�",
-      "category": "�"
+      "description": "Converte uma string que contém um dígito num número",
+      "category": "Conversão de tipos"
     },
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "Verifica se uma string contém uma string menor",
+      "category": "Operações com strings"
     }
   },
   "checks": {
-    "mustUseFor": "�"
+    "mustUseFor": "Quase! Para este exercício, queremos que você use um laço `for` para repetir cada caractere o número certo de vezes."
   }
 }

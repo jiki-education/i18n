@@ -1,37 +1,37 @@
 {
   "describers": {
-    "move": "�"
+    "move": "moveu o canhão laser para a direita"
   },
   "checks": {
-    "notShotAllAliens": "�",
-    "tooManyLines": "�"
+    "notShotAllAliens": "Você não abateu todos os alienígenas.",
+    "tooManyLines": "Sua solução tem linhas de código demais. Experimente usar um laço repeat dentro de outro laço repeat para deixá-la mais curta!"
   },
   "tasks": {
     "nestedRepeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "Use laços repeat aninhados para abater todos os alienígenas",
+      "description": "Encontre o padrão nas posições dos alienígenas e use um laço repeat dentro de outro laço repeat para destruir todos eles em 7 linhas de código ou menos."
     }
   },
   "scenarios": {
     "nestedRepeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "Repeat aninhado e disparar",
+      "description": "Use laços repeat aninhados para abater todos os alienígenas"
     }
   },
   "hints": {
     "cantGetTo7Lines": {
-      "question": "�",
-      "answer": "�"
+      "question": "Não consigo chegar às 7 linhas de código.",
+      "answer": "Pense neste nível como dois blocos de coisas que precisam acontecer.\n\n- O primeiro bloco é o interior, onde disparamos 4 vezes - certifique-se de que ele tem três linhas.\n- O bloco exterior é o bloco interior com algum movimento de cada lado. Esse bloco exterior também precisa ser repetido algumas vezes.\n\nSe você estruturar seu código desta forma, ele deve acabar naturalmente com 7 linhas de código."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Move o canhão laser **uma posição para a direita**. Se você sair pela borda direita da tela, você perde!",
+      "category": "Movimento"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Dispara o laser para cima. **Só dispare quando houver um alienígena acima de você**, ou você perde o jogo!",
+      "category": "Ação"
     }
   }
 }

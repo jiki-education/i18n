@@ -1,40 +1,40 @@
 {
   "describers": {
-    "move": "�"
+    "move": "moveu o canhão laser para a direita"
   },
   "checks": {
-    "notShotAllAliens": "�"
+    "notShotAllAliens": "Você não abateu todos os alienígenas."
   },
   "tasks": {
     "shootTheAliens": {
-      "name": "�",
-      "description": "�"
+      "name": "Abata todos os alienígenas",
+      "description": "Mova seu canhão laser para a direita e dispare contra cada alienígena ao passar por baixo dele. Não erre nem se mova para fora do limite!"
     }
   },
   "scenarios": {
     "shootTheAliens": {
-      "name": "�",
-      "description": "�"
+      "name": "Abata os alienígenas",
+      "description": "Mova-se para a direita e abata todos os alienígenas"
     }
   },
   "hints": {
     "whatDoINeedToDo": {
-      "question": "�",
-      "answer": "�"
+      "question": "O que eu preciso fazer?",
+      "answer": "Assim como no labirinto, você precisa mover o seu bonequinho (desta vez um laser, não uma pessoa). Mas você também precisa disparar com o laser! Mova o laser para debaixo de um alienígena e depois dispare. Em seguida, mova-se outra vez até estar embaixo do próximo alienígena e dispare de novo. Continue até abater o último alienígena!"
     },
     "cantWasteAmmo": {
-      "question": "�",
-      "answer": "�"
+      "question": "Aparece uma mensagem dizendo que eu não posso desperdiçar munições.",
+      "answer": "Você só deve usar `shoot()` quando estiver mesmo embaixo de um alienígena. Experimente se mover mais um passo (ou será que você foi um passo longe demais?)"
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Move o canhão laser **uma posição para a direita**. Se você se mover para fora do limite direito da tela, você perde!",
+      "category": "Movimento"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Dispara o laser para cima. **Dispare apenas quando houver um alienígena acima de você**, senão você perde o jogo!",
+      "category": "Ação"
     }
   }
 }

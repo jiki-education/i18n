@@ -1,54 +1,54 @@
 {
   "checks": {
-    "leftCheek": "�",
-    "rightCheek": "�",
-    "leftEar": "�",
-    "rightEar": "�",
-    "leftFace": "�",
-    "rightFace": "�",
-    "nose": "�",
-    "leftFaceAboveEar": "�",
-    "rightFaceAboveEar": "�",
-    "noseAboveFace": "�"
+    "leftCheek": "A bochecha esquerda deve ser um triângulo branco no lugar certo.",
+    "rightCheek": "A bochecha direita deve ser um triângulo branco no lugar certo.",
+    "leftEar": "A orelha esquerda deve ser um triângulo marrom no lugar certo.",
+    "rightEar": "A orelha direita deve ser um triângulo marrom no lugar certo.",
+    "leftFace": "A metade esquerda da cara deve ser um triângulo laranja no lugar certo.",
+    "rightFace": "A metade direita da cara deve ser um triângulo laranja no lugar certo.",
+    "nose": "O nariz precisa de dois triângulos cor de carvão. Você pode dividi-lo em cima/baixo ou esquerda/direita.",
+    "leftFaceAboveEar": "A metade esquerda da cara deve ser desenhada **por cima** da orelha esquerda.",
+    "rightFaceAboveEar": "A metade direita da cara deve ser desenhada **por cima** da orelha direita.",
+    "noseAboveFace": "O nariz deve ficar **por cima** da cara."
   },
   "tasks": {
     "drawFox": {
-      "name": "�",
-      "description": "�"
+      "name": "Desenhe a cara da raposa",
+      "description": "Use triângulos para construir uma cara de raposa geométrica sobre o fundo cinza."
     }
   },
   "scenarios": {
     "drawFox": {
-      "name": "�",
-      "description": "�"
+      "name": "Desenhe a cara da raposa",
+      "description": "Construa uma cara de raposa geométrica com triângulos."
     }
   },
   "hints": {
     "callTriangle": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu chamo a função `triangle`?",
+      "answer": "Passe 7 argumentos em ordem: os três pontos dos cantos (`x1, y1, x2, y2, x3, y3`) e depois a string da cor, por exemplo `triangle(50, 10, 30, 50, 70, 50, \"orange\")`."
     },
     "drawOrder": {
-      "question": "�",
-      "answer": "�"
+      "question": "Em que ordem eu devo desenhar as partes para que elas se sobreponham corretamente?",
+      "answer": "As formas desenhadas depois ficam por cima das anteriores. Desenhe primeiro as bochechas brancas, para que as metades laranja da cara cubram a maior parte delas e deixem só as pontas das bochechas à vista."
     },
     "colors": {
-      "question": "�",
-      "answer": "�"
+      "question": "Que cores vão em cada parte?",
+      "answer": "As orelhas são `\"brown\"`, as metades da cara são `\"orange\"`, as bochechas são `\"white\"` e o nariz é `\"charcoal\"`. Lembre-se de que as cores são strings, então elas precisam de aspas."
     },
     "symmetry": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu descubro as coordenadas do lado direito sem passar o mouse por cima?",
+      "answer": "A raposa é simétrica em relação ao eixo vertical do meio. Se um ponto do lado esquerdo está em x=`30` e o centro está em x=`50`, o ponto espelhado está em x=`70` (à mesma distância do centro, do outro lado). Os valores de y continuam os mesmos."
     },
     "multiplesOf5": {
-      "question": "�",
-      "answer": "�"
+      "question": "Por que as minhas coordenadas não funcionam?",
+      "answer": "Todos os valores de que você precisa são múltiplos de 5. Se um canto parecer um pouco fora do lugar, provavelmente você usou um número como `12` ou `38`. Ajuste-o para o múltiplo de 5 mais próximo (`10`, `15`, `40`, etc.)."
     }
   },
   "functions": {
     "triangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um triângulo com três pontos de canto e uma cor",
+      "category": "Desenhar formas"
     }
   }
 }

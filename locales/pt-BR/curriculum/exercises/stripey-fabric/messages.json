@@ -1,51 +1,51 @@
 {
   "checks": {
-    "stripe1Purple": "�",
-    "stripe2Blue": "�",
-    "stripe3Yellow": "�",
-    "stripe4Green": "�",
-    "stripe5Yellow": "�",
-    "stripe6Blue": "�",
-    "stripe8Green": "�",
-    "stripe12Green": "�",
-    "stripe19Yellow": "�",
-    "stripe20Purple": "�",
-    "rectangleOnce": "�"
+    "stripe1Purple": "A listra 1 é uma listra das extremidades, então ela deve ser purple.",
+    "stripe2Blue": "A listra 2 deve ser blue (é par, mas não é múltiplo de 4).",
+    "stripe3Yellow": "A listra 3 deve ser yellow (é ímpar e não é uma listra das extremidades).",
+    "stripe4Green": "A listra 4 deve ser green. Ela é um múltiplo de 4, então verifique a regra do múltiplo de 4 antes da regra dos números pares.",
+    "stripe5Yellow": "A listra 5 deve ser yellow (é ímpar e não é uma listra das extremidades).",
+    "stripe6Blue": "A listra 6 deve ser blue (é par, mas não é múltiplo de 4).",
+    "stripe8Green": "A listra 8 deve ser green (é um múltiplo de 4).",
+    "stripe12Green": "A listra 12 deve ser green (é um múltiplo de 4).",
+    "stripe19Yellow": "A listra 19 deve ser yellow (é ímpar e não é uma listra das extremidades).",
+    "stripe20Purple": "A listra 20 é uma listra das extremidades, então ela deve ser purple (apesar de ser par).",
+    "rectangleOnce": "Você está usando a função <code>rectangle</code> em mais de um lugar. Ela só deve aparecer uma vez, dentro de um laço: não escreva as 20 listras à mão!"
   },
   "tasks": {
     "weaveTheFabric": {
-      "name": "�",
-      "description": "�"
+      "name": "Teça o tecido",
+      "description": "Desenhe 20 listras verticais. As duas listras das extremidades são purple; de resto, os múltiplos de 4 são green, as outras listras pares são blue e as listras ímpares são yellow."
     }
   },
   "scenarios": {
     "weaveTheFabric": {
-      "name": "�",
-      "description": "�"
+      "name": "Teça o tecido listrado",
+      "description": "Desenhe as 20 listras com as cores corretas."
     }
   },
   "hints": {
     "howToDraw20Stripes": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como desenho 20 listras em lugares diferentes?",
+      "answer": "Mantenha um contador (chame-o de `i`) e incremente-o em 1 dentro de um laço `repeat`. A listra número `i` tem `5` de largura, então a aresta esquerda dela é `(i - 1) * 5`. Desenhe ali um `rectangle` com `5` de largura e `100` de altura."
     },
     "endStripesPurple": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como faço para que apenas as duas listras das extremidades sejam purple?",
+      "answer": "As listras das extremidades são a primeira e a última. Uma única comparação não consegue capturar 'um valor OU outro', então use `||` (ou): algo como `if (n === 3 || n === 7)` é verdadeiro para qualquer um dos valores. Aplique isso aos números das duas listras das extremidades."
     },
     "multipleOf4VsEven": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como distingo um múltiplo de 4 de um número par comum?",
+      "answer": "Use o operador `%` (resto): `n % 4 === 0` é verdadeiro apenas para múltiplos de 4, e `n % 2 === 0` é verdadeiro para todos os números pares. Os múltiplos de 4 também são pares, então verifique primeiro a regra mais restrita do múltiplo de 4."
     },
     "stripe4Blue": {
-      "question": "�",
-      "answer": "�"
+      "question": "A listra 4 fica blue, mas devia ser green. Por quê?",
+      "answer": "A ordem importa numa cadeia de `if` / `else if`. 4 é múltiplo de 4 e par, então, se você verificar `i % 2 === 0` primeiro, ela fica blue e nunca chega à regra que a torna green. Verifique a regra do múltiplo de 4 antes da regra dos números pares."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um retângulo na posição (left, top) com a largura, altura e cor indicadas.",
+      "category": "Desenhar Formas"
     }
   }
 }

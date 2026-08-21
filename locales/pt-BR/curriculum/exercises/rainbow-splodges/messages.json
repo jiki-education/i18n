@@ -1,42 +1,42 @@
 {
   "checks": {
-    "uniqueColoredCircles": "�",
-    "uniquePositionedCircles": "�",
-    "radiiRange": "�",
-    "insideBox": "�",
-    "touchEdges": "�",
-    "saturationLightnessRange": "�"
+    "uniqueColoredCircles": "A gente esperava pelo menos 50 círculos com cores diferentes entre si. Certifique-se de que cada círculo tem uma cor aleatória.",
+    "uniquePositionedCircles": "A gente esperava pelo menos 30 posições diferentes. Certifique-se de que cada círculo tem uma posição aleatória.",
+    "radiiRange": "O raio de cada círculo deve ser pelo menos 1 e menor que 30.",
+    "insideBox": "Os círculos não podem sair para fora da caixa. Leve em conta o raio de cada círculo ao escolher a posição dele.",
+    "touchEdges": "Nenhum dos seus círculos tocou nas bordas da tela. Se você tem certeza de que seu código está correto, pode ser que os números aleatórios não tenham calhado de pôr um círculo bem numa borda. Tente rodar o código de novo!",
+    "saturationLightnessRange": "A saturação e a luminosidade devem estar as duas entre 20 e 80."
   },
   "tasks": {
     "drawSplodges": {
-      "name": "�",
-      "description": "�"
+      "name": "Desenhe salpicos de arco-íris",
+      "description": "Desenhe 200 círculos em posições aleatórias e com cores aleatórias."
     }
   },
   "scenarios": {
     "rainbowSplodges": {
-      "name": "�",
-      "description": "�"
+      "name": "Salpicos de arco-íris",
+      "description": "Desenhe 200 círculos de cores aleatórias em posições aleatórias."
     }
   },
   "hints": {
     "keepCirclesInBox": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu mantenho os círculos dentro da caixa?",
+      "answer": "A ordem é importante. Você precisa decidir primeiro o raio do círculo e, depois, garantir que as posições de esquerda e de topo nunca o empurrem para fora da caixa."
     },
     "circlesEscapingBox": {
-      "question": "�",
-      "answer": "�"
+      "question": "Não consigo manter meus círculos dentro da caixa",
+      "answer": "Lembre-se de que a posição de um círculo é o centro dele, então você precisa levar em conta o raio para manter o círculo inteiro lá dentro. Se neste momento você deixa uma posição chegar a 0, a borda do círculo vai ficar fora da caixa numa distância igual ao raio. Então, para que valor esse mínimo precisa mudar para o círculo nunca ficar fora da caixa? Depois aplique a mesma lógica ao máximo."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um círculo com o centro em (centerX, centerY), com o raio e a cor indicados",
+      "category": "Desenhar formas"
     },
     "hsl": {
-      "description": "�",
-      "category": "�"
+      "description": "Converte valores de cor HSL (matiz 0-360, saturação 0-100, luminosidade 0-100) numa string de cor hexadecimal",
+      "category": "Cores"
     }
   }
 }

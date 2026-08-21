@@ -1,64 +1,64 @@
 {
   "tasks": {
     "findTilePosition": {
-      "name": "�",
-      "description": "�"
+      "name": "Encontre a posição da peça",
+      "description": "Escreva uma função que encontra a posição de uma peça específica no suporte. Retorne \"Move to position X\" se ela for encontrada, ou \"Error: Tile not on rack\" se não for."
     }
   },
   "scenarios": {
     "tileAtStart": {
-      "name": "�",
-      "description": "�"
+      "name": "Peça no início",
+      "description": "A letra é a primeira peça do suporte."
     },
     "tileInMiddle": {
-      "name": "�",
-      "description": "�"
+      "name": "Peça no meio",
+      "description": "A letra está no meio do suporte."
     },
     "tileAtEnd": {
-      "name": "�",
-      "description": "�"
+      "name": "Peça no fim",
+      "description": "A letra é a última peça do suporte."
     },
     "tileNotFound": {
-      "name": "�",
-      "description": "�"
+      "name": "Peça não encontrada",
+      "description": "A letra não está no suporte."
     },
     "emptyRack": {
-      "name": "�",
-      "description": "�"
+      "name": "Suporte vazio",
+      "description": "Um suporte vazio não tem peças para encontrar."
     },
     "firstOfDuplicates": {
-      "name": "�",
-      "description": "�"
+      "name": "Primeira das repetidas",
+      "description": "Quando a letra aparece várias vezes, retorne a primeira posição."
     },
     "longerRack": {
-      "name": "�",
-      "description": "�"
+      "name": "Suporte maior",
+      "description": "Encontrar uma peça num suporte maior."
     }
   },
   "hints": {
     "trackPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu acompanho a minha posição no suporte?",
+      "answer": "Use uma variável de posição que começa em 1. Cada vez que você olha para uma peça nova, aumenta o valor em 1."
     },
     "lookAtEachTile": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como eu olho para cada peça?",
+      "answer": "Um laço for-each te dá cada caractere do suporte, um de cada vez."
     },
     "onFound": {
-      "question": "�",
-      "answer": "�"
+      "question": "O que eu faço quando encontro a letra?",
+      "answer": "Construa a mensagem de sucesso. Converta o número da posição numa string e depois combine-o com o texto ao redor que o exercício pede, usando concatenação (`+`) ou uma template string. Retorne imediatamente. Você não precisa continuar procurando."
     },
     "addNumberToString": {
-      "question": "�",
-      "answer": "�"
+      "question": "Não consigo adicionar um número a uma string.",
+      "answer": "Você aprendeu duas formas de unir strings. Em vez de concatenar strings, experimente o outro método que você aprendeu."
     },
     "positionAlwaysWrong": {
-      "question": "�",
-      "answer": "�"
+      "question": "Por que a minha posição está sempre errada?",
+      "answer": "Certifique-se de que você está aumentando o contador de posição em cada iteração, e não apenas às vezes. Caso contrário, todas as peças retornam a mesma posição."
     },
     "notInRack": {
-      "question": "�",
-      "answer": "�"
+      "question": "E se a letra não estiver no suporte?",
+      "answer": "Só depois que o laço terminar sem encontrar a letra é que você deve retornar a mensagem de erro. Se você retornar o erro dentro do laço, desiste logo após a primeira peça que não corresponde."
     }
   }
 }

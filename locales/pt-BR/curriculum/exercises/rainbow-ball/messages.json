@@ -1,57 +1,57 @@
 {
   "checks": {
-    "uniqueColoredCircles": "�",
-    "uniquePositionedCircles": "�",
-    "canvasCoverage": "�",
-    "hueBounced": "�",
-    "hueSweep": "�"
+    "uniqueColoredCircles": "Era para haver pelo menos 50 círculos com cores únicas.",
+    "uniquePositionedCircles": "Era para haver pelo menos 30 posições diferentes.",
+    "canvasCoverage": "A bola não pintou o suficiente da tela. Ela deveria saltar até que mais de 80% da tela esteja coberta.",
+    "hueBounced": "O matiz não chegou a atingir os 360 e depois voltou a descer.",
+    "hueSweep": "O rastro de arco-íris não percorreu todas as cores."
   },
   "tasks": {
     "rainbowBall": {
-      "name": "�",
-      "description": "�"
+      "name": "Crie uma bola arco-íris saltitante",
+      "description": "Crie uma bola que salta pela tela, deixando um rastro de círculos coloridos que percorrem as cores do arco-íris."
     }
   },
   "scenarios": {
     "rainbowBall": {
-      "name": "�",
-      "description": "�"
+      "name": "Bola arco-íris",
+      "description": "Desenhe um rastro de arco-íris a partir de círculos diferentes."
     }
   },
   "hints": {
     "stateToTrack": {
-      "question": "�",
-      "answer": "�"
+      "question": "Que estado eu preciso controlar?",
+      "answer": "A posição da bola e o jeito como ela se move. Mantenha-as separadas: uma variável para *onde* a bola está, outra para *como ela está mudando*. A mesma ideia se aplica ao matiz: você precisa do valor atual e da direção em que ele está seguindo."
     },
     "moveAndShift": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como faço a bola se mover e a cor mudar em cada iteração?",
+      "answer": "No início de cada iteração do laço, adicione as variáveis de direção à posição e ao `hue`. Dessa forma, as variáveis de direção controlam totalmente o movimento. Inverter o sinal ou alterar o tamanho dessas variáveis muda instantaneamente o jeito como a bola se move e como a cor muda."
     },
     "velocityTip": {
-      "question": "�",
-      "answer": "�"
+      "question": "Não consigo entender como fazer isso. Alguma dica?",
+      "answer": "O que são esses números pelos quais `x` e `y` mudam? Eles são uma mistura de velocidade (o tamanho do número) e direção (se movem a bola para a frente ou para trás). Então `2` seria uma velocidade de 2 movendo para a direita ou para baixo. E `-3` seria uma velocidade de 3 movendo para a esquerda ou para cima. Um número que é uma velocidade e uma direção se chama **velocidade** (já é hora de atualizar os nomes das suas variáveis?). Então, quando você quiser mudar a direção da bola, você muda o sinal da velocidade, de positivo para negativo ou vice-versa."
     },
     "bounceOffEdges": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como faço a bola saltar ao tocar nos limites?",
+      "answer": "Depois de atualizar a posição, verifique se `x` ou `y` ultrapassou o limite da tela. Quando isso acontecer, inverta a variável de direção desse eixo. As instruções indicam os limites da tela."
     },
     "randomBounceSpeed": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como faço para que o salto tenha uma velocidade aleatória nova a cada vez?",
+      "answer": "Quando a bola atingir um limite, defina a variável de direção usando `Math.randomInt(min, max)` em vez de simplesmente inverter o sinal. Escolha um intervalo positivo quando ela saltar do lado esquerdo ou de cima, e um intervalo negativo quando saltar do lado direito ou de baixo."
     },
     "cycleHue": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como faço o matiz percorrer as cores do arco-íris?",
+      "answer": "Aplique ao `hue` o mesmo truque da posição. Quando ele sair do intervalo válido, inverta a `hueDirection`. A cor vai então subir até o topo do espectro e voltar a descer sozinha."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um círculo cujo centro está em (centerX, centerY) com o raio e a cor indicados.",
+      "category": "Desenhar Formas"
     },
     "hsl": {
-      "description": "�",
-      "category": "�"
+      "description": "Converte valores de cor HSL (matiz 0-360, saturação 0-100, luminosidade 0-100) numa string de cor hexadecimal.",
+      "category": "Cores"
     }
   }
 }

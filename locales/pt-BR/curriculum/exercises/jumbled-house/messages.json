@@ -1,58 +1,58 @@
 {
   "checks": {
-    "frame": "�",
-    "roof": "�",
-    "leftWindow": "�",
-    "rightWindow": "�",
-    "door": "�",
-    "doorKnob": "�"
+    "frame": "A estrutura da casa não está correta.",
+    "roof": "O telhado da casa não está na posição correta.",
+    "leftWindow": "A janela esquerda não está na posição correta.",
+    "rightWindow": "A janela direita não está na posição correta.",
+    "door": "A porta não está na posição correta.",
+    "doorKnob": "A maçaneta da porta não está na posição correta."
   },
   "tasks": {
     "arrangeHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "Organize a casa corretamente",
+      "description": "Reorganize todas as formas para as posições corretas, de modo a formar uma casa. Trabalhe cada peça com método."
     }
   },
   "scenarios": {
     "drawTheHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "Desenhe a casa",
+      "description": "Coloque todas as formas nas posições corretas para formar uma casa completa."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Por onde começo?",
+      "answer": "Trabalhe as formas por ordem: céu, grama, estrutura da casa, telhado, janelas, porta, maçaneta. Acerte cada uma antes de passar para a seguinte."
     },
     "coordinates": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como funcionam as coordenadas?",
+      "answer": "As coordenadas da tela vão de (0,0), no canto superior esquerdo, a (100,100), no canto inferior direito. Nos retângulos, os valores de esquerda e topo correspondem ao canto superior esquerdo."
     },
     "roofPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como descubro a posição do telhado?",
+      "answer": "O telhado é um triângulo apoiado no topo da estrutura da casa. Pense onde os dois pontos da base precisam ficar, levando em conta o quanto o telhado ultrapassa a casa de cada lado, e onde fica a ponta."
     },
     "windowPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como posiciono as janelas?",
+      "answer": "Cada janela fica afastada das bordas da estrutura da casa. Use a posição e o tamanho da estrutura da casa, junto com os valores de afastamento, para calcular o canto superior esquerdo de cada janela."
     },
     "centerDoor": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como centralizo a porta?",
+      "answer": "Para centralizar uma coisa dentro de uma forma maior, pense no espaço que sobra. Se a casa for mais larga do que a porta, esse espaço se divide igualmente pelos dois lados."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um retângulo na posição (esquerda, topo) com a largura, a altura e a cor indicadas",
+      "category": "Desenhar formas"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um círculo com o centro em (centerX, centerY), com o raio e a cor indicados",
+      "category": "Desenhar formas"
     },
     "triangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um triângulo com três vértices e uma cor",
+      "category": "Desenhar formas"
     }
   }
 }

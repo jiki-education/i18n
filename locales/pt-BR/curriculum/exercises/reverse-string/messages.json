@@ -1,60 +1,60 @@
 {
   "tasks": {
     "reverseStrings": {
-      "name": "�",
-      "description": "�"
+      "name": "Inverta strings",
+      "description": "Inverta uma string para que ela seja lida da direita para a esquerda em vez de da esquerda para a direita."
     }
   },
   "scenarios": {
     "reverseEmptyString": {
-      "name": "�",
-      "description": "�"
+      "name": "String vazia",
+      "description": "Uma string vazia deve retornar uma string vazia quando invertida."
     },
     "reverseWord": {
-      "name": "�",
-      "description": "�"
+      "name": "Uma palavra",
+      "description": "Inverta a palavra 'robot'."
     },
     "reverseCapitalizedWord": {
-      "name": "�",
-      "description": "�"
+      "name": "Uma palavra com maiúscula",
+      "description": "Inverta uma palavra com maiúscula 'Ramen'."
     },
     "reverseSentencePunctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "Frase com pontuação",
+      "description": "Inverta uma frase com pontuação 'I'm hungry!'"
     },
     "reversePalindrome": {
-      "name": "�",
-      "description": "�"
+      "name": "Palíndromo",
+      "description": "Um palíndromo continua igual quando invertido."
     },
     "reverseEvenSizedWord": {
-      "name": "�",
-      "description": "�"
+      "name": "Palavra de tamanho par",
+      "description": "Inverta uma palavra de tamanho par 'drawer'."
     },
     "reverseWideCharacters": {
-      "name": "�",
-      "description": "�"
+      "name": "Caracteres largos",
+      "description": "Inverta caracteres Unicode largos '子猫'."
     },
     "reverseEmojiFamily": {
-      "name": "�",
-      "description": "�"
+      "name": "Família de emojis",
+      "description": "Inverta uma família de emojis."
     },
     "reverseEmojiRainbowFlag": {
-      "name": "�",
-      "description": "�"
+      "name": "Bandeira arco-íris",
+      "description": "Faça uma bandeira arco-íris ao inverter."
     }
   },
   "hints": {
     "reverseByHand": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como posso inverter uma palavra à mão?",
+      "answer": "Você lê da esquerda para a direita, mas escreve da direita para a esquerda. De forma equivalente, você pega cada letra por vez e coloca à frente do que já escreveu."
     },
     "mapToCode": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como é que isso se transforma em código?",
+      "answer": "Percorra a string de entrada caractere a caractere. Para cada caractere, construa o resultado colocando-o à frente. Isso significa colocá-lo na FRENTE do resultado, não no fim."
     },
     "prepend": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como é que eu faço 'prepend' em vez de 'append'?",
+      "answer": "Com o operador `+`, fazer 'prepend' é só uma questão de ordem. Em vez de `result + char` (que faz 'append'), use `char + result` (que faz 'prepend')."
     }
   }
 }

@@ -1,62 +1,62 @@
 {
   "tasks": {
     "countNucleotide": {
-      "name": "�",
-      "description": "�"
+      "name": "Conte um nucleotídeo",
+      "description": "Escreva uma função que conta quantas vezes um nucleotídeo específico (A, C, G ou T) aparece numa cadeia de DNA. Retorne -1 se o nucleotídeo ou qualquer caractere na cadeia for inválido."
     }
   },
   "scenarios": {
     "nucleotideEmptyStrand": {
-      "name": "�",
-      "description": "�"
+      "name": "Cadeia vazia",
+      "description": "Uma cadeia vazia deve retornar 0 para qualquer nucleotídeo válido."
     },
     "nucleotideSingleMatch": {
-      "name": "�",
-      "description": "�"
+      "name": "Cadeia de nucleotídeo único",
+      "description": "Uma cadeia com um único caractere que corresponde ao alvo deve retornar 1."
     },
     "nucleotideRepeated": {
-      "name": "�",
-      "description": "�"
+      "name": "Nucleotídeo repetido",
+      "description": "Uma cadeia de nucleotídeos repetidos deve contar todos eles."
     },
     "nucleotideMixedStrandA": {
-      "name": "�",
-      "description": "�"
+      "name": "Conte A numa cadeia mista",
+      "description": "Conte um nucleotídeo específico numa cadeia mista."
     },
     "nucleotideMixedStrandT": {
-      "name": "�",
-      "description": "�"
+      "name": "Conte T numa cadeia mista",
+      "description": "Conte um nucleotídeo diferente na mesma cadeia."
     },
     "nucleotideInvalidNucleotide": {
-      "name": "�",
-      "description": "�"
+      "name": "Nucleotídeo inválido",
+      "description": "Um nucleotídeo inválido deve retornar -1."
     },
     "nucleotideInvalidStrand": {
-      "name": "�",
-      "description": "�"
+      "name": "Cadeia inválida",
+      "description": "Uma cadeia que contém caracteres inválidos deve retornar -1."
     }
   },
   "hints": {
     "checkValid": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como verifico se o caractere que me pedem é válido?",
+      "answer": "As strings têm um método `includes()` que te diz se uma string aparece dentro de outra. É um jeito prático de perguntar se um caractere é um dos nucleotídeos válidos. Valide antes de começar a contar."
     },
     "invalidNucleotide": {
-      "question": "�",
-      "answer": "�"
+      "question": "O que faço se o nucleotídeo for inválido?",
+      "answer": "Retorne `-1` imediatamente. A especificação usa esse valor para sinalizar uma entrada inválida."
     },
     "countOccurrences": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como conto as ocorrências na cadeia?",
+      "answer": "Percorra cada caractere da cadeia. Se o caractere corresponder ao nucleotídeo que você está contando, adicione 1 a um contador. Retorne o contador no final."
     },
     "validateStrand": {
-      "question": "�",
-      "answer": "�"
+      "question": "Devo validar também a cadeia?",
+      "answer": "Sim. Se algum caractere na cadeia não for um nucleotídeo válido, retorne `-1`. Verifique cada caractere antes de contar."
     }
   },
   "functions": {
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "Verifica se uma string contém uma string menor (fornecida pela biblioteca padrão do nível)",
+      "category": "Operações com strings"
     }
   }
 }

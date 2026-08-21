@@ -1,56 +1,56 @@
 {
   "checks": {
-    "age25NotLetIn": "�",
-    "age18LetIn": "�",
-    "age21NotLetIn": "�",
-    "age20LetIn": "�"
+    "age25NotLetIn": "A pessoa tem 25 anos, então ela devia ter entrado, mas não entrou.",
+    "age18LetIn": "A pessoa tem 18 anos, então ela não devia ter entrado, mas entrou.",
+    "age21NotLetIn": "A pessoa tem 21 anos, então ela devia ter entrado, mas não entrou.",
+    "age20LetIn": "A pessoa tem exatamente 20 anos, não tem mais de 20 anos, então ela não devia ter entrado, mas entrou."
   },
   "tasks": {
     "checkAge": {
-      "name": "�",
-      "description": "�"
+      "name": "Verifique a idade da pessoa",
+      "description": "Obtenha a idade da pessoa e verifique se ela tem mais de 20 anos. Se tiver, deixe-a entrar."
     }
   },
   "scenarios": {
     "age25": {
-      "name": "�",
-      "description": "�"
+      "name": "Idade 25",
+      "description": "A pessoa tem 25 anos, então ela deve entrar."
     },
     "age18": {
-      "name": "�",
-      "description": "�"
+      "name": "Idade 18",
+      "description": "A pessoa tem 18 anos, então ela não deve entrar."
     },
     "age21": {
-      "name": "�",
-      "description": "�"
+      "name": "Idade 21",
+      "description": "A pessoa tem 21 anos, pouco mais de 20, então ela deve entrar."
     },
     "age20": {
-      "name": "�",
-      "description": "�"
+      "name": "Idade 20",
+      "description": "A pessoa tem exatamente 20 anos, ou seja, não tem mais de 20 anos, então ela não deve entrar."
     }
   },
   "hints": {
     "askAge": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como é que eu sei a idade da pessoa?",
+      "answer": "Use a função `askAge()`. Ela retorna um valor diferente em cada cenário."
     },
     "ifStatement": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como é que eu posso variar o que faço?",
+      "answer": "Use uma condicional `if`. Consulte o conceito se você precisar de mais ajuda!"
     }
   },
   "describers": {
-    "askAge": "�",
-    "letIn": "�"
+    "askAge": "perguntou a idade da pessoa",
+    "letIn": "deixou a pessoa entrar"
   },
   "functions": {
     "askAge": {
-      "description": "�",
-      "category": "�"
+      "description": "Retorna a **idade** da pessoa que está esperando lá fora.",
+      "category": "Informação"
     },
     "letIn": {
-      "description": "�",
-      "category": "�"
+      "description": "Deixa a pessoa entrar.",
+      "category": "Ação"
     }
   }
 }
