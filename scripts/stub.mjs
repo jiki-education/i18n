@@ -66,6 +66,14 @@ function main() {
       const type = contentType(typeId);
       if (type.format !== "catalog") continue;
 
+      // A type whose untranslated keys are ABSENT rather than sentinelled is not
+      // stubbable: writing `\u{FFFD}` into it makes every key present, which is
+      // exactly what its own scripts read as "translated". The catalog then
+      // reports no missing keys while holding no translations, and a pass over
+      // it silently does nothing. See the note on `untranslated` in
+      // lib/content-types.mjs.
+      if (type.untranslated === "absent") continue;
+
       // An explicit --type is the unslugged half of "bringing a new item in is
       // deliberate": --slug names a new slugged item, --type on its own names a
       // new unslugged catalog. Without it the first locale file for a type like
