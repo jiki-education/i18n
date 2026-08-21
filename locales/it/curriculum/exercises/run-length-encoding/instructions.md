@@ -4,7 +4,7 @@ description: "Comprimi e decomprimi il testo contando le sequenze di caratteri r
 en_md5: a176be7e6ed782e9aa4b54a4575f751f
 ---
 
-La codifica run-length (_Run-Length Encoding_ in inglese) è una forma semplice di compressione. Le sequenze di caratteri uguali consecutivi vengono sostituite da un numero seguito da quel singolo carattere. I caratteri che compaiono una sola volta vengono lasciati così come sono, senza alcun numero davanti.
+La run-length encoding (_Run-Length Encoding_ in inglese) è una tecnica di compressione molto semplice: le sequenze di caratteri identici consecutivi vengono sostituite da un numero che indica la lunghezza della sequenza, seguito dal carattere stesso. I caratteri che compaiono una sola volta rimangono invariati, senza numero davanti.
 
 Ad esempio, `"AABBBCCCC"` si codifica in `"2A3B4C"`, e `"XYZ"` (nessuna ripetizione) si codifica semplicemente in `"XYZ"`.
 
