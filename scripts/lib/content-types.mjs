@@ -245,6 +245,15 @@ export const CONTENT_TYPES = {
     slugged: true,
     staleness: "sibling",
     interpolation: "i18next",
+    // An untranslated key is ABSENT here, never a `\u{FFFD}` sentinel. The
+    // interpreter runtime sets `fallbackLng: false` on purpose, so an absent key
+    // renders as its own key path, loudly, rather than as plausible silent
+    // English. Stubbing sentinels into this type breaks the one thing every
+    // interpreter script reads to answer "is this translated?": a stubbed key
+    // is present, so it counts as done, so `missing` resolves to nothing and a
+    // pass reports there is no work while the catalog stays untranslated.
+    // scripts/stub.mjs reads this and leaves the type alone.
+    untranslated: "absent",
     // The slug is an interpreter LANGUAGE (javascript, jikiscript, python).
     // The `system` locale beside English in that tree is a machine-readable
     // key channel, not a translation, and is never mirrored or translated here.
