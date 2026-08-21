@@ -1,30 +1,30 @@
 ---
 title: "Alfanumérico"
 description: "Crea funciones para clasificar texto como letras, números o ambos."
-en_md5: 4a99adb1b883c6f6710a3494a8961cc2
+en_md5: f199432f63304f1d03c4ce1512c8a349
 ---
 
-En este ejercicio, tu tarea es crear funciones que verifiquen si un string contiene letras y/o números.
+En este ejercicio, tu tarea es crear funciones que comprueben si un string contiene letras y/o números.
 
-Necesitarás escribir tres funciones auxiliares:
+Tendrás que escribir tres funciones auxiliares:
 
-- `isAlpha(string)` (es alfabética) — determina si un string solo contiene letras ASCII (por ejemplo, "A", "a", "Hello")
-- `isNumeric(string)` (es numérica) — determina si un string solo contiene caracteres numéricos (por ejemplo, "0", "1", "456")
-- `isAlphanumeric(string)` (es alfanumérica) — determina si un string solo contiene letras ASCII o números (por ejemplo, "Hello", "42", "Hello42")
+- `isAlpha(string)` (solo letras ASCII): determina si un string consta únicamente de letras ASCII, por ejemplo «A», «a», «Hello».
+- `isNumeric(string)` (solo números): determina si un string consta únicamente de caracteres numéricos, por ejemplo «0», «1», «456».
+- `isAlphanumeric(string)` (solo letras o números): determina si un string consta únicamente de letras ASCII o números, por ejemplo «Hello», «42», «Hello42».
 
-Para cualquier otro símbolo (por ejemplo, "! ?") o caracteres no ASCII (por ejemplo, "じき", "正直"), las tres funciones deben devolver false.
+Para cualquier otro símbolo (por ejemplo, «! ?») o cualquier carácter no ASCII (por ejemplo, «じき», «正直»), las tres funciones deben devolver false.
 
-Luego, escribe una función `whatAmI(string)` (qué soy) que use esos ayudantes para clasificar un string:
+A continuación, escribe una función `whatAmI(string)` (qué soy) que use esas funciones auxiliares para clasificar un string:
 
-- Los strings que solo contienen letras deben devolver `"Alpha"`
-- Los strings que solo contienen números deben devolver `"Numeric"`
-- Los strings que contienen tanto letras como números deben devolver `"Alphanumeric"`
-- Todo lo demás debe devolver `"Unknown"`
+- Los strings que contienen solo letras deben devolver `"Alpha"`.
+- Los strings que contienen solo números deben devolver `"Numeric"`.
+- Los strings que contienen tanto letras como números deben devolver `"Alphanumeric"`.
+- Todo lo demás debe devolver `"Unknown"`.
 
 ### Usa lo que acabas de aprender
 
-Aunque hay muchas formas válidas de resolver este ejercicio, la solución que queremos que crees usa una instrucción `continue` y las tres funciones anteriores.
+Aunque hay muchas formas válidas de resolver este ejercicio, la solución que queremos que plantees utiliza una instrucción `continue` y las tres funciones anteriores.
 
-Este ejercicio también te reta a resolver todo en 42 líneas de código o menos. Ese objetivo no es necesariamente la solución de mayor calidad de producción. Un par de líneas adicionales probablemente den una más bonita, y también hay soluciones más cortas. Pero es una buena meta para ampliar tus capacidades.
+También hay una tarea adicional que te reta a resolver todo el ejercicio en 42 líneas de código o menos. Ese objetivo no es necesariamente la solución más adecuada para producción. Probablemente, un par de líneas más da una solución más elegante, y también hay soluciones más cortas. Pero es un buen objetivo para poner a prueba tus capacidades.
 
 ¡Diviértete!

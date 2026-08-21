@@ -1,11 +1,12 @@
 {
   "checks": {
-    "moreThanOneLine": "Você usou mais de uma linha de código dentro da função."
+    "moreThanOneLine": "Você usou mais de uma linha de código dentro da função.",
+    "moreThanOneFunction": "Será que você consegue resolver isso com apenas uma função?"
   },
   "tasks": {
     "determineLeapYear": {
       "name": "Determine se o ano é bissexto",
-      "description": "Escreva uma função chamada isLeapYear que recebe um ano como entrada e retorna true se for bissexto, ou false se não for."
+      "description": "Escreva uma função chamada isLeapYear que recebe um ano como entrada e retorna true se for um ano bissexto, ou false se não for."
     },
     "solveInOneLine": {
       "name": "Resolva em uma linha de código",
@@ -57,19 +58,19 @@
   "hints": {
     "basicRule": {
       "question": "Qual é a regra básica para um ano bissexto?",
-      "answer": "Os anos divisíveis por 4 são bissextos. Então, `year % 4 === 0` é o teste inicial."
+      "answer": "Anos divisíveis por 4 são bissextos. Então `year % 4 === 0` é o teste inicial."
     },
     "exceptions": {
-      "question": "Há exceções?",
-      "answer": "Sim. Os anos divisíveis por 100 NÃO são bissextos, mesmo sendo divisíveis por 4. Por exemplo, 1900 não é um ano bissexto."
+      "question": "Existem exceções?",
+      "answer": "Sim. Anos divisíveis por 100 NÃO são bissextos, mesmo sendo divisíveis por 4. Por exemplo, 1900 não é um ano bissexto."
     },
     "exceptionsToExceptions": {
-      "question": "Há exceções à exceção?",
-      "answer": "Sim. Os anos divisíveis por 400 SÃO bissextos, afinal. Por exemplo, 2000 é. Portanto, a regra é em cascata: divisível por 4, mas não por 100, a não ser que também seja divisível por 400."
+      "question": "Existem exceções à exceção?",
+      "answer": "Sim. Anos divisíveis por 400 SÃO bissextos, afinal. Por exemplo, 2000 é. Então a regra funciona em cascata: divisível por 4, mas não por 100, a não ser que também seja por 400."
     },
     "checkDivisibility": {
-      "question": "Como eu verifico a divisibilidade?",
-      "answer": "Use o operador resto `%`. `year % 4 === 0` é verdadeiro quando o ano divide exatamente por 4 sem deixar resto. O mesmo truque funciona com 100 e 400."
+      "question": "Como verifico a divisibilidade?",
+      "answer": "Use o operador de resto `%`. `year % 4 === 0` é true quando o ano se divide exatamente por 4, sem sobrar nada. O mesmo truque funciona com 100 e 400."
     }
   }
 }

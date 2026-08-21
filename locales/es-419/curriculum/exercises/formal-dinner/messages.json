@@ -1,96 +1,96 @@
 {
   "tasks": {
     "findGuestTable": {
-      "name": "Buscar la mesa del invitado",
-      "description": "Escribe una función que reciba la lista de los nombres completos de los invitados, la lista correspondiente de los nombres de las mesas y un invitado que llega anunciado con un tratamiento honorífico y un apellido. Devuelve el nombre de la mesa en la que está sentado ese invitado o `\"No table found\"` si no aparece en el plan de asientos."
+      "name": "Busca la mesa del invitado",
+      "description": "Escribe una función que reciba el array de los nombres completos de los invitados, el array correspondiente de nombres de mesa y un invitado que llega anunciado con un tratamiento honorífico y un apellido. Devuelve el nombre de la mesa en la que está sentado ese invitado, o `\"No table found\"` si no está en el plan de asientos."
     },
     "solveTightly": {
-      "name": "Compacta tu solución",
-      "description": "Bonus: esto se puede escribir de una forma mucho más compacta de lo que imaginas. ¿Puedes reducir toda la solución a solo un puñado de líneas?"
+      "name": "Resuélvelo en 9 líneas",
+      "description": "Extra: esto se puede escribir de forma mucho más compacta de lo que imaginas. Intenta resolverlo en 9 líneas de código o menos."
     }
   },
   "scenarios": {
     "emptyList": {
       "name": "Plan de asientos vacío",
-      "description": "Nadie está sentado en ningún lado cuando el plan está vacío."
+      "description": "Nadie está sentado en ningún sitio cuando el plan de asientos está vacío."
     },
     "nameMissing": {
-      "name": "Brad es rechazado",
+      "name": "Rechazan a Brad",
       "description": "El nombre no está en el plan de asientos."
     },
     "namePresent": {
-      "name": "Brad es acompañado a su mesa",
-      "description": "Brad Pitt está en el plan, así que Mr Pitt recibe su mesa."
+      "name": "Acompañan a Brad a su mesa",
+      "description": "Brad Pitt está en el plan de asientos, así que el señor Pitt obtiene su mesa."
     },
     "differentHonorific": {
       "name": "Caballero del reino",
-      "description": "Un tratamiento honorífico diferente y un invitado que no es el primero en el plan."
+      "description": "Un tratamiento honorífico diferente y un invitado que no es el primero del plan de asientos."
     },
     "bondSeated": {
-      "name": "Mr Bond, supongo",
-      "description": "James Bond está en el plan."
+      "name": "El señor Bond, supongo",
+      "description": "James Bond está en el plan de asientos."
     },
     "bondNotSeated": {
-      "name": "Hmmm... Mr Bond, supongo",
-      "description": "Solo Jason Bourne está en el plan, no James Bond."
+      "name": "Mmm... El señor Bond, supongo",
+      "description": "Solo Jason Bourne está en el plan de asientos, no James Bond."
     },
     "partialSurname": {
-      "name": "No es exactamente Mr Pitt",
-      "description": "Ni Ada Spitt ni Hugo Ross-Pitt son Mr Pitt, así que él no tiene asiento aquí."
+      "name": "No es exactamente el señor Pitt",
+      "description": "Ni Ada Spitt ni Hugo Ross-Pitt son el señor Pitt, así que no tiene asiento aquí."
     },
     "lloydWebber": {
       "name": "¿Qué tal un barón?",
       "description": "El barón Lloyd Webber tiene dos palabras en su apellido."
     },
     "markWebber": {
-      "name": "¿Mark es el barón?",
+      "name": "¿Es Mark el barón?",
       "description": "Un Webber diferente no cuenta: el apellido tiene que coincidir por completo."
     },
     "formalDinnerBonusLineCount": {
-      "name": "Impecable: Lord Doyle",
-      "description": "El mismo plan de asientos de antes, pero esta vez tu solución debe caber en un número mucho menor de líneas."
+      "name": "Pulcro y ordenado: Lord Doyle",
+      "description": "El mismo plan de asientos que antes, pero esta vez intenta resolverlo en 9 líneas de código o menos."
     }
   },
   "hints": {
     "twoLists": {
-      "question": "¿Cómo se relacionan entre sí las dos listas?",
-      "answer": "Están emparejadas. El primer invitado está en la primera mesa, el segundo en la segunda, y así sucesivamente. Así que no basta con saber *que* un invitado está en el plan: necesitas saber *dónde* está en el plan."
+      "question": "¿Cómo se relacionan entre sí los dos arrays?",
+      "answer": "Forman una pareja. El primer invitado se sienta en la primera mesa, el segundo invitado en la segunda mesa, y así sucesivamente. No basta con saber *que* un invitado está en el plan de asientos: necesitas saber *dónde* está en él."
     },
     "comparingNames": {
-      "question": "El invitado dice 'Mr Pitt' pero el plan dice 'Brad Pitt'. ¿Cómo los comparo?",
-      "answer": "Esos dos strings nunca serán iguales, así que una comparación directa no te llevará a ningún lado. Piensa en qué parte de lo que el invitado anunció aparece realmente en el plan, y en qué lugar de la entrada del plan esperarías encontrarla."
+      "question": "El invitado dice «Mr Pitt» pero el plan de asientos dice «Brad Pitt». ¿Cómo los comparo?",
+      "answer": "Esos dos strings nunca serán iguales, así que una comparación directa no te llevará a ningún lado. Piensa en qué parte de lo que el invitado anunció aparece realmente en el plan de asientos, y en qué lugar de la entrada del plan esperarías encontrarla."
     },
     "lookalikeSurnames": {
       "question": "¿Podría un apellido coincidir con el invitado equivocado?",
-      "answer": "Por supuesto que sí. Lee 'Ada Spitt' y 'Hugo Ross-Pitt' en voz alta y luego piensa en Mr Pitt. Pregúntate qué hace que un apellido sea un apellido real en esa línea, en lugar de solo algunas letras que están al final de la misma."
+      "answer": "Claro que podría. Lee «Ada Spitt» y «Hugo Ross-Pitt» en voz alta y luego piensa en el señor Pitt. Pregúntate qué hace que un apellido sea un apellido real en esa línea del plan de asientos, en lugar de solo algunas letras que casualmente están al final."
     },
     "noMatch": {
-      "question": "¿Qué debo devolver cuando nadie coincida?",
-      "answer": "El string `\"No table found\"`, exactamente como está escrito. La parte más difícil es saber cuándo tienes permitido decirlo. Si ya revisaste al primer invitado del plan y no es tu persona, ¿realmente sabes ya que no está sentado en otro lado?"
+      "question": "¿Qué debo devolver cuando nadie coincide?",
+      "answer": "La cadena `\"No table found\"`, exactamente como está escrita. La parte más difícil es saber cuándo puedes decirla. Si ya revisaste al primer invitado del plan de asientos y no es la persona que buscas, ¿realmente sabes que no está sentado en algún lugar?"
     }
   },
   "checks": {
-    "tooManyLines": "¡Sigue intentándolo! Intenta resolverlo en menos líneas."
+    "tooManyLines": "¡Sigue intentándolo! A ver si puedes reducirlo a 9 líneas de código."
   },
   "functions": {
     "length": {
-      "description": "El número de elementos en un array: la misma propiedad length que has usado en strings (proporcionada por la biblioteca estándar del nivel)",
+      "description": "La cantidad de elementos en un array: la misma propiedad length que ya usaste en los strings (proporcionado por level stdlib)",
       "category": "Operaciones con arrays"
     },
     "split": {
-      "description": "Divide un string en un array de fragmentos, separando en cada separador (proporcionado por la biblioteca estándar del nivel)",
+      "description": "Divide un string en un array de fragmentos, separando en cada separador (proporcionado por level stdlib)",
       "category": "Operaciones con strings"
     },
     "slice": {
-      "description": "Crea un nuevo array a partir de una parte de un array, comenzando en una posición (proporcionado por la biblioteca estándar del nivel)",
+      "description": "Crea un array nuevo a partir de una parte de un array, empezando en una posición (proporcionado por level stdlib)",
       "category": "Operaciones con arrays"
     },
     "join": {
-      "description": "Une los elementos de un array en un solo string, con un separador entre ellos (proporcionado por la biblioteca estándar del nivel)",
+      "description": "Une los elementos de un array en un solo string, con un separador entre ellos (proporcionado por level stdlib)",
       "category": "Operaciones con arrays"
     },
     "endsWith": {
-      "description": "Comprueba si un string termina con un string más pequeño (proporcionado por la biblioteca estándar del nivel)",
+      "description": "Comprueba si un string termina con un string más pequeño (proporcionado por level stdlib)",
       "category": "Operaciones con strings"
     }
   }

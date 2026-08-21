@@ -2,11 +2,11 @@
   "tasks": {
     "findGuestTable": {
       "name": "Encontra a mesa do convidado",
-      "description": "Escreve uma função que recebe a lista dos nomes completos dos convidados, a lista correspondente dos nomes das mesas e um convidado que chega anunciado por um título e um apelido. Devolve o nome da mesa onde esse convidado está sentado, ou `\"No table found\"` se não estiver no mapa de lugares."
+      "description": "Escreve uma função que recebe a lista dos nomes completos dos convidados, a lista correspondente dos nomes das mesas e um convidado que chega anunciado como um título e um apelido. Devolve o nome da mesa onde o convidado está sentado, ou `\"No table found\"` se não estiver no mapa de lugares."
     },
     "solveTightly": {
-      "name": "Resolve-o em 9 linhas",
-      "description": "Bónus: isto pode ser escrito de forma muito mais compacta do que esperas. Tenta resolver isto em 9 linhas de código ou menos."
+      "name": "Resolve em 9 linhas",
+      "description": "Bónus: isto pode ser escrito de forma muito mais compacta do que poderias esperar. Tenta resolver isto em 9 linhas de código ou menos."
     }
   },
   "scenarios": {
@@ -19,32 +19,32 @@
       "description": "O nome não está no mapa de lugares."
     },
     "namePresent": {
-      "name": "Brad é encaminhado para o seu lugar",
-      "description": "Brad Pitt está no mapa de lugares, por isso o Mr Pitt recebe a sua mesa."
+      "name": "Brad é encaminhado para a sua mesa",
+      "description": "Brad Pitt está no mapa, por isso o Mr Pitt recebe a sua mesa."
     },
     "differentHonorific": {
       "name": "Cavaleiro do reino",
-      "description": "Um título diferente e um convidado que não é o primeiro do mapa."
+      "description": "Um título diferente e um convidado que não é o primeiro no mapa."
     },
     "bondSeated": {
       "name": "Mr Bond, presumo",
-      "description": "James Bond está no mapa de lugares."
+      "description": "James Bond está no mapa."
     },
     "bondNotSeated": {
       "name": "Hmmm... Mr Bond, presumo",
-      "description": "Apenas Jason Bourne está no mapa de lugares, e não James Bond."
+      "description": "Só Jason Bourne está no mapa, não James Bond."
     },
     "partialSurname": {
       "name": "Não é bem o Mr Pitt",
       "description": "Nem Ada Spitt nem Hugo Ross-Pitt são o Mr Pitt, por isso ele não tem lugar aqui."
     },
     "lloydWebber": {
-      "name": "Que tal um Barão?",
-      "description": "O Barão Lloyd Webber tem duas palavras no apelido."
+      "name": "Que tal um barão?",
+      "description": "O barão Lloyd Webber tem duas palavras no apelido."
     },
     "markWebber": {
-      "name": "O Mark é o Barão?",
-      "description": "Um Webber diferente não conta: o apelido tem de corresponder por completo."
+      "name": "O Mark é o barão?",
+      "description": "Um Webber diferente não conta, o apelido tem de corresponder por completo."
     },
     "formalDinnerBonusLineCount": {
       "name": "Limpo e arrumado: Lord Doyle",
@@ -54,44 +54,44 @@
   "hints": {
     "twoLists": {
       "question": "Como é que as duas listas se relacionam entre si?",
-      "answer": "Elas formam um par. O primeiro convidado fica na primeira mesa, o segundo na segunda mesa, e assim por diante. Portanto, não basta saber *que* um convidado está no mapa: precisas de saber *onde* no mapa ele está."
+      "answer": "Elas formam um par. O primeiro convidado senta-se na primeira mesa, o segundo convidado na segunda mesa, e assim por diante. Por isso, não basta saber *que* um convidado está no mapa: precisas de saber *onde* no mapa ele está."
     },
     "comparingNames": {
-      "question": "O convidado diz 'Mr Pitt', mas o mapa diz 'Brad Pitt'. Como é que eu comparo os dois?",
-      "answer": "Essas duas strings nunca serão iguais, por isso uma comparação direta não te leva a lado nenhum. Pensa em que parte do que o convidado anunciou aparece realmente no mapa e em que parte da entrada do mapa esperarias encontrá-la."
+      "question": "O convidado diz \"Mr Pitt\", mas o mapa diz \"Brad Pitt\". Como é que eu comparo isto?",
+      "answer": "Essas duas strings nunca serão iguais, por isso uma comparação direta não te levará a lado nenhum. Pensa em que parte do que o convidado anunciou aparece realmente no mapa, e em que posição da entrada no mapa esperarias encontrá-la."
     },
     "lookalikeSurnames": {
-      "question": "Será que um apelido pode corresponder ao convidado errado?",
-      "answer": "Claro que pode. Lê 'Ada Spitt' e 'Hugo Ross-Pitt' em voz alta, e depois pensa no Mr Pitt. Pergunta-te a ti próprio o que faz de um apelido um apelido verdadeiro nessa linha, em vez de apenas algumas letras que por acaso estão no fim dela."
+      "question": "Poderá um apelido corresponder ao convidado errado?",
+      "answer": "Pode, sem dúvida. Lê \"Ada Spitt\" e \"Hugo Ross-Pitt\" em voz alta, e depois pensa no Mr Pitt. Pergunta a ti próprio o que faz de um apelido um apelido a sério nessa linha, em vez de serem apenas algumas letras que por acaso estão no fim."
     },
     "noMatch": {
       "question": "O que devo devolver quando ninguém corresponde?",
-      "answer": "A string `\"No table found\"`, exatamente como está escrita. A parte mais difícil é saber quando é que podes dizê-la. Se verificaste o primeiro convidado do mapa e ele não é a pessoa que procuras, já sabes, na verdade, que ele não está sentado em lado nenhum?"
+      "answer": "A string `\"No table found\"`, exatamente como está escrita. A parte mais complicada é saber quando é que tens autorização para a dizer. Se já verificaste o primeiro convidado do mapa e não é o teu homem, sabes realmente que ele não está sentado em lado nenhum?"
     }
   },
   "checks": {
-    "tooManyLines": "Continua! Vê se consegues chegar às 9 linhas de código."
+    "tooManyLines": "Continua! Vê se consegues reduzir para 9 linhas de código."
   },
   "functions": {
     "length": {
-      "description": "O número de itens numa lista: a mesma propriedade length que já usaste em strings (fornecido pelo nível stdlib)",
-      "category": "Operações com listas"
+      "description": "O número de itens numa lista - a mesma propriedade length que usaste em strings (fornecida pela stdlib do nível)",
+      "category": "Operações com Listas"
     },
     "split": {
-      "description": "Dividir uma string numa lista de pedaços, partindo em cada separador (fornecido pelo nível stdlib)",
-      "category": "Operações com strings"
+      "description": "Divide uma string numa lista de pedaços, partindo em cada separador (fornecida pela stdlib do nível)",
+      "category": "Operações com Strings"
     },
     "slice": {
-      "description": "Criar uma nova lista a partir de parte de uma lista, começando numa posição (fornecido pelo nível stdlib)",
-      "category": "Operações com listas"
+      "description": "Cria uma nova lista a partir de parte de uma lista, começando numa posição (fornecida pela stdlib do nível)",
+      "category": "Operações com Listas"
     },
     "join": {
-      "description": "Juntar os itens de uma lista numa única string, com um separador entre eles (fornecido pelo nível stdlib)",
-      "category": "Operações com listas"
+      "description": "Junta os itens de uma lista numa string, com um separador entre eles (fornecida pela stdlib do nível)",
+      "category": "Operações com Listas"
     },
     "endsWith": {
-      "description": "Verificar se uma string termina com uma string mais pequena (fornecido pelo nível stdlib)",
-      "category": "Operações com strings"
+      "description": "Verifica se uma string termina com uma string mais pequena (fornecida pela stdlib do nível)",
+      "category": "Operações com Strings"
     }
   }
 }

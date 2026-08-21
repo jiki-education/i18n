@@ -2,11 +2,15 @@
   "tasks": {
     "classifyString": {
       "name": "Osztályozz egy stringet",
-      "description": "Írj segédfüggvényeket, amelyek meghatározzák, hogy egy string csak betűkből, csak számokból, vagy betűkből és számokból áll-e, majd használd őket a bemeneti string osztályozásához."
+      "description": "Írj segédfüggvényeket, amelyek ellenőrzik, hogy egy string csak betűkből áll-e, csak számokból áll-e, vagy betűkből és számokból áll-e, majd használd őket a bemeneti string osztályozására."
     },
     "useContinue": {
       "name": "Használd a continue-t",
-      "description": "Az isAlphanumeric ellenőrzésben, ha egy karakter betű vagy számjegy, már megfelelt. Használd a continue-t, hogy egyből a következő karakterre lépj, ahelyett hogy további feltételeket ágyaznál egymásba."
+      "description": "Az isAlphanumeric ellenőrzésben, ha egy karakter betű vagy számjegy, már elégedett vagy vele. Használd a continue-t, hogy rögtön a következő karakterre lépj, ahelyett, hogy több feltételt ágyaznál egymásba."
+    },
+    "solveTightly": {
+      "name": "Oldd meg 42 sorban",
+      "description": "Próbáld meg 42 vagy kevesebb sornyi kódban megoldani. Ez a cél nem feltétlenül a legkiforrottabb megoldás, és rövidebb megoldások is vannak, de jó cél arra, hogy feszegesd a határaidat."
     }
   },
   "scenarios": {
@@ -31,37 +35,51 @@
       "description": "Egy szóközöket és speciális karaktereket tartalmazó stringet \"Unknown\"-ként kell osztályozni."
     },
     "alphanumericUsesContinue": {
-      "name": "Continue használva",
-      "description": "A megoldásod működik, és continue-t használ, hogy átugorja a már kezelt karaktereket."
+      "name": "Used continue",
+      "description": "A megoldásod működik, és continue-t használ, hogy továbblépjen azokon a karaktereken, amelyekkel már elszámoltál."
+    },
+    "alphanumericBonusLineCount": {
+      "name": "Neat and tidy",
+      "description": "Próbáld meg 42 vagy kevesebb sornyi kódban megoldani."
     }
   },
   "hints": {
     "whereToStart": {
       "question": "Hol kezdjem, ha több függvényt is meg kell írnom?",
-      "answer": "Válaszd a legkisebb segédfüggvényt először. Mindegyik segédfüggvény végigmegy a string karakterein, és ugyanazt az eldöntendő kérdést teszi fel mindegyikről. Ha az egyik működik, a többi is ugyanilyen formában megírható."
+      "answer": "Először a legkisebb segédfüggvényt válaszd. Mindegyik segédfüggvény végigmegy a string karakterein, és ugyanolyan igen/nem kérdést tesz fel mindegyikről. Ha az egyik működik, a többi ugyanazt a mintát követi."
     },
     "checkAllLetters": {
       "question": "Hogyan ellenőrizhetem, hogy a bemenet minden karaktere betű-e?",
-      "answer": "Menj végig minden karakteren, és nézd meg, hogy szerepel-e az ábécében. A string `.includes()` metódusa pont erre való: `\"...\".includes(char)`. Ne feledd, hogy a kis- és nagybetűket is be kell illesztened, különben a nagybetű, mint például a \"D\" a \"Duck\"-ban, nem számítana. Ha bármelyik karakter nincs az ábécében, akkor nem csak betűkből áll."
+      "answer": "Menj végig minden karakteren, és nézd meg, hogy szerepel-e az ábécében. Egy string `.includes()` metódusa pontosan ezt a kérdést válaszolja meg: `\"...\".includes(char)`. Ne felejtsd el belevenni mind a kis-, mind a nagybetűket, különben egy nagybetű, mint a \"D\" a \"Duck\"-ban, nem számítana. Ha bármelyik karakter nincs az ábécében, akkor nem csak betűkből áll."
     },
     "checkAllDigits": {
-      "question": "Hogyan végezhetem el ugyanezt az ellenőrzést számjegyekkel?",
-      "answer": "Pontosan ugyanaz a minta, csak az `\"0123456789\"` sztringgel ellenőrizz, az ábécé helyett."
+      "question": "Hogyan csinálhatom ugyanezt az ellenőrzést számjegyekre?",
+      "answer": "Pontosan ugyanaz a minta, csak az ábécé helyett a `\"0123456789\"`-cel ellenőrizd."
     },
     "alphanumericMeaning": {
-      "question": "Mit jelent az 'alfanumerikus'? Azt jelenti, hogy mindkettőt tartalmaznia kell?",
-      "answer": "Az alfanumerikus azt jelenti, hogy minden karakter vagy betű, VAGY számjegy. Tehát minden karakter esetén, ha betű, az jó, ha számjegy, az is jó. Használd a `continue`-t a továbblépéshez. Csak akkor utasítsd el, ha egyik sem."
+      "question": "Mit jelent az, hogy „alphanumeric”? Azt jelenti, hogy mindkettő?",
+      "answer": "Az alphanumeric azt jelenti, hogy minden karakter vagy betű, VAGY számjegy. Tehát minden karakterre: ha betű, elégedett vagy; ha számjegy, akkor is elégedett vagy. Használd a `continue`-t, hogy továbblépj. Csak akkor utasítsd el, ha egyik sem."
     },
     "pickingLabels": {
-      "question": "Hogyan válasszak a négy címke közül a whatAmI()-ban?",
-      "answer": "Hívd meg mindhárom segédfüggvényt, és használj if/else-t. A sorrend számít. Először a szigorúbb eseteket ellenőrizd ('csak betű' és 'csak szám'), mielőtt az 'alfanumerikus' következne, ami a tágabb eset."
+      "question": "Hogyan válasszak a négy címke közül a whatAmI() függvényben?",
+      "answer": "Hívd meg mindhárom segédfüggvényt, és használj if/else ágakat. A sorrend számít. Először a szigorúbb eseteket ellenőrizd („csak betűk” és „csak számok”), mielőtt az „alphanumeric”-et, ami a lazább eset."
     }
   },
   "checks": {
-    "mustUseContinue": "Majdnem! Használd a `continue`-t, hogy továbblépj a következő karakterre.",
-    "tooManyLines": "Majdnem! A megoldásod működik, de kissé hosszú.",
-    "useIsAlpha": "Ez a feladat azt várja, hogy írj egy `isAlpha()` segédfüggvényt, és használd a string osztályozásához.",
-    "useIsNumeric": "Ez a feladat azt várja, hogy írj egy `isNumeric()` segédfüggvényt, és használd a string osztályozásához.",
-    "useIsAlphanumeric": "Ez a feladat azt várja, hogy írj egy `isAlphanumeric()` segédfüggvényt, és használd a string osztályozásához."
+    "mustUseContinue": "Majdnem! Használd a `continue`-t, hogy továbbugorj a következő karakterre.",
+    "tooManyLines": "Majdnem! A megoldásod működik, de több mint 42 sornyi kód.",
+    "useIsAlpha": "Ez a feladat azt szeretné, ha írnál egy `isAlpha()` segédfüggvényt, és használnád a string osztályozására.",
+    "useIsNumeric": "Ez a feladat azt szeretné, ha írnál egy `isNumeric()` segédfüggvényt, és használnád a string osztályozására.",
+    "useIsAlphanumeric": "Ez a feladat azt szeretné, ha írnál egy `isAlphanumeric()` segédfüggvényt, és használnád a string osztályozására."
+  },
+  "functions": {
+    "toLowerCase": {
+      "description": "Visszaad egy kisbetűs másolatot a stringről (a feladat stdlib-je biztosítja)",
+      "category": "Stringműveletek"
+    },
+    "includes": {
+      "description": "Ellenőrzi, hogy egy string tartalmaz-e egy kisebb stringet (a feladat stdlib-je biztosítja)",
+      "category": "Stringműveletek"
+    }
   }
 }

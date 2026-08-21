@@ -1,67 +1,85 @@
 {
   "tasks": {
     "classifyString": {
-      "name": "Classe une string",
-      "description": "Écris des fonctions auxiliaires pour vérifier si une string est alphabétique, numérique ou alphanumérique, puis utilise-les pour catégoriser la string d'entrée."
+      "name": "Catégorise une _string_",
+      "description": "Écris des fonctions auxiliaires pour vérifier si une _string_ est uniquement alphabétique, numérique ou alphanumérique, puis utilise-les pour catégoriser la _string_ d'entrée."
     },
     "useContinue": {
       "name": "Utilise `continue`",
-      "description": "Dans ta vérification isAlphanumeric, dès qu'un caractère est une lettre ou un chiffre, c'est bon. Utilise `continue` pour passer directement au caractère suivant au lieu d'imbriquer davantage de conditions."
+      "description": "Dans ta vérification `isAlphanumeric`, dès qu'un caractère est une lettre ou un chiffre, tout va bien. Utilise `continue` pour passer directement au caractère suivant au lieu d'imbriquer d'autres conditions."
+    },
+    "solveTightly": {
+      "name": "Résous-le en 42 lignes",
+      "description": "Essaie de résoudre cet exercice en 42 lignes de code ou moins. Cet objectif ne donne pas forcément la solution la plus soignée, et il existe aussi des solutions plus courtes, mais c'est un bon objectif pour repousser tes limites."
     }
   },
   "scenarios": {
     "duck": {
       "name": "Duck",
-      "description": "Une string purement alphabétique doit être classée comme \"Alpha\"."
+      "description": "Une _string_ qui ne contient que des lettres doit être catégorisée comme `\"Alpha\"`."
     },
     "number": {
       "name": "42",
-      "description": "Une string purement numérique doit être classée comme \"Numeric\"."
+      "description": "Une _string_ qui ne contient que des chiffres doit être catégorisée comme `\"Numeric\"`."
     },
     "alphanumeric": {
       "name": "Duck42",
-      "description": "Une string qui contient à la fois des lettres et des chiffres doit être classée comme \"Alphanumeric\"."
+      "description": "Une _string_ qui contient à la fois des lettres et des chiffres doit être catégorisée comme `\"Alphanumeric\"`."
     },
     "notAlphanumeric1": {
       "name": "It's not 42!",
-      "description": "Une string qui contient des caractères spéciaux doit être classée comme \"Unknown\"."
+      "description": "Une _string_ qui contient des caractères spéciaux doit être catégorisée comme `\"Unknown\"`."
     },
     "notAlphanumeric2": {
       "name": "42 Rubber Duck!",
-      "description": "Une string qui contient des espaces et des caractères spéciaux doit être classée comme \"Unknown\"."
+      "description": "Une _string_ qui contient des espaces et des caractères spéciaux doit être catégorisée comme `\"Unknown\"`."
     },
     "alphanumericUsesContinue": {
       "name": "Utilisation de `continue`",
       "description": "Ta solution fonctionne et utilise `continue` pour passer les caractères déjà pris en compte."
+    },
+    "alphanumericBonusLineCount": {
+      "name": "Propre et soigné",
+      "description": "Essaie de résoudre cet exercice en 42 lignes de code ou moins."
     }
   },
   "hints": {
     "whereToStart": {
       "question": "Par où commencer quand il y a plusieurs fonctions à écrire ?",
-      "answer": "Commence par la fonction auxiliaire la plus petite. Chaque fonction auxiliaire parcourt les caractères de la string et pose le même type de question fermée (oui/non) sur chacun d'eux. Fais-en fonctionner une, et sers-toi du même schéma pour les autres."
+      "answer": "Commence par la fonction auxiliaire la plus simple. Chaque fonction auxiliaire parcourt les caractères de la _string_ et pose le même genre de question par oui ou non sur chacun d'eux. Fais-en fonctionner une, et les autres suivront le même modèle."
     },
     "checkAllLetters": {
-      "question": "Comment vérifier que chaque caractère de l'entrée est une lettre ?",
-      "answer": "Parcours chaque caractère et vérifie s'il apparaît dans l'alphabet. La méthode `.includes()` d'une string répond exactement à cette question : `\"...\".includes(char)`. Pense à inclure les lettres minuscules et majuscules, sinon une majuscule comme le \"D\" de \"Duck\" ne comptera pas. Si un caractère n'apparaît pas dans l'alphabet, la string n'est pas purement alphabétique."
+      "question": "Comment vérifier si chaque caractère de l'entrée est une lettre ?",
+      "answer": "Parcours chaque caractère et vérifie s'il apparaît dans l'alphabet. La méthode `.includes()` d'une _string_ répond exactement à cette question : `\"...\".includes(char)`. Pense à inclure les lettres minuscules et majuscules, sinon une majuscule comme le \"D\" de \"Duck\" ne sera pas prise en compte. Si un seul caractère n'apparaît pas dans l'alphabet, la _string_ n'est pas uniquement alphabétique."
     },
     "checkAllDigits": {
       "question": "Comment faire la même vérification pour les chiffres ?",
       "answer": "Exactement le même schéma, mais compare avec `\"0123456789\"` au lieu de l'alphabet."
     },
     "alphanumericMeaning": {
-      "question": "Que veut dire « alphanumérique » ? Est-ce que ça veut dire les deux ?",
-      "answer": "Alphanumérique signifie que chaque caractère est une lettre OU un chiffre. Donc pour chaque caractère, s'il est alphabétique, c'est bon, et s'il est numérique, c'est bon aussi. Utilise `continue` pour passer au suivant. Tu ne dois le rejeter que s'il n'est ni l'un ni l'autre."
+      "question": "Que veut dire « alphanumérique » ? Est-ce que ça veut dire les deux à la fois ?",
+      "answer": "Alphanumérique signifie que chaque caractère est soit une lettre, soit un chiffre. Donc pour chaque caractère, s'il est alphabétique, tout va bien, et s'il est numérique, tout va bien aussi. Utilise `continue` pour passer au suivant. Ce n'est que s'il n'est ni l'un ni l'autre que tu dois le rejeter."
     },
     "pickingLabels": {
-      "question": "Comment choisir entre les quatre catégories dans whatAmI() ?",
-      "answer": "Appelle les trois fonctions auxiliaires et utilise if/else. L'ordre compte : vérifie les cas les plus stricts (« uniquement des lettres » et « uniquement des chiffres ») avant « alphanumérique », qui est le cas le plus large."
+      "question": "Comment choisir entre les quatre étiquettes dans `whatAmI()` ?",
+      "answer": "Appelle les trois fonctions auxiliaires et utilise `if`/`else`. L'ordre compte : vérifie les cas les plus stricts (« uniquement des lettres » et « uniquement des chiffres ») avant « alphanumérique », qui est le cas le plus large."
     }
   },
   "checks": {
     "mustUseContinue": "Tu y es presque ! Utilise `continue` pour passer au caractère suivant.",
-    "tooManyLines": "Tu y es presque ! Ta solution fonctionne, mais elle est un peu longue.",
-    "useIsAlpha": "Cet exercice te demande d'écrire une fonction auxiliaire `isAlpha()` et de l'utiliser pour catégoriser la string.",
-    "useIsNumeric": "Cet exercice te demande d'écrire une fonction auxiliaire `isNumeric()` et de l'utiliser pour catégoriser la string.",
-    "useIsAlphanumeric": "Cet exercice te demande d'écrire une fonction auxiliaire `isAlphanumeric()` et de l'utiliser pour catégoriser la string."
+    "tooManyLines": "Tu y es presque ! Ta solution fonctionne, mais elle fait plus de 42 lignes de code.",
+    "useIsAlpha": "Cet exercice te demande d'écrire une fonction auxiliaire `isAlpha()` et de l'utiliser pour catégoriser la _string_.",
+    "useIsNumeric": "Cet exercice te demande d'écrire une fonction auxiliaire `isNumeric()` et de l'utiliser pour catégoriser la _string_.",
+    "useIsAlphanumeric": "Cet exercice te demande d'écrire une fonction auxiliaire `isAlphanumeric()` et de l'utiliser pour catégoriser la _string_."
+  },
+  "functions": {
+    "toLowerCase": {
+      "description": "Renvoie une copie en minuscules d'une _string_ (fournie par la bibliothèque standard du niveau)",
+      "category": "Opérations sur les _strings_"
+    },
+    "includes": {
+      "description": "Vérifie si une _string_ contient une _string_ plus courte (fournie par la bibliothèque standard du niveau)",
+      "category": "Opérations sur les _strings_"
+    }
   }
 }

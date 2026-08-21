@@ -2,15 +2,15 @@
   "tasks": {
     "sumTheDigits": {
       "name": "Somma le cifre",
-      "description": "Scrivi una funzione chiamata digitalRoot che prende un numero e somma le sue cifre. Per i numeri già composti da una sola cifra, e per quelli le cui cifre sommate danno una sola cifra, questo primo passaggio basta."
+      "description": "Scrivi una funzione chiamata digitalRoot che prende un numero e somma le sue cifre. Per i numeri che hanno già una sola cifra, e per i numeri le cui cifre sommano a una sola cifra, questo primo passaggio è sufficiente."
     },
     "collapseToSingleDigit": {
-      "name": "Continua a ridurre finché resta una sola cifra",
-      "description": "A volte sommare le cifre una volta lascia ancora più di una cifra (per esempio 942 sommato dà 15). Continua a sommare le cifre del risultato finché non resta una sola cifra."
+      "name": "Continua a ridurre finché non rimane una sola cifra",
+      "description": "A volte sommare le cifre una volta lascia ancora più di una cifra (per esempio 942 dà 15). Continua a sommare le cifre del risultato finché non rimane una sola cifra."
     },
     "keepItTight": {
-      "name": "Bonus: mantienila corta",
-      "description": "La tua soluzione funziona già. Per questo bonus, sistemala in modo che tutta la funzione stia in poche righe, senza niente di superfluo."
+      "name": "Risolvilo in 10 righe",
+      "description": "La soluzione funziona già. Per questo bonus, prova a risolverlo in 10 righe di codice o meno."
     }
   },
   "scenarios": {
@@ -20,7 +20,7 @@
     },
     "drSingleDigit": {
       "name": "Già una sola cifra",
-      "description": "Un numero che è già composto da una sola cifra è la propria radice numerica."
+      "description": "Un numero che ha già una sola cifra è la sua stessa radice numerica."
     },
     "drTwoDigits": {
       "name": "Due cifre",
@@ -31,55 +31,55 @@
       "description": "132 si riduce a 6 in un solo passaggio (1 + 3 + 2)."
     },
     "drThirtyNine": {
-      "name": "Servono due passaggi",
-      "description": "39 sommato dà 12, che a sua volta dà 3."
+      "name": "Due passaggi necessari",
+      "description": "39 dà come somma 12, che poi dà 3."
     },
     "drTwoPasses": {
       "name": "Un numero che richiede un secondo passaggio",
-      "description": "942 sommato dà 15, che a sua volta dà 6."
+      "description": "942 dà come somma 15, che poi dà 6."
     },
     "drLarge": {
       "name": "Un numero più grande",
       "description": "493193 si riduce fino a 2."
     },
     "drNines": {
-      "name": "Tutti nove",
-      "description": "99999 sommato dà 45, che a sua volta dà 9."
+      "name": "Tutti i nove",
+      "description": "99999 dà come somma 45, che poi dà 9."
     },
     "drBonusTight": {
-      "name": "Una soluzione corta e ordinata",
-      "description": "12345 si riduce a 6 (1 + 2 + 3 + 4 + 5 = 15, poi 1 + 5 = 6)."
+      "name": "Una soluzione ordinata e breve",
+      "description": "Prova a risolverlo in 10 righe di codice o meno. 12345 si riduce a 6 (1 + 2 + 3 + 4 + 5 = 15, poi 1 + 5 = 6)."
     }
   },
   "hints": {
     "whatIsIt": {
-      "question": "Che cos'è esattamente una radice numerica?",
-      "answer": "Somma tutte le cifre del numero. Se ottieni una sola cifra, quella è la risposta. Se ottieni più di una cifra, somma anche le cifre di quel risultato, e vai avanti finché non resta una sola cifra."
+      "question": "Cos'è esattamente una radice numerica?",
+      "answer": "Somma tutte le cifre del numero. Se ottieni una sola cifra, quella è la risposta. Se ottieni più di una cifra, somma anche le cifre di quel risultato, e continua finché non rimane una sola cifra."
     },
     "sumDigits": {
-      "question": "Come sommo le cifre di un numero?",
-      "answer": "Trasforma il numero in una stringa, così puoi scorrerla carattere per carattere con un ciclo `for...of`. Tieni un totale parziale e aggiungi ogni cifra man mano."
+      "question": "Come faccio a sommare le cifre di un numero?",
+      "answer": "Trasforma il numero in una stringa così puoi scorrere i caratteri uno a uno con un ciclo `for...of`. Tieni un totale progressivo, aggiungendo ogni cifra man mano che procedi."
     },
     "digitsToNumbers": {
-      "question": "Però ogni cifra è un carattere, non un numero.",
-      "answer": "Quando scorri la stringa, ogni carattere (come `\"4\"`) è testo. Usa `Number(char)` per trasformarlo nel numero `4` prima di aggiungerlo al totale."
+      "question": "Ogni cifra però è un carattere, non un numero.",
+      "answer": "Quando esegui il ciclo sulla stringa, ogni carattere (come `\"4\"`) è testo. Usa `Number(char)` per trasformarlo nel numero `4` prima di aggiungerlo al totale."
     },
     "whichLoop": {
       "question": "Come faccio a continuare senza sapere quanti passaggi mi servono?",
-      "answer": "Non sai in anticipo quante volte dovrai sommare le cifre, quindi un ciclo `while` è perfetto. Continua il ciclo finché il numero ha più di una cifra."
+      "answer": "Non sai in anticipo quante volte dovrai sommare le cifre, quindi un ciclo `while` è perfetto. Continua a ripetere il ciclo mentre il numero ha più di una cifra."
     },
     "keepGoing": {
       "question": "Quando mi fermo?",
-      "answer": "Fermati appena il numero è una sola cifra. A quel punto, restituiscilo."
+      "answer": "Fermati non appena il numero è una sola cifra. A quel punto, restituiscilo."
     }
   },
   "checks": {
-    "mustUseWhile": "Ci sei quasi! In questo esercizio vogliamo che tu usi un ciclo `while` per continuare a ridurre finché non resta una sola cifra.",
-    "tooManyLines": "Manca pochissimo! La tua soluzione funziona, ma è un po' lunga. Prova ad accorciarla."
+    "mustUseWhile": "Quasi! Per questo esercizio vogliamo che tu usi un ciclo `while` per continuare a ridurre finché non rimane una sola cifra.",
+    "tooManyLines": "Continua così! Vedi se riesci a scendere a 10 righe di codice."
   },
   "functions": {
     "number": {
-      "description": "Converte una stringa che contiene cifre in un numero",
+      "description": "Converte una stringa contenente cifre in un numero",
       "category": "Conversione di tipo"
     },
     "string": {
