@@ -4,7 +4,7 @@ description: "Costruisci le funzioni che controllano cosa c'è intorno a te nel 
 en_md5: 9ca44b407519cf6b3d5fa9f3f0e3b3d3
 ---
 
-L'ultima volta hai aggiunto una nuova funzione per aiutare a navigare nel labirinto: `turnAround()` (girati). Abbiamo il tuo codice a sinistra perché tu possa continuare a lavorarci.
+L'ultima volta hai aggiunto una nuova funzione per aiutarti a navigare nel labirinto: `turnAround()` (girati). Abbiamo lasciato il tuo codice sulla sinistra così puoi continuare a lavorarci.
 
 Questa volta abbiamo rimosso tre funzioni su cui facevi affidamento prima. Il tuo compito in questo esercizio è implementarle tu stesso!
 
