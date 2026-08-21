@@ -4,7 +4,11 @@ description: "Due modi per specificare qualsiasi colore desideri. RGB mescola lu
 en_md5: a0eea0481b975e45f75774d83966a4a7
 ---
 
-Se un giorno programmerai nell'ambito della grafica (e anche se vorrai fare il data scientist e pensi che tutta la parte visiva sia un po' noiosa, comunicare i dati attraverso le immagini è una competenza fondamentale), ci sono due modi diversi per esprimere i colori. Finora hai usato i colori tramite i loro nomi, come red o yellow, come ultimo input nelle funzioni di disegno: è un modo rapido e comodo per usare i colori, ma è anche piuttosto limitato. I colori "con nome" sono pochi. Adesso vedremo due modi per rappresentare qualsiasi colore tu voglia, e questi due sistemi si chiamano RGB e HSL.
+Se un giorno programmerai nell'ambito della grafica (e anche se vorrai fare il data scientist e pensi che tutta la parte visiva sia un po' noiosa, comunicare i dati attraverso le immagini è una competenza fondamentale), ci sono due modi diversi per esprimere i colori.
+
+Finora hai usato i colori tramite i loro nomi, come red o yellow, come ultimo input nelle funzioni di disegno: è un modo rapido e comodo per usare i colori, ma è anche piuttosto limitato. I colori "con nome" sono pochi.
+
+Adesso vedremo due modi per rappresentare qualsiasi colore tu voglia, e questi due sistemi si chiamano RGB e HSL.
 
 RGB ci permette di pensare ai colori come a una miscela di rosso, verde e blu. Questo è ciò che RGB significa: rosso (_red (R)_ in inglese), verde (_green (G)_ in inglese), blu (_blue (B)_ in inglese). Se ti ricordi di aver mescolato i colori a scuola, l'idea è simile, solo che invece di mescolare vernice, mescoliamo luce.
 
