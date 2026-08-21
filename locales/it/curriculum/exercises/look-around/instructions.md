@@ -27,10 +27,6 @@ Per aiutarti, abbiamo aggiunto una nuova funzione `look(direction)` (guarda). Qu
 
 Ecco tre consigli utili.
 
-Per prima cosa, conviene **iniziare creando le funzioni** che il tuo codice userà: `canTurnLeft()`, `canTurnRight()` e `canMove()`.
-
-All'inizio puoi farle restituire un valore di default (`true` o `false`), così il programma funziona mentre costruisci la logica passo dopo passo. In questo modo eviti di ricevere continuamente errori del tipo "la funzione non esiste" finché non hai scritto tutto.
-
-**Non serve modificare il codice già presente:** basta aggiungere le tre funzioni all'inizio del file.
-
-E se ti aiuta, puoi creare anche **altre funzioni** oltre a quelle richieste: a volte suddividere il lavoro rende l'implementazione più semplice e più chiara.
+1. Per prima cosa, conviene **iniziare creando le funzioni** che il tuo codice userà: `canTurnLeft()`, `canTurnRight()` e `canMove()`. All'inizio puoi farle restituire un valore di default (`true` o `false`), così il programma funziona mentre costruisci la logica passo dopo passo. In questo modo eviti di ricevere continuamente errori del tipo "la funzione non esiste" finché non hai scritto tutto.
+2. **Non serve modificare il codice già presente:** basta aggiungere le tre funzioni all'inizio del file.
+3. Se ti aiuta, puoi creare anche **altre funzioni** oltre a quelle richieste: a volte suddividere il lavoro rende l'implementazione più semplice e più chiara.
