@@ -4,7 +4,7 @@ description: "Usare `!` per invertire un booleano: true diventa false e false di
 en_md5: 7cffbd1fa13317b3d6e6a71415413041
 ---
 
-Finora, quando abbiamo confrontato le cose per vedere se sono uguali, abbiamo usato tre segni di uguale. A volte, però, vogliamo controllare se le cose non sono uguali, e per questo usiamo un punto esclamativo seguito da due segni di uguale. In generale, nella programmazione, un punto esclamativo, o _bang_ (punto esclamativo), come penso lo chiamino i nostri amici americani, significa non. Immagina ora di lavorare in un negozio e che la direzione abbia deciso che non sono ammessi abiti da discoteca.
+Finora, quando abbiamo confrontato le cose per vedere se sono uguali, abbiamo usato tre segni di uguale. A volte, però, vogliamo controllare se le cose non sono uguali, e per questo usiamo un punto esclamativo seguito da due segni di uguale. In generale, nella programmazione, un punto esclamativo, o _bang_, come lo chiamano spesso i nostri amici americani, significa «non». Immagina ora di lavorare in un negozio e che la direzione abbia deciso che non sono ammessi abiti da discoteca.
 
 <img
   class="concept-image"
