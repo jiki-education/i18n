@@ -2,16 +2,20 @@
   "tasks": {
     "classifyString": {
       "name": "Clasificar un string",
-      "description": "Escribe funciones auxiliares para verificar si un string es alfabético, numérico o alfanumérico, y luego úsalas para clasificar el string de entrada."
+      "description": "Escribe funciones auxiliares para comprobar si un string es alfabético, numérico o alfanumérico y, a continuación, úsalas para clasificar el string de entrada."
     },
     "useContinue": {
-      "name": "Usa continue",
-      "description": "En tu verificación isAlphanumeric, una vez que un carácter es una letra o un dígito ya estás conforme. Usa continue para pasar directamente al siguiente carácter en lugar de anidar más condiciones."
+      "name": "Usar continue",
+      "description": "En tu comprobación isAlphanumeric, una vez que un carácter es una letra o un dígito, ya está bien. Usa continue para pasar directamente al siguiente carácter en lugar de anidar más condiciones."
+    },
+    "solveTightly": {
+      "name": "Resuélvelo en 42 líneas",
+      "description": "Intenta resolverlo en 42 líneas de código o menos. Ese objetivo no es la solución más apta para producción, y también las hay más cortas, pero es una buena meta a la que aspirar."
     }
   },
   "scenarios": {
     "duck": {
-      "name": "Duck",
+      "name": "Pato",
       "description": "Un string puramente alfabético debe clasificarse como \"Alpha\"."
     },
     "number": {
@@ -19,7 +23,7 @@
       "description": "Un string puramente numérico debe clasificarse como \"Numeric\"."
     },
     "alphanumeric": {
-      "name": "Duck42",
+      "name": "Pato42",
       "description": "Un string con letras y números debe clasificarse como \"Alphanumeric\"."
     },
     "notAlphanumeric1": {
@@ -27,50 +31,54 @@
       "description": "Un string con caracteres especiales debe clasificarse como \"Unknown\"."
     },
     "notAlphanumeric2": {
-      "name": "¡42 pato de goma!",
+      "name": "¡42 Pato de goma!",
       "description": "Un string con espacios y caracteres especiales debe clasificarse como \"Unknown\"."
     },
     "alphanumericUsesContinue": {
-      "name": "Has usado continue",
-      "description": "Tu solución funciona y usa continue para pasar por alto caracteres que ya se han considerado."
+      "name": "Uso de continue",
+      "description": "Tu solución funciona y usa continue para pasar por alto los caracteres que ya están contemplados."
+    },
+    "alphanumericBonusLineCount": {
+      "name": "Ordenado y limpio",
+      "description": "Intenta resolverlo en 42 líneas de código o menos."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "¿Por dónde empiezo cuando hay que escribir varias funciones?",
-      "answer": "Elige primero el ayudante más pequeño. Cada ayudante recorre los caracteres del string y se hace el mismo tipo de pregunta de sí/no sobre cada uno. Haz que uno funcione y los demás siguen la misma forma."
+      "question": "¿Por dónde empiezo cuando hay varias funciones que escribir?",
+      "answer": "Elige primero la función auxiliar más pequeña. Cada función auxiliar recorre los caracteres del string y plantea el mismo tipo de pregunta de sí/no sobre cada uno de ellos. Haz que una funcione y las demás seguirán la misma estructura."
     },
     "checkAllLetters": {
-      "question": "¿Cómo verifico si cada carácter de la entrada es una letra?",
-      "answer": "Recorre cada carácter y verifica si aparece en el alfabeto. El método `.includes()` de un string responde exactamente eso: `\"...\".includes(char)`. Recuerda incluir letras minúsculas y mayúsculas; de lo contrario, una mayúscula como la \"D\" de \"Duck\" no contará. Si algún carácter no está en el alfabeto, no es todo alfabético."
+      "question": "¿Cómo compruebo si cada carácter de la entrada es una letra?",
+      "answer": "Recorre cada carácter y comprueba si aparece en el alfabeto. El método `.includes()` de un string responde exactamente a eso: `\"...\".includes(char)`. Recuerda incluir tanto las letras minúsculas como las mayúsculas; de lo contrario, una mayúscula como la \"D\" de \"Duck\" no contará. Si algún carácter no está en el alfabeto, no es todo alfabético."
     },
     "checkAllDigits": {
-      "question": "¿Cómo hago la misma verificación para dígitos?",
-      "answer": "Exactamente el mismo patrón, pero verifica contra `\"0123456789\"` en lugar del alfabeto."
+      "question": "¿Cómo hago la misma comprobación para los dígitos?",
+      "answer": "Exactamente el mismo patrón, pero comprueba contra `\"0123456789\"` en lugar del alfabeto."
     },
     "alphanumericMeaning": {
       "question": "¿Qué significa 'alfanumérico'? ¿Significa ambos?",
-      "answer": "Alfanumérico significa que cada carácter es una letra O un dígito. Así que para cada carácter, si es alfabético estás conforme, y si es numérico también estás conforme. Usa `continue` para saltar al siguiente. Solo si no es ninguno de los dos debes rechazarlo."
+      "answer": "Alfanumérico significa que cada carácter es una letra O un dígito. Así que para cada carácter, si es alfabético estás conforme, y si es numérico también estás conforme. Usa `continue` para saltar. Solo si no es ninguna de las dos cosas debes rechazarlo."
     },
     "pickingLabels": {
       "question": "¿Cómo elijo entre las cuatro etiquetas en whatAmI()?",
-      "answer": "Llama a los tres ayudantes y usa if/else. El orden importa. Verifica los casos más estrictos ('solo alfa' y 'solo numérico') antes de 'alfanumérico', que es el caso más flexible."
+      "answer": "Llama a las tres funciones auxiliares y usa if/else. El orden importa. Comprueba primero los casos más estrictos («solo letras» y «solo números») antes que «alfanumérico», que es el caso más laxo."
     }
   },
   "checks": {
-    "mustUseContinue": "¡Casi! Usa `continue` para saltar al siguiente carácter.",
-    "tooManyLines": "¡Casi! Tu solución funciona, pero es un poco larga.",
-    "useIsAlpha": "Este ejercicio quiere que escribas un ayudante `isAlpha()` y lo uses para clasificar el string.",
-    "useIsNumeric": "Este ejercicio quiere que escribas un ayudante `isNumeric()` y lo uses para clasificar el string.",
-    "useIsAlphanumeric": "Este ejercicio quiere que escribas un ayudante `isAlphanumeric()` y lo uses para clasificar el string."
+    "mustUseContinue": "¡Casi lo tienes! Usa `continue` para saltar al siguiente carácter.",
+    "tooManyLines": "¡Casi lo tienes! Tu solución funciona, pero tiene más de 42 líneas de código.",
+    "useIsAlpha": "Este ejercicio quiere que escribas una función auxiliar `isAlpha()` y la uses para clasificar el string.",
+    "useIsNumeric": "Este ejercicio quiere que escribas una función auxiliar `isNumeric()` y la uses para clasificar el string.",
+    "useIsAlphanumeric": "Este ejercicio quiere que escribas una función auxiliar `isAlphanumeric()` y la uses para clasificar el string."
   },
   "functions": {
     "toLowerCase": {
-      "description": "Devuelve una copia en minúsculas de un string (proporcionado por la biblioteca estándar del nivel)",
+      "description": "Devuelve una copia en minúsculas de un string (proporcionado por la biblioteca estándar del nivel).",
       "category": "Operaciones con strings"
     },
     "includes": {
-      "description": "Verifica si un string contiene otro string más pequeño (proporcionado por la biblioteca estándar del nivel)",
+      "description": "Comprueba si un string contiene un string más pequeño (proporcionado por la biblioteca estándar del nivel).",
       "category": "Operaciones con strings"
     }
   }

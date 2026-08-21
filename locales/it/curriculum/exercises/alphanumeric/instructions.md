@@ -1,30 +1,30 @@
 ---
 title: "Alfanumerico"
 description: "Crea funzioni per classificare il testo come lettere, numeri o entrambi."
-en_md5: 4a99adb1b883c6f6710a3494a8961cc2
+en_md5: f199432f63304f1d03c4ce1512c8a349
 ---
 
-In questo esercizio, il tuo compito è creare funzioni che verifichino se una stringa contiene lettere e/o numeri.
+In questo esercizio, il tuo compito sarà creare funzioni che verificano se una stringa contiene lettere e/o numeri.
 
 Dovrai scrivere tre funzioni ausiliarie:
 
-- `isAlpha(string)` (`sono lettere`): determina se una stringa è composta solo da lettere ASCII (ad es. "A", "a", "Hello")
-- `isNumeric(string)` (`sono numeri`): determina se una stringa è composta solo da caratteri numerici (ad es. "0", "1", "456")
-- `isAlphanumeric(string)` (`sono lettere o numeri`): determina se una stringa è composta solo da lettere ASCII o numeri (ad es. "Hello", "42", "Hello42")
+- `isAlpha(string)` (sono lettere): determina se una stringa è composta soltanto da lettere ASCII (ad esempio "A", "a", "Hello")
+- `isNumeric(string)` (sono numeri): determina se una stringa è composta soltanto da caratteri numerici (ad esempio "0", "1", "456")
+- `isAlphanumeric(string)` (sono lettere o numeri): determina se una stringa è composta soltanto da lettere ASCII o numeri (ad esempio "Hello", "42", "Hello42")
 
-Per qualsiasi altro simbolo (ad es. "! ?") o carattere non ASCII (ad es. "じき", "正直"), tutte e tre le funzioni devono restituire false.
+Per qualsiasi altro simbolo (ad esempio "! ?") o carattere non ASCII (ad esempio "じき", "正直"), tutte e tre le funzioni devono restituire false.
 
-Poi scrivi una funzione `whatAmI(string)` (cosa sono) che utilizzi quelle funzioni ausiliarie per classificare una stringa:
+Poi, scrivi una funzione `whatAmI(string)` (cosa sono) che usa quelle funzioni ausiliarie per classificare una stringa:
 
-- Le stringhe composte solo da lettere devono restituire `"Alpha"`
-- Le stringhe composte solo da numeri devono restituire `"Numeric"`
-- Le stringhe composte sia da lettere che da numeri devono restituire `"Alphanumeric"`
+- Le stringhe con sole lettere devono restituire `"Alpha"`
+- Le stringhe con soli numeri devono restituire `"Numeric"`
+- Le stringhe con sia lettere sia numeri devono restituire `"Alphanumeric"`
 - Tutto il resto deve restituire `"Unknown"`
 
-### Usare ciò che hai appena imparato
+### Usa quello che hai appena imparato
 
-Anche se ci sono molti modi validi per risolvere questo esercizio, la soluzione che ti chiediamo di trovare utilizza un'istruzione `continue` e le tre funzioni precedenti.
+Anche se questo esercizio si può risolvere in molti modi validi, la soluzione che ti chiediamo di scrivere usa un'istruzione `continue` e le tre funzioni viste sopra.
 
-L'esercizio ti sfida anche a risolvere tutto in 42 righe di codice o meno. Quel limite non è necessariamente la soluzione più adatta. Un paio di righe in più probabilmente danno una soluzione più elegante, e ci sono anche soluzioni più brevi. Ma è un buon obiettivo per spingere le tue capacità.
+C'è anche un compito bonus che ti sfida a risolvere tutto l'esercizio in 42 righe di codice o meno. Quel limite non è necessariamente la soluzione più adatta. Un paio di righe in più probabilmente dà una soluzione migliore, e ci sono anche soluzioni più corte. Ma è un buon obiettivo per mettere alla prova le tue capacità.
 
-Buon divertimento!
+Divertiti!

@@ -2,11 +2,11 @@
   "tasks": {
     "countChancersInQueue": {
       "name": "Compte les resquilleurs",
-      "description": "Écris une fonction qui prend la file d'attente et la liste des invités, et qui renvoie le nombre de personnes dans la file d'attente qui ne figurent pas sur la liste des invités."
+      "description": "Écris une fonction qui prend la file d'attente et la liste des invités, et qui renvoie le nombre de personnes de la file d'attente qui ne figurent pas sur la liste des invités."
     },
     "solveTightly": {
-      "name": "Résous-le de façon compacte",
-      "description": "Bonus : cette solution peut être beaucoup plus compacte que tu ne l'imagines. Arrives-tu à la faire tenir en quelques lignes seulement ?"
+      "name": "Résous-le en 9 lignes",
+      "description": "Bonus : cette solution peut être beaucoup plus compacte que tu ne l'imagines. Arrives-tu à la faire tenir en 9 lignes de code ou moins ?"
     }
   },
   "scenarios": {
@@ -28,37 +28,37 @@
     },
     "guestsWhoHaventArrived": {
       "name": "Des invités encore coincés dans les bouchons",
-      "description": "Une liste des invités avec beaucoup de noms, mais la plupart de ces personnes n'ont pas encore rejoint la file d'attente."
+      "description": "Une liste des invités qui compte beaucoup de noms, mais la plupart de ces personnes n'ont pas encore rejoint la file d'attente."
     },
     "longQueueShortList": {
-      "name": "Une longue file d'attente et une courte liste",
+      "name": "Une longue file et une courte liste",
       "description": "Une grande file d'attente dehors, mais seulement quelques noms sur la liste des invités."
     },
     "guestListBonusLineCount": {
       "name": "Propre et net : une file d'attente mélangée",
-      "description": "La même file d'attente mélangée que précédemment, mais cette fois ta solution doit tenir en beaucoup moins de lignes."
+      "description": "La même file d'attente mélangée que précédemment, mais cette fois, essaie de résoudre l'exercice en 9 lignes de code ou moins."
     }
   },
   "checks": {
-    "tooManyLines": "Continue ! Essaie de résoudre l'exercice en moins de lignes."
+    "tooManyLines": "Continue ! Essaie de descendre à 9 lignes de code."
   },
   "hints": {
     "keepingTrack": {
       "question": "De quoi dois-je garder la trace au fur et à mesure ?",
-      "answer": "La réponse est un seul nombre, et tu ne le connais pas avant d'avoir vu tout le monde. Alors pose-toi deux questions : quelle doit être la valeur de ce nombre avant même d'avoir regardé qui que ce soit, et que doit-il lui arriver quand quelqu'un se révèle **ne pas** être invité ?"
+      "answer": "La réponse est un seul nombre, et tu ne le connais qu'une fois que tu as vu tout le monde. Pose-toi donc deux questions : quelle doit être la valeur de ce nombre avant même d'avoir regardé qui que ce soit, et que doit-il lui arriver quand quelqu'un s'avère ne **pas** être invité ?"
     },
     "whichList": {
       "question": "Il y a deux listes ici. Laquelle dois-je parcourir ?",
-      "answer": "Réfléchis à ce que la réponse est censée compter. C'est un nombre de personnes **dans la file d'attente**, donc c'est la file d'attente que tu dois parcourir, une personne à la fois. La liste des invités, elle, n'est pas quelque chose que tu parcours : c'est ce qui te permet de vérifier chaque personne."
+      "answer": "Réfléchis à ce que la réponse est censée compter. C'est un nombre de personnes **dans la file d'attente**, donc c'est la file d'attente que tu dois parcourir une personne à la fois. La liste des invités, elle, ne se parcourt pas : elle te sert à vérifier chaque personne."
     },
     "realLifeBouncer": {
-      "question": "Comment un vrai videur ferait-il ça avec sa liste à la main ?",
-      "answer": "Imagine-le posté au début de la file d'attente, sa liste à la main, en train de remonter petit à petit vers le fond. Il n'annonce le nombre final qu'une fois arrivé à la dernière personne. Que fait-il pour chaque personne en cours de route, et que fait-il pour celles dont il ne trouve pas le nom ?"
+      "question": "Comment un vrai videur ferait-il ça avec un porte-bloc ?",
+      "answer": "Imagine-le posté au début de la file d'attente, son porte-bloc à la main, en train de remonter vers le fond. Il n'annonce le nombre final qu'une fois arrivé à la dernière personne. Que fait-il pour chaque personne en cours de route, et que fait-il pour celles dont il ne trouve pas le nom ?"
     }
   },
   "functions": {
     "includes": {
-      "description": "Vérifie si un tableau contient un élément précis (fonction fournie par la bibliothèque standard du niveau)",
+      "description": "Vérifie si un tableau contient un élément précis (fournie par la bibliothèque standard du niveau)",
       "category": "Opérations sur les tableaux"
     }
   }
