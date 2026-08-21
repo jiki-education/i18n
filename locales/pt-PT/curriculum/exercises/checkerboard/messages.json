@@ -1,80 +1,80 @@
 {
   "checks": {
-    "border": "�",
-    "topLeftWhite": "�",
-    "rightOfTopLeftDark": "�",
-    "bottomLeftDark": "�",
-    "bottomRightWhite": "�",
-    "charcoalPiece": "�",
-    "topRim": "�",
-    "whitePiece": "�",
-    "bottomRim": "�",
-    "rimRatio": "�",
-    "innerRatio": "�",
-    "noPieceOnLight": "�",
-    "middleRowsEmpty": "�"
+    "border": "O tabuleiro deve ter uma borda preta à volta de todo o rebordo.",
+    "topLeftWhite": "A casa do canto superior esquerdo deve ser white (é uma casa clara).",
+    "rightOfTopLeftDark": "A casa à direita da do canto superior esquerdo deve ser dark brown (uma casa escura).",
+    "bottomLeftDark": "A casa do canto inferior esquerdo deve ser dark brown (uma casa escura).",
+    "bottomRightWhite": "A casa do canto inferior direito deve ser white.",
+    "charcoalPiece": "Deve haver uma peça charcoal na casa escura da linha de cima.",
+    "topRim": "As peças nas linhas de cima devem ter um aro à volta.",
+    "whitePiece": "Deve haver uma peça white na casa escura da linha de baixo.",
+    "bottomRim": "As peças nas linhas de baixo devem ter um aro à volta.",
+    "rimRatio": "O aro de uma peça deve ter 80% da largura da sua casa - verifica o raio do círculo exterior.",
+    "innerRatio": "O centro de uma peça deve ter 75% da largura da peça inteira - verifica o raio do círculo interior.",
+    "noPieceOnLight": "Não deve haver uma peça na casa do canto superior esquerdo - as peças só ficam nas casas escuras.",
+    "middleRowsEmpty": "As linhas do meio devem estar vazias - apenas as linhas de cima e de baixo têm peças."
   },
   "tasks": {
     "setUpTheBoard": {
-      "name": "�",
-      "description": "�"
+      "name": "Preparar o tabuleiro",
+      "description": "Desenha o tabuleiro de damas e coloca as peças nas casas escuras das linhas de cima e de baixo - e faz com que funcione para qualquer tamanho de tabuleiro."
     }
   },
   "scenarios": {
     "board8": {
-      "name": "�",
-      "description": "�"
+      "name": "Preparar um tabuleiro 8×8",
+      "description": "Desenha o clássico tabuleiro de damas 8×8 e dispõe as peças prontas para jogar."
     },
     "board6": {
-      "name": "�",
-      "description": "�"
+      "name": "Preparar um tabuleiro 6×6",
+      "description": "O mesmo código deve adaptar-se a um tabuleiro mais pequeno de 6×6."
     },
     "board10": {
-      "name": "�",
-      "description": "�"
+      "name": "Preparar um tabuleiro 10×10",
+      "description": "E deve adaptar-se a um tabuleiro maior de 10×10."
     }
   },
   "hints": {
     "wholeGrid": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como desenho uma grelha inteira de casas em vez de apenas uma?",
+      "answer": "Usa ciclos aninhados: um ciclo exterior que percorre as linhas e um ciclo interior que percorre as colunas. Desenha uma casa de cada vez que o ciclo interior é executado."
     },
     "anyBoardSize": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como faço para que funcione com qualquer tamanho de tabuleiro?",
+      "answer": "Não escolhas um tamanho de casa fixo. Pergunta a `getBoardSize()` quantas casas existem, determina o tamanho de uma única `cell` a partir disso e do espaço disponível, e constrói cada posição como um múltiplo dessa medida."
     },
     "alternateColours": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como faço para as casas alternarem de cor?",
+      "answer": "Repara na linha e na coluna de uma casa em conjunto. O operador de resto (`%`) permite-te dividir cada casa num de dois grupos com base em `row` e `col`, e esses dois grupos são exatamente as casas claras e escuras."
     },
     "whichSquaresGetPieces": {
-      "question": "�",
-      "answer": "�"
+      "question": "Que casas recebem peças?",
+      "answer": "As peças só ficam nas casas **escuras**, por isso podes reutilizar o mesmo teste que usaste para as colorir. Depois restringe ainda mais para incluir apenas as linhas de cima e de baixo, deixando as duas do meio vazias."
     },
     "ridgedPiece": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como desenho uma peça com relevo?",
+      "answer": "Desenha dois círculos com o mesmo centro: um maior para o aro, e depois um ligeiramente mais pequeno por cima na cor da peça. Baseia ambos os raios no tamanho da `cell` para que as peças se adaptem ao tabuleiro."
     },
     "rimSize": {
-      "question": "�",
-      "answer": "�"
+      "question": "O tamanho do aro não parece o do diagrama de exemplo.",
+      "answer": "Verifica se o círculo interior tem 75% do círculo exterior (e não 75% da casa)."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um retângulo na posição (left, top) com a largura, altura e cor fornecidas",
+      "category": "Desenhar Formas"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um círculo centrado em (centerX, centerY) com o raio e a cor fornecidos",
+      "category": "Desenhar Formas"
     },
     "getBoardSize": {
-      "description": "�",
-      "category": "�"
+      "description": "Devolve o tamanho do tabuleiro (o número de casas ao longo de cada lado) para o desafio atual",
+      "category": "Informação"
     }
   },
   "describers": {
-    "getBoardSize": "�"
+    "getBoardSize": "obteve o tamanho do tabuleiro (o número de casas ao longo de cada lado)"
   }
 }

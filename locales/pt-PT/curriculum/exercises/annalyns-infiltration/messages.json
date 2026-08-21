@@ -1,126 +1,126 @@
 {
   "checks": {
     "fastAttack": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "A Annalyn <strong>devia</strong> ter feito um ataque rápido aqui, mas não o fez. O cavaleiro está a dormir, por isso ela pode atacar antes de ele acordar.",
+      "shouldNot": "A Annalyn <strong>não devia</strong> fazer um ataque rápido aqui. O cavaleiro está acordado, por isso atacar faria com que fosse apanhada.",
+      "tooMany": "A Annalyn <strong>devia</strong> fazer o ataque rápido apenas uma vez aqui, mas fê-lo {{count}} vezes."
     },
     "spy": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "A Annalyn <strong>devia</strong> espiar aqui, mas não o fez. Pelo menos uma pessoa no acampamento está acordada, por isso há algo para observar.",
+      "shouldNot": "A Annalyn <strong>não devia</strong> espiar aqui. Está toda a gente a dormir, por isso não há nada para aprender.",
+      "tooMany": "A Annalyn <strong>devia</strong> espiar apenas uma vez aqui, mas fê-lo {{count}} vezes."
     },
     "signal": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "A Annalyn <strong>devia</strong> enviar um sinal ao prisioneiro aqui, mas não o fez. O prisioneiro está acordado e o arqueiro está a dormir, por isso o sinal vai passar.",
+      "shouldNot": "A Annalyn <strong>não devia</strong> enviar um sinal ao prisioneiro aqui. Ou o prisioneiro está a dormir ou o arqueiro está acordado, por isso enviar o sinal iria falhar.",
+      "tooMany": "A Annalyn <strong>devia</strong> enviar um sinal ao prisioneiro apenas uma vez aqui, mas fê-lo {{count}} vezes."
     },
     "free": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "A Annalyn <strong>devia</strong> libertar o prisioneiro aqui, mas não o fez. Ela pode fazê-lo aqui sem ser apanhada.",
+      "shouldNot": "A Annalyn <strong>não devia</strong> tentar libertar o prisioneiro aqui. Ela seria apanhada.",
+      "tooMany": "A Annalyn <strong>devia</strong> libertar o prisioneiro apenas uma vez aqui, mas fê-lo {{count}} vezes."
     }
   },
   "tasks": {
     "planTheRescue": {
-      "name": "�",
-      "description": "�"
+      "name": "Planear o resgate",
+      "description": "Para cada acampamento, executa todas as ações que a Annalyn pode realizar em segurança: ataque rápido se o cavaleiro estiver a dormir, espiar se pelo menos um deles estiver acordado, enviar um sinal ao prisioneiro se o prisioneiro estiver acordado e o arqueiro a dormir, e libertar o prisioneiro pela rota do cão bem-comportado ou pela rota furtiva."
     }
   },
   "scenarios": {
     "allAsleepNaughtyDog": {
-      "name": "�",
-      "description": "�"
+      "name": "Todos a dormir, cão a portar-se mal",
+      "description": "O acampamento inteiro está a dormir, mas o cão da Annalyn está a portar-se mal, por isso não é de ajuda."
     },
     "allAsleepBehavingDog": {
-      "name": "�",
-      "description": "�"
+      "name": "Todos a dormir, cão a portar-se bem",
+      "description": "O acampamento inteiro está a dormir e o cão da Annalyn está a portar-se bem."
     },
     "knightAwakeNaughtyDog": {
-      "name": "�",
-      "description": "�"
+      "name": "Só o cavaleiro está acordado",
+      "description": "O cavaleiro está de vigia enquanto o arqueiro e o prisioneiro dormem. O cão está a portar-se mal."
     },
     "prisonerAwakeNaughtyDog": {
-      "name": "�",
-      "description": "�"
+      "name": "Só o prisioneiro está acordado",
+      "description": "Os dois raptores dormem enquanto o prisioneiro está acordado. O cão está a portar-se mal. A rota furtiva está aberta."
     },
     "archerAndPrisonerAwakeBehavingDog": {
-      "name": "�",
-      "description": "�"
+      "name": "Arqueiro e prisioneiro acordados",
+      "description": "O arqueiro está de vigia e o prisioneiro também está acordado. O cão está a portar-se bem."
     },
     "allAwakeBehavingDog": {
-      "name": "�",
-      "description": "�"
+      "name": "Todos acordados, cão a portar-se bem",
+      "description": "O acampamento inteiro está bem acordado. Mesmo com o cão a portar-se bem, libertar não é seguro."
     }
   },
   "hints": {
     "checkCampState": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como verifico as coisas sobre o acampamento?",
+      "answer": "Podes verificar quatro coisas, cada uma com uma função que devolve `true` ou `false`:\n\n- O cavaleiro está acordado? `knightIsAwake()`\n- O arqueiro está acordado? `archerIsAwake()`\n- O prisioneiro está acordado? `prisonerIsAwake()`\n- O cão está a portar-se bem? `dogIsBehaving()`"
     },
     "performActions": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como faço a Annalyn realizar cada uma das ações?",
+      "answer": "Há quatro ações, cada uma com a sua própria função:\n\n- Fazer um ataque rápido: `fastAttack()`\n- Espiar o acampamento: `spy()`\n- Enviar um sinal ao prisioneiro: `signalPrisoner()`\n- Libertar o prisioneiro: `freePrisoner()`"
     },
     "knightAsleep": {
-      "question": "�",
-      "answer": "�"
+      "question": "Um ataque rápido precisa de o cavaleiro estar A DORMIR. Como verifico isso?",
+      "answer": "Não há nenhuma função `isAsleep()`, mas estar a dormir é simplesmente o oposto de estar acordado. Usa `!` para inverter uma condição. Imagina que queremos dizer a alguém para parar de comer quando está cheio, mas só temos uma função `isHungry()`. Podemos invertê-la:\n\n```javascript\nif (!isHungry()) {\n  stopEating()\n}\n```\n\nAplica a mesma ideia para verificar se o cavaleiro está a dormir."
     },
     "spyAnyoneAwake": {
-      "question": "�",
-      "answer": "�"
+      "question": "Espiar funciona se PELO MENOS UM deles estiver acordado. Como escrevo isso?",
+      "answer": "Usa `||` (ou) entre as verificações para que a condição completa seja `true` se qualquer uma delas for `true`. Por exemplo, isto corre quando alguém está com fome, com sede, ou ambos:\n\n```javascript\nif (isHungry() || isThirsty()) {\n  rest()\n}\n```"
     },
     "signalBothConditions": {
-      "question": "�",
-      "answer": "�"
+      "question": "Enviar um sinal precisa de DUAS coisas verdadeiras ao mesmo tempo. Como as combino?",
+      "answer": "Usa `&&` (e) para que ambos os lados tenham de ser `true`. Por exemplo, isto só corre quando alguém está com fome E com sede:\n\n```javascript\nif (isHungry() && isThirsty()) {\n  drink()\n}\n```"
     },
     "twoWaysToSucceed": {
-      "question": "�",
-      "answer": "�"
+      "question": "Uma ação tem duas formas completamente separadas de ter sucesso. Como lido com isso?",
+      "answer": "Qualquer uma das formas é suficiente por si só, por isso tens duas opções.\n\nA primeira é escrever um `if` separado para cada forma, ambos a fazer a mesma ação:\n\n```javascript\nif (isHungry() && hasSnack()) {\n  eat()\n}\nif (isThirsty() && hasSnack()) {\n  eat()\n}\n```\n\nA segunda é combinar ambas as formas num único `if` com `||`, envolvendo as verificações de cada forma entre parênteses para que as partes `&&` se agrupem antes de o `||` as separar:\n\n```javascript\nif ((isHungry() && hasSnack()) || (isThirsty() && hasSnack())) {\n  eat()\n}\n```\n\nPrimeiro, determina os requisitos de cada forma por si só e depois usa o estilo que achares mais claro."
     }
   },
   "describers": {
-    "knightIsAwake": "�",
-    "archerIsAwake": "�",
-    "prisonerIsAwake": "�",
-    "dogIsBehaving": "�",
-    "fastAttack": "�",
-    "spy": "�",
-    "signalPrisoner": "�",
-    "freePrisoner": "�"
+    "knightIsAwake": "verificou se o cavaleiro está acordado",
+    "archerIsAwake": "verificou se o arqueiro está acordado",
+    "prisonerIsAwake": "verificou se o prisioneiro está acordado",
+    "dogIsBehaving": "verificou se o cão da Annalyn está a portar-se bem",
+    "fastAttack": "fez um ataque rápido ao cavaleiro",
+    "spy": "espiou o grupo",
+    "signalPrisoner": "enviou um sinal ao prisioneiro",
+    "freePrisoner": "libertou o prisioneiro"
   },
   "functions": {
     "knightIsAwake": {
-      "description": "�",
-      "category": "�"
+      "description": "Devolve `true` se o cavaleiro estiver acordado, `false` se estiver a dormir.",
+      "category": "Informação"
     },
     "archerIsAwake": {
-      "description": "�",
-      "category": "�"
+      "description": "Devolve `true` se o arqueiro estiver acordado, `false` se estiver a dormir.",
+      "category": "Informação"
     },
     "prisonerIsAwake": {
-      "description": "�",
-      "category": "�"
+      "description": "Devolve `true` se o prisioneiro estiver acordado, `false` se estiver a dormir.",
+      "category": "Informação"
     },
     "dogIsBehaving": {
-      "description": "�",
-      "category": "�"
+      "description": "Devolve `true` se o cão da Annalyn (um pouco travesso) estiver a portar-se bem.",
+      "category": "Informação"
     },
     "fastAttack": {
-      "description": "�",
-      "category": "�"
+      "description": "Faz um ataque rápido ao cavaleiro.",
+      "category": "Ação"
     },
     "spy": {
-      "description": "�",
-      "category": "�"
+      "description": "Espia o grupo.",
+      "category": "Ação"
     },
     "signalPrisoner": {
-      "description": "�",
-      "category": "�"
+      "description": "Envia um sinal ao prisioneiro com sons de pássaros.",
+      "category": "Ação"
     },
     "freePrisoner": {
-      "description": "�",
-      "category": "�"
+      "description": "Entra às escondidas no acampamento para libertar o prisioneiro.",
+      "category": "Ação"
     }
   }
 }

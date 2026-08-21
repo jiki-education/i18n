@@ -1,0 +1,270 @@
+WEBVTT
+
+NOTE en_md5 c5187b46923e87c2aac86912c90dfb53
+
+00:00:00.100 --> 00:00:03.140
+Bem-vindo de volta. Espero que já te sintas mais à vontade com
+
+00:00:03.180 --> 00:00:06.810
+os arrays. Os arrays são a nossa escolha habitual quando
+
+00:00:06.840 --> 00:00:09.740
+temos uma lista de qualquer coisa: uma lista
+
+00:00:09.760 --> 00:00:11.560
+de mentores, uma lista de pontuações, uma lista
+
+00:00:11.600 --> 00:00:14.420
+de ingredientes. Qualquer lista, queres usar
+
+00:00:14.440 --> 00:00:17.630
+um array. Mas há outra estrutura de dados que
+
+00:00:17.720 --> 00:00:20.060
+também é muito comum, para quando queres algo
+
+00:00:20.070 --> 00:00:23.380
+um pouco mais complexo do que uma lista. Imagina
+
+00:00:23.420 --> 00:00:24.780
+que queremos guardar alguma informação sobre mim:
+
+00:00:25.500 --> 00:00:27.580
+o meu nome, a minha idade, onde nasci.
+
+00:00:28.280 --> 00:00:30.140
+Podias usar um array para isso,
+
+00:00:30.150 --> 00:00:32.200
+mas não fica muito claro o que se está a passar
+
+00:00:32.240 --> 00:00:34.850
+quando o fazes. Inglaterra é onde
+
+00:00:34.880 --> 00:00:37.210
+nasci ou onde vivo? 42 é a minha
+
+00:00:37.300 --> 00:00:40.120
+idade ou outra coisa qualquer? E, para
+
+00:00:40.160 --> 00:00:42.050
+usar isto, tenho de me lembrar de que
+
+00:00:42.080 --> 00:00:44.740
+a primeira posição é para o nome, a segunda
+
+00:00:44.780 --> 00:00:47.900
+para a idade, a terceira para o local de nascimento.
+
+00:00:47.920 --> 00:00:49.840
+É tudo um pouco confuso, e é confuso
+
+00:00:49.880 --> 00:00:52.420
+porque isto não é bem uma lista de coisas.
+
+00:00:52.480 --> 00:00:55.769
+É mais complexo do que isso. E é aí
+
+00:00:55.800 --> 00:00:58.500
+que entram os dicionários. Um dicionário é um
+
+00:00:58.560 --> 00:01:00.340
+novo tipo de estrutura de dados. Já é o
+
+00:01:00.420 --> 00:01:03.830
+quinto: tens strings, números, Booleans, arrays e
+
+00:01:03.880 --> 00:01:06.200
+agora dicionários. E quero que penses
+
+00:01:06.260 --> 00:01:08.620
+num dicionário como uma folha de um
+
+00:01:08.800 --> 00:01:12.180
+bloco de notas de espiral. Do lado esquerdo, tens
+
+00:01:12.220 --> 00:01:15.460
+os títulos, as palavras name, age, birthplace, e
+
+00:01:15.500 --> 00:01:18.400
+chamamos-lhes chaves. E do lado
+
+00:01:18.480 --> 00:01:20.240
+direito, ao lado de cada título, tens os
+
+00:01:20.300 --> 00:01:24.520
+dados propriamente ditos, Jeremy, 42, England, e chamamos-lhes
+
+00:01:24.600 --> 00:01:28.300
+valores. Tal como os arrays, um
+
+00:01:28.340 --> 00:01:31.180
+dicionário é uma coisa só. É uma página de
+
+00:01:31.190 --> 00:01:33.830
+um bloco de notas. E tal como os arrays, o Jiki pode
+
+00:01:33.840 --> 00:01:35.250
+pô-lo numa variável, numa caixa,
+
+00:01:35.720 --> 00:01:37.930
+ou usá-lo como valor de entrada de uma função, ou
+
+00:01:37.980 --> 00:01:39.540
+pode tirar um dicionário da
+
+00:01:39.560 --> 00:01:42.200
+calha de saída. Então, eis o aspeto de um dicionário
+
+00:01:42.260 --> 00:01:45.080
+em código. Usamos chavetas para
+
+00:01:45.120 --> 00:01:47.490
+marcar o início e o fim, e
+
+00:01:47.520 --> 00:01:49.420
+lá dentro tens pares: uma chave à
+
+00:01:49.480 --> 00:01:51.700
+esquerda, dois pontos, e depois o valor à
+
+00:01:51.740 --> 00:01:53.860
+direita. E pomos uma vírgula entre
+
+00:01:53.900 --> 00:01:56.260
+cada par. O Jiki vê isto e
+
+00:01:56.280 --> 00:01:58.600
+pega no seu bloco de notas de espiral. Escreve name,
+
+00:01:58.960 --> 00:02:02.100
+Jeremy, age, 42, e assim por diante para cada
+
+00:02:02.140 --> 00:02:04.440
+par. E quando termina, arranca
+
+00:02:04.480 --> 00:02:06.320
+a folha e coloca-a numa caixa
+
+00:02:06.420 --> 00:02:09.360
+com a etiqueta person. Há algumas regras
+
+00:02:09.420 --> 00:02:12.060
+a saber. As chaves são sempre strings. Têm de ter
+
+00:02:12.140 --> 00:02:14.620
+aspas à volta, e cada chave tem de ser
+
+00:02:14.680 --> 00:02:18.170
+única. Não podes ter duas chaves
+
+00:02:18.260 --> 00:02:21.420
+chamadas name no mesmo dicionário. Os valores
+
+00:02:21.480 --> 00:02:23.150
+podem ser iguais, se quiseres,
+
+00:02:23.280 --> 00:02:25.810
+mas as chaves têm de ser diferentes. E
+
+00:02:25.820 --> 00:02:27.600
+os valores podem ser qualquer coisa. Podem ser
+
+00:02:27.680 --> 00:02:31.000
+strings, números, Booleans, arrays ou até outros dicionários.
+
+00:02:32.140 --> 00:02:34.540
+Também podes ter um dicionário vazio,
+
+00:02:34.600 --> 00:02:37.220
+tal como tínhamos um array vazio,
+
+00:02:37.280 --> 00:02:38.800
+e podemos começar por aí e ir
+
+00:02:38.820 --> 00:02:42.210
+construindo a partir dele. Então, tens um
+
+00:02:42.260 --> 00:02:44.160
+dicionário, mas como é que tiras algo
+
+00:02:44.220 --> 00:02:46.900
+lá de dentro? Usamos a mesma sintaxe de
+
+00:02:46.920 --> 00:02:48.960
+parênteses retos que usámos com os arrays e as
+
+00:02:49.020 --> 00:02:52.980
+strings, mas em vez de um número de posição,
+
+00:02:53.020 --> 00:02:55.040
+pomos uma chave. Portanto, se quisermos
+
+00:02:55.100 --> 00:02:57.390
+tirar o nome de alguém de um dicionário,
+
+00:02:57.940 --> 00:03:01.620
+escrevemos a variável person, parênteses retos, e
+
+00:03:01.640 --> 00:03:03.580
+depois a chave, neste caso name, entre
+
+00:03:03.660 --> 00:03:07.260
+aspas lá dentro. E isso diz ao Jiki para procurar
+
+00:03:07.300 --> 00:03:09.970
+no dicionário person, encontrar a chave
+
+00:03:10.080 --> 00:03:12.900
+name e tirar o seu valor. O Jiki
+
+00:03:13.040 --> 00:03:15.000
+vai à caixa person, tira a
+
+00:03:15.040 --> 00:03:17.340
+página do bloco de notas, percorre todas as
+
+00:03:17.400 --> 00:03:19.760
+chaves até encontrar name, e depois lê
+
+00:03:19.800 --> 00:03:21.900
+o valor Jeremy e põe-no numa
+
+00:03:21.910 --> 00:03:27.540
+caixa nova chamada name. Os parênteses retos significam
+
+00:03:27.580 --> 00:03:29.980
+sempre o mesmo. Estás a enfiar a mão em algo
+
+00:03:29.990 --> 00:03:32.370
+e a tirar qualquer coisa lá de dentro. Com os arrays e as strings,
+
+00:03:32.960 --> 00:03:34.720
+usas um número para dizer de que posição
+
+00:03:34.760 --> 00:03:37.580
+queres tirar algo. Com os dicionários,
+
+00:03:37.700 --> 00:03:40.140
+usas uma string para a chave. É a
+
+00:03:40.180 --> 00:03:43.340
+mesma ideia, só com uma sintaxe ligeiramente diferente. Então,
+
+00:03:43.380 --> 00:03:45.390
+tens alguns exercícios para praticares
+
+00:03:45.500 --> 00:03:47.640
+a criação de dicionários e a leitura dos seus valores.
+
+00:03:48.260 --> 00:03:50.160
+Tudo o que precisas é o que acabámos de ver:
+
+00:03:50.580 --> 00:03:52.660
+as chavetas para criar, os parênteses retos
+
+00:03:52.680 --> 00:03:55.200
+para aceder. Vai com calma. Boa
+
+00:03:55.240 --> 00:03:56.820
+sorte, e vemo-nos aqui em breve

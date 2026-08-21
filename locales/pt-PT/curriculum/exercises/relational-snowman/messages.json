@@ -1,48 +1,48 @@
 {
   "checks": {
-    "base": "�",
-    "body": "�",
-    "head": "�",
-    "notResponsive": "�"
+    "base": "O círculo da base (o de baixo) está no sítio errado ou tem o tamanho errado. Verifica `baseRadius` e `baseY`.",
+    "body": "O círculo do corpo (o do meio) está no sítio errado ou tem o tamanho errado. Verifica `bodyRadius` e `bodyY`.",
+    "head": "O círculo da cabeça (o de cima) está no sítio errado ou tem o tamanho errado. Verifica `headRadius` e `headY`.",
+    "notResponsive": "O teu código não escala corretamente quando `size` é {{size}}. Todos os raios e posições y devem ser calculados a partir de `size`."
   },
   "tasks": {
     "buildRelationalSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "Constrói o boneco de neve relacional",
+      "description": "Calcula todos os tamanhos e posições a partir de `size` para que o boneco de neve cresça corretamente."
     }
   },
   "scenarios": {
     "buildRelationalSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "Constrói o boneco de neve relacional",
+      "description": "Calcula todos os raios e posições y a partir de `size`."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Por onde devo começar?",
+      "answer": "Começa pela base, porque é o único círculo ancorado a algo fixo (o fundo da área de desenho). Assim que souberes o valor de `baseY`, podes empilhar o corpo por cima dela e, em seguida, a cabeça por cima do corpo."
     },
     "baseSits": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como é que calculo onde fica a base?",
+      "answer": "O bordo de baixo da base fica a `size` de distância do chão (Y=100). O centro da base fica um raio da base acima do bordo de baixo."
     },
     "stackBody": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como é que empilho o corpo sobre a base?",
+      "answer": "Quando dois círculos se tocam e um está diretamente por cima do outro, a distância entre os seus centros é igual à soma dos dois raios."
     },
     "head": {
-      "question": "�",
-      "answer": "�"
+      "question": "E quanto à cabeça?",
+      "answer": "A cabeça fica sobre o corpo exatamente da mesma forma que o corpo fica sobre a base."
     },
     "whyDeriveFromSize": {
-      "question": "�",
-      "answer": "�"
+      "question": "Porque é que tudo deve ser calculado a partir de `size`?",
+      "answer": "Se escreveres um número fixo, alterar `size` vai deixar espaços ou sobreposições entre os círculos. Usar fórmulas mantém tudo em proporção."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Desenha um círculo centrado em (centerX, centerY) com o raio e a cor indicados.",
+      "category": "Desenhar Formas"
     }
   }
 }

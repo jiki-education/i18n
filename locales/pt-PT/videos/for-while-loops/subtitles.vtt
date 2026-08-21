@@ -1,0 +1,339 @@
+WEBVTT
+
+NOTE en_md5 d4b8c72f7a92dfb1d6fb4eb412fdc752
+
+00:00:00.400 --> 00:00:03.469
+Bem-vindo de volta. Já vimos dois ciclos,
+
+00:00:03.780 --> 00:00:06.580
+o ciclo repeat e o ciclo for-of.
+
+00:00:06.620 --> 00:00:08.109
+Nesta aula, vamos ver
+
+00:00:08.200 --> 00:00:10.940
+mais dois ciclos e duas técnicas úteis com
+
+00:00:11.000 --> 00:00:14.140
+ciclos. Talvez te lembres de que disse
+
+00:00:14.200 --> 00:00:15.980
+logo no início que o ciclo repeat
+
+00:00:16.020 --> 00:00:18.690
+não existe realmente em JavaScript. É apenas algo
+
+00:00:18.860 --> 00:00:20.340
+que acrescentei para te facilitar a vida
+
+00:00:20.380 --> 00:00:23.190
+enquanto damos os primeiros passos. Então, o que
+
+00:00:23.200 --> 00:00:25.580
+usamos em vez disso? Bem, usamos um
+
+00:00:25.660 --> 00:00:28.150
+ciclo for normal, que tem este aspeto.
+
+00:00:29.380 --> 00:00:30.920
+Consegues perceber porque é que isto
+
+00:00:30.940 --> 00:00:32.940
+podia ter sido um pouco intimidante
+
+00:00:32.960 --> 00:00:35.120
+logo no primeiro dia. Mas agora já tens todo o
+
+00:00:35.140 --> 00:00:37.280
+conhecimento de que precisas para te sentires à vontade com isto.
+
+00:00:37.360 --> 00:00:40.340
+Por isso, vamos analisá-lo por partes. Um ciclo for
+
+00:00:40.360 --> 00:00:44.620
+tem três componentes: um inicializador, uma condição e
+
+00:00:44.640 --> 00:00:49.769
+um incremento. O inicializador, esta parte do let i =
+
+00:00:49.840 --> 00:00:52.220
+0, corre no início
+
+00:00:52.260 --> 00:00:54.920
+do ciclo inteiro. Corre só uma vez e,
+
+00:00:54.980 --> 00:00:58.240
+aqui, cria uma caixa chamada i com
+
+00:00:58.340 --> 00:01:02.520
+o valor zero. A parte seguinte, a condição,
+
+00:01:03.240 --> 00:01:08.600
+corre antes de cada iteração do ciclo. Se
+
+00:01:08.640 --> 00:01:11.100
+a condição for verdadeira, corremos o ciclo
+
+00:01:11.110 --> 00:01:15.580
+outra vez. Se não for, não corremos. E,
+
+00:01:15.660 --> 00:01:18.580
+por fim, vem o incremento, o i++.
+
+00:01:19.400 --> 00:01:21.420
+Ora, i++ significa exatamente o mesmo
+
+00:01:21.460 --> 00:01:24.420
+que i = i + 1. É só
+
+00:01:24.460 --> 00:01:26.880
+uma abreviatura, uma forma de aumentar o i em
+
+00:01:26.940 --> 00:01:31.200
+um a cada volta. Então, neste exemplo,
+
+00:01:31.280 --> 00:01:34.200
+definimos o i como zero. Verificamos se o i
+
+00:01:34.240 --> 00:01:36.300
+é menor do que dois, e é,
+
+00:01:36.380 --> 00:01:38.360
+por isso corremos o ciclo. E depois,
+
+00:01:38.400 --> 00:01:41.640
+no fim, aumentamos o i em um, e
+
+00:01:42.060 --> 00:01:44.380
+o i passa a ser um. Zero mais um é um.
+
+00:01:45.500 --> 00:01:47.400
+E voltamos a começar. Verificamos se
+
+00:01:47.580 --> 00:01:50.780
+um é menor do que dois. É, por isso
+
+00:01:50.800 --> 00:01:52.580
+corremos o ciclo. E, no
+
+00:01:52.620 --> 00:01:55.140
+fim, aumentamos o i outra vez. Agora é
+
+00:01:55.240 --> 00:01:58.300
+dois: um mais um é igual a dois. E depois
+
+00:01:58.340 --> 00:02:00.440
+vamos à terceira volta. Desta vez
+
+00:02:00.480 --> 00:02:02.970
+verificamos se dois é menor do que dois, e
+
+00:02:02.980 --> 00:02:05.680
+não é, por isso não corremos o ciclo.
+
+00:02:05.780 --> 00:02:07.140
+Aliás, o ciclo terminou mesmo.
+
+00:02:07.540 --> 00:02:10.539
+Passamos simplesmente ao código que vem a seguir.
+
+00:02:10.640 --> 00:02:13.360
+Ou seja, corremos o ciclo duas vezes, e
+
+00:02:13.400 --> 00:02:16.100
+isso é útil de saber. Desde
+
+00:02:16.140 --> 00:02:18.320
+que comecemos em zero e tenhamos uma
+
+00:02:18.360 --> 00:02:21.460
+condição menor do que, o número que lá pomos,
+
+00:02:21.520 --> 00:02:23.780
+dois neste caso, é o número
+
+00:02:23.840 --> 00:02:26.530
+de vezes que o ciclo vai correr. Portanto, isto
+
+00:02:26.580 --> 00:02:28.900
+é o mesmo que dizer repeat two.
+
+00:02:30.440 --> 00:02:33.020
+Não é difícil, mas é bastante mais
+
+00:02:33.060 --> 00:02:38.120
+rebuscado do que escrever apenas repeat two. O próximo
+
+00:02:38.180 --> 00:02:40.380
+ciclo a conhecer é o ciclo while.
+
+00:02:41.420 --> 00:02:45.800
+Este ciclo diz: "Enquanto uma condição se verificar, corre o ciclo."
+
+00:02:45.840 --> 00:02:47.190
+Imagina que temos uma regra que diz
+
+00:02:47.190 --> 00:02:49.710
+que só podes disparar cinco vezes no Space
+
+00:02:49.740 --> 00:02:52.130
+Invaders. Então teríamos aqui um ciclo que
+
+00:02:52.160 --> 00:02:54.170
+diz: enquanto o número de disparos for menor
+
+00:02:54.200 --> 00:02:56.940
+que cinco, corre um ciclo que permite a alguém
+
+00:02:56.960 --> 00:03:00.340
+jogar o jogo. Cada vez que alguém dispara,
+
+00:03:00.680 --> 00:03:04.000
+aumentamos o numShots em um e, a certa altura,
+
+00:03:04.480 --> 00:03:06.040
+chegamos a cinco e o ciclo termina.
+
+00:03:07.100 --> 00:03:08.880
+Ora, um problema dos ciclos while é que
+
+00:03:08.920 --> 00:03:11.440
+é bastante fácil ter bugs que fazem com que
+
+00:03:11.480 --> 00:03:14.040
+o ciclo nunca acabe. Estes chamam-se
+
+00:03:14.120 --> 00:03:15.890
+ciclos infinitos e são um dos bugs mais
+
+00:03:15.940 --> 00:03:20.010
+comuns nos programas. Quando o teu computador fica
+
+00:03:20.020 --> 00:03:23.020
+lento, as ventoinhas começam a girar e tudo fica barulhento,
+
+00:03:23.060 --> 00:03:25.860
+muitas vezes é porque alguém deixou no código um ciclo
+
+00:03:25.880 --> 00:03:29.380
+infinito que nunca acaba. Muito bem, mais duas
+
+00:03:29.460 --> 00:03:32.280
+palavras-chave neste vídeo rápido. A
+
+00:03:32.320 --> 00:03:35.300
+primeira é a palavra-chave break. Podes usá-la
+
+00:03:35.320 --> 00:03:37.680
+em qualquer parte do corpo de qualquer ciclo.
+
+00:03:38.760 --> 00:03:40.720
+A parte entre as chavetas é o
+
+00:03:40.780 --> 00:03:43.840
+corpo. E quando o Jiki a vê, sai
+
+00:03:43.880 --> 00:03:46.100
+imediatamente do ciclo e passa
+
+00:03:46.160 --> 00:03:48.780
+para o código que vem a seguir ao ciclo. Portanto,
+
+00:03:48.880 --> 00:03:50.600
+se tivermos uma restrição que diz para correr
+
+00:03:50.660 --> 00:03:53.280
+este ciclo 50 vezes, mas quisermos parar
+
+00:03:53.420 --> 00:03:55.960
+se o utilizador disparar cinco vezes, podemos
+
+00:03:56.000 --> 00:03:58.140
+ter um ciclo for no início que
+
+00:03:58.200 --> 00:04:00.940
+vai de i = 0 até menor do que
+
+00:04:01.120 --> 00:04:03.300
+50. Mas depois podemos ter uma condição
+
+00:04:03.340 --> 00:04:04.720
+a meio do ciclo que diz:
+
+00:04:04.880 --> 00:04:07.720
+se numShots for maior ou igual a
+
+00:04:07.780 --> 00:04:12.520
+cinco, então break, parar o ciclo. Às
+
+00:04:12.560 --> 00:04:14.880
+vezes, podemos querer saltar uma
+
+00:04:14.890 --> 00:04:18.600
+iteração específica do ciclo em vez disso. Imagina que
+
+00:04:18.680 --> 00:04:20.780
+só queremos fazer coisas com números ímpares.
+
+00:04:21.600 --> 00:04:22.930
+Queremos poder dizer: se
+
+00:04:23.020 --> 00:04:25.780
+o i for ímpar, não corras o ciclo desta
+
+00:04:25.840 --> 00:04:28.380
+vez. Mas não queremos sair completamente
+
+00:04:28.420 --> 00:04:30.280
+do ciclo. Só queremos saltar
+
+00:04:30.320 --> 00:04:32.670
+esta única iteração e depois passar à
+
+00:04:32.720 --> 00:04:35.600
+seguinte. E para isso, temos outra
+
+00:04:35.640 --> 00:04:40.380
+palavra-chave chamada continue. Quando o Jiki vê continue,
+
+00:04:40.420 --> 00:04:42.180
+salta para o início do
+
+00:04:42.220 --> 00:04:44.820
+ciclo para a iteração seguinte. Assim, num
+
+00:04:44.860 --> 00:04:47.200
+ciclo for-of, se vir continue,
+
+00:04:47.260 --> 00:04:48.580
+passa ao item seguinte da
+
+00:04:48.640 --> 00:04:51.780
+lista. Num ciclo for, faz o
+
+00:04:51.840 --> 00:04:54.400
+incremento i++ e depois
+
+00:04:54.480 --> 00:04:57.980
+começa a iteração seguinte. Portanto, temos ciclos
+
+00:04:58.060 --> 00:05:00.800
+for, ciclos while, break e continue. Muita
+
+00:05:00.840 --> 00:05:02.440
+informação neste vídeo, mas podes
+
+00:05:02.500 --> 00:05:04.550
+voltar aqui e rever quando quiseres, e
+
+00:05:04.580 --> 00:05:07.080
+também há páginas de conceito para cada tema.
+
+00:05:07.800 --> 00:05:09.800
+Experimenta pôr todas estas ideias em prática nos
+
+00:05:09.820 --> 00:05:12.220
+próximos exercícios. Boa sorte, diverte-te,
+
+00:05:12.680 --> 00:05:14.060
+e vemo-nos aqui em breve.

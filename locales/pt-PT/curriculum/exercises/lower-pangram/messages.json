@@ -1,68 +1,68 @@
 {
   "checks": {
-    "noNestedLoops": "�",
-    "tooManyLines": "�"
+    "noNestedLoops": "Tenta não pôr um ciclo dentro de outro. Passa a pesquisa de uma única letra para a sua própria função e depois chama-a a partir de <code>isPangram</code>.",
+    "tooManyLines": "Quase! Vê se consegues resolvê-lo em menos linhas usando a tua função auxiliar."
   },
   "tasks": {
     "checkLowerPangram": {
-      "name": "�",
-      "description": "�"
+      "name": "Verificar pangrama em minúsculas",
+      "description": "Escreve uma função que verifica se uma frase em minúsculas contém todas as letras do alfabeto. Faz com que chame uma pequena função auxiliar para fazer a pesquisa de cada letra."
     },
     "decomposeTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "Resolve em 16 linhas",
+      "description": "Bónus: com a pesquisa extraída para uma função auxiliar, a solução completa cabe em 16 linhas. Consegues fazer o mesmo?"
     }
   },
   "scenarios": {
     "lowerPangramEmpty": {
-      "name": "�",
-      "description": "�"
+      "name": "Frase vazia",
+      "description": "Uma frase vazia não é um pangrama."
     },
     "lowerPangramFullAlphabet": {
-      "name": "�",
-      "description": "�"
+      "name": "Alfabeto completo em minúsculas",
+      "description": "O alfabeto completo em minúsculas é um pangrama."
     },
     "lowerPangramClassic": {
-      "name": "�",
-      "description": "�"
+      "name": "Pangrama clássico",
+      "description": "A frase do pangrama clássico contém todas as 26 letras."
     },
     "lowerPangramMissingX": {
-      "name": "�",
-      "description": "�"
+      "name": "Letra 'x' em falta",
+      "description": "Uma frase a que falta a letra 'x' não é um pangrama."
     },
     "lowerPangramMissingH": {
-      "name": "�",
-      "description": "�"
+      "name": "Letra 'h' em falta",
+      "description": "Uma frase a que falta a letra 'h' não é um pangrama."
     },
     "lowerPangramWithUnderscores": {
-      "name": "�",
-      "description": "�"
+      "name": "Com sublinhados",
+      "description": "Um pangrama com sublinhados em vez de espaços."
     },
     "lowerPangramWithNumbers": {
-      "name": "�",
-      "description": "�"
+      "name": "Com números",
+      "description": "Um pangrama com números incluídos."
     },
     "lowerPangramNumbersReplacingLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "Números a substituir letras",
+      "description": "Uma frase em que as letras são substituídas por números não é um pangrama."
     },
     "lowerPangramBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "Curto e arrumado",
+      "description": "A solução completa cabe em 16 linhas quando a pesquisa está na sua própria função."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Por onde começo?",
+      "answer": "Precisas de verificar se todas as letras do alfabeto estão na string. Por isso, vais precisar de fazer alguns ciclos e comparações."
     },
     "checkEveryLetter": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como verifico se todas as letras do alfabeto estão lá?",
+      "answer": "Faz um ciclo por `\"abcdefghijklmnopqrstuvwxyz\"`, uma letra de cada vez. Para cada letra, verifica se a frase a contém."
     },
     "avoidNestedLoops": {
-      "question": "�",
-      "answer": "�"
+      "question": "Já resolvi o exercício, mas não sei como usar a função auxiliar.",
+      "answer": "Se já resolveste isto, é provável que tenhas um ciclo exterior e depois um ciclo interior. Esse ciclo interior está a verificar se algo inclui outra coisa. Extrair o ciclo interior para uma função auxiliar chamada `includes(...)` e depois usá-la a partir do ciclo exterior é provavelmente uma boa abordagem. Uma função auxiliar é apenas uma função normal definida da forma normal."
     }
   }
 }

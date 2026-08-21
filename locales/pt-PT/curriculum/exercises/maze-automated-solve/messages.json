@@ -1,103 +1,103 @@
 {
   "describers": {
-    "canMove": "�",
-    "canTurnLeft": "�",
-    "canTurnRight": "�"
+    "canMove": "Verificar se a personagem pode avançar.",
+    "canTurnLeft": "Verificar se há um caminho à esquerda da personagem.",
+    "canTurnRight": "Verificar se há um caminho à direita da personagem."
   },
   "checks": {
-    "reachedEnd": "�",
-    "extraTurn": "�"
+    "reachedEnd": "Não chegaste ao fim do labirinto.",
+    "extraTurn": "Parece que fizeste uma volta extra desnecessária no fim."
   },
   "tasks": {
     "straightPath": {
-      "name": "�",
-      "description": "�"
+      "name": "Um caminho em linha reta",
+      "description": "Avança até ao fim do labirinto."
     },
     "turnLeft": {
-      "name": "�",
-      "description": "�"
+      "name": "Vira à esquerda se puderes",
+      "description": "Se houver um caminho à esquerda, segue-o!"
     },
     "turnRight": {
-      "name": "�",
-      "description": "�"
+      "name": "Vira à direita se não puderes avançar nem virar à esquerda",
+      "description": "Se não houver um caminho à esquerda nem em frente, segue o caminho à direita."
     },
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "Dá meia-volta se for preciso",
+      "description": "Resolve os becos sem saída dando meia-volta. Se não puderes ir para a esquerda, em frente ou para a direita, dá meia-volta e avança."
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "Guia a personagem até ao fim do labirinto",
+      "description": "Um caminho em linha reta para baixo"
     },
     "leftTurn": {
-      "name": "�",
-      "description": "�"
+      "name": "Uma única viragem à esquerda",
+      "description": "Orienta-te numa viragem à esquerda."
     },
     "rightTurn": {
-      "name": "�",
-      "description": "�"
+      "name": "Uma única viragem à direita",
+      "description": "Orienta-te numa viragem à direita."
     },
     "forks": {
-      "name": "�",
-      "description": "�"
+      "name": "Escolhe a esquerda se puderes, caso contrário escolhe a direita",
+      "description": "Um labirinto com bifurcações que testa a prioridade de virar à esquerda."
     },
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "Dá meia-volta num beco sem saída",
+      "description": "Um labirinto que obriga a dar meia-volta."
     },
     "forks2": {
-      "name": "�",
-      "description": "�"
+      "name": "Labirinto complexo com bifurcações e becos sem saída",
+      "description": "Um labirinto complexo que testa o algoritmo completo."
     }
   },
   "hints": {
     "solveEachMaze": {
-      "question": "�",
-      "answer": "�"
+      "question": "Tenho de resolver cada labirinto em separado?",
+      "answer": "Não. Escreves um algoritmo que funciona para qualquer labirinto, e o mesmo código corre em todos os cenários."
     },
     "runEveryStep": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como é que faço o meu código correr em cada passo do labirinto?",
+      "answer": "Envolve a tua lógica num ciclo `repeat`. Repete o teu código vezes sem conta até chegares ao fim, por isso só precisas de descrever o que fazer num único passo."
     },
     "oneCheckPerStep": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como é que garanto que só uma das minhas verificações acontece em cada passo?",
+      "answer": "Usa uma única cadeia de `if` / `else if` / `else` em vez de vários `if` separados. Dessa forma, exatamente um ramo é executado de cada vez que o ciclo corre."
     },
     "stuckAfterTurn": {
-      "question": "�",
-      "answer": "�"
+      "question": "Viro, mas a personagem fica presa no mesmo sítio.",
+      "answer": "Virar apenas muda a direção para onde a personagem está virada, não a faz avançar. Depois de virar, ainda precisas de `move()`."
     },
     "turnAroundDeadEnd": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como é que dou meia-volta num beco sem saída?",
+      "answer": "Não existe nenhuma função para dar meia-volta. Virar duas vezes para o mesmo lado (duas vezes para a esquerda ou duas vezes para a direita) deixa a personagem virada para trás, no sentido de onde veio."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Move a personagem **um passo em frente** na direção atual. A personagem só se move se a posição de destino não estiver bloqueada por uma parede.",
+      "category": "Movimento"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Roda a personagem **90 graus para a esquerda** (no sentido contrário ao dos ponteiros do relógio). Isto muda a direção para onde a personagem está virada.",
+      "category": "Movimento"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Roda a personagem **90 graus para a direita** (no sentido dos ponteiros do relógio). Isto muda a direção para onde a personagem está virada.",
+      "category": "Movimento"
     },
     "canMove": {
-      "description": "�",
-      "category": "�"
+      "description": "Devolve **true** se o espaço à frente da personagem não for uma parede, **false** caso contrário.",
+      "category": "Deteção"
     },
     "canTurnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Devolve **true** se o espaço à esquerda da personagem não for uma parede, **false** caso contrário.",
+      "category": "Deteção"
     },
     "canTurnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Devolve **true** se o espaço à direita da personagem não for uma parede, **false** caso contrário.",
+      "category": "Deteção"
     }
   }
 }

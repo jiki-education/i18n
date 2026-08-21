@@ -1,54 +1,54 @@
 {
   "tasks": {
     "encodeMessage": {
-      "name": "�",
-      "description": "�"
+      "name": "Codificar uma mensagem",
+      "description": "Escreve uma função de codificação que desloca cada letra de uma mensagem num desvio dado. Os espaços devem permanecer como espaços. As letras que ultrapassam 'z' no deslocamento devem dar a volta ao início do alfabeto."
     }
   },
   "scenarios": {
     "caesarSimpleShift": {
-      "name": "�",
-      "description": "�"
+      "name": "Desvio simples de 1",
+      "description": "Desloca cada letra uma posição para a frente: a->b, b->c, c->d."
     },
     "caesarShiftBy3": {
-      "name": "�",
-      "description": "�"
+      "name": "Desvio de 3",
+      "description": "Desloca cada letra três posições para a frente: h->k, e->h, l->o, o->r."
     },
     "caesarWrapAround": {
-      "name": "�",
-      "description": "�"
+      "name": "Dar a volta ao alfabeto",
+      "description": "Quando o desvio ultrapassa 'z', dá a volta: x->a, y->b, z->c."
     },
     "caesarWithSpaces": {
-      "name": "�",
-      "description": "�"
+      "name": "Mensagem com espaços",
+      "description": "Os espaços devem permanecer como espaços, apenas as letras são deslocadas."
     },
     "caesarRot13": {
-      "name": "�",
-      "description": "�"
+      "name": "Encriptação ROT13",
+      "description": "ROT13 é um caso especial da Cifra de César com um desvio de 13."
     }
   },
   "hints": {
     "shiftingLetterByN": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como devo pensar em deslocar uma letra em N posições?",
+      "answer": "Cada letra tem uma posição no alfabeto (a está na posição 0, b na 1, e assim por diante). Para deslocar, encontras essa posição, somas o valor do desvio e depois transformas a nova posição novamente numa letra, procurando-a no alfabeto."
     },
     "letterPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como encontro a posição de uma letra no alfabeto?",
+      "answer": "Podes procurar uma parte mais pequena numa string com `indexOf`. Chamá-lo na string do alfabeto devolve a posição de uma letra, ou -1 se a letra não for encontrada. Para fazer o inverso, usa a posição como índice na string do alfabeto para obter a letra."
     },
     "wrapPastZ": {
-      "question": "�",
-      "answer": "�"
+      "question": "O que acontece quando o desvio ultrapassa 'z'?",
+      "answer": "É preciso dar a volta para 'a'. O operador módulo (`%`) é perfeito para isto. Calcular a posição módulo 26 traz qualquer número de volta ao intervalo de 0 a 25."
     },
     "applyToWholeMessage": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como aplico isto a uma mensagem inteira?",
+      "answer": "Percorre cada caráter da mensagem, desloca-o usando a tua função auxiliar de letra única e usa a concatenação (`+`) para construir a string de resultado a partir das letras deslocadas."
     }
   },
   "functions": {
     "indexOf": {
-      "description": "�",
-      "category": "�"
+      "description": "Encontra a posição de uma string mais pequena dentro de uma string, ou -1 se não for encontrada (fornecido pela stdlib do nível)",
+      "category": "Operações com Strings"
     }
   }
 }

@@ -1,55 +1,55 @@
 {
   "checks": {
-    "notShotAllAliens": "�",
-    "functionNotDefined": "�",
-    "functionNotCalled": "�"
+    "notShotAllAliens": "Não abateste todos os alienígenas.",
+    "functionNotDefined": "Precisas de definir uma função <code>shootIfAlienAbove</code>.",
+    "functionNotCalled": "Definiste <code>shootIfAlienAbove</code>, mas precisas de a chamar na tua solução."
   },
   "tasks": {
     "battleProcedures": {
-      "name": "�",
-      "description": "�"
+      "name": "Cria uma função shootIfAlienAbove e usa-a para ganhar o jogo",
+      "description": "Extrai a lógica de disparo para uma função shootIfAlienAbove() e usa-a juntamente com a lógica de movimento para derrotar todos os alienígenas."
     }
   },
   "scenarios": {
     "battleProcedures": {
-      "name": "�",
-      "description": "�"
+      "name": "Procedimentos de batalha",
+      "description": "Derrota todos os alienígenas usando a tua função shootIfAlienAbove"
     }
   },
   "hints": {
     "wherePutFunction": {
-      "question": "�",
-      "answer": "�"
+      "question": "Onde é que devo colocar a função `shootIfAlienAbove`?",
+      "answer": "Define-a no topo do teu código, antes do ciclo. Depois de a definires, podes chamá-la a partir do ciclo tantas vezes quantas quiseres."
     },
     "whatGoesInside": {
-      "question": "�",
-      "answer": "�"
+      "question": "O que é que vai dentro de `shootIfAlienAbove`?",
+      "answer": "Usa um condicional `if` que verifica `isAlienAbove()`. Quando devolve `true`, chama `shoot()`. É esse todo o corpo da função."
     },
     "whatStaysInLoop": {
-      "question": "�",
-      "answer": "�"
+      "question": "O que é que fica no ciclo?",
+      "answer": "Toda a lógica de movimento fica no ciclo, tal como no exercício Deslocação e Disparo. Em cada iteração: chama `shootIfAlienAbove()`, depois move o canhão e, por fim, inverte a direção nos limites."
     },
     "trackCannon": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como é que acompanho a posição do canhão e a direção em que se desloca?",
+      "answer": "Usa duas variáveis que atualizas em cada iteração. Por exemplo, uma variável `position` que aumenta ou diminui, e uma variável `direction` que é `\"right\"` ou `\"left\"` e que inverte quando chegas a um limite."
     }
   },
   "functions": {
     "moveLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Move o canhão de laser **uma posição para a esquerda**. Se tentares mover para além do limite esquerdo do ecrã, perdes o jogo!",
+      "category": "Movimento"
     },
     "moveRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Move o canhão de laser **uma posição para a direita**. Se tentares mover para além do limite direito do ecrã, perdes o jogo!",
+      "category": "Movimento"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Dispara o laser para cima. **Só dispara quando houver um alienígena por cima de ti**, senão perdes o jogo! O canhão de laser sobreaquece facilmente, por isso tens de te mover antes de disparar novamente.",
+      "category": "Ação"
     },
     "isAlienAbove": {
-      "description": "�",
-      "category": "�"
+      "description": "Devolve `true` se houver um alienígena mesmo por cima do canhão de laser, ou `false` caso contrário. Usa isto para verificar antes de disparar!",
+      "category": "Deteção"
     }
   }
 }

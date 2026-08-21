@@ -1,42 +1,42 @@
 {
   "checks": {
-    "notReachedEnd": "�",
-    "walkNotDefined": "�"
+    "notReachedEnd": "Não chegaste ao fim do labirinto.",
+    "walkNotDefined": "Deves definir uma função <code>walk</code> que recebe um número de passos e avança esse mesmo número de vezes."
   },
   "tasks": {
     "writeWalk": {
-      "name": "�",
-      "description": "�"
+      "name": "Escreve uma função walk",
+      "description": "Define uma função chamada walk que recebe um número de passos como parâmetro de entrada e avança esse mesmo número de vezes."
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "Percorre o labirinto",
+      "description": "Anda 3, vira à esquerda, anda 2, vira à direita, anda 4 para chegar ao alvo."
     }
   },
   "hints": {
     "howToMoveForward": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como avanço?",
+      "answer": "Usa a função `move()`."
     },
     "howToMoveSpecificTimes": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como avanço um número específico de vezes?",
+      "answer": "Já resolveste outros exercícios em que tinhas de fazer algo um número específico de vezes (pensa em fazer a bola de golfe rolar uma distância específica). Usa as mesmas ideias aqui."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Move a personagem **um passo em frente** na direção atual. A personagem só se move se a posição de destino não estiver bloqueada por uma parede.",
+      "category": "Movimento"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Vira a personagem **90 graus para a esquerda** (no sentido anti-horário). Isto muda a direção para a qual a personagem está virada.",
+      "category": "Movimento"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Vira a personagem **90 graus para a direita** (no sentido horário). Isto muda a direção para a qual a personagem está virada.",
+      "category": "Movimento"
     }
   }
 }
