@@ -1,0 +1,195 @@
+WEBVTT
+
+NOTE en_md5 e47167fc1482d0b37cf8c1318d2bbbbb
+
+00:00:00.100 --> 00:00:04.260
+Bem-vindo de volta. Até agora, quando usámos o ciclo
+
+00:00:04.300 --> 00:00:06.910
+repeat para desenhar coisas, cada coisa nova que
+
+00:00:06.920 --> 00:00:10.310
+desenhámos acrescentou algo à imagem. Se
+
+00:00:10.340 --> 00:00:12.360
+desenhámos um tijolo novo numa parede,
+
+00:00:12.520 --> 00:00:15.840
+ele tapou um buraco. Se desenhámos 10
+
+00:00:15.900 --> 00:00:18.500
+círculos, vemos 10 círculos no ecrã.
+
+00:00:19.300 --> 00:00:22.220
+É como uma pintura. Depois de pores tinta
+
+00:00:22.240 --> 00:00:24.580
+na parede, ela não desaparece quando
+
+00:00:24.640 --> 00:00:26.440
+pintas algo novo ao lado. Fica
+
+00:00:26.480 --> 00:00:30.320
+lá. Mas e se quisermos que
+
+00:00:30.380 --> 00:00:33.980
+algo pareça estar em movimento? Alguma vez
+
+00:00:34.000 --> 00:00:36.150
+viste um flip book? Eram muito populares
+
+00:00:36.160 --> 00:00:38.339
+quando eu era miúdo, agora nem tanto.
+
+00:00:38.380 --> 00:00:40.640
+Um flip book é um livrinho em que cada
+
+00:00:40.680 --> 00:00:44.440
+página tem um desenho ligeiramente diferente. Quando
+
+00:00:44.540 --> 00:00:47.640
+folheias as páginas rapidamente, os teus olhos veem
+
+00:00:47.720 --> 00:00:51.170
+os desenhos a mudar e o teu cérebro pensa que algo está
+
+00:00:51.340 --> 00:00:54.020
+em movimento. Na verdade, não está. São só muitos
+
+00:00:54.060 --> 00:00:58.530
+desenhos ligeiramente diferentes, uns a seguir aos outros. E
+
+00:00:58.560 --> 00:01:02.400
+é exatamente assim que a animação funciona em código.
+
+00:01:02.589 --> 00:01:05.500
+O truque é o mesmo. Antes de desenharmos
+
+00:01:05.560 --> 00:01:08.920
+uma cena nova, pintamos a tela
+
+00:01:08.960 --> 00:01:11.920
+toda com uma cor de fundo, um pouco como
+
+00:01:11.960 --> 00:01:14.400
+começar uma página nova no nosso flip book,
+
+00:01:15.320 --> 00:01:18.140
+e depois fazemos uma pequena alteração à
+
+00:01:18.180 --> 00:01:21.740
+cena para dar a sensação de movimento. Portanto, se
+
+00:01:21.780 --> 00:01:24.040
+pegarmos num bloco de código conhecido em que
+
+00:01:24.080 --> 00:01:27.520
+desenhamos círculos ao longo do ecrã,
+
+00:01:27.560 --> 00:01:29.820
+definimos uma variável position e temos um
+
+00:01:29.840 --> 00:01:31.900
+bloco repeat em que desenhamos um círculo e
+
+00:01:31.940 --> 00:01:33.640
+avançamos a position uma unidade para a direita.
+
+00:01:34.680 --> 00:01:37.110
+Se corrermos esse bloco repeat 100 vezes,
+
+00:01:37.500 --> 00:01:39.940
+vamos ver 100 círculos ao longo do
+
+00:01:39.960 --> 00:01:43.320
+ecrã. Repara agora no que acontece se
+
+00:01:43.340 --> 00:01:47.440
+acrescentarmos apenas um retângulo simples antes de desenharmos
+
+00:01:47.500 --> 00:01:51.260
+o círculo de cada vez. Em vez de um rasto de
+
+00:01:51.300 --> 00:01:54.210
+círculos, os nossos olhos são enganados e agora veem
+
+00:01:54.380 --> 00:01:57.440
+um único círculo que parece deslizar pelo
+
+00:01:57.520 --> 00:02:01.000
+ecrã. Sempre que percorremos o ciclo,
+
+00:02:01.020 --> 00:02:04.060
+estamos a pintar um fundo totalmente novo, a tapar
+
+00:02:04.260 --> 00:02:06.860
+tudo o que lá estava antes e, em seguida,
+
+00:02:06.960 --> 00:02:11.120
+a desenhar o círculo no seu novo sítio. Cada
+
+00:02:11.200 --> 00:02:14.540
+passagem pelo ciclo é como uma página
+
+00:02:14.600 --> 00:02:17.720
+nova no flip book. E o mais
+
+00:02:17.740 --> 00:02:19.570
+importante aqui é perceber que não estamos
+
+00:02:19.640 --> 00:02:22.390
+a mover o círculo. O círculo não é um objeto
+
+00:02:22.400 --> 00:02:25.250
+que desliza pelo ecrã. É só um desenho. Em
+
+00:02:25.340 --> 00:02:27.220
+cada passagem pelo ciclo, pintamos por cima do
+
+00:02:27.280 --> 00:02:29.350
+desenho antigo e fazemos um completamente novo,
+
+00:02:29.980 --> 00:02:32.120
+ligeiramente mais à direita. O teu olho junta
+
+00:02:32.180 --> 00:02:35.280
+tudo e vê movimento, mas, na realidade, são
+
+00:02:35.360 --> 00:02:38.390
+só muitos desenhos separados, uns a seguir aos outros.
+
+00:02:40.080 --> 00:02:42.160
+No próximo exercício, vais usar
+
+00:02:42.200 --> 00:02:45.420
+esta ideia para criar um pôr do sol. Vais fazer
+
+00:02:45.460 --> 00:02:47.829
+o sol mover-se, alterar o seu tamanho, alterar a sua
+
+00:02:47.880 --> 00:02:50.100
+cor. É tudo a mesma técnica. Define algumas
+
+00:02:50.220 --> 00:02:53.900
+variáveis, pinta um fundo novo e desenha tudo.
+
+00:02:53.940 --> 00:02:57.190
+Atualiza as variáveis e depois repete. E depois,
+
+00:02:57.240 --> 00:02:59.170
+se fores membro premium, quando completares
+
+00:02:59.170 --> 00:03:01.750
+o pôr do sol, vais também desbloquear um projeto
+
+00:03:01.800 --> 00:03:05.860
+mais complexo chamado Flor a brotar, onde podes
+
+00:03:05.940 --> 00:03:08.180
+desafiar-te a sério ao juntar todas estas
+
+00:03:08.220 --> 00:03:11.360
+coisas. Esse é mesmo divertido. Boa
+
+00:03:11.400 --> 00:03:13.240
+sorte, e vemo-nos aqui em breve.

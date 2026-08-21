@@ -1,0 +1,189 @@
+WEBVTT
+
+NOTE en_md5 f4b6546cdc3ad8dde1f9b6b1f3ff5008
+
+00:00:00.120 --> 00:00:02.660
+Bem-vindo de volta. Já sabes criar
+
+00:00:02.740 --> 00:00:06.640
+funções com e sem parâmetros de entrada. Só te
+
+00:00:06.780 --> 00:00:08.480
+falta aprender uma última coisa e, depois,
+
+00:00:08.520 --> 00:00:11.780
+vais ser um especialista em criar funções. Falta
+
+00:00:11.860 --> 00:00:14.160
+dar às tuas funções uma calha de saída.
+
+00:00:15.000 --> 00:00:17.020
+Já usaste muitas funções que devolvem
+
+00:00:17.060 --> 00:00:20.400
+coisas. A isAlienAbove devolve-te true ou false.
+
+00:00:20.500 --> 00:00:24.940
+A Math.randomInt(1, 10) devolve-te um número aleatório.
+
+00:00:26.100 --> 00:00:28.780
+Quando o Jiki usa essas funções, alguma coisa sai
+
+00:00:28.860 --> 00:00:30.980
+da calha de saída e ele pode
+
+00:00:31.000 --> 00:00:34.180
+depois ir usá-la. Então, para fazer isto,
+
+00:00:34.220 --> 00:00:36.890
+precisamos de mais uma palavra-chave nova:
+
+00:00:36.920 --> 00:00:40.900
+a palavra-chave return. Ela diz ao Mini
+
+00:00:40.980 --> 00:00:43.320
+Jiki para empurrar alguma coisa para fora da calha
+
+00:00:43.330 --> 00:00:46.230
+de saída. Vamos então criar uma função e
+
+00:00:46.260 --> 00:00:48.760
+chamar-lhe meaningOfLife, o sentido da vida. O
+
+00:00:48.920 --> 00:00:51.089
+trabalho dela é apenas devolver sempre o número
+
+00:00:51.360 --> 00:00:54.200
+42. Não tem parâmetros de entrada. Podes
+
+00:00:54.240 --> 00:00:58.839
+escrever function meaningOfLife, chavetas, e
+
+00:00:58.879 --> 00:01:02.339
+depois uma única linha dentro da função: return
+
+00:01:02.399 --> 00:01:06.539
+42. Essa linha diz ao Mini Jiki para empurrar o
+
+00:01:06.579 --> 00:01:09.539
+número 42 pela calha de saída e depois
+
+00:01:09.679 --> 00:01:13.559
+parar. É importante perceberes isto. A palavra-chave
+
+00:01:13.659 --> 00:01:17.079
+return diz ao Mini Jiki para fazer duas coisas. Primeiro,
+
+00:01:17.500 --> 00:01:19.639
+pôr alguma coisa na calha de saída e,
+
+00:01:19.779 --> 00:01:22.779
+segundo, parar logo a seguir. Assim que
+
+00:01:22.920 --> 00:01:26.579
+usas a palavra-chave return, a função termina. O Mini Jiki
+
+00:01:26.619 --> 00:01:30.059
+não faz mais nada. Agora, se não
+
+00:01:30.139 --> 00:01:32.540
+conheces a referência ao sentido da vida, vem
+
+00:01:32.579 --> 00:01:34.880
+de um livro famoso, hoje também filme, chamado
+
+00:01:34.899 --> 00:01:37.840
+À Boleia pela Galáxia. Recomendo-te
+
+00:01:37.879 --> 00:01:39.819
+a leitura. Não precisas de te preocupar
+
+00:01:39.860 --> 00:01:43.799
+muito com o que 42 significa por agora. Vamos
+
+00:01:43.879 --> 00:01:47.819
+ver um exemplo um pouco mais complexo, em que
+
+00:01:47.879 --> 00:01:50.439
+temos uma função com um parâmetro
+
+00:01:50.520 --> 00:01:52.479
+de entrada e uma calha de saída. Ficamos com a
+
+00:01:52.539 --> 00:01:54.520
+mesma ideia da função chamada
+
+00:01:54.599 --> 00:01:57.239
+meaningOfLife, e esta tem uma fenda de entrada
+
+00:01:57.299 --> 00:02:00.439
+chamada age. Se alguém tiver 18 anos ou mais,
+
+00:02:00.559 --> 00:02:01.839
+vamos dizer-lhe que o sentido
+
+00:02:01.939 --> 00:02:05.639
+da vida é 42. Caso contrário, devolvemos
+
+00:02:05.699 --> 00:02:09.019
+a string "Sorry, too young". A definição da função
+
+00:02:09.059 --> 00:02:12.679
+é muito parecida. function meaningOfLife e, depois,
+
+00:02:12.699 --> 00:02:15.379
+a fenda de entrada age, mais parênteses, e depois
+
+00:02:15.419 --> 00:02:18.339
+uma chaveta. Mas agora precisamos de uma
+
+00:02:18.400 --> 00:02:20.459
+condicional lá dentro para podermos dizer:
+
+00:02:20.619 --> 00:02:23.019
+"Se a idade for maior ou igual a
+
+00:02:23.080 --> 00:02:27.499
+18, devolvemos 42. Caso contrário, devolvemos 'Sorry,
+
+00:02:27.540 --> 00:02:30.719
+too young'". Agora, se usarmos essa função
+
+00:02:30.779 --> 00:02:33.759
+escrevendo meaningOfLife(15), recebemos de volta
+
+00:02:33.799 --> 00:02:37.119
+a string "Sorry, too young". E se a
+
+00:02:37.220 --> 00:02:40.060
+usarmos com meaningOfLife(30), recebemos
+
+00:02:40.100 --> 00:02:43.800
+de volta o número 42. É assim que
+
+00:02:43.820 --> 00:02:46.800
+a programação funciona na sua essência. Criamos muitos
+
+00:02:46.900 --> 00:02:49.360
+destes pequenos blocos de construção e depois
+
+00:02:49.370 --> 00:02:52.960
+juntamo-los para formar programas. Vou dar-te
+
+00:02:53.140 --> 00:02:55.190
+agora vários exercícios seguidos. É
+
+00:02:55.220 --> 00:02:57.700
+provavelmente a série mais longa que já tiveste e vai
+
+00:02:57.780 --> 00:03:00.600
+usar tudo o que aprendeste aqui, mais muitas
+
+00:03:00.640 --> 00:03:04.120
+das outras coisas que já vimos antes. Diverte-te.
+
+00:03:04.560 --> 00:03:05.960
+Boa sorte, e vemo-nos aqui
+
+00:03:06.000 --> 00:03:06.310
+daqui a pouco

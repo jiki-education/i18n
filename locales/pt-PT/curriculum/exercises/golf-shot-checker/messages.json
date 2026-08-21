@@ -1,82 +1,82 @@
 {
   "checks": {
-    "wrongDistance": "�",
-    "missingPositions": "�",
-    "stayOnGrassPlain": "�",
-    "stayOnGrassOvershot": "�",
-    "droppedIncorrectly": "�",
-    "noFireworksPeriod": "�",
-    "noFireworksNoPeriod": "�",
-    "noFireworksAtEnd": "�",
-    "shouldFireFireworks": "�"
+    "wrongDistance": "A bola não rolou a distância certa para esta tacada. Deveria percorrer exatamente o comprimento da tacada desde o tee.",
+    "missingPositions": "A bola tem de rolar por cada posição, um passo de cada vez.",
+    "stayOnGrassPlain": "A bola deve manter-se na relva nesta tacada, não deve cair no buraco.",
+    "stayOnGrassOvershot": "A bola ultrapassou o buraco, por isso deve manter-se na relva, não deve cair.",
+    "droppedIncorrectly": "A bola chegou ao buraco, mas não caiu lá dentro corretamente.",
+    "noFireworksPeriod": "Não devias ter disparado os fogos de artifício.",
+    "noFireworksNoPeriod": "Não devias ter disparado os fogos de artifício",
+    "noFireworksAtEnd": "Não devias ter disparado os fogos de artifício no final.",
+    "shouldFireFireworks": "Devias disparar os fogos de artifício no final."
   },
   "tasks": {
     "checkShot": {
-      "name": "�",
-      "description": "�"
+      "name": "Verifica se a tacada entra no buraco",
+      "description": "Rola a bola de acordo com o comprimento da tacada e, se ela ficar sobre o buraco, faz a bola descer lá para dentro! Depois dispara fogos de artifício."
     }
   },
   "scenarios": {
     "tooShort": {
-      "name": "�",
-      "description": "�"
+      "name": "Tacada curta demais",
+      "description": "O golfista bate a bola a 23, não chega ao buraco."
     },
     "justTooShort": {
-      "name": "�",
-      "description": "�"
+      "name": "Por pouco curta demais",
+      "description": "O golfista bate a bola a 57 e esta quase entra, mas não."
     },
     "justTooFar": {
-      "name": "�",
-      "description": "�"
+      "name": "Por pouco longa demais",
+      "description": "O golfista bate a bola a 63 e esta salta pelo outro lado."
     },
     "tooLong": {
-      "name": "�",
-      "description": "�"
+      "name": "Tacada longa demais",
+      "description": "O golfista bate a bola a 68, que passa além do buraco."
     },
     "justInsideLeft": {
-      "name": "�",
-      "description": "�"
+      "name": "Por pouco dentro",
+      "description": "O golfista bate a bola a 58, chega ao buraco à justa!"
     },
     "justInsideRight": {
-      "name": "�",
-      "description": "�"
+      "name": "Quase longa demais, mas ok!",
+      "description": "O golfista bate a bola a 62, fica dentro do buraco à justa!"
     }
   },
   "hints": {
     "howDoIRollRightDistance": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como é que rolo a bola a distância certa em cada tacada?",
+      "answer": "Usa `getShotLength()` para descobrires a que distância o golfista bateu a bola e guarda-a numa variável. Isso diz-te quantas vezes deves rolar."
     },
     "howDoIMoveOneStep": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como é que movo a bola um passo de cada vez, em vez de a fazer saltar para o fim?",
+      "answer": "Mantém uma variável para a posição `x` da bola. Em cada volta do ciclo, aumenta-a em 1 e depois rola para a nova posição."
     },
     "whenShouldBallDrop": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quando é que a bola deve cair no buraco?",
+      "answer": "Apenas quando a tacada entrar no buraco. Verifica se o comprimento da tacada está dentro do intervalo vencedor, testando o limite inferior e o superior em conjunto numa única condição."
     },
     "whenShouldFireworksFire": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quando é que se disparam os fogos de artifício?",
+      "answer": "Apenas para uma tacada que tenha caído no buraco, e apenas depois de a bola ter acabado de descer até ao fundo. Mantém a descida e os fogos de artifício juntos dentro da mesma condição."
     }
   },
   "functions": {
     "moveTo": {
-      "description": "�",
-      "category": "�"
+      "description": "Move a bola para a posição **(x, y)**.",
+      "category": "Movimento"
     },
     "getShotLength": {
-      "description": "�",
-      "category": "�"
+      "description": "Devolve o **comprimento da tacada**, ou seja, quantas unidades a bola percorre para a direita.",
+      "category": "Informação"
     },
     "fireFireworks": {
-      "description": "�",
-      "category": "�"
+      "description": "Dispara fogos de artifício de celebração!",
+      "category": "Ação"
     }
   },
   "describers": {
-    "moveTo": "�",
-    "getShotLength": "�",
-    "fireFireworks": "�"
+    "moveTo": "moveu a bola para a posição (${arg1}, ${arg2})",
+    "getShotLength": "obteve o comprimento da tacada",
+    "fireFireworks": "disparou fogos de artifício de celebração"
   }
 }

@@ -1,75 +1,76 @@
 {
   "checks": {
-    "moreThanOneLine": "�"
+    "moreThanOneLine": "Usaste mais do que uma linha de código dentro da função.",
+    "moreThanOneFunction": "Consegues resolver isto com apenas uma função?"
   },
   "tasks": {
     "determineLeapYear": {
-      "name": "�",
-      "description": "�"
+      "name": "Determina se o ano é bissexto",
+      "description": "Escreve uma função chamada isLeapYear que recebe um ano como parâmetro de entrada e devolve true se for bissexto, ou false se não for."
     },
     "solveInOneLine": {
-      "name": "�",
-      "description": "�"
+      "name": "Resolve numa linha de código",
+      "description": "Consegues resolver isto com apenas uma linha de código dentro da função?"
     }
   },
   "scenarios": {
     "year2015": {
-      "name": "�",
-      "description": "�"
+      "name": "Ano 2015",
+      "description": "2015 não é divisível por 4, por isso não é um ano bissexto."
     },
     "year1970": {
-      "name": "�",
-      "description": "�"
+      "name": "Ano 1970",
+      "description": "1970 não é divisível por 4, por isso não é um ano bissexto."
     },
     "year2100": {
-      "name": "�",
-      "description": "�"
+      "name": "Ano 2100",
+      "description": "2100 é divisível por 100, mas não por 400, por isso não é um ano bissexto."
     },
     "year1900": {
-      "name": "�",
-      "description": "�"
+      "name": "Ano 1900",
+      "description": "1900 é divisível por 100, mas não por 400, por isso não é um ano bissexto."
     },
     "year1800": {
-      "name": "�",
-      "description": "�"
+      "name": "Ano 1800",
+      "description": "1800 é divisível por 100, mas não por 400, por isso não é um ano bissexto."
     },
     "year2000": {
-      "name": "�",
-      "description": "�"
+      "name": "Ano 2000",
+      "description": "2000 é divisível por 400, por isso é um ano bissexto."
     },
     "year2400": {
-      "name": "�",
-      "description": "�"
+      "name": "Ano 2400",
+      "description": "2400 é divisível por 400, por isso é um ano bissexto."
     },
     "year1996": {
-      "name": "�",
-      "description": "�"
+      "name": "Ano 1996",
+      "description": "1996 é divisível por 4, mas não por 100, por isso é um ano bissexto."
     },
     "year1960": {
-      "name": "�",
-      "description": "�"
+      "name": "Ano 1960",
+      "description": "1960 é divisível por 4, mas não por 100, por isso é um ano bissexto."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "Uma linha de código",
+      "description": "Resolve o exercício com apenas uma linha de código dentro da função."
     }
   },
   "hints": {
     "basicRule": {
-      "question": "�",
-      "answer": "�"
+      "question": "Qual é a regra básica para um ano bissexto?",
+      "answer": "Os anos divisíveis por 4 são bissextos. Por isso, `year % 4 === 0` é o teste inicial."
     },
     "exceptions": {
-      "question": "�",
-      "answer": "�"
+      "question": "Há exceções?",
+      "answer": "Sim. Os anos divisíveis por 100 NÃO são bissextos, mesmo sendo divisíveis por 4. Por exemplo, 1900 não é um ano bissexto."
     },
     "exceptionsToExceptions": {
-      "question": "�",
-      "answer": "�"
+      "question": "Há exceções à exceção?",
+      "answer": "Sim. Os anos divisíveis por 400 SÃO bissextos, afinal. Por exemplo, 2000 é. Portanto, a regra é em cascata: divisível por 4, mas não por 100, a não ser que também seja divisível por 400."
     },
     "checkDivisibility": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como verifico a divisibilidade?",
+      "answer": "Usa o operador resto `%`. `year % 4 === 0` é verdadeiro quando o ano divide exatamente por 4 sem deixar resto. O mesmo truque funciona com 100 e 400."
     }
   }
 }

@@ -1,37 +1,37 @@
 {
   "describers": {
-    "move": "�"
+    "move": "moveu o canhão laser para a direita"
   },
   "checks": {
-    "notShotAllAliens": "�",
-    "tooManyLines": "�"
+    "notShotAllAliens": "Não abateste todos os extraterrestres.",
+    "tooManyLines": "A tua solução tem demasiadas linhas de código. Experimenta usar um ciclo repeat dentro de outro ciclo repeat para a tornar mais curta!"
   },
   "tasks": {
     "nestedRepeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "Usa ciclos repeat aninhados para abater todos os extraterrestres",
+      "description": "Encontra o padrão nas posições dos extraterrestres e usa um ciclo repeat dentro de outro ciclo repeat para os destruir a todos em 7 linhas de código ou menos."
     }
   },
   "scenarios": {
     "nestedRepeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "Repeat aninhado e disparar",
+      "description": "Usa ciclos repeat aninhados para abater todos os extraterrestres"
     }
   },
   "hints": {
     "cantGetTo7Lines": {
-      "question": "�",
-      "answer": "�"
+      "question": "Não consigo chegar às 7 linhas de código.",
+      "answer": "Pensa neste nível como dois blocos de coisas que têm de acontecer.\n\n- O primeiro bloco é o interior, onde disparamos 4 vezes - certifica-te de que tem três linhas.\n- O bloco exterior é o bloco interior com algum movimento de cada lado. Esse bloco exterior também precisa de ser repetido algumas vezes.\n\nSe estruturares o teu código desta forma, deve acabar naturalmente com 7 linhas de código."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Move o canhão laser **uma posição para a direita**. Se saíres pela borda direita do ecrã, perdes!",
+      "category": "Movimento"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Dispara o laser para cima. **Só dispara quando houver um extraterrestre por cima de ti**, ou perdes o jogo!",
+      "category": "Ação"
     }
   }
 }

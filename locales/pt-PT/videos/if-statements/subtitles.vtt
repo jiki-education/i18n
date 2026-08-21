@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 01e55797f6d7badd90ea909a2a995db9
+
+00:00:00.280 --> 00:00:03.680
+Bem-vindo de volta. Até agora, aprendeste duas palavras-chave,
+
+00:00:03.800 --> 00:00:07.760
+duas instruções que o Jiki consegue perceber, o let e
+
+00:00:07.800 --> 00:00:10.720
+o repeat. Neste vídeo, vamos aprender
+
+00:00:10.820 --> 00:00:12.820
+mais uma, uma nova palavra-chave. É uma
+
+00:00:12.900 --> 00:00:15.570
+que nos ajuda a dizer ao Jiki para só
+
+00:00:15.660 --> 00:00:20.400
+fazer certas coisas em determinadas situações. Imagina que estás a escrever
+
+00:00:20.420 --> 00:00:22.850
+código para guardar a entrada de um
+
+00:00:22.860 --> 00:00:25.510
+bar, talvez sejas o porteiro, e o Jiki só
+
+00:00:25.600 --> 00:00:28.880
+deve abrir a porta se a pessoa estiver vestida de forma adequada.
+
+00:00:30.040 --> 00:00:32.470
+Ou imagina que estás a escrever código em que és
+
+00:00:32.500 --> 00:00:34.990
+responsável por agitar a bandeira axadrezada no
+
+00:00:35.020 --> 00:00:38.110
+final de uma corrida, mas o Jiki precisa
+
+00:00:38.160 --> 00:00:39.740
+de saber que só o deve fazer
+
+00:00:39.780 --> 00:00:43.220
+na última volta. Nestes casos,
+
+00:00:43.320 --> 00:00:46.080
+vamos usar a palavra-chave if.
+
+00:00:47.760 --> 00:00:50.160
+Usamos a palavra-chave if de uma forma
+
+00:00:50.220 --> 00:00:53.320
+muito parecida com a do repeat. Colocamos
+
+00:00:53.380 --> 00:00:56.400
+alguma informação dentro de parênteses. Neste caso,
+
+00:00:56.940 --> 00:00:59.260
+essa informação é a condição que estamos a verificar.
+
+00:00:59.330 --> 00:01:00.600
+Vamos falar mais sobre isso daqui a pouco.
+
+00:01:01.280 --> 00:01:03.040
+E depois colocamos um bloco de có-
+
+00:01:03.240 --> 00:01:06.100
+código nas chavetas, que só é executado
+
+00:01:06.380 --> 00:01:10.520
+se essa condição for verdadeira. E como
+
+00:01:10.540 --> 00:01:13.620
+são estas condições? Bem, normalmente são
+
+00:01:13.660 --> 00:01:16.580
+algum tipo de comparação. Comparamos dois números
+
+00:01:16.680 --> 00:01:19.300
+ou duas strings e verificamos se o resultado é
+
+00:01:19.380 --> 00:01:23.580
+verdadeiro ou falso. Pensa nelas como
+
+00:01:23.640 --> 00:01:26.580
+afirmações que podias dizer em voz alta. Três
+
+00:01:26.640 --> 00:01:30.620
+é menor que cinco. Isso é verdadeiro. Sete
+
+00:01:30.680 --> 00:01:35.420
+é menor que dois. Isso é falso. Usamos símbolos
+
+00:01:35.500 --> 00:01:38.480
+para escrever estas comparações. Provavelmente já os
+
+00:01:38.520 --> 00:01:41.040
+conheces da matemática. Temos o menor
+
+00:01:41.060 --> 00:01:44.140
+que, o maior que, o menor ou igual,
+
+00:01:44.620 --> 00:01:46.940
+o maior ou igual, e temos
+
+00:01:47.000 --> 00:01:48.600
+também uma forma de verificar se duas
+
+00:01:48.610 --> 00:01:51.570
+coisas são iguais. E
+
+00:01:51.600 --> 00:01:54.360
+esta é um pouco diferente daquilo a que
+
+00:01:54.400 --> 00:01:58.440
+estás habituado, porque usamos três sinais
+
+00:01:58.500 --> 00:02:00.580
+de igual seguidos para ver se duas
+
+00:02:00.680 --> 00:02:04.040
+coisas são iguais ou diferentes. E isso
+
+00:02:04.080 --> 00:02:06.820
+ajuda-nos a não confundir com os momentos
+
+00:02:06.900 --> 00:02:09.720
+em que estamos a definir ou a atualizar variáveis, em que
+
+00:02:09.780 --> 00:02:11.540
+usamos um sinal de igual para dizer: põe isto na
+
+00:02:11.580 --> 00:02:15.900
+caixa. Lembra-te: três sinais de igual para comparar.
+
+00:02:17.720 --> 00:02:21.140
+Também podes comparar strings. Por exemplo, hello
+
+00:02:21.400 --> 00:02:24.630
+é igual a hello. Isso é verdadeiro. As duas strings
+
+00:02:24.640 --> 00:02:27.300
+são iguais. Mas cuidado, porque o Jiki
+
+00:02:27.380 --> 00:02:31.320
+compara cada caráter das duas strings,
+
+00:02:31.360 --> 00:02:34.720
+nos dois pedaços de papel. Por isso, Hello com
+
+00:02:34.800 --> 00:02:38.420
+H maiúsculo não é igual a hello com
+
+00:02:38.430 --> 00:02:41.430
+h minúsculo. São strings diferentes. Comparar
+
+00:02:41.460 --> 00:02:44.000
+essas duas daria falso, porque o H maiúsculo
+
+00:02:44.460 --> 00:02:49.290
+e o h minúsculo são carateres diferentes.
+
+00:02:49.500 --> 00:02:51.390
+Já agora, o verdadeiro e o falso
+
+00:02:51.420 --> 00:02:56.230
+chamam-se Booleans, e essa é mais uma palavra com ar técnico. Mas
+
+00:02:56.280 --> 00:02:58.370
+é muito simples. É só uma forma formal
+
+00:02:58.480 --> 00:03:01.080
+de dizer que algo é verdadeiro ou
+
+00:03:01.140 --> 00:03:03.220
+falso. Por isso, se me ouvires dizer Booleans
+
+00:03:03.260 --> 00:03:05.530
+ou se ouvires outra pessoa dizer Booleans, significa apenas
+
+00:03:05.580 --> 00:03:09.020
+verdadeiro ou falso. Muito bem, vamos ver isto
+
+00:03:09.040 --> 00:03:12.660
+em ação. Imagina que estamos a construir aquele porteiro-robô
+
+00:03:12.740 --> 00:03:15.360
+para uma discoteca, e vamos dizer que o porteiro
+
+00:03:15.400 --> 00:03:18.220
+só deve abrir a porta se a pessoa
+
+00:03:18.280 --> 00:03:22.560
+tiver 21 anos ou mais. Temos uma
+
+00:03:22.640 --> 00:03:25.000
+função askAge, que podemos usar para
+
+00:03:25.020 --> 00:03:27.320
+saber a idade de alguém, e vamos guardar o
+
+00:03:27.340 --> 00:03:29.660
+resultado numa variável chamada age.
+
+00:03:30.620 --> 00:03:32.620
+Depois podemos dizer: se essa age
+
+00:03:33.100 --> 00:03:35.840
+for maior que 20, abrimos a porta.
+
+00:03:36.780 --> 00:03:40.260
+Portanto, se askAge devolver 30, abrimos,
+
+00:03:40.300 --> 00:03:43.620
+e se devolver 12, não abrimos.
+
+00:03:45.440 --> 00:03:47.549
+No próximo exercício, vais usar a
+
+00:03:47.600 --> 00:03:50.920
+condicional if para tomar decisões no teu código.
+
+00:03:51.000 --> 00:03:54.120
+Vais verificar condições e executar certo código
+
+00:03:54.160 --> 00:03:57.420
+apenas quando essas condições forem verdadeiras. Os próximos dois
+
+00:03:57.430 --> 00:03:59.360
+são bastante simples, e depois vamos passar
+
+00:03:59.440 --> 00:04:02.210
+a alguns mais complexos. Como
+
+00:04:02.280 --> 00:04:05.109
+sempre, tudo nestes exercícios usa aquilo de que já
+
+00:04:05.120 --> 00:04:07.240
+falámos. Se te sentires um pouco perdido,
+
+00:04:07.420 --> 00:04:09.160
+vê os links dos conceitos no fim
+
+00:04:09.180 --> 00:04:11.960
+das instruções e relembra o que
+
+00:04:12.000 --> 00:04:14.200
+possas ter esquecido. Boa sorte, e vemo-nos
+
+00:04:14.220 --> 00:04:14.990
+aqui em breve.

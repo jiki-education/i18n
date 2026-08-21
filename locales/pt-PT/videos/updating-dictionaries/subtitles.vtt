@@ -1,0 +1,186 @@
+WEBVTT
+
+NOTE en_md5 5da11fa63c77f04329255ba0ae3d5fdf
+
+00:00:00.120 --> 00:00:02.480
+Bem-vindo de volta. Já sabes
+
+00:00:02.540 --> 00:00:05.300
+criar um dicionário e obter valores
+
+00:00:05.340 --> 00:00:08.840
+a partir dele. Mas o que acontece se os dados mudam?
+
+00:00:08.880 --> 00:00:10.760
+A certa altura, vou ficar mais velho. Não
+
+00:00:10.780 --> 00:00:13.060
+vou ter 42, vou ter 43.
+
+00:00:14.000 --> 00:00:16.160
+Como é que atualizamos o dicionário? Bem,
+
+00:00:16.240 --> 00:00:18.000
+usamos uma forma muito parecida com a
+
+00:00:18.080 --> 00:00:20.600
+que usamos para encontrar. Sabes que encontramos
+
+00:00:20.660 --> 00:00:22.860
+usando parênteses retos para obter o valor.
+
+00:00:23.620 --> 00:00:25.980
+Bem, também podemos usar parênteses retos seguidos
+
+00:00:26.020 --> 00:00:29.980
+de um sinal de igual para atualizar o dicionário.
+
+00:00:30.020 --> 00:00:32.920
+O Jiki vai à caixa person, tira a página
+
+00:00:32.960 --> 00:00:36.370
+do bloco de notas de espiral, encontra a chave age e
+
+00:00:36.380 --> 00:00:38.560
+depois apaga o 42 que lá estava
+
+00:00:38.580 --> 00:00:41.200
+e escreve 43 no lugar dele. Depois, a
+
+00:00:41.780 --> 00:00:43.089
+página do bloco de notas volta para a
+
+00:00:43.140 --> 00:00:47.800
+caixa. Isto altera o próprio dicionário. O Jiki
+
+00:00:48.140 --> 00:00:50.880
+não está a criar um dicionário novo, está a alterar
+
+00:00:50.890 --> 00:00:54.420
+o bloco de notas que já estava na caixa. E
+
+00:00:54.460 --> 00:00:56.310
+se quiseres acrescentar informação que
+
+00:00:56.400 --> 00:00:59.530
+não existia antes? Bem, podes fazer exatamente
+
+00:00:59.540 --> 00:01:02.160
+a mesma coisa. Se indicares uma chave
+
+00:01:02.200 --> 00:01:04.900
+que não existe, o Jiki simplesmente adiciona
+
+00:01:04.960 --> 00:01:07.340
+uma nova chave no fundo com esse valor.
+
+00:01:08.220 --> 00:01:10.200
+Portanto, neste caso, ele abre o bloco de notas,
+
+00:01:10.580 --> 00:01:13.140
+procura country, vê que não está lá e
+
+00:01:13.160 --> 00:01:14.680
+acrescenta uma linha nova no fundo:
+
+00:01:15.000 --> 00:01:16.880
+country à esquerda e England à direita.
+
+00:01:18.080 --> 00:01:20.580
+Portanto, a sintaxe é exatamente a mesma usada para alterar
+
+00:01:20.620 --> 00:01:24.320
+um valor. O Jiki trata de ambos automaticamente. Se a chave
+
+00:01:24.360 --> 00:01:27.660
+existir, atualiza-a. Se não existir,
+
+00:01:27.740 --> 00:01:29.290
+adiciona-a. Não precisas de fazer nada
+
+00:01:29.400 --> 00:01:33.040
+de especial. E, tal como podes começar com
+
+00:01:33.080 --> 00:01:35.120
+um array vazio e acrescentar coisas, também
+
+00:01:35.140 --> 00:01:37.240
+podes começar com um dicionário vazio e adicionar
+
+00:01:37.280 --> 00:01:40.340
+chaves uma a uma. Mais uma vez, é um
+
+00:01:40.400 --> 00:01:42.260
+padrão muito comum. Vais vê-lo muitas vezes.
+
+00:01:43.800 --> 00:01:45.860
+Uma utilização comum dos dicionários é manter
+
+00:01:45.940 --> 00:01:49.260
+a contagem de coisas. Podes definir as chaves
+
+00:01:49.320 --> 00:01:50.720
+como as coisas que queremos
+
+00:01:50.800 --> 00:01:53.360
+contar e os valores como as respetivas contagens.
+
+00:01:53.400 --> 00:01:55.800
+Imagina que estás a observar aves e queres
+
+00:01:55.860 --> 00:01:57.780
+registar quantas aves de cada tipo
+
+00:01:57.820 --> 00:02:00.180
+já viste. Sempre que vês uma ave,
+
+00:02:00.220 --> 00:02:02.740
+defines a contagem dela como um. Depois,
+
+00:02:02.800 --> 00:02:04.480
+sempre que a vês outra vez,
+
+00:02:04.540 --> 00:02:07.160
+obténs o valor atual e somas um. Para
+
+00:02:07.200 --> 00:02:08.800
+este padrão funcionar, precisamos de uma forma
+
+00:02:08.840 --> 00:02:11.220
+de verificar se o dicionário já tem
+
+00:02:11.300 --> 00:02:13.320
+essa chave. Se tiver, somamos um;
+
+00:02:13.360 --> 00:02:16.260
+se não tiver essa chave,
+
+00:02:16.620 --> 00:02:18.480
+temos de começar com o valor um.
+
+00:02:19.560 --> 00:02:21.250
+E, para isso, temos um
+
+00:02:21.380 --> 00:02:25.380
+método nos dicionários: o método has (tem). Indicas
+
+00:02:25.440 --> 00:02:27.520
+a chave que te interessa e o Jiki
+
+00:02:27.560 --> 00:02:30.060
+verifica se o dicionário tem essa chave
+
+00:02:30.100 --> 00:02:33.020
+ou não. Depois, devolve true ou false, conforme o caso.
+
+00:02:34.600 --> 00:02:36.210
+Vêm aí alguns exercícios que vão
+
+00:02:36.220 --> 00:02:38.480
+usar tudo isto. Boa sorte
+
+00:02:38.520 --> 00:02:39.800
+com eles, e vemo-nos aqui
+
+00:02:39.880 --> 00:02:40.130
+em breve

@@ -1,0 +1,267 @@
+WEBVTT
+
+NOTE en_md5 49411a7db976297a17fb5f2e027fcaff
+
+00:00:00.100 --> 00:00:03.060
+Bem-vindo de volta. Tens andado a usar o
+
+00:00:03.120 --> 00:00:05.160
+ciclo repeat há já algum tempo e, com sorte,
+
+00:00:05.220 --> 00:00:08.640
+já te sentes bastante à vontade com ele. Agora
+
+00:00:08.680 --> 00:00:10.500
+vamos ver algo à volta disso um bocadinho
+
+00:00:10.520 --> 00:00:13.220
+mais complexo. Imagina que queremos uma fila
+
+00:00:13.260 --> 00:00:15.740
+de flores. Podemos escrever algo assim.
+
+00:00:16.180 --> 00:00:18.720
+Definimos uma posição, plantamos uma flor,
+
+00:00:18.760 --> 00:00:21.300
+aumentamos a posição em 10, repetimos,
+
+00:00:22.000 --> 00:00:23.560
+e ficamos com uma fila de flores
+
+00:00:23.680 --> 00:00:26.640
+bem arrumada. Mas e se quisermos uma
+
+00:00:26.720 --> 00:00:30.240
+grelha de flores com linhas e colunas? Talvez
+
+00:00:30.320 --> 00:00:32.780
+quatro linhas com cinco flores em cada linha.
+
+00:00:35.000 --> 00:00:36.580
+Para só um segundo, ou põe o
+
+00:00:36.620 --> 00:00:38.640
+vídeo em pausa por instantes, e pensa
+
+00:00:38.700 --> 00:00:42.380
+em como farias isto. Temos
+
+00:00:42.440 --> 00:00:44.880
+um ciclo que desenha uma fila de flores.
+
+00:00:45.980 --> 00:00:48.240
+Como podes usá-lo para desenhar quatro
+
+00:00:48.320 --> 00:00:50.660
+filas? Ou o que poderíamos fazer para desenhar
+
+00:00:50.700 --> 00:00:54.420
+quatro filas? Muito bem, espero que já tenhas pensado nisso.
+
+00:00:55.440 --> 00:00:57.360
+Uma opção seria simplesmente copiar
+
+00:00:57.380 --> 00:01:00.680
+e colar esse ciclo quatro vezes e mudar
+
+00:01:00.740 --> 00:01:03.260
+a posição vertical em cada uma. E isso
+
+00:01:03.320 --> 00:01:07.970
+funcionaria. Seria aceitável. Mas é repetitivo e
+
+00:01:07.980 --> 00:01:10.380
+há uma forma melhor. Sabemos que, quando o código
+
+00:01:10.420 --> 00:01:13.420
+é repetitivo, podemos usar um ciclo para
+
+00:01:13.460 --> 00:01:17.920
+simplificar. Portanto, aqui podemos usar um
+
+00:01:18.020 --> 00:01:21.840
+ciclo dentro de outro ciclo. Um ciclo para as
+
+00:01:21.860 --> 00:01:24.840
+linhas e outro para as flores dessa
+
+00:01:24.880 --> 00:01:28.080
+linha. Vamos começar por acrescentar um ciclo
+
+00:01:28.140 --> 00:01:30.360
+repeat à volta do código que já temos, para
+
+00:01:30.380 --> 00:01:32.220
+ganhares uma ideia disto. E vamos
+
+00:01:32.260 --> 00:01:35.020
+repetir apenas uma vez. Estamos a dizer ao Jiki para
+
+00:01:35.060 --> 00:01:38.680
+fazer tudo o que está dentro destas chavetas exteriores uma vez.
+
+00:01:39.800 --> 00:01:41.920
+Isto tem exatamente o mesmo efeito que
+
+00:01:42.000 --> 00:01:44.220
+não ter este ciclo exterior de todo. Estamos
+
+00:01:44.280 --> 00:01:46.870
+a dizer ao Jiki para repetir algo uma vez, o que é
+
+00:01:46.940 --> 00:01:48.440
+o mesmo que lhe dizer para o
+
+00:01:48.480 --> 00:01:51.000
+fazer sem o repeat. Mas estou a mostrar-te
+
+00:01:51.040 --> 00:01:53.000
+isto para veres que é assim que este
+
+00:01:53.060 --> 00:01:55.500
+código funciona. É código legítimo e válido. Temos
+
+00:01:55.560 --> 00:01:59.900
+um ciclo dentro de outro ciclo. Então, o que
+
+00:01:59.940 --> 00:02:02.960
+acontece se mudarmos esse ciclo exterior para
+
+00:02:03.000 --> 00:02:06.520
+repetir duas vezes? Agora o Jiki vai executar
+
+00:02:06.560 --> 00:02:10.400
+duas vezes aquela sequência de plant cinco vezes. Ele planta
+
+00:02:10.440 --> 00:02:14.460
+10 flores. Mas todas essas flores
+
+00:02:14.500 --> 00:02:17.600
+ficam na mesma fila. Assim, da
+
+00:02:17.660 --> 00:02:20.520
+mesma forma que precisamos de deslocar a posição
+
+00:02:20.580 --> 00:02:22.180
+da esquerda para a direita um pouco de cada vez,
+
+00:02:23.100 --> 00:02:26.240
+depois de desenharmos cada fila completa também
+
+00:02:26.300 --> 00:02:28.660
+precisamos de deslocar a posição vertical.
+
+00:02:30.040 --> 00:02:32.540
+Então, como fazemos isso? Podemos
+
+00:02:32.580 --> 00:02:35.480
+acrescentar uma variável externa para a posição
+
+00:02:35.560 --> 00:02:39.970
+vertical, usá-la na nossa função plant e,
+
+00:02:40.000 --> 00:02:42.880
+a seguir, aumentá-la em 10 depois de cada fila.
+
+00:02:45.200 --> 00:02:46.920
+Pensa no valor que ela tem
+
+00:02:46.960 --> 00:02:50.480
+em cada momento. A posição vertical começa em 10.
+
+00:02:50.520 --> 00:02:53.360
+Nas primeiras cinco vezes em que plantamos, mantém-se
+
+00:02:53.380 --> 00:02:56.720
+assim. A posição horizontal aumenta. Depois
+
+00:02:56.760 --> 00:02:59.720
+somamos mais 10 a essa
+
+00:02:59.800 --> 00:03:03.480
+posição vertical e plantamos mais cinco flores
+
+00:03:03.980 --> 00:03:07.120
+um pouco mais abaixo. Voltamos a repor a posição
+
+00:03:07.140 --> 00:03:09.150
+horizontal em 10 e depois
+
+00:03:09.180 --> 00:03:13.120
+aumentamo-la novamente de cada vez. E agora
+
+00:03:13.140 --> 00:03:16.030
+podemos dizer para repetir isto quatro vezes e
+
+00:03:16.060 --> 00:03:20.360
+vamos obter quatro filas com cinco plantas. O
+
+00:03:20.420 --> 00:03:23.070
+essencial a perceber é que o Jiki termina
+
+00:03:23.260 --> 00:03:26.160
+todo o trabalho no ciclo interior antes de
+
+00:03:26.220 --> 00:03:28.440
+voltar ao ciclo exterior. Ele não anda
+
+00:03:28.500 --> 00:03:32.140
+a saltar para trás e para a frente. Ele completa o ciclo
+
+00:03:32.200 --> 00:03:34.130
+interior e, depois, avança para o
+
+00:03:34.260 --> 00:03:37.660
+próximo passo do ciclo exterior. Nesta
+
+00:03:37.680 --> 00:03:39.520
+situação, podes pensar no ciclo
+
+00:03:39.620 --> 00:03:41.880
+exterior como aquele que controla os grupos, ou a
+
+00:03:41.980 --> 00:03:44.720
+linha, e no ciclo interior como aquele que controla cada
+
+00:03:44.820 --> 00:03:47.049
+elemento desse grupo, ou cada elemento
+
+00:03:47.080 --> 00:03:50.549
+dessa linha. No nosso exemplo, o ciclo
+
+00:03:50.600 --> 00:03:54.580
+exterior cria quatro linhas e o ciclo interior
+
+00:03:54.640 --> 00:03:57.760
+coloca cinco plantas, cinco elementos em cada grupo.
+
+00:03:59.280 --> 00:04:02.100
+Nos próximos exercícios, vais usar ciclos dentro
+
+00:04:02.180 --> 00:04:05.520
+de ciclos para construir coisas. Estes novos exercícios
+
+00:04:05.580 --> 00:04:08.160
+dão-te funções para desenhar cada peça.
+
+00:04:08.540 --> 00:04:10.160
+A tua tarefa é apenas descobrir a
+
+00:04:10.220 --> 00:04:11.829
+estrutura correta dos ciclos para que
+
+00:04:11.860 --> 00:04:16.029
+tudo funcione. Tudo o que aparece nestes exercícios está
+
+00:04:16.060 --> 00:04:17.760
+no que acabámos de ver. Por isso, se
+
+00:04:17.800 --> 00:04:19.860
+ficares com dúvidas, volta a ver este vídeo.
+
+00:04:20.660 --> 00:04:22.160
+Boa sorte, e vemo-nos por aqui
+
+00:04:22.180 --> 00:04:22.460
+daqui a pouco.

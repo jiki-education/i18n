@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 2a23c8bcc4af2ee7d5bd8d5613681427
+
+00:00:00.200 --> 00:00:03.800
+Bem-vindo de volta. Espero que usar as máquinas já
+
+00:00:03.860 --> 00:00:07.160
+esteja a parecer-te fácil. Até agora, em todos
+
+00:00:07.180 --> 00:00:09.140
+os tipos de máquinas que usaste,
+
+00:00:09.380 --> 00:00:12.160
+move, turnLeft, shoot, todas fizeram a
+
+00:00:12.240 --> 00:00:15.260
+mesma coisa de cada vez. Sempre que
+
+00:00:15.340 --> 00:00:18.520
+chamas move, a tua personagem move-se. Sempre que
+
+00:00:18.560 --> 00:00:22.010
+usas shoot, a tua personagem dispara. Mas uma das
+
+00:00:22.080 --> 00:00:25.560
+coisas mais poderosas nas máquinas, nas funções, é
+
+00:00:25.580 --> 00:00:27.520
+que muitas delas permitem-te colocar
+
+00:00:27.560 --> 00:00:30.810
+informação lá dentro. Quando as executas,
+
+00:00:31.000 --> 00:00:34.380
+essa informação muda o que elas fazem. Vamos ver um
+
+00:00:34.420 --> 00:00:38.420
+exemplo. Até agora, vimos máquinas que se parecem
+
+00:00:38.460 --> 00:00:40.480
+um pouco com caixas, como
+
+00:00:40.490 --> 00:00:43.360
+esta máquina move. Mas algumas máquinas têm
+
+00:00:43.540 --> 00:00:47.200
+fendas, como esta máquina walk. A máquina walk
+
+00:00:47.240 --> 00:00:49.260
+é como a máquina move. Faz avançar
+
+00:00:49.280 --> 00:00:52.780
+a personagem para a frente, mas o Jiki pode usar a
+
+00:00:52.860 --> 00:00:56.320
+fenda para indicar quantos passos a tua personagem
+
+00:00:56.340 --> 00:00:59.340
+deve andar para a frente. Em vez de teres de
+
+00:00:59.440 --> 00:01:02.120
+usar a função move três vezes
+
+00:01:02.160 --> 00:01:05.920
+seguidas, move, move, move, podes agora
+
+00:01:05.960 --> 00:01:08.620
+simplesmente usar a função walk e dizer ao Jiki
+
+00:01:08.640 --> 00:01:11.200
+para pôr o número três na máquina.
+
+00:01:12.960 --> 00:01:15.320
+Para fazermos isto em código, continuamos
+
+00:01:15.380 --> 00:01:17.260
+a escrever o nome da função, neste
+
+00:01:17.320 --> 00:01:19.920
+caso walk, e continuamos a pôr o parêntese
+
+00:01:19.940 --> 00:01:23.740
+de abertura. Depois, antes do parêntese de fecho,
+
+00:01:23.780 --> 00:01:25.920
+dizemos qual é o valor de entrada que queremos.
+
+00:01:25.960 --> 00:01:27.690
+Neste caso, queremos que o valor de entrada
+
+00:01:27.720 --> 00:01:30.920
+seja três, para dizer walk três passos
+
+00:01:30.960 --> 00:01:34.240
+em frente. Quando o Jiki vê isso, vai buscar o
+
+00:01:34.260 --> 00:01:35.930
+número três, e podes pensar nesse
+
+00:01:35.960 --> 00:01:38.310
+número como uma pequena moeda. O Jiki vai
+
+00:01:38.340 --> 00:01:40.300
+pô-lo na fenda da
+
+00:01:40.320 --> 00:01:43.200
+máquina antes de rodar a manivela para a
+
+00:01:43.220 --> 00:01:46.660
+ligar. Daqui a pouco, vais
+
+00:01:46.700 --> 00:01:49.660
+fazer exercícios em que desenhas retângulos e
+
+00:01:49.700 --> 00:01:53.000
+círculos. Nessas funções, tens de dizer
+
+00:01:53.080 --> 00:01:57.110
+ao Jiki para inserir vários números diferentes, indicando
+
+00:01:57.180 --> 00:01:59.380
+por exemplo, a que distância deve ficar
+
+00:01:59.420 --> 00:02:00.840
+da esquerda, a que distância deve ficar
+
+00:02:00.920 --> 00:02:03.160
+do topo, a largura de um retângulo, a
+
+00:02:03.240 --> 00:02:07.140
+altura de um retângulo. No mundo do Jiki, essas
+
+00:02:07.160 --> 00:02:10.120
+são apenas fendas diferentes, uma para cada um
+
+00:02:10.160 --> 00:02:12.880
+desses números. Então, no nosso código,
+
+00:02:12.900 --> 00:02:15.120
+escrevemos cada número e colocamos uma vírgula
+
+00:02:15.200 --> 00:02:18.460
+entre eles. O nome da função, um
+
+00:02:18.540 --> 00:02:20.980
+parêntese, um número para cada um dos valores de entrada,
+
+00:02:21.300 --> 00:02:24.180
+todos separados por vírgulas, e depois fechamos
+
+00:02:24.260 --> 00:02:27.380
+os parênteses. Se tentares usar uma
+
+00:02:27.420 --> 00:02:29.810
+função com o número errado de valores de entrada,
+
+00:02:29.840 --> 00:02:31.620
+vais receber um erro. Por exemplo, se
+
+00:02:31.660 --> 00:02:33.660
+tentares pôr um valor de entrada numa
+
+00:02:33.680 --> 00:02:36.080
+máquina que não tem fenda, o Jiki
+
+00:02:36.140 --> 00:02:38.060
+diz-te que não podes. E se
+
+00:02:38.120 --> 00:02:39.640
+tentares usar uma máquina que tem uma
+
+00:02:39.680 --> 00:02:41.840
+fenda, mas não disseres ao Jiki o que
+
+00:02:41.880 --> 00:02:43.920
+pôr lá dentro, ele também vai parar e
+
+00:02:44.000 --> 00:02:46.960
+reclamar. Se te sentires um pouco
+
+00:02:47.020 --> 00:02:50.380
+rebelde, experimenta e vê o que acontece. Vais cometer
+
+00:02:50.440 --> 00:02:52.370
+muitos erros destes à medida que as coisas
+
+00:02:52.400 --> 00:02:54.940
+forem ficando mais complicadas. Tenta não ficar stressado
+
+00:02:54.980 --> 00:02:57.170
+nem aborrecido com isso. Todos aprendemos
+
+00:02:57.200 --> 00:03:00.080
+com os erros. É literalmente a forma mais rápida
+
+00:03:00.100 --> 00:03:03.600
+de interiorizarmos as coisas. E toda a gente
+
+00:03:03.660 --> 00:03:06.320
+comete estes erros. Todos começámos do zero,
+
+00:03:06.600 --> 00:03:10.340
+por isso não te stresses. Antes de começares,
+
+00:03:10.860 --> 00:03:12.910
+há mais uma coisa que vale a pena referir.
+
+00:03:13.780 --> 00:03:16.400
+Às vezes, nestes exercícios, vais ver
+
+00:03:16.500 --> 00:03:19.660
+linhas que começam com duas barras. Estas
+
+00:03:19.700 --> 00:03:23.040
+chamam-se comentários. São notas privadas, só para
+
+00:03:23.140 --> 00:03:26.420
+ti, que o Jiki ignora por completo. Portanto, se
+
+00:03:26.480 --> 00:03:28.500
+o Jiki vir uma linha que começa com essas
+
+00:03:28.540 --> 00:03:31.130
+duas barras, simplesmente passa por cima dela e
+
+00:03:31.140 --> 00:03:32.670
+avança para a linha
+
+00:03:32.700 --> 00:03:36.320
+seguinte. Estes comentários dão-te uma forma de
+
+00:03:36.340 --> 00:03:38.650
+escreveres as tuas próprias notas. São muito
+
+00:03:38.700 --> 00:03:40.800
+úteis para te lembrares de como as coisas funcionam.
+
+00:03:41.580 --> 00:03:43.430
+Muitas vezes, também escrevo comentários para ti,
+
+00:03:43.560 --> 00:03:45.630
+para que, quando começares um exercício,
+
+00:03:45.660 --> 00:03:48.120
+te possam sugerir onde precisas de escrever código
+
+00:03:48.160 --> 00:03:50.109
+ou como resolver alguma coisa. Mas
+
+00:03:50.160 --> 00:03:51.880
+acrescenta os teus
+
+00:03:51.980 --> 00:03:55.480
+próprios comentários à vontade. À medida que
+
+00:03:55.520 --> 00:03:58.310
+avanças, vê o fundo das instruções,
+
+00:03:58.380 --> 00:04:00.980
+e vais ver informação sobre as funções que
+
+00:04:01.020 --> 00:04:03.280
+podes usar, exatamente quais são os valores de entrada
+
+00:04:03.320 --> 00:04:05.520
+que precisas de pôr. Diverte-te
+
+00:04:05.600 --> 00:04:07.020
+a experimentar esses valores de entrada, e vemo-nos
+
+00:04:07.060 --> 00:04:07.740
+aqui em breve

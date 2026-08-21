@@ -1,71 +1,71 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "A tua solução tem demasiadas linhas de código. Consegues torná-la mais curta?"
   },
   "tasks": {
     "searchForTile": {
-      "name": "�",
-      "description": "�"
+      "name": "Procurar uma peça",
+      "description": "Escreve uma função que verifica se uma peça com uma letra específica está no suporte. Devolve true se for encontrada e false se não for."
     },
     "solveInEightLines": {
-      "name": "�",
-      "description": "�"
+      "name": "Resolve em 8 linhas de código",
+      "description": "Consegues resolver este exercício com apenas 8 linhas de código?"
     }
   },
   "scenarios": {
     "letterFoundAtStart": {
-      "name": "�",
-      "description": "�"
+      "name": "Letra no início",
+      "description": "A letra é a primeira peça do suporte."
     },
     "letterFoundInMiddle": {
-      "name": "�",
-      "description": "�"
+      "name": "Letra no meio",
+      "description": "A letra está no meio do suporte."
     },
     "letterFoundAtEnd": {
-      "name": "�",
-      "description": "�"
+      "name": "Letra no fim",
+      "description": "A letra é a última peça do suporte."
     },
     "letterNotFound": {
-      "name": "�",
-      "description": "�"
+      "name": "Letra não encontrada",
+      "description": "A letra não está no suporte."
     },
     "emptyRack": {
-      "name": "�",
-      "description": "�"
+      "name": "Suporte vazio",
+      "description": "Um suporte vazio não tem peças para encontrar."
     },
     "duplicateLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "Suporte com peças duplicadas",
+      "description": "A letra aparece entre peças duplicadas."
     },
     "singleTileFound": {
-      "name": "�",
-      "description": "�"
+      "name": "Uma peça encontrada",
+      "description": "Um suporte com uma peça que corresponde."
     },
     "singleTileNotFound": {
-      "name": "�",
-      "description": "�"
+      "name": "Uma peça não encontrada",
+      "description": "Um suporte com uma peça que não corresponde."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "8 linhas de código",
+      "description": "Resolve o exercício com apenas 8 linhas de código."
     }
   },
   "hints": {
     "byHand": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como faria isto à mão?",
+      "answer": "Percorres o palheiro letra a letra, comparando cada uma com a agulha. Assim que encontrares uma correspondência, paras. Se chegares ao fim sem correspondência, a agulha não está lá."
     },
     "loopAndCompare": {
-      "question": "�",
-      "answer": "�"
+      "question": "Como faço um ciclo e comparo?",
+      "answer": "Um ciclo for-of dá-te cada letra da string, uma de cada vez. Dentro dele, uma condicional compara a letra atual com a agulha."
     },
     "returnTrue": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quando devo devolver true?",
+      "answer": "Assim que encontrares uma correspondência. Não vale a pena verificar as letras restantes."
     },
     "returnFalse": {
-      "question": "�",
-      "answer": "�"
+      "question": "Quando devo devolver false?",
+      "answer": "APENAS após o ciclo ter terminado sem encontrar uma correspondência. Um erro comum é colocar `return false` dentro do ciclo. Isso desiste logo após a primeira letra que não corresponde, antes de teres verificado as letras restantes."
     }
   }
 }
