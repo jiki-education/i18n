@@ -14,7 +14,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
-import { INAPPLICABLE, REPO_ROOT, SENTINEL, TARGET_LOCALES } from "./lib/constants.mjs";
+import { INAPPLICABLE, PRODUCTION_LOCALES, REPO_ROOT, SENTINEL, TARGET_LOCALES, productionLocaleIssue } from "./lib/constants.mjs";
 import { CONTENT_TYPES, CONTENT_TYPE_IDS, POST_TYPE_IDS, listItems, localPath } from "./lib/content-types.mjs";
 import { corpusItems, englishCorpusSize, englishItems, englishRepo, unstartedItems } from "./lib/english.mjs";
 import {
@@ -1133,6 +1133,52 @@ test("a key outside the static/ prefix is refused", () => {
 
 test("a legitimate target-locale key is permitted, and normalised", () => {
   assert.equal(assertPublishableKey("/static/i18n/app/hu/messages-abc123456789.json"), "static/i18n/app/hu/messages-abc123456789.json");
+});
+
+// ------------------------------------------------ the production locale list
+
+// `productionTargets` is what validate.mjs exits non-zero on, so every mistake
+// in it fails the same way: the gate quietly gets smaller and a red corpus goes
+// green. Nothing downstream can see that, which is why it is checked at load and
+// why the checking is exercised here rather than trusted.
+
+console.log("\nthe production locale list:");
+
+test("a sound list is accepted", () => {
+  assert.equal(productionLocaleIssue(["hu", "fr"], ["de", "fr", "hu"]), null);
+});
+
+test("a missing list is a failure, not an empty gate", () => {
+  assert.match(productionLocaleIssue(undefined, ["hu"]), /"productionTargets" is missing/);
+});
+
+test("an EMPTY list is a failure: nothing gating is never a legitimate state", () => {
+  // The precise hole the `?? []` fallback this replaced used to leave open: an
+  // empty production bucket puts every error on the non-production side, and the
+  // run exits 0 having printed hundreds of them.
+  assert.match(productionLocaleIssue([], ["hu"]), /"productionTargets" is empty/);
+});
+
+test("a non-array list is a failure, and the message says what was found", () => {
+  assert.match(productionLocaleIssue("hu", ["hu"]), /not an array \(got "hu"\)/);
+});
+
+test("a locale `targets` does not know is a failure", () => {
+  assert.match(productionLocaleIssue(["hu", "xx"], ["hu"]), /"targets" does not: xx/);
+});
+
+test("a casing slip is caught, and the message names the trap", () => {
+  const issue = productionLocaleIssue(["pt-pt"], ["pt-PT"]);
+  assert.match(issue, /pt-pt/);
+  assert.match(issue, /casing/);
+});
+
+test("the list this repo actually ships passes its own check", () => {
+  assert.equal(productionLocaleIssue(PRODUCTION_LOCALES, TARGET_LOCALES), null);
+});
+
+test("every production locale is a target locale, so none can drop out of the gate", () => {
+  for (const locale of PRODUCTION_LOCALES) assert.ok(TARGET_LOCALES.includes(locale), `${locale} is not in targets`);
 });
 
 // -------------------------------------------------------- the api copy rows

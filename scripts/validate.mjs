@@ -5,14 +5,17 @@
 //
 // Usage:
 //   node scripts/validate.mjs [<locale|all>] [--type=<id>] [--slug=<slug>]
-//                             [--shippable] [--stamp]
+//                             [--shippable] [--stamp] [--gate=all]
 //
 // Examples:
 //   node scripts/validate.mjs all          # CI gate, reads only
+//   node scripts/validate.mjs all --gate=all   # ...but hold every locale to it
 //   node scripts/validate.mjs hu --shippable   # also fail on any remaining sentinel
 //   node scripts/validate.mjs hu --type=concept --slug=arrays --stamp   # after translating
 //
-// Exit codes: 0 all ERROR checks passed, 1 at least one ERROR.
+// Exit codes: 0 no ERROR in a production locale, 1 at least one. See "The gate is
+// scoped to production locales" below: every locale is CHECKED, not every locale
+// GATES. `--gate=all` widens the exit code back to every locale in scope.
 //
 // ## Errors block, warnings never do
 //
@@ -21,6 +24,54 @@
 // balance, frontmatter keys, staleness stamps), WARN checks are heuristics over
 // prose that produce false positives by design. A WARN is printed to be read,
 // never to gate. Do not promote one.
+//
+// ## The gate is scoped to production locales
+//
+// Every locale in scope is checked, printed and counted exactly as it always
+// was. What changed is which of those findings decide the exit code: only errors
+// in a PRODUCTION locale do, meaning one listed in locales.json's
+// `productionTargets` (see that file for the list, its provenance, and why it is
+// not the front-end's served-locale list).
+//
+// This is a change to what gates, never to what is checked. Nothing became
+// invisible: the summary prints both counts side by side, so a run that exits 0
+// with hundreds of non-production errors says so on its last line and cannot be
+// mistaken for a clean corpus.
+//
+// The reason for scoping is that `targets` spans locales at wildly different
+// stages, from served-to-real-users down to a first bootstrap sample that nobody
+// has reviewed yet. Holding all of them to one gate made it permanently red, and
+// a permanently red gate is not a gate: it gets ignored within a month, and the
+// first real regression in a live locale then lands underneath the noise with
+// nothing to distinguish it. A gate that is normally green is the only kind whose
+// going red means anything, and "fix this now" is a sentence you can only write
+// about a locale somebody is actually held to.
+//
+// A locale joining `productionTargets` is therefore a deliberate step, taken when
+// somebody intends to keep it green, and it precedes that locale being served.
+//
+// `--gate=all` is the escape hatch: it holds every locale in scope to the exit
+// code, which is what you want when you are deliberately sweeping the whole
+// corpus and want a non-zero exit to drive a script.
+//
+// ### Why --shippable is NOT scoped
+//
+// `--shippable` is a different question asked about one named locale: "is this
+// locale fit to be served?". It is the go-live gate, and go-live is exactly the
+// moment a locale is not yet in `productionTargets` (it joins by passing). So
+// scoping `--shippable` to production locales would make it answer "yes" for
+// every locale that has not already gone live, which is every locale anyone would
+// ever point it at. It therefore gates on whatever locale it is given, production
+// or not, and `--gate` has no effect on it.
+//
+// That rule is written as "whatever locale it is given", and it is meant
+// literally, including the odd case: `validate.mjs all --shippable` gates on all
+// of them. Nobody sensibly asks the go-live question about thirty-odd locales at
+// once, so this is not a case worth building a third policy for, and of the two
+// available answers the conservative one is right: a flag whose whole job is to
+// refuse to ship something imperfect should not start making exceptions when it
+// is pointed at more than one thing. `--shippable` widens the gate; it never
+// narrows it.
 //
 // ## Stamping
 //
@@ -83,7 +134,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { INAPPLICABLE, SENTINEL, TARGET_LOCALES, assertTargetLocale } from "./lib/constants.mjs";
+import { INAPPLICABLE, PRODUCTION_LOCALES, SENTINEL, TARGET_LOCALES, assertTargetLocale, fail } from "./lib/constants.mjs";
 import { CONTENT_TYPE_IDS, contentType, listItems, localPath, metaPath } from "./lib/content-types.mjs";
 import { isBodyExcluded } from "./lib/exclusions.mjs";
 import { DEFAULT_SOURCE_REPO, englishPath, englishRepo, scopeItems } from "./lib/english.mjs";
@@ -353,6 +404,15 @@ async function main() {
   const locales = requested === "all" ? TARGET_LOCALES : [requested];
   locales.forEach(assertTargetLocale);
 
+  // `--gate=all` widens the exit code to every locale in scope. Spelled as a
+  // value rather than a bare flag so the default ("production") has a name a
+  // reader can say out loud, and so a future third policy has somewhere to go.
+  const gate = args.flags.gate ?? "production";
+  if (gate !== "production" && gate !== "all") {
+    fail(`unknown --gate=${gate}. Use --gate=production (the default, exit 1 on errors in a production locale) or --gate=all (exit 1 on any error).`);
+  }
+
+
   const requestedTypes = args.flags.type ? [contentType(args.flags.type) && args.flags.type] : CONTENT_TYPE_IDS;
 
   // A source repo that is not checked out takes its content types out of scope
@@ -372,17 +432,32 @@ async function main() {
   const stamp = Boolean(args.flags.stamp);
   const shippable = Boolean(args.flags.shippable);
 
-  let errors = 0;
+  const isProduction = (locale) => PRODUCTION_LOCALES.includes(locale);
+
   let warnings = 0;
   let checked = 0;
   let missing = 0;
+  // Counted by where the error IS, never by whether it gates. The split is a
+  // property of the corpus, so it is reported identically under every --gate
+  // setting and the exit code is decided from it afterwards. That way widening
+  // the gate changes what fails, never what the summary says is there.
+  let productionErrors = 0;
+  let nonProductionErrors = 0;
+  /** Errors belonging to no locale (the guard checks). Always gate. */
+  let guardErrors = 0;
+  /** The locales that actually have errors, so the summary can count them. */
+  const productionLocalesWithErrors = new Set();
+  const nonProductionLocalesWithErrors = new Set();
   /** Per locale, the missing items grouped by type, for the summary. */
   const missingByLocale = new Map();
 
+  // The guard checks belong to no locale: a broken R2 key guard is a fact about
+  // this repo's code, not about anybody's translation, and it would let English
+  // reach the bucket. It gates unconditionally, whatever --gate says.
   const guardIssues = checkGuards();
   for (const found of guardIssues) {
     console.error(`  ${found.level}  guards: ${found.message}`);
-    errors += 1;
+    guardErrors += 1;
   }
   if (guardIssues.length === 0) console.log(`guards: the R2 key guard is armed and refusing every English prefix.`);
   // One line per source repo actually in scope, resolved lazily: a run narrowed
@@ -409,7 +484,13 @@ async function main() {
         const { issues, label: name, stamped, note, where } = result;
         const suffix = `${stamped ? " (stamped)" : ""}${note ? ` [${note}]` : ""}`;
         const verdict = itemVerdict(result);
-        errors += verdict.errors;
+        if (isProduction(locale)) {
+          productionErrors += verdict.errors;
+          if (verdict.errors > 0) productionLocalesWithErrors.add(locale);
+        } else {
+          nonProductionErrors += verdict.errors;
+          if (verdict.errors > 0) nonProductionLocalesWithErrors.add(locale);
+        }
         warnings += verdict.warnings;
 
         if (verdict.missing) {
@@ -474,10 +555,48 @@ async function main() {
     );
   }
 
+  // The two error counts are printed side by side, always, so the scoping of the
+  // gate is impossible to miss and a green run can never be read as "the corpus
+  // is clean" when it is only "the locales we hold to this are clean".
+  const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+  const errorSummary = [
+    `${plural(productionErrors, "error", "errors")} in ${plural(productionLocalesWithErrors.size, "production locale", "production locales")}`,
+    `${plural(nonProductionErrors, "error", "errors")} in ${plural(nonProductionLocalesWithErrors.size, "non-production locale", "non-production locales")}`
+  ];
+  if (guardErrors > 0) errorSummary.unshift(`${plural(guardErrors, "guard error", "guard errors")}`);
+
   console.log(
-    `\nvalidate: ${checked} items, ${missing} with no translation file, ${errors} errors, ${warnings} warnings.`
+    `\nvalidate: ${checked} items, ${missing} with no translation file, ${errorSummary.join(", ")}, ${warnings} warnings.`
   );
-  if (errors > 0) process.exit(1);
+
+  // What actually gates. Guard errors always do (they belong to the repo, not to
+  // a locale). Production errors always do. Everything else does only when asked:
+  // --gate=all for a deliberate whole-corpus sweep, --shippable because it is the
+  // go-live question about one named locale and scoping it would answer "yes" for
+  // every locale that has not already gone live. See the header.
+  // `--shippable` widens and never narrows, deliberately, including on a wide
+  // run: see "Why --shippable is NOT scoped" in the header.
+  const widened = gate === "all" || shippable;
+  const gatingErrors = guardErrors + productionErrors + (widened ? nonProductionErrors : 0);
+
+  // Said out loud whenever a run could otherwise be mistaken for a passed gate:
+  // a translator working on `de` must not read a clean run as a production
+  // sign-off it was never held to.
+  const scopedToOneLocale = locales.length === 1;
+  if (!widened && scopedToOneLocale && !isProduction(locales[0])) {
+    console.log(
+      `validate: ${locales[0]} is not a production locale (locales.json "productionTargets"), so its errors do NOT gate ` +
+        `and this run's exit code says nothing about them. Use --gate=all to be held to them, or --shippable to ask ` +
+        `the go-live question about this locale.`
+    );
+  } else if (!widened && nonProductionErrors > 0) {
+    console.log(
+      `validate: only the ${PRODUCTION_LOCALES.length} production locales gate (locales.json "productionTargets"); ` +
+        `the non-production errors above are real and reported, they just do not fail this run. --gate=all holds every locale to it.`
+    );
+  }
+
+  if (gatingErrors > 0) process.exit(1);
 }
 
 await main();

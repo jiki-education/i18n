@@ -74,6 +74,74 @@ export const TARGET_LOCALES = config.targets;
 /** Locales queued for future work, not yet translated here. */
 export const PLANNED_LOCALES = config.plannedTargets;
 
+/**
+ * Why `productionTargets` is checked at load, and why every bad shape of it is
+ * fatal rather than tolerated.
+ *
+ * This list SHRINKS a gate, which makes every mistake in it silent in the worst
+ * possible direction: whatever goes wrong, the result is a run that goes green
+ * having quietly stopped checking a live language, and nothing downstream can
+ * tell that apart from a clean corpus. Two shapes of mistake do it:
+ *
+ *  - a locale `targets` does not know (a casing slip, "pt-pt" for "pt-PT", or a
+ *    stale code) drops that one locale out of the production bucket;
+ *  - an absent, empty, or non-array list empties the bucket ENTIRELY, so every
+ *    error lands on the non-production side and `validate.mjs all` exits 0 while
+ *    printing hundreds of them.
+ *
+ * The second is the one worth spelling out, because `productionTargets` being
+ * missing looks like an innocent state and is not one. There is no legitimate
+ * reason for this repo to hold nothing to a production standard: locales are
+ * served from it. If the honest answer really were "nothing is production yet",
+ * the honest behaviour is a loud failure telling whoever reads it to populate
+ * the list, never a green run that has silently gated on nothing.
+ *
+ * Returned rather than thrown so `scripts/test.mjs` can assert each case without
+ * a doctored locales.json or a subprocess. The caller below is what makes it
+ * fatal.
+ *
+ * @returns {string|null} the failure message, or null if the list is sound.
+ */
+export function productionLocaleIssue(productionTargets, targetLocales) {
+  if (!Array.isArray(productionTargets)) {
+    return (
+      `locales.json "productionTargets" is ${productionTargets === undefined ? "missing" : `not an array (got ${JSON.stringify(productionTargets)})`}. ` +
+      `It must be an array of locale codes: it is the list validate.mjs gates on, so without it nothing gates and a run ` +
+      `full of errors exits 0. Add it, listing the locales held to a production standard.`
+    );
+  }
+  if (productionTargets.length === 0) {
+    return (
+      `locales.json "productionTargets" is empty. An empty gate is never a legitimate state: it makes validate.mjs exit 0 ` +
+      `however many errors it printed. Populate it with the locales held to a production standard (the served ones, plus ` +
+      `any being held to that standard ahead of going live).`
+    );
+  }
+  const strays = productionTargets.filter((locale) => !targetLocales.includes(locale));
+  if (strays.length > 0) {
+    return (
+      `locales.json "productionTargets" lists ${strays.length === 1 ? "a locale" : "locales"} that "targets" does not: ` +
+      `${strays.join(", ")}. Every production locale must be a target locale, and a code that matches nothing silently ` +
+      `drops out of the gate (check the casing: "pt-PT", not "pt-pt"). Known targets: ${targetLocales.join(", ")}`
+    );
+  }
+  return null;
+}
+
+const productionIssue = productionLocaleIssue(config.productionTargets, TARGET_LOCALES);
+if (productionIssue) fail(productionIssue);
+
+/**
+ * The subset of TARGET_LOCALES held to a production standard.
+ *
+ * This is what `scripts/validate.mjs` exits non-zero on, and the only thing it
+ * does. Errors in every other locale are still found, printed and counted; they
+ * simply do not gate. See locales.json's `$comment` for the provenance of the
+ * list and for why it deliberately differs from the front-end's
+ * `app/lib/production-locales.json`. Guaranteed non-empty by the check above.
+ */
+export const PRODUCTION_LOCALES = config.productionTargets;
+
 export function assertTargetLocale(locale) {
   if (locale === SOURCE_LOCALE || locale === SOURCE_REPO_LOCALE) {
     fail(

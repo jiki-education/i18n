@@ -4,7 +4,7 @@ description: "Ingannare l'occhio facendogli vedere movimento, ridipingendo lo sf
 en_md5: 536994294072afea52dab51d3bb7cab8
 ---
 
-Finora, quando abbiamo usato il ciclo `repeat` per disegnare, ogni nuova figura ha aggiunto qualcosa all'immagine. Disegnando un nuovo mattone in un muro, abbiamo riempito uno spazio vuoto. Disegnando 10 cerchi, abbiamo visto 10 cerchi sullo schermo. È come un dipinto. Una volta messa la vernice su un muro, non scompare quando dipingi qualcosa di nuovo accanto. Rimane lì. Ma se volessimo far sembrare che qualcosa si muova?
+Finora, usando il ciclo `repeat` per disegnare, ogni nuova figura aggiungeva qualcosa all'immagine. Disegnando un mattone, riempivamo uno spazio vuoto; disegnando 10 cerchi, vedevamo 10 cerchi sullo schermo. È come dipingere: una volta che metti la vernice sul muro, non sparisce quando aggiungi un altro tratto accanto. Rimane lì. Ma cosa succede se vogliamo far sembrare che qualcosa si muova?
 
 Hai mai visto un flip book? Erano molto popolari quando ero bambino, ora meno. Un flip book è un libricino in cui ogni pagina ha un disegno leggermente diverso. Sfogliando rapidamente le pagine, i tuoi occhi vedono i disegni cambiare ed il tuo cervello pensa che qualcosa si muova. In realtà non si sta muovendo. Sono solo tante immagini leggermente diverse, una dopo l'altra. Ed è esattamente come funziona l'animazione nel codice. Il trucco è lo stesso. Prima di disegnare una nuova scena, dipingiamo su tutta l'area di disegno con un colore di sfondo, un po' come iniziare una nuova pagina del nostro flip book, e poi facciamo un piccolo cambiamento alla scena per farla sembrare in movimento.
 
@@ -45,7 +45,7 @@ repeat(100) {
 }
 ```
 
-Invece di una scia di cerchi, i nostri occhi vengono ingannati e vedono un unico cerchio che sembra scivolare attraverso lo schermo.
+Invece di una scia di cerchi, i nostri occhi vengono ingannati e vedono un unico cerchio che sembra muoversi attraverso lo schermo.
 
 <img
   class="concept-image"
@@ -55,7 +55,7 @@ Invece di una scia di cerchi, i nostri occhi vengono ingannati e vedono un unico
   height="187"
 />
 
-Ogni volta che eseguiamo il ciclo, dipingiamo uno sfondo completamente nuovo, coprendo tutto ciò che c'era prima, e poi disegniamo il cerchio nella sua nuova posizione.
+Ogni volta che eseguiamo il ciclo, cancelliamo tutto e ridisegniamo uno sfondo nuovo, coprendo ciò che c'era prima, e poi disegniamo il cerchio nella sua nuova posizione.
 
 Ogni passaggio del ciclo è come una nuova pagina del flip book.
 
