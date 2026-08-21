@@ -1,0 +1,20 @@
+---
+title: "Wordle: Jogue uma Partida"
+description: "Processe um jogo completo de Wordle e colora cada tentativa linha a linha."
+en_md5: 1b5b8da5306311ef573ee6181a74f162
+---
+
+Now that you can process a single guess, it's time to process a whole game!
+
+Create a function called <define>`processGame`</define> that takes two inputs:
+
+1. The secret target word.
+2. A list of guesses the player has made.
+
+You should work out the state of each row then call the <define>`colorRow(row, states)`</define> function with the row number (`1-6`) and a list of states for each letter.
+
+For example, if the first guess was correct:
+
+```
+colorRow(1, ["correct", "correct", "correct", "correct", "correct"])
+```
