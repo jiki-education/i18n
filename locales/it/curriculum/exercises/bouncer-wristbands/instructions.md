@@ -15,6 +15,6 @@ Hai una funzione `getAge()` (restituisce l'età) che restituisce l'età della pe
 
 Le quattro funzioni sono `giveChildWristband()` (assegna il braccialetto per bambino), `giveTeenWristband()` (assegna il braccialetto per adolescente), `giveAdultWristband()` (assegna il braccialetto per adulto) e `giveSeniorWristband()` (assegna il braccialetto per anziano).
 
-Ogni scenario presenta una persona di età diversa. Chiedi (o scopri) la loro età e assegna loro il braccialetto giusto!
+Ogni scenario presenta una persona di età diversa. Chiedi la loro età e assegna loro il braccialetto giusto!
 
 Divertiti!
