@@ -19,11 +19,15 @@
 //
 // ## Errors block, warnings never do
 //
-// Same split as the translator repo's scripts/check-translation, deliberately:
-// ERROR checks are structural facts (key parity, placeholder counts, brace
-// balance, frontmatter keys, staleness stamps), WARN checks are heuristics over
-// prose that produce false positives by design. A WARN is printed to be read,
-// never to gate. Do not promote one.
+// ERROR checks are structural facts (a key English has and the translation does
+// not, placeholder counts, brace balance, frontmatter keys, staleness stamps),
+// WARN checks are heuristics, and judgements a human has to make. A WARN is
+// printed to be read, never to gate. Do not promote one.
+//
+// Key parity is asymmetric, and deliberately so: a key English has and the
+// target does not blocks, a key the target has and English does not warns. The
+// two repos deploy separately, so a catalog has to be allowed to be a superset
+// of English for the length of a deploy. See "deploy overlap" in lib/checks.mjs.
 //
 // ## The gate is scoped to production locales
 //
@@ -523,7 +527,14 @@ async function main() {
     for (const typeId of typeIds) {
       if (contentType(typeId).format !== "catalog") continue;
       for (const item of listItems(typeId, locale)) {
-        const counts = countSentinels(readJson(item.path));
+        // Counted against ENGLISH's keys, as coverage.mjs counts: a catalog may
+        // hold a key English does not have (see "deploy overlap" in checks.mjs),
+        // and counting it would put a key nobody can work on into both halves of
+        // the fraction, so `1490/1490` would read `1491/1491`.
+        const english = englishPath(typeId, item.slug);
+        const counts = countSentinels(readJson(item.path), {
+          english: fs.existsSync(english) ? readJson(english) : null
+        });
         total += counts.total;
         stubbed += counts.stubbed;
         inapplicable += counts.inapplicable;

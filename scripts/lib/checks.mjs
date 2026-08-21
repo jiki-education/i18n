@@ -1,15 +1,18 @@
-// The mechanical checks. Structural facts only, in the same ERROR/WARN split as
-// the translator repo's scripts/check-translation:
+// The mechanical checks, in two levels:
 //
-//   ERROR — a structural fact that is true or false (key parity, brace balance,
-//           placeholder counts, tag counts, frontmatter keys). Blocks.
-//   WARN  — a heuristic over prose. Produces false positives BY DESIGN, is there
-//           to be read by a human, and must never be promoted to an error.
+//   ERROR — a structural fact that is true or false, AND one a correct
+//           translation can never have (a key English has and the target does
+//           not, brace balance, placeholder counts, tag counts, frontmatter
+//           keys). Blocks.
+//   WARN  — a heuristic that produces false positives BY DESIGN, or a fact a
+//           correct translation legitimately CAN have (a key English does not
+//           have; see "deploy overlap" in checkCatalog). There to be read by a
+//           human, and never to be promoted to an error.
 //
-// These are deliberately the same checks that script already makes, applied to
-// this repo's layout. They are not routed THROUGH it: its CONTENT_TYPES map
-// addresses paths inside the front-end monorepo by construction, so it cannot be
-// pointed at locales/<locale>/. See CLAUDE.md § "Relationship to the translator repo".
+// The second half of the ERROR definition is what keeps the two levels honest.
+// "Structural and checkable" is not enough on its own: key parity in the extra
+// direction is perfectly checkable and still not a defect, and blocking on it
+// made a thing the deploy REQUIRES impossible.
 
 import { INAPPLICABLE, SENTINEL, SOURCE_REPO_LOCALE } from "./constants.mjs";
 import {
@@ -309,6 +312,10 @@ export function checkIcu(value) {
  * checked (the app catalog) or not (i18next catalogs use `{{var}}` and are not
  * ICU).
  *
+ * Key parity is deliberately ASYMMETRIC: a key English has and the target does
+ * not is an ERROR, a key the target has and English does not is a WARN. The
+ * reason is deploy overlap, and it is spelled out at the check itself.
+ *
  * `locale` is what justifies an `∅`. It is the guard, and it fails closed: with
  * no locale nothing is provably unreachable, so every `∅` is an ERROR. Both
  * sides are checked, English included, because English carries the union of
@@ -325,11 +332,49 @@ export function checkCatalog(english, target, { icu = false, allowSentinel = tru
   const missing = englishKeys.filter((key) => !(key in flatTarget));
   const extra = targetKeys.filter((key) => !(key in flatEnglish));
 
-  // Key parity is the load-bearing one: the curriculum's i18next instance runs
+  const englishArrays = arrayPaths(english);
+  const targetArrays = arrayPaths(target);
+
+  // A MISSING key is the load-bearing one: the curriculum's i18next instance runs
   // with `fallbackLng: false` and returns the key itself on a miss, so an absent
   // key renders the literal string `checks.tooManyLines` to a learner.
   for (const key of missing) issues.push(issue(ERROR, `missing key: ${key}`));
-  for (const key of extra) issues.push(issue(ERROR, `key not in source: ${key}`));
+
+  // An EXTRA key is not the mirror image of that, and must not be treated as one.
+  //
+  // English and the catalogs are deployed separately and never atomically, so
+  // during any deploy the served front-end and the published catalogs are briefly
+  // out of step IN BOTH DIRECTIONS. The only way a translation covers a key while
+  // English is still rolling out, or still covers a key English has just dropped
+  // while the old bundle is still being served, is for the catalog to be a
+  // superset for a while. Blocking on that makes the safe thing impossible, and
+  // the unsafe thing (mid-deploy users reading raw key names) the default. An
+  // unused key costs a serving client nothing: nothing looks it up.
+  //
+  // So it is a WARN, and it NAMES the key, because the cases a human wants to
+  // tell apart are obvious from the name and from nothing else: one key landing a
+  // few minutes ahead of its English reads differently from a shape nobody has
+  // used in a year. Nothing here can distinguish those mechanically and nothing
+  // here pretends to.
+  //
+  // The dangerous case, a MISSPELLED key, is not lost by this: the key the
+  // translator meant to write is then absent, so it is reported as a missing key,
+  // which still blocks. An extra key on its own, with no missing key beside it,
+  // is by construction a key English has never had or no longer has.
+  for (const key of extra) {
+    // An extra ARRAY ELEMENT is a different thing again, and stays blocking. An
+    // array's length is a shape fact rather than a key that could be mid-deploy:
+    // `tags` with a fourth element is a tag the translator invented, and the
+    // deploy-overlap argument has no bearing on it.
+    const parent = key.slice(0, key.lastIndexOf("."));
+    if (parent && englishArrays.has(parent)) {
+      issues.push(issue(ERROR, `key not in source: ${key} (an extra element of English's array "${parent}")`));
+      continue;
+    }
+    issues.push(
+      issue(WARN, `key not in source: ${key} (fine while English catches up mid-deploy; stale if English never had it)`)
+    );
+  }
 
   // Array or object, at every branch. Key parity alone cannot see the difference:
   // `flatten` descends into a non-empty array as `tags.0`, `tags.1`, and an object
@@ -337,8 +382,6 @@ export function checkCatalog(english, target, { icu = false, allowSentinel = tru
   // that turned English's array into an object passes every check above and then
   // publishes different bytes, which is a different content hash, which is a URL
   // the front-end never asks for. Cheap to compare, and silent if it is not.
-  const englishArrays = arrayPaths(english);
-  const targetArrays = arrayPaths(target);
   for (const path of englishArrays) {
     if (path in flatTarget || !targetKeys.some((key) => key.startsWith(`${path}.`))) continue;
     if (!targetArrays.has(path)) issues.push(issue(ERROR, `${path}: source is an array, target is an object`));
@@ -349,8 +392,12 @@ export function checkCatalog(english, target, { icu = false, allowSentinel = tru
   }
 
   const shared = englishKeys.filter((key) => key in flatTarget);
-  if (shared.length === englishKeys.length && missing.length === 0 && extra.length === 0) {
-    const orderMatches = englishKeys.every((key, index) => targetKeys[index] === key);
+  // Order is compared over the keys the two sides SHARE, so a legitimate extra key
+  // does not switch the check off: it is allowed to sit anywhere, and everything
+  // around it still has to be in English's order.
+  if (missing.length === 0) {
+    const targetShared = targetKeys.filter((key) => key in flatEnglish);
+    const orderMatches = englishKeys.every((key, index) => targetShared[index] === key);
     if (!orderMatches) issues.push(issue(WARN, "key order differs from source (diffs will be noisy)"));
   }
 

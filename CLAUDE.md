@@ -219,15 +219,15 @@ silently updating the lockfile. Note that pnpm passes arguments straight through
 | `source-checkout.mjs` | Fetches a source repo into `.source/<id>`, shallow and sparse, so local runs have English to read. `--source=<id>` picks which (`front-end` by default, `videos` for the English subtitle track). CI uses `actions/checkout` for the same job and the same destinations. |
 | `source-checkout.mjs --resolve` | Prints the SHA this branch pins with an `English-Ref:` trailer, or `main`. CI uses it to point its `actions/checkout` step at the right English. |
 | `stub.mjs` | Brings every catalog in the corpus to full key parity with English, sentinel-filling anything untranslated and `∅`-filling any plural key the language cannot reach. Existing values are reproduced byte for byte, and an empty object in English stays an empty object. An explicit `--type`/`--slug` seeds an item the corpus does not hold yet. |
-| `validate.mjs` | Key parity, ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the R2 key guard. Stamps on success. An item the locale holds no file for is `miss`, never `ok`: counted per locale and in the footer, unstampable, and blocking only under `--shippable`. Exit 1 on any ERROR in a **production locale** (locales.json `productionTargets`); errors elsewhere are still found, printed and counted, and `--gate=all` holds every locale to the exit code. |
+| `validate.mjs` | Key parity (asymmetric: see below), ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the R2 key guard. Stamps on success. An item the locale holds no file for is `miss`, never `ok`: counted per locale and in the footer, unstampable, and blocking only under `--shippable`. Exit 1 on any ERROR in a **production locale** (locales.json `productionTargets`); errors elsewhere are still found, printed and counted, and `--gate=all` holds every locale to the exit code. |
 | `publish.mjs` | Builds the content-hashed artifacts, their pointers and `dist/sync.sh`. Omits every `∅` key from the bytes it writes. Publishes whatever is on `main` and records what is outstanding (remaining `�` sentinels, prose untranslated by one of the three conventions, partial corpora) in the completeness object. Refuses any English R2 key, with no override. `--out-dir=<path>` writes the same tree into a front-end checkout instead, for local dev. |
 | `coverage.mjs` | Per-locale translated / stale / missing / needs-review / sentinel counts, per content type, with `∅` keys reported outside the fraction. A prose page is `done` only when its declared `frontmatterTranslated` fields are actually translated, not merely when its `en_md5` is current. Counts a catalog against ENGLISH's key set, so a key the locale does not hold is reported missing rather than leaving the fraction with the gap inside it. Reports how many English items no locale has begun beside the fraction, so a never-started type is not a bare `0/0`. `--json` for machines. Also reports the two bodies of copy that are still translated in the api repo (see below), so one run answers "is this language complete?" for everything. It reports and never gates: `validate --shippable` is the gate. |
 | `test.mjs` | The assertions guarding logic a mistake in would only surface on R2, above all the exercise family merge and its key order. It also exercises the checks whose failure mode is silence rather than breakage: the R2 key guard, and the `productionTargets` list validate's exit code is scoped to (a missing, empty, non-array or mis-cased list would shrink the gate without anything noticing). Plain `node:assert`, no framework, non-zero exit on failure. `pnpm test`, and part of `pnpm check`. |
 | `verify-renderer.mjs` | Proves this repo's prose pipeline and the front-end's produce identical bytes. Takes the front-end's OWN Markdown, renders it through this repo's publish path, and asserts the hash equals the filename the front-end's generator wrote, across the whole concept corpus. |
 
-- **`validate` errors block; warnings never do.** Same split as `translator/scripts/check-translation`:
-  ERROR checks are structural facts, WARN checks are heuristics over prose that produce false
-  positives by design. Read a warning; never promote it to an error.
+- **`validate` errors block; warnings never do.** ERROR checks are structural facts; WARN checks are
+  heuristics that false-positive by design, and judgements only a human can make. Read a warning;
+  never promote it to an error.
 - **The gate is scoped to production locales; the checking is not.** `validate` checks, prints and
   counts every locale in scope exactly as it always did. What decides its exit code is errors in a
   locale listed in `locales.json`'s `productionTargets`: the ones served today, plus the ones being
@@ -257,6 +257,32 @@ silently updating the lockfile. Note that pnpm passes arguments straight through
 - **No script here calls an LLM.** There is one translation engine and it lives in `translator`,
   for the reason given under "Relationship to the `translator` repo" below. This repo's scripts
   only ever read, check, and publish what a pass has already written.
+
+### Key parity is asymmetric: a missing key blocks, an extra key warns
+
+- **A key English has and a catalog does not is an ERROR.** The curriculum's i18next instance runs
+  with `fallbackLng: false` and returns the key itself on a miss, so an absent key renders the
+  literal string `checks.tooManyLines` to a learner.
+- **A key a catalog has and English does not is a WARN, and the catalog publishes.** English is
+  deployed with the front-end and the catalogs are published from here, never atomically together,
+  so during any deploy the two are briefly out of step IN BOTH DIRECTIONS. A translation written
+  just ahead of its English key, and a translation still holding a key English has just dropped
+  while the old bundle is still being served, are both how a deploy avoids showing raw key names to
+  the users mid-flight. **A catalog is meant to be a superset for a while.** An unused key costs a
+  serving client nothing, because nothing looks it up. Do not tighten this back: making an extra
+  key blocking makes the safe thing impossible.
+- **The WARN names every extra key**, because that is the only thing that tells the two cases apart.
+  A key landing minutes ahead of its English and a key left over from a shape nobody has used in a
+  year are mechanically identical, and nothing here guesses: a human reads the name and knows.
+- **A misspelled key still blocks**, which is what the ERROR was really catching. A typo leaves the
+  key the translator meant to write absent, so it is reported as a missing key.
+- **An extra ARRAY ELEMENT is still an ERROR.** An array's length is a shape fact rather than a key
+  that could be mid-deploy, so a fourth `tags` entry is a tag the translator invented.
+- **An extra key is outside every fraction**, in `validate`'s summary as in `coverage`: English is
+  the denominator on both sides, and a key nobody can work on is neither done nor remaining.
+- **`stub` removes extra keys**, because bringing a catalog to English's exact shape is its whole
+  job. That is the tool that ends an overlap once English has caught up, and it is why an
+  ahead-of-English key must be added by the pass that means it and not left to a stub run.
 
 ## The api repo's copy, in coverage only
 
@@ -615,8 +641,10 @@ every key already answered at `emit()`.
   under `content-types/` without the `.md`, or an ordered array where a type needs a shared how-to
   plus its own. `scripts/test.mjs` asserts every type declares one.
 - **`validate.mjs` mirrors `translator/scripts/check-translation`'s contract** (the ERROR/WARN split,
-  `--no-stamp`, stamp-only-on-pass) rather than calling it. The production-locale scoping of the
-  exit code is this repo's alone: `check-translation` is pointed at one item at a time by a pass
+  `--no-stamp`, stamp-only-on-pass) rather than calling it. Two things are this repo's alone: the
+  asymmetric key parity above (an extra key is a WARN here and an error there, because only this
+  repo publishes catalogs on a deploy schedule of their own), and the production-locale scoping of
+  the exit code: `check-translation` is pointed at one item at a time by a pass
   that already knows which locale it is writing, so it has nothing to scope. It cannot call it: that script's
   `CONTENT_TYPES` map addresses paths inside the front-end monorepo by construction, so it cannot be
   pointed at `locales/<locale>/`. If it is ever refactored to take a root, switch to calling it.

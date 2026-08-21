@@ -650,6 +650,13 @@ export function unflatten(flat, arrays = new Set()) {
  * sentinel. Every other value is reproduced byte for byte, because it may be a
  * native speaker's decision and nothing here re-litigates one.
  *
+ * Dropping is right even though a key English does not have is legitimate while a
+ * deploy is in flight (see "deploy overlap" in checks.mjs, where such a key is a
+ * WARN rather than an error). Bringing a catalog to English's exact shape is what
+ * this is FOR, and it only ever runs because someone ran `stub`: this is the tool
+ * that ends an overlap, so an ahead-of-English key belongs to the pass that means
+ * it and is added back the same way it was added the first time.
+ *
  * A key whose English value is an empty container is reproduced as that empty
  * container. It is structure, not a missing translation: there is nothing to
  * translate and a sentinel there would be a lie about the file's state.
@@ -699,9 +706,21 @@ export function stubAgainst(source, target, { locale = null } = {}) {
  * Translatable keys only. An empty container is structure and an `∅` key is
  * unreachable, so neither is a key anyone can fill and neither belongs in the
  * denominator. `inapplicable` is reported alongside rather than hidden.
+ *
+ * `english` scopes the count to the keys English actually defines. A catalog may
+ * legitimately hold a key English does not have yet, or no longer has (see
+ * "deploy overlap" in checks.mjs), and such a key is nobody's remaining work: it
+ * belongs in neither half of a "how much is translated" fraction. Pass English
+ * wherever it is to hand. Omit it and the tree's own keys are counted, which is
+ * the right answer to the narrower question "what is left in THIS file".
  */
-export function countSentinels(tree) {
-  const values = Object.values(flatten(tree)).filter((value) => !isEmptyContainer(value));
+export function countSentinels(tree, { english = null } = {}) {
+  const flat = flatten(tree);
+  const inEnglish = english === null ? null : flatten(english);
+  const values = Object.entries(flat)
+    .filter(([key]) => inEnglish === null || key in inEnglish)
+    .map(([, value]) => value)
+    .filter((value) => !isEmptyContainer(value));
   const inapplicable = values.filter((value) => value === INAPPLICABLE).length;
   const stubbed = values.filter((value) => value === SENTINEL).length;
   const total = values.length - inapplicable;
