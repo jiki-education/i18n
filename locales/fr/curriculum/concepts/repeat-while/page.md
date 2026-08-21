@@ -1,5 +1,5 @@
 ---
-title: "Utiliser `repeat` sans nombre de répétitions"
+title: "Utiliser `repeat` sans nombre"
 description: "Laisser les parenthèses d'une boucle repeat vides pour que Jiki continue jusqu'à ce que quelque chose d'autre lui dise de s'arrêter."
 en_md5: f1f98b46bedb1b5abc72aa1b856ee8ae
 ---
@@ -42,7 +42,7 @@ Il te faut donc un moyen de dire à Jiki de continuer, tout simplement. Continue
   height="400"
 />
 
-Et la façon de faire est vraiment simple : il suffit de ne pas donner de nombre au mot-clé `repeat`. Laisse simplement ces parenthèses vides. Si tu fais ça, Jiki continuera jusqu'à ce que quelque chose d'autre lui dise de s'arrêter. Plus tard, on verra ce que peuvent être ces « quelque chose d'autre ». Mais pour l'instant, il continuera jusqu'à ce que l'exercice soit terminé, ou jusqu'à ce qu'il décide qu'il tourne depuis des heures, qu'il veut faire une pause et qu'il en a assez.
+Et la façon de faire est vraiment simple : il suffit de ne pas donner de nombre au mot-clé `repeat`. Laisse simplement ces parenthèses vides. Si tu fais ça, Jiki continuera jusqu'à ce que quelque chose d'autre lui dise de s'arrêter. Plus tard, on verra ce que peuvent être ces « quelque chose d'autre ». Mais pour l'instant, il va juste continuer jusqu'à la fin de l'exercice ou jusqu'à ce qu'il se dise que ça fait une éternité, qu'il en a marre et qu'il a besoin de s'arrêter.
 
 <img
   class="concept-image"

@@ -1,0 +1,64 @@
+{
+  "tasks": {
+    "findTilePosition": {
+      "name": "Encontra a posição da peça",
+      "description": "Escreve uma função que encontra a posição de uma peça específica no suporte. Devolve \"Move to position X\" se for encontrada, ou \"Error: Tile not on rack\" se não for."
+    }
+  },
+  "scenarios": {
+    "tileAtStart": {
+      "name": "Peça no início",
+      "description": "A letra é a primeira peça no suporte."
+    },
+    "tileInMiddle": {
+      "name": "Peça no meio",
+      "description": "A letra está no meio do suporte."
+    },
+    "tileAtEnd": {
+      "name": "Peça no fim",
+      "description": "A letra é a última peça no suporte."
+    },
+    "tileNotFound": {
+      "name": "Peça não encontrada",
+      "description": "A letra não está no suporte."
+    },
+    "emptyRack": {
+      "name": "Suporte vazio",
+      "description": "Um suporte vazio não tem peças para encontrar."
+    },
+    "firstOfDuplicates": {
+      "name": "Primeira das repetidas",
+      "description": "Quando a letra aparece várias vezes, devolve a primeira posição."
+    },
+    "longerRack": {
+      "name": "Suporte maior",
+      "description": "Encontrar uma peça num suporte maior."
+    }
+  },
+  "hints": {
+    "trackPosition": {
+      "question": "Como é que acompanho a minha posição no suporte?",
+      "answer": "Usa uma variável de posição que começa em 1. Cada vez que olhas para uma peça nova, aumentas o valor em 1."
+    },
+    "lookAtEachTile": {
+      "question": "Como é que olho para cada peça?",
+      "answer": "Um ciclo for-each dá-te cada caráter do suporte, um de cada vez."
+    },
+    "onFound": {
+      "question": "O que faço quando encontro a letra?",
+      "answer": "Constrói a mensagem de sucesso. Converte o número da posição numa string e depois combina-o com o texto circundante que o exercício pede, usando concatenação (`+`) ou uma template string. Devolve imediatamente. Não precisas de continuar a procurar."
+    },
+    "addNumberToString": {
+      "question": "Não consigo adicionar um número a uma string.",
+      "answer": "Aprendeste duas formas de unir strings. Em vez de concatenar strings, experimenta o outro método que aprendeste."
+    },
+    "positionAlwaysWrong": {
+      "question": "Porque é que a minha posição está sempre errada?",
+      "answer": "Certifica-te de que estás a aumentar o contador de posição em cada iteração, e não apenas às vezes. Caso contrário, todas as peças devolvem a mesma posição."
+    },
+    "notInRack": {
+      "question": "E se a letra não estiver no suporte?",
+      "answer": "Só depois de o ciclo terminar sem encontrar a letra é que deves devolver a mensagem de erro. Se devolveres o erro dentro do ciclo, desistes logo após a primeira peça que não corresponde."
+    }
+  }
+}

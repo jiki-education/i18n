@@ -4,7 +4,7 @@ description: "Attraper la valeur qui sort sur le tapis roulant d'une fonction et
 en_md5: 830f19fb6aaf184c1f32ade792b60a12
 ---
 
-Jusqu'ici, on a vu des fonctions qui font quelque chose de concret (qui ont un effet visible). La fonction `circle` (cercle) dessine un cercle. La fonction `move` (se déplacer) déplace ton personnage. Mais certaines fonctions marchent autrement : plutôt que d'agir sur l'extérieur, elles te redonnent quelque chose que tu peux utiliser dans ton code. Quand une fonction redonne quelque chose à Jiki pour qu'il l'utilise dans le code, on dit que cette fonction renvoie (_return_ en anglais) quelque chose. Elle le renvoie à Jiki. Tu peux imaginer ces machines avec un tapis roulant de sortie. On a déjà nos entonnoirs dans lesquels on met des choses, mais une machine peut aussi avoir une sortie, un tapis roulant par lequel quelque chose peut ressortir. Quand Jiki appuie sur le bouton de la machine, celle-ci se met à ronronner, et à la fin, quelque chose sort sur le tapis roulant. Ça peut être un nombre. Ça peut être une string. C'est quelque chose que Jiki peut attraper et utiliser.
+Jusqu'ici, on a vu des fonctions qui font quelque chose de concret (qui ont un effet visible). La fonction `circle` (cercle) dessine un cercle. La fonction `move` (se déplacer) déplace ton personnage. Mais certaines fonctions marchent autrement : plutôt que d'agir sur l'extérieur, elles te redonnent quelque chose que tu peux utiliser dans ton code. Quand une fonction redonne quelque chose à Jiki pour qu'il l'utilise dans le code, on dit que cette fonction renvoie (_return_ en anglais) quelque chose. Elle le renvoie à Jiki. Tu peux imaginer ces machines avec un tapis roulant de sortie. On a déjà nos entonnoirs dans lesquels on met des choses, mais une machine peut aussi avoir une sortie, un tapis roulant par lequel quelque chose peut ressortir. Quand Jiki appuie sur le bouton de la machine, celle-ci se met à ronronner, et à la fin, quelque chose sort sur le tapis roulant. Ça peut être un nombre. Ça peut être une _string_. C'est quelque chose que Jiki peut attraper et utiliser.
 
 <img
   class="concept-image"
@@ -14,7 +14,7 @@ Jusqu'ici, on a vu des fonctions qui font quelque chose de concret (qui ont un e
   height="317"
 />
 
-La plupart des fonctions, sans doute 95 % d'entre elles, renvoient quelque chose. Elles peuvent faire des calculs pour toi et renvoyer le résultat, ou coller des strings ensemble puis te donner la string obtenue. Ou peut-être qu'elles te donnent l'heure actuelle chaque fois que tu fais tourner la machine. Regardons ce dernier cas. Disons qu'on a une fonction appelée `getCurrentTime` (obtenir l'heure actuelle). Chaque fois que Jiki fait tourner la machine, un bout de papier glisse sur le tapis roulant avec l'heure écrite dessus, par exemple 14:35.
+La plupart des fonctions, sans doute 95 % d'entre elles, renvoient quelque chose. Elles peuvent faire des calculs pour toi et renvoyer le résultat, ou coller des _strings_ ensemble puis te donner la _string_ obtenue. Ou peut-être qu'elles te donnent l'heure actuelle chaque fois que tu fais tourner la machine. Regardons ce dernier cas. Disons qu'on a une fonction appelée `getCurrentTime` (obtenir l'heure actuelle). Chaque fois que Jiki fait tourner la machine, un bout de papier glisse sur le tapis roulant avec l'heure écrite dessus, par exemple 14:35.
 
 <img
   class="concept-image"
@@ -42,7 +42,7 @@ Jiki va faire tourner la machine, récupérer l'heure actuelle sur le tapis roul
 
 Maintenant, il est important de comprendre que le bout de papier que Jiki met dans la boîte est figé à cet instant-là. Même si l'heure réelle change pendant que ton programme tourne, la boîte contient toujours ce bout de papier avec 14:35 écrit dessus. Une fois que quelque chose est dans la boîte, c'est figé. Ça ne change pas par magie. Si on veut remettre l'heure actuelle dans la boîte plus tard, il faut réutiliser notre fonction `getCurrentTime` pour l'obtenir.
 
-La plupart des fonctions qui renvoient quelque chose ont aussi des entrées. Par exemple, on pourrait avoir une fonction `join` (joindre) qui prend deux strings en entrée et les renvoie assemblées, séparées par un espace. Donc si on utilise une machine `join` avec `"Hello"` et `"World"` comme entrées, une string unique sortira sur le tapis roulant avec `"Hello World"` écrit dessus.
+La plupart des fonctions qui renvoient quelque chose ont aussi des entrées. Par exemple, on pourrait avoir une fonction `join` (joindre) qui prend deux _strings_ en entrée et les renvoie assemblées, séparées par un espace. Donc si on utilise une machine `join` avec `"Hello"` et `"World"` comme entrées, une _string_ unique sortira sur le tapis roulant avec `"Hello World"` écrit dessus.
 
 ```javascript
 join("Hello", "World"); // "Hello World"

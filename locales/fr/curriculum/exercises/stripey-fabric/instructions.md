@@ -31,11 +31,11 @@ Tu conçois un algorithme pour créer un rouleau de tissu à rayures, qui doit r
 
 Le motif est une séquence qui se répète : `"yellow"` (jaune), `"blue"` (bleu), `"yellow"`, `"green"` (vert). La première et la dernière rayure sont `"purple"` (violet).
 
-Le canvas sur lequel tu travailles fait `100` de large et `100` de haut. Tu dois dessiner `20` rayures, chacune de `5` de large.
+Le canvas sur lequel tu travailles fait `100` de large et `100` de haut. Tu dois dessiner `20` rayures, chacune ayant `5` de large.
 
 ### Règles de l'exercice
 
-Tu ne peux pas résoudre cet exercice en écrivant simplement 20 instructions rectangle. Ton code doit s'adapter à n'importe quelle taille de tissu. D'ailleurs, tu ne peux utiliser la fonction `rectangle(...)` qu'une seule fois dans ton code !
+Tu ne peux pas résoudre cet exercice en écrivant simplement `20` instructions rectangle. Ton code doit s'adapter à n'importe quelle taille de tissu. D'ailleurs, tu ne peux utiliser la fonction `rectangle(...)` qu'une seule fois dans ton code !
 
 À la place, tu dois utiliser une boucle et l'opérateur modulo (_remainder_ en anglais) que l'on a vu dans la dernière leçon vidéo. Réfléchis bien à l'ordre des instructions : c'est la clé pour réussir cet exercice.
 

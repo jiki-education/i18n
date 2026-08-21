@@ -14,4 +14,4 @@ Pendant ton temps libre, tu fais passer ces examens de conduite. Pendant que le 
 - S'il commet une faute majeure, tu ajoutes un 💥
 - S'il réussit ce domaine sans problème, tu mets un ✅
 
-Écris une fonction appelée `didTheyPass` (a-t-il réussi) qui attend en entrée une string contenant les symboles de réussite (✅), de faute mineure (❌) et de faute majeure (💥). Elle doit déterminer si le candidat a réussi ou non, en renvoyant `true` si c'est le cas, et `false` sinon.
+Écris une fonction appelée `didTheyPass` (a-t-il réussi) qui attend en entrée une _string_ contenant les symboles de réussite (✅), de faute mineure (❌) et de faute majeure (💥). Elle doit déterminer si le candidat a réussi ou non, en renvoyant `true` si c'est le cas, et `false` sinon.

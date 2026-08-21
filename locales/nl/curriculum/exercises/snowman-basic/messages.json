@@ -1,0 +1,43 @@
+{
+  "checks": {
+    "baseCircle": "De basiscirkel (onderaan) klopt nog niet.",
+    "bodyCircle": "De lichaamscirkel (in het midden) klopt nog niet.",
+    "headCircle": "De hoofdcirkel (bovenaan) klopt nog niet."
+  },
+  "tasks": {
+    "buildSnowman": {
+      "name": "Bouw de sneeuwpop",
+      "description": "Teken drie cirkels om de sneeuwpop te bouwen."
+    }
+  },
+  "scenarios": {
+    "buildSnowman": {
+      "name": "Bouw de sneeuwpop",
+      "description": "Teken drie cirkels om de sneeuwpop te bouwen."
+    }
+  },
+  "hints": {
+    "howToDrawCircle": {
+      "question": "Hoe teken ik een cirkel op het canvas?",
+      "answer": "Roep `circle(centerX, centerY, radius)` aan, waarbij `centerX` en `centerY` de coördinaten van het middelpunt zijn en `radius` bepaalt hoe groot de cirkel is."
+    },
+    "circlesHorizontalPosition": {
+      "question": "Waar moeten de cirkels horizontaal komen te staan?",
+      "answer": "Alle drie de cirkels hebben hetzelfde horizontale middelpunt, dus `centerX` is `50` voor elke cirkel (het canvas is `100` breed)."
+    },
+    "howToStackCircles": {
+      "question": "Hoe stapel ik de drie cirkels op elkaar?",
+      "answer": "De basiscirkel is de grootste en zit onderaan (een hoge `centerY`). Elke cirkel daarboven heeft een kleinere `centerY` en een kleinere `radius`."
+    },
+    "whatNumbersForRadii": {
+      "question": "Welke getallen moet ik voor de stralen gebruiken?",
+      "answer": "Alle getallen in deze opdracht zijn deelbaar door `5`. Probeer een straal van ongeveer `20` voor de basis, `15` voor het lichaam en `10` voor het hoofd, en pas ze aan tot ze overeenkomen met de doelafbeelding."
+    }
+  },
+  "functions": {
+    "circle": {
+      "description": "Teken een cirkel met het middelpunt op (centerX, centerY) en de opgegeven straal",
+      "category": "Vormen tekenen"
+    }
+  }
+}

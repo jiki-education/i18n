@@ -1,0 +1,65 @@
+{
+  "checks": {
+    "sky": "O céu não está como deveria.",
+    "ground": "O chão não está como deveria.",
+    "leftWing": "A asa esquerda não parece bem.",
+    "rightWing": "A asa direita não parece bem.",
+    "outerBody": "A parte externa do corpo não está como deveria.",
+    "innerBody": "A parte interna do corpo não está como deveria.",
+    "head": "A cabeça não está como deveria.",
+    "leftFace": "O lado esquerdo do rosto não parece bem.",
+    "rightFace": "O lado direito do rosto não parece bem.",
+    "lowerFace": "A parte de baixo do rosto não parece bem.",
+    "leftEye": "O olho esquerdo parece estar fora do lugar.",
+    "leftIris": "A íris esquerda parece estar fora do lugar.",
+    "rightEye": "O olho direito parece estar fora do lugar.",
+    "rightIris": "A íris direita parece estar fora do lugar.",
+    "leftFoot": "O pé esquerdo foi parar no lugar errado.",
+    "rightFoot": "O pé direito não está bem.",
+    "nose": "O nariz não está bem."
+  },
+  "tasks": {
+    "drawPenguin": {
+      "name": "Desenhe o pinguim simétrico",
+      "description": "Complete o desenho do pinguim adicionando as partes que faltam para torná-lo simétrico."
+    }
+  },
+  "scenarios": {
+    "makePenguinSymmetrical": {
+      "name": "Torne o pinguim simétrico",
+      "description": "Resolva todos os comentários TODO para tornar o pinguim simétrico."
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Por onde começo?",
+      "answer": "Trabalhe os comentários TODO um de cada vez, começando de cima."
+    },
+    "symmetryOnCanvas": {
+      "question": "Como funciona a simetria na tela?",
+      "answer": "Se a margem esquerda de algo estiver em 20, a margem direita simétrica vai estar em 80 (100 - 20)."
+    },
+    "noseTrouble": {
+      "question": "Por que eu não consigo fazer o nariz funcionar?",
+      "answer": "Você não deve adicionar um triângulo novo para o nariz: em vez disso, você deve ALTERAR o triângulo existente para funcionar corretamente. Você só precisa mudar UM valor."
+    }
+  },
+  "functions": {
+    "rectangle": {
+      "description": "Desenha um retângulo na posição (esquerda, topo) com a largura, a altura e a cor indicadas",
+      "category": "Desenhar formas"
+    },
+    "circle": {
+      "description": "Desenha um círculo com o centro em (centerX, centerY), com o raio e a cor indicados",
+      "category": "Desenhar formas"
+    },
+    "ellipse": {
+      "description": "Desenha uma elipse com o centro em (centerX, centerY), com os raios horizontal e vertical e a cor indicados",
+      "category": "Desenhar formas"
+    },
+    "triangle": {
+      "description": "Desenha um triângulo com três pontos de canto e uma cor",
+      "category": "Desenhar formas"
+    }
+  }
+}

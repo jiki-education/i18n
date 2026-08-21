@@ -4,9 +4,10 @@ description: "Usare la parola chiave `function` per costruire le tue macchine ch
 en_md5: 93286a30a373b5604b60b3c109ad00a3
 ---
 
-Finora, hai usato funzioni che sono state create per te, funzioni come `circle`, `rectangle`, `moveRight`, `shoot`. Tutte queste sono funzioni che sono state create e messe sugli scaffali di Jiki.
+Finora hai usato funzioni predefinite, come `circle`, `rectangle`, `moveRight` e `shoot`.
+Sono funzioni che Jiki mette sugli scaffali per essere usate negli esercizi.
 
-Ma ora è il momento di iniziare a creare le tue funzioni.
+Ora è il momento di iniziare a creare le tue funzioni.
 
 Per mostrarti come fare, vediamo come costruire una nuova funzione per il labirinto chiamata `walk5` (cammina5).
 
@@ -36,7 +37,7 @@ Ora, aggiungi sotto una riga che dica a Jiki di usare questa funzione. L'hai gi�
 
 E poi il nostro compito sarà racchiudere tutte queste prime cinque righe in una funzione, in modo che quando Jiki usa `walk5`, siano proprio quelle prime cinque righe di codice a essere eseguite.
 
-Per trasformare queste cinque righe in una funzione, queste cinque `move` in una funzione, dobbiamo usare una nuova parola chiave: la parola chiave `function`.
+Per trasformare queste cinque righe in una funzione, questi cinque `move` in una funzione, dobbiamo usare una nuova parola chiave: la parola chiave `function`.
 
 Quando usiamo la parola chiave `function`, dobbiamo fare due cose. Uno, specificare il nome della funzione. In questo caso, è `walk5`. E due, usare le parentesi graffe (`{}`) per racchiudere del codice che dice: «Questo è ciò che devi fare all'interno della funzione». Quindi possiamo aggiungerlo al nostro codice dicendo a Jiki di creare una funzione chiamata `walk5` e, quando `walk5` viene usata, deve eseguire queste cinque righe di codice.
 
@@ -60,7 +61,7 @@ Quando Jiki vede la parola chiave `function`, andrà a costruire una nuova macch
   height="396"
 />
 
-Ora, non c'è niente di speciale in questa funzione che hai creato rispetto a quelle predefinite (_built-in_ in inglese). Stanno tutte una accanto all'altra sui suoi scaffali.
+Ora, non c'è niente di speciale in questa funzione che hai creato rispetto a quelle predefinite (_built-in_ in inglese). Sono una accanto all'altra sui suoi scaffali.
 
 E quando usi la funzione, quando scrivi `walk5()`, Jiki andrà semplicemente a prendere la macchina dagli scaffali e la userà esattamente come ha fatto con qualsiasi altra funzione. Puoi immaginare che ogni macchina abbia un mini Jiki che ci vive dentro. Mini Jiki ha sempre un bel cappello. E quel mini Jiki lavora esattamente come il Jiki normale all'esterno, seguendo le istruzioni allo stesso modo.
 

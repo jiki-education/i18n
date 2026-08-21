@@ -1,0 +1,195 @@
+WEBVTT
+
+NOTE en_md5 e47167fc1482d0b37cf8c1318d2bbbbb
+
+00:00:00.100 --> 00:00:04.260
+Bon retour parmi nous. Jusqu'ici, quand on a utilisé
+
+00:00:04.300 --> 00:00:06.910
+une boucle repeat pour dessiner, chaque
+
+00:00:06.920 --> 00:00:10.310
+nouvel élément dessiné venait s'ajouter à l'image. Si
+
+00:00:10.340 --> 00:00:12.360
+on a dessiné une nouvelle brique dans un mur,
+
+00:00:12.520 --> 00:00:15.840
+elle a comblé un trou. Si on a dessiné
+
+00:00:15.900 --> 00:00:18.500
+10 cercles, on voit 10 cercles à l'écran.
+
+00:00:19.300 --> 00:00:22.220
+C'est comme une peinture : une fois posée
+
+00:00:22.240 --> 00:00:24.580
+sur le mur, elle ne disparaît pas quand
+
+00:00:24.640 --> 00:00:26.440
+on peint quelque chose à côté. Elle reste
+
+00:00:26.480 --> 00:00:30.320
+là. Mais si on veut donner l'impression
+
+00:00:30.380 --> 00:00:33.980
+que quelque chose bouge ? Tu as déjà
+
+00:00:34.000 --> 00:00:36.150
+vu un flip book ? C'était très populaire
+
+00:00:36.160 --> 00:00:38.339
+quand j'étais enfant, un peu moins aujourd'hui.
+
+00:00:38.380 --> 00:00:40.640
+Un flip book, c'est un petit livre où
+
+00:00:40.680 --> 00:00:44.440
+chaque page porte un dessin légèrement différent.
+
+00:00:44.540 --> 00:00:47.640
+Quand tu feuillettes les pages vite, tes yeux
+
+00:00:47.720 --> 00:00:51.170
+voient les dessins changer, et ton cerveau croit
+
+00:00:51.340 --> 00:00:54.020
+que quelque chose bouge. En réalité, rien ne
+
+00:00:54.060 --> 00:00:58.530
+bouge : juste des dessins légèrement différents, l'un après l'autre. Et
+
+00:00:58.560 --> 00:01:02.400
+c'est exactement comme ça que fonctionne l'animation en code.
+
+00:01:02.589 --> 00:01:05.500
+L'astuce est la même. Avant de dessiner
+
+00:01:05.560 --> 00:01:08.920
+une nouvelle scène, on repeint tout le
+
+00:01:08.960 --> 00:01:11.920
+canvas avec une couleur de fond, un peu
+
+00:01:11.960 --> 00:01:14.400
+comme si on commençait une nouvelle page
+
+00:01:15.320 --> 00:01:18.140
+de notre flip book, puis on apporte un petit
+
+00:01:18.180 --> 00:01:21.740
+changement à la scène pour donner l'impression de mouvement. Prenons
+
+00:01:21.780 --> 00:01:24.040
+donc un bloc de code familier où l'on
+
+00:01:24.080 --> 00:01:27.520
+dessine des cercles à l'écran : on définit
+
+00:01:27.560 --> 00:01:29.820
+une variable position, et on utilise
+
+00:01:29.840 --> 00:01:31.900
+un bloc repeat qui dessine un cercle
+
+00:01:31.940 --> 00:01:33.640
+et décale la position vers la droite.
+
+00:01:34.680 --> 00:01:37.110
+Si on exécute cette boucle repeat 100 fois,
+
+00:01:37.500 --> 00:01:39.940
+on verra 100 cercles d'un bout à
+
+00:01:39.960 --> 00:01:43.320
+l'autre de l'écran. Maintenant, regarde ce qui se passe
+
+00:01:43.340 --> 00:01:47.440
+si on ajoute simplement un rectangle plein avant de
+
+00:01:47.500 --> 00:01:51.260
+dessiner le cercle à chaque fois. Au lieu d'une
+
+00:01:51.300 --> 00:01:54.210
+traînée de cercles, nos yeux se laissent
+
+00:01:54.380 --> 00:01:57.440
+tromper et voient un seul cercle qui semble
+
+00:01:57.520 --> 00:02:01.000
+glisser d'un bout à l'autre de l'écran. À chaque
+
+00:02:01.020 --> 00:02:04.060
+passage dans la boucle, on peint un tout nouveau
+
+00:02:04.260 --> 00:02:06.860
+fond qui recouvre tout ce qui était là avant,
+
+00:02:06.960 --> 00:02:11.120
+puis on dessine le cercle à son nouvel emplacement.
+
+00:02:11.200 --> 00:02:14.540
+Chaque passage dans la boucle est comme
+
+00:02:14.600 --> 00:02:17.720
+une nouvelle page du flip book. Et la chose
+
+00:02:17.740 --> 00:02:19.570
+essentielle à comprendre ici, c'est
+
+00:02:19.640 --> 00:02:22.390
+qu'on ne déplace pas le cercle. Le cercle
+
+00:02:22.400 --> 00:02:25.250
+n'est pas un objet qui glisse. C'est juste un dessin.
+
+00:02:25.340 --> 00:02:27.220
+À chaque passage dans la boucle, on peint
+
+00:02:27.280 --> 00:02:29.350
+par-dessus l'ancien dessin et on en fait
+
+00:02:29.980 --> 00:02:32.120
+un tout nouveau, légèrement plus à droite.
+
+00:02:32.180 --> 00:02:35.280
+Ton œil assemble le tout et y voit du mouvement, mais
+
+00:02:35.360 --> 00:02:38.390
+en réalité, ce ne sont que des dessins séparés, l'un après l'autre.
+
+00:02:40.080 --> 00:02:42.160
+Dans le prochain exercice, tu vas utiliser
+
+00:02:42.200 --> 00:02:45.420
+cette idée pour créer un coucher de soleil. Tu vas
+
+00:02:45.460 --> 00:02:47.829
+faire bouger le soleil, changer sa taille, changer
+
+00:02:47.880 --> 00:02:50.100
+sa couleur. C'est toujours la même technique.
+
+00:02:50.220 --> 00:02:53.900
+On définit des variables, on peint un fond tout neuf et on dessine tout.
+
+00:02:53.940 --> 00:02:57.190
+On met à jour les variables, et on recommence. Et puis,
+
+00:02:57.240 --> 00:02:59.170
+si tu es membre premium, quand tu auras
+
+00:02:59.170 --> 00:03:01.750
+terminé le coucher de soleil, tu débloqueras aussi
+
+00:03:01.800 --> 00:03:05.860
+un projet plus complexe appelé « La fleur qui pousse », où tu pourras
+
+00:03:05.940 --> 00:03:08.180
+vraiment te lancer un défi en combinant
+
+00:03:08.220 --> 00:03:11.360
+tout ça. Celui-là est vraiment sympa. Bonne
+
+00:03:11.400 --> 00:03:13.240
+chance, et à très vite !

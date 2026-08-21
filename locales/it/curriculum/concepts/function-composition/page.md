@@ -6,13 +6,13 @@ en_md5: 7df3110b30c0f279d7f04d3b4e331a99
 
 Finora, quando hai scritto delle funzioni, ognuna se l'è cavata da sola e conteneva tutta la logica necessaria per funzionare.
 
-Adesso vedremo come suddividere le funzioni in pezzi più piccoli che lavorano insieme, invece di avere funzioni grandi che fanno tante cose insieme.
+Adesso vedremo come suddividere le funzioni in pezzi più piccoli che lavorano insieme, invece di avere funzioni lunghe che fanno troppe cose insieme.
 
 Come regola generale in programmazione, vuoi che ogni funzione faccia il minimo indispensabile. Diciamo che una funzione ha una singola responsabilità (_single responsibility_ in inglese). Ogni funzione dovrebbe fare solo una cosa e usare altre funzioni per le diverse sotto-parti che la compongono.
 
 Vediamo un esempio.
 
-Immagina di avere una funzione il cui compito è restituire una stringa che descrive un nome.
+Immagina di avere una funzione il cui compito è restituire una stringa che descriva un nome.
 
 Una versione semplice apparirebbe così. Abbiamo un ciclo di conteggio, qualcosa che hai già scritto, e poi una stringa interpolata che mette insieme il risultato.
 
@@ -47,13 +47,13 @@ function describeName(name) {
 }
 ```
 
-E poi possiamo riutilizzare quella funzione di conteggio generica in questa formattazione di stringhe, ma anche in qualsiasi altro posto in cui ti serve. Ogni volta che dobbiamo contare le lettere in una stringa, è completamente separata da tutto ciò che riguarda la stampa.
+E poi possiamo riutilizzare quella funzione di conteggio generica in questa formattazione di stringhe, ma anche in qualsiasi altro contesto in cui ti serve. Ogni volta che dobbiamo contare le lettere in una stringa, questa parte è completamente separata da tutto ciò che riguarda la stampa.
 
 Puoi leggere entrambe le funzioni isolatamente e capire subito cosa fanno.
 
-Man mano che le tue funzioni diventano più complesse e ne hai di più, questa tecnica fa la differenza tra avere codice pulito e leggibile e la confusione totale e il disordine.
+Man mano che le tue funzioni diventano più complesse e aumentano, questa pratica fa la differenza tra avere codice pulito e leggibile e ritrovarsi nella confusione totale e nel disordine.
 
-C'è una cosa che vale la pena ricordare ancora: tutto ciò che crei all'interno di una funzione non può essere usato da altre funzioni a meno che tu non lo restituisca esplicitamente.
+Vale la pena ricordarlo di nuovo: tutto ciò che crei all'interno di una funzione non può essere usato da altre funzioni a meno che tu non lo restituisca esplicitamente.
 
 Quindi se provi a fare riferimento alla variabile `count` (contatore) dall'interno di `describeName` (descrivi nome), non puoi farlo, perché appartiene all'altra funzione.
 
@@ -65,6 +65,6 @@ Quindi se provi a fare riferimento alla variabile `count` (contatore) dall'inter
   height="353"
 />
 
-In JavaScript possiamo creare variabili in cima, sopra ogni altra cosa, condivise tra le funzioni, ma ti consiglio di non farlo a meno che non ci sia una buona ragione.
+In JavaScript possiamo creare variabili nella parte superiore del file, sopra tutto il resto, condivise tra le funzioni, ma ti consiglio di non farlo a meno che non ci sia una buona ragione.
 
-Più mantieni ogni funzione indipendente, e la parola tecnica per questo è pura, funzioni pure, più il tuo codice sarà pulito e meno bug creerai ed avrai.
+Più mantieni ogni funzione indipendente - si chiamano funzioni pure - più il tuo codice sarà pulito e meno bug avrai.

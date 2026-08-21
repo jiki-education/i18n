@@ -1,0 +1,54 @@
+{
+  "errors": {
+    "unknownDice": "Desculpe, o Jiki não tem à mão um dado de {{sides}} lados!",
+    "announceNumber": "Você só pode anunciar um número",
+    "attackNumber": "O ataque tem que ser um número",
+    "damageNumber": "O dano tem que ser um número"
+  },
+  "describers": {
+    "roll": "lançou um dado e obteve ${return}",
+    "announce": "anunciou ${arg1}",
+    "strike": "golpeou o goblin com ataque ${arg1} e dano ${arg2}"
+  },
+  "checks": {
+    "announcementCount": "Esperávamos 3 anúncios, mas houve {{got}}. Certifique-se de que você anuncia cada lançamento.",
+    "firstAnnouncement": "Esperávamos que o primeiro anúncio fosse {{attack}} (o lançamento de ataque), mas foi {{got}}.",
+    "secondAnnouncement": "Esperávamos que o segundo anúncio fosse {{damage}} (o lançamento de dano base), mas foi {{got}}.",
+    "thirdAnnouncement": "Esperávamos que o terceiro anúncio fosse {{bonus}} (o lançamento de bônus), mas foi {{got}}.",
+    "notStruck": "Você não golpeou o goblin. Certifique-se de que está chamando <code>strike()</code>.",
+    "wrongAttack": "Esperávamos que o ataque fosse {{attack}}, mas foi {{got}}. Passe o lançamento de ataque para <code>strike()</code>.",
+    "wrongDamage": "Esperávamos que o dano total fosse {{totalDamage}} ({{damage}} + {{bonus}}), mas foi {{got}}. Some o dano base e o bônus."
+  },
+  "tasks": {
+    "rollAndStrike": {
+      "name": "Lance os dados e golpeie o goblin",
+      "description": "Lance três dados (d20 para o ataque, d12 para o dano base, d10 para o bônus), anuncie cada lançamento e depois golpeie o goblin com o seu lançamento de ataque e o dano total (base + bônus)."
+    }
+  },
+  "scenarios": {
+    "randomRolls": {
+      "name": "Lance e golpeie",
+      "description": "Lance o d20 para o ataque, o d12 para o dano base e o d10 para o bônus. Golpeie o goblin com o seu ataque e o dano total."
+    }
+  },
+  "hints": {
+    "chooseDie": {
+      "question": "Como eu escolho o tipo de dado a usar?",
+      "answer": "Para um dado de 20 lados, use 20 como valor de entrada de roll, por exemplo `roll(20)`. Para um dado de 12 lados, chame `roll(12)`."
+    }
+  },
+  "functions": {
+    "roll": {
+      "description": "Lança um dado com o número de lados indicado e **retorna** o resultado.",
+      "category": "Dados"
+    },
+    "announce": {
+      "description": "Anuncia o valor de um lançamento de dados.",
+      "category": "Ação"
+    },
+    "strike": {
+      "description": "Golpeia o goblin com o lançamento de ataque e o dano total indicados.",
+      "category": "Ação"
+    }
+  }
+}

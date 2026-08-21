@@ -14,21 +14,21 @@ Alors quand Mr Pitt fait son entrée, à toi de comprendre qu'il s'agit du « B
 
 Écris une fonction appelée `tableFor` (« la table de », elle cherche la table à laquelle un invité est assis). La fonction a trois entrées :
 
-- La première est la liste des noms complets des invités, sous forme de strings
+- La première est la liste des noms complets des invités, sous forme de _strings_
 - La deuxième est la liste des noms de tables, dans le même ordre que les invités
 - La troisième est l'invité qui arrive, sous la forme d'un titre de civilité suivi de son nom de famille (par exemple « Mr Pitt »)
 
-Renvoie le nom de la table à laquelle l'invité est assis. S'il ne figure pas du tout sur le plan de table, renvoie à la place la string `"No table found"`, exactement comme elle est écrite (pas de resquilleurs ici !).
+Renvoie le nom de la table à laquelle l'invité est assis. S'il ne figure pas du tout sur le plan de table, renvoie à la place la _string_ `"No table found"` (aucune table trouvée), exactement comme elle est écrite (pas de resquilleurs ici !).
 
-Le titre de civilité tient toujours en exactement un mot, et tout ce qui suit est le nom de famille de l'invité. La plupart des noms de famille tiennent en un seul mot, mais quelques noms prestigieux en comptent deux.
+Le titre de civilité tient toujours en un seul mot, et tout ce qui suit est le nom de famille de l'invité. La plupart des noms de famille tiennent en un seul mot, mais quelques noms prestigieux en comptent deux.
 
-Attention, cependant : bien des noms de famille ressemblent beaucoup à d'autres.
+Attention, cependant : de nombreux noms de famille se ressemblent beaucoup.
 
-### Méthodes et propriétés des strings et des tableaux
+### Méthodes et propriétés des _strings_ et des tableaux
 
 En plus de la propriété `.length` que tu as découverte dans l'exercice précédent, quatre méthodes peuvent t'être utiles. Il existe de nombreuses façons de résoudre cet exercice, mais celles-ci te mèneront à la solution la plus courte possible.
 
-`"...".split(substring)` découpe une string à l'aide d'une autre string. Par exemple :
+`"...".split(substring)` découpe une _string_ à l'aide d'une autre _string_. Par exemple :
 
 ```js
 `"Jeremy".split("e")`
@@ -42,14 +42,14 @@ En plus de la propriété `.length` que tu as découverte dans l'exercice préc�
 // ["Aron", "DJ", "Glenn", "Isaac", "Bethany"]
 ```
 
-`[...].join(string)` assemble les éléments d'un tableau en les reliant par la string fournie. Par exemple :
+`[...].join(string)` assemble les éléments d'un tableau en les reliant par la _string_ fournie. Par exemple :
 
 ```js
 ["Jeremy", "Erik", "Aron", "DJ", "Glenn", "Isaac", "Bethany"].join(" likes ")
 // Jeremy likes Erik likes Aron likes DJ likes Glenn likes Isaac likes Bethany
 ```
 
-`"...".endsWith(string)` t'indique si une string se termine par une autre string. Par exemple :
+`"...".endsWith(string)` t'indique si une _string_ se termine par une autre _string_. Par exemple :
 
 ```js
 "Jeremy".endsWith("emy")

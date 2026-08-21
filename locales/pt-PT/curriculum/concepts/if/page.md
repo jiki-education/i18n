@@ -1,15 +1,15 @@
 ---
 title: "Compreender as instruções `if`"
-description: "Usar a palavra-chave `if` para executar um bloco de código apenas quando uma condição é verdadeira, como um segurança a decidir quem entra."
+description: "Usar a palavra-chave `if` para executar um bloco de código apenas quando uma condição é verdadeira, como um porteiro a decidir quem entra."
 en_md5: 81c99eea67b02e082ca6c9d7988a3914
 ---
 
-Há uma palavra-chave que nos ajuda a dizer ao Jiki para só fazer certas coisas em determinadas situações. Imagina que estás a escrever código para guardar a entrada de um bar, talvez sejas o segurança, e o Jiki só deve abrir a porta se a pessoa estiver vestida de forma adequada. Ou imagina que estás a escrever código em que és responsável por agitar a bandeira axadrezada no final de uma corrida, mas o Jiki precisa de saber que só o deve fazer na última volta. Nestes casos, vamos usar a palavra-chave `if`.
+Há uma palavra-chave que nos ajuda a dizer ao Jiki para só fazer certas coisas em determinadas situações. Imagina que estás a escrever código para guardar a entrada de um bar, talvez sejas o porteiro, e o Jiki só deve abrir a porta se a pessoa estiver vestida de forma adequada. Ou imagina que estás a escrever código em que és responsável por agitar a bandeira axadrezada no final de uma corrida, mas o Jiki precisa de saber que só o deve fazer na última volta. Nestes casos, vamos usar a palavra-chave `if`.
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/if/bar-door-scenario.webp"
-  alt="O Jiki como segurança a decidir se deixa as pessoas entrar na discoteca"
+  alt="O Jiki como porteiro a decidir se deixa as pessoas entrar na discoteca"
   width="292"
   height="400"
 />
@@ -47,7 +47,7 @@ E isso ajuda-nos a não confundir com os momentos em que estamos a definir ou a 
 
 Também podes comparar strings. Por exemplo, `"hello"` é igual a `"hello"`. Isso é verdadeiro. As duas strings são iguais. Mas cuidado, porque o Jiki compara cada caráter (_character_ em inglês) das duas strings, nos dois pedaços de papel. Por isso, `"Hello"` com H maiúsculo não é igual a `"hello"` com h minúsculo. São strings diferentes. Comparar essas duas daria falso, porque o H maiúsculo e o h minúsculo são carateres diferentes.
 
-Já agora, o verdadeiro e o falso chamam-se _Booleans_ (booleanos), e essa é mais uma palavra com ar técnico. Mas é muito simples. É só uma forma formal de dizer que algo é verdadeiro ou falso. Por isso, se encontrares a palavra _Booleans_, significa apenas verdadeiro ou falso. Vamos ver isto em ação. Imagina que estamos a construir aquele segurança-robô para uma discoteca, e vamos dizer que o segurança só deve abrir a porta se a pessoa tiver 21 anos ou mais. Temos uma função `askAge` (perguntar a idade), que podemos usar para saber a idade de alguém, e vamos guardar o resultado numa variável chamada `age` (idade). Depois podemos dizer: se essa `age` for maior que 20, abrimos a porta. Portanto, se `askAge` devolver `30`, abrimos, e se devolver `12`, não abrimos.
+Já agora, o verdadeiro e o falso chamam-se _Booleans_ (booleanos), e essa é mais uma palavra com ar técnico. Mas é muito simples. É só uma forma formal de dizer que algo é verdadeiro ou falso. Por isso, se encontrares a palavra _Booleans_, significa apenas verdadeiro ou falso. Vamos ver isto em ação. Imagina que estamos a construir aquele porteiro-robô para uma discoteca, e vamos dizer que o porteiro só deve abrir a porta se a pessoa tiver 21 anos ou mais. Temos uma função `askAge` (perguntar a idade), que podemos usar para saber a idade de alguém, e vamos guardar o resultado numa variável chamada `age` (idade). Depois podemos dizer: se essa `age` for maior que 20, abrimos a porta. Portanto, se `askAge` devolver `30`, abrimos, e se devolver `12`, não abrimos.
 
 ```javascript
 let age = askAge()

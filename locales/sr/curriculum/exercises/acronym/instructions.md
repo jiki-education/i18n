@@ -1,7 +1,7 @@
 ---
 title: "Akronim"
 description: "Pretvori frazu u njen akronim, zanemarujući interpunkciju usput."
-en_md5: 97e2adefc1da7867f5e218d0fe8c4fdb
+en_md5: e8b8820be81476a13cb6a66781f95cc9
 ---
 
 Već rešavaš jednostavne akronime od tri slova, poput pretvaranja `Portable Network Graphics` u `PNG`.

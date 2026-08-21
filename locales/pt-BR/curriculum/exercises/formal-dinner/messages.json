@@ -1,0 +1,97 @@
+{
+  "tasks": {
+    "findGuestTable": {
+      "name": "Encontre a mesa do convidado",
+      "description": "Escreva uma função que recebe a lista dos nomes completos dos convidados, a lista correspondente dos nomes das mesas e um convidado que chega anunciado por um título e um sobrenome. Retorne o nome da mesa onde esse convidado está sentado, ou `\"No table found\"` se ele não estiver no mapa de lugares."
+    },
+    "solveTightly": {
+      "name": "Resolva-o em 9 linhas",
+      "description": "Bônus: isso pode ser escrito de forma muito mais compacta do que você espera. Tente resolver isso em 9 linhas de código ou menos."
+    }
+  },
+  "scenarios": {
+    "emptyList": {
+      "name": "Mapa de lugares vazio",
+      "description": "Ninguém está sentado em lugar nenhum quando o mapa está vazio."
+    },
+    "nameMissing": {
+      "name": "Brad é barrado",
+      "description": "O nome não está no mapa de lugares."
+    },
+    "namePresent": {
+      "name": "Brad é encaminhado para o seu lugar",
+      "description": "Brad Pitt está no mapa de lugares, então o Mr Pitt recebe a mesa dele."
+    },
+    "differentHonorific": {
+      "name": "Cavaleiro do reino",
+      "description": "Um título diferente e um convidado que não é o primeiro do mapa."
+    },
+    "bondSeated": {
+      "name": "Mr Bond, presumo",
+      "description": "James Bond está no mapa de lugares."
+    },
+    "bondNotSeated": {
+      "name": "Hmmm... Mr Bond, presumo",
+      "description": "Apenas Jason Bourne está no mapa de lugares, e não James Bond."
+    },
+    "partialSurname": {
+      "name": "Não é bem o Mr Pitt",
+      "description": "Nem Ada Spitt nem Hugo Ross-Pitt são o Mr Pitt, então ele não tem lugar aqui."
+    },
+    "lloydWebber": {
+      "name": "Que tal um Barão?",
+      "description": "O Barão Lloyd Webber tem duas palavras no sobrenome."
+    },
+    "markWebber": {
+      "name": "O Mark é o Barão?",
+      "description": "Um Webber diferente não conta: o sobrenome precisa corresponder por completo."
+    },
+    "formalDinnerBonusLineCount": {
+      "name": "Limpo e organizado: Lord Doyle",
+      "description": "O mesmo mapa de lugares de antes, mas desta vez tente resolver isso em 9 linhas de código ou menos."
+    }
+  },
+  "hints": {
+    "twoLists": {
+      "question": "Como as duas listas se relacionam entre si?",
+      "answer": "Elas formam um par. O primeiro convidado fica na primeira mesa, o segundo na segunda mesa, e assim por diante. Portanto, não basta saber *que* um convidado está no mapa: você precisa saber *onde* no mapa ele está."
+    },
+    "comparingNames": {
+      "question": "O convidado diz 'Mr Pitt', mas o mapa diz 'Brad Pitt'. Como eu comparo os dois?",
+      "answer": "Essas duas strings nunca serão iguais, então uma comparação direta não te leva a lugar nenhum. Pense em que parte do que o convidado anunciou aparece de fato no mapa e em que parte da entrada do mapa você esperaria encontrá-la."
+    },
+    "lookalikeSurnames": {
+      "question": "Será que um sobrenome pode corresponder ao convidado errado?",
+      "answer": "Claro que pode. Leia 'Ada Spitt' e 'Hugo Ross-Pitt' em voz alta, e depois pense no Mr Pitt. Pergunte a você mesmo o que faz de um sobrenome um sobrenome verdadeiro nessa linha, em vez de apenas algumas letras que por acaso estão no fim dela."
+    },
+    "noMatch": {
+      "question": "O que devo retornar quando ninguém corresponde?",
+      "answer": "A string `\"No table found\"`, exatamente como está escrita. A parte mais difícil é saber quando você pode dizê-la. Se você verificou o primeiro convidado do mapa e ele não é a pessoa que você procura, já sabe, na verdade, que ele não está sentado em lugar nenhum?"
+    }
+  },
+  "checks": {
+    "tooManyLines": "Continue! Veja se você consegue chegar às 9 linhas de código."
+  },
+  "functions": {
+    "length": {
+      "description": "O número de itens numa lista: a mesma propriedade length que você já usou em strings (fornecido pelo nível stdlib)",
+      "category": "Operações com listas"
+    },
+    "split": {
+      "description": "Dividir uma string numa lista de pedaços, partindo em cada separador (fornecido pelo nível stdlib)",
+      "category": "Operações com strings"
+    },
+    "slice": {
+      "description": "Criar uma nova lista a partir de parte de uma lista, começando numa posição (fornecido pelo nível stdlib)",
+      "category": "Operações com listas"
+    },
+    "join": {
+      "description": "Juntar os itens de uma lista numa única string, com um separador entre eles (fornecido pelo nível stdlib)",
+      "category": "Operações com listas"
+    },
+    "endsWith": {
+      "description": "Verificar se uma string termina com uma string menor (fornecido pelo nível stdlib)",
+      "category": "Operações com strings"
+    }
+  }
+}

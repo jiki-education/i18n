@@ -1,0 +1,142 @@
+{
+  "tasks": {
+    "validateBasicIsbn": {
+      "name": "Valida um ISBN básico",
+      "description": "Escreve uma função chamada isValidIsbn que recebe uma string com um ISBN-10 e devolve true se for válido e false se não for. Os ISBN-10 contêm hífenes que devem ser ignorados. Multiplica cada algarismo por um peso decrescente de 10 até 1, soma-os e verifica se o total é divisível por 11."
+    },
+    "handleXCheckDigit": {
+      "name": "Trata o X como algarismo de verificação",
+      "description": "Às vezes, um ISBN termina com um X, que representa 10. Atualiza a tua função para lidar com X na última posição."
+    },
+    "handleEdgeCases": {
+      "name": "Trata os casos limite",
+      "description": "Torna a tua função robusta: lida com ISBNs sem hífenes, rejeita carateres inválidos, rejeita X em posições que não a última e garante que são processados exatamente 10 algarismos."
+    },
+    "useContinue": {
+      "name": "Bónus: salta os hífenes com continue",
+      "description": "Em vez de só fazeres trabalho quando um caráter é um algarismo, usa continue para saltar diretamente por cima dos hífenes e passar ao caráter seguinte."
+    }
+  },
+  "scenarios": {
+    "isbnValid": {
+      "name": "ISBN válido",
+      "description": "Um ISBN-10 válido deve devolver true."
+    },
+    "isbnValidCheckDigitX": {
+      "name": "ISBN válido com X como algarismo de verificação",
+      "description": "Um ISBN-10 válido com algarismo de verificação 'X' deve devolver true."
+    },
+    "isbnValidNoDashes": {
+      "name": "ISBN válido sem hífenes",
+      "description": "Um ISBN-10 válido sem hífenes de separação deve devolver true."
+    },
+    "isbnValidNoDashesXCheck": {
+      "name": "ISBN válido sem hífenes e com X como algarismo de verificação",
+      "description": "Um ISBN-10 válido sem hífenes e com algarismo de verificação 'X' deve devolver true."
+    },
+    "isbnInvalidCheckDigit": {
+      "name": "ISBN inválido (algarismo de verificação)",
+      "description": "Um ISBN-10 com um algarismo de verificação incorreto deve devolver false."
+    },
+    "isbnInvalidCharacter": {
+      "name": "Algarismo de verificação com caráter diferente de X",
+      "description": "Um ISBN-10 que contém um caráter inválido deve devolver false."
+    },
+    "isbnInvalidCharacterNotZero": {
+      "name": "Algarismo de verificação inválido não tratado como zero",
+      "description": "Um algarismo de verificação inválido não deve ser tratado como zero."
+    },
+    "isbnInvalidNonNumeric": {
+      "name": "Caráter inválido no ISBN",
+      "description": "Os carateres inválidos no ISBN não devem ser ignorados."
+    },
+    "isbnInvalidXPosition": {
+      "name": "X só é válido como algarismo de verificação",
+      "description": "Um 'X' só deve ser válido como algarismo de verificação."
+    },
+    "isbnInvalidMissingCheckDigit": {
+      "name": "ISBN sem algarismo de verificação",
+      "description": "Um ISBN-10 sem algarismo de verificação deve devolver false."
+    },
+    "isbnInvalidTooLong": {
+      "name": "ISBN demasiado longo",
+      "description": "Um ISBN-10 demasiado longo deve devolver false."
+    },
+    "isbnInvalidTooShort": {
+      "name": "ISBN demasiado curto",
+      "description": "Um ISBN-10 demasiado curto deve devolver false."
+    },
+    "isbnInvalidEmpty": {
+      "name": "ISBN vazio",
+      "description": "Uma string de ISBN vazia deve devolver false."
+    },
+    "isbnInvalidLengthNine": {
+      "name": "ISBN tem 9 carateres",
+      "description": "Um valor de entrada com 9 carateres deve devolver false."
+    },
+    "isbnInvalidNonNumericBeforeCheck": {
+      "name": "Caráter inválido antes de verificar o comprimento",
+      "description": "Os carateres inválidos não devem ser ignorados antes de verificar o comprimento."
+    },
+    "isbnInvalidExtraLength": {
+      "name": "Entrada demasiado longa mas contém um ISBN válido",
+      "description": "Um valor de entrada com mais de 10 carateres deve devolver false."
+    },
+    "isbnBonusUseContinue": {
+      "name": "Hífenes saltados com continue",
+      "description": "A tua solução funciona e usa continue para saltar os hífenes."
+    }
+  },
+  "hints": {
+    "howChecked": {
+      "question": "Como é que um ISBN-10 é realmente verificado?",
+      "answer": "Cada um dos 10 algarismos é multiplicado por um peso decrescente. O primeiro algarismo por 10, o segundo por 9, e assim sucessivamente até ao último por 1. Somas todos esses produtos. Se o total for divisível por 11, o ISBN é válido."
+    },
+    "dashes": {
+      "question": "O que faço com os hífenes?",
+      "answer": "Os hífenes servem apenas para legibilidade humana. Salta-os por completo. Não contam como um algarismo e não te fazem avançar no peso."
+    },
+    "trackWeight": {
+      "question": "Como acompanho o peso?",
+      "answer": "Começa com uma variável multiplicador a 10. Cada vez que processas um algarismo, multiplica-o pelo multiplicador atual, adiciona o produto à soma acumulada e depois diminui o multiplicador em 1."
+    },
+    "stringToNumber": {
+      "question": "Como transformo a string num número?",
+      "answer": "Tens duas opções. Primeiro, a forma pretendida neste exercício é encontrar uma maneira usando o método `indexOf`. Pensa nisso. Se não conseguires descobrir, vê a próxima dica para obteres uma resposta."
+    },
+    "stringToNumberAgain": {
+      "question": "A sério, como transformo a string num número?",
+      "answer": "Duas opções. Primeiro, podes usar a função `Number()` (com \"N\" maiúsculo), por isso `Number(\"5\")` devolve `5`. Lê a <a href=\"/concepts/type-conversion\" target=\"_blank\" rel=\"noopener noreferrer\">página do conceito Conversão de Tipo</a> se quiseres uma revisão. Também existe um truque interessante com `indexOf` que vale a pena explorar depois."
+    },
+    "handleX": {
+      "question": "Como é que eu lido com 'X'? Isso não é um algarismo, pois não?",
+      "answer": "'X' é especial. Representa o valor 10, mas apenas como último caráter. Trata-o como um algarismo com valor 10 quando o vires no final, e rejeita o ISBN se 'X' aparecer em qualquer outro sítio."
+    },
+    "exactlyTenDigits": {
+      "question": "Como garanto que existem exatamente 10 algarismos?",
+      "answer": "O teu multiplicador começou em 10 e diminuiu 1 por cada algarismo. Se processaste exatamente 10 algarismos, terá terminado em 0. Qualquer outro valor significa o número errado de algarismos, por isso rejeita-o."
+    },
+    "finalCheck": {
+      "question": "Qual é a verificação final de validade?",
+      "answer": "Depois de processares tudo, o ISBN é válido se a soma total for divisível por 11 (ou seja, `sum % 11 == 0`)."
+    }
+  },
+  "checks": {
+    "mustUseContinue": "Tão perto! Para este bónus, usa `continue` para saltar os hífenes.",
+    "tooManyLines": "Tão perto! A tua solução funciona, mas é um pouco longa."
+  },
+  "functions": {
+    "number": {
+      "description": "Converte uma string que contém algarismos num número",
+      "category": "Conversão de Tipo"
+    },
+    "includes": {
+      "description": "Verifica se uma string contém uma string mais pequena (fornecido pela stdlib do nível)",
+      "category": "Operações com strings"
+    },
+    "indexOf": {
+      "description": "Encontra a posição de uma string mais pequena dentro de uma string, ou -1 se não for encontrada (fornecido pela stdlib do nível)",
+      "category": "Operações com strings"
+    }
+  }
+}

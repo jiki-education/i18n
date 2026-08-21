@@ -1,0 +1,270 @@
+WEBVTT
+
+NOTE en_md5 c5187b46923e87c2aac86912c90dfb53
+
+00:00:00.100 --> 00:00:03.140
+Hola de nuevo. Espero que ya te sientas más a gusto
+
+00:00:03.180 --> 00:00:06.810
+con los arrays. Los arrays son nuestra opción preferida
+
+00:00:06.840 --> 00:00:09.740
+cuando tenemos una lista de cualquier cosa: una lista
+
+00:00:09.760 --> 00:00:11.560
+de mentores, una lista de calificaciones, una lista
+
+00:00:11.600 --> 00:00:14.420
+de ingredientes. Cualquier lista, lo que quieres es usar
+
+00:00:14.440 --> 00:00:17.630
+un array. Pero hay otra estructura de datos que
+
+00:00:17.720 --> 00:00:20.060
+también es muy común cuando quieres algo
+
+00:00:20.070 --> 00:00:23.380
+un poco más complejo que una lista. Imagina
+
+00:00:23.420 --> 00:00:24.780
+que queremos almacenar información sobre mí:
+
+00:00:25.500 --> 00:00:27.580
+mi nombre, mi edad, dónde nací.
+
+00:00:28.280 --> 00:00:30.140
+Ahora, podrías usar un array para eso,
+
+00:00:30.150 --> 00:00:32.200
+pero no queda muy claro lo que está pasando
+
+00:00:32.240 --> 00:00:34.850
+cuando lo haces. ¿Es Inglaterra donde
+
+00:00:34.880 --> 00:00:37.210
+nací o donde vivo? ¿Es 42 mi
+
+00:00:37.300 --> 00:00:40.120
+edad o es otra cosa? Y si quiero
+
+00:00:40.160 --> 00:00:42.050
+usar esto, tengo que recordar que
+
+00:00:42.080 --> 00:00:44.740
+la primera posición es para el nombre, la segunda
+
+00:00:44.780 --> 00:00:47.900
+para la edad, la tercera para el lugar de nacimiento.
+
+00:00:47.920 --> 00:00:49.840
+Es todo un poco desordenado, y es desordenado
+
+00:00:49.880 --> 00:00:52.420
+porque esto no es realmente una lista de cosas.
+
+00:00:52.480 --> 00:00:55.769
+Es, es más complejo que eso. Y ahí
+
+00:00:55.800 --> 00:00:58.500
+es donde entran los diccionarios. Un diccionario es
+
+00:00:58.560 --> 00:01:00.340
+un nuevo tipo de estructura de datos. Es el quinto.
+
+00:01:00.420 --> 00:01:03.830
+Tienes strings, números, Boolean, arrays, y
+
+00:01:03.880 --> 00:01:06.200
+ahora diccionarios. Y quiero que pienses
+
+00:01:06.260 --> 00:01:08.620
+en un diccionario como en una hoja de una
+
+00:01:08.800 --> 00:01:12.180
+libreta de espiral. En el lado izquierdo tienes
+
+00:01:12.220 --> 00:01:15.460
+los encabezados, las palabras name, age, birthplace, y
+
+00:01:15.500 --> 00:01:18.400
+a esas las llamamos claves. Y en el lado
+
+00:01:18.480 --> 00:01:20.240
+derecho, junto a cada encabezado, tienes
+
+00:01:20.300 --> 00:01:24.520
+los datos reales: Jeremy, 42, England, y a esos
+
+00:01:24.600 --> 00:01:28.300
+los llamamos valores. Ahora, igual que los arrays, un
+
+00:01:28.340 --> 00:01:31.180
+diccionario es una sola cosa. Es una página de
+
+00:01:31.190 --> 00:01:33.830
+un cuaderno. E igual que los arrays, Jiki puede
+
+00:01:33.840 --> 00:01:35.250
+guardarlo en una variable, en una caja,
+
+00:01:35.720 --> 00:01:37.930
+o como argumento de una función, o
+
+00:01:37.980 --> 00:01:39.540
+puede recibir un diccionario de la
+
+00:01:39.560 --> 00:01:42.200
+rampa de salida. Así se ve un diccionario
+
+00:01:42.260 --> 00:01:45.080
+en código. Usamos llaves para
+
+00:01:45.120 --> 00:01:47.490
+indicar el inicio y el final, y luego
+
+00:01:47.520 --> 00:01:49.420
+dentro tienes pares: una clave a la
+
+00:01:49.480 --> 00:01:51.700
+izquierda, dos puntos, y luego el valor a
+
+00:01:51.740 --> 00:01:53.860
+la derecha, y ponemos una coma entre
+
+00:01:53.900 --> 00:01:56.260
+cada par. Así que Jiki ve esto y
+
+00:01:56.280 --> 00:01:58.600
+saca su libreta de espiral. Escribe name,
+
+00:01:58.960 --> 00:02:02.100
+Jeremy, age, 42, y así con cada
+
+00:02:02.140 --> 00:02:04.440
+par. Y cuando termina, arranca
+
+00:02:04.480 --> 00:02:06.320
+la hoja y la guarda en una caja
+
+00:02:06.420 --> 00:02:09.360
+etiquetada person. Ahora, hay algunas reglas
+
+00:02:09.420 --> 00:02:12.060
+que debes conocer. Las claves siempre son strings. Deben
+
+00:02:12.140 --> 00:02:14.620
+tener comillas alrededor, y cada clave debe ser
+
+00:02:14.680 --> 00:02:18.170
+única. No puedes tener dos claves llamadas, eh,
+
+00:02:18.260 --> 00:02:21.420
+llamadas name en el mismo diccionario. Los valores
+
+00:02:21.480 --> 00:02:23.150
+pueden repetirse si quieres, eh,
+
+00:02:23.280 --> 00:02:25.810
+pero las claves tienen que ser diferentes, y
+
+00:02:25.820 --> 00:02:27.600
+los valores pueden ser cualquier cosa. Pueden ser
+
+00:02:27.680 --> 00:02:31.000
+strings, números, Boolean, arrays, o incluso otros diccionarios.
+
+00:02:32.140 --> 00:02:34.540
+También puedes tener un diccionario vacío, igual
+
+00:02:34.600 --> 00:02:37.220
+que teníamos, eh, un array vacío, eh,
+
+00:02:37.280 --> 00:02:38.800
+y podemos empezar con eso y construir
+
+00:02:38.820 --> 00:02:42.210
+sobre él más adelante. Bueno, entonces tienes un
+
+00:02:42.260 --> 00:02:44.160
+diccionario, pero ¿cómo sacas algo
+
+00:02:44.220 --> 00:02:46.900
+de él? Usamos la misma sintaxis
+
+00:02:46.920 --> 00:02:48.960
+de corchetes que usábamos con arrays y
+
+00:02:49.020 --> 00:02:52.980
+strings, pero en lugar de un número de posición,
+
+00:02:53.020 --> 00:02:55.040
+ponemos una clave. Así que si queremos
+
+00:02:55.100 --> 00:02:57.390
+obtener el nombre de alguien de un diccionario,
+
+00:02:57.940 --> 00:03:01.620
+escribimos la variable person, corchetes, y
+
+00:03:01.640 --> 00:03:03.580
+luego la clave, en este caso name,
+
+00:03:03.660 --> 00:03:07.260
+entre comillas dentro. Eso le dice a Jiki que busque
+
+00:03:07.300 --> 00:03:09.970
+en el diccionario person, encuentre la clave
+
+00:03:10.080 --> 00:03:12.900
+name y saque su valor. Jiki
+
+00:03:13.040 --> 00:03:15.000
+va a la caja person, saca
+
+00:03:15.040 --> 00:03:17.340
+la página del cuaderno, revisa todas
+
+00:03:17.400 --> 00:03:19.760
+las claves hasta que encuentra name, y luego lee
+
+00:03:19.800 --> 00:03:21.900
+el valor Jeremy y lo coloca en
+
+00:03:21.910 --> 00:03:27.540
+una caja nueva llamada name. Los corchetes siempre
+
+00:03:27.580 --> 00:03:29.980
+significan lo mismo. Estás metiendo la mano en algo
+
+00:03:29.990 --> 00:03:32.370
+y sacando algo. Con arrays y strings,
+
+00:03:32.960 --> 00:03:34.720
+usas un número para indicar de qué posición
+
+00:03:34.760 --> 00:03:37.580
+quieres obtener algo. Con diccionarios,
+
+00:03:37.700 --> 00:03:40.140
+usas un string como clave. Es la
+
+00:03:40.180 --> 00:03:43.340
+misma idea, solo con una sintaxis un poco diferente. Bueno,
+
+00:03:43.380 --> 00:03:45.390
+aquí tienes un par de ejercicios para que practiques
+
+00:03:45.500 --> 00:03:47.640
+cómo crear diccionarios y leer los valores que contienen.
+
+00:03:48.260 --> 00:03:50.160
+Todo lo que necesitas es lo que acabamos de ver:
+
+00:03:50.580 --> 00:03:52.660
+las llaves para crear, los corchetes
+
+00:03:52.680 --> 00:03:55.200
+para acceder. Tómate tu tiempo con ellos. Mucha
+
+00:03:55.240 --> 00:03:56.820
+suerte, y nos vemos enseguida

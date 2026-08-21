@@ -54,6 +54,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { REPO_ROOT, SOURCE_LOCALE, SOURCE_REPO_LOCALE, fail } from "./constants.mjs";
+import { isExcluded } from "./exclusions.mjs";
 
 export const CONTENT_TYPES = {
   "app-messages": {
@@ -244,6 +245,15 @@ export const CONTENT_TYPES = {
     slugged: true,
     staleness: "sibling",
     interpolation: "i18next",
+    // An untranslated key is ABSENT here, never a `\u{FFFD}` sentinel. The
+    // interpreter runtime sets `fallbackLng: false` on purpose, so an absent key
+    // renders as its own key path, loudly, rather than as plausible silent
+    // English. Stubbing sentinels into this type breaks the one thing every
+    // interpreter script reads to answer "is this translated?": a stubbed key
+    // is present, so it counts as done, so `missing` resolves to nothing and a
+    // pass reports there is no work while the catalog stays untranslated.
+    // scripts/stub.mjs reads this and leaves the type alone.
+    untranslated: "absent",
     // The slug is an interpreter LANGUAGE (javascript, jikiscript, python).
     // The `system` locale beside English in that tree is a machine-readable
     // key channel, not a translation, and is never mirrored or translated here.
@@ -522,11 +532,23 @@ function slugsUnder(root, depth) {
 /**
  * Every item of one type present for one locale, as { type, locale, slug, path }.
  * Discovery is by what is on disk, so a newly synced item needs no registration.
+ *
+ * With one subtraction: an item corpus.json declares WHOLLY out of the corpus is
+ * not listed even when a file for it exists. An exclusion has to bind on both
+ * sides or it binds on neither, because every report and every published index
+ * compares this list against the English one (see `englishCorpusSize`). A leftover
+ * file for an excluded item is therefore inert rather than an error: it stays on
+ * disk, untouched, and comes back into scope the moment the exclusion is deleted.
+ *
+ * A `body`-scoped exclusion subtracts nothing here. The item is still expected,
+ * so it is still listed, and what its body is exempt from is a question its
+ * readers ask separately (see scripts/lib/exclusions.mjs).
  */
 export function listItems(typeId, locale) {
   const type = contentType(typeId);
   if (!type.slugged) {
     const file = localPath(typeId, locale);
+    if (isExcluded(typeId, null)) return [];
     return fs.existsSync(file) ? [{ type: typeId, locale, slug: null, path: file }] : [];
   }
 
@@ -535,6 +557,7 @@ export function listItems(typeId, locale) {
   const root = path.join(REPO_ROOT, "locales", locale, prefix);
 
   return slugsUnder(root, type.slugDepth ?? 1)
+    .filter((slug) => !isExcluded(typeId, slug))
     .map((slug) => ({ type: typeId, locale, slug, path: localPath(typeId, locale, slug) }))
     .filter((item) => fs.existsSync(item.path));
 }

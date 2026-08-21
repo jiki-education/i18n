@@ -34,7 +34,7 @@ Eh bien, il s'avère que le code est correct. C'est du JavaScript parfaitement v
 
 La portée, c'est quelque chose qui te semblera sans doute assez simple au premier abord, mais je peux te garantir qu'elle te causera des soucis pendant tout le reste de ta carrière. Même les développeurs les plus expérimentés rencontrent des problèmes de portée, et JavaScript est l'un des langages les plus compliqués sur ce point. Je te dis ça pour que, le jour où tu rencontreras un problème de portée, tu ne te sentes pas mal. Mais du coup, sois vraiment attentif à cette partie, parce qu'elle est importante.
 
-Quand tu vois une accolade dans du code, elle crée ce qu'on appelle une nouvelle portée. Qu'est-ce que ça veut dire ? Eh bien, tu peux imaginer que Jiki installe un nouveau petit jeu d'étagères dans son atelier chaque fois qu'il voit une accolade. Et toutes les boîtes qu'il crée pendant qu'il travaille, pendant qu'il exécute le code à l'intérieur de ces accolades, ces boîtes, ces nouvelles boîtes, vont sur le petit jeu d'étagères tout neuf, pas sur les étagères principales.
+Quand tu vois une accolade dans du code, elle crée ce qu'on appelle une nouvelle portée. Qu'est-ce que ça veut dire ? Eh bien, tu peux imaginer que Jiki installe de nouvelles petites étagères dans son atelier chaque fois qu'il voit une accolade. Et toutes les boîtes qu'il crée pendant qu'il travaille, pendant qu'il exécute le code à l'intérieur de ces accolades, ces boîtes, ces nouvelles boîtes, vont sur ces nouvelles petites étagères tout neuf, pas sur les étagères principales.
 
 <img
   class="concept-image"
@@ -44,7 +44,7 @@ Quand tu vois une accolade dans du code, elle crée ce qu'on appelle une nouvell
   height="205"
 />
 
-Et quand Jiki arrive à l'accolade fermante correspondante, il jette toutes les boîtes qui se trouvent sur ce jeu d'étagères secondaire.
+Et quand Jiki arrive à l'accolade fermante correspondante, il jette toutes les boîtes qui se trouvent sur ces étagères secondaires.
 
 <img
   class="concept-image"

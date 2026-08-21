@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 488ab8c8dd77c6bec365ce44675868b7
+
+00:00:00.280 --> 00:00:02.640
+¡Hola de nuevo! En la lección anterior
+
+00:00:02.680 --> 00:00:04.680
+aprendimos a acceder a una sola letra
+
+00:00:04.700 --> 00:00:08.300
+de un string usando corchetes. En esta lección
+
+00:00:08.420 --> 00:00:10.120
+vamos a ver cómo recorrer
+
+00:00:10.160 --> 00:00:13.160
+un string, sacando cada letra
+
+00:00:13.200 --> 00:00:15.660
+una por una. Y para eso
+
+00:00:15.720 --> 00:00:18.300
+necesitamos un nuevo tipo de bucle. Hasta ahora
+
+00:00:18.360 --> 00:00:20.170
+hemos usado el bucle repeat, y ahora
+
+00:00:20.200 --> 00:00:22.720
+vamos a usar algo llamado bucle for of.
+
+00:00:22.760 --> 00:00:26.880
+Esas son dos palabras clave nuevas, for y of. La
+
+00:00:27.000 --> 00:00:28.740
+palabra clave for es una que veremos
+
+00:00:28.760 --> 00:00:30.360
+en varios lugares a medida que avancemos.
+
+00:00:30.790 --> 00:00:32.580
+Puede ir sola, o puede
+
+00:00:32.619 --> 00:00:35.380
+ir acompañada de in o de of. Por
+
+00:00:35.440 --> 00:00:37.160
+ahora nos vamos a concentrar en esa
+
+00:00:37.220 --> 00:00:40.120
+última, of. Así que veamos
+
+00:00:40.160 --> 00:00:43.280
+algo de código. Empecemos creando una
+
+00:00:43.340 --> 00:00:47.310
+variable llamada name (nombre) con el string Jeremy.
+
+00:00:47.380 --> 00:00:50.460
+Nada nuevo. Después tenemos esta línea, for
+
+00:00:50.540 --> 00:00:53.620
+let letter of name, y ahí pasan muchas
+
+00:00:53.640 --> 00:00:55.480
+cosas, así que veámosla
+
+00:00:55.520 --> 00:00:59.240
+paso a paso. Primero tenemos la palabra clave for. Eso
+
+00:00:59.320 --> 00:01:00.980
+le dice a Jiki que queremos
+
+00:01:01.060 --> 00:01:04.340
+hacer un bucle. Entonces mira hacia delante, ve of
+
+00:01:04.879 --> 00:01:06.320
+y sabe que queremos hacer
+
+00:01:06.580 --> 00:01:09.600
+un bucle for of. Y eso significa que, en lugar
+
+00:01:09.720 --> 00:01:11.940
+de usar un bucle repeat donde decimos:
+
+00:01:12.020 --> 00:01:15.180
+«recorramos esto 10 veces», estamos diciendo:
+
+00:01:15.260 --> 00:01:17.380
+«recorramos todas las letras del string».
+
+00:01:17.440 --> 00:01:20.990
+Eso es lo que significa for of. Después tenemos esta
+
+00:01:21.060 --> 00:01:24.080
+parte let letter. Es exactamente igual
+
+00:01:24.140 --> 00:01:25.860
+que lo que tenemos arriba con let
+
+00:01:26.020 --> 00:01:29.320
+name. Simplemente creamos una variable llamada letter.
+
+00:01:30.240 --> 00:01:33.240
+La diferencia es que, en lugar de decir explícitamente
+
+00:01:33.280 --> 00:01:35.280
+qué poner dentro, le decimos a Jiki
+
+00:01:35.320 --> 00:01:37.850
+que ponga cada letra del string
+
+00:01:37.900 --> 00:01:41.780
+en ella, una a la vez. Entonces Jiki ve
+
+00:01:41.880 --> 00:01:44.460
+for, busca el of y se pone en marcha.
+
+00:01:44.480 --> 00:01:46.140
+Mira la primera letra del string,
+
+00:01:46.480 --> 00:01:48.380
+la J en este caso, y la pone
+
+00:01:48.440 --> 00:01:50.840
+en una caja nueva llamada letter. Por cierto,
+
+00:01:50.880 --> 00:01:52.240
+podríamos llamarla de cualquier forma. No tiene
+
+00:01:52.260 --> 00:01:53.920
+que ser letter. Aquí decidimos
+
+00:01:53.960 --> 00:01:57.020
+llamarla letter. Luego ejecuta el código
+
+00:01:57.080 --> 00:01:58.960
+dentro de las llaves, y aquí puedes hacer
+
+00:01:59.000 --> 00:02:01.060
+cualquier cosa que harías en otro lugar del código.
+
+00:02:01.540 --> 00:02:03.560
+La única diferencia es que este bloque
+
+00:02:03.640 --> 00:02:06.320
+de código se ejecuta una vez por cada letra
+
+00:02:06.380 --> 00:02:07.900
+del string, y tendrá disponible
+
+00:02:07.960 --> 00:02:11.940
+esta variable. Cada vez que Jiki llega a la
+
+00:02:12.040 --> 00:02:15.000
+llave de cierre, descarta la caja letter
+
+00:02:15.020 --> 00:02:16.740
+y crea una nueva con la
+
+00:02:16.860 --> 00:02:19.220
+siguiente letra dentro. Así que la primera vez,
+
+00:02:19.340 --> 00:02:20.800
+descarta la J y pone una
+
+00:02:20.920 --> 00:02:23.000
+e en la caja. Después hace
+
+00:02:23.020 --> 00:02:25.740
+lo mismo con la r, luego la e, la m,
+
+00:02:26.080 --> 00:02:28.790
+y la y. Seis letras, seis vueltas al
+
+00:02:28.840 --> 00:02:31.300
+bucle. Ojalá haya quedado claro. Toma un
+
+00:02:31.340 --> 00:02:32.560
+poco de tiempo acostumbrarse a
+
+00:02:32.600 --> 00:02:34.900
+la sintaxis, pero no es un concepto
+
+00:02:34.920 --> 00:02:37.730
+realmente difícil. A continuación, tienes
+
+00:02:37.760 --> 00:02:40.250
+algunos ejercicios que implican recorrer
+
+00:02:40.250 --> 00:02:42.660
+strings. Te van a pedir que hagas algo diferente
+
+00:02:42.680 --> 00:02:44.980
+con las letras: quizás contar cuántas letras
+
+00:02:45.000 --> 00:02:46.760
+hay, o encontrar la posición de una
+
+00:02:46.800 --> 00:02:49.260
+letra en específico. Vas a necesitar usar las
+
+00:02:49.320 --> 00:02:51.640
+técnicas que aprendiste hasta ahora y combinarlas
+
+00:02:51.700 --> 00:02:57.060
+con este bucle. Estos ejercicios se están volviendo
+
+00:02:57.100 --> 00:03:00.000
+más desafiantes. Estás combinando muchas cosas distintas
+
+00:03:00.020 --> 00:03:02.420
+que ya viste. Tómate tu tiempo con ellos.
+
+00:03:02.500 --> 00:03:03.920
+Puede que te tome un rato completar
+
+00:03:03.960 --> 00:03:06.160
+cada uno. Trata de no apresurarte ni
+
+00:03:06.200 --> 00:03:08.840
+frustrarte si no logras resolverlo. Simplemente
+
+00:03:08.900 --> 00:03:10.920
+tómalo como un rompecabezas. Si te
+
+00:03:10.940 --> 00:03:12.640
+trabas, puedes tomar un descanso, salir
+
+00:03:12.650 --> 00:03:15.160
+a caminar y volver después. Tienes todo
+
+00:03:15.200 --> 00:03:16.790
+el conocimiento que necesitas para hacer esto y
+
+00:03:16.820 --> 00:03:18.870
+las habilidades para lograrlo, pero vas a
+
+00:03:18.940 --> 00:03:21.520
+tener que ser paciente. Y recuerda:
+
+00:03:21.580 --> 00:03:23.320
+puedes usar las pistas si las necesitas,
+
+00:03:23.900 --> 00:03:25.150
+pero trata de reservarlas como último
+
+00:03:25.200 --> 00:03:27.540
+recurso. ¡Buena suerte! Nos vemos
+
+00:03:27.560 --> 00:03:28.060
+por aquí dentro de poco.

@@ -1,0 +1,40 @@
+{
+  "describers": {
+    "move": "verplaatste het laserkanon naar rechts"
+  },
+  "checks": {
+    "notShotAllAliens": "Je hebt nog niet alle aliens neergeschoten."
+  },
+  "tasks": {
+    "shootTheAliens": {
+      "name": "Schiet alle aliens neer",
+      "description": "Verplaats je laserkanon naar rechts en schiet elke alien neer zodra je eronder staat. Mis niet, en ga niet voorbij de rand!"
+    }
+  },
+  "scenarios": {
+    "shootTheAliens": {
+      "name": "Schiet de aliens neer",
+      "description": "Verplaats naar rechts en schiet alle aliens neer"
+    }
+  },
+  "hints": {
+    "whatDoINeedToDo": {
+      "question": "Wat moet ik doen?",
+      "answer": "Net als in het doolhof moet je je personage verplaatsen (dit keer een laser, geen persoon). Maar je moet ook met de laser schieten! Verplaats de laser tot onder een alien en schiet dan. Verplaats hem daarna verder tot je onder de volgende alien staat, en schiet opnieuw. Ga zo door tot je de laatste alien hebt neergeschoten!"
+    },
+    "cantWasteAmmo": {
+      "question": "Ik krijg te horen dat ik geen munitie mag verspillen.",
+      "answer": "Gebruik `shoot()` alleen als je recht onder een alien staat. Probeer een stap verder te gaan (of ben je misschien één stap te ver?)"
+    }
+  },
+  "functions": {
+    "move": {
+      "description": "Verplaatst het laserkanon **één positie naar rechts**. Als je voorbij de rechterrand van het scherm gaat, verlies je!",
+      "category": "Beweging"
+    },
+    "shoot": {
+      "description": "Schiet de laser omhoog. **Schiet alleen als er een alien boven je is**, anders verlies je het spel!",
+      "category": "Actie"
+    }
+  }
+}

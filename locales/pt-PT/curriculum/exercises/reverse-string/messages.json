@@ -1,0 +1,60 @@
+{
+  "tasks": {
+    "reverseStrings": {
+      "name": "Inverter strings",
+      "description": "Inverte uma string para que seja lida da direita para a esquerda em vez de da esquerda para a direita."
+    }
+  },
+  "scenarios": {
+    "reverseEmptyString": {
+      "name": "String vazia",
+      "description": "Uma string vazia deve devolver uma string vazia quando invertida."
+    },
+    "reverseWord": {
+      "name": "Uma palavra",
+      "description": "Inverte a palavra 'robot'."
+    },
+    "reverseCapitalizedWord": {
+      "name": "Uma palavra com maiúscula",
+      "description": "Inverte uma palavra com maiúscula 'Ramen'."
+    },
+    "reverseSentencePunctuation": {
+      "name": "Frase com pontuação",
+      "description": "Inverte uma frase com pontuação 'I'm hungry!'"
+    },
+    "reversePalindrome": {
+      "name": "Palíndromo",
+      "description": "Um palíndromo permanece igual quando invertido."
+    },
+    "reverseEvenSizedWord": {
+      "name": "Palavra de tamanho par",
+      "description": "Inverte uma palavra de tamanho par 'drawer'."
+    },
+    "reverseWideCharacters": {
+      "name": "Carateres largos",
+      "description": "Inverte carateres Unicode largos '子猫'."
+    },
+    "reverseEmojiFamily": {
+      "name": "Família de emojis",
+      "description": "Inverte uma família de emojis."
+    },
+    "reverseEmojiRainbowFlag": {
+      "name": "Bandeira arco-íris",
+      "description": "Faz uma bandeira arco-íris ao inverter."
+    }
+  },
+  "hints": {
+    "reverseByHand": {
+      "question": "Como posso inverter uma palavra à mão?",
+      "answer": "Lês da esquerda para a direita, mas escreves da direita para a esquerda. De forma equivalente, pegas em cada letra à vez e colocas à frente do que já escreveste."
+    },
+    "mapToCode": {
+      "question": "Como é que isso se transforma em código?",
+      "answer": "Percorre a string de entrada caráter a caráter. Para cada caráter, constrói o resultado colocando-o à frente. Isso significa colocá-lo à FRENTE do resultado, não no fim."
+    },
+    "prepend": {
+      "question": "Como é que eu faço 'prepend' em vez de 'append'?",
+      "answer": "Com o operador `+`, fazer 'prepend' é apenas uma questão de ordem. Em vez de `result + char` (que faz 'append'), usa `char + result` (que faz 'prepend')."
+    }
+  }
+}

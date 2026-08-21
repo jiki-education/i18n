@@ -1,0 +1,63 @@
+{
+  "checks": {
+    "tooManyLines": "A tua solução tem demasiadas linhas de código. Consegues torná-la mais curta?"
+  },
+  "tasks": {
+    "calculateSignPrice": {
+      "name": "Calcular o preço do letreiro",
+      "description": "Escreve uma função que calcula o preço de um letreiro. Cada letra custa $12. Os espaços são grátis e não devem ser contados. Devolve o resultado como uma string formatada."
+    },
+    "solveInNineLines": {
+      "name": "Resolver em 9 linhas de código",
+      "description": "Consegues resolver este exercício com apenas 9 linhas de código?"
+    }
+  },
+  "scenarios": {
+    "simpleWord": {
+      "name": "Palavra simples",
+      "description": "Uma única palavra sem espaços."
+    },
+    "singleLetter": {
+      "name": "Letra única",
+      "description": "Um letreiro com apenas uma letra."
+    },
+    "twoWords": {
+      "name": "Duas palavras",
+      "description": "Duas palavras com um espaço que deve ser ignorado."
+    },
+    "multipleSpaces": {
+      "name": "Vários espaços",
+      "description": "Várias palavras com vários espaços a ignorar."
+    },
+    "longText": {
+      "name": "Texto longo",
+      "description": "Um letreiro mais longo com mais letras."
+    },
+    "allSpaces": {
+      "name": "Só espaços",
+      "description": "Um letreiro só com espaços não tem letras para cobrar."
+    },
+    "bonus1": {
+      "name": "9 linhas de código",
+      "description": "Resolve o exercício com apenas 9 linhas de código."
+    }
+  },
+  "hints": {
+    "whatCounting": {
+      "question": "O que estou realmente a contar?",
+      "answer": "Letras. Especificamente, tudo o que não é um espaço. Por isso, queres um contador que aumenta por cada caráter que não é um espaço no texto do letreiro."
+    },
+    "loopCharacters": {
+      "question": "Como é que percorro os carateres?",
+      "answer": "Um ciclo `for...of` dá-te cada caráter à vez, para poderes olhar para eles um de cada vez."
+    },
+    "checkSpace": {
+      "question": "Como é que verifico se um caráter é um espaço?",
+      "answer": "Dentro do ciclo, usa uma condicional para comparar o caráter com `\" \"`. Só conta o caráter quando não é um espaço."
+    },
+    "buildResultString": {
+      "question": "Como é que construo a string de resultado?",
+      "answer": "Usa a concatenação de strings ou template strings. Verifica os conceitos se precisares de um lembrete sobre estes."
+    }
+  }
+}

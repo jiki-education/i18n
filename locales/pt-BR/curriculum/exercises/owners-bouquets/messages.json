@@ -1,0 +1,60 @@
+{
+  "checks": {
+    "flowerCount_zero": "O dono não esperava ver nenhuma flor plantada. Mas você plantou {{got}}.",
+    "flowerCount_one": "O dono esperava ver {{count}} flor plantada. Mas você plantou {{got}}.",
+    "flowerCount_two": "∅",
+    "flowerCount_few": "∅",
+    "flowerCount_many": "O dono esperava ver {{count}} flores plantadas. Mas você plantou {{got}}.",
+    "flowerCount_other": "O dono esperava ver {{count}} flores plantadas. Mas você plantou {{got}}.",
+    "flowerAtPosition": "Era esperada uma flor na posição {{position}}, mas não encontramos nenhuma.",
+    "strayFlower": "Encontramos uma flor na posição {{position}}, que não é onde o dono queria uma. As flores devem ficar espaçadas de forma uniforme."
+  },
+  "tasks": {
+    "plantFlowersEvenly": {
+      "name": "Plante as flores de forma uniforme",
+      "description": "Use askNumberOfFlowers() para saber quantas flores plantar, calcule o intervalo e plante-as com espaçamento uniforme."
+    }
+  },
+  "scenarios": {
+    "oneFlower": {
+      "name": "O dono quer 1 flor",
+      "description": "Neste cenário, `askNumberOfFlowers()` vai retornar 1. Plante 1 flor na posição 50."
+    },
+    "threeFlowers": {
+      "name": "O dono quer 3 flores",
+      "description": "Neste cenário, `askNumberOfFlowers()` vai retornar 3. Plante 3 flores nas posições 25, 50 e 75."
+    },
+    "fourFlowers": {
+      "name": "O dono quer 4 flores",
+      "description": "Neste cenário, `askNumberOfFlowers()` vai retornar 4. Plante 4 flores nas posições 20, 40, 60 e 80."
+    },
+    "nineFlowers": {
+      "name": "O dono quer 9 flores",
+      "description": "Neste cenário, `askNumberOfFlowers()` vai retornar 9. Plante 9 flores nas posições 10, 20, 30, 40, 50, 60, 70, 80 e 90."
+    }
+  },
+  "hints": {
+    "chooseGap": {
+      "question": "Como é que eu descubro onde plantar cada flor?",
+      "answer": "Primeiro calcule o intervalo entre as flores:\n\n```javascript\n100 / (numberOfFlowers + 1)\n```\n\nA primeira flor fica nessa posição, e cada flor seguinte fica um intervalo mais à frente. Então, se houver 3 flores, o intervalo é 25 e elas ficam em 25, 50 e 75."
+    },
+    "seeScenarios": {
+      "question": "Como é que eu vejo os diferentes cenários",
+      "answer": "Clique nos círculos do lado esquerdo, entre o seu código e os resultados."
+    }
+  },
+  "functions": {
+    "askNumberOfFlowers": {
+      "description": "Retorna o **número de flores** a plantar.",
+      "category": "Jardinagem"
+    },
+    "plant": {
+      "description": "Planta uma flor na **posição** indicada.",
+      "category": "Jardinagem"
+    }
+  },
+  "describers": {
+    "askNumberOfFlowers": "perguntou o número de flores a plantar",
+    "plant": "plantou uma flor na posição ${arg1}"
+  }
+}

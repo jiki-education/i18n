@@ -1,4 +1,314 @@
 {
-  "$comment": "Explicit exclusions from the derived corpus. The corpus itself is not listed anywhere: it is every item English exists for in .source/ that at least one target locale already holds a translation of. An entry here drops an item from that whatever is on disk, and must say why. See ENGLISH-SOURCE.md.",
-  "exclude": []
+  "$comment": [
+    "Explicit exclusions from the derived corpus. The corpus itself is not listed anywhere:",
+    "it is every item English exists for in .source/ that at least one target locale already",
+    "holds a translation of. An entry here drops an item from that whatever is on disk, and",
+    "must say why. See ENGLISH-SOURCE.md.",
+    "",
+    "An exclusion binds on BOTH sides: the item stops counting towards completeness, and it",
+    "stops being validated and published. A translated file for it stays on disk, inert, and",
+    "comes back into scope the moment its entry is deleted.",
+    "",
+    "An entry may narrow that to the item's BODY with \"scope\": \"body\". The item then stays in",
+    "the corpus for its translatable frontmatter (a title, a description): that copy is still",
+    "required, counted and published, while the Markdown body is none of the three and is never",
+    "published at all. \"scope\": \"item\" is the default and is the whole-item exclusion above.",
+    "scripts/lib/exclusions.mjs is the only reader of either."
+  ],
+  "$reasons": {
+    "not-yet-live exercise": [
+      "TEMPORARY. This exercise is written in the front-end curriculum but is not part of the",
+      "course yet: it sits past the last shipped level, so no learner can reach it.",
+      "",
+      "ITS TITLE AND DESCRIPTION ARE STILL TRANSLATED, in every locale. They are card copy: two",
+      "short strings that surface in listings and on level pages, where an English title in an",
+      "otherwise translated list is a visible hole. So the exercise's instructions are excluded",
+      "with \"scope\": \"body\" (frontmatter required, body not), and its message catalog, which is",
+      "all insides, is excluded whole. Nothing about the exercise's TEACHING content is expected:",
+      "not the instruction body, the scenarios, the tasks, the hints, the checks or the function",
+      "descriptions. That is the expensive half, and deferring it is the whole point.",
+      "",
+      "A body-excluded instruction page is never published. Its translated title and description",
+      "reach the merged curriculum catalog; its prose artifact and its index entry are not written",
+      "at all, because a page with a Hungarian title over an English body is worse for a learner",
+      "than a page that is not there.",
+      "",
+      "WHEN THE EXERCISE GOES LIVE, DELETE ITS LINES HERE, in the same change that adds it to the",
+      "course. Its body and its catalog are invisible to completeness until then, so a live one",
+      "left listed here would let a locale be declared complete while that exercise renders",
+      "untranslated (a catalog has no English fallback: a learner sees raw key names). That is the",
+      "risk this trades against, deliberately, and only for as long as the exercise is unreachable.",
+      "",
+      "The live set is the 'Stage 3 exercise queue' in the translator repo's orchestrator.md,",
+      "which is every exercise up to and including exercise/formal-dinner. It is the source of",
+      "truth and is deliberately not copied here: these entries are the complement of it, so",
+      "this list is what needs regenerating when that queue moves, and nothing else."
+    ]
+  },
+  "exclude": [
+    {
+      "type": "exercise-instructions",
+      "slug": "alien-detector",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "alien-detector",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "anagram",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "anagram",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "boundaried-ball",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "boundaried-ball",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "chop-shop",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "chop-shop",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "emoji-collector",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "emoji-collector",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "extract-words",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "extract-words",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "llm-response",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "llm-response",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "lookup-time",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "lookup-time",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "lunchbox",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "lunchbox",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "matching-socks",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "matching-socks",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "meal-prep",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "meal-prep",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "nucleotide-count",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "nucleotide-count",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "protein-translation",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "protein-translation",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "rna-transcription",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "rna-transcription",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "scrabble-score",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "scrabble-score",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "sieve",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "sieve",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "smashing-blocks",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "smashing-blocks",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "spotify",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "spotify",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "stars",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "stars",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "tic-tac-toe",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "tic-tac-toe",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "word-count",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "word-count",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "wordle-process-game",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "wordle-process-game",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "wordle-process-guess",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "wordle-process-guess",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-instructions",
+      "slug": "wordle-solver",
+      "scope": "body",
+      "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "exercise-messages",
+      "slug": "wordle-solver",
+      "reason": "not-yet-live exercise"
+    }
+  ]
 }

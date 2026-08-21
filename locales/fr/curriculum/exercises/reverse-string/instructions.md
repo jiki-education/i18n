@@ -4,11 +4,11 @@ description: "Retourne un texte à l'envers."
 en_md5: 9d47faf87b2864284ed64ce1300073ea
 ---
 
-Inverser des strings (les lire de droite à gauche plutôt que de gauche à droite) est une tâche étonnamment courante en programmation.
+Inverser des _strings_ (les lire de droite à gauche plutôt que de gauche à droite) est une tâche étonnamment courante en programmation.
 
-Par exemple, en bio-informatique, inverser des strings d'ADN ou d'ARN est souvent important pour toutes sortes d'analyses, comme la recherche de brins complémentaires ou l'identification de séquences palindromiques.
+Par exemple, en bio-informatique, inverser des _strings_ d'ADN ou d'ARN est souvent important pour toutes sortes d'analyses, comme la recherche de brins complémentaires ou l'identification de séquences palindromiques.
 
-Ta mission est de créer une fonction appelée `reverse` (inverser), qui prend une string en entrée et renvoie sa version inversée.
+Ta mission est de créer une fonction appelée `reverse` (inverser), qui prend une _string_ en entrée et renvoie sa version inversée.
 
 Exemples :
 
@@ -16,7 +16,7 @@ Exemples :
 - Transforme "strops" en "sports"
 - Transforme "racecar" en "racecar" (un palindrome)
 
-### Ces deux derniers scénarios...
+### Nos deux derniers scénarios...
 
 Les deux derniers scénarios ont l'air étranges, non ? Que se passe-t-il ?
 
@@ -26,4 +26,4 @@ L'emoji famille (👩‍👩‍👧‍👦) est composé de deux femmes et de de
 
 L'autre est un arc-en-ciel suivi d'un drapeau (🌈‍️🏳). Quand on inverse l'ordre pour obtenir le drapeau puis l'arc-en-ciel, ça devient un drapeau arc-en-ciel (🏳️‍🌈️) !
 
-Si tu construis ton résultat caractère par caractère, tout devrait fonctionner sans problème. Mais si tu essaies une astuce plus maligne, tu risques de voir les emojis se décomposer.
+Si tu construis ton résultat caractère par caractère, ça devrait aller comme sur des roulettes. Si tu optes pour une astuce plus futée, tu risques de voir les emojis se fragmenter.

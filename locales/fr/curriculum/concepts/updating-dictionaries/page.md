@@ -16,9 +16,9 @@ Jiki ne crée pas un nouveau dictionnaire, il modifie le carnet qui était déj�
 
 Et si tu veux ajouter une information qui n'existait pas encore ? Eh bien, tu peux faire exactement la même chose.
 
-Si tu indiques une clé qui n'existe pas, Jiki ajoutera simplement une nouvelle clé en bas, avec cette valeur.
+Si tu indiques une clé qui n'existe pas, Jiki va juste rajouter une nouvelle clé tout à la fin avec cette valeur-là.
 
-Donc dans ce cas, il va ouvrir le carnet, chercher `"country"`, voir qu'elle n'y est pas, puis ajouter une nouvelle ligne en bas : `"country"` à gauche, `"England"` à droite.
+Donc dans ce cas, il va ouvrir le carnet, chercher `"country"`, voir qu'elle n'y est pas, puis ajouter une nouvelle ligne à la fin : `"country"` à gauche, `"England"` à droite.
 
 ```javascript
 person["country"] = "England"

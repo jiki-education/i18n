@@ -13,6 +13,7 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { REPO_ROOT, TARGET_LOCALES, fail } from "./constants.mjs";
 import { CONTENT_TYPES, contentType, discoverItems, listItems, sourceRepoPath } from "./content-types.mjs";
+import { isExcluded } from "./exclusions.mjs";
 
 /**
  * The repos English is authored in.
@@ -172,20 +173,22 @@ export function englishItems(typeId) {
  * "have you finished what you started", which any locale satisfies by starting
  * one thing. The question that matters is "have you translated everything that
  * EXISTS", and the checkout is what knows that number.
+ *
+ * The one thing it is not measured against is an item corpus.json declares out
+ * of scope. Those are not "everything that exists": they are English nobody is
+ * expected to translate, and counting them would make completeness unreachable
+ * by design rather than by omission. They drop out of the locale side too (see
+ * `listItems`), so the fraction stays a comparison of like with like.
+ *
+ * An item excluded only for its BODY is still counted, because its frontmatter is
+ * still expected. Its file has to exist and carry a translated title, so a locale
+ * that has not written one is not complete.
  */
 export function englishCorpusSize(typeId) {
-  return englishItems(typeId).length;
+  return englishItems(typeId).filter((item) => !isExcluded(typeId, item.slug)).length;
 }
 
 // ------------------------------------------------------------- the corpus --
-
-/** Explicit exclusions. Nothing implicit: an excluded item names its reason. */
-function exclusions() {
-  const file = path.join(REPO_ROOT, "corpus.json");
-  if (!fs.existsSync(file)) return new Set();
-  const { exclude = [] } = JSON.parse(fs.readFileSync(file, "utf8"));
-  return new Set(exclude.map((entry) => `${entry.type}:${entry.slug ?? ""}`));
-}
 
 /**
  * The working corpus for one type: what this repo is actually translating.
@@ -224,7 +227,6 @@ export function unstartedItems(typeId) {
 /** English's items for one type, split by whether the corpus rule admits them. */
 function partitionEnglish(typeId) {
   const type = contentType(typeId);
-  const excluded = exclusions();
 
   const held = new Set();
   for (const locale of TARGET_LOCALES) {
@@ -235,7 +237,7 @@ function partitionEnglish(typeId) {
   const unstarted = [];
   for (const item of englishItems(typeId)) {
     const key = item.slug ?? "";
-    if (excluded.has(`${typeId}:${key}`)) continue;
+    if (isExcluded(typeId, item.slug)) continue;
     const resolved = { type: typeId, slug: item.slug, path: englishPath(typeId, item.slug), slugged: type.slugged };
     (held.has(key) ? inCorpus : unstarted).push(resolved);
   }

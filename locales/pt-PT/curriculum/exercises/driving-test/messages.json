@@ -1,0 +1,63 @@
+{
+  "checks": {
+    "tooManyLines": "A tua solução tem demasiadas linhas de código. Consegues torná-la mais curta?"
+  },
+  "tasks": {
+    "didTheyPass": {
+      "name": "Passou no exame?",
+      "description": "Escreve uma função que analisa os símbolos do exame de condução e determina se o aluno passou. Um aluno reprova se tiver algum erro maior (💥) ou 5 ou mais erros menores (❌)."
+    },
+    "solveInElevenLines": {
+      "name": "Resolve em 12 linhas de código",
+      "description": "Consegues resolver este exercício com apenas 12 linhas de código?"
+    }
+  },
+  "scenarios": {
+    "perfectMarks": {
+      "name": "O aluno perfeito!",
+      "description": "Fez tudo bem, uau!"
+    },
+    "dangerous": {
+      "name": "Perigo para a sociedade",
+      "description": "Não podemos deixar esta pessoa ir para a estrada!"
+    },
+    "oneBigMistake": {
+      "name": "Um erro maior",
+      "description": "Basta um erro maior para reprovar!"
+    },
+    "scrapedThrough": {
+      "name": "Passou por pouco",
+      "description": "Foi por pouco, mas passou!"
+    },
+    "oneMistakeTooMany": {
+      "name": "Um erro a mais!",
+      "description": "Todos aqueles pequenos erros somaram-se."
+    },
+    "bonus1": {
+      "name": "12 linhas de código",
+      "description": "Resolve o exercício com apenas 12 linhas de código."
+    }
+  },
+  "hints": {
+    "lookAtEachMark": {
+      "question": "Como vejo cada símbolo individualmente?",
+      "answer": "Percorre a string com os símbolos, um caráter de cada vez. Cada caráter é ✅, ❌ ou 💥."
+    },
+    "emojiInQuotes": {
+      "question": "Porque é que o meu código se queixa do 💥?",
+      "answer": "Emojis como 💥 e ❌ continuam a precisar de estar entre aspas. São carateres numa string, tal como as letras."
+    },
+    "majorFault": {
+      "question": "O que devo fazer quando vejo um 💥 (maior)?",
+      "answer": "Basta um único erro maior para reprovar, independentemente do que tenha acontecido antes. Por isso, podes devolver `false` imediatamente assim que vires um. Não há necessidade de continuar a procurar."
+    },
+    "minorCount": {
+      "question": "Como lido com os erros menores, em que a contagem é importante?",
+      "answer": "Mantém uma variável de contagem e adiciona-lhe 1 sempre que vires um ❌. Ignora os ✅, eles não mudam nada."
+    },
+    "finalCheck": {
+      "question": "O que verifico no final?",
+      "answer": "Quando o ciclo terminar e não tiveres visto nenhum erro maior, o exame é aprovado se houver menos de 5 erros menores. Devolve `true` se a contagem de erros menores for inferior a 5, caso contrário, `false`."
+    }
+  }
+}

@@ -1,10 +1,10 @@
 ---
 title: "Costruisci il muro"
 description: "Costruisci un muro da zero, mattone dopo mattone, fila dopo fila."
-en_md5: f8972d95a07cefdda884ecba9431a61b
+en_md5: 1cad91fdd523a7af36acc157e3e626d6
 ---
 
-L'ultima volta che hai visto il muro, hai aggiunto uno strato superiore per completarlo. In questo esercizio, partirai da lì per costruire un intero muro da zero, 55 mattoni in totale.
+L'ultima volta che hai visto il muro, hai aggiunto sopra una fila per completarlo. In questo esercizio, partirai da lì per costruire un intero muro da zero, 55 mattoni in totale.
 
 Il muro finale dovrebbe apparire così:
 
@@ -16,6 +16,6 @@ Cose che devi sapere:
 - Le file si alternano: partono dal bordo sinistro (5 mattoni) e partono fuori dallo schermo a sinistra (6 mattoni). (La fila in basso è da 5, quella in alto da 6)
 - La funzione `rectangle` (rettangolo) può comparire una sola volta nel tuo codice!
 
-Lo scopo di questo esercizio è farti sperimentare l'uso combinato dei blocchi `repeat` e dei condizionali. Ci sono molti modi diversi per risolvere questo esercizio. La tua sfida è risolverlo in modo da ottenere un codice pulito e soddisfacente.
+Lo scopo di questo esercizio è farti sperimentare l'uso combinato dei blocchi `repeat` e dei condizionali. Ci sono molti modi per risolvere questo esercizio. La tua sfida è ottenere un codice pulito e soddisfacente.
 
 Una buona domanda da porsi è: «Come farebbe un muratore nel mondo reale?»

@@ -22,7 +22,7 @@ if (outfit !== "disco") {
 }
 ```
 
-Simplement, la condition renvoie vrai si les choses sont différentes, et elle renvoie faux si elles sont identiques. On pourrait donc écrire la même chose en disant : « Si la tenue est disco, ne fais rien. Sinon, ouvre la porte. » Mais en général, il est plus simple et plus clair d'utiliser l'opérateur (_operator_ en anglais) `not` pour dire vraiment ce que tu veux dire.
+Simplement, la condition renvoie vrai si les choses sont différentes, et elle renvoie faux si elles sont identiques. On pourrait donc écrire la même chose en disant : « Si la tenue est disco, ne fais rien. Sinon, ouvre la porte. » Mais en général, il est plus simple et plus clair d'utiliser l'opérateur (_operator_ en anglais) `not` (pas) pour dire vraiment ce que tu veux dire.
 
 Encore une chose à ce sujet. Parfois, tu vas avoir une variable qui vaut vrai et que tu veux faire passer à faux, ou quelque chose qui vaut faux et que tu veux faire passer à vrai, et on peut s'en servir pour garder une trace de quelque chose. Imagine par exemple quelque chose qui rebondit de gauche à droite, avec une variable appelée `movingRight` (« se déplace vers la droite »), qui vaut vrai quand il faut aller vers la droite. Mais quand tu atteins le bord droit, tu veux la faire basculer (_toggle_ en anglais) à faux.
 

@@ -1,0 +1,207 @@
+WEBVTT
+
+NOTE en_md5 d39fabecd86df2df0d2b749f6d2241ba
+
+00:00:00.260 --> 00:00:02.070
+Bem-vindo de volta. Espero que te tenhas divertido
+
+00:00:02.120 --> 00:00:04.900
+com aquela série de exercícios. Estás a fazer
+
+00:00:04.940 --> 00:00:07.970
+progressos fantásticos. Parabéns. Este vídeo vai ser
+
+00:00:08.000 --> 00:00:10.740
+rápido. Já sabes o que são as strings.
+
+00:00:10.940 --> 00:00:12.800
+São pedaços de papel com texto.
+
+00:00:12.840 --> 00:00:15.440
+Tens andado a usá-las ao longo
+
+00:00:15.520 --> 00:00:18.960
+do curso. Mas até agora, todas as strings
+
+00:00:19.100 --> 00:00:22.000
+que usaste foram escritas diretamente por ti.
+
+00:00:22.040 --> 00:00:24.620
+O que acontece se quiseres construir uma string
+
+00:00:24.660 --> 00:00:28.500
+a partir de variáveis ou condições? Como
+
+00:00:28.560 --> 00:00:31.200
+fazemos isso? Bem, há duas formas que
+
+00:00:31.300 --> 00:00:34.520
+te vou mostrar. A primeira chama-se
+
+00:00:34.640 --> 00:00:38.370
+concatenação de strings, que é uma forma pomposa
+
+00:00:38.460 --> 00:00:41.600
+e um pouco confusa de dizer juntar duas
+
+00:00:41.640 --> 00:00:46.120
+strings. Imagina que tens duas palavras, hello (olá)
+
+00:00:46.160 --> 00:00:48.420
+e world (mundo), e queres criar uma string
+
+00:00:48.440 --> 00:00:51.730
+que contenha hello world. Podias simplesmente escrever
+
+00:00:51.940 --> 00:00:54.460
+hello world como uma única string, mas também
+
+00:00:54.540 --> 00:00:59.570
+podias escrever hello espaço mais world, e isso
+
+00:00:59.600 --> 00:01:03.260
+dava-te a mesma string. Claro que
+
+00:01:03.340 --> 00:01:05.340
+neste cenário isto não é assim tão útil.
+
+00:01:05.940 --> 00:01:08.180
+Mas e se tivéssemos uma variável com
+
+00:01:08.240 --> 00:01:10.420
+o nome de alguém e quiséssemos dizer
+
+00:01:10.460 --> 00:01:12.780
+olá a essa pessoa? Imagina que temos
+
+00:01:12.820 --> 00:01:16.020
+uma variável chamada name (nome), que contém Jeremy
+
+00:01:16.060 --> 00:01:18.860
+por vezes e Jiki noutras alturas. Queremos dizer
+
+00:01:18.920 --> 00:01:22.280
+hello Jeremy ou hello Jiki usando essa variável.
+
+00:01:23.380 --> 00:01:25.860
+Bem, podemos conseguir isto com este conceito
+
+00:01:25.920 --> 00:01:30.600
+de concatenação, escrevendo hello mais name. Isso
+
+00:01:30.620 --> 00:01:33.480
+vai dar-nos hello Jeremy ou hello
+
+00:01:33.620 --> 00:01:37.320
+Jiki, ou um olá a qualquer outra pessoa,
+
+00:01:37.360 --> 00:01:41.000
+dependendo do que estiver dentro da caixa name. Também podemos
+
+00:01:41.040 --> 00:01:44.220
+usar algo chamado template literals (modelos de texto)
+
+00:01:44.280 --> 00:01:48.790
+para o mesmo efeito. Mais um nome pomposo e confuso
+
+00:01:48.840 --> 00:01:53.920
+que quer dizer inserir strings dentro de outras strings. Assim,
+
+00:01:53.960 --> 00:01:56.950
+em vez de juntarmos strings, podemos ter
+
+00:01:57.120 --> 00:02:00.830
+uma string, ou um modelo, que tem espaços
+
+00:02:00.900 --> 00:02:04.020
+para outras strings lá dentro. Para isso,
+
+00:02:04.040 --> 00:02:09.800
+usamos acentos graves (backticks em inglês) em vez de aspas. São,
+
+00:02:09.880 --> 00:02:12.420
+como o nome em inglês sugere, apóstrofos ao contrário,
+
+00:02:12.460 --> 00:02:15.080
+mas é bem possível que nunca os tenhas usado,
+
+00:02:15.120 --> 00:02:17.100
+por isso precisas de encontrar a tecla certa
+
+00:02:17.140 --> 00:02:20.730
+no teu teclado. Servem para criar um modelo
+
+00:02:20.800 --> 00:02:24.150
+que pode conter outras strings. E depois,
+
+00:02:24.220 --> 00:02:27.220
+para inserir uma string no modelo,
+
+00:02:27.300 --> 00:02:30.540
+usamos outra sintaxe esquisita, com cifrões e chavetas.
+
+00:02:30.580 --> 00:02:33.160
+Assim, por exemplo, para obter o mesmo efeito
+
+00:02:33.180 --> 00:02:36.200
+de hello mais name que acabámos de ver,
+
+00:02:36.420 --> 00:02:40.700
+podíamos escrever acento grave, hello, cifrão,
+
+00:02:40.860 --> 00:02:45.180
+chaveta, name, chaveta, acento grave. Fica bem melhor
+
+00:02:45.220 --> 00:02:46.560
+do que soa quando o digo.
+
+00:02:47.800 --> 00:02:50.520
+E isto faz exatamente a mesma coisa
+
+00:02:50.580 --> 00:02:53.320
+que juntar as strings. Mas quando tens
+
+00:02:53.390 --> 00:02:56.120
+várias strings que precisam de ser montadas
+
+00:02:56.160 --> 00:02:58.320
+no mesmo sítio, isto pode ser muito mais eficiente.
+
+00:02:59.160 --> 00:03:00.049
+Vais demorar um pouco
+
+00:03:00.100 --> 00:03:02.380
+a habituar-te a esta sintaxe específica,
+
+00:03:02.900 --> 00:03:05.420
+mas não há nada de muito complexo nela.
+
+00:03:07.000 --> 00:03:09.140
+Deixei-te agora dois exercícios para praticares
+
+00:03:09.180 --> 00:03:11.780
+isto. O primeiro usa o mesmo tipo
+
+00:03:11.840 --> 00:03:14.420
+de padrão hello name que acabámos de ver.
+
+00:03:14.460 --> 00:03:17.060
+Podes fazê-lo juntando strings ou com estes modelos,
+
+00:03:18.100 --> 00:03:20.640
+e vou pôr as duas formas nas instruções,
+
+00:03:20.680 --> 00:03:23.880
+como lembrete. O segundo exercício é uma pergunta
+
+00:03:24.100 --> 00:03:27.120
+clássica de entrevista de emprego. Aprender isto
+
+00:03:27.200 --> 00:03:29.760
+vai deixar-te bem preparado para futuras entrevistas.
+
+00:03:30.620 --> 00:03:31.980
+Boa sorte. Vemo-nos aqui
+
+00:03:32.040 --> 00:03:32.380
+daqui a pouco.

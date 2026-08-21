@@ -1,0 +1,101 @@
+{
+  "tasks": {
+    "encode": {
+      "name": "Codificar uma string",
+      "description": "Escreve uma função chamada `encode` que percorre a string, contando quantas vezes cada caráter se repete em sequência. Substitui cada sequência de dois ou mais carateres pelo número seguido do caráter e deixa os carateres isolados como estão."
+    },
+    "decode": {
+      "name": "Descodificar uma string",
+      "description": "Escreve uma função chamada `decode` que inverte o processo. Lê o número à frente de um caráter e repete esse caráter esse número de vezes. Os números podem ter mais do que um algarismo."
+    }
+  },
+  "scenarios": {
+    "rleEncodeEmpty": {
+      "name": "Codificar uma string vazia",
+      "description": "Codificar uma string vazia devolve uma string vazia."
+    },
+    "rleEncodeSingles": {
+      "name": "Carateres isolados não são contados",
+      "description": "Os carateres que aparecem apenas uma vez são codificados sem número."
+    },
+    "rleEncodeNoSingles": {
+      "name": "Uma string sem carateres isolados",
+      "description": "As sequências de carateres repetidos são substituídas por um número e o caráter."
+    },
+    "rleEncodeMixed": {
+      "name": "Carateres isolados misturados com sequências",
+      "description": "Sequências e carateres isolados podem aparecer misturados na mesma string."
+    },
+    "rleEncodeWhitespace": {
+      "name": "Espaços em branco na string",
+      "description": "Os espaços são tratados como qualquer outro caráter, incluindo em sequências."
+    },
+    "rleEncodeLowercase": {
+      "name": "Carateres minúsculos",
+      "description": "A codificação funciona da mesma forma para letras minúsculas."
+    },
+    "rleDecodeEmpty": {
+      "name": "Descodificar uma string vazia",
+      "description": "Descodificar uma string vazia devolve uma string vazia."
+    },
+    "rleDecodeSingles": {
+      "name": "Descodificar carateres isolados",
+      "description": "Os carateres sem número à frente aparecem uma vez."
+    },
+    "rleDecodeNoSingles": {
+      "name": "Descodificar uma string de sequências",
+      "description": "Um número seguido de um caráter expande-se nesse número de cópias do caráter."
+    },
+    "rleDecodeMixed": {
+      "name": "Descodificar carateres isolados misturados com sequências",
+      "description": "Os números com mais do que um algarismo têm de ser lidos por completo antes de expandir."
+    },
+    "rleDecodeWhitespace": {
+      "name": "Descodificar espaços em branco",
+      "description": "Os espaços são expandidos como qualquer outro caráter."
+    },
+    "rleDecodeLowercase": {
+      "name": "Descodificar carateres minúsculos",
+      "description": "A descodificação funciona da mesma forma para letras minúsculas."
+    }
+  },
+  "hints": {
+    "whatIsRle": {
+      "question": "O que faz a codificação por comprimento de sequência, afinal?",
+      "answer": "Comprime sequências do mesmo caráter num número mais o caráter. `\"AAAA\"` transforma-se em `\"4A\"`. Um caráter isolado fica como está, sem número à frente, por isso `\"B\"` continua `\"B\"`."
+    },
+    "countRuns": {
+      "question": "Como conto uma sequência de carateres repetidos?",
+      "answer": "Percorre a string mantendo registo do caráter anterior e do número de vezes que se repetiu. Sempre que o caráter muda, escreve a sequência concluída e começa a contar o novo caráter."
+    },
+    "singleChars": {
+      "question": "Como evito escrever um número para carateres isolados?",
+      "answer": "Só coloca o número à frente quando a contagem for maior do que 1. Se um caráter apareceu apenas uma vez, escreve apenas o caráter."
+    },
+    "decodeDigits": {
+      "question": "Como sei se um caráter é um algarismo durante a descodificação?",
+      "answer": "Verifica se o caráter é um dos `0123456789`, por exemplo com `\"0123456789\".includes(char)`. Se for, faz parte de uma contagem. Se não for, é o caráter a repetir."
+    },
+    "decodeMultiDigit": {
+      "question": "Como leio uma contagem com mais do que um algarismo, como 12?",
+      "answer": "Uma contagem como `12` chega um algarismo de cada vez, por isso constrói-a à medida que avanças em vez de tratar cada algarismo separadamente. Sempre que surge outro algarismo, o número que tens até agora precisa de crescer por um fator de dez para lhe dar espaço antes de adicionares o novo algarismo. `Number()` transforma um caráter de algarismo num número com o qual podes fazer contas."
+    },
+    "decodeRepeat": {
+      "question": "Como repito o caráter o número certo de vezes?",
+      "answer": "Assim que encontras um caráter que não é um algarismo, usa um ciclo que se repete `count` vezes, adicionando o caráter ao teu resultado de cada vez. Depois repõe a contagem a 0, pronta para a próxima sequência. Se não havia contagem, trata-a como 1."
+    }
+  },
+  "functions": {
+    "number": {
+      "description": "Converte uma string que contém um algarismo num número",
+      "category": "Conversão de tipos"
+    },
+    "includes": {
+      "description": "Verifica se uma string contém uma string mais pequena",
+      "category": "Operações com strings"
+    }
+  },
+  "checks": {
+    "mustUseFor": "Quase! Para este exercício, queremos que uses um ciclo `for` para repetir cada caráter o número certo de vezes."
+  }
+}

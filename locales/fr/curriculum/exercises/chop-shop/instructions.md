@@ -10,13 +10,13 @@ Tu proposes plusieurs prestations, de la simple mise en forme à la coupe compl�
 
 À l'approche de la fin de la journée, il te faut un moyen de savoir si tu as le temps de t'occuper des nouvelles personnes qui entrent dans le salon.
 
-Écris une fonction appelée `canFitIn` (peut caser la personne) qui prend trois entrées :
+Écris une fonction appelée `canFitIn` (peut prendre en charge la personne) qui prend trois entrées :
 
-- La première correspond aux coupes déjà dans la file d'attente (un tableau de strings)
-- La deuxième est la coupe que la nouvelle personne souhaite (une string)
+- La première correspond aux coupes déjà dans la file d'attente (un tableau de _strings_)
+- La deuxième est la coupe que la nouvelle personne souhaite (une _string_)
 - La troisième est le nombre de minutes restantes dans la journée (un nombre)
 
-Renvoie un booléen qui indique si tu peux caser la personne.
+Renvoie un booléen qui indique si tu peux t'occuper de la personne.
 
 Les coupes que tu proposes sont :
 

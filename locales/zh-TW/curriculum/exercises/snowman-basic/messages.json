@@ -1,0 +1,43 @@
+{
+  "checks": {
+    "baseCircle": "底座（底部）的圓形不太對喔。",
+    "bodyCircle": "身體（中間）的圓形不太對喔。",
+    "headCircle": "頭部（頂部）的圓形不太對喔。"
+  },
+  "tasks": {
+    "buildSnowman": {
+      "name": "堆出雪人",
+      "description": "畫出三個圓形來堆出一個雪人。"
+    }
+  },
+  "scenarios": {
+    "buildSnowman": {
+      "name": "堆出雪人",
+      "description": "畫出三個圓形來堆出一個雪人。"
+    }
+  },
+  "hints": {
+    "howToDrawCircle": {
+      "question": "我要怎麼在畫布上畫一個圓形？",
+      "answer": "呼叫 `circle(centerX, centerY, radius)`，其中 `centerX` 和 `centerY` 是圓心的座標，而 `radius` 是圓形的大小。"
+    },
+    "circlesHorizontalPosition": {
+      "question": "這些圓形的水平位置應該在哪裡？",
+      "answer": "這三個圓形都有相同的水平中心，所以每一個的 `centerX` 都是 `50`（畫布的寬度是 `100`）。"
+    },
+    "howToStackCircles": {
+      "question": "我要怎麼把這三個圓形堆疊起來？",
+      "answer": "底座圓形是最大的，而且位於靠近底部的地方（較大的 `centerY`）。在它上面的每一個圓形，都會有較小的 `centerY` 和較小的 `radius`。"
+    },
+    "whatNumbersForRadii": {
+      "question": "我應該用什麼數字來設定半徑？",
+      "answer": "這個練習裡的所有數字都是可以被 `5` 整除的。試著把底座的半徑設定在 `20` 左右、身體設定在 `15` 左右，而頭部設定在 `10` 左右，然後慢慢調整，直到它們和目標圖片對齊為止。"
+    }
+  },
+  "functions": {
+    "circle": {
+      "description": "畫一個以 (centerX, centerY) 為圓心，並具有指定半徑的圓形",
+      "category": "繪製形狀"
+    }
+  }
+}

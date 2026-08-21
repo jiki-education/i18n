@@ -1,0 +1,56 @@
+{
+  "checks": {
+    "bottomLeft": "O retângulo inferior esquerdo não está correto.",
+    "bottomRight": "O retângulo inferior direito não está correto.",
+    "secondRowFirst": "O primeiro retângulo da segunda fila a contar de baixo não está correto.",
+    "secondRowLast": "O último retângulo da segunda fila a contar de baixo não está correto.",
+    "thirdRowMiddle": "O retângulo do meio da terceira fila a contar de baixo não está correto.",
+    "fourthRowMiddle": "Um dos retângulos do meio da quarta fila a contar de baixo não está correto.",
+    "topLeft": "O retângulo superior esquerdo não está correto.",
+    "topRight": "O retângulo superior direito não está correto.",
+    "brickCount": "O muro deve ter exatamente 55 tijolos.",
+    "codeQuality": {
+      "rectangleCalledOnce": "Estás a usar a função <code>rectangle</code> em vários sítios no teu código. Só deve aparecer uma vez!"
+    }
+  },
+  "tasks": {
+    "buildWall": {
+      "name": "Constrói o muro",
+      "description": "Constrói um muro completo de 55 tijolos usando ciclos aninhados."
+    }
+  },
+  "scenarios": {
+    "buildWall": {
+      "name": "Constrói um muro de 55 tijolos",
+      "description": "Cria um padrão completo de muro de tijolos usando ciclos aninhados."
+    }
+  },
+  "hints": {
+    "onlyOneRectangleCall": {
+      "question": "Só posso chamar `rectangle` uma vez. Como é que desenho 55 tijolos?",
+      "answer": "Coloca a única chamada a `rectangle` dentro de um ciclo. Cada iteração altera o x e o y para que um novo tijolo seja desenhado num lugar novo."
+    },
+    "wholeGrid": {
+      "question": "Como é que desenho uma grelha completa em vez de apenas uma fila?",
+      "answer": "Usa ciclos aninhados. O ciclo exterior percorre as filas (alterando o y) e o ciclo interior percorre os tijolos dessa fila (alterando o x)."
+    },
+    "offsetRows": {
+      "question": "Como é que lido com as filas estarem deslocadas de maneiras diferentes?",
+      "answer": "Repara bem na imagem. Cada segunda fila está deslocada para o lado e tem um número diferente de tijolos. Por isso, vais querer lidar com os dois tipos de fila de forma diferente, escolhendo uma posição inicial e um número de tijolos para cada uma."
+    },
+    "oddEven": {
+      "question": "Como é que sei se um número de fila é ímpar ou par?",
+      "answer": "O operador `%` (módulo) dá-te o resto da divisão. Dividir o número da fila por 2 dá-te uma forma de distinguir as filas ímpares das pares, o que podes depois testar dentro de um `if`."
+    },
+    "sizesAndSpacings": {
+      "question": "Que tamanhos e espaçamentos é que uso?",
+      "answer": "Cada tijolo tem `20` de largura e `10` de altura, por isso o x aumenta em `20` entre tijolos numa fila e o y muda em `10` entre filas."
+    }
+  },
+  "functions": {
+    "rectangle": {
+      "description": "Desenha um retângulo na posição (left, top) com a largura, a altura e a cor dadas.",
+      "category": "Desenhar Formas"
+    }
+  }
+}

@@ -1,18 +1,18 @@
 WEBVTT
 
-NOTE en_md5 e9fe7e208c7aacef9ec6bae77773a83a
+NOTE en_md5 f4b6546cdc3ad8dde1f9b6b1f3ff5008
 
 00:00:00.120 --> 00:00:02.660
-Üdv újra! Szóval már tudod, hogyan
+Üdv újra! Szóval már tudod,
 
 00:00:02.740 --> 00:00:06.640
-hozz létre függvényeket bemenettel és bemenet nélkül. Egyetlen
+hogyan hozz létre függvényeket bemenettel és anélkül. Egyetlen
 
 00:00:06.780 --> 00:00:08.480
-dolog maradt hátra, és utána már a
+dolog maradt hátra, és utána
 
 00:00:08.520 --> 00:00:11.780
-függvénykészítés igazi mestere leszel. Ez pedig az,
+már a függvénykészítés igazi mestere leszel. Ez pedig az,
 
 00:00:11.860 --> 00:00:14.160
 hogy hogyan adj a függvényeidnek kimeneti csúszdát.
@@ -20,77 +20,170 @@ hogy hogyan adj a függvényeidnek kimeneti csúszdát.
 00:00:15.000 --> 00:00:17.020
 Sok olyan függvényt használtál már, amely
 
-00:00:17.060 --> 00:00:19.540
-visszaad valamit. Az isAlienAbove igazat
+00:00:17.060 --> 00:00:20.400
+visszaad valamit. Az isAlienAbove igazat vagy hamisat ad vissza.
 
-00:00:19.560 --> 00:00:23.850
-vagy hamisat ad vissza. A Math.randomInt(1, 10)
+00:00:20.500 --> 00:00:24.940
+A Math.randomInt(1, 10) egy véletlen számot ad vissza.
 
-00:00:24.000 --> 00:00:27.820
-egy véletlen számot ad vissza. Amikor Jiki ezeket használja,
+00:00:26.100 --> 00:00:28.780
+Amikor Jiki ezeket a függvényeket használja, valami
 
-00:00:27.940 --> 00:00:30.360
-a kimeneti csúszdán kipottyan valami,
+00:00:28.860 --> 00:00:30.980
+kipottyan a kimeneti csúszdán, amit aztán
 
-00:00:30.600 --> 00:00:33.540
-amit aztán fel tud használni. Ehhez
+00:00:31.000 --> 00:00:34.180
+fel tud venni és felhasználni. Ehhez tehát
 
-00:00:33.580 --> 00:00:35.870
-egy újabb kulcsszóra lesz szükségünk,
+00:00:34.220 --> 00:00:36.890
+egy újabb új kulcsszóra lesz szükségünk, ez pedig
 
-00:00:36.140 --> 00:00:39.700
-ez pedig a return. A return
+00:00:36.920 --> 00:00:40.900
+a return kulcsszó. A return kulcsszó azt mondja Mini
 
-00:00:39.740 --> 00:00:42.660
-kulcsszó azt mondja Mini Jikinek, hogy toljon ki
+00:00:40.980 --> 00:00:43.320
+Jikinek, hogy toljon ki valamit a kimeneti
 
-00:00:42.700 --> 00:00:45.330
-valamit a kimeneti csúszdán. Készítsünk hát egy
+00:00:43.330 --> 00:00:46.230
+csúszdán. Készítsünk hát egy függvényt, és
 
-00:00:45.340 --> 00:00:47.460
-függvényt, és nevezzük el meaningOfLife-nak!
+00:00:46.260 --> 00:00:48.760
+nevezzük el meaningOfLife-nak. Ennek a függvénynek
 
-00:00:48.130 --> 00:00:50.200
-Ennek a függvénynek az a dolga, hogy mindig
+00:00:48.920 --> 00:00:51.089
+a dolga mindig csak annyi, hogy visszaadja a
 
-00:00:50.240 --> 00:00:52.650
-a 42-es számot adja vissza. Bemenete
+00:00:51.360 --> 00:00:54.200
+42-es számot. Bemenete egyáltalán nincs. Leírhatod tehát,
 
-00:00:52.720 --> 00:02:32.760
-nincs. Leírhatod hát, hogy function meaningOfLife(),
+00:00:54.240 --> 00:00:58.839
+hogy function meaningOfLife, kapcsos zárójelek, és
 
-00:02:33.240 --> 00:02:35.480
-a „Sorry, too young” stringet kapjuk vissza,
+00:00:58.879 --> 00:01:02.339
+azután egyetlen sor a függvényen belül: return
 
-00:02:36.480 --> 00:02:39.300
-ha pedig a meaningOfLife-ot használjuk,
+00:01:02.399 --> 00:01:06.539
+42. Ez a sor azt mondja Mini Jikinek, hogy tolja ki
 
-00:02:39.720 --> 00:02:43.340
-a 42-es számot kapjuk vissza. Lényegében
+00:01:06.579 --> 00:01:09.539
+a 42-es számot a kimeneti csúszdán, majd
 
-00:02:43.400 --> 00:02:46.000
-így működik a programozás: sok ilyen
+00:01:09.679 --> 00:01:13.559
+álljon meg. Ezt fontos meghallani. A return
 
-00:02:46.060 --> 00:02:48.910
+00:01:13.659 --> 00:01:17.079
+kulcsszó két dolgot mond Mini Jikinek. Először is,
+
+00:01:17.500 --> 00:01:19.639
+hogy tegyen valamit a kimeneti csúszdára, másodszor
+
+00:01:19.779 --> 00:01:22.779
+pedig, hogy álljon meg. Amint
+
+00:01:22.920 --> 00:01:26.579
+használod a return kulcsszót, a függvény véget ér. Mini Jiki
+
+00:01:26.619 --> 00:01:30.059
+semmi mást nem fog csinálni. Ha pedig nem
+
+00:01:30.139 --> 00:01:32.540
+ismered az élet értelmére vonatkozó utalást, az
+
+00:01:32.579 --> 00:01:34.880
+egy híres könyvből, mostanában pedig filmből származik, a címe
+
+00:01:34.899 --> 00:01:37.840
+Galaxis útikalauz stopposoknak. Ajánlom, hogy
+
+00:01:37.879 --> 00:01:39.819
+olvasd el. Nem kell most túl sokat
+
+00:01:39.860 --> 00:01:43.799
+foglalkoznod azzal, hogy mit jelent a 42.
+
+00:01:43.879 --> 00:01:47.819
+Nézzünk most egy kicsit összetettebb példát, ahol
+
+00:01:47.879 --> 00:01:50.439
+van egy függvényünk, amelynek van bemenete
+
+00:01:50.520 --> 00:01:52.479
+és kimeneti csúszdája is. Ugyanazt az
+
+00:01:52.539 --> 00:01:54.520
+ötletet visszük tovább, egy meaningOfLife nevű
+
+00:01:54.599 --> 00:01:57.239
+függvényt, és ennek van egy bemenete,
+
+00:01:57.299 --> 00:02:00.439
+amit age-nek hívnak. Ha valaki 18 éves vagy idősebb,
+
+00:02:00.559 --> 00:02:01.839
+azt mondjuk neki, hogy az élet
+
+00:02:01.939 --> 00:02:05.639
+értelme 42. Egyébként pedig egyszerűen visszaadjuk
+
+00:02:05.699 --> 00:02:09.019
+a „Sorry, too young” stringet. A függvény definíciója
+
+00:02:09.059 --> 00:02:12.679
+nagyon hasonló. Function meaningOfLife, és azután
+
+00:02:12.699 --> 00:02:15.379
+a bemeneti hely, az age, még zárójelek, és azután
+
+00:02:15.419 --> 00:02:18.339
+egy kapcsos zárójel. De most szükségünk van egy
+
+00:02:18.400 --> 00:02:20.459
+if utasításra belül, hogy azt mondhassuk:
+
+00:02:20.619 --> 00:02:23.019
+„ha az életkor nagyobb vagy egyenlő, mint
+
+00:02:23.080 --> 00:02:27.499
+18, akkor 42-t adunk vissza. Egyébként a »Sorry,
+
+00:02:27.540 --> 00:02:30.719
+too young«-ot adjuk vissza.” Ha most ezt a függvényt
+
+00:02:30.779 --> 00:02:33.759
+úgy használjuk, hogy meaningOfLife(15), akkor
+
+00:02:33.799 --> 00:02:37.119
+a „Sorry, too young” stringet kapjuk vissza. Ha pedig
+
+00:02:37.220 --> 00:02:40.060
+a meaningOfLife(30)-cal használjuk, akkor
+
+00:02:40.100 --> 00:02:43.800
+a 42-es számot kapjuk vissza. Lényegében így
+
+00:02:43.820 --> 00:02:46.800
+működik a programozás. Sok ilyen
+
+00:02:46.900 --> 00:02:49.360
 kis építőelemet készítünk, majd
 
-00:02:48.920 --> 00:02:52.600
-programokká illesztjük össze őket. Most
+00:02:49.370 --> 00:02:52.960
+programokká illesztjük össze őket. Most sorban adok
 
-00:02:52.620 --> 00:02:54.730
-sorban adok neked pár feladatot.
+00:02:53.140 --> 00:02:55.190
+neked pár feladatot,
 
-00:02:54.800 --> 00:02:56.750
-Ez valószínűleg a leghosszabb sorozat, amit eddig kaptál,
+00:02:55.220 --> 00:02:57.700
+ez valószínűleg a leghosszabb sorozat, amit eddig kaptál, és
 
-00:02:57.410 --> 00:03:00.140
-és mindent felhasznál, amit itt tanultál,
+00:02:57.780 --> 00:03:00.600
+mindent felhasznál, amit itt tanultál, valamint sok
 
-00:03:00.240 --> 00:03:02.420
-valamint sok mást is, amiről korábban már szó volt.
+00:03:00.640 --> 00:03:04.120
+mást is, amiről korábban már szó volt. Jó szórakozást!
 
-00:03:03.700 --> 00:03:05.620
-Jó szórakozást! Sok szerencsét, és
+00:03:04.560 --> 00:03:05.960
+Sok szerencsét, és hamarosan újra
 
-00:03:05.660 --> 00:03:06.310
-hamarosan újra találkozunk!
+00:03:06.000 --> 00:03:06.310
+találkozunk!

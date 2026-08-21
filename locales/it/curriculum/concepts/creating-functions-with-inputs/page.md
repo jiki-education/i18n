@@ -4,7 +4,7 @@ description: "Aggiungere fessure di input alle tue funzioni, così possono fare 
 en_md5: f70d737888fcbda3306196ff069eb2f1
 ---
 
-Le funzioni che hai creato finora fanno sempre esattamente la stessa cosa ogni volta. `turnAround` (girati) fa sempre girare a sinistra due volte. `shootIfAlienAbove` (spara se l'alieno è sopra) controlla e spara sempre.
+Le funzioni che hai creato finora fanno sempre la stessa cosa. `turnAround` (girati) fa sempre girare a sinistra due volte. `shootIfAlienAbove` (spara se l'alieno è sopra) controlla e spara sempre.
 
 Ma pensa alle funzioni che hai usato durante il corso, a come fanno cose diverse a seconda degli input. `Rectangle` prende left, top, width e height come input, e poi disegna un rettangolo diverso in base a ciò che gli dici.
 
@@ -16,7 +16,7 @@ La prima parte è piuttosto semplice. Devi solo aggiungere delle normali parente
 
 Immagina di creare una funzione che deve sparare molte volte. Chiamiamola `shootMany` (spara più volte).
 
-La scriveremmo così:
+La scriveremo così:
 
 ```javascript
 function shootMany(numShots) {
@@ -24,14 +24,14 @@ function shootMany(numShots) {
 }
 ```
 
-Quando vuoi usare questa funzione, la chiameresti con il numero di spari che vuoi:
+Quando vuoi utilizzare questa funzione, la richiami specificando il numero di spari desiderato:
 
 ```javascript
 shootMany(5)
 shootMany(2)
 ```
 
-Ora arriva il punto chiave. Quando il codice viene eseguito, qualsiasi cosa tu abbia messo in quell'input, `5` o `2`, mini-Jiki, con il cappello all'interno della funzione, prende quel valore in input e lo mette in una scatola chiamata `numShots` (numero di spari), e poi mette quella scatola sugli scaffali all'interno della funzione, perché tu possa usarla nel codice della funzione.
+Ora arriva il punto chiave. Quando il codice viene eseguito, qualsiasi valore tu abbia messo in quell'input (`5`, `2` o altro), il mini-Jiki con il cappello, dentro la funzione, prende quel valore e lo mette in una scatola chiamata `numShots` (numero di spari). Poi appoggia quella scatola sugli scaffali interni, così puoi usarla quando scrivi il codice.
 
 <img
   class="concept-image"
@@ -43,7 +43,9 @@ Ora arriva il punto chiave. Quando il codice viene eseguito, qualsiasi cosa tu a
 
 Lo ripeto.
 
-Quando scriviamo `shootMany(5)` per usare la funzione, Jiki, all'esterno, va a prendere un `5` e lo mette nella fessura di input di `shootMany`. Dentro la macchina, mini-Jiki tira fuori quel `5` e lo mette in una scatola chiamata `numShots`, perché è il nome che hai dato a quella fessura di input, e poi mette quella scatola sugli scaffali, dentro la funzione, dentro la macchina.
+Quando scriviamo `shootMany(5)` per usare la funzione, Jiki, quello all'esterno, prende il valore `5` e lo inserisce nella fessura di input di `shootMany`.
+
+Dentro la macchina, il mini-Jiki prende quel `5` e lo mette in una scatola chiamata `numShots`, perché è il nome che hai dato a quell'input. Da quel momento, quella scatola è disponibile dentro la funzione, così puoi usarla nel codice.
 
 <img
   class="concept-image"
@@ -53,9 +55,13 @@ Quando scriviamo `shootMany(5)` per usare la funzione, Jiki, all'esterno, va a p
   height="302"
 />
 
-E poi, all'interno della funzione, puoi usare la scatola `numShots` come useresti qualsiasi altra scatola. Non c'è niente di magico nel nome `numShots`. Avremmo potuto chiamarla come volevamo. È solo un'istruzione per mini-Jiki di creare sempre, all'interno della funzione, una scatola con quell'etichetta e di metterci dentro tutto ciò che viene passato in quella fessura.
+All'interno della funzione, puoi usare la scatola `numShots` come useresti qualsiasi altra scatola. Non c'è niente di speciale nel nome `numShots`: avresti potuto chiamarla in qualsiasi modo. È semplicemente l'istruzione che dai a mini-Jiki: ogni volta che qualcuno usa quella fessura di input, lui deve creare una scatola con quell'etichetta e metterci dentro il valore che è stato passato.
 
-E una volta che hai un valore in quella scatola, puoi fare tutto quello che faresti normalmente con le scatole. Potresti usare la scatola `numShots` in un ciclo `repeat` per sparare il numero corretto di volte. E puoi avere anche più di un input. Basta separarli con delle virgole. Quindi, se abbiamo una funzione chiamata `drawStar` (disegna stella) che disegna una stella in base alla sua posizione in alto a sinistra, la scriveresti così:
+Una volta che hai un valore in quella scatola, puoi usarlo come useresti qualsiasi altra scatola. Per esempio, puoi usare la scatola `numShots` dentro un ciclo `repeat` per sparare il numero corretto di volte.
+
+Puoi anche avere più di un input: basta separarli con una virgola.
+
+Se abbiamo una funzione chiamata `drawStar` (disegna stella) che disegna una stella in base alla sua posizione in alto a sinistra, la scriveremo così:
 
 ```javascript
 function drawStar(left, top) {
@@ -71,7 +77,7 @@ function drawStar(left, top) {
   height="400"
 />
 
-E poi, quando la funzione viene chiamata, mini-Jiki memorizza i valori passati agli input in scatole chiamate `left` (sinistra) e `top` (alto), e poi le mette sugli scaffali all'interno della funzione.
+Quando la funzione viene chiamata, mini-Jiki memorizza i valori passati agli input nelle scatole chiamate `left` (sinistra) e `top` (alto), e le mette sugli scaffali all'interno della funzione. Da quel momento, puoi usare quelle scatole come useresti qualsiasi altra variabile nel codice della funzione.
 
 <img
   class="concept-image"

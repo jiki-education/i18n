@@ -8,7 +8,7 @@ Finora, quando abbiamo creato variabili, abbiamo usato solo valori semplici: un 
 
 Nella programmazione possiamo usare la matematica di base, addizione, sottrazione, moltiplicazione e divisione, e possiamo usare nei calcoli le variabili che abbiamo definito in precedenza.
 
-Iniziamo dicendo che vogliamo disegnare un rettangolo sulla nostra area di disegno, e vogliamo che inizi a 10 di distanza dal bordo sinistro e dal bordo destro, e a 20 dal bordo superiore e dal bordo inferiore. Quindi sarà al centro dell'area di disegno, leggermente più largo che alto.
+Disegniamo un rettangolo centrato nell'area di disegno, con 10 di margine a sinistra e a destra, e 20 di margine in alto e in basso. Il risultato sarà un rettangolo più largo che alto.
 
 <img
   class="concept-image"
@@ -20,7 +20,10 @@ Iniziamo dicendo che vogliamo disegnare un rettangolo sulla nostra area di diseg
 
 Quando disegniamo un rettangolo, abbiamo bisogno di conoscerne il `left` (sinistra), il `top` (alto), la `width` (larghezza) e la `height` (altezza), oltre al suo colore. Quindi possiamo iniziare scrivendo tutto questo.
 
-E ora dobbiamo effettivamente calcolare quali dovrebbero essere il suo `left`, il suo `top`, la sua `width` e la sua `height`. Quindi impostiamoli. `left` è 10. `top` è 20. La `width`, beh, la `width` è la dimensione dell'area di disegno, che è 100, meno il 10 a sinistra e il 10 a destra, quindi fa 80. E la `height` è l'altezza dell'area di disegno, che è sempre 100, meno il 20 in alto e il 20 in basso, quindi 60.
+Ora dobbiamo calcolare i valori del rettangolo: posizione e dimensioni. Impostiamo quindi i parametri.
+Il valore di `left` è 10, mentre `top` è 20.
+La `width` corrisponde alla larghezza dell'area di disegno (100), meno i 10 di margine a sinistra e i 10 a destra: in totale 80.
+La `height` è l'altezza dell'area (sempre 100), meno i 20 di margine superiore e i 20 inferiori: quindi 60.
 
 ```javascript
 let left = 10
@@ -31,7 +34,7 @@ let height = 60
 rectangle(left, top, width, height, "blue")
 ```
 
-Quindi possiamo impostare quelle variabili. `left`, 10, `top`, 20, `width`, 80, `height`, 60. Ma cosa succede se invece vogliamo spostare il rettangolo un po' più all'interno, renderlo un po' più piccolo? Se vogliamo spostarlo a 20 dal bordo sinistro e destro e a 30 dall'alto e dal basso? Dobbiamo rifare tutti i calcoli. La `width` ora è 100 meno 20 meno 20, e la `height` è 100 meno 30 meno 30, e questo è decisamente più lavoro e più matematica di quanto io voglia fare. Quindi, invece, possiamo dire al computer di farlo per noi.
+Ora possiamo impostare i valori del rettangolo: `left` = 10, `top` = 20, `width` = 80 e `height` = 60. Se però decidiamo di spostarlo più verso l'interno, ad esempio 20 dai lati sinistro e destro e 30 dai lati superiore e inferiore, dobbiamo ricalcolare tutto da capo. La larghezza diventa 100 − 20 − 20, mentre l'altezza diventa 100 − 30 − 30. È un processo ripetitivo e richiede più calcoli del necessario. Per evitare di farli ogni volta, possiamo lasciare che sia il computer a occuparsene automaticamente.
 
 Possiamo impostare la `width` come 100 meno il `left` meno il `left`, e la `height` come 100 meno il `top` meno il `top`, perché il margine superiore e inferiore sono uguali. Oppure possiamo scriverlo come 100 meno `left` per due, o 100 meno `top` per due.
 
@@ -40,7 +43,7 @@ let width = 100 - left * 2
 let height = 100 - top * 2
 ```
 
-E ora, se cambiamo il `left` o il `top`, anche la `width` e la `height` cambieranno. Quindi le cose iniziano a collegarsi tra loro. E per quanto riguarda l'area di disegno? Al momento è 100. Ma cosa succede se la nostra area di disegno diventa 200 di larghezza e di altezza, invece? Beh, probabilmente dovremmo impostare una variabile chiamata `canvasSize` (dimensione dell'area di disegno) e impostarla a 100. E ora la nostra `width` è `canvasSize` meno `left` per due, e la nostra `height` è `canvasSize` meno `top` per due.
+Ora, se cambiamo il valore di `left` o `top`, anche `width` e `height` cambieranno di conseguenza. Le variabili iniziano quindi a dipendere l'una dall'altra. E lo stesso vale per l'area di disegno: finora è 100, ma cosa succede se il nostro canvas diventa 200×200? A questo punto conviene creare una variabile chiamata `canvasSize` e impostarla a 100. In questo modo `width` diventa `canvasSize` − `left` × 2, e `height` diventa `canvasSize` − `top` × 2. Così tutto si aggiorna automaticamente quando cambiamo i margini.
 
 ```javascript
 let canvasSize = 100

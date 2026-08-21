@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "firstFlowerHeadWrong": "A cabeça da flor no primeiro fotograma não está correta.",
+    "finalFlowerHeadWrong": "A cabeça da flor no último fotograma não está correta.",
+    "firstPistilWrong": "O pistilo no primeiro fotograma não está correto.",
+    "finalPistilWrong": "O pistilo no último fotograma não está correto.",
+    "firstStemWrong": "O caule no primeiro fotograma não está correto.",
+    "finalStemWrong": "O caule no último fotograma não está correto.",
+    "firstLeftLeafWrong": "A folha da esquerda no primeiro fotograma não está correta.",
+    "finalLeftLeafWrong": "A folha da esquerda no último fotograma não está correta.",
+    "firstRightLeafWrong": "A folha da direita no primeiro fotograma não está correta.",
+    "finalRightLeafWrong": "A folha da direita no último fotograma não está correta."
+  },
+  "tasks": {
+    "drawScene": {
+      "name": "Desenha a cena",
+      "description": "Faz a flor brotar. Vai um passo de cada vez!"
+    }
+  },
+  "scenarios": {
+    "drawSproutingFlower": {
+      "name": "Faz a flor brotar",
+      "description": "Vai um passo de cada vez!"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Por onde devo começar a organizar a cena?",
+      "answer": "Escolhe um ponto central. O centro da flor é uma boa âncora. O caule, o pistilo e as folhas podem todos ser derivados a partir dele. Dessa forma, a flor inteira mantém-se ligada enquanto é animada."
+    },
+    "growEachIteration": {
+      "question": "Como é que faço a flor subir e crescer em cada iteração?",
+      "answer": "No topo do corpo do ciclo, antes de qualquer desenho, atualiza `flowerCenterY` e `flowerRadius` para os novos valores deste fotograma. As instruções dão as quantidades. O que importa é atualizar *antes* das chamadas de desenho, não depois."
+    },
+    "stemAttached": {
+      "question": "Como é que mantenho o caule ligado à flor enquanto ela sobe?",
+      "answer": "Não dês ao caule um topo fixo. O topo dele *é* `flowerCenterY`. A base dele é o chão. Portanto, a altura dele é a distância entre os dois. A largura pode depois ser derivada dessa altura."
+    },
+    "leafSizing": {
+      "question": "Como é que dimensiono as folhas para que cresçam com a flor?",
+      "answer": "O `radiusX` e o `radiusY` das folhas são frações de `flowerRadius`. Dessa forma, crescem em conjunto. Liga a posição vertical delas ao caule, não a um Y fixo da tela, para que subam com a flor."
+    },
+    "flowerNeverChanges": {
+      "question": "A minha flor desenha uma vez e nunca muda. O que está errado?",
+      "answer": "Provavelmente estás a definir os valores iniciais uma vez antes do ciclo, mas não os estás a atualizar *dentro* do ciclo. O corpo do ciclo tem de alterar as tuas variáveis em cada iteração, antes das chamadas de desenho."
+    },
+    "firstFlowerCoords": {
+      "question": "Podes dar-me as coordenadas da primeira flor para eu comparar?",
+      "answer": "Na primeira iteração, as formas devem ser:\n\n- Flor: `circle(50, 89, 0.4)`\n- Pistilo: `circle(50, 89, 0.1)`\n- Caule: `rectangle(49.95, 89, 0.1, 1)`\n- Folha da esquerda: `ellipse(49.75, 89.5, 0.2, 0.08)`\n- Folha da direita: `ellipse(50.25, 89.5, 0.2, 0.08)`\n\nAtiva o botão de informação na barra de reprodução para veres os teus próprios valores nesse fotograma."
+    },
+    "finalFlowerCoords": {
+      "question": "Podes dar-me as coordenadas da última flor para eu comparar?",
+      "answer": "Na última iteração, as formas devem ser:\n\n- Flor: `circle(50, 30, 24)`\n- Pistilo: `circle(50, 30, 6)`\n- Caule: `rectangle(47, 30, 6, 60)`\n- Folha da esquerda: `ellipse(35, 60, 12, 4.8)`\n- Folha da direita: `ellipse(65, 60, 12, 4.8)`\n\nAtiva o botão de informação na barra de reprodução para veres os teus próprios valores nesse fotograma."
+    }
+  },
+  "functions": {
+    "rectangle": {
+      "description": "Desenha um **retângulo** na posição (left, top) com a largura, altura e cor especificadas. A posição representa o canto superior esquerdo do retângulo.",
+      "category": "Desenhar Formas"
+    },
+    "circle": {
+      "description": "Desenha um **círculo** na posição central (centerX, centerY) com o raio e a cor especificados.",
+      "category": "Desenhar Formas"
+    },
+    "ellipse": {
+      "description": "Desenha uma **elipse** na posição central (centerX, centerY) com o radiusX, o radiusY e a cor especificados.",
+      "category": "Desenhar Formas"
+    }
+  }
+}

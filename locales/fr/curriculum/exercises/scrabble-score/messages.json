@@ -1,16 +1,16 @@
 {
   "tasks": {
     "createLetterValuesFunction": {
-      "name": "Crée la fonction letterValues",
-      "description": "Écris une fonction letterValues qui renvoie un dictionnaire associant chaque lettre majuscule à sa valeur en points au Scrabble. Pars de la liste fournie de groupes de lettres et de leurs valeurs, et convertis-la en dictionnaire."
+      "name": "Crée la fonction `letterValues`",
+      "description": "Écris une fonction `letterValues` qui renvoie un dictionnaire associant chaque lettre majuscule à sa valeur en points au Scrabble. Pars de la liste fournie de groupes de lettres et de leurs valeurs, et convertis-la en dictionnaire."
     },
     "singleLetters": {
       "name": "Calcule le score de lettres seules",
-      "description": "Écris une fonction scrabbleScore qui prend un mot et renvoie son score total au Scrabble. Commence par la faire fonctionner pour des lettres seules."
+      "description": "Écris une fonction `scrabbleScore` qui prend un mot et renvoie son score total au Scrabble. Commence par la faire fonctionner pour des lettres seules."
     },
     "words": {
       "name": "Calcule le score de mots",
-      "description": "Fais maintenant fonctionner scrabbleScore avec des mots entiers de différentes longueurs."
+      "description": "Fais maintenant fonctionner `scrabbleScore` avec des mots entiers de différentes longueurs."
     },
     "edgeCases": {
       "name": "Gère les cas limites",
@@ -19,8 +19,8 @@
   },
   "scenarios": {
     "letterValues": {
-      "name": "La fonction letterValues",
-      "description": "La fonction letterValues doit renvoyer un dictionnaire complet des valeurs des lettres."
+      "name": "La fonction `letterValues`",
+      "description": "La fonction `letterValues` doit renvoyer un dictionnaire complet des valeurs des lettres."
     },
     "scrabbleLowercaseLetter": {
       "name": "Lettre minuscule",
@@ -74,7 +74,7 @@
     },
     "buildLookup": {
       "question": "Comment transformer ces groupes en un outil de recherche utilisable ?",
-      "answer": "Construis un dictionnaire en parcourant les lettres de chaque groupe et en associant chaque lettre à la valeur de son groupe. Ensuite, `dict[\"A\"]` te donne directement `1`."
+      "answer": "Construis un dictionnaire en parcourant les lettres de chaque groupe et en associant chaque lettre à la valeur de son groupe. Ainsi, `dict[\"A\"]` te donnera directement `1`."
     },
     "lowercaseInput": {
       "question": "Pourquoi mes recherches ne fonctionnent-elles pas avec des minuscules ?",
@@ -87,7 +87,7 @@
   },
   "functions": {
     "toUpperCase": {
-      "description": "Convertit une string en majuscules (fournie par la stdlib du niveau)",
+      "description": "Convertit une string en majuscules (fournie par la bibliothèque standard du niveau)",
       "category": "Opérations sur les strings"
     }
   }

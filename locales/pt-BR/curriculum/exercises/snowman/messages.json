@@ -1,0 +1,39 @@
+{
+  "checks": {
+    "baseCircle": "O círculo da base (embaixo) não está certo. Verifique snowmanCenterX, baseCenterY e baseRadius.",
+    "bodyCircle": "O círculo do corpo (no meio) não está certo. Verifique snowmanCenterX, bodyCenterY e bodyRadius.",
+    "headCircle": "O círculo da cabeça (no topo) não está certo. Verifique snowmanCenterX, headCenterY e headRadius."
+  },
+  "tasks": {
+    "buildSnowman": {
+      "name": "Construa o boneco de neve",
+      "description": "Defina os valores das variáveis para que o boneco de neve corresponda à imagem-alvo."
+    }
+  },
+  "scenarios": {
+    "buildSnowman": {
+      "name": "Construa o boneco de neve",
+      "description": "Defina os valores corretos das variáveis para desenhar o boneco de neve."
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Não sei por onde começar",
+      "answer": "O código original desenha um círculo branco do lado esquerdo. Você precisa corrigir os valores de snowmanCenterX, baseCenterY e baseRadius para colocá-lo sobre o anel de baixo do modelo. Depois, acrescente variáveis para os outros círculos."
+    },
+    "variableNotFoundError": {
+      "question": "Recebo um erro do tipo \"Jiki could not find a variable called 'XXX'\"",
+      "answer": "Significa que você ainda não criou a variável (a caixa nas prateleiras do Jiki) com a palavra-chave `let`. Quando o Jiki lê o código que desenha os círculos, ele espera encontrar as caixas referidas, mas elas não estão lá. Então você precisa acrescentá-las."
+    },
+    "stillNotDeclaredError": {
+      "question": "Acrescentei as variáveis mas continuo recebendo um erro de \"not declared\"",
+      "answer": "Verifique a ortografia: é provável que você tenha um erro de digitação. Lembre-se de que as maiúsculas e minúsculas fazem diferença: `bodycentery` não é o mesmo que `bodyCenterY`."
+    }
+  },
+  "functions": {
+    "circle": {
+      "description": "Desenha um círculo com o centro em (centerX, centerY), com o raio e a cor indicados",
+      "category": "Desenhar formas"
+    }
+  }
+}

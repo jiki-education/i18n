@@ -1,0 +1,222 @@
+WEBVTT
+
+NOTE en_md5 6ff1da8907b7499eb2c565476fd62b73
+
+00:00:00.160 --> 00:00:02.940
+Bem-vindo de volta. Até agora, quando pensávamos
+
+00:00:03.180 --> 00:00:05.540
+em strings ou números, tínhamos a ideia
+
+00:00:05.600 --> 00:00:10.140
+de que eram coisas bastante estáticas. E, embora o sejam,
+
+00:00:10.180 --> 00:00:13.260
+também têm muitos recursos integrados
+
+00:00:13.540 --> 00:00:16.240
+que o Jiki pode usar. E, à medida
+
+00:00:16.320 --> 00:00:18.790
+que avançamos, vamos aprender sobre esses recursos,
+
+00:00:18.840 --> 00:00:20.940
+sobre este tipo de capacidades que eles têm
+
+00:00:20.980 --> 00:00:23.690
+e que tornam a sua vida muito mais fácil. E
+
+00:00:23.700 --> 00:00:26.100
+há dois tipos de capacidades que vamos
+
+00:00:26.160 --> 00:00:30.220
+ver: propriedades e métodos. Vamos começar
+
+00:00:30.240 --> 00:00:34.750
+por ver as propriedades. As propriedades são fatos que
+
+00:00:34.800 --> 00:00:37.370
+podemos pedir ao Jiki que nos diga
+
+00:00:37.400 --> 00:00:40.800
+sobre as coisas. Por exemplo, as strings têm uma propriedade
+
+00:00:40.840 --> 00:00:43.500
+chamada length, que o Jiki pode usar para nos
+
+00:00:43.540 --> 00:00:46.020
+dizer qual é o comprimento de uma string. Portanto,
+
+00:00:46.060 --> 00:00:48.100
+em vez de termos que percorrer todas as letras
+
+00:00:48.140 --> 00:00:50.380
+para descobrir o tamanho de uma string,
+
+00:00:50.400 --> 00:00:52.300
+podemos simplesmente pedir ao Jiki que nos diga.
+
+00:00:53.700 --> 00:00:55.620
+E, para isso, usamos uma nova
+
+00:00:55.700 --> 00:00:59.080
+forma de sintaxe: um ponto. Por exemplo, se
+
+00:00:59.100 --> 00:01:01.460
+tivermos a string Jeremy e quisermos
+
+00:01:01.500 --> 00:01:05.540
+obter o comprimento dela, podemos escrever Jeremy.length,
+
+00:01:07.240 --> 00:01:10.200
+e é só isso. Quando o Jiki cria uma string,
+
+00:01:10.400 --> 00:01:12.500
+ele conta as letras e, digamos assim,
+
+00:01:12.540 --> 00:01:14.240
+escreve um número no canto com
+
+00:01:14.260 --> 00:01:16.580
+quantas são. E depois, quando usamos
+
+00:01:16.620 --> 00:01:19.960
+a propriedade length, o Jiki vai só ver
+
+00:01:20.040 --> 00:01:23.130
+qual era esse número. Assim, no nosso exemplo Jeremy.length,
+
+00:01:23.220 --> 00:01:27.480
+quando o Jiki cria a string Jeremy,
+
+00:01:27.560 --> 00:01:29.510
+ele conta as letras, escreve o número seis
+
+00:01:29.540 --> 00:01:32.580
+no canto e, depois, quando escrevemos Jeremy.length,
+
+00:01:33.060 --> 00:01:35.060
+ele vai verificar esse número. Portanto, você pode
+
+00:01:35.080 --> 00:01:37.980
+pensar nas propriedades como fatos
+
+00:01:38.020 --> 00:01:41.160
+sobre essa coisa. Agora, eu disse que havia propriedades
+
+00:01:41.220 --> 00:01:44.880
+e métodos, então o que são métodos? Os métodos são
+
+00:01:44.920 --> 00:01:49.590
+funções que pertencem à string. Portanto, em vez
+
+00:01:49.600 --> 00:01:52.120
+de escrevermos uma função na qual
+
+00:01:52.180 --> 00:01:54.960
+colocamos uma string como valor de entrada, podemos
+
+00:01:55.060 --> 00:01:59.020
+usar um método diretamente na string. Por
+
+00:01:59.080 --> 00:02:01.700
+exemplo, você lembra da função que escreveu em que
+
+00:02:01.760 --> 00:02:04.700
+verificava se uma string tinha uma letra específica
+
+00:02:04.760 --> 00:02:07.580
+lá dentro? Bem, as strings têm, na verdade, um
+
+00:02:07.720 --> 00:02:11.320
+método chamado includes que faz isso, e
+
+00:02:11.360 --> 00:02:13.440
+podemos usá-lo com a mesma sintaxe de ponto
+
+00:02:13.480 --> 00:02:16.530
+que você viu para as propriedades. A diferença é que,
+
+00:02:16.540 --> 00:02:18.280
+quando os escrevemos, nós os escrevemos como
+
+00:02:18.360 --> 00:02:21.989
+funções, com parênteses e valores de entrada. Então podemos
+
+00:02:22.000 --> 00:02:26.520
+escrever, e receberemos true, porque Jeremy
+
+00:02:26.560 --> 00:02:28.840
+tem um e lá dentro. Agora, estes são
+
+00:02:28.880 --> 00:02:31.840
+diferentes das propriedades porque não são fatos estáticos.
+
+00:02:32.500 --> 00:02:34.680
+São, na verdade, funções. Você pode pensar neles
+
+00:02:34.720 --> 00:02:37.260
+como funções que têm uma caixa incorporada
+
+00:02:37.300 --> 00:02:40.850
+com a string lá dentro. O modo
+
+00:02:40.880 --> 00:02:43.150
+como funcionam não importa muito por enquanto. Você não vai
+
+00:02:43.160 --> 00:02:45.200
+construí-los tão cedo. Tudo o que
+
+00:02:45.240 --> 00:02:47.720
+você precisa saber é que você usa
+
+00:02:47.780 --> 00:02:50.200
+um método usando um ponto e, depois,
+
+00:02:50.240 --> 00:02:53.070
+a sintaxe normal de função. Uma coisa a saber
+
+00:02:53.100 --> 00:02:55.160
+sobre as strings é que os métodos não alteram
+
+00:02:55.200 --> 00:02:58.400
+nada dentro da string. Por exemplo, existe um
+
+00:02:58.480 --> 00:03:01.560
+método toUpperCase, que retorna a string com
+
+00:03:01.660 --> 00:03:04.010
+todas as letras em maiúsculas. Mas isso não
+
+00:03:04.060 --> 00:03:06.960
+altera a string original. Ela continua a conter Jeremy
+
+00:03:07.120 --> 00:03:10.100
+escrito apenas com um J maiúsculo. Em vez disso, o Jiki
+
+00:03:10.140 --> 00:03:13.120
+está criando uma nova string toda em maiúsculas.
+
+00:03:14.480 --> 00:03:16.040
+Agora, à medida que avançarmos, vou te apresentar
+
+00:03:16.120 --> 00:03:18.100
+muitas propriedades e métodos diferentes
+
+00:03:18.140 --> 00:03:20.810
+que você pode usar. Leia com atenção as instruções
+
+00:03:20.840 --> 00:03:23.410
+dos exercícios para aprender sobre todas
+
+00:03:23.440 --> 00:03:26.380
+estas coisas diferentes. Mas, primeiro, vamos voltar
+
+00:03:26.420 --> 00:03:29.380
+ao exercício Pangrama de antes, mas com
+
+00:03:29.420 --> 00:03:32.600
+um pouco mais de complexidade. Divirta-se. A gente se vê
+
+00:03:32.640 --> 00:03:33.470
+aqui em breve.

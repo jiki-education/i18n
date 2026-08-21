@@ -1,0 +1,56 @@
+{
+  "checks": {
+    "bottomLeft": "O retângulo inferior esquerdo não está correto.",
+    "bottomRight": "O retângulo inferior direito não está correto.",
+    "secondRowFirst": "O primeiro retângulo da segunda fileira de baixo para cima não está correto.",
+    "secondRowLast": "O último retângulo da segunda fileira de baixo para cima não está correto.",
+    "thirdRowMiddle": "O retângulo do meio da terceira fileira de baixo para cima não está correto.",
+    "fourthRowMiddle": "Um dos retângulos do meio da quarta fileira de baixo para cima não está correto.",
+    "topLeft": "O retângulo superior esquerdo não está correto.",
+    "topRight": "O retângulo superior direito não está correto.",
+    "brickCount": "O muro deve ter exatamente 55 tijolos.",
+    "codeQuality": {
+      "rectangleCalledOnce": "Você está usando a função <code>rectangle</code> em vários lugares no seu código. Ela só deve aparecer uma vez!"
+    }
+  },
+  "tasks": {
+    "buildWall": {
+      "name": "Construa o muro",
+      "description": "Construa um muro completo de 55 tijolos usando laços aninhados."
+    }
+  },
+  "scenarios": {
+    "buildWall": {
+      "name": "Construa um muro de 55 tijolos",
+      "description": "Crie um padrão completo de muro de tijolos usando laços aninhados."
+    }
+  },
+  "hints": {
+    "onlyOneRectangleCall": {
+      "question": "Só posso chamar `rectangle` uma vez. Como eu desenho 55 tijolos?",
+      "answer": "Coloque a única chamada a `rectangle` dentro de um laço. Cada iteração altera o x e o y para que um novo tijolo seja desenhado num lugar novo."
+    },
+    "wholeGrid": {
+      "question": "Como eu desenho uma grade completa em vez de apenas uma fileira?",
+      "answer": "Use laços aninhados. O laço externo percorre as fileiras (alterando o y) e o laço interno percorre os tijolos dessa fileira (alterando o x)."
+    },
+    "offsetRows": {
+      "question": "Como eu lido com as fileiras estarem deslocadas de maneiras diferentes?",
+      "answer": "Repare bem na imagem. Cada segunda fileira está deslocada para o lado e tem um número diferente de tijolos. Então você vai querer lidar com os dois tipos de fileira de forma diferente, escolhendo uma posição inicial e um número de tijolos para cada uma."
+    },
+    "oddEven": {
+      "question": "Como eu sei se um número de fileira é ímpar ou par?",
+      "answer": "O operador `%` (módulo) te dá o resto da divisão. Dividir o número da fileira por 2 te dá uma forma de distinguir as fileiras ímpares das pares, o que você pode depois testar dentro de um `if`."
+    },
+    "sizesAndSpacings": {
+      "question": "Que tamanhos e espaçamentos eu uso?",
+      "answer": "Cada tijolo tem `20` de largura e `10` de altura, então o x aumenta em `20` entre tijolos numa fileira e o y muda em `10` entre fileiras."
+    }
+  },
+  "functions": {
+    "rectangle": {
+      "description": "Desenha um retângulo na posição (left, top) com a largura, a altura e a cor dadas.",
+      "category": "Desenhar Formas"
+    }
+  }
+}

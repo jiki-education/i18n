@@ -4,7 +4,7 @@ description: "Combiner des variables et des maths pour que les valeurs puissent 
 en_md5: 7ce54754a3ca29896609a01a51b12377
 ---
 
-Jusqu'ici, quand on a créé des variables, on n'y a mis que des valeurs simples : un nombre comme `50` ou une string comme `"yellow"` (jaune). Mais les variables deviennent bien plus puissantes quand on peut les combiner entre elles, par exemple pour dire que le bord gauche d'un rectangle doit se trouver à une certaine distance du bord du canvas.
+Jusqu'ici, quand on a créé des variables, on n'y a mis que des valeurs simples : un nombre comme `50` ou une _string_ comme `"yellow"` (jaune). Mais les variables deviennent bien plus puissantes quand on peut les combiner entre elles, par exemple pour dire que le bord gauche d'un rectangle doit se trouver à une certaine distance du bord du canvas.
 
 En programmation, on peut utiliser des maths tout à fait ordinaires, comme additionner, soustraire, multiplier et diviser, et y intégrer les variables qu'on a déjà définies.
 

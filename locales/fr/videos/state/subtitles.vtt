@@ -1,0 +1,168 @@
+WEBVTT
+
+NOTE en_md5 cc1cedf75df71450fa8e0da4a289c70e
+
+00:00:00.100 --> 00:00:03.520
+Te revoilà ! Jusqu'ici, on a utilisé des variables
+
+00:00:03.740 --> 00:00:06.760
+pour des choses qui ont un sens : l'âge de quelqu'un,
+
+00:00:06.860 --> 00:00:10.680
+l'heure, une couleur. On les a mises à jour, mais
+
+00:00:10.700 --> 00:00:14.900
+elles restaient relativement statiques. Pourtant, l'un
+
+00:00:14.940 --> 00:00:18.320
+des usages les plus courants des variables en programmation
+
+00:00:18.400 --> 00:00:22.020
+consiste à suivre notre progression dans une tâche.
+
+00:00:22.080 --> 00:00:24.280
+Imagine que tu construis un mur, ce que tu vas
+
+00:00:24.340 --> 00:00:26.880
+faire dans un instant. Dans la vraie vie,
+
+00:00:26.940 --> 00:00:29.560
+tu saurais quelle rangée de briques tu montes,
+
+00:00:29.600 --> 00:00:31.540
+celle du bas, celle du haut,
+
+00:00:31.580 --> 00:00:34.380
+ou une au milieu, et tu saurais
+
+00:00:34.420 --> 00:00:36.480
+quelle est la prochaine brique à poser,
+
+00:00:36.520 --> 00:00:40.240
+la troisième, la quatrième, et ainsi de suite.
+
+00:00:40.250 --> 00:00:43.240
+On a besoin de la même chose dans le monde numérique.
+
+00:00:43.360 --> 00:00:47.070
+Ou imagine que tu essaies de créer un robot qui joue
+
+00:00:47.140 --> 00:00:50.220
+tout seul à Space Invaders : il doit savoir
+
+00:00:50.320 --> 00:00:52.220
+où il se trouve sur l'écran,
+
+00:00:52.260 --> 00:00:55.730
+entre la gauche et la droite. En programmation, on appelle
+
+00:00:56.240 --> 00:00:59.840
+cela l'état, un raccourci pour « dans quel état ça se trouve ? ».
+
+00:00:59.880 --> 00:01:02.510
+L'état est utile pour savoir ce qui se passe,
+
+00:01:02.600 --> 00:01:05.099
+mais c'est en le combinant
+
+00:01:05.140 --> 00:01:08.250
+avec des conditions qu'il devient vraiment précieux. Si
+
+00:01:08.280 --> 00:01:10.660
+on construit le mur, il faut vérifier
+
+00:01:10.680 --> 00:01:13.780
+après chaque brique si on vient de poser
+
+00:01:13.820 --> 00:01:16.160
+la dernière de la rangée, et si c'est le cas,
+
+00:01:16.240 --> 00:01:17.520
+passer à la rangée
+
+00:01:17.560 --> 00:01:19.200
+suivante et repartir de la
+
+00:01:19.240 --> 00:01:22.310
+première brique. Si on construit notre robot Space Invaders,
+
+00:01:22.440 --> 00:01:23.780
+il faut vérifier si on est
+
+00:01:23.820 --> 00:01:26.020
+au bord de l'écran avant de se déplacer,
+
+00:01:26.140 --> 00:01:29.700
+et inverser la direction si c'est le cas. Cette
+
+00:01:29.780 --> 00:01:32.360
+direction, c'est aussi de l'état : une trace
+
+00:01:32.380 --> 00:01:35.800
+qui indique si on se déplace vers la gauche ou vers la droite.
+
+00:01:35.900 --> 00:01:37.600
+Au fil de ta progression, l'état va
+
+00:01:37.660 --> 00:01:41.220
+devenir l'un des aspects les plus essentiels de la programmation :
+
+00:01:41.360 --> 00:01:44.100
+savoir où en est quelque chose, dans quel état il est,
+
+00:01:44.500 --> 00:01:47.140
+ou jusqu'où on en est dans notre liste de tâches.
+
+00:01:47.300 --> 00:01:49.960
+Dans les deux prochains exercices,
+
+00:01:49.980 --> 00:01:52.140
+tu vas utiliser l'état pour construire un mur
+
+00:01:52.180 --> 00:01:54.500
+et pour jouer à Space Invaders, en t'appuyant
+
+00:01:54.560 --> 00:01:58.890
+sur les idées qu'on vient de voir. Il est vraiment important
+
+00:01:58.940 --> 00:02:03.780
+de décomposer ces exercices en petites étapes. Réfléchis précisément
+
+00:02:03.840 --> 00:02:05.660
+à ce que tu as besoin de savoir
+
+00:02:05.680 --> 00:02:07.740
+pour les résoudre, comme la rangée de briques
+
+00:02:07.780 --> 00:02:09.360
+sur laquelle tu te trouves
+
+00:02:09.420 --> 00:02:12.680
+ou la position de la brique en cours. Réfléchis aux règles
+
+00:02:12.740 --> 00:02:15.000
+que l'ordinateur doit suivre pour monter
+
+00:02:15.060 --> 00:02:18.780
+le mur en entier. Là, c'est de la vraie programmation.
+
+00:02:19.000 --> 00:02:20.760
+C'est exactement ce que nous,
+
+00:02:20.800 --> 00:02:24.120
+programmeurs, faisons jour après jour.
+
+00:02:24.160 --> 00:02:26.700
+Ça devient plus complexe, mais aussi
+
+00:02:26.720 --> 00:02:29.860
+plus amusant. Ces mécanismes demandent un peu de temps
+
+00:02:29.940 --> 00:02:32.160
+d'adaptation au début, alors
+
+00:02:32.180 --> 00:02:34.600
+prends ton temps, amuse-toi bien,
+
+00:02:34.640 --> 00:02:35.320
+et à très vite !

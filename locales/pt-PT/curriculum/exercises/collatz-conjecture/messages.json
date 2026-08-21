@@ -1,0 +1,40 @@
+{
+  "tasks": {
+    "calculateCollatzSteps": {
+      "name": "Calcular os passos de Collatz",
+      "description": "Escreve uma função que recebe um número e devolve quantos passos são precisos para chegar ao 1 seguindo as regras da Conjetura de Collatz: se for par, divide por 2; se for ímpar, multiplica por 3 e soma 1."
+    }
+  },
+  "scenarios": {
+    "number1": {
+      "name": "Número 1",
+      "description": "Zero passos para o um."
+    },
+    "number16": {
+      "name": "Número 16",
+      "description": "Divide se for par."
+    },
+    "number12": {
+      "name": "Número 12",
+      "description": "Passos pares e ímpares."
+    },
+    "number1000000": {
+      "name": "Número 1000000",
+      "description": "Grande número de passos pares e ímpares."
+    }
+  },
+  "hints": {
+    "loopUntilOne": {
+      "question": "Como é que continuo até o número chegar ao 1?",
+      "answer": "Usa um ciclo `repeat()` sem número. Repete para sempre até usares `return` para sair dele. Dentro do ciclo, substitui o número pelo número seguinte na sequência e devolve assim que chegar ao 1."
+    },
+    "chooseRule": {
+      "question": "Como é que decido qual regra aplicar em cada passo?",
+      "answer": "Verifica se o número é par. O operador módulo faz isso. `number % 2 === 0` significa que é par. Se for par, divide por 2. Caso contrário, faz `3 * number + 1`."
+    },
+    "trackSteps": {
+      "question": "Como é que acompanho a resposta (o número de passos)?",
+      "answer": "Mantém uma variável de contagem para o número de vezes que aplicaste as regras. Pensa no que precisa de lhe acontecer a cada volta do ciclo e no que a tua função deve devolver quando o número chegar ao 1."
+    }
+  }
+}

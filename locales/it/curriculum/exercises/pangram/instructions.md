@@ -1,7 +1,7 @@
 ---
 title: "Pangramma"
 description: "Verifica se una frase contiene ogni lettera dell'alfabeto, senza distinzione tra maiuscole e minuscole."
-en_md5: 8fae2df6ec4385478e4236fa49e21256
+en_md5: 2f0271add2facf8e75ecb8afde53682e
 ---
 
 Benvenuto alla seconda parte della serie sui Pangrammi. Ricorda: un pangramma è una frase che utilizza ogni lettera dell'alfabeto almeno una volta.

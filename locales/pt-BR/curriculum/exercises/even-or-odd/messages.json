@@ -1,0 +1,59 @@
+{
+  "checks": {
+    "tooManyLines": "A sua solução tem linhas de código demais. Você consegue deixá-la mais curta?"
+  },
+  "tasks": {
+    "identifyEvenOrOdd": {
+      "name": "Identifique números pares e ímpares",
+      "description": "Escreva uma função chamada evenOrOdd que recebe um número e retorna \"Even\" se ele for divisível por 2, ou \"Odd\" caso contrário. O zero é par."
+    },
+    "solveInSixLines": {
+      "name": "Resolva em 6 linhas de código",
+      "description": "Você consegue resolver este exercício com apenas 6 linhas de código?"
+    }
+  },
+  "scenarios": {
+    "number14": {
+      "name": "Número 14",
+      "description": "14 é um número par."
+    },
+    "number28": {
+      "name": "Número 28",
+      "description": "28 é um número par."
+    },
+    "numberMinus1": {
+      "name": "Número -1",
+      "description": "-1 é um número ímpar."
+    },
+    "number17": {
+      "name": "Número 17",
+      "description": "17 é um número ímpar."
+    },
+    "number0": {
+      "name": "Número 0",
+      "description": "O zero conta como par."
+    },
+    "bonus1": {
+      "name": "6 linhas de código",
+      "description": "Resolva o exercício com apenas 6 linhas de código."
+    }
+  },
+  "hints": {
+    "howToTell": {
+      "question": "Como você pode saber se um número é par ou ímpar no código?",
+      "answer": "Matematicamente, um número é par se for divisível por 2 sem deixar resto, e ímpar se houver resto 1. Então, você precisa de um jeito de perguntar 'o que sobra depois de dividir por 2?'."
+    },
+    "remainderOperator": {
+      "question": "Existe um operador que me dá o resto de uma divisão?",
+      "answer": "Sim. O operador de resto `%` (às vezes chamado de módulo) faz exatamente isso. Por exemplo, `14 % 2` dá `0`, e `17 % 2` dá `1`. Ele retorna o que sobra depois de dividir o primeiro número pelo segundo."
+    },
+    "turnIntoEvenOdd": {
+      "question": "Já tenho o resto. Agora, como é que eu transformo isso em \"Even\" ou \"Odd\"?",
+      "answer": "Use uma condicional para comparar o resto com `0`. Se `number % 2` for igual a `0`, retorne \"Even\". Caso contrário, retorne \"Odd\"."
+    },
+    "zeroAndNegative": {
+      "question": "Não consigo entender como lidar com 0 e números negativos",
+      "answer": "Você não precisa de nenhum caso especial para eles. `0 % 2` é `0`, então o zero é tratado automaticamente como par. E `-1 % 2` é diferente de zero, então `-1` é tratado como ímpar, que é exatamente o que você quer."
+    }
+  }
+}

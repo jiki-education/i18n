@@ -1,0 +1,51 @@
+{
+  "checks": {
+    "stripe1Purple": "A risca 1 é uma risca das extremidades, por isso deve ser purple.",
+    "stripe2Blue": "A risca 2 deve ser blue (é par, mas não é múltiplo de 4).",
+    "stripe3Yellow": "A risca 3 deve ser yellow (é ímpar e não é uma risca das extremidades).",
+    "stripe4Green": "A risca 4 deve ser green. É um múltiplo de 4, por isso verifica a regra do múltiplo de 4 antes da regra dos números pares.",
+    "stripe5Yellow": "A risca 5 deve ser yellow (é ímpar e não é uma risca das extremidades).",
+    "stripe6Blue": "A risca 6 deve ser blue (é par, mas não é múltiplo de 4).",
+    "stripe8Green": "A risca 8 deve ser green (é um múltiplo de 4).",
+    "stripe12Green": "A risca 12 deve ser green (é um múltiplo de 4).",
+    "stripe19Yellow": "A risca 19 deve ser yellow (é ímpar e não é uma risca das extremidades).",
+    "stripe20Purple": "A risca 20 é uma risca das extremidades, por isso deve ser purple (apesar de ser par).",
+    "rectangleOnce": "Estás a usar a função <code>rectangle</code> em mais do que um sítio. Só deve aparecer uma vez, dentro de um ciclo: não escrevas as 20 riscas à mão!"
+  },
+  "tasks": {
+    "weaveTheFabric": {
+      "name": "Tece o tecido",
+      "description": "Desenha 20 riscas verticais. As duas riscas das extremidades são purple; de resto, os múltiplos de 4 são green, as outras riscas pares são blue e as riscas ímpares são yellow."
+    }
+  },
+  "scenarios": {
+    "weaveTheFabric": {
+      "name": "Tece o tecido às riscas",
+      "description": "Desenha as 20 riscas com as cores corretas."
+    }
+  },
+  "hints": {
+    "howToDraw20Stripes": {
+      "question": "Como desenho 20 riscas em sítios diferentes?",
+      "answer": "Mantém um contador (chama-lhe `i`) e incrementa-o em 1 dentro de um ciclo `repeat`. A risca número `i` tem `5` de largura, por isso a sua aresta esquerda é `(i - 1) * 5`. Desenha aí um `rectangle` com `5` de largura e `100` de altura."
+    },
+    "endStripesPurple": {
+      "question": "Como faço para que apenas as duas riscas das extremidades sejam purple?",
+      "answer": "As riscas das extremidades são a primeira e a última. Uma única comparação não consegue capturar 'um valor OU outro', por isso usa `||` (ou): algo como `if (n === 3 || n === 7)` é verdadeiro para qualquer um dos valores. Aplica isso aos números das duas riscas das extremidades."
+    },
+    "multipleOf4VsEven": {
+      "question": "Como distingo um múltiplo de 4 de um número par comum?",
+      "answer": "Usa o operador `%` (resto): `n % 4 === 0` é verdadeiro apenas para múltiplos de 4, e `n % 2 === 0` é verdadeiro para todos os números pares. Os múltiplos de 4 também são pares, por isso verifica primeiro a regra mais restrita do múltiplo de 4."
+    },
+    "stripe4Blue": {
+      "question": "A risca 4 fica blue, mas devia ser green. Porquê?",
+      "answer": "A ordem importa numa cadeia de `if` / `else if`. 4 é múltiplo de 4 e par, por isso, se verificares `i % 2 === 0` primeiro, fica blue e nunca chega à regra que o torna green. Verifica a regra do múltiplo de 4 antes da regra dos números pares."
+    }
+  },
+  "functions": {
+    "rectangle": {
+      "description": "Desenha um retângulo na posição (left, top) com a largura, altura e cor indicadas.",
+      "category": "Desenhar Formas"
+    }
+  }
+}

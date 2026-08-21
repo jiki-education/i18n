@@ -1,0 +1,204 @@
+WEBVTT
+
+NOTE en_md5 54c871cb5fb9450d2d15334c3f48a372
+
+00:00:00.120 --> 00:00:02.700
+Bem-vindo de volta. Você já sabe
+
+00:00:02.760 --> 00:00:05.780
+usar if, else e else if para tomar
+
+00:00:05.820 --> 00:00:09.260
+decisões no seu código. Se eu pedisse
+
+00:00:09.340 --> 00:00:11.620
+para você abrir a porta só se alguém
+
+00:00:11.720 --> 00:00:14.420
+tivesse mais de 20 anos, provavelmente saberia
+
+00:00:14.460 --> 00:00:17.080
+o que fazer. Mas e se
+
+00:00:17.140 --> 00:00:20.250
+você precisasse verificar se alguém tem mais de 20 anos
+
+00:00:20.560 --> 00:00:23.790
+e está usando a roupa certa? Então, você precisa
+
+00:00:23.820 --> 00:00:27.120
+verificar duas condições diferentes ao mesmo tempo. Como
+
+00:00:27.160 --> 00:00:30.940
+você faria isso? Pense um pouco.
+
+00:00:31.100 --> 00:00:33.820
+Talvez você pudesse usar uma condicional
+
+00:00:33.880 --> 00:00:36.520
+aninhada, assim como já tivemos laços aninhados
+
+00:00:36.540 --> 00:00:39.680
+antes. Ou seja, você poderia dizer: se age for
+
+00:00:39.720 --> 00:00:43.400
+maior do que 20, entramos neste
+
+00:00:43.440 --> 00:00:47.360
+bloco de código; e depois, outro if para ver se outfit é igual a
+
+00:00:47.400 --> 00:00:50.660
+disco, e outra chave e um novo
+
+00:00:50.700 --> 00:00:54.380
+bloco de código. Isso funcionaria, mas fica
+
+00:00:54.400 --> 00:00:57.200
+bastante confuso, principalmente quando você quer ter
+
+00:00:57.300 --> 00:01:00.350
+muitas condicionais. Felizmente, tem um jeito mais fácil:
+
+00:01:00.940 --> 00:01:02.760
+podemos ter condições
+
+00:01:02.820 --> 00:01:06.130
+com várias partes. Em vez de verificarmos apenas
+
+00:01:06.220 --> 00:01:08.020
+uma coisa na condição, podemos verificar
+
+00:01:08.080 --> 00:01:11.360
+duas, três ou mais coisas. E, para
+
+00:01:11.400 --> 00:01:14.000
+isso, precisamos usar a palavra-chave
+
+00:01:14.100 --> 00:01:18.180
+and. Ora, infelizmente, em JavaScript, a palavra-chave and
+
+00:01:18.280 --> 00:01:20.880
+não é, na verdade, a palavra and, como acontece
+
+00:01:20.900 --> 00:01:23.480
+em outras linguagens. Em vez disso, você precisa ter
+
+00:01:23.520 --> 00:01:26.800
+dois e comerciais, um a seguir ao outro.
+
+00:01:26.820 --> 00:01:29.180
+Você vai ter que lembrar disso. É chato, mas
+
+00:01:29.220 --> 00:01:30.640
+é o que é, e você vai
+
+00:01:30.700 --> 00:01:33.830
+se acostumar. Então, podemos usar isso
+
+00:01:33.860 --> 00:01:36.790
+para criar uma condição mais complexa. Podemos
+
+00:01:36.840 --> 00:01:40.080
+dizer que, se age for maior do que 20 e
+
+00:01:40.600 --> 00:01:43.280
+a variável outfit for disco, então continuamos.
+
+00:01:43.980 --> 00:01:46.440
+Se age for menor do que 20 ou
+
+00:01:46.500 --> 00:01:49.360
+a variável outfit não for disco, então toda a afirmação,
+
+00:01:49.420 --> 00:01:52.360
+toda a condição, é falsa. Se você já
+
+00:01:52.380 --> 00:01:55.080
+estudou lógica, talvez tenha feito alguma eletrônica ou
+
+00:01:55.140 --> 00:01:57.560
+alguma matemática mais avançada, isso
+
+00:01:57.600 --> 00:01:59.920
+vai te parecer muito natural. Se não,
+
+00:01:59.980 --> 00:02:02.620
+você vai entender rapidinho. Também
+
+00:02:02.680 --> 00:02:06.420
+podemos usar or. Mas, mais uma vez, infelizmente não há
+
+00:02:06.480 --> 00:02:09.479
+uma palavra-chave simpática que signifique ou em JavaScript. Em vez disso,
+
+00:02:09.520 --> 00:02:11.340
+temos que usar estas duas barras
+
+00:02:11.380 --> 00:02:14.360
+uma ao lado da outra para significar ou. Parece estranho,
+
+00:02:14.560 --> 00:02:16.310
+mas na verdade não é. Você vai
+
+00:02:16.340 --> 00:02:19.600
+se acostumar. Então, podemos dizer
+
+00:02:19.680 --> 00:02:22.740
+que, se alguém tiver mais de 20 anos ou estiver
+
+00:02:22.780 --> 00:02:25.440
+vestido para a balada, então pode entrar. Ou seja,
+
+00:02:25.480 --> 00:02:27.820
+vamos ter uma festa divertida com crianças vestidas
+
+00:02:27.920 --> 00:02:31.060
+para a balada e adultos mal vestidos, o que parece razoável.
+
+00:02:32.240 --> 00:02:34.580
+Tem uma coisa que costuma confundir as pessoas,
+
+00:02:34.640 --> 00:02:37.660
+tanto com o e como com o ou:
+
+00:02:37.760 --> 00:02:41.020
+cada lado do e/ou tem que
+
+00:02:41.060 --> 00:02:44.200
+ser uma comparação completa. Então, mesmo que você esteja
+
+00:02:44.240 --> 00:02:47.500
+comparando a mesma variável dos dois lados,
+
+00:02:47.620 --> 00:02:50.400
+você precisa repeti-la. Não pode escrever if
+
+00:02:50.420 --> 00:02:53.560
+age is greater than 13 and less than
+
+00:02:53.780 --> 00:02:57.310
+20. Você tem que escrever if age is
+
+00:02:57.340 --> 00:03:00.840
+greater than 13 and age is less
+
+00:03:01.040 --> 00:03:04.200
+than 20. Ambos os lados têm que ser
+
+00:03:04.240 --> 00:03:09.040
+comparações completas. Nos próximos exercícios, você vai
+
+00:03:09.080 --> 00:03:12.060
+continuar usando and e or para combinar
+
+00:03:12.100 --> 00:03:14.720
+condicionais. Você precisa entender quando as duas
+
+00:03:14.740 --> 00:03:17.230
+condições importam e quando basta uma delas
+
+00:03:17.260 --> 00:03:19.790
+ser verdadeira. Boa sorte, e
+
+00:03:19.820 --> 00:03:20.660
+a gente se vê aqui em breve.

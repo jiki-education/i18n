@@ -4,7 +4,7 @@ description: "Retrouve combien d'invités une célébrité peut faire entrer, à
 en_md5: c31c0988af324530b986262f47d9a745
 ---
 
-On reprend notre rôle de videur. Mais cette fois, on a affaire à des stars de premier plan, à l'after.
+On reprend notre rôle de videur. Mais cette fois, on a affaire à des stars de premier plan pour l'after.
 
 Quand ces gens se présentent à ta soirée, ils s'attendent à ce que tu les reconnaisses rien qu'à leur prénom. Brad Pitt ne va pas perdre son temps à te donner son nom de famille : il dira juste « Brad », puis te regardera comme si c'était toi qui étais bizarre.
 
@@ -14,11 +14,11 @@ Ce soir, il y a deux listes sur ton porte-bloc. La première, `names`, contient 
 
 Attention, cependant. Une file d'attente se forme, et ces gens-là n'attendent pas en silence. « Brad » veut dire Brad Pitt, pas Bradley Cooper. Et une ou deux de ces stars sont assez connues pour avoir carrément laissé tomber leur nom de famille.
 
-Certains invités figurent sur la liste mais n'ont le droit de faire entrer personne : `0` est donc une réponse tout à fait valable pour un nom qui est sur la liste. Une personne qui n'est pas du tout sur la liste, c'est une autre histoire : pour elle, tu dois renvoyer la string `"Not on the list!"`, exactement comme elle est écrite.
+Certains invités figurent sur la liste mais n'ont le droit de faire entrer personne : `0` est donc une réponse tout à fait valable pour un nom qui est sur la liste. Une personne qui n'est pas du tout sur la liste, c'est une autre histoire : pour elle, tu dois renvoyer la _string_ `"Not on the list!"`, exactement comme elle est écrite.
 
 ### Méthodes et propriétés des tableaux
 
-Tout comme les strings, les tableaux ont aussi des méthodes et des propriétés. Dans cet exercice, tu peux utiliser la propriété `.length`. Elle fonctionne exactement comme pour les strings, sauf qu'ici elle t'indique combien d'éléments contient le tableau, plutôt que combien de lettres contient la string. Par exemple :
+Tout comme les _strings_, les tableaux ont aussi des méthodes et des propriétés. Dans cet exercice, tu peux utiliser la propriété `.length`. Elle fonctionne exactement comme pour les _strings_, sauf qu'ici elle t'indique combien d'éléments contient le tableau, plutôt que combien de lettres contient la _string_. Par exemple :
 
 ```js
 ["Jeremy", "Erik", "Aron"].length

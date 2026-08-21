@@ -1,0 +1,53 @@
+{
+  "checks": {
+    "housingWrong": "O retângulo da caixa está no lugar errado ou tem o tamanho errado. Verifique `housingX`, `housingY`, `housingWidth` e `housingHeight`.",
+    "redWrong": "A luz vermelha está no lugar errado ou tem o tamanho errado. Verifique `redY`.",
+    "yellowWrong": "A luz amarela está no lugar errado ou tem o tamanho errado. Verifique `yellowY`.",
+    "greenWrong": "A luz verde está no lugar errado ou tem o tamanho errado. Verifique `greenY`.",
+    "doesntScale": "O seu código não redimensiona corretamente quando `radius` é {{radius}}. Todas as posições e tamanhos devem ser calculados a partir de `center` e `radius`."
+  },
+  "tasks": {
+    "buildRelationalTrafficLights": {
+      "name": "Construa os semáforos relativos",
+      "description": "Calcule todas as posições e tamanhos a partir de `center` e `radius` para que o semáforo seja redimensionado corretamente."
+    }
+  },
+  "scenarios": {
+    "buildRelationalTrafficLights": {
+      "name": "Construa os semáforos relativos",
+      "description": "Calcule todas as posições e tamanhos a partir de `center` e `radius`."
+    }
+  },
+  "hints": {
+    "howToWorkOutYellowCenter": {
+      "question": "Como calculo o centro da luz amarela?",
+      "answer": "Você tem uma variável para `center` que te é fornecida. Você pode definir `yellowY` como igual a ela."
+    },
+    "howToWorkOutRedCenter": {
+      "question": "Como calculo o centro da luz vermelha?",
+      "answer": "Se os dois círculos estão se tocando, qual é a distância entre os centros deles? Você pode subtrair essa distância de `center` para obter a luz vermelha."
+    },
+    "whereHousingStarts": {
+      "question": "Onde começa o retângulo da caixa?",
+      "answer": "Se você souber o centro do círculo vermelho, pode calcular o topo do círculo vermelho. A caixa começa 1 raio acima (antes) do topo do círculo vermelho. Da mesma forma, você pode calcular o lado esquerdo de uma luz e depois avançar 1 raio para obter o início."
+    },
+    "howBigHousing": {
+      "question": "Que tamanho deve ter a caixa?",
+      "answer": "A largura da caixa é a largura de uma luz, mais um espaçamento de 1 raio de cada lado. A altura é de 2 raios por luz, mais um raio no topo e embaixo para espaçamento."
+    },
+    "whyMultipleOfSomething": {
+      "question": "Por que tudo tem que ser um múltiplo de outra coisa?",
+      "answer": "Se você usar um número fixo, ao alterar `radius` a caixa vai ficar com o tamanho errado para as luzes. Usar fórmulas que envolvem `radius` e `center` mantém todo o desenho em proporção."
+    }
+  },
+  "functions": {
+    "rectangle": {
+      "description": "Desenha um retângulo na posição (left, top) com a largura, a altura e a cor indicadas.",
+      "category": "Desenhar Formas"
+    },
+    "circle": {
+      "description": "Desenha um círculo centrado em (centerX, centerY) com o raio e a cor indicados.",
+      "category": "Desenhar Formas"
+    }
+  }
+}

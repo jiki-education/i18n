@@ -4,21 +4,21 @@ description: "Construis des fonctions pour classer un texte en lettres, en chiff
 en_md5: 4a99adb1b883c6f6710a3494a8961cc2
 ---
 
-Dans cet exercice, ta mission est de créer des fonctions qui vérifient si une string contient des lettres et/ou des chiffres.
+Dans cet exercice, ta mission est de créer des fonctions qui vérifient si une _string_ contient des lettres et/ou des chiffres.
 
 Tu vas devoir écrire trois fonctions auxiliaires :
 
-- `isAlpha(string)` (est alphabétique) : détermine si une string se compose uniquement de lettres ASCII (par exemple "A", "a", "Hello")
-- `isNumeric(string)` (est numérique) : détermine si une string se compose uniquement de caractères numériques (par exemple "0", "1", "456")
-- `isAlphanumeric(string)` (est alphanumérique) : détermine si une string se compose uniquement de lettres ASCII ou de chiffres (par exemple "Hello", "42", "Hello42")
+- `isAlpha(string)` (est alphabétique) : détermine si une _string_ se compose uniquement de lettres ASCII (par exemple "A", "a", "Hello")
+- `isNumeric(string)` (est numérique) : détermine si une _string_ se compose uniquement de caractères numériques (par exemple "0", "1", "456")
+- `isAlphanumeric(string)` (est alphanumérique) : détermine si une _string_ se compose uniquement de lettres ASCII ou de chiffres (par exemple "Hello", "42", "Hello42")
 
 Pour tout autre symbole (par exemple "! ?") et pour les caractères non ASCII (par exemple "じき", "正直"), les trois fonctions doivent renvoyer faux.
 
-Écris ensuite une fonction `whatAmI(string)` (que suis-je) qui utilise ces fonctions auxiliaires pour classer une string :
+Écris ensuite une fonction `whatAmI(string)` (que suis-je) qui utilise ces fonctions auxiliaires pour catégoriser une _string_ :
 
-- Une string qui ne contient que des lettres doit renvoyer `"Alpha"`
-- Une string qui ne contient que des chiffres doit renvoyer `"Numeric"`
-- Une string qui contient à la fois des lettres et des chiffres doit renvoyer `"Alphanumeric"`
+- Une _string_ qui ne contient que des lettres doit renvoyer `"Alpha"`
+- Une _string_ qui ne contient que des chiffres doit renvoyer `"Numeric"`
+- Une _string_ qui contient à la fois des lettres et des chiffres doit renvoyer `"Alphanumeric"`
 - Tout le reste doit renvoyer `"Unknown"`
 
 ### Mets en pratique ce que tu viens d'apprendre

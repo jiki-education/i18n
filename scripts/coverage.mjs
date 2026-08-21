@@ -70,6 +70,7 @@ import { API_ROW_IDS, apiCoverageFor, apiSourceLine } from "./lib/api-copy.mjs";
 import { countAgainstEnglish, md5File, parseFrontmatter, parseVttNotes, readJson, readText } from "./lib/files.mjs";
 import { FIELDS_INCOMPLETE, FIELDS_NEED_REVIEW, proseFieldStatus } from "./lib/checks.mjs";
 import { keptEnglishTerms, translatorRepo } from "./lib/kept-english.mjs";
+import { bodyExcludedCount } from "./lib/exclusions.mjs";
 import { parseArgs } from "./lib/args.mjs";
 
 /** What one row of a type counts. A catalog counts keys; everything else counts whole files. */
@@ -202,7 +203,15 @@ function coverageFor(locale, typeIds) {
       needsReviewItems: needsReviewItems.slice(0, 20),
       // How many English items of this type no locale has begun, which is what
       // tells a `0/0` row that is finished from one that has never started.
-      unstarted: scope.unstarted
+      unstarted: scope.unstarted,
+      // Said out loud, because otherwise the row over-promises. A body-excluded
+      // item counts as done on its frontmatter alone (that is all that is asked
+      // of it), so `106/106` covers 24 pages whose prose is still English. A
+      // reader must not have to open corpus.json to learn that.
+      note: bodyExcludedCount(typeId) > 0
+        ? `${bodyExcludedCount(typeId)} of these are counted on their translated title and ` +
+          `description alone: corpus.json puts their bodies out of the corpus (not-yet-live exercises)`
+        : undefined
     });
   }
 

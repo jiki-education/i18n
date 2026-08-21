@@ -1,0 +1,56 @@
+{
+  "checks": {
+    "age25NotLetIn": "A pessoa tem 25 anos, por isso devia ter entrado, mas não entrou.",
+    "age18LetIn": "A pessoa tem 18 anos, por isso não devia ter entrado, mas entrou.",
+    "age21NotLetIn": "A pessoa tem 21 anos, por isso devia ter entrado, mas não entrou.",
+    "age20LetIn": "A pessoa tem exatamente 20 anos, não tem mais de 20 anos, por isso não devia ter entrado, mas entrou."
+  },
+  "tasks": {
+    "checkAge": {
+      "name": "Verifica a idade da pessoa",
+      "description": "Obtém a idade da pessoa e verifica se tem mais de 20 anos. Se tiver, deixa-a entrar."
+    }
+  },
+  "scenarios": {
+    "age25": {
+      "name": "Idade 25",
+      "description": "A pessoa tem 25 anos, por isso deve entrar."
+    },
+    "age18": {
+      "name": "Idade 18",
+      "description": "A pessoa tem 18 anos, por isso não deve entrar."
+    },
+    "age21": {
+      "name": "Idade 21",
+      "description": "A pessoa tem 21 anos, pouco mais de 20, por isso deve entrar."
+    },
+    "age20": {
+      "name": "Idade 20",
+      "description": "A pessoa tem exatamente 20 anos, ou seja, não tem mais de 20 anos, por isso não deve entrar."
+    }
+  },
+  "hints": {
+    "askAge": {
+      "question": "Como é que sei a idade da pessoa?",
+      "answer": "Utiliza a função `askAge()`. Devolve um valor diferente em cada cenário."
+    },
+    "ifStatement": {
+      "question": "Como é que posso variar o que faço?",
+      "answer": "Utiliza uma condicional `if`. Consulta o conceito se precisares de mais ajuda!"
+    }
+  },
+  "describers": {
+    "askAge": "perguntou a idade da pessoa",
+    "letIn": "deixou a pessoa entrar"
+  },
+  "functions": {
+    "askAge": {
+      "description": "Devolve a **idade** da pessoa que está à espera lá fora.",
+      "category": "Informação"
+    },
+    "letIn": {
+      "description": "Deixa a pessoa entrar.",
+      "category": "Ação"
+    }
+  }
+}

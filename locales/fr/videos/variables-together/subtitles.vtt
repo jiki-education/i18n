@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 51f04781025bf1dbba2ded55c062926f
+
+00:00:00.140 --> 00:00:03.580
+Content de te revoir. Jusqu'ici, quand on a créé des variables,
+
+00:00:03.740 --> 00:00:06.560
+on n'y a mis que des valeurs simples : un nombre
+
+00:00:06.840 --> 00:00:10.620
+comme 50 ou une string comme yellow (jaune). Les variables
+
+00:00:10.660 --> 00:00:13.340
+deviennent bien plus puissantes quand on peut
+
+00:00:13.440 --> 00:00:16.460
+les combiner entre elles. Par exemple,
+
+00:00:16.540 --> 00:00:19.000
+pour dire que le bord gauche du
+
+00:00:19.040 --> 00:00:22.030
+rectangle doit se trouver à une certaine distance
+
+00:00:22.080 --> 00:00:25.660
+du bord du canvas. En programmation, on
+
+00:00:25.720 --> 00:00:28.810
+peut utiliser des maths tout à fait ordinaires : additionner,
+
+00:00:28.940 --> 00:00:32.340
+soustraire, multiplier et diviser, et y intégrer
+
+00:00:32.380 --> 00:00:35.140
+les variables qu'on a déjà
+
+00:00:35.200 --> 00:00:39.020
+définies. Commençons par dire qu'on
+
+00:00:39.060 --> 00:00:41.300
+veut dessiner un rectangle sur notre canvas,
+
+00:00:41.960 --> 00:00:43.800
+et qu'on veut qu'il commence à 10 unités
+
+00:00:44.480 --> 00:00:46.980
+des bords gauche et droit, et à
+
+00:00:47.200 --> 00:00:48.960
+20 unités du haut et du bas.
+
+00:00:49.900 --> 00:00:51.580
+Il sera donc au milieu
+
+00:00:51.620 --> 00:00:53.900
+du canvas, un peu plus long que
+
+00:00:53.960 --> 00:00:57.740
+haut. Souviens-toi : quand on dessine un
+
+00:00:57.760 --> 00:01:00.430
+rectangle, on a besoin de connaître ses left, top,
+
+00:01:00.600 --> 00:01:02.510
+width et height, ainsi que sa couleur.
+
+00:01:03.360 --> 00:01:04.820
+On peut donc commencer par écrire
+
+00:01:04.920 --> 00:01:08.320
+tout ça. Il faut maintenant déterminer
+
+00:01:08.420 --> 00:01:10.220
+ce que doivent valoir left, top, width et height.
+
+00:01:10.240 --> 00:01:13.100
+Alors définissons-les. Pour left, ce sera
+
+00:01:13.260 --> 00:01:15.660
+20. Euh, pardon, pour left c'est 10. Pour top,
+
+00:01:15.940 --> 00:01:18.920
+20. La width... eh bien, la width, c'est la
+
+00:01:19.020 --> 00:01:22.020
+taille du canvas, c'est-à-dire 100, moins
+
+00:01:22.080 --> 00:01:23.340
+les 10 à gauche et les 10
+
+00:01:23.360 --> 00:01:26.100
+à droite, donc 80. Et la
+
+00:01:26.180 --> 00:01:29.040
+height, c'est la hauteur du canvas,
+
+00:01:29.080 --> 00:01:31.580
+100 elle aussi, moins les 20 en
+
+00:01:31.640 --> 00:01:33.660
+haut et les 20 en bas, donc
+
+00:01:33.960 --> 00:01:37.860
+60. On peut donc définir ces variables. Left,
+
+00:01:37.920 --> 00:01:42.840
+10 ; top, 20 ; width, 80 ; height, 60. Et
+
+00:01:42.860 --> 00:01:44.880
+j'espère que tout ça te parle déjà. C'est
+
+00:01:44.920 --> 00:01:46.700
+ce que tu fais depuis le début dans
+
+00:01:46.740 --> 00:01:50.940
+les exercices. Mais que se passe-t-il si on veut
+
+00:01:50.960 --> 00:01:54.140
+maintenant rapprocher le rectangle du centre, le
+
+00:01:54.160 --> 00:01:55.400
+rendre un peu plus petit ? Si on veut
+
+00:01:55.460 --> 00:01:57.040
+le placer à 20 unités des bords gauche et
+
+00:01:57.100 --> 00:01:59.040
+droit et à 30 unités du haut et du
+
+00:01:59.060 --> 00:02:02.620
+bas ? Il faut tout
+
+00:02:02.720 --> 00:02:06.320
+recalculer. La width devient 100 moins
+
+00:02:06.560 --> 00:02:10.280
+20 moins 20, et la height devient 100
+
+00:02:10.360 --> 00:02:14.320
+moins 30 moins 30, et ça fait franchement
+
+00:02:14.420 --> 00:02:17.280
+plus de travail et plus de calculs que je n'ai
+
+00:02:17.320 --> 00:02:20.400
+envie d'en faire. Alors autant demander à
+
+00:02:20.420 --> 00:02:24.000
+l'ordinateur de le faire à notre place. On peut
+
+00:02:24.060 --> 00:02:27.680
+définir la width comme 100 moins
+
+00:02:27.840 --> 00:02:31.620
+left moins left, et la height
+
+00:02:31.700 --> 00:02:34.720
+comme 100 moins top moins top,
+
+00:02:34.960 --> 00:02:37.580
+puisque la marge est la même en haut et en bas. Ou
+
+00:02:37.600 --> 00:02:40.980
+alors, on peut l'écrire comme 100 moins
+
+00:02:41.240 --> 00:02:44.820
+left fois deux, et 100 moins
+
+00:02:44.940 --> 00:02:48.620
+top fois deux. Et maintenant, si on change
+
+00:02:48.660 --> 00:02:52.040
+left ou top, la width
+
+00:02:52.080 --> 00:02:54.860
+et la height changeront aussi. Les choses
+
+00:02:54.900 --> 00:02:57.430
+commencent à être liées les unes aux autres. Et
+
+00:02:57.440 --> 00:03:00.960
+le canvas, dans tout ça ? Il fait 100. Mais
+
+00:03:01.020 --> 00:03:03.700
+que se passe-t-il s'il passe à 200 de large
+
+00:03:03.740 --> 00:03:06.540
+et de haut ? Le mieux est sans doute de créer
+
+00:03:06.620 --> 00:03:09.560
+une variable appelée canvasSize et de lui donner
+
+00:03:09.580 --> 00:03:13.230
+la valeur 100. Et maintenant notre left, pardon,
+
+00:03:13.260 --> 00:03:17.740
+notre width, c'est canvasSize moins left fois deux,
+
+00:03:18.200 --> 00:03:22.160
+et notre height, canvasSize moins top fois
+
+00:03:22.200 --> 00:03:26.120
+deux. Réfléchissons à ce que fait Jiki
+
+00:03:26.480 --> 00:03:30.580
+quand on écrit let height égale canvas moins
+
+00:03:30.700 --> 00:03:33.310
+top fois deux. Il commence par prendre
+
+00:03:33.310 --> 00:03:35.220
+la boîte top sur l'étagère, et il
+
+00:03:35.260 --> 00:03:37.660
+y trouve 20. Il sort
+
+00:03:37.680 --> 00:03:40.160
+sa calculatrice de poche, fait 20 fois deux,
+
+00:03:40.580 --> 00:03:42.740
+et note 40 dans un coin de sa tête.
+
+00:03:43.720 --> 00:03:45.860
+Ensuite, il prend la boîte canvas
+
+00:03:45.900 --> 00:03:49.540
+sur l'étagère, y trouve 100, et il
+
+00:03:49.600 --> 00:03:52.780
+calcule que 100 moins 40 font 60.
+
+00:03:53.840 --> 00:03:56.350
+Il sait maintenant que ce qu'on lui dit
+
+00:03:56.400 --> 00:04:00.000
+en réalité, c'est let height égale 60. Il obéit
+
+00:04:00.040 --> 00:04:02.320
+donc au let : il prend une nouvelle boîte, écrit
+
+00:04:02.360 --> 00:04:04.440
+height dessus, puis met 60
+
+00:04:04.580 --> 00:04:06.900
+à l'intérieur. Et quand il utilisera height
+
+00:04:07.040 --> 00:04:09.600
+plus tard, il n'aura qu'à ressortir le 60.
+
+00:04:09.640 --> 00:04:13.720
+Essaie de mettre tout ça en pratique dans
+
+00:04:13.820 --> 00:04:16.180
+les prochains exercices, et ce sera
+
+00:04:16.240 --> 00:04:18.649
+de plus en plus clair. Et une fois que
+
+00:04:18.700 --> 00:04:22.070
+tout fonctionne, amuse-toi à changer les valeurs des
+
+00:04:22.100 --> 00:04:25.200
+variables et regarde ce qui se passe. Observe
+
+00:04:25.220 --> 00:04:28.420
+ce qui grandit et ce qui rétrécit. Prends
+
+00:04:28.480 --> 00:04:31.480
+ton temps, réfléchis aux relations entre les choses, et
+
+00:04:31.500 --> 00:04:32.670
+on se retrouve très vite

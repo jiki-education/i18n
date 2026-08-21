@@ -1,0 +1,54 @@
+{
+  "checks": {
+    "wrongShotEnd": "A bola não parou no lugar certo para esta tacada. Confirme que ela percorre o comprimento total da tacada.",
+    "missingPositions": "A bola tem que rolar por cada posição, uma de cada vez, em vez de pular diretamente para o fim."
+  },
+  "tasks": {
+    "rollAndCelebrate": {
+      "name": "Faça a bola rolar",
+      "description": "Obtenha o comprimento da tacada e faça a bola rolar essa distância para a direita."
+    }
+  },
+  "scenarios": {
+    "shortShot": {
+      "name": "Tacada curta (20)",
+      "description": "Neste cenário, `getShotLength()` vai retornar 20. Faça a bola rolar 20 passos a partir do tee."
+    },
+    "mediumShot": {
+      "name": "Tacada média (35)",
+      "description": "Neste cenário, `getShotLength()` vai retornar 35. Faça a bola rolar 35 passos a partir do tee."
+    },
+    "longShot": {
+      "name": "Tacada longa (50)",
+      "description": "Neste cenário, `getShotLength()` vai retornar 50. Faça a bola rolar 50 passos a partir do tee."
+    },
+    "veryLongShot": {
+      "name": "Tacada muito longa (60)",
+      "description": "Neste cenário, `getShotLength()` vai retornar 60. Faça a bola rolar 60 passos a partir do tee."
+    }
+  },
+  "hints": {
+    "notSureWhereToStart": {
+      "question": "Não sei por onde começar",
+      "answer": "Isso é igualzinho ao exercício de golfe anterior, em que você fez a bola rolar um número fixo de passos. A única diferença é que o número de passos não é mais um valor fixo: agora ele vem de `getShotLength()`. Onde antes você usava um número, você pode usar o resultado de uma função."
+    },
+    "ballStopsShort": {
+      "question": "A minha bola para um passo antes (ou vai um passo além)",
+      "answer": "Pense bem na posição inicial e em quantas vezes você faz a bola rolar. A bola está pousada no tee, na posição 28, então a primeira rolada deve levá-la à posição 29. Conte os passos a partir daí até o lugar onde ela tem que parar."
+    }
+  },
+  "functions": {
+    "moveTo": {
+      "description": "Move a bola para a posição **x**.",
+      "category": "Movimento"
+    },
+    "getShotLength": {
+      "description": "Retorna o **comprimento da tacada**: o número de unidades que a bola percorre para a direita.",
+      "category": "Informação"
+    }
+  },
+  "describers": {
+    "moveTo": "moveu a bola para a posição ${arg1}",
+    "getShotLength": "obteve o comprimento da tacada"
+  }
+}

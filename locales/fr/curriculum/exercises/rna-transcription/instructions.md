@@ -12,11 +12,11 @@ Les quatre nucléotides présents dans l'ADN sont l'adénine (A), la cytosine (C
 
 Les quatre nucléotides présents dans l'ARN sont l'adénine (A), la cytosine (C), la guanine (G) et l'uracile (U).
 
-À partir d'un brin d'ADN, on forme le brin d'ARN transcrit en remplaçant chaque nucléotide par son complément :
+Pour un brin d'ADN donné, le brin d'ARN transcrit correspondant se forme en remplaçant chaque nucléotide par son complémentaire :
 
 - G -> C
 - C -> G
 - T -> A
 - A -> U
 
-Crée une fonction appelée `dnaToRna(dna)` (de l'ADN vers l'ARN) qui prend en entrée une string contenant l'ADN et renvoie une string représentant l'équivalent ARN.
+Crée une fonction appelée `dnaToRna(dna)` (de l'ADN vers l'ARN) qui prend en entrée une _string_ contenant l'ADN et renvoie une _string_ représentant l'équivalent ARN.

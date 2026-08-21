@@ -12,9 +12,9 @@ En règle générale, en programmation, chaque fonction doit en faire le moins p
 
 Voyons un exemple.
 
-Imagine qu'on ait une fonction dont le travail est de renvoyer une string qui décrit un nom.
+Imagine qu'on ait une fonction dont le travail est de renvoyer une _string_ qui décrit un nom.
 
-Une version simple ressemblerait à ceci : une boucle de comptage, quelque chose que tu as déjà écrit, puis un template literal qui assemble le résultat.
+Une version simple ressemblerait à ceci : une boucle de comptage, quelque chose que tu as déjà écrit, puis un _template literal_ qui assemble le résultat.
 
 ```javascript
 function describeName(name) {
@@ -26,7 +26,7 @@ function describeName(name) {
 }
 ```
 
-Ça fonctionne très bien, mais cette fonction fait deux choses : une chose plutôt générique, compter, et une autre très spécifique, construire cette string dans un format particulier.
+Ça fonctionne très bien, mais cette fonction fait deux choses : une chose plutôt générique, compter, et une autre très spécifique, construire cette _string_ dans un format particulier.
 
 Ce serait bien plus élégant de découper tout ça en deux fonctions, une responsable du comptage et une responsable de la description d'un nom dans ce format particulier.
 
@@ -47,7 +47,7 @@ function describeName(name) {
 }
 ```
 
-On peut ensuite réutiliser cette fonction de comptage générique dans cette mise en forme de texte, mais aussi partout ailleurs où on en a besoin. Dès qu'on doit compter les lettres d'une string, c'est totalement détaché de tout ce qui touche à l'affichage.
+On peut ensuite réutiliser cette fonction de comptage générique dans cette mise en forme de texte, mais aussi partout où on en a besoin. Chaque fois que tu devras compter des lettres dans une _string_, ce sera totalement détaché de tout ce qui touche à l'affichage.
 
 Tu peux lire chacune des deux fonctions isolément et comprendre immédiatement ce qu'elle fait.
 
@@ -65,6 +65,6 @@ Donc si tu essaies d'accéder à la variable `count` (compte) depuis l'intérieu
   height="353"
 />
 
-En JavaScript, on peut créer des variables tout en haut, au-dessus de tout le reste, qui sont partagées entre les fonctions, mais je te recommande vraiment de ne pas le faire, sauf très bonne raison.
+En JavaScript, on peut créer des variables tout en haut, au-dessus de tout le reste, qui sont partagées entre les fonctions, mais je te recommande vraiment de ne pas le faire, à moins d'avoir une très bonne raison.
 
-Plus tu gardes chaque fonction indépendante, et le mot technique pour ça est « pure », des fonctions pures, plus ton code sera propre et moins tu créeras de bugs.
+Plus tu gardes chaque fonction indépendante (le terme technique pour ça est « pure », on parle de « fonctions pures »), plus ton code sera propre et moins tu créeras de bugs.

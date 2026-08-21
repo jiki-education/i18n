@@ -6,7 +6,7 @@ en_md5: 0634cd72388bef118e9dd22131a3c1cd
 
 Finora, quando abbiamo pensato a stringhe e numeri, li abbiamo considerati oggetti piuttosto statici.
 
-E anche se lo sono, hanno anche molte funzionalità incorporate che Jiki può usare.
+E anche se lo sono, esse hanno molte funzionalità incorporate che Jiki può usare.
 
 Ci sono due tipi di capacità che vedremo: le proprietà e i metodi.
 

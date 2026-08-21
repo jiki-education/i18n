@@ -1,0 +1,43 @@
+{
+  "checks": {
+    "baseCircle": "Koło podstawy (dolne) nie jest prawidłowe.",
+    "bodyCircle": "Koło tułowia (środkowe) nie jest prawidłowe.",
+    "headCircle": "Koło głowy (górne) nie jest prawidłowe."
+  },
+  "tasks": {
+    "buildSnowman": {
+      "name": "Zbuduj bałwana",
+      "description": "Narysuj trzy koła, aby zbudować bałwana."
+    }
+  },
+  "scenarios": {
+    "buildSnowman": {
+      "name": "Zbuduj bałwana",
+      "description": "Narysuj trzy koła, aby zbudować bałwana."
+    }
+  },
+  "hints": {
+    "howToDrawCircle": {
+      "question": "Jak narysować koło na płótnie?",
+      "answer": "Wywołaj `circle(centerX, centerY, radius)`, gdzie `centerX` i `centerY` to współrzędne środka, a `radius` to rozmiar koła."
+    },
+    "circlesHorizontalPosition": {
+      "question": "Gdzie należy umieścić koła w poziomie?",
+      "answer": "Wszystkie trzy koła mają ten sam środek w poziomie, więc `centerX` wynosi `50` dla każdego z nich (płótno ma szerokość `100`)."
+    },
+    "howToStackCircles": {
+      "question": "Jak ułożyć trzy koła jedno na drugim?",
+      "answer": "Koło podstawy jest największe i znajduje się blisko dołu (wysoka wartość `centerY`). Każde koło powyżej ma mniejsze `centerY` i mniejszy `radius`."
+    },
+    "whatNumbersForRadii": {
+      "question": "Jakich liczb użyć jako promieni?",
+      "answer": "Wszystkie liczby w tym ćwiczeniu są podzielne przez `5`. Spróbuj ustawić promień podstawy na około `20`, tułowia na około `15`, a głowy na około `10`, dostosowując je, aż będą pasować do docelowego obrazka."
+    }
+  },
+  "functions": {
+    "circle": {
+      "description": "Rysuje koło o środku w (centerX, centerY) i podanym promieniu",
+      "category": "Rysowanie kształtów"
+    }
+  }
+}

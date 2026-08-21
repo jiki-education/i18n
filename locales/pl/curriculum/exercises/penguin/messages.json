@@ -1,0 +1,65 @@
+{
+  "checks": {
+    "sky": "Coś jest nie tak z niebem.",
+    "ground": "Coś jest nie tak z podłożem.",
+    "leftWing": "Lewe skrzydło nie wygląda prawidłowo.",
+    "rightWing": "Prawe skrzydło nie wygląda prawidłowo.",
+    "outerBody": "Zewnętrzna część tułowia nie wygląda prawidłowo.",
+    "innerBody": "Wewnętrzna część tułowia nie wygląda prawidłowo.",
+    "head": "Coś jest nie tak z głową.",
+    "leftFace": "Lewa strona twarzy nie wygląda prawidłowo.",
+    "rightFace": "Prawa strona twarzy nie wygląda prawidłowo.",
+    "lowerFace": "Dolna część twarzy nie wygląda prawidłowo.",
+    "leftEye": "Coś jest nie tak z lewym okiem.",
+    "leftIris": "Coś jest nie tak z lewą tęczówką.",
+    "rightEye": "Coś jest nie tak z prawym okiem.",
+    "rightIris": "Coś jest nie tak z prawą tęczówką.",
+    "leftFoot": "Coś jest nie tak z lewą stopą.",
+    "rightFoot": "Prawa stopa nie wygląda prawidłowo.",
+    "nose": "Nos nie wygląda prawidłowo."
+  },
+  "tasks": {
+    "drawPenguin": {
+      "name": "Narysuj symetrycznego pingwina",
+      "description": "Dokończ rysunek pingwina, dodając brakujące części, aby był symetryczny."
+    }
+  },
+  "scenarios": {
+    "makePenguinSymmetrical": {
+      "name": "Spraw, aby pingwin był symetryczny",
+      "description": "Zrealizuj wszystkie komentarze TODO, aby pingwin był symetryczny."
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Od czego zacząć?",
+      "answer": "Realizuj komentarze TODO jeden po drugim, zaczynając od góry."
+    },
+    "symmetryOnCanvas": {
+      "question": "Jak działa symetria na obszarze rysowania?",
+      "answer": "Jeśli lewa krawędź elementu to 20, jego symetryczna prawa krawędź będzie wynosić 80 (100 - 20)."
+    },
+    "noseTrouble": {
+      "question": "Dlaczego nie mogę poprawnie narysować nosa?",
+      "answer": "Nie dodawaj nowego trójkąta, aby narysować nos – zamiast tego ZMIEŃ istniejący trójkąt, aby wyświetlał się poprawnie. Musisz zmienić tylko JEDNĄ wartość."
+    }
+  },
+  "functions": {
+    "rectangle": {
+      "description": "Rysuje prostokąt na pozycji (left, top) o podanej szerokości, wysokości i kolorze",
+      "category": "Rysowanie kształtów"
+    },
+    "circle": {
+      "description": "Rysuje koło o środku w punkcie (centerX, centerY) o podanym promieniu i kolorze",
+      "category": "Rysowanie kształtów"
+    },
+    "ellipse": {
+      "description": "Rysuje elipsę o środku w punkcie (centerX, centerY) z podanym promieniem poziomym, pionowym i kolorem",
+      "category": "Rysowanie kształtów"
+    },
+    "triangle": {
+      "description": "Rysuje trójkąt o trzech wierzchołkach i podanym kolorze",
+      "category": "Rysowanie kształtów"
+    }
+  }
+}

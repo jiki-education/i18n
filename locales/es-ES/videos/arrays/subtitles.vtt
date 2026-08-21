@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 9d89d6259cdafb0e4850d658df9bd781
+
+00:00:00.140 --> 00:00:02.440
+Hola de nuevo. Llegaste a un punto bastante
+
+00:00:02.520 --> 00:00:05.280
+importante del curso. Has estado usando
+
+00:00:05.440 --> 00:00:08.060
+números, strings y Booleans, la palabra
+
+00:00:08.120 --> 00:00:10.500
+elegante para verdadero y falso, y a todos
+
+00:00:10.540 --> 00:00:13.350
+estos los llamamos tipos de datos. En este vídeo
+
+00:00:13.400 --> 00:00:16.260
+vamos a añadir nuestro primer tipo de dato
+
+00:00:16.340 --> 00:00:20.080
+compuesto. Es un tipo de dato que puede contener
+
+00:00:20.180 --> 00:00:23.300
+varias cosas, no solo una, y este
+
+00:00:23.380 --> 00:00:26.780
+tipo de dato compuesto se llama array.
+
+00:00:28.220 --> 00:00:30.280
+Ahora, cuando escuchas la palabra array, quiero
+
+00:00:30.320 --> 00:00:33.060
+que pienses en una cadena física
+
+00:00:33.440 --> 00:00:36.800
+que mantiene juntas un montón de cosas. Esas cosas
+
+00:00:36.820 --> 00:00:39.520
+que sostiene pueden ser cualquier cosa: strings, números, Booleans,
+
+00:00:40.100 --> 00:00:42.360
+incluso otros arrays, incluso cosas que todavía
+
+00:00:42.440 --> 00:00:44.280
+no has aprendido, pero no nos preocupemos
+
+00:00:44.320 --> 00:00:47.440
+por eso ahora. Todo en esta cadena tiene
+
+00:00:47.500 --> 00:00:50.320
+un orden: el orden en el que se fue encadenando.
+
+00:00:51.180 --> 00:00:54.860
+Así que un array contiene muchas cosas, pero
+
+00:00:54.920 --> 00:00:58.800
+es un solo elemento, una sola cosa sólida: un
+
+00:00:58.840 --> 00:01:01.440
+único array con muchos elementos dentro.
+
+00:01:03.320 --> 00:01:06.090
+Jiki puede tomar ese array, esa cadena, y
+
+00:01:06.160 --> 00:01:08.060
+ponerlo en una caja, igual que puede
+
+00:01:08.120 --> 00:01:09.300
+poner un string en una caja o
+
+00:01:09.320 --> 00:01:11.580
+un número en una caja. Puede ponerlo
+
+00:01:11.600 --> 00:01:13.340
+en una ranura de entrada de una máquina.
+
+00:01:13.900 --> 00:01:15.320
+Puede sacarlo de una rampa
+
+00:01:15.330 --> 00:01:18.860
+de salida. Este array es una sola cosa, y Jiki
+
+00:01:18.900 --> 00:01:20.800
+trabaja con él exactamente de la misma forma
+
+00:01:21.280 --> 00:01:23.840
+en que trabaja con strings, números y todo lo demás
+
+00:01:23.880 --> 00:01:27.920
+que has visto hasta ahora. Ahora, en el código, un array
+
+00:01:28.020 --> 00:01:30.240
+también se ve un poco como una cadena.
+
+00:01:30.300 --> 00:01:32.420
+Tiene un corchete en cada extremo
+
+00:01:32.880 --> 00:01:34.770
+y luego muchas cosas que están encadenadas,
+
+00:01:34.800 --> 00:01:38.420
+separadas por comas. Entonces, por ejemplo, si
+
+00:01:38.440 --> 00:01:40.590
+quisiéramos crear un array con
+
+00:01:40.600 --> 00:01:42.480
+los nombres de algunos miembros de nuestro bootcamp,
+
+00:01:43.100 --> 00:01:46.440
+podríamos armar una caja llamada mentors
+
+00:01:46.460 --> 00:01:49.260
+y poner esa cadena dentro de ella.
+
+00:01:49.280 --> 00:01:52.900
+Escribiríamos let mentors =, exactamente igual
+
+00:01:53.140 --> 00:01:55.300
+que con cualquier otra caja, y
+
+00:01:55.320 --> 00:01:57.860
+luego tendríamos un corchete de apertura, muchos
+
+00:01:57.920 --> 00:02:00.480
+elementos, sus nombres separados por comas, y
+
+00:02:00.500 --> 00:02:02.700
+luego un corchete de cierre. Cuando Jiki ve
+
+00:02:02.760 --> 00:02:04.730
+esto, va y toma cuatro trozos de
+
+00:02:04.820 --> 00:02:07.760
+papel, uno para cada nombre, luego toma
+
+00:02:07.840 --> 00:02:10.650
+una cadena nueva y los encadena a todos, y
+
+00:02:10.680 --> 00:02:12.800
+después pone esa cadena en la caja
+
+00:02:12.860 --> 00:02:16.580
+mentors. Puedes poner cualquier cosa en un array: strings,
+
+00:02:16.660 --> 00:02:19.820
+números, Booleans, incluso una mezcla de cosas. Estos
+
+00:02:19.860 --> 00:02:22.900
+son todos ejemplos de arrays completamente válidos.
+
+00:02:24.800 --> 00:02:27.320
+También puedes crear un array vacío. Es
+
+00:02:27.380 --> 00:02:30.080
+simplemente una cadena sin elementos. Sigue siendo
+
+00:02:30.140 --> 00:02:31.760
+una cosa real. Todavía tiene sus dos
+
+00:02:31.820 --> 00:02:33.800
+extremos. Sigue siendo una cadena. Solo que
+
+00:02:33.860 --> 00:02:36.160
+no tiene objetos dentro. Pero
+
+00:02:36.200 --> 00:02:38.400
+igual puedes poner este array vacío en
+
+00:02:38.420 --> 00:02:40.260
+una caja, sacarlo después y usarlo
+
+00:02:40.280 --> 00:02:44.120
+más tarde. Bueno, entonces puedes crear un
+
+00:02:44.160 --> 00:02:46.850
+array con la sintaxis de corchetes, pero ¿cómo
+
+00:02:46.860 --> 00:02:48.820
+los usamos en realidad? ¿Cómo
+
+00:02:48.880 --> 00:02:50.910
+revisamos qué hay dentro y sacamos
+
+00:02:50.980 --> 00:02:53.829
+cosas? Bueno, exactamente de la misma forma
+
+00:02:53.860 --> 00:02:55.410
+en que lo hicimos cuando queríamos sacar letras
+
+00:02:55.440 --> 00:02:58.040
+de un string. Podemos usar la sintaxis
+
+00:02:58.100 --> 00:03:00.980
+de corchetes con números dentro. Entonces, volvamos
+
+00:03:01.020 --> 00:03:03.020
+a nuestra lista de mentores. Si queremos
+
+00:03:03.060 --> 00:03:05.560
+sacar el primero, escribimos mentors
+
+00:03:05.800 --> 00:03:08.720
+corchete cero. Recuerda que en JavaScript
+
+00:03:08.880 --> 00:03:13.280
+contamos desde cero. Y también podemos iterar
+
+00:03:13.290 --> 00:03:15.190
+a través de un array exactamente de la misma forma
+
+00:03:15.220 --> 00:03:18.460
+en que iterábamos a través de strings antes, usando for-of.
+
+00:03:19.400 --> 00:03:21.580
+Los arrays funcionan exactamente igual. La
+
+00:03:21.680 --> 00:03:23.980
+única diferencia es que esta vez, en lugar de sacar
+
+00:03:24.040 --> 00:03:26.720
+una letra, sacamos lo que fuera el elemento
+
+00:03:26.780 --> 00:03:28.900
+del array. En este ejemplo, el
+
+00:03:28.940 --> 00:03:31.620
+nombre del mentor. Entonces, la primera vez
+
+00:03:31.680 --> 00:03:34.280
+que agradecemos a alguien, agradecemos a DJ. La segunda
+
+00:03:34.320 --> 00:03:38.400
+vez, agradecemos a Becky, etc. También podemos
+
+00:03:38.460 --> 00:03:41.500
+usar la propiedad length en los arrays, como
+
+00:03:41.560 --> 00:03:43.940
+aprendimos con los strings. Si
+
+00:03:43.980 --> 00:03:45.980
+tenemos un array con cuatro strings en la
+
+00:03:46.100 --> 00:03:50.040
+caja mentors y escribimos mentors.length, devolverá cuatro.
+
+00:03:50.980 --> 00:03:53.500
+Y podemos usar includes exactamente igual
+
+00:03:53.520 --> 00:03:56.180
+en los arrays también. Podemos decir mentors.includes
+
+00:03:56.540 --> 00:03:59.880
+paréntesis DJ, y devolverá true. Pero si
+
+00:03:59.960 --> 00:04:03.600
+decimos mentors.includes paréntesis Frank, devolverá false.
+
+00:04:05.080 --> 00:04:07.360
+Todo funciona exactamente igual que con los strings. Solo
+
+00:04:07.420 --> 00:04:09.640
+que estamos trabajando con los elementos
+
+00:04:09.660 --> 00:04:12.160
+de un array, no con las letras de un string.
+
+00:04:14.140 --> 00:04:17.160
+En los próximos dos ejercicios vas a poner
+
+00:04:17.200 --> 00:04:19.540
+en práctica estas diferentes técnicas. Vas a tener que
+
+00:04:19.560 --> 00:04:21.130
+pensar si necesitas obtener un solo
+
+00:04:21.300 --> 00:04:23.680
+elemento del array usando la
+
+00:04:23.720 --> 00:04:26.220
+sintaxis de corchetes, o si quieres
+
+00:04:26.280 --> 00:04:28.820
+recorrer todos los elementos, revisando o haciendo
+
+00:04:28.880 --> 00:04:31.860
+algo con cada uno. Como siempre, si
+
+00:04:31.920 --> 00:04:34.040
+te atascas, revisa las pistas, y te veo
+
+00:04:34.080 --> 00:04:34.860
+aquí en un momento.

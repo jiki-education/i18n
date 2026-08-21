@@ -1,0 +1,141 @@
+WEBVTT
+
+NOTE en_md5 bda06700bc7cace998c9ec1d94e9d2aa
+
+00:00:00.160 --> 00:00:03.500
+Content de te revoir. En programmation, on veut souvent
+
+00:00:03.660 --> 00:00:06.940
+utiliser une fonction et obtenir en retour
+
+00:00:07.020 --> 00:00:11.400
+un nombre aléatoire différent à chaque fois. C'est utile
+
+00:00:11.460 --> 00:00:13.960
+dans toutes sortes de situations, en particulier
+
+00:00:14.020 --> 00:00:16.370
+en cryptographie, où l'on passe beaucoup de temps
+
+00:00:16.379 --> 00:00:19.270
+à créer des codes à partager entre machines,
+
+00:00:20.040 --> 00:00:21.660
+et ces codes doivent être aléatoires
+
+00:00:21.680 --> 00:00:24.980
+pour qu'on ne puisse pas les pirater. Pour t'aider,
+
+00:00:25.320 --> 00:00:27.160
+pour le reste du cours, tu disposes
+
+00:00:27.200 --> 00:00:33.420
+d'une fonction appelée math.randomint. Tu remarqueras peut-être
+
+00:00:33.440 --> 00:00:34.920
+qu'il y a un point au milieu de ce nom.
+
+00:00:36.240 --> 00:00:38.660
+À mesure que tu auras accès à davantage de fonctions,
+
+00:00:38.700 --> 00:00:41.040
+on pourra les organiser en différents groupes
+
+00:00:41.080 --> 00:00:43.980
+pour que tout reste bien rangé, et la partie math est
+
+00:00:44.100 --> 00:00:46.720
+le nom du groupe auquel cette fonction
+
+00:00:46.780 --> 00:00:49.550
+appartient. Elle indique à Jiki dans quelle section
+
+00:00:49.600 --> 00:00:51.340
+des étagères regarder, ici la section
+
+00:00:51.350 --> 00:00:54.490
+math. Le point veut simplement dire : va dans
+
+00:00:54.520 --> 00:00:57.440
+cette section et trouve la fonction. Ne t'inquiète pas
+
+00:00:57.480 --> 00:00:59.920
+trop de tout ça pour l'instant. Les instructions
+
+00:00:59.940 --> 00:01:03.020
+des exercices te diront toujours quelles fonctions sont
+
+00:01:03.060 --> 00:01:06.740
+disponibles et comment les utiliser. L'important,
+
+00:01:06.800 --> 00:01:09.940
+c'est de comprendre que quand Jiki utilise
+
+00:01:09.980 --> 00:01:12.380
+cette fonction, elle lui donne un nombre
+
+00:01:12.460 --> 00:01:15.400
+différent à chaque exécution, avec une seule
+
+00:01:15.440 --> 00:01:19.760
+contrainte. La fonction a deux entrées. La première
+
+00:01:19.940 --> 00:01:22.120
+est le plus petit nombre que la machine a le droit
+
+00:01:22.160 --> 00:01:25.220
+de renvoyer, et la seconde, le plus grand
+
+00:01:25.300 --> 00:01:28.160
+nombre qu'elle a le droit de renvoyer. Donc
+
+00:01:28.240 --> 00:01:31.740
+si tu utilises la fonction math.randomint avec 10
+
+00:01:32.080 --> 00:01:36.820
+et 13, tu obtiendras toujours 10, 11, 12
+
+00:01:37.200 --> 00:01:40.280
+ou 13 en sortie. Mais tu en obtiendras
+
+00:01:40.340 --> 00:01:44.120
+un différent à chaque fois. Imaginons maintenant
+
+00:01:44.160 --> 00:01:46.200
+que tu veuilles dessiner un cercle à une
+
+00:01:46.240 --> 00:01:49.420
+position aléatoire sur le canvas. Tu peux utiliser
+
+00:01:49.500 --> 00:01:52.500
+math.randomint pour obtenir à chaque fois des valeurs
+
+00:01:52.640 --> 00:01:56.920
+différentes pour top et left, mais avec des limites,
+
+00:01:56.960 --> 00:01:59.500
+disons 10 et 90, pour que le cercle
+
+00:01:59.560 --> 00:02:02.960
+ne déborde jamais du canvas. À chaque fois
+
+00:02:03.020 --> 00:02:05.020
+que tu exécutes ce code, le cercle est dessiné
+
+00:02:05.060 --> 00:02:08.460
+à un endroit légèrement différent. On va
+
+00:02:08.560 --> 00:02:12.320
+commencer par un exercice tout simple de préparation de salade
+
+00:02:12.460 --> 00:02:14.680
+pour te familiariser avec les nombres aléatoires,
+
+00:02:15.400 --> 00:02:17.600
+puis, au fil des exercices suivants, on va
+
+00:02:17.640 --> 00:02:20.120
+commencer à faire des choses plutôt amusantes
+
+00:02:20.160 --> 00:02:22.019
+avec eux. À très vite !

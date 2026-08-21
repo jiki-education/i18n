@@ -122,6 +122,7 @@ import {
   localPath
 } from "./lib/content-types.mjs";
 import { corpusItems, englishCorpusSize, englishPath, englishRepo, englishSha } from "./lib/english.mjs";
+import { isBodyExcluded } from "./lib/exclusions.mjs";
 import { mergeExerciseCatalogs } from "./lib/families.mjs";
 import { contentHash, flatten, parseFrontmatter, readJson, readText } from "./lib/files.mjs";
 import { findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
@@ -307,6 +308,15 @@ async function publishLocale(locale, { exportSources }) {
 
   for (const typeId of PROSE_TYPE_IDS) {
     for (const item of listItems(typeId, locale)) {
+      // An item whose BODY is out of the corpus (corpus.json, `"scope": "body"`)
+      // is in this repo for its frontmatter and nothing else: its body is English
+      // on purpose, so none of the three untranslated verdicts is a finding
+      // against it. Leaving it out of `prose` is also what keeps it out of the
+      // published prose artifact and out of the index, because both read from
+      // here. A translated title over an English body must never reach a reader:
+      // it looks finished, which is worse than not being there at all. Its title
+      // and description still publish, in the merged curriculum catalog below.
+      if (isBodyExcluded(typeId, item.slug)) continue;
       const key = `${typeId}/${item.slug}`;
       // The SHARED parser: `seo` and `tags` reach a published artifact, so a
       // reader that returned them as raw strings would move the artifact's hash.
@@ -436,6 +446,11 @@ async function publishLocale(locale, { exportSources }) {
   // collision-free slug namespace, so consumers resolve copy by slug alone and
   // never branch on what they are rendering. A collision is a hard error, exactly
   // as in the front-end generator.
+  //
+  // EVERY exercise is here, body-excluded ones included. This catalog is the card
+  // copy: it is what a listing or a level page renders, and one English title in
+  // an otherwise translated list is a visible hole. It is also the only artifact a
+  // body-excluded exercise contributes to.
   const copy = {};
   const instructionItems = listItems("exercise-instructions", locale);
   for (const item of instructionItems) {
@@ -651,7 +666,12 @@ async function publishLocale(locale, { exportSources }) {
   // the export unambiguous when several locales are published in one run.
   let exported = 0;
   const instructions = contentType("exercise-instructions");
-  for (const item of exportSources ? instructionItems : []) {
+  // Body-excluded pages are left out of the export too. The export is the authored
+  // file, and the authored file for one of these is a translated frontmatter over
+  // an English body: nothing downstream wants that as a source, and the rule that
+  // no half-translated instruction page leaves this repo is easier to keep if it
+  // has no exceptions.
+  for (const item of exportSources ? instructionItems.filter((item) => !isBodyExcluded("exercise-instructions", item.slug)) : []) {
     const to = path.join(DIST, "export", locale, instructions.sourceRepoPath(item.slug));
     fs.mkdirSync(path.dirname(to), { recursive: true });
     fs.copyFileSync(item.path, to);
@@ -861,19 +881,48 @@ async function main() {
   // everything the artifacts need. They are copied rather than synced, since
   // `--size-only` compares byte counts and one hash is exactly as long as
   // another, so a sync would skip the single object whose whole job is to
-  // change. And they carry a short TTL with a long stale-while-revalidate, so
-  // the steady state is an edge hit and a republish propagates in about a
-  // minute.
+  // change.
+  //
+  // They carry a 30 second TTL and NO stale-while-revalidate. Revalidating a
+  // pointer is nearly free: it is a 22 byte object, the conditional request
+  // normally comes back 304, and the expensive object it names is immutable and
+  // already cached for a year. So there is no origin latency here worth insuring
+  // against, and the insurance was not free. Under
+  // `stale-while-revalidate=86400` the request that finds the pointer stale is
+  // served the OLD hash and the refresh happens behind it, so a quiet edge can
+  // sit on a superseded catalog for up to a day. What that looks like is a
+  // learner reading raw key names where copy should be, because a catalog older
+  // than the running front-end is missing whatever keys the front-end has since
+  // started asking for. That is the failure mode this trades away, and it is
+  // worth one conditional request per edge per half minute.
   //
   // Artifacts land before pointers, so a reader can never follow a pointer to an
   // object that is not there yet.
+  // The completeness record is a third kind, and it takes `no-cache`.
+  //
+  // Nothing a reader requests ever fetches it: its only consumers are the
+  // front-end's build-time locale guards, so it is read a handful of times per
+  // deploy rather than once per render, and there is no traffic argument for
+  // caching it at all. Against that, a cached copy is actively harmful, because
+  // the question it answers ("is this locale complete right now") is the one
+  // question a stale answer gets wrong while looking authoritative.
+  //
+  // Its patterns carry a leading `*` because the object is at `i18n/completeness.json`,
+  // and an `aws s3` pattern without one matches only at the root of the sync. A
+  // bare `completeness.json` silently matched nothing, so the record was swept
+  // into the immutable sync above and served with a year-long TTL: a deploy read
+  // a four-day-old record, believed Hungarian was incomplete, and refused to
+  // ship. Keep the wildcard.
   const plan = outDir !== undefined ? [] : [
     `aws s3 sync dist/static s3://${R2_BUCKET}/static --endpoint-url ${R2_ENDPOINT} ` +
       `--cache-control 'public, max-age=31536000, immutable' --size-only ` +
-      `--exclude '*/current.json' --exclude 'completeness.json'`,
+      `--exclude '*/current.json' --exclude '*completeness.json'`,
     `aws s3 cp dist/static s3://${R2_BUCKET}/static --endpoint-url ${R2_ENDPOINT} --recursive ` +
-      `--cache-control 'public, max-age=60, stale-while-revalidate=86400' ` +
-      `--exclude '*' --include '*/current.json' --include 'completeness.json'`
+      `--cache-control 'public, max-age=30' ` +
+      `--exclude '*' --include '*/current.json'`,
+    `aws s3 cp dist/static s3://${R2_BUCKET}/static --endpoint-url ${R2_ENDPOINT} --recursive ` +
+      `--cache-control 'no-cache, must-revalidate' ` +
+      `--exclude '*' --include '*completeness.json'`
   ];
   if (outDir === undefined) {
     fs.writeFileSync(path.join(DIST, "sync.sh"), `#!/usr/bin/env bash\nset -euo pipefail\n\n${plan.join("\n")}\n`, { mode: 0o755 });

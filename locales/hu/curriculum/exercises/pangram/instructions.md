@@ -1,7 +1,7 @@
 ---
 title: "Pangramma"
 description: "Ellenőrizd, hogy egy mondat az ábécé minden betűjét tartalmazza-e, kis- és nagybetűtől függetlenül."
-en_md5: 8fae2df6ec4385478e4236fa49e21256
+en_md5: 2f0271add2facf8e75ecb8afde53682e
 ---
 
 Üdv a Pangramma-sorozat második részében! Emlékezz vissza: a pangramma olyan mondat, amely az ábécé minden betűjét legalább egyszer tartalmazza.

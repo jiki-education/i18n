@@ -1,0 +1,68 @@
+{
+  "describers": {
+    "move": "moveu o canhão laser para a direita"
+  },
+  "checks": {
+    "notShotAllAliens": "Você não abateu todos os alienígenas."
+  },
+  "tasks": {
+    "conditionalShoot": {
+      "name": "Use um condicional `if` para disparar apenas quando houver um alienígena acima",
+      "description": "Atravesse a tela, verificando cada posição. Se houver um alienígena acima de você, dispare. Se não, simplesmente siga em frente."
+    }
+  },
+  "scenarios": {
+    "conditional1": {
+      "name": "Alienígenas dispersos",
+      "description": "Alienígenas dispersos em duas linhas com espaços vazios"
+    },
+    "conditional2": {
+      "name": "Alienígenas esparsos",
+      "description": "Menos alienígenas com espaços vazios maiores"
+    },
+    "conditional3": {
+      "name": "Linhas alternadas",
+      "description": "Alienígenas alternados entre as linhas de cima e de baixo"
+    },
+    "conditional4": {
+      "name": "Concentração embaixo",
+      "description": "A maioria dos alienígenas na linha de baixo"
+    },
+    "conditional5": {
+      "name": "Formação densa",
+      "description": "Muitos alienígenas agrupados nas duas linhas"
+    }
+  },
+  "hints": {
+    "howToDecide": {
+      "question": "Como eu decido se devo disparar ou não?",
+      "answer": "Use um condicional `if` que verifique `isAlienAbove()`. Chame `shoot()` apenas quando ele retornar `true`."
+    },
+    "whatIsAlienAboveGives": {
+      "question": "O que `isAlienAbove()` me retorna?",
+      "answer": "Retorna `true` se houver um alienígena diretamente acima do seu canhão laser, e `false` caso contrário. Você pode usá-lo diretamente numa condição `if`."
+    },
+    "checkEveryColumn": {
+      "question": "Como eu verifico todas as colunas sem escrever o mesmo código repetidamente?",
+      "answer": "Coloque a sua lógica de verificar e talvez disparar num laço `repeat`, chamando `move()` no final de cada iteração para deslizar para a próxima coluna."
+    },
+    "keepShootingEmpty": {
+      "question": "Continuo disparando contra colunas vazias e perdendo. O que está errado?",
+      "answer": "Certifique-se de que `shoot()` está dentro do bloco `if`, e não depois dele. A chamada só deve acontecer quando `isAlienAbove()` é `true`."
+    }
+  },
+  "functions": {
+    "move": {
+      "description": "Move o canhão laser **uma posição para a direita**. Se você sair pelo lado direito da tela, perde!",
+      "category": "Movimento"
+    },
+    "shoot": {
+      "description": "Dispara o laser para cima. **Só dispare quando houver um alienígena acima de você**, ou você perde o jogo!",
+      "category": "Ação"
+    },
+    "isAlienAbove": {
+      "description": "Retorna `true` se houver um alienígena diretamente acima do canhão laser, ou `false` se não houver. Use isto para verificar antes de disparar!",
+      "category": "Percepção"
+    }
+  }
+}

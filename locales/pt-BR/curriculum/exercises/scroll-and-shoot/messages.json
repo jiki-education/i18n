@@ -1,0 +1,74 @@
+{
+  "checks": {
+    "notShotAllAliens": "Você não abateu todos os extraterrestres.",
+    "noRepeatWithArg": "Você não pode usar <code>repeat(n) {}</code> neste exercício. Você deve usar apenas laços <code>repeat() {}</code> sem valores de entrada."
+  },
+  "tasks": {
+    "scrollAndShoot": {
+      "name": "Percorra a tela e abata todos os extraterrestres",
+      "description": "Mova o laser de um lado para o outro na tela, verificando se há um extraterrestre acima de você e abatendo-o. Não ultrapasse o limite da tela nem dispare quando não houver nenhum extraterrestre, ou você perde! As ondas ficam mais intensas conforme você avança."
+    }
+  },
+  "scenarios": {
+    "oneAlien": {
+      "name": "Um extraterrestre",
+      "description": "Um único extraterrestre para abater"
+    },
+    "oneRow": {
+      "name": "Uma fila pouco preenchida",
+      "description": "Extraterrestres espalhados pela fila de baixo"
+    },
+    "twoRows": {
+      "name": "Duas filas",
+      "description": "Extraterrestres espalhados por duas filas"
+    },
+    "threeRows": {
+      "name": "Três filas",
+      "description": "Extraterrestres distribuídos pelas três filas"
+    },
+    "fullRows": {
+      "name": "Filas completas",
+      "description": "Três filas cheias. Os extraterrestres continuam aparecendo!"
+    }
+  },
+  "hints": {
+    "whereDoIStart": {
+      "question": "Por onde começo? Isto parece muita coisa.",
+      "answer": "Divida em partes. Primeiro, ponha o laser se movendo de um lado para o outro, ignorando os disparos. Assim que o movimento funcionar, acrescente a lógica de disparo."
+    },
+    "trackLaserPosition": {
+      "question": "Como sei onde está o laser?",
+      "answer": "Guarde uma variável para a posição do laser. Atualize-a em cada iteração do laço quando você chamar `moveLeft()` ou `moveRight()`."
+    },
+    "whenToTurnAround": {
+      "question": "Como sei quando mudar de direção?",
+      "answer": "Guarde uma variável de direção (por exemplo, `1` para a direita, `-1` para a esquerda). Quando a posição tocar no limite esquerdo ou direito, inverta a direção. É o mesmo padrão de ricochete da Bola Arco-Íris."
+    },
+    "whenToShoot": {
+      "question": "Quando devo chamar `shoot()`?",
+      "answer": "Antes de chamar `shoot()`, verifique `isAlienAbove()`. Só dispare se retornar `true`, caso contrário você desperdiça munição e perde."
+    },
+    "laserOverheating": {
+      "question": "O laser não para de superaquecer. O que faço?",
+      "answer": "Não dispare em todas as iterações. Mova-se pelo menos uma vez entre disparos para que o canhão tenha tempo de esfriar."
+    }
+  },
+  "functions": {
+    "moveLeft": {
+      "description": "Move o canhão de laser **uma posição para a esquerda**. Se você tentar sair pelo lado esquerdo da tela, perde o jogo!",
+      "category": "Movimento"
+    },
+    "moveRight": {
+      "description": "Move o canhão de laser **uma posição para a direita**. Se você tentar sair pelo lado direito da tela, perde o jogo!",
+      "category": "Movimento"
+    },
+    "shoot": {
+      "description": "Dispara o laser para cima. **Só dispare quando houver um extraterrestre acima de você**, ou perde o jogo! O canhão de laser superaquece com facilidade, então você precisa se mover antes de disparar novamente.",
+      "category": "Ação"
+    },
+    "isAlienAbove": {
+      "description": "Retorna `true` se houver um extraterrestre diretamente acima do canhão de laser, ou `false` se não houver. Use-a para verificar antes de disparar!",
+      "category": "Percepção"
+    }
+  }
+}

@@ -4,7 +4,15 @@ description: Prendere un valore che esce dallo scivolo di output di una funzione
 en_md5: 830f19fb6aaf184c1f32ade792b60a12
 ---
 
-Finora abbiamo visto funzioni che fanno qualcosa nel mondo. Quindi la funzione `circle` disegna un cerchio. La funzione `move` sposta il tuo personaggio. Ma alcune funzioni funzionano in modo diverso. Invece di fare qualcosa di esterno, ti danno indietro qualcosa che puoi usare all'interno del tuo codice. Quando una funzione fornisce qualcosa a Jiki da usare nel codice, diciamo che questa funzione restituisce (_return_ in inglese) qualcosa. Restituisce qualcosa indietro a Jiki. Puoi pensare a queste macchine come se avessero uno scivolo di output. Abbiamo già le nostre fessure di input in cui mettiamo le cose, ma possiamo anche avere una singola fessura di output o uno scivolo da cui qualcosa può tornare fuori. Quando Jiki preme il pulsante sulla macchina, la macchina si mette in moto e qualcosa salterà fuori da quello scivolo alla fine. Potrebbe essere un numero. Potrebbe essere una stringa. È qualcosa che Jiki può prendere e usare.
+Finora abbiamo visto funzioni che svolgono un'azione visibile nel mondo.
+La funzione `circle` disegna un cerchio, `move` sposta il tuo personaggio.
+
+Ma alcune funzioni si comportano in modo diverso.
+Invece di compiere un'azione esterna, restituiscono un valore che puoi usare nel tuo codice.
+
+Quando una funzione fornisce a Jiki un valore da utilizzare nel programma, diciamo che la funzione restituisce (_return_) quel valore.
+
+Puoi immaginare queste macchine come dispositivi che, dopo aver ricevuto i loro input, producono un output. La macchina elabora ciò che le hai dato e ti consegna un risultato: può essere un numero, una stringa, un valore che Jiki può prendere e usare nel codice.
 
 <img
   class="concept-image"
@@ -14,7 +22,15 @@ Finora abbiamo visto funzioni che fanno qualcosa nel mondo. Quindi la funzione `
   height="317"
 />
 
-La maggior parte delle funzioni, probabilmente il 95%, restituisce qualcosa. Potrebbero fare dei calcoli per te e restituire il valore, oppure potrebbero unire alcune stringhe e poi darti la stringa risultante. O forse ti restituiscono l'ora corrente ogni volta che esegui quella macchina. Vediamo quest'ultimo caso. Diciamo che abbiamo una funzione chiamata `getCurrentTime` (ottieni l'ora corrente). Ogni volta che Jiki esegue la macchina, un foglio di carta scivola fuori dallo scivolo di output con l'ora scritta sopra, ad esempio 14:35.
+La maggior parte delle funzioni, circa il 95%, restituisce un valore.
+Possono eseguire dei calcoli e restituire il risultato, oppure combinare delle stringhe e darti la stringa finale.
+Possono restituire l'ora corrente ogni volta che attivi quella macchina.
+
+Vediamo quest'ultimo caso.
+Supponiamo di avere una funzione chiamata `getCurrentTime` (ottieni l'ora corrente).
+Ogni volta che Jiki attiva la macchina, dalla sua uscita spunta un foglietto di carta: sopra c'è scritto l'ora, ad esempio `14:35`.
+
+La macchina prende gli input, li elabora e ti restituisce un risultato: un valore che Jiki può afferrare e usare nel codice.
 
 <img
   class="concept-image"
@@ -24,13 +40,13 @@ La maggior parte delle funzioni, probabilmente il 95%, restituisce qualcosa. Pot
   height="312"
 />
 
-E poi possiamo mettere quel valore restituito in una scatola usando `let`:
+E poi possiamo inserire quel valore restituito in una scatola usando `let`:
 
 ```javascript
 let time = getCurrentTime()
 ```
 
-Jiki eseguirà la macchina, prenderà l'ora corrente dallo scivolo e la conserverà in una scatola chiamata `time`.
+Jiki attiverà la macchina, prenderà l'ora corrente dalla bocca della macchina e la conserverà in una scatola chiamata `time`.
 
 <img
   class="concept-image"
@@ -40,9 +56,16 @@ Jiki eseguirà la macchina, prenderà l'ora corrente dallo scivolo e la conserve
   height="400"
 />
 
-Ora, è importante capire che il foglio di carta che Jiki mette nella scatola è fissato in quel momento. Anche se l'orario reale cambia mentre il tuo programma è in esecuzione, la scatola contiene ancora quel foglio con scritto 14:35. Una volta che qualcosa è nella scatola, è una cosa fissa lì dentro. Non cambia magicamente. Se in futuro vogliamo rimettere l'ora corrente nella scatola, dobbiamo usare di nuovo la nostra funzione `getCurrentTime` per ottenerla.
+Ora, è importante capire che il foglio di carta che Jiki inserisce nella scatola rimane quello, in quel momento.
+Anche se l'orario reale cambia mentre il tuo programma è in esecuzione, la scatola contiene ancora quel foglio con scritto `14:35`.
 
-La maggior parte delle funzioni che restituiscono qualcosa ha anche degli input. Per esempio, potremmo avere una funzione `join` (unire) che prende due stringhe come input e le restituisce unite con uno spazio. Quindi, se usiamo una macchina `join` con `"Hello"` e `"World"` come input, dallo scivolo uscirà un'unica stringa con scritto `"Hello World"`.
+Una volta che l'oggetto è nella scatola, resta com'è. Non cambia magicamente.
+
+Se in futuro vogliamo cambiare di nuovo l'ora corrente nella scatola, dobbiamo usare di nuovo la nostra funzione `getCurrentTime` per ottenere un nuovo foglietto con l'ora aggiornata.
+
+La maggior parte delle funzioni che restituiscono un valore ha anche degli input.
+
+Per esempio, potremmo avere una funzione `join` (unire) che prende due stringhe come input e le restituisce unite con uno spazio. Quindi, se usiamo una macchina `join` con `"Hello"` e `"World"` come input, dalla bocca della macchina uscirà un foglietto nuovo con scritto `"Hello World"`.
 
 ```javascript
 join("Hello", "World"); // "Hello World"

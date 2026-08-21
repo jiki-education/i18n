@@ -1,0 +1,267 @@
+WEBVTT
+
+NOTE en_md5 49411a7db976297a17fb5f2e027fcaff
+
+00:00:00.100 --> 00:00:03.060
+Bon retour ! Ça fait un moment que tu utilises la
+
+00:00:03.120 --> 00:00:05.160
+boucle repeat, et j'espère que tu commences
+
+00:00:05.220 --> 00:00:08.640
+à être bien à l'aise avec. On va maintenant
+
+00:00:08.680 --> 00:00:10.500
+regarder quelque chose d'un peu
+
+00:00:10.520 --> 00:00:13.220
+plus complexe. Disons qu'on veut une rangée
+
+00:00:13.260 --> 00:00:15.740
+de fleurs. On peut écrire quelque chose comme ceci.
+
+00:00:16.180 --> 00:00:18.720
+On définit une position, on plante une fleur,
+
+00:00:18.760 --> 00:00:21.300
+on augmente la position de 10, on recommence,
+
+00:00:22.000 --> 00:00:23.560
+et on obtient une belle rangée
+
+00:00:23.680 --> 00:00:26.640
+de fleurs bien alignées. Mais si on veut une
+
+00:00:26.720 --> 00:00:30.240
+grille de fleurs, avec des rangées et des colonnes ?
+
+00:00:30.320 --> 00:00:32.780
+Par exemple quatre rangées de cinq fleurs chacune.
+
+00:00:35.000 --> 00:00:36.580
+Arrête-toi une seconde, mets peut-être la vidéo
+
+00:00:36.620 --> 00:00:38.640
+en pause un instant, et réfléchis
+
+00:00:38.700 --> 00:00:42.380
+à la façon dont tu ferais ça. On a
+
+00:00:42.440 --> 00:00:44.880
+une boucle qui dessine une rangée de fleurs.
+
+00:00:45.980 --> 00:00:48.240
+Comment peux-tu l'utiliser pour en dessiner
+
+00:00:48.320 --> 00:00:50.660
+quatre ? Ou plutôt, que pourrait-on faire pour
+
+00:00:50.700 --> 00:00:54.420
+dessiner quatre rangées ? Bon, j'espère que tu y as réfléchi.
+
+00:00:55.440 --> 00:00:57.360
+Une option serait tout simplement de copier-coller
+
+00:00:57.380 --> 00:01:00.680
+cette boucle quatre fois, en changeant
+
+00:01:00.740 --> 00:01:03.260
+la position verticale à chaque fois. Et ça
+
+00:01:03.320 --> 00:01:07.970
+fonctionnerait. Ce serait tout à fait correct. Mais ce code se répète,
+
+00:01:07.980 --> 00:01:10.380
+et il existe une meilleure façon de faire. On le sait :
+
+00:01:10.420 --> 00:01:13.420
+quand du code se répète, on peut utiliser une boucle
+
+00:01:13.460 --> 00:01:17.920
+pour simplifier les choses. Ici, on peut donc utiliser une
+
+00:01:18.020 --> 00:01:21.840
+boucle à l'intérieur d'une autre boucle : une boucle pour
+
+00:01:21.860 --> 00:01:24.840
+les rangées, et une pour les fleurs de
+
+00:01:24.880 --> 00:01:28.080
+chaque rangée. Commençons par ajouter une boucle repeat
+
+00:01:28.140 --> 00:01:30.360
+autour de notre code existant, pour que tu
+
+00:01:30.380 --> 00:01:32.220
+te fasses une idée du fonctionnement. Et on va
+
+00:01:32.260 --> 00:01:35.020
+simplement répéter une seule fois. Autrement dit, on demande à Jiki
+
+00:01:35.060 --> 00:01:38.680
+de faire une fois tout ce qui est entre ces accolades externes.
+
+00:01:39.800 --> 00:01:41.920
+Cela a donc exactement le même effet que
+
+00:01:42.000 --> 00:01:44.220
+de ne pas avoir cette boucle externe du tout. On
+
+00:01:44.280 --> 00:01:46.870
+demande à Jiki de répéter quelque chose une fois, ce qui
+
+00:01:46.940 --> 00:01:48.440
+revient exactement à lui demander de le faire
+
+00:01:48.480 --> 00:01:51.000
+sans le repeat. Mais je te montre ça
+
+00:01:51.040 --> 00:01:53.000
+pour que tu voies comment ce
+
+00:01:53.060 --> 00:01:55.500
+code fonctionne. C'est du code légitime, parfaitement valide. On a bien
+
+00:01:55.560 --> 00:01:59.900
+une boucle à l'intérieur d'une autre boucle. Maintenant, que
+
+00:01:59.940 --> 00:02:02.960
+se passe-t-il si on modifie cette boucle externe pour qu'elle répète
+
+00:02:03.000 --> 00:02:06.520
+deux fois ? Jiki va alors exécuter
+
+00:02:06.560 --> 00:02:10.400
+deux fois toute la partie « plant » cinq fois. Il va
+
+00:02:10.440 --> 00:02:14.460
+planter 10 fleurs. Mais toutes ces fleurs
+
+00:02:14.500 --> 00:02:17.600
+seront sur la même rangée. De la
+
+00:02:17.660 --> 00:02:20.520
+même façon qu'on doit décaler la position
+
+00:02:20.580 --> 00:02:22.180
+de gauche à droite à chaque fois,
+
+00:02:23.100 --> 00:02:26.240
+on doit aussi, après chaque rangée complète,
+
+00:02:26.300 --> 00:02:28.660
+déplacer la position verticale.
+
+00:02:30.040 --> 00:02:32.540
+Alors, comment faire ? Eh bien, on
+
+00:02:32.580 --> 00:02:35.480
+peut ajouter une variable externe pour la position
+
+00:02:35.560 --> 00:02:39.970
+verticale, l'utiliser dans notre fonction plant, puis
+
+00:02:40.000 --> 00:02:42.880
+l'augmenter de 10 après chaque rangée.
+
+00:02:45.200 --> 00:02:46.920
+Prends le temps de suivre la valeur
+
+00:02:46.960 --> 00:02:50.480
+à chaque étape. La position verticale commence à 10.
+
+00:02:50.520 --> 00:02:53.360
+Pendant les cinq premières plantations, elle ne
+
+00:02:53.380 --> 00:02:56.720
+bouge pas. C'est la position horizontale qui augmente. Ensuite,
+
+00:02:56.760 --> 00:02:59.720
+on ajoute encore 10 à cette
+
+00:02:59.800 --> 00:03:03.480
+position verticale, et on plante cinq nouvelles fleurs
+
+00:03:03.980 --> 00:03:07.120
+un peu plus bas. On remet la position
+
+00:03:07.140 --> 00:03:09.150
+horizontale à 10, puis on
+
+00:03:09.180 --> 00:03:13.120
+l'augmente à nouveau à chaque fois. Et maintenant, on
+
+00:03:13.140 --> 00:03:16.030
+peut dire : répète tout ça quatre fois, et on
+
+00:03:16.060 --> 00:03:20.360
+obtient quatre rangées de cinq plantes. La
+
+00:03:20.420 --> 00:03:23.070
+chose essentielle à comprendre, c'est que Jiki termine
+
+00:03:23.260 --> 00:03:26.160
+tout le travail de la boucle interne avant
+
+00:03:26.220 --> 00:03:28.440
+de revenir à la boucle externe. Il ne fait pas
+
+00:03:28.500 --> 00:03:32.140
+des allers-retours entre les deux. Il termine la boucle
+
+00:03:32.200 --> 00:03:34.130
+interne, puis il passe à
+
+00:03:34.260 --> 00:03:37.660
+l'étape suivante de la boucle externe. Dans cette
+
+00:03:37.680 --> 00:03:39.520
+situation, tu peux voir la
+
+00:03:39.620 --> 00:03:41.880
+boucle externe comme celle qui contrôle les groupes,
+
+00:03:41.980 --> 00:03:44.720
+autrement dit les rangées, et la boucle interne comme celle qui contrôle
+
+00:03:44.820 --> 00:03:47.049
+chaque élément du groupe, chaque élément de
+
+00:03:47.080 --> 00:03:50.549
+la rangée. Dans notre exemple, la boucle
+
+00:03:50.600 --> 00:03:54.580
+externe crée quatre rangées, et la boucle interne
+
+00:03:54.640 --> 00:03:57.760
+place cinq plantes, cinq éléments, dans chaque groupe.
+
+00:03:59.280 --> 00:04:02.100
+Dans les prochains exercices, tu vas utiliser des boucles
+
+00:04:02.180 --> 00:04:05.520
+dans des boucles pour construire des choses. Ces nouveaux exercices
+
+00:04:05.580 --> 00:04:08.160
+te donneront des fonctions pour dessiner chaque élément.
+
+00:04:08.540 --> 00:04:10.160
+Ton travail consiste simplement à trouver la
+
+00:04:10.220 --> 00:04:11.829
+bonne structure de boucles pour que ça
+
+00:04:11.860 --> 00:04:16.029
+fonctionne. Tout ce dont ces exercices ont besoin,
+
+00:04:16.060 --> 00:04:17.760
+on vient d'en parler. Alors si tu
+
+00:04:17.800 --> 00:04:19.860
+bloques, n'hésite pas à revenir à cette vidéo.
+
+00:04:20.660 --> 00:04:22.160
+Bonne chance, et on se retrouve
+
+00:04:22.180 --> 00:04:22.460
+très vite.

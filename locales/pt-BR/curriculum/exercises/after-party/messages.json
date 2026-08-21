@@ -1,0 +1,78 @@
+{
+  "tasks": {
+    "lookUpPlusOnes": {
+      "name": "Verifique os Acompanhantes",
+      "description": "Alguém te dá o primeiro nome. Retorne o número de convidados extras que essa pessoa pode trazer, ou `\"Not on the list!\"` se não estiver convidado."
+    }
+  },
+  "scenarios": {
+    "emptyList": {
+      "name": "Lista vazia",
+      "description": "Ninguém entra quando a lista está vazia."
+    },
+    "nameMissing": {
+      "name": "Brad é barrado",
+      "description": "O nome nem está na lista."
+    },
+    "namePresent": {
+      "name": "Brad pode entrar",
+      "description": "Brad está convidado e não vem sozinho."
+    },
+    "similarName": {
+      "name": "Quase, mas não",
+      "description": "Bradley não é Brad, então Brad continua do lado errado da corda."
+    },
+    "doubleBarrelled": {
+      "name": "Um holandês",
+      "description": "O nome está na lista, mas tem hífen."
+    },
+    "allowedNobody": {
+      "name": "Brad vai sozinho",
+      "description": "Brad está mesmo convidado. Só não traz ninguém com ele."
+    },
+    "twoBrads": {
+      "name": "Dois Brads",
+      "description": "Há mais de um Brad na lista esta noite, e o primeiro da lista é o que está na porta."
+    },
+    "cher": {
+      "name": "Cher está na cidade",
+      "description": "Algumas pessoas só têm um nome, e ela trouxe uma comitiva."
+    },
+    "cheryl": {
+      "name": "Agora fica difícil",
+      "description": "Será que Cheryl Crow e Cher são amigas? Não importa: Cheryl não é Cher."
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Por onde eu começo?",
+      "answer": "Imagine você mesmo fazendo isso na porta. Alguém diz um nome, e você percorre a lista na prancheta até encontrar essa pessoa. Vale a pena reparar que a resposta que você precisa dar não está escrita ao lado do nome na lista que você está lendo."
+    },
+    "twoLists": {
+      "question": "Há duas listas. Como elas se relacionam uma com a outra?",
+      "answer": "Tudo o que você descobrir sobre *onde* alguém está em uma lista é igualmente verdade na outra. Uma posição é mais útil de guardar do que um nome."
+    },
+    "whatCountsAsAMatch": {
+      "question": "Quando um primeiro nome conta realmente como correspondência?",
+      "answer": "O \"Brad\" deve deixar entrar o Brad Pitt, mas não o Bradley Cooper. Pense no que é diferente nessas duas entradas no ponto em que as letras que te deram acabam. Há mais de uma forma razoável de fazer essa comparação, então escolha aquela que você conseguir explicar a você mesmo."
+    },
+    "noSurname": {
+      "question": "A Cher não tem sobrenome. Isso estraga alguma coisa?",
+      "answer": "Volte a ver o que o seu teste de correspondência assume sobre uma entrada da lista. Se assumir que sempre há algo depois do primeiro nome, uma entrada que é *só* um primeiro nome não vai passar. E no sentido inverso, um nome mais longo não deve conseguir corresponder a uma entrada mais curta."
+    },
+    "notOnTheList": {
+      "question": "O que faço quando alguém não está na lista?",
+      "answer": "Então essa pessoa recebe a string `\"Not on the list!\"`, exatamente como está escrita. Há duas coisas em que vale a pena pensar. Primeiro, em que momento você pode ter *certeza* de que alguém não está na lista? Segundo, repare que esta é uma resposta genuinamente diferente da de um convidado que está convidado mas pode trazer 0 convidados extras, então certifique-se de que a sua função nunca confunde as duas."
+    }
+  },
+  "functions": {
+    "length": {
+      "description": "O número de itens em uma lista: a mesma propriedade length que você usou nas strings (fornecida pelo nível stdlib).",
+      "category": "Operações com Listas"
+    },
+    "startsWith": {
+      "description": "Verifica se uma string começa com uma string menor (fornecido pelo nível stdlib).",
+      "category": "Operações com Strings"
+    }
+  }
+}

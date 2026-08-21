@@ -10,4 +10,4 @@ Chaque jour, tu choisis une recette, puis tu regardes ce qu'il y a dans le frigo
 
 Tu as maintenant décidé de te simplifier la vie en écrivant un programme qui fait le travail à ta place !
 
-Écris une fonction appelée `shoppingList` (liste de courses). Elle prend deux entrées : le contenu de ton frigo, sous forme de tableau de strings, et les ingrédients de la recette, également en tableau de strings. Elle doit renvoyer ce qu'il te faut acheter, là aussi sous forme de tableau de strings.
+Écris une fonction appelée `shoppingList` (liste de courses). Elle prend deux entrées : le contenu de ton frigo, sous forme de tableau de _strings_, et les ingrédients de la recette, également en tableau de _strings_. Elle doit renvoyer ce qu'il te faut acheter, là aussi sous forme de tableau de _strings_.

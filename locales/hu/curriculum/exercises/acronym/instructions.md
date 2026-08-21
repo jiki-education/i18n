@@ -1,7 +1,7 @@
 ---
 title: "Betűszó"
 description: "Alakíts egy kifejezést a betűszójává, a központozást figyelmen kívül hagyva."
-en_md5: 97e2adefc1da7867f5e218d0fe8c4fdb
+en_md5: e8b8820be81476a13cb6a66781f95cc9
 ---
 
 Korábban már megoldottál egyszerű hárombetűs betűszókat, például a `Portable Network Graphics` kifejezést `PNG`-vé alakítottad.
@@ -12,7 +12,7 @@ A feladatod egy `acronym(phrase)` nevű függvény megírása, ami egy kifejezé
 
 ## A szabályok
 
-Egy új szó **szóköz** vagy **kötőjel** (`-`) után kezdődik. Minden más karakter – vessző, aposztróf, aláhúzás, felkiáltójel és így tovább – **nem** elválasztó, és sosem lesz része a betűszónak. Csak a betűk számítanak.
+Egy új szó **szóköz** vagy **kötőjel** (`-`) után kezdődik. Minden más karakter (vessző, aposztróf, aláhúzás, felkiáltójel stb.) **nem** elválasztó, és sosem lesz része a betűszónak. Csak a betűk számítanak.
 
 | Kifejezés                 | Betűszó |
 | ------------------------- | ------- |

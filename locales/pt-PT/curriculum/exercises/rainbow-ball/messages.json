@@ -1,0 +1,57 @@
+{
+  "checks": {
+    "uniqueColoredCircles": "Era suposto haver pelo menos 50 círculos com cores únicas.",
+    "uniquePositionedCircles": "Era suposto haver pelo menos 30 posições diferentes.",
+    "canvasCoverage": "A bola não pintou o suficiente do ecrã. Deveria saltar até que mais de 80% do ecrã esteja coberto.",
+    "hueBounced": "O matiz não chegou a atingir os 360 e depois voltou a descer.",
+    "hueSweep": "O rasto de arco-íris não percorreu todas as cores."
+  },
+  "tasks": {
+    "rainbowBall": {
+      "name": "Cria uma bola arco-íris saltitante",
+      "description": "Cria uma bola que salta pelo ecrã, deixando um rasto de círculos coloridos que percorrem as cores do arco-íris."
+    }
+  },
+  "scenarios": {
+    "rainbowBall": {
+      "name": "Bola arco-íris",
+      "description": "Desenha um rasto de arco-íris a partir de círculos diferentes."
+    }
+  },
+  "hints": {
+    "stateToTrack": {
+      "question": "Que estado preciso de controlar?",
+      "answer": "A posição da bola e a forma como se move. Mantém-nas separadas: uma variável para *onde* a bola está, outra para *como está a mudar*. A mesma ideia aplica-se ao matiz: precisas do valor atual e da direção em que está a seguir."
+    },
+    "moveAndShift": {
+      "question": "Como faço a bola mover-se e a cor mudar em cada iteração?",
+      "answer": "No início de cada iteração do ciclo, adiciona as variáveis de direção à posição e ao `hue`. Dessa forma, as variáveis de direção controlam totalmente o movimento. Inverter o sinal ou alterar o tamanho dessas variáveis muda instantaneamente a forma como a bola se move e como a cor muda."
+    },
+    "velocityTip": {
+      "question": "Não consigo perceber como fazer isto. Alguma dica?",
+      "answer": "O que são estes números pelos quais `x` e `y` mudam? São uma mistura de velocidade (o tamanho do número) e direção (se move a bola para a frente ou para trás). Então `2` seria uma velocidade de 2 a mover-se para a direita ou para baixo. E `-3` seria uma velocidade de 3 a mover-se para a esquerda ou para cima. Um número que é uma velocidade e uma direção chama-se **velocidade** (já é altura de atualizar os nomes das tuas variáveis?). Portanto, quando quiseres mudar a direção da bola, mudas o sinal da velocidade, de positivo para negativo ou vice-versa."
+    },
+    "bounceOffEdges": {
+      "question": "Como faço a bola saltar ao tocar nos limites?",
+      "answer": "Depois de atualizar a posição, verifica se `x` ou `y` ultrapassou o limite do ecrã. Quando isso acontecer, inverte a variável de direção desse eixo. As instruções indicam os limites do ecrã."
+    },
+    "randomBounceSpeed": {
+      "question": "Como faço para que o salto tenha uma velocidade aleatória nova de cada vez?",
+      "answer": "Quando a bola atingir um limite, define a variável de direção usando `Math.randomInt(min, max)` em vez de simplesmente inverteres o sinal. Escolhe um intervalo positivo quando saltar do lado esquerdo ou de cima, e um intervalo negativo quando saltar do lado direito ou de baixo."
+    },
+    "cycleHue": {
+      "question": "Como faço o matiz percorrer as cores do arco-íris?",
+      "answer": "Aplica o mesmo truque ao `hue` como à posição. Quando ele sair do intervalo válido, inverte a `hueDirection`. A cor irá então subir até ao topo do espetro e voltar a descer sozinha."
+    }
+  },
+  "functions": {
+    "circle": {
+      "description": "Desenha um círculo cujo centro está em (centerX, centerY) com o raio e a cor indicados.",
+      "category": "Desenhar Formas"
+    },
+    "hsl": {
+      "description": "Converte valores de cor HSL (matiz 0-360, saturação 0-100, luminosidade 0-100) numa string de cor hexadecimal.",
+      "category": "Cores"
+    }
+  }
+}

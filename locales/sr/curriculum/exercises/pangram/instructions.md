@@ -1,7 +1,7 @@
 ---
 title: "Pangram"
 description: "Proveri da li rečenica sadrži svako slovo abecede, bez obzira na veličinu slova."
-en_md5: 8fae2df6ec4385478e4236fa49e21256
+en_md5: 2f0271add2facf8e75ecb8afde53682e
 ---
 
 Dobrodošli u drugi deo serijala o Pangramu. Seti se, pangram je rečenica koja koristi svako slovo abecede bar jednom.

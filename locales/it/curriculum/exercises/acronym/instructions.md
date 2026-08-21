@@ -1,7 +1,7 @@
 ---
 title: "Acronimo"
 description: "Trasforma una frase in un acronimo, ignorando la punteggiatura."
-en_md5: 97e2adefc1da7867f5e218d0fe8c4fdb
+en_md5: e8b8820be81476a13cb6a66781f95cc9
 ---
 
 Hai già risolto semplici acronimi di tre lettere, come trasformare `Portable Network Graphics` in `PNG`.
@@ -12,7 +12,7 @@ Il tuo compito è scrivere una funzione chiamata `acronym(phrase)` che prende un
 
 ## Le regole
 
-Una nuova parola inizia dopo uno **spazio** o un **trattino** (`-`). Tutti gli altri caratteri, come virgole, apostrofi, trattini bassi, punti esclamativi e così via, **non** sono separatori e non fanno mai parte dell'acronimo. Contano solo le lettere.
+Una nuova parola inizia dopo uno **spazio** o un **trattino** (`-`). Tutti gli altri caratteri (virgole, apostrofi, trattini bassi, punti esclamativi, ecc.) **non** sono separatori e non fanno mai parte dell'acronimo. Contano solo le lettere.
 
 | Frase                     | Acronimo |
 | ------------------------- | -------- |

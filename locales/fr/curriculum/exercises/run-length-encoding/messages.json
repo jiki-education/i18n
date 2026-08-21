@@ -48,7 +48,7 @@
     },
     "rleDecodeMixed": {
       "name": "Décode des caractères isolés mêlés à des plages",
-      "description": "Les nombres de plusieurs chiffres doivent être lus en entier avant de développer la plage."
+      "description": "Les nombres à plusieurs chiffres doivent être lus en entier avant de développer la plage."
     },
     "rleDecodeWhitespace": {
       "name": "Décode des espaces",
@@ -78,11 +78,11 @@
     },
     "decodeMultiDigit": {
       "question": "Comment lire un nombre de plusieurs chiffres, comme 12 ?",
-      "answer": "Un nombre comme `12` arrive chiffre par chiffre : construis-le au fur et à mesure plutôt que de traiter chaque chiffre séparément. Chaque fois qu'un nouveau chiffre se présente, le nombre que tu as déjà doit être multiplié par dix pour lui faire de la place, avant d'y ajouter le nouveau chiffre. `Number()` transforme un caractère représentant un chiffre en un nombre avec lequel tu peux faire des calculs."
+      "answer": "Un nombre comme `12` arrive chiffre par chiffre : construis-le au fur et à mesure plutôt que de traiter chaque chiffre séparément. Chaque fois qu'un nouveau chiffre se présente, le nombre que tu as déjà doit être multiplié par dix pour lui faire de la place avant d'y ajouter le nouveau chiffre. `Number()` transforme un caractère représentant un chiffre en un nombre avec lequel tu peux faire des calculs."
     },
     "decodeRepeat": {
       "question": "Comment répéter le caractère le bon nombre de fois ?",
-      "answer": "Dès que tu rencontres un caractère qui n'est pas un chiffre, utilise une boucle qui s'exécute `count` fois et ajoute le caractère à ton résultat à chaque tour. Remets ensuite le compte à 0, prêt pour la plage suivante. S'il n'y avait pas de nombre, considère que c'est 1."
+      "answer": "Dès que tu rencontres un caractère qui n'est pas un chiffre, utilise une boucle qui s'exécute `count` fois et ajoute le caractère à ton résultat à chaque tour. Remets ensuite le compteur à 0, prêt pour la plage suivante. S'il n'y avait pas de nombre, considère que c'est 1."
     }
   },
   "functions": {

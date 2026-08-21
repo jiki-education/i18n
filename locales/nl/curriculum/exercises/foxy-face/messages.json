@@ -1,0 +1,54 @@
+{
+  "checks": {
+    "leftCheek": "De linkerwang moet een witte driehoek op de juiste plek zijn.",
+    "rightCheek": "De rechterwang moet een witte driehoek op de juiste plek zijn.",
+    "leftEar": "Het linkeroor moet een bruine driehoek op de juiste plek zijn.",
+    "rightEar": "Het rechteroor moet een bruine driehoek op de juiste plek zijn.",
+    "leftFace": "De linkerhelft van het gezicht moet een oranje driehoek op de juiste plek zijn.",
+    "rightFace": "De rechterhelft van het gezicht moet een oranje driehoek op de juiste plek zijn.",
+    "nose": "De neus heeft twee houtskoolkleurige driehoeken nodig. Je kunt hem boven/onder of links/rechts splitsen.",
+    "leftFaceAboveEar": "De linkerhelft van het gezicht moet **bovenop** het linkeroor getekend worden.",
+    "rightFaceAboveEar": "De rechterhelft van het gezicht moet **bovenop** het rechteroor getekend worden.",
+    "noseAboveFace": "De neus moet **bovenop** het gezicht liggen."
+  },
+  "tasks": {
+    "drawFox": {
+      "name": "Teken het vossengezicht",
+      "description": "Gebruik driehoeken om een geometrisch vossengezicht op de grijze achtergrond te bouwen."
+    }
+  },
+  "scenarios": {
+    "drawFox": {
+      "name": "Teken het vossengezicht",
+      "description": "Bouw een geometrisch vossengezicht met driehoeken."
+    }
+  },
+  "hints": {
+    "callTriangle": {
+      "question": "Hoe roep ik de `triangle`-functie aan?",
+      "answer": "Geef 7 argumenten mee in deze volgorde: de drie hoekpunten (`x1, y1, x2, y2, x3, y3`) en daarna de kleur als string, bijvoorbeeld `triangle(50, 10, 30, 50, 70, 50, \"orange\")`."
+    },
+    "drawOrder": {
+      "question": "In welke volgorde moet ik de onderdelen tekenen zodat ze goed overlappen?",
+      "answer": "Latere vormen liggen bovenop eerdere vormen. Teken eerst de witte wangen, zodat de oranje gezichtshelften het grootste deel ervan bedekken en alleen de puntjes van de wangen zichtbaar blijven."
+    },
+    "colors": {
+      "question": "Welke kleuren horen waar?",
+      "answer": "De oren zijn `\"brown\"`, de gezichtshelften zijn `\"orange\"`, de wangen zijn `\"white\"` en de neus is `\"charcoal\"`. Onthoud dat de kleuren strings zijn, dus ze hebben aanhalingstekens nodig."
+    },
+    "symmetry": {
+      "question": "Hoe vind ik de coördinaten aan de rechterkant zonder mijn muis eroverheen te bewegen?",
+      "answer": "De vos is symmetrisch rond het verticale midden. Als een punt aan de linkerkant op x=`30` ligt en het midden op x=`50`, dan ligt het spiegelpunt op x=`70` (dezelfde afstand aan de andere kant van het midden). De y-waarden blijven gelijk."
+    },
+    "multiplesOf5": {
+      "question": "Waarom kloppen mijn coördinaten niet?",
+      "answer": "Alle waarden die je nodig hebt zijn veelvouden van 5. Als een hoekpunt er net naast lijkt te zitten, heb je waarschijnlijk een getal als `12` of `38` gebruikt. Rond het af naar het dichtstbijzijnde veelvoud van 5 (`10`, `15`, `40`, enzovoort)."
+    }
+  },
+  "functions": {
+    "triangle": {
+      "description": "Teken een driehoek met drie hoekpunten en een kleur",
+      "category": "Vormen tekenen"
+    }
+  }
+}

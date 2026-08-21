@@ -1,0 +1,264 @@
+WEBVTT
+
+NOTE en_md5 d53eb0ea7bb0ec1daa64bb73829462f2
+
+00:00:00.240 --> 00:00:03.700
+Content de te revoir. Jusqu'ici, tout ce qu'on a fait a
+
+00:00:03.720 --> 00:00:06.880
+été écrit de façon linéaire : Jiki
+
+00:00:06.920 --> 00:00:10.660
+suit chaque instruction dans l'ordre, de haut
+
+00:00:10.670 --> 00:00:14.220
+en bas. Dans cette leçon, on va voir
+
+00:00:14.260 --> 00:00:16.330
+comment Jiki peut sortir de ce
+
+00:00:16.460 --> 00:00:19.690
+déroulement strict de haut en bas, et plus précisément comment
+
+00:00:19.720 --> 00:00:21.800
+on peut lui demander d'exécuter la même
+
+00:00:21.880 --> 00:00:24.320
+section de code plusieurs fois de
+
+00:00:24.360 --> 00:00:28.680
+suite. Par exemple, imagine que tu es dans le
+
+00:00:28.760 --> 00:00:31.180
+labyrinthe et que tu veux avancer de 10
+
+00:00:31.240 --> 00:00:34.240
+pas. Je t'ai donné plus tôt la fonction walk
+
+00:00:34.280 --> 00:00:36.690
+(marcher) pour t'aider là-dessus, mais
+
+00:00:36.740 --> 00:00:39.670
+que se passerait-il si elle n'existait pas ? Et si
+
+00:00:39.920 --> 00:00:44.700
+tu n'avais que la fonction move (avancer) ? Plutôt que d'écrire move 10
+
+00:00:44.760 --> 00:00:48.000
+fois de suite, ce qui devient très répétitif,
+
+00:00:48.740 --> 00:00:50.420
+ce qu'il nous faut, c'est pouvoir
+
+00:00:50.500 --> 00:00:54.000
+dire : « Hé, Jiki, fais 10 fois la prochaine
+
+00:00:54.120 --> 00:00:59.840
+instruction que je te donne. Move. » Pour faire ça
+
+00:00:59.900 --> 00:01:02.320
+en code, on va utiliser notre
+
+00:01:02.480 --> 00:01:07.300
+premier mot-clé. Les mots-clés sont des instructions
+
+00:01:07.340 --> 00:01:10.180
+que Jiki comprend. Ils ressemblent un peu
+
+00:01:10.220 --> 00:01:13.980
+à des machines, mais ce n'en sont pas. Quand Jiki voit
+
+00:01:14.020 --> 00:01:16.460
+un mot-clé, il ne cherche pas une machine
+
+00:01:16.500 --> 00:01:18.920
+sur l'étagère : il sait directement
+
+00:01:18.960 --> 00:01:23.300
+quoi faire. C'est intégré dans son cerveau. Et
+
+00:01:23.320 --> 00:01:25.700
+il existe une vingtaine de mots-clés
+
+00:01:25.740 --> 00:01:28.480
+différents qu'on va apprendre au fil du cours,
+
+00:01:28.520 --> 00:01:32.560
+et le premier d'entre eux est le mot-clé repeat. Le
+
+00:01:32.580 --> 00:01:35.540
+mot-clé repeat fait exactement ce que j'ai décrit.
+
+00:01:36.100 --> 00:01:40.580
+Il dit à Jiki : « Répète ce qui suit autant de fois
+
+00:01:40.700 --> 00:01:42.990
+que je te l'indique. » Regarde ce
+
+00:01:43.080 --> 00:01:45.960
+code. D'abord, on utilise le
+
+00:01:46.000 --> 00:01:48.440
+mot-clé repeat pour dire à Jiki qu'il va
+
+00:01:48.480 --> 00:01:51.580
+faire quelque chose plusieurs fois. Ensuite, on met
+
+00:01:51.680 --> 00:01:53.940
+entre parenthèses le nombre de fois
+
+00:01:53.980 --> 00:01:57.070
+que Jiki doit répéter la chose, puis
+
+00:01:57.100 --> 00:02:00.030
+viennent ces accolades, et à l'intérieur
+
+00:02:00.040 --> 00:02:02.850
+de ces accolades se trouvent les choses
+
+00:02:02.860 --> 00:02:06.020
+qu'on veut que Jiki répète. Ce schéma
+
+00:02:06.100 --> 00:02:09.320
+est incroyablement courant en programmation. On écrit
+
+00:02:09.380 --> 00:02:12.400
+un mot-clé, généralement avec une information : ici,
+
+00:02:12.440 --> 00:02:14.549
+le nombre de fois qu'il faut faire
+
+00:02:14.580 --> 00:02:17.620
+quelque chose, puis un bloc de code entre
+
+00:02:17.680 --> 00:02:20.880
+accolades. Donc, pour revenir au monde du labyrinthe,
+
+00:02:21.520 --> 00:02:25.220
+plutôt que d'écrire move, move, move, move, on
+
+00:02:25.260 --> 00:02:30.580
+peut écrire : répète quatre fois move. Jiki verra
+
+00:02:30.590 --> 00:02:32.860
+ce code et utilisera la
+
+00:02:32.940 --> 00:02:36.870
+machine move quatre fois de suite. Et
+
+00:02:36.900 --> 00:02:38.960
+on n'est pas limité à une seule chose
+
+00:02:39.000 --> 00:02:41.800
+entre ces accolades. Jiki peut faire
+
+00:02:41.900 --> 00:02:45.320
+plusieurs choses de façon répétée. On peut lui dire de
+
+00:02:45.460 --> 00:02:48.080
+move, puis de turnLeft, et de répéter
+
+00:02:48.120 --> 00:02:51.540
+tout ça quatre fois. Si Jiki voit
+
+00:02:51.560 --> 00:02:54.000
+ce code, il utilisera la machine move, puis
+
+00:02:54.060 --> 00:02:56.880
+la machine turnLeft, puis la machine move,
+
+00:02:56.920 --> 00:02:59.340
+puis la machine turnLeft, puis la machine move,
+
+00:02:59.430 --> 00:03:01.720
+etc., jusqu'à avoir fait les deux
+
+00:03:01.800 --> 00:03:07.160
+quatre fois. Ces instructions de répétition sont appelées des boucles, et il existe
+
+00:03:07.840 --> 00:03:09.540
+plein de boucles différentes,
+
+00:03:09.580 --> 00:03:11.980
+qui fonctionnent chacune un peu différemment.
+
+00:03:12.000 --> 00:03:15.210
+On les explorera toutes dans ce cours. Il reste
+
+00:03:15.220 --> 00:03:17.710
+une dernière chose à savoir :
+
+00:03:17.760 --> 00:03:20.300
+garder un code propre et bien rangé
+
+00:03:20.480 --> 00:03:24.240
+devient essentiel quand on travaille avec des boucles. Quand
+
+00:03:24.280 --> 00:03:26.800
+ton code a une bonne structure visuelle,
+
+00:03:26.860 --> 00:03:28.940
+on voit très facilement ce qui se passe.
+
+00:03:29.660 --> 00:03:31.740
+Mais si ce n'est pas le cas,
+
+00:03:31.780 --> 00:03:34.400
+si tu oublies d'indenter correctement
+
+00:03:34.460 --> 00:03:38.630
+ou si tu mélanges tes indentations, ça devient vite très confus. Alors
+
+00:03:38.660 --> 00:03:41.500
+dans ce cours, on suit toujours une règle.
+
+00:03:41.600 --> 00:03:45.049
+Tu mets toujours l'accolade, euh, ouvrante sur
+
+00:03:45.080 --> 00:03:48.430
+la même ligne que l'instruction repeat.
+
+00:03:48.430 --> 00:03:50.860
+Tu mets toujours l'accolade fermante sur
+
+00:03:50.940 --> 00:03:54.080
+sa propre ligne après l'instruction, et tu
+
+00:03:54.120 --> 00:03:56.399
+indentes toujours le code entre les deux
+
+00:03:56.480 --> 00:04:00.120
+avec deux espaces. Comme ça, tout restera bien net, et si
+
+00:04:01.020 --> 00:04:02.560
+tu oublies ou fais autrement,
+
+00:04:02.620 --> 00:04:04.360
+tu auras une erreur.
+
+00:04:06.100 --> 00:04:08.080
+Dans les prochains exercices, ton but
+
+00:04:08.120 --> 00:04:11.060
+est de relever, euh, certains des défis
+
+00:04:11.100 --> 00:04:13.720
+en utilisant le moins de lignes possible,
+
+00:04:13.780 --> 00:04:15.320
+et les boucles repeat
+
+00:04:15.380 --> 00:04:18.060
+peuvent t'aider pour ça. Ensuite, on verra
+
+00:04:18.070 --> 00:04:19.990
+comment utiliser la boucle repeat
+
+00:04:20.019 --> 00:04:23.270
+avec d'autres notions, pour découvrir des techniques
+
+00:04:23.320 --> 00:04:25.540
+bien plus puissantes. Amuse-toi bien,
+
+00:04:25.580 --> 00:04:26.039
+à bientôt !

@@ -1,0 +1,62 @@
+{
+  "errors": {
+    "leavesNumber": "পাতার মান অবশ্যই একটি সংখ্যা হতে হবে",
+    "tomatoesNumber": "টমেটোর মান অবশ্যই একটি সংখ্যা হতে হবে",
+    "croutonsNumber": "ক্রুটনের মান অবশ্যই একটি সংখ্যা হতে হবে",
+    "olivesNumber": "জলপাইয়ের মান অবশ্যই একটি সংখ্যা হতে হবে"
+  },
+  "checks": {
+    "saladNotMade": "আপনি সালাদটি বানাননি। নিশ্চিত করুন যে চারটি উপকরণ দিয়েই আপনি <code>makeSalad()</code> কল করছেন।",
+    "needLeavesRandomInt": "পাতার সংখ্যা তৈরি করতে আপনাকে <code>Math.randomInt(40, 100)</code> কল করতে হবে।",
+    "needTomatoesRandomInt": "টমেটোর সংখ্যা তৈরি করতে আপনাকে <code>Math.randomInt(5, leaves / 5)</code> কল করতে হবে।",
+    "needCroutonsRandomInt": "ক্রুটনের সংখ্যা তৈরি করতে আপনাকে <code>Math.randomInt(tomatoes, tomatoes * 2)</code> কল করতে হবে।",
+    "needOlivesRandomInt": "জলপাইয়ের সংখ্যা তৈরি করতে আপনাকে <code>Math.randomInt(1, tomatoes / 2)</code> কল করতে হবে।"
+  },
+  "tasks": {
+    "makeRandomSalad": {
+      "name": "একটি র‍্যান্ডম সালাদ বানান",
+      "description": "Math.randomInt() ব্যবহার করে প্রতিটি উপকরণের একটি র‍্যান্ডম পরিমাণ তৈরি করে সালাদটি বানান।"
+    }
+  },
+  "scenarios": {
+    "randomSalad": {
+      "name": "র‍্যান্ডম সালাদ",
+      "description": "প্রতিটি উপকরণের র‍্যান্ডম পরিমাণ দিয়ে একটি সালাদ বানান।"
+    }
+  },
+  "hints": {
+    "leavesExample": {
+      "question": "পাতার সংখ্যা কীভাবে বের করব, তার একটি উদাহরণ দিন",
+      "answer": "`let leaves = Math.randomInt(40, 100)` ব্যবহার করে পাতার একটি র‍্যান্ডম সংখ্যা তৈরি করুন, যা পরে আপনি অন্য ফাংশনগুলোতে ব্যবহার করতে পারবেন।"
+    },
+    "leavesCount": {
+      "question": "আমার কতগুলো পাতা লাগবে?",
+      "answer": "৪০ থেকে ১০০টির মধ্যে।"
+    },
+    "tomatoesCount": {
+      "question": "আমার কতগুলো টমেটো লাগবে?",
+      "answer": "কমপক্ষে ৫টি, তবে leaves / 5-এর বেশি নয়"
+    },
+    "croutonsCount": {
+      "question": "আমার কতগুলো ক্রুটন লাগবে?",
+      "answer": "কমপক্ষে টমেটোর সংখ্যার সমান, সর্বোচ্চ টমেটোর সংখ্যার দ্বিগুণ"
+    },
+    "olivesCount": {
+      "question": "আমার কতগুলো জলপাই লাগবে?",
+      "answer": "কমপক্ষে ১টি, সর্বোচ্চ টমেটোর সংখ্যার অর্ধেক"
+    },
+    "makeSalad": {
+      "question": "সালাদটি কীভাবে বানাব?",
+      "answer": "প্রতিটি উপকরণ কতটা লাগবে তা বের করা হয়ে গেলে, leaves, tomatoes, croutons, olives এই মানগুলো makeSalad()-এ ইনপুট দিন।"
+    }
+  },
+  "describers": {
+    "makeSalad": "${arg1}টি পাতা, ${arg2}টি টমেটো, ${arg3}টি ক্রুটন আর ${arg4}টি জলপাই দিয়ে একটি সালাদ বানানো হয়েছে"
+  },
+  "functions": {
+    "makeSalad": {
+      "description": "প্রতিটি উপকরণের দেওয়া পরিমাণ দিয়ে একটি সালাদ বানায়।",
+      "category": "অ্যাকশন"
+    }
+  }
+}

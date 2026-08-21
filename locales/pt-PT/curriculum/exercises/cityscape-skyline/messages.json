@@ -1,0 +1,93 @@
+{
+  "checks": {
+    "totalCells": "Era esperado um total de {{expectedTotal}} células, mas encontraram-se {{got}}.",
+    "wrongPosition": "O edifício {{building}} não está no sítio certo. Começa na coluna {{start}}, mas devia começar na coluna {{expected}}.",
+    "wrongEntrance": "Edifício {{building}}: a entrada não está no sítio certo.",
+    "wrongGroundWalls": "Edifício {{building}}: as paredes laterais do rés do chão não estão corretas.",
+    "wrongRoof": "Edifício {{building}}: o telhado não está completo."
+  },
+  "tasks": {
+    "buildSkyline": {
+      "name": "Constrói o horizonte urbano",
+      "description": "Constrói vários edifícios com larguras e alturas aleatórias para criar um horizonte urbano."
+    }
+  },
+  "scenarios": {
+    "buildings1": {
+      "name": "1 edifício",
+      "description": "Constrói um único edifício com largura e altura aleatórias."
+    },
+    "buildings2": {
+      "name": "2 edifícios",
+      "description": "Constrói 2 edifícios com larguras e alturas aleatórias."
+    },
+    "buildings3": {
+      "name": "3 edifícios",
+      "description": "Constrói 3 edifícios com larguras e alturas aleatórias."
+    },
+    "buildings4": {
+      "name": "4 edifícios",
+      "description": "Constrói 4 edifícios com larguras e alturas aleatórias."
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Por onde começo num exercício tão grande?",
+      "answer": "Divide o problema. A estrutura exterior é um ciclo por edifício. Dentro desse ciclo, desenhas três coisas por ordem: o rés do chão (com a entrada), os andares superiores (apenas paredes e vidro) e o telhado plano. Começa por fazer o primeiro cenário passar para um único edifício, antes de te preocupares com vários edifícios."
+    },
+    "buildingDimensions": {
+      "question": "Como sei qual deve ser o aspeto de cada edifício?",
+      "answer": "Chama `randomWidth()` e `randomNumFloors()` uma vez no início da iteração de cada edifício e guarda ambos em variáveis locais. Se as chamares novamente, obténs os valores do edifício *seguinte*, por isso não as chames de novo dentro das filas."
+    },
+    "trackPosition": {
+      "question": "Como controlo a posição do próximo edifício?",
+      "answer": "Mantém uma única variável para a coluna do lado esquerdo do edifício atual. Começa com a margem esquerda indicada no enunciado. Depois de terminares um edifício, soma-lhe a largura desse edifício mais o espaço entre edifícios. Essa única variável é todo o estado de posicionamento horizontal de que precisas."
+    },
+    "groundFloorLayout": {
+      "question": "Como organizo o rés do chão com a entrada no meio?",
+      "answer": "Percorre o edifício coluna a coluna. A primeira e a última colunas são paredes; tudo o que está no meio é vidro; a coluna do meio é a entrada. A coluna da entrada obtém-se a partir da extremidade esquerda do edifício e da sua largura."
+    },
+    "upperFloorsAndRoof": {
+      "question": "Como desenho os andares superiores e o telhado?",
+      "answer": "Cada andar superior segue o mesmo padrão do rés do chão, mas sem a entrada: paredes nos lados, vidro no meio. Lembra-te de que o rés do chão já conta como um dos andares, por isso só empilhas os restantes por cima, subindo em `y`. O telhado é depois uma fila sólida de paredes que percorre toda a largura no topo e não conta como andar."
+    },
+    "stuckError": {
+      "question": "O meu segundo edifício dá erro com \"the builders are stuck, there's already a wall here\". O que está errado?",
+      "answer": "O teu segundo edifício está a tentar construir por cima do primeiro, porque não estás a avançar a variável da coluna entre edifícios. Depois de desenhares cada edifício, aumenta-a em `width + gap` antes de começar a iteração seguinte. Se te esqueceres, todos os edifícios começam na mesma extremidade esquerda e colidem com o anterior."
+    }
+  },
+  "functions": {
+    "buildWall": {
+      "description": "Coloca um **bloco de parede** na posição (x, y) da grelha.",
+      "category": "Construção"
+    },
+    "buildGlass": {
+      "description": "Coloca um **painel de vidro** na posição (x, y) da grelha.",
+      "category": "Construção"
+    },
+    "buildEntrance": {
+      "description": "Coloca uma **porta de entrada** na posição (x, y) da grelha.",
+      "category": "Construção"
+    },
+    "numBuildings": {
+      "description": "Devolve o **número de edifícios** a construir.",
+      "category": "Informação"
+    },
+    "randomWidth": {
+      "description": "Devolve uma **largura de edifício aleatória**: 3, 5 ou 7.",
+      "category": "Informação"
+    },
+    "randomNumFloors": {
+      "description": "Devolve um **número aleatório de andares** entre 1 e 12.",
+      "category": "Informação"
+    }
+  },
+  "describers": {
+    "buildWall": "construiu uma parede na posição (${arg1}, ${arg2})",
+    "buildEntrance": "construiu uma entrada na posição (${arg1}, ${arg2})",
+    "buildGlass": "construiu um painel de vidro na posição (${arg1}, ${arg2})",
+    "numBuildings": "obteve o número de edifícios",
+    "randomWidth": "obteve uma largura de edifício aleatória (3-7)",
+    "randomNumFloors": "obteve um número aleatório de andares (1-12)"
+  }
+}

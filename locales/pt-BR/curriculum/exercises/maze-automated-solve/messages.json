@@ -1,0 +1,103 @@
+{
+  "describers": {
+    "canMove": "Verificar se o bonequinho pode avançar.",
+    "canTurnLeft": "Verificar se há um caminho à esquerda do bonequinho.",
+    "canTurnRight": "Verificar se há um caminho à direita do bonequinho."
+  },
+  "checks": {
+    "reachedEnd": "Você não chegou ao fim do labirinto.",
+    "extraTurn": "Parece que você fez uma volta extra desnecessária no fim."
+  },
+  "tasks": {
+    "straightPath": {
+      "name": "Um caminho em linha reta",
+      "description": "Avance até o fim do labirinto."
+    },
+    "turnLeft": {
+      "name": "Vire à esquerda se puder",
+      "description": "Se houver um caminho à esquerda, siga-o!"
+    },
+    "turnRight": {
+      "name": "Vire à direita se não puder avançar nem virar à esquerda",
+      "description": "Se não houver um caminho à esquerda nem em frente, siga o caminho à direita."
+    },
+    "turnAround": {
+      "name": "Dê meia-volta se for preciso",
+      "description": "Resolva os becos sem saída dando meia-volta. Se você não puder ir para a esquerda, em frente ou para a direita, dê meia-volta e avance."
+    }
+  },
+  "scenarios": {
+    "maze1": {
+      "name": "Leve o bonequinho até o fim do labirinto",
+      "description": "Um caminho em linha reta para baixo"
+    },
+    "leftTurn": {
+      "name": "Uma única virada à esquerda",
+      "description": "Oriente-se numa virada à esquerda."
+    },
+    "rightTurn": {
+      "name": "Uma única virada à direita",
+      "description": "Oriente-se numa virada à direita."
+    },
+    "forks": {
+      "name": "Escolha a esquerda se puder, caso contrário escolha a direita",
+      "description": "Um labirinto com bifurcações que testa a prioridade de virar à esquerda."
+    },
+    "turnAround": {
+      "name": "Dê meia-volta num beco sem saída",
+      "description": "Um labirinto que obriga a dar meia-volta."
+    },
+    "forks2": {
+      "name": "Labirinto complexo com bifurcações e becos sem saída",
+      "description": "Um labirinto complexo que testa o algoritmo completo."
+    }
+  },
+  "hints": {
+    "solveEachMaze": {
+      "question": "Eu preciso resolver cada labirinto separadamente?",
+      "answer": "Não. Você escreve um algoritmo que funciona para qualquer labirinto, e o mesmo código roda em todos os cenários."
+    },
+    "runEveryStep": {
+      "question": "Como eu faço o meu código rodar em cada passo do labirinto?",
+      "answer": "Envolva a sua lógica num laço `repeat`. Ele repete o seu código vezes sem conta até você chegar ao fim, então você só precisa descrever o que fazer num único passo."
+    },
+    "oneCheckPerStep": {
+      "question": "Como eu garanto que só uma das minhas verificações acontece em cada passo?",
+      "answer": "Use uma única cadeia de `if` / `else if` / `else` em vez de vários `if` separados. Dessa forma, exatamente um bloco é executado a cada vez que o laço roda."
+    },
+    "stuckAfterTurn": {
+      "question": "Eu viro, mas o bonequinho fica preso no mesmo lugar.",
+      "answer": "Virar apenas muda a direção para onde o bonequinho está olhando, não o faz avançar. Depois de virar, você ainda precisa de `move()`."
+    },
+    "turnAroundDeadEnd": {
+      "question": "Como eu dou meia-volta num beco sem saída?",
+      "answer": "Não existe nenhuma função para dar meia-volta. Virar duas vezes para o mesmo lado (duas vezes para a esquerda ou duas vezes para a direita) deixa o bonequinho olhando para trás, no sentido de onde ele veio."
+    }
+  },
+  "functions": {
+    "move": {
+      "description": "Move o bonequinho **um passo em frente** na direção atual. O bonequinho só se move se a posição de destino não estiver bloqueada por uma parede.",
+      "category": "Movimento"
+    },
+    "turnLeft": {
+      "description": "Gira o bonequinho **90 graus para a esquerda** (no sentido anti-horário). Isso muda a direção para onde o bonequinho está olhando.",
+      "category": "Movimento"
+    },
+    "turnRight": {
+      "description": "Gira o bonequinho **90 graus para a direita** (no sentido horário). Isso muda a direção para onde o bonequinho está olhando.",
+      "category": "Movimento"
+    },
+    "canMove": {
+      "description": "Retorna **true** se o espaço à frente do bonequinho não for uma parede, **false** caso contrário.",
+      "category": "Percepção"
+    },
+    "canTurnLeft": {
+      "description": "Retorna **true** se o espaço à esquerda do bonequinho não for uma parede, **false** caso contrário.",
+      "category": "Percepção"
+    },
+    "canTurnRight": {
+      "description": "Retorna **true** se o espaço à direita do bonequinho não for uma parede, **false** caso contrário.",
+      "category": "Percepção"
+    }
+  }
+}

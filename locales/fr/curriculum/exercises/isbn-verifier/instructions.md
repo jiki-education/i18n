@@ -4,7 +4,7 @@ description: "Vérifie si le numéro ISBN d'un livre est valide."
 en_md5: 1f50053213b8649f126851f264174e53
 ---
 
-Chaque livre possède un ISBN, un numéro à 10 chiffres qui l'identifie de façon unique. Chaque ISBN est unique et suit un format précis. Il existe aussi un processus formel de vérification qui permet de contrôler qu'une string est bien un ISBN, et c'est justement ce que tu vas créer dans cet exercice.
+Chaque livre possède un ISBN, un numéro à 10 chiffres qui l'identifie de façon unique. Chaque ISBN est unique et suit un format précis. Il existe aussi un processus formel de vérification qui permet de contrôler qu'une _string_ est bien un ISBN, et c'est justement ce que tu vas créer dans cet exercice.
 
 Les ISBN contiennent normalement des tirets et ressemblent à ceci : `3-598-21508-8`
 
@@ -34,11 +34,11 @@ Quelques remarques importantes :
 
 ### À toi de jouer
 
-Crée une fonction appelée `isValidIsbn(isbn)` (est un ISBN valide) qui prend une string ISBN et renvoie `true` si elle est valide et `false` sinon.
+Crée une fonction appelée `isValidIsbn(isbn)` (est un ISBN valide) qui prend une _string_ ISBN et renvoie `true` si elle est valide et `false` sinon.
 
 ### La fonction Number(...)
 
-Une chose qu'on n'a pas encore vue, et que tu dois connaître : la fonction `Number(str)`. C'est une fonction qui prend une string et renvoie cette string sous forme de nombre. Ainsi, si tu écris `Number("1234")`, tu obtiens `1234`. C'est une fonction un peu étrange, parce qu'elle commence par une majuscule. Pas de panique : on t'expliquera pourquoi bien plus tard.
+Une chose qu'on n'a pas encore vue, et que tu dois connaître : la fonction `Number(str)`. C'est une fonction qui prend une _string_ et renvoie cette _string_ sous forme de nombre. Ainsi, si tu écris `Number("1234")`, tu obtiens `1234`. C'est une fonction un peu étrange, parce qu'elle commence par une majuscule. Pas de panique : on t'expliquera pourquoi bien plus tard.
 
 Pour en savoir plus, consulte la <a href="/concepts/type-conversion" target="_blank" rel="noopener noreferrer">page du concept sur la conversion de types</a>.
 

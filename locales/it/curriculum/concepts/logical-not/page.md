@@ -4,7 +4,7 @@ description: "Usare `!` per invertire un booleano: true diventa false e false di
 en_md5: 7cffbd1fa13317b3d6e6a71415413041
 ---
 
-Finora, quando abbiamo confrontato le cose per vedere se sono uguali, abbiamo usato tre segni di uguale. A volte, però, vogliamo controllare se le cose non sono uguali, e per questo usiamo un punto esclamativo seguito da due segni di uguale. E in generale, nella programmazione, un punto esclamativo, o _bang_ (punto esclamativo), come penso lo chiamino i nostri amici americani, significa non. Quindi immagina di lavorare in un negozio, e la direzione ha deciso che non sono ammessi abiti da discoteca.
+Finora, quando abbiamo confrontato le cose per vedere se sono uguali, abbiamo usato tre segni di uguale. A volte, però, vogliamo controllare se le cose non sono uguali, e per questo usiamo un punto esclamativo seguito da due segni di uguale. In generale, nella programmazione, un punto esclamativo, o _bang_, come lo chiamano spesso i nostri amici americani, significa «non». Immagina ora di lavorare in un negozio e che la direzione abbia deciso che non sono ammessi abiti da discoteca.
 
 <img
   class="concept-image"
@@ -24,7 +24,7 @@ if (outfit !== "disco") {
 
 È solo che la condizione restituisce true se le cose sono diverse, e false se sono uguali. Quindi potremmo esprimere la stessa cosa dicendo: «Se l'abito è da discoteca, non fare niente. Altrimenti, apri la porta». Ma generalmente è più semplice e pulito usare l'operatore `not` per sapere e dire esattamente ciò che intendi.
 
-Un'altra cosa collegata a questo. A volte avrai una variabile che è true e vuoi rovesciarla a false, oppure avrai qualcosa che è false e vuoi rovesciarla a true, e possiamo usare questo per tenere traccia di qualcosa. Quindi immagina di avere qualcosa che rimbalza da sinistra a destra, e di avere una variabile chiamata `movingRight` (si muove a destra), che è true quando devi muoverti a destra. Ma quando vuoi _azionare_ (_toggle_ in inglese) per impostarla a false, quando colpisci il bordo destro.
+Un'altra cosa collegata a questo. A volte avrai una variabile che è true e vuoi rovesciarla a false, oppure avrai qualcosa che è false e vuoi rovesciarla a true: possiamo usare questo per tenere traccia di qualcosa. Immagina di avere qualcosa che rimbalza da sinistra a destra, e di avere una variabile chiamata `movingRight` (si muove a destra), che è true quando devi muoverti a destra. Ma quando vuoi impostarla a false colpendo il bordo destro?
 
 <img
   class="concept-image"
@@ -34,7 +34,7 @@ Un'altra cosa collegata a questo. A volte avrai una variabile che è true e vuoi
   height="352"
 />
 
-Quindi potremmo farlo dicendo: «Se `movingRight` è uguale a true, `movingRight` diventa false. Altrimenti, `movingRight` diventa true». Questo è un modo per azionare la variabile. Perciò Jiki guarderà `movingRight` per vedere se è true o false, e poi calcolerà l'opposto e metterà quel valore nella scatola.
+Quindi potremmo farlo dicendo: «Se `movingRight` è uguale a true, `movingRight` diventa false. Altrimenti, `movingRight` diventa true». Questo è un modo per invertire la variabile. Perciò Jiki guarderà `movingRight` per vedere se è true o false, e poi calcolerà l'opposto e metterà quel valore nella scatola.
 
 ```javascript
 if (movingRight === true) {
@@ -50,8 +50,10 @@ Ma c'è un modo più elegante per farlo, ed è usare lo stesso punto esclamativo
 movingRight = !movingRight
 ```
 
-E questo la inverte. `!movingRight` significa l'opposto di ciò che era prima.
+E questo lo inverte. `!movingRight` significa l'opposto di ciò che era prima.
+Quindi, se `movingRight` era `true`, ora è `false`. Se era `false`, ora è `true`.
 
-Quindi se `movingRight` era true, ora è false. Se era false, ora è true. Jiki prende ciò che c'è attualmente nella scatola,
+Jiki prende ciò che c'è attualmente nella scatola, e quel bang gli dice di calcolare l'opposto.
+L'opposto di `true` è `false`, l'opposto di `false` è `true`, e poi rimette quel valore nella scatola.
 
-e quel bang gli dice di trovare l'opposto. Così l'opposto di true è false. L'opposto di false è true, e poi lo rimette nella scatola. È esattamente lo stesso di quella lunga istruzione if/else, ma è molto più elegante e concisa da scrivere.
+È esattamente lo stesso della lunga istruzione `if/else`, ma molto più elegante e conciso da scrivere.

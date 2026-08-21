@@ -1,0 +1,80 @@
+{
+  "errors": {
+    "hourNotNumber": "<code>hour</code> অবশ্যই একটি সংখ্যা হতে হবে",
+    "minutesNotNumber": "<code>minutes</code> অবশ্যই একটি সংখ্যা হতে হবে",
+    "indicatorNotString": "<code>indicator</code> অবশ্যই একটি স্ট্রিং হতে হবে"
+  },
+  "checks": {
+    "notUpdated": "ঘড়িটি আপডেট হয়নি। <code>displayTime</code> ফাংশনটি ব্যবহার করেছেন কি না, দেখে নিন।",
+    "wrongTime": "আশা করা হয়েছিল \"{{expected}}\", কিন্তু পাওয়া গেছে \"{{got}}\""
+  },
+  "tasks": {
+    "displayTime": {
+      "name": "ঘড়িতে সময় দেখান",
+      "description": "বর্তমান ঘণ্টা ও মিনিট নিন, am/pm সহ ১২-ঘণ্টার ফরম্যাটে রূপান্তর করুন, তারপর displayTime() ব্যবহার করে তা দেখান।"
+    }
+  },
+  "scenarios": {
+    "morning1": {
+      "name": "ভোরবেলা",
+      "description": "6:35-কে \"6:35am\" হিসেবে দেখান"
+    },
+    "morning2": {
+      "name": "সকালের শেষ দিক",
+      "description": "11:04-কে \"11:04am\" হিসেবে দেখান"
+    },
+    "afternoon1": {
+      "name": "দুপুরের শুরু",
+      "description": "12:19-কে \"12:19pm\" হিসেবে দেখান"
+    },
+    "afternoon2": {
+      "name": "সন্ধ্যা রাত",
+      "description": "23:32-কে \"11:32pm\" হিসেবে দেখান"
+    },
+    "midnight": {
+      "name": "মধ্যরাত",
+      "description": "মধ্যরাতকে \"12:00am\" হিসেবে দেখান"
+    },
+    "noon": {
+      "name": "ভরদুপুর",
+      "description": "ঠিক দুপুরকে \"12:00pm\" হিসেবে দেখান"
+    },
+    "now": {
+      "name": "বর্তমান সময় দেখান",
+      "description": "বর্তমান সময় দেখান"
+    }
+  },
+  "hints": {
+    "gettingStarted": {
+      "question": "কীভাবে শুরু করব বুঝতে পারছি না",
+      "answer": "বর্তমান সময় জানতে `currentTimeHour()` আর `currentTimeMinute()` ব্যবহার করুন, তারপর সেই মানগুলো আর তৃতীয় ইনপুট হিসেবে `\"am\"` দিয়ে `displayTime` কল করুন (যেমন `displayTime(hour, minutes, \"am\")`), দেখুন কী হয়। এরপর সঠিক meridiem আর সঠিক ঘণ্টা দেখানোর উপায়টি বের করুন।"
+    },
+    "meridiem": {
+      "question": "meridiem কীভাবে কাজ করে?",
+      "answer": "ঘণ্টা 0-11 হলো 'am', আর ঘণ্টা 12-23 হলো 'pm'। মধ্যরাত (ঘণ্টা 0) দেখাতে হবে 12am হিসেবে। ঠিক দুপুর (ঘণ্টা 12) দেখাতে হবে 12pm হিসেবে।"
+    },
+    "hourChange": {
+      "question": "ঘণ্টা কখন আর কেন বদলাতে হবে?",
+      "answer": "১২-ঘণ্টার ঘড়িতে 13:00-কে লেখা হয় 1:00pm হিসেবে, আর 14:00-কে 2:00pm হিসেবে। তাই 13->1, 14->2 ইত্যাদির মধ্যে সম্পর্কটি বের করে সেই অনুযায়ী ঘড়িটি ঠিক করতে হবে!"
+    }
+  },
+  "describers": {
+    "currentTimeHour": "বর্তমান ঘণ্টাটি নেওয়া হয়েছে",
+    "currentTimeMinute": "বর্তমান মিনিটটি নেওয়া হয়েছে",
+    "displayTime": "ঘড়িতে সময়টি দেখানো হয়েছে"
+  },
+  "functions": {
+    "currentTimeHour": {
+      "description": "বর্তমান ঘণ্টাটি ২৪-ঘণ্টার হিসাবে একটি সংখ্যা হিসেবে রিটার্ন করে (যেমন 11pm-এর জন্য 23)।",
+      "category": "সময়"
+    },
+    "currentTimeMinute": {
+      "description": "বর্তমান মিনিটটি একটি সংখ্যা হিসেবে রিটার্ন করে।",
+      "category": "সময়"
+    },
+    "displayTime": {
+      "description": "ডিজিটাল ঘড়িতে সময় দেখায়। indicator-টি হতে হবে \"am\" অথবা \"pm\"।",
+      "category": "অ্যাকশন"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "errors": {
+    "walkExpectsNumber": "walk() espera um número de passos"
+  },
+  "describers": {
+    "walk": "Anda para a frente um determinado número de passos"
+  },
+  "checks": {
+    "notReachedEnd": "Você não chegou ao fim do labirinto."
+  },
+  "tasks": {
+    "solveMaze": {
+      "name": "Leve o bonequinho até o fim do labirinto",
+      "description": "Percorra o labirinto usando walk(), turnLeft() e turnRight() para chegar à casa verde de destino."
+    }
+  },
+  "scenarios": {
+    "maze1": {
+      "name": "Leve o bonequinho até o fim do labirinto",
+      "description": "Sua missão é chegar à meta."
+    }
+  },
+  "hints": {
+    "moveNotWorking": {
+      "question": "Por que o `move()` não funciona mais?",
+      "answer": "Cada exercício no Jiki tem funções diferentes que você pode usar. Neste exercício, você tem a função `walk(...)`. Substitua o `n` pelo número de passos que você quer andar. Assim, `walk(1)` faz exatamente o mesmo que o `move()` fazia da última vez."
+    }
+  },
+  "functions": {
+    "walk": {
+      "description": "Move o bonequinho **para a frente o número de passos indicado** na direção atual. Cada passo avança uma casa. O bonequinho para e comunica um erro se bater numa parede.",
+      "category": "Movimento"
+    },
+    "turnLeft": {
+      "description": "Gira o bonequinho **90 graus para a esquerda** (no sentido contrário ao dos ponteiros do relógio). Isso muda a direção para a qual o bonequinho está olhando.",
+      "category": "Movimento"
+    },
+    "turnRight": {
+      "description": "Gira o bonequinho **90 graus para a direita** (no sentido dos ponteiros do relógio). Isso muda a direção para a qual o bonequinho está olhando.",
+      "category": "Movimento"
+    }
+  }
+}

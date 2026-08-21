@@ -1,0 +1,99 @@
+{
+  "checks": {
+    "moreThanSixteenLines": "Usaste mais de dezasseis linhas de código."
+  },
+  "tasks": {
+    "plings": {
+      "name": "Plings",
+      "description": "Começa por acertar nos sons Pling. Se o número for divisível por 3, devolve \"Pling\"."
+    },
+    "plangs": {
+      "name": "Plangs",
+      "description": "Agora acerta nos sons Plang. Se o número for divisível por 5, acrescenta \"Plang\" ao resultado. Se for divisível por 3 e por 5, devolve \"PlingPlang\"."
+    },
+    "plongs": {
+      "name": "Plongs",
+      "description": "Agora acerta nos sons Plong. Se o número for divisível por 7, acrescenta \"Plong\" ao resultado. Os números podem ser divisíveis por vários fatores."
+    },
+    "noSound": {
+      "name": "Números sem som de gota de chuva",
+      "description": "Finalmente, se o número não for divisível por 3, 5 ou 7, devolve o próprio número como string."
+    },
+    "solveInSixteenLines": {
+      "name": "Resolve em dezasseis linhas de código",
+      "description": "Consegues resolver isto com apenas dezasseis linhas de código?"
+    }
+  },
+  "scenarios": {
+    "number3": {
+      "name": "Número 3",
+      "description": "Se 3 for o valor de entrada, devolve \"Pling\"."
+    },
+    "number27": {
+      "name": "Número 27",
+      "description": "Se 27 for o valor de entrada, devolve \"Pling\"."
+    },
+    "number5": {
+      "name": "Número 5",
+      "description": "Se 5 for o valor de entrada, devolve \"Plang\"."
+    },
+    "number3125": {
+      "name": "Número 3125",
+      "description": "Se 3125 for o valor de entrada, devolve \"Plang\"."
+    },
+    "number15": {
+      "name": "Número 15",
+      "description": "Se 15 for o valor de entrada, devolve \"PlingPlang\"."
+    },
+    "number7": {
+      "name": "Número 7",
+      "description": "Se 7 for o valor de entrada, devolve \"Plong\"."
+    },
+    "number21": {
+      "name": "Número 21",
+      "description": "Se 21 for o valor de entrada, devolve \"PlingPlong\"."
+    },
+    "number35": {
+      "name": "Número 35",
+      "description": "Se 35 for o valor de entrada, devolve \"PlangPlong\"."
+    },
+    "number105": {
+      "name": "Número 105",
+      "description": "Se 105 for o valor de entrada, devolve \"PlingPlangPlong\"."
+    },
+    "number8": {
+      "name": "Número 8",
+      "description": "Se 8 for o valor de entrada, devolve \"8\"."
+    },
+    "number52": {
+      "name": "Número 52",
+      "description": "Se 52 for o valor de entrada, devolve \"52\"."
+    },
+    "bonus1": {
+      "name": "Dezasseis linhas de código",
+      "description": "Resolve o exercício com apenas dezasseis linhas de código."
+    }
+  },
+  "hints": {
+    "onlyOneSound": {
+      "question": "Porque é que a minha função só devolve um som?",
+      "answer": "Se fizeres `return` dentro de cada `if`, desistes assim que o primeiro divisor corresponder. O que queres é combiná-los. Em vez de devolveres, acrescenta o som a uma string de resultado e continua."
+    },
+    "buildCombinedSound": {
+      "question": "Como é que construo o som combinado?",
+      "answer": "Começa com uma string de resultado vazia. Para cada divisor (3, 5, 7), se dividir o número, acrescenta o som correspondente ao final do resultado usando concatenação com `+`."
+    },
+    "noneMatch": {
+      "question": "E se nenhum dos divisores corresponder?",
+      "answer": "Se o resultado ainda estiver vazio depois das três verificações, a resposta é apenas o próprio número como string. Converte o número e devolve isso."
+    },
+    "convertToString": {
+      "question": "Devolvo o número, mas quer que eu o devolva como string. Como é que faço isso?",
+      "answer": "Números e strings são tipos diferentes, mesmo que pareçam iguais. Podes converter um número numa string colocando-o dentro de uma template string com `${...}`."
+    },
+    "howManyReturns": {
+      "question": "Quantas instruções return devo ter?",
+      "answer": "Normalmente, apenas uma ou duas. A ideia é deixar que as instruções if modifiquem a string de resultado e, no final, devolver esse resultado apenas uma vez."
+    }
+  }
+}

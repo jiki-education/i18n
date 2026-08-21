@@ -34,15 +34,15 @@
   "hints": {
     "transcriptionRule": {
       "question": "Quelle est la règle de transcription ?",
-      "answer": "Chaque nucléotide de l'ADN correspond à un nucléotide de l'ARN : G devient C, C devient G, T devient A et A devient U. Ton travail consiste à appliquer cette règle à chaque caractère de l'entrée."
+      "answer": "À chaque nucléotide de l'ADN correspond un nucléotide de l'ARN : G devient C, C devient G, T devient A et A devient U. Ton travail consiste à appliquer cette règle à chaque caractère de l'entrée."
     },
     "mappingInCode": {
       "question": "Comment faire cette correspondance dans le code ?",
       "answer": "Une option consiste à utiliser deux strings « parallèles », `\"GCTA\"` pour l'ADN et `\"CGAU\"` pour l'ARN. Le complément ARN d'une lettre d'ADN est la lettre située à la même position dans la string d'ARN. Il te faudra d'abord trouver sa position dans la string d'ADN."
     },
     "processStrand": {
-      "question": "Comment traiter le brin en entier ?",
-      "answer": "Parcours chaque caractère de la string d'ADN, trouve son complément ARN et ajoute-le à une string de résultat en utilisant la concaténation avec `+`."
+      "question": "Comment traiter le brin d'ADN en entier ?",
+      "answer": "Parcours chaque caractère de la `string` d'ADN, trouve son complément ARN et ajoute-le à une `string` de résultat en utilisant la concaténation avec `+`."
     }
   }
 }

@@ -1,0 +1,42 @@
+{
+  "checks": {
+    "notReachedEnd": "Você não chegou ao fim do labirinto.",
+    "walkNotDefined": "Você deve definir uma função <code>walk</code> que recebe um número de passos e avança esse mesmo número de vezes."
+  },
+  "tasks": {
+    "writeWalk": {
+      "name": "Escreva uma função walk",
+      "description": "Defina uma função chamada walk que recebe um número de passos como entrada e avança esse mesmo número de vezes."
+    }
+  },
+  "scenarios": {
+    "maze1": {
+      "name": "Percorra o labirinto",
+      "description": "Ande 3, vire à esquerda, ande 2, vire à direita, ande 4 para chegar ao alvo."
+    }
+  },
+  "hints": {
+    "howToMoveForward": {
+      "question": "Como eu avanço?",
+      "answer": "Use a função `move()`."
+    },
+    "howToMoveSpecificTimes": {
+      "question": "Como eu avanço um número específico de vezes?",
+      "answer": "Você já resolveu outros exercícios em que precisava fazer algo um número específico de vezes (pense em fazer a bola de golfe rolar uma distância específica). Use as mesmas ideias aqui."
+    }
+  },
+  "functions": {
+    "move": {
+      "description": "Move o bonequinho **um passo para a frente** na direção atual. O bonequinho só se move se a posição de destino não estiver bloqueada por uma parede.",
+      "category": "Movimento"
+    },
+    "turnLeft": {
+      "description": "Vira o bonequinho **90 graus para a esquerda** (no sentido anti-horário). Isso muda a direção para a qual o bonequinho está olhando.",
+      "category": "Movimento"
+    },
+    "turnRight": {
+      "description": "Vira o bonequinho **90 graus para a direita** (no sentido horário). Isso muda a direção para a qual o bonequinho está olhando.",
+      "category": "Movimento"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "checks": {
+    "totalCells": "Esperavam-se {{expected}} células, mas encontraram-se {{got}}.",
+    "groundWalls": "O rés-do-chão deve ter paredes nas posições (17, 2) e (21, 2).",
+    "groundGlass": "O rés-do-chão deve ter vidro nas posições (18, 2) e (20, 2).",
+    "groundEntrance": "O rés-do-chão deve ter uma entrada na posição (19, 2).",
+    "floorWalls": "O andar {{y}} deve ter paredes nas posições (17, {{y}}) e (21, {{y}}).",
+    "floorGlass": "O andar {{y}} deve ter vidro nas posições (18, {{y}}), (19, {{y}}) e (20, {{y}}).",
+    "roof": "O telhado em y={{roofY}} deve ser todo de paredes.",
+    "codeQuality": {
+      "allArgumentsAreVariables": "Deves usar <strong>variáveis</strong> como argumentos das funções, não valores literais. Guarda primeiro os valores em variáveis e depois passa as variáveis."
+    }
+  },
+  "tasks": {
+    "buildSkyscraper": {
+      "name": "Constrói o arranha-céus",
+      "description": "Constrói um arranha-céus com o número correto de andares, incluindo um rés-do-chão com entrada, andares superiores com vidro e um telhado de paredes."
+    }
+  },
+  "scenarios": {
+    "floors6": {
+      "name": "Arranha-céus de 6 andares",
+      "description": "Constrói um arranha-céus com 6 andares."
+    },
+    "floors8": {
+      "name": "Arranha-céus de 8 andares",
+      "description": "Constrói um arranha-céus com 8 andares."
+    },
+    "floors10": {
+      "name": "Arranha-céus de 10 andares",
+      "description": "Constrói um arranha-céus com 10 andares."
+    },
+    "floors12": {
+      "name": "Arranha-céus de 12 andares",
+      "description": "Constrói um arranha-céus com 12 andares."
+    },
+    "floors16": {
+      "name": "Arranha-céus de 16 andares",
+      "description": "Constrói um arranha-céus com 16 andares."
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Não sei por onde começar.",
+      "answer": "Primeiro, experimenta desenhar uma parede, algum vidro e uma entrada para verificar se entendes as funções. Depois desenha o rés-do-chão, que é sempre o mesmo. Em seguida, usa a função `numFloors()` para descobrir quantos andares existem no total e desenha os restantes andares e, por fim, o telhado."
+    },
+    "tooManyTooFewFloors": {
+      "question": "Tenho andares a mais ou a menos.",
+      "answer": "Se a função `numFloors()` devolver 5, isso deve corresponder a um andar de entrada, 4 andares de vidro e 1 telhado. Verifica se a tua lógica está correta!"
+    }
+  },
+  "functions": {
+    "buildWall": {
+      "description": "Coloca um **bloco de parede** na posição (x, y) da grelha.",
+      "category": "Construção"
+    },
+    "buildGlass": {
+      "description": "Coloca um **painel de vidro** na posição (x, y) da grelha.",
+      "category": "Construção"
+    },
+    "buildEntrance": {
+      "description": "Coloca uma **porta de entrada** na posição (x, y) da grelha.",
+      "category": "Construção"
+    },
+    "numFloors": {
+      "description": "Devolve o **número de andares** deste edifício.",
+      "category": "Informação"
+    }
+  },
+  "describers": {
+    "buildWall": "construiu uma parede na posição (${arg1}, ${arg2})",
+    "buildEntrance": "construiu uma entrada na posição (${arg1}, ${arg2})",
+    "buildGlass": "construiu um painel de vidro na posição (${arg1}, ${arg2})",
+    "numFloors": "obteve o número de andares"
+  }
+}

@@ -42,12 +42,15 @@
       "homeAriaLabel": "Головна Jiki",
       "logoAlt": "Jiki",
       "aboutJiki": "Про Jiki",
-      "premium": "�",
+      "premium": "Преміум",
       "testimonials": "Відгуки",
       "login": "Увійти",
       "signUp": "Зареєструватися безкоштовно",
       "menuAriaLabel": "Відкрити меню",
-      "closeMenuAriaLabel": "Закрити меню"
+      "closeMenuAriaLabel": "Закрити меню",
+      "languageAriaLabel": "Змінити мову",
+      "languageComingSoon": "Незабаром",
+      "languageComingSoonBadge": "Скоро"
     },
     "internalHeader": {
       "homeAriaLabel": "Головна Jiki",
@@ -76,7 +79,7 @@
         "upgrade": "Перейти на Premium",
         "logOut": "Вийти"
       },
-      "premiumPill": "�"
+      "premiumPill": "Преміум"
     },
     "loading": {
       "title": "Будимо Jiki",
@@ -87,806 +90,882 @@
     }
   },
   "common": {
-    "continue": "�",
-    "close": "�",
-    "cancel": "�",
-    "confirm": "�",
-    "processing": "�",
-    "reloadPage": "�",
-    "loading": "�",
-    "verifying": "�",
-    "sending": "�",
-    "perMonth": "�",
+    "continue": "Продовжити",
+    "close": "Закрити",
+    "cancel": "Скасувати",
+    "confirm": "Підтвердити",
+    "processing": "Обробка...",
+    "reloadPage": "Перезавантажити сторінку",
+    "loading": "Завантаження...",
+    "verifying": "Перевірка...",
+    "sending": "Надсилання...",
+    "perMonth": "/місяць",
     "validation": {
-      "emailInvalid": "�",
-      "passwordRequired": "�",
-      "passwordMinLength": "�",
-      "currentPasswordRequired": "�",
-      "newPasswordRequired": "�",
-      "passwordsNoMatch": "�"
+      "emailInvalid": "Введіть дійсну адресу електронної пошти",
+      "passwordRequired": "Вкажіть пароль",
+      "passwordMinLength": "Пароль має містити щонайменше 6 символів",
+      "currentPasswordRequired": "Вкажіть поточний пароль",
+      "newPasswordRequired": "Вкажіть новий пароль",
+      "passwordsNoMatch": "Паролі не збігаються"
     },
     "pagination": {
-      "label": "�",
-      "previousPage": "�",
-      "nextPage": "�"
+      "label": "Пагінація",
+      "previousPage": "Попередня сторінка",
+      "nextPage": "Наступна сторінка"
     },
     "loadingJiki": {
-      "alt": "�"
+      "alt": "Персонаж Jiki прокидається"
     },
     "otpInput": {
-      "label": "�",
-      "digitLabel": "�"
+      "label": "Одноразовий пароль",
+      "digitLabel": "Цифра {number} з 6"
     },
     "closeButton": {
-      "label": "�"
+      "label": "Закрити модальне вікно"
     },
     "copyButton": {
-      "label": "�",
-      "copied": "�"
+      "label": "Скопіювати в буфер обміну",
+      "copied": "Скопійовано"
     },
     "soundToggle": {
-      "mute": "�",
-      "unmute": "�"
+      "mute": "Вимкнути звуки",
+      "unmute": "Увімкнути звуки"
     },
     "themeToggle": {
-      "switchToDark": "�",
-      "switchToSystem": "�",
-      "switchToLight": "�",
-      "toggle": "�",
-      "description": "�"
+      "switchToDark": "Перемкнути на темну тему",
+      "switchToSystem": "Перемкнути на системну тему",
+      "switchToLight": "Перемкнути на світлу тему",
+      "toggle": "Перемкнути тему",
+      "description": "Поточна тема: {theme}. Натисніть, щоб перемикати між світлою, темною та системною темами."
     },
     "badgeNewLabel": {
-      "label": "�"
+      "label": "НОВЕ"
     },
-    "saving": "�",
-    "retry": "�",
-    "tryAgain": "�",
+    "saving": "Збереження...",
+    "retry": "Повторити",
+    "tryAgain": "Спробувати ще раз",
     "betaTag": {
-      "label": "�"
+      "label": "Бета-версія"
     },
     "userAvatar": {
-      "alt": "�"
+      "alt": "Аватар користувача"
     }
   },
   "build": {
     "upcomingStreams": {
-      "heading": "�",
-      "toBeAnnounced": "�",
-      "subscribeButton": "�"
+      "heading": "Найближчі прямі ефіри",
+      "toBeAnnounced": "Буде оголошено",
+      "subscribeButton": "Підписатися на календар"
     },
     "hub": {
-      "title": "�",
-      "description": "�"
+      "title": "Вчимося створювати: проєкти",
+      "description": "Створюймо справжні проєкти з нуля разом із Джеремі. Навчімося всього, що він знає!"
     }
   },
   "auth": {
     "oauth": {
-      "useGoogle": "�",
-      "useExercism": "�",
-      "divider": "�"
+      "useGoogle": "Через Google",
+      "useExercism": "Через Exercism",
+      "divider": "АБО"
     },
     "fields": {
-      "emailLabel": "�",
-      "emailPlaceholder": "�",
-      "passwordLabel": "�",
-      "passwordPlaceholder": "�",
-      "emailRequired": "�"
+      "emailLabel": "Електронна пошта",
+      "emailPlaceholder": "Введіть адресу електронної пошти",
+      "passwordLabel": "Пароль",
+      "passwordPlaceholder": "Введіть пароль",
+      "emailRequired": "Вкажіть електронну пошту"
     },
     "captchaError": {
-      "signup": "�",
-      "login": "�",
-      "generic": "�"
+      "signup": "Наші системи спробували визначити, хто перед ними: бот чи людина, але не змогли. Спробуйте зареєструватися ще раз, скориставшись кнопкою нижче.",
+      "login": "Наші системи спробували визначити, хто перед ними: бот чи людина, але не змогли. Спробуйте увійти ще раз, скориставшись кнопкою нижче.",
+      "generic": "Наші системи спробували визначити, хто перед ними: бот чи людина, але не змогли. Спробуйте ще раз, скориставшись кнопкою нижче."
     },
     "login": {
-      "title": "�",
-      "invalidCredentials": "�",
-      "forgotPassword": "�",
-      "submit": "�",
-      "submitting": "�",
-      "unconfirmed": "�",
-      "resend": "�",
-      "noAccount": "�"
+      "title": "Вхід",
+      "invalidCredentials": "Неправильна електронна пошта або пароль",
+      "forgotPassword": "Забули пароль?",
+      "submit": "Увійти",
+      "submitting": "Вхід...",
+      "unconfirmed": "Підтвердьте електронну пошту перед входом. <link>Надіслати лист повторно</link>",
+      "resend": "Не отримали лист із підтвердженням? <link>Надіслати ще раз.</link>",
+      "noAccount": "Немає облікового запису? <link>Зареєструйтеся безкоштовно.</link>"
     },
     "signup": {
-      "title": "�",
-      "emailAlreadyRegistered": "�",
-      "submit": "�",
-      "submitting": "�",
-      "haveAccount": "�",
-      "resend": "�"
+      "title": "Реєстрація",
+      "emailAlreadyRegistered": "Ця електронна пошта вже зареєстрована",
+      "submit": "Зареєструватися",
+      "submitting": "Реєстрація...",
+      "haveAccount": "Вже маєте обліковий запис? <link>Увійдіть</link>.",
+      "resend": "Не отримали лист із підтвердженням? <link>Надіслати ще раз.</link>"
     },
     "forgotPassword": {
-      "title": "�",
-      "subtitle": "�",
-      "successMessage": "�",
-      "submit": "�",
-      "remembered": "�"
+      "title": "Забули пароль?",
+      "subtitle": "Якщо ви забули пароль, скористайтеся формою нижче, щоб отримати посилання для його зміни.",
+      "successMessage": "Якщо обліковий запис із цією адресою існує, незабаром вам надійде лист із вказівками щодо скидання пароля.",
+      "submit": "Надіслати посилання для скидання",
+      "remembered": "Згадали пароль? <link>Увійдіть</link>"
     },
     "resetPassword": {
-      "invalidTitle": "�",
-      "invalidMessage": "�",
-      "requestNewLink": "�",
-      "title": "�",
-      "subtitle": "�",
-      "tokenMissing": "�",
-      "confirmationRequired": "�",
-      "successMessage": "�",
-      "newPasswordLabel": "�",
-      "newPasswordPlaceholder": "�",
-      "confirmPasswordLabel": "�",
-      "confirmPasswordPlaceholder": "�",
-      "submit": "�",
-      "submitting": "�",
-      "remembered": "�"
+      "invalidTitle": "Недійсне посилання для скидання",
+      "invalidMessage": "Це посилання для скидання пароля недійсне або застаріло. Запросіть нове.",
+      "requestNewLink": "Запросити нове посилання для скидання пароля",
+      "title": "Скидання пароля",
+      "subtitle": "Введіть новий пароль нижче.",
+      "tokenMissing": "Токен скидання відсутній або недійсний",
+      "confirmationRequired": "Потрібно підтвердити пароль",
+      "successMessage": "Пароль успішно скинуто! Переспрямовуємо на сторінку входу...",
+      "newPasswordLabel": "Новий пароль",
+      "newPasswordPlaceholder": "Введіть новий пароль",
+      "confirmPasswordLabel": "Підтвердьте новий пароль",
+      "confirmPasswordPlaceholder": "Введіть новий пароль ще раз",
+      "submit": "Скинути пароль",
+      "submitting": "Скидання...",
+      "remembered": "Згадали пароль? <link>Увійдіть</link>"
     },
     "resendConfirmation": {
-      "title": "�",
-      "subtitle": "�",
-      "successMessage": "�",
-      "submit": "�",
-      "confirmed": "�"
+      "title": "Повторне надсилання листа з підтвердженням",
+      "subtitle": "Не отримали лист із підтвердженням? Заповніть форму нижче, і ми надішлемо ще один.",
+      "successMessage": "Якщо обліковий запис із цією адресою існує, незабаром вам надійде лист із підтвердженням.",
+      "submit": "Надіслати підтвердження ще раз",
+      "confirmed": "Вже підтвердили? <link>Увійдіть</link>"
     },
     "checkInbox": {
-      "heading": "�",
-      "sentTo": "�",
-      "hint": "�"
+      "heading": "Перевірте свою поштову скриньку",
+      "sentTo": "Ми надіслали лист із підтвердженням на",
+      "hint": "Перейдіть за посиланням у листі, щоб активувати обліковий запис. Не отримали листа? <link>Надіслати ще раз</link>"
     },
     "emailConfirmed": {
-      "heading": "�",
-      "message": "�"
+      "heading": "Адресу підтверджено!",
+      "message": "Вашу електронну адресу успішно підтверджено. Переспрямовуємо на панель керування..."
     },
     "confirmEmail": {
-      "pendingTitle": "�",
-      "pendingDescription": "�",
-      "errorTitle": "�",
-      "errorMessage": "�",
-      "errorCta": "�"
+      "pendingTitle": "Підтверджуємо вашу адресу...",
+      "pendingDescription": "Зачекайте, будь ласка, поки ми підтверджуємо вашу електронну адресу.",
+      "errorTitle": "Посилання застаріло",
+      "errorMessage": "Це посилання для підтвердження вже недійсне. Запросіть нове, щоб продовжити.",
+      "errorCta": "Надіслати лист із підтвердженням ще раз"
     },
     "exercismCallback": {
-      "errorTitle": "�",
-      "errorCta": "�",
-      "pendingTitle": "�",
-      "pendingDescription": "�",
-      "authFailed": "�"
+      "errorTitle": "Не вдалося увійти",
+      "errorCta": "Назад до входу",
+      "pendingTitle": "Виконуємо вхід...",
+      "pendingDescription": "Зачекайте, будь ласка, поки ми виконуємо вхід через Exercism.",
+      "authFailed": "Не вдалося пройти автентифікацію через Exercism"
     },
     "errorCard": {
-      "needHelp": "�"
+      "needHelp": "Потрібна допомога? <link>Зверніться до служби підтримки</link>"
     },
     "twoFactorVerify": {
-      "title": "�",
-      "subtitle": "�",
-      "codeLabel": "�"
+      "title": "Двофакторна автентифікація",
+      "subtitle": "Введіть 6-значний код із застосунку-автентифікатора.",
+      "codeLabel": "Код підтвердження"
     },
     "twoFactorSetup": {
-      "instructionsHeading": "�",
-      "appsHint": "�",
-      "codeLabel": "�"
+      "instructionsHeading": "Відскануйте QR-код застосунком-автентифікатором, щоб захистити свій обліковий запис.",
+      "appsHint": "Скористайтеся Google Authenticator, 1Password, Authy або подібним застосунком, щоб відсканувати код вище.",
+      "codeLabel": "Введіть 6-значний код із застосунку"
     },
     "unsubscribe": {
-      "noToken": "�",
-      "linkInvalid": "�",
-      "tooManyRequests": "�",
-      "serviceUnavailable": "�",
-      "unableToProcess": "�",
-      "networkError": "�",
-      "processingTitle": "�",
-      "processingDescription": "�",
-      "successTitle": "�",
-      "successDescription": "�",
-      "errorTitle": "�"
+      "noToken": "Токен для відписки не надано.",
+      "linkInvalid": "Це посилання для відписки недійсне або застаріло.",
+      "tooManyRequests": "Забагато запитів. Зачекайте хвилинку та спробуйте ще раз.",
+      "serviceUnavailable": "Сервіс тимчасово недоступний. Спробуйте пізніше.",
+      "unableToProcess": "Не вдалося опрацювати ваш запит. Якщо проблема повторюється, зверніться до служби підтримки.",
+      "networkError": "Помилка мережі. Перевірте зʼєднання та спробуйте ще раз.",
+      "processingTitle": "Відписуємо...",
+      "processingDescription": "Зачекайте, будь ласка, поки ми опрацьовуємо ваш запит.",
+      "successTitle": "Відписку успішно оформлено",
+      "successDescription": "Вас відписано від нашої розсилки.",
+      "errorTitle": "Не вдалося відписатися"
     },
     "twoFactor": {
-      "cancel": "�",
-      "invalidCode": "�",
-      "verificationFailed": "�"
+      "cancel": "Скасувати й увійти знову",
+      "invalidCode": "Недійсний код підтвердження",
+      "verificationFailed": "Перевірка не вдалася. Спробуйте ще раз."
     },
     "layout": {
-      "logoAlt": "�",
-      "tagline": "�",
-      "description": "�",
-      "createdBy": "�",
-      "brand": "�"
+      "logoAlt": "Jiki",
+      "tagline": "Ваша подорож у програмування починається тут",
+      "description": "Приєднуйтеся до мільйонів людей, які змінюють свою карʼєру завдяки практичному програмуванню.",
+      "createdBy": "Створено",
+      "brand": "Команда, яка створила Exercism"
     }
   },
   "settings": {
     "page": {
-      "title": "�",
-      "description": "�",
-      "tabAccount": "�",
-      "tabSubscription": "�",
-      "tabNotifications": "�",
-      "tabLearning": "�",
-      "tabDanger": "�"
+      "title": "Налаштування",
+      "description": "Керуйте акаунтом і налаштуваннями.",
+      "tabAccount": "Акаунт",
+      "tabSubscription": "Підписка",
+      "tabNotifications": "Сповіщення",
+      "tabLearning": "Навчання",
+      "tabDanger": "Небезпечна зона"
     },
     "avatarEdit": {
-      "adjustTitle": "�",
-      "adjustSubtitle": "�",
-      "back": "�",
-      "save": "�",
-      "changeTitle": "�",
-      "changeSubtitlePart1": "�",
-      "changeSubtitlePart2": "�",
-      "uploadText": "�",
-      "uploadHint": "�"
+      "adjustTitle": "Налаштувати фото",
+      "adjustSubtitle": "Змініть масштаб і положення фото.",
+      "back": "Назад",
+      "save": "Зберегти",
+      "changeTitle": "Змінити фото профілю",
+      "changeSubtitlePart1": "Завантажте нове зображення профілю.",
+      "changeSubtitlePart2": "Його бачитимете лише ви.",
+      "uploadText": "Натисніть, щоб завантажити нове фото",
+      "uploadHint": "JPG, PNG або GIF. Максимум 5 МБ."
     },
     "avatarUpload": {
-      "label": "�"
+      "label": "Фото профілю"
     },
     "avatarPreview": {
-      "alt": "�"
+      "alt": "Ваш аватар"
     },
     "cancelConfirm": {
-      "title": "�",
-      "message": "�",
-      "benefitsTitle": "�",
-      "benefit1": "�",
-      "benefit2": "�",
-      "benefit3": "�",
-      "benefit4": "�",
-      "keep": "�",
-      "cancel": "�",
-      "defaultBillingPeriodEnd": "�"
+      "title": "Скасувати підписку?",
+      "message": "Нам буде шкода з вами прощатися! Якщо скасуєте підписку, ви втратите доступ до Преміум наприкінці поточного розрахункового періоду.",
+      "benefitsTitle": "Зараз вам доступно:",
+      "benefit1": "Необмежена допомога Jiki на основі штучного інтелекту",
+      "benefit2": "Усі проєкти та шляхи навчання",
+      "benefit3": "Сертифікати про завершення",
+      "benefit4": "Без реклами",
+      "keep": "Залишити підписку",
+      "cancel": "Скасувати підписку",
+      "defaultBillingPeriodEnd": "кінця розрахункового періоду"
     },
     "cancelSuccess": {
-      "title": "�",
-      "message": "�",
-      "accessUntil": "�",
-      "resubscribeNote": "�",
-      "gotIt": "�"
+      "title": "Підписку скасовано",
+      "message": "Вашу підписку Преміум скасовано. Ви можете користуватися всіма можливостями Преміум до кінця поточного розрахункового періоду.",
+      "accessUntil": "Доступ до Преміум діє до",
+      "resubscribeNote": "Передумали? Ви можете відновити підписку будь-коли.",
+      "gotIt": "Зрозуміло"
     },
     "changeEmail": {
-      "title": "�",
-      "importantLabel": "�",
-      "importantText": "�",
-      "currentEmailLabel": "�",
-      "newEmailLabel": "�",
-      "newEmailPlaceholder": "�",
-      "passwordLabel": "�",
-      "passwordPlaceholder": "�",
-      "passwordHint": "�",
-      "newEmailRequired": "�",
-      "emailSame": "�",
-      "updateFailed": "�",
-      "submit": "�"
+      "title": "Змінити адресу електронної пошти",
+      "importantLabel": "Важливо:",
+      "importantText": "На нову адресу електронної пошти буде надіслано лист із підтвердженням. Зміна набуде чинності лише після підтвердження.",
+      "currentEmailLabel": "Поточна електронна адреса",
+      "newEmailLabel": "Нова адреса електронної пошти",
+      "newEmailPlaceholder": "Введіть нову адресу електронної пошти",
+      "passwordLabel": "Підтвердьте поточним паролем",
+      "passwordPlaceholder": "Введіть поточний пароль",
+      "passwordHint": "Потрібно для перевірки безпеки",
+      "newEmailRequired": "Вкажіть нову електронну адресу",
+      "emailSame": "Нова адреса має відрізнятися від поточної",
+      "updateFailed": "Не вдалося оновити електронну адресу",
+      "submit": "Оновити адресу"
     },
     "deleteAccount": {
-      "sendFailed": "�",
-      "confirmTitle": "�",
-      "confirmMessage": "�",
-      "submit": "�",
-      "securityTitle": "�",
-      "securityMessage": "�",
-      "understand": "�"
+      "sendFailed": "Не вдалося надіслати лист із підтвердженням. Спробуйте ще раз.",
+      "confirmTitle": "Ви впевнені?",
+      "confirmMessage": "Ви справді хочете видалити акаунт? Ви втратите всі свої напрацювання. Цю дію неможливо скасувати.",
+      "submit": "Видалити акаунт",
+      "securityTitle": "Перевірка безпеки",
+      "securityMessage": "Ми надіслали вам лист, щоб підтвердити, що це справді ви. Натисніть кнопку в цьому листі, щоб видалити акаунт.",
+      "understand": "Я розумію"
     },
     "paymentHistory": {
-      "title": "�",
-      "subtitle": "�",
-      "loading": "�",
-      "error": "�",
-      "empty": "�",
-      "columnDate": "�",
-      "columnAmount": "�",
-      "columnType": "�",
-      "columnMethod": "�",
-      "downloadReceipt": "�",
-      "typeRecurring": "�",
-      "dateUnavailable": "�"
+      "title": "Історія платежів",
+      "subtitle": "Переглядайте та завантажуйте квитанції за попередні платежі.",
+      "loading": "Завантаження історії платежів...",
+      "error": "Не вдалося завантажити історію платежів. Спробуйте пізніше.",
+      "empty": "Історія платежів порожня.",
+      "columnDate": "Дата",
+      "columnAmount": "Сума",
+      "columnType": "Тип",
+      "columnMethod": "Спосіб",
+      "downloadReceipt": "Завантажити квитанцію",
+      "typeRecurring": "Регулярний",
+      "dateUnavailable": "Дата недоступна"
     },
     "profile": {
-      "nameLabel": "�",
-      "namePlaceholder": "�",
-      "updateName": "�",
-      "nameEmpty": "�",
-      "nameTooLong": "�",
-      "handleLabel": "�",
-      "handlePlaceholder": "�",
-      "updateHandle": "�",
-      "handleEmpty": "�",
-      "handleInvalid": "�",
-      "handleTooShort": "�",
-      "handleTooLong": "�",
-      "emailLabel": "�",
-      "emailPlaceholder": "�",
-      "updateEmail": "�",
-      "emailEmpty": "�",
-      "confirmationPendingHint": "�",
-      "emailNotConfirmed": "�",
-      "confirmationPending": "�"
+      "nameLabel": "Імʼя",
+      "namePlaceholder": "Введіть імʼя",
+      "updateName": "Оновити імʼя",
+      "nameEmpty": "Імʼя не може бути порожнім",
+      "nameTooLong": "Імʼя має містити менше 100 символів",
+      "handleLabel": "Нікнейм",
+      "handlePlaceholder": "Введіть свій нікнейм",
+      "updateHandle": "Оновити нікнейм",
+      "handleEmpty": "Нікнейм не може бути порожнім",
+      "handleInvalid": "Нікнейм може містити лише літери, цифри, підкреслення та дефіси",
+      "handleTooShort": "Нікнейм має містити щонайменше 3 символи",
+      "handleTooLong": "Нікнейм має містити менше ніж 30 символів",
+      "emailLabel": "Електронна пошта",
+      "emailPlaceholder": "Введіть свою електронну пошту",
+      "updateEmail": "Оновити електронну пошту",
+      "emailEmpty": "Електронна пошта не може бути порожньою",
+      "confirmationPendingHint": "Перевірте свою пошту, щоб підтвердити зміну.",
+      "emailNotConfirmed": "Електронну адресу не підтверджено.",
+      "confirmationPending": "Очікується підтвердження для: <strong>{email}</strong>"
+    },
+    "language": {
+      "label": "Мова (Change language)",
+      "comingSoon": "Незабаром",
+      "comingSoonBadge": "Скоро",
+      "saveFailed": "Не вдалося змінити мову. Спробуйте ще раз.",
+      "done": "Готово",
+      "searchLabel": "Пошук мов",
+      "searchPlaceholder": "Пошук мов...",
+      "noMatches": "Жодна мова не відповідає запиту «{query}».",
+      "noMatchesHint": "Спробуйте її англійську назву або код мови.",
+      "selected": "Вибрано",
+      "saving": "Зміна мови",
+      "communityNote": "Переклади створює спільнота.",
+      "helpTranslate": "Допоможіть перекласти Jiki"
     },
     "subscriptionSection": {
-      "loadingCardTitle": "�",
-      "loadingCardDescription": "�",
-      "loadingData": "�"
+      "loadingCardTitle": "Підписка",
+      "loadingCardDescription": "Керування планом підписки та платіжними даними",
+      "loadingData": "Завантаження даних підписки..."
     },
     "benefits": {
-      "activeSubtitle": "�",
-      "cancellingSubtitle": "�",
-      "resubscribeTitle": "�",
-      "resubscribeButton": "�",
-      "activeHeading": "�",
-      "cancellingHeading": "�",
-      "footer": "�",
-      "resubscribe": "�"
+      "activeSubtitle": "Ось що доступно щодня",
+      "cancellingSubtitle": "Ось що стане недоступним, коли завершиться доступ",
+      "resubscribeTitle": "Продовжуйте навчатися без обмежень",
+      "resubscribeButton": "Поновити підписку Преміум",
+      "activeHeading": "Переваги <highlight>Преміум</highlight> уже активні",
+      "cancellingHeading": "Не втрачайте переваги <highlight>Преміум</highlight>",
+      "footer": "Є запитання? Дізнайтеся більше про те, <includedLink>що входить у підписку</includedLink>, або <supportLink>звʼяжіться з підтримкою</supportLink>.",
+      "resubscribe": "Поновіть підписку всього за <price></price> і продовжуйте свою подорож у світ програмування з підтримкою Jiki."
     },
     "cancelSectionPanel": {
-      "title": "�",
-      "description": "�",
-      "cancel": "�"
+      "title": "Скасувати підписку",
+      "description": "Якщо скасувати підписку, наприкінці розрахункового періоду доступ до можливостей Преміум буде втрачено. Підписку завжди можна поновити пізніше.",
+      "cancel": "Скасувати"
     },
     "premiumUpsell": {
-      "subtitle": "�",
-      "planName": "�",
-      "upgrade": "�",
-      "headline": "�",
-      "dailyNote": "�"
+      "subtitle": "Зараз діє безкоштовний план. Перейдіть на Преміум, щоб відкрити:",
+      "planName": "Jiki Преміум",
+      "upgrade": "Перейти на Преміум",
+      "headline": "Відкрийте <highlight>кращий</highlight> спосіб навчання",
+      "dailyNote": "Це всього <price></price> на день"
     },
     "neverSubscribed": {
-      "heading": "�",
-      "subtitle": "�",
-      "featuresLabel": "�",
-      "upgradeAriaLabel": "�",
-      "upgrade": "�"
+      "heading": "Покращте свій план",
+      "subtitle": "Відкрийте розширені можливості та покращене навчання з нашими преміум-планами.",
+      "featuresLabel": "Можливості плану Преміум",
+      "upgradeAriaLabel": "Перейти на план {plan}",
+      "upgrade": "Перейти на Преміум"
     },
     "errorBoundary": {
-      "title": "�",
-      "messagePart1": "�",
-      "messagePart2": "�",
-      "refresh": "�",
-      "detailsSummary": "�"
+      "title": "Помилка системи підписок",
+      "messagePart1": "Виникли проблеми із завантаженням даних про підписку. Це може бути тимчасова проблема з нашою платіжною системою.",
+      "messagePart2": "Спробуйте оновити сторінку або звʼяжіться з підтримкою, якщо проблема не зникне.",
+      "refresh": "Оновити сторінку",
+      "detailsSummary": "Деталі помилки (для розробників)"
     },
     "danger": {
-      "sessionLabel": "�",
-      "sessionDescription": "�",
-      "logout": "�",
-      "deleteLabel": "�",
-      "deleteDescription": "�",
-      "deleteButton": "�"
+      "sessionLabel": "Керування сеансами",
+      "sessionDescription": "Керуйте активними сеансами на всіх пристроях.",
+      "logout": "Вийти",
+      "deleteLabel": "Видалити обліковий запис",
+      "deleteDescription": "Назавжди видалити обліковий запис і всі повʼязані дані. Цю дію неможливо скасувати.",
+      "deleteButton": "Видалити обліковий запис"
     },
     "learning": {
-      "streaksLabel": "�",
-      "streaksDescription": "�",
-      "toggleAriaLabel": "�",
-      "learnMore": "�"
+      "streaksLabel": "Навчальні серії",
+      "streaksDescription": "Увімкнути серії в моєму обліковому записі.",
+      "toggleAriaLabel": "Перемкнути навчальні серії",
+      "learnMore": "Дізнатися більше"
     },
     "notifications": {
-      "toggleAriaLabel": "�",
-      "essentialTitle": "�",
-      "essentialDescription": "�",
-      "featuresTitle": "�",
-      "featuresDescription": "�",
-      "livestreamsTitle": "�",
-      "livestreamsDescription": "�",
-      "milestonesTitle": "�",
-      "milestonesDescription": "�",
-      "activityTitle": "�",
-      "activityDescription": "�",
-      "onboardingTitle": "�",
-      "onboardingDescription": "�"
+      "toggleAriaLabel": "Перемкнути {title}",
+      "essentialTitle": "Важливі повідомлення про сервіс та обліковий запис",
+      "essentialDescription": "Важливі оновлення про обліковий запис, безпеку та зміни в сервісі.",
+      "featuresTitle": "Листи про нові можливості чи вміст",
+      "featuresDescription": "Дізнавайтеся про найновіші можливості та вміст, що зʼявляються на Jiki.",
+      "livestreamsTitle": "Листи про прямі трансляції",
+      "livestreamsDescription": "Отримуйте сповіщення про майбутні прямі трансляції та події.",
+      "milestonesTitle": "Листи про досягнення нових етапів",
+      "milestonesDescription": "Святкуйте свої досягнення та прогрес на Jiki.",
+      "activityTitle": "Інші листи, повʼязані з вашими діями на Jiki",
+      "activityDescription": "Сповіщення про активність, як-от здобуття значків і виконання завдань.",
+      "onboardingTitle": "Листи з порадами, як отримати максимум від Jiki",
+      "onboardingDescription": "Поради та підказки, як отримати максимум від Jiki."
     },
     "editableField": {
-      "update": "�",
-      "edit": "�",
-      "saveFailed": "�"
+      "update": "Оновити",
+      "edit": "Редагувати",
+      "saveFailed": "Не вдалося зберегти"
     },
     "passwordField": {
-      "updateFailed": "�",
-      "currentLabel": "�",
-      "currentPlaceholder": "�",
-      "newLabel": "�",
-      "newPlaceholder": "�",
-      "confirmLabel": "�",
-      "confirmPlaceholder": "�",
-      "submit": "�",
-      "label": "�",
-      "change": "�"
+      "updateFailed": "Не вдалося оновити пароль",
+      "currentLabel": "Поточний пароль",
+      "currentPlaceholder": "Введіть поточний пароль",
+      "newLabel": "Новий пароль",
+      "newPlaceholder": "Введіть новий пароль",
+      "confirmLabel": "Підтвердьте новий пароль",
+      "confirmPlaceholder": "Підтвердьте новий пароль",
+      "submit": "Оновити пароль",
+      "label": "Пароль",
+      "change": "Змінити"
     },
     "subscriptionStatus": {
-      "statusActive": "�",
-      "statusCanceled": "�",
-      "statusPaymentFailed": "�",
-      "statusCancelling": "�",
-      "statusIncomplete": "�",
-      "statusSessionExpired": "�",
-      "statusNotSubscribed": "�",
-      "currentPlan": "�",
-      "cancellingMessage": "�",
-      "currentPlanAriaLabel": "�",
-      "statusAriaLabel": "�",
-      "messageCanceled": "�",
-      "messagePaymentFailed": "�",
-      "messageCancelling": "�",
-      "messageIncomplete": "�",
-      "messageIncompleteExpired": "�",
-      "active": "�",
-      "activeWithBilling": "�",
-      "cancellingRemaining": "�",
-      "cancellingEnds": "�",
-      "free": "�",
-      "planLabel": "�"
+      "statusActive": "Активна",
+      "statusCanceled": "Скасована",
+      "statusPaymentFailed": "Помилка оплати",
+      "statusCancelling": "Скасовується",
+      "statusIncomplete": "Незавершена",
+      "statusSessionExpired": "Сеанс закінчився",
+      "statusNotSubscribed": "Без підписки",
+      "currentPlan": "Поточний план",
+      "cancellingMessage": "Підписку Jiki Premium скасовано.",
+      "currentPlanAriaLabel": "Поточний план: {plan}",
+      "statusAriaLabel": "Статус підписки: {status}",
+      "messageCanceled": "Доступ зберігається до кінця оплаченого періоду",
+      "messagePaymentFailed": "Оплата не пройшла. Оновіть спосіб оплати",
+      "messageCancelling": "Скасування заплановано. Доступ зберігається до кінця періоду",
+      "messageIncomplete": "Налаштування оплати не завершено. Завершіть його, будь ласка",
+      "messageIncompleteExpired": "Попередній сеанс оформлення закінчився. Почніть нову підписку",
+      "active": "У вас план <plan>Jiki {tier}</plan> за <strong><price></price>/місяць</strong>.",
+      "activeWithBilling": "У вас план <plan>Jiki {tier}</plan> за <strong><price></price>/місяць</strong>. Наступна дата оплати: <strong>{date}</strong>.",
+      "cancellingRemaining": "У вас залишилося ще <strong>{count, plural, one {# день} few {# дні} many {# днів} other {# дня}}</strong>, щоб користуватися всіма можливостями Premium.",
+      "cancellingEnds": "Дія вашого плану Premium завершиться <strong>{date}</strong>.",
+      "free": "У вас план <strong>Free</strong>. Він дає доступ до всього вмісту, а також до «Запитати Jiki» для допомоги в одній вправі.",
+      "planLabel": "План {tier}"
     }
   },
   "landing": {
     "hero": {
-      "tagline": "�",
-      "ctaSubtext": "�",
-      "loadingVideo": "�",
-      "playVideo": "�",
-      "watchPrompt": "�",
-      "headline": "�",
-      "audience": "�"
+      "tagline": "Опануйте навички, потрібні, щоб створювати круті речі, бути продуктивними й <strong>залишатися затребуваними у {year}.</strong>",
+      "loadingVideo": "Відео завантажується",
+      "playVideo": "Відтворити відео",
+      "watchPrompt": "Не любите читати? <strong>Натисніть відтворення</strong>, і я розповім усе, що потрібно знати!",
+      "headline": "Сучасний спосіб навчитися <highlight>програмувати і створювати</highlight>",
+      "audienceBeginners": "<name>Початківці</name>, які шукають найкращий і найшвидший спосіб навчатися",
+      "audienceJuniors": "<name>Джуніор-розробники</name>, які хочуть швидше поглибити свої знання",
+      "audienceEntrepreneurs": "<name>Підприємці та вайб-кодери</name>, які хочуть створювати самі, перш ніж наймати команду"
+    },
+    "twoHalves": {
+      "eyebrow": "Дві ключові навички",
+      "heading": "Дві половини професії розробника",
+      "intro": "Jiki навчить вас <strong>програмувати</strong> (у найвеселіший і найефективніший спосіб!) і <strong>створювати справжні речі</strong> за допомогою тих самих технологій, що й у професіоналів. <strong>З першого дня.</strong>",
+      "codeHeading": "Навчіться <word>програмувати</word>",
+      "codeBody": "Усі ключові концепції з докладними відеопоясненнями та сотні вправ і проєктів для практики",
+      "buildHeading": "Навчіться <word>створювати</word>",
+      "buildBody": "Опановуйте технології професіоналів з першого дня: бази даних, автентифікація, фронтенд, бекенд і не тільки!",
+      "techLabel": "Серед технологій, які ви опануєте:"
+    },
+    "learnToCode": {
+      "heading": "Навчіться <word>програмувати</word>",
+      "intro": "Опануйте програмування, ключову навичку, завдяки якій ми пояснюємо компʼютеру, чого хочемо. Ми допоможемо вам <highlight>закласти міцний фундамент програмування</highlight>.",
+      "demo": {
+        "stageDescription": "Анімація застосунку Jiki: учень запускає вправу в стилі space invaders, код виводить лазерну гармату за межі сітки, учень просить Jiki про допомогу, виправляє межу з 20 на 11, і вправа проходить перевірку.",
+        "run": "Запустити код",
+        "tabInstructions": "Завдання",
+        "tabJiki": "Запитати Jiki",
+        "tabLog": "Журнал",
+        "tabHints": "Підказки",
+        "instrHeading": "Детектор прибульців",
+        "instr1": "Прибульці розкидані по трьох рядах, а в деяких колонках їх більше ніж один.",
+        "instr2": "У вашому розпорядженні три функції:",
+        "fnRight": "переміщує лазерну гармату на одну колонку праворуч",
+        "fnLeft": "переміщує її на одну колонку ліворуч",
+        "fnShoot": "стріляє лазером угору",
+        "instr3": "Колонок 11. Якщо вийти за будь-який край, ви програєте, тож стежте за своєю позицією.",
+        "scenarioTitle": "Три ряди: прибульці розташовані в усіх трьох рядах",
+        "badgePending": "Очікує",
+        "badgeFail": "Не пройдено",
+        "badgePass": "Пройдено",
+        "verdictPending": "Запустіть код, щоб дізнатися, чи проходить цей сценарій.",
+        "verdictFail": "Під час виконання код натрапив на помилку. Виправте помилку, описану в повідомленні вище.",
+        "verdictPass": "Усі шість прибульців знищено. Чудова робота!",
+        "errorTitle": "Ой, ми зайшли надто далеко!",
+        "errorBody": "Лазерна гармата вийшла за правий край екрана. Памʼятайте: потрібно стежити за позицією і в кінці змінювати напрямок руху на протилежний.",
+        "chat1": "Привіт! Що сталося?",
+        "chat2": "Моя гармата постійно вилітає за край екрана.",
+        "chat3": "Погляньмо на щойно написаний рядок. Ми розвертаємося, коли <code>position</code> досягає 20. Але скільки стовпців насправді має сітка?",
+        "chat4": "Одинадцять.",
+        "chat5": "Саме так. <code>position</code> ніколи не досягає 20, тому <code>move_left()</code> ніколи не виконується. Змініть межу на 11, і гармата розвернеться в останньому стовпці.",
+        "chatPlaceholder": "Відповісти Jiki...",
+        "jikiAvatarAlt": "Jiki",
+        "successTitle": "Вітаємо!",
+        "successBody": "Усі тести пройдено! Вправу успішно завершено.",
+        "successBtn": "Продовжити"
+      },
+      "callouts": {
+        "tested": {
+          "title": "Кожна вправа є справжньою програмою",
+          "body": "Цикли, умовні конструкції, змінні: усі <hl>прийоми, які ми будемо використовувати в кожній програмі</hl>, яку колись напишемо."
+        },
+        "see": {
+          "title": "Розвʼязуймо цікаві й веселі вправи",
+          "body": "Жодних нудних текстових вправ. <hl>Створюймо ігри, розвʼязуймо головоломки, розважаймося!</hl>"
+        },
+        "rewind": {
+          "title": "Перемотуймо власний код назад",
+          "body": "Пройдімося назад кожною вказівкою і <hl>подивімося, що саме відбулося</hl>, рядок за рядком."
+        },
+        "errors": {
+          "title": "Помилки зрозумілою мовою",
+          "body": "Коли щось ламається, ми пояснимо, що пішло не так, <hl>звичайною мовою, а не технічним жаргоном.</hl>"
+        },
+        "help": {
+          "title": "Допомога, а не готові відповіді",
+          "body": "Працюймо разом із Jiki, щоб зрушити з мертвої точки. <hl>Вчімося думати</hl>, а не просто проходити вправу."
+        },
+        "next": {
+          "title": "Завжди на крок вище",
+          "body": "Кожна вправа просуває нас трохи далі за попередню. <hl>Наступний крок завжди досяжний</hl>."
+        }
+      }
+    },
+    "funPrints": {
+      "eyebrow": "Погляньмо, що ми створимо",
+      "heading": "Робімо ігри. Створюймо анімації. Розвʼязуймо головоломки.",
+      "sub": "Кожен із цих проєктів побудований на тих самих кількох базових концепціях, і до кінця курсу ми створимо <strong>сотні</strong> подібних.",
+      "spaceInvaders": "Космічні загарбники",
+      "ticTacToe": "Хрестики-нулики",
+      "breakout": "Арканоїд",
+      "mazeSolver": "Розвʼязувач лабіринтів",
+      "flowerFlipbook": "Фліпбук із квіткою",
+      "footnote": "…і це лише перші кілька тижнів!"
+    },
+    "learnToBuild": {
+      "heading": "Вчімося <word>створювати</word>",
+      "intro": "Швидко опановуємо ключові технології (бази даних, автентифікація, frontend, backend і не тільки) за допомогою сучасного агентного програмування.",
+      "livestreamsLead": "Інтерактивні навчальні трансляції",
+      "livestreamsDetail": "Щось не вдається: концепція чи власний проєкт? Отримайте відповідь на <strong>регулярних прямих трансляціях</strong> зі справжніми запитаннями від спільноти.",
+      "technologiesLead": "Справжні проєкти, а не вигадані.",
+      "technologiesDetail": "Навчаймося, поки Джеремі створює справжні проєкти з нуля, пояснюючи кожне рішення, і втілюймо власні ідеї слідом за ним.",
+      "portfolioLead": "Опануймо широкий спектр технологій",
+      "portfolioDetail": "Створення сучасного застосунку вимагає взаємодії з багатьма системами: автентифікація, API, backend, frontend. Ми навчимо всього цього.",
+      "liveQaAlt": "Джеремі проводить живу сесію запитань і відповідей Jiki",
+      "topicsLabel": "На практиці опануємо:",
+      "databases": "Бази даних",
+      "auth": "Автентифікація",
+      "frontendBackend": "Frontend і backend",
+      "apis": "API",
+      "deployment": "Розгортання",
+      "llmIntegration": "Інтеграція LLM",
+      "liveQa_fred": "Нарешті запрацювало. Три спроби, але я впорався.",
+      "liveQa_oleksandra": "Може хтось ще раз пояснити замикання? Синтаксис я розумію, просто не бачу, навіщо вони взагалі потрібні.",
+      "liveQa_shaun": "О, тепер справді все стало зрозуміло.",
+      "liveQa_lukas": "Щойно розгорнув свій перший проєкт. Чесно кажучи, не думав, що зайду так далеко.",
+      "joinLive": "Долучитися до живого обговорення",
+      "catchUp": "Переглянути пізніше",
+      "getSupport": "Отримати підтримку",
+      "liveQa_drac": "Найзрозуміліше пояснення цієї теми, яке я будь-де бачив 🙌"
+    },
+    "outcomes": {
+      "bubble": "Наприкінці курсу",
+      "heading": "Що ми отримаємо в підсумку",
+      "sub": "Більшість курсів залишають по собі лише звичку дивитися відео. Jiki залишає навички, підтвердження і портфоліо справжніх проєктів.",
+      "certificateTitle": "Підтверджений сертифікат",
+      "certificateBody": "Ми отримаємо сертифікат, який можна перевірити і додати до резюме та розділу Certifications у профілі LinkedIn. І ми знатимемо, що справді його заслужили!",
+      "certificateAlt": "Сертифікат про завершення курсу Jiki",
+      "shareOnLinkedIn": "Поділитися в LinkedIn",
+      "portfolioTitle": "Різноманітне портфоліо справжніх проєктів",
+      "portfolioBody": "Створюймо справжні проєкти відповідно до власних інтересів. Не шаблонний список справ, а справжні застосунки, які демонструють креативність, винахідливість і знання.",
+      "habitTracker": "Особистий трекер звичок",
+      "homepage": "Цифрова домівка",
+      "recipeBox": "Планувальник рецептів",
+      "dashboard": "Інформаційна панель",
+      "understandingTitle": "Розуміння того, як усе працює",
+      "understandingBody": "Jiki закладає справжній, міцний фундамент для карʼєри: читати незнайомий код, розуміти, як він працює, і швидко знаходити помилки.",
+      "codeNote": "Ми навчимося з нуля створювати ігри на кшталт Wordle"
+    },
+    "meetJeremy": {
+      "portraitAlt": "Джеремі Вокер",
+      "intro": "Привіт! 👋 Я Джеремі, і я допоміг <strong>мільйонам людей</strong> по всьому світу розвинути навички програмування.",
+      "badgeDeveloper": "Старший розробник",
+      "badgeTeacher": "Відданий викладач",
+      "badgeMission": "Відданий місії",
+      "developerTitle": "Старший розробник",
+      "developerDetail": "Фулстек • 35 років досвіду • Пише код понад 20 мовами (зокрема власною!) • Диплом зі штучного інтелекту (ще з 2005 року) • Запатентував систему ШІ для кардіохірургії",
+      "teacherTitle": "Відданий викладач",
+      "teacherDetail": "20 років досвіду • Понад 3 млн учнів • Заснував чотири освітні компанії",
+      "entrepreneurTitle": "Підприємець із місією",
+      "entrepreneurDetail": "Засновник кількох організацій із соціальною місією, зокрема Exercism, Kaido й Thalamus • Керує одним із найбільших у світі проєктів із відкритим кодом",
+      "story": "Програмування було в центрі мого життя, відколи мені було 8 років. Воно навчило мене <strong>творчості</strong>, <strong>розвʼязання проблем</strong> і <strong>критичного мислення</strong>. А ще подарувало карʼєру, яку я люблю: я будував компанії в освіті, медицині та штучному інтелекті.",
+      "why": "Я створив Jiki, бо <strong>хочу поділитися цим</strong>. Хочу, щоб кожен міг відчути ту саму радість і користь, які програмування дало мені. І я переконаний, що <strong>вчитися програмувати має бути весело</strong>. Індустрія розробки стрімко змінюється. Агентне програмування стає нормою. Я прагну <strong>супроводжувати кожного в цій подорожі</strong> й подбати, щоб і той, хто мріє про карʼєру в IT-індустрії, і той, хто просто хоче розуміти, що відбувається, досяг свого. Сподіваюся, ми пройдемо цей шлях разом!",
+      "signature": "Джеремі",
+      "quote": "Ми вчимося писати код, коли пишемо код: розвʼязуємо задачі, які відповідають нашим здібностям і водночас розширюють їхні межі. <strong>Джеремі викладає, як справжній майстер.</strong>",
+      "quoteName": "Том Чіттом",
+      "quoteRole": "Початківець"
+    },
+    "printRow": {
+      "joinNote": "Долучайтеся!",
+      "spaceInvaders": "космічні загарбники",
+      "breakout": "арканоїд",
+      "maze": "лабіринт",
+      "heading": "Час створити свою першу гру!",
+      "body": "Навчаймося програмувати і створюймо справжні проєкти з першого ж дня, а Джеремі буде поруч на кожному кроці.",
+      "free": "100+ годин безкоштовного контенту",
+      "projects": "Справжні проєкти",
+      "unstuck": "Без глухих кутів",
+      "cta": "Розпочати"
     },
     "exercism": {
-      "heading": "�",
-      "intro": "�",
-      "studentsCount": "�",
-      "studentsTitle": "�",
-      "studentsDesc": "�",
-      "testimonialsCount": "�",
-      "testimonialsTitle": "�",
-      "testimonialsDesc": "�",
-      "exercisesCount": "�",
-      "exercisesTitle": "�",
-      "exercisesDesc": "�",
-      "mentoringCount": "�",
-      "mentoringTitle": "�",
-      "mentoringDesc": "�"
-    },
-    "signupSection": {
-      "intro": "�",
-      "button": "�",
-      "heading": "�"
+      "eyebrow": "Від творців Exercism",
+      "heading": "Провідна освітня платформа для <highlight>практики програмування</highlight>",
+      "support": "Jiki створює <strong>команда Exercism</strong>. Ми спираємося на все, чого навчилися, допомагаючи мільйонам учнів зростати.",
+      "taughtValue": "2,9 млн+",
+      "taughtLabel": "людей навчено",
+      "testimonialsValue": "85 000+",
+      "testimonialsLabel": "відгуків",
+      "submittedValue": "69 млн+",
+      "submittedLabel": "вправ надіслано"
     },
     "signupButton": {
-      "label": "�"
+      "label": "Зареєструватися <free>(це безкоштовно!)</free>"
     },
     "faqs": {
-      "heading": "�",
-      "q1": "�",
-      "q1a1": "�",
-      "q1Item1": "�",
-      "q1Item2": "�",
-      "q1Item3": "�",
-      "q1Item4": "�",
-      "q1Item5": "�",
-      "q1Item6": "�",
-      "q1Item7": "�",
-      "q2": "�",
-      "q2a": "�",
-      "q3": "�",
-      "q3a1": "�",
-      "q3a2": "�",
-      "q4": "�",
-      "q4a1": "�",
-      "q4a2": "�",
-      "q5": "�",
-      "q5a1": "�",
-      "q5a2": "�",
-      "intro": "�",
-      "q1a2": "�"
+      "heading": "Поширені запитання",
+      "q1": "Скільки це коштує?",
+      "q1a1": "Вправи курсу <strong>«Вчимося програмувати»</strong>, серцевини нашої навчальної програми, <strong>повністю безкоштовні</strong>. Без банківської картки, без пробного періоду, без прихованих умов.",
+      "q1Item1": "Повний доступ до курсу <strong>«Вчимося створювати»</strong>",
+      "q1Item2": "Поєднуйте свої навички в <strong>Проєктах Jiki</strong>",
+      "q1Item3": "Необмежена підтримка від ШІ <strong>«Запитай Jiki»</strong>",
+      "q1Item4": "Регулярні <strong>стріми запитань і відповідей</strong>, до яких можна долучитися",
+      "q1Item5": "<strong>Сертифікати</strong> за пройдені курси",
+      "q1Item6": "Навчання <strong>без реклами</strong>",
+      "q1Item7": "<strong>Ранній доступ</strong> до нових можливостей",
+      "q2": "Скільки часу щотижня потрібно приділяти курсу?",
+      "q2a": "Стільки, скільки зручно. Більшість проходить курс <strong>«Вчимося програмувати»</strong> за 12–20 тижнів, приділяючи близько 5–10 годин на тиждень. Курс <strong>«Вчимося створювати»</strong> триває постійно: можна повертатися щоразу, як виходять нові епізоди, і долучатися до стрімів, коли зручно.",
+      "q3": "Наскільки складний курс? Чи треба бути дуже розумним?",
+      "q3a1": "Курс розроблено так, щоб він був доступний кожному, незалежно від попереднього досвіду. Ми не вважаємо, що для програмування треба бути «розумним». Але потрібні зусилля й готовність приймати виклики.",
+      "q3a2": "Але якщо докладати зусиль, звертатися по допомогу, коли щось не виходить, і приймати виклики, то результат за короткий час справді вражає.",
+      "q4": "Чи вже доступний Jiki?",
+      "q4a1": "Так! Зареєструватися й почати безкоштовний курс «Вчимося програмувати» можна вже сьогодні.",
+      "q4a2": "Перша сесія курсу <strong>«Вчимося створювати»</strong> відбудеться в <strong>середині червня</strong>. Після реєстрації можна підписатися на нагадування.",
+      "q5": "У мене вже є реєстрація на буткемп. Це щось інше?",
+      "q5a1": "Дякуємо за участь у буткемпі! Jiki став наступним етапом розвитку нашого буткемпу. Більшість вправ із буткемпу зʼявиться і в Jiki, а до них додасться багато нових. А тригодинні відео ми розбили на короткі фрагменти по 5–10 хвилин, щоб дивитися було зручніше!",
+      "q5a2": "Учасники буткемпу автоматично отримують Jiki Преміум назавжди. Це стосується і початкового курсу «Вчимося програмувати», і майбутніх курсів.",
+      "intro": "Це запитання, які нам ставлять найчастіше. Якщо потрібної відповіді тут немає, <link>напишіть нам!</link>",
+      "q1a2": "<strong>Jiki Преміум</strong> коштує <price></price> (ціна залежить від країни) і відкриває:"
     },
     "latestNews": {
-      "heading": "�",
-      "byAuthor": "�",
-      "subheading": "�"
-    },
-    "welcome": {
-      "para1": "�",
-      "para2": "�",
-      "para3": "�",
-      "hiThere": "�",
-      "para4": "�",
-      "para5": "�",
-      "heading2": "�",
-      "para6": "�",
-      "para7": "�",
-      "para8": "�",
-      "heading3": "�",
-      "para9": "�",
-      "rhodriAlt": "�",
-      "captionShort": "�",
-      "captionLong": "�",
-      "para11": "�",
-      "para12": "�",
-      "heading4": "�",
-      "para13": "�",
-      "listItem1": "�",
-      "listItem2": "�",
-      "para14": "�",
-      "spaceInvadersLabel": "�",
-      "ticTacToeLabel": "�",
-      "breakoutLabel": "�",
-      "mazeLabel": "�",
-      "heading5": "�",
-      "para15": "�",
-      "ctaButton": "�",
-      "heading": "�",
-      "para10": "�",
-      "para17": "�",
-      "para16": "�"
-    },
-    "bootcamp": {
-      "tagWhatWeCover": "�",
-      "menuHeading": "�",
-      "menuIntro": "�",
-      "part1Heading": "�",
-      "part1Bubble": "�",
-      "part1Intro": "�",
-      "part1Item2": "�",
-      "part1Item3": "�",
-      "part1Item4": "�",
-      "part1Duration": "�",
-      "part1Alt": "�",
-      "levelsHeading": "�",
-      "levelsSideheading": "�",
-      "levelsIntro": "�",
-      "levelsSubIntro": "�",
-      "penguinAlt": "�",
-      "level2": "�",
-      "golfLabel": "�",
-      "level3": "�",
-      "flowerLabel": "�",
-      "flowerLevel": "�",
-      "spaceInvadersLabel": "�",
-      "level7": "�",
-      "wallLabel": "�",
-      "level10": "�",
-      "wordleAlt": "�",
-      "level12": "�",
-      "ticTacToeLabel": "�",
-      "level14": "�",
-      "mazeLabel": "�",
-      "level16": "�",
-      "dreamingHouseLabel": "�",
-      "level20": "�",
-      "breakoutLabel": "�",
-      "levelEnd": "�",
-      "buildingHeading": "�",
-      "buildingIntro": "�",
-      "part2Heading": "�",
-      "part2Bubble": "�",
-      "part2Intro": "�",
-      "part2Item1": "�",
-      "part2Item2": "�",
-      "part2Item3": "�",
-      "part2Duration": "�",
-      "jeremyLivestreamAlt": "�",
-      "certificateBubble": "�",
-      "certificateHeading": "�",
-      "certificatePara1": "�",
-      "certificatePara2": "�",
-      "certificateAlt": "�",
-      "linkedinAlt": "�",
-      "linkedinShare": "�",
-      "part1Item1": "�"
+      "heading": "Останні новини",
+      "byAuthor": "автор: {name}",
+      "subheading": "Стежте за новинами Jiki в <link>нашому блозі</link>."
     }
   },
   "premium": {
     "page": {
-      "heading": "�",
-      "subheading": "�"
+      "heading": "Jiki Преміум",
+      "subheading": "Пришвидшіть свій шлях до першої роботи. Відкрийте всі курси, всі проєкти, необмежену підтримку від ШІ та все інше, що пропонує Jiki."
     },
     "planPrice": {
-      "basic": "�",
-      "premium": "�",
-      "free": "�",
-      "perMonth": "�"
+      "basic": "Базовий",
+      "premium": "Преміум",
+      "free": "Безкоштовно",
+      "perMonth": "на місяць"
     },
     "planBadge": {
-      "free": "�",
-      "premium": "�"
+      "free": "Безкоштовний",
+      "premium": "Преміум"
     },
     "table": {
-      "comparePlans": "�",
-      "comparePlansDesc": "�",
-      "checkNo": "�"
+      "comparePlans": "Порівняння планів",
+      "comparePlansDesc": "Ось що входить у кожен план: обирайте впевнено.",
+      "checkNo": "✕"
     },
     "values": {
-      "oneConversation": "�",
-      "unlimited": "�",
-      "firstEpisodes": "�",
-      "fullAccess": "�",
-      "sampleEpisode": "�"
+      "oneConversation": "1 розмова",
+      "unlimited": "Без обмежень",
+      "firstEpisodes": "Перші епізоди",
+      "fullAccess": "Повний доступ",
+      "sampleEpisode": "Пробний епізод"
     },
     "categories": {
-      "codingFundamentals": "�",
-      "buildWithJeremy": "�",
-      "support": "�",
-      "certificates": "�",
-      "experience": "�"
+      "codingFundamentals": "Вчимося програмувати",
+      "buildWithJeremy": "Вчимося створювати",
+      "support": "Підтримка",
+      "certificates": "Сертифікати",
+      "experience": "Досвід"
     },
     "features": {
-      "codingExercisesTitle": "�",
-      "codingExercisesDesc": "�",
-      "conceptLibraryTitle": "�",
-      "conceptLibraryDesc": "�",
-      "jikiChallengesTitle": "�",
-      "jikiChallengesDesc": "�",
-      "askJikiTitle": "�",
-      "askJikiDesc": "�",
-      "buildingFundamentalsTitle": "�",
-      "buildingFundamentalsDesc": "�",
-      "howThingsWorkTitle": "�",
-      "howThingsWorkDesc": "�",
-      "earlyAccessTitle": "�",
-      "earlyAccessDesc": "�",
-      "communityForumsTitle": "�",
-      "communityForumsDesc": "�",
-      "livestreamsTitle": "�",
-      "livestreamsDesc": "�",
-      "certificatesTitle": "�",
-      "certificatesDesc": "�",
-      "adFreeTitle": "�",
-      "adFreeDesc": "�"
+      "codingExercisesTitle": "Вправи з програмування",
+      "codingExercisesDesc": "Навчайтеся на практиці з нашою бібліотекою інтерактивних вправ, яка постійно зростає.",
+      "conceptLibraryTitle": "Повна бібліотека концепцій",
+      "conceptLibraryDesc": "Стислі уроки, що охоплюють кожну концепцію програмування, яку варто знати.",
+      "jikiChallengesTitle": "Виклики",
+      "jikiChallengesDesc": "Беріться за складніші виклики й розвивайте навички далі.",
+      "askJikiTitle": "Запитайте Jiki",
+      "askJikiDesc": "Підказки й пояснення від Jiki на основі штучного інтелекту допоможуть вийти з глухого кута.",
+      "buildingFundamentalsTitle": "Серія «Основи розробки»",
+      "buildingFundamentalsDesc": "Дивіться, як Джеремі створює вебплатформу з нуля: сервери, бази даних, автентифікація та багато іншого.",
+      "howThingsWorkTitle": "Серія «Як усе працює»",
+      "howThingsWorkDesc": "Глибокі занурення в найхитріші частини Exercism і Jiki та в те, чому вони побудовані саме так.",
+      "earlyAccessTitle": "Ранній доступ до нових можливостей",
+      "earlyAccessDesc": "Випробовуйте нові можливості раніше за всіх.",
+      "communityForumsTitle": "Форуми спільноти",
+      "communityForumsDesc": "Ставте запитання й навчайтеся разом з іншими студентами Jiki.",
+      "livestreamsTitle": "Прямі ефіри запитань і відповідей із Джеремі",
+      "livestreamsDesc": "Долучайтеся до прямих ефірів, де Джеремі відповідає на запитання про програмування та розробку.",
+      "certificatesTitle": "Отримуйте сертифікати за курси",
+      "certificatesDesc": "Демонструйте здобуті знання за допомогою сертифікатів, якими можна поділитися.",
+      "adFreeTitle": "Навчання без реклами",
+      "adFreeDesc": "Зосередьтеся на навчанні без відволікань."
     },
     "faq": {
-      "title": "�",
-      "q1": "�",
-      "a1": "�",
-      "q2": "�",
-      "a2": "�",
-      "q3": "�",
-      "a3": "�",
-      "q4": "�",
-      "q5": "�",
-      "a5": "�",
-      "a4": "�"
+      "title": "Поширені запитання",
+      "q1": "Чи можна спробувати Jiki безкоштовно?",
+      "a1": "Так! Можна зареєструватися безкоштовно й користуватися планом «Базовий» скільки завгодно. Перейти на «Преміум» можна будь-коли, щойно знадобиться повний доступ, без жодних зобовʼязань.",
+      "q2": "Чи є мінімальний термін контракту?",
+      "a2": "Мінімального терміну немає: оплата за «Преміум» щомісячна, і скасувати підписку можна будь-коли в налаштуваннях облікового запису.",
+      "q3": "Що станеться, якщо я скасую підписку «Преміум»?",
+      "a3": "Доступ до «Преміум» збережеться до кінця поточного розрахункового періоду, після чого обліковий запис повернеться на план «Базовий». Увесь прогрес збережеться: зникне лише доступ до можливостей «Преміум».",
+      "q4": "Чи є знижки для студентів або тих, хто не може дозволити собі «Преміум»?",
+      "q5": "Чи можна пізніше перейти на інший план?",
+      "a5": "Звісно. Перейти на «Преміум» можна будь-коли в налаштуваннях облікового запису, а скасувати підписку так само легко в будь-який момент.",
+      "a4": "Ми хочемо, щоб Jiki був доступний кожному. Якщо ціна стає на заваді, будь ласка, <link>напишіть нам</link>, і ми зробимо все можливе, щоб допомогти."
     },
     "cta": {
-      "alreadyPremiumTitle": "�",
-      "alreadyPremiumDesc": "�",
-      "upgradeTitle": "�",
-      "upgradeDesc": "�",
-      "upgradeButton": "�",
-      "freeTitle": "�",
-      "freeDesc": "�",
-      "freeButton": "�"
+      "alreadyPremiumTitle": "У вас уже є «Преміум»",
+      "alreadyPremiumDesc": "Дякуємо за підтримку Jiki! Насолоджуйтеся повним доступом до всього.",
+      "upgradeTitle": "Готові навчатися швидше?",
+      "upgradeDesc": "Перейдіть на «Преміум» і відкрийте все, що може запропонувати Jiki.",
+      "upgradeButton": "Перейти на «Преміум»",
+      "freeTitle": "Почніть безкоштовно",
+      "freeDesc": "Почніть сьогодні безкоштовно й отримайте доступ до сотень годин безкоштовного контенту. Перейдіть на «Преміум», коли захочете зануритися глибше.",
+      "freeButton": "Зареєструватися безкоштовно"
     },
     "publicPrice": {
-      "unavailable": "�"
+      "unavailable": "—"
     },
     "benefits": {
-      "unlimitedAiTitle": "�",
-      "unlimitedAiDescription": "�",
-      "unlimitedContentTitle": "�",
-      "unlimitedContentDescription": "�",
-      "certificatesTitle": "�",
-      "certificatesDescription": "�",
-      "adFreeTitle": "�",
-      "adFreeDescription": "�",
-      "prioritySupportTitle": "�",
-      "prioritySupportDescription": "�",
-      "earlyAccessTitle": "�",
-      "earlyAccessDescription": "�"
+      "unlimitedAiTitle": "Необмежена допомога штучного інтелекту",
+      "unlimitedAiDescription": "Отримуйте персональні поради від Jiki щоразу, коли застрягнете",
+      "unlimitedContentTitle": "Необмежений контент",
+      "unlimitedContentDescription": "Доступ до всіх вправ, проєктів і шляхів навчання",
+      "certificatesTitle": "Сертифікати",
+      "certificatesDescription": "Отримуйте сертифікати, якими можна поділитися, після завершення курсів",
+      "adFreeTitle": "Без реклами",
+      "adFreeDescription": "Насолоджуйтеся навчанням без відволікань",
+      "prioritySupportTitle": "Пріоритетна підтримка",
+      "prioritySupportDescription": "Отримуйте швидші відповіді, коли потрібна допомога",
+      "earlyAccessTitle": "Ранній доступ",
+      "earlyAccessDescription": "Випробовуйте нові можливості та контент першими"
     }
   },
   "roadmap": {
     "page": {
-      "heading": "�",
-      "subheading": "�",
-      "disclaimer": "�"
+      "heading": "Дорожня карта",
+      "subheading": "Куди рухається Jiki. Поквартальний огляд того, що ми випускаємо, що буде далі й про що ще тільки мріємо.",
+      "disclaimer": "Ця дорожня карта відображає наші поточні плани. Пріоритети змінюються в міру того, як ми вчимося у своєї спільноти, тому дати й обсяг робіт можуть змінитися."
     },
     "status": {
-      "shipped": "�",
-      "inProgress": "�",
-      "planned": "�"
+      "shipped": "Випущено",
+      "inProgress": "У процесі",
+      "planned": "Заплановано"
     },
     "changelog": {
-      "title": "�",
-      "subtitle": "�",
+      "title": "Журнал змін",
+      "subtitle": "Нещодавні покращення, які ми додали до Jiki.",
       "learnToBuildLaunch": {
-        "date": "�",
-        "title": "�",
-        "description": "�"
+        "date": "11 липня 2026",
+        "title": "Запустили «Вчимося створювати»",
+        "description": "Нова серія Джеремі, у якій він з нуля створює справжні корисні проєкти разом з учнями, вже доступна."
       },
       "milestones6To10": {
-        "date": "�",
-        "title": "�",
-        "description": "�"
+        "date": "Липень 2026",
+        "title": "Запустили етапи 6-10 у «Вчимося кодувати»",
+        "description": "На треку «Вчимося кодувати» тепер доступні пʼять нових етапів, які ведуть подорож далеко за межі основ."
       },
       "jikiLaunch": {
-        "date": "�",
-        "title": "�",
-        "description": "�"
+        "date": "7 червня 2026",
+        "title": "Запустили Jiki!",
+        "description": "Jiki офіційно запущено (поки що в бета-версії!)"
       }
     },
     "phases": {
       "now": {
-        "label": "�",
-        "timeframe": "�",
-        "summary": "�",
+        "label": "Зараз",
+        "timeframe": "Липень 2026",
+        "summary": "На чому ми зосереджені цього місяця.",
         "learnToBuild": {
-          "title": "�",
-          "description": "�"
+          "title": "Запустили «Вчимося створювати»",
+          "description": "Цілком нова серія Джеремі вже доступна: у ній він з нуля створює справжні корисні проєкти разом з учнями. Кожен проєкт поділено на невеликі уроки, які показують не лише код, а й міркування, помилки та рішення, з яких складається створення програм."
         },
         "launchBugs": {
-          "title": "�",
-          "description": "�"
+          "title": "Виправляємо помилки після запуску",
+          "description": "Тепер, коли Jiki працює, ми виправляємо помилки та згладжуємо гострі кути, поки справжні учні користуються платформою. Очікуйте постійний потік дрібних виправлень і покращень зручності в усьому застосунку."
         },
         "earlyFeedback": {
-          "title": "�",
-          "description": "�"
+          "title": "Реагуємо на перші відгуки",
+          "description": "Ми читаємо кожне повідомлення, кожне звернення до підтримки й кожну пропозицію. Найвпливовіші відгуки перетворюються на доопрацювання й невеликі можливості, тож досвід стає кращим тиждень за тижнем."
         },
         "foundations": {
-          "title": "�",
-          "description": "�"
+          "title": "Зміцнюємо фундамент",
+          "description": "За лаштунками ми покращуємо надійність, швидкодію та спостережуваність, щоб мати міцну основу для наступної хвилі можливостей. Це менш помітна, але найважливіша робота, яку ми можемо робити просто зараз."
         }
       },
       "next": {
-        "label": "�",
-        "timeframe": "�",
-        "summary": "�",
+        "label": "Далі",
+        "timeframe": "III квартал 2026",
+        "summary": "Сплановано й поставлено в чергу.",
         "betaToLive": {
-          "title": "�",
-          "description": "�"
+          "title": "Перейдемо від бети до повноцінного запуску",
+          "description": "Зараз Jiki у бета-версії. Щойно вляжеться пил після запуску, ми приберемо позначку «бета» й перейдемо до повноцінного продукту з надійнішими гарантіями стабільності, зрозумілішими цінами та відшліфованим процесом знайомства з платформою. Тоді ж ми надішлемо лист про запуск спільноті Exercism і розпочнемо промокампанії з нашими партнерами."
         },
         "deepDiveVideos": {
-          "title": "�",
-          "description": "�"
+          "title": "Додамо відео «Глибоке занурення»",
+          "description": "Довгі відео, які виходять за межі основних уроків і досліджують концепції по-справжньому глибоко. Ідеально для учнів, які хочуть зрозуміти не лише «як», а й «чому», і побачити, як ідеї повʼязані з ширшим світом програмування."
         },
         "newLanguages": {
-          "title": "�",
-          "description": "�"
+          "title": "Запустимо кілька нових мов",
+          "description": "З серпня ми робимо Jiki доступним для учнів їхньою рідною мовою: перекладаємо весь інтерфейс і навчальну програму, а не лише маркетингові сторінки. Усе розпочнеться з нашого <link>спільнотного перекладатону</link> у вихідні з 31 липня до 2 серпня."
         },
         "pythonVersion": {
-          "title": "�",
-          "description": "�"
+          "title": "Запустимо версію з Python",
+          "description": "У вересні зʼявиться повноцінний трек з Python, який відтворює глибину нашої навчальної програми з JavaScript. Та сама філософія вправ, той самий покроковий візуалізатор, той самий рівень якості, але мовою навчання буде Python."
         }
       },
       "future": {
-        "label": "�",
-        "timeframe": "�",
-        "summary": "�",
+        "label": "Майбутнє",
+        "timeframe": "IV квартал 2026",
+        "summary": "На горизонті. Плани можуть змінюватися в міру того, як ми вчимося.",
         "moreLanguages": {
-          "title": "�",
-          "description": "�"
+          "title": "Додамо більше мов",
+          "description": "Після першої хвилі в серпні ми будемо й далі перекладати Jiki іншими мовами до кінця року, щоб ще більше учнів могли користуватися платформою рідною мовою. Пріоритети будемо визначати за запитами спільноти й тим, де зможемо дати найбільший ефект."
         },
         "sql": {
-          "title": "�",
-          "description": "�"
+          "title": "Запустимо SQL",
+          "description": "Ближче до кінця року ми додамо SQL до Jiki, щоб учні могли на власному досвіді розібратися з базами даних і запитами, з тим самим покроковим підходом «вчимося на практиці», що й у решті навчальної програми."
         }
       }
     }
   },
   "misc": {
     "chooseLanguage": {
-      "selectLanguage": "�",
-      "backToVideo": "�",
-      "tooltip": "�",
-      "saving": "�",
-      "confirmChoice": "�",
-      "questionTitle": "�",
-      "javascript": "�",
-      "python": "�",
-      "chooseForMe": "�",
-      "cantChange": "�",
-      "noVideo": "�",
-      "videoInstruction": "�"
+      "selectLanguage": "Виберіть мову",
+      "backToVideo": "Назад до відео",
+      "tooltip": "Виберіть один із варіантів, щоб продовжити.",
+      "saving": "Зберігаємо...",
+      "confirmChoice": "Підтвердити вибір",
+      "questionTitle": "Виберіть, яку мову хочете вивчати",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "chooseForMe": "Вибрати за мене",
+      "cantChange": "Після вибору змінити мову не можна.",
+      "noVideo": "Відео недоступне",
+      "videoInstruction": "Перегляньте відео, а потім виберіть мову. Вже знаєте? <skip>Пропустити відео</skip>"
     },
     "deleteAccount": {
-      "deletedTitle": "�",
-      "deletedSubtitle": "�",
-      "deletingTitle": "�",
-      "deletingSubtitle": "�",
-      "errorTitle": "�",
-      "errorSubtitle": "�",
-      "expiredTitle": "�",
-      "expiredSubtitle": "�",
-      "expiredSecondary": "�",
-      "goHome": "�"
+      "deletedTitle": "Ваш акаунт видалено",
+      "deletedSubtitle": "Нам шкода, що ви йдете. Сподіваємося, вам сподобався Jiki. Успіхів у подорожі світом програмування!",
+      "deletingTitle": "Видаляємо ваш акаунт",
+      "deletingSubtitle": "Зачекайте, будь ласка",
+      "errorTitle": "Сталася помилка",
+      "errorSubtitle": "Під час видалення акаунта сталася помилка. Ми отримали сповіщення й видалимо його вручну.",
+      "expiredTitle": "Посилання недійсне або протерміноване",
+      "expiredSubtitle": "Це посилання для видалення більше не діє. Можливо, його вже використано або його термін минув.",
+      "expiredSecondary": "Якщо ви все ще хочете видалити акаунт, увійдіть і запросіть нове посилання для видалення в налаштуваннях.",
+      "goHome": "Перейти на головну"
     },
     "errorPage": {
-      "serverErrorTitle": "�",
-      "serverErrorMessage": "�",
-      "serverErrorAction": "�",
-      "notFoundTitle": "�",
-      "notFoundMessage": "�",
-      "notFoundAction": "�"
+      "serverErrorTitle": "Щось пішло не так",
+      "serverErrorMessage": "Сталася неочікувана помилка. Перепрошуємо!",
+      "serverErrorAction": "Спробувати ще раз",
+      "notFoundTitle": "Сторінку не знайдено",
+      "notFoundMessage": "Схоже, ми не можемо знайти цю сторінку. Перепрошуємо!",
+      "notFoundAction": "На головну"
     },
     "testimonialsPage": {
-      "title": "�",
-      "subtitle": "�",
-      "quoteOpenAlt": "�",
-      "quoteCloseAlt": "�"
+      "title": "Відгуки",
+      "subtitle": "Ми запитали наших студентів, чи сподобався їм курс. Ось що вони відповіли...",
+      "quoteOpenAlt": "«",
+      "quoteCloseAlt": "»"
     }
   },
   "concepts": {
@@ -909,7 +988,7 @@
     "error": {
       "notFound": "Поняття не знайдено.",
       "back": "Назад до понять",
-      "loadFailed": "�"
+      "loadFailed": "Не вдалося завантажити концепцію. Спробуйте пізніше."
     },
     "relatedConcepts": {
       "heading": "Повʼязані поняття",
@@ -1049,166 +1128,166 @@
     }
   },
   "apiErrors": {
-    "unknown": "�",
-    "unauthenticated": "�",
+    "unknown": "Щось пішло не так. Спробуйте ще раз.",
+    "unauthenticated": "Щоб продовжити, потрібно увійти.",
     "invalid_credentials": "Невірні адреса електронної пошти або пароль.",
-    "unconfirmed": "�",
-    "forbidden": "�",
-    "access_denied": "�",
-    "premium_required": "�",
-    "invalid_signature": "�",
-    "invalid_captcha": "�",
-    "invalid_token": "�",
-    "token_expired": "�",
-    "session_expired": "�",
-    "invalid_otp": "�",
-    "invalid_unsubscribe_token": "�",
-    "not_found": "�",
-    "lesson_not_found": "�",
-    "level_not_found": "�",
-    "course_not_found": "�",
-    "user_not_found": "�",
-    "challenge_not_found": "�",
-    "concept_not_found": "�",
-    "badge_not_found": "�",
-    "user_challenge_not_found": "�",
-    "user_video_not_found": "�",
-    "user_lesson_not_found": "�",
-    "user_level_not_found": "�",
-    "validation_error": "�",
-    "duplicate_filename": "�",
-    "file_too_large": "�",
-    "too_many_files": "�",
-    "invalid_submission": "�",
-    "lesson_in_progress": "�",
-    "lesson_not_unlocked": "�",
-    "level_not_completed": "�",
-    "challenge_locked": "�",
-    "lesson_incomplete": "�",
-    "concept_locked": "�",
-    "language_already_chosen": "�",
-    "invalid_language": "�",
-    "missing_course": "�",
-    "invalid_password": "�",
-    "locale_update_failed": "�",
-    "name_update_failed": "�",
-    "email_update_failed": "�",
-    "password_update_failed": "�",
-    "handle_update_failed": "�",
-    "notification_update_failed": "�",
-    "streaks_update_failed": "�",
-    "flag_invalid": "�",
-    "no_image_provided": "�",
-    "invalid_image_type": "�",
-    "invalid_avatar": "�",
-    "avatar_too_large": "�",
-    "translation_error": "�",
-    "stripe_error": "�",
-    "exercism_unavailable": "�",
-    "no_exercism_link": "�",
-    "invalid_product": "�",
-    "existing_subscription": "�",
-    "invalid_return_url": "�",
-    "checkout_failed": "�",
-    "no_customer": "�",
-    "portal_failed": "�",
-    "missing_session_id": "�",
-    "invalid_session": "�",
-    "verification_failed": "�",
-    "no_subscription": "�",
-    "same_interval": "�",
-    "invalid_interval": "�",
-    "update_failed": "�",
-    "invalid_request": "�",
-    "cancel_failed": "�",
-    "not_cancelling": "�",
-    "reactivate_failed": "�",
-    "checkout_payment_incomplete": "�",
-    "unauthorized": "�",
+    "unconfirmed": "Підтвердьте свою адресу електронної пошти",
+    "forbidden": "У вас немає доступу до цього",
+    "access_denied": "Доступ заборонено",
+    "premium_required": "Це доступно лише користувачам із преміумпідпискою",
+    "invalid_signature": "Недійсний підпис",
+    "invalid_captcha": "Нам не вдалося перевірити, що ви людина. Спробуйте ще раз.",
+    "invalid_token": "Це посилання недійсне або його термін дії минув",
+    "token_expired": "Термін дії цього посилання минув",
+    "session_expired": "Ваш сеанс завершився. Увійдіть ще раз.",
+    "invalid_otp": "Недійсний код підтвердження",
+    "invalid_unsubscribe_token": "Це посилання для відписки недійсне або його термін дії минув",
+    "not_found": "Ми не змогли знайти те, що ви шукали",
+    "lesson_not_found": "Ми не змогли знайти цей урок",
+    "level_not_found": "Ми не змогли знайти цей рівень",
+    "course_not_found": "Ми не змогли знайти цей курс",
+    "user_not_found": "Ми не змогли знайти цього користувача",
+    "challenge_not_found": "Ми не змогли знайти це завдання",
+    "concept_not_found": "Ми не змогли знайти цю концепцію",
+    "badge_not_found": "Ми не змогли знайти цей значок",
+    "user_challenge_not_found": "Ми не змогли знайти ваш прогрес у цьому завданні",
+    "user_video_not_found": "Ми не змогли знайти ваш прогрес у цьому відео",
+    "user_lesson_not_found": "Ми не змогли знайти ваш прогрес у цьому уроці",
+    "user_level_not_found": "Ми не змогли знайти ваш прогрес на цьому рівні",
+    "validation_error": "Перевірте введені дані та спробуйте ще раз.",
+    "duplicate_filename": "Ви використали ту саму назву файлу більше одного разу: {filenames}",
+    "file_too_large": "{filename} завеликий. Розмір файлу може бути до {maxBytes} байтів.",
+    "too_many_files": "Кількість доданих файлів: {count}. Надіслати можна щонайбільше {max}.",
+    "invalid_submission": "Ми не змогли прийняти це рішення.",
+    "lesson_in_progress": "Завершіть поточний урок, перш ніж починати новий",
+    "lesson_not_unlocked": "Спочатку завершіть попередні уроки цього рівня",
+    "level_not_completed": "Спочатку завершіть поточний рівень",
+    "challenge_locked": "Спочатку завершіть урок, який відкриває це завдання",
+    "lesson_incomplete": "Спочатку завершіть свої поточні уроки",
+    "concept_locked": "Ця концепція ще заблокована",
+    "language_already_chosen": "Ви вже обрали свою мову",
+    "invalid_language": "Цю мову обрати не можна",
+    "missing_course": "Ми не змогли визначити, який курс ви мали на увазі",
+    "invalid_password": "Ваш поточний пароль неправильний",
+    "locale_update_failed": "Ми не змогли змінити вашу мову",
+    "name_update_failed": "Ми не змогли змінити ваше імʼя",
+    "email_update_failed": "Ми не змогли змінити вашу адресу електронної пошти",
+    "password_update_failed": "Ми не змогли змінити ваш пароль",
+    "handle_update_failed": "Ми не змогли змінити ваш нікнейм",
+    "notification_update_failed": "Ми не змогли змінити ваше налаштування сповіщень",
+    "streaks_update_failed": "Ми не змогли змінити ваше налаштування серій",
+    "flag_invalid": "Це налаштування змінити не можна",
+    "no_image_provided": "Спочатку оберіть зображення",
+    "invalid_image_type": "Оберіть зображення у форматі JPEG, PNG, GIF або WebP",
+    "invalid_avatar": "Ми не змогли використати це зображення як ваш аватар",
+    "avatar_too_large": "Це зображення завелике для аватара",
+    "translation_error": "Ми не змогли це перекласти",
+    "stripe_error": "Під час оплати щось пішло не так. Спробуйте ще раз.",
+    "exercism_unavailable": "Ми не змогли звʼязатися з Exercism. Спробуйте трохи пізніше.",
+    "no_exercism_link": "Цей акаунт не повʼязаний з Exercism",
+    "invalid_product": "Цей план придбати не можна",
+    "existing_subscription": "У вас уже є активна підписка",
+    "invalid_return_url": "Не вдалося повернутися на потрібну сторінку",
+    "checkout_failed": "Не вдалося розпочати оформлення покупки. Спробуйте ще раз.",
+    "no_customer": "Не вдалося знайти платіжні дані",
+    "portal_failed": "Не вдалося відкрити платіжний портал. Спробуйте ще раз.",
+    "missing_session_id": "Не вдалося знайти сеанс оформлення покупки",
+    "invalid_session": "Цей сеанс оформлення покупки недійсний",
+    "verification_failed": "Не вдалося перевірити платіж",
+    "no_subscription": "Активної підписки немає",
+    "same_interval": "Такий період оплати вже налаштовано",
+    "invalid_interval": "Такий період оплати вибрати не можна",
+    "update_failed": "Не вдалося оновити підписку. Спробуйте ще раз.",
+    "invalid_request": "Не вдалося обробити цей запит",
+    "cancel_failed": "Не вдалося скасувати підписку. Спробуйте ще раз.",
+    "not_cancelling": "Скасування підписки не заплановано",
+    "reactivate_failed": "Не вдалося поновити підписку. Спробуйте ще раз.",
+    "checkout_payment_incomplete": "Платіж не було завершено. Спробуйте ще раз.",
+    "unauthorized": "Доступу до цього немає",
     "fields": {
-      "email": "�",
-      "password": "�",
-      "password_confirmation": "�",
-      "current_password": "�",
-      "name": "�",
-      "handle": "�",
-      "locale": "�",
-      "enabled": "�"
+      "email": "Електронна адреса",
+      "password": "Пароль",
+      "password_confirmation": "Підтвердження пароля",
+      "current_password": "Поточний пароль",
+      "name": "Імʼя",
+      "handle": "Нікнейм",
+      "locale": "Мова",
+      "enabled": "Це налаштування"
     },
     "validation": {
-      "blank": "�",
-      "invalid": "�",
-      "taken": "�",
-      "confirmation": "�",
-      "too_short": "�",
-      "too_long": "�",
-      "wrong_length": "�",
-      "inclusion": "�",
-      "exclusion": "�",
-      "not_a_number": "�",
-      "accepted": "�",
-      "present": "�",
-      "boolean_required": "�"
+      "blank": "Поле «{field}» не може бути порожнім.",
+      "invalid": "Значення поля «{field}» недійсне.",
+      "taken": "Значення поля «{field}» вже використовується.",
+      "confirmation": "Значення поля «{field}» не збігається.",
+      "too_short": "Поле «{field}» має містити щонайменше {count, plural, one {# символ} few {# символи} many {# символів} other {# символа}}.",
+      "too_long": "Поле «{field}» має містити щонайбільше {count, plural, one {# символ} few {# символи} many {# символів} other {# символа}}.",
+      "wrong_length": "Поле «{field}» має містити рівно {count, plural, one {# символ} few {# символи} many {# символів} other {# символа}}.",
+      "inclusion": "Значення поля «{field}» не входить до списку доступних варіантів.",
+      "exclusion": "Значення поля «{field}» недоступне.",
+      "not_a_number": "Поле «{field}» має містити число.",
+      "accepted": "Поле «{field}» потрібно підтвердити.",
+      "present": "Поле «{field}» має бути порожнім.",
+      "boolean_required": "Поле «{field}» може бути лише ввімкнене або вимкнене."
     },
     "reasons": {
       "invalid_submission": {
-        "no_files": "�",
-        "filename_required": "�",
-        "code_required": "�"
+        "no_files": "Додайте принаймні один файл перед надсиланням.",
+        "filename_required": "Кожен файл повинен мати назву.",
+        "code_required": "Додайте код перед надсиланням."
       }
     },
     "subscriptions": {
-      "unauthorized": "�"
+      "unauthorized": "Цей сеанс оформлення покупки належить іншому обліковому запису"
     },
     "accountDeletion": {
-      "invalid_token": "�",
-      "token_expired": "�",
-      "stripe_error": "�"
+      "invalid_token": "Це посилання для видалення облікового запису недійсне або застаріло",
+      "token_expired": "Термін дії цього посилання для видалення облікового запису минув",
+      "stripe_error": "Не вдалося скасувати підписку, тому обліковий запис не видалено. Спробуйте ще раз або звʼяжіться зі службою підтримки."
     }
   },
   "toasts": {
     "subscription": {
-      "loginRequired": "�",
-      "checkoutFailed": "�",
-      "alreadyPremium": "�",
-      "checkoutSessionFailed": "�",
-      "portalFailed": "�",
-      "canceled": "�",
-      "cancelFailed": "�",
-      "reactivated": "�",
-      "reactivateFailed": "�",
-      "paymentPortalFailed": "�"
+      "loginRequired": "Увійдіть, щоб покращити обліковий запис",
+      "checkoutFailed": "Не вдалося розпочати оформлення покупки. Спробуйте ще раз.",
+      "alreadyPremium": "Тариф «Преміум» уже активний",
+      "checkoutSessionFailed": "Не вдалося створити сеанс оформлення покупки",
+      "portalFailed": "Не вдалося відкрити портал клієнта",
+      "canceled": "Підписку скасовано. Доступ збережеться до {date}",
+      "cancelFailed": "Не вдалося скасувати підписку",
+      "reactivated": "Підписку поновлено!",
+      "reactivateFailed": "Не вдалося поновити підписку",
+      "paymentPortalFailed": "Не вдалося відкрити платіжний портал"
     },
     "auth": {
-      "sessionExpired": "�"
+      "sessionExpired": "Сеанс завершився. Увійдіть ще раз."
     },
     "logout": {
-      "loading": "�",
-      "success": "�",
-      "failed": "�"
+      "loading": "Виходимо...",
+      "success": "Вихід виконано успішно",
+      "failed": "Не вдалося вийти: немає звʼязку із сервером"
     },
     "avatar": {
-      "updated": "�",
-      "uploadFailed": "�",
-      "networkError": "�",
-      "invalidImageType": "�",
-      "imageTooLarge": "�"
+      "updated": "Аватар оновлено",
+      "uploadFailed": "Не вдалося завантажити аватар",
+      "networkError": "Помилка мережі. Спробуйте ще раз.",
+      "invalidImageType": "Виберіть зображення у форматі JPEG, PNG, GIF або WebP",
+      "imageTooLarge": "Розмір зображення не повинен перевищувати 5 МБ"
     },
     "settings": {
-      "fetchFailed": "�",
-      "settingUpdated": "�",
-      "updateFailed": "�",
-      "notificationUpdateFailed": "�",
-      "streaksUpdateFailed": "�"
+      "fetchFailed": "Не вдалося завантажити налаштування",
+      "settingUpdated": "{field, select, name {Імʼя} email {Електронну адресу} password {Пароль} locale {Мовні налаштування} handle {Нікнейм} other {{field}}} успішно оновлено",
+      "updateFailed": "Не вдалося оновити",
+      "notificationUpdateFailed": "Не вдалося оновити налаштування сповіщень",
+      "streaksUpdateFailed": "Не вдалося оновити налаштування серії днів"
     },
     "exercise": {
-      "submissionFailed": "�",
-      "chatSaveFailed": "�",
-      "chatSaveCaptchaFailed": "�",
-      "lessonSaveError": "�"
+      "submissionFailed": "Не вдалося зберегти рішення. Спробуйте ще раз.",
+      "chatSaveFailed": "Не вдалося зберегти це повідомлення. Після повернення його тут не буде.",
+      "chatSaveCaptchaFailed": "Під час збереження не вдалося пройти перевірку. Після повернення цього повідомлення тут не буде.",
+      "lessonSaveError": "На жаль, не вдалося завершити урок. Спробуйте ще раз. Якщо проблема повторюється, повідомте про неї на <link>https://forum.jiki.io</link>"
     },
     "lesson": {
-      "loadFailed": "�"
+      "loadFailed": "На жаль, не вдалося відкрити цей урок. Спробуйте ще раз."
     }
   },
   "modals": {
@@ -1449,19 +1528,19 @@
     }
   },
   "challenge": {
-    "backToChallenges": "�",
+    "backToChallenges": "Назад до челенджів",
     "error": {
-      "message": "�"
+      "message": "Помилка: {error}"
     },
-    "loadError": "�",
-    "documentTitle": "�",
+    "loadError": "Не вдалося завантажити челендж",
+    "documentTitle": "{title} - Челендж - Jiki",
     "locked": {
-      "title": "�",
-      "description": "�"
+      "title": "Челендж заблоковано",
+      "description": "Цей челендж наразі заблоковано. Завершіть попередні уроки, щоб відкрити його."
     },
     "premiumRequired": {
-      "title": "�",
-      "description": "�"
+      "title": "Потрібна преміум-підписка",
+      "description": "Челенджі доступні лише з преміум-підпискою. Оновіть свій план, щоб почати створювати."
     }
   },
   "dashboard": {
@@ -1809,133 +1888,133 @@
   },
   "projects": {
     "projectCard": {
-      "comingSoon": "�",
-      "comingSoonLabel": "�"
+      "comingSoon": "Незабаром",
+      "comingSoonLabel": "Незабаром"
     },
     "episodeCard": {
-      "premium": "�"
+      "premium": "Преміум"
     },
     "episodeSummary": {
-      "heading": "�",
-      "whereWeStart": "�",
-      "whereWeEnd": "�",
-      "whatWeCover": "�"
+      "heading": "Коротко про епізод",
+      "whereWeStart": "З чого починаємо",
+      "whereWeEnd": "Чим завершуємо",
+      "whatWeCover": "Що розглядаємо"
     },
     "projectPage": {
-      "backToAllProjects": "�"
+      "backToAllProjects": "← Назад до <strong>всіх проєктів</strong>"
     },
     "episodePage": {
-      "backToProject": "�",
-      "relevantGuidesDescription": "�"
+      "backToProject": "← Назад до <strong>{title}</strong>",
+      "relevantGuidesDescription": "Посібники, які можуть стати в пригоді на цьому кроці роботи."
     },
     "relevantGuides": {
-      "heading": "�"
+      "heading": "Корисні посібники"
     }
   },
   "guides": {
     "guidesContent": {
-      "pageHeading": "�",
-      "searchPlaceholder": "�",
-      "filterAll": "�",
-      "noResultsTitle": "�",
-      "noResultsMessage": "�"
+      "pageHeading": "Посібники та практичні поради",
+      "searchPlaceholder": "Пошук посібників...",
+      "filterAll": "Усі",
+      "noResultsTitle": "0 результатів за запитом «{query}»",
+      "noResultsMessage": "Спробуйте інший запит або перегляньте всі посібники."
     },
     "guideCard": {
-      "premium": "�"
+      "premium": "Преміум"
     },
     "tags": {
-      "editors": "�",
-      "installation": "�",
-      "agentic-coding": "�",
-      "front-end-basics": "�"
+      "editors": "Редактори",
+      "installation": "Встановлення",
+      "agentic-coding": "Агентне програмування",
+      "front-end-basics": "Основи front-end"
     },
     "guideBreadcrumb": {
-      "guides": "�"
+      "guides": "Посібники"
     },
     "premiumGate": {
-      "lockedTitle": "�",
-      "lockedSubtitle": "�",
-      "unlockButton": "�"
+      "lockedTitle": "Цей посібник для преміум-учасників",
+      "lockedSubtitle": "Відкрийте цей посібник і все інше, що дає преміум-підписка Jiki, щоб продовжити читання.",
+      "unlockButton": "Відкрити з преміум-підпискою"
     },
     "relatedGuides": {
-      "heading": "�"
+      "heading": "Повʼязані посібники"
     },
     "featuredInProjects": {
-      "heading": "�"
+      "heading": "Зустрічається в проєктах"
     },
     "metadata": {
-      "notFoundTitle": "�"
+      "notFoundTitle": "Посібник не знайдено"
     }
   },
   "unsubscribe": {
-    "title": "�",
-    "subtitle": "�",
-    "updateError": "�",
-    "toggleAria": "�",
+    "title": "Налаштування електронних листів",
+    "subtitle": "Налаштуйте, як і коли отримувати листи від Jiki.",
+    "updateError": "Не вдалося оновити налаштування. Спробуйте ще раз.",
+    "toggleAria": "Перемкнути {name}",
     "manage": {
-      "title": "�",
-      "description": "�",
-      "updated": "�",
-      "save": "�"
+      "title": "Керування сповіщеннями",
+      "description": "Вмикайте та вимикайте окремі типи сповіщень, щоб отримувати лише потрібні листи.",
+      "updated": "Налаштування листів оновлено.",
+      "save": "Змінити налаштування"
     },
     "all": {
-      "title": "�",
-      "description": "�",
-      "success": "�",
-      "button": "�"
+      "title": "Відписатися від усіх листів",
+      "description": "Більше не хочете отримувати листи від Jiki? Це скасує підписку на всі маркетингові листи, сповіщення та нагадування.",
+      "success": "Підписку на всі листи Jiki скасовано.",
+      "button": "Відписатися від усіх листів"
     },
     "email": {
-      "alreadyTitle": "�",
-      "alreadyDescription": "�",
-      "title": "�",
-      "description": "�",
-      "success": "�",
-      "button": "�",
-      "fallbackType": "�"
+      "alreadyTitle": "Підписку вже скасовано",
+      "alreadyDescription": "Наразі підписки на <highlight>{emailType}</highlight> немає.",
+      "title": "Відписатися від цього типу листів",
+      "description": "Більше не хочете отримувати такі листи? Натисніть нижче, щоб скасувати підписку на <highlight>{emailType}</highlight>.",
+      "success": "Підписку на {emailType} скасовано.",
+      "button": "Скасувати підписку на {emailType}",
+      "fallbackType": "такі листи"
     },
     "types": {
       "newsletters": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "Оновлення продукту",
+        "description": "Дізнавайтеся про нові можливості та вдосконалення.",
+        "shortLabel": "оновлення продукту"
       },
       "event_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "Сповіщення про події",
+        "description": "Отримуйте сповіщення про майбутні трансляції та події.",
+        "shortLabel": "сповіщення про події"
       },
       "milestone_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "Сповіщення про досягнення",
+        "description": "Отримуйте сповіщення, коли відкриваєте нові навички чи досягнення.",
+        "shortLabel": "сповіщення про досягнення"
       },
       "activity_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "Листи про активність",
+        "description": "Сповіщення про активність, як-от здобуття бейджів чи завершення челенджів.",
+        "shortLabel": "листи про активність"
       },
       "onboarding_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "Листи для початку роботи",
+        "description": "Поради та підказки, як отримати максимум від Jiki.",
+        "shortLabel": "листи для початку роботи"
       }
     }
   },
   "achievements": {
-    "title": "�",
-    "description": "�",
-    "tabBadges": "�",
-    "tabCertificates": "�",
-    "loading": "�",
-    "error": "�",
-    "certificatesEmptyTitle": "�",
-    "certificatesEmptyBody": "�",
+    "title": "Досягнення",
+    "description": "Кожен значок розповідає історію подорожі у програмуванні.",
+    "tabBadges": "Значки",
+    "tabCertificates": "Сертифікати",
+    "loading": "Завантаження досягнень...",
+    "error": "Помилка: {error}",
+    "certificatesEmptyTitle": "Сертифікатів поки немає",
+    "certificatesEmptyBody": "Завершуйте курси, щоб отримувати сертифікати, які підтверджують здобуті навички. Після завершення курсу сертифікати зʼявляться тут.",
     "badge": {
-      "locked": "�",
-      "earnedToday": "�",
-      "earnedRelative": "�"
+      "locked": "Заблоковано",
+      "earnedToday": "Здобуто сьогодні",
+      "earnedRelative": "Здобуто {distance}"
     },
-    "loadError": "�"
+    "loadError": "Не вдалося завантажити значки"
   },
   "challenges": {
     "title": "Виклики",
@@ -1966,29 +2045,29 @@
       "completedTitle": "Завершених викликів поки немає",
       "completedDescription": "Завершіть перший виклик, і він зʼявиться тут. Продовжуйте працювати над розпочатими викликами, щоб досягти цього етапу."
     },
-    "loadError": "�"
+    "loadError": "Не вдалося завантажити виклики"
   },
   "subscription": {
     "tiers": {
       "standard": {
-        "name": "�",
-        "description": "�",
+        "name": "Безкоштовний",
+        "description": "Ідеально для початку",
         "features": {
-          "freeCourses": "�",
-          "basicExercises": "�",
-          "communitySupport": "�",
-          "aiHelpPerMonth": "�"
+          "freeCourses": "Доступ до безкоштовних курсів",
+          "basicExercises": "Базові вправи з програмування",
+          "communitySupport": "Підтримка спільноти",
+          "aiHelpPerMonth": "1 підказка ШІ на місяць"
         }
       },
       "premium": {
-        "name": "�",
-        "description": "�",
+        "name": "Преміум",
+        "description": "Відкрийте розширені можливості",
         "features": {
-          "allFreeFeatures": "�",
-          "unlimitedAi": "�",
-          "allExercises": "�",
-          "certificates": "�",
-          "adFree": "�"
+          "allFreeFeatures": "Усі можливості безкоштовного плану",
+          "unlimitedAi": "Необмежені підказки ШІ",
+          "allExercises": "Доступ до всіх вправ",
+          "certificates": "Сертифікати",
+          "adFree": "Без реклами"
         }
       }
     }
@@ -2045,10 +2124,10 @@
       "help": "Не знайшли те, що шукали? Загляньте в наші <blogs>блоги</blogs>, перегляньте <faqs>поширені запитання</faqs>, <support>зверніться до підтримки</support> або запитайте в нашій <community>спільноті</community>"
     },
     "tags": {
-      "legal": "�",
-      "premium": "�",
-      "exercises": "�",
-      "videos": "�"
+      "legal": "Правова інформація",
+      "premium": "Преміум",
+      "exercises": "Вправи",
+      "videos": "Відео"
     },
     "cta": {
       "minimalTitle": "Спробуйте Jiki безкоштовно",

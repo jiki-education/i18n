@@ -1,0 +1,55 @@
+{
+  "checks": {
+    "tooManyLines": "Você usou mais linhas do que o necessário. Veja se consegue reduzi-las."
+  },
+  "tasks": {
+    "calculateHammingDistance": {
+      "name": "Calcule a distância de Hamming",
+      "description": "Escreva uma função que calcula a distância de Hamming entre duas cadeias de DNA de comprimento igual. A distância de Hamming é o número de posições em que as letras correspondentes diferem."
+    },
+    "solveInElevenLines": {
+      "name": "Resolva em onze linhas de código",
+      "description": "Você consegue resolver isso com no máximo onze linhas de código?"
+    }
+  },
+  "scenarios": {
+    "hammingEmptyStrands": {
+      "name": "Cadeias vazias",
+      "description": "Cadeias vazias têm uma distância de Hamming de 0."
+    },
+    "hammingSingleLetterIdentical": {
+      "name": "Cadeias idênticas de letra única",
+      "description": "Cadeias idênticas de letra única têm uma distância de Hamming de 0."
+    },
+    "hammingLongIdenticalStrands": {
+      "name": "Cadeias longas idênticas",
+      "description": "Cadeias longas idênticas têm uma distância de Hamming de 0."
+    },
+    "hammingSingleLetterDifferent": {
+      "name": "Cadeias diferentes de letra única",
+      "description": "Cadeias diferentes de letra única têm uma distância de Hamming de 1."
+    },
+    "hammingLongDifferentStrands": {
+      "name": "Cadeias longas diferentes",
+      "description": "Cadeias longas com diferenças têm uma distância de Hamming calculada."
+    },
+    "hammingBonusElevenLines": {
+      "name": "Onze linhas de código",
+      "description": "Resolva o exercício com no máximo onze linhas de código."
+    }
+  },
+  "hints": {
+    "hammingDistanceMeaning": {
+      "question": "O que significa “distância de Hamming” em termos simples?",
+      "answer": "É o número de posições em que as duas strings diferem. Assim, “GAGA” versus “GATA” diferem apenas na posição 3, dando uma distância de 1."
+    },
+    "compareCharactersAtPosition": {
+      "question": "Como comparo letras na mesma posição em ambas as strings?",
+      "answer": "Você precisa percorrer as duas strings em sincronia, para poder retirar a letra no mesmo ponto de cada uma à medida que avança."
+    },
+    "trackDifferenceCount": {
+      "question": "Como controlo “quantas diferenças” existem?",
+      "answer": "Você precisa de algo que mantenha um total acumulado, ajustado sempre que detecta uma diferença, para estar pronto a retornar assim que tiver verificado todas as posições."
+    }
+  }
+}

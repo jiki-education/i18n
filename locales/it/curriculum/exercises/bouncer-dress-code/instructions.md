@@ -6,21 +6,21 @@ en_md5: 3e9f98d0b80d6bf0865cd0439005807b
 
 Sei tornato al tuo lavoro occasionale come buttafuori, e stasera lavori in un locale con un dress code rigoroso.
 
-Il tuo compito è controllare che cosa indossa la persona, insieme alla sua età, e decidere che cosa fare. Questa volta le regole da seguire sono un po' più "interessanti".
+Il tuo compito è controllare come sono vestiti i clienti e verificare la loro età, così da gestire correttamente gli accessi. Questa volta ci sono alcune regole 'interessanti' da seguire.
 
 ### Le regole
 
-- **Chiunque** sia in abiti **formali** o **eleganti** viene fatto entrare (che sia o meno sulla lista degli invitati) e riceve dei canapè.
-- Gli **adulti** (18 anni o più) in abiti **formali** ricevono **anche** una coppa di champagne.
+- **Chiunque** sia in abiti **formali** o **eleganti** viene fatto entrare (che sia o meno sulla lista degli invitati) e riceve degli stuzzichini.
+- Gli **adulti** (18 anni o più) in abiti **formali** ricevono **anche** un calice di champagne.
 - I **minorenni** (sotto i 18 anni) con qualsiasi altro abbigliamento possono entrare **solo se** sono sulla lista degli invitati.
-- Tutti gli altri vengono mandati via.
+- A tutti gli altri viene negato l'accesso.
 
 Le categorie del dress code:
 
 - **Formale** significa `"ballgown"` o `"tuxedo"`
 - **Elegante** significa `"suit"` o `"dress"`
 
-### Le tue abilità
+### Le tue competenze
 
 Hai tre funzioni per ottenere informazioni:
 
@@ -32,8 +32,8 @@ Puoi usare ciascuna delle funzioni che "ottengono informazioni" solo una volta n
 
 Poi hai alcune azioni che puoi compiere:
 
-- `offerChampagne()` (offri champagne) offre alla persona una coppa di champagne
-- `offerCanapes()` (offri canapè) offre alla persona dei canapè (tartare di salmone)
+- `offerChampagne()` (offri champagne) offre alla persona un calice di champagne
+- `offerCanapes()` (offri stuzzichini) offre alla persona degli stuzzichini
 - `letIn()` (fai entrare) fa entrare la persona nel locale
 - `turnAway()` (manda via) manda via la persona
 

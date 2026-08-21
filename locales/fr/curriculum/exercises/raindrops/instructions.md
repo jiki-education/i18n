@@ -15,11 +15,11 @@ Si un nombre donné :
 - est divisible par 3, ajoute "Pling" au résultat.
 - est divisible par 5, ajoute "Plang" au résultat.
 - est divisible par 7, ajoute "Plong" au résultat.
-- n'est divisible ni par 3, ni par 5, ni par 7, le résultat doit être le nombre sous forme de string.
+- n'est divisible ni par 3, ni par 5, ni par 7, le résultat doit être le nombre sous forme de _string_.
 
 Tu dois créer une fonction appelée `raindrops(num)` (littéralement « gouttes de pluie », `num` étant le nombre) qui prend le nombre en entrée et renvoie ses sons de gouttes de pluie.
 
-Construis la string du résultat avec la concaténation (`+`) ou avec une _template string_ (littéral de gabarit).
+Construis la _string_ du résultat avec la concaténation (`+`) ou avec une _template string_ (littéral de gabarit).
 
 ### Exemples
 

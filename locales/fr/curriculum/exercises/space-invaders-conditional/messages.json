@@ -8,7 +8,7 @@
   "tasks": {
     "conditionalShoot": {
       "name": "Utilise une instruction if pour ne tirer que lorsqu'un alien est au-dessus",
-      "description": "Traverse l'écran en vérifiant chaque position. S'il y a un alien au-dessus de toi, abats-le. Sinon, continue d'avancer."
+      "description": "Parcours l'écran en vérifiant chaque position. S'il y a un alien au-dessus de toi, abats-le. Sinon, continue d'avancer."
     }
   },
   "scenarios": {
@@ -26,7 +26,7 @@
     },
     "conditional4": {
       "name": "Concentrés en bas",
-      "description": "La plupart des aliens dans la rangée du bas"
+      "description": "La plupart des aliens sont dans la rangée du bas"
     },
     "conditional5": {
       "name": "Formation dense",
@@ -61,7 +61,7 @@
       "category": "Action"
     },
     "isAlienAbove": {
-      "description": "Renvoie `true` s'il y a un alien juste au-dessus du canon laser, ou `false` sinon. Utilise-la pour vérifier avant de tirer !",
+      "description": "Renvoie `true` s'il y a un alien directement au-dessus du canon laser, `false` dans le cas contraire. Sers-t'en pour vérifier avant de tirer !",
       "category": "Détection"
     }
   }

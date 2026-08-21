@@ -1,0 +1,142 @@
+{
+  "tasks": {
+    "validateBasicIsbn": {
+      "name": "Valide um ISBN básico",
+      "description": "Escreva uma função chamada isValidIsbn que recebe uma string com um ISBN-10 e retorna true se for válido e false se não for. Os ISBN-10 contêm hifens que devem ser ignorados. Multiplique cada dígito por um peso decrescente de 10 até 1, some-os e verifique se o total é divisível por 11."
+    },
+    "handleXCheckDigit": {
+      "name": "Trate o X como dígito de verificação",
+      "description": "Às vezes, um ISBN termina com um X, que representa 10. Atualize a sua função para lidar com X na última posição."
+    },
+    "handleEdgeCases": {
+      "name": "Trate os casos limite",
+      "description": "Torne a sua função robusta: lide com ISBNs sem hifens, rejeite caracteres inválidos, rejeite X em posições que não a última e garanta que sejam processados exatamente 10 dígitos."
+    },
+    "useContinue": {
+      "name": "Bônus: pule os hifens com continue",
+      "description": "Em vez de só fazer trabalho quando um caractere é um dígito, use continue para pular direto por cima dos hifens e passar ao caractere seguinte."
+    }
+  },
+  "scenarios": {
+    "isbnValid": {
+      "name": "ISBN válido",
+      "description": "Um ISBN-10 válido deve retornar true."
+    },
+    "isbnValidCheckDigitX": {
+      "name": "ISBN válido com X como dígito de verificação",
+      "description": "Um ISBN-10 válido com dígito de verificação 'X' deve retornar true."
+    },
+    "isbnValidNoDashes": {
+      "name": "ISBN válido sem hifens",
+      "description": "Um ISBN-10 válido sem hifens de separação deve retornar true."
+    },
+    "isbnValidNoDashesXCheck": {
+      "name": "ISBN válido sem hifens e com X como dígito de verificação",
+      "description": "Um ISBN-10 válido sem hifens e com dígito de verificação 'X' deve retornar true."
+    },
+    "isbnInvalidCheckDigit": {
+      "name": "ISBN inválido (dígito de verificação)",
+      "description": "Um ISBN-10 com um dígito de verificação incorreto deve retornar false."
+    },
+    "isbnInvalidCharacter": {
+      "name": "Dígito de verificação com caractere diferente de X",
+      "description": "Um ISBN-10 que contém um caractere inválido deve retornar false."
+    },
+    "isbnInvalidCharacterNotZero": {
+      "name": "Dígito de verificação inválido não tratado como zero",
+      "description": "Um dígito de verificação inválido não deve ser tratado como zero."
+    },
+    "isbnInvalidNonNumeric": {
+      "name": "Caractere inválido no ISBN",
+      "description": "Os caracteres inválidos no ISBN não devem ser ignorados."
+    },
+    "isbnInvalidXPosition": {
+      "name": "X só é válido como dígito de verificação",
+      "description": "Um 'X' só deve ser válido como dígito de verificação."
+    },
+    "isbnInvalidMissingCheckDigit": {
+      "name": "ISBN sem dígito de verificação",
+      "description": "Um ISBN-10 sem dígito de verificação deve retornar false."
+    },
+    "isbnInvalidTooLong": {
+      "name": "ISBN longo demais",
+      "description": "Um ISBN-10 longo demais deve retornar false."
+    },
+    "isbnInvalidTooShort": {
+      "name": "ISBN curto demais",
+      "description": "Um ISBN-10 curto demais deve retornar false."
+    },
+    "isbnInvalidEmpty": {
+      "name": "ISBN vazio",
+      "description": "Uma string de ISBN vazia deve retornar false."
+    },
+    "isbnInvalidLengthNine": {
+      "name": "ISBN tem 9 caracteres",
+      "description": "Um valor de entrada com 9 caracteres deve retornar false."
+    },
+    "isbnInvalidNonNumericBeforeCheck": {
+      "name": "Caractere inválido antes de verificar o comprimento",
+      "description": "Os caracteres inválidos não devem ser ignorados antes de verificar o comprimento."
+    },
+    "isbnInvalidExtraLength": {
+      "name": "Entrada longa demais mas contém um ISBN válido",
+      "description": "Um valor de entrada com mais de 10 caracteres deve retornar false."
+    },
+    "isbnBonusUseContinue": {
+      "name": "Hifens pulados com continue",
+      "description": "A sua solução funciona e usa continue para pular os hifens."
+    }
+  },
+  "hints": {
+    "howChecked": {
+      "question": "Como um ISBN-10 é realmente verificado?",
+      "answer": "Cada um dos 10 dígitos é multiplicado por um peso decrescente. O primeiro dígito por 10, o segundo por 9, e assim sucessivamente até o último por 1. Você soma todos esses produtos. Se o total for divisível por 11, o ISBN é válido."
+    },
+    "dashes": {
+      "question": "O que eu faço com os hifens?",
+      "answer": "Os hifens servem apenas para legibilidade humana. Pule-os por completo. Não contam como um dígito e não te fazem avançar no peso."
+    },
+    "trackWeight": {
+      "question": "Como eu acompanho o peso?",
+      "answer": "Comece com uma variável multiplicador em 10. Cada vez que você processa um dígito, multiplique-o pelo multiplicador atual, adicione o produto à soma acumulada e depois diminua o multiplicador em 1."
+    },
+    "stringToNumber": {
+      "question": "Como eu transformo a string em um número?",
+      "answer": "Você tem duas opções. Primeiro, a forma pretendida neste exercício é encontrar uma maneira usando o método `indexOf`. Pense nisso. Se não conseguir descobrir, veja a próxima dica para obter uma resposta."
+    },
+    "stringToNumberAgain": {
+      "question": "Sério, como eu transformo a string em um número?",
+      "answer": "Duas opções. Primeiro, você pode usar a função `Number()` (com \"N\" maiúsculo), então `Number(\"5\")` retorna `5`. Leia a <a href=\"/concepts/type-conversion\" target=\"_blank\" rel=\"noopener noreferrer\">página do conceito Conversão de Tipo</a> se quiser uma revisão. Também existe um truque interessante com `indexOf` que vale a pena explorar depois."
+    },
+    "handleX": {
+      "question": "Como é que eu lido com 'X'? Isso não é um dígito, né?",
+      "answer": "'X' é especial. Representa o valor 10, mas apenas como último caractere. Trate-o como um dígito com valor 10 quando você o vir no final, e rejeite o ISBN se 'X' aparecer em qualquer outro lugar."
+    },
+    "exactlyTenDigits": {
+      "question": "Como eu garanto que existem exatamente 10 dígitos?",
+      "answer": "O seu multiplicador começou em 10 e diminuiu 1 para cada dígito. Se você processou exatamente 10 dígitos, ele terá terminado em 0. Qualquer outro valor significa o número errado de dígitos, então rejeite-o."
+    },
+    "finalCheck": {
+      "question": "Qual é a verificação final de validade?",
+      "answer": "Depois de processar tudo, o ISBN é válido se a soma total for divisível por 11 (ou seja, `sum % 11 == 0`)."
+    }
+  },
+  "checks": {
+    "mustUseContinue": "Tão perto! Para este bônus, use `continue` para pular os hifens.",
+    "tooManyLines": "Tão perto! A sua solução funciona, mas é um pouco longa."
+  },
+  "functions": {
+    "number": {
+      "description": "Converte uma string que contém dígitos em um número",
+      "category": "Conversão de Tipo"
+    },
+    "includes": {
+      "description": "Verifica se uma string contém uma string menor (fornecido pela stdlib do nível)",
+      "category": "Operações com strings"
+    },
+    "indexOf": {
+      "description": "Encontra a posição de uma string menor dentro de uma string, ou -1 se não for encontrada (fornecido pela stdlib do nível)",
+      "category": "Operações com strings"
+    }
+  }
+}

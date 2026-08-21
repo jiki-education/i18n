@@ -5,7 +5,7 @@
   "tasks": {
     "searchForTile": {
       "name": "Cherche un jeton",
-      "description": "Écris une fonction qui vérifie si le jeton d'une lettre précise se trouve sur le chevalet. Renvoie true si tu la trouves, false sinon."
+      "description": "Écris une fonction qui vérifie si le jeton d'une lettre précise se trouve sur le chevalet. Renvoie `true` si tu la trouves, et `false` dans le cas contraire."
     },
     "solveInEightLines": {
       "name": "Résous en 8 lignes de code",
@@ -53,18 +53,18 @@
   "hints": {
     "byHand": {
       "question": "Comment est-ce que je ferais ça à la main ?",
-      "answer": "Tu parcourrais la botte de foin lettre par lettre, en comparant chaque lettre à l'aiguille. Dès que tu trouverais une correspondance, tu t'arrêterais. Si tu arrivais au bout sans avoir trouvé de correspondance, c'est que l'aiguille n'y est pas."
+      "answer": "Tu parcours « la botte de foin » lettre par lettre en comparant chaque lettre à « l'aiguille ». Dès qu'une correspondance est trouvée, tu t'arrêtes. Si tu parviens au bout sans avoir trouvé de correspondance, c'est que « l'aiguille » n'y est pas."
     },
     "loopAndCompare": {
       "question": "Comment boucler et comparer ?",
-      "answer": "Une boucle `for-of` te donne chaque lettre de la string l'une après l'autre. À l'intérieur, une instruction `if` compare la lettre courante à l'aiguille."
+      "answer": "Une boucle `for-of` te donne chaque lettre de la string l'une après l'autre. À l'intérieur, une instruction `if` compare la lettre courante à « l'aiguille »."
     },
     "returnTrue": {
-      "question": "Quand renvoyer true ?",
+      "question": "Quand renvoyer `true` ?",
       "answer": "Dès que tu trouves une correspondance. Inutile de vérifier les lettres restantes."
     },
     "returnFalse": {
-      "question": "Quand renvoyer false ?",
+      "question": "Quand renvoyer `false` ?",
       "answer": "SEULEMENT après la fin de la boucle, si aucune correspondance n'a été trouvée. Une erreur courante consiste à placer `return false` à l'intérieur de la boucle. La fonction abandonne alors dès la première lettre qui ne correspond pas, avant même d'avoir vérifié le reste."
     }
   }
