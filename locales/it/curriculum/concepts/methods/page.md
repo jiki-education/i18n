@@ -4,9 +4,9 @@ description: "Funzioni che appartengono a un valore e vengono chiamate con la no
 en_md5: 37c097a81459cd2ff4ae684559bd4311
 ---
 
-Finora, quando abbiamo pensato alle stringhe o ai numeri, li abbiamo considerati come cose piuttosto statiche.
+Finora, quando abbiamo parlato di stringhe o numeri, li abbiamo trattati come elementi piuttosto statici.
 
-E anche se lo sono, esse hanno molte funzionalità incorporate che Jiki può usare.
+E anche se lo sono, in realtà hanno molte funzionalità incorporate che Jiki può usare.
 
 E man mano che andiamo avanti, impareremo queste funzionalità, queste specie di capacità che hanno e che ti semplificano la vita.
 
