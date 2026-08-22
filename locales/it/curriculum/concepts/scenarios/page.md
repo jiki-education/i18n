@@ -16,7 +16,7 @@ Li vedrai come piccoli pulsanti proprio sopra l'output di ogni esercizio. Ogni p
   height="318"
 />
 
-Prendi come esempio un gioco di golf. Potresti dover variare la distanza percorsa da una palla in base al valore restituito (_return value_ in inglese) di una funzione chiamata `getShotLength` (lunghezza del colpo), che ti dice quanto lontano ha colpito la palla il golfista. Immagina che il giocatore abbia dovuto fare uno swipe sul telefono per indicare la distanza del colpo.
+Prendi come esempio un gioco di golf. Potresti dover variare la distanza percorsa da una palla in base al valore restituito (_return value_ in inglese) di una funzione chiamata `getShotLength` (lunghezza del colpo), che ti dice quanto lontano ha colpito la palla il golfista. Immagina che il giocatore abbia dovuto fare uno swipe sul telefono per indicare la distanza del colpo: quel gesto viene trasformato in un valore, e `getShotLength` te lo restituisce così che tu possa usarlo nel codice.
 
 <img
   class="concept-image"
