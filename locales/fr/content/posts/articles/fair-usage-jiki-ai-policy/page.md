@@ -1,10 +1,10 @@
 ---
-title: "Politique d'utilisation équitable de Demande à Jiki"
+title: "Guide d'usage raisonnable de « Demande à Jiki »"
 excerpt: "Comment fonctionnent les limites de messages quand tu discutes avec Jiki, pourquoi elles existent et quand elles se réinitialisent."
 tags: ["premium"]
 seo:
   description: "Comment fonctionnent les limites de messages de l'IA de Jiki : plafonds quotidiens et mensuels, pourquoi ils existent, quand ils se réinitialisent et que faire si tu les atteins."
-  keywords: ["jiki", "ia", "utilisation équitable", "limites de messages", "demande à jiki", "premium"]
+  keywords: ["jiki", "ia", "usage raisonnable", "limites de messages", "demande à jiki", "premium"]
 en_md5: 14a233162b15aecbcd5739e678e83b9c
 ---
 
@@ -40,7 +40,7 @@ Indépendamment des plafonds quotidien et mensuel, on limite la vitesse à laque
 
 Ces limites existent pour plusieurs raisons :
 
-- **Assurer la pérennité de Jiki.** Chaque réponse de l'IA a un coût réel. Des limites équitables nous permettent d'offrir une aide généreuse par l'IA sans que cela devienne intenable.
+- **Assurer la pérennité de Jiki.** Chaque réponse de l'IA a un coût réel. Des limites raisonnables nous permettent de t'offrir une aide IA généreuse, sans que cela devienne ingérable.
 - **Garder Jiki rapide pour tout le monde.** Limiter les usages extrêmes garde le service réactif pour tous les apprenants.
 - **Encourager de bonnes habitudes d'apprentissage.** L'objectif est que Jiki t'aide à te débloquer et à avancer, pas qu'il remplace l'effort productif qui construit une vraie compréhension.
 
@@ -48,4 +48,4 @@ Ces limites existent pour plusieurs raisons :
 
 Si tu atteins régulièrement ces limites, c'est sans doute que tu apprends de manière intensive, et c'est très bien ! Jiki Premium inclut une utilisation de l'IA plus généreuse, ainsi qu'un accès complet au reste de la plateforme.
 
-Si tu as des questions sur l'utilisation équitable, n'hésite pas à [nous contacter](/articles/support), on se fera un plaisir de t'aider.
+Si tu as des questions sur ces limites d'utilisation, n'hésite pas à [nous contacter](/articles/support), on se fera un plaisir de t'aider.
