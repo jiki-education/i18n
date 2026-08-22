@@ -1,14 +1,14 @@
 ---
-title: "Politique d'utilisation équitable d'Ask Jiki"
+title: "Politique d'utilisation équitable de Demande à Jiki"
 excerpt: "Comment fonctionnent les limites de messages quand tu discutes avec Jiki, pourquoi elles existent et quand elles se réinitialisent."
 tags: ["premium"]
 seo:
   description: "Comment fonctionnent les limites de messages de l'IA de Jiki : plafonds quotidiens et mensuels, pourquoi ils existent, quand ils se réinitialisent et que faire si tu les atteins."
-  keywords: ["jiki", "ia", "utilisation équitable", "limites de messages", "ask jiki", "premium"]
+  keywords: ["jiki", "ia", "utilisation équitable", "limites de messages", "demande à jiki", "premium"]
 en_md5: 14a233162b15aecbcd5739e678e83b9c
 ---
 
-Quand tu demandes de l'aide à Jiki, c'est un modèle d'intelligence artificielle (IA) qui répond à ta question, et son fonctionnement coûte réellement de l'argent. Pour qu'Ask Jiki reste rapide, fiable et accessible à tout le monde, on applique quelques limites raisonnables au nombre de messages que tu peux envoyer. Cette page explique comment ces limites fonctionnent.
+Quand tu demandes de l'aide à Jiki, c'est un modèle d'intelligence artificielle (IA) qui répond à ta question, et son fonctionnement coûte réellement de l'argent. Pour que « Demande à Jiki » reste rapide, fiable et accessible à tout le monde, on applique quelques limites raisonnables au nombre de messages que tu peux envoyer. Cette page explique comment ces limites fonctionnent.
 
 Dans la grande majorité des cas, tu ne remarqueras jamais ces limites. Elles n'entrent en jeu que si tu envoies un nombre inhabituellement élevé de messages.
 
