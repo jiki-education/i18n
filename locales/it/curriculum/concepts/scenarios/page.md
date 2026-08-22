@@ -4,7 +4,7 @@ description: "Diverse condizioni iniziali che un esercizio usa per mettere alla 
 en_md5: d5c4ee54eed8083e13f18bb7d256b86d
 ---
 
-Ogni esercizio presenta diversi scenari, diverse situazioni che il codice deve affrontare.
+Ogni esercizio presenta scenari diversi, ossia diverse situazioni che il codice deve gestire.
 
 Li vedrai come piccoli pulsanti proprio sopra l'output di ogni esercizio. Ogni pulsante si riferisce a uno scenario diverso. Devi scrivere codice che funzioni per tutti, non solo per il primo. Lascia che lo ripeta. Scrivi il codice una volta sola, ma lo stesso codice viene eseguito per ogni scenario. La differenza è che ogni scenario può essere impostato in modo leggermente diverso, oppure le funzioni che ti vengono fornite possono restituire cose leggermente diverse a seconda dello scenario in cui ti trovi.
 
