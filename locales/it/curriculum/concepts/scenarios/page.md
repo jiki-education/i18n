@@ -26,7 +26,7 @@ Prendi come esempio un gioco di golf. Potresti dover variare la distanza percors
   height="400"
 />
 
-Il risultato che ti arriva passa attraverso questa funzione. Quindi in uno scenario, puoi usare la funzione `getShotLength` e questa restituirà `23`, uno swipe breve. In un altro, restituisce `70`, uno swipe lungo. In un altro ancora, restituisce `45`. Il codice deve far rotolare la palla alla distanza giusta per ogni scenario, con un solo programma, un solo insieme di codice. Dovrai usare la funzione `getShotLength` per vedere quanto è andato lontano il colpo e poi far rotolare la palla fino a quel punto.
+Il risultato che ti arriva passa attraverso questa funzione. Quindi, in uno scenario, puoi usare la funzione `getShotLength` e questa restituirà `23`, uno scorrimento breve. In un altro, restituisce `70`, uno scorrimento lungo. In un altro ancora, restituisce `45`. Il codice deve far rotolare la palla alla distanza giusta per ogni scenario, con un solo programma, un solo insieme di codice. Dovrai usare la funzione `getShotLength` per vedere quanto è andato lontano il colpo e poi far rotolare la palla fino a quel punto.
 
 ```javascript
 let distance = getShotLength()
