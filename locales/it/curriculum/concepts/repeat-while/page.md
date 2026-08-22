@@ -32,7 +32,7 @@ Ma se ti dicessi: «Scrivimi del codice che possa risolvere qualsiasi labirinto 
   height="400"
 />
 
-Quindi ti serve un modo per dire a Jiki di andare avanti. Continua a controllare da che parte puoi andare, continua a prendere decisioni, continua ad avanzare, ancora e ancora, finché non hai finito.
+Quindi ti serve un modo per dire a Jiki di andare avanti. Continua a controllare da che parte puoi andare, continua a prendere decisioni, continua ad avanzare, ancora e ancora, finché non hai raggiunto l'obiettivo.
 
 <img
   class="concept-image"
