@@ -12,7 +12,7 @@ L'operatore modulo ti dà il resto della divisione tra due numeri, e lo scriviam
 10 % 4 // 2
 ```
 
-stiamo dicendo, o chiedendo: «Cosa rimane quando dividiamo 10 per 4?» E la risposta è due. Immagina di avere 10 caramelle o noccioline e di volerle dividere in parti uguali tra quattro persone. Ciascuna riceve due, ed alla fine ne rimangono due. Quel che rimane è il resto, ed è proprio quello che ti dà il simbolo percentuale.
+Stiamo dicendo, o chiedendo: «Cosa rimane quando dividiamo 10 per 4?» E la risposta è due. Immagina di avere 10 caramelle o noccioline e di volerle dividere in parti uguali tra quattro persone. Ciascuna riceve due, e alla fine ne avanzano due. Quel che rimane è il resto, ed è proprio ciò che ti restituisce l'operatore modulo (il simbolo percentuale).
 
 <img
   class="concept-image"
