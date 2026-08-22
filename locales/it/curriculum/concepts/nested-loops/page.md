@@ -4,7 +4,7 @@ description: "Inserire un ciclo dentro un altro, in modo che il ciclo interno ve
 en_md5: 4ca3e15c1737b6e8cf2f03a56d23a887
 ---
 
-Mettiamo di volere una fila di fiori. Possiamo scrivere qualcosa del genere. Impostiamo una posizione, piantiamo un fiore, aumentiamo la posizione di 10, ripetiamo, ed otteniamo una bella fila ordinata di fiori.
+Mettiamo di voler creare una fila di fiori. Possiamo scriverlo in questo modo: impostiamo una posizione, piantiamo un fiore, aumentiamo la posizione di 10, ripetiamo, e otteniamo una bella fila ordinata di fiori.
 
 ```javascript
 let x = 10
