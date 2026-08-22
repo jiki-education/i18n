@@ -19,7 +19,7 @@ Se um número:
 
 Precisas de criar uma função chamada `raindrops(num)` (gotas de chuva) que recebe o número como parâmetro de entrada e devolve os sons de gotas de chuva correspondentes.
 
-Constrói a string resultante usando concatenação (`+`) ou uma _template string_ (_cadeia de caracteres de modelo_).
+Constrói a string resultante usando concatenação (`+`) ou uma _template string_ (_cadeia de carateres de modelo_).
 
 ### Exemplos
 

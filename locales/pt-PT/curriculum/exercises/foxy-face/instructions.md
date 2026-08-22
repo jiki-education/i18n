@@ -26,7 +26,7 @@ A cara é simétrica na horizontal (o lado esquerdo é igual ao lado direito). E
 - Duas metades da cara `"orange"`
 - Um nariz `"charcoal"` (dois triângulos)
 
-(Certifica-te de que usas essas cores ao desenhar os triângulos, e lembra-te de verificar que as escreves como _strings_ (_cadeias de caracteres_)!)
+(Certifica-te de que usas essas cores ao desenhar os triângulos, e lembra-te de verificar que as escreves como _strings_ (_cadeias de carateres_)!)
 
 Já desenhámos os contornos de algumas partes para te ajudar a começar. Se seguires a ordem indicada nos comentários, vais ver que fica tudo um pouco mais fácil.
 
