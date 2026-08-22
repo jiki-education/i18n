@@ -38,7 +38,7 @@ Un'opzione potrebbe essere copiare ed incollare quel ciclo quattro volte e cambi
 
 Quindi qui possiamo usare un ciclo dentro un altro ciclo. Un ciclo per le righe ed uno per i fiori su quella riga. Allora, iniziamo aggiungendo un ciclo `repeat` attorno al nostro codice esistente, così puoi prendere confidenza con questa idea. E lo faremo ripetere solo una volta. Stiamo dicendo a Jiki di fare tutto ciò che è all'interno di queste parentesi graffe esterne una sola volta. Questo ha esattamente lo stesso effetto che non avere questo ciclo esterno. Stiamo dicendo a Jiki di ripetere qualcosa una volta, che è lo stesso che dirgli di farlo senza il `repeat`. Ma è così che funziona questo codice. È un codice legittimo, valido. Abbiamo un ciclo dentro un altro ciclo.
 
-Adesso cosa succede se cambiamo quel ciclo esterno in modo che ripeta due volte? Jiki eseguirà cinque volte l'intera faccenda di `plant` (pianta) per due volte consecutive. Pianterà 10 fiori. Ma tutti quei fiori saranno sulla stessa riga.
+Se modifichiamo il ciclo esterno affinché si ripeta due volte, Jiki eseguirà cinque volte il blocco di `plant` (pianta) per due iterazioni consecutive. In totale pianterà 10 fiori, tutti sulla stessa riga.
 
 Quindi, nello stesso modo in cui dobbiamo spostare la posizione da sinistra a destra un po' ogni volta, dopo aver disegnato ogni riga completa, dobbiamo anche spostare la posizione verticale. Allora come facciamo? Beh, possiamo aggiungere una variabile esterna per la posizione verticale, usarla nella nostra funzione `plant`, e poi aumentarla di 10 dopo ogni riga.
 
