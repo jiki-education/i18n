@@ -18,7 +18,7 @@ Quindi, invece di scrivere una funzione a cui passiamo una stringa come input, p
 
 Per esempio, ricordi una funzione con cui controlli se una stringa contiene una lettera particolare al suo interno? Beh, le stringhe hanno in realtà un metodo chiamato `includes` (contiene) che fa proprio questo, e possiamo usarlo con la stessa sintassi con il punto che hai visto per le proprietà.
 
-La differenza rispetto alle proprietà è che quando li scriviamo, li scriviamo come funzioni, con parentesi ed input.
+La differenza rispetto alle proprietà è che i metodi si comportano come funzioni, quindi li scriviamo con le parentesi e, se serve, un eventuale input.
 
 Quindi possiamo scrivere:
 
