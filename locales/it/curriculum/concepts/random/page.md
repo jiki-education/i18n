@@ -38,4 +38,4 @@ Math.randomInt
   height="400"
 />
 
-Quindi, immaginiamo che tu voglia disegnare un cerchio in una posizione casuale sull'area di disegno. Puoi usare `Math.randomInt` per ottenere valori diversi per `left` e `top` in modo casuale ogni volta, ma con limiti di, diciamo, `10` e `90`, così non si sovrappongono mai e non escono dall'area di disegno. Ogni volta che esegui questo codice, il cerchio verrà disegnato in una posizione leggermente diversa.
+Quindi, immaginiamo che tu voglia disegnare un cerchio in una posizione casuale sull'area di disegno. Puoi usare `Math.randomInt` per ottenere valori diversi per `left` e `top` in modo casuale ogni volta, ma con limiti di, diciamo, `10` e `90`, così non si sovrappongono mai e non escono dall'area di disegno. Ogni volta che esegui questo codice, il cerchio verrà disegnato in una posizione diversa.
