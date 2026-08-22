@@ -40,11 +40,11 @@ Quindi qui possiamo usare un ciclo dentro un altro ciclo. Un ciclo per le righe 
 
 Se modifichiamo il ciclo esterno affinché si ripeta due volte, Jiki eseguirà cinque volte il blocco di `plant` (pianta) per due iterazioni consecutive. In totale pianterà 10 fiori, tutti sulla stessa riga.
 
-Quindi, nello stesso modo in cui dobbiamo spostare la posizione da sinistra a destra un po' ogni volta, dopo aver disegnato ogni riga completa, dobbiamo anche spostare la posizione verticale. Allora come facciamo? Beh, possiamo aggiungere una variabile esterna per la posizione verticale, usarla nella nostra funzione `plant`, e poi aumentarla di 10 dopo ogni riga.
+Quindi, nello stesso modo in cui dobbiamo spostare la posizione orizzontale un po' alla volta dopo aver disegnato ogni riga, dobbiamo anche spostare la posizione verticale. Come facciamo? Possiamo aggiungere una variabile esterna per la posizione verticale, usarla nella nostra funzione `plant`, e poi aumentarla di 10 dopo ogni riga.
 
 Pensa a qual è il valore in ogni momento. La posizione verticale parte da 10. Per le prime cinque volte che piantiamo, rimane così. La posizione orizzontale aumenta. Poi aggiungiamo altri 10 a quella posizione verticale, e piantiamo altri cinque fiori un po' più in basso. Reimpostiamo la posizione orizzontale di nuovo a 10, e poi la aumentiamo di nuovo ogni volta.
 
-Ed adesso possiamo dire di ripetere tutto quattro volte, ed otterremo quattro file da cinque piante ciascuna.
+E adesso possiamo dire di ripetere tutto quattro volte, ed otterremo quattro file da cinque piante ciascuna.
 
 ```javascript
 let y = 10
@@ -66,6 +66,6 @@ repeat(4) {
   height="400"
 />
 
-La cosa fondamentale da capire è che Jiki porta a termine tutto il lavoro nel ciclo interno (_inner loop_ in inglese) prima di tornare al ciclo esterno (_outer loop_ in inglese). Non sta saltando avanti ed indietro. Completa il ciclo interno, poi passa al passo successivo del ciclo esterno.
+La cosa fondamentale da capire è che Jiki porta a termine tutto il lavoro nel ciclo interno (_inner loop_ in inglese) prima di tornare al ciclo esterno (_outer loop_ in inglese). Non salta avanti e indietro: completa il ciclo interno, poi passa al passo successivo del ciclo esterno.
 
 In questa situazione, puoi pensare al ciclo esterno come a chi controlla i gruppi o la riga, ed al ciclo interno come a chi controlla ogni elemento di quel gruppo o ogni elemento di quella riga. Quindi, nel nostro esempio, il ciclo esterno crea quattro righe, ed il ciclo interno mette cinque piante, cinque elementi in ogni gruppo.
