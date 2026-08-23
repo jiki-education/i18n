@@ -14,9 +14,9 @@ Immagina di avere il mio nome, Jeremy, e di voler estrarre la mia iniziale J. Co
   height="353"
 />
 
-Beh, puoi pensare ad una stringa come a una serie di lettere. Quindi `"Jeremy"` ha sei lettere, J-E-R-E-M-Y, ed ognuna ha una posizione. `"J"` è nella prima posizione, `"y"` è nell'ultima posizione.
+Beh, puoi pensare a una stringa come a una serie di lettere. Quindi `"Jeremy"` ha sei lettere, J-E-R-E-M-Y, ed ognuna occupa una posizione. `"J"` è nella prima posizione, `"y"` è nell'ultima.
 
-Ora, in JavaScript e nella maggior parte dei linguaggi di programmazione, queste posizioni partono da zero. Quindi la prima lettera `"J"` è alla posizione zero, e poi abbiamo `"e"` alla posizione uno, `"r"` alla due, `"e"` alla tre, `"m"` alla quattro e `"y"` alla cinque.
+Ora, in JavaScript e nella maggior parte dei linguaggi di programmazione, queste posizioni partono da zero. Quindi la prima lettera `"J"` è alla posizione zero, poi abbiamo `"e"` alla posizione uno, `"r"` alla due, `"e"` alla tre, `"m"` alla quattro e `"y"` alla cinque.
 
 Ora, questa cosa di partire da zero è piuttosto strana, ed onestamente la vita sarebbe più facile se cominciassimo a contare da uno, come nel mondo normale. Ma non lo facciamo. Nella maggior parte dei linguaggi di programmazione, invece, si comincia a contare da zero, quindi devi solo impararlo.
 
