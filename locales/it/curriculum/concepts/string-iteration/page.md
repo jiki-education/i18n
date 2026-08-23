@@ -23,9 +23,9 @@ for (let letter of name) {
 
 Poi abbiamo la riga del ciclo, e lì succedono molte cose, quindi parliamone con calma.
 
-Innanzitutto, abbiamo la parola chiave `for`. Questa dice a Jiki che vogliamo fare un ciclo. Allora lui guarda avanti e vede `of`, e capisce che vogliamo fare un ciclo `for of`.
+Innanzitutto, abbiamo la parola chiave `for`. Questa dice a Jiki che vogliamo eseguire un ciclo. Lui guarda avanti, vede `of`, e capisce che vogliamo eseguire un ciclo `for of`.
 
-E questo significa che invece di usare un ciclo repeat in cui diciamo «Ripetiamo 10 volte», diciamo «Scorriamo tutte le lettere della stringa». Questo è ciò che significa `for of`.
+Questo significa che, invece di usare un ciclo repeat in cui specifichiamo quante volte vogliamo ripetere qualcosa, diciamo «Scorriamo tutte le lettere della stringa». Questo è ciò che fa un ciclo `for of`.
 
 Poi abbiamo questa parte `let letter` (lettera). È esattamente la stessa cosa che abbiamo sopra con `let name`. Stiamo solo creando una variabile chiamata `letter`.
 
