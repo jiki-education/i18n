@@ -22,7 +22,7 @@ Ora, questa cosa di partire da zero è piuttosto strana, ed onestamente la vita 
 
 Quindi, se vogliamo estrarre una lettera in una posizione specifica, possiamo usare le parentesi quadre con il numero all'interno.
 
-Quindi, se scriviamo `"Jeremy"[0]`, stiamo dicendo di darci la prima lettera della parola `"Jeremy"`.
+Se scriviamo `"Jeremy"[0]`, stiamo dicendo di darci la prima lettera della parola `"Jeremy"`.
 
 Se scriviamo `"Jeremy"[1]`, stiamo dicendo di darci la seconda lettera.
 
