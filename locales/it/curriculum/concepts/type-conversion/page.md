@@ -10,7 +10,7 @@ Abbastanza spesso abbiamo bisogno di spostare un valore da un tipo ad un altro. 
 
 ### Convertire una stringa in un numero
 
-Quando leggi i caratteri da una stringa, ogni carattere è a sua volta una stringa, anche quando sembra una cifra. Prima di poterci fare qualsiasi calcolo, devi trasformarlo in un vero numero. Lo facciamo con `Number()`.
+Quando leggi i caratteri da una stringa, ogni carattere è a sua volta una stringa, anche quando sembra una cifra. Prima di poter fare qualsiasi calcolo, devi trasformarlo in un vero numero. Lo facciamo con `Number()`.
 
 ```javascript
 Number("7")
