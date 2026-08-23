@@ -4,11 +4,11 @@ description: "Fatti statici su un valore, accessibili con la notazione a punto e
 en_md5: 0634cd72388bef118e9dd22131a3c1cd
 ---
 
-Finora, quando abbiamo pensato a stringhe e numeri, li abbiamo considerati oggetti piuttosto statici.
+Finora, quando abbiamo parlato di stringhe e numeri, li abbiamo considerati oggetti piuttosto statici.
 
-E anche se lo sono, esse hanno molte funzionalità incorporate che Jiki può usare.
+E anche se lo sono, in realtà possiedono molte funzionalità incorporate che Jiki può usare.
 
-Ci sono due tipi di capacità che vedremo: le proprietà e i metodi.
+Ci sono due tipi di capacità che vedremo: proprietà e metodi.
 
 Le proprietà sono fatti che possiamo chiedere a Jiki di raccontarci sulle cose. Per esempio, le stringhe hanno una proprietà chiamata `length` (lunghezza), che Jiki può usare per dirci quanto è lunga una stringa.
 
