@@ -18,7 +18,7 @@ Beh, puoi pensare a una stringa come a una serie di lettere. Quindi `"Jeremy"` h
 
 Ora, in JavaScript e nella maggior parte dei linguaggi di programmazione, queste posizioni partono da zero. Quindi la prima lettera `"J"` è alla posizione zero, poi abbiamo `"e"` alla posizione uno, `"r"` alla due, `"e"` alla tre, `"m"` alla quattro e `"y"` alla cinque.
 
-Ora, questa cosa di partire da zero è piuttosto strana, ed onestamente la vita sarebbe più facile se cominciassimo a contare da uno, come nel mondo normale. Ma non lo facciamo. Nella maggior parte dei linguaggi di programmazione, invece, si comincia a contare da zero, quindi devi solo impararlo.
+Ora, questa cosa di partire da zero è piuttosto strana, ed onestamente la vita sarebbe più facile se cominciassimo a contare da uno, come nel mondo normale. Ma non lo facciamo. Nella maggior parte dei linguaggi di programmazione si comincia a contare da zero, quindi è semplicemente qualcosa che devi imparare.
 
 Quindi, se vogliamo estrarre una lettera in una posizione specifica, possiamo usare le parentesi quadre con il numero all'interno.
 
