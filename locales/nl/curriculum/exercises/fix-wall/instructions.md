@@ -6,7 +6,7 @@ en_md5: ba2f5a5d726cef8cb80841c6e16132c6
 
 Welkom bij je eerste tekenopdracht. In deze opdracht teken je rechthoeken met de functie (_function_ in het Engels) `rectangle` (rechthoek).
 
-Om rechthoeken te tekenen moeten we weten waar de bovenkant en de linkerkant komen, en hoe breed en hoog de rechthoek is. Wanneer we de functie `rectangle` gebruiken, kunnen we dat opgeven als invoer (_inputs_ in het Engels):
+Om rechthoeken te tekenen moeten we weten waar de bovenkant en de linkerkant komen, en hoe breed en hoog de rechthoek is. Wanneer we de `rectangle` functie gebruiken, kunnen we dat opgeven als invoer (_inputs_ in het Engels):
 
 - `left` (links): de linkerkant van de rechthoek
 - `top` (boven): de bovenkant van de rechthoek
