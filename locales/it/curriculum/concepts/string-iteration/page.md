@@ -31,11 +31,11 @@ Poi abbiamo questa parte `let letter` (lettera). È esattamente la stessa cosa c
 
 La differenza è che invece di essere espliciti sul contenuto, stiamo dicendo a Jiki di metterci dentro ciascuna lettera della stringa, una alla volta.
 
-Allora Jiki vede `for`, controlla se c'è `of`, poi parte. Guarda la prima lettera della stringa, `"J"` in questo caso, e la mette in una nuova scatola chiamata `letter`. A proposito, potevamo chiamarla in qualsiasi altro modo. Non doveva essere per forza `letter`. Abbiamo solo deciso di chiamarla `letter` qui.
+Allora Jiki vede `for`, controlla se c'è `of`, poi parte. Guarda la prima lettera della stringa, `"J"` in questo caso, e la mette in una nuova scatola chiamata `letter`. A proposito, potevamo chiamarla in qualsiasi altro modo: non deve per forza chiamarsi `letter`, abbiamo solo deciso di chiamarla così qui.
 
-Poi esegue il codice all'interno delle parentesi graffe, e qui puoi fare qualsiasi cosa faresti in qualsiasi altro punto del codice. L'unica differenza è che questo blocco di codice verrà eseguito una volta per ogni lettera della stringa, ed avrà a disposizione questa variabile.
+Poi esegue il codice all'interno delle parentesi graffe, e qui puoi fare tutto ciò che faresti in qualsiasi altro punto del codice. L'unica differenza è che questo blocco verrà eseguito una volta per ogni lettera della stringa, e avrà a disposizione questa variabile.
 
-Ogni volta che Jiki arriva alla parentesi graffa di chiusura, butta via la scatola `letter` e ne crea una nuova con la lettera successiva dentro. Quindi la prima volta butterà via la `"J"` e metterà invece una `"e"` nella scatola. Poi farà lo stesso per `"r"`, poi per `"e"`, poi per `"m"`, poi per `"y"`. Sei lettere, sei giri del ciclo. Ci vuole un po' di tempo per abituarsi alla sintassi, ma in realtà non è un concetto così difficile.
+Ogni volta che Jiki arriva alla parentesi graffa di chiusura, butta via la scatola `letter` e ne crea una nuova con la lettera successiva dentro. La prima volta butterà via la `"J"` e metterà invece una `"e"` nella scatola. Poi farà lo stesso per `"r"`, poi per `"e"`, poi per `"m"`, poi per `"y"`. Sei lettere, sei iterazioni del ciclo. Ci vuole un po' di tempo per abituarsi alla sintassi, ma in realtà non è un concetto così difficile.
 
 <img
   class="concept-image"
