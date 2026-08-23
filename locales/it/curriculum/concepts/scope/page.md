@@ -4,7 +4,9 @@ description: "Capire come le parentesi graffe creano un proprio insieme di scaff
 en_md5: 4d5fc2d1d304725660102e9aaceea4c3
 ---
 
-Immagina un codice che disegna un cerchio in un punto diverso ogni volta che viene eseguito, e vogliamo disegnare 10 cerchi in punti diversi. Potremmo combinare questo con un ciclo. Ma per chi sta prestando molta attenzione, potreste aver notato qualcosa di strano qui.
+Immagina un pezzo di codice che disegna un cerchio in un punto diverso ogni volta che viene eseguito, e che vogliamo disegnare 10 cerchi in posizioni diverse. Potremmo combinarlo con un ciclo.
+
+Ma chi sta seguendo con molta attenzione avrà forse notato qualcosa di strano qui.
 
 ```javascript
 repeat(10) {
