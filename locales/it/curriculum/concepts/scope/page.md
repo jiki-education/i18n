@@ -34,7 +34,7 @@ Quindi il codice è sbagliato o sta succedendo qualcos'altro di strano?
 
 Beh, si scopre che il codice è corretto. Questo è JavaScript perfettamente valido e funziona grazie ad un concetto chiamato scope (_ambito di visibilità_) o scoping.
 
-Lo scope è qualcosa che all'inizio probabilmente sembrerà abbastanza semplice, ma ti garantisco che ti darà problemi per il resto della tua carriera. Anche gli sviluppatori più esperti incontrano problemi con lo scope e JavaScript è uno dei linguaggi più complicati in questo senso. Te lo dico perché quando incontrerai problemi con lo scope, non ti sentirai male con te stesso. Ma soprattutto, presta molta attenzione a questa parte perché è importante.
+Lo scope è qualcosa che all'inizio probabilmente sembrerà abbastanza semplice, ma ti garantisco che ti darà problemi per il resto della tua carriera. Anche gli sviluppatori più esperti incontrano problemi con lo scope e JavaScript è uno dei linguaggi più complicati in questo senso. Te lo dico perché quando incontrerai problemi legati allo scope, non devi sentirti in colpa. Ma soprattutto: presta molta attenzione a questa parte, perché è davvero importante.
 
 Quando vedi una parentesi graffa nel codice, crea quello che si chiama un nuovo scope. Cosa significa? Beh, puoi immaginare che Jiki crei un nuovo piccolo insieme di scaffali nel suo laboratorio ogni volta che vede una parentesi graffa. E tutte le scatole che crea mentre lavora, eseguendo codice dentro quelle parentesi graffe, quelle scatole, quelle nuove scatole finiscono sul nuovo piccolo insieme di scaffali, non su quelli principali.
 
