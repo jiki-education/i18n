@@ -14,7 +14,7 @@ Le proprietà sono fatti che possiamo chiedere a Jiki di raccontarci sulle cose.
 
 Quindi, invece di dover scorrere tutte le lettere per capire quanto è grande una stringa, possiamo semplicemente chiedere a Jiki di dircelo.
 
-E per farlo, usiamo una nuova forma di sintassi, un punto.
+E per farlo, usiamo una nuova forma di sintassi: il punto.
 
 Per esempio, se abbiamo la stringa `"Jeremy"` e vogliamo ottenere la sua lunghezza, possiamo scrivere:
 
@@ -22,7 +22,7 @@ Per esempio, se abbiamo la stringa `"Jeremy"` e vogliamo ottenere la sua lunghez
 "Jeremy".length // 6
 ```
 
-Quando Jiki crea una stringa, conta le lettere e, più o meno, scrive un numero nell'angolo con quante ce ne sono.
+Quando Jiki crea una stringa, conta le lettere e, più o meno, annota nell'angolo il numero della sua lunghezza.
 
 <img
   class="concept-image"
