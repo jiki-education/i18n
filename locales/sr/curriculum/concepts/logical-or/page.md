@@ -17,7 +17,7 @@ if (age > 20 || outfit === "disco") {
 <img
   class="concept-image"
   src="/static/images/concept-assets/logical-or/party-door.webp"
-  alt="Jiki dočekuje mešavinu dece u disko stilu i ležerno obučenih odraslih na ulazu u žurku"
+  alt="Džiki dočekuje mešavinu dece u disko stilu i ležerno obučenih odraslih na ulazu u žurku"
   width="327"
   height="400"
 />

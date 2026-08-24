@@ -22,4 +22,4 @@ Imaš tri funkcije koje možeš da koristiš:
 - `announce(value)` (objavljuje vrednost) objavljuje rezultat bacanja kockice.
 - `strike(attack, damage)` (napada goblina) napada goblina koristeći tvoj rezultat napada i ukupnu štetu.
 
-**Važno:** Svaki put kada pozoveš `roll()`, Jiki baca kockicu i dobija različit broj. Ne očekuj da ćeš bacanjem iste kockice dva puta dobiti isti broj svaki put.
+**Važno:** Svaki put kada pozoveš `roll()`, Džiki baca kockicu i dobija različit broj. Ne očekuj da ćeš bacanjem iste kockice dva puta dobiti isti broj svaki put.

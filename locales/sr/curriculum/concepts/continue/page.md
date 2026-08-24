@@ -12,7 +12,7 @@ Ali ne želimo da potpuno izađemo iz petlje. Samo želimo da preskočimo ovu je
 
 Za to imamo još jednu ključnu reč koja se zove `continue`.
 
-Kada Jiki vidi `continue`, on samo skoči nazad na vrh petlje i započne sledeću iteraciju. Tako u `for-of` petlji, ako vidi `continue`, pređe na sledeći element u nizu.
+Kada Džiki vidi `continue`, on samo skoči nazad na vrh petlje i započne sledeću iteraciju. Tako u `for-of` petlji, ako vidi `continue`, pređe na sledeći element u nizu.
 
 ```javascript
 for (let item of list) {
@@ -23,7 +23,7 @@ for (let item of list) {
 }
 ```
 
-U `for` petlji, Jiki nailazi na uvećanje `i++`, a onda započinje sledeću iteraciju.
+U `for` petlji, Džiki nailazi na uvećanje `i++`, a onda započinje sledeću iteraciju.
 
 ```javascript
 for (let i = 0; i < 10; i++) {

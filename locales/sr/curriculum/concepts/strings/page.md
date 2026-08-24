@@ -1,25 +1,25 @@
 ---
 title: "Upoznavanje sa stringovima"
-description: "Delovi teksta u navodnicima (slovo, reč, rečenica ili ceo pasus) koje Jiki zapisuje na papir."
+description: "Delovi teksta u navodnicima (slovo, reč, rečenica ili ceo pasus) koje Džiki zapisuje na papir."
 en_md5: 4947f6ac1b3eb8eb85d2dea9b82ffc40
 ---
 
-Kada želiš da upotrebiš broj, možeš prosto da ga napišeš i Jiki zna na šta misliš. Ali šta ako želiš da upotrebiš slovo, reč ili rečenicu? Na primer, šta ako bi funkcija `rectangle` (pravougaonik) ili funkcija `circle` (krug) imala dodatni ulaz u kojem navodiš boju? Kako bismo napisali boju da je ubacimo u mašinu? Ako samo napišemo reč `green` (zeleno) ili `blue` (plavo), Jiki će misliti da govorimo o nekoj mašini na policama, pa će reći: „Ne postoji mašina koja se zove green. Ne znam šta da radim.“
+Kada želiš da upotrebiš broj, možeš prosto da ga napišeš i Džiki zna na šta misliš. Ali šta ako želiš da upotrebiš slovo, reč ili rečenicu? Na primer, šta ako bi funkcija `rectangle` (pravougaonik) ili funkcija `circle` (krug) imala dodatni ulaz u kojem navodiš boju? Kako bismo napisali boju da je ubacimo u mašinu? Ako samo napišemo reč `green` (zeleno) ili `blue` (plavo), Džiki će misliti da govorimo o nekoj mašini na policama, pa će reći: „Ne postoji mašina koja se zove green. Ne znam šta da radim.“
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/strings/rectangle-confused.webp"
-  alt="Jiki zbunjeno stoji pored mašine za pravougaonike, sa znacima pitanja iznad glave"
+  alt="Džiki zbunjeno stoji pored mašine za pravougaonike, sa znacima pitanja iznad glave"
   width="446"
   height="400"
 />
 
-Zato imamo pravilo: kad god treba da upotrebimo tekst, stavljamo ga u navodnike, i to u dvostruke navodnike. A kada nešto staviš u navodnike, Jiki izvadi papir i na njemu napiše sve što staviš u te navodnike, a te papire zovemo _stringovi_ (niske).
+Zato imamo pravilo: kad god treba da upotrebimo tekst, stavljamo ga u navodnike, i to u dvostruke navodnike. A kada nešto staviš u navodnike, Džiki izvadi papir i na njemu napiše sve što staviš u te navodnike, a te papire zovemo _stringovi_ (niske).
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/strings/jiki-writing-green.webp"
-  alt="Jiki piše reč green na papiru, koji postaje string"
+  alt="Džiki piše reč green na papiru, koji postaje string"
   width="398"
   height="400"
 />
@@ -40,12 +40,12 @@ Dakle, ako želimo plavi pravougaonik, napisaćemo broj za njegovu levu poziciju
 rectangle(10, 20, 30, 40, "blue")
 ```
 
-Jiki bi skinuo mašinu sa police i ubacio novčiće u prva četiri otvora. Zatim bi na papiru napisao blue, ubacio taj papir u peti otvor i pokrenuo mašinu.
+Džiki bi skinuo mašinu sa police i ubacio novčiće u prva četiri otvora. Zatim bi na papiru napisao blue, ubacio taj papir u peti otvor i pokrenuo mašinu.
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/strings/rectangle-blue-slot.webp"
-  alt="Jiki ubacuje papir sa rečju blue u peti otvor mašine za pravougaonike, dok su novčići 10, 20, 30 i 40 u prva četiri otvora"
+  alt="Džiki ubacuje papir sa rečju blue u peti otvor mašine za pravougaonike, dok su novčići 10, 20, 30 i 40 u prva četiri otvora"
   width="500"
   height="392"
 />

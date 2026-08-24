@@ -6,7 +6,7 @@ en_md5: 64274945347d47d67baf3378cf219c9b
 
 Već znaš kako ti `if` i `else` daju dva puta: uradi jedno kada je uslov tačan, a drugo kada je netačan. Ali šta ako imaš više od dve mogućnosti?
 
-Zamisli da naš izbacivač sada prodaje karte. Ako imaš manje od trinaest godina, dobijaš dečju kartu. Između trinaest i dvadeset dobijaš tinejdžersku kartu. Sa dvadeset ili više, dobijaš kartu za odrasle. Sada dakle imamo tri različita ishoda. Za ovo možemo da dodamo još jednu `if` naredbu posle `else`-a. Tako možemo da kažemo: „Ako važi ovo, uradi ovo. Inače, ako važi ono, uradi ono. Inače, uradi ovu treću stvar.“ U ovom primeru, Jiki će videti `if` i proveriti prvi uslov. Da li je šesnaest manje od trinaest? Ne. Zato prelazi na `else if`. Da li je šesnaest manje od dvadeset? Da, to je tačno. Zato izvršava taj blok i izdaje tinejdžersku kartu. Ali tu je gotov. Ne proverava ništa dalje. Onaj poslednji `else` uopšte i ne gleda. Čim Jiki nađe uslov koji je tačan, izvrši taj blok i preskoči sve ispod njega.
+Zamisli da naš izbacivač sada prodaje karte. Ako imaš manje od trinaest godina, dobijaš dečju kartu. Između trinaest i dvadeset dobijaš tinejdžersku kartu. Sa dvadeset ili više, dobijaš kartu za odrasle. Sada dakle imamo tri različita ishoda. Za ovo možemo da dodamo još jednu `if` naredbu posle `else`-a. Tako možemo da kažemo: „Ako važi ovo, uradi ovo. Inače, ako važi ono, uradi ono. Inače, uradi ovu treću stvar.“ U ovom primeru, Džiki će videti `if` i proveriti prvi uslov. Da li je šesnaest manje od trinaest? Ne. Zato prelazi na `else if`. Da li je šesnaest manje od dvadeset? Da, to je tačno. Zato izvršava taj blok i izdaje tinejdžersku kartu. Ali tu je gotov. Ne proverava ništa dalje. Onaj poslednji `else` uopšte i ne gleda. Čim Džiki nađe uslov koji je tačan, izvrši taj blok i preskoči sve ispod njega.
 
 ```javascript
 if (age < 13) {
@@ -26,7 +26,7 @@ if (age < 13) {
   height="142"
 />
 
-Ovo je ključna stvar koju treba razumeti. Uvek se izvršava samo jedan blok. Jiki ide niz ovaj lanac, nađe prvi tačan uslov, izvrši taj blok i nastavlja dalje.
+Ovo je ključna stvar koju treba razumeti. Uvek se izvršava samo jedan blok. Džiki ide niz ovaj lanac, nađe prvi tačan uslov, izvrši taj blok i nastavlja dalje.
 
 E sad, postoji jedna stvar koju zaista treba razumeti, jer ovde mnogi zapnu. Postoji suptilna, ali veoma važna razlika između pisanja dve odvojene `if` naredbe i korišćenja `else if`. Zamisli da pravimo program koji dodeljuje ili osnovnu ili bonus nagradu, u zavisnosti od nečijeg rezultata. Pogledaj ove dve mogućnosti. Jedna koristi `else if`, a druga dve odvojene `if` naredbe. Šta će se desiti drugačije?
 

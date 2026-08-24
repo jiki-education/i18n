@@ -1,6 +1,6 @@
 ---
 title: "Nizovi"
-description: "Uređeni lanac elemenata (stringova, brojeva, Boolean vrednosti ili bilo čega drugog) koji se drži na okupu kao jedna vrednost koju Jiki može da prosleđuje."
+description: "Uređeni lanac elemenata (stringova, brojeva, Boolean vrednosti ili bilo čega drugog) koji se drži na okupu kao jedna vrednost koju Džiki može da prosleđuje."
 en_md5: d26ccb9e04fbc77129f3199d63a95017
 ---
 
@@ -16,15 +16,15 @@ Sve u ovom lancu ima određeni redosled, redosled kojim su stvari povezane u lan
 
 Dakle, niz sadrži mnogo stvari, ali se posmatra kao jedna celina, jedan niz sa mnogo elemenata unutar sebe.
 
-Jiki može da uzme taj niz, taj lanac, i stavi ga u kutiju, baš kao što to radi sa stringovima i brojevima.
+Džiki može da uzme taj niz, taj lanac, i stavi ga u kutiju, baš kao što to radi sa stringovima i brojevima.
 
-Može da ga ubaci u ulazni otvor mašine. Može da ga izvuče iz izlaznog otvora. Ovaj niz je jedna stvar i Jiki radi sa njim na potpuno isti način kao sa stringovima, brojevima i svim ostalim što već poznaješ.
+Može da ga ubaci u ulazni otvor mašine. Može da ga izvuče iz izlaznog otvora. Ovaj niz je jedna stvar i Džiki radi sa njim na potpuno isti način kao sa stringovima, brojevima i svim ostalim što već poznaješ.
 
 E sada, u kodu niz takođe liči na lanac. Ima uglastu zagradu na svakom kraju, a između zagrada stavke koje su povezane u lanac, razdvojene zapetama.
 
 Na primer, ako želimo da napravimo niz sa imenima nekih naših mentora, možemo da napravimo kutiju po imenu `mentors` (mentori) i da stavimo taj lanac u nju.
 
-Napisali bismo `let mentors =`, potpuno isto kao i za bilo koju drugu kutiju, a zatim otvorenu uglastu zagradu, imena elemenata razdvojena zapetama, i na kraju zatvorenu uglastu zagradu. Kada Jiki ovo vidi, ode po četiri papirića, po jedan za svako ime, zatim uzme nov lanac i sve ih poveže u njega, pa taj lanac stavi u kutiju `mentors`.
+Napisali bismo `let mentors =`, potpuno isto kao i za bilo koju drugu kutiju, a zatim otvorenu uglastu zagradu, imena elemenata razdvojena zapetama, i na kraju zatvorenu uglastu zagradu. Kada Džiki ovo vidi, ode po četiri papirića, po jedan za svako ime, zatim uzme nov lanac i sve ih poveže u njega, pa taj lanac stavi u kutiju `mentors`.
 
 U niz možeš da staviš bilo šta: stringove, brojeve, Boolean vrednosti, čak i mešavinu svega toga.
 

@@ -4,12 +4,12 @@ description: "Korišćenje uglastih zagrada i broja pozicije da izvučeš jedno 
 en_md5: cd31e0366b3090b358494667003f54c9
 ---
 
-Zamisli da imaš moje ime, Jeremy, i da želiš da iz njega izvučeš moj inicijal J. Kako bismo to uradili?
+Zamisli da imaš moje ime, Džeremi, i da želiš da iz njega izvučeš moj inicijal J. Kako bismo to uradili?
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/string-indexing/jiki-thinking.webp"
-  alt="Jiki razmišlja kako da izvuče jedno slovo iz stringa"
+  alt="Džiki razmišlja kako da izvuče jedno slovo iz stringa"
   width="361"
   height="353"
 />
@@ -43,7 +43,7 @@ Da razjasnimo jednu stvar: ono što dobiješ iz `name[0]` je samo još jedan str
 <img
   class="concept-image"
   src="/static/images/concept-assets/string-indexing/jiki-holding-j.webp"
-  alt="Jiki drži novi komad papira na kome je samo slovo J"
+  alt="Džiki drži novi komad papira na kome je samo slovo J"
   width="500"
   height="289"
 />

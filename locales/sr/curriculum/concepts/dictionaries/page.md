@@ -20,7 +20,7 @@ Sa leve strane stoje naslovi, reči `"name"`, `"age"`, `"birthplace"`, i njih zo
 
 A sa desne strane, pored svakog naslova, stoje pravi podaci, `"Jeremy"`, `42`, `"England"`, i njih zovemo vrednostima (engl. _values_).
 
-Baš kao i niz, rečnik je jedna stvar. Jedna stranica iz sveske. I baš kao kod nizova, Jiki može da ga stavi u promenljivu, u kutiju, ili da posluži kao ulaz za funkciju, a može i da izvuče rečnik iz izlaznog otvora. Evo kako rečnik izgleda u kodu. Koristimo vitičaste zagrade da označimo početak i kraj, a unutra imaš parove: ključ sa leve strane, dvotačku, pa vrednost sa desne strane. Između svakog para stoji zarez. Jiki ovo vidi i vadi svoju spiralnu svesku. Piše `name`, `"Jeremy"`, `age`, `42`, i tako redom za svaki par.
+Baš kao i niz, rečnik je jedna stvar. Jedna stranica iz sveske. I baš kao kod nizova, Džiki može da ga stavi u promenljivu, u kutiju, ili da posluži kao ulaz za funkciju, a može i da izvuče rečnik iz izlaznog otvora. Evo kako rečnik izgleda u kodu. Koristimo vitičaste zagrade da označimo početak i kraj, a unutra imaš parove: ključ sa leve strane, dvotačku, pa vrednost sa desne strane. Između svakog para stoji zarez. Džiki ovo vidi i vadi svoju spiralnu svesku. Piše `name`, `"Jeremy"`, `age`, `42`, i tako redom za svaki par.
 
 A kada završi, otcepi list i stavi ga u kutiju sa oznakom `person` (osoba).
 
@@ -40,7 +40,7 @@ Koristimo istu sintaksu sa uglastim zagradama kao kod nizova i stringova, ali um
 person["name"] // "Jeremy"
 ```
 
-To govori Jikiju da pogleda u rečnik `person`, pronađe ključ `"name"` i izvuče njegovu vrednost. Jiki ode do kutije `person`, izvadi stranicu iz sveske, prolazi kroz ključeve dok ne pronađe `"name"`, zatim pročita vrednost, `"Jeremy"`, i stavi je u novu kutiju pod imenom `name`.
+To govori Džikiju da pogleda u rečnik `person`, pronađe ključ `"name"` i izvuče njegovu vrednost. Džiki ode do kutije `person`, izvadi stranicu iz sveske, prolazi kroz ključeve dok ne pronađe `"name"`, zatim pročita vrednost, `"Jeremy"`, i stavi je u novu kutiju pod imenom `name`.
 
 Uglaste zagrade uvek znače isto. Posežeš u nešto i vadiš nešto iz toga. Kod nizova i stringova koristiš broj da kažeš sa koje pozicije želiš nešto da uzmeš. Kod rečnika koristiš string za ključ.
 

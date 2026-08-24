@@ -14,18 +14,18 @@ repeat(10) {
 }
 ```
 
-Ranije sam rekao da postoji pravilo da kutije na Jikijevim policama moraju imati jedinstvena imena,
+Ranije sam rekao da postoji pravilo da kutije na Džikijevim policama moraju imati jedinstvena imena,
 
 i ta ključna reč `let` stvara novu kutiju svaki put kada je upotrebiš.
 
-Ali pošto je `let` unutar petlje, Jiki će stvoriti novu kutiju svaki put kada se petlja izvrši.
+Ali pošto je `let` unutar petlje, Džiki će stvoriti novu kutiju svaki put kada se petlja izvrši.
 
 Pa da li je kod pogrešan, ili se ovde dešava nešto drugo čudno?
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/scope/thinking-jiki.webp"
-  alt="Jiki izgleda zbunjeno, pitajući se da li je kod pogrešan"
+  alt="Džiki izgleda zbunjeno, pitajući se da li je kod pogrešan"
   width="384"
   height="400"
 />
@@ -34,27 +34,27 @@ Pa, ispostavlja se da je kod u redu. Ovo je potpuno validan JavaScript i funkcio
 
 Opseg je nešto što će ti u početku verovatno delovati prilično jednostavno, ali garantujem da će ti zadavati muke do kraja karijere. Čak i najiskusniji programeri nailaze na probleme sa opsegom, a JavaScript je jedan od najkomplikovanijih jezika u tom pogledu. Govorim ti ovo da se, kada budeš nailazio na probleme sa opsegom, ne bi osećao loše. Ali takođe, stvarno obrati pažnju na ovaj deo jer je važan.
 
-Kada u kodu vidiš vitičastu zagradu, ona stvara ono što se zove novi opseg. Šta to znači? Pa, možeš zamisliti kako Jiki u svojoj radionici pravi novi, mali set polica kad god ugleda vitičastu zagradu. I sve kutije koje stvori dok radi, izvršavajući kod unutar tih vitičastih zagrada, te kutije, te nove kutije idu na taj novi, mali set polica, a ne na glavne.
+Kada u kodu vidiš vitičastu zagradu, ona stvara ono što se zove novi opseg. Šta to znači? Pa, možeš zamisliti kako Džiki u svojoj radionici pravi novi, mali set polica kad god ugleda vitičastu zagradu. I sve kutije koje stvori dok radi, izvršavajući kod unutar tih vitičastih zagrada, te kutije, te nove kutije idu na taj novi, mali set polica, a ne na glavne.
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/scope/shelves.webp"
-  alt="Jikijev glavni set polica pored novog, manjeg seta polica koji je stvorila vitičasta zagrada"
+  alt="Džikijev glavni set polica pored novog, manjeg seta polica koji je stvorila vitičasta zagrada"
   width="500"
   height="205"
 />
 
-A kada Jiki dođe do odgovarajuće zatvarajuće vitičaste zagrade, on baca sve kutije koje su na ovom pomoćnom setu polica.
+A kada Džiki dođe do odgovarajuće zatvarajuće vitičaste zagrade, on baca sve kutije koje su na ovom pomoćnom setu polica.
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/scope/shelves-loop-end.webp"
-  alt="Jiki baca kutije sa pomoćnog seta polica u kantu kada dođe do zatvarajuće vitičaste zagrade"
+  alt="Džiki baca kutije sa pomoćnog seta polica u kantu kada dođe do zatvarajuće vitičaste zagrade"
   width="500"
   height="237"
 />
 
-Dakle, svaki put kada imamo ovakvu petlju, možemo stvoriti kutije koje traju samo koliko jedno izvršavanje petlje. Kutije `left` (levo) i `top` (gore) koje ovde vidiš, one traju samo dok ne stignemo do zatvarajuće vitičaste zagrade, a zatim bivaju bačene. A Jiki stiže do te zatvarajuće zagrade svaki put kada se petlja izvrši. To je, u ovom programu, 10 puta. Dakle, 10 puta će stvoriti kutiju pod nazivom `left`, a zatim će je ponovo baciti.
+Dakle, svaki put kada imamo ovakvu petlju, možemo stvoriti kutije koje traju samo koliko jedno izvršavanje petlje. Kutije `left` (levo) i `top` (gore) koje ovde vidiš, one traju samo dok ne stignemo do zatvarajuće vitičaste zagrade, a zatim bivaju bačene. A Džiki stiže do te zatvarajuće zagrade svaki put kada se petlja izvrši. To je, u ovom programu, 10 puta. Dakle, 10 puta će stvoriti kutiju pod nazivom `left`, a zatim će je ponovo baciti.
 
 <img
   class="concept-image"

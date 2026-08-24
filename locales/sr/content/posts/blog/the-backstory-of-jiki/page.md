@@ -90,7 +90,7 @@ Zato Jiki podučava oba. Podučava osnove programiranja, jer i dalje moraš da r
 
 Jiki je platforma za učenje programiranja, osmišljena da bude izuzetno interaktivna i zabavna. Napravljena je za početnike – ljude koji programiraju manje od godinu dana i žele da postave zaista čvrste temelje. Učiš gradeći projekte u prilagođenom okruženju posebno dizajniranom da ti pomogne da razumeš šta se dešava.
 
-Stvari su strukturirane u nivoima. U svakom ćeš pogledati kratak video koji podučava novi koncept, a zatim ćeš imati niz projekata u kojima ćeš ga koristiti. U srcu učenja je **Jiki**, lik koji pokreće tvoj kod. Sve što podučavam gledam kroz Jikijeve oči – kako on vidi tvoj kod, kako ga pokreće. Dok pokrećeš svoj kod, možeš tačno da vidiš šta Jiki vidi – zašto radi to što radi.
+Stvari su strukturirane u nivoima. U svakom ćeš pogledati kratak video koji podučava novi koncept, a zatim ćeš imati niz projekata u kojima ćeš ga koristiti. U srcu učenja je **Džiki**, lik koji pokreće tvoj kod. Sve što podučavam gledam kroz Džikijeve oči – kako on vidi tvoj kod, kako ga pokreće. Dok pokrećeš svoj kod, možeš tačno da vidiš šta Džiki vidi – zašto radi to što radi.
 
 Ali više od funkcionalnosti, ono do čega mi je zaista stalo je filozofija iza toga. Ne moraju svi da postanu softverski programeri, ali veština razumevanja kako se problemi razlažu i grade rešenja prenosi se na sve. I to je ključ kursa – usporavanje i zaista duboko razmišljanje o tome kako se rešavaju problemi. To je zaista teško na početku (živimo u eri prepunoj dopamina!), ali je neverovatna veština kad ti klikne.
 

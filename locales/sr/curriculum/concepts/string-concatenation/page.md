@@ -23,7 +23,7 @@ Zamisli da imamo promenljivu pod nazivom `name` (ime), koja ponekad sadrži `"Je
 <img
   class="concept-image"
   src="/static/images/concept-assets/string-concatenation/jiki-name-box.webp"
-  alt="Jiki drži kutiju sa natpisom 'ime', koja može da sadrži različite vrednosti"
+  alt="Džiki drži kutiju sa natpisom 'ime', koja može da sadrži različite vrednosti"
   width="207"
   height="400"
 />

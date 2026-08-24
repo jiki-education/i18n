@@ -54,12 +54,12 @@ let height = canvasSize - top * 2 // 40
 rectangle(left, top, width, height, "blue")
 ```
 
-Hajde da razmislimo šta Jiki radi kada napišemo let `height` equals `canvasSize` minus `top` puta dva. Pa, on prvo uzima kutiju `top` sa police, i u njoj pronalazi 30, zatim vadi svoj džepni kalkulator i računa 30 puta dva, i pravi mentalnu belešku da je to 60.
+Hajde da razmislimo šta Džiki radi kada napišemo let `height` equals `canvasSize` minus `top` puta dva. Pa, on prvo uzima kutiju `top` sa police, i u njoj pronalazi 30, zatim vadi svoj džepni kalkulator i računa 30 puta dva, i pravi mentalnu belešku da je to 60.
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/arithmetic/flow-of-images-1.webp"
-  alt="Jiki uzima kutiju top sa police i računa 30 puta dva, što je 60"
+  alt="Džiki uzima kutiju top sa police i računa 30 puta dva, što je 60"
   width="377"
   height="400"
 />
@@ -69,7 +69,7 @@ Zatim uzima kutiju `canvasSize` sa police, pronalazi u njoj 100, i izračunava d
 <img
   class="concept-image"
   src="/static/images/concept-assets/arithmetic/flow-of-images-3.webp"
-  alt="Jiki uzima novu kutiju, na nju piše height, i unutra stavlja 40"
+  alt="Džiki uzima novu kutiju, na nju piše height, i unutra stavlja 40"
   width="462"
   height="400"
 />

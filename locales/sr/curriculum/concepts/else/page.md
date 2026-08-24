@@ -6,7 +6,7 @@ en_md5: a3d7b0672bd9c022675831044c5610ed
 
 Pomoću if naredbi možeš da proveriš uslove i izvršiš kod samo kada je nešto tačno. Hajde da sada upoznamo if-ovog saučesnika, `else`.
 
-Kod if naredbe (engl. _if statement_), Jiki izvršava blok koda kada je uslov tačan, a preskače taj blok koda kada je netačan. Ali šta ako želiš da Jiki uradi jednu stvar kada je uslov tačan, a drugu kada je netačan? Upravo tome služi else. Možemo da stavimo else klauzulu (engl. _else clause_) posle zatvorene vitičaste zagrade if-a, i Jiki će je izvršiti ako je uslov if-a netačan. Ako se vratimo na primer sa izbacivačem u klubu, sada imamo mogućnost da otvorimo vrata ili da nekoga odbijemo, što je verovatno bolje nego da ga potpuno ignorišemo kao do sada. Zamisli to kao račvanje na putu. Jiki stigne do tog račvanja, proveri uslov, i onda može da krene jednim putem ako je tačan, ili drugim ako je netačan. Ali nikada ne ide na obe strane.
+Kod if naredbe (engl. _if statement_), Džiki izvršava blok koda kada je uslov tačan, a preskače taj blok koda kada je netačan. Ali šta ako želiš da Džiki uradi jednu stvar kada je uslov tačan, a drugu kada je netačan? Upravo tome služi else. Možemo da stavimo else klauzulu (engl. _else clause_) posle zatvorene vitičaste zagrade if-a, i Džiki će je izvršiti ako je uslov if-a netačan. Ako se vratimo na primer sa izbacivačem u klubu, sada imamo mogućnost da otvorimo vrata ili da nekoga odbijemo, što je verovatno bolje nego da ga potpuno ignorišemo kao do sada. Zamisli to kao račvanje na putu. Džiki stigne do tog račvanja, proveri uslov, i onda može da krene jednim putem ako je tačan, ili drugim ako je netačan. Ali nikada ne ide na obe strane.
 
 ```javascript
 if (age >= 21) {
@@ -24,7 +24,7 @@ if (age >= 21) {
   height="332"
 />
 
-Ali šta ako imaš više od dve mogućnosti? Zamisli da naš izbacivač prodaje karte. Ako imaš manje od trinaest godina, dobijaš dečju kartu. Između trinaest i dvadeset, dobijaš tinejdžersku kartu. Sa dvadeset ili više, dobijaš kartu za odrasle. Dakle, sada imaš tri različita ishoda. Za ovo možemo da dodamo još jednu if naredbu posle else-a. Znači, možemo da kažemo: „Ako je ovo, uradi ovo. Inače, ako je ono, uradi ono. Inače, uradi ovu treću stvar.“ U ovom primeru, Jiki će videti if i proveriti prvi uslov. Da li je šesnaest manje od trinaest? Nije. Zato prelazi na else if. Da li je šesnaest manje od dvadeset? Jeste, to je tačno. Zato izvršava taj blok i daje tinejdžersku kartu. Ali tu je gotov. Ne proverava ništa više. Uopšte ne gleda onaj poslednji else. Čim Jiki nađe uslov koji je tačan, izvrši taj blok i preskoči sve ostalo ispod njega.
+Ali šta ako imaš više od dve mogućnosti? Zamisli da naš izbacivač prodaje karte. Ako imaš manje od trinaest godina, dobijaš dečju kartu. Između trinaest i dvadeset, dobijaš tinejdžersku kartu. Sa dvadeset ili više, dobijaš kartu za odrasle. Dakle, sada imaš tri različita ishoda. Za ovo možemo da dodamo još jednu if naredbu posle else-a. Znači, možemo da kažemo: „Ako je ovo, uradi ovo. Inače, ako je ono, uradi ono. Inače, uradi ovu treću stvar.“ U ovom primeru, Džiki će videti if i proveriti prvi uslov. Da li je šesnaest manje od trinaest? Nije. Zato prelazi na else if. Da li je šesnaest manje od dvadeset? Jeste, to je tačno. Zato izvršava taj blok i daje tinejdžersku kartu. Ali tu je gotov. Ne proverava ništa više. Uopšte ne gleda onaj poslednji else. Čim Džiki nađe uslov koji je tačan, izvrši taj blok i preskoči sve ostalo ispod njega.
 
 ```javascript
 if (age < 13) {
@@ -36,7 +36,7 @@ if (age < 13) {
 }
 ```
 
-Ovo je ključna stvar koju treba razumeti. Uvek se izvrši samo jedan blok. Jiki ide redom niz ovaj lanac, nađe prvi tačan uslov, izvrši taj blok i nastavi dalje.
+Ovo je ključna stvar koju treba razumeti. Uvek se izvrši samo jedan blok. Džiki ide redom niz ovaj lanac, nađe prvi tačan uslov, izvrši taj blok i nastavi dalje.
 
 E sad, postoji jedna stvar koju treba zaista razumeti, jer tu se ljudi često spotaknu. Postoji suptilna, ali veoma važna razlika između pisanja dve odvojene if naredbe i korišćenja else if-a. Zamisli da pravimo program koji daje ili osnovnu ili bonus nagradu, u zavisnosti od nečijeg rezultata. Pogledaj ove dve mogućnosti. Jedna koristi else if, a druga dve odvojene `if` naredbe. Šta će se desiti drugačije?
 

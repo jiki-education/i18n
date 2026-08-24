@@ -23,24 +23,24 @@ for (let letter of name) {
 }
 ```
 
-Najpre imamo ključnu reč `for`. Ona govori Jikiju da želimo da napravimo neku petlju. Zato on pogleda napred, vidi `of` i zna da želimo da napravimo „for of“ petlju.
+Najpre imamo ključnu reč `for`. Ona govori Džikiju da želimo da napravimo neku petlju. Zato on pogleda napred, vidi `of` i zna da želimo da napravimo „for of“ petlju.
 
 A to znači da, umesto da koristimo `repeat` petlju gde kažemo „Hajde da prođemo kroz 10 ponavljanja,“ kažemo „Hajde da prođemo kroz sva slova u stringu.“ To je ono što „for of“ znači.
 
 Zatim imamo ovaj deo `let letter` (slovo). To je potpuno isto kao ono iznad sa `let name`. Samo pravimo promenljivu pod nazivom `letter`.
 
-Razlika je u tome što, umesto da eksplicitno kažemo šta ide u nju, govorimo Jikiju da u nju stavlja svako slovo iz stringa, jedno po jedno.
+Razlika je u tome što, umesto da eksplicitno kažemo šta ide u nju, govorimo Džikiju da u nju stavlja svako slovo iz stringa, jedno po jedno.
 
-Tako da Jiki vidi `for`, proveri `of` i krene. Pogleda prvo slovo u stringu, u ovom slučaju `"J"`, i stavi ga u novu kutiju pod nazivom `letter`. Inače, mogli smo da je nazovemo bilo kako. Ne mora biti `letter`. Mi smo ovde jednostavno odlučili da je nazovemo `letter`.
+Tako da Džiki vidi `for`, proveri `of` i krene. Pogleda prvo slovo u stringu, u ovom slučaju `"J"`, i stavi ga u novu kutiju pod nazivom `letter`. Inače, mogli smo da je nazovemo bilo kako. Ne mora biti `letter`. Mi smo ovde jednostavno odlučili da je nazovemo `letter`.
 
 Onda izvrši kod unutar vitičastih zagrada, a tu možeš da radiš sve što bi radio i bilo gde drugde u kodu. Jedina razlika je u tome što će se ovaj blok koda izvršiti po jednom za svako slovo u stringu, i imaće na raspolaganju ovu promenljivu.
 
-Svaki put kada Jiki dođe do zatvorene vitičaste zagrade, baci kutiju sa `letter` i napravi novu sa sledećim slovom u njoj. Tako da će prvi put baciti `"J"` i umesto toga staviti `"e"` u kutiju. Zatim će uraditi isto za `"r"`, pa za `"e"`, pa za `"m"`, pa za `"y"`. Šest slova, šest krugova kroz petlju. Potrebno je malo vremena da se navikneš na sintaksu, ali sam koncept i nije toliko težak.
+Svaki put kada Džiki dođe do zatvorene vitičaste zagrade, baci kutiju sa `letter` i napravi novu sa sledećim slovom u njoj. Tako da će prvi put baciti `"J"` i umesto toga staviti `"e"` u kutiju. Zatim će uraditi isto za `"r"`, pa za `"e"`, pa za `"m"`, pa za `"y"`. Šest slova, šest krugova kroz petlju. Potrebno je malo vremena da se navikneš na sintaksu, ali sam koncept i nije toliko težak.
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/string-iteration/jiki-letter-box-loop.webp"
-  alt="Jiki baca staru kutiju sa slovom i ubacuje sledeće slovo u novu kutiju označenu sa letter, ponavljajući za svako slovo u stringu"
+  alt="Džiki baca staru kutiju sa slovom i ubacuje sledeće slovo u novu kutiju označenu sa letter, ponavljajući za svako slovo u stringu"
   width="500"
   height="168"
 />

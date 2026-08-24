@@ -16,7 +16,7 @@ Do sada smo videli mašine koje pomalo liče na kutije, poput one za `move` (pom
   height="400"
 />
 
-Ali neke mašine imaju otvore, kao ova mašina `walk` (šetaj). Mašina `walk` je sasvim slična mašini `move`. Ona pomera lik (engl. _character_) napred, s tim što Jiki može da iskoristi otvor da odredi koliko koraka tvoj lik treba da napravi napred. Dakle, umesto da moraš da koristiš funkciju `move` tri puta zaredom, `move`, `move`, `move`, sada možeš samo da upotrebiš funkciju `walk` i kažeš Jikiju da stavi broj tri u mašinu.
+Ali neke mašine imaju otvore, kao ova mašina `walk` (šetaj). Mašina `walk` je sasvim slična mašini `move`. Ona pomera lik (engl. _character_) napred, s tim što Džiki može da iskoristi otvor da odredi koliko koraka tvoj lik treba da napravi napred. Dakle, umesto da moraš da koristiš funkciju `move` tri puta zaredom, `move`, `move`, `move`, sada možeš samo da upotrebiš funkciju `walk` i kažeš Džikiju da stavi broj tri u mašinu.
 
 <img
   class="concept-image"
@@ -32,19 +32,19 @@ Da bismo to uradili u kodu, i dalje pišemo ime funkcije, u ovom slučaju `walk`
 walk(3)
 ```
 
-Kada Jiki to vidi, uzeće broj tri, a ti taj broj možeš zamisliti kao mali novčić, i on će ga staviti u ulazni otvor mašine pre nego što povuče ručicu da je upali.
+Kada Džiki to vidi, uzeće broj tri, a ti taj broj možeš zamisliti kao mali novčić, i on će ga staviti u ulazni otvor mašine pre nego što povuče ručicu da je upali.
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/using-functions-with-inputs/jiki-coin-into-slot.webp"
-  alt="Jiki ubacuje broj 3 poput novčića u otvor mašine walk, a zatim okreće ručicu"
+  alt="Džiki ubacuje broj 3 poput novčića u otvor mašine walk, a zatim okreće ručicu"
   width="421"
   height="400"
 />
 
-Za funkcije koje crtaju pravougaonike i krugove, moraš da kažeš Jikiju da ubaci nekoliko različitih brojeva, određujući stvari poput toga koliko udaljeno od leve ivice treba da bude, koliko udaljeno od vrha, širinu pravougaonika, visinu pravougaonika.
+Za funkcije koje crtaju pravougaonike i krugove, moraš da kažeš Džikiju da ubaci nekoliko različitih brojeva, određujući stvari poput toga koliko udaljeno od leve ivice treba da bude, koliko udaljeno od vrha, širinu pravougaonika, visinu pravougaonika.
 
-U Jikijevom svetu, to su samo različiti otvori, po jedan za svaki od tih brojeva.
+U Džikijevom svetu, to su samo različiti otvori, po jedan za svaki od tih brojeva.
 
 <img
   class="concept-image"
@@ -60,8 +60,8 @@ Dakle, u kodu samo napišemo svaki broj i između njih stavimo zarez. Ime funkci
 rectangle(10, 20, 30, 40)
 ```
 
-Ako pokušaš da upotrebiš funkciju sa pogrešnim brojem ulaza, dobićeš grešku. Na primer, ako pokušaš da staviš jedan ulaz u mašinu koja nema otvor, Jiki će ti reći da ne možeš. A ako pokušaš da koristiš mašinu koja ima ulazni otvor, ali ne kažeš Jikiju šta da stavi u njega, i on će stati i žaliti se. Probaj ako si malo buntovno raspoložen i vidi šta se dešava. Pravljaćeš mnogo ovakvih grešaka kako stvari postaju složenije. Pokušaj da se ne stresiraš ili uznemiravaš zbog toga. Svi učimo iz grešaka. To je bukvalno najbrži način da naš mozak stvarno usvoji stvari. I svi prave ove greške. Svi smo počeli od nule, tako da nemoj da se stresiraš.
+Ako pokušaš da upotrebiš funkciju sa pogrešnim brojem ulaza, dobićeš grešku. Na primer, ako pokušaš da staviš jedan ulaz u mašinu koja nema otvor, Džiki će ti reći da ne možeš. A ako pokušaš da koristiš mašinu koja ima ulazni otvor, ali ne kažeš Džikiju šta da stavi u njega, i on će stati i žaliti se. Probaj ako si malo buntovno raspoložen i vidi šta se dešava. Pravljaćeš mnogo ovakvih grešaka kako stvari postaju složenije. Pokušaj da se ne stresiraš ili uznemiravaš zbog toga. Svi učimo iz grešaka. To je bukvalno najbrži način da naš mozak stvarno usvoji stvari. I svi prave ove greške. Svi smo počeli od nule, tako da nemoj da se stresiraš.
 
-Još jedna stvar vredna pomena: ponekad ćeš u vežbama videti linije koje počinju sa dve kose crte, `//`. One se zovu komentari (engl. _comments_). To su privatne beleške samo za tebe koje će Jiki potpuno ignorisati. Dakle, ako Jiki vidi liniju koja počinje sa ove dve kose crte, jednostavno će je preskočiti i preći na sledeću liniju. Ovi komentari ti daju način da pišeš sopstvene beleške. Veoma su korisni da te podsete kako stvari funkcionišu. Često se komentari pišu i za tebe, tako da kada započneš vežbu, oni mogu da ti sugerišu gde treba da napišeš kod ili kako da rešiš nešto. Ali slobodno dodaj i svoje komentare.
+Još jedna stvar vredna pomena: ponekad ćeš u vežbama videti linije koje počinju sa dve kose crte, `//`. One se zovu komentari (engl. _comments_). To su privatne beleške samo za tebe koje će Džiki potpuno ignorisati. Dakle, ako Džiki vidi liniju koja počinje sa ove dve kose crte, jednostavno će je preskočiti i preći na sledeću liniju. Ovi komentari ti daju način da pišeš sopstvene beleške. Veoma su korisni da te podsete kako stvari funkcionišu. Često se komentari pišu i za tebe, tako da kada započneš vežbu, oni mogu da ti sugerišu gde treba da napišeš kod ili kako da rešiš nešto. Ali slobodno dodaj i svoje komentare.
 
 Na dnu uputstava za vežbu, videćeš informacije o funkcijama koje možeš da koristiš, tačno koji su ulazi koje treba da uneseš.

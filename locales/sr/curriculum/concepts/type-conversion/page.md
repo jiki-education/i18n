@@ -4,7 +4,7 @@ description: "Pretvaranje vrednosti jednog tipa u drugi, kao što je pretvaranje
 en_md5: 8d85e3d274a6cdfdb74bd0488b685f18
 ---
 
-Svaka vrednost u našim programima ima svoj tip. `"7"` je string, a `7` je broj. Na prvi pogled skoro da izgledaju isto, ali Jiki ih tretira sasvim različito. Ne možeš da sabereš string `"7"` i broj `3` i očekuješ da dobiješ `10`, jer je jedno komad teksta, a drugo je količina.
+Svaka vrednost u našim programima ima svoj tip. `"7"` je string, a `7` je broj. Na prvi pogled skoro da izgledaju isto, ali Džiki ih tretira sasvim različito. Ne možeš da sabereš string `"7"` i broj `3` i očekuješ da dobiješ `10`, jer je jedno komad teksta, a drugo je količina.
 
 Ovo se zove konverzija tipova (engl. _type conversion_), a postoje dve konverzije koje ćeš stalno koristiti.
 

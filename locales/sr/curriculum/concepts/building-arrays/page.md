@@ -10,7 +10,7 @@ Pa, za to nizovi imaju metodu `push` (dodavanje na kraj niza).
 
 `push` prima jedan ulaz – stvar koju želiš da prikačiš na kraj niza. Dakle, u ovom slučaju želimo da dodamo reč `"Isaac"` na kraj niza koji već sadrži `"DJ"` i `"Bethany"`.
 
-Da bi ovo uradio, Jiki izvadi niz iz kutije, prikači `"Isaac"` na kraj lanca i zatim celu stvar vrati u kutiju. Obrati pažnju: za razliku od ranije sa stringovima, gde je Jiki svaki put kreirao novi string, ovde on zapravo menja niz.
+Da bi ovo uradio, Džiki izvadi niz iz kutije, prikači `"Isaac"` na kraj lanca i zatim celu stvar vrati u kutiju. Obrati pažnju: za razliku od ranije sa stringovima, gde je Džiki svaki put kreirao novi string, ovde on zapravo menja niz.
 
 Jedan šablon koji ćeš često viđati u programiranju jeste da počneš sa praznim nizom i da ga postepeno gradiš. Zamisli da imamo veliku listu imena i da želimo da prođemo kroz njih. Svaki put kada naiđemo na nekog ko je mentor, dodajemo ga u naš niz.
 

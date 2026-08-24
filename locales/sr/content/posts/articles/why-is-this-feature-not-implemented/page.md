@@ -22,7 +22,7 @@ Verzije JavaScript-a i Python-a koje koristiš u Jikiju su **posebno dizajnirane
 
 Programski jezici su dizajnirani za **profesionalce**. Sadrže napredne funkcionalnosti koje pomažu iskusnim programerima da rade brže, plus istorijski teret – funkcionalnosti koje je verovatno trebalo ukloniti pre više godina, ali su ostale da bi stari sistemi nastavili da rade.
 
-Kada učiš, ove funkcionalnosti stvaraju zabunu. Uklanjanjem njih, Jiki ti omogućava da se fokusiraš na ono što je važno: **učenje da razmišljaš kao programer**.
+Kada učiš, ove funkcionalnosti stvaraju zabunu. Uklanjanjem njih, Džiki ti omogućava da se fokusiraš na ono što je važno: **učenje da razmišljaš kao programer**.
 
 ### Opasne prečice
 

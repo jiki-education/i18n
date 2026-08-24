@@ -1,10 +1,10 @@
 ---
 title: "Korišćenje `repeat`-a bez broja ponavljanja"
-description: "Ostavljanje zagrada `repeat` petlje praznim tako da Jiki nastavi sve dok mu nešto drugo ne kaže da stane."
+description: "Ostavljanje zagrada `repeat` petlje praznim tako da Džiki nastavi sve dok mu nešto drugo ne kaže da stane."
 en_md5: f1f98b46bedb1b5abc72aa1b856ee8ae
 ---
 
-Dosad, kad god koristiš `repeat` petlju, uvek navodiš broj koji kaže koliko puta treba da se ponovi. Ponovi pet puta, 10 puta, 40 puta. Ponekad za ovo koristiš i promenljivu. Ali Jikiju uvek tačno kažeš koliko puta da ponovi petlju. Međutim, ponekad ne znamo unapred koliko puta treba ponoviti. Razmisli o lavirintu. Još na samom početku ovog kursa, rešavaš lavirint tako što napišeš konkretne poteze. Možeš da vidiš lavirint, izbrojiš korake i napišeš tačan broj poteza.
+Dosad, kad god koristiš `repeat` petlju, uvek navodiš broj koji kaže koliko puta treba da se ponovi. Ponovi pet puta, 10 puta, 40 puta. Ponekad za ovo koristiš i promenljivu. Ali Džikiju uvek tačno kažeš koliko puta da ponovi petlju. Međutim, ponekad ne znamo unapred koliko puta treba ponoviti. Razmisli o lavirintu. Još na samom početku ovog kursa, rešavaš lavirint tako što napišeš konkretne poteze. Možeš da vidiš lavirint, izbrojiš korake i napišeš tačan broj poteza.
 
 <img
   class="concept-image"
@@ -27,27 +27,27 @@ A šta ako bih ti rekao: „Napiši mi kod koji može da reši bilo koji lavirin
 <img
   class="concept-image"
   src="/static/images/concept-assets/repeat-while/maze-example.webp"
-  alt="Nekoliko različitih lavirinata različitih oblika i veličina, a Jiki se pita kako da reši bilo koji od njih"
+  alt="Nekoliko različitih lavirinata različitih oblika i veličina, a Džiki se pita kako da reši bilo koji od njih"
   width="402"
   height="400"
 />
 
-Zato ti treba način da Jikiju jednostavno kažeš da nastavi dalje. Da nastavi da proverava kuda može da ide, da donosi odluke, da ide napred, iznova i iznova, sve dok ne završiš.
+Zato ti treba način da Džikiju jednostavno kažeš da nastavi dalje. Da nastavi da proverava kuda može da ide, da donosi odluke, da ide napred, iznova i iznova, sve dok ne završiš.
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/repeat-while/jiki-treadmill.webp"
-  alt="Jiki trči na traci za trčanje, jednostavno nastavlja iznova i iznova"
+  alt="Džiki trči na traci za trčanje, jednostavno nastavlja iznova i iznova"
   width="428"
   height="400"
 />
 
-A način da to uradiš je zaista jednostavan. Samo nemoj da daješ broj uz ključnu reč „repeat`„. Samo ostavi te zagrade prazne. Ako to uradiš, Jiki će jednostavno nastaviti sve dok mu nešto drugo ne kaže da stane. Kasnije ćemo pogledati šta je to nešto drugo. Ali za sada, on će nastaviti sve dok vežba ne bude gotova, ili dok ne odluči da je već predugo išao, da mu treba pauza i da mu je dosta.
+A način da to uradiš je zaista jednostavan. Samo nemoj da daješ broj uz ključnu reč „repeat`„. Samo ostavi te zagrade prazne. Ako to uradiš, Džiki će jednostavno nastaviti sve dok mu nešto drugo ne kaže da stane. Kasnije ćemo pogledati šta je to nešto drugo. Ali za sada, on će nastaviti sve dok vežba ne bude gotova, ili dok ne odluči da je već predugo išao, da mu treba pauza i da mu je dosta.
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/repeat-while/jiki-treadmill-exhausted.webp"
-  alt="Jiki iscrpljeno klonuo preko trake za trčanje nakon dugog hodanja, spreman da odustane i napravi pauzu"
+  alt="Džiki iscrpljeno klonuo preko trake za trčanje nakon dugog hodanja, spreman da odustane i napravi pauzu"
   width="500"
   height="378"
 />

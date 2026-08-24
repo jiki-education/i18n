@@ -16,7 +16,7 @@ Dobro došao u **Jiki**! Zaista smo uzbuđeni što si ovde.
 
 Jiki je interaktivna platforma osmišljena da ti pomogne da naučiš programiranje. Zasniva se na jednostavnoj ideji: **programiranje se uči kroz pisanje koda**, a ne gledanjem video zapisa, rešavanjem kvizova ili jednostavnih vežbi.
 
-Od prvog dana gradiš prave projekte: igre, animacije i alate, i pišeš **desetine, pa stotine (možda čak i hiljade)** linija koda. Tu je i lik po imenu **Jiki** koji izvršava tvoj kod i pokazuje ti tačno šta se dešava dok se tvoji programi izvršavaju. To čini nevidljivo vidljivim i pomaže ti da razumeš kako kod zapravo funkcioniše.
+Od prvog dana gradiš prave projekte: igre, animacije i alate, i pišeš **desetine, pa stotine (možda čak i hiljade)** linija koda. Tu je i lik po imenu **Džiki** koji izvršava tvoj kod i pokazuje ti tačno šta se dešava dok se tvoji programi izvršavaju. To čini nevidljivo vidljivim i pomaže ti da razumeš kako kod zapravo funkcioniše.
 
 Predajemo ili kroz **JavaScript** ili kroz **Python** (isti plan i program – ti biraš jezik), ali smo iskustvo prilagodili tako da uklonimo one zbunjujuće delove o koje početnici najčešće zapinju. Kako napreduješ, otključava se sve više mogućnosti.
 

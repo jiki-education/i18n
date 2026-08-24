@@ -4,12 +4,12 @@ description: "Korišćenje ključne reči `if` da se blok koda izvrši samo kada
 en_md5: 81c99eea67b02e082ca6c9d7988a3914
 ---
 
-Postoji ključna reč koja nam pomaže da kažemo Jikiju da nešto uradi samo u određenim situacijama. Možda pišeš kod koji čuva ulaz u bar, recimo da si izbacivač, i Jiki treba da otvori vrata samo ako je neko prikladno obučen. Ili možda pišeš kod u kome si zadužen da mahneš kariranom zastavicom na kraju trke, ali Jiki mora da zna da to treba da uradi samo u poslednjem krugu. U ovakvim situacijama koristićemo ključnu reč `if`.
+Postoji ključna reč koja nam pomaže da kažemo Džikiju da nešto uradi samo u određenim situacijama. Možda pišeš kod koji čuva ulaz u bar, recimo da si izbacivač, i Džiki treba da otvori vrata samo ako je neko prikladno obučen. Ili možda pišeš kod u kome si zadužen da mahneš kariranom zastavicom na kraju trke, ali Džiki mora da zna da to treba da uradi samo u poslednjem krugu. U ovakvim situacijama koristićemo ključnu reč `if`.
 
 <img
   class="concept-image"
   src="/static/images/concept-assets/if/bar-door-scenario.webp"
-  alt="Jiki kao izbacivač odlučuje da li da pusti ljude u noćni klub"
+  alt="Džiki kao izbacivač odlučuje da li da pusti ljude u noćni klub"
   width="292"
   height="400"
 />
@@ -17,7 +17,7 @@ Postoji ključna reč koja nam pomaže da kažemo Jikiju da nešto uradi samo u 
 <img
   class="concept-image"
   src="/static/images/concept-assets/if/waving-flag.webp"
-  alt="Jiki spreman da mahne kariranom zastavicom na kraju trke"
+  alt="Džiki spreman da mahne kariranom zastavicom na kraju trke"
   width="266"
   height="400"
 />
@@ -45,7 +45,7 @@ Za zapisivanje ovih poređenja koristimo simbole. Verovatno su ti već poznati i
 
 A to nam pomaže da se ne pomešamo sa situacijama kada postavljamo ili menjamo promenljive, gde znak jednakosti znači stavi ovo u kutiju. Samo zapamti: tri znaka jednakosti za poređenje.
 
-Možeš da porediš i stringove. Dakle, `"hello"` jednako `"hello"`. To je tačno. Ta dva stringa su ista. Ali ovde budi na oprezu, jer Jiki poredi svaki pojedinačni karakter (engl. _character_) u oba stringa, na oba papirića. Zato `"Hello"` sa velikim H nije jednako `"hello"` sa malim h. To su različiti stringovi. Njihovo poređenje bi zato bilo netačno, jer su veliko H i malo h različiti karakteri.
+Možeš da porediš i stringove. Dakle, `"hello"` jednako `"hello"`. To je tačno. Ta dva stringa su ista. Ali ovde budi na oprezu, jer Džiki poredi svaki pojedinačni karakter (engl. _character_) u oba stringa, na oba papirića. Zato `"Hello"` sa velikim H nije jednako `"hello"` sa malim h. To su različiti stringovi. Njihovo poređenje bi zato bilo netačno, jer su veliko H i malo h različiti karakteri.
 
 Uzgred, tačno i netačno se zovu _Booleans_ (logičke vrednosti), što je još jedna reč koja zvuči tehnički. Ali zapravo je vrlo jednostavna. To je samo formalan način da se kaže da je nešto ili tačno ili netačno. Pa ako naiđeš na reč Boolean, to prosto znači tačno ili netačno. Hajde da vidimo ovo na delu. Zamisli da pravimo tog robota izbacivača za klub, i reći ćemo da izbacivač treba da otvori vrata samo ako osoba ima 21 godinu ili više. Imamo funkciju `askAge` (pitaj za godine), kojom možemo da saznamo nečije godine, a njen rezultat ćemo sačuvati u promenljivoj po imenu `age` (godine). Onda možemo da kažemo: ako je `age` veće od 20, otvorićemo vrata. Dakle, ako `askAge` vrati `30`, otvaramo ih, a ako vrati `12`, ne otvaramo.
 
@@ -59,7 +59,7 @@ if (age >= 21) {
 <img
   class="concept-image"
   src="/static/images/concept-assets/if/bouncer-open-close.webp"
-  alt="Jiki otvara vrata osobi koja ima dovoljno godina, a ne pušta unutra osobu koja je premlada"
+  alt="Džiki otvara vrata osobi koja ima dovoljno godina, a ne pušta unutra osobu koja je premlada"
   width="410"
   height="400"
 />

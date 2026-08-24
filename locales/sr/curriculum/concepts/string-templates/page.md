@@ -21,7 +21,7 @@ Koristimo ih da napravimo šablon koji može da sadrži druge stringove. A zatim
 <img
 class="concept-image"
 src="/static/images/concept-assets/string-templates/jiki-name-box.webp"
-alt="Jiki drži kutiju sa oznakom „name", vrednost koja se ubacuje u šablon."
+alt="Džiki drži kutiju sa oznakom „name", vrednost koja se ubacuje u šablon."
 width="207"
 height="400"
 />

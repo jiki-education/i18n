@@ -6,7 +6,7 @@ en_md5: bd746b6c93016dcb2789bd26e38ab33a
 
 Ključna reč `break` može da se koristi bilo gde u telu bilo koje petlje.
 
-Deo između vitičastih zagrada, to je telo. I kada ga Jiki vidi, odmah će izaći iz petlje i preći na sledeći kod ispod petlje.
+Deo između vitičastih zagrada, to je telo. I kada ga Džiki vidi, odmah će izaći iz petlje i preći na sledeći kod ispod petlje.
 
 Zato, ako imamo ograničenje da se ova petlja izvrši 50 puta, ali želimo da se zaustavimo ako je korisnik pucao pet puta, mogli bismo da imamo `for` petlju na početku koja broji do 50.
 

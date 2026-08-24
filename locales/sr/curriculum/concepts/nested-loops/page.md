@@ -17,7 +17,7 @@ repeat(5) {
 <img
   class="concept-image"
   src="/static/images/concept-assets/nested-loops/single-row-flowers.webp"
-  alt="Jiki za tablom sa jednim urednim redom posađenog cveća ispod"
+  alt="Džiki za tablom sa jednim urednim redom posađenog cveća ispod"
   width="406"
   height="400"
 />
@@ -27,7 +27,7 @@ Ali šta ako želimo mrežu cveća sa redovima i kolonama? Recimo četiri reda s
 <img
   class="concept-image"
   src="/static/images/concept-assets/nested-loops/grid-question.webp"
-  alt="Mreža cveća četiri puta pet sa Jikijem koji razmišlja kako da je nacrta"
+  alt="Mreža cveća četiri puta pet sa Džikijem koji razmišlja kako da je nacrta"
   width="383"
   height="400"
 />
@@ -36,9 +36,9 @@ Imamo petlju koja crta jedan red cveća. Kako možeš da iskoristiš tu istu pet
 
 Jedna mogućnost je da jednostavno kopiraš i nalepiš tu petlju četiri puta i promeniš gornju poziciju za svaki. I to bi radilo. Bilo bi u redu. Ali ponavlja se, a postoji i bolji način. Znamo da kada se kod ponavlja, možemo da koristimo petlju da pojednostavimo stvari.
 
-Ovde možemo da koristimo jednu petlju unutar druge petlje. Jednu petlju za redove i drugu za cveće u tom redu. Hajde da počnemo tako što ćemo da dodamo `repeat` petlju oko postojećeg koda, da osetiš kako to radi. I ponovićemo samo jednom. Dakle, kažemo Jikiju da uradi sve unutar ovih spoljnih vitičastih zagrada jednom. To ima potpuno isti efekat kao da uopšte nemamo ovu spoljnu petlju. Kažemo Jikiju da ponovi nešto jednom, što je isto kao da mu kažemo da to uradi bez `repeat`-a. Ali ovaj kod ovako funkcioniše. To je ispravan, validan kod. Imamo jednu petlju unutar druge petlje.
+Ovde možemo da koristimo jednu petlju unutar druge petlje. Jednu petlju za redove i drugu za cveće u tom redu. Hajde da počnemo tako što ćemo da dodamo `repeat` petlju oko postojećeg koda, da osetiš kako to radi. I ponovićemo samo jednom. Dakle, kažemo Džikiju da uradi sve unutar ovih spoljnih vitičastih zagrada jednom. To ima potpuno isti efekat kao da uopšte nemamo ovu spoljnu petlju. Kažemo Džikiju da ponovi nešto jednom, što je isto kao da mu kažemo da to uradi bez `repeat`-a. Ali ovaj kod ovako funkcioniše. To je ispravan, validan kod. Imamo jednu petlju unutar druge petlje.
 
-Dakle, šta se dešava ako promenimo tu spoljnu petlju da ponavlja dva puta? Sada će Jiki da izvrši čitavu stvar sa `plant` (posaditi) pet puta, dva puta. Posadiće 10 cvetova. Ali svi ti cvetovi će biti u istom redu.
+Dakle, šta se dešava ako promenimo tu spoljnu petlju da ponavlja dva puta? Sada će Džiki da izvrši čitavu stvar sa `plant` (posaditi) pet puta, dva puta. Posadiće 10 cvetova. Ali svi ti cvetovi će biti u istom redu.
 
 Na isti način na koji moramo da pomeramo poziciju sa leva na desno malo svaki put, nakon što nacrtamo ceo red, moramo da pomerimo i vertikalnu poziciju. Pa kako to da uradimo? Možemo da dodamo spoljnu promenljivu za gornju poziciju, koristimo je u našoj `plant` funkciji, a zatim je povećamo za 10 nakon svakog reda.
 
@@ -61,11 +61,11 @@ repeat(4) {
 <img
   class="concept-image"
   src="/static/images/concept-assets/nested-loops/flower-grid-result.webp"
-  alt="Završena mreža cveća četiri puta pet sa srećnim Jikijem koji pokazuje dva podignuta palca"
+  alt="Završena mreža cveća četiri puta pet sa srećnim Džikijem koji pokazuje dva podignuta palca"
   width="389"
   height="400"
 />
 
-Ključna stvar koju treba razumeti je da Jiki završi sav posao u unutrašnjoj petlji (engl. _inner loop_) pre nego što se vrati na spoljnu petlju (engl. _outer loop_). On ne skače napred-nazad. Završi unutrašnju petlju, a zatim prelazi na sledeći korak spoljne petlje.
+Ključna stvar koju treba razumeti je da Džiki završi sav posao u unutrašnjoj petlji (engl. _inner loop_) pre nego što se vrati na spoljnu petlju (engl. _outer loop_). On ne skače napred-nazad. Završi unutrašnju petlju, a zatim prelazi na sledeći korak spoljne petlje.
 
 U ovoj situaciji, možeš da zamisliš spoljnu petlju kao da upravlja grupama ili redovima, a unutrašnju petlju kao da upravlja svakom stavkom u toj grupi ili svakim cvetom u tom redu. Dakle, u našem primeru, spoljna petlja pravi četiri reda, a unutrašnja petlja stavlja pet cvetova, pet stavki u svaku grupu.

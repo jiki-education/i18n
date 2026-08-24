@@ -1,6 +1,6 @@
 ---
 title: "Reši lavirint"
-description: "Provedi Jikija kroz lavirint pomoću jednostavnih instrukcija."
+description: "Provedi Džikija kroz lavirint pomoću jednostavnih instrukcija."
 en_md5: bbd838559fba4dcf527a55ba135703cd
 ---
 

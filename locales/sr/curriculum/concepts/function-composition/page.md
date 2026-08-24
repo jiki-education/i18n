@@ -60,7 +60,7 @@ Pa ako pokušaš da referenciraš promenljivu `count` (brojač) iz unutrašnjost
 <img
   class="concept-image"
   src="/static/images/concept-assets/function-composition/jiki-thinking.webp"
-  alt="Jiki razmišlja, sa sijalicom iznad glave, o tome kako promenljive ostaju privatne za svaku funkciju"
+  alt="Džiki razmišlja, sa sijalicom iznad glave, o tome kako promenljive ostaju privatne za svaku funkciju"
   width="361"
   height="353"
 />

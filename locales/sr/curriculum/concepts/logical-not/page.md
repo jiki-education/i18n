@@ -34,7 +34,7 @@ Još jedna stvar u vezi sa ovim. Ponekad ćeš imati promenljivu koja je tačna,
   height="352"
 />
 
-To bismo mogli uraditi tako što bismo rekli: „Ako je `movingRight` jednako tačno, `movingRight` je netačno. U suprotnom, `movingRight` je tačno.“ To je način da se promenljiva prebaci. Dakle, Jiki će pogledati `movingRight` da vidi da li je tačno ili netačno, a zatim će izračunati suprotno i vratiti tu vrednost u kutiju.
+To bismo mogli uraditi tako što bismo rekli: „Ako je `movingRight` jednako tačno, `movingRight` je netačno. U suprotnom, `movingRight` je tačno.“ To je način da se promenljiva prebaci. Dakle, Džiki će pogledati `movingRight` da vidi da li je tačno ili netačno, a zatim će izračunati suprotno i vratiti tu vrednost u kutiju.
 
 ```javascript
 if (movingRight === true) {
@@ -52,4 +52,4 @@ movingRight = !movingRight
 
 I to ga okrene. `!movingRight` znači suprotno od onoga što je bilo prethodno.
 
-Dakle, ako je `movingRight` bilo tačno, sada je netačno. Ako je bilo netačno, sada je tačno. Jiki uzima ono što je trenutno u kutiji, i taj bang mu govori da nađe suprotno. Dakle, suprotno od tačno je netačno. Suprotno od netačno je tačno, a zatim on to vraća natrag u kutiju. Ovo je potpuno isto kao i ona duža if/else naredba, samo je mnogo urednije i sažetije napisati.
+Dakle, ako je `movingRight` bilo tačno, sada je netačno. Ako je bilo netačno, sada je tačno. Džiki uzima ono što je trenutno u kutiji, i taj bang mu govori da nađe suprotno. Dakle, suprotno od tačno je netačno. Suprotno od netačno je tačno, a zatim on to vraća natrag u kutiju. Ovo je potpuno isto kao i ona duža if/else naredba, samo je mnogo urednije i sažetije napisati.
