@@ -1,38 +1,38 @@
 {
   "checks": {
-    "wrongPosition": "�",
-    "notResponsive": "�"
+    "wrongPosition": "الشمس إما في المكان الخطأ أو بحجم خاطئ. تحقّق من حسابات `sunX` و`sunY`، وتأكد من أنك تمرر `radius` إلى `circle`.",
+    "notResponsive": "كودك لا يتكيف بشكل صحيح عندما تكون قيمة `gap` هي {{gap}} وقيمة `radius` هي {{radius}}. يجب اشتقاق `sunX` و`sunY` من `gap` و`radius`، وليس من أرقام مثبتة."
   },
   "tasks": {
     "positionSun": {
-      "name": "�",
-      "description": "�"
+      "name": "ضع الشمس",
+      "description": "اشتق `sunX` و`sunY` من `canvasSize` و`gap` و`radius` بحيث تتكيف الشمس بشكل صحيح."
     }
   },
   "scenarios": {
     "positionSun": {
-      "name": "�",
-      "description": "�"
+      "name": "ضع الشمس",
+      "description": "اشتق موضع الشمس من `gap` و`radius` بحيث يتغير حجمها وموضعها بشكل صحيح."
     }
   },
   "hints": {
     "sunXPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أفكر في الإحداثي السيني للشمس؟",
+      "answer": "تخيّل الحافة اليمنى للوحة الرسم. حافة الشمس تبعد `gap` إلى يسار تلك الحافة. أمّا *المركز* فيقع أبعد نحو الداخل بمقدار نصف قطر إضافي."
     },
     "sunYPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أفكر في الإحداثي الصادي للشمس؟",
+      "answer": "الفكرة نفسها كما في الإحداثي السيني، لكن القياس يتمّ من الحافة العلوية للوحة الرسم إلى الأسفل بدلًا من الحافة اليمنى إلى الداخل."
     },
     "whyNotHardcode": {
-      "question": "�",
-      "answer": "�"
+      "question": "لماذا لا يمكنني كتابة الأرقام مباشرة؟",
+      "answer": "إذا ثبّتّ قيم `sunX` و`sunY`، فستبقى الشمس في مكان واحد عندما يتغير `gap` أو `radius`. أما اشتقاقهما من `gap` و`radius` فيُبقي الشمس في الزاوية مهما كانت القيم التي تختارها."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "ارسم دائرة مركزها عند (centerX, centerY) بنصف القطر المعطى واللون المعطى.",
+      "category": "رسم الأشكال"
     }
   }
 }

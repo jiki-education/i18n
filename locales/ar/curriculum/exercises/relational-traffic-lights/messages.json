@@ -1,53 +1,53 @@
 {
   "checks": {
-    "housingWrong": "�",
-    "redWrong": "�",
-    "yellowWrong": "�",
-    "greenWrong": "�",
-    "doesntScale": "�"
+    "housingWrong": "مستطيل الهيكل إما في المكان الخطأ أو بالحجم الخطأ. تحقق من `housingX`، و`housingY`، و`housingWidth`، و`housingHeight`.",
+    "redWrong": "الضوء الأحمر إما في المكان الخطأ أو بالحجم الخطأ. تحقق من `redY`.",
+    "yellowWrong": "الضوء الأصفر إما في المكان الخطأ أو بالحجم الخطأ. تحقق من `yellowY`.",
+    "greenWrong": "الضوء الأخضر إما في المكان الخطأ أو بالحجم الخطأ. تحقق من `greenY`.",
+    "doesntScale": "لا يتغيّر حجم كودك بشكل صحيح عندما يكون `radius` هو {{radius}}. يجب اشتقاق كل موضع وحجم من `center` و`radius`."
   },
   "tasks": {
     "buildRelationalTrafficLights": {
-      "name": "�",
-      "description": "�"
+      "name": "أنشئ إشارات المرور النسبية",
+      "description": "اشتق كل موضع وحجم من `center` و`radius` بحيث تتغيّر مقاسات إشارة المرور بشكل صحيح."
     }
   },
   "scenarios": {
     "buildRelationalTrafficLights": {
-      "name": "�",
-      "description": "�"
+      "name": "أنشئ إشارات المرور النسبية",
+      "description": "اشتق كل موضع وحجم من `center` و`radius`."
     }
   },
   "hints": {
     "howToWorkOutYellowCenter": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أحسب مركز الضوء الأصفر؟",
+      "answer": "لديك متغير `center` مُعطى لك. يمكنك ضبط `yellowY` ليكون مساويًا له."
     },
     "howToWorkOutRedCenter": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أحسب مركز الضوء الأحمر؟",
+      "answer": "إذا كانت الدائرتان متلامستين، فما المسافة بين مركزيهما؟ يمكنك طرح هذه المسافة من `center` للحصول على الضوء الأحمر."
     },
     "whereHousingStarts": {
-      "question": "�",
-      "answer": "�"
+      "question": "أين يبدأ مستطيل الهيكل؟",
+      "answer": "إذا كنت تعرف مركز الدائرة الحمراء، فيمكنك حساب أعلى الدائرة الحمراء. يبدأ الهيكل على بُعد نصف قطر واحد فوق (قبل) أعلى الدائرة الحمراء. وبالمثل، يمكنك حساب يسار الضوء ثم التحرك نصف قطر واحد أبعد للحصول على بداية الهيكل."
     },
     "howBigHousing": {
-      "question": "�",
-      "answer": "�"
+      "question": "ما الحجم الذي يجب أن يكون عليه الهيكل؟",
+      "answer": "إنه عرض الضوء، بالإضافة إلى مسافة داخلية قدرها نصف قطر واحد على كل جانب. الارتفاع هو نصفا قطر لكل ضوء بالإضافة إلى نصف قطر في الأعلى والأسفل للمسافة الداخلية."
     },
     "whyMultipleOfSomething": {
-      "question": "�",
-      "answer": "�"
+      "question": "لماذا يجب أن يكون كل شيء مضاعفًا لشيء آخر؟",
+      "answer": "إذا استخدمت رقمًا ثابتًا، فإن تغيير `radius` سيجعل حجم الهيكل غير مناسب للأضواء. استخدام صيغ تتضمن `radius` و`center` يُبقي الرسم كله متناسبًا."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "ارسم مستطيلًا في الموضع (left, top) بالعرض والارتفاع واللون المعطى.",
+      "category": "رسم الأشكال"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "ارسم دائرة مركزها (centerX, centerY) بنصف القطر واللون المعطى.",
+      "category": "رسم الأشكال"
     }
   }
 }

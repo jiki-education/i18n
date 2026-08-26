@@ -1,39 +1,39 @@
 {
   "checks": {
-    "baseCircle": "�",
-    "bodyCircle": "�",
-    "headCircle": "�"
+    "baseCircle": "دائرة القاعدة (السفلية) ليست صحيحة. تحقق من snowmanCenterX وbaseCenterY وbaseRadius.",
+    "bodyCircle": "دائرة الجسم (الوسطى) ليست صحيحة. تحقق من snowmanCenterX وbodyCenterY وbodyRadius.",
+    "headCircle": "دائرة الرأس (العلوية) ليست صحيحة. تحقق من snowmanCenterX وheadCenterY وheadRadius."
   },
   "tasks": {
     "buildSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "ابنِ رجل الثلج",
+      "description": "عيّن قيم المتغيرات بحيث يطابق رجل الثلج الصورة المستهدفة."
     }
   },
   "scenarios": {
     "buildSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "ابنِ رجل الثلج",
+      "description": "عيّن قيم المتغيرات الصحيحة لرسم رجل الثلج."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "لا أعرف من أين أبدأ",
+      "answer": "الكود الأصلي يرسم دائرة بيضاء إلى الجهة اليسرى. تحتاج إلى تغيير قيم snowmanCenterX وbaseCenterY وbaseRadius لتكون صحيحة من أجل وضعها فوق الدائرة السفلية في القالب. ثم عليك إضافة متغيرات للدوائر الأخرى."
     },
     "variableNotFoundError": {
-      "question": "�",
-      "answer": "�"
+      "question": "تظهر لي رسالة خطأ مثل «تعذر على Jiki العثور على متغير يُدعى 'XXX'»",
+      "answer": "هذا يعني أنك لم تنشئ المتغير (الصندوق على رفوف Jiki) باستخدام الكلمة المفتاحية `let`. عندما يقرأ Jiki الكود الذي يرسم الدوائر، يتوقع أن يجد الصناديق المُشار إليها، لكنها غير موجودة. لذا عليك إضافتها."
     },
     "stillNotDeclaredError": {
-      "question": "�",
-      "answer": "�"
+      "question": "أضفتُ المتغيرات لكن ما زالت تظهر لي رسالة خطأ «غير مُعرَّف»",
+      "answer": "تحقق من الإملاء - من المحتمل أن يكون لديك خطأ إملائي. تذكر أن حالة الأحرف مهمة: `bodycentery` ليست مثل `bodyCenterY`."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "ارسم دائرة مركزها (centerX, centerY) بنصف القطر واللون المُعطى.",
+      "category": "رسم الأشكال"
     }
   }
 }

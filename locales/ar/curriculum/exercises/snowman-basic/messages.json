@@ -1,43 +1,43 @@
 {
   "checks": {
-    "baseCircle": "�",
-    "bodyCircle": "�",
-    "headCircle": "�"
+    "baseCircle": "دائرة القاعدة (الأسفل) ليست صحيحة.",
+    "bodyCircle": "دائرة الجسم (المنتصف) ليست صحيحة.",
+    "headCircle": "دائرة الرأس (الأعلى) ليست صحيحة."
   },
   "tasks": {
     "buildSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "ابنِ رجل الثلج",
+      "description": "ارسم ثلاث دوائر لبناء رجل الثلج."
     }
   },
   "scenarios": {
     "buildSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "ابنِ رجل الثلج",
+      "description": "ارسم ثلاث دوائر لبناء رجل الثلج."
     }
   },
   "hints": {
     "howToDrawCircle": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أرسم دائرة على لوحة الرسم؟",
+      "answer": "استدعِ `circle(centerX, centerY, radius)` حيث `centerX` و`centerY` هما إحداثيا المركز، و`radius` هو حجمها."
     },
     "circlesHorizontalPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "أين يجب وضع الدوائر أفقيًا؟",
+      "answer": "تشترك الدوائر الثلاث في المركز الأفقي نفسه، لذا يكون `centerX` هو `50` لكل منها (عرض لوحة الرسم هو `100`)."
     },
     "howToStackCircles": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أُرصّ الدوائر الثلاث فوق بعضها؟",
+      "answer": "دائرة القاعدة هي الأكبر وتقع قرب الأسفل (قيمة `centerY` مرتفعة). كل دائرة فوقها لها `centerY` أصغر و`radius` أصغر."
     },
     "whatNumbersForRadii": {
-      "question": "�",
-      "answer": "�"
+      "question": "ما الأعداد التي يجب أن أستخدمها لأنصاف الأقطار؟",
+      "answer": "كل الأعداد في هذا التمرين قابلة للقسمة على `5`. جرّب نصف قطر القاعدة حوالي `20`، ونصف قطر الجسم حوالي `15`، ونصف قطر الرأس حوالي `10`، مع التعديل حتى تتطابق مع الصورة المستهدفة."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "ارسم دائرة مركزها في (centerX, centerY) بنصف القطر المعطى",
+      "category": "رسم الأشكال"
     }
   }
 }

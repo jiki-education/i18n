@@ -1,40 +1,40 @@
 {
   "errors": {
-    "positionNotNumber": "�"
+    "positionNotNumber": "يجب أن يكون الموضع عددًا"
   },
   "checks": {
-    "ballNotAtEnd": "�",
-    "missingPositions": "�"
+    "ballNotAtEnd": "لم تصل الكرة إلى الحفرة. موضعها {{ballX}}، لكن يجب أن تكون في الموضع 88.",
+    "missingPositions": "يجب أن تتدحرج الكرة عبر كل موضع على حدة، لا أن تقفز مباشرة إلى النهاية."
   },
   "tasks": {
     "rollBall": {
-      "name": "�",
-      "description": "�"
+      "name": "دحرج الكرة إلى الحفرة",
+      "description": "دحرج الكرة إلى الحفرة."
     }
   },
   "scenarios": {
     "rollBall": {
-      "name": "�",
-      "description": "�"
+      "name": "دحرج الكرة إلى الحفرة",
+      "description": "دحرج الكرة إلى الحفرة."
     }
   },
   "hints": {
     "dontKnowWhereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "لا أعرف من أين أبدأ",
+      "answer": "المفتاح هو تحريك الكرة خطوة واحدة إلى الأمام في كل مرة. يمكنك استخدام متغير للقيام بذلك. فكر في كيفية عمل ذلك."
     },
     "stillCantFigureItOut": {
-      "question": "�",
-      "answer": "�"
+      "question": "ما زلت لا أستطيع فهم ذلك",
+      "answer": "تريد إنشاء متغير لتتبع موضع الكرة. يجب أن يبدأ من موضعه الحالي، ثم يزيد بمقدار واحد عدة مرات. في كل مرة يزيد فيها يجب عليك استدعاء `moveTo(...)` مع تمرير المتغير كمدخل."
     }
   },
   "functions": {
     "moveTo": {
-      "description": "�",
-      "category": "�"
+      "description": "ينقل الكرة إلى **الموضع**.",
+      "category": "الحركة"
     }
   },
   "describers": {
-    "moveTo": "�"
+    "moveTo": "نقل الكرة إلى الموضع ${arg1}"
   }
 }
