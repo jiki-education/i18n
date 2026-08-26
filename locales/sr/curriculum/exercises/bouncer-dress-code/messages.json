@@ -13,16 +13,16 @@
       "notTurnedAway": "Gost u svečanoj odeći NE treba da bude odbijen."
     },
     "dress": {
-      "canapes": "Ona je u elegantnoj odeći, pa bi trebalo da joj se ponude kanapei, ali nisu joj ponuđeni.",
-      "noChampagne": "Šampanjac je za svečanu odeću, pa elegantno obučenom gostu ne treba da se ponudi.",
-      "letIn": "Gost u elegantnoj odeći treba da bude pušten unutra, ali ona nije.",
-      "notTurnedAway": "Gost u elegantnoj odeći NE treba da bude odbijen."
+      "canapes": "Ona je u poslovnoj odeći, pa bi trebalo da joj se ponude kanapei, ali nisu joj ponuđeni.",
+      "noChampagne": "Šampanjac je za svečanu odeću, pa poslovno obučenom gostu ne treba da se ponudi.",
+      "letIn": "Gost u poslovnoj odeći treba da bude pušten unutra, ali ona nije.",
+      "notTurnedAway": "Gost u poslovnoj odeći NE treba da bude odbijen."
     },
     "suit": {
-      "canapes": "On je u elegantnoj odeći, pa bi trebalo da mu se ponude kanapei, ali nisu mu ponuđeni.",
-      "noChampagne": "Šampanjac je za svečanu odeću, pa elegantno obučenom gostu ne treba da se ponudi.",
-      "letIn": "Gost u elegantnoj odeći treba da bude pušten unutra, ali on nije.",
-      "notTurnedAway": "Gost u elegantnoj odeći NE treba da bude odbijen."
+      "canapes": "On je u poslovnoj odeći, pa bi trebalo da mu se ponude kanapei, ali nisu mu ponuđeni.",
+      "noChampagne": "Šampanjac je za svečanu odeću, pa poslovno obučenom gostu ne treba da se ponudi.",
+      "letIn": "Gost u poslovnoj odeći treba da bude pušten unutra, ali on nije.",
+      "notTurnedAway": "Gost u poslovnoj odeći NE treba da bude odbijen."
     },
     "formalTeen": {
       "letIn": "Svako u svečanoj odeći se pušta unutra, bez obzira na godine, ali ona nije puštena.",
@@ -31,28 +31,28 @@
       "notTurnedAway": "Gost u svečanoj odeći NE treba da bude odbijen."
     },
     "smartTeen": {
-      "canapes": "Uz elegantnu odeću idu kanapei bez obzira na godine, ali njemu nisu ponuđeni.",
-      "noChampagne": "Šampanjac je za svečanu odeću, pa elegantno obučenom gostu ne treba da se ponudi.",
-      "letIn": "Gost u elegantnoj odeći treba da bude pušten unutra, ali on nije.",
-      "notTurnedAway": "Gost u elegantnoj odeći NE treba da bude odbijen."
+      "canapes": "Uz poslovnu odeću idu kanapei bez obzira na godine, ali njemu nisu ponuđeni.",
+      "noChampagne": "Šampanjac je za svečanu odeću, pa poslovno obučenom gostu ne treba da se ponudi.",
+      "letIn": "Gost u poslovnoj odeći treba da bude pušten unutra, ali on nije.",
+      "notTurnedAway": "Gost u poslovnoj odeći NE treba da bude odbijen."
     },
     "casualChildListed": {
       "letIn": "Osoba mlađa od 18 godina koja je na spisku gostiju sme da uđe, čak i u ležernoj odeći, ali nije puštena.",
       "notTurnedAway": "Osoba mlađa od 18 godina koja je na spisku gostiju NE treba da bude odbijena.",
       "noChampagne": "Nije u svečanoj odeći, pa nema šampanjca.",
-      "noCanapes": "Nije ni u svečanoj ni u elegantnoj odeći, pa nema kanapea."
+      "noCanapes": "Nije ni u svečanoj ni u poslovnoj odeći, pa nema kanapea."
     },
     "casualChildUnlisted": {
       "turnedAway": "Osoba mlađa od 18 godina u ležernoj odeći koja nije na spisku gostiju treba da bude odbijena.",
       "notLetIn": "Osoba mlađa od 18 godina u ležernoj odeći koja nije na spisku gostiju NE treba da bude puštena unutra.",
       "noChampagne": "Nije u svečanoj odeći, pa nema šampanjca.",
-      "noCanapes": "Nije ni u svečanoj ni u elegantnoj odeći, pa nema kanapea."
+      "noCanapes": "Nije ni u svečanoj ni u poslovnoj odeći, pa nema kanapea."
     },
     "casualAdultListed": {
       "turnedAway": "Izuzetak sa spiskom gostiju važi samo za mlađe od 18 godina, pa se odrasla osoba u ležernoj odeći odbija čak i ako je na spisku.",
       "notLetIn": "Odrasla osoba u ležernoj odeći NE treba da bude puštena unutra, čak ni ako je na spisku gostiju.",
       "noChampagne": "Nije u svečanoj odeći, pa nema šampanjca.",
-      "noCanapes": "Nije ni u svečanoj ni u elegantnoj odeći, pa nema kanapea."
+      "noCanapes": "Nije ni u svečanoj ni u poslovnoj odeći, pa nema kanapea."
     },
     "codeQuality": {
       "getOutfitCalledOnce": "Funkciju <code>getOutfit()</code> treba da upotrebiš samo jednom.",
@@ -64,7 +64,7 @@
   "tasks": {
     "checkDressCode": {
       "name": "Sprovedi pravila na vratima",
-      "description": "Proveri odeću svake osobe, njene godine i da li je na spisku gostiju, pa primeni pravila. Svečana ili elegantna odeća ulazi uz kanapee. Odrasli u svečanoj odeći dobijaju i šampanjac. Mlađi od 18 godina u drugoj odeći ulaze samo ako su na spisku gostiju. Svi ostali se odbijaju."
+      "description": "Proveri odeću svake osobe, njene godine i da li je na spisku gostiju, pa primeni pravila. Svečana ili poslovna odeća ulazi uz kanapee. Odrasli u svečanoj odeći dobijaju i šampanjac. Mlađi od 18 godina u drugoj odeći ulaze samo ako su na spisku gostiju. Svi ostali se odbijaju."
     }
   },
   "scenarios": {
@@ -120,7 +120,7 @@
     },
     "canapesRule": {
       "question": "Ko dobija kanapee i biva pušten unutra?",
-      "answer": "Svi koji su doterani, a to je bilo koja od četiri svečane ili elegantne odevne kombinacije. Sve ih možeš nabrojati u jednom uslovu pomoću `||`."
+      "answer": "Svi koji su doterani, a to je bilo koja od četiri svečane ili poslovne odevne kombinacije. Sve ih možeš nabrojati u jednom uslovu pomoću `||`."
     },
     "everyoneElse": {
       "question": "Šta sa svima ostalima?",

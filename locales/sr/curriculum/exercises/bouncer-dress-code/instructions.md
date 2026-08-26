@@ -10,7 +10,7 @@ Tvoj posao je da proveriš šta osoba nosi, kao i koliko ima godina, i da odluč
 
 ### Pravila
 
-- **Svako** u **svečanoj** ili **elegantnoj** odeći se pušta unutra (bez obzira na to da li je na spisku gostiju) i nude mu se kanapei.
+- **Svako** u **svečanoj** ili **poslovnoj** odeći se pušta unutra (bez obzira na to da li je na spisku gostiju) i nude mu se kanapei.
 - **Odraslima** (18 ili više godina) u **svečanoj** odeći se **uz to** nudi i šampanjac.
 - **Deca** (mlađa od 18) u bilo kojoj drugoj odeći smeju da uđu **samo ako** su na spisku gostiju.
 - Svi ostali se odbijaju.
@@ -18,7 +18,7 @@ Tvoj posao je da proveriš šta osoba nosi, kao i koliko ima godina, i da odluč
 Kategorije oblačenja:
 
 - **Svečano** znači `"ballgown"` ili `"tuxedo"`
-- **Elegantno** znači `"suit"` ili `"dress"`
+- **Poslovno** znači `"suit"` ili `"dress"`
 
 ### Tvoje mogućnosti
 
