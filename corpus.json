@@ -43,6 +43,33 @@
       "which is every exercise up to and including exercise/formal-dinner. It is the source of",
       "truth and is deliberately not copied here: these entries are the complement of it, so",
       "this list is what needs regenerating when that queue moves, and nothing else."
+    ],
+    "unshipped interpreter language": [
+      "TEMPORARY. Jiki is launching JAVASCRIPT-FIRST. The front-end curriculum's AGENTS.md says so",
+      "in as many words: we ship JavaScript, and Python and Jikiscript support come later. The",
+      "interpreters for those two languages exist in the source repo and carry a full English",
+      "message catalog, but no learner can select either language, so nothing in either catalog",
+      "can reach a screen.",
+      "",
+      "That makes them the same category as a not-yet-live exercise: English nobody is expected to",
+      "translate yet. Unlike an exercise there is no card copy to keep, because an interpreter",
+      "catalog is ALL INSIDES: runtime and syntax error messages, and nothing a listing renders. So",
+      "the exclusion is the whole item, with no \"scope\", which is the default.",
+      "",
+      "The javascript catalog is NOT here and must never be. It is the shipped language, it is what",
+      "every production locale already translates, and it is the one interpreter whose messages a",
+      "learner sees today.",
+      "",
+      "WHEN A LANGUAGE SHIPS, DELETE ITS LINE HERE, in the same change that makes it selectable.",
+      "Until then its catalog is invisible to completeness, so a shipped language left listed here",
+      "would let a locale be declared complete while every error that interpreter raises renders as",
+      "a raw key path (the interpreter runtime sets fallbackLng: false on purpose, so there is no",
+      "English to fall back to). That is the risk this trades against, deliberately, and only for as",
+      "long as the language is unreachable.",
+      "",
+      "The source of truth for which languages are shipped is the front-end, not this file: the",
+      "curriculum's JavaScript-first note and the language a lesson can actually be opened in.",
+      "These entries are the complement of that, so this list is what needs revisiting when it moves."
     ]
   },
   "exclude": [
@@ -210,6 +237,16 @@
       "type": "exercise-messages",
       "slug": "word-count",
       "reason": "not-yet-live exercise"
+    },
+    {
+      "type": "interpreter-messages",
+      "slug": "jikiscript",
+      "reason": "unshipped interpreter language"
+    },
+    {
+      "type": "interpreter-messages",
+      "slug": "python",
+      "reason": "unshipped interpreter language"
     }
   ]
 }

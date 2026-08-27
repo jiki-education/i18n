@@ -2227,6 +2227,49 @@ test("a field ENGLISH leaves blank is nothing to translate, not an unfinished tr
   );
 });
 
+// An unshipped interpreter language is excluded WHOLE, and the shipped one is
+// not. The pairing is the whole of the entry: excluding too much silently stops
+// counting javascript, which every production locale translates and every learner
+// reads today, and excluding too little holds all ten locales incomplete over two
+// catalogs nobody can reach. Both directions are one line away from each other in
+// corpus.json, so both are asserted.
+//
+// Gated on a checkout because the English side is what makes the count mean
+// anything, and skipped rather than silently passed without one.
+
+const INTERPRETER_TYPE = "interpreter-messages";
+
+test("the shipped interpreter is in the corpus and the unshipped ones are wholly out", () => {
+  assert.equal(exclusionScope(INTERPRETER_TYPE, "javascript"), null, "javascript is the language Jiki ships");
+  for (const slug of ["jikiscript", "python"]) {
+    assert.equal(exclusionScope(INTERPRETER_TYPE, slug), SCOPE_ITEM, `${slug} is not selectable, so its catalog is out whole`);
+  }
+  // A catalog is all insides. A `body` scope on one would silently do nothing.
+  assert.equal(bodyExcludedCount(INTERPRETER_TYPE), 0);
+});
+
+if (!englishRepo("front-end", undefined, { optional: true })) {
+  console.log("  SKIP  an excluded interpreter contributes no completeness gap (no front-end checkout)");
+} else {
+  test("an excluded interpreter contributes no completeness gap", () => {
+    // The denominator publish.mjs counts every locale against. English has three
+    // interpreter catalogs and two of them are excluded, so a locale holding
+    // javascript alone is whole rather than one third done.
+    assert.equal(englishItems(INTERPRETER_TYPE).length, englishCorpusSize(INTERPRETER_TYPE) + 2);
+    for (const locale of PRODUCTION_LOCALES) {
+      const present = listItems(INTERPRETER_TYPE, locale).length;
+      assert.ok(
+        present >= englishCorpusSize(INTERPRETER_TYPE),
+        `${locale} holds ${present} interpreter catalog(s) of ${englishCorpusSize(INTERPRETER_TYPE)} expected`
+      );
+      assert.ok(
+        !listItems(INTERPRETER_TYPE, locale).some((item) => item.slug !== "javascript"),
+        `${locale} lists an excluded interpreter: an exclusion must bind on the locale side too`
+      );
+    }
+  });
+}
+
 // ------------------------------------------------------------------- result
 
 console.log(failures === 0 ? "\ntest: all assertions passed.\n" : `\ntest: ${failures} FAILED.\n`);
