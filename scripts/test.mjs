@@ -43,6 +43,7 @@ import {
   parseFrontmatter,
   parseVttNotes,
   readJson,
+  readText,
   stampFrontmatter,
   stampVttNote,
   stubAgainst,
@@ -769,12 +770,148 @@ if (!catalogBiteLocale) {
       assert.equal(run.status, 0, `publish ${locale} exited ${run.status}: ${run.stderr}`);
 
       const record = readJson(path.join(out, "static", "i18n", "completeness.json"));
-      const gap = record.locales[locale].gaps.find((entry) => entry.type === "exercise-messages");
+      // By DETAIL, not just by type: an exercise-messages gap can also be a
+      // key-level one now, and the corpus gap this test is about is the one that
+      // counts whole items.
+      const gap = record.locales[locale].gaps.find(
+        (entry) => entry.type === "exercise-messages" && entry.detail === `${held.length - 1} of ${expected} present`
+      );
       assert.ok(gap, `${locale} published as if nothing were missing after ${path.basename(path.dirname(victim))}'s catalog was removed`);
-      assert.equal(gap.detail, `${held.length - 1} of ${expected} present`);
       assert.equal(record.locales[locale].complete, false);
     } finally {
       fs.renameSync(hidden, victim);
+      fs.rmSync(out, { recursive: true, force: true });
+    }
+  });
+}
+
+// -------------------------------- a key ENGLISH has and the locale does not --
+
+// The gap that was invisible, and the reason publish.mjs counts against English
+// rather than against the locale's own file.
+//
+// countSentinels iterated the LOCALE's keys, so it could only ever find a key
+// that was present and held the sentinel. A key English had just ADDED, which
+// the locale's file did not contain at all, was visited by nothing: it was
+// neither translated nor outstanding, and the locale was recorded as
+// production-ready while shipping a catalog that resolves that key to nothing.
+// A locale regresses into that state by standing still, which is precisely what
+// a gate has to be able to see. countAgainstEnglish makes English the
+// denominator, so an absence has something to be absent from.
+//
+// Asserted end to end, like the two tests above and for the same reason: the
+// counting lives in a separate script with its own gaps machinery, and reading
+// the loop proves nothing about what reaches completeness.json.
+//
+// The interpreter catalog is the subject because it is the one slugged catalog
+// that is NOT family-merged, so a mutation to it is the only thing the resulting
+// gaps can be about. Everything is written into a temp copy and restored in a
+// finally, so the tree is the same after this runs as before it.
+
+/** A production locale holding an interpreter catalog with no key gap of its own. */
+function cleanInterpreterCatalog() {
+  for (const locale of PRODUCTION_LOCALES) {
+    for (const item of listItems("interpreter-messages", locale)) {
+      const english = readJson(englishPath("interpreter-messages", item.slug));
+      const counts = countAgainstEnglish(english, readJson(item.path), { locale });
+      if (counts.stubbed === 0 && counts.absent === 0) return { locale, item, english };
+    }
+  }
+  return null;
+}
+
+/** An excluded exercise-messages slug English actually has a catalog for. */
+function excludedExerciseWithEnglish() {
+  for (const item of englishItems("exercise-messages")) {
+    if (isExcluded("exercise-messages", item.slug)) return item.slug;
+  }
+  return null;
+}
+
+const keyGapSubject = PUBLISH_CHECKOUT ? cleanInterpreterCatalog() : null;
+
+if (!keyGapSubject) {
+  console.log(
+    PUBLISH_CHECKOUT
+      ? "  SKIP  key-level gaps are counted against English (no production locale holds a clean interpreter catalog)"
+      : "  SKIP  key-level gaps are counted against English (no front-end checkout)"
+  );
+} else {
+  test("an absent key and a sentinel key are both gaps, and are told apart", () => {
+    const { locale, item, english } = keyGapSubject;
+    const flatEnglish = flatten(english);
+    // Three keys out of the SAME catalog, each given a different fate. Taken from
+    // the end of English's key order so that the first offender of each kind is
+    // unambiguously the one this test put there.
+    const keys = Object.keys(flatEnglish).slice(-3);
+    assert.equal(keys.length, 3, "English's interpreter catalog is too small to test with");
+    const [stubbedKey, absentKey, inapplicableKey] = keys;
+
+    const target = { ...flatEnglish };
+    target[stubbedKey] = SENTINEL;
+    delete target[absentKey];
+    target[inapplicableKey] = INAPPLICABLE;
+
+    const original = readText(item.path);
+    const out = fs.mkdtempSync(path.join(os.tmpdir(), "jiki-publish-key-gaps-"));
+    // An EXCLUDED exercise, given a catalog that is nothing but gaps. corpus.json
+    // says nobody is expected to translate it, so it must contribute no gap at
+    // all: an exclusion that stopped binding the moment counting got stricter
+    // would make completeness unreachable by design.
+    // The FILE, never its directory: an exercise's catalog shares a directory with
+    // its instructions, so removing the directory afterwards would take a real
+    // translation with it.
+    const excludedSlug = excludedExerciseWithEnglish();
+    const excludedFile = excludedSlug ? localPath("exercise-messages", locale, excludedSlug) : null;
+    const excludedExisted = excludedFile !== null && fs.existsSync(excludedFile);
+
+    fs.writeFileSync(item.path, `${JSON.stringify(unflatten(target, arrayPaths(english)), null, 2)}\n`);
+    if (excludedFile && !excludedExisted) {
+      fs.mkdirSync(path.dirname(excludedFile), { recursive: true });
+      fs.writeFileSync(excludedFile, `${JSON.stringify({ onlyKey: SENTINEL }, null, 2)}\n`);
+    }
+    try {
+      const run = spawnSync(process.execPath, [path.join(REPO_ROOT, "scripts", "publish.mjs"), locale, `--out-dir=${out}`], {
+        cwd: REPO_ROOT,
+        encoding: "utf8"
+      });
+      if (run.status !== 0 && /content-renderer/.test(`${run.stdout}${run.stderr}`)) {
+        console.log("  (renderer not installed; publish could not run)");
+        return;
+      }
+      assert.equal(run.status, 0, `publish ${locale} exited ${run.status}: ${run.stderr}`);
+
+      const record = readJson(path.join(out, "static", "i18n", "completeness.json"));
+      const label = `${locale} interpreter catalog ${item.slug}`;
+      const mine = record.locales[locale].gaps.filter((gap) => gap.detail.startsWith(`${label}:`));
+
+      // TWO gaps, not one. The sentinel needs translating and the absent key needs
+      // stubbing first, so a single merged count would hide which work is which.
+      assert.equal(mine.length, 2, `expected a stubbed gap and an absent gap, got: ${JSON.stringify(mine)}`);
+
+      const stubbed = mine.find((gap) => /still the untranslated sentinel/.test(gap.detail));
+      const absent = mine.find((gap) => /missing from the file/.test(gap.detail));
+      assert.ok(stubbed, `no sentinel gap in ${JSON.stringify(mine)}`);
+      assert.ok(absent, `no absent-key gap in ${JSON.stringify(mine)}`);
+      assert.notEqual(stubbed.detail, absent.detail);
+
+      // Exactly one of each, so the `∅` key counted as neither. It is a key this
+      // language can never reach, and nobody can fill it.
+      assert.equal(stubbed.count, 1, stubbed.detail);
+      assert.equal(absent.count, 1, absent.detail);
+      assert.ok(stubbed.detail.includes(stubbedKey), stubbed.detail);
+      assert.ok(absent.detail.includes(absentKey), absent.detail);
+      assert.ok(!stubbed.detail.includes(inapplicableKey) && !absent.detail.includes(inapplicableKey));
+
+      assert.equal(record.locales[locale].complete, false);
+
+      if (excludedFile && !excludedExisted) {
+        const excludedGaps = record.locales[locale].gaps.filter((gap) => gap.detail.includes(excludedSlug));
+        assert.deepEqual(excludedGaps, [], `${excludedSlug} is excluded in corpus.json but contributed gaps`);
+      }
+    } finally {
+      fs.writeFileSync(item.path, original);
+      if (excludedFile && !excludedExisted) fs.rmSync(excludedFile, { force: true });
       fs.rmSync(out, { recursive: true, force: true });
     }
   });
