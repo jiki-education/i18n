@@ -124,8 +124,9 @@ import {
 } from "./lib/content-types.mjs";
 import { corpusItems, englishCorpusSize, englishPath, englishRepo, englishSha } from "./lib/english.mjs";
 import { isBodyExcluded } from "./lib/exclusions.mjs";
-import { mergeExerciseCatalogs } from "./lib/families.mjs";
-import { contentHash, flatten, parseFrontmatter, readJson, readText } from "./lib/files.mjs";
+import { deepMerge, mergeExerciseCatalogs } from "./lib/families.mjs";
+import { contentHash, countAgainstEnglish, flatten, isEmptyContainer, parseFrontmatter, readJson, readText } from "./lib/files.mjs";
+import { isUnreachablePluralKey } from "./lib/plurals.mjs";
 import { findRepeatedBodies, isCopiedEnglish } from "./lib/checks.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 import { buildPostCopy } from "./lib/post-copy.mjs";
@@ -160,7 +161,7 @@ const PROSE_TYPE_IDS = ["concept", "exercise-instructions", ...POST_TYPE_IDS];
  * Unslugged catalogs (the app UI, levels, badges, testimonials, project
  * metadata) are deliberately outside it: there is one of each per locale, so
  * they have no item set to count, and their gaps are per-KEY and already found
- * by countSentinels where each one is published.
+ * by countKeyGaps where each one is published.
  */
 const SLUGGED_CATALOG_TYPE_IDS = CONTENT_TYPE_IDS.filter(
   (id) => CONTENT_TYPES[id].slugged && CONTENT_TYPES[id].format === "catalog"
@@ -252,27 +253,90 @@ function emitBytes(artifacts, r2Path, content) {
 }
 
 /**
- * Count a catalog's remaining untranslated sentinels, and record them.
+ * Count one catalog's untranslated keys AGAINST ENGLISH, and record them.
+ *
+ * English is the denominator, and that is the whole point of this function.
+ * Counting the LOCALE's own keys instead makes the one gap that matters most
+ * invisible: a key English has just added, which the locale's file does not
+ * contain at all. Iterating the locale's file never visits it, so it is neither
+ * translated nor outstanding, and the locale is recorded as production-ready
+ * while shipping a catalog that resolves that key to nothing. A locale can only
+ * regress into that state by standing still, which is exactly the state a gate
+ * has to be able to see. coverage.mjs has always measured this way; this is
+ * publish's completeness record catching up with it.
+ *
+ * The two ways a key can be untranslated are recorded as SEPARATE gaps, because
+ * they need different work and a single number would hide which:
+ *
+ *   stubbed: present, holding the sentinel. Translate it.
+ *   absent:  not in the file at all. `stub` it first, then translate it.
+ *
+ * `∅` (INAPPLICABLE) is neither, and neither is a key this locale can never
+ * reach: countAgainstEnglish owns both rules, so they are not restated here.
  *
  * Recording is all this does. The catalog publishes either way, so a translator
  * can see work in progress on staging, and strictness lives at serving: the
  * front-end's PRODUCTION_LOCALES is where an incomplete locale is kept away from
  * readers, and the completeness record is what it is checked against.
  *
- * Returns the number of sentinels found, so callers can record it.
+ * Exclusions need no handling here. Every caller reaches this either through
+ * listItems (which filters through isExcluded) or through a file that only
+ * exists because the item is in scope, so an excluded item is never counted on
+ * the locale side and its English is never opened on this one.
+ *
+ * Returns the counts, so a caller can record them.
  */
-function countSentinels(gaps, typeId, label, value) {
-  const entries = Object.entries(flatten(value));
-  const stubbed = entries.filter(([, v]) => v === SENTINEL);
+/**
+ * One item's English catalog, as the denominator for countKeyGaps.
+ *
+ * An English file that is not there yields `{}` rather than a failure. That is
+ * not defensiveness for its own sake: it is the deploy-overlap case, where
+ * English has dropped a catalog the locale still holds. Every key in the locale
+ * file is then outside coverage, which is exactly what countAgainstEnglish says
+ * about a key English does not define, and the right answer is that nothing is
+ * outstanding rather than that publishing cannot proceed.
+ */
+function englishCatalog(typeId, slug) {
+  const file = englishPath(typeId, slug);
+  return fs.existsSync(file) ? readJson(file) : {};
+}
 
-  if (stubbed.length > 0) {
+function countKeyGaps(gaps, typeId, label, target, english, locale) {
+  const counts = countAgainstEnglish(english, target, { locale });
+
+  // The counts above are authoritative. This second pass exists only to NAME the
+  // first offending key of each kind, which is what makes a gap actionable, and
+  // it classifies keys the same way countAgainstEnglish does so the name it
+  // reports always belongs to something that was counted.
+  const flatEnglish = flatten(english);
+  const flatTarget = flatten(target);
+  let firstStubbed = null;
+  let firstAbsent = null;
+  for (const [key, source] of Object.entries(flatEnglish)) {
+    if (isEmptyContainer(source)) continue;
+    if (!(key in flatTarget)) {
+      if (firstAbsent === null && !isUnreachablePluralKey(key, locale, flatEnglish)) firstAbsent = key;
+      continue;
+    }
+    const value = flatTarget[key];
+    if (firstStubbed === null && (value === SENTINEL || isEmptyContainer(value))) firstStubbed = key;
+  }
+
+  if (counts.stubbed > 0) {
     gaps.push({
       type: typeId,
-      count: stubbed.length,
-      detail: `${label}: ${stubbed.length} key(s) still the untranslated sentinel (first: ${stubbed[0][0]})`
+      count: counts.stubbed,
+      detail: `${label}: ${counts.stubbed} key(s) still the untranslated sentinel (first: ${firstStubbed})`
     });
   }
-  return stubbed.length;
+  if (counts.absent > 0) {
+    gaps.push({
+      type: typeId,
+      count: counts.absent,
+      detail: `${label}: ${counts.absent} key(s) English defines are missing from the file (first: ${firstAbsent}); stub, then translate`
+    });
+  }
+  return counts;
 }
 
 /**
@@ -371,7 +435,7 @@ async function publishLocale(locale, { exportSources }) {
   const appPath = localPath("app-messages", locale);
   if (fs.existsSync(appPath)) {
     const catalog = readJson(appPath);
-    countSentinels(gaps, "app-messages", `${locale} app catalog`, catalog);
+    countKeyGaps(gaps, "app-messages", `${locale} app catalog`, catalog, englishCatalog("app-messages", null), locale);
     manifest.app = emit(artifacts, (hash) => CONTENT_TYPES["app-messages"].r2(locale, null, hash), catalog);
   }
 
@@ -379,7 +443,7 @@ async function publishLocale(locale, { exportSources }) {
   const badgesPath = localPath("badges", locale);
   if (fs.existsSync(badgesPath)) {
     const catalog = readJson(badgesPath);
-    countSentinels(gaps, "badges", `${locale} badge catalog`, catalog);
+    countKeyGaps(gaps, "badges", `${locale} badge catalog`, catalog, englishCatalog("badges", null), locale);
     manifest.badges = emit(artifacts, (hash) => CONTENT_TYPES.badges.r2(locale, null, hash), catalog);
   }
 
@@ -387,7 +451,7 @@ async function publishLocale(locale, { exportSources }) {
   const levelsPath = localPath("levels", locale);
   if (fs.existsSync(levelsPath)) {
     const catalog = readJson(levelsPath);
-    countSentinels(gaps, "levels", `${locale} level catalog`, catalog);
+    countKeyGaps(gaps, "levels", `${locale} level catalog`, catalog, englishCatalog("levels", null), locale);
     manifest.levels = emit(artifacts, (hash) => CONTENT_TYPES.levels.r2(locale, null, hash), catalog);
   }
 
@@ -406,7 +470,7 @@ async function publishLocale(locale, { exportSources }) {
   const projectMetaPath = localPath("project-metadata", locale);
   if (fs.existsSync(projectMetaPath)) {
     const catalog = readJson(projectMetaPath);
-    countSentinels(gaps, "project-metadata", `${locale} project metadata catalog`, catalog);
+    countKeyGaps(gaps, "project-metadata", `${locale} project metadata catalog`, catalog, englishCatalog("project-metadata", null), locale);
     manifest.projectMetadata = emit(
       artifacts,
       (hash) => CONTENT_TYPES["project-metadata"].r2(locale, null, hash),
@@ -429,7 +493,7 @@ async function publishLocale(locale, { exportSources }) {
   const testimonialsPath = localPath("testimonials", locale);
   if (fs.existsSync(testimonialsPath)) {
     const catalog = readJson(testimonialsPath);
-    countSentinels(gaps, "testimonials", `${locale} testimonial catalog`, catalog);
+    countKeyGaps(gaps, "testimonials", `${locale} testimonial catalog`, catalog, englishCatalog("testimonials", null), locale);
     manifest.testimonials = emit(artifacts, (hash) => CONTENT_TYPES.testimonials.r2(locale, null, hash), catalog);
   }
 
@@ -441,7 +505,7 @@ async function publishLocale(locale, { exportSources }) {
   manifest.interpreters = {};
   for (const item of listItems("interpreter-messages", locale)) {
     const catalog = readJson(item.path);
-    countSentinels(gaps, "interpreter-messages", `${locale} interpreter catalog ${item.slug}`, catalog);
+    countKeyGaps(gaps, "interpreter-messages", `${locale} interpreter catalog ${item.slug}`, catalog, englishCatalog("interpreter-messages", item.slug), locale);
     manifest.interpreters[item.slug] = emit(
       artifacts,
       (hash) => CONTENT_TYPES["interpreter-messages"].r2(locale, item.slug, hash),
@@ -459,8 +523,16 @@ async function publishLocale(locale, { exportSources }) {
         `Normal while a translation runs ahead of its front-end PR; a rename or a deletion if it persists.`
     );
   }
-  for (const { slug, catalog } of exercises.catalogs) {
-    countSentinels(gaps, "exercise-messages", `${locale} exercise catalog ${slug}`, catalog);
+  // An unmerged exercise carries an EMPTY English catalog, so countKeyGaps finds
+  // nothing outstanding in it. That is the point rather than an oversight: with
+  // no English there is no denominator, every key it holds is excess, and excess
+  // is never the failure. Counting it would report an exercise translated ahead
+  // of its front-end PR as a pile of missing keys and block a deploy over
+  // content no learner can reach, which is the exact shape of the bug that made
+  // publish refuse these in the first place. Its keys start counting on the
+  // publish after its English merges.
+  for (const { slug, catalog, english } of exercises.catalogs) {
+    countKeyGaps(gaps, "exercise-messages", `${locale} exercise catalog ${slug}`, catalog, english, locale);
     manifest.exercises[slug] = emit(artifacts, (hash) => CONTENT_TYPES["exercise-messages"].r2(locale, slug, hash), catalog);
   }
 
@@ -492,7 +564,7 @@ async function publishLocale(locale, { exportSources }) {
   // slug or an exercise that will not load. Per-exercise artifacts are unaffected.
   //
   // The slugged CATALOGS are counted the same way, and for a failure the
-  // per-catalog checks structurally cannot see. countSentinels is the only other
+  // per-catalog checks structurally cannot see. countKeyGaps is the only other
   // thing that looks at them, and it runs inside loops over what the LOCALE
   // already holds: exerciseCatalogs(locale) and listItems("interpreter-messages",
   // locale). A catalog that is wholly ABSENT from a locale is therefore visited
@@ -515,7 +587,7 @@ async function publishLocale(locale, { exportSources }) {
   const videoPath = localPath("video-lessons", locale);
   if (fs.existsSync(videoPath)) {
     const videos = readJson(videoPath);
-    countSentinels(gaps, "video-lessons", `${locale} video lesson catalog`, videos);
+    countKeyGaps(gaps, "video-lessons", `${locale} video lesson catalog`, videos, englishCatalog("video-lessons", null), locale);
     {
       for (const [slug, entry] of Object.entries(videos)) {
         if (slug in copy) fail(`slug "${slug}" is both an exercise and a video lesson (locale ${locale}); the namespace must stay collision-free`);
@@ -784,7 +856,27 @@ function exerciseCatalogs(locale) {
     return bases.get(family);
   };
 
-  return { catalogs: mergeExerciseCatalogs({ families, own, baseFor }), unmerged: unknown };
+  // The English side is merged the SAME way, because the locale side is merged:
+  // an inherited key that the family base supplies is a real key of the published
+  // catalog, so leaving it out of the denominator would stop counting the family
+  // base's own sentinels, which the merged catalog is the only reader of.
+  //
+  // An exercise in `unknown` above has `families[slug] === null` and no English
+  // file, so both halves of this are `{}` and its denominator is empty. See the
+  // note at the countKeyGaps call site: that is deliberate, and it is the same
+  // rule as `null` meaning standalone for the locale side.
+  const englishBases = new Map();
+  const englishBaseFor = (family) => {
+    if (!englishBases.has(family)) englishBases.set(family, englishCatalog(FAMILY_TYPE_ID, family));
+    return englishBases.get(family);
+  };
+
+  const catalogs = mergeExerciseCatalogs({ families, own, baseFor }).map((entry) => {
+    const family = families[entry.slug];
+    const base = family ? englishBaseFor(family) : {};
+    return { ...entry, english: deepMerge(base, englishCatalog("exercise-messages", entry.slug)) };
+  });
+  return { catalogs, unmerged: unknown };
 }
 
 async function main() {
