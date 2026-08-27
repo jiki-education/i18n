@@ -556,28 +556,40 @@ function printHuman({ changes, locales, findings, blocking, warnings }) {
     return;
   }
 
-  const untouched = [...groupByPath(blocking)].filter(([, group]) => group.length === locales.length && group.every((entry) => entry.reason.startsWith("no ")));
+  // Which files no locale has begun at all. Stated as a FACT and never as an
+  // inference about which remedy applies, because it is not evidence of one.
+  // "Nobody has translated this yet" is the shape of a brand-new item, and a
+  // brand-new item is just as likely to be a live exercise being translated
+  // right now as one that is not live at all. Front-end #1104 is the case that
+  // settled it: every reading said its new `building-arrays` exercises were past
+  // the translation cutoff, and they were then deliberately brought into scope
+  // instead, so a gate that had guessed "add it to corpus.json" would have been
+  // confidently wrong on the very PR it was written for.
+  const unstarted = [...groupByPath(blocking)].filter(([, group]) => group.length === locales.length && group.every((entry) => entry.reason.startsWith("no ")));
 
   console.log(
     `${new Set(blocking.map((finding) => finding.sourcePath)).size} English file(s) this change adds or extends have no translation.\n\n` +
-      `What to do about it, in the order to consider it:\n\n` +
-      `  1. If the item is LIVE, it needs translating. The front-end's i18n-queue workflow has\n` +
-      `     already opened an issue in jiki-education/i18n carrying this PR's head SHA. The\n` +
-      `     translator repo's orchestrator picks that issue up, translates against that SHA,\n` +
-      `     pushes to i18n, and closes it. Re-run this check when it does.\n` +
-      `  2. If the item is NOT LIVE, it should never have been in scope, and translating it is\n` +
-      `     the wrong fix. An exercise past the last shipped level is unreachable, so its\n` +
-      `     teaching content is deferred: add it to i18n's corpus.json with the "not-yet-live\n` +
-      `     exercise" reason (the instructions with "scope": "body", so its title and\n` +
-      `     description are still translated; the message catalog whole), and delete those\n` +
-      `     lines again in the change that makes the exercise live.\n`
+      `This is outstanding translation work, and the usual answer is that it gets done.\n` +
+      `The front-end's i18n-queue workflow has already opened an issue in jiki-education/i18n\n` +
+      `carrying this PR's head SHA. The translator repo's orchestrator picks that issue up,\n` +
+      `translates against that SHA, pushes to i18n, and closes it. Re-run this check when it\n` +
+      `does, and it goes green with no change to this branch.\n\n` +
+      `The one alternative, for an exercise that is NOT LIVE:\n\n` +
+      `  An exercise past the last shipped level is unreachable, so its teaching content is\n` +
+      `  deferred rather than translated: it belongs in i18n's corpus.json with the\n` +
+      `  "not-yet-live exercise" reason (the instructions with "scope": "body", so its title\n` +
+      `  and description are still translated; the message catalog whole), and those lines\n` +
+      `  come out again in the change that makes it live.\n\n` +
+      `  Whether an exercise is live is a fact to LOOK UP, never one to infer from this\n` +
+      `  output. The live set is the Stage 3 exercise queue in the translator repo's\n` +
+      `  orchestrator.md, and corpus.json holds its complement. Nothing about how much of an\n` +
+      `  item is translated says which side of that line it falls on.\n`
   );
 
-  if (untouched.length > 0) {
+  if (unstarted.length > 0) {
     console.log(
-      `Case 2 is the likely one for ${untouched.length === 1 ? "this file" : "these files"}: no locale holds anything for\n` +
-        `${untouched.length === 1 ? "it" : "them"} at all, which is the shape of a brand-new item rather than of a translation gap.\n` +
-        untouched.map(([file]) => `      ${file}\n`).join("")
+      `No locale holds anything at all for ${unstarted.length === 1 ? "this file" : "these files"} yet:\n` +
+        unstarted.map(([file]) => `      ${file}\n`).join("")
     );
   }
 }
