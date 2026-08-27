@@ -216,6 +216,18 @@
       "step_empty": "O Jiki verificou o objeto, viu que estava vazio e decidiu não fazer mais nada nesta linha.",
       "step_put": "O Jiki colocou {{value}} na caixa e pôs a caixa na prateleira, pronta a usar no bloco de código."
     },
+    "forStatement": {
+      "result_false": "A condição foi avaliada como <code>false</code>, por isso o ciclo parou.",
+      "result_no_condition": "Este ciclo não tem condição, por isso o corpo do ciclo foi executado novamente.",
+      "result_true": "A condição foi avaliada como <code>true</code>, por isso o corpo do ciclo foi executado.",
+      "step_decreased": "O Jiki diminuiu {{name}} de {{oldValue}} para {{newValue}}.",
+      "step_decreased_evaluated": "O Jiki diminuiu {{name}} de {{oldValue}} para {{newValue}}, depois avaliou {{expr}} e determinou que era {{value}}.",
+      "step_false": "O resultado foi <code>false</code>, por isso o Jiki decidiu parar o ciclo.",
+      "step_increased": "O Jiki aumentou {{name}} de {{oldValue}} para {{newValue}}.",
+      "step_increased_evaluated": "O Jiki aumentou {{name}} de {{oldValue}} para {{newValue}}, depois avaliou {{expr}} e determinou que era {{value}}.",
+      "step_no_condition": "Não havia condição para verificar, por isso o Jiki decidiu executar o corpo do ciclo.",
+      "step_true": "O resultado foi <code>true</code>, por isso o Jiki decidiu executar o corpo do ciclo."
+    },
     "forOfStatement": {
       "result_empty": "O {{type}} estava vazio, por isso esta linha não fez nada.",
       "result_iteration_ordinal_one": "∅",
@@ -244,6 +256,9 @@
     },
     "memberExpression": {
       "array": "O Jiki foi buscar o elemento no índice {{index}} do array e concluiu que era {{value}}.",
+      "property": "O Jiki obteve a propriedade {{name}} e determinou que era {{value}}.",
+      "property_array": "O Jiki obteve a propriedade {{name}} do array e determinou que era {{value}}.",
+      "property_string": "O Jiki obteve a propriedade {{name}} da string e determinou que era {{value}}.",
       "string": "O Jiki foi buscar o caráter no índice {{index}} da string e concluiu que era {{value}}."
     },
     "repeatStatement": {

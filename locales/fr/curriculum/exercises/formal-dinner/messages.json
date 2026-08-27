@@ -2,7 +2,7 @@
   "tasks": {
     "findGuestTable": {
       "name": "Trouve la table de l'invité",
-      "description": "Écris une fonction qui prend la liste des noms complets des invités, la liste correspondante des noms de tables, et un invité qui arrive, annoncé par son titre de civilité suivi de son nom de famille. Renvoie le nom de la table à laquelle cet invité est assis, ou `\"No table found\"` s'il ne figure pas sur le plan de table."
+      "description": "Écris une fonction qui prend le tableau des noms complets des invités, le tableau correspondant des noms de tables, et un invité qui arrive, annoncé par son titre de civilité suivi de son nom de famille. Renvoie le nom de la table à laquelle cet invité est assis, ou `\"No table found\"` s'il ne figure pas sur le plan de table."
     },
     "solveTightly": {
       "name": "Résous-le en 9 lignes",
@@ -53,7 +53,7 @@
   },
   "hints": {
     "twoLists": {
-      "question": "Quel est le lien entre les deux listes ?",
+      "question": "Quel est le lien entre les deux tableaux ?",
       "answer": "Elles vont par paire. Le premier invité est assis à la première table, le deuxième invité à la deuxième table, et ainsi de suite. Il ne suffit donc pas de savoir *que* l'invité figure sur le plan : tu dois aussi savoir *où* il se trouve."
     },
     "comparingNames": {
@@ -74,23 +74,23 @@
   },
   "functions": {
     "length": {
-      "description": "Le nombre d'éléments d'un tableau, la même propriété `.length` que tu as utilisée sur les _strings_ (fournie par la bibliothèque standard du niveau)",
+      "description": "Le nombre d'éléments d'un tableau, la même propriété `.length` que tu as utilisée sur les _strings_",
       "category": "Opérations sur les tableaux"
     },
     "split": {
-      "description": "Découpe une _string_ en un tableau de morceaux, en coupant à chaque séparateur (fournie par la bibliothèque standard du niveau)",
+      "description": "Découpe une _string_ en un tableau de morceaux, en coupant à chaque séparateur",
       "category": "Opérations sur les _strings_"
     },
     "slice": {
-      "description": "Crée un nouveau tableau à partir d'une partie d'un tableau, en commençant à une position donnée (fournie par la bibliothèque standard du niveau)",
+      "description": "Crée un nouveau tableau à partir d'une partie d'un tableau, en commençant à une position donnée",
       "category": "Opérations sur les tableaux"
     },
     "join": {
-      "description": "Assemble les éléments d'un tableau en une seule _string_, avec un séparateur entre eux (fournie par la bibliothèque standard du niveau)",
+      "description": "Assemble les éléments d'un tableau en une seule _string_, avec un séparateur entre eux",
       "category": "Opérations sur les tableaux"
     },
     "endsWith": {
-      "description": "Vérifie si une _string_ se termine par une autre _string_ plus courte (fournie par la bibliothèque standard du niveau)",
+      "description": "Vérifie si une _string_ se termine par une autre _string_ plus courte",
       "category": "Opérations sur les _strings_"
     }
   }

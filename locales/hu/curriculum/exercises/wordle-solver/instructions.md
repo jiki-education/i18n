@@ -1,23 +1,24 @@
 ---
 title: "Wordle: Megoldó"
-description: ""
-en_md5: 71b828d8781ad324051a8aac41089e70
+description: "Készíts egy megoldót, ami egy teljes Wordle-játszmát magától végigjátszik."
+en_md5: bfa3fc3c672c10eca0658cb6c3d6e0ca
 ---
 
-Time to build a Wordle solver! You need to create a <define>`processGame`</define> function that takes no inputs and automatically solves the game.
+A legutóbbi Wordle-feladatban olyan játszmát dolgoztál fel, ahol a tippeket készen kaptad. Ezúttal a másik oldalon ülsz: te találod ki a tippeket.
 
-You have three functions available:
+A feladatod, hogy létrehozz egy új `solveWordle()` nevű függvényt, amiben addig tippelsz szavakra, amíg meg nem találod a helyes szót. A játszmát a lehető leghatékonyabban kell megoldanod (a lehető legkevesebb szóval).
 
-- <define>`getTargetWord()`</define>: Returns the secret target word.
-- <define>`commonWords()`</define>: Returns a list of 100+ possible words.
-- <define>`addWord(row, word, states)`</define>: Adds a word to the board at the given row (1-6) with its states.
+Kapsz egy új `commonWords()` (gyakori szavak) függvényt, ami a játékban használható több mint 100 szóból álló láncot ad vissza. Ezeken a szavakon kell végigmenned. Mindig azzal kezdd, hogy kiolvasod a lánc első szavát, és azt tippeled meg. Utána haladj tovább: keresd meg a következő lehetséges érvényes szót, tippeld meg, és így tovább.
 
-For each guess, compare it to the target word to determine the states (correct/present/absent), then add it to the board. Keep guessing until you find the right word or use all 6 slots.
+Kapsz egy `guess(word)` (tippelj meg egy szót) függvényt is, ami minden betűhöz egy `"correct"`, `"present"` vagy `"absent"` értéket tartalmazó láncot ad vissza.
 
-The best guess is the **first word** in the `commonWords` list that matches your knowledge so far:
+A feladat kulcsa, hogy végiggondold, hogyan jegyezd meg a korábbi szavakat és a `guess` hívásának eredményeit, és ezt a tudást felhasználva folyamatosan megtaláld a győzelemhez vezető leghatékonyabb utat.
 
-- Has all 'correct' letters in the right places
-- Has all 'present' letters somewhere (but not in positions you know are wrong)
-- Has no 'absent' letters
+### Egy példa
 
-**Important:** Don't use `getTargetWord()` to cheat - only use it for checking your guess to generate states.
+1. Kiolvasod a lánc első szavát, ami `"which"`.
+2. Meghívod a `guess("which")` függvényt, ami ezt adja vissza: `["correct", "present", "absent", "absent", "absent"]`.
+3. Kiválasztod a gyakori szavak láncában a következő olyan szót, ami `"w"`-vel kezdődik, és a harmadik, negyedik vagy ötödik helyen `"h"` van.
+4. Menj vissza a (2)-re...
+
+Sok sikert és jó szórakozást!

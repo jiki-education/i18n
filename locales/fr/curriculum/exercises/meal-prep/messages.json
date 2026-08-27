@@ -30,7 +30,7 @@
     },
     "checkFridgeItem": {
       "question": "Comment vérifier si un ingrédient est dans le frigo ?",
-      "answer": "Une petite fonction auxiliaire, du genre « cet élément est-il dans ce tableau ? », garde la boucle principale lisible. À l'intérieur, parcours le tableau et compare chaque élément à celui que tu cherches."
+      "answer": "La méthode `includes` le fait pour toi. Appelle-la sur le frigo avec un ingrédient : elle te renvoie `true` ou `false`."
     },
     "buildShoppingList": {
       "question": "Comment construire la liste de courses ?",
@@ -38,9 +38,13 @@
     }
   },
   "functions": {
+    "includes": {
+      "description": "Vérifie si un tableau contient un élément précis, et renvoie true ou false.",
+      "category": "Tableaux"
+    },
     "push": {
-      "description": "Renvoie un nouveau tableau avec l'élément ajouté à la fin (fournie par la bibliothèque standard du niveau)",
-      "category": "Opérations sur les tableaux"
+      "description": "Ajoute un élément à la fin d'un tableau, en modifiant directement le tableau.",
+      "category": "Tableaux"
     }
   }
 }

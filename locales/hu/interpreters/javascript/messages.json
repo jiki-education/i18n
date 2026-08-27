@@ -216,6 +216,18 @@
       "step_empty": "Jiki megnézte az objektumot, látta, hogy üres, és úgy döntött, hogy ezen a soron nem csinál semmi többet.",
       "step_put": "Jiki betette a(z) {{value}} értéket a dobozba, majd a dobozt feltette a polcra, hogy a kódblokkban használni lehessen."
     },
+    "forStatement": {
+      "result_false": "A feltétel értéke <code>false</code> lett, ezért a ciklus leállt.",
+      "result_no_condition": "Ennek a ciklusnak nincs feltétele, ezért a ciklustörzs újra lefutott.",
+      "result_true": "A feltétel értéke <code>true</code> lett, ezért a ciklustörzs lefutott.",
+      "step_decreased": "Jiki csökkentette a(z) {{name}} értékét a(z) {{oldValue}} értékről a(z) {{newValue}} értékre.",
+      "step_decreased_evaluated": "Jiki csökkentette a(z) {{name}} értékét a(z) {{oldValue}} értékről a(z) {{newValue}} értékre, majd kiértékelte a(z) {{expr}} kifejezést, és megállapította, hogy az értéke {{value}}.",
+      "step_false": "Az eredmény <code>false</code> lett, ezért Jiki úgy döntött, hogy megállítja a ciklust.",
+      "step_increased": "Jiki növelte a(z) {{name}} értékét a(z) {{oldValue}} értékről a(z) {{newValue}} értékre.",
+      "step_increased_evaluated": "Jiki növelte a(z) {{name}} értékét a(z) {{oldValue}} értékről a(z) {{newValue}} értékre, majd kiértékelte a(z) {{expr}} kifejezést, és megállapította, hogy az értéke {{value}}.",
+      "step_no_condition": "Nem volt ellenőrizendő feltétel, ezért Jiki úgy döntött, hogy lefuttatja a ciklustörzset.",
+      "step_true": "Az eredmény <code>true</code> lett, ezért Jiki úgy döntött, hogy lefuttatja a ciklustörzset."
+    },
     "forOfStatement": {
       "result_empty": "A(z) {{type}} üres volt, így ez a sor nem csinált semmit.",
       "result_iteration_ordinal_one": "Ez a sor elindította a(z) {{count}}. iterációt, a(z) {{name}} változó értéke ekkor {{value}} lett.",
@@ -244,6 +256,9 @@
     },
     "memberExpression": {
       "array": "Jiki kikereste a tömb {{index}} indexén lévő elemet, és megállapította, hogy az {{value}}.",
+      "property": "Jiki lekérte a(z) {{name}} tulajdonságot, és megállapította, hogy az értéke {{value}}.",
+      "property_array": "Jiki lekérte a tömb {{name}} tulajdonságát, és megállapította, hogy az értéke {{value}}.",
+      "property_string": "Jiki lekérte a string {{name}} tulajdonságát, és megállapította, hogy az értéke {{value}}.",
       "string": "Jiki kikereste a string {{index}} indexén lévő karaktert, és megállapította, hogy az {{value}}."
     },
     "repeatStatement": {

@@ -3,6 +3,10 @@
     "findMatchingSocks": {
       "name": "Trouve les paires de chaussettes",
       "description": "Écris une fonction qui prend deux paniers de vêtements (sous forme de tableaux de `strings`) et renvoie un tableau de toutes les paires de chaussettes trouvées dans les deux paniers. Les articles qui sont des chaussettes se terminent par ' sock' et commencent toujours par 'left ' ou 'right '."
+    },
+    "solveTightly": {
+      "name": "Résous-le en 29 lignes",
+      "description": "Essaie de résoudre cet exercice en 29 lignes de code ou moins. Ce n'est pas la réponse la plus courte possible, mais c'est un bon objectif à viser une fois que ça fonctionne."
     }
   },
   "scenarios": {
@@ -33,37 +37,60 @@
     "someAddedPain": {
       "name": "Bric-à-brac",
       "description": "Quelques bizarreries se sont glissées dans les paniers."
+    },
+    "bonusLineCount": {
+      "name": "Une solution compacte",
+      "description": "Le même travail, en moins de lignes."
     }
   },
   "hints": {
     "whereToStart": {
       "question": "Par où commencer quand il y a autant d'éléments à gérer ?",
-      "answer": "Commence par écrire de petites fonctions utilitaires, comme `length()`, `startsWith()` et `endsWith()`, dont tu auras besoin partout. Fais-les fonctionner d'abord, avant de t'attaquer à la logique principale."
+      "answer": "N'essaie pas de tout écrire d'un coup. Découpe le problème en petites fonctions qui répondent chacune à une toute petite question, fais fonctionner chacune d'elles séparément, puis combine-les."
     },
     "isItASock": {
       "question": "Comment savoir si un article du panier est vraiment une chaussette ?",
-      "answer": "Les chaussettes ont la forme `\"left X\"` ou `\"right X\"`. Une petite fonction utilitaire qui renvoie vrai uniquement quand l'article commence par l'un de ces préfixes t'évitera de refaire la vérification partout."
+      "answer": "Tout ce qui mentionne un côté n'est pas forcément une chaussette, et tout ce qui a l'air d'une chaussette n'en est pas forcément une. Regarde attentivement les règles qui décrivent les articles, et vérifie les deux extrémités de la description, pas seulement le début."
     },
     "compareSockPair": {
       "question": "Comment comparer une chaussette gauche à sa partenaire droite ?",
-      "answer": "Deux fonctions utilitaires facilitent la tâche : une pour retirer le préfixe `\"left \"` ou `\"right \"` (pour ne comparer que la couleur ou le motif), et une autre pour échanger `\"left\"` et `\"right\"`, ce qui permet de construire la partenaire de n'importe quelle chaussette."
+      "answer": "Plutôt que de comparer deux chaussettes directement, détermine comment s'appellerait la partenaire d'une chaussette, puis pars à sa recherche. Les _strings_ ont une méthode intégrée pour remplacer un morceau de texte par un autre, qui permet aussi d'en supprimer un en le remplaçant par rien."
     },
     "avoidDuplicates": {
       "question": "Comment éviter de compter deux fois la même paire ?",
-      "answer": "Une fonction utilitaire qui n'ajoute un élément à un tableau que s'il n'y figure pas déjà empêchera les doublons de se glisser dans ton résultat."
+      "answer": "Chaque paire est découverte deux fois, une fois de chaque côté. Avant d'ajouter un nom à tes résultats, vérifie s'il ne s'y trouve pas déjà."
     },
     "overallPlan": {
       "question": "Quelle stratégie globale adopter ?",
-      "answer": "Extrais toutes les chaussettes des deux paniers dans un seul tableau combiné, puis, pour chaque chaussette, construis à quoi ressemblerait sa partenaire et vérifie si cette partenaire figure aussi dans le tableau."
+      "answer": "Les deux paniers peuvent être traités comme un seul grand tas. Parcours-le article par article et, pour chaque article, décide s'il a sa place dans ta réponse."
     }
   },
+  "checks": {
+    "tooManyLines": "Tu y es presque ! Ta solution fonctionne, mais elle fait plus de 29 lignes de code."
+  },
   "functions": {
-    "push": {
-      "description": "Renvoie un nouveau tableau avec l'élément ajouté à la fin (fournie par la bibliothèque standard du niveau)",
-      "category": "Opérations sur les tableaux"
+    "startsWith": {
+      "description": "Vérifie si une string commence par une string plus courte",
+      "category": "Opérations sur les strings"
+    },
+    "endsWith": {
+      "description": "Vérifie si une string se termine par une string plus courte",
+      "category": "Opérations sur les strings"
+    },
+    "replace": {
+      "description": "Renvoie une nouvelle string où la première occurrence d'un texte est remplacée par un autre texte",
+      "category": "Opérations sur les strings"
     },
     "concat": {
-      "description": "Prend deux tableaux, les assemble en un seul, puis renvoie le résultat (fournie par la bibliothèque standard du niveau)",
+      "description": "Assemble deux tableaux en un seul nouveau tableau",
+      "category": "Opérations sur les tableaux"
+    },
+    "includes": {
+      "description": "Vérifie si un tableau contient déjà un élément",
+      "category": "Opérations sur les tableaux"
+    },
+    "push": {
+      "description": "Ajoute un élément à la fin d'un tableau",
       "category": "Opérations sur les tableaux"
     }
   }

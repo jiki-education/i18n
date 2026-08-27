@@ -1,11 +1,51 @@
 ---
 title: "Portapranzo"
-description: "Riempi un portapranzo con la giusta combinazione di oggetti."
-en_md5: ed0f289d44187f78ae14a9a916414fe9
+description: "Inserisci più oggetti possibile in un portapranzo a capienza limitata."
+en_md5: af9957974ff71f16820079737f887b0e
 ---
 
-You really like your lunchbox packed a certain way: sandwich on the left, drink in the middle, and snack on the right. However, sometimes you get a milkshake, which is too big to go in the lunchbox, so you carry it instead, and just put the sandwich and the snack in.
+Da bambino, ogni giorno preparavo il portapranzo per la scuola. Mia madre mi metteva a disposizione gli oggetti (ordinati con cura dal più grande al più piccolo) e io cercavo di farci stare il più possibile, ma ovviamente il portapranzo poteva contenerne solo una certa quantità. Tutto quello che non ci stava dovevo metterlo nello zaino e portarlo con me tutto il giorno, invece di lasciarlo nell'armadietto.
 
-Write a function called <define>`packALunch`</define> that takes three inputs: <define>`sandwich`</define>, <define>`drink`</define>, and <define>`snack`</define> (all strings). It should return a list of the items packed into the lunchbox.
+In questo esercizio, il tuo compito è creare un algoritmo che stabilisca cosa posso mettere nel portapranzo e cosa devo mettere nello zaino.
 
-You must create only one list and use <define>`push`</define> to add items to it.
+Devi scrivere una funzione chiamata `packLunch(items, capacity)` (prepara il pranzo), che accetta due input: l'array di oggetti (dal più grande al più piccolo) e la capienza del portapranzo `capacity` (un numero).
+
+L'array di oggetti è un array annidato: ogni oggetto è a sua volta un array con due elementi: il nome dell'oggetto e la sua dimensione. Gli oggetti sono sempre ordinati dal più grande al più piccolo. Per esempio, l'array di oggetti potrebbe essere:
+
+```javascript
+[
+  ["Water bottle", 20],
+  ["Crisps", 10],
+  ["Peanut Butter Sandwich", 8],
+  ["Chocolate bar", 6],
+  ["Satsuma", 3]
+]
+```
+
+Il portapranzo ha una capienza massima. Devi capire quali oggetti possono entrare nel portapranzo. Fai entrare il maggior numero possibile di oggetti. Tutto il resto deve andare nello zaino.
+
+La funzione deve restituire un array contenente due elementi. Il primo elemento è un array con gli oggetti per il portapranzo, il secondo con gli oggetti per lo zaino. Entrambi gli array devono essere ordinati dal più piccolo al più grande.
+
+Per esempio, per l'array qui sopra, con una capienza di 20, dovresti restituire:
+
+```javascript
+return [
+  ["Satsuma", "Chocolate bar", "Peanut Butter Sandwich"],
+  ["Crisps", "Water bottle"]
+]
+```
+
+### Metodi utili
+
+Come in tutti gli esercizi di questa sezione, ti servirà il metodo `.push(element)` per costruire gli array.
+
+Hai anche un nuovo metodo chiamato `[...].toReversed()`, che crea una copia di un array con tutti gli elementi in ordine inverso. Per esempio:
+
+```
+["A", 1, true].toReversed()
+// [true, 1, "A"]
+```
+
+Non devi usarlo per forza, ma potrebbe esserti utile.
+
+Buon divertimento!

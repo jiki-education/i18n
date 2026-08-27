@@ -2,7 +2,7 @@
   "tasks": {
     "findGuestTable": {
       "name": "Encontre a mesa do convidado",
-      "description": "Escreva uma função que recebe a lista dos nomes completos dos convidados, a lista correspondente dos nomes das mesas e um convidado que chega anunciado por um título e um sobrenome. Retorne o nome da mesa onde esse convidado está sentado, ou `\"No table found\"` se ele não estiver no mapa de lugares."
+      "description": "Escreva uma função que recebe o array dos nomes completos dos convidados, o array correspondente dos nomes das mesas e um convidado que chega anunciado por um título e um sobrenome. Retorne o nome da mesa onde esse convidado está sentado, ou `\"No table found\"` se ele não estiver no mapa de lugares."
     },
     "solveTightly": {
       "name": "Resolva-o em 9 linhas",
@@ -53,8 +53,8 @@
   },
   "hints": {
     "twoLists": {
-      "question": "Como as duas listas se relacionam entre si?",
-      "answer": "Elas formam um par. O primeiro convidado fica na primeira mesa, o segundo na segunda mesa, e assim por diante. Portanto, não basta saber *que* um convidado está no mapa: você precisa saber *onde* no mapa ele está."
+      "question": "Como os dois arrays se relacionam entre si?",
+      "answer": "Eles formam um par. O primeiro convidado fica na primeira mesa, o segundo na segunda mesa, e assim por diante. Portanto, não basta saber *que* um convidado está no mapa: você precisa saber *onde* no mapa ele está."
     },
     "comparingNames": {
       "question": "O convidado diz 'Mr Pitt', mas o mapa diz 'Brad Pitt'. Como eu comparo os dois?",
@@ -74,23 +74,23 @@
   },
   "functions": {
     "length": {
-      "description": "O número de itens numa lista: a mesma propriedade length que você já usou em strings (fornecido pelo nível stdlib)",
-      "category": "Operações com listas"
+      "description": "O número de itens num array: a mesma propriedade length que você já usou em strings",
+      "category": "Operações com arrays"
     },
     "split": {
-      "description": "Dividir uma string numa lista de pedaços, partindo em cada separador (fornecido pelo nível stdlib)",
+      "description": "Dividir uma string num array de pedaços, partindo em cada separador",
       "category": "Operações com strings"
     },
     "slice": {
-      "description": "Criar uma nova lista a partir de parte de uma lista, começando numa posição (fornecido pelo nível stdlib)",
-      "category": "Operações com listas"
+      "description": "Criar um novo array a partir de parte de um array, começando numa posição",
+      "category": "Operações com arrays"
     },
     "join": {
-      "description": "Juntar os itens de uma lista numa única string, com um separador entre eles (fornecido pelo nível stdlib)",
-      "category": "Operações com listas"
+      "description": "Juntar os itens de um array numa única string, com um separador entre eles",
+      "category": "Operações com arrays"
     },
     "endsWith": {
-      "description": "Verificar se uma string termina com uma string menor (fornecido pelo nível stdlib)",
+      "description": "Verificar se uma string termina com uma string menor",
       "category": "Operações com strings"
     }
   }

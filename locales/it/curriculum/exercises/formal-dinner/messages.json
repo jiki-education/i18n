@@ -2,7 +2,7 @@
   "tasks": {
     "findGuestTable": {
       "name": "Trova il tavolo dell'ospite",
-      "description": "Scrivi una funzione che prende la lista dei nomi completi degli invitati, la lista corrispondente dei nomi dei tavoli e un ospite in arrivo annunciato con un titolo ed il proprio cognome. Restituisci il nome del tavolo a cui è seduto quell'ospite, oppure `\"No table found\"` se non è nello schema dei posti a tavola."
+      "description": "Scrivi una funzione che prende l'array dei nomi completi degli invitati, l'array corrispondente dei nomi dei tavoli e un ospite in arrivo annunciato con un titolo ed il proprio cognome. Restituisci il nome del tavolo a cui è seduto quell'ospite, oppure `\"No table found\"` se non è nello schema dei posti a tavola."
     },
     "solveTightly": {
       "name": "Risolvilo in 9 righe",
@@ -53,7 +53,7 @@
   },
   "hints": {
     "twoLists": {
-      "question": "Come sono collegate tra loro le due liste?",
+      "question": "Come sono collegati tra loro i due array?",
       "answer": "Sono una coppia. Il primo invitato siede al primo tavolo, il secondo invitato siede al secondo tavolo, e così via. Quindi non basta sapere *che* un invitato è nello schema: devi sapere *dove* si trova nello schema."
     },
     "comparingNames": {
@@ -74,23 +74,23 @@
   },
   "functions": {
     "length": {
-      "description": "Il numero di elementi in un array: la stessa proprietà length che hai usato sulle stringhe (fornito da level stdlib)",
+      "description": "Il numero di elementi in un array: la stessa proprietà length che hai usato sulle stringhe",
       "category": "Operazioni sugli array"
     },
     "split": {
-      "description": "Divide una stringa in un array di parti, spezzandola a ogni separatore (fornito da level stdlib)",
+      "description": "Divide una stringa in un array di parti, spezzandola a ogni separatore",
       "category": "Operazioni sulle stringhe"
     },
     "slice": {
-      "description": "Crea un nuovo array da una parte di un array, a partire da una posizione (fornito da level stdlib)",
+      "description": "Crea un nuovo array da una parte di un array, a partire da una posizione",
       "category": "Operazioni sugli array"
     },
     "join": {
-      "description": "Unisci gli elementi di un array in un'unica stringa, con un separatore tra loro (fornito da level stdlib)",
+      "description": "Unisci gli elementi di un array in un'unica stringa, con un separatore tra loro",
       "category": "Operazioni sugli array"
     },
     "endsWith": {
-      "description": "Controlla se una stringa termina con una stringa più corta (fornito da level stdlib)",
+      "description": "Controlla se una stringa termina con una stringa più corta",
       "category": "Operazioni sulle stringhe"
     }
   }

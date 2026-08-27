@@ -2,7 +2,7 @@
   "tasks": {
     "findGuestTable": {
       "name": "Keresd meg a vendég asztalát",
-      "description": "Írj egy függvényt, amely megkapja a vendégek teljes neveinek listáját, a hozzá tartozó asztalnevek listáját, és egy érkező vendéget, akit megszólítással és vezetéknévvel jelentenek be. Add vissza annak az asztalnak a nevét, ahol a vendég ül, vagy a `\"No table found\"` értéket, ha nincs rajta az ülésrenden."
+      "description": "Írj egy függvényt, amely megkapja a vendégek teljes neveinek tömbjét, a hozzá tartozó asztalnevek tömbjét, és egy érkező vendéget, akit megszólítással és vezetéknévvel jelentenek be. Add vissza annak az asztalnak a nevét, ahol a vendég ül, vagy a `\"No table found\"` értéket, ha nincs rajta az ülésrenden."
     },
     "solveTightly": {
       "name": "Oldd meg 9 sorban",
@@ -53,7 +53,7 @@
   },
   "hints": {
     "twoLists": {
-      "question": "Mi a kapcsolat a két lista között?",
+      "question": "Mi a kapcsolat a két tömb között?",
       "answer": "Egy párt alkotnak. Az első vendég az első asztalnál ül, a második vendég a másodiknál, és így tovább. Tehát nem elég tudni, *hogy* egy vendég rajta van az ülésrenden, tudnod kell, *hol* van rajta."
     },
     "comparingNames": {
@@ -74,23 +74,23 @@
   },
   "functions": {
     "length": {
-      "description": "A listában lévő elemek száma, ugyanaz a length tulajdonság, amit a stringeknél használtál (a feladat stdlib-je biztosítja)",
-      "category": "Listaműveletek"
+      "description": "A tömbben lévő elemek száma, ugyanaz a length tulajdonság, amit a stringeknél használtál",
+      "category": "Tömbműveletek"
     },
     "split": {
-      "description": "Egy stringet darabol fel darabok listájára, minden elválasztónál megtörve (a feladat stdlib-je biztosítja)",
+      "description": "Egy stringet darabol fel darabok tömbjére, minden elválasztónál megtörve",
       "category": "Stringműveletek"
     },
     "slice": {
-      "description": "Új listát készít egy lista egy részéből, egy pozíciótól kezdve (a feladat stdlib-je biztosítja)",
-      "category": "Listaműveletek"
+      "description": "Új tömböt készít egy tömb egy részéből, egy pozíciótól kezdve",
+      "category": "Tömbműveletek"
     },
     "join": {
-      "description": "Egy lista elemeit egyetlen stringgé fűzi össze, közéjük elválasztót téve (a feladat stdlib-je biztosítja)",
-      "category": "Listaműveletek"
+      "description": "Egy tömb elemeit egyetlen stringgé fűzi össze, közéjük elválasztót téve",
+      "category": "Tömbműveletek"
     },
     "endsWith": {
-      "description": "Ellenőrzi, hogy egy string egy másik stringgel végződik-e (a feladat stdlib-je biztosítja)",
+      "description": "Ellenőrzi, hogy egy string egy másik stringgel végződik-e",
       "category": "Stringműveletek"
     }
   }

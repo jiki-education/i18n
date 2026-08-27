@@ -216,6 +216,18 @@
       "step_empty": "Ο Jiki έλεγξε το αντικείμενο, είδε ότι ήταν κενό και αποφάσισε να μην κάνει τίποτα περαιτέρω σε αυτή τη γραμμή.",
       "step_put": "Ο Jiki έβαλε το {{value}} στο κουτί και το έβαλε στο ράφι, έτοιμο για χρήση στο μπλοκ κώδικα."
     },
+    "forStatement": {
+      "result_false": "Η συνθήκη αξιολογήθηκε ως <code>false</code>, οπότε ο βρόχος σταμάτησε.",
+      "result_no_condition": "Αυτός ο βρόχος δεν έχει συνθήκη, οπότε το σώμα του βρόχου εκτελέστηκε ξανά.",
+      "result_true": "Η συνθήκη αξιολογήθηκε ως <code>true</code>, οπότε το σώμα του βρόχου εκτελέστηκε.",
+      "step_decreased": "Ο Jiki μείωσε το {{name}} από {{oldValue}} σε {{newValue}}.",
+      "step_decreased_evaluated": "Ο Jiki μείωσε το {{name}} από {{oldValue}} σε {{newValue}}, στη συνέχεια αξιολόγησε το {{expr}} και διαπίστωσε ότι ήταν {{value}}.",
+      "step_false": "Το αποτέλεσμα ήταν <code>false</code>, οπότε ο Jiki αποφάσισε να σταματήσει τον βρόχο.",
+      "step_increased": "Ο Jiki αύξησε το {{name}} από {{oldValue}} σε {{newValue}}.",
+      "step_increased_evaluated": "Ο Jiki αύξησε το {{name}} από {{oldValue}} σε {{newValue}}, στη συνέχεια αξιολόγησε το {{expr}} και διαπίστωσε ότι ήταν {{value}}.",
+      "step_no_condition": "Δεν υπήρχε συνθήκη για έλεγχο, οπότε ο Jiki αποφάσισε να εκτελέσει το σώμα του βρόχου.",
+      "step_true": "Το αποτέλεσμα ήταν <code>true</code>, οπότε ο Jiki αποφάσισε να εκτελέσει το σώμα του βρόχου."
+    },
     "forOfStatement": {
       "result_empty": "Το {{type}} ήταν κενό, οπότε αυτή η γραμμή δεν έκανε τίποτα.",
       "result_iteration_ordinal_one": "∅",
@@ -244,6 +256,9 @@
     },
     "memberExpression": {
       "array": "Ο Jiki πήρε το στοιχείο στη θέση {{index}} του πίνακα και διαπίστωσε ότι ήταν {{value}}.",
+      "property": "Ο Jiki πήρε την ιδιότητα {{name}} και διαπίστωσε ότι ήταν {{value}}.",
+      "property_array": "Ο Jiki πήρε την ιδιότητα {{name}} του πίνακα και διαπίστωσε ότι ήταν {{value}}.",
+      "property_string": "Ο Jiki πήρε την ιδιότητα {{name}} της συμβολοσειράς και διαπίστωσε ότι ήταν {{value}}.",
       "string": "Ο Jiki πήρε τον χαρακτήρα στη θέση {{index}} της συμβολοσειράς και διαπίστωσε ότι ήταν {{value}}."
     },
     "repeatStatement": {

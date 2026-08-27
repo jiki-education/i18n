@@ -1,17 +1,36 @@
 ---
 title: "Wordle: Tipp feldolgozása"
 description: "Ellenőrizd a Wordle-tippet, és állapítsd meg, mely betűk vannak jó helyen."
-en_md5: 715fd64c8da35dfe178ea39a9e18cac0
+en_md5: 2db4a680ca0788813ac1c48445bfca73
 ---
 
-Welcome to Wordle! The game works like this: there is a correct secret word, and you have 6 guesses to get it right. For each guess, if a letter is correct it goes green, if a letter is present in the word but in the wrong place it goes yellow, and if a letter is missing it goes grey.
+Üdvözlünk a Wordle-játékban, ami a Covid-19 miatti lezárások alatt hódította meg a világot!
 
-Your job is to create a function called <define>`processGuess`</define> that takes two inputs: the secret target word, and the guess the player has made. You should work out the state of each letter then call the <define>`colorRow(1, states)`</define> function with a list of states for each letter: either `"correct"`, `"present"`, or `"absent"`.
+A játék így működik:
 
-For example, if the guess was correct, you would call:
+- Van egy titkos szó, amit a játékos próbál kitalálni.
+- A játékosnak 6 tippje van arra, hogy eltalálja.
+- Minden tipphez 5 doboz tartozik, betűnként egy:
+  - Ha egy betű a jó helyen van, a doboz zöldre vált.
+  - Ha egy betű benne van a titkos szóban, de rossz helyen, a doboz sárgára vált.
+  - Ha egy betű nincs benne a titkos szóban, a doboz szürkére vált.
 
+Néhány feladatban majd megvalósítod az egész Wordle-játékot, de **ebben a feladatban** egyelőre csak az első sort kell működésre bírnod.
+
+Ehhez létre kell hoznod egy `processGuess(target, guess)` (tipp feldolgozása) nevű függvényt. A függvénynek meg kell állapítania a tippben lévő minden betű állapotát, majd meg kell hívnia a `colorRow(1, states)` (sor kiszínezése) függvényt az egyes betűk állapotát tartalmazó tömbbel: `"correct"`, `"present"` vagy `"absent"`.
+
+Például a `processGuess("Hello", "Holes")` esetében a `colorRow` függvényt ezzel kell meghívni:
+
+```javascript
+colorRow(1, ["correct", "present", "correct", "present", "absent"])
 ```
-colorRow(1, ["correct", "correct", "correct", "correct", "correct"])
-```
 
-You also have access to the <define>`push(list, element)`</define> function which adds an element to a list and returns the new list.
+Mielőtt továbblépnél, győződj meg arról, hogy érted ezt!
+
+### Metódusok
+
+Ahogy az előző néhány feladatban is, az állapotok tömbjét a `push` metódussal építheted fel, amely egy elemet ad a tömb végéhez. Például a `states.push("correct")` a `"correct"` értéket a `states` tömb végéhez adja.
+
+Ha azt szeretnéd ellenőrizni, hogy egy string tartalmaz-e egy másik stringet, az `includes` metódust is használhatod.
+
+Sok sikert!

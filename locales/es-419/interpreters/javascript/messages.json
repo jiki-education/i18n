@@ -216,6 +216,18 @@
       "step_empty": "Jiki verificó el objeto, vio que estaba vacío y decidió no hacer nada más en esta línea.",
       "step_put": "Jiki puso {{value}} en la caja y la colocó en el estante, lista para usarse en el bloque de código."
     },
+    "forStatement": {
+      "result_false": "La condición evaluó a <code>false</code>, así que el bucle se detuvo.",
+      "result_no_condition": "Este bucle no tiene condición, así que el cuerpo del bucle se ejecutó de nuevo.",
+      "result_true": "La condición evaluó a <code>true</code>, así que el cuerpo del bucle se ejecutó.",
+      "step_decreased": "Jiki disminuyó {{name}} de {{oldValue}} a {{newValue}}.",
+      "step_decreased_evaluated": "Jiki disminuyó {{name}} de {{oldValue}} a {{newValue}}, luego evaluó {{expr}} y determinó que era {{value}}.",
+      "step_false": "El resultado fue <code>false</code>, así que Jiki decidió detener el bucle.",
+      "step_increased": "Jiki aumentó {{name}} de {{oldValue}} a {{newValue}}.",
+      "step_increased_evaluated": "Jiki aumentó {{name}} de {{oldValue}} a {{newValue}}, luego evaluó {{expr}} y determinó que era {{value}}.",
+      "step_no_condition": "No había condición que verificar, así que Jiki decidió ejecutar el cuerpo del bucle.",
+      "step_true": "El resultado fue <code>true</code>, así que Jiki decidió ejecutar el cuerpo del bucle."
+    },
     "forOfStatement": {
       "result_empty": "El {{type}} estaba vacío, así que esta línea no hizo nada.",
       "result_iteration_ordinal_one": "∅",
@@ -244,6 +256,9 @@
     },
     "memberExpression": {
       "array": "Jiki obtuvo el elemento en el índice {{index}} del array y determinó que era {{value}}.",
+      "property": "Jiki obtuvo la propiedad {{name}} y determinó que era {{value}}.",
+      "property_array": "Jiki obtuvo {{name}} del array y determinó que era {{value}}.",
+      "property_string": "Jiki obtuvo {{name}} del string y determinó que era {{value}}.",
       "string": "Jiki obtuvo el carácter en el índice {{index}} del string y determinó que era {{value}}."
     },
     "repeatStatement": {

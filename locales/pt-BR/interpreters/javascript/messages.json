@@ -216,6 +216,18 @@
       "step_empty": "O Jiki verificou o objeto, viu que estava vazio e decidiu não fazer mais nada nesta linha.",
       "step_put": "O Jiki colocou {{value}} na caixa e a deixou na prateleira, pronta para ser usada no bloco de código."
     },
+    "forStatement": {
+      "result_false": "A condição foi avaliada como <code>false</code>, então o laço parou.",
+      "result_no_condition": "Este laço não tem condição, então o corpo do laço rodou de novo.",
+      "result_true": "A condição foi avaliada como <code>true</code>, então o corpo do laço rodou.",
+      "step_decreased": "O Jiki diminuiu {{name}} de {{oldValue}} para {{newValue}}.",
+      "step_decreased_evaluated": "O Jiki diminuiu {{name}} de {{oldValue}} para {{newValue}}, depois avaliou {{expr}} e concluiu que era {{value}}.",
+      "step_false": "O resultado foi <code>false</code>, então o Jiki decidiu parar o laço.",
+      "step_increased": "O Jiki aumentou {{name}} de {{oldValue}} para {{newValue}}.",
+      "step_increased_evaluated": "O Jiki aumentou {{name}} de {{oldValue}} para {{newValue}}, depois avaliou {{expr}} e concluiu que era {{value}}.",
+      "step_no_condition": "Não havia condição para verificar, então o Jiki decidiu rodar o corpo do laço.",
+      "step_true": "O resultado foi <code>true</code>, então o Jiki decidiu rodar o corpo do laço."
+    },
     "forOfStatement": {
       "result_empty": "O valor do tipo {{type}} estava vazio, então esta linha não fez nada.",
       "result_iteration_ordinal_one": "∅",
@@ -244,6 +256,9 @@
     },
     "memberExpression": {
       "array": "O Jiki pegou o item no índice {{index}} do array e concluiu que era {{value}}.",
+      "property": "O Jiki pegou a propriedade {{name}} e concluiu que era {{value}}.",
+      "property_array": "O Jiki pegou a propriedade {{name}} do array e concluiu que era {{value}}.",
+      "property_string": "O Jiki pegou a propriedade {{name}} da string e concluiu que era {{value}}.",
       "string": "O Jiki pegou o caractere no índice {{index}} da string e concluiu que era {{value}}."
     },
     "repeatStatement": {

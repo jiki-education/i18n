@@ -1,23 +1,24 @@
 ---
 title: "Wordle: risolutore"
-description: ""
-en_md5: 71b828d8781ad324051a8aac41089e70
+description: "Crea un risolutore che gioca da solo un'intera partita a Wordle."
+en_md5: bfa3fc3c672c10eca0658cb6c3d6e0ca
 ---
 
-Time to build a Wordle solver! You need to create a <define>`processGame`</define> function that takes no inputs and automatically solves the game.
+Nell'ultimo esercizio su Wordle, hai elaborato una partita in cui i tentativi ti venivano forniti. Questa volta sei dall'altra parte: sei tu a dover trovare i tentativi.
 
-You have three functions available:
+Il tuo compito è creare una nuova funzione chiamata `solveWordle()`, dove continui a provare parole finché non trovi la parola corretta. Devi risolvere la partita nel modo più efficiente possibile (usando il minor numero possibile di parole).
 
-- <define>`getTargetWord()`</define>: Returns the secret target word.
-- <define>`commonWords()`</define>: Returns a list of 100+ possible words.
-- <define>`addWord(row, word, states)`</define>: Adds a word to the board at the given row (1-6) with its states.
+Hai a disposizione una nuova funzione `commonWords()` (parole comuni), che restituisce un array con le oltre 100 parole che puoi usare nel gioco. Queste sono le parole da provare. Dovresti sempre iniziare leggendo la prima parola di quell'array e provandola. Poi prosegui: trova la prossima parola valida possibile, provala, e così via.
 
-For each guess, compare it to the target word to determine the states (correct/present/absent), then add it to the board. Keep guessing until you find the right word or use all 6 slots.
+Hai a disposizione una funzione `guess(word)` (prova la parola) che restituisce un array di `"correct"`, `"present"`, `"absent"` per ogni lettera.
 
-The best guess is the **first word** in the `commonWords` list that matches your knowledge so far:
+La chiave di questo esercizio è riflettere su come ricordare le parole precedenti ed i risultati delle chiamate a `guess`. Devi usare queste conoscenze per trovare di volta in volta il percorso più efficiente verso la vittoria.
 
-- Has all 'correct' letters in the right places
-- Has all 'present' letters somewhere (but not in positions you know are wrong)
-- Has no 'absent' letters
+### Un esempio
 
-**Important:** Don't use `getTargetWord()` to cheat - only use it for checking your guess to generate states.
+1. Leggi la prima parola dell'array, che è `"which"`
+2. Usa `guess("which")`, che restituisce `["correct", "present", "absent", "absent", "absent"]`.
+3. Scegli la parola successiva nell'array delle parole comuni che inizia con `"w"` e ha una `"h"` in terza, quarta o quinta posizione.
+4. Torna al punto (2)...
+
+Buona fortuna e divertiti!

@@ -1,21 +1,21 @@
 ---
 title: "Dîner de gala"
 description: "Retrouve la table d'un invité à partir du plan de table."
-en_md5: b93bf1949411dbc2a19e5b48c3ae869a
+en_md5: 96fcee7c5e2237298b1a8e288278cf04
 ---
 
 On reprend notre petit boulot de videur. On est le lendemain de l'after, et il y a encore une sauterie. Cette fois, c'est un dîner de gala : ce soir, tu es moins « costaud posté devant la porte » et plus « personne au porte-bloc et au joli gilet ».
 
 Ici, pas question de se présenter avec **seulement** son prénom. En fait, pas question de prénom du tout. Tout le monde se présente par son titre de civilité (_honorific_ en anglais), comme Miss, Mr ou Dr, suivi de son nom de famille.
 
-Les organisateurs t'ont remis le plan de table sous forme de deux listes séparées. La première contient les noms complets des invités. La seconde contient le nom de la table à laquelle chaque invité est assis (des tables baptisées d'après des arbres et des fleurs). Comme dans « L'after », les deux listes sont alignées : l'invité en position 3 de la première liste est assis à la table en position 3 de la seconde.
+Les organisateurs t'ont remis le plan de table sous forme de deux tableaux séparés. Le premier contient les noms complets des invités. Le second contient le nom de la table à laquelle chaque invité est assis (des tables baptisées d'après des arbres et des fleurs). Comme dans « L'after », les deux tableaux sont alignés : l'invité en position 3 du premier tableau est assis à la table en position 3 du second.
 
 Alors quand Mr Pitt fait son entrée, à toi de comprendre qu'il s'agit du « Brad Pitt » de ta liste, puis de lui indiquer sa table.
 
 Écris une fonction appelée `tableFor` (« la table de », elle cherche la table à laquelle un invité est assis). La fonction a trois entrées :
 
-- La première est la liste des noms complets des invités, sous forme de _strings_
-- La deuxième est la liste des noms de tables, dans le même ordre que les invités
+- La première est le tableau des noms complets des invités, sous forme de _strings_
+- La deuxième est le tableau des noms de tables, dans le même ordre que les invités
 - La troisième est l'invité qui arrive, sous la forme d'un titre de civilité suivi de son nom de famille (par exemple « Mr Pitt »)
 
 Renvoie le nom de la table à laquelle l'invité est assis. S'il ne figure pas du tout sur le plan de table, renvoie à la place la _string_ `"No table found"` (aucune table trouvée), exactement comme elle est écrite (pas de resquilleurs ici !).

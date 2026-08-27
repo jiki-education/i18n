@@ -1,21 +1,21 @@
 ---
 title: "Jantar Formal"
 description: "Descubra em que mesa está sentado um convidado a partir do mapa de lugares."
-en_md5: b93bf1949411dbc2a19e5b48c3ae869a
+en_md5: 96fcee7c5e2237298b1a8e288278cf04
 ---
 
 Você está de volta ao seu bico como segurança. É a noite depois da After Party, e tem mais uma festa. Desta vez é um jantar formal, então hoje à noite você é menos "homem musculoso na porta" e mais "pessoa com uma prancheta e um colete bonito".
 
 Definitivamente, não é o lugar para usar só o seu primeiro nome. Na verdade, não é mesmo o lugar para usar o seu primeiro nome. Aqui, todo mundo usa um título (_honorific_ em inglês), como Miss, Mr, Dr, etc., e o sobrenome.
 
-Os organizadores te entregaram o mapa de lugares em duas listas separadas. Uma contém os nomes completos dos convidados. A outra contém o nome da mesa onde cada convidado está sentado (mesas com nomes de árvores e flores). Assim como na After Party, as duas listas estão alinhadas: o convidado na posição 3 da primeira lista está sentado na mesa da posição 3 da segunda lista.
+Os organizadores te entregaram o mapa de lugares em dois arrays separados. Uma contém os nomes completos dos convidados. A outra contém o nome da mesa onde cada convidado está sentado (mesas com nomes de árvores e flores). Assim como na After Party, os dois arrays estão alinhados: o convidado na posição 3 do primeiro array está sentado na mesa da posição 3 do segundo array.
 
 Então, quando o Mr Pitt entra, você precisa descobrir que se trata do "Brad Pitt" da sua lista e depois dizer para ele em que mesa está sentado.
 
 Escreva uma função chamada `tableFor` (que retorna a mesa onde um convidado está sentado). A função tem três entradas:
 
-- A primeira é a lista dos nomes completos dos convidados, como strings
-- A segunda é a lista dos nomes das mesas, na mesma ordem dos convidados
+- A primeira é o array dos nomes completos dos convidados, como strings
+- A segunda é o array dos nomes das mesas, na mesma ordem dos convidados
 - A terceira é o convidado que chega, formatado como um título seguido do sobrenome (por exemplo, "Mr Pitt")
 
 Retorne o nome da mesa onde o convidado está sentado. Se o convidado não estiver no mapa de lugares, retorne a string `"No table found"` (aqui não tem espertinhos!).

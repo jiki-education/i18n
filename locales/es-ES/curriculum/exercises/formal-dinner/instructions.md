@@ -1,7 +1,7 @@
 ---
 title: "Cena formal"
 description: "Busca la mesa de un invitado a partir del plan de asientos."
-en_md5: b93bf1949411dbc2a19e5b48c3ae869a
+en_md5: 96fcee7c5e2237298b1a8e288278cf04
 ---
 
 Estás de vuelta en tu trabajo extra como portero. Es la noche después de la «After Party», y hay otra fiesta más. Esta vez es una cena formal, así que esta noche eres menos «hombre grandote en la puerta» y más «persona con un portapapeles y un chaleco bonito».

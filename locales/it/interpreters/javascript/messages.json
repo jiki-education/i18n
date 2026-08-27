@@ -216,6 +216,18 @@
       "step_empty": "Jiki ha controllato l'oggetto, ha visto che era vuoto e ha deciso di non fare altro su questa riga.",
       "step_put": "Jiki ha messo {{value}} nella scatola e l'ha messa sullo scaffale, pronta per l'uso nel blocco di codice."
     },
+    "forStatement": {
+      "result_false": "La condizione è risultata <code>false</code>, quindi il ciclo si è fermato.",
+      "result_no_condition": "Questo ciclo non ha alcuna condizione, quindi il corpo del ciclo è stato eseguito di nuovo.",
+      "result_true": "La condizione è risultata <code>true</code>, quindi il corpo del ciclo è stato eseguito.",
+      "step_decreased": "Jiki ha diminuito {{name}} da {{oldValue}} a {{newValue}}.",
+      "step_decreased_evaluated": "Jiki ha diminuito {{name}} da {{oldValue}} a {{newValue}}, poi ha valutato {{expr}} e ha stabilito che era {{value}}.",
+      "step_false": "Il risultato è stato <code>false</code>, quindi Jiki ha deciso di fermare il ciclo.",
+      "step_increased": "Jiki ha aumentato {{name}} da {{oldValue}} a {{newValue}}.",
+      "step_increased_evaluated": "Jiki ha aumentato {{name}} da {{oldValue}} a {{newValue}}, poi ha valutato {{expr}} e ha stabilito che era {{value}}.",
+      "step_no_condition": "Non c'era alcuna condizione da controllare, quindi Jiki ha deciso di eseguire il corpo del ciclo.",
+      "step_true": "Il risultato è stato <code>true</code>, quindi Jiki ha deciso di eseguire il corpo del ciclo."
+    },
     "forOfStatement": {
       "result_empty": "Il {{type}} era vuoto quindi questa riga non ha fatto nulla.",
       "result_iteration_ordinal_one": "∅",
@@ -244,6 +256,9 @@
     },
     "memberExpression": {
       "array": "Jiki ha preso l'elemento all'indice {{index}} nell'array e ha stabilito che era {{value}}.",
+      "property": "Jiki ha letto la proprietà {{name}} e ha stabilito che era {{value}}.",
+      "property_array": "Jiki ha letto la proprietà {{name}} dell'array e ha stabilito che era {{value}}.",
+      "property_string": "Jiki ha letto la proprietà {{name}} della stringa e ha stabilito che era {{value}}.",
       "string": "Jiki ha preso il carattere all'indice {{index}} nella stringa e ha stabilito che era {{value}}."
     },
     "repeatStatement": {

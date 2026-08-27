@@ -1,7 +1,7 @@
 ---
 title: "Le salon express"
 description: "Détermine si le coiffeur a le temps de prendre un dernier client."
-en_md5: d34f103d63edca4ab6b29fd4f8d5c176
+en_md5: 5d80e48067c44af3dbda12f2fb2c1d4d
 ---
 
 Tu tiens un petit salon de coiffure qui mise sur la rapidité plutôt que sur la qualité. Les clients ressortent parfois un peu ébouriffés, mais au moins ils ne passent pas des heures dans le fauteuil.
@@ -26,3 +26,27 @@ Les coupes que tu proposes sont :
 - Shave and Polish : 15 minutes
 - Afro Trim : 45 minutes
 - Up-do : 30 minutes
+
+### Tableaux imbriqués
+
+C'est le premier exercice où tu manipules un tableau qui contient d'autres tableaux comme éléments. On appelle ça des « tableaux imbriqués ». Un tableau imbriqué est un tableau comme les autres, mais au lieu de contenir des _strings_ ou des nombres, il contient d'autres tableaux.
+
+Regarde le tableau `cuts` (les coupes). Il contient d'autres tableaux, un pour chaque coupe de cheveux, et chacun de ces tableaux a deux éléments : un nom et une durée.
+
+Le plus simple, ici, est de penser d'abord aux tableaux intérieurs (les paires composées d'un nom et d'une durée), puis d'imaginer qu'ils sont tous regroupés ensemble dans un autre tableau.
+
+L'indexation fonctionne comme partout ailleurs, mais tu peux enchaîner les indices comme ceci...
+
+```javascript
+const cuts = [
+  ["Mohawk", 20],
+  ["Slicked-Back Pixie", 15],
+  ["Bob", 25],
+  //...
+]
+
+cuts[0] // ["Mohawk", 20]
+cuts[0][0] // "Mohawk"
+cuts[0][1] // 20
+cuts[2][0] // "Bob"
+```

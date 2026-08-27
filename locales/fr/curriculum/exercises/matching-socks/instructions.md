@@ -1,7 +1,7 @@
 ---
 title: "Chaussettes assorties"
 description: "Trouve les paires de chaussettes réparties dans deux paniers de linge."
-en_md5: 83ac75dda52f42ed411bb64a715c6bf2
+en_md5: c58a4ca0800c19322e7e9a98b4634aad
 ---
 
 Peu de choses dans la vie sont plus agaçantes qu'une chaussette orpheline dont on ne retrouve pas la partenaire. Alors un beau jour, tu décides enfin de mettre de l'ordre dans ces chaussettes !
@@ -23,3 +23,13 @@ Les descriptions suivent ces règles :
 - Elles sont toujours en minuscules.
 - Elles se composent toujours d'un ou plusieurs mots séparés par des espaces.
 - Pour les objets qui vont par paire, elles commencent toujours par `"left "` ou `"right "`
+
+### Méthodes
+
+Cet exercice comporte de nombreuses méthodes de _strings_ et de tableaux qui peuvent te simplifier la vie. Parcours toutes les descriptions ci-dessous pour découvrir ce que tu as dans ta boîte à outils pour ce Défi.
+
+### Bonus
+
+Il y a de nombreuses façons de résoudre cet exercice. Il existe cependant une solution plutôt élégante en 29 lignes de code, alors c'est l'objectif qu'on a fixé. Tu peux descendre plus bas, mais le code a tendance à devenir moins lisible à mesure qu'il raccourcit : on pense donc qu'environ 29 lignes, c'est le bon niveau.
+
+Amuse-toi bien !

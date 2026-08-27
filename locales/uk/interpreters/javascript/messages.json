@@ -216,6 +216,18 @@
       "step_empty": "Jiki зазирнув в обʼєкт, побачив, що той порожній, і вирішив більше нічого не робити на цьому рядку.",
       "step_put": "Jiki поклав {{value}} у коробку й поставив її на полицю, готову до використання в блоці коду."
     },
+    "forStatement": {
+      "result_false": "Умова обчислилася як <code>false</code>, тому цикл зупинився.",
+      "result_no_condition": "Цей цикл не має умови, тому тіло циклу виконалося знову.",
+      "result_true": "Умова обчислилася як <code>true</code>, тому тіло циклу виконалося.",
+      "step_decreased": "Jiki зменшив {{name}} з {{oldValue}} до {{newValue}}.",
+      "step_decreased_evaluated": "Jiki зменшив {{name}} з {{oldValue}} до {{newValue}}, а потім обчислив {{expr}} і визначив, що це {{value}}.",
+      "step_false": "Результат був <code>false</code>, тому Jiki вирішив зупинити цикл.",
+      "step_increased": "Jiki збільшив {{name}} з {{oldValue}} до {{newValue}}.",
+      "step_increased_evaluated": "Jiki збільшив {{name}} з {{oldValue}} до {{newValue}}, а потім обчислив {{expr}} і визначив, що це {{value}}.",
+      "step_no_condition": "Умови для перевірки не було, тому Jiki вирішив виконати тіло циклу.",
+      "step_true": "Результат був <code>true</code>, тому Jiki вирішив виконати тіло циклу."
+    },
     "forOfStatement": {
       "result_empty": "{{type}} був порожній, тож цей рядок нічого не зробив.",
       "result_iteration_ordinal_one": "∅",
@@ -244,6 +256,9 @@
     },
     "memberExpression": {
       "array": "Jiki взяв елемент з індексом {{index}} у масиві та визначив, що це {{value}}.",
+      "property": "Jiki отримав властивість {{name}} і визначив, що це {{value}}.",
+      "property_array": "Jiki отримав {{name}} масиву і визначив, що це {{value}}.",
+      "property_string": "Jiki отримав {{name}} рядка тексту і визначив, що це {{value}}.",
       "string": "Jiki взяв символ з індексом {{index}} у рядку тексту та визначив, що це {{value}}."
     },
     "repeatStatement": {

@@ -1,17 +1,36 @@
 ---
 title: "Wordle: Processar a Tentativa"
 description: "Verifica uma tentativa no Wordle e descobre quais letras estão corretas."
-en_md5: 715fd64c8da35dfe178ea39a9e18cac0
+en_md5: 2db4a680ca0788813ac1c48445bfca73
 ---
 
-Welcome to Wordle! The game works like this: there is a correct secret word, and you have 6 guesses to get it right. For each guess, if a letter is correct it goes green, if a letter is present in the word but in the wrong place it goes yellow, and if a letter is missing it goes grey.
+Bem-vindo ao Wordle, o jogo que se tornou viral durante os confinamentos da covid-19!
 
-Your job is to create a function called <define>`processGuess`</define> that takes two inputs: the secret target word, and the guess the player has made. You should work out the state of each letter then call the <define>`colorRow(1, states)`</define> function with a list of states for each letter: either `"correct"`, `"present"`, or `"absent"`.
+O jogo funciona assim:
 
-For example, if the guess was correct, you would call:
+- Há uma palavra secreta que estás a tentar adivinhar.
+- Tens 6 tentativas para acertar.
+- Para cada tentativa há 5 caixas, uma para cada letra:
+  - Se uma letra estiver correta, a caixa fica verde.
+  - Se uma letra estiver na palavra secreta, mas no sítio errado, a caixa fica amarela.
+  - Se uma letra não estiver na palavra secreta, a caixa fica cinzenta.
 
+Ao longo de alguns exercícios, vais implementar o jogo Wordle completo, mas **neste exercício** só vais pôr a primeira linha a funcionar.
+
+Para isso, tens de criar uma função chamada `processGuess(target, guess)` (processa a tentativa). A função deve determinar o estado de cada letra da tentativa e, em seguida, chamar a função `colorRow(1, states)` (colore a linha) com um array de estados para cada letra: `"correct"`, `"present"` ou `"absent"`.
+
+Por exemplo, `processGuess("Hello", "Holes")` deve usar `colorRow` com:
+
+```javascript
+colorRow(1, ["correct", "present", "correct", "present", "absent"])
 ```
-colorRow(1, ["correct", "correct", "correct", "correct", "correct"])
-```
 
-You also have access to the <define>`push(list, element)`</define> function which adds an element to a list and returns the new list.
+Verifica se percebeste isto antes de continuar!
+
+### Métodos
+
+Tal como nos dois últimos exercícios, podes construir o array de estados com o método `push`, que adiciona um elemento no fim de um array. Por exemplo, `states.push("correct")` adiciona `"correct"` no fim do array `states`.
+
+Também tens o método `includes` se quiseres verificar se uma string contém outra string.
+
+Boa sorte!

@@ -216,6 +216,18 @@
       "step_empty": "Jiki a regardé l'objet, a vu qu'il était vide et a décidé de ne rien faire de plus sur cette ligne.",
       "step_put": "Jiki a mis {{value}} dans la boîte, puis a posé celle-ci sur l'étagère, prête à être utilisée dans le bloc de code."
     },
+    "forStatement": {
+      "result_false": "La condition a été évaluée à <code>false</code>, donc la boucle s'est arrêtée.",
+      "result_no_condition": "Cette boucle n'a pas de condition, donc le corps de la boucle s'est exécuté à nouveau.",
+      "result_true": "La condition a été évaluée à <code>true</code>, donc le corps de la boucle s'est exécuté.",
+      "step_decreased": "Jiki a diminué {{name}} de {{oldValue}} à {{newValue}}.",
+      "step_decreased_evaluated": "Jiki a diminué {{name}} de {{oldValue}} à {{newValue}}, puis a évalué {{expr}} et a déterminé que le résultat était {{value}}.",
+      "step_false": "Le résultat était <code>false</code>, donc Jiki a décidé d'arrêter la boucle.",
+      "step_increased": "Jiki a augmenté {{name}} de {{oldValue}} à {{newValue}}.",
+      "step_increased_evaluated": "Jiki a augmenté {{name}} de {{oldValue}} à {{newValue}}, puis a évalué {{expr}} et a déterminé que le résultat était {{value}}.",
+      "step_no_condition": "Il n'y avait pas de condition à vérifier, donc Jiki a décidé d'exécuter le corps de la boucle.",
+      "step_true": "Le résultat était <code>true</code>, donc Jiki a décidé d'exécuter le corps de la boucle."
+    },
     "forOfStatement": {
       "result_empty": "La valeur ({{type}}) était vide, donc cette ligne n'a rien fait.",
       "result_iteration_ordinal_one": "Cette ligne a démarré la {{count}}re itération avec la variable {{name}} définie à {{value}}.",
@@ -244,6 +256,9 @@
     },
     "memberExpression": {
       "array": "Jiki a pris l'élément à l'indice {{index}} du tableau et a déterminé que c'était {{value}}.",
+      "property": "Jiki a récupéré la propriété {{name}} et a déterminé qu'elle valait {{value}}.",
+      "property_array": "Jiki a récupéré la propriété {{name}} du tableau et a déterminé qu'elle valait {{value}}.",
+      "property_string": "Jiki a récupéré la propriété {{name}} de la chaîne de caractères et a déterminé qu'elle valait {{value}}.",
       "string": "Jiki a pris le caractère à l'indice {{index}} de la string et a déterminé que c'était {{value}}."
     },
     "repeatStatement": {

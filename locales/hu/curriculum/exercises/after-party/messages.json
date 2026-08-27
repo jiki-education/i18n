@@ -49,8 +49,8 @@
       "answer": "Képzeld el, hogy valóban az ajtóban csinálod. Valaki mond egy nevet, te pedig végigolvasod a vágólapot, amíg meg nem találod. Érdemes észrevenned, hogy a válasz, amit adnod kell nekik, nincs odaírva a nevük mellé azon a listán, amit olvasol."
     },
     "twoLists": {
-      "question": "Két lista van. Hogyan kapcsolódnak egymáshoz?",
-      "answer": "Bármit tudsz meg arról, hogy *hol* van valaki az egyik listában, ugyanúgy igaz a másikra is. Egy pozíció hasznosabb dolog, amit megjegyezhetsz, mint egy név."
+      "question": "Két tömb van. Hogyan kapcsolódnak egymáshoz?",
+      "answer": "Bármit tudsz meg arról, hogy *hol* van valaki az egyik tömbben, ugyanúgy igaz a másikra is. Egy pozíció hasznosabb dolog, amit megjegyezhetsz, mint egy név."
     },
     "whatCountsAsAMatch": {
       "question": "Mikor számít egy keresztnév egyezésnek?",
@@ -58,7 +58,7 @@
     },
     "noSurname": {
       "question": "Chernek nincs vezetékneve. Ez okoz valami problémát?",
-      "answer": "Nézd meg újra, mit feltételez az egyezés-ellenőrzésed egy listaelemről. Ha azt feltételezi, hogy mindig van valami a keresztnév után, akkor egy olyan bejegyzés, ami *csak* egy keresztnév, nem fog átjutni rajta. És fordítva: egy hosszabb név ne tudja igényelni a rövidebb bejegyzést."
+      "answer": "Nézd meg újra, mit feltételez az egyezés-ellenőrzésed egy tömbelemről. Ha azt feltételezi, hogy mindig van valami a keresztnév után, akkor egy olyan bejegyzés, ami *csak* egy keresztnév, nem fog átjutni rajta. És fordítva: egy hosszabb név ne tudja igényelni a rövidebb bejegyzést."
     },
     "notOnTheList": {
       "question": "Mit csináljak, ha nincsenek a listán?",
@@ -67,11 +67,11 @@
   },
   "functions": {
     "length": {
-      "description": "A lista elemeinek száma – ugyanaz a length tulajdonság, amit a stringeknél is használtál (a feladat stdlib-je biztosítja)",
-      "category": "Listaműveletek"
+      "description": "A tömb elemeinek száma – ugyanaz a length tulajdonság, amit a stringeknél is használtál",
+      "category": "Tömbműveletek"
     },
     "startsWith": {
-      "description": "Ellenőrzi, hogy egy sztring egy kisebb sztringgel kezdődik-e (a feladat stdlib-je biztosítja)",
+      "description": "Ellenőrzi, hogy egy sztring egy kisebb sztringgel kezdődik-e",
       "category": "Stringműveletek"
     }
   }

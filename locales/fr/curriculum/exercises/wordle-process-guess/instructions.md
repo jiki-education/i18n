@@ -1,17 +1,36 @@
 ---
 title: "Wordle : traite l'essai"
 description: "Vérifie un essai de Wordle et détermine quelles lettres sont correctes."
-en_md5: 715fd64c8da35dfe178ea39a9e18cac0
+en_md5: 2db4a680ca0788813ac1c48445bfca73
 ---
 
-Bienvenue dans Wordle ! Le principe du jeu est simple : il y a un mot secret à trouver, et tu as 6 essais pour y arriver. À chaque essai, une lettre bien placée devient verte, une lettre présente dans le mot mais mal placée devient jaune, et une lettre absente du mot devient grise.
+Bienvenue dans Wordle, le jeu devenu viral pendant les confinements du Covid-19 !
 
-Ton travail consiste à créer une fonction appelée `processGuess` (« traiter l'essai ») qui prend deux entrées : le mot secret à trouver, et l'essai proposé par le joueur. Tu dois déterminer l'état de chaque lettre, puis appeler la fonction `colorRow(1, states)` (« colorier la rangée ») avec un tableau contenant l'état de chaque lettre : soit `"correct"`, soit `"present"`, soit `"absent"`.
+Le jeu fonctionne comme ceci :
 
-Par exemple, si l'essai était entièrement correct, tu appellerais :
+- Il y a un mot secret que le joueur essaie de deviner.
+- Le joueur a 6 essais pour le trouver.
+- À chaque essai, il y a 5 cases, une pour chaque lettre :
+  - Si une lettre est correcte, la case devient verte.
+  - Si une lettre est dans le mot secret mais à la mauvaise place, la case devient jaune.
+  - Si une lettre n'est pas dans le mot secret, la case devient grise.
 
+Dans quelques exercices, tu implémenteras le jeu Wordle en entier, mais pour **cet exercice**, tu vas simplement faire fonctionner la première rangée.
+
+Pour cela, tu dois créer une fonction appelée `processGuess(target, guess)` (« traiter l'essai »). Elle doit déterminer l'état de chaque lettre de l'essai, puis appeler la fonction `colorRow(1, states)` (« colorier la rangée ») avec un tableau contenant l'état de chaque lettre : soit `"correct"`, soit `"present"`, soit `"absent"`.
+
+Par exemple, `processGuess("Hello", "Holes")` doit utiliser `colorRow` avec :
+
+```javascript
+colorRow(1, ["correct", "present", "correct", "present", "absent"])
 ```
-colorRow(1, ["correct", "correct", "correct", "correct", "correct"])
-```
 
-Tu as aussi accès à la fonction `push(list, element)` (« ajouter un élément »), qui ajoute un élément à un tableau et renvoie le nouveau tableau.
+Assure-toi d'avoir bien compris cet exemple avant de continuer !
+
+### Méthodes
+
+Comme dans les derniers exercices, tu peux construire le tableau des états avec la méthode `push`, qui ajoute un élément à la fin d'un tableau. Par exemple, `states.push("correct")` ajoute `"correct"` à la fin du tableau `states`.
+
+Tu as aussi la méthode `includes` si tu veux vérifier si une _string_ en contient une autre.
+
+Bonne chance !
