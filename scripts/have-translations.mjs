@@ -4,7 +4,7 @@
 // translations, in every locale that is asked about?
 //
 // Usage:
-//   node scripts/have-translations.mjs --changes=<file|-> [--locales=hu,fr] [--json]
+//   node scripts/have-translations.mjs --changes=<file|-> [--base=<sha>] [--locales=hu,fr] [--json]
 //   node scripts/have-translations.mjs <path> [<path>...] [--locales=hu,fr] [--json]
 //
 // `--changes` takes `git diff --name-status` output (`A\tpath`, `M\tpath`,
@@ -27,21 +27,42 @@
 //
 // ## The three verdicts
 //
-//   BLOCKING  the item is in the corpus, and this locale cannot render it. Either
-//             the locale holds no file for it at all, or the file is there and
-//             does not hold every key English defines. Both mean a learner in
-//             that locale sees raw key names or an English page, so both fail.
-//   WARNING   the translation exists and covers English, but was made against
-//             OLDER English (its `en_md5` stamp no longer matches), or English
-//             was deleted and translations of it are still on disk. Real work,
-//             and never a merge blocker: an edit leaves a page slightly behind,
-//             which is a much smaller harm than a hole, and blocking on it would
-//             make every copy tweak in the front-end un-mergeable until ten
-//             locales caught up.
+//   BLOCKING  the item is in the corpus, and this CHANGE has made it
+//             unrenderable in this locale. Either the locale holds no file for
+//             it at all, or the change adds a key (or a frontmatter field) the
+//             locale does not hold. A learner in that locale sees raw key names
+//             or an English page, and the PR in front of you is why.
+//   WARNING   real work, and never a merge blocker. Three shapes of it: the
+//             translation covers English but was made against OLDER English (its
+//             `en_md5` stamp no longer matches); the locale was ALREADY missing
+//             keys this change did not touch; or English was deleted and
+//             translations of it are still on disk.
 //   IGNORED   corpus.json says the item is out of scope (`isExcluded`), or the
 //             path is not English anything translates. Never blocks, and says so
 //             out loud rather than silently dropping out, because "why did that
 //             not block?" is a question somebody will ask.
+//
+// ## Only what the change ADDS blocks
+//
+// The distinction between the first two verdicts is what keeps this check worth
+// having. A gate that blocked on every gap in every file a PR happens to touch
+// would be a debt collector: it would turn a PR red for absences its author did
+// not create and could not reasonably fix, and a check like that gets routed
+// around once and ignored forever after.
+//
+// So for a MODIFIED catalog the blocking set is `head keys - base keys`, and a
+// key the locale is missing that BASE English already defined is a warning. The
+// same reasoning applies to a prose page's translatable frontmatter. An ADDED
+// file needs none of this: every key in it is new by definition, so its whole
+// key set blocks and the rule is unchanged.
+//
+// Base English is read with `git show <base>:<path>` from the same checkout head
+// English is read from, rather than by checking the repo out twice. The caller
+// already has both commits (its `--changes` came from a
+// `git diff --name-status BASE...HEAD` in that very checkout), a second worktree
+// would double the clone for one blob per file, and `git show` cannot drift from
+// the diff the file list was derived from. With no `--base`, every absence
+// blocks, which is the honest answer when nobody has said what "new" means.
 //
 // A `body`-scoped exclusion is deliberately NOT ignored. Its title and
 // description are still required in every locale (see corpus.json), so it is
@@ -58,24 +79,77 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 import { parseArgs } from "./lib/args.mjs";
 import { PRODUCTION_LOCALES, REPO_ROOT, assertTargetLocale, fail } from "./lib/constants.mjs";
 import { CONTENT_TYPES, CONTENT_TYPE_IDS, contentType, localPath, metaPath } from "./lib/content-types.mjs";
 import { DEFAULT_SOURCE_REPO, englishPath, englishRepo } from "./lib/english.mjs";
 import { isExcluded } from "./lib/exclusions.mjs";
 import {
+  arrayPaths,
   countAgainstEnglish,
+  flatten,
   frontmatterValue,
   md5File,
   parseFrontmatter,
   parseVttNotes,
   readJson,
-  readText
+  readText,
+  unflatten
 } from "./lib/files.mjs";
 
 export const BLOCKING = "blocking";
 export const WARNING = "warning";
 export const IGNORED = "ignored";
+
+// -------------------------------------------------------------- base English
+
+/**
+ * One English file as it stood at the merge base, or null.
+ *
+ * `git show` against the checkout head English is already read from, because
+ * that checkout necessarily holds both commits: the caller's file list came from
+ * a `git diff` between them in that same repo. A second checkout would fetch a
+ * whole tree to read one blob per changed file, and could be pointed at a
+ * different commit from the one the diff used, which is the only way this could
+ * silently answer the wrong question.
+ *
+ * Null means "the file did not exist at the base", which is not an error and not
+ * even unusual: a file git called MODIFIED can still be absent at the base of a
+ * three-dot diff in a merge-heavy history, and the honest reading of that is the
+ * same as an addition, everything in it is new.
+ */
+function readBaseFile(repo, baseSha, sourcePath) {
+  try {
+    return execFileSync("git", ["show", `${baseSha}:${sourcePath}`], {
+      cwd: repo,
+      encoding: "utf8",
+      maxBuffer: 32 * 1024 * 1024,
+      stdio: ["ignore", "pipe", "ignore"]
+    });
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * A reader for base English, bound to one base commit.
+ *
+ * Returned as a function rather than a preloaded map so a run with no blocking
+ * findings never shells out at all: the base is only ever consulted to decide
+ * whether an absence is new, and most files have no absences.
+ */
+export function baseReaderFor(baseSha, { repo = null } = {}) {
+  if (!baseSha) return null;
+  const cache = new Map();
+  return (typeId, sourcePath) => {
+    if (!cache.has(sourcePath)) {
+      const from = repo ?? englishRepo(contentType(typeId).sourceRepo ?? DEFAULT_SOURCE_REPO);
+      cache.set(sourcePath, readBaseFile(from, baseSha, sourcePath));
+    }
+    return cache.get(sourcePath);
+  };
+}
 
 // ------------------------------------------------------------ path inversion
 
@@ -145,6 +219,11 @@ export function itemForSourcePath(sourcePath) {
  * a deletion). Whether the locale can render the item is asked the same way
  * however the file got there.
  *
+ * `readBase` is what makes only NEW gaps block: given the type and the path, it
+ * returns that file's bytes at the merge base, or null. Omitted, every absence
+ * blocks, which is the right answer when the caller has not said what the change
+ * is being measured against.
+ *
  * `resolveEnglish` is the one seam, and it exists for scripts/test.mjs. English
  * is resolved through a module-level cache in scripts/lib/english.mjs, so a test
  * cannot point this at a doctored English tree by setting an env var after that
@@ -152,7 +231,7 @@ export function itemForSourcePath(sourcePath) {
  * key the locale does not" against real files plus a temp one, which is the
  * rule most worth a test and the only one that needs the seam.
  */
-export function classify({ sourcePath, status, locale, resolveEnglish = englishPath }) {
+export function classify({ sourcePath, status, locale, resolveEnglish = englishPath, readBase = null }) {
   const item = itemForSourcePath(sourcePath);
   if (!item) {
     return { verdict: IGNORED, sourcePath, locale, reason: "not a translated English file" };
@@ -186,8 +265,18 @@ export function classify({ sourcePath, status, locale, resolveEnglish = englishP
   }
 
   const type = contentType(typeId);
-  const missing = type.format === "catalog" ? missingCatalogKeys(english, target, held, locale) : missingProseFields(type, english, target, held);
-  if (missing) return { ...base, verdict: BLOCKING, ...missing };
+  // An ADDED file has no base to be measured against: every key in it is new, so
+  // the base reader is deliberately not consulted even when one was given.
+  const baseText = status === "A" || !readBase ? null : readBase(typeId, sourcePath);
+  const gaps =
+    type.format === "catalog"
+      ? catalogGaps(english, target, held, locale, baseText)
+      : proseGaps(type, english, target, held, baseText);
+
+  if (gaps.blocking) return { ...base, verdict: BLOCKING, ...gaps.blocking };
+  // A pre-existing gap is reported before staleness, because it is the larger of
+  // the two problems and only one line is printed per file per locale.
+  if (gaps.warning) return { ...base, verdict: WARNING, ...gaps.warning };
 
   // Present and complete. The only thing left to say is whether it was made
   // against the English that is there NOW.
@@ -207,17 +296,65 @@ export function classify({ sourcePath, status, locale, resolveEnglish = englishP
  * in progress, which `validate --shippable` gates on separately. What cannot be
  * allowed to merge is a key that is not there at all, because an exercise
  * catalog has no English fallback and the learner sees the raw key path.
+ *
+ * Which of those absences BLOCKS is the base's question. English is split into
+ * the keys this change added and the keys the base already had, and each half is
+ * counted separately by the same function, so the plural-reachability and
+ * empty-container rules that decide what counts as absent at all are applied
+ * once, in `countAgainstEnglish`, rather than restated here.
  */
-function missingCatalogKeys(english, target, held, locale) {
-  const counts = countAgainstEnglish(readJson(english), held ? readJson(target) : null, { locale });
-  if (counts.absent === 0) return null;
+function catalogGaps(english, target, held, locale, baseText) {
+  const englishTree = readJson(english);
+  if (!held) {
+    // Nothing to partition. Every key is missing, and no reading of the base
+    // makes a file the locale does not have at all anything but a hole.
+    const counts = countAgainstEnglish(englishTree, null, { locale });
+    return counts.absent === 0 ? {} : { blocking: { reason: "no catalog in this locale at all", detail: rel(target) } };
+  }
 
-  return held
-    ? {
-        reason: `${counts.absent} of ${counts.total} key(s) English defines are absent from this locale's catalog`,
+  const targetTree = readJson(target);
+  const counts = countAgainstEnglish(englishTree, targetTree, { locale });
+  if (counts.absent === 0) return {};
+
+  if (baseText === null) {
+    return { blocking: { reason: `${counts.absent} of ${counts.total} key(s) English defines are absent from this locale's catalog`, detail: rel(target) } };
+  }
+
+  const baseKeys = new Set(Object.keys(flatten(JSON.parse(baseText))));
+  const added = countAgainstEnglish(subsetOfKeys(englishTree, (key) => !baseKeys.has(key)), targetTree, { locale });
+  const preExisting = counts.absent - added.absent;
+
+  if (added.absent > 0) {
+    return {
+      blocking: {
+        reason:
+          `${added.absent} key(s) this change ADDS are absent from this locale's catalog` +
+          (preExisting > 0 ? ` (and ${preExisting} more were already absent before it)` : ""),
         detail: rel(target)
       }
-    : { reason: "no catalog in this locale at all", detail: rel(target) };
+    };
+  }
+
+  return {
+    warning: {
+      reason: `${preExisting} of ${counts.total} key(s) were ALREADY absent from this locale before this change; nothing this change adds is missing`,
+      detail: rel(target)
+    }
+  };
+}
+
+/**
+ * One catalog reduced to the keys a predicate keeps.
+ *
+ * Flattened and rebuilt rather than walked, because `unflatten` is told which
+ * paths were arrays and restores them as arrays. A subset built by hand would
+ * turn a two-element array into an object with keys "0" and "1", and
+ * `countAgainstEnglish` counts those differently.
+ */
+function subsetOfKeys(tree, keep) {
+  const flat = flatten(tree);
+  const kept = Object.fromEntries(Object.entries(flat).filter(([key]) => keep(key)));
+  return unflatten(kept, arrayPaths(tree));
 }
 
 /**
@@ -229,21 +366,50 @@ function missingCatalogKeys(english, target, held, locale) {
  * card copy that surfaces in listings, and a page missing its title has a hole
  * in it. Whether a PRESENT field is a real translation or a copy of English is a
  * judgement `coverage` and `validate` make, and not one a merge gate should.
+ *
+ * The base split applies here for the same reason it applies to a catalog. A
+ * type that gains a translatable field, or a page that starts filling one it
+ * left empty, adds a hole to every locale and blocks; a field the locale has
+ * been missing all along is somebody's outstanding work and warns.
  */
-function missingProseFields(type, english, target, held) {
-  if (!held) return { reason: "no translation in this locale at all", detail: rel(target) };
+function proseGaps(type, english, target, held, baseText) {
+  if (!held) return { blocking: { reason: "no translation in this locale at all", detail: rel(target) } };
 
   const fields = type.frontmatterTranslated ?? [];
-  if (fields.length === 0) return null;
+  if (fields.length === 0) return {};
 
   const englishData = parseFrontmatter(readText(english)).data;
   const targetData = parseFrontmatter(readText(target)).data;
   // Only fields English actually carries. A type declares the fields it MAY
   // translate, and not every item fills every one of them.
   const absent = fields.filter((field) => frontmatterValue(englishData, field) !== undefined && frontmatterValue(targetData, field) === undefined);
-  if (absent.length === 0) return null;
+  if (absent.length === 0) return {};
 
-  return { reason: `frontmatter field(s) English defines are absent: ${absent.join(", ")}`, detail: rel(target) };
+  if (baseText === null) {
+    return { blocking: { reason: `frontmatter field(s) English defines are absent: ${absent.join(", ")}`, detail: rel(target) } };
+  }
+
+  const baseData = parseFrontmatter(baseText).data;
+  const added = absent.filter((field) => frontmatterValue(baseData, field) === undefined);
+  const preExisting = absent.filter((field) => !added.includes(field));
+
+  if (added.length > 0) {
+    return {
+      blocking: {
+        reason:
+          `frontmatter field(s) this change ADDS are absent: ${added.join(", ")}` +
+          (preExisting.length > 0 ? ` (and ${preExisting.join(", ")} were already absent before it)` : ""),
+        detail: rel(target)
+      }
+    };
+  }
+
+  return {
+    warning: {
+      reason: `frontmatter field(s) were ALREADY absent before this change: ${preExisting.join(", ")}`,
+      detail: rel(target)
+    }
+  };
 }
 
 /**
@@ -274,7 +440,7 @@ function rel(file) {
 // ------------------------------------------------------------------- the run
 
 /** Every (path, locale) verdict for one set of changes. */
-export function report(changes, locales) {
+export function report(changes, locales, { readBase = null } = {}) {
   const findings = [];
   for (const change of changes) {
     // A path that is not English at all is one finding rather than one per
@@ -283,7 +449,7 @@ export function report(changes, locales) {
       findings.push(classify({ sourcePath: change.path, status: change.status, locale: null }));
       continue;
     }
-    for (const locale of locales) findings.push(classify({ sourcePath: change.path, status: change.status, locale }));
+    for (const locale of locales) findings.push(classify({ sourcePath: change.path, status: change.status, locale, readBase }));
   }
   return findings;
 }
@@ -331,7 +497,12 @@ function main() {
   const locales = typeof flags.locales === "string" ? flags.locales.split(",").map((l) => l.trim()).filter(Boolean) : PRODUCTION_LOCALES;
   for (const locale of locales) assertTargetLocale(locale);
 
-  const findings = report(changes, locales);
+  // The merge base this change is measured against. Without it every absence
+  // blocks, which is safe but blunt; CI always has it, because the file list it
+  // passes in came from a diff against it.
+  const readBase = baseReaderFor(typeof flags.base === "string" ? flags.base : null);
+
+  const findings = report(changes, locales, { readBase });
   const blocking = findings.filter((f) => f.verdict === BLOCKING);
   const warnings = findings.filter((f) => f.verdict === WARNING);
 
@@ -388,7 +559,7 @@ function printHuman({ changes, locales, findings, blocking, warnings }) {
   const untouched = [...groupByPath(blocking)].filter(([, group]) => group.length === locales.length && group.every((entry) => entry.reason.startsWith("no ")));
 
   console.log(
-    `${new Set(blocking.map((finding) => finding.sourcePath)).size} English file(s) are in the corpus and untranslated.\n\n` +
+    `${new Set(blocking.map((finding) => finding.sourcePath)).size} English file(s) this change adds or extends have no translation.\n\n` +
       `What to do about it, in the order to consider it:\n\n` +
       `  1. If the item is LIVE, it needs translating. The front-end's i18n-queue workflow has\n` +
       `     already opened an issue in jiki-education/i18n carrying this PR's head SHA. The\n` +

@@ -69,7 +69,7 @@ import {
   itemVerdict,
   proseFieldStatus
 } from "./lib/checks.mjs";
-import { BLOCKING, IGNORED, WARNING, classify, itemForSourcePath, parseChanges } from "./have-translations.mjs";
+import { BLOCKING, IGNORED, WARNING, baseReaderFor, classify, itemForSourcePath, parseChanges } from "./have-translations.mjs";
 import { glossaryFiles, keptEnglishTermsIn } from "./lib/kept-english.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 import { localeFileLeaves, railsKnownLocales, railsLocale } from "./lib/api-copy.mjs";
@@ -2506,7 +2506,9 @@ const COVERED_CATALOG = !ENGLISH_CHECKOUT
 
 if (!COVERED_CATALOG) {
   console.log("  SKIP  a modified English file whose translation covers it does not block (no fully covered catalog)");
-  console.log("  SKIP  a key English gains and the locale does not hold blocks (no fully covered catalog)");
+  console.log("  SKIP  a key this change adds blocks, while a pre-existing absence only warns (no fully covered catalog)");
+  console.log("  SKIP  an ADDED file blocks on its whole key set (no fully covered catalog)");
+  console.log("  SKIP  with no base, every absence blocks (no fully covered catalog)");
 } else {
   test("a modified English file whose translation covers it does not block", () => {
     const finding = classify({
@@ -2520,9 +2522,69 @@ if (!COVERED_CATALOG) {
     assert.ok([WARNING, "ok"].includes(finding.verdict), finding.verdict);
   });
 
-  test("a key English gains and the locale does not hold blocks", () => {
-    // The same item, against an English file carrying one extra key. Everything
-    // else is the real files, so what this isolates is the key comparison.
+  // What separates a gap this change MADE from a gap it merely touched. Both are
+  // "a key English defines that the locale does not hold"; only the first is the
+  // PR author's to fix, and a gate that blocked on the second would be a debt
+  // collector that gets routed around and then ignored.
+  test("a key this change adds blocks, while a pre-existing absence in the same file only warns", () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "have-translations-"));
+    const english = readJson(COVERED_CATALOG.path);
+
+    // TWO absences in one English file. The base already defined `oldGap`, so the
+    // locale has been missing it all along; `newGap` arrives with this change.
+    const withBoth = path.join(dir, "head.json");
+    fs.writeFileSync(withBoth, JSON.stringify({ ...english, oldGap: "Older English.", newGap: "New English." }));
+    const base = JSON.stringify({ ...english, oldGap: "Older English." });
+
+    const blocked = classify({
+      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
+      status: "M",
+      locale: GATE_LOCALE,
+      resolveEnglish: () => withBoth,
+      readBase: () => base
+    });
+    assert.equal(blocked.verdict, BLOCKING);
+    assert.match(blocked.reason, /^1 key\(s\) this change ADDS are absent/);
+    // The pre-existing one is still SAID, in the same line. Blocking on it would
+    // be wrong; hiding it would mean nobody ever learns the gap is there.
+    assert.match(blocked.reason, /1 more were already absent before it/);
+
+    // The same file with only the pre-existing gap: a warning, and never a block.
+    const withOldOnly = path.join(dir, "old-only.json");
+    fs.writeFileSync(withOldOnly, base);
+    const warned = classify({
+      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
+      status: "M",
+      locale: GATE_LOCALE,
+      resolveEnglish: () => withOldOnly,
+      readBase: () => base
+    });
+    assert.equal(warned.verdict, WARNING);
+    assert.match(warned.reason, /were ALREADY absent from this locale before this change/);
+  });
+
+  test("an ADDED file blocks on its whole key set, base or no base", () => {
+    // Nothing to be pre-existing about: the file did not exist at the base. The
+    // base reader must not be consulted at all, so this one returns bytes that
+    // would excuse the gap if it were.
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "have-translations-"));
+    const doctored = path.join(dir, "added.json");
+    const english = { ...readJson(COVERED_CATALOG.path), brandNewKey: "New English." };
+    fs.writeFileSync(doctored, JSON.stringify(english));
+
+    const finding = classify({
+      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
+      status: "A",
+      locale: GATE_LOCALE,
+      resolveEnglish: () => doctored,
+      readBase: () => JSON.stringify(english)
+    });
+    assert.equal(finding.verdict, BLOCKING);
+  });
+
+  test("with no base, every absence blocks", () => {
+    // The blunt-but-safe fallback: a caller that has not said what the change is
+    // measured against gets the old behaviour, where any absence is a hole.
     const doctored = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "have-translations-")), "messages.json");
     fs.writeFileSync(doctored, JSON.stringify({ ...readJson(COVERED_CATALOG.path), aKeyNoLocaleHolds: "New English." }));
 
@@ -2536,6 +2598,21 @@ if (!COVERED_CATALOG) {
     assert.match(finding.reason, /1 of \d+ key\(s\)/);
   });
 }
+
+test("the base reader answers from the checkout's history, and null for a path that was not there", () => {
+  // `git show <base>:<path>` rather than a second checkout: the caller's file
+  // list came from a diff between these commits in this repo, so the blobs are
+  // necessarily here, and reading them from anywhere else could answer against a
+  // different commit from the one the diff used.
+  if (!ENGLISH_CHECKOUT) {
+    console.log("  SKIP  (no front-end checkout)");
+    return;
+  }
+  const head = execFileSync("git", ["rev-parse", "HEAD"], { cwd: ENGLISH_CHECKOUT, encoding: "utf8" }).trim();
+  const read = baseReaderFor(head, { repo: ENGLISH_CHECKOUT });
+  assert.equal(typeof read("app-messages", "app/messages.json"), "string");
+  assert.equal(read("app-messages", "app/no-such-file-here.json"), null);
+});
 
 // ------------------------------------------------------------------- result
 
