@@ -17,6 +17,28 @@
 #   - on main, front-end main. This floats, knowingly. Publish records the SHA it
 #     used, so attribution survives the float.
 #
+# Both runs below, the branch's and its baseline's, read that ONE checkout. See
+# "Both runs read the same English" in scripts/validate.mjs for why differencing
+# two runs against two different Englishes would attribute to the branch every
+# item whose English moved between the pins.
+#
+# ## What this gates on
+#
+# The errors the BRANCH INTRODUCES, not the absolute count. `--baseline-ref` runs
+# the same checks over the content at the merge base and fails only on the
+# difference. The absolute count is still printed, and pre-existing errors are
+# still listed in full; they just do not fail the run.
+#
+# Without that, this job is red on every PR forever. Translation is dispatched at a
+# front-end PR's head, deliberately ahead of English merging, so for the whole
+# review window of any curriculum PR this repo holds translations of English that
+# is not on front-end main, and each one reads as `stale:` or `missing key:` here.
+# That was 884 errors in production locales when this was written, none of them
+# anybody's PR, and it made three open PRs that touch nothing but `scripts/` red.
+# A check that is always red is not a check: it stops being read, and the first
+# real regression lands underneath the noise. Same reasoning that took this job off
+# pushes to main.
+#
 # See ENGLISH-SOURCE.md.
 
 name: Validate
@@ -124,8 +146,13 @@ jobs:
       - name: Test
         run: node scripts/test.mjs
 
+      # `fetch-depth: 0` above is what makes the merge base findable; the "Which
+      # English" step has already fetched the base branch to read the pin from it.
+      # The baseline run happens inside validate, over a detached worktree of the
+      # merge base with this branch's own scripts/ copied in, so both runs apply
+      # one set of checks to two trees.
       - name: Validate every locale
-        run: node scripts/validate.mjs all
+        run: node scripts/validate.mjs all --baseline-ref="origin/${{ github.base_ref }}"
 
       # Builds every artifact and re-runs the R2 key guard over the finished
       # tree, without uploading anything.

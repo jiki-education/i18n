@@ -6,16 +6,20 @@
 // Usage:
 //   node scripts/validate.mjs [<locale|all>] [--type=<id>] [--slug=<slug>]
 //                             [--shippable] [--stamp] [--gate=all]
+//                             [--baseline-ref=<ref>] [--json=<path>]
 //
 // Examples:
-//   node scripts/validate.mjs all          # CI gate, reads only
-//   node scripts/validate.mjs all --gate=all   # ...but hold every locale to it
+//   node scripts/validate.mjs all          # the whole backlog, absolute count
+//   node scripts/validate.mjs all --baseline-ref=origin/main   # ...only what I introduced
+//   node scripts/validate.mjs all --gate=all   # hold every locale to it
 //   node scripts/validate.mjs hu --shippable   # also fail on any remaining sentinel
 //   node scripts/validate.mjs hu --type=concept --slug=arrays --stamp   # after translating
 //
-// Exit codes: 0 no ERROR in a production locale, 1 at least one. See "The gate is
-// scoped to production locales" below: every locale is CHECKED, not every locale
-// GATES. `--gate=all` widens the exit code back to every locale in scope.
+// Exit codes: 0 no gating ERROR, 1 at least one. Two things narrow "gating": only
+// PRODUCTION locales gate (see below), and with `--baseline-ref` only errors this
+// branch INTRODUCED gate (see "Baseline-relative gating"). `--gate=all` widens the
+// first; nothing widens the second except leaving the flag off, which is the
+// default and is the absolute question.
 //
 // ## Errors block, warnings never do
 //
@@ -77,6 +81,82 @@
 // is pointed at more than one thing. `--shippable` widens the gate; it never
 // narrows it.
 //
+// ## Baseline-relative gating (--baseline-ref)
+//
+// Without the flag this answers an ABSOLUTE question: how many errors are there.
+// That is the right question for a human asking "what is the backlog?", and it is
+// the default for exactly that reason. It is the wrong question to gate a pull
+// request on, and the difference is not academic: as this is written, i18n main
+// carries 884 errors in production locales against front-end main, so every PR in
+// this repo, including one that touches nothing but `scripts/`, fails a gate for a
+// backlog it did not create.
+//
+// That backlog is the intended workflow rather than a mistake. The front-end's
+// queue dispatches translation at a PR's HEAD, so translation deliberately runs
+// AHEAD of English merging: for the whole review window of any curriculum PR,
+// this repo holds translations of English that is not yet on front-end main, and
+// every one of them reads as `stale:` or `missing key:` against main. The backlog
+// is a function of how many front-end PRs are open, and it is never zero for long.
+//
+// So `--baseline-ref` gates on the DIFFERENCE. The same checks run twice, once
+// against this branch and once against the content at its merge base with the
+// named ref, and only the errors present at the head and absent at the base decide
+// the exit code. Errors on both sides are pre-existing: still printed, still
+// counted, never fatal. Errors on the base alone are fixes, and are named as such,
+// so a PR that repairs something gets credit for it rather than merely not being
+// punished. This is the same reasoning that took `validate` off pushes to main: a
+// check that is permanently red is not a check, because within a month nobody
+// reads it, and the first real regression then lands underneath the noise.
+//
+// ### Head scripts, base content
+//
+// The base run uses the BASE's `locales/`, `locales.json` and `corpus.json`, and
+// this branch's `scripts/`. Running the base's own scripts would compare two
+// different validators, so a PR that only reworded a message would report its
+// whole corpus as new errors. Running the head's checks over both trees asks one
+// question with one set of rules, which is the only version of the question that
+// has an answer.
+//
+// It also means a PR that TIGHTENS a check owns everything the tightening finds,
+// which is correct: those errors did not exist before the PR, in the only sense
+// that matters to the person reviewing it.
+//
+// ### Both runs read the same English
+//
+// The base run is given the head's English checkout, whatever that is, including
+// when the head moved the `English-Ref:` pin. Letting each side resolve its own
+// pin would mean differencing two runs against two different Englishes, and the
+// result would attribute to the branch every item whose English moved between the
+// two pins. The translation PR is the case that makes this obvious: it moves the
+// pin forward and retranslates some items. Against one fixed English, the items it
+// retranslated are stale at the base and clean at the head, so they show up as
+// FIXED, and the items it did not touch are stale on both sides, so they are
+// pre-existing. Against two Englishes, that second group would read as new errors
+// the branch introduced, which is the opposite of the truth.
+//
+// ### It does not touch --shippable
+//
+// `--shippable` asks whether a locale is fit to be SERVED. A reader hitting a
+// stale page does not care when it went stale, so an absolute question is the only
+// honest one, and a baseline could only ever make a locale look shippable because
+// its defects are old. So `--shippable` ignores the baseline entirely and gates on
+// the absolute count, exactly as it did before. `--gate=all` is orthogonal and
+// composes: it widens WHICH locales' errors count, and the baseline decides WHICH
+// errors are the branch's, in that order.
+//
+// ### --json
+//
+// The machine-readable finding set, which is how the two runs are compared: the
+// head spawns itself over the base tree with `--json` and reads the file back. It
+// is also usable on its own, for anything that wants the error set rather than the
+// count.
+//
+// Findings are matched across the two runs by an IDENTITY, not by their printed
+// line: locale, content type, slug, and the message with its volatile parts
+// (staleness hashes, counts, paths, the parenthetical detail) normalised away. A
+// weaker key hides new errors behind old ones; a stricter one reports every
+// re-hashed stamp as a fresh defect. See `findingId`.
+//
 // ## Stamping
 //
 // ## Stamping writes only when asked
@@ -137,11 +217,14 @@
 // summary line here says so.
 
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
-import { INAPPLICABLE, PRODUCTION_LOCALES, SENTINEL, TARGET_LOCALES, assertTargetLocale, fail } from "./lib/constants.mjs";
+import { execFileSync, spawnSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
+import { INAPPLICABLE, PRODUCTION_LOCALES, REPO_ROOT, SENTINEL, TARGET_LOCALES, assertTargetLocale, fail } from "./lib/constants.mjs";
 import { CONTENT_TYPE_IDS, contentType, listItems, localPath, metaPath } from "./lib/content-types.mjs";
 import { isBodyExcluded } from "./lib/exclusions.mjs";
-import { DEFAULT_SOURCE_REPO, englishPath, englishRepo, scopeItems } from "./lib/english.mjs";
+import { DEFAULT_SOURCE_REPO, englishPath, englishRepo, scopeItems, sourceRepoSpec } from "./lib/english.mjs";
 import {
   countSentinels,
   frontmatterPaths,
@@ -402,6 +485,169 @@ const label = (typeId, locale, slug) => `${locale} ${typeId}${slug ? `/${slug}` 
  */
 const bodyNote = (bodyOutOfCorpus) => (bodyOutOfCorpus ? "frontmatter only; its body is out of the corpus" : null);
 
+// ------------------------------------------------------- baseline machinery
+//
+// Everything below exists to answer "which of these errors did this branch
+// introduce?". See "Baseline-relative gating" in the header for why that is the
+// question a PR has to be gated on, and the absolute count is not.
+
+/**
+ * The parts of a message that change without the error changing.
+ *
+ * An identity has to survive a re-run over a slightly different tree, or every
+ * PR reports churn as new errors, and it has to keep whatever names the thing
+ * that is wrong, or a real new error hides behind an old one with the same
+ * shape. So this strips the values and keeps the subject:
+ *
+ *   - a 32-character hex string is a staleness stamp. `stale: en_md5 is a1... ,
+ *     the English source is now b2...` is ONE error about one item however many
+ *     times either hash is rewritten.
+ *   - a trailing parenthetical is the detail, never the subject: the placeholder
+ *     lists, the leaf counts, the path a missing file would have had (which is
+ *     cwd-relative, so it differs between the two checkouts for that reason
+ *     alone).
+ *   - a bare number is a count. `cue count: 12 in the translation` and the same
+ *     line saying 13 are the same defect.
+ *
+ * A digit that is part of an identifier is NOT a count and is left alone, so
+ * `missing key: item1` and `missing key: item2` stay two different errors. That
+ * is the boundary the lookbehind draws.
+ */
+function normaliseMessage(message) {
+  return message
+    .replace(/\b[0-9a-f]{32}\b/g, "<hash>")
+    .replace(/\s*\([^()]*\)\s*$/, "")
+    .replace(/(?<![\w.])\d+(?![\w.])/g, "<n>")
+    .trim();
+}
+
+/**
+ * The identity of one finding, stable across two runs over two trees.
+ *
+ * NUL as the separator because it is the one byte a locale, a type id, a slug and
+ * a message all cannot contain, so no combination of them can be spelled two ways.
+ */
+export function findingId({ locale, typeId, slug, message }) {
+  return [locale ?? "", typeId ?? "", slug ?? "", normaliseMessage(message)].join("\u0000");
+}
+
+const countById = (findings) => {
+  const counts = new Map();
+  for (const found of findings) counts.set(found.id, (counts.get(found.id) ?? 0) + 1);
+  return counts;
+};
+
+/**
+ * Head findings against base findings, as a multiset difference.
+ *
+ * A multiset rather than a set, because an item can carry the same error twice
+ * (two missing keys that normalise alike, say), and going from one to two of them
+ * is a regression a set would not see. The nth occurrence of an identity is new
+ * when the base had fewer than n of it.
+ */
+export function diffFindings(baseFindings, headFindings) {
+  const baseCounts = countById(baseFindings);
+  const headCounts = countById(headFindings);
+
+  const seen = new Map();
+  const introduced = [];
+  const preExisting = [];
+  for (const found of headFindings) {
+    const index = seen.get(found.id) ?? 0;
+    seen.set(found.id, index + 1);
+    (index < (baseCounts.get(found.id) ?? 0) ? preExisting : introduced).push(found);
+  }
+
+  const seenBase = new Map();
+  const fixed = [];
+  for (const found of baseFindings) {
+    const index = seenBase.get(found.id) ?? 0;
+    seenBase.set(found.id, index + 1);
+    if (index >= (headCounts.get(found.id) ?? 0)) fixed.push(found);
+  }
+
+  return { introduced, preExisting, fixed };
+}
+
+/**
+ * Run these same checks over the content at `ref`'s merge base with HEAD, and
+ * return its findings.
+ *
+ * The merge base rather than the ref itself, for the same reason the English diff
+ * uses one: a branch open for a while would otherwise be handed every error that
+ * landed on main since it forked and told it had introduced them.
+ *
+ * The base tree is a detached git worktree, with THIS branch's `scripts/` copied
+ * over the top of its own (head checks, base content: see the header) and this
+ * run's `node_modules` and English checkouts pointed at from the environment, so
+ * the two runs differ in exactly one thing, which is the content.
+ */
+function baselineFindings({ ref, locale, typeId, slug, gate }) {
+  let mergeBase;
+  try {
+    mergeBase = execFileSync("git", ["merge-base", ref, "HEAD"], { cwd: REPO_ROOT, encoding: "utf8" }).trim();
+  } catch (error) {
+    fail(
+      `--baseline-ref=${ref}: could not find a merge base with HEAD (${error.message.split("\n")[0]}).\n` +
+        `  In CI, fetch the base branch first; the workflow's "Which English" step already does.`
+    );
+  }
+
+  const work = fs.mkdtempSync(path.join(os.tmpdir(), "jiki-i18n-baseline-"));
+  const tree = path.join(work, "tree");
+  const report = path.join(work, "findings.json");
+
+  try {
+    execFileSync("git", ["worktree", "add", "--detach", "--quiet", tree, mergeBase], { cwd: REPO_ROOT, stdio: ["ignore", "pipe", "inherit"] });
+
+    fs.rmSync(path.join(tree, "scripts"), { recursive: true, force: true });
+    fs.cpSync(path.join(REPO_ROOT, "scripts"), path.join(tree, "scripts"), { recursive: true });
+
+    // Not copied: an install is tens of megabytes and the renderer cross-check
+    // needs the same one either way. A symlink is refused on nothing this runs
+    // on, and a missing install is already a state validate handles.
+    const modules = path.join(REPO_ROOT, "node_modules");
+    if (fs.existsSync(modules)) fs.symlinkSync(modules, path.join(tree, "node_modules"), "junction");
+
+    // English, named explicitly rather than left to resolve. The base tree has no
+    // `.source/`, and even if it did, both runs MUST read one English: see "Both
+    // runs read the same English" in the header.
+    const env = { ...process.env };
+    for (const id of [...new Set(CONTENT_TYPE_IDS.map((each) => contentType(each).sourceRepo ?? DEFAULT_SOURCE_REPO))]) {
+      const resolved = englishRepo(id, undefined, { optional: true });
+      if (resolved) env[sourceRepoSpec(id).env] = resolved;
+    }
+
+    const argv = [path.join(tree, "scripts", "validate.mjs"), locale, `--json=${report}`, `--gate=${gate}`];
+    if (typeId) argv.push(`--type=${typeId}`);
+    if (slug) argv.push(`--slug=${slug}`);
+
+    // Its exit code is the base's own verdict and says nothing here; what is
+    // wanted is its finding set, and a base full of errors is the normal case
+    // this whole mechanism exists for. Only a run that produced no report at all
+    // is a failure.
+    const run = spawnSync(process.execPath, argv, { cwd: tree, encoding: "utf8", env, maxBuffer: 256 * 1024 * 1024 });
+    if (!fs.existsSync(report)) {
+      fail(
+        `--baseline-ref=${ref}: the baseline run over ${mergeBase.slice(0, 12)} produced no findings file.\n` +
+          `${(run.stderr || run.stdout || "").split("\n").slice(-15).join("\n")}`
+      );
+    }
+    return { mergeBase, findings: readJson(report).findings };
+  } finally {
+    try {
+      execFileSync("git", ["worktree", "remove", "--force", tree], { cwd: REPO_ROOT, stdio: "ignore" });
+    } catch {
+      // A worktree that will not detach is a temp directory left behind, which is
+      // not worth failing a run over.
+    }
+    fs.rmSync(work, { recursive: true, force: true });
+  }
+}
+
+/** One finding, printed the way the per-item lines print it, with its item named. */
+const findingLine = (found) => `  ${found.locale} ${found.typeId}${found.slug ? `/${found.slug}` : ""}: ${found.message}`;
+
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const requested = args.positional[0] ?? "all";
@@ -416,6 +662,17 @@ async function main() {
     fail(`unknown --gate=${gate}. Use --gate=production (the default, exit 1 on errors in a production locale) or --gate=all (exit 1 on any error).`);
   }
 
+
+  // Baseline-relative gating. Off by default, because the absolute count is the
+  // right answer to "what is the backlog?" and the wrong one to gate a PR on.
+  // See "Baseline-relative gating" in the header.
+  const baselineRef = typeof args.flags["baseline-ref"] === "string" ? args.flags["baseline-ref"] : null;
+  if (args.flags["baseline-ref"] === true) fail("--baseline-ref needs a ref to compare against, for example --baseline-ref=origin/main.");
+  const jsonPath = typeof args.flags.json === "string" ? path.resolve(args.flags.json) : null;
+  if (args.flags.json === true) fail("--json needs a path to write the finding set to, for example --json=findings.json.");
+  if (baselineRef && args.flags.stamp) {
+    fail("--baseline-ref and --stamp do not go together: stamping rewrites the very staleness findings the diff is made of.");
+  }
 
   const requestedTypes = args.flags.type ? [contentType(args.flags.type) && args.flags.type] : CONTENT_TYPE_IDS;
 
@@ -454,6 +711,13 @@ async function main() {
   const nonProductionLocalesWithErrors = new Set();
   /** Per locale, the missing items grouped by type, for the summary. */
   const missingByLocale = new Map();
+  /**
+   * Every ERROR, as an identified finding, for --json and for the baseline diff.
+   *
+   * Errors only. Warnings never gate, so differencing them would produce a list
+   * nothing can act on, and they are the noisiest half of the output.
+   */
+  const findings = [];
 
   // The guard checks belong to no locale: a broken R2 key guard is a fact about
   // this repo's code, not about anybody's translation, and it would let English
@@ -496,6 +760,12 @@ async function main() {
           if (verdict.errors > 0) nonProductionLocalesWithErrors.add(locale);
         }
         warnings += verdict.warnings;
+
+        for (const found of issues) {
+          if (found.level !== ERROR) continue;
+          const finding = { locale, typeId, slug: item.slug ?? null, message: found.message, production: isProduction(locale) };
+          findings.push({ id: findingId(finding), ...finding });
+        }
 
         if (verdict.missing) {
           missing += 1;
@@ -580,6 +850,15 @@ async function main() {
     `\nvalidate: ${checked} items, ${missing} with no translation file, ${errorSummary.join(", ")}, ${warnings} warnings.`
   );
 
+  // Written before the baseline diff, and before the exit code is decided, so a
+  // report exists even for a run that is about to fail. It is what the baseline
+  // subprocess is spawned for.
+  if (jsonPath) {
+    fs.mkdirSync(path.dirname(jsonPath), { recursive: true });
+    writeJson(jsonPath, { version: 1, checked, findings });
+    console.log(`validate: wrote ${findings.length} findings to ${jsonPath}.`);
+  }
+
   // What actually gates. Guard errors always do (they belong to the repo, not to
   // a locale). Production errors always do. Everything else does only when asked:
   // --gate=all for a deliberate whole-corpus sweep, --shippable because it is the
@@ -588,7 +867,70 @@ async function main() {
   // `--shippable` widens and never narrows, deliberately, including on a wide
   // run: see "Why --shippable is NOT scoped" in the header.
   const widened = gate === "all" || shippable;
-  const gatingErrors = guardErrors + productionErrors + (widened ? nonProductionErrors : 0);
+
+  // What the branch introduced, when there is a baseline to say. `--shippable` is
+  // deliberately exempt: it asks whether a locale is fit to be served, and a
+  // reader hitting a stale page does not care how long it has been stale. See
+  // "It does not touch --shippable" in the header.
+  let gatingFindings = findings;
+  if (baselineRef && shippable) {
+    console.log(
+      `\nvalidate: --shippable ignores --baseline-ref=${baselineRef}. "Is this locale fit to be served?" is an absolute ` +
+        `question: a reader hitting a stale page does not care how long it has been stale.`
+    );
+  }
+  if (baselineRef && !shippable) {
+    const { mergeBase, findings: baseFindings } = baselineFindings({
+      ref: baselineRef,
+      locale: requested,
+      typeId: args.flags.type,
+      slug: args.flags.slug,
+      gate
+    });
+    const { introduced, preExisting, fixed } = diffFindings(baseFindings, findings);
+    gatingFindings = introduced;
+
+    console.log(
+      `\nbaseline: ${baselineRef} (merge base ${mergeBase.slice(0, 12)}), ${plural(baseFindings.length, "error", "errors")} there, ` +
+        `${findings.length} here: ${introduced.length} introduced, ${preExisting.length} pre-existing, ${fixed.length} fixed.`
+    );
+
+    // Pre-existing errors are not hidden, only summarised: they are every line
+    // marked FAIL above, and reprinting hundreds of them would bury the handful
+    // that matter. Where they are is what a reader needs from this line.
+    if (preExisting.length > 0) {
+      const byLocale = new Map();
+      for (const found of preExisting) byLocale.set(found.locale, (byLocale.get(found.locale) ?? 0) + 1);
+      const worst = [...byLocale.entries()].sort((a, b) => b[1] - a[1]);
+      console.log(
+        `baseline: ${plural(preExisting.length, "pre-existing error", "pre-existing errors")}, printed in full above and NOT gating this run ` +
+          `(${worst.map(([name, count]) => `${name} x${count}`).join(", ")}).`
+      );
+      console.log(
+        `baseline: they are mostly translations of English that has not merged yet, which is what the queue is for. ` +
+          `Run without --baseline-ref for the absolute backlog.`
+      );
+    }
+
+    // Said out loud, because a branch that repairs something should be able to
+    // see that it did, not merely fail to be punished for what it did not.
+    if (fixed.length > 0) {
+      console.log(`\nbaseline: ${plural(fixed.length, "error", "errors")} FIXED by this branch:`);
+      for (const found of fixed.slice(0, 20)) console.log(findingLine(found));
+      if (fixed.length > 20) console.log(`  ...and ${fixed.length - 20} more.`);
+    }
+
+    if (introduced.length === 0) {
+      console.log(`\nbaseline: this branch introduces no new errors.`);
+    } else {
+      console.log(`\nbaseline: ${plural(introduced.length, "error", "errors")} INTRODUCED by this branch:`);
+      for (const found of introduced) console.log(findingLine(found));
+    }
+  }
+
+  const gatingProductionErrors = gatingFindings.filter((found) => found.production).length;
+  const gatingNonProductionErrors = gatingFindings.length - gatingProductionErrors;
+  const gatingErrors = guardErrors + gatingProductionErrors + (widened ? gatingNonProductionErrors : 0);
 
   // Said out loud whenever a run could otherwise be mistaken for a passed gate:
   // a translator working on `de` must not read a clean run as a production
@@ -610,4 +952,21 @@ async function main() {
   if (gatingErrors > 0) process.exit(1);
 }
 
-await main();
+// Run only when this file IS the command. `findingId` and `diffFindings` are the
+// identity and the multiset difference the baseline gate is built on, and they are
+// worth asserting directly rather than through a whole corpus run, so test.mjs
+// imports them. Without this guard, importing the module would run a validation.
+// Through realpath on both sides, because the baseline run invokes a copy of this
+// file inside a temp directory and macOS reports that path two ways (/var and
+// /private/var). Comparing the two spellings makes the child exit silently having
+// validated nothing, which is the least debuggable failure available.
+const realpath = (target) => {
+  try {
+    return fs.realpathSync(target);
+  } catch {
+    return path.resolve(target);
+  }
+};
+if (process.argv[1] && realpath(process.argv[1]) === realpath(fileURLToPath(import.meta.url))) {
+  await main();
+}
