@@ -1,13 +1,31 @@
 ---
 title: "Preparación de comidas"
 description: "Calcula qué ingredientes necesitas comprar para tu receta."
-en_md5: 4199f39db62481239426f85c4afcb41e
+en_md5: 2326187734cf4b307264fef2b0dea2fd
 ---
 
-You're the sort of person that likes to pop to the shops each day to get whatever ingredients you need for dinner. It gives you a nice excuse to stretch your legs and chat to the local shopkeeper.
+Eres de esas personas a las que les gusta pasarse por la tienda cada día para comprar los ingredientes que necesitas para la cena. Es una buena excusa para estirar las piernas y charlar con el tendero del barrio.
 
-Each day you choose a recipe, then check what's in the fridge, and note down what you need to buy.
+Cada día eliges una receta, revisas lo que hay en el refrigerador y anotas lo que necesitas comprar.
 
-Now you've decided to make your life a little easier, by writing a program to do the hard work for you!
+Ahora decidiste hacerte la vida un poco más fácil: escribir un programa que hace el trabajo pesado por ti. El programa revisa lo que está en tu lista, lo compara con lo que hay en el refrigerador y te muestra la diferencia.
 
-Write a function called <define>`shoppingList`</define>. It takes two inputs: the contents of your fridge as a list of strings, and the items in the recipe as a list of strings. It should return the things you need to buy, as a list of strings.
+Tu tarea es escribir una función llamada `shoppingList(fridgeContents, recipeItems)` (lista de compras). Recibe dos argumentos: el contenido de tu refrigerador como un array de strings y los ingredientes de la receta, también como un array de strings. Debe devolver lo que necesitas comprar, como un array de strings.
+
+Por ejemplo:
+
+```javascript
+let fridgeContents = ["tomatoes", "leaves", "milk"]
+let recipeItems = ["beef", "tomatoes", "peppers"]
+
+shoppingList(fridgeContents, recipeItems)
+// ["beef", "peppers"]
+```
+
+### El método push
+
+Para resolver el ejercicio, necesitas armar tu array usando el método `.push(element)`. Solo puedes crear un array nuevo en tu código. Si no estás seguro de qué hacer, vuelve a ver el video anterior.
+
+Quizás también quieras usar el método `includes` (más abajo hay un recordatorio).
+
+¡Diviértete!

@@ -1,0 +1,48 @@
+{
+  "tasks": {
+    "canFitIn": {
+      "name": "Riesci a inserirli?",
+      "description": "Scrivi una funzione che determina se un nuovo cliente può essere servito prima della chiusura, considerando la coda attuale e il tempo rimanente."
+    }
+  },
+  "scenarios": {
+    "emptyQueue": {
+      "name": "Nessuno in coda",
+      "description": "Nessuno in coda, tempo in abbondanza."
+    },
+    "emptyQueueButNoTime": {
+      "name": "A fine giornata",
+      "description": "Nessuno in coda ma non abbastanza tempo."
+    },
+    "busyDayNoTime": {
+      "name": "Giornata piena",
+      "description": "Coda piena e tempo insufficiente."
+    },
+    "busyDayButTime": {
+      "name": "Entra per un pelo",
+      "description": "Giornata piena ma c'è appena il tempo sufficiente."
+    },
+    "stillEarly": {
+      "name": "Ancora presto",
+      "description": "È ancora presto nella giornata."
+    },
+    "cuttingItFine": {
+      "name": "Appena in tempo",
+      "description": "Ce l'hanno fatta appena in tempo!"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Da dove dovrei iniziare? Dalla coda o dal nuovo cliente?",
+      "answer": "Prima calcola quanto tempo richiederà la coda, poi guarda quanto rimane per il nuovo cliente. Una funzione ausiliaria che trasforma il nome di un taglio nella sua durata (in minuti) renderà tutto molto più pulito."
+    },
+    "subtractQueueTime": {
+      "question": "Come faccio a sottrarre il tempo di ogni taglio dal tempo rimanente?",
+      "answer": "Esegui un ciclo sulla coda. Per ogni taglio, ricava la sua durata con la tua funzione ausiliaria e sottraila dal totale del tempo rimasto nella giornata."
+    },
+    "decideIfFits": {
+      "question": "Come faccio a capire se il nuovo taglio può essere inserito?",
+      "answer": "Dopo aver elaborato la coda, confronta il tempo rimanente con la durata del nuovo taglio. Se il tempo del nuovo taglio è minore o uguale al tempo rimasto, può essere inserito."
+    }
+  }
+}

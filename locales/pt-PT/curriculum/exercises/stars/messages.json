@@ -1,0 +1,79 @@
+{
+  "tasks": {
+    "drawStars": {
+      "name": "Desenha uma pirâmide de estrelas",
+      "description": "Escreve uma função `layoutStars` que recebe um número de linhas e constrói um array de strings, em que cada string tem uma estrela a menos do que a anterior, e depois desenha-o com `drawStars`. Por exemplo, `layoutStars(3)` desenha a pirâmide para `[\"***\", \"**\", \"*\"]`."
+    }
+  },
+  "scenarios": {
+    "count0": {
+      "name": "Contagem é 0",
+      "description": "Com zero estrelas, nada é desenhado."
+    },
+    "count1": {
+      "name": "Contagem é 1",
+      "description": "Com uma contagem de um, desenha-se uma única estrela."
+    },
+    "count3": {
+      "name": "Contagem é 3",
+      "description": "Com uma contagem de três, desenha-se uma pirâmide de três linhas."
+    },
+    "count5": {
+      "name": "Contagem é 5",
+      "description": "Com uma contagem de cinco, desenha-se uma pirâmide de cinco linhas."
+    },
+    "count10": {
+      "name": "Contagem é 10",
+      "description": "Com uma contagem de dez, desenha-se uma pirâmide de dez linhas."
+    }
+  },
+  "hints": {
+    "shapeOfAnswer": {
+      "question": "O que estou a construir?",
+      "answer": "Um array de strings, da mais comprida para a mais curta, cada uma com uma estrela a menos do que a anterior, até chegar a uma única estrela. Quando é desenhado, a linha mais comprida fica na base da pirâmide. Constrói primeiro o array completo e depois desenha-o com `drawStars`."
+    },
+    "countingDown": {
+      "question": "Como é que faço cada linha mais curta do que a anterior?",
+      "answer": "Os comprimentos têm de diminuir: a primeira string é a mais comprida e a última é uma única estrela. Um ciclo que conta para baixo do total até 1 dá-te cada comprimento de cada vez."
+    },
+    "buildingEachRow": {
+      "question": "Como é que construo uma string com um certo número de estrelas?",
+      "answer": "Começa com uma string vazia e adiciona um `*` de cada vez até ter o comprimento certo. Depois, adiciona essa string ao teu array com `push` antes de passares para a próxima linha."
+    }
+  },
+  "checks": {
+    "row1": "A linha de baixo das estrelas não está correta. Verifica-a com o contorno ténue.",
+    "row2": "A segunda linha a contar de baixo não está correta. Verifica-a com o contorno ténue.",
+    "row3": "A terceira linha a contar de baixo não está correta. Verifica-a com o contorno ténue.",
+    "row4": "A quarta linha a contar de baixo não está correta. Verifica-a com o contorno ténue.",
+    "row5": "A quinta linha a contar de baixo não está correta. Verifica-a com o contorno ténue.",
+    "row6": "A sexta linha a contar de baixo não está correta. Verifica-a com o contorno ténue.",
+    "row7": "A sétima linha a contar de baixo não está correta. Verifica-a com o contorno ténue.",
+    "row8": "A oitava linha a contar de baixo não está correta. Verifica-a com o contorno ténue.",
+    "row9": "A nona linha a contar de baixo não está correta. Verifica-a com o contorno ténue.",
+    "row10": "A décima linha a contar de baixo não está correta. Verifica-a com o contorno ténue.",
+    "total": "Desenhaste o número errado de estrelas no total.",
+    "shouldBeEmpty": "Quando a contagem é 0, não deves desenhar nenhuma estrela.",
+    "codeQuality": {
+      "mustUsePush": "Constrói o teu array usando o método push, adicionando uma linha de cada vez.",
+      "noHardcodedArray": "Não podes escrever o array final diretamente. Constrói-o uma linha de cada vez com push."
+    }
+  },
+  "errors": {
+    "notAnArray": "drawStars precisa de um array de strings.",
+    "notStrings": "Cada elemento do array passado a `drawStars` tem de ser uma string."
+  },
+  "describers": {
+    "drawStars": "desenhou a pirâmide de estrelas no canvas"
+  },
+  "functions": {
+    "push": {
+      "description": "Adicionar um elemento ao final de um array",
+      "category": "Arrays"
+    },
+    "drawStars": {
+      "description": "Desenhar uma linha de estrelas para cada string no array, usando o comprimento de cada string como o número de estrelas dessa linha.",
+      "category": "Desenho"
+    }
+  }
+}

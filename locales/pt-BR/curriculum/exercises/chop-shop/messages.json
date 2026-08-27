@@ -1,0 +1,48 @@
+{
+  "tasks": {
+    "canFitIn": {
+      "name": "Dá para encaixar?",
+      "description": "Escreva uma função que determine se dá para atender uma nova pessoa antes do fim do dia, considerando a fila atual e o tempo que resta."
+    }
+  },
+  "scenarios": {
+    "emptyQueue": {
+      "name": "Ninguém na fila",
+      "description": "Ninguém na fila e tempo de sobra."
+    },
+    "emptyQueueButNoTime": {
+      "name": "Fim do dia",
+      "description": "Ninguém na fila, mas o tempo não é suficiente."
+    },
+    "busyDayNoTime": {
+      "name": "Um dia cheio",
+      "description": "A fila está cheia e não há tempo suficiente."
+    },
+    "busyDayButTime": {
+      "name": "Encaixa por pouco",
+      "description": "Um dia cheio, mas o tempo dá certinho."
+    },
+    "stillEarly": {
+      "name": "Ainda é cedo",
+      "description": "O dia ainda está no começo."
+    },
+    "cuttingItFine": {
+      "name": "Bem na hora",
+      "description": "A pessoa chegou bem em cima da hora!"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Por onde eu começo? Pela fila ou pela nova pessoa?",
+      "answer": "Primeiro calcule quanto tempo a fila vai consumir e depois veja quanto sobra para a nova pessoa. Uma função auxiliar que transforma o nome de um corte na duração dele (em minutos) vai deixar tudo bem mais limpo."
+    },
+    "subtractQueueTime": {
+      "question": "Como eu subtraio o tempo de cada corte do tempo restante?",
+      "answer": "Percorra a fila com um laço. Para cada corte, busque a duração dele com a sua função auxiliar e subtraia esse valor do total de tempo que ainda resta no dia."
+    },
+    "decideIfFits": {
+      "question": "Como eu decido se dá para encaixar o novo corte?",
+      "answer": "Depois de processar a fila, compare o tempo restante com a duração do novo corte. Se o tempo do novo corte for menor ou igual ao tempo que sobra, dá para encaixar."
+    }
+  }
+}

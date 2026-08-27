@@ -1,0 +1,105 @@
+{
+  "checks": {
+    "holeInOne": {
+      "firstRow": "Ci aspettavamo che tutte le lettere fossero verdi"
+    },
+    "twoGuesses": {
+      "firstRow": "Ci aspettavamo che la seconda lettera fosse assente",
+      "secondRow": "Ci aspettavamo che tutte le lettere fossero verdi"
+    },
+    "threeGuesses": {
+      "firstRow": "Ci aspettavamo che la seconda e la quarta lettera fossero assenti",
+      "secondRow": "Ci aspettavamo che la seconda lettera fosse assente",
+      "thirdRow": "Ci aspettavamo che tutte le lettere fossero verdi"
+    },
+    "phew": {
+      "firstRow": "Ci aspettavamo che tutto fosse assente.",
+      "secondRow": "Ci aspettavamo che tutto fosse assente.",
+      "thirdRow": "Ci aspettavamo che le ultime due fossero presenti e le altre assenti.",
+      "fourthRow": "Ci aspettavamo che la prima fosse presente e le altre assenti.",
+      "fifthRow": "Ci aspettavamo che la seconda fosse presente e le altre assenti",
+      "sixthRow": "Ci aspettavamo che tutte le lettere fossero verdi"
+    },
+    "bonus1": {
+      "firstRow": "Ci aspettavamo che solo la quarta lettera della prima riga fosse presente.",
+      "secondRow": "La seconda riga non è giusta. Questa è la parte difficile: solo una delle lettere ripetute dovrebbe essere colorata.",
+      "thirdRow": "La terza riga non è giusta.",
+      "fourthRow": "Ci aspettavamo che tutte le lettere della quarta riga fossero verdi."
+    },
+    "bonus2": {
+      "firstRow": "La prima riga non è giusta.",
+      "secondRow": "La seconda riga non è giusta.",
+      "thirdRow": "La terza riga non è giusta.",
+      "fourthRow": "La quarta riga non è giusta. Questa è la parte difficile: `swiss` ha più `s` della parola segreta.",
+      "fifthRow": "La quinta riga non è giusta.",
+      "sixthRow": "Ci aspettavamo che tutte le lettere della sesta riga fossero verdi."
+    }
+  },
+  "tasks": {
+    "processGame": {
+      "name": "Elabora un'intera partita",
+      "description": "Crea una funzione chiamata processGame che accetta una parola segreta e un array di tentativi, e chiama colorRow per ogni tentativo con gli stati corretti."
+    },
+    "duplicateLetters": {
+      "name": "Bonus: gestisci le lettere duplicate",
+      "description": "C'è una regola di Wordle che abbiamo tralasciato. Se una lettera compare due volte nel tuo tentativo ma solo una volta nella parola segreta, allora se una delle due è nella posizione giusta, quella diventa verde e l'altra diventa grigia. Altrimenti la prima diventa gialla e la seconda diventa grigia. La stessa idea si estende: tre in un tentativo e due nella parola significano che due vengono colorate e la terza diventa grigia. Inizia con il primo scenario bonus, poi risolvilo completamente nel secondo. È un bonus, quindi non sei obbligato a completarlo!"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "Prima volta!",
+      "description": "Gestisci un primo tentativo corretto."
+    },
+    "twoGuesses": {
+      "name": "Centrato in due",
+      "description": "Gestisci due tentativi."
+    },
+    "threeGuesses": {
+      "name": "Riuscito in tre",
+      "description": "Gestisci tre tentativi."
+    },
+    "phew": {
+      "name": "Uff!",
+      "description": "Uff! Per un pelo!"
+    },
+    "bonus1": {
+      "name": "Solo una gialla",
+      "description": "Se ci sono più lettere presenti per una sola lettera effettiva, solo una dovrebbe essere gialla."
+    },
+    "bonus2": {
+      "name": "Formaggio svizzero",
+      "description": "La parola «swiss» in questo scenario mostra perché è importante!"
+    }
+  },
+  "hints": {
+    "reuseWork": {
+      "question": "Come posso riutilizzare il mio lavoro da `processGuess`?",
+      "answer": "La logica che trasforma un tentativo in un array di stati è la stessa. Estraila in una funzione ausiliaria (o copiala) e chiamala per ogni tentativo nell'array."
+    },
+    "trackRow": {
+      "question": "Come tengo traccia di quale riga appartiene ogni tentativo?",
+      "answer": "Scorri i tentativi con un indice. Il numero di riga è l'indice più `1` (dato che `colorRow` si aspetta righe numerate `1-6`)."
+    },
+    "colorRow": {
+      "question": "Come faccio a colorare effettivamente ogni riga?",
+      "answer": "Una volta che hai l'array `states` per un tentativo, chiama `colorRow(rowNumber, states)`."
+    },
+    "fewerGuesses": {
+      "question": "Cosa succede se il giocatore ha fatto meno di 6 tentativi?",
+      "answer": "Colora solo le righe per i tentativi che esistono. La lunghezza dell'array ti dice quanti elaborarne, quindi ti fermi naturalmente al punto giusto."
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "Colora una riga della griglia di Wordle con gli stati forniti.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "Aggiunge un elemento alla fine di un array, modificando direttamente l'array.",
+      "category": "Array"
+    }
+  },
+  "describers": {
+    "colorRow": "ha colorato una riga sulla griglia di Wordle"
+  }
+}

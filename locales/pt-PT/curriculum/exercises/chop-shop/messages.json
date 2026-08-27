@@ -1,0 +1,48 @@
+{
+  "tasks": {
+    "canFitIn": {
+      "name": "Consegues encaixá-lo?",
+      "description": "Escreve uma função que determina se um novo cliente pode ser atendido antes do fecho, tendo em conta a fila atual e o tempo restante."
+    }
+  },
+  "scenarios": {
+    "emptyQueue": {
+      "name": "Fila vazia",
+      "description": "Ninguém na fila, muito tempo."
+    },
+    "emptyQueueButNoTime": {
+      "name": "Fim do dia",
+      "description": "Ninguém na fila, mas não há tempo suficiente."
+    },
+    "busyDayNoTime": {
+      "name": "Dia cheio",
+      "description": "Fila cheia e não há tempo suficiente."
+    },
+    "busyDayButTime": {
+      "name": "Encaixa à justa",
+      "description": "Dia cheio, mas há tempo à justa."
+    },
+    "stillEarly": {
+      "name": "Ainda é cedo",
+      "description": "Ainda é cedo no dia."
+    },
+    "cuttingItFine": {
+      "name": "Mesmo a tempo",
+      "description": "Chegou mesmo a tempo!"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Por onde devo começar? Pela fila ou pelo novo cliente?",
+      "answer": "Primeiro, calcula quanto tempo a fila vai ocupar e vê quanto sobra para o novo cliente. Uma função auxiliar que converte o nome de um corte de cabelo na sua duração (em minutos) facilita muito."
+    },
+    "subtractQueueTime": {
+      "question": "Como é que subtraio o tempo de cada corte de cabelo ao tempo restante?",
+      "answer": "Percorre a fila com um ciclo. Para cada corte de cabelo, consulta a duração com a tua função auxiliar e subtrai-a ao total de tempo que resta no dia."
+    },
+    "decideIfFits": {
+      "question": "Como é que decido se o novo corte de cabelo cabe?",
+      "answer": "Depois de processares a fila, compara o tempo restante com a duração do novo corte de cabelo. Se a duração do novo corte for menor ou igual ao tempo que resta, ele cabe."
+    }
+  }
+}

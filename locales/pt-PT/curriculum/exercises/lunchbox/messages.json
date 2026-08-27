@@ -1,0 +1,69 @@
+{
+  "checks": {
+    "tooManyLines": "A tua solução tem demasiadas linhas de código. Consegues torná-la mais curta?"
+  },
+  "tasks": {
+    "packLunchbox": {
+      "name": "Arruma a lancheira",
+      "description": "Divide os itens entre a lancheira e a mochila: arruma o máximo que conseguires na lancheira sem ultrapassar a capacidade, e põe tudo o resto na mochila."
+    },
+    "solveInSixteenLines": {
+      "name": "Resolve em 16 linhas de código",
+      "description": "Consegues resolver este exercício com apenas 16 linhas de código?"
+    }
+  },
+  "scenarios": {
+    "everythingFits": {
+      "name": "Cabe tudo",
+      "description": "Uma lancheira espaçosa onde todos os itens cabem, por isso a mochila fica vazia."
+    },
+    "packTheMost": {
+      "name": "Arruma o máximo",
+      "description": "O espaço é apertado, por isso os itens pequenos vão para a lancheira e os grandes ficam para a mochila."
+    },
+    "justTheSnack": {
+      "name": "Só o lanche",
+      "description": "Só o item mais pequeno de todos cabe; os restantes vão para a mochila."
+    },
+    "nothingFits": {
+      "name": "Não cabe nada",
+      "description": "Até o item mais pequeno é demasiado grande, por isso tudo acaba na mochila."
+    },
+    "emptyLunchbox": {
+      "name": "Lancheira vazia",
+      "description": "Não há itens de todo, por isso tanto a lancheira como a mochila voltam vazias."
+    },
+    "bonus1": {
+      "name": "16 linhas de código",
+      "description": "Resolve o exercício com apenas 16 linhas de código."
+    }
+  },
+  "hints": {
+    "readEachItem": {
+      "question": "Como obtenho o nome e o tamanho de cada item?",
+      "answer": "Cada item é um par. A primeira parte é o nome e a segunda é o tamanho, por isso podes lê-los um de cada vez."
+    },
+    "fitTheMost": {
+      "question": "Como arrumo o maior número possível de itens?",
+      "answer": "Pensa em quais itens adicionar primeiro. Itens mais pequenos deixam mais espaço para os outros, por isso compensa tratar deles antes dos grandes."
+    },
+    "goSmallestFirst": {
+      "question": "Os itens estão listados do maior para o menor — como é que os percorro do menor para o maior?",
+      "answer": "Há um método de array que te devolve uma cópia invertida de um array. Inverte os itens primeiro, e depois percorre-os nessa nova ordem."
+    },
+    "knowWhenFull": {
+      "question": "Como é que decido para onde vai cada item?",
+      "answer": "Mantém um total acumulado dos tamanhos que já adicionaste. Antes de adicionar um item, verifica se o total mais o tamanho dele ainda cabe dentro da capacidade. Se couber, vai para a lancheira; caso contrário, vai para a mochila."
+    }
+  },
+  "functions": {
+    "toReversed": {
+      "description": "Devolve uma cópia do array com os elementos pela ordem inversa, sem alterar o original.",
+      "category": "Arrays"
+    },
+    "push": {
+      "description": "Adiciona um elemento ao fim do array, alterando-o diretamente.",
+      "category": "Arrays"
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "checks": {
+    "repeatedGuess": "Hai provato la stessa parola più di una volta. Ogni tentativo dovrebbe basarsi su ciò che hai imparato dai precedenti e dovresti fermarti non appena hai vinto.",
+    "holeInOne": {
+      "firstRow": "Ci aspettavamo che tutte le lettere fossero verdi."
+    },
+    "entirelyWrong": {
+      "firstRow": "Ci aspettavamo che la prima riga fosse assente.",
+      "secondRow": "Ci aspettavamo che la seconda riga fosse corretta."
+    },
+    "twoNeeded": {
+      "firstRow": "Ci aspettavamo che la prima riga avesse una lettera corretta.",
+      "secondRow": "Ci aspettavamo che la seconda riga fosse corretta."
+    },
+    "threeNeeded": {
+      "firstRow": "Ci aspettavamo che la prima riga avesse una lettera corretta.",
+      "secondRow": "Ci aspettavamo che la seconda riga avesse tutte le lettere corrette tranne una.",
+      "thirdRow": "Ci aspettavamo che la terza riga fosse corretta."
+    },
+    "fourNeeded": {
+      "firstRow": "Ci aspettavamo che la prima riga avesse una lettera corretta.",
+      "secondRow": "Ci aspettavamo che la seconda riga avesse le prime due lettere corrette.",
+      "thirdRow": "Ci aspettavamo che la terza riga avesse quattro lettere corrette.",
+      "fourthRow": "Ci aspettavamo che la quarta riga fosse corretta."
+    },
+    "present1": {
+      "firstRow": "Ci aspettavamo che la prima riga fosse present, absent, correct, correct, absent.",
+      "secondRow": "Ci aspettavamo che la seconda riga fosse tutta corretta."
+    },
+    "present2": {
+      "firstRow": "Ci aspettavamo che la prima riga fosse present, absent, absent, absent, absent.",
+      "secondRow": "Ci aspettavamo che la seconda riga fosse absent, present, absent, present, present.",
+      "thirdRow": "Ci aspettavamo che la terza riga fosse corretta."
+    },
+    "present3": {
+      "firstRow": "Ci aspettavamo che la prima riga fosse absent, absent, present, present, absent.",
+      "secondRow": "Ci aspettavamo che la seconda riga fosse absent, absent, absent, correct, correct.",
+      "thirdRow": "Ci aspettavamo che la terza riga fosse correct, absent, absent, correct, correct.",
+      "fourthRow": "Ci aspettavamo che la quarta riga fosse corretta."
+    },
+    "present4": {
+      "firstRow": "Ci aspettavamo che la prima riga fosse assente.",
+      "secondRow": "Ci aspettavamo che la seconda riga fosse assente.",
+      "thirdRow": "Ci aspettavamo che la terza riga fosse present, absent, present, absent, absent.",
+      "fourthRow": "Ci aspettavamo che la quarta riga fosse correct, correct, correct, present, present.",
+      "fifthRow": "Ci aspettavamo che la quinta riga fosse corretta."
+    }
+  },
+  "tasks": {
+    "firstWord": {
+      "name": "Mostra una parola corretta",
+      "description": "Il primo scenario si aspetta semplicemente che tu scelga la prima parola da `commonWords()`. Quella parola è `which`. Per superare questo scenario, devi provare quella parola e fermarti. Puoi verificare che il tuo codice funzioni correttamente prima di passare a situazioni più complesse."
+    },
+    "handleWrong": {
+      "name": "Gestisci quando è tutto sbagliato",
+      "description": "Ottimo lavoro per aver collegato la prima parte! Per questo secondo scenario, dovrai usare due tentativi. Il primo sarà di nuovo la prima parola dell'array (è sempre così!). Sarà completamente sbagliata, quindi dovrai passare alla parola successiva dell'array, che sarà quella giusta!"
+    },
+    "handlePartial": {
+      "name": "Gestisci quando è parzialmente corretto",
+      "description": "OK, abbiamo preso un po' di ritmo. È qui che le cose si fanno più divertenti. I prossimi scenari restituiranno un misto di lettere `correct` e `absent`. Scegli la prossima parola migliore dall'array basandoti su ciò che sai delle lettere `correct` e `absent` trovate finora."
+    },
+    "handlePresent": {
+      "name": "Gestisci le lettere presenti",
+      "description": "Fantastico! Ora l'ultima parte difficile. Devi incorporare le lettere `present`. Buona fortuna, ce la puoi fare!"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "Tutto corretto",
+      "description": "Gestisci un primo tentativo corretto."
+    },
+    "entirelyWrong": {
+      "name": "Uno sbagliato, uno giusto",
+      "description": "Gestisci un tentativo sbagliato"
+    },
+    "twoNeeded": {
+      "name": "Servono due tentativi",
+      "description": "Gestisci un tentativo sbagliato"
+    },
+    "threeNeeded": {
+      "name": "Servono tre tentativi",
+      "description": "Gestisci un tentativo sbagliato"
+    },
+    "fourNeeded": {
+      "name": "Servono quattro tentativi",
+      "description": "Gestisci un tentativo sbagliato"
+    },
+    "present1": {
+      "name": "Alcune lettere presenti",
+      "description": "Uno difficile con alcune lettere presenti."
+    },
+    "present2": {
+      "name": "Si fa più difficile",
+      "description": "Gestisci una parola più difficile"
+    },
+    "present3": {
+      "name": "Un percorso più normale",
+      "description": "Ora sembra Wordle"
+    },
+    "present4": {
+      "name": "Un altro quasi riuscito",
+      "description": "È divertente come divergono alla fine!"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Da dove comincio?",
+      "answer": "Comincia provando la prima parola da `commonWords()`. Fai funzionare il ciclo che prova una parola e controlla il risultato prima di preoccuparti di essere intelligente."
+    },
+    "readStates": {
+      "question": "Come faccio a sapere com'è andato il mio tentativo?",
+      "answer": "`guess(word)` ti restituisce un array con uno stato per ogni lettera: `\"correct\"`, `\"present\"` oppure `\"absent\"`. Quell'array è l'unica cosa che impari da un tentativo, quindi tutto ciò che sai deve provenire da esso."
+    },
+    "rememberLearned": {
+      "question": "Come faccio a ricordare ciò che ho imparato tra un tentativo e l'altro?",
+      "answer": "Mantieni una struttura di conoscenza fuori dal ciclo: le lettere che sai essere assenti, le lettere che sai essere da qualche parte nella parola, e per ogni posizione le lettere che sai NON essere lì."
+    },
+    "pickNextGuess": {
+      "question": "Come scelgo il prossimo tentativo?",
+      "answer": "Filtra `commonWords()`: tieni solo le parole che hanno tutte le lettere corrette nelle posizioni giuste, contengono ogni lettera presente (ma non nelle posizioni che hai escluso) e non contengono nessuna delle lettere assenti. Scegli la prima corrispondenza."
+    },
+    "whenToStop": {
+      "question": "Quando mi fermo?",
+      "answer": "Fermati non appena ogni stato restituisce `\"correct\"`, oppure dopo `6` tentativi. Altrimenti continuerai a provare oltre la fine della lavagna."
+    }
+  },
+  "functions": {
+    "guess": {
+      "description": "Prova una parola. Disegna la parola nella riga successiva della lavagna, la colora e restituisce un array con lo stato di ogni lettera.",
+      "category": "Wordle"
+    },
+    "commonWords": {
+      "description": "Restituisce un array di oltre 100 parole comuni di cinque lettere da usare come tentativi.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "Aggiunge un elemento alla fine di un array, modificando l'array stesso.",
+      "category": "Array"
+    },
+    "arrayIncludes": {
+      "description": "Controlla se un array contiene un elemento.",
+      "category": "Array"
+    },
+    "stringIncludes": {
+      "description": "Controlla se una stringa contiene una sottostringa.",
+      "category": "Stringhe"
+    },
+    "arrayLength": {
+      "description": "Il numero di elementi in un array.",
+      "category": "Array"
+    },
+    "stringLength": {
+      "description": "Il numero di caratteri in una stringa.",
+      "category": "Stringhe"
+    }
+  },
+  "describers": {
+    "guess": "ha provato una parola",
+    "commonWords": "ha recuperato l'array di parole comuni"
+  }
+}

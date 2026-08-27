@@ -1,0 +1,97 @@
+{
+  "tasks": {
+    "findMatchingSocks": {
+      "name": "Trova i calzini corrispondenti",
+      "description": "Scrivi una funzione che prende due cesti di vestiti (come array di stringhe) e restituisce un array con tutte le paia di calzini trovate in entrambi i cesti. Gli elementi che sono calzini terminano con ' sock' e iniziano sempre con 'left ' oppure 'right '."
+    },
+    "solveTightly": {
+      "name": "Risolvilo in 29 righe",
+      "description": "Prova a risolverlo in 29 righe di codice o meno. Non è la soluzione più breve possibile, ma è un buon obiettivo da raggiungere una volta che il codice funziona."
+    }
+  },
+  "scenarios": {
+    "emptyBaskets": {
+      "name": "Cesti vuoti",
+      "description": "Entrambi i cesti sono vuoti."
+    },
+    "nothingClean": {
+      "name": "Niente di pulito",
+      "description": "Non c'è niente di pulito."
+    },
+    "nothingDirty": {
+      "name": "Niente di sporco",
+      "description": "Non c'è niente di sporco."
+    },
+    "noSocks": {
+      "name": "Nessun calzino",
+      "description": "Non ci sono calzini da nessuna parte."
+    },
+    "oneInEach": {
+      "name": "Uno in ogni cesto",
+      "description": "C'è un calzino corrispondente in ogni cesto."
+    },
+    "aBigMix": {
+      "name": "Un bel miscuglio!",
+      "description": "Un miscuglio di vestiti con più paia corrispondenti."
+    },
+    "someAddedPain": {
+      "name": "Cianfrusaglie",
+      "description": "Si sono intrufolate alcune stranezze."
+    },
+    "bonusLineCount": {
+      "name": "Una soluzione compatta",
+      "description": "Lo stesso lavoro, fatto in meno righe."
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Da dove dovrei iniziare quando ci sono molte parti in movimento?",
+      "answer": "Non cercare di scrivere tutto in una volta. Scomponi il problema in piccole funzioni che rispondono ciascuna a una piccola domanda, fai funzionare ognuna da sola, poi combinale."
+    },
+    "isItASock": {
+      "question": "Come faccio a capire se qualcosa nel cesto è davvero un calzino?",
+      "answer": "Non tutto ciò che menziona un lato è un calzino, e non tutto ciò che sembra un calzino lo è. Osserva con attenzione le regole su come sono descritti gli elementi e controlla entrambe le estremità della descrizione, non solo l'inizio."
+    },
+    "compareSockPair": {
+      "question": "Come faccio a confrontare un calzino sinistro con il suo corrispondente destro?",
+      "answer": "Piuttosto che confrontare direttamente due calzini, scopri come si chiamerebbe il compagno di un calzino e poi vai a cercarlo. Le stringhe hanno un metodo integrato per sostituire una parte di testo con un'altra, che può anche eliminare un pezzo sostituendolo con niente."
+    },
+    "avoidDuplicates": {
+      "question": "Come faccio a evitare di contare due volte lo stesso paio?",
+      "answer": "Ogni paio viene scoperto due volte, una volta da ciascun lato. Prima di aggiungere un nome all'elenco dei risultati, controlla se è già presente."
+    },
+    "overallPlan": {
+      "question": "Qual è un buon piano generale?",
+      "answer": "Entrambi i cesti possono essere considerati come un unico grande mucchio. Esamina un elemento alla volta e, per ciascun elemento, decidi se appartiene alla risposta."
+    }
+  },
+  "checks": {
+    "tooManyLines": "Ci sei quasi! La soluzione funziona, ma supera le 29 righe di codice."
+  },
+  "functions": {
+    "startsWith": {
+      "description": "Controlla se una stringa inizia con una stringa più corta",
+      "category": "Operazioni sulle stringhe"
+    },
+    "endsWith": {
+      "description": "Controlla se una stringa termina con una stringa più corta",
+      "category": "Operazioni sulle stringhe"
+    },
+    "replace": {
+      "description": "Restituisce una nuova stringa in cui la prima occorrenza di un testo è sostituita con un altro testo",
+      "category": "Operazioni sulle stringhe"
+    },
+    "concat": {
+      "description": "Unisce due array in un unico nuovo array",
+      "category": "Operazioni sugli array"
+    },
+    "includes": {
+      "description": "Controlla se un array contiene già un elemento",
+      "category": "Operazioni sugli array"
+    },
+    "push": {
+      "description": "Aggiunge un elemento alla fine di un array",
+      "category": "Operazioni sugli array"
+    }
+  }
+}

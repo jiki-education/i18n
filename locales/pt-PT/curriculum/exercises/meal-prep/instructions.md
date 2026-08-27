@@ -1,13 +1,31 @@
 ---
 title: "Preparação de refeições"
 description: "Descobre que ingredientes precisas de comprar para a tua receita."
-en_md5: 4199f39db62481239426f85c4afcb41e
+en_md5: 2326187734cf4b307264fef2b0dea2fd
 ---
 
-You're the sort of person that likes to pop to the shops each day to get whatever ingredients you need for dinner. It gives you a nice excuse to stretch your legs and chat to the local shopkeeper.
+És o tipo de pessoa que gosta de dar um salto às lojas todos os dias para comprar os ingredientes de que precisas para o jantar. É uma boa desculpa para esticar as pernas e conversar com o lojista lá da zona.
 
-Each day you choose a recipe, then check what's in the fridge, and note down what you need to buy.
+Todos os dias escolhes uma receita, verificas o que há no frigorífico e apontas o que precisas de comprar.
 
-Now you've decided to make your life a little easier, by writing a program to do the hard work for you!
+Agora decidiste tornar a tua vida um pouco mais fácil: vais escrever um programa que faz o trabalho pesado por ti! Ele verifica o que está na tua lista, compara com o que está no frigorífico e devolve a diferença.
 
-Write a function called <define>`shoppingList`</define>. It takes two inputs: the contents of your fridge as a list of strings, and the items in the recipe as a list of strings. It should return the things you need to buy, as a list of strings.
+O teu trabalho é escrever uma função chamada `shoppingList(fridgeContents, recipeItems)` (lista de compras). Recebe dois parâmetros de entrada: o conteúdo do teu frigorífico como um array de strings, e os itens da receita, também como um array de strings. Deve devolver as coisas que precisas de comprar, como um array de strings.
+
+Por exemplo:
+
+```javascript
+let fridgeContents = ["tomatoes", "leaves", "milk"]
+let recipeItems = ["beef", "tomatoes", "peppers"]
+
+shoppingList(fridgeContents, recipeItems)
+// ["beef", "peppers"]
+```
+
+### O método push
+
+Para resolveres o exercício, precisas de construir o teu array com o método `.push(element)`. Só podes criar um array novo no teu código. Vê o vídeo anterior outra vez se não tiveres a certeza do que fazer.
+
+Também podes querer usar o método `includes` (vê abaixo para recordar).
+
+Diverte-te!

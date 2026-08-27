@@ -1,0 +1,69 @@
+{
+  "checks": {
+    "tooManyLines": "Tu solución tiene demasiadas líneas de código. ¿Puedes hacerla más corta?"
+  },
+  "tasks": {
+    "packLunchbox": {
+      "name": "Empaca la lonchera",
+      "description": "Divide los artículos entre una lonchera y una mochila: mete tantos como puedas en la lonchera sin pasarte de su capacidad y pon todo lo demás en la mochila."
+    },
+    "solveInSixteenLines": {
+      "name": "Resuelve en 16 líneas de código",
+      "description": "¿Puedes resolver este ejercicio con solo 16 líneas de código?"
+    }
+  },
+  "scenarios": {
+    "everythingFits": {
+      "name": "Todo cabe",
+      "description": "Una lonchera espaciosa donde caben todos los artículos, así que la mochila queda vacía."
+    },
+    "packTheMost": {
+      "name": "Mete la mayor cantidad",
+      "description": "El espacio es limitado, así que los artículos pequeños van en la lonchera y los grandes se dejan para la mochila."
+    },
+    "justTheSnack": {
+      "name": "Solo el refrigerio",
+      "description": "Solo cabe el artículo más pequeño; el resto va a la mochila."
+    },
+    "nothingFits": {
+      "name": "No cabe nada",
+      "description": "Incluso el artículo más pequeño es demasiado grande, así que todo termina en la mochila."
+    },
+    "emptyLunchbox": {
+      "name": "Lonchera vacía",
+      "description": "No hay ningún artículo, así que tanto la lonchera como la mochila vuelven vacías."
+    },
+    "bonus1": {
+      "name": "16 líneas de código",
+      "description": "Resuelve el ejercicio con solo 16 líneas de código."
+    }
+  },
+  "hints": {
+    "readEachItem": {
+      "question": "¿Cómo obtengo el nombre y el tamaño de cada artículo?",
+      "answer": "Cada artículo es un par. La primera parte es el nombre y la segunda es el tamaño, así que puedes leerlos del artículo uno a la vez."
+    },
+    "fitTheMost": {
+      "question": "¿Cómo hago para meter la mayor cantidad de artículos posible?",
+      "answer": "Piensa qué artículos conviene agregar primero. Los artículos más pequeños dejan más espacio para los demás, así que conviene ocuparte de ellos antes que de los grandes."
+    },
+    "goSmallestFirst": {
+      "question": "Los artículos están ordenados de mayor a menor; ¿cómo hago para recorrerlos de menor a mayor?",
+      "answer": "Hay un método de array que te devuelve una copia invertida de un array. Invierte los artículos primero y luego trabaja con ellos en ese nuevo orden."
+    },
+    "knowWhenFull": {
+      "question": "¿Cómo decido a dónde va cada artículo?",
+      "answer": "Lleva un total acumulado de los tamaños que agregas. Antes de agregar un artículo, verifica si el total más su tamaño aún cabría dentro de la capacidad. Si es así, va a la lonchera; de lo contrario, va a la mochila."
+    }
+  },
+  "functions": {
+    "toReversed": {
+      "description": "Devuelve una copia del array con los elementos en orden inverso, sin cambiar el original.",
+      "category": "Arrays"
+    },
+    "push": {
+      "description": "Agrega un elemento al final de un array, modificando el array en su lugar.",
+      "category": "Arrays"
+    }
+  }
+}

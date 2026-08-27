@@ -1,0 +1,69 @@
+{
+  "checks": {
+    "tooManyLines": "La soluzione ha troppe righe di codice. Riesci a renderla più breve?"
+  },
+  "tasks": {
+    "packLunchbox": {
+      "name": "Prepara il portapranzo",
+      "description": "Dividi gli oggetti tra il portapranzo e lo zaino: fai entrare nel portapranzo il maggior numero possibile di oggetti senza superare la capienza, e metti tutto il resto nello zaino."
+    },
+    "solveInSixteenLines": {
+      "name": "Risolvi in 16 righe di codice",
+      "description": "Riesci a risolvere questo esercizio con sole 16 righe di codice?"
+    }
+  },
+  "scenarios": {
+    "everythingFits": {
+      "name": "Tutto ci sta",
+      "description": "Un portapranzo capiente in cui ogni oggetto trova posto, quindi lo zaino resta vuoto."
+    },
+    "packTheMost": {
+      "name": "Fai entrare il più possibile",
+      "description": "Lo spazio è limitato, quindi gli oggetti piccoli vanno nel portapranzo e quelli grandi restano nello zaino."
+    },
+    "justTheSnack": {
+      "name": "Solo lo spuntino",
+      "description": "Solo l'oggetto più piccolo trova posto; il resto va nello zaino."
+    },
+    "nothingFits": {
+      "name": "Non entra niente",
+      "description": "Anche l'oggetto più piccolo è troppo grande, quindi tutto finisce nello zaino."
+    },
+    "emptyLunchbox": {
+      "name": "Portapranzo vuoto",
+      "description": "Non ci sono affatto oggetti, quindi sia il portapranzo sia lo zaino restano vuoti."
+    },
+    "bonus1": {
+      "name": "16 righe di codice",
+      "description": "Risolvi l'esercizio con sole 16 righe di codice."
+    }
+  },
+  "hints": {
+    "readEachItem": {
+      "question": "Come faccio a ottenere il nome e la dimensione di ogni oggetto?",
+      "answer": "Ogni oggetto è una coppia. La prima parte è il nome e la seconda è la dimensione, quindi puoi leggerli dall'oggetto uno alla volta."
+    },
+    "fitTheMost": {
+      "question": "Come faccio a far entrare il maggior numero possibile di oggetti?",
+      "answer": "Pensa a quali oggetti aggiungere per primi. Gli oggetti più piccoli lasciano più spazio agli altri, quindi conviene iniziare da loro e lasciare i più grandi per dopo."
+    },
+    "goSmallestFirst": {
+      "question": "Gli oggetti sono ordinati dal più grande al più piccolo: come faccio a esaminarli dal più piccolo al più grande?",
+      "answer": "Esiste un metodo degli array che restituisce una copia invertita di un array. Inverti prima gli oggetti, poi lavora su di essi in questo nuovo ordine."
+    },
+    "knowWhenFull": {
+      "question": "Come faccio a decidere dove va ogni oggetto?",
+      "answer": "Tieni un totale progressivo delle dimensioni che hai aggiunto. Prima di aggiungere un oggetto, controlla se il totale più la sua dimensione rientra ancora nella capienza. Se sì, va nel portapranzo, altrimenti va nello zaino."
+    }
+  },
+  "functions": {
+    "toReversed": {
+      "description": "Restituisce una copia dell'array con gli elementi in ordine inverso, senza modificare l'originale.",
+      "category": "Array"
+    },
+    "push": {
+      "description": "Aggiunge un elemento alla fine di un array, modificando l'array stesso.",
+      "category": "Array"
+    }
+  }
+}

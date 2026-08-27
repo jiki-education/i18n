@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "signWords": {
+      "name": "Scomponi il nome in parole",
+      "description": "Scrivi una funzione signWords che riceve il nome dell'attività e restituisce un array con le parole che lo compongono. Le parole sono separate da spazi e un cliente può lasciare per sbaglio spazi in più."
+    }
+  },
+  "scenarios": {
+    "singleWord": {
+      "name": "Una parola",
+      "description": "Un nome di attività composto da una sola parola."
+    },
+    "twoWords": {
+      "name": "Due parole",
+      "description": "Un nome di attività composto da due parole."
+    },
+    "longerName": {
+      "name": "Un nome più lungo",
+      "description": "Un nome di attività con quattro parole da stampare."
+    },
+    "doubleSpace": {
+      "name": "Una mano pesante sulla barra spaziatrice",
+      "description": "Un cliente che ha digitato due spazi tra le parole."
+    }
+  },
+  "hints": {
+    "gettingStarted": {
+      "question": "Come faccio ad estrarre le parole dal nome?",
+      "answer": "Ci sono due strade e nessuna è migliore dell'altra. Puoi percorrere il nome un carattere alla volta, costruendo ogni parola man mano, oppure puoi chiedere alla stringa di dividersi in corrispondenza degli spazi. Scegli quella che trovi più chiara."
+    },
+    "buildingUpArray": {
+      "question": "Come faccio a raccogliere le parole?",
+      "answer": "Prima di iniziare, crea un array vuoto. Poi, man mano che capisci di che parola si tratta, aggiungila alla fine dell'array con il metodo push. Alla fine restituisci l'array."
+    },
+    "doubleSpaces": {
+      "question": "Perché nel mio array c'è una stringa vuota?",
+      "answer": "Due spazi consecutivi significano che tra loro non c'è proprio nulla, quindi quello spazio vuoto conta come una parola a meno che tu non dica diversamente. Controlla che una parola non sia vuota prima di aggiungerla all'array con push."
+    },
+    "missingLastWord": {
+      "question": "Perché mi manca l'ultima parola?",
+      "answer": "Se stai costruendo le parole carattere per carattere, l'ultima parola è ancora in lavorazione quando il ciclo termina, perché dopo di essa non c'è uno spazio che ti dica che è finita. Devi aggiungerla con push una volta completato il ciclo."
+    }
+  },
+  "functions": {
+    "split": {
+      "description": "Scompone una stringa in corrispondenza del separatore, restituendo un array dei pezzi.",
+      "category": "Stringhe"
+    },
+    "push": {
+      "description": "Aggiunge un elemento alla fine di un array, modificando l'array stesso.",
+      "category": "Array"
+    }
+  }
+}

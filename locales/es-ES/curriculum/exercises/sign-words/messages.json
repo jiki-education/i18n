@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "signWords": {
+      "name": "Divide el nombre en palabras",
+      "description": "Escribe una función signWords que reciba el nombre del negocio y devuelva un array con las palabras que contiene. Las palabras están separadas por espacios, y un cliente puede dejar espacios de más por accidente."
+    }
+  },
+  "scenarios": {
+    "singleWord": {
+      "name": "Una palabra",
+      "description": "Un nombre de negocio que es una sola palabra."
+    },
+    "twoWords": {
+      "name": "Dos palabras",
+      "description": "Un nombre de negocio formado por dos palabras."
+    },
+    "longerName": {
+      "name": "Un nombre más largo",
+      "description": "Un nombre de negocio con cuatro palabras para imprimir."
+    },
+    "doubleSpace": {
+      "name": "Un espacio de más",
+      "description": "Un cliente que escribió dos espacios entre sus palabras."
+    }
+  },
+  "hints": {
+    "gettingStarted": {
+      "question": "¿Cómo saco las palabras del nombre?",
+      "answer": "Hay dos caminos y ninguno es mejor. Puedes recorrer el nombre carácter a carácter, construyendo cada palabra sobre la marcha, o puedes pedirle al string que se divida por los espacios. Elige el que te resulte más claro."
+    },
+    "buildingUpArray": {
+      "question": "¿Cómo recojo las palabras?",
+      "answer": "Empieza creando un array vacío y luego ve añadiendo con push cada palabra terminada al final del array a medida que la vayas identificando. El array es lo que devuelves al final."
+    },
+    "doubleSpaces": {
+      "question": "¿Por qué tengo un string vacío en mi array?",
+      "answer": "Dos espacios seguidos significan que no hay nada entre ellos, así que ese hueco cuenta como una palabra a menos que digas lo contrario. Comprueba que una palabra no esté vacía antes de añadirla con push."
+    },
+    "missingLastWord": {
+      "question": "¿Por qué me falta la última palabra?",
+      "answer": "Si estás construyendo las palabras carácter a carácter, la última palabra todavía no está terminada cuando termina el bucle, porque no hay ningún espacio después de ella que indique que ha terminado. Hay que añadirla con push una vez que el bucle haya terminado."
+    }
+  },
+  "functions": {
+    "split": {
+      "description": "Divide un string en partes donde encuentra el separador y devuelve un array con las piezas.",
+      "category": "Strings"
+    },
+    "push": {
+      "description": "Añade un elemento al final de un array, modificando el array en su lugar.",
+      "category": "Arrays"
+    }
+  }
+}

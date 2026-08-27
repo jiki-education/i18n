@@ -1,0 +1,79 @@
+{
+  "tasks": {
+    "drawStars": {
+      "name": "Dibuja una pirámide de estrellas",
+      "description": "Escribe una función layoutStars que reciba un número de filas y construya un array de strings donde cada string tiene una estrella menos que el anterior, y luego lo dibuja con drawStars. Por ejemplo, layoutStars(3) dibuja la pirámide para [\"***\", \"**\", \"*\"]."
+    }
+  },
+  "scenarios": {
+    "count0": {
+      "name": "El conteo es 0",
+      "description": "Con cero estrellas no se dibuja nada."
+    },
+    "count1": {
+      "name": "El conteo es 1",
+      "description": "Un conteo de uno dibuja una sola estrella."
+    },
+    "count3": {
+      "name": "El conteo es 3",
+      "description": "Un conteo de tres dibuja una pirámide de tres filas."
+    },
+    "count5": {
+      "name": "El conteo es 5",
+      "description": "Un conteo de cinco dibuja una pirámide de cinco filas."
+    },
+    "count10": {
+      "name": "El conteo es 10",
+      "description": "Un conteo de diez dibuja una pirámide de diez filas."
+    }
+  },
+  "hints": {
+    "shapeOfAnswer": {
+      "question": "¿Qué estoy construyendo?",
+      "answer": "Un array de strings, con el más largo al principio, cada uno con una estrella menos que el anterior, hasta llegar a una sola estrella. Cuando se dibuja, la fila más larga queda en la parte de abajo de la pirámide. Construye primero todo el array y luego dibújalo con `drawStars`."
+    },
+    "countingDown": {
+      "question": "¿Cómo hago que cada fila sea más corta que la anterior?",
+      "answer": "Las longitudes deben ir disminuyendo: el primer string es el más largo y el último es una sola estrella. Un bucle que cuenta hacia atrás desde el total hasta 1 te va dando cada longitud por turno."
+    },
+    "buildingEachRow": {
+      "question": "¿Cómo construyo un string con un número determinado de estrellas?",
+      "answer": "Empieza con un string vacío y agrega un `*` a la vez hasta que tenga la longitud correcta. Luego usa `push` para agregar ese string a tu array antes de pasar a la siguiente fila."
+    }
+  },
+  "checks": {
+    "row1": "La primera fila desde abajo no está bien. Compárala con el contorno tenue.",
+    "row2": "La segunda fila desde abajo no está bien. Compárala con el contorno tenue.",
+    "row3": "La tercera fila desde abajo no está bien. Compárala con el contorno tenue.",
+    "row4": "La cuarta fila desde abajo no está bien. Compárala con el contorno tenue.",
+    "row5": "La quinta fila desde abajo no está bien. Compárala con el contorno tenue.",
+    "row6": "La sexta fila desde abajo no está bien. Compárala con el contorno tenue.",
+    "row7": "La séptima fila desde abajo no está bien. Compárala con el contorno tenue.",
+    "row8": "La octava fila desde abajo no está bien. Compárala con el contorno tenue.",
+    "row9": "La novena fila desde abajo no está bien. Compárala con el contorno tenue.",
+    "row10": "La décima fila desde abajo no está bien. Compárala con el contorno tenue.",
+    "total": "Has dibujado un número incorrecto de estrellas en total.",
+    "shouldBeEmpty": "Cuando el conteo es 0, no debes dibujar ninguna estrella.",
+    "codeQuality": {
+      "mustUsePush": "Construye tu array usando el método push, agregando una fila a la vez.",
+      "noHardcodedArray": "No puedes escribir el array terminado directamente. Constrúyelo una fila a la vez con push."
+    }
+  },
+  "errors": {
+    "notAnArray": "drawStars necesita un array de strings.",
+    "notStrings": "Cada elemento del array que se pasa a drawStars debe ser un string."
+  },
+  "describers": {
+    "drawStars": "dibujó la pirámide de estrellas en el lienzo"
+  },
+  "functions": {
+    "push": {
+      "description": "Añade un elemento al final de un array",
+      "category": "Arrays"
+    },
+    "drawStars": {
+      "description": "Dibuja una fila de estrellas por cada string del array, usando la longitud de cada string como el número de estrellas de esa fila.",
+      "category": "Dibujo"
+    }
+  }
+}

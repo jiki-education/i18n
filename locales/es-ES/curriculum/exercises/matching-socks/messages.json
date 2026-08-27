@@ -1,0 +1,97 @@
+{
+  "tasks": {
+    "findMatchingSocks": {
+      "name": "Encuentra calcetines a juego",
+      "description": "Escribe una función que reciba dos cestas de ropa (como arrays de strings) y devuelva un array con todos los pares de calcetines que hay en ambas cestas. Los elementos que son calcetines terminan con ' sock' y siempre empiezan por 'left ' o 'right '."
+    },
+    "solveTightly": {
+      "name": "Resuélvelo en 29 líneas",
+      "description": "Intenta resolverlo en 29 líneas de código o menos. No es la respuesta más corta posible, pero es un buen objetivo al que aspirar una vez que lo tengas funcionando."
+    }
+  },
+  "scenarios": {
+    "emptyBaskets": {
+      "name": "Cestas vacías",
+      "description": "Ambas cestas están vacías."
+    },
+    "nothingClean": {
+      "name": "Nada limpio",
+      "description": "No hay nada limpio."
+    },
+    "nothingDirty": {
+      "name": "Nada sucio",
+      "description": "No hay nada sucio."
+    },
+    "noSocks": {
+      "name": "Sin calcetines",
+      "description": "No hay calcetines por ninguna parte."
+    },
+    "oneInEach": {
+      "name": "Uno en cada cesta",
+      "description": "Hay un calcetín a juego en cada cesta."
+    },
+    "aBigMix": {
+      "name": "¡Una gran mezcla!",
+      "description": "Una mezcla de ropa con varios pares a juego."
+    },
+    "someAddedPain": {
+      "name": "Cabos sueltos",
+      "description": "Se han colado algunas prendas raras."
+    },
+    "bonusLineCount": {
+      "name": "Una solución ajustada",
+      "description": "El mismo trabajo, hecho en menos líneas."
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "¿Por dónde debería empezar cuando hay muchas piezas en movimiento?",
+      "answer": "No intentes escribir todo el código de una vez. Divide el problema en funciones pequeñas, cada una de las cuales responde a una pregunta concreta. Haz que cada una funcione por su cuenta y luego combínalas."
+    },
+    "isItASock": {
+      "question": "¿Cómo puedo saber si algo de la cesta es realmente un calcetín?",
+      "answer": "No todo lo que menciona un lado es un calcetín, y no todo lo que parece un calcetín lo es. Lee con atención las reglas de cómo se describen los elementos y comprueba ambos extremos de la descripción, no solo el principio."
+    },
+    "compareSockPair": {
+      "question": "¿Cómo comparo un calcetín izquierdo con su pareja derecha?",
+      "answer": "En lugar de comparar directamente dos calcetines, averigua cómo se llamaría la pareja de un calcetín y luego busca esa pareja. Los strings tienen un método integrado para cambiar un fragmento de texto por otro, que también puede eliminar un fragmento al cambiarlo por nada."
+    },
+    "avoidDuplicates": {
+      "question": "¿Cómo evito contar dos veces la misma pareja?",
+      "answer": "Cada pareja se encuentra dos veces, una desde cada lado. Antes de añadir un nombre a tus resultados, comprueba si ya está ahí."
+    },
+    "overallPlan": {
+      "question": "¿Cuál es un buen plan general?",
+      "answer": "Puedes tratar las dos cestas como una única pila grande. Recórrela elemento a elemento y, para cada uno, decide si debe formar parte de tu respuesta."
+    }
+  },
+  "checks": {
+    "tooManyLines": "¡Casi lo tienes! Tu solución funciona, pero tiene más de 29 líneas de código."
+  },
+  "functions": {
+    "startsWith": {
+      "description": "Comprueba si un string empieza por un string más pequeño",
+      "category": "Operaciones con strings"
+    },
+    "endsWith": {
+      "description": "Comprueba si un string termina con un string más pequeño",
+      "category": "Operaciones con strings"
+    },
+    "replace": {
+      "description": "Devuelve un string nuevo con la primera aparición de un texto sustituida por otro texto",
+      "category": "Operaciones con strings"
+    },
+    "concat": {
+      "description": "Une dos arrays en un único array nuevo",
+      "category": "Operaciones con arrays"
+    },
+    "includes": {
+      "description": "Comprueba si un array ya contiene un elemento",
+      "category": "Operaciones con arrays"
+    },
+    "push": {
+      "description": "Añade un elemento al final de un array",
+      "category": "Operaciones con arrays"
+    }
+  }
+}

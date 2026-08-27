@@ -1,41 +1,41 @@
 ---
-title: "The Chop Shop"
-description: "Descubra se o barbeiro tem tempo para mais um cliente."
+title: "O Salão Vapt-Vupt"
+description: "Descubra se o cabeleireiro tem tempo para mais um cliente."
 en_md5: 5d80e48067c44af3dbda12f2fb2c1d4d
 ---
 
-You run a small hairdressing salon that focusses on speed over quality. People might leave a little rough around the edges, but they're not having to spend too long in the chair.
+Você tem um pequeno salão de cabeleireiro que prioriza a velocidade em vez da qualidade. As pessoas podem sair com o corte um pouco irregular, mas não precisam passar muito tempo na cadeira.
 
-You offer a few different services from styling to full haircuts, which take different times to complete. You run the salon on a first-come, first-serve basis. There's no appointment system.
+Você oferece alguns serviços diferentes, de penteados a cortes completos, e cada um leva um tempo diferente para ficar pronto. O salão funciona por ordem de chegada. Não existe sistema de agendamento.
 
-As it gets towards the end of the day, you need a way of knowing if you have time for any new people that come into the shop.
+Quando o fim do dia se aproxima, você precisa de um jeito de saber se ainda tem tempo para atender as pessoas novas que entrarem no salão.
 
-Write a function called <define>`canFitIn`</define> which takes three inputs:
+Escreva uma função chamada `canFitIn` (dá para encaixar) que recebe três entradas:
 
-- The first is the haircuts that you have in the queue already (array of strings)
-- The second is the haircut that the new person wants (string)
-- The third is the amount of minutes left in the day (number)
+- A primeira são os cortes que já estão na fila (array de strings)
+- A segunda é o corte que a nova pessoa quer (string)
+- A terceira é a quantidade de minutos que restam no dia (número)
 
-Return a boolean for whether you can fit the person in.
+Retorne um Boolean indicando se você consegue encaixar a pessoa.
 
-The styles you offer are:
+Os estilos que você oferece são:
 
-- Mohawk: 20 minutes
-- Slicked-Back Pixie: 15 minutes
-- Bob: 25 minutes
-- Shave and Polish: 15 minutes
-- Afro Trim: 45 minutes
-- Up-do: 30 minutes
+- Mohawk: 20 minutos
+- Slicked-Back Pixie: 15 minutos
+- Bob: 25 minutos
+- Shave and Polish: 15 minutos
+- Afro Trim: 45 minutos
+- Up-do: 30 minutos
 
-### Nested Arrays
+### Arrays aninhados
 
-This is the first exercise where you're dealing with an array that contains other arrays as elements. We call these "nested arrays". Nested arrays are the same as any other array, but rather than the array containing strings or numbers, they contain other arrays.
+Este é o primeiro exercício em que você lida com um array que contém outros arrays como elementos. Chamamos esses arrays de "arrays aninhados". Arrays aninhados são iguais a qualquer outro array, mas em vez de conter strings ou números, eles contêm outros arrays.
 
-Take a look at the <define>`cuts`</define> array. It contains other arrays, one for each hair cut, and each of these arrays has two elements - a name and a duration.
+Dê uma olhada no array `cuts` (cortes). Ele contém outros arrays, um para cada corte de cabelo, e cada um desses arrays tem dois elementos: um nome e uma duração.
 
-It's easiest with this to think of the inner arrays - the pairs of names and durations, and then think of them all being grouped together in another array.
+O jeito mais fácil de pensar nisso é imaginar primeiro os arrays internos, os pares de nome e duração, e depois pensar em todos eles agrupados dentro de outro array.
 
-Indexing works the same as it does everywhere else, but you can chain indexes together like this...
+A indexação funciona igual a qualquer outro lugar, mas você pode encadear índices assim...
 
 ```javascript
 const cuts = [

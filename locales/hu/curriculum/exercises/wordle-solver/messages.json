@@ -1,0 +1,161 @@
+{
+  "checks": {
+    "repeatedGuess": "Ugyanazt a szót többször is megtippelted. Minden tippnek fel kell használnia, amit az előzőekből tanultál, és amint nyertél, állj meg.",
+    "holeInOne": {
+      "firstRow": "Arra számítottunk, hogy az összes betű zöld lesz."
+    },
+    "entirelyWrong": {
+      "firstRow": "Arra számítottunk, hogy az első sor minden betűje absent.",
+      "secondRow": "Arra számítottunk, hogy a második sor minden betűje correct."
+    },
+    "twoNeeded": {
+      "firstRow": "Arra számítottunk, hogy az első sorban egy betű correct.",
+      "secondRow": "Arra számítottunk, hogy a második sorban minden betű correct."
+    },
+    "threeNeeded": {
+      "firstRow": "Arra számítottunk, hogy az első sorban egy betű correct.",
+      "secondRow": "Arra számítottunk, hogy a második sorban egy betű kivételével minden betű correct.",
+      "thirdRow": "Arra számítottunk, hogy a harmadik sorban minden betű correct."
+    },
+    "fourNeeded": {
+      "firstRow": "Arra számítottunk, hogy az első sorban egy betű correct.",
+      "secondRow": "Arra számítottunk, hogy a második sorban az első két betű correct.",
+      "thirdRow": "Arra számítottunk, hogy a harmadik sorban négy betű correct.",
+      "fourthRow": "Arra számítottunk, hogy a negyedik sorban minden betű correct."
+    },
+    "present1": {
+      "firstRow": "Arra számítottunk, hogy az első sorban a betűk: present, absent, correct, correct, absent.",
+      "secondRow": "Arra számítottunk, hogy a második sorban minden betű correct"
+    },
+    "present2": {
+      "firstRow": "Arra számítottunk, hogy az első sorban a betűk: present, absent, absent, absent, absent",
+      "secondRow": "Arra számítottunk, hogy a második sorban a betűk: absent, present, absent, present, present",
+      "thirdRow": "Arra számítottunk, hogy a harmadik sorban minden betű correct"
+    },
+    "present3": {
+      "firstRow": "Arra számítottunk, hogy az első sorban a betűk: absent, absent, present, present, absent.",
+      "secondRow": "Arra számítottunk, hogy a második sorban a betűk: absent, absent, absent, correct, correct",
+      "thirdRow": "Arra számítottunk, hogy a harmadik sorban a betűk: correct, absent, absent, correct, correct",
+      "fourthRow": "Arra számítottunk, hogy a negyedik sorban minden betű correct"
+    },
+    "present4": {
+      "firstRow": "Arra számítottunk, hogy az első sor minden betűje absent",
+      "secondRow": "Arra számítottunk, hogy a második sor minden betűje absent",
+      "thirdRow": "Arra számítottunk, hogy a harmadik sorban a betűk: present, absent, present, absent, absent",
+      "fourthRow": "Arra számítottunk, hogy a negyedik sorban a betűk: correct, correct, correct, present, present",
+      "fifthRow": "Arra számítottunk, hogy az ötödik sorban minden betű correct"
+    }
+  },
+  "tasks": {
+    "firstWord": {
+      "name": "Jeleníts meg egy helyes szót",
+      "description": "Az első forgatókönyv csak azt várja el, hogy a `commonWords()` első szavát válaszd ki. Ez a szó a `which`. Ahhoz, hogy teljesítsd ezt a forgatókönyvet, meg kell tippelned ezt a szót, és meg kell állnod. Mielőtt bonyolultabb helyzetekre térnél át, ellenőrizheted, hogy a bekötésed helyes-e."
+    },
+    "handleWrong": {
+      "name": "Kezeld a teljesen rossz esetet",
+      "description": "Szép munka, hogy az első részt bekötötted! Ebben a második forgatókönyvben két tippet kell használnod. Az első ismét a lánc első szava lesz (ez mindig így van!). Az teljesen rossz lesz, ezért utána a lánc következő szavára kell lépned, ami helyes lesz!"
+    },
+    "handlePartial": {
+      "name": "Kezeld a részben helyes esetet",
+      "description": "Rendben, van némi lendületünk. Itt kezdődik az igazi móka. A következő néhány forgatókönyv `correct` és `absent` betűk keverékét adja vissza. A láncból válaszd ki a következő legjobb szót annak alapján, amit eddig megtudtál a `correct` és `absent` betűkről."
+    },
+    "handlePresent": {
+      "name": "Kezeld a present betűket",
+      "description": "Fantasztikus! Most jön az utolsó trükkös rész. Be kell építened a `present` betűket. Sok szerencsét, menni fog!"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "Minden helyes",
+      "description": "Kezeld az első helyes tippet."
+    },
+    "entirelyWrong": {
+      "name": "Egy rossz, egy helyes",
+      "description": "Kezeld a rossz tippet."
+    },
+    "twoNeeded": {
+      "name": "Két tipp kell",
+      "description": "Kezeld a rossz tippet."
+    },
+    "threeNeeded": {
+      "name": "Három tipp kell",
+      "description": "Kezeld a rossz tippet."
+    },
+    "fourNeeded": {
+      "name": "Négy tipp kell",
+      "description": "Kezeld a rossz tippet."
+    },
+    "present1": {
+      "name": "Néhány present betű",
+      "description": "Egy nehéz eset néhány present betűvel."
+    },
+    "present2": {
+      "name": "Egyre szorosabb",
+      "description": "Kezelj egy nehezebb szót."
+    },
+    "present3": {
+      "name": "Egy átlagosabb játszma",
+      "description": "Most már olyan, mint a Wordle."
+    },
+    "present4": {
+      "name": "Még egy szoros eset",
+      "description": "Szórakoztató, ahogy a végén szétválnak!"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Hol kezdjem egyáltalán?",
+      "answer": "Kezdd azzal, hogy megtippeled a `commonWords()` első szavát. Hozd működésbe azt a ciklust, amelyik tippel egy szót és ellenőrzi az eredményt, mielőtt azon aggódnál, hogy okos legyél."
+    },
+    "readStates": {
+      "question": "Honnan tudom, hogyan sikerült a tippem?",
+      "answer": "A `guess(word)` visszaad egy láncot, amelyben minden betűhöz egy állapot tartozik: `\"correct\"`, `\"present\"` vagy `\"absent\"`. Ez a lánc az egyetlen dolog, amit egy tippből megtudsz, tehát minden, amit tudsz, ebből kell származzon."
+    },
+    "rememberLearned": {
+      "question": "Hogyan jegyezzem meg, amit a tippek során tanultam?",
+      "answer": "Tarts egy tudásszerkezetet a cikluson kívül: a betűket, amelyekről tudod, hogy absent, a betűket, amelyekről tudod, hogy benne vannak a szóban valahol, és pozíciónként azokat a betűket, amelyekről tudod, hogy nincsenek ott."
+    },
+    "pickNextGuess": {
+      "question": "Hogyan válasszam ki a következő tippet?",
+      "answer": "Szűrd a `commonWords()` szavait: csak azokat a szavakat tartsd meg, amelyekben minden correct betű a helyén van, tartalmazzák az összes present betűt (de ne olyan pozícióban, amit már kizártál), és nem tartalmaznak egy absent betűt sem. Válaszd az első találatot."
+    },
+    "whenToStop": {
+      "question": "Mikor álljak meg?",
+      "answer": "Állj meg, amint minden állapot `\"correct\"` lesz, vagy `6` tipp után. Különben a tábla végén túl is tippelnél tovább."
+    }
+  },
+  "functions": {
+    "guess": {
+      "description": "Megtippel egy szót. Felírja a szót a tábla következő sorába, kiszínezi, és visszaad egy láncot, amelyben minden betű állapota szerepel.",
+      "category": "Wordle"
+    },
+    "commonWords": {
+      "description": "Visszaad egy láncot, amely több mint 100 gyakori ötbetűs szót tartalmaz, hogy tippként használhasd őket.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "Hozzáfűz egy elemet a lánc végéhez, és helyben módosítja a láncot.",
+      "category": "Láncok"
+    },
+    "arrayIncludes": {
+      "description": "Ellenőrzi, hogy egy lánc tartalmaz-e egy elemet.",
+      "category": "Láncok"
+    },
+    "stringIncludes": {
+      "description": "Ellenőrzi, hogy egy string tartalmaz-e egy részstringet.",
+      "category": "Stringek"
+    },
+    "arrayLength": {
+      "description": "A láncban lévő elemek száma.",
+      "category": "Láncok"
+    },
+    "stringLength": {
+      "description": "A stringben lévő karakterek száma.",
+      "category": "Stringek"
+    }
+  },
+  "describers": {
+    "guess": "megtippelt egy szót",
+    "commonWords": "lekérte a gyakori szavak láncát"
+  }
+}

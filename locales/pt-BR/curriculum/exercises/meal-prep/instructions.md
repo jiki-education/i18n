@@ -1,18 +1,18 @@
 ---
-title: "Preparação de refeições"
-description: "Descubra que ingredientes você precisa comprar para sua receita."
+title: "Preparo de Refeições"
+description: "Descubra quais ingredientes você precisa comprar para a sua receita."
 en_md5: 2326187734cf4b307264fef2b0dea2fd
 ---
 
-You're the sort of person that likes to pop to the shops each day to get whatever ingredients you need for dinner. It gives you a nice excuse to stretch your legs and chat to the local shopkeeper.
+Você é o tipo de pessoa que gosta de dar um pulinho no mercado todo dia para comprar os ingredientes do jantar. É uma boa desculpa para esticar as pernas e bater um papo com o dono da vendinha do bairro.
 
-Each day you choose a recipe, then check what's in the fridge, and note down what you need to buy.
+Todo dia você escolhe uma receita, confere o que tem na geladeira e anota o que precisa comprar.
 
-Now you've decided to make your life a little easier, by writing a program to do the hard work for you! It checks what's on your list, against what's in the fridge and outputs the difference.
+Agora você decidiu facilitar a sua vida escrevendo um programa que faz o trabalho pesado por você! Ele confere o que está na sua lista, compara com o que tem na geladeira e mostra a diferença.
 
-Your job is to write a function called <define>`shoppingList(fridgeContents, recipeItems)`</define>. It takes two inputs: the contents of your fridge as an array of strings, and the items in the recipe, also as an array of strings. It should return the things you need to buy, as an array of strings.
+Seu trabalho é escrever uma função chamada `shoppingList(fridgeContents, recipeItems)` (lista de compras). Ela recebe duas entradas: o conteúdo da sua geladeira, como um array de strings, e os itens da receita, também como um array de strings. Ela deve retornar as coisas que você precisa comprar, como um array de strings.
 
-For example:
+Por exemplo:
 
 ```javascript
 let fridgeContents = ["tomatoes", "leaves", "milk"]
@@ -22,10 +22,10 @@ shoppingList(fridgeContents, recipeItems)
 // ["beef", "peppers"]
 ```
 
-### The push method
+### O método push
 
-To solve the exercise you need to build your array up using the `.push(element)` method. You can only create one new array in your code. Watch the previous video again if you're unsure what to do.
+Para resolver o exercício, você precisa montar seu array usando o método `.push(element)`. Você só pode criar um array novo no seu código. Assista de novo ao vídeo anterior se não tiver certeza do que fazer.
 
-You might also like to use the `includes` method too (see below for a reminder).
+Você também pode querer usar o método `includes` (veja abaixo para relembrar).
 
-Have fun!
+Divirta-se!

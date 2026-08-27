@@ -1,0 +1,50 @@
+{
+  "tasks": {
+    "createShoppingList": {
+      "name": "Crea la lista della spesa",
+      "description": "Scrivi una funzione che accetta il contenuto del frigo e gli ingredienti di una ricetta e restituisce gli ingredienti che devi comprare (gli ingredienti della ricetta che non sono nel frigo)."
+    }
+  },
+  "scenarios": {
+    "emptyFridge": {
+      "name": "Frigo vuoto",
+      "description": "Quando il frigo è vuoto, devi comprare tutto."
+    },
+    "youHaveEverything": {
+      "name": "Hai tutto",
+      "description": "Quando hai tutti gli ingredienti, la lista della spesa è vuota."
+    },
+    "oneThing": {
+      "name": "Un ingrediente",
+      "description": "Quando ti manca un solo ingrediente."
+    },
+    "fewThings": {
+      "name": "Alcuni ingredienti",
+      "description": "Quando ti mancano alcuni ingredienti."
+    }
+  },
+  "hints": {
+    "realLifeApproach": {
+      "question": "Come lo farei nella vita reale?",
+      "answer": "Scorri la ricetta un ingrediente alla volta e controlli il frigo per ciascuno. Tutto ciò che manca va sulla lista della spesa. Il programma fa la stessa cosa."
+    },
+    "checkFridgeItem": {
+      "question": "Come controllo se un ingrediente è nel frigo?",
+      "answer": "Il metodo `includes` lo fa per te. Chiamandolo sul frigo con un ingrediente ti restituisce `true` o `false`."
+    },
+    "buildShoppingList": {
+      "question": "Come costruisco la lista della spesa?",
+      "answer": "Inizia con un array vuoto. Per ogni ingrediente della ricetta che il frigo non contiene, aggiungilo alla lista della spesa con `push()`."
+    }
+  },
+  "functions": {
+    "includes": {
+      "description": "Controlla se un array contiene un elemento specifico, restituendo vero o falso.",
+      "category": "Array"
+    },
+    "push": {
+      "description": "Aggiunge un elemento alla fine di un array, modificando l'array stesso.",
+      "category": "Array"
+    }
+  }
+}

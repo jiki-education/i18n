@@ -1,25 +1,35 @@
 ---
 title: "Zoknipárosítás"
 description: "Találd meg az összetartozó zoknipárokat két ruháskosárban."
-en_md5: 83ac75dda52f42ed411bb64a715c6bf2
+en_md5: c58a4ca0800c19322e7e9a98b4634aad
 ---
 
-There's little in life more annoying than having odd socks where you can't find its partner. So one day you finally decide to sort those socks out!
+Kevés idegesítőbb dolog van az életben, mint a páratlan zokni, aminek nem találod a párját. Ezért egy nap végre úgy döntesz, hogy szétválogatod a zoknijaidat!
 
-You get all of the clean clothes from your drawers and put them into one basket. Then you go searching under every surface and behind every cushion to find any other clothes lying around, and put them in a second basket of dirty items.
+Kiszeded az összes tiszta ruhát a fiókjaidból, és egy kosárba rakod őket. Aztán átkutatsz minden bútor alatt és minden párna mögött, hátha találsz még ruhadarabokat, és ezeket egy másik kosárba rakod, a koszos darabok közé.
 
-You now have two baskets and want to go through, finding whether each sock has a pair or not.
+Most már két kosarad van, és szeretnéd átnézni őket, hogy kiderítsd, minden zokninak van-e párja.
 
-Write a function called <define>`matchingSocks`</define>. It takes two inputs, the clean basket and the dirty basket - both as lists of strings. Return a list of all the pairs of socks.
+Írj egy `matchingSocks` (zoknipárosítás) nevű függvényt. Két bemenetet kap: a tiszta kosarat és a koszos kosarat, mindkettőt stringekből álló tömbként. Add vissza az összes zoknipárt egy tömbben.
 
-For example:
+Például:
 
-- If the clean basket contains: `["left blue sock", "green sweater"]`
-- And the dirty basket contains: `["blue shorts", "right blue sock", "left green sock"]`
-- You should return `["blue socks"]`
+- Ha a tiszta kosár ezt tartalmazza: `["left blue sock", "green sweater"]`
+- A koszos kosár pedig ezt: `["blue shorts", "right blue sock", "left green sock"]`
+- Ezt kell visszaadnod: `["blue socks"]`
 
-The descriptions follow these rules:
+A leírásokra ezek a szabályok vonatkoznak:
 
-- They are always lower case.
-- They are always one or more words separated by spaces.
-- For things that can be pairs, they will always start with `"left "` or `"right "`
+- Mindig kisbetűsek.
+- Mindig egy vagy több szóból állnak, a szavakat szóköz választja el.
+- A párba állítható dolgok mindig `"left "` vagy `"right "` előtaggal kezdődnek.
+
+### Metódusok
+
+Ebben a feladatban sok string- és tömbmetódus áll rendelkezésedre, hogy kicsit könnyebb legyen a dolgod. Nézd meg az alábbi leírásokat, hogy lásd, mi minden van az eszköztáradban ehhez a kihíváshoz.
+
+### Bónusz
+
+Sokféleképpen meg lehet oldani. Van azonban egy elég elegáns, 29 soros megoldás, ezért ezt tűztük ki célul. Ennél kevesebb sorral is megoldhatod, de a kód ilyenkor általában kevésbé olvasható, ezért szerintünk a 29 körüli megoldás a legjobb.
+
+Jó szórakozást!

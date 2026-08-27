@@ -1,0 +1,161 @@
+{
+  "checks": {
+    "repeatedGuess": "Tu as proposé le même mot plusieurs fois. Chaque proposition doit s'appuyer sur ce que les précédentes t'ont appris, et tu dois t'arrêter dès que tu as gagné.",
+    "holeInOne": {
+      "firstRow": "On attendait que toutes les lettres soient vertes"
+    },
+    "entirelyWrong": {
+      "firstRow": "On attendait que la première rangée soit entièrement en absent",
+      "secondRow": "On attendait que la deuxième rangée soit entièrement en correct"
+    },
+    "twoNeeded": {
+      "firstRow": "On attendait que la première rangée ait une lettre en correct",
+      "secondRow": "On attendait que la deuxième rangée soit entièrement en correct"
+    },
+    "threeNeeded": {
+      "firstRow": "On attendait que la première rangée ait une lettre en correct",
+      "secondRow": "On attendait que la deuxième rangée ait toutes ses lettres en correct sauf une",
+      "thirdRow": "On attendait que la troisième rangée soit entièrement en correct"
+    },
+    "fourNeeded": {
+      "firstRow": "On attendait que la première rangée ait une lettre en correct",
+      "secondRow": "On attendait que la deuxième rangée ait ses deux premières lettres en correct",
+      "thirdRow": "On attendait que la troisième rangée ait quatre lettres en correct",
+      "fourthRow": "On attendait que la quatrième rangée soit entièrement en correct"
+    },
+    "present1": {
+      "firstRow": "On attendait que la première rangée soit present, absent, correct, correct, absent.",
+      "secondRow": "On attendait que la deuxième rangée soit entièrement en correct"
+    },
+    "present2": {
+      "firstRow": "On attendait que la première rangée soit present, absent, absent, absent, absent",
+      "secondRow": "On attendait que la deuxième rangée soit absent, present, absent, present, present",
+      "thirdRow": "On attendait que la troisième rangée soit entièrement en correct"
+    },
+    "present3": {
+      "firstRow": "On attendait que la première rangée soit absent, absent, present, present, absent.",
+      "secondRow": "On attendait que la deuxième rangée soit absent, absent, absent, correct, correct",
+      "thirdRow": "On attendait que la troisième rangée soit correct, absent, absent, correct, correct",
+      "fourthRow": "On attendait que la quatrième rangée soit entièrement en correct"
+    },
+    "present4": {
+      "firstRow": "On attendait que la première rangée soit entièrement en absent",
+      "secondRow": "On attendait que la deuxième rangée soit entièrement en absent",
+      "thirdRow": "On attendait que la troisième rangée soit present, absent, present, absent, absent",
+      "fourthRow": "On attendait que la quatrième rangée soit correct, correct, correct, present, present",
+      "fifthRow": "On attendait que la cinquième rangée soit entièrement en correct"
+    }
+  },
+  "tasks": {
+    "firstWord": {
+      "name": "Affiche le bon mot",
+      "description": "Le premier scénario attend simplement que tu choisisses le premier mot de `commonWords()`. Ce mot est `which`. Pour réussir ce scénario, tu dois proposer ce mot puis t'arrêter. Cela te permet de vérifier que la mécanique fonctionne avant de passer à des situations plus complexes."
+    },
+    "handleWrong": {
+      "name": "Gère une proposition entièrement fausse",
+      "description": "Bravo pour cette première étape ! Pour ce deuxième scénario, tu dois utiliser deux propositions. La première sera encore le premier mot du tableau (c'est toujours le cas !). Elle sera complètement fausse, il faudra donc passer au mot suivant du tableau, qui sera le bon !"
+    },
+    "handlePartial": {
+      "name": "Gère une proposition partiellement juste",
+      "description": "Bien, on est lancés. C'est là que ça devient plus amusant. Les prochains scénarios renvoient un mélange de lettres `correct` et `absent`. Choisis le meilleur mot suivant du tableau en te basant sur les lettres `correct` et `absent` que tu as déjà découvertes."
+    },
+    "handlePresent": {
+      "name": "Gère les lettres « present »",
+      "description": "Fantastique ! Place à la dernière difficulté : tu dois maintenant prendre en compte les lettres `present`. Bonne chance, tu vas y arriver !"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "Tout correct",
+      "description": "Gère une première proposition entièrement correcte."
+    },
+    "entirelyWrong": {
+      "name": "Un mot faux, un mot juste",
+      "description": "Gère une proposition fausse"
+    },
+    "twoNeeded": {
+      "name": "Deux propositions nécessaires",
+      "description": "Gère une proposition fausse"
+    },
+    "threeNeeded": {
+      "name": "Trois propositions nécessaires",
+      "description": "Gère une proposition fausse"
+    },
+    "fourNeeded": {
+      "name": "Quatre propositions nécessaires",
+      "description": "Gère une proposition fausse"
+    },
+    "present1": {
+      "name": "Quelques lettres « present »",
+      "description": "Un scénario difficile, avec des lettres « present »."
+    },
+    "present2": {
+      "name": "Ça se resserre",
+      "description": "Gère un mot plus difficile"
+    },
+    "present3": {
+      "name": "Une partie plus classique",
+      "description": "Là, ça ressemble vraiment à Wordle"
+    },
+    "present4": {
+      "name": "Encore une partie serrée",
+      "description": "C'est amusant de voir comme les mots divergent à la fin !"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Par où commencer ?",
+      "answer": "Commence par proposer le premier mot de `commonWords()`. Fais d'abord fonctionner la boucle qui propose un mot et vérifie le résultat, avant de chercher à être malin."
+    },
+    "readStates": {
+      "question": "Comment savoir ce qu'a donné ma proposition ?",
+      "answer": "`guess(word)` te renvoie un tableau avec un état par lettre : `\"correct\"`, `\"present\"` ou `\"absent\"`. Ce tableau est la seule chose qu'une proposition t'apprend, donc tout ce que tu sais doit venir de là."
+    },
+    "rememberLearned": {
+      "question": "Comment mémoriser ce que j'ai appris d'une proposition à l'autre ?",
+      "answer": "Garde une structure de connaissances en dehors de la boucle : les lettres que tu sais absentes, les lettres qui se trouvent quelque part dans le mot, et, pour chaque position, les lettres qui n'y sont PAS."
+    },
+    "pickNextGuess": {
+      "question": "Comment choisir la proposition suivante ?",
+      "answer": "Filtre `commonWords()` : garde uniquement les mots qui ont toutes les lettres correctes aux bonnes positions, qui contiennent chaque lettre présente (mais pas aux positions que tu as écartées) et qui ne contiennent aucune des lettres absentes. Prends le premier mot qui correspond."
+    },
+    "whenToStop": {
+      "question": "Quand est-ce que je m'arrête ?",
+      "answer": "Arrête-toi dès que tous les états renvoyés sont `\"correct\"`, ou après `6` propositions. Sinon, tu continueras à proposer des mots au-delà de la fin de la grille."
+    }
+  },
+  "functions": {
+    "guess": {
+      "description": "Propose un mot. La fonction écrit le mot sur la rangée suivante de la grille, le colore, puis renvoie un tableau avec l'état de chaque lettre.",
+      "category": "Wordle"
+    },
+    "commonWords": {
+      "description": "Renvoie un tableau de plus de 100 mots courants de cinq lettres à utiliser comme propositions.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "Ajoute un élément à la fin d'un tableau, en modifiant le tableau directement.",
+      "category": "Tableaux"
+    },
+    "arrayIncludes": {
+      "description": "Vérifie si un tableau contient un élément.",
+      "category": "Tableaux"
+    },
+    "stringIncludes": {
+      "description": "Vérifie si une _string_ en contient une autre.",
+      "category": "Strings"
+    },
+    "arrayLength": {
+      "description": "Le nombre d'éléments dans un tableau.",
+      "category": "Tableaux"
+    },
+    "stringLength": {
+      "description": "Le nombre de caractères dans une _string_.",
+      "category": "Strings"
+    }
+  },
+  "describers": {
+    "guess": "a proposé un mot",
+    "commonWords": "a récupéré le tableau des mots courants"
+  }
+}

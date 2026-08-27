@@ -1,0 +1,50 @@
+{
+  "tasks": {
+    "createShoppingList": {
+      "name": "Criar lista de compras",
+      "description": "Escreve uma função que recebe o conteúdo do teu frigorífico e os ingredientes de uma receita, e devolve os itens que precisas de comprar (os itens da receita que não estão no frigorífico)."
+    }
+  },
+  "scenarios": {
+    "emptyFridge": {
+      "name": "Frigorífico vazio",
+      "description": "Quando o frigorífico está vazio, precisas de comprar tudo."
+    },
+    "youHaveEverything": {
+      "name": "Tens tudo",
+      "description": "Quando tens todos os ingredientes, a lista de compras está vazia."
+    },
+    "oneThing": {
+      "name": "Uma coisa",
+      "description": "Quando te falta apenas um ingrediente."
+    },
+    "fewThings": {
+      "name": "Algumas coisas",
+      "description": "Quando te faltam alguns ingredientes."
+    }
+  },
+  "hints": {
+    "realLifeApproach": {
+      "question": "Como é que eu faria isto na vida real?",
+      "answer": "Percorrerias a receita um ingrediente de cada vez e verificarias o frigorífico para cada um. O que estiver em falta vai para a lista de compras. O teu código faz o mesmo."
+    },
+    "checkFridgeItem": {
+      "question": "Como é que verifico se um item está no frigorífico?",
+      "answer": "Ao chamares o método `includes` no frigorífico com um ingrediente, ele devolve-te `true` ou `false`."
+    },
+    "buildShoppingList": {
+      "question": "Como é que construo a lista de compras?",
+      "answer": "Começa com um array vazio. Para cada item da receita que o frigorífico não contém, usa `push()` para o adicionares à lista de compras."
+    }
+  },
+  "functions": {
+    "includes": {
+      "description": "Verifica se um array contém um item específico, devolvendo true ou false.",
+      "category": "Arrays"
+    },
+    "push": {
+      "description": "Acrescenta um elemento ao final de um array, alterando o array no local.",
+      "category": "Arrays"
+    }
+  }
+}

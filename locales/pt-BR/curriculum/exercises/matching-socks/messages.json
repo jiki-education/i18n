@@ -1,0 +1,97 @@
+{
+  "tasks": {
+    "findMatchingSocks": {
+      "name": "Encontre as meias que combinam",
+      "description": "Escreva uma função que recebe dois cestos de roupas (como listas de strings) e retorna uma lista com todos os pares de meias encontrados nos dois cestos. Os itens que são meias terminam com ' sock' e sempre começam com 'left ' ou 'right '."
+    },
+    "solveTightly": {
+      "name": "Resolva em 29 linhas",
+      "description": "Tente resolver em 29 linhas de código ou menos. Não é a resposta mais curta possível, mas é uma boa meta para buscar depois que tudo estiver funcionando."
+    }
+  },
+  "scenarios": {
+    "emptyBaskets": {
+      "name": "Cestos vazios",
+      "description": "Os dois cestos estão vazios."
+    },
+    "nothingClean": {
+      "name": "Nada limpo",
+      "description": "Não tem nada limpo."
+    },
+    "nothingDirty": {
+      "name": "Nada sujo",
+      "description": "Não tem nada sujo."
+    },
+    "noSocks": {
+      "name": "Sem meias",
+      "description": "Não há meias em lugar nenhum."
+    },
+    "oneInEach": {
+      "name": "Uma em cada",
+      "description": "Há uma meia que combina em cada cesto."
+    },
+    "aBigMix": {
+      "name": "Uma grande mistura!",
+      "description": "Uma mistura de roupas com vários pares de meias que combinam."
+    },
+    "someAddedPain": {
+      "name": "Miudezas",
+      "description": "Algumas coisas estranhas se infiltraram por aí."
+    },
+    "bonusLineCount": {
+      "name": "Uma solução enxuta",
+      "description": "O mesmo trabalho, feito em menos linhas."
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Por onde eu começo quando há tantas partes envolvidas?",
+      "answer": "Não tente escrever tudo de uma vez. Divida o problema em funções pequenas, cada uma respondendo a uma perguntinha, faça cada uma funcionar sozinha e depois combine todas."
+    },
+    "isItASock": {
+      "question": "Como eu sei se algo no cesto é mesmo uma meia?",
+      "answer": "Nem tudo que menciona um lado é uma meia, e nem tudo que parece meia é uma. Olhe com atenção as regras de como os itens são descritos e verifique as duas pontas da descrição, não só o começo."
+    },
+    "compareSockPair": {
+      "question": "Como eu comparo uma meia esquerda com o par direito dela?",
+      "answer": "Em vez de comparar duas meias diretamente, descubra como o par de uma meia se chamaria e depois procure por ele. As strings têm um método pronto para trocar um trecho de texto por outro, que também pode remover um trecho ao trocá-lo por nada."
+    },
+    "avoidDuplicates": {
+      "question": "Como eu evito contar o mesmo par duas vezes?",
+      "answer": "Cada par é descoberto duas vezes, uma de cada lado. Antes de adicionar um nome aos seus resultados, verifique se ele já está lá."
+    },
+    "overallPlan": {
+      "question": "Qual é um bom plano geral?",
+      "answer": "Os dois cestos podem ser tratados como um único montão. Percorra item por item e, para cada um, decida se ele pertence à sua resposta."
+    }
+  },
+  "checks": {
+    "tooManyLines": "Quase lá! Sua solução funciona, mas tem mais de 29 linhas de código."
+  },
+  "functions": {
+    "startsWith": {
+      "description": "Verifica se uma string começa com uma string menor",
+      "category": "Operações com Strings"
+    },
+    "endsWith": {
+      "description": "Verifica se uma string termina com uma string menor",
+      "category": "Operações com Strings"
+    },
+    "replace": {
+      "description": "Retorna uma nova string com a primeira ocorrência de um texto trocada por outro texto",
+      "category": "Operações com Strings"
+    },
+    "concat": {
+      "description": "Junta dois arrays em um único array novo",
+      "category": "Operações com Arrays"
+    },
+    "includes": {
+      "description": "Verifica se um array já contém um elemento",
+      "category": "Operações com Arrays"
+    },
+    "push": {
+      "description": "Adiciona um elemento ao final de um array",
+      "category": "Operações com Arrays"
+    }
+  }
+}

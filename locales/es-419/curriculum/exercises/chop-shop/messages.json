@@ -1,0 +1,48 @@
+{
+  "tasks": {
+    "canFitIn": {
+      "name": "¿Puedes hacer que quepan?",
+      "description": "Escribe una función que determine si puedes atender a un cliente nuevo antes de la hora de cierre, con la fila actual y el tiempo restante."
+    }
+  },
+  "scenarios": {
+    "emptyQueue": {
+      "name": "Nadie en la fila",
+      "description": "No hay nadie en la fila y sobra tiempo."
+    },
+    "emptyQueueButNoTime": {
+      "name": "Al final del día",
+      "description": "No hay nadie en la fila, pero no hay suficiente tiempo."
+    },
+    "busyDayNoTime": {
+      "name": "Un día completo",
+      "description": "Una fila llena y no hay suficiente tiempo."
+    },
+    "busyDayButTime": {
+      "name": "Apenas cabe",
+      "description": "Un día completo, pero el tiempo alcanza justo."
+    },
+    "stillEarly": {
+      "name": "Todavía es temprano",
+      "description": "Aún es temprano en el día."
+    },
+    "cuttingItFine": {
+      "name": "Justo a tiempo",
+      "description": "¡Llegaron justo a tiempo!"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "¿Por dónde debería empezar? ¿Por la fila o por el cliente nuevo?",
+      "answer": "Primero calcula cuánto tiempo va a consumir la fila y luego mira cuánto queda para el cliente nuevo. Una función auxiliar que convierta el nombre de un corte en su duración (en minutos) va a hacer esto mucho más limpio."
+    },
+    "subtractQueueTime": {
+      "question": "¿Cómo resto el tiempo de cada corte del tiempo restante?",
+      "answer": "Recorre la fila. Para cada corte, busca su duración con tu función auxiliar y resta ese tiempo del total acumulado de tiempo que te queda en el día."
+    },
+    "decideIfFits": {
+      "question": "¿Cómo decido si el corte nuevo cabe?",
+      "answer": "Después de procesar la fila, compara el tiempo restante con la duración del corte nuevo. Si el tiempo del corte nuevo es menor o igual que el tiempo que queda, cabe."
+    }
+  }
+}

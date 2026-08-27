@@ -1,13 +1,31 @@
 ---
 title: "Étkezés előkészítése"
 description: "Derítsd ki, mely hozzávalókat kell megvenned a receptedhez."
-en_md5: 4199f39db62481239426f85c4afcb41e
+en_md5: 2326187734cf4b307264fef2b0dea2fd
 ---
 
-You're the sort of person that likes to pop to the shops each day to get whatever ingredients you need for dinner. It gives you a nice excuse to stretch your legs and chat to the local shopkeeper.
+Olyan ember vagy, aki szeret mindennap beugrani a boltba, hogy megvegye, ami éppen kell a vacsorához. Ez jó ürügy arra, hogy megmozgasd magad, és elbeszélgess a helyi boltossal.
 
-Each day you choose a recipe, then check what's in the fridge, and note down what you need to buy.
+Minden nap kiválasztasz egy receptet, megnézed, mi van a hűtőben, és feljegyzed, mit kell megvenned.
 
-Now you've decided to make your life a little easier, by writing a program to do the hard work for you!
+Most úgy döntöttél, hogy kicsit megkönnyíted az életed, és írsz egy programot, ami elvégzi helyetted a nehéz munkát! A program összeveti azt, ami a listádon van, azzal, ami a hűtőben van, és kiadja a különbséget.
 
-Write a function called <define>`shoppingList`</define>. It takes two inputs: the contents of your fridge as a list of strings, and the items in the recipe as a list of strings. It should return the things you need to buy, as a list of strings.
+A te dolgod, hogy írj egy `shoppingList(fridgeContents, recipeItems)` nevű függvényt (bevásárlólista). Két bemenetet kap: a hűtőd tartalmát stringek tömbjeként, és a recept elemeit, szintén stringek tömbjeként. Azokat kell visszaadnia, amiket meg kell venned, stringek tömbjeként.
+
+Például:
+
+```javascript
+let fridgeContents = ["tomatoes", "leaves", "milk"]
+let recipeItems = ["beef", "tomatoes", "peppers"]
+
+shoppingList(fridgeContents, recipeItems)
+// ["beef", "peppers"]
+```
+
+### A push metódus
+
+A feladat megoldásához a `.push(element)` metódussal kell felépítened a tömbödet. A kódodban csak egy új tömböt hozhatsz létre. Ha nem vagy biztos benne, mit kell tenned, nézd meg újra az előző videót.
+
+Használhatod még az `includes` metódust is (lentebb találsz róla emlékeztetőt).
+
+Jó szórakozást!

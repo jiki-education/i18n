@@ -1,79 +1,105 @@
 {
   "checks": {
     "holeInOne": {
-      "firstRow": "�"
+      "firstRow": "Azt vártuk, hogy minden betű zöld legyen"
     },
     "twoGuesses": {
-      "firstRow": "�",
-      "secondRow": "�"
+      "firstRow": "Azt vártuk, hogy a második betű „absent” legyen",
+      "secondRow": "Azt vártuk, hogy minden betű zöld legyen"
     },
     "threeGuesses": {
-      "firstRow": "�",
-      "secondRow": "�",
-      "thirdRow": "�"
+      "firstRow": "Azt vártuk, hogy a második és a negyedik betű „absent” legyen",
+      "secondRow": "Azt vártuk, hogy a második betű „absent” legyen",
+      "thirdRow": "Azt vártuk, hogy minden betű zöld legyen"
     },
     "phew": {
-      "firstRow": "�",
-      "secondRow": "�",
-      "thirdRow": "�",
-      "fourthRow": "�",
-      "fifthRow": "�",
-      "sixthRow": "�"
+      "firstRow": "Azt vártuk, hogy minden betű „absent” legyen",
+      "secondRow": "Azt vártuk, hogy minden betű „absent” legyen",
+      "thirdRow": "Azt vártuk, hogy az utolsó kettő „present”, a többi pedig „absent” legyen",
+      "fourthRow": "Azt vártuk, hogy az első „present”, a többi pedig „absent” legyen",
+      "fifthRow": "Azt vártuk, hogy a második „present”, a többi pedig „absent” legyen",
+      "sixthRow": "Azt vártuk, hogy minden betű zöld legyen"
+    },
+    "bonus1": {
+      "firstRow": "Azt vártuk, hogy az első sorból csak a negyedik betű legyen „present”",
+      "secondRow": "A második sor nem jó. Ez a trükkös: az ismétlődő betűk közül csak az egyiket szabad beszínezni.",
+      "thirdRow": "A harmadik sor nem jó.",
+      "fourthRow": "Azt vártuk, hogy a negyedik sorban minden betű zöld legyen."
+    },
+    "bonus2": {
+      "firstRow": "Az első sor nem jó.",
+      "secondRow": "A második sor nem jó.",
+      "thirdRow": "A harmadik sor nem jó.",
+      "fourthRow": "A negyedik sor nem jó. Ez a trükkös: a `swiss`-ben több `s` van, mint a célszóban.",
+      "fifthRow": "Az ötödik sor nem jó.",
+      "sixthRow": "Azt vártuk, hogy a hatodik sorban minden betű zöld legyen."
     }
   },
   "tasks": {
     "processGame": {
-      "name": "�",
-      "description": "�"
+      "name": "Dolgozz fel egy teljes játékot",
+      "description": "Hozz létre egy processGame nevű függvényt, amely egy célszót és egy tippekből álló tömböt kap, és minden tipphez meghívja a colorRow függvényt a helyes állapotokkal."
+    },
+    "duplicateLetters": {
+      "name": "Bónusz: Ismétlődő betűk kezelése",
+      "description": "Van egy Wordle-szabály, amit eddig kihagytunk. Ha egy betű kétszer szerepel a tippedben, de a célszóban csak egyszer, akkor ha az egyikük jó helyen van, az zöld lesz, a másik pedig szürke. Egyébként az első sárga lesz, a második pedig szürke. Ugyanez az elv nagyobb számokra is érvényes: ha a tippedben három, a szóban pedig két ilyen betű van, akkor kettő kap színt, a harmadik pedig szürke lesz. Kezdd az első bónusz forgatókönyvvel, majd oldd meg teljesen a másodiknál. Ez bónusz, tehát nem kell befejezned!"
     }
   },
   "scenarios": {
     "holeInOne": {
-      "name": "�",
-      "description": "�"
+      "name": "Elsőre!",
+      "description": "Kezeld le az első helyes tippet."
     },
     "twoGuesses": {
-      "name": "�",
-      "description": "�"
+      "name": "Két tippből megvan",
+      "description": "Kezelj le két tippet."
     },
     "threeGuesses": {
-      "name": "�",
-      "description": "�"
+      "name": "Három tippből meglett",
+      "description": "Kezelj le három tippet."
     },
     "phew": {
-      "name": "�",
-      "description": "�"
+      "name": "Húú!",
+      "description": "Húú! Ez szoros volt!"
+    },
+    "bonus1": {
+      "name": "Csak egy sárga",
+      "description": "Ha egyetlen tényleges betűhöz több „present” betű tartozik, csak az egyik legyen sárga."
+    },
+    "bonus2": {
+      "name": "Svájci sajt",
+      "description": "Az itteni svájci sajt megmutatja, miért fontos!"
     }
   },
   "hints": {
     "reuseWork": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hogyan használhatom újra a `processGuess`-ből származó munkámat?",
+      "answer": "A logika, ami egy tippet állapotok tömbjévé alakít, ugyanaz. Emeld ki egy segédfüggvénybe (vagy másold ki), és hívd meg minden tippre a tömbben."
     },
     "trackRow": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hogyan követem nyomon, hogy melyik sor melyik tipphez tartozik?",
+      "answer": "Cikluson menj végig a tippeken egy indexszel. A sorszám az index plusz `1` (mivel a `colorRow` `1-6`-ig számozott sorokat vár)."
     },
-    "colourRow": {
-      "question": "�",
-      "answer": "�"
+    "colorRow": {
+      "question": "Hogyan színezem be ténylegesen az egyes sorokat?",
+      "answer": "Amint megvan a `states` tömb egy tipphez, hívd meg a `colorRow(rowNumber, states)` függvényt."
     },
     "fewerGuesses": {
-      "question": "�",
-      "answer": "�"
+      "question": "Mi van, ha a játékos 6-nál kevesebb tippet tett?",
+      "answer": "Csak azokat a sorokat színezd be, amelyekhez létezik tipp. A tömb hossza megmondja, hányat kell feldolgoznod, így természetesen a megfelelő ponton állsz meg."
     }
   },
   "functions": {
     "colorRow": {
-      "description": "�",
-      "category": "�"
+      "description": "A Wordle-tábla egy sorát színezi be a megadott állapotokkal.",
+      "category": "Wordle"
     },
     "push": {
-      "description": "�",
-      "category": "�"
+      "description": "Hozzáad egy elemet a tömb végéhez, helyben módosítva a tömböt.",
+      "category": "Tömbök"
     }
   },
   "describers": {
-    "colorRow": "�"
+    "colorRow": "beszínezett egy sort a wordle-táblán"
   }
 }

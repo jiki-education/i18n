@@ -1,25 +1,35 @@
 ---
 title: "Meias que Combinam"
 description: "Encontra pares de meias que combinam em dois cestos de roupa."
-en_md5: 83ac75dda52f42ed411bb64a715c6bf2
+en_md5: c58a4ca0800c19322e7e9a98b4634aad
 ---
 
-There's little in life more annoying than having odd socks where you can't find its partner. So one day you finally decide to sort those socks out!
+Há poucas coisas mais irritantes na vida do que teres meias sem par e não conseguires encontrar a outra meia. Por isso, um dia decides finalmente organizar as meias!
 
-You get all of the clean clothes from your drawers and put them into one basket. Then you go searching under every surface and behind every cushion to find any other clothes lying around, and put them in a second basket of dirty items.
+Pegas em toda a roupa limpa das tuas gavetas e colocas tudo num cesto. Depois, procuras debaixo de todas as superfícies e atrás de todas as almofadas para encontrares quaisquer outras peças de roupa que estejam espalhadas, e colocas essas peças num segundo cesto, o da roupa suja.
 
-You now have two baskets and want to go through, finding whether each sock has a pair or not.
+Agora tens dois cestos e queres percorrê-los para descobrires se cada meia tem par ou não.
 
-Write a function called <define>`matchingSocks`</define>. It takes two inputs, the clean basket and the dirty basket - both as lists of strings. Return a list of all the pairs of socks.
+Escreve uma função chamada `matchingSocks` (meias que combinam). Recebe dois parâmetros de entrada: o cesto da roupa limpa e o cesto da roupa suja, ambos como arrays de strings. Devolve um array com todos os pares de meias.
 
-For example:
+Por exemplo:
 
-- If the clean basket contains: `["left blue sock", "green sweater"]`
-- And the dirty basket contains: `["blue shorts", "right blue sock", "left green sock"]`
-- You should return `["blue socks"]`
+- Se o cesto da roupa limpa contiver: `["left blue sock", "green sweater"]`
+- E se o cesto da roupa suja contiver: `["blue shorts", "right blue sock", "left green sock"]`
+- Deves devolver `["blue socks"]`
 
-The descriptions follow these rules:
+As descrições seguem estas regras:
 
-- They are always lower case.
-- They are always one or more words separated by spaces.
-- For things that can be pairs, they will always start with `"left "` or `"right "`
+- Estão sempre em minúsculas.
+- Têm sempre uma ou mais palavras separadas por espaços.
+- No caso das peças que podem formar pares, começam sempre por `"left "` ou `"right "`
+
+### Métodos
+
+Este exercício tem muitos métodos de strings e de arrays que podes usar para te facilitar um pouco a vida. Explora todas as descrições abaixo para veres o que tens à tua disposição neste Desafio.
+
+### Bónus
+
+Há muitas formas de resolveres isto. No entanto, existe uma solução bastante elegante com 29 linhas de código, por isso definimos esse como o objetivo. Consegues fazer com menos linhas, mas o código tende a ficar menos legível quando isso acontece, por isso achamos que cerca de 29 é o melhor nível.
+
+Diverte-te!

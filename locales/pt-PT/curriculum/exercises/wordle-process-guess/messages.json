@@ -1,0 +1,72 @@
+{
+  "checks": {
+    "allCorrect": "Esperávamos que todas as letras estivessem verdes",
+    "absent": "Esperávamos que o 'a' e o 'u' estivessem ausentes",
+    "present": "Esperávamos que o 'l' e o 'e' estivessem presentes.",
+    "complex": "Esperávamos present, present, present, correct, absent",
+    "differentWord": "Esperávamos correct, present, present, present, absent"
+  },
+  "tasks": {
+    "processGuess": {
+      "name": "Processa uma única tentativa",
+      "description": "Cria uma função chamada processGuess que recebe a palavra secreta e uma tentativa, determina o estado de cada letra (correct, present ou absent) e, em seguida, chama colorRow(1, states) com os resultados."
+    }
+  },
+  "scenarios": {
+    "allCorrect": {
+      "name": "Todas corretas",
+      "description": "Lida com uma tentativa totalmente correta"
+    },
+    "absent": {
+      "name": "Algumas ausentes",
+      "description": "Lida com o caso em que algumas letras estão erradas"
+    },
+    "present": {
+      "name": "Algumas presentes",
+      "description": "Lida com letras no sítio errado"
+    },
+    "complex": {
+      "name": "Complexo",
+      "description": "Lida com um cenário mais complexo"
+    },
+    "differentWord": {
+      "name": "Uma palavra diferente",
+      "description": "E, por fim, uma palavra diferente!"
+    }
+  },
+  "hints": {
+    "compareLetters": {
+      "question": "Como comparo cada letra da tentativa com a palavra secreta?",
+      "answer": "Percorre as posições `0` a `4`. Para cada posição, compara `guess[i]` com `target[i]`."
+    },
+    "stateRules": {
+      "question": "Quando é que uma letra é `\"correct\"`, `\"present\"` ou `\"absent\"`?",
+      "answer": "Se `guess[i]` for igual a `target[i]`, é `\"correct\"`. Caso contrário, se a letra existir em algum lugar em `target`, é `\"present\"`. Se não, é `\"absent\"`."
+    },
+    "buildList": {
+      "question": "Como construo o array de estados?",
+      "answer": "Começa com um array vazio e, em seguida, usa `states.push(value)` dentro do ciclo para adicionar cada estado ao fim, por ordem."
+    },
+    "finishedList": {
+      "question": "Para onde vai o array final?",
+      "answer": "Passa-o para `colorRow(1, states)` para colorir a primeira linha do tabuleiro com os estados que calculaste."
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "Colore uma linha no tabuleiro do Wordle com os estados fornecidos.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "Adiciona um elemento no fim de um array, alterando o array em si.",
+      "category": "Arrays"
+    },
+    "includes": {
+      "description": "Verifica se uma string contém outra string, devolvendo true ou false.",
+      "category": "Strings"
+    }
+  },
+  "describers": {
+    "colorRow": "coloriu uma linha no tabuleiro do Wordle"
+  }
+}

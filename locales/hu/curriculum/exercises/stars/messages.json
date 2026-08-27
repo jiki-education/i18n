@@ -1,46 +1,79 @@
 {
   "tasks": {
-    "createStarsFunction": {
-      "name": "�",
-      "description": "�"
+    "drawStars": {
+      "name": "Rajzolj ki egy piramist csillagokból",
+      "description": "Írj egy layoutStars függvényt, amely megkapja a sorok számát, felépít egy stringekből álló tömböt, ahol minden stringben eggyel kevesebb csillag van, mint az előzőben, majd kirajzolja a drawStars segítségével. Például a layoutStars(3) a [\"***\", \"**\", \"*\"] piramist rajzolja ki."
     }
   },
   "scenarios": {
     "count0": {
-      "name": "�",
-      "description": "�"
+      "name": "Érték 0",
+      "description": "Nulla érték esetén nem rajzolódik ki semmi."
     },
     "count1": {
-      "name": "�",
-      "description": "�"
+      "name": "Érték 1",
+      "description": "Az 1-es érték egyetlen csillagot rajzol ki."
     },
     "count3": {
-      "name": "�",
-      "description": "�"
+      "name": "Érték 3",
+      "description": "A 3-as érték háromsoros piramist rajzol ki."
     },
     "count5": {
-      "name": "�",
-      "description": "�"
+      "name": "Érték 5",
+      "description": "Az 5-ös érték ötsoros piramist rajzol ki."
+    },
+    "count10": {
+      "name": "Érték 10",
+      "description": "A 10-es érték tízsoros piramist rajzol ki."
     }
   },
   "hints": {
     "shapeOfAnswer": {
-      "question": "�",
-      "answer": "�"
+      "question": "Mit építek?",
+      "answer": "Egy stringekből álló tömböt, a leghosszabbal kezdve, ahol minden string eggyel kevesebb csillagból áll, mint az előző, egészen az egyetlen csillagig. Amikor kirajzolódik, a leghosszabb sor a piramis alján van. Először építsd fel a teljes tömböt, majd rajzold ki a `drawStars` segítségével."
     },
-    "loopCount": {
-      "question": "�",
-      "answer": "�"
+    "countingDown": {
+      "question": "Hogyan csináljam, hogy minden sor rövidebb legyen, mint az előző?",
+      "answer": "A hosszaknak csökkenniük kell: az első string a leghosszabb, az utolsó pedig egyetlen csillag. Egy ciklus, amely a teljes értéktől visszaszámol 1-ig, sorban megadja az egyes hosszakat."
     },
-    "insideLoop": {
-      "question": "�",
-      "answer": "�"
+    "buildingEachRow": {
+      "question": "Hogyan építsek fel egy stringet adott számú csillaggal?",
+      "answer": "Kezdj egy üres stringgel, és adj hozzá egy `*`-ot egyszerre, amíg el nem éred a megfelelő hosszt. Ezután `push`-old a stringet a tömbödbe, mielőtt a következő sorra lépnél."
     }
+  },
+  "checks": {
+    "row1": "Az alsó csillagsor nem megfelelő. Ellenőrizd a halvány körvonalhoz képest.",
+    "row2": "Az alulról második csillagsor nem megfelelő. Ellenőrizd a halvány körvonalhoz képest.",
+    "row3": "Az alulról harmadik csillagsor nem megfelelő. Ellenőrizd a halvány körvonalhoz képest.",
+    "row4": "Az alulról negyedik csillagsor nem megfelelő. Ellenőrizd a halvány körvonalhoz képest.",
+    "row5": "Az alulról ötödik csillagsor nem megfelelő. Ellenőrizd a halvány körvonalhoz képest.",
+    "row6": "Az alulról hatodik csillagsor nem megfelelő. Ellenőrizd a halvány körvonalhoz képest.",
+    "row7": "Az alulról hetedik csillagsor nem megfelelő. Ellenőrizd a halvány körvonalhoz képest.",
+    "row8": "Az alulról nyolcadik csillagsor nem megfelelő. Ellenőrizd a halvány körvonalhoz képest.",
+    "row9": "Az alulról kilencedik csillagsor nem megfelelő. Ellenőrizd a halvány körvonalhoz képest.",
+    "row10": "Az alulról tizedik csillagsor nem megfelelő. Ellenőrizd a halvány körvonalhoz képest.",
+    "total": "Rossz számú csillagot rajzoltál ki összesen.",
+    "shouldBeEmpty": "Ha az érték 0, nem szabad csillagot rajzolnod.",
+    "codeQuality": {
+      "mustUsePush": "A tömböt a push metódussal építsd fel, egyszerre egy sort hozzáadva.",
+      "noHardcodedArray": "Nem írhatod le közvetlenül a kész tömböt. Soronként építsd fel a push segítségével."
+    }
+  },
+  "errors": {
+    "notAnArray": "A drawStars függvénynek stringekből álló tömbre van szüksége.",
+    "notStrings": "A drawStars függvénynek átadott tömb minden elemének stringnek kell lennie."
+  },
+  "describers": {
+    "drawStars": "kirajzolta a csillagokból álló piramist a vászonra"
   },
   "functions": {
     "push": {
-      "description": "�",
-      "category": "�"
+      "description": "Hozzáad egy elemet a tömb végéhez.",
+      "category": "Tömbök"
+    },
+    "drawStars": {
+      "description": "A tömb minden stringjéhez kirajzol egy csillagsort, a string hosszát használva az adott sor csillagjainak számaként.",
+      "category": "Rajzolás"
     }
   }
 }

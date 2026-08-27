@@ -1,54 +1,69 @@
 {
   "checks": {
-    "oneListOnly": "�",
-    "usePush": "�"
+    "tooManyLines": "A megoldásod túl sok kódsorból áll. Le tudnád rövidíteni?"
   },
   "tasks": {
-    "packALunch": {
-      "name": "�",
-      "description": "�"
+    "packLunchbox": {
+      "name": "Pakold be az uzsonnásdobozt",
+      "description": "Oszd szét az elemeket egy uzsonnásdoboz és egy hátizsák között: pakolj be minél többet az uzsonnásdobozba anélkül, hogy túllépnéd a befogadóképességét, és minden mást tegyél a hátizsákba."
+    },
+    "solveInSixteenLines": {
+      "name": "Oldd meg 16 sorban",
+      "description": "Meg tudod oldani ezt a feladatot mindössze 16 sorban?"
     }
   },
   "scenarios": {
-    "regularLunch": {
-      "name": "�",
-      "description": "�"
+    "everythingFits": {
+      "name": "Minden belefér",
+      "description": "Egy tágas uzsonnásdoboz, amelybe minden elem belefér, így a hátizsák üres marad."
     },
-    "milkshakeLunch": {
-      "name": "�",
-      "description": "�"
+    "packTheMost": {
+      "name": "Minél több fér be",
+      "description": "Szűkös a hely, ezért a kisebb elemek az uzsonnásdobozba kerülnek, a nagyobbak pedig a hátizsákba kerülnek."
     },
-    "anotherRegular": {
-      "name": "�",
-      "description": "�"
+    "justTheSnack": {
+      "name": "Csak a nasi",
+      "description": "Csak a legeslegkisebb elem fér be, a többi a hátizsákba kerül."
     },
-    "anotherMilkshake": {
-      "name": "�",
-      "description": "�"
+    "nothingFits": {
+      "name": "Semmi sem fér be",
+      "description": "Még a legkisebb elem is túl nagy, ezért minden a hátizsákban köt ki."
+    },
+    "emptyLunchbox": {
+      "name": "Üres uzsonnásdoboz",
+      "description": "Egyáltalán nincsenek elemek, ezért mind az uzsonnásdoboz, mind a hátizsák üresen tér vissza."
+    },
+    "bonus1": {
+      "name": "16 sor kód",
+      "description": "Oldd meg a feladatot mindössze 16 sor kóddal."
     }
   },
   "hints": {
-    "basicShape": {
-      "question": "�",
-      "answer": "�"
+    "readEachItem": {
+      "question": "Hogyan kapom meg az egyes elemek nevét és méretét?",
+      "answer": "Minden elem egy pár. Az első rész a név, a második a méret, ezért egyenként ki tudod olvasni őket az elemből."
     },
-    "addItems": {
-      "question": "�",
-      "answer": "�"
+    "fitTheMost": {
+      "question": "Hogyan tudom bepakolni a lehető legtöbb elemet?",
+      "answer": "Gondold át, mely elemeket érdemes először hozzáadni. A kisebb elemek több helyet hagynak a többinek, ezért érdemes előbb a kisebbekkel foglalkozni, mint a nagyobbakkal."
     },
-    "leaveMilkshakeOut": {
-      "question": "�",
-      "answer": "�"
+    "goSmallestFirst": {
+      "question": "Az elemek a legnagyobbtól a legkisebbig vannak felsorolva. Hogyan menjek végig rajtuk a legkisebbtől a legnagyobbig?",
+      "answer": "Van egy tömbmetódus, ami visszaadja a tömb megfordított másolatát. Először fordítsd meg az elemeket, aztán dolgozd fel őket ebben az új sorrendben."
     },
-    "listNotGrowing": {
-      "question": "�",
-      "answer": "�"
+    "knowWhenFull": {
+      "question": "Hogyan tudom eldönteni, hogy melyik elem hova kerül?",
+      "answer": "Tartsd számon a már hozzáadott méretek összegét. Mielőtt hozzáadsz egy elemet, nézd meg, hogy az összeg és az elem mérete együtt még belefér-e a befogadóképességbe. Ha igen, az elem az uzsonnásdobozba kerül, ha nem, akkor a hátizsákba."
     }
   },
   "functions": {
+    "toReversed": {
+      "description": "Visszaadja a tömb másolatát az elemekkel fordított sorrendben, anélkül, hogy az eredeti tömböt megváltoztatná.",
+      "category": "Tömbök"
+    },
     "push": {
-      "description": "�",
-      "category": "�"
+      "description": "Hozzáad egy elemet a tömb végéhez, és megváltoztatja az eredeti tömböt.",
+      "category": "Tömbök"
     }
   }
 }

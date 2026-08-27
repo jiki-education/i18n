@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "signWords": {
+      "name": "Separe o nome nas palavras",
+      "description": "Escreva uma função signWords que recebe o nome de um negócio e retorna um array com as palavras dele. As palavras são separadas por espaços, e um cliente pode deixar espaços a mais sem querer."
+    }
+  },
+  "scenarios": {
+    "singleWord": {
+      "name": "Uma palavra só",
+      "description": "Um nome de negócio com uma palavra só."
+    },
+    "twoWords": {
+      "name": "Duas palavras",
+      "description": "Um nome de negócio formado por duas palavras."
+    },
+    "longerName": {
+      "name": "Um nome mais longo",
+      "description": "Um nome de negócio com quatro palavras para imprimir."
+    },
+    "doubleSpace": {
+      "name": "Mão pesada na barra de espaço",
+      "description": "Um cliente que digitou dois espaços entre as palavras."
+    }
+  },
+  "hints": {
+    "gettingStarted": {
+      "question": "Como faço para tirar as palavras do nome?",
+      "answer": "Existem dois caminhos, e nenhum é melhor que o outro. Você pode percorrer o nome um caractere de cada vez, montando cada palavra aos poucos, ou pode pedir para a string se dividir nos espaços. Escolha o que achar mais claro."
+    },
+    "buildingUpArray": {
+      "question": "Como faço para juntar as palavras?",
+      "answer": "Comece com um array vazio e, a cada palavra que ficar pronta, use o push para colocá-la no final dele. Esse array é o que você retorna no fim."
+    },
+    "doubleSpaces": {
+      "question": "Por que apareceu uma string vazia no meu array?",
+      "answer": "Dois espaços seguidos significam que não há nada entre eles, então esse vão conta como uma palavra, a menos que você diga o contrário. Verifique se a palavra não está vazia antes de fazer o push dela."
+    },
+    "missingLastWord": {
+      "question": "Por que a última palavra está faltando?",
+      "answer": "Se você está montando as palavras caractere por caractere, a última palavra ainda está em andamento quando o laço termina, porque não há um espaço depois dela para avisar que ela acabou. É preciso fazer o push dela depois que o laço terminar."
+    }
+  },
+  "functions": {
+    "split": {
+      "description": "Separa uma string onde encontra o separador, retornando um array com os pedaços.",
+      "category": "Strings"
+    },
+    "push": {
+      "description": "Adiciona um elemento no final de um array, modificando o próprio array.",
+      "category": "Arrays"
+    }
+  }
+}

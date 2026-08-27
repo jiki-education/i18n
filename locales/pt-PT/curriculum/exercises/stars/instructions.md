@@ -1,19 +1,24 @@
 ---
 title: "Estrelas"
-description: "Constrói um padrão crescente de estrelas."
-en_md5: 62e22f6eee11821cd56f0310e293a292
+description: "Constrói e desenha uma pirâmide de estrelas."
+en_md5: 2ab89485b8c04063fe5b305e43467bdf
 ---
 
-You're building a simple text-based pattern generator. Given a number, create a list of strings where each string contains an increasing number of stars.
+Neste exercício, vais construir um gerador de padrões visuais que desenha linhas de estrelas.
 
-For example, given the number 3, you should return:
+A tua tarefa é criar uma função chamada `layoutStars` (organizar as estrelas) que recebe um parâmetro de entrada, `numRows`, que indica quantas linhas são necessárias, e depois desenha as várias linhas de estrelas.
 
-```
-["*", "**", "***"]
-```
+A função deve:
 
-The first element has 1 star, the second has 2 stars, and so on up to the given count.
+1. Construir um array de strings: uma string por linha. Começar por baixo, pela linha mais comprida. Por exemplo, quando `numRows` é `3`, o array seria `["***", "**", "*"]`.
+2. Usar a função `drawStars(rows)` e passar-lhe as tuas linhas; a função desenha as estrelas.
 
-If the count is 0, return an empty list.
+Se `numRows` for 0, o array deve estar vazio (`[]`) e nada é desenhado.
 
-Create a function called <define>`stars`</define> that takes one input, a count, and returns the list of star strings.
+Se quiseres ver tudo em ação, podes correr `drawStars(["***", "**", "*"])` para veres as estrelas a serem desenhadas.
+
+### O método push
+
+Tal como no exercício anterior, vais precisar de construir o teu array com o método `.push(element)`. Neste exercício, só podes criar um novo array (`let something = []`) no teu código.
+
+Diverte-te!

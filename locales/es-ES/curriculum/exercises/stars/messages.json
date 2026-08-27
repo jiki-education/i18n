@@ -1,0 +1,79 @@
+{
+  "tasks": {
+    "drawStars": {
+      "name": "Dibuja una pirámide de estrellas",
+      "description": "Escribe una función layoutStars que reciba un número de filas y construya un array de strings donde cada string tenga una estrella menos que el anterior, y luego lo dibuje con drawStars. Por ejemplo, layoutStars(3) dibuja la pirámide para [\"***\", \"**\", \"*\"]."
+    }
+  },
+  "scenarios": {
+    "count0": {
+      "name": "La cuenta es 0",
+      "description": "Con cero estrellas no se dibuja nada."
+    },
+    "count1": {
+      "name": "La cuenta es 1",
+      "description": "Con una cuenta de 1 se dibuja una sola estrella."
+    },
+    "count3": {
+      "name": "La cuenta es 3",
+      "description": "Con una cuenta de tres se dibuja una pirámide de tres filas."
+    },
+    "count5": {
+      "name": "La cuenta es 5",
+      "description": "Con una cuenta de cinco se dibuja una pirámide de cinco filas."
+    },
+    "count10": {
+      "name": "La cuenta es 10",
+      "description": "Con una cuenta de diez se dibuja una pirámide de diez filas."
+    }
+  },
+  "hints": {
+    "shapeOfAnswer": {
+      "question": "¿Qué estoy construyendo?",
+      "answer": "Un array de strings, primero el más largo, cada uno con una estrella menos que el anterior, hasta llegar a una sola estrella. Al dibujarlo, la fila más larga queda en la parte inferior de la pirámide. Primero construye todo el array y luego dibújalo con `drawStars`."
+    },
+    "countingDown": {
+      "question": "¿Cómo hago que cada fila sea más corta que la anterior?",
+      "answer": "Las longitudes deben ir disminuyendo: el primer string es el más largo y el último es una sola estrella. Un bucle que cuente hacia atrás desde el total hasta 1 te da cada longitud por turno."
+    },
+    "buildingEachRow": {
+      "question": "¿Cómo construyo un string con un número determinado de estrellas?",
+      "answer": "Empieza con un string vacío y añade un `*` cada vez hasta que tenga la longitud correcta. Después añade ese string a tu array con `push` antes de pasar a la siguiente fila."
+    }
+  },
+  "checks": {
+    "row1": "La fila inferior de estrellas no es correcta. Compárala con el contorno tenue.",
+    "row2": "La segunda fila desde abajo no es correcta. Compárala con el contorno tenue.",
+    "row3": "La tercera fila desde abajo no es correcta. Compárala con el contorno tenue.",
+    "row4": "La cuarta fila desde abajo no es correcta. Compárala con el contorno tenue.",
+    "row5": "La quinta fila desde abajo no es correcta. Compárala con el contorno tenue.",
+    "row6": "La sexta fila desde abajo no es correcta. Compárala con el contorno tenue.",
+    "row7": "La séptima fila desde abajo no es correcta. Compárala con el contorno tenue.",
+    "row8": "La octava fila desde abajo no es correcta. Compárala con el contorno tenue.",
+    "row9": "La novena fila desde abajo no es correcta. Compárala con el contorno tenue.",
+    "row10": "La décima fila desde abajo no es correcta. Compárala con el contorno tenue.",
+    "total": "Has dibujado un número incorrecto de estrellas en total.",
+    "shouldBeEmpty": "Cuando la cuenta es 0 no deberías dibujar ninguna estrella.",
+    "codeQuality": {
+      "mustUsePush": "Construye tu array con el método push, añadiendo una fila cada vez.",
+      "noHardcodedArray": "No puedes escribir el array terminado directamente. Constrúyelo una fila cada vez con push."
+    }
+  },
+  "errors": {
+    "notAnArray": "drawStars necesita un array de strings.",
+    "notStrings": "Todos los elementos del array que pasas a drawStars deben ser strings."
+  },
+  "describers": {
+    "drawStars": "dibujó la pirámide de estrellas en el lienzo"
+  },
+  "functions": {
+    "push": {
+      "description": "Añadir un elemento al final de un array",
+      "category": "Arrays"
+    },
+    "drawStars": {
+      "description": "Dibujar una fila de estrellas por cada string del array, usando la longitud de cada string como el número de estrellas de esa fila",
+      "category": "Dibujo"
+    }
+  }
+}

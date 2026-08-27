@@ -1,0 +1,79 @@
+{
+  "tasks": {
+    "drawStars": {
+      "name": "Disegna una piramide di stelle",
+      "description": "Scrivi una funzione layoutStars che accetta un numero di righe e costruisce un array di stringhe in cui ogni stringa ha una stella in meno della precedente, poi lo disegna con drawStars. Per esempio, layoutStars(3) disegna la piramide per [\"***\", \"**\", \"*\"]."
+    }
+  },
+  "scenarios": {
+    "count0": {
+      "name": "Conteggio 0",
+      "description": "Con zero stelle non viene disegnato nulla."
+    },
+    "count1": {
+      "name": "Conteggio 1",
+      "description": "Con un conteggio di uno viene disegnata una singola stella."
+    },
+    "count3": {
+      "name": "Conteggio 3",
+      "description": "Un conteggio di tre disegna una piramide a tre righe."
+    },
+    "count5": {
+      "name": "Conteggio 5",
+      "description": "Un conteggio di cinque disegna una piramide a cinque righe."
+    },
+    "count10": {
+      "name": "Conteggio 10",
+      "description": "Un conteggio di dieci disegna una piramide a dieci righe."
+    }
+  },
+  "hints": {
+    "shapeOfAnswer": {
+      "question": "Cosa sto costruendo?",
+      "answer": "Un array di stringhe, con la più lunga per prima, ciascuna una stella più corta della precedente, fino a una singola stella. Quando viene disegnata, la riga più lunga si trova alla base della piramide. Costruisci prima l'intero array, poi disegnalo con `drawStars`."
+    },
+    "countingDown": {
+      "question": "Come faccio a rendere ogni riga più corta della precedente?",
+      "answer": "Un ciclo che conta all'indietro dal totale fino a 1 ti dà ogni lunghezza a turno."
+    },
+    "buildingEachRow": {
+      "question": "Come faccio a costruire una stringa con un certo numero di stelle?",
+      "answer": "Inizia con una stringa vuota e aggiungi un `*` alla volta finché non raggiunge la lunghezza giusta. Poi aggiungi quella stringa all'array con `push` prima di passare alla riga successiva."
+    }
+  },
+  "checks": {
+    "row1": "La riga di stelle in fondo non è corretta. Confrontala con il contorno sbiadito.",
+    "row2": "La seconda riga dal basso non è corretta. Confrontala con il contorno sbiadito.",
+    "row3": "La terza riga dal basso non è corretta. Confrontala con il contorno sbiadito.",
+    "row4": "La quarta riga dal basso non è corretta. Confrontala con il contorno sbiadito.",
+    "row5": "La quinta riga dal basso non è corretta. Confrontala con il contorno sbiadito.",
+    "row6": "La sesta riga dal basso non è corretta. Confrontala con il contorno sbiadito.",
+    "row7": "La settima riga dal basso non è corretta. Confrontala con il contorno sbiadito.",
+    "row8": "L'ottava riga dal basso non è corretta. Confrontala con il contorno sbiadito.",
+    "row9": "La nona riga dal basso non è corretta. Confrontala con il contorno sbiadito.",
+    "row10": "La decima riga dal basso non è corretta. Confrontala con il contorno sbiadito.",
+    "total": "Hai disegnato il numero sbagliato di stelle in totale.",
+    "shouldBeEmpty": "Quando il conteggio è 0 non dovresti disegnare nessuna stella.",
+    "codeQuality": {
+      "mustUsePush": "Costruisci il tuo array usando il metodo push, aggiungendo una riga alla volta.",
+      "noHardcodedArray": "Non puoi scrivere direttamente l'array finito. Costruiscilo una riga alla volta con push."
+    }
+  },
+  "errors": {
+    "notAnArray": "drawStars richiede un array di stringhe.",
+    "notStrings": "Ogni elemento dell'array passato a drawStars deve essere una stringa."
+  },
+  "describers": {
+    "drawStars": "ha disegnato la piramide di stelle sull'area di disegno"
+  },
+  "functions": {
+    "push": {
+      "description": "Aggiungi un elemento alla fine di un array",
+      "category": "Array"
+    },
+    "drawStars": {
+      "description": "Disegna una riga di stelle per ogni stringa nell'array, usando la lunghezza di ogni stringa come numero di stelle per quella riga.",
+      "category": "Disegno"
+    }
+  }
+}

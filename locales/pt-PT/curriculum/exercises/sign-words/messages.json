@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "signWords": {
+      "name": "Divide o nome em palavras",
+      "description": "Escreve uma função signWords que recebe o nome de uma empresa e devolve um array com as palavras que o compõem. As palavras são separadas por espaços e o cliente pode deixar espaços a mais sem querer."
+    }
+  },
+  "scenarios": {
+    "singleWord": {
+      "name": "Uma palavra",
+      "description": "Um nome de empresa com uma única palavra."
+    },
+    "twoWords": {
+      "name": "Duas palavras",
+      "description": "Um nome de empresa composto por duas palavras."
+    },
+    "longerName": {
+      "name": "Um nome mais comprido",
+      "description": "Um nome de empresa com quatro palavras para imprimir."
+    },
+    "doubleSpace": {
+      "name": "Mão pesada na barra de espaços",
+      "description": "Um cliente que digitou dois espaços entre as palavras."
+    }
+  },
+  "hints": {
+    "gettingStarted": {
+      "question": "Como obtenho as palavras do nome?",
+      "answer": "Há dois caminhos e nenhum é melhor do que o outro. Podes percorrer o nome um caráter de cada vez e ir construindo cada palavra, ou podes pedir à string que se divida nos espaços. Escolhe o que achares mais claro."
+    },
+    "buildingUpArray": {
+      "question": "Como reúno as palavras?",
+      "answer": "Começa com um array vazio antes de começares e depois adiciona cada palavra terminada ao fim do array com o método push, à medida que a identificas. O array é o que devolves no final."
+    },
+    "doubleSpaces": {
+      "question": "Porque é que tenho uma string vazia no meu array?",
+      "answer": "Dois espaços seguidos significam que não há nada entre eles, por isso esse intervalo conta como uma palavra, a não ser que digas o contrário. Verifica se a palavra não está vazia antes de lhe fazeres push."
+    },
+    "missingLastWord": {
+      "question": "Porque é que me falta a última palavra?",
+      "answer": "Se estás a construir as palavras um caráter de cada vez, a última palavra ainda está em construção quando o ciclo termina, porque não há espaço depois dela a indicar que está terminada. Tens de lhe fazer push depois de o ciclo terminar."
+    }
+  },
+  "functions": {
+    "split": {
+      "description": "Divide a string nos pontos onde encontra o separador, devolvendo um array com os pedaços.",
+      "category": "Strings"
+    },
+    "push": {
+      "description": "Acrescenta um elemento ao fim de um array, modificando o array no próprio local.",
+      "category": "Arrays"
+    }
+  }
+}

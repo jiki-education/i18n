@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "signWords": {
+      "name": "Bontsd a nevet szavakra",
+      "description": "Írj egy signWords függvényt, amely egy cégnevet kap, és visszaadja a benne lévő szavak láncát. A szavakat szóközök választják el, és előfordulhat, hogy egy ügyfél véletlenül felesleges szóközöket hagy."
+    }
+  },
+  "scenarios": {
+    "singleWord": {
+      "name": "Egy szó",
+      "description": "Egy cégnev, ami egyetlen szóból áll."
+    },
+    "twoWords": {
+      "name": "Két szó",
+      "description": "Egy cégnev, ami két szóból áll."
+    },
+    "longerName": {
+      "name": "Egy hosszabb név",
+      "description": "Egy cégnev, ami négy kinyomtatandó szóból áll."
+    },
+    "doubleSpace": {
+      "name": "Nehéz kéz a szóköz billentyűn",
+      "description": "Egy ügyfél, aki két szóközt ütött a szavak közé."
+    }
+  },
+  "hints": {
+    "gettingStarted": {
+      "question": "Hogyan szedjem ki a szavakat a névből?",
+      "answer": "Két út van, és egyik sem jobb a másiknál. Végigmehetsz a néven karakterenként, és közben felépíted a szavakat, vagy megkérheted a stringet, hogy a szóközöknél szétválassza magát. Válaszd azt, amelyiket világosabbnak találod."
+    },
+    "buildingUpArray": {
+      "question": "Hogyan gyűjtsem össze a szavakat?",
+      "answer": "Kezdd egy üres lánccal, mielőtt elkezded, majd minden elkészült szót a push segítségével adj hozzá a végéhez, amint kiderül, mi az. A lánc az, amit a végén visszaadsz."
+    },
+    "doubleSpaces": {
+      "question": "Miért van üres string a láncomban?",
+      "answer": "Két egymás utáni szóköz azt jelenti, hogy nincs köztük semmi, így az a hézag szónak számít, hacsak nem mondod meg, hogy ne így legyen. Mielőtt push-olod, ellenőrizd, hogy a szó nem üres-e."
+    },
+    "missingLastWord": {
+      "question": "Miért hiányzik az utolsó szó?",
+      "answer": "Ha karakterenként építed fel a szavakat, az utolsó szó még készülőben van, amikor a ciklus véget ér, mert nincs utána szóköz, ami jelezné, hogy befejeződött. A ciklus után még hozzá kell adnod a push segítségével."
+    }
+  },
+  "functions": {
+    "split": {
+      "description": "Szétválasztja a stringet mindenhol, ahol az elválasztójel szerepel, és a darabokból álló láncot adja vissza.",
+      "category": "Stringek"
+    },
+    "push": {
+      "description": "Hozzáad egy elemet a lánc végéhez, és a láncot helyben módosítja.",
+      "category": "Láncok"
+    }
+  }
+}

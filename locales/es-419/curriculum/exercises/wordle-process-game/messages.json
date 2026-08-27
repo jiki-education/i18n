@@ -1,0 +1,105 @@
+{
+  "checks": {
+    "holeInOne": {
+      "firstRow": "Esperábamos que todas las letras estuvieran en verde"
+    },
+    "twoGuesses": {
+      "firstRow": "Esperábamos que la segunda letra estuviera ausente",
+      "secondRow": "Esperábamos que todas las letras estuvieran en verde"
+    },
+    "threeGuesses": {
+      "firstRow": "Esperábamos que la segunda y la cuarta letras estuvieran ausentes",
+      "secondRow": "Esperábamos que la segunda letra estuviera ausente",
+      "thirdRow": "Esperábamos que todas las letras estuvieran en verde"
+    },
+    "phew": {
+      "firstRow": "Esperábamos que todo estuviera ausente",
+      "secondRow": "Esperábamos que todo estuviera ausente",
+      "thirdRow": "Esperábamos que las dos últimas estuvieran presentes y el resto ausentes",
+      "fourthRow": "Esperábamos que la primera estuviera presente y el resto ausentes",
+      "fifthRow": "Esperábamos que la segunda estuviera presente y el resto ausentes",
+      "sixthRow": "Esperábamos que todas las letras estuvieran en verde"
+    },
+    "bonus1": {
+      "firstRow": "Esperábamos que solo la cuarta letra de la primera fila estuviera presente",
+      "secondRow": "La segunda fila no está bien. Esta es la complicada: solo una de las letras repetidas debería estar coloreada",
+      "thirdRow": "La tercera fila no está bien",
+      "fourthRow": "Esperábamos que todas las letras de la cuarta fila estuvieran en verde"
+    },
+    "bonus2": {
+      "firstRow": "La primera fila no está bien",
+      "secondRow": "La segunda fila no está bien",
+      "thirdRow": "La tercera fila no está bien",
+      "fourthRow": "La cuarta fila no está bien. Esta es la complicada: `swiss` tiene más `s`s que la palabra objetivo",
+      "fifthRow": "La quinta fila no está bien",
+      "sixthRow": "Esperábamos que todas las letras de la sexta fila estuvieran en verde"
+    }
+  },
+  "tasks": {
+    "processGame": {
+      "name": "Procesar una partida completa",
+      "description": "Crear una función llamada processGame que recibe una palabra objetivo y un array de intentos, y llama a colorRow para cada intento con los estados correctos"
+    },
+    "duplicateLetters": {
+      "name": "Extra: Manejar letras repetidas",
+      "description": "Hay una regla de Wordle que omitimos hasta ahora. Si una letra aparece dos veces en tu intento, pero solo una vez en la palabra objetivo, entonces, si alguna de las dos está en el lugar correcto, esa se pone verde y la otra se pone gris. De lo contrario, la primera se pone amarilla y la segunda se pone gris. La misma idea se amplía: con tres en un intento y dos en la palabra, dos se colorean y la tercera se pone gris. Empieza por el primer escenario extra y luego resuélvelo por completo en el segundo. ¡Es un extra, así que no tienes que completarlo!"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "¡A la primera!",
+      "description": "Maneja un primer intento correcto"
+    },
+    "twoGuesses": {
+      "name": "¡En dos intentos!",
+      "description": "Maneja dos intentos"
+    },
+    "threeGuesses": {
+      "name": "¡En tres intentos!",
+      "description": "Maneja tres intentos"
+    },
+    "phew": {
+      "name": "¡Uf!",
+      "description": "¡Uf! ¡Eso estuvo cerca!"
+    },
+    "bonus1": {
+      "name": "Solo una amarilla",
+      "description": "Si hay varias letras presentes para una sola letra real, solo una debería ser amarilla"
+    },
+    "bonus2": {
+      "name": "Queso suizo",
+      "description": "El swiss en esto muestra por qué es importante"
+    }
+  },
+  "hints": {
+    "reuseWork": {
+      "question": "¿Cómo reutilizo mi trabajo de `processGuess`?",
+      "answer": "La lógica que convierte un intento en un array de estados es la misma. Sácala a una función auxiliar (o cópiala) y llámala para cada intento del array"
+    },
+    "trackRow": {
+      "question": "¿Cómo sé a qué fila pertenece cada intento?",
+      "answer": "Recorre los intentos con un índice. El número de fila es el índice más `1` (ya que `colorRow` espera filas numeradas del `1-6`)"
+    },
+    "colorRow": {
+      "question": "¿Cómo coloreo realmente cada fila?",
+      "answer": "Una vez que tengas el array `states` para un intento, llama a `colorRow(rowNumber, states)`"
+    },
+    "fewerGuesses": {
+      "question": "¿Qué pasa si el jugador ha hecho menos de 6 intentos?",
+      "answer": "Solo colorea las filas de los intentos que existen. La longitud del array te dice cuántos procesar, así que naturalmente te detienes en el punto correcto"
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "Colorea una fila en el tablero de Wordle con los estados dados",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "Agrega un elemento al final de un array, cambiando el array en su lugar",
+      "category": "Arrays"
+    }
+  },
+  "describers": {
+    "colorRow": "coloreó una fila en el tablero de Wordle"
+  }
+}

@@ -1,25 +1,35 @@
 ---
 title: "Calzini abbinati"
 description: "Trova le paia di calzini corrispondenti in due cesti del bucato."
-en_md5: 83ac75dda52f42ed411bb64a715c6bf2
+en_md5: c58a4ca0800c19322e7e9a98b4634aad
 ---
 
-There's little in life more annoying than having odd socks where you can't find its partner. So one day you finally decide to sort those socks out!
+Nella vita c'è poco di più fastidioso dei calzini spaiati di cui non riesci a trovare il compagno. Così un giorno decidi finalmente di sistemare quei calzini!
 
-You get all of the clean clothes from your drawers and put them into one basket. Then you go searching under every surface and behind every cushion to find any other clothes lying around, and put them in a second basket of dirty items.
+Prendi tutti i vestiti puliti dai tuoi cassetti e li metti in un cesto. Poi vai a cercare sotto ogni superficie e dietro ogni cuscino per trovare tutti gli altri vestiti in giro. Li metti in un secondo cesto di capi sporchi.
 
-You now have two baskets and want to go through, finding whether each sock has a pair or not.
+Ora hai due cesti e vuoi controllare se ogni calzino ha il suo paio oppure no.
 
-Write a function called <define>`matchingSocks`</define>. It takes two inputs, the clean basket and the dirty basket - both as lists of strings. Return a list of all the pairs of socks.
+Scrivi una funzione chiamata `matchingSocks` (abbinare i calzini). Prende due input: il cesto pulito e il cesto sporco, entrambi come array di stringhe. Restituisci un array con tutte le paia di calzini.
 
-For example:
+Per esempio:
 
-- If the clean basket contains: `["left blue sock", "green sweater"]`
-- And the dirty basket contains: `["blue shorts", "right blue sock", "left green sock"]`
-- You should return `["blue socks"]`
+- Se il cesto pulito contiene: `["left blue sock", "green sweater"]`
+- E il cesto sporco contiene: `["blue shorts", "right blue sock", "left green sock"]`
+- Dovresti restituire `["blue socks"]`
 
-The descriptions follow these rules:
+Le descrizioni seguono queste regole:
 
-- They are always lower case.
-- They are always one or more words separated by spaces.
-- For things that can be pairs, they will always start with `"left "` or `"right "`
+- Sono sempre scritte in minuscolo.
+- Sono sempre costituite da una o più parole separate da spazi.
+- Per gli elementi che possono essere abbinati, iniziano sempre con `"left "` oppure `"right "`
+
+### Metodi
+
+Questo esercizio contiene molti metodi per stringhe e array che puoi usare per semplificarti un po' la vita. Dai un'occhiata a tutte le descrizioni qui sotto per vedere cosa hai a disposizione nella tua cassetta degli attrezzi per questa sfida.
+
+### Bonus
+
+Ci sono molti modi per risolvere questo esercizio. Tuttavia, esiste una soluzione piuttosto elegante in 29 righe di codice, quindi abbiamo fissato l'obiettivo a 29 righe. Puoi scrivere un codice più corto, ma il codice tende a diventare meno leggibile quando scendi sotto quella soglia, quindi pensiamo che il livello migliore sia intorno alle 29 righe.
+
+Divertiti!

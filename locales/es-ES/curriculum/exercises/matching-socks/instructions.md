@@ -1,25 +1,35 @@
 ---
 title: "Calcetines a juego"
-description: "Encuentra los pares de calcetines que combinan entre dos canastas de ropa."
-en_md5: 83ac75dda52f42ed411bb64a715c6bf2
+description: "Encuentra los pares de calcetines que combinan entre dos cestas de ropa."
+en_md5: c58a4ca0800c19322e7e9a98b4634aad
 ---
 
-There's little in life more annoying than having odd socks where you can't find its partner. So one day you finally decide to sort those socks out!
+Hay pocas cosas más molestas en la vida que tener calcetines desparejados y no encontrarles pareja. ¡Así que un día decides por fin poner orden en esos calcetines!
 
-You get all of the clean clothes from your drawers and put them into one basket. Then you go searching under every surface and behind every cushion to find any other clothes lying around, and put them in a second basket of dirty items.
+Coges toda la ropa limpia de tus cajones y la metes en una cesta. Después, buscas debajo de todos los muebles y detrás de cada cojín para encontrar cualquier otra prenda que haya por ahí, y la pones en una segunda cesta con las prendas sucias.
 
-You now have two baskets and want to go through, finding whether each sock has a pair or not.
+Ahora tienes dos cestas y quieres revisarlas para ver si cada calcetín tiene pareja o no.
 
-Write a function called <define>`matchingSocks`</define>. It takes two inputs, the clean basket and the dirty basket - both as lists of strings. Return a list of all the pairs of socks.
+Escribe una función llamada `matchingSocks` (calcetines a juego). Recibe dos entradas: la cesta de ropa limpia y la cesta de ropa sucia, ambas como arrays de strings. Devuelve un array con todos los pares de calcetines.
 
-For example:
+Por ejemplo:
 
-- If the clean basket contains: `["left blue sock", "green sweater"]`
-- And the dirty basket contains: `["blue shorts", "right blue sock", "left green sock"]`
-- You should return `["blue socks"]`
+- Si la cesta de ropa limpia contiene: `["left blue sock", "green sweater"]`
+- Y la cesta de ropa sucia contiene: `["blue shorts", "right blue sock", "left green sock"]`
+- Debes devolver `["blue socks"]`
 
-The descriptions follow these rules:
+Las descripciones siguen estas reglas:
 
-- They are always lower case.
-- They are always one or more words separated by spaces.
-- For things that can be pairs, they will always start with `"left "` or `"right "`
+- Siempre están en minúsculas.
+- Siempre son una o más palabras separadas por espacios.
+- Las cosas que pueden formar pareja empiezan siempre por `"left "` o `"right "`
+
+### Métodos
+
+Este ejercicio tiene muchos métodos de strings y de arrays que puedes usar para hacerte la vida un poco más fácil. Consulta todas las descripciones que aparecen a continuación para ver qué herramientas tienes para este reto.
+
+### Extra
+
+Hay muchas formas de resolver esto. Sin embargo, hay una solución bastante elegante en 29 líneas de código, así que hemos fijado ese objetivo. Puedes conseguirlo con menos, pero el código tiende a volverse menos legible cuando eso pasa, así que creemos que alrededor de 29 es el mejor nivel.
+
+¡Diviértete!

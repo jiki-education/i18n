@@ -1,70 +1,97 @@
 {
   "tasks": {
     "findMatchingSocks": {
-      "name": "�",
-      "description": "�"
+      "name": "Zoknipárosítás",
+      "description": "Írj egy függvényt, amely két ruháskosarat kap (mindkettőt stringekből álló tömbként), és visszaad egy tömböt a két kosárban található összes zoknipárral. Azok a dolgok, amelyek zoknik, ' sock'-ra végződnek, és mindig 'left ' vagy 'right ' előtaggal kezdődnek."
+    },
+    "solveTightly": {
+      "name": "Oldd meg 29 sorban",
+      "description": "Próbáld meg 29 vagy kevesebb sorból megoldani. Ez nem a lehető legrövidebb megoldás, de jó cél, amire törekedhetsz, ha már működik."
     }
   },
   "scenarios": {
     "emptyBaskets": {
-      "name": "�",
-      "description": "�"
+      "name": "Üres kosarak",
+      "description": "Mindkét kosár üres."
     },
     "nothingClean": {
-      "name": "�",
-      "description": "�"
+      "name": "Semmi tiszta",
+      "description": "Nincs semmi tiszta."
     },
     "nothingDirty": {
-      "name": "�",
-      "description": "�"
+      "name": "Semmi koszos",
+      "description": "Nincs semmi koszos."
     },
     "noSocks": {
-      "name": "�",
-      "description": "�"
+      "name": "Nincs zokni",
+      "description": "Sehol sincs zokni."
     },
     "oneInEach": {
-      "name": "�",
-      "description": "�"
+      "name": "Egy-egy",
+      "description": "Mindkét kosárban van egy-egy összetartozó zokni."
     },
     "aBigMix": {
-      "name": "�",
-      "description": "�"
+      "name": "Nagy keverék!",
+      "description": "Ruhák keveréke több összetartozó párral."
     },
     "someAddedPain": {
-      "name": "�",
-      "description": "�"
+      "name": "Vegyes apróságok",
+      "description": "Néhány különös dolog is bekerült."
+    },
+    "bonusLineCount": {
+      "name": "Tömör megoldás",
+      "description": "Ugyanaz a feladat, kevesebb sorban megoldva."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hol kezdjem, ha sok a mozgó alkatrész?",
+      "answer": "Ne próbáld az egészet egy menetben megírni. Bontsd a problémát kis függvényekre, amelyek mindegyike egy apró kérdésre válaszol, először mindegyiket külön-külön működésre bírd, aztán kombináld őket."
     },
     "isItASock": {
-      "question": "�",
-      "answer": "�"
+      "question": "Honnan tudom, hogy valami a kosárban tényleg zokni-e?",
+      "answer": "Nem minden zokni, ami egy oldalt említ, és nem minden zokniszerű dolog az. Nézd meg alaposan a leírások szabályait, és ellenőrizd a leírás mindkét végét, ne csak az elejét."
     },
     "compareSockPair": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hogyan hasonlítsam össze a bal oldali zoknit a jobb oldali párjával?",
+      "answer": "Ahelyett, hogy közvetlenül két zoknit hasonlítanál össze, gondold ki, hogyan hívnák egy zokni párját, aztán azt keresd meg. A stringeknek van beépített metódusa arra, hogy egy szövegrészt egy másikra cserélj, ami arra is használható, hogy egy részt eltávolíts azzal, hogy semmire cseréled."
     },
     "avoidDuplicates": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hogyan kerüljem el, hogy ugyanazt a párt kétszer számoljam?",
+      "answer": "Minden párt kétszer találsz meg, egyszer mindkét oldalról. Mielőtt egy nevet hozzáadnál az eredményeidhez, ellenőrizd, hogy már benne van-e."
     },
     "overallPlan": {
-      "question": "�",
-      "answer": "�"
+      "question": "Mi egy jó átfogó terv?",
+      "answer": "Mindkét kosarat kezelheted egyetlen nagy halomként. Menj végig rajta elemenként, és minden elemnél döntsd el, hogy a válaszodhoz tartozik-e."
     }
   },
+  "checks": {
+    "tooManyLines": "Már majdnem! A megoldásod működik, de több mint 29 sorból áll."
+  },
   "functions": {
-    "push": {
-      "description": "�",
-      "category": "�"
+    "startsWith": {
+      "description": "Ellenőrzi, hogy egy string egy kisebb stringgel kezdődik-e.",
+      "category": "Stringműveletek"
+    },
+    "endsWith": {
+      "description": "Ellenőrzi, hogy egy string egy kisebb stringgel végződik-e.",
+      "category": "Stringműveletek"
+    },
+    "replace": {
+      "description": "Visszaad egy új stringet, amelyben egy szövegrész első előfordulása egy másik szövegre van cserélve.",
+      "category": "Stringműveletek"
     },
     "concat": {
-      "description": "�",
-      "category": "�"
+      "description": "Két tömböt fűz össze egy új tömbbé.",
+      "category": "Tömbműveletek"
+    },
+    "includes": {
+      "description": "Ellenőrzi, hogy egy tömb már tartalmaz-e egy elemet.",
+      "category": "Tömbműveletek"
+    },
+    "push": {
+      "description": "Hozzáad egy elemet egy tömb végéhez.",
+      "category": "Tömbműveletek"
     }
   }
 }

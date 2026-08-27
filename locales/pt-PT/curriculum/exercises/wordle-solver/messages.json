@@ -1,0 +1,161 @@
+{
+  "checks": {
+    "repeatedGuess": "Adivinhaste a mesma palavra mais do que uma vez. Cada palpite deve usar o que aprendeste com os anteriores, e deves parar assim que tiveres ganho.",
+    "holeInOne": {
+      "firstRow": "Esperávamos que todas as letras fossem verdes."
+    },
+    "entirelyWrong": {
+      "firstRow": "Esperávamos que a primeira linha fosse toda absent.",
+      "secondRow": "Esperávamos que a segunda linha fosse toda correct."
+    },
+    "twoNeeded": {
+      "firstRow": "Esperávamos que a primeira linha tivesse um correct.",
+      "secondRow": "Esperávamos que a segunda linha fosse correct."
+    },
+    "threeNeeded": {
+      "firstRow": "Esperávamos que a primeira linha tivesse um correct.",
+      "secondRow": "Esperávamos que a segunda linha tivesse todas as letras correct exceto uma.",
+      "thirdRow": "Esperávamos que a terceira linha fosse correct."
+    },
+    "fourNeeded": {
+      "firstRow": "Esperávamos que a primeira linha tivesse um correct.",
+      "secondRow": "Esperávamos que a segunda linha tivesse as duas primeiras letras correct.",
+      "thirdRow": "Esperávamos que a terceira linha tivesse quatro letras correct.",
+      "fourthRow": "Esperávamos que a quarta linha fosse correct."
+    },
+    "present1": {
+      "firstRow": "Esperávamos que a primeira linha fosse present, absent, correct, correct, absent.",
+      "secondRow": "Esperávamos que a segunda linha fosse toda correct."
+    },
+    "present2": {
+      "firstRow": "Esperávamos que a primeira linha fosse present, absent, absent, absent, absent.",
+      "secondRow": "Esperávamos que a segunda linha fosse absent, present, absent, present, present.",
+      "thirdRow": "Esperávamos que a terceira linha fosse correct."
+    },
+    "present3": {
+      "firstRow": "Esperávamos que a primeira linha fosse absent, absent, present, present, absent.",
+      "secondRow": "Esperávamos que a segunda linha fosse absent, absent, absent, correct, correct.",
+      "thirdRow": "Esperávamos que a terceira linha fosse correct, absent, absent, correct, correct.",
+      "fourthRow": "Esperávamos que a quarta linha fosse correct."
+    },
+    "present4": {
+      "firstRow": "Esperávamos que a primeira linha fosse absent.",
+      "secondRow": "Esperávamos que a segunda linha fosse absent.",
+      "thirdRow": "Esperávamos que a terceira linha fosse present, absent, present, absent, absent.",
+      "fourthRow": "Esperávamos que a quarta linha fosse correct, correct, correct, present, present.",
+      "fifthRow": "Esperávamos que a quinta linha fosse correct."
+    }
+  },
+  "tasks": {
+    "firstWord": {
+      "name": "Mostra uma palavra correta",
+      "description": "O primeiro cenário espera apenas que escolhas a primeira palavra de `commonWords()`. Essa palavra é `which`. Para passares este cenário, tens de adivinhar essa palavra e parar. Podes verificar se está tudo bem ligado antes de passares a situações mais complexas."
+    },
+    "handleWrong": {
+      "name": "Lida com tudo errado",
+      "description": "Bom trabalho a ligar essa primeira parte! Para este segundo cenário, espera-se que uses dois palpites. O primeiro será novamente a primeira palavra do array (é sempre assim!). Esse estará totalmente errado, por isso tens de avançar para a próxima palavra do array, que estará certa!"
+    },
+    "handlePartial": {
+      "name": "Lida com acertos parciais",
+      "description": "OK, já ganhámos algum ritmo. É aqui que as coisas ficam mais divertidas. Os próximos cenários devolvem uma mistura de letras `correct` e `absent`. Escolhe a próxima melhor palavra do array com base no teu conhecimento das letras `correct` e `absent` que já encontraste."
+    },
+    "handlePresent": {
+      "name": "Lida com letras present",
+      "description": "Fantástico! Agora a última parte complicada. Tens de incorporar as letras `present`. Boa sorte, consegues!"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "Tudo correto",
+      "description": "Lida com um primeiro palpite correto."
+    },
+    "entirelyWrong": {
+      "name": "Um errado, um certo",
+      "description": "Lida com um palpite errado"
+    },
+    "twoNeeded": {
+      "name": "Dois palpites necessários",
+      "description": "Lida com um palpite errado"
+    },
+    "threeNeeded": {
+      "name": "Três palpites necessários",
+      "description": "Lida com um palpite errado"
+    },
+    "fourNeeded": {
+      "name": "Quatro palpites necessários",
+      "description": "Lida com um palpite errado"
+    },
+    "present1": {
+      "name": "Algumas letras presentes",
+      "description": "Uma difícil com algumas letras presentes."
+    },
+    "present2": {
+      "name": "A apertar",
+      "description": "Lida com uma palavra mais difícil"
+    },
+    "present3": {
+      "name": "Uma jornada mais normal",
+      "description": "Isto já parece Wordle"
+    },
+    "present4": {
+      "name": "Outra quase lá",
+      "description": "É divertido como divergem no final!"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Por onde começo?",
+      "answer": "Começa por adivinhar a primeira palavra de `commonWords()`. Põe o ciclo que adivinha uma palavra e verifica o resultado a funcionar antes de te preocupares em ser inteligente."
+    },
+    "readStates": {
+      "question": "Como é que sei como correu o meu palpite?",
+      "answer": "`guess(word)` devolve-te um array com um estado por letra: `\"correct\"`, `\"present\"` ou `\"absent\"`. Esse array é a única coisa que aprendes com um palpite, por isso tudo o que sabes tem de vir dele."
+    },
+    "rememberLearned": {
+      "question": "Como é que me lembro do que aprendi entre os palpites?",
+      "answer": "Mantém uma estrutura de conhecimento fora do ciclo: as letras que sabes serem absent, as letras que sabes estarem na palavra algures, e por posição as letras que sabes NÃO estarem lá."
+    },
+    "pickNextGuess": {
+      "question": "Como é que escolho o próximo palpite?",
+      "answer": "Filtra `commonWords()`: mantém apenas as palavras que têm todas as letras correct nas posições certas, contêm todas as letras present (mas não em posições que já excluíste) e não contêm nenhuma das letras absent. Escolhe a primeira correspondência."
+    },
+    "whenToStop": {
+      "question": "Quando é que paro?",
+      "answer": "Para assim que todos os estados vierem `\"correct\"`, ou depois de `6` palpites. Caso contrário, vais continuar a adivinhar para além do fim do tabuleiro."
+    }
+  },
+  "functions": {
+    "guess": {
+      "description": "Adivinha uma palavra. Desenha a palavra na linha seguinte do tabuleiro, pinta-a e devolve um array com o estado de cada letra.",
+      "category": "Wordle"
+    },
+    "commonWords": {
+      "description": "Devolve um array com mais de 100 palavras comuns de cinco letras para usares como palpites.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "Adiciona um elemento ao fim de um array, alterando o array no local.",
+      "category": "Arrays"
+    },
+    "arrayIncludes": {
+      "description": "Verifica se um array contém um elemento.",
+      "category": "Arrays"
+    },
+    "stringIncludes": {
+      "description": "Verifica se uma string contém uma substring.",
+      "category": "Strings"
+    },
+    "arrayLength": {
+      "description": "O número de elementos num array.",
+      "category": "Arrays"
+    },
+    "stringLength": {
+      "description": "O número de carateres numa string.",
+      "category": "Strings"
+    }
+  },
+  "describers": {
+    "guess": "adivinhou uma palavra",
+    "commonWords": "obteve o array de palavras comuns"
+  }
+}

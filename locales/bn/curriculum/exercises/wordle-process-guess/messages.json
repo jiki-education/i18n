@@ -1,0 +1,72 @@
+{
+  "checks": {
+    "allCorrect": "আমরা আশা করেছিলাম সব অক্ষরই সবুজ হবে",
+    "absent": "আমরা আশা করেছিলাম 'a' আর 'u' absent হবে",
+    "present": "আমরা আশা করেছিলাম 'l' আর 'e' present হবে।",
+    "complex": "আমরা আশা করেছিলাম present, present, present, correct, absent",
+    "differentWord": "আমরা আশা করেছিলাম correct, present, present, present, absent"
+  },
+  "tasks": {
+    "processGuess": {
+      "name": "একটি অনুমান প্রসেস করা",
+      "description": "processGuess নামে একটি ফাংশন তৈরি করুন, যা একটি টার্গেট শব্দ এবং একটি অনুমান নেয়, প্রতিটি অক্ষরের অবস্থা (correct, present বা absent) বের করে, তারপর ফলাফলগুলি দিয়ে colorRow(1, states) কল করে।"
+    }
+  },
+  "scenarios": {
+    "allCorrect": {
+      "name": "সব সঠিক",
+      "description": "পুরোপুরি সঠিক একটি অনুমান সামলান"
+    },
+    "absent": {
+      "name": "কিছু অনুপস্থিত",
+      "description": "কিছু অক্ষর ভুল হলে সেটি সামলান"
+    },
+    "present": {
+      "name": "কিছু উপস্থিত",
+      "description": "ভুল জায়গায় থাকা অক্ষরগুলি সামলান"
+    },
+    "complex": {
+      "name": "জটিল",
+      "description": "আরেকটু জটিল একটি পরিস্থিতি সামলান"
+    },
+    "differentWord": {
+      "name": "ভিন্ন একটি শব্দ",
+      "description": "আর সবশেষে ভিন্ন একটি শব্দ!"
+    }
+  },
+  "hints": {
+    "compareLetters": {
+      "question": "অনুমানের প্রতিটি অক্ষরকে টার্গেটের সাথে কীভাবে তুলনা করব?",
+      "answer": "`0` থেকে `4` পর্যন্ত অবস্থানগুলির উপর লুপ চালান। প্রতিটি অবস্থানের জন্য `guess[i]`-এর সাথে `target[i]` তুলনা করুন।"
+    },
+    "stateRules": {
+      "question": "কোন অক্ষর কখন `\"correct\"`, কখন `\"present\"` আর কখন `\"absent\"` হয়?",
+      "answer": "`guess[i]` আর `target[i]` সমান হলে সেটি `\"correct\"`। তা না হলে, অক্ষরটি `target`-এর কোথাও থাকলে সেটি `\"present\"`। সেখানেও না থাকলে সেটি `\"absent\"`।"
+    },
+    "buildList": {
+      "question": "অবস্থাগুলির অ্যারেটি কীভাবে ধাপে ধাপে তৈরি করব?",
+      "answer": "একটি খালি অ্যারে দিয়ে শুরু করুন, তারপর লুপের ভেতরে `states.push(value)` ব্যবহার করে প্রতিটি অবস্থা ক্রমানুসারে অ্যারেটির শেষে যোগ করুন।"
+    },
+    "finishedList": {
+      "question": "তৈরি হয়ে যাওয়া অ্যারেটি কোথায় যাবে?",
+      "answer": "বোর্ডের প্রথম সারিটি আপনার বের করা অবস্থাগুলি দিয়ে রং করতে অ্যারেটি `colorRow(1, states)`-এ পাস করুন।"
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "Wordle বোর্ডের একটি সারি দেওয়া অবস্থাগুলি দিয়ে রং করে।",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "একটি অ্যারের শেষে একটি এলিমেন্ট যোগ করে, অ্যারেটিকেই সরাসরি বদলে দেয়।",
+      "category": "অ্যারে"
+    },
+    "includes": {
+      "description": "একটি স্ট্রিং-এর ভেতরে আরেকটি স্ট্রিং আছে কি না যাচাই করে, আর ট্রু বা ফলস রিটার্ন করে।",
+      "category": "স্ট্রিং"
+    }
+  },
+  "describers": {
+    "colorRow": "Wordle বোর্ডের একটি সারি রং করা হয়েছে"
+  }
+}

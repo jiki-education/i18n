@@ -1,28 +1,52 @@
 ---
 title: "The Chop Shop"
 description: "Számold ki, hogy a fodrásznak van-e ideje még egy vendégre."
-en_md5: d34f103d63edca4ab6b29fd4f8d5c176
+en_md5: 5d80e48067c44af3dbda12f2fb2c1d4d
 ---
 
-You run a small hairdressing salon that focusses on speed over quality. People might leave a little rough around the edges, but they're not having to spend too long in the chair.
+Egy kis fodrászszalont vezetsz, ahol a gyorsaság fontosabb, mint a minőség. A vendégek talán kissé egyenetlen frizurával távoznak, cserébe nem kell túl sokáig a székben ülniük.
 
-You offer a few different services from styling to full haircuts, which take different times to complete. You run the salon on a first-come, first-serve basis. There's no appointment system.
+Néhány különböző szolgáltatást kínálsz, a hajformázástól a teljes hajvágásig, és ezek különböző ideig tartanak. A vendégeket érkezési sorrendben szolgálod ki, időpontfoglalás nincs.
 
-As it gets towards the end of the day, you need a way of knowing if you have time for any new people that come into the shop.
+Ahogy közeledik a nap vége, tudnod kell, hogy van-e még időd azokra az új vendégekre, akik betérnek a szalonba.
 
-Write a function called <define>`canFitIn`</define> which takes three inputs:
+Írj egy `canFitIn` (befér-e) nevű függvényt, amely három bemenetet kap:
 
-- The first is the haircuts that you have in the queue already (list of strings)
-- The second is the haircut that the new person wants (string)
-- The third is the amount of minutes left in the day (number)
+- Az első: a már sorban álló hajvágások (stringekből álló lánc).
+- A második: a hajvágás, amelyet az új vendég szeretne (string).
+- A harmadik: a napból hátralévő percek száma (szám).
 
-Return a boolean for whether you can fit the person in.
+Adj vissza egy boolean értéket arról, hogy befér-e a vendég.
 
-The styles you offer are:
+Az alábbi stílusokat kínálod:
 
-- Mohawk: 20 minutes
-- Slicked-Back Pixie: 15 minutes
-- Bob: 25 minutes
-- Shave and Polish: 15 minutes
-- Afro Trim: 45 minutes
-- Up-do: 30 minutes
+- Mohawk: 20 perc
+- Slicked-Back Pixie: 15 perc
+- Bob: 25 perc
+- Shave and Polish: 15 perc
+- Afro Trim: 45 perc
+- Up-do: 30 perc
+
+### Egymásba ágyazott láncok
+
+Ez az első feladat, ahol olyan lánccal dolgozol, amely elemként más láncokat tartalmaz. Ezeket egymásba ágyazott láncoknak hívjuk. Az egymásba ágyazott láncok ugyanolyanok, mint bármelyik másik lánc, csak nem stringeket vagy számokat tartalmaznak, hanem más láncokat.
+
+Nézd meg a `cuts` (vágások) láncot. Ez más láncokat tartalmaz, minden hajvágáshoz egyet, és ezek mindegyikének két eleme van: egy név és egy időtartam.
+
+Ezt a legkönnyebb úgy elképzelni, hogy először a belső láncokra, a név-időtartam párokra gondolsz, majd arra, hogy ezek együtt egy másik láncban vannak.
+
+Az indexelés ugyanúgy működik, mint mindenhol máshol, de az indexeket egymás után is írhatod, például így...
+
+```javascript
+const cuts = [
+  ["Mohawk", 20],
+  ["Slicked-Back Pixie", 15],
+  ["Bob", 25],
+  //...
+]
+
+cuts[0] // ["Mohawk", 20]
+cuts[0][0] // "Mohawk"
+cuts[0][1] // 20
+cuts[2][0] // "Bob"
+```

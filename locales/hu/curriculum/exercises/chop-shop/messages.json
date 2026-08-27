@@ -1,48 +1,48 @@
 {
   "tasks": {
     "canFitIn": {
-      "name": "�",
-      "description": "�"
+      "name": "Beférnek?",
+      "description": "Írj egy függvényt, amely eldönti, hogy egy új vendéget ki lehet-e szolgálni zárás előtt, a jelenlegi sor és a hátralévő idő alapján."
     }
   },
   "scenarios": {
     "emptyQueue": {
-      "name": "�",
-      "description": "�"
+      "name": "Senki nincs a sorban",
+      "description": "Senki nincs a sorban, bőven van idő."
     },
     "emptyQueueButNoTime": {
-      "name": "�",
-      "description": "�"
+      "name": "Későre jár",
+      "description": "Senki nincs a sorban, de nincs elég idő."
     },
     "busyDayNoTime": {
-      "name": "�",
-      "description": "�"
+      "name": "Zsúfolt nap",
+      "description": "Teli sor, és nincs elég idő."
     },
     "busyDayButTime": {
-      "name": "�",
-      "description": "�"
+      "name": "Épphogy befér",
+      "description": "Zsúfolt nap, de épphogy van elég idő."
     },
     "stillEarly": {
-      "name": "�",
-      "description": "�"
+      "name": "Még korán van",
+      "description": "Még a nap elején járunk."
     },
     "cuttingItFine": {
-      "name": "�",
-      "description": "�"
+      "name": "Éppen időben",
+      "description": "Éppen időben értek oda!"
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hol kezdjem? A sorral vagy az új vendéggel?",
+      "answer": "Először számold ki, mennyi időt emészt fel a sor, aztán nézd meg, mi marad az új vendégre. Egy segédfüggvény, amely egy hajvágás nevét az időtartamára (percekben) alakítja, sokkal tisztábbá teszi ezt."
     },
     "subtractQueueTime": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hogyan vonom ki az egyes hajvágások idejét a hátralévő időből?",
+      "answer": "Menj végig a soron. Minden hajvágásnál keresd ki az időtartamát a segédfüggvényeddel, és vond ki azt a napból hátralévő idő futó összegéből."
     },
     "decideIfFits": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hogyan döntöm el, hogy az új hajvágás belefér-e?",
+      "answer": "Miután feldolgoztad a sort, hasonlítsd össze a hátralévő időt az új hajvágás időtartamával. Ha az új hajvágás ideje kisebb vagy egyenlő a hátralévő idővel, akkor belefér."
     }
   }
 }

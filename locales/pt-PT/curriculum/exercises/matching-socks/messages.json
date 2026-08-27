@@ -1,0 +1,97 @@
+{
+  "tasks": {
+    "findMatchingSocks": {
+      "name": "Encontra as meias que combinam",
+      "description": "Escreve uma função que recebe dois cestos de roupa (como listas de strings) e devolve uma lista com todos os pares de meias encontrados em ambos os cestos. Os itens que são meias terminam com ' sock' e começam sempre com 'left ' ou 'right '."
+    },
+    "solveTightly": {
+      "name": "Resolve em 29 linhas",
+      "description": "Tenta resolver isto em 29 linhas de código ou menos. Não é a resposta mais curta possível, mas é um bom objetivo a alcançar depois de teres a solução a funcionar."
+    }
+  },
+  "scenarios": {
+    "emptyBaskets": {
+      "name": "Cestos vazios",
+      "description": "Ambos os cestos estão vazios."
+    },
+    "nothingClean": {
+      "name": "Nada limpo",
+      "description": "Não há nada limpo."
+    },
+    "nothingDirty": {
+      "name": "Nada sujo",
+      "description": "Não há nada sujo."
+    },
+    "noSocks": {
+      "name": "Sem meias",
+      "description": "Não há meias em lado nenhum."
+    },
+    "oneInEach": {
+      "name": "Uma em cada",
+      "description": "Há uma meia que combina em cada cesto."
+    },
+    "aBigMix": {
+      "name": "Uma grande mistura!",
+      "description": "Uma mistura de roupa com vários pares de meias que combinam."
+    },
+    "someAddedPain": {
+      "name": "Coisas avulsas",
+      "description": "Algumas esquisitices meteram-se pelo meio."
+    },
+    "bonusLineCount": {
+      "name": "Uma solução compacta",
+      "description": "A mesma tarefa, feita em menos linhas."
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Por onde devo começar quando há muitas peças em movimento?",
+      "answer": "Não tentes escrever tudo de uma vez. Divide o problema em pequenas funções, cada uma a responder a uma pergunta pequena, põe cada uma a funcionar sozinha, e depois combina-as."
+    },
+    "isItASock": {
+      "question": "Como é que sei se algo no cesto é realmente uma meia?",
+      "answer": "Nem tudo o que menciona um lado é uma meia, e nem tudo o que parece uma meia o é. Presta atenção às regras de como os itens são descritos e verifica ambas as extremidades da descrição, em vez de apenas o início."
+    },
+    "compareSockPair": {
+      "question": "Como é que comparo uma meia esquerda com o seu par direito?",
+      "answer": "Em vez de comparares duas meias diretamente, descobre como se chamaria a parceira de uma meia e depois procura-a. As strings têm um método integrado para trocar um pedaço de texto por outro, que também pode remover um pedaço ao trocá-lo por nada."
+    },
+    "avoidDuplicates": {
+      "question": "Como é que evito contar o mesmo par duas vezes?",
+      "answer": "Cada par acaba por ser descoberto duas vezes, uma de cada lado. Antes de adicionares um nome aos teus resultados, verifica se já lá está."
+    },
+    "overallPlan": {
+      "question": "Qual é um bom plano geral?",
+      "answer": "Os dois cestos podem ser tratados como uma grande pilha. Percorre-a item a item e, para cada item, decide se deve fazer parte da tua resposta."
+    }
+  },
+  "checks": {
+    "tooManyLines": "Quase! A tua solução funciona, mas tem mais de 29 linhas de código."
+  },
+  "functions": {
+    "startsWith": {
+      "description": "Verifica se uma string começa com uma string mais pequena",
+      "category": "Operações com Strings"
+    },
+    "endsWith": {
+      "description": "Verifica se uma string termina com uma string mais pequena",
+      "category": "Operações com Strings"
+    },
+    "replace": {
+      "description": "Devolve uma nova string com a primeira ocorrência de algum texto trocada por outro texto",
+      "category": "Operações com Strings"
+    },
+    "concat": {
+      "description": "Junta dois arrays num único array novo",
+      "category": "Operações com Arrays"
+    },
+    "includes": {
+      "description": "Verifica se um array já contém um elemento",
+      "category": "Operações com Arrays"
+    },
+    "push": {
+      "description": "Adiciona um elemento ao final de um array",
+      "category": "Operações com Arrays"
+    }
+  }
+}

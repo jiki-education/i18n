@@ -1,19 +1,24 @@
 ---
 title: "Étoiles"
-description: "Construis un motif d'étoiles qui grandit."
-en_md5: 62e22f6eee11821cd56f0310e293a292
+description: "Construis et dessine une pyramide d'étoiles."
+en_md5: 2ab89485b8c04063fe5b305e43467bdf
 ---
 
-Tu vas construire un petit générateur de motifs en mode texte. À partir d'un nombre, crée un tableau de _strings_ où chaque _string_ contient un nombre croissant d'étoiles.
+Dans cet exercice, tu vas construire un générateur de motifs visuels qui dessine des rangées d'étoiles.
 
-Par exemple, pour le nombre 3, tu dois renvoyer :
+Ta mission est de créer une fonction appelée `layoutStars` (dispose les étoiles) qui prend une entrée, `numRows`, pour préciser combien de rangées il faut, puis qui dessine les différentes rangées d'étoiles.
 
-```
-["*", "**", "***"]
-```
+La fonction doit :
 
-Le premier élément a 1 étoile, le deuxième en a 2, et ainsi de suite jusqu'au nombre demandé.
+1. Construire un tableau de _strings_, avec une _string_ par rangée, en commençant par le bas avec la rangée la plus longue. Par exemple, si `numRows` vaut `3`, ce tableau sera `["***", "**", "*"]`.
+2. Utiliser la fonction `drawStars(rows)` en lui passant tes rangées : c'est elle qui dessine les étoiles.
 
-Si le nombre est 0, renvoie un tableau vide.
+Si `numRows` vaut 0, le tableau doit être vide (`[]`) et rien n'est dessiné.
 
-Crée une fonction appelée `stars` (étoiles) qui prend une entrée, le nombre demandé, et renvoie le tableau de _strings_ d'étoiles.
+Si tu veux voir le résultat en action, tu peux exécuter `drawStars(["***", "**", "*"])` pour voir les étoiles se dessiner.
+
+### La méthode push
+
+Comme dans l'exercice précédent, tu vas devoir construire ton tableau avec la méthode `.push(element)`. Dans cet exercice, tu ne peux créer qu'un seul nouveau tableau (`let something = []`) dans ton code.
+
+Amuse-toi bien !

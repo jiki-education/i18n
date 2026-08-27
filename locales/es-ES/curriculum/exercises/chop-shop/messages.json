@@ -1,0 +1,48 @@
+{
+  "tasks": {
+    "canFitIn": {
+      "name": "¿Puedes atenderlos?",
+      "description": "Escribe una función que determine si una persona nueva puede ser atendida antes de la hora de cierre, teniendo en cuenta la cola actual y el tiempo restante."
+    }
+  },
+  "scenarios": {
+    "emptyQueue": {
+      "name": "No hay nadie en la cola",
+      "description": "No hay nadie en la cola y hay tiempo de sobra."
+    },
+    "emptyQueueButNoTime": {
+      "name": "Al final del día",
+      "description": "No hay nadie en la cola, pero no tienes tiempo suficiente."
+    },
+    "busyDayNoTime": {
+      "name": "Un día lleno",
+      "description": "La cola está llena y no tienes tiempo suficiente."
+    },
+    "busyDayButTime": {
+      "name": "Apenas cabe",
+      "description": "Un día lleno, pero hay tiempo justo."
+    },
+    "stillEarly": {
+      "name": "Aún es pronto",
+      "description": "Aún es pronto en el día."
+    },
+    "cuttingItFine": {
+      "name": "Justo a tiempo",
+      "description": "¡Han llegado justo a tiempo!"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "¿Por dónde debería empezar? ¿La cola o la persona nueva?",
+      "answer": "Primero calcula cuánto tiempo va a consumir la cola y luego mira cuánto queda para la persona nueva. Una función auxiliar que convierta el nombre de un corte en su duración (en minutos) hará que todo sea mucho más limpio."
+    },
+    "subtractQueueTime": {
+      "question": "¿Cómo resto el tiempo de cada corte del tiempo restante?",
+      "answer": "Recorre la cola con un bucle. Para cada corte, busca su duración con tu función auxiliar y réstala del total de tiempo que te queda en el día."
+    },
+    "decideIfFits": {
+      "question": "¿Cómo decido si el nuevo corte cabe?",
+      "answer": "Después de procesar la cola, compara el tiempo restante con la duración del nuevo corte. Si el tiempo del nuevo corte es menor o igual que el tiempo que queda, cabe."
+    }
+  }
+}

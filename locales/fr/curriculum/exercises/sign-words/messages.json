@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "signWords": {
+      "name": "Découpe le nom en mots",
+      "description": "Écris une fonction signWords qui prend un nom d'entreprise et renvoie un tableau des mots qui le composent. Les mots sont séparés par des espaces, et un client peut laisser par accident des espaces en trop."
+    }
+  },
+  "scenarios": {
+    "singleWord": {
+      "name": "Un seul mot",
+      "description": "Un nom d'entreprise composé d'un seul mot."
+    },
+    "twoWords": {
+      "name": "Deux mots",
+      "description": "Un nom d'entreprise composé de deux mots."
+    },
+    "longerName": {
+      "name": "Un nom plus long",
+      "description": "Un nom d'entreprise de quatre mots à imprimer."
+    },
+    "doubleSpace": {
+      "name": "La main lourde sur la barre d'espace",
+      "description": "Un client qui a tapé deux espaces entre les mots."
+    }
+  },
+  "hints": {
+    "gettingStarted": {
+      "question": "Comment extraire les mots du nom ?",
+      "answer": "Il existe deux approches, et aucune n'est meilleure que l'autre. Tu peux parcourir le nom caractère par caractère, en construisant chaque mot au fur et à mesure, ou demander à la _string_ de se découper au niveau des espaces. Choisis celle qui te semble la plus claire."
+    },
+    "buildingUpArray": {
+      "question": "Comment rassembler les mots ?",
+      "answer": "Commence par créer un tableau vide, puis ajoute chaque mot terminé à la fin de ce tableau au fur et à mesure que tu le repères. C'est ce tableau que tu renvoies à la fin."
+    },
+    "doubleSpaces": {
+      "question": "Pourquoi y a-t-il une _string_ vide dans mon tableau ?",
+      "answer": "Deux espaces à la suite signifient qu'il n'y a rien du tout entre les deux, et ce vide compte donc comme un mot, sauf si tu l'en empêches. Vérifie qu'un mot n'est pas vide avant de l'ajouter au tableau."
+    },
+    "missingLastWord": {
+      "question": "Pourquoi le dernier mot manque-t-il ?",
+      "answer": "Si tu construis les mots caractère par caractère, le dernier mot est encore en cours de construction quand la boucle se termine, car il n'y a pas d'espace après lui pour t'indiquer qu'il est fini. Il faut donc l'ajouter au tableau une fois la boucle terminée."
+    }
+  },
+  "functions": {
+    "split": {
+      "description": "Découpe une _string_ à chaque endroit où elle trouve le séparateur, et renvoie un tableau des morceaux.",
+      "category": "_Strings_"
+    },
+    "push": {
+      "description": "Ajoute un élément à la fin d'un tableau, en modifiant le tableau lui-même.",
+      "category": "Tableaux"
+    }
+  }
+}

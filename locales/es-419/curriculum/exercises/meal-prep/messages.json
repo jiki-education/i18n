@@ -1,0 +1,50 @@
+{
+  "tasks": {
+    "createShoppingList": {
+      "name": "Crear lista de compras",
+      "description": "Escribe una función que reciba el contenido de tu refrigerador y los ingredientes de una receta, y devuelva los artículos que necesitas comprar (los artículos de la receta que no están en el refrigerador)."
+    }
+  },
+  "scenarios": {
+    "emptyFridge": {
+      "name": "Refrigerador vacío",
+      "description": "Cuando el refrigerador está vacío, necesitas comprar todo."
+    },
+    "youHaveEverything": {
+      "name": "Tienes todo",
+      "description": "Cuando tienes todos los ingredientes, la lista de compras está vacía."
+    },
+    "oneThing": {
+      "name": "Falta un artículo",
+      "description": "Cuando te falta solo un ingrediente."
+    },
+    "fewThings": {
+      "name": "Faltan varios artículos",
+      "description": "Cuando te faltan varios ingredientes."
+    }
+  },
+  "hints": {
+    "realLifeApproach": {
+      "question": "¿Cómo lo haría en la vida real?",
+      "answer": "Irías repasando la receta ingrediente por ingrediente y revisarías el refrigerador para cada uno. Lo que falte va a la lista de compras. Tu código hace lo mismo."
+    },
+    "checkFridgeItem": {
+      "question": "¿Cómo verifico si un artículo está en el refrigerador?",
+      "answer": "El método `includes` hace esto por ti. Al llamarlo en el refrigerador con un ingrediente, te devuelve `true` o `false`."
+    },
+    "buildShoppingList": {
+      "question": "¿Cómo armo la lista de compras?",
+      "answer": "Empieza con un array vacío. Para cada artículo de la receta que el refrigerador no contenga, usa `push()` para agregarlo a la lista de compras."
+    }
+  },
+  "functions": {
+    "includes": {
+      "description": "Verifica si un array contiene un elemento específico, devolviendo true o false.",
+      "category": "Arrays"
+    },
+    "push": {
+      "description": "Agrega un elemento al final de un array, modificando el array en su lugar.",
+      "category": "Arrays"
+    }
+  }
+}

@@ -1,46 +1,50 @@
 {
   "tasks": {
     "createShoppingList": {
-      "name": "�",
-      "description": "�"
+      "name": "Bevásárlólista létrehozása",
+      "description": "Írj egy függvényt, amely megkapja a hűtőd tartalmát és a recept elemeit, és visszaadja azokat, amelyeket meg kell venned (a receptben szereplő, de a hűtőből hiányzó elemeket)."
     }
   },
   "scenarios": {
     "emptyFridge": {
-      "name": "�",
-      "description": "�"
+      "name": "Üres hűtő",
+      "description": "Amikor a hűtő üres, mindent meg kell venned."
     },
     "youHaveEverything": {
-      "name": "�",
-      "description": "�"
+      "name": "Minden megvan",
+      "description": "Amikor minden hozzávalód megvan, a bevásárlólista üres."
     },
     "oneThing": {
-      "name": "�",
-      "description": "�"
+      "name": "Egy dolog",
+      "description": "Amikor csak egy dolog hiányzik."
     },
     "fewThings": {
-      "name": "�",
-      "description": "�"
+      "name": "Néhány dolog",
+      "description": "Amikor néhány dolog hiányzik."
     }
   },
   "hints": {
     "realLifeApproach": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hogyan csinálnám ezt a való életben?",
+      "answer": "Végigmennél a recepten, egyik hozzávalót a másik után, és mindegyiknél megnéznéd a hűtőt. Ami hiányzik, az felkerül a bevásárlólistára. A kódod ugyanezt teszi."
     },
     "checkFridgeItem": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hogyan ellenőrzöm, hogy egy elem ott van-e a hűtőben?",
+      "answer": "Az `includes` metódus elvégzi ezt helyetted. Ha a hűtőn meghívod egy hozzávalóval, `true` vagy `false` értéket kapsz vissza."
     },
     "buildShoppingList": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hogyan építem fel a bevásárlólistát?",
+      "answer": "Kezdj egy üres tömbbel. Minden olyan receptelemnél, amely nincs meg a hűtőben, add hozzá a bevásárlólistához a `push()` metódussal."
     }
   },
   "functions": {
+    "includes": {
+      "description": "Ellenőrzi, hogy egy tömb tartalmaz-e egy adott elemet, és igaz vagy hamis értéket ad vissza.",
+      "category": "Tömbök"
+    },
     "push": {
-      "description": "�",
-      "category": "�"
+      "description": "Hozzáad egy elemet a tömb végére, helyben módosítva a tömböt.",
+      "category": "Tömbök"
     }
   }
 }

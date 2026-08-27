@@ -1,13 +1,31 @@
 ---
 title: "Preparazione dei pasti"
 description: "Scopri quali ingredienti devi comprare per la ricetta."
-en_md5: 4199f39db62481239426f85c4afcb41e
+en_md5: 2326187734cf4b307264fef2b0dea2fd
 ---
 
-You're the sort of person that likes to pop to the shops each day to get whatever ingredients you need for dinner. It gives you a nice excuse to stretch your legs and chat to the local shopkeeper.
+Sei il tipo di persona a cui piace fare un salto al negozio ogni giorno per comprare gli ingredienti che ti servono per cena. È una bella scusa per sgranchirti le gambe e scambiare due chiacchiere con il negoziante sotto casa.
 
-Each day you choose a recipe, then check what's in the fridge, and note down what you need to buy.
+Ogni giorno scegli una ricetta, poi controlli cosa c'è nel frigo e annoti cosa devi comprare.
 
-Now you've decided to make your life a little easier, by writing a program to do the hard work for you!
+Ora hai deciso di semplificarti un po' la vita scrivendo un programma che fa il lavoro faticoso al posto tuo! Confronta quello che c'è sulla lista con quello che c'è nel frigo e restituisce la differenza.
 
-Write a function called <define>`shoppingList`</define>. It takes two inputs: the contents of your fridge as a list of strings, and the items in the recipe as a list of strings. It should return the things you need to buy, as a list of strings.
+Il tuo compito è scrivere una funzione chiamata `shoppingList(fridgeContents, recipeItems)` (lista della spesa). Accetta due input: il contenuto del frigo come array di stringhe e gli ingredienti della ricetta, anche questi come array di stringhe. Deve restituire ciò che devi comprare, come array di stringhe.
+
+Per esempio:
+
+```javascript
+let fridgeContents = ["tomatoes", "leaves", "milk"]
+let recipeItems = ["beef", "tomatoes", "peppers"]
+
+shoppingList(fridgeContents, recipeItems)
+// ["beef", "peppers"]
+```
+
+### Il metodo push
+
+Per risolvere l'esercizio devi costruire l'array usando il metodo `.push(element)`. Puoi creare un solo nuovo array nel codice. Riguarda il video precedente se non sei sicuro di cosa fare.
+
+Potresti anche usare il metodo `includes` (più sotto trovi un ripasso).
+
+Buon divertimento!

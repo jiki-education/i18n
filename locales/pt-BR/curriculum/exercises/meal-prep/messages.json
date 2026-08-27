@@ -1,0 +1,50 @@
+{
+  "tasks": {
+    "createShoppingList": {
+      "name": "Criar a lista de compras",
+      "description": "Escreva uma função que recebe o conteúdo da sua geladeira e os ingredientes de uma receita, e retorna os itens que você precisa comprar (os itens da receita que não estão na geladeira)."
+    }
+  },
+  "scenarios": {
+    "emptyFridge": {
+      "name": "Geladeira vazia",
+      "description": "Quando a geladeira está vazia, você precisa comprar tudo."
+    },
+    "youHaveEverything": {
+      "name": "Você tem tudo",
+      "description": "Quando você tem todos os ingredientes, a lista de compras fica vazia."
+    },
+    "oneThing": {
+      "name": "Uma coisa só",
+      "description": "Quando falta só um ingrediente."
+    },
+    "fewThings": {
+      "name": "Algumas coisas",
+      "description": "Quando faltam alguns ingredientes."
+    }
+  },
+  "hints": {
+    "realLifeApproach": {
+      "question": "Como eu faria isso na vida real?",
+      "answer": "Você passaria pela receita um ingrediente de cada vez e conferiria a geladeira para cada um. O que estiver faltando vai para a lista de compras. Seu código faz a mesma coisa."
+    },
+    "checkFridgeItem": {
+      "question": "Como eu confiro se um item está na geladeira?",
+      "answer": "O método `includes` faz isso por você. Chame-o na geladeira passando um ingrediente e ele retorna `true` ou `false`."
+    },
+    "buildShoppingList": {
+      "question": "Como eu monto a lista de compras?",
+      "answer": "Comece com um array vazio. Para cada item da receita que a geladeira não contém, use `push()` para colocá-lo na lista de compras."
+    }
+  },
+  "functions": {
+    "includes": {
+      "description": "Confere se um array contém um item específico, retornando true ou false.",
+      "category": "Arrays"
+    },
+    "push": {
+      "description": "Adiciona um elemento ao final de um array, modificando o próprio array.",
+      "category": "Arrays"
+    }
+  }
+}

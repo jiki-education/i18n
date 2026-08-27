@@ -1,0 +1,79 @@
+{
+  "tasks": {
+    "drawStars": {
+      "name": "Desenhe uma pirâmide de estrelas",
+      "description": "Escreva uma função layoutStars que recebe um número de fileiras e constrói um array de strings em que cada string tem uma estrela a menos que a anterior, e então desenha tudo com drawStars. Por exemplo, layoutStars(3) desenha a pirâmide de [\"***\", \"**\", \"*\"]."
+    }
+  },
+  "scenarios": {
+    "count0": {
+      "name": "A contagem é 0",
+      "description": "Com zero estrelas, nada é desenhado."
+    },
+    "count1": {
+      "name": "A contagem é 1",
+      "description": "Uma contagem de um desenha uma única estrela."
+    },
+    "count3": {
+      "name": "A contagem é 3",
+      "description": "Uma contagem de três desenha uma pirâmide de três fileiras."
+    },
+    "count5": {
+      "name": "A contagem é 5",
+      "description": "Uma contagem de cinco desenha uma pirâmide de cinco fileiras."
+    },
+    "count10": {
+      "name": "A contagem é 10",
+      "description": "Uma contagem de dez desenha uma pirâmide de dez fileiras."
+    }
+  },
+  "hints": {
+    "shapeOfAnswer": {
+      "question": "O que eu estou construindo?",
+      "answer": "Um array de strings, da mais longa para a mais curta, cada uma com uma estrela a menos que a anterior, até chegar a uma única estrela. Quando ele é desenhado, a fileira mais longa fica na base da pirâmide. Construa o array inteiro primeiro e depois desenhe com `drawStars`."
+    },
+    "countingDown": {
+      "question": "Como faço cada fileira ficar mais curta que a anterior?",
+      "answer": "Os comprimentos precisam diminuir: a primeira string é a mais longa e a última é uma única estrela. Um laço que conta do total até 1 te entrega cada comprimento, um por vez."
+    },
+    "buildingEachRow": {
+      "question": "Como construo uma string com uma certa quantidade de estrelas?",
+      "answer": "Comece com uma string vazia e adicione um `*` de cada vez até ela ficar do tamanho certo. Depois use `push` para colocar essa string no seu array antes de passar para a próxima fileira."
+    }
+  },
+  "checks": {
+    "row1": "A fileira de baixo não está certa. Compare com o contorno esmaecido.",
+    "row2": "A segunda fileira de baixo para cima não está certa. Compare com o contorno esmaecido.",
+    "row3": "A terceira fileira de baixo para cima não está certa. Compare com o contorno esmaecido.",
+    "row4": "A quarta fileira de baixo para cima não está certa. Compare com o contorno esmaecido.",
+    "row5": "A quinta fileira de baixo para cima não está certa. Compare com o contorno esmaecido.",
+    "row6": "A sexta fileira de baixo para cima não está certa. Compare com o contorno esmaecido.",
+    "row7": "A sétima fileira de baixo para cima não está certa. Compare com o contorno esmaecido.",
+    "row8": "A oitava fileira de baixo para cima não está certa. Compare com o contorno esmaecido.",
+    "row9": "A nona fileira de baixo para cima não está certa. Compare com o contorno esmaecido.",
+    "row10": "A décima fileira de baixo para cima não está certa. Compare com o contorno esmaecido.",
+    "total": "Você desenhou o número errado de estrelas no total.",
+    "shouldBeEmpty": "Quando a contagem for 0, você não deve desenhar nenhuma estrela.",
+    "codeQuality": {
+      "mustUsePush": "Construa o seu array usando o método push, adicionando uma fileira de cada vez.",
+      "noHardcodedArray": "Você não pode escrever o array pronto diretamente. Construa o array uma fileira de cada vez com push."
+    }
+  },
+  "errors": {
+    "notAnArray": "drawStars precisa de um array de strings.",
+    "notStrings": "Cada item do array passado para drawStars deve ser uma string."
+  },
+  "describers": {
+    "drawStars": "desenhou a pirâmide de estrelas na tela"
+  },
+  "functions": {
+    "push": {
+      "description": "Adiciona um elemento ao final de um array",
+      "category": "Arrays"
+    },
+    "drawStars": {
+      "description": "Desenha uma fileira de estrelas para cada string do array, usando o comprimento de cada string como a quantidade de estrelas daquela fileira",
+      "category": "Desenho"
+    }
+  }
+}

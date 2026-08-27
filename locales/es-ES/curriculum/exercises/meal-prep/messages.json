@@ -1,0 +1,50 @@
+{
+  "tasks": {
+    "createShoppingList": {
+      "name": "Crear lista de la compra",
+      "description": "Escribe una función que reciba el contenido de tu nevera y los ingredientes de una receta, y devuelva lo que necesitas comprar (los ingredientes de la receta que no están en la nevera)."
+    }
+  },
+  "scenarios": {
+    "emptyFridge": {
+      "name": "Nevera vacía",
+      "description": "Cuando la nevera está vacía, necesitas comprar todo."
+    },
+    "youHaveEverything": {
+      "name": "Tienes todo",
+      "description": "Cuando tienes todos los ingredientes, la lista de la compra está vacía."
+    },
+    "oneThing": {
+      "name": "Una cosa",
+      "description": "Cuando te falta solo un ingrediente."
+    },
+    "fewThings": {
+      "name": "Unas cuantas cosas",
+      "description": "Cuando te faltan unos cuantos ingredientes."
+    }
+  },
+  "hints": {
+    "realLifeApproach": {
+      "question": "¿Cómo haría esto en la vida real?",
+      "answer": "Repasarías la receta ingrediente a ingrediente y comprobarías la nevera para cada uno. Lo que falte se añade a la lista de la compra. Tu código hace lo mismo."
+    },
+    "checkFridgeItem": {
+      "question": "¿Cómo compruebo si un ingrediente está en la nevera?",
+      "answer": "El método `includes` lo hace por ti. Llamarlo sobre la nevera con un ingrediente te devuelve `true` o `false`."
+    },
+    "buildShoppingList": {
+      "question": "¿Cómo construyo la lista de la compra?",
+      "answer": "Empieza con un array vacío. Por cada ingrediente de la receta que no esté en la nevera, añádelo a la lista de la compra con `push()`."
+    }
+  },
+  "functions": {
+    "includes": {
+      "description": "Comprueba si un array contiene un elemento específico, devolviendo true o false.",
+      "category": "Arrays"
+    },
+    "push": {
+      "description": "Añade un elemento al final de un array, modificando el array en su lugar.",
+      "category": "Arrays"
+    }
+  }
+}

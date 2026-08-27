@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "signWords": {
+      "name": "Separa el nombre en palabras",
+      "description": "Escribe una función signWords que reciba el nombre del negocio y devuelva un array de las palabras que contiene. Las palabras están separadas por espacios, y un cliente puede dejar espacios de más por accidente."
+    }
+  },
+  "scenarios": {
+    "singleWord": {
+      "name": "Una palabra",
+      "description": "Un nombre de negocio de una sola palabra."
+    },
+    "twoWords": {
+      "name": "Dos palabras",
+      "description": "Un nombre de negocio formado por dos palabras."
+    },
+    "longerName": {
+      "name": "Un nombre más largo",
+      "description": "Un nombre de negocio con cuatro palabras para imprimir."
+    },
+    "doubleSpace": {
+      "name": "Una mano pesada en la barra espaciadora",
+      "description": "Un cliente que escribió dos espacios entre sus palabras."
+    }
+  },
+  "hints": {
+    "gettingStarted": {
+      "question": "¿Cómo saco las palabras del nombre?",
+      "answer": "Hay dos caminos y ninguno es mejor que el otro. Puedes recorrer el nombre carácter por carácter, construyendo cada palabra a medida que avanzas, o puedes pedirle al string que se divida en los espacios. Elige el que te resulte más claro."
+    },
+    "buildingUpArray": {
+      "question": "¿Cómo voy juntando las palabras?",
+      "answer": "Empieza con un array vacío antes de comenzar; luego, haz push de cada palabra terminada al final del array a medida que vayas descubriendo cuál es. El array es lo que devuelves al final."
+    },
+    "doubleSpaces": {
+      "question": "¿Por qué tengo un string vacío en mi array?",
+      "answer": "Dos espacios seguidos significan que no hay nada entre ellos, así que ese hueco cuenta como una palabra a menos que digas lo contrario. Verifica que una palabra no esté vacía antes de hacerle push."
+    },
+    "missingLastWord": {
+      "question": "¿Por qué me falta la última palabra?",
+      "answer": "Si estás construyendo las palabras carácter por carácter, la última palabra todavía está en progreso cuando termina el bucle, porque no hay un espacio después de ella que te indique que está terminada. Necesitas hacerle push una vez que el bucle haya terminado."
+    }
+  },
+  "functions": {
+    "split": {
+      "description": "Divide un string en partes donde encuentra el separador, devolviendo un array con los fragmentos.",
+      "category": "Strings"
+    },
+    "push": {
+      "description": "Agrega un elemento al final de un array, modificando el array directamente.",
+      "category": "Arrays"
+    }
+  }
+}
