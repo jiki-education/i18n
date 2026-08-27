@@ -721,6 +721,65 @@ if (!extraKeyLocale) {
   });
 }
 
+// ------------------------------------- a MISSING catalog is a counted gap --
+
+// The completeness record is what the front-end's verify-locale-completeness.js
+// gates a production deploy on, and for a long time it could not see a catalog
+// that was not there. Every other check over the slugged catalogs runs inside a
+// loop over what the LOCALE holds, so an absent file is visited by nothing and
+// costs nothing. The corpus loop in publish.mjs counts them against ENGLISH
+// instead, which is the only way an absence has a denominator to be absent from.
+//
+// Asserted end to end, for the same reason the extra-key test above is: the
+// counting lives in a separate script with its own gaps machinery, and reading
+// the loop proves nothing about what reaches completeness.json.
+//
+// The catalog is moved aside and restored in a finally, so the tree is the same
+// after this runs as before it.
+
+const catalogBiteLocale = PUBLISH_CHECKOUT
+  ? PRODUCTION_LOCALES.find((locale) => listItems("exercise-messages", locale).length > 0)
+  : null;
+
+if (!catalogBiteLocale) {
+  console.log(
+    PUBLISH_CHECKOUT
+      ? "  SKIP  a missing exercise catalog is counted against English (no locale holds one)"
+      : "  SKIP  a missing exercise catalog is counted against English (no front-end checkout)"
+  );
+} else {
+  test("a missing exercise catalog is counted against English, not silently ignored", () => {
+    const locale = catalogBiteLocale;
+    const expected = englishCorpusSize("exercise-messages");
+    const held = listItems("exercise-messages", locale);
+    const victim = held[0].path;
+    const hidden = `${victim}.hidden-by-test`;
+
+    const out = fs.mkdtempSync(path.join(os.tmpdir(), "jiki-publish-missing-catalog-"));
+    fs.renameSync(victim, hidden);
+    try {
+      const run = spawnSync(process.execPath, [path.join(REPO_ROOT, "scripts", "publish.mjs"), locale, `--out-dir=${out}`], {
+        cwd: REPO_ROOT,
+        encoding: "utf8"
+      });
+      if (run.status !== 0 && /content-renderer/.test(`${run.stdout}${run.stderr}`)) {
+        console.log("  (renderer not installed; publish could not run)");
+        return;
+      }
+      assert.equal(run.status, 0, `publish ${locale} exited ${run.status}: ${run.stderr}`);
+
+      const record = readJson(path.join(out, "static", "i18n", "completeness.json"));
+      const gap = record.locales[locale].gaps.find((entry) => entry.type === "exercise-messages");
+      assert.ok(gap, `${locale} published as if nothing were missing after ${path.basename(path.dirname(victim))}'s catalog was removed`);
+      assert.equal(gap.detail, `${held.length - 1} of ${expected} present`);
+      assert.equal(record.locales[locale].complete, false);
+    } finally {
+      fs.renameSync(hidden, victim);
+      fs.rmSync(out, { recursive: true, force: true });
+    }
+  });
+}
+
 // ---------------------------------------------------- the inapplicable key
 
 // `∅` marks a key the language can never reach. Getting the reachable set wrong

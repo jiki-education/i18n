@@ -114,6 +114,7 @@ import {
 } from "./lib/constants.mjs";
 import {
   CONTENT_TYPES,
+  CONTENT_TYPE_IDS,
   FAMILY_TYPE_ID,
   POST_TYPE_IDS,
   contentType,
@@ -149,6 +150,21 @@ let DIST = path.join(REPO_ROOT, "dist");
 
 /** Every markdown type, which is every type the untranslated-prose rules apply to. */
 const PROSE_TYPE_IDS = ["concept", "exercise-instructions", ...POST_TYPE_IDS];
+
+/**
+ * Every SLUGGED catalog type: one file per exercise, per exercise family, per
+ * interpreter language.
+ *
+ * Derived from the type map rather than listed, so a slugged catalog type added
+ * there is counted here on the day it is added and never has to be remembered.
+ * Unslugged catalogs (the app UI, levels, badges, testimonials, project
+ * metadata) are deliberately outside it: there is one of each per locale, so
+ * they have no item set to count, and their gaps are per-KEY and already found
+ * by countSentinels where each one is published.
+ */
+const SLUGGED_CATALOG_TYPE_IDS = CONTENT_TYPE_IDS.filter(
+  (id) => CONTENT_TYPES[id].slugged && CONTENT_TYPES[id].format === "catalog"
+);
 
 // Video subtitles are deliberately not published from here, and their content
 // type carries `r2: null` to say so. A translated subtitle track is uploaded to
@@ -474,7 +490,21 @@ async function publishLocale(locale, { exportSources }) {
   // A partial exercise corpus shows up in two assembled artifacts, the merged
   // curriculum copy and the exercise prose index, as a lesson that renders its
   // slug or an exercise that will not load. Per-exercise artifacts are unaffected.
-  for (const typeId of PROSE_TYPE_IDS) {
+  //
+  // The slugged CATALOGS are counted the same way, and for a failure the
+  // per-catalog checks structurally cannot see. countSentinels is the only other
+  // thing that looks at them, and it runs inside loops over what the LOCALE
+  // already holds: exerciseCatalogs(locale) and listItems("interpreter-messages",
+  // locale). A catalog that is wholly ABSENT from a locale is therefore visited
+  // by nothing, contributes no gap, and the locale reads as production-ready with
+  // the file missing. That is not a hypothetical: an exercise goes live carrying
+  // only a messages.json, so the first thing a new exercise adds to a locale is
+  // exactly the kind of file this loop is the only reader of. The English corpus
+  // is the denominator, so the answer is "of everything English has", not "of
+  // everything this locale happens to hold", and englishCorpusSize filters
+  // through the corpus.json exclusions, so a not-yet-live exercise is subtracted
+  // from both sides and this stays silent about it.
+  for (const typeId of [...PROSE_TYPE_IDS, ...SLUGGED_CATALOG_TYPE_IDS]) {
     const present = listItems(typeId, locale).length;
     const expected = englishCorpusSize(typeId);
     if (present < expected) {
