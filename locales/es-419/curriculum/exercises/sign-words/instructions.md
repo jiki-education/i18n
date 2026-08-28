@@ -1,7 +1,7 @@
 ---
 title: "Palabras del letrero"
 description: "Separa el nombre de un negocio en las palabras individuales que se van a imprimir."
-en_md5: b2d0a5c31cfbb7036c1a860f59498ff8
+en_md5: 2f780499eb5dd8f51479d4142bc16acc
 ---
 
 Hace un tiempo creaste un programa para ayudar a un cliente con su negocio de letreros. Ahora volvió con un nuevo requisito. Está haciendo letreros más grandes: imprime cada palabra por adelantado y después arma las palabras en las ventanas del negocio directamente en el lugar.
@@ -10,7 +10,7 @@ Necesita que hagas el primer paso del programa: tomar el nombre del negocio y se
 
 Escribe una función llamada `signWords(businessName)` (`signWords` significa «palabras del letrero»; `businessName` significa «nombre del negocio») que recibe el nombre del negocio y devuelve un array de las palabras que contiene. Por ejemplo, `signWords("Frank's Hotdogs")` debe devolver `["Frank's", "Hotdogs"]`.
 
-Las palabras son elementos separados por espacios. Pero ten en cuenta un detalle: a veces los clientes envían el nombre de su negocio con varios espacios seguidos por accidente. Si eso pasa, debes ignorarlos, de modo que `"Frank's   Hotdogs"` debe seguir devolviendo `["Frank's", "Hotdogs"]`.
+Las palabras son elementos separados por espacios. Pero ten en cuenta un detalle: a veces los clientes envían el nombre de su negocio con varios espacios seguidos por accidente. Si eso pasa, debes ignorarlos, de modo que <code>"Frank's&nbsp;&nbsp;&nbsp;Hotdogs"</code> debe seguir devolviendo `["Frank's", "Hotdogs"]`.
 
 ### Push y split
 
