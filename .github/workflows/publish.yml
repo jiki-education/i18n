@@ -94,8 +94,9 @@ jobs:
       # Reported, never enforced. Publishing is deliberately permissive: work in
       # progress has to reach R2 or nobody can review it on staging, and a locale
       # being behind is the normal state rather than a fault. What a locale is
-      # missing is recorded in completeness.json, and the front-end's deploy is
-      # where that record actually blocks anything.
+      # missing is recorded in completeness.json for anyone reading staging. The
+      # front-end's PR check and deploy compute their own record by running
+      # publish.mjs against their tree, so nothing here blocks anything.
       #
       # Enforcing here would mean one stale item stops every locale publishing,
       # including the ones that are fine.

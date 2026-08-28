@@ -59,9 +59,12 @@
 // copied English or a placeholder body, and corpora with items missing. A locale
 // with no gaps is `complete`.
 //
-// Strictness lives at serving. The front-end's PRODUCTION_LOCALES, gated by
-// app/scripts/verify-locale-completeness.js, reads that record and refuses to
-// build if a production locale is not complete. Staging serves everything.
+// Strictness lives at serving. The front-end's PRODUCTION_LOCALES is gated by
+// app/scripts/verify-locale-completeness.js, which runs THIS script with
+// --out-dir against the front-end tree being checked (JIKI_SOURCE_REPO) and
+// reads the record written there. It does not read the R2 copy: that was made
+// against front-end main at the last push here, and a PR is not main. The R2
+// record is a status page for staging. Staging serves everything.
 //
 // The English guard is the one thing here that does refuse, and it has no
 // override.

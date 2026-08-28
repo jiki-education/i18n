@@ -1,0 +1,67 @@
+# Close the loop: when a translation issue is closed, re-run the front-end PR's
+# locale-completeness check.
+#
+# The front-end's i18n-queue.yml opens an issue here, titled
+# `Translate front-end#<PR>: ...`, when a PR changes English. The pass translates,
+# pushes to main, and closes the issue. Until now the PR's red check stayed red
+# until somebody noticed and re-ran it by hand; nothing on the front-end side can
+# see a push here. This is the one event that knows the translations have landed,
+# so it is where the re-run belongs.
+#
+# It re-runs the PR's most recent failed `i18n` workflow run, which is exactly
+# the job that fetched this repo and found it short. A run that already passed,
+# or a PR that has no run yet, is left alone.
+#
+# Needs a token that can read PRs and re-run workflows on jiki-education/front-end:
+# `FRONT_END_ACTIONS_TOKEN`, a PAT with `repo` (classic) or Actions read/write +
+# Pull requests read (fine-grained) on that repo. The default GITHUB_TOKEN is
+# scoped to this repo and cannot.
+
+name: Rerun front-end check
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  rerun:
+    if: startsWith(github.event.issue.title, 'Translate front-end#')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Re-run the PR's i18n workflow
+        env:
+          GH_TOKEN: ${{ secrets.FRONT_END_ACTIONS_TOKEN }}
+          TITLE: ${{ github.event.issue.title }}
+        run: |
+          set -euo pipefail
+          REPO=jiki-education/front-end
+
+          PR=$(printf '%s' "$TITLE" | sed -nE 's/^Translate front-end#([0-9]+):.*/\1/p')
+          if [ -z "$PR" ]; then
+            echo "Could not read a PR number from the title: $TITLE"
+            exit 0
+          fi
+
+          STATE=$(gh pr view "$PR" --repo "$REPO" --json state,headRefName --jq '.state')
+          if [ "$STATE" != "OPEN" ]; then
+            echo "front-end#$PR is $STATE; nothing to re-run."
+            exit 0
+          fi
+          BRANCH=$(gh pr view "$PR" --repo "$REPO" --json headRefName --jq '.headRefName')
+
+          RUN=$(gh run list --repo "$REPO" --workflow=i18n.yml --branch="$BRANCH" --event=pull_request \
+            --limit 1 --json databaseId,conclusion --jq '.[0] | "\(.databaseId) \(.conclusion)"')
+          if [ -z "$RUN" ]; then
+            echo "front-end#$PR ($BRANCH) has no i18n run yet; nothing to re-run."
+            exit 0
+          fi
+
+          ID=${RUN% *}
+          CONCLUSION=${RUN#* }
+          if [ "$CONCLUSION" != "failure" ]; then
+            echo "front-end#$PR's latest i18n run ($ID) concluded '$CONCLUSION'; leaving it."
+            exit 0
+          fi
+
+          echo "Re-running failed jobs of run $ID on front-end#$PR ($BRANCH)."
+          gh run rerun "$ID" --repo "$REPO" --failed

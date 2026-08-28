@@ -25,11 +25,11 @@ This repo holds **Jiki's translated output**, and the scripts that produce and p
 
 ## The three-repo split
 
-| Repo | Owns | Does not own |
-|------|------|--------------|
-| **source repos** (`front-end` monorepo: `app/`, `curriculum/`, `interpreters/`, `content/`; plus `videos` for the English subtitle track) | English strings, the code, publishing English to R2, which locales are actually **served** (`SUPPORTED_LOCALES`) | any translated string |
-| **`i18n`** (this repo) | every translated string, the sync/translate/validate/publish scripts, publishing non-English to R2 | English, translation guidance, what is served |
-| **`translator`** | translation guides, glossaries, per-language style guides, per-content-type how-tos, forum review workflow | any translated output, any code that ships |
+| Repo                                                                                                                                      | Owns                                                                                                             | Does not own                                  |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| **source repos** (`front-end` monorepo: `app/`, `curriculum/`, `interpreters/`, `content/`; plus `videos` for the English subtitle track) | English strings, the code, publishing English to R2, which locales are actually **served** (`SUPPORTED_LOCALES`) | any translated string                         |
+| **`i18n`** (this repo)                                                                                                                    | every translated string, the sync/translate/validate/publish scripts, publishing non-English to R2               | English, translation guidance, what is served |
+| **`translator`**                                                                                                                          | translation guides, glossaries, per-language style guides, per-content-type how-tos, forum review workflow       | any translated output, any code that ships    |
 
 The point of the split is that translation churn no longer generates front-end PRs. A translation
 pass touches this repo and nothing else.
@@ -96,7 +96,7 @@ Read [ENGLISH-SOURCE.md](./ENGLISH-SOURCE.md) first; this is the summary.
   some target locale already holds a translation of it. Bringing a new item in is an explicit
   `--type`/`--slug`, which resolves against English directly. Exclusions are explicit, in
   `corpus.json`, and an entry drops either the whole item or only its **body** (`"scope":
-  "body"`: the page's title and description stay required, counted and published; its body is
+"body"`: the page's title and description stay required, counted and published; its body is
   none of the three and is never published). See `ENGLISH-SOURCE.md`.
 - **Completeness measures against a different number**: every item English exists for, read straight
   from the checkout. "Have you translated everything you started" is satisfiable by starting one
@@ -126,10 +126,10 @@ Read [ENGLISH-SOURCE.md](./ENGLISH-SOURCE.md) first; this is the summary.
 There are two, and they mean different things. Both are defined once in
 `scripts/lib/constants.mjs` and never written as a literal anywhere else.
 
-| | means | who can fix it | publish |
-| --- | --- | --- | --- |
-| **`�`** U+FFFD, `SENTINEL` | not translated yet | a translator | publishes it, counts it as a gap |
-| **`∅`** U+2205, `INAPPLICABLE` | the key is unreachable in this language | nobody, ever | omits the key |
+|                                | means                                   | who can fix it | publish                          |
+| ------------------------------ | --------------------------------------- | -------------- | -------------------------------- |
+| **`�`** U+FFFD, `SENTINEL`     | not translated yet                      | a translator   | publishes it, counts it as a gap |
+| **`∅`** U+2205, `INAPPLICABLE` | the key is unreachable in this language | nobody, ever   | omits the key                    |
 
 ### `∅`, the inapplicable sentinel
 
@@ -214,16 +214,17 @@ means two sets of URLs. CI installs with `pnpm install --frozen-lockfile`, which
 silently updating the lockfile. Note that pnpm passes arguments straight through, so it is
 `pnpm source:checkout --source=videos` with no `--` separator.
 
-| Script | What it does |
-|--------|--------------|
-| `source-checkout.mjs` | Fetches a source repo into `.source/<id>`, shallow and sparse, so local runs have English to read. `--source=<id>` picks which (`front-end` by default, `videos` for the English subtitle track). CI uses `actions/checkout` for the same job and the same destinations. |
-| `source-checkout.mjs --resolve` | Prints the SHA this branch pins with an `English-Ref:` trailer, or `main`. CI uses it to point its `actions/checkout` step at the right English. |
-| `stub.mjs` | Brings every catalog in the corpus to full key parity with English, sentinel-filling anything untranslated and `∅`-filling any plural key the language cannot reach. Existing values are reproduced byte for byte, and an empty object in English stays an empty object. An explicit `--type`/`--slug` seeds an item the corpus does not hold yet. |
-| `validate.mjs` | Key parity (asymmetric: see below), ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the R2 key guard. Stamps on success. An item the locale holds no file for is `miss`, never `ok`: counted per locale and in the footer, unstampable, and blocking only under `--shippable`. Exit 1 on any ERROR in a **production locale** (locales.json `productionTargets`); errors elsewhere are still found, printed and counted, and `--gate=all` holds every locale to the exit code. |
-| `publish.mjs` | Builds the content-hashed artifacts, their pointers and `dist/sync.sh`. Omits every `∅` key from the bytes it writes. Publishes whatever is on `main` and records what is outstanding (remaining `�` sentinels, prose untranslated by one of the three conventions, partial corpora) in the completeness object. Refuses any English R2 key, with no override. `--out-dir=<path>` writes the same tree into a front-end checkout instead, for local dev. |
-| `coverage.mjs` | Per-locale translated / stale / missing / needs-review / sentinel counts, per content type, with `∅` keys reported outside the fraction. A prose page is `done` only when its declared `frontmatterTranslated` fields are actually translated, not merely when its `en_md5` is current. Counts a catalog against ENGLISH's key set, so a key the locale does not hold is reported missing rather than leaving the fraction with the gap inside it. Reports how many English items no locale has begun beside the fraction, so a never-started type is not a bare `0/0`. `--json` for machines. Also reports the two bodies of copy that are still translated in the api repo (see below), so one run answers "is this language complete?" for everything. It reports and never gates: `validate --shippable` is the gate. |
-| `test.mjs` | The assertions guarding logic a mistake in would only surface on R2, above all the exercise family merge and its key order. It also exercises the checks whose failure mode is silence rather than breakage: the R2 key guard, and the `productionTargets` list validate's exit code is scoped to (a missing, empty, non-array or mis-cased list would shrink the gate without anything noticing). Plain `node:assert`, no framework, non-zero exit on failure. `pnpm test`, and part of `pnpm check`. |
-| `verify-renderer.mjs` | Proves this repo's prose pipeline and the front-end's produce identical bytes. Takes the front-end's OWN Markdown, renders it through this repo's publish path, and asserts the hash equals the filename the front-end's generator wrote, across the whole concept corpus. |
+| Script                          | What it does                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `source-checkout.mjs`           | Fetches a source repo into `.source/<id>`, shallow and sparse, so local runs have English to read. `--source=<id>` picks which (`front-end` by default, `videos` for the English subtitle track). CI uses `actions/checkout` for the same job and the same destinations.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `source-checkout.mjs --resolve` | Prints the SHA this branch pins with an `English-Ref:` trailer, or `main`. CI uses it to point its `actions/checkout` step at the right English.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `stub.mjs`                      | Brings every catalog in the corpus to full key parity with English, sentinel-filling anything untranslated and `∅`-filling any plural key the language cannot reach. Existing values are reproduced byte for byte, and an empty object in English stays an empty object. An explicit `--type`/`--slug` seeds an item the corpus does not hold yet.                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `validate.mjs`                  | Key parity (asymmetric: see below), ICU validity, whitespace, placeholder and tag parity, prose frontmatter and structure counts, staleness, and the R2 key guard. Stamps on success. An item the locale holds no file for is `miss`, never `ok`: counted per locale and in the footer, unstampable, and blocking only under `--shippable`. Exit 1 on any ERROR in a **production locale** (locales.json `productionTargets`); errors elsewhere are still found, printed and counted, and `--gate=all` holds every locale to the exit code.                                                                                                                                                                                                                                                                               |
+| `publish.mjs`                   | Builds the content-hashed artifacts, their pointers and `dist/sync.sh`. Omits every `∅` key from the bytes it writes. Publishes whatever is on `main` and records what is outstanding (remaining `�` sentinels, prose untranslated by one of the three conventions, partial corpora) in the completeness object. Refuses any English R2 key, with no override. `--out-dir=<path>` writes the same tree into a front-end checkout instead, for local dev.                                                                                                                                                                                                                                                                                                                                                                  |
+| `no-deletions.mjs`              | Refuses a change that removes a file or key under `locales/` between two refs (`--base`, `--head`), so this repo stays a superset of front-end main and every open front-end PR. `Allow-Deletions:` commit trailer overrides. Run by `no-deletions.yml` on PRs and pushes to main.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `coverage.mjs`                  | Per-locale translated / stale / missing / needs-review / sentinel counts, per content type, with `∅` keys reported outside the fraction. A prose page is `done` only when its declared `frontmatterTranslated` fields are actually translated, not merely when its `en_md5` is current. Counts a catalog against ENGLISH's key set, so a key the locale does not hold is reported missing rather than leaving the fraction with the gap inside it. Reports how many English items no locale has begun beside the fraction, so a never-started type is not a bare `0/0`. `--json` for machines. Also reports the two bodies of copy that are still translated in the api repo (see below), so one run answers "is this language complete?" for everything. It reports and never gates: `validate --shippable` is the gate. |
+| `test.mjs`                      | The assertions guarding logic a mistake in would only surface on R2, above all the exercise family merge and its key order. It also exercises the checks whose failure mode is silence rather than breakage: the R2 key guard, and the `productionTargets` list validate's exit code is scoped to (a missing, empty, non-array or mis-cased list would shrink the gate without anything noticing). Plain `node:assert`, no framework, non-zero exit on failure. `pnpm test`, and part of `pnpm check`.                                                                                                                                                                                                                                                                                                                    |
+| `verify-renderer.mjs`           | Proves this repo's prose pipeline and the front-end's produce identical bytes. Takes the front-end's OWN Markdown, renders it through this repo's publish path, and asserts the hash equals the filename the front-end's generator wrote, across the whole concept corpus.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
 - **`validate` errors block; warnings never do.** ERROR checks are structural facts; WARN checks are
   heuristics that false-positive by design, and judgements only a human can make. Read a warning;
@@ -314,21 +315,21 @@ exact bytes written**. For a catalog the content is `JSON.stringify(parsed)`, so
 cannot move a hash. For a concept page it is the rendered HTML, so the renderer version can, which
 is why it is pinned and recorded.
 
-| Artifact | Path |
-|---|---|
-| App UI catalog | `/static/i18n/app/{locale}/messages-{hash}.json` |
-| Curriculum copy (merged) | `/static/i18n/curriculum/{locale}/messages-{hash}.json` |
-| Badges | `/static/i18n/badges/{locale}/messages-{hash}.json` |
-| Exercise messages | `/static/i18n/exercises/{slug}/{locale}/messages-{hash}.json` |
-| Levels | `/static/i18n/levels/{locale}/messages-{hash}.json` |
-| Interpreters | `/static/i18n/interpreter/{language}/{locale}/messages-{hash}.json` |
-| Concept pages | `/static/concepts/{slug}/{locale}/content-{hash}.html` |
-| Concept copy (index half) | `/static/concepts/{locale}/copy-{hash}.json` |
-| Post copy (index half) | `/static/content/copy/{locale}/copy-{hash}.json` |
-| Exercise prose index | `/static/exercises/{locale}/index-{hash}.json` |
-| Exercise instructions | `/static/exercises/{slug}/{locale}/prose-{hash}.json` |
-| Posts (blog, articles, guides) | `/static/content/{kind}/{slug}/{locale}/content-{hash}.html` |
-| Pointer (beside every artifact) | `.../current.json`, `{ "hash": "..." }` |
+| Artifact                        | Path                                                                |
+| ------------------------------- | ------------------------------------------------------------------- |
+| App UI catalog                  | `/static/i18n/app/{locale}/messages-{hash}.json`                    |
+| Curriculum copy (merged)        | `/static/i18n/curriculum/{locale}/messages-{hash}.json`             |
+| Badges                          | `/static/i18n/badges/{locale}/messages-{hash}.json`                 |
+| Exercise messages               | `/static/i18n/exercises/{slug}/{locale}/messages-{hash}.json`       |
+| Levels                          | `/static/i18n/levels/{locale}/messages-{hash}.json`                 |
+| Interpreters                    | `/static/i18n/interpreter/{language}/{locale}/messages-{hash}.json` |
+| Concept pages                   | `/static/concepts/{slug}/{locale}/content-{hash}.html`              |
+| Concept copy (index half)       | `/static/concepts/{locale}/copy-{hash}.json`                        |
+| Post copy (index half)          | `/static/content/copy/{locale}/copy-{hash}.json`                    |
+| Exercise prose index            | `/static/exercises/{locale}/index-{hash}.json`                      |
+| Exercise instructions           | `/static/exercises/{slug}/{locale}/prose-{hash}.json`               |
+| Posts (blog, articles, guides)  | `/static/content/{kind}/{slug}/{locale}/content-{hash}.html`        |
+| Pointer (beside every artifact) | `.../current.json`, `{ "hash": "..." }`                             |
 
 Bucket `s3://assets`, key prefix `static/`, uploaded with
 `--cache-control 'public, max-age=31536000, immutable' --size-only` (every file is content-hashed,
@@ -341,7 +342,7 @@ so an upload is always an add, never a replace).
 - **It is a hard fail, never a silent skip.** A publish that quietly dropped English would be
   indistinguishable from a successful one.
 - **This replaces credential scoping, which cannot express the rule.** The key that must not be
-  written (`static/i18n/app/en/...`) sits *inside* the prefix this repo legitimately writes
+  written (`static/i18n/app/en/...`) sits _inside_ the prefix this repo legitimately writes
   (`static/i18n/app/`), so no bucket policy can separate them.
 - **It is all that is left of a larger guard, deliberately.** There was a write guard over
   `locales/source/` and a divergence check keeping that mirror honest. With English outside this
@@ -397,10 +398,20 @@ the only place a translator can review it. What incompleteness produces is a **r
 refusal: every gap is written to the completeness object beside the artifacts, and a locale with no
 gaps is `complete`. A run with no artifacts at all exits 0, a green no-op rather than a failure.
 
-**Strictness lives at serving.** The front-end's `PRODUCTION_LOCALES`, gated by
-`app/scripts/verify-locale-completeness.js`, reads that record and fails the build if a production
-locale is not complete. Staging serves everything. A learner never sees a raw key or a replacement
-glyph because production will not serve the locale, not because publishing withheld it.
+**Strictness lives at serving.** The front-end's `PRODUCTION_LOCALES` is gated by
+`app/scripts/verify-locale-completeness.js`, which runs THIS repo's publisher against the front-end
+tree being checked (every PR, and main before every deploy, with `JIKI_SOURCE_REPO` pointed at that
+checkout) and fails if a production locale comes out incomplete. It does not read the R2 record:
+that is generated against front-end main at the last push here, and a PR is not main. The record
+on R2 is a status page for staging. Staging serves everything. A learner never sees a raw key or a
+replacement glyph because production will not serve the locale, not because publishing withheld it.
+
+**So this repo must be a superset of front-end main AND every open front-end PR.** Translation
+lands here before the English merges, and the front-end checks both against what is here. A pass
+that drops keys a PR renamed away makes main incomplete the moment it lands, and every other PR
+and the deploy go red until that PR merges. `no-deletions.yml` refuses any removal under
+`locales/`, on PRs and on pushes to main; `scripts/no-deletions.mjs` explains, and an
+`Allow-Deletions: <why>` commit trailer is the override for the removals that are right.
 
 The R2 key guard is the one thing in `publish` that does refuse, and it has no override.
 
@@ -615,14 +626,14 @@ this script rather than by a third pipeline.
 With `--out-dir` the output directory is **not** wiped first (it is a tree the front-end's own
 generators also write, and wiping it would delete every English artifact), and no `manifest.json`,
 `sync.sh` or upload is produced. The final guard re-walk is also skipped: that tree is full of
-English this repo did not write, and the guard's question is "did *this repo* write English", which
+English this repo did not write, and the guard's question is "did _this repo_ write English", which
 every key already answered at `emit()`.
 
 ## Relationship to the `translator` repo
 
 - **`translator` is the brain and the hands that write; this repo is the hands that check and
-  ship.** `translator` decides *how* to translate and *runs* the translation; this decides *what is
-  out of date*, checks what came back, and ships it.
+  ship.** `translator` decides _how_ to translate and _runs_ the translation; this decides _what is
+  out of date_, checks what came back, and ships it.
 - **The one LLM engine lives in `translator`, not here.** `translator/scripts/translate-via-llm-api`
   drives the deepseek and gemini path and its `/translate-via-fable` command drives the fable path,
   both over a shared `translator/scripts/lib/pass.js`. It lives there because **engine selection is
