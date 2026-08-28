@@ -69,6 +69,7 @@ import {
   itemVerdict,
   proseFieldStatus
 } from "./lib/checks.mjs";
+import { BLOCKING, IGNORED, WARNING, baseReaderFor, classify, itemForSourcePath, parseChanges } from "./have-translations.mjs";
 import { glossaryFiles, keptEnglishTermsIn } from "./lib/kept-english.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 import { localeFileLeaves, railsKnownLocales, railsLocale } from "./lib/api-copy.mjs";
@@ -2406,6 +2407,255 @@ if (!englishRepo("front-end", undefined, { optional: true })) {
     }
   });
 }
+
+// ------------------------------------- the front-end PR translation gate ---
+//
+// scripts/have-translations.mjs answers "does this changed English already have
+// translations", and the front-end's i18n workflow fails a PR on its BLOCKING
+// verdicts. Two things about it are worth guarding.
+//
+// The first is the path inversion. Every other script walks the mapping in
+// content-types.mjs FORWARDS, from an item to a path; this one is the only thing
+// that goes backwards, from a front-end path to (type, slug). If that inversion
+// stops recognising a shape, the gate does not go red: it quietly stops checking
+// that content type and the PR sails through, which is the exact failure this
+// whole check exists to remove. So it is asserted as a round trip over the real
+// registry, and a type added there is covered the day it is added.
+//
+// The second is the boundary between the verdicts, because each one has a
+// different cost. BLOCKING stops a merge, so it must fire only on a hole a
+// learner would actually see. IGNORED must hold for an item corpus.json declares
+// out of scope, or a not-yet-live exercise blocks every front-end PR that touches
+// it. WARNING must NOT escalate, or a one-word English tweak is un-mergeable
+// until ten locales have caught up.
+
+console.log("\nthe front-end PR translation gate:");
+
+test("every content type's source path inverts back to the item it addresses", () => {
+  for (const id of CONTENT_TYPE_IDS) {
+    const type = CONTENT_TYPES[id];
+    // A slug shaped like the type's own depth, so a two-part slug round trips as
+    // two parts rather than being read as one directory that contains a slash.
+    const depth = type.slugDepth === "any" ? 3 : (type.slugDepth ?? 1);
+    const slug = type.slugged ? Array.from({ length: depth }, (_, i) => `seg${i}`).join("/") : null;
+    assert.deepEqual(itemForSourcePath(type.sourceRepoPath(slug)), { type: id, slug }, id);
+  }
+});
+
+test("a depth-1 slug never swallows a directory separator", () => {
+  // `curriculum/src/exercises/<slug>/messages.json` with an extra level in the
+  // middle addresses nothing. Matching it would invent an exercise whose slug is
+  // two directories, and every lookup for it would then miss.
+  assert.equal(itemForSourcePath("curriculum/src/exercises/a/b/messages.json"), null);
+});
+
+test("a front-end path that is not English addresses nothing", () => {
+  assert.equal(itemForSourcePath("curriculum/src/exercises/stars/Exercise.ts"), null);
+  assert.equal(itemForSourcePath("app/components/Foo.tsx"), null);
+});
+
+test("a rename is read as a delete plus an add", () => {
+  // Git reports one line; the gate has to treat it as two facts, so the new slug
+  // is checked for translations and the old one is reported as an orphan.
+  assert.deepEqual(parseChanges("R100\told/messages.json\tnew/messages.json\n"), [
+    { status: "D", path: "old/messages.json" },
+    { status: "A", path: "new/messages.json" }
+  ]);
+  assert.deepEqual(parseChanges("A\tone\nM\ttwo\nD\tthree\n"), [
+    { status: "A", path: "one" },
+    { status: "M", path: "two" },
+    { status: "D", path: "three" }
+  ]);
+});
+
+test("a file that is not English is ignored without ever naming a locale", () => {
+  const finding = classify({ sourcePath: "curriculum/src/exercises/stars/Exercise.ts", status: "M", locale: null });
+  assert.equal(finding.verdict, IGNORED);
+});
+
+// The three classifications, against the real corpus. Each picks a real item
+// rather than a fixture, because the thing being asserted is how this reads
+// THIS repo's own state, and a fixture would assert how it reads a fixture.
+
+const GATE_LOCALE = PRODUCTION_LOCALES[0];
+
+const EXCLUDED_CATALOG = !ENGLISH_CHECKOUT ? null : englishItems("exercise-messages").find((item) => isExcluded("exercise-messages", item.slug));
+
+if (!EXCLUDED_CATALOG) {
+  console.log("  SKIP  an item corpus.json excludes never blocks (no front-end checkout, or nothing is excluded)");
+} else {
+  test("an item corpus.json excludes never blocks", () => {
+    const finding = classify({
+      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(EXCLUDED_CATALOG.slug),
+      status: "M",
+      locale: GATE_LOCALE
+    });
+    assert.equal(finding.verdict, IGNORED, `${EXCLUDED_CATALOG.slug} is excluded and must not block`);
+  });
+}
+
+// An English catalog this locale covers completely: the baseline both remaining
+// assertions are measured against.
+const COVERED_CATALOG = !ENGLISH_CHECKOUT
+  ? null
+  : corpusItems("exercise-messages").find((item) => {
+      const target = localPath("exercise-messages", GATE_LOCALE, item.slug);
+      if (!fs.existsSync(target)) return false;
+      return countAgainstEnglish(readJson(item.path), readJson(target), { locale: GATE_LOCALE }).absent === 0;
+    });
+
+if (!COVERED_CATALOG) {
+  console.log("  SKIP  a modified English file whose translation covers it does not block (no fully covered catalog)");
+  console.log("  SKIP  a key this change adds blocks, while a pre-existing absence only warns (no fully covered catalog)");
+  console.log("  SKIP  a locale holding MORE than English does never blocks (no fully covered catalog)");
+  console.log("  SKIP  an English file deleted with its translations still on disk warns (no fully covered catalog)");
+  console.log("  SKIP  an ADDED file blocks on its whole key set (no fully covered catalog)");
+  console.log("  SKIP  with no base, every absence blocks (no fully covered catalog)");
+} else {
+  test("a modified English file whose translation covers it does not block", () => {
+    const finding = classify({
+      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
+      status: "M",
+      locale: GATE_LOCALE
+    });
+    assert.notEqual(finding.verdict, BLOCKING, `${COVERED_CATALOG.slug} is fully covered in ${GATE_LOCALE}`);
+    // Whether it is `ok` or a staleness WARNING depends on this repo's stamps at
+    // this moment, and either is a pass. What must never happen is an escalation.
+    assert.ok([WARNING, "ok"].includes(finding.verdict), finding.verdict);
+  });
+
+  // What separates a gap this change MADE from a gap it merely touched. Both are
+  // "a key English defines that the locale does not hold"; only the first is the
+  // PR author's to fix, and a gate that blocked on the second would be a debt
+  // collector that gets routed around and then ignored.
+  test("a key this change adds blocks, while a pre-existing absence in the same file only warns", () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "have-translations-"));
+    const english = readJson(COVERED_CATALOG.path);
+
+    // TWO absences in one English file. The base already defined `oldGap`, so the
+    // locale has been missing it all along; `newGap` arrives with this change.
+    const withBoth = path.join(dir, "head.json");
+    fs.writeFileSync(withBoth, JSON.stringify({ ...english, oldGap: "Older English.", newGap: "New English." }));
+    const base = JSON.stringify({ ...english, oldGap: "Older English." });
+
+    const blocked = classify({
+      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
+      status: "M",
+      locale: GATE_LOCALE,
+      resolveEnglish: () => withBoth,
+      readBase: () => base
+    });
+    assert.equal(blocked.verdict, BLOCKING);
+    assert.match(blocked.reason, /^1 key\(s\) this change ADDS are absent/);
+    // The pre-existing one is still SAID, in the same line. Blocking on it would
+    // be wrong; hiding it would mean nobody ever learns the gap is there.
+    assert.match(blocked.reason, /1 more were already absent before it/);
+
+    // The same file with only the pre-existing gap: a warning, and never a block.
+    const withOldOnly = path.join(dir, "old-only.json");
+    fs.writeFileSync(withOldOnly, base);
+    const warned = classify({
+      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
+      status: "M",
+      locale: GATE_LOCALE,
+      resolveEnglish: () => withOldOnly,
+      readBase: () => base
+    });
+    assert.equal(warned.verdict, WARNING);
+    assert.match(warned.reason, /were ALREADY absent from this locale before this change/);
+  });
+
+  // "Excess is never an error; absence always is" is this repo's governing
+  // invariant, and a new gate is exactly where it would get broken. Translations
+  // reach R2 BEFORE the front-end merges, so a locale holding more than English
+  // does is the ordinary steady state during a deploy overlap: English caught up
+  // with it a moment later, or dropped a key the locale has not pruned yet.
+  // Neither is a hole, and neither may ever stop a merge.
+  test("a locale holding MORE than English does never blocks", () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "have-translations-"));
+    const full = readJson(COVERED_CATALOG.path);
+
+    // English with one key REMOVED, so the locale now holds a key English does
+    // not define. Nothing is absent, so nothing is blocking.
+    const keys = Object.keys(full);
+    const trimmed = { ...full };
+    delete trimmed[keys[keys.length - 1]];
+    const english = path.join(dir, "trimmed.json");
+    fs.writeFileSync(english, JSON.stringify(trimmed));
+
+    const finding = classify({
+      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
+      status: "M",
+      locale: GATE_LOCALE,
+      resolveEnglish: () => english,
+      readBase: () => JSON.stringify(full)
+    });
+    assert.notEqual(finding.verdict, BLOCKING, "a key English no longer defines is not this PR's problem");
+  });
+
+  test("an English file deleted with its translations still on disk warns, never blocks", () => {
+    // The other shape of excess: the item is gone from English and ten locales
+    // still hold a file for it. Tidy-up, and the same non-error the invariant
+    // says it is.
+    const finding = classify({
+      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
+      status: "D",
+      locale: GATE_LOCALE
+    });
+    assert.equal(finding.verdict, WARNING);
+    assert.match(finding.reason, /orphaned/);
+  });
+
+  test("an ADDED file blocks on its whole key set, base or no base", () => {
+    // Nothing to be pre-existing about: the file did not exist at the base. The
+    // base reader must not be consulted at all, so this one returns bytes that
+    // would excuse the gap if it were.
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "have-translations-"));
+    const doctored = path.join(dir, "added.json");
+    const english = { ...readJson(COVERED_CATALOG.path), brandNewKey: "New English." };
+    fs.writeFileSync(doctored, JSON.stringify(english));
+
+    const finding = classify({
+      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
+      status: "A",
+      locale: GATE_LOCALE,
+      resolveEnglish: () => doctored,
+      readBase: () => JSON.stringify(english)
+    });
+    assert.equal(finding.verdict, BLOCKING);
+  });
+
+  test("with no base, every absence blocks", () => {
+    // The blunt-but-safe fallback: a caller that has not said what the change is
+    // measured against gets the old behaviour, where any absence is a hole.
+    const doctored = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "have-translations-")), "messages.json");
+    fs.writeFileSync(doctored, JSON.stringify({ ...readJson(COVERED_CATALOG.path), aKeyNoLocaleHolds: "New English." }));
+
+    const finding = classify({
+      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
+      status: "M",
+      locale: GATE_LOCALE,
+      resolveEnglish: () => doctored
+    });
+    assert.equal(finding.verdict, BLOCKING);
+    assert.match(finding.reason, /1 of \d+ key\(s\)/);
+  });
+}
+
+test("the base reader answers from the checkout's history, and null for a path that was not there", () => {
+  // `git show <base>:<path>` rather than a second checkout: the caller's file
+  // list came from a diff between these commits in this repo, so the blobs are
+  // necessarily here, and reading them from anywhere else could answer against a
+  // different commit from the one the diff used.
+  if (!ENGLISH_CHECKOUT) {
+    console.log("  SKIP  (no front-end checkout)");
+    return;
+  }
+  const head = execFileSync("git", ["rev-parse", "HEAD"], { cwd: ENGLISH_CHECKOUT, encoding: "utf8" }).trim();
+  const read = baseReaderFor(head, { repo: ENGLISH_CHECKOUT });
+  assert.equal(typeof read("app-messages", "app/messages.json"), "string");
+  assert.equal(read("app-messages", "app/no-such-file-here.json"), null);
+});
 
 // ------------------------------------------------------------------- result
 
