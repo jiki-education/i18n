@@ -721,6 +721,65 @@ if (!extraKeyLocale) {
   });
 }
 
+// ------------------------------------- a MISSING catalog is a counted gap --
+
+// The completeness record is what the front-end's verify-locale-completeness.js
+// gates a production deploy on, and for a long time it could not see a catalog
+// that was not there. Every other check over the slugged catalogs runs inside a
+// loop over what the LOCALE holds, so an absent file is visited by nothing and
+// costs nothing. The corpus loop in publish.mjs counts them against ENGLISH
+// instead, which is the only way an absence has a denominator to be absent from.
+//
+// Asserted end to end, for the same reason the extra-key test above is: the
+// counting lives in a separate script with its own gaps machinery, and reading
+// the loop proves nothing about what reaches completeness.json.
+//
+// The catalog is moved aside and restored in a finally, so the tree is the same
+// after this runs as before it.
+
+const catalogBiteLocale = PUBLISH_CHECKOUT
+  ? PRODUCTION_LOCALES.find((locale) => listItems("exercise-messages", locale).length > 0)
+  : null;
+
+if (!catalogBiteLocale) {
+  console.log(
+    PUBLISH_CHECKOUT
+      ? "  SKIP  a missing exercise catalog is counted against English (no locale holds one)"
+      : "  SKIP  a missing exercise catalog is counted against English (no front-end checkout)"
+  );
+} else {
+  test("a missing exercise catalog is counted against English, not silently ignored", () => {
+    const locale = catalogBiteLocale;
+    const expected = englishCorpusSize("exercise-messages");
+    const held = listItems("exercise-messages", locale);
+    const victim = held[0].path;
+    const hidden = `${victim}.hidden-by-test`;
+
+    const out = fs.mkdtempSync(path.join(os.tmpdir(), "jiki-publish-missing-catalog-"));
+    fs.renameSync(victim, hidden);
+    try {
+      const run = spawnSync(process.execPath, [path.join(REPO_ROOT, "scripts", "publish.mjs"), locale, `--out-dir=${out}`], {
+        cwd: REPO_ROOT,
+        encoding: "utf8"
+      });
+      if (run.status !== 0 && /content-renderer/.test(`${run.stdout}${run.stderr}`)) {
+        console.log("  (renderer not installed; publish could not run)");
+        return;
+      }
+      assert.equal(run.status, 0, `publish ${locale} exited ${run.status}: ${run.stderr}`);
+
+      const record = readJson(path.join(out, "static", "i18n", "completeness.json"));
+      const gap = record.locales[locale].gaps.find((entry) => entry.type === "exercise-messages");
+      assert.ok(gap, `${locale} published as if nothing were missing after ${path.basename(path.dirname(victim))}'s catalog was removed`);
+      assert.equal(gap.detail, `${held.length - 1} of ${expected} present`);
+      assert.equal(record.locales[locale].complete, false);
+    } finally {
+      fs.renameSync(hidden, victim);
+      fs.rmSync(out, { recursive: true, force: true });
+    }
+  });
+}
+
 // ---------------------------------------------------- the inapplicable key
 
 // `∅` marks a key the language can never reach. Getting the reachable set wrong
@@ -2167,6 +2226,49 @@ test("a field ENGLISH leaves blank is nothing to translate, not an unfinished tr
     FIELDS_COMPLETE
   );
 });
+
+// An unshipped interpreter language is excluded WHOLE, and the shipped one is
+// not. The pairing is the whole of the entry: excluding too much silently stops
+// counting javascript, which every production locale translates and every learner
+// reads today, and excluding too little holds all ten locales incomplete over two
+// catalogs nobody can reach. Both directions are one line away from each other in
+// corpus.json, so both are asserted.
+//
+// Gated on a checkout because the English side is what makes the count mean
+// anything, and skipped rather than silently passed without one.
+
+const INTERPRETER_TYPE = "interpreter-messages";
+
+test("the shipped interpreter is in the corpus and the unshipped ones are wholly out", () => {
+  assert.equal(exclusionScope(INTERPRETER_TYPE, "javascript"), null, "javascript is the language Jiki ships");
+  for (const slug of ["jikiscript", "python"]) {
+    assert.equal(exclusionScope(INTERPRETER_TYPE, slug), SCOPE_ITEM, `${slug} is not selectable, so its catalog is out whole`);
+  }
+  // A catalog is all insides. A `body` scope on one would silently do nothing.
+  assert.equal(bodyExcludedCount(INTERPRETER_TYPE), 0);
+});
+
+if (!englishRepo("front-end", undefined, { optional: true })) {
+  console.log("  SKIP  an excluded interpreter contributes no completeness gap (no front-end checkout)");
+} else {
+  test("an excluded interpreter contributes no completeness gap", () => {
+    // The denominator publish.mjs counts every locale against. English has three
+    // interpreter catalogs and two of them are excluded, so a locale holding
+    // javascript alone is whole rather than one third done.
+    assert.equal(englishItems(INTERPRETER_TYPE).length, englishCorpusSize(INTERPRETER_TYPE) + 2);
+    for (const locale of PRODUCTION_LOCALES) {
+      const present = listItems(INTERPRETER_TYPE, locale).length;
+      assert.ok(
+        present >= englishCorpusSize(INTERPRETER_TYPE),
+        `${locale} holds ${present} interpreter catalog(s) of ${englishCorpusSize(INTERPRETER_TYPE)} expected`
+      );
+      assert.ok(
+        !listItems(INTERPRETER_TYPE, locale).some((item) => item.slug !== "javascript"),
+        `${locale} lists an excluded interpreter: an exclusion must bind on the locale side too`
+      );
+    }
+  });
+}
 
 // ------------------------------------------------------------------- result
 

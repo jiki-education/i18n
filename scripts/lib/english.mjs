@@ -36,7 +36,13 @@ export const SOURCE_REPOS = {
     remote: "jiki-education/front-end",
     env: "JIKI_SOURCE_REPO",
     sibling: "front-end",
-    dirs: ["app/messages.json", "curriculum/src", "interpreters/src", "content/src"],
+    // `content/images` holds no English STRING, and is here anyway: a post's
+    // `/images/...` reference is resolved to a fingerprinted URL against the real
+    // file, and prose.mjs treats a reference it cannot resolve as a hard error
+    // rather than a broken image on a published page. Without it a local
+    // `publish.mjs all` dies partway through the first locale whose posts carry an
+    // image. CI never hit it, because its actions/checkout step is not sparse.
+    dirs: ["app/messages.json", "curriculum/src", "interpreters/src", "content/src", "content/images"],
     probe: () => CONTENT_TYPES["app-messages"].sourceRepoPath()
   },
   videos: {
