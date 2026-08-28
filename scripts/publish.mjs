@@ -435,7 +435,15 @@ async function publishLocale(locale, { exportSources }) {
 
   // --- exercise message catalogs, one artifact per exercise -----------------
   manifest.exercises = {};
-  for (const { slug, catalog } of exerciseCatalogs(locale)) {
+  const exercises = exerciseCatalogs(locale);
+  if (exercises.unmerged.length > 0) {
+    console.log(
+      `  WARN ${locale} holds ${exercises.unmerged.length} exercise catalog(s) with no English directory in the ` +
+        `front-end checkout (${exercises.unmerged.join(", ")}). Published unmerged, as standalone exercises. ` +
+        `Normal while a translation runs ahead of its front-end PR; a rename or a deletion if it persists.`
+    );
+  }
+  for (const { slug, catalog } of exercises.catalogs) {
     countSentinels(gaps, "exercise-messages", `${locale} exercise catalog ${slug}`, catalog);
     manifest.exercises[slug] = emit(artifacts, (hash) => CONTENT_TYPES["exercise-messages"].r2(locale, slug, hash), catalog);
   }
@@ -703,18 +711,39 @@ function exerciseCatalogs(locale) {
   );
   const own = new Map(listItems("exercise-messages", locale).map((item) => [item.slug, readJson(item.path)]));
 
-  // An exercise this locale holds that English has no directory for is a HARD
-  // FAIL rather than an unmerged publish: a catalog missing its inherited keys
-  // renders raw key names like `errors.hitWall` to a learner, and on R2 it would
-  // look exactly like a good one.
-  const unknown = [...own.keys()].filter((slug) => !(slug in families));
-  if (unknown.length > 0) {
-    fail(
-      `no exercise directory in the front-end checkout for ${unknown.length} exercise(s) (first: ${unknown[0]}). ` +
-        `Publishing them would under-merge any exercise-category base catalog. ` +
-        `Check the checkout is at the right commit, or that the exercise has not been renamed.`
-    );
-  }
+  // An exercise this locale holds that English has no directory for is REPORTED
+  // and published, never refused.
+  //
+  // The invariant this repo runs on is that having too much is never the
+  // failure; having too little is. Translation deliberately runs AHEAD of
+  // English merging, because the objective is that the translations are already
+  // on R2 at the moment a front-end PR merges and deploys. The front-end's
+  // i18n-queue points the translator at a PR's head SHA rather than at main, so
+  // i18n main routinely and correctly holds translations for English that is
+  // still sitting on an unmerged branch. Refusing to publish those is refusing
+  // to do the one thing this repo exists to do, and it takes the whole bucket
+  // down with it: one un-merged exercise stopped every locale's publish.
+  //
+  // So the exercise is published from the locale's own catalog, with its family
+  // treated as standalone (`null` below, which is what deriveFamily already
+  // returns for an exercise that imports no exercise-category). That is the one
+  // judgement here, and it is safe for a reason outside this file: an exercise
+  // never JOINS an exercise-category between being translated and being merged.
+  // Its category membership is decided when it is written, so an exercise whose
+  // English is not here yet either had no category when it was translated and
+  // still has none, or had one, in which case the translator translated the
+  // family base catalog too and the member's own catalog is what it always was.
+  // The under-merge this used to guard against needs a slug to have gained a
+  // category in the window, which does not happen.
+  //
+  // Being wrong about that costs a learner some raw key names in one exercise
+  // for as long as the English takes to merge, after which the directory exists
+  // and the next publish merges it properly. Being wrong the other way costs
+  // every locale every artifact. The warning names the slugs so the case that is
+  // NOT the ahead-of-merge one (a renamed or deleted exercise leaving a
+  // translation behind) is visible to a human rather than silently tolerated.
+  const unknown = [...own.keys()].filter((slug) => !(slug in families)).sort();
+  for (const slug of unknown) families[slug] = null;
 
   const bases = new Map();
   const baseFor = (family) => {
@@ -725,7 +754,7 @@ function exerciseCatalogs(locale) {
     return bases.get(family);
   };
 
-  return mergeExerciseCatalogs({ families, own, baseFor });
+  return { catalogs: mergeExerciseCatalogs({ families, own, baseFor }), unmerged: unknown };
 }
 
 async function main() {
