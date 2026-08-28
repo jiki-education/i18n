@@ -1,0 +1,60 @@
+# Nothing under locales/ is ever removed by a translation change.
+#
+# Translation runs ahead of English merging, and the front-end checks each of
+# its PRs, and main before every deploy, against what this repo holds. So this
+# repo has to be a superset of the English on front-end main and on every open
+# front-end PR at once. A pass that drops keys a PR renamed away makes main
+# incomplete the moment it lands, and every other PR and the deploy go red until
+# that one PR merges. Excess is never an error here, so the rule is cheap: add
+# and update, never delete. scripts/no-deletions.mjs has the full reasoning and
+# the `Allow-Deletions:` trailer for the removals that are right.
+#
+# On a PR the range is merge base to head. On a push to main it is the push
+# itself (`before`..`after`), because passes commit straight to main and a rule
+# that only PRs can see would have missed the very change it exists for. A red
+# main here is a real regression and is fixed by putting the keys back.
+
+name: No deletions
+
+on:
+  pull_request:
+    paths:
+      - "locales/**"
+      - ".github/workflows/no-deletions.yml"
+      - "scripts/no-deletions.mjs"
+  push:
+    branches: [main]
+    paths:
+      - "locales/**"
+      - ".github/workflows/no-deletions.yml"
+      - "scripts/no-deletions.mjs"
+
+jobs:
+  no-deletions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check nothing was removed
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          if [ -n "$BASE_REF" ]; then
+            git fetch --no-tags --quiet origin "+refs/heads/$BASE_REF:refs/remotes/origin/$BASE_REF"
+            BASE=$(git merge-base "origin/$BASE_REF" HEAD)
+          elif [ -n "$BEFORE" ] && [ "$BEFORE" != "0000000000000000000000000000000000000000" ]; then
+            BASE="$BEFORE"
+          else
+            echo "No base to compare against (new branch); nothing to check."
+            exit 0
+          fi
+          node scripts/no-deletions.mjs --base="$BASE" --head=HEAD

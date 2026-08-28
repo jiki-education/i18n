@@ -15,9 +15,29 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { execFileSync, spawnSync } from "node:child_process";
-import { INAPPLICABLE, PRODUCTION_LOCALES, REPO_ROOT, SENTINEL, TARGET_LOCALES, productionLocaleIssue } from "./lib/constants.mjs";
-import { CONTENT_TYPES, CONTENT_TYPE_IDS, POST_TYPE_IDS, listItems, localPath } from "./lib/content-types.mjs";
-import { corpusItems, englishCorpusSize, englishItems, englishPath, englishRepo, unstartedItems } from "./lib/english.mjs";
+import {
+  INAPPLICABLE,
+  PRODUCTION_LOCALES,
+  REPO_ROOT,
+  SENTINEL,
+  TARGET_LOCALES,
+  productionLocaleIssue,
+} from "./lib/constants.mjs";
+import {
+  CONTENT_TYPES,
+  CONTENT_TYPE_IDS,
+  POST_TYPE_IDS,
+  listItems,
+  localPath,
+} from "./lib/content-types.mjs";
+import {
+  corpusItems,
+  englishCorpusSize,
+  englishItems,
+  englishPath,
+  englishRepo,
+  unstartedItems,
+} from "./lib/english.mjs";
 import {
   SCOPE_BODY,
   SCOPE_ITEM,
@@ -25,11 +45,15 @@ import {
   excludedCount,
   exclusionScope,
   isBodyExcluded,
-  isExcluded
+  isExcluded,
 } from "./lib/exclusions.mjs";
 import { pct } from "./coverage.mjs";
 import { buildPostCopy } from "./lib/post-copy.mjs";
-import { isUnreachablePluralKey, parsePluralKey, reachableCategories } from "./lib/plurals.mjs";
+import {
+  isUnreachablePluralKey,
+  parsePluralKey,
+  reachableCategories,
+} from "./lib/plurals.mjs";
 import { deepMerge, mergeExerciseCatalogs } from "./lib/families.mjs";
 import {
   arrayPaths,
@@ -49,7 +73,7 @@ import {
   stubAgainst,
   unflatten,
   vttBody,
-  vttTimestamps
+  vttTimestamps,
 } from "./lib/files.mjs";
 import {
   ERROR,
@@ -67,12 +91,16 @@ import {
   isCopiedEnglish,
   isUntranslatedFrontmatter,
   itemVerdict,
-  proseFieldStatus
+  proseFieldStatus,
 } from "./lib/checks.mjs";
-import { BLOCKING, IGNORED, WARNING, baseReaderFor, classify, itemForSourcePath, parseChanges } from "./have-translations.mjs";
+import { findDeletions, flattenKeys, missingKeys } from "./no-deletions.mjs";
 import { glossaryFiles, keptEnglishTermsIn } from "./lib/kept-english.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
-import { localeFileLeaves, railsKnownLocales, railsLocale } from "./lib/api-copy.mjs";
+import {
+  localeFileLeaves,
+  railsKnownLocales,
+  railsLocale,
+} from "./lib/api-copy.mjs";
 import { diffFindings, findingId } from "./validate.mjs";
 
 let failures = 0;
@@ -83,7 +111,9 @@ function test(name, fn) {
     console.log(`  ok    ${name}`);
   } catch (error) {
     failures += 1;
-    console.log(`  FAIL  ${name}\n        ${error.message.split("\n").join("\n        ")}`);
+    console.log(
+      `  FAIL  ${name}\n        ${error.message.split("\n").join("\n        ")}`,
+    );
   }
 }
 
@@ -95,29 +125,53 @@ function test(name, fn) {
 // failures are silent, and both make the check worthless in the same way the
 // absolute count already was, so they are asserted here rather than trusted.
 
-const finding = (over) => ({ locale: "hu", typeId: "exercise-instructions", slug: "after-party", message: "missing key: a", ...over });
+const finding = (over) => ({
+  locale: "hu",
+  typeId: "exercise-instructions",
+  slug: "after-party",
+  message: "missing key: a",
+  ...over,
+});
 
 const id = (over) => findingId(finding(over));
 
 test("a staleness finding is one error however the two hashes are rewritten", () => {
-  const before = id({ message: "stale: en_md5 is 622d23b4488d6bc76957579a7a5e8993, the English source is now c31c0988af324530b986262f47d9a745" });
-  const after = id({ message: "stale: en_md5 is c31c0988af324530b986262f47d9a745, the English source is now 0000000000000000000000000000aaaa" });
-  assert.equal(before, after, "re-hashing English must not read as a fresh defect on every item at once");
+  const before = id({
+    message:
+      "stale: en_md5 is 622d23b4488d6bc76957579a7a5e8993, the English source is now c31c0988af324530b986262f47d9a745",
+  });
+  const after = id({
+    message:
+      "stale: en_md5 is c31c0988af324530b986262f47d9a745, the English source is now 0000000000000000000000000000aaaa",
+  });
+  assert.equal(
+    before,
+    after,
+    "re-hashing English must not read as a fresh defect on every item at once",
+  );
 });
 
 test("a count is a value, so the same mismatch at a different size is the same error", () => {
-  assert.equal(id({ message: "cue count: 12 in the translation, 13 in English" }), id({ message: "cue count: 4 in the translation, 5 in English" }));
+  assert.equal(
+    id({ message: "cue count: 12 in the translation, 13 in English" }),
+    id({ message: "cue count: 4 in the translation, 5 in English" }),
+  );
 });
 
 test("a digit INSIDE an identifier is part of the name, not a count", () => {
-  assert.notEqual(id({ message: "missing key: tags.item1" }), id({ message: "missing key: tags.item2" }));
+  assert.notEqual(
+    id({ message: "missing key: tags.item1" }),
+    id({ message: "missing key: tags.item2" }),
+  );
 });
 
 test("the trailing parenthetical is detail, and it carries the cwd-relative path", () => {
   assert.equal(
     id({ message: "not translated (no file at locales/hu/x.md)" }),
-    id({ message: "not translated (no file at /tmp/baseline/locales/hu/x.md)" }),
-    "the two runs are two checkouts, so the same absence is spelled two ways"
+    id({
+      message: "not translated (no file at /tmp/baseline/locales/hu/x.md)",
+    }),
+    "the two runs are two checkouts, so the same absence is spelled two ways",
   );
 });
 
@@ -128,30 +182,74 @@ test("the same message about a different item is a different error", () => {
 });
 
 test("an error on both sides is pre-existing, one only at the head is introduced", () => {
-  const shared = { id: "a", locale: "hu", typeId: "concept", slug: "arrays", message: "missing key: a", production: true };
+  const shared = {
+    id: "a",
+    locale: "hu",
+    typeId: "concept",
+    slug: "arrays",
+    message: "missing key: a",
+    production: true,
+  };
   const fresh = { ...shared, id: "b", message: "missing key: b" };
-  const { introduced, preExisting, fixed } = diffFindings([shared], [shared, fresh]);
-  assert.deepEqual(introduced.map((each) => each.id), ["b"]);
-  assert.deepEqual(preExisting.map((each) => each.id), ["a"]);
+  const { introduced, preExisting, fixed } = diffFindings(
+    [shared],
+    [shared, fresh],
+  );
+  assert.deepEqual(
+    introduced.map((each) => each.id),
+    ["b"],
+  );
+  assert.deepEqual(
+    preExisting.map((each) => each.id),
+    ["a"],
+  );
   assert.deepEqual(fixed, []);
 });
 
 test("an error only at the base is a FIX, so a branch that repairs something can see that it did", () => {
-  const gone = { id: "a", locale: "hu", typeId: "concept", slug: "arrays", message: "missing key: a", production: true };
+  const gone = {
+    id: "a",
+    locale: "hu",
+    typeId: "concept",
+    slug: "arrays",
+    message: "missing key: a",
+    production: true,
+  };
   const { introduced, fixed } = diffFindings([gone], []);
   assert.deepEqual(introduced, []);
-  assert.deepEqual(fixed.map((each) => each.id), ["a"]);
+  assert.deepEqual(
+    fixed.map((each) => each.id),
+    ["a"],
+  );
 });
 
 test("going from one occurrence to two is a regression, which is why the difference is a MULTISET", () => {
-  const one = { id: "a", locale: "hu", typeId: "concept", slug: "arrays", message: "x", production: true };
+  const one = {
+    id: "a",
+    locale: "hu",
+    typeId: "concept",
+    slug: "arrays",
+    message: "x",
+    production: true,
+  };
   const { introduced, preExisting } = diffFindings([one], [one, one]);
-  assert.equal(introduced.length, 1, "a set would call the second occurrence pre-existing and let it through");
+  assert.equal(
+    introduced.length,
+    1,
+    "a set would call the second occurrence pre-existing and let it through",
+  );
   assert.equal(preExisting.length, 1);
 });
 
 test("going from two occurrences to one is one fix, not one fix and one new error", () => {
-  const one = { id: "a", locale: "hu", typeId: "concept", slug: "arrays", message: "x", production: true };
+  const one = {
+    id: "a",
+    locale: "hu",
+    typeId: "concept",
+    slug: "arrays",
+    message: "x",
+    production: true,
+  };
   const { introduced, preExisting, fixed } = diffFindings([one, one], [one]);
   assert.deepEqual(introduced, []);
   assert.equal(preExisting.length, 1);
@@ -167,22 +265,32 @@ test("going from two occurrences to one is one fix, not one fix and one new erro
 // pre-existing FAILS the absolute gate and PASSES the baseline one. Gated on an
 // English checkout, and on a clean working tree, because a dirty one legitimately
 // differs from its own merge base and the run would then be reporting real work.
-const BASELINE_CHECKOUT = englishRepo("front-end", undefined, { optional: true });
+const BASELINE_CHECKOUT = englishRepo("front-end", undefined, {
+  optional: true,
+});
 const treeIsClean =
-  execFileSync("git", ["status", "--porcelain", "--", "locales", "corpus.json", "locales.json"], { cwd: REPO_ROOT, encoding: "utf8" }).trim() === "";
+  execFileSync(
+    "git",
+    ["status", "--porcelain", "--", "locales", "corpus.json", "locales.json"],
+    { cwd: REPO_ROOT, encoding: "utf8" },
+  ).trim() === "";
 
 const runValidateCli = (args) =>
-  spawnSync(process.execPath, [path.join(REPO_ROOT, "scripts", "validate.mjs"), ...args], {
-    cwd: REPO_ROOT,
-    encoding: "utf8",
-    maxBuffer: 256 * 1024 * 1024
-  });
+  spawnSync(
+    process.execPath,
+    [path.join(REPO_ROOT, "scripts", "validate.mjs"), ...args],
+    {
+      cwd: REPO_ROOT,
+      encoding: "utf8",
+      maxBuffer: 256 * 1024 * 1024,
+    },
+  );
 
 if (!BASELINE_CHECKOUT || !treeIsClean) {
   console.log(
     BASELINE_CHECKOUT
       ? "  SKIP  a pre-existing error fails the absolute gate and passes the baseline gate (working tree is dirty)"
-      : "  SKIP  a pre-existing error fails the absolute gate and passes the baseline gate (no front-end checkout)"
+      : "  SKIP  a pre-existing error fails the absolute gate and passes the baseline gate (no front-end checkout)",
   );
 } else {
   test("a pre-existing error fails the absolute gate and passes the baseline gate", () => {
@@ -192,14 +300,26 @@ if (!BASELINE_CHECKOUT || !treeIsClean) {
       // hu has stale instructions as this is written. If somebody has since
       // cleared them the premise is gone, and a test that quietly asserts
       // nothing is worse than one that says so.
-      console.log(`  (nothing pre-existing in ${scope.join(" ")} any more; the comparison has no content)`);
+      console.log(
+        `  (nothing pre-existing in ${scope.join(" ")} any more; the comparison has no content)`,
+      );
       return;
     }
 
     const relative = runValidateCli([...scope, "--baseline-ref=HEAD"]);
-    assert.equal(relative.status, 0, `the baseline run should pass on pre-existing errors alone:\n${relative.stdout.split("\n").slice(-20).join("\n")}`);
-    assert.match(relative.stdout, /baseline: this branch introduces no new errors\./);
-    assert.match(relative.stdout, /pre-existing errors?, printed in full above and NOT gating this run/);
+    assert.equal(
+      relative.status,
+      0,
+      `the baseline run should pass on pre-existing errors alone:\n${relative.stdout.split("\n").slice(-20).join("\n")}`,
+    );
+    assert.match(
+      relative.stdout,
+      /baseline: this branch introduces no new errors\./,
+    );
+    assert.match(
+      relative.stdout,
+      /pre-existing errors?, printed in full above and NOT gating this run/,
+    );
   });
 }
 
@@ -218,7 +338,10 @@ test("the exercise wins over its family on a colliding leaf", () => {
 });
 
 test("nested objects merge rather than replace", () => {
-  assert.deepEqual(deepMerge({ d: { x: "1", y: "2" } }, { d: { y: "own", z: "3" } }), { d: { x: "1", y: "own", z: "3" } });
+  assert.deepEqual(
+    deepMerge({ d: { x: "1", y: "2" } }, { d: { y: "own", z: "3" } }),
+    { d: { x: "1", y: "own", z: "3" } },
+  );
 });
 
 test("a non-object override replaces an object wholesale", () => {
@@ -232,45 +355,79 @@ test("arrays replace, they never concatenate", () => {
 test("a shared key keeps the family's position; a new key is appended", () => {
   // Insertion order is the whole point: JSON.stringify serialises in it, and the
   // hash is taken over those bytes.
-  const merged = deepMerge({ errors: {}, describers: {} }, { describers: {}, checks: {} });
+  const merged = deepMerge(
+    { errors: {}, describers: {} },
+    { describers: {}, checks: {} },
+  );
   assert.deepEqual(Object.keys(merged), ["errors", "describers", "checks"]);
 });
 
 test("the merged bytes hash the way the front-end hashes them", () => {
   // A frozen expectation over a fixed input. If the merge, the serialisation or
   // the hash changes, this moves, and so would every published family exercise.
-  const merged = deepMerge({ errors: { hitWall: "base" }, describers: { canMove: "base" } }, { describers: { canMove: "own" } });
-  assert.equal(JSON.stringify(merged), '{"errors":{"hitWall":"base"},"describers":{"canMove":"own"}}');
+  const merged = deepMerge(
+    { errors: { hitWall: "base" }, describers: { canMove: "base" } },
+    { describers: { canMove: "own" } },
+  );
+  assert.equal(
+    JSON.stringify(merged),
+    '{"errors":{"hitWall":"base"},"describers":{"canMove":"own"}}',
+  );
   assert.equal(contentHash(JSON.stringify(merged)), "5a0f0b44665b");
 });
 
 console.log("\nexercise catalog selection:");
 
-const families = { "maze-walk": "maze", "maze-turn-around": "maze", "bouncer-dress-code": null };
+const families = {
+  "maze-walk": "maze",
+  "maze-turn-around": "maze",
+  "bouncer-dress-code": null,
+};
 const mazeBase = { errors: { hitWall: "base" } };
 
 test("a member with no catalog of its own is still published from its family's", () => {
-  const merged = mergeExerciseCatalogs({ families, own: new Map(), baseFor: () => mazeBase });
-  assert.deepEqual(merged.map((entry) => entry.slug), ["maze-turn-around", "maze-walk"]);
+  const merged = mergeExerciseCatalogs({
+    families,
+    own: new Map(),
+    baseFor: () => mazeBase,
+  });
+  assert.deepEqual(
+    merged.map((entry) => entry.slug),
+    ["maze-turn-around", "maze-walk"],
+  );
   assert.deepEqual(merged[0].catalog, mazeBase);
 });
 
 test("a standalone exercise is published unmerged", () => {
   const own = new Map([["bouncer-dress-code", { checks: { ok: "hu" } }]]);
   const merged = mergeExerciseCatalogs({ families, own, baseFor: () => null });
-  assert.deepEqual(merged, [{ slug: "bouncer-dress-code", catalog: { checks: { ok: "hu" } } }]);
+  assert.deepEqual(merged, [
+    { slug: "bouncer-dress-code", catalog: { checks: { ok: "hu" } } },
+  ]);
 });
 
 test("a member whose family has nothing in this locale publishes its own", () => {
   const own = new Map([["maze-walk", { checks: { ok: "hu" } }]]);
   const merged = mergeExerciseCatalogs({ families, own, baseFor: () => null });
-  assert.deepEqual(merged, [{ slug: "maze-walk", catalog: { checks: { ok: "hu" } } }]);
+  assert.deepEqual(merged, [
+    { slug: "maze-walk", catalog: { checks: { ok: "hu" } } },
+  ]);
 });
 
 test("the published set is the union of both sides, sorted", () => {
-  const own = new Map([["bouncer-dress-code", {}], ["maze-walk", {}]]);
-  const merged = mergeExerciseCatalogs({ families, own, baseFor: () => mazeBase });
-  assert.deepEqual(merged.map((entry) => entry.slug), ["bouncer-dress-code", "maze-turn-around", "maze-walk"]);
+  const own = new Map([
+    ["bouncer-dress-code", {}],
+    ["maze-walk", {}],
+  ]);
+  const merged = mergeExerciseCatalogs({
+    families,
+    own,
+    baseFor: () => mazeBase,
+  });
+  assert.deepEqual(
+    merged.map((entry) => entry.slug),
+    ["bouncer-dress-code", "maze-turn-around", "maze-walk"],
+  );
 });
 
 test("an exercise English has no directory for still publishes, from its own catalog", () => {
@@ -280,11 +437,21 @@ test("an exercise English has no directory for still publishes, from its own cat
   // is what the merge then does with it. The artifact is EMITTED, because skipping
   // it would be exactly the missing content the invariant exists to prevent.
   const ahead = { ...families, "sign-words": null };
-  const own = new Map([["sign-words", { tasks: { signWords: { name: "Aláírás" } } }]]);
-  const merged = mergeExerciseCatalogs({ families: ahead, own, baseFor: () => null });
-  assert.deepEqual(merged, [{ slug: "sign-words", catalog: { tasks: { signWords: { name: "Aláírás" } } } }]);
+  const own = new Map([
+    ["sign-words", { tasks: { signWords: { name: "Aláírás" } } }],
+  ]);
+  const merged = mergeExerciseCatalogs({
+    families: ahead,
+    own,
+    baseFor: () => null,
+  });
+  assert.deepEqual(merged, [
+    {
+      slug: "sign-words",
+      catalog: { tasks: { signWords: { name: "Aláírás" } } },
+    },
+  ]);
 });
-
 
 // ------------------------------------------------------ catalog key parity
 
@@ -297,21 +464,34 @@ test("an exercise English has no directory for still publishes, from its own cat
 console.log("\ncatalog key parity:");
 
 test("an empty container is a leaf, not a branch that flattens to nothing", () => {
-  assert.deepEqual(flatten({ a: "x", fns: {}, list: [] }), { a: "x", fns: {}, list: [] });
+  assert.deepEqual(flatten({ a: "x", fns: {}, list: [] }), {
+    a: "x",
+    fns: {},
+    list: [],
+  });
 });
 
 test("a nested empty object keeps its whole dotted path, and round-trips", () => {
   const tree = { checks: { ok: "x" }, scenarios: { one: { fns: {} } } };
-  assert.deepEqual(flatten(tree), { "checks.ok": "x", "scenarios.one.fns": {} });
+  assert.deepEqual(flatten(tree), {
+    "checks.ok": "x",
+    "scenarios.one.fns": {},
+  });
   assert.deepEqual(unflatten(flatten(tree)), tree);
 });
 
 test("an empty object in English survives stub as an empty object", () => {
-  assert.deepEqual(stubAgainst({ a: "en", fns: {} }, { a: "hu", fns: {} }), { a: "hu", fns: {} });
+  assert.deepEqual(stubAgainst({ a: "en", fns: {} }, { a: "hu", fns: {} }), {
+    a: "hu",
+    fns: {},
+  });
 });
 
 test("an empty object survives even when the target has never held the key", () => {
-  assert.deepEqual(stubAgainst({ a: "en", fns: {} }, { a: "hu" }), { a: "hu", fns: {} });
+  assert.deepEqual(stubAgainst({ a: "en", fns: {} }, { a: "hu" }), {
+    a: "hu",
+    fns: {},
+  });
 });
 
 test("an empty container is never the sentinel: it is structure, not a gap", () => {
@@ -321,7 +501,10 @@ test("an empty container is never the sentinel: it is structure, not a gap", () 
 });
 
 test("an empty array is structure the same way", () => {
-  assert.deepEqual(stubAgainst({ a: "en", list: [] }, {}), { a: SENTINEL, list: [] });
+  assert.deepEqual(stubAgainst({ a: "en", list: [] }, {}), {
+    a: SENTINEL,
+    list: [],
+  });
 });
 
 test("the stubbed empty container is a fresh one, not English's own object", () => {
@@ -331,24 +514,41 @@ test("the stubbed empty container is a fresh one, not English's own object", () 
 });
 
 test("an existing translation is still reproduced byte for byte", () => {
-  assert.deepEqual(stubAgainst({ a: "en", b: "en" }, { a: "  hu  ", b: "hu" }), { a: "  hu  ", b: "hu" });
+  assert.deepEqual(
+    stubAgainst({ a: "en", b: "en" }, { a: "  hu  ", b: "hu" }),
+    { a: "  hu  ", b: "hu" },
+  );
 });
 
 test("a key English has deleted is still dropped, sentinel or not", () => {
-  assert.deepEqual(stubAgainst({ a: "en" }, { a: "hu", gone: "hu", also: SENTINEL }), { a: "hu" });
+  assert.deepEqual(
+    stubAgainst({ a: "en" }, { a: "hu", gone: "hu", also: SENTINEL }),
+    { a: "hu" },
+  );
 });
 
 test("a missing key and an existing sentinel both stub to the sentinel", () => {
-  assert.deepEqual(stubAgainst({ a: "en", b: "en" }, { a: SENTINEL }), { a: SENTINEL, b: SENTINEL });
+  assert.deepEqual(stubAgainst({ a: "en", b: "en" }, { a: SENTINEL }), {
+    a: SENTINEL,
+    b: SENTINEL,
+  });
 });
 
 test("output key order still mirrors English, empty containers included", () => {
-  const stubbed = stubAgainst({ a: "en", fns: {}, z: "en" }, { z: "hu", a: "hu" });
+  const stubbed = stubAgainst(
+    { a: "en", fns: {}, z: "en" },
+    { z: "hu", a: "hu" },
+  );
   assert.equal(JSON.stringify(stubbed), `{"a":"hu","fns":{},"z":"hu"}`);
 });
 
 test("an empty container is not counted as a translatable key", () => {
-  assert.deepEqual(countSentinels({ a: "hu", b: SENTINEL, fns: {} }), { total: 2, stubbed: 1, translated: 1, inapplicable: 0 });
+  assert.deepEqual(countSentinels({ a: "hu", b: SENTINEL, fns: {} }), {
+    total: 2,
+    stubbed: 1,
+    translated: 1,
+    inapplicable: 0,
+  });
 });
 
 test("a target missing English's empty container is a key-parity error", () => {
@@ -357,14 +557,19 @@ test("a target missing English's empty container is a key-parity error", () => {
 });
 
 test("a target holding the same empty container is clean, not a wrong-type error", () => {
-  assert.deepEqual(checkCatalog({ a: "en", fns: {} }, { a: "hu", fns: {} }), []);
+  assert.deepEqual(
+    checkCatalog({ a: "en", fns: {} }, { a: "hu", fns: {} }),
+    [],
+  );
 });
 
 test("a target that filled English's empty container with a string is an error", () => {
   // Not excess, a wrong SHAPE. The consumer iterates that key and gets
   // characters, whatever English does next, so this one keeps blocking.
   const issues = checkCatalog({ fns: {} }, { fns: SENTINEL });
-  assert.deepEqual(issues, [{ level: ERROR, message: "fns: source is an empty object, target is not" }]);
+  assert.deepEqual(issues, [
+    { level: ERROR, message: "fns: source is an empty object, target is not" },
+  ]);
 });
 
 test("a target that filled English's empty container with ENTRIES is excess, so a WARN", () => {
@@ -373,17 +578,22 @@ test("a target that filled English's empty container with ENTRIES is excess, so 
   // container and descends into a filled one, so `fns` reads as missing and
   // `fns.move` as extra. It is neither: the locale has MORE than English.
   const issues = checkCatalog({ fns: {} }, { fns: { move: "mozgás" } });
-  assert.deepEqual(issues.filter((found) => found.level === ERROR), []);
+  assert.deepEqual(
+    issues.filter((found) => found.level === ERROR),
+    [],
+  );
   assert.deepEqual(issues.map((found) => found.message).sort(), [
     "fns: English holds an empty object here and the translation has filled it (fine while English catches up)",
-    "key not in source: fns.move (fine while English catches up mid-deploy; stale if English never had it)"
+    "key not in source: fns.move (fine while English catches up mid-deploy; stale if English never had it)",
   ]);
 });
 
 test("a key that is simply GONE is still absence, even when English holds a container there", () => {
   // The guard on the rule above. No leaves under `fns` in the target means the
   // locale has less, not more, and it blocks.
-  assert.deepEqual(checkCatalog({ a: "en", fns: {} }, { a: "hu" }), [{ level: ERROR, message: "missing key: fns" }]);
+  assert.deepEqual(checkCatalog({ a: "en", fns: {} }, { a: "hu" }), [
+    { level: ERROR, message: "missing key: fns" },
+  ]);
 });
 
 // ------------------------------------------------------ arrays in a catalog
@@ -402,33 +612,48 @@ const PROJECT_EN = {
   "build-your-personal-homepage": {
     title: "Build your Personal Homepage",
     description: "Join Jeremy as he builds his own homepage from scratch.",
-    tags: ["Agentic Coding", "Git and GitHub", "HTML/CSS/JavaScript Basics"]
-  }
+    tags: ["Agentic Coding", "Git and GitHub", "HTML/CSS/JavaScript Basics"],
+  },
 };
 
 test("a non-empty array is a branch: each element is its own key", () => {
-  assert.deepEqual(flatten({ tags: ["a", "b"] }), { "tags.0": "a", "tags.1": "b" });
+  assert.deepEqual(flatten({ tags: ["a", "b"] }), {
+    "tags.0": "a",
+    "tags.1": "b",
+  });
 });
 
 test("an empty array is still a leaf, and still structure rather than a gap", () => {
   assert.deepEqual(flatten({ a: "x", list: [] }), { a: "x", list: [] });
-  assert.deepEqual(stubAgainst({ a: "en", list: [] }, {}), { a: SENTINEL, list: [] });
+  assert.deepEqual(stubAgainst({ a: "en", list: [] }, {}), {
+    a: SENTINEL,
+    list: [],
+  });
 });
 
 test("the array paths of a tree are exactly the branches flatten descended into", () => {
-  assert.deepEqual([...arrayPaths(PROJECT_EN)], ["build-your-personal-homepage.tags"]);
+  assert.deepEqual(
+    [...arrayPaths(PROJECT_EN)],
+    ["build-your-personal-homepage.tags"],
+  );
   assert.deepEqual([...arrayPaths({ a: { b: [] }, c: { d: ["x"] } })], ["c.d"]);
 });
 
 test("an array round-trips as an array, not as an object with numeric keys", () => {
   const tree = { tags: ["a", "b"], seo: { keywords: ["k"] } };
   assert.deepEqual(unflatten(flatten(tree), arrayPaths(tree)), tree);
-  assert.equal(JSON.stringify(unflatten(flatten(tree), arrayPaths(tree))), '{"tags":["a","b"],"seo":{"keywords":["k"]}}');
+  assert.equal(
+    JSON.stringify(unflatten(flatten(tree), arrayPaths(tree))),
+    '{"tags":["a","b"],"seo":{"keywords":["k"]}}',
+  );
 });
 
 test("without the array paths it rebuilds as an object, which is why they are passed", () => {
   // Not a supported call, pinned so the reason `arrayPaths` exists stays visible.
-  assert.equal(JSON.stringify(unflatten(flatten({ tags: ["a"] }))), '{"tags":{"0":"a"}}');
+  assert.equal(
+    JSON.stringify(unflatten(flatten({ tags: ["a"] }))),
+    '{"tags":{"0":"a"}}',
+  );
 });
 
 test("a fresh locale stubs every tag element separately", () => {
@@ -436,19 +661,24 @@ test("a fresh locale stubs every tag element separately", () => {
     "build-your-personal-homepage": {
       title: SENTINEL,
       description: SENTINEL,
-      tags: [SENTINEL, SENTINEL, SENTINEL]
-    }
+      tags: [SENTINEL, SENTINEL, SENTINEL],
+    },
   });
 });
 
 test("a translated tag is reproduced byte for byte while its neighbours stay gaps", () => {
-  const target = { "build-your-personal-homepage": { title: "Készítsd el a saját honlapod", tags: ["Ágens kódolás"] } };
+  const target = {
+    "build-your-personal-homepage": {
+      title: "Készítsd el a saját honlapod",
+      tags: ["Ágens kódolás"],
+    },
+  };
   assert.deepEqual(stubAgainst(PROJECT_EN, target), {
     "build-your-personal-homepage": {
       title: "Készítsd el a saját honlapod",
       description: SENTINEL,
-      tags: ["Ágens kódolás", SENTINEL, SENTINEL]
-    }
+      tags: ["Ágens kódolás", SENTINEL, SENTINEL],
+    },
   });
 });
 
@@ -459,7 +689,7 @@ test("an untranslated tag is a COUNTED gap, not an opaque leaf that reads as don
     total: 5,
     stubbed: 5,
     translated: 0,
-    inapplicable: 0
+    inapplicable: 0,
   });
 });
 
@@ -468,45 +698,73 @@ test("validate checks each tag element, and a whitespace-padded one is an error"
     "build-your-personal-homepage": {
       title: "T",
       description: "D",
-      tags: ["Ágens kódolás", " Git és GitHub", "HTML/CSS/JavaScript alapok"]
-    }
+      tags: ["Ágens kódolás", " Git és GitHub", "HTML/CSS/JavaScript alapok"],
+    },
   };
   assert.deepEqual(checkCatalog(PROJECT_EN, target), [
-    { level: ERROR, message: "build-your-personal-homepage.tags.1: leading or trailing whitespace" }
+    {
+      level: ERROR,
+      message:
+        "build-your-personal-homepage.tags.1: leading or trailing whitespace",
+    },
   ]);
 });
 
 test("a translation with the wrong number of tags is a key-parity error", () => {
-  const short = { "build-your-personal-homepage": { title: "T", description: "D", tags: ["a", "b"] } };
+  const short = {
+    "build-your-personal-homepage": {
+      title: "T",
+      description: "D",
+      tags: ["a", "b"],
+    },
+  };
   assert.deepEqual(checkCatalog(PROJECT_EN, short), [
-    { level: ERROR, message: "missing key: build-your-personal-homepage.tags.2" }
+    {
+      level: ERROR,
+      message: "missing key: build-your-personal-homepage.tags.2",
+    },
   ]);
   // An extra ELEMENT is excess, exactly as an extra key is, so it warns and does
   // not block. English grows and loses array entries on the same PRs it grows and
   // loses keys on, and a translation made at a PR's head SHA holds the newer
   // array while main still holds the older one. The message still names it, so a
   // genuinely invented fourth tag is visible to a human.
-  const long = { "build-your-personal-homepage": { title: "T", description: "D", tags: ["a", "b", "c", "d"] } };
+  const long = {
+    "build-your-personal-homepage": {
+      title: "T",
+      description: "D",
+      tags: ["a", "b", "c", "d"],
+    },
+  };
   assert.deepEqual(checkCatalog(PROJECT_EN, long), [
     {
       level: WARN,
       message:
-        'key not in source: build-your-personal-homepage.tags.3 (an extra element of English\'s array ' +
-        '"build-your-personal-homepage.tags"; fine while English catches up, invented if it persists)'
-    }
+        "key not in source: build-your-personal-homepage.tags.3 (an extra element of English's array " +
+        '"build-your-personal-homepage.tags"; fine while English catches up, invented if it persists)',
+    },
   ]);
 });
 
 test("a translation that collapsed the array into one string is an error", () => {
-  const joined = { "build-your-personal-homepage": { title: "T", description: "D", tags: "a, b, c" } };
+  const joined = {
+    "build-your-personal-homepage": {
+      title: "T",
+      description: "D",
+      tags: "a, b, c",
+    },
+  };
   const issues = checkCatalog(PROJECT_EN, joined);
   assert.deepEqual(
-    issues.filter((i) => i.level === ERROR).map((i) => i.message).sort(),
+    issues
+      .filter((i) => i.level === ERROR)
+      .map((i) => i.message)
+      .sort(),
     [
       "missing key: build-your-personal-homepage.tags.0",
       "missing key: build-your-personal-homepage.tags.1",
-      "missing key: build-your-personal-homepage.tags.2"
-    ]
+      "missing key: build-your-personal-homepage.tags.2",
+    ],
   );
 });
 
@@ -514,17 +772,25 @@ test("an array turned into an object has identical key parity, and is still caug
   // The one break flatten cannot see: `{"0": …}` flattens to `tags.0` too. It
   // would publish different bytes, so a different hash, so a URL nothing asks for.
   const asObject = {
-    "build-your-personal-homepage": { title: "T", description: "D", tags: { 0: "a", 1: "b", 2: "c" } }
+    "build-your-personal-homepage": {
+      title: "T",
+      description: "D",
+      tags: { 0: "a", 1: "b", 2: "c" },
+    },
   };
   assert.deepEqual(checkCatalog(PROJECT_EN, asObject), [
-    { level: ERROR, message: "build-your-personal-homepage.tags: source is an array, target is an object" }
+    {
+      level: ERROR,
+      message:
+        "build-your-personal-homepage.tags: source is an array, target is an object",
+    },
   ]);
 });
 
 test("an object turned into an array is caught in the same way", () => {
   const english = { seo: { 0: "a", 1: "b" } };
   assert.deepEqual(checkCatalog(english, { seo: ["a", "b"] }), [
-    { level: ERROR, message: "seo: source is an object, target is an array" }
+    { level: ERROR, message: "seo: source is an object, target is an array" },
   ]);
 });
 
@@ -532,9 +798,10 @@ test("a correctly translated catalog is clean", () => {
   const target = {
     "build-your-personal-homepage": {
       title: "Készítsd el a saját honlapod",
-      description: "Tarts Jeremyvel, ahogy a nulláról felépíti a saját honlapját.",
-      tags: ["Ágens kódolás", "Git és GitHub", "HTML/CSS/JavaScript alapok"]
-    }
+      description:
+        "Tarts Jeremyvel, ahogy a nulláról felépíti a saját honlapját.",
+      tags: ["Ágens kódolás", "Git és GitHub", "HTML/CSS/JavaScript alapok"],
+    },
   };
   assert.deepEqual(checkCatalog(PROJECT_EN, target), []);
 });
@@ -544,21 +811,30 @@ test("the published bytes keep English's key AND element order", () => {
   // hash, so element order is part of the URL. Stubbing from a target whose keys
   // and tags arrived in a different order must still serialise in English's.
   const scrambled = {
-    "build-your-personal-homepage": { tags: ["z", "y", "x"], description: "D", title: "T" }
+    "build-your-personal-homepage": {
+      tags: ["z", "y", "x"],
+      description: "D",
+      title: "T",
+    },
   };
   assert.equal(
     JSON.stringify(stubAgainst(PROJECT_EN, scrambled)),
-    '{"build-your-personal-homepage":{"title":"T","description":"D","tags":["z","y","x"]}}'
+    '{"build-your-personal-homepage":{"title":"T","description":"D","tags":["z","y","x"]}}',
   );
 });
 
 test("stubbing is idempotent, so a re-run never moves the published hash", () => {
   const once = stubAgainst(PROJECT_EN, {});
-  assert.equal(JSON.stringify(stubAgainst(PROJECT_EN, once)), JSON.stringify(once));
+  assert.equal(
+    JSON.stringify(stubAgainst(PROJECT_EN, once)),
+    JSON.stringify(once),
+  );
 });
 
 test("the stubbed array is a fresh one, not English's own", () => {
-  stubAgainst(PROJECT_EN, {})["build-your-personal-homepage"].tags.push("leaked");
+  stubAgainst(PROJECT_EN, {})["build-your-personal-homepage"].tags.push(
+    "leaked",
+  );
   assert.equal(PROJECT_EN["build-your-personal-homepage"].tags.length, 3);
 });
 
@@ -578,22 +854,29 @@ const EXTRA_KEY_WARN =
 
 test("a key the target has and English does not is a WARN, not a blocking error", () => {
   const english = { settings: { theme: "Theme" } };
-  const target = { settings: { theme: "Téma", language: { label: "A nyelved" } } };
-  assert.deepEqual(checkCatalog(english, target), [{ level: WARN, message: EXTRA_KEY_WARN }]);
+  const target = {
+    settings: { theme: "Téma", language: { label: "A nyelved" } },
+  };
+  assert.deepEqual(checkCatalog(english, target), [
+    { level: WARN, message: EXTRA_KEY_WARN },
+  ]);
 });
 
 test("the WARN names the key, because that is what tells the two cases apart", () => {
   // Ahead-of-English and left-behind-by-a-deletion are indistinguishable
   // mechanically. A human reading the key name can tell instantly, so the name is
   // the whole point of the message.
-  const issues = checkCatalog({ settings: { theme: "Theme" } }, { settings: { theme: "T", language: { label: "L" } } });
+  const issues = checkCatalog(
+    { settings: { theme: "Theme" } },
+    { settings: { theme: "T", language: { label: "L" } } },
+  );
   assert.ok(issues[0].message.includes("settings.language.label"));
 });
 
 test("a key English has and the target does not is still an ERROR", () => {
   const english = { settings: { theme: "Theme", sound: "Sound" } };
   assert.deepEqual(checkCatalog(english, { settings: { theme: "Téma" } }), [
-    { level: ERROR, message: "missing key: settings.sound" }
+    { level: ERROR, message: "missing key: settings.sound" },
   ]);
 });
 
@@ -601,8 +884,13 @@ test("a MISSPELLED key still blocks, because the key it meant to be is missing",
   // The case the old ERROR was really catching. A typo leaves the real key absent,
   // so it is reported as a missing key and blocks; the extra WARN sits beside it.
   const english = { checks: { tooManyLines: "Too many lines" } };
-  const issues = checkCatalog(english, { checks: { tooManyLnies: "Túl sok sor" } });
-  assert.deepEqual(issues.filter((i) => i.level === ERROR), [{ level: ERROR, message: "missing key: checks.tooManyLines" }]);
+  const issues = checkCatalog(english, {
+    checks: { tooManyLnies: "Túl sok sor" },
+  });
+  assert.deepEqual(
+    issues.filter((i) => i.level === ERROR),
+    [{ level: ERROR, message: "missing key: checks.tooManyLines" }],
+  );
   assert.equal(issues.filter((i) => i.level === WARN).length, 1);
 });
 
@@ -622,23 +910,34 @@ test("every way a locale can hold MORE than English is a WARN, never an ERROR", 
   const excess = {
     settings: { theme: "Téma", language: "Nyelv" }, // a key English does not have
     tags: ["a", "b", "c"], // an element English's array does not have
-    fns: { move: "mozgás" } // entries in a container English leaves empty
+    fns: { move: "mozgás" }, // entries in a container English leaves empty
   };
   const issues = checkCatalog(english, excess);
-  assert.deepEqual(issues.filter((found) => found.level === ERROR), []);
+  assert.deepEqual(
+    issues.filter((found) => found.level === ERROR),
+    [],
+  );
   // Four, not three: filling English's empty container is reported twice, once as
   // the container the locale outgrew and once as the leaf it added inside it.
   assert.equal(issues.filter((found) => found.level === WARN).length, 4);
 });
 
 test("every way a locale can hold LESS than English is still an ERROR", () => {
-  const english = { settings: { theme: "Theme", sound: "Sound" }, tags: ["a", "b"], fns: {} };
+  const english = {
+    settings: { theme: "Theme", sound: "Sound" },
+    tags: ["a", "b"],
+    fns: {},
+  };
   const absent = { settings: { theme: "Téma" }, tags: ["a"] };
   const messages = checkCatalog(english, absent)
     .filter((found) => found.level === ERROR)
     .map((found) => found.message)
     .sort();
-  assert.deepEqual(messages, ["missing key: fns", "missing key: settings.sound", "missing key: tags.1"]);
+  assert.deepEqual(messages, [
+    "missing key: fns",
+    "missing key: settings.sound",
+    "missing key: tags.1",
+  ]);
 });
 
 test("excess beside absence does not hide the absence", () => {
@@ -647,7 +946,10 @@ test("excess beside absence does not hide the absence", () => {
   const english = { a: "A", b: "B" };
   const both = { a: "Á", c: "C" };
   const issues = checkCatalog(english, both);
-  assert.deepEqual(issues.filter((found) => found.level === ERROR), [{ level: ERROR, message: "missing key: b" }]);
+  assert.deepEqual(
+    issues.filter((found) => found.level === ERROR),
+    [{ level: ERROR, message: "missing key: b" }],
+  );
   assert.equal(issues.filter((found) => found.level === WARN).length, 1);
 });
 
@@ -655,9 +957,15 @@ test("an extra key does not silence the order check on the keys around it", () =
   const english = { a: "A", b: "B" };
   const scrambled = { b: "B", extra: "x", a: "A" };
   const messages = checkCatalog(english, scrambled).map((i) => i.message);
-  assert.ok(messages.includes("key order differs from source (diffs will be noisy)"));
+  assert.ok(
+    messages.includes("key order differs from source (diffs will be noisy)"),
+  );
   const inOrder = { a: "A", extra: "x", b: "B" };
-  assert.ok(!checkCatalog(english, inOrder).some((i) => i.message.startsWith("key order")));
+  assert.ok(
+    !checkCatalog(english, inOrder).some((i) =>
+      i.message.startsWith("key order"),
+    ),
+  );
 });
 
 test("an extra key is outside the fraction: it is nobody's remaining work", () => {
@@ -665,9 +973,19 @@ test("an extra key is outside the fraction: it is nobody's remaining work", () =
   // catalog's own keys were the denominator.
   const english = { a: "A", b: "B" };
   const target = { a: "hu", b: SENTINEL, ahead: "hu" };
-  assert.deepEqual(countSentinels(target, { english }), { total: 2, stubbed: 1, translated: 1, inapplicable: 0 });
+  assert.deepEqual(countSentinels(target, { english }), {
+    total: 2,
+    stubbed: 1,
+    translated: 1,
+    inapplicable: 0,
+  });
   // Without English there is no way to know, and the file's own keys are counted.
-  assert.deepEqual(countSentinels(target), { total: 3, stubbed: 1, translated: 2, inapplicable: 0 });
+  assert.deepEqual(countSentinels(target), {
+    total: 3,
+    stubbed: 1,
+    translated: 2,
+    inapplicable: 0,
+  });
 });
 
 // The whole point of the WARN is that the catalog still reaches R2. Asserted
@@ -678,7 +996,9 @@ test("an extra key is outside the fraction: it is nobody's remaining work", () =
 // Self-maintaining, and gated three ways: publish needs an English checkout and
 // the renderer, and the assertion needs a locale that actually holds an extra
 // key. Any of the three missing is a printed SKIP, never a silent pass.
-const PUBLISH_CHECKOUT = englishRepo("front-end", undefined, { optional: true });
+const PUBLISH_CHECKOUT = englishRepo("front-end", undefined, {
+  optional: true,
+});
 
 /** The first locale whose app catalog holds a key English does not, with the key. */
 function localeWithExtraAppKey() {
@@ -686,7 +1006,9 @@ function localeWithExtraAppKey() {
   for (const locale of TARGET_LOCALES) {
     const file = localPath("app-messages", locale);
     if (!fs.existsSync(file)) continue;
-    const extra = Object.keys(flatten(readJson(file))).filter((key) => !(key in english));
+    const extra = Object.keys(flatten(readJson(file))).filter(
+      (key) => !(key in english),
+    );
     if (extra.length > 0) return { locale, key: extra[0] };
   }
   return null;
@@ -698,27 +1020,49 @@ if (!extraKeyLocale) {
   console.log(
     PUBLISH_CHECKOUT
       ? "  SKIP  a catalog carrying a key English does not have still publishes (no locale holds one right now)"
-      : "  SKIP  a catalog carrying a key English does not have still publishes (no front-end checkout)"
+      : "  SKIP  a catalog carrying a key English does not have still publishes (no front-end checkout)",
   );
 } else {
   test("a catalog carrying a key English does not have still publishes, key included", () => {
     const { locale, key } = extraKeyLocale;
-    const out = fs.mkdtempSync(path.join(os.tmpdir(), "jiki-publish-extra-key-"));
-    const run = spawnSync(process.execPath, [path.join(REPO_ROOT, "scripts", "publish.mjs"), locale, `--out-dir=${out}`], {
-      cwd: REPO_ROOT,
-      encoding: "utf8"
-    });
-    if (run.status !== 0 && /content-renderer/.test(`${run.stdout}${run.stderr}`)) {
+    const out = fs.mkdtempSync(
+      path.join(os.tmpdir(), "jiki-publish-extra-key-"),
+    );
+    const run = spawnSync(
+      process.execPath,
+      [
+        path.join(REPO_ROOT, "scripts", "publish.mjs"),
+        locale,
+        `--out-dir=${out}`,
+      ],
+      {
+        cwd: REPO_ROOT,
+        encoding: "utf8",
+      },
+    );
+    if (
+      run.status !== 0 &&
+      /content-renderer/.test(`${run.stdout}${run.stderr}`)
+    ) {
       console.log("  (renderer not installed; publish could not run)");
       fs.rmSync(out, { recursive: true, force: true });
       return;
     }
-    assert.equal(run.status, 0, `publish ${locale} exited ${run.status}: ${run.stderr}`);
+    assert.equal(
+      run.status,
+      0,
+      `publish ${locale} exited ${run.status}: ${run.stderr}`,
+    );
 
     const dir = path.join(out, "static", "i18n", "app", locale);
     const { hash } = readJson(path.join(dir, "current.json"));
-    const published = flatten(readJson(path.join(dir, `messages-${hash}.json`)));
-    assert.ok(key in published, `${key} was dropped from ${locale}'s published app catalog`);
+    const published = flatten(
+      readJson(path.join(dir, `messages-${hash}.json`)),
+    );
+    assert.ok(
+      key in published,
+      `${key} was dropped from ${locale}'s published app catalog`,
+    );
     fs.rmSync(out, { recursive: true, force: true });
   });
 }
@@ -740,14 +1084,16 @@ if (!extraKeyLocale) {
 // after this runs as before it.
 
 const catalogBiteLocale = PUBLISH_CHECKOUT
-  ? PRODUCTION_LOCALES.find((locale) => listItems("exercise-messages", locale).length > 0)
+  ? PRODUCTION_LOCALES.find(
+      (locale) => listItems("exercise-messages", locale).length > 0,
+    )
   : null;
 
 if (!catalogBiteLocale) {
   console.log(
     PUBLISH_CHECKOUT
       ? "  SKIP  a missing exercise catalog is counted against English (no locale holds one)"
-      : "  SKIP  a missing exercise catalog is counted against English (no front-end checkout)"
+      : "  SKIP  a missing exercise catalog is counted against English (no front-end checkout)",
   );
 } else {
   test("a missing exercise catalog is counted against English, not silently ignored", () => {
@@ -757,27 +1103,51 @@ if (!catalogBiteLocale) {
     const victim = held[0].path;
     const hidden = `${victim}.hidden-by-test`;
 
-    const out = fs.mkdtempSync(path.join(os.tmpdir(), "jiki-publish-missing-catalog-"));
+    const out = fs.mkdtempSync(
+      path.join(os.tmpdir(), "jiki-publish-missing-catalog-"),
+    );
     fs.renameSync(victim, hidden);
     try {
-      const run = spawnSync(process.execPath, [path.join(REPO_ROOT, "scripts", "publish.mjs"), locale, `--out-dir=${out}`], {
-        cwd: REPO_ROOT,
-        encoding: "utf8"
-      });
-      if (run.status !== 0 && /content-renderer/.test(`${run.stdout}${run.stderr}`)) {
+      const run = spawnSync(
+        process.execPath,
+        [
+          path.join(REPO_ROOT, "scripts", "publish.mjs"),
+          locale,
+          `--out-dir=${out}`,
+        ],
+        {
+          cwd: REPO_ROOT,
+          encoding: "utf8",
+        },
+      );
+      if (
+        run.status !== 0 &&
+        /content-renderer/.test(`${run.stdout}${run.stderr}`)
+      ) {
         console.log("  (renderer not installed; publish could not run)");
         return;
       }
-      assert.equal(run.status, 0, `publish ${locale} exited ${run.status}: ${run.stderr}`);
+      assert.equal(
+        run.status,
+        0,
+        `publish ${locale} exited ${run.status}: ${run.stderr}`,
+      );
 
-      const record = readJson(path.join(out, "static", "i18n", "completeness.json"));
+      const record = readJson(
+        path.join(out, "static", "i18n", "completeness.json"),
+      );
       // By DETAIL, not just by type: an exercise-messages gap can also be a
       // key-level one now, and the corpus gap this test is about is the one that
       // counts whole items.
       const gap = record.locales[locale].gaps.find(
-        (entry) => entry.type === "exercise-messages" && entry.detail === `${held.length - 1} of ${expected} present`
+        (entry) =>
+          entry.type === "exercise-messages" &&
+          entry.detail === `${held.length - 1} of ${expected} present`,
       );
-      assert.ok(gap, `${locale} published as if nothing were missing after ${path.basename(path.dirname(victim))}'s catalog was removed`);
+      assert.ok(
+        gap,
+        `${locale} published as if nothing were missing after ${path.basename(path.dirname(victim))}'s catalog was removed`,
+      );
       assert.equal(record.locales[locale].complete, false);
     } finally {
       fs.renameSync(hidden, victim);
@@ -814,8 +1184,11 @@ function cleanInterpreterCatalog() {
   for (const locale of PRODUCTION_LOCALES) {
     for (const item of listItems("interpreter-messages", locale)) {
       const english = readJson(englishPath("interpreter-messages", item.slug));
-      const counts = countAgainstEnglish(english, readJson(item.path), { locale });
-      if (counts.stubbed === 0 && counts.absent === 0) return { locale, item, english };
+      const counts = countAgainstEnglish(english, readJson(item.path), {
+        locale,
+      });
+      if (counts.stubbed === 0 && counts.absent === 0)
+        return { locale, item, english };
     }
   }
   return null;
@@ -835,7 +1208,7 @@ if (!keyGapSubject) {
   console.log(
     PUBLISH_CHECKOUT
       ? "  SKIP  key-level gaps are counted against English (no production locale holds a clean interpreter catalog)"
-      : "  SKIP  key-level gaps are counted against English (no front-end checkout)"
+      : "  SKIP  key-level gaps are counted against English (no front-end checkout)",
   );
 } else {
   test("an absent key and a sentinel key are both gaps, and are told apart", () => {
@@ -845,7 +1218,11 @@ if (!keyGapSubject) {
     // the end of English's key order so that the first offender of each kind is
     // unambiguously the one this test put there.
     const keys = Object.keys(flatEnglish).slice(-3);
-    assert.equal(keys.length, 3, "English's interpreter catalog is too small to test with");
+    assert.equal(
+      keys.length,
+      3,
+      "English's interpreter catalog is too small to test with",
+    );
     const [stubbedKey, absentKey, inapplicableKey] = keys;
 
     const target = { ...flatEnglish };
@@ -854,7 +1231,9 @@ if (!keyGapSubject) {
     target[inapplicableKey] = INAPPLICABLE;
 
     const original = readText(item.path);
-    const out = fs.mkdtempSync(path.join(os.tmpdir(), "jiki-publish-key-gaps-"));
+    const out = fs.mkdtempSync(
+      path.join(os.tmpdir(), "jiki-publish-key-gaps-"),
+    );
     // An EXCLUDED exercise, given a catalog that is nothing but gaps. corpus.json
     // says nobody is expected to translate it, so it must contribute no gap at
     // all: an exclusion that stopped binding the moment counting got stricter
@@ -863,35 +1242,71 @@ if (!keyGapSubject) {
     // its instructions, so removing the directory afterwards would take a real
     // translation with it.
     const excludedSlug = excludedExerciseWithEnglish();
-    const excludedFile = excludedSlug ? localPath("exercise-messages", locale, excludedSlug) : null;
-    const excludedExisted = excludedFile !== null && fs.existsSync(excludedFile);
+    const excludedFile = excludedSlug
+      ? localPath("exercise-messages", locale, excludedSlug)
+      : null;
+    const excludedExisted =
+      excludedFile !== null && fs.existsSync(excludedFile);
 
-    fs.writeFileSync(item.path, `${JSON.stringify(unflatten(target, arrayPaths(english)), null, 2)}\n`);
+    fs.writeFileSync(
+      item.path,
+      `${JSON.stringify(unflatten(target, arrayPaths(english)), null, 2)}\n`,
+    );
     if (excludedFile && !excludedExisted) {
       fs.mkdirSync(path.dirname(excludedFile), { recursive: true });
-      fs.writeFileSync(excludedFile, `${JSON.stringify({ onlyKey: SENTINEL }, null, 2)}\n`);
+      fs.writeFileSync(
+        excludedFile,
+        `${JSON.stringify({ onlyKey: SENTINEL }, null, 2)}\n`,
+      );
     }
     try {
-      const run = spawnSync(process.execPath, [path.join(REPO_ROOT, "scripts", "publish.mjs"), locale, `--out-dir=${out}`], {
-        cwd: REPO_ROOT,
-        encoding: "utf8"
-      });
-      if (run.status !== 0 && /content-renderer/.test(`${run.stdout}${run.stderr}`)) {
+      const run = spawnSync(
+        process.execPath,
+        [
+          path.join(REPO_ROOT, "scripts", "publish.mjs"),
+          locale,
+          `--out-dir=${out}`,
+        ],
+        {
+          cwd: REPO_ROOT,
+          encoding: "utf8",
+        },
+      );
+      if (
+        run.status !== 0 &&
+        /content-renderer/.test(`${run.stdout}${run.stderr}`)
+      ) {
         console.log("  (renderer not installed; publish could not run)");
         return;
       }
-      assert.equal(run.status, 0, `publish ${locale} exited ${run.status}: ${run.stderr}`);
+      assert.equal(
+        run.status,
+        0,
+        `publish ${locale} exited ${run.status}: ${run.stderr}`,
+      );
 
-      const record = readJson(path.join(out, "static", "i18n", "completeness.json"));
+      const record = readJson(
+        path.join(out, "static", "i18n", "completeness.json"),
+      );
       const label = `${locale} interpreter catalog ${item.slug}`;
-      const mine = record.locales[locale].gaps.filter((gap) => gap.detail.startsWith(`${label}:`));
+      const mine = record.locales[locale].gaps.filter((gap) =>
+        gap.detail.startsWith(`${label}:`),
+      );
 
       // TWO gaps, not one. The sentinel needs translating and the absent key needs
       // stubbing first, so a single merged count would hide which work is which.
-      assert.equal(mine.length, 2, `expected a stubbed gap and an absent gap, got: ${JSON.stringify(mine)}`);
+      assert.equal(
+        mine.length,
+        2,
+        `expected a stubbed gap and an absent gap, got: ${JSON.stringify(mine)}`,
+      );
 
-      const stubbed = mine.find((gap) => /still the untranslated sentinel/.test(gap.detail));
-      const absent = mine.find((gap) => /missing from the file/.test(gap.detail));
+      const stubbed = mine.find((gap) =>
+        /still the untranslated sentinel/.test(gap.detail),
+      );
+      const absent = mine.find((gap) =>
+        /missing from the file/.test(gap.detail),
+      );
       assert.ok(stubbed, `no sentinel gap in ${JSON.stringify(mine)}`);
       assert.ok(absent, `no absent-key gap in ${JSON.stringify(mine)}`);
       assert.notEqual(stubbed.detail, absent.detail);
@@ -902,17 +1317,27 @@ if (!keyGapSubject) {
       assert.equal(absent.count, 1, absent.detail);
       assert.ok(stubbed.detail.includes(stubbedKey), stubbed.detail);
       assert.ok(absent.detail.includes(absentKey), absent.detail);
-      assert.ok(!stubbed.detail.includes(inapplicableKey) && !absent.detail.includes(inapplicableKey));
+      assert.ok(
+        !stubbed.detail.includes(inapplicableKey) &&
+          !absent.detail.includes(inapplicableKey),
+      );
 
       assert.equal(record.locales[locale].complete, false);
 
       if (excludedFile && !excludedExisted) {
-        const excludedGaps = record.locales[locale].gaps.filter((gap) => gap.detail.includes(excludedSlug));
-        assert.deepEqual(excludedGaps, [], `${excludedSlug} is excluded in corpus.json but contributed gaps`);
+        const excludedGaps = record.locales[locale].gaps.filter((gap) =>
+          gap.detail.includes(excludedSlug),
+        );
+        assert.deepEqual(
+          excludedGaps,
+          [],
+          `${excludedSlug} is excluded in corpus.json but contributed gaps`,
+        );
       }
     } finally {
       fs.writeFileSync(item.path, original);
-      if (excludedFile && !excludedExisted) fs.rmSync(excludedFile, { force: true });
+      if (excludedFile && !excludedExisted)
+        fs.rmSync(excludedFile, { force: true });
       fs.rmSync(out, { recursive: true, force: true });
     }
   });
@@ -930,8 +1355,16 @@ if (!keyGapSubject) {
 console.log("\nthe inapplicable key:");
 
 test("a plural key splits into base, ordinality and category", () => {
-  assert.deepEqual(parsePluralKey("flowerCount_two"), { base: "flowerCount", ordinal: false, category: "two" });
-  assert.deepEqual(parsePluralKey("a.b.result_ordinal_few"), { base: "a.b.result", ordinal: true, category: "few" });
+  assert.deepEqual(parsePluralKey("flowerCount_two"), {
+    base: "flowerCount",
+    ordinal: false,
+    category: "two",
+  });
+  assert.deepEqual(parsePluralKey("a.b.result_ordinal_few"), {
+    base: "a.b.result",
+    ordinal: true,
+    category: "few",
+  });
   assert.equal(parsePluralKey("slotCount"), null);
   assert.equal(parsePluralKey("thing_ordinal"), null);
 });
@@ -940,8 +1373,21 @@ test("`_zero` is reachable in EVERY language, whatever CLDR says", () => {
   // i18next special-cases it: t(k, {count: 0}) renders k_zero in fr (categories
   // one/many/other) and in ja (other alone). Deriving from Intl alone marks it
   // dead and wipes the string. This is the assertion that stops that returning.
-  for (const locale of ["en", "fr", "ja", "ko", "zh-CN", "hi", "ru", "el", "hu"]) {
-    assert.ok(reachableCategories(locale).has("zero"), `${locale} cardinal zero`);
+  for (const locale of [
+    "en",
+    "fr",
+    "ja",
+    "ko",
+    "zh-CN",
+    "hi",
+    "ru",
+    "el",
+    "hu",
+  ]) {
+    assert.ok(
+      reachableCategories(locale).has("zero"),
+      `${locale} cardinal zero`,
+    );
   }
 });
 
@@ -953,13 +1399,24 @@ test("`_ordinal_zero` is NOT special-cased: ordinals follow CLDR alone", () => {
 
 test("the reachable set is CLDR's, per type", () => {
   assert.deepEqual([...reachableCategories("ja")].sort(), ["other", "zero"]);
-  assert.deepEqual([...reachableCategories("hu", { ordinal: true })].sort(), ["one", "other"]);
-  assert.deepEqual([...reachableCategories("en", { ordinal: true })].sort(), ["few", "one", "other", "two"]);
+  assert.deepEqual([...reachableCategories("hu", { ordinal: true })].sort(), [
+    "one",
+    "other",
+  ]);
+  assert.deepEqual([...reachableCategories("en", { ordinal: true })].sort(), [
+    "few",
+    "one",
+    "other",
+    "two",
+  ]);
 });
 
 test("an unknown locale answers null, so nothing is provably unreachable", () => {
   assert.equal(reachableCategories("zz-XX"), null);
-  assert.equal(isUnreachablePluralKey("n_one", "zz-XX", { n_one: "x", n_other: "x" }), false);
+  assert.equal(
+    isUnreachablePluralKey("n_one", "zz-XX", { n_one: "x", n_other: "x" }),
+    false,
+  );
 });
 
 const ENGLISH = {
@@ -967,25 +1424,43 @@ const ENGLISH = {
   "phrases.slotCount_one": "one input slot",
   "phrases.slotCount_many": INAPPLICABLE,
   "phrases.slotCount_other": "{{count}} input slots",
-  "result_ordinal_one": "1st",
-  "result_ordinal_two": "2nd",
-  "result_ordinal_other": "nth",
-  "step_one": "Open the editor"
+  result_ordinal_one: "1st",
+  result_ordinal_two: "2nd",
+  result_ordinal_other: "nth",
+  step_one: "Open the editor",
 };
 
 test("a category the locale lacks is unreachable", () => {
-  assert.equal(isUnreachablePluralKey("phrases.slotCount_one", "ja", ENGLISH), true);
-  assert.equal(isUnreachablePluralKey("result_ordinal_two", "hu", ENGLISH), true);
+  assert.equal(
+    isUnreachablePluralKey("phrases.slotCount_one", "ja", ENGLISH),
+    true,
+  );
+  assert.equal(
+    isUnreachablePluralKey("result_ordinal_two", "hu", ENGLISH),
+    true,
+  );
 });
 
 test("a category the locale has is reachable", () => {
-  assert.equal(isUnreachablePluralKey("phrases.slotCount_one", "hu", ENGLISH), false);
-  assert.equal(isUnreachablePluralKey("result_ordinal_two", "en", ENGLISH), false);
+  assert.equal(
+    isUnreachablePluralKey("phrases.slotCount_one", "hu", ENGLISH),
+    false,
+  );
+  assert.equal(
+    isUnreachablePluralKey("result_ordinal_two", "en", ENGLISH),
+    false,
+  );
 });
 
 test("`_zero` and `_other` are never unreachable", () => {
-  assert.equal(isUnreachablePluralKey("phrases.slotCount_zero", "ja", ENGLISH), false);
-  assert.equal(isUnreachablePluralKey("phrases.slotCount_other", "ja", ENGLISH), false);
+  assert.equal(
+    isUnreachablePluralKey("phrases.slotCount_zero", "ja", ENGLISH),
+    false,
+  );
+  assert.equal(
+    isUnreachablePluralKey("phrases.slotCount_other", "ja", ENGLISH),
+    false,
+  );
 });
 
 test("a key that merely ENDS in a category word is not a plural key", () => {
@@ -995,35 +1470,61 @@ test("a key that merely ENDS in a category word is not a plural key", () => {
 });
 
 test("stub writes the inapplicable sentinel, not the untranslated one", () => {
-  const stubbed = stubAgainst({ n_one: "one", n_other: "many" }, {}, { locale: "ja" });
+  const stubbed = stubAgainst(
+    { n_one: "one", n_other: "many" },
+    {},
+    { locale: "ja" },
+  );
   assert.deepEqual(stubbed, { n_one: INAPPLICABLE, n_other: SENTINEL });
 });
 
 test("with no locale nothing is provably unreachable, so stub writes no `∅`", () => {
-  assert.deepEqual(stubAgainst({ n_one: "one", n_other: "many" }, {}), { n_one: SENTINEL, n_other: SENTINEL });
+  assert.deepEqual(stubAgainst({ n_one: "one", n_other: "many" }, {}), {
+    n_one: SENTINEL,
+    n_other: SENTINEL,
+  });
 });
 
 test("English's `∅` does not propagate: a locale that reaches the key gets a gap", () => {
   // fr has cardinal `many`; English does not, so English holds `∅` there. fr must
   // show `�` and keep counting as untranslated, never inherit English's `∅`.
-  const stubbed = stubAgainst({ n_many: INAPPLICABLE, n_other: "many" }, {}, { locale: "fr" });
+  const stubbed = stubAgainst(
+    { n_many: INAPPLICABLE, n_other: "many" },
+    {},
+    { locale: "fr" },
+  );
   assert.deepEqual(stubbed, { n_many: SENTINEL, n_other: SENTINEL });
 });
 
 test("a locale that also lacks the category English lacks still gets `∅`", () => {
-  assert.deepEqual(stubAgainst({ n_many: INAPPLICABLE, n_other: "many" }, {}, { locale: "ja" }), {
-    n_many: INAPPLICABLE,
-    n_other: SENTINEL
-  });
+  assert.deepEqual(
+    stubAgainst(
+      { n_many: INAPPLICABLE, n_other: "many" },
+      {},
+      { locale: "ja" },
+    ),
+    {
+      n_many: INAPPLICABLE,
+      n_other: SENTINEL,
+    },
+  );
 });
 
 test("an unjustified `∅` in a target is demoted to the untranslated sentinel", () => {
-  const stubbed = stubAgainst({ n_one: "one", n_other: "many" }, { n_one: INAPPLICABLE }, { locale: "hu" });
+  const stubbed = stubAgainst(
+    { n_one: "one", n_other: "many" },
+    { n_one: INAPPLICABLE },
+    { locale: "hu" },
+  );
   assert.deepEqual(stubbed, { n_one: SENTINEL, n_other: SENTINEL });
 });
 
 test("a real translation on a reachable plural key is left alone", () => {
-  const stubbed = stubAgainst({ n_zero: "none", n_other: "many" }, { n_zero: "nulla", n_other: "sok" }, { locale: "ja" });
+  const stubbed = stubAgainst(
+    { n_zero: "none", n_other: "many" },
+    { n_zero: "nulla", n_other: "sok" },
+    { locale: "ja" },
+  );
   assert.deepEqual(stubbed, { n_zero: "nulla", n_other: "sok" });
 });
 
@@ -1032,7 +1533,7 @@ test("an inapplicable key is outside the coverage denominator", () => {
     total: 2,
     stubbed: 1,
     translated: 1,
-    inapplicable: 1
+    inapplicable: 1,
   });
 });
 
@@ -1044,93 +1545,193 @@ test("an inapplicable key is outside the coverage denominator", () => {
 
 test("a key English defines and the target has lost is counted missing", () => {
   const english = { a: "one", b: "two", c: "three" };
-  assert.deepEqual(countAgainstEnglish(english, { a: "egy", c: "három" }, { locale: "hu" }), {
-    total: 3,
-    translated: 2,
-    stubbed: 0,
-    absent: 1,
-    inapplicable: 0
-  });
+  assert.deepEqual(
+    countAgainstEnglish(english, { a: "egy", c: "három" }, { locale: "hu" }),
+    {
+      total: 3,
+      translated: 2,
+      stubbed: 0,
+      absent: 1,
+      inapplicable: 0,
+    },
+  );
   // The counting this replaces: the target's own keys, which reads 2/2.
   assert.equal(countSentinels({ a: "egy", c: "három" }).total, 2);
 });
 
 test("coverage tells an absent key from a sentinel one", () => {
-  const counts = countAgainstEnglish({ a: "one", b: "two", c: "three" }, { a: "egy", b: SENTINEL }, { locale: "hu" });
-  assert.deepEqual(counts, { total: 3, translated: 1, stubbed: 1, absent: 1, inapplicable: 0 });
+  const counts = countAgainstEnglish(
+    { a: "one", b: "two", c: "three" },
+    { a: "egy", b: SENTINEL },
+    { locale: "hu" },
+  );
+  assert.deepEqual(counts, {
+    total: 3,
+    translated: 1,
+    stubbed: 1,
+    absent: 1,
+    inapplicable: 0,
+  });
 });
 
 test("a key the target marks `∅` stays outside the fraction", () => {
   const english = { n_one: "one", n_other: "many" };
-  const counts = countAgainstEnglish(english, { n_one: INAPPLICABLE, n_other: "sok" }, { locale: "ja" });
-  assert.deepEqual(counts, { total: 1, translated: 1, stubbed: 0, absent: 0, inapplicable: 1 });
+  const counts = countAgainstEnglish(
+    english,
+    { n_one: INAPPLICABLE, n_other: "sok" },
+    { locale: "ja" },
+  );
+  assert.deepEqual(counts, {
+    total: 1,
+    translated: 1,
+    stubbed: 0,
+    absent: 0,
+    inapplicable: 1,
+  });
 });
 
 test("an absent key this locale can never reach is inapplicable, not missing", () => {
   const english = { n_one: "one", n_other: "many" };
   // ja reaches `other` alone, so `n_one` is dead there and is nobody's work.
-  assert.deepEqual(countAgainstEnglish(english, { n_other: "sok" }, { locale: "ja" }), {
-    total: 1,
-    translated: 1,
-    stubbed: 0,
-    absent: 0,
-    inapplicable: 1
-  });
+  assert.deepEqual(
+    countAgainstEnglish(english, { n_other: "sok" }, { locale: "ja" }),
+    {
+      total: 1,
+      translated: 1,
+      stubbed: 0,
+      absent: 0,
+      inapplicable: 1,
+    },
+  );
   // hu reaches `one`, so the same absent key is a real gap there.
-  assert.deepEqual(countAgainstEnglish(english, { n_other: "sok" }, { locale: "hu" }), {
-    total: 2,
-    translated: 1,
-    stubbed: 0,
-    absent: 1,
-    inapplicable: 0
-  });
+  assert.deepEqual(
+    countAgainstEnglish(english, { n_other: "sok" }, { locale: "hu" }),
+    {
+      total: 2,
+      translated: 1,
+      stubbed: 0,
+      absent: 1,
+      inapplicable: 0,
+    },
+  );
 });
 
 test("an unreachable key still holding `�` is work, not `∅`", () => {
   // Marking it `∅` is what remains, and `validate --shippable` blocks until it
   // is marked, so it must not leave the fraction before anyone has done that.
-  const counts = countAgainstEnglish({ n_one: "one", n_other: "many" }, { n_one: SENTINEL, n_other: "沢山" }, { locale: "ja" });
-  assert.deepEqual(counts, { total: 2, translated: 1, stubbed: 1, absent: 0, inapplicable: 0 });
+  const counts = countAgainstEnglish(
+    { n_one: "one", n_other: "many" },
+    { n_one: SENTINEL, n_other: "沢山" },
+    { locale: "ja" },
+  );
+  assert.deepEqual(counts, {
+    total: 2,
+    translated: 1,
+    stubbed: 1,
+    absent: 0,
+    inapplicable: 0,
+  });
 });
 
 test("a locale with no file at all is counted against English", () => {
-  const counts = countAgainstEnglish({ a: "one", b: "two" }, null, { locale: "hu" });
-  assert.deepEqual(counts, { total: 2, translated: 0, stubbed: 0, absent: 2, inapplicable: 0 });
+  const counts = countAgainstEnglish({ a: "one", b: "two" }, null, {
+    locale: "hu",
+  });
+  assert.deepEqual(counts, {
+    total: 2,
+    translated: 0,
+    stubbed: 0,
+    absent: 2,
+    inapplicable: 0,
+  });
 });
 
 test("a key the target holds and English does not is outside coverage", () => {
-  const counts = countAgainstEnglish({ a: "one" }, { a: "egy", gone: "régi" }, { locale: "hu" });
-  assert.deepEqual(counts, { total: 1, translated: 1, stubbed: 0, absent: 0, inapplicable: 0 });
+  const counts = countAgainstEnglish(
+    { a: "one" },
+    { a: "egy", gone: "régi" },
+    { locale: "hu" },
+  );
+  assert.deepEqual(counts, {
+    total: 1,
+    translated: 1,
+    stubbed: 0,
+    absent: 0,
+    inapplicable: 0,
+  });
 });
 
 test("empty containers are structure on both sides", () => {
-  const counts = countAgainstEnglish({ a: "one", fns: {} }, { a: "egy", fns: {} }, { locale: "hu" });
-  assert.deepEqual(counts, { total: 1, translated: 1, stubbed: 0, absent: 0, inapplicable: 0 });
+  const counts = countAgainstEnglish(
+    { a: "one", fns: {} },
+    { a: "egy", fns: {} },
+    { locale: "hu" },
+  );
+  assert.deepEqual(counts, {
+    total: 1,
+    translated: 1,
+    stubbed: 0,
+    absent: 0,
+    inapplicable: 0,
+  });
 });
 
 test("validate accepts a justified `∅` and rejects an unjustified one", () => {
   const english = { n_one: "one", n_other: "many" };
-  assert.deepEqual(checkCatalog(english, { n_one: INAPPLICABLE, n_other: "ja" }, { locale: "ja" }), []);
-  const issues = checkCatalog(english, { n_one: INAPPLICABLE, n_other: "hu" }, { locale: "hu" });
-  assert.deepEqual(issues, [{ level: ERROR, message: `n_one: "${INAPPLICABLE}" is not justified (the key is reachable in hu)` }]);
+  assert.deepEqual(
+    checkCatalog(
+      english,
+      { n_one: INAPPLICABLE, n_other: "ja" },
+      { locale: "ja" },
+    ),
+    [],
+  );
+  const issues = checkCatalog(
+    english,
+    { n_one: INAPPLICABLE, n_other: "hu" },
+    { locale: "hu" },
+  );
+  assert.deepEqual(issues, [
+    {
+      level: ERROR,
+      message: `n_one: "${INAPPLICABLE}" is not justified (the key is reachable in hu)`,
+    },
+  ]);
 });
 
 test("the guard fails closed: with no locale, every `∅` is an error", () => {
-  const issues = checkCatalog({ n_one: "one", n_other: "many" }, { n_one: INAPPLICABLE, n_other: "x" });
+  const issues = checkCatalog(
+    { n_one: "one", n_other: "many" },
+    { n_one: INAPPLICABLE, n_other: "x" },
+  );
   assert.equal(issues.length, 1);
   assert.equal(issues[0].level, ERROR);
 });
 
 test("`∅` in English is an error where English reaches the key", () => {
-  const issues = checkCatalog({ n_zero: INAPPLICABLE, n_other: "many" }, { n_zero: "x", n_other: "y" }, { locale: "hu" });
+  const issues = checkCatalog(
+    { n_zero: INAPPLICABLE, n_other: "many" },
+    { n_zero: "x", n_other: "y" },
+    { locale: "hu" },
+  );
   assert.deepEqual(issues, [
-    { level: ERROR, message: `n_zero: source is "${INAPPLICABLE}" but the key is reachable in English` }
+    {
+      level: ERROR,
+      message: `n_zero: source is "${INAPPLICABLE}" but the key is reachable in English`,
+    },
   ]);
 });
 
 test("`∅` in English is fine where English lacks the category", () => {
   // English has no cardinal `many`; fr does, so fr holds a real string there.
-  assert.deepEqual(checkCatalog({ n_many: INAPPLICABLE, n_other: "many" }, { n_many: "beaucoup", n_other: "autres" }, { locale: "fr" }), []);
+  assert.deepEqual(
+    checkCatalog(
+      { n_many: INAPPLICABLE, n_other: "many" },
+      { n_many: "beaucoup", n_other: "autres" },
+      { locale: "fr" },
+    ),
+    [],
+  );
 });
 
 // -------------------------------------------------------- untranslated prose
@@ -1147,11 +1748,17 @@ test("a body byte-identical to English is untranslated", () => {
 });
 
 test("leading and trailing whitespace is not a translation", () => {
-  assert.equal(isCopiedEnglish("Roll the ball.", "\n  Roll the ball.  \n"), true);
+  assert.equal(
+    isCopiedEnglish("Roll the ball.", "\n  Roll the ball.  \n"),
+    true,
+  );
 });
 
 test("a real translation is not flagged", () => {
-  assert.equal(isCopiedEnglish("Roll the ball.", "Gurítsd el a labdát."), false);
+  assert.equal(
+    isCopiedEnglish("Roll the ball.", "Gurítsd el a labdát."),
+    false,
+  );
 });
 
 test("two empty bodies are not evidence of anything", () => {
@@ -1162,9 +1769,21 @@ test("two empty bodies are not evidence of anything", () => {
 
 test("one placeholder body reused across items is untranslated, all of it", () => {
   const repeated = findRepeatedBodies([
-    { key: "blog/a", englishBody: "A long English post.", targetBody: "Ez az oldal még nincs lefordítva." },
-    { key: "blog/b", englishBody: "A different English post.", targetBody: "Ez az oldal még nincs lefordítva." },
-    { key: "blog/c", englishBody: "A third English post.", targetBody: "Egy igazi fordítás." }
+    {
+      key: "blog/a",
+      englishBody: "A long English post.",
+      targetBody: "Ez az oldal még nincs lefordítva.",
+    },
+    {
+      key: "blog/b",
+      englishBody: "A different English post.",
+      targetBody: "Ez az oldal még nincs lefordítva.",
+    },
+    {
+      key: "blog/c",
+      englishBody: "A third English post.",
+      targetBody: "Egy igazi fordítás.",
+    },
   ]);
   assert.deepEqual([...repeated].sort(), ["blog/a", "blog/b"]);
 });
@@ -1174,14 +1793,18 @@ test("identical translations of identical English are correct, not evidence", ()
   // that would suppress a correct translation, which is worse than missing one.
   const repeated = findRepeatedBodies([
     { key: "blog/a", englishBody: "Coming soon.", targetBody: "Hamarosan." },
-    { key: "blog/b", englishBody: "Coming soon.", targetBody: "Hamarosan." }
+    { key: "blog/b", englishBody: "Coming soon.", targetBody: "Hamarosan." },
   ]);
   assert.equal(repeated.size, 0);
 });
 
 test("a body used exactly once is left alone", () => {
   const repeated = findRepeatedBodies([
-    { key: "blog/a", englishBody: "A long English post.", targetBody: "Rövid." }
+    {
+      key: "blog/a",
+      englishBody: "A long English post.",
+      targetBody: "Rövid.",
+    },
   ]);
   assert.equal(repeated.size, 0);
 });
@@ -1189,7 +1812,7 @@ test("a body used exactly once is left alone", () => {
 test("empty bodies never group together", () => {
   const repeated = findRepeatedBodies([
     { key: "concept/a-group", englishBody: "", targetBody: "" },
-    { key: "concept/b-group", englishBody: "", targetBody: "" }
+    { key: "concept/b-group", englishBody: "", targetBody: "" },
   ]);
   assert.equal(repeated.size, 0);
 });
@@ -1206,17 +1829,23 @@ test("empty bodies never group together", () => {
 console.log("\nthe frontmatter reader:");
 
 test("a nested mapping is an object, not leaves promoted to the top", () => {
-  const { data } = parseFrontmatter('---\ntitle: "T"\nseo:\n  description: "D"\n---\nBody.\n');
+  const { data } = parseFrontmatter(
+    '---\ntitle: "T"\nseo:\n  description: "D"\n---\nBody.\n',
+  );
   assert.deepEqual(data, { title: "T", seo: { description: "D" } });
 });
 
 test("a colon inside a quoted scalar is not a key separator", () => {
-  const { data } = parseFrontmatter('---\ntitle: "Episode 1: Agentic Coding 101"\n---\nB\n');
+  const { data } = parseFrontmatter(
+    '---\ntitle: "Episode 1: Agentic Coding 101"\n---\nB\n',
+  );
   assert.equal(data.title, "Episode 1: Agentic Coding 101");
 });
 
 test("an inline flow sequence is an array of strings", () => {
-  const { data } = parseFrontmatter('---\ntags: ["one", "two", "three"]\n---\nB\n');
+  const { data } = parseFrontmatter(
+    '---\ntags: ["one", "two", "three"]\n---\nB\n',
+  );
   assert.deepEqual(data.tags, ["one", "two", "three"]);
 });
 
@@ -1226,17 +1855,23 @@ test("an inline flow sequence is an array of strings", () => {
 // field does not fail the check, it DISAPPEARS from it. Every post that happened
 // to be long would have gone unchecked.
 test("a flow sequence wrapped onto the next line is still that sequence", () => {
-  const { data } = parseFrontmatter('---\nseo:\n  keywords:\n    ["a", "b"]\n---\nB\n');
+  const { data } = parseFrontmatter(
+    '---\nseo:\n  keywords:\n    ["a", "b"]\n---\nB\n',
+  );
   assert.deepEqual(data.seo.keywords, ["a", "b"]);
 });
 
 test("a flow sequence spread over many lines is still that sequence", () => {
-  const { data } = parseFrontmatter('---\nseo:\n  keywords:\n    [\n      "a",\n      "b",\n      "c"\n    ]\n---\nB\n');
+  const { data } = parseFrontmatter(
+    '---\nseo:\n  keywords:\n    [\n      "a",\n      "b",\n      "c"\n    ]\n---\nB\n',
+  );
   assert.deepEqual(data.seo.keywords, ["a", "b", "c"]);
 });
 
 test("a comma inside a quoted item does not split it", () => {
-  const { data } = parseFrontmatter('---\ntags: ["one, and a half", "two"]\n---\nB\n');
+  const { data } = parseFrontmatter(
+    '---\ntags: ["one, and a half", "two"]\n---\nB\n',
+  );
   assert.deepEqual(data.tags, ["one, and a half", "two"]);
 });
 
@@ -1255,7 +1890,9 @@ test("an empty flow sequence is an empty array, not a one-item one", () => {
 });
 
 test("a dotted path reads a nested field, and undefined means absent", () => {
-  const { data } = parseFrontmatter('---\ntitle: "T"\nseo:\n  description: "D"\n---\nB\n');
+  const { data } = parseFrontmatter(
+    '---\ntitle: "T"\nseo:\n  description: "D"\n---\nB\n',
+  );
   assert.equal(frontmatterValue(data, "seo.description"), "D");
   assert.equal(frontmatterValue(data, "title"), "T");
   assert.equal(frontmatterValue(data, "seo.keywords"), undefined);
@@ -1269,8 +1906,15 @@ test("a dotted path does not descend into a string or an array", () => {
 });
 
 test("leaf paths are dotted, and an array is a leaf rather than a branch", () => {
-  const { data } = parseFrontmatter('---\ntitle: "T"\ntags: ["a", "b"]\nseo:\n  description: "D"\n  keywords: ["k"]\n---\nB\n');
-  assert.deepEqual(frontmatterPaths(data), ["title", "tags", "seo.description", "seo.keywords"]);
+  const { data } = parseFrontmatter(
+    '---\ntitle: "T"\ntags: ["a", "b"]\nseo:\n  description: "D"\n  keywords: ["k"]\n---\nB\n',
+  );
+  assert.deepEqual(frontmatterPaths(data), [
+    "title",
+    "tags",
+    "seo.description",
+    "seo.keywords",
+  ]);
 });
 
 // -------------------------------------------- the translatable frontmatter check
@@ -1286,68 +1930,118 @@ const POST_KEYS = ["title", "excerpt", "seo.description", "seo.keywords"];
 function frontmatterIssues(englishFm, targetFm, translatedKeys = POST_KEYS) {
   const english = `---\n${englishFm}\n---\nBody.\n`;
   const target = `---\n${targetFm}\nen_md5: abc\n---\nMás szöveg.\n`;
-  return checkProse(parseFrontmatter(english).body, parseFrontmatter(target).body, {
-    englishData: parseFrontmatter(english).data,
-    targetData: parseFrontmatter(target).data,
-    translatedKeys,
-    expectedMd5: "abc"
-  })
+  return checkProse(
+    parseFrontmatter(english).body,
+    parseFrontmatter(target).body,
+    {
+      englishData: parseFrontmatter(english).data,
+      targetData: parseFrontmatter(target).data,
+      translatedKeys,
+      expectedMd5: "abc",
+    },
+  )
     .filter((i) => i.message.startsWith("frontmatter:"))
     .map((i) => `${i.level} ${i.message}`);
 }
 
-const EN_POST = 'title: "T"\nexcerpt: "E"\nseo:\n  description: "D"\n  keywords: ["a", "b"]';
+const EN_POST =
+  'title: "T"\nexcerpt: "E"\nseo:\n  description: "D"\n  keywords: ["a", "b"]';
 
 test("a fully translated post has nothing to say about its frontmatter", () => {
-  assert.deepEqual(frontmatterIssues(EN_POST, 'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: ["x", "y"]'), []);
+  assert.deepEqual(
+    frontmatterIssues(
+      EN_POST,
+      'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: ["x", "y"]',
+    ),
+    [],
+  );
 });
 
 // The bug in one assertion: before the nested reader, this passed silently.
 test("an empty nested field is an ERROR rather than nothing at all", () => {
-  assert.deepEqual(frontmatterIssues(EN_POST, 'title: "C"\nexcerpt: "K"\nseo:\n  description: ""\n  keywords: ["x"]'), [
-    'ERROR frontmatter: missing "seo.description"'
-  ]);
+  assert.deepEqual(
+    frontmatterIssues(
+      EN_POST,
+      'title: "C"\nexcerpt: "K"\nseo:\n  description: ""\n  keywords: ["x"]',
+    ),
+    ['ERROR frontmatter: missing "seo.description"'],
+  );
 });
 
 test("a list-valued field is checked item by item, not trimmed as a string", () => {
-  assert.deepEqual(frontmatterIssues(EN_POST, 'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: ["x ", "y"]'), [
-    'ERROR frontmatter: leading or trailing whitespace in "seo.keywords"'
-  ]);
+  assert.deepEqual(
+    frontmatterIssues(
+      EN_POST,
+      'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: ["x ", "y"]',
+    ),
+    ['ERROR frontmatter: leading or trailing whitespace in "seo.keywords"'],
+  );
 });
 
 test("an empty list is as missing as an empty string", () => {
-  assert.deepEqual(frontmatterIssues(EN_POST, 'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: []'), [
-    'ERROR frontmatter: missing "seo.keywords"'
-  ]);
+  assert.deepEqual(
+    frontmatterIssues(
+      EN_POST,
+      'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: []',
+    ),
+    ['ERROR frontmatter: missing "seo.keywords"'],
+  );
 });
 
 test("a wrapped list is accepted, not reported as an empty mapping", () => {
-  assert.deepEqual(frontmatterIssues(EN_POST, 'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords:\n    ["x", "y"]'), []);
+  assert.deepEqual(
+    frontmatterIssues(
+      EN_POST,
+      'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords:\n    ["x", "y"]',
+    ),
+    [],
+  );
 });
 
 test("a dropped nested key is caught by parity, not swallowed by its block", () => {
-  assert.deepEqual(frontmatterIssues(EN_POST, 'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"'), [
-    'ERROR frontmatter: missing "seo.keywords"',
-    'ERROR frontmatter: key "seo.keywords" dropped (only en_md5/tidied_md5 may be added)'
-  ]);
+  assert.deepEqual(
+    frontmatterIssues(
+      EN_POST,
+      'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"',
+    ),
+    [
+      'ERROR frontmatter: missing "seo.keywords"',
+      'ERROR frontmatter: key "seo.keywords" dropped (only en_md5/tidied_md5 may be added)',
+    ],
+  );
 });
 
 test("a nested key English does not have is excess, so reported and not blocking", () => {
   // A page translated at a PR's head SHA carries the frontmatter that PR adds,
   // days before main does. Nothing renders a field it does not ask for.
-  assert.deepEqual(frontmatterIssues(EN_POST, 'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: ["x"]\n  author: "Nobody"'), [
-    'WARN frontmatter: key "seo.author" is not in English (fine while English catches up; invented if it persists)'
-  ]);
+  assert.deepEqual(
+    frontmatterIssues(
+      EN_POST,
+      'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: ["x"]\n  author: "Nobody"',
+    ),
+    [
+      'WARN frontmatter: key "seo.author" is not in English (fine while English catches up; invented if it persists)',
+    ],
+  );
 });
 
 test("a field the type does not declare translatable is left alone", () => {
   // `tags` stays English on purpose, and saying so is the point of the list.
   const english = `${EN_POST}\ntags: ["one", "two"]`;
-  assert.deepEqual(frontmatterIssues(english, 'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: ["x"]\ntags: ["one", "two"]'), []);
+  assert.deepEqual(
+    frontmatterIssues(
+      english,
+      'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: ["x"]\ntags: ["one", "two"]',
+    ),
+    [],
+  );
 });
 
 test("a path English does not have is not demanded of the translation", () => {
-  assert.deepEqual(frontmatterIssues('title: "T"\nexcerpt: "E"', 'title: "C"\nexcerpt: "K"'), []);
+  assert.deepEqual(
+    frontmatterIssues('title: "T"\nexcerpt: "E"', 'title: "C"\nexcerpt: "K"'),
+    [],
+  );
 });
 
 // ------------------------------------- the untranslated frontmatter warning
@@ -1367,24 +2061,43 @@ function identicalWarnings(englishFm, targetFm, translatedKeys = POST_KEYS) {
     .sort();
 }
 
-const EN_EXERCISE = 'title: "Snowman"\ndescription: "Build a snowman, one shape at a time."';
+const EN_EXERCISE =
+  'title: "Snowman"\ndescription: "Build a snowman, one shape at a time."';
 const EXERCISE_KEYS = ["title", "description"];
 
 test("an English title over a translated body is warned about, with the value", () => {
-  assert.deepEqual(identicalWarnings(EN_EXERCISE, 'title: "Snowman"\ndescription: "Építs egy hóembert, alakzatról alakzatra."', EXERCISE_KEYS), [
-    'WARN frontmatter: "title" is byte-identical to English ("Snowman"): untranslated, or legitimately the same ' +
-      "(a proper noun, a named work, untranslatable wordplay)"
-  ]);
+  assert.deepEqual(
+    identicalWarnings(
+      EN_EXERCISE,
+      'title: "Snowman"\ndescription: "Építs egy hóembert, alakzatról alakzatra."',
+      EXERCISE_KEYS,
+    ),
+    [
+      'WARN frontmatter: "title" is byte-identical to English ("Snowman"): untranslated, or legitimately the same ' +
+        "(a proper noun, a named work, untranslatable wordplay)",
+    ],
+  );
 });
 
 test("a translated title says nothing", () => {
-  assert.deepEqual(identicalWarnings(EN_EXERCISE, 'title: "Hóember"\ndescription: "Építs egy hóembert, alakzatról alakzatra."', EXERCISE_KEYS), []);
+  assert.deepEqual(
+    identicalWarnings(
+      EN_EXERCISE,
+      'title: "Hóember"\ndescription: "Építs egy hóembert, alakzatról alakzatra."',
+      EXERCISE_KEYS,
+    ),
+    [],
+  );
 });
 
 test("a legitimately identical title still only WARNs, so it can be read and dismissed", () => {
   // `Luhn` is a person. The check cannot know that, which is exactly why it does
   // not block: a human reads the warning and moves on.
-  const issues = identicalWarnings('title: "Luhn"\ndescription: "Validate a number."', 'title: "Luhn"\ndescription: "Ellenőrizz egy számot."', EXERCISE_KEYS);
+  const issues = identicalWarnings(
+    'title: "Luhn"\ndescription: "Validate a number."',
+    'title: "Luhn"\ndescription: "Ellenőrizz egy számot."',
+    EXERCISE_KEYS,
+  );
   assert.equal(issues.length, 1);
   assert.equal(issues[0].startsWith("WARN "), true);
 });
@@ -1392,36 +2105,72 @@ test("a legitimately identical title still only WARNs, so it can be read and dis
 test("a value with no word to translate is never reported as English", () => {
   // A bare number, a symbol and a single letter are the same in every language.
   for (const value of ["7", "3.14", "→", "A", "🎉"]) {
-    assert.deepEqual(identicalWarnings(`title: "${value}"\ndescription: "D."`, `title: "${value}"\ndescription: "L."`, ["title"]), [], value);
+    assert.deepEqual(
+      identicalWarnings(
+        `title: "${value}"\ndescription: "D."`,
+        `title: "${value}"\ndescription: "L."`,
+        ["title"],
+      ),
+      [],
+      value,
+    );
   }
 });
 
 test("every translatable frontmatter field is covered, not just the title", () => {
   // Driven by the type's own `frontmatterTranslated`, so a nested path is checked
   // exactly as a top-level one is.
-  assert.deepEqual(identicalWarnings('title: "T"\nseo:\n  description: "Learn to code with Jiki."', 'title: "C"\nseo:\n  description: "Learn to code with Jiki."', ["title", "seo.description"]), [
-    'WARN frontmatter: "seo.description" is byte-identical to English ("Learn to code with Jiki."): untranslated, ' +
-      "or legitimately the same (a proper noun, a named work, untranslatable wordplay)"
-  ]);
+  assert.deepEqual(
+    identicalWarnings(
+      'title: "T"\nseo:\n  description: "Learn to code with Jiki."',
+      'title: "C"\nseo:\n  description: "Learn to code with Jiki."',
+      ["title", "seo.description"],
+    ),
+    [
+      'WARN frontmatter: "seo.description" is byte-identical to English ("Learn to code with Jiki."): untranslated, ' +
+        "or legitimately the same (a proper noun, a named work, untranslatable wordplay)",
+    ],
+  );
 });
 
 test("a list-valued field is compared whole: shared entries are normal, a copied list is not", () => {
   const english = 'title: "T"\nseo:\n  keywords: ["learn to code", "jiki"]';
   const keys = ["seo.keywords"];
-  assert.deepEqual(identicalWarnings(english, 'title: "C"\nseo:\n  keywords: ["tanulj programozni", "jiki"]', keys), []);
-  assert.equal(identicalWarnings(english, 'title: "C"\nseo:\n  keywords: ["learn to code", "jiki"]', keys).length, 1);
+  assert.deepEqual(
+    identicalWarnings(
+      english,
+      'title: "C"\nseo:\n  keywords: ["tanulj programozni", "jiki"]',
+      keys,
+    ),
+    [],
+  );
+  assert.equal(
+    identicalWarnings(
+      english,
+      'title: "C"\nseo:\n  keywords: ["learn to code", "jiki"]',
+      keys,
+    ).length,
+    1,
+  );
 });
 
 test("the warning never blocks: it is a WARN in checkProse's own output", () => {
   const english = '---\ntitle: "Snowman"\n---\nBody.\n';
   const target = '---\ntitle: "Snowman"\nen_md5: abc\n---\nMás szöveg.\n';
-  const issues = checkProse(parseFrontmatter(english).body, parseFrontmatter(target).body, {
-    englishData: parseFrontmatter(english).data,
-    targetData: parseFrontmatter(target).data,
-    translatedKeys: ["title"],
-    expectedMd5: "abc"
-  });
-  assert.deepEqual(issues.filter((i) => i.level === ERROR), []);
+  const issues = checkProse(
+    parseFrontmatter(english).body,
+    parseFrontmatter(target).body,
+    {
+      englishData: parseFrontmatter(english).data,
+      targetData: parseFrontmatter(target).data,
+      translatedKeys: ["title"],
+      expectedMd5: "abc",
+    },
+  );
+  assert.deepEqual(
+    issues.filter((i) => i.level === ERROR),
+    [],
+  );
 });
 
 test("isUntranslatedFrontmatter ignores a value that is not translatable copy", () => {
@@ -1430,7 +2179,10 @@ test("isUntranslatedFrontmatter ignores a value that is not translatable copy", 
   assert.equal(isUntranslatedFrontmatter(undefined, undefined), false);
   assert.equal(isUntranslatedFrontmatter([], []), false);
   // A list and a string that happen to render the same text are not identical.
-  assert.equal(isUntranslatedFrontmatter(["learn", "to code"], "learn, to code"), false);
+  assert.equal(
+    isUntranslatedFrontmatter(["learn", "to code"], "learn, to code"),
+    false,
+  );
 });
 
 // ------------------------------------------------- the frontmatter YAML check
@@ -1454,26 +2206,68 @@ console.log("\nthe frontmatter YAML check:");
 // `valid` means: js-yaml accepts it AND both parsers read the same document.
 // Anything else is a file validate must refuse, whichever half of that it fails.
 const YAML_SAMPLES = [
-  { name: "a quoted value may contain a colon", valid: true, text: 'title: "T"\nseo:\n  description: "Alapfogalmai: mik az AI-modellek"' },
+  {
+    name: "a quoted value may contain a colon",
+    valid: true,
+    text: 'title: "T"\nseo:\n  description: "Alapfogalmai: mik az AI-modellek"',
+  },
   {
     name: "an unquoted colon-space value is refused",
     valid: false,
-    text: "title: T\nseo:\n  description: Az alapfogalmai kezdőknek magyarázva: mik az AI-modellek és a tokenek"
+    text: "title: T\nseo:\n  description: Az alapfogalmai kezdőknek magyarázva: mik az AI-modellek és a tokenek",
   },
-  { name: "a bare URL is fine: its colon has no space after it", valid: true, text: "title: T\nurl: https://jiki.io/x" },
-  { name: "commas and other punctuation in a plain scalar are fine", valid: true, text: "title: Modellek, tokenek és egyéb" },
-  { name: "a value ending in a colon is refused", valid: false, text: "title: Kezdőknek magyarázva:" },
-  { name: "a flow sequence is fine", valid: true, text: 'title: "T"\ntags: ["a", "b"]' },
-  { name: "an unterminated quote is refused", valid: false, text: 'title: "Kezdőknek magyarázva' },
-  { name: "a value opening with a YAML indicator is refused", valid: false, text: "title: *kezdo" },
-  { name: "a duplicated key is refused", valid: false, text: 'title: "A"\ntitle: "B"' },
-  { name: "the same key in two different blocks is not a duplicate", valid: true, text: 'seo:\n  description: "D"\nsummary:\n  description: "S"' }
+  {
+    name: "a bare URL is fine: its colon has no space after it",
+    valid: true,
+    text: "title: T\nurl: https://jiki.io/x",
+  },
+  {
+    name: "commas and other punctuation in a plain scalar are fine",
+    valid: true,
+    text: "title: Modellek, tokenek és egyéb",
+  },
+  {
+    name: "a value ending in a colon is refused",
+    valid: false,
+    text: "title: Kezdőknek magyarázva:",
+  },
+  {
+    name: "a flow sequence is fine",
+    valid: true,
+    text: 'title: "T"\ntags: ["a", "b"]',
+  },
+  {
+    name: "an unterminated quote is refused",
+    valid: false,
+    text: 'title: "Kezdőknek magyarázva',
+  },
+  {
+    name: "a value opening with a YAML indicator is refused",
+    valid: false,
+    text: "title: *kezdo",
+  },
+  {
+    name: "a duplicated key is refused",
+    valid: false,
+    text: 'title: "A"\ntitle: "B"',
+  },
+  {
+    name: "the same key in two different blocks is not a duplicate",
+    valid: true,
+    text: 'seo:\n  description: "D"\nsummary:\n  description: "S"',
+  },
 ];
 
 for (const sample of YAML_SAMPLES) {
   test(sample.name, () => {
     const issues = frontmatterSyntaxIssues(`---\n${sample.text}\n---\nBody.\n`);
-    assert.equal(issues.length === 0, sample.valid, sample.valid ? `unexpected: ${issues.join("; ")}` : "expected this to be refused");
+    assert.equal(
+      issues.length === 0,
+      sample.valid,
+      sample.valid
+        ? `unexpected: ${issues.join("; ")}`
+        : "expected this to be refused",
+    );
   });
 }
 
@@ -1481,37 +2275,54 @@ test("a stray second fence is refused: it silently ends the frontmatter", () => 
   // A real Persian exercise looked exactly like this. Both parsers "succeeded":
   // js-yaml read an EMPTY document and the minimal reader read the fields anyway,
   // so publish would have shipped a page with no title and said nothing.
-  const issues = frontmatterSyntaxIssues('---\n---\n\ntitle: "شام رسمی"\nen_md5: abc\n\n---\n\nBody.\n');
+  const issues = frontmatterSyntaxIssues(
+    '---\n---\n\ntitle: "شام رسمی"\nen_md5: abc\n\n---\n\nBody.\n',
+  );
   assert.equal(issues.length > 0, true);
   assert.match(issues[0], /"---" line inside the frontmatter/);
 });
 
 test("checkProse reports invalid YAML as a blocking ERROR naming the fix", () => {
-  const target = "---\ntitle: T\nseo:\n  description: Alapfogalmai kezdőknek: mik a tokenek\nen_md5: abc\n---\nMás szöveg.\n";
+  const target =
+    "---\ntitle: T\nseo:\n  description: Alapfogalmai kezdőknek: mik a tokenek\nen_md5: abc\n---\nMás szöveg.\n";
   const issues = checkProse("Body.", "Más szöveg.", {
-    englishData: parseFrontmatter('---\ntitle: "T"\nseo:\n  description: "D"\n---\nBody.\n').data,
+    englishData: parseFrontmatter(
+      '---\ntitle: "T"\nseo:\n  description: "D"\n---\nBody.\n',
+    ).data,
     targetData: parseFrontmatter(target).data,
     translatedKeys: ["title", "seo.description"],
     expectedMd5: "abc",
-    targetRaw: target
+    targetRaw: target,
   });
-  const yaml = issues.filter((i) => i.message.startsWith("frontmatter: not valid YAML"));
-  assert.equal(yaml.length, 1, `expected one YAML error, got ${JSON.stringify(issues, null, 2)}`);
+  const yaml = issues.filter((i) =>
+    i.message.startsWith("frontmatter: not valid YAML"),
+  );
+  assert.equal(
+    yaml.length,
+    1,
+    `expected one YAML error, got ${JSON.stringify(issues, null, 2)}`,
+  );
   assert.equal(yaml[0].level, ERROR);
   assert.match(yaml[0].message, /"seo.description"/);
   assert.match(yaml[0].message, /Wrap the whole value in double quotes/);
 });
 
 test("a correctly quoted file says nothing about its YAML", () => {
-  const target = '---\ntitle: "T"\nseo:\n  description: "Alapfogalmai kezdőknek: mik a tokenek"\nen_md5: abc\n---\nMás szöveg.\n';
+  const target =
+    '---\ntitle: "T"\nseo:\n  description: "Alapfogalmai kezdőknek: mik a tokenek"\nen_md5: abc\n---\nMás szöveg.\n';
   const issues = checkProse("Body.", "Más szöveg.", {
-    englishData: parseFrontmatter('---\ntitle: "T"\nseo:\n  description: "D"\n---\nBody.\n').data,
+    englishData: parseFrontmatter(
+      '---\ntitle: "T"\nseo:\n  description: "D"\n---\nBody.\n',
+    ).data,
     targetData: parseFrontmatter(target).data,
     translatedKeys: ["title", "seo.description"],
     expectedMd5: "abc",
-    targetRaw: target
+    targetRaw: target,
   });
-  assert.deepEqual(issues.filter((i) => i.message.startsWith("frontmatter: not valid YAML")), []);
+  assert.deepEqual(
+    issues.filter((i) => i.message.startsWith("frontmatter: not valid YAML")),
+    [],
+  );
 });
 
 // ------------------------------------------ ...and the same verdicts from js-yaml
@@ -1524,13 +2335,21 @@ test("a correctly quoted file says nothing about its YAML", () => {
 const sharedVerdicts = await (async () => {
   try {
     const { parseFrontmatterShared } = await import("./lib/prose.mjs");
-    const signature = (data) => frontmatterPaths(data ?? {}).map((leaf) => `${leaf}=${JSON.stringify(frontmatterValue(data, leaf))}`).join("\n");
+    const signature = (data) =>
+      frontmatterPaths(data ?? {})
+        .map(
+          (leaf) => `${leaf}=${JSON.stringify(frontmatterValue(data, leaf))}`,
+        )
+        .join("\n");
     const verdicts = new Map();
     for (const sample of YAML_SAMPLES) {
       const text = `---\n${sample.text}\n---\nBody.\n`;
       try {
         const shared = await parseFrontmatterShared(text);
-        verdicts.set(sample.name, signature(shared.data) === signature(parseFrontmatter(text).data));
+        verdicts.set(
+          sample.name,
+          signature(shared.data) === signature(parseFrontmatter(text).data),
+        );
       } catch {
         verdicts.set(sample.name, false);
       }
@@ -1542,7 +2361,9 @@ const sharedVerdicts = await (async () => {
 })();
 
 if (sharedVerdicts === null) {
-  console.log("\nthe frontmatter YAML check, against js-yaml:\n  skip  no @jiki.io/content-renderer install");
+  console.log(
+    "\nthe frontmatter YAML check, against js-yaml:\n  skip  no @jiki.io/content-renderer install",
+  );
 } else {
   console.log("\nthe frontmatter YAML check, against js-yaml:");
   for (const sample of YAML_SAMPLES) {
@@ -1562,20 +2383,25 @@ if (sharedVerdicts === null) {
 console.log("\nthe staleness stamp:");
 
 test("a missing stamp is appended and nothing else moves", () => {
-  const raw = '---\ntitle: "A Post"\ntags: ["one", "two"]\nseo:\n  description: "Hi"\n---\n\nBody.\n';
+  const raw =
+    '---\ntitle: "A Post"\ntags: ["one", "two"]\nseo:\n  description: "Hi"\n---\n\nBody.\n';
   assert.equal(
     stampFrontmatter(raw, "abc123"),
-    '---\ntitle: "A Post"\ntags: ["one", "two"]\nseo:\n  description: "Hi"\nen_md5: abc123\n---\n\nBody.\n'
+    '---\ntitle: "A Post"\ntags: ["one", "two"]\nseo:\n  description: "Hi"\nen_md5: abc123\n---\n\nBody.\n',
   );
 });
 
 test("an existing stamp is replaced in place", () => {
   const raw = "---\ntitle: T\nen_md5: old\ndescription: D\n---\nBody.\n";
-  assert.equal(stampFrontmatter(raw, "new"), "---\ntitle: T\nen_md5: new\ndescription: D\n---\nBody.\n");
+  assert.equal(
+    stampFrontmatter(raw, "new"),
+    "---\ntitle: T\nen_md5: new\ndescription: D\n---\nBody.\n",
+  );
 });
 
 test("quoting, indentation and multi-line sequences survive a stamp", () => {
-  const raw = '---\nseo:\n  keywords:\n    [\n      "a",\n      "b"\n    ]\n---\nBody.\n';
+  const raw =
+    '---\nseo:\n  keywords:\n    [\n      "a",\n      "b"\n    ]\n---\nBody.\n';
   const stamped = stampFrontmatter(raw, "x");
   assert.ok(stamped.includes('    [\n      "a",\n      "b"\n    ]'));
   assert.equal(stamped.replace("\nen_md5: x", ""), raw);
@@ -1583,7 +2409,10 @@ test("quoting, indentation and multi-line sequences survive a stamp", () => {
 
 test("the body is untouched, including a body that contains ---", () => {
   const raw = "---\ntitle: T\n---\nBefore\n\n---\n\nAfter\n";
-  assert.equal(stampFrontmatter(raw, "y"), "---\ntitle: T\nen_md5: y\n---\nBefore\n\n---\n\nAfter\n");
+  assert.equal(
+    stampFrontmatter(raw, "y"),
+    "---\ntitle: T\nen_md5: y\n---\nBefore\n\n---\n\nAfter\n",
+  );
 });
 
 // ------------------------------------------------------------ the VTT stamp
@@ -1597,12 +2426,18 @@ console.log("\nthe VTT staleness stamp:");
 const VTT = "WEBVTT\n\n00:00:00.000 --> 00:00:01.000\nHello\n";
 
 test("a missing stamp is inserted under the header, terminated by a blank line", () => {
-  assert.equal(stampVttNote(VTT, "abc"), "WEBVTT\n\nNOTE en_md5 abc\n\n00:00:00.000 --> 00:00:01.000\nHello\n");
+  assert.equal(
+    stampVttNote(VTT, "abc"),
+    "WEBVTT\n\nNOTE en_md5 abc\n\n00:00:00.000 --> 00:00:01.000\nHello\n",
+  );
 });
 
 test("a header with no blank line after it still gets a terminated NOTE block", () => {
   const raw = "WEBVTT\n00:00:00.000 --> 00:00:01.000\nHello\n";
-  assert.equal(stampVttNote(raw, "abc"), "WEBVTT\n\nNOTE en_md5 abc\n\n00:00:00.000 --> 00:00:01.000\nHello\n");
+  assert.equal(
+    stampVttNote(raw, "abc"),
+    "WEBVTT\n\nNOTE en_md5 abc\n\n00:00:00.000 --> 00:00:01.000\nHello\n",
+  );
 });
 
 test("an existing stamp is replaced in place, and stamping is idempotent", () => {
@@ -1612,14 +2447,25 @@ test("an existing stamp is replaced in place, and stamping is idempotent", () =>
 });
 
 test("the stamp round-trips through the reader, and a human NOTE is not one", () => {
-  assert.deepEqual(parseVttNotes(stampVttNote(VTT, "d41d8cd98f00b204e9800998ecf8427e")), {
-    en_md5: "d41d8cd98f00b204e9800998ecf8427e"
-  });
-  assert.deepEqual(parseVttNotes("WEBVTT\n\nNOTE a human comment\n\n00:00:00.000 --> 00:00:01.000\nHi\n"), {});
+  assert.deepEqual(
+    parseVttNotes(stampVttNote(VTT, "d41d8cd98f00b204e9800998ecf8427e")),
+    {
+      en_md5: "d41d8cd98f00b204e9800998ecf8427e",
+    },
+  );
+  assert.deepEqual(
+    parseVttNotes(
+      "WEBVTT\n\nNOTE a human comment\n\n00:00:00.000 --> 00:00:01.000\nHi\n",
+    ),
+    {},
+  );
 });
 
 test("cue timings and caption text survive a stamp", () => {
-  assert.equal(vttTimestamps(stampVttNote(VTT, "abc")).join(), "00:00:00.000 --> 00:00:01.000");
+  assert.equal(
+    vttTimestamps(stampVttNote(VTT, "abc")).join(),
+    "00:00:00.000 --> 00:00:01.000",
+  );
   assert.equal(vttBody(stampVttNote(VTT, "abc")), "Hello");
 });
 
@@ -1645,11 +2491,17 @@ test("an English locale segment is refused", () => {
 });
 
 test("`source`, this repo's old name for English, is refused too", () => {
-  assert.equal(refuses("static/i18n/app/source/messages-abc123456789.json"), true);
+  assert.equal(
+    refuses("static/i18n/app/source/messages-abc123456789.json"),
+    true,
+  );
 });
 
 test("English is refused wherever the segment sits in the key", () => {
-  assert.equal(refuses("static/i18n/exercises/acronym/en/messages-abc123456789.json"), true);
+  assert.equal(
+    refuses("static/i18n/exercises/acronym/en/messages-abc123456789.json"),
+    true,
+  );
 });
 
 test("a key outside the static/ prefix is refused", () => {
@@ -1657,7 +2509,10 @@ test("a key outside the static/ prefix is refused", () => {
 });
 
 test("a legitimate target-locale key is permitted, and normalised", () => {
-  assert.equal(assertPublishableKey("/static/i18n/app/hu/messages-abc123456789.json"), "static/i18n/app/hu/messages-abc123456789.json");
+  assert.equal(
+    assertPublishableKey("/static/i18n/app/hu/messages-abc123456789.json"),
+    "static/i18n/app/hu/messages-abc123456789.json",
+  );
 });
 
 // ------------------------------------------------ the production locale list
@@ -1674,22 +2529,34 @@ test("a sound list is accepted", () => {
 });
 
 test("a missing list is a failure, not an empty gate", () => {
-  assert.match(productionLocaleIssue(undefined, ["hu"]), /"productionTargets" is missing/);
+  assert.match(
+    productionLocaleIssue(undefined, ["hu"]),
+    /"productionTargets" is missing/,
+  );
 });
 
 test("an EMPTY list is a failure: nothing gating is never a legitimate state", () => {
   // The precise hole the `?? []` fallback this replaced used to leave open: an
   // empty production bucket puts every error on the non-production side, and the
   // run exits 0 having printed hundreds of them.
-  assert.match(productionLocaleIssue([], ["hu"]), /"productionTargets" is empty/);
+  assert.match(
+    productionLocaleIssue([], ["hu"]),
+    /"productionTargets" is empty/,
+  );
 });
 
 test("a non-array list is a failure, and the message says what was found", () => {
-  assert.match(productionLocaleIssue("hu", ["hu"]), /not an array \(got "hu"\)/);
+  assert.match(
+    productionLocaleIssue("hu", ["hu"]),
+    /not an array \(got "hu"\)/,
+  );
 });
 
 test("a locale `targets` does not know is a failure", () => {
-  assert.match(productionLocaleIssue(["hu", "xx"], ["hu"]), /"targets" does not: xx/);
+  assert.match(
+    productionLocaleIssue(["hu", "xx"], ["hu"]),
+    /"targets" does not: xx/,
+  );
 });
 
 test("a casing slip is caught, and the message names the trap", () => {
@@ -1703,7 +2570,8 @@ test("the list this repo actually ships passes its own check", () => {
 });
 
 test("every production locale is a target locale, so none can drop out of the gate", () => {
-  for (const locale of PRODUCTION_LOCALES) assert.ok(TARGET_LOCALES.includes(locale), `${locale} is not in targets`);
+  for (const locale of PRODUCTION_LOCALES)
+    assert.ok(TARGET_LOCALES.includes(locale), `${locale} is not in targets`);
 });
 
 // -------------------------------------------------------- the api copy rows
@@ -1732,23 +2600,41 @@ en:
 test("leaf keys are dotted paths, and the locale key is stripped", () => {
   assert.deepEqual(
     [...localeFileLeaves(MAILER_YML).keys()],
-    ["account_mailer.welcome.subject", "account_mailer.welcome.body_markdown", "account_mailer.welcome.cta"]
+    [
+      "account_mailer.welcome.subject",
+      "account_mailer.welcome.body_markdown",
+      "account_mailer.welcome.cta",
+    ],
   );
 });
 
 test("a block scalar is one leaf, and its body does not leak in as keys", () => {
-  const body = localeFileLeaves(MAILER_YML).get("account_mailer.welcome.body_markdown");
+  const body = localeFileLeaves(MAILER_YML).get(
+    "account_mailer.welcome.body_markdown",
+  );
   assert.equal(body.split("\n")[0], "Welcome to [Jiki](https://jiki.io)!");
 });
 
 test("quotes come off a scalar, so an empty value reads as empty", () => {
-  assert.equal(localeFileLeaves(MAILER_YML).get("account_mailer.welcome.subject"), "Welcome to Jiki!");
-  assert.equal(localeFileLeaves(MAILER_YML).get("account_mailer.welcome.cta"), "");
+  assert.equal(
+    localeFileLeaves(MAILER_YML).get("account_mailer.welcome.subject"),
+    "Welcome to Jiki!",
+  );
+  assert.equal(
+    localeFileLeaves(MAILER_YML).get("account_mailer.welcome.cta"),
+    "",
+  );
 });
 
 test("two locales of the same file produce the same key set", () => {
-  const hu = MAILER_YML.replace("en:", "hu:").replace("Welcome to Jiki!", "Üdv a Jikiben!");
-  assert.deepEqual([...localeFileLeaves(hu).keys()], [...localeFileLeaves(MAILER_YML).keys()]);
+  const hu = MAILER_YML.replace("en:", "hu:").replace(
+    "Welcome to Jiki!",
+    "Üdv a Jikiben!",
+  );
+  assert.deepEqual(
+    [...localeFileLeaves(hu).keys()],
+    [...localeFileLeaves(MAILER_YML).keys()],
+  );
 });
 
 test("Rails' own locale list is read from the initializer, both constants", () => {
@@ -1759,12 +2645,21 @@ test("Rails' own locale list is read from the initializer, both constants", () =
 test("a locale file takes RAILS' spelling of the locale, not this repo's", () => {
   // The two lists agree today. This is what keeps that a fact rather than an
   // assumption: `pt-pt` here and `pt-PT` there are one locale.
-  assert.deepEqual(railsLocale("pt-pt", ["pt-PT"]), { locale: "pt-PT", knownToRails: true });
-  assert.deepEqual(railsLocale("zh_CN", ["zh-CN"]), { locale: "zh-CN", knownToRails: true });
+  assert.deepEqual(railsLocale("pt-pt", ["pt-PT"]), {
+    locale: "pt-PT",
+    knownToRails: true,
+  });
+  assert.deepEqual(railsLocale("zh_CN", ["zh-CN"]), {
+    locale: "zh-CN",
+    knownToRails: true,
+  });
 });
 
 test("a locale Rails has never heard of keeps its own spelling and is flagged", () => {
-  assert.deepEqual(railsLocale("fi", ["de", "hu"]), { locale: "fi", knownToRails: false });
+  assert.deepEqual(railsLocale("fi", ["de", "hu"]), {
+    locale: "fi",
+    knownToRails: false,
+  });
 });
 
 // ----------------------------------------------------- the post listing copy
@@ -1778,12 +2673,22 @@ test("a locale Rails has never heard of keeps its own spelling and is flagged", 
 
 console.log("\nthe post listing copy:");
 
-const EPISODE_SLUG = "build-your-personal-homepage/5981d746-0aaf-40c1-9f44-344ddfb004ad";
+const EPISODE_SLUG =
+  "build-your-personal-homepage/5981d746-0aaf-40c1-9f44-344ddfb004ad";
 
-const postEntry = (typeId, slug, data) => ({ typeId, slug, data, readingTime: 4, contentHash: `${typeId}-hash` });
+const postEntry = (typeId, slug, data) => ({
+  typeId,
+  slug,
+  data,
+  readingTime: 4,
+  contentHash: `${typeId}-hash`,
+});
 
 test("every post type gets a bucket, whether or not the locale holds any of it", () => {
-  assert.deepEqual(Object.keys(buildPostCopy(POST_TYPE_IDS, [])), POST_TYPE_IDS);
+  assert.deepEqual(
+    Object.keys(buildPostCopy(POST_TYPE_IDS, [])),
+    POST_TYPE_IDS,
+  );
 });
 
 test("project episodes are a post type, so their listing copy publishes", () => {
@@ -1797,8 +2702,8 @@ test("project episodes are a post type, so their listing copy publishes", () => 
       title: "Az első epizód",
       excerpt: "Rövid összefoglaló.",
       seo: { description: "Leírás", keywords: ["jiki"] },
-      tags: ["html"]
-    })
+      tags: ["html"],
+    }),
   ]);
   assert.deepEqual(copy["project-episodes"], {
     [EPISODE_SLUG]: {
@@ -1807,8 +2712,8 @@ test("project episodes are a post type, so their listing copy publishes", () => 
       seo: { description: "Leírás", keywords: ["jiki"] },
       tags: ["html"],
       readingTime: 4,
-      contentHash: "project-episodes-hash"
-    }
+      contentHash: "project-episodes-hash",
+    },
   });
 });
 
@@ -1816,7 +2721,9 @@ test("a two-part slug is one key, not a nested object", () => {
   // The artifact is keyed by slug, and a slug with a slash in it is still a
   // name. Splitting it would file episodes under their project and change the
   // shape the front-end reads.
-  const copy = buildPostCopy(POST_TYPE_IDS, [postEntry("project-episodes", EPISODE_SLUG, { title: "T" })]);
+  const copy = buildPostCopy(POST_TYPE_IDS, [
+    postEntry("project-episodes", EPISODE_SLUG, { title: "T" }),
+  ]);
   assert.deepEqual(Object.keys(copy["project-episodes"]), [EPISODE_SLUG]);
   assert.equal(copy["project-episodes"][EPISODE_SLUG].title, "T");
 });
@@ -1830,9 +2737,11 @@ test("an episode's summary reaches its listing copy", () => {
   const summary = {
     from: "Feltételezzük, hogy semmit sem tudsz a webről.",
     to: "Megírod az első kezdőlapodat.",
-    keyConcepts: ["Agentic coding", "HTML-alapok"]
+    keyConcepts: ["Agentic coding", "HTML-alapok"],
   };
-  const copy = buildPostCopy(POST_TYPE_IDS, [postEntry("project-episodes", EPISODE_SLUG, { title: "T", summary })]);
+  const copy = buildPostCopy(POST_TYPE_IDS, [
+    postEntry("project-episodes", EPISODE_SLUG, { title: "T", summary }),
+  ]);
   assert.deepEqual(copy["project-episodes"][EPISODE_SLUG].summary, summary);
 });
 
@@ -1840,24 +2749,46 @@ test("a post that authors no summary carries no summary key", () => {
   // Carried by the DATA, not by the type: blog, articles and guides author no
   // summary today, and their entries keep exactly the six fields they had, so
   // adding this moved no published bytes for them.
-  const copy = buildPostCopy(POST_TYPE_IDS, [postEntry("blog", "hello", { title: "T", excerpt: "E" })]);
-  assert.deepEqual(Object.keys(copy.blog.hello), ["title", "excerpt", "seo", "tags", "readingTime", "contentHash"]);
+  const copy = buildPostCopy(POST_TYPE_IDS, [
+    postEntry("blog", "hello", { title: "T", excerpt: "E" }),
+  ]);
+  assert.deepEqual(Object.keys(copy.blog.hello), [
+    "title",
+    "excerpt",
+    "seo",
+    "tags",
+    "readingTime",
+    "contentHash",
+  ]);
   assert.ok(!("summary" in copy.blog.hello));
 });
 
 test("a missing seo block falls back to the excerpt, and tags default to none", () => {
-  const copy = buildPostCopy(POST_TYPE_IDS, [postEntry("blog", "hello", { title: "T", excerpt: "E" })]);
+  const copy = buildPostCopy(POST_TYPE_IDS, [
+    postEntry("blog", "hello", { title: "T", excerpt: "E" }),
+  ]);
   assert.deepEqual(copy.blog.hello.seo, { description: "E", keywords: [] });
   assert.deepEqual(copy.blog.hello.tags, []);
 });
 
 test("slugs are sorted, so the artifact's bytes move only when the copy does", () => {
-  const entries = ["p/z", "p/a", "q/b"].map((slug) => postEntry("project-episodes", slug, { title: slug }));
-  assert.deepEqual(Object.keys(buildPostCopy(POST_TYPE_IDS, entries)["project-episodes"]), ["p/a", "p/z", "q/b"]);
+  const entries = ["p/z", "p/a", "q/b"].map((slug) =>
+    postEntry("project-episodes", slug, { title: slug }),
+  );
+  assert.deepEqual(
+    Object.keys(buildPostCopy(POST_TYPE_IDS, entries)["project-episodes"]),
+    ["p/a", "p/z", "q/b"],
+  );
 });
 
 test("an entry whose type has no bucket is a hard error, never a silent drop", () => {
-  assert.throws(() => buildPostCopy(POST_TYPE_IDS, [postEntry("concept", "strings", { title: "T" })]), /not one of the post types/);
+  assert.throws(
+    () =>
+      buildPostCopy(POST_TYPE_IDS, [
+        postEntry("concept", "strings", { title: "T" }),
+      ]),
+    /not one of the post types/,
+  );
 });
 
 // ------------------------------------------- never started vs finished ------
@@ -1886,20 +2817,33 @@ test("an empty fraction with items outside the corpus does not read as finished"
 
 // English lives in a source-repo checkout, so the corpus split can only be
 // computed where one is resolvable. The skip is PRINTED, never silent.
-const ENGLISH_CHECKOUT = englishRepo("front-end", undefined, { optional: true });
+const ENGLISH_CHECKOUT = englishRepo("front-end", undefined, {
+  optional: true,
+});
 
 if (!ENGLISH_CHECKOUT) {
-  console.log("  SKIP  the corpus and the unstarted items account for all of English (no front-end checkout)");
+  console.log(
+    "  SKIP  the corpus and the unstarted items account for all of English (no front-end checkout)",
+  );
 } else {
   test("the corpus and the unstarted items account for all of English", () => {
     for (const id of CONTENT_TYPE_IDS) {
-      if (CONTENT_TYPES[id].sourceRepo && !englishRepo(CONTENT_TYPES[id].sourceRepo, undefined, { optional: true })) continue;
+      if (
+        CONTENT_TYPES[id].sourceRepo &&
+        !englishRepo(CONTENT_TYPES[id].sourceRepo, undefined, {
+          optional: true,
+        })
+      )
+        continue;
       const counted = corpusItems(id).length + unstartedItems(id).length;
-      assert.ok(counted <= englishItems(id).length, `${id}: counted ${counted} of ${englishItems(id).length} English items`);
+      assert.ok(
+        counted <= englishItems(id).length,
+        `${id}: counted ${counted} of ${englishItems(id).length} English items`,
+      );
       assert.equal(
         counted,
         englishItems(id).length - excludedCount(id),
-        `${id}: the corpus and the unstarted items do not add up to English`
+        `${id}: the corpus and the unstarted items do not add up to English`,
       );
     }
   });
@@ -1909,10 +2853,24 @@ if (!ENGLISH_CHECKOUT) {
     // items, no locale has begun any of them, and every row reads `0/0`. The
     // count of unstarted items is what a reader sees instead of nothing.
     const invisible = CONTENT_TYPE_IDS.filter((id) => {
-      if (CONTENT_TYPES[id].sourceRepo && !englishRepo(CONTENT_TYPES[id].sourceRepo, undefined, { optional: true })) return false;
-      return englishItems(id).length > 0 && corpusItems(id).length === 0 && unstartedItems(id).length === 0;
+      if (
+        CONTENT_TYPES[id].sourceRepo &&
+        !englishRepo(CONTENT_TYPES[id].sourceRepo, undefined, {
+          optional: true,
+        })
+      )
+        return false;
+      return (
+        englishItems(id).length > 0 &&
+        corpusItems(id).length === 0 &&
+        unstartedItems(id).length === 0
+      );
     });
-    assert.deepEqual(invisible, [], `types English defines that no report would show: ${invisible.join(", ")}`);
+    assert.deepEqual(
+      invisible,
+      [],
+      `types English defines that no report would show: ${invisible.join(", ")}`,
+    );
   });
 }
 
@@ -1942,34 +2900,71 @@ test("`miss` costs no errors and no warnings, so a young locale is not a wall of
 test("under --shippable the caller's ERROR wins the status, and the item is still counted missing", () => {
   // The two facts are independent: the gate blocks, and the missing tally is
   // still the number a reader needs.
-  const verdict = itemVerdict({ issues: [{ level: ERROR, message: "not translated (no file at x)" }], missing: true });
+  const verdict = itemVerdict({
+    issues: [{ level: ERROR, message: "not translated (no file at x)" }],
+    missing: true,
+  });
   assert.equal(verdict.status, FAILED);
   assert.equal(verdict.errors, 1);
   assert.equal(verdict.missing, true);
 });
 
 test("a present file keeps the statuses it always had", () => {
-  assert.equal(itemVerdict({ issues: [{ level: WARN, message: "w" }] }).status, WARNED);
-  assert.equal(itemVerdict({ issues: [{ level: ERROR, message: "e" }] }).status, FAILED);
-  assert.equal(itemVerdict({ issues: [{ level: ERROR, message: "e" }, { level: WARN, message: "w" }] }).status, FAILED);
+  assert.equal(
+    itemVerdict({ issues: [{ level: WARN, message: "w" }] }).status,
+    WARNED,
+  );
+  assert.equal(
+    itemVerdict({ issues: [{ level: ERROR, message: "e" }] }).status,
+    FAILED,
+  );
+  assert.equal(
+    itemVerdict({
+      issues: [
+        { level: ERROR, message: "e" },
+        { level: WARN, message: "w" },
+      ],
+    }).status,
+    FAILED,
+  );
 });
 
 // And the same thing end to end, against real gaps this repo actually holds,
 // found rather than named so the tests cannot rot when a gap is filled.
 
 if (!ENGLISH_CHECKOUT) {
-  console.log("  SKIP  validate reports a real untranslated item as `miss` (no front-end checkout)");
+  console.log(
+    "  SKIP  validate reports a real untranslated item as `miss` (no front-end checkout)",
+  );
 } else {
   const gap = firstUntranslatedItem();
   if (!gap) {
-    console.log("  SKIP  validate reports a real untranslated item as `miss` (every locale holds every corpus item)");
+    console.log(
+      "  SKIP  validate reports a real untranslated item as `miss` (every locale holds every corpus item)",
+    );
   } else {
     test(`validate reports a real untranslated item as \`miss\` (${gap.locale} ${gap.type}${gap.slug ? `/${gap.slug}` : ""})`, () => {
       const output = runValidate(gap);
-      assert.match(output, /^miss {2}/m, `an item with no file must print \`miss\`:\n${output}`);
-      assert.doesNotMatch(output, /^ok {4}/m, `an item with no file must not print \`ok\`:\n${output}`);
-      assert.match(output, /no translation file/, "the miss line must say what is absent");
-      assert.match(output, /^validate: .*1 with no translation file/m, "the footer must count it");
+      assert.match(
+        output,
+        /^miss {2}/m,
+        `an item with no file must print \`miss\`:\n${output}`,
+      );
+      assert.doesNotMatch(
+        output,
+        /^ok {4}/m,
+        `an item with no file must not print \`ok\`:\n${output}`,
+      );
+      assert.match(
+        output,
+        /no translation file/,
+        "the miss line must say what is absent",
+      );
+      assert.match(
+        output,
+        /^validate: .*1 with no translation file/m,
+        "the footer must count it",
+      );
     });
   }
 
@@ -1982,21 +2977,35 @@ if (!ENGLISH_CHECKOUT) {
   // gets translated, which is the exact bug `body` scope was added to fix.
   const bodyGap = firstUntranslatedItem({ bodyExcluded: true });
   if (!bodyGap) {
-    console.log("  SKIP  a body-excluded item with no file asks for its frontmatter and not its body (no such gap)");
+    console.log(
+      "  SKIP  a body-excluded item with no file asks for its frontmatter and not its body (no such gap)",
+    );
   } else {
     test(`a body-excluded item with no file asks for its frontmatter and not its body (${bodyGap.locale} ${bodyGap.type}/${bodyGap.slug})`, () => {
-      assert.equal(isBodyExcluded(bodyGap.type, bodyGap.slug), true, "the fixture must actually be body-excluded");
+      assert.equal(
+        isBodyExcluded(bodyGap.type, bodyGap.slug),
+        true,
+        "the fixture must actually be body-excluded",
+      );
       const output = runValidate(bodyGap);
       // Still reported: its title and description are required, so it is not ok
       // and it is not silently dropped.
-      assert.match(output, /^miss {2}/m, `a body-excluded item with no file must still print \`miss\`:\n${output}`);
-      assert.doesNotMatch(output, /^ok {4}/m, `it must not print \`ok\`:\n${output}`);
+      assert.match(
+        output,
+        /^miss {2}/m,
+        `a body-excluded item with no file must still print \`miss\`:\n${output}`,
+      );
+      assert.doesNotMatch(
+        output,
+        /^ok {4}/m,
+        `it must not print \`ok\`:\n${output}`,
+      );
       // ...and reported for the right amount of work. Without this note the line
       // is indistinguishable from an item whose body IS wanted.
       assert.match(
         output,
         /^miss .*\[frontmatter only; its body is out of the corpus\]/m,
-        `the miss line must say the body is not wanted:\n${output}`
+        `the miss line must say the body is not wanted:\n${output}`,
       );
     });
   }
@@ -2005,12 +3014,22 @@ if (!ENGLISH_CHECKOUT) {
   // everything: an item whose body IS in the corpus must not carry it.
   const plainGap = firstUntranslatedItem({ bodyExcluded: false });
   if (!plainGap) {
-    console.log("  SKIP  an ordinary missing item is not labelled frontmatter-only (no such gap)");
+    console.log(
+      "  SKIP  an ordinary missing item is not labelled frontmatter-only (no such gap)",
+    );
   } else {
     test(`an ordinary missing item is not labelled frontmatter-only (${plainGap.locale} ${plainGap.type}${plainGap.slug ? `/${plainGap.slug}` : ""})`, () => {
       const output = runValidate(plainGap);
-      assert.match(output, /^miss {2}/m, `an item with no file must print \`miss\`:\n${output}`);
-      assert.doesNotMatch(output, /frontmatter only/, `its body is in the corpus, so it is wanted whole:\n${output}`);
+      assert.match(
+        output,
+        /^miss {2}/m,
+        `an item with no file must print \`miss\`:\n${output}`,
+      );
+      assert.doesNotMatch(
+        output,
+        /frontmatter only/,
+        `its body is in the corpus, so it is wanted whole:\n${output}`,
+      );
     });
   }
 }
@@ -2019,7 +3038,10 @@ if (!ENGLISH_CHECKOUT) {
 function runValidate({ locale, type, slug }) {
   const args = ["scripts/validate.mjs", locale, `--type=${type}`];
   if (slug) args.push(`--slug=${slug}`);
-  return execFileSync(process.execPath, args, { cwd: REPO_ROOT, encoding: "utf8" });
+  return execFileSync(process.execPath, args, {
+    cwd: REPO_ROOT,
+    encoding: "utf8",
+  });
 }
 
 /**
@@ -2031,11 +3053,22 @@ function runValidate({ locale, type, slug }) {
  */
 function firstUntranslatedItem({ bodyExcluded = null } = {}) {
   for (const type of CONTENT_TYPE_IDS) {
-    if (CONTENT_TYPES[type].sourceRepo && !englishRepo(CONTENT_TYPES[type].sourceRepo, undefined, { optional: true })) continue;
+    if (
+      CONTENT_TYPES[type].sourceRepo &&
+      !englishRepo(CONTENT_TYPES[type].sourceRepo, undefined, {
+        optional: true,
+      })
+    )
+      continue;
     for (const item of corpusItems(type)) {
-      if (bodyExcluded !== null && isBodyExcluded(type, item.slug) !== bodyExcluded) continue;
+      if (
+        bodyExcluded !== null &&
+        isBodyExcluded(type, item.slug) !== bodyExcluded
+      )
+        continue;
       for (const locale of TARGET_LOCALES) {
-        if (!fs.existsSync(localPath(type, locale, item.slug))) return { locale, type, slug: item.slug };
+        if (!fs.existsSync(localPath(type, locale, item.slug)))
+          return { locale, type, slug: item.slug };
       }
     }
   }
@@ -2062,11 +3095,18 @@ test("every content type declares a howto", () => {
     const { howto } = CONTENT_TYPES[id];
     if (typeof howto === "string") return howto.length === 0;
     if (Array.isArray(howto)) {
-      return howto.length === 0 || howto.some((name) => typeof name !== "string" || name.length === 0);
+      return (
+        howto.length === 0 ||
+        howto.some((name) => typeof name !== "string" || name.length === 0)
+      );
     }
     return true;
   });
-  assert.deepEqual(missing, [], `content types with no usable howto: ${missing.join(", ")}`);
+  assert.deepEqual(
+    missing,
+    [],
+    `content types with no usable howto: ${missing.join(", ")}`,
+  );
 });
 
 // Only runnable where a translator checkout exists. CI has none, so this is
@@ -2075,17 +3115,24 @@ test("every content type declares a howto", () => {
 const TRANSLATOR_REPO = process.env.JIKI_TRANSLATOR_REPO;
 
 if (!TRANSLATOR_REPO) {
-  console.log("  SKIP  every howto names a file that exists (set JIKI_TRANSLATOR_REPO to run it)");
+  console.log(
+    "  SKIP  every howto names a file that exists (set JIKI_TRANSLATOR_REPO to run it)",
+  );
 } else {
   test("every howto names a file that exists in the translator repo", () => {
     const absent = [];
     for (const id of CONTENT_TYPE_IDS) {
       for (const name of howtoNames(CONTENT_TYPES[id].howto)) {
         const file = path.join(TRANSLATOR_REPO, "content-types", `${name}.md`);
-        if (!fs.existsSync(file)) absent.push(`${id} → content-types/${name}.md`);
+        if (!fs.existsSync(file))
+          absent.push(`${id} → content-types/${name}.md`);
       }
     }
-    assert.deepEqual(absent, [], `how-to files that do not exist:\n${absent.join("\n")}`);
+    assert.deepEqual(
+      absent,
+      [],
+      `how-to files that do not exist:\n${absent.join("\n")}`,
+    );
   });
 }
 
@@ -2104,62 +3151,154 @@ console.log("\nwhat coverage counts a prose page as:");
 
 const EXERCISE_FIELDS = ["title", "description"];
 
-function fieldStatus(english, target, { keys = EXERCISE_FIELDS, keptEnglish = null } = {}) {
-  return proseFieldStatus({ englishData: english, targetData: target, translatedKeys: keys, keptEnglish }).status;
+function fieldStatus(
+  english,
+  target,
+  { keys = EXERCISE_FIELDS, keptEnglish = null } = {},
+) {
+  return proseFieldStatus({
+    englishData: english,
+    targetData: target,
+    translatedKeys: keys,
+    keptEnglish,
+  }).status;
 }
 
-const EN_SNOWMAN = { title: "Snowman", description: "Build a snowman, one shape at a time." };
+const EN_SNOWMAN = {
+  title: "Snowman",
+  description: "Build a snowman, one shape at a time.",
+};
 
 test("a fully translated page is complete", () => {
-  assert.equal(fieldStatus(EN_SNOWMAN, { title: "Hóember", description: "Építs egy hóembert." }), FIELDS_COMPLETE);
+  assert.equal(
+    fieldStatus(EN_SNOWMAN, {
+      title: "Hóember",
+      description: "Építs egy hóembert.",
+    }),
+    FIELDS_COMPLETE,
+  );
 });
 
 test("a declared field English has and the translation does not is incomplete", () => {
-  assert.equal(fieldStatus(EN_SNOWMAN, { title: "Hóember" }), FIELDS_INCOMPLETE);
+  assert.equal(
+    fieldStatus(EN_SNOWMAN, { title: "Hóember" }),
+    FIELDS_INCOMPLETE,
+  );
   // Present but empty is the same gap: a field holding nothing is not a
   // translation of a field that held a sentence.
-  assert.equal(fieldStatus(EN_SNOWMAN, { title: "Hóember", description: "   " }), FIELDS_INCOMPLETE);
+  assert.equal(
+    fieldStatus(EN_SNOWMAN, { title: "Hóember", description: "   " }),
+    FIELDS_INCOMPLETE,
+  );
 });
 
 test("a field copied from English needs review, and is NOT done", () => {
   // The live case. The body is Hungarian, the stamp is current, every structural
   // check passes, and the title still says Snowman.
-  assert.equal(fieldStatus(EN_SNOWMAN, { title: "Snowman", description: "Építs egy hóembert." }), FIELDS_NEED_REVIEW);
+  assert.equal(
+    fieldStatus(EN_SNOWMAN, {
+      title: "Snowman",
+      description: "Építs egy hóembert.",
+    }),
+    FIELDS_NEED_REVIEW,
+  );
 });
 
 test("a legitimately identical title is not silently done either, until someone says so", () => {
   // `Luhn` is a person, so this page is finished. Nothing on record says that
   // yet, so it is reported for review rather than counted or discarded.
   const luhn = { title: "Luhn", description: "Validate a number." };
-  assert.equal(fieldStatus(luhn, { title: "Luhn", description: "Ellenőrizz egy számot." }), FIELDS_NEED_REVIEW);
+  assert.equal(
+    fieldStatus(luhn, { title: "Luhn", description: "Ellenőrizz egy számot." }),
+    FIELDS_NEED_REVIEW,
+  );
   // Once the language records the decision, it counts as done from then on.
-  assert.equal(fieldStatus(luhn, { title: "Luhn", description: "Ellenőrizz egy számot." }, { keptEnglish: new Set(["luhn"]) }), FIELDS_COMPLETE);
+  assert.equal(
+    fieldStatus(
+      luhn,
+      { title: "Luhn", description: "Ellenőrizz egy számot." },
+      { keptEnglish: new Set(["luhn"]) },
+    ),
+    FIELDS_COMPLETE,
+  );
 });
 
 test("a missing field beats an identical one: it needs no judgement at all", () => {
-  assert.equal(fieldStatus(EN_SNOWMAN, { title: "Snowman" }), FIELDS_INCOMPLETE);
+  assert.equal(
+    fieldStatus(EN_SNOWMAN, { title: "Snowman" }),
+    FIELDS_INCOMPLETE,
+  );
 });
 
 test("a value with no word in it to translate is never held against a page", () => {
   // Handled by isUntranslatedFrontmatter's 2+ letter rule, and asserted here
   // because it is coverage's number that would move.
-  assert.equal(fieldStatus({ title: "42", description: "D." }, { title: "42", description: "L." }), FIELDS_COMPLETE);
+  assert.equal(
+    fieldStatus(
+      { title: "42", description: "D." },
+      { title: "42", description: "L." },
+    ),
+    FIELDS_COMPLETE,
+  );
 });
 
 test("a field the type does not declare translatable is nobody's business here", () => {
   // Driven by the registry's `frontmatterTranslated`, never a list written out
   // in coverage: `description` repeating English says nothing when only `title`
   // is declared.
-  assert.equal(fieldStatus(EN_SNOWMAN, { title: "Hóember", description: "Build a snowman, one shape at a time." }, { keys: ["title"] }), FIELDS_COMPLETE);
+  assert.equal(
+    fieldStatus(
+      EN_SNOWMAN,
+      {
+        title: "Hóember",
+        description: "Build a snowman, one shape at a time.",
+      },
+      { keys: ["title"] },
+    ),
+    FIELDS_COMPLETE,
+  );
 });
 
 test("a nested path and a list are judged exactly as a top-level string is", () => {
-  const en = { title: "T", seo: { description: "Learn to code.", keywords: ["learn to code", "jiki"] } };
+  const en = {
+    title: "T",
+    seo: { description: "Learn to code.", keywords: ["learn to code", "jiki"] },
+  };
   const keys = ["title", "seo.description", "seo.keywords"];
-  assert.equal(fieldStatus(en, { title: "C", seo: { description: "Learn to code.", keywords: ["tanulj", "jiki"] } }, { keys }), FIELDS_NEED_REVIEW);
-  assert.equal(fieldStatus(en, { title: "C", seo: { description: "Tanulj.", keywords: ["learn to code", "jiki"] } }, { keys }), FIELDS_NEED_REVIEW);
+  assert.equal(
+    fieldStatus(
+      en,
+      {
+        title: "C",
+        seo: { description: "Learn to code.", keywords: ["tanulj", "jiki"] },
+      },
+      { keys },
+    ),
+    FIELDS_NEED_REVIEW,
+  );
+  assert.equal(
+    fieldStatus(
+      en,
+      {
+        title: "C",
+        seo: { description: "Tanulj.", keywords: ["learn to code", "jiki"] },
+      },
+      { keys },
+    ),
+    FIELDS_NEED_REVIEW,
+  );
   // A keyword list SHARING entries with English is normal, not a finding.
-  assert.equal(fieldStatus(en, { title: "C", seo: { description: "Tanulj.", keywords: ["tanulj", "jiki"] } }, { keys }), FIELDS_COMPLETE);
+  assert.equal(
+    fieldStatus(
+      en,
+      {
+        title: "C",
+        seo: { description: "Tanulj.", keywords: ["tanulj", "jiki"] },
+      },
+      { keys },
+    ),
+    FIELDS_COMPLETE,
+  );
 });
 
 // ------------------------------ the terms a language keeps in English -------
@@ -2178,35 +3317,64 @@ const GLOSSARY = [
   "| input (to a function) | input | en | The parenthetical is not part of the term. |",
   "| scope | _hatókör_ (or _láthatóság_) | hu | Translated, so NOT kept. |",
   "| tee (golf) | tee / tí | en | Alternatives are separate candidates. |",
-  "not a table row at all"
+  "not a table row at all",
 ].join("\n");
 
 test("a row whose English and target columns hold the same text is a kept term", () => {
   const terms = keptEnglishTermsIn(GLOSSARY);
   assert.equal(terms.has("widget"), true);
   assert.equal(terms.has("string"), true, "bold markup comes off the cell");
-  assert.equal(terms.has("input"), true, "the English column's parenthetical is not part of the term");
-  assert.equal(terms.has("tee"), true, "each alternative in a cell is its own candidate");
+  assert.equal(
+    terms.has("input"),
+    true,
+    "the English column's parenthetical is not part of the term",
+  );
+  assert.equal(
+    terms.has("tee"),
+    true,
+    "each alternative in a cell is its own candidate",
+  );
 });
 
 test("a row whose target column translates the term is NOT a kept term", () => {
   const terms = keptEnglishTermsIn(GLOSSARY);
   assert.equal(terms.has("hatókör"), false);
-  assert.equal(terms.has("scope"), false, "hu translates scope, so an English 'Scope' title is still a finding there");
+  assert.equal(
+    terms.has("scope"),
+    false,
+    "hu translates scope, so an English 'Scope' title is still a finding there",
+  );
   assert.equal(terms.has("tí"), false);
 });
 
 test("terms are lowercased, so a glossary's `scope` covers a title's `Scope`", () => {
   // Capitalisation is not what makes a title translated: a glossary writes a
   // term as it appears in prose and a title writes it as a heading.
-  const terms = keptEnglishTermsIn("| English | Italian |\n|---|---|\n| scope | scope | en |");
+  const terms = keptEnglishTermsIn(
+    "| English | Italian |\n|---|---|\n| scope | scope | en |",
+  );
   assert.equal(terms.has("scope"), true);
-  assert.equal(terms.has("Scope"), false, "callers lowercase what they look up");
-  assert.equal(fieldStatus({ title: "Scope" }, { title: "Scope" }, { keys: ["title"], keptEnglish: terms }), FIELDS_COMPLETE);
+  assert.equal(
+    terms.has("Scope"),
+    false,
+    "callers lowercase what they look up",
+  );
+  assert.equal(
+    fieldStatus(
+      { title: "Scope" },
+      { title: "Scope" },
+      { keys: ["title"], keptEnglish: terms },
+    ),
+    FIELDS_COMPLETE,
+  );
 });
 
 test("the table's own rule row is never a term", () => {
-  assert.equal(keptEnglishTermsIn("| English | Hungarian |\n|---------|-----------|\n").size, 0);
+  assert.equal(
+    keptEnglishTermsIn("| English | Hungarian |\n|---------|-----------|\n")
+      .size,
+    0,
+  );
 });
 
 test("with no translator checkout nothing is exempt, which under-credits rather than over-credits", () => {
@@ -2217,7 +3385,9 @@ test("with no translator checkout nothing is exempt, which under-credits rather 
 });
 
 if (!TRANSLATOR_REPO) {
-  console.log("  SKIP  a family locale reads the family glossary too (set JIKI_TRANSLATOR_REPO to run it)");
+  console.log(
+    "  SKIP  a family locale reads the family glossary too (set JIKI_TRANSLATOR_REPO to run it)",
+  );
 } else {
   test("a family locale reads the family glossary and its own; a single-locale language reads one", () => {
     // Family membership is by folder existence, not by the hyphen in the code.
@@ -2252,7 +3422,11 @@ function corpusEntries() {
 test("an entry with no scope is a whole-item exclusion, and one with `body` is not", () => {
   for (const entry of corpusEntries()) {
     const scope = exclusionScope(entry.type, entry.slug);
-    assert.equal(scope, entry.scope ?? SCOPE_ITEM, `${entry.type}/${entry.slug}`);
+    assert.equal(
+      scope,
+      entry.scope ?? SCOPE_ITEM,
+      `${entry.type}/${entry.slug}`,
+    );
     assert.equal(isExcluded(entry.type, entry.slug), scope === SCOPE_ITEM);
     assert.equal(isBodyExcluded(entry.type, entry.slug), scope === SCOPE_BODY);
   }
@@ -2266,23 +3440,46 @@ test("a `body` scope is only ever put on a type that HAS a body and translatable
     .filter((entry) => (entry.scope ?? SCOPE_ITEM) === SCOPE_BODY)
     .filter((entry) => {
       const type = CONTENT_TYPES[entry.type];
-      return !type || type.format !== "markdown" || !(type.frontmatterTranslated ?? []).length;
+      return (
+        !type ||
+        type.format !== "markdown" ||
+        !(type.frontmatterTranslated ?? []).length
+      );
     })
     .map((entry) => `${entry.type}/${entry.slug}`);
-  assert.deepEqual(wrong, [], `body-scoped exclusions on a type with no translatable frontmatter: ${wrong.join(", ")}`);
+  assert.deepEqual(
+    wrong,
+    [],
+    `body-scoped exclusions on a type with no translatable frontmatter: ${wrong.join(", ")}`,
+  );
 });
 
 test("a body-excluded item is still counted, so a locale that skips its title is not complete", () => {
   if (!ENGLISH_CHECKOUT) return; // asserted where English can be read; see the skip above.
-  assert.ok(bodyExcludedSlugs.length > 0, "nothing is body-excluded, so this is asserting nothing");
-  const englishSlugs = new Set(englishItems(BODY_TYPE).map((item) => item.slug));
+  assert.ok(
+    bodyExcludedSlugs.length > 0,
+    "nothing is body-excluded, so this is asserting nothing",
+  );
+  const englishSlugs = new Set(
+    englishItems(BODY_TYPE).map((item) => item.slug),
+  );
   for (const slug of bodyExcludedSlugs) {
-    assert.ok(englishSlugs.has(slug), `${slug} is excluded but English has no such exercise`);
+    assert.ok(
+      englishSlugs.has(slug),
+      `${slug} is excluded but English has no such exercise`,
+    );
   }
   // The denominator completeness is measured against: every English exercise,
   // MINUS only the ones excluded whole. A body-excluded one is still expected.
-  assert.equal(englishCorpusSize(BODY_TYPE), englishItems(BODY_TYPE).length - excludedCount(BODY_TYPE));
-  assert.equal(excludedCount(BODY_TYPE), 0, "no exercise instructions should be excluded whole");
+  assert.equal(
+    englishCorpusSize(BODY_TYPE),
+    englishItems(BODY_TYPE).length - excludedCount(BODY_TYPE),
+  );
+  assert.equal(
+    excludedCount(BODY_TYPE),
+    0,
+    "no exercise instructions should be excluded whole",
+  );
   assert.equal(bodyExcludedCount(BODY_TYPE), bodyExcludedSlugs.length);
   // ...and the whole-item exclusions still bind, so the two are not the same knob.
   assert.equal(bodyExcludedCount("exercise-messages"), 0);
@@ -2294,14 +3491,24 @@ test("a body-excluded item a locale HAS is listed on the locale side too", () =>
   // too, or publish reports a gap for a file that is sitting right there.
   const held = new Set(listItems(BODY_TYPE, "hu").map((item) => item.slug));
   for (const slug of bodyExcludedSlugs) {
-    const file = path.join(REPO_ROOT, "locales", "hu", CONTENT_TYPES[BODY_TYPE].localPath(slug));
-    assert.equal(held.has(slug), fs.existsSync(file), `${slug}: on disk and listed must agree`);
+    const file = path.join(
+      REPO_ROOT,
+      "locales",
+      "hu",
+      CONTENT_TYPES[BODY_TYPE].localPath(slug),
+    );
+    assert.equal(
+      held.has(slug),
+      fs.existsSync(file),
+      `${slug}: on disk and listed must agree`,
+    );
   }
 });
 
 // checkProse's half of it: what a body-excluded page is and is not checked for.
 
-const EN_STARS_PAGE = '---\ntitle: "Stars"\ndescription: "Build a pattern."\n---\n# Stars\n\nEnglish prose.\n';
+const EN_STARS_PAGE =
+  '---\ntitle: "Stars"\ndescription: "Build a pattern."\n---\n# Stars\n\nEnglish prose.\n';
 
 function exerciseIssues(target, options = {}) {
   const english = parseFrontmatter(EN_STARS_PAGE);
@@ -2312,35 +3519,53 @@ function exerciseIssues(target, options = {}) {
     translatedKeys: ["title", "description"],
     expectedMd5: "abc",
     allowUntranslated: false,
-    ...options
+    ...options,
   }).map((i) => `${i.level} ${i.message}`);
 }
 
-const BODY_EXCLUDED_PAGE = '---\ntitle: "Csillagok"\ndescription: "Építs mintát."\nen_md5: abc\n---\n# Stars\n\nEnglish prose.\n';
+const BODY_EXCLUDED_PAGE =
+  '---\ntitle: "Csillagok"\ndescription: "Építs mintát."\nen_md5: abc\n---\n# Stars\n\nEnglish prose.\n';
 
 test("an English body is a blocking finding normally, and no finding at all when the body is out of the corpus", () => {
-  assert.ok(exerciseIssues(BODY_EXCLUDED_PAGE).some((i) => i.startsWith("ERROR untranslated:")));
-  assert.deepEqual(exerciseIssues(BODY_EXCLUDED_PAGE, { bodyOutOfCorpus: true }), []);
+  assert.ok(
+    exerciseIssues(BODY_EXCLUDED_PAGE).some((i) =>
+      i.startsWith("ERROR untranslated:"),
+    ),
+  );
+  assert.deepEqual(
+    exerciseIssues(BODY_EXCLUDED_PAGE, { bodyOutOfCorpus: true }),
+    [],
+  );
 });
 
 test("a missing title is still a blocking ERROR when the body is out of the corpus", () => {
   const noTitle = BODY_EXCLUDED_PAGE.replace('title: "Csillagok"', 'title: ""');
   assert.ok(
-    exerciseIssues(noTitle, { bodyOutOfCorpus: true }).includes('ERROR frontmatter: missing "title"'),
-    "the frontmatter is the whole of what a body-excluded page promises"
+    exerciseIssues(noTitle, { bodyOutOfCorpus: true }).includes(
+      'ERROR frontmatter: missing "title"',
+    ),
+    "the frontmatter is the whole of what a body-excluded page promises",
   );
 });
 
 test("English's own <define> markup in an untranslated body is not reported as a failed expansion", () => {
-  const tagged = EN_STARS_PAGE.replace("English prose.", "A <define>stack</define> of them.");
+  const tagged = EN_STARS_PAGE.replace(
+    "English prose.",
+    "A <define>stack</define> of them.",
+  );
   const english = parseFrontmatter(tagged);
-  const page = parseFrontmatter(BODY_EXCLUDED_PAGE.replace("English prose.", "A <define>stack</define> of them."));
+  const page = parseFrontmatter(
+    BODY_EXCLUDED_PAGE.replace(
+      "English prose.",
+      "A <define>stack</define> of them.",
+    ),
+  );
   const issues = checkProse(english.body, page.body, {
     englishData: english.data,
     targetData: page.data,
     translatedKeys: ["title", "description"],
     expectedMd5: "abc",
-    bodyOutOfCorpus: true
+    bodyOutOfCorpus: true,
   });
   assert.deepEqual(issues, []);
 });
@@ -2349,19 +3574,30 @@ test("a field ENGLISH leaves blank is nothing to translate, not an unfinished tr
   // Four exercises ship `description: ""`. Demanding a translation of it made the
   // only correct file (an empty string, copied) unstampable, so the page could
   // never pass its checks at all.
-  const english = parseFrontmatter(EN_STARS_PAGE.replace('description: "Build a pattern."', 'description: ""'));
-  const page = parseFrontmatter(BODY_EXCLUDED_PAGE.replace('description: "Építs mintát."', 'description: ""'));
+  const english = parseFrontmatter(
+    EN_STARS_PAGE.replace('description: "Build a pattern."', 'description: ""'),
+  );
+  const page = parseFrontmatter(
+    BODY_EXCLUDED_PAGE.replace(
+      'description: "Építs mintát."',
+      'description: ""',
+    ),
+  );
   const issues = checkProse(english.body, page.body, {
     englishData: english.data,
     targetData: page.data,
     translatedKeys: ["title", "description"],
     expectedMd5: "abc",
-    bodyOutOfCorpus: true
+    bodyOutOfCorpus: true,
   });
   assert.deepEqual(issues, []);
   assert.equal(
-    proseFieldStatus({ englishData: english.data, targetData: page.data, translatedKeys: ["title", "description"] }).status,
-    FIELDS_COMPLETE
+    proseFieldStatus({
+      englishData: english.data,
+      targetData: page.data,
+      translatedKeys: ["title", "description"],
+    }).status,
+    FIELDS_COMPLETE,
   );
 });
 
@@ -2378,286 +3614,118 @@ test("a field ENGLISH leaves blank is nothing to translate, not an unfinished tr
 const INTERPRETER_TYPE = "interpreter-messages";
 
 test("the shipped interpreter is in the corpus and the unshipped ones are wholly out", () => {
-  assert.equal(exclusionScope(INTERPRETER_TYPE, "javascript"), null, "javascript is the language Jiki ships");
+  assert.equal(
+    exclusionScope(INTERPRETER_TYPE, "javascript"),
+    null,
+    "javascript is the language Jiki ships",
+  );
   for (const slug of ["jikiscript", "python"]) {
-    assert.equal(exclusionScope(INTERPRETER_TYPE, slug), SCOPE_ITEM, `${slug} is not selectable, so its catalog is out whole`);
+    assert.equal(
+      exclusionScope(INTERPRETER_TYPE, slug),
+      SCOPE_ITEM,
+      `${slug} is not selectable, so its catalog is out whole`,
+    );
   }
   // A catalog is all insides. A `body` scope on one would silently do nothing.
   assert.equal(bodyExcludedCount(INTERPRETER_TYPE), 0);
 });
 
 if (!englishRepo("front-end", undefined, { optional: true })) {
-  console.log("  SKIP  an excluded interpreter contributes no completeness gap (no front-end checkout)");
+  console.log(
+    "  SKIP  an excluded interpreter contributes no completeness gap (no front-end checkout)",
+  );
 } else {
   test("an excluded interpreter contributes no completeness gap", () => {
     // The denominator publish.mjs counts every locale against. English has three
     // interpreter catalogs and two of them are excluded, so a locale holding
     // javascript alone is whole rather than one third done.
-    assert.equal(englishItems(INTERPRETER_TYPE).length, englishCorpusSize(INTERPRETER_TYPE) + 2);
+    assert.equal(
+      englishItems(INTERPRETER_TYPE).length,
+      englishCorpusSize(INTERPRETER_TYPE) + 2,
+    );
     for (const locale of PRODUCTION_LOCALES) {
       const present = listItems(INTERPRETER_TYPE, locale).length;
       assert.ok(
         present >= englishCorpusSize(INTERPRETER_TYPE),
-        `${locale} holds ${present} interpreter catalog(s) of ${englishCorpusSize(INTERPRETER_TYPE)} expected`
+        `${locale} holds ${present} interpreter catalog(s) of ${englishCorpusSize(INTERPRETER_TYPE)} expected`,
       );
       assert.ok(
-        !listItems(INTERPRETER_TYPE, locale).some((item) => item.slug !== "javascript"),
-        `${locale} lists an excluded interpreter: an exclusion must bind on the locale side too`
+        !listItems(INTERPRETER_TYPE, locale).some(
+          (item) => item.slug !== "javascript",
+        ),
+        `${locale} lists an excluded interpreter: an exclusion must bind on the locale side too`,
       );
     }
   });
 }
 
-// ------------------------------------- the front-end PR translation gate ---
+// ------------------------------------------------------ nothing is deleted
 //
-// scripts/have-translations.mjs answers "does this changed English already have
-// translations", and the front-end's i18n workflow fails a PR on its BLOCKING
-// verdicts. Two things about it are worth guarding.
-//
-// The first is the path inversion. Every other script walks the mapping in
-// content-types.mjs FORWARDS, from an item to a path; this one is the only thing
-// that goes backwards, from a front-end path to (type, slug). If that inversion
-// stops recognising a shape, the gate does not go red: it quietly stops checking
-// that content type and the PR sails through, which is the exact failure this
-// whole check exists to remove. So it is asserted as a round trip over the real
-// registry, and a type added there is covered the day it is added.
-//
-// The second is the boundary between the verdicts, because each one has a
-// different cost. BLOCKING stops a merge, so it must fire only on a hole a
-// learner would actually see. IGNORED must hold for an item corpus.json declares
-// out of scope, or a not-yet-live exercise blocks every front-end PR that touches
-// it. WARNING must NOT escalate, or a one-word English tweak is un-mergeable
-// until ten locales have caught up.
+// scripts/no-deletions.mjs is what keeps this repo a superset of front-end
+// main and every open front-end PR. Key removal is compared as dotted leaves,
+// so a nested drop is named exactly; a whole file gone is a deletion whatever
+// its contents.
 
-console.log("\nthe front-end PR translation gate:");
-
-test("every content type's source path inverts back to the item it addresses", () => {
-  for (const id of CONTENT_TYPE_IDS) {
-    const type = CONTENT_TYPES[id];
-    // A slug shaped like the type's own depth, so a two-part slug round trips as
-    // two parts rather than being read as one directory that contains a slash.
-    const depth = type.slugDepth === "any" ? 3 : (type.slugDepth ?? 1);
-    const slug = type.slugged ? Array.from({ length: depth }, (_, i) => `seg${i}`).join("/") : null;
-    assert.deepEqual(itemForSourcePath(type.sourceRepoPath(slug)), { type: id, slug }, id);
-  }
+test("flattenKeys names every leaf as a dotted path", () => {
+  assert.deepEqual(
+    flattenKeys({ a: { b: "x", c: { d: "y" } }, e: ["one", "two"] }),
+    ["a.b", "a.c.d", "e"],
+  );
 });
 
-test("a depth-1 slug never swallows a directory separator", () => {
-  // `curriculum/src/exercises/<slug>/messages.json` with an extra level in the
-  // middle addresses nothing. Matching it would invent an exercise whose slug is
-  // two directories, and every lookup for it would then miss.
-  assert.equal(itemForSourcePath("curriculum/src/exercises/a/b/messages.json"), null);
+test("missingKeys is only what base has and head lacks", () => {
+  const base = {
+    tasks: { pack: { name: "n", description: "d" } },
+    checks: { one: "1" },
+  };
+  const head = {
+    tasks: { pack: { name: "n" } },
+    checks: { one: "1", two: "2" },
+  };
+  assert.deepEqual(missingKeys(base, head), ["tasks.pack.description"]);
+  assert.deepEqual(missingKeys(head, head), []);
 });
 
-test("a front-end path that is not English addresses nothing", () => {
-  assert.equal(itemForSourcePath("curriculum/src/exercises/stars/Exercise.ts"), null);
-  assert.equal(itemForSourcePath("app/components/Foo.tsx"), null);
-});
+test("findDeletions reports removed files and dropped keys between two commits", () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "no-deletions-"));
+  const run = (args) =>
+    execFileSync("git", args, { cwd: dir, encoding: "utf8" }).trim();
+  run(["init", "-q"]);
+  run(["config", "user.email", "t@t"]);
+  run(["config", "user.name", "t"]);
+  fs.mkdirSync(path.join(dir, "locales", "xx"), { recursive: true });
+  fs.writeFileSync(
+    path.join(dir, "locales", "xx", "a.json"),
+    JSON.stringify({ k: { one: "1", two: "2" } }),
+  );
+  fs.writeFileSync(path.join(dir, "locales", "xx", "b.json"), "{}");
+  fs.writeFileSync(
+    path.join(dir, "locales", "xx", "a.meta.json"),
+    JSON.stringify({ stamp: "old" }),
+  );
+  run(["add", "."]);
+  run(["commit", "-qm", "base"]);
+  const base = run(["rev-parse", "HEAD"]);
+  fs.writeFileSync(
+    path.join(dir, "locales", "xx", "a.json"),
+    JSON.stringify({ k: { one: "1", three: "3" } }),
+  );
+  fs.rmSync(path.join(dir, "locales", "xx", "b.json"));
+  fs.writeFileSync(path.join(dir, "locales", "xx", "a.meta.json"), "{}");
+  run(["add", "-A"]);
+  run(["commit", "-qm", "head"]);
 
-test("a rename is read as a delete plus an add", () => {
-  // Git reports one line; the gate has to treat it as two facts, so the new slug
-  // is checked for translations and the old one is reported as an orphan.
-  assert.deepEqual(parseChanges("R100\told/messages.json\tnew/messages.json\n"), [
-    { status: "D", path: "old/messages.json" },
-    { status: "A", path: "new/messages.json" }
+  assert.deepEqual(findDeletions(base, "HEAD", { cwd: dir }), [
+    { file: "locales/xx/a.json", what: "key removed: k.two" },
+    { file: "locales/xx/b.json", what: "file removed" },
   ]);
-  assert.deepEqual(parseChanges("A\tone\nM\ttwo\nD\tthree\n"), [
-    { status: "A", path: "one" },
-    { status: "M", path: "two" },
-    { status: "D", path: "three" }
-  ]);
-});
-
-test("a file that is not English is ignored without ever naming a locale", () => {
-  const finding = classify({ sourcePath: "curriculum/src/exercises/stars/Exercise.ts", status: "M", locale: null });
-  assert.equal(finding.verdict, IGNORED);
-});
-
-// The three classifications, against the real corpus. Each picks a real item
-// rather than a fixture, because the thing being asserted is how this reads
-// THIS repo's own state, and a fixture would assert how it reads a fixture.
-
-const GATE_LOCALE = PRODUCTION_LOCALES[0];
-
-const EXCLUDED_CATALOG = !ENGLISH_CHECKOUT ? null : englishItems("exercise-messages").find((item) => isExcluded("exercise-messages", item.slug));
-
-if (!EXCLUDED_CATALOG) {
-  console.log("  SKIP  an item corpus.json excludes never blocks (no front-end checkout, or nothing is excluded)");
-} else {
-  test("an item corpus.json excludes never blocks", () => {
-    const finding = classify({
-      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(EXCLUDED_CATALOG.slug),
-      status: "M",
-      locale: GATE_LOCALE
-    });
-    assert.equal(finding.verdict, IGNORED, `${EXCLUDED_CATALOG.slug} is excluded and must not block`);
-  });
-}
-
-// An English catalog this locale covers completely: the baseline both remaining
-// assertions are measured against.
-const COVERED_CATALOG = !ENGLISH_CHECKOUT
-  ? null
-  : corpusItems("exercise-messages").find((item) => {
-      const target = localPath("exercise-messages", GATE_LOCALE, item.slug);
-      if (!fs.existsSync(target)) return false;
-      return countAgainstEnglish(readJson(item.path), readJson(target), { locale: GATE_LOCALE }).absent === 0;
-    });
-
-if (!COVERED_CATALOG) {
-  console.log("  SKIP  a modified English file whose translation covers it does not block (no fully covered catalog)");
-  console.log("  SKIP  a key this change adds blocks, while a pre-existing absence only warns (no fully covered catalog)");
-  console.log("  SKIP  a locale holding MORE than English does never blocks (no fully covered catalog)");
-  console.log("  SKIP  an English file deleted with its translations still on disk warns (no fully covered catalog)");
-  console.log("  SKIP  an ADDED file blocks on its whole key set (no fully covered catalog)");
-  console.log("  SKIP  with no base, every absence blocks (no fully covered catalog)");
-} else {
-  test("a modified English file whose translation covers it does not block", () => {
-    const finding = classify({
-      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
-      status: "M",
-      locale: GATE_LOCALE
-    });
-    assert.notEqual(finding.verdict, BLOCKING, `${COVERED_CATALOG.slug} is fully covered in ${GATE_LOCALE}`);
-    // Whether it is `ok` or a staleness WARNING depends on this repo's stamps at
-    // this moment, and either is a pass. What must never happen is an escalation.
-    assert.ok([WARNING, "ok"].includes(finding.verdict), finding.verdict);
-  });
-
-  // What separates a gap this change MADE from a gap it merely touched. Both are
-  // "a key English defines that the locale does not hold"; only the first is the
-  // PR author's to fix, and a gate that blocked on the second would be a debt
-  // collector that gets routed around and then ignored.
-  test("a key this change adds blocks, while a pre-existing absence in the same file only warns", () => {
-    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "have-translations-"));
-    const english = readJson(COVERED_CATALOG.path);
-
-    // TWO absences in one English file. The base already defined `oldGap`, so the
-    // locale has been missing it all along; `newGap` arrives with this change.
-    const withBoth = path.join(dir, "head.json");
-    fs.writeFileSync(withBoth, JSON.stringify({ ...english, oldGap: "Older English.", newGap: "New English." }));
-    const base = JSON.stringify({ ...english, oldGap: "Older English." });
-
-    const blocked = classify({
-      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
-      status: "M",
-      locale: GATE_LOCALE,
-      resolveEnglish: () => withBoth,
-      readBase: () => base
-    });
-    assert.equal(blocked.verdict, BLOCKING);
-    assert.match(blocked.reason, /^1 key\(s\) this change ADDS are absent/);
-    // The pre-existing one is still SAID, in the same line. Blocking on it would
-    // be wrong; hiding it would mean nobody ever learns the gap is there.
-    assert.match(blocked.reason, /1 more were already absent before it/);
-
-    // The same file with only the pre-existing gap: a warning, and never a block.
-    const withOldOnly = path.join(dir, "old-only.json");
-    fs.writeFileSync(withOldOnly, base);
-    const warned = classify({
-      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
-      status: "M",
-      locale: GATE_LOCALE,
-      resolveEnglish: () => withOldOnly,
-      readBase: () => base
-    });
-    assert.equal(warned.verdict, WARNING);
-    assert.match(warned.reason, /were ALREADY absent from this locale before this change/);
-  });
-
-  // "Excess is never an error; absence always is" is this repo's governing
-  // invariant, and a new gate is exactly where it would get broken. Translations
-  // reach R2 BEFORE the front-end merges, so a locale holding more than English
-  // does is the ordinary steady state during a deploy overlap: English caught up
-  // with it a moment later, or dropped a key the locale has not pruned yet.
-  // Neither is a hole, and neither may ever stop a merge.
-  test("a locale holding MORE than English does never blocks", () => {
-    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "have-translations-"));
-    const full = readJson(COVERED_CATALOG.path);
-
-    // English with one key REMOVED, so the locale now holds a key English does
-    // not define. Nothing is absent, so nothing is blocking.
-    const keys = Object.keys(full);
-    const trimmed = { ...full };
-    delete trimmed[keys[keys.length - 1]];
-    const english = path.join(dir, "trimmed.json");
-    fs.writeFileSync(english, JSON.stringify(trimmed));
-
-    const finding = classify({
-      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
-      status: "M",
-      locale: GATE_LOCALE,
-      resolveEnglish: () => english,
-      readBase: () => JSON.stringify(full)
-    });
-    assert.notEqual(finding.verdict, BLOCKING, "a key English no longer defines is not this PR's problem");
-  });
-
-  test("an English file deleted with its translations still on disk warns, never blocks", () => {
-    // The other shape of excess: the item is gone from English and ten locales
-    // still hold a file for it. Tidy-up, and the same non-error the invariant
-    // says it is.
-    const finding = classify({
-      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
-      status: "D",
-      locale: GATE_LOCALE
-    });
-    assert.equal(finding.verdict, WARNING);
-    assert.match(finding.reason, /orphaned/);
-  });
-
-  test("an ADDED file blocks on its whole key set, base or no base", () => {
-    // Nothing to be pre-existing about: the file did not exist at the base. The
-    // base reader must not be consulted at all, so this one returns bytes that
-    // would excuse the gap if it were.
-    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "have-translations-"));
-    const doctored = path.join(dir, "added.json");
-    const english = { ...readJson(COVERED_CATALOG.path), brandNewKey: "New English." };
-    fs.writeFileSync(doctored, JSON.stringify(english));
-
-    const finding = classify({
-      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
-      status: "A",
-      locale: GATE_LOCALE,
-      resolveEnglish: () => doctored,
-      readBase: () => JSON.stringify(english)
-    });
-    assert.equal(finding.verdict, BLOCKING);
-  });
-
-  test("with no base, every absence blocks", () => {
-    // The blunt-but-safe fallback: a caller that has not said what the change is
-    // measured against gets the old behaviour, where any absence is a hole.
-    const doctored = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "have-translations-")), "messages.json");
-    fs.writeFileSync(doctored, JSON.stringify({ ...readJson(COVERED_CATALOG.path), aKeyNoLocaleHolds: "New English." }));
-
-    const finding = classify({
-      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
-      status: "M",
-      locale: GATE_LOCALE,
-      resolveEnglish: () => doctored
-    });
-    assert.equal(finding.verdict, BLOCKING);
-    assert.match(finding.reason, /1 of \d+ key\(s\)/);
-  });
-}
-
-test("the base reader answers from the checkout's history, and null for a path that was not there", () => {
-  // `git show <base>:<path>` rather than a second checkout: the caller's file
-  // list came from a diff between these commits in this repo, so the blobs are
-  // necessarily here, and reading them from anywhere else could answer against a
-  // different commit from the one the diff used.
-  if (!ENGLISH_CHECKOUT) {
-    console.log("  SKIP  (no front-end checkout)");
-    return;
-  }
-  const head = execFileSync("git", ["rev-parse", "HEAD"], { cwd: ENGLISH_CHECKOUT, encoding: "utf8" }).trim();
-  const read = baseReaderFor(head, { repo: ENGLISH_CHECKOUT });
-  assert.equal(typeof read("app-messages", "app/messages.json"), "string");
-  assert.equal(read("app-messages", "app/no-such-file-here.json"), null);
 });
 
 // ------------------------------------------------------------------- result
 
-console.log(failures === 0 ? "\ntest: all assertions passed.\n" : `\ntest: ${failures} FAILED.\n`);
+console.log(
+  failures === 0
+    ? "\ntest: all assertions passed.\n"
+    : `\ntest: ${failures} FAILED.\n`,
+);
 process.exit(failures === 0 ? 0 : 1);
