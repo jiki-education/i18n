@@ -69,6 +69,17 @@
 // still checked; only its Markdown body is exempt, and the body was never what
 // is checked here.
 //
+// ## Excess is never blocking
+//
+// Only ABSENCE blocks, and that is the repo's invariant rather than this file's
+// choice. Translations reach R2 BEFORE the front-end merges, so a locale holding
+// MORE than English does is an ordinary steady state: English is about to catch
+// up with it, or has dropped a key the locale has not pruned yet. Every
+// comparison here is therefore denominated in ENGLISH's keys and fields, so a key
+// the locale holds and English does not is invisible to the count; and English
+// deleted out from under a translation is a WARNING about an orphan, never a
+// block. See scripts/lib/checks.mjs, which downgraded the same shapes to WARN.
+//
 // ## Nothing here knows a path layout
 //
 // The mapping from a front-end path back to (type, slug) is INVERTED from

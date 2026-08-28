@@ -2507,6 +2507,8 @@ const COVERED_CATALOG = !ENGLISH_CHECKOUT
 if (!COVERED_CATALOG) {
   console.log("  SKIP  a modified English file whose translation covers it does not block (no fully covered catalog)");
   console.log("  SKIP  a key this change adds blocks, while a pre-existing absence only warns (no fully covered catalog)");
+  console.log("  SKIP  a locale holding MORE than English does never blocks (no fully covered catalog)");
+  console.log("  SKIP  an English file deleted with its translations still on disk warns (no fully covered catalog)");
   console.log("  SKIP  an ADDED file blocks on its whole key set (no fully covered catalog)");
   console.log("  SKIP  with no base, every absence blocks (no fully covered catalog)");
 } else {
@@ -2561,6 +2563,47 @@ if (!COVERED_CATALOG) {
     });
     assert.equal(warned.verdict, WARNING);
     assert.match(warned.reason, /were ALREADY absent from this locale before this change/);
+  });
+
+  // "Excess is never an error; absence always is" is this repo's governing
+  // invariant, and a new gate is exactly where it would get broken. Translations
+  // reach R2 BEFORE the front-end merges, so a locale holding more than English
+  // does is the ordinary steady state during a deploy overlap: English caught up
+  // with it a moment later, or dropped a key the locale has not pruned yet.
+  // Neither is a hole, and neither may ever stop a merge.
+  test("a locale holding MORE than English does never blocks", () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), "have-translations-"));
+    const full = readJson(COVERED_CATALOG.path);
+
+    // English with one key REMOVED, so the locale now holds a key English does
+    // not define. Nothing is absent, so nothing is blocking.
+    const keys = Object.keys(full);
+    const trimmed = { ...full };
+    delete trimmed[keys[keys.length - 1]];
+    const english = path.join(dir, "trimmed.json");
+    fs.writeFileSync(english, JSON.stringify(trimmed));
+
+    const finding = classify({
+      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
+      status: "M",
+      locale: GATE_LOCALE,
+      resolveEnglish: () => english,
+      readBase: () => JSON.stringify(full)
+    });
+    assert.notEqual(finding.verdict, BLOCKING, "a key English no longer defines is not this PR's problem");
+  });
+
+  test("an English file deleted with its translations still on disk warns, never blocks", () => {
+    // The other shape of excess: the item is gone from English and ten locales
+    // still hold a file for it. Tidy-up, and the same non-error the invariant
+    // says it is.
+    const finding = classify({
+      sourcePath: CONTENT_TYPES["exercise-messages"].sourceRepoPath(COVERED_CATALOG.slug),
+      status: "D",
+      locale: GATE_LOCALE
+    });
+    assert.equal(finding.verdict, WARNING);
+    assert.match(finding.reason, /orphaned/);
   });
 
   test("an ADDED file blocks on its whole key set, base or no base", () => {
