@@ -1,7 +1,7 @@
 ---
 title: "Hóember"
 description: "Állítsd be a megfelelő változóértékeket a hóember megépítéséhez."
-en_md5: d95e1fcddba2afd556c42645352b910a
+en_md5: a0d177f513d3c260b77e6f5443cb5df4
 ---
 
 Ismét itt van a hóember, amit korábban három körből rajzoltál. De ezúttal változókat használsz.
@@ -13,3 +13,9 @@ Ahhoz, hogy megoldd a feladatot, definiálnod kell a megfelelő változókat (_v
 Elkezdtük neked azzal, hogy definiáltuk a hóember alapjához tartozó változókat, de rossz értékeket adtunk nekik. Ezeket ki kell javítanod, majd hasonló változókat kell hozzáadnod a törzshöz és a fejhez.
 
 Nyomd meg a „Kód futtatása” gombot, hogy lásd a megrajzolt kiindulási kört. Hibát is fogsz kapni, mert hiányoznak változók, amiket a `let`-tel kell definiálnod.
+
+### A helyes koordináták meghatározása
+
+A legtöbb rajzolós feladathoz hasonlóan **vidd az egeret a rajzfelület fölé**, hogy megtaláld a koordinátákat, és **minden felhasznált szám osztható 5-tel**.
+
+Sok szerencsét!

@@ -1,7 +1,7 @@
 ---
 title: Pinguim
 description: Completa o desenho simétrico de um pinguim.
-en_md5: bff370c28fd178d8c0ac9f65e3384e81
+en_md5: 5a0659ec6a7911fcebe11756dae664f7
 ---
 
 Neste exercício, desenhamos elipses pela primeira vez e pensamos um pouco mais sobre a simetria que referimos no exercício Foxy Face.
@@ -14,10 +14,16 @@ A função `ellipse` (elipse) recebe 5 parâmetros de entrada: a posição do ce
 
 ### O pinguim
 
-A tua tarefa é desenhar o lado direito do pinguim, e tentar fazê-lo **SEM** passar o rato sobre as coordenadas nem tentar adivinhá-las. O desenho final deve ficar assim:
+Já desenhámos metade da imagem por ti. A tua tarefa é desenhar o lado direito do pinguim. O desenho final deve ficar assim:
 
 <img src="/static/images/exercise-assets/penguin/penguin-finished.webp" alt="Pinguim" style="width: 100%; max-width: 300px; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 5px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); margin-bottom: 8px;" />
 
-Já desenhámos metade da imagem por ti. Ao leres o código que lá está, deves conseguir descobrir os restantes pormenores para tornares o desenho simétrico. Lembra-te: o canto superior esquerdo da tela de desenho é `0,0`. O canto inferior direito é `100,100`. O pinguim está sentado no meio. Para o nariz, deves **alterar** as coordenadas do ponto do meio do triângulo. Não adiciones um triângulo novo.
+### Como descobrir as coordenadas corretas
+
+Ao contrário dos exercícios anteriores, o objetivo é resolveres este exercício **SEM** passares o rato sobre as coordenadas nem tentares adivinhá-las.
+
+Ao leres o código que lá está, deves conseguir descobrir os restantes pormenores para tornares o desenho simétrico. Lembra-te: o canto superior esquerdo da tela de desenho é `0,0`. O canto inferior direito é `100,100`. O pinguim está sentado no meio.
+
+Para o nariz, deves **alterar** as coordenadas do ponto do meio do triângulo. Não adiciones um triângulo novo.
 
 **Começa por clicar em _«Executar Código»_** para veres como fica a imagem inicial. Diverte-te!

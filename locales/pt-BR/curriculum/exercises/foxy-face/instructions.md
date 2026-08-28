@@ -1,7 +1,7 @@
 ---
 title: Cara de raposa
 description: Construa uma cara de raposa geométrica com triângulos coloridos.
-en_md5: 095833a5b2117c2d26500103216bf247
+en_md5: ace60854184185ffc1ec1e82e45af4bf
 ---
 
 Este exercício apresenta a você a função `triangle` (triângulo). Você vai usá-la com 7 entradas. As primeiras 6 são pares de coordenadas para os três cantos. A última é a `color`:
@@ -28,10 +28,10 @@ A cara é simétrica na horizontal (o lado esquerdo é igual ao lado direito). E
 
 (Certifique-se de que usa essas cores ao desenhar os triângulos, e lembre-se de conferir que você as escreve como _strings_ (_cadeias de caracteres_)!)
 
-Já desenhamos os contornos de algumas partes para te ajudar a começar. Se você seguir a ordem indicada nos comentários, vai ver que fica tudo um pouco mais fácil.
+### Descobrindo as coordenadas corretas
 
-Além disso, para facilitar ainda mais a sua vida, todos os números usados são divisíveis por 5 (por exemplo, `5`, `10`, `15`, etc. são válidos, mas `1`, `2`, `3`, `4`, `6`, `7`, `8`, `9`, `11`, etc. não são). Você vai encontrar este padrão muitas vezes nos próximos exercícios.
+Já desenhamos os contornos de algumas partes para ajudar você a começar. Se você **seguir a ordem indicada nos comentários**, vai perceber que fica um pouco mais fácil.
 
-Uma última coisa. Você pode passar o mouse por cima do espaço para ver as coordenadas. Isso ajuda bastante no lado esquerdo, mas, como o lado direito é simétrico, você consegue resolvê-lo sem precisar passar o mouse?
+Assim como nos exercícios anteriores, você pode **passar o cursor sobre o espaço de desenho** para descobrir as coordenadas, e **todos os números usados são divisíveis por 5** (por exemplo, `5`, `10`, `15`, etc. são válidos).
 
 Boa sorte!

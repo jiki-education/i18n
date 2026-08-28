@@ -1,7 +1,7 @@
 ---
 title: Nuvem, Chuva e Sol
 description: Cria um cenário meteorológico completo com nuvens, chuva e sol.
-en_md5: a06cdbeb8b648c6ced759401f0133e81
+en_md5: b801e5359eb26ba78216ce4f96adec15
 ---
 
 Neste exercício, a tua tarefa é desenhar um ícone meteorológico de um dia de chuva, com o sol a espreitar por trás das nuvens. No final, deve ficar assim:
@@ -12,6 +12,8 @@ Desenhámos um modelo para ti. As tuas formas devem ficar mesmo por dentro das l
 
 Vais precisar das funções `circle` (círculo) e `ellipse` (elipse). Só deves usar elipses para as gotas de chuva. Se as usares no sol ou nas nuvens, as coisas não vão funcionar.
 
-Quase todos os números de que precisas são divisíveis por 5 (por exemplo, 5, 10, 15, etc.). A única exceção é o raio horizontal das gotas de chuva, que é `3`.
+### Descobrir as coordenadas corretas
+
+Neste exercício, **podes** passar o rato por cima da área de desenho para descobrires as coordenadas. E, mais uma vez, todos os números usados são **divisíveis por 5, com uma exceção**. O raio horizontal das gotas de chuva é `3`. Todos os outros números, incluindo o raio vertical das gotas, são divisíveis por 5.
 
 Diverte-te!

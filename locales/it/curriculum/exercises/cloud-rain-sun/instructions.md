@@ -1,7 +1,7 @@
 ---
 title: "Nuvola, pioggia e sole"
-description: "Crea una scena meteorologica completa con nuvole, pioggia e sole."
-en_md5: a06cdbeb8b648c6ced759401f0133e81
+description: "Crea una scena meteo completa con nuvole, pioggia e sole."
+en_md5: b801e5359eb26ba78216ce4f96adec15
 ---
 
 In questo esercizio il tuo compito è disegnare un'icona meteo per una giornata di pioggia con il sole che spunta dietro le nuvole. Una volta terminato, dovrebbe apparire così:
@@ -12,6 +12,8 @@ Abbiamo disegnato un modello per te. Le tue forme devono stare appena dentro le 
 
 Avrai bisogno delle funzioni `circle` e `ellipse`. Dovresti usare le ellissi solo per le gocce di pioggia. Se le usi per il sole o per le nuvole, le cose non funzioneranno.
 
-Quasi tutti i numeri di cui hai bisogno sono divisibili per 5 (ad esempio 5, 10, 15, ecc.). L'unica eccezione è il raggio orizzontale delle gocce di pioggia, che è `3`.
+### Trovare le coordinate corrette
+
+In questo esercizio **puoi** passare il mouse sull'area di disegno per trovare le coordinate. Anche qui, tutti i numeri usati sono **divisibili per 5, con una sola eccezione**. Il raggio orizzontale delle gocce di pioggia è `3`. Tutti gli altri numeri, compreso il raggio verticale delle gocce di pioggia, sono divisibili per 5.
 
 Divertiti!

@@ -1,10 +1,10 @@
 ---
 title: "Volpe geometrica"
 description: "Costruisci la faccia geometrica della volpe con triangoli colorati."
-en_md5: 095833a5b2117c2d26500103216bf247
+en_md5: ace60854184185ffc1ec1e82e45af4bf
 ---
 
-Questo esercizio ti presenta la funzione `triangle`. Si usa con 7 input. I primi 6 input sono coppie di coordinate per i tre angoli. L'ultimo input è il `color`:
+Questo esercizio ti presenta la funzione `triangle`. La usi con 7 input. I primi 6 input sono coppie di coordinate per i tre angoli. L'ultimo input è il `color`:
 
 - `x1` (coordinata x del primo angolo), `y1` (coordinata y del primo angolo): il primo punto d'angolo
 - `x2` (coordinata x del secondo angolo), `y2` (coordinata y del secondo angolo): il secondo punto d'angolo
@@ -26,12 +26,12 @@ La faccia è simmetrica (il lato sinistro è identico al lato destro). Ha 8 tria
 - Due metà della faccia `"orange"`
 - Un naso `"charcoal"` (due triangoli)
 
-(Assicurati di usare quei colori quando disegni i triangoli, e ricordati di scriverli come stringhe!)
+(Assicurati di usare quei colori quando disegni i triangoli, e ricordati di controllare che li scrivi come stringhe!)
 
-Abbiamo disegnato i contorni di alcune parti per aiutarti a iniziare. Se segui l'ordine indicato nei commenti, vedrai che tutto risulterà più semplice.
+### Trovare le coordinate corrette
 
-Inoltre, per semplificarti ulteriormente la vita, tutti i numeri usati sono divisibili per 5 (ad esempio `5`, `10`, `15` ecc. sono validi, mentre `1`, `2`, `3`, `4`, `6`, `7`, `8`, `9`, `11` ecc. non lo sono). Incontrerai spesso questo schema negli esercizi successivi.
+Abbiamo disegnato i contorni di alcune parti per aiutarti a iniziare. Se **segui l'ordine indicato nei commenti**, vedrai che tutto risulterà un po' più semplice.
 
-Un'ultima cosa. Puoi passare il mouse sullo spazio per trovare le coordinate. Ottimo per il lato sinistro, ma dato che il lato destro è simmetrico, riesci a risolverlo senza bisogno di passare il mouse?
+Come negli esercizi precedenti, puoi **passare il mouse sull'area di disegno** per trovare le coordinate; inoltre, **tutti i numeri usati sono divisibili per 5** (ad esempio `5`, `10`, `15`, ecc. sono validi).
 
 Buona fortuna!

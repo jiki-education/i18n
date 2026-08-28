@@ -1,7 +1,7 @@
 ---
 title: Boneco de neve
 description: Constrói um boneco de neve com três círculos.
-en_md5: b8c4b86ef84ef659b9e869fa6504c672
+en_md5: 6fec2ba8f8e20c68c2168c199fa0cf8d
 ---
 
 Este exercício apresenta-te a função `circle`, que usamos com 3 parâmetros de entrada (_inputs_ em inglês):
@@ -24,4 +24,10 @@ A tua tarefa é desenhar três círculos brancos para construir um boneco de nev
 
 Os três círculos devem estar centrados horizontalmente na tela. Usa a imagem-alvo como guia.
 
-Como antes, estás a desenhar numa tela com 100 de largura e 100 de altura. Assim, o canto superior esquerdo da tela é `0,0`, o canto inferior direito é `100,100`, e podes passar o rato por cima da tela para verificares onde cada elemento deve ficar. Para te facilitar a vida, todos os números neste exercício são **divisíveis por 5**.
+Como antes, estás a desenhar numa tela com 100 de largura e 100 de altura. Assim, o canto superior esquerdo da tela é `0,0` e o canto inferior direito é `100,100`.
+
+### Descobrir as coordenadas corretas
+
+Podes **passar o rato por cima da área de desenho** para descobrires as coordenadas.
+
+Neste exercício, **todos os números usados são divisíveis por 5** (por exemplo, `5`, `10`, `15`, etc. são válidos, mas `1`, `2`, `3`, `4`, etc. não são).

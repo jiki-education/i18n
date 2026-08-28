@@ -1,10 +1,10 @@
 ---
 title: "Nube, lluvia y sol"
-description: "Crea una escena climática completa con nubes, lluvia y sol."
-en_md5: a06cdbeb8b648c6ced759401f0133e81
+description: "Crea una escena meteorológica completa con nubes, lluvia y sol."
+en_md5: b801e5359eb26ba78216ce4f96adec15
 ---
 
-En este ejercicio, tu tarea es dibujar un icono climático para un día lluvioso con el sol asomándose detrás de las nubes. Cuando termines, debería verse así:
+En este ejercicio, tu tarea es dibujar un icono meteorológico para un día lluvioso con el sol asomándose detrás de las nubes. Cuando termines, debería verse así:
 
 <img src="/static/images/exercise-assets/cloud-rain-sun/finished.webp" alt="Escena terminada de nube, lluvia y sol" style="width: 100%; max-width: 300px; border: 1px solid rgba(0, 0, 0, 0.3); border-radius: 5px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); margin-bottom: 8px;" />
 
@@ -12,6 +12,8 @@ Te dibujamos una plantilla. Tus formas deben quedar justo dentro de las líneas.
 
 Vas a necesitar las funciones `circle` (círculo) y `ellipse` (elipse). Solo debes usar elipses para las gotas de lluvia. Si las usas para el sol o las nubes, no funcionará.
 
-Casi todos los números que necesitas son divisibles entre 5 (por ejemplo, 5, 10, 15, etc.). La única excepción es el radio horizontal de las gotas de lluvia, que es `3`.
+### Calcular las coordenadas correctas
+
+En este ejercicio **puedes** pasar el cursor sobre el espacio de dibujo para encontrar las coordenadas. Y, de nuevo, todos los números utilizados son **divisibles entre 5, con una excepción**. El radio horizontal de las gotas de lluvia es `3`. Todos los demás números, incluido el radio vertical de las gotas de lluvia, son divisibles entre 5.
 
 ¡Diviértete!

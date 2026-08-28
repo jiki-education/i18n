@@ -1,10 +1,10 @@
 ---
 title: "Rókafej"
 description: "Építs egy geometrikus rókafejet színes háromszögekből."
-en_md5: 095833a5b2117c2d26500103216bf247
+en_md5: ace60854184185ffc1ec1e82e45af4bf
 ---
 
-Ez a feladat bemutatja a `triangle` (háromszög) függvényt. A függvény hét bemenettel működik. Az első hat bemenet a három csúcs koordináta-párjait adja meg, az utolsó pedig a `color` (szín):
+Ez a feladat bemutatja a `triangle` (háromszög) függvényt. A függvény hét bemenettel működik. Az első hat bemenet a három csúcs koordináta-párjait adja meg, az utolsó pedig a `color`:
 
 - `x1` (az első csúcs x koordinátája), `y1` (az első csúcs y koordinátája): Az első csúcspont
 - `x2` (a második csúcs x koordinátája), `y2` (a második csúcs y koordinátája): A második csúcspont
@@ -26,12 +26,12 @@ Az arc vízszintesen szimmetrikus (a bal oldala megegyezik a jobb oldalával), �
 - Két `"orange"` arcfél
 - Egy `"charcoal"` orr (két háromszög)
 
-(Győződj meg róla, hogy ezeket a színeket használod a háromszögek rajzolásakor, és ne feledd, hogy _strings_ (karakterláncok) formában írod őket!)
+(Győződj meg róla, hogy ezeket a színeket használod a háromszögek rajzolásakor, és ne feledd, hogy karakterláncként (_strings_ angolul) írod őket!)
 
-Néhány részlet körvonalát előre megrajzoltuk neked, hogy könnyebb legyen az indulás. Ha a megjegyzésekben megadott sorrendet követed, látni fogod, hogy egy kicsit megkönnyíti a dolgodat.
+### A helyes koordináták kidolgozása
 
-Sőt, hogy még könnyebb legyen a dolgod, az összes használt szám osztható 5-tel (pl. `5`, `10`, `15` stb. használhatók, de `1`, `2`, `3`, `4`, `6`, `7`, `8`, `9`, `11` stb. nem). Ezt a mintát a későbbi feladatokban is sokszor látni fogod.
+Néhány rész körvonalát előre megrajzoltuk neked, hogy könnyebb legyen az indulás. Ha **a megjegyzésekben megadott sorrendet követed**, látni fogod, hogy egy kicsit megkönnyíti a dolgodat.
 
-Még egy utolsó dolog: ha az egérmutatót a rajzterület fölé viszed, megjelennek a koordináták. Ez nagyszerű a bal oldalnál, de mivel a jobb oldal szimmetrikus, meg tudod oldani anélkül, hogy fölé kéne vinned az egeret?
+A korábbi feladatokhoz hasonlóan **vidd az egérmutatót a rajzterület fölé**, hogy megtaláld a koordinátákat, és **az összes használt szám osztható 5-tel** (például az `5`, `10`, `15` stb. érvényesek).
 
 Sok sikert!
