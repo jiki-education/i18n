@@ -1,7 +1,7 @@
 ---
 title: "La boîte à repas"
 description: "Range autant d'éléments que possible dans une boîte à repas dont la taille est limitée."
-en_md5: af9957974ff71f16820079737f887b0e
+en_md5: 0b9c26e60261ec4da42ae367a9102359
 ---
 
 Quand j'étais enfant, je préparais ma boîte à repas tous les jours pour l'école. Ma mère me sortait les éléments à emporter (soigneusement rangés du plus grand au plus petit) et j'essayais d'en faire tenir le plus possible dans la boîte à repas, mais elle ne pouvait évidemment pas tout contenir. Tout ce qui ne rentrait pas, je devais le mettre dans mon sac à dos et le porter avec moi toute la journée, au lieu de le laisser dans mon casier.

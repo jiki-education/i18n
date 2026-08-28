@@ -1,7 +1,7 @@
 ---
 title: "Fiambrera"
 description: "Mete en una fiambrera de capacidad limitada tantos objetos como puedas."
-en_md5: af9957974ff71f16820079737f887b0e
+en_md5: 0b9c26e60261ec4da42ae367a9102359
 ---
 
 De niño, preparaba mi fiambrera todos los días para ir al colegio. Mi madre me dejaba los objetos fuera, ordenados del más grande al más pequeño, y yo intentaba meter en la fiambrera todo lo que podía, pero, claro, la fiambrera solo podía contener una cantidad limitada. Lo que no cabía en ella, tenía que meterlo en la mochila y llevarlo todo el día conmigo, en lugar de dejarlo en la taquilla.
