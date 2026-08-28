@@ -1,7 +1,7 @@
 ---
 title: "Lancheira"
 description: "Coloque o máximo de itens possível em uma lancheira de tamanho limitado."
-en_md5: af9957974ff71f16820079737f887b0e
+en_md5: 0b9c26e60261ec4da42ae367a9102359
 ---
 
 Quando era criança, eu arrumava minha lancheira todos os dias para a escola. Minha mãe deixava os itens separados para mim (organizados do maior para o menor) e eu tentava encaixar o máximo possível na lancheira, mas é claro que só cabia uma certa quantidade. Tudo o que não cabia, eu tinha que colocar na mochila e carregar comigo o dia inteiro, em vez de deixar no meu armário.

@@ -1,7 +1,7 @@
 ---
 title: "Uzsonnásdoboz"
 description: "Csomagolj be minél több elemet a korlátozott méretű uzsonnásdobozba."
-en_md5: af9957974ff71f16820079737f887b0e
+en_md5: 0b9c26e60261ec4da42ae367a9102359
 ---
 
 Gyerekkoromban minden nap bepakoltam az uzsonnásdobozomat az iskolába. Édesanyám kikészítette nekem az elemeket (szépen elrendezve a legnagyobbtól a legkisebbig), én pedig megpróbáltam minél többet bepakolni az uzsonnásdobozba. A doboz persze csak korlátozott mennyiséget tudott befogadni. Ami nem fért bele, azt a hátizsákomba kellett tennem, és egész nap magammal cipelnem, ahelyett hogy a szekrényemben hagytam volna.

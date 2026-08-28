@@ -1,7 +1,7 @@
 ---
 title: "Portapranzo"
 description: "Inserisci più oggetti possibile in un portapranzo a capienza limitata."
-en_md5: af9957974ff71f16820079737f887b0e
+en_md5: 0b9c26e60261ec4da42ae367a9102359
 ---
 
 Da bambino, ogni giorno preparavo il portapranzo per la scuola. Mia madre mi metteva a disposizione gli oggetti (ordinati con cura dal più grande al più piccolo) e io cercavo di farci stare il più possibile, ma ovviamente il portapranzo poteva contenerne solo una certa quantità. Tutto quello che non ci stava dovevo metterlo nello zaino e portarlo con me tutto il giorno, invece di lasciarlo nell'armadietto.

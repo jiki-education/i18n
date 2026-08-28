@@ -1,7 +1,7 @@
 ---
 title: "Lancheira"
 description: "Arruma o maior número possível de itens numa lancheira com capacidade limitada."
-en_md5: af9957974ff71f16820079737f887b0e
+en_md5: 0b9c26e60261ec4da42ae367a9102359
 ---
 
 Quando andava na escola, arrumava a lancheira todos os dias. A minha mãe deixava-me os itens à minha frente (arrumados do maior para o menor) e eu tentava pôr o máximo possível na lancheira, mas, claro, só cabia nela uma certa quantidade. O que não coubesse na lancheira, tinha de o pôr na mochila e de andar com ele o dia inteiro, em vez de o deixar no cacifo.

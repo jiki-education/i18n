@@ -1,7 +1,7 @@
 ---
 title: "Lonchera"
 description: "Empaca todos los artículos que puedas en una lonchera de capacidad limitada."
-en_md5: af9957974ff71f16820079737f887b0e
+en_md5: 0b9c26e60261ec4da42ae367a9102359
 ---
 
 Cuando iba a la escuela, empacaba mi lonchera todos los días. Mi mamá me dejaba los artículos afuera, ordenados de mayor a menor, y yo intentaba meter la mayor cantidad posible en la lonchera, pero, obviamente, la lonchera solo podía contener una cantidad limitada. Lo que no cabía, tenía que meterlo en la mochila y cargarlo todo el día conmigo, en lugar de dejarlo en mi casillero.
