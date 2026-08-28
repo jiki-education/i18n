@@ -28,10 +28,34 @@
 // WARN checks are heuristics, and judgements a human has to make. A WARN is
 // printed to be read, never to gate. Do not promote one.
 //
-// Key parity is asymmetric, and deliberately so: a key English has and the
-// target does not blocks, a key the target has and English does not warns. The
-// two repos deploy separately, so a catalog has to be allowed to be a superset
-// of English for the length of a deploy. See "deploy overlap" in lib/checks.mjs.
+// ## Excess is never an error. Absence always is.
+//
+// That one sentence decides the level of every check that compares a translation
+// against English. A key, a frontmatter field, an array element or a whole item
+// that the locale has and English does not is EXCESS: reported, and never fatal.
+// The same thing missing from the locale is ABSENCE: an error, always.
+//
+// It is not a tolerance, it is the ORDERING the pipeline is built on. The
+// translations have to be on R2 already at the moment a front-end PR merges,
+// because the front-end deploys the code and the content must be there the same
+// instant. So translation runs deliberately AHEAD of English merging: the
+// front-end's i18n-queue tells the translator to work at a PR's head SHA, not at
+// main. i18n main therefore routinely, and correctly, holds translations of
+// English that has not landed yet. Validated against front-end main, that
+// correct state reads as a superset, and treating a superset as broken makes the
+// thing the deploy REQUIRES impossible. The same shape arrives from the other
+// end too, a key English has just dropped while the old bundle is still served,
+// which is the same fact seen from the other side: the two repos deploy
+// separately and never atomically.
+//
+// Excess is still VISIBLE. A WARN names the item, so the case that is not the
+// ahead-of-merge one (a rename, a deletion, an invented key) is something a human
+// can read. Silent tolerance and a hard error are both wrong.
+//
+// Staleness is a THIRD category and none of this touches it. A translation made
+// against older English is neither excess nor absence, it is out of date, and it
+// stays an error. See "deploy overlap" in lib/checks.mjs for the check-by-check
+// version.
 //
 // ## The gate is scoped to production locales
 //

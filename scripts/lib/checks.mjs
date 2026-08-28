@@ -13,6 +13,39 @@
 // "Structural and checkable" is not enough on its own: key parity in the extra
 // direction is perfectly checkable and still not a defect, and blocking on it
 // made a thing the deploy REQUIRES impossible.
+//
+// ## Excess is never an error. Absence always is.
+//
+// That is the invariant, and it decides the level of every check in this file
+// that compares the two sides. A locale holding something English does not is
+// EXCESS: reported, never fatal. A locale missing something English has is
+// ABSENCE: an error, always, and nothing here may be relaxed in that direction.
+//
+// The reason excess is normal rather than suspicious is the ordering the whole
+// pipeline is built on. Translations must already be on R2 at the instant a
+// front-end PR merges, because the front-end deploys the code and the content
+// has to be there the same moment. So translation deliberately runs AHEAD of
+// English merging: the front-end's i18n-queue points the translator at a PR's
+// head SHA, not at main. i18n main therefore routinely, and correctly, holds
+// translations of English that is still on an unmerged branch. Read against
+// front-end main, that correct state looks like extra keys, extra frontmatter,
+// extra array elements. Every one of those is a translation that arrived early,
+// which is the system working.
+//
+// The same shape arrives from the other end too: English drops a key, and the
+// translation still carries it while the old bundle is being served. Both
+// directions are the same fact, that the two repos deploy separately.
+//
+// Excess still has to be VISIBLE. Silent tolerance and a hard error are both
+// wrong; the target is reported and not fatal, which is exactly what WARN is.
+//
+// Staleness is a THIRD thing and is not covered by any of this. A translation
+// made against older English is not excess and not absence, it is out of date,
+// and it stays an error. In particular the prose structure counts below stay
+// errors in BOTH directions: "more headings than English" there means the
+// English body was rewritten under a translation nobody has redone, and the
+// `stale:` stamp error fires on the same file. Downgrading them would hide a
+// real regression under a rule that has nothing to do with it.
 
 import { INAPPLICABLE, SENTINEL, SOURCE_REPO_LOCALE } from "./constants.mjs";
 import {
@@ -338,7 +371,26 @@ export function checkCatalog(english, target, { icu = false, allowSentinel = tru
   // A MISSING key is the load-bearing one: the curriculum's i18next instance runs
   // with `fallbackLng: false` and returns the key itself on a miss, so an absent
   // key renders the literal string `checks.tooManyLines` to a learner.
-  for (const key of missing) issues.push(issue(ERROR, `missing key: ${key}`));
+  for (const key of missing) {
+    // One shape of "missing" is not absence at all, and has to be separated out
+    // before it blocks: a key English holds as an EMPTY container, which the
+    // target has FILLED. `flatten` stops at an empty container and descends into
+    // a filled one, so the target no longer has that key as a leaf and the
+    // container reads as missing, while everything the locale put inside it reads
+    // as extra. Nothing is absent; the locale has more than English does, which is
+    // the ahead-of-merge state: English's `{}` is filled in on the PR the
+    // translation was made from and is still empty on main.
+    //
+    // Guarded on the target actually having descendants under the key, so a key
+    // that is simply gone is still the ERROR below.
+    if (isEmptyContainer(flatEnglish[key]) && targetKeys.some((leaf) => leaf.startsWith(`${key}.`))) {
+      issues.push(
+        issue(WARN, `${key}: English holds an empty ${Array.isArray(flatEnglish[key]) ? "array" : "object"} here and the translation has filled it (fine while English catches up)`)
+      );
+      continue;
+    }
+    issues.push(issue(ERROR, `missing key: ${key}`));
+  }
 
   // An EXTRA key is not the mirror image of that, and must not be treated as one.
   //
@@ -362,13 +414,23 @@ export function checkCatalog(english, target, { icu = false, allowSentinel = tru
   // which still blocks. An extra key on its own, with no missing key beside it,
   // is by construction a key English has never had or no longer has.
   for (const key of extra) {
-    // An extra ARRAY ELEMENT is a different thing again, and stays blocking. An
-    // array's length is a shape fact rather than a key that could be mid-deploy:
-    // `tags` with a fourth element is a tag the translator invented, and the
-    // deploy-overlap argument has no bearing on it.
+    // An extra ARRAY ELEMENT is worth SAYING separately, because a fourth `tags`
+    // entry reads differently from a key that landed early, but it is excess all
+    // the same and so it is a WARN like the rest. The deploy-overlap argument
+    // does bear on it: English gains and loses array entries on the same PRs it
+    // gains and loses keys on, and a translation made against a PR's head SHA
+    // holds the newer array while main still holds the older one. Blocking here
+    // would fail a publish over content that is EARLY rather than wrong, which
+    // is the failure this repo exists to avoid.
+    //
+    // An extra element that is genuinely invented is caught by a human reading
+    // the warning, which is the only thing that could ever have told the two
+    // apart anyway.
     const parent = key.slice(0, key.lastIndexOf("."));
     if (parent && englishArrays.has(parent)) {
-      issues.push(issue(ERROR, `key not in source: ${key} (an extra element of English's array "${parent}")`));
+      issues.push(
+        issue(WARN, `key not in source: ${key} (an extra element of English's array "${parent}"; fine while English catches up, invented if it persists)`)
+      );
       continue;
     }
     issues.push(
@@ -416,6 +478,14 @@ export function checkCatalog(english, target, { icu = false, allowSentinel = tru
 
     // An empty container in English is structure. The target has to hold the
     // same empty container, and none of the string checks below apply to it.
+    //
+    // This branch is only ever reached when the target holds a SCALAR at the key,
+    // because `flatten` stops at an empty container and descends into a filled
+    // one: a target that FILLED English's `{}` no longer has that key as a leaf
+    // at all, so it is handled in the missing/extra pass above, where filling it
+    // is excess and warns. A string or a number here is not excess, it is the
+    // wrong shape, and a consumer iterating the key gets characters whatever
+    // English does next. So this stays an ERROR.
     if (isEmptyContainer(source)) {
       if (!isEmptyContainer(value)) {
         issues.push(issue(ERROR, `${key}: source is an empty ${Array.isArray(source) ? "array" : "object"}, target is not`));
@@ -827,12 +897,21 @@ export function checkProse(
   const englishPaths = frontmatterPaths(englishData);
   const targetPaths = frontmatterPaths(targetData);
 
+  // A key English HAS and the translation does not is absence, and blocks: the
+  // renderer reads that field and gets nothing.
   for (const key of englishPaths) {
     if (!targetPaths.includes(key)) issues.push(issue(ERROR, `frontmatter: key "${key}" dropped (only en_md5/tidied_md5 may be added)`));
   }
+  // A key the translation has and English does not is excess, on exactly the
+  // terms an extra catalog key is: a page translated from a PR's head SHA holds
+  // the frontmatter that PR adds, days before main does. Nothing renders a field
+  // it does not ask for, so the cost of carrying it is zero, and the cost of
+  // blocking on it is a publish that cannot run until the English merges, which
+  // is the wrong way round. Warn, and name the key, so a genuinely invented one
+  // is something a human can see.
   for (const key of targetPaths) {
     if (!englishPaths.includes(key) && !["en_md5", "tidied_md5"].includes(key)) {
-      issues.push(issue(ERROR, `frontmatter: invented key "${key}"`));
+      issues.push(issue(WARN, `frontmatter: key "${key}" is not in English (fine while English catches up; invented if it persists)`));
     }
   }
 

@@ -271,6 +271,18 @@ test("the published set is the union of both sides, sorted", () => {
   assert.deepEqual(merged.map((entry) => entry.slug), ["bouncer-dress-code", "maze-turn-around", "maze-walk"]);
 });
 
+test("an exercise English has no directory for still publishes, from its own catalog", () => {
+  // The ahead-of-merge case, which publish.mjs used to refuse the whole bucket
+  // over. `families` is built from ENGLISH, so a slug English does not have yet is
+  // not in it; publish.mjs maps that slug to `null`, meaning standalone, and this
+  // is what the merge then does with it. The artifact is EMITTED, because skipping
+  // it would be exactly the missing content the invariant exists to prevent.
+  const ahead = { ...families, "sign-words": null };
+  const own = new Map([["sign-words", { tasks: { signWords: { name: "Aláírás" } } }]]);
+  const merged = mergeExerciseCatalogs({ families: ahead, own, baseFor: () => null });
+  assert.deepEqual(merged, [{ slug: "sign-words", catalog: { tasks: { signWords: { name: "Aláírás" } } } }]);
+});
+
 
 // ------------------------------------------------------ catalog key parity
 
@@ -347,8 +359,29 @@ test("a target holding the same empty container is clean, not a wrong-type error
 });
 
 test("a target that filled English's empty container with a string is an error", () => {
+  // Not excess, a wrong SHAPE. The consumer iterates that key and gets
+  // characters, whatever English does next, so this one keeps blocking.
   const issues = checkCatalog({ fns: {} }, { fns: SENTINEL });
   assert.deepEqual(issues, [{ level: ERROR, message: "fns: source is an empty object, target is not" }]);
+});
+
+test("a target that filled English's empty container with ENTRIES is excess, so a WARN", () => {
+  // English's `{}` filled in early, from a PR where it is no longer empty. It
+  // reaches the checks looking like absence, because flatten stops at an empty
+  // container and descends into a filled one, so `fns` reads as missing and
+  // `fns.move` as extra. It is neither: the locale has MORE than English.
+  const issues = checkCatalog({ fns: {} }, { fns: { move: "mozgás" } });
+  assert.deepEqual(issues.filter((found) => found.level === ERROR), []);
+  assert.deepEqual(issues.map((found) => found.message).sort(), [
+    "fns: English holds an empty object here and the translation has filled it (fine while English catches up)",
+    "key not in source: fns.move (fine while English catches up mid-deploy; stale if English never had it)"
+  ]);
+});
+
+test("a key that is simply GONE is still absence, even when English holds a container there", () => {
+  // The guard on the rule above. No leaves under `fns` in the target means the
+  // locale has less, not more, and it blocks.
+  assert.deepEqual(checkCatalog({ a: "en", fns: {} }, { a: "hu" }), [{ level: ERROR, message: "missing key: fns" }]);
 });
 
 // ------------------------------------------------------ arrays in a catalog
@@ -446,14 +479,18 @@ test("a translation with the wrong number of tags is a key-parity error", () => 
   assert.deepEqual(checkCatalog(PROJECT_EN, short), [
     { level: ERROR, message: "missing key: build-your-personal-homepage.tags.2" }
   ]);
-  // An extra ELEMENT stays blocking, unlike an extra key: an array's length is a
-  // shape fact, and a fourth tag is a tag the translator invented rather than one
-  // English is about to grow.
+  // An extra ELEMENT is excess, exactly as an extra key is, so it warns and does
+  // not block. English grows and loses array entries on the same PRs it grows and
+  // loses keys on, and a translation made at a PR's head SHA holds the newer
+  // array while main still holds the older one. The message still names it, so a
+  // genuinely invented fourth tag is visible to a human.
   const long = { "build-your-personal-homepage": { title: "T", description: "D", tags: ["a", "b", "c", "d"] } };
   assert.deepEqual(checkCatalog(PROJECT_EN, long), [
     {
-      level: ERROR,
-      message: 'key not in source: build-your-personal-homepage.tags.3 (an extra element of English\'s array "build-your-personal-homepage.tags")'
+      level: WARN,
+      message:
+        'key not in source: build-your-personal-homepage.tags.3 (an extra element of English\'s array ' +
+        '"build-your-personal-homepage.tags"; fine while English catches up, invented if it persists)'
     }
   ]);
 });
@@ -565,6 +602,51 @@ test("a MISSPELLED key still blocks, because the key it meant to be is missing",
   const issues = checkCatalog(english, { checks: { tooManyLnies: "Túl sok sor" } });
   assert.deepEqual(issues.filter((i) => i.level === ERROR), [{ level: ERROR, message: "missing key: checks.tooManyLines" }]);
   assert.equal(issues.filter((i) => i.level === WARN).length, 1);
+});
+
+// ---------------------------------------------- excess is fine, absence is not
+
+// The invariant, pinned in both directions at once so neither half can be
+// relaxed without the other going red. Too much content is never the failure;
+// missing content always is. The reason is the ordering: translations have to be
+// on R2 already when a front-end PR merges, so translation runs AHEAD of English
+// merging and i18n main correctly holds translations of English that is still on
+// an unmerged branch.
+
+console.log("\nexcess is fine, absence is not:");
+
+test("every way a locale can hold MORE than English is a WARN, never an ERROR", () => {
+  const english = { settings: { theme: "Theme" }, tags: ["a", "b"], fns: {} };
+  const excess = {
+    settings: { theme: "Téma", language: "Nyelv" }, // a key English does not have
+    tags: ["a", "b", "c"], // an element English's array does not have
+    fns: { move: "mozgás" } // entries in a container English leaves empty
+  };
+  const issues = checkCatalog(english, excess);
+  assert.deepEqual(issues.filter((found) => found.level === ERROR), []);
+  // Four, not three: filling English's empty container is reported twice, once as
+  // the container the locale outgrew and once as the leaf it added inside it.
+  assert.equal(issues.filter((found) => found.level === WARN).length, 4);
+});
+
+test("every way a locale can hold LESS than English is still an ERROR", () => {
+  const english = { settings: { theme: "Theme", sound: "Sound" }, tags: ["a", "b"], fns: {} };
+  const absent = { settings: { theme: "Téma" }, tags: ["a"] };
+  const messages = checkCatalog(english, absent)
+    .filter((found) => found.level === ERROR)
+    .map((found) => found.message)
+    .sort();
+  assert.deepEqual(messages, ["missing key: fns", "missing key: settings.sound", "missing key: tags.1"]);
+});
+
+test("excess beside absence does not hide the absence", () => {
+  // The case that decides whether this is safe. A locale that is both ahead of
+  // English somewhere and behind it somewhere else must still fail on the second.
+  const english = { a: "A", b: "B" };
+  const both = { a: "Á", c: "C" };
+  const issues = checkCatalog(english, both);
+  assert.deepEqual(issues.filter((found) => found.level === ERROR), [{ level: ERROR, message: "missing key: b" }]);
+  assert.equal(issues.filter((found) => found.level === WARN).length, 1);
 });
 
 test("an extra key does not silence the order check on the keys around it", () => {
@@ -1053,9 +1135,11 @@ test("a dropped nested key is caught by parity, not swallowed by its block", () 
   ]);
 });
 
-test("an invented nested key is caught too", () => {
+test("a nested key English does not have is excess, so reported and not blocking", () => {
+  // A page translated at a PR's head SHA carries the frontmatter that PR adds,
+  // days before main does. Nothing renders a field it does not ask for.
   assert.deepEqual(frontmatterIssues(EN_POST, 'title: "C"\nexcerpt: "K"\nseo:\n  description: "L"\n  keywords: ["x"]\n  author: "Nobody"'), [
-    'ERROR frontmatter: invented key "seo.author"'
+    'WARN frontmatter: key "seo.author" is not in English (fine while English catches up; invented if it persists)'
   ]);
 });
 
