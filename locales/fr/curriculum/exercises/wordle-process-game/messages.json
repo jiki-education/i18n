@@ -19,12 +19,30 @@
       "fourthRow": "On attendait que la première lettre soit à l'état « present » et les autres à l'état « absent ».",
       "fifthRow": "On attendait que la deuxième lettre soit à l'état « present » et les autres à l'état « absent »",
       "sixthRow": "On attendait que toutes les lettres soient vertes"
+    },
+    "bonus1": {
+      "firstRow": "Nous nous attendions à ce que seule la quatrième lettre de la première rangée soit présente.",
+      "secondRow": "La deuxième rangée n'est pas correcte. C'est la rangée délicate : une seule des lettres répétées doit être coloriée.",
+      "thirdRow": "La troisième rangée n'est pas correcte.",
+      "fourthRow": "Nous nous attendions à ce que toutes les lettres de la quatrième rangée soient vertes."
+    },
+    "bonus2": {
+      "firstRow": "La première rangée n'est pas correcte.",
+      "secondRow": "La deuxième rangée n'est pas correcte.",
+      "thirdRow": "La troisième rangée n'est pas correcte.",
+      "fourthRow": "La quatrième rangée n'est pas correcte. C'est la rangée délicate : `swiss` contient plus de `s` que le mot secret.",
+      "fifthRow": "La cinquième rangée n'est pas correcte.",
+      "sixthRow": "Nous nous attendions à ce que toutes les lettres de la sixième rangée soient vertes."
     }
   },
   "tasks": {
     "processGame": {
       "name": "Traite une partie complète",
       "description": "Crée une fonction appelée processGame qui prend un mot secret et un tableau de propositions, puis appelle colorRow pour chaque proposition avec les bons états."
+    },
+    "duplicateLetters": {
+      "name": "Bonus : gère les lettres en double",
+      "description": "Il y a une règle du Wordle qu'on a passée sous silence jusqu'ici. Si une lettre apparaît deux fois dans ta proposition mais une seule fois dans le mot secret, alors si l'une des deux est à la bonne place, celle-ci devient verte et l'autre devient grise. Sinon, la première devient jaune et la seconde devient grise. La même idée s'applique à plus grande échelle : trois dans la proposition et deux dans le mot signifie que deux sont coloriées et que la troisième devient grise. Commence par le premier scénario bonus, puis résous-le complètement pour le second. C'est un bonus, tu n'es donc pas obligé de le terminer !"
     }
   },
   "scenarios": {
@@ -43,6 +61,14 @@
     "phew": {
       "name": "Ouf !",
       "description": "Ouf ! Il était moins une !"
+    },
+    "bonus1": {
+      "name": "Un seul jaune",
+      "description": "S'il y a plusieurs lettres présentes pour une seule lettre réelle, une seule doit être jaune."
+    },
+    "bonus2": {
+      "name": "Le fromage suisse",
+      "description": "Le mot « swiss » de ce scénario montre pourquoi c'est important !"
     }
   },
   "hints": {
@@ -54,9 +80,9 @@
       "question": "Comment savoir à quelle rangée correspond chaque proposition ?",
       "answer": "Parcours les propositions avec un indice. Le numéro de rangée est l'indice plus `1` (puisque `colorRow` attend des rangées numérotées `1-6`)."
     },
-    "colourRow": {
-      "question": "Comment colorier chaque rangée, concrètement ?",
-      "answer": "Une fois que tu as le tableau `states` d'une proposition, appelle `colorRow(rowNumber, states)`."
+    "colorRow": {
+      "question": "Comment est-ce que je colorie vraiment chaque rangée ?",
+      "answer": "Une fois que tu as le tableau `states` pour une proposition, appelle `colorRow(rowNumber, states)`."
     },
     "fewerGuesses": {
       "question": "Et si le joueur a fait moins de 6 propositions ?",

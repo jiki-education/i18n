@@ -47,10 +47,6 @@
       "question": "Comment construire le tableau des états ?",
       "answer": "Commence avec un tableau vide, puis utilise `push(states, value)` dans la boucle pour ajouter chaque état dans l'ordre."
     },
-    "checkPresence": {
-      "question": "Comment vérifier si une lettre apparaît quelque part dans le mot cible ?",
-      "answer": "Écris une petite fonction d'aide qui parcourt les lettres du mot cible et renvoie `true` si elle trouve une correspondance. Le code principal reste ainsi plus clair."
-    },
     "finishedList": {
       "question": "Où va le tableau une fois terminé ?",
       "answer": "Passe-le à `colorRow(1, states)` pour colorier la première rangée de la grille avec les états que tu as calculés."
@@ -64,6 +60,10 @@
     "push": {
       "description": "Ajoute un élément à un tableau et renvoie le nouveau tableau. Ne modifie pas le tableau d'origine.",
       "category": "Tableaux"
+    },
+    "includes": {
+      "description": "Vérifie si une _string_ contient une autre _string_, en renvoyant `true` ou `false`.",
+      "category": "Chaînes"
     }
   },
   "describers": {

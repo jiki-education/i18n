@@ -1,51 +1,66 @@
 {
   "checks": {
-    "oneListOnly": "Tu ne dois créer qu'un seul tableau. Vérifie que tu n'utilises <code>[]</code> qu'une seule fois.",
-    "usePush": "Tu dois utiliser <code>push()</code> pour ajouter des éléments à ton tableau."
+    "tooManyLines": "Ta solution contient trop de lignes de code. Peux-tu la raccourcir ?"
   },
   "tasks": {
-    "packALunch": {
-      "name": "Prépare un déjeuner",
-      "description": "Écris une fonction qui remplit une boîte à repas avec un sandwich, une boisson et un encas. Si la boisson est un milkshake, laisse-la en dehors de la boîte, car elle est trop volumineuse."
+    "packLunchbox": {
+      "name": "Range la boîte à repas",
+      "description": "Répartis les éléments entre la boîte à repas et le sac à dos : fais tenir le plus possible dans la boîte à repas sans dépasser sa capacité, et mets tout le reste dans le sac à dos."
+    },
+    "solveInSixteenLines": {
+      "name": "Résous en 16 lignes de code",
+      "description": "Peux-tu résoudre cet exercice en seulement 16 lignes de code ?"
     }
   },
   "scenarios": {
-    "regularLunch": {
-      "name": "Déjeuner classique",
-      "description": "Un déjeuner normal avec de l'eau : tout tient dans la boîte à repas."
+    "everythingFits": {
+      "name": "Tout rentre",
+      "description": "Une boîte à repas spacieuse où tous les éléments rentrent, si bien que le sac à dos reste vide."
     },
-    "milkshakeLunch": {
-      "name": "Déjeuner avec milkshake",
-      "description": "Le milkshake est trop gros pour la boîte à repas, alors il reste en dehors."
+    "packTheMost": {
+      "name": "Fais-en tenir le plus possible",
+      "description": "La place manque, donc les petits éléments vont dans la boîte à repas et les gros restent pour le sac à dos."
     },
-    "anotherRegular": {
-      "name": "Un autre déjeuner classique",
-      "description": "Un autre déjeuner normal où tout tient dans la boîte."
+    "justTheSnack": {
+      "name": "Juste la collation",
+      "description": "Seul le tout petit élément rentre ; le reste va dans le sac à dos."
     },
-    "anotherMilkshake": {
-      "name": "Un autre déjeuner avec milkshake",
-      "description": "Un autre déjeuner avec un milkshake qui ne tient pas dans la boîte."
+    "nothingFits": {
+      "name": "Rien ne rentre",
+      "description": "Même le plus petit élément est trop grand, donc tout finit dans le sac à dos."
+    },
+    "emptyLunchbox": {
+      "name": "Boîte à repas vide",
+      "description": "Il n'y a aucun élément, donc la boîte à repas et le sac à dos reviennent tous les deux vides."
+    },
+    "bonus1": {
+      "name": "16 lignes de code",
+      "description": "Résous l'exercice en seulement 16 lignes de code."
     }
   },
   "hints": {
-    "basicShape": {
-      "question": "Quelle est la forme générale de ma réponse ?",
-      "answer": "Un tableau. Commence avec un tableau vide et ajoutes-y les éléments autorisés un par un."
+    "readEachItem": {
+      "question": "Comment récupérer le nom et la taille de chaque élément ?",
+      "answer": "Chaque élément est une paire. La première partie est le nom et la seconde est la taille, donc tu peux les récupérer un par un depuis l'élément."
     },
-    "addItems": {
-      "question": "Comment ajouter des éléments à un tableau ?",
-      "answer": "Utilise `push()`. Cette fonction prend le tableau et l'élément, et renvoie le nouveau tableau (plus long)."
+    "fitTheMost": {
+      "question": "Comment faire tenir le plus d'éléments possible ?",
+      "answer": "Réfléchis à l'ordre dans lequel ajouter les éléments. Les petits éléments laissent plus de place pour les autres, donc il vaut mieux s'en occuper avant les gros."
     },
-    "leaveMilkshakeOut": {
-      "question": "Comment laisser le milkshake en dehors ?",
-      "answer": "Utilise une instruction `if`. N'ajoute la boisson avec `push()` que si elle n'est pas égale à `\"milkshake\"`."
+    "goSmallestFirst": {
+      "question": "Les éléments sont listés du plus grand au plus petit, comment les parcourir du plus petit au plus grand ?",
+      "answer": "Il existe une méthode de tableau qui te renvoie une copie inversée d'un tableau. Inverse d'abord les éléments, puis parcours-les dans ce nouvel ordre."
     },
-    "listNotGrowing": {
-      "question": "Pourquoi mon tableau ne grandit-il pas ?",
-      "answer": "`push()` ne modifie pas le tableau existant : elle renvoie le nouveau tableau. Tu dois réaffecter le résultat, par exemple `lunchbox = lunchbox.push(item)` (ou l'équivalent dans ton langage)."
+    "knowWhenFull": {
+      "question": "Comment décider où va chaque élément ?",
+      "answer": "Garde un total courant des tailles déjà ajoutées. Avant d'ajouter un élément, vérifie si le total plus sa taille tiendrait encore dans la capacité. Si c'est le cas, il va dans la boîte à repas, sinon il va dans le sac à dos."
     }
   },
   "functions": {
+    "toReversed": {
+      "description": "Renvoie une copie du tableau avec les éléments dans l'ordre inverse, sans modifier l'original.",
+      "category": "Tableaux"
+    },
     "push": {
       "description": "Renvoie un nouveau tableau avec l'élément ajouté à la fin (fournie par la bibliothèque standard du niveau)",
       "category": "Opérations sur les tableaux"

@@ -1,8 +1,8 @@
 {
   "tasks": {
-    "createStarsFunction": {
-      "name": "Crée la fonction stars",
-      "description": "Écris une fonction `stars` qui prend un nombre et renvoie un tableau de `strings`, où chaque `string` contient un nombre croissant d'étoiles. Par exemple, `stars(3)` renvoie [\"*\", \"**\", \"***\"]."
+    "drawStars": {
+      "name": "Dessine une pyramide d'étoiles",
+      "description": "Écris une fonction `layoutStars` qui prend un nombre de rangées et construit un tableau de _strings_ où chaque _string_ a une étoile de moins que la précédente, puis dessine le résultat avec `drawStars`. Par exemple, `layoutStars(3)` dessine la pyramide pour `[\"***\", \"**\", \"*\"]`."
     }
   },
   "scenarios": {
@@ -21,6 +21,10 @@
     "count5": {
       "name": "Le nombre est 5",
       "description": "Cinq étoiles renvoient cinq `strings` avec de plus en plus d'étoiles."
+    },
+    "count10": {
+      "name": "Le compte est 10",
+      "description": "Un compte de dix dessine une pyramide de dix rangées."
     }
   },
   "hints": {
@@ -28,19 +32,48 @@
       "question": "Quelle forme doit avoir ma réponse ?",
       "answer": "Un tableau de `strings`, chacune un peu plus longue que la précédente. Commence avec un tableau vide et une `string` vide. À chaque itération, la `string` grandit d'une étoile, et la nouvelle `string` va dans le tableau."
     },
-    "loopCount": {
-      "question": "Comment faire tourner la boucle le bon nombre de fois ?",
-      "answer": "Une boucle `repeat(n)` correspond directement à l'entrée. Si `n` vaut 3, tu fais 3 tours."
+    "countingDown": {
+      "question": "Comment faire en sorte que chaque rangée soit plus courte que la précédente ?",
+      "answer": "Les longueurs doivent diminuer : la première _string_ est la plus longue et la dernière ne contient qu'une seule étoile. Une boucle qui compte à rebours du total jusqu'à 1 te donne chaque longueur l'une après l'autre."
     },
-    "insideLoop": {
-      "question": "Que se passe-t-il dans la boucle ?",
-      "answer": "Deux étapes. D'abord, ajoute une étoile à la `string` qui grandit grâce à la concaténation avec `+`. Ensuite, ajoute cette `string` au tableau avec `push()`. L'ordre compte ici : fais la concaténation en premier, pour que la première `string` ajoutée au tableau soit `\"*\"`, et non la `string` vide."
+    "buildingEachRow": {
+      "question": "Comment construire une _string_ avec un certain nombre d'étoiles ?",
+      "answer": "Commence avec une _string_ vide et ajoute un `*` à la fois jusqu'à atteindre la bonne longueur. Utilise ensuite `push` pour ajouter cette _string_ à ton tableau avant de passer à la rangée suivante."
     }
+  },
+  "checks": {
+    "row1": "La rangée du bas n'est pas correcte. Compare-la avec le contour discret.",
+    "row2": "La deuxième rangée en partant du bas n'est pas correcte. Compare-la avec le contour discret.",
+    "row3": "La troisième rangée en partant du bas n'est pas correcte. Compare-la avec le contour discret.",
+    "row4": "La quatrième rangée en partant du bas n'est pas correcte. Compare-la avec le contour discret.",
+    "row5": "La cinquième rangée en partant du bas n'est pas correcte. Compare-la avec le contour discret.",
+    "row6": "La sixième rangée en partant du bas n'est pas correcte. Compare-la avec le contour discret.",
+    "row7": "La septième rangée en partant du bas n'est pas correcte. Compare-la avec le contour discret.",
+    "row8": "La huitième rangée en partant du bas n'est pas correcte. Compare-la avec le contour discret.",
+    "row9": "La neuvième rangée en partant du bas n'est pas correcte. Compare-la avec le contour discret.",
+    "row10": "La dixième rangée en partant du bas n'est pas correcte. Compare-la avec le contour discret.",
+    "total": "Tu n'as pas dessiné le bon nombre d'étoiles au total.",
+    "shouldBeEmpty": "Quand le compte est à 0, tu ne dois dessiner aucune étoile.",
+    "codeQuality": {
+      "mustUsePush": "Construis ton tableau avec la méthode `push`, en ajoutant une rangée à la fois.",
+      "noHardcodedArray": "Tu ne peux pas écrire le tableau final directement. Construis-le rangée par rangée avec `push`."
+    }
+  },
+  "errors": {
+    "notAnArray": "`drawStars` a besoin d'un tableau de _strings_.",
+    "notStrings": "Chaque élément du tableau passé à `drawStars` doit être une _string_."
+  },
+  "describers": {
+    "drawStars": "a dessiné la pyramide d'étoiles sur le canvas"
   },
   "functions": {
     "push": {
       "description": "Ajoute un élément à la fin d'un tableau (fourni par la bibliothèque standard du niveau)",
       "category": "Opérations sur les tableaux"
+    },
+    "drawStars": {
+      "description": "Dessine une rangée d'étoiles pour chaque _string_ du tableau, en utilisant la longueur de chaque _string_ comme nombre d'étoiles de la rangée",
+      "category": "Dessin"
     }
   }
 }
