@@ -71,6 +71,7 @@ import {
 import { glossaryFiles, keptEnglishTermsIn } from "./lib/kept-english.mjs";
 import { GuardViolation, assertPublishableKey } from "./lib/guard.mjs";
 import { localeFileLeaves, railsKnownLocales, railsLocale } from "./lib/api-copy.mjs";
+import { diffFindings, findingId } from "./validate.mjs";
 
 let failures = 0;
 
@@ -82,6 +83,122 @@ function test(name, fn) {
     failures += 1;
     console.log(`  FAIL  ${name}\n        ${error.message.split("\n").join("\n        ")}`);
   }
+}
+
+// ------------------------------------------------ baseline-relative gating
+
+// What `validate --baseline-ref` is built on. The gate is only as good as the
+// identity: too loose and a real new error hides behind an old one of the same
+// shape, too tight and every re-run reports its own churn as regressions. Both
+// failures are silent, and both make the check worthless in the same way the
+// absolute count already was, so they are asserted here rather than trusted.
+
+const finding = (over) => ({ locale: "hu", typeId: "exercise-instructions", slug: "after-party", message: "missing key: a", ...over });
+
+const id = (over) => findingId(finding(over));
+
+test("a staleness finding is one error however the two hashes are rewritten", () => {
+  const before = id({ message: "stale: en_md5 is 622d23b4488d6bc76957579a7a5e8993, the English source is now c31c0988af324530b986262f47d9a745" });
+  const after = id({ message: "stale: en_md5 is c31c0988af324530b986262f47d9a745, the English source is now 0000000000000000000000000000aaaa" });
+  assert.equal(before, after, "re-hashing English must not read as a fresh defect on every item at once");
+});
+
+test("a count is a value, so the same mismatch at a different size is the same error", () => {
+  assert.equal(id({ message: "cue count: 12 in the translation, 13 in English" }), id({ message: "cue count: 4 in the translation, 5 in English" }));
+});
+
+test("a digit INSIDE an identifier is part of the name, not a count", () => {
+  assert.notEqual(id({ message: "missing key: tags.item1" }), id({ message: "missing key: tags.item2" }));
+});
+
+test("the trailing parenthetical is detail, and it carries the cwd-relative path", () => {
+  assert.equal(
+    id({ message: "not translated (no file at locales/hu/x.md)" }),
+    id({ message: "not translated (no file at /tmp/baseline/locales/hu/x.md)" }),
+    "the two runs are two checkouts, so the same absence is spelled two ways"
+  );
+});
+
+test("the same message about a different item is a different error", () => {
+  assert.notEqual(id({}), id({ locale: "de" }));
+  assert.notEqual(id({}), id({ slug: "lunchbox" }));
+  assert.notEqual(id({}), id({ typeId: "exercise-messages" }));
+});
+
+test("an error on both sides is pre-existing, one only at the head is introduced", () => {
+  const shared = { id: "a", locale: "hu", typeId: "concept", slug: "arrays", message: "missing key: a", production: true };
+  const fresh = { ...shared, id: "b", message: "missing key: b" };
+  const { introduced, preExisting, fixed } = diffFindings([shared], [shared, fresh]);
+  assert.deepEqual(introduced.map((each) => each.id), ["b"]);
+  assert.deepEqual(preExisting.map((each) => each.id), ["a"]);
+  assert.deepEqual(fixed, []);
+});
+
+test("an error only at the base is a FIX, so a branch that repairs something can see that it did", () => {
+  const gone = { id: "a", locale: "hu", typeId: "concept", slug: "arrays", message: "missing key: a", production: true };
+  const { introduced, fixed } = diffFindings([gone], []);
+  assert.deepEqual(introduced, []);
+  assert.deepEqual(fixed.map((each) => each.id), ["a"]);
+});
+
+test("going from one occurrence to two is a regression, which is why the difference is a MULTISET", () => {
+  const one = { id: "a", locale: "hu", typeId: "concept", slug: "arrays", message: "x", production: true };
+  const { introduced, preExisting } = diffFindings([one], [one, one]);
+  assert.equal(introduced.length, 1, "a set would call the second occurrence pre-existing and let it through");
+  assert.equal(preExisting.length, 1);
+});
+
+test("going from two occurrences to one is one fix, not one fix and one new error", () => {
+  const one = { id: "a", locale: "hu", typeId: "concept", slug: "arrays", message: "x", production: true };
+  const { introduced, preExisting, fixed } = diffFindings([one, one], [one]);
+  assert.deepEqual(introduced, []);
+  assert.equal(preExisting.length, 1);
+  assert.equal(fixed.length, 1);
+});
+
+// The whole mechanism, end to end, because every unit above could pass with the
+// baseline run never happening at all: the worktree, the scripts copy, the English
+// handed to the child, the spawn and the diff are the parts that actually decide a
+// PR's fate, and none of them is exercised by comparing two literals.
+//
+// The assertion is the point of the change: a scope whose errors are all
+// pre-existing FAILS the absolute gate and PASSES the baseline one. Gated on an
+// English checkout, and on a clean working tree, because a dirty one legitimately
+// differs from its own merge base and the run would then be reporting real work.
+const BASELINE_CHECKOUT = englishRepo("front-end", undefined, { optional: true });
+const treeIsClean =
+  execFileSync("git", ["status", "--porcelain", "--", "locales", "corpus.json", "locales.json"], { cwd: REPO_ROOT, encoding: "utf8" }).trim() === "";
+
+const runValidateCli = (args) =>
+  spawnSync(process.execPath, [path.join(REPO_ROOT, "scripts", "validate.mjs"), ...args], {
+    cwd: REPO_ROOT,
+    encoding: "utf8",
+    maxBuffer: 256 * 1024 * 1024
+  });
+
+if (!BASELINE_CHECKOUT || !treeIsClean) {
+  console.log(
+    BASELINE_CHECKOUT
+      ? "  SKIP  a pre-existing error fails the absolute gate and passes the baseline gate (working tree is dirty)"
+      : "  SKIP  a pre-existing error fails the absolute gate and passes the baseline gate (no front-end checkout)"
+  );
+} else {
+  test("a pre-existing error fails the absolute gate and passes the baseline gate", () => {
+    const scope = ["hu", "--type=exercise-instructions"];
+    const absolute = runValidateCli(scope);
+    if (absolute.status !== 1) {
+      // hu has stale instructions as this is written. If somebody has since
+      // cleared them the premise is gone, and a test that quietly asserts
+      // nothing is worse than one that says so.
+      console.log(`  (nothing pre-existing in ${scope.join(" ")} any more; the comparison has no content)`);
+      return;
+    }
+
+    const relative = runValidateCli([...scope, "--baseline-ref=HEAD"]);
+    assert.equal(relative.status, 0, `the baseline run should pass on pre-existing errors alone:\n${relative.stdout.split("\n").slice(-20).join("\n")}`);
+    assert.match(relative.stdout, /baseline: this branch introduces no new errors\./);
+    assert.match(relative.stdout, /pre-existing errors?, printed in full above and NOT gating this run/);
+  });
 }
 
 // ------------------------------------------------- the exercise family merge
