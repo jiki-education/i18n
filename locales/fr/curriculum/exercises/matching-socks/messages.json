@@ -1,8 +1,8 @@
 {
   "tasks": {
     "findMatchingSocks": {
-      "name": "Trouve les paires de chaussettes",
-      "description": "Écris une fonction qui prend deux paniers de vêtements (sous forme de tableaux de `strings`) et renvoie un tableau de toutes les paires de chaussettes trouvées dans les deux paniers. Les articles qui sont des chaussettes se terminent par ' sock' et commencent toujours par 'left ' ou 'right '."
+      "name": "Trouve les paires de chaussettes assorties",
+      "description": "Écris une fonction qui prend deux paniers de vêtements (sous forme de tableaux de _strings_) et renvoie un tableau de toutes les paires de chaussettes trouvées dans les deux paniers. Les articles qui sont des chaussettes se terminent par ' sock' et commencent toujours par 'left ' ou 'right '."
     },
     "solveTightly": {
       "name": "Résous-le en 29 lignes",
@@ -31,7 +31,7 @@
       "description": "Il y a une chaussette assortie dans chaque panier."
     },
     "aBigMix": {
-      "name": "Un grand mélange !",
+      "name": "Un sacré mélange !",
       "description": "Un mélange de vêtements avec plusieurs paires assorties."
     },
     "someAddedPain": {
@@ -53,8 +53,8 @@
       "answer": "Tout ce qui mentionne un côté n'est pas forcément une chaussette, et tout ce qui a l'air d'une chaussette n'en est pas forcément une. Regarde attentivement les règles qui décrivent les articles, et vérifie les deux extrémités de la description, pas seulement le début."
     },
     "compareSockPair": {
-      "question": "Comment comparer une chaussette gauche à sa partenaire droite ?",
-      "answer": "Plutôt que de comparer deux chaussettes directement, détermine comment s'appellerait la partenaire d'une chaussette, puis pars à sa recherche. Les _strings_ ont une méthode intégrée pour remplacer un morceau de texte par un autre, qui permet aussi d'en supprimer un en le remplaçant par rien."
+      "question": "Comment comparer une chaussette gauche à sa chaussette droite correspondante ?",
+      "answer": "Plutôt que de comparer deux chaussettes directement, détermine comment s'appellerait la chaussette correspondante, puis pars à sa recherche. Les _strings_ ont une méthode intégrée pour remplacer un morceau de texte par un autre, qui permet aussi d'en supprimer un en le remplaçant par rien."
     },
     "avoidDuplicates": {
       "question": "Comment éviter de compter deux fois la même paire ?",
@@ -62,7 +62,7 @@
     },
     "overallPlan": {
       "question": "Quelle stratégie globale adopter ?",
-      "answer": "Les deux paniers peuvent être traités comme un seul grand tas. Parcours-le article par article et, pour chaque article, décide s'il a sa place dans ta réponse."
+      "answer": "Les deux paniers peuvent être traités comme un seul et même tas de vêtements. Parcours-le article par article et, pour chaque article, décide s'il a sa place dans ta réponse."
     }
   },
   "checks": {
@@ -70,16 +70,16 @@
   },
   "functions": {
     "startsWith": {
-      "description": "Vérifie si une string commence par une string plus courte",
-      "category": "Opérations sur les strings"
+      "description": "Vérifie si une _string_ commence par une _string_ plus courte",
+      "category": "Opérations sur les _strings_"
     },
     "endsWith": {
-      "description": "Vérifie si une string se termine par une string plus courte",
-      "category": "Opérations sur les strings"
+      "description": "Vérifie si une _string_ se termine par une _string_ plus courte",
+      "category": "Opérations sur les _strings_"
     },
     "replace": {
-      "description": "Renvoie une nouvelle string où la première occurrence d'un texte est remplacée par un autre texte",
-      "category": "Opérations sur les strings"
+      "description": "Renvoie une nouvelle _string_ où la première occurrence d'un texte est remplacée par un autre texte",
+      "category": "Opérations sur les _strings_"
     },
     "concat": {
       "description": "Assemble deux tableaux en un seul nouveau tableau",

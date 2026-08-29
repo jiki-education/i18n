@@ -4,13 +4,13 @@ description: "Trouve les paires de chaussettes réparties dans deux paniers de l
 en_md5: c58a4ca0800c19322e7e9a98b4634aad
 ---
 
-Peu de choses dans la vie sont plus agaçantes qu'une chaussette orpheline dont on ne retrouve pas la partenaire. Alors un beau jour, tu décides enfin de mettre de l'ordre dans ces chaussettes !
+Peu de choses dans la vie sont plus énervantes qu'une chaussette orpheline dont on ne retrouve pas la paire. Alors un beau jour, tu décides enfin de mettre de l'ordre dans ces chaussettes !
 
 Tu sors tous les vêtements propres de tes tiroirs et tu les mets dans un panier. Puis tu pars fouiller sous chaque meuble et derrière chaque coussin pour dénicher les vêtements qui traînent, et tu les mets dans un second panier, celui du linge sale.
 
 Te voilà avec deux paniers, et tu veux les passer en revue pour déterminer si chaque chaussette a sa paire ou non.
 
-Écris une fonction appelée `matchingSocks` (chaussettes assorties). Elle prend deux entrées, le panier propre et le panier sale, toutes deux sous forme de tableaux de _strings_. Renvoie un tableau de toutes les paires de chaussettes.
+Écris une fonction appelée `matchingSocks`. Elle prend deux entrées, le panier propre et le panier sale, toutes deux sous forme de tableaux de _strings_. Renvoie un tableau de toutes les paires de chaussettes.
 
 Par exemple :
 
