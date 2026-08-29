@@ -8,29 +8,29 @@
   "scenarios": {
     "count0": {
       "name": "Le nombre est 0",
-      "description": "Zéro étoile renvoie un tableau vide."
+      "description": "Zéro étoile ne dessine rien."
     },
     "count1": {
       "name": "Le nombre est 1",
-      "description": "Une étoile renvoie un tableau avec une seule `string` d'étoile."
+      "description": "Un nombre de 1 dessine une seule étoile."
     },
     "count3": {
       "name": "Le nombre est 3",
-      "description": "Trois étoiles renvoient trois `strings` avec de plus en plus d'étoiles."
+      "description": "Un nombre de 3 dessine une pyramide d'étoiles sur trois rangées."
     },
     "count5": {
       "name": "Le nombre est 5",
-      "description": "Cinq étoiles renvoient cinq `strings` avec de plus en plus d'étoiles."
+      "description": "Un nombre de 5 dessine une pyramide d'étoiles sur cinq rangées."
     },
     "count10": {
-      "name": "Le compte est 10",
-      "description": "Un compte de dix dessine une pyramide de dix rangées."
+      "name": "Le nombre est 10",
+      "description": "Un nombre de 10 dessine une pyramide d'étoiles sur dix rangées."
     }
   },
   "hints": {
     "shapeOfAnswer": {
       "question": "Quelle forme doit avoir ma réponse ?",
-      "answer": "Un tableau de `strings`, chacune un peu plus longue que la précédente. Commence avec un tableau vide et une `string` vide. À chaque itération, la `string` grandit d'une étoile, et la nouvelle `string` va dans le tableau."
+      "answer": "Un tableau de _strings_, la plus longue en premier, chacune plus courte d'une étoile par rapport à la précédente, jusqu'à une seule étoile. Une fois le dessin terminé, la rangée la plus longue forme la base de la pyramide. Construis d'abord le tableau au complet, puis dessine-le avec `drawStars`."
     },
     "countingDown": {
       "question": "Comment faire en sorte que chaque rangée soit plus courte que la précédente ?",

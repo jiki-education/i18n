@@ -15,7 +15,7 @@ La fonction doit :
 
 Si `numRows` vaut 0, le tableau doit être vide (`[]`) et rien n'est dessiné.
 
-Si tu veux voir le résultat en action, tu peux exécuter `drawStars(["***", "**", "*"])` pour voir les étoiles se dessiner.
+Si tu veux voir le résultat, tu peux exécuter `drawStars(["***", "**", "*"])` pour voir les étoiles se dessiner.
 
 ### La méthode push
 
