@@ -50,4 +50,4 @@ Džiki bi skinuo mašinu sa police i ubacio novčiće u prva četiri otvora. Zat
   height="392"
 />
 
-Reč string jedna je od onih tehničkih reči koje ljudima na prvi pogled deluju pomalo zastrašujuće, ali zapravo znači samo tekst. Vrlo brzo ćeš se navići. Nema u tome ničeg magičnog.
+Reč string jedna je od onih tehničkih reči koje ljudima na prvi pogled deluju pomalo zastrašujuće, ali zapravo znači samo tekst. Vrlo brzo ćeš se navići. Nema ničeg magičnog u tome.
