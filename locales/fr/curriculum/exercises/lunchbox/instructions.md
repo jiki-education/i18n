@@ -4,7 +4,7 @@ description: "Range autant d'aliments que possible dans une boîte à repas dont
 en_md5: 0b9c26e60261ec4da42ae367a9102359
 ---
 
-Enfant, je préparais tous les jours ma boîte à repas pour l'école. Ma mère me sortait les aliments à emporter (soigneusement rangés du plus grand au plus petit) et j'essayais d'en faire tenir le plus possible dans la boîte, mais elle ne pouvait évidemment pas tout contenir. Tout ce qui ne rentrait pas, je devais le mettre dans mon sac à dos et le traîner avec moi toute la journée plutôt que de le laisser dans mon casier.
+Enfant, je préparais tous les jours ma boîte à repas pour l'école. Ma mère me sortait les aliments à emporter (soigneusement rangés du plus grand au plus petit) et j'essayais d'en faire tenir le plus possible dans la boîte, mais elle ne pouvait évidemment pas tout contenir. Tout ce qui ne rentrait pas, je devais le mettre dans mon sac à dos et le trimballer avec moi toute la journée plutôt que de le laisser dans mon casier.
 
 Dans cet exercice, ta mission est de créer un algorithme qui détermine ce que je peux ranger dans la boîte et ce que je dois mettre dans mon sac à dos.
 
