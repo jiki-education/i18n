@@ -1,28 +1,28 @@
 {
   "checks": {
     "allCorrect": "On s'attendait à ce que toutes les lettres soient vertes",
-    "absent": "On s'attendait à l'état absent pour le « a » et le « u »",
-    "present": "On s'attendait à l'état present pour le « l » et le « e ».",
+    "absent": "On s'attendait à ce que le « a » et le « u » soient absents",
+    "present": "On s'attendait à ce que le « l » et le « e » soient présents.",
     "complex": "On s'attendait à : present, present, present, correct, absent",
     "differentWord": "On s'attendait à : correct, present, present, present, absent"
   },
   "tasks": {
     "processGuess": {
-      "name": "Traite un essai",
-      "description": "Crée une fonction appelée processGuess qui prend un mot cible et un essai, détermine l'état de chaque lettre (correct, present ou absent), puis appelle colorRow(1, states) avec les résultats."
+      "name": "Traite une proposition",
+      "description": "Crée une fonction appelée processGuess qui prend un mot cible et une proposition, détermine l'état de chaque lettre (correct, present ou absent), puis appelle colorRow(1, states) avec les résultats."
     }
   },
   "scenarios": {
     "allCorrect": {
       "name": "Tout est correct",
-      "description": "Gère un essai entièrement correct"
+      "description": "Gère une proposition entièrement correcte"
     },
     "absent": {
-      "name": "Des lettres absentes",
+      "name": "Des lettres sont absentes",
       "description": "Gère le cas où certaines lettres sont fausses"
     },
     "present": {
-      "name": "Des lettres présentes",
+      "name": "Des lettres sont présentes",
       "description": "Gère des lettres qui ne sont pas à la bonne place"
     },
     "complex": {
@@ -36,7 +36,7 @@
   },
   "hints": {
     "compareLetters": {
-      "question": "Comment comparer chaque lettre de l'essai avec le mot cible ?",
+      "question": "Comment comparer chaque lettre de la proposition avec le mot cible ?",
       "answer": "Parcours les positions `0` à `4`. Pour chaque position, compare `guess[i]` avec `target[i]`."
     },
     "stateRules": {
