@@ -1,7 +1,7 @@
 ---
 title: "The Chop Shop"
 description: "Scopri se il barbiere ha tempo per un altro cliente."
-en_md5: 5d80e48067c44af3dbda12f2fb2c1d4d
+en_md5: c68a8a4856c5249baa901c170035ea78
 ---
 
 Gesti un piccolo salone da barbiere che punta più sulla velocità che sulla qualità. I clienti potrebbero uscire con un taglio non proprio perfetto, ma non passano troppo tempo sulla poltrona.
@@ -38,7 +38,7 @@ Qui è più semplice pensare prima agli array interni, cioè alle coppie di nome
 L'accesso tramite indice funziona come nel resto del corso, ma qui puoi concatenare più indici, in questo modo...
 
 ```javascript
-const cuts = [
+let cuts = [
   ["Mohawk", 20],
   ["Slicked-Back Pixie", 15],
   ["Bob", 25],

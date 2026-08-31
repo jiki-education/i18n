@@ -1,7 +1,7 @@
 ---
 title: "The Chop Shop"
 description: "Descobre se o barbeiro tem tempo para mais um cliente."
-en_md5: 5d80e48067c44af3dbda12f2fb2c1d4d
+en_md5: c68a8a4856c5249baa901c170035ea78
 ---
 
 Tens um pequeno salão de cabeleireiro que dá prioridade à rapidez em vez da qualidade. Os clientes podem sair com um acabamento menos perfeito, mas não têm de passar demasiado tempo na cadeira.
@@ -38,7 +38,7 @@ Repara no array `cuts` (cortes). Contém outros arrays, um para cada corte de ca
 A indexação funciona da mesma forma que em qualquer outro contexto, mas podes encadear índices assim...
 
 ```javascript
-const cuts = [
+let cuts = [
   ["Mohawk", 20],
   ["Slicked-Back Pixie", 15],
   ["Bob", 25],

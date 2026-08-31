@@ -1,7 +1,7 @@
 ---
 title: "Le salon express"
 description: "Détermine si le coiffeur a le temps de prendre un dernier client."
-en_md5: 5d80e48067c44af3dbda12f2fb2c1d4d
+en_md5: c68a8a4856c5249baa901c170035ea78
 ---
 
 Tu tiens un petit salon de coiffure qui mise sur la rapidité plutôt que sur la qualité. Les clients ressortent parfois un peu ébouriffés, mais au moins ils ne passent pas des heures dans le fauteuil.
@@ -38,7 +38,7 @@ Le plus simple, ici, est de penser d'abord aux tableaux intérieurs (les paires 
 L'indexation fonctionne comme partout ailleurs, mais tu peux enchaîner les indices comme ceci...
 
 ```javascript
-const cuts = [
+let cuts = [
   ["Mohawk", 20],
   ["Slicked-Back Pixie", 15],
   ["Bob", 25],

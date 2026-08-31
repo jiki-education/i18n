@@ -1,7 +1,7 @@
 ---
 title: "The Chop Shop"
 description: "Számold ki, hogy a fodrásznak van-e ideje még egy vendégre."
-en_md5: 5d80e48067c44af3dbda12f2fb2c1d4d
+en_md5: c68a8a4856c5249baa901c170035ea78
 ---
 
 Egy kis fodrászszalont vezetsz, ahol a gyorsaság fontosabb, mint a minőség. A vendégek talán kissé egyenetlen frizurával távoznak, cserébe nem kell túl sokáig a székben ülniük.
@@ -38,7 +38,7 @@ Ezt a legkönnyebb úgy elképzelni, hogy először a belső láncokra, a név-i
 Az indexelés ugyanúgy működik, mint mindenhol máshol, de az indexeket egymás után is írhatod, például így...
 
 ```javascript
-const cuts = [
+let cuts = [
   ["Mohawk", 20],
   ["Slicked-Back Pixie", 15],
   ["Bob", 25],

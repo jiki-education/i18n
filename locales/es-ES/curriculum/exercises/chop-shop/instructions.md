@@ -1,7 +1,7 @@
 ---
 title: "The Chop Shop"
 description: "Averigua si el peluquero tiene tiempo para un cliente más."
-en_md5: 5d80e48067c44af3dbda12f2fb2c1d4d
+en_md5: c68a8a4856c5249baa901c170035ea78
 ---
 
 Llevas una pequeña peluquería que se centra en la rapidez más que en la calidad. Puede que la gente salga con el corte un poco descuidado, pero no pasa demasiado tiempo en el sillón.
@@ -38,7 +38,7 @@ Con esto, lo más fácil es pensar primero en los arrays internos (los pares de 
 Acceder por índice funciona igual que siempre, pero puedes encadenar varios índices así...
 
 ```javascript
-const cuts = [
+let cuts = [
   ["Mohawk", 20],
   ["Slicked-Back Pixie", 15],
   ["Bob", 25],

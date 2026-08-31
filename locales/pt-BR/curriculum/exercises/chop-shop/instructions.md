@@ -1,7 +1,7 @@
 ---
 title: "O Salão Vapt-Vupt"
 description: "Descubra se o cabeleireiro tem tempo para mais um cliente."
-en_md5: 5d80e48067c44af3dbda12f2fb2c1d4d
+en_md5: c68a8a4856c5249baa901c170035ea78
 ---
 
 Você tem um pequeno salão de cabeleireiro que prioriza a velocidade em vez da qualidade. As pessoas podem sair com o corte um pouco irregular, mas não precisam passar muito tempo na cadeira.
@@ -38,7 +38,7 @@ O jeito mais fácil de pensar nisso é imaginar primeiro os arrays internos, os 
 A indexação funciona igual a qualquer outro lugar, mas você pode encadear índices assim...
 
 ```javascript
-const cuts = [
+let cuts = [
   ["Mohawk", 20],
   ["Slicked-Back Pixie", 15],
   ["Bob", 25],
