@@ -5,7 +5,7 @@
   "tasks": {
     "packLunchbox": {
       "name": "Range la boîte à repas",
-      "description": "Répartis les éléments entre la boîte à repas et le sac à dos : fais tenir le plus possible dans la boîte à repas sans dépasser sa capacité, et mets tout le reste dans le sac à dos."
+      "description": "Répartis les aliments entre la boîte à repas et le sac à dos : fais-en tenir le plus possible dans la boîte sans dépasser sa capacité, et mets tout le reste dans le sac à dos."
     },
     "solveInSixteenLines": {
       "name": "Résous en 16 lignes de code",
@@ -15,23 +15,23 @@
   "scenarios": {
     "everythingFits": {
       "name": "Tout rentre",
-      "description": "Une boîte à repas spacieuse où tous les éléments rentrent, si bien que le sac à dos reste vide."
+      "description": "Une boîte à repas spacieuse où tous les aliments rentrent, si bien que le sac à dos reste vide."
     },
     "packTheMost": {
       "name": "Fais-en tenir le plus possible",
-      "description": "La place manque, donc les petits éléments vont dans la boîte à repas et les gros restent pour le sac à dos."
+      "description": "La place manque, donc les petits aliments vont dans la boîte à repas et les gros restent pour le sac à dos."
     },
     "justTheSnack": {
       "name": "Juste la collation",
-      "description": "Seul le tout petit élément rentre ; le reste va dans le sac à dos."
+      "description": "Seul le tout petit aliment rentre ; le reste va dans le sac à dos."
     },
     "nothingFits": {
       "name": "Rien ne rentre",
-      "description": "Même le plus petit élément est trop grand, donc tout finit dans le sac à dos."
+      "description": "Même le plus petit aliment est trop grand, donc tout finit dans le sac à dos."
     },
     "emptyLunchbox": {
       "name": "Boîte à repas vide",
-      "description": "Il n'y a aucun élément, donc la boîte à repas et le sac à dos reviennent tous les deux vides."
+      "description": "Il n'y a aucun aliment, donc la boîte à repas et le sac à dos reviennent tous les deux vides."
     },
     "bonus1": {
       "name": "16 lignes de code",
@@ -40,20 +40,20 @@
   },
   "hints": {
     "readEachItem": {
-      "question": "Comment récupérer le nom et la taille de chaque élément ?",
-      "answer": "Chaque élément est une paire. La première partie est le nom et la seconde est la taille, donc tu peux les récupérer un par un depuis l'élément."
+      "question": "Comment récupérer le nom et la taille de chaque aliment ?",
+      "answer": "Chaque aliment est une paire. La première partie est le nom et la seconde est la taille, donc tu peux les récupérer un par un depuis l'aliment."
     },
     "fitTheMost": {
-      "question": "Comment faire tenir le plus d'éléments possible ?",
-      "answer": "Réfléchis à l'ordre dans lequel ajouter les éléments. Les petits éléments laissent plus de place pour les autres, donc il vaut mieux s'en occuper avant les gros."
+      "question": "Comment faire tenir le plus d'aliments possible ?",
+      "answer": "Réfléchis à l'ordre dans lequel ajouter les aliments. Les petits aliments laissent plus de place pour les autres, donc il vaut mieux s'en occuper avant les gros."
     },
     "goSmallestFirst": {
-      "question": "Les éléments sont listés du plus grand au plus petit, comment les parcourir du plus petit au plus grand ?",
-      "answer": "Il existe une méthode de tableau qui te renvoie une copie inversée d'un tableau. Inverse d'abord les éléments, puis parcours-les dans ce nouvel ordre."
+      "question": "Les aliments sont listés du plus grand au plus petit, comment les parcourir du plus petit au plus grand ?",
+      "answer": "Il existe une méthode de tableau qui te renvoie une copie inversée d'un tableau. Inverse d'abord les aliments, puis parcours-les dans ce nouvel ordre."
     },
     "knowWhenFull": {
-      "question": "Comment décider où va chaque élément ?",
-      "answer": "Garde, au fur et à mesure, un total cumulé des tailles déjà ajoutées. Avant d'ajouter un élément, vérifie si le total plus sa taille tiendrait encore dans la capacité. Si c'est le cas, il va dans la boîte à repas, sinon il va dans le sac à dos."
+      "question": "Comment décider où va chaque aliment ?",
+      "answer": "Garde, au fur et à mesure, un total cumulé des tailles déjà ajoutées. Avant d'ajouter un aliment, vérifie si le total plus sa taille tiendrait encore dans la capacité. Si c'est le cas, il va dans la boîte à repas, sinon il va dans le sac à dos."
     }
   },
   "functions": {
