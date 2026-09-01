@@ -4,7 +4,7 @@ description: "Trouve les paires de chaussettes réparties dans deux paniers de l
 en_md5: c58a4ca0800c19322e7e9a98b4634aad
 ---
 
-Peu de choses dans la vie sont plus énervantes qu'une chaussette orpheline dont on ne retrouve pas la paire. Alors un beau jour, tu décides enfin de mettre de l'ordre dans ces chaussettes !
+Peu de choses dans la vie sont plus énervantes qu'une chaussette orpheline dont on ne retrouve pas la sœur jumelle. Alors un beau jour, tu décides enfin de mettre de l'ordre dans ces chaussettes !
 
 Tu sors tous les vêtements propres de tes tiroirs et tu les mets dans un panier. Puis tu pars fouiller sous chaque meuble et derrière chaque coussin pour dénicher les vêtements qui traînent, et tu les mets dans un second panier, celui du linge sale.
 
@@ -30,6 +30,6 @@ Cet exercice comporte de nombreuses méthodes de _strings_ et de tableaux qui pe
 
 ### Bonus
 
-Il y a de nombreuses façons de résoudre cet exercice. Il existe cependant une solution plutôt élégante en 29 lignes de code, alors c'est l'objectif qu'on a fixé. Tu peux descendre plus bas, mais le code a tendance à devenir moins lisible à mesure qu'il raccourcit : on pense donc qu'environ 29 lignes, c'est le bon niveau.
+Il y a de nombreuses façons de résoudre cet exercice. Cependant, il existe une solution plutôt élégante qui tient en 29 lignes de code : c'est donc l'objectif qu'on s'est fixé. Tu peux descendre plus bas, mais le code a alors tendance à devenir de moins en moins lisible à mesure qu'il raccourcit : c'est pourquoi on pense que le bon niveau se situe autour de 29 lignes.
 
 Amuse-toi bien !
