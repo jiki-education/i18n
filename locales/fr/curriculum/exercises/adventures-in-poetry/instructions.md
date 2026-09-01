@@ -4,7 +4,7 @@ description: "Parcours un chemin en récoltant les mots d'un poème, en ignorant
 en_md5: 9163e96662902baf726f464c9b58785f
 ---
 
-Tu crées un jeu de poésie robotique appelé « Aventures en poésie ». Pour commencer, tu dois programmer le robot pour qu'il récolte des mots en marchant, puis récite le poème à la fin.
+Tu crées un jeu de poésie robotique appelé « Aventures en poésie ». Pour commencer, tu dois programmer le robot pour qu'il collecte des mots tout en marchant, puis, à la fin, qu'il récite le poème.
 
 Chaque case contient l'une de ces quatre choses :
 
