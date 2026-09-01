@@ -1,0 +1,360 @@
+WEBVTT
+
+NOTE en_md5 a8bfb47950e2aff51944ce7d7805d799
+
+00:00:00.079 --> 00:00:02.899
+Hola, te doy la bienvenida a tu primer Deep Dive.
+
+00:00:02.939 --> 00:00:04.839
+Estos videos son un poco distintos de los
+
+00:00:04.880 --> 00:00:08.159
+videos de las lecciones que viste hasta ahora. Son más largos
+
+00:00:08.179 --> 00:00:11.440
+y mucho menos, menos estructurados. Eh, cuando
+
+00:00:11.460 --> 00:00:13.100
+termine aquí, voy a estar solo yo con
+
+00:00:13.140 --> 00:00:15.939
+una laptop, conversando contigo, explicando
+
+00:00:16.000 --> 00:00:18.680
+algunas ideas con más profundidad, seguramente
+
+00:00:18.720 --> 00:00:21.280
+yéndome por las ramas, quizás divagando un poco,
+
+00:00:21.319 --> 00:00:23.479
+pero ojalá dándote una mejor idea de
+
+00:00:23.559 --> 00:00:27.600
+cómo pienso sobre el código. Ahora, ver
+
+00:00:27.620 --> 00:00:30.419
+estos Deep Dives es totalmente opcional. Puedes
+
+00:00:30.500 --> 00:00:32.519
+adelantarlos. Puedes retroceder
+
+00:00:32.580 --> 00:00:34.479
+para volver a ver algo. Puedes ignorarlos
+
+00:00:34.540 --> 00:00:37.799
+por completo y ni siquiera abrirlos.
+
+00:00:37.860 --> 00:00:40.059
+Pero cuando dimos este curso como
+
+00:00:40.119 --> 00:00:42.939
+bootcamp, la gente me dijo que estos videos
+
+00:00:42.979 --> 00:00:45.200
+eran quizás la parte más valiosa de
+
+00:00:45.260 --> 00:00:47.099
+todo, porque les daban una idea
+
+00:00:47.139 --> 00:00:49.139
+de cómo pienso. Y como ya dije
+
+00:00:49.200 --> 00:00:51.339
+antes, gran parte de este curso consiste
+
+00:00:51.420 --> 00:00:53.759
+en enseñarte a pensar como desarrollador, como
+
+00:00:53.799 --> 00:00:56.419
+programador. Así que prueba algunos de
+
+00:00:56.459 --> 00:00:58.319
+los videos cuando aparezcan, y mira qué
+
+00:00:58.360 --> 00:01:00.740
+te parece. Por ahora, prepárate
+
+00:01:00.799 --> 00:01:02.720
+una buena taza de té o café. Relájate
+
+00:01:02.779 --> 00:01:04.360
+y vamos a meternos de lleno
+
+00:01:05.022 --> 00:01:07.901
+Hola, te doy la bienvenida al ejercicio Reparar el muro.
+
+00:01:08.302 --> 00:01:12.461
+Este es el primero de unos cuantos ejercicios de dibujo que vas a tener
+
+00:01:12.701 --> 00:01:16.141
+en las próximas lecciones. Estos ejercicios,
+
+00:01:16.381 --> 00:01:19.422
+no son los ejercicios más emocionantes de Jiki.
+
+00:01:19.422 --> 00:01:23.742
+Seguramente son los ejercicios menos emocionantes de Jiki,
+
+00:01:24.062 --> 00:01:28.542
+pero tienen mucho valor. Y ese valor se divide en dos partes.
+
+00:01:29.181 --> 00:01:32.222
+La primera es desarrollar memoria muscular.
+
+00:01:32.941 --> 00:01:35.742
+Lo que espero con estos ejercicios es que
+
+00:01:35.742 --> 00:01:40.462
+tomes confianza con las funciones, con los argumentos,
+
+00:01:40.462 --> 00:01:41.741
+con los números, con los strings.
+
+00:01:42.701 --> 00:01:46.701
+Estas ideas que vas a aprender son las bases de la programación.
+
+00:01:46.701 --> 00:01:48.301
+Simplemente las vas a usar para siempre.
+
+00:01:48.701 --> 00:01:52.941
+Pasar media hora, o una hora, trabajando en estos ejercicios,
+
+00:01:53.262 --> 00:01:54.862
+solo desarrollando esa memoria muscular.
+
+00:01:55.131 --> 00:01:58.362
+Es muy valioso. Pero lo segundo es que
+
+00:01:58.892 --> 00:02:03.371
+programar se trata de resolver problemas y de pensamiento crítico.
+
+00:02:04.332 --> 00:02:08.131
+Y estos ejercicios están diseñados para volverse
+
+00:02:08.131 --> 00:02:13.611
+un poquito más difíciles cada vez y desafiarte a pensar en cómo piensas.
+
+00:02:14.412 --> 00:02:18.572
+Plantean tareas que parecen bastante simples: dibujar algunas formas,
+
+00:02:18.572 --> 00:02:22.121
+mirar una forma, crear un espejo de ella, etc.
+
+00:02:22.121 --> 00:02:26.641
+Vas a ver, a medida que avances, que ninguno de los principios es complicado,
+
+00:02:26.641 --> 00:02:28.402
+que nada del código es complicado.
+
+00:02:29.281 --> 00:02:33.001
+Pero la forma en que piensas, la forma en que lees las instrucciones con atención,
+
+00:02:33.001 --> 00:02:36.242
+porque eso es importante. Lee las instrucciones con atención y convierte esas
+
+00:02:36.242 --> 00:02:40.962
+instrucciones en código. Eso es una habilidad real y está en el corazón de la programación.
+
+00:02:41.442 --> 00:02:44.242
+Quería mostrarte un par de cosas acá en el editor,
+
+00:02:44.242 --> 00:02:46.162
+solo para que te vayas familiarizando.
+
+00:02:47.072 --> 00:02:49.171
+Ojalá ya te estés acostumbrando a este editor.
+
+00:02:49.171 --> 00:02:52.412
+Es bastante simple. Tenemos las instrucciones a la derecha.
+
+00:02:52.871 --> 00:02:54.891
+Aquí puedes ver que tenemos un diagrama,
+
+00:02:56.091 --> 00:02:59.412
+y después tenemos una lista de las funciones, métodos que todavía no conoces,
+
+00:02:59.412 --> 00:03:02.731
+pero funciones que puedes usar en el ejercicio.
+
+00:03:02.731 --> 00:03:06.492
+Esas aparecen después. Y más abajo tenemos los conceptos que puedes usar.
+
+00:03:06.891 --> 00:03:10.412
+También tenemos Preguntar a Jiki. Si te atascas, puedes preguntarle a Jiki.
+
+00:03:10.852 --> 00:03:16.332
+Súper valioso, súper útil. Jiki puede ver tu código, puede entender dónde estás.
+
+00:03:16.332 --> 00:03:18.011
+Jiki sabe todo sobre los ejercicios.
+
+00:03:18.552 --> 00:03:21.112
+Así que puedes conversar con Jiki y desarrollar tus habilidades ahí.
+
+00:03:21.511 --> 00:03:23.832
+Además, tu primera conversación siempre es gratis.
+
+00:03:24.712 --> 00:03:29.911
+Y también hay pistas, pistas que te explican cosas como la forma de dibujar,
+
+00:03:31.511 --> 00:03:33.432
+y varias otras cosas que puedes ir descubriendo.
+
+00:03:33.432 --> 00:03:38.751
+Pero siempre te animo a empezar leyendo las instrucciones con atención.
+
+00:03:38.751 --> 00:03:41.672
+Le dediqué mucho tiempo a estas instrucciones
+
+00:03:41.992 --> 00:03:44.791
+para asegurarme de que te digan lo que necesitas saber.
+
+00:03:46.022 --> 00:03:47.862
+Las instrucciones, nada de esto debería ser una trampa.
+
+00:03:47.862 --> 00:03:50.101
+Las instrucciones siempre deberían darte suficiente
+
+00:03:50.182 --> 00:03:52.902
+información para poder resolver el ejercicio.
+
+00:03:53.462 --> 00:03:56.941
+Mucha gente lee las instrucciones muy por encima y piensa:
+
+00:03:56.941 --> 00:03:59.781
+ya sé lo que estoy haciendo, y después se atasca por horas.
+
+00:04:00.022 --> 00:04:02.261
+No deberías tener que atascarte así.
+
+00:04:03.302 --> 00:04:09.061
+La otra cosa que diría sobre estos ejercicios es que todos toman seguramente
+
+00:04:09.541 --> 00:04:15.302
+menos de uno, o máximo dos minutos, para que los resuelva un desarrollador senior.
+
+00:04:15.892 --> 00:04:19.492
+Son ejercicios muy simples, pero a ti te van a llevar más tiempo.
+
+00:04:19.971 --> 00:04:22.971
+A veces te vas a atascar y te va a llevar muchísimo,
+
+00:04:22.971 --> 00:04:24.772
+y eso se va a sentir muy frustrante.
+
+00:04:25.172 --> 00:04:27.332
+Y quizás algunos de ustedes ya llevan un tiempo programando
+
+00:04:27.332 --> 00:04:28.892
+y piensen que esto es muy fácil.
+
+00:04:28.892 --> 00:04:31.411
+¿Por qué tengo que perder una hora haciendo este ejercicio?
+
+00:04:32.131 --> 00:04:35.091
+Te desafío. Si llevas un tiempo programando y esto
+
+00:04:35.091 --> 00:04:38.291
+todavía te lleva más de dos, tres, cuatro minutos,
+
+00:04:38.851 --> 00:04:42.691
+seguramente no tienes tanta experiencia como crees.
+
+00:04:42.992 --> 00:04:45.631
+Porque si no puedes resolver esto en menos de cinco minutos,
+
+00:04:45.952 --> 00:04:48.351
+todavía te queda mucho por aprender.
+
+00:04:48.351 --> 00:04:50.832
+Y por eso este ejercicio debería ser valioso.
+
+00:04:50.911 --> 00:04:54.591
+No importa si te lleva media hora, una hora, dos horas, eso es genial.
+
+00:04:54.832 --> 00:04:57.232
+Cuanto más te lleva, más está aprendiendo tu cerebro.
+
+00:04:57.392 --> 00:05:01.272
+Pero si te resultan demasiado fáciles, vas a terminar todos en cinco
+
+00:05:01.272 --> 00:05:02.832
+o 10 minutos. Así que no importa.
+
+00:05:04.672 --> 00:05:06.232
+Bueno, eso es el lado derecho de esto.
+
+00:05:06.232 --> 00:05:09.952
+Ojalá ya le hayas dado una mirada y entiendas esto del lado izquierdo.
+
+00:05:10.031 --> 00:05:15.571
+Algo nuevo en estos ejercicios es que puedes pasar el cursor sobre esta área.
+
+00:05:16.291 --> 00:05:18.691
+También puedes hacer esta área un poco más grande,
+
+00:05:19.411 --> 00:05:21.891
+y puedes pasar el cursor por aquí para obtener las coordenadas.
+
+00:05:22.211 --> 00:05:26.891
+Así veo que la coordenada X aquí es 10 y la coordenada y también es 10.
+
+00:05:26.891 --> 00:05:31.331
+O aquí la coordenada x es 10 y la coordenada y es 19.
+
+00:05:31.412 --> 00:05:32.932
+O si bajo un poco, es 20.
+
+00:05:33.651 --> 00:05:38.852
+Ahora, algo que vas a notar en los ejercicios es que, para hacerte la vida más fácil,
+
+00:05:38.932 --> 00:05:41.092
+todos los números son divisibles por 10.
+
+00:05:41.621 --> 00:05:43.701
+A veces es 5, a veces es 20.
+
+00:05:44.021 --> 00:05:48.261
+En este ejercicio es 10. Y eso significa que si mueves el mouse por encima
+
+00:05:48.261 --> 00:05:49.302
+y dice algo como
+
+00:05:50.102 --> 00:05:57.302
+10 11, o 10 9, o 9 10, sabes que en realidad el número que buscamos es 10 10.
+
+00:05:57.862 --> 00:06:03.302
+Y lo mismo por aquí: si dice 29, 10, sabemos que buscamos 30 10,
+
+00:06:03.542 --> 00:06:06.742
+porque todos los números son números divisibles por 10.
+
+00:06:08.112 --> 00:06:10.672
+Así que esto debería ser bastante simple.
+
+00:06:10.672 --> 00:06:16.472
+Tómate un par de minutos para entender cómo dibujar rectángulos.
+
+00:06:16.472 --> 00:06:19.552
+Cada uno de estos ejercicios te presenta una forma distinta.
+
+00:06:19.992 --> 00:06:22.831
+Pero mira el diagrama, mira el orden.
+
+00:06:22.910 --> 00:06:24.271
+Ojalá puedas ver los colores.
+
+00:06:24.271 --> 00:06:26.112
+Los números son los mismos, todo coincide.
+
+00:06:26.112 --> 00:06:30.571
+Te lo deja bien fácil. Dedica unos minutos a resolver esto y
+
+00:06:30.912 --> 00:06:32.592
+trabaja en el próximo ejercicio o los dos próximos.
+
+00:06:32.592 --> 00:06:35.151
+Y después nos vemos en tu primer video Deep Dive,
+
+00:06:36.191 --> 00:06:38.831
+muy pronto también. Gracias por ver y que te diviertas.
