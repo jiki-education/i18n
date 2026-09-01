@@ -1,0 +1,111 @@
+{
+  "errors": {
+    "endOfPath": "Il poeta è uscito dal sentiero. Qualcosa avrebbe dovuto fermare la camminata prima di ora.",
+    "isEmojiString": "Puoi solo controllare se una stringa è un'emoji.",
+    "reciteString": "Puoi solo recitare una stringa."
+  },
+  "checks": {
+    "notRecited": "Il poeta non ha recitato nulla. Assicurati di chiamare <code>recite()</code> una volta terminata la camminata.",
+    "wrongPoem": "Il poeta ha recitato \"{{got}}\" ma la poesia dovrebbe essere \"{{expected}}\".",
+    "noFunctions": "Scrivi la soluzione come un'unica camminata, senza definire nessuna funzione.",
+    "reciteOnce": "Il poeta dovrebbe recitare la poesia una sola volta, dopo che la camminata è terminata.",
+    "tooDeeplyNested": "Il codice è annidato troppo in profondità. Puoi usare solo due livelli: quindi un ciclo con un <code>if</code> al suo interno, ma niente all'interno di quell'<code>if</code>.",
+    "noAndOrNot": "Questo esercizio riguarda un modo diverso di prendere decisioni, quindi <code>&&</code> e <code>!</code> non sono ammessi qui. <code>||</code> invece è ammesso.",
+    "needsContinue": "La soluzione deve usare <code>continue</code>.",
+    "needsBreak": "La soluzione deve usare <code>break</code>.",
+    "tooManyLines": "La soluzione è più lunga del necessario. Cerca di ridurla gestendo ogni tipo di casella in un unico punto."
+  },
+  "tasks": {
+    "collectThePoem": {
+      "name": "Raccogli la poesia e recitala",
+      "description": "Cammina lungo il sentiero, raccogli le parole della poesia, fermati nel punto giusto e recita ciò che hai raccolto."
+    },
+    "solveTightly": {
+      "name": "Snellisci il codice",
+      "description": "Risolvi la stessa camminata, ma riduci il codice al limite di righe."
+    }
+  },
+  "scenarios": {
+    "hope": {
+      "name": "Un sentiero con spazi vuoti",
+      "description": "Sei parole con solo erba tra loro, e una bandiera a scacchi alla fine."
+    },
+    "wandered": {
+      "name": "Decorazioni sul sentiero",
+      "description": "La stessa idea, ma ora ci sono piante e creature che crescono tra le parole."
+    },
+    "mists": {
+      "name": "Decorazioni vicino alla bandiera",
+      "description": "Una foglia si trova sulla casella appena prima della bandiera a scacchi."
+    },
+    "notLost": {
+      "name": "Esattamente sette parole",
+      "description": "Una riga con sette parole, quindi il poeta smette di contare prima della bandiera."
+    },
+    "hopeContinued": {
+      "name": "Una poesia troppo lunga",
+      "description": "Questo sentiero contiene più di sette parole, quindi il poeta si ferma a metà della riga."
+    },
+    "highlands": {
+      "name": "Un apostrofo",
+      "description": "Una riga di Burns, con un apostrofo su una casella tutta sua."
+    },
+    "heartScenery": {
+      "name": "Decorazioni dopo un apostrofo",
+      "description": "Un fungo cresce tra l'apostrofo e la parola a cui si unisce, quindi ciò che tiene traccia della spaziatura deve sopravvivere a una casella saltata."
+    },
+    "tyger": {
+      "name": "Una virgola",
+      "description": "Una riga di Blake, con una virgola su una casella tutta sua."
+    },
+    "pleure": {
+      "name": "Solo erba all'inizio",
+      "description": "Una riga di Verlaine, con alcune caselle vuote prima che inizi la poesia."
+    },
+    "yasegaeru": {
+      "name": "Una riga di Issa",
+      "description": "Sette parole di haiku, con un limite di righe per tenere i controlli stretti."
+    }
+  },
+  "hints": {
+    "scenery": {
+      "question": "Le piante e le creature finiscono nella mia poesia.",
+      "answer": "Solo le parole appartengono alla poesia. Tutto il resto sul sentiero deve essere lasciato indietro, il che significa che il ciclo deve passare alla casella successiva senza aggiungere nulla."
+    },
+    "flagSkipped": {
+      "question": "Il mio poeta non smette mai di camminare.",
+      "answer": "Anche la bandiera a scacchi è un'emoji. Se gestisci le decorazioni prima della bandiera, la bandiera viene trattata come decorazione e la camminata non finisce mai. L'ordine è importante."
+    },
+    "spacing": {
+      "question": "Le mie parole sono tutte attaccate, oppure c'è uno spazio all'inizio.",
+      "answer": "Pensa a quando è necessario uno spazio. È necessario **tra** due parole, non prima della prima, quindi qualcosa deve ricordare se è già stato scritto qualcosa."
+    },
+    "apostrophe": {
+      "question": "Ottengo `heart ' s` invece di `heart's`.",
+      "answer": "Un apostrofo unisce le parole ai suoi lati, quindi non deve esserci spazio né prima né dopo. Una virgola è il contrario: nessuno spazio prima ma uno spazio dopo."
+    },
+    "reciteOnce": {
+      "question": "Perché posso chiamare `recite()` solo una volta?",
+      "answer": "Il poeta recita la poesia finita, quindi c'è solo un momento in cui può succedere. Ci sono diversi modi in cui può finire la camminata, e tutti devono arrivare a quello stesso momento."
+    }
+  },
+  "describers": {
+    "move": "è avanzato e ha trovato ${return}",
+    "isEmoji": "ha controllato se ${arg1} era un'emoji",
+    "recite": "ha recitato \"${arg1}\""
+  },
+  "functions": {
+    "move": {
+      "description": "Fa avanzare il poeta sulla casella successiva e **restituisce** tutto ciò che c'era su di essa.",
+      "category": "Movimento"
+    },
+    "isEmoji": {
+      "description": "**Restituisce** `true` se quello che passi è un'emoji.",
+      "category": "Controlli"
+    },
+    "recite": {
+      "description": "Fa recitare al poeta una poesia ad alta voce.",
+      "category": "Azione"
+    }
+  }
+}

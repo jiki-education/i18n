@@ -1,0 +1,111 @@
+{
+  "errors": {
+    "endOfPath": "O poeta saiu do fim do caminho. Algo devia ter parado a caminhada antes disso.",
+    "isEmojiString": "Só podes verificar se um texto é um emoji.",
+    "reciteString": "Só podes recitar um texto."
+  },
+  "checks": {
+    "notRecited": "O poeta nunca recitou nada. Certifica-te de que chamas <code>recite()</code> quando a caminhada terminar.",
+    "wrongPoem": "O poeta recitou \"{{got}}\" mas o poema devia ser \"{{expected}}\".",
+    "noFunctions": "Escreve a tua solução como uma caminhada única, sem definires funções tuas.",
+    "reciteOnce": "O poeta deve recitar o poema uma vez, depois de terminar a caminhada.",
+    "tooDeeplyNested": "O teu código está demasiado aninhado. Só podes usar dois níveis, ou seja, um ciclo com um <code>if</code> lá dentro, mas nada dentro desse <code>if</code>.",
+    "noAndOrNot": "Este exercício é sobre uma forma diferente de tomar decisões, por isso <code>&&</code> e <code>!</code> não são permitidos aqui. O <code>||</code> é permitido.",
+    "needsContinue": "A tua solução precisa de usar <code>continue</code>.",
+    "needsBreak": "A tua solução precisa de usar <code>break</code>.",
+    "tooManyLines": "A tua solução é mais longa do que precisa de ser. Vê se consegues reduzi-la ao tratar de cada tipo de quadrado num único lugar."
+  },
+  "tasks": {
+    "collectThePoem": {
+      "name": "Recolhe o poema e recita-o",
+      "description": "Percorre o caminho, recolhe as palavras do poema, detém-te no sítio certo e recita o que recolheste."
+    },
+    "solveTightly": {
+      "name": "Compacta-o",
+      "description": "Resolve a mesma caminhada, mas reduz o teu código ao limite de linhas."
+    }
+  },
+  "scenarios": {
+    "hope": {
+      "name": "Um caminho com lacunas",
+      "description": "Seis palavras com relva entre elas e uma bandeira axadrezada no fim."
+    },
+    "wandered": {
+      "name": "Cenário no caminho",
+      "description": "A mesma ideia, mas agora há plantas e criaturas entre as palavras."
+    },
+    "mists": {
+      "name": "Cenário junto à bandeira",
+      "description": "Uma folha está no quadrado imediatamente antes da bandeira axadrezada."
+    },
+    "notLost": {
+      "name": "Exatamente sete palavras",
+      "description": "Uma linha com sete palavras, por isso o poeta deixa de contar antes da bandeira."
+    },
+    "hopeContinued": {
+      "name": "Um poema demasiado longo",
+      "description": "Este caminho contém mais de sete palavras, por isso o poeta detém-se a meio da linha."
+    },
+    "highlands": {
+      "name": "Um apóstrofo",
+      "description": "Uma linha de Burns, com um apóstrofo num quadrado só para ele."
+    },
+    "heartScenery": {
+      "name": "Cenário depois de um apóstrofo",
+      "description": "Um cogumelo cresce entre o apóstrofo e a palavra a que se liga, por isso o que quer que se lembre do espaçamento tem de sobreviver a um quadrado ignorado."
+    },
+    "tyger": {
+      "name": "Uma vírgula",
+      "description": "Uma linha de Blake, com uma vírgula num quadrado só para ela."
+    },
+    "pleure": {
+      "name": "Relva nua no início",
+      "description": "Uma linha de Verlaine, com alguns quadrados vazios antes do poema começar."
+    },
+    "yasegaeru": {
+      "name": "Uma linha de Issa",
+      "description": "Sete palavras de haiku, com um limite de linhas para manter as tuas condições apertadas."
+    }
+  },
+  "hints": {
+    "scenery": {
+      "question": "As plantas e as criaturas estão a acabar no meu poema.",
+      "answer": "Só as palavras pertencem ao poema. Tudo o resto no caminho tem de ficar para trás, o que significa que o teu ciclo tem de passar ao quadrado seguinte sem acrescentar nada."
+    },
+    "flagSkipped": {
+      "question": "O meu poeta nunca para de andar.",
+      "answer": "A bandeira axadrezada também é um emoji. Se tratares do cenário antes de tratares da bandeira, a bandeira é tratada como cenário e a caminhada nunca termina. A ordem faz a diferença."
+    },
+    "spacing": {
+      "question": "As minhas palavras estão todas juntas, ou há um espaço no início.",
+      "answer": "Pensa em quando é necessário um espaço. É necessário **entre** duas palavras, não antes da primeira, por isso algo tem de se lembrar se alguma coisa já foi escrita."
+    },
+    "apostrophe": {
+      "question": "Estou a obter `heart ' s` em vez de `heart's`.",
+      "answer": "Um apóstrofo liga as palavras de cada lado, por isso não há espaço antes nem depois dele. Uma vírgula é o contrário: sem espaço antes, mas com espaço depois."
+    },
+    "reciteOnce": {
+      "question": "Porque é que só posso chamar `recite()` uma vez?",
+      "answer": "O poeta recita o poema acabado, por isso só há um momento em que isso pode acontecer. Há mais de uma forma de terminar a caminhada, e todas elas precisam de chegar a esse mesmo momento."
+    }
+  },
+  "describers": {
+    "move": "avançou e encontrou ${return}",
+    "isEmoji": "verificou se ${arg1} era um emoji",
+    "recite": "recitou \"${arg1}\""
+  },
+  "functions": {
+    "move": {
+      "description": "Avança o poeta para o quadrado seguinte e **devolve** o que estava nele.",
+      "category": "Movimento"
+    },
+    "isEmoji": {
+      "description": "**Devolve** `true` se aquilo que lhe passas for um emoji.",
+      "category": "Verificações"
+    },
+    "recite": {
+      "description": "Faz o poeta recitar um poema em voz alta.",
+      "category": "Ação"
+    }
+  }
+}

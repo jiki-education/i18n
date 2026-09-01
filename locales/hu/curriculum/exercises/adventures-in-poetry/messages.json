@@ -1,0 +1,111 @@
+{
+  "errors": {
+    "endOfPath": "A költő túlment az út végén. Valaminek meg kellett volna állítania a sétát korábban.",
+    "isEmojiString": "Csak azt ellenőrizheted, hogy egy szöveg emoji-e.",
+    "reciteString": "Csak szöveget tudsz elszavalni."
+  },
+  "checks": {
+    "notRecited": "A költő soha nem szavalt el semmit. Győződj meg róla, hogy meghívod a <code>recite()</code> függvényt, amint a séta véget ért.",
+    "wrongPoem": "A költő ezt szavalta el: „{{got}}”, de a versnek „{{expected}}” kellene lennie.",
+    "noFunctions": "Írd meg a megoldást egyetlen sétaként, és ne definiálj saját függvényeket.",
+    "reciteOnce": "A költőnek egyszer kell elszavalnia a verset, miután a séta véget ért.",
+    "tooDeeplyNested": "A kódod túl mélyen van egymásba ágyazva. Csak két szintet használhatsz, tehát egy ciklus, benne egy <code>if</code>, de abban az <code>if</code>ben már semmi sem lehet.",
+    "noAndOrNot": "Ez a feladat a döntéshozatal egy másik módjáról szól, ezért a <code>&&</code> és a <code>!</code> itt nem használható. A <code>||</code> viszont igen.",
+    "needsContinue": "A megoldásodban használnod kell a <code>continue</code>-t.",
+    "needsBreak": "A megoldásodban használnod kell a <code>break</code>-et.",
+    "tooManyLines": "A megoldásod hosszabb a kelleténél. Próbáld meg lerövidíteni úgy, hogy minden mezőtípust egy helyen kezelsz."
+  },
+  "tasks": {
+    "collectThePoem": {
+      "name": "Gyűjtsd össze a verset, és szavald el",
+      "description": "Sétálj végig az úton, gyűjtsd össze a vers szavait, állj meg a megfelelő helyen, és szavald el, amit összegyűjtöttél."
+    },
+    "solveTightly": {
+      "name": "Tömörítsd",
+      "description": "Oldd meg ugyanazt a sétát, de rövidítsd le a kódodat a sorok számának korlátjára."
+    }
+  },
+  "scenarios": {
+    "hope": {
+      "name": "Út hézagokkal",
+      "description": "Hat szó, közöttük csupasz fű, a végén pedig egy kockás zászló."
+    },
+    "wandered": {
+      "name": "Díszlet az úton",
+      "description": "Ugyanaz az ötlet, de most növények és lények nőnek a szavak között."
+    },
+    "mists": {
+      "name": "Díszlet a zászló mellett",
+      "description": "Egy levél van azon a mezőn, amelyik közvetlenül a kockás zászló előtt van."
+    },
+    "notLost": {
+      "name": "Pontosan hét szó",
+      "description": "Egy sor hét szóval, így a költő a zászló előtt megáll a számolással."
+    },
+    "hopeContinued": {
+      "name": "Túl hosszú vers",
+      "description": "Ezen az úton több mint hét szó van, így a költő a sor közepén áll meg."
+    },
+    "highlands": {
+      "name": "Egy aposztróf",
+      "description": "Egy Burns-sor, egy aposztróffal, amely saját mezőn áll."
+    },
+    "heartScenery": {
+      "name": "Díszlet aposztróf után",
+      "description": "Egy gomba nő az aposztróf és a hozzákapcsolódó szó között, így a szóközök nyilvántartásának túl kell élnie egy kihagyott mezőt."
+    },
+    "tyger": {
+      "name": "Egy vessző",
+      "description": "Egy Blake-sor, egy vesszővel, amely saját mezőn áll."
+    },
+    "pleure": {
+      "name": "Csupasz fű az elején",
+      "description": "Egy Verlaine-sor, néhány üres mezővel a vers kezdete előtt."
+    },
+    "yasegaeru": {
+      "name": "Egy Issa-sor",
+      "description": "Hét szó haiku, sorlimittel, hogy szorosan tartsd a feltételeket."
+    }
+  },
+  "hints": {
+    "scenery": {
+      "question": "A növények és a lények bekerülnek a versembe.",
+      "answer": "Csak a szavak tartoznak a versbe. Minden mást az úton hátra kell hagyni, tehát a ciklusodnak úgy kell a következő mezőre lépnie, hogy nem ad hozzá semmit."
+    },
+    "flagSkipped": {
+      "question": "A költőm soha nem áll meg.",
+      "answer": "A kockás zászló is emoji. Ha előbb foglalkozol a díszlettel, mint a zászlóval, a zászlót díszletként kezeled, és a séta sosem ér véget. A sorrend számít."
+    },
+    "spacing": {
+      "question": "A szavaim össze vannak zsúfolva, vagy szóköz van az elején.",
+      "answer": "Gondold át, mikor van szükség szóközre. Két szó **között** van rá szükség, nem az első előtt, ezért valaminek emlékeznie kell arra, hogy írtál-e már valamit."
+    },
+    "apostrophe": {
+      "question": "Ezt kapom: `heart ' s` a `heart's` helyett.",
+      "answer": "Az aposztróf összekapcsolja a két oldalán lévő szavakat, ezért sem előtte, sem utána nem lehet szóköz. A vesszőnél fordítva van: előtte nincs szóköz, utána viszont van."
+    },
+    "reciteOnce": {
+      "question": "Miért hívhatom meg a `recite()` függvényt csak egyszer?",
+      "answer": "A költő a kész verset szavalja el, ezért csak egyetlen pillanat van, amikor ez megtörténhet. A sétának többféleképpen is vége lehet, és mindegyiknek ugyanabba a pillanatba kell eljutnia."
+    }
+  },
+  "describers": {
+    "move": "előre sétált, és ezt találta: ${return}",
+    "isEmoji": "ellenőrizte, hogy ${arg1} emoji-e",
+    "recite": "elszavalta: „${arg1}”"
+  },
+  "functions": {
+    "move": {
+      "description": "Előre lépteti a költőt a következő mezőre, és **visszaadja**, ami rajta volt.",
+      "category": "Mozgás"
+    },
+    "isEmoji": {
+      "description": "**Visszaadja** a `true` értéket, ha a neki átadott dolog emoji.",
+      "category": "Ellenőrzések"
+    },
+    "recite": {
+      "description": "Arra készteti a költőt, hogy hangosan elszavaljon egy verset.",
+      "category": "Művelet"
+    }
+  }
+}

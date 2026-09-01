@@ -1,7 +1,7 @@
 ---
 title: "Alfanumérico"
 description: "Crea funciones para clasificar texto en letras, números o ambos."
-en_md5: f199432f63304f1d03c4ce1512c8a349
+en_md5: ba81d7fc98b45703f0c9bba133ae8058
 ---
 
 En este ejercicio, tu tarea es crear funciones que verifiquen si un string contiene letras y/o números.
@@ -21,10 +21,10 @@ Luego, escribe una función `whatAmI(string)` (qué soy) que use esas funciones 
 - Los strings que contienen letras y números deben devolver `"Alphanumeric"`.
 - Todo lo demás debe devolver `"Unknown"`.
 
-### Usar lo que acabas de aprender
+### Tareas adicionales
 
-Aunque hay muchas formas válidas de resolver este ejercicio, la solución que queremos que propongas usa una sentencia `continue` y las tres funciones anteriores.
+Hay muchas formas válidas de resolver este ejercicio. Podrías intentar usar una sentencia `continue`, pero hay muchas otras buenas soluciones.
 
-También hay una tarea adicional que te reta a resolver todo el ejercicio en 42 líneas de código o menos. Ese objetivo no es necesariamente la solución de mayor calidad para producción. Un par de líneas extra probablemente dan una solución más clara, y también hay soluciones más cortas. Pero es una buena meta para llevar tus capacidades más lejos.
+También hay una tarea adicional que te reta a resolver todo el ejercicio en 42 líneas de código o menos. Ese objetivo no es necesariamente la solución de mayor calidad para producción. Un par de líneas extra probablemente dan una mejor solución, y también hay soluciones más cortas. Pero es una buena meta para llevar tus capacidades más lejos.
 
 ¡Diviértete!

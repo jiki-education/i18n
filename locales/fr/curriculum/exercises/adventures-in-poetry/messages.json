@@ -1,0 +1,111 @@
+{
+  "errors": {
+    "endOfPath": "Le poète a dépassé le bout du chemin. Quelque chose aurait dû arrêter la marche avant.",
+    "isEmojiString": "Tu peux seulement vérifier si un morceau de texte est un emoji.",
+    "reciteString": "Tu peux seulement réciter un morceau de texte."
+  },
+  "checks": {
+    "notRecited": "Le poète n'a rien récité. Vérifie que tu appelles <code>recite()</code> une fois la marche terminée.",
+    "wrongPoem": "Le poète a récité « {{got}} », mais le poème devrait être « {{expected}} ».",
+    "noFunctions": "Écris ta solution comme une seule marche, sans définir tes propres fonctions.",
+    "reciteOnce": "Le poète doit réciter le poème une seule fois, après la fin de la marche.",
+    "tooDeeplyNested": "Ton code est trop imbriqué. Tu n'as droit qu'à deux niveaux : une boucle avec un <code>if</code> à l'intérieur, mais rien à l'intérieur de ce <code>if</code>.",
+    "noAndOrNot": "Cet exercice porte sur une autre façon de prendre des décisions, donc <code>&&</code> et <code>!</code> ne sont pas autorisés ici. <code>||</code> reste permis.",
+    "needsContinue": "Ta solution doit utiliser <code>continue</code>.",
+    "needsBreak": "Ta solution doit utiliser <code>break</code>.",
+    "tooManyLines": "Ta solution est plus longue que nécessaire. Essaie de la raccourcir en gérant chaque type de case à un seul endroit."
+  },
+  "tasks": {
+    "collectThePoem": {
+      "name": "Récolte le poème et récite-le",
+      "description": "Parcours le chemin, récolte les mots du poème, arrête-toi au bon endroit et récite ce que tu as récolté."
+    },
+    "solveTightly": {
+      "name": "Raccourcis ton code",
+      "description": "Résous la même marche, mais fais tenir ton code dans la limite de lignes."
+    }
+  },
+  "scenarios": {
+    "hope": {
+      "name": "Un chemin avec des trous",
+      "description": "Six mots séparés par de l'herbe nue, et un drapeau à damier à la fin."
+    },
+    "wandered": {
+      "name": "Du décor sur le chemin",
+      "description": "La même idée, mais des plantes et des créatures poussent maintenant entre les mots."
+    },
+    "mists": {
+      "name": "Du décor à côté du drapeau",
+      "description": "Une feuille occupe la case juste avant le drapeau à damier."
+    },
+    "notLost": {
+      "name": "Exactement sept mots",
+      "description": "Un vers de sept mots, donc le poète s'arrête grâce au compte avant d'atteindre le drapeau."
+    },
+    "hopeContinued": {
+      "name": "Un poème trop long",
+      "description": "Ce chemin contient plus de sept mots, donc le poète s'arrête au milieu du vers."
+    },
+    "highlands": {
+      "name": "Une apostrophe",
+      "description": "Un vers de Burns, avec une apostrophe sur sa propre case."
+    },
+    "heartScenery": {
+      "name": "Du décor après une apostrophe",
+      "description": "Un champignon pousse entre l'apostrophe et le mot qu'elle relie, donc ce qui retient l'espacement doit survivre à une case ignorée."
+    },
+    "tyger": {
+      "name": "Une virgule",
+      "description": "Un vers de Blake, avec une virgule sur sa propre case."
+    },
+    "pleure": {
+      "name": "De l'herbe nue pour commencer",
+      "description": "Un vers de Verlaine, avec quelques cases vides avant le début du poème."
+    },
+    "yasegaeru": {
+      "name": "Un vers d'Issa",
+      "description": "Sept mots de haïku, avec une limite de lignes pour garder tes conditions bien serrées."
+    }
+  },
+  "hints": {
+    "scenery": {
+      "question": "Les plantes et les créatures se retrouvent dans mon poème.",
+      "answer": "Seuls les mots ont leur place dans le poème. Tout le reste du chemin doit être laissé de côté, ce qui signifie que ta boucle doit passer à la case suivante sans rien ajouter."
+    },
+    "flagSkipped": {
+      "question": "Mon poète ne s'arrête jamais de marcher.",
+      "answer": "Le drapeau à damier est lui aussi un emoji. Si tu traites le décor avant de traiter le drapeau, le drapeau est considéré comme du décor et la marche ne se termine jamais. L'ordre compte."
+    },
+    "spacing": {
+      "question": "Mes mots sont tous collés, ou il y a un espace au début.",
+      "answer": "Réfléchis au moment où un espace est nécessaire. Il en faut un **entre** deux mots, pas avant le premier, donc quelque chose doit retenir si un mot a déjà été écrit."
+    },
+    "apostrophe": {
+      "question": "J'obtiens `heart ' s` au lieu de `heart's`.",
+      "answer": "Une apostrophe relie les mots situés de part et d'autre, donc aucun espace n'a sa place avant ou après elle. Une virgule fonctionne dans l'autre sens : pas d'espace avant, mais un espace après."
+    },
+    "reciteOnce": {
+      "question": "Pourquoi je ne peux appeler `recite()` qu'une seule fois ?",
+      "answer": "Le poète récite le poème terminé, donc il n'existe qu'un seul moment où cela peut se produire. La marche peut se terminer de plusieurs façons, et toutes doivent aboutir à ce même moment."
+    }
+  },
+  "describers": {
+    "move": "a avancé et a trouvé ${return}",
+    "isEmoji": "a vérifié si ${arg1} était un emoji",
+    "recite": "a récité « ${arg1} »"
+  },
+  "functions": {
+    "move": {
+      "description": "Fait avancer le poète sur la case suivante et **renvoie** ce qui s'y trouvait.",
+      "category": "Déplacement"
+    },
+    "isEmoji": {
+      "description": "**Renvoie** `true` si ce que tu lui passes est un emoji.",
+      "category": "Vérifications"
+    },
+    "recite": {
+      "description": "Fait réciter un poème à voix haute au poète.",
+      "category": "Action"
+    }
+  }
+}

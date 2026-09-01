@@ -1,0 +1,111 @@
+{
+  "errors": {
+    "endOfPath": "O poeta andou até depois do fim do caminho. Alguma coisa deveria ter interrompido a caminhada antes disso.",
+    "isEmojiString": "Você só pode verificar se um pedaço de texto é um emoji.",
+    "reciteString": "Você só pode recitar um pedaço de texto."
+  },
+  "checks": {
+    "notRecited": "O poeta não recitou nada. Certifique-se de chamar <code>recite()</code> quando a caminhada terminar.",
+    "wrongPoem": "O poeta recitou \"{{got}}\", mas o poema deveria ser \"{{expected}}\".",
+    "noFunctions": "Escreva sua solução como uma única caminhada, sem escrever funções auxiliares.",
+    "reciteOnce": "O poeta deve recitar o poema uma vez, depois que a caminhada terminar.",
+    "tooDeeplyNested": "Seu código está aninhado demais. Você só pode usar dois níveis, ou seja, um laço com um <code>if</code> dentro dele, mas nada dentro desse <code>if</code>.",
+    "noAndOrNot": "Este exercício é sobre um jeito diferente de tomar decisões, então <code>&&</code> e <code>!</code> não são permitidos aqui. Já <code>||</code> pode.",
+    "needsContinue": "Sua solução precisa usar <code>continue</code>.",
+    "needsBreak": "Sua solução precisa usar <code>break</code>.",
+    "tooManyLines": "Sua solução está mais longa do que precisa. Veja se consegue encurtá-la tratando cada tipo de casa em um só lugar."
+  },
+  "tasks": {
+    "collectThePoem": {
+      "name": "Colete o poema e recite-o",
+      "description": "Percorra o caminho, junte as palavras do poema, pare no lugar certo e recite o que você juntou."
+    },
+    "solveTightly": {
+      "name": "Enxugue o código",
+      "description": "Resolva a mesma caminhada, mas reduza seu código até o limite de linhas."
+    }
+  },
+  "scenarios": {
+    "hope": {
+      "name": "Um caminho com casas vazias",
+      "description": "Seis palavras com grama entre elas, e uma bandeira quadriculada no final."
+    },
+    "wandered": {
+      "name": "Cenário no caminho",
+      "description": "A mesma ideia, mas agora há plantas e bichos crescendo entre as palavras."
+    },
+    "mists": {
+      "name": "Cenário ao lado da bandeira",
+      "description": "Uma folha está na casa logo antes da bandeira quadriculada."
+    },
+    "notLost": {
+      "name": "Exatamente sete palavras",
+      "description": "Um verso com sete palavras, então o poeta para antes de chegar à bandeira."
+    },
+    "hopeContinued": {
+      "name": "Um poema longo demais",
+      "description": "Este caminho tem mais de sete palavras, então o poeta para no meio do verso."
+    },
+    "highlands": {
+      "name": "Um apóstrofo",
+      "description": "Um verso de Burns, com um apóstrofo sozinho em uma casa."
+    },
+    "heartScenery": {
+      "name": "Cenário depois de um apóstrofo",
+      "description": "Um cogumelo cresce entre o apóstrofo e a palavra que ele junta, então o que quer que controle o espaçamento precisa sobreviver a uma casa pulada."
+    },
+    "tyger": {
+      "name": "Uma vírgula",
+      "description": "Um verso de Blake, com uma vírgula sozinha em uma casa."
+    },
+    "pleure": {
+      "name": "Grama no começo",
+      "description": "Um verso de Verlaine, com algumas casas vazias antes de o poema começar."
+    },
+    "yasegaeru": {
+      "name": "Um verso de Issa",
+      "description": "Sete palavras de haicai, com um limite de linhas para manter suas condições enxutas."
+    }
+  },
+  "hints": {
+    "scenery": {
+      "question": "As plantas e os bichos estão indo parar no meu poema.",
+      "answer": "Só as palavras pertencem ao poema. Todo o resto do caminho precisa ficar para trás, o que significa que seu laço tem que chegar à próxima casa sem adicionar nada."
+    },
+    "flagSkipped": {
+      "question": "Meu poeta nunca para de andar.",
+      "answer": "A bandeira quadriculada também é um emoji. Se você tratar o cenário antes de tratar a bandeira, a bandeira é tratada como cenário e a caminhada nunca termina. A ordem importa."
+    },
+    "spacing": {
+      "question": "Minhas palavras estão todas grudadas, ou há um espaço no começo.",
+      "answer": "Pense em quando o espaço é necessário. Ele é necessário **entre** duas palavras, não antes da primeira, então alguma coisa precisa lembrar se algo já foi escrito."
+    },
+    "apostrophe": {
+      "question": "Estou obtendo `heart ' s` em vez de `heart's`.",
+      "answer": "Um apóstrofo junta as palavras dos dois lados dele, então não vai espaço antes nem depois dele. A vírgula é o contrário: sem espaço antes, mas com um espaço depois."
+    },
+    "reciteOnce": {
+      "question": "Por que só posso chamar `recite()` uma vez?",
+      "answer": "O poeta recita o poema pronto, então só existe um momento em que isso pode acontecer. Há mais de um jeito de a caminhada terminar, e todos eles precisam chegar a esse mesmo momento."
+    }
+  },
+  "describers": {
+    "move": "andou para a frente e encontrou ${return}",
+    "isEmoji": "verificou se ${arg1} era um emoji",
+    "recite": "recitou \"${arg1}\""
+  },
+  "functions": {
+    "move": {
+      "description": "Faz o poeta avançar até a próxima casa e **retorna** o que estava nela.",
+      "category": "Movimento"
+    },
+    "isEmoji": {
+      "description": "**Retorna** `true` se o que você passar for um emoji.",
+      "category": "Verificações"
+    },
+    "recite": {
+      "description": "Faz o poeta recitar um poema em voz alta.",
+      "category": "Ação"
+    }
+  }
+}

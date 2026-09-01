@@ -1,7 +1,7 @@
 ---
 title: "Alphanumérique"
 description: "Construis des fonctions pour déterminer si un texte contient des lettres, des chiffres ou les deux."
-en_md5: f199432f63304f1d03c4ce1512c8a349
+en_md5: ba81d7fc98b45703f0c9bba133ae8058
 ---
 
 Dans cet exercice, ta mission est de créer des fonctions qui vérifient si une _string_ contient des lettres et/ou des chiffres.
@@ -21,9 +21,9 @@ Ensuite, écris une fonction `whatAmI(string)` (que suis-je) qui s'appuie sur ce
 - Les _strings_ qui contiennent à la fois des lettres et des chiffres doivent renvoyer `"Alphanumeric"`
 - Tout le reste doit renvoyer `"Unknown"`
 
-### Mets en pratique ce que tu viens d'apprendre
+### Tâches bonus
 
-Il existe de nombreuses façons valables de résoudre cet exercice, mais la solution qu'on attend de toi utilise une instruction `continue` ainsi que les trois fonctions ci-dessus.
+Il existe de nombreuses façons valables de résoudre cet exercice. Tu peux essayer d'utiliser une instruction `continue`, mais bien d'autres bonnes solutions sont possibles.
 
 Il y a aussi une tâche bonus qui te met au défi de résoudre le tout en 42 lignes de code ou moins. Cette cible n'est pas forcément la solution la plus digne d'un code de production : quelques lignes de plus donneraient sans doute un résultat plus élégant, et il existe aussi des solutions plus courtes. Mais c'est un bon objectif pour repousser tes limites.
 

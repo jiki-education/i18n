@@ -1,0 +1,111 @@
+{
+  "errors": {
+    "endOfPath": "El poeta se ha salido del final del camino. Algo debería haber detenido el recorrido antes de ahora.",
+    "isEmojiString": "Solo puedes comprobar si un fragmento de texto es un emoji.",
+    "reciteString": "Solo puedes recitar un fragmento de texto."
+  },
+  "checks": {
+    "notRecited": "El poeta no recitó nada. Asegúrate de llamar a <code>recite()</code> una vez terminado el recorrido.",
+    "wrongPoem": "El poeta recitó «{{got}}» pero el poema debería ser «{{expected}}».",
+    "noFunctions": "Escribe tu solución como un único recorrido, sin definir ninguna función propia.",
+    "reciteOnce": "El poeta debe recitar el poema una vez, después de que haya terminado el recorrido.",
+    "tooDeeplyNested": "Tu código está demasiado anidado. Solo se te permiten dos niveles, así que un bucle con un <code>if</code> dentro, pero nada dentro de ese <code>if</code>.",
+    "noAndOrNot": "Este ejercicio trata de una forma diferente de tomar decisiones, por lo que <code>&&</code> y <code>!</code> no están permitidos aquí. <code>||</code> está bien.",
+    "needsContinue": "Tu solución necesita usar <code>continue</code>.",
+    "needsBreak": "Tu solución necesita usar <code>break</code>.",
+    "tooManyLines": "Tu solución es más larga de lo necesario. A ver si puedes reducirla tratando cada tipo de casilla en un solo lugar."
+  },
+  "tasks": {
+    "collectThePoem": {
+      "name": "Recoge el poema y recítalo",
+      "description": "Recorre el camino, recoge las palabras del poema, detente en el lugar correcto y recita lo que hayas recogido."
+    },
+    "solveTightly": {
+      "name": "Ajústalo",
+      "description": "Resuelve el mismo recorrido, pero reduce tu código al límite de líneas."
+    }
+  },
+  "scenarios": {
+    "hope": {
+      "name": "Un camino con huecos",
+      "description": "Seis palabras con hierba desnuda entre ellas, y una bandera de cuadros al final."
+    },
+    "wandered": {
+      "name": "Decoración en el camino",
+      "description": "La misma idea, pero ahora hay plantas y criaturas creciendo entre las palabras."
+    },
+    "mists": {
+      "name": "Decoración junto a la bandera",
+      "description": "Una hoja está en la casilla justo antes de la bandera de cuadros."
+    },
+    "notLost": {
+      "name": "Exactamente siete palabras",
+      "description": "Una línea con siete palabras, así que el poeta deja de contar antes de la bandera."
+    },
+    "hopeContinued": {
+      "name": "Un poema demasiado largo",
+      "description": "Este camino contiene más de siete palabras, por lo que el poeta se detiene a mitad de la línea."
+    },
+    "highlands": {
+      "name": "Un apóstrofo",
+      "description": "Una línea de Burns, con un apóstrofo en su propia casilla."
+    },
+    "heartScenery": {
+      "name": "Decoración después de un apóstrofo",
+      "description": "Una seta crece entre el apóstrofo y la palabra a la que se une, de modo que lo que recuerda el espaciado tiene que sobrevivir a una casilla omitida."
+    },
+    "tyger": {
+      "name": "Una coma",
+      "description": "Una línea de Blake, con una coma en su propia casilla."
+    },
+    "pleure": {
+      "name": "Hierba desnuda al principio",
+      "description": "Una línea de Verlaine, con algunas casillas vacías antes de que empiece el poema."
+    },
+    "yasegaeru": {
+      "name": "Una línea de Issa",
+      "description": "Siete palabras de haiku, con un límite de líneas para mantener tu solución ajustada."
+    }
+  },
+  "hints": {
+    "scenery": {
+      "question": "Las plantas y las criaturas están acabando en mi poema.",
+      "answer": "Solo las palabras pertenecen al poema. Todo lo demás en el camino debe dejarse atrás, lo que significa que tu bucle tiene que pasar a la siguiente casilla sin añadir nada."
+    },
+    "flagSkipped": {
+      "question": "Mi poeta nunca deja de caminar.",
+      "answer": "La bandera de cuadros también es un emoji. Si tratas la decoración antes que la bandera, la bandera se trata como decoración y el recorrido nunca termina. El orden importa."
+    },
+    "spacing": {
+      "question": "Mis palabras están todas apretadas, o hay un espacio al principio.",
+      "answer": "Piensa en cuándo se necesita un espacio. Se necesita **entre** dos palabras, no antes de la primera, así que algo tiene que recordar si ya se ha escrito algo."
+    },
+    "apostrophe": {
+      "question": "Obtengo `heart ' s` en lugar de `heart's`.",
+      "answer": "Un apóstrofo une las palabras a ambos lados de él, por lo que no debe haber espacio ni antes ni después de él. Una coma es al contrario: sin espacio antes, pero con espacio después."
+    },
+    "reciteOnce": {
+      "question": "¿Por qué solo puedo llamar a `recite()` una vez?",
+      "answer": "El poeta recita el poema terminado, así que solo hay un momento en el que eso puede ocurrir. Hay más de una forma de que termine el recorrido, y todas ellas deben llegar a ese mismo momento."
+    }
+  },
+  "describers": {
+    "move": "avanzó y encontró ${return}",
+    "isEmoji": "comprobó si ${arg1} era un emoji",
+    "recite": "recitó «${arg1}»"
+  },
+  "functions": {
+    "move": {
+      "description": "Hace que el poeta avance a la siguiente casilla y **devuelve** lo que hubiera en ella.",
+      "category": "Movimiento"
+    },
+    "isEmoji": {
+      "description": "**Devuelve** `true` si lo que le pasas es un emoji.",
+      "category": "Comprobaciones"
+    },
+    "recite": {
+      "description": "Hace que el poeta recite un poema en voz alta.",
+      "category": "Acción"
+    }
+  }
+}
