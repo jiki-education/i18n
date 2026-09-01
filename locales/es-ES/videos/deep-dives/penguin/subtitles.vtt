@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 37cae67403778109e44f86b67a556520
+
+00:00:00.456 --> 00:00:02.255
+Vale, te doy la bienvenida a otro vídeo Deep Dive.
+
+00:00:02.255 --> 00:00:04.695
+En este vamos a ver el Pingüino.
+
+00:00:04.936 --> 00:00:09.375
+Espero que hayas visto el ejercicio Rostro de zorro, donde
+
+00:00:09.375 --> 00:00:13.336
+hablamos un poco de simetría, que te habrá ayudado en este ejercicio si
+
+00:00:13.336 --> 00:00:17.655
+lo hiciste. Creo que este ejercicio, espero, no ha sido muy difícil.
+
+00:00:17.995 --> 00:00:22.295
+Las elipses son un poco raras. Cuesta un poco acostumbrarse a ellas.
+
+00:00:22.716 --> 00:00:25.495
+Pero una vez te acostumbras, son bastante sencillas.
+
+00:00:26.126 --> 00:00:28.765
+Pero lo clave de este ejercicio era que quería que
+
+00:00:29.076 --> 00:00:34.765
+lo resolvieras solo usando lógica, sin medir cosas, sin adivinar cosas,
+
+00:00:34.765 --> 00:00:38.125
+solo usando lógica. Y la lógica es de lo que va la programación.
+
+00:00:38.765 --> 00:00:41.286
+Y una de las indicaciones que te di era
+
+00:00:41.286 --> 00:00:44.125
+empezar el ejercicio pulsando «Ejecutar código».
+
+00:00:44.286 --> 00:00:47.646
+Y ese es un consejo muy útil en general.
+
+00:00:47.646 --> 00:00:52.206
+Siempre vale la pena empezar un ejercicio pulsando «Ejecutar código» y ver qué pasa.
+
+00:00:52.625 --> 00:00:55.185
+Muchas veces hay un estado inicial, hay algo que ver,
+
+00:00:55.506 --> 00:00:57.185
+es una buena costumbre.
+
+00:00:58.865 --> 00:01:02.506
+Vamos a construir cosas. Queremos construir el ala derecha.
+
+00:01:02.506 --> 00:01:05.426
+Bueno, lo primero es entender qué pasa con el ala izquierda.
+
+00:01:05.665 --> 00:01:10.066
+Y como te enseñé antes, usar el scrubber aquí ayuda mucho. Si volvemos
+
+00:01:10.066 --> 00:01:16.146
+a donde solo tenemos el ala izquierda, podemos razonar sobre
+
+00:01:17.025 --> 00:01:18.786
+esta elipse de forma aislada.
+
+00:01:19.975 --> 00:01:25.256
+Y si vamos a hacer el ala derecha, ¿qué es lo que queremos cambiar en realidad?
+
+00:01:26.775 --> 00:01:32.055
+Copiamos nuestras elipses. Bueno, queremos que tenga el mismo ancho,
+
+00:01:32.775 --> 00:01:35.975
+así que el radio X debería quedarse igual, que es esta parte.
+
+00:01:36.296 --> 00:01:39.975
+Y queremos que tenga la misma altura, así que el radio Y se queda igual.
+
+00:01:40.695 --> 00:01:44.376
+Y queremos que empiece en la misma posición en vertical,
+
+00:01:45.245 --> 00:01:48.046
+así que la Y del centro también se queda igual.
+
+00:01:48.766 --> 00:01:53.646
+Así que lo único que hay que cambiar en realidad es este 28, que es
+
+00:01:54.135 --> 00:01:56.206
+a qué distancia está desde la izquierda.
+
+00:01:57.325 --> 00:02:03.646
+Y entonces tenemos que pensar cómo moverlo desde su punto central de la izquierda
+
+00:02:03.805 --> 00:02:05.885
+hasta su punto central de la derecha.
+
+00:02:07.006 --> 00:02:12.205
+Y si esta distancia es 28 desde cero, lo único que hay que decir es: bueno, ¿cuánto es 100
+
+00:02:13.026 --> 00:02:16.066
+menos 28? Queremos meterlo 28 hacia dentro.
+
+00:02:16.866 --> 00:02:19.825
+Y espero que puedas hacerlo de cabeza.
+
+00:02:19.906 --> 00:02:21.665
+Pero ponerlo como
+
+00:02:23.156 --> 00:02:24.066
+72
+
+00:02:25.346 --> 00:02:26.786
+me suena bastante bien.
+
+00:02:27.665 --> 00:02:31.105
+Siempre puedes sacar una calculadora y hacer estas cuentas también.
+
+00:02:31.586 --> 00:02:33.906
+Y así tenemos unas alas simétricas.
+
+00:02:34.225 --> 00:02:36.145
+Y luego nos dicen aquí abajo, vale.
+
+00:02:36.145 --> 00:02:38.866
+Lo siguiente: el lado derecho de la cara no se ve bien.
+
+00:02:39.216 --> 00:02:41.616
+Vale. Y bueno, eso es porque no hemos hecho el lado derecho de la cara.
+
+00:02:42.096 --> 00:02:44.015
+Así que vamos a hacer el lado derecho de la cara.
+
+00:02:45.295 --> 00:02:49.056
+Bien, lado derecho de la cara, y avanzamos para ejecutar el código.
+
+00:02:49.135 --> 00:02:51.536
+Avanzamos hasta que tenemos nuestro,
+
+00:02:54.735 --> 00:02:58.575
+lado izquierdo de la cara. El lado derecho de la cara, exactamente igual que antes.
+
+00:02:58.895 --> 00:03:04.096
+Mismo ancho, misma altura, misma posición en el eje vertical.
+
+00:03:04.175 --> 00:03:05.776
+Solo cambia este.
+
+00:03:06.556 --> 00:03:13.436
+Y si volvemos a pensar en puntos centrales, de cero a 41 es simplemente 100 menos 41,
+
+00:03:13.915 --> 00:03:15.996
+que es 59.
+
+00:03:17.116 --> 00:03:20.795
+Así que ahora tenemos una cara central bien simétrica.
+
+00:03:22.156 --> 00:03:26.556
+Ahora nos dicen que el ojo derecho no parece estar bien, así que bajamos
+
+00:03:26.955 --> 00:03:31.355
+hasta el ojo derecho. Y aquí hay dos líneas para el ojo derecho
+
+00:03:32.325 --> 00:03:34.605
+y exactamente lo mismo. Estos son círculos.
+
+00:03:34.605 --> 00:03:37.846
+Queremos que el radio sea el mismo porque queremos el mismo tamaño.
+
+00:03:37.846 --> 00:03:41.006
+Y vamos a volver atrás para dibujarlos.
+
+00:03:41.006 --> 00:03:43.445
+Queremos que el radio sea el mismo.
+
+00:03:43.445 --> 00:03:45.286
+Un círculo grande y un círculo pequeño.
+
+00:03:45.445 --> 00:03:49.045
+Queremos que la posición sea la misma en el eje Y,
+
+00:03:49.045 --> 00:03:51.686
+pero queremos invertirlos en el eje X.
+
+00:03:52.006 --> 00:03:58.885
+Así que 100 menos 42 es 58 y 100 menos 43 es 57.
+
+00:03:59.406 --> 00:04:02.445
+Lo hacemos y tenemos unos ojos bien invertidos.
+
+00:04:03.645 --> 00:04:08.605
+Después tenemos la pata derecha. Otra vez, mantén tu código bien ordenado.
+
+00:04:08.605 --> 00:04:10.925
+Añade la pata derecha. Mismo principio.
+
+00:04:11.165 --> 00:04:17.005
+Si lo ejecutamos, vemos que aquí se dibuja la pata izquierda. La pata derecha:
+
+00:04:17.485 --> 00:04:20.925
+mismo ancho en ambas direcciones, misma altura, misma distancia,
+
+00:04:21.326 --> 00:04:24.786
+pata derecha, 100 menos 40 es 60. Y.
+
+00:04:24.855 --> 00:04:26.696
+Y por último, el pico no está bien.
+
+00:04:27.016 --> 00:04:30.295
+Y verás que dijimos que el pico debería ser simétrico.
+
+00:04:30.805 --> 00:04:34.456
+Y en algún punto de las instrucciones te decimos que
+
+00:04:36.216 --> 00:04:39.136
+cambies las coordenadas centrales, que no añadas un triángulo nuevo.
+
+00:04:39.136 --> 00:04:41.415
+Hay gente que se atasca ahí.
+
+00:04:42.536 --> 00:04:47.336
+Sabemos que ahora mismo esto está alrededor del punto X central,
+
+00:04:47.735 --> 00:04:50.935
+y queremos cambiarlo. Así que en vez de ser un triángulo así,
+
+00:04:51.175 --> 00:04:54.855
+pasa a ser un triángulo así. Así que en vez de este punto central de aquí,
+
+00:04:55.206 --> 00:04:57.286
+queremos mover este punto hasta aquí.
+
+00:04:57.766 --> 00:05:01.125
+Otra vez, esto está a 46 desde la izquierda.
+
+00:05:01.365 --> 00:05:07.526
+Queremos 46 desde la derecha, que es 100 menos 46, que es 54.
+
+00:05:08.326 --> 00:05:12.805
+Pulsa «Ejecutar código». Enhorabuena, tenemos un pingüino que funciona.
+
+00:05:13.685 --> 00:05:15.925
+Espero que así es como lo resolviste tú también.
+
+00:05:16.005 --> 00:05:20.886
+Espero. Que no fueras adivinando cosas y que usaras esa pizca de lógica.
+
+00:05:21.346 --> 00:05:25.846
+Puede que en algún momento hayas intentado hacer algo lógico también,
+
+00:05:26.185 --> 00:05:31.386
+escribir 100 menos 54. Perdón, 100 menos 46.
+
+00:05:31.466 --> 00:05:33.266
+Habría sido algo perfectamente razonable
+
+00:05:33.266 --> 00:05:36.505
+de hacer. Salvo que, como todavía no te he enseñado eso,
+
+00:05:36.745 --> 00:05:39.346
+ahora mismo está desactivado en este ejercicio.
+
+00:05:39.346 --> 00:05:40.505
+De hecho,
+
+00:05:41.305 --> 00:05:43.225
+esto también está desactivado en este ejercicio.
+
+00:05:43.865 --> 00:05:47.105
+Pero, de momento, estamos diciendo que Jiki no te deja hacer sumas ni
+
+00:05:47.105 --> 00:05:51.065
+restas ni cosas de ese estilo, pero sí podrás en ejercicios futuros.
+
+00:05:51.065 --> 00:05:55.065
+Pero por ahora quiero animarte a hacer solo las cosas que te he enseñado.
+
+00:05:55.466 --> 00:05:58.985
+Así que tienes que hacer esta, aritmética de cabeza.
+
+00:05:59.225 --> 00:06:04.266
+Y 100 menos 46 es 54. Así que lo hacemos.
+
+00:06:04.925 --> 00:06:09.026
+Espero que haya sido bastante sencillo. Si te costó,
+
+00:06:09.026 --> 00:06:12.586
+espero que este vídeo te haya mostrado cómo pensarlo.
+
+00:06:12.846 --> 00:06:16.906
+Cómo ir más despacio y abordar el problema de forma un poco más lógica.
+
+00:06:17.225 --> 00:06:18.865
+Nos vemos en el próximo Deep Dive.
+
+00:06:18.865 --> 00:06:19.625
+Gracias por ver el vídeo.

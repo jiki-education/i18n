@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 37cae67403778109e44f86b67a556520
+
+00:00:00.456 --> 00:00:02.255
+Bon, bienvenue dans une nouvelle vidéo Deep Dive.
+
+00:00:02.255 --> 00:00:04.695
+Cette fois, on s'attaque au Pingouin.
+
+00:00:04.936 --> 00:00:09.375
+J'espère que tu as regardé l'exercice « La tête du renard », où on a
+
+00:00:09.375 --> 00:00:13.336
+un peu parlé de symétrie, ce qui t'aura aidé pour cet exercice si c'est
+
+00:00:13.336 --> 00:00:17.655
+le cas. J'espère que cet exercice n'était pas trop dur.
+
+00:00:17.995 --> 00:00:22.295
+Les ellipses, c'est un peu bizarre. Il faut un petit temps d'adaptation.
+
+00:00:22.716 --> 00:00:25.495
+Mais une fois qu'on a l'habitude, c'est plutôt simple.
+
+00:00:26.126 --> 00:00:28.765
+Mais l'essentiel dans cet exercice, c'est que je voulais que tu
+
+00:00:29.076 --> 00:00:34.765
+résolves ça juste avec de la logique, pas en mesurant, pas en devinant,
+
+00:00:34.765 --> 00:00:38.125
+juste avec de la logique. Et la logique, c'est tout l'intérêt du code.
+
+00:00:38.765 --> 00:00:41.286
+Et une des consignes que je t'ai données, c'était de
+
+00:00:41.286 --> 00:00:44.125
+commencer l'exercice en cliquant sur « Exécuter le code ».
+
+00:00:44.286 --> 00:00:47.646
+Et ça, c'est un conseil vraiment utile à garder en tête de façon générale.
+
+00:00:47.646 --> 00:00:52.206
+Ça vaut toujours le coup de commencer un exercice en cliquant sur « Exécuter le code » pour voir ce qui se passe.
+
+00:00:52.625 --> 00:00:55.185
+Souvent il y a un état de départ, il y a quelque chose à voir,
+
+00:00:55.506 --> 00:00:57.185
+c'est juste une bonne habitude à prendre.
+
+00:00:58.865 --> 00:01:02.506
+Alors, construisons des choses. On veut construire l'aile droite.
+
+00:01:02.506 --> 00:01:05.426
+Enfin, la première chose, c'est de comprendre ce qui se passe avec l'aile gauche.
+
+00:01:05.665 --> 00:01:10.066
+Et comme je te l'ai montré avant, utiliser le curseur ici aide vraiment : si on revient
+
+00:01:10.066 --> 00:01:16.146
+à l'endroit où on n'a que l'aile gauche, on peut raisonner tranquillement sur
+
+00:01:17.025 --> 00:01:18.786
+cette ellipse toute seule.
+
+00:01:19.975 --> 00:01:25.256
+Et si on s'occupe de l'aile droite, qu'est-ce qu'on veut vraiment changer ?
+
+00:01:26.775 --> 00:01:32.055
+Copions nos ellipses. Eh bien, on veut la même largeur,
+
+00:01:32.775 --> 00:01:35.975
+donc le rayon horizontal doit rester le même, c'est ce bout-là.
+
+00:01:36.296 --> 00:01:39.975
+Et on veut la même hauteur, donc le rayon vertical doit rester le même.
+
+00:01:40.695 --> 00:01:44.376
+Et on veut qu'elle commence à la même position verticalement,
+
+00:01:45.245 --> 00:01:48.046
+donc le centre en Y doit rester le même lui aussi.
+
+00:01:48.766 --> 00:01:53.646
+Donc la seule chose qui doit vraiment changer, c'est ce 28, qui est
+
+00:01:54.135 --> 00:01:56.206
+sa distance depuis la gauche.
+
+00:01:57.325 --> 00:02:03.646
+Et donc il faut réfléchir à comment le déplacer de son point central à gauche
+
+00:02:03.805 --> 00:02:05.885
+vers son point central à droite.
+
+00:02:07.006 --> 00:02:12.205
+Et si cette distance est de 28 depuis zéro, il suffit de se demander : combien fait 100
+
+00:02:13.026 --> 00:02:16.066
+moins 28 ? Parce qu'on veut le décaler de 28.
+
+00:02:16.866 --> 00:02:19.825
+Et j'espère que tu peux faire ça de tête.
+
+00:02:19.906 --> 00:02:21.665
+Mais mettre
+
+00:02:23.156 --> 00:02:24.066
+72
+
+00:02:25.346 --> 00:02:26.786
+me paraît juste.
+
+00:02:27.665 --> 00:02:31.105
+Tu peux toujours sortir une calculatrice et faire ces calculs comme ça aussi.
+
+00:02:31.586 --> 00:02:33.906
+Et voilà, on a des ailes symétriques.
+
+00:02:34.225 --> 00:02:36.145
+Et ensuite on nous dit ici en bas, d'accord.
+
+00:02:36.145 --> 00:02:38.866
+La suite : le côté droit du visage ne semble pas correct.
+
+00:02:39.216 --> 00:02:41.616
+D'accord. Et, eh bien, c'est parce qu'on n'a pas fait le côté droit du visage.
+
+00:02:42.096 --> 00:02:44.015
+Alors faisons le côté droit du visage.
+
+00:02:45.295 --> 00:02:49.056
+Donc, le côté droit du visage, et avançons pas à pas dans l'exécution du code.
+
+00:02:49.135 --> 00:02:51.536
+Avançons pas à pas jusqu'à ce qu'on ait notre
+
+00:02:54.735 --> 00:02:58.575
+côté gauche du visage. Le côté droit exactement comme avant.
+
+00:02:58.895 --> 00:03:04.096
+Même largeur, même hauteur, même position sur l'axe vertical.
+
+00:03:04.175 --> 00:03:05.776
+C'est juste celui-là qui change.
+
+00:03:06.556 --> 00:03:13.436
+Et donc si on repense aux points centraux, de zéro à 41, ça fait juste 100 moins 41,
+
+00:03:13.915 --> 00:03:15.996
+c'est-à-dire 59.
+
+00:03:17.116 --> 00:03:20.795
+Et on a maintenant un joli visage central symétrique.
+
+00:03:22.156 --> 00:03:26.556
+Maintenant on nous dit que l'œil droit semble un peu décalé, donc on peut descendre
+
+00:03:26.955 --> 00:03:31.355
+jusqu'à l'œil droit. Et là il y a deux lignes pour l'œil droit,
+
+00:03:32.325 --> 00:03:34.605
+et exactement pareil. Ce sont des cercles.
+
+00:03:34.605 --> 00:03:37.846
+On veut le même rayon, parce qu'on veut la même taille.
+
+00:03:37.846 --> 00:03:41.006
+Et revenons juste en arrière pour les dessiner.
+
+00:03:41.006 --> 00:03:43.445
+Donc on veut que le rayon soit le même.
+
+00:03:43.445 --> 00:03:45.286
+Un grand cercle et un petit cercle.
+
+00:03:45.445 --> 00:03:49.045
+On veut la même position sur l'axe des Y,
+
+00:03:49.045 --> 00:03:51.686
+mais on veut les inverser sur l'axe des X.
+
+00:03:52.006 --> 00:03:58.885
+Donc 100 moins 42 égale 58 et 100 moins 43 égale 57.
+
+00:03:59.406 --> 00:04:02.445
+On fait ça et on a de jolis yeux inversés.
+
+00:04:03.645 --> 00:04:08.605
+Ensuite il y a le pied droit. Donc là encore, garde un code bien propre.
+
+00:04:08.605 --> 00:04:10.925
+Ajoute le pied droit. Même principe.
+
+00:04:11.165 --> 00:04:17.005
+Si on exécute et qu'on a ce pied gauche dessiné ici, le pied droit,
+
+00:04:17.485 --> 00:04:20.925
+même largeur dans les deux directions, même hauteur, même distance,
+
+00:04:21.326 --> 00:04:24.786
+pied droit : 100 moins 40 égale 60. Et.
+
+00:04:24.855 --> 00:04:26.696
+Et enfin, le bec n'est pas correct.
+
+00:04:27.016 --> 00:04:30.295
+Et tu verras qu'on a dit que le bec devait être symétrique.
+
+00:04:30.805 --> 00:04:34.456
+Et quelque part dans les instructions, on te dit de
+
+00:04:36.216 --> 00:04:39.136
+modifier les coordonnées du milieu, pas d'ajouter un nouveau triangle.
+
+00:04:39.136 --> 00:04:41.415
+Certains coincent là-dessus.
+
+00:04:42.536 --> 00:04:47.336
+Donc on sait que celui-ci est autour du point central en X pour l'instant,
+
+00:04:47.735 --> 00:04:50.935
+et on veut changer ça. Donc, plutôt qu'un triangle comme ça,
+
+00:04:51.175 --> 00:04:54.855
+ça devient un triangle comme ça. Donc plutôt que ce point central ici,
+
+00:04:55.206 --> 00:04:57.286
+on veut déplacer ce point par ici.
+
+00:04:57.766 --> 00:05:01.125
+Donc là encore, c'est juste 46 depuis la gauche.
+
+00:05:01.365 --> 00:05:07.526
+On veut 46 depuis la droite, c'est-à-dire 100 moins 46, donc 54.
+
+00:05:08.326 --> 00:05:12.805
+Clique sur « Exécuter le code ». Félicitations, on a un pingouin qui marche.
+
+00:05:13.685 --> 00:05:15.925
+J'espère que c'est comme ça que tu l'as résolu toi aussi.
+
+00:05:16.005 --> 00:05:20.886
+J'espère. Que tu n'as pas, genre, deviné les valeurs et que tu as juste utilisé ce petit raisonnement logique.
+
+00:05:21.346 --> 00:05:25.846
+Tu as peut-être essayé à un moment de faire un truc logique aussi,
+
+00:05:26.185 --> 00:05:31.386
+d'écrire 100 moins 54. Pardon, 100 moins 46.
+
+00:05:31.466 --> 00:05:33.266
+Ça aurait été quelque chose de tout à fait raisonnable
+
+00:05:33.266 --> 00:05:36.505
+à faire. Sauf que, comme je ne t'ai pas encore appris ça,
+
+00:05:36.745 --> 00:05:39.346
+c'est désactivé pour l'instant dans cet exercice.
+
+00:05:39.346 --> 00:05:40.505
+D'ailleurs,
+
+00:05:41.305 --> 00:05:43.225
+aussi désactivé pour cet exercice.
+
+00:05:43.865 --> 00:05:47.105
+Mais, pour le moment, on dit que Jiki ne te laisse pas faire de plus ou
+
+00:05:47.105 --> 00:05:51.065
+de moins ou ce genre de choses, mais tu y auras droit dans les prochains exercices.
+
+00:05:51.065 --> 00:05:55.065
+Mais pour l'instant, je veux t'encourager à faire seulement ce que je t'ai appris.
+
+00:05:55.466 --> 00:05:58.985
+Donc tu dois faire ce, ce calcul de tête à la place.
+
+00:05:59.225 --> 00:06:04.266
+Et 100 moins 46 égale 54. Et donc on fait ça.
+
+00:06:04.925 --> 00:06:09.026
+J'espère que c'était assez simple ; et si tu as galéré,
+
+00:06:09.026 --> 00:06:12.586
+j'espère que cette vidéo t'a montré comment y réfléchir.
+
+00:06:12.846 --> 00:06:16.906
+Comment ralentir un peu et aborder le problème de façon plus logique.
+
+00:06:17.225 --> 00:06:18.865
+On se retrouve dans le prochain Deep Dive.
+
+00:06:18.865 --> 00:06:19.625
+Merci d'avoir regardé.

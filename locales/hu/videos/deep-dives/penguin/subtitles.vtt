@@ -1,0 +1,358 @@
+WEBVTT
+
+NOTE en_md5 37cae67403778109e44f86b67a556520
+
+00:00:00.456 --> 00:00:02.255
+Oké, üdv egy újabb mélymerülés-videóban.
+
+00:00:02.255 --> 00:00:04.695
+Ebben a Pingvint nézzük meg.
+
+00:00:04.936 --> 00:00:09.375
+Remélhetőleg
+megnézted a Rókafej feladatot, ahol
+
+00:00:09.375 --> 00:00:13.336
+szó volt egy kicsit a szimmetriáról, ami
+sokat segített volna ennél a feladatnál,
+
+00:00:13.336 --> 00:00:17.655
+ha megnézted. Szerintem ez a feladat
+remélhetőleg nem volt túl nehéz.
+
+00:00:17.995 --> 00:00:22.295
+Az ellipszisek kicsit furcsák. Kell
+egy kis idő, míg hozzászoksz.
+
+00:00:22.716 --> 00:00:25.495
+De ha egyszer megszoktad,
+egészen egyszerűek.
+
+00:00:26.126 --> 00:00:28.765
+De ebben a feladatban az volt a
+lényeg, hogy azt szerettem volna,
+
+00:00:29.076 --> 00:00:34.765
+hogy ezt tisztán logikával oldd meg, ne
+méricskéléssel, ne találgatással,
+
+00:00:34.765 --> 00:00:38.125
+csak logikával. És a programozás
+igazából a logikáról szól.
+
+00:00:38.765 --> 00:00:41.286
+És az egyik utasítás,
+amit adtam, az volt, hogy
+
+00:00:41.286 --> 00:00:44.125
+a feladatot a Kód futtatása gomb megnyomásával kezdd.
+
+00:00:44.286 --> 00:00:47.646
+Ez amúgy is nagyon hasznos tipp,
+érdemes megjegyezned.
+
+00:00:47.646 --> 00:00:52.206
+Mindig megéri egy feladatot a Kód futtatása
+gombbal kezdeni, és megnézni, mi történik.
+
+00:00:52.625 --> 00:00:55.185
+Gyakran van egy kiindulási állapot,
+van mit megnézni,
+
+00:00:55.506 --> 00:00:57.185
+egyszerűen jó szokás.
+
+00:00:58.865 --> 00:01:02.506
+Szóval építsünk pár dolgot. A jobb
+szárnyat akarjuk megrajzolni.
+
+00:01:02.506 --> 00:01:05.426
+Hát, először azt kell megérteni,
+mi történik a bal szárnnyal.
+
+00:01:05.665 --> 00:01:10.066
+És ahogy korábban megmutattam, itt
+sokat segít a csúszka, ha
+
+00:01:10.066 --> 00:01:16.146
+visszamegyünk oda, ahol még csak a bal szárny
+van meg, akkor tudunk úgy gondolkodni erről,
+
+00:01:17.025 --> 00:01:18.786
+erről az ellipszisről, önmagában.
+
+00:01:19.975 --> 00:01:25.256
+És ha a jobb szárnyat csináljuk,
+mi az, amit valójában meg akarunk változtatni?
+
+00:01:26.775 --> 00:01:32.055
+Másoljuk be az ellipsziseinket. Nos,
+azt akarjuk, hogy ugyanolyan széles legyen,
+
+00:01:32.775 --> 00:01:35.975
+szóval a vízszintes sugár
+maradjon ugyanaz, ez itt.
+
+00:01:36.296 --> 00:01:39.975
+És azt akarjuk, hogy ugyanolyan magas legyen,
+szóval a függőleges sugár is maradjon ugyanaz.
+
+00:01:40.695 --> 00:01:44.376
+És azt akarjuk, hogy függőlegesen
+ugyanott kezdődjön,
+
+00:01:45.245 --> 00:01:48.046
+szóval a középpont Y koordinátája
+is maradjon ugyanaz.
+
+00:01:48.766 --> 00:01:53.646
+Vagyis az egyetlen dolog, aminek tényleg
+változnia kell, ez a 28, ami azt mondja meg,
+
+00:01:54.135 --> 00:01:56.206
+hogy milyen messze van a bal széltől.
+
+00:01:57.325 --> 00:02:03.646
+És ezért azon kell gondolkodnunk, hogyan
+vigyük át a bal oldali középpontjából
+
+00:02:03.805 --> 00:02:05.885
+a jobb oldali középpontjába.
+
+00:02:07.006 --> 00:02:12.205
+És ha ez a távolság 28 a nullától, akkor
+csak annyit kell mondanunk, hogy mennyi 100
+
+00:02:13.026 --> 00:02:16.066
+mínusz 28? Szóval 28-cal beljebb akarjuk vinni.
+
+00:02:16.866 --> 00:02:19.825
+És ezt remélhetőleg fejben is meg tudod csinálni.
+
+00:02:19.906 --> 00:02:21.665
+De ha azt írjuk, hogy
+
+00:02:23.156 --> 00:02:24.066
+72,
+
+00:02:25.346 --> 00:02:26.786
+az nekem stimmelni látszik.
+
+00:02:27.665 --> 00:02:31.105
+Persze mindig elő is vehetsz
+egy számológépet ezekhez.
+
+00:02:31.586 --> 00:02:33.906
+És így már szimmetrikus szárnyaink vannak.
+
+00:02:34.225 --> 00:02:36.145
+Aztán azt mondja itt lent, hogy oké.
+
+00:02:36.145 --> 00:02:38.866
+A következő: az arc jobb
+oldala nem jól néz ki.
+
+00:02:39.216 --> 00:02:41.616
+Oké. Hát, ez azért van, mert nem
+csináltuk meg az arc jobb oldalát.
+
+00:02:42.096 --> 00:02:44.015
+Csináljuk hát meg az arc jobb oldalát.
+
+00:02:45.295 --> 00:02:49.056
+Szóval az arc jobb oldala, és
+lépjünk előre, futtassuk a kódot.
+
+00:02:49.135 --> 00:02:51.536
+Lépkedjünk előre, amíg meg nem lesz az,
+
+00:02:54.735 --> 00:02:58.575
+arc bal oldala. Az arc jobb oldala
+pontosan ugyanaz, mint az előbb.
+
+00:02:58.895 --> 00:03:04.096
+Ugyanaz a szélesség, ugyanaz a magasság,
+ugyanaz a pozíció a függőleges tengelyen.
+
+00:03:04.175 --> 00:03:05.776
+Csak ez az egy változik.
+
+00:03:06.556 --> 00:03:13.436
+És ha megint a középpontokban gondolkodunk,
+a nullától 41-ig az egyszerűen 100 mínusz 41,
+
+00:03:13.915 --> 00:03:15.996
+ami 59.
+
+00:03:17.116 --> 00:03:20.795
+Így most már szép szimmetrikus
+arcunk van középen.
+
+00:03:22.156 --> 00:03:26.556
+Most azt mondja, hogy a jobb szem nem
+tűnik jónak, szóval lejjebb mehetünk
+
+00:03:26.955 --> 00:03:31.355
+a jobb szemhez. És itt két
+sor van a jobb szemhez,
+
+00:03:32.325 --> 00:03:34.605
+és pontosan ugyanaz a helyzet. Ezek körök.
+
+00:03:34.605 --> 00:03:37.846
+Azt akarjuk, hogy a sugár ugyanaz
+legyen, mert ugyanakkora méretet akarunk.
+
+00:03:37.846 --> 00:03:41.006
+És menjünk csak vissza, rajzoljuk ki ezeket.
+
+00:03:41.006 --> 00:03:43.445
+Szóval azt akarjuk, hogy a sugár ugyanaz legyen.
+
+00:03:43.445 --> 00:03:45.286
+Egy nagy kör és egy kicsi kör.
+
+00:03:45.445 --> 00:03:49.045
+Azt akarjuk, hogy a pozíció
+ugyanaz legyen az Y tengelyen,
+
+00:03:49.045 --> 00:03:51.686
+de az X tengelyen meg akarjuk fordítani őket.
+
+00:03:52.006 --> 00:03:58.885
+Tehát 100 mínusz 42 az 58,
+és 100 mínusz 43 az 57.
+
+00:03:59.406 --> 00:04:02.445
+Ezt megcsináljuk, és máris megvannak
+a szépen tükrözött szemek.
+
+00:04:03.645 --> 00:04:08.605
+Aztán jön a jobb láb. Szóval megint:
+tartsd szépen rendben a kódodat.
+
+00:04:08.605 --> 00:04:10.925
+Add hozzá a jobb lábat. Ugyanaz az elv.
+
+00:04:11.165 --> 00:04:17.005
+Ha lefuttatjuk, látjuk, hogy itt rajzolódik
+ki a bal láb, a jobb láb
+
+00:04:17.485 --> 00:04:20.925
+ugyanolyan széles mindkét irányban,
+ugyanolyan magas, ugyanolyan távol van,
+
+00:04:21.326 --> 00:04:24.786
+a jobb láb 100 mínusz 40, az 60. És.
+
+00:04:24.855 --> 00:04:26.696
+És végül az orr nem jó.
+
+00:04:27.016 --> 00:04:30.295
+És látod, hogy azt mondtuk, az
+orrnak szimmetrikusnak kell lennie.
+
+00:04:30.805 --> 00:04:34.456
+És az utasításokban valahol
+azt mondjuk, hogy
+
+00:04:36.216 --> 00:04:39.136
+a középső koordinátákat változtasd meg,
+ne vegyél fel új háromszöget.
+
+00:04:39.136 --> 00:04:41.415
+Néhányan itt elakadnak.
+
+00:04:42.536 --> 00:04:47.336
+Szóval tudjuk, hogy ez most a
+középső X pont körül van,
+
+00:04:47.735 --> 00:04:50.935
+és ezt akarjuk megváltoztatni. Vagyis ahelyett,
+hogy egy ilyen háromszög lenne,
+
+00:04:51.175 --> 00:04:54.855
+egy ilyen háromszög lesz. Szóval ahelyett,
+hogy itt lenne ez a középső pont,
+
+00:04:55.206 --> 00:04:57.286
+ezt a pontot ide akarjuk átvinni.
+
+00:04:57.766 --> 00:05:01.125
+Ez tehát megint csak 46 a bal széltől.
+
+00:05:01.365 --> 00:05:07.526
+Nekünk 46 kell a jobb széltől,
+ami 100 mínusz 46, vagyis 54.
+
+00:05:08.326 --> 00:05:12.805
+Nyomd meg a Kód futtatása gombot.
+Gratulálok, kész a működő pingvinünk.
+
+00:05:13.685 --> 00:05:15.925
+Remélhetőleg te is így oldottad meg.
+
+00:05:16.005 --> 00:05:20.886
+Remélhetőleg nem találgattál, hanem
+tényleg azt a kis logikát használtad.
+
+00:05:21.346 --> 00:05:25.846
+Lehet, hogy egy ponton megpróbáltál
+egy másik logikus dolgot is,
+
+00:05:26.185 --> 00:05:31.386
+azt, hogy leírod: 100 mínusz 54.
+Bocsánat, 100 mínusz 46.
+
+00:05:31.466 --> 00:05:33.266
+Ez teljesen ésszerű dolog lett volna
+
+00:05:33.266 --> 00:05:36.505
+megcsinálni. Csakhogy ezt még
+nem tanítottam meg neked.
+
+00:05:36.745 --> 00:05:39.346
+Ez most le van tiltva ebben a feladatban.
+
+00:05:39.346 --> 00:05:40.505
+Sőt,
+
+00:05:41.305 --> 00:05:43.225
+ez is le van tiltva ebben a feladatban.
+
+00:05:43.865 --> 00:05:47.105
+De egyelőre azt mondjuk, hogy Jiki
+nem engedi, hogy pluszt vagy
+
+00:05:47.105 --> 00:05:51.065
+mínuszt vagy ilyesmit használj, de a
+későbbi feladatokban majd szabad lesz.
+
+00:05:51.065 --> 00:05:55.065
+Most viszont arra biztatlak, hogy csak
+azt csináld, amit megtanítottam neked.
+
+00:05:55.466 --> 00:05:58.985
+Szóval ehelyett fejben kell
+elvégezned ezt a számolást.
+
+00:05:59.225 --> 00:06:04.266
+És 100 mínusz 46 az 54. Meg is csináljuk.
+
+00:06:04.925 --> 00:06:09.026
+Remélhetőleg ez elég egyszerű volt,
+és ha mégis megszenvedtél vele,
+
+00:06:09.026 --> 00:06:12.586
+remélhetőleg ez a videó megmutatta,
+hogyan gondolkodj róla.
+
+00:06:12.846 --> 00:06:16.906
+Hogyan lassíts le, és állj hozzá a
+problémához egy kicsit logikusabban.
+
+00:06:17.225 --> 00:06:18.865
+Találkozunk a következő mélymerülésben.
+
+00:06:18.865 --> 00:06:19.625
+Köszönöm, hogy megnézted.

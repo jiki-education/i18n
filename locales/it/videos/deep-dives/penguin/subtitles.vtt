@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 37cae67403778109e44f86b67a556520
+
+00:00:00.456 --> 00:00:02.255
+Okay, benvenuto ad un altro video di approfondimento.
+
+00:00:02.255 --> 00:00:04.695
+Questa volta guardiamo il Pinguino.
+
+00:00:04.936 --> 00:00:09.375
+Spero che tu abbia visto l'esercizio Volpe geometrica, dove abbiamo
+
+00:00:09.375 --> 00:00:13.336
+parlato un po' di simmetria, cosa che ti sarà stata utile per questo esercizio se
+
+00:00:13.336 --> 00:00:17.655
+l'hai visto. Penso che questo esercizio, spero, non sia stato troppo difficile.
+
+00:00:17.995 --> 00:00:22.295
+Le ellissi sono un po' strane. Ci vuole un po' per abituarsi.
+
+00:00:22.716 --> 00:00:25.495
+Ma una volta che ci sei abituato, sono piuttosto semplici.
+
+00:00:26.126 --> 00:00:28.765
+Ma la cosa fondamentale in questo esercizio era che volevo che tu,
+
+00:00:29.076 --> 00:00:34.765
+lo risolvessi solo usando la logica, non misurando le cose, non tirando a indovinare,
+
+00:00:34.765 --> 00:00:38.125
+solo usando la logica. E la logica è il cuore della programmazione.
+
+00:00:38.765 --> 00:00:41.286
+E una specie di istruzione che ti ho dato era di
+
+00:00:41.286 --> 00:00:44.125
+iniziare l'esercizio premendo "Esegui il codice".
+
+00:00:44.286 --> 00:00:47.646
+E poi quello è proprio un consiglio utilissimo da avere in generale.
+
+00:00:47.646 --> 00:00:52.206
+Vale sempre la pena iniziare un esercizio premendo "Esegui il codice" e vedere cosa succede.
+
+00:00:52.625 --> 00:00:55.185
+Spesso c'è uno stato iniziale, c'è qualcosa da vedere,
+
+00:00:55.506 --> 00:00:57.185
+è solo una buona abitudine da prendere.
+
+00:00:58.865 --> 00:01:02.506
+Allora, costruiamo qualcosa. Vogliamo costruire un'ala destra.
+
+00:01:02.506 --> 00:01:05.426
+Beh, la prima cosa è capire cosa succede con l'ala sinistra.
+
+00:01:05.665 --> 00:01:10.066
+E come ti ho mostrato prima, usare lo scrubber per questo aiuta parecchio: se torniamo
+
+00:01:10.066 --> 00:01:16.146
+indietro a dove abbiamo solo un'ala sinistra qui, possiamo ragionare su questo,
+
+00:01:17.025 --> 00:01:18.786
+su questa ellisse da sola.
+
+00:01:19.975 --> 00:01:25.256
+E se stiamo facendo l'ala destra, cosa vogliamo cambiare davvero?
+
+00:01:26.775 --> 00:01:32.055
+Copiamo le nostre ellissi. Beh, vogliamo che sia della stessa larghezza,
+
+00:01:32.775 --> 00:01:35.975
+quindi il raggio orizzontale dovrebbe restare uguale, cioè questo pezzo qui.
+
+00:01:36.296 --> 00:01:39.975
+E vogliamo che sia della stessa altezza, quindi il raggio verticale dovrebbe restare uguale.
+
+00:01:40.695 --> 00:01:44.376
+E vogliamo che parta dalla stessa posizione in verticale,
+
+00:01:45.245 --> 00:01:48.046
+quindi anche il centerY dovrebbe restare uguale.
+
+00:01:48.766 --> 00:01:53.646
+Quindi l'unica cosa che deve davvero cambiare è questo 28, che è,
+
+00:01:54.135 --> 00:01:56.206
+la sua distanza da sinistra.
+
+00:01:57.325 --> 00:02:03.646
+E quindi dobbiamo pensare a come spostarlo dal suo punto centrale a sinistra
+
+00:02:03.805 --> 00:02:05.885
+al suo punto centrale a destra.
+
+00:02:07.006 --> 00:02:12.205
+E se questa distanza è 28 da zero, tutto quello che dobbiamo dire è, beh, quanto fa 100
+
+00:02:13.026 --> 00:02:16.066
+meno 28? Quindi vogliamo spostarlo di 28.
+
+00:02:16.866 --> 00:02:19.825
+E spero che tu riesca a farlo a mente.
+
+00:02:19.906 --> 00:02:21.665
+Ma metterlo come,
+
+00:02:23.156 --> 00:02:24.066
+72
+
+00:02:25.346 --> 00:02:26.786
+mi sembra più o meno giusto.
+
+00:02:27.665 --> 00:02:31.105
+Puoi sempre tirare fuori una calcolatrice e fare anche così queste cose.
+
+00:02:31.586 --> 00:02:33.906
+E così abbiamo delle ali simmetriche.
+
+00:02:34.225 --> 00:02:36.145
+E poi quaggiù ci viene detto, okay.
+
+00:02:36.145 --> 00:02:38.866
+La prossima cosa: il lato destro del viso non sembra corretto.
+
+00:02:39.216 --> 00:02:41.616
+Okay. E, beh, è perché non abbiamo fatto un lato destro del viso.
+
+00:02:42.096 --> 00:02:44.015
+Allora facciamo un lato destro del viso.
+
+00:02:45.295 --> 00:02:49.056
+Quindi, lato destro del viso e avanziamo passo passo per eseguire il codice.
+
+00:02:49.135 --> 00:02:51.536
+Avanziamo passo passo finché non abbiamo il nostro,
+
+00:02:54.735 --> 00:02:58.575
+lato sinistro del viso. Lato destro del viso esattamente come prima.
+
+00:02:58.895 --> 00:03:04.096
+Stessa larghezza, stessa altezza, stessa posizione sull'asse verticale.
+
+00:03:04.175 --> 00:03:05.776
+È solo questo che cambia.
+
+00:03:06.556 --> 00:03:13.436
+E quindi se pensiamo di nuovo ai punti centrali, da zero a 41 è semplicemente 100 meno 41,
+
+00:03:13.915 --> 00:03:15.996
+che fa 59.
+
+00:03:17.116 --> 00:03:20.795
+Quindi adesso abbiamo un bel viso centrale simmetrico.
+
+00:03:22.156 --> 00:03:26.556
+Adesso ci viene detto che l'occhio destro sembra sbagliato, quindi possiamo scendere
+
+00:03:26.955 --> 00:03:31.355
+all'occhio destro. E qui ci sono due righe per l'occhio destro
+
+00:03:32.325 --> 00:03:34.605
+ed è esattamente la stessa cosa. Questi sono cerchi.
+
+00:03:34.605 --> 00:03:37.846
+Vogliamo che il raggio sia lo stesso perché vogliamo che siano della stessa dimensione.
+
+00:03:37.846 --> 00:03:41.006
+E torniamo indietro un attimo a disegnarli.
+
+00:03:41.006 --> 00:03:43.445
+Quindi vogliamo che il raggio sia lo stesso.
+
+00:03:43.445 --> 00:03:45.286
+Un cerchio grande e un cerchio piccolo.
+
+00:03:45.445 --> 00:03:49.045
+Vogliamo che la posizione sia la stessa sull'asse Y,
+
+00:03:49.045 --> 00:03:51.686
+ma vogliamo invertirli sull'asse X.
+
+00:03:52.006 --> 00:03:58.885
+Quindi 100 meno 42 fa 58 e 100 meno 43 fa 57.
+
+00:03:59.406 --> 00:04:02.445
+Lo facciamo e abbiamo dei begli occhi invertiti.
+
+00:04:03.645 --> 00:04:08.605
+Poi abbiamo il piede destro. Quindi di nuovo, tieni il codice bello ordinato.
+
+00:04:08.605 --> 00:04:10.925
+Aggiungi il piede destro. Stesso principio.
+
+00:04:11.165 --> 00:04:17.005
+Se lo eseguiamo e abbiamo questo piede sinistro disegnato qui, il piede destro,
+
+00:04:17.485 --> 00:04:20.925
+stessa larghezza, in entrambe le direzioni, stessa altezza, stessa distanza,
+
+00:04:21.326 --> 00:04:24.786
+piede destro: 100 meno 40 fa 60. E.
+
+00:04:24.855 --> 00:04:26.696
+E poi, infine, il naso non è corretto.
+
+00:04:27.016 --> 00:04:30.295
+E vedrai che abbiamo detto che il naso dovrebbe essere simmetrico.
+
+00:04:30.805 --> 00:04:34.456
+E da qualche parte nelle istruzioni ti diciamo di,
+
+00:04:36.216 --> 00:04:39.136
+modificare le coordinate centrali, non aggiungere un nuovo triangolo.
+
+00:04:39.136 --> 00:04:41.415
+Alcune persone si bloccano lì.
+
+00:04:42.536 --> 00:04:47.336
+Quindi sappiamo che al momento questo sta intorno al punto centrale X,
+
+00:04:47.735 --> 00:04:50.935
+e vogliamo cambiarlo. Quindi invece di essere un triangolo così,
+
+00:04:51.175 --> 00:04:54.855
+diventa un triangolo così. Quindi invece di questo punto centrale qui,
+
+00:04:55.206 --> 00:04:57.286
+vogliamo spostare questo punto di là, qui.
+
+00:04:57.766 --> 00:05:01.125
+Quindi anche questo è semplicemente 46 da sinistra.
+
+00:05:01.365 --> 00:05:07.526
+Ne vogliamo 46 da destra, cioè 100 meno 46, che fa 54.
+
+00:05:08.326 --> 00:05:12.805
+Premi "Esegui il codice". Congratulazioni, abbiamo un pinguino che funziona.
+
+00:05:13.685 --> 00:05:15.925
+Quindi spero che tu l'abbia risolto così anche tu.
+
+00:05:16.005 --> 00:05:20.886
+Spero. Non hai, diciamo, tirato a indovinare e hai usato quel pizzico di logica.
+
+00:05:21.346 --> 00:05:25.846
+A un certo punto potresti aver provato a fare anche un'altra cosa logica,
+
+00:05:26.185 --> 00:05:31.386
+cioè scrivere 100 meno 54. Scusa, 100 meno 46.
+
+00:05:31.466 --> 00:05:33.266
+Sarebbe stata una cosa perfettamente ragionevole
+
+00:05:33.266 --> 00:05:36.505
+da fare. Solo che, dato che non te l'ho ancora insegnato.
+
+00:05:36.745 --> 00:05:39.346
+Al momento è disattivato per questo esercizio.
+
+00:05:39.346 --> 00:05:40.505
+Anzi,
+
+00:05:41.305 --> 00:05:43.225
+anche questo è disattivato per questo esercizio.
+
+00:05:43.865 --> 00:05:47.105
+Ma, in questo momento, stiamo dicendo che Jiki non ti permette di fare più o
+
+00:05:47.105 --> 00:05:51.065
+meno o cose del genere, ma potrai farlo negli esercizi futuri.
+
+00:05:51.065 --> 00:05:55.065
+Ma per ora, voglio incoraggiarti a fare solo le cose che ti ho insegnato.
+
+00:05:55.466 --> 00:05:58.985
+Quindi devi fare questa, aritmetica a mente, invece.
+
+00:05:59.225 --> 00:06:04.266
+E 100 meno 46 fa 54. E quindi facciamo così.
+
+00:06:04.925 --> 00:06:09.026
+Spero che sia stato abbastanza semplice. Se invece hai fatto fatica,
+
+00:06:09.026 --> 00:06:12.586
+spero che questo video ti abbia mostrato come ragionarci.
+
+00:06:12.846 --> 00:06:16.906
+Come rallentare un attimo e affrontare il problema in modo un po' più logico.
+
+00:06:17.225 --> 00:06:18.865
+Ci vediamo nel prossimo approfondimento.
+
+00:06:18.865 --> 00:06:19.625
+Grazie per aver guardato.
