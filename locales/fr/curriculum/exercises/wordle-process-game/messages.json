@@ -1,38 +1,38 @@
 {
   "checks": {
     "holeInOne": {
-      "firstRow": "On attendait que toutes les lettres soient vertes"
+      "firstRow": "On s'attendait à ce que toutes les lettres soient vertes"
     },
     "twoGuesses": {
-      "firstRow": "On attendait que la deuxième lettre soit à l'état « absent »",
-      "secondRow": "On attendait que toutes les lettres soient vertes"
+      "firstRow": "On s'attendait à ce que la deuxième lettre soit absente",
+      "secondRow": "On s'attendait à ce que toutes les lettres soient vertes"
     },
     "threeGuesses": {
-      "firstRow": "On attendait que la deuxième et la quatrième lettre soient à l'état « absent »",
-      "secondRow": "On attendait que la deuxième lettre soit à l'état « absent »",
-      "thirdRow": "On attendait que toutes les lettres soient vertes"
+      "firstRow": "On s'attendait à ce que la deuxième et la quatrième lettre soient absentes",
+      "secondRow": "On s'attendait à ce que la deuxième lettre soit absente",
+      "thirdRow": "On s'attendait à ce que toutes les lettres soient vertes"
     },
     "phew": {
-      "firstRow": "On attendait que tout soit à l'état « absent ».",
-      "secondRow": "On attendait que tout soit à l'état « absent ».",
-      "thirdRow": "On attendait que les deux dernières lettres soient à l'état « present » et les autres à l'état « absent ».",
-      "fourthRow": "On attendait que la première lettre soit à l'état « present » et les autres à l'état « absent ».",
-      "fifthRow": "On attendait que la deuxième lettre soit à l'état « present » et les autres à l'état « absent »",
-      "sixthRow": "On attendait que toutes les lettres soient vertes"
+      "firstRow": "On s'attendait à ce que tout soit absent.",
+      "secondRow": "On s'attendait à ce que tout soit absent.",
+      "thirdRow": "On s'attendait à ce que les deux dernières lettres soient présentes et les autres absentes.",
+      "fourthRow": "On s'attendait à ce que la première lettre soit présente et les autres absentes.",
+      "fifthRow": "On s'attendait à ce que la deuxième lettre soit présente et les autres absentes",
+      "sixthRow": "On s'attendait à ce que toutes les lettres soient vertes"
     },
     "bonus1": {
-      "firstRow": "Nous nous attendions à ce que seule la quatrième lettre de la première rangée soit présente.",
-      "secondRow": "La deuxième rangée n'est pas correcte. C'est la rangée délicate : une seule des lettres répétées doit être coloriée.",
+      "firstRow": "On s'attendait à ce que seule la quatrième lettre de la première rangée soit présente.",
+      "secondRow": "La deuxième rangée n'est pas correcte. C'est là que ça se corse : une seule des lettres répétées doit être coloriée.",
       "thirdRow": "La troisième rangée n'est pas correcte.",
-      "fourthRow": "Nous nous attendions à ce que toutes les lettres de la quatrième rangée soient vertes."
+      "fourthRow": "On s'attendait à ce que toutes les lettres de la quatrième rangée soient vertes."
     },
     "bonus2": {
       "firstRow": "La première rangée n'est pas correcte.",
       "secondRow": "La deuxième rangée n'est pas correcte.",
       "thirdRow": "La troisième rangée n'est pas correcte.",
-      "fourthRow": "La quatrième rangée n'est pas correcte. C'est la rangée délicate : `swiss` contient plus de `s` que le mot secret.",
+      "fourthRow": "La quatrième rangée n'est pas correcte. C'est là que ça se corse : `swiss` contient plus de `s` que le mot secret.",
       "fifthRow": "La cinquième rangée n'est pas correcte.",
-      "sixthRow": "Nous nous attendions à ce que toutes les lettres de la sixième rangée soient vertes."
+      "sixthRow": "On s'attendait à ce que toutes les lettres de la sixième rangée soient vertes."
     }
   },
   "tasks": {
@@ -42,7 +42,7 @@
     },
     "duplicateLetters": {
       "name": "Bonus : gère les lettres en double",
-      "description": "Il y a une règle du Wordle qu'on a passée sous silence jusqu'ici. Si une lettre apparaît deux fois dans ta proposition mais une seule fois dans le mot secret, alors si l'une des deux est à la bonne place, celle-ci devient verte et l'autre devient grise. Sinon, la première devient jaune et la seconde devient grise. La même idée s'applique à plus grande échelle : trois dans la proposition et deux dans le mot signifie que deux sont coloriées et que la troisième devient grise. Commence par le premier scénario bonus, puis résous-le complètement pour le second. C'est un bonus, tu n'es donc pas obligé de le terminer !"
+      "description": "Il y a une règle du Wordle qu'on a passée sous silence jusqu'ici. Si une lettre apparaît deux fois dans ta proposition mais une seule fois dans le mot secret, alors si l'une des deux est à la bonne place, celle-ci devient verte et l'autre devient grise. Sinon, la première devient jaune et la seconde devient grise. La même idée s'applique à plus grande échelle : trois lettres identiques dans la proposition et deux dans le mot signifie que deux sont coloriées et que la troisième devient grise. Commence par le premier scénario bonus, puis résous-le complètement pour le second. C'est un bonus, tu n'es donc pas obligé de le terminer !"
     }
   },
   "scenarios": {
@@ -86,7 +86,7 @@
     },
     "fewerGuesses": {
       "question": "Et si le joueur a fait moins de 6 propositions ?",
-      "answer": "Ne colorie que les rangées des propositions qui existent. La longueur du tableau t'indique combien il faut en traiter, donc tu t'arrêtes naturellement au bon endroit."
+      "answer": "Ne colorie que les rangées des propositions qui existent. La longueur du tableau t'indique combien il faut en traiter, donc tu t'arrêtes naturellement là où il faut."
     }
   },
   "functions": {

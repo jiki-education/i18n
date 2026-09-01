@@ -6,7 +6,7 @@ en_md5: 087a112241856ada8b0cfb4bc7da4798
 
 Nous revoilà avec le jeu Wordle, et il est maintenant temps de traiter la partie entière, pas seulement une seule proposition !
 
-Une fois cet exercice terminé, tu débloqueras un **défi Premium** dans lequel tu crées un bot qui joue vraiment toute la partie du début à la fin, en choisissant lui-même chaque proposition. C'est de loin le défi le plus avancé jusqu'ici !
+Une fois cet exercice terminé, tu débloqueras un **défi Premium** dans lequel tu créeras un bot qui jouera vraiment toute la partie du début à la fin, en choisissant lui-même chaque proposition. C'est de loin le défi le plus avancé jusqu'ici !
 
 ### Cet exercice
 
@@ -33,7 +33,7 @@ Si une lettre apparaît deux fois dans ta proposition mais une seule fois dans l
 - Si l'une des deux est à la bonne place, celle-ci devient verte et l'autre devient grise.
 - Si les deux sont mal placées, la première devient jaune et la seconde devient grise.
 
-La même idée s'applique à plus grande échelle : trois dans la proposition et deux dans le mot, cela signifie que deux sont coloriées et que la troisième devient grise.
+La même idée s'applique à plus grande échelle : trois lettres identiques dans la proposition et deux dans le mot, cela signifie que deux sont coloriées et que la troisième devient grise.
 
 Lance le deuxième scénario bonus et regarde la rangée `"SWISS"`. Le mot secret est `"swims"`, qui contient deux `"s"`, et les deux sont déjà verts : celui du début et celui de la fin. Mais ton code colorie aussi la quatrième case en jaune, ce qui indique au joueur qu'il reste _un autre_ `"s"` à trouver. Or il n'y en a pas. Cette quatrième case devrait être grise.
 
