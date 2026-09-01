@@ -1,7 +1,7 @@
 ---
 title: "Kalandok a költészetben"
 description: "Sétálj végig egy úton, gyűjtsd össze egy vers szavait, és hagyj figyelmen kívül mindent, ami nem szó."
-en_md5: 9163e96662902baf726f464c9b58785f
+en_md5: 90609a1f81b1b70871df0d2ed130e9e2
 ---
 
 Egy „Kalandok a költészetben” nevű robotos költészeti játékot készítesz. Első lépésként úgy kell beprogramoznod a robotot, hogy miközben sétál, szavakat gyűjtsön, a végén pedig elszavalja a verset.
@@ -11,9 +11,9 @@ Minden mező a következő négy dolog egyikét tartalmazza:
 1. Semmi (`""`)
 2. Egy **szó** a versből.
 3. Díszlet, például egy levél vagy egy pillangó (egy emoji).
-4. Egy kockás zászló, ami megállásra utasítja a robotot.
+4. Egy kockás zászló (`🏁`), ami megállásra utasítja a robotot.
 
-Segítségül néhány függvény áll rendelkezésedre. Először is itt van a `move()` függvény, amely arra utasítja a költői robotot, hogy lépjen előre a következő mezőre, és visszaadja, ami rajta volt. Van egy `isEmoji(thing)` függvény is, amely egy logikai értéket ad vissza arról, hogy a neki átadott string emoji-e. És végül itt van a `recite(poem)` függvény, amelyet a kész verssel kell meghívnod.
+Segítségül néhány függvény áll rendelkezésedre. Először is itt van a `move()` függvény, amely arra utasítja a költői robotot, hogy lépjen előre a következő mezőre, és visszaadja, ami rajta volt. Van egy `isEmoji(thing)` függvény is, amely egy Boolean-t ad vissza arról, hogy a neki átadott string emoji-e. És végül itt van a `recite(poem)` függvény, amelyet a kész verssel kell meghívnod.
 
 A te feladatod, hogy végigmenj az úton, összeállítsd a verset, majd elszavald.
 

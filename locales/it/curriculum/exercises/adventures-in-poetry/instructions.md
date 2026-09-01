@@ -1,7 +1,7 @@
 ---
 title: "Avventure nella poesia"
 description: "Percorri un sentiero raccogliendo le parole di una poesia, ignorando tutto ciò che non è una parola."
-en_md5: 9163e96662902baf726f464c9b58785f
+en_md5: 90609a1f81b1b70871df0d2ed130e9e2
 ---
 
 Stai creando un gioco di poesia con un robot chiamato «Avventure nella poesia». Come primo passo, devi programmare il robot in modo che, mentre cammina, raccolga le parole e poi reciti la poesia alla fine.
@@ -11,7 +11,7 @@ Ogni casella contiene una di queste quattro cose:
 1. Niente (`""`)
 2. Una **parola** della poesia.
 3. Un elemento decorativo come una foglia o una farfalla (un'emoji).
-4. Una bandiera a scacchi, che dice al robot di fermarsi.
+4. Una bandiera a scacchi (`🏁`), che dice al robot di fermarsi.
 
 Per aiutarti, hai a disposizione alcune funzioni. Per prima cosa, hai la funzione `move()`, che dice al robot poeta di avanzare sulla casella successiva e restituisce tutto ciò che c'era su di essa. Hai poi una funzione `isEmoji(thing)`, che restituisce un valore booleano che ti dice se la stringa che passi è un'emoji. Infine hai una funzione `recite(poem)`, che devi usare con la poesia finale.
 
