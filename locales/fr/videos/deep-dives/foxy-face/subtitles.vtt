@@ -1,0 +1,687 @@
+WEBVTT
+
+NOTE en_md5 a16ed41cc1e87ec52048dc1953b6c08e
+
+00:00:00.578 --> 00:00:04.777
+Bon, dans ces Deep Dives, je vais simplement résoudre l'exercice comme
+
+00:00:04.777 --> 00:00:06.817
+je le ferais si je le découvrais pour la première fois.
+
+00:00:07.137 --> 00:00:10.657
+J'ai volontairement évité de regarder chaque exercice pendant un bon moment.
+
+00:00:11.098 --> 00:00:13.657
+Et puis j'y reviens et je le résous sur le moment,
+
+00:00:13.657 --> 00:00:15.458
+donc je n'ai pas de solution mémorisée.
+
+00:00:15.938 --> 00:00:19.057
+J'aborde ça comme tu l'as abordé toi aussi, j'espère.
+
+00:00:19.538 --> 00:00:22.897
+Mais l'intérêt, ce n'est pas de voir le code que j'écris, en tout cas
+
+00:00:23.057 --> 00:00:25.057
+sûrement pas pour ces premiers exercices.
+
+00:00:25.138 --> 00:00:28.487
+Je vais sans doute écrire exactement le même code que toi.
+
+00:00:29.207 --> 00:00:33.167
+Le but principal, au début en tout cas, c'est que tu réfléchisses à ta façon d'aborder les
+
+00:00:33.167 --> 00:00:37.207
+problèmes, et que moi je t'explique comment j'aborde ces problèmes.
+
+00:00:37.698 --> 00:00:42.207
+Plus on avancera dans le cours, plus il y aura de façons différentes d'aborder
+
+00:00:42.207 --> 00:00:45.847
+un problème. Certaines avec des avantages, d'autres des inconvénients.
+
+00:00:46.328 --> 00:00:50.567
+Et on va passer beaucoup de temps à explorer ces différentes façons de penser.
+
+00:00:51.557 --> 00:00:55.247
+Et cette logique, cette résolution de problèmes, tu peux l'emmener
+
+00:00:55.567 --> 00:00:57.728
+dans tous les domaines du code.
+
+00:00:57.968 --> 00:01:00.688
+Quand on parle de construire des choses, des plateformes,
+
+00:01:00.688 --> 00:01:04.768
+avec tous ces éléments qu'on assemble, peut-être même sans écrire de code,
+
+00:01:04.927 --> 00:01:07.727
+peut-être qu'on demande à des LLM d'écrire une partie du code pour nous,
+
+00:01:08.207 --> 00:01:12.847
+notre façon de penser reste la seule constante qui garantit de bons résultats.
+
+00:01:13.808 --> 00:01:16.528
+Donc si tu ne retiens qu'une chose de tout ce cours,
+
+00:01:16.847 --> 00:01:20.447
+j'espère que ce sera notre façon de penser.
+
+00:01:21.558 --> 00:01:22.998
+Bref, un exercice simple,
+
+00:01:24.117 --> 00:01:26.757
+il ne t'a peut-être pas semblé simple, mais, mais il l'est plutôt.
+
+00:01:26.918 --> 00:01:29.477
+Et, on essaie juste de dessiner une tête de renard,
+
+00:01:29.918 --> 00:01:33.317
+et on a une série de triangles à dessiner.
+
+00:01:34.278 --> 00:01:37.197
+Alors, je regarde les instructions.
+
+00:01:37.197 --> 00:01:39.197
+Elles m'expliquent comment dessiner un triangle.
+
+00:01:39.197 --> 00:01:44.677
+Ça, c'est quelque chose que je connais bien. Et, elles me donnent les différentes couleurs.
+
+00:01:44.677 --> 00:01:48.798
+Donc on a white, brown, orange et charcoal (blanc, marron, orange, anthracite) à disposition.
+
+00:01:48.798 --> 00:01:52.668
+Et on a deux joues blanches, deux oreilles marron, deux moitiés de tête orange,
+
+00:01:53.138 --> 00:01:56.177
+et puis un museau, mais fait de deux triangles.
+
+00:01:58.578 --> 00:02:03.298
+Et puis j'ai noté ici que, tu peux utiliser, tu peux survoler,
+
+00:02:03.378 --> 00:02:07.938
+que tu devrais t'en servir. Et aussi, tous les nombres sont divisibles par 5.
+
+00:02:08.018 --> 00:02:10.737
+Et la seule chose qu'on utilise ici, c'est ce triangle.
+
+00:02:11.858 --> 00:02:14.497
+Alors si je devais dessiner ça, comment je m'y prendrais ?
+
+00:02:14.657 --> 00:02:17.777
+Eh bien, je commencerais par me dire, bon, il me faut un, triangle.
+
+00:02:18.018 --> 00:02:20.777
+Donc je vais, écrire triangle, triangle pour la fonction triangle.
+
+00:02:21.018 --> 00:02:25.337
+Et il me faut les trois points. Donc le premier point, ici en haut, je vois 10, 6.
+
+00:02:25.418 --> 00:02:29.617
+Donc je sais que c'est 10, 5. Un truc que j'aime bien faire, c'est de mettre,
+
+00:02:29.617 --> 00:02:31.657
+ces deux-là l'un à côté de l'autre, sans espace.
+
+00:02:32.217 --> 00:02:37.018
+Comme ça je vois que c'est une paire de coordonnées, et je laisse un espace entre les
+
+00:02:37.497 --> 00:02:42.138
+paires de coordonnées. Ça marche plutôt bien dans cette fonction triangle.
+
+00:02:42.377 --> 00:02:45.737
+Mais c'est aussi l'occasion de réfléchir à la façon dont les blancs,
+
+00:02:46.677 --> 00:02:51.018
+et par blancs on entend les espaces, les retours à la ligne, les tabulations, tout ça,
+
+00:02:51.877 --> 00:02:56.758
+rendent, le code plus lisible pour toi comme pour les autres.
+
+00:02:57.717 --> 00:03:00.758
+Donc, une petite habitude bien pratique. Coller les deux coordonnées ensemble,
+
+00:03:00.758 --> 00:03:04.117
+puis laisser un petit espace entre elles pour séparer les coordonnées.
+
+00:03:04.598 --> 00:03:07.157
+Ça, n'a pas d'importance, laquelle des deux est ma deuxième coordonnée.
+
+00:03:07.157 --> 00:03:09.957
+Mais je vais descendre ici pour 10, 40.
+
+00:03:10.758 --> 00:03:14.677
+Et enfin j'ai celui-là, là-bas, qui est 50, 40.
+
+00:03:15.397 --> 00:03:17.358
+Un petit truc à te montrer, tu ne l'as peut-être pas vu,
+
+00:03:17.358 --> 00:03:21.717
+mais il y a une flèche qui apparaît au-dessus des nombres, pour les faire défiler.
+
+00:03:22.038 --> 00:03:25.177
+Ça devient plus utile plus tard, quand on regardera
+
+00:03:25.177 --> 00:03:28.937
+des couleurs et des choses comme ça, ça peut être une petite
+
+00:03:28.937 --> 00:03:29.617
+fonctionnalité bien pratique.
+
+00:03:30.427 --> 00:03:33.217
+Donc voilà notre triangle pour cette oreille gauche.
+
+00:03:34.098 --> 00:03:37.457
+On voit que l'oreille gauche, doit, être marron.
+
+00:03:38.177 --> 00:03:41.897
+Donc on tape brown. Et ça devrait me donner l'oreille gauche.
+
+00:03:41.897 --> 00:03:43.698
+Et tout de suite, je vais vérifier.
+
+00:03:43.698 --> 00:03:49.057
+Donc je clique sur « Exécuter le code ». Je vois que ce triangle a l'air correct.
+
+00:03:49.647 --> 00:03:53.407
+Et si je supprime cette ligne, si je la mets en commentaire avec deux barres obliques,
+
+00:03:53.568 --> 00:03:56.807
+on voit bien, qu'elle disparaît.
+
+00:03:56.807 --> 00:04:01.087
+Donc on voit que ça a marché. On a ça, et on peut continuer.
+
+00:04:01.487 --> 00:04:03.647
+Donc la partie gauche de la tête, maintenant.
+
+00:04:04.768 --> 00:04:10.807
+Alors la tête, c'est la partie orange. Donc on n'a pas de partie ombrée derrière.
+
+00:04:10.807 --> 00:04:12.687
+On n'a que le côté droit de la tête.
+
+00:04:13.247 --> 00:04:15.407
+Alors réfléchissons. Donc il nous faut triangle.
+
+00:04:16.478 --> 00:04:19.517
+Et si je regarde l'image, je vois qu'elle est symétrique.
+
+00:04:20.077 --> 00:04:22.317
+Ce concept de symétrie, on va s'en servir dans
+
+00:04:22.317 --> 00:04:23.997
+deux ou trois des exercices qui arrivent.
+
+00:04:24.237 --> 00:04:27.317
+Mais on voit que le point du centre va être le même.
+
+00:04:27.317 --> 00:04:31.677
+Donc ça va commencer à 50, 30 et ça va finir ici en bas au même endroit,
+
+00:04:31.677 --> 00:04:34.077
+ce qui me semble être 50, 95.
+
+00:04:34.877 --> 00:04:38.478
+Et ensuite il faut qu'on trouve où ça va aller par ici.
+
+00:04:39.278 --> 00:04:45.117
+Et on le voit en survolant ce point, qui a un X de 90 et un Y de 40.
+
+00:04:46.057 --> 00:04:50.697
+Donc ça va être quelque chose X et ça va être quelque chose 40
+
+00:04:51.177 --> 00:04:53.338
+et ça va être orange.
+
+00:04:54.858 --> 00:04:57.577
+Mais c'est quoi, ces points d'interrogation, qu'est-ce qu'on met ici ?
+
+00:04:57.817 --> 00:05:01.978
+Eh bien, je regarde et je vois que cette zone de dessin fait 100,
+
+00:05:01.978 --> 00:05:03.497
+donc elle va jusqu'à 100 par ici.
+
+00:05:04.298 --> 00:05:08.057
+Et, ça c'est 90. Donc il y a un écart de 10 ici.
+
+00:05:08.858 --> 00:05:12.458
+Donc je sais qu'on va avoir le même écart de 10 de ce côté-ci.
+
+00:05:13.177 --> 00:05:14.377
+Et je sais que
+
+00:05:15.497 --> 00:05:20.218
+0 plus 10 égale 10, donc je sais que ça va être 10.
+
+00:05:20.858 --> 00:05:25.658
+Et je peux cliquer sur « Exécuter le code ». Et j'obtiens ce qui me semble être un bon triangle orange.
+
+00:05:26.858 --> 00:05:31.497
+Ensuite je dessine la joue gauche. Donc là je fais juste un copier-coller.
+
+00:05:31.887 --> 00:05:35.017
+Récupérons ce triangle. Supprimons tout ça.
+
+00:05:35.487 --> 00:05:38.937
+On a notre fonction triangle, donc je n'ai pas à la retaper.
+
+00:05:39.827 --> 00:05:43.267
+Et notre joue gauche va être blanche.
+
+00:05:43.827 --> 00:05:48.387
+Donc je peux mesurer. Donc ça, c'est 10, 40,
+
+00:05:50.228 --> 00:05:52.867
+et ça, c'est 5, 60.
+
+00:05:53.668 --> 00:05:55.627
+J'ai oublié une virgule. Donc ça, c'est autre chose.
+
+00:05:55.627 --> 00:05:58.708
+Petite astuce. Regarde comme ce n'est pas rouge.
+
+00:05:58.788 --> 00:06:03.028
+C'est comme si c'était la mauvaise couleur. Ça s'appelle la coloration syntaxique.
+
+00:06:03.187 --> 00:06:08.108
+C'est un terme technique qu'on emploie. Mais les couleurs que tu vois sont les couleurs de
+
+00:06:08.108 --> 00:06:08.627
+la coloration syntaxique.
+
+00:06:09.627 --> 00:06:14.267
+Donc le fait que ce ne soit pas rouge est un bon indice que tu as fait une erreur.
+
+00:06:14.507 --> 00:06:17.228
+Donc si jamais tu vois quelque chose qui a l'air de la mauvaise couleur,
+
+00:06:17.307 --> 00:06:19.947
+c'est le signe que tu as peut-être oublié une virgule.
+
+00:06:20.108 --> 00:06:23.468
+Peut-être. Si on va ici et qu'on ne ferme pas ces guillemets, tu vois que
+
+00:06:23.867 --> 00:06:28.588
+cette parenthèse, passe au vert, ce qui indique qu'il te manque des guillemets.
+
+00:06:28.987 --> 00:06:31.548
+Donc ces couleurs deviennent vraiment utiles, comme,
+
+00:06:31.548 --> 00:06:35.148
+de petits raccourcis dans ta tête pour repérer que quelque chose cloche.
+
+00:06:36.798 --> 00:06:38.718
+Donc on remet la virgule. Et ça repasse en orange.
+
+00:06:38.798 --> 00:06:46.158
+Donc 10, 40, 5, 60. Et puis on revient ici en bas, ce qui fait 50 et 95.
+
+00:06:47.517 --> 00:06:52.317
+Et on peut mettre white. Et on ajoute ça, et c'est bon.
+
+00:06:54.798 --> 00:06:59.838
+Bon. L'oreille droite. Là, on entre vraiment dans la symétrie, en quelque sorte.
+
+00:07:00.237 --> 00:07:04.798
+Donc on sait, pour l'oreille droite. Là ça dit : est-ce que tu peux trouver ça sans survoler ?
+
+00:07:06.158 --> 00:07:09.117
+Alors, oui, on peut trouver ça sans survoler.
+
+00:07:09.437 --> 00:07:14.038
+Si tu as survolé et que tu as fait comme ça, est-ce que tu vois une autre façon de faire ?
+
+00:07:14.038 --> 00:07:17.517
+Et est-ce que tu pourrais te servir de ce qu'on vient de faire ici, où
+
+00:07:18.317 --> 00:07:21.598
+j'ai, dessiné la joue gauche en regardant la joue droite.
+
+00:07:21.598 --> 00:07:23.598
+Comment s'en servir ? Le même principe ?
+
+00:07:23.598 --> 00:07:26.478
+Si tu veux mettre en pause une seconde et y réfléchir, vas-y,
+
+00:07:27.437 --> 00:07:33.598
+sinon, je te donne la réponse. Alors, on sait ici que l'oreille gauche commence à 10.
+
+00:07:33.827 --> 00:07:35.588
+Et on voit qu'on a ce 10, 5.
+
+00:07:36.468 --> 00:07:40.468
+Et donc on sait, comme on l'a dit avant, que 0 plus 10 égale 10.
+
+00:07:40.627 --> 00:07:43.187
+Et on a trouvé que cette joue se termine à 90
+
+00:07:43.987 --> 00:07:47.588
+parce qu'il y a un écart de 10 et que ce même écart se retrouve ici.
+
+00:07:47.987 --> 00:07:50.468
+Donc on sait que cette oreille devrait être à 90
+
+00:07:51.668 --> 00:07:56.548
+et, on sait qu'elle descend tout droit jusqu'à 90 et on sait qu'elle,
+
+00:07:57.017 --> 00:07:59.267
+vient jusqu'au milieu, à 50.
+
+00:07:59.987 --> 00:08:03.028
+Donc on peut inverser tout ça et on a le même
+
+00:08:04.228 --> 00:08:07.627
+triangle. Ensuite on peut faire la partie droite de la tête.
+
+00:08:07.627 --> 00:08:12.307
+Et là encore on peut le faire sans survoler, juste en changeant ce 10 en 90, parce que c'est
+
+00:08:12.307 --> 00:08:18.028
+symétrique. Et ensuite on peut faire la joue droite, et là encore, pour la joue droite,
+
+00:08:18.028 --> 00:08:24.548
+on veut de la symétrie. Donc ça devient 90, ça devient 95 et ça reste à 50
+
+00:08:25.117 --> 00:08:26.637
+et ça nous donne une joue blanche.
+
+00:08:27.117 --> 00:08:28.798
+Et ensuite il nous faut notre museau,
+
+00:08:29.918 --> 00:08:34.557
+donc notre museau est charcoal, donc on peut faire triangle.
+
+00:08:35.518 --> 00:08:39.597
+Et j'ai un peu tout gâché pour moi-même, parce que j'ai
+
+00:08:39.597 --> 00:08:41.557
+dessiné par-dessus. Mais on peut.
+
+00:08:41.557 --> 00:08:46.317
+Donc tu as deux options. Un, tu peux mettre tout ton code en commentaire.
+
+00:08:46.798 --> 00:08:49.677
+Donc tu peux juste mettre, des commentaires
+
+00:08:51.128 --> 00:08:51.607
+comme ça
+
+00:08:52.488 --> 00:08:54.648
+et ça va te permettre de,
+
+00:08:56.408 --> 00:09:00.447
+mettre celui-là en commentaire. Donc si ça t'arrive, si tu as fait une faute de frappe,
+
+00:09:00.447 --> 00:09:04.368
+pas de panique. Clique sur « Exécuter le code », mets en commentaire ce qui cloche,
+
+00:09:04.368 --> 00:09:06.168
+clique à nouveau sur « Exécuter le code » et ça revient.
+
+00:09:06.807 --> 00:09:11.207
+Donc ici on voit que ça devrait être 50 et 85.
+
+00:09:12.727 --> 00:09:16.327
+Donc 50 et 85. Et ensuite on peut remettre tout ça.
+
+00:09:17.548 --> 00:09:17.847
+Et.
+
+00:09:21.927 --> 00:09:25.048
+J'ai réussi à effacer le mot triangle sur la première ligne.
+
+00:09:25.687 --> 00:09:26.327
+Bon,
+
+00:09:29.847 --> 00:09:32.248
+alors mesurons. Donc 40, 90.
+
+00:09:33.447 --> 00:09:37.768
+Et on sait que c'est symétrique. Donc tout de suite, on sait que le suivant va être
+
+00:09:37.768 --> 00:09:43.788
+60, 90. Et on sait que c'est charcoal, un mot que j'ai du mal à écrire.
+
+00:09:44.508 --> 00:09:49.467
+On a le haut du museau, et ensuite on a le bas du museau.
+
+00:09:49.788 --> 00:09:55.628
+Et c'est, un triangle symétrique de ce triangle du haut.
+
+00:09:56.028 --> 00:10:00.107
+Donc ça va être exactement, la même forme que celui-là,
+
+00:10:00.508 --> 00:10:03.067
+sauf que celui-là va de 85 à 90.
+
+00:10:03.467 --> 00:10:08.648
+On sait que celui-ci doit aller de 90 à 95 parce que, là encore,
+
+00:10:08.807 --> 00:10:12.408
+on peut voir 90 comme la ligne du milieu, 5 au-dessus, 5 en dessous.
+
+00:10:13.447 --> 00:10:16.168
+Et on a le bas du museau, et tout passe.
+
+00:10:16.727 --> 00:10:19.967
+Et ensuite je supprimerais ces TODO.
+
+00:10:19.967 --> 00:10:22.408
+Essayons de garder un, code bien propre.
+
+00:10:23.368 --> 00:10:27.368
+Et au passage, dans certaines de ces vidéos tu vas voir ce truc en bas.
+
+00:10:27.368 --> 00:10:30.327
+C'est juste parce que je travaille en local sur ma machine
+
+00:10:30.648 --> 00:10:32.087
+plutôt que sur le site de Jiki.
+
+00:10:32.408 --> 00:10:35.048
+J'ai des outils de débogage supplémentaires activés.
+
+00:10:35.128 --> 00:10:38.398
+Donc si tu vois ça en bas, tu peux simplement l'ignorer.
+
+00:10:40.158 --> 00:10:42.398
+Bon, on a du code bien propre.
+
+00:10:42.398 --> 00:10:45.197
+On peut enlever ça. Est-ce que tu peux trouver ça sans survoler, toi aussi ?
+
+00:10:45.677 --> 00:10:48.437
+Et maintenant, ça, ça documente notre code.
+
+00:10:48.437 --> 00:10:50.477
+Donc là ça dit que c'est l'oreille gauche.
+
+00:10:50.477 --> 00:10:53.118
+Et en fait, je changerais sans doute ceux-là pour n'écrire que « the ».
+
+00:10:53.677 --> 00:10:55.357
+Parce qu'on ne veut pas vraiment que ce soient des instructions,
+
+00:10:55.357 --> 00:10:57.837
+on veut juste qu'ils décrivent ce que le code fait.
+
+00:10:57.918 --> 00:11:00.158
+Mais tu peux choisir ce qui est le plus clair pour toi.
+
+00:11:00.638 --> 00:11:03.918
+Mais avoir ces commentaires qui expliquent juste ce que sont les choses.
+
+00:11:03.918 --> 00:11:05.998
+En fait, je vais peut-être appeler celui-ci le museau.
+
+00:11:06.548 --> 00:11:09.587
+Et j'aurais deux lignes comme ça, et ça se comprend tout seul
+
+00:11:10.707 --> 00:11:12.307
+et je pourrais aussi bien regrouper les choses.
+
+00:11:12.307 --> 00:11:15.587
+Je pourrais aussi me dire, bon, je veux les deux oreilles ensemble
+
+00:11:15.908 --> 00:11:20.628
+et écrire juste les oreilles, et je veux les parties de la tête ensemble.
+
+00:11:21.217 --> 00:11:25.028
+Et je veux les joues ensemble
+
+00:11:25.908 --> 00:11:26.548
+comme ça.
+
+00:11:28.307 --> 00:11:31.628
+Et tout ça marche toujours, mais c'est un peu plus propre maintenant.
+
+00:11:31.628 --> 00:11:33.827
+On voit aussi un peu mieux la symétrie.
+
+00:11:34.467 --> 00:11:36.827
+Donc prends toujours quelques minutes, quand tu as résolu un
+
+00:11:36.827 --> 00:11:39.168
+exercice, pour essayer d'en être vraiment fier.
+
+00:11:39.168 --> 00:11:43.168
+Range-le, rends-le vraiment net, et tu vois à quel point
+
+00:11:43.168 --> 00:11:45.408
+c'est plus clair avec ces deux lignes l'une à côté de l'autre.
+
+00:11:45.837 --> 00:11:49.087
+Ça rend simplement tout un peu plus propre.
+
+00:11:49.087 --> 00:11:52.207
+Une dernière chose avant de terminer, c'est ici en bas.
+
+00:11:52.207 --> 00:11:55.087
+Je vais juste déplacer ça pour dégager la vue ici en bas.
+
+00:11:55.807 --> 00:11:59.488
+Tu vois cette barre ? Tu ne t'en es peut-être pas encore servi,
+
+00:11:59.567 --> 00:12:02.048
+mais c'est ce qu'on appelle le curseur.
+
+00:12:02.687 --> 00:12:04.607
+Ça va t'être super utile plus tard.
+
+00:12:05.008 --> 00:12:09.207
+Mais ce que ça te permet de faire, c'est d'avancer entre chaque ligne de code.
+
+00:12:09.207 --> 00:12:09.567
+Genre
+
+00:12:10.677 --> 00:12:14.918
+d'en faire une à la fois. Donc au lieu de voir toute la tête d'un coup, tu peux vraiment
+
+00:12:15.398 --> 00:12:17.878
+avancer étape par étape et voir ce que chaque ligne de code fait.
+
+00:12:18.278 --> 00:12:21.197
+Et quand tu écriras des programmes qui font 200
+
+00:12:21.197 --> 00:12:24.557
+lignes de code, ou qui exécutent le même code plein et
+
+00:12:24.557 --> 00:12:26.998
+plein de fois, et où il y a peut-être mille,
+
+00:12:27.398 --> 00:12:29.597
+dix mille choses qui se passent dans ton programme, et
+
+00:12:29.597 --> 00:12:31.317
+on arrivera à ces exercices dans un moment.
+
+00:12:31.798 --> 00:12:36.518
+Là, ça devient super, super utile comme réflexe.
+
+00:12:37.457 --> 00:12:41.937
+On a aussi ce petit bouton pour afficher le panneau d'informations, ici en haut.
+
+00:12:42.018 --> 00:12:46.538
+Et là encore, quand on aura du code bien plus compliqué,
+
+00:12:46.538 --> 00:12:48.577
+il y aura plein d'étapes et ça devient
+
+00:12:48.577 --> 00:12:50.418
+beaucoup plus détaillé et beaucoup plus compliqué.
+
+00:12:51.057 --> 00:12:54.097
+Mais pour l'instant tu vois juste que ça te dit que Jiki
+
+00:12:54.177 --> 00:12:57.658
+a utilisé la fonction triangle avec ces différents paramètres.
+
+00:12:57.658 --> 00:13:00.857
+Tu peux aussi survoler ces éléments, par exemple survoler triangle.
+
+00:13:00.857 --> 00:13:04.738
+Et tu vois qu'ici ça met en évidence le mot survolé et ça met en évidence toute la ligne.
+
+00:13:05.357 --> 00:13:08.638
+Là encore, ça ne semble peut-être pas très utile pour l'instant, mais plus tard,
+
+00:13:08.638 --> 00:13:11.398
+quand tu auras peut-être 20 étapes et que tu voudras
+
+00:13:11.398 --> 00:13:14.638
+comprendre exactement ce qui se passe à chaque endroit de cette ligne de code,
+
+00:13:14.798 --> 00:13:16.477
+ça va vraiment bien te servir.
+
+00:13:17.437 --> 00:13:19.998
+Donc voilà, et tu peux aussi cliquer sur ce bouton lecture.
+
+00:13:20.107 --> 00:13:22.317
+Juste pour lire, pour dérouler les choses.
+
+00:13:22.868 --> 00:13:26.248
+Et si tu retournes à ton jeu Space Invaders que tu as,
+
+00:13:26.248 --> 00:13:30.038
+que tu as fait avant, tu peux essayer maintenant, tu peux y retourner,
+
+00:13:30.038 --> 00:13:32.957
+utiliser le curseur, tu peux regarder les Space Invaders se faire abattre,
+
+00:13:33.197 --> 00:13:35.557
+ou tu peux aller dans le labyrinthe et utiliser ce curseur,
+
+00:13:35.557 --> 00:13:38.837
+avancer et reculer pour regarder ton personnage sortir du labyrinthe.
+
+00:13:38.837 --> 00:13:41.597
+Et ensuite tu peux relancer la lecture pour dérouler toute l'animation.
+
+00:13:41.837 --> 00:13:47.077
+Bref, un petit outil vraiment utile. Il y a plus de complexité là-dedans
+
+00:13:47.077 --> 00:13:50.077
+aussi, sur laquelle on reviendra dans un prochain Deep Dive.
+
+00:13:50.398 --> 00:13:52.238
+Mais pour l'instant, j'espère que ça t'a été utile.
+
+00:13:52.427 --> 00:13:57.677
+J'ai hâte qu'on arrive à des exercices vraiment complexes, plus tard.
+
+00:13:58.107 --> 00:14:01.947
+Mais je te laisse. J'espère que tu vas aimer les prochains exercices de dessin.
+
+00:14:02.347 --> 00:14:04.427
+Continue d'essayer de réfléchir à ta façon de réfléchir.
+
+00:14:04.748 --> 00:14:09.388
+Prends ton temps, garde un code bien propre, et, ouais, tu vas très bien t'en sortir.
+
+00:14:09.467 --> 00:14:10.347
+Merci d'avoir regardé.
