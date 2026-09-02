@@ -6,7 +6,8 @@
   },
   "checks": {
     "notRecited": "Il poeta non ha recitato nulla. Assicurati di chiamare <code>recite()</code> una volta terminata la camminata.",
-    "wrongPoem": "Il poeta ha recitato \"{{got}}\" ma la poesia dovrebbe essere \"{{expected}}\".",
+    "wrongPoem": "Il poeta ha recitato:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>ma la poesia dovrebbe essere:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "wrongSpacing": "Il poeta ha raccolto le parole giuste nell'ordine giusto, ma la spaziatura è sbagliata. Ha recitato:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>ma la poesia dovrebbe essere:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
     "noFunctions": "Scrivi la soluzione come un'unica camminata, senza definire nessuna funzione.",
     "reciteOnce": "Il poeta dovrebbe recitare la poesia una sola volta, dopo che la camminata è terminata.",
     "tooDeeplyNested": "Il codice è annidato troppo in profondità. Puoi usare solo due livelli: quindi un ciclo con un <code>if</code> al suo interno, ma niente all'interno di quell'<code>if</code>.",
@@ -64,7 +65,7 @@
     },
     "yasegaeru": {
       "name": "Una riga di Issa",
-      "description": "Sette parole di haiku, con un limite di righe per tenere i controlli stretti. La soluzione più ordinata sta in 32 righe."
+      "description": "Sette parole di haiku, con un limite di righe per tenere i controlli stretti. Riesci a trovare una soluzione ordinata di sole 32 righe? (O meno?)"
     }
   },
   "hints": {

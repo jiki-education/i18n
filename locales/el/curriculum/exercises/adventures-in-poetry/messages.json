@@ -6,7 +6,8 @@
   },
   "checks": {
     "notRecited": "Ο ποιητής δεν απάγγειλε τίποτα. Φρόντισε να καλέσεις τη <code>recite()</code> μόλις τελειώσει το περπάτημα.",
-    "wrongPoem": "Ο ποιητής απάγγειλε \"{{got}}\", αλλά το ποίημα θα έπρεπε να είναι \"{{expected}}\".",
+    "wrongPoem": "Ο ποιητής απάγγειλε:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>αλλά το ποίημα θα έπρεπε να είναι:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "wrongSpacing": "Ο ποιητής μάζεψε τις σωστές λέξεις με τη σωστή σειρά, αλλά τα κενά είναι λάθος. Απάγγειλε:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>αλλά το ποίημα θα έπρεπε να είναι:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
     "noFunctions": "Γράψε τη λύση σου ως ένα περπάτημα, χωρίς να ορίσεις δικές σου συναρτήσεις.",
     "reciteOnce": "Ο ποιητής θα πρέπει να απαγγείλει το ποίημα μία φορά, αφού τελειώσει το περπάτημα.",
     "tooDeeplyNested": "Ο κώδικάς σου έχει πολύ βαθιά εμφώλευση. Επιτρέπονται μόνο δύο επίπεδα, δηλαδή ένας βρόχος με ένα <code>if</code> μέσα του, αλλά τίποτα μέσα σε αυτό το <code>if</code>.",
@@ -64,7 +65,7 @@
     },
     "yasegaeru": {
       "name": "Μια γραμμή του Issa",
-      "description": "Επτά λέξεις χαϊκού, με όριο γραμμών για να κρατήσεις τους ελέγχους σου σφιχτούς. Η πιο τακτοποιημένη λύση χωράει σε 32 γραμμές."
+      "description": "Επτά λέξεις χαϊκού, με όριο γραμμών για να κρατήσεις τους ελέγχους σου σφιχτούς. Μπορείς να βρεις μια τακτοποιημένη λύση με μόλις 32 γραμμές; (Ή λιγότερες;)"
     }
   },
   "hints": {

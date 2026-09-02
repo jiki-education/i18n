@@ -6,7 +6,8 @@
   },
   "checks": {
     "notRecited": "কবি কিছুই আবৃত্তি করেনি। হাঁটা শেষ হওয়ার পর <code>recite()</code> একবার কল করা হয়েছে কি না, নিশ্চিত করুন।",
-    "wrongPoem": "কবি আবৃত্তি করেছে \"{{got}}\", কিন্তু কবিতাটি হওয়ার কথা \"{{expected}}\".",
+    "wrongPoem": "কবি আবৃত্তি করেছে:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>কিন্তু কবিতাটি হওয়ার কথা:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "wrongSpacing": "কবি সঠিক ক্রমে সঠিক শব্দগুলি সংগ্রহ করেছে, কিন্তু স্পেস ঠিক নেই। এটি আবৃত্তি করেছে:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>কিন্তু কবিতাটি হওয়ার কথা:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
     "noFunctions": "নিজের কোনো ফাংশন ডিফাইন না করে, পুরো সমাধানটি একটি হাঁটা হিসেবেই লিখুন।",
     "reciteOnce": "হাঁটা শেষ হওয়ার পর কবির কবিতাটি একবারই আবৃত্তি করা উচিত।",
     "tooDeeplyNested": "আপনার কোড খুব গভীরভাবে নেস্টেড হয়ে গেছে। শুধু দুটি লেভেল ব্যবহার করা যাবে: অর্থাৎ একটি লুপের ভিতরে একটি <code>if</code>, কিন্তু সেই <code>if</code>-এর ভিতরে আর কিছু নয়।",
@@ -64,7 +65,7 @@
     },
     "yasegaeru": {
       "name": "ইসার একটি লাইন",
-      "description": "হাইকুর সাতটি শব্দ, সাথে একটি লাইনের সীমা, যাতে আপনার শর্তগুলি আঁটসাঁট থাকে। সবচেয়ে পরিপাটি সমাধানটি ৩২ লাইনে ফিট করে।"
+      "description": "হাইকুর সাতটি শব্দ, সাথে একটি লাইনের সীমা, যাতে আপনার শর্তগুলি আঁটসাঁট থাকে। আপনি কি এমন একটি পরিপাটি সমাধান খুঁজে বের করতে পারবেন যা মাত্র ৩২ লাইনের, বা তার চেয়েও কম?"
     }
   },
   "hints": {

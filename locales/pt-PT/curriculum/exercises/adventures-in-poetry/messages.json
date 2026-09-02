@@ -6,7 +6,8 @@
   },
   "checks": {
     "notRecited": "O poeta nunca recitou nada. Certifica-te de que chamas <code>recite()</code> quando a caminhada terminar.",
-    "wrongPoem": "O poeta recitou \"{{got}}\" mas o poema devia ser \"{{expected}}\".",
+    "wrongPoem": "O poeta recitou:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>mas o poema devia ser:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "wrongSpacing": "O poeta recolheu as palavras certas na ordem certa, mas o espaçamento está errado. Recitou:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>mas o poema devia ser:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
     "noFunctions": "Escreve a tua solução como uma caminhada única, sem definires funções tuas.",
     "reciteOnce": "O poeta deve recitar o poema uma vez, depois de terminar a caminhada.",
     "tooDeeplyNested": "O teu código está demasiado aninhado. Só podes usar dois níveis, ou seja, um ciclo com um <code>if</code> lá dentro, mas nada dentro desse <code>if</code>.",
@@ -64,7 +65,7 @@
     },
     "yasegaeru": {
       "name": "Uma linha de Issa",
-      "description": "Sete palavras de haiku, com um limite de linhas para manter as tuas condições apertadas. A solução mais arrumada cabe em 32 linhas."
+      "description": "Sete palavras de haiku, com um limite de linhas para manter as tuas condições apertadas. Consegues encontrar uma solução arrumada com apenas 32 linhas? (Ou menos?)"
     }
   },
   "hints": {

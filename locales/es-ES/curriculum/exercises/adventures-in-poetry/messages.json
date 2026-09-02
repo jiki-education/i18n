@@ -6,7 +6,8 @@
   },
   "checks": {
     "notRecited": "El poeta no recitó nada. Asegúrate de llamar a <code>recite()</code> una vez terminado el recorrido.",
-    "wrongPoem": "El poeta recitó «{{got}}» pero el poema debería ser «{{expected}}».",
+    "wrongPoem": "El poeta recitó:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>pero el poema debería ser:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "wrongSpacing": "El poeta recogió las palabras correctas en el orden correcto, pero el espaciado está mal. Recitó:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>pero el poema debería ser:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
     "noFunctions": "Escribe tu solución como un único recorrido, sin definir ninguna función propia.",
     "reciteOnce": "El poeta debe recitar el poema una vez, después de que haya terminado el recorrido.",
     "tooDeeplyNested": "Tu código está demasiado anidado. Solo se te permiten dos niveles, así que un bucle con un <code>if</code> dentro, pero nada dentro de ese <code>if</code>.",
@@ -64,7 +65,7 @@
     },
     "yasegaeru": {
       "name": "Una línea de Issa",
-      "description": "Siete palabras de haiku, con un límite de líneas para mantener tu solución ajustada. La solución más ordenada cabe en 32 líneas."
+      "description": "Siete palabras de haiku, con un límite de líneas para mantener tu solución ajustada. ¿Puedes encontrar una solución ordenada de solo 32 líneas? (¿O menos?)"
     }
   },
   "hints": {

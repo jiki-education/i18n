@@ -6,7 +6,8 @@
   },
   "checks": {
     "notRecited": "O poeta não recitou nada. Certifique-se de chamar <code>recite()</code> quando a caminhada terminar.",
-    "wrongPoem": "O poeta recitou \"{{got}}\", mas o poema deveria ser \"{{expected}}\".",
+    "wrongPoem": "O poeta recitou:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>mas o poema deveria ser:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "wrongSpacing": "O poeta juntou as palavras certas na ordem certa, mas o espaçamento está errado. Ele recitou:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>mas o poema deveria ser:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
     "noFunctions": "Escreva sua solução como uma única caminhada, sem escrever funções auxiliares.",
     "reciteOnce": "O poeta deve recitar o poema uma vez, depois que a caminhada terminar.",
     "tooDeeplyNested": "Seu código está aninhado demais. Você só pode usar dois níveis, ou seja, um laço com um <code>if</code> dentro dele, mas nada dentro desse <code>if</code>.",
@@ -64,7 +65,7 @@
     },
     "yasegaeru": {
       "name": "Um verso de Issa",
-      "description": "Sete palavras de haicai, com um limite de linhas para manter suas condições enxutas. A solução mais organizada cabe em 32 linhas."
+      "description": "Sete palavras de haicai, com um limite de linhas para manter suas condições enxutas. Você consegue encontrar uma solução organizada com apenas 32 linhas? (Ou menos?)"
     }
   },
   "hints": {
