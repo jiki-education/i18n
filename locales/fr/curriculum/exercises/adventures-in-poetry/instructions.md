@@ -23,7 +23,7 @@ Ta mission consiste à parcourir le chemin, à construire le poème petit à pet
 - Le **décor** ne fait pas partie du poème et doit être ignoré.
 - Une **apostrophe** occupe sa propre case, et elle relie les mots situés de part et d'autre. `heart` puis `'` puis `s` devient `heart's`.
 - Une **virgule** occupe elle aussi sa propre case. Elle se colle au mot qui la précède, mais reste suivie d'un espace.
-- Le poète s'arrête de marcher quand il atteint le **drapeau à damier**, ou dès qu'il a récolté **sept mots**, selon ce qui arrive en premier.
+- Le poète n'avance plus quand il atteint le **drapeau à damier**, ou dès qu'il a récolté **sept mots**, selon ce qui arrive en premier.
 - Quand le poète s'arrête, quelle qu'en soit la raison, il récite ce qu'il a récolté. Tu ne peux appeler `recite()` qu'**une seule fois**.
 
 ## Restrictions
