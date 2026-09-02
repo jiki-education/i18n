@@ -1,7 +1,7 @@
 ---
 title: "Aventures en poésie"
 description: "Parcours un chemin en récoltant les mots d'un poème, en ignorant tout ce qui n'en est pas un."
-en_md5: 90609a1f81b1b70871df0d2ed130e9e2
+en_md5: 9163e96662902baf726f464c9b58785f
 ---
 
 Tu crées un jeu de poésie robotique appelé « Aventures en poésie ». Pour commencer, tu dois programmer le robot pour qu'il collecte des mots tout en marchant, puis, à la fin, qu'il récite le poème.
@@ -19,19 +19,19 @@ Ta mission consiste à parcourir le chemin, à construire le poème petit à pet
 
 ## Les règles
 
-- Les **mots** entrent dans le poème, avec un **espace entre chacun**.
+- Les **mots**, séparés par un **espace**, forment le poème.
 - Le **décor** ne fait pas partie du poème et doit être ignoré.
 - Une **apostrophe** occupe sa propre case, et elle relie les mots situés de part et d'autre. `heart` puis `'` puis `s` devient `heart's`.
 - Une **virgule** occupe elle aussi sa propre case. Elle se colle au mot qui la précède, mais reste suivie d'un espace.
 - Le poète s'arrête de marcher quand il atteint le **drapeau à damier**, ou dès qu'il a récolté **sept mots**, selon ce qui arrive en premier.
-- Quand le poète s'arrête, quelle que soit la façon dont il s'est arrêté, il récite ce qu'il a récolté. Tu ne peux appeler `recite()` qu'**une seule fois**.
+- Quand le poète s'arrête, quelle qu'en soit la raison, il récite ce qu'il a récolté. Tu ne peux appeler `recite()` qu'**une seule fois**.
 
 ## Restrictions
 
 Il existe de nombreuses façons de résoudre cet exercice, mais on veut que tu utilises les mots-clés `continue` et `break` que tu viens d'apprendre, alors voici quelques règles :
 
 1. Ta solution doit utiliser à la fois `continue` et `break`.
-2. Tu ne peux pas utiliser `&&` ni `!` dans ta solution.
+2. Tu ne peux utiliser ni `&&` ni `!` dans ta solution.
 3. Tu ne peux pas écrire de fonctions auxiliaires.
 4. Tu n'as droit qu'à deux niveaux d'indentation :
 
