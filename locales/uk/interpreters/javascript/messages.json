@@ -149,9 +149,9 @@
       "DisabledFeatureIncludeListViolation": "Можливість `{{lexeme}}` поки що недоступна на поточному рівні."
     },
     "stdlib": {
-      "StdlibExactArgs": "У {{functionName}}() вхідних щілин: {{expected}}, але значень, щоб покласти в них, надано лише {{received}}.",
-      "StdlibAtLeastArgs": "У {{functionName}}() вхідних щілин щонайменше {{minimum}}, але значень, щоб покласти в них, надано лише {{received}}.",
-      "StdlibArgRange": "У {{functionName}}() від {{min}} до {{max}} вхідних щілин, але значень, щоб покласти в них, надано лише {{received}}.",
+      "StdlibExactArgs": "У {{functionName}}() є $t(phrases.slotCount, {\"count\": {{expected}} }), але надано лише $t(phrases.inputCount, {\"count\": {{received}} }), щоб Jiki міг ними скористатися.",
+      "StdlibAtLeastArgs": "У {{functionName}}() потрібно щонайменше $t(phrases.slotCount, {\"count\": {{minimum}} }), але надано лише $t(phrases.inputCount, {\"count\": {{received}} }), щоб Jiki міг ними скористатися.",
+      "StdlibArgRange": "У {{functionName}}() від {{min}} до {{max}} вхідних щілин, але надано лише $t(phrases.inputCount, {\"count\": {{received}} }), щоб Jiki міг ними скористатися.",
       "StdlibArgTypeMismatch": "{{functionName}}() очікувала, що {{argName}} матиме тип {{expected}}, але отримала {{received}}.",
       "StdlibArgMustBeInteger": "{{functionName}}() очікувала, що {{argName}} буде цілим числом, але отримала {{value}}.",
       "MethodNotYetImplemented": "Метод `{{method}}` існує, але поки що недоступний.",
@@ -167,7 +167,7 @@
     "slotCount_many": "{{count}} вхідних щілин",
     "slotCount_other": "{{count}} вхідних щілин",
     "inputCount_zero": "нуль вхідних значень",
-    "inputCount_one": "одне вхідне значення",
+    "inputCount_one": "1 вхідне значення",
     "inputCount_two": "∅",
     "inputCount_few": "{{count}} вхідні значення",
     "inputCount_many": "{{count}} вхідних значень",

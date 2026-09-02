@@ -149,9 +149,9 @@
       "DisabledFeatureIncludeListViolation": "Η δυνατότητα `{{lexeme}}` δεν είναι ακόμη διαθέσιμη στο τρέχον επίπεδό σου."
     },
     "stdlib": {
-      "StdlibExactArgs": "Η {{functionName}}() έχει {{expected}} θυρίδα(ες) εισόδου, αλλά έδωσες μόνο {{received}} πράγμα(τα) για να βάλεις σε αυτές.",
-      "StdlibAtLeastArgs": "Η {{functionName}}() έχει τουλάχιστον {{minimum}} θυρίδα(ες) εισόδου, αλλά έδωσες μόνο {{received}} πράγμα(τα) για να βάλεις σε αυτές.",
-      "StdlibArgRange": "Η {{functionName}}() έχει μεταξύ {{min}} και {{max}} θυρίδες εισόδου, αλλά έδωσες μόνο {{received}} πράγμα(τα) για να βάλεις σε αυτές.",
+      "StdlibExactArgs": "Η {{functionName}}() έχει $t(phrases.slotCount, {\"count\": {{expected}} }), αλλά έδωσες $t(phrases.inputCount, {\"count\": {{received}} }) για να τα χρησιμοποιήσει ο Jiki.",
+      "StdlibAtLeastArgs": "Η {{functionName}}() χρειάζεται τουλάχιστον $t(phrases.slotCount, {\"count\": {{minimum}} }), αλλά έδωσες $t(phrases.inputCount, {\"count\": {{received}} }) για να τα χρησιμοποιήσει ο Jiki.",
+      "StdlibArgRange": "Η {{functionName}}() έχει μεταξύ {{min}} και {{max}} θυρίδες εισόδου, αλλά έδωσες $t(phrases.inputCount, {\"count\": {{received}} }) για να τα χρησιμοποιήσει ο Jiki.",
       "StdlibArgTypeMismatch": "Η {{functionName}}() περίμενε το {{argName}} να είναι {{expected}}, αλλά του έδωσες {{received}}.",
       "StdlibArgMustBeInteger": "Η {{functionName}}() περίμενε το {{argName}} να είναι ακέραιος αριθμός, αλλά του έδωσες {{value}}.",
       "MethodNotYetImplemented": "Η μέθοδος `{{method}}` είναι μια έγκυρη μέθοδος, αλλά δεν είναι ακόμη διαθέσιμη σε σένα.",
@@ -167,7 +167,7 @@
     "slotCount_many": "∅",
     "slotCount_other": "{{count}} θυρίδες εισόδου",
     "inputCount_zero": "καμία είσοδος",
-    "inputCount_one": "μία είσοδος",
+    "inputCount_one": "1 είσοδος",
     "inputCount_two": "∅",
     "inputCount_few": "∅",
     "inputCount_many": "∅",

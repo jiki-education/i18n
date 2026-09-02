@@ -149,9 +149,9 @@
       "DisabledFeatureIncludeListViolation": "O recurso `{{lexeme}}` ainda não está disponível no seu nível atual."
     },
     "stdlib": {
-      "StdlibExactArgs": "{{functionName}}() tem {{expected}} fenda(s) de entrada, mas você só forneceu {{received}} coisa(s) para colocar nelas.",
-      "StdlibAtLeastArgs": "{{functionName}}() tem pelo menos {{minimum}} fenda(s) de entrada, mas você só forneceu {{received}} coisa(s) para colocar nelas.",
-      "StdlibArgRange": "{{functionName}}() tem entre {{min}} e {{max}} fendas de entrada, mas você só forneceu {{received}} coisa(s) para colocar nelas.",
+      "StdlibExactArgs": "{{functionName}}() tem $t(phrases.slotCount, {\"count\": {{expected}} }), mas você forneceu $t(phrases.inputCount, {\"count\": {{received}} }) para o Jiki usar.",
+      "StdlibAtLeastArgs": "{{functionName}}() precisa de pelo menos $t(phrases.slotCount, {\"count\": {{minimum}} }), mas você forneceu $t(phrases.inputCount, {\"count\": {{received}} }) para o Jiki usar.",
+      "StdlibArgRange": "{{functionName}}() tem entre {{min}} e {{max}} fendas de entrada, mas você forneceu $t(phrases.inputCount, {\"count\": {{received}} }) para o Jiki usar.",
       "StdlibArgTypeMismatch": "{{functionName}}() esperava que {{argName}} fosse um {{expected}}, mas você forneceu um {{received}}.",
       "StdlibArgMustBeInteger": "{{functionName}}() esperava que {{argName}} fosse um número inteiro, mas você forneceu {{value}}.",
       "MethodNotYetImplemented": "O método `{{method}}` é um método válido, mas ainda não está disponível para você.",
@@ -167,7 +167,7 @@
     "slotCount_many": "{{count}} fendas de entrada",
     "slotCount_other": "{{count}} fendas de entrada",
     "inputCount_zero": "zero entradas",
-    "inputCount_one": "uma entrada",
+    "inputCount_one": "1 entrada",
     "inputCount_two": "∅",
     "inputCount_few": "∅",
     "inputCount_many": "{{count}} entradas",

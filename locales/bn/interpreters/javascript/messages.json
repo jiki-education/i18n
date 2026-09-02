@@ -149,9 +149,9 @@
       "DisabledFeatureIncludeListViolation": "`{{lexeme}}` ফিচারটি আপনার বর্তমান লেভেলে এখনো পাওয়া যাচ্ছে না।"
     },
     "stdlib": {
-      "StdlibExactArgs": "{{functionName}}()-এর {{expected}}টি ইনপুট স্লট আছে, কিন্তু সেগুলোতে রাখার জন্য আপনি মাত্র {{received}}টি জিনিস দিয়েছেন।",
-      "StdlibAtLeastArgs": "{{functionName}}()-এর কমপক্ষে {{minimum}}টি ইনপুট স্লট আছে, কিন্তু সেগুলোতে রাখার জন্য আপনি মাত্র {{received}}টি জিনিস দিয়েছেন।",
-      "StdlibArgRange": "{{functionName}}()-এর {{min}} থেকে {{max}}টি ইনপুট স্লট আছে, কিন্তু সেগুলোতে রাখার জন্য আপনি মাত্র {{received}}টি জিনিস দিয়েছেন।",
+      "StdlibExactArgs": "{{functionName}}()-এর $t(phrases.slotCount, {\"count\": {{expected}} }) আছে, কিন্তু Jiki-র ব্যবহারের জন্য আপনি দিয়েছেন $t(phrases.inputCount, {\"count\": {{received}} })।",
+      "StdlibAtLeastArgs": "{{functionName}}()-এর কমপক্ষে $t(phrases.slotCount, {\"count\": {{minimum}} }) প্রয়োজন, কিন্তু Jiki-র ব্যবহারের জন্য আপনি দিয়েছেন $t(phrases.inputCount, {\"count\": {{received}} })।",
+      "StdlibArgRange": "{{functionName}}()-এর {{min}} থেকে {{max}}টি ইনপুট স্লট আছে, কিন্তু Jiki-র ব্যবহারের জন্য আপনি দিয়েছেন $t(phrases.inputCount, {\"count\": {{received}} })।",
       "StdlibArgTypeMismatch": "{{functionName}}() আশা করেছিল {{argName}} হবে একটি {{expected}}, কিন্তু আপনি দিয়েছেন একটি {{received}}।",
       "StdlibArgMustBeInteger": "{{functionName}}() আশা করেছিল {{argName}} হবে একটি পূর্ণ সংখ্যা, কিন্তু আপনি দিয়েছেন {{value}}।",
       "MethodNotYetImplemented": "`{{method}}` একটি বৈধ মেথড, কিন্তু এটি এখনো আপনার জন্য উন্মুক্ত হয়নি।",
@@ -167,7 +167,7 @@
     "slotCount_many": "∅",
     "slotCount_other": "{{count}}টি ইনপুট স্লট",
     "inputCount_zero": "কোনো ইনপুট নেই",
-    "inputCount_one": "একটি ইনপুট",
+    "inputCount_one": "1টি ইনপুট",
     "inputCount_two": "∅",
     "inputCount_few": "∅",
     "inputCount_many": "∅",

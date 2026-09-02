@@ -149,9 +149,9 @@
       "DisabledFeatureIncludeListViolation": "La fonctionnalité `{{lexeme}}` n'est pas encore disponible à ton niveau actuel."
     },
     "stdlib": {
-      "StdlibExactArgs": "{{functionName}}() a {{expected}} entonnoir(s), mais tu n'as fourni que {{received}} chose(s) à y mettre.",
-      "StdlibAtLeastArgs": "{{functionName}}() a au moins {{minimum}} entonnoir(s), mais tu n'as fourni que {{received}} chose(s) à y mettre.",
-      "StdlibArgRange": "{{functionName}}() a entre {{min}} et {{max}} entonnoirs, mais tu n'as fourni que {{received}} chose(s) à y mettre.",
+      "StdlibExactArgs": "{{functionName}}() a $t(phrases.slotCount, {\"count\": {{expected}} }), mais tu n'as fourni que $t(phrases.inputCount, {\"count\": {{received}} }) pour que Jiki puisse les utiliser.",
+      "StdlibAtLeastArgs": "{{functionName}}() a besoin d'au moins $t(phrases.slotCount, {\"count\": {{minimum}} }), mais tu n'as fourni que $t(phrases.inputCount, {\"count\": {{received}} }) pour que Jiki puisse les utiliser.",
+      "StdlibArgRange": "{{functionName}}() a entre {{min}} et {{max}} entonnoirs, mais tu n'as fourni que $t(phrases.inputCount, {\"count\": {{received}} }) pour que Jiki puisse les utiliser.",
       "StdlibArgTypeMismatch": "{{functionName}}() s'attendait à ce que {{argName}} soit de type {{expected}}, mais tu lui as donné une valeur de type {{received}}.",
       "StdlibArgMustBeInteger": "{{functionName}}() s'attendait à ce que {{argName}} soit un nombre entier, mais tu lui as donné {{value}}.",
       "MethodNotYetImplemented": "La méthode `{{method}}` est une méthode valide, mais elle n'est pas encore disponible pour toi.",
@@ -167,7 +167,7 @@
     "slotCount_many": "{{count}} entonnoirs",
     "slotCount_other": "{{count}} entonnoirs",
     "inputCount_zero": "0 entrée",
-    "inputCount_one": "une entrée",
+    "inputCount_one": "1 entrée",
     "inputCount_two": "∅",
     "inputCount_few": "∅",
     "inputCount_many": "{{count}} entrées",

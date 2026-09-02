@@ -149,9 +149,9 @@
       "DisabledFeatureIncludeListViolation": "A funcionalidade `{{lexeme}}` ainda não está disponível no teu nível atual."
     },
     "stdlib": {
-      "StdlibExactArgs": "{{functionName}}() tem {{expected}} fenda(s), mas só forneceste {{received}} coisa(s) para lá colocar.",
-      "StdlibAtLeastArgs": "{{functionName}}() tem pelo menos {{minimum}} fenda(s), mas só forneceste {{received}} coisa(s) para lá colocar.",
-      "StdlibArgRange": "{{functionName}}() tem entre {{min}} e {{max}} fendas, mas só forneceste {{received}} coisa(s) para lá colocar.",
+      "StdlibExactArgs": "{{functionName}}() tem $t(phrases.slotCount, {\"count\": {{expected}} }), mas forneceste $t(phrases.inputCount, {\"count\": {{received}} }) para o Jiki usar.",
+      "StdlibAtLeastArgs": "{{functionName}}() precisa de pelo menos $t(phrases.slotCount, {\"count\": {{minimum}} }), mas forneceste $t(phrases.inputCount, {\"count\": {{received}} }) para o Jiki usar.",
+      "StdlibArgRange": "{{functionName}}() tem entre {{min}} e {{max}} fendas, mas forneceste $t(phrases.inputCount, {\"count\": {{received}} }) para o Jiki usar.",
       "StdlibArgTypeMismatch": "{{functionName}}() esperava que {{argName}} fosse do tipo {{expected}}, mas deste-lhe algo do tipo {{received}}.",
       "StdlibArgMustBeInteger": "{{functionName}}() esperava que {{argName}} fosse um número inteiro, mas deste-lhe {{value}}.",
       "MethodNotYetImplemented": "O método `{{method}}` é um método válido, mas ainda não está disponível para ti.",
@@ -167,7 +167,7 @@
     "slotCount_many": "{{count}} fendas",
     "slotCount_other": "{{count}} fendas",
     "inputCount_zero": "zero entradas",
-    "inputCount_one": "uma entrada",
+    "inputCount_one": "1 entrada",
     "inputCount_two": "∅",
     "inputCount_few": "∅",
     "inputCount_many": "{{count}} entradas",

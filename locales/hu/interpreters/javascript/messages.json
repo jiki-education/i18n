@@ -149,9 +149,9 @@
       "DisabledFeatureIncludeListViolation": "A `{{lexeme}}` funkció a jelenlegi szinteden még nem érhető el."
     },
     "stdlib": {
-      "StdlibExactArgs": "A {{functionName}}() függvénynek {{expected}} bemeneti nyílása van, te viszont csak {{received}} dolgot adtál meg, amit beletehetne.",
-      "StdlibAtLeastArgs": "A {{functionName}}() függvénynek legalább {{minimum}} bemeneti nyílása van, te viszont csak {{received}} dolgot adtál meg, amit beletehetne.",
-      "StdlibArgRange": "A {{functionName}}() függvénynek {{min}} és {{max}} közötti számú bemeneti nyílása van, te viszont csak {{received}} dolgot adtál meg, amit beletehetne.",
+      "StdlibExactArgs": "A {{functionName}}() függvénynek $t(phrases.slotCount, {\"count\": {{expected}} }) van, te viszont csak $t(phrases.inputCount, {\"count\": {{received}} }) adtál meg, amit Jiki felhasználhat.",
+      "StdlibAtLeastArgs": "A {{functionName}}() függvénynek legalább $t(phrases.slotCount, {\"count\": {{minimum}} }) van szüksége, te viszont csak $t(phrases.inputCount, {\"count\": {{received}} }) adtál meg, amit Jiki felhasználhat.",
+      "StdlibArgRange": "A {{functionName}}() függvénynek {{min}} és {{max}} közötti számú bemeneti nyílása van, te viszont csak $t(phrases.inputCount, {\"count\": {{received}} }) adtál meg, amit Jiki felhasználhat.",
       "StdlibArgTypeMismatch": "A {{functionName}}() függvény azt várta, hogy {{argName}} {{expected}} típusú legyen, te viszont {{received}} típusút adtál meg.",
       "StdlibArgMustBeInteger": "A {{functionName}}() függvény azt várta, hogy {{argName}} egész szám legyen, te viszont ezt adtad meg: {{value}}.",
       "MethodNotYetImplemented": "A `{{method}}` metódus létezik, de számodra még nem érhető el.",
@@ -167,7 +167,7 @@
     "slotCount_many": "∅",
     "slotCount_other": "{{count}} bemeneti nyílást",
     "inputCount_zero": "nulla bemenetet",
-    "inputCount_one": "egy bemenetet",
+    "inputCount_one": "1 bemenetet",
     "inputCount_two": "∅",
     "inputCount_few": "∅",
     "inputCount_many": "∅",
