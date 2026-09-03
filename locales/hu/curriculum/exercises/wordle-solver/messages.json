@@ -1,6 +1,14 @@
 {
   "checks": {
     "repeatedGuess": "Ugyanazt a szót többször is megtippelted. Minden tippnek fel kell használnia, amit az előzőekből tanultál, és amint nyertél, állj meg.",
+    "guessNotCommonWord": "A {{row}}. tipp \"{{word}}\" volt, ami nem szerepel a `commonWords()` szavai között.",
+    "guessUsesAbsent": "A {{row}}. tipp \"{{word}}\" volt, de egy korábbi tipp már megmutatta, hogy \"{{letter}}\" nincs a szóban.",
+    "guessIgnoresCorrect": "A {{row}}. tipp \"{{word}}\" volt, de egy korábbi tipp már megmutatta, hogy a {{square}}. négyzet \"{{letter}}\".",
+    "guessMissesPresent": "A {{row}}. tipp \"{{word}}\" volt, de egy korábbi tipp már megmutatta, hogy \"{{letter}}\" valahol a szóban van, és \"{{word}}\" nem tartalmazza.",
+    "guessRepeatsPresentSquare": "A {{row}}. tipp \"{{word}}\" volt, de egy korábbi tipp már megmutatta, hogy \"{{letter}}\" a szóban van, de nem a {{square}}. négyzetben.",
+    "guessNotFirstFitting": "A {{row}}. tipp \"{{word}}\" volt, de \"{{expected}}\"-et vártunk.",
+    "guessAfterSolved": "A kódod a {{row}}. tippet azután tette meg, hogy az előző tipp már megoldotta a szót. Állj meg, amint minden betű helyes.",
+    "stoppedBeforeSolved": "A kódod {{guesses}} tipp után megállt anélkül, hogy megoldotta volna a szót.",
     "holeInOne": {
       "firstRow": "Arra számítottunk, hogy az összes betű zöld lesz."
     },

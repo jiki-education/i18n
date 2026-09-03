@@ -1,6 +1,14 @@
 {
   "checks": {
     "repeatedGuess": "Hai provato la stessa parola più di una volta. Ogni tentativo dovrebbe basarsi su ciò che hai imparato dai precedenti e dovresti fermarti non appena hai vinto.",
+    "guessNotCommonWord": "Il tentativo {{row}} è stato «{{word}}», che non è una delle parole di `commonWords()`.",
+    "guessUsesAbsent": "Il tentativo {{row}} è stato «{{word}}», ma un tentativo precedente aveva già mostrato che «{{letter}}» non è nella parola.",
+    "guessIgnoresCorrect": "Il tentativo {{row}} è stato «{{word}}», ma un tentativo precedente aveva già mostrato che la casella {{square}} è «{{letter}}».",
+    "guessMissesPresent": "Il tentativo {{row}} è stato «{{word}}», ma un tentativo precedente aveva già mostrato che «{{letter}}» è da qualche parte nella parola, e «{{word}}» non la contiene.",
+    "guessRepeatsPresentSquare": "Il tentativo {{row}} è stato «{{word}}», ma un tentativo precedente aveva già mostrato che «{{letter}}» è nella parola ma non nella casella {{square}}.",
+    "guessNotFirstFitting": "Il tentativo {{row}} è stato «{{word}}», ma ci aspettavamo fosse «{{expected}}».",
+    "guessAfterSolved": "Il tuo codice ha fatto il tentativo {{row}} dopo che il tentativo precedente aveva già risolto la parola. Fermati non appena tutte le lettere sono corrette.",
+    "stoppedBeforeSolved": "Il tuo codice si è fermato dopo {{guesses}} tentativi senza risolvere la parola.",
     "holeInOne": {
       "firstRow": "Ci aspettavamo che tutte le lettere fossero verdi."
     },

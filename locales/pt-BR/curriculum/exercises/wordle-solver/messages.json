@@ -1,6 +1,14 @@
 {
   "checks": {
     "repeatedGuess": "Você deu o mesmo palpite mais de uma vez. Cada palpite deve usar o que você aprendeu com os anteriores, e você deve parar assim que vencer.",
+    "guessNotCommonWord": "O palpite {{row}} foi \"{{word}}\", que não é uma das palavras de `commonWords()`.",
+    "guessUsesAbsent": "O palpite {{row}} foi \"{{word}}\", mas um palpite anterior já tinha mostrado que \"{{letter}}\" não está na palavra.",
+    "guessIgnoresCorrect": "O palpite {{row}} foi \"{{word}}\", mas um palpite anterior já tinha mostrado que o quadrado {{square}} é \"{{letter}}\".",
+    "guessMissesPresent": "O palpite {{row}} foi \"{{word}}\", mas um palpite anterior já tinha mostrado que \"{{letter}}\" está em algum lugar da palavra, e \"{{word}}\" não a contém.",
+    "guessRepeatsPresentSquare": "O palpite {{row}} foi \"{{word}}\", mas um palpite anterior já tinha mostrado que \"{{letter}}\" está na palavra, mas não no quadrado {{square}}.",
+    "guessNotFirstFitting": "O palpite {{row}} foi \"{{word}}\", mas esperávamos que fosse \"{{expected}}\".",
+    "guessAfterSolved": "Seu código fez o palpite {{row}} depois que o palpite anterior já tinha resolvido a palavra. Pare assim que todas as letras estiverem corretas.",
+    "stoppedBeforeSolved": "Seu código parou depois de {{guesses}} palpites sem resolver a palavra.",
     "holeInOne": {
       "firstRow": "Esperávamos que todas as letras ficassem verdes"
     },

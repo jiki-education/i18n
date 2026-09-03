@@ -1,6 +1,14 @@
 {
   "checks": {
     "repeatedGuess": "Tu as proposé le même mot plusieurs fois. Chaque proposition doit s'appuyer sur ce que les précédentes t'ont appris, et tu dois t'arrêter dès que tu as gagné.",
+    "guessNotCommonWord": "La proposition {{row}} était « {{word}} », qui ne fait pas partie des mots de `commonWords()`.",
+    "guessUsesAbsent": "La proposition {{row}} était « {{word}} », mais une proposition précédente avait déjà montré que « {{letter}} » n'est pas dans le mot.",
+    "guessIgnoresCorrect": "La proposition {{row}} était « {{word}} », mais une proposition précédente avait déjà montré que la case {{square}} est « {{letter}} ».",
+    "guessMissesPresent": "La proposition {{row}} était « {{word}} », mais une proposition précédente avait déjà montré que « {{letter}} » est quelque part dans le mot, et « {{word}} » ne le contient pas.",
+    "guessRepeatsPresentSquare": "La proposition {{row}} était « {{word}} », mais une proposition précédente avait déjà montré que « {{letter}} » est dans le mot mais pas dans la case {{square}}.",
+    "guessNotFirstFitting": "La proposition {{row}} était « {{word}} » alors qu'on attendait « {{expected}} ».",
+    "guessAfterSolved": "Ton code a fait la proposition {{row}} alors que la proposition précédente avait déjà résolu le mot. Arrête-toi dès que toutes les lettres sont correctes.",
+    "stoppedBeforeSolved": "Ton code s'est arrêté après {{guesses}} propositions sans résoudre le mot.",
     "holeInOne": {
       "firstRow": "On attendait que toutes les lettres soient vertes"
     },
