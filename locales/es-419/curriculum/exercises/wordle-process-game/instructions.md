@@ -1,7 +1,7 @@
 ---
 title: "Wordle: Procesa una partida"
 description: "Procesa una partida completa de Wordle, coloreando cada fila de intentos una por una."
-en_md5: 087a112241856ada8b0cfb4bc7da4798
+en_md5: d825747e1df06c1d9bcdc0900a0615f4
 ---
 
 ¡Volvemos con el juego de Wordle y ahora toca procesar la partida completa, no solo un intento!
@@ -35,7 +35,7 @@ Si una letra aparece dos veces en tu intento, pero solo una vez en la palabra ob
 
 La misma idea se amplía: con tres en un intento y dos en la palabra, dos se colorean y la tercera se pone gris.
 
-Ejecuta el segundo escenario extra y observa la fila `"SWISS"`. La palabra objetivo es `"swims"`, que tiene dos letras `"s"` y ambas ya están verdes: la del inicio y la del final. Pero tu código también pinta de amarillo el cuarto cuadrado, lo que le dice al jugador que hay _otra_ `"s"` por encontrar. No la hay. Ese cuarto cuadrado debería ser gris.
+Ejecuta el segundo escenario extra y observa la fila `"swiss"`. La palabra objetivo es `"swims"`, que tiene dos letras `"s"` y ambas ya están verdes: la del inicio y la del final. Pero tu código también pinta de amarillo el cuarto cuadrado, lo que le dice al jugador que hay _otra_ `"s"` por encontrar. No la hay. Ese cuarto cuadrado debería ser gris.
 
 Debes resolver parcialmente el problema en el primer escenario extra (¡así que empieza por ahí!) y luego resolverlo por completo en el segundo.
 

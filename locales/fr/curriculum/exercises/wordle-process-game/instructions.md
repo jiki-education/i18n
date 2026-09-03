@@ -1,7 +1,7 @@
 ---
 title: "Wordle : traite une partie"
 description: "Traite une partie complète de Wordle en coloriant chaque proposition rangée par rangée."
-en_md5: 087a112241856ada8b0cfb4bc7da4798
+en_md5: d825747e1df06c1d9bcdc0900a0615f4
 ---
 
 Nous revoilà avec le jeu Wordle, et il est maintenant temps de traiter la partie entière, pas seulement une seule proposition !
@@ -35,7 +35,7 @@ Si une lettre apparaît deux fois dans ta proposition mais une seule fois dans l
 
 La même idée s'applique à plus grande échelle : trois lettres identiques dans la proposition et deux dans le mot, cela signifie que deux sont coloriées et que la troisième devient grise.
 
-Lance le deuxième scénario bonus et regarde la rangée `"SWISS"`. Le mot secret est `"swims"`, qui contient deux `"s"`, et les deux sont déjà verts : celui du début et celui de la fin. Mais ton code colorie aussi la quatrième case en jaune, ce qui indique au joueur qu'il reste _un autre_ `"s"` à trouver. Or il n'y en a pas. Cette quatrième case devrait être grise.
+Lance le deuxième scénario bonus et regarde la rangée `"swiss"`. Le mot secret est `"swims"`, qui contient deux `"s"`, et les deux sont déjà verts : celui du début et celui de la fin. Mais ton code colorie aussi la quatrième case en jaune, ce qui indique au joueur qu'il reste _un autre_ `"s"` à trouver. Or il n'y en a pas. Cette quatrième case devrait être grise.
 
 Tu dois résoudre partiellement le problème pour le premier scénario bonus (commence donc par celui-là !), puis le résoudre complètement pour le deuxième.
 

@@ -1,7 +1,7 @@
 ---
 title: "Wordle: Processa uma Partida"
 description: "Processa uma partida completa de Wordle e colore cada tentativa linha a linha."
-en_md5: 087a112241856ada8b0cfb4bc7da4798
+en_md5: d825747e1df06c1d9bcdc0900a0615f4
 ---
 
 Estamos de volta ao Wordle e agora chegou a altura de processar a partida completa, não apenas uma única tentativa!
@@ -35,7 +35,7 @@ Se uma letra aparecer duas vezes na tua tentativa, mas apenas uma vez na palavra
 
 A mesma ideia aplica-se a mais letras: com três letras na tentativa e duas na palavra, duas recebem cor e a terceira fica cinzenta.
 
-Executa o segundo cenário bónus e repara na linha `"SWISS"`. A palavra-alvo é `"swims"`, que tem duas letras `"s"` e ambas já estão verdes: a do início e a do fim. Mas o teu código também colore o quarto quadrado de amarelo, o que diz ao jogador que ainda há outra letra `"s"` por encontrar. Não há. Esse quarto quadrado devia ficar cinzento.
+Executa o segundo cenário bónus e repara na linha `"swiss"`. A palavra-alvo é `"swims"`, que tem duas letras `"s"` e ambas já estão verdes: a do início e a do fim. Mas o teu código também colore o quarto quadrado de amarelo, o que diz ao jogador que ainda há outra letra `"s"` por encontrar. Não há. Esse quarto quadrado devia ficar cinzento.
 
 Tens de resolver parcialmente o problema no primeiro cenário bónus (por isso, começa por aí!) e, no segundo, tens de o resolver totalmente.
 

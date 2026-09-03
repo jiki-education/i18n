@@ -1,7 +1,7 @@
 ---
 title: "Wordle: Dolgozz fel egy játékot"
 description: "Dolgozz fel egy teljes Wordle-játékot, és színezd be a tippek sorait sorról sorra."
-en_md5: 087a112241856ada8b0cfb4bc7da4798
+en_md5: d825747e1df06c1d9bcdc0900a0615f4
 ---
 
 Visszatértünk a Wordle-játékhoz, és most nem egyetlen tippet, hanem az egész játékot dolgozzuk fel!
@@ -35,7 +35,7 @@ Ha egy betű kétszer szerepel a tippedben, de a célszóban csak egyszer:
 
 Ugyanez az elv nagyobb számokra is érvényes: ha a tippedben három, a szóban pedig két ilyen betű van, akkor kettő színt kap, a harmadik pedig szürke lesz.
 
-Futtasd le a második bónusz forgatókönyvet, és nézd meg a `"SWISS"` sort. A célszó: `"swims"`, amiben két `"s"` betű van, és mindkettő már zöld: az egyik a szó elején, a másik a végén. A kódod azonban a negyedik négyzetet is sárgára színezi. Ez azt mondja a játékosnak, hogy van még egy `"s"`, amit meg kell találnia. De nincs. A negyedik négyzetnek szürkének kellene lennie.
+Futtasd le a második bónusz forgatókönyvet, és nézd meg a `"swiss"` sort. A célszó: `"swims"`, amiben két `"s"` betű van, és mindkettő már zöld: az egyik a szó elején, a másik a végén. A kódod azonban a negyedik négyzetet is sárgára színezi. Ez azt mondja a játékosnak, hogy van még egy `"s"`, amit meg kell találnia. De nincs. A negyedik négyzetnek szürkének kellene lennie.
 
 Az első bónusz forgatókönyvnél csak részben kell megoldanod a problémát (tehát ott kezdd!), a másodiknál viszont teljesen meg kell oldanod.
 

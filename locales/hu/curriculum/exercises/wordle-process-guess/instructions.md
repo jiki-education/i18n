@@ -1,7 +1,7 @@
 ---
 title: "Wordle: Tipp feldolgozása"
 description: "Ellenőrizd a Wordle-tippet, és állapítsd meg, mely betűk vannak jó helyen."
-en_md5: 2db4a680ca0788813ac1c48445bfca73
+en_md5: d9a619535c9794108b46091447b14f6d
 ---
 
 Üdvözlünk a Wordle-játékban, ami a Covid-19 miatti lezárások alatt hódította meg a világot!
@@ -17,15 +17,19 @@ A játék így működik:
 
 Néhány feladatban majd megvalósítod az egész Wordle-játékot, de **ebben a feladatban** egyelőre csak az első sort kell működésre bírnod.
 
-Ehhez létre kell hoznod egy `processGuess(target, guess)` (tipp feldolgozása) nevű függvényt. A függvénynek meg kell állapítania a tippben lévő minden betű állapotát, majd meg kell hívnia a `colorRow(1, states)` (sor kiszínezése) függvényt az egyes betűk állapotát tartalmazó tömbbel: `"correct"`, `"present"` vagy `"absent"`.
+Ehhez létre kell hoznod egy `processGuess(target, guess)` (dolgozd fel a tippet) nevű függvényt. A függvénybe érkező szavak mindig kisbetűsek lesznek.
 
-Például a `processGuess("Hello", "Holes")` esetében a `colorRow` függvényt ezzel kell meghívni:
+A függvénynek meg kell állapítania a tippben lévő minden betű állapotát, majd meg kell hívnia a `colorRow(1, states)` (színezd ki a sort) függvényt az egyes betűk állapotát tartalmazó tömbbel: `"correct"`, `"present"` vagy `"absent"`.
+
+Például a `processGuess("hello", "holes")` esetében a `colorRow` függvényt ezzel kell meghívni:
 
 ```javascript
 colorRow(1, ["correct", "present", "correct", "present", "absent"])
 ```
 
 Mielőtt továbblépnél, győződj meg arról, hogy érted ezt!
+
+Ha netán Wordle-rajongó vagy, észreveheted, hogy a fenti szabályok **kissé egyszerűsítettek** a hivatalos játékhoz képest. Ebben a feladatban kérlek, maradj ezeknél az egyszerűsített szabályoknál, a teljes szabályrendszert pedig a következő Wordle-feladatban vezetjük be!
 
 ### Metódusok
 

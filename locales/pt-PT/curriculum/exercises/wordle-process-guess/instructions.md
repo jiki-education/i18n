@@ -1,7 +1,7 @@
 ---
 title: "Wordle: Processar a Tentativa"
 description: "Verifica uma tentativa no Wordle e descobre quais letras estão corretas."
-en_md5: 2db4a680ca0788813ac1c48445bfca73
+en_md5: d9a619535c9794108b46091447b14f6d
 ---
 
 Bem-vindo ao Wordle, o jogo que se tornou viral durante os confinamentos da covid-19!
@@ -17,15 +17,19 @@ O jogo funciona assim:
 
 Ao longo de alguns exercícios, vais implementar o jogo Wordle completo, mas **neste exercício** só vais pôr a primeira linha a funcionar.
 
-Para isso, tens de criar uma função chamada `processGuess(target, guess)` (processa a tentativa). A função deve determinar o estado de cada letra da tentativa e, em seguida, chamar a função `colorRow(1, states)` (colore a linha) com um array de estados para cada letra: `"correct"`, `"present"` ou `"absent"`.
+Para isso, tens de criar uma função chamada `processGuess(target, guess)` (processa a tentativa). As palavras que recebes na função aparecem sempre em minúsculas.
 
-Por exemplo, `processGuess("Hello", "Holes")` deve usar `colorRow` com:
+A função deve determinar o estado de cada letra da tentativa e, em seguida, chamar a função `colorRow(1, states)` (colore a linha) com um array de estados para cada letra: `"correct"`, `"present"` ou `"absent"`.
+
+Por exemplo, `processGuess("hello", "holes")` deve usar `colorRow` com:
 
 ```javascript
 colorRow(1, ["correct", "present", "correct", "present", "absent"])
 ```
 
 Verifica se percebeste isto antes de continuar!
+
+Além disso, se fores fã do Wordle, podes reparar que as regras acima estão **ligeiramente simplificadas** em relação ao jogo oficial. Neste exercício, segue estas regras simplificadas; vamos apresentar o conjunto completo no próximo exercício do Wordle!
 
 ### Métodos
 

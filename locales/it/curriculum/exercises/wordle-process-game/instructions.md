@@ -1,7 +1,7 @@
 ---
 title: "Wordle: elabora una partita"
 description: "Elabora un'intera partita di Wordle, colorando ogni riga di tentativi una alla volta."
-en_md5: 087a112241856ada8b0cfb4bc7da4798
+en_md5: d825747e1df06c1d9bcdc0900a0615f4
 ---
 
 Siamo tornati al gioco di Wordle: ora elaboreremo l'intera partita, non solo un singolo tentativo!
@@ -35,7 +35,7 @@ Se una lettera compare due volte in un tentativo ma solo una volta nella parola 
 
 La stessa idea si estende: se una lettera compare tre volte nel tentativo e due nella parola, due vengono colorate e la terza diventa grigia.
 
-Esegui il secondo scenario bonus e osserva la riga `"SWISS"`. La parola segreta è `"swims"`, che contiene due `"s"`, ed entrambe sono già verdi: quella all'inizio e quella alla fine. Ma il codice colora anche la quarta casella di giallo, il che dice al giocatore che c'è _un'altra_ `"s"` ancora da trovare. Non ce n'è un'altra. Quella quarta casella dovrebbe essere grigia.
+Esegui il secondo scenario bonus e osserva la riga `"swiss"`. La parola segreta è `"swims"`, che contiene due `"s"`, ed entrambe sono già verdi: quella all'inizio e quella alla fine. Ma il codice colora anche la quarta casella di giallo, il che dice al giocatore che c'è _un'altra_ `"s"` ancora da trovare. Non ce n'è un'altra. Quella quarta casella dovrebbe essere grigia.
 
 Devi risolvere parzialmente il problema nel primo scenario bonus (quindi parti da lì!), per poi risolverlo completamente nel secondo.
 

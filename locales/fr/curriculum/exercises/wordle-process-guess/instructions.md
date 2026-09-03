@@ -1,7 +1,7 @@
 ---
-title: "Wordle : traite une proposition"
+title: "Wordle : traite une proposition"
 description: "Vérifie une proposition de Wordle et détermine quelles lettres sont correctes."
-en_md5: 2db4a680ca0788813ac1c48445bfca73
+en_md5: d9a619535c9794108b46091447b14f6d
 ---
 
 Bienvenue dans Wordle, le jeu devenu viral pendant les confinements du Covid-19 !
@@ -17,15 +17,19 @@ Le jeu fonctionne comme ceci :
 
 Dans quelques exercices, tu implémenteras le jeu Wordle en entier, mais pour **cet exercice**, tu ne vas faire fonctionner que la première rangée.
 
-Pour cela, tu dois créer une fonction appelée `processGuess(target, guess)` (« traiter la proposition »). Elle doit déterminer l'état de chaque lettre de la proposition, puis appeler la fonction `colorRow(1, states)` (« colorier la rangée ») avec un tableau contenant l'état de chaque lettre : soit `"correct"`, soit `"present"`, soit `"absent"`.
+Pour cela, tu dois créer une fonction appelée `processGuess(target, guess)` (« traiter la proposition »). Les mots que ta fonction reçoit seront toujours en minuscules.
 
-Par exemple, `processGuess("Hello", "Holes")` doit utiliser `colorRow` avec :
+La fonction doit déterminer l'état de chaque lettre de la proposition, puis appeler la fonction `colorRow(1, states)` (« colorier la rangée ») avec un tableau contenant l'état de chaque lettre : soit `"correct"`, soit `"present"`, soit `"absent"`.
+
+Par exemple, `processGuess("hello", "holes")` doit utiliser `colorRow` avec :
 
 ```javascript
 colorRow(1, ["correct", "present", "correct", "present", "absent"])
 ```
 
 Assure-toi d'avoir bien compris cet exemple avant de continuer !
+
+D'ailleurs, si tu es un grand fan de Wordle, tu remarqueras peut-être que les règles ci-dessus sont **légèrement simplifiées** par rapport au jeu officiel. Dans cet exercice, tiens-t'en à ces règles simplifiées : on introduira les règles complètes dans le prochain exercice Wordle !
 
 ### Méthodes
 
