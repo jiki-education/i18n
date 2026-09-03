@@ -7,10 +7,10 @@
   },
   "checks": {
     "saladNotMade": "No preparaste la ensalada. Asegúrate de llamar a <code>makeSalad()</code> con los cuatro ingredientes.",
-    "needLeavesRandomInt": "Necesitas llamar a <code>Math.randomInt(40, 100)</code> para generar la cantidad de hojas.",
-    "needTomatoesRandomInt": "Necesitas llamar a <code>Math.randomInt(5, leaves / 5)</code> para generar la cantidad de tomates.",
-    "needCroutonsRandomInt": "Necesitas llamar a <code>Math.randomInt(tomatoes, tomatoes * 2)</code> para generar la cantidad de crutones.",
-    "needOlivesRandomInt": "Necesitas llamar a <code>Math.randomInt(1, tomatoes / 2)</code> para generar la cantidad de aceitunas."
+    "needLeavesRandomInt": "La lógica para la cantidad de hojas no sigue el acuerdo que hiciste con tu pareja.",
+    "needTomatoesRandomInt": "La lógica para la cantidad de tomates no sigue el acuerdo que hiciste con tu pareja.",
+    "needCroutonsRandomInt": "La lógica para la cantidad de crutones no sigue el acuerdo que hiciste con tu pareja.",
+    "needOlivesRandomInt": "La lógica para la cantidad de aceitunas no sigue el acuerdo que hiciste con tu pareja."
   },
   "tasks": {
     "makeRandomSalad": {
@@ -26,8 +26,8 @@
   },
   "hints": {
     "leavesExample": {
-      "question": "Dame un ejemplo de cómo calcular la cantidad de hojas",
-      "answer": "Usa `let leaves = Math.randomInt(40, 100)` para generar una cantidad aleatoria de hojas de ensalada que luego puedas usar en las otras funciones."
+      "question": "¿Cómo genero un número aleatorio?",
+      "answer": "`Math.randomInt(min, max)` te da un número entero aleatorio entre los dos valores que le pasas. Por ejemplo, `let score = Math.randomInt(1, 6)` elige un número del 1 al 6. Guarda el resultado en una variable para poder usarlo más adelante."
     },
     "leavesCount": {
       "question": "¿Cuántas hojas necesito?",
@@ -47,7 +47,7 @@
     },
     "makeSalad": {
       "question": "¿Cómo preparo la ensalada?",
-      "answer": "Una vez que hayas calculado cuántos ingredientes necesitas para cada uno, ingresa leaves, tomatoes, croutons, olives en makeSalad()."
+      "answer": "Una vez que hayas calculado cuántos ingredientes necesitas de cada uno, pasa tus cuatro variables a `makeSalad()` en el orden que se muestra en su firma."
     }
   },
   "describers": {
@@ -57,6 +57,10 @@
     "makeSalad": {
       "description": "Prepara una ensalada con las cantidades dadas de cada ingrediente.",
       "category": "Acción"
+    },
+    "randomInt": {
+      "description": "Devuelve un número entero aleatorio entre min y max (ambos incluidos).",
+      "category": "Números"
     }
   }
 }

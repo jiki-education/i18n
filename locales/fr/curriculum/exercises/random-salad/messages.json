@@ -7,10 +7,10 @@
   },
   "checks": {
     "saladNotMade": "Tu n'as pas préparé la salade. Vérifie que tu appelles <code>makeSalad()</code> avec les quatre ingrédients.",
-    "needLeavesRandomInt": "Tu dois appeler <code>Math.randomInt(40, 100)</code> pour générer le nombre de feuilles.",
-    "needTomatoesRandomInt": "Tu dois appeler <code>Math.randomInt(5, leaves / 5)</code> (`leaves` : _feuilles_) pour générer le nombre de tomates.",
-    "needCroutonsRandomInt": "Tu dois appeler <code>Math.randomInt(tomatoes, tomatoes * 2)</code> (`tomatoes` : _tomates_) pour générer le nombre de croûtons.",
-    "needOlivesRandomInt": "Tu dois appeler <code>Math.randomInt(1, tomatoes / 2)</code> pour générer le nombre d'olives."
+    "needLeavesRandomInt": "La logique du nombre de feuilles ne respecte pas l'accord que tu as conclu avec ton ou ta partenaire.",
+    "needTomatoesRandomInt": "La logique du nombre de tomates ne respecte pas l'accord que tu as conclu avec ton ou ta partenaire.",
+    "needCroutonsRandomInt": "La logique du nombre de croûtons ne respecte pas l'accord que tu as conclu avec ton ou ta partenaire.",
+    "needOlivesRandomInt": "La logique du nombre d'olives ne respecte pas l'accord que tu as conclu avec ton ou ta partenaire."
   },
   "tasks": {
     "makeRandomSalad": {
@@ -26,8 +26,8 @@
   },
   "hints": {
     "leavesExample": {
-      "question": "Donne-moi un exemple pour calculer le nombre de feuilles",
-      "answer": "Utilise `let leaves = Math.randomInt(40, 100)` pour générer une quantité aléatoire de feuilles de salade, que tu pourras ensuite utiliser dans les autres fonctions."
+      "question": "Comment générer un nombre aléatoire ?",
+      "answer": "`Math.randomInt(min, max)` te donne un nombre entier aléatoire compris entre les deux valeurs que tu lui passes. Par exemple, `let score = Math.randomInt(1, 6)` choisit un nombre entre 1 et 6. Stocke le résultat dans une variable pour pouvoir le réutiliser plus tard."
     },
     "leavesCount": {
       "question": "De combien de feuilles ai-je besoin ?",
@@ -47,7 +47,7 @@
     },
     "makeSalad": {
       "question": "Comment préparer la salade ?",
-      "answer": "Une fois que tu as déterminé la quantité de chaque ingrédient, passe leaves, tomatoes, croutons et olives à makeSalad()."
+      "answer": "Une fois que tu as déterminé la quantité de chaque ingrédient, passe tes quatre variables à `makeSalad()` dans l'ordre indiqué par sa signature."
     }
   },
   "describers": {
@@ -57,6 +57,10 @@
     "makeSalad": {
       "description": "Prépare une salade avec la quantité indiquée de chaque ingrédient.",
       "category": "Action"
+    },
+    "randomInt": {
+      "description": "Renvoie un nombre entier aléatoire compris entre min et max (bornes incluses).",
+      "category": "Nombres"
     }
   }
 }
