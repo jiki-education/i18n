@@ -4,11 +4,11 @@ description: "Construis un solveur qui joue une partie entière de Wordle tout s
 en_md5: bfa3fc3c672c10eca0658cb6c3d6e0ca
 ---
 
-Dans le dernier exercice Wordle, tu as traité une partie dont les propositions t'étaient fournies. Cette fois, tu passes de l'autre côté : c'est toi qui trouves les propositions.
+Dans le dernier exercice Wordle, tu as traité une partie dont les propositions t'étaient fournies. Cette fois, tu passes de l'autre côté : c'est toi qui dois trouver les propositions.
 
 Ton travail consiste à créer une nouvelle fonction appelée `solveWordle()`, dans laquelle tu proposes des mots jusqu'à trouver le bon. Tu dois résoudre la partie le plus efficacement possible (en utilisant le moins de mots possible).
 
-Tu disposes d'une nouvelle fonction `commonWords()` (mots courants), qui renvoie un tableau des plus de 100 mots que tu peux utiliser dans la partie. Ce sont ces mots que tu dois parcourir. Commence toujours par lire le premier mot de ce tableau et le proposer, puis continue en cherchant le prochain mot valide possible et en le proposant à son tour, et ainsi de suite.
+Tu disposes d'une nouvelle fonction `commonWords()` (mots courants), qui renvoie un tableau de plus de 100 mots que tu peux utiliser dans la partie. C'est avec ces mots que tu vas devoir travailler. Commence toujours par lire le premier mot de ce tableau, puis propose-le. Ensuite, cherche le prochain mot valide possible et propose-le à son tour, et ainsi de suite.
 
 Tu disposes aussi d'une fonction `guess(word)` (proposer un mot), qui renvoie un tableau contenant `"correct"`, `"present"` ou `"absent"` pour chaque lettre.
 

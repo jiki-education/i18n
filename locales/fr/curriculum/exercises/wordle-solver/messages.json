@@ -10,48 +10,48 @@
     "guessAfterSolved": "Ton code a fait la proposition {{row}} alors que la proposition précédente avait déjà résolu le mot. Arrête-toi dès que toutes les lettres sont correctes.",
     "stoppedBeforeSolved": "Ton code s'est arrêté après {{guesses}} propositions sans résoudre le mot.",
     "holeInOne": {
-      "firstRow": "On attendait que toutes les lettres soient vertes"
+      "firstRow": "On s'attendait à ce que toutes les lettres soient vertes"
     },
     "entirelyWrong": {
-      "firstRow": "On attendait que la première rangée soit entièrement en absent",
-      "secondRow": "On attendait que la deuxième rangée soit entièrement en correct"
+      "firstRow": "On s'attendait à ce que la première rangée donne entièrement `absent`",
+      "secondRow": "On s'attendait à ce que la deuxième rangée donne entièrement `correct`"
     },
     "twoNeeded": {
-      "firstRow": "On attendait que la première rangée ait une lettre en correct",
-      "secondRow": "On attendait que la deuxième rangée soit entièrement en correct"
+      "firstRow": "On s'attendait à ce que la première rangée ait une lettre correcte",
+      "secondRow": "On s'attendait à ce que la deuxième rangée donne entièrement `correct`"
     },
     "threeNeeded": {
-      "firstRow": "On attendait que la première rangée ait une lettre en correct",
-      "secondRow": "On attendait que la deuxième rangée ait toutes ses lettres en correct sauf une",
-      "thirdRow": "On attendait que la troisième rangée soit entièrement en correct"
+      "firstRow": "On s'attendait à ce que la première rangée ait une lettre correcte",
+      "secondRow": "On s'attendait à ce que la deuxième rangée ait toutes ses lettres correctes sauf une",
+      "thirdRow": "On s'attendait à ce que la troisième rangée donne entièrement `correct`"
     },
     "fourNeeded": {
-      "firstRow": "On attendait que la première rangée ait une lettre en correct",
-      "secondRow": "On attendait que la deuxième rangée ait ses deux premières lettres en correct",
-      "thirdRow": "On attendait que la troisième rangée ait quatre lettres en correct",
-      "fourthRow": "On attendait que la quatrième rangée soit entièrement en correct"
+      "firstRow": "On s'attendait à ce que la première rangée ait une lettre correcte",
+      "secondRow": "On s'attendait à ce que la deuxième rangée ait ses deux premières lettres correctes",
+      "thirdRow": "On s'attendait à ce que la troisième rangée ait quatre lettres correctes",
+      "fourthRow": "On s'attendait à ce que la quatrième rangée donne entièrement `correct`"
     },
     "present1": {
-      "firstRow": "On attendait que la première rangée soit present, absent, correct, correct, absent.",
-      "secondRow": "On attendait que la deuxième rangée soit entièrement en correct"
+      "firstRow": "On s'attendait à ce que la première rangée donne `present`, `absent`, `correct`, `correct`, `absent`.",
+      "secondRow": "On s'attendait à ce que la deuxième rangée donne entièrement `correct`"
     },
     "present2": {
-      "firstRow": "On attendait que la première rangée soit present, absent, absent, absent, absent",
-      "secondRow": "On attendait que la deuxième rangée soit absent, present, absent, present, present",
-      "thirdRow": "On attendait que la troisième rangée soit entièrement en correct"
+      "firstRow": "On s'attendait à ce que la première rangée donne `present`, `absent`, `absent`, `absent`, `absent`",
+      "secondRow": "On s'attendait à ce que la deuxième rangée donne `absent`, `present`, `absent`, `present`, `present`",
+      "thirdRow": "On s'attendait à ce que la troisième rangée donne entièrement `correct`"
     },
     "present3": {
-      "firstRow": "On attendait que la première rangée soit absent, absent, present, present, absent.",
-      "secondRow": "On attendait que la deuxième rangée soit absent, absent, absent, correct, correct",
-      "thirdRow": "On attendait que la troisième rangée soit correct, absent, absent, correct, correct",
-      "fourthRow": "On attendait que la quatrième rangée soit entièrement en correct"
+      "firstRow": "On s'attendait à ce que la première rangée donne `absent`, `absent`, `present`, `present`, `absent`.",
+      "secondRow": "On s'attendait à ce que la deuxième rangée donne `absent`, `absent`, `absent`, `correct`, `correct`",
+      "thirdRow": "On s'attendait à ce que la troisième rangée donne `correct`, `absent`, `absent`, `correct`, `correct`",
+      "fourthRow": "On s'attendait à ce que la quatrième rangée donne entièrement `correct`"
     },
     "present4": {
-      "firstRow": "On attendait que la première rangée soit entièrement en absent",
-      "secondRow": "On attendait que la deuxième rangée soit entièrement en absent",
-      "thirdRow": "On attendait que la troisième rangée soit present, absent, present, absent, absent",
-      "fourthRow": "On attendait que la quatrième rangée soit correct, correct, correct, present, present",
-      "fifthRow": "On attendait que la cinquième rangée soit entièrement en correct"
+      "firstRow": "On s'attendait à ce que la première rangée donne entièrement `absent`",
+      "secondRow": "On s'attendait à ce que la deuxième rangée donne entièrement `absent`",
+      "thirdRow": "On s'attendait à ce que la troisième rangée donne `present`, `absent`, `present`, `absent`, `absent`",
+      "fourthRow": "On s'attendait à ce que la quatrième rangée donne `correct`, `correct`, `correct`, `present`, `present`",
+      "fifthRow": "On s'attendait à ce que la cinquième rangée donne entièrement `correct`"
     }
   },
   "tasks": {
@@ -68,13 +68,13 @@
       "description": "Bien, on est lancés. C'est là que ça devient plus amusant. Les prochains scénarios renvoient un mélange de lettres `correct` et `absent`. Choisis le meilleur mot suivant du tableau en te basant sur les lettres `correct` et `absent` que tu as déjà découvertes."
     },
     "handlePresent": {
-      "name": "Gère les lettres « present »",
+      "name": "Gère les lettres présentes",
       "description": "Fantastique ! Place à la dernière difficulté : tu dois maintenant prendre en compte les lettres `present`. Bonne chance, tu vas y arriver !"
     }
   },
   "scenarios": {
     "holeInOne": {
-      "name": "Tout correct",
+      "name": "Tout est correct",
       "description": "Gère une première proposition entièrement correcte."
     },
     "entirelyWrong": {
@@ -94,8 +94,8 @@
       "description": "Gère une proposition fausse"
     },
     "present1": {
-      "name": "Quelques lettres « present »",
-      "description": "Un scénario difficile, avec des lettres « present »."
+      "name": "Quelques lettres présentes",
+      "description": "Un scénario difficile, avec des lettres présentes."
     },
     "present2": {
       "name": "Ça se resserre",
@@ -134,7 +134,7 @@
   },
   "functions": {
     "guess": {
-      "description": "Propose un mot. La fonction écrit le mot sur la rangée suivante de la grille, le colore, puis renvoie un tableau avec l'état de chaque lettre.",
+      "description": "Propose un mot. La fonction écrit le mot sur la rangée suivante de la grille, le colorie, puis renvoie un tableau avec l'état de chaque lettre.",
       "category": "Wordle"
     },
     "commonWords": {
