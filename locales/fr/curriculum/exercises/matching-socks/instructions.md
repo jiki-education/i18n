@@ -30,6 +30,6 @@ Cet exercice comporte de nombreuses méthodes de _strings_ et de tableaux qui pe
 
 ### Bonus
 
-Il y a de nombreuses façons de résoudre cet exercice. Cependant, il existe une solution plutôt élégante qui tient en 29 lignes de code : c'est donc l'objectif qu'on s'est fixé. Tu peux descendre plus bas, mais le code a alors tendance à devenir de moins en moins lisible à mesure qu'il raccourcit : c'est pourquoi on pense que le bon niveau se situe autour de 29 lignes.
+Il y a de nombreuses façons de résoudre cet exercice. Cependant, il existe une solution plutôt propre qui tient en 29 lignes de code : c'est donc l'objectif qu'on s'est fixé. Tu peux descendre plus bas, mais le code a alors tendance à devenir de moins en moins lisible à mesure qu'il raccourcit : c'est pourquoi on pense que le bon niveau se situe autour de 29 lignes.
 
 Amuse-toi bien !
