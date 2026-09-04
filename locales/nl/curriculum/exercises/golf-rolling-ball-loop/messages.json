@@ -1,36 +1,36 @@
 {
   "checks": {
-    "ballNotAtEnd": "�",
-    "missingPositions": "�",
+    "ballNotAtEnd": "De bal is naar {{ballX}} gerold, en dat is niet 60 stappen vanaf het beginpunt.",
+    "missingPositions": "De bal moet stap voor stap door elke positie rollen, beginnend bij 29.",
     "codeQuality": {
-      "tooManyLines": "�"
+      "tooManyLines": "Je oplossing heeft te veel regels code. Probeer een lus te gebruiken om hem korter te maken."
     }
   },
   "tasks": {
     "rollBall": {
-      "name": "�",
-      "description": "�"
+      "name": "Rol de bal in de hole",
+      "description": "Rol de bal in de hole."
     }
   },
   "scenarios": {
     "rollBall": {
-      "name": "�",
-      "description": "�"
+      "name": "Rol de bal in de hole",
+      "description": "Rol de bal in de hole."
     }
   },
   "hints": {
     "icantWorkItOut": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ik kom er niet uit",
+      "answer": "Je hebt twee hulpmiddelen tot je beschikking:\n- Een `repeat`-lus, die je gebruikt door `repeat(n) { }` te schrijven, waarbij `n` het aantal keren is dat je wilt rollen en waarbij je van alles tussen de accolades (`{ }`) kunt zetten.\n- Een functie `roll()` die de bal één stap naar rechts rolt.\n\nHoe kun je die twee combineren?"
     }
   },
   "functions": {
     "roll": {
-      "description": "�",
-      "category": "�"
+      "description": "Rolt de bal **één stap naar rechts**.",
+      "category": "Beweging"
     }
   },
   "describers": {
-    "roll": "�"
+    "roll": "rolde de bal één stap naar rechts"
   }
 }

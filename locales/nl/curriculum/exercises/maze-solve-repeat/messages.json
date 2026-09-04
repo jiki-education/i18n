@@ -1,43 +1,43 @@
 {
   "checks": {
-    "notReachedEnd": "�",
-    "tooManyLines": "�",
-    "oneLineOver": "�"
+    "notReachedEnd": "Je hebt het einde van het doolhof niet bereikt.",
+    "tooManyLines": "Je oplossing heeft te veel regels code. Zoek naar groepen opeenvolgende move()-aanroepen en vervang elke groep door een repeat-lus.",
+    "oneLineOver": "Je zit maar één regel te hoog! Een repeat-lus is niet altijd korter: iets maar twee of drie keer herhalen kan meer regels kosten dan de aanroepen gewoon uitschrijven, dus zoek naar een repeat die je eigenlijk niets bespaart."
   },
   "tasks": {
     "solveMazeWithRepeat": {
-      "name": "�",
-      "description": "�"
+      "name": "Herschrijf de doolhofoplossing met repeat-lussen",
+      "description": "Vervang opeenvolgende `move()`-aanroepen door repeat-lussen om de code korter te maken."
     }
   },
   "scenarios": {
     "mazeRepeat1": {
-      "name": "�",
-      "description": "�"
+      "name": "Herschrijf de doolhofoplossing met repeat-lussen",
+      "description": "Gebruik repeat-lussen om opeenvolgende `move()`-aanroepen te vermijden."
     }
   },
   "hints": {
     "noIdea": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ik heb geen idee wat ik moet doen",
+      "answer": "Zoek naar groepen opeenvolgende `move()`-aanroepen. Bijvoorbeeld, in plaats van:\n\n```javascript\nmove()\nmove()\nmove()\n```\n\nkun je schrijven:\n\n```javascript\nrepeat(3) {\n  move()\n}\n```\n\nZoek de groepen en vervang ze!"
     },
     "tooManyLines": {
-      "question": "�",
-      "answer": "�"
+      "question": "Gebruik je repeats, maar heb je toch te veel regels?",
+      "answer": "Is het altijd beter om een repeat te gebruiken? In sommige gevallen is het korter om gewoon twee moves naast elkaar te zetten."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Verplaatst het personage **één stap vooruit** in de huidige richting. Het personage beweegt alleen als de doelpositie niet door een muur wordt geblokkeerd.",
+      "category": "Beweging"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Draait het personage **90 graden naar links** (tegen de klok in). Dit verandert de richting waarin het personage kijkt.",
+      "category": "Beweging"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Draait het personage **90 graden naar rechts** (met de klok mee). Dit verandert de richting waarin het personage kijkt.",
+      "category": "Beweging"
     }
   }
 }

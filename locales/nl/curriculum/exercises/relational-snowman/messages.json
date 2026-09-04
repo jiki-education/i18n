@@ -1,48 +1,48 @@
 {
   "checks": {
-    "base": "�",
-    "body": "�",
-    "head": "�",
-    "notResponsive": "�"
+    "base": "De onderste bol staat op de verkeerde plek of heeft de verkeerde grootte. Controleer `baseRadius` en `baseY`.",
+    "body": "Het lijf (de middelste cirkel) staat op de verkeerde plek of heeft de verkeerde grootte. Controleer `bodyRadius` en `bodyY`.",
+    "head": "Het hoofd (de bovenste cirkel) staat op de verkeerde plek of heeft de verkeerde grootte. Controleer `headRadius` en `headY`.",
+    "notResponsive": "Je code schaalt niet goed mee als `size` {{size}} is. Elke straal en y-positie moet worden afgeleid van `size`."
   },
   "tasks": {
     "buildRelationalSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "Bouw de relationele sneeuwpop",
+      "description": "Leid alle groottes en posities af van `size`, zodat de sneeuwpop goed meeschaalt."
     }
   },
   "scenarios": {
     "buildRelationalSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "Bouw de relationele sneeuwpop",
+      "description": "Leid elke straal en y-positie af van `size`."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Waar moet ik beginnen?",
+      "answer": "Begin met de onderste bol, want dat is de enige cirkel die vastzit aan iets wat niet verandert (de onderrand van het tekenvlak). Zodra je `baseY` weet, kun je het lijf erbovenop zetten, en daarna het hoofd bovenop het lijf."
     },
     "baseSits": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hoe bereken ik waar de onderste bol staat?",
+      "answer": "De onderkant van de onderste bol zit op `size` afstand boven de grond (Y=100). Het middelpunt van de onderste bol ligt één straal van de onderste bol hoger dan die onderkant."
     },
     "stackBody": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hoe zet ik het lijf op de onderste bol?",
+      "answer": "Als twee cirkels elkaar raken en de ene precies boven de andere ligt, is de afstand tussen hun middelpunten gelijk aan de som van hun twee stralen."
     },
     "head": {
-      "question": "�",
-      "answer": "�"
+      "question": "En het hoofd?",
+      "answer": "Het hoofd ligt op precies dezelfde manier op het lijf als het lijf op de onderste bol."
     },
     "whyDeriveFromSize": {
-      "question": "�",
-      "answer": "�"
+      "question": "Waarom moet alles worden afgeleid van `size`?",
+      "answer": "Als je een vast getal intypt, ontstaan er gaten of overlappingen tussen de cirkels zodra je `size` verandert. Met formules blijft alles in verhouding."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Teken een cirkel met het middelpunt op (centerX, centerY), met de opgegeven straal en kleur",
+      "category": "Vormen tekenen"
     }
   }
 }

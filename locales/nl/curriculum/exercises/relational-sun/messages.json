@@ -1,38 +1,38 @@
 {
   "checks": {
-    "wrongPosition": "�",
-    "notResponsive": "�"
+    "wrongPosition": "De zon staat op de verkeerde plek of heeft de verkeerde grootte. Controleer je berekeningen voor `sunX` en `sunY`, en zorg dat je `radius` aan `circle` meegeeft.",
+    "notResponsive": "Je code schaalt niet goed mee als `gap` {{gap}} is en `radius` {{radius}}. `sunX` en `sunY` moeten uit `gap` en `radius` worden afgeleid, niet uit vaste getallen."
   },
   "tasks": {
     "positionSun": {
-      "name": "�",
-      "description": "�"
+      "name": "Plaats de zon",
+      "description": "Leid `sunX` en `sunY` af uit `canvasSize`, `gap` en `radius`, zodat de zon goed meeschaalt."
     }
   },
   "scenarios": {
     "positionSun": {
-      "name": "�",
-      "description": "�"
+      "name": "Plaats de zon",
+      "description": "Leid de positie van de zon af uit `gap` en `radius`, zodat hij meeschaalt."
     }
   },
   "hints": {
     "sunXPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hoe moet ik over de x-positie van de zon nadenken?",
+      "answer": "Stel je de rechterrand van het canvas voor. De rand van de zon zit `gap` links van die rand. Het *middelpunt* van de zon zit nog één straal verder naar binnen."
     },
     "sunYPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hoe moet ik over de y-positie van de zon nadenken?",
+      "answer": "Het is hetzelfde idee als bij de x-positie, maar dan gemeten vanaf de bovenrand van het canvas naar beneden, in plaats van vanaf de rechterrand naar binnen."
     },
     "whyNotHardcode": {
-      "question": "�",
-      "answer": "�"
+      "question": "Waarom kan ik de getallen niet gewoon direct opschrijven?",
+      "answer": "Als je `sunX` en `sunY` hardcodet, blijft de zon op één plek staan wanneer `gap` of `radius` verandert. Door ze uit `gap` en `radius` op te bouwen, blijft de zon in de hoek, welke waarden je ook kiest."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Teken een cirkel met het middelpunt op (centerX, centerY), met de opgegeven straal en kleur",
+      "category": "Vormen tekenen"
     }
   }
 }

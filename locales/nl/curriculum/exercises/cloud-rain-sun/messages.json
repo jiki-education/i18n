@@ -1,55 +1,55 @@
 {
   "checks": {
-    "sun": "�",
-    "cloudBody": "�",
-    "leftPuff": "�",
-    "leftCenterPuff": "�",
-    "rightCenterPuff": "�",
-    "rightPuff": "�",
-    "rainDrop": "�"
+    "sun": "De zon klopt niet.",
+    "cloudBody": "Het lichaam van de wolk klopt niet.",
+    "leftPuff": "De linkerbol van de wolk klopt niet.",
+    "leftCenterPuff": "De bol links van het midden van de wolk klopt niet.",
+    "rightCenterPuff": "De bol rechts van het midden van de wolk klopt niet.",
+    "rightPuff": "De rechterbol van de wolk klopt niet.",
+    "rainDrop": "Een van de regendruppels klopt niet."
   },
   "tasks": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "Teken het weertafereel",
+      "description": "Maak een weertafereel met een gele zon, een witte wolk en blauwe regendruppels."
     }
   },
   "scenarios": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "Teken het weertafereel",
+      "description": "Maak het complete weertafereel met zon, wolk en regen."
     }
   },
   "hints": {
     "cloudShape": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hoe bouw ik de pluizige wolkvorm op uit eenvoudige vormen?",
+      "answer": "De wolk bestaat uit één rechthoek (die als onderkant al voor je is getekend) met `circle`s langs de bovenrand, die zorgen voor de bobbelige omtrek."
     },
     "raindropShape": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hoe maak ik een regendruppel met `ellipse`?",
+      "answer": "Regendruppels zijn lang en smal, dus de verticale straal is groter dan de horizontale. De horizontale straal is `3` (het enige getal dat niet deelbaar is door 5)."
     },
     "sunOnTop": {
-      "question": "�",
-      "answer": "�"
+      "question": "Waarom staat mijn zon vóór de wolk?",
+      "answer": "Vormen die later worden getekend, komen vóór eerdere vormen te staan. Teken eerst de zon en daarna de wolk eroverheen, zodat de wolk vóór de zon lijkt te zitten."
     },
     "notMatchingTemplate": {
-      "question": "�",
-      "answer": "�"
+      "question": "Waarom past mijn tekening niet binnen de lijnen van het sjabloon?",
+      "answer": "Je vormen moeten net binnen de hulplijnen vallen, niet erop. Bijna elk getal dat je nodig hebt, is deelbaar door 5. Probeer dus het dichtstbijzijnde veelvoud van 5 als een vorm er net niet goed uitziet."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Teken een rechthoek op positie (left, top) met de opgegeven breedte, hoogte en kleur",
+      "category": "Vormen tekenen"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Teken een cirkel met het middelpunt op (centerX, centerY) en de opgegeven straal en kleur",
+      "category": "Vormen tekenen"
     },
     "ellipse": {
-      "description": "�",
-      "category": "�"
+      "description": "Teken een ellips met het middelpunt op (centerX, centerY), horizontale straal radiusX, verticale straal radiusY en de opgegeven kleur",
+      "category": "Vormen tekenen"
     }
   }
 }

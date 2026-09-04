@@ -1,58 +1,58 @@
 {
   "checks": {
-    "frame": "�",
-    "roof": "�",
-    "leftWindow": "�",
-    "rightWindow": "�",
-    "door": "�",
-    "doorKnob": "�"
+    "frame": "Het frame van het huis klopt niet.",
+    "roof": "Het dak van het huis staat niet op de juiste plek.",
+    "leftWindow": "Het linkerraam staat niet op de juiste plek.",
+    "rightWindow": "Het rechterraam staat niet op de juiste plek.",
+    "door": "De deur staat niet op de juiste plek.",
+    "doorKnob": "De deurknop staat niet op de juiste plek."
   },
   "tasks": {
     "arrangeHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "Zet het huis goed in elkaar",
+      "description": "Zet alle vormen op hun juiste plek zodat ze samen een huis vormen. Werk elk onderdeel stap voor stap af."
     }
   },
   "scenarios": {
     "drawTheHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "Teken het huis",
+      "description": "Zet alle vormen op hun juiste plek zodat ze samen een compleet huis vormen."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Waar begin ik?",
+      "answer": "Werk de vormen één voor één af, in deze volgorde: lucht, gras, frame van het huis, dak, ramen, deur, deurknop. Zorg dat elke vorm klopt voordat je verdergaat."
     },
     "coordinates": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hoe werken coördinaten?",
+      "answer": "De coördinaten van het canvas lopen van (0,0) linksboven tot (100,100) rechtsonder. Bij rechthoeken zijn left en top de linkerbovenhoek."
     },
     "roofPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hoe bepaal ik de positie van het dak?",
+      "answer": "Het dak is een driehoek die bovenop het frame van het huis zit. Bedenk waar de linker- en rechterhoek van de onderkant moeten komen, rekening houdend met hoeveel het dak uitsteekt, en waar de punt zit."
     },
     "windowPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hoe plaats ik de ramen?",
+      "answer": "Elk raam zit op een vaste afstand van de randen van het frame van het huis. Gebruik de positie en afmetingen van het frame samen met die afstanden om de linkerbovenhoek van elk raam te berekenen."
     },
     "centerDoor": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hoe centreer ik de deur?",
+      "answer": "Om iets in het midden van een grotere vorm te zetten, kijk je naar de ruimte die overblijft. Als het huis breder is dan de deur, verdeel je die ruimte gelijk over beide kanten."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Tekent een rechthoek op positie (left, top) met de opgegeven breedte, hoogte en kleur",
+      "category": "Vormen tekenen"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Tekent een cirkel met het middelpunt op (centerX, centerY) en de opgegeven straal en kleur",
+      "category": "Vormen tekenen"
     },
     "triangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Tekent een driehoek met drie hoekpunten en een kleur",
+      "category": "Vormen tekenen"
     }
   }
 }

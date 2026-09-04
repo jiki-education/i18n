@@ -1,39 +1,39 @@
 {
   "checks": {
-    "baseCircle": "�",
-    "bodyCircle": "�",
-    "headCircle": "�"
+    "baseCircle": "De onderste cirkel (de basis) klopt nog niet. Controleer snowmanCenterX, baseCenterY en baseRadius.",
+    "bodyCircle": "De middelste cirkel (het lichaam) klopt nog niet. Controleer snowmanCenterX, bodyCenterY en bodyRadius.",
+    "headCircle": "De bovenste cirkel (het hoofd) klopt nog niet. Controleer snowmanCenterX, headCenterY en headRadius."
   },
   "tasks": {
     "buildSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "Bouw de sneeuwpop",
+      "description": "Geef de variabelen de juiste waarden, zodat de sneeuwpop overeenkomt met de voorbeeldafbeelding."
     }
   },
   "scenarios": {
     "buildSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "Bouw de sneeuwpop",
+      "description": "Geef de variabelen de juiste waarden om de sneeuwpop te tekenen."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ik weet niet waar ik moet beginnen",
+      "answer": "De oorspronkelijke code tekent een witte cirkel aan de linkerkant. Je moet de waarden van snowmanCenterX, baseCenterY en baseRadius verbeteren, zodat de cirkel precies over de onderste ring van de sjabloon valt. Daarna voeg je variabelen toe voor de andere cirkels."
     },
     "variableNotFoundError": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ik krijg een foutmelding zoals “Jiki could not find a variable called 'XXX'”",
+      "answer": "Dit betekent dat je de variabele (de doos op Jiki's planken) nog niet hebt aangemaakt met het sleutelwoord `let`. Wanneer Jiki de code leest die de cirkels tekent, verwacht hij de dozen te vinden waarnaar wordt verwezen, maar ze zijn er niet. Je moet ze dus nog toevoegen."
     },
     "stillNotDeclaredError": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ik heb de variabelen toegevoegd, maar ik krijg nog steeds een “not declared”-foutmelding",
+      "answer": "Controleer je spelling, waarschijnlijk zit er een typfout in. Onthoud dat hoofdletters en kleine letters belangrijk zijn: `bodycentery` is niet hetzelfde als `bodyCenterY`."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Tekent een cirkel met het middelpunt op (centerX, centerY), met de opgegeven straal en kleur",
+      "category": "Vormen tekenen"
     }
   }
 }

@@ -1,49 +1,49 @@
 {
   "describers": {
-    "move": "�"
+    "move": "verplaatste het laserkanon naar rechts"
   },
   "checks": {
-    "notShotAllAliens": "�",
-    "tooManyLines": "�"
+    "notShotAllAliens": "Je hebt niet alle aliens neergeschoten.",
+    "tooManyLines": "Je oplossing heeft te veel regels code. Probeer een repeat-loop te gebruiken om hem korter te maken!"
   },
   "tasks": {
     "repeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "Gebruik een repeat-loop om alle aliens neer te schieten",
+      "description": "Vind het patroon in de posities van de aliens en gebruik een repeat-loop om ze allemaal te vernietigen in maximaal 7 regels code."
     }
   },
   "scenarios": {
     "repeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "Herhalen en schieten",
+      "description": "Gebruik een repeat-loop om alle aliens neer te schieten"
     }
   },
   "hints": {
     "avoidRepeating": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hoe voorkom ik dat ik steeds opnieuw `move()` en `shoot()` moet schrijven?",
+      "answer": "Gebruik een `repeat`-loop. `repeat(n) { ... }` voert hetzelfde blok code `n` keer uit."
     },
     "repeatingPattern": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wat is het herhalende patroon in de posities van de aliens?",
+      "answer": "Je laserkanon begint links van de aliens, en de aliens staan in om de andere kolom, met in elke kolom drie aliens boven elkaar. Het patroon per kolom is dus: `move`, `move`, `shoot`, `shoot`, `shoot`. Je verplaatst je over het lege gat naar de kolom met aliens, en dan schiet je alle drie de rijen neer. Die groep van vijf stappen is wat je wilt herhalen."
     },
     "howManyTimes": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hoe vaak moet ik het patroon herhalen?",
+      "answer": "Tel de groepen aliens over het scherm en gebruik dat aantal als argument voor `repeat`."
     },
     "why7Lines": {
-      "question": "�",
-      "answer": "�"
+      "question": "Waarom vraagt het doel om maar 7 regels?",
+      "answer": "Eén regel voor de `repeat`-kop, de vijf herhalende acties erin, en één regel voor de sluitende accolade maakt samen zeven. Alles wat je nodig hebt past in de lus, en er hoeft niets buiten te staan. Als je meer schrijft, gebruik je de lus waarschijnlijk nog niet."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Verplaatst het laserkanon **één positie naar rechts**. Als je van de rechterrand van het scherm af beweegt, verlies je!",
+      "category": "Beweging"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Vuurt de laser omhoog af. **Schiet alleen als er een alien boven je staat**, anders verlies je het spel!",
+      "category": "Actie"
     }
   }
 }
