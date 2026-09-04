@@ -1,5 +1,5 @@
 ---
-title: "L'opérateur `!` (NON)"
+title: "L'opérateur `!` (pas)"
 description: "Utiliser `!` pour inverser un booléen : vrai devient faux et faux devient vrai, pratique pour basculer une valeur ou inverser une vérification."
 en_md5: 7cffbd1fa13317b3d6e6a71415413041
 ---
