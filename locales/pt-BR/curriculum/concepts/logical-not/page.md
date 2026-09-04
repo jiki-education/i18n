@@ -1,7 +1,7 @@
 ---
 title: "O operador `!` (não)"
 description: "Usar `!` para inverter um Boolean: true passa a false e false passa a true, útil para alternar ou inverter verificações."
-en_md5: 7cffbd1fa13317b3d6e6a71415413041
+en_md5: 5d752c7a85e6e17d914c73c83429de80
 ---
 
 Até agora, quando comparamos coisas para ver se são iguais, usamos três sinais de igual. Às vezes, porém, queremos verificar se as coisas não são iguais e, para isso, usamos um ponto de exclamação seguido de dois sinais de igual. E, em geral, em programação, um ponto de exclamação (_bang_ em inglês), como acho que os nossos amigos americanos chamam, significa não. Imagine que você trabalha numa loja e que a gerência decidiu que ninguém pode entrar com roupa de discoteca.

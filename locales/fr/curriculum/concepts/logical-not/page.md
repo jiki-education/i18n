@@ -1,7 +1,7 @@
 ---
 title: "L'opérateur `!` (pas)"
 description: "Utiliser `!` pour inverser un booléen : vrai devient faux et faux devient vrai, pratique pour basculer une valeur ou inverser une vérification."
-en_md5: 7cffbd1fa13317b3d6e6a71415413041
+en_md5: 5d752c7a85e6e17d914c73c83429de80
 ---
 
 Jusqu'ici, quand on a comparé des choses pour voir si elles étaient égales, on a utilisé trois signes égal. Mais parfois, on veut vérifier que des choses ne sont pas égales, et pour ça, on utilise un point d'exclamation suivi de deux signes égal. Et de manière générale, en programmation, un point d'exclamation (ou _bang_ comme disent, je crois, nos amis américains) signifie « pas ». Alors imagine que tu travailles dans un magasin et que la direction a décidé d'interdire l'entrée aux tenues disco.
@@ -52,6 +52,4 @@ movingRight = !movingRight
 
 Et ça l'inverse. `!movingRight` signifie l'opposé de sa valeur précédente.
 
-Donc si `movingRight` valait vrai, maintenant elle vaut faux. Si elle valait faux, maintenant elle vaut vrai. Jiki prend ce qui se trouve actuellement dans la boîte,
-
-et ce _bang_ lui dit d'en chercher l'opposé. L'opposé de vrai, c'est faux. L'opposé de faux, c'est vrai, et il remet ensuite cette valeur dans la boîte. C'est exactement la même chose que la longue instruction if/else de tout à l'heure, mais c'est simplement beaucoup plus net et plus concis à écrire.
+Donc si `movingRight` valait vrai, maintenant elle vaut faux. Si elle valait faux, maintenant elle vaut vrai. Jiki prend ce qui se trouve actuellement dans la boîte, et ce _bang_ lui dit d'en chercher l'opposé. L'opposé de vrai, c'est faux. L'opposé de faux, c'est vrai, et il remet ensuite cette valeur dans la boîte. C'est exactement la même chose que la longue instruction if/else de tout à l'heure, mais c'est simplement beaucoup plus net et plus concis à écrire.
