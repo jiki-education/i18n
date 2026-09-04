@@ -1,5 +1,5 @@
 ---
-title: "Space Invaders: শর্ত"
+title: "স্পেস ইনভেডার্স: শর্তাধীন"
 description: "নিশানায় এলিয়েন থাকলে তবেই গুলি করুন।"
 en_md5: 4a603e339af722e912ab2ff9b25cc287
 ---

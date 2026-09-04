@@ -1,5 +1,5 @@
 ---
-title: "Space Invaders: Repeat"
+title: "স্পেস ইনভেডার্স: Repeat"
 description: "লুপ ব্যবহার করে দক্ষতার সাথে এলিয়েনদের একটি ঝাঁক ধ্বংস করুন।"
 en_md5: 0fc2ae36efcc9d78d89873aafc7bd036
 ---
