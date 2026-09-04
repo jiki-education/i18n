@@ -1,7 +1,7 @@
 ---
 title: "El operador `!` (negación lógica)"
 description: "Usar `!` para invertir un booleano: true se vuelve false y false se vuelve true, útil para alternar o invertir comprobaciones."
-en_md5: 5d752c7a85e6e17d914c73c83429de80
+en_md5: 7cffbd1fa13317b3d6e6a71415413041
 ---
 
 Hasta ahora, cuando comparábamos cosas para ver si son iguales, usábamos tres signos igual. A veces, sin embargo, queremos verificar si las cosas no son iguales, y para esto usamos un signo de exclamación seguido de dos signos igual. Y en general, en programación, un signo de exclamación o _bang_ en inglés, como creo que le llaman nuestros amigos estadounidenses, significa no. Así que imagina que trabajas en una tienda y la gerencia ha decidido que no se permiten atuendos disco.
