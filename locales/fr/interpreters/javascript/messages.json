@@ -130,9 +130,9 @@
       "UnaryTypeCoercionNotAllowed": "La conversion implicite de types n'est pas autorisée : l'opérateur `{{operator}}` ne peut pas s'appliquer à une valeur de type {{operand}}.",
       "ComparisonRequiresNumber": "L'opérateur `{{operator}}` exige que les deux valeurs soient des nombres.",
       "NodeNotAllowed": "{{nodeType}} n'est pas autorisé à ton niveau d'apprentissage actuel.",
-      "InvalidNumberOfArguments_exact": "Cette fonction a $t(phrases.slotCount, {\"count\": {{expected}} }), mais tu as fourni $t(phrases.inputCount, {\"count\": {{got}} }) à Jiki.",
-      "InvalidNumberOfArguments_atLeast": "Cette fonction a besoin d'au moins $t(phrases.slotCount, {\"count\": {{expected}} }), mais tu as fourni $t(phrases.inputCount, {\"count\": {{got}} }) à Jiki.",
-      "InvalidNumberOfArguments_range": "Cette fonction a entre {{min}} et {{max}} paramètres, mais tu as fourni $t(phrases.inputCount, {\"count\": {{got}} }) à Jiki.",
+      "InvalidNumberOfArguments_exact": "Cette fonction a $t(phrases.slotCount, {\"count\": {{expected}} }), mais $t(phrases.inputCount, {\"count\": {{got}} }) à Jiki.",
+      "InvalidNumberOfArguments_atLeast": "Cette fonction a besoin d'au moins $t(phrases.slotCount, {\"count\": {{expected}} }), mais $t(phrases.inputCount, {\"count\": {{got}} }) à Jiki.",
+      "InvalidNumberOfArguments_range": "Cette fonction a entre {{min}} et {{max}} paramètres, mais $t(phrases.inputCount, {\"count\": {{got}} }) à Jiki.",
       "FunctionNotFound": "Jiki n'a pas trouvé de fonction appelée `{{name}}`.",
       "LogicErrorInExecution": "{{message}}",
       "ForInLoopTargetNotObject": "La boucle for...in a besoin d'un objet à parcourir, mais tu as fourni {{value}}, qui est de type {{type}}.",
@@ -149,9 +149,9 @@
       "DisabledFeatureIncludeListViolation": "La fonctionnalité `{{lexeme}}` n'est pas encore disponible à ton niveau actuel."
     },
     "stdlib": {
-      "StdlibExactArgs": "{{functionName}}() a $t(phrases.slotCount, {\"count\": {{expected}} }), mais tu as fourni $t(phrases.inputCount, {\"count\": {{received}} }) à Jiki.",
-      "StdlibAtLeastArgs": "{{functionName}}() a besoin d'au moins $t(phrases.slotCount, {\"count\": {{minimum}} }), mais tu as fourni $t(phrases.inputCount, {\"count\": {{received}} }) à Jiki.",
-      "StdlibArgRange": "{{functionName}}() a entre {{min}} et {{max}} paramètres, mais tu as fourni $t(phrases.inputCount, {\"count\": {{received}} }) à Jiki.",
+      "StdlibExactArgs": "{{functionName}}() a $t(phrases.slotCount, {\"count\": {{expected}} }), mais $t(phrases.inputCount, {\"count\": {{received}} }) à Jiki.",
+      "StdlibAtLeastArgs": "{{functionName}}() a besoin d'au moins $t(phrases.slotCount, {\"count\": {{minimum}} }), mais $t(phrases.inputCount, {\"count\": {{received}} }) à Jiki.",
+      "StdlibArgRange": "{{functionName}}() a entre {{min}} et {{max}} paramètres, mais $t(phrases.inputCount, {\"count\": {{received}} }) à Jiki.",
       "StdlibArgTypeMismatch": "{{functionName}}() s'attendait à ce que {{argName}} soit de type {{expected}}, mais tu lui as donné une valeur de type {{received}}.",
       "StdlibArgMustBeInteger": "{{functionName}}() s'attendait à ce que {{argName}} soit un nombre entier, mais tu lui as donné {{value}}.",
       "MethodNotYetImplemented": "La méthode `{{method}}` est une méthode valide, mais elle n'est pas encore disponible pour toi.",
@@ -166,12 +166,12 @@
     "slotCount_few": "∅",
     "slotCount_many": "{{count}} paramètres",
     "slotCount_other": "{{count}} paramètres",
-    "inputCount_zero": "0 entrée",
-    "inputCount_one": "1 entrée",
+    "inputCount_zero": "tu n'as fourni aucune entrée",
+    "inputCount_one": "tu n'as fourni qu'une seule entrée",
     "inputCount_two": "∅",
     "inputCount_few": "∅",
-    "inputCount_many": "{{count}} entrées",
-    "inputCount_other": "{{count}} entrées"
+    "inputCount_many": "tu as fourni {{count}} entrées",
+    "inputCount_other": "tu as fourni {{count}} entrées"
   },
   "description": {
     "assignmentExpression": {
