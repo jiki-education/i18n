@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "notShotAlien": "Você não abateu o alienígena.",
+    "notShotAllAliens": "Você não abateu todos os alienígenas."
+  },
+  "tasks": {
+    "shootTheAliens": {
+      "name": "Rastreie e abata todos os alienígenas",
+      "description": "Use getStartingAliensInRow() para obter as posições dos alienígenas e depois se mova pela tela abatendo eles. Rastreie quais alienígenas você já abateu atualizando os arrays."
+    }
+  },
+  "scenarios": {
+    "oneAlien": {
+      "name": "Abata o alienígena",
+      "description": "Um único alienígena na fileira de baixo"
+    },
+    "oneRow": {
+      "name": "Uma fileira esparsa",
+      "description": "Alienígenas espalhados na fileira de baixo"
+    },
+    "twoRows": {
+      "name": "Duas fileiras cheias",
+      "description": "Alienígenas em duas fileiras"
+    },
+    "threeRows": {
+      "name": "Três fileiras",
+      "description": "Alienígenas distribuídos pelas três fileiras"
+    },
+    "fullRows": {
+      "name": "Três fileiras lotadas",
+      "description": "Três fileiras completas de alienígenas"
+    }
+  },
+  "hints": {
+    "knowWhereAliens": {
+      "question": "Como eu sei onde os alienígenas estão se `isAlienAbove()` não existe mais?",
+      "answer": "Chame `getStartingAliensInRow(0)`, `getStartingAliensInRow(1)` e `getStartingAliensInRow(2)` uma vez no início. Cada uma retorna uma lista de 11 booleanos que você pode guardar em variáveis e consultar depois."
+    },
+    "whichAlienAbove": {
+      "question": "Como eu descubro qual alienígena está acima de mim agora?",
+      "answer": "Rastreie sua posição horizontal em uma variável, atualizando ela a cada movimento. Essa posição é o índice nas listas das fileiras, então `row1[position]` diz se há um alienígena acima de você na fileira 1."
+    },
+    "stopDoubleShoot": {
+      "question": "Como eu evito atirar duas vezes no mesmo alienígena?",
+      "answer": "Depois de chamar `shoot()`, defina esse índice da fileira como `false`. Na próxima volta do laço, a mesma posição vai indicar que não há alienígena ali."
+    },
+    "whichRowToShoot": {
+      "question": "De qual fileira eu devo atirar quando há alienígenas empilhados acima de mim?",
+      "answer": "Verifique as fileiras de baixo para cima. Atire no alienígena vivo mais baixo da sua coluna e pare de verificar as outras fileiras nessa iteração."
+    }
+  },
+  "functions": {
+    "moveLeft": {
+      "description": "Move o canhão de laser **uma posição para a esquerda**. Se você tentar sair pela borda esquerda da tela, vai perder o jogo!",
+      "category": "Movimento"
+    },
+    "moveRight": {
+      "description": "Move o canhão de laser **uma posição para a direita**. Se você tentar sair pela borda direita da tela, vai perder o jogo!",
+      "category": "Movimento"
+    },
+    "shoot": {
+      "description": "Dispara o laser para cima. **Só atire quando houver um alienígena acima de você**, ou vai perder o jogo! O canhão de laser superaquece com facilidade, então você precisa se mover antes de atirar de novo.",
+      "category": "Ação"
+    },
+    "getStartingAliensInRow": {
+      "description": "Retorna uma lista de 11 booleanos representando as posições dos alienígenas na fileira indicada no **início** do exercício. A fileira `0` é a de baixo, `1` é a do meio e `2` é a de cima.",
+      "category": "Detecção"
+    }
+  }
+}

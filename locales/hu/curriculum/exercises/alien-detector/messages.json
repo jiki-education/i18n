@@ -1,70 +1,70 @@
 {
   "checks": {
-    "notShotAlien": "�",
-    "notShotAllAliens": "�"
+    "notShotAlien": "Nem lőtted le az űrlényt.",
+    "notShotAllAliens": "Nem lőtted le az összes űrlényt."
   },
   "tasks": {
     "shootTheAliens": {
-      "name": "�",
-      "description": "�"
+      "name": "Kövesd nyomon és lődd le az összes űrlényt",
+      "description": "Használd a `getStartingAliensInRow()` függvényt, hogy megkapd az űrlények pozícióit, majd mozogj végig a képernyőn, és lődd le őket. Kövesd nyomon, hogy melyik űrlényt lőtted már le a tömbök frissítésével."
     }
   },
   "scenarios": {
     "oneAlien": {
-      "name": "�",
-      "description": "�"
+      "name": "Lődd le az űrlényt",
+      "description": "Egyetlen űrlény az alsó sorban"
     },
     "oneRow": {
-      "name": "�",
-      "description": "�"
+      "name": "Egy ritkás sor",
+      "description": "Ritkás űrlények az alsó sorban"
     },
     "twoRows": {
-      "name": "�",
-      "description": "�"
+      "name": "Két zsúfolt sor",
+      "description": "Űrlények két sorban"
     },
     "threeRows": {
-      "name": "�",
-      "description": "�"
+      "name": "Három sor",
+      "description": "Űrlények elosztva mindhárom sorban"
     },
     "fullRows": {
-      "name": "�",
-      "description": "�"
+      "name": "Három teli sor",
+      "description": "Három teli sor űrlény"
     }
   },
   "hints": {
     "knowWhereAliens": {
-      "question": "�",
-      "answer": "�"
+      "question": "Honnan tudom, hol vannak az űrlények, ha nincs meg az `isAlienAbove()`?",
+      "answer": "Hívd meg egyszer az elején a `getStartingAliensInRow(0)`, a `getStartingAliensInRow(1)` és a `getStartingAliensInRow(2)` függvényt. Mindegyik 11 logikai értékből álló listát ad vissza, amelyet változókban tárolhatsz, és később kiolvashatsz."
     },
     "whichAlienAbove": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hogyan tudom kitalálni, melyik űrlény van éppen fölöttem?",
+      "answer": "Kövesd nyomon a vízszintes pozíciódat egy változóban, és frissítsd minden mozgásnál. Ez a pozíció az index a sorlistákban, így a `row1[position]` megmondja, van-e fölötted űrlény az 1. sorban."
     },
     "stopDoubleShoot": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hogyan akadályozom meg, hogy kétszer lőjem le ugyanazt az űrlényt?",
+      "answer": "Miután meghívtad a `shoot()` függvényt, állítsd a sorban azt az indexet `false` értékre. A ciklus következő körében ugyanaz a pozíció már nem jelez űrlényt."
     },
     "whichRowToShoot": {
-      "question": "�",
-      "answer": "�"
+      "question": "Melyik sorból lőjek, ha egymás fölött űrlények vannak?",
+      "answer": "Ellenőrizd a sorokat alulról felfelé. Lődd le az oszlopodban a legalsó élő űrlényt, és abban az iterációban ne ellenőrizz további sorokat."
     }
   },
   "functions": {
     "moveLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "A lézerágyút **egy pozícióval balra** mozgatja. Ha megpróbálsz lemenni a képernyő bal széléről, elveszíted a játékot!",
+      "category": "Mozgás"
     },
     "moveRight": {
-      "description": "�",
-      "category": "�"
+      "description": "A lézerágyút **egy pozícióval jobbra** mozgatja. Ha megpróbálsz lemenni a képernyő jobb széléről, elveszíted a játékot!",
+      "category": "Mozgás"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Felfelé lő a lézerrel. **Csak akkor lőj, ha űrlény van fölötted**, különben elveszíted a játékot! A lézerágyú könnyen túlmelegszik, ezért mozognod kell, mielőtt újra lőnél.",
+      "category": "Művelet"
     },
     "getStartingAliensInRow": {
-      "description": "�",
-      "category": "�"
+      "description": "Visszaad egy 11 logikai értékből álló listát, amely az adott sorban lévő űrlények pozícióit reprezentálja a feladat **elején**. A `0` sor az alsó, az `1` a középső, a `2` pedig a felső sor.",
+      "category": "Érzékelés"
     }
   }
 }
