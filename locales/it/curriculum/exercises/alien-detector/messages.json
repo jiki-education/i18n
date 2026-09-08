@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "notShotAlien": "Non hai abbattuto l'alieno.",
+    "notShotAllAliens": "Non hai abbattuto tutti gli alieni."
+  },
+  "tasks": {
+    "shootTheAliens": {
+      "name": "Tieni traccia di tutti gli alieni e abbattili",
+      "description": "Usa getStartingAliensInRow() per ottenere le posizioni degli alieni, poi spostati lungo lo schermo e abbattili. Tieni traccia degli alieni che hai già abbattuto aggiornando gli array."
+    }
+  },
+  "scenarios": {
+    "oneAlien": {
+      "name": "Abbatti l'alieno",
+      "description": "Un singolo alieno nella riga inferiore"
+    },
+    "oneRow": {
+      "name": "Una riga sparsa",
+      "description": "Alieni sparsi nella riga inferiore"
+    },
+    "twoRows": {
+      "name": "Due righe affollate",
+      "description": "Alieni distribuiti su due righe"
+    },
+    "threeRows": {
+      "name": "Tre righe",
+      "description": "Alieni distribuiti su tutte e tre le righe"
+    },
+    "fullRows": {
+      "name": "Tre righe piene",
+      "description": "Tre righe piene di alieni"
+    }
+  },
+  "hints": {
+    "knowWhereAliens": {
+      "question": "Come faccio a sapere dove sono gli alieni se `isAlienAbove()` non c'è più?",
+      "answer": "Chiama `getStartingAliensInRow(0)`, `getStartingAliensInRow(1)` e `getStartingAliensInRow(2)` una volta all'inizio. Ognuna restituisce un array di 11 booleani che puoi salvare in variabili e leggere in seguito."
+    },
+    "whichAlienAbove": {
+      "question": "Come faccio a capire quale alieno è sopra di me in questo momento?",
+      "answer": "Tieni traccia della tua posizione orizzontale in una variabile, aggiornandola ogni volta che ti muovi. Quella posizione è l'indice negli array delle righe, quindi `row1[position]` ti dice se c'è un alieno sopra di te nella riga 1."
+    },
+    "stopDoubleShoot": {
+      "question": "Come faccio a evitare di sparare due volte allo stesso alieno?",
+      "answer": "Dopo aver chiamato `shoot()`, imposta quell'indice nella riga a `false`. La prossima volta nel ciclo la stessa posizione segnalerà che non c'è nessun alieno."
+    },
+    "whichRowToShoot": {
+      "question": "Da quale riga devo sparare quando ci sono alieni impilati sopra di me?",
+      "answer": "Controlla le righe dal basso verso l'alto. Spara all'alieno vivo più in basso nella tua colonna e smetti di controllare le altre righe in quella iterazione."
+    }
+  },
+  "functions": {
+    "moveLeft": {
+      "description": "Muove il laser **di una posizione verso sinistra**. Se provi a uscire dal bordo sinistro dello schermo, perdi la partita!",
+      "category": "Movimento"
+    },
+    "moveRight": {
+      "description": "Muove il laser **di una posizione verso destra**. Se provi a uscire dal bordo destro dello schermo, perdi la partita!",
+      "category": "Movimento"
+    },
+    "shoot": {
+      "description": "Spara il laser verso l'alto. **Spara solo quando c'è un alieno sopra di te**, altrimenti perdi la partita! Il laser si surriscalda facilmente, quindi devi muoverti prima di sparare di nuovo.",
+      "category": "Azione"
+    },
+    "getStartingAliensInRow": {
+      "description": "Restituisce un array di 11 booleani che rappresentano le posizioni degli alieni nella riga indicata all'**inizio** dell'esercizio. La riga `0` è la riga inferiore, `1` è quella centrale e `2` è quella superiore.",
+      "category": "Rilevamento"
+    }
+  }
+}

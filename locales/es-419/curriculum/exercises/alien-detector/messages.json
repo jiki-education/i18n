@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "notShotAlien": "No derribaste al alien.",
+    "notShotAllAliens": "No derribaste a todos los aliens."
+  },
+  "tasks": {
+    "shootTheAliens": {
+      "name": "Rastrea y derriba a todos los aliens",
+      "description": "Usa getStartingAliensInRow() para obtener las posiciones de los aliens, luego muévete por la pantalla derribándolos. Rastrea qué aliens ya derribaste actualizando los arreglos."
+    }
+  },
+  "scenarios": {
+    "oneAlien": {
+      "name": "Derriba al alien",
+      "description": "Un solo alien en la fila inferior"
+    },
+    "oneRow": {
+      "name": "Una fila dispersa",
+      "description": "Aliens dispersos en la fila inferior"
+    },
+    "twoRows": {
+      "name": "Dos filas ocupadas",
+      "description": "Aliens en dos filas"
+    },
+    "threeRows": {
+      "name": "Tres filas",
+      "description": "Aliens distribuidos en las tres filas"
+    },
+    "fullRows": {
+      "name": "Tres filas llenas",
+      "description": "Tres filas llenas de aliens"
+    }
+  },
+  "hints": {
+    "knowWhereAliens": {
+      "question": "¿Cómo sé dónde están los aliens si `isAlienAbove()` ya no está?",
+      "answer": "Llama a `getStartingAliensInRow(0)`, `getStartingAliensInRow(1)` y `getStartingAliensInRow(2)` una vez al comienzo. Cada llamada devuelve un arreglo de 11 booleanos que puedes guardar en variables y leer más adelante."
+    },
+    "whichAlienAbove": {
+      "question": "¿Cómo averiguo cuál alien está encima de mí ahora mismo?",
+      "answer": "Rastrea tu posición horizontal en una variable, actualizándola cada vez que te muevas. Esa posición es el índice en los arreglos de las filas, así que `row1[position]` te dice si hay un alien encima de ti en la fila 1."
+    },
+    "stopDoubleShoot": {
+      "question": "¿Cómo evito derribar al mismo alien dos veces?",
+      "answer": "Después de llamar a `shoot()`, establece ese índice de la fila en `false`. La próxima vez que pases por el bucle, esa misma posición indicará que no hay ningún alien allí."
+    },
+    "whichRowToShoot": {
+      "question": "¿Desde qué fila debo disparar cuando hay aliens apilados encima de mí?",
+      "answer": "Revisa las filas de abajo hacia arriba. Derriba al alien vivo más bajo de tu columna y deja de revisar más filas en esa iteración."
+    }
+  },
+  "functions": {
+    "moveLeft": {
+      "description": "Mueve el cañón láser **una posición hacia la izquierda**. ¡Si intentas salirte por el borde izquierdo de la pantalla, pierdes el juego!",
+      "category": "Movimiento"
+    },
+    "moveRight": {
+      "description": "Mueve el cañón láser **una posición hacia la derecha**. ¡Si intentas salirte por el borde derecho de la pantalla, pierdes el juego!",
+      "category": "Movimiento"
+    },
+    "shoot": {
+      "description": "Dispara el láser hacia arriba. **Solo dispara cuando haya un alien encima de ti**, ¡o pierdes el juego! El cañón láser se sobrecalienta fácilmente, así que debes moverte antes de volver a disparar.",
+      "category": "Acción"
+    },
+    "getStartingAliensInRow": {
+      "description": "Devuelve un arreglo de 11 booleanos que representan las posiciones de los aliens en la fila dada al **inicio** del ejercicio. La fila `0` es la fila inferior, la `1` es la del medio y la `2` es la superior.",
+      "category": "Detección"
+    }
+  }
+}
