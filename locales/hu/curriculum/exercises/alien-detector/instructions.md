@@ -1,28 +1,28 @@
 ---
-title: "Űrlényérzékelő"
-description: "Mozgasd a lézeredet balról jobbra, és lődd le az űrlényeket."
+title: "Űrlény-detektor"
+description: "Mozgasd a lézeredet jobbra-balra, és lődd le az űrlényeket."
 en_md5: c38eb1c7876bdff1fc61e9fa0c455e48
 ---
 
-In the previous Space Invaders exercise you moved your laser from side to side to shoot down all the aliens. A big part of what made that possible was the <define>`isAlienAbove()`</define> function. In this exercise, we've removed it, but you still need to shoot down all the aliens!
+Az előző Space Invaders feladatban a lézeredet jobbra-balra mozgattad, hogy lelődd az összes űrlényt. Ezt nagyrészt az `isAlienAbove()` (van-e fölötted űrlény) függvény tette lehetővé. Ebben a feladatban kivettük, de az összes űrlényt így is le kell lőnöd!
 
-We've given you a blank canvas to start from. Feel free to reuse your code from the <a href="/lesson/scroll-and-shoot" target="_blank" rel="noopener noreferrer">previous Space Invaders exercise</a> as a starting point.
+Kiindulásként egy üres vásznat kaptál. Nyugodtan indulj ki az <a href="/lesson/scroll-and-shoot" target="_blank" rel="noopener noreferrer">előző Space Invaders feladatban</a> írt kódodból.
 
-This exercise is designed to be a challenge! Take it slowly.
+Ez a feladat kihívásnak készült! Haladj lassan.
 
-### Your Task
+### A feladatod
 
-Shoot down all the aliens. Rather than being able to ask the exercise if there's an alien above you, you need to track which aliens you've shot down, and which are still there.
+Lődd le az összes űrlényt. Ahelyett, hogy megkérdezhetnéd a feladattól, van-e fölötted űrlény, neked kell nyilvántartanod a már lelőtt és a még meglévő űrlényeket.
 
-### Meet <define>`getStartingAliensInRow(idx)`</define>
+### Ismerd meg a `getStartingAliensInRow(idx)` (lekéri a kezdő űrlényeket a megadott sorból) függvényt
 
-You have a new function called `getStartingAliensInRow(idx)`. It takes one input: the index of the row, starting from the bottom. There are a maximum of three rows, so the input value can be `0`, `1`, or `2`.
+Van egy új függvényed, a `getStartingAliensInRow(idx)`. Egy bemenete van: a sor indexe, alulról számolva. Legfeljebb három sor van, ezért a bemeneti érték `0`, `1` vagy `2` lehet.
 
-The function returns a list of 11 booleans. Each boolean specifies whether there is an alien in that position at the **start** of the exercise. So `[true, false, false, ...]` would mean that, before you do anything, there is an alien in the first position, but not in the next two (etc).
+A függvény egy 11 Boolean-értékből álló listát ad vissza. Minden Boolean-érték azt jelzi, hogy az adott helyen van-e űrlény a feladat **kezdetén**. A `[true, false, false, ...]` tehát azt jelenti, hogy mielőtt bármit tennél, az első helyen van egy űrlény, a következő kettőn viszont nincs (és így tovább).
 
-This function only returns the **initial** positions of the aliens. It does **not** update as you shoot them down!
+Ez a függvény csak az űrlények **kezdeti** pozícióit adja vissza. Nem frissül, miközben lelövöd őket!
 
-### Notes
+### Megjegyzések
 
-- Every time you move left or right, you move one position forward or backwards. That position equates to the places the aliens can be.
-- The aliens do not respawn in this exercise.
+- Amikor balra vagy jobbra mozdulsz, egy pozíciót lépsz előre vagy hátra. Ez a pozíció azoknak a helyeknek felel meg, ahol az űrlények lehetnek.
+- Az űrlények ebben a feladatban nem jelennek meg újra.

@@ -1,28 +1,28 @@
 ---
 title: "Rilevatore di alieni"
-description: "Muovi il laser da sinistra a destra e spara agli alieni."
+description: "Muovi il laser da sinistra a destra e abbatti gli alieni."
 en_md5: c38eb1c7876bdff1fc61e9fa0c455e48
 ---
 
-In the previous Space Invaders exercise you moved your laser from side to side to shoot down all the aliens. A big part of what made that possible was the <define>`isAlienAbove()`</define> function. In this exercise, we've removed it, but you still need to shoot down all the aliens!
+Nell'esercizio precedente Space Invaders hai mosso il laser da un lato all'altro per abbattere tutti gli alieni. Una parte importante di ciò che lo ha reso possibile è stata la funzione `isAlienAbove()` (controlla se c'è un alieno sopra di te). In questo esercizio l'abbiamo rimossa, ma devi comunque abbattere tutti gli alieni!
 
-We've given you a blank canvas to start from. Feel free to reuse your code from the <a href="/lesson/scroll-and-shoot" target="_blank" rel="noopener noreferrer">previous Space Invaders exercise</a> as a starting point.
+Ti abbiamo dato un'area di disegno vuota da cui partire. Puoi riutilizzare il codice del <a href="/lesson/scroll-and-shoot" target="_blank" rel="noopener noreferrer">precedente esercizio Space Invaders</a> come punto di partenza.
 
-This exercise is designed to be a challenge! Take it slowly.
+Questo esercizio è pensato come una sfida! Vacci piano.
 
-### Your Task
+### Il tuo compito
 
-Shoot down all the aliens. Rather than being able to ask the exercise if there's an alien above you, you need to track which aliens you've shot down, and which are still there.
+Abbatti tutti gli alieni. Invece di poter chiedere all'esercizio se c'è un alieno sopra di te, devi tenere traccia di quali alieni hai abbattuto e quali sono ancora lì.
 
-### Meet <define>`getStartingAliensInRow(idx)`</define>
+### Ecco `getStartingAliensInRow(idx)` (ottieni gli alieni iniziali nella riga)
 
-You have a new function called `getStartingAliensInRow(idx)`. It takes one input: the index of the row, starting from the bottom. There are a maximum of three rows, so the input value can be `0`, `1`, or `2`.
+Hai una nuova funzione chiamata `getStartingAliensInRow(idx)`. Accetta un solo input: l'indice della riga, partendo dal basso. Le righe sono al massimo tre, quindi il valore di input può essere `0`, `1` o `2`.
 
-The function returns a list of 11 booleans. Each boolean specifies whether there is an alien in that position at the **start** of the exercise. So `[true, false, false, ...]` would mean that, before you do anything, there is an alien in the first position, but not in the next two (etc).
+La funzione restituisce un array di 11 booleani. Ogni booleano specifica se c'è un alieno in quella posizione all'**inizio** dell'esercizio. Quindi `[true, false, false, ...]` significherebbe che, prima di fare qualsiasi cosa, c'è un alieno nella prima posizione, ma non nelle due successive (e così via).
 
-This function only returns the **initial** positions of the aliens. It does **not** update as you shoot them down!
+Questa funzione restituisce solo le posizioni **iniziali** degli alieni. Non si aggiorna man mano che li abbatti!
 
-### Notes
+### Note
 
-- Every time you move left or right, you move one position forward or backwards. That position equates to the places the aliens can be.
-- The aliens do not respawn in this exercise.
+- Ogni volta che ti muovi a sinistra o a destra, avanzi o arretri di una posizione. Quella posizione corrisponde ai posti in cui possono trovarsi gli alieni.
+- Gli alieni non ricompaiono in questo esercizio.
