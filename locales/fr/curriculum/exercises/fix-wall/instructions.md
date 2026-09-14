@@ -1,6 +1,6 @@
 ---
 title: "Répare le mur"
-description: "Comble les trous d'un mur abîmé avec des rectangles."
+description: "Comble les trous d'un mur abîmé à l'aide de rectangles."
 en_md5: d3801d3e7afec83435698bb052cf876e
 ---
 
