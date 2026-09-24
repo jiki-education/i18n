@@ -638,8 +638,8 @@ every key already answered at `emit()`.
   drives the deepseek and gemini path and its `/translate-via-fable` command drives the fable path,
   both over a shared `translator/scripts/lib/pass.js`. It lives there because **engine selection is
   governance, not plumbing**: which model may translate a language is driven by that repo's
-  `languages/<lang>/tracking.json` `translation_engine` block, which records a native speaker's
-  confirmed choice, and its absence means no model is confirmed for that language. An engine here
+  `languages/<lang>/tracking.json` `translation_engine` block, which records the engine and model
+  chosen for that language (DeepSeek Flash for every language since 2026-09-24). An engine here
   would have no sight of that, and any default it picked would quietly overrule it.
 - **A pass reads `translator`'s guidance from a checkout of `translator`** and never copies it here:
   `global/rules.md`, `global/voice.md`, `global/translating.md`, `content-types/<type>.md`,

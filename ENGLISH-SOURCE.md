@@ -75,10 +75,10 @@ it is inert history.
 
 ## Where work comes from
 
-Translation is not run in CI. Engines are chosen per language in the `translator`
-repo, and the default is a `fable` subagent fan-out, meaning Claude Code on a
-laptop. Only some engines are script-backed, so a CI workflow could only ever
-have done a minority of the work.
+Translation is not run in CI. Engines are recorded per language in the
+`translator` repo (DeepSeek Flash for every language since 2026-09-24), and every
+pass is driven from Claude Code on a laptop, which also runs the opus workers that
+write video subtitles and project episodes.
 
 So the integration is one API call. **A front-end PR marked ready for review
 opens an issue in this repo**, carrying the front-end SHA, a link to the PR, and
