@@ -1,0 +1,125 @@
+{
+  "checks": {
+    "repeatedGuess": "같은 단어를 두 번 이상 추측했어요. 각 추측은 이전 추측에서 알아낸 정보를 활용해야 하고, 정답을 맞히면 곧바로 멈춰야 해요.",
+    "guessNotCommonWord": "{{row}}번째 추측은 \"{{word}}\"인데, `commonWords()`에 있는 단어가 아니에요.",
+    "guessUsesAbsent": "{{row}}번째 추측은 \"{{word}}\"인데, 이전 추측에서 \"{{letter}}\"가 단어에 없다는 걸 이미 알아냈어요.",
+    "guessIgnoresCorrect": "{{row}}번째 추측은 \"{{word}}\"인데, 이전 추측에서 {{square}}번째 자리가 \"{{letter}}\"라는 걸 이미 알아냈어요.",
+    "guessMissesPresent": "{{row}}번째 추측은 \"{{word}}\"인데, 이전 추측에서 \"{{letter}}\"가 단어 어딘가에 있다는 걸 이미 알아냈고, \"{{word}}\"에는 그 글자가 없어요.",
+    "guessRepeatsPresentSquare": "{{row}}번째 추측은 \"{{word}}\"인데, 이전 추측에서 \"{{letter}}\"가 단어에는 있지만 {{square}}번째 자리에는 없다는 걸 이미 알아냈어요.",
+    "guessNotFirstFitting": "{{row}}번째 추측은 \"{{word}}\"였는데, \"{{expected}}\"를 기대했어요.",
+    "guessAfterSolved": "이전 추측에서 이미 정답을 맞혔는데 코드가 {{row}}번째 추측을 했어요. 모든 글자가 \"correct\"로 나오면 바로 멈춰야 해요.",
+    "stoppedBeforeSolved": "정답을 맞히지 못한 채 {{guesses}}번 추측한 뒤 코드가 멈췄어요."
+  },
+  "tasks": {
+    "firstWord": {
+      "name": "정답 단어 표시하기",
+      "description": "첫 번째 시나리오는 `commonWords()`에서 첫 번째 단어를 고르기만 하면 돼요. 그 단어는 `which`예요. 이 시나리오를 통과하려면 그 단어를 추측하고 멈춰야 해요. 더 복잡한 상황으로 넘어가기 전에 코드가 제대로 연결됐는지 확인할 수 있어요."
+    },
+    "handleWrong": {
+      "name": "완전히 틀린 경우 처리하기",
+      "description": "첫 부분을 잘 연결하셨어요! 두 번째 시나리오에서는 추측을 두 번 사용해야 해요. 첫 번째 추측은 다시 배열의 첫 번째 단어예요(항상 그래요!). 그 단어는 완전히 틀리기 때문에, 그다음에는 배열의 다음 단어로 넘어가야 하고, 그 단어가 정답이에요!"
+    },
+    "handlePartial": {
+      "name": "일부만 맞는 경우 처리하기",
+      "description": "좋아요, 이제 흐름을 탔어요. 여기서부터가 더 재미있어요. 다음 몇 시나리오에서는 `correct`와 `absent` 글자가 섞여서 나와요. 지금까지 알아낸 `correct`와 `absent` 글자를 바탕으로 배열에서 다음으로 가장 알맞은 단어를 골라요."
+    },
+    "handlePresent": {
+      "name": "present 글자 처리하기",
+      "description": "훌륭해요! 이제 마지막으로 까다로운 부분이에요. `present` 글자까지 반영해야 해요. 행운을 빌어요, 잘 해낼 수 있어요!"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "모두 정답",
+      "description": "첫 추측이 바로 정답인 경우를 처리해요."
+    },
+    "entirelyWrong": {
+      "name": "하나는 틀리고 하나는 정답",
+      "description": "추측이 틀린 경우를 처리해요."
+    },
+    "twoNeeded": {
+      "name": "추측 두 번 필요",
+      "description": "추측이 틀린 경우를 처리해요."
+    },
+    "threeNeeded": {
+      "name": "추측 세 번 필요",
+      "description": "추측이 틀린 경우를 처리해요."
+    },
+    "fourNeeded": {
+      "name": "추측 네 번 필요",
+      "description": "추측이 틀린 경우를 처리해요."
+    },
+    "present1": {
+      "name": "일부 글자가 present인 경우",
+      "description": "일부 글자가 present인 까다로운 문제예요."
+    },
+    "present2": {
+      "name": "점점 좁혀져요",
+      "description": "더 어려운 단어를 처리해요."
+    },
+    "present3": {
+      "name": "조금 더 평범한 흐름",
+      "description": "이제 진짜 Wordle 같은 느낌이에요."
+    },
+    "present4": {
+      "name": "이번에도 아슬아슬해요",
+      "description": "마지막에 서로 갈리는 게 재미있어요!"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "도대체 어디서부터 시작해야 할까요?",
+      "answer": "`commonWords()`의 첫 번째 단어를 추측하는 것부터 시작해요. 똑똑하게 만들 걱정은 잠시 미뤄 두고, 단어를 추측하고 결과를 확인하는 루프가 먼저 제대로 돌아가게 만들어 봐요."
+    },
+    "readStates": {
+      "question": "추측 결과는 어떻게 알 수 있을까요?",
+      "answer": "`guess(word)`는 글자마다 상태가 하나씩 담긴 배열을 돌려줘요. `\"correct\"`, `\"present\"`, `\"absent\"` 중 하나예요. 추측에서 얻을 수 있는 정보는 그 배열뿐이니, 알고 있는 모든 것은 그 배열에서 나와야 해요."
+    },
+    "rememberLearned": {
+      "question": "추측을 거듭하면서 알아낸 걸 어떻게 기억해 둘까요?",
+      "answer": "루프 밖에 알아낸 정보를 담아 둘 구조를 만들어요. 단어에 없다고 밝혀진 글자, 단어 어딘가에 있다고 밝혀진 글자, 그리고 자리마다 그 자리에는 없다고 확인된 글자를 각각 담아 두면 돼요."
+    },
+    "pickNextGuess": {
+      "question": "다음 추측은 어떻게 고를까요?",
+      "answer": "`commonWords()`를 걸러요. correct 글자가 모두 알맞은 자리에 있고, present 글자가 모두 들어 있으면서(이미 아니라고 확인한 자리는 빼고), absent 글자는 하나도 들어 있지 않은 단어만 남겨요. 그중 첫 번째 단어를 골라요."
+    },
+    "whenToStop": {
+      "question": "언제 멈춰야 할까요?",
+      "answer": "모든 상태가 `\"correct\"`로 나오면 바로 멈춰요. 아니면 추측을 `6`번 한 뒤에 멈춰요. 그러지 않으면 칠판의 마지막 줄을 넘어서까지 계속 추측하게 돼요."
+    }
+  },
+  "functions": {
+    "guess": {
+      "description": "단어를 추측해요. 칠판의 다음 줄에 단어를 쓰고 색을 칠한 다음, 글자마다 상태가 담긴 배열을 반환해요.",
+      "category": "Wordle"
+    },
+    "commonWords": {
+      "description": "추측에 쓸 수 있는 자주 쓰는 다섯 글자 단어 100개가 넘게 담긴 배열을 반환해요.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "배열의 끝에 원소를 하나 추가하고, 배열 자체를 바꿔요.",
+      "category": "배열"
+    },
+    "arrayIncludes": {
+      "description": "배열에 특정 원소가 들어 있는지 확인해요.",
+      "category": "배열"
+    },
+    "stringIncludes": {
+      "description": "문자열에 특정 부분 문자열이 들어 있는지 확인해요.",
+      "category": "문자열"
+    },
+    "arrayLength": {
+      "description": "배열에 들어 있는 원소의 개수예요.",
+      "category": "배열"
+    },
+    "stringLength": {
+      "description": "문자열에 들어 있는 글자 수예요.",
+      "category": "문자열"
+    }
+  },
+  "describers": {
+    "guess": "단어를 추측했어요",
+    "commonWords": "자주 쓰는 단어 배열을 가져왔어요"
+  }
+}

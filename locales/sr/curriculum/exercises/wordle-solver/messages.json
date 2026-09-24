@@ -1,0 +1,125 @@
+{
+  "checks": {
+    "repeatedGuess": "Tvoj kod je pogodio istu reč više od jednom. Svaki pokušaj treba da iskoristi ono što znaš iz prethodnih, a treba i da prestaneš čim pobediš.",
+    "guessNotCommonWord": "Pokušaj {{row}} je bio „{{word}}“, a to nije jedna od reči iz `commonWords()`.",
+    "guessUsesAbsent": "Pokušaj {{row}} je bio „{{word}}“, ali je neki raniji pokušaj već pokazao da slovo „{{letter}}“ nije u reči.",
+    "guessIgnoresCorrect": "Pokušaj {{row}} je bio „{{word}}“, ali je neki raniji pokušaj već pokazao da je na polju {{square}} slovo „{{letter}}“.",
+    "guessMissesPresent": "Pokušaj {{row}} je bio „{{word}}“, ali je neki raniji pokušaj već pokazao da se slovo „{{letter}}“ nalazi negde u reči, a „{{word}}“ ga ne sadrži.",
+    "guessRepeatsPresentSquare": "Pokušaj {{row}} je bio „{{word}}“, ali je neki raniji pokušaj već pokazao da je slovo „{{letter}}“ u reči, ali ne na polju {{square}}.",
+    "guessNotFirstFitting": "Pokušaj {{row}} je bio „{{word}}“, ali očekujemo da to bude „{{expected}}“.",
+    "guessAfterSolved": "Tvoj kod je napravio pokušaj {{row}} nakon što je prethodni pokušaj već rešio reč. Prestani čim svako slovo bude tačno.",
+    "stoppedBeforeSolved": "Tvoj kod se zaustavio posle {{guesses}} pokušaja, a da nije rešio reč."
+  },
+  "tasks": {
+    "firstWord": {
+      "name": "Prikaži tačnu reč",
+      "description": "Prvi scenario od tebe samo očekuje da izabereš prvu reč iz `commonWords()`. Ta reč je `which`. Da prođeš ovaj scenario, treba da pogodiš tu reč i da prestaneš. Tako možeš da proveriš da li ti je sve lepo povezano pre nego što pređeš na složenije situacije."
+    },
+    "handleWrong": {
+      "name": "Obradi potpuno pogrešan pokušaj",
+      "description": "Svaka čast, prvi deo ti sada radi kako treba! U ovom drugom scenariju očekuje se da iskoristiš dva pokušaja. Prvi će opet biti prva reč iz niza (to je uvek tako!). Ona će biti potpuno pogrešna, pa onda treba da pređeš na sledeću reč u nizu, koja će biti tačna!"
+    },
+    "handlePartial": {
+      "name": "Obradi delimično tačan pokušaj",
+      "description": "Dobro, sad već imamo zalet. Ovde postaje zanimljivije. Sledeći scenariji vraćaju kombinaciju slova sa stanjem `correct` i `absent`. Izaberi sledeću najbolju reč iz niza na osnovu onoga što do sada znaš o slovima `correct` i `absent`."
+    },
+    "handlePresent": {
+      "name": "Obradi prisutna slova",
+      "description": "Fantastično! Sada sledi poslednji zeznuti deo. Treba da uključiš i slova sa stanjem `present`. Srećno, ti to možeš!"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "Sve tačno",
+      "description": "Snađi se sa prvim tačnim pokušajem."
+    },
+    "entirelyWrong": {
+      "name": "Jedan pogrešan, jedan tačan",
+      "description": "Snađi se sa pogrešnim pokušajem."
+    },
+    "twoNeeded": {
+      "name": "Potrebna dva pokušaja",
+      "description": "Snađi se sa pogrešnim pokušajem."
+    },
+    "threeNeeded": {
+      "name": "Potrebna tri pokušaja",
+      "description": "Snađi se sa pogrešnim pokušajem."
+    },
+    "fourNeeded": {
+      "name": "Potrebna četiri pokušaja",
+      "description": "Snađi se sa pogrešnim pokušajem."
+    },
+    "present1": {
+      "name": "Neka slova su prisutna",
+      "description": "Teška reč sa nekoliko prisutnih slova."
+    },
+    "present2": {
+      "name": "Sve uže",
+      "description": "Snađi se sa težom reči."
+    },
+    "present3": {
+      "name": "Običnije putovanje",
+      "description": "Sada ovo već liči na Wordle."
+    },
+    "present4": {
+      "name": "Još jedna neizvesna partija",
+      "description": "Zabavno je kako se na kraju razilaze!"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Odakle uopšte da počnem?",
+      "answer": "Počni tako što ćeš pogoditi prvu reč iz `commonWords()`. Neka prvo proradi petlja koja pogađa reč i proverava rezultat, pre nego što počneš da razmišljaš o pametnijim stvarima."
+    },
+    "readStates": {
+      "question": "Kako da znam kako je moj pokušaj prošao?",
+      "answer": "`guess(word)` ti vraća niz sa po jednim stanjem za svako slovo: `\"correct\"`, `\"present\"` ili `\"absent\"`. Taj niz je jedino što saznaš iz jednog pokušaja, pa sve što znaš mora da dođe odatle."
+    },
+    "rememberLearned": {
+      "question": "Kako da pamtim ono što saznam iz prethodnih pokušaja?",
+      "answer": "Napravi strukturu znanja izvan petlje: slova za koja se zna da nisu u reči, slova za koja se zna da su negde u reči, i za svaku poziciju slova za koja znaš da NISU na njoj."
+    },
+    "pickNextGuess": {
+      "question": "Kako da izaberem sledeći pokušaj?",
+      "answer": "Filtriraj `commonWords()`: zadrži samo reči koje imaju sva tačna slova na pravim mestima, sadrže svako prisutno slovo (ali ne na pozicijama koje su isključene) i ne sadrže nijedno odsutno slovo. Izaberi prvo poklapanje."
+    },
+    "whenToStop": {
+      "question": "Kada da prestanem?",
+      "answer": "Prestani čim svako stanje bude `\"correct\"`, ili posle `6` pokušaja. U suprotnom ćeš nastaviti da pogađaš i posle kraja table."
+    }
+  },
+  "functions": {
+    "guess": {
+      "description": "Pogađa reč. Ispisuje reč u sledeći red table, oboji je i vraća niz sa stanjem svakog slova.",
+      "category": "Wordle"
+    },
+    "commonWords": {
+      "description": "Vraća niz od preko 100 uobičajenih reči od pet slova koje možeš da koristiš za pokušaje.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "Dodaje element na kraj niza i pritom menja sam niz.",
+      "category": "Nizovi"
+    },
+    "arrayIncludes": {
+      "description": "Proverava da li niz sadrži element.",
+      "category": "Nizovi"
+    },
+    "stringIncludes": {
+      "description": "Proverava da li string sadrži podstring.",
+      "category": "Stringovi"
+    },
+    "arrayLength": {
+      "description": "Broj elemenata u nizu.",
+      "category": "Nizovi"
+    },
+    "stringLength": {
+      "description": "Broj karaktera u stringu.",
+      "category": "Stringovi"
+    }
+  },
+  "describers": {
+    "guess": "pogodio reč",
+    "commonWords": "preuzeo niz uobičajenih reči"
+  }
+}

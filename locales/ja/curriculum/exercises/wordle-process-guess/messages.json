@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "rowMismatch": "{{square}}番目のマスにある\"{{letter}}\"は、\"{{expected}}\"である必要がありますが、\"{{actual}}\"になっています。",
+    "rowNotColored": "行に色が付いていません。",
+    "rowWrongLength": "1行には{{expected}}個の状態が必要ですが、入っていたのは{{actual}}個でした。"
+  },
+  "tasks": {
+    "processGuess": {
+      "name": "1回の推測を処理する",
+      "description": "processGuessという関数を作ります。target（秘密の単語）とguess（推測）を受け取り、各文字が\"correct\"、\"present\"、\"absent\"のどれにあたるかを判定し、その結果をcolorRow(1, states)に渡して呼び出します。"
+    }
+  },
+  "scenarios": {
+    "allCorrect": {
+      "name": "すべて正しい",
+      "description": "すべての文字が正しい推測を扱います。"
+    },
+    "absent": {
+      "name": "含まれていない文字がある",
+      "description": "一部の文字が秘密の単語に含まれていない場合を扱います。"
+    },
+    "present": {
+      "name": "位置が違う文字がある",
+      "description": "位置が違う文字を扱います。"
+    },
+    "complex": {
+      "name": "複雑な場合",
+      "description": "もっと複雑な状況を扱います。"
+    },
+    "differentWord": {
+      "name": "別の単語",
+      "description": "最後は、別の単語です！"
+    }
+  },
+  "hints": {
+    "compareLetters": {
+      "question": "推測の文字1つ1つを、秘密の単語とどう比べればよいのでしょうか？",
+      "answer": "位置`0`から`4`までループします。それぞれの位置で、`guess[i]`と`target[i]`を比べます。"
+    },
+    "stateRules": {
+      "question": "文字が`\"correct\"`、`\"present\"`、`\"absent\"`のどれになるかは、どうやって決まるのでしょうか？",
+      "answer": "この演習の簡略化されたルールでは、`guess[i]`が`target[i]`と同じなら`\"correct\"`です。そうでない場合は、その文字が`target`のどこかに含まれていれば`\"present\"`、含まれていなければ`\"absent\"`です。"
+    },
+    "buildList": {
+      "question": "状態の配列は、どうやって作ればよいのでしょうか？",
+      "answer": "まず空の配列を用意し、ループの中で`states.push(value)`を使って、それぞれの状態を順番に末尾へ追加していきます。"
+    },
+    "finishedList": {
+      "question": "できあがった配列は、どこに渡せばよいのでしょうか？",
+      "answer": "`colorRow(1, states)`に渡すと、計算した状態でボードの1行目に色を付けられます。"
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "与えられた状態で、Wordleボードの1行に色を付けます。",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "配列の末尾に要素を追加します。配列そのものが変わります。",
+      "category": "配列"
+    },
+    "includes": {
+      "description": "ある文字列に別の文字列が含まれているかどうかを調べ、trueかfalseを返します。",
+      "category": "文字列"
+    }
+  },
+  "describers": {
+    "colorRow": "Wordleボードの1行に色を付けた"
+  }
+}

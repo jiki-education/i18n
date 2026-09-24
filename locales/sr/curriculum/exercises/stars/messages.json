@@ -1,0 +1,79 @@
+{
+  "tasks": {
+    "drawStars": {
+      "name": "Nacrtaj piramidu od zvezda",
+      "description": "Napiši funkciju `layoutStars` koja prima broj redova i gradi niz stringova u kom svaki string ima jednu zvezdu manje od prethodnog, a zatim ga nacrtaj pomoću `drawStars`. Na primer, `layoutStars(3)` crta piramidu za [\"***\", \"**\", \"*\"]"
+    }
+  },
+  "scenarios": {
+    "count0": {
+      "name": "Broj je 0",
+      "description": "Nula zvezda ne crta ništa."
+    },
+    "count1": {
+      "name": "Broj je 1",
+      "description": "Broj jedan crta jednu zvezdu."
+    },
+    "count3": {
+      "name": "Broj je 3",
+      "description": "Broj tri crta piramidu od tri reda."
+    },
+    "count5": {
+      "name": "Broj je 5",
+      "description": "Broj pet crta piramidu od pet redova."
+    },
+    "count10": {
+      "name": "Broj je 10",
+      "description": "Broj deset crta piramidu od deset redova."
+    }
+  },
+  "hints": {
+    "shapeOfAnswer": {
+      "question": "Šta to gradim?",
+      "answer": "Niz stringova, počevši od najdužeg, gde je svaki sledeći za jednu zvezdu kraći od prethodnog, sve do jedne jedine zvezde. Kada se nacrta, najduži red se nalazi na dnu piramide. Prvo napravi ceo niz, a zatim ga nacrtaj pomoću `drawStars`."
+    },
+    "countingDown": {
+      "question": "Kako da svaki red bude kraći od prethodnog?",
+      "answer": "Dužine treba da se smanjuju: prvi string je najduži, a poslednji je samo jedna zvezda. Petlja koja broji unazad od ukupnog broja do 1 daje ti redom svaku dužinu."
+    },
+    "buildingEachRow": {
+      "question": "Kako da napravim string sa određenim brojem zvezda?",
+      "answer": "Počni od praznog stringa i dodaj po jednu `*` dok ne dobiješ pravu dužinu. Zatim taj string dodaš na svoj niz pomoću `push`, pre nego što pređeš na sledeći red."
+    }
+  },
+  "checks": {
+    "row1": "Donji red zvezda nije tačan. Uporedi ga sa bledim obrisom.",
+    "row2": "Drugi red od dna nije tačan. Uporedi ga sa bledim obrisom.",
+    "row3": "Treći red od dna nije tačan. Uporedi ga sa bledim obrisom.",
+    "row4": "Četvrti red od dna nije tačan. Uporedi ga sa bledim obrisom.",
+    "row5": "Peti red od dna nije tačan. Uporedi ga sa bledim obrisom.",
+    "row6": "Šesti red od dna nije tačan. Uporedi ga sa bledim obrisom.",
+    "row7": "Sedmi red od dna nije tačan. Uporedi ga sa bledim obrisom.",
+    "row8": "Osmi red od dna nije tačan. Uporedi ga sa bledim obrisom.",
+    "row9": "Deveti red od dna nije tačan. Uporedi ga sa bledim obrisom.",
+    "row10": "Deseti red od dna nije tačan. Uporedi ga sa bledim obrisom.",
+    "total": "Ukupan broj nacrtanih zvezda nije tačan.",
+    "shouldBeEmpty": "Kada je broj 0, ne treba da nacrtaš nijednu zvezdu.",
+    "codeQuality": {
+      "mustUsePush": "Niz treba da gradiš metodom push, dodajući red po red.",
+      "noHardcodedArray": "Ne možeš da napišeš gotov niz direktno. Gradi ga red po red, koristeći push."
+    }
+  },
+  "errors": {
+    "notAnArray": "drawStars očekuje niz stringova.",
+    "notStrings": "Svaki element u nizu koji se prosleđuje funkciji drawStars mora biti string."
+  },
+  "describers": {
+    "drawStars": "nacrtana je piramida od zvezda na platnu"
+  },
+  "functions": {
+    "push": {
+      "description": "Dodaje element na kraj niza",
+      "category": "Nizovi"
+    },
+    "drawStars": {
+      "description": "Crta red zvezda za svaki string u nizu, koristeći dužinu svakog stringa kao broj zvezda u tom redu",
+      "category": "Crtanje"
+    }
+  }
+}

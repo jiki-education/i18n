@@ -4,6 +4,10 @@
       "name": "문자열 분류하기",
       "description": "문자열이 알파벳, 숫자, 또는 영숫자인지 확인하는 헬퍼 함수를 작성하고, 이를 사용해 입력 문자열을 분류하세요."
     },
+    "solveTightly": {
+      "name": "코드 42줄로 해결하기",
+      "description": "코드 42줄 이하로 풀어 보세요. 이 목표가 가장 실무적인 해결책은 아니고 더 짧은 해결책도 있지만, 도전해 볼 만한 좋은 목표예요."
+    },
     "useContinue": {
       "name": "continue 사용하기",
       "description": "isAlphanumeric 확인에서, 문자가 알파벳이나 숫자이면 그대로 넘어가도 됩니다. 조건문을 중첩하지 말고, continue를 사용해 바로 다음 문자로 이동하세요."
@@ -29,6 +33,10 @@
     "notAlphanumeric2": {
       "name": "42 Rubber Duck!",
       "description": "공백과 특수 문자가 포함된 문자열은 \"Unknown\"으로 분류돼야 해요."
+    },
+    "alphanumericBonusLineCount": {
+      "name": "깔끔하고 단정한 코드",
+      "description": "코드 42줄 이하로 풀어 보세요."
     },
     "alphanumericUsesContinue": {
       "name": "continue 사용",
@@ -58,10 +66,20 @@
     }
   },
   "checks": {
-    "mustUseContinue": "거의 다 왔어요! `continue`를 사용해 다음 문자로 건너뛰세요.",
-    "tooManyLines": "거의 다 왔어요! 해결책이 작동하지만, 조금 길어요.",
+    "tooManyLines": "거의 다 왔어요! 해결책이 동작하지만, 코드가 42줄을 넘어요.",
     "useIsAlpha": "이 연습 문제에서는 `isAlpha()` 헬퍼 함수를 작성하고 이를 사용해 문자열을 분류해야 합니다.",
     "useIsNumeric": "이 연습 문제에서는 `isNumeric()` 헬퍼 함수를 작성하고 이를 사용해 문자열을 분류해야 합니다.",
-    "useIsAlphanumeric": "이 연습 문제에서는 `isAlphanumeric()` 헬퍼 함수를 작성하고 이를 사용해 문자열을 분류해야 합니다."
+    "useIsAlphanumeric": "이 연습 문제에서는 `isAlphanumeric()` 헬퍼 함수를 작성하고 이를 사용해 문자열을 분류해야 합니다.",
+    "mustUseContinue": "거의 다 왔어요! `continue`를 사용해 다음 문자로 건너뛰세요."
+  },
+  "functions": {
+    "toLowerCase": {
+      "description": "문자열을 소문자로 바꾼 복사본을 반환해요",
+      "category": "문자열 연산"
+    },
+    "includes": {
+      "description": "문자열에 더 작은 문자열이 들어 있는지 확인해요",
+      "category": "문자열 연산"
+    }
   }
 }

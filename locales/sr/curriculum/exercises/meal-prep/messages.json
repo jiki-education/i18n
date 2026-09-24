@@ -1,0 +1,50 @@
+{
+  "tasks": {
+    "createShoppingList": {
+      "name": "Napravi spisak za kupovinu",
+      "description": "Napiši funkciju koja uzima sadržaj tvog frižidera i sastojke iz recepta, a vraća namirnice koje treba da kupiš (namirnice iz recepta kojih nema u frižideru)."
+    }
+  },
+  "scenarios": {
+    "emptyFridge": {
+      "name": "Prazan frižider",
+      "description": "Kada je frižider prazan, treba da kupiš sve."
+    },
+    "youHaveEverything": {
+      "name": "Imaš sve",
+      "description": "Kada imaš sve sastojke, spisak za kupovinu je prazan."
+    },
+    "oneThing": {
+      "name": "Jedna stvar",
+      "description": "Kada ti nedostaje samo jedan sastojak."
+    },
+    "fewThings": {
+      "name": "Nekoliko stvari",
+      "description": "Kada ti nedostaje nekoliko sastojaka."
+    }
+  },
+  "hints": {
+    "realLifeApproach": {
+      "question": "Kako se to radi u stvarnom životu?",
+      "answer": "Prođeš kroz recept sastojak po sastojak i za svaki proveriš frižider. Sve što nedostaje ide na spisak za kupovinu. Tvoj kod radi istu stvar."
+    },
+    "checkFridgeItem": {
+      "question": "Kako da proverim da li je nešto u frižideru?",
+      "answer": "Metoda `includes` radi to za tebe. Ako je pozoveš na frižideru i proslediš joj sastojak, dobiješ nazad `true` ili `false`."
+    },
+    "buildShoppingList": {
+      "question": "Kako da sastavim spisak za kupovinu?",
+      "answer": "Kreni od praznog niza. Za svaki sastojak iz recepta koji frižider ne sadrži, dodaj ga na spisak za kupovinu pomoću `push()`."
+    }
+  },
+  "functions": {
+    "includes": {
+      "description": "Proverava da li niz sadrži određeni element i vraća true ili false.",
+      "category": "Nizovi"
+    },
+    "push": {
+      "description": "Dodaje element na kraj niza i menja sam niz.",
+      "category": "Nizovi"
+    }
+  }
+}

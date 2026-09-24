@@ -1,0 +1,925 @@
+WEBVTT
+
+NOTE en_md5 3444df0fcca33c086487f13e47f69d4f
+
+00:00:00.079 --> 00:00:02.899
+Hej, ovo je tvoja prva detaljna analiza. Dakle,
+
+00:00:02.939 --> 00:00:04.839
+ovi videi se malo razlikuju od
+
+00:00:04.880 --> 00:00:08.159
+dosadašnjih video-lekcija. Duži su,
+
+00:00:08.179 --> 00:00:11.440
+mnogo su manje strukturirani. Kada
+
+00:00:11.460 --> 00:00:13.100
+ovde završim, biću samo ja za
+
+00:00:13.140 --> 00:00:15.939
+laptopom kako ćaskam s tobom i objašnjavam
+
+00:00:16.000 --> 00:00:18.680
+neke ideje detaljnije, verovatno ću skrenuti
+
+00:00:18.720 --> 00:00:21.280
+na po koju sporednu temu, možda ću malo lutati,
+
+00:00:21.319 --> 00:00:23.479
+ali nadam se da ćeš bolje razumeti
+
+00:00:23.559 --> 00:00:27.600
+kako ja razmišljam o kodu. A gledanje
+
+00:00:27.620 --> 00:00:30.419
+ovih detaljnih analiza uopšte nije obavezno. Možeš
+
+00:00:30.500 --> 00:00:32.519
+da ih premotaš unapred. Možeš da se vratiš
+
+00:00:32.580 --> 00:00:34.479
+i ponovo pogledaš neki deo. Možeš i
+
+00:00:34.540 --> 00:00:37.799
+potpuno da ih ignorišeš i nikad ne klikneš na njih.
+
+00:00:37.860 --> 00:00:40.059
+Ali kada smo ovaj kurs držali kao
+
+00:00:40.119 --> 00:00:42.939
+butkamp, ljudi su mi govorili da su ovi videi
+
+00:00:42.979 --> 00:00:45.200
+možda bili najvredniji deo
+
+00:00:45.260 --> 00:00:47.099
+svega, jer su im pokazali
+
+00:00:47.139 --> 00:00:49.139
+kako ja razmišljam. A kao što sam već
+
+00:00:49.200 --> 00:00:51.339
+rekao, veliki deo ovog kursa jeste
+
+00:00:51.420 --> 00:00:53.759
+da te nauči da razmišljaš kao programer,
+
+00:00:53.799 --> 00:00:56.419
+kao neko ko piše kod. Zato probaj nekoliko
+
+00:00:56.459 --> 00:00:58.319
+ovih videa kada se pojave i vidi šta
+
+00:00:58.360 --> 00:01:00.740
+misliš. Za sada, spremi sebi
+
+00:01:00.799 --> 00:01:02.720
+lepu šoljicu čaja ili kafe. Zavali se
+
+00:01:02.779 --> 00:01:04.360
+i hajde da zaronimo
+
+00:01:05.004 --> 00:01:09.203
+Dobro, u ovim detaljnim analizama samo ću
+rešavati vežbu baš onako kako bih
+
+00:01:09.203 --> 00:01:11.243
+je rešavao da je vidim
+prvi put.
+
+00:01:11.563 --> 00:01:15.083
+Namerno dugo nisam
+gledao nijednu od ovih vežbi.
+
+00:01:15.524 --> 00:01:18.083
+Sada se vraćam
+i jednostavno ih rešavam,
+
+00:01:18.083 --> 00:01:19.884
+tako da rešenje ne znam napamet.
+
+00:01:20.364 --> 00:01:23.483
+Pristupam ovome onako kako
+mu, nadam se, pristupaš i ti.
+
+00:01:23.964 --> 00:01:27.323
+Ipak, vrednost ovoga nije
+u tome da vidiš kakav kod pišem,
+
+00:01:27.483 --> 00:01:29.483
+sigurno ne kod ovih prvih vežbi.
+
+00:01:29.564 --> 00:01:32.913
+Verovatno ću napisati potpuno
+isti kod kao i ti.
+
+00:01:33.633 --> 00:01:37.593
+Glavni cilj, bar za početak, jeste
+da razmisliš kako da pristupiš
+
+00:01:37.593 --> 00:01:41.633
+problemima, a da ti ja objasnim
+kako ja pristupam problemima.
+
+00:01:42.124 --> 00:01:46.633
+Kako budemo odmicali kroz kurs,
+biće mnogo različitih načina da se
+
+00:01:46.633 --> 00:01:50.273
+pristupi problemu. Neki imaju prednosti,
+neki mane.
+
+00:01:50.754 --> 00:01:54.993
+I dosta vremena ćemo provesti
+istražujući te različite načine razmišljanja.
+
+00:01:55.983 --> 00:01:59.673
+Ovu logiku, ovo
+rešavanje problema, možeš da preneseš
+
+00:01:59.993 --> 00:02:02.154
+u sve različite oblasti programiranja.
+
+00:02:02.394 --> 00:02:05.114
+Kada pričamo o pravljenju stvari,
+platformi,
+
+00:02:05.114 --> 00:02:09.194
+sa svim tim različitim delovima koje
+spajamo, možda čak i bez koda,
+
+00:02:09.353 --> 00:02:12.153
+možda prepuštamo velikim jezičkim
+modelima (LLM) da pišu deo koda,
+
+00:02:12.633 --> 00:02:17.273
+način na koji razmišljamo je jedina stalna
+stvar koja nam donosi dobre rezultate.
+
+00:02:18.234 --> 00:02:20.954
+Zato, ako ništa drugo
+ne poneseš sa ovog kursa,
+
+00:02:21.273 --> 00:02:24.873
+nadam se da ćeš bar poneti
+način na koji razmišljamo.
+
+00:02:25.984 --> 00:02:27.424
+Dakle, jednostavna vežba,
+
+00:02:28.543 --> 00:02:31.183
+možda ti nije delovala jednostavno,
+ali je, ali je zapravo prilično jednostavna.
+
+00:02:31.344 --> 00:02:33.903
+Samo pokušavamo da nacrtamo lisičje lice,
+
+00:02:34.344 --> 00:02:37.743
+i treba da nacrtamo nekoliko trouglova.
+
+00:02:38.704 --> 00:02:41.623
+Gledam uputstva.
+
+00:02:41.623 --> 00:02:43.623
+Piše mi kako da nacrtam trougao.
+
+00:02:43.623 --> 00:02:49.103
+To već dobro znam. I
+navodi neke od boja.
+
+00:02:49.103 --> 00:02:53.224
+Imamo boje white, brown,
+orange i charcoal, koje možemo da koristimo.
+
+00:02:53.224 --> 00:02:57.094
+Imamo dva bela obraza,
+dva braon uha, dve narandžaste polovine lica,
+
+00:02:57.564 --> 00:03:00.603
+i jedan nos,
+ali sastavljen od dva trougla.
+
+00:03:03.004 --> 00:03:07.724
+Onda sam ovde zabeležio da
+možeš, možeš da pređeš mišem,
+
+00:03:07.804 --> 00:03:12.364
+i to bi trebalo da koristiš. Takođe,
+svi brojevi su deljivi sa 5.
+
+00:03:12.444 --> 00:03:15.163
+I jedino što ovde
+koristimo je ovaj trougao.
+
+00:03:16.284 --> 00:03:18.923
+Kako bih ja ovo nacrtao?
+
+00:03:19.083 --> 00:03:22.203
+Pa, počeo bih tako što kažem:
+dobro, treba mi trougao.
+
+00:03:22.444 --> 00:03:25.203
+Napisaću triangle,
+triangle za funkciju triangle.
+
+00:03:25.444 --> 00:03:29.763
+I trebaju mi tri tačke. Za
+prvu tačku ovde gore vidim 10, 6.
+
+00:03:29.844 --> 00:03:34.043
+Znam da je to 10, 5. Nešto
+što baš volim da radim je da stavim
+
+00:03:34.043 --> 00:03:36.083
+ove brojeve jedan do drugog bez razmaka.
+
+00:03:36.643 --> 00:03:41.444
+Tako nekako vidim da je to par
+koordinata, a onda ostavim razmak između
+
+00:03:41.923 --> 00:03:46.564
+parova koordinata. To prilično
+lepo funkcioniše u ovoj funkciji triangle.
+
+00:03:46.803 --> 00:03:50.163
+Ali i ovde je korisno
+razmisliti o tome kako beline,
+
+00:03:51.103 --> 00:03:55.444
+a pod belinama mislimo na razmake,
+nove redove, tabove, sve te stvari,
+
+00:03:56.303 --> 00:04:01.184
+čine tvoj kod čitljivijim
+i tebi i drugim ljudima.
+
+00:04:02.143 --> 00:04:05.184
+Dakle, lep mali šablon. Stavi
+dve koordinate zajedno,
+
+00:04:05.184 --> 00:04:08.543
+pa ostavi mali razmak između
+njih da odvojiš parove koordinata.
+
+00:04:09.024 --> 00:04:11.583
+Nije bitno koja od ove
+dve tačke je moja druga.
+
+00:04:11.583 --> 00:04:14.383
+Ali ja ću sići ovde dole na 10, 40.
+
+00:04:15.184 --> 00:04:19.103
+I na kraju imam ovu
+ovde, koja je 50, 40.
+
+00:04:19.823 --> 00:04:21.784
+Da ti pokažem nešto
+što ti je možda promaklo:
+
+00:04:21.784 --> 00:04:26.143
+iznad brojeva se pojavljuje strelica
+kojom možeš da menjaš broj.
+
+00:04:26.464 --> 00:04:29.603
+To će biti korisnije
+kasnije, kada budemo gledali
+
+00:04:29.603 --> 00:04:33.363
+boje i slične stvari,
+može biti prilično korisna mala
+
+00:04:33.363 --> 00:04:34.043
+funkcionalnost.
+
+00:04:34.853 --> 00:04:37.643
+Ovo je naš trougao za levo uho.
+
+00:04:38.524 --> 00:04:41.883
+Vidimo da levo uho treba da bude braon.
+
+00:04:42.603 --> 00:04:46.323
+Pa kucamo brown. I to
+bi trebalo da mi da levo uho.
+
+00:04:46.323 --> 00:04:48.124
+I odmah ću to da proverim.
+
+00:04:48.124 --> 00:04:53.483
+Pritisnuću „Pokreni kod“. Videću
+da ovaj trougao izgleda otprilike dobro.
+
+00:04:54.073 --> 00:04:57.833
+A ako uklonim ovaj red,
+ako ga zakomentarišem sa dve kose crte,
+
+00:04:57.994 --> 00:05:01.233
+vidimo da zaista nestaje.
+
+00:05:01.233 --> 00:05:05.513
+Vidimo da je uspelo.
+Imamo ovo i možemo dalje.
+
+00:05:05.913 --> 00:05:08.073
+Sledeća je leva strana lica.
+
+00:05:09.194 --> 00:05:15.233
+Lice je narandžasti deo. Nemamo
+senčeni deo iza ovoga.
+
+00:05:15.233 --> 00:05:17.113
+Imamo samo desnu stranu lica.
+
+00:05:17.673 --> 00:05:19.833
+Hajde da razmislimo.
+Treba nam triangle.
+
+00:05:20.904 --> 00:05:23.943
+Ako pogledam sliku,
+vidim da je simetrična.
+
+00:05:24.503 --> 00:05:26.743
+Ovaj koncept simetrije
+koristićemo u
+
+00:05:26.743 --> 00:05:28.423
+nekoliko narednih vežbi.
+
+00:05:28.663 --> 00:05:31.743
+Vidimo da će središnja
+tačka biti ista.
+
+00:05:31.743 --> 00:05:36.103
+Počeće na 50, 30 i
+završiće se ovde dole na istom mestu,
+
+00:05:36.103 --> 00:05:38.503
+što mi izgleda kao 50, 95.
+
+00:05:39.303 --> 00:05:42.904
+Onda treba da odredimo
+gde će ići ovde.
+
+00:05:43.704 --> 00:05:49.543
+To vidimo kada pređemo mišem preko ove
+tačke, koja ima X 90 i Y 40.
+
+00:05:50.483 --> 00:05:55.123
+Dakle, X će biti nešto,
+a Y će biti 40,
+
+00:05:55.603 --> 00:05:57.764
+a boja će biti orange.
+
+00:05:59.284 --> 00:06:02.003
+Ali šta je ovaj upitnik,
+šta ovde stavljamo?
+
+00:06:02.243 --> 00:06:06.404
+Pa, gledam i
+vidim da je ovo platno 100,
+
+00:06:06.404 --> 00:06:07.923
+znači ide ovde do 100.
+
+00:06:08.724 --> 00:06:12.483
+A
+ovo je 90. Znači ovde je razmak od 10.
+
+00:06:13.284 --> 00:06:16.884
+Znam da ćemo imati
+isti razmak od 10 i sa ove strane.
+
+00:06:17.603 --> 00:06:18.803
+I znam da je
+
+00:06:19.923 --> 00:06:24.644
+0 plus 10 jednako 10,
+pa znam da će ovo biti 10.
+
+00:06:25.284 --> 00:06:30.084
+Mogu da pritisnem „Pokreni kod“. I dobijam nešto
+što mi izgleda kao dobar narandžasti trougao.
+
+00:06:31.284 --> 00:06:35.923
+Sledeće crtam levi obraz.
+Ovde samo kopiram i lepim.
+
+00:06:36.313 --> 00:06:39.443
+Uzmimo ovaj trougao.
+Obrišimo sve ovo.
+
+00:06:39.913 --> 00:06:43.363
+Imamo funkciju triangle,
+pa ne moram ponovo da je kucam.
+
+00:06:44.253 --> 00:06:47.693
+A levi obraz će biti beo.
+
+00:06:48.253 --> 00:06:52.813
+Mogu ovo da izmerim. Ovo je 10, 40,
+
+00:06:54.654 --> 00:06:57.293
+a ovo je 5, 60.
+
+00:06:58.094 --> 00:07:00.053
+Propustio sam zarez. Evo još nečega.
+
+00:07:00.053 --> 00:07:03.134
+Mali savet. Vidiš kako ovo nije crveno.
+
+00:07:03.214 --> 00:07:07.454
+Ovo je nekako pogrešne boje.
+To se zove isticanje sintakse.
+
+00:07:07.613 --> 00:07:12.534
+To je stručni izraz. A
+boje koje vidiš su boje
+
+00:07:12.534 --> 00:07:13.053
+isticanja sintakse.
+
+00:07:14.053 --> 00:07:18.693
+To što ovo nije crveno dobar je znak
+da nešto nije u redu.
+
+00:07:18.933 --> 00:07:21.654
+Ako ikad vidiš nešto
+što izgleda kao da je pogrešne boje,
+
+00:07:21.733 --> 00:07:24.373
+to je znak da
+možda fali zarez.
+
+00:07:24.534 --> 00:07:27.894
+Na primer. Ako odemo ovde i ne
+zatvorimo ove navodnike, vidiš da
+
+00:07:28.293 --> 00:07:33.014
+ova zagrada postaje zelena,
+što znači da fale navodnici.
+
+00:07:33.413 --> 00:07:35.974
+Ove boje zapravo
+postaju veoma korisne kao neke
+
+00:07:35.974 --> 00:07:39.574
+male prečice u tvom mozgu
+da primetiš da nešto nije u redu.
+
+00:07:41.224 --> 00:07:43.144
+Stavimo zarez. I ovo postaje narandžasto.
+
+00:07:43.224 --> 00:07:50.584
+Znači 10, 40, 5, 60. A onda smo opet
+ovde dole, na 50 i 95.
+
+00:07:51.943 --> 00:07:56.743
+Možemo da napišemo white. Dodamo
+to i dobro je.
+
+00:07:59.224 --> 00:08:04.264
+Dobro. Desno uho. Sada smo pravo
+na terenu simetrije, da tako kažem.
+
+00:08:04.663 --> 00:08:09.224
+Za desno uho piše:
+možeš li ovo da odrediš bez prelaženja mišem?
+
+00:08:10.584 --> 00:08:13.543
+Da,
+možemo ovo da odredimo bez prelaženja mišem.
+
+00:08:13.863 --> 00:08:18.464
+Ako to rešavaš prelaženjem mišem,
+možeš li da smisliš drugi način?
+
+00:08:18.464 --> 00:08:21.943
+I možeš li da razmisliš kako da
+iskoristiš ono što smo upravo uradili, kada
+
+00:08:22.743 --> 00:08:26.024
+sam nacrtao levi obraz
+gledajući desni obraz?
+
+00:08:26.024 --> 00:08:28.024
+Kako bismo to iskoristili? Isti princip?
+
+00:08:28.024 --> 00:08:30.904
+Ako želiš da pauziraš na trenutak
+i razmisliš o tome, slobodno,
+
+00:08:31.863 --> 00:08:38.024
+u suprotnom, reći ću ti. Dakle,
+znamo da levo uho počinje na 10.
+
+00:08:38.253 --> 00:08:40.014
+I vidimo da ovde imamo 10, 5.
+
+00:08:40.894 --> 00:08:44.894
+Znamo da smo ranije rekli:
+0 plus 10 je 10.
+
+00:08:45.053 --> 00:08:47.613
+I odredili smo da se ovaj obraz završava na 90
+
+00:08:48.413 --> 00:08:52.014
+jer ima razmak od 10,
+a isti taj razmak je i ovde.
+
+00:08:52.413 --> 00:08:54.894
+Znači znamo da ovo uho treba da bude na 90
+
+00:08:56.094 --> 00:09:00.974
+i znamo da ide pravo
+dole do 90 i znamo da
+
+00:09:01.443 --> 00:09:03.693
+dolazi skroz do sredine, na 50.
+
+00:09:04.413 --> 00:09:07.454
+Možemo to da obrnemo i imamo isti
+
+00:09:08.654 --> 00:09:12.053
+trougao. Onda možemo
+desnu stranu lica.
+
+00:09:12.053 --> 00:09:16.733
+I opet to možemo bez prelaženja mišem,
+samo promenimo ovih 10 u 90 jer je
+
+00:09:16.733 --> 00:09:22.454
+simetrično. Onda možemo
+desni obraz, a za desni obraz opet
+
+00:09:22.454 --> 00:09:28.974
+želimo simetriju. Ovo postaje 90,
+ovo postaje 95, a ovo ostaje 50
+
+00:09:29.543 --> 00:09:31.063
+i to nam daje beli obraz.
+
+00:09:31.543 --> 00:09:33.224
+A onda nam treba nos,
+
+00:09:34.344 --> 00:09:38.983
+nos je charcoal,
+pa možemo da napišemo triangle.
+
+00:09:39.944 --> 00:09:44.023
+I sebi sam ovo malo
+upropastio jer sam
+
+00:09:44.023 --> 00:09:45.983
+crtao preko toga. Ali možemo.
+
+00:09:45.983 --> 00:09:50.743
+Imaš dve opcije. Prva,
+možeš da zakomentarišeš sav svoj kod.
+
+00:09:51.224 --> 00:09:54.103
+Možeš samo da staviš komentare
+
+00:09:55.554 --> 00:09:56.033
+ovako
+
+00:09:56.914 --> 00:09:59.074
+i to će ti omogućiti da
+
+00:10:00.834 --> 00:10:04.873
+zakomentarišeš ovaj. Ako ti se ikad
+ovo desi, možda je u pitanju greška u kucanju.
+
+00:10:04.873 --> 00:10:08.794
+Ne moraš da se plašiš. Samo pritisni
+„Pokreni kod“, zakomentariši šta god ne valja,
+
+00:10:08.794 --> 00:10:10.594
+ponovo pritisni „Pokreni kod“ i sve se vraća.
+
+00:10:11.233 --> 00:10:15.633
+Ovde vidimo da ovo treba da bude 50 i 85.
+
+00:10:17.153 --> 00:10:20.753
+Dakle 50 i 85. A onda
+možemo ove ponovo da vratimo.
+
+00:10:21.974 --> 00:10:22.273
+I.
+
+00:10:26.353 --> 00:10:29.474
+Nekako sam uspeo da obrišem
+reč triangle sa ovog prvog.
+
+00:10:30.113 --> 00:10:30.753
+Dobro,
+
+00:10:34.273 --> 00:10:36.674
+hajde da izmerimo ovo. Znači 40, 90.
+
+00:10:37.873 --> 00:10:42.194
+I znamo da je simetrično. Pa odmah
+znamo da će sledeće biti
+
+00:10:42.194 --> 00:10:48.214
+60, 90. I znamo da je ovo charcoal,
+reč koju nikako ne umem da napišem.
+
+00:10:48.934 --> 00:10:53.893
+Imamo gornji deo nosa, a
+onda imamo donji deo nosa.
+
+00:10:54.214 --> 00:11:00.054
+A ovo je
+trougao simetričan ovom gornjem trouglu.
+
+00:11:00.454 --> 00:11:04.533
+Biće potpuno
+istog oblika kao ovaj,
+
+00:11:04.934 --> 00:11:07.493
+ali dok ovaj ide od 85 do 90,
+
+00:11:07.893 --> 00:11:13.074
+znamo da ovaj treba da ide
+od 90 do 95 jer, opet,
+
+00:11:13.233 --> 00:11:16.834
+90 možemo da zamislimo kao srednju liniju,
+5 iznad, 5 ispod.
+
+00:11:17.873 --> 00:11:20.594
+Imamo donji deo nosa
+i sve prolazi.
+
+00:11:21.153 --> 00:11:24.393
+Onda bih uklonio ove TODO komentare.
+
+00:11:24.393 --> 00:11:26.834
+Hajde da nam kod bude lep i uredan.
+
+00:11:27.794 --> 00:11:31.794
+Usput, u nekim od ovih videa
+videćeš ovu stvar ovde dole.
+
+00:11:31.794 --> 00:11:34.753
+To je samo zato što kod
+pokrećem lokalno na svom računaru,
+
+00:11:35.074 --> 00:11:36.513
+a ne na Jiki sajtu.
+
+00:11:36.834 --> 00:11:39.474
+Imam uključene neke dodatne alatke za debagovanje.
+
+00:11:39.554 --> 00:11:42.824
+Ako vidiš nešto od toga dole,
+slobodno to ignoriši.
+
+00:11:44.584 --> 00:11:46.824
+Dobro, sada imamo lep, uredan kod.
+
+00:11:46.824 --> 00:11:49.623
+Ovo možemo da uklonimo. „Možeš li
+ovo da odrediš i bez prelaženja mišem?“
+
+00:11:50.103 --> 00:11:52.863
+Sada ovo dokumentuje naš kod.
+
+00:11:52.863 --> 00:11:54.903
+Ovo kaže da je ovo levo uho.
+
+00:11:54.903 --> 00:11:57.544
+I verovatno bih ove zapravo
+promenio da samo imenuju deo.
+
+00:11:58.103 --> 00:11:59.783
+Jer ne želimo baš
+da budu instrukcije,
+
+00:11:59.783 --> 00:12:02.263
+samo želimo da opisuju
+šta kod radi.
+
+00:12:02.344 --> 00:12:04.584
+Ali ti izaberi
+ono što ti je najjasnije.
+
+00:12:05.064 --> 00:12:08.344
+Ali dobro je imati komentare
+koji samo objašnjavaju šta je šta.
+
+00:12:08.344 --> 00:12:10.424
+Ovo ću možda zapravo nazvati samo „nos“.
+
+00:12:10.974 --> 00:12:14.013
+I imao bih dva reda ovako,
+što je prilično samo po sebi jasno,
+
+00:12:15.133 --> 00:12:16.733
+a mogu i da grupišem stvari.
+
+00:12:16.733 --> 00:12:20.013
+Mogu i da kažem, dobro,
+hoću da dva uha budu zajedno
+
+00:12:20.334 --> 00:12:25.054
+i da samo piše „uši“, i hoću
+da delovi lica budu zajedno.
+
+00:12:25.643 --> 00:12:29.454
+I hoću da obrazi budu zajedno
+
+00:12:30.334 --> 00:12:30.974
+ovako.
+
+00:12:32.733 --> 00:12:36.054
+I sve to i dalje radi,
+ali sada je malo urednije.
+
+00:12:36.054 --> 00:12:38.253
+Nekako se i simetrija
+bolje vidi.
+
+00:12:38.893 --> 00:12:41.253
+Zato uvek odvoji nekoliko minuta
+kada rešiš
+
+00:12:41.253 --> 00:12:43.594
+vežbu i potrudi se
+da se zaista ponosiš njome.
+
+00:12:43.594 --> 00:12:47.594
+Sredi je,
+učini je zaista urednom i vidi koliko je
+
+00:12:47.594 --> 00:12:49.834
+jasnije sa ova dva
+reda jedan do drugog.
+
+00:12:50.263 --> 00:12:53.513
+Sve odjednom deluje malo čistije.
+
+00:12:53.513 --> 00:12:56.633
+Još jedna stvar pre
+nego što završimo, ovde dole.
+
+00:12:56.633 --> 00:12:59.513
+Samo ću ovo
+skloniti ovde dole.
+
+00:13:00.233 --> 00:13:03.914
+Vidiš ovu traku? Možda
+je još ne koristiš,
+
+00:13:03.993 --> 00:13:06.474
+ali ovo zovemo klizač.
+
+00:13:07.113 --> 00:13:09.033
+Kasnije će ti biti izuzetno koristan.
+
+00:13:09.434 --> 00:13:13.633
+Omogućava ti da jednostavno
+prelaziš s jednog reda koda na drugi.
+
+00:13:13.633 --> 00:13:13.993
+Kao
+
+00:13:15.103 --> 00:13:19.344
+jedan po jedan. Umesto da odmah
+vidiš celo lice, možeš zapravo
+
+00:13:19.824 --> 00:13:22.304
+da ideš korak po korak i vidiš
+šta radi svaki red koda.
+
+00:13:22.704 --> 00:13:25.623
+A kada pišeš
+programe koji imaju 200
+
+00:13:25.623 --> 00:13:28.983
+redova koda ili koji izvršavaju
+isti kod mnogo
+
+00:13:28.983 --> 00:13:31.424
+mnogo puta, i možda se
+dešava hiljadu,
+
+00:13:31.824 --> 00:13:34.023
+deset hiljada stvari
+u tvom programu, a
+
+00:13:34.023 --> 00:13:35.743
+do tih vežbi ćemo uskoro stići,
+
+00:13:36.224 --> 00:13:40.944
+ovo postaje izuzetno,
+izuzetno korisno.
+
+00:13:41.883 --> 00:13:46.363
+Imamo i ovaj mali prekidač
+za info panel ovde gore.
+
+00:13:46.444 --> 00:13:50.964
+I opet, kako budemo imali mnogo
+komplikovaniji kod,
+
+00:13:50.964 --> 00:13:53.003
+ovde će biti mnogo
+koraka i postaće
+
+00:13:53.003 --> 00:13:54.844
+mnogo detaljnije i
+mnogo komplikovanije.
+
+00:13:55.483 --> 00:13:58.523
+Ali za sada možeš samo
+da vidiš da ti piše da je Džiki
+
+00:13:58.603 --> 00:14:02.084
+upotrebio funkciju triangle sa
+ovim različitim parametrima.
+
+00:14:02.084 --> 00:14:05.283
+Možeš i da pređeš mišem preko ovih stvari,
+na primer preko triangle.
+
+00:14:05.283 --> 00:14:09.164
+I videćeš da se ovde istakne reč
+preko koje prelaziš i ceo red.
+
+00:14:09.783 --> 00:14:13.064
+Opet, to možda još ne deluje posebno korisno,
+ali kasnije,
+
+00:14:13.064 --> 00:14:15.824
+kada imaš možda 20
+koraka i želiš da
+
+00:14:15.824 --> 00:14:19.064
+odrediš šta se tačno dešava
+u svakom delu ovog reda koda,
+
+00:14:19.224 --> 00:14:20.903
+ovo će ti mnogo pomoći.
+
+00:14:21.863 --> 00:14:24.424
+Da, a možeš i da
+pritisneš ovo dugme za puštanje.
+
+00:14:24.533 --> 00:14:26.743
+Da pustiš, pustiš sve do kraja.
+
+00:14:27.294 --> 00:14:30.674
+A ako se vratiš na svoju igru
+Space Invaders od ranije,
+
+00:14:30.674 --> 00:14:34.464
+onu koju već imaš,
+možeš to sada da probaš, možeš da se vratiš,
+
+00:14:34.464 --> 00:14:37.383
+koristiš klizač,
+i gledaš kako se osvajači obaraju,
+
+00:14:37.623 --> 00:14:39.983
+ili uđeš u lavirint
+i koristiš taj klizač,
+
+00:14:39.983 --> 00:14:43.263
+pomeraš se napred i nazad i gledaš
+kako tvoj lik rešava lavirint.
+
+00:14:43.263 --> 00:14:46.023
+A onda ponovo pritisneš dugme za puštanje
+da pustiš celu animaciju.
+
+00:14:46.263 --> 00:14:51.503
+Dakle, veoma koristan mali alat. Iza
+njega se krije još ponešto složenije
+
+00:14:51.503 --> 00:14:54.503
+kojoj ćemo se vratiti
+u nekoj kasnijoj detaljnoj analizi.
+
+00:14:54.824 --> 00:14:56.664
+Ali za sada, nadam se da je ovo bilo korisno.
+
+00:14:56.853 --> 00:15:02.103
+Radujem se trenutku kada ćemo zaista
+zaroniti u neke složene vežbe.
+
+00:15:02.533 --> 00:15:06.373
+Ali sada te prepuštam vežbama. Nadam se da ćeš
+uživati u narednim vežbama crtanja.
+
+00:15:06.773 --> 00:15:08.853
+Nastavi da razmišljaš o tome
+kako razmišljaš.
+
+00:15:09.174 --> 00:15:13.814
+Ne žuri, piši uredan kod,
+i, eto, biće ti odlično.
+
+00:15:13.893 --> 00:15:14.773
+Hvala na gledanju.

@@ -1,0 +1,69 @@
+{
+  "checks": {
+    "tooManyLines": "Tvoje rešenje ima previše linija koda. Možeš li da ga skratiš?"
+  },
+  "tasks": {
+    "packLunchbox": {
+      "name": "Spakuj kutiju za užinu",
+      "description": "Podeli predmete na kutiju za užinu i ranac: spakuj u kutiju što više predmeta, bez prekoračenja kapaciteta, a sve ostalo stavi u ranac."
+    },
+    "solveInSixteenLines": {
+      "name": "Reši u 16 linija koda",
+      "description": "Možeš li da rešiš ovu vežbu sa samo 16 linija koda?"
+    }
+  },
+  "scenarios": {
+    "everythingFits": {
+      "name": "Sve staje",
+      "description": "Prostrana kutija za užinu u koju staje svaki predmet, pa ranac ostaje prazan."
+    },
+    "packTheMost": {
+      "name": "Spakuj što više",
+      "description": "Prostor je tesan, pa mali predmeti idu u kutiju za užinu, a veliki ostaju za ranac."
+    },
+    "justTheSnack": {
+      "name": "Samo užina",
+      "description": "Staje samo najmanji predmet, a ostalo ide u ranac."
+    },
+    "nothingFits": {
+      "name": "Ništa ne staje",
+      "description": "Čak je i najmanji predmet prevelik, pa sve završi u rancu."
+    },
+    "emptyLunchbox": {
+      "name": "Prazna kutija za užinu",
+      "description": "Nema uopšte predmeta, pa se i kutija za užinu i ranac vraćaju prazni."
+    },
+    "bonus1": {
+      "name": "16 linija koda",
+      "description": "Reši vežbu sa samo 16 linija koda."
+    }
+  },
+  "hints": {
+    "readEachItem": {
+      "question": "Kako da dobijem naziv i veličinu svakog predmeta?",
+      "answer": "Svaki predmet je par. Prvi deo je naziv, a drugi veličina, pa možeš da ih čitaš iz predmeta, jedan po jedan."
+    },
+    "fitTheMost": {
+      "question": "Kako da spakujem što više predmeta?",
+      "answer": "Razmisli koje predmete prvo da dodaš. Manji predmeti ostavljaju više prostora za ostale, pa se isplati da njih rešiš pre velikih."
+    },
+    "goSmallestFirst": {
+      "question": "Predmeti su navedeni od najvećeg ka najmanjem, pa kako da idem od najmanjeg?",
+      "answer": "Postoji metoda niza koja ti vraća kopiju niza sa obrnutim redosledom. Prvo obrni predmete, pa ih zatim obradi u tom novom redosledu."
+    },
+    "knowWhenFull": {
+      "question": "Kako da odlučim gde ide koji predmet?",
+      "answer": "Vodi stalni zbir veličina koje dodaješ. Pre nego što dodaš predmet, proveri da li bi zbir plus njegova veličina još uvek stao u kapacitet. Ako staje, ide u kutiju za užinu, a ako ne, ide u ranac."
+    }
+  },
+  "functions": {
+    "toReversed": {
+      "description": "Vraća kopiju niza sa elementima u obrnutom redosledu, bez menjanja originala.",
+      "category": "Nizovi"
+    },
+    "push": {
+      "description": "Dodaje element na kraj niza, menjajući sam niz.",
+      "category": "Nizovi"
+    }
+  }
+}

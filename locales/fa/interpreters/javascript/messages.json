@@ -119,6 +119,8 @@
       "MethodNotYetImplemented": "متد `{{method}}` یک متد معتبر است اما هنوز برای شما در دسترس نیست.",
       "MethodNotYetAvailable": "متد `{{method}}` در سطح یادگیری فعلی شما در دسترس نیست. به پیشرفت ادامه دهید تا این ویژگی را باز کنید!",
       "PropertyNotYetAvailable": "ویژگی `{{property}}` در سطح یادگیری فعلی شما در دسترس نیست. به پیشرفت ادامه دهید تا این ویژگی را باز کنید!",
+      "InfiniteRecursionDetected": "تابع `{{name}}` بارها و بارها خودش را فراخوانی کرد و هرگز متوقف نشد. تابعی که از خودش استفاده می‌کند به راهی برای توقف نیاز دارد؛ بدون آن، تا ابد ادامه می‌دهد.",
+      "MaxTotalCallDepthReached": "توابع شما بارها و بارها یکدیگر را فراخوانی کردند و هرگز متوقف نشدند. بیشترین تعداد فراخوانی‌های تابع که می‌توانند همزمان در این تمرین در انتظار بمانند، {{max}} است.",
       "MaxIterationsReached": "کد شما بیش از حد طول کشید و برای جلوگیری از حلقه‌ی بی‌نهایت متوقف شد. حداکثر تعداد دفعات مجاز اجرای حلقه‌ها در این تمرین {{max}} است.",
       "RepeatCountMustBeNumber": "repeat() به یک عدد نیاز دارد، اما {{type}} دریافت کرد.",
       "RepeatCountMustBeNonNegative": "تعداد repeat() باید ۰ یا بیشتر باشد، اما {{value}} دریافت کرد.",
@@ -147,9 +149,9 @@
       "DisabledFeatureIncludeListViolation": "ویژگی `{{lexeme}}` هنوز در سطح فعلی شما در دسترس نیست."
     },
     "stdlib": {
-      "StdlibExactArgs": "{{functionName}}() دارای {{expected}} دهانه ورودی است، اما شما فقط {{received}} چیز برای قرار دادن در آنها فراهم کردید.",
-      "StdlibAtLeastArgs": "{{functionName}}() حداقل {{minimum}} دهانه ورودی دارد، اما شما فقط {{received}} چیز برای قرار دادن در آنها فراهم کردید.",
-      "StdlibArgRange": "{{functionName}}() بین {{min}} و {{max}} دهانه ورودی دارد، اما شما فقط {{received}} چیز برای قرار دادن در آنها فراهم کردید.",
+      "StdlibExactArgs": "{{functionName}}() $t(phrases.slotCount, {\"count\": {{expected}} }) دارد، اما شما $t(phrases.inputCount, {\"count\": {{received}} }) برای استفاده‌ی جیکی فراهم کردید.",
+      "StdlibAtLeastArgs": "{{functionName}}() دست‌کم به $t(phrases.slotCount, {\"count\": {{minimum}} }) نیاز دارد، اما شما $t(phrases.inputCount, {\"count\": {{received}} }) برای استفاده‌ی جیکی فراهم کردید.",
+      "StdlibArgRange": "{{functionName}}() بین {{min}} و {{max}} دهانه ورودی دارد، اما شما $t(phrases.inputCount, {\"count\": {{received}} }) برای استفاده‌ی جیکی فراهم کردید.",
       "StdlibArgTypeMismatch": "{{functionName}}() انتظار داشت {{argName}} یک {{expected}} باشد، اما شما به آن یک {{received}} دادید.",
       "StdlibArgMustBeInteger": "{{functionName}}() انتظار داشت {{argName}} یک عدد صحیح باشد، اما شما به آن {{value}} دادید.",
       "MethodNotYetImplemented": "متد `{{method}}` یک متد معتبر است اما هنوز برای شما در دسترس نیست.",
@@ -216,6 +218,18 @@
       "step_empty": "جیکی شیء را بررسی کرد، دید که خالی است و تصمیم گرفت در این خط کار دیگری انجام ندهد.",
       "step_put": "جیکی {{value}} را در جعبه قرار داد و آن را روی قفسه گذاشت، آماده برای استفاده در بلوک کد."
     },
+    "forStatement": {
+      "result_false": "شرط به <code>false</code> ارزیابی شد، پس حلقه متوقف شد.",
+      "result_no_condition": "این حلقه شرطی ندارد، پس بدنه‌ی حلقه دوباره اجرا شد.",
+      "result_true": "شرط به <code>true</code> ارزیابی شد، پس بدنه‌ی حلقه اجرا شد.",
+      "step_decreased": "جیکی {{name}} را از {{oldValue}} به {{newValue}} کاهش داد.",
+      "step_decreased_evaluated": "جیکی {{name}} را از {{oldValue}} به {{newValue}} کاهش داد، سپس {{expr}} را ارزیابی کرد و نتیجه گرفت که {{value}} است.",
+      "step_false": "نتیجه <code>false</code> بود، پس جیکی تصمیم گرفت حلقه را متوقف کند.",
+      "step_increased": "جیکی {{name}} را از {{oldValue}} به {{newValue}} افزایش داد.",
+      "step_increased_evaluated": "جیکی {{name}} را از {{oldValue}} به {{newValue}} افزایش داد، سپس {{expr}} را ارزیابی کرد و نتیجه گرفت که {{value}} است.",
+      "step_no_condition": "شرطی برای بررسی وجود نداشت، پس جیکی تصمیم گرفت بدنه‌ی حلقه را اجرا کند.",
+      "step_true": "نتیجه <code>true</code> بود، پس جیکی تصمیم گرفت بدنه‌ی حلقه را اجرا کند."
+    },
     "forOfStatement": {
       "result_empty": "{{type}} خالی بود، بنابراین این خط کاری انجام نداد.",
       "result_iteration_ordinal_one": "∅",
@@ -244,6 +258,9 @@
     },
     "memberExpression": {
       "array": "جیکی دانه‌ی اندیس {{index}} از زنجیر را گرفت و فهمید که {{value}} است.",
+      "property": "جیکی ویژگی {{name}} را به دست آورد و نتیجه گرفت که {{value}} است.",
+      "property_array": "جیکی {{name}} آرایه را به دست آورد و نتیجه گرفت که {{value}} است.",
+      "property_string": "جیکی {{name}} رشته را به دست آورد و نتیجه گرفت که {{value}} است.",
       "string": "جیکی کاراکتر اندیس {{index}} از رشته را گرفت و فهمید که {{value}} است."
     },
     "repeatStatement": {

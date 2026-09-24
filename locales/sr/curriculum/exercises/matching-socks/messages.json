@@ -1,0 +1,97 @@
+{
+  "tasks": {
+    "findMatchingSocks": {
+      "name": "Pronađi parove čarapa",
+      "description": "Napiši funkciju koja prima dve korpe odeće (kao nizove stringova) i vraća niz svih parova čarapa pronađenih u obe korpe. Predmeti koji su čarape završavaju se sa `\" sock\"` i uvek počinju sa `\"left \"` ili `\"right \"`."
+    },
+    "solveTightly": {
+      "name": "Reši u 29 linija",
+      "description": "Probaj da ovo rešiš u 29 linija koda ili manje. To nije najkraće moguće rešenje, ali je dobar cilj kome da težiš kada ti kod već radi."
+    }
+  },
+  "scenarios": {
+    "emptyBaskets": {
+      "name": "Prazne korpe",
+      "description": "Obe korpe su prazne."
+    },
+    "nothingClean": {
+      "name": "Ništa čisto",
+      "description": "Nema ničega čistog."
+    },
+    "nothingDirty": {
+      "name": "Ništa prljavo",
+      "description": "Nema ničega prljavog."
+    },
+    "noSocks": {
+      "name": "Nema čarapa",
+      "description": "Nigde nema čarapa."
+    },
+    "oneInEach": {
+      "name": "Po jedna u svakoj",
+      "description": "U svakoj korpi je po jedna čarapa i one se poklapaju."
+    },
+    "aBigMix": {
+      "name": "Velika zbrka!",
+      "description": "Zbrka odeće sa više parova koji se poklapaju."
+    },
+    "someAddedPain": {
+      "name": "Razne sitnice",
+      "description": "Ubacilo se i nekoliko neobičnih predmeta."
+    },
+    "bonusLineCount": {
+      "name": "Kratko rešenje",
+      "description": "Isti posao, obavljen u manje linija."
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Odakle da počnem kada ima mnogo različitih delova?",
+      "answer": "Ne pokušavaj da sve napišeš odjednom. Razbij problem na male funkcije od kojih svaka odgovara na jedno malo pitanje, nateraj svaku da proradi zasebno, a onda ih sastavi."
+    },
+    "isItASock": {
+      "question": "Kako da prepoznam da je nešto u korpi zaista čarapa?",
+      "answer": "Nije sve što pominje stranu čarapa, niti je sve što liči na čarapu zaista čarapa. Pažljivo pogledaj pravila o tome kako se predmeti opisuju i proveri oba kraja opisa, a ne samo početak."
+    },
+    "compareSockPair": {
+      "question": "Kako da uporedim levu čarapu sa njenim desnim parom?",
+      "answer": "Umesto da direktno porediš dve čarape, izračunaj kako bi se zvao partner neke čarape, pa onda traži to. Stringovi imaju ugrađenu metodu za zamenu jednog dela teksta drugim, kojom možeš i da skineš neki deo tako što ga zameniš praznim tekstom."
+    },
+    "avoidDuplicates": {
+      "question": "Kako da izbegnem da isti par prebrojim dvaput?",
+      "answer": "Svaki par se otkrije dvaput, jednom sa svake strane. Pre nego što dodaš ime u svoje rezultate, proveri da li se već tamo nalazi."
+    },
+    "overallPlan": {
+      "question": "Koji je dobar opšti plan?",
+      "answer": "Obe korpe možeš da posmatraš kao jednu veliku gomilu. Prođi kroz nju predmet po predmet i za svaki predmet odluči da li pripada tvom odgovoru."
+    }
+  },
+  "checks": {
+    "tooManyLines": "Tako blizu! Tvoje rešenje radi, ali ima više od 29 linija koda."
+  },
+  "functions": {
+    "startsWith": {
+      "description": "Proverava da li string počinje manjim stringom",
+      "category": "Operacije sa stringovima"
+    },
+    "endsWith": {
+      "description": "Proverava da li string završava manjim stringom",
+      "category": "Operacije sa stringovima"
+    },
+    "replace": {
+      "description": "Vraća novi string u kome je prvo pojavljivanje nekog teksta zamenjeno drugim tekstom",
+      "category": "Operacije sa stringovima"
+    },
+    "concat": {
+      "description": "Spaja dva niza u jedan novi niz",
+      "category": "Operacije sa nizovima"
+    },
+    "includes": {
+      "description": "Proverava da li niz već sadrži neki element",
+      "category": "Operacije sa nizovima"
+    },
+    "push": {
+      "description": "Dodaje element na kraj niza",
+      "category": "Operacije sa nizovima"
+    }
+  }
+}

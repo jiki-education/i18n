@@ -1,7 +1,7 @@
 ---
 title: "`!` (논리 부정) 연산자"
 description: "`!`를 사용해 불리언을 뒤집어요: true는 false로, false는 true로 바뀌며, 토글하거나 조건을 반전시킬 때 유용해요."
-en_md5: 7cffbd1fa13317b3d6e6a71415413041
+en_md5: 5d752c7a85e6e17d914c73c83429de80
 ---
 
 지금까지 값들이 같은지 비교할 때 등호 세 개(`===`)를 써 왔어요. 하지만 같지 **않은지**를 확인하고 싶을 때도 있어요. 이럴 때는 느낌표(`!`) 뒤에 등호 두 개를 붙인 `!=`를 사용해요. 그리고 보통 프로그래밍에서 느낌표, 또는 미국 친구들이 부르는 대로 bang은 “아니다(not)”라는 뜻이에요. 자, 가게에서 일한다고 상상해 보세요. 경영진이 디스코 복장은 출입 금지라고 결정했어요.
@@ -31,12 +31,12 @@ if (outfit !== "disco") {
 <img
   class="concept-image"
   src="/static/images/concept-assets/logical-not/pong-court.webp"
-  alt="퐁 스타일의 코트에서 패들과 공이 좌우로 튀는 모습, movingRight 변수를 토글하는 것을 보여줍니다"
+  alt="퐁 스타일의 코트에서 패들과 공이 좌우로 튀는 모습, movingRight 변수를 토글하는 것을 보여줘요"
   width="500"
   height="352"
 />
 
-그래서 우리는 이렇게 할 수 있어요: “만약 `movingRight`가 true면 `movingRight`를 false로, 그렇지 않으면 true로 설정해요.” 이게 변수를 토글하는 한 가지 방법이에요. Jiki는 `movingRight`가 true인지 false인지 살펴보고, 그 반대 값을 계산해서 다시 상자에 넣어요.
+그래서 이렇게 할 수 있어요: “만약 `movingRight`가 true면 `movingRight`를 false로, 그렇지 않으면 true로 설정해요.” 이게 변수를 토글하는 한 가지 방법이에요. Jiki는 `movingRight`가 true인지 false인지 살펴보고, 그 반대 값을 계산해서 다시 상자에 넣어요.
 
 ```javascript
 if (movingRight === true) {

@@ -1,0 +1,112 @@
+{
+  "errors": {
+    "endOfPath": "Pesnik je otišao preko kraja puta. Nešto je trebalo da zaustavi hod pre toga.",
+    "isEmojiString": "Možeš da proveriš samo da li je neki tekst emoji.",
+    "reciteString": "Možeš da izrecituješ samo neki tekst."
+  },
+  "checks": {
+    "notRecited": "Pesnik ništa nije izrecitovao. Pobrini se da pozoveš <code>recite()</code> kada se hod završi.",
+    "wrongPoem": "Pesnik je izrecitovao:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>ali pesma je trebalo da bude:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "wrongSpacing": "Pesnik je sakupio prave reči u pravom poretku, ali su razmaci pogrešni. Izrecitovao je:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>ali pesma je trebalo da bude:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "noFunctions": "Napiši svoje rešenje kao jedan hod, bez definisanja sopstvenih funkcija.",
+    "reciteOnce": "Pesnik treba da izrecituje pesmu jednom, nakon što se hod završi.",
+    "tooDeeplyNested": "Tvoj kod je previše ugnježden. Dozvoljena su ti samo dva nivoa, dakle petlja sa <code>if</code>-om unutra, ali ništa unutar tog <code>if</code>-a.",
+    "noAndOrNot": "Ova vežba se bavi drugim načinom donošenja odluka, pa <code>&&</code> i <code>!</code> ovde nisu dozvoljeni. <code>||</code> je u redu.",
+    "needsContinue": "Tvoje rešenje mora da koristi <code>continue</code>.",
+    "needsBreak": "Tvoje rešenje mora da koristi <code>break</code>.",
+    "tooManyLines": "Tvoje rešenje je duže nego što treba. Vidi da li možeš da ga skratiš tako što ćeš svaku vrstu polja obraditi na jednom mestu."
+  },
+  "tasks": {
+    "collectThePoem": {
+      "name": "Sakupi pesmu i izrecituj je",
+      "description": "Prošetaj putem, sakupi reči pesme, zaustavi se na pravom mestu i izrecituj ono što sakupiš."
+    },
+    "solveTightly": {
+      "name": "Skrati ga",
+      "description": "Reši isti hod, ali svedi svoj kod na dozvoljeni broj linija."
+    }
+  },
+  "scenarios": {
+    "hope": {
+      "name": "Put sa prazninama",
+      "description": "Šest reči sa golom travom između njih i kockasta zastavica na kraju."
+    },
+    "wandered": {
+      "name": "Dekoracija na putu",
+      "description": "Ista zamisao, ali sada između reči rastu biljke i stvorenja."
+    },
+    "mists": {
+      "name": "Dekoracija pored zastavice",
+      "description": "List se nalazi na polju odmah pre kockaste zastavice."
+    },
+    "notLost": {
+      "name": "Tačno sedam reči",
+      "description": "Red sa sedam reči, pa se pesnik zaustavlja pre zastavice."
+    },
+    "hopeContinued": {
+      "name": "Pesma koja je predugačka",
+      "description": "Ovaj put sadrži više od sedam reči, pa se pesnik zaustavlja na pola reda."
+    },
+    "highlands": {
+      "name": "Apostrof",
+      "description": "Stih Bernsa, sa apostrofom koji stoji na svom polju."
+    },
+    "heartScenery": {
+      "name": "Dekoracija posle apostrofa",
+      "description": "Između apostrofa i reči sa kojom se spaja izraste pečurka, pa ono što pamti razmake mora da izdrži i preskočeno polje."
+    },
+    "tyger": {
+      "name": "Zarez",
+      "description": "Stih Blejka, sa zarezom koji stoji na svom polju."
+    },
+    "pleure": {
+      "name": "Gola trava na početku",
+      "description": "Stih Verlena, sa nekoliko praznih polja pre nego što pesma počne."
+    },
+    "yasegaeru": {
+      "name": "Stih Ise",
+      "description": "Haiku od sedam reči, sa ograničenjem broja linija da tvoji uslovi ostanu strogi. Možeš li da nađeš uredno rešenje od samo 32 linije? (Ili manje?)"
+    }
+  },
+  "hints": {
+    "scenery": {
+      "question": "Biljke i stvorenja mi završavaju u pesmi.",
+      "answer": "Samo reči pripadaju pesmi. Sve ostalo na putu treba ostaviti za sobom, što znači da tvoja petlja mora da stigne do sledećeg polja bez dodavanja bilo čega."
+    },
+    "flagSkipped": {
+      "question": "Moj pesnik nikada ne prestaje da hoda.",
+      "answer": "I kockasta zastavica je emoji. Ako dekoraciju obradiš pre zastavice, zastavica će biti tretirana kao dekoracija i hod se nikada neće završiti. Redosled je važan."
+    },
+    "spacing": {
+      "question": "Reči su mi sve slepljene, ili ima razmak na početku.",
+      "answer": "Razmisli kada je razmak potreban. Potreban je **između** dve reči, a ne pre prve, pa nešto mora da pamti da li je nešto već napisano."
+    },
+    "apostrophe": {
+      "question": "Dobijam `heart ' s` umesto `heart's`.",
+      "answer": "Apostrof spaja reči sa obe strane, pa ne ide razmak ni pre njega ni posle njega. Zarez je obrnut, bez razmaka pre njega, ali sa razmakom posle."
+    },
+    "reciteOnce": {
+      "question": "Zašto `recite()` smem da pozovem samo jednom?",
+      "answer": "Pesnik izrecituje gotovu pesmu, pa postoji samo jedan trenutak kada to može da se desi. Postoji više načina da se hod završi i svi oni moraju da stignu do tog istog trenutka."
+    }
+  },
+  "describers": {
+    "move": "otišao napred i našao ${return}",
+    "isEmoji": "proverio da li je ${arg1} emoji",
+    "recite": "izrecitovao „${arg1}“"
+  },
+  "functions": {
+    "move": {
+      "description": "Pomera pesnika napred na sledeće polje i **vraća** ono što je na njemu bilo.",
+      "category": "Kretanje"
+    },
+    "isEmoji": {
+      "description": "Vraća `true` ako je ono što joj proslediš emoji.",
+      "category": "Provere"
+    },
+    "recite": {
+      "description": "Čini da pesnik naglas izrecituje pesmu.",
+      "category": "Radnja"
+    }
+  }
+}

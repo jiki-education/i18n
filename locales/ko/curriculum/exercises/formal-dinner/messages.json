@@ -2,11 +2,11 @@
   "tasks": {
     "findGuestTable": {
       "name": "손님의 테이블 찾기",
-      "description": "손님들의 전체 이름 목록과 이에 대응하는 테이블 이름 목록, 그리고 존칭과 성으로 알려진 도착한 손님을 받는 함수를 작성하세요. 손님이 앉은 테이블 이름을 반환하고, 좌석 배치도에 없으면 `\"No table found\"`를 반환해요."
+      "description": "손님들의 전체 이름 배열과 이에 대응하는 테이블 이름 배열, 그리고 존칭과 성으로 알려진 도착한 손님을 받는 함수를 작성하세요. 손님이 앉은 테이블 이름을 반환하고, 좌석 배치도에 없으면 `\"No table found\"`를 반환해요."
     },
     "solveTightly": {
-      "name": "간결하게 해결하기",
-      "description": "보너스: 생각보다 훨씬 간결하게 작성할 수 있어요. 전체 솔루션을 몇 줄로 줄일 수 있을까요?"
+      "name": "9줄로 해결하기",
+      "description": "보너스: 생각보다 훨씬 간결하게 작성할 수 있어요. 코드 9줄 이하로 풀어 보세요."
     }
   },
   "scenarios": {
@@ -48,12 +48,12 @@
     },
     "formalDinnerBonusLineCount": {
       "name": "간결하게: Doyle 경",
-      "description": "이전과 같은 좌석 배치도지만, 이번에는 솔루션을 훨씬 적은 줄로 작성해야 해요."
+      "description": "이전과 같은 좌석 배치도지만, 이번에는 코드 9줄 이하로 풀어 보세요."
     }
   },
   "hints": {
     "twoLists": {
-      "question": "두 리스트는 서로 어떤 관계인가요?",
+      "question": "두 배열은 서로 어떤 관계인가요?",
       "answer": "두 리스트는 짝을 이뤄요. 첫 번째 손님은 첫 번째 테이블에, 두 번째 손님은 두 번째 테이블에 앉아요. 그래서 손님이 배치도에 *있는지* 아는 것만으로는 부족해요 - 배치도에서 *어디에* 있는지 알아야 해요."
     },
     "comparingNames": {
@@ -70,27 +70,27 @@
     }
   },
   "checks": {
-    "tooManyLines": "계속해 보세요! 더 적은 줄로 해결할 수 있는지 보세요."
+    "tooManyLines": "계속해 봐요! 코드를 9줄까지 줄일 수 있는지 보세요."
   },
   "functions": {
     "length": {
-      "description": "목록의 항목 개수 - 문자열에서 사용했던 것과 같은 length 속성이에요 (레벨 stdlib 제공)",
-      "category": "목록 연산"
+      "description": "배열의 항목 개수로, 문자열에서 사용했던 것과 같은 length 속성이에요.",
+      "category": "배열 연산"
     },
     "split": {
-      "description": "문자열을 구분자마다 나누어 조각들의 목록으로 만들어요 (레벨 stdlib 제공)",
+      "description": "문자열을 구분자마다 나누어 조각들의 배열로 만들어요.",
       "category": "문자열 연산"
     },
     "slice": {
-      "description": "목록의 일부로 새로운 목록을 만들어요, 특정 위치부터 시작해요 (레벨 stdlib 제공)",
-      "category": "목록 연산"
+      "description": "배열의 일부로 새로운 배열을 만들어요. 특정 위치부터 시작해요.",
+      "category": "배열 연산"
     },
     "join": {
-      "description": "목록의 항목들을 하나의 문자열로 이어 붙여요, 구분자를 사이에 넣어요 (레벨 stdlib 제공)",
-      "category": "목록 연산"
+      "description": "배열의 항목들을 하나의 문자열로 이어 붙이고, 사이에 구분자를 넣어요.",
+      "category": "배열 연산"
     },
     "endsWith": {
-      "description": "문자열이 더 작은 문자열로 끝나는지 확인해요 (레벨 stdlib 제공)",
+      "description": "문자열이 더 작은 문자열로 끝나는지 확인해요.",
       "category": "문자열 연산"
     }
   }

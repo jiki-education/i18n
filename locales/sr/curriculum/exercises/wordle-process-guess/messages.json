@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "rowMismatch": "Slovo „{{letter}}“ u kutiji {{square}} treba da bude „{{expected}}“, a ne „{{actual}}“.",
+    "rowNotColored": "Red nije obojen.",
+    "rowWrongLength": "Red je dobio {{actual}} stanja, ali mu treba {{expected}}."
+  },
+  "tasks": {
+    "processGuess": {
+      "name": "Obradi jedno pogađanje",
+      "description": "Napravi funkciju koja se zove processGuess, koja prima tajnu reč i pogađanje, utvrđuje stanje svakog slova (correct, present ili absent), a zatim poziva colorRow(1, states) sa dobijenim rezultatima."
+    }
+  },
+  "scenarios": {
+    "allCorrect": {
+      "name": "Sve tačno",
+      "description": "Obradi pogađanje u kojem su sva slova tačna."
+    },
+    "absent": {
+      "name": "Neka slova nedostaju",
+      "description": "Obradi slučaj kada neka slova nisu u tajnoj reči."
+    },
+    "present": {
+      "name": "Neka slova nisu na mestu",
+      "description": "Obradi slova koja su na pogrešnom mestu."
+    },
+    "complex": {
+      "name": "Složen slučaj",
+      "description": "Obradi složeniji scenario."
+    },
+    "differentWord": {
+      "name": "Druga reč",
+      "description": "I na kraju, jedna druga reč!"
+    }
+  },
+  "hints": {
+    "compareLetters": {
+      "question": "Kako da uporedim svako slovo iz pogađanja sa tajnom reči?",
+      "answer": "Prođi petljom kroz pozicije od `0` do `4`. Za svaku poziciju uporedi `guess[i]` sa `target[i]`."
+    },
+    "stateRules": {
+      "question": "Kada je slovo `\"correct\"`, kada `\"present\"`, a kada `\"absent\"`?",
+      "answer": "Po pojednostavljenim pravilima ove vežbe: ako je `guess[i]` jednako `target[i]`, stanje je `\"correct\"`. U suprotnom, ako slovo postoji negde u `target`, stanje je `\"present\"`. Ako ne postoji, stanje je `\"absent\"`."
+    },
+    "buildList": {
+      "question": "Kako da sastavim niz stanja?",
+      "answer": "Počni od praznog niza, a zatim unutar petlje koristi `states.push(value)` da svako stanje dodaš na kraj, po redu."
+    },
+    "finishedList": {
+      "question": "Gde ide gotov niz?",
+      "answer": "Prosledi ga funkciji `colorRow(1, states)` da obojiš prvi red table svojim izračunatim stanjima."
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "Boji red na tabli za Wordle zadatim stanjima.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "Dodaje element na kraj niza i pritom menja sam niz.",
+      "category": "Nizovi"
+    },
+    "includes": {
+      "description": "Proverava da li jedan string sadrži drugi i vraća tačno ili netačno.",
+      "category": "Stringovi"
+    }
+  },
+  "describers": {
+    "colorRow": "obojio red na tabli za Wordle"
+  }
+}

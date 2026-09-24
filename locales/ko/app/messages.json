@@ -48,9 +48,9 @@
       "signUp": "무료로 가입하기",
       "menuAriaLabel": "메뉴 열기",
       "closeMenuAriaLabel": "메뉴 닫기",
-      "languageAriaLabel": "�",
-      "languageComingSoon": "�",
-      "languageComingSoonBadge": "�"
+      "languageAriaLabel": "언어 변경",
+      "languageComingSoon": "곧 제공될 예정이에요",
+      "languageComingSoonBadge": "출시 예정"
     },
     "internalHeader": {
       "homeAriaLabel": "Jiki 홈",
@@ -90,873 +90,904 @@
     }
   },
   "common": {
-    "continue": "�",
-    "close": "�",
-    "cancel": "�",
-    "confirm": "�",
-    "processing": "�",
-    "reloadPage": "�",
-    "loading": "�",
-    "verifying": "�",
-    "sending": "�",
-    "perMonth": "�",
+    "continue": "계속하기",
+    "close": "닫기",
+    "cancel": "취소",
+    "confirm": "확인",
+    "processing": "처리 중...",
+    "reloadPage": "페이지 새로고침",
+    "loading": "불러오는 중...",
+    "verifying": "확인 중...",
+    "sending": "보내는 중...",
+    "perMonth": "/월",
     "validation": {
-      "emailInvalid": "�",
-      "passwordRequired": "�",
-      "passwordMinLength": "�",
-      "currentPasswordRequired": "�",
-      "newPasswordRequired": "�",
-      "passwordsNoMatch": "�"
+      "emailInvalid": "올바른 이메일 주소를 입력해 주세요",
+      "passwordRequired": "비밀번호를 입력해 주세요",
+      "passwordMinLength": "비밀번호는 6자 이상이어야 해요",
+      "currentPasswordRequired": "현재 비밀번호를 입력해 주세요",
+      "newPasswordRequired": "새 비밀번호를 입력해 주세요",
+      "passwordsNoMatch": "비밀번호가 일치하지 않아요"
     },
     "pagination": {
-      "label": "�",
-      "previousPage": "�",
-      "nextPage": "�"
+      "label": "페이지 이동",
+      "previousPage": "이전 페이지",
+      "nextPage": "다음 페이지"
     },
     "loadingJiki": {
-      "alt": "�"
+      "alt": "잠에서 깨어나는 Jiki 캐릭터"
     },
     "otpInput": {
-      "label": "�",
-      "digitLabel": "�"
+      "label": "일회용 비밀번호",
+      "digitLabel": "6자리 중 {number}번째 숫자"
     },
     "closeButton": {
-      "label": "�"
+      "label": "모달 닫기"
     },
     "copyButton": {
-      "label": "�",
-      "copied": "�"
+      "label": "클립보드에 복사",
+      "copied": "복사했어요"
     },
     "soundToggle": {
-      "mute": "�",
-      "unmute": "�"
+      "mute": "소리 끄기",
+      "unmute": "소리 켜기"
     },
     "themeToggle": {
-      "switchToDark": "�",
-      "switchToSystem": "�",
-      "switchToLight": "�",
-      "toggle": "�",
-      "description": "�"
+      "switchToDark": "어두운 테마로 전환",
+      "switchToSystem": "시스템 테마로 전환",
+      "switchToLight": "밝은 테마로 전환",
+      "toggle": "테마 전환",
+      "description": "현재 테마: {theme}. 클릭하면 밝은 테마, 어두운 테마, 시스템 테마 순서로 바뀌어요."
     },
     "badgeNewLabel": {
-      "label": "�"
+      "label": "신규"
     },
-    "saving": "�",
-    "retry": "�",
-    "tryAgain": "�",
+    "saving": "저장 중...",
+    "retry": "다시 시도",
+    "tryAgain": "다시 시도",
     "betaTag": {
-      "label": "�"
+      "label": "베타 버전"
     },
     "userAvatar": {
-      "alt": "�"
+      "alt": "사용자 아바타"
+    },
+    "signupCta": {
+      "title": "코딩 여정을 시작할 준비가 되었나요?",
+      "subtitle": "Jiki에서 수천 명의 학습자와 함께해요. 코딩 연습 문제를 풀고, 멘토의 피드백을 받고, 실력을 키워 봐요. 무료예요!",
+      "button": "무료로 가입하기"
+    },
+    "upgradeCard": {
+      "logoAlt": "Jiki",
+      "heading": "지금 바로 <highlight>코딩 여정</highlight>을 시작해요!",
+      "text": "Jiki에 가입하고 인터랙티브 연습 문제, 실제 프로젝트, 맞춤형 지원과 함께 코딩을 배워 봐요. 무엇보다 <free>무료예요!</free>",
+      "button": "무료로 가입하기"
+    },
+    "shareLinks": {
+      "heading": "공유하기",
+      "description": {
+        "blogPost": "주변 사람들에게 이 블로그 글과 Jiki의 매력을 알려 주세요.",
+        "article": "주변 사람들에게 이 글과 Jiki의 매력을 알려 주세요.",
+        "concept": "주변 사람들에게 이 설명과 Jiki의 매력을 알려 주세요."
+      },
+      "shareOn": "{network}에 공유하기",
+      "copyLink": "링크 복사",
+      "copied": "링크를 복사했어요"
     }
   },
   "build": {
     "upcomingStreams": {
-      "heading": "�",
-      "toBeAnnounced": "�",
-      "subscribeButton": "�"
+      "heading": "다가오는 라이브 세션",
+      "toBeAnnounced": "추후 공지 예정",
+      "subscribeButton": "캘린더 구독하기"
     },
     "hub": {
-      "title": "�",
-      "description": "�"
+      "title": "만들면서 배우기 - 프로젝트",
+      "description": "Jeremy와 함께 처음부터 실제 프로젝트를 만들어 봐요. 그가 아는 모든 것을 배워요!"
     }
   },
   "auth": {
     "oauth": {
-      "useGoogle": "�",
-      "useExercism": "�",
-      "divider": "�"
+      "useGoogle": "Google로 계속하기",
+      "useExercism": "Exercism으로 계속하기",
+      "divider": "또는"
     },
     "fields": {
-      "emailLabel": "�",
-      "emailPlaceholder": "�",
-      "passwordLabel": "�",
-      "passwordPlaceholder": "�",
-      "emailRequired": "�"
+      "emailLabel": "이메일",
+      "emailPlaceholder": "이메일 주소 입력",
+      "passwordLabel": "비밀번호",
+      "passwordPlaceholder": "비밀번호 입력",
+      "emailRequired": "이메일을 입력해 주세요"
     },
     "captchaError": {
-      "signup": "�",
-      "login": "�",
-      "generic": "�"
+      "signup": "사람인지 봇인지 확인하려고 했지만 확인하지 못했어요. 아래 버튼을 눌러 다시 가입해 주세요.",
+      "login": "사람인지 봇인지 확인하려고 했지만 확인하지 못했어요. 아래 버튼을 눌러 다시 로그인해 주세요.",
+      "generic": "사람인지 봇인지 확인하려고 했지만 확인하지 못했어요. 아래 버튼을 눌러 다시 시도해 주세요."
     },
     "login": {
-      "title": "�",
-      "invalidCredentials": "�",
-      "forgotPassword": "�",
-      "submit": "�",
-      "submitting": "�",
-      "unconfirmed": "�",
-      "resend": "�",
-      "noAccount": "�"
+      "title": "로그인",
+      "invalidCredentials": "이메일 또는 비밀번호가 올바르지 않아요",
+      "forgotPassword": "비밀번호를 잊으셨나요?",
+      "submit": "로그인",
+      "submitting": "로그인 중...",
+      "unconfirmed": "로그인하기 전에 이메일을 확인해 주세요. <link>인증 메일 다시 보내기</link>",
+      "resend": "인증 메일을 받지 못하셨나요? <link>다시 보내기</link>",
+      "noAccount": "아직 계정이 없나요? <link>무료로 가입하세요</link>"
     },
     "signup": {
-      "title": "�",
-      "emailAlreadyRegistered": "�",
-      "submit": "�",
-      "submitting": "�",
-      "haveAccount": "�",
-      "resend": "�"
+      "title": "회원가입",
+      "emailAlreadyRegistered": "이미 가입된 이메일이에요",
+      "submit": "가입하기",
+      "submitting": "가입하는 중...",
+      "haveAccount": "이미 계정이 있나요? <link>로그인</link>",
+      "resend": "인증 메일을 받지 못하셨나요? <link>다시 보내기</link>"
     },
     "forgotPassword": {
-      "title": "�",
-      "subtitle": "�",
-      "successMessage": "�",
-      "submit": "�",
-      "remembered": "�"
+      "title": "비밀번호를 잊으셨나요?",
+      "subtitle": "비밀번호를 잊으셨다면 아래 양식으로 변경 링크를 요청해 주세요.",
+      "successMessage": "해당 이메일로 가입된 계정이 있다면 곧 재설정 안내를 보내드려요.",
+      "submit": "재설정 링크 보내기",
+      "remembered": "비밀번호가 기억나셨나요? <link>로그인</link>"
     },
     "resetPassword": {
-      "invalidTitle": "�",
-      "invalidMessage": "�",
-      "requestNewLink": "�",
-      "title": "�",
-      "subtitle": "�",
-      "tokenMissing": "�",
-      "confirmationRequired": "�",
-      "successMessage": "�",
-      "newPasswordLabel": "�",
-      "newPasswordPlaceholder": "�",
-      "confirmPasswordLabel": "�",
-      "confirmPasswordPlaceholder": "�",
-      "submit": "�",
-      "submitting": "�",
-      "remembered": "�"
+      "invalidTitle": "유효하지 않은 재설정 링크",
+      "invalidMessage": "이 비밀번호 재설정 링크는 유효하지 않거나 만료되었어요. 새 링크를 요청해 주세요.",
+      "requestNewLink": "새 비밀번호 재설정 요청하기",
+      "title": "비밀번호 재설정",
+      "subtitle": "아래에 새 비밀번호를 입력해 주세요.",
+      "tokenMissing": "재설정 토큰이 없거나 유효하지 않아요",
+      "confirmationRequired": "비밀번호 확인을 입력해 주세요",
+      "successMessage": "비밀번호를 재설정했어요! 로그인 페이지로 이동할게요...",
+      "newPasswordLabel": "새 비밀번호",
+      "newPasswordPlaceholder": "새 비밀번호 입력",
+      "confirmPasswordLabel": "새 비밀번호 확인",
+      "confirmPasswordPlaceholder": "새 비밀번호를 다시 입력",
+      "submit": "비밀번호 재설정하기",
+      "submitting": "재설정 중...",
+      "remembered": "비밀번호가 기억나나요? <link>로그인</link>"
     },
     "resendConfirmation": {
-      "title": "�",
-      "subtitle": "�",
-      "successMessage": "�",
-      "submit": "�",
-      "confirmed": "�"
+      "title": "인증 안내 다시 보내기",
+      "subtitle": "인증 메일을 받지 못하셨나요? 아래 양식을 작성해 주시면 다시 보내드릴게요.",
+      "successMessage": "해당 이메일로 가입된 계정이 있다면 곧 인증 안내를 보내드려요.",
+      "submit": "인증 안내 다시 보내기",
+      "confirmed": "이미 인증을 마쳤나요? <link>로그인</link>"
     },
     "checkInbox": {
-      "heading": "�",
-      "sentTo": "�",
-      "hint": "�"
+      "heading": "받은편지함을 확인해 주세요",
+      "sentTo": "다음 주소로 인증 메일을 보냈어요",
+      "hint": "이메일의 링크를 클릭해 계정을 활성화해요. 메일을 받지 못하셨나요? <link>메일 다시 보내기</link>"
     },
     "emailConfirmed": {
-      "heading": "�",
-      "message": "�"
+      "heading": "이메일 인증 완료!",
+      "message": "이메일 인증이 완료되었어요. 대시보드로 이동할게요..."
     },
     "confirmEmail": {
-      "pendingTitle": "�",
-      "pendingDescription": "�",
-      "errorTitle": "�",
-      "errorMessage": "�",
-      "errorCta": "�"
+      "pendingTitle": "이메일을 인증하는 중...",
+      "pendingDescription": "이메일 주소를 인증하는 동안 잠시 기다려 주세요.",
+      "errorTitle": "링크가 만료되었어요",
+      "errorMessage": "이 인증 링크는 더 이상 유효하지 않아요. 계속하려면 새 링크를 요청해 주세요.",
+      "errorCta": "인증 메일 다시 보내기"
     },
     "exercismCallback": {
-      "errorTitle": "�",
-      "errorCta": "�",
-      "pendingTitle": "�",
-      "pendingDescription": "�",
-      "authFailed": "�"
+      "errorTitle": "로그인에 실패했어요",
+      "errorCta": "로그인으로 돌아가기",
+      "pendingTitle": "로그인하는 중...",
+      "pendingDescription": "Exercism으로 로그인하는 동안 잠시 기다려 주세요.",
+      "authFailed": "Exercism 인증에 실패했어요"
     },
     "errorCard": {
-      "needHelp": "�"
+      "needHelp": "도움이 필요하신가요? <link>지원팀에 문의하기</link>"
     },
     "twoFactorVerify": {
-      "title": "�",
-      "subtitle": "�",
-      "codeLabel": "�"
+      "title": "2단계 인증",
+      "subtitle": "인증 앱에 표시된 6자리 코드를 입력해 주세요.",
+      "codeLabel": "인증 코드"
     },
     "twoFactorSetup": {
-      "instructionsHeading": "�",
-      "appsHint": "�",
-      "codeLabel": "�"
+      "instructionsHeading": "인증 앱으로 QR 코드를 스캔해 계정을 안전하게 보호해요.",
+      "appsHint": "Google Authenticator, 1Password, Authy 같은 앱으로 위의 코드를 스캔해요.",
+      "codeLabel": "앱에 표시된 6자리 코드를 입력해 주세요"
     },
     "unsubscribe": {
-      "noToken": "�",
-      "linkInvalid": "�",
-      "tooManyRequests": "�",
-      "serviceUnavailable": "�",
-      "unableToProcess": "�",
-      "networkError": "�",
-      "processingTitle": "�",
-      "processingDescription": "�",
-      "successTitle": "�",
-      "successDescription": "�",
-      "errorTitle": "�"
+      "noToken": "수신 거부 토큰이 없어요.",
+      "linkInvalid": "이 수신 거부 링크는 유효하지 않거나 만료되었어요.",
+      "tooManyRequests": "요청이 너무 많아요. 잠시 후 다시 시도해 주세요.",
+      "serviceUnavailable": "서비스를 일시적으로 사용할 수 없어요. 나중에 다시 시도해 주세요.",
+      "unableToProcess": "요청을 처리하지 못했어요. 계속 이러면 지원팀에 문의해 주세요.",
+      "networkError": "네트워크 오류가 발생했어요. 연결 상태를 확인하고 다시 시도해 주세요.",
+      "processingTitle": "수신 거부 처리 중...",
+      "processingDescription": "요청을 처리하는 동안 잠시 기다려 주세요.",
+      "successTitle": "수신 거부 완료",
+      "successDescription": "메일링 리스트에서 제외되었어요.",
+      "errorTitle": "수신 거부 실패"
     },
     "twoFactor": {
-      "cancel": "�",
-      "invalidCode": "�",
-      "verificationFailed": "�"
+      "cancel": "취소하고 다시 로그인",
+      "invalidCode": "인증 코드가 올바르지 않아요",
+      "verificationFailed": "인증에 실패했어요. 다시 시도해 주세요."
     },
     "layout": {
-      "logoAlt": "�",
-      "tagline": "�",
-      "description": "�",
-      "createdBy": "�",
-      "brand": "�"
+      "logoAlt": "Jiki",
+      "tagline": "코딩 여정이 여기서 시작돼요",
+      "description": "실습 중심의 코딩 학습으로 커리어를 바꾸고 있는 수백만 명의 학습자와 함께해요.",
+      "createdBy": "만든 사람",
+      "brand": "Exercism을 만든 팀"
     }
   },
   "settings": {
     "page": {
-      "title": "�",
-      "description": "�",
-      "tabAccount": "�",
-      "tabSubscription": "�",
-      "tabNotifications": "�",
-      "tabLearning": "�",
-      "tabDanger": "�"
+      "title": "설정",
+      "description": "계정과 환경설정을 관리해요.",
+      "tabAccount": "계정",
+      "tabSubscription": "구독",
+      "tabNotifications": "알림",
+      "tabLearning": "학습",
+      "tabDanger": "위험 구역"
     },
     "avatarEdit": {
-      "adjustTitle": "�",
-      "adjustSubtitle": "�",
-      "back": "�",
-      "save": "�",
-      "changeTitle": "�",
-      "changeSubtitlePart1": "�",
-      "changeSubtitlePart2": "�",
-      "uploadText": "�",
-      "uploadHint": "�"
+      "adjustTitle": "사진 조정",
+      "adjustSubtitle": "사진을 확대하고 위치를 조정해요.",
+      "back": "뒤로",
+      "save": "저장",
+      "changeTitle": "프로필 사진 변경",
+      "changeSubtitlePart1": "새 프로필 이미지를 업로드해요.",
+      "changeSubtitlePart2": "이 사진은 나만 볼 수 있어요.",
+      "uploadText": "클릭해서 새 사진을 업로드해요",
+      "uploadHint": "JPG, PNG, GIF. 최대 5MB."
     },
     "avatarUpload": {
-      "label": "�"
+      "label": "프로필 사진"
     },
     "avatarPreview": {
-      "alt": "�"
+      "alt": "내 아바타"
     },
     "cancelConfirm": {
-      "title": "�",
-      "message": "�",
-      "benefitsTitle": "�",
-      "benefit1": "�",
-      "benefit2": "�",
-      "benefit3": "�",
-      "benefit4": "�",
-      "keep": "�",
-      "cancel": "�",
-      "defaultBillingPeriodEnd": "�"
+      "title": "구독을 취소할까요?",
+      "message": "떠나신다니 정말 아쉬워요! 취소하면 현재 결제 기간이 끝나는 시점에 프리미엄 이용 권한을 잃게 돼요.",
+      "benefitsTitle": "지금 누리고 있는 혜택:",
+      "benefit1": "Jiki의 무제한 AI 도움",
+      "benefit2": "모든 프로젝트와 학습 경로",
+      "benefit3": "수료 증명서",
+      "benefit4": "광고 없는 이용",
+      "keep": "구독 유지하기",
+      "cancel": "구독 취소하기",
+      "defaultBillingPeriodEnd": "결제 기간 종료일"
     },
     "cancelSuccess": {
-      "title": "�",
-      "message": "�",
-      "accessUntil": "�",
-      "resubscribeNote": "�",
-      "gotIt": "�"
+      "title": "구독이 취소됐어요",
+      "message": "프리미엄 구독이 취소됐어요. 현재 결제 기간이 끝날 때까지는 모든 프리미엄 기능을 계속 이용할 수 있어요.",
+      "accessUntil": "프리미엄 이용 기한",
+      "resubscribeNote": "마음이 바뀌었나요? 언제든 다시 구독할 수 있어요.",
+      "gotIt": "확인"
     },
     "changeEmail": {
-      "title": "�",
-      "importantLabel": "�",
-      "importantText": "�",
-      "currentEmailLabel": "�",
-      "newEmailLabel": "�",
-      "newEmailPlaceholder": "�",
-      "passwordLabel": "�",
-      "passwordPlaceholder": "�",
-      "passwordHint": "�",
-      "newEmailRequired": "�",
-      "emailSame": "�",
-      "updateFailed": "�",
-      "submit": "�"
+      "title": "이메일 주소 변경",
+      "importantLabel": "중요:",
+      "importantText": "새 이메일 주소로 확인 메일을 보내드려요. 변경이 적용되려면 메일에서 확인을 눌러야 해요.",
+      "currentEmailLabel": "현재 이메일",
+      "newEmailLabel": "새 이메일 주소",
+      "newEmailPlaceholder": "새 이메일 주소를 입력해요",
+      "passwordLabel": "현재 비밀번호로 확인",
+      "passwordPlaceholder": "현재 비밀번호를 입력해요",
+      "passwordHint": "보안 확인을 위해 필요해요",
+      "newEmailRequired": "새 이메일을 입력해야 해요",
+      "emailSame": "새 이메일은 현재 이메일과 달라야 해요",
+      "updateFailed": "이메일을 변경하지 못했어요",
+      "submit": "이메일 변경"
     },
     "deleteAccount": {
-      "sendFailed": "�",
-      "confirmTitle": "�",
-      "confirmMessage": "�",
-      "submit": "�",
-      "securityTitle": "�",
-      "securityMessage": "�",
-      "understand": "�"
+      "sendFailed": "확인 메일을 보내지 못했어요. 다시 시도해 주세요.",
+      "confirmTitle": "정말 확실해요?",
+      "confirmMessage": "정말 계정을 삭제할까요? 지금까지 한 작업을 모두 잃게 돼요. 되돌릴 수 없어요.",
+      "submit": "계정 삭제",
+      "securityTitle": "보안 확인",
+      "securityMessage": "본인 확인을 위해 이메일을 보내드렸어요. 계정을 삭제하려면 그 메일의 버튼을 눌러 주세요.",
+      "understand": "이해했어요"
     },
     "paymentHistory": {
-      "title": "�",
-      "subtitle": "�",
-      "loading": "�",
-      "error": "�",
-      "empty": "�",
-      "columnDate": "�",
-      "columnAmount": "�",
-      "columnType": "�",
-      "columnMethod": "�",
-      "downloadReceipt": "�",
-      "typeRecurring": "�",
-      "dateUnavailable": "�"
+      "title": "결제 내역",
+      "subtitle": "지난 결제의 영수증을 확인하고 다운로드할 수 있어요.",
+      "loading": "결제 내역을 불러오는 중이에요...",
+      "error": "결제 내역을 불러오지 못했어요. 나중에 다시 시도해 주세요.",
+      "empty": "결제 내역이 없어요.",
+      "columnDate": "날짜",
+      "columnAmount": "금액",
+      "columnType": "유형",
+      "columnMethod": "결제 수단",
+      "downloadReceipt": "영수증 다운로드",
+      "typeRecurring": "정기 결제",
+      "dateUnavailable": "날짜 정보 없음"
     },
     "profile": {
-      "nameLabel": "�",
-      "namePlaceholder": "�",
-      "updateName": "�",
-      "nameEmpty": "�",
-      "nameTooLong": "�",
-      "handleLabel": "�",
-      "handlePlaceholder": "�",
-      "updateHandle": "�",
-      "handleEmpty": "�",
-      "handleInvalid": "�",
-      "handleTooShort": "�",
-      "handleTooLong": "�",
-      "emailLabel": "�",
-      "emailPlaceholder": "�",
-      "updateEmail": "�",
-      "emailEmpty": "�",
-      "confirmationPendingHint": "�",
-      "emailNotConfirmed": "�",
-      "confirmationPending": "�"
+      "nameLabel": "이름",
+      "namePlaceholder": "이름을 입력해요",
+      "updateName": "이름 변경",
+      "nameEmpty": "이름을 입력해야 해요",
+      "nameTooLong": "이름은 100자 미만이어야 해요",
+      "handleLabel": "핸들",
+      "handlePlaceholder": "핸들을 입력해요",
+      "updateHandle": "핸들 변경",
+      "handleEmpty": "핸들을 입력해야 해요",
+      "handleInvalid": "핸들에는 영문자, 숫자, 밑줄(_), 하이픈(-)만 사용할 수 있어요",
+      "handleTooShort": "핸들은 3자 이상이어야 해요",
+      "handleTooLong": "핸들은 30자 미만이어야 해요",
+      "emailLabel": "이메일",
+      "emailPlaceholder": "이메일을 입력해요",
+      "updateEmail": "이메일 변경",
+      "emailEmpty": "이메일을 입력해야 해요",
+      "confirmationPendingHint": "변경을 확인하려면 이메일을 확인해 주세요.",
+      "emailNotConfirmed": "이메일 주소가 아직 확인되지 않았어요.",
+      "confirmationPending": "<strong>{email}</strong> 확인 대기 중"
     },
     "language": {
-      "label": "�",
-      "comingSoon": "�",
-      "comingSoonBadge": "�",
-      "saveFailed": "�"
+      "label": "언어 (Change language)",
+      "comingSoon": "곧 출시해요",
+      "comingSoonBadge": "예정",
+      "saveFailed": "언어를 변경하지 못했어요. 다시 시도해 주세요.",
+      "done": "완료",
+      "searchLabel": "언어 검색",
+      "searchPlaceholder": "언어 검색",
+      "noMatches": "\"{query}\"와 일치하는 언어가 없어요.",
+      "noMatchesHint": "영어 이름이나 언어 코드로 검색해 봐요.",
+      "selected": "선택됨",
+      "saving": "언어 변경 중",
+      "communityNote": "번역은 커뮤니티가 만들어요.",
+      "helpTranslate": "Jiki 번역 돕기"
     },
     "subscriptionSection": {
-      "loadingCardTitle": "�",
-      "loadingCardDescription": "�",
-      "loadingData": "�"
+      "loadingCardTitle": "구독",
+      "loadingCardDescription": "구독 플랜과 결제 정보를 관리해요",
+      "loadingData": "구독 정보를 불러오는 중이에요..."
     },
     "benefits": {
-      "activeSubtitle": "�",
-      "cancellingSubtitle": "�",
-      "resubscribeTitle": "�",
-      "resubscribeButton": "�",
-      "activeHeading": "�",
-      "cancellingHeading": "�",
-      "footer": "�",
-      "resubscribe": "�"
+      "activeSubtitle": "매일 이런 혜택을 누리고 있어요",
+      "cancellingSubtitle": "이용이 끝나면 이런 혜택을 놓치게 돼요",
+      "resubscribeTitle": "제한 없이 계속 배워요",
+      "resubscribeButton": "프리미엄 다시 구독하기",
+      "activeHeading": "<highlight>프리미엄</highlight> 혜택을 누리고 있어요",
+      "cancellingHeading": "<highlight>프리미엄</highlight> 혜택을 놓치지 마세요",
+      "footer": "궁금한 점이 있나요? <includedLink>포함된 내용</includedLink>을 알아보거나 <supportLink>지원팀에 문의</supportLink>해요.",
+      "resubscribe": "지금 <price></price>만 내고 다시 구독하고, Jiki의 지원과 함께 코딩 여정을 이어가요."
     },
     "cancelSectionPanel": {
-      "title": "�",
-      "description": "�",
-      "cancel": "�"
+      "title": "구독 취소",
+      "description": "취소하면 결제 기간이 끝날 때 프리미엄 기능을 이용할 수 없게 돼요. 언제든 다시 구독할 수 있어요.",
+      "cancel": "취소"
     },
     "premiumUpsell": {
-      "subtitle": "�",
-      "planName": "�",
-      "upgrade": "�",
-      "headline": "�",
-      "dailyNote": "�"
+      "subtitle": "지금은 무료 플랜을 이용하고 있어요. 프리미엄으로 업그레이드하면 이런 혜택을 열 수 있어요:",
+      "planName": "Jiki 프리미엄",
+      "upgrade": "프리미엄으로 업그레이드",
+      "headline": "<highlight>더 나은</highlight> 학습 방법을 열어봐요",
+      "dailyNote": "하루에 <price></price>밖에 들지 않아요"
     },
     "neverSubscribed": {
-      "heading": "�",
-      "subtitle": "�",
-      "featuresLabel": "�",
-      "upgradeAriaLabel": "�",
-      "upgrade": "�"
+      "heading": "플랜 업그레이드",
+      "subtitle": "프리미엄 플랜으로 고급 기능과 더 나은 학습 경험을 열어봐요.",
+      "featuresLabel": "프리미엄 플랜 기능",
+      "upgradeAriaLabel": "{plan} 플랜으로 업그레이드",
+      "upgrade": "프리미엄으로 업그레이드"
     },
     "errorBoundary": {
-      "title": "�",
-      "messagePart1": "�",
-      "messagePart2": "�",
-      "refresh": "�",
-      "detailsSummary": "�"
+      "title": "구독 시스템 오류",
+      "messagePart1": "구독 정보를 불러오는 데 문제가 생겼어요. 결제 시스템의 일시적인 문제일 수 있어요.",
+      "messagePart2": "페이지를 새로고침해 보고, 문제가 계속되면 지원팀에 문의해 주세요.",
+      "refresh": "페이지 새로고침",
+      "detailsSummary": "오류 상세 정보 (개발용)"
     },
     "danger": {
-      "sessionLabel": "�",
-      "sessionDescription": "�",
-      "logout": "�",
-      "deleteLabel": "�",
-      "deleteDescription": "�",
-      "deleteButton": "�"
+      "sessionLabel": "세션 관리",
+      "sessionDescription": "모든 기기에서 활성화된 세션을 관리해요.",
+      "logout": "로그아웃",
+      "deleteLabel": "계정 삭제",
+      "deleteDescription": "계정과 관련된 모든 데이터를 영구히 삭제해요. 이 작업은 되돌릴 수 없어요.",
+      "deleteButton": "계정 삭제"
     },
     "learning": {
-      "streaksLabel": "�",
-      "streaksDescription": "�",
-      "toggleAriaLabel": "�",
-      "learnMore": "�"
+      "streaksLabel": "학습 연속 기록",
+      "streaksDescription": "내 계정에서 연속 기록을 사용해요.",
+      "toggleAriaLabel": "학습 연속 기록 켜기/끄기",
+      "learnMore": "더 알아보기"
     },
     "notifications": {
-      "toggleAriaLabel": "�",
-      "essentialTitle": "�",
-      "essentialDescription": "�",
-      "featuresTitle": "�",
-      "featuresDescription": "�",
-      "livestreamsTitle": "�",
-      "livestreamsDescription": "�",
-      "milestonesTitle": "�",
-      "milestonesDescription": "�",
-      "activityTitle": "�",
-      "activityDescription": "�",
-      "onboardingTitle": "�",
-      "onboardingDescription": "�"
+      "toggleAriaLabel": "{title} 켜기/끄기",
+      "essentialTitle": "필수 서비스/계정 메시지",
+      "essentialDescription": "계정, 보안, 서비스 변경에 관한 중요한 소식이에요.",
+      "featuresTitle": "새 기능이나 콘텐츠 관련 이메일",
+      "featuresDescription": "Jiki에 새로 추가된 기능과 콘텐츠 소식을 받아봐요.",
+      "livestreamsTitle": "라이브 방송 관련 이메일",
+      "livestreamsDescription": "예정된 라이브 방송과 이벤트 소식을 받아요.",
+      "milestonesTitle": "새 이정표를 달성했을 때 오는 이메일",
+      "milestonesDescription": "Jiki에서의 성취와 발전을 함께 기뻐해요.",
+      "activityTitle": "Jiki에서 활동하면 받는 기타 이메일",
+      "activityDescription": "배지 획득, 챌린지 완료 같은 활동 기반 알림이에요.",
+      "onboardingTitle": "Jiki를 최대한 활용하도록 도와주는 이메일",
+      "onboardingDescription": "Jiki를 최대한 활용하는 팁과 안내예요."
     },
     "editableField": {
-      "update": "�",
-      "edit": "�",
-      "saveFailed": "�"
+      "update": "저장",
+      "edit": "편집",
+      "saveFailed": "저장하지 못했어요"
     },
     "passwordField": {
-      "updateFailed": "�",
-      "currentLabel": "�",
-      "currentPlaceholder": "�",
-      "newLabel": "�",
-      "newPlaceholder": "�",
-      "confirmLabel": "�",
-      "confirmPlaceholder": "�",
-      "submit": "�",
-      "label": "�",
-      "change": "�"
+      "updateFailed": "비밀번호를 변경하지 못했어요",
+      "currentLabel": "현재 비밀번호",
+      "currentPlaceholder": "현재 비밀번호 입력",
+      "newLabel": "새 비밀번호",
+      "newPlaceholder": "새 비밀번호 입력",
+      "confirmLabel": "새 비밀번호 확인",
+      "confirmPlaceholder": "새 비밀번호 다시 입력",
+      "submit": "비밀번호 변경",
+      "label": "비밀번호",
+      "change": "변경"
     },
     "subscriptionStatus": {
-      "statusActive": "�",
-      "statusCanceled": "�",
-      "statusPaymentFailed": "�",
-      "statusCancelling": "�",
-      "statusIncomplete": "�",
-      "statusSessionExpired": "�",
-      "statusNotSubscribed": "�",
-      "currentPlan": "�",
-      "cancellingMessage": "�",
-      "currentPlanAriaLabel": "�",
-      "statusAriaLabel": "�",
-      "messageCanceled": "�",
-      "messagePaymentFailed": "�",
-      "messageCancelling": "�",
-      "messageIncomplete": "�",
-      "messageIncompleteExpired": "�",
-      "active": "�",
-      "activeWithBilling": "�",
-      "cancellingRemaining": "�",
-      "cancellingEnds": "�",
-      "free": "�",
-      "planLabel": "�"
+      "statusActive": "활성",
+      "statusCanceled": "해지됨",
+      "statusPaymentFailed": "결제 실패",
+      "statusCancelling": "해지 예정",
+      "statusIncomplete": "미완료",
+      "statusSessionExpired": "세션 만료",
+      "statusNotSubscribed": "미구독",
+      "currentPlan": "현재 요금제",
+      "cancellingMessage": "Jiki 프리미엄 구독이 해지됐어요.",
+      "currentPlanAriaLabel": "현재 요금제: {plan} 요금제",
+      "statusAriaLabel": "구독 상태: {status}",
+      "messageCanceled": "결제 기간이 끝날 때까지 서비스를 계속 이용할 수 있어요",
+      "messagePaymentFailed": "결제에 실패했어요. 결제 수단을 변경해 주세요",
+      "messageCancelling": "해지가 예약됐어요. 결제 기간이 끝날 때까지 이용할 수 있어요",
+      "messageIncomplete": "결제 설정이 완료되지 않았어요. 설정을 마무리해 주세요",
+      "messageIncompleteExpired": "이전 결제 세션이 만료됐어요. 구독을 새로 시작해 주세요",
+      "active": "<plan>Jiki {tier}</plan> 요금제를 월 <strong><price></price></strong>에 구독하고 있어요.",
+      "activeWithBilling": "<plan>Jiki {tier}</plan> 요금제를 월 <strong><price></price></strong>에 구독하고 있어요. 다음 결제일은 <strong>{date}</strong>예요.",
+      "cancellingRemaining": "모든 프리미엄 기능을 마음껏 이용할 수 있는 기간이 <strong>{count, plural, other {#일}}</strong> 남았어요.",
+      "cancellingEnds": "프리미엄 요금제는 <strong>{date}</strong>에 종료돼요.",
+      "free": "<strong>무료</strong> 요금제를 이용하고 있어요. 모든 콘텐츠를 이용할 수 있고, 연습 문제 하나는 Jiki에게 질문하기로 도움을 받을 수 있어요.",
+      "planLabel": "{tier} 요금제"
     }
   },
   "landing": {
     "hero": {
-      "tagline": "�",
-      "loadingVideo": "�",
-      "playVideo": "�",
-      "watchPrompt": "�",
-      "headline": "�",
-      "audienceBeginners": "�",
-      "audienceJuniors": "�",
-      "audienceEntrepreneurs": "�"
+      "tagline": "멋진 걸 만들고, 생산적으로 일하고, <strong>{year}년에도 계속 앞서 나가는</strong> 데 필요한 기술을 배워요.",
+      "loadingVideo": "동영상 불러오는 중",
+      "playVideo": "동영상 재생",
+      "watchPrompt": "읽는 게 잘 안 맞아요? <strong>재생 버튼을 눌러 봐요</strong>. 필요한 걸 다 알려줄게요!",
+      "headline": "<highlight>코딩과 만들기</highlight>를 배우는 현대적인 방법",
+      "audienceBeginners": "가장 빠르고 좋은 학습 방법을 찾는 <name>입문자</name>",
+      "audienceJuniors": "실력을 빠르게 키우고 싶은 <name>주니어 개발자</name>",
+      "audienceEntrepreneurs": "사람을 뽑기 전에 직접 만들어 보고 싶은 <name>창업가와 바이브 코더</name>"
     },
     "twoHalves": {
-      "eyebrow": "�",
-      "heading": "�",
-      "intro": "�",
-      "codeHeading": "�",
-      "codeBody": "�",
-      "buildHeading": "�",
-      "buildBody": "�",
-      "techLabel": "�"
+      "eyebrow": "두 가지 핵심 기술",
+      "heading": "개발자가 되기 위한 두 갈래",
+      "intro": "Jiki는 <strong>코딩하는 법</strong>을 (가장 재미있고 효과적인 방법으로!) 알려주고, 전문가들이 쓰는 것과 똑같은 기술로 <strong>실제로 무언가를 만드는 법</strong>도 알려줘요. <strong>첫날부터요.</strong>",
+      "codeHeading": "<word>코딩</word> 배우기",
+      "codeBody": "모든 핵심 개념을 자세한 동영상 설명과 함께 배우고, 수백 개의 연습 문제와 프로젝트로 연습해요",
+      "buildHeading": "<word>만들기</word> 배우기",
+      "buildBody": "첫날부터 전문가들이 쓰는 기술을 배워요. 데이터베이스, 인증, 프런트엔드, 백엔드 등등!",
+      "techLabel": "이런 기술을 배워요:"
     },
     "learnToCode": {
-      "heading": "�",
-      "intro": "�",
+      "heading": "<word>코딩</word> 배우기",
+      "intro": "컴퓨터에 원하는 것을 전달할 때 쓰는 핵심 기술인 코딩을 익혀요. <highlight>탄탄한 코딩 기초</highlight>를 쌓도록 도와줄게요.",
       "demo": {
-        "stageDescription": "�",
-        "run": "�",
-        "tabInstructions": "�",
-        "tabJiki": "�",
-        "tabLog": "�",
-        "tabHints": "�",
-        "instrHeading": "�",
-        "instr1": "�",
-        "instr2": "�",
-        "fnRight": "�",
-        "fnLeft": "�",
-        "fnShoot": "�",
-        "instr3": "�",
-        "scenarioTitle": "�",
-        "badgePending": "�",
-        "badgeFail": "�",
-        "badgePass": "�",
-        "verdictPending": "�",
-        "verdictFail": "�",
-        "verdictPass": "�",
-        "errorTitle": "�",
-        "errorBody": "�",
-        "chat1": "�",
-        "chat2": "�",
-        "chat3": "�",
-        "chat4": "�",
-        "chat5": "�",
-        "chatPlaceholder": "�",
-        "jikiAvatarAlt": "�",
-        "successTitle": "�",
-        "successBody": "�",
-        "successBtn": "�"
+        "stageDescription": "Jiki 앱 애니메이션: 학습자가 스페이스 인베이더 연습 문제를 실행하면 코드가 레이저 대포를 격자 밖으로 움직여요. 학습자가 Jiki에게 도움을 청하고, 경계값을 20에서 11로 고치면 연습 문제를 통과해요.",
+        "run": "코드 실행",
+        "tabInstructions": "지시 사항",
+        "tabJiki": "Jiki에게 질문",
+        "tabLog": "로그",
+        "tabHints": "힌트",
+        "instrHeading": "외계인 탐지기",
+        "instr1": "외계인들이 세 줄에 흩어져 있고, 어떤 열에는 한 마리 이상 있어요.",
+        "instr2": "사용할 수 있는 함수는 세 개예요:",
+        "fnRight": "레이저 대포를 오른쪽으로 한 열 이동시켜요",
+        "fnLeft": "왼쪽으로 한 열 이동시켜요",
+        "fnShoot": "레이저를 위로 발사해요",
+        "instr3": "열은 11개예요. 양쪽 끝을 벗어나면 지니까, 지금 어디에 있는지 잘 확인해요.",
+        "scenarioTitle": "세 줄: 외계인이 세 줄에 모두 흩어져 있어요",
+        "badgePending": "대기 중",
+        "badgeFail": "실패",
+        "badgePass": "통과",
+        "verdictPending": "코드를 실행해서 이 시나리오를 통과하는지 확인해 봐요.",
+        "verdictFail": "코드를 실행하는 중에 오류가 발생했어요. 위의 오류 메시지를 보고 고쳐 봐요.",
+        "verdictPass": "외계인 여섯 마리를 모두 처치했어요. 잘하셨어요!",
+        "errorTitle": "이런, 너무 멀리 갔어요!",
+        "errorBody": "레이저 대포가 화면 오른쪽 끝을 벗어났어요. 지금 위치를 잘 확인하고, 끝에 도달하면 방향을 반대로 바꿔야 해요.",
+        "chat1": "안녕하세요! 무슨 일이에요?",
+        "chat2": "대포가 자꾸 화면 밖으로 나가요.",
+        "chat3": "방금 쓴 줄을 같이 살펴봐요. <code>position</code>이 20이 되면 방향을 바꾸게 되어 있는데, 격자에는 열이 모두 몇 개 있죠?",
+        "chat4": "열한 개요.",
+        "chat5": "맞아요. <code>position</code>은 20에 도달하지 않으니 <code>move_left()</code>는 절대 실행되지 않아요. 그 경계값을 11로 바꾸면 대포가 마지막 열에서 방향을 바꿀 거예요.",
+        "chatPlaceholder": "Jiki에게 답하기...",
+        "jikiAvatarAlt": "Jiki",
+        "successTitle": "축하해요!",
+        "successBody": "모든 테스트를 통과했어요! 이 연습 문제를 성공적으로 완료했어요.",
+        "successBtn": "계속하기"
       },
       "callouts": {
         "tested": {
-          "title": "�",
-          "body": "�"
+          "title": "모든 연습 문제는 진짜 프로그램이에요",
+          "body": "루프, 조건문, 변수까지, 앞으로 만들 <hl>모든 프로그램에서 쓰게 될 기법</hl>을 배워요."
         },
         "see": {
-          "title": "�",
-          "body": "�"
+          "title": "재미있는 연습 문제를 풀어요",
+          "body": "지루한 텍스트 문제는 없어요. <hl>게임을 만들고, 퍼즐을 풀고, 재미있게 즐겨요!</hl>"
         },
         "rewind": {
-          "title": "�",
-          "body": "�"
+          "title": "내 코드를 되감아 보기",
+          "body": "모든 지시를 한 단계씩 되짚으면서 한 줄씩 <hl>무슨 일이 일어났는지 정확히 확인해요</hl>."
         },
         "errors": {
-          "title": "�",
-          "body": "�"
+          "title": "쉬운 말로 알려주는 오류",
+          "body": "뭔가 잘못되면 무엇이 문제인지 <hl>어려운 전문 용어가 아니라 평범한 말로</hl> 알려줄게요."
         },
         "help": {
-          "title": "�",
-          "body": "�"
+          "title": "정답이 아니라 도움을 받아요",
+          "body": "Jiki와 함께 막힌 부분을 풀어가요. 연습 문제를 통과하는 법만이 아니라 <hl>생각하는 법</hl>을 배워요."
         },
         "next": {
-          "title": "�",
-          "body": "�"
+          "title": "항상 한 단계씩 더",
+          "body": "연습 문제마다 지난번보다 조금씩 더 나아가게 해줘요. <hl>다음 단계는 항상 손 닿는 곳에</hl> 있어요."
         }
       }
     },
     "funPrints": {
-      "eyebrow": "�",
-      "heading": "�",
-      "sub": "�",
-      "spaceInvaders": "�",
-      "ticTacToe": "�",
-      "breakout": "�",
-      "mazeSolver": "�",
-      "flowerFlipbook": "�",
-      "footnote": "�"
+      "eyebrow": "앞으로 만들게 될 것들",
+      "heading": "게임 만들기. 애니메이션 만들기. 퍼즐 풀기.",
+      "sub": "이것들은 모두 같은 몇 가지 핵심 개념으로 만들어져요. 과정이 끝날 때쯤이면 이런 작품을 <strong>수백 개</strong> 만들게 될 거예요.",
+      "spaceInvaders": "스페이스 인베이더",
+      "ticTacToe": "틱택토",
+      "breakout": "벽돌 깨기",
+      "mazeSolver": "미로 풀기",
+      "flowerFlipbook": "꽃 플립북",
+      "footnote": "…그리고 이건 첫 몇 주에 불과해요!"
     },
     "learnToBuild": {
-      "heading": "�",
-      "intro": "�",
-      "livestreamsLead": "�",
-      "livestreamsDetail": "�",
-      "technologiesLead": "�",
-      "technologiesDetail": "�",
-      "portfolioLead": "�",
-      "portfolioDetail": "�",
-      "liveQaAlt": "�",
-      "topicsLabel": "�",
-      "databases": "�",
-      "auth": "�",
-      "frontendBackend": "�",
-      "apis": "�",
-      "deployment": "�",
-      "llmIntegration": "�",
-      "liveQa_fred": "�",
-      "liveQa_oleksandra": "�",
-      "liveQa_shaun": "�",
-      "liveQa_lukas": "�",
-      "joinLive": "�",
-      "catchUp": "�",
-      "getSupport": "�",
-      "liveQa_drac": "�"
+      "heading": "<word>만들기</word> 배우기",
+      "intro": "최신 에이전트 코딩을 활용해 데이터베이스, 인증, 프런트엔드, 백엔드 같은 핵심 기술을 빠르게 배워요.",
+      "livestreamsLead": "인터랙티브 라이브 강의",
+      "livestreamsDetail": "개념이나 내 프로젝트에서 막혔나요? 커뮤니티의 실제 질문과 함께 <strong>정기 라이브 방송</strong>에서 답을 얻어요.",
+      "technologiesLead": "가짜가 아닌 진짜 프로젝트.",
+      "technologiesDetail": "Jeremy가 실제 프로젝트를 처음부터 만들며 모든 결정을 설명하는 걸 보면서, 자기 아이디어로 따라 만들어 봐요.",
+      "portfolioLead": "다양한 기술을 폭넓게 배워요",
+      "portfolioDetail": "최신 앱을 만들려면 인증, API, 백엔드, 프런트엔드 등 여러 시스템을 다뤄야 해요. 이 모든 걸 알려줄게요.",
+      "liveQaAlt": "Jiki 라이브 질의응답을 진행하는 Jeremy",
+      "topicsLabel": "직접 다뤄볼 것들:",
+      "databases": "데이터베이스",
+      "auth": "인증",
+      "frontendBackend": "프런트엔드와 백엔드",
+      "apis": "API",
+      "deployment": "배포",
+      "llmIntegration": "LLM 연동",
+      "liveQa_fred": "드디어 됐어요. 세 번이나 시도했지만 결국 해냈어요.",
+      "liveQa_oleksandra": "클로저를 다시 설명해 줄 분 있나요? 문법은 알겠는데, 왜 쓰는 건지 모르겠어요.",
+      "liveQa_shaun": "아, 이제야 이해됐어요.",
+      "liveQa_lukas": "방금 첫 프로젝트를 배포했어요. 여기까지 올 줄은 정말 몰랐어요.",
+      "joinLive": "라이브 토론 참여하기",
+      "catchUp": "나중에 다시 보기",
+      "getSupport": "지원받기",
+      "liveQa_drac": "이걸 이렇게 명쾌하게 설명한 곳은 처음이에요 🙌"
     },
     "outcomes": {
-      "bubble": "�",
-      "heading": "�",
-      "sub": "�",
-      "certificateTitle": "�",
-      "certificateBody": "�",
-      "certificateAlt": "�",
-      "shareOnLinkedIn": "�",
-      "portfolioTitle": "�",
-      "portfolioBody": "�",
-      "habitTracker": "�",
-      "homepage": "�",
-      "recipeBox": "�",
-      "dashboard": "�",
-      "understandingTitle": "�",
-      "understandingBody": "�",
-      "codeNote": "�"
+      "bubble": "강의가 끝나면",
+      "heading": "과정을 마치면 얻는 것",
+      "sub": "대부분의 강의는 동영상 보는 습관만 남겨요. Jiki는 실력과 증명, 그리고 실제 프로젝트 포트폴리오를 남겨줘요.",
+      "certificateTitle": "검증된 수료증",
+      "certificateBody": "이력서와 LinkedIn 프로필의 자격 항목에 추가할 수 있는 검증 가능한 수료증을 받아요. 그리고 이 수료증이 정말 노력으로 얻은 것이라는 걸 알게 될 거예요!",
+      "certificateAlt": "Jiki 강의 수료증",
+      "shareOnLinkedIn": "LinkedIn에 공유하기",
+      "portfolioTitle": "다양한 실제 프로젝트 포트폴리오",
+      "portfolioBody": "관심사에 맞는 실제 프로젝트를 만들어요. 흔한 할 일 목록 앱이 아니라, 창의성과 아이디어, 실력을 보여줄 수 있는 진짜 앱이에요.",
+      "habitTracker": "개인 습관 트래커",
+      "homepage": "나의 디지털 홈",
+      "recipeBox": "레시피 플래너",
+      "dashboard": "데이터 대시보드",
+      "understandingTitle": "모든 것이 어떻게 돌아가는지에 대한 이해",
+      "understandingBody": "Jiki는 커리어를 쌓을 수 있는 탄탄한 기초를 만들어 줘요. 낯선 코드를 읽고, 어떻게 동작하는지 추론하고, 버그를 빠르게 찾아낼 수 있게 돼요.",
+      "codeNote": "Wordle 같은 게임을 처음부터 만드는 법도 알게 돼요"
     },
     "meetJeremy": {
-      "portraitAlt": "�",
-      "intro": "�",
-      "badgeDeveloper": "�",
-      "badgeTeacher": "�",
-      "badgeMission": "�",
-      "developerTitle": "�",
-      "developerDetail": "�",
-      "teacherTitle": "�",
-      "teacherDetail": "�",
-      "entrepreneurTitle": "�",
-      "entrepreneurDetail": "�",
-      "story": "�",
-      "why": "�",
-      "signature": "�",
-      "quote": "�",
-      "quoteName": "�",
-      "quoteRole": "�"
+      "portraitAlt": "Jeremy Walker",
+      "intro": "안녕하세요! 👋 저는 Jeremy예요. 전 세계에서 <strong>수백만 명이 넘는 사람들</strong>이 코딩 실력을 키우도록 도왔어요.",
+      "badgeDeveloper": "시니어 개발자",
+      "badgeTeacher": "열정적인 선생님",
+      "badgeMission": "사명 중심",
+      "developerTitle": "시니어 개발자",
+      "developerDetail": "풀스택 • 35년 경력 • 20개 이상의 언어로 코딩(직접 만든 언어 포함!) • AI 학위(2005년) • 특허 받은 심장 수술 AI 시스템",
+      "teacherTitle": "열정적인 선생님",
+      "teacherDetail": "20년 경력 • 300만 명 이상 지도 • 교육 회사 4곳 설립",
+      "entrepreneurTitle": "사명 중심 창업가",
+      "entrepreneurDetail": "Exercism, Kaido, Thalamus를 비롯한 공익 단체 여러 곳의 창립자 • 세계 최대 오픈소스 프로젝트 중 하나를 운영",
+      "story": "저는 여덟 살 때부터 코딩과 함께 살아왔어요. 코딩은 제게 <strong>창의성</strong>, <strong>문제 해결</strong>, <strong>비판적 사고</strong>를 가르쳐 줬어요. 그리고 교육, 의료, 인공지능 분야에서 회사를 만들며 제가 사랑하는 커리어를 살아가게 해줬죠.",
+      "why": "제가 Jiki를 만든 이유는 <strong>이 경험을 함께 나누고 싶기 때문이에요</strong>. 코딩이 제게 준 기쁨과 혜택을 똑같이 누릴 수 있으면 좋겠어요. 그리고 <strong>코딩을 배우는 일은 즐거워야 한다고</strong> 믿어요. 소프트웨어 개발 업계는 빠르게 변하고 있어요. 에이전트 코딩이 점점 표준이 되어 가고 있죠. 저는 <strong>그 여정에 함께 데려가는 것</strong>, 그리고 IT 분야에서 커리어를 원하든 그저 무슨 일이 벌어지는지 알고 싶든 그게 가능하도록 만드는 일에 마음을 다하고 있어요. 함께해 주시면 좋겠어요!",
+      "signature": "Jeremy 드림",
+      "quote": "코딩은 자신의 실력에 딱 맞으면서 한 걸음 더 밀어 주는 문제를 코드로 풀어 가며 배우는 거예요. <strong>Jeremy는 뛰어난 스승이에요.</strong>",
+      "quoteName": "Thom Chittom",
+      "quoteRole": "초보자"
     },
     "printRow": {
-      "joinNote": "�",
-      "spaceInvaders": "�",
-      "breakout": "�",
-      "maze": "�",
-      "heading": "�",
-      "body": "�",
-      "free": "�",
-      "projects": "�",
-      "unstuck": "�",
-      "cta": "�"
+      "joinNote": "이 즐거움에 함께해요!",
+      "spaceInvaders": "스페이스 인베이더",
+      "breakout": "브레이크아웃",
+      "maze": "미로",
+      "heading": "첫 번째 작품을 만들 준비 됐어요?",
+      "body": "코딩을 배우고 첫날부터 실제 프로젝트를 만들어요. Jeremy가 모든 단계를 함께 안내해 줘요.",
+      "free": "무료 콘텐츠 100시간 이상",
+      "projects": "실제 프로젝트 만들기",
+      "unstuck": "막힐 일이 없어요",
+      "cta": "시작하기"
     },
     "exercism": {
-      "eyebrow": "�",
-      "heading": "�",
-      "support": "�",
-      "taughtValue": "�",
-      "taughtLabel": "�",
-      "testimonialsValue": "�",
-      "testimonialsLabel": "�",
-      "submittedValue": "�",
-      "submittedLabel": "�"
+      "eyebrow": "Exercism을 만든 팀이 만들었어요",
+      "heading": "<highlight>코딩 연습</highlight>을 위한 최고의 교육 플랫폼",
+      "support": "Jiki는 <strong>Exercism을 만든 팀</strong>이 만들었어요. 수백만 명의 학생이 실력을 키우도록 도우며 배운 모든 것을 담았어요.",
+      "taughtValue": "290만+",
+      "taughtLabel": "가르친 사람",
+      "testimonialsValue": "8만 5천+",
+      "testimonialsLabel": "후기",
+      "submittedValue": "6,900만+",
+      "submittedLabel": "제출된 연습 문제"
     },
     "signupButton": {
-      "label": "�"
+      "label": "회원가입 <free>(무료예요!)</free>"
     },
     "faqs": {
-      "heading": "�",
-      "q1": "�",
-      "q1a1": "�",
-      "q1Item1": "�",
-      "q1Item2": "�",
-      "q1Item3": "�",
-      "q1Item4": "�",
-      "q1Item5": "�",
-      "q1Item6": "�",
-      "q1Item7": "�",
-      "q2": "�",
-      "q2a": "�",
-      "q3": "�",
-      "q3a1": "�",
-      "q3a2": "�",
-      "q4": "�",
-      "q4a1": "�",
-      "q4a2": "�",
-      "q5": "�",
-      "q5a1": "�",
-      "q5a2": "�",
-      "intro": "�",
-      "q1a2": "�"
+      "heading": "자주 묻는 질문",
+      "q1": "비용이 얼마나 들어요?",
+      "q1a1": "<strong>코딩 배우기</strong> 연습 문제, 즉 핵심 코딩 학습 커리큘럼은 <strong>완전히 무료</strong>예요. 카드 등록도, 체험 기간도, 숨은 조건도 없어요.",
+      "q1Item1": "<strong>만들기 배우기</strong> 전체 이용",
+      "q1Item2": "<strong>Jiki 프로젝트</strong>에서 실력 합치기",
+      "q1Item3": "<strong>Jiki에게 묻기</strong> AI 도움 무제한",
+      "q1Item4": "참여할 수 있는 정기 <strong>질문과 답변 라이브 방송</strong>",
+      "q1Item5": "강의를 마치면 <strong>인증서</strong> 받기",
+      "q1Item6": "<strong>광고 없는</strong> 학습 경험",
+      "q1Item7": "새 기능 <strong>우선 체험</strong>",
+      "q2": "이 강의에 매주 얼마나 시간을 써야 하나요?",
+      "q2a": "원하는 만큼 시간을 쓰면 돼요. 대부분 <strong>코딩 배우기</strong>를 주당 5~10시간씩 12~20주 안에 끝내요. <strong>만들기 배우기</strong>는 계속 이어지니까, 새 에피소드가 올라올 때 원하는 때에 들여다보고, 형편에 맞게 라이브 방송에도 참여하면 돼요.",
+      "q3": "강의는 얼마나 어려워요? 얼마나 똑똑해야 하나요?",
+      "q3a1": "이 강의는 어떤 배경이든 누구나 할 수 있도록 만들었어요. 코딩을 배우는 데 \"똑똑해야\" 한다고 생각하지 않아요. 다만 노력을 기울이고, 어려움에 맞설 마음은 있어야 해요.",
+      "q3a2": "그런데 노력을 기울이고, 막힐 때 도움을 청하고, 어려움을 즐긴다면 짧은 시간에 얼마나 멀리 갈 수 있는지 스스로 놀라게 될 거예요.",
+      "q4": "Jiki는 지금 이용할 수 있나요?",
+      "q4a1": "네, 지금 가입해서 무료 코딩 배우기 커리큘럼을 바로 시작할 수 있어요.",
+      "q4a2": "첫 <strong>만들기 배우기</strong> 세션은 <strong>6월 중순</strong>에 열려요. 가입하고 들어오면 알림을 신청할 수 있어요.",
+      "q5": "부트캠프에 이미 가입했는데, Jiki는 다른 건가요?",
+      "q5a1": "부트캠프에 함께해 주셔서 감사해요! Jiki는 우리 부트캠프가 발전한 다음 단계예요. 풀었던 연습 문제 대부분이 더 많은 문제와 함께 Jiki에 들어와 있어요. 3시간짜리 영상도 보기 편하도록 5~10분씩 잘게 나눴어요!",
+      "q5a2": "부트캠프 회원이라면 Jiki 프리미엄 평생 이용권을 자동으로 받아요. 처음 시작하는 코딩 배우기 강의부터 앞으로 나올 강의까지 모두 적용돼요.",
+      "intro": "가장 많이 받는 질문들을 모았어요. 여기에 없는 질문이 있나요? <link>이메일로 알려 주세요!</link>",
+      "q1a2": "<strong>Jiki 프리미엄</strong>은 <price></price>(국가별로 가격이 달라요)이며, 다음을 모두 이용할 수 있어요:"
     },
     "latestNews": {
-      "heading": "�",
-      "byAuthor": "�",
-      "subheading": "�"
+      "heading": "최신 소식",
+      "byAuthor": "{name} 님의 글",
+      "subheading": "Jiki의 소식을 <link>블로그</link>에서 계속 확인해요."
     }
   },
   "premium": {
     "page": {
-      "heading": "�",
-      "subheading": "�"
+      "heading": "Jiki 프리미엄",
+      "subheading": "취업 준비까지 가는 길을 더 빠르게 달려요. 모든 강의와 프로젝트, 무제한 AI 지원까지, Jiki가 가진 모든 것을 이용할 수 있어요."
     },
     "planPrice": {
-      "basic": "�",
-      "premium": "�",
-      "free": "�",
-      "perMonth": "�"
+      "basic": "베이직",
+      "premium": "프리미엄",
+      "free": "무료",
+      "perMonth": "월 요금"
     },
     "planBadge": {
-      "free": "�",
-      "premium": "�"
+      "free": "무료",
+      "premium": "프리미엄"
     },
     "table": {
-      "comparePlans": "�",
-      "comparePlansDesc": "�",
-      "checkNo": "�"
+      "comparePlans": "요금제 비교",
+      "comparePlansDesc": "각 요금제에 무엇이 포함되는지 확인하고 자신 있게 선택해요.",
+      "checkNo": "✕"
     },
     "values": {
-      "oneConversation": "�",
-      "unlimited": "�",
-      "firstEpisodes": "�",
-      "fullAccess": "�",
-      "sampleEpisode": "�"
+      "oneConversation": "대화 1회",
+      "unlimited": "무제한",
+      "firstEpisodes": "첫 에피소드",
+      "fullAccess": "전체 이용",
+      "sampleEpisode": "맛보기 에피소드"
     },
     "categories": {
-      "codingFundamentals": "�",
-      "buildWithJeremy": "�",
-      "support": "�",
-      "certificates": "�",
-      "experience": "�"
+      "codingFundamentals": "코딩 배우기",
+      "buildWithJeremy": "만들기 배우기",
+      "support": "지원",
+      "certificates": "인증서",
+      "experience": "경험"
     },
     "features": {
-      "codingExercisesTitle": "�",
-      "codingExercisesDesc": "�",
-      "conceptLibraryTitle": "�",
-      "conceptLibraryDesc": "�",
-      "jikiChallengesTitle": "�",
-      "jikiChallengesDesc": "�",
-      "askJikiTitle": "�",
-      "askJikiDesc": "�",
-      "buildingFundamentalsTitle": "�",
-      "buildingFundamentalsDesc": "�",
-      "howThingsWorkTitle": "�",
-      "howThingsWorkDesc": "�",
-      "earlyAccessTitle": "�",
-      "earlyAccessDesc": "�",
-      "communityForumsTitle": "�",
-      "communityForumsDesc": "�",
-      "livestreamsTitle": "�",
-      "livestreamsDesc": "�",
-      "certificatesTitle": "�",
-      "certificatesDesc": "�",
-      "adFreeTitle": "�",
-      "adFreeDesc": "�"
+      "codingExercisesTitle": "코딩 연습 문제",
+      "codingExercisesDesc": "계속 늘어나는 인터랙티브 연습 문제를 풀며 직접 익혀요.",
+      "conceptLibraryTitle": "전체 개념 라이브러리",
+      "conceptLibraryDesc": "꼭 알아야 할 모든 코딩 개념을 담은 짧은 강의예요.",
+      "jikiChallengesTitle": "도전 과제",
+      "jikiChallengesDesc": "실력을 더 밀어 올리는 어려운 도전 과제에 나서 봐요.",
+      "askJikiTitle": "Jiki에게 묻기",
+      "askJikiDesc": "막혔을 때 Jiki에게 AI 힌트와 설명을 받아요.",
+      "buildingFundamentalsTitle": "만들기의 기초 시리즈",
+      "buildingFundamentalsDesc": "Jeremy가 웹 플랫폼을 처음부터 만드는 과정을 지켜봐요. 서버, 데이터베이스, 인증 등등.",
+      "howThingsWorkTitle": "어떻게 돌아갈까 시리즈",
+      "howThingsWorkDesc": "Exercism과 Jiki의 까다로운 부분과, 그것을 왜 그렇게 만들었는지 깊이 파고들어요.",
+      "earlyAccessTitle": "새 기능 우선 체험",
+      "earlyAccessDesc": "누구보다 먼저 새 기능을 써볼 수 있어요.",
+      "communityForumsTitle": "커뮤니티 포럼",
+      "communityForumsDesc": "질문을 올리고 다른 Jiki 수강생들과 함께 배워요.",
+      "livestreamsTitle": "Jeremy와 함께하는 질문과 답변 라이브 방송",
+      "livestreamsDesc": "Jeremy가 코딩과 개발에 대한 질문에 답해 주는 라이브 질문과 답변 시간에 참여해요.",
+      "certificatesTitle": "강의 수료 인증서 받기",
+      "certificatesDesc": "공유할 수 있는 인증서로 배운 것을 자랑해요.",
+      "adFreeTitle": "광고 없는 학습",
+      "adFreeDesc": "방해 요소 없이 학습에 집중해요."
     },
     "faq": {
-      "title": "�",
-      "q1": "�",
-      "a1": "�",
-      "q2": "�",
-      "a2": "�",
-      "q3": "�",
-      "a3": "�",
-      "q4": "�",
-      "q5": "�",
-      "a5": "�",
-      "a4": "�"
+      "title": "자주 묻는 질문",
+      "q1": "Jiki를 무료로 써볼 수 있나요?",
+      "a1": "네! 무료로 가입해서 베이직 요금제를 원하는 만큼 쓸 수 있어요. 전체 이용이 필요할 때 언제든 프리미엄으로 업그레이드하면 돼요. 의무는 없어요.",
+      "q2": "최소 약정 기간이 있나요?",
+      "a2": "최소 약정은 없어요. 프리미엄은 매달 결제되고, 계정 설정에서 언제든 해지할 수 있어요.",
+      "q3": "프리미엄 구독을 해지하면 어떻게 되나요?",
+      "a3": "현재 결제 기간이 끝날 때까지는 프리미엄을 계속 이용할 수 있고, 그다음에는 베이직 요금제로 돌아가요. 진행 상황은 그대로 남고, 프리미엄 전용 기능만 쓸 수 없게 돼요.",
+      "q4": "학생이나 프리미엄을 감당하기 어려운 분들을 위한 할인이 있나요?",
+      "q5": "나중에 업그레이드하거나 다운그레이드할 수 있나요?",
+      "a5": "물론이죠. 계정에서 언제든 프리미엄으로 업그레이드할 수 있고, 원할 때 똑같이 쉽게 해지할 수 있어요.",
+      "a4": "Jiki는 누구나 이용할 수 있었으면 해요. 비용이 부담된다면 <link>연락해 주세요</link>. 도울 수 있는 방법을 찾아볼게요."
     },
     "cta": {
-      "alreadyPremiumTitle": "�",
-      "alreadyPremiumDesc": "�",
-      "upgradeTitle": "�",
-      "upgradeDesc": "�",
-      "upgradeButton": "�",
-      "freeTitle": "�",
-      "freeDesc": "�",
-      "freeButton": "�"
+      "alreadyPremiumTitle": "이미 프리미엄 회원이에요",
+      "alreadyPremiumDesc": "Jiki를 응원해 주셔서 감사해요. 모든 것을 마음껏 이용해요!",
+      "upgradeTitle": "배우는 속도를 높일 준비 됐어요?",
+      "upgradeDesc": "프리미엄으로 업그레이드하고 Jiki가 제공하는 모든 것을 이용해요.",
+      "upgradeButton": "프리미엄으로 업그레이드",
+      "freeTitle": "무료로 시작하기",
+      "freeDesc": "오늘 무료로 시작하고 수백 시간의 무료 콘텐츠를 이용해요. 더 깊이 배우고 싶을 때 프리미엄으로 업그레이드하면 돼요.",
+      "freeButton": "무료로 가입하기"
     },
     "publicPrice": {
-      "unavailable": "�"
+      "unavailable": "가격 정보 없음"
     },
     "benefits": {
-      "unlimitedAiTitle": "�",
-      "unlimitedAiDescription": "�",
-      "unlimitedContentTitle": "�",
-      "unlimitedContentDescription": "�",
-      "certificatesTitle": "�",
-      "certificatesDescription": "�",
-      "adFreeTitle": "�",
-      "adFreeDescription": "�",
-      "prioritySupportTitle": "�",
-      "prioritySupportDescription": "�",
-      "earlyAccessTitle": "�",
-      "earlyAccessDescription": "�"
+      "unlimitedAiTitle": "무제한 AI 도움",
+      "unlimitedAiDescription": "막힐 때마다 Jiki에게 맞춤 안내를 받아요",
+      "unlimitedContentTitle": "무제한 콘텐츠",
+      "unlimitedContentDescription": "모든 연습 문제와 프로젝트, 학습 경로를 이용해요",
+      "certificatesTitle": "인증서",
+      "certificatesDescription": "강의를 완료하면 공유할 수 있는 인증서를 받아요",
+      "adFreeTitle": "광고 없음",
+      "adFreeDescription": "방해 요소 없는 학습을 즐겨요",
+      "prioritySupportTitle": "우선 지원",
+      "prioritySupportDescription": "도움이 필요할 때 더 빠른 답변을 받아요",
+      "earlyAccessTitle": "우선 체험",
+      "earlyAccessDescription": "새 기능과 콘텐츠를 가장 먼저 써봐요"
     }
   },
   "roadmap": {
     "page": {
-      "heading": "�",
-      "subheading": "�",
-      "disclaimer": "�"
+      "heading": "로드맵",
+      "subheading": "Jiki가 향하는 곳. 무엇을 출시했고, 다음은 무엇이며, 아직 무엇을 꿈꾸고 있는지 분기별로 보여줘요.",
+      "disclaimer": "이 로드맵은 현재 계획을 담은 스냅샷이에요. 커뮤니티에서 배우며 우선순위가 바뀌기 때문에 일정과 범위는 달라질 수 있어요."
     },
     "status": {
-      "shipped": "�",
-      "inProgress": "�",
-      "planned": "�"
+      "shipped": "출시됨",
+      "inProgress": "진행 중",
+      "planned": "계획됨"
     },
     "changelog": {
-      "title": "�",
-      "subtitle": "�",
+      "title": "업데이트 내역",
+      "subtitle": "최근 Jiki에 적용한 개선 사항이에요.",
       "learnToBuildLaunch": {
-        "date": "�",
-        "title": "�",
-        "description": "�"
+        "date": "2026년 7월 11일",
+        "title": "만들기 배우기 출시",
+        "description": "Jeremy가 수강생들과 함께 실제로 쓸모 있는 프로젝트를 처음부터 만들어 가는 새 시리즈가 공개됐어요."
       },
       "milestones6To10": {
-        "date": "�",
-        "title": "�",
-        "description": "�"
+        "date": "2026년 7월",
+        "title": "코딩 배우기에 마일스톤 6~10 출시",
+        "description": "코딩 배우기 트랙에 새로운 마일스톤 다섯 개가 공개됐어요. 기초를 훨씬 넘어서는 여정이 이어져요."
       },
       "jikiLaunch": {
-        "date": "�",
-        "title": "�",
-        "description": "�"
+        "date": "2026년 6월 7일",
+        "title": "Jiki 출시!",
+        "description": "Jiki가 공식적으로 출시됐어요 (아직 베타 버전이긴 하지만요!)"
       }
     },
     "phases": {
       "now": {
-        "label": "�",
-        "timeframe": "�",
-        "summary": "�",
+        "label": "지금",
+        "timeframe": "2026년 7월",
+        "summary": "이번 달에 집중하고 있는 것들이에요.",
         "learnToBuild": {
-          "title": "�",
-          "description": "�"
+          "title": "만들면서 배우기 출시",
+          "description": "Jeremy의 새로운 시리즈가 공개됐어요. 학습자들과 함께 실제로 쓸모 있는 프로젝트를 처음부터 만들어 나가는 시리즈예요. 각 프로젝트는 짧게 나눈 레슨으로 구성되어 있고, 코드뿐 아니라 소프트웨어를 완성해 나가는 과정의 사고, 실수, 결정까지 함께 보여줘요."
         },
         "launchBugs": {
-          "title": "�",
-          "description": "�"
+          "title": "출시 후 버그 잡기",
+          "description": "Jiki가 출시된 지금, 실제 학습자들이 플랫폼을 쓰면서 발견되는 버그를 잡고 거친 부분을 다듬고 있어요. 앱 전반에 걸쳐 작은 수정과 사용성 개선이 꾸준히 이어질 거예요."
         },
         "earlyFeedback": {
-          "title": "�",
-          "description": "�"
+          "title": "초기 피드백에 대응하기",
+          "description": "들어오는 모든 메시지와 지원 문의, 제안을 하나하나 읽고 있어요. 영향력이 큰 피드백은 개선 사항과 작은 기능으로 반영되어, 경험이 매주 나아지고 있어요."
         },
         "foundations": {
-          "title": "�",
-          "description": "�"
+          "title": "기반 다지기",
+          "description": "눈에 잘 보이지 않는 곳에서 안정성과 성능, 관측 가능성을 다듬으며 다음 기능들을 올릴 단단한 기반을 만들고 있어요. 겉으로는 잘 드러나지 않지만, 지금 우리가 할 수 있는 가장 중요한 일이에요."
         }
       },
       "next": {
-        "label": "�",
-        "timeframe": "�",
-        "summary": "�",
+        "label": "다음",
+        "timeframe": "2026년 3분기",
+        "summary": "설계를 마치고 순서를 기다리고 있어요.",
         "betaToLive": {
-          "title": "�",
-          "description": "�"
+          "title": "베타에서 정식 출시로",
+          "description": "Jiki는 현재 베타 버전이에요. 출시 초기의 소란이 가라앉으면 베타 딱지를 떼고 정식 제품으로 거듭나요. 안정성에 대한 더 확실한 보장, 더 명확한 가격 정책, 매끄러운 시작 흐름을 갖추게 되죠. 이때 Exercism 커뮤니티에 출시 이메일을 보내고, 파트너들과 함께 홍보도 시작해요."
         },
         "deepDiveVideos": {
-          "title": "�",
-          "description": "�"
+          "title": "심층 탐구 영상 추가",
+          "description": "핵심 레슨을 넘어 개념을 깊이 있게 파고드는 장편 영상이에요. 어떻게 하는지 그 이면의 왜를 이해하고, 배운 개념이 프로그래밍이라는 더 넓은 세계와 어떻게 이어지는지 보고 싶은 학습자에게 딱이에요."
         },
         "newLanguages": {
-          "title": "�",
-          "description": "�"
+          "title": "여러 새로운 언어 출시",
+          "description": "8월부터 학습자들이 자기 언어로 Jiki를 쓸 수 있게 해요. 마케팅 페이지뿐 아니라 인터페이스와 커리큘럼 전체를 번역해요. 7월 31일부터 8월 2일 주말에 열리는 <link>커뮤니티 번역 마라톤</link>으로 시작해요."
         },
         "pythonVersion": {
-          "title": "�",
-          "description": "�"
+          "title": "Python 버전 출시",
+          "description": "9월에 찾아오는 Python 트랙은 JavaScript 커리큘럼과 같은 깊이를 갖춘 완전한 과정이에요. 연습 문제 철학도, 한 단계씩 따라가는 시각화 도구도, 완성도도 그대로지만 가르치는 언어가 Python이에요."
         }
       },
       "future": {
-        "label": "�",
-        "timeframe": "�",
-        "summary": "�",
+        "label": "앞으로",
+        "timeframe": "2026년 4분기",
+        "summary": "곧 다가올 계획이에요. 배워 나가면서 바뀔 수 있어요.",
         "moreLanguages": {
-          "title": "�",
-          "description": "�"
+          "title": "더 많은 언어 추가",
+          "description": "8월의 첫 물결을 이어, 남은 한 해 동안 Jiki를 더 많은 언어로 번역해 나가요. 그래서 더 많은 학습자가 모국어로 플랫폼을 쓸 수 있게 되죠. 커뮤니티의 수요와 임팩트가 가장 큰 곳을 기준으로 우선순위를 정할 거예요."
         },
         "sql": {
-          "title": "�",
-          "description": "�"
+          "title": "SQL 출시",
+          "description": "올해 후반에는 Jiki에 SQL을 더해요. 나머지 커리큘럼과 같은 한 단계씩 따라가며 직접 해보는 방식으로 데이터베이스와 쿼리를 이해할 수 있게 해줘요."
         }
       }
     }
   },
   "misc": {
     "chooseLanguage": {
-      "selectLanguage": "�",
-      "backToVideo": "�",
-      "tooltip": "�",
-      "saving": "�",
-      "confirmChoice": "�",
-      "questionTitle": "�",
-      "javascript": "�",
-      "python": "�",
-      "chooseForMe": "�",
-      "cantChange": "�",
-      "noVideo": "�",
-      "videoInstruction": "�"
+      "selectLanguage": "언어 선택",
+      "backToVideo": "영상으로 돌아가기",
+      "tooltip": "계속하려면 옵션 중 하나를 선택해요.",
+      "saving": "저장 중...",
+      "confirmChoice": "선택 확정",
+      "questionTitle": "어떤 언어를 배우고 싶어요?",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "chooseForMe": "대신 선택해 주기",
+      "cantChange": "한 번 선택하면 바꿀 수 없어요.",
+      "noVideo": "사용할 수 있는 영상이 없어요",
+      "videoInstruction": "영상을 본 다음 언어를 선택해요. 이미 알고 있나요? <skip>영상 건너뛰기</skip>"
     },
     "deleteAccount": {
-      "deletedTitle": "�",
-      "deletedSubtitle": "�",
-      "deletingTitle": "�",
-      "deletingSubtitle": "�",
-      "errorTitle": "�",
-      "errorSubtitle": "�",
-      "expiredTitle": "�",
-      "expiredSubtitle": "�",
-      "expiredSecondary": "�",
-      "goHome": "�"
+      "deletedTitle": "계정이 삭제됐어요",
+      "deletedSubtitle": "떠나신다니 아쉬워요. Jiki와 함께 즐거운 시간을 보내셨기를 바라요. 코딩 여정에 행운이 함께하길 바랄게요!",
+      "deletingTitle": "계정을 삭제하는 중이에요",
+      "deletingSubtitle": "잠시만 기다려 주세요",
+      "errorTitle": "오류가 발생했어요",
+      "errorSubtitle": "계정을 삭제하는 중에 오류가 발생했어요. 저희가 알림을 받았고, 직접 수동으로 삭제해 드릴게요.",
+      "expiredTitle": "링크가 만료됐거나 유효하지 않아요",
+      "expiredSubtitle": "이 삭제 링크는 더 이상 유효하지 않아요. 이미 사용됐거나 만료됐을 수 있어요.",
+      "expiredSecondary": "그래도 계정을 삭제하고 싶다면, 로그인한 뒤 설정에서 새 삭제 링크를 요청해 주세요.",
+      "goHome": "홈으로 가기"
     },
     "errorPage": {
-      "serverErrorTitle": "�",
-      "serverErrorMessage": "�",
-      "serverErrorAction": "�",
-      "notFoundTitle": "�",
-      "notFoundMessage": "�",
-      "notFoundAction": "�"
+      "serverErrorTitle": "문제가 발생했어요",
+      "serverErrorMessage": "예상치 못한 오류가 발생했어요. 죄송해요!",
+      "serverErrorAction": "다시 시도",
+      "notFoundTitle": "페이지를 찾을 수 없어요",
+      "notFoundMessage": "그 페이지를 찾을 수 없는 것 같아요. 죄송해요!",
+      "notFoundAction": "홈으로 가기"
     },
     "testimonialsPage": {
-      "title": "�",
-      "subtitle": "�",
-      "quoteOpenAlt": "�",
-      "quoteCloseAlt": "�"
+      "title": "수강생 후기",
+      "subtitle": "수강생들에게 강의가 즐거웠는지 물어봤어요. 이렇게 말해 줬어요...",
+      "quoteOpenAlt": "“",
+      "quoteCloseAlt": "”"
     }
   },
   "concepts": {
@@ -989,8 +1020,8 @@
     "relatedExercises": {
       "heading": "관련 연습 문제",
       "description": "이 연습 문제들은 이 개념을 연습하기에 아주 좋은 방법이에요!",
-      "signupPrompt": "<link>가입</link>하고 풀어보세요!",
-      "locked": "이 연습 문제는 잠겨 있어요"
+      "locked": "이 연습 문제는 잠겨 있어요",
+      "signupPrompt": "<link>가입</link>하고 풀어보세요!"
     },
     "relatedChallenges": {
       "heading": "관련 챌린지",
@@ -1116,169 +1147,172 @@
     "guides": {
       "title": "가이드 - Jiki",
       "description": "도구 설정과 Jiki 활용법을 단계별로 안내해 드리는 가이드입니다."
+    },
+    "exercises": {
+      "notFound": "연습 문제를 찾을 수 없어요"
     }
   },
   "apiErrors": {
-    "unknown": "�",
+    "unknown": "문제가 발생했어요. 다시 시도해 주세요.",
     "unauthenticated": "계속하려면 로그인하거나 가입해야 합니다.",
     "invalid_credentials": "이메일 또는 비밀번호가 올바르지 않습니다.",
     "unconfirmed": "계속하기 전에 이메일 주소를 인증해야 합니다.",
-    "forbidden": "�",
-    "access_denied": "�",
-    "premium_required": "�",
-    "invalid_signature": "�",
-    "invalid_captcha": "�",
-    "invalid_token": "�",
-    "token_expired": "�",
+    "forbidden": "이곳에 접근할 권한이 없어요",
+    "access_denied": "접근이 거부됐어요",
+    "premium_required": "이 기능은 프리미엄 회원만 이용할 수 있어요",
+    "invalid_signature": "서명이 유효하지 않아요",
+    "invalid_captcha": "사람인지 확인하지 못했어요. 다시 시도해 주세요.",
+    "invalid_token": "그 링크가 유효하지 않거나 만료됐어요",
+    "token_expired": "그 링크가 만료됐어요",
     "session_expired": "세션이 만료되었습니다. 계속하려면 다시 로그인해야 합니다.",
-    "invalid_otp": "�",
-    "invalid_unsubscribe_token": "�",
-    "not_found": "�",
-    "lesson_not_found": "�",
-    "level_not_found": "�",
-    "course_not_found": "�",
-    "user_not_found": "�",
-    "challenge_not_found": "�",
-    "concept_not_found": "�",
-    "badge_not_found": "�",
-    "user_challenge_not_found": "�",
-    "user_video_not_found": "�",
-    "user_lesson_not_found": "�",
-    "user_level_not_found": "�",
-    "validation_error": "�",
-    "duplicate_filename": "�",
-    "file_too_large": "�",
-    "too_many_files": "�",
-    "invalid_submission": "�",
-    "lesson_in_progress": "�",
-    "lesson_not_unlocked": "�",
-    "level_not_completed": "�",
-    "challenge_locked": "�",
-    "lesson_incomplete": "�",
-    "concept_locked": "�",
-    "language_already_chosen": "�",
-    "invalid_language": "�",
-    "missing_course": "�",
-    "invalid_password": "�",
-    "locale_update_failed": "�",
-    "name_update_failed": "�",
-    "email_update_failed": "�",
-    "password_update_failed": "�",
-    "handle_update_failed": "�",
-    "notification_update_failed": "�",
-    "streaks_update_failed": "�",
-    "flag_invalid": "�",
-    "no_image_provided": "�",
-    "invalid_image_type": "�",
-    "invalid_avatar": "�",
-    "avatar_too_large": "�",
-    "translation_error": "�",
-    "stripe_error": "�",
-    "exercism_unavailable": "�",
-    "no_exercism_link": "�",
-    "invalid_product": "�",
-    "existing_subscription": "�",
-    "invalid_return_url": "�",
-    "checkout_failed": "�",
-    "no_customer": "�",
-    "portal_failed": "�",
-    "missing_session_id": "�",
-    "invalid_session": "�",
-    "verification_failed": "�",
-    "no_subscription": "�",
-    "same_interval": "�",
-    "invalid_interval": "�",
-    "update_failed": "�",
-    "invalid_request": "�",
-    "cancel_failed": "�",
-    "not_cancelling": "�",
-    "reactivate_failed": "�",
-    "checkout_payment_incomplete": "�",
-    "unauthorized": "�",
+    "invalid_otp": "인증 코드가 올바르지 않아요",
+    "invalid_unsubscribe_token": "그 구독 해지 링크가 유효하지 않거나 만료됐어요",
+    "not_found": "찾고 있는 내용을 찾을 수 없어요",
+    "lesson_not_found": "그 레슨을 찾을 수 없어요",
+    "level_not_found": "그 레벨을 찾을 수 없어요",
+    "course_not_found": "그 강의를 찾을 수 없어요",
+    "user_not_found": "그 사용자를 찾을 수 없어요",
+    "challenge_not_found": "그 챌린지를 찾을 수 없어요",
+    "concept_not_found": "그 개념을 찾을 수 없어요",
+    "badge_not_found": "그 배지를 찾을 수 없어요",
+    "user_challenge_not_found": "그 챌린지에 대한 진행 상황을 찾을 수 없어요",
+    "user_video_not_found": "그 영상에 대한 진행 상황을 찾을 수 없어요",
+    "user_lesson_not_found": "그 레슨에 대한 진행 상황을 찾을 수 없어요",
+    "user_level_not_found": "그 레벨에 대한 진행 상황을 찾을 수 없어요",
+    "validation_error": "입력한 내용을 확인하고 다시 시도해 주세요.",
+    "duplicate_filename": "같은 파일 이름을 두 번 이상 사용했어요: {filenames}",
+    "file_too_large": "{filename} 파일이 너무 커요. 파일은 최대 {maxBytes}바이트까지 가능해요.",
+    "too_many_files": "파일을 {count}개 추가했어요. 최대 {max}개까지 제출할 수 있어요.",
+    "invalid_submission": "그 제출을 받을 수 없어요.",
+    "lesson_in_progress": "새 레슨을 시작하기 전에 지금 하고 있는 레슨을 먼저 끝내 주세요",
+    "lesson_not_unlocked": "이 레벨의 앞선 레슨을 먼저 완료해 주세요",
+    "level_not_completed": "지금 하고 있는 레벨을 먼저 완료해 주세요",
+    "challenge_locked": "이 챌린지를 여는 레슨을 먼저 완료해 주세요",
+    "lesson_incomplete": "지금 하고 있는 레슨을 먼저 완료해 주세요",
+    "concept_locked": "이 개념은 아직 잠겨 있어요",
+    "language_already_chosen": "이미 언어를 선택했어요",
+    "invalid_language": "선택할 수 없는 언어예요",
+    "missing_course": "어떤 강의를 말하는지 알 수 없어요",
+    "invalid_password": "현재 비밀번호가 올바르지 않아요",
+    "locale_update_failed": "언어를 변경하지 못했어요",
+    "name_update_failed": "이름을 변경하지 못했어요",
+    "email_update_failed": "이메일 주소를 변경하지 못했어요",
+    "password_update_failed": "비밀번호를 변경하지 못했어요",
+    "handle_update_failed": "핸들을 변경하지 못했어요",
+    "notification_update_failed": "알림 설정을 변경하지 못했어요",
+    "streaks_update_failed": "연속 학습 설정을 변경하지 못했어요",
+    "flag_invalid": "변경할 수 없는 설정이에요",
+    "no_image_provided": "먼저 이미지를 선택해 주세요",
+    "invalid_image_type": "JPEG, PNG, GIF, WebP 이미지 중에서 선택해 주세요",
+    "invalid_avatar": "그 이미지를 아바타로 사용할 수 없어요",
+    "avatar_too_large": "그 이미지는 아바타로 사용하기에 너무 커요",
+    "translation_error": "그걸 번역하지 못했어요",
+    "stripe_error": "결제를 처리하는 중에 문제가 발생했어요. 다시 시도해 주세요.",
+    "exercism_unavailable": "Exercism에 연결하지 못했어요. 잠시 후 다시 시도해 주세요.",
+    "no_exercism_link": "이 계정은 Exercism과 연결돼 있지 않아요",
+    "invalid_product": "구매할 수 없는 요금제예요",
+    "existing_subscription": "이미 활성 구독이 있어요",
+    "invalid_return_url": "올바른 페이지로 돌려보내지 못했어요",
+    "checkout_failed": "결제를 시작하지 못했어요. 다시 시도해 주세요.",
+    "no_customer": "결제 정보를 찾을 수 없어요",
+    "portal_failed": "결제 포털을 열지 못했어요. 다시 시도해 주세요.",
+    "missing_session_id": "결제 세션을 찾을 수 없어요",
+    "invalid_session": "그 결제 세션이 유효하지 않아요",
+    "verification_failed": "결제를 확인하지 못했어요",
+    "no_subscription": "활성 구독이 없어요",
+    "same_interval": "이미 이 방식으로 결제되고 있어요",
+    "invalid_interval": "선택할 수 없는 결제 주기예요",
+    "update_failed": "구독을 변경하지 못했어요. 다시 시도해 주세요.",
+    "invalid_request": "그 요청을 처리하지 못했어요",
+    "cancel_failed": "구독을 해지하지 못했어요. 다시 시도해 주세요.",
+    "not_cancelling": "구독이 해지 예정 상태가 아니에요",
+    "reactivate_failed": "구독을 다시 활성화하지 못했어요. 다시 시도해 주세요.",
+    "checkout_payment_incomplete": "결제가 완료되지 않았어요. 다시 시도해 주세요.",
+    "unauthorized": "이곳에 접근할 권한이 없어요",
     "fields": {
-      "email": "�",
-      "password": "�",
-      "password_confirmation": "�",
-      "current_password": "�",
-      "name": "�",
-      "handle": "�",
-      "locale": "�",
-      "enabled": "�"
+      "email": "이메일 주소",
+      "password": "비밀번호",
+      "password_confirmation": "비밀번호 확인",
+      "current_password": "현재 비밀번호",
+      "name": "이름",
+      "handle": "핸들",
+      "locale": "언어",
+      "enabled": "해당 설정"
     },
     "validation": {
-      "blank": "�",
-      "invalid": "�",
-      "taken": "�",
-      "confirmation": "�",
-      "too_short": "�",
-      "too_long": "�",
-      "wrong_length": "�",
-      "inclusion": "�",
-      "exclusion": "�",
-      "not_a_number": "�",
-      "accepted": "�",
-      "present": "�",
-      "boolean_required": "�"
+      "blank": "{field} 항목은 비워 둘 수 없어요.",
+      "invalid": "{field} 항목이 올바르지 않아요.",
+      "taken": "{field} 항목은 이미 사용 중이에요.",
+      "confirmation": "{field} 항목이 일치하지 않아요.",
+      "too_short": "{field} 항목은 {count, plural, other {#자}} 이상이어야 해요.",
+      "too_long": "{field} 항목은 {count, plural, other {#자}} 이하여야 해요.",
+      "wrong_length": "{field} 항목은 정확히 {count, plural, other {#자}}여야 해요.",
+      "inclusion": "{field}은(는) 선택할 수 있는 값이 아니에요.",
+      "exclusion": "{field}은(는) 사용할 수 없어요.",
+      "not_a_number": "{field}은(는) 숫자여야 해요.",
+      "accepted": "{field}에 동의해야 해요.",
+      "present": "{field}은(는) 비어 있어야 해요.",
+      "boolean_required": "{field}은(는) 켜짐 또는 꺼짐만 가능해요."
     },
     "reasons": {
       "invalid_submission": {
-        "no_files": "�",
-        "filename_required": "�",
-        "code_required": "�"
+        "no_files": "제출하기 전에 파일을 하나 이상 추가해 주세요.",
+        "filename_required": "모든 파일에 이름이 있어야 해요.",
+        "code_required": "제출하기 전에 코드를 작성해 주세요."
       }
     },
     "subscriptions": {
-      "unauthorized": "�"
+      "unauthorized": "이 결제 세션은 다른 계정의 것이에요"
     },
     "accountDeletion": {
-      "invalid_token": "�",
-      "token_expired": "�",
-      "stripe_error": "�"
+      "invalid_token": "이 계정 삭제 링크는 유효하지 않거나 만료되었어요",
+      "token_expired": "이 계정 삭제 링크가 만료되었어요",
+      "stripe_error": "구독을 취소하지 못해서 계정을 삭제하지 않았어요. 다시 시도하거나 지원팀에 문의해 주세요."
     }
   },
   "toasts": {
     "subscription": {
-      "loginRequired": "�",
-      "checkoutFailed": "�",
-      "alreadyPremium": "�",
-      "checkoutSessionFailed": "�",
-      "portalFailed": "�",
-      "canceled": "�",
-      "cancelFailed": "�",
-      "reactivated": "�",
-      "reactivateFailed": "�",
-      "paymentPortalFailed": "�"
+      "loginRequired": "계정을 업그레이드하려면 로그인해 주세요",
+      "checkoutFailed": "결제를 시작하지 못했어요. 다시 시도해 주세요.",
+      "alreadyPremium": "이미 프리미엄 등급이에요",
+      "checkoutSessionFailed": "결제 세션을 만들지 못했어요",
+      "portalFailed": "고객 포털을 열지 못했어요",
+      "canceled": "구독을 취소했어요. {date}까지는 계속 이용할 수 있어요",
+      "cancelFailed": "구독을 취소하지 못했어요",
+      "reactivated": "구독을 다시 활성화했어요!",
+      "reactivateFailed": "구독을 다시 활성화하지 못했어요",
+      "paymentPortalFailed": "결제 포털을 열지 못했어요"
     },
     "auth": {
-      "sessionExpired": "�"
+      "sessionExpired": "세션이 만료되었어요. 다시 로그인해 주세요."
     },
     "logout": {
-      "loading": "�",
-      "success": "�",
-      "failed": "�"
+      "loading": "로그아웃하는 중...",
+      "success": "로그아웃했어요",
+      "failed": "로그아웃하지 못했어요. 서버에 연결할 수 없어요"
     },
     "avatar": {
-      "updated": "�",
-      "uploadFailed": "�",
-      "networkError": "�",
-      "invalidImageType": "�",
-      "imageTooLarge": "�"
+      "updated": "프로필 사진을 변경했어요",
+      "uploadFailed": "프로필 사진을 업로드하지 못했어요",
+      "networkError": "네트워크 오류가 발생했어요. 다시 시도해 주세요.",
+      "invalidImageType": "JPEG, PNG, GIF, WebP 이미지를 선택해 주세요",
+      "imageTooLarge": "이미지는 5MB보다 작아야 해요"
     },
     "settings": {
-      "fetchFailed": "�",
-      "settingUpdated": "�",
-      "updateFailed": "�",
-      "notificationUpdateFailed": "�",
-      "streaksUpdateFailed": "�"
+      "fetchFailed": "설정을 불러오지 못했어요",
+      "settingUpdated": "{field, select, name {이름} email {이메일} password {비밀번호} locale {언어 설정} handle {핸들} other {{field}}}을(를) 변경했어요",
+      "updateFailed": "변경하지 못했어요",
+      "notificationUpdateFailed": "알림 설정을 변경하지 못했어요",
+      "streaksUpdateFailed": "연속 학습 설정을 변경하지 못했어요"
     },
     "exercise": {
-      "submissionFailed": "�",
-      "chatSaveFailed": "�",
-      "chatSaveCaptchaFailed": "�",
-      "lessonSaveError": "�"
+      "submissionFailed": "제출 내용을 저장하지 못했어요. 다시 시도해 주세요.",
+      "chatSaveFailed": "이 메시지를 저장하지 못했어요. 다시 돌아와도 이 메시지는 남아 있지 않아요.",
+      "chatSaveCaptchaFailed": "저장하는 중 인증에 실패했어요. 다시 돌아와도 이 메시지는 남아 있지 않아요.",
+      "lessonSaveError": "죄송해요, 레슨을 완료하지 못했어요. 다시 시도해 주세요. 계속 이러면 <link>https://forum.jiki.io</link>에 알려 주세요."
     },
     "lesson": {
-      "loadFailed": "�"
+      "loadFailed": "죄송해요, 레슨을 열지 못했어요. 다시 시도해 주세요."
     }
   },
   "modals": {
@@ -1409,6 +1443,14 @@
       "whatHappened": "<strong>“무엇이 잘못되었나요?” 팁</strong> — 코드를 한 줄씩 따라가며 무엇이 잘못되었는지 확인하기",
       "revealHints": "<strong>모든 힌트 보기</strong> — 위의 모든 힌트를 읽고 가이드 얻기"
     },
+    "codeSyncChoice": {
+      "title": "어느 버전의 코드를 사용할까요?",
+      "intro": "다른 기기에서 더 새로운 버전의 코드가 저장되었어요. 계속 사용할 버전을 선택해 주세요. 선택하지 않은 버전은 코드를 다시 실행할 때까지 덮어쓰이지 않아요.",
+      "localLabel": "이 기기",
+      "serverLabel": "최근 저장된 버전",
+      "useLocal": "이 기기의 코드 사용",
+      "useServer": "최신 버전 사용"
+    },
     "paymentConfirming": {
       "title": "결제 확인 중…",
       "description": "Stripe에서 결제를 확인하는 동안 잠시만 기다려 주세요. 보통 몇 분밖에 걸리지 않아요."
@@ -1516,22 +1558,28 @@
       "otherLabel": "Outlook 및 기타 캘린더",
       "otherHelp": "이 링크를 복사하여 구독 캘린더로 추가하세요.",
       "copied": "복사됨"
+    },
+    "exerciseIntroVideo": {
+      "title": "첫 번째 그림 연습에 오신 것을 환영해요",
+      "intro": "그림 연습이 어떻게 이루어지고 어떻게 푸는지 짧은 영상으로 살펴봐요. 이 영상은 설명 맨 아래에서도 볼 수 있어요.",
+      "close": "시작해 볼까요",
+      "watchAlt": "소개 영상 보기"
     }
   },
   "challenge": {
-    "backToChallenges": "�",
+    "backToChallenges": "챌린지로 돌아가기",
     "error": {
-      "message": "�"
+      "message": "오류: {error}"
     },
-    "loadError": "�",
-    "documentTitle": "�",
+    "loadError": "챌린지를 불러오지 못했어요",
+    "documentTitle": "{title} - 챌린지 - Jiki",
     "locked": {
-      "title": "�",
-      "description": "�"
+      "title": "챌린지가 잠겨 있어요",
+      "description": "이 챌린지는 아직 잠겨 있어요. 이전 레슨을 완료하면 잠금이 풀려요."
     },
     "premiumRequired": {
-      "title": "�",
-      "description": "�"
+      "title": "프리미엄이 필요해요",
+      "description": "챌린지는 프리미엄 기능이에요. 플랜을 업그레이드하고 만들어 봐요."
     }
   },
   "dashboard": {
@@ -1633,7 +1681,7 @@
       "confirmNo": "지금은 아니에요",
       "confirmYes": "네",
       "deepDiveHeading": "심층 탐구",
-      "deepDiveDescription": "아직 막혔나요? Jeremy가 이 연습 문제를 해결하는 Deep Dive를 시청하세요.",
+      "deepDiveDescription": "아직 막혔나요? Jeremy와 함께 <strong>막힌 부분이 풀릴 때까지</strong> 따라 해 보고, 나머지는 혼자 힘으로 풀어 봐요.",
       "walkthroughThumbnailAlt": "Deep Dive 비디오 썸네일"
     },
     "chatHeader": {
@@ -1686,7 +1734,8 @@
       "libraryEmpty": "연습 문제를 진행하면서 배운 개념을 참고할 수 있는 곳이에요. 여기서 배운 내용을 다시 상기시킬 수 있어요.",
       "libraryChallenges": "지금까지 배운 모든 개념을 이 연습 문제에서 사용할 수 있어요. 배운 내용을 다시 떠올리고 싶을 때 개념 라이브러리를 참조하세요.",
       "libraryWithConcepts": "이 연습 문제에서 사용된 주요 개념이에요. 지금까지 배운 내용을 상기하는 데 사용하세요.",
-      "openConceptLibrary": "개념 라이브러리 열기"
+      "openConceptLibrary": "개념 라이브러리 열기",
+      "introVideoTitle": "영상 소개"
     },
     "scrubber": {
       "previousFrame": "이전 프레임",
@@ -1879,133 +1928,133 @@
   },
   "projects": {
     "projectCard": {
-      "comingSoon": "�",
-      "comingSoonLabel": "�"
+      "comingSoon": "곧 공개",
+      "comingSoonLabel": "곧 공개"
     },
     "episodeCard": {
-      "premium": "�"
+      "premium": "프리미엄"
     },
     "episodeSummary": {
-      "heading": "�",
-      "whereWeStart": "�",
-      "whereWeEnd": "�",
-      "whatWeCover": "�"
+      "heading": "에피소드 요약",
+      "whereWeStart": "시작 지점",
+      "whereWeEnd": "도착 지점",
+      "whatWeCover": "다루는 내용"
     },
     "projectPage": {
-      "backToAllProjects": "�"
+      "backToAllProjects": "← <strong>모든 프로젝트</strong>로 돌아가기"
     },
     "episodePage": {
-      "backToProject": "�",
-      "relevantGuidesDescription": "�"
+      "backToProject": "← <strong>{title}</strong>(으)로 돌아가기",
+      "relevantGuidesDescription": "이 단계를 해결할 때 도움이 될 만한 가이드예요."
     },
     "relevantGuides": {
-      "heading": "�"
+      "heading": "도움이 되는 가이드"
     }
   },
   "guides": {
     "guidesContent": {
-      "pageHeading": "�",
-      "searchPlaceholder": "�",
-      "filterAll": "�",
-      "noResultsTitle": "�",
-      "noResultsMessage": "�"
+      "pageHeading": "가이드와 사용법",
+      "searchPlaceholder": "가이드 검색...",
+      "filterAll": "전체",
+      "noResultsTitle": "“{query}”에 대한 결과 0개",
+      "noResultsMessage": "다른 검색어로 찾아보거나 가이드를 둘러봐요."
     },
     "guideCard": {
-      "premium": "�"
+      "premium": "프리미엄"
     },
     "tags": {
-      "editors": "�",
-      "installation": "�",
-      "agentic-coding": "�",
-      "front-end-basics": "�"
+      "editors": "에디터",
+      "installation": "설치",
+      "agentic-coding": "에이전트 코딩",
+      "front-end-basics": "프론트엔드 기초"
     },
     "guideBreadcrumb": {
-      "guides": "�"
+      "guides": "가이드"
     },
     "premiumGate": {
-      "lockedTitle": "�",
-      "lockedSubtitle": "�",
-      "unlockButton": "�"
+      "lockedTitle": "이 가이드는 프리미엄 회원을 위한 거예요",
+      "lockedSubtitle": "계속 읽으려면 이 가이드와 Jiki 프리미엄이 제공하는 모든 혜택을 잠금 해제해요.",
+      "unlockButton": "프리미엄으로 잠금 해제"
     },
     "relatedGuides": {
-      "heading": "�"
+      "heading": "관련 가이드"
     },
     "featuredInProjects": {
-      "heading": "�"
+      "heading": "프로젝트에서 소개된 가이드"
     },
     "metadata": {
-      "notFoundTitle": "�"
+      "notFoundTitle": "가이드를 찾을 수 없어요"
     }
   },
   "unsubscribe": {
-    "title": "�",
-    "subtitle": "�",
-    "updateError": "�",
-    "toggleAria": "�",
+    "title": "이메일 설정",
+    "subtitle": "어떤 소식을 언제 받을지 직접 관리해요.",
+    "updateError": "설정을 변경하지 못했어요. 다시 시도해 주세요.",
+    "toggleAria": "{name} 켜기/끄기",
     "manage": {
-      "title": "�",
-      "description": "�",
-      "updated": "�",
-      "save": "�"
+      "title": "알림 관리",
+      "description": "알림 유형별로 켜고 끄면서 받고 싶은 이메일을 골라요.",
+      "updated": "이메일 설정을 변경했어요.",
+      "save": "설정 변경"
     },
     "all": {
-      "title": "�",
-      "description": "�",
-      "success": "�",
-      "button": "�"
+      "title": "모든 이메일 수신 중단",
+      "description": "Jiki에서 보내는 모든 이메일을 그만 받고 싶나요? 그러면 마케팅, 알림, 리마인더 이메일 수신이 모두 중단돼요.",
+      "success": "Jiki의 모든 이메일 수신을 중단했어요.",
+      "button": "모든 이메일 수신 중단"
     },
     "email": {
-      "alreadyTitle": "�",
-      "alreadyDescription": "�",
-      "title": "�",
-      "description": "�",
-      "success": "�",
-      "button": "�",
-      "fallbackType": "�"
+      "alreadyTitle": "이미 수신을 중단했어요",
+      "alreadyDescription": "지금은 <highlight>{emailType}</highlight> 이메일을 받고 있지 않아요.",
+      "title": "이 이메일 수신 중단",
+      "description": "이런 유형의 이메일을 더는 받고 싶지 않나요? 아래를 눌러 <highlight>{emailType}</highlight> 이메일 수신을 중단해요.",
+      "success": "{emailType} 이메일 수신을 중단했어요.",
+      "button": "{emailType} 이메일 수신 중단",
+      "fallbackType": "이런"
     },
     "types": {
       "newsletters": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "제품 업데이트",
+        "description": "새로운 기능과 개선 소식을 계속 받아봐요.",
+        "shortLabel": "제품 업데이트"
       },
       "event_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "이벤트 알림",
+        "description": "예정된 라이브 방송과 이벤트 소식을 알림으로 받아봐요.",
+        "shortLabel": "이벤트 알림"
       },
       "milestone_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "업적 알림",
+        "description": "새로운 기술이나 업적을 달성하면 알림을 받아봐요.",
+        "shortLabel": "업적 알림"
       },
       "activity_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "활동 알림",
+        "description": "배지를 획득하거나 챌린지를 완료할 때처럼 활동에 따라 오는 알림이에요.",
+        "shortLabel": "활동 알림"
       },
       "onboarding_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "시작 안내 이메일",
+        "description": "Jiki를 최대한 활용하는 방법과 팁을 알려드려요.",
+        "shortLabel": "시작 안내"
       }
     }
   },
   "achievements": {
-    "title": "�",
-    "description": "�",
-    "tabBadges": "�",
-    "tabCertificates": "�",
-    "loading": "�",
-    "error": "�",
-    "certificatesEmptyTitle": "�",
-    "certificatesEmptyBody": "�",
+    "title": "업적",
+    "description": "배지 하나하나에 여러분의 코딩 여정이 담겨 있어요.",
+    "tabBadges": "배지",
+    "tabCertificates": "수료증",
+    "loading": "업적을 불러오는 중...",
+    "error": "오류: {error}",
+    "certificatesEmptyTitle": "아직 수료증이 없어요",
+    "certificatesEmptyBody": "강의를 완료하면 실력을 보여 주는 수료증을 받을 수 있어요. 강의를 하나 끝내면 수료증이 여기에 나타나요.",
     "badge": {
-      "locked": "�",
-      "earnedToday": "�",
-      "earnedRelative": "�"
+      "locked": "잠김",
+      "earnedToday": "오늘 획득",
+      "earnedRelative": "{distance} 획득"
     },
-    "loadError": "�"
+    "loadError": "배지를 불러오지 못했어요"
   },
   "challenges": {
     "title": "챌린지",
@@ -2041,24 +2090,24 @@
   "subscription": {
     "tiers": {
       "standard": {
-        "name": "�",
-        "description": "�",
+        "name": "무료",
+        "description": "처음 시작하기에 딱 좋아요",
         "features": {
-          "freeCourses": "�",
-          "basicExercises": "�",
-          "communitySupport": "�",
-          "aiHelpPerMonth": "�"
+          "freeCourses": "무료 강의 이용",
+          "basicExercises": "기초 코딩 연습 문제",
+          "communitySupport": "커뮤니티 지원",
+          "aiHelpPerMonth": "월 1회 AI 도움"
         }
       },
       "premium": {
-        "name": "�",
-        "description": "�",
+        "name": "프리미엄",
+        "description": "고급 기능 잠금 해제",
         "features": {
-          "allFreeFeatures": "�",
-          "unlimitedAi": "�",
-          "allExercises": "�",
-          "certificates": "�",
-          "adFree": "�"
+          "allFreeFeatures": "무료 기능 모두 포함",
+          "unlimitedAi": "AI 도움 무제한",
+          "allExercises": "모든 연습 문제 이용",
+          "certificates": "수료증",
+          "adFree": "광고 없는 환경"
         }
       }
     }
@@ -2078,11 +2127,11 @@
       "byAuthor": "{name} 글",
       "readFullArticle": "전체 글 읽기 →"
     },
-    "recentPosts": {
-      "heading": "최근 글"
-    },
     "relatedPosts": {
       "heading": "관련 글"
+    },
+    "recentPosts": {
+      "heading": "최근 글"
     },
     "cta": {
       "minimalTitle": "Jiki를 무료로 사용해 보세요",
@@ -2115,10 +2164,10 @@
       "help": "찾으시는 내용이 없나요? <blogs>블로그</blogs>, <faqs>자주 묻는 질문</faqs>, <support>고객 지원팀 문의</support>, 또는 <community>커뮤니티</community>에서 물어보세요."
     },
     "tags": {
-      "legal": "�",
-      "premium": "�",
-      "exercises": "�",
-      "videos": "�"
+      "legal": "법적 고지",
+      "premium": "프리미엄",
+      "exercises": "연습 문제",
+      "videos": "동영상"
     },
     "cta": {
       "minimalTitle": "Jiki를 무료로 사용해 보세요",
@@ -2169,6 +2218,24 @@
       "transaction_not_allowed": "Your card issuer doesn't allow this payment. Please contact them to find out why.",
       "try_again_later": "Your card was declined. Please try again in a few minutes.",
       "withdrawal_count_limit_exceeded": "Your card has hit its limit. Please try a different card, or contact your card issuer."
+    }
+  },
+  "exercises": {
+    "public": {
+      "eyebrow": "코딩 연습 문제",
+      "ctaTitle": "이 연습 문제를 풀어볼까요?",
+      "ctaSubtitle": "무료 Jiki 계정을 만들고 코드를 작성해서 실행하면, 코드가 살아 움직이는 모습을 볼 수 있어요.",
+      "ctaButton": "무료로 가입해요",
+      "ctaFootnote": "이미 계정이 있나요? <login>로그인</login>.",
+      "video": {
+        "header": "딥다이브 영상 보기",
+        "description": "Jeremy가 이 연습 문제를 단계별로 차근차근 살펴봐요.",
+        "playAriaLabel": "연습 문제 딥다이브 영상 재생"
+      },
+      "functions": {
+        "heading": "사용할 함수",
+        "description": "이 연습 문제에서 사용할 기본 구성 요소예요."
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 ---
 title: "Lisičje lice"
 description: "Napravi geometrijsko lice lisice od šarenih trouglova."
-en_md5: 095833a5b2117c2d26500103216bf247
+en_md5: ace60854184185ffc1ec1e82e45af4bf
 ---
 
 Ova vežba te upoznaje sa `triangle` funkcijom (trougao). Koristiš je sa 7 ulaza. Prvih 6 ulaza su parovi koordinata za tri ugla. Poslednji ulaz je `color` (boja):
@@ -26,12 +26,12 @@ Lice je horizontalno simetrično (leva strana je identična desnoj). Ima ukupno 
 - Dve `"orange"` polovine lica
 - `"charcoal"` nos (dva trougla)
 
-(Pobrini se da koristiš te boje kada crtaš trouglove, i zapamti da ih pišeš kao `string`-ove (niske)!)
+(Pobrini se da koristiš te boje kada crtaš trouglove, i zapamti da ih pišeš kao _strings_ (niske)!)
 
-Nacrtali smo obrise nekih delova za tebe da ti pomognemo da počneš. Ako pratiš redosled dat u komentarima, biće ti malo lakše.
+### Određivanje tačnih koordinata
 
-Takođe, da bi ti bilo još lakše, svi brojevi koji se koriste su deljivi sa 5 (npr. `5`, `10`, `15` itd. su ispravni, ali `1`, `2`, `3`, `4`, `6`, `7`, `8`, `9`, `11` itd. nisu). Ovaj obrazac ćeš često sretati u narednim vežbama.
+Nacrtali smo obrise nekih delova za tebe da ti pomognemo da počneš. Ako **pratiš redosled dat u komentarima**, biće ti malo lakše.
 
-Još jedna stvar. Možeš da pređeš mišem preko prostora da pronađeš koordinate. To je sjajno za levu stranu, ali pošto je desna strana simetrična – možeš li da rešiš to bez potrebe za prelaženjem mišem?
+Kao i u prethodnim vežbama, možeš da **pređeš mišem preko prostora za crtanje** da pronađeš koordinate, a **svi brojevi koji se koriste su deljivi sa 5** (npr. `5`, `10`, `15` itd. su ispravni).
 
 Srećno!

@@ -7,10 +7,10 @@
   },
   "checks": {
     "saladNotMade": "サラダが作られていません。4つの材料すべてを指定して <code>makeSalad()</code> を呼び出しているか確認してください。",
-    "needLeavesRandomInt": "葉っぱの枚数を生成するには、<code>Math.randomInt(40, 100)</code> を呼び出す必要があります。",
-    "needTomatoesRandomInt": "トマトの数を生成するには、<code>Math.randomInt(5, leaves / 5)</code> を呼び出す必要があります。",
-    "needCroutonsRandomInt": "クルトンの数を生成するには、<code>Math.randomInt(tomatoes, tomatoes * 2)</code> を呼び出す必要があります。",
-    "needOlivesRandomInt": "オリーブの数を生成するには、<code>Math.randomInt(1, tomatoes / 2)</code> を呼び出す必要があります。"
+    "needLeavesRandomInt": "葉っぱの枚数の決め方が、パートナーと決めた約束に従っていません。",
+    "needTomatoesRandomInt": "トマトの数の決め方が、パートナーと決めた約束に従っていません。",
+    "needCroutonsRandomInt": "クルトンの数の決め方が、パートナーと決めた約束に従っていません。",
+    "needOlivesRandomInt": "オリーブの数の決め方が、パートナーと決めた約束に従っていません。"
   },
   "tasks": {
     "makeRandomSalad": {
@@ -26,8 +26,8 @@
   },
   "hints": {
     "leavesExample": {
-      "question": "葉っぱの枚数の決め方の例を教えてください",
-      "answer": "`let leaves = Math.randomInt(40, 100)` を使ってサラダの葉っぱの枚数をランダムに生成します。この値は他の関数でも使えます。"
+      "question": "ランダムな数はどうやって作りますか？",
+      "answer": "`Math.randomInt(min, max)` は、渡した2つの値の間のランダムな整数を返します。たとえば、`let score = Math.randomInt(1, 6)` は1から6までの数を1つ選びます。あとで使えるように、結果は変数に入れておきましょう。"
     },
     "leavesCount": {
       "question": "葉っぱは何枚必要ですか？",
@@ -47,7 +47,7 @@
     },
     "makeSalad": {
       "question": "どうやってサラダを作りますか？",
-      "answer": "各材料の量を決めたら、makeSalad() に葉っぱ、トマト、クルトン、オリーブを渡します。"
+      "answer": "各材料の量が決まったら、4つの変数を、シグネチャに示された順番で `makeSalad()` に渡します。"
     }
   },
   "describers": {
@@ -57,6 +57,10 @@
     "makeSalad": {
       "description": "指定された量の各材料でサラダを作ります。",
       "category": "アクション"
+    },
+    "randomInt": {
+      "description": "min以上max以下の整数をランダムに返します。",
+      "category": "数値"
     }
   }
 }

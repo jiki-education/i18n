@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "rowMismatch": "{{square}}번 상자의 \"{{letter}}\" 글자는 \"{{expected}}\"이어야 하는데 \"{{actual}}\"이에요.",
+    "rowNotColored": "줄에 색이 칠해지지 않았어요.",
+    "rowWrongLength": "줄에 상태가 {{actual}}개 들어왔는데, 줄에는 {{expected}}개가 필요해요."
+  },
+  "tasks": {
+    "processGuess": {
+      "name": "추측 하나 처리하기",
+      "description": "`processGuess`라는 함수를 만들어요. 이 함수는 비밀 단어와 추측을 받아서 각 글자의 상태(correct, present, absent)를 계산한 다음, 그 상태를 담은 배열을 `colorRow(1, states)`에 넘겨 호출해요."
+    }
+  },
+  "scenarios": {
+    "allCorrect": {
+      "name": "모두 맞는 경우",
+      "description": "완전히 맞는 추측을 처리해요."
+    },
+    "absent": {
+      "name": "일부 글자가 없는 경우",
+      "description": "일부 글자가 틀린 경우를 처리해요."
+    },
+    "present": {
+      "name": "일부 글자가 다른 자리에 있는 경우",
+      "description": "글자가 잘못된 자리에 있는 경우를 처리해요."
+    },
+    "complex": {
+      "name": "복잡한 경우",
+      "description": "더 복잡한 경우를 처리해요."
+    },
+    "differentWord": {
+      "name": "다른 단어",
+      "description": "그리고 마지막으로 다른 단어예요!"
+    }
+  },
+  "hints": {
+    "compareLetters": {
+      "question": "추측의 각 글자를 비밀 단어와 어떻게 비교할까요?",
+      "answer": "`0`부터 `4`까지의 자리를 반복해요. 각 자리에서 `guess[i]`와 `target[i]`를 비교해요."
+    },
+    "stateRules": {
+      "question": "글자는 언제 `\"correct\"`이고, 언제 `\"present\"`이고, 언제 `\"absent\"`일까요?",
+      "answer": "이번 연습 문제의 단순화된 규칙은 이래요. `guess[i]`가 `target[i]`와 같으면 `\"correct\"`이에요. 아니면 그 글자가 `target` 어딘가에 있으면 `\"present\"`이에요. 그것도 아니면 `\"absent\"`이에요."
+    },
+    "buildList": {
+      "question": "상태를 담은 배열은 어떻게 쌓아 올릴까요?",
+      "answer": "빈 배열로 시작한 다음, 루프 안에서 `states.push(value)`를 사용해 각 상태를 순서대로 끝에 추가해요."
+    },
+    "finishedList": {
+      "question": "완성된 배열은 어디로 가요?",
+      "answer": "`colorRow(1, states)`에 넘겨서 계산한 상태로 보드의 첫 번째 줄에 색을 칠해요."
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "주어진 상태로 Wordle 보드의 한 줄에 색을 칠해요.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "배열의 끝에 원소를 하나 추가하고, 원래 배열 자체를 바꿔요.",
+      "category": "배열"
+    },
+    "includes": {
+      "description": "문자열에 다른 문자열이 들어 있는지 확인하고, true나 false를 반환해요.",
+      "category": "문자열"
+    }
+  },
+  "describers": {
+    "colorRow": "Wordle 보드의 한 줄에 색을 칠했어요."
+  }
+}

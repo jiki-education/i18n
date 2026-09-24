@@ -2,11 +2,11 @@
   "tasks": {
     "findGuestTable": {
       "name": "Pronađi sto gosta",
-      "description": "Napiši funkciju koja prima listu punih imena gostiju, odgovarajuću listu imena stolova i gosta koji dolazi, najavljenog kao oslovljavanje i prezime. Vrati ime stola za kojim taj gost sedi, ili `\"No table found\"` ako nije na rasporedu sedenja."
+      "description": "Napiši funkciju koja prima niz punih imena gostiju, odgovarajući niz imena stolova i gosta koji dolazi, najavljenog kao oslovljavanje i prezime. Vrati ime stola za kojim taj gost sedi, ili `\"No table found\"` ako nije na rasporedu sedenja."
     },
     "solveTightly": {
-      "name": "Reši sažeto",
-      "description": "Bonus: ovo se može napisati mnogo kompaktnije nego što očekuješ. Možeš li da celo rešenje svedeš na svega nekoliko redova?"
+      "name": "Reši u 9 redova",
+      "description": "Bonus: ovo se može napisati mnogo kompaktnije nego što očekuješ. Probaj da ovo rešiš u 9 redova koda ili manje."
     }
   },
   "scenarios": {
@@ -48,12 +48,12 @@
     },
     "formalDinnerBonusLineCount": {
       "name": "Uredno i pregledno: Lord Doyle",
-      "description": "Isti raspored sedenja kao pre, ali ovog puta tvoje rešenje mora da stane u mnogo manji broj redova."
+      "description": "Isti raspored sedenja kao pre, ali ovog puta probaj da ovo rešiš u 9 redova koda ili manje."
     }
   },
   "hints": {
     "twoLists": {
-      "question": "Kako su dve liste povezane?",
+      "question": "Kako su ta dva niza povezana?",
       "answer": "One su par. Prvi gost sedi za prvim stolom, drugi gost za drugim stolom, i tako dalje. Dakle, nije dovoljno znati *da* je gost na rasporedu - treba da znaš *gde* se na rasporedu nalazi."
     },
     "comparingNames": {
@@ -70,27 +70,27 @@
     }
   },
   "checks": {
-    "tooManyLines": "Nastavi! Pokušaj da rešiš u manje redova."
+    "tooManyLines": "Samo napred! Vidi da li možeš da ga svedeš na 9 redova koda."
   },
   "functions": {
     "length": {
-      "description": "Broj elemenata u nizu - isto svojstvo `length` koje si koristio na stringovima (obezbeđeno od strane nivoa stdlib)",
+      "description": "Broj elemenata u nizu - isto svojstvo `length` koje već znaš sa stringova",
       "category": "Operacije nad nizovima"
     },
     "split": {
-      "description": "Deli string na niz delova, razdvajajući na svakom separatoru (obezbeđeno od strane nivoa stdlib)",
+      "description": "Deli string na niz delova, razdvajajući na svakom separatoru",
       "category": "Operacije nad stringovima"
     },
     "slice": {
-      "description": "Pravi novi niz od dela niza, počev od date pozicije (obezbeđeno od strane nivoa stdlib)",
+      "description": "Pravi novi niz od dela niza, počev od date pozicije",
       "category": "Operacije nad nizovima"
     },
     "join": {
-      "description": "Spaja elemente niza u jedan string, sa separatorom između njih (obezbeđeno od strane nivoa stdlib)",
+      "description": "Spaja elemente niza u jedan string, sa separatorom između njih",
       "category": "Operacije nad nizovima"
     },
     "endsWith": {
-      "description": "Proverava da li se string završava manjim stringom (obezbeđeno od strane nivoa stdlib)",
+      "description": "Proverava da li se string završava manjim stringom",
       "category": "Operacije nad stringovima"
     }
   }

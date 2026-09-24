@@ -119,6 +119,8 @@
       "MethodNotYetImplemented": "Metoda `{{method}}` postoji, ali ti još nije dostupna.",
       "MethodNotYetAvailable": "Metoda `{{method}}` nije dostupna na tvom trenutnom nivou učenja. Nastavi da napreduješ i ova funkcionalnost će se otključati!",
       "PropertyNotYetAvailable": "Svojstvo `{{property}}` nije dostupno na tvom trenutnom nivou učenja. Nastavi da napreduješ i ova funkcionalnost će se otključati!",
+      "InfiniteRecursionDetected": "Funkcija `{{name}}` je pozivala samu sebe iznova i iznova i nikada se nije zaustavila. Funkcija koja poziva samu sebe mora imati način da se zaustavi; bez njega nastavlja zauvek.",
+      "MaxTotalCallDepthReached": "Tvoje funkcije su pozivale jedna drugu iznova i iznova i nikada se nisu zaustavile. Najveći broj poziva funkcija koji u ovoj vežbi mogu istovremeno da čekaju je {{max}}.",
       "MaxIterationsReached": "Tvoj kod se izvršavao predugo, pa je zaustavljen da bi se sprečila beskonačna petlja. Najveći dozvoljeni broj izvršavanja petlji u ovoj vežbi je {{max}}.",
       "RepeatCountMustBeNumber": "repeat() zahteva broj, a dobijeno je {{type}}.",
       "RepeatCountMustBeNonNegative": "Broj ponavljanja za repeat() mora biti 0 ili veći, a dobijeno je {{value}}.",
@@ -147,9 +149,9 @@
       "DisabledFeatureIncludeListViolation": "Funkcionalnost `{{lexeme}}` još nije dostupna na tvom trenutnom nivou."
     },
     "stdlib": {
-      "StdlibExactArgs": "Broj ulaznih otvora funkcije {{functionName}}() je {{expected}}, a broj stvari koje im daješ je samo {{received}}.",
-      "StdlibAtLeastArgs": "Najmanji broj ulaznih otvora funkcije {{functionName}}() je {{minimum}}, a broj stvari koje im daješ je samo {{received}}.",
-      "StdlibArgRange": "Funkcija {{functionName}}() ima između {{min}} i {{max}} ulaznih otvora, a broj stvari koje im daješ je samo {{received}}.",
+      "StdlibExactArgs": "{{functionName}}() ima $t(phrases.slotCount, {\"count\": {{expected}} }), a Džiki je od tebe dobio $t(phrases.inputCount, {\"count\": {{received}} }) da s njom radi.",
+      "StdlibAtLeastArgs": "{{functionName}}() traži najmanje $t(phrases.slotCount, {\"count\": {{minimum}} }), a Džiki je od tebe dobio $t(phrases.inputCount, {\"count\": {{received}} }) da s njom radi.",
+      "StdlibArgRange": "{{functionName}}() ima između {{min}} i {{max}} ulaznih otvora, a Džiki je od tebe dobio $t(phrases.inputCount, {\"count\": {{received}} }) da s njom radi.",
       "StdlibArgTypeMismatch": "Funkcija {{functionName}}() je očekivala da {{argName}} bude {{expected}}, a ti joj daješ {{received}}.",
       "StdlibArgMustBeInteger": "Funkcija {{functionName}}() je očekivala da {{argName}} bude ceo broj, a ti joj daješ {{value}}.",
       "MethodNotYetImplemented": "Metoda `{{method}}` postoji, ali ti još nije dostupna.",
@@ -158,11 +160,13 @@
     }
   },
   "phrases": {
+    "slotCount_zero": "nula ulaznih otvora",
     "slotCount_one": "jedan ulazni otvor",
     "slotCount_two": "∅",
     "slotCount_few": "{{count}} ulazna otvora",
     "slotCount_many": "∅",
     "slotCount_other": "{{count}} ulaznih otvora",
+    "inputCount_zero": "nula ulaza",
     "inputCount_one": "jedan ulaz",
     "inputCount_two": "∅",
     "inputCount_few": "{{count}} ulaza",
@@ -214,6 +218,18 @@
       "step_empty": "Džiki je proverio objekat, video da je prazan i odlučio da na ovoj liniji ne radi ništa dalje.",
       "step_put": "Džiki je stavio {{value}} u kutiju, a kutiju na policu, spremnu za korišćenje u bloku koda."
     },
+    "forStatement": {
+      "result_false": "Uslov je izračunat kao <code>false</code>, pa se petlja zaustavila.",
+      "result_no_condition": "Ova petlja nema uslov, pa se telo petlje ponovo izvršilo.",
+      "result_true": "Uslov je izračunat kao <code>true</code>, pa se telo petlje izvršilo.",
+      "step_decreased": "Džiki je umanjio {{name}} sa {{oldValue}} na {{newValue}}.",
+      "step_decreased_evaluated": "Džiki je umanjio {{name}} sa {{oldValue}} na {{newValue}}, a zatim je izračunao {{expr}} i utvrdio da je {{value}}.",
+      "step_false": "Rezultat je bio <code>false</code>, pa je Džiki odlučio da zaustavi petlju.",
+      "step_increased": "Džiki je uvećao {{name}} sa {{oldValue}} na {{newValue}}.",
+      "step_increased_evaluated": "Džiki je uvećao {{name}} sa {{oldValue}} na {{newValue}}, a zatim je izračunao {{expr}} i utvrdio da je {{value}}.",
+      "step_no_condition": "Nije bilo uslova koji treba da se proveri, pa je Džiki odlučio da izvrši telo petlje.",
+      "step_true": "Rezultat je bio <code>true</code>, pa je Džiki odlučio da izvrši telo petlje."
+    },
     "forOfStatement": {
       "result_empty": "{{type}} je bio prazan, pa ova linija nije uradila ništa.",
       "result_iteration_ordinal_one": "∅",
@@ -242,6 +258,9 @@
     },
     "memberExpression": {
       "array": "Džiki je uzeo stavku sa indeksom {{index}} iz niza i utvrdio da je to {{value}}.",
+      "property": "Džiki je pročitao svojstvo {{name}} i utvrdio da je {{value}}.",
+      "property_array": "Džiki je pročitao {{name}} niza i utvrdio da je {{value}}.",
+      "property_string": "Džiki je pročitao {{name}} stringa i utvrdio da je {{value}}.",
       "string": "Džiki je uzeo karakter sa indeksom {{index}} iz stringa i utvrdio da je to {{value}}."
     },
     "repeatStatement": {

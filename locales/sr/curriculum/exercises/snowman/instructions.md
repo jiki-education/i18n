@@ -1,15 +1,21 @@
 ---
 title: "Sneško"
 description: "Postavi tačne vrednosti promenljivih da napraviš sneška."
-en_md5: d95e1fcddba2afd556c42645352b910a
+en_md5: a0d177f513d3c260b77e6f5443cb5df4
 ---
 
 Vraćamo se snešku koji je ranije nacrtan od tri kruga. Ali ovog puta koristiš promenljive umesto toga.
 
-Imaš istu početnu tačku sa obrisom krugova, i napisali smo kod za tri kruga za tebe (ove linije su samo za čitanje).
+Imaš istu početnu tačku sa obrisom krugova, a kod za tri kruga je već napisan za tebe (ove linije su samo za čitanje).
 
 Treba da definišeš tačne promenljive (engl. _variable_) da rešiš vežbu.
 
-Počeli smo za tebe tako što smo definisali promenljive za osnovu, ali smo im dali pogrešne vrednosti. Treba da ih ispraviš, a zatim dodaš odgovarajuće promenljive za telo i glavu.
+Za početak, promenljive za osnovu su već definisane, ali su im dodeljene pogrešne vrednosti. Treba da ih ispraviš, a zatim dodaš odgovarajuće promenljive za telo i glavu.
 
-Pritisni „Pokreni kod” da vidiš početni krug koji se crta. Takođe ćeš dobiti grešku jer imaš nedostajuće promenljive koje treba da definišeš koristeći `let`.
+Pritisni „Pokreni kod“ da vidiš početni krug koji se crta. Takođe ćeš dobiti grešku jer imaš nedostajuće promenljive koje treba da definišeš koristeći `let`.
+
+### Kako da odrediš tačne koordinate
+
+Kao i u većini vežbi crtanja, možeš da **pređeš kursorom preko prostora za crtanje** da nađeš koordinate, a **svi brojevi koji se koriste su deljivi sa 5**.
+
+Srećno!

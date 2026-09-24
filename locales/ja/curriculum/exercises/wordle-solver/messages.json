@@ -1,0 +1,125 @@
+{
+  "checks": {
+    "repeatedGuess": "同じ単語を2回以上推測しました。それぞれの推測では、前の推測でわかったことを活かしましょう。そして、勝ったらすぐにやめましょう。",
+    "guessNotCommonWord": "{{row}}回目の推測は\"{{word}}\"でしたが、これは`commonWords()`にある単語ではありません。",
+    "guessUsesAbsent": "{{row}}回目の推測は\"{{word}}\"でしたが、それより前の推測で、\"{{letter}}\"はこの単語に含まれないことがすでにわかっていました。",
+    "guessIgnoresCorrect": "{{row}}回目の推測は\"{{word}}\"でしたが、それより前の推測で、{{square}}番目のマスは\"{{letter}}\"であることがすでにわかっていました。",
+    "guessMissesPresent": "{{row}}回目の推測は\"{{word}}\"でしたが、それより前の推測で、\"{{letter}}\"がこの単語のどこかにあることがすでにわかっていました。しかし\"{{word}}\"には含まれていません。",
+    "guessRepeatsPresentSquare": "{{row}}回目の推測は\"{{word}}\"でしたが、それより前の推測で、\"{{letter}}\"は単語に含まれるものの、{{square}}番目のマスには入らないことがすでにわかっていました。",
+    "guessNotFirstFitting": "{{row}}回目の推測は\"{{word}}\"でしたが、\"{{expected}}\"になるはずでした。",
+    "guessAfterSolved": "前の推測ですでに単語が解けていたのに、コードが{{row}}回目の推測を行いました。すべての文字が正しくなったら、すぐにやめましょう。",
+    "stoppedBeforeSolved": "単語を解かないまま、コードが{{guesses}}回の推測で止まりました。"
+  },
+  "tasks": {
+    "firstWord": {
+      "name": "正しい単語を表示させる",
+      "description": "最初のシナリオでは、`commonWords()`から最初の単語を選ぶだけです。その単語は`which`です。このシナリオをクリアするには、その単語を推測してやめます。もっと複雑な状況に進む前に、ここでしくみが正しく動いているか確認できます。"
+    },
+    "handleWrong": {
+      "name": "完全に間違っている場合に対応する",
+      "description": "最初の部分をきちんと動かせましたね！　この2つ目のシナリオでは、推測を2回使います。1回目は、またしても配列の最初の単語です（これはいつもそうなります！）。それが完全に間違っているので、次は配列の次の単語に進みます。今度は正解になります！"
+    },
+    "handlePartial": {
+      "name": "一部が正しい場合に対応する",
+      "description": "いいですね、弾みがついてきました。ここからはもっと楽しくなります。次のいくつかのシナリオでは、`correct`と`absent`の文字が混ざった結果が返ってきます。これまでに見つけた`correct`と`absent`の文字をもとに、配列から次にふさわしい単語を選びましょう。"
+    },
+    "handlePresent": {
+      "name": "`present`の文字に対応する",
+      "description": "すばらしい！　いよいよ最後の難関です。`present`の文字も取り入れましょう。がんばってください、きっとできますよ！"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "すべて正解",
+      "description": "最初の推測で正解する場合に対応します。"
+    },
+    "entirelyWrong": {
+      "name": "1回外れて、1回正解",
+      "description": "推測が外れた場合に対応します。"
+    },
+    "twoNeeded": {
+      "name": "2回の推測が必要",
+      "description": "推測が外れた場合に対応します。"
+    },
+    "threeNeeded": {
+      "name": "3回の推測が必要",
+      "description": "推測が外れた場合に対応します。"
+    },
+    "fourNeeded": {
+      "name": "4回の推測が必要",
+      "description": "推測が外れた場合に対応します。"
+    },
+    "present1": {
+      "name": "`present`の文字がある",
+      "description": "`present`の文字がある、手ごわい問題です。"
+    },
+    "present2": {
+      "name": "候補が絞られてきた",
+      "description": "より難しい単語の処理です。"
+    },
+    "present3": {
+      "name": "よりふつうの流れ",
+      "description": "いかにもWordleらしくなってきました。"
+    },
+    "present4": {
+      "name": "また接戦",
+      "description": "最後のほうで展開が分かれるのが楽しいですね！"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "そもそもどこから始めればいいのでしょうか？",
+      "answer": "まずは`commonWords()`の最初の単語を推測するところから始めましょう。賢くやろうとする前に、単語を推測して結果を確認するループが動くようにしましょう。"
+    },
+    "readStates": {
+      "question": "自分の推測がどうだったかは、どうすればわかるのでしょうか？",
+      "answer": "`guess(word)`は、文字ごとに状態が1つずつ入った配列を返します。状態は`\"correct\"`、`\"present\"`、`\"absent\"`のいずれかです。推測からわかることは、この配列だけに入っています。"
+    },
+    "rememberLearned": {
+      "question": "推測を重ねる中で、わかったことはどう覚えておけばいいのでしょうか？",
+      "answer": "ループの外に、わかったことを覚えておくためのしくみを用意します。含まれないとわかった文字、単語のどこかにあるとわかった文字、そして位置ごとに、そこには入らないとわかった文字です。"
+    },
+    "pickNextGuess": {
+      "question": "次の推測はどうやって選ぶのでしょうか？",
+      "answer": "`commonWords()`を絞り込みます。`correct`の文字をすべて正しい位置に含み、`present`の文字をすべて含み（ただし除外した位置には含まず）、`absent`の文字を1つも含まない単語だけを残します。最初に当てはまった単語を選びましょう。"
+    },
+    "whenToStop": {
+      "question": "いつやめればいいのでしょうか？",
+      "answer": "すべての状態が`\"correct\"`になったら、または`6`回推測したら、すぐにやめます。そうしないと、ボードの最後を超えて推測を続けてしまいます。"
+    }
+  },
+  "functions": {
+    "guess": {
+      "description": "単語を推測します。ボードの次の行にその単語を書いて色を塗り、各文字の状態が入った配列を返します。",
+      "category": "Wordle"
+    },
+    "commonWords": {
+      "description": "推測に使える、よく使われる5文字の単語を100以上集めた配列を返します。",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "配列の末尾に要素を追加します。配列そのものが書き換わります。",
+      "category": "配列"
+    },
+    "arrayIncludes": {
+      "description": "配列に要素が含まれているかどうかを調べます。",
+      "category": "配列"
+    },
+    "stringIncludes": {
+      "description": "文字列に部分文字列が含まれているかどうかを調べます。",
+      "category": "文字列"
+    },
+    "arrayLength": {
+      "description": "配列に入っている要素の数です。",
+      "category": "配列"
+    },
+    "stringLength": {
+      "description": "文字列の文字数です。",
+      "category": "文字列"
+    }
+  },
+  "describers": {
+    "guess": "単語を推測しました",
+    "commonWords": "よく使われる単語の配列を取得しました"
+  }
+}

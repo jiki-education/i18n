@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "signWords": {
+      "name": "Razbij naziv na reči",
+      "description": "Napiši funkciju signWords koja prima naziv firme i vraća niz reči iz njega. Reči su razdvojene razmacima, a kupac je možda slučajno ostavio višak razmaka."
+    }
+  },
+  "scenarios": {
+    "singleWord": {
+      "name": "Jedna reč",
+      "description": "Naziv firme koji se sastoji od jedne reči."
+    },
+    "twoWords": {
+      "name": "Dve reči",
+      "description": "Naziv firme sastavljen od dve reči."
+    },
+    "longerName": {
+      "name": "Duži naziv",
+      "description": "Naziv firme sa četiri reči za štampanje."
+    },
+    "doubleSpace": {
+      "name": "Teška ruka na razmaknici",
+      "description": "Kupac koji je između svojih reči otkucao dva razmaka."
+    }
+  },
+  "hints": {
+    "gettingStarted": {
+      "question": "Kako da izvučem reči iz naziva?",
+      "answer": "Postoje dva načina i nijedan nije bolji. Možeš da prođeš kroz naziv karakter po karakter i da svaku reč gradiš usput, a možeš i da zamoliš string da se sam podeli na razmacima. Izaberi onaj koji ti je jasniji."
+    },
+    "buildingUpArray": {
+      "question": "Kako da sakupim reči?",
+      "answer": "Pre nego što počneš, napravi prazan niz, a zatim svaku gotovu reč dodaj na njegov kraj čim je odrediš. Taj niz na kraju vraćaš."
+    },
+    "doubleSpaces": {
+      "question": "Zašto u nizu imam prazan string?",
+      "answer": "Dva razmaka jedan za drugim znače da između njih nema baš ničega, pa se ta praznina računa kao reč ako ne kažeš drugačije. Proveri da reč nije prazna pre nego što je dodaš."
+    },
+    "missingLastWord": {
+      "question": "Zašto mi nedostaje poslednja reč?",
+      "answer": "Ako reči gradiš karakter po karakter, poslednja reč je još u izradi kada se petlja završi, jer posle nje nema razmaka koji bi ti rekao da je gotova. Nju treba dodati tek kada se petlja završi."
+    }
+  },
+  "functions": {
+    "split": {
+      "description": "Razbija string na svakom mestu gde naiđe na separator i vraća niz dobijenih delova.",
+      "category": "Stringovi"
+    },
+    "push": {
+      "description": "Dodaje element na kraj niza i pri tom menja niz na mestu.",
+      "category": "Nizovi"
+    }
+  }
+}

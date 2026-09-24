@@ -4,6 +4,10 @@
       "name": "文字列の分類",
       "description": "文字列が英字、数字、または英数字で構成されているかを判定するヘルパー関数を作成し、それらを使って入力文字列を分類します。"
     },
+    "solveTightly": {
+      "name": "42行で解いてみよう",
+      "description": "42行以内のコードで解いてみましょう。この目標が必ずしも実際の開発で理想的なコードとは限りませんし、もっと短い解答も存在します。しかし、自分の力を伸ばすためのよい目標です。"
+    },
     "useContinue": {
       "name": "continueを使う",
       "description": "`isAlphanumeric`のチェックで、文字が英字または数字であれば、それで満足です。`continue`を使ってすぐ次の文字に進み、余計な条件の入れ子を避けましょう。"
@@ -29,6 +33,10 @@
     "notAlphanumeric2": {
       "name": "42 Rubber Duck!",
       "description": "スペースや記号を含む文字列は\"Unknown\"に分類されます。"
+    },
+    "alphanumericBonusLineCount": {
+      "name": "すっきり、きれいに",
+      "description": "42行以内のコードで解いてみましょう。"
     },
     "alphanumericUsesContinue": {
       "name": "continueを使用",
@@ -58,10 +66,20 @@
     }
   },
   "checks": {
-    "mustUseContinue": "おしい！次の文字にスキップするために`continue`を使ってください。",
-    "tooManyLines": "おしい！解答は正しく動作していますが、少し長めです。",
+    "tooManyLines": "おしい！解答は正しく動作していますが、コードが42行を超えています。",
     "useIsAlpha": "この演習では、`isAlpha()`ヘルパーを作って文字列の分類に使ってください。",
     "useIsNumeric": "この演習では、`isNumeric()`ヘルパーを作って文字列の分類に使ってください。",
-    "useIsAlphanumeric": "この演習では、`isAlphanumeric()`ヘルパーを作って文字列の分類に使ってください。"
+    "useIsAlphanumeric": "この演習では、`isAlphanumeric()`ヘルパーを作って文字列の分類に使ってください。",
+    "mustUseContinue": "おしい！次の文字にスキップするために`continue`を使ってください。"
+  },
+  "functions": {
+    "toLowerCase": {
+      "description": "文字列を小文字にしたコピーを返します",
+      "category": "文字列操作"
+    },
+    "includes": {
+      "description": "文字列により短い文字列が含まれているかどうかを判定します",
+      "category": "文字列操作"
+    }
   }
 }

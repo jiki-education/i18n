@@ -119,6 +119,8 @@
       "MethodNotYetImplemented": "`{{method}}` 메서드는 유효한 메서드이지만 아직 사용할 수 없어요.",
       "MethodNotYetAvailable": "`{{method}}` 메서드는 현재 학습 레벨에서 사용할 수 없어요. 계속 진행해서 이 기능을 해제하세요!",
       "PropertyNotYetAvailable": "`{{property}}` 속성은 현재 학습 레벨에서 사용할 수 없어요. 계속 진행해서 이 기능을 해제하세요!",
+      "InfiniteRecursionDetected": "`{{name}}` 함수가 멈추지 않고 계속 자기 자신을 호출했어요. 자기 자신을 사용하는 함수에는 멈출 방법이 필요해요. 그런 방법이 없으면 영원히 계속 실행돼요.",
+      "MaxTotalCallDepthReached": "함수들이 멈추지 않고 서로를 계속 호출했어요. 이 연습 문제에서 동시에 대기할 수 있는 함수 호출의 최대 개수는 {{max}}개예요.",
       "MaxIterationsReached": "코드가 너무 오래 실행되어 무한 루프를 방지하기 위해 중단되었어요. 이 연습 문제에서 루프가 실행될 수 있는 최대 횟수는 {{max}}회예요.",
       "RepeatCountMustBeNumber": "`repeat()`에는 숫자가 필요하지만, {{type}}이(가) 주어졌어요.",
       "RepeatCountMustBeNonNegative": "`repeat()`의 횟수는 0 이상이어야 하지만, {{value}}이(가) 주어졌어요.",
@@ -147,9 +149,9 @@
       "DisabledFeatureIncludeListViolation": "`{{lexeme}}` 기능은 아직 현재 레벨에서 사용할 수 없어요."
     },
     "stdlib": {
-      "StdlibExactArgs": "{{functionName}}()에는 {{expected}}개의 투입구가 있지만, 투입할 것을 {{received}}개만 제공했어요.",
-      "StdlibAtLeastArgs": "{{functionName}}()에는 최소 {{minimum}}개의 투입구가 있지만, 투입할 것을 {{received}}개만 제공했어요.",
-      "StdlibArgRange": "{{functionName}}()에는 {{min}}개에서 {{max}}개 사이의 투입구가 있지만, 투입할 것을 {{received}}개만 제공했어요.",
+      "StdlibExactArgs": "{{functionName}}()에는 $t(phrases.slotCount, {\"count\": {{expected}} })이(가) 있지만, Jiki가 함께 쓰도록 $t(phrases.inputCount, {\"count\": {{received}} })을(를) 제공했어요.",
+      "StdlibAtLeastArgs": "{{functionName}}()에는 최소 $t(phrases.slotCount, {\"count\": {{minimum}} })이(가) 필요하지만, Jiki가 함께 쓰도록 $t(phrases.inputCount, {\"count\": {{received}} })을(를) 제공했어요.",
+      "StdlibArgRange": "{{functionName}}()에는 {{min}}개에서 {{max}}개 사이의 투입구가 있지만, Jiki가 함께 쓰도록 $t(phrases.inputCount, {\"count\": {{received}} })을(를) 제공했어요.",
       "StdlibArgTypeMismatch": "{{functionName}}()은(는) {{argName}}이(가) {{expected}}이어야 하지만, {{received}}을(를) 받았어요.",
       "StdlibArgMustBeInteger": "{{functionName}}()은(는) {{argName}}이(가) 정수여야 하지만, {{value}}을(를) 받았어요.",
       "MethodNotYetImplemented": "`{{method}}` 메서드는 유효한 메서드이지만 아직 사용할 수 없어요.",
@@ -216,6 +218,18 @@
       "step_empty": "Jiki가 객체를 확인하고 비어 있는 것을 보고, 이 줄에서 더 이상 아무것도 하지 않기로 결정했어요.",
       "step_put": "Jiki가 상자에 {{value}}을(를) 넣고, 코드 블록에서 사용할 수 있도록 선반에 올려두었어요."
     },
+    "forStatement": {
+      "result_false": "조건이 <code>false</code>로 평가돼서 루프가 멈췄어요.",
+      "result_no_condition": "이 루프에는 조건이 없어서 루프 본문이 다시 실행됐어요.",
+      "result_true": "조건이 <code>true</code>로 평가돼서 루프 본문이 실행됐어요.",
+      "step_decreased": "Jiki가 {{name}} 값을 {{oldValue}}에서 {{newValue}}로 줄였어요.",
+      "step_decreased_evaluated": "Jiki가 {{name}} 값을 {{oldValue}}에서 {{newValue}}로 줄인 다음, {{expr}} 표현식을 평가해서 {{value}}라는 것을 알아냈어요.",
+      "step_false": "결과가 <code>false</code>여서 Jiki가 루프를 멈추기로 했어요.",
+      "step_increased": "Jiki가 {{name}} 값을 {{oldValue}}에서 {{newValue}}로 늘렸어요.",
+      "step_increased_evaluated": "Jiki가 {{name}} 값을 {{oldValue}}에서 {{newValue}}로 늘린 다음, {{expr}} 표현식을 평가해서 {{value}}라는 것을 알아냈어요.",
+      "step_no_condition": "확인할 조건이 없어서 Jiki가 루프 본문을 실행하기로 했어요.",
+      "step_true": "결과가 <code>true</code>여서 Jiki가 루프 본문을 실행하기로 했어요."
+    },
     "forOfStatement": {
       "result_empty": "{{type}}이(가) 비어 있어서 이 줄은 아무것도 하지 않았어요.",
       "result_iteration_ordinal_one": "∅",
@@ -244,6 +258,9 @@
     },
     "memberExpression": {
       "array": "Jiki가 배열에서 인덱스 {{index}}의 항목을 가져와서 {{value}}인 것으로 확인했어요.",
+      "property": "Jiki가 {{name}} 속성을 가져와서 {{value}}라는 것을 알아냈어요.",
+      "property_array": "Jiki가 배열의 {{name}} 속성을 가져와서 {{value}}라는 것을 알아냈어요.",
+      "property_string": "Jiki가 문자열의 {{name}} 속성을 가져와서 {{value}}라는 것을 알아냈어요.",
       "string": "Jiki가 문자열에서 인덱스 {{index}}의 문자를 가져와서 {{value}}인 것으로 확인했어요."
     },
     "repeatStatement": {

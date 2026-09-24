@@ -1,0 +1,50 @@
+{
+  "tasks": {
+    "createShoppingList": {
+      "name": "장바구니 목록 만들기",
+      "description": "냉장고에 있는 것들과 레시피의 재료를 입력으로 받아, 레시피에는 있지만 냉장고에는 없는, 사야 할 것들을 반환하는 함수를 만들어요."
+    }
+  },
+  "scenarios": {
+    "emptyFridge": {
+      "name": "빈 냉장고",
+      "description": "냉장고가 비어 있으면 모든 재료를 사야 해요."
+    },
+    "youHaveEverything": {
+      "name": "모든 재료가 있을 때",
+      "description": "재료가 모두 있으면 장바구니 목록은 비어 있어요."
+    },
+    "oneThing": {
+      "name": "한 가지 재료",
+      "description": "재료가 딱 하나 부족한 상황이에요."
+    },
+    "fewThings": {
+      "name": "몇 가지 재료",
+      "description": "재료가 몇 개 부족한 상황이에요."
+    }
+  },
+  "hints": {
+    "realLifeApproach": {
+      "question": "실제 생활에서는 어떻게 할까요?",
+      "answer": "레시피의 재료를 하나씩 보면서 냉장고에 있는지 확인하게 될 거예요. 없는 재료는 장바구니 목록에 적어 두고요. 코드도 똑같은 일을 해요."
+    },
+    "checkFridgeItem": {
+      "question": "냉장고에 그 재료가 있는지 어떻게 확인해요?",
+      "answer": "`includes` 메서드가 이걸 대신 확인해 줘요. 냉장고 배열에 재료를 넣어 호출하면 `true`나 `false`를 반환해요."
+    },
+    "buildShoppingList": {
+      "question": "장바구니 목록은 어떻게 채워 나가요?",
+      "answer": "빈 배열에서 시작해요. 레시피의 재료 중 냉장고에 없는 것마다 장바구니 목록에 `push()`로 넣어요."
+    }
+  },
+  "functions": {
+    "includes": {
+      "description": "배열에 특정 원소가 들어 있는지 확인하고 true 또는 false를 반환해요.",
+      "category": "배열"
+    },
+    "push": {
+      "description": "배열 끝에 원소를 추가하고, 배열 자체를 바꿔 놓아요.",
+      "category": "배열"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "notShotAlien": "Vanzemaljac nije oboren.",
+    "notShotAllAliens": "Nisu svi vanzemaljci oboreni."
+  },
+  "tasks": {
+    "shootTheAliens": {
+      "name": "Prati i obori sve vanzemaljce",
+      "description": "Iskoristi getStartingAliensInRow() da dobiješ pozicije vanzemaljaca, a zatim se kreći po ekranu i obaraj ih. Vodi evidenciju o tome koji su vanzemaljci već oboreni tako što ažuriraš nizove."
+    }
+  },
+  "scenarios": {
+    "oneAlien": {
+      "name": "Obori vanzemaljca",
+      "description": "Jedan vanzemaljac u donjem redu"
+    },
+    "oneRow": {
+      "name": "Jedan retko popunjen red",
+      "description": "Retki vanzemaljci u donjem redu"
+    },
+    "twoRows": {
+      "name": "Dva dobro popunjena reda",
+      "description": "Vanzemaljci u dva reda"
+    },
+    "threeRows": {
+      "name": "Tri reda",
+      "description": "Vanzemaljci raspoređeni po sva tri reda"
+    },
+    "fullRows": {
+      "name": "Tri puna reda",
+      "description": "Tri puna reda vanzemaljaca"
+    }
+  },
+  "hints": {
+    "knowWhereAliens": {
+      "question": "Kako da znam gde su vanzemaljci ako nema `isAlienAbove()`?",
+      "answer": "Pozovi `getStartingAliensInRow(0)`, `getStartingAliensInRow(1)` i `getStartingAliensInRow(2)` jednom na početku. Svaki vraća niz od 11 Boolean vrednosti koje možeš da sačuvaš u promenljivama i čitaš kasnije."
+    },
+    "whichAlienAbove": {
+      "question": "Kako da otkrijem koji je vanzemaljac trenutno iznad mene?",
+      "answer": "Prati svoju horizontalnu poziciju u promenljivoj i ažuriraj je pri svakom pomeranju. Ta pozicija je indeks u nizovima redova, pa ti `row1[position]` govori da li je iznad tebe vanzemaljac u redu 1."
+    },
+    "stopDoubleShoot": {
+      "question": "Kako da prestanem da obaram istog vanzemaljca dvaput?",
+      "answer": "Nakon što pozoveš `shoot()`, postavi taj indeks u redu na `false`. Sledeći put kroz petlju ta pozicija će prijaviti da tu nema vanzemaljca."
+    },
+    "whichRowToShoot": {
+      "question": "Iz kog reda treba da obaram kada su vanzemaljci naslagani iznad mene?",
+      "answer": "Proveravaj redove od dna ka vrhu. Obori najnižeg preostalog vanzemaljca u svojoj koloni i u toj iteraciji prekini sa proveravanjem daljih redova."
+    }
+  },
+  "functions": {
+    "moveLeft": {
+      "description": "Pomera laserski top **za jednu poziciju ulevo**. Ako pokušaš da se pomeriš van leve ivice ekrana, izgubićeš igru!",
+      "category": "Kretanje"
+    },
+    "moveRight": {
+      "description": "Pomera laserski top **za jednu poziciju udesno**. Ako pokušaš da se pomeriš van desne ivice ekrana, izgubićeš igru!",
+      "category": "Kretanje"
+    },
+    "shoot": {
+      "description": "Puca laserski uvis. **Pucaj samo kada je vanzemaljac iznad tebe**, inače ćeš izgubiti igru! Laserski top se lako pregreva, pa moraš da se pomeriš pre nego što ponovo pucaš.",
+      "category": "Akcija"
+    },
+    "getStartingAliensInRow": {
+      "description": "Vraća niz od 11 Boolean vrednosti koje predstavljaju pozicije vanzemaljaca u datom redu na **početku** vežbe. Red `0` je donji red, `1` je srednji, a `2` je gornji.",
+      "category": "Detekcija"
+    }
+  }
+}

@@ -4,6 +4,10 @@
       "name": "Klasifikuj string",
       "description": "Napiši pomoćne funkcije koje proveravaju da li je string slovni, numerički ili alfanumerički, a zatim ih upotrebi da klasifikuješ ulazni string."
     },
+    "solveTightly": {
+      "name": "Reši u 42 reda",
+      "description": "Probaj da ovo rešiš u 42 reda koda ili manje. Taj cilj nije najkvalitetnije produkciono rešenje, a postoje i kraća rešenja, ali to je dobar cilj kome da težiš."
+    },
     "useContinue": {
       "name": "Koristi continue",
       "description": "U tvojoj isAlphanumeric proveri, kada je karakter slovo ili cifra, zadovoljan si njime. Koristi continue da odmah pređeš na sledeći karakter umesto da ugnježđuješ još uslova."
@@ -29,6 +33,10 @@
     "notAlphanumeric2": {
       "name": "42 Rubber Duck!",
       "description": "String sa razmacima i specijalnim karakterima treba da se klasifikuje kao \"Unknown\"."
+    },
+    "alphanumericBonusLineCount": {
+      "name": "Lepo i uredno",
+      "description": "Probaj da ovo rešiš u 42 reda koda ili manje."
     },
     "alphanumericUsesContinue": {
       "name": "Korišćen continue",
@@ -58,10 +66,20 @@
     }
   },
   "checks": {
-    "mustUseContinue": "Tako blizu! Koristi `continue` da preskočiš na sledeći karakter.",
-    "tooManyLines": "Tako blizu! Tvoje rešenje radi, ali je malo predugačko.",
+    "tooManyLines": "Tako blizu! Tvoje rešenje radi, ali ima više od 42 reda koda.",
     "useIsAlpha": "Ova vežba želi da napišeš pomoćnu funkciju `isAlpha()` i iskoristiš je za klasifikaciju stringa.",
     "useIsNumeric": "Ova vežba želi da napišeš pomoćnu funkciju `isNumeric()` i iskoristiš je za klasifikaciju stringa.",
-    "useIsAlphanumeric": "Ova vežba želi da napišeš pomoćnu funkciju `isAlphanumeric()` i iskoristiš je za klasifikaciju stringa."
+    "useIsAlphanumeric": "Ova vežba želi da napišeš pomoćnu funkciju `isAlphanumeric()` i iskoristiš je za klasifikaciju stringa.",
+    "mustUseContinue": "Tako blizu! Koristi `continue` da preskočiš na sledeći karakter."
+  },
+  "functions": {
+    "toLowerCase": {
+      "description": "Vraća kopiju stringa napisanu malim slovima",
+      "category": "Operacije nad stringovima"
+    },
+    "includes": {
+      "description": "Proverava da li string sadrži drugi, manji string",
+      "category": "Operacije nad stringovima"
+    }
   }
 }

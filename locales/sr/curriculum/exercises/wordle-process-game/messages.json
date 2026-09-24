@@ -1,0 +1,74 @@
+{
+  "checks": {
+    "rowMismatchWithRow": "Slovo „{{letter}}“ u redu {{row}} na polju {{square}} treba da bude „{{expected}}“, a ne „{{actual}}“.",
+    "rowNotColoredWithRow": "Red {{row}} nije obojen.",
+    "rowWrongLengthWithRow": "Red {{row}} je dobio {{actual}} stanja, ali je redu potrebno {{expected}}."
+  },
+  "tasks": {
+    "processGame": {
+      "name": "Obrada cele igre",
+      "description": "Napravi funkciju koja se zove processGame i koja prima ciljnu reč i niz pokušaja, a zatim za svaki pokušaj pozove colorRow sa ispravnim stanjima."
+    },
+    "duplicateLetters": {
+      "name": "Bonus: Obradi slova koja se ponavljaju",
+      "description": "Postoji jedno Wordle pravilo koje smo do sada preskočili. Ako se neko slovo pojavi dva puta u tvom pokušaju, a samo jednom u ciljnoj reči, onda ako je jedno od njih na pravom mestu, ono dobija zelenu boju, a drugo sivu. U suprotnom, prvo dobija žutu boju, a drugo sivu. Isti princip važi i za veće brojeve: tri puta u pokušaju, a dva puta u ciljnoj reči znači da se dva oboje, a treće postaje sivo. Počni od prvog bonus scenarija, a zatim ga u potpunosti reši i za drugi. Ovo je bonus, tako da ne moraš da ga završiš!"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "Iz prvog pokušaja!",
+      "description": "Obradi prvi tačan pokušaj."
+    },
+    "twoGuesses": {
+      "name": "Rešeno u dva pokušaja!",
+      "description": "Obradi dva pokušaja."
+    },
+    "threeGuesses": {
+      "name": "Rešeno u tri pokušaja!",
+      "description": "Obradi tri pokušaja."
+    },
+    "phew": {
+      "name": "Uf!",
+      "description": "Uf! Bilo je blizu!"
+    },
+    "bonus1": {
+      "name": "Samo jedno žuto",
+      "description": "Ako se isto slovo pojavi više puta u pokušaju, a u ciljnoj reči postoji samo jednom, samo jedno od njih treba da bude žuto."
+    },
+    "bonus2": {
+      "name": "Švajcarski sir",
+      "description": "Reč swiss u ovom scenariju pokazuje zašto je to važno!"
+    }
+  },
+  "hints": {
+    "reuseWork": {
+      "question": "Kako da iskoristim svoj kod iz `processGuess`?",
+      "answer": "Za glavne scenarije to je upravo ona logika koju već imaš. Izdvoji je u pomoćnu funkciju (ili je kopiraj) i pozovi je za svaki pokušaj u nizu. Bonus zadatak menja tu logiku, pa ćeš se vratiti i izmeniti pomoćnu funkciju ako ga prihvatiš."
+    },
+    "trackRow": {
+      "question": "Kako da pratim kom redu pripada koji pokušaj?",
+      "answer": "Prođi kroz pokušaje pomoću indeksa. Broj reda je indeks plus `1` (jer `colorRow` očekuje da redovi budu numerisani `1-6`)."
+    },
+    "colorRow": {
+      "question": "Kako zapravo da obojim svaki red?",
+      "answer": "Kada dobiješ niz `states` za neki pokušaj, pozovi `colorRow(rowNumber, states)`."
+    },
+    "fewerGuesses": {
+      "question": "Šta ako je igrač napravio manje od 6 pokušaja?",
+      "answer": "Oboji samo redove za pokušaje koji postoje. Dužina niza ti govori koliko ih treba obraditi, pa ćeš se prirodno zaustaviti na pravom mestu."
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "Boji red na Wordle tabli zadatim stanjima.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "Dodaje element na kraj niza i pritom menja sam niz.",
+      "category": "Nizovi"
+    }
+  },
+  "describers": {
+    "colorRow": "boji red na Wordle tabli"
+  }
+}

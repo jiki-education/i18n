@@ -1,7 +1,7 @@
 ---
 title: "Oblak, kiša i sunce"
 description: "Napravi celu vremensku scenu sa oblacima, kišom i suncem."
-en_md5: a06cdbeb8b648c6ced759401f0133e81
+en_md5: b801e5359eb26ba78216ce4f96adec15
 ---
 
 U ovoj vežbi tvoj zadatak je da nacrtaš vremensku ikonu za kišni dan sa suncem koje viri iza oblaka. Kada završiš, trebalo bi da izgleda ovako:
@@ -10,8 +10,10 @@ U ovoj vežbi tvoj zadatak je da nacrtaš vremensku ikonu za kišni dan sa sunce
 
 Nacrtali smo ti šablon. Tvoje figure treba da budu tačno unutar linija. Dodali smo i osnovu oblaka u kod kako bi ti bilo malo lakše. **Ne možeš da menjaš ovu liniju koda** (videćeš da je zasivljena i da pored nje stoji simbol katanca).
 
-Biće ti potrebne funkcije `circle` (krug) i `ellipse` (elipsa). Koristi elipse samo za kišne kapi. Ako ih koristiš za sunce ili oblake, neće funkcionisati.
+Biće ti potrebne funkcije `circle` i `ellipse`. Koristi elipse samo za kišne kapi. Ako ih koristiš za sunce ili oblake, neće funkcionisati.
 
-Skoro svi brojevi koji su ti potrebni su deljivi sa 5 (npr. 5, 10, 15 itd.). Jedini izuzetak je horizontalni poluprečnik kišnih kapi, koji je `3`.
+### Određivanje tačnih koordinata
+
+U ovoj vežbi **možeš** da pređeš mišem preko prostora za crtanje da nađeš koordinate. I još jednom, svi brojevi koji se koriste su **deljivi sa 5, sa jednim izuzetkom**. Horizontalni poluprečnik kišnih kapi je `3`. Svi ostali brojevi, uključujući i vertikalni poluprečnik kišnih kapi, deljivi su sa 5.
 
 Zabavi se!

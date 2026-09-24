@@ -7,10 +7,10 @@
   },
   "checks": {
     "saladNotMade": "샐러드를 만들지 않았어요. 네 가지 재료를 모두 사용해 <code>makeSalad()</code>를 호출했는지 확인해 주세요.",
-    "needLeavesRandomInt": "잎의 개수를 생성하려면 <code>Math.randomInt(40, 100)</code>을 호출해야 해요.",
-    "needTomatoesRandomInt": "토마토의 개수를 생성하려면 <code>Math.randomInt(5, leaves / 5)</code>을 호출해야 해요.",
-    "needCroutonsRandomInt": "크루통의 개수를 생성하려면 <code>Math.randomInt(tomatoes, tomatoes * 2)</code>을 호출해야 해요.",
-    "needOlivesRandomInt": "올리브의 개수를 생성하려면 <code>Math.randomInt(1, tomatoes / 2)</code>을 호출해야 해요."
+    "needLeavesRandomInt": "잎 개수를 정하는 로직이 파트너와 합의한 규칙을 따르지 않아요.",
+    "needTomatoesRandomInt": "토마토 개수를 정하는 로직이 파트너와 합의한 규칙을 따르지 않아요.",
+    "needCroutonsRandomInt": "크루통 개수를 정하는 로직이 파트너와 합의한 규칙을 따르지 않아요.",
+    "needOlivesRandomInt": "올리브 개수를 정하는 로직이 파트너와 합의한 규칙을 따르지 않아요."
   },
   "tasks": {
     "makeRandomSalad": {
@@ -26,8 +26,8 @@
   },
   "hints": {
     "leavesExample": {
-      "question": "잎의 개수를 계산하는 예시를 보여주세요.",
-      "answer": "`let leaves = Math.randomInt(40, 100)`을 사용하여 무작위로 잎의 양을 생성할 수 있어요."
+      "question": "무작위 숫자는 어떻게 만드나요?",
+      "answer": "`Math.randomInt(min, max)`는 넘겨준 두 값 사이의 무작위 정수를 돌려줘요. 예를 들어 `let score = Math.randomInt(1, 6)`은 1부터 6까지의 숫자 하나를 골라요. 결과를 변수에 저장해 두면 나중에 쓸 수 있어요."
     },
     "leavesCount": {
       "question": "잎이 몇 개 필요한가요?",
@@ -47,7 +47,7 @@
     },
     "makeSalad": {
       "question": "샐러드를 어떻게 만드나요?",
-      "answer": "각 재료의 필요한 개수를 계산한 후, leaves, tomatoes, croutons, olives를 makeSalad()에 넣어요."
+      "answer": "각 재료가 몇 개씩 필요한지 계산했다면, 변수 네 개를 `makeSalad()`의 시그니처에 나온 순서대로 넘겨요."
     }
   },
   "describers": {
@@ -57,6 +57,10 @@
     "makeSalad": {
       "description": "주어진 양의 각 재료로 샐러드를 만들어요.",
       "category": "동작"
+    },
+    "randomInt": {
+      "description": "min과 max 사이의 임의의 정수를 반환해요(min과 max 포함).",
+      "category": "숫자"
     }
   }
 }

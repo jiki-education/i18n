@@ -1,0 +1,48 @@
+{
+  "tasks": {
+    "canFitIn": {
+      "name": "Možeš li da ih uklopiš?",
+      "description": "Napiši funkciju koja određuje da li novi klijent može da se uklopi pre zatvaranja, s obzirom na trenutni red i preostalo vreme."
+    }
+  },
+  "scenarios": {
+    "emptyQueue": {
+      "name": "Nema nikoga u redu",
+      "description": "Nema nikoga u redu, ima dovoljno vremena."
+    },
+    "emptyQueueButNoTime": {
+      "name": "Pri kraju dana",
+      "description": "Nema nikoga u redu, ali nema dovoljno vremena."
+    },
+    "busyDayNoTime": {
+      "name": "Pun dan",
+      "description": "Pun red i premalo vremena."
+    },
+    "busyDayButTime": {
+      "name": "Jedva se uklapa",
+      "description": "Pun dan, ali vremena je taman dovoljno."
+    },
+    "stillEarly": {
+      "name": "Još je rano",
+      "description": "Dan je tek počeo."
+    },
+    "cuttingItFine": {
+      "name": "Taman na vreme",
+      "description": "Uklapa se taman na vreme!"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Odakle da počnem? Od reda ili od novog klijenta?",
+      "answer": "Prvo izračunaj koliko će vremena red da pojede, a onda pogledaj šta ostaje za novog klijenta. Pomoćna funkcija koja ime frizure pretvara u njeno trajanje (u minutima) će ti znatno olakšati posao."
+    },
+    "subtractQueueTime": {
+      "question": "Kako da oduzmem vreme svake frizure od preostalog vremena?",
+      "answer": "Prođi kroz red u petlji. Za svaku frizuru pronađi njeno trajanje pomoću pomoćne funkcije i oduzmi ga od vremena koje ti je ostalo u danu."
+    },
+    "decideIfFits": {
+      "question": "Kako da odlučim da li nova frizura može da se uklopi?",
+      "answer": "Kada obradiš ceo red, uporedi preostalo vreme sa trajanjem nove frizure. Ako je trajanje nove frizure manje ili jednako preostalom vremenu, ona se uklapa."
+    }
+  }
+}

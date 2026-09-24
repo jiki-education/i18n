@@ -5,8 +5,8 @@
       "description": "Napiši funkciju koja prima red i listu gostiju, i vraća koliko ljudi u redu nije na listi gostiju."
     },
     "solveTightly": {
-      "name": "Reši to kompaktno",
-      "description": "Bonus: ovo se može napisati mnogo kraće nego što misliš. Možeš li sažeti celo rešenje na samo nekoliko linija?"
+      "name": "Reši u 9 linija",
+      "description": "Bonus: ovo se može napisati mnogo kraće nego što misliš. Probaj da ovo rešiš u 9 linija koda ili manje."
     }
   },
   "scenarios": {
@@ -36,11 +36,11 @@
     },
     "guestListBonusLineCount": {
       "name": "Uredno i čisto: mešovit red",
-      "description": "Isti mešovit red kao ranije, ali sada tvoje rešenje mora da stane u znatno manji broj linija."
+      "description": "Isti mešovit red kao ranije, ali ovog puta probaj da ovo rešiš u 9 linija koda ili manje."
     }
   },
   "checks": {
-    "tooManyLines": "Nastavi! Probaj da ga rešiš sa manje linija."
+    "tooManyLines": "Samo napred! Vidi da li možeš da ga svedeš na 9 linija koda."
   },
   "hints": {
     "keepingTrack": {
@@ -48,7 +48,7 @@
       "answer": "Odgovor je jedan broj, i ne znaš ga dok ne pregledaš sve. Zapitaj se dve stvari: koji taj broj treba da bude pre nego što si uopšte pogledao bilo koga, i šta treba da se desi s njim kada se ispostavi da neko **nije** pozvan?"
     },
     "whichList": {
-      "question": "Ovde imaš dve liste: red i listu gostiju. Kroz koju od njih treba da prolazim?",
+      "question": "Ovde imaš dva niza. Kroz koji od njih treba da prolazim?",
       "answer": "Razmisli o tome šta odgovor broji. To je broj ljudi **u redu**, tako da je red ono kroz šta treba da prođeš jednu po jednu osobu. Lista gostiju nije nešto kroz šta prolaziš, to je ono sa čime proveravaš svaku osobu."
     },
     "realLifeBouncer": {
@@ -58,7 +58,7 @@
   },
   "functions": {
     "includes": {
-      "description": "Proverava da li niz sadrži zadati element (obezbeđeno od strane stdlib-a za nivo).",
+      "description": "Proverava da li niz sadrži zadati element",
       "category": "Operacije nad nizovima"
     }
   }

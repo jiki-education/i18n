@@ -1,0 +1,112 @@
+{
+  "errors": {
+    "endOfPath": "詩人が道の終わりを越えて歩いてしまいました。もっと早い段階で歩みを止める必要がありました。",
+    "isEmojiString": "絵文字かどうかを調べられるのは、文字列だけです。",
+    "reciteString": "朗読できるのは、文字列だけです。"
+  },
+  "checks": {
+    "notRecited": "詩人は何も朗読しませんでした。歩き終わったら<code>recite()</code>を呼び出すようにしましょう。",
+    "wrongPoem": "詩人が朗読したのは次のとおりです：<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>しかし、詩は次のようになるはずです：<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "wrongSpacing": "詩人は正しい言葉を正しい順番で集めましたが、スペースの入れ方が違います。朗読したのは次のとおりです：<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>しかし、詩は次のようになるはずです：<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "noFunctions": "解答は1つの歩みとして書き、自分で関数を定義しないでください。",
+    "reciteOnce": "詩人は、歩き終えたあとに1回だけ詩を朗読する必要があります。",
+    "tooDeeplyNested": "コードの入れ子が深すぎます。入れ子は2段階までなので、ループの中に<code>if</code>を置くことはできますが、その<code>if</code>の中には何も置けません。",
+    "noAndOrNot": "この演習では、別の方法で条件を判断します。そのため、ここでは<code>&&</code>と<code>!</code>は使えません。<code>||</code>は使えます。",
+    "needsContinue": "解答では<code>continue</code>を使う必要があります。",
+    "needsBreak": "解答では<code>break</code>を使う必要があります。",
+    "tooManyLines": "解答が必要以上に長くなっています。それぞれの種類のマスを1か所で処理して、短くできないか試してみましょう。"
+  },
+  "tasks": {
+    "collectThePoem": {
+      "name": "詩を集めて朗読する",
+      "description": "道を進みながら詩の言葉を集め、正しい場所で止まり、集めたものを朗読します。"
+    },
+    "solveTightly": {
+      "name": "コードを短くまとめる",
+      "description": "同じ道のりを、行数の制限に収まるように解きます。"
+    }
+  },
+  "scenarios": {
+    "hope": {
+      "name": "すき間のある道",
+      "description": "6つの言葉のあいだに草だけが並び、最後にチェッカーフラッグがあります。"
+    },
+    "wandered": {
+      "name": "道の途中の風景",
+      "description": "同じ道ですが、今度は言葉と言葉のあいだに植物や生き物が生えています。"
+    },
+    "mists": {
+      "name": "フラッグの隣の風景",
+      "description": "チェッカーフラッグのちょうど手前のマスに、葉っぱが1つあります。"
+    },
+    "notLost": {
+      "name": "ちょうど7つの言葉",
+      "description": "7つの言葉が並ぶ道なので、詩人はフラッグにたどり着く前に止まります。"
+    },
+    "hopeContinued": {
+      "name": "長すぎる詩",
+      "description": "この道には7つより多くの言葉があるので、詩人は道の途中で止まります。"
+    },
+    "highlands": {
+      "name": "アポストロフィ",
+      "description": "バーンズの一節で、アポストロフィが1つのマスに単独で入っています。"
+    },
+    "heartScenery": {
+      "name": "アポストロフィのあとの風景",
+      "description": "アポストロフィと、それがつなぐ言葉のあいだにキノコが生えています。スペースの入れ方を覚えている仕組みは、飛ばしたマスをはさんでも正しく働く必要があります。"
+    },
+    "tyger": {
+      "name": "カンマ",
+      "description": "ブレイクの一節で、カンマが1つのマスに単独で入っています。"
+    },
+    "pleure": {
+      "name": "最初は草だけの道",
+      "description": "ヴェルレーヌの一節で、詩が始まる前にいくつか空のマスがあります。"
+    },
+    "yasegaeru": {
+      "name": "一茶の一節",
+      "description": "7つの言葉からなる俳句で、行数の制限があるため、むだのない書き方が求められます。32行以内（それ以下でもかまいません）に収まる、すっきりした解答は見つかるでしょうか？"
+    }
+  },
+  "hints": {
+    "scenery": {
+      "question": "植物や生き物が詩に入ってしまいます。",
+      "answer": "詩に入るのは言葉だけです。道にあるそれ以外のものは、すべて置き去りにします。つまり、ループは何も加えずに次のマスへ進む必要があります。"
+    },
+    "flagSkipped": {
+      "question": "詩人がいつまでも歩き続けてしまいます。",
+      "answer": "チェッカーフラッグも絵文字です。フラッグより先に風景の処理をすると、フラッグが風景として扱われてしまい、歩みが終わりません。処理の順番が大切です。"
+    },
+    "spacing": {
+      "question": "言葉が全部くっついてしまったり、先頭にスペースが入ったりします。",
+      "answer": "スペースがどこで必要になるかを考えてみましょう。スペースは2つの言葉の**あいだ**に必要で、最初の言葉の前にはいりません。そのため、まだ何か書いたかどうかを覚えておく必要があります。"
+    },
+    "apostrophe": {
+      "question": "`heart's`ではなく`heart ' s`になってしまいます。",
+      "answer": "アポストロフィは、その両側の言葉をつなぎます。そのため、前にも後ろにもスペースは入りません。カンマは逆で、前にはスペースを入れず、後ろには入れます。"
+    },
+    "reciteOnce": {
+      "question": "なぜ`recite()`は1回しか呼べないのですか？",
+      "answer": "詩人は、できあがった詩を朗読します。その瞬間は1回しかありません。歩みが終わるきっかけはいくつかあり、そのどれもが同じ瞬間にたどり着く必要があります。"
+    }
+  },
+  "describers": {
+    "move": "次のマスへ進み、${return}を見つけました",
+    "isEmoji": "${arg1}が絵文字かどうかを調べました",
+    "recite": "\"${arg1}\"を朗読しました"
+  },
+  "functions": {
+    "move": {
+      "description": "詩人を次のマスへ進め、そこにあったものを**返します**。",
+      "category": "移動"
+    },
+    "isEmoji": {
+      "description": "渡したものが絵文字なら`true`を返します。",
+      "category": "確認"
+    },
+    "recite": {
+      "description": "詩人に詩を声に出して朗読させます。",
+      "category": "アクション"
+    }
+  }
+}

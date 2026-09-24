@@ -1,10 +1,10 @@
 ---
 title: "Operator `!` (logičko NE)"
 description: "Korišćenje `!` za okretanje boolean vrednosti: tačno postaje netačno, a netačno postaje tačno, korisno za prebacivanje ili invertovanje provera."
-en_md5: 7cffbd1fa13317b3d6e6a71415413041
+en_md5: 5d752c7a85e6e17d914c73c83429de80
 ---
 
-Do sada, kada smo upoređivali stvari da vidimo da li su jednake, koristili smo tri znaka jednakosti. Međutim, ponekad želimo da proverimo da li stvari nisu jednake, i za to koristimo uzvičnik praćen sa dva znaka jednakosti. I generalno, u programiranju, uzvičnik ili bang, kako to zovu naši američki prijatelji, znači ne. Zamisli da radiš u prodavnici, i uprava je donela odluku da niko ne može ući u disko odeći.
+Do sada, kada upoređujemo stvari da vidimo da li su jednake, koristimo tri znaka jednakosti. Međutim, ponekad želimo da proverimo da li stvari nisu jednake, i za to koristimo uzvičnik praćen sa dva znaka jednakosti. I generalno, u programiranju, uzvičnik ili bang, kako to zovu naši američki prijatelji, znači ne. Zamisli da radiš u prodavnici, i uprava je donela odluku da niko ne može ući u disko odeći.
 
 <img
   class="concept-image"
@@ -14,7 +14,7 @@ Do sada, kada smo upoređivali stvari da vidimo da li su jednake, koristili smo 
   height="400"
 />
 
-Možemo reći: „Ako odeća nije disko, otvori vrata.“ If naredba radi potpuno isto.
+Možemo reći: „Ako odeća nije disko, otvori vrata.“ `if` naredba radi potpuno isto.
 
 ```javascript
 if (outfit !== "disco") {
@@ -52,4 +52,4 @@ movingRight = !movingRight
 
 I to ga okrene. `!movingRight` znači suprotno od onoga što je bilo prethodno.
 
-Dakle, ako je `movingRight` bilo tačno, sada je netačno. Ako je bilo netačno, sada je tačno. Džiki uzima ono što je trenutno u kutiji, i taj bang mu govori da nađe suprotno. Dakle, suprotno od tačno je netačno. Suprotno od netačno je tačno, a zatim on to vraća natrag u kutiju. Ovo je potpuno isto kao i ona duža if/else naredba, samo je mnogo urednije i sažetije napisati.
+Dakle, ako je `movingRight` bilo tačno, sada je netačno. Ako je bilo netačno, sada je tačno. Džiki uzima ono što je trenutno u kutiji, i taj bang mu govori da nađe suprotno. Dakle, suprotno od tačno je netačno. Suprotno od netačno je tačno, a zatim on to vraća natrag u kutiju. Ovo je potpuno isto kao i ona duža `if`/`else` naredba, samo je mnogo urednije i sažetije napisati.

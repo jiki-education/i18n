@@ -1,7 +1,7 @@
 ---
-title: "Penguin"
+title: "Pingvin"
 description: "Završi simetričan crtež pingvina."
-en_md5: bff370c28fd178d8c0ac9f65e3384e81
+en_md5: 5a0659ec6a7911fcebe11756dae664f7
 ---
 
 U ovoj vežbi prvi put crtamo elipse, a takođe malo više razmišljamo o simetriji koju smo pomenuli u vežbi Foxy Face.
@@ -14,10 +14,16 @@ Funkcija `ellipse` (elipsa) prima 5 ulaza: poziciju centra (`centerX` (X koordin
 
 ### Pingvin
 
-Tvoj zadatak je da nacrtaš desnu stranu pingvina, i da to pokušaš da uradiš **BEZ** pomeranja miša preko koordinata ili pogađanja. Gotov crtež bi trebalo da izgleda ovako:
+Polovinu slike smo nacrtali za tebe. Tvoj zadatak je da nacrtaš desnu stranu pingvina. Gotov crtež bi trebalo da izgleda ovako:
 
 <img src="/static/images/exercise-assets/penguin/penguin-finished.webp" alt="Pingvin" style="width: 100%; max-width: 300px; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 5px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); margin-bottom: 8px;" />
 
-Polovinu slike smo nacrtali za tebe. Čitajući postojeći kod, trebalo bi da možeš da odrediš ostale detalje kako bi crtež bio simetričan. Zapamti, gornji levi ugao platna za crtanje je `0,0`. Donji desni ugao je `100,100`. Pingvin se nalazi u sredini. Za nos, treba da **promeniš** koordinate centra trougla. Ne dodaj novi trougao.
+### Kako odrediti tačne koordinate
+
+Za razliku od prethodnih vežbi, cilj je da ovo rešiš **BEZ** prelaženja mišem preko koordinata ili pogađanja.
+
+Čitajući postojeći kod, trebalo bi da možeš da odrediš ostale detalje kako bi crtež bio simetričan. Zapamti, gornji levi ugao platna za crtanje je `0,0`. Donji desni ugao je `100,100`. Pingvin se nalazi u sredini.
+
+Za nos, treba da **promeniš** koordinate centra trougla. Ne dodaj novi trougao.
 
 **Počni tako što ćeš pritisnuti _„Pokreni kod”_** da vidiš kako početna slika izgleda. Zabavi se!

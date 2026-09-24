@@ -7,10 +7,10 @@
   },
   "checks": {
     "saladNotMade": "Salata nije napravljena. Obavezno pozovi <code>makeSalad()</code> sa sva četiri sastojka.",
-    "needLeavesRandomInt": "Potrebno je pozvati <code>Math.randomInt(40, 100)</code> da bi se generisao broj listova.",
-    "needTomatoesRandomInt": "Potrebno je pozvati <code>Math.randomInt(5, leaves / 5)</code> da bi se generisao broj paradajza.",
-    "needCroutonsRandomInt": "Potrebno je pozvati <code>Math.randomInt(tomatoes, tomatoes * 2)</code> da bi se generisao broj krutona.",
-    "needOlivesRandomInt": "Potrebno je pozvati <code>Math.randomInt(1, tomatoes / 2)</code> da bi se generisao broj maslina."
+    "needLeavesRandomInt": "Logika za broj listova ne prati dogovor između tebe i tvog partnera.",
+    "needTomatoesRandomInt": "Logika za broj paradajza ne prati dogovor između tebe i tvog partnera.",
+    "needCroutonsRandomInt": "Logika za broj krutona ne prati dogovor između tebe i tvog partnera.",
+    "needOlivesRandomInt": "Logika za broj maslina ne prati dogovor između tebe i tvog partnera."
   },
   "tasks": {
     "makeRandomSalad": {
@@ -26,8 +26,8 @@
   },
   "hints": {
     "leavesExample": {
-      "question": "Pokaži mi primer kako da izračunaš broj listova",
-      "answer": "Koristi `let leaves = Math.randomInt(40, 100)` da generišeš nasumičan broj listova salate koji zatim možeš da koristiš u ostalim funkcijama."
+      "question": "Kako da generišem nasumičan broj?",
+      "answer": "`Math.randomInt(min, max)` ti daje nasumičan ceo broj između dve vrednosti koje mu proslediš. Na primer, `let score = Math.randomInt(1, 6)` bira broj od 1 do 6. Sačuvaj rezultat u promenljivoj, pa ga kasnije možeš koristiti."
     },
     "leavesCount": {
       "question": "Koliko mi listova treba?",
@@ -47,7 +47,7 @@
     },
     "makeSalad": {
       "question": "Kako da napravim salatu?",
-      "answer": "Kada izračunaš koliko ti je svakog sastojka potrebno, pozovi makeSalad() sa listovima, paradajzom, krutonima i maslinama."
+      "answer": "Kada izračunaš koliko ti je svakog sastojka potrebno, prosledi svoje četiri promenljive funkciji `makeSalad()` redosledom koji je prikazan u njenom potpisu."
     }
   },
   "describers": {
@@ -57,6 +57,10 @@
     "makeSalad": {
       "description": "Pravi salatu sa datim količinama svakog sastojka.",
       "category": "Akcija"
+    },
+    "randomInt": {
+      "description": "Vraća slučajan ceo broj između min i max (uključujući i granice).",
+      "category": "Brojevi"
     }
   }
 }

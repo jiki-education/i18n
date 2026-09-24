@@ -1,7 +1,7 @@
 ---
 title: "Alfanumerički"
 description: "Napravi funkcije koje klasifikuju tekst na slova, brojeve ili oboje."
-en_md5: 4a99adb1b883c6f6710a3494a8961cc2
+en_md5: ba81d7fc98b45703f0c9bba133ae8058
 ---
 
 U ovoj vežbi, tvoj zadatak je da napraviš funkcije koje proveravaju da li string sadrži slova i/ili brojeve.
@@ -21,10 +21,10 @@ Zatim napiši funkciju `whatAmI(string)` (klasifikuje string) koja koristi te po
 - Stringovi koji sadrže i slova i brojeve treba da vrate `"Alphanumeric"`
 - Sve ostalo treba da vrati `"Unknown"`
 
-### Iskoristi upravo stečeno znanje
+### Bonus zadaci
 
-Iako postoji mnogo ispravnih načina da se reši ova vežba, rešenje koje želimo da smisliš koristi naredbu `continue` i tri gore navedene funkcije.
+Postoji mnogo ispravnih načina da se reši ova vežba. Možeš da probaš da iskoristiš naredbu `continue`, ali postoji i mnogo drugih dobrih rešenja.
 
-Ova vežba te takođe izaziva da celu stvar rešiš u 42 reda koda ili manje. Taj cilj nije nužno i najprodukcionije rešenje. Sa par redova više verovatno se dobija lepše, a postoje i kraća rešenja. Ali to je dobar cilj ka kome da usmeriš svoje sposobnosti.
+Postoji i bonus zadatak koji te izaziva da celu stvar rešiš u 42 reda koda ili manje. Taj cilj nije nužno i najprodukcionije rešenje. Sa par redova više verovatno se dobija lepše, a postoje i kraća rešenja. Ali to je dobar cilj ka kome da usmeriš svoje sposobnosti.
 
 Uživaj!
