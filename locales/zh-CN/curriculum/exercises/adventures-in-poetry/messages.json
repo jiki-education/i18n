@@ -1,0 +1,112 @@
+{
+  "errors": {
+    "endOfPath": "诗人已经走出小路的尽头了。在这之前，本来应该有东西让它停下来。",
+    "isEmojiString": "只能检查一段文本是不是 emoji。",
+    "reciteString": "只能朗诵一段文本。"
+  },
+  "checks": {
+    "notRecited": "诗人什么都没朗诵。走完路之后，记得调用<code>recite()</code>。",
+    "wrongPoem": "诗人朗诵的是：<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>但这首诗应该是：<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "wrongSpacing": "诗人收集到的词语和顺序都对，只是空格不对。它朗诵的是：<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>但这首诗应该是：<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "noFunctions": "把你的解法写成一次行走，不要自己定义任何函数。",
+    "reciteOnce": "诗人应该在走完之后，朗诵一次这首诗。",
+    "tooDeeplyNested": "你的代码嵌套太深了。最多只能有两层，也就是一个循环里套一个<code>if</code>，但<code>if</code>里面不能再放东西。",
+    "noAndOrNot": "这道练习讲的是另一种做判断的方式，所以这里不能用<code>&&</code>和<code>!</code>。<code>||</code>是可以的。",
+    "needsContinue": "你的解法需要用上<code>continue</code>。",
+    "needsBreak": "你的解法需要用上<code>break</code>。",
+    "tooManyLines": "你的解法比需要的长。看看能不能把每种格子的处理都放在同一个地方，把代码缩短。"
+  },
+  "tasks": {
+    "collectThePoem": {
+      "name": "收集诗歌并朗诵",
+      "description": "沿着小路走，收集诗里的词语，在正确的地方停下，然后朗诵你收集到的东西。"
+    },
+    "solveTightly": {
+      "name": "把它精简一下",
+      "description": "解同样的这条路线，但要把代码压缩到行数限制以内。"
+    }
+  },
+  "scenarios": {
+    "hope": {
+      "name": "有空隙的小路",
+      "description": "六个词语，中间隔着光秃秃的草地，尽头是一面方格旗。"
+    },
+    "wandered": {
+      "name": "小路上的景物",
+      "description": "同样的思路，只是这次词语之间长出了植物和小动物。"
+    },
+    "mists": {
+      "name": "方格旗旁边的景物",
+      "description": "方格旗前面的那个格子上放着一片叶子。"
+    },
+    "notLost": {
+      "name": "正好七个词语",
+      "description": "一行上正好有七个词语，所以还没走到方格旗，诗人就停下来了。"
+    },
+    "hopeContinued": {
+      "name": "一首太长的诗",
+      "description": "这条小路上的词语超过七个，所以诗人走到一半就停下了。"
+    },
+    "highlands": {
+      "name": "一个撇号",
+      "description": "彭斯的一句诗，撇号单独占一个格子。"
+    },
+    "heartScenery": {
+      "name": "撇号后面的景物",
+      "description": "撇号和它连接的那个词语之间长出了一朵蘑菇，所以负责记住空格的东西必须能跨过一个被跳过的格子。"
+    },
+    "tyger": {
+      "name": "一个逗号",
+      "description": "布莱克的一句诗，逗号单独占一个格子。"
+    },
+    "pleure": {
+      "name": "开头是空草地",
+      "description": "魏尔伦的一句诗，诗开始之前有几个空格子。"
+    },
+    "yasegaeru": {
+      "name": "小林一茶的一句诗",
+      "description": "七个词语的俳句，还带行数限制，让你的各种判断保持紧凑。你能写出一个只有 32 行的整洁解法吗？（或者更少？）"
+    }
+  },
+  "hints": {
+    "scenery": {
+      "question": "植物和小动物跑到我的诗里去了。",
+      "answer": "诗里只应该放词语。小路上其他东西都要留在原地，也就是说，你的循环要能在不添加任何东西的情况下走到下一个格子。"
+    },
+    "flagSkipped": {
+      "question": "我的诗人一直走个不停。",
+      "answer": "方格旗也是一个 emoji。如果你先处理景物，再处理方格旗，方格旗就会被当成景物，行走就永远不会结束。顺序很重要。"
+    },
+    "spacing": {
+      "question": "我的词语全挤在一起了，要么就是开头多了一个空格。",
+      "answer": "想一想什么时候需要空格。空格要加在**两个词语之间**，而不是第一个词语前面，所以要有东西记住：是不是已经写过东西了。"
+    },
+    "apostrophe": {
+      "question": "我得到的是`heart ' s`，而不是`heart's`。",
+      "answer": "撇号会把两边的词语连起来，所以它前面和后面都不加空格。逗号正好相反：前面不加空格，后面要加空格。"
+    },
+    "reciteOnce": {
+      "question": "为什么`recite()`只能调用一次？",
+      "answer": "诗人朗诵的是拼好的诗，所以只能有那么一个时刻。行走结束的方式不止一种，但每一种都要走到同一个时刻。"
+    }
+  },
+  "describers": {
+    "move": "向前走了一步，发现了 ${return}",
+    "isEmoji": "检查了 ${arg1} 是不是 emoji",
+    "recite": "朗诵了“${arg1}”"
+  },
+  "functions": {
+    "move": {
+      "description": "让诗人向前走到下一个格子，并**返回**那个格子上原本放着的东西。",
+      "category": "移动"
+    },
+    "isEmoji": {
+      "description": "如果传入的东西是 emoji，就返回 `true`。",
+      "category": "检查"
+    },
+    "recite": {
+      "description": "让诗人把诗朗诵出来。",
+      "category": "动作"
+    }
+  }
+}

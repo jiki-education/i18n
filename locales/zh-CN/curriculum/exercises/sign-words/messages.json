@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "signWords": {
+      "name": "把名称拆成单词",
+      "description": "写一个 signWords 函数，它接收商家名称，返回一个由名称中各个单词组成的数组。单词之间用空格分隔，客户可能会不小心多打几个空格。"
+    }
+  },
+  "scenarios": {
+    "singleWord": {
+      "name": "一个单词",
+      "description": "只有一个单词的商家名称。"
+    },
+    "twoWords": {
+      "name": "两个单词",
+      "description": "由两个单词组成的商家名称。"
+    },
+    "longerName": {
+      "name": "更长的名称",
+      "description": "商家名称里有四个单词要打印。"
+    },
+    "doubleSpace": {
+      "name": "空格键按得有点重",
+      "description": "客户在单词之间打了两个空格。"
+    }
+  },
+  "hints": {
+    "gettingStarted": {
+      "question": "怎么把单词从名称里拆出来？",
+      "answer": "有两条路，没有哪条更好。你可以一个字符一个字符地遍历名称，边走边把每个单词拼起来；也可以让字符串自己在空格的地方拆开。选你觉得更清楚的那条就好。"
+    },
+    "buildingUpArray": {
+      "question": "怎么把单词收集起来？",
+      "answer": "开始之前先准备一个空数组，每拼出一个完整的单词，就用 push 把它加到数组末尾。最后返回的就是这个数组。"
+    },
+    "doubleSpaces": {
+      "question": "为什么我的数组里有一个空字符串？",
+      "answer": "连续两个空格意味着它们之间什么都没有，所以如果不做处理，这个空隙也会被当成一个单词。push 之前，先检查一下这个单词不是空的。"
+    },
+    "missingLastWord": {
+      "question": "为什么最后一个单词不见了？",
+      "answer": "如果你是一个字符一个字符地拼单词，循环结束时最后一个单词还没拼完，因为它后面没有空格来告诉你它已经结束了。循环结束后要再把它 push 进去。"
+    }
+  },
+  "functions": {
+    "split": {
+      "description": "在找到分隔符的地方把字符串拆开，返回由各个片段组成的数组。",
+      "category": "字符串"
+    },
+    "push": {
+      "description": "把一个元素加到数组末尾，会直接改变原数组。",
+      "category": "数组"
+    }
+  }
+}

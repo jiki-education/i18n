@@ -7,10 +7,10 @@
   },
   "checks": {
     "saladNotMade": "你没有制作沙拉。确保你调用了 <code>makeSalad()</code>，并传入全部四种食材。",
-    "needLeavesRandomInt": "你需要调用 <code>Math.randomInt(40, 100)</code> 来生成叶子的数量。",
-    "needTomatoesRandomInt": "你需要调用 <code>Math.randomInt(5, leaves / 5)</code> 来生成番茄的数量。",
-    "needCroutonsRandomInt": "你需要调用 <code>Math.randomInt(tomatoes, tomatoes * 2)</code> 来生成面包丁的数量。",
-    "needOlivesRandomInt": "你需要调用 <code>Math.randomInt(1, tomatoes / 2)</code> 来生成橄榄的数量。"
+    "needLeavesRandomInt": "叶子数量的计算逻辑不符合你和搭档的约定。",
+    "needTomatoesRandomInt": "番茄数量的计算逻辑不符合你和搭档的约定。",
+    "needCroutonsRandomInt": "面包丁数量的计算逻辑不符合你和搭档的约定。",
+    "needOlivesRandomInt": "橄榄数量的计算逻辑不符合你和搭档的约定。"
   },
   "tasks": {
     "makeRandomSalad": {
@@ -26,8 +26,8 @@
   },
   "hints": {
     "leavesExample": {
-      "question": "给我一个计算叶子数量的示例。",
-      "answer": "使用 `let leaves = Math.randomInt(40, 100)` 来生成随机的叶子数量，之后你可以在其他函数中使用它。"
+      "question": "怎样生成一个随机数？",
+      "answer": "`Math.randomInt(min, max)` 会返回一个介于你传入的两个值之间的随机整数。例如，`let score = Math.randomInt(1, 6)` 会从 1 到 6 中选一个数。把结果存进一个变量，这样之后就能用到它。"
     },
     "leavesCount": {
       "question": "我需要多少叶子？",
@@ -47,7 +47,7 @@
     },
     "makeSalad": {
       "question": "如何制作沙拉？",
-      "answer": "一旦你确定每种食材需要多少，就将叶子、番茄、面包丁、橄榄传入 makeSalad()。"
+      "answer": "确定了每种食材各需要多少之后，按照 `makeSalad()` 签名中的顺序，把你的四个变量传进去。"
     }
   },
   "describers": {
@@ -57,6 +57,10 @@
     "makeSalad": {
       "description": "根据给定的每种食材数量制作沙拉。",
       "category": "动作"
+    },
+    "randomInt": {
+      "description": "返回一个介于 min 和 max 之间的随机整数（包含两端）。",
+      "category": "数字"
     }
   }
 }

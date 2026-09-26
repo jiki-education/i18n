@@ -1,0 +1,69 @@
+{
+  "checks": {
+    "tooManyLines": "你的解答代码行数太多了。能把它写得更短一些吗？"
+  },
+  "tasks": {
+    "packLunchbox": {
+      "name": "装午餐盒",
+      "description": "把物品分成放进午餐盒的和放进书包的两部分：在不超出容量的前提下，尽量多往午餐盒里装，其余的都放进书包。"
+    },
+    "solveInSixteenLines": {
+      "name": "用 16 行代码解决",
+      "description": "你能只用 16 行代码解决这个练习吗？"
+    }
+  },
+  "scenarios": {
+    "everythingFits": {
+      "name": "全都装得下",
+      "description": "午餐盒很宽敞，所有物品都装得下，所以书包是空的。"
+    },
+    "packTheMost": {
+      "name": "装得最多",
+      "description": "空间很紧张，所以小物品装进午餐盒，大物品留给书包。"
+    },
+    "justTheSnack": {
+      "name": "只装得下零食",
+      "description": "只有最小的那件物品装得下，其余的都放进书包。"
+    },
+    "nothingFits": {
+      "name": "什么都装不下",
+      "description": "连最小的物品都太大了，所以所有物品都进了书包。"
+    },
+    "emptyLunchbox": {
+      "name": "空午餐盒",
+      "description": "一件物品都没有，所以午餐盒和书包都是空的。"
+    },
+    "bonus1": {
+      "name": "16 行代码",
+      "description": "只用 16 行代码解决这个练习。"
+    }
+  },
+  "hints": {
+    "readEachItem": {
+      "question": "我怎么取出每个物品的名字和大小？",
+      "answer": "每个物品都是一对数据：第一部分是名字，第二部分是大小，所以你可以从物品里把它们一个一个取出来。"
+    },
+    "fitTheMost": {
+      "question": "怎么才能装进尽可能多的物品？",
+      "answer": "想一想应该先放哪些物品。小物品能给其他物品留出更多空间，所以先处理它们比先处理大的更划算。"
+    },
+    "goSmallestFirst": {
+      "question": "物品是按从大到小排列的，我怎么从小到大处理它们呢？",
+      "answer": "有一个数组方法可以返回一个把数组里所有元素都反过来排列的副本。先把物品反过来，再按这个新顺序处理它们。"
+    },
+    "knowWhenFull": {
+      "question": "我怎么判断每件物品该放到哪里？",
+      "answer": "记录你已经放进去的物品大小总和。放一件物品之前，先看看总和加上它的大小是否还在容量之内。如果在，就放进午餐盒，否则放进书包。"
+    }
+  },
+  "functions": {
+    "toReversed": {
+      "description": "返回一个数组的副本，里面元素的顺序反过来，不会改变原来的数组。",
+      "category": "数组"
+    },
+    "push": {
+      "description": "把一个元素加到数组末尾，会直接改变原来的数组。",
+      "category": "数组"
+    }
+  }
+}

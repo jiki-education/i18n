@@ -1,0 +1,48 @@
+{
+  "tasks": {
+    "canFitIn": {
+      "name": "能安排得下吗？",
+      "description": "写一个函数，根据当前的队列和剩下的时间，判断打烊前还能不能接待一位新顾客。"
+    }
+  },
+  "scenarios": {
+    "emptyQueue": {
+      "name": "队列里没有人",
+      "description": "队列里没有人，时间还很充裕。"
+    },
+    "emptyQueueButNoTime": {
+      "name": "一天快结束了",
+      "description": "队列里没有人，但剩下的时间不够了。"
+    },
+    "busyDayNoTime": {
+      "name": "忙碌的一天",
+      "description": "队列排得满满的，剩下的时间却不够。"
+    },
+    "busyDayButTime": {
+      "name": "刚好挤得下",
+      "description": "忙了一整天，但时间刚好够。"
+    },
+    "stillEarly": {
+      "name": "时间还早",
+      "description": "现在时间还早。"
+    },
+    "cuttingItFine": {
+      "name": "刚好赶上",
+      "description": "这位客人刚好赶上了！"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "我该从哪里开始？先算队列，还是先看新客人？",
+      "answer": "先算出队列会占掉多少时间，再看看还剩多少留给新客人。写一个辅助函数，把发型名称换成对应的时长（分钟），代码会清楚很多。"
+    },
+    "subtractQueueTime": {
+      "question": "怎么把每个发型的时间从剩余时间里减掉？",
+      "answer": "遍历队列。对每个发型，用你的辅助函数查出它的时长，再从当天剩余时间的累计值里减掉。"
+    },
+    "decideIfFits": {
+      "question": "怎么判断新发型安排得下？",
+      "answer": "处理完队列后，把剩余时间和新发型的时长比一比。如果新发型的时长小于或等于剩余时间，就安排得下。"
+    }
+  }
+}

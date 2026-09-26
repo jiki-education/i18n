@@ -1,0 +1,50 @@
+{
+  "tasks": {
+    "createShoppingList": {
+      "name": "创建购物清单",
+      "description": "写一个函数，接收冰箱里的东西和菜谱里的食材，返回你需要买的东西（菜谱里有、冰箱里没有的）。"
+    }
+  },
+  "scenarios": {
+    "emptyFridge": {
+      "name": "空冰箱",
+      "description": "冰箱空着的时候，所有东西都得买。"
+    },
+    "youHaveEverything": {
+      "name": "食材齐全",
+      "description": "食材都齐全的时候，购物清单是空的。"
+    },
+    "oneThing": {
+      "name": "缺一样",
+      "description": "只缺一样食材的时候。"
+    },
+    "fewThings": {
+      "name": "缺几样",
+      "description": "缺几样食材的时候。"
+    }
+  },
+  "hints": {
+    "realLifeApproach": {
+      "question": "现实中我会怎么做？",
+      "answer": "你会照着菜谱一样一样地看，每看一样就去冰箱里查一下。缺的就记在购物清单上。你的代码做的事也是一样的。"
+    },
+    "checkFridgeItem": {
+      "question": "怎么检查某样东西在不在冰箱里？",
+      "answer": "`includes`方法就是干这个的。在冰箱上调用它，传入一样食材，它就会返回`true`或`false`。"
+    },
+    "buildShoppingList": {
+      "question": "怎么一步步把购物清单建起来？",
+      "answer": "先新建一个空数组。菜谱里每一样冰箱里没有的食材，就用`push()`把它加到购物清单里。"
+    }
+  },
+  "functions": {
+    "includes": {
+      "description": "检查数组里是否包含某个元素，返回 true 或 false。",
+      "category": "数组"
+    },
+    "push": {
+      "description": "把一个元素加到数组末尾，会直接修改这个数组本身。",
+      "category": "数组"
+    }
+  }
+}

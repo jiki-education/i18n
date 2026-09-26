@@ -4,6 +4,10 @@
       "name": "分类字符串",
       "description": "编写辅助函数以检查字符串是否为字母、数字或字母数字，然后使用它们对输入字符串进行分类。"
     },
+    "solveTightly": {
+      "name": "用 42 行代码解决",
+      "description": "试着用不超过 42 行代码解决。这个目标不一定就是最佳的生产级解法，也存在更短的解法，但这是一个推动自己进步的好目标。"
+    },
     "useContinue": {
       "name": "使用 continue",
       "description": "在 isAlphanumeric 检查中，当一个字符是字母或数字时，你已经确认它没问题。使用 continue 直接跳到下一个字符，而不是嵌套更多的条件。"
@@ -29,6 +33,10 @@
     "notAlphanumeric2": {
       "name": "42 Rubber Duck!",
       "description": "包含空格和特殊字符的字符串应分类为 \"Unknown\"。"
+    },
+    "alphanumericBonusLineCount": {
+      "name": "干净利落",
+      "description": "试着用不超过 42 行代码解决。"
     },
     "alphanumericUsesContinue": {
       "name": "使用了 continue",
@@ -58,10 +66,20 @@
     }
   },
   "checks": {
-    "mustUseContinue": "非常接近！使用 `continue` 跳到下一个字符。",
-    "tooManyLines": "非常接近！你的解法有效，但稍微有点长。",
+    "tooManyLines": "非常接近！你的解法有效，但超过了 42 行代码。",
     "useIsAlpha": "本练习要求你编写一个 `isAlpha()` 辅助函数，并用它来对字符串进行分类。",
     "useIsNumeric": "本练习要求你编写一个 `isNumeric()` 辅助函数，并用它来对字符串进行分类。",
-    "useIsAlphanumeric": "本练习要求你编写一个 `isAlphanumeric()` 辅助函数，并用它来对字符串进行分类。"
+    "useIsAlphanumeric": "本练习要求你编写一个 `isAlphanumeric()` 辅助函数，并用它来对字符串进行分类。",
+    "mustUseContinue": "非常接近！使用 `continue` 跳到下一个字符。"
+  },
+  "functions": {
+    "toLowerCase": {
+      "description": "返回字符串的小写副本",
+      "category": "字符串操作"
+    },
+    "includes": {
+      "description": "检查一个字符串是否包含另一个更短的字符串",
+      "category": "字符串操作"
+    }
   }
 }

@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "notShotAlien": "你没有击落那个外星人。",
+    "notShotAllAliens": "你没有击落所有外星人。"
+  },
+  "tasks": {
+    "shootTheAliens": {
+      "name": "记录并击落所有外星人",
+      "description": "用 getStartingAliensInRow() 获取外星人的位置，然后在屏幕上移动，把它们击落。通过更新数组来记录哪些外星人已经被你击落。"
+    }
+  },
+  "scenarios": {
+    "oneAlien": {
+      "name": "击落外星人",
+      "description": "最下面一行有一个外星人"
+    },
+    "oneRow": {
+      "name": "稀疏的一行",
+      "description": "最下面一行有稀疏的外星人"
+    },
+    "twoRows": {
+      "name": "两行密集的外星人",
+      "description": "外星人分布在两行"
+    },
+    "threeRows": {
+      "name": "三行",
+      "description": "外星人遍布三行"
+    },
+    "fullRows": {
+      "name": "三行排满的外星人",
+      "description": "三行满满的外星人"
+    }
+  },
+  "hints": {
+    "knowWhereAliens": {
+      "question": "既然`isAlienAbove()`已经没了，我怎么知道外星人在哪里？",
+      "answer": "一开始就调用一次`getStartingAliensInRow(0)`、`getStartingAliensInRow(1)`和`getStartingAliensInRow(2)`。每个都会返回一个包含 11 个布尔值的数组，你可以把它存进变量里，之后再读取。"
+    },
+    "whichAlienAbove": {
+      "question": "我怎么知道现在自己上方是哪个外星人？",
+      "answer": "用一个变量记录你的水平位置，每次移动时更新它。这个位置就是各行数组的下标，所以`row1[position]`会告诉你第 1 行你上方有没有外星人。"
+    },
+    "stopDoubleShoot": {
+      "question": "怎么避免把同一个外星人击落两次？",
+      "answer": "调用`shoot()`之后，把该行中那个下标设为`false`。下一次循环再经过同一个位置时，那里就会显示没有外星人。"
+    },
+    "whichRowToShoot": {
+      "question": "当上方叠着好几个外星人时，我该击落哪一行的？",
+      "answer": "从最下面一行开始往上检查。击落你这一列里最低的那个还活着的外星人，这次迭代就不要再检查上面的行了。"
+    }
+  },
+  "functions": {
+    "moveLeft": {
+      "description": "让激光炮**向左移动一个位置**。如果试图移出屏幕左边缘，你就会输掉游戏！",
+      "category": "移动"
+    },
+    "moveRight": {
+      "description": "让激光炮**向右移动一个位置**。如果试图移出屏幕右边缘，你就会输掉游戏！",
+      "category": "移动"
+    },
+    "shoot": {
+      "description": "向上发射激光。**只有上方有外星人时才能发射**，否则你会输掉游戏！激光炮很容易过热，所以再次发射前必须先移动。",
+      "category": "动作"
+    },
+    "getStartingAliensInRow": {
+      "description": "返回一个包含 11 个布尔值的数组，表示练习**开始**时给定行中外星人的位置。行`0`是最下面一行，`1`是中间一行，`2`是最上面一行。",
+      "category": "检测"
+    }
+  }
+}

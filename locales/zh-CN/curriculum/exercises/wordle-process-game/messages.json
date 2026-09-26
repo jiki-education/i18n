@@ -1,0 +1,74 @@
+{
+  "checks": {
+    "rowMismatchWithRow": "第 {{row}} 行第 {{square}} 格的“{{letter}}”应该是“{{expected}}”，而不是“{{actual}}”。",
+    "rowNotColoredWithRow": "第 {{row}} 行没有上色。",
+    "rowWrongLengthWithRow": "第 {{row}} 行收到了 {{actual}} 个状态，但一行需要 {{expected}} 个。"
+  },
+  "tasks": {
+    "processGame": {
+      "name": "处理整局游戏",
+      "description": "创建一个名为 processGame 的函数，它接收一个目标词和一个装着猜测词的数组，并为每个猜测词带上正确的状态调用 colorRow。"
+    },
+    "duplicateLetters": {
+      "name": "奖励：处理重复字母",
+      "description": "有一条 Wordle 规则我们一直跳过了。如果某个字母在你的猜测词里出现了两次，但在目标词里只出现了一次：如果其中一个位置正确，那个就变绿，另一个变灰；否则第一个变黄，第二个变灰。这个道理可以往上推：猜的词里有三个、目标词里有两个，就是两个被上色，第三个变灰。先从第一个奖励场景开始，然后在第二个场景里彻底解决。这只是奖励，不做完也没关系！"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "第一次就猜中！",
+      "description": "处理第一次就猜中的情况。"
+    },
+    "twoGuesses": {
+      "name": "两次搞定",
+      "description": "处理猜了两次的情况。"
+    },
+    "threeGuesses": {
+      "name": "三次才搞定",
+      "description": "处理猜了三次的情况。"
+    },
+    "phew": {
+      "name": "好险！",
+      "description": "呼，好险！差一点就没猜到！"
+    },
+    "bonus1": {
+      "name": "只能有一个黄色",
+      "description": "如果目标词里只有一个这个字母，猜测词里却有好几个，那只能有一个变黄。"
+    },
+    "bonus2": {
+      "name": "瑞士奶酪",
+      "description": "这里的 swiss 正说明了它为什么重要！"
+    }
+  },
+  "hints": {
+    "reuseWork": {
+      "question": "怎么复用我在 `processGuess` 里写的代码？",
+      "answer": "主场景用的就是你之前写好的那套逻辑。把它抽成一个辅助函数（或者直接复制出来），然后对数组里的每个猜测词调用一次。奖励任务会改动这套逻辑，所以如果你决定做奖励任务，就要回头改这个辅助函数。"
+    },
+    "trackRow": {
+      "question": "怎么跟踪每个猜测词属于哪一行？",
+      "answer": "用一个下标循环遍历所有猜测词。行号就是下标加 `1`（因为 `colorRow` 期望的行号是 `1-6`）。"
+    },
+    "colorRow": {
+      "question": "到底怎么给每一行上色？",
+      "answer": "拿到某个猜测词的 `states` 数组后，调用 `colorRow(rowNumber, states)`。"
+    },
+    "fewerGuesses": {
+      "question": "如果玩家猜的次数不到 6 次怎么办？",
+      "answer": "只给已经存在的那些猜测词上色。数组的长度会告诉你需要处理几行，所以你自然会停在正确的位置。"
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "用给定的状态给 Wordle 棋盘上的一行上色。",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "把一个元素添加到数组的末尾，会直接改变这个数组。",
+      "category": "数组"
+    }
+  },
+  "describers": {
+    "colorRow": "给 Wordle 棋盘上的一行上了色"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "tasks": {
+    "findMatchingSocks": {
+      "name": "找出成双的袜子",
+      "description": "写一个函数，接收两篮衣物（用字符串数组表示），返回一个数组，里面是这两个篮子里所有能配成双的袜子。袜子的条目都以 ' sock' 结尾，并且总是以 'left ' 或 'right ' 开头。"
+    },
+    "solveTightly": {
+      "name": "用 29 行代码解决",
+      "description": "试着用 29 行或更少的代码解决它。这不是最短的答案，但当你能把它做出来之后，这是一个值得努力的目标。"
+    }
+  },
+  "scenarios": {
+    "emptyBaskets": {
+      "name": "空篮子",
+      "description": "两个篮子都是空的。"
+    },
+    "nothingClean": {
+      "name": "没有干净衣物",
+      "description": "干净篮子里一件衣物也没有。"
+    },
+    "nothingDirty": {
+      "name": "没有脏衣物",
+      "description": "脏篮子里一件衣物也没有。"
+    },
+    "noSocks": {
+      "name": "没有袜子",
+      "description": "哪里都找不到袜子。"
+    },
+    "oneInEach": {
+      "name": "每个篮子里各一只",
+      "description": "每个篮子里各有一只可以配成双的袜子。"
+    },
+    "aBigMix": {
+      "name": "一大堆混在一起！",
+      "description": "各种衣物混在一起，其中有好几对能配成双。"
+    },
+    "someAddedPain": {
+      "name": "零碎杂物",
+      "description": "混进来几件奇怪的东西。"
+    },
+    "bonusLineCount": {
+      "name": "紧凑的解法",
+      "description": "同样的任务，用了更少的行数。"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "环节这么多，我该从哪里开始？",
+      "answer": "不要想着一次就把整段代码写完。把问题拆成几个小函数，每个函数只回答一个小问题，先让每个函数单独跑通，再把它们组合起来。"
+    },
+    "isItASock": {
+      "question": "怎么判断篮子里的某样东西到底是不是袜子？",
+      "answer": "不是提到左右的就是袜子，也不是看着像袜子的就一定是。仔细看看描述这些条目的规则，检查描述的两端，而不只是开头。"
+    },
+    "compareSockPair": {
+      "question": "怎么把一只左袜和它对应的右袜进行比较？",
+      "answer": "与其直接比较两只袜子，不如先想想某只袜子的搭档应该叫什么名字，然后去找那个名字。字符串有一个内置方法，可以把一段文字换成另一段文字；把它换成空，也就等于把这段文字去掉。"
+    },
+    "avoidDuplicates": {
+      "question": "怎么避免同一双袜子被数两次？",
+      "answer": "每一双都会被发现两次，分别从左袜和右袜出发各一次。在把某个名字加进结果之前，先检查它是不是已经在里面了。"
+    },
+    "overallPlan": {
+      "question": "整体上有什么好的思路？",
+      "answer": "可以把两个篮子看成一大堆。一件一件地过，对每一件判断它要不要放进你的答案里。"
+    }
+  },
+  "checks": {
+    "tooManyLines": "很接近了！你的解法能跑通，只是代码超过了 29 行。"
+  },
+  "functions": {
+    "startsWith": {
+      "description": "检查一个字符串是否以另一段更短的字符串开头",
+      "category": "字符串操作"
+    },
+    "endsWith": {
+      "description": "检查一个字符串是否以另一段更短的字符串结尾",
+      "category": "字符串操作"
+    },
+    "replace": {
+      "description": "返回一个新字符串，把某段文字第一次出现的地方换成另一段文字",
+      "category": "字符串操作"
+    },
+    "concat": {
+      "description": "把两个数组合并成一个新数组",
+      "category": "数组操作"
+    },
+    "includes": {
+      "description": "检查一个数组里是否已经包含某个元素",
+      "category": "数组操作"
+    },
+    "push": {
+      "description": "把一个元素添加到数组的末尾",
+      "category": "数组操作"
+    }
+  }
+}

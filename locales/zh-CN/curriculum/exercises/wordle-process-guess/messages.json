@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "rowMismatch": "第 {{square}} 个格子里的“{{letter}}”应该是“{{expected}}”，而不是“{{actual}}”。",
+    "rowNotColored": "这一行没有上色。",
+    "rowWrongLength": "这一行收到了 {{actual}} 个状态，但一行需要 {{expected}} 个。"
+  },
+  "tasks": {
+    "processGuess": {
+      "name": "处理一次猜测",
+      "description": "创建一个名为 processGuess 的函数，接收目标单词和一次猜测，算出每个字母的状态（correct、present 或 absent），然后用结果调用 colorRow(1, states)。"
+    }
+  },
+  "scenarios": {
+    "allCorrect": {
+      "name": "全部正确",
+      "description": "处理一次完全正确的猜测"
+    },
+    "absent": {
+      "name": "部分字母不存在",
+      "description": "处理部分字母不在秘密单词里的情况"
+    },
+    "present": {
+      "name": "部分字母位置不对",
+      "description": "处理字母在秘密单词里但位置不对的情况"
+    },
+    "complex": {
+      "name": "复杂情况",
+      "description": "处理更复杂的场景"
+    },
+    "differentWord": {
+      "name": "另一个单词",
+      "description": "最后再来一个不同的单词！"
+    }
+  },
+  "hints": {
+    "compareLetters": {
+      "question": "怎样把猜测里的每个字母和目标单词作比较？",
+      "answer": "遍历从`0`到`4`的每个位置。对每个位置，比较`guess[i]`和`target[i]`。"
+    },
+    "stateRules": {
+      "question": "字母什么时候算`\"correct\"`，什么时候算`\"present\"`，什么时候算`\"absent\"`？",
+      "answer": "按照这个练习的简化规则：如果`guess[i]`等于`target[i]`，就是`\"correct\"`。否则，如果这个字母在`target`里出现过，就是`\"present\"`。如果都没有，就是`\"absent\"`。"
+    },
+    "buildList": {
+      "question": "怎样逐步构建状态数组？",
+      "answer": "先从一个空数组开始，然后在循环里用`states.push(value)`把每个状态按顺序加到末尾。"
+    },
+    "finishedList": {
+      "question": "构建好的数组要传到哪里？",
+      "answer": "把它传给`colorRow(1, states)`，用你算出的状态给棋盘的第一行上色。"
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "用给定的状态给 Wordle 棋盘上的一行上色。",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "把一个元素加到数组的末尾，直接修改原数组。",
+      "category": "数组"
+    },
+    "includes": {
+      "description": "检查一个字符串是否包含另一个字符串，返回 true 或 false。",
+      "category": "字符串"
+    }
+  },
+  "describers": {
+    "colorRow": "给 Wordle 棋盘上的一行上了色"
+  }
+}

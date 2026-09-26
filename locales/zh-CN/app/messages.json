@@ -42,15 +42,15 @@
       "homeAriaLabel": "Jiki 首页",
       "logoAlt": "Jiki",
       "aboutJiki": "关于 Jiki",
-      "premium": "�",
+      "premium": "高级版",
       "testimonials": "用户评价",
       "login": "登录",
       "signUp": "免费注册",
       "menuAriaLabel": "打开菜单",
       "closeMenuAriaLabel": "关闭菜单",
-      "languageAriaLabel": "�",
-      "languageComingSoon": "�",
-      "languageComingSoonBadge": "�"
+      "languageAriaLabel": "切换语言",
+      "languageComingSoon": "即将推出",
+      "languageComingSoonBadge": "即将"
     },
     "internalHeader": {
       "homeAriaLabel": "Jiki 首页",
@@ -79,7 +79,7 @@
         "upgrade": "升级到 Premium",
         "logOut": "退出登录"
       },
-      "premiumPill": "�"
+      "premiumPill": "高级版"
     },
     "loading": {
       "title": "正在唤醒 Jiki",
@@ -90,873 +90,904 @@
     }
   },
   "common": {
-    "continue": "�",
-    "close": "�",
-    "cancel": "�",
-    "confirm": "�",
-    "processing": "�",
-    "reloadPage": "�",
-    "loading": "�",
-    "verifying": "�",
-    "sending": "�",
-    "perMonth": "�",
+    "continue": "继续",
+    "close": "关闭",
+    "cancel": "取消",
+    "confirm": "确认",
+    "processing": "处理中...",
+    "reloadPage": "重新加载页面",
+    "loading": "加载中...",
+    "verifying": "验证中...",
+    "sending": "发送中...",
+    "perMonth": "/月",
     "validation": {
-      "emailInvalid": "�",
-      "passwordRequired": "�",
-      "passwordMinLength": "�",
-      "currentPasswordRequired": "�",
-      "newPasswordRequired": "�",
-      "passwordsNoMatch": "�"
+      "emailInvalid": "请输入有效的电子邮箱地址",
+      "passwordRequired": "请输入密码",
+      "passwordMinLength": "密码至少需要 6 个字符",
+      "currentPasswordRequired": "请输入当前密码",
+      "newPasswordRequired": "请输入新密码",
+      "passwordsNoMatch": "两次输入的密码不一致"
     },
     "pagination": {
-      "label": "�",
-      "previousPage": "�",
-      "nextPage": "�"
+      "label": "分页",
+      "previousPage": "上一页",
+      "nextPage": "下一页"
     },
     "loadingJiki": {
-      "alt": "�"
+      "alt": "Jiki 角色正在醒来"
     },
     "otpInput": {
-      "label": "�",
-      "digitLabel": "�"
+      "label": "一次性密码",
+      "digitLabel": "第 {number} 位（共 6 位）"
     },
     "closeButton": {
-      "label": "�"
+      "label": "关闭弹窗"
     },
     "copyButton": {
-      "label": "�",
-      "copied": "�"
+      "label": "复制到剪贴板",
+      "copied": "已复制"
     },
     "soundToggle": {
-      "mute": "�",
-      "unmute": "�"
+      "mute": "静音",
+      "unmute": "取消静音"
     },
     "themeToggle": {
-      "switchToDark": "�",
-      "switchToSystem": "�",
-      "switchToLight": "�",
-      "toggle": "�",
-      "description": "�"
+      "switchToDark": "切换到深色主题",
+      "switchToSystem": "切换到跟随系统主题",
+      "switchToLight": "切换到浅色主题",
+      "toggle": "切换主题",
+      "description": "当前主题：{theme}。点击可在浅色、深色和跟随系统主题之间切换。"
     },
     "badgeNewLabel": {
-      "label": "�"
+      "label": "新"
     },
-    "saving": "�",
-    "retry": "�",
-    "tryAgain": "�",
+    "saving": "保存中...",
+    "retry": "重试",
+    "tryAgain": "再试一次",
     "betaTag": {
-      "label": "�"
+      "label": "Beta 版本"
     },
     "userAvatar": {
-      "alt": "�"
+      "alt": "用户头像"
+    },
+    "signupCta": {
+      "title": "准备好开启你的编程之旅了吗？",
+      "subtitle": "加入 Jiki，和成千上万的学习者一起学习。做编程练习，获得导师反馈，提升你的技能。完全免费！",
+      "button": "免费注册"
+    },
+    "upgradeCard": {
+      "logoAlt": "Jiki",
+      "heading": "今天就开启你的<highlight>编程之旅</highlight>！",
+      "text": "注册 Jiki，通过互动练习、真实项目和个性化支持学习编程。最棒的是，<free>完全免费！</free>",
+      "button": "免费注册"
+    },
+    "shareLinks": {
+      "heading": "分享此内容",
+      "description": {
+        "blogPost": "帮你的圈子发现这篇博客文章和 Jiki 的魅力。",
+        "article": "帮你的圈子发现这篇文章和 Jiki 的魅力。",
+        "concept": "帮你的圈子发现这篇讲解和 Jiki 的魅力。"
+      },
+      "shareOn": "分享到 {network}",
+      "copyLink": "复制链接",
+      "copied": "链接已复制"
     }
   },
   "build": {
     "upcomingStreams": {
-      "heading": "�",
-      "toBeAnnounced": "�",
-      "subscribeButton": "�"
+      "heading": "即将开始的直播",
+      "toBeAnnounced": "待公布",
+      "subscribeButton": "订阅日历"
     },
     "hub": {
-      "title": "�",
-      "description": "�"
+      "title": "学习构建 - 项目",
+      "description": "和 Jeremy 一起从零开始构建真实项目。学会他知道的一切！"
     }
   },
   "auth": {
     "oauth": {
-      "useGoogle": "�",
-      "useExercism": "�",
-      "divider": "�"
+      "useGoogle": "使用 Google",
+      "useExercism": "使用 Exercism",
+      "divider": "或"
     },
     "fields": {
-      "emailLabel": "�",
-      "emailPlaceholder": "�",
-      "passwordLabel": "�",
-      "passwordPlaceholder": "�",
-      "emailRequired": "�"
+      "emailLabel": "邮箱",
+      "emailPlaceholder": "输入你的邮箱地址",
+      "passwordLabel": "密码",
+      "passwordPlaceholder": "输入你的密码",
+      "emailRequired": "请输入邮箱"
     },
     "captchaError": {
-      "signup": "�",
-      "login": "�",
-      "generic": "�"
+      "signup": "我们的系统无法判断你是真人还是机器人。请使用下面的按钮重新注册。",
+      "login": "我们的系统无法判断你是真人还是机器人。请使用下面的按钮重新登录。",
+      "generic": "我们的系统无法判断你是真人还是机器人。请使用下面的按钮重试。"
     },
     "login": {
-      "title": "�",
-      "invalidCredentials": "�",
-      "forgotPassword": "�",
-      "submit": "�",
-      "submitting": "�",
-      "unconfirmed": "�",
-      "resend": "�",
-      "noAccount": "�"
+      "title": "登录",
+      "invalidCredentials": "邮箱或密码错误",
+      "forgotPassword": "忘记密码了？",
+      "submit": "登录",
+      "submitting": "登录中……",
+      "unconfirmed": "请先确认邮箱再登录。<link>重新发送确认邮件</link>",
+      "resend": "没有收到确认邮件？<link>重新发送。</link>",
+      "noAccount": "还没有账号？<link>免费注册。</link>"
     },
     "signup": {
-      "title": "�",
-      "emailAlreadyRegistered": "�",
-      "submit": "�",
-      "submitting": "�",
-      "haveAccount": "�",
-      "resend": "�"
+      "title": "注册",
+      "emailAlreadyRegistered": "该邮箱已被注册",
+      "submit": "注册",
+      "submitting": "注册中……",
+      "haveAccount": "已经有账号了？<link>登录</link>。",
+      "resend": "没有收到确认邮件？<link>重新发送。</link>"
     },
     "forgotPassword": {
-      "title": "�",
-      "subtitle": "�",
-      "successMessage": "�",
-      "submit": "�",
-      "remembered": "�"
+      "title": "忘记密码了？",
+      "subtitle": "如果你忘记了密码，请填写下面的表单，获取一个修改密码的链接。",
+      "successMessage": "如果该邮箱对应的账号存在，你很快就会收到重置密码的说明。",
+      "submit": "发送重置链接",
+      "remembered": "想起密码了？<link>登录</link>"
     },
     "resetPassword": {
-      "invalidTitle": "�",
-      "invalidMessage": "�",
-      "requestNewLink": "�",
-      "title": "�",
-      "subtitle": "�",
-      "tokenMissing": "�",
-      "confirmationRequired": "�",
-      "successMessage": "�",
-      "newPasswordLabel": "�",
-      "newPasswordPlaceholder": "�",
-      "confirmPasswordLabel": "�",
-      "confirmPasswordPlaceholder": "�",
-      "submit": "�",
-      "submitting": "�",
-      "remembered": "�"
+      "invalidTitle": "重置链接无效",
+      "invalidMessage": "这个密码重置链接无效或已过期。请重新申请一个。",
+      "requestNewLink": "重新申请密码重置",
+      "title": "重置密码",
+      "subtitle": "在下面输入你的新密码。",
+      "tokenMissing": "重置令牌缺失或无效",
+      "confirmationRequired": "请确认密码",
+      "successMessage": "密码重置成功！正在跳转到登录页面……",
+      "newPasswordLabel": "新密码",
+      "newPasswordPlaceholder": "输入你的新密码",
+      "confirmPasswordLabel": "确认新密码",
+      "confirmPasswordPlaceholder": "再次输入你的新密码",
+      "submit": "重置密码",
+      "submitting": "重置中……",
+      "remembered": "想起密码了？<link>登录</link>"
     },
     "resendConfirmation": {
-      "title": "�",
-      "subtitle": "�",
-      "successMessage": "�",
-      "submit": "�",
-      "confirmed": "�"
+      "title": "重新发送确认说明",
+      "subtitle": "没有收到确认邮件？填写下面的表单，我们会再发一封给你。",
+      "successMessage": "如果该邮箱对应的账号存在，你很快就会收到确认说明。",
+      "submit": "重新发送确认说明",
+      "confirmed": "已经确认过了？<link>登录</link>"
     },
     "checkInbox": {
-      "heading": "�",
-      "sentTo": "�",
-      "hint": "�"
+      "heading": "查看你的收件箱",
+      "sentTo": "我们已将确认邮件发送至",
+      "hint": "点击邮件中的链接来激活你的账号。没收到？<link>重新发送邮件</link>"
     },
     "emailConfirmed": {
-      "heading": "�",
-      "message": "�"
+      "heading": "邮箱已确认！",
+      "message": "你的邮箱已确认成功，正在跳转到仪表盘……"
     },
     "confirmEmail": {
-      "pendingTitle": "�",
-      "pendingDescription": "�",
-      "errorTitle": "�",
-      "errorMessage": "�",
-      "errorCta": "�"
+      "pendingTitle": "正在确认你的邮箱……",
+      "pendingDescription": "请稍候，我们正在确认你的邮箱地址。",
+      "errorTitle": "链接已失效",
+      "errorMessage": "这个确认链接已失效。请重新申请一个链接后继续。",
+      "errorCta": "重新发送确认邮件"
     },
     "exercismCallback": {
-      "errorTitle": "�",
-      "errorCta": "�",
-      "pendingTitle": "�",
-      "pendingDescription": "�",
-      "authFailed": "�"
+      "errorTitle": "登录失败",
+      "errorCta": "返回登录",
+      "pendingTitle": "正在为你登录……",
+      "pendingDescription": "请稍候，我们正在通过 Exercism 为你登录。",
+      "authFailed": "Exercism 身份验证失败"
     },
     "errorCard": {
-      "needHelp": "�"
+      "needHelp": "需要帮助？<link>联系客服</link>"
     },
     "twoFactorVerify": {
-      "title": "�",
-      "subtitle": "�",
-      "codeLabel": "�"
+      "title": "双重验证",
+      "subtitle": "输入身份验证器应用中的 6 位验证码。",
+      "codeLabel": "验证码"
     },
     "twoFactorSetup": {
-      "instructionsHeading": "�",
-      "appsHint": "�",
-      "codeLabel": "�"
+      "instructionsHeading": "用你的身份验证器应用扫描二维码，保护你的账号。",
+      "appsHint": "使用 Google Authenticator、1Password、Authy 或类似应用扫描上方的二维码。",
+      "codeLabel": "输入应用中的 6 位验证码"
     },
     "unsubscribe": {
-      "noToken": "�",
-      "linkInvalid": "�",
-      "tooManyRequests": "�",
-      "serviceUnavailable": "�",
-      "unableToProcess": "�",
-      "networkError": "�",
-      "processingTitle": "�",
-      "processingDescription": "�",
-      "successTitle": "�",
-      "successDescription": "�",
-      "errorTitle": "�"
+      "noToken": "未提供退订令牌。",
+      "linkInvalid": "这个退订链接无效或已失效。",
+      "tooManyRequests": "请求过于频繁。请稍等片刻再试。",
+      "serviceUnavailable": "服务暂时不可用。请稍后再试。",
+      "unableToProcess": "无法处理你的请求。如果问题持续存在，请联系客服。",
+      "networkError": "网络错误。请检查你的网络连接，然后重试。",
+      "processingTitle": "正在退订……",
+      "processingDescription": "请稍候，我们正在处理你的请求。",
+      "successTitle": "退订成功",
+      "successDescription": "你已成功退订我们的邮件列表。",
+      "errorTitle": "退订失败"
     },
     "twoFactor": {
-      "cancel": "�",
-      "invalidCode": "�",
-      "verificationFailed": "�"
+      "cancel": "取消并重新登录",
+      "invalidCode": "验证码无效",
+      "verificationFailed": "验证失败，请重试。"
     },
     "layout": {
-      "logoAlt": "�",
-      "tagline": "�",
-      "description": "�",
-      "createdBy": "�",
-      "brand": "�"
+      "logoAlt": "Jiki",
+      "tagline": "你的编程之旅从这里开始",
+      "description": "和数百万学习者一起，通过动手写代码的练习，改变自己的职业生涯。",
+      "createdBy": "创建者",
+      "brand": "Exercism 背后的团队"
     }
   },
   "settings": {
     "page": {
-      "title": "�",
-      "description": "�",
-      "tabAccount": "�",
-      "tabSubscription": "�",
-      "tabNotifications": "�",
-      "tabLearning": "�",
-      "tabDanger": "�"
+      "title": "设置",
+      "description": "管理你的账号和偏好设置。",
+      "tabAccount": "账号",
+      "tabSubscription": "订阅",
+      "tabNotifications": "通知",
+      "tabLearning": "学习",
+      "tabDanger": "危险区域"
     },
     "avatarEdit": {
-      "adjustTitle": "�",
-      "adjustSubtitle": "�",
-      "back": "�",
-      "save": "�",
-      "changeTitle": "�",
-      "changeSubtitlePart1": "�",
-      "changeSubtitlePart2": "�",
-      "uploadText": "�",
-      "uploadHint": "�"
+      "adjustTitle": "调整照片",
+      "adjustSubtitle": "缩放并调整照片的位置。",
+      "back": "返回",
+      "save": "保存",
+      "changeTitle": "更换头像",
+      "changeSubtitlePart1": "上传新的头像图片。",
+      "changeSubtitlePart2": "只有你自己能看到。",
+      "uploadText": "点击上传新照片",
+      "uploadHint": "支持 JPG、PNG 或 GIF，最大 5MB。"
     },
     "avatarUpload": {
-      "label": "�"
+      "label": "头像"
     },
     "avatarPreview": {
-      "alt": "�"
+      "alt": "你的头像"
     },
     "cancelConfirm": {
-      "title": "�",
-      "message": "�",
-      "benefitsTitle": "�",
-      "benefit1": "�",
-      "benefit2": "�",
-      "benefit3": "�",
-      "benefit4": "�",
-      "keep": "�",
-      "cancel": "�",
-      "defaultBillingPeriodEnd": "�"
+      "title": "确定要取消订阅吗？",
+      "message": "我们不想看到你离开！如果取消订阅，你将在当前计费周期结束后失去高级版的使用权限。",
+      "benefitsTitle": "你目前享有：",
+      "benefit1": "Jiki 提供的无限 AI 帮助",
+      "benefit2": "所有项目和学习路径",
+      "benefit3": "结业证书",
+      "benefit4": "无广告体验",
+      "keep": "保留订阅",
+      "cancel": "取消订阅",
+      "defaultBillingPeriodEnd": "你的计费周期结束日期"
     },
     "cancelSuccess": {
-      "title": "�",
-      "message": "�",
-      "accessUntil": "�",
-      "resubscribeNote": "�",
-      "gotIt": "�"
+      "title": "订阅已取消",
+      "message": "你的高级版订阅已取消。在当前计费周期结束前，你仍可以继续使用所有高级版功能。",
+      "accessUntil": "高级版有效期至",
+      "resubscribeNote": "改变主意了？你随时可以重新订阅。",
+      "gotIt": "知道了"
     },
     "changeEmail": {
-      "title": "�",
-      "importantLabel": "�",
-      "importantText": "�",
-      "currentEmailLabel": "�",
-      "newEmailLabel": "�",
-      "newEmailPlaceholder": "�",
-      "passwordLabel": "�",
-      "passwordPlaceholder": "�",
-      "passwordHint": "�",
-      "newEmailRequired": "�",
-      "emailSame": "�",
-      "updateFailed": "�",
-      "submit": "�"
+      "title": "更换邮箱地址",
+      "importantLabel": "重要提示：",
+      "importantText": "确认邮件将发送到你的新邮箱地址。你需要先完成确认，更改才会生效。",
+      "currentEmailLabel": "当前邮箱",
+      "newEmailLabel": "新邮箱地址",
+      "newEmailPlaceholder": "输入你的新邮箱地址",
+      "passwordLabel": "用当前密码确认",
+      "passwordPlaceholder": "输入你的当前密码",
+      "passwordHint": "安全验证必填",
+      "newEmailRequired": "请填写新邮箱",
+      "emailSame": "新邮箱必须与当前邮箱不同",
+      "updateFailed": "邮箱更新失败",
+      "submit": "更新邮箱"
     },
     "deleteAccount": {
-      "sendFailed": "�",
-      "confirmTitle": "�",
-      "confirmMessage": "�",
-      "submit": "�",
-      "securityTitle": "�",
-      "securityMessage": "�",
-      "understand": "�"
+      "sendFailed": "确认邮件发送失败，请重试。",
+      "confirmTitle": "确定吗？",
+      "confirmMessage": "你真的要删除账号吗？你将失去所有的学习成果。此操作不可撤销。",
+      "submit": "删除账号",
+      "securityTitle": "安全验证",
+      "securityMessage": "我们已给你发送一封邮件，确认是你本人操作。请点击邮件中的按钮来删除你的账户。",
+      "understand": "我明白了"
     },
     "paymentHistory": {
-      "title": "�",
-      "subtitle": "�",
-      "loading": "�",
-      "error": "�",
-      "empty": "�",
-      "columnDate": "�",
-      "columnAmount": "�",
-      "columnType": "�",
-      "columnMethod": "�",
-      "downloadReceipt": "�",
-      "typeRecurring": "�",
-      "dateUnavailable": "�"
+      "title": "支付记录",
+      "subtitle": "查看并下载你过去付款的收据。",
+      "loading": "正在加载支付记录……",
+      "error": "无法加载支付记录，请稍后重试。",
+      "empty": "暂无支付记录。",
+      "columnDate": "日期",
+      "columnAmount": "金额",
+      "columnType": "类型",
+      "columnMethod": "支付方式",
+      "downloadReceipt": "下载收据",
+      "typeRecurring": "定期",
+      "dateUnavailable": "日期不可用"
     },
     "profile": {
-      "nameLabel": "�",
-      "namePlaceholder": "�",
-      "updateName": "�",
-      "nameEmpty": "�",
-      "nameTooLong": "�",
-      "handleLabel": "�",
-      "handlePlaceholder": "�",
-      "updateHandle": "�",
-      "handleEmpty": "�",
-      "handleInvalid": "�",
-      "handleTooShort": "�",
-      "handleTooLong": "�",
-      "emailLabel": "�",
-      "emailPlaceholder": "�",
-      "updateEmail": "�",
-      "emailEmpty": "�",
-      "confirmationPendingHint": "�",
-      "emailNotConfirmed": "�",
-      "confirmationPending": "�"
+      "nameLabel": "姓名",
+      "namePlaceholder": "输入你的姓名",
+      "updateName": "更新姓名",
+      "nameEmpty": "姓名不能为空",
+      "nameTooLong": "姓名不能超过 100 个字符",
+      "handleLabel": "用户名",
+      "handlePlaceholder": "输入你的用户名",
+      "updateHandle": "更新用户名",
+      "handleEmpty": "用户名不能为空",
+      "handleInvalid": "用户名只能包含字母、数字、下划线和连字符",
+      "handleTooShort": "用户名至少需要 3 个字符",
+      "handleTooLong": "用户名不能超过 30 个字符",
+      "emailLabel": "邮箱",
+      "emailPlaceholder": "输入你的邮箱",
+      "updateEmail": "更新邮箱",
+      "emailEmpty": "邮箱不能为空",
+      "confirmationPendingHint": "请查看你的邮箱，确认此次更改。",
+      "emailNotConfirmed": "你的邮箱地址尚未确认。",
+      "confirmationPending": "等待确认：<strong>{email}</strong>"
     },
     "language": {
-      "label": "�",
-      "comingSoon": "�",
-      "comingSoonBadge": "�",
-      "saveFailed": "�"
+      "label": "语言 (Change language)",
+      "comingSoon": "即将推出",
+      "comingSoonBadge": "即将",
+      "saveFailed": "无法更改你的语言，请重试。",
+      "done": "完成",
+      "searchLabel": "搜索语言",
+      "searchPlaceholder": "搜索语言",
+      "noMatches": "没有找到与“{query}”匹配的语言。",
+      "noMatchesHint": "试试它的英文名称，或者它的语言代码。",
+      "selected": "已选择",
+      "saving": "正在更改语言",
+      "communityNote": "翻译由社区完成。",
+      "helpTranslate": "帮助翻译 Jiki"
     },
     "subscriptionSection": {
-      "loadingCardTitle": "�",
-      "loadingCardDescription": "�",
-      "loadingData": "�"
+      "loadingCardTitle": "订阅",
+      "loadingCardDescription": "管理你的订阅方案和账单信息",
+      "loadingData": "正在加载订阅数据……"
     },
     "benefits": {
-      "activeSubtitle": "�",
-      "cancellingSubtitle": "�",
-      "resubscribeTitle": "�",
-      "resubscribeButton": "�",
-      "activeHeading": "�",
-      "cancellingHeading": "�",
-      "footer": "�",
-      "resubscribe": "�"
+      "activeSubtitle": "这是你每天解锁的内容",
+      "cancellingSubtitle": "这是权限结束后你将失去的内容",
+      "resubscribeTitle": "不受限制，继续学习",
+      "resubscribeButton": "重新订阅高级版",
+      "activeHeading": "你正在享受<highlight>高级版</highlight>权益",
+      "cancellingHeading": "别失去你的<highlight>高级版</highlight>权益",
+      "footer": "有疑问？了解<includedLink>包含哪些内容</includedLink>，或者<supportLink>联系客服</supportLink>。",
+      "resubscribe": "现在只需<price></price>就能重新订阅，在 Jiki 的陪伴下继续你的编程之旅。"
     },
     "cancelSectionPanel": {
-      "title": "�",
-      "description": "�",
-      "cancel": "�"
+      "title": "取消订阅",
+      "description": "如果你取消，在本计费周期结束后，你将无法使用高级版功能。你随时可以重新订阅。",
+      "cancel": "取消"
     },
     "premiumUpsell": {
-      "subtitle": "�",
-      "planName": "�",
-      "upgrade": "�",
-      "headline": "�",
-      "dailyNote": "�"
+      "subtitle": "你目前使用的是免费套餐。升级到高级版即可解锁：",
+      "planName": "Jiki 高级版",
+      "upgrade": "升级到高级版",
+      "headline": "解锁<highlight>更好</highlight>的学习方式",
+      "dailyNote": "每天只要<price></price>"
     },
     "neverSubscribed": {
-      "heading": "�",
-      "subtitle": "�",
-      "featuresLabel": "�",
-      "upgradeAriaLabel": "�",
-      "upgrade": "�"
+      "heading": "升级你的套餐",
+      "subtitle": "订阅我们的高级版套餐，解锁进阶功能和更好的学习体验。",
+      "featuresLabel": "高级版套餐功能",
+      "upgradeAriaLabel": "升级到{plan}套餐",
+      "upgrade": "升级到高级版"
     },
     "errorBoundary": {
-      "title": "�",
-      "messagePart1": "�",
-      "messagePart2": "�",
-      "refresh": "�",
-      "detailsSummary": "�"
+      "title": "订阅系统错误",
+      "messagePart1": "我们在加载你的订阅信息时遇到了问题。这可能是我们的支付系统出现了暂时性故障。",
+      "messagePart2": "请试着刷新页面；如果问题仍然存在，请联系客服。",
+      "refresh": "刷新页面",
+      "detailsSummary": "错误详情（开发）"
     },
     "danger": {
-      "sessionLabel": "�",
-      "sessionDescription": "�",
-      "logout": "�",
-      "deleteLabel": "�",
-      "deleteDescription": "�",
-      "deleteButton": "�"
+      "sessionLabel": "会话管理",
+      "sessionDescription": "管理你在所有设备上的活跃会话。",
+      "logout": "退出登录",
+      "deleteLabel": "删除账户",
+      "deleteDescription": "永久删除你的账户及所有相关数据。此操作无法撤销。",
+      "deleteButton": "删除账户"
     },
     "learning": {
-      "streaksLabel": "�",
-      "streaksDescription": "�",
-      "toggleAriaLabel": "�",
-      "learnMore": "�"
+      "streaksLabel": "连续学习天数",
+      "streaksDescription": "在我的账户上启用连续学习天数。",
+      "toggleAriaLabel": "切换连续学习天数",
+      "learnMore": "了解更多"
     },
     "notifications": {
-      "toggleAriaLabel": "�",
-      "essentialTitle": "�",
-      "essentialDescription": "�",
-      "featuresTitle": "�",
-      "featuresDescription": "�",
-      "livestreamsTitle": "�",
-      "livestreamsDescription": "�",
-      "milestonesTitle": "�",
-      "milestonesDescription": "�",
-      "activityTitle": "�",
-      "activityDescription": "�",
-      "onboardingTitle": "�",
-      "onboardingDescription": "�"
+      "toggleAriaLabel": "切换{title}",
+      "essentialTitle": "必要的服务/账户消息",
+      "essentialDescription": "关于你的账户、安全和服务变更的重要更新。",
+      "featuresTitle": "关于新功能或新内容的邮件",
+      "featuresDescription": "及时了解 Jiki 上新增的最新功能和内容。",
+      "livestreamsTitle": "关于直播的邮件",
+      "livestreamsDescription": "接收即将开始的直播和活动的通知。",
+      "milestonesTitle": "当你达成新里程碑时的邮件",
+      "milestonesDescription": "庆祝你在 Jiki 上取得的成就和进步。",
+      "activityTitle": "你在 Jiki 上做了某些操作后发送的其他邮件",
+      "activityDescription": "基于活动的通知，例如解锁徽章和完成挑战。",
+      "onboardingTitle": "帮助你充分利用 Jiki 的邮件",
+      "onboardingDescription": "关于如何充分利用 Jiki 的技巧和指导。"
     },
     "editableField": {
-      "update": "�",
-      "edit": "�",
-      "saveFailed": "�"
+      "update": "更新",
+      "edit": "编辑",
+      "saveFailed": "保存失败"
     },
     "passwordField": {
-      "updateFailed": "�",
-      "currentLabel": "�",
-      "currentPlaceholder": "�",
-      "newLabel": "�",
-      "newPlaceholder": "�",
-      "confirmLabel": "�",
-      "confirmPlaceholder": "�",
-      "submit": "�",
-      "label": "�",
-      "change": "�"
+      "updateFailed": "密码更新失败",
+      "currentLabel": "当前密码",
+      "currentPlaceholder": "输入当前密码",
+      "newLabel": "新密码",
+      "newPlaceholder": "输入新密码",
+      "confirmLabel": "确认新密码",
+      "confirmPlaceholder": "确认新密码",
+      "submit": "更新密码",
+      "label": "密码",
+      "change": "更改"
     },
     "subscriptionStatus": {
-      "statusActive": "�",
-      "statusCanceled": "�",
-      "statusPaymentFailed": "�",
-      "statusCancelling": "�",
-      "statusIncomplete": "�",
-      "statusSessionExpired": "�",
-      "statusNotSubscribed": "�",
-      "currentPlan": "�",
-      "cancellingMessage": "�",
-      "currentPlanAriaLabel": "�",
-      "statusAriaLabel": "�",
-      "messageCanceled": "�",
-      "messagePaymentFailed": "�",
-      "messageCancelling": "�",
-      "messageIncomplete": "�",
-      "messageIncompleteExpired": "�",
-      "active": "�",
-      "activeWithBilling": "�",
-      "cancellingRemaining": "�",
-      "cancellingEnds": "�",
-      "free": "�",
-      "planLabel": "�"
+      "statusActive": "有效",
+      "statusCanceled": "已取消",
+      "statusPaymentFailed": "支付失败",
+      "statusCancelling": "取消中",
+      "statusIncomplete": "未完成",
+      "statusSessionExpired": "会话已过期",
+      "statusNotSubscribed": "未订阅",
+      "currentPlan": "当前套餐",
+      "cancellingMessage": "你的 Jiki 高级版订阅已取消。",
+      "currentPlanAriaLabel": "当前套餐：{plan}",
+      "statusAriaLabel": "订阅状态：{status}",
+      "messageCanceled": "服务将持续到本周期结束",
+      "messagePaymentFailed": "支付失败，请更新支付方式",
+      "messageCancelling": "已安排取消，可使用至本周期结束",
+      "messageIncomplete": "支付设置未完成，请完成设置",
+      "messageIncompleteExpired": "之前的结账会话已过期，请重新开始订阅",
+      "active": "你当前使用的是<plan>Jiki {tier}</plan>套餐，每月<strong><price></price></strong>。",
+      "activeWithBilling": "你当前使用的是<plan>Jiki {tier}</plan>套餐，每月<strong><price></price></strong>。下次扣费日期是<strong>{date}</strong>。",
+      "cancellingRemaining": "你还有<strong>{count, plural, other {# 天}}</strong>可以继续享用全部高级版功能。",
+      "cancellingEnds": "你的高级版套餐将于<strong>{date}</strong>结束。",
+      "free": "你当前使用的是<strong>免费版</strong>套餐。你可以使用全部内容，还能让“问 Jiki”帮你完成一个练习。",
+      "planLabel": "{tier} 套餐"
     }
   },
   "landing": {
     "hero": {
-      "tagline": "�",
-      "loadingVideo": "�",
-      "playVideo": "�",
-      "watchPrompt": "�",
-      "headline": "�",
-      "audienceBeginners": "�",
-      "audienceJuniors": "�",
-      "audienceEntrepreneurs": "�"
+      "tagline": "学习你需要的技能，去创造出色的作品、保持高效，并在 {year} 年<strong>保持竞争力。</strong>",
+      "loadingVideo": "正在加载视频",
+      "playVideo": "播放视频",
+      "watchPrompt": "不喜欢读文字？<strong>点一下播放</strong>，我把你想知道的都讲给你听！",
+      "headline": "学习<highlight>编程与构建</highlight>的现代方式",
+      "audienceBeginners": "<name>初学者</name>，想找到最快最好的学习方式",
+      "audienceJuniors": "<name>初级开发者</name>，想快速提升知识水平",
+      "audienceEntrepreneurs": "<name>创业者和氛围编程者</name>，想在招人之前先自己做出产品"
     },
     "twoHalves": {
-      "eyebrow": "�",
-      "heading": "�",
-      "intro": "�",
-      "codeHeading": "�",
-      "codeBody": "�",
-      "buildHeading": "�",
-      "buildBody": "�",
-      "techLabel": "�"
+      "eyebrow": "你的两项核心技能",
+      "heading": "成为开发者的两半",
+      "intro": "Jiki 教你<strong>如何编程</strong>（用最有趣、最有效的方式！），也教你用专业开发者日常使用的技术<strong>做出真正的作品</strong>。<strong>从第一天开始。</strong>",
+      "codeHeading": "学习<word>编程</word>",
+      "codeBody": "每个核心概念都有详细的视频讲解，还有上百个练习和项目供你动手实践",
+      "buildHeading": "学习<word>构建</word>",
+      "buildBody": "从第一天起就学习专业开发者使用的技术：数据库、身份验证、前端、后端，还有更多！",
+      "techLabel": "你将学到的技术包括："
     },
     "learnToCode": {
-      "heading": "�",
-      "intro": "�",
+      "heading": "学习<word>编程</word>",
+      "intro": "掌握编程这项核心技能，它是我们向计算机表达需求的方式。我们会帮你<highlight>打下扎实的编程基础</highlight>。",
       "demo": {
-        "stageDescription": "�",
-        "run": "�",
-        "tabInstructions": "�",
-        "tabJiki": "�",
-        "tabLog": "�",
-        "tabHints": "�",
-        "instrHeading": "�",
-        "instr1": "�",
-        "instr2": "�",
-        "fnRight": "�",
-        "fnLeft": "�",
-        "fnShoot": "�",
-        "instr3": "�",
-        "scenarioTitle": "�",
-        "badgePending": "�",
-        "badgeFail": "�",
-        "badgePass": "�",
-        "verdictPending": "�",
-        "verdictFail": "�",
-        "verdictPass": "�",
-        "errorTitle": "�",
-        "errorBody": "�",
-        "chat1": "�",
-        "chat2": "�",
-        "chat3": "�",
-        "chat4": "�",
-        "chat5": "�",
-        "chatPlaceholder": "�",
-        "jikiAvatarAlt": "�",
-        "successTitle": "�",
-        "successBody": "�",
-        "successBtn": "�"
+        "stageDescription": "Jiki 应用的一段动画：一位学习者运行一个太空侵略者练习，代码把激光炮移出了网格边缘，学习者向 Jiki 求助，把边界值从 20 修正为 11，练习就通过了。",
+        "run": "运行代码",
+        "tabInstructions": "说明",
+        "tabJiki": "问 Jiki",
+        "tabLog": "日志",
+        "tabHints": "提示",
+        "instrHeading": "外星人探测器",
+        "instr1": "外星人散布在三行中，有些列还不止一个。",
+        "instr2": "你有三个函数可以用：",
+        "fnRight": "把激光炮向右移动一列",
+        "fnLeft": "把它向左移动一列",
+        "fnShoot": "向上发射激光",
+        "instr3": "一共有 11 列。从任意一边移出去就会失败，所以要随时记住自己的位置。",
+        "scenarioTitle": "三行：外星人分布在全部三行中",
+        "badgePending": "待运行",
+        "badgeFail": "失败",
+        "badgePass": "通过",
+        "verdictPending": "运行你的代码，看看这个场景能否通过。",
+        "verdictFail": "你的代码在运行时出错了。请根据上面的错误信息修正代码。",
+        "verdictPass": "六个外星人全部消灭，干得漂亮！",
+        "errorTitle": "哎呀，你走得太远了！",
+        "errorBody": "你的激光炮移出了屏幕右边缘。记得随时留意自己的位置，走到尽头时要掉头。",
+        "chat1": "你好呀！怎么啦？",
+        "chat2": "我的炮总是跑到屏幕外面去。",
+        "chat3": "我们看看你刚写的那行代码。当<code>position</code>到达 20 时你就掉头了，可网格到底有多少列呢？",
+        "chat4": "11 列。",
+        "chat5": "就是这个。<code>position</code>永远到不了 20，所以<code>move_left()</code>根本不会执行。把那个边界改成 11，炮就会在最后一列掉头。",
+        "chatPlaceholder": "回复 Jiki…",
+        "jikiAvatarAlt": "Jiki",
+        "successTitle": "恭喜你！",
+        "successBody": "所有测试都通过了！你成功完成了这个练习。",
+        "successBtn": "继续"
       },
       "callouts": {
         "tested": {
-          "title": "�",
-          "body": "�"
+          "title": "每个练习都是一个真实的程序",
+          "body": "循环、条件和变量，这些都是<hl>你以后写的每个程序都会用到的技巧</hl>。"
         },
         "see": {
-          "title": "�",
-          "body": "�"
+          "title": "做有趣又好玩的练习",
+          "body": "这里没有枯燥的纯文字练习。<hl>做游戏、解谜题、尽情玩！</hl>"
         },
         "rewind": {
-          "title": "�",
-          "body": "�"
+          "title": "回放你自己的代码",
+          "body": "一步步倒回每条指令，<hl>看清到底发生了什么</hl>，一行一行地看。"
         },
         "errors": {
-          "title": "�",
-          "body": "�"
+          "title": "用大白话解释错误",
+          "body": "出问题时，我们会<hl>用日常语言而不是技术术语</hl>告诉你哪里出了错。"
         },
         "help": {
-          "title": "�",
-          "body": "�"
+          "title": "给你帮助，不给答案",
+          "body": "和 Jiki 一起走出困境。<hl>学会怎么思考</hl>，而不只是通过练习。"
         },
         "next": {
-          "title": "�",
-          "body": "�"
+          "title": "总能再上一个台阶",
+          "body": "每个练习都比上一个稍微推着你前进一点。<hl>下一步永远触手可及</hl>。"
         }
       }
     },
     "funPrints": {
-      "eyebrow": "�",
-      "heading": "�",
-      "sub": "�",
-      "spaceInvaders": "�",
-      "ticTacToe": "�",
-      "breakout": "�",
-      "mazeSolver": "�",
-      "flowerFlipbook": "�",
-      "footnote": "�"
+      "eyebrow": "看看你能做出什么",
+      "heading": "做游戏。做动画。解谜题。",
+      "sub": "这些作品全都由同样几个核心概念构成，到最后你会做出<strong>几百个</strong>类似的作品。",
+      "spaceInvaders": "太空侵略者",
+      "ticTacToe": "井字棋",
+      "breakout": "打砖块",
+      "mazeSolver": "迷宫求解",
+      "flowerFlipbook": "花朵翻页书",
+      "footnote": "……而这还只是前几周！"
     },
     "learnToBuild": {
-      "heading": "�",
-      "intro": "�",
-      "livestreamsLead": "�",
-      "livestreamsDetail": "�",
-      "technologiesLead": "�",
-      "technologiesDetail": "�",
-      "portfolioLead": "�",
-      "portfolioDetail": "�",
-      "liveQaAlt": "�",
-      "topicsLabel": "�",
-      "databases": "�",
-      "auth": "�",
-      "frontendBackend": "�",
-      "apis": "�",
-      "deployment": "�",
-      "llmIntegration": "�",
-      "liveQa_fred": "�",
-      "liveQa_oleksandra": "�",
-      "liveQa_shaun": "�",
-      "liveQa_lukas": "�",
-      "joinLive": "�",
-      "catchUp": "�",
-      "getSupport": "�",
-      "liveQa_drac": "�"
+      "heading": "学会<word>构建</word>",
+      "intro": "用现代的智能体编程，快速学会数据库、身份验证、前端、后端等核心技术。",
+      "livestreamsLead": "互动式教学直播",
+      "livestreamsDetail": "卡在某个概念或自己的项目上？在<strong>定期直播</strong>里找到答案，还有来自社区的真实问题。",
+      "technologiesLead": "真实项目，不是假项目。",
+      "technologiesDetail": "看 Jeremy 从零开始构建真实项目、解释每一个决定，你可以跟着一起动手实现自己的想法。",
+      "portfolioLead": "学习各种各样的技术",
+      "portfolioDetail": "构建一个现代应用要和各种不同的系统打交道：身份验证、API、后端、前端。这些我们都会教你。",
+      "liveQaAlt": "Jeremy 主持 Jiki 直播问答",
+      "topicsLabel": "动手实践：",
+      "databases": "数据库",
+      "auth": "身份验证",
+      "frontendBackend": "前端与后端",
+      "apis": "API",
+      "deployment": "部署",
+      "llmIntegration": "LLM 集成",
+      "liveQa_fred": "终于跑通了。试了三次才成功。",
+      "liveQa_oleksandra": "谁能再讲一下闭包？语法我懂，就是不明白为什么要用它。",
+      "liveQa_shaun": "啊，这样一说就明白了。",
+      "liveQa_lukas": "刚部署了我的第一个项目。真没想到自己能做到这一步。",
+      "joinLive": "加入直播讨论",
+      "catchUp": "稍后补看",
+      "getSupport": "获取支持",
+      "liveQa_drac": "这是我见过讲得最清楚的解释 🙌"
     },
     "outcomes": {
-      "bubble": "�",
-      "heading": "�",
-      "sub": "�",
-      "certificateTitle": "�",
-      "certificateBody": "�",
-      "certificateAlt": "�",
-      "shareOnLinkedIn": "�",
-      "portfolioTitle": "�",
-      "portfolioBody": "�",
-      "habitTracker": "�",
-      "homepage": "�",
-      "recipeBox": "�",
-      "dashboard": "�",
-      "understandingTitle": "�",
-      "understandingBody": "�",
-      "codeNote": "�"
+      "bubble": "课程结束时",
+      "heading": "你会收获什么",
+      "sub": "大多数课程只留给你一个看视频的习惯。Jiki 留给你的却是技能、证明，以及一个真实项目的作品集。",
+      "certificateTitle": "一份可验证的证书",
+      "certificateBody": "你会得到一份可验证的证书，可以添加到你的简历和 LinkedIn 个人资料的认证板块。而且你会知道自己实至名归！",
+      "certificateAlt": "Jiki 课程结业证书",
+      "shareOnLinkedIn": "在 LinkedIn 上分享",
+      "portfolioTitle": "丰富多样的真实项目作品集",
+      "portfolioBody": "做真正符合你兴趣的项目。不是千篇一律的待办清单应用，而是能展现你的创造力、聪明才智和知识的真正应用。",
+      "habitTracker": "个人习惯追踪器",
+      "homepage": "数字大本营",
+      "recipeBox": "食谱规划器",
+      "dashboard": "数据仪表盘",
+      "understandingTitle": "理解一切是如何运作的",
+      "understandingBody": "Jiki 会为你打下扎实的基础，让你可以在此基础上建立自己的职业生涯。能读懂不熟悉的代码，推理出它的运作方式，并快速发现 bug。",
+      "codeNote": "你将学会从零开始做出像 Wordle 这样的游戏"
     },
     "meetJeremy": {
-      "portraitAlt": "�",
-      "intro": "�",
-      "badgeDeveloper": "�",
-      "badgeTeacher": "�",
-      "badgeMission": "�",
-      "developerTitle": "�",
-      "developerDetail": "�",
-      "teacherTitle": "�",
-      "teacherDetail": "�",
-      "entrepreneurTitle": "�",
-      "entrepreneurDetail": "�",
-      "story": "�",
-      "why": "�",
-      "signature": "�",
-      "quote": "�",
-      "quoteName": "�",
-      "quoteRole": "�"
+      "portraitAlt": "Jeremy Walker",
+      "intro": "你好！👋 我是 Jeremy，我帮助过全世界<strong>数百万人</strong>提升编程技能。",
+      "badgeDeveloper": "资深开发者",
+      "badgeTeacher": "充满热情的老师",
+      "badgeMission": "使命驱动",
+      "developerTitle": "资深开发者",
+      "developerDetail": "全栈开发 • 35 年经验 • 用 20 多种语言写代码（包括我自己创造的语言！） • 人工智能学位（2005 年） • 拥有专利的心脏手术人工智能系统",
+      "teacherTitle": "充满热情的老师",
+      "teacherDetail": "20 年经验 • 教过 300 多万人 • 创办了四家教育公司",
+      "entrepreneurTitle": "使命驱动的创业者",
+      "entrepreneurDetail": "创办了多家公益组织，包括 Exercism、Kaido、Thalamus 等 • 运营着全球最大的开源项目之一",
+      "story": "从我 8 岁起，编程就一直是我生活的中心。它教会了我<strong>创造力</strong>、<strong>解决问题的能力</strong>和<strong>批判性思维</strong>。它也让我拥有了一份自己热爱的职业，在教育、医学和人工智能领域创办公司。",
+      "why": "我做了 Jiki，是因为<strong>我想把这些分享给你</strong>。我希望你也能获得编程带给我的同样的快乐和收获。我相信<strong>学编程应该是一件有趣的事</strong>。软件开发行业正在快速变化，智能体编程正在成为常态。我会<strong>带你走上这段旅程</strong>，确保无论你是想进入科技行业，还是只想知道到底发生了什么，你都能做到。希望你能加入我！",
+      "signature": "Jeremy",
+      "quote": "你通过写代码来学会写代码，用代码去解决那些与你能力相称、又能推动你进步的问题。<strong>Jeremy 是一位大师级的老师。</strong>",
+      "quoteName": "Thom Chittom",
+      "quoteRole": "初学者"
     },
     "printRow": {
-      "joinNote": "�",
-      "spaceInvaders": "�",
-      "breakout": "�",
-      "maze": "�",
-      "heading": "�",
-      "body": "�",
-      "free": "�",
-      "projects": "�",
-      "unstuck": "�",
-      "cta": "�"
+      "joinNote": "快来一起玩！",
+      "spaceInvaders": "太空侵略者",
+      "breakout": "打砖块",
+      "maze": "迷宫",
+      "heading": "准备好做你的第一个了吗？",
+      "body": "从第一天开始就学编程、做真实项目，Jeremy 会在每一步为你指路。",
+      "free": "100 多小时免费内容",
+      "projects": "做真实项目",
+      "unstuck": "再也不会卡住",
+      "cta": "立即开始"
     },
     "exercism": {
-      "eyebrow": "�",
-      "heading": "�",
-      "support": "�",
-      "taughtValue": "�",
-      "taughtLabel": "�",
-      "testimonialsValue": "�",
-      "testimonialsLabel": "�",
-      "submittedValue": "�",
-      "submittedLabel": "�"
+      "eyebrow": "出自 Exercism 团队之手",
+      "heading": "领先的<highlight>编程练习</highlight>教育平台",
+      "support": "Jiki 由<strong>Exercism 背后的团队</strong>打造。我们把这些年帮助数百万学员提升技能的经验，全都用在了它身上。",
+      "taughtValue": "290 万+",
+      "taughtLabel": "教过的学员",
+      "testimonialsValue": "8.5 万+",
+      "testimonialsLabel": "学员评价",
+      "submittedValue": "6900 万+",
+      "submittedLabel": "提交的练习"
     },
     "signupButton": {
-      "label": "�"
+      "label": "注册 <free>（免费！）</free>"
     },
     "faqs": {
-      "heading": "�",
-      "q1": "�",
-      "q1a1": "�",
-      "q1Item1": "�",
-      "q1Item2": "�",
-      "q1Item3": "�",
-      "q1Item4": "�",
-      "q1Item5": "�",
-      "q1Item6": "�",
-      "q1Item7": "�",
-      "q2": "�",
-      "q2a": "�",
-      "q3": "�",
-      "q3a1": "�",
-      "q3a2": "�",
-      "q4": "�",
-      "q4a1": "�",
-      "q4a2": "�",
-      "q5": "�",
-      "q5a1": "�",
-      "q5a2": "�",
-      "intro": "�",
-      "q1a2": "�"
+      "heading": "常见问题",
+      "q1": "要花多少钱？",
+      "q1a1": "<strong>学编程</strong>的练习，也就是核心的编程入门课程体系，是<strong>完全免费</strong>的。不用信用卡，没有试用期，更没有隐藏条件。",
+      "q1Item1": "<strong>学构建</strong>的完整访问权限",
+      "q1Item2": "在<strong>Jiki 项目</strong>中综合运用你的技能",
+      "q1Item3": "<strong>向 Jiki 提问</strong>的 AI 支持，次数不限",
+      "q1Item4": "定期举办<strong>直播答疑</strong>，你可以参加",
+      "q1Item5": "获得课程<strong>证书</strong>",
+      "q1Item6": "<strong>无广告</strong>的学习体验",
+      "q1Item7": "<strong>抢先体验</strong>新功能",
+      "q2": "这门课程每周需要花多少时间？",
+      "q2a": "花多少时间都可以，完全由你决定。大多数人每周花 5 到 10 小时，12 到 20 周就能学完<strong>学编程</strong>。<strong>学构建</strong>会持续更新，新内容上线后你可以随时来看，也可以在自己方便的时候参加直播。",
+      "q3": "这门课程有多难？我需要有多聪明？",
+      "q3a1": "这门课程面向所有人设计，无论你的背景如何都能上手。我们相信，学编程不需要你有多“聪明”。但你确实需要付出努力，并且愿意接受挑战。",
+      "q3a2": "但只要你肯付出努力，遇到卡壳时主动求助，并且拥抱挑战，你会惊讶地发现自己在短时间内能走多远。",
+      "q4": "Jiki 现在上线了吗？",
+      "q4a1": "可以。今天注册，就能开始学习免费的学编程课程体系。",
+      "q4a2": "第一期<strong>学构建</strong>将在<strong>六月中旬</strong>开始。进入平台后，你就可以订阅提醒。",
+      "q5": "我已经报名了训练营，这个和训练营有什么区别吗？",
+      "q5a1": "感谢你加入训练营！Jiki 是训练营进化的下一个阶段。你做过的大部分练习都会出现在 Jiki 里，而且还有更多新内容。我们还把 3 小时的视频拆成了 5 到 10 分钟的小段，看起来更轻松！",
+      "q5a2": "作为训练营成员，你会自动获得终身 Jiki 高级版。这适用于最初的学编程课程，以及未来的所有课程。",
+      "intro": "以下是我们被问得最多的问题。这里没有解答你的疑问？<link>给我们发封邮件吧！</link>",
+      "q1a2": "<strong>Jiki 高级版</strong>的价格是<price></price>（按国家/地区定价），可以解锁："
     },
     "latestNews": {
-      "heading": "�",
-      "byAuthor": "�",
-      "subheading": "�"
+      "heading": "最新动态",
+      "byAuthor": "作者：{name}",
+      "subheading": "在<link>我们的博客</link>里，随时了解 Jiki 的最新动态。"
     }
   },
   "premium": {
     "page": {
-      "heading": "�",
-      "subheading": "�"
+      "heading": "Jiki 高级版",
+      "subheading": "更快达到能胜任工作的水平。解锁所有课程、所有项目、无限的 AI 支持，以及 Jiki 提供的其他一切。"
     },
     "planPrice": {
-      "basic": "�",
-      "premium": "�",
-      "free": "�",
-      "perMonth": "�"
+      "basic": "基础版",
+      "premium": "高级版",
+      "free": "免费",
+      "perMonth": "每月"
     },
     "planBadge": {
-      "free": "�",
-      "premium": "�"
+      "free": "免费",
+      "premium": "高级版"
     },
     "table": {
-      "comparePlans": "�",
-      "comparePlansDesc": "�",
-      "checkNo": "�"
+      "comparePlans": "对比方案",
+      "comparePlansDesc": "下面是每种套餐包含的内容，你可以放心选择。",
+      "checkNo": "✕"
     },
     "values": {
-      "oneConversation": "�",
-      "unlimited": "�",
-      "firstEpisodes": "�",
-      "fullAccess": "�",
-      "sampleEpisode": "�"
+      "oneConversation": "1 次对话",
+      "unlimited": "无限",
+      "firstEpisodes": "前几集",
+      "fullAccess": "完整权限",
+      "sampleEpisode": "试看单集"
     },
     "categories": {
-      "codingFundamentals": "�",
-      "buildWithJeremy": "�",
-      "support": "�",
-      "certificates": "�",
-      "experience": "�"
+      "codingFundamentals": "学编程",
+      "buildWithJeremy": "学构建",
+      "support": "支持",
+      "certificates": "证书",
+      "experience": "体验"
     },
     "features": {
-      "codingExercisesTitle": "�",
-      "codingExercisesDesc": "�",
-      "conceptLibraryTitle": "�",
-      "conceptLibraryDesc": "�",
-      "jikiChallengesTitle": "�",
-      "jikiChallengesDesc": "�",
-      "askJikiTitle": "�",
-      "askJikiDesc": "�",
-      "buildingFundamentalsTitle": "�",
-      "buildingFundamentalsDesc": "�",
-      "howThingsWorkTitle": "�",
-      "howThingsWorkDesc": "�",
-      "earlyAccessTitle": "�",
-      "earlyAccessDesc": "�",
-      "communityForumsTitle": "�",
-      "communityForumsDesc": "�",
-      "livestreamsTitle": "�",
-      "livestreamsDesc": "�",
-      "certificatesTitle": "�",
-      "certificatesDesc": "�",
-      "adFreeTitle": "�",
-      "adFreeDesc": "�"
+      "codingExercisesTitle": "编程练习",
+      "codingExercisesDesc": "通过不断扩充的互动练习库，在动手实践中学习。",
+      "conceptLibraryTitle": "完整概念库",
+      "conceptLibraryDesc": "短小精悍的课程，涵盖你需要掌握的每一个编程概念。",
+      "jikiChallengesTitle": "挑战",
+      "jikiChallengesDesc": "挑战更难的题目，把技能推向更高水平。",
+      "askJikiTitle": "问 Jiki",
+      "askJikiDesc": "Jiki 提供 AI 驱动的提示和讲解，帮你摆脱卡壳。",
+      "buildingFundamentalsTitle": "构建基础系列",
+      "buildingFundamentalsDesc": "看 Jeremy 从零搭建一个 Web 平台：服务器、数据库、身份验证等等。",
+      "howThingsWorkTitle": "工作原理系列",
+      "howThingsWorkDesc": "深入讲解 Exercism 和 Jiki 中比较棘手的部分，以及它们为什么这样设计。",
+      "earlyAccessTitle": "新功能抢先体验",
+      "earlyAccessDesc": "比别人更早试用新功能。",
+      "communityForumsTitle": "社区论坛",
+      "communityForumsDesc": "提问交流，和其他 Jiki 学员一起学习。",
+      "livestreamsTitle": "与 Jeremy 的问答直播",
+      "livestreamsDesc": "参加直播问答，Jeremy 会解答你在编程和构建中遇到的问题。",
+      "certificatesTitle": "获得课程证书",
+      "certificatesDesc": "用可分享的证书展示你的学习成果。",
+      "adFreeTitle": "无广告学习",
+      "adFreeDesc": "专心学习，不受打扰。"
     },
     "faq": {
-      "title": "�",
-      "q1": "�",
-      "a1": "�",
-      "q2": "�",
-      "a2": "�",
-      "q3": "�",
-      "a3": "�",
-      "q4": "�",
-      "q5": "�",
-      "a5": "�",
-      "a4": "�"
+      "title": "常见问题",
+      "q1": "我可以免费试用 Jiki 吗？",
+      "a1": "可以！你可以免费注册，无限制地使用基础版。需要完整权限时随时升级到高级版，没有任何强制要求。",
+      "q2": "有最短订阅期限吗？",
+      "a2": "没有最短期限。高级版按月计费，你可以随时在账户设置中取消。",
+      "q3": "如果我取消高级版订阅，会怎么样？",
+      "a3": "在当前计费周期结束前，你仍可继续使用高级版，之后账户会回到基础版。你的学习进度不会丢失，只是不能再使用高级版专属功能。",
+      "q4": "学生或无力负担高级版的人有折扣吗？",
+      "q5": "之后可以升级或降级吗？",
+      "a5": "当然可以。你可以随时在账户中升级到高级版，也可以随时轻松取消。",
+      "a4": "我们希望每个人都能用上 Jiki。如果费用是个障碍，请<link>联系我们</link>，我们会尽力帮忙。"
     },
     "cta": {
-      "alreadyPremiumTitle": "�",
-      "alreadyPremiumDesc": "�",
-      "upgradeTitle": "�",
-      "upgradeDesc": "�",
-      "upgradeButton": "�",
-      "freeTitle": "�",
-      "freeDesc": "�",
-      "freeButton": "�"
+      "alreadyPremiumTitle": "你已经是高级版会员了",
+      "alreadyPremiumDesc": "感谢你支持 Jiki，尽情享用全部内容吧！",
+      "upgradeTitle": "准备好加速你的学习了吗？",
+      "upgradeDesc": "升级到高级版，解锁 Jiki 的全部内容。",
+      "upgradeButton": "升级到高级版",
+      "freeTitle": "免费开始使用",
+      "freeDesc": "今天就免费开始，畅享数百小时的免费内容。想要更深入时，再升级到高级版。",
+      "freeButton": "免费注册"
     },
     "publicPrice": {
-      "unavailable": "�"
+      "unavailable": "—"
     },
     "benefits": {
-      "unlimitedAiTitle": "�",
-      "unlimitedAiDescription": "�",
-      "unlimitedContentTitle": "�",
-      "unlimitedContentDescription": "�",
-      "certificatesTitle": "�",
-      "certificatesDescription": "�",
-      "adFreeTitle": "�",
-      "adFreeDescription": "�",
-      "prioritySupportTitle": "�",
-      "prioritySupportDescription": "�",
-      "earlyAccessTitle": "�",
-      "earlyAccessDescription": "�"
+      "unlimitedAiTitle": "无限 AI 帮助",
+      "unlimitedAiDescription": "每当卡住时，都能获得 Jiki 的个性化指导",
+      "unlimitedContentTitle": "无限内容",
+      "unlimitedContentDescription": "访问所有练习、项目和学习路径",
+      "certificatesTitle": "证书",
+      "certificatesDescription": "完成课程后，获得可分享的证书",
+      "adFreeTitle": "无广告",
+      "adFreeDescription": "享受无干扰的学习体验",
+      "prioritySupportTitle": "优先支持",
+      "prioritySupportDescription": "需要帮助时，获得更快的回复",
+      "earlyAccessTitle": "抢先体验",
+      "earlyAccessDescription": "第一时间体验新功能和新内容"
     }
   },
   "roadmap": {
     "page": {
-      "heading": "�",
-      "subheading": "�",
-      "disclaimer": "�"
+      "heading": "路线图",
+      "subheading": "Jiki 要往哪里走。按季度看看我们已经发布什么、接下来做什么，以及我们还在构想什么。",
+      "disclaimer": "这份路线图是我们当前计划的快照。随着我们从社区中学习，优先顺序会发生变化，因此时间和范围都可能调整。"
     },
     "status": {
-      "shipped": "�",
-      "inProgress": "�",
-      "planned": "�"
+      "shipped": "已发布",
+      "inProgress": "进行中",
+      "planned": "计划中"
     },
     "changelog": {
-      "title": "�",
-      "subtitle": "�",
+      "title": "更新日志",
+      "subtitle": "我们最近为 Jiki 带来的改进。",
       "learnToBuildLaunch": {
-        "date": "�",
-        "title": "�",
-        "description": "�"
+        "date": "2026 年 7 月 11 日",
+        "title": "推出《学会构建》",
+        "description": "Jeremy 的全新系列已经上线，他在其中和学习者一起从零开始构建真实、有用的项目。"
       },
       "milestones6To10": {
-        "date": "�",
-        "title": "�",
-        "description": "�"
+        "date": "2026 年 7 月",
+        "title": "推出《学会编程》的里程碑 6 至 10",
+        "description": "《学会编程》学习路线上线了五个新里程碑，把学习之旅远远延伸到基础之外。"
       },
       "jikiLaunch": {
-        "date": "�",
-        "title": "�",
-        "description": "�"
+        "date": "2026 年 6 月 7 日",
+        "title": "Jiki 正式上线！",
+        "description": "Jiki 正式上线了（虽然还是测试版！）"
       }
     },
     "phases": {
       "now": {
-        "label": "�",
-        "timeframe": "�",
-        "summary": "�",
+        "label": "现在",
+        "timeframe": "2026 年 7 月",
+        "summary": "这个月我们专注的事情。",
         "learnToBuild": {
-          "title": "�",
-          "description": "�"
+          "title": "推出《学会构建》",
+          "description": "Jeremy 的全新系列已经上线，他在其中和学习者一起从零开始构建真实、有用的项目。每个项目都拆成短小的课程，展示的不只是代码，还有打造软件过程中的思考、失误和决策。"
         },
         "launchBugs": {
-          "title": "�",
-          "description": "�"
+          "title": "解决上线初期的 bug",
+          "description": "Jiki 上线后，随着真实学习者开始使用平台，我们正在消灭 bug、打磨粗糙的地方。你可以期待整个应用持续不断的小修复和体验改进。"
         },
         "earlyFeedback": {
-          "title": "�",
-          "description": "�"
+          "title": "回应早期反馈",
+          "description": "我们阅读收到的每一条消息、支持帖子和建议。最有价值的反馈正在被转化成调整和小功能，让体验一周比一周更好。"
         },
         "foundations": {
-          "title": "�",
-          "description": "�"
+          "title": "稳固基础",
+          "description": "在幕后，我们正在加强可靠性、性能和可观测性，为下一波功能打下坚如磐石的基础。虽然不那么显眼，却是我们当下能做的最重要的工作。"
         }
       },
       "next": {
-        "label": "�",
-        "timeframe": "�",
-        "summary": "�",
+        "label": "接下来",
+        "timeframe": "2026 年第三季度",
+        "summary": "已经设计好，排上了日程。",
         "betaToLive": {
-          "title": "�",
-          "description": "�"
+          "title": "从测试版走向正式版",
+          "description": "Jiki 目前处于测试版。等上线的忙碌平息后，我们会去掉测试版标签，升级为正式产品，提供更可靠的稳定性保障、更清晰的定价方案和更完善的新手引导流程。届时我们也会向 Exercism 社区发送上线邮件，并与合作伙伴一起启动推广。"
         },
         "deepDiveVideos": {
-          "title": "�",
-          "description": "�"
+          "title": "加入深入探索视频",
+          "description": "长视频，超越核心课程，深入探索各种概念。非常适合想弄懂“怎么做”背后的“为什么”，并看看这些想法如何与更广阔的编程世界相连的学习者。"
         },
         "newLanguages": {
-          "title": "�",
-          "description": "�"
+          "title": "上线多种新语言",
+          "description": "从 8 月开始，我们会把 Jiki 带给用母语学习的人，翻译整个界面和课程体系，而不只是营销页面。这一切会从 7 月 31 日到 8 月 2 日那个周末的<link>社区翻译马拉松</link>开始。"
         },
         "pythonVersion": {
-          "title": "�",
-          "description": "�"
+          "title": "上线 Python 版本",
+          "description": "9 月推出，一条成熟的 Python 学习路线，深度与我们 JavaScript 课程体系相当。一样的练习理念，一样的单步可视化工具，一样的打磨水准，只是换成 Python 作为教学语言。"
         }
       },
       "future": {
-        "label": "�",
-        "timeframe": "�",
-        "summary": "�",
+        "label": "未来",
+        "timeframe": "2026 年第四季度",
+        "summary": "已经在地平线上。随着我们的了解，可能会调整。",
         "moreLanguages": {
-          "title": "�",
-          "description": "�"
+          "title": "加入更多语言",
+          "description": "在 8 月第一波的基础上，我们会在今年余下的时间里继续把 Jiki 翻译成更多语言，让更多学习者能用母语使用这个平台。我们会根据社区的需求和能产生最大影响的地方来决定优先级。"
         },
         "sql": {
-          "title": "�",
-          "description": "�"
+          "title": "上线 SQL",
+          "description": "今年晚些时候，我们会在 Jiki 中加入 SQL，让学习者亲手理解数据库和查询，方式和课程体系的其他部分一样：逐步推进，边做边学。"
         }
       }
     }
   },
   "misc": {
     "chooseLanguage": {
-      "selectLanguage": "�",
-      "backToVideo": "�",
-      "tooltip": "�",
-      "saving": "�",
-      "confirmChoice": "�",
-      "questionTitle": "�",
-      "javascript": "�",
-      "python": "�",
-      "chooseForMe": "�",
-      "cantChange": "�",
-      "noVideo": "�",
-      "videoInstruction": "�"
+      "selectLanguage": "选择语言",
+      "backToVideo": "返回视频",
+      "tooltip": "选择一个选项即可继续。",
+      "saving": "保存中……",
+      "confirmChoice": "确认选择",
+      "questionTitle": "你想学哪门语言？",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "chooseForMe": "帮我选",
+      "cantChange": "选定后无法更改。",
+      "noVideo": "暂无视频",
+      "videoInstruction": "先看视频，然后选择你的语言。已经会了？<skip>跳过视频</skip>"
     },
     "deleteAccount": {
-      "deletedTitle": "�",
-      "deletedSubtitle": "�",
-      "deletingTitle": "�",
-      "deletingSubtitle": "�",
-      "errorTitle": "�",
-      "errorSubtitle": "�",
-      "expiredTitle": "�",
-      "expiredSubtitle": "�",
-      "expiredSecondary": "�",
-      "goHome": "�"
+      "deletedTitle": "你的账号已删除",
+      "deletedSubtitle": "很遗憾看到你离开。希望你在 Jiki 收获满满。祝你的编程之旅一路顺风！",
+      "deletingTitle": "正在删除你的账号",
+      "deletingSubtitle": "请稍候",
+      "errorTitle": "出了点问题",
+      "errorSubtitle": "删除账号时出了错。我们已收到通知，会手动为你删除。",
+      "expiredTitle": "链接已过期或无效",
+      "expiredSubtitle": "这个删除链接已失效，可能已经用过，或者已经过期。",
+      "expiredSecondary": "如果你仍想删除账号，请登录后在设置里申请新的删除链接。",
+      "goHome": "返回首页"
     },
     "errorPage": {
-      "serverErrorTitle": "�",
-      "serverErrorMessage": "�",
-      "serverErrorAction": "�",
-      "notFoundTitle": "�",
-      "notFoundMessage": "�",
-      "notFoundAction": "�"
+      "serverErrorTitle": "出了点问题",
+      "serverErrorMessage": "我们遇到了意外错误，很抱歉！",
+      "serverErrorAction": "重试",
+      "notFoundTitle": "页面未找到",
+      "notFoundMessage": "我们好像找不到这个页面，抱歉！",
+      "notFoundAction": "带我回首页"
     },
     "testimonialsPage": {
-      "title": "�",
-      "subtitle": "�",
-      "quoteOpenAlt": "�",
-      "quoteCloseAlt": "�"
+      "title": "学员评价",
+      "subtitle": "我们问了学员是否喜欢这门课程，下面是他们的回答……",
+      "quoteOpenAlt": "“",
+      "quoteCloseAlt": "”"
     }
   },
   "concepts": {
@@ -979,7 +1010,7 @@
     "error": {
       "notFound": "未找到该概念。",
       "back": "返回概念库",
-      "loadFailed": "�"
+      "loadFailed": "加载概念失败，请稍后再试。"
     },
     "relatedConcepts": {
       "heading": "相关概念",
@@ -989,8 +1020,8 @@
     "relatedExercises": {
       "heading": "相关练习",
       "description": "这些练习是实践这个概念的好方法！",
-      "signupPrompt": "<link>注册</link>后即可解答！",
-      "locked": "该练习尚未解锁"
+      "locked": "该练习尚未解锁",
+      "signupPrompt": "<link>注册</link>后即可解答！"
     },
     "relatedChallenges": {
       "heading": "相关挑战",
@@ -1116,169 +1147,172 @@
     "guides": {
       "title": "指南 - Jiki",
       "description": "逐步指南，帮助你设置工具并充分利用 Jiki。"
+    },
+    "exercises": {
+      "notFound": "未找到练习"
     }
   },
   "apiErrors": {
-    "unknown": "�",
+    "unknown": "出了点问题，请重试。",
     "unauthenticated": "继续操作前请注册或者登录。",
     "invalid_credentials": "电子邮箱或密码错误。",
     "unconfirmed": "继续操作前请先确认您的帐户。",
-    "forbidden": "�",
-    "access_denied": "�",
-    "premium_required": "�",
-    "invalid_signature": "�",
-    "invalid_captcha": "�",
-    "invalid_token": "�",
-    "token_expired": "�",
+    "forbidden": "你无权访问该内容",
+    "access_denied": "拒绝访问",
+    "premium_required": "该内容仅限高级会员使用",
+    "invalid_signature": "签名无效",
+    "invalid_captcha": "我们无法确认你是不是真人，请重试。",
+    "invalid_token": "该链接无效或已过期",
+    "token_expired": "该链接已过期",
     "session_expired": "登录超时，请重新登录。",
-    "invalid_otp": "�",
-    "invalid_unsubscribe_token": "�",
-    "not_found": "�",
-    "lesson_not_found": "�",
-    "level_not_found": "�",
-    "course_not_found": "�",
-    "user_not_found": "�",
-    "challenge_not_found": "�",
-    "concept_not_found": "�",
-    "badge_not_found": "�",
-    "user_challenge_not_found": "�",
-    "user_video_not_found": "�",
-    "user_lesson_not_found": "�",
-    "user_level_not_found": "�",
-    "validation_error": "�",
-    "duplicate_filename": "�",
-    "file_too_large": "�",
-    "too_many_files": "�",
-    "invalid_submission": "�",
-    "lesson_in_progress": "�",
-    "lesson_not_unlocked": "�",
-    "level_not_completed": "�",
-    "challenge_locked": "�",
-    "lesson_incomplete": "�",
-    "concept_locked": "�",
-    "language_already_chosen": "�",
-    "invalid_language": "�",
-    "missing_course": "�",
-    "invalid_password": "�",
-    "locale_update_failed": "�",
-    "name_update_failed": "�",
-    "email_update_failed": "�",
-    "password_update_failed": "�",
-    "handle_update_failed": "�",
-    "notification_update_failed": "�",
-    "streaks_update_failed": "�",
-    "flag_invalid": "�",
-    "no_image_provided": "�",
-    "invalid_image_type": "�",
-    "invalid_avatar": "�",
-    "avatar_too_large": "�",
-    "translation_error": "�",
-    "stripe_error": "�",
-    "exercism_unavailable": "�",
-    "no_exercism_link": "�",
-    "invalid_product": "�",
-    "existing_subscription": "�",
-    "invalid_return_url": "�",
-    "checkout_failed": "�",
-    "no_customer": "�",
-    "portal_failed": "�",
-    "missing_session_id": "�",
-    "invalid_session": "�",
-    "verification_failed": "�",
-    "no_subscription": "�",
-    "same_interval": "�",
-    "invalid_interval": "�",
-    "update_failed": "�",
-    "invalid_request": "�",
-    "cancel_failed": "�",
-    "not_cancelling": "�",
-    "reactivate_failed": "�",
-    "checkout_payment_incomplete": "�",
-    "unauthorized": "�",
+    "invalid_otp": "验证码无效",
+    "invalid_unsubscribe_token": "该退订链接无效或已过期",
+    "not_found": "我们找不到你要找的内容",
+    "lesson_not_found": "我们找不到该课",
+    "level_not_found": "我们找不到该关卡",
+    "course_not_found": "我们找不到该课程",
+    "user_not_found": "我们找不到该用户",
+    "challenge_not_found": "我们找不到该挑战",
+    "concept_not_found": "我们找不到该概念",
+    "badge_not_found": "我们找不到该徽章",
+    "user_challenge_not_found": "我们找不到你在该挑战上的进度",
+    "user_video_not_found": "我们找不到你在该视频上的进度",
+    "user_lesson_not_found": "我们找不到你在该课上的进度",
+    "user_level_not_found": "我们找不到你在该关卡上的进度",
+    "validation_error": "请检查你输入的内容，然后重试。",
+    "duplicate_filename": "同一个文件名你用了不止一次：{filenames}",
+    "file_too_large": "{filename} 太大了。文件最大为 {maxBytes} 字节。",
+    "too_many_files": "你添加了 {count} 个文件，最多只能提交 {max} 个。",
+    "invalid_submission": "我们无法接受这次提交。",
+    "lesson_in_progress": "开始新的一课前，请先完成当前这节课",
+    "lesson_not_unlocked": "请先完成本关前面几课",
+    "level_not_completed": "请先完成你当前所在的关卡",
+    "challenge_locked": "请先完成解锁该挑战的那一课",
+    "lesson_incomplete": "请先完成当前这几课",
+    "concept_locked": "该概念仍处于锁定状态",
+    "language_already_chosen": "你已经选过语言了",
+    "invalid_language": "这不是可以选择的语言",
+    "missing_course": "我们无法判断你指的是哪门课程",
+    "invalid_password": "你当前的密码不正确",
+    "locale_update_failed": "我们无法更改你的语言",
+    "name_update_failed": "我们无法更改你的名字",
+    "email_update_failed": "我们无法更改你的邮箱地址",
+    "password_update_failed": "我们无法更改你的密码",
+    "handle_update_failed": "我们无法更改你的用户名",
+    "notification_update_failed": "我们无法更改你的通知设置",
+    "streaks_update_failed": "我们无法更改你的连续学习天数设置",
+    "flag_invalid": "这不是可以更改的设置",
+    "no_image_provided": "请先选择图片",
+    "invalid_image_type": "请选择 JPEG、PNG、GIF 或 WebP 格式的图片",
+    "invalid_avatar": "我们无法将这张图片用作你的头像",
+    "avatar_too_large": "这张图片太大，无法用作你的头像",
+    "translation_error": "我们无法翻译这段内容",
+    "stripe_error": "支付时出了点问题。请重试。",
+    "exercism_unavailable": "我们无法连接 Exercism。请稍后重试。",
+    "no_exercism_link": "这个账号没有关联 Exercism",
+    "invalid_product": "这不是可以购买的订阅方案",
+    "existing_subscription": "你已经有一个生效中的订阅",
+    "invalid_return_url": "我们无法将你带回正确的页面",
+    "checkout_failed": "我们无法开始你的结账。请重试。",
+    "no_customer": "我们找不到你的账单信息",
+    "portal_failed": "我们无法打开你的账单门户。请重试。",
+    "missing_session_id": "我们找不到你的结账会话",
+    "invalid_session": "这个结账会话无效",
+    "verification_failed": "我们无法验证你的支付",
+    "no_subscription": "你还没有生效中的订阅",
+    "same_interval": "你现在就是按这种方式计费的",
+    "invalid_interval": "这不是可以选择的计费周期",
+    "update_failed": "我们无法更新你的订阅。请重试。",
+    "invalid_request": "我们无法处理这个请求",
+    "cancel_failed": "我们无法取消你的订阅。请重试。",
+    "not_cancelling": "你的订阅并未安排取消",
+    "reactivate_failed": "我们无法重新激活你的订阅。请重试。",
+    "checkout_payment_incomplete": "你的支付没有完成。请重试。",
+    "unauthorized": "你无权访问此内容",
     "fields": {
-      "email": "�",
-      "password": "�",
-      "password_confirmation": "�",
-      "current_password": "�",
-      "name": "�",
-      "handle": "�",
-      "locale": "�",
-      "enabled": "�"
+      "email": "邮箱地址",
+      "password": "密码",
+      "password_confirmation": "确认密码",
+      "current_password": "当前密码",
+      "name": "名字",
+      "handle": "用户名",
+      "locale": "语言",
+      "enabled": "这个设置"
     },
     "validation": {
-      "blank": "�",
-      "invalid": "�",
-      "taken": "�",
-      "confirmation": "�",
-      "too_short": "�",
-      "too_long": "�",
-      "wrong_length": "�",
-      "inclusion": "�",
-      "exclusion": "�",
-      "not_a_number": "�",
-      "accepted": "�",
-      "present": "�",
-      "boolean_required": "�"
+      "blank": "{field}不能为空。",
+      "invalid": "{field}无效。",
+      "taken": "{field}已被占用。",
+      "confirmation": "{field}不匹配。",
+      "too_short": "{field} 至少需要 {count, plural, one {# 个字符} other {# 个字符}}。",
+      "too_long": "{field} 最多只能有 {count, plural, one {# 个字符} other {# 个字符}}。",
+      "wrong_length": "{field} 必须正好是 {count, plural, one {# 个字符} other {# 个字符}}。",
+      "inclusion": "{field} 不在可选的选项中。",
+      "exclusion": "{field} 不可用。",
+      "not_a_number": "{field} 必须是数字。",
+      "accepted": "{field} 必须接受。",
+      "present": "{field} 必须留空。",
+      "boolean_required": "{field} 只能是开或关。"
     },
     "reasons": {
       "invalid_submission": {
-        "no_files": "�",
-        "filename_required": "�",
-        "code_required": "�"
+        "no_files": "提交前请至少添加一个文件。",
+        "filename_required": "每个文件都要有名称。",
+        "code_required": "提交前请先写一些代码。"
       }
     },
     "subscriptions": {
-      "unauthorized": "�"
+      "unauthorized": "这个结账会话属于另一个账户。"
     },
     "accountDeletion": {
-      "invalid_token": "�",
-      "token_expired": "�",
-      "stripe_error": "�"
+      "invalid_token": "这个账户删除链接无效或已过期。",
+      "token_expired": "这个账户删除链接已过期。",
+      "stripe_error": "我们无法取消你的订阅，所以没有删除你的账户。请重试或联系客服。"
     }
   },
   "toasts": {
     "subscription": {
-      "loginRequired": "�",
-      "checkoutFailed": "�",
-      "alreadyPremium": "�",
-      "checkoutSessionFailed": "�",
-      "portalFailed": "�",
-      "canceled": "�",
-      "cancelFailed": "�",
-      "reactivated": "�",
-      "reactivateFailed": "�",
-      "paymentPortalFailed": "�"
+      "loginRequired": "请先登录，再升级你的账号",
+      "checkoutFailed": "无法启动结账流程，请重试。",
+      "alreadyPremium": "已经是高级会员",
+      "checkoutSessionFailed": "无法创建结账会话",
+      "portalFailed": "无法打开客户门户",
+      "canceled": "订阅已取消。你仍可使用到 {date}",
+      "cancelFailed": "取消订阅失败",
+      "reactivated": "订阅已重新激活！",
+      "reactivateFailed": "重新激活订阅失败",
+      "paymentPortalFailed": "无法打开支付门户"
     },
     "auth": {
-      "sessionExpired": "�"
+      "sessionExpired": "你的登录状态已过期，请重新登录。"
     },
     "logout": {
-      "loading": "�",
-      "success": "�",
-      "failed": "�"
+      "loading": "正在退出登录……",
+      "success": "已成功退出登录",
+      "failed": "退出登录失败，无法连接服务器"
     },
     "avatar": {
-      "updated": "�",
-      "uploadFailed": "�",
-      "networkError": "�",
-      "invalidImageType": "�",
-      "imageTooLarge": "�"
+      "updated": "头像已更新",
+      "uploadFailed": "头像上传失败",
+      "networkError": "网络错误，请重试。",
+      "invalidImageType": "请选择 JPEG、PNG、GIF 或 WebP 格式的图片",
+      "imageTooLarge": "图片必须小于 5MB"
     },
     "settings": {
-      "fetchFailed": "�",
-      "settingUpdated": "�",
-      "updateFailed": "�",
-      "notificationUpdateFailed": "�",
-      "streaksUpdateFailed": "�"
+      "fetchFailed": "无法获取设置",
+      "settingUpdated": "{field, select, name {姓名} email {邮箱} password {密码} locale {语言偏好} handle {用户名} other {{field}}}更新成功",
+      "updateFailed": "更新失败",
+      "notificationUpdateFailed": "更新通知偏好失败",
+      "streaksUpdateFailed": "更新连续学习天数设置失败"
     },
     "exercise": {
-      "submissionFailed": "�",
-      "chatSaveFailed": "�",
-      "chatSaveCaptchaFailed": "�",
-      "lessonSaveError": "�"
+      "submissionFailed": "无法保存你提交的解答，请重试。",
+      "chatSaveFailed": "无法保存这条消息。你回来时就看不到它了。",
+      "chatSaveCaptchaFailed": "保存时验证失败。你回来时就看不到这条消息了。",
+      "lessonSaveError": "抱歉，这节课无法完成。请重试。如果问题一直出现，请在<link>https://forum.jiki.io</link>上反馈"
     },
     "lesson": {
-      "loadFailed": "�"
+      "loadFailed": "抱歉，我们无法打开这节课。请重试。"
     }
   },
   "modals": {
@@ -1409,6 +1443,14 @@
       "whatHappened": "<strong>“发生了什么？”提示</strong>：逐行查看你的代码，找出问题所在",
       "revealHints": "<strong>显示所有提示</strong>：阅读上面的全部提示，获取指引"
     },
+    "codeSyncChoice": {
+      "title": "你想使用哪个版本的代码？",
+      "intro": "另一台设备上保存了一份更新的代码。选择要继续使用的版本，在你下次运行代码之前，另一个版本不会被覆盖。",
+      "localLabel": "本设备上",
+      "serverLabel": "最新保存的版本",
+      "useLocal": "使用本设备的代码",
+      "useServer": "使用最新版本"
+    },
     "paymentConfirming": {
       "title": "正在确认你的付款…",
       "description": "请稍候，我们正在与 Stripe 确认你的付款。通常只需片刻。"
@@ -1516,22 +1558,28 @@
       "otherLabel": "Outlook 和其他日历",
       "otherHelp": "复制此链接，把它添加为订阅日历。",
       "copied": "已复制"
+    },
+    "exerciseIntroVideo": {
+      "title": "欢迎来到你的第一个绘画练习",
+      "intro": "观看这段简短介绍，了解绘画练习是如何运作的，以及如何完成它们。你也可以在说明的底部看到它。",
+      "close": "我们开始吧",
+      "watchAlt": "观看介绍"
     }
   },
   "challenge": {
-    "backToChallenges": "�",
+    "backToChallenges": "返回挑战列表",
     "error": {
-      "message": "�"
+      "message": "错误：{error}"
     },
-    "loadError": "�",
-    "documentTitle": "�",
+    "loadError": "加载挑战失败",
+    "documentTitle": "{title} - 挑战 - Jiki",
     "locked": {
-      "title": "�",
-      "description": "�"
+      "title": "挑战已锁定",
+      "description": "这个挑战目前处于锁定状态。完成前面的课程即可解锁。"
     },
     "premiumRequired": {
-      "title": "�",
-      "description": "�"
+      "title": "需要高级版",
+      "description": "挑战是高级版功能。升级套餐即可开始构建。"
     }
   },
   "dashboard": {
@@ -1633,7 +1681,7 @@
       "confirmNo": "暂时不看",
       "confirmYes": "确定",
       "deepDiveHeading": "深度解析",
-      "deepDiveDescription": "还是卡住了？看看 Jeremy 解这道练习的深度解析视频。",
+      "deepDiveDescription": "还是卡住了？跟着 Jeremy 一起做，<strong>直到你不再卡住</strong>，然后自己完成练习的剩余部分。",
       "walkthroughThumbnailAlt": "深度解析视频缩略图"
     },
     "chatHeader": {
@@ -1686,7 +1734,8 @@
       "libraryEmpty": "随着练习的推进，你会在这里看到概念。它们可以作为参考，帮你回顾学过的内容。",
       "libraryChallenges": "在这道练习中，你可以使用目前学过的任何概念。想回顾学过的内容时，随时翻看你的概念库。",
       "libraryWithConcepts": "这些是这道练习用到的关键概念。用它们来回顾你学过的内容。",
-      "openConceptLibrary": "打开概念库"
+      "openConceptLibrary": "打开概念库",
+      "introVideoTitle": "视频介绍"
     },
     "scrubber": {
       "previousFrame": "上一帧",
@@ -1879,133 +1928,133 @@
   },
   "projects": {
     "projectCard": {
-      "comingSoon": "�",
-      "comingSoonLabel": "�"
+      "comingSoon": "即将推出",
+      "comingSoonLabel": "即将推出"
     },
     "episodeCard": {
-      "premium": "�"
+      "premium": "高级版"
     },
     "episodeSummary": {
-      "heading": "�",
-      "whereWeStart": "�",
-      "whereWeEnd": "�",
-      "whatWeCover": "�"
+      "heading": "本期概要",
+      "whereWeStart": "起点",
+      "whereWeEnd": "终点",
+      "whatWeCover": "涵盖内容"
     },
     "projectPage": {
-      "backToAllProjects": "�"
+      "backToAllProjects": "← 返回<strong>所有项目</strong>"
     },
     "episodePage": {
-      "backToProject": "�",
-      "relevantGuidesDescription": "�"
+      "backToProject": "← 返回<strong>{title}</strong>",
+      "relevantGuidesDescription": "在完成这一步时，这些指南可能会对你有帮助。"
     },
     "relevantGuides": {
-      "heading": "�"
+      "heading": "相关指南"
     }
   },
   "guides": {
     "guidesContent": {
-      "pageHeading": "�",
-      "searchPlaceholder": "�",
-      "filterAll": "�",
-      "noResultsTitle": "�",
-      "noResultsMessage": "�"
+      "pageHeading": "指南与操作教程",
+      "searchPlaceholder": "搜索指南…",
+      "filterAll": "全部",
+      "noResultsTitle": "“{query}”没有找到结果",
+      "noResultsMessage": "换个搜索词试试，或者浏览所有指南。"
     },
     "guideCard": {
-      "premium": "�"
+      "premium": "高级会员"
     },
     "tags": {
-      "editors": "�",
-      "installation": "�",
-      "agentic-coding": "�",
-      "front-end-basics": "�"
+      "editors": "编辑器",
+      "installation": "安装",
+      "agentic-coding": "智能体编程",
+      "front-end-basics": "前端基础"
     },
     "guideBreadcrumb": {
-      "guides": "�"
+      "guides": "指南"
     },
     "premiumGate": {
-      "lockedTitle": "�",
-      "lockedSubtitle": "�",
-      "unlockButton": "�"
+      "lockedTitle": "本指南仅供高级会员阅读",
+      "lockedSubtitle": "解锁本指南，以及 Jiki 高级会员提供的其他全部内容，继续阅读。",
+      "unlockButton": "开通高级会员解锁"
     },
     "relatedGuides": {
-      "heading": "�"
+      "heading": "相关指南"
     },
     "featuredInProjects": {
-      "heading": "�"
+      "heading": "收录于项目"
     },
     "metadata": {
-      "notFoundTitle": "�"
+      "notFoundTitle": "未找到指南"
     }
   },
   "unsubscribe": {
-    "title": "�",
-    "subtitle": "�",
-    "updateError": "�",
-    "toggleAria": "�",
+    "title": "邮件偏好",
+    "subtitle": "管理我们与你沟通的方式和时间。",
+    "updateError": "更新偏好失败，请重试。",
+    "toggleAria": "切换{name}",
     "manage": {
-      "title": "�",
-      "description": "�",
-      "updated": "�",
-      "save": "�"
+      "title": "管理你的通知",
+      "description": "通过开关各类通知，精细调整你要接收的邮件。",
+      "updated": "你的邮件偏好已更新。",
+      "save": "更改偏好"
     },
     "all": {
-      "title": "�",
-      "description": "�",
-      "success": "�",
-      "button": "�"
+      "title": "退订所有邮件",
+      "description": "想停止接收 Jiki 的所有邮件吗？这会让你退订所有营销、通知和提醒邮件。",
+      "success": "你已退订 Jiki 的所有邮件。",
+      "button": "退订所有邮件"
     },
     "email": {
-      "alreadyTitle": "�",
-      "alreadyDescription": "�",
-      "title": "�",
-      "description": "�",
-      "success": "�",
-      "button": "�",
-      "fallbackType": "�"
+      "alreadyTitle": "已退订",
+      "alreadyDescription": "你目前没有订阅<highlight>{emailType}</highlight>邮件。",
+      "title": "退订此类邮件",
+      "description": "不想再接收这类邮件了？点击下方按钮退订<highlight>{emailType}</highlight>邮件。",
+      "success": "你已退订{emailType}。",
+      "button": "退订{emailType}",
+      "fallbackType": "这些"
     },
     "types": {
       "newsletters": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "产品更新",
+        "description": "及时了解新功能与改进。",
+        "shortLabel": "产品更新"
       },
       "event_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "活动通知",
+        "description": "接收即将开始的直播和活动通知。",
+        "shortLabel": "活动通知"
       },
       "milestone_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "成就通知",
+        "description": "当你解锁新技能或成就时，会收到通知。",
+        "shortLabel": "成就通知"
       },
       "activity_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "动态邮件",
+        "description": "基于你的动态发送的通知，例如解锁徽章、完成挑战。",
+        "shortLabel": "动态邮件"
       },
       "onboarding_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "新手入门邮件",
+        "description": "关于如何充分利用 Jiki 的技巧和指导。",
+        "shortLabel": "入门邮件"
       }
     }
   },
   "achievements": {
-    "title": "�",
-    "description": "�",
-    "tabBadges": "�",
-    "tabCertificates": "�",
-    "loading": "�",
-    "error": "�",
-    "certificatesEmptyTitle": "�",
-    "certificatesEmptyBody": "�",
+    "title": "成就",
+    "description": "每一枚徽章都讲述着你的编程之旅。",
+    "tabBadges": "徽章",
+    "tabCertificates": "证书",
+    "loading": "正在加载成就……",
+    "error": "错误：{error}",
+    "certificatesEmptyTitle": "还没有证书",
+    "certificatesEmptyBody": "完成课程即可获得展示你技能的证书。完成一门课程后，证书就会显示在这里。",
     "badge": {
-      "locked": "�",
-      "earnedToday": "�",
-      "earnedRelative": "�"
+      "locked": "已锁定",
+      "earnedToday": "今天获得",
+      "earnedRelative": "{distance}获得"
     },
-    "loadError": "�"
+    "loadError": "加载徽章失败"
   },
   "challenges": {
     "title": "挑战",
@@ -2036,29 +2085,29 @@
       "completedTitle": "还没有完成的挑战",
       "completedDescription": "完成你的第一个挑战后，它会出现在这里。继续推进进行中的挑战，达成这个里程碑吧。"
     },
-    "loadError": "�"
+    "loadError": "加载挑战失败"
   },
   "subscription": {
     "tiers": {
       "standard": {
-        "name": "�",
-        "description": "�",
+        "name": "免费",
+        "description": "非常适合入门",
         "features": {
-          "freeCourses": "�",
-          "basicExercises": "�",
-          "communitySupport": "�",
-          "aiHelpPerMonth": "�"
+          "freeCourses": "可使用免费课程",
+          "basicExercises": "基础编程练习",
+          "communitySupport": "社区支持",
+          "aiHelpPerMonth": "每月 1 次 AI 帮助"
         }
       },
       "premium": {
-        "name": "�",
-        "description": "�",
+        "name": "高级版",
+        "description": "解锁高级功能",
         "features": {
-          "allFreeFeatures": "�",
-          "unlimitedAi": "�",
-          "allExercises": "�",
-          "certificates": "�",
-          "adFree": "�"
+          "allFreeFeatures": "全部免费版功能",
+          "unlimitedAi": "无限 AI 帮助",
+          "allExercises": "可使用全部练习",
+          "certificates": "证书",
+          "adFree": "无广告体验"
         }
       }
     }
@@ -2078,11 +2127,11 @@
       "byAuthor": "作者 {name}",
       "readFullArticle": "阅读全文 →"
     },
-    "recentPosts": {
-      "heading": "最近文章"
-    },
     "relatedPosts": {
       "heading": "相关文章"
+    },
+    "recentPosts": {
+      "heading": "最近文章"
     },
     "cta": {
       "minimalTitle": "免费试用 Jiki",
@@ -2115,10 +2164,10 @@
       "help": "找不到你要找的内容？试试我们的<blogs>博客</blogs>、<faqs>常见问题</faqs>、<support>联系支持</support>，或在<community>社区</community>提问。"
     },
     "tags": {
-      "legal": "�",
-      "premium": "�",
-      "exercises": "�",
-      "videos": "�"
+      "legal": "法律",
+      "premium": "高级版",
+      "exercises": "练习",
+      "videos": "视频"
     },
     "cta": {
       "minimalTitle": "免费试用 Jiki",
@@ -2169,6 +2218,24 @@
       "transaction_not_allowed": "Your card issuer doesn't allow this payment. Please contact them to find out why.",
       "try_again_later": "Your card was declined. Please try again in a few minutes.",
       "withdrawal_count_limit_exceeded": "Your card has hit its limit. Please try a different card, or contact your card issuer."
+    }
+  },
+  "exercises": {
+    "public": {
+      "eyebrow": "编程练习",
+      "ctaTitle": "想解出这道练习吗？",
+      "ctaSubtitle": "免费创建 Jiki 账号，写代码、运行代码，看着它活起来。",
+      "ctaButton": "免费注册",
+      "ctaFootnote": "已经有账号了？<login>登录</login>。",
+      "video": {
+        "header": "观看深度解析",
+        "description": "Jeremy 会带你一步步完成这道练习。",
+        "playAriaLabel": "播放练习深度解析视频"
+      },
+      "functions": {
+        "heading": "你会用到的函数",
+        "description": "这些是这道练习为你提供的基础积木。"
+      }
     }
   }
 }

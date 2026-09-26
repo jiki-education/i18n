@@ -1,0 +1,125 @@
+{
+  "checks": {
+    "repeatedGuess": "同一个单词你猜了不止一次。每次猜测都应该利用前面猜出的信息，而且一旦猜出单词就要立刻停下。",
+    "guessNotCommonWord": "第 {{row}} 次猜测是“{{word}}”，但这个词不在`commonWords()`里。",
+    "guessUsesAbsent": "第 {{row}} 次猜测是“{{word}}”，但之前有一次猜测已经表明“{{letter}}”不在单词里。",
+    "guessIgnoresCorrect": "第 {{row}} 次猜测是“{{word}}”，但之前有一次猜测已经表明第 {{square}} 格就是“{{letter}}”。",
+    "guessMissesPresent": "第 {{row}} 次猜测是“{{word}}”，但之前有一次猜测已经表明“{{letter}}”在单词里的某个位置，而“{{word}}”里没有它。",
+    "guessRepeatsPresentSquare": "第 {{row}} 次猜测是“{{word}}”，但之前有一次猜测已经表明“{{letter}}”在单词里，只是不在第 {{square}} 格。",
+    "guessNotFirstFitting": "第 {{row}} 次猜测是“{{word}}”，但我们期望的是“{{expected}}”。",
+    "guessAfterSolved": "上一次猜测就已经猜出了单词，你的代码却又做了第 {{row}} 次猜测。每个字母都正确时就要马上停下。",
+    "stoppedBeforeSolved": "你的代码猜了 {{guesses}} 次就停下了，但还没有猜出单词。"
+  },
+  "tasks": {
+    "firstWord": {
+      "name": "让正确的单词显示出来",
+      "description": "第一个场景只要求你从`commonWords()`里选出第一个单词。那个单词就是`which`。要通过这个场景，你需要猜出那个单词，然后停下。这样就能在进入更复杂的情况之前，先确认你的代码搭对了。"
+    },
+    "handleWrong": {
+      "name": "处理完全错误的情况",
+      "description": "第一段代码搭得很不错！第二个场景需要你用两次猜测。第一次仍然是数组里的第一个单词（永远都是这样！）。它会完全错误，所以你要接着尝试数组里的下一个单词，它才是对的！"
+    },
+    "handlePartial": {
+      "name": "处理部分正确的情况",
+      "description": "很好，有点进展了。接下来才更有意思。后面几个场景返回的都是`correct`和`absent`字母的混合结果。根据目前找到的`correct`和`absent`字母，从数组里选出下一个最合适的单词。"
+    },
+    "handlePresent": {
+      "name": "处理 present 字母",
+      "description": "太棒了！现在是最难的最后一步。你需要把`present`字母也考虑进去。祝你好运，你一定行！"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "全部正确",
+      "description": "处理第一次就猜对的情况。"
+    },
+    "entirelyWrong": {
+      "name": "一次错，一次对",
+      "description": "处理猜错的情况"
+    },
+    "twoNeeded": {
+      "name": "需要猜两次",
+      "description": "处理猜错的情况"
+    },
+    "threeNeeded": {
+      "name": "需要猜三次",
+      "description": "处理猜错的情况"
+    },
+    "fourNeeded": {
+      "name": "需要猜四次",
+      "description": "处理猜错的情况"
+    },
+    "present1": {
+      "name": "部分字母是 present",
+      "description": "有点难，有几个字母是 present。"
+    },
+    "present2": {
+      "name": "越来越接近了",
+      "description": "处理一个更难的单词"
+    },
+    "present3": {
+      "name": "更平常的一局",
+      "description": "现在有 Wordle 的感觉了"
+    },
+    "present4": {
+      "name": "又一次接近",
+      "description": "看它们在结尾处各不相同，还挺有趣的！"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "我该从哪里开始？",
+      "answer": "先猜`commonWords()`里的第一个单词。先把“猜一个单词、检查结果”的循环跑通，再去想怎么变得更聪明。"
+    },
+    "readStates": {
+      "question": "我怎么知道这次猜得怎么样？",
+      "answer": "`guess(word)`会返回一个数组，每个字母对应一个状态：`\"correct\"`、`\"present\"`或`\"absent\"`。这个数组就是你从一次猜测里能得到的全部信息，所以你知道的一切都必须来自它。"
+    },
+    "rememberLearned": {
+      "question": "怎么记住前面几次猜测学到的东西？",
+      "answer": "在循环外面维护一份记录：已知不在单词里的字母，已知在单词里但位置还不确定的字母，以及每个位置上你确定没有的字母。"
+    },
+    "pickNextGuess": {
+      "question": "怎么选出下一个要猜的单词？",
+      "answer": "把`commonWords()`过滤一遍，只保留满足这些条件的单词：所有 correct 字母都在正确的位置上，包含每一个 present 字母（但不能放在你已经排除的位置上），并且不含任何 absent 字母。取第一个符合的单词。"
+    },
+    "whenToStop": {
+      "question": "什么时候停下？",
+      "answer": "每个状态都返回`\"correct\"`时就停下，或者猜满`6`次就停下。否则你会一直猜下去，超出盘面的范围。"
+    }
+  },
+  "functions": {
+    "guess": {
+      "description": "猜一个单词。它会把单词画在盘面的下一行并上色，然后返回一个数组，里面是每个字母的状态。",
+      "category": "Wordle"
+    },
+    "commonWords": {
+      "description": "返回一个数组，包含 100 多个由五个字母组成的常用单词，可以用来猜。",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "把一个元素添加到数组末尾，会直接修改原来的数组。",
+      "category": "数组"
+    },
+    "arrayIncludes": {
+      "description": "检查数组里是否包含某个元素。",
+      "category": "数组"
+    },
+    "stringIncludes": {
+      "description": "检查字符串里是否包含某个子串。",
+      "category": "字符串"
+    },
+    "arrayLength": {
+      "description": "数组中元素的个数。",
+      "category": "数组"
+    },
+    "stringLength": {
+      "description": "字符串中字符的个数。",
+      "category": "字符串"
+    }
+  },
+  "describers": {
+    "guess": "猜了一个单词",
+    "commonWords": "获取了常用单词数组"
+  }
+}
