@@ -1,71 +1,71 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "يحتوي حلّك على عدد كبير جدًا من أسطر الكود. هل يمكنك جعله أقصر؟"
   },
   "tasks": {
     "searchForTile": {
-      "name": "�",
-      "description": "�"
+      "name": "البحث عن قطعة حرف",
+      "description": "اكتب دالة تتحقق مما إذا كانت قطعة حرف معيّنة موجودة في الحامل. أرجِع `true` إذا وُجدت، و`false` إذا لم توجد."
     },
     "solveInEightLines": {
-      "name": "�",
-      "description": "�"
+      "name": "الحل في 8 أسطر من الكود",
+      "description": "هل يمكنك حل هذا التمرين في 8 أسطر من الكود فقط؟"
     }
   },
   "scenarios": {
     "letterFoundAtStart": {
-      "name": "�",
-      "description": "�"
+      "name": "الحرف في البداية",
+      "description": "الحرف هو القطعة الأولى في الحامل."
     },
     "letterFoundInMiddle": {
-      "name": "�",
-      "description": "�"
+      "name": "الحرف في الوسط",
+      "description": "الحرف يقع في منتصف الحامل."
     },
     "letterFoundAtEnd": {
-      "name": "�",
-      "description": "�"
+      "name": "الحرف في النهاية",
+      "description": "الحرف هو القطعة الأخيرة في الحامل."
     },
     "letterNotFound": {
-      "name": "�",
-      "description": "�"
+      "name": "الحرف غير موجود",
+      "description": "الحرف ليس في الحامل."
     },
     "emptyRack": {
-      "name": "�",
-      "description": "�"
+      "name": "حامل فارغ",
+      "description": "الحامل الفارغ لا يحتوي على أي قطع للبحث عنها."
     },
     "duplicateLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "حامل بقطع مكررة",
+      "description": "يظهر الحرف بين قطع مكررة."
     },
     "singleTileFound": {
-      "name": "�",
-      "description": "�"
+      "name": "العثور على قطعة واحدة",
+      "description": "حامل فيه قطعة واحدة مطابقة."
     },
     "singleTileNotFound": {
-      "name": "�",
-      "description": "�"
+      "name": "عدم العثور على قطعة واحدة",
+      "description": "حامل فيه قطعة واحدة غير مطابقة."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "8 أسطر من الكود",
+      "description": "حل التمرين في 8 أسطر من الكود فقط."
     }
   },
   "hints": {
     "byHand": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أفعل هذا يدويًا؟",
+      "answer": "ستمرّ على كومة القش حرفًا حرفًا، وتقارن كل حرف بالإبرة. وبمجرد أن تجد تطابقًا، تتوقف. وإذا وصلت إلى النهاية دون أن تجد تطابقًا، فالإبرة ليست هناك."
     },
     "loopAndCompare": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أكتب حلقة وأقارن؟",
+      "answer": "حلقة `for-of` تعطيك كل حرف من السلسلة النصية واحدًا تلو الآخر. وداخلها تقارن جملة شرطية `if` الحرف الحالي بالإبرة."
     },
     "returnTrue": {
-      "question": "�",
-      "answer": "�"
+      "question": "متى يجب أن أُرجع `true`؟",
+      "answer": "بمجرد أن تجد تطابقًا. لا فائدة من فحص بقية الحروف."
     },
     "returnFalse": {
-      "question": "�",
-      "answer": "�"
+      "question": "متى يجب أن أُرجع `false`؟",
+      "answer": "فقط بعد أن تنتهي الحلقة دون أن تجد أي تطابق. من الأخطاء الشائعة وضع `return false` داخل الحلقة. فذلك يستسلم بعد أول حرف غير مطابق، قبل أن تفحص البقية."
     }
   }
 }

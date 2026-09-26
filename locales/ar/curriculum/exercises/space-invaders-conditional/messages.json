@@ -1,68 +1,68 @@
 {
   "describers": {
-    "move": "�"
+    "move": "حرّك المدفع الليزري إلى اليمين"
   },
   "checks": {
-    "notShotAllAliens": "�"
+    "notShotAllAliens": "لم تُسقط كل الكائنات الفضائية."
   },
   "tasks": {
     "conditionalShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "استخدم جملة شرطية لتطلق النار فقط عندما يوجد كائن فضائي فوقك",
+      "description": "تحرّك عبر الشاشة وتحقّق من كل موضع. إذا كان هناك كائن فضائي فوقك، فأطلق النار عليه. وإذا لم يكن، فواصل التحرّك."
     }
   },
   "scenarios": {
     "conditional1": {
-      "name": "�",
-      "description": "�"
+      "name": "كائنات فضائية متفرقة",
+      "description": "كائنات فضائية متفرقة على صفّين مع فراغات"
     },
     "conditional2": {
-      "name": "�",
-      "description": "�"
+      "name": "كائنات فضائية متباعدة",
+      "description": "كائنات فضائية أقل عددًا مع فراغات أوسع"
     },
     "conditional3": {
-      "name": "�",
-      "description": "�"
+      "name": "صفوف بالتناوب",
+      "description": "كائنات فضائية تتناوب بين الصف العلوي والسفلي"
     },
     "conditional4": {
-      "name": "�",
-      "description": "�"
+      "name": "معظمها في الأسفل",
+      "description": "معظم الكائنات الفضائية في الصف السفلي"
     },
     "conditional5": {
-      "name": "�",
-      "description": "�"
+      "name": "تشكيلة كثيفة",
+      "description": "كائنات فضائية كثيرة متلاصقة في كلا الصفّين"
     }
   },
   "hints": {
     "howToDecide": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أقرّر هل أطلق النار أم لا؟",
+      "answer": "استخدم جملة شرطية `if` تتحقّق من `isAlienAbove()`. ولا تستدعِ `shoot()` إلا عندما يكون الشرط `true`."
     },
     "whatIsAlienAboveGives": {
-      "question": "�",
-      "answer": "�"
+      "question": "ماذا تُرجع لي `isAlienAbove()`؟",
+      "answer": "تُرجع `true` إذا كان هناك كائن فضائي فوق مدفعك مباشرة، و`false` إذا لم يوجد. ويمكنك وضعها مباشرة في شرط `if`."
     },
     "checkEveryColumn": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أتحقّق من كل عمود دون أن أكتب الكود نفسه مرارًا وتكرارًا؟",
+      "answer": "ضع منطق التحقّق وإطلاق النار المحتمل داخل حلقة `repeat`، واستدعِ `move()` في نهاية كل تكرار للانتقال إلى العمود التالي."
     },
     "keepShootingEmpty": {
-      "question": "�",
-      "answer": "�"
+      "question": "أستمر في إطلاق النار على أعمدة فارغة وأخسر. ما الخطأ؟",
+      "answer": "تأكّد من أن `shoot()` داخل كتلة `if`، وليس بعدها. فلا ينبغي أن يحدث الاستدعاء إلا عندما تُرجع `isAlienAbove()` القيمة `true`."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "تُحرّك المدفع الليزري **موضعًا واحدًا إلى اليمين**. إذا خرجت من الحافة اليمنى للشاشة، تخسر!",
+      "category": "الحركة"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "تُطلق شعاع الليزر إلى الأعلى. **لا تُطلق النار إلا عندما يكون هناك كائن فضائي فوقك**، وإلا تخسر اللعبة!",
+      "category": "إجراء"
     },
     "isAlienAbove": {
-      "description": "�",
-      "category": "�"
+      "description": "تُرجع `true` إذا كان هناك كائن فضائي فوق المدفع الليزري مباشرة، أو `false` إذا لم يوجد. استخدمها للتحقّق قبل إطلاق النار!",
+      "category": "الكشف"
     }
   }
 }

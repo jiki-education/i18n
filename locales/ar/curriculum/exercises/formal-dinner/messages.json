@@ -1,97 +1,97 @@
 {
   "tasks": {
     "findGuestTable": {
-      "name": "�",
-      "description": "�"
+      "name": "ابحث عن طاولة الضيف",
+      "description": "اكتب دالة تأخذ مصفوفة الأسماء الكاملة للضيوف، ومصفوفة أسماء الطاولات المقابلة لها، والضيف الواصل المُنادى عليه بلقب تشريفي واسم عائلة. أرجِع اسم الطاولة التي يجلس إليها ذلك الضيف، أو `\"No table found\"` إذا لم يكن موجودًا في مخطط الجلوس."
     },
     "solveTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "حلّها في 9 أسطر",
+      "description": "إضافة: يمكن كتابة هذا بإيجاز أكبر بكثير مما تتوقع. جرّب أن تحلّ هذا في 9 أسطر من الكود أو أقل."
     }
   },
   "scenarios": {
     "emptyList": {
-      "name": "�",
-      "description": "�"
+      "name": "مخطط جلوس فارغ",
+      "description": "لا أحد يجلس في أي مكان عندما يكون المخطط فارغًا."
     },
     "nameMissing": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad يُمنع من الدخول",
+      "description": "الاسم ليس موجودًا في مخطط الجلوس."
     },
     "namePresent": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad يُصطحَب إلى طاولته",
+      "description": "Brad Pitt موجود في المخطط، لذا يحصل Mr Pitt على طاولته."
     },
     "differentHonorific": {
-      "name": "�",
-      "description": "�"
+      "name": "فارس المملكة",
+      "description": "لقب تشريفي مختلف، وضيف ليس الأول في المخطط."
     },
     "bondSeated": {
-      "name": "�",
-      "description": "�"
+      "name": "Mr Bond، كما أظن",
+      "description": "James Bond موجود في المخطط."
     },
     "bondNotSeated": {
-      "name": "�",
-      "description": "�"
+      "name": "همم... Mr Bond، كما أظن",
+      "description": "Jason Bourne وحده موجود في المخطط، وليس James Bond."
     },
     "partialSurname": {
-      "name": "�",
-      "description": "�"
+      "name": "ليس Mr Pitt تمامًا",
+      "description": "لا Ada Spitt ولا Hugo Ross-Pitt يُعدّ Mr Pitt، لذا لا مقعد له هنا."
     },
     "lloydWebber": {
-      "name": "�",
-      "description": "�"
+      "name": "وماذا عن بارون؟",
+      "description": "اسم عائلة Baron Lloyd Webber يتكوّن من كلمتين."
     },
     "markWebber": {
-      "name": "�",
-      "description": "�"
+      "name": "هل Mark هو البارون؟",
+      "description": "Webber مختلف لا يُحتسب، إذ يجب أن يتطابق اسم العائلة بالكامل."
     },
     "formalDinnerBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "بإحكام وإتقان: Lord Doyle",
+      "description": "مخطط الجلوس نفسه كما في السابق، لكن جرّب هذه المرة أن تحلّ هذا في 9 أسطر من الكود أو أقل."
     }
   },
   "hints": {
     "twoLists": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف ترتبط المصفوفتان إحداهما بالأخرى؟",
+      "answer": "إنهما زوجان متحاذيان: الضيف الأول يجلس إلى الطاولة الأولى، والضيف الثاني إلى الطاولة الثانية، وهكذا. لذا لا يكفي أن تعرف *أن* الضيف موجود في المخطط، بل تحتاج إلى أن تعرف *أين* موضعه في المخطط."
     },
     "comparingNames": {
-      "question": "�",
-      "answer": "�"
+      "question": "الضيف يقول \"Mr Pitt\" لكن المخطط يقول \"Brad Pitt\". كيف أقارن بينهما؟",
+      "answer": "هاتان السلسلتان النصيتان لن تتساويا أبدًا، لذا لن تُوصلك المقارنة المباشرة إلى نتيجة. فكّر في أي جزء مما نادى به الضيف يظهر فعلًا في المخطط، وأين تتوقع أن تجده داخل مدخل المخطط."
     },
     "lookalikeSurnames": {
-      "question": "�",
-      "answer": "�"
+      "question": "هل يمكن أن يتطابق اسم عائلة مع الضيف الخطأ؟",
+      "answer": "يمكن ذلك بالتأكيد. اقرأ \"Ada Spitt\" و\"Hugo Ross-Pitt\" بصوت عالٍ، ثم فكّر في Mr Pitt. اسأل نفسك ما الذي يجعل اسم العائلة اسمًا حقيقيًا في ذلك السطر، لا مجرد حروف تصادف أنها تقع في نهايته."
     },
     "noMatch": {
-      "question": "�",
-      "answer": "�"
+      "question": "ماذا أُرجِع عندما لا يتطابق أي ضيف؟",
+      "answer": "السلسلة النصية `\"No table found\"`، تمامًا كما كُتبت. لكن الجزء الأصعب هو معرفة متى يُسمح لك بقولها. إذا تحققت من أول ضيف في المخطط ولم يكن هو ضيفك المنشود، فهل تعرف حينها فعلًا أنه غير جالس في أي مكان؟"
     }
   },
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "واصل! جرّب أن تصل إلى 9 أسطر من الكود."
   },
   "functions": {
     "length": {
-      "description": "�",
-      "category": "�"
+      "description": "عدد العناصر في المصفوفة، وهي خاصية `.length` ذاتها التي استخدمتها مع السلاسل النصية",
+      "category": "عمليات المصفوفات"
     },
     "split": {
-      "description": "�",
-      "category": "�"
+      "description": "تُقسّم سلسلة نصية إلى مصفوفة من القطع، وتفصل عند كل فاصل",
+      "category": "عمليات السلاسل النصية"
     },
     "slice": {
-      "description": "�",
-      "category": "�"
+      "description": "تكوّن مصفوفة جديدة من جزء من مصفوفة، بدءًا من موضع معيّن",
+      "category": "عمليات المصفوفات"
     },
     "join": {
-      "description": "�",
-      "category": "�"
+      "description": "تجمع عناصر مصفوفة في سلسلة نصية واحدة، مع فاصل بينها",
+      "category": "عمليات المصفوفات"
     },
     "endsWith": {
-      "description": "�",
-      "category": "�"
+      "description": "تتحقق مما إذا كانت سلسلة نصية تنتهي بسلسلة نصية أصغر",
+      "category": "عمليات السلاسل النصية"
     }
   }
 }

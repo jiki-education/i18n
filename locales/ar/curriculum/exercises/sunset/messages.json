@@ -1,53 +1,53 @@
 {
   "checks": {
-    "sunWrongBeginning": "�",
-    "sunWrongMiddle": "�",
-    "sunWrongEnd": "�",
-    "skyNotChangingColor": "�",
-    "sunNotChangingColor": "�"
+    "sunWrongBeginning": "تبدو الشمس غير صحيحة قرب البداية.",
+    "sunWrongMiddle": "تبدو الشمس غير صحيحة قرب المنتصف.",
+    "sunWrongEnd": "تبدو الشمس غير صحيحة قرب النهاية.",
+    "skyNotChangingColor": "يبدو أن السماء لا تغيّر لونها.",
+    "sunNotChangingColor": "يبدو أن الشمس لا تغيّر لونها."
   },
   "tasks": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "حرّك مشهد الغروب",
+      "description": "حرّك الشمس والسماء ليبدو الأمر وكأن الشمس تغرب. يجب أن تكبر الشمس وتتحرك نحو الأسفل، بينما يتغير لون كل من الشمس والسماء."
     }
   },
   "scenarios": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "اجعل الشمس تغرب",
+      "description": "حرّك الشمس والسماء ليبدو الأمر وكأن الشمس تغرب."
     }
   },
   "hints": {
     "howToAnimate": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أنشئ رسمًا متحركًا؟",
+      "answer": "لكي نحرّك المشهد، نتبع أسلوب دفتر التقليب: نرسم المشهد كاملًا من جديد في كل مرة فوق النسخ السابقة."
     },
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "لا أعرف من أين أبدأ.",
+      "answer": "عليك أن ترسم 100 مرة. لذا ابدأ بنقل دوال الرسم الموجودة إلى حلقة `repeat` تُنفَّذ 100 مرة. ثم عليك تغيير المتغيرات (نصف القطر، الألوان، إلخ) في كل مرة تعمل فيها الحلقة."
     },
     "whereToPutVariables": {
-      "question": "�",
-      "answer": "�"
+      "question": "أين أضع المتغيرات؟",
+      "answer": "عليك أن تضبط المتغيرات **قبل** الحلقة، ثم تحدّثها **داخل** الحلقة، **قبل** رسم الأشكال. تخيّل Jiki وهو ينشئ صناديق ويحدّثها في كل مرة."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "ارسم دائرة مركزها عند (centerX, centerY)، بنصف القطر واللون المعطيين",
+      "category": "رسم الأشكال"
     },
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "ارسم مستطيلًا عند الموضع (left, top) بالعرض والارتفاع واللون المعطى",
+      "category": "رسم الأشكال"
     },
     "rgb": {
-      "description": "�",
-      "category": "�"
+      "description": "حوّل قيم لون RGB (كل قيمة من 0 إلى 255) إلى سلسلة نصية تمثل اللون بصيغة hex",
+      "category": "الألوان"
     },
     "hsl": {
-      "description": "�",
-      "category": "�"
+      "description": "حوّل قيم لون HSL (تدرّج اللون من 0 إلى 360، التشبّع من 0 إلى 100، الإضاءة من 0 إلى 100) إلى سلسلة نصية تمثل اللون بصيغة hex",
+      "category": "الألوان"
     }
   }
 }

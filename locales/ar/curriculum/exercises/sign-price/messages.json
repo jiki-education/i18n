@@ -1,63 +1,63 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "يحتوي حلك على عدد كبير جدًا من أسطر الكود. هل يمكنك جعله أقصر؟"
   },
   "tasks": {
     "calculateSignPrice": {
-      "name": "�",
-      "description": "�"
+      "name": "احسب سعر اللافتة",
+      "description": "اكتب دالة تحسب سعر اللافتة. يكلّف كل حرف 12 دولارًا. المسافات مجانية ولا تُحتسب. وأرجِع النتيجة في رسالة منسّقة."
     },
     "solveInNineLines": {
-      "name": "�",
-      "description": "�"
+      "name": "حلّ التمرين في 9 أسطر من الكود",
+      "description": "هل يمكنك حلّ هذا التمرين بـ 9 أسطر من الكود فقط؟"
     }
   },
   "scenarios": {
     "simpleWord": {
-      "name": "�",
-      "description": "�"
+      "name": "كلمة بسيطة",
+      "description": "كلمة واحدة بلا مسافات."
     },
     "singleLetter": {
-      "name": "�",
-      "description": "�"
+      "name": "حرف واحد",
+      "description": "لافتة فيها حرف واحد فقط."
     },
     "twoWords": {
-      "name": "�",
-      "description": "�"
+      "name": "كلمتان",
+      "description": "كلمتان بينهما مسافة يجب تجاهلها."
     },
     "multipleSpaces": {
-      "name": "�",
-      "description": "�"
+      "name": "مسافات متعددة",
+      "description": "عدة كلمات بينها مسافات متعددة يجب تجاهلها."
     },
     "longText": {
-      "name": "�",
-      "description": "�"
+      "name": "نص طويل",
+      "description": "لافتة أطول فيها حروف أكثر."
     },
     "allSpaces": {
-      "name": "�",
-      "description": "�"
+      "name": "كلها مسافات",
+      "description": "لافتة فيها مسافات فقط، فلا توجد حروف يمكن احتسابها."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "9 أسطر من الكود",
+      "description": "حلّ التمرين بـ 9 أسطر من الكود فقط."
     }
   },
   "hints": {
     "whatCounting": {
-      "question": "�",
-      "answer": "�"
+      "question": "ما الذي أعدّه فعليًا؟",
+      "answer": "الحروف. وتحديدًا كل ما ليس مسافة. فأنت تريد عدّادًا يزيد مع كل حرف غير مسافة في نص اللافتة."
     },
     "loopCharacters": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أمرّ على الحروف حرفًا حرفًا؟",
+      "answer": "حلقة `for...of` تمرّ على الحروف واحدًا واحدًا، فتستطيع فحص كل حرف على حدة."
     },
     "checkSpace": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أتحقق مما إذا كان الحرف مسافة؟",
+      "answer": "داخل الحلقة، استخدم جملة شرطية لمقارنة الحرف بـ `\" \"`. ولا تحتسب الحرف إلا إذا لم يكن مسافة."
     },
     "buildResultString": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أبني السلسلة النصية للنتيجة؟",
+      "answer": "استخدم ربط السلاسل النصية أو قوالب النص. وراجع المفاهيم إذا احتجت إلى تذكير بها."
     }
   }
 }

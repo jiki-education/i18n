@@ -1,88 +1,88 @@
 {
   "tasks": {
     "createAcronymFunction": {
-      "name": "�",
-      "description": "�"
+      "name": "أنشئ دالة الاختصار",
+      "description": "اكتب دالة تأخذ عبارة وتُرجع اختصارها: الحرف الأول من كل كلمة، بحروف كبيرة. تُفصل الكلمات بالمسافات والشرطات، وتُتجاهل أي علامات ترقيم أخرى."
     },
     "solveTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "حلّه في 46 سطرًا",
+      "description": "إضافة: عندما تُنقل فحوص الحروف وتبديل حالة الأحرف إلى دوال مساعدة يعيد `acronym` استخدامها، يتّسع الحل كله في 46 سطرًا. هل يمكنك أن تفعل مثله؟"
     }
   },
   "scenarios": {
     "png": {
-      "name": "�",
-      "description": "�"
+      "name": "اختصار أساسي: PNG",
+      "description": "حوّل 'Portable Network Graphics' إلى 'PNG'."
     },
     "ror": {
-      "name": "�",
-      "description": "�"
+      "name": "كلمات بحروف صغيرة: ROR",
+      "description": "حوّل 'Ruby on Rails' إلى 'ROR'."
     },
     "gimp": {
-      "name": "�",
-      "description": "�"
+      "name": "كلمة كلها حروف كبيرة: GIMP",
+      "description": "حوّل 'GNU Image Manipulation Program' إلى 'GIMP'."
     },
     "firstWordOnly": {
-      "name": "�",
-      "description": "�"
+      "name": "كلمة واحدة: H",
+      "description": "حوّل 'HyperText' إلى 'H'."
     },
     "hyphenated": {
-      "name": "�",
-      "description": "�"
+      "name": "عبارة بشرطة: CMOS",
+      "description": "حوّل 'Complementary metal-oxide semiconductor' إلى 'CMOS'."
     },
     "fifo": {
-      "name": "�",
-      "description": "�"
+      "name": "مفصولة بفواصل: FIFO",
+      "description": "حوّل 'First In, First Out' إلى 'FIFO'."
     },
     "punctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "مع علامات ترقيم: PHT",
+      "description": "حوّل 'Portable, HyperText, Transmitter' إلى 'PHT'."
     },
     "hc": {
-      "name": "�",
-      "description": "�"
+      "name": "مع علامة اقتباس مفردة: HC",
+      "description": "حوّل 'Halley's Comet' إلى 'HC'."
     },
     "simufta": {
-      "name": "�",
-      "description": "�"
+      "name": "فواصل متتالية: SIMUFTA",
+      "description": "حوّل 'Something - I made up from thin air' إلى 'SIMUFTA'."
     },
     "trnt": {
-      "name": "�",
-      "description": "�"
+      "name": "تشديد بشرطة سفلية: TRNT",
+      "description": "حوّل 'The Road _Not_ Taken' إلى 'TRNT'."
     },
     "long": {
-      "name": "�",
-      "description": "�"
+      "name": "واحدة طويلة جدًا: ROTFLSHTMDCOALM",
+      "description": "حوّل 'Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me' إلى 'ROTFLSHTMDCOALM'."
     },
     "emoji": {
-      "name": "�",
-      "description": "�"
+      "name": "مع رمز تعبيري: HW",
+      "description": "حوّل 'Hello 👋 World' إلى 'HW'."
     },
     "acronymBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "مرتّب وأنيق",
+      "description": "الحل الأكثر ترتيبًا يعيد استخدام دواله المساعدة ويتّسع في 46 سطرًا. هل يمكنك إيجاده؟"
     }
   },
   "checks": {
-    "tooManyLines": "�",
-    "noMethods": "�"
+    "tooManyLines": "واصل المحاولة! جرّب أن تحلّه بأسطر أقل.",
+    "noMethods": "هدف هذا التمرين أن تبني الأدوات بنفسك. حلّه دون استخدام أي طرق مدمجة."
   },
   "hints": {
     "pickLetters": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أختار الحروف التي ستشكّل الاختصار؟",
+      "answer": "يُبنى الاختصار من الحرف الذي تبدأ به كل كلمة: أول حرف في العبارة، بالإضافة إلى أول حرف بعد كل مسافة أو شرطة."
     },
     "findWordStarts": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أعرف متى تبدأ كلمة جديدة؟",
+      "answer": "تنقّل في العبارة محرفًا محرفًا وتابع ما إذا كنت في بداية كلمة جديدة. أنت في البداية تمامًا، ثم مرة أخرى مباشرة بعد أي مسافة أو شرطة. وأي شيء ليس حرفًا (علامات الترقيم، والشرطات السفلية، وعلامات الاقتباس المفردة) يجب تخطّيه بدلًا من اعتباره بداية كلمة."
     },
     "buildResult": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أبني النتيجة تدريجيًا؟",
+      "answer": "ابدأ بسلسلة نصية فارغة وأضِف كل حرف مختار إلى نهايتها باستخدام `+`."
     },
     "uppercaseLetters": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أحوّل حرفًا إلى حرف كبير عندما لا توجد طريقة مدمجة تفعل ذلك؟",
+      "answer": "لا توجد هنا أداة جاهزة لتحويل الحروف إلى كبيرة. وكما في تمرين Pangram، يمكنك أن تقابل بين أبجدية بحروف صغيرة وأخرى بحروف كبيرة وتستبدل الحرف بالحرف الواقع في الموضع نفسه. أما الحروف الكبيرة أصلًا فيمكن أن تبقى كما هي."
     }
   }
 }

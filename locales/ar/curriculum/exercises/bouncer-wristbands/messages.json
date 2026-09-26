@@ -1,97 +1,97 @@
 {
   "errors": {
-    "alreadyIssued": "�"
+    "alreadyIssued": "لقد أعطيت هذا الشخص سوار معصم بالفعل. يجب أن يحصل كل شخص على سوار واحد فقط."
   },
   "checks": {
-    "childWristband": "�",
-    "teenWristband": "�",
-    "adultWristband": "�",
-    "seniorWristband": "�",
-    "boundary13": "�",
-    "boundary18": "�",
-    "boundary65": "�"
+    "childWristband": "عمر الشخص 8 سنوات. يجب أن يحصل على سوار الطفل، لكنه حصل على: {{got}}.",
+    "teenWristband": "عمر الشخص 15 عامًا. يجب أن يحصل على سوار المراهق، لكنه حصل على: {{got}}.",
+    "adultWristband": "عمر الشخص 30 عامًا. يجب أن يحصل على سوار البالغ، لكنه حصل على: {{got}}.",
+    "seniorWristband": "عمر الشخص 70 عامًا. يجب أن يحصل على سوار كبير السن، لكنه حصل على: {{got}}.",
+    "boundary13": "عمر الشخص 13 عامًا. يجب أن يحصل على سوار المراهق (لأن 13 ليس أقل من 13)، لكنه حصل على: {{got}}.",
+    "boundary18": "عمر الشخص 18 عامًا. يجب أن يحصل على سوار البالغ (لأن 18 ليس أقل من 18)، لكنه حصل على: {{got}}.",
+    "boundary65": "عمر الشخص 65 عامًا. يجب أن يحصل على سوار كبير السن (لأن 65 ليس أقل من 65)، لكنه حصل على: {{got}}."
   },
   "tasks": {
     "assignWristband": {
-      "name": "�",
-      "description": "�"
+      "name": "امنح سوار المعصم الصحيح",
+      "description": "احصل على عمر الشخص وامنحه سوار المعصم الصحيح: الطفل (أقل من 13)، المراهق (13-17)، البالغ (18-64)، أو كبير السن (65 فأكثر)."
     }
   },
   "scenarios": {
     "childAge8": {
-      "name": "�",
-      "description": "�"
+      "name": "العمر 8 (طفل)",
+      "description": "طفل عمره 8 سنوات. يجب أن يحصل على سوار الطفل."
     },
     "teenAge15": {
-      "name": "�",
-      "description": "�"
+      "name": "العمر 15 (مراهق)",
+      "description": "مراهق عمره 15 عامًا. يجب أن يحصل على سوار المراهق."
     },
     "adultAge30": {
-      "name": "�",
-      "description": "�"
+      "name": "العمر 30 (بالغ)",
+      "description": "بالغ عمره 30 عامًا. يجب أن يحصل على سوار البالغ."
     },
     "seniorAge70": {
-      "name": "�",
-      "description": "�"
+      "name": "العمر 70 (كبير السن)",
+      "description": "شخص عمره 70 عامًا. يجب أن يحصل على سوار كبير السن."
     },
     "boundary13": {
-      "name": "�",
-      "description": "�"
+      "name": "العمر 13 (مراهق)",
+      "description": "13 بالضبط. هو مراهق، وليس طفلًا."
     },
     "boundary18": {
-      "name": "�",
-      "description": "�"
+      "name": "العمر 18 (بالغ)",
+      "description": "18 بالضبط. هو بالغ، وليس مراهقًا."
     },
     "boundary65": {
-      "name": "�",
-      "description": "�"
+      "name": "العمر 65 (كبير السن)",
+      "description": "65 بالضبط. هو من كبار السن، وليس بالغًا."
     }
   },
   "hints": {
     "gettingAge": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أحصل على عمر الشخص؟",
+      "answer": "نادِ `getAge()` وضع الناتج في متغير، مثل `let age = getAge()`. بعد ذلك يمكنك مقارنة `age` بالأعداد داخل شروطك."
     },
     "structureForRanges": {
-      "question": "�",
-      "answer": "�"
+      "question": "ما التركيب الذي أستخدمه عند وجود عدة فئات عمرية؟",
+      "answer": "تركيب متتالٍ من `if` / `else if` / `else`. كل فرع يتعامل مع سوار معصم واحد، ولن يُنفَّذ إلا فرع واحد."
     },
     "branchOrder": {
-      "question": "�",
-      "answer": "�"
+      "question": "هل يهم ترتيب الفروع؟",
+      "answer": "نعم. ابدأ بالأصغر سنًا (`age < 13`)، ثم `age < 18`، ثم `age < 65`. ولأن كل فرع لا يعمل إلا إذا فشلت الفروع السابقة، فلست بحاجة إلى كتابة أشياء مثل `age >= 13 && age < 18`."
     },
     "seniorsElse": {
-      "question": "�",
-      "answer": "�"
+      "question": "وماذا عن كبار السن في النهاية؟",
+      "answer": "لست بحاجة إلى شرط لهم. فكلمة `else` وحدها التي تستدعي `giveSeniorWristband()` تلتقط كل من عمره 65 فأكثر."
     }
   },
   "describers": {
-    "getAge": "�",
-    "giveChildWristband": "�",
-    "giveTeenWristband": "�",
-    "giveAdultWristband": "�",
-    "giveSeniorWristband": "�"
+    "getAge": "جلب عمر الشخص",
+    "giveChildWristband": "أعطى سوار الطفل",
+    "giveTeenWristband": "أعطى سوار المراهق",
+    "giveAdultWristband": "أعطى سوار البالغ",
+    "giveSeniorWristband": "أعطى سوار كبير السن"
   },
   "functions": {
     "getAge": {
-      "description": "�",
-      "category": "�"
+      "description": "تُرجع **عمر** الشخص المنتظر في الخارج.",
+      "category": "معلومات"
     },
     "giveChildWristband": {
-      "description": "�",
-      "category": "�"
+      "description": "تمنح الشخص سوار معصم **الطفل** (أقل من 13).",
+      "category": "أساور المعصم"
     },
     "giveTeenWristband": {
-      "description": "�",
-      "category": "�"
+      "description": "تمنح الشخص سوار معصم **المراهق** (13-17).",
+      "category": "أساور المعصم"
     },
     "giveAdultWristband": {
-      "description": "�",
-      "category": "�"
+      "description": "تمنح الشخص سوار معصم **البالغ** (18-64).",
+      "category": "أساور المعصم"
     },
     "giveSeniorWristband": {
-      "description": "�",
-      "category": "�"
+      "description": "تمنح الشخص سوار معصم **كبير السن** (65 فأكثر).",
+      "category": "أساور المعصم"
     }
   }
 }

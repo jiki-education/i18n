@@ -1,76 +1,76 @@
 {
   "checks": {
-    "totalCells": "�",
-    "groundWalls": "�",
-    "groundGlass": "�",
-    "groundEntrance": "�",
-    "floorWalls": "�",
-    "floorGlass": "�",
-    "roof": "�",
+    "totalCells": "المتوقع {{expected}} خانة، لكن وُجد {{got}}.",
+    "groundWalls": "يجب أن يحتوي الطابق الأرضي على جدارين عند الموضعين (17, 2) و(21, 2).",
+    "groundGlass": "يجب أن يحتوي الطابق الأرضي على قطعتَي زجاج عند الموضعين (18, 2) و(20, 2).",
+    "groundEntrance": "يجب أن يحتوي الطابق الأرضي على مدخل عند الموضع (19, 2).",
+    "floorWalls": "يجب أن يحتوي الطابق {{y}} على جدارين عند الموضعين (17, {{y}}) و(21, {{y}}).",
+    "floorGlass": "يجب أن يحتوي الطابق {{y}} على ثلاث قطع زجاج عند المواضع (18, {{y}}) و(19, {{y}}) و(20, {{y}}).",
+    "roof": "يجب أن يتكوّن السقف عند y={{roofY}} من جدران فقط.",
     "codeQuality": {
-      "allArgumentsAreVariables": "�"
+      "allArgumentsAreVariables": "يجب أن تستخدم <strong>المتغيرات</strong> كوسائط للدوال، لا قيمًا حرفية. خزّن القيم في متغيرات أولًا، ثم مرّر المتغيرات."
     }
   },
   "tasks": {
     "buildSkyscraper": {
-      "name": "�",
-      "description": "�"
+      "name": "ابنِ ناطحة السحاب",
+      "description": "ابنِ ناطحة سحاب بالعدد الصحيح من الطوابق، مع طابق أرضي فيه مدخل، وطوابق عليا من الزجاج، وسقف من الجدران."
     }
   },
   "scenarios": {
     "floors6": {
-      "name": "�",
-      "description": "�"
+      "name": "ناطحة سحاب من 6 طوابق",
+      "description": "ابنِ ناطحة سحاب من 6 طوابق."
     },
     "floors8": {
-      "name": "�",
-      "description": "�"
+      "name": "ناطحة سحاب من 8 طوابق",
+      "description": "ابنِ ناطحة سحاب من 8 طوابق."
     },
     "floors10": {
-      "name": "�",
-      "description": "�"
+      "name": "ناطحة سحاب من 10 طوابق",
+      "description": "ابنِ ناطحة سحاب من 10 طوابق."
     },
     "floors12": {
-      "name": "�",
-      "description": "�"
+      "name": "ناطحة سحاب من 12 طابقًا",
+      "description": "ابنِ ناطحة سحاب من 12 طابقًا."
     },
     "floors16": {
-      "name": "�",
-      "description": "�"
+      "name": "ناطحة سحاب من 16 طابقًا",
+      "description": "ابنِ ناطحة سحاب من 16 طابقًا."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "لا أعرف من أين أبدأ.",
+      "answer": "جرّب أولًا رسم جدار، وبعض الزجاج، ومدخل، لتتأكد من أنك فهمت الدوال. ثم ارسم الطابق الأرضي، فهو ثابت دائمًا. ثم استخدم الدالة `numFloors()` لمعرفة العدد الكلي للطوابق، وارسم بقية الطوابق، وبعدها السقف."
     },
     "tooManyTooFewFloors": {
-      "question": "�",
-      "answer": "�"
+      "question": "عدد الطوابق لديّ أكثر أو أقل من اللازم.",
+      "answer": "إذا أرجعت `numFloors()` القيمة 5، فيجب أن يكون لديك طابق مدخل واحد، و4 طوابق زجاجية، وسقف واحد. تحقّق من صحة منطقك!"
     }
   },
   "functions": {
     "buildWall": {
-      "description": "�",
-      "category": "�"
+      "description": "تضع **قطعة جدار** في الموضع (x, y) على الشبكة.",
+      "category": "البناء"
     },
     "buildGlass": {
-      "description": "�",
-      "category": "�"
+      "description": "تضع **قطعة زجاج** في الموضع (x, y) على الشبكة.",
+      "category": "البناء"
     },
     "buildEntrance": {
-      "description": "�",
-      "category": "�"
+      "description": "تضع **باب المدخل** في الموضع (x, y) على الشبكة.",
+      "category": "البناء"
     },
     "numFloors": {
-      "description": "�",
-      "category": "�"
+      "description": "تُرجع **عدد الطوابق** في هذا المبنى.",
+      "category": "معلومات"
     }
   },
   "describers": {
-    "buildWall": "�",
-    "buildEntrance": "�",
-    "buildGlass": "�",
-    "numFloors": "�"
+    "buildWall": "بنى جدارًا عند الموضع (${arg1}, ${arg2})",
+    "buildEntrance": "بنى مدخلًا عند الموضع (${arg1}, ${arg2})",
+    "buildGlass": "بنى قطعة زجاج عند الموضع (${arg1}, ${arg2})",
+    "numFloors": "استرجع عدد الطوابق"
   }
 }

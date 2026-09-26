@@ -1,62 +1,62 @@
 {
   "tasks": {
     "countNucleotide": {
-      "name": "�",
-      "description": "�"
+      "name": "عدّ نيوكليوتيد",
+      "description": "اكتب دالة تعدّ عدد مرات ظهور نيوكليوتيد محدّد (A أو C أو G أو T) في خيط من الحمض النووي. وأرجِع -1 إذا كان النيوكليوتيد غير صالح، أو إذا احتوى الخيط على أي حرف غير صالح."
     }
   },
   "scenarios": {
     "nucleotideEmptyStrand": {
-      "name": "�",
-      "description": "�"
+      "name": "خيط فارغ",
+      "description": "الخيط الفارغ يُرجع 0 لأي نيوكليوتيد صالح."
     },
     "nucleotideSingleMatch": {
-      "name": "�",
-      "description": "�"
+      "name": "خيط من نيوكليوتيد واحد",
+      "description": "خيط من حرف واحد يطابق النيوكليوتيد المطلوب يُرجع 1."
     },
     "nucleotideRepeated": {
-      "name": "�",
-      "description": "�"
+      "name": "نيوكليوتيد متكرر",
+      "description": "خيط من نيوكليوتيدات متكررة ينبغي أن يعدّها كلها."
     },
     "nucleotideMixedStrandA": {
-      "name": "�",
-      "description": "�"
+      "name": "عدّ A في خيط مختلط",
+      "description": "عدّ نيوكليوتيد محدّد في خيط مختلط."
     },
     "nucleotideMixedStrandT": {
-      "name": "�",
-      "description": "�"
+      "name": "عدّ T في خيط مختلط",
+      "description": "عدّ نيوكليوتيد مختلف في الخيط نفسه."
     },
     "nucleotideInvalidNucleotide": {
-      "name": "�",
-      "description": "�"
+      "name": "نيوكليوتيد غير صالح",
+      "description": "حرف نيوكليوتيد غير صالح يُرجع -1."
     },
     "nucleotideInvalidStrand": {
-      "name": "�",
-      "description": "�"
+      "name": "خيط غير صالح",
+      "description": "خيط يحتوي على أحرف غير صالحة يُرجع -1."
     }
   },
   "hints": {
     "checkValid": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أتحقق من أن الحرف المطلوب صالح؟",
+      "answer": "للسلاسل النصية طريقة `includes()` تخبرك ما إذا كانت سلسلة نصية تظهر داخل سلسلة أخرى. وهذه وسيلة عملية للسؤال عمّا إذا كان حرف ما أحد النيوكليوتيدات الصالحة. تحقّق من الصحة قبل أن تبدأ العدّ."
     },
     "invalidNucleotide": {
-      "question": "�",
-      "answer": "�"
+      "question": "ماذا أفعل إذا كان النيوكليوتيد غير صالح؟",
+      "answer": "أرجِع `-1` فورًا. فالمواصفات تستخدم هذه القيمة للإشارة إلى إدخال غير صالح."
     },
     "countOccurrences": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أعدّ مرات الظهور في الخيط؟",
+      "answer": "كرّر على كل حرف في الخيط. وإذا طابق الحرف النيوكليوتيد الذي تعدّه، فأضف 1 إلى عدّاد. وأرجِع العدّاد في النهاية."
     },
     "validateStrand": {
-      "question": "�",
-      "answer": "�"
+      "question": "هل أتحقق من صحة الخيط أيضًا؟",
+      "answer": "نعم. إذا كان أي حرف في الخيط ليس نيوكليوتيدًا صالحًا، فأرجِع `-1`. وتحقق من كل حرف قبل العدّ."
     }
   },
   "functions": {
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "التحقق مما إذا كانت سلسلة نصية تحتوي على سلسلة نصية أصغر",
+      "category": "عمليات السلاسل النصية"
     }
   }
 }

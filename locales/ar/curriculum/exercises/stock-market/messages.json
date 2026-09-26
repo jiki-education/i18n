@@ -1,65 +1,65 @@
 {
   "errors": {
-    "yearNumber": "�",
-    "yearInPast": "�",
-    "yearTooFarFuture": "�",
-    "balanceNumber": "�",
-    "moneyNumber": "�"
+    "yearNumber": "يجب أن تكون السنة عددًا",
+    "yearInPast": "لا يمكننا التحقق من سوق الأسهم في سنوات قديمة! السنة {{year}} في الماضي.",
+    "yearTooFarFuture": "لا نعرف شيئًا عن أكثر من 20 عامًا من الآن! السنة {{year}} بعيدة جدًا في المستقبل.",
+    "balanceNumber": "يجب أن يكون الرصيد عددًا",
+    "moneyNumber": "يجب أن يكون المال عددًا"
   },
   "checks": {
-    "taxReportCount": "�",
-    "taxReportWrongYear": "�",
-    "taxReportWrongBalance": "�",
-    "wrongFinalBalance": "�",
-    "announcedMultipleTimes": "�"
+    "taxReportCount": "كان المتوقع 20 إقرارًا ضريبيًا (واحدًا لكل سنة)، لكن كان لديك {{got}}. تأكد من استدعاء <code>reportTax()</code> داخل الحلقة.",
+    "taxReportWrongYear": "الإقرار الضريبي رقم {{index}} كان عن السنة {{actualYear}}، لكن كان ينبغي أن يكون عن السنة {{expectedYear}}.",
+    "taxReportWrongBalance": "أبلغت عن ضريبة خاطئة عن سنة {{year}}. كان ينبغي أن تكون ${{expected}} لكنها كانت ${{actual}}.",
+    "wrongFinalBalance": "كان المتوقع رصيدًا نهائيًا يقارب ${{expected}} لكنك حصلت على ${{got}}. تأكد من استدعاء <code>announceToFamily()</code> بعد الحلقة.",
+    "announcedMultipleTimes": "ينبغي أن تخبر عائلتك <strong>مرة واحدة</strong> فقط، بعد انقضاء العشرين عامًا، لا في كل عام. لقد استدعيت <code>announceToFamily()</code> {{count}} {{times}}."
   },
   "tasks": {
     "growInvestment": {
-      "name": "�",
-      "description": "�"
+      "name": "نمِّ استثمارك على مدى 20 عامًا",
+      "description": "ابدأ بـ 10 دولارات، وحاكِ 20 عامًا من نمو سوق الأسهم، وأبلغ محصّل الضرائب كل عام، ثم أعلن الرصيد النهائي لعائلتك."
     }
   },
   "scenarios": {
     "twentyYears": {
-      "name": "�",
-      "description": "�"
+      "name": "20 عامًا من النمو",
+      "description": "استثمر 10 دولارات وتابع رصيدك على مدى 20 عامًا من نمو السوق."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "لا أعرف من أين أبدأ",
+      "answer": "عليك أن تستخدم `marketGrowth()` لكل سنة من العشرين عامًا القادمة (بدءًا من الآن). وستُرجع لك قيمة مثل 5 (أي نمو بنسبة 5%). ثم عليك أن تتابع مقدار المال الذي لديك، بدءًا من مبلغ 10 دولارات الذي بدأت به، متغيرًا حسب نسبة الفائدة."
     },
     "stillStuck": {
-      "question": "�",
-      "answer": "�"
+      "question": "ما زلت عالقًا فعلًا، لم أفهم الأمر.",
+      "answer": "حسنًا، لنكتب معًا بعض الكود لتأخذ فكرة عن البداية. تخيّل أن السنة الحالية هي 2026. عليك أن تفعل شيئًا مثل: \n\n```javascript\nlet money = 10\nlet growth = marketGrowth(2026)\n\n// عليك أن تزيد money بمقدار growth.\n// راجع التلميح التالي إذا احتجت إلى صيغة الحساب.\nmoney = money + ???\nreportTax(2026, money)\n\n// الآن افعل ذلك لعام 2027\nlet growth = marketGrowth(2027)\nmoney = money + ???\nreportTax(2027, money)\n\n// الآن افعل ذلك لعام 2028\nlet growth = marketGrowth(2028)\nmoney = money + ???\nreportTax(2028, money)\n\n// بعد 20 عامًا أخبر عائلتك\nannounceToFamily(money)\n```"
     },
     "formula": {
-      "question": "�",
-      "answer": "�"
+      "question": "ما صيغة تتبّع النمو؟ لا أستطيع استنتاجها بنفسي.",
+      "answer": "الصيغة هي: \n\n```javascript\nmoney = money * (100 + marketGrowth(year)) / 100\n```"
     },
     "wrongTaxReportCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "يقول إنني لم أبلّغ عن العدد الصحيح من الإقرارات الضريبية.",
+      "answer": "ينبغي أن تبلّغ عن 20 إقرارًا ضريبيًا عن 20 سنة. استخدم شريط التمرير لتحسب عدد المرات التي تستدعي فيها الدالة `reportTax()`."
     }
   },
   "describers": {
-    "marketGrowth": "�",
-    "reportTax": "�",
-    "announceToFamily": "�"
+    "marketGrowth": "حصلت على نمو للسوق بنسبة ${return}% في السنة ${arg1}",
+    "reportTax": "أبلغت عن ضريبة السنة ${arg1}: $${arg2}",
+    "announceToFamily": "أخبرت العائلة بمبلغ $${arg1}"
   },
   "functions": {
     "marketGrowth": {
-      "description": "�",
-      "category": "�"
+      "description": "تُرجع نسبة نمو السوق لسنة معطاة (بين -25 و40). وستحتاج في كل مرة إلى **زيادة** مقدار المال الذي لديك بهذا العدد. (فمثلًا 40 تعني أن 10 دولارات لديك ينبغي أن تصبح 14 دولارًا، و-10 تعني أن 10 دولارات لديك تنخفض إلى 9 دولارات)",
+      "category": "إجراء"
     },
     "reportTax": {
-      "description": "�",
-      "category": "�"
+      "description": "تبلّغ عن ضريبتك لسنة معطاة. ينبغي أن تستدعيها كل عام، مع السنة ومقدار المال الذي لديك في تلك اللحظة.",
+      "category": "إجراء"
     },
     "announceToFamily": {
-      "description": "�",
-      "category": "�"
+      "description": "تُخبر عائلتك برصيدك النهائي.",
+      "category": "إجراء"
     }
   }
 }

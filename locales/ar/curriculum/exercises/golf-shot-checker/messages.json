@@ -1,82 +1,82 @@
 {
   "checks": {
-    "wrongDistance": "�",
-    "missingPositions": "�",
-    "stayOnGrassPlain": "�",
-    "stayOnGrassOvershot": "�",
-    "droppedIncorrectly": "�",
-    "noFireworksPeriod": "�",
-    "noFireworksNoPeriod": "�",
-    "noFireworksAtEnd": "�",
-    "shouldFireFireworks": "�"
+    "wrongDistance": "لم تتدحرج الكرة المسافة الصحيحة لهذه التسديدة. ينبغي أن تقطع مسافة تساوي طول التسديدة تمامًا انطلاقًا من الحامل.",
+    "missingPositions": "يجب أن تتدحرج الكرة عبر كل موضع خطوة واحدة في كل مرة.",
+    "stayOnGrassPlain": "ينبغي أن تبقى الكرة على العشب في هذه التسديدة، فلا ينبغي أن تسقط في الحفرة.",
+    "stayOnGrassOvershot": "تجاوزت الكرة الحفرة، لذا ينبغي أن تبقى على العشب، فلا ينبغي أن تسقط فيها.",
+    "droppedIncorrectly": "وصلت الكرة إلى الحفرة لكنها لم تنزل إليها بالشكل الصحيح.",
+    "noFireworksPeriod": "لم يكن ينبغي أن تطلق الألعاب النارية.",
+    "noFireworksNoPeriod": "لم يكن ينبغي أن تطلق الألعاب النارية",
+    "noFireworksAtEnd": "لم يكن ينبغي أن تطلق الألعاب النارية في النهاية.",
+    "shouldFireFireworks": "ينبغي أن تطلق الألعاب النارية في النهاية."
   },
   "tasks": {
     "checkShot": {
-      "name": "�",
-      "description": "�"
+      "name": "تحقّق مما إذا كانت التسديدة تهبط في الحفرة",
+      "description": "دحرج الكرة بناءً على طول التسديدة، وإذا هبطت عند الحفرة، فأنزلها إلى الداخل! ثم أطلق الألعاب النارية."
     }
   },
   "scenarios": {
     "tooShort": {
-      "name": "�",
-      "description": "�"
+      "name": "تسديدة قصيرة جدًا",
+      "description": "يضرب لاعب الجولف الكرة بمسافة 23، فلا تصل إلى الحفرة."
     },
     "justTooShort": {
-      "name": "�",
-      "description": "�"
+      "name": "قصيرة بفارق ضئيل",
+      "description": "يضرب لاعب الجولف الكرة بمسافة 57، فلا تتدحرج إلى الداخل بفارق ضئيل."
     },
     "justTooFar": {
-      "name": "�",
-      "description": "�"
+      "name": "بعيدة بفارق ضئيل",
+      "description": "يضرب لاعب الجولف الكرة بمسافة 63، فتخرج من الجهة الأخرى بفارق ضئيل"
     },
     "tooLong": {
-      "name": "�",
-      "description": "�"
+      "name": "تسديدة طويلة جدًا",
+      "description": "يضرب لاعب الجولف الكرة بمسافة 68، فتتجاوز الحفرة."
     },
     "justInsideLeft": {
-      "name": "�",
-      "description": "�"
+      "name": "دخلت الحفرة بفارق ضئيل",
+      "description": "يضرب لاعب الجولف الكرة بمسافة 58، فتبلغ الحفرة بفارق ضئيل!"
     },
     "justInsideRight": {
-      "name": "�",
-      "description": "�"
+      "name": "تكاد تكون بعيدة جدًا لكنها جيدة!",
+      "description": "يضرب لاعب الجولف الكرة بمسافة 62، فتكاد تبقى داخل الحفرة!"
     }
   },
   "hints": {
     "howDoIRollRightDistance": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أدحرج الكرة المسافة الصحيحة في كل تسديدة؟",
+      "answer": "استخدم `getShotLength()` لمعرفة المسافة التي ضرب بها لاعب الجولف الكرة، واحفظها في متغير. فذلك يخبرك بعدد المرات التي ينبغي أن تدحرج فيها الكرة."
     },
     "howDoIMoveOneStep": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أحرّك الكرة خطوة واحدة في كل مرة بدلًا من القفز بها إلى النهاية؟",
+      "answer": "احتفظ بمتغير لموضع `x` الخاص بالكرة. وفي كل مرة داخل الحلقة، زده بمقدار واحد ثم دحرج الكرة إلى الموضع الجديد."
     },
     "whenShouldBallDrop": {
-      "question": "�",
-      "answer": "�"
+      "question": "متى ينبغي أن تسقط الكرة في الحفرة؟",
+      "answer": "فقط عندما تهبط التسديدة في الحفرة. تحقّق مما إذا كان طول التسديدة يقع ضمن نطاق التسديدات الناجحة، باختبار الحدّين الأدنى والأعلى معًا في شرط واحد."
     },
     "whenShouldFireworksFire": {
-      "question": "�",
-      "answer": "�"
+      "question": "متى ينبغي أن تُطلق الألعاب النارية؟",
+      "answer": "فقط في تسديدة هبطت في الحفرة، وفقط بعد أن تنتهي الكرة من النزول إلى القاع. أبقِ النزول والألعاب النارية معًا داخل الشرط نفسه."
     }
   },
   "functions": {
     "moveTo": {
-      "description": "�",
-      "category": "�"
+      "description": "تنقل الكرة إلى الموضع **(x, y)**.",
+      "category": "الحركة"
     },
     "getShotLength": {
-      "description": "�",
-      "category": "�"
+      "description": "تُرجع **طول التسديدة**، أي عدد الوحدات التي تقطعها الكرة إلى اليمين.",
+      "category": "معلومات"
     },
     "fireFireworks": {
-      "description": "�",
-      "category": "�"
+      "description": "تُطلق ألعابًا نارية احتفالية!",
+      "category": "إجراء"
     }
   },
   "describers": {
-    "moveTo": "�",
-    "getShotLength": "�",
-    "fireFireworks": "�"
+    "moveTo": "نقل الكرة إلى الموضع (${arg1}, ${arg2})",
+    "getShotLength": "حصل على طول التسديدة",
+    "fireFireworks": "أطلق ألعابًا نارية احتفالية"
   }
 }

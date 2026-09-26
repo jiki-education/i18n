@@ -16,13 +16,14 @@
     "within a month, and then a real regression in a live locale goes unnoticed",
     "underneath the noise. Scoping the gate is what makes red mean \"fix this now\".",
     "",
-    "Provenance of the current 16: the 7 marked \"live\": true in the review site's",
+    "Provenance of the current 17: the 7 marked \"live\": true in the review site's",
     "src/data/status.json (fr, uk, it, el, es-419, es-ES, hu), plus pt-BR and pt-PT,",
     "which iHiD holds to the same standard ahead of them going live, plus bn, added",
     "2026-08-22 after it was found already served (front-end's production-locales.json)",
     "without ever having been added here (see below) — a retroactive catch-up, not the",
     "normal order. fa, hi, ja, ko, sr and zh-CN were added on 2026-09-25 in the normal",
     "order: each went green here first, ahead of front-end PR #1175 serving them.",
+    "ar was added on 2026-09-26 in the same order, once it went green here.",
     "",
     "This is deliberately NOT the same list as the front-end's",
     "app/lib/production-locales.json (which lib/locales.ts turns into its",
@@ -83,6 +84,7 @@
     "zh-TW"
   ],
   "productionTargets": [
+    "ar",
     "bn",
     "el",
     "es-419",

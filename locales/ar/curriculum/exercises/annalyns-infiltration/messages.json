@@ -1,126 +1,126 @@
 {
   "checks": {
     "fastAttack": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "كان <strong>ينبغي</strong> أن تهجم أنالين بسرعة هنا، لكنها لم تفعل. الفارس نائم، فيمكنها أن تهجم قبل أن يستيقظ.",
+      "shouldNot": "كان <strong>ينبغي</strong> ألا تهجم أنالين بسرعة هنا. الفارس مستيقظ، ولو هاجمت لقُبض عليها.",
+      "tooMany": "كان <strong>ينبغي</strong> أن تهجم أنالين بسرعة مرة واحدة فقط هنا، لكنها فعلت ذلك {{count}} مرة."
     },
     "spy": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "كان <strong>ينبغي</strong> أن تتجسّس أنالين على المخيّم هنا، لكنها لم تفعل. هناك شخص واحد على الأقل مستيقظ في المخيّم، فهناك ما يستحق المراقبة.",
+      "shouldNot": "كان <strong>ينبغي</strong> ألا تتجسّس أنالين على المخيّم هنا. الجميع نائم، فلا شيء يمكن معرفته.",
+      "tooMany": "كان <strong>ينبغي</strong> أن تتجسّس أنالين على المخيّم مرة واحدة فقط هنا، لكنها فعلت ذلك {{count}} مرة."
     },
     "signal": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "كان <strong>ينبغي</strong> أن ترسل أنالين إشارة إلى السجين هنا، لكنها لم تفعل. السجين مستيقظ والرامي نائم، فستصل الإشارة.",
+      "shouldNot": "كان <strong>ينبغي</strong> ألا ترسل أنالين إشارة إلى السجين هنا. فإما أن السجين نائم أو أن الرامي مستيقظ، لذا ستفشل الإشارة.",
+      "tooMany": "كان <strong>ينبغي</strong> أن ترسل أنالين إشارة إلى السجين مرة واحدة فقط هنا، لكنها فعلت ذلك {{count}} مرة."
     },
     "free": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "كان <strong>ينبغي</strong> أن تحرّر أنالين السجين هنا، لكنها لم تفعل. يمكنها أن تفعل ذلك هنا دون أن تُقبض عليها.",
+      "shouldNot": "كان <strong>ينبغي</strong> ألا تحاول أنالين تحرير السجين هنا. فسيُقبض عليها.",
+      "tooMany": "كان <strong>ينبغي</strong> أن تحرّر أنالين السجين مرة واحدة فقط هنا، لكنها فعلت ذلك {{count}} مرة."
     }
   },
   "tasks": {
     "planTheRescue": {
-      "name": "�",
-      "description": "�"
+      "name": "خطّط لعملية الإنقاذ",
+      "description": "في كل مخيّم، نفّذ كل إجراء تستطيع أنالين تنفيذه بأمان: الهجوم السريع إذا كان الفارس نائمًا، والتجسّس إذا كان أحدهم مستيقظًا على الأقل، وإرسال إشارة إلى السجين إذا كان السجين مستيقظًا والرامي نائمًا، وتحرير السجين إما عن طريق الكلب الذي يحسن التصرّف أو عن طريق التسلّل."
     }
   },
   "scenarios": {
     "allAsleepNaughtyDog": {
-      "name": "�",
-      "description": "�"
+      "name": "الجميع نائمون، والكلب مشاغب",
+      "description": "المخيّم كله نائم، لكن كلب أنالين مشاغب فلا فائدة منه."
     },
     "allAsleepBehavingDog": {
-      "name": "�",
-      "description": "�"
+      "name": "الجميع نائمون، والكلب يحسن التصرّف",
+      "description": "المخيّم كله نائم، وكلب أنالين يحسن التصرّف."
     },
     "knightAwakeNaughtyDog": {
-      "name": "�",
-      "description": "�"
+      "name": "الفارس فقط مستيقظ",
+      "description": "الفارس متأهّب للحراسة بينما الرامي والسجين نائمان. والكلب مشاغب."
     },
     "prisonerAwakeNaughtyDog": {
-      "name": "�",
-      "description": "�"
+      "name": "السجين فقط مستيقظ",
+      "description": "الخاطفان نائمان بينما السجين مستيقظ. والكلب مشاغب، فطريق التسلّل متاح."
     },
     "archerAndPrisonerAwakeBehavingDog": {
-      "name": "�",
-      "description": "�"
+      "name": "الرامي والسجين مستيقظان",
+      "description": "الرامي متأهّب للحراسة والسجين مستيقظ أيضًا. والكلب يحسن التصرّف."
     },
     "allAwakeBehavingDog": {
-      "name": "�",
-      "description": "�"
+      "name": "الجميع مستيقظون، والكلب يحسن التصرّف",
+      "description": "المخيّم كله مستيقظ تمامًا. وحتى مع حسن تصرّف الكلب، فتحرير السجين ليس آمنًا."
     }
   },
   "hints": {
     "checkCampState": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أتحقّق من حال المخيّم؟",
+      "answer": "يمكنك التحقّق من أربعة أمور، لكل منها دالة تُرجع `true` أو `false`:\n\n- هل الفارس مستيقظ؟ `knightIsAwake()`\n- هل الرامي مستيقظ؟ `archerIsAwake()`\n- هل السجين مستيقظ؟ `prisonerIsAwake()`\n- هل الكلب يحسن التصرّف؟ `dogIsBehaving()`"
     },
     "performActions": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أجعل أنالين تنفّذ كل إجراء؟",
+      "answer": "هناك أربعة إجراءات، لكل منها دالة خاصة:\n\n- الهجوم السريع: `fastAttack()`\n- التجسّس على المخيّم: `spy()`\n- إرسال إشارة إلى السجين: `signalPrisoner()`\n- تحرير السجين: `freePrisoner()`"
     },
     "knightAsleep": {
-      "question": "�",
-      "answer": "�"
+      "question": "يحتاج الهجوم السريع إلى أن يكون الفارس نائمًا. كيف أتحقّق من ذلك؟",
+      "answer": "لا توجد دالة `isAsleep()`، لكن النوم هو عكس الاستيقاظ تمامًا. استخدم `!` لعكس الشرط. تخيّل أننا نريد أن نطلب من شخص أن يتوقّف عن الأكل عندما يشبع، لكن ليس لدينا سوى دالة `isHungry()`. يمكننا عكسها:\n\n```javascript\nif (!isHungry()) {\n  stopEating()\n}\n```\n\nطبّق الفكرة نفسها للتحقّق من أن الفارس نائم."
     },
     "spyAnyoneAwake": {
-      "question": "�",
-      "answer": "�"
+      "question": "ينجح التجسّس إذا كان واحد منهم على الأقل مستيقظًا. كيف أكتب ذلك؟",
+      "answer": "استخدم `||` (أو) بين التحقّقات بحيث يصبح الشرط كله `true` إذا كان أي شرط واحد منها `true`. على سبيل المثال، هذا يُنفَّذ عندما يكون الشخص جائعًا أو عطشانًا أو كليهما:\n\n```javascript\nif (isHungry() || isThirsty()) {\n  rest()\n}\n```"
     },
     "signalBothConditions": {
-      "question": "�",
-      "answer": "�"
+      "question": "يحتاج إرسال الإشارة إلى أن يكون أمران صحيحين في الوقت نفسه. كيف أجمعهما؟",
+      "answer": "استخدم `&&` (و) بحيث يجب أن يكون الطرفان `true`. على سبيل المثال، هذا لا يُنفَّذ إلا عندما يكون الشخص جائعًا وعطشانًا في الوقت نفسه:\n\n```javascript\nif (isHungry() && isThirsty()) {\n  drink()\n}\n```"
     },
     "twoWaysToSucceed": {
-      "question": "�",
-      "answer": "�"
+      "question": "قد يكون للإجراء طريقان منفصلان تمامًا للنجاح. كيف أتعامل مع ذلك؟",
+      "answer": "أيٌّ من الطريقين يكفي بمفرده، فلديك خياران.\n\nالأول أن تكتب `if` منفصلة لكل طريق، وكلتاهما تنفّذ الإجراء نفسه:\n\n```javascript\nif (isHungry() && hasSnack()) {\n  eat()\n}\nif (isThirsty() && hasSnack()) {\n  eat()\n}\n```\n\nوالثاني أن تجمع الطريقين في `if` واحدة باستخدام `||`، مع وضع شرطَي كل طريق بين قوسين حتى تتجمّع أجزاء `&&` معًا قبل أن يفصل بينها `||`:\n\n```javascript\nif ((isHungry() && hasSnack()) || (isThirsty() && hasSnack())) {\n  eat()\n}\n```\n\nحدّد متطلّبات كل طريق على حدة أولًا، ثم استخدم الأسلوب الذي تراه أوضح."
     }
   },
   "describers": {
-    "knightIsAwake": "�",
-    "archerIsAwake": "�",
-    "prisonerIsAwake": "�",
-    "dogIsBehaving": "�",
-    "fastAttack": "�",
-    "spy": "�",
-    "signalPrisoner": "�",
-    "freePrisoner": "�"
+    "knightIsAwake": "تحقّقت مما إذا كان الفارس مستيقظًا",
+    "archerIsAwake": "تحقّقت مما إذا كان الرامي مستيقظًا",
+    "prisonerIsAwake": "تحقّقت مما إذا كان السجين مستيقظًا",
+    "dogIsBehaving": "تحقّقت مما إذا كان كلب أنالين يحسن التصرّف",
+    "fastAttack": "هجمت بسرعة على الفارس",
+    "spy": "تجسّست على المخيّم",
+    "signalPrisoner": "أرسلت إشارة إلى السجين",
+    "freePrisoner": "حرّرت السجين"
   },
   "functions": {
     "knightIsAwake": {
-      "description": "�",
-      "category": "�"
+      "description": "تُرجع `true` إذا كان الفارس مستيقظًا، و`false` إذا كان نائمًا.",
+      "category": "معلومات"
     },
     "archerIsAwake": {
-      "description": "�",
-      "category": "�"
+      "description": "تُرجع `true` إذا كان الرامي مستيقظًا، و`false` إذا كان نائمًا.",
+      "category": "معلومات"
     },
     "prisonerIsAwake": {
-      "description": "�",
-      "category": "�"
+      "description": "تُرجع `true` إذا كان السجين مستيقظًا، و`false` إذا كان نائمًا.",
+      "category": "معلومات"
     },
     "dogIsBehaving": {
-      "description": "�",
-      "category": "�"
+      "description": "تُرجع `true` إذا كان كلب أنالين (المشاغب بعض الشيء) يحسن التصرّف.",
+      "category": "معلومات"
     },
     "fastAttack": {
-      "description": "�",
-      "category": "�"
+      "description": "تهجم بسرعة على الفارس.",
+      "category": "إجراء"
     },
     "spy": {
-      "description": "�",
-      "category": "�"
+      "description": "تتجسّس على المخيّم.",
+      "category": "إجراء"
     },
     "signalPrisoner": {
-      "description": "�",
-      "category": "�"
+      "description": "ترسل إشارة إلى السجين باستخدام أصوات الطيور.",
+      "category": "إجراء"
     },
     "freePrisoner": {
-      "description": "�",
-      "category": "�"
+      "description": "تتسلّل إلى المخيّم لتحرير السجين.",
+      "category": "إجراء"
     }
   }
 }

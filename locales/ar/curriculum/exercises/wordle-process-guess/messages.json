@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "rowMismatch": "الحرف \"{{letter}}\" في الصندوق رقم {{square}} ينبغي أن يكون \"{{expected}}\"، لا \"{{actual}}\".",
+    "rowNotColored": "لم يُلوَّن الصف.",
+    "rowWrongLength": "حصل الصف على {{actual}} من الحالات، لكن الصف يحتاج إلى {{expected}}."
+  },
+  "tasks": {
+    "processGuess": {
+      "name": "معالجة تخمين واحد",
+      "description": "أنشئ دالة تُسمّى processGuess تستقبل كلمة سرية وتخمينًا، وتحدّد حالة كل حرف (\"correct\" أو \"present\" أو \"absent\")، ثم تستدعي colorRow(1, states) بالنتائج."
+    }
+  },
+  "scenarios": {
+    "allCorrect": {
+      "name": "الكل صحيح",
+      "description": "التعامل مع تخمين صحيح بالكامل"
+    },
+    "absent": {
+      "name": "بعض الحروف غائبة",
+      "description": "التعامل مع وجود بعض الحروف الخاطئة"
+    },
+    "present": {
+      "name": "بعض الحروف موجودة",
+      "description": "التعامل مع حروف في المكان الخطأ"
+    },
+    "complex": {
+      "name": "معقّد",
+      "description": "التعامل مع سيناريو أكثر تعقيدًا"
+    },
+    "differentWord": {
+      "name": "كلمة مختلفة",
+      "description": "وأخيرًا كلمة مختلفة!"
+    }
+  },
+  "hints": {
+    "compareLetters": {
+      "question": "كيف أقارن كل حرف في التخمين بالكلمة السرية؟",
+      "answer": "استخدم حلقة تمرّ على المواضع من `0` إلى `4`. في كل موضع، قارن `guess[i]` بـ `target[i]`."
+    },
+    "stateRules": {
+      "question": "متى يكون الحرف `\"correct\"` ومتى `\"present\"` ومتى `\"absent\"`؟",
+      "answer": "وفقًا للقواعد المبسّطة في هذا التمرين: إذا كان `guess[i]` يساوي `target[i]` فالحالة `\"correct\"`. وإلا، إذا كان الحرف موجودًا في مكان ما داخل `target` فالحالة `\"present\"`. وإن لم يكن موجودًا فالحالة `\"absent\"`."
+    },
+    "buildList": {
+      "question": "كيف أبني مصفوفة الحالات؟",
+      "answer": "ابدأ بمصفوفة فارغة، ثم استخدم `states.push(value)` داخل الحلقة لإضافة كل حالة إلى النهاية بالترتيب."
+    },
+    "finishedList": {
+      "question": "إلى أين تذهب المصفوفة الجاهزة؟",
+      "answer": "مرّرها إلى `colorRow(1, states)` لتلوين الصف الأول من لوحة Wordle بالحالات التي حسبتها."
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "تلوّن صفًا في لوحة Wordle بالحالات المعطاة.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "تضيف عنصرًا إلى نهاية المصفوفة، وتعدّل المصفوفة نفسها.",
+      "category": "المصفوفات"
+    },
+    "includes": {
+      "description": "تتحقق مما إذا كانت سلسلة نصية تحتوي على سلسلة نصية أخرى، وتُرجع صحيحًا أو خطأ.",
+      "category": "السلاسل النصية"
+    }
+  },
+  "describers": {
+    "colorRow": "لوّنت صفًا في لوحة Wordle"
+  }
+}

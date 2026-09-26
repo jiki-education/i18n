@@ -1,60 +1,60 @@
 {
   "checks": {
-    "flowerCount_zero": "�",
-    "flowerCount_one": "�",
-    "flowerCount_two": "�",
-    "flowerCount_few": "�",
-    "flowerCount_many": "�",
-    "flowerCount_other": "�",
-    "flowerAtPosition": "�",
-    "strayFlower": "�"
+    "flowerCount_zero": "كان المالك يتوقع ألا تُزرع أي زهرة. لكنك زرعت {{got}}.",
+    "flowerCount_one": "كان المالك يتوقع أن يرى {{count}} زهرة مزروعة. لكنك زرعت {{got}}.",
+    "flowerCount_two": "كان المالك يتوقع أن يرى {{count}} زهرتين مزروعتين. لكنك زرعت {{got}}.",
+    "flowerCount_few": "كان المالك يتوقع أن يرى {{count}} زهرات مزروعة. لكنك زرعت {{got}}.",
+    "flowerCount_many": "كان المالك يتوقع أن يرى {{count}} زهرة مزروعة. لكنك زرعت {{got}}.",
+    "flowerCount_other": "كان المالك يتوقع أن يرى {{count}} زهرة مزروعة. لكنك زرعت {{got}}.",
+    "flowerAtPosition": "كان المتوقع وجود زهرة عند الموضع {{position}}، لكننا لم نجدها.",
+    "strayFlower": "وجدنا زهرة عند الموضع {{position}}، وهو ليس المكان الذي أراد المالك زهرة فيه. يجب أن تكون الأزهار موزّعة بالتساوي."
   },
   "tasks": {
     "plantFlowersEvenly": {
-      "name": "�",
-      "description": "�"
+      "name": "ازرع الأزهار بالتساوي",
+      "description": "استخدم `askNumberOfFlowers()` لمعرفة عدد الأزهار التي يجب زراعتها، واحسب المسافة بينها، ثم ازرعها موزّعة بالتساوي."
     }
   },
   "scenarios": {
     "oneFlower": {
-      "name": "�",
-      "description": "�"
+      "name": "المالك يريد زهرة واحدة",
+      "description": "في هذا السيناريو، ستُرجع `askNumberOfFlowers()` القيمة 1. ازرع زهرة واحدة عند الموضع 50."
     },
     "threeFlowers": {
-      "name": "�",
-      "description": "�"
+      "name": "المالك يريد 3 أزهار",
+      "description": "في هذا السيناريو، ستُرجع `askNumberOfFlowers()` القيمة 3. ازرع 3 أزهار عند المواضع 25 و50 و75."
     },
     "fourFlowers": {
-      "name": "�",
-      "description": "�"
+      "name": "المالك يريد 4 أزهار",
+      "description": "في هذا السيناريو، ستُرجع `askNumberOfFlowers()` القيمة 4. ازرع 4 أزهار عند المواضع 20 و40 و60 و80."
     },
     "nineFlowers": {
-      "name": "�",
-      "description": "�"
+      "name": "المالك يريد 9 أزهار",
+      "description": "في هذا السيناريو، ستُرجع `askNumberOfFlowers()` القيمة 9. ازرع 9 أزهار عند المواضع 10 و20 و30 و40 و50 و60 و70 و80 و90."
     }
   },
   "hints": {
     "chooseGap": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أحسب مكان زراعة كل زهرة؟",
+      "answer": "أولًا احسب المسافة بين الأزهار:\n\n```javascript\n100 / (numberOfFlowers + 1)\n```\n\nتُزرع الزهرة الأولى عند هذه المسافة، وكل زهرة تالية تبعد عنها بمقدار مسافة واحدة. فإذا كان هناك 3 أزهار، تكون المسافة 25، وتُزرع عند 25 و50 و75."
     },
     "seeScenarios": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أرى السيناريوهات المختلفة؟",
+      "answer": "انقر على الدوائر الموجودة على اليسار، بين الكود والنتائج."
     }
   },
   "functions": {
     "askNumberOfFlowers": {
-      "description": "�",
-      "category": "�"
+      "description": "تُرجع **عدد الأزهار** التي يجب زراعتها.",
+      "category": "البستنة"
     },
     "plant": {
-      "description": "�",
-      "category": "�"
+      "description": "تزرع زهرة عند **الموضع** المعطى.",
+      "category": "البستنة"
     }
   },
   "describers": {
-    "askNumberOfFlowers": "�",
-    "plant": "�"
+    "askNumberOfFlowers": "سأل عن عدد الأزهار التي يجب زراعتها",
+    "plant": "زرع زهرة عند الموضع ${arg1}"
   }
 }

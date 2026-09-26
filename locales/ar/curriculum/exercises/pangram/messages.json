@@ -1,72 +1,72 @@
 {
   "tasks": {
     "checkPangram": {
-      "name": "�",
-      "description": "�"
+      "name": "تحقّق من بانغرام",
+      "description": "اكتب دالة تتحقّق مما إذا كانت الجملة بانغرام (تحتوي على كل حرف من حروف الأبجدية مرة واحدة على الأقل). ويجب أن يكون هذا التحقّق غير حسّاس لحالة الأحرف."
     }
   },
   "scenarios": {
     "pangramEmptySentence": {
-      "name": "�",
-      "description": "�"
+      "name": "جملة فارغة",
+      "description": "الجملة الفارغة ليست بانغرام."
     },
     "pangramPerfectLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "أبجدية كاملة بحروف صغيرة",
+      "description": "الأبجدية الكاملة بحروف صغيرة هي بانغرام."
     },
     "pangramOnlyLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "حروف صغيرة فقط",
+      "description": "الجملة التي تحتوي على حروف صغيرة فقط وتغطي كل الحروف هي بانغرام."
     },
     "pangramMissingX": {
-      "name": "�",
-      "description": "�"
+      "name": "الحرف 'x' مفقود",
+      "description": "الجملة التي لا تحتوي على الحرف 'x' ليست بانغرام."
     },
     "pangramMissingH": {
-      "name": "�",
-      "description": "�"
+      "name": "الحرف 'h' مفقود",
+      "description": "الجملة التي لا تحتوي على الحرف 'h' ليست بانغرام."
     },
     "pangramMissingAM": {
-      "name": "�",
-      "description": "�"
+      "name": "حروف مفقودة بعد a-m",
+      "description": "سلسلة نصية تحتوي على الحروف من 'a' إلى 'm' بحروف صغيرة وكبيرة ليست بانغرام."
     },
     "pangramWithUnderscores": {
-      "name": "�",
-      "description": "�"
+      "name": "مع شرطات سفلية",
+      "description": "جملة بانغرام تحتوي على شرطات سفلية."
     },
     "pangramWithNumbers": {
-      "name": "�",
-      "description": "�"
+      "name": "مع أرقام",
+      "description": "جملة بانغرام تحتوي على أرقام أيضًا."
     },
     "pangramNumbersReplacingLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "أرقام تحلّ محل الحروف",
+      "description": "الجملة التي تُستبدل فيها الحروف بأرقام ليست بانغرام."
     },
     "pangramMixedCasePunctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "حروف كبيرة وصغيرة وعلامات ترقيم",
+      "description": "بانغرام بحروف كبيرة وصغيرة وعلامات ترقيم."
     },
     "pangramCaseInsensitive": {
-      "name": "�",
-      "description": "�"
+      "name": "حروف مفقودة مع تجاهل حالة الأحرف",
+      "description": "الجملة التي لا تحتوي على كل الحروف، بغض النظر عن حالة الأحرف، ليست بانغرام."
     }
   },
   "hints": {
     "helpers": {
-      "question": "�",
-      "answer": "�"
+      "question": "أي الدوال المساعدة ستوفّر عليّ العناء هنا؟",
+      "answer": "دالة `includes()` المساعدة (التي تسأل: هل يظهر هذا الحرف في هذه السلسلة النصية؟) ودالة `toLowerCase()` المساعدة (حتى لا تُربكك فروق حالة الأحرف) تجعلان المنطق الأساسي قصيرًا وواضحًا."
     },
     "whyLowercase": {
-      "question": "�",
-      "answer": "�"
+      "question": "لماذا أحوّل الجملة إلى حروف صغيرة؟",
+      "answer": "الجملة \"The quick brown fox...\" تحتوي على الحرفين 'T' و't' معًا. وإذا تحقّقت من الحروف الصغيرة فقط، فلن تتطابق الحروف الكبيرة. حوّل الجملة إلى حروف صغيرة مرة واحدة في البداية حتى تكون كل المقارنات متسقة."
     },
     "checkEveryLetter": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أتحقّق من وجود كل حرف؟",
+      "answer": "كرّر المرور على كل حرف من حروف الأبجدية `\"abcdefghijklmnopqrstuvwxyz\"`. ولكل حرف، استخدم `includes()` للتحقّق مما إذا كان يظهر في الجملة المحوّلة إلى حروف صغيرة."
     },
     "stopEarly": {
-      "question": "�",
-      "answer": "�"
+      "question": "متى يمكنني التوقّف مبكرًا؟",
+      "answer": "بمجرد أن تجد حرفًا مفقودًا، أرجِع `false`. فلا فائدة من فحص بقية الحروف. ولا تُرجِع `true` إلا بعد التأكّد من الأبجدية كاملة."
     }
   }
 }

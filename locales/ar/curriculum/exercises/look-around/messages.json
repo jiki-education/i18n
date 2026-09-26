@@ -1,117 +1,117 @@
 {
   "errors": {
-    "walkedIntoFire": "�",
-    "steppedInPoop": "�",
-    "lookDirectionType": "�",
-    "lookDirectionValue": "�"
+    "walkedIntoFire": "لقد مشيت في النار!",
+    "steppedInPoop": "لقد خطوت في المقرف!",
+    "lookDirectionType": "تتوقع look() اتجاهًا على شكل سلسلة نصية: \"left\" أو \"right\" أو \"ahead\"",
+    "lookDirectionValue": "يجب أن يكون اتجاه look() واحدًا من \"left\" أو \"right\" أو \"ahead\""
   },
   "describers": {
-    "look": "�"
+    "look": "ينظر في اتجاه ويرى ما يوجد هناك"
   },
   "checks": {
-    "notReachedEnd": "�",
-    "extraTurn": "�",
-    "canTurnLeftMissing": "�",
-    "canTurnRightMissing": "�",
-    "canMoveMissing": "�",
-    "turnAroundMissing": "�",
-    "lookOnlyOnce": "�",
-    "maxExtraLines": "�"
+    "notReachedEnd": "لم تصل إلى نهاية المتاهة.",
+    "extraTurn": "يبدو أنك قمت باستدارة إضافية غير ضرورية في النهاية.",
+    "canTurnLeftMissing": "يجب أن تعرّف دالة <code>canTurnLeft</code>.",
+    "canTurnRightMissing": "يجب أن تعرّف دالة <code>canTurnRight</code>.",
+    "canMoveMissing": "يجب أن تعرّف دالة <code>canMove</code>.",
+    "turnAroundMissing": "يجب أن تعرّف دالة <code>turnAround</code>.",
+    "lookOnlyOnce": "يجب أن تظهر <code>look()</code> مرة واحدة فقط في برنامجك بالكامل.",
+    "maxExtraLines": "يجب ألا تضيف أكثر من 13 سطرًا من الكود."
   },
   "tasks": {
     "straightPath": {
-      "name": "�",
-      "description": "�"
+      "name": "طريق مستقيم",
+      "description": "نفّذ دالة canMove() حتى تستطيع الشخصية التقدم إلى نهاية المتاهة."
     },
     "turnLeft": {
-      "name": "�",
-      "description": "�"
+      "name": "استدر يسارًا إن أمكن",
+      "description": "نفّذ دالة canTurnLeft() حتى تستدير الشخصية يسارًا عندما يوجد طريق."
     },
     "turnRight": {
-      "name": "�",
-      "description": "�"
+      "name": "استدر يمينًا إن لم تستطع التقدم للأمام أو إلى اليسار",
+      "description": "نفّذ دالة canTurnRight() حتى تستدير الشخصية يمينًا عندما لا تستطيع الذهاب يسارًا أو إلى الأمام."
     },
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "الاستدارة عند الحاجة",
+      "description": "تعامل مع الطرق المسدودة بالاستدارة. يجب أن تعمل دوال الاستشعار الثلاث معًا الآن لحل أي متاهة."
     },
     "bonusChallenges": {
-      "name": "�",
-      "description": "�"
+      "name": "تحديات إضافية",
+      "description": "هل يمكنك استخدام دالة look() مرة واحدة فقط في البرنامج بأكمله؟ وهل يمكنك حلها بإضافة 13 سطرًا فقط من الكود؟"
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "أرشد الشخص إلى نهاية المتاهة",
+      "description": "طريق مستقيم إلى الأسفل"
     },
     "leftTurn": {
-      "name": "�",
-      "description": "�"
+      "name": "استدارة واحدة إلى اليسار",
+      "description": "التنقل عبر استدارة إلى اليسار"
     },
     "rightTurn": {
-      "name": "�",
-      "description": "�"
+      "name": "استدارة واحدة إلى اليمين",
+      "description": "التنقل عبر استدارة إلى اليمين"
     },
     "forks": {
-      "name": "�",
-      "description": "�"
+      "name": "اختر اليسار إن أمكن، وإلا فاختر اليمين",
+      "description": "متاهة بها مفترقات تختبر أولوية اليسار"
     },
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "الاستدارة عند طريق مسدود",
+      "description": "متاهة تتطلب الاستدارة"
     },
     "forks2": {
-      "name": "�",
-      "description": "�"
+      "name": "متاهة معقدة بها مفترقات وطرق مسدودة",
+      "description": "متاهة معقدة تختبر الخوارزمية كاملة"
     },
     "coverOldGround": {
-      "name": "�",
-      "description": "�"
+      "name": "أعد المرور على ما مررت به إن احتجت",
+      "description": "متاهة يجب عليك فيها العودة إلى الخلف لإيجاد المخرج"
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "اكتب look() مرة واحدة فقط",
+      "description": "حل المتاهة بحيث تظهر look() مرة واحدة فقط في الكود"
     },
     "bonus2": {
-      "name": "�",
-      "description": "�"
+      "name": "أضف 13 سطرًا فقط",
+      "description": "حل المتاهة بإضافة 13 سطرًا فقط من الكود"
     }
   },
   "hints": {
     "start": {
-      "question": "�",
-      "answer": "�"
+      "question": "من أين أبدأ أصلًا عندما لا يعمل البرنامج إطلاقًا؟",
+      "answer": "عرّف `canTurnLeft()` و`canTurnRight()` و`canMove()` في أعلى الكود، بحيث تُرجع كل واحدة منها `false` في الوقت الحالي. عندها سيعمل البرنامج، ويمكنك بعد ذلك استبدال محتوى كل دالة واحدة تلو الأخرى."
     },
     "findDirection": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أعرف ما يوجد في اتجاه معيّن؟",
+      "answer": "استخدم الدالة الجديدة `look(direction)`. مرّر لها `\"left\"` أو `\"right\"` أو `\"ahead\"` وستُرجع سلسلة نصية مثل `\"empty\"` أو `\"wall\"` أو `\"fire\"` أو `\"poop\"`."
     },
     "safeResults": {
-      "question": "�",
-      "answer": "�"
+      "question": "أي النتائج تعني أنه من الآمن السير في ذلك الاتجاه؟",
+      "answer": "من بين الأشياء الستة التي يمكن أن تُرجعها `look()`، هناك ثلاثة أشياء لا تريد بالتأكيد المشي فيها. يجب أن تُرجع دالتك `true` فقط عندما لا يكون ما تراه أيًا من تلك الثلاثة."
     },
     "avoidRepetition": {
-      "question": "�",
-      "answer": "�"
+      "question": "أنا أكرر المنطق نفسه في ثلاث دوال. كيف أتجنب ذلك؟",
+      "answer": "الدوال الثلاث تختلف فقط في الاتجاه الذي تنظر فيه. هل يمكنك كتابة دالة إضافية واحدة تأخذ اتجاهًا كمدخل، وتستخدمها الدوال الثلاث كلها؟"
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "تُحرّك الشخصية **خطوة واحدة إلى الأمام** في الاتجاه الحالي. المشي في جدار أو في النار أو في المقرف يُنهي برنامجك بخطأ، لذا افحص ما يوجد أمامك قبل التحرك!",
+      "category": "الحركة"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "تُدير الشخصية **90 درجة إلى اليسار** (عكس عقارب الساعة). هذا يغيّر الاتجاه الذي تواجهه الشخصية.",
+      "category": "الحركة"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "تُدير الشخصية **90 درجة إلى اليمين** (مع عقارب الساعة). هذا يغيّر الاتجاه الذي تواجهه الشخصية.",
+      "category": "الحركة"
     },
     "look": {
-      "description": "�",
-      "category": "�"
+      "description": "تنظر في الاتجاه المعطى وتُرجع ما يوجد هناك. يجب أن يكون الاتجاه `\"left\"` أو `\"right\"` أو `\"ahead\"`. وتُرجع واحدة من القيم التالية: `\"empty\"` أو `\"wall\"` أو `\"fire\"` أو `\"poop\"` أو `\"start\"` أو `\"target\"`.",
+      "category": "الاستشعار"
     }
   }
 }

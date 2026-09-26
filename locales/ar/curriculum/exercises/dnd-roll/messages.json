@@ -1,54 +1,54 @@
 {
   "errors": {
-    "unknownDice": "�",
-    "announceNumber": "�",
-    "attackNumber": "�",
-    "damageNumber": "�"
+    "unknownDice": "عذرًا، لا يوجد لدى Jiki حجر نرد له {{sides}} وجهًا في متناول اليد!",
+    "announceNumber": "يمكنك إعلان عدد فقط",
+    "attackNumber": "يجب أن تكون نتيجة الهجوم عددًا",
+    "damageNumber": "يجب أن يكون الضرر عددًا"
   },
   "describers": {
-    "roll": "�",
-    "announce": "�",
-    "strike": "�"
+    "roll": "رمى حجر نرد وحصل على ${return}",
+    "announce": "أعلن ${arg1}",
+    "strike": "ضرب العفريت بنتيجة هجوم ${arg1} وبإجمالي الضرر ${arg2}"
   },
   "checks": {
-    "announcementCount": "�",
-    "firstAnnouncement": "�",
-    "secondAnnouncement": "�",
-    "thirdAnnouncement": "�",
-    "notStruck": "�",
-    "wrongAttack": "�",
-    "wrongDamage": "�"
+    "announcementCount": "كان المتوقع 3 إعلانات، لكن عدد الإعلانات كان {{got}}. تأكد من إعلان كل رمية.",
+    "firstAnnouncement": "كان المتوقع أن يكون الإعلان الأول {{attack}} (نتيجة الهجوم)، لكنه كان {{got}}.",
+    "secondAnnouncement": "كان المتوقع أن يكون الإعلان الثاني {{damage}} (نتيجة الضرر الأساسي)، لكنه كان {{got}}.",
+    "thirdAnnouncement": "كان المتوقع أن يكون الإعلان الثالث {{bonus}} (نتيجة الضرر الإضافي)، لكنه كان {{got}}.",
+    "notStruck": "لم تضرب العفريت. تأكد من استدعاء <code>strike()</code>.",
+    "wrongAttack": "كان المتوقع أن تكون نتيجة الهجوم {{attack}}، لكنها كانت {{got}}. مرّر نتيجة الهجوم إلى <code>strike()</code>.",
+    "wrongDamage": "كان المتوقع أن يكون إجمالي الضرر {{totalDamage}} ({{damage}} + {{bonus}})، لكنه كان {{got}}. اجمع الضرر الأساسي والضرر الإضافي معًا."
   },
   "tasks": {
     "rollAndStrike": {
-      "name": "�",
-      "description": "�"
+      "name": "ارمِ النرد ووجّه ضربة إلى العفريت",
+      "description": "ارمِ ثلاثة أحجار نرد (حجر d20 لنتيجة الهجوم، وd12 للضرر الأساسي، وd10 للضرر الإضافي)، وأعلن كل رمية، ثم وجّه ضربة إلى العفريت بنتيجة هجومك وبإجمالي الضرر (الأساسي + الإضافي)."
     }
   },
   "scenarios": {
     "randomRolls": {
-      "name": "�",
-      "description": "�"
+      "name": "الرمي والضرب",
+      "description": "ارمِ d20 لنتيجة الهجوم، وd12 للضرر الأساسي، وd10 للضرر الإضافي. ثم وجّه ضربة إلى العفريت بنتيجة هجومك وبإجمالي الضرر."
     }
   },
   "hints": {
     "chooseDie": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أختار نوع حجر النرد الذي أستخدمه؟",
+      "answer": "لحجر نرد له 20 وجهًا، استخدم 20 كمدخل للدالة `roll`، مثل `roll(20)`. ولحجر نرد له 12 وجهًا، استدعِ `roll(12)`."
     }
   },
   "functions": {
     "roll": {
-      "description": "�",
-      "category": "�"
+      "description": "ترمي حجر نرد بعدد الأوجه المُعطى و**تُرجع** النتيجة.",
+      "category": "أحجار النرد"
     },
     "announce": {
-      "description": "�",
-      "category": "�"
+      "description": "تُعلن قيمة رمية النرد.",
+      "category": "إجراء"
     },
     "strike": {
-      "description": "�",
-      "category": "�"
+      "description": "توجّه ضربة إلى العفريت بنتيجة الهجوم وإجمالي الضرر المُعطيين.",
+      "category": "إجراء"
     }
   }
 }

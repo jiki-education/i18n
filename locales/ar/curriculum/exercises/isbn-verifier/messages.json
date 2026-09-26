@@ -1,142 +1,142 @@
 {
   "tasks": {
     "validateBasicIsbn": {
-      "name": "�",
-      "description": "�"
+      "name": "تحقّق من ISBN أساسي",
+      "description": "اكتب دالة تُسمّى `isValidIsbn` تأخذ سلسلة نصية تمثّل ISBN-10، ويكون الناتج صحيح إذا كان ISBN صالحًا وخطأ إذا لم يكن كذلك. تحتوي أرقام ISBN-10 على شرطات ينبغي تخطّيها. اضرب كل رقم في وزن يتناقص من 10 إلى 1، واجمع النواتج، ثم تحقّق مما إذا كان المجموع يقبل القسمة على 11."
     },
     "handleXCheckDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "تعامل مع X كرقم تحقق",
+      "description": "أحيانًا ينتهي ISBN بالحرف X، وهو يمثّل القيمة 10. حدّث دالتك لتتعامل مع X في الموضع الأخير."
     },
     "handleEdgeCases": {
-      "name": "�",
-      "description": "�"
+      "name": "تعامل مع الحالات الحدّية",
+      "description": "اجعل دالتك قوية: تعامل مع أرقام ISBN التي لا تحتوي على شرطات، وارفض الأحرف غير الصالحة، وارفض X في المواضع غير الأخيرة، وتأكّد من معالجة 10 أرقام بالضبط."
     },
     "useContinue": {
-      "name": "�",
-      "description": "�"
+      "name": "إضافة: تخطَّ الشرطات باستخدام `continue`",
+      "description": "بدلًا من تنفيذ العمل فقط عندما يكون الحرف رقمًا، استخدم `continue` لتتخطّى الشرطات مباشرة وتنتقل إلى الحرف التالي."
     }
   },
   "scenarios": {
     "isbnValid": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN صالح",
+      "description": "ينبغي أن يكون الناتج صحيح عند التحقق من ISBN-10 صالح."
     },
     "isbnValidCheckDigitX": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN صالح مع X كرقم تحقق",
+      "description": "ينبغي أن يكون الناتج صحيح عند التحقق من ISBN-10 صالح رقم تحققه 'X'."
     },
     "isbnValidNoDashes": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN صالح بدون شرطات",
+      "description": "ينبغي أن يكون الناتج صحيح عند التحقق من ISBN-10 صالح بدون شرطات فاصلة."
     },
     "isbnValidNoDashesXCheck": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN صالح بدون شرطات وX كرقم تحقق",
+      "description": "ينبغي أن يكون الناتج صحيح عند التحقق من ISBN-10 صالح بدون شرطات ورقم تحققه 'X'."
     },
     "isbnInvalidCheckDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "رقم تحقق غير صالح في ISBN",
+      "description": "ينبغي أن يكون الناتج خطأ عند التحقق من ISBN-10 رقم تحققه غير صحيح."
     },
     "isbnInvalidCharacter": {
-      "name": "�",
-      "description": "�"
+      "name": "رقم التحقق حرف آخر غير X",
+      "description": "ينبغي أن يكون الناتج خطأ عند التحقق من ISBN-10 يحتوي على حرف غير صالح."
     },
     "isbnInvalidCharacterNotZero": {
-      "name": "�",
-      "description": "�"
+      "name": "رقم تحقق غير صالح لا يُعامَل كصفر",
+      "description": "ينبغي ألا يُعامَل رقم التحقق غير الصالح على أنه صفر."
     },
     "isbnInvalidNonNumeric": {
-      "name": "�",
-      "description": "�"
+      "name": "حرف غير صالح في ISBN",
+      "description": "ينبغي ألا تُتجاهل الأحرف غير الصالحة في ISBN."
     },
     "isbnInvalidXPosition": {
-      "name": "�",
-      "description": "�"
+      "name": "X صالح فقط كرقم تحقق",
+      "description": "ينبغي أن يكون 'X' صالحًا فقط كرقم تحقق."
     },
     "isbnInvalidMissingCheckDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN بدون رقم تحقق",
+      "description": "ينبغي أن يكون الناتج خطأ عند التحقق من ISBN-10 بدون رقم تحقق."
     },
     "isbnInvalidTooLong": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN طويل جدًا",
+      "description": "ينبغي أن يكون الناتج خطأ عند التحقق من ISBN-10 طويل جدًا."
     },
     "isbnInvalidTooShort": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN قصير جدًا",
+      "description": "ينبغي أن يكون الناتج خطأ عند التحقق من ISBN-10 قصير جدًا."
     },
     "isbnInvalidEmpty": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN فارغ",
+      "description": "ينبغي أن يكون الناتج خطأ عند التحقق من سلسلة نصية فارغة تمثّل ISBN."
     },
     "isbnInvalidLengthNine": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN مكوّن من 9 أحرف",
+      "description": "ينبغي أن يكون الناتج خطأ عند إدخال 9 أحرف."
     },
     "isbnInvalidNonNumericBeforeCheck": {
-      "name": "�",
-      "description": "�"
+      "name": "حرف غير صالح قبل التحقق من الطول",
+      "description": "ينبغي ألا تُتجاهل الأحرف غير الصالحة قبل التحقق من الطول."
     },
     "isbnInvalidExtraLength": {
-      "name": "�",
-      "description": "�"
+      "name": "مدخل طويل جدًا لكنه يحتوي على ISBN صالح",
+      "description": "ينبغي أن يكون الناتج خطأ عند إدخال أكثر من 10 أحرف."
     },
     "isbnBonusUseContinue": {
-      "name": "�",
-      "description": "�"
+      "name": "تخطّي الشرطات باستخدام `continue`",
+      "description": "حلّك يعمل ويستخدم `continue` لتخطّي الشرطات."
     }
   },
   "hints": {
     "howChecked": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف يُتحقق من ISBN-10 فعلًا؟",
+      "answer": "يُضرب كل رقم من الأرقام العشرة في وزن متناقص. الرقم الأول يُضرب في 10، والثاني في 9، وهكذا نزولًا حتى الرقم الأخير الذي يُضرب في 1. ثم نجمع كل هذه النواتج. وإذا كان المجموع يقبل القسمة على 11، فإن ISBN صالح."
     },
     "dashes": {
-      "question": "�",
-      "answer": "�"
+      "question": "ما الذي أفعله بالشرطات؟",
+      "answer": "الشرطات موجودة فقط لتسهيل القراءة على البشر، فتخطَّها تمامًا. فهي لا تُحتسب رقمًا ولا تُقدّمك في ترتيب الأوزان."
     },
     "trackWeight": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أتابع قيمة الوزن؟",
+      "answer": "أنشئ متغيرًا للمضاعف بقيمة 10. في كل مرة تعالج فيها رقمًا، اضربه في قيمة المضاعف الحالية، وأضف الناتج إلى المجموع الجاري، ثم أنقص المضاعف بمقدار 1."
     },
     "stringToNumber": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أحوّل السلسلة النصية إلى عدد؟",
+      "answer": "أمامك خياران. أولًا، الأسلوب المقصود في هذا التمرين هو أن تجد حلًا باستخدام طريقة `indexOf`. فكّر في الأمر. وإذا لم تتوصّل إلى ذلك، فانظر في التلميح التالي لتعرف الإجابة."
     },
     "stringToNumberAgain": {
-      "question": "�",
-      "answer": "�"
+      "question": "لا، بجدية، كيف أحوّل السلسلة النصية إلى عدد؟",
+      "answer": "خياران. أولًا يمكنك استخدام دالة `Number()` (بحرف \"N\" كبير)، فمثلًا `Number(\"5\")` تُرجع `5`. اقرأ صفحة مفهوم <a href=\"/concepts/type-conversion\" target=\"_blank\" rel=\"noopener noreferrer\">تحويل الأنواع</a> إن أردت مراجعة سريعة. وهناك أيضًا حيلة لطيفة باستخدام `indexOf` تستحق التجربة بعد ذلك."
     },
     "handleX": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أتعامل مع 'X'؟ فهو ليس رقمًا، أليس كذلك؟",
+      "answer": "'X' حرف خاص. فهو يمثّل القيمة 10، لكن فقط عندما يكون الحرف الأخير. تعامل معه كرقم قيمته 10 عندما تراه في نهاية ISBN، وارفض ISBN إذا ظهر 'X' في أي موضع آخر."
     },
     "exactlyTenDigits": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أتأكد من وجود 10 أرقام بالضبط؟",
+      "answer": "بدأ المضاعف لديك من 10 ونقص بمقدار 1 مع كل رقم. فإذا عالجت 10 أرقام بالضبط، انتهى به المطاف عند 0. وأي قيمة أخرى تعني أن عدد الأرقام غير صحيح، لذا ارفض ISBN."
     },
     "finalCheck": {
-      "question": "�",
-      "answer": "�"
+      "question": "ما هو فحص الصلاحية الأخير؟",
+      "answer": "بعد معالجة كل شيء، يكون ISBN صالحًا إذا كان المجموع الكلي يقبل القسمة على 11 (أي `sum % 11 == 0`)."
     }
   },
   "checks": {
-    "mustUseContinue": "�",
-    "tooManyLines": "�"
+    "mustUseContinue": "اقتربت كثيرًا! في هذه الإضافة، استخدم `continue` لتتخطّى الشرطات.",
+    "tooManyLines": "اقتربت كثيرًا! حلّك يعمل، لكنه طويل قليلًا."
   },
   "functions": {
     "number": {
-      "description": "�",
-      "category": "�"
+      "description": "تحويل سلسلة نصية مكوّنة من أرقام إلى عدد",
+      "category": "تحويل الأنواع"
     },
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "التحقق مما إذا كانت سلسلة نصية تحتوي على سلسلة نصية أصغر",
+      "category": "عمليات السلاسل النصية"
     },
     "indexOf": {
-      "description": "�",
-      "category": "�"
+      "description": "إيجاد موضع سلسلة نصية أصغر داخل سلسلة نصية، أو -1 إذا لم يُعثر عليها",
+      "category": "عمليات السلاسل النصية"
     }
   }
 }

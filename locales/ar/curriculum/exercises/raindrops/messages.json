@@ -1,99 +1,99 @@
 {
   "checks": {
-    "moreThanSixteenLines": "�"
+    "moreThanSixteenLines": "لقد استخدمت أكثر من ستة عشر سطرًا من الكود."
   },
   "tasks": {
     "plings": {
-      "name": "�",
-      "description": "�"
+      "name": "أصوات Pling",
+      "description": "ابدأ بإتقان صوت Pling. إذا كان العدد يقبل القسمة على 3، أرجع \"Pling\"."
     },
     "plangs": {
-      "name": "�",
-      "description": "�"
+      "name": "أصوات Plang",
+      "description": "الآن أتقن صوت Plang. إذا كان العدد يقبل القسمة على 5، أضف \"Plang\" إلى النتيجة. وإذا كان يقبل القسمة على 3 و5 معًا، أرجع \"PlingPlang\"."
     },
     "plongs": {
-      "name": "�",
-      "description": "�"
+      "name": "أصوات Plong",
+      "description": "الآن أتقن صوت Plong. إذا كان العدد يقبل القسمة على 7، أضف \"Plong\" إلى النتيجة. يمكن أن يقبل العدد القسمة على أكثر من عامل."
     },
     "noSound": {
-      "name": "�",
-      "description": "�"
+      "name": "أعداد بلا صوت قطرة مطر",
+      "description": "أخيرًا، إذا كان العدد لا يقبل القسمة على 3 أو 5 أو 7، أرجع العدد نفسه على شكل سلسلة نصية."
     },
     "solveInSixteenLines": {
-      "name": "�",
-      "description": "�"
+      "name": "حلّ باستخدام ستة عشر سطرًا من الكود",
+      "description": "هل يمكنك حل هذا باستخدام ستة عشر سطرًا من الكود فقط؟"
     }
   },
   "scenarios": {
     "number3": {
-      "name": "�",
-      "description": "�"
+      "name": "العدد 3",
+      "description": "إذا كان المدخل 3، أرجع \"Pling\"."
     },
     "number27": {
-      "name": "�",
-      "description": "�"
+      "name": "العدد 27",
+      "description": "إذا كان المدخل 27، أرجع \"Pling\"."
     },
     "number5": {
-      "name": "�",
-      "description": "�"
+      "name": "العدد 5",
+      "description": "إذا كان المدخل 5، أرجع \"Plang\"."
     },
     "number3125": {
-      "name": "�",
-      "description": "�"
+      "name": "العدد 3125",
+      "description": "إذا كان المدخل 3125، أرجع \"Plang\"."
     },
     "number15": {
-      "name": "�",
-      "description": "�"
+      "name": "العدد 15",
+      "description": "إذا كان المدخل 15، أرجع \"PlingPlang\"."
     },
     "number7": {
-      "name": "�",
-      "description": "�"
+      "name": "العدد 7",
+      "description": "إذا كان المدخل 7، أرجع \"Plong\"."
     },
     "number21": {
-      "name": "�",
-      "description": "�"
+      "name": "العدد 21",
+      "description": "إذا كان المدخل 21، أرجع \"PlingPlong\"."
     },
     "number35": {
-      "name": "�",
-      "description": "�"
+      "name": "العدد 35",
+      "description": "إذا كان المدخل 35، أرجع \"PlangPlong\"."
     },
     "number105": {
-      "name": "�",
-      "description": "�"
+      "name": "العدد 105",
+      "description": "إذا كان المدخل 105، أرجع \"PlingPlangPlong\"."
     },
     "number8": {
-      "name": "�",
-      "description": "�"
+      "name": "العدد 8",
+      "description": "إذا كان المدخل 8، أرجع \"8\"."
     },
     "number52": {
-      "name": "�",
-      "description": "�"
+      "name": "العدد 52",
+      "description": "إذا كان المدخل 52، أرجع \"52\"."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "ستة عشر سطرًا من الكود",
+      "description": "حلّ التمرين باستخدام ستة عشر سطرًا من الكود فقط."
     }
   },
   "hints": {
     "onlyOneSound": {
-      "question": "�",
-      "answer": "�"
+      "question": "لماذا تُرجع دالتي صوتًا واحدًا فقط؟",
+      "answer": "إذا استخدمت `return` داخل كل `if`، فأنت تتوقف بمجرد أن يتحقق أول قاسم. أنت تريد دمجها معًا. بدلًا من الإرجاع، أضف الصوت إلى سلسلة نصية للنتيجة وواصل."
     },
     "buildCombinedSound": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أبني الصوت المركّب؟",
+      "answer": "ابدأ بسلسلة نصية فارغة للنتيجة. لكل قاسم (3، 5، 7)، إذا كان يقسم العدد، أضف الصوت المقابل إلى نهاية النتيجة باستخدام الربط بـ `+`."
     },
     "noneMatch": {
-      "question": "�",
-      "answer": "�"
+      "question": "ماذا لو لم يتحقق أي من القواسم؟",
+      "answer": "إذا بقيت النتيجة فارغة بعد الفحوص الثلاثة كلها، فالجواب هو العدد نفسه على شكل سلسلة نصية. حوّل العدد وأرجع ذلك."
     },
     "convertToString": {
-      "question": "�",
-      "answer": "�"
+      "question": "أُرجع العدد ولكن المطلوب أن أُرجعه على شكل سلسلة نصية. كيف أفعل ذلك؟",
+      "answer": "الأعداد والسلاسل النصية أنواع مختلفة، حتى لو بدت متشابهة. يمكنك تحويل عدد إلى سلسلة نصية بوضعه داخل سلسلة نصية قالبية باستخدام `${...}`."
     },
     "howManyReturns": {
-      "question": "�",
-      "answer": "�"
+      "question": "كم عدد عبارات return التي ينبغي أن تكون لدي؟",
+      "answer": "واحدة أو اثنتان فقط، في العادة. الفكرة كلها هي أن تدع الجمل الشرطية تعدّل سلسلة النتيجة، ثم تُرجع تلك النتيجة مرة واحدة في النهاية."
     }
   }
 }

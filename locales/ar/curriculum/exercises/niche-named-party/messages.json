@@ -1,67 +1,67 @@
 {
   "tasks": {
     "checkTheName": {
-      "name": "�",
-      "description": "�"
+      "name": "تحقّق من الاسم",
+      "description": "اكتب دالة `handleGuest` تتحقق مما إذا كان اسم الشخص يبدأ بالحروف المسموح بها لحفلة الليلة. أرجِع `true` إذا كان يبدأ بها، و`false` إذا لم يكن كذلك."
     },
     "solveTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "حلّها في 20 سطرًا",
+      "description": "إضافة: عندما تُخرج حساب الطول إلى دالة مساعدة تستخدمها `handleGuest`، يتّسع الحل كله في 20 سطرًا. هل يمكنك أن تحقّق ذلك؟"
     }
   },
   "scenarios": {
     "sarahSParty": {
-      "name": "�",
-      "description": "�"
+      "name": "حفلة S: وصول Sarah",
+      "description": "الليلة لا يُسمح إلا بالأسماء التي تبدأ بـ \"S\". ينبغي أن تدخل Sarah!"
     },
     "bradSParty": {
-      "name": "�",
-      "description": "�"
+      "name": "حفلة S: وصول Brad",
+      "description": "الليلة لا يُسمح إلا بالأسماء التي تبدأ بـ \"S\". ينبغي أن يُصرَف Brad."
     },
     "bradleyBradParty": {
-      "name": "�",
-      "description": "�"
+      "name": "حفلة Brad: وصول Bradley",
+      "description": "الليلة لا يُسمح إلا بالأسماء التي تبدأ بـ \"Brad\". ينبغي أن يدخل Bradley!"
     },
     "bradBradleyParty": {
-      "name": "�",
-      "description": "�"
+      "name": "حفلة Bradley: وصول Brad",
+      "description": "الليلة لا يُسمح إلا بالأسماء التي تبدأ بـ \"Bradley\". اسم Brad أقصر من اللازم، فلا يُسمح له بالدخول."
     },
     "brianBradParty": {
-      "name": "�",
-      "description": "�"
+      "name": "حفلة Brad: وصول Brian",
+      "description": "الليلة لا يُسمح إلا بالأسماء التي تبدأ بـ \"Brad\". ينبغي أن يُصرَف Brian."
     },
     "silence": {
-      "name": "�",
-      "description": "�"
+      "name": "حفلة S: صمت...",
+      "description": "الشخص لا يذكر اسمه. والاسم الفارغ لا يمكن أن يبدأ بأي شيء. اصرِفه!"
     },
     "cherCherParty": {
-      "name": "�",
-      "description": "�"
+      "name": "حفلة Cher: وصول Cher",
+      "description": "الليلة لا يُسمح إلا بالأسماء التي تبدأ بـ \"Cher\". اسم Cher هو \"Cher\" تمامًا، فاسمح لها بالدخول!"
     },
     "nicheNamedPartyBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "أنيق ومرتّب",
+      "description": "أقصر حل يتّسع في 20 سطرًا. هل يمكنك أن تجده؟"
     }
   },
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "واصل! جرّب أن تحلّه بأسطر أقل."
   },
   "hints": {
     "checkStartsWith": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أتحقق من أن اسمًا ما يبدأ بحروف معيّنة؟",
+      "answer": "قارن كل حرف من البادئة المسموح بها بالحرف الذي يقع في الموضع نفسه من الاسم. وإذا اختلف أي حرف، فالاسم غير مطابق."
     },
     "loopCharacters": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أنظر إلى حرف واحد في كل مرة؟",
+      "answer": "استخدم التكرار على السلسلة النصية للمرور على حروفها واحدًا واحدًا."
     },
     "findEquivalentLetter": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أجد الحرف المقابل في الكلمة الأخرى؟",
+      "answer": "استخدم فهرسة السلسلة النصية للعثور على حرف معيّن."
     },
     "longerAllowedPrefix": {
-      "question": "�",
-      "answer": "�"
+      "question": "ماذا لو كانت البادئة المسموح بها أطول من الاسم؟",
+      "answer": "هذا الشخص لا يمكن أن يتطابق، لذا ينبغي أن تُرجع `false`."
     }
   }
 }

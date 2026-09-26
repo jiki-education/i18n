@@ -1,68 +1,68 @@
 {
   "checks": {
-    "noNestedLoops": "�",
-    "tooManyLines": "�"
+    "noNestedLoops": "حاول ألا تضع حلقة داخل حلقة أخرى. انقل البحث عن حرف واحد إلى دالة خاصة به، ثم استدعها من داخل <code>isPangram</code>.",
+    "tooManyLines": "كدت تصل! انظر إن كان يمكنك حل التمرين بعدد أسطر أقل بالاعتماد على دالتك المساعدة."
   },
   "tasks": {
     "checkLowerPangram": {
-      "name": "�",
-      "description": "�"
+      "name": "التحقق من بانغرام بحروف صغيرة",
+      "description": "اكتب دالة تتحقق مما إذا كانت جملة بحروف صغيرة تحتوي على كل حرف من حروف الأبجدية، واجعلها تستدعي دالة مساعدة صغيرة تقوم بالبحث عن كل حرف على حدة."
     },
     "decomposeTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "حلّه في 16 سطرًا",
+      "description": "إضافة اختيارية: عندما تنقل البحث إلى دالة مساعدة، يتّسع الحل كاملًا في 16 سطرًا. هل يمكنك أن تحلّه بالعدد نفسه من الأسطر؟"
     }
   },
   "scenarios": {
     "lowerPangramEmpty": {
-      "name": "�",
-      "description": "�"
+      "name": "جملة فارغة",
+      "description": "الجملة الفارغة ليست بانغرام."
     },
     "lowerPangramFullAlphabet": {
-      "name": "�",
-      "description": "�"
+      "name": "الأبجدية كاملة بحروف صغيرة",
+      "description": "الأبجدية الكاملة بحروف صغيرة هي بانغرام."
     },
     "lowerPangramClassic": {
-      "name": "�",
-      "description": "�"
+      "name": "بانغرام كلاسيكي",
+      "description": "جملة البانغرام الكلاسيكية تحتوي على الحروف الـ26 كلها."
     },
     "lowerPangramMissingX": {
-      "name": "�",
-      "description": "�"
+      "name": "حرف 'x' ناقص",
+      "description": "جملة ينقصها الحرف 'x' ليست بانغرام."
     },
     "lowerPangramMissingH": {
-      "name": "�",
-      "description": "�"
+      "name": "حرف 'h' ناقص",
+      "description": "جملة ينقصها الحرف 'h' ليست بانغرام."
     },
     "lowerPangramWithUnderscores": {
-      "name": "�",
-      "description": "�"
+      "name": "مع شرطات سفلية",
+      "description": "بانغرام بشرطات سفلية بدلًا من المسافات."
     },
     "lowerPangramWithNumbers": {
-      "name": "�",
-      "description": "�"
+      "name": "مع أرقام",
+      "description": "بانغرام يحتوي على أرقام."
     },
     "lowerPangramNumbersReplacingLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "أرقام مكان الحروف",
+      "description": "جملة استُبدلت فيها الحروف بأرقام ليست بانغرام."
     },
     "lowerPangramBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "موجز ومرتّب",
+      "description": "الحل الكامل يتّسع في 16 سطرًا عندما يكون البحث داخل دالة خاصة به."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "من أين أبدأ؟",
+      "answer": "عليك أن تتحقق مما إذا كان كل حرف من حروف الأبجدية موجودًا في السلسلة النصية. لذلك ستحتاج إلى استخدام حلقات ومقارنات."
     },
     "checkEveryLetter": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أتحقق من وجود كل حرف من حروف الأبجدية؟",
+      "answer": "امرر حلقة على السلسلة النصية `\"abcdefghijklmnopqrstuvwxyz\"`، حرفًا واحدًا في كل مرة. ولكل حرف، تحقق مما إذا كانت الجملة تحتويه."
     },
     "avoidNestedLoops": {
-      "question": "�",
-      "answer": "�"
+      "question": "لقد حللت التمرين لكنني لا أعرف كيف أستخدم الدالة المساعدة.",
+      "answer": "إذا كنت قد حللت التمرين، فالأرجح أن لديك حلقة خارجية ثم حلقة داخلية. تلك الحلقة الداخلية تتحقق مما إذا كانت سلسلة نصية تحتوي على سلسلة نصية أخرى. استخراج الحلقة الداخلية إلى دالة مساعدة اسمها `includes(...)`، ثم استخدامها من داخل الحلقة الخارجية، هو أسلوب جيد على الأرجح. والدالة المساعدة ليست سوى دالة عادية تُعرَّف بالشكل المعتاد."
     }
   }
 }

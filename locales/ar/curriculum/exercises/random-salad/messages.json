@@ -1,62 +1,66 @@
 {
   "errors": {
-    "leavesNumber": "�",
-    "tomatoesNumber": "�",
-    "croutonsNumber": "�",
-    "olivesNumber": "�"
+    "leavesNumber": "يجب أن تكون الأوراق عددًا",
+    "tomatoesNumber": "يجب أن تكون الطماطم عددًا",
+    "croutonsNumber": "يجب أن تكون قطع الخبز المحمّص عددًا",
+    "olivesNumber": "يجب أن يكون الزيتون عددًا"
   },
   "checks": {
-    "saladNotMade": "�",
-    "needLeavesRandomInt": "�",
-    "needTomatoesRandomInt": "�",
-    "needCroutonsRandomInt": "�",
-    "needOlivesRandomInt": "�"
+    "saladNotMade": "لم تصنع السلطة. تأكد من استدعاء <code>makeSalad()</code> بالمكوّنات الأربعة كلها.",
+    "needLeavesRandomInt": "منطق عدد الأوراق لا يلتزم بالاتفاق الذي عقدته مع شريكك.",
+    "needTomatoesRandomInt": "منطق عدد الطماطم لا يلتزم بالاتفاق الذي عقدته مع شريكك.",
+    "needCroutonsRandomInt": "منطق عدد قطع الخبز المحمّص لا يلتزم بالاتفاق الذي عقدته مع شريكك.",
+    "needOlivesRandomInt": "منطق عدد حبات الزيتون لا يلتزم بالاتفاق الذي عقدته مع شريكك."
   },
   "tasks": {
     "makeRandomSalad": {
-      "name": "�",
-      "description": "�"
+      "name": "اصنع سلطة عشوائية",
+      "description": "ولّد كمية عشوائية من كل مكوّن باستخدام Math.randomInt() ثم اصنع السلطة."
     }
   },
   "scenarios": {
     "randomSalad": {
-      "name": "�",
-      "description": "�"
+      "name": "سلطة عشوائية",
+      "description": "اصنع سلطة بكميات عشوائية من كل مكوّن."
     }
   },
   "hints": {
     "leavesExample": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أولّد عددًا عشوائيًا؟",
+      "answer": "تُعطيك `Math.randomInt(min, max)` عددًا صحيحًا عشوائيًا بين القيمتين اللتين تمرّرهما إليها. على سبيل المثال، `let score = Math.randomInt(1, 6)` يعطيك عددًا من 1 إلى 6. خزّن النتيجة في متغير لتستخدمها لاحقًا."
     },
     "leavesCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "كم عدد الأوراق التي أحتاجها؟",
+      "answer": "ما بين 40 و100."
     },
     "tomatoesCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "كم عدد حبات الطماطم التي أحتاجها؟",
+      "answer": "5 على الأقل، ولكن ليس أكثر من عدد الأوراق / 5"
     },
     "croutonsCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "كم عدد قطع الخبز المحمّص التي أحتاجها؟",
+      "answer": "على الأقل مثل عدد الطماطم، وبحد أقصى ضعف عدد الطماطم"
     },
     "olivesCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "كم عدد حبات الزيتون التي أحتاجها؟",
+      "answer": "على الأقل 1، وبحد أقصى نصف عدد الطماطم"
     },
     "makeSalad": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أصنع السلطة؟",
+      "answer": "بعد أن تعرف كم تحتاج من كل مكوّن، مرّر متغيراتك الأربعة إلى `makeSalad()` بالترتيب الموضّح في تعريف الدالة."
     }
   },
   "describers": {
-    "makeSalad": "�"
+    "makeSalad": "صنعت سلطة من ${arg1} ورقة، و${arg2} حبة طماطم، و${arg3} قطعة خبز محمّص، و${arg4} حبة زيتون"
   },
   "functions": {
     "makeSalad": {
-      "description": "�",
-      "category": "�"
+      "description": "تصنع سلطة بالكميات المعطاة من كل مكوّن.",
+      "category": "إجراءات"
+    },
+    "randomInt": {
+      "description": "تُرجع عددًا صحيحًا عشوائيًا بين min وmax (شاملًا الطرفين).",
+      "category": "أرقام"
     }
   }
 }

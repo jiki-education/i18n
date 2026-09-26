@@ -1,81 +1,81 @@
 {
   "describers": {
-    "canMove": "�",
-    "canTurnLeft": "�",
-    "canTurnRight": "�"
+    "canMove": "التحقق من إمكانية تقدم الشخصية إلى الأمام",
+    "canTurnLeft": "التحقق من وجود ممر على يسار الشخصية",
+    "canTurnRight": "التحقق من وجود ممر على يمين الشخصية"
   },
   "checks": {
-    "notReachedEnd": "�",
-    "turnAroundNotDefined": "�",
-    "turnAroundNotCalled": "�",
-    "maxLines": "�"
+    "notReachedEnd": "لم تصل إلى نهاية المتاهة.",
+    "turnAroundNotDefined": "تحتاج إلى تعريف دالة <code>turnAround</code> في أعلى الكود.",
+    "turnAroundNotCalled": "لقد عرّفت <code>turnAround</code>، لكن عليك استدعاءها فعليًا في جملة <code>else</code> الأخيرة.",
+    "maxLines": "يجب ألا يتجاوز برنامجك 17 سطرًا من الكود."
   },
   "tasks": {
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "الاستدارة عند الطرق المسدودة",
+      "description": "عرّف دالة `turnAround()` في أعلى الكود تستدعي `turnLeft()` مرتين، ثم استخدمها في جملة `else` الأخيرة. يجب أن يتمكن حلّك من تجاوز الطرق المسدودة في المتاهات الثلاث."
     },
     "bonusShortSolution": {
-      "name": "�",
-      "description": "�"
+      "name": "مكافأة: اجعله قصيرًا",
+      "description": "حل متاهة فيها طريقان مسدودان، مع إبقاء برنامجك كاملًا في 17 سطرًا من الكود أو أقل."
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "طريق مسدود واحد",
+      "description": "ممر مستقيم فيه فرع مسدود واحد يفرض عليك الاستدارة"
     },
     "maze2": {
-      "name": "�",
-      "description": "�"
+      "name": "طريق مسدود وانعطاف",
+      "description": "مسار متعرج فيه فرع مسدود قبل الانعطاف نحو المخرج"
     },
     "maze3": {
-      "name": "�",
-      "description": "�"
+      "name": "اجعله قصيرًا",
+      "description": "حاول أن تتأكد من أن برنامجك النهائي بالكامل مكوّن من 17 سطرًا من الكود."
     }
   },
   "hints": {
     "defineFunction": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أعرّف دالة جديدة؟",
+      "answer": "استخدم الكلمة المفتاحية `function` متبوعةً باسم الدالة، ثم الأقواس الهلالية للمدخلات، وجسمًا بين الأقواس المعقوفة، مثل: `function turnAround() { ... }`."
     },
     "placement": {
-      "question": "�",
-      "answer": "�"
+      "question": "أين أضع تعريف الدالة؟",
+      "answer": "ضعه في أعلى الكود، قبل الحلقة. يجب تعريف الدوال قبل استدعائها."
     },
     "turnAroundBody": {
-      "question": "�",
-      "answer": "�"
+      "question": "ماذا أضع داخل `turnAround()`؟",
+      "answer": "مجرد استدعاءين لـ `turnLeft()`. الاستدارتان إلى اليسار تجعلانك تواجه الاتجاه المعاكس."
     },
     "useInSolver": {
-      "question": "�",
-      "answer": "�"
+      "question": "كيف أستخدم دالتي الجديدة في حل المتاهة؟",
+      "answer": "ابحث في حلّك السابق عن جملة `else` التي استدعيت فيها `turnLeft()` مرتين، واستبدل هذين الاستدعاءين باستدعاء واحد لـ `turnAround()`."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "تتحرك الشخصية **خطوة واحدة إلى الأمام** في الاتجاه الحالي. المشي نحو حائط ينهي برنامجك بخطأ، لذا تحقق مما أمامك قبل التحرك!",
+      "category": "الحركة"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "تدير الشخصية **90 درجة إلى اليسار** (عكس اتجاه عقارب الساعة). هذا يغيّر الاتجاه الذي تواجهه الشخصية.",
+      "category": "الحركة"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "تدير الشخصية **90 درجة إلى اليمين** (مع اتجاه عقارب الساعة). هذا يغيّر الاتجاه الذي تواجهه الشخصية.",
+      "category": "الحركة"
     },
     "canMove": {
-      "description": "�",
-      "category": "�"
+      "description": "تُرجع **صحيح** إذا كانت المساحة أمام الشخصية ليست حائطًا، و**خطأ** في غير ذلك.",
+      "category": "الاستشعار"
     },
     "canTurnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "تُرجع **صحيح** إذا كانت المساحة على يسار الشخصية ليست حائطًا، و**خطأ** في غير ذلك.",
+      "category": "الاستشعار"
     },
     "canTurnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "تُرجع **صحيح** إذا كانت المساحة على يمين الشخصية ليست حائطًا، و**خطأ** في غير ذلك.",
+      "category": "الاستشعار"
     }
   }
 }
