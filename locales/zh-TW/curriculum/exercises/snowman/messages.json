@@ -1,39 +1,39 @@
 {
   "checks": {
-    "baseCircle": "�",
-    "bodyCircle": "�",
-    "headCircle": "�"
+    "baseCircle": "底座（最下面）的圓不對。檢查 snowmanCenterX、baseCenterY 和 baseRadius。",
+    "bodyCircle": "身體（中間）的圓不對。檢查 snowmanCenterX、bodyCenterY 和 bodyRadius。",
+    "headCircle": "頭部（最上面）的圓不對。檢查 snowmanCenterX、headCenterY 和 headRadius。"
   },
   "tasks": {
     "buildSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "堆雪人",
+      "description": "設定變數的值，讓雪人跟目標圖片一致。"
     }
   },
   "scenarios": {
     "buildSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "堆雪人",
+      "description": "設定正確的變數值，畫出雪人。"
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "我不知道該從哪裡開始",
+      "answer": "原本的程式碼會在左邊畫出一個白色圓形。你要把 snowmanCenterX、baseCenterY 和 baseRadius 的值改對，才能讓這個圓疊在範本裡最下面的那個圓上。接著再為其他圓加上變數。"
     },
     "variableNotFoundError": {
-      "question": "�",
-      "answer": "�"
+      "question": "我遇到一個像這樣的錯誤：「Jiki could not find a variable called 'XXX'」",
+      "answer": "這表示你還沒有用`let`這個關鍵字建立變數（也就是 Jiki 架子上的盒子）。當 Jiki 讀到畫圓的程式碼時，他預期會找到這些盒子，但它們並不存在，所以你要把它們加上去。"
     },
     "stillNotDeclaredError": {
-      "question": "�",
-      "answer": "�"
+      "question": "我已經加上變數了，卻還是出現「not declared」的錯誤",
+      "answer": "檢查一下拼字，很可能是打錯了。記得大小寫很重要：`bodycentery`和`bodyCenterY`是不一樣的。"
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "以 (centerX, centerY) 為圓心，用指定的半徑和顏色畫一個圓",
+      "category": "繪製圖形"
     }
   }
 }

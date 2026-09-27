@@ -1,43 +1,43 @@
 {
   "checks": {
-    "notReachedEnd": "�",
-    "tooManyLines": "�",
-    "oneLineOver": "�"
+    "notReachedEnd": "Du hast das Ende des Labyrinths nicht erreicht.",
+    "tooManyLines": "Deine Lösung hat zu viele Codezeilen. Suche nach Gruppen aufeinanderfolgender move()-Aufrufe und ersetze jede Gruppe durch eine repeat-Schleife.",
+    "oneLineOver": "Du bist nur eine Zeile zu lang! Eine repeat-Schleife ist nicht immer kürzer: etwas nur zwei- oder dreimal zu wiederholen, kann mehr Zeilen kosten, als die Aufrufe auszuschreiben. Suche also nach einer repeat-Schleife, die dir gar nichts spart."
   },
   "tasks": {
     "solveMazeWithRepeat": {
-      "name": "�",
-      "description": "�"
+      "name": "Bau die Labyrinth-Lösung mit repeat-Schleifen um",
+      "description": "Ersetze aufeinanderfolgende `move()`-Aufrufe durch repeat-Schleifen, damit der Code kürzer wird."
     }
   },
   "scenarios": {
     "mazeRepeat1": {
-      "name": "�",
-      "description": "�"
+      "name": "Bau die Labyrinth-Lösung mit repeat-Schleifen um",
+      "description": "Verwende repeat-Schleifen, um aufeinanderfolgende `move()`-Aufrufe zu vermeiden."
     }
   },
   "hints": {
     "noIdea": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich habe keine Ahnung, was ich tun soll",
+      "answer": "Suche nach Gruppen aufeinanderfolgender `move()`-Aufrufe. Zum Beispiel kannst du statt:\n\n```javascript\nmove()\nmove()\nmove()\n```\n\nauch das hier schreiben:\n\n```javascript\nrepeat(3) {\n  move()\n}\n```\n\nFinde die Gruppen und ersetze sie!"
     },
     "tooManyLines": {
-      "question": "�",
-      "answer": "�"
+      "question": "Du verwendest repeat-Schleifen, hast aber zu viele Zeilen?",
+      "answer": "Ist eine repeat-Schleife immer besser? Manchmal ist es kürzer, einfach zwei move()-Aufrufe hintereinanderzuschreiben."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt die Figur **einen Schritt nach vorne** in der aktuellen Richtung. Die Figur bewegt sich nur, wenn die Zielposition nicht von einer Wand blockiert ist.",
+      "category": "Bewegung"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Dreht die Figur **um 90 Grad nach links** (gegen den Uhrzeigersinn). Damit ändert sich die Richtung, in die die Figur schaut.",
+      "category": "Bewegung"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Dreht die Figur **um 90 Grad nach rechts** (im Uhrzeigersinn). Damit ändert sich die Richtung, in die die Figur schaut.",
+      "category": "Bewegung"
     }
   }
 }

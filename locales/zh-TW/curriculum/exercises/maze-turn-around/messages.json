@@ -1,81 +1,81 @@
 {
   "describers": {
-    "canMove": "�",
-    "canTurnLeft": "�",
-    "canTurnRight": "�"
+    "canMove": "檢查角色是否可以往前走",
+    "canTurnLeft": "檢查角色的左邊是否有路",
+    "canTurnRight": "檢查角色的右邊是否有路"
   },
   "checks": {
-    "notReachedEnd": "�",
-    "turnAroundNotDefined": "�",
-    "turnAroundNotCalled": "�",
-    "maxLines": "�"
+    "notReachedEnd": "你沒有走到迷宮的終點。",
+    "turnAroundNotDefined": "你需要在程式碼最上方定義一個<code>turnAround</code>函式。",
+    "turnAroundNotCalled": "你已經定義了<code>turnAround</code>，但要真正在最後的<code>else</code>敘述裡呼叫它。",
+    "maxLines": "你的程式應該維持在 17 行程式碼以內。"
   },
   "tasks": {
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "在死路處轉身",
+      "description": "在程式碼最上方定義一個 turnAround() 函式，裡面呼叫 turnLeft() 兩次，接著在最後的 else 敘述裡使用它。你的解法應該要能從三個迷宮的死路中脫身。"
     },
     "bonusShortSolution": {
-      "name": "�",
-      "description": "�"
+      "name": "加分題：保持簡短",
+      "description": "解開一個有兩個死路的迷宮，並讓整個程式維持在 17 行程式碼以內。"
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "一個死路",
+      "description": "一條筆直的走廊，中間岔出一條死路，讓你不得不轉身"
     },
     "maze2": {
-      "name": "�",
-      "description": "�"
+      "name": "一個死路和一個轉彎",
+      "description": "一條蜿蜒的路徑，在轉向出口之前會先遇到一條死路"
     },
     "maze3": {
-      "name": "�",
-      "description": "�"
+      "name": "保持簡短",
+      "description": "試著讓你最後的整個程式維持在 17 行程式碼。"
     }
   },
   "hints": {
     "defineFunction": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼定義一個新的函式？",
+      "answer": "使用`function`關鍵字，後面接函式名稱、用來放輸入的括號，以及用大括號包住的主體，例如`function turnAround() { ... }`。"
     },
     "placement": {
-      "question": "�",
-      "answer": "�"
+      "question": "函式定義應該放在哪裡？",
+      "answer": "放在程式碼最上方，迴圈前面。函式必須先定義才能呼叫。"
     },
     "turnAroundBody": {
-      "question": "�",
-      "answer": "�"
+      "question": "`turnAround()`裡面要放什麼？",
+      "answer": "只要呼叫`turnLeft()`兩次就好。向左轉兩次，就會面向相反的方向。"
     },
     "useInSolver": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼在迷宮解法裡使用這個新函式？",
+      "answer": "在你上一個解法裡找到那個呼叫了`turnLeft()`兩次的`else`敘述，把這兩次呼叫換成一次`turnAround()`呼叫。"
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色沿著目前的方向**往前移動一步**。撞到牆會讓程式出錯並結束，所以移動前先確認前面有什麼！",
+      "category": "移動"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色**向左轉 90 度**（逆時針）。這會改變角色面對的方向。",
+      "category": "移動"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色**向右轉 90 度**（順時針）。這會改變角色面對的方向。",
+      "category": "移動"
     },
     "canMove": {
-      "description": "�",
-      "category": "�"
+      "description": "如果角色前面的格子不是牆，就回傳**true**；否則回傳**false**。",
+      "category": "感測"
     },
     "canTurnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "如果角色左邊的格子不是牆，就回傳**true**；否則回傳**false**。",
+      "category": "感測"
     },
     "canTurnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "如果角色右邊的格子不是牆，就回傳**true**；否則回傳**false**。",
+      "category": "感測"
     }
   }
 }

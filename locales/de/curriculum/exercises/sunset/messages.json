@@ -1,53 +1,53 @@
 {
   "checks": {
-    "sunWrongBeginning": "�",
-    "sunWrongMiddle": "�",
-    "sunWrongEnd": "�",
-    "skyNotChangingColor": "�",
-    "sunNotChangingColor": "�"
+    "sunWrongBeginning": "Die Sonne sieht am Anfang nicht richtig aus.",
+    "sunWrongMiddle": "Die Sonne sieht in der Mitte nicht richtig aus.",
+    "sunWrongEnd": "Die Sonne sieht am Ende nicht richtig aus.",
+    "skyNotChangingColor": "Der Himmel scheint seine Farbe nicht zu ändern.",
+    "sunNotChangingColor": "Die Sonne scheint ihre Farbe nicht zu ändern."
   },
   "tasks": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "Den Sonnenuntergang animieren",
+      "description": "Animiere die Sonne und den Himmel, damit es so aussieht, als würde die Sonne untergehen. Die Sonne sollte größer werden und nach unten wandern, während Sonne und Himmel ihre Farben ändern."
     }
   },
   "scenarios": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "Die Sonne untergehen lassen",
+      "description": "Animiere die Sonne und den Himmel, damit es so aussieht, als würde die Sonne untergehen."
     }
   },
   "hints": {
     "howToAnimate": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie animiere ich?",
+      "answer": "Beim Animieren folgen wir dem Daumenkino-Stil: Wir zeichnen die ganze Szene jedes Mal neu über die vorherigen Versionen."
     },
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich weiß nicht, wo ich anfangen soll.",
+      "answer": "Du musst 100 Mal zeichnen. Verschiebe also zuerst die vorhandenen Zeichenfunktionen in eine repeat-Schleife, die 100 Mal läuft. Dann musst du bei jeder Iteration der Schleife die Variablen (Radius, Farben usw.) ändern."
     },
     "whereToPutVariables": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wo platziere ich meine Variablen?",
+      "answer": "Du musst deine Variablen VOR der Schleife setzen und sie dann IN der Schleife aktualisieren, BEVOR du die Formen zeichnest. Denk daran, wie Jiki Boxen erstellt und sie jedes Mal aktualisiert."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichne einen Kreis mit dem Mittelpunkt (centerX, centerY), dem angegebenen Radius und der angegebenen Farbe",
+      "category": "Formen zeichnen"
     },
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichne ein Rechteck an der Position (left, top) mit der angegebenen Breite, Höhe und Farbe",
+      "category": "Formen zeichnen"
     },
     "rgb": {
-      "description": "�",
-      "category": "�"
+      "description": "Wandle RGB-Farbwerte (jeweils 0-255) in einen Hex-Farbstring um",
+      "category": "Farben"
     },
     "hsl": {
-      "description": "�",
-      "category": "�"
+      "description": "Wandle HSL-Farbwerte (Farbton 0-360, Sättigung 0-100, Helligkeit 0-100) in einen Hex-Farbstring um",
+      "category": "Farben"
     }
   }
 }

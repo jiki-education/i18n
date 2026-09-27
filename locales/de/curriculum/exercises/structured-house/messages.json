@@ -1,59 +1,59 @@
 {
   "checks": {
-    "frameWrong": "�",
-    "roofWrong": "�",
-    "leftWindowWrong": "�",
-    "rightWindowWrong": "�",
-    "doorWrong": "�",
-    "knobWrong": "�",
-    "doesNotScale": "�"
+    "frameWrong": "Der Rahmen des Hauses sitzt nicht an der richtigen Position.",
+    "roofWrong": "Das Dach des Hauses sitzt nicht an der richtigen Position.",
+    "leftWindowWrong": "Das linke Fenster sitzt nicht an der richtigen Position.",
+    "rightWindowWrong": "Das rechte Fenster sitzt nicht an der richtigen Position.",
+    "doorWrong": "Die Tür sitzt nicht an der richtigen Position.",
+    "knobWrong": "Der Türknauf sitzt nicht an der richtigen Position.",
+    "doesNotScale": "Dein Haus passt sich nicht richtig an, wenn houseWidth={{houseWidth}} und houseHeight={{houseHeight}} ist. Jede Position und jede Größe sollte aus houseWidth und houseHeight abgeleitet werden, nicht aus fest eingetragenen Zahlen."
   },
   "tasks": {
     "drawHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "Zeichne das Haus",
+      "description": "Baue das Haus aus `houseWidth` und `houseHeight`, damit es zentriert bleibt, auf dem Gras steht und bei jeder Größe die richtigen Proportionen hat."
     }
   },
   "scenarios": {
     "drawTheHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "Zeichne das Haus",
+      "description": "Baue das Haus aus houseWidth und houseHeight, damit es sich bei jeder Größe richtig anpasst."
     }
   },
   "hints": {
     "whereDoIStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wo fange ich an?",
+      "answer": "Du hast `houseWidth`, `houseHeight` und `canvasWidth`. Überlege dir zuerst die beiden Dinge, die der Rahmen braucht: seinen linken Rand (damit das Haus zentriert ist) und seine Oberkante (damit es auf dem Gras steht). Jede andere Form lässt sich dann aus dem Rahmen aufbauen."
     },
     "keepCentered": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie halte ich das Haus zentriert, wenn sich die Breite ändert?",
+      "answer": "Die Mitte der Zeichenfläche ist immer `canvasWidth / 2`. Wenn der Rahmen auf diesem Punkt zentriert ist, liegt sein linker Rand eine halbe Breite links von der Mitte. Alles andere, was zentriert ist (die Dachspitze, die Tür), kann denselben Mittelpunkt nutzen."
     },
     "keepPlantedOnGrass": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie bleibt das Haus auf dem Gras stehen?",
+      "answer": "Suche den y-Wert, an dem der untere Rand des Hauses sitzen soll (etwas unterhalb der Oberkante des Grases). Die Oberkante des Rahmens liegt dann eine Haushöhe darüber. Wenn du von unten nach oben arbeitest, wächst ein höheres Haus nach oben in den Himmel, statt nach unten durch das Gras."
     },
     "sizeRoofWindowsDoor": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie bestimme ich die Größe von Dach, Fenstern und Tür?",
+      "answer": "Jede Größe in den Vorgaben ist ein Bruchteil der Rahmenbreite oder der Rahmenhöhe (zum Beispiel: „1/5th der Breite“ ist `houseWidth / 5`). Baue jede Breite aus `houseWidth` und jede Höhe aus `houseHeight`, damit sich alles gemeinsam anpasst."
     },
     "breaksOnResize": {
-      "question": "�",
-      "answer": "�"
+      "question": "In der Standardgröße sieht es richtig aus, aber wenn ich die Größe ändere, geht es schief. Warum?",
+      "answer": "Wahrscheinlich hast du irgendwo eine Zahl fest eingetragen, statt sie abzuleiten. Such nach einem Literal, das kein Wert ist, der direkt aus den Vorgaben stammt, wie die Größe der Zeichenfläche oder die Höhe des Grases. Es sollte fast immer aus einer anderen Variable abgeleitet werden. Das kann ein Anker sein, oder etwas, das schon aus einem Anker entstanden ist, wie die Breite der Tür."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichne ein Rechteck an der Position (left, top) mit der angegebenen Breite, Höhe und Farbe",
+      "category": "Formen zeichnen"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichne einen Kreis mit Mittelpunkt (centerX, centerY), dem angegebenen Radius und der angegebenen Farbe",
+      "category": "Formen zeichnen"
     },
     "triangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichne ein Dreieck aus drei Eckpunkten und einer Farbe",
+      "category": "Formen zeichnen"
     }
   }
 }

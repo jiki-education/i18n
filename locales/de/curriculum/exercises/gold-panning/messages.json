@@ -1,55 +1,55 @@
 {
   "errors": {
-    "needsRecharge": "�",
-    "sellBeforeAnythingElse": "�",
-    "sellNumber": "�"
+    "needsRecharge": "Der Roboter muss sich nach dem Verkaufen wieder aufladen.",
+    "sellBeforeAnythingElse": "Der Roboter muss erst verkaufen, bevor er etwas anderes tut.",
+    "sellNumber": "Du kannst nur eine Anzahl von Nuggets verkaufen"
   },
   "checks": {
-    "notSold": "�",
-    "wrongSoldTotal": "�"
+    "notSold": "Du hast deine Nuggets nicht verkauft. Achte darauf, dass du <code>sell()</code> nach dem Goldwaschen aufrufst.",
+    "wrongSoldTotal": "Erwartet waren {{expectedTotal}} Nuggets ({{panValues}}), aber du hast {{got}} verkauft. Achte darauf, dass du jedes Ergebnis vom Goldwaschen zu deiner laufenden Summe addierst."
   },
   "tasks": {
     "panAndSell": {
-      "name": "�",
-      "description": "�"
+      "name": "Gold waschen und die Ausbeute verkaufen",
+      "description": "Wasche 5-mal Gold, um Goldnuggets zu sammeln, behalte dabei deine laufende Summe im Blick und verkaufe am Ende alles an der Handelsstation."
     }
   },
   "scenarios": {
     "randomPans": {
-      "name": "�",
-      "description": "�"
+      "name": "Gold waschen und verkaufen",
+      "description": "Wasche 5-mal Gold und finde jedes Mal eine zufällige Anzahl Nuggets, dann verkaufe die Gesamtsumme."
     }
   },
   "hints": {
     "wrongSellAmount": {
-      "question": "�",
-      "answer": "�"
+      "question": "Es sagt, dass ich die falsche Menge Gold verkaufe.",
+      "answer": "Du musst das GESAMTE Gold, das du in den 5 Durchgängen findest, am Ende auf einmal verkaufen und nicht nach jedem Durchgang."
     },
     "trackingTotal": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich benutze pan mehrmals, aber ich weiß nicht, wie ich den Überblick behalte, wie viel ich schon habe.",
+      "answer": "Denk an das, was du in den letzten Videolektionen gelernt hast. Du brauchst eine Variable, um die **gesamte** Goldmenge im Blick zu behalten, die du in **allen** Durchgängen zusammen gesammelt hast."
     },
     "fiveLines": {
-      "question": "�",
-      "answer": "�"
+      "question": "Es funktioniert, aber ich komme nicht auf 5 Zeilen herunter.",
+      "answer": "Hast du wiederholten Code in deiner Lösung? Wenn ja, womit können wir diese Wiederholungen reduzieren?"
     },
     "stillFiveLines": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich komme immer noch nicht auf 5 Codezeilen herunter.",
+      "answer": "Du solltest nur eine Variable brauchen. Benutzt du mehr?"
     }
   },
   "describers": {
-    "pan": "�",
-    "sell": "�"
+    "pan": "wusch Gold und fand ${return} Nuggets",
+    "sell": "verkaufte ${arg1} Nuggets an der Handelsstation"
   },
   "functions": {
     "pan": {
-      "description": "�",
-      "category": "�"
+      "description": "Taucht die Pfanne in den Fluss und **gibt** die Anzahl der gefundenen Goldnuggets **zurück**.",
+      "category": "Goldwaschen"
     },
     "sell": {
-      "description": "�",
-      "category": "�"
+      "description": "Verkauft deine Goldnuggets an der Handelsstation.",
+      "category": "Aktion"
     }
   }
 }

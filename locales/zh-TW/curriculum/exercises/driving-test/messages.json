@@ -1,63 +1,63 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "你的解法程式碼行數太多了。可以再短一點嗎？"
   },
   "tasks": {
     "didTheyPass": {
-      "name": "�",
-      "description": "�"
+      "name": "他們通過了嗎？",
+      "description": "寫一個函式，分析駕照考試的標記，判斷這位學生有沒有通過。只要出現任何重大失誤（💥），或是有 5 個以上的小失誤（❌），就算沒通過。"
     },
     "solveInElevenLines": {
-      "name": "�",
-      "description": "�"
+      "name": "用 12 行程式碼解題",
+      "description": "你能只用 12 行程式碼解出這道練習嗎？"
     }
   },
   "scenarios": {
     "perfectMarks": {
-      "name": "�",
-      "description": "�"
+      "name": "完美的學生！",
+      "description": "每個動作都做得完美，太厲害了！"
     },
     "dangerous": {
-      "name": "�",
-      "description": "�"
+      "name": "社會的危險人物",
+      "description": "絕對不能讓這種人上路！"
     },
     "oneBigMistake": {
-      "name": "�",
-      "description": "�"
+      "name": "一個重大失誤",
+      "description": "只要一個重大失誤，就直接不及格！"
     },
     "scrapedThrough": {
-      "name": "�",
-      "description": "�"
+      "name": "低空飛過",
+      "description": "驚險過關，但還是通過了！"
     },
     "oneMistakeTooMany": {
-      "name": "�",
-      "description": "�"
+      "name": "就差一個失誤！",
+      "description": "那些小失誤累積起來，還是太多了。"
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "12 行程式碼",
+      "description": "只用 12 行程式碼解出這道練習。"
     }
   },
   "hints": {
     "lookAtEachMark": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼一個一個查看每個標記？",
+      "answer": "用迴圈一次處理一個字元，走遍整個標記字串。每個字元不是✅、❌，就是💥。"
     },
     "emojiInQuotes": {
-      "question": "�",
-      "answer": "�"
+      "question": "為什麼我的程式碼會抱怨💥？",
+      "answer": "💥和❌這類表情符號，一樣要用引號包起來。它們就跟字母一樣，是字串裡的字元。"
     },
     "majorFault": {
-      "question": "�",
-      "answer": "�"
+      "question": "看到💥（重大失誤）的時候，我該怎麼做？",
+      "answer": "只要出現一個重大失誤就不及格，其他情況怎樣都無所謂。所以一看到💥，就可以馬上回傳`false`。不需要再繼續檢查下去。"
     },
     "minorCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "小失誤要計算數量，我該怎麼處理？",
+      "answer": "準備一個計數變數，每看到一個❌就把它加 1。✅可以忽略，它們不會改變任何事情。"
     },
     "finalCheck": {
-      "question": "�",
-      "answer": "�"
+      "question": "最後要檢查什麼？",
+      "answer": "迴圈跑完之後，如果都沒有出現重大失誤，只要小失誤少於 5 個就算通過。小失誤的數量小於 5 就回傳`true`，否則回傳`false`。"
     }
   }
 }

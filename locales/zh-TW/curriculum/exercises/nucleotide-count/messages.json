@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "countNucleotides": {
+      "name": "計算核苷酸數量",
+      "description": "寫一個函式，計算 DNA 鏈中每種核苷酸（A、C、G、T）出現的次數，並回傳一個字典，鍵是 DNA 字母，值是每個字母出現的次數。如果 DNA 鏈中含有任何無效的字元，就回傳 false。"
+    }
+  },
+  "scenarios": {
+    "nucleotideCountEmptyStrand": {
+      "name": "空的 DNA 鏈",
+      "description": "空的 DNA 鏈應該讓所有核苷酸的計數都是 0。"
+    },
+    "nucleotideCountSingleNucleotide": {
+      "name": "單一核苷酸",
+      "description": "只有一個字元的 DNA 鏈，應該能正確計算出這個核苷酸的數量。"
+    },
+    "nucleotideCountRepeatedNucleotide": {
+      "name": "重複的核苷酸",
+      "description": "含有重複核苷酸的 DNA 鏈，應該能正確計算出現次數。"
+    },
+    "nucleotideCountMixedStrand": {
+      "name": "混合核苷酸鏈",
+      "description": "含有多種核苷酸的 DNA 鏈，應該能正確計算每種核苷酸的數量。"
+    },
+    "nucleotideCountInvalidNucleotide": {
+      "name": "無效核苷酸",
+      "description": "含有無效核苷酸的 DNA 鏈應該回傳 false。"
+    }
+  },
+  "hints": {
+    "setupCounts": {
+      "question": "我要怎麼設定計數？",
+      "answer": "先建立一個字典，把四種核苷酸（`A`、`C`、`G`、`T`）的計數都設成 0。接著逐一走過 DNA 鏈，遇到哪一種核苷酸，就把它的計數加 1。"
+    },
+    "validChars": {
+      "question": "我要怎麼知道哪些字元才算有效？",
+      "answer": "有效的字元正好就是字典的鍵。用`keys()`取得這些鍵，就不必把核苷酸的字母表寫兩次。"
+    },
+    "checkEach": {
+      "question": "我要怎麼逐一檢查每個字元？",
+      "answer": "用迴圈一次處理 DNA 鏈中的一個字元。每拿到一個字元，先確認它是不是有效的核苷酸，再決定要不要計數。"
+    },
+    "invalidChars": {
+      "question": "遇到無效的字元該怎麼辦？",
+      "answer": "題目要求你立刻回傳`false`。一旦看到無效的字元，就沒有補救的餘地了，直接停下來回傳 false 吧。"
+    }
+  },
+  "functions": {
+    "keys": {
+      "description": "回傳字典中所有鍵的陣列",
+      "category": "字典操作"
+    }
+  }
+}

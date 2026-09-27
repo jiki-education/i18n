@@ -1,0 +1,522 @@
+WEBVTT
+
+NOTE en_md5 a50eb6189c3de32cc6a17ee23be96f14
+
+00:00:00.462 --> 00:00:05.581
+Hallo. Das ist die erste
+Übung in Jiki, bei der
+
+00:00:05.902 --> 00:00:08.381
+ziemlich viele Leute richtig hängen bleiben.
+
+00:00:09.422 --> 00:00:12.862
+Bei anderen Übungen bleibt man vielleicht
+kurz hängen und findet dann den Weg.
+
+00:00:13.102 --> 00:00:18.382
+Das hier ist, glaube ich, die erste Übung,
+mit der viele wirklich zu kämpfen haben.
+
+00:00:19.181 --> 00:00:20.821
+Ich weiß nicht, ob du sie schon gelöst hast.
+
+00:00:20.821 --> 00:00:24.181
+Wenn ja, herzlichen Glückwunsch.
+Wenn nicht,
+
+00:00:24.181 --> 00:00:27.501
+wenn du halb durch bist, dir die Tipps
+angesehen hast und nicht weiterkommst
+
+00:00:27.501 --> 00:00:31.852
+und dir deshalb dieses Video anschaust,
+um es herauszufinden, ist das völlig okay.
+
+00:00:31.852 --> 00:00:35.051
+Ich zeige dir Schritt für Schritt,
+wie ich diese Übung löse.
+
+00:00:35.292 --> 00:00:39.212
+Wenn wir an einen Punkt kommen, an dem
+bei dir der Knoten platzt und du denkst:
+
+00:00:39.212 --> 00:00:42.612
+„Okay, jetzt hab ich's“, dann halte das Video
+an und mach die Übung fertig.
+
+00:00:42.612 --> 00:00:45.292
+Den Rest des Videos kannst du
+dir danach immer noch anschauen.
+
+00:00:46.082 --> 00:00:49.731
+Aber gehen wir es langsam an.
+Was wir hier versuchen:
+
+00:00:49.731 --> 00:00:51.771
+Wir wollen einen Schneemann bauen.
+
+00:00:52.621 --> 00:00:55.771
+Einen Schneemann haben wir schon
+in der letzten Übung gebaut,
+
+00:00:55.771 --> 00:01:00.731
+aber diesmal bauen wir ihn
+mit einer einzigen Variable size,
+
+00:01:01.031 --> 00:01:02.712
+von der sich alles andere ableitet.
+
+00:01:02.951 --> 00:01:06.552
+Wenn wir dann size ändern,
+siehst du hier,
+
+00:01:06.552 --> 00:01:10.311
+wie der Schneemann von ganz klein
+bis viel größer wächst.
+
+00:01:11.912 --> 00:01:16.311
+Ich habe dir also dieses snowmanX
+und dieses size vorgegeben.
+
+00:01:16.632 --> 00:01:17.992
+Beide sind
+
+00:01:19.191 --> 00:01:23.432
+gesperrte Variablen. Diese hier kannst du
+aber tatsächlich beliebig ändern.
+
+00:01:24.061 --> 00:01:25.831
+Wir fangen aber mit 4 an.
+
+00:01:27.841 --> 00:01:32.322
+Es gilt das Übliche. Oben links auf
+der Zeichenfläche ist hier 0, 0,
+
+00:01:32.481 --> 00:01:35.921
+und unten rechts auf der
+Zeichenfläche ist hier 100.
+
+00:01:37.441 --> 00:01:40.962
+Wie gesagt, du hast diese vorgegebenen
+Variablen snowmanX und size.
+
+00:01:40.962 --> 00:01:45.602
+Aber das hier ist der Knackpunkt: Du musst
+alle anderen Variablen
+
+00:01:45.921 --> 00:01:49.721
+mit arithmetischen Ausdrücken ableiten.
+Das ist ein ziemlich komplizierter Satz.
+
+00:01:49.721 --> 00:01:52.962
+Vielleicht gehe ich danach noch mal ran
+und schreibe diesen Satz
+
+00:01:53.281 --> 00:01:56.081
+etwas freundlicher. Aber überlegen wir
+erst mal, was er bedeutet.
+
+00:01:57.201 --> 00:02:02.242
+Was heißt es, eine Variable abzuleiten?
+Das klingt ziemlich kompliziert.
+
+00:02:02.402 --> 00:02:06.721
+Es heißt einfach, dass wir die Variable
+size hier nehmen, also 4,
+
+00:02:06.962 --> 00:02:10.481
+und sagen, dass alle anderen Variablen
+so etwas sind wie
+
+00:02:10.972 --> 00:02:15.201
+size mal 5 oder size geteilt durch 2.
+
+00:02:15.521 --> 00:02:20.241
+Die anderen Variablen verwenden size
+also als Teil ihrer Berechnung.
+
+00:02:20.562 --> 00:02:22.162
+Mehr meinen wir mit ableiten nicht.
+
+00:02:23.162 --> 00:02:25.961
+Und arithmetische Ausdrücke sind
+plus, minus, geteilt,
+
+00:02:27.081 --> 00:02:30.201
+mal. Dann bekommen wir
+ein paar Regeln vorgegeben.
+
+00:02:30.201 --> 00:02:33.801
+Der Radius des Kopfes ist size mal 2.
+
+00:02:33.801 --> 00:02:38.122
+Okay, wir können also einfach schreiben:
+headRadius ist size mal 2,
+
+00:02:38.681 --> 00:02:45.162
+bodyRadius ist size mal 3
+und baseRadius ist size mal 4.
+
+00:02:46.521 --> 00:02:51.592
+Okay, hier unten haben wir schon die
+Codezeilen, die diese Kreise erzeugen.
+
+00:02:52.111 --> 00:02:57.301
+Wir können also unseren Code ausführen
+und uns das kurz anschauen. Wir sehen,
+
+00:02:57.701 --> 00:02:59.141
+wenn wir zum Anfang zurückgehen,
+
+00:03:00.102 --> 00:03:01.981
+wie wir diese alle nacheinander festlegen.
+
+00:03:01.981 --> 00:03:04.741
+Im Moment liegen sie alle
+noch an diesen Nullpositionen.
+
+00:03:04.901 --> 00:03:08.581
+Wenn wir dann den Kopf zeichnen, erscheint
+hier oben ein kleiner Kreis.
+
+00:03:08.741 --> 00:03:12.181
+Und wenn wir den Körper zeichnen,
+sehen wir einen größeren Kreis.
+
+00:03:12.181 --> 00:03:15.141
+Und wenn wir die Basis zeichnen,
+sehen wir einen richtig großen Kreis.
+
+00:03:15.622 --> 00:03:18.021
+Ich erinnere dich noch mal daran:
+Benutz immer
+
+00:03:18.102 --> 00:03:20.181
+den Scrubber hier unten
+und geh die Schritte durch.
+
+00:03:20.181 --> 00:03:21.861
+Das macht dir das Leben viel leichter.
+
+00:03:22.951 --> 00:03:24.312
+Okay, also,
+
+00:03:25.671 --> 00:03:28.951
+nächste Anweisung: Die Kreise
+sollen sich berühren.
+
+00:03:29.271 --> 00:03:34.151
+Der Körper sitzt direkt über der Basis,
+und der Kopf sitzt direkt über dem Körper.
+
+00:03:34.872 --> 00:03:37.352
+Das siehst du hier auf diesen Bildern.
+
+00:03:37.512 --> 00:03:43.111
+Eine große Basis berührt einen mittleren
+Körper, der einen kleineren Kopf berührt.
+
+00:03:44.312 --> 00:03:50.401
+Und zuletzt: Der unterste Punkt der Basis
+liegt size vom unteren Rand entfernt.
+
+00:03:50.562 --> 00:03:55.361
+Okay, wir müssen also ein bisschen
+darüber nachdenken, was wir hier machen.
+
+00:03:55.762 --> 00:03:57.722
+Wir sagen also, dass wir wollen ...
+
+00:03:57.722 --> 00:03:59.282
+Und wir wollen von unten her bauen.
+
+00:03:59.282 --> 00:04:04.521
+Das ist ziemlich wichtig. Der unterste Punkt
+des Basiskreises liegt size vom unteren Rand.
+
+00:04:04.521 --> 00:04:06.401
+Wir müssen also von unten her bauen.
+
+00:04:07.282 --> 00:04:11.002
+Der unterste Punkt der Basis. Der, unterste ...
+
+00:04:11.002 --> 00:04:16.072
+Ja, der unterste Punkt der Basis ist 100,
+also ganz unten hier,
+
+00:04:16.471 --> 00:04:19.672
+minus size. Damit können wir anfangen.
+
+00:04:20.151 --> 00:04:23.341
+Das gibt uns den unteren
+Rand dieses Kreises.
+
+00:04:25.031 --> 00:04:28.911
+Aber wenn du dich erinnerst, wenn du nach
+unten gehst und dir die Beschreibung ansiehst,
+
+00:04:28.911 --> 00:04:32.391
+wie man einen Kreis zeichnet,
+müssen wir den Mittelpunkt angeben.
+
+00:04:33.112 --> 00:04:36.151
+Wir geben die beiden Koordinaten des
+Mittelpunkts, den Radius und die Farbe an.
+
+00:04:36.471 --> 00:04:42.541
+Wenn wir also hier unten bei 100 sind
+und ein Stück um size nach oben gehen,
+
+00:04:42.942 --> 00:04:47.262
+müssen wir den Mittelpunkt einen Radius
+entfernt setzen, also diesen Abstand hier.
+
+00:04:47.742 --> 00:04:50.942
+Wir können also schreiben:
+minus baseRadius.
+
+00:04:51.982 --> 00:04:55.101
+Denk mal darüber nach. Wir haben
+100 ganz unten,
+
+00:04:55.502 --> 00:04:57.661
+minus size, um ihn ein Stück hochzuschieben.
+
+00:04:57.822 --> 00:05:01.822
+Und dann setzen wir den Mittelpunkt,
+der einen Basisradius entfernt liegt.
+
+00:05:02.302 --> 00:05:06.141
+Wenn wir das machen, sehen wir jetzt
+unten einen Kreis.
+
+00:05:07.351 --> 00:05:11.031
+Okay, jetzt müssen wir den Körper so
+verschieben, dass er ihn berührt.
+
+00:05:11.752 --> 00:05:15.432
+Es gilt dieselbe Logik. Wenn wir sagen würden:
+Okay, gut,
+
+00:05:15.591 --> 00:05:19.992
+bodyY ist baseY, dann würde er
+einfach genau darauf liegen.
+
+00:05:20.791 --> 00:05:26.471
+Wir müssen ihn also um diesen Abstand nach oben
+schieben, den Radius der Basis, bis hierher.
+
+00:05:26.632 --> 00:05:28.151
+Und dann müssen wir ihn noch mal
+
+00:05:30.312 --> 00:05:33.831
+um seinen eigenen Radius hochschieben.
+Wir sagen also: Okay, das ist ...
+
+00:05:34.041 --> 00:05:38.762
+Das ist baseY minus baseRadius
+minus bodyRadius.
+
+00:05:39.802 --> 00:05:42.841
+Damit landet er hier.
+Und dann haben wir noch einen.
+
+00:05:43.081 --> 00:05:46.841
+Wenn du es nicht so gemacht hast, halte das
+Video kurz an und überleg dir,
+
+00:05:48.471 --> 00:05:50.041
+wie genau du das machen würdest.
+
+00:05:51.482 --> 00:05:55.562
+Wir haben also ... Stell dir vor, wir nehmen
+den Kopf und setzen ihn in die Mitte.
+
+00:05:55.562 --> 00:05:58.482
+Der Kopf fängt also bei bodyY an.
+
+00:05:58.482 --> 00:05:59.641
+Er wird also hier gezeichnet.
+
+00:06:00.992 --> 00:06:02.992
+Wir müssen ihn um diesen Abstand hochschieben.
+
+00:06:03.711 --> 00:06:08.351
+Das ist der Radius des Körpers. Und dann
+müssen wir ihn um diesen Abstand hochschieben.
+
+00:06:08.591 --> 00:06:13.471
+Das ist headRadius. Es ist genau dasselbe:
+minus bodyRadius, minus headRadius.
+
+00:06:15.151 --> 00:06:17.471
+Und dann haben wir einen Schneemann.
+
+00:06:17.552 --> 00:06:20.351
+Das Entscheidende ist jetzt diese Variable size.
+
+00:06:20.591 --> 00:06:24.831
+Wir können size jetzt auf 2 ändern,
+und der Schneemann schrumpft.
+
+00:06:24.831 --> 00:06:26.192
+Und alles passt zueinander.
+
+00:06:27.002 --> 00:06:29.882
+Ändern wir das auf 3, passt alles zueinander.
+
+00:06:30.201 --> 00:06:33.721
+Ändern wir das auf 5,
+passt immer noch alles zueinander.
+
+00:06:34.922 --> 00:06:36.841
+Hier passiert also keine Magie.
+
+00:06:36.841 --> 00:06:39.802
+Nichts ist wirklich an irgendetwas
+anderem festgeklebt.
+
+00:06:40.122 --> 00:06:42.880
+Wir nehmen einfach den Wert size.
+
+00:06:42.880 --> 00:06:44.922
+Wir holen die Zahl aus dieser Box,
+
+00:06:45.721 --> 00:06:48.442
+rechnen etwas damit,
+nämlich mal 2,
+
+00:06:48.442 --> 00:06:51.002
+und legen das Ergebnis in eine
+neue Box namens headRadius.
+
+00:06:51.322 --> 00:06:54.281
+Und wenn wir hier unten
+headY ausrechnen,
+
+00:06:54.362 --> 00:06:58.362
+schauen wir einfach in diese Box
+und holen heraus, was darin liegt.
+
+00:06:58.521 --> 00:07:01.081
+Das siehst du, wenn du dich
+durchklickst.
+
+00:07:01.882 --> 00:07:04.601
+Die Erklärung rechts ist
+hier richtig nützlich.
+
+00:07:04.601 --> 00:07:07.161
+Ich empfehle dir sehr, dir Zeit
+zu nehmen und sie zu lesen.
+
+00:07:07.961 --> 00:07:12.122
+Hier siehst du, wir erklären dir,
+was in dieser Codezeile passiert ist.
+
+00:07:12.362 --> 00:07:14.762
+Wir haben eine neue Variable
+namens headY erstellt.
+
+00:07:15.242 --> 00:07:18.762
+Du kannst mit der Maus darüberfahren.
+Dann siehst du genau, was wir
+
+00:07:19.002 --> 00:07:22.041
+hervorheben: headY. Und wir
+setzen ihren Wert auf 15.
+
+00:07:23.502 --> 00:07:26.781
+Wir haben bodyY aus dem Regal
+geholt und 40 herausgenommen.
+
+00:07:26.781 --> 00:07:29.262
+Wir haben bodyRadius geholt
+und 15 herausgenommen.
+
+00:07:29.742 --> 00:07:33.701
+Dann haben wir 40 minus 15 gerechnet.
+Wir heben das Ganze hier hervor,
+
+00:07:33.701 --> 00:07:35.101
+damit du weißt, was das ist.
+
+00:07:35.341 --> 00:07:39.422
+Und haben 25 bekommen. Dann haben wir
+headRadius geholt und 10 genommen.
+
+00:07:39.581 --> 00:07:42.221
+Und dann haben wir 25 minus 10
+gerechnet und 15 bekommen.
+
+00:07:42.622 --> 00:07:45.982
+Dann haben wir diese neue Box erstellt
+und 15 hineingelegt.
+
+00:07:47.101 --> 00:07:47.502
+Also,
+
+00:07:49.552 --> 00:07:53.951
+diese Erklärungen helfen dir sehr.
+Sie zeigen dir genau, was passiert.
+
+00:07:53.951 --> 00:07:58.591
+Eine einfachere wie diese hier: Wir haben
+size herausgeholt, 5 mal 4 gerechnet
+
+00:07:58.752 --> 00:08:00.711
+und 20 bekommen. Dann haben wir
+eine neue Box erstellt.
+
+00:08:00.711 --> 00:08:04.911
+Wir haben das in die Box gelegt. Wenn du
+feststeckst, empfehle ich dir: Mach langsam,
+
+00:08:05.151 --> 00:08:08.752
+geh mit dem Scrubber durch und schau dir
+diese Infos auf der rechten Seite an.
+
+00:08:08.752 --> 00:08:13.271
+Hier siehst du auch die Funktion
+circle mit snowmanX, das
+
+00:08:13.271 --> 00:08:16.721
+50 enthält, headY mit 15
+und headRadius mit 10.
+
+00:08:16.721 --> 00:08:19.641
+Hier siehst du also, was
+daraus tatsächlich wird.
+
+00:08:19.641 --> 00:08:22.081
+Es wird zu 50, 15, 10, white.
+
+00:08:22.961 --> 00:08:26.322
+Ich empfehle dir also sehr: Mach langsam
+und schau dir das genau an.
+
+00:08:26.891 --> 00:08:29.442
+Hoffentlich hast du es aber
+geschafft, die Übung zu lösen.
+
+00:08:29.442 --> 00:08:32.481
+Herzlichen Glückwunsch,
+wenn du sie gelöst hast.
+
+00:08:33.121 --> 00:08:37.442
+Und ja, jetzt rechnest du schon
+und verwendest Variablen.
+
+00:08:37.601 --> 00:08:39.522
+Das ist super. Das sind die Grundbausteine.
+
+00:08:39.522 --> 00:08:42.481
+Damit bauen wir jetzt noch ein paar
+richtig coole Sachen.
+
+00:08:42.802 --> 00:08:45.081
+Danke fürs Zuschauen. Viel Spaß
+bei der nächsten Lektion.
+
+00:08:45.081 --> 00:08:45.802
+Tschüss, bis bald.

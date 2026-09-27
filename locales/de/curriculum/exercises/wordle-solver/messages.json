@@ -1,0 +1,125 @@
+{
+  "checks": {
+    "repeatedGuess": "Du hast dasselbe Wort mehr als einmal geraten. Jeder Rateversuch sollte nutzen, was du aus den vorherigen gelernt hast, und du solltest aufhören, sobald du gewonnen hast.",
+    "guessNotCommonWord": "Rateversuch {{row}} war „{{word}}“, aber das ist keines der Wörter aus `commonWords()`.",
+    "guessUsesAbsent": "Rateversuch {{row}} war „{{word}}“, aber ein früherer Rateversuch hatte schon gezeigt, dass „{{letter}}“ nicht im Wort vorkommt.",
+    "guessIgnoresCorrect": "Rateversuch {{row}} war „{{word}}“, aber ein früherer Rateversuch hatte schon gezeigt, dass Feld {{square}} „{{letter}}“ ist.",
+    "guessMissesPresent": "Rateversuch {{row}} war „{{word}}“, aber ein früherer Rateversuch hatte schon gezeigt, dass „{{letter}}“ irgendwo im Wort vorkommt, und „{{word}}“ enthält ihn nicht.",
+    "guessRepeatsPresentSquare": "Rateversuch {{row}} war „{{word}}“, aber ein früherer Rateversuch hatte schon gezeigt, dass „{{letter}}“ zwar im Wort vorkommt, aber nicht in Feld {{square}}.",
+    "guessNotFirstFitting": "Rateversuch {{row}} war „{{word}}“, aber wir haben „{{expected}}“ erwartet.",
+    "guessAfterSolved": "Dein Code hat Rateversuch {{row}} gemacht, nachdem der vorherige Rateversuch das Wort bereits gelöst hatte. Hör auf, sobald jeder Buchstabe richtig ist.",
+    "stoppedBeforeSolved": "Dein Code hat aufgehört, nachdem er {{guesses}} Mal geraten hatte, ohne das Wort zu lösen."
+  },
+  "tasks": {
+    "firstWord": {
+      "name": "Ein richtiges Wort anzeigen",
+      "description": "Im ersten Szenario sollst du einfach das erste Wort aus `commonWords()` wählen. Dieses Wort ist `which`. Um das Szenario zu bestehen, musst du dieses Wort raten und dann aufhören. So kannst du prüfen, ob deine Verkabelung stimmt, bevor es an komplexere Situationen geht."
+    },
+    "handleWrong": {
+      "name": "Mit völlig falschen Rateversuchen umgehen",
+      "description": "Gut gemacht, der erste Teil läuft! In diesem zweiten Szenario brauchst du zwei Rateversuche. Der erste ist wieder das erste Wort aus dem Array (das ist immer so!). Der ist total falsch, also gehst du danach zum nächsten Wort im Array weiter, und das ist dann richtig!"
+    },
+    "handlePartial": {
+      "name": "Mit teilweise richtigen Rateversuchen umgehen",
+      "description": "OK, jetzt haben wir Schwung. Hier wird es richtig interessant. Die nächsten Szenarien kommen als Mischung aus `correct` und `absent` zurück. Wähle das nächste passende Wort aus dem Array, basierend auf dem, was du bisher über die `correct`- und `absent`-Buchstaben weißt."
+    },
+    "handlePresent": {
+      "name": "Mit vorhandenen Buchstaben umgehen",
+      "description": "Fantastisch! Jetzt kommt der letzte knifflige Teil. Du musst auch Buchstaben mit dem Status `present` einbeziehen. Viel Glück, du schaffst das!"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "Alles richtig",
+      "description": "Der erste Rateversuch ist gleich richtig."
+    },
+    "entirelyWrong": {
+      "name": "Einmal falsch, einmal richtig",
+      "description": "Mit einem falschen Rateversuch umgehen"
+    },
+    "twoNeeded": {
+      "name": "Zwei Rateversuche nötig",
+      "description": "Mit einem falschen Rateversuch umgehen"
+    },
+    "threeNeeded": {
+      "name": "Drei Rateversuche nötig",
+      "description": "Mit einem falschen Rateversuch umgehen"
+    },
+    "fourNeeded": {
+      "name": "Vier Rateversuche nötig",
+      "description": "Mit einem falschen Rateversuch umgehen"
+    },
+    "present1": {
+      "name": "Einige Buchstaben vorhanden",
+      "description": "Ein kniffliger Fall mit einigen Buchstaben, die im Wort vorkommen."
+    },
+    "present2": {
+      "name": "Es wird enger",
+      "description": "Mit einem schwierigeren Wort umgehen"
+    },
+    "present3": {
+      "name": "Ein ganz normaler Verlauf",
+      "description": "Jetzt fühlt es sich wie Wordle an"
+    },
+    "present4": {
+      "name": "Noch ein knapper Fall",
+      "description": "Es macht Spaß, wie sie am Ende auseinandergehen!"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Wo fange ich überhaupt an?",
+      "answer": "Fang damit an, das erste Wort aus `commonWords()` zu raten. Bring zuerst die Schleife zum Laufen, die ein Wort rät und das Ergebnis prüft, bevor du dir Gedanken über Cleverness machst."
+    },
+    "readStates": {
+      "question": "Woher weiß ich, wie mein Rateversuch ausgegangen ist?",
+      "answer": "`guess(word)` gibt dir ein Array zurück, mit einem Status pro Buchstabe: `\"correct\"`, `\"present\"` oder `\"absent\"`. Dieses Array ist das Einzige, was du aus einem Rateversuch lernst, also muss alles, was du weißt, daraus kommen."
+    },
+    "rememberLearned": {
+      "question": "Wie merke ich mir, was ich über die Rateversuche hinweg gelernt habe?",
+      "answer": "Führe eine Wissensstruktur außerhalb der Schleife: die Buchstaben, von denen du weißt, dass sie nicht im Wort vorkommen, die Buchstaben, von denen du weißt, dass sie irgendwo im Wort vorkommen, und pro Position die Buchstaben, von denen du weißt, dass sie dort NICHT vorkommen."
+    },
+    "pickNextGuess": {
+      "question": "Wie wähle ich den nächsten Rateversuch aus?",
+      "answer": "Filtere `commonWords()`: Behalte nur Wörter, die alle richtigen Buchstaben an der richtigen Position haben, alle Buchstaben enthalten, die im Wort vorkommen (aber nicht an ausgeschlossenen Positionen), und keinen der fehlenden Buchstaben enthalten. Nimm den ersten Treffer."
+    },
+    "whenToStop": {
+      "question": "Wann höre ich auf?",
+      "answer": "Hör auf, sobald jeder Status `\"correct\"` zurückkommt, oder nach `6` Rateversuchen. Sonst rätst du immer weiter, über das Ende des Spielfelds hinaus."
+    }
+  },
+  "functions": {
+    "guess": {
+      "description": "Rät ein Wort. Schreibt das Wort in die nächste Zeile des Spielfelds, färbt es ein und gibt ein Array mit dem Status jedes Buchstabens zurück.",
+      "category": "Wordle"
+    },
+    "commonWords": {
+      "description": "Gibt ein Array aus über 100 häufigen Wörtern mit fünf Buchstaben zurück, die du als Rateversuche verwenden kannst.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "Fügt ein Element am Ende eines Arrays hinzu und verändert das Array dabei direkt.",
+      "category": "Arrays"
+    },
+    "arrayIncludes": {
+      "description": "Prüft, ob ein Array ein Element enthält.",
+      "category": "Arrays"
+    },
+    "stringIncludes": {
+      "description": "Prüft, ob ein String einen Teilstring enthält.",
+      "category": "Strings"
+    },
+    "arrayLength": {
+      "description": "Die Anzahl der Elemente in einem Array.",
+      "category": "Arrays"
+    },
+    "stringLength": {
+      "description": "Die Anzahl der Zeichen in einem String.",
+      "category": "Strings"
+    }
+  },
+  "describers": {
+    "guess": "hat ein Wort geraten",
+    "commonWords": "hat das Array der häufigen Wörter abgerufen"
+  }
+}

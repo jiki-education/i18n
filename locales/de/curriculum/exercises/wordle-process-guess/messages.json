@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "rowMismatch": "Das „{{letter}}“ in Kästchen {{square}} sollte „{{expected}}“ sein, nicht „{{actual}}“.",
+    "rowNotColored": "Die Zeile wurde nicht gefärbt.",
+    "rowWrongLength": "Die Zeile hat {{actual}} Zustände bekommen, aber eine Zeile braucht {{expected}}."
+  },
+  "tasks": {
+    "processGuess": {
+      "name": "Einen einzelnen Rateversuch auswerten",
+      "description": "Erstelle eine Funktion namens processGuess, die ein geheimes Wort und einen Rateversuch entgegennimmt, den Zustand jedes Buchstabens ermittelt (correct, present oder absent) und dann colorRow(1, states) mit den Ergebnissen aufruft."
+    }
+  },
+  "scenarios": {
+    "allCorrect": {
+      "name": "Alles richtig",
+      "description": "Ein vollständig richtiger Rateversuch"
+    },
+    "absent": {
+      "name": "Einige fehlen",
+      "description": "Wenn Buchstaben im geheimen Wort nicht vorkommen"
+    },
+    "present": {
+      "name": "Einige vorhanden",
+      "description": "Wenn Buchstaben an der falschen Stelle stehen"
+    },
+    "complex": {
+      "name": "Komplex",
+      "description": "Ein komplexeres Szenario"
+    },
+    "differentWord": {
+      "name": "Ein anderes Wort",
+      "description": "Und zum Schluss noch ein anderes Wort!"
+    }
+  },
+  "hints": {
+    "compareLetters": {
+      "question": "Wie vergleiche ich jeden Buchstaben des Rateversuchs mit dem geheimen Wort?",
+      "answer": "Geh die Positionen `0` bis `4` in einer Schleife durch. Vergleiche an jeder Position `guess[i]` mit `target[i]`."
+    },
+    "stateRules": {
+      "question": "Wann ist ein Buchstabe `\"correct\"`, wann `\"present\"` und wann `\"absent\"`?",
+      "answer": "Nach den vereinfachten Regeln dieser Übung: Wenn `guess[i]` gleich `target[i]` ist, ist es `\"correct\"`. Sonst, wenn der Buchstabe irgendwo in `target` vorkommt, ist es `\"present\"`. Wenn nicht, ist es `\"absent\"`."
+    },
+    "buildList": {
+      "question": "Wie baue ich das Array der Zustände auf?",
+      "answer": "Beginne mit einem leeren Array und hänge dann in der Schleife mit `states.push(value)` jeden Zustand der Reihe nach ans Ende an."
+    },
+    "finishedList": {
+      "question": "Wohin kommt das fertige Array?",
+      "answer": "Übergib es an `colorRow(1, states)`, um die erste Zeile des Spielfelds mit deinen berechneten Zuständen zu färben."
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "Färbt eine Zeile auf dem Wordle-Spielfeld mit den angegebenen Zuständen.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "Hängt ein Element ans Ende eines Arrays an und verändert das Array dabei direkt.",
+      "category": "Arrays"
+    },
+    "includes": {
+      "description": "Prüft, ob ein String einen anderen String enthält, und gibt wahr oder falsch zurück.",
+      "category": "Strings"
+    }
+  },
+  "describers": {
+    "colorRow": "färbte eine Zeile auf dem Wordle-Spielfeld"
+  }
+}

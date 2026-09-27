@@ -1,78 +1,78 @@
 {
   "tasks": {
     "lookUpPlusOnes": {
-      "name": "�",
-      "description": "�"
+      "name": "查看攜伴人數",
+      "description": "有人向你報上名字。回傳他可以額外帶幾位客人進場；如果他沒有受邀，就回傳 `\"Not on the list!\"`。"
     }
   },
   "scenarios": {
     "emptyList": {
-      "name": "�",
-      "description": "�"
+      "name": "清單是空的",
+      "description": "清單是空的時候，沒有人會帶任何人進場。"
     },
     "nameMissing": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad 被擋在門外",
+      "description": "這個名字根本不在清單上。"
     },
     "namePresent": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad 可以進場",
+      "description": "Brad 有受邀，而且他不是一個人來。"
     },
     "similarName": {
-      "name": "�",
-      "description": "�"
+      "name": "很像，但不行",
+      "description": "Bradley 不是 Brad，所以 Brad 還是被擋在紅龍外。"
     },
     "doubleBarrelled": {
-      "name": "�",
-      "description": "�"
+      "name": "連字號的名字",
+      "description": "名字在清單上，只是中間夾著連字號。"
     },
     "allowedNobody": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad 自己一個人來",
+      "description": "Brad 確實有受邀，只是他不會帶任何人一起來。"
     },
     "twoBrads": {
-      "name": "�",
-      "description": "�"
+      "name": "兩個 Brad",
+      "description": "今晚清單上不只一個 Brad，而排在最前面的那個才是站在門口的這一位。"
     },
     "cher": {
-      "name": "�",
-      "description": "�"
+      "name": "Cher 來了",
+      "description": "有些人就只有一個名字，而她還帶了一整團人來。"
     },
     "cheryl": {
-      "name": "�",
-      "description": "�"
+      "name": "開始有點難了",
+      "description": "Cheryl Crow 和 Cher 是朋友嗎？不重要，Cheryl 不是 Cher。"
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "這到底該從哪裡開始？",
+      "answer": "想像你真的站在門口做這件事。有人報上名字，你就沿著板夾上的清單往下讀，直到找到他為止。值得注意的是，你要給對方的答案，並不是寫在你正在讀的清單上、他名字的旁邊。"
     },
     "twoLists": {
-      "question": "�",
-      "answer": "�"
+      "question": "這裡有兩個陣列。它們之間有什麼關係？",
+      "answer": "你在其中一個陣列裡查到某個人*在哪個位置*，這個資訊在另一個陣列裡也一樣成立。比起名字，位置是更值得牢牢記住的東西。"
     },
     "whatCountsAsAMatch": {
-      "question": "�",
-      "answer": "�"
+      "question": "什麼情況下，名字才算是真的對上了？",
+      "answer": "「Brad」應該能讓 Brad Pitt 進場，但 Bradley Cooper 不行。想想看，當你手上的字母用完時，這兩筆資料有什麼不同。要做這個比較，合理的方法不只一種，所以挑一個你自己說得清楚的就好。"
     },
     "noSurname": {
-      "question": "�",
-      "answer": "�"
+      "question": "Cher 沒有姓氏。這會讓哪裡出問題嗎？",
+      "answer": "再仔細看看，你的比對判斷對陣列裡的資料做了哪些假設。如果它假設名字後面一定還有東西，那麼一筆*只有*名字的資料就過不了這一關。反過來說，比較長的名字也不該能宣稱自己和比較短的那筆資料相符。"
     },
     "notOnTheList": {
-      "question": "�",
-      "answer": "�"
+      "question": "如果他們不在清單上，該怎麼辦？",
+      "answer": "那就回傳字串 `\"Not on the list!\"`，完全照寫。這裡有兩件事值得想一想。第一，你要到什麼時候才能*確定*某個人不在清單上？第二，注意這個答案，和一位有受邀、但只能帶 0 位客人進場的來賓完全不同，所以別讓你的函式把這兩者搞混。"
     }
   },
   "functions": {
     "length": {
-      "description": "�",
-      "category": "�"
+      "description": "陣列裡有幾個元素，也就是你在字串上用過的同一個 length 屬性",
+      "category": "陣列操作"
     },
     "startsWith": {
-      "description": "�",
-      "category": "�"
+      "description": "檢查一個字串是不是以另一個較短的字串開頭",
+      "category": "字串操作"
     }
   }
 }

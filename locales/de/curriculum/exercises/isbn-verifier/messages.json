@@ -1,142 +1,142 @@
 {
   "tasks": {
     "validateBasicIsbn": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine einfache ISBN überprüfen",
+      "description": "Schreibe eine Funktion namens isValidIsbn, die einen ISBN-10-String entgegennimmt und true zurückgibt, wenn er gültig ist, und false, wenn nicht. ISBN-10s enthalten Bindestriche, die übersprungen werden sollten. Multipliziere jede Ziffer mit einem Gewicht, das von 10 bis 1 herunterzählt, addiere die Produkte und prüfe, ob die Summe durch 11 teilbar ist."
     },
     "handleXCheckDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "X als Prüfziffer behandeln",
+      "description": "Manchmal endet eine ISBN mit einem X, das für 10 steht. Erweitere deine Funktion, sodass sie ein X an der letzten Stelle behandelt."
     },
     "handleEdgeCases": {
-      "name": "�",
-      "description": "�"
+      "name": "Randfälle behandeln",
+      "description": "Mach deine Funktion robust: Behandle ISBNs ohne Bindestriche, lehne ungültige Zeichen ab, lehne ein X ab, das nicht an der letzten Stelle steht, und stelle sicher, dass genau 10 Ziffern verarbeitet werden."
     },
     "useContinue": {
-      "name": "�",
-      "description": "�"
+      "name": "Bonus: Bindestriche mit continue überspringen",
+      "description": "Statt nur dann etwas zu tun, wenn ein Zeichen eine Ziffer ist, überspringst du mit continue die Bindestriche und gehst direkt zum nächsten Zeichen weiter."
     }
   },
   "scenarios": {
     "isbnValid": {
-      "name": "�",
-      "description": "�"
+      "name": "Gültige ISBN",
+      "description": "Eine gültige ISBN-10 sollte true zurückgeben."
     },
     "isbnValidCheckDigitX": {
-      "name": "�",
-      "description": "�"
+      "name": "Gültige ISBN mit X als Prüfziffer",
+      "description": "Eine gültige ISBN-10 mit der Prüfziffer „X“ sollte true zurückgeben."
     },
     "isbnValidNoDashes": {
-      "name": "�",
-      "description": "�"
+      "name": "Gültige ISBN ohne Bindestriche",
+      "description": "Eine gültige ISBN-10 ohne trennende Bindestriche sollte true zurückgeben."
     },
     "isbnValidNoDashesXCheck": {
-      "name": "�",
-      "description": "�"
+      "name": "Gültige ISBN ohne Bindestriche und mit X als Prüfziffer",
+      "description": "Eine gültige ISBN-10 ohne Bindestriche und mit der Prüfziffer „X“ sollte true zurückgeben."
     },
     "isbnInvalidCheckDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "Ungültige ISBN-Prüfziffer",
+      "description": "Eine ISBN-10 mit einer falschen Prüfziffer sollte false zurückgeben."
     },
     "isbnInvalidCharacter": {
-      "name": "�",
-      "description": "�"
+      "name": "Prüfziffer ist ein anderes Zeichen als X",
+      "description": "Eine ISBN-10 mit einem ungültigen Zeichen sollte false zurückgeben."
     },
     "isbnInvalidCharacterNotZero": {
-      "name": "�",
-      "description": "�"
+      "name": "Ungültige Prüfziffer wird nicht als Null behandelt",
+      "description": "Eine ungültige Prüfziffer darf nicht als Null behandelt werden."
     },
     "isbnInvalidNonNumeric": {
-      "name": "�",
-      "description": "�"
+      "name": "Ungültiges Zeichen in der ISBN",
+      "description": "Ungültige Zeichen in der ISBN dürfen nicht ignoriert werden."
     },
     "isbnInvalidXPosition": {
-      "name": "�",
-      "description": "�"
+      "name": "X ist nur als Prüfziffer gültig",
+      "description": "Ein „X“ ist nur als Prüfziffer gültig."
     },
     "isbnInvalidMissingCheckDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN ohne Prüfziffer",
+      "description": "Eine ISBN-10 ohne Prüfziffer sollte false zurückgeben."
     },
     "isbnInvalidTooLong": {
-      "name": "�",
-      "description": "�"
+      "name": "Zu lange ISBN",
+      "description": "Eine ISBN-10, die zu lang ist, sollte false zurückgeben."
     },
     "isbnInvalidTooShort": {
-      "name": "�",
-      "description": "�"
+      "name": "Zu kurze ISBN",
+      "description": "Eine ISBN-10, die zu kurz ist, sollte false zurückgeben."
     },
     "isbnInvalidEmpty": {
-      "name": "�",
-      "description": "�"
+      "name": "Leere ISBN",
+      "description": "Ein leerer ISBN-String sollte false zurückgeben."
     },
     "isbnInvalidLengthNine": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN hat 9 Zeichen",
+      "description": "Eine Eingabe mit 9 Zeichen sollte false zurückgeben."
     },
     "isbnInvalidNonNumericBeforeCheck": {
-      "name": "�",
-      "description": "�"
+      "name": "Ungültiges Zeichen vor der Längenprüfung",
+      "description": "Ungültige Zeichen dürfen vor der Längenprüfung nicht ignoriert werden."
     },
     "isbnInvalidExtraLength": {
-      "name": "�",
-      "description": "�"
+      "name": "Eingabe zu lang, enthält aber eine gültige ISBN",
+      "description": "Eine Eingabe mit mehr als 10 Zeichen sollte false zurückgeben."
     },
     "isbnBonusUseContinue": {
-      "name": "�",
-      "description": "�"
+      "name": "Bindestriche mit continue übersprungen",
+      "description": "Deine Lösung funktioniert und überspringt die Bindestriche mit continue."
     }
   },
   "hints": {
     "howChecked": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie wird eine ISBN-10 eigentlich geprüft?",
+      "answer": "Jede der 10 Ziffern wird mit einem abnehmenden Gewicht multipliziert. Die erste Ziffer mit 10, die zweite mit 9, und so weiter bis zur letzten mit 1. Alle diese Produkte addierst du. Wenn die Summe durch 11 teilbar ist, ist die ISBN gültig."
     },
     "dashes": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was mache ich mit den Bindestrichen?",
+      "answer": "Bindestriche sind nur da, damit Menschen die ISBN leichter lesen können. Überspringe sie einfach. Sie zählen nicht als Ziffer und sie bringen dich in der Gewichtung nicht weiter."
     },
     "trackWeight": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie behalte ich das Gewicht im Blick?",
+      "answer": "Starte eine Multiplikator-Variable bei 10. Jedes Mal, wenn du eine Ziffer verarbeitest, multiplizierst du sie mit dem aktuellen Multiplikator, addierst das Produkt zur laufenden Summe und verringerst dann den Multiplikator um 1."
     },
     "stringToNumber": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie mache ich aus dem String eine Zahl?",
+      "answer": "Du hast zwei Möglichkeiten. Der in dieser Übung gedachte Weg ist, eine Lösung mit der `indexOf`-Methode zu finden. Denk mal darüber nach. Wenn du nicht darauf kommst, findest du die Antwort im nächsten Hinweis."
     },
     "stringToNumberAgain": {
-      "question": "�",
-      "answer": "�"
+      "question": "Nein, im Ernst: Wie mache ich aus dem String eine Zahl?",
+      "answer": "Zwei Möglichkeiten. Zum einen kannst du die Funktion `Number()` verwenden (mit einem großen „N“), `Number(\"5\")` ergibt also `5`. Lies die <a href=\"/concepts/type-conversion\" target=\"_blank\" rel=\"noopener noreferrer\">Konzeptseite Typumwandlung</a>, wenn du das auffrischen möchtest. Danach lohnt sich auch ein raffinierter `indexOf`-Trick."
     },
     "handleX": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie gehe ich mit „X“ um? Das ist doch keine Ziffer, oder?",
+      "answer": "„X“ ist etwas Besonderes. Es steht für den Wert 10, aber nur als allerletztes Zeichen. Behandle es wie eine Ziffer mit dem Wert 10, wenn du es am Ende siehst, und lehne die ISBN ab, wenn „X“ an einer anderen Stelle auftaucht."
     },
     "exactlyTenDigits": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie stelle ich sicher, dass es genau 10 Ziffern sind?",
+      "answer": "Dein Multiplikator hat bei 10 begonnen und sich mit jeder Ziffer um 1 verringert. Wenn du genau 10 Ziffern verarbeitet hast, ist er am Ende bei 0 gelandet. Alles andere bedeutet die falsche Anzahl an Ziffern, also lehne die ISBN ab."
     },
     "finalCheck": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie lautet die abschließende Gültigkeitsprüfung?",
+      "answer": "Wenn du alles verarbeitet hast, ist die ISBN gültig, wenn die Gesamtsumme durch 11 teilbar ist (also `sum % 11 == 0`)."
     }
   },
   "checks": {
-    "mustUseContinue": "�",
-    "tooManyLines": "�"
+    "mustUseContinue": "Fast geschafft! Für diesen Bonus nutze `continue`, um die Bindestriche zu überspringen.",
+    "tooManyLines": "Fast geschafft! Deine Lösung funktioniert, aber sie ist etwas zu lang."
   },
   "functions": {
     "number": {
-      "description": "�",
-      "category": "�"
+      "description": "Wandle einen String, der Ziffern enthält, in eine Zahl um",
+      "category": "Typumwandlung"
     },
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "Prüfe, ob ein String einen Teilstring enthält",
+      "category": "String-Operationen"
     },
     "indexOf": {
-      "description": "�",
-      "category": "�"
+      "description": "Finde die Position eines Teilstrings in einem String oder -1, wenn er nicht gefunden wird",
+      "category": "String-Operationen"
     }
   }
 }

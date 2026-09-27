@@ -1,0 +1,402 @@
+WEBVTT
+
+NOTE en_md5 9247bff9de74f40326d826673828fc84
+
+00:00:00.396 --> 00:00:05.035
+Willkommen zu einem weiteren Deep Dive.
+Ich hoffe, dir gefallen diese Übungen.
+
+00:00:05.275 --> 00:00:07.275
+Das ist die erste Übung,
+in der wir wirklich
+
+00:00:07.275 --> 00:00:09.555
+anfangen, ein paar verschiedene
+Konzepte zu kombinieren.
+
+00:00:09.555 --> 00:00:12.476
+Ich finde, das ist eine ziemlich schöne,
+lustige kleine Übung.
+
+00:00:14.635 --> 00:00:15.996
+Ich gehe sie kurz mit dir durch.
+
+00:00:16.655 --> 00:00:18.955
+Wir haben sie auch schon
+im Lernvideo behandelt.
+
+00:00:18.955 --> 00:00:24.396
+Aber schauen wir sie uns kurz an. Wir wissen,
+dass wir etwas neunmal tun wollen.
+
+00:00:24.475 --> 00:00:27.905
+Das ist unser erster Hinweis.
+Wir wollen neun Blumen pflanzen,
+
+00:00:28.385 --> 00:00:30.986
+und wir kennen die Positionen,
+an denen wir sie pflanzen wollen.
+
+00:00:30.986 --> 00:00:35.265
+10, 20, 30, 40, 50, 60, 70, 80 und 90.
+
+00:00:36.466 --> 00:00:39.786
+Du siehst hoffentlich, dass
+sie alle 10 auseinanderliegen.
+
+00:00:39.786 --> 00:00:44.225
+Das steht hier auch. Die erste Blume
+bei 10, die zweite Blume bei 20.
+
+00:00:44.865 --> 00:00:47.466
+Wir wollen also etwas wiederholen. Na ja,
+
+00:00:47.466 --> 00:00:49.345
+machen wir es kurz
+erst mal ohne Wiederholung.
+
+00:00:49.345 --> 00:00:53.345
+Denken wir es einfach durch. Der
+Weg von Hand, ohne
+
+00:00:54.176 --> 00:00:57.295
+ein repeat, sieht so aus.
+Das ist extrem langweilig,
+
+00:00:59.536 --> 00:01:01.456
+aber es ist ein nützliches Muster.
+
+00:01:01.456 --> 00:01:03.456
+Wir pflanzen also so etwas.
+
+00:01:04.016 --> 00:01:08.096
+Und wir wollen jetzt sagen können:
+Okay, wiederholen wir das neunmal.
+
+00:01:10.096 --> 00:01:10.495
+Und
+
+00:01:11.456 --> 00:01:14.695
+wir wollen einfach das hier tun. Aber
+beim ersten Mal soll es 10 sein.
+
+00:01:14.695 --> 00:01:17.055
+Beim nächsten Mal 20. Dann 30.
+
+00:01:17.376 --> 00:01:19.135
+Dafür brauchen wir eine Variable.
+
+00:01:19.135 --> 00:01:20.896
+Wir brauchen eine Box,
+die unseren Wert speichert.
+
+00:01:21.055 --> 00:01:24.016
+Wir müssen die Box jedes Mal
+mit einem neuen Wert aktualisieren.
+
+00:01:24.525 --> 00:01:27.165
+Und dann holen wir ihn heraus und
+geben ihn an die Funktion plant.
+
+00:01:28.046 --> 00:01:32.126
+Dafür gibt es hier einen Hinweis,
+wie wir die Variable nennen könnten.
+
+00:01:32.126 --> 00:01:34.046
+position. Wir könnten sie
+aber beliebig nennen.
+
+00:01:34.126 --> 00:01:35.245
+Nehmen wir aber position.
+
+00:01:36.046 --> 00:01:38.365
+Und setzen wir sie auf null.
+
+00:01:38.846 --> 00:01:43.566
+Und jedes Mal am Anfang der Schleife
+addieren wir 10 dazu,
+
+00:01:44.206 --> 00:01:47.566
+und dann verwenden wir
+den Wert in der Funktion.
+
+00:01:48.126 --> 00:01:52.046
+Das war's. Schön einfach, aber schauen
+wir uns mal an, was hier eigentlich
+
+00:01:52.046 --> 00:01:54.516
+passiert. Ich lasse die schönen
+Blumen kurz blühen.
+
+00:01:54.665 --> 00:01:55.546
+Aufblühen. Okay,
+
+00:01:56.426 --> 00:01:59.146
+nehmen wir den Scrubber und
+gehen es kurz durch,
+
+00:01:59.546 --> 00:02:01.546
+damit wir ein gutes Denkmodell haben.
+
+00:02:01.786 --> 00:02:06.346
+Wir erstellen eine neue Variable,
+eine neue Box, wie wir sagen, namens position.
+
+00:02:06.426 --> 00:02:11.026
+Und wir legen null hinein.
+Dann wiederholen wir neunmal.
+
+00:02:11.026 --> 00:02:12.105
+Und beim ersten Mal
+
+00:02:13.385 --> 00:02:18.346
+fangen wir an, gehen hinein
+und holen die Box position.
+
+00:02:18.985 --> 00:02:21.306
+Wir schauen, was drin ist,
+und das ist gerade 0.
+
+00:02:22.306 --> 00:02:26.306
+Dann rechnen wir 0 plus 10,
+das ergibt 10.
+
+00:02:26.945 --> 00:02:30.306
+Und dann legen wir die 10
+zurück in dieselbe Box.
+
+00:02:30.705 --> 00:02:33.985
+Wir holen die Box, schauen hinein
+und sehen, dass null drin ist.
+
+00:02:33.985 --> 00:02:38.145
+Wir rechnen null plus 10, bekommen 10
+und legen sie zurück in die Box.
+
+00:02:38.145 --> 00:02:41.985
+Das ist nur ein Schritt. Das ist
+ein kompletter Schritt.
+
+00:02:43.105 --> 00:02:44.906
+Dann gehen wir zur nächsten Codezeile.
+
+00:02:44.906 --> 00:02:48.635
+Nächster Schritt. Jetzt holen wir
+die Box wieder aus dem Regal.
+
+00:02:48.876 --> 00:02:52.795
+Wir nehmen die 10 heraus. Und dann
+verwenden wir plant, hier also mit 10,
+
+00:02:52.955 --> 00:02:57.116
+um eine Pflanze an Position 10
+zu setzen. Dann geht es wieder los.
+
+00:02:57.116 --> 00:02:58.876
+Wir wiederholen. Das ist das zweite Mal.
+
+00:03:00.475 --> 00:03:04.876
+Wir holen die Box aus dem Regal. Wir nehmen
+die 10 heraus, die wir letztes Mal reingelegt haben.
+
+00:03:05.036 --> 00:03:08.716
+Wir rechnen 10 plus 10, bekommen 20
+und legen sie zurück in die Box.
+
+00:03:09.276 --> 00:03:12.556
+Dann machen wir weiter
+und rufen plant mit 20 auf.
+
+00:03:15.735 --> 00:03:19.336
+Drittes Mal, rein. Diesmal
+ist schon 20 in der Box.
+
+00:03:19.336 --> 00:03:21.735
+Wir addieren also 10, 30 und so weiter.
+
+00:03:23.175 --> 00:03:24.295
+Du siehst also,
+
+00:03:26.216 --> 00:03:27.575
+das Konzept ist ziemlich
+
+00:03:28.376 --> 00:03:31.895
+einfach. Box holen, reinschauen,
+etwas damit machen,
+
+00:03:31.895 --> 00:03:32.936
+zurück in die Box legen.
+
+00:03:34.616 --> 00:03:37.575
+Aber wenn du die Schritte nicht
+einzeln auseinanderhältst,
+
+00:03:37.575 --> 00:03:39.735
+wird es schnell verwirrend,
+das alles im Kopf zu behalten.
+
+00:03:39.816 --> 00:03:41.936
+Es ist wirklich wichtig,
+am Ende davon zu denken:
+
+00:03:41.936 --> 00:03:43.975
+Jiki hat die Box geholt,
+etwas gemacht,
+
+00:03:44.056 --> 00:03:46.996
+die Box zurückgestellt. Jetzt
+lehnt er sich einfach entspannt zurück
+
+00:03:46.996 --> 00:03:48.675
+und wartet auf die nächste Codezeile.
+
+00:03:48.915 --> 00:03:53.635
+Dass die nächste Codezeile auch die Box
+verwendet, ist eigentlich egal.
+
+00:03:53.635 --> 00:03:55.436
+Darüber willst du gar nicht
+zu viel nachdenken.
+
+00:03:55.436 --> 00:03:58.836
+Betrachte jede Codezeile
+in deinem Kopf für sich allein.
+
+00:03:59.475 --> 00:04:00.996
+Eine Sache will ich dir noch zeigen:
+
+00:04:01.955 --> 00:04:05.556
+Wir könnten es auch so machen.
+Das ist auch eine gültige Lösung.
+
+00:04:06.195 --> 00:04:09.795
+Und falls es dich überrascht, dass das
+eine gültige Lösung ist, denk es durch.
+
+00:04:09.876 --> 00:04:12.276
+Denk einfach darüber nach,
+warum das so ist,
+
+00:04:13.265 --> 00:04:15.026
+und ich gehe es kurz mit dir durch.
+
+00:04:15.825 --> 00:04:18.706
+Diesmal erstellen wir eine Box
+und legen 10 hinein.
+
+00:04:19.346 --> 00:04:21.985
+Dann wiederholen wir etwas neunmal.
+
+00:04:22.706 --> 00:04:26.386
+Wir pflanzen also sofort,
+das heißt, wir holen die Box.
+
+00:04:26.386 --> 00:04:28.065
+Da ist 10 drin, und die verwenden wir.
+
+00:04:28.545 --> 00:04:30.466
+Und danach geht es weiter.
+
+00:04:30.625 --> 00:04:34.906
+Wir machen den zweiten Schritt, wie er jetzt
+dasteht: Box holen, 10 herausnehmen.
+
+00:04:34.985 --> 00:04:38.305
+10 plus 10 ist 20,
+20 zurück in die Box legen.
+
+00:04:39.165 --> 00:04:42.326
+Dann wiederholen wir, und jetzt
+pflanzen wir mit 20.
+
+00:04:42.326 --> 00:04:44.206
+Es ist also genau dasselbe Konzept.
+
+00:04:44.446 --> 00:04:49.086
+Nur aktualisieren wir den Wert in der Box,
+nachdem wir ihn verwendet haben.
+
+00:04:49.805 --> 00:04:52.045
+Ist eine davon richtig
+und die andere falsch?
+
+00:04:52.365 --> 00:04:55.165
+Nein, beide sind völlig in Ordnung.
+
+00:04:55.886 --> 00:04:58.685
+Ich persönlich habe eine
+leichte Vorliebe
+
+00:04:59.086 --> 00:05:01.165
+für das, was gerade auf dem Bildschirm ist.
+
+00:05:01.675 --> 00:05:04.605
+Dazu habe ich vor einiger Zeit
+einen Forenbeitrag geschrieben.
+
+00:05:04.716 --> 00:05:09.245
+Ich gehe jetzt nicht alles durch, weil
+du, glaube ich, noch etwas mehr Wissen brauchst,
+
+00:05:09.245 --> 00:05:10.725
+bevor das richtig Sinn ergibt.
+
+00:05:11.125 --> 00:05:11.526
+Aber
+
+00:05:12.406 --> 00:05:13.805
+probier beide selbst aus.
+
+00:05:13.805 --> 00:05:17.446
+Schau, welcher der beiden Stile
+sich angenehm anfühlt.
+
+00:05:17.605 --> 00:05:21.446
+Angenehm für dich. Wie gesagt,
+keiner ist richtig oder falsch.
+
+00:05:21.446 --> 00:05:23.526
+Verschiedene Leute sehen
+unterschiedlich, was am besten ist.
+
+00:05:24.086 --> 00:05:28.725
+Aber ja, experimentiere mit beiden,
+während wir die nächsten Übungen machen.
+
+00:05:29.276 --> 00:05:32.565
+Manchmal ist der eine
+klar besser als der andere.
+
+00:05:32.565 --> 00:05:36.725
+Zum Beispiel kann es dir Arbeit sparen,
+wenn du das eine zuerst machst und das andere danach.
+
+00:05:36.886 --> 00:05:39.365
+Das wirst du in komplexeren
+Übungen auf jeden Fall sehen.
+
+00:05:39.855 --> 00:05:42.725
+Aber ja, gewöhn dir einfach an,
+mit solchen Dingen zu experimentieren,
+
+00:05:42.725 --> 00:05:43.846
+mit ihnen herumzuspielen
+
+00:05:44.966 --> 00:05:47.766
+und dir eine Meinung zu bilden,
+was du für am besten hältst.
+
+00:05:47.766 --> 00:05:49.685
+Und du kannst deine Meinung
+später jederzeit ändern.
+
+00:05:50.115 --> 00:05:52.725
+Das ist definitiv erlaubt.
+Danke fürs Zuschauen.
+
+00:05:53.336 --> 00:05:55.005
+Ich freue mich, dich im
+nächsten Video zu sehen.
+
+00:05:55.005 --> 00:05:55.685
+Bis bald.

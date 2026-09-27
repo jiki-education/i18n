@@ -1,64 +1,64 @@
 {
   "tasks": {
     "findTilePosition": {
-      "name": "�",
-      "description": "�"
+      "name": "找出字母牌的位置",
+      "description": "寫一個函式，找出某張特定字母牌在字母牌架上的位置。找到就回傳 \"Move to position X\"，沒找到就回傳 \"Error: Tile not on rack\"。"
     }
   },
   "scenarios": {
     "tileAtStart": {
-      "name": "�",
-      "description": "�"
+      "name": "開頭的字母牌",
+      "description": "這個字母是字母牌架上的第一張牌。"
     },
     "tileInMiddle": {
-      "name": "�",
-      "description": "�"
+      "name": "中間的字母牌",
+      "description": "這個字母在字母牌架的中間。"
     },
     "tileAtEnd": {
-      "name": "�",
-      "description": "�"
+      "name": "最後的字母牌",
+      "description": "這個字母是字母牌架上的最後一張牌。"
     },
     "tileNotFound": {
-      "name": "�",
-      "description": "�"
+      "name": "找不到字母牌",
+      "description": "這個字母不在字母牌架上。"
     },
     "emptyRack": {
-      "name": "�",
-      "description": "�"
+      "name": "空的字母牌架",
+      "description": "空的字母牌架上沒有任何字母牌可以找。"
     },
     "firstOfDuplicates": {
-      "name": "�",
-      "description": "�"
+      "name": "重複字母中的第一張",
+      "description": "當這個字母出現好幾次時，回傳第一個位置。"
     },
     "longerRack": {
-      "name": "�",
-      "description": "�"
+      "name": "更長的字母牌架",
+      "description": "在更長的字母牌架上找出字母牌。"
     }
   },
   "hints": {
     "trackPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼追蹤自己看到字母牌架的哪個位置了？",
+      "answer": "用一個從 1 開始的位置變數。每看一張新的字母牌，就把它加 1。"
     },
     "lookAtEachTile": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼一張一張查看字母牌？",
+      "answer": "`for` 迴圈會依序把字母牌架上的每個字元交給你。"
     },
     "onFound": {
-      "question": "�",
-      "answer": "�"
+      "question": "找到這個字母的時候，我該做什麼？",
+      "answer": "組出成功訊息。把位置數字轉成字串，再用串接（`+`）或樣板字串，把它和練習要求的其他文字組合起來。然後馬上回傳，不需要再繼續找。"
     },
     "addNumberToString": {
-      "question": "�",
-      "answer": "�"
+      "question": "我沒辦法把數字加進字串裡",
+      "answer": "你已經學過兩種把字串接在一起的方法。別用串接字串的方式，試試你學過的另一種方法。"
     },
     "positionAlwaysWrong": {
-      "question": "�",
-      "answer": "�"
+      "question": "為什麼我的位置老是錯的？",
+      "answer": "確認你每一次疊代都有把位置計數器加 1，而不是只有偶爾加。不然每張字母牌都會回報同樣的位置。"
     },
     "notInRack": {
-      "question": "�",
-      "answer": "�"
+      "question": "如果字母不在字母牌架上呢？",
+      "answer": "要等迴圈跑完、都沒找到這個字母之後，才回傳錯誤訊息。在迴圈裡就回傳錯誤，會在第一張不符合的字母牌就放棄。"
     }
   }
 }

@@ -1,117 +1,117 @@
 {
   "tasks": {
     "doubleAndSum": {
-      "name": "�",
-      "description": "�"
+      "name": "把每隔一個的數字加倍並加總",
+      "description": "寫一個叫做 valid 的函式，它會忽略空格，從右邊開始把每隔一個的數字加倍（加倍後超過 9 就減去 9），接著把所有數字加起來，總和能被 10 整除時回傳 true。"
     },
     "spotInvalidNumbers": {
-      "name": "�",
-      "description": "�"
+      "name": "找出無效的號碼",
+      "description": "每個位數本身都沒問題，但加總後不能被 10 整除的號碼，應該回傳 false。"
     },
     "rejectBadInput": {
-      "name": "�",
-      "description": "�"
+      "name": "拒絕不正確的輸入",
+      "description": "只有一個字元或更短的字串要拒絕；只要字串裡出現不是數字、也不是空格的字元，同樣要拒絕。"
     }
   },
   "scenarios": {
     "luhnSimpleValid": {
-      "name": "�",
-      "description": "�"
+      "name": "一個簡單的有效號碼",
+      "description": "有效的號碼應該回傳 true。"
     },
     "luhnValidTwoDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "有效的兩位數號碼",
+      "description": "有效的兩位數號碼應該回傳 true。"
     },
     "luhnValidCanadianSin": {
-      "name": "�",
-      "description": "�"
+      "name": "有效的加拿大社會保險號碼",
+      "description": "含有空格的有效號碼應該回傳 true。"
     },
     "luhnValidEvenDigits": {
-      "name": "�",
-      "description": "�"
+      "name": "位數是偶數的有效號碼",
+      "description": "位數是偶數的有效號碼應該回傳 true。"
     },
     "luhnValidVeryLong": {
-      "name": "�",
-      "description": "�"
+      "name": "非常長的號碼",
+      "description": "非常長的有效號碼也應該回傳 true。"
     },
     "luhnInvalidCanadianSin": {
-      "name": "�",
-      "description": "�"
+      "name": "無效的加拿大社會保險號碼",
+      "description": "加總結果不正確的號碼應該回傳 false。"
     },
     "luhnInvalidCreditCard": {
-      "name": "�",
-      "description": "�"
+      "name": "無效的信用卡號碼",
+      "description": "無效的信用卡號碼應該回傳 false。"
     },
     "luhnInvalidLongRemainderDiv5": {
-      "name": "�",
-      "description": "�"
+      "name": "總和能被 5 整除的無效長號碼",
+      "description": "總和能被 5 整除、但不能被 10 整除的長號碼，應該回傳 false。"
     },
     "luhnSingleDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "單一位數無效",
+      "description": "只有一位數的字串永遠不可能是有效的。"
     },
     "luhnZeroWithSpace": {
-      "name": "�",
-      "description": "�"
+      "name": "一個 0 加上一個空格",
+      "description": "一個 0 加上一個空格是無效的，因為忽略空格之後只剩下一位數。"
     },
     "luhnTrailingLetter": {
-      "name": "�",
-      "description": "�"
+      "name": "結尾多了一個字母",
+      "description": "在結尾加上非數字字元的有效號碼會變成無效。"
     },
     "luhnColon": {
-      "name": "�",
-      "description": "�"
+      "name": "冒號字元",
+      "description": "冒號這個字元比 '0' 小 1，不能把它當成數字。"
     },
     "luhnPercent": {
-      "name": "�",
-      "description": "�"
+      "name": "中間出現百分比符號",
+      "description": "中間出現不是數字、也不是空格的字元，號碼就是無效的，即使只看數字加起來剛好是 10 的倍數也一樣。"
     }
   },
   "hints": {
     "whatIsLuhn": {
-      "question": "�",
-      "answer": "�"
+      "question": "盧恩檢查到底是怎麼運作的？",
+      "answer": "先忽略所有空格。接著從最右邊的數字開始往左移動，把每隔一個的數字加倍。加倍後如果超過 9，就減去 9。然後把所有得到的數字加起來。如果總和能被 10 整除，這個號碼就是有效的。"
     },
     "stripSpaces": {
-      "question": "�",
-      "answer": "�"
+      "question": "空格要怎麼處理？",
+      "answer": "空格只是為了方便閱讀。用`continue`跳過它們，這樣它們就不會被算成數字，也不會影響真正數字的位置。"
     },
     "rejectNonDigits": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼拒絕不合法的字元？",
+      "answer": "檢查每個字元時，只要它不是空格，也不在`0123456789`裡面，就可以立刻回傳`false`。有個好用的檢查方式是`\"0123456789\".includes(char)`。"
     },
     "everySecondDigit": {
-      "question": "�",
-      "answer": "�"
+      "question": "要加倍哪些數字？",
+      "answer": "每隔一個。先整理出一個只含數字、乾淨的字串，再用索引對它跑迴圈，這樣就能知道每個數字的位置，會很有幫助。"
     },
     "fromTheRight": {
-      "question": "�",
-      "answer": "�"
+      "question": "可是我必須從右邊數，不是從左邊。",
+      "answer": "如果你整理好的數字字串長度是`len`，而你正在索引`i`（從左邊的 0 開始算），那麼它距離右邊就是`len - 1 - i`。只要這個距離是奇數，就把那個數字加倍。"
     },
     "doublingOverNine": {
-      "question": "�",
-      "answer": "�"
+      "question": "加倍後變成兩位數的時候怎麼辦？",
+      "answer": "如果加倍後數字大於 9，就把它減去 9。例如 6 加倍後是 12，而 12 - 9 = 3。（這和把兩個位數相加的結果是一樣的。）"
     },
     "finalCheck": {
-      "question": "�",
-      "answer": "�"
+      "question": "最後要怎麼確認號碼有沒有效？",
+      "answer": "把所有數字（不管有沒有加倍）加起來，看看總和能不能被 10 整除，也就是`total % 10 === 0`。也別忘了拒絕只有一位數或更短的字串。"
     }
   },
   "checks": {
-    "mustUseFor": "�"
+    "mustUseFor": "就差一點了！這個練習希望你能用`for`迴圈來解。"
   },
   "functions": {
     "number": {
-      "description": "�",
-      "category": "�"
+      "description": "把包含數字的字串轉換成數字",
+      "category": "型別轉換"
     },
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "檢查一個字串裡是否包含另一個較短的字串",
+      "category": "字串操作"
     },
     "length": {
-      "description": "�",
-      "category": "�"
+      "description": "字串裡的字元數量",
+      "category": "字串操作"
     }
   }
 }

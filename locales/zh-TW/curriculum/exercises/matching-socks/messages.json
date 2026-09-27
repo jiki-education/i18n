@@ -1,0 +1,97 @@
+{
+  "tasks": {
+    "findMatchingSocks": {
+      "name": "找出成對的襪子",
+      "description": "寫一個函式，接受兩個裝衣服的籃子（字串陣列），回傳兩個籃子裡所有成對襪子的陣列。是襪子的項目會以 ' sock' 結尾，而且一律以 'left ' 或 'right ' 開頭。"
+    },
+    "solveTightly": {
+      "name": "用 29 行解決",
+      "description": "試著用 29 行程式碼或更少來解決。這不是最短的答案，但等你寫出能動的版本之後，這是個很值得努力的目標。"
+    }
+  },
+  "scenarios": {
+    "emptyBaskets": {
+      "name": "空籃子",
+      "description": "兩個籃子都是空的。"
+    },
+    "nothingClean": {
+      "name": "沒有乾淨的衣服",
+      "description": "裡面沒有乾淨的衣服。"
+    },
+    "nothingDirty": {
+      "name": "沒有髒衣服",
+      "description": "裡面沒有髒衣服。"
+    },
+    "noSocks": {
+      "name": "沒有襪子",
+      "description": "哪裡都找不到襪子。"
+    },
+    "oneInEach": {
+      "name": "每個籃子各一隻",
+      "description": "每個籃子裡各有一隻可以配對的襪子。"
+    },
+    "aBigMix": {
+      "name": "大雜燴！",
+      "description": "各種衣服混在一起，裡面有好幾組成對的襪子。"
+    },
+    "someAddedPain": {
+      "name": "零碎雜物",
+      "description": "混進了幾樣奇怪的東西。"
+    },
+    "bonusLineCount": {
+      "name": "精簡的解法",
+      "description": "同樣的工作，用更少的行數完成。"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "當有很多東西要處理的時候，我該從哪裡開始？",
+      "answer": "不要想一次就把整個程式寫完。把問題拆成幾個小函式，每個只回答一個小問題，先讓每一個都能單獨運作，再把它們組合起來。"
+    },
+    "isItASock": {
+      "question": "我要怎麼判斷籃子裡的東西是不是襪子？",
+      "answer": "不是每個提到左右的東西都是襪子，也不是看起來像襪子的就一定是。仔細看看項目描述方式的規則，而且要同時檢查描述的開頭和結尾，不要只看開頭。"
+    },
+    "compareSockPair": {
+      "question": "我要怎麼把左腳襪子和它成對的右腳襪子做比較？",
+      "answer": "不要直接比較兩隻襪子，而是先想出某隻襪子的同伴會叫什麼名字，再去找那個名字。字串有一個內建方法，可以把一段文字換成另一段文字；把某段文字換成空字串，就等於把它拿掉。"
+    },
+    "avoidDuplicates": {
+      "question": "我要怎麼避免同一組配對被算兩次？",
+      "answer": "每一組配對都會被找到兩次，左右各一次。把名稱加進結果之前，先檢查它是不是已經在裡面了。"
+    },
+    "overallPlan": {
+      "question": "整體來說，什麼樣的計畫比較好？",
+      "answer": "可以把兩個籃子當成一大疊衣服。一件一件看過去，每一件都判斷它該不該放進你的答案裡。"
+    }
+  },
+  "checks": {
+    "tooManyLines": "就差一點了！你的解法可以運作，但超過 29 行程式碼。"
+  },
+  "functions": {
+    "startsWith": {
+      "description": "檢查字串是否以另一段較短的字串開頭",
+      "category": "字串操作"
+    },
+    "endsWith": {
+      "description": "檢查字串是否以另一段較短的字串結尾",
+      "category": "字串操作"
+    },
+    "replace": {
+      "description": "回傳一個新字串，把某段文字第一次出現的地方換成另一段文字",
+      "category": "字串操作"
+    },
+    "concat": {
+      "description": "把兩個陣列接合成一個新的陣列",
+      "category": "陣列操作"
+    },
+    "includes": {
+      "description": "檢查陣列裡是否已經包含某個元素",
+      "category": "陣列操作"
+    },
+    "push": {
+      "description": "把一個元素加到陣列的末端",
+      "category": "陣列操作"
+    }
+  }
+}

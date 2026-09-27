@@ -1,71 +1,71 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "你的解法程式碼行數太多了。可以再縮短一點嗎？"
   },
   "tasks": {
     "searchForTile": {
-      "name": "�",
-      "description": "�"
+      "name": "搜尋字母牌",
+      "description": "寫一個函式，檢查某個特定的字母牌是否在牌架上。找到就回傳`true`，沒找到就回傳`false`。"
     },
     "solveInEightLines": {
-      "name": "�",
-      "description": "�"
+      "name": "用 8 行程式碼解題",
+      "description": "你能只用 8 行程式碼解出這個練習嗎？"
     }
   },
   "scenarios": {
     "letterFoundAtStart": {
-      "name": "�",
-      "description": "�"
+      "name": "字母在開頭",
+      "description": "這個字母是牌架上的第一張字母牌。"
     },
     "letterFoundInMiddle": {
-      "name": "�",
-      "description": "�"
+      "name": "字母在中間",
+      "description": "這個字母在牌架的中間。"
     },
     "letterFoundAtEnd": {
-      "name": "�",
-      "description": "�"
+      "name": "字母在結尾",
+      "description": "這個字母是牌架上的最後一張字母牌。"
     },
     "letterNotFound": {
-      "name": "�",
-      "description": "�"
+      "name": "找不到字母",
+      "description": "這個字母不在牌架上。"
     },
     "emptyRack": {
-      "name": "�",
-      "description": "�"
+      "name": "空牌架",
+      "description": "空牌架上沒有任何字母牌可找。"
     },
     "duplicateLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "有重複字母的牌架",
+      "description": "這個字母出現在重複的字母牌之中。"
     },
     "singleTileFound": {
-      "name": "�",
-      "description": "�"
+      "name": "單張字母牌相符",
+      "description": "牌架上只有一張字母牌，而且相符。"
     },
     "singleTileNotFound": {
-      "name": "�",
-      "description": "�"
+      "name": "單張字母牌不相符",
+      "description": "牌架上只有一張字母牌，但不相符。"
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "8 行程式碼",
+      "description": "只用 8 行程式碼解出這個練習。"
     }
   },
   "hints": {
     "byHand": {
-      "question": "�",
-      "answer": "�"
+      "question": "如果用手做，我會怎麼做？",
+      "answer": "你會一個字母一個字母地翻過稻草堆，拿每個字母和針比對。一找到相符的就停下來。如果一路看到最後都沒有相符的，就表示針不在裡面。"
     },
     "loopAndCompare": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼跑迴圈並比對？",
+      "answer": "`for-of` 迴圈會依序把字串中的每個字母交給你。在迴圈裡，用 `if` 敘述把目前的字母和針比對。"
     },
     "returnTrue": {
-      "question": "�",
-      "answer": "�"
+      "question": "什麼時候該回傳`true`？",
+      "answer": "一找到相符的字母就回傳。剩下的字母就不用再檢查了。"
     },
     "returnFalse": {
-      "question": "�",
-      "answer": "�"
+      "question": "什麼時候該回傳`false`？",
+      "answer": "只有在迴圈跑完、確定找不到相符的字母之後才可以。常見的錯誤是把 `return false` 寫在迴圈裡面，這樣只要遇到第一個不相符的字母就放棄了，後面的字母都還沒檢查到。"
     }
   }
 }

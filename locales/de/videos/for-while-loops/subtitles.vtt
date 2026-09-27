@@ -1,0 +1,339 @@
+WEBVTT
+
+NOTE en_md5 d4b8c72f7a92dfb1d6fb4eb412fdc752
+
+00:00:00.400 --> 00:00:03.469
+Willkommen zurück. Wir haben uns jetzt zwei Schleifen angesehen:
+
+00:00:03.780 --> 00:00:06.580
+die repeat-Schleife und die for-of-Schleife.
+
+00:00:06.620 --> 00:00:08.109
+In dieser Lektion schauen wir uns
+
+00:00:08.200 --> 00:00:10.940
+zwei weitere Schleifen und zwei nützliche Techniken für
+
+00:00:11.000 --> 00:00:14.140
+Schleifen an. Du erinnerst dich vielleicht, dass ich
+
+00:00:14.200 --> 00:00:15.980
+ganz am Anfang gesagt habe, dass es die repeat-Schleife
+
+00:00:16.020 --> 00:00:18.690
+in JavaScript eigentlich gar nicht gibt. Sie ist nur etwas,
+
+00:00:18.860 --> 00:00:20.340
+das ich hinzugefügt habe, um dir den Einstieg
+
+00:00:20.380 --> 00:00:23.190
+ein wenig leichter zu machen. Was benutzen wir
+
+00:00:23.200 --> 00:00:25.580
+also stattdessen? Wir benutzen eine
+
+00:00:25.660 --> 00:00:28.150
+ganz normale for-Schleife, und die sieht so aus.
+
+00:00:29.380 --> 00:00:30.920
+Du kannst dir hoffentlich vorstellen, warum dich das
+
+00:00:30.940 --> 00:00:32.940
+am ersten Tag ein wenig
+
+00:00:32.960 --> 00:00:35.120
+eingeschüchtert hätte. Aber inzwischen hast du alles
+
+00:00:35.140 --> 00:00:37.280
+Wissen, das du brauchst, um dich damit vertraut zu machen.
+
+00:00:37.360 --> 00:00:40.340
+Also nehmen wir sie auseinander. Eine for-Schleife
+
+00:00:40.360 --> 00:00:44.620
+hat drei Bestandteile: einen Initialisierer (initializer auf Englisch), eine Bedingung und
+
+00:00:44.640 --> 00:00:49.769
+eine Erhöhung (increment auf Englisch). Der Initialisierer, dieses
+
+00:00:49.840 --> 00:00:52.220
+let i = 0, läuft ganz am Anfang
+
+00:00:52.260 --> 00:00:54.920
+der Schleife. Er läuft nur ein einziges Mal, und
+
+00:00:54.980 --> 00:00:58.240
+hier erstellt er eine Box namens i, die
+
+00:00:58.340 --> 00:01:02.520
+auf null gesetzt wird. Der nächste Teil, die Bedingung,
+
+00:01:03.240 --> 00:01:08.600
+läuft jedes Mal vor einem neuen Durchlauf der Schleife. Ist
+
+00:01:08.640 --> 00:01:11.100
+die Bedingung wahr, führen wir die Schleife
+
+00:01:11.110 --> 00:01:15.580
+noch einmal aus. Wenn nicht, dann nicht. Und
+
+00:01:15.660 --> 00:01:18.580
+ganz am Ende kommt die Erhöhung, das i++.
+
+00:01:19.400 --> 00:01:21.420
+i++ bedeutet einfach dasselbe
+
+00:01:21.460 --> 00:01:24.420
+wie i = i + 1. Es ist nur
+
+00:01:24.460 --> 00:01:26.880
+eine Kurzform, eine Art, i jedes Mal
+
+00:01:26.940 --> 00:01:31.200
+um eins zu erhöhen. In diesem Beispiel
+
+00:01:31.280 --> 00:01:34.200
+setzen wir i also auf null. Wir prüfen, ob i
+
+00:01:34.240 --> 00:01:36.300
+kleiner als zwei ist. Das ist es,
+
+00:01:36.380 --> 00:01:38.360
+also führen wir die Schleife aus. Und
+
+00:01:38.400 --> 00:01:41.640
+am Ende erhöhen wir i um eins,
+
+00:01:42.060 --> 00:01:44.380
+i wird also eins. Null plus eins ist eins.
+
+00:01:45.500 --> 00:01:47.400
+Dann geht es wieder von vorn los. Wir prüfen,
+
+00:01:47.580 --> 00:01:50.780
+ob eins kleiner als zwei ist. Das ist es,
+
+00:01:50.800 --> 00:01:52.580
+also führen wir die Schleife aus. Und am
+
+00:01:52.620 --> 00:01:55.140
+Ende erhöhen wir i wieder. Jetzt ist es
+
+00:01:55.240 --> 00:01:58.300
+zwei, eins plus eins ergibt zwei. Und dann
+
+00:01:58.340 --> 00:02:00.440
+kommt der dritte Anlauf. Diesmal
+
+00:02:00.480 --> 00:02:02.970
+prüfen wir, ob zwei kleiner als zwei ist.
+
+00:02:02.980 --> 00:02:05.680
+Das ist es nicht, also führen wir die Schleife nicht aus,
+
+00:02:05.780 --> 00:02:07.140
+und damit sind wir sogar ganz fertig mit ihr.
+
+00:02:07.540 --> 00:02:10.539
+Wir machen einfach mit dem Code darunter weiter.
+
+00:02:10.640 --> 00:02:13.360
+Wir haben die Schleife also zweimal ausgeführt,
+
+00:02:13.400 --> 00:02:16.100
+und das ist gut zu wissen: Solange
+
+00:02:16.140 --> 00:02:18.320
+wir bei null anfangen und die Bedingung
+
+00:02:18.360 --> 00:02:21.460
+„kleiner als“ lautet, gibt die Zahl, die wir
+
+00:02:21.520 --> 00:02:23.780
+dort hinschreiben, hier zwei, an,
+
+00:02:23.840 --> 00:02:26.530
+wie oft die Schleife läuft. Das ist also
+
+00:02:26.580 --> 00:02:28.900
+dasselbe, wie repeat two zu schreiben.
+
+00:02:30.440 --> 00:02:33.020
+Schwer ist das nicht, aber es ist deutlich
+
+00:02:33.060 --> 00:02:38.120
+umständlicher, als einfach repeat two zu schreiben. Die nächste
+
+00:02:38.180 --> 00:02:40.380
+Schleife, die du kennenlernen solltest, ist die while-Schleife (solange).
+
+00:02:41.420 --> 00:02:45.800
+Sie sagt: „Solange eine Bedingung gilt, führe die Schleife aus.“
+
+00:02:45.840 --> 00:02:47.190
+Stell dir vor, in Space Invaders gibt es
+
+00:02:47.190 --> 00:02:49.710
+eine Regel, dass du nur fünfmal
+
+00:02:49.740 --> 00:02:52.130
+schießen darfst. Dann hätten wir hier eine Schleife, die
+
+00:02:52.160 --> 00:02:54.170
+sagt: Solange die Anzahl der Schüsse kleiner
+
+00:02:54.200 --> 00:02:56.940
+als fünf ist, führe eine Schleife aus, in der jemand
+
+00:02:56.960 --> 00:03:00.340
+das Spiel spielen kann. Jedes Mal, wenn jemand schießt,
+
+00:03:00.680 --> 00:03:04.000
+erhöhen wir numShots um eins. Irgendwann
+
+00:03:04.480 --> 00:03:06.040
+erreichen wir fünf, und die Schleife endet.
+
+00:03:07.100 --> 00:03:08.880
+Ein Problem bei while-Schleifen ist allerdings,
+
+00:03:08.920 --> 00:03:11.440
+dass sich leicht Bugs einschleichen, durch die
+
+00:03:11.480 --> 00:03:14.040
+die Schleife nie endet. Solche Schleifen heißen
+
+00:03:14.120 --> 00:03:15.890
+Endlosschleifen (infinite loops auf Englisch), und sie gehören zu den
+
+00:03:15.940 --> 00:03:20.010
+häufigsten Bugs in Programmen. Wenn dein Computer
+
+00:03:20.020 --> 00:03:23.020
+langsam wird, die Lüfter anspringen und alles laut wird,
+
+00:03:23.060 --> 00:03:25.860
+dann liegt das oft daran, dass jemand eine Endlosschleife,
+
+00:03:25.880 --> 00:03:29.380
+die nie endet, in seinem Code gelassen hat. Okay, zwei
+
+00:03:29.460 --> 00:03:32.280
+weitere Schlüsselwörter in diesem Schnelldurchlauf. Das
+
+00:03:32.320 --> 00:03:35.300
+erste ist das Schlüsselwort break. Du kannst es
+
+00:03:35.320 --> 00:03:37.680
+überall im Schleifenblock jeder Schleife verwenden.
+
+00:03:38.760 --> 00:03:40.720
+Der Teil zwischen den geschweiften Klammern, das ist der
+
+00:03:40.780 --> 00:03:43.840
+Schleifenblock. Und wenn Jiki break sieht, verlässt er
+
+00:03:43.880 --> 00:03:46.100
+die Schleife sofort und macht mit dem Code
+
+00:03:46.160 --> 00:03:48.780
+weiter, der unter der Schleife steht. Wenn
+
+00:03:48.880 --> 00:03:50.600
+wir also die Vorgabe haben, diese Schleife
+
+00:03:50.660 --> 00:03:53.280
+50-mal laufen zu lassen, aber anhalten wollen,
+
+00:03:53.420 --> 00:03:55.960
+sobald der Nutzer fünfmal geschossen hat, könnten wir
+
+00:03:56.000 --> 00:03:58.140
+oben eine for-Schleife haben,
+
+00:03:58.200 --> 00:04:00.940
+die von i = 0 bis kleiner als
+
+00:04:01.120 --> 00:04:03.300
+50 hochzählt. Aber dann könnten wir mitten in der Schleife
+
+00:04:03.340 --> 00:04:04.720
+eine Bedingung haben, die sagt:
+
+00:04:04.880 --> 00:04:07.720
+Wenn numShots größer oder gleich
+
+00:04:07.780 --> 00:04:12.520
+fünf ist, dann break, also Schleife verlassen. Manchmal
+
+00:04:12.560 --> 00:04:14.880
+wollen wir stattdessen eine
+
+00:04:14.890 --> 00:04:18.600
+bestimmte Iteration der Schleife überspringen. Stell dir vor, wir
+
+00:04:18.680 --> 00:04:20.780
+wollen nur bei ungeraden Zahlen etwas tun.
+
+00:04:21.600 --> 00:04:22.930
+Wir wollen sagen können: Wenn
+
+00:04:23.020 --> 00:04:25.780
+i ungerade ist, dann läuft die Schleife dieses
+
+00:04:25.840 --> 00:04:28.380
+Mal nicht. Aber wir wollen nicht die ganze
+
+00:04:28.420 --> 00:04:30.280
+Schleife verlassen. Wir wollen nur
+
+00:04:30.320 --> 00:04:32.670
+diese eine Iteration überspringen und dann die
+
+00:04:32.720 --> 00:04:35.600
+nächste anschauen. Und dafür gibt es ein weiteres
+
+00:04:35.640 --> 00:04:40.380
+Schlüsselwort: continue. Wenn Jiki continue sieht,
+
+00:04:40.420 --> 00:04:42.180
+springt er einfach zurück an den Anfang der
+
+00:04:42.220 --> 00:04:44.820
+Schleife, zur nächsten Iteration. Wenn er in einer
+
+00:04:44.860 --> 00:04:47.200
+for-of-Schleife continue sieht, geht er
+
+00:04:47.260 --> 00:04:48.580
+direkt weiter zum nächsten Element in der
+
+00:04:48.640 --> 00:04:51.780
+Liste. Bei einer for-Schleife erhöht er
+
+00:04:51.840 --> 00:04:54.400
+mit i++ den Zähler und startet dann
+
+00:04:54.480 --> 00:04:57.980
+die nächste Iteration. Wir haben also
+
+00:04:58.060 --> 00:05:00.800
+for-Schleifen, while-Schleifen, break und continue. Ganz schön viel
+
+00:05:00.840 --> 00:05:02.440
+Stoff in diesem Video, aber du kannst jederzeit
+
+00:05:02.500 --> 00:05:04.550
+zurückkommen und nachschauen, und
+
+00:05:04.580 --> 00:05:07.080
+zu jedem Thema gibt es außerdem eine Konzeptseite.
+
+00:05:07.800 --> 00:05:09.800
+Versuch, all diese Ideen in den nächsten
+
+00:05:09.820 --> 00:05:12.220
+Übungen umzusetzen. Viel Glück, viel Spaß,
+
+00:05:12.680 --> 00:05:14.060
+und wir sehen uns gleich wieder hier.

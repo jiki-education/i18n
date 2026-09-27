@@ -1,68 +1,68 @@
 {
   "checks": {
-    "noNestedLoops": "�",
-    "tooManyLines": "�"
+    "noNestedLoops": "Versuche, Schleifen nicht zu verschachteln. Verschiebe die Suche nach einem einzelnen Buchstaben in eine eigene Funktion und rufe sie dann aus <code>isPangram</code> auf.",
+    "tooManyLines": "Fast geschafft! Schau, ob du es mit weniger Zeilen lösen kannst, indem du deine Hilfsfunktion nutzt."
   },
   "tasks": {
     "checkLowerPangram": {
-      "name": "�",
-      "description": "�"
+      "name": "Pangram in Kleinbuchstaben prüfen",
+      "description": "Schreibe eine Funktion, die prüft, ob ein Satz in Kleinbuchstaben jeden Buchstaben des Alphabets enthält. Sie soll eine kleine Hilfsfunktion aufrufen, die die Suche nach den einzelnen Buchstaben übernimmt."
     },
     "decomposeTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "Löse es in 16 Zeilen",
+      "description": "Bonus: Wenn du die Suche in eine Hilfsfunktion auslagerst, passt die ganze Lösung in 16 Zeilen. Schaffst du das auch?"
     }
   },
   "scenarios": {
     "lowerPangramEmpty": {
-      "name": "�",
-      "description": "�"
+      "name": "Leerer Satz",
+      "description": "Ein leerer Satz ist kein Pangram."
     },
     "lowerPangramFullAlphabet": {
-      "name": "�",
-      "description": "�"
+      "name": "Vollständiges Alphabet in Kleinbuchstaben",
+      "description": "Das vollständige Alphabet in Kleinbuchstaben ist ein Pangram."
     },
     "lowerPangramClassic": {
-      "name": "�",
-      "description": "�"
+      "name": "Klassisches Pangram",
+      "description": "Der klassische Pangram-Satz enthält alle 26 Buchstaben."
     },
     "lowerPangramMissingX": {
-      "name": "�",
-      "description": "�"
+      "name": "Fehlender Buchstabe „x“",
+      "description": "Ein Satz, dem der Buchstabe „x“ fehlt, ist kein Pangram."
     },
     "lowerPangramMissingH": {
-      "name": "�",
-      "description": "�"
+      "name": "Fehlender Buchstabe „h“",
+      "description": "Ein Satz, dem der Buchstabe „h“ fehlt, ist kein Pangram."
     },
     "lowerPangramWithUnderscores": {
-      "name": "�",
-      "description": "�"
+      "name": "Mit Unterstrichen",
+      "description": "Ein Pangram mit Unterstrichen statt Leerzeichen."
     },
     "lowerPangramWithNumbers": {
-      "name": "�",
-      "description": "�"
+      "name": "Mit Zahlen",
+      "description": "Ein Pangram, das auch Zahlen enthält."
     },
     "lowerPangramNumbersReplacingLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahlen statt Buchstaben",
+      "description": "Ein Satz, in dem Buchstaben durch Zahlen ersetzt sind, ist kein Pangram."
     },
     "lowerPangramBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "Kompakt und ordentlich",
+      "description": "Die komplette Lösung passt in 16 Zeilen, wenn die Suche in einer eigenen Funktion steckt."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wo fange ich an?",
+      "answer": "Du musst prüfen, ob jeder Buchstabe des Alphabets im String vorkommt. Dafür brauchst du eine Schleife und einige Vergleiche."
     },
     "checkEveryLetter": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie prüfe ich, ob jeder Buchstabe des Alphabets vorkommt?",
+      "answer": "Gehe `\"abcdefghijklmnopqrstuvwxyz\"` Buchstabe für Buchstabe durch. Prüfe für jeden Buchstaben, ob der Satz ihn enthält."
     },
     "avoidNestedLoops": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich habe die Übung gelöst, weiß aber nicht, wie ich die Hilfsfunktion verwenden soll.",
+      "answer": "Wenn du die Übung gelöst hast, hast du wahrscheinlich eine äußere Schleife und darin eine innere Schleife. Diese innere Schleife prüft, ob etwas in etwas anderem enthalten ist. Ein guter Ansatz ist, die innere Schleife in eine Hilfsfunktion namens `includes(...)` auszulagern und sie dann aus der äußeren Schleife aufzurufen. Eine Hilfsfunktion ist einfach eine normale Funktion, die ganz normal definiert wird."
     }
   }
 }

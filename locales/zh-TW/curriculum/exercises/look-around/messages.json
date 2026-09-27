@@ -1,117 +1,117 @@
 {
   "errors": {
-    "walkedIntoFire": "�",
-    "steppedInPoop": "�",
-    "lookDirectionType": "�",
-    "lookDirectionValue": "�"
+    "walkedIntoFire": "你走進火裡了！",
+    "steppedInPoop": "你踩到大便了！",
+    "lookDirectionType": "look() 需要一個字串方向：\"left\"、\"right\" 或 \"ahead\"",
+    "lookDirectionValue": "look() 的方向必須是 \"left\"、\"right\" 或 \"ahead\""
   },
   "describers": {
-    "look": "�"
+    "look": "往某個方向查看，看看那裡有什麼"
   },
   "checks": {
-    "notReachedEnd": "�",
-    "extraTurn": "�",
-    "canTurnLeftMissing": "�",
-    "canTurnRightMissing": "�",
-    "canMoveMissing": "�",
-    "turnAroundMissing": "�",
-    "lookOnlyOnce": "�",
-    "maxExtraLines": "�"
+    "notReachedEnd": "你沒有走到迷宮的終點。",
+    "extraTurn": "你在最後似乎多轉了一個不必要的彎。",
+    "canTurnLeftMissing": "你應該定義一個<code>canTurnLeft</code>函式。",
+    "canTurnRightMissing": "你應該定義一個<code>canTurnRight</code>函式。",
+    "canMoveMissing": "你應該定義一個<code>canMove</code>函式。",
+    "turnAroundMissing": "你應該定義一個<code>turnAround</code>函式。",
+    "lookOnlyOnce": "<code>look()</code>在整支程式裡只能出現一次。",
+    "maxExtraLines": "你新增的程式碼不能超過 13 行。"
   },
   "tasks": {
     "straightPath": {
-      "name": "�",
-      "description": "�"
+      "name": "筆直的路",
+      "description": "實作 canMove()，讓角色能往前移動到迷宮的終點。"
     },
     "turnLeft": {
-      "name": "�",
-      "description": "�"
+      "name": "可以就往左轉",
+      "description": "實作 canTurnLeft()，讓角色在有路的時候往左轉。"
     },
     "turnRight": {
-      "name": "�",
-      "description": "�"
+      "name": "不能直走或往左時就往右轉",
+      "description": "實作 canTurnRight()，讓角色在不能往左或直走的時候往右轉。"
     },
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "需要時就轉身",
+      "description": "遇到死路時靠轉身來解決。三個感測函式現在應該要能互相配合，解開任何迷宮。"
     },
     "bonusChallenges": {
-      "name": "�",
-      "description": "�"
+      "name": "額外挑戰",
+      "description": "你有辦法在整支程式裡只用到 look() 一次嗎？還有，你能只新增 13 行程式碼就解開迷宮嗎？"
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "引導角色走到迷宮終點",
+      "description": "一條筆直往下的路"
     },
     "leftTurn": {
-      "name": "�",
-      "description": "�"
+      "name": "一個左轉",
+      "description": "走過一個左轉彎"
     },
     "rightTurn": {
-      "name": "�",
-      "description": "�"
+      "name": "一個右轉",
+      "description": "走過一個右轉彎"
     },
     "forks": {
-      "name": "�",
-      "description": "�"
+      "name": "可以就往左，否則就往右",
+      "description": "一個有岔路、用來測試左轉優先的迷宮"
     },
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "在死路轉身",
+      "description": "一個需要轉身的迷宮"
     },
     "forks2": {
-      "name": "�",
-      "description": "�"
+      "name": "有岔路和死路的複雜迷宮",
+      "description": "一個測試完整演算法的複雜迷宮"
     },
     "coverOldGround": {
-      "name": "�",
-      "description": "�"
+      "name": "需要時就走回頭路",
+      "description": "一個必須走回頭路才能找到出口的迷宮"
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "只寫一次 look()",
+      "description": "讓 look() 在程式碼裡只出現一次，解開迷宮"
     },
     "bonus2": {
-      "name": "�",
-      "description": "�"
+      "name": "只新增 13 行",
+      "description": "只新增 13 行程式碼就解開迷宮"
     }
   },
   "hints": {
     "start": {
-      "question": "�",
-      "answer": "�"
+      "question": "程式完全跑不起來的時候，我到底該從哪裡開始？",
+      "answer": "在程式碼最前面定義 `canTurnLeft()`、`canTurnRight()` 和 `canMove()`，每個先只回傳 `false`。這樣程式就能執行了，你再一個一個把內容換掉。"
     },
     "findDirection": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼知道某個方向有什麼？",
+      "answer": "使用新的 `look(direction)` 函式。傳入 `\"left\"`、`\"right\"` 或 `\"ahead\"`，它會回傳像 `\"empty\"`、`\"wall\"`、`\"fire\"` 或 `\"poop\"` 這樣的字串。"
     },
     "safeResults": {
-      "question": "�",
-      "answer": "�"
+      "question": "哪些結果代表往那個方向走是安全的？",
+      "answer": "`look()` 能回傳的六個結果裡，有三個是你絕對不想走進去的東西。只有當你看到的不是這三種東西時，你的函式才應該回傳 `true`。"
     },
     "avoidRepetition": {
-      "question": "�",
-      "answer": "�"
+      "question": "我在三個函式裡重複了同樣的邏輯。要怎麼避免？",
+      "answer": "這三個函式只差在查看的方向不同。你能不能多寫一個函式，把方向當成輸入，然後讓三個函式都用它？"
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色往目前的方向**往前移動一步**。走進牆壁、火或大便會讓程式以錯誤結束，所以移動前先查看前方有什麼！",
+      "category": "移動"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色**向左轉 90 度**（逆時針）。這會改變角色面朝的方向。",
+      "category": "移動"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色**向右轉 90 度**（順時針）。這會改變角色面朝的方向。",
+      "category": "移動"
     },
     "look": {
-      "description": "�",
-      "category": "�"
+      "description": "查看指定方向，並回傳那裡有什麼。方向必須是 `\"left\"`、`\"right\"` 或 `\"ahead\"`。會回傳下列其中一個值：`\"empty\"`、`\"wall\"`、`\"fire\"`、`\"poop\"`、`\"start\"` 或 `\"target\"`。",
+      "category": "感測"
     }
   }
 }

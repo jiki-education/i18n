@@ -1,37 +1,37 @@
 {
   "describers": {
-    "move": "�"
+    "move": "hat die Laserkanone nach rechts bewegt"
   },
   "checks": {
-    "notShotAllAliens": "�",
-    "tooManyLines": "�"
+    "notShotAllAliens": "Du hast nicht alle Aliens abgeschossen.",
+    "tooManyLines": "Deine Lösung hat zu viele Codezeilen. Versuch es mit einer repeat-Schleife in einer weiteren repeat-Schleife, um sie kürzer zu machen!"
   },
   "tasks": {
     "nestedRepeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "Alle Aliens mit verschachtelten repeat-Schleifen abschießen",
+      "description": "Finde das Muster in den Alien-Positionen und nutze eine repeat-Schleife in einer weiteren repeat-Schleife, um sie alle in höchstens 7 Codezeilen zu zerstören."
     }
   },
   "scenarios": {
     "nestedRepeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "Verschachtelte repeat-Schleifen und Schießen",
+      "description": "Mit verschachtelten repeat-Schleifen alle Aliens abschießen"
     }
   },
   "hints": {
     "cantGetTo7Lines": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich schaffe es nicht, auf 7 Codezeilen zu kommen.",
+      "answer": "Betrachte dieses Level als zwei Blöcke von Dingen, die passieren müssen.\n\n- Der erste Block ist der innere, in dem wir 4-mal schießen. Achte darauf, dass er drei Zeilen lang ist.\n- Der äußere Block ist der innere Block mit etwas Bewegung davor und danach. Auch dieser äußere Block muss ein paar Mal wiederholt werden.\n\nWenn du deinen Code so aufbaust, landest du ganz natürlich bei 7 Codezeilen."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt die Laserkanone **eine Position nach rechts**. Wenn du über den rechten Bildschirmrand hinausgehst, verlierst du!",
+      "category": "Bewegung"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Feuert den Laser nach oben. **Schieß nur, wenn ein Alien über dir ist**, sonst verlierst du das Spiel!",
+      "category": "Aktion"
     }
   }
 }

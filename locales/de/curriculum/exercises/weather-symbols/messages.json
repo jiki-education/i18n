@@ -1,68 +1,68 @@
 {
   "checks": {
-    "dayIsntCorrect": "�"
+    "dayIsntCorrect": "Das Wetter für Tag {{day}} stimmt nicht."
   },
   "tasks": {
     "drawForecast": {
-      "name": "�",
-      "description": "�"
+      "name": "Zeichne die Vorhersage",
+      "description": "Zeichne das Wetter jedes Tages in seine eigene Box und nutze die Position des Tages in der Liste als Box-Nummer."
     }
   },
   "scenarios": {
     "mixedWeek": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine gemischte Woche",
+      "description": "Von allem ein bisschen, verteilt über die sechs Tage."
     },
     "sunnyWeek": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine sonnige Woche",
+      "description": "Viel Sonnenschein, mit ein paar bewölkteren Tagen."
     },
     "rainyWeek": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine verregnete Woche",
+      "description": "Eine nasse Woche mit Wolken und Regen."
     },
     "snowyWeek": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine verschneite Woche",
+      "description": "Eine kalte Woche voller Schnee."
     }
   },
   "hints": {
     "loopWithIndex": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie gehe ich die Tage durch und weiß, in welche Box jeder gehört?",
+      "answer": "Geh `days` mit einem Zähler durch, der von `0` bis `days.length - 1` läuft. Dieser Zähler ist die Box-Nummer für jeden Tag."
     },
     "descriptionToSymbols": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie wandle ich eine Beschreibung wie `\"Miserable 😩\"` in Symbole um?",
+      "answer": "Vergleiche die Beschreibung mit jeder möglichen und nimm die passende Liste von Symbolen, zum Beispiel `[\"cloud\", \"rain\"]`. In der Anleitung stehen alle Beschreibungen mit ihren Symbolen."
     },
     "weekdaysList": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie bekomme ich den Wochentagsnamen für jede Box?",
+      "answer": "Leg eine Liste mit den sechs Wochentagsnamen in der richtigen Reihenfolge an, von `\"Monday\"` bis `\"Saturday\"`, und lies mit demselben Zähler wie für die Box-Nummer den Namen an deiner Position aus."
     },
     "passArgs": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was übergebe ich an `draw`?",
+      "answer": "Drei Dinge: die Box-Nummer (dein Zähler), den Wochentagsnamen für diese Box und die Liste der Symbole für diesen Tag."
     },
     "tidyWithHelper": {
-      "question": "�",
-      "answer": "�"
+      "question": "Meine Schleife wird lang. Wie kann ich sie aufräumen?",
+      "answer": "Du kannst das Zuordnen von Beschreibung zu Symbolen in eine eigene Funktion auslagern und sie aus der Schleife aufrufen. Das ist optional, aber so bleibt die Schleife kurz und gut lesbar."
     }
   },
   "functions": {
     "draw": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichnet die angegebenen Wettersymbole in eine Vorhersage-Box. Nimmt die Box-Nummer (0 bis 5), den Wochentagsnamen für die Beschriftung und die Liste der Symbole.",
+      "category": "Zeichnen"
     }
   },
   "describers": {
-    "draw": "�"
+    "draw": "zeichnete ${arg3} in die Box von ${arg2}"
   },
   "errors": {
-    "elementsMustBeList": "�",
-    "elementsMustBeStrings": "�",
-    "unknownElement": "�",
-    "indexMustBeNumber": "�",
-    "indexOutOfRange": "�",
-    "dayMustBeString": "�"
+    "elementsMustBeList": "Die Wettersymbole (der dritte Eingabewert von draw) müssen eine Liste sein, wie [\"sun\", \"cloud\"].",
+    "elementsMustBeStrings": "Alle Wettersymbole in der Liste müssen Strings sein, wie \"sun\" oder \"rain\".",
+    "unknownElement": "\"{{element}}\" ist kein Wettersymbol. Nutze \"sun\", \"cloud\", \"rain\" oder \"snow\".",
+    "indexMustBeNumber": "Die Box-Nummer (der erste Eingabewert von draw) muss eine Zahl sein.",
+    "indexOutOfRange": "Die Box-Nummer muss eine ganze Zahl zwischen 0 und {{max}} sein.",
+    "dayMustBeString": "Der Wochentag (der zweite Eingabewert von draw) muss Text sein, wie \"Monday\"."
   }
 }

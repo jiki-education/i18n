@@ -1,53 +1,53 @@
 {
   "checks": {
-    "housingWrong": "�",
-    "redWrong": "�",
-    "yellowWrong": "�",
-    "greenWrong": "�",
-    "doesntScale": "�"
+    "housingWrong": "Das Gehäuserechteck ist entweder an der falschen Stelle oder hat die falsche Größe. Prüfe `housingX`, `housingY`, `housingWidth` und `housingHeight`.",
+    "redWrong": "Das rote Licht ist entweder an der falschen Stelle oder hat die falsche Größe. Prüfe `redY`.",
+    "yellowWrong": "Das gelbe Licht ist entweder an der falschen Stelle oder hat die falsche Größe. Prüfe `yellowY`.",
+    "greenWrong": "Das grüne Licht ist entweder an der falschen Stelle oder hat die falsche Größe. Prüfe `greenY`.",
+    "doesntScale": "Dein Code skaliert nicht richtig, wenn `radius` {{radius}} ist. Jede Position und jede Größe sollte aus `center` und `radius` hergeleitet werden."
   },
   "tasks": {
     "buildRelationalTrafficLights": {
-      "name": "�",
-      "description": "�"
+      "name": "Baue die relativen Ampeln",
+      "description": "Leite jede Position und jede Größe aus `center` und `radius` her, damit die Ampel richtig mitskaliert."
     }
   },
   "scenarios": {
     "buildRelationalTrafficLights": {
-      "name": "�",
-      "description": "�"
+      "name": "Baue die relativen Ampeln",
+      "description": "Leite jede Position und jede Größe aus `center` und `radius` her."
     }
   },
   "hints": {
     "howToWorkOutYellowCenter": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie finde ich die Mitte des gelben Lichts heraus?",
+      "answer": "Die Variable `center` ist dir vorgegeben. Du kannst `yellowY` auf denselben Wert setzen."
     },
     "howToWorkOutRedCenter": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie finde ich die Mitte des roten Lichts heraus?",
+      "answer": "Wenn sich zwei Kreise berühren, wie weit sind ihre Mittelpunkte dann voneinander entfernt? Diesen Abstand kannst du von `center` abziehen, um das rote Licht zu bekommen."
     },
     "whereHousingStarts": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wo beginnt das Gehäuserechteck?",
+      "answer": "Wenn du die Mitte des roten Kreises kennst, kannst du den oberen Rand des roten Kreises berechnen. Das Gehäuse beginnt 1 Radius über (vor) dem oberen Rand des roten Kreises. Genauso kannst du den linken Rand eines Lichts berechnen und dann noch 1 Radius weitergehen, um den Anfang zu finden."
     },
     "howBigHousing": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie groß sollte das Gehäuse sein?",
+      "answer": "Es ist so breit wie ein Licht, plus Innenabstand von 1 Radius auf jeder Seite. Die Höhe ist 2 Radien pro Licht plus je 1 Radius oben und unten als Innenabstand."
     },
     "whyMultipleOfSomething": {
-      "question": "�",
-      "answer": "�"
+      "question": "Warum muss alles ein Vielfaches von etwas anderem sein?",
+      "answer": "Wenn du eine Zahl fest hineinschreibst, hat das Gehäuse nach einer Änderung von `radius` die falsche Größe für die Lichter. Mit Formeln aus `radius` und `center` bleibt die ganze Zeichnung im richtigen Verhältnis."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichne ein Rechteck an der Position (left, top) mit der angegebenen Breite, Höhe und Farbe",
+      "category": "Formen zeichnen"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichne einen Kreis mit Mittelpunkt (centerX, centerY), dem angegebenen Radius und der angegebenen Farbe",
+      "category": "Formen zeichnen"
     }
   }
 }

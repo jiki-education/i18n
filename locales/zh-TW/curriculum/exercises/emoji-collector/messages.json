@@ -1,0 +1,97 @@
+{
+  "errors": {
+    "directionMustBeString": "方向必須是字串。",
+    "invalidDirection": "無效的方向：{{dir}}。請使用「ahead」、「left」、「right」或「down」。",
+    "emojisMustBeDictionary": "表情符號必須是字典。"
+  },
+  "describers": {
+    "look": "往某個方向看，看看那裡有什麼",
+    "removeEmoji": "把目前這一格的表情符號移除",
+    "announceEmojis": "宣布收集到的表情符號"
+  },
+  "checks": {
+    "notReachedEnd": "你沒有走到迷宮的終點。",
+    "wrongEmojis": "你沒有正確宣布收集到的表情符號。我們預期你宣布的是：<br/><code>{{expected}}</code>",
+    "reportedIncorrectly": "你沒有正確宣布收集到的表情符號。"
+  },
+  "tasks": {
+    "collectEmojis": {
+      "name": "收集表情符號",
+      "description": "在迷宮中穿梭前進，沿途收集表情符號，抵達終點時宣布你的收穫。"
+    },
+    "randomEmojis": {
+      "name": "隨機表情符號",
+      "description": "處理表情符號每次都會隨機變換的迷宮！"
+    }
+  },
+  "scenarios": {
+    "diamonds": {
+      "name": "收集鑽石",
+      "description": "收集鑽石，然後宣布你的收穫。"
+    },
+    "faces": {
+      "name": "兩種表情符號！",
+      "description": "這次要收集兩種表情符號！"
+    },
+    "poo": {
+      "name": "小心！",
+      "description": "收集動物，不要撿牠們的排泄物！"
+    },
+    "onlyOnce": {
+      "name": "只能收集一次！",
+      "description": "確定每樣東西都只收集一次！"
+    },
+    "randomEmojis": {
+      "name": "隨機表情符號！",
+      "description": "每次出現的表情符號都不一樣！"
+    }
+  },
+  "hints": {
+    "seeCurrentSquare": {
+      "question": "我要怎麼看到自己目前站的這一格上有什麼？",
+      "answer": "用新的方向：`look(\"down\")`。它會回傳你目前這一格上的表情符號，也就是你可能想撿起來的那一個。"
+    },
+    "specialEmojisToIgnore": {
+      "question": "哪些特殊表情符號應該忽略？",
+      "answer": "跳過標準清單裡的東西：`\"star\"`、`\"flag\"`、`\"white square\"`、`\"fire\"`、`\"poop\"`、`\"brick\"`。其他任何表情符號都可以收集。"
+    },
+    "countingWithDictionary": {
+      "question": "我要怎麼用字典統計表情符號的數量？",
+      "answer": "用`hasKey(dict, emoji)`檢查你之前有沒有看過它。如果看過，就把`1`加到`dict[emoji]`；如果沒看過，就設定`dict[emoji] = 1`來開始計數。"
+    },
+    "avoidRecounting": {
+      "question": "我要怎麼避免每次走到同一個表情符號上又重新撿一次？",
+      "answer": "統計完之後馬上呼叫`removeEmoji()`，那一格就會變成空的，之後再經過時就不會又被算進去喔。"
+    },
+    "reachingFlag": {
+      "question": "到達終點之後該做什麼？",
+      "answer": "把字典當作引數傳給`announceEmojis(result)`。等角色走進終點那一格之後，再做一次就好。"
+    }
+  },
+  "functions": {
+    "move": {
+      "description": "讓角色往目前的方向**前進一步**。只有目標位置沒有被牆擋住時，角色才會移動。",
+      "category": "移動"
+    },
+    "turnLeft": {
+      "description": "讓角色**向左轉 90 度**（逆時針）。這會改變角色面朝的方向。",
+      "category": "移動"
+    },
+    "turnRight": {
+      "description": "讓角色**向右轉 90 度**（順時針）。這會改變角色面朝的方向。",
+      "category": "移動"
+    },
+    "look": {
+      "description": "回傳指定方向上的**表情符號**。用`\"ahead\"`、`\"left\"`或`\"right\"`查看四周，或用`\"down\"`看目前這一格。",
+      "category": "感知"
+    },
+    "removeEmoji": {
+      "description": "把表情符號從**目前這一格**移除。收集到表情符號之後用它，可以避免重複計算。",
+      "category": "收集"
+    },
+    "announceEmojis": {
+      "description": "宣布你收集到的表情符號。傳入一個**字典**，鍵是表情符號字串，值是數量。",
+      "category": "收集"
+    }
+  }
+}

@@ -1,55 +1,55 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "你用的行數比需要的還多，看看能不能再精簡一些。"
   },
   "tasks": {
     "calculateHammingDistance": {
-      "name": "�",
-      "description": "�"
+      "name": "計算漢明距離",
+      "description": "寫一個函式，計算兩股等長 DNA 之間的漢明距離。漢明距離就是對應字元不相同的位置數量。"
     },
     "solveInElevenLines": {
-      "name": "�",
-      "description": "�"
+      "name": "用 11 行程式碼解題",
+      "description": "你能用不超過 11 行程式碼解出這道題嗎？"
     }
   },
   "scenarios": {
     "hammingEmptyStrands": {
-      "name": "�",
-      "description": "�"
+      "name": "空的 DNA 股",
+      "description": "空的 DNA 股，漢明距離是 0。"
     },
     "hammingSingleLetterIdentical": {
-      "name": "�",
-      "description": "�"
+      "name": "只有單一字母且相同的 DNA 股",
+      "description": "只有單一字母且相同的 DNA 股，漢明距離是 0。"
     },
     "hammingLongIdenticalStrands": {
-      "name": "�",
-      "description": "�"
+      "name": "長且相同的 DNA 股",
+      "description": "長且相同的 DNA 股，漢明距離是 0。"
     },
     "hammingSingleLetterDifferent": {
-      "name": "�",
-      "description": "�"
+      "name": "只有單一字母且不同的 DNA 股",
+      "description": "只有單一字母且不同的 DNA 股，漢明距離是 1。"
     },
     "hammingLongDifferentStrands": {
-      "name": "�",
-      "description": "�"
+      "name": "長且不同的 DNA 股",
+      "description": "長且帶有差異的 DNA 股，會算出對應的漢明距離。"
     },
     "hammingBonusElevenLines": {
-      "name": "�",
-      "description": "�"
+      "name": "11 行程式碼",
+      "description": "用不超過 11 行程式碼解出這道練習。"
     }
   },
   "hints": {
     "hammingDistanceMeaning": {
-      "question": "�",
-      "answer": "�"
+      "question": "「漢明距離」用白話來說是什麼意思？",
+      "answer": "它就是兩股 DNA 字串中，字元不一樣的位置數量。所以「GAGA」和「GATA」只有在第 3 個位置不同，距離就是 1。"
     },
     "compareCharactersAtPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼比較兩股 DNA 字串中同一個位置的字元？",
+      "answer": "你需要讓兩股 DNA 字串同步往前移動，這樣才能一邊移動，一邊取出兩邊同一個位置的字元。"
     },
     "trackDifferenceCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼追蹤「總共有多少個差異」？",
+      "answer": "你需要一個能持續累計的東西，每次發現不一樣就更新它，這樣檢查完所有位置之後，就能直接把它回傳出去。"
     }
   }
 }

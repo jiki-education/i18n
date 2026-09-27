@@ -1,55 +1,55 @@
 {
   "checks": {
-    "notShotAllAliens": "�",
-    "functionNotDefined": "�",
-    "functionNotCalled": "�"
+    "notShotAllAliens": "你還沒有把所有的外星人都擊落。",
+    "functionNotDefined": "你需要定義一個<code>shootIfAlienAbove</code>函式。",
+    "functionNotCalled": "你已經定義了<code>shootIfAlienAbove</code>，但你還需要在你的解法裡實際呼叫它。"
   },
   "tasks": {
     "battleProcedures": {
-      "name": "�",
-      "description": "�"
+      "name": "建立一個 shootIfAlienAbove 函式，並用它贏得遊戲",
+      "description": "把射擊邏輯抽取成一個 shootIfAlienAbove() 函式，然後把它和移動邏輯一起使用，擊敗所有外星人。"
     }
   },
   "scenarios": {
     "battleProcedures": {
-      "name": "�",
-      "description": "�"
+      "name": "戰鬥程序",
+      "description": "用你的 shootIfAlienAbove 函式擊敗所有外星人"
     }
   },
   "hints": {
     "wherePutFunction": {
-      "question": "�",
-      "answer": "�"
+      "question": "我應該把`shootIfAlienAbove`函式放在哪裡？",
+      "answer": "把它定義在程式碼的最上面，放在迴圈前面。定義好之後，你就可以在迴圈裡呼叫它，想呼叫幾次都可以。"
     },
     "whatGoesInside": {
-      "question": "�",
-      "answer": "�"
+      "question": "`shootIfAlienAbove`裡面要放什麼？",
+      "answer": "用一個`if`敘述檢查`isAlienAbove()`。當它回傳`true`時，就呼叫`shoot()`。這就是這個函式的全部內容。"
     },
     "whatStaysInLoop": {
-      "question": "�",
-      "answer": "�"
+      "question": "迴圈裡要留什麼？",
+      "answer": "所有移動邏輯都留在迴圈裡，跟捲動射擊練習一樣。每一次疊代：先呼叫`shootIfAlienAbove()`，再移動雷射砲，然後在邊界處改變方向。"
     },
     "trackCannon": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼追蹤雷射砲在哪裡，還有它正在往哪個方向移動？",
+      "answer": "用兩個變數，每一次疊代都更新它們。比方說，一個`position`變數，往右就增加、往左就減少；還有一個`direction`變數，值是`\"right\"`或`\"left\"`，碰到邊界時就切換。"
     }
   },
   "functions": {
     "moveLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "把雷射砲**往左移動一個位置**。如果你試著移出螢幕的左邊界，就會輸掉遊戲！",
+      "category": "移動"
     },
     "moveRight": {
-      "description": "�",
-      "category": "�"
+      "description": "把雷射砲**往右移動一個位置**。如果你試著移出螢幕的右邊界，就會輸掉遊戲！",
+      "category": "移動"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "把雷射往上發射。**只有在上方有外星人時才射擊**，不然你就會輸掉遊戲！雷射砲很容易過熱，所以再次射擊之前你必須先移動。",
+      "category": "動作"
     },
     "isAlienAbove": {
-      "description": "�",
-      "category": "�"
+      "description": "如果雷射砲正上方有外星人，就回傳`true`，沒有的話回傳`false`。用它來在射擊前檢查！",
+      "category": "偵測"
     }
   }
 }

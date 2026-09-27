@@ -1,0 +1,360 @@
+WEBVTT
+
+NOTE en_md5 37cae67403778109e44f86b67a556520
+
+00:00:00.456 --> 00:00:02.255
+Okay, willkommen zu einem weiteren Deep-Dive-Video.
+
+00:00:02.255 --> 00:00:04.695
+Diesmal geht es um den Pinguin.
+
+00:00:04.936 --> 00:00:09.375
+Hoffentlich hast du dir das Video
+zur Übung „Fuchsgesicht“ angesehen, in dem wir
+
+00:00:09.375 --> 00:00:13.336
+ein bisschen über Symmetrie gesprochen haben. Das
+hätte dir bei dieser Übung geholfen, falls
+
+00:00:13.336 --> 00:00:17.655
+du es gesehen hast. Ich hoffe,
+diese Übung war nicht allzu schwer.
+
+00:00:17.995 --> 00:00:22.295
+Ellipsen sind ein bisschen seltsam. An sie
+muss man sich erst ein wenig gewöhnen.
+
+00:00:22.716 --> 00:00:25.495
+Aber wenn du dich an sie gewöhnt hast,
+sind sie ziemlich einfach.
+
+00:00:26.126 --> 00:00:28.765
+Das Wichtigste an dieser
+Übung war aber, dass du sie
+
+00:00:29.076 --> 00:00:34.765
+nur mit Logik lösen solltest. Nicht, indem
+du Dinge ausmisst, nicht, indem du rätst,
+
+00:00:34.765 --> 00:00:38.125
+sondern nur mit Logik. Und beim Programmieren
+dreht sich alles um Logik.
+
+00:00:38.765 --> 00:00:41.286
+Ein Hinweis, den ich dir
+gegeben habe, war,
+
+00:00:41.286 --> 00:00:44.125
+die Übung mit einem Klick auf „Code ausführen“ zu beginnen.
+
+00:00:44.286 --> 00:00:47.646
+Das ist ganz allgemein ein
+wirklich nützlicher Tipp.
+
+00:00:47.646 --> 00:00:52.206
+Es lohnt sich immer, eine Übung mit „Code
+ausführen“ zu beginnen und zu schauen, was passiert.
+
+00:00:52.625 --> 00:00:55.185
+Oft gibt es einen Startzustand,
+es gibt etwas zu sehen,
+
+00:00:55.506 --> 00:00:57.185
+das ist einfach eine gute Angewohnheit.
+
+00:00:58.865 --> 00:01:02.506
+Bauen wir also ein paar Sachen. Wir
+wollen einen rechten Flügel bauen.
+
+00:01:02.506 --> 00:01:05.426
+Zuerst müssen wir verstehen, was
+beim linken Flügel passiert.
+
+00:01:05.665 --> 00:01:10.066
+Wie ich dir schon gezeigt habe, hilft
+der Scrubber hier sehr. Wenn wir
+
+00:01:10.066 --> 00:01:16.146
+dorthin zurückgehen, wo wir nur den linken
+Flügel haben, können wir einfach über diese
+
+00:01:17.025 --> 00:01:18.786
+eine Ellipse für sich nachdenken.
+
+00:01:19.975 --> 00:01:25.256
+Und wenn wir den rechten Flügel machen,
+was wollen wir dann eigentlich ändern?
+
+00:01:26.775 --> 00:01:32.055
+Kopieren wir unsere Ellipse hinein. Also,
+sie soll genauso breit sein,
+
+00:01:32.775 --> 00:01:35.975
+also bleibt der horizontale Radius
+gleich, das ist dieser Teil hier.
+
+00:01:36.296 --> 00:01:39.975
+Und sie soll genauso hoch sein,
+also bleibt der vertikale Radius gleich.
+
+00:01:40.695 --> 00:01:44.376
+Und sie soll vertikal an
+derselben Position sitzen,
+
+00:01:45.245 --> 00:01:48.046
+also bleibt auch centerY gleich.
+
+00:01:48.766 --> 00:01:53.646
+Das Einzige, was sich wirklich ändern
+muss, ist also diese 28. Sie gibt an,
+
+00:01:54.135 --> 00:01:56.206
+wie weit sie von links entfernt ist.
+
+00:01:57.325 --> 00:02:03.646
+Wir müssen also überlegen, wie wir
+sie von ihrem Mittelpunkt links
+
+00:02:03.805 --> 00:02:05.885
+zu ihrem Mittelpunkt rechts verschieben.
+
+00:02:07.006 --> 00:02:12.205
+Wenn dieser Abstand 28 von null aus ist, müssen
+wir uns nur fragen: Was ist 100
+
+00:02:13.026 --> 00:02:16.066
+minus 28? Sie soll also 28
+von rechts nach innen rücken.
+
+00:02:16.866 --> 00:02:19.825
+Das kannst du hoffentlich im Kopf rechnen.
+
+00:02:19.906 --> 00:02:21.665
+Aber wenn wir sie auf
+
+00:02:23.156 --> 00:02:24.066
+72 setzen,
+
+00:02:25.346 --> 00:02:26.786
+klingt das für mich richtig.
+
+00:02:27.665 --> 00:02:31.105
+Du kannst aber auch jederzeit einen
+Taschenrechner nehmen und das so ausrechnen.
+
+00:02:31.586 --> 00:02:33.906
+Und schon haben wir symmetrische Flügel.
+
+00:02:34.225 --> 00:02:36.145
+Und dann steht hier unten, okay.
+
+00:02:36.145 --> 00:02:38.866
+Als Nächstes: Die rechte Seite des
+Gesichts sieht nicht richtig aus.
+
+00:02:39.216 --> 00:02:41.616
+Okay. Das liegt natürlich daran, dass wir noch
+keine rechte Seite des Gesichts gemacht haben.
+
+00:02:42.096 --> 00:02:44.015
+Machen wir also die rechte Seite des Gesichts.
+
+00:02:45.295 --> 00:02:49.056
+Also, rechte Seite des Gesichts. Führen wir
+den Code Schritt für Schritt aus.
+
+00:02:49.135 --> 00:02:51.536
+Gehen wir weiter vor, bis wir unsere
+
+00:02:54.735 --> 00:02:58.575
+linke Seite des Gesichts haben. Bei der rechten
+Seite ist es genau wie vorhin.
+
+00:02:58.895 --> 00:03:04.096
+Gleiche Breite, gleiche Höhe,
+gleiche Position auf der vertikalen Achse.
+
+00:03:04.175 --> 00:03:05.776
+Nur dieser Wert hier ändert sich.
+
+00:03:06.556 --> 00:03:13.436
+Wenn wir wieder an Mittelpunkte denken: Null
+bis 41 heißt einfach 100 minus 41,
+
+00:03:13.915 --> 00:03:15.996
+also 59.
+
+00:03:17.116 --> 00:03:20.795
+Jetzt haben wir ein schönes,
+symmetrisches Gesicht in der Mitte.
+
+00:03:22.156 --> 00:03:26.556
+Jetzt heißt es, mit dem rechten Auge
+stimme etwas nicht. Also gehen wir runter
+
+00:03:26.955 --> 00:03:31.355
+zum rechten Auge. Für das rechte
+Auge gibt es zwei Zeilen,
+
+00:03:32.325 --> 00:03:34.605
+und es ist genau dasselbe. Das sind Kreise.
+
+00:03:34.605 --> 00:03:37.846
+Der Radius soll gleich bleiben,
+weil das Auge gleich groß sein soll.
+
+00:03:37.846 --> 00:03:41.006
+Gehen wir kurz zurück und zeichnen sie.
+
+00:03:41.006 --> 00:03:43.445
+Der Radius soll also gleich bleiben.
+
+00:03:43.445 --> 00:03:45.286
+Ein großer Kreis und ein kleiner Kreis.
+
+00:03:45.445 --> 00:03:49.045
+Die Position auf der y-Achse
+soll gleich bleiben,
+
+00:03:49.045 --> 00:03:51.686
+aber auf der x-Achse wollen wir sie spiegeln.
+
+00:03:52.006 --> 00:03:58.885
+Also: 100 minus 42 ist 58
+und 100 minus 43 ist 57.
+
+00:03:59.406 --> 00:04:02.445
+Das tragen wir ein, und schon haben
+wir schön gespiegelte Augen.
+
+00:04:03.645 --> 00:04:08.605
+Dann kommt der rechte Fuß. Also noch mal:
+Halte deinen Code schön ordentlich.
+
+00:04:08.605 --> 00:04:10.925
+Füg den rechten Fuß hinzu. Gleiches Prinzip.
+
+00:04:11.165 --> 00:04:17.005
+Wenn wir den Code ausführen, wird hier der linke
+Fuß gezeichnet. Der rechte Fuß hat
+
+00:04:17.485 --> 00:04:20.925
+die gleiche Breite in beide Richtungen,
+die gleiche Höhe, den gleichen Abstand,
+
+00:04:21.326 --> 00:04:24.786
+rechter Fuß: 100 minus 40 ist 60. Und.
+
+00:04:24.855 --> 00:04:26.696
+Und zum Schluss stimmt die Nase nicht.
+
+00:04:27.016 --> 00:04:30.295
+Du siehst, dass die Nase laut
+unserer Vorgabe symmetrisch sein soll.
+
+00:04:30.805 --> 00:04:34.456
+Und irgendwo in der Anleitung
+sagen wir dir, dass du
+
+00:04:36.216 --> 00:04:39.136
+die mittleren Koordinaten ändern und
+kein neues Dreieck hinzufügen sollst.
+
+00:04:39.136 --> 00:04:41.415
+Daran bleiben manche hängen.
+
+00:04:42.536 --> 00:04:47.336
+Wir wissen, dass das gerade um den
+mittleren Punkt auf der x-Achse liegt,
+
+00:04:47.735 --> 00:04:50.935
+und das wollen wir ändern. Statt
+eines Dreiecks wie diesem hier
+
+00:04:51.175 --> 00:04:54.855
+wird es ein Dreieck wie dieses. Statt
+dieses mittleren Punkts hier
+
+00:04:55.206 --> 00:04:57.286
+wollen wir diesen Punkt hierher verschieben.
+
+00:04:57.766 --> 00:05:01.125
+Das ist wieder einfach 46 von links nach innen.
+
+00:05:01.365 --> 00:05:07.526
+Wir wollen 46 von rechts, also
+100 minus 46, und das ist 54.
+
+00:05:08.326 --> 00:05:12.805
+Klick auf „Code ausführen“. Glückwunsch,
+wir haben einen funktionierenden Pinguin.
+
+00:05:13.685 --> 00:05:15.925
+Hoffentlich hast du es auch so gelöst.
+
+00:05:16.005 --> 00:05:20.886
+Hoffentlich hast du nicht einfach
+geraten, sondern ein bisschen Logik benutzt.
+
+00:05:21.346 --> 00:05:25.846
+Vielleicht hast du irgendwann auch etwas
+probiert, das ebenfalls logisch ist,
+
+00:05:26.185 --> 00:05:31.386
+nämlich 100 minus 54 zu schreiben.
+Ich meine, 100 minus 46.
+
+00:05:31.466 --> 00:05:33.266
+Das wäre eine völlig vernünftige Idee
+
+00:05:33.266 --> 00:05:36.505
+gewesen. Nur habe ich dir
+das noch nicht beigebracht.
+
+00:05:36.745 --> 00:05:39.346
+Deshalb ist es in dieser Übung
+im Moment deaktiviert.
+
+00:05:39.346 --> 00:05:40.505
+Genau genommen
+
+00:05:41.305 --> 00:05:43.225
+ist auch das in dieser Übung deaktiviert.
+
+00:05:43.865 --> 00:05:47.105
+Aber im Moment erlaubt Jiki
+dir noch kein Plus oder
+
+00:05:47.105 --> 00:05:51.065
+Minus und solche Sachen. In späteren
+Übungen darfst du das aber.
+
+00:05:51.065 --> 00:05:55.065
+Aber für den Moment möchte ich dich ermutigen,
+nur das zu nutzen, was ich dir beigebracht habe.
+
+00:05:55.466 --> 00:05:58.985
+Also musst du diese Rechnung
+stattdessen im Kopf machen.
+
+00:05:59.225 --> 00:06:04.266
+Und 100 minus 46 ist 54.
+Und genau das tragen wir ein.
+
+00:06:04.925 --> 00:06:09.026
+Hoffentlich war das einfach genug.
+Falls du damit zu kämpfen hattest,
+
+00:06:09.026 --> 00:06:12.586
+hat dir dieses Video hoffentlich gezeigt,
+wie du darüber nachdenken kannst.
+
+00:06:12.846 --> 00:06:16.906
+Wie du etwas langsamer machst und das
+Problem ein bisschen logischer angehst.
+
+00:06:17.225 --> 00:06:18.865
+Wir sehen uns im nächsten Deep Dive.
+
+00:06:18.865 --> 00:06:19.625
+Danke fürs Zuschauen.

@@ -42,15 +42,15 @@
       "homeAriaLabel": "Jiki 首頁",
       "logoAlt": "Jiki",
       "aboutJiki": "關於 Jiki",
-      "premium": "�",
+      "premium": "進階版",
       "testimonials": "學員評價",
       "login": "登入",
       "signUp": "免費註冊",
       "menuAriaLabel": "開啟選單",
       "closeMenuAriaLabel": "關閉選單",
-      "languageAriaLabel": "�",
-      "languageComingSoon": "�",
-      "languageComingSoonBadge": "�"
+      "languageAriaLabel": "切換語言",
+      "languageComingSoon": "即將推出",
+      "languageComingSoonBadge": "即將"
     },
     "internalHeader": {
       "homeAriaLabel": "Jiki 首頁",
@@ -79,7 +79,7 @@
         "upgrade": "升級至 Premium",
         "logOut": "登出"
       },
-      "premiumPill": "�"
+      "premiumPill": "進階版"
     },
     "loading": {
       "title": "正在喚醒 Jiki",
@@ -90,873 +90,904 @@
     }
   },
   "common": {
-    "continue": "�",
-    "close": "�",
-    "cancel": "�",
-    "confirm": "�",
-    "processing": "�",
-    "reloadPage": "�",
-    "loading": "�",
-    "verifying": "�",
-    "sending": "�",
-    "perMonth": "�",
+    "continue": "繼續",
+    "close": "關閉",
+    "cancel": "取消",
+    "confirm": "確認",
+    "processing": "處理中...",
+    "reloadPage": "重新載入頁面",
+    "loading": "載入中...",
+    "verifying": "驗證中...",
+    "sending": "傳送中...",
+    "perMonth": "/月",
     "validation": {
-      "emailInvalid": "�",
-      "passwordRequired": "�",
-      "passwordMinLength": "�",
-      "currentPasswordRequired": "�",
-      "newPasswordRequired": "�",
-      "passwordsNoMatch": "�"
+      "emailInvalid": "請輸入有效的電子郵件地址",
+      "passwordRequired": "請輸入密碼",
+      "passwordMinLength": "密碼至少需要 6 個字元",
+      "currentPasswordRequired": "請輸入目前的密碼",
+      "newPasswordRequired": "請輸入新密碼",
+      "passwordsNoMatch": "密碼不一致"
     },
     "pagination": {
-      "label": "�",
-      "previousPage": "�",
-      "nextPage": "�"
+      "label": "分頁",
+      "previousPage": "上一頁",
+      "nextPage": "下一頁"
     },
     "loadingJiki": {
-      "alt": "�"
+      "alt": "Jiki 角色正在甦醒"
     },
     "otpInput": {
-      "label": "�",
-      "digitLabel": "�"
+      "label": "一次性密碼",
+      "digitLabel": "6 位數中的第 {number} 位"
     },
     "closeButton": {
-      "label": "�"
+      "label": "關閉對話框"
     },
     "copyButton": {
-      "label": "�",
-      "copied": "�"
+      "label": "複製到剪貼簿",
+      "copied": "已複製"
     },
     "soundToggle": {
-      "mute": "�",
-      "unmute": "�"
+      "mute": "關閉音效",
+      "unmute": "開啟音效"
     },
     "themeToggle": {
-      "switchToDark": "�",
-      "switchToSystem": "�",
-      "switchToLight": "�",
-      "toggle": "�",
-      "description": "�"
+      "switchToDark": "切換至深色主題",
+      "switchToSystem": "切換至系統主題",
+      "switchToLight": "切換至淺色主題",
+      "toggle": "切換主題",
+      "description": "目前主題：{theme}。點擊即可在淺色、深色與系統主題之間切換。"
     },
     "badgeNewLabel": {
-      "label": "�"
+      "label": "全新"
     },
-    "saving": "�",
-    "retry": "�",
-    "tryAgain": "�",
+    "saving": "儲存中...",
+    "retry": "重試",
+    "tryAgain": "再試一次",
     "betaTag": {
-      "label": "�"
+      "label": "Beta 版本"
     },
     "userAvatar": {
-      "alt": "�"
+      "alt": "使用者頭像"
+    },
+    "signupCta": {
+      "title": "準備好開始你的程式設計之旅了嗎？",
+      "subtitle": "加入 Jiki 上數千名學習者的行列。練習程式設計題目、獲得導師回饋，一步步提升你的技能。完全免費！",
+      "button": "免費註冊"
+    },
+    "upgradeCard": {
+      "logoAlt": "Jiki",
+      "heading": "今天就開始你的<highlight>程式設計之旅</highlight>！",
+      "text": "註冊 Jiki，透過互動式練習、真實專案與個人化支援學習程式設計。最棒的是，<free>完全免費！</free>",
+      "button": "免費註冊"
+    },
+    "shareLinks": {
+      "heading": "分享這個頁面",
+      "description": {
+        "blogPost": "幫助你人脈網絡中的其他人發現這篇部落格文章與 Jiki 的魅力。",
+        "article": "幫助你人脈網絡中的其他人發現這篇文章與 Jiki 的魅力。",
+        "concept": "幫助你人脈網絡中的其他人發現這則解說與 Jiki 的魅力。"
+      },
+      "shareOn": "分享到 {network}",
+      "copyLink": "複製連結",
+      "copied": "已複製連結"
     }
   },
   "build": {
     "upcomingStreams": {
-      "heading": "�",
-      "toBeAnnounced": "�",
-      "subscribeButton": "�"
+      "heading": "即將開始的直播",
+      "toBeAnnounced": "即將公布",
+      "subscribeButton": "訂閱行事曆"
     },
     "hub": {
-      "title": "�",
-      "description": "�"
+      "title": "學會打造 - 專案",
+      "description": "跟著 Jeremy 從零開始打造真實專案。學會他所知道的一切！"
     }
   },
   "auth": {
     "oauth": {
-      "useGoogle": "�",
-      "useExercism": "�",
-      "divider": "�"
+      "useGoogle": "使用 Google",
+      "useExercism": "使用 Exercism",
+      "divider": "或"
     },
     "fields": {
-      "emailLabel": "�",
-      "emailPlaceholder": "�",
-      "passwordLabel": "�",
-      "passwordPlaceholder": "�",
-      "emailRequired": "�"
+      "emailLabel": "電子郵件",
+      "emailPlaceholder": "請輸入你的電子郵件地址",
+      "passwordLabel": "密碼",
+      "passwordPlaceholder": "請輸入你的密碼",
+      "emailRequired": "請輸入電子郵件"
     },
     "captchaError": {
-      "signup": "�",
-      "login": "�",
-      "generic": "�"
+      "signup": "我們的系統無法判斷你是真人還是機器人。請使用下方的按鈕再試一次註冊。",
+      "login": "我們的系統無法判斷你是真人還是機器人。請使用下方的按鈕再試一次登入。",
+      "generic": "我們的系統無法判斷你是真人還是機器人。請使用下方的按鈕再試一次。"
     },
     "login": {
-      "title": "�",
-      "invalidCredentials": "�",
-      "forgotPassword": "�",
-      "submit": "�",
-      "submitting": "�",
-      "unconfirmed": "�",
-      "resend": "�",
-      "noAccount": "�"
+      "title": "登入",
+      "invalidCredentials": "電子郵件或密碼錯誤",
+      "forgotPassword": "忘記密碼了嗎？",
+      "submit": "登入",
+      "submitting": "登入中...",
+      "unconfirmed": "請先確認你的電子郵件再登入。<link>重新寄送確認信</link>",
+      "resend": "沒收到確認信嗎？<link>重新寄送。</link>",
+      "noAccount": "還沒有帳號嗎？<link>免費註冊。</link>"
     },
     "signup": {
-      "title": "�",
-      "emailAlreadyRegistered": "�",
-      "submit": "�",
-      "submitting": "�",
-      "haveAccount": "�",
-      "resend": "�"
+      "title": "註冊",
+      "emailAlreadyRegistered": "這個電子郵件已經註冊過了",
+      "submit": "註冊",
+      "submitting": "註冊中...",
+      "haveAccount": "已經有帳號了嗎？<link>登入</link>。",
+      "resend": "沒收到確認信嗎？<link>重新寄送。</link>"
     },
     "forgotPassword": {
-      "title": "�",
-      "subtitle": "�",
-      "successMessage": "�",
-      "submit": "�",
-      "remembered": "�"
+      "title": "忘記密碼了嗎？",
+      "subtitle": "如果你忘記密碼了，請使用下方的表單索取重設連結。",
+      "successMessage": "如果這個電子郵件對應的帳號存在，你很快就會收到重設說明。",
+      "submit": "寄送重設連結",
+      "remembered": "想起密碼了嗎？<link>登入</link>"
     },
     "resetPassword": {
-      "invalidTitle": "�",
-      "invalidMessage": "�",
-      "requestNewLink": "�",
-      "title": "�",
-      "subtitle": "�",
-      "tokenMissing": "�",
-      "confirmationRequired": "�",
-      "successMessage": "�",
-      "newPasswordLabel": "�",
-      "newPasswordPlaceholder": "�",
-      "confirmPasswordLabel": "�",
-      "confirmPasswordPlaceholder": "�",
-      "submit": "�",
-      "submitting": "�",
-      "remembered": "�"
+      "invalidTitle": "重設連結無效",
+      "invalidMessage": "這個密碼重設連結無效或已過期。請重新索取一個。",
+      "requestNewLink": "重新索取密碼重設連結",
+      "title": "重設你的密碼",
+      "subtitle": "請在下方輸入你的新密碼。",
+      "tokenMissing": "重設權杖遺失或無效",
+      "confirmationRequired": "請確認密碼",
+      "successMessage": "密碼重設成功！正在前往登入頁面...",
+      "newPasswordLabel": "新密碼",
+      "newPasswordPlaceholder": "請輸入你的新密碼",
+      "confirmPasswordLabel": "確認新密碼",
+      "confirmPasswordPlaceholder": "請再次輸入你的新密碼",
+      "submit": "重設密碼",
+      "submitting": "重設中...",
+      "remembered": "想起密碼了嗎？<link>登入</link>"
     },
     "resendConfirmation": {
-      "title": "�",
-      "subtitle": "�",
-      "successMessage": "�",
-      "submit": "�",
-      "confirmed": "�"
+      "title": "重新寄送確認說明",
+      "subtitle": "沒收到確認信嗎？使用下方的表單，我們會再寄一封給你。",
+      "successMessage": "如果這個電子郵件對應的帳號存在，你很快就會收到確認說明。",
+      "submit": "重新寄送確認說明",
+      "confirmed": "已經確認過了嗎？<link>登入</link>"
     },
     "checkInbox": {
-      "heading": "�",
-      "sentTo": "�",
-      "hint": "�"
+      "heading": "查看你的信箱",
+      "sentTo": "我們已將確認信寄到",
+      "hint": "點擊信件中的連結即可啟用帳號。沒收到嗎？<link>重新寄送郵件</link>"
     },
     "emailConfirmed": {
-      "heading": "�",
-      "message": "�"
+      "heading": "電子郵件已確認！",
+      "message": "你的電子郵件已確認完成。正在前往儀表板..."
     },
     "confirmEmail": {
-      "pendingTitle": "�",
-      "pendingDescription": "�",
-      "errorTitle": "�",
-      "errorMessage": "�",
-      "errorCta": "�"
+      "pendingTitle": "正在確認你的電子郵件...",
+      "pendingDescription": "我們正在確認你的電子郵件地址，請稍候。",
+      "errorTitle": "連結已過期",
+      "errorMessage": "這個確認連結已失效。請重新索取一個以繼續。",
+      "errorCta": "重新寄送確認信"
     },
     "exercismCallback": {
-      "errorTitle": "�",
-      "errorCta": "�",
-      "pendingTitle": "�",
-      "pendingDescription": "�",
-      "authFailed": "�"
+      "errorTitle": "登入失敗",
+      "errorCta": "回到登入頁",
+      "pendingTitle": "正在為你登入...",
+      "pendingDescription": "我們正在使用 Exercism 為你登入，請稍候。",
+      "authFailed": "Exercism 驗證失敗"
     },
     "errorCard": {
-      "needHelp": "�"
+      "needHelp": "需要協助嗎？<link>聯絡支援團隊</link>"
     },
     "twoFactorVerify": {
-      "title": "�",
-      "subtitle": "�",
-      "codeLabel": "�"
+      "title": "兩步驟驗證",
+      "subtitle": "請輸入驗證器應用程式中的 6 位數驗證碼。",
+      "codeLabel": "驗證碼"
     },
     "twoFactorSetup": {
-      "instructionsHeading": "�",
-      "appsHint": "�",
-      "codeLabel": "�"
+      "instructionsHeading": "使用驗證器應用程式掃描 QR 碼，保護你的帳號安全。",
+      "appsHint": "使用 Google Authenticator、1Password、Authy 或類似應用程式掃描上方的 QR 碼。",
+      "codeLabel": "請輸入應用程式中的 6 位數驗證碼"
     },
     "unsubscribe": {
-      "noToken": "�",
-      "linkInvalid": "�",
-      "tooManyRequests": "�",
-      "serviceUnavailable": "�",
-      "unableToProcess": "�",
-      "networkError": "�",
-      "processingTitle": "�",
-      "processingDescription": "�",
-      "successTitle": "�",
-      "successDescription": "�",
-      "errorTitle": "�"
+      "noToken": "未提供取消訂閱權杖。",
+      "linkInvalid": "這個取消訂閱連結無效或已過期。",
+      "tooManyRequests": "請求過於頻繁。請稍後再試。",
+      "serviceUnavailable": "服務暫時無法使用。請稍後再試。",
+      "unableToProcess": "無法處理你的請求。如果問題持續發生，請聯絡支援團隊。",
+      "networkError": "網路錯誤。請檢查你的連線後再試一次。",
+      "processingTitle": "正在取消訂閱...",
+      "processingDescription": "我們正在處理你的請求，請稍候。",
+      "successTitle": "已成功取消訂閱",
+      "successDescription": "你已從我們的郵寄清單中移除。",
+      "errorTitle": "取消訂閱失敗"
     },
     "twoFactor": {
-      "cancel": "�",
-      "invalidCode": "�",
-      "verificationFailed": "�"
+      "cancel": "取消並重新登入",
+      "invalidCode": "驗證碼錯誤",
+      "verificationFailed": "驗證失敗。請再試一次。"
     },
     "layout": {
-      "logoAlt": "�",
-      "tagline": "�",
-      "description": "�",
-      "createdBy": "�",
-      "brand": "�"
+      "logoAlt": "Jiki",
+      "tagline": "你的程式設計之旅從這裡開始",
+      "description": "加入數百萬名學習者，透過實際動手練習程式設計，改變自己的職涯。",
+      "createdBy": "製作團隊",
+      "brand": "Exercism 背後的團隊"
     }
   },
   "settings": {
     "page": {
-      "title": "�",
-      "description": "�",
-      "tabAccount": "�",
-      "tabSubscription": "�",
-      "tabNotifications": "�",
-      "tabLearning": "�",
-      "tabDanger": "�"
+      "title": "設定",
+      "description": "管理你的帳號與偏好設定。",
+      "tabAccount": "帳號",
+      "tabSubscription": "訂閱",
+      "tabNotifications": "通知",
+      "tabLearning": "學習",
+      "tabDanger": "危險區域"
     },
     "avatarEdit": {
-      "adjustTitle": "�",
-      "adjustSubtitle": "�",
-      "back": "�",
-      "save": "�",
-      "changeTitle": "�",
-      "changeSubtitlePart1": "�",
-      "changeSubtitlePart2": "�",
-      "uploadText": "�",
-      "uploadHint": "�"
+      "adjustTitle": "調整照片",
+      "adjustSubtitle": "縮放並調整照片的位置。",
+      "back": "返回",
+      "save": "儲存",
+      "changeTitle": "更換個人頭像",
+      "changeSubtitlePart1": "上傳新的個人頭像。",
+      "changeSubtitlePart2": "只有你自己看得到。",
+      "uploadText": "點擊上傳新照片",
+      "uploadHint": "JPG、PNG 或 GIF。上限 5MB。"
     },
     "avatarUpload": {
-      "label": "�"
+      "label": "個人頭像"
     },
     "avatarPreview": {
-      "alt": "�"
+      "alt": "你的頭像"
     },
     "cancelConfirm": {
-      "title": "�",
-      "message": "�",
-      "benefitsTitle": "�",
-      "benefit1": "�",
-      "benefit2": "�",
-      "benefit3": "�",
-      "benefit4": "�",
-      "keep": "�",
-      "cancel": "�",
-      "defaultBillingPeriodEnd": "�"
+      "title": "確定要取消訂閱嗎？",
+      "message": "我們實在不希望你離開！如果取消，你會在目前計費週期結束時失去進階版的存取權限。",
+      "benefitsTitle": "你目前享有的內容：",
+      "benefit1": "Jiki 不限次數的 AI 協助",
+      "benefit2": "所有專案與學習路徑",
+      "benefit3": "完課證書",
+      "benefit4": "無廣告體驗",
+      "keep": "保留我的訂閱",
+      "cancel": "取消訂閱",
+      "defaultBillingPeriodEnd": "你的計費週期結束日"
     },
     "cancelSuccess": {
-      "title": "�",
-      "message": "�",
-      "accessUntil": "�",
-      "resubscribeNote": "�",
-      "gotIt": "�"
+      "title": "訂閱已取消",
+      "message": "你的進階版訂閱已取消。在目前計費週期結束前，你仍可繼續使用所有進階版功能。",
+      "accessUntil": "進階版使用期限至",
+      "resubscribeNote": "改變心意了嗎？你隨時可以重新訂閱。",
+      "gotIt": "知道了"
     },
     "changeEmail": {
-      "title": "�",
-      "importantLabel": "�",
-      "importantText": "�",
-      "currentEmailLabel": "�",
-      "newEmailLabel": "�",
-      "newEmailPlaceholder": "�",
-      "passwordLabel": "�",
-      "passwordPlaceholder": "�",
-      "passwordHint": "�",
-      "newEmailRequired": "�",
-      "emailSame": "�",
-      "updateFailed": "�",
-      "submit": "�"
+      "title": "變更電子郵件地址",
+      "importantLabel": "重要：",
+      "importantText": "我們會寄一封確認信到你的新電子郵件地址。你必須先完成確認，變更才會生效。",
+      "currentEmailLabel": "目前的電子郵件",
+      "newEmailLabel": "新的電子郵件地址",
+      "newEmailPlaceholder": "請輸入新的電子郵件地址",
+      "passwordLabel": "使用目前密碼確認",
+      "passwordPlaceholder": "請輸入目前的密碼",
+      "passwordHint": "基於安全驗證必須填寫",
+      "newEmailRequired": "請輸入新的電子郵件",
+      "emailSame": "新的電子郵件必須與目前的不同",
+      "updateFailed": "電子郵件更新失敗",
+      "submit": "更新電子郵件"
     },
     "deleteAccount": {
-      "sendFailed": "�",
-      "confirmTitle": "�",
-      "confirmMessage": "�",
-      "submit": "�",
-      "securityTitle": "�",
-      "securityMessage": "�",
-      "understand": "�"
+      "sendFailed": "確認信寄送失敗。請再試一次。",
+      "confirmTitle": "你確定嗎？",
+      "confirmMessage": "你真的想刪除帳號嗎？你將會失去所有作品。此操作無法復原。",
+      "submit": "刪除帳號",
+      "securityTitle": "安全檢查",
+      "securityMessage": "我們已寄出一封電子郵件來確認是你本人。請點擊信件中的按鈕以刪除帳號。",
+      "understand": "我了解"
     },
     "paymentHistory": {
-      "title": "�",
-      "subtitle": "�",
-      "loading": "�",
-      "error": "�",
-      "empty": "�",
-      "columnDate": "�",
-      "columnAmount": "�",
-      "columnType": "�",
-      "columnMethod": "�",
-      "downloadReceipt": "�",
-      "typeRecurring": "�",
-      "dateUnavailable": "�"
+      "title": "付款紀錄",
+      "subtitle": "查看並下載你過去付款的收據。",
+      "loading": "正在載入付款紀錄...",
+      "error": "無法載入付款紀錄。請稍後再試。",
+      "empty": "目前沒有付款紀錄。",
+      "columnDate": "日期",
+      "columnAmount": "金額",
+      "columnType": "類型",
+      "columnMethod": "付款方式",
+      "downloadReceipt": "下載收據",
+      "typeRecurring": "定期",
+      "dateUnavailable": "日期不詳"
     },
     "profile": {
-      "nameLabel": "�",
-      "namePlaceholder": "�",
-      "updateName": "�",
-      "nameEmpty": "�",
-      "nameTooLong": "�",
-      "handleLabel": "�",
-      "handlePlaceholder": "�",
-      "updateHandle": "�",
-      "handleEmpty": "�",
-      "handleInvalid": "�",
-      "handleTooShort": "�",
-      "handleTooLong": "�",
-      "emailLabel": "�",
-      "emailPlaceholder": "�",
-      "updateEmail": "�",
-      "emailEmpty": "�",
-      "confirmationPendingHint": "�",
-      "emailNotConfirmed": "�",
-      "confirmationPending": "�"
+      "nameLabel": "姓名",
+      "namePlaceholder": "請輸入你的姓名",
+      "updateName": "更新姓名",
+      "nameEmpty": "姓名不能留空",
+      "nameTooLong": "姓名不能超過 100 個字元",
+      "handleLabel": "使用者代號",
+      "handlePlaceholder": "請輸入你的使用者代號",
+      "updateHandle": "更新使用者代號",
+      "handleEmpty": "使用者代號不能留空",
+      "handleInvalid": "使用者代號只能包含英文字母、數字、底線與連字號",
+      "handleTooShort": "使用者代號至少需要 3 個字元",
+      "handleTooLong": "使用者代號不能超過 30 個字元",
+      "emailLabel": "電子郵件",
+      "emailPlaceholder": "請輸入你的電子郵件",
+      "updateEmail": "更新電子郵件",
+      "emailEmpty": "電子郵件不能留空",
+      "confirmationPendingHint": "請查看你的電子郵件以確認這項變更。",
+      "emailNotConfirmed": "你的電子郵件地址尚未確認。",
+      "confirmationPending": "等待確認的電子郵件：<strong>{email}</strong>"
     },
     "language": {
-      "label": "�",
-      "comingSoon": "�",
-      "comingSoonBadge": "�",
-      "saveFailed": "�"
+      "label": "你的語言 (Change language)",
+      "comingSoon": "即將推出",
+      "comingSoonBadge": "即將",
+      "saveFailed": "我們無法變更你的語言。請再試一次。",
+      "done": "完成",
+      "searchLabel": "搜尋語言",
+      "searchPlaceholder": "搜尋語言",
+      "noMatches": "沒有符合「{query}」的語言。",
+      "noMatchesHint": "試試它的英文名稱或語言代碼。",
+      "selected": "已選取",
+      "saving": "正在變更語言",
+      "communityNote": "翻譯由社群製作。",
+      "helpTranslate": "協助翻譯 Jiki"
     },
     "subscriptionSection": {
-      "loadingCardTitle": "�",
-      "loadingCardDescription": "�",
-      "loadingData": "�"
+      "loadingCardTitle": "訂閱",
+      "loadingCardDescription": "管理你的訂閱方案與帳單資訊",
+      "loadingData": "正在載入訂閱資料..."
     },
     "benefits": {
-      "activeSubtitle": "�",
-      "cancellingSubtitle": "�",
-      "resubscribeTitle": "�",
-      "resubscribeButton": "�",
-      "activeHeading": "�",
-      "cancellingHeading": "�",
-      "footer": "�",
-      "resubscribe": "�"
+      "activeSubtitle": "這是你每天解鎖的內容",
+      "cancellingSubtitle": "存取權限結束後，你將會失去這些內容",
+      "resubscribeTitle": "不受限制地繼續學習",
+      "resubscribeButton": "重新訂閱進階版",
+      "activeHeading": "你正在享受<highlight>進階版</highlight>的福利",
+      "cancellingHeading": "別失去你的<highlight>進階版</highlight>福利",
+      "footer": "有問題嗎？進一步了解<includedLink>方案包含的內容</includedLink>，或<supportLink>聯絡支援團隊</supportLink>。",
+      "resubscribe": "現在只要 <price></price> 就能重新訂閱，在 Jiki 的協助下繼續你的程式設計之旅。"
     },
     "cancelSectionPanel": {
-      "title": "�",
-      "description": "�",
-      "cancel": "�"
+      "title": "取消訂閱",
+      "description": "如果取消，你會在計費週期結束時失去進階版功能的存取權限。你隨時可以重新訂閱。",
+      "cancel": "取消"
     },
     "premiumUpsell": {
-      "subtitle": "�",
-      "planName": "�",
-      "upgrade": "�",
-      "headline": "�",
-      "dailyNote": "�"
+      "subtitle": "你目前使用的是免費方案。升級到進階版即可解鎖：",
+      "planName": "Jiki 進階版",
+      "upgrade": "升級到進階版",
+      "headline": "解鎖<highlight>更好的</highlight>學習方式",
+      "dailyNote": "一天只要 <price></price>"
     },
     "neverSubscribed": {
-      "heading": "�",
-      "subtitle": "�",
-      "featuresLabel": "�",
-      "upgradeAriaLabel": "�",
-      "upgrade": "�"
+      "heading": "升級你的方案",
+      "subtitle": "透過我們的進階方案解鎖更多功能與更優質的學習體驗。",
+      "featuresLabel": "進階方案功能",
+      "upgradeAriaLabel": "升級到 {plan} 方案",
+      "upgrade": "升級到進階版"
     },
     "errorBoundary": {
-      "title": "�",
-      "messagePart1": "�",
-      "messagePart2": "�",
-      "refresh": "�",
-      "detailsSummary": "�"
+      "title": "訂閱系統錯誤",
+      "messagePart1": "載入你的訂閱資訊時發生問題。這可能是我們付款系統的暫時性狀況。",
+      "messagePart2": "請嘗試重新整理頁面，如果問題持續發生，請聯絡支援團隊。",
+      "refresh": "重新整理頁面",
+      "detailsSummary": "錯誤詳情（開發用）"
     },
     "danger": {
-      "sessionLabel": "�",
-      "sessionDescription": "�",
-      "logout": "�",
-      "deleteLabel": "�",
-      "deleteDescription": "�",
-      "deleteButton": "�"
+      "sessionLabel": "工作階段管理",
+      "sessionDescription": "管理你在所有裝置上的使用中工作階段。",
+      "logout": "登出",
+      "deleteLabel": "刪除帳號",
+      "deleteDescription": "永久刪除你的帳號與所有相關資料。此操作無法復原。",
+      "deleteButton": "刪除帳號"
     },
     "learning": {
-      "streaksLabel": "�",
-      "streaksDescription": "�",
-      "toggleAriaLabel": "�",
-      "learnMore": "�"
+      "streaksLabel": "連續學習天數",
+      "streaksDescription": "在我的帳號啟用連續學習天數。",
+      "toggleAriaLabel": "切換連續學習天數",
+      "learnMore": "了解更多"
     },
     "notifications": {
-      "toggleAriaLabel": "�",
-      "essentialTitle": "�",
-      "essentialDescription": "�",
-      "featuresTitle": "�",
-      "featuresDescription": "�",
-      "livestreamsTitle": "�",
-      "livestreamsDescription": "�",
-      "milestonesTitle": "�",
-      "milestonesDescription": "�",
-      "activityTitle": "�",
-      "activityDescription": "�",
-      "onboardingTitle": "�",
-      "onboardingDescription": "�"
+      "toggleAriaLabel": "切換 {title}",
+      "essentialTitle": "必要的服務與帳號通知",
+      "essentialDescription": "關於你的帳號、安全性與服務變更的重要通知。",
+      "featuresTitle": "關於新功能或新內容的電子郵件",
+      "featuresDescription": "隨時掌握 Jiki 最新加入的功能與內容。",
+      "livestreamsTitle": "關於直播的電子郵件",
+      "livestreamsDescription": "收到即將開始的直播與活動通知。",
+      "milestonesTitle": "當你達成新里程碑時的通知郵件",
+      "milestonesDescription": "一起慶祝你在 Jiki 上的成就與進步。",
+      "activityTitle": "你在 Jiki 上進行活動時的其他通知郵件",
+      "activityDescription": "依據你的動態發送的通知，例如解鎖徽章與完成挑戰。",
+      "onboardingTitle": "幫助你充分善用 Jiki 的電子郵件",
+      "onboardingDescription": "充分善用 Jiki 的訣竅與指引。"
     },
     "editableField": {
-      "update": "�",
-      "edit": "�",
-      "saveFailed": "�"
+      "update": "更新",
+      "edit": "編輯",
+      "saveFailed": "儲存失敗"
     },
     "passwordField": {
-      "updateFailed": "�",
-      "currentLabel": "�",
-      "currentPlaceholder": "�",
-      "newLabel": "�",
-      "newPlaceholder": "�",
-      "confirmLabel": "�",
-      "confirmPlaceholder": "�",
-      "submit": "�",
-      "label": "�",
-      "change": "�"
+      "updateFailed": "密碼更新失敗",
+      "currentLabel": "目前的密碼",
+      "currentPlaceholder": "請輸入目前的密碼",
+      "newLabel": "新密碼",
+      "newPlaceholder": "請輸入新密碼",
+      "confirmLabel": "確認新密碼",
+      "confirmPlaceholder": "請再次輸入新密碼",
+      "submit": "更新密碼",
+      "label": "密碼",
+      "change": "變更"
     },
     "subscriptionStatus": {
-      "statusActive": "�",
-      "statusCanceled": "�",
-      "statusPaymentFailed": "�",
-      "statusCancelling": "�",
-      "statusIncomplete": "�",
-      "statusSessionExpired": "�",
-      "statusNotSubscribed": "�",
-      "currentPlan": "�",
-      "cancellingMessage": "�",
-      "currentPlanAriaLabel": "�",
-      "statusAriaLabel": "�",
-      "messageCanceled": "�",
-      "messagePaymentFailed": "�",
-      "messageCancelling": "�",
-      "messageIncomplete": "�",
-      "messageIncompleteExpired": "�",
-      "active": "�",
-      "activeWithBilling": "�",
-      "cancellingRemaining": "�",
-      "cancellingEnds": "�",
-      "free": "�",
-      "planLabel": "�"
+      "statusActive": "使用中",
+      "statusCanceled": "已取消",
+      "statusPaymentFailed": "付款失敗",
+      "statusCancelling": "取消中",
+      "statusIncomplete": "未完成",
+      "statusSessionExpired": "工作階段已過期",
+      "statusNotSubscribed": "未訂閱",
+      "currentPlan": "目前方案",
+      "cancellingMessage": "你的 Jiki 進階版訂閱已取消。",
+      "currentPlanAriaLabel": "目前方案：{plan} 方案",
+      "statusAriaLabel": "訂閱狀態：{status}",
+      "messageCanceled": "服務將持續到本期結束",
+      "messagePaymentFailed": "付款失敗，請更新付款方式",
+      "messageCancelling": "已排定取消，可使用至本期結束",
+      "messageIncomplete": "付款設定未完成，請完成設定",
+      "messageIncompleteExpired": "先前的結帳工作階段已過期，請重新開始訂閱",
+      "active": "你目前使用的是<plan>Jiki {tier}</plan>方案，每月 <strong><price></price></strong>。",
+      "activeWithBilling": "你目前使用的是<plan>Jiki {tier}</plan>方案，每月 <strong><price></price></strong>。下次扣款日期是 <strong>{date}</strong>。",
+      "cancellingRemaining": "你還剩下 <strong>{count, plural, other {# 天}}</strong>可以享受所有進階版功能。",
+      "cancellingEnds": "你的進階版方案將於 <strong>{date}</strong>結束。",
+      "free": "你目前使用的是<strong>免費</strong>方案。這讓你可以使用所有內容，以及讓問 Jiki 在一個練習中協助你。",
+      "planLabel": "{tier} 方案"
     }
   },
   "landing": {
     "hero": {
-      "tagline": "�",
-      "loadingVideo": "�",
-      "playVideo": "�",
-      "watchPrompt": "�",
-      "headline": "�",
-      "audienceBeginners": "�",
-      "audienceJuniors": "�",
-      "audienceEntrepreneurs": "�"
+      "tagline": "學會你所需的技能，打造出色的作品、提升生產力，並<strong>在 {year} 保持競爭力。</strong>",
+      "loadingVideo": "影片載入中",
+      "playVideo": "播放影片",
+      "watchPrompt": "不喜歡閱讀嗎？<strong>按下播放</strong>，我會告訴你所有你需要知道的事！",
+      "headline": "學習<highlight>寫程式與打造產品</highlight>的現代方式",
+      "audienceBeginners": "<name>初學者</name>，正在尋找最快、最好的學習方式",
+      "audienceJuniors": "<name>初階開發者</name>，想加速累積知識",
+      "audienceEntrepreneurs": "<name>創業者與 Vibe Coder</name>，想在雇用別人之前先自己動手做"
     },
     "twoHalves": {
-      "eyebrow": "�",
-      "heading": "�",
-      "intro": "�",
-      "codeHeading": "�",
-      "codeBody": "�",
-      "buildHeading": "�",
-      "buildBody": "�",
-      "techLabel": "�"
+      "eyebrow": "你的兩項核心技能",
+      "heading": "開發者的兩項核心能力",
+      "intro": "Jiki 教你<strong>如何寫程式</strong>（用最有趣、最有效的方式！），以及如何用專業人士使用的相同技術<strong>打造真實的東西</strong>。<strong>從第一天就開始。</strong>",
+      "codeHeading": "學會<word>寫程式</word>",
+      "codeBody": "每個核心概念都有詳盡的影片解說，還有數百個練習與專案可以實際動手做",
+      "buildHeading": "學會<word>打造</word>",
+      "buildBody": "從第一天就學習專業人士使用的技術：資料庫、身分驗證、前端、後端等等！",
+      "techLabel": "學習的技術包括："
     },
     "learnToCode": {
-      "heading": "�",
-      "intro": "�",
+      "heading": "學會<word>寫程式</word>",
+      "intro": "精通程式設計這項核心技能，用它把我們的需求傳達給電腦。我們會協助你<highlight>打下扎實的程式設計基礎</highlight>。",
       "demo": {
-        "stageDescription": "�",
-        "run": "�",
-        "tabInstructions": "�",
-        "tabJiki": "�",
-        "tabLog": "�",
-        "tabHints": "�",
-        "instrHeading": "�",
-        "instr1": "�",
-        "instr2": "�",
-        "fnRight": "�",
-        "fnLeft": "�",
-        "fnShoot": "�",
-        "instr3": "�",
-        "scenarioTitle": "�",
-        "badgePending": "�",
-        "badgeFail": "�",
-        "badgePass": "�",
-        "verdictPending": "�",
-        "verdictFail": "�",
-        "verdictPass": "�",
-        "errorTitle": "�",
-        "errorBody": "�",
-        "chat1": "�",
-        "chat2": "�",
-        "chat3": "�",
-        "chat4": "�",
-        "chat5": "�",
-        "chatPlaceholder": "�",
-        "jikiAvatarAlt": "�",
-        "successTitle": "�",
-        "successBody": "�",
-        "successBtn": "�"
+        "stageDescription": "一段 Jiki 應用程式的動畫：學習者執行一個太空侵略者練習，程式碼把雷射砲移出格線邊緣，他向 Jiki 求助，把邊界值從 20 改成 11，練習就通過了。",
+        "run": "執行程式",
+        "tabInstructions": "說明",
+        "tabJiki": "問 Jiki",
+        "tabLog": "紀錄",
+        "tabHints": "提示",
+        "instrHeading": "外星人偵測器",
+        "instr1": "外星人分散在三列中，有些行裡還不只一個。",
+        "instr2": "你有三個函式可以使用：",
+        "fnRight": "把你的雷射砲往右移動一行",
+        "fnLeft": "把它往左移動一行",
+        "fnShoot": "向上發射雷射",
+        "instr3": "總共有 11 行。移動到任何一邊的邊緣外就會失敗，所以要隨時注意自己所在的位置。",
+        "scenarioTitle": "三列：外星人分散在三列中",
+        "badgePending": "待執行",
+        "badgeFail": "失敗",
+        "badgePass": "通過",
+        "verdictPending": "執行你的程式，看看這個情境是否通過。",
+        "verdictFail": "你的程式在執行時發生錯誤。請依照上方的錯誤訊息修正。",
+        "verdictPass": "六個外星人全部消滅。做得好！",
+        "errorTitle": "糟糕，你跑太遠了！",
+        "errorBody": "你的雷射砲移出了畫面右側邊緣。記得要追蹤自己的位置，並在到達邊界時轉向。",
+        "chat1": "嗨！怎麼了嗎？",
+        "chat2": "我的雷射砲一直跑出畫面邊緣。",
+        "chat3": "我們來看看你剛寫的那一行。當 <code>position</code> 到達 20 時你會轉向，但這個格線實際上總共有幾行呢？",
+        "chat4": "11 行。",
+        "chat5": "就是這樣。<code>position</code> 永遠到不了 20，所以 <code>move_left()</code> 從來沒有執行。把那個邊界值改成 11，雷射砲就會在最後一行轉向了。",
+        "chatPlaceholder": "回覆 Jiki...",
+        "jikiAvatarAlt": "Jiki",
+        "successTitle": "恭喜！",
+        "successBody": "所有測試都通過了！你成功完成了這個練習。",
+        "successBtn": "繼續"
       },
       "callouts": {
         "tested": {
-          "title": "�",
-          "body": "�"
+          "title": "每個練習都是真正的程式",
+          "body": "迴圈、條件判斷、變數，全都是你以後<hl>每個程式都會用到的技巧</hl>。"
         },
         "see": {
-          "title": "�",
-          "body": "�"
+          "title": "解開有趣又好玩的練習",
+          "body": "這裡沒有無聊的文字練習。<hl>打造遊戲、解開謎題、玩得開心！</hl>"
         },
         "rewind": {
-          "title": "�",
-          "body": "�"
+          "title": "倒轉你自己的程式",
+          "body": "一步步回溯每一道指令，<hl>看清楚到底發生了什麼事</hl>，一行一行來。"
         },
         "errors": {
-          "title": "�",
-          "body": "�"
+          "title": "用白話說明的錯誤訊息",
+          "body": "出錯的時候，我們會<hl>用平常的語言、而不是技術術語</hl>告訴你哪裡出了問題。"
         },
         "help": {
-          "title": "�",
-          "body": "�"
+          "title": "獲得協助，而不是答案",
+          "body": "和 Jiki 一起找到卡住的地方。<hl>學會思考的方法</hl>，而不只是通過練習。"
         },
         "next": {
-          "title": "�",
-          "body": "�"
+          "title": "永遠再往前一步",
+          "body": "每個練習都比上一個再往前推一點點。<hl>下一步永遠都在你搆得到的地方</hl>。"
         }
       }
     },
     "funPrints": {
-      "eyebrow": "�",
-      "heading": "�",
-      "sub": "�",
-      "spaceInvaders": "�",
-      "ticTacToe": "�",
-      "breakout": "�",
-      "mazeSolver": "�",
-      "flowerFlipbook": "�",
-      "footnote": "�"
+      "eyebrow": "看看你能做出什麼",
+      "heading": "打造遊戲。製作動畫。解開謎題。",
+      "sub": "這些全都由同樣幾個核心概念組成，而到最後你將會做出<strong>數百個</strong>類似的作品。",
+      "spaceInvaders": "太空侵略者",
+      "ticTacToe": "井字遊戲",
+      "breakout": "打磚塊",
+      "mazeSolver": "迷宮求解",
+      "flowerFlipbook": "花朵翻頁動畫",
+      "footnote": "……而這還只是前幾週而已！"
     },
     "learnToBuild": {
-      "heading": "�",
-      "intro": "�",
-      "livestreamsLead": "�",
-      "livestreamsDetail": "�",
-      "technologiesLead": "�",
-      "technologiesDetail": "�",
-      "portfolioLead": "�",
-      "portfolioDetail": "�",
-      "liveQaAlt": "�",
-      "topicsLabel": "�",
-      "databases": "�",
-      "auth": "�",
-      "frontendBackend": "�",
-      "apis": "�",
-      "deployment": "�",
-      "llmIntegration": "�",
-      "liveQa_fred": "�",
-      "liveQa_oleksandra": "�",
-      "liveQa_shaun": "�",
-      "liveQa_lukas": "�",
-      "joinLive": "�",
-      "catchUp": "�",
-      "getSupport": "�",
-      "liveQa_drac": "�"
+      "heading": "學會<word>打造</word>",
+      "intro": "透過現代化的代理式程式設計，快速學會資料庫、身分驗證、前端、後端等核心技術。",
+      "livestreamsLead": "互動式教學直播",
+      "livestreamsDetail": "卡在某個概念或自己的專案上嗎？在<strong>定期直播</strong>中獲得解答，還有社群提出的真實問題。",
+      "technologiesLead": "真實的專案，不是假想範例。",
+      "technologiesDetail": "跟著 Jeremy 從零開始打造真實專案，他會解釋每個決定，你也可以用自己的想法一起實作。",
+      "portfolioLead": "學習各種不同的技術",
+      "portfolioDetail": "打造現代應用程式需要與許多不同系統互動：身分驗證、API、後端、前端。這些我們都會教你。",
+      "liveQaAlt": "Jeremy 主持 Jiki 直播問答的畫面",
+      "topicsLabel": "實際動手玩玩：",
+      "databases": "資料庫",
+      "auth": "身分驗證",
+      "frontendBackend": "前端與後端",
+      "apis": "API",
+      "deployment": "部署",
+      "llmIntegration": "LLM 整合",
+      "liveQa_fred": "終於成功了。試了三次才搞定。",
+      "liveQa_oleksandra": "有人可以再解釋一次閉包嗎？語法我看得懂，只是不懂為什麼會需要它。",
+      "liveQa_shaun": "啊，這樣終於說得通了。",
+      "liveQa_lukas": "剛部署了我的第一個專案。真的沒想到自己能走到這一步。",
+      "joinLive": "加入直播討論",
+      "catchUp": "之後再補看",
+      "getSupport": "取得協助",
+      "liveQa_drac": "這是我看過最清楚的解釋 🙌"
     },
     "outcomes": {
-      "bubble": "�",
-      "heading": "�",
-      "sub": "�",
-      "certificateTitle": "�",
-      "certificateBody": "�",
-      "certificateAlt": "�",
-      "shareOnLinkedIn": "�",
-      "portfolioTitle": "�",
-      "portfolioBody": "�",
-      "habitTracker": "�",
-      "homepage": "�",
-      "recipeBox": "�",
-      "dashboard": "�",
-      "understandingTitle": "�",
-      "understandingBody": "�",
-      "codeNote": "�"
+      "bubble": "課程結束時",
+      "heading": "你將會帶走什麼",
+      "sub": "大多數課程只讓你養成看影片的習慣。Jiki 留給你的是技能、實績，以及真實專案的作品集。",
+      "certificateTitle": "可驗證的證書",
+      "certificateBody": "你會收到一張可驗證的證書，可以放進履歷和 LinkedIn 個人檔案的證照區。而且你會知道自己確實有資格拿到它！",
+      "certificateAlt": "Jiki 課程完課證書",
+      "shareOnLinkedIn": "分享到 LinkedIn",
+      "portfolioTitle": "多元的真實專案作品集",
+      "portfolioBody": "打造符合你興趣的真實專案。不是千篇一律的待辦清單應用程式，而是能展現你的創意、巧思與知識的實際作品。",
+      "habitTracker": "個人習慣追蹤器",
+      "homepage": "個人數位首頁",
+      "recipeBox": "食譜規劃工具",
+      "dashboard": "資料儀表板",
+      "understandingTitle": "真正了解一切是怎麼運作的",
+      "understandingBody": "Jiki 會給你扎實穩固的基礎，讓你建立自己的職涯。你能讀懂陌生的程式碼、推理出它的運作方式，並且快速找出 bug。",
+      "codeNote": "你將會知道如何從零開始打造像 Wordle 這樣的遊戲"
     },
     "meetJeremy": {
-      "portraitAlt": "�",
-      "intro": "�",
-      "badgeDeveloper": "�",
-      "badgeTeacher": "�",
-      "badgeMission": "�",
-      "developerTitle": "�",
-      "developerDetail": "�",
-      "teacherTitle": "�",
-      "teacherDetail": "�",
-      "entrepreneurTitle": "�",
-      "entrepreneurDetail": "�",
-      "story": "�",
-      "why": "�",
-      "signature": "�",
-      "quote": "�",
-      "quoteName": "�",
-      "quoteRole": "�"
+      "portraitAlt": "Jeremy Walker",
+      "intro": "嗨！👋 我是 Jeremy，我在世界各地幫助過<strong>數百萬人</strong>提升程式設計能力。",
+      "badgeDeveloper": "資深開發者",
+      "badgeTeacher": "熱血教師",
+      "badgeMission": "使命驅動",
+      "developerTitle": "資深開發者",
+      "developerDetail": "全端 • 35 年經驗 • 會寫 20 多種程式語言（包括我自己設計的！）• AI 學位（2005 年取得）• 擁有心臟手術 AI 系統專利",
+      "teacherTitle": "熱血教師",
+      "teacherDetail": "20 年經驗 • 教過超過 300 萬人 • 創辦四家教育公司",
+      "entrepreneurTitle": "使命驅動的創業者",
+      "entrepreneurDetail": "創辦多個公益組織，包括 Exercism、Kaido、Thalamus 等 • 經營全球最大的開源專案之一",
+      "story": "從 8 歲開始，寫程式就一直是我生活的重心。它教會我<strong>創造力</strong>、<strong>解決問題</strong>與<strong>批判性思考</strong>，也讓我擁有一份我熱愛的職涯，在教育、醫療與人工智慧領域創辦公司。",
+      "why": "我打造 Jiki，是因為<strong>我想把這些分享給你</strong>。我希望你也能獲得寫程式帶給我的同樣喜悅與收穫。我深信<strong>學寫程式應該是件有趣的事</strong>。軟體開發產業變化得非常快，代理式程式設計正在成為常態。我致力於<strong>帶你走上這段旅程</strong>，確保無論你想進入科技業，或只是想搞懂現在發生了什麼事，你都做得到。希望你能來和我一起前進！",
+      "signature": "Jeremy",
+      "quote": "你透過寫程式來解決符合你能力、又能推你一把的問題，從中學會寫程式。<strong>Jeremy 是一位大師級的老師。</strong>",
+      "quoteName": "Thom Chittom",
+      "quoteRole": "初學者"
     },
     "printRow": {
-      "joinNote": "�",
-      "spaceInvaders": "�",
-      "breakout": "�",
-      "maze": "�",
-      "heading": "�",
-      "body": "�",
-      "free": "�",
-      "projects": "�",
-      "unstuck": "�",
-      "cta": "�"
+      "joinNote": "快來參一腳！",
+      "spaceInvaders": "太空侵略者",
+      "breakout": "打磚塊",
+      "maze": "迷宮",
+      "heading": "準備好做出你的第一個作品了嗎？",
+      "body": "從第一天就開始學寫程式、打造真實專案，Jeremy 會一路陪你走每一步。",
+      "free": "超過 100 小時的免費內容",
+      "projects": "打造真實專案",
+      "unstuck": "永遠不會卡住",
+      "cta": "開始使用"
     },
     "exercism": {
-      "eyebrow": "�",
-      "heading": "�",
-      "support": "�",
-      "taughtValue": "�",
-      "taughtLabel": "�",
-      "testimonialsValue": "�",
-      "testimonialsLabel": "�",
-      "submittedValue": "�",
-      "submittedLabel": "�"
+      "eyebrow": "來自 Exercism 團隊",
+      "heading": "首屈一指的<highlight>程式設計練習</highlight>教育平台",
+      "support": "Jiki 由<strong>Exercism 背後的團隊</strong>打造。我們把協助數百萬名學生提升技能所學到的一切，都放進了 Jiki。",
+      "taughtValue": "290 萬+",
+      "taughtLabel": "位學習者",
+      "testimonialsValue": "85,000+",
+      "testimonialsLabel": "則見證",
+      "submittedValue": "6,900 萬+",
+      "submittedLabel": "份練習提交"
     },
     "signupButton": {
-      "label": "�"
+      "label": "註冊<free>（免費！）</free>"
     },
     "faqs": {
-      "heading": "�",
-      "q1": "�",
-      "q1a1": "�",
-      "q1Item1": "�",
-      "q1Item2": "�",
-      "q1Item3": "�",
-      "q1Item4": "�",
-      "q1Item5": "�",
-      "q1Item6": "�",
-      "q1Item7": "�",
-      "q2": "�",
-      "q2a": "�",
-      "q3": "�",
-      "q3a1": "�",
-      "q3a2": "�",
-      "q4": "�",
-      "q4a1": "�",
-      "q4a2": "�",
-      "q5": "�",
-      "q5a1": "�",
-      "q5a2": "�",
-      "intro": "�",
-      "q1a2": "�"
+      "heading": "常見問題",
+      "q1": "費用是多少？",
+      "q1a1": "<strong>學會寫程式</strong>的練習，也就是核心的程式設計課程，是<strong>完全免費</strong>的。不用信用卡、沒有試用期、也沒有任何陷阱。",
+      "q1Item1": "完整使用<strong>學會打造</strong>的內容",
+      "q1Item2": "在<strong>Jiki 專案</strong>中整合你的技能",
+      "q1Item3": "不限次數的<strong>問 Jiki</strong> AI 協助",
+      "q1Item4": "可以參加的定期<strong>直播問答</strong>",
+      "q1Item5": "取得課程<strong>證書</strong>",
+      "q1Item6": "<strong>無廣告</strong>的學習體驗",
+      "q1Item7": "新功能的<strong>搶先體驗</strong>",
+      "q2": "我每週需要花多少時間在課程上？",
+      "q2a": "你想花多少時間都可以。大多數人每週投入約 5 到 10 小時，會在 12 到 20 週內完成<strong>學會寫程式</strong>。<strong>學會打造</strong>則是持續進行的，新集數上線時你可以隨時回來看，也能在方便的時候參加直播。",
+      "q3": "這門課程有多難？我需要多聰明？",
+      "q3a1": "這門課程的設計適合每個人，無論你的背景是什麼。我們不認為學寫程式需要多「聰明」，但你必須願意投入心力，並且接受挑戰。",
+      "q3a2": "但只要你肯投入、卡住時願意求助，並擁抱挑戰，你會驚訝自己在短短時間內能走得多遠。",
+      "q4": "Jiki 現在可以使用了嗎？",
+      "q4a1": "可以。你現在就可以註冊，開始免費的學會寫程式課程。",
+      "q4a2": "第一場<strong>學會打造</strong>課程會在<strong>六月中</strong>開始。註冊進入後，你可以登記提醒通知。",
+      "q5": "我已經報名過 Bootcamp 了，這有什麼不同嗎？",
+      "q5a1": "謝謝你參與 Bootcamp！Jiki 是我們 Bootcamp 演進的下一階段。你解過的大部分練習都會出現在 Jiki 上，而且還有更多。我們也把 3 小時的影片拆成 5 到 10 分鐘的小片段，讓你更容易觀看！",
+      "q5a2": "身為 Bootcamp 的成員，你將自動獲得終身 Jiki 進階版。這適用於最初的學會寫程式課程以及未來的課程。",
+      "intro": "這些是我們最常被問到的問題。這裡沒有解答你的疑問嗎？<link>寄封信給我們吧！</link>",
+      "q1a2": "<strong>Jiki 進階版</strong>為 <price></price>（依國家定價），可解鎖："
     },
     "latestNews": {
-      "heading": "�",
-      "byAuthor": "�",
-      "subheading": "�"
+      "heading": "最新消息",
+      "byAuthor": "作者：{name}",
+      "subheading": "在<link>我們的部落格</link>掌握 Jiki 的最新動態。"
     }
   },
   "premium": {
     "page": {
-      "heading": "�",
-      "subheading": "�"
+      "heading": "Jiki 進階版",
+      "subheading": "加速你邁向就業即戰力的路。解鎖所有課程、所有專案、不限次數的 AI 協助，以及 Jiki 提供的一切。"
     },
     "planPrice": {
-      "basic": "�",
-      "premium": "�",
-      "free": "�",
-      "perMonth": "�"
+      "basic": "基本版",
+      "premium": "進階版",
+      "free": "免費版",
+      "perMonth": "每月"
     },
     "planBadge": {
-      "free": "�",
-      "premium": "�"
+      "free": "免費版",
+      "premium": "進階版"
     },
     "table": {
-      "comparePlans": "�",
-      "comparePlansDesc": "�",
-      "checkNo": "�"
+      "comparePlans": "比較方案",
+      "comparePlansDesc": "以下是各方案包含的內容，讓你安心選擇。",
+      "checkNo": "✕"
     },
     "values": {
-      "oneConversation": "�",
-      "unlimited": "�",
-      "firstEpisodes": "�",
-      "fullAccess": "�",
-      "sampleEpisode": "�"
+      "oneConversation": "1 次對話",
+      "unlimited": "不限次數",
+      "firstEpisodes": "前幾集",
+      "fullAccess": "完整使用權",
+      "sampleEpisode": "試看集數"
     },
     "categories": {
-      "codingFundamentals": "�",
-      "buildWithJeremy": "�",
-      "support": "�",
-      "certificates": "�",
-      "experience": "�"
+      "codingFundamentals": "學會寫程式",
+      "buildWithJeremy": "學會打造",
+      "support": "支援",
+      "certificates": "證書",
+      "experience": "體驗"
     },
     "features": {
-      "codingExercisesTitle": "�",
-      "codingExercisesDesc": "�",
-      "conceptLibraryTitle": "�",
-      "conceptLibraryDesc": "�",
-      "jikiChallengesTitle": "�",
-      "jikiChallengesDesc": "�",
-      "askJikiTitle": "�",
-      "askJikiDesc": "�",
-      "buildingFundamentalsTitle": "�",
-      "buildingFundamentalsDesc": "�",
-      "howThingsWorkTitle": "�",
-      "howThingsWorkDesc": "�",
-      "earlyAccessTitle": "�",
-      "earlyAccessDesc": "�",
-      "communityForumsTitle": "�",
-      "communityForumsDesc": "�",
-      "livestreamsTitle": "�",
-      "livestreamsDesc": "�",
-      "certificatesTitle": "�",
-      "certificatesDesc": "�",
-      "adFreeTitle": "�",
-      "adFreeDesc": "�"
+      "codingExercisesTitle": "程式設計練習",
+      "codingExercisesDesc": "透過我們不斷擴充的互動式練習庫，從實作中學習。",
+      "conceptLibraryTitle": "完整概念庫",
+      "conceptLibraryDesc": "用一小段一小段的單元，涵蓋你需要知道的每個程式設計概念。",
+      "jikiChallengesTitle": "挑戰",
+      "jikiChallengesDesc": "挑戰更困難的題目，把你的能力再往上推。",
+      "askJikiTitle": "問 Jiki",
+      "askJikiDesc": "透過 Jiki 的 AI 提示與解說，幫你突破卡關。",
+      "buildingFundamentalsTitle": "打造基礎系列",
+      "buildingFundamentalsDesc": "看 Jeremy 從零開始打造一個網路平台：伺服器、資料庫、身分驗證等等。",
+      "howThingsWorkTitle": "運作原理系列",
+      "howThingsWorkDesc": "深入探討 Exercism 與 Jiki 中比較棘手的部分，以及它們為什麼這樣設計。",
+      "earlyAccessTitle": "新功能搶先體驗",
+      "earlyAccessDesc": "比其他人更早試用新功能。",
+      "communityForumsTitle": "社群論壇",
+      "communityForumsDesc": "提問，並和其他 Jiki 學員一起學習。",
+      "livestreamsTitle": "與 Jeremy 的直播問答",
+      "livestreamsDesc": "參加直播問答，讓 Jeremy 回答你關於寫程式與打造專案的問題。",
+      "certificatesTitle": "取得課程證書",
+      "certificatesDesc": "用可分享的證書展現你的學習成果。",
+      "adFreeTitle": "無廣告學習",
+      "adFreeDesc": "專心學習，不受干擾。"
     },
     "faq": {
-      "title": "�",
-      "q1": "�",
-      "a1": "�",
-      "q2": "�",
-      "a2": "�",
-      "q3": "�",
-      "a3": "�",
-      "q4": "�",
-      "q5": "�",
-      "a5": "�",
-      "a4": "�"
+      "title": "常見問題",
+      "q1": "我可以免費試用 Jiki 嗎？",
+      "a1": "可以！你可以免費註冊，想用基本方案多久就用多久。需要完整使用權時再升級到進階版，完全沒有壓力。",
+      "q2": "有最短合約期限嗎？",
+      "a2": "沒有最短合約期限。進階版按月計費，你可以隨時從帳號設定中取消。",
+      "q3": "如果我取消進階版訂閱，會發生什麼事？",
+      "a3": "在目前計費週期結束前，你仍保有進階版的存取權限，之後帳號會回到基本方案。你的學習進度不會遺失，只是無法再使用進階版專屬功能。",
+      "q4": "你們有提供學生或無法負擔進階版的優惠嗎？",
+      "q5": "我之後可以升級或降級嗎？",
+      "a5": "當然可以。你隨時都能從帳號中升級到進階版，想取消時也一樣簡單。",
+      "a4": "我們希望每個人都能使用 Jiki。如果費用對你來說是障礙，請<link>與我們聯絡</link>，我們會盡力協助。"
     },
     "cta": {
-      "alreadyPremiumTitle": "�",
-      "alreadyPremiumDesc": "�",
-      "upgradeTitle": "�",
-      "upgradeDesc": "�",
-      "upgradeButton": "�",
-      "freeTitle": "�",
-      "freeDesc": "�",
-      "freeButton": "�"
+      "alreadyPremiumTitle": "你已經是進階版會員",
+      "alreadyPremiumDesc": "謝謝你支持 Jiki，盡情使用所有內容吧！",
+      "upgradeTitle": "準備好加速學習了嗎？",
+      "upgradeDesc": "升級到進階版，解鎖 Jiki 提供的一切。",
+      "upgradeButton": "升級到進階版",
+      "freeTitle": "免費開始使用",
+      "freeDesc": "今天就可以免費開始，使用數百小時的免費內容。想更深入學習時，再升級到進階版。",
+      "freeButton": "免費註冊"
     },
     "publicPrice": {
-      "unavailable": "�"
+      "unavailable": "－"
     },
     "benefits": {
-      "unlimitedAiTitle": "�",
-      "unlimitedAiDescription": "�",
-      "unlimitedContentTitle": "�",
-      "unlimitedContentDescription": "�",
-      "certificatesTitle": "�",
-      "certificatesDescription": "�",
-      "adFreeTitle": "�",
-      "adFreeDescription": "�",
-      "prioritySupportTitle": "�",
-      "prioritySupportDescription": "�",
-      "earlyAccessTitle": "�",
-      "earlyAccessDescription": "�"
+      "unlimitedAiTitle": "不限次數的 AI 協助",
+      "unlimitedAiDescription": "卡住時隨時獲得 Jiki 的個人化指引",
+      "unlimitedContentTitle": "無限的學習內容",
+      "unlimitedContentDescription": "使用所有練習、專案與學習路徑",
+      "certificatesTitle": "證書",
+      "certificatesDescription": "完成課程時取得可分享的證書",
+      "adFreeTitle": "無廣告",
+      "adFreeDescription": "享受不受干擾的學習體驗",
+      "prioritySupportTitle": "優先支援",
+      "prioritySupportDescription": "需要協助時能更快得到回覆",
+      "earlyAccessTitle": "搶先體驗",
+      "earlyAccessDescription": "第一時間試用新功能與新內容"
     }
   },
   "roadmap": {
     "page": {
-      "heading": "�",
-      "subheading": "�",
-      "disclaimer": "�"
+      "heading": "發展藍圖",
+      "subheading": "Jiki 的未來方向。以每一季為單位，看看我們正在推出什麼、接下來要做什麼，以及還在構思中的點子。",
+      "disclaimer": "這份藍圖是我們目前計畫的縮影。隨著我們從社群中學習，優先順序會調整，因此日期與範圍都可能變動。"
     },
     "status": {
-      "shipped": "�",
-      "inProgress": "�",
-      "planned": "�"
+      "shipped": "已推出",
+      "inProgress": "進行中",
+      "planned": "規劃中"
     },
     "changelog": {
-      "title": "�",
-      "subtitle": "�",
+      "title": "更新紀錄",
+      "subtitle": "我們最近在 Jiki 上推出的改進。",
       "learnToBuildLaunch": {
-        "date": "�",
-        "title": "�",
-        "description": "�"
+        "date": "2026 年 7 月 11 日",
+        "title": "推出學會打造",
+        "description": "Jeremy 的全新系列已經上線，他會和學習者一起從零開始打造真實又實用的專案。"
       },
       "milestones6To10": {
-        "date": "�",
-        "title": "�",
-        "description": "�"
+        "date": "2026 年 7 月",
+        "title": "學會寫程式推出第 6 到第 10 個里程碑",
+        "description": "學會寫程式學習路徑上新增了五個里程碑，把學習旅程遠遠延伸到基礎知識之外。"
       },
       "jikiLaunch": {
-        "date": "�",
-        "title": "�",
-        "description": "�"
+        "date": "2026 年 6 月 7 日",
+        "title": "Jiki 正式上線！",
+        "description": "Jiki 正式上線了（雖然還是 beta 版！）"
       }
     },
     "phases": {
       "now": {
-        "label": "�",
-        "timeframe": "�",
-        "summary": "�",
+        "label": "現在",
+        "timeframe": "2026 年 7 月",
+        "summary": "這個月我們專注的事情。",
         "learnToBuild": {
-          "title": "�",
-          "description": "�"
+          "title": "推出學會打造",
+          "description": "Jeremy 的全新系列已經上線，他會和學習者一起從零開始打造真實又實用的專案。每個專案都拆成一小段一小段的課程，不只展示程式碼，也展示打造軟體過程中的思考、錯誤與決定。"
         },
         "launchBugs": {
-          "title": "�",
-          "description": "�"
+          "title": "解決上線後的各種問題",
+          "description": "Jiki 上線後，我們正隨著真實學習者的使用，一一消滅 bug、磨平粗糙的地方。你可以期待整個應用程式持續有各種小修正與使用體驗的改善。"
         },
         "earlyFeedback": {
-          "title": "�",
-          "description": "�"
+          "title": "回應初期回饋",
+          "description": "我們會閱讀每一則訊息、客服討論串與建議。最有影響力的回饋會被轉化成調整與小功能，讓體驗每週都在進步。"
         },
         "foundations": {
-          "title": "�",
-          "description": "�"
+          "title": "穩固基礎",
+          "description": "在幕後，我們正在強化可靠性、效能與可觀測性，好為下一波功能打下穩固的基礎。這些工作比較不顯眼，卻是我們現在最重要的事。"
         }
       },
       "next": {
-        "label": "�",
-        "timeframe": "�",
-        "summary": "�",
+        "label": "接下來",
+        "timeframe": "2026 年第三季",
+        "summary": "已設計完成，排入待辦。",
         "betaToLive": {
-          "title": "�",
-          "description": "�"
+          "title": "從 Beta 版正式進入正式版",
+          "description": "Jiki 目前是 beta 版。等上線的塵埃落定，我們會拿掉 beta 標籤，正式成為完整上線的產品，並提供更可靠的保證、更清楚的定價說明，以及更完善的新手引導流程。屆時我們也會寄出上線通知信給 Exercism 社群，並與合作夥伴一起展開宣傳。"
         },
         "deepDiveVideos": {
-          "title": "�",
-          "description": "�"
+          "title": "新增深入探索影片",
+          "description": "比核心課程更進一步的長篇影片，深入探索各種概念。適合想了解「為什麼」而不只是「怎麼做」，並想看看這些概念如何連結到更廣大的程式設計世界的學習者。"
         },
         "newLanguages": {
-          "title": "�",
-          "description": "�"
+          "title": "推出多種新語言",
+          "description": "從八月開始，我們要把 Jiki 帶給使用自己語言的學習者，翻譯整個介面與課程內容，而不只是行銷頁面。這一切會從 7 月 31 日到 8 月 2 日週末的<link>社群翻譯松</link>開始。"
         },
         "pythonVersion": {
-          "title": "�",
-          "description": "�"
+          "title": "推出 Python 版本",
+          "description": "九月登場，完整的 Python 學習路徑，深度與我們的 JavaScript 課程相同。相同的練習理念、相同的逐步視覺化工具、相同的精緻程度，只是改用 Python 作為教學語言。"
         }
       },
       "future": {
-        "label": "�",
-        "timeframe": "�",
-        "summary": "�",
+        "label": "未來",
+        "timeframe": "2026 年第四季",
+        "summary": "即將到來，並會隨著我們的學習而調整。",
         "moreLanguages": {
-          "title": "�",
-          "description": "�"
+          "title": "新增更多語言",
+          "description": "在八月的第一波之後，我們會在今年剩下的時間繼續把 Jiki 翻譯成更多語言，讓更多學習者能用自己的母語使用這個平台。我們會依據社群的需求，以及哪裡能帶來最大影響來決定優先順序。"
         },
         "sql": {
-          "title": "�",
-          "description": "�"
+          "title": "推出 SQL",
+          "description": "今年稍晚，我們會在 Jiki 中加入 SQL，讓學習者用實際動手的方式了解資料庫與查詢，並採用與課程其他部分相同的逐步說明、從做中學的做法。"
         }
       }
     }
   },
   "misc": {
     "chooseLanguage": {
-      "selectLanguage": "�",
-      "backToVideo": "�",
-      "tooltip": "�",
-      "saving": "�",
-      "confirmChoice": "�",
-      "questionTitle": "�",
-      "javascript": "�",
-      "python": "�",
-      "chooseForMe": "�",
-      "cantChange": "�",
-      "noVideo": "�",
-      "videoInstruction": "�"
+      "selectLanguage": "選擇語言",
+      "backToVideo": "回到影片",
+      "tooltip": "選擇其中一個選項以繼續。",
+      "saving": "儲存中...",
+      "confirmChoice": "確認選擇",
+      "questionTitle": "選擇你想學的語言？",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "chooseForMe": "幫我選",
+      "cantChange": "選定後就無法更改。",
+      "noVideo": "沒有可用的影片",
+      "videoInstruction": "看完影片後選擇你的語言。已經知道了嗎？<skip>跳過影片</skip>"
     },
     "deleteAccount": {
-      "deletedTitle": "�",
-      "deletedSubtitle": "�",
-      "deletingTitle": "�",
-      "deletingSubtitle": "�",
-      "errorTitle": "�",
-      "errorSubtitle": "�",
-      "expiredTitle": "�",
-      "expiredSubtitle": "�",
-      "expiredSecondary": "�",
-      "goHome": "�"
+      "deletedTitle": "你的帳號已刪除",
+      "deletedSubtitle": "很遺憾看到你離開。希望你在 Jiki 有愉快的體驗。祝你的程式設計之旅一切順利！",
+      "deletingTitle": "正在刪除你的帳號",
+      "deletingSubtitle": "請稍候",
+      "errorTitle": "發生錯誤",
+      "errorSubtitle": "刪除帳號時發生錯誤。我們已收到通知，將會手動為你刪除。",
+      "expiredTitle": "連結已過期或無效",
+      "expiredSubtitle": "這個刪除連結已失效。可能已經使用過或已過期。",
+      "expiredSecondary": "如果你仍想刪除帳號，請登入並從設定中索取新的刪除連結。",
+      "goHome": "前往首頁"
     },
     "errorPage": {
-      "serverErrorTitle": "�",
-      "serverErrorMessage": "�",
-      "serverErrorAction": "�",
-      "notFoundTitle": "�",
-      "notFoundMessage": "�",
-      "notFoundAction": "�"
+      "serverErrorTitle": "發生錯誤",
+      "serverErrorMessage": "我們遇到了非預期的錯誤。很抱歉！",
+      "serverErrorAction": "再試一次",
+      "notFoundTitle": "找不到頁面",
+      "notFoundMessage": "我們好像找不到那個頁面。抱歉！",
+      "notFoundAction": "帶我回首頁"
     },
     "testimonialsPage": {
-      "title": "�",
-      "subtitle": "�",
-      "quoteOpenAlt": "�",
-      "quoteCloseAlt": "�"
+      "title": "學員見證",
+      "subtitle": "我們問了學員喜不喜歡這門課程。以下是他們的說法...",
+      "quoteOpenAlt": "「",
+      "quoteCloseAlt": "」"
     }
   },
   "concepts": {
@@ -979,7 +1010,7 @@
     "error": {
       "notFound": "找不到概念。",
       "back": "回到概念列表",
-      "loadFailed": "�"
+      "loadFailed": "概念載入失敗。請稍後再試。"
     },
     "relatedConcepts": {
       "heading": "相關概念",
@@ -989,8 +1020,8 @@
     "relatedExercises": {
       "heading": "相關練習",
       "description": "這些練習是讓你實作這個概念的好方法喔！",
-      "signupPrompt": "<link>註冊</link>來解開它們吧！",
-      "locked": "這個練習已上鎖"
+      "locked": "這個練習已上鎖",
+      "signupPrompt": "<link>註冊</link>來解開它們吧！"
     },
     "relatedChallenges": {
       "heading": "相關挑戰",
@@ -1116,169 +1147,172 @@
     "guides": {
       "title": "指南 - Jiki",
       "description": "逐步指南，幫助你設定工具並充分利用 Jiki。"
+    },
+    "exercises": {
+      "notFound": "找不到練習"
     }
   },
   "apiErrors": {
-    "unknown": "�",
+    "unknown": "發生錯誤。請再試一次。",
     "unauthenticated": "您需要先登入或註冊後才能繼續。",
     "invalid_credentials": "電子信箱或密碼錯誤。",
     "unconfirmed": "您的帳號需要經過驗證後，才能繼續。",
-    "forbidden": "�",
-    "access_denied": "�",
-    "premium_required": "�",
-    "invalid_signature": "�",
-    "invalid_captcha": "�",
-    "invalid_token": "�",
-    "token_expired": "�",
+    "forbidden": "你沒有存取這項內容的權限",
+    "access_denied": "存取遭拒",
+    "premium_required": "這項功能僅限進階版會員使用",
+    "invalid_signature": "簽章無效",
+    "invalid_captcha": "我們無法確認你是否為真人。請再試一次。",
+    "invalid_token": "該連結無效或已過期",
+    "token_expired": "該連結已過期",
     "session_expired": "您的登入時效過期，請重新登入。",
-    "invalid_otp": "�",
-    "invalid_unsubscribe_token": "�",
-    "not_found": "�",
-    "lesson_not_found": "�",
-    "level_not_found": "�",
-    "course_not_found": "�",
-    "user_not_found": "�",
-    "challenge_not_found": "�",
-    "concept_not_found": "�",
-    "badge_not_found": "�",
-    "user_challenge_not_found": "�",
-    "user_video_not_found": "�",
-    "user_lesson_not_found": "�",
-    "user_level_not_found": "�",
-    "validation_error": "�",
-    "duplicate_filename": "�",
-    "file_too_large": "�",
-    "too_many_files": "�",
-    "invalid_submission": "�",
-    "lesson_in_progress": "�",
-    "lesson_not_unlocked": "�",
-    "level_not_completed": "�",
-    "challenge_locked": "�",
-    "lesson_incomplete": "�",
-    "concept_locked": "�",
-    "language_already_chosen": "�",
-    "invalid_language": "�",
-    "missing_course": "�",
-    "invalid_password": "�",
-    "locale_update_failed": "�",
-    "name_update_failed": "�",
-    "email_update_failed": "�",
-    "password_update_failed": "�",
-    "handle_update_failed": "�",
-    "notification_update_failed": "�",
-    "streaks_update_failed": "�",
-    "flag_invalid": "�",
-    "no_image_provided": "�",
-    "invalid_image_type": "�",
-    "invalid_avatar": "�",
-    "avatar_too_large": "�",
-    "translation_error": "�",
-    "stripe_error": "�",
-    "exercism_unavailable": "�",
-    "no_exercism_link": "�",
-    "invalid_product": "�",
-    "existing_subscription": "�",
-    "invalid_return_url": "�",
-    "checkout_failed": "�",
-    "no_customer": "�",
-    "portal_failed": "�",
-    "missing_session_id": "�",
-    "invalid_session": "�",
-    "verification_failed": "�",
-    "no_subscription": "�",
-    "same_interval": "�",
-    "invalid_interval": "�",
-    "update_failed": "�",
-    "invalid_request": "�",
-    "cancel_failed": "�",
-    "not_cancelling": "�",
-    "reactivate_failed": "�",
-    "checkout_payment_incomplete": "�",
-    "unauthorized": "�",
+    "invalid_otp": "驗證碼錯誤",
+    "invalid_unsubscribe_token": "該取消訂閱連結無效或已過期",
+    "not_found": "我們找不到你要找的內容",
+    "lesson_not_found": "我們找不到那個單元",
+    "level_not_found": "我們找不到那個關卡",
+    "course_not_found": "我們找不到那門課程",
+    "user_not_found": "我們找不到那個使用者",
+    "challenge_not_found": "我們找不到那個挑戰",
+    "concept_not_found": "我們找不到那個概念",
+    "badge_not_found": "我們找不到那個徽章",
+    "user_challenge_not_found": "我們找不到你在那個挑戰的進度",
+    "user_video_not_found": "我們找不到你在那部影片的進度",
+    "user_lesson_not_found": "我們找不到你在那個單元的進度",
+    "user_level_not_found": "我們找不到你在那個關卡的進度",
+    "validation_error": "請檢查你輸入的內容後再試一次。",
+    "duplicate_filename": "你重複使用了同一個檔名：{filenames}",
+    "file_too_large": "{filename} 太大。檔案上限為 {maxBytes} 位元組。",
+    "too_many_files": "你新增了 {count} 個檔案。最多可以提交 {max} 個。",
+    "invalid_submission": "我們無法接受這次提交。",
+    "lesson_in_progress": "請先完成目前的單元，再開始新的單元",
+    "lesson_not_unlocked": "請先完成這個關卡中較早的單元",
+    "level_not_completed": "請先完成你目前的關卡",
+    "challenge_locked": "請先完成可解鎖這個挑戰的單元",
+    "lesson_incomplete": "請先完成你目前的單元",
+    "concept_locked": "這個概念尚未解鎖",
+    "language_already_chosen": "你已經選擇過語言了",
+    "invalid_language": "那不是你可以選擇的語言",
+    "missing_course": "我們無法判斷你指的是哪門課程",
+    "invalid_password": "你目前的密碼不正確",
+    "locale_update_failed": "我們無法變更你的語言",
+    "name_update_failed": "我們無法變更你的姓名",
+    "email_update_failed": "我們無法變更你的電子郵件地址",
+    "password_update_failed": "我們無法變更你的密碼",
+    "handle_update_failed": "我們無法變更你的使用者代號",
+    "notification_update_failed": "我們無法變更你的通知設定",
+    "streaks_update_failed": "我們無法變更你的連續學習天數設定",
+    "flag_invalid": "那不是你可以變更的設定",
+    "no_image_provided": "請先選擇圖片",
+    "invalid_image_type": "請選擇 JPEG、PNG、GIF 或 WebP 圖片",
+    "invalid_avatar": "我們無法將這張圖片設為你的頭像",
+    "avatar_too_large": "這張圖片太大，無法設為你的頭像",
+    "translation_error": "我們無法翻譯那段內容",
+    "stripe_error": "處理你的付款時發生錯誤。請再試一次。",
+    "exercism_unavailable": "我們無法連線到 Exercism。請稍後再試。",
+    "no_exercism_link": "這個帳號尚未連結 Exercism",
+    "invalid_product": "那不是可以購買的方案",
+    "existing_subscription": "你已經有使用中的訂閱",
+    "invalid_return_url": "我們無法把你帶回正確的頁面",
+    "checkout_failed": "我們無法開始你的結帳流程。請再試一次。",
+    "no_customer": "我們找不到你的帳單資訊",
+    "portal_failed": "我們無法開啟你的帳單入口。請再試一次。",
+    "missing_session_id": "我們找不到你的結帳工作階段",
+    "invalid_session": "該結帳工作階段無效",
+    "verification_failed": "我們無法驗證你的付款",
+    "no_subscription": "你目前沒有使用中的訂閱",
+    "same_interval": "你已經是以這種方式計費",
+    "invalid_interval": "那不是你可以選擇的計費週期",
+    "update_failed": "我們無法更新你的訂閱。請再試一次。",
+    "invalid_request": "我們無法處理該請求",
+    "cancel_failed": "我們無法取消你的訂閱。請再試一次。",
+    "not_cancelling": "你的訂閱並未排定取消",
+    "reactivate_failed": "我們無法重新啟用你的訂閱。請再試一次。",
+    "checkout_payment_incomplete": "你的付款未完成。請再試一次。",
+    "unauthorized": "你沒有存取這項內容的權限",
     "fields": {
-      "email": "�",
-      "password": "�",
-      "password_confirmation": "�",
-      "current_password": "�",
-      "name": "�",
-      "handle": "�",
-      "locale": "�",
-      "enabled": "�"
+      "email": "電子郵件地址",
+      "password": "密碼",
+      "password_confirmation": "密碼確認",
+      "current_password": "目前的密碼",
+      "name": "姓名",
+      "handle": "使用者代號",
+      "locale": "語言",
+      "enabled": "該設定"
     },
     "validation": {
-      "blank": "�",
-      "invalid": "�",
-      "taken": "�",
-      "confirmation": "�",
-      "too_short": "�",
-      "too_long": "�",
-      "wrong_length": "�",
-      "inclusion": "�",
-      "exclusion": "�",
-      "not_a_number": "�",
-      "accepted": "�",
-      "present": "�",
-      "boolean_required": "�"
+      "blank": "{field}不能留空。",
+      "invalid": "{field}無效。",
+      "taken": "{field}已經被使用了。",
+      "confirmation": "{field}不一致。",
+      "too_short": "{field}至少需要 {count, plural, other {# 個字元}}。",
+      "too_long": "{field}最多只能有 {count, plural, other {# 個字元}}。",
+      "wrong_length": "{field}必須正好是 {count, plural, other {# 個字元}}。",
+      "inclusion": "{field}不在你可以選擇的選項中。",
+      "exclusion": "{field}無法使用。",
+      "not_a_number": "{field}必須是數字。",
+      "accepted": "必須接受{field}。",
+      "present": "{field}必須留空。",
+      "boolean_required": "{field}只能是開啟或關閉。"
     },
     "reasons": {
       "invalid_submission": {
-        "no_files": "�",
-        "filename_required": "�",
-        "code_required": "�"
+        "no_files": "提交前請至少新增一個檔案。",
+        "filename_required": "每個檔案都需要有名稱。",
+        "code_required": "提交前請先寫一些程式碼。"
       }
     },
     "subscriptions": {
-      "unauthorized": "�"
+      "unauthorized": "該結帳工作階段屬於另一個帳號"
     },
     "accountDeletion": {
-      "invalid_token": "�",
-      "token_expired": "�",
-      "stripe_error": "�"
+      "invalid_token": "這個帳號刪除連結無效或已過期",
+      "token_expired": "這個帳號刪除連結已過期",
+      "stripe_error": "我們無法取消你的訂閱，因此尚未刪除你的帳號。請再試一次或聯絡支援團隊。"
     }
   },
   "toasts": {
     "subscription": {
-      "loginRequired": "�",
-      "checkoutFailed": "�",
-      "alreadyPremium": "�",
-      "checkoutSessionFailed": "�",
-      "portalFailed": "�",
-      "canceled": "�",
-      "cancelFailed": "�",
-      "reactivated": "�",
-      "reactivateFailed": "�",
-      "paymentPortalFailed": "�"
+      "loginRequired": "請登入以升級你的帳號",
+      "checkoutFailed": "無法開始結帳流程。請再試一次。",
+      "alreadyPremium": "你已經是進階版會員",
+      "checkoutSessionFailed": "無法建立結帳工作階段",
+      "portalFailed": "無法開啟客戶入口",
+      "canceled": "訂閱已取消。你的使用權限將持續到 {date}",
+      "cancelFailed": "取消訂閱失敗",
+      "reactivated": "訂閱已重新啟用！",
+      "reactivateFailed": "重新啟用訂閱失敗",
+      "paymentPortalFailed": "無法開啟付款入口"
     },
     "auth": {
-      "sessionExpired": "�"
+      "sessionExpired": "你的工作階段已過期。請重新登入。"
     },
     "logout": {
-      "loading": "�",
-      "success": "�",
-      "failed": "�"
+      "loading": "登出中...",
+      "success": "已成功登出",
+      "failed": "登出失敗，無法連線到伺服器"
     },
     "avatar": {
-      "updated": "�",
-      "uploadFailed": "�",
-      "networkError": "�",
-      "invalidImageType": "�",
-      "imageTooLarge": "�"
+      "updated": "頭像已更新",
+      "uploadFailed": "頭像上傳失敗",
+      "networkError": "網路錯誤。請再試一次。",
+      "invalidImageType": "請選擇 JPEG、PNG、GIF 或 WebP 圖片",
+      "imageTooLarge": "圖片必須小於 5MB"
     },
     "settings": {
-      "fetchFailed": "�",
-      "settingUpdated": "�",
-      "updateFailed": "�",
-      "notificationUpdateFailed": "�",
-      "streaksUpdateFailed": "�"
+      "fetchFailed": "無法取得設定",
+      "settingUpdated": "{field, select, name {姓名} email {電子郵件} password {密碼} locale {語言偏好} handle {使用者代號} other {{field}}} 更新成功",
+      "updateFailed": "更新失敗",
+      "notificationUpdateFailed": "無法更新通知偏好設定",
+      "streaksUpdateFailed": "無法更新連續學習天數設定"
     },
     "exercise": {
-      "submissionFailed": "�",
-      "chatSaveFailed": "�",
-      "chatSaveCaptchaFailed": "�",
-      "lessonSaveError": "�"
+      "submissionFailed": "無法儲存你的提交。請再試一次。",
+      "chatSaveFailed": "無法儲存這則訊息。你回來時將不會看到它。",
+      "chatSaveCaptchaFailed": "儲存時驗證失敗。你回來時將不會看到這則訊息。",
+      "lessonSaveError": "抱歉，無法完成這個單元。請再試一次。如果問題持續發生，請在<link>https://forum.jiki.io</link>回報"
     },
     "lesson": {
-      "loadFailed": "�"
+      "loadFailed": "抱歉，我們無法開啟那個單元。請再試一次。"
     }
   },
   "modals": {
@@ -1409,6 +1443,14 @@
       "whatHappened": "<strong>「發生了什麼事？」提示</strong> —— 逐行檢查你的程式碼，找出哪裡出錯了",
       "revealHints": "<strong>顯示所有提示</strong> —— 閱讀上方所有提示來獲得指引"
     },
+    "codeSyncChoice": {
+      "title": "你想使用哪個版本的程式碼？",
+      "intro": "有另一台裝置儲存了較新版本的程式碼。請選擇要繼續使用的版本，在你下次執行程式之前，另一個版本都不會被覆寫。",
+      "localLabel": "這台裝置上的版本",
+      "serverLabel": "最新儲存的版本",
+      "useLocal": "使用這台裝置的程式碼",
+      "useServer": "使用最新版本"
+    },
     "paymentConfirming": {
       "title": "正在確認你的付款…",
       "description": "請稍候，我們正在與 Stripe 確認你的付款。這通常只需要一點時間。"
@@ -1516,22 +1558,28 @@
       "otherLabel": "Outlook 與其他日曆",
       "otherHelp": "複製此連結並將其新增為訂閱日曆。",
       "copied": "已複製"
+    },
+    "exerciseIntroVideo": {
+      "title": "歡迎來到你的第一個繪圖練習",
+      "intro": "看看這段簡短介紹，了解繪圖練習怎麼運作、又該怎麼解。你也可以在說明的最下方看到這段影片。",
+      "close": "我們開始吧",
+      "watchAlt": "觀看介紹"
     }
   },
   "challenge": {
-    "backToChallenges": "�",
+    "backToChallenges": "回到挑戰列表",
     "error": {
-      "message": "�"
+      "message": "錯誤：{error}"
     },
-    "loadError": "�",
-    "documentTitle": "�",
+    "loadError": "挑戰載入失敗",
+    "documentTitle": "{title} - 挑戰 - Jiki",
     "locked": {
-      "title": "�",
-      "description": "�"
+      "title": "挑戰已鎖定",
+      "description": "這個挑戰目前是鎖定的。完成先前的單元即可解鎖。"
     },
     "premiumRequired": {
-      "title": "�",
-      "description": "�"
+      "title": "需要進階版",
+      "description": "挑戰是進階版功能。升級你的方案即可開始打造。"
     }
   },
   "dashboard": {
@@ -1632,8 +1680,8 @@
       "confirmReveal": "你確定要顯示這個提示嗎？",
       "confirmNo": "先不要",
       "confirmYes": "是的",
-      "deepDiveHeading": "深度解析",
-      "deepDiveDescription": "還是卡住了嗎？觀看 Jeremy 解開這個練習的深度解析影片吧。",
+      "deepDiveHeading": "看 Jeremy 解這個練習",
+      "deepDiveDescription": "還是卡住了嗎？跟著 Jeremy 一起做，<strong>直到你不再卡關</strong>，再自己完成剩下的練習吧。",
       "walkthroughThumbnailAlt": "深度解析影片縮圖"
     },
     "chatHeader": {
@@ -1686,7 +1734,8 @@
       "libraryEmpty": "隨著你完成練習，你將會在這裡看到各種概念。這些將成為你的參考資料，幫助你複習學過的內容。",
       "libraryChallenges": "你可以在這個練習中使用目前學過的任何概念。當你想複習學過的內容時，可以回頭參考你的概念資料庫。",
       "libraryWithConcepts": "這些是這個練習中使用的關鍵概念。利用它們來複習你目前學過的內容吧。",
-      "openConceptLibrary": "開啟概念資料庫"
+      "openConceptLibrary": "開啟概念資料庫",
+      "introVideoTitle": "影片介紹"
     },
     "scrubber": {
       "previousFrame": "上一個影格",
@@ -1879,133 +1928,133 @@
   },
   "projects": {
     "projectCard": {
-      "comingSoon": "�",
-      "comingSoonLabel": "�"
+      "comingSoon": "即將推出",
+      "comingSoonLabel": "即將推出"
     },
     "episodeCard": {
-      "premium": "�"
+      "premium": "進階版"
     },
     "episodeSummary": {
-      "heading": "�",
-      "whereWeStart": "�",
-      "whereWeEnd": "�",
-      "whatWeCover": "�"
+      "heading": "本集摘要",
+      "whereWeStart": "起點",
+      "whereWeEnd": "終點",
+      "whatWeCover": "涵蓋內容"
     },
     "projectPage": {
-      "backToAllProjects": "�"
+      "backToAllProjects": "← 回到<strong>所有專案</strong>"
     },
     "episodePage": {
-      "backToProject": "�",
-      "relevantGuidesDescription": "�"
+      "backToProject": "← 回到<strong>{title}</strong>",
+      "relevantGuidesDescription": "在解決這個步驟時可能對你有幫助的指南。"
     },
     "relevantGuides": {
-      "heading": "�"
+      "heading": "相關指南"
     }
   },
   "guides": {
     "guidesContent": {
-      "pageHeading": "�",
-      "searchPlaceholder": "�",
-      "filterAll": "�",
-      "noResultsTitle": "�",
-      "noResultsMessage": "�"
+      "pageHeading": "指南與操作說明",
+      "searchPlaceholder": "搜尋指南...",
+      "filterAll": "全部",
+      "noResultsTitle": "找不到符合「{query}」的結果",
+      "noResultsMessage": "試試其他搜尋關鍵字，或直接瀏覽指南。"
     },
     "guideCard": {
-      "premium": "�"
+      "premium": "進階版"
     },
     "tags": {
-      "editors": "�",
-      "installation": "�",
-      "agentic-coding": "�",
-      "front-end-basics": "�"
+      "editors": "編輯器",
+      "installation": "安裝",
+      "agentic-coding": "代理式程式設計",
+      "front-end-basics": "前端基礎"
     },
     "guideBreadcrumb": {
-      "guides": "�"
+      "guides": "指南"
     },
     "premiumGate": {
-      "lockedTitle": "�",
-      "lockedSubtitle": "�",
-      "unlockButton": "�"
+      "lockedTitle": "這份指南是給進階版會員的",
+      "lockedSubtitle": "解鎖這份指南以及 Jiki 進階版提供的一切，繼續閱讀。",
+      "unlockButton": "用進階版解鎖"
     },
     "relatedGuides": {
-      "heading": "�"
+      "heading": "相關指南"
     },
     "featuredInProjects": {
-      "heading": "�"
+      "heading": "專案中的精選指南"
     },
     "metadata": {
-      "notFoundTitle": "�"
+      "notFoundTitle": "找不到指南"
     }
   },
   "unsubscribe": {
-    "title": "�",
-    "subtitle": "�",
-    "updateError": "�",
-    "toggleAria": "�",
+    "title": "電子郵件偏好設定",
+    "subtitle": "管理我們與你聯繫的方式與時機。",
+    "updateError": "無法更新你的偏好設定。請再試一次。",
+    "toggleAria": "切換 {name}",
     "manage": {
-      "title": "�",
-      "description": "�",
-      "updated": "�",
-      "save": "�"
+      "title": "管理你的通知",
+      "description": "逐一開啟或關閉各類通知，精細調整你想收到哪些電子郵件。",
+      "updated": "你的電子郵件偏好設定已更新。",
+      "save": "變更偏好設定"
     },
     "all": {
-      "title": "�",
-      "description": "�",
-      "success": "�",
-      "button": "�"
+      "title": "取消訂閱所有電子郵件",
+      "description": "想停止接收 Jiki 的所有電子郵件嗎？這會讓你取消訂閱所有行銷、通知與提醒郵件。",
+      "success": "你已取消訂閱所有 Jiki 電子郵件。",
+      "button": "取消訂閱所有電子郵件"
     },
     "email": {
-      "alreadyTitle": "�",
-      "alreadyDescription": "�",
-      "title": "�",
-      "description": "�",
-      "success": "�",
-      "button": "�",
-      "fallbackType": "�"
+      "alreadyTitle": "已經取消訂閱",
+      "alreadyDescription": "你目前並未訂閱<highlight>{emailType}</highlight>電子郵件。",
+      "title": "取消訂閱這類電子郵件",
+      "description": "不想再收到這類電子郵件了嗎？點擊下方按鈕，取消訂閱<highlight>{emailType}</highlight>電子郵件。",
+      "success": "你已取消訂閱{emailType}。",
+      "button": "取消訂閱{emailType}",
+      "fallbackType": "這些"
     },
     "types": {
       "newsletters": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "產品更新",
+        "description": "隨時掌握新功能與改進。",
+        "shortLabel": "產品更新"
       },
       "event_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "活動通知",
+        "description": "收到即將開始的直播與活動通知。",
+        "shortLabel": "活動通知"
       },
       "milestone_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "成就通知",
+        "description": "當你解鎖新技能或成就時收到通知。",
+        "shortLabel": "成就通知"
       },
       "activity_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "動態電子郵件",
+        "description": "依據你的動態發送的通知，例如解鎖徽章與完成挑戰。",
+        "shortLabel": "動態電子郵件"
       },
       "onboarding_emails": {
-        "title": "�",
-        "description": "�",
-        "shortLabel": "�"
+        "title": "新手入門電子郵件",
+        "description": "充分善用 Jiki 的訣竅與指引。",
+        "shortLabel": "新手入門電子郵件"
       }
     }
   },
   "achievements": {
-    "title": "�",
-    "description": "�",
-    "tabBadges": "�",
-    "tabCertificates": "�",
-    "loading": "�",
-    "error": "�",
-    "certificatesEmptyTitle": "�",
-    "certificatesEmptyBody": "�",
+    "title": "成就",
+    "description": "每個徽章都訴說著你程式設計旅程中的一段故事。",
+    "tabBadges": "徽章",
+    "tabCertificates": "證書",
+    "loading": "正在載入成就...",
+    "error": "錯誤：{error}",
+    "certificatesEmptyTitle": "還沒有證書",
+    "certificatesEmptyBody": "完成課程即可取得能展現你技能的證書。完成一門課程後，你的證書就會出現在這裡。",
     "badge": {
-      "locked": "�",
-      "earnedToday": "�",
-      "earnedRelative": "�"
+      "locked": "已鎖定",
+      "earnedToday": "今天獲得",
+      "earnedRelative": "{distance}獲得"
     },
-    "loadError": "�"
+    "loadError": "徽章載入失敗"
   },
   "challenges": {
     "title": "挑戰",
@@ -2036,29 +2085,29 @@
       "completedTitle": "尚未完成任何挑戰",
       "completedDescription": "完成你的第一個挑戰，它就會顯示在這裡。繼續進行你手邊的挑戰，達成這個里程碑吧。"
     },
-    "loadError": "�"
+    "loadError": "挑戰載入失敗"
   },
   "subscription": {
     "tiers": {
       "standard": {
-        "name": "�",
-        "description": "�",
+        "name": "免費版",
+        "description": "最適合剛開始的你",
         "features": {
-          "freeCourses": "�",
-          "basicExercises": "�",
-          "communitySupport": "�",
-          "aiHelpPerMonth": "�"
+          "freeCourses": "可使用免費課程",
+          "basicExercises": "基礎程式設計練習",
+          "communitySupport": "社群支援",
+          "aiHelpPerMonth": "每月 1 次 AI 協助"
         }
       },
       "premium": {
-        "name": "�",
-        "description": "�",
+        "name": "進階版",
+        "description": "解鎖進階功能",
         "features": {
-          "allFreeFeatures": "�",
-          "unlimitedAi": "�",
-          "allExercises": "�",
-          "certificates": "�",
-          "adFree": "�"
+          "allFreeFeatures": "所有免費方案的功能",
+          "unlimitedAi": "不限次數的 AI 協助",
+          "allExercises": "可使用所有練習",
+          "certificates": "證書",
+          "adFree": "無廣告體驗"
         }
       }
     }
@@ -2078,11 +2127,11 @@
       "byAuthor": "作者：{name}",
       "readFullArticle": "閱讀全文 →"
     },
-    "recentPosts": {
-      "heading": "近期文章"
-    },
     "relatedPosts": {
       "heading": "相關文章"
+    },
+    "recentPosts": {
+      "heading": "近期文章"
     },
     "cta": {
       "minimalTitle": "免費試用 Jiki",
@@ -2115,10 +2164,10 @@
       "help": "找不到你要的內容嗎？試試看我們的<blogs>部落格</blogs>、<faqs>常見問題</faqs>、<support>聯絡客服</support>，或者在我們的<community>社群</community>中發問吧。"
     },
     "tags": {
-      "legal": "�",
-      "premium": "�",
-      "exercises": "�",
-      "videos": "�"
+      "legal": "法律",
+      "premium": "進階版",
+      "exercises": "練習",
+      "videos": "影片"
     },
     "cta": {
       "minimalTitle": "免費試用 Jiki",
@@ -2169,6 +2218,24 @@
       "transaction_not_allowed": "Your card issuer doesn't allow this payment. Please contact them to find out why.",
       "try_again_later": "Your card was declined. Please try again in a few minutes.",
       "withdrawal_count_limit_exceeded": "Your card has hit its limit. Please try a different card, or contact your card issuer."
+    }
+  },
+  "exercises": {
+    "public": {
+      "eyebrow": "程式設計練習",
+      "ctaTitle": "想解開這個練習嗎？",
+      "ctaSubtitle": "建立免費的 Jiki 帳號，寫下程式碼、執行它，看著它活起來。",
+      "ctaButton": "免費註冊",
+      "ctaFootnote": "已經有帳號了嗎？<login>登入</login>。",
+      "video": {
+        "header": "觀看深入探索",
+        "description": "Jeremy 會一步步帶你走過這個練習。",
+        "playAriaLabel": "播放練習深入探索影片"
+      },
+      "functions": {
+        "heading": "你會用到的函式",
+        "description": "這個練習提供給你的基礎元件。"
+      }
     }
   }
 }

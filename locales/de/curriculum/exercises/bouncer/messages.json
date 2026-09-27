@@ -1,56 +1,56 @@
 {
   "checks": {
-    "age25NotLetIn": "�",
-    "age18LetIn": "�",
-    "age21NotLetIn": "�",
-    "age20LetIn": "�"
+    "age25NotLetIn": "Die Person ist 25. Sie hätte hineingelassen werden müssen, wurde aber nicht hineingelassen.",
+    "age18LetIn": "Die Person ist 18. Sie hätte nicht hineingelassen werden dürfen, wurde aber hineingelassen.",
+    "age21NotLetIn": "Die Person ist 21. Sie hätte hineingelassen werden müssen, wurde aber nicht hineingelassen.",
+    "age20LetIn": "Die Person ist genau 20, also nicht über 20. Sie hätte nicht hineingelassen werden dürfen, wurde aber hineingelassen."
   },
   "tasks": {
     "checkAge": {
-      "name": "�",
-      "description": "�"
+      "name": "Prüfe das Alter der Person",
+      "description": "Frag das Alter der Person ab und prüfe, ob sie über 20 ist. Wenn ja, lass sie hinein."
     }
   },
   "scenarios": {
     "age25": {
-      "name": "�",
-      "description": "�"
+      "name": "Alter 25",
+      "description": "Die Person ist 25 Jahre alt. Sie sollte hineingelassen werden."
     },
     "age18": {
-      "name": "�",
-      "description": "�"
+      "name": "Alter 18",
+      "description": "Die Person ist 18 Jahre alt. Sie sollte nicht hineingelassen werden."
     },
     "age21": {
-      "name": "�",
-      "description": "�"
+      "name": "Alter 21",
+      "description": "Die Person ist 21 Jahre alt, also knapp über 20. Sie sollte hineingelassen werden."
     },
     "age20": {
-      "name": "�",
-      "description": "�"
+      "name": "Alter 20",
+      "description": "Die Person ist genau 20, also nicht über 20. Sie sollte nicht hineingelassen werden."
     }
   },
   "hints": {
     "askAge": {
-      "question": "�",
-      "answer": "�"
+      "question": "Woher weiß ich, wie alt die Person ist?",
+      "answer": "Nutze die Funktion `askAge()`. Sie gibt in jedem Szenario einen anderen Wert zurück."
     },
     "ifStatement": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie kann ich je nach Situation unterschiedlich reagieren?",
+      "answer": "Nutze eine `if`-Anweisung. Schau dir das Konzept an, wenn du mehr Hilfe brauchst!"
     }
   },
   "describers": {
-    "askAge": "�",
-    "letIn": "�"
+    "askAge": "hat das Alter der Person abgefragt",
+    "letIn": "hat die Person hineingelassen"
   },
   "functions": {
     "askAge": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt das **Alter** der Person zurück, die draußen wartet.",
+      "category": "Information"
     },
     "letIn": {
-      "description": "�",
-      "category": "�"
+      "description": "Lässt die Person hinein.",
+      "category": "Aktion"
     }
   }
 }

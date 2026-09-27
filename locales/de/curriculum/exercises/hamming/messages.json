@@ -1,55 +1,55 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "Du hast mehr Zeilen benutzt als nötig. Schau, ob du es kürzer hinbekommst."
   },
   "tasks": {
     "calculateHammingDistance": {
-      "name": "�",
-      "description": "�"
+      "name": "Berechne die Hamming-Distanz",
+      "description": "Schreibe eine Funktion, die die Hamming-Distanz zwischen zwei gleich langen DNA-Strängen berechnet. Die Hamming-Distanz ist die Anzahl der Positionen, an denen sich die entsprechenden Zeichen unterscheiden."
     },
     "solveInElevenLines": {
-      "name": "�",
-      "description": "�"
+      "name": "In elf Zeilen Code lösen",
+      "description": "Schaffst du es, das mit höchstens elf Zeilen Code zu lösen?"
     }
   },
   "scenarios": {
     "hammingEmptyStrands": {
-      "name": "�",
-      "description": "�"
+      "name": "Leere Stränge",
+      "description": "Leere Stränge haben eine Hamming-Distanz von 0."
     },
     "hammingSingleLetterIdentical": {
-      "name": "�",
-      "description": "�"
+      "name": "Identische Stränge mit einem einzigen Buchstaben",
+      "description": "Identische Stränge mit einem einzigen Buchstaben haben eine Hamming-Distanz von 0."
     },
     "hammingLongIdenticalStrands": {
-      "name": "�",
-      "description": "�"
+      "name": "Lange identische Stränge",
+      "description": "Lange identische Stränge haben eine Hamming-Distanz von 0."
     },
     "hammingSingleLetterDifferent": {
-      "name": "�",
-      "description": "�"
+      "name": "Unterschiedliche Stränge mit einem einzigen Buchstaben",
+      "description": "Unterschiedliche Stränge mit einem einzigen Buchstaben haben eine Hamming-Distanz von 1."
     },
     "hammingLongDifferentStrands": {
-      "name": "�",
-      "description": "�"
+      "name": "Lange unterschiedliche Stränge",
+      "description": "Bei langen Strängen mit Unterschieden wird eine Hamming-Distanz berechnet."
     },
     "hammingBonusElevenLines": {
-      "name": "�",
-      "description": "�"
+      "name": "Elf Zeilen Code",
+      "description": "Löse die Übung mit höchstens elf Zeilen Code."
     }
   },
   "hints": {
     "hammingDistanceMeaning": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was bedeutet „Hamming-Distanz“ einfach ausgedrückt?",
+      "answer": "Es ist die Anzahl der Positionen, an denen sich die beiden Strings unterscheiden. „GAGA“ und „GATA“ unterscheiden sich also nur an Position 3, was eine Distanz von 1 ergibt."
     },
     "compareCharactersAtPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie vergleiche ich die Zeichen an derselben Position in beiden Strings?",
+      "answer": "Du musst beide Strings synchron durchlaufen, damit du unterwegs jeweils das Zeichen an derselben Stelle herausziehen kannst."
     },
     "trackDifferenceCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie behalte ich im Blick, wie viele Unterschiede es gibt?",
+      "answer": "Du brauchst etwas, das eine laufende Summe führt und sie jedes Mal anpasst, wenn du einen Unterschied entdeckst. Dann kannst du sie zurückgeben, sobald du jede Position geprüft hast."
     }
   }
 }

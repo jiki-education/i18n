@@ -1,82 +1,82 @@
 {
   "checks": {
-    "wrongDistance": "�",
-    "missingPositions": "�",
-    "stayOnGrassPlain": "�",
-    "stayOnGrassOvershot": "�",
-    "droppedIncorrectly": "�",
-    "noFireworksPeriod": "�",
-    "noFireworksNoPeriod": "�",
-    "noFireworksAtEnd": "�",
-    "shouldFireFireworks": "�"
+    "wrongDistance": "Der Ball hat für diesen Schlag nicht die richtige Strecke gerollt. Er sollte vom Abschlag aus genau die Länge des Schlags zurücklegen.",
+    "missingPositions": "Der Ball muss Position für Position rollen, immer einen Schritt nach dem anderen.",
+    "stayOnGrassPlain": "Bei diesem Schlag sollte der Ball auf dem Gras bleiben. Er darf nicht ins Loch fallen.",
+    "stayOnGrassOvershot": "Der Ball ist über das Loch hinausgeschossen, also sollte er auf dem Gras bleiben. Er darf nicht hineinfallen.",
+    "droppedIncorrectly": "Der Ball hat das Loch erreicht, ist aber nicht richtig hineingefallen.",
+    "noFireworksPeriod": "Du hättest kein Feuerwerk abfeuern sollen.",
+    "noFireworksNoPeriod": "Du hättest kein Feuerwerk abfeuern sollen",
+    "noFireworksAtEnd": "Am Ende hättest du kein Feuerwerk abfeuern sollen.",
+    "shouldFireFireworks": "Am Ende solltest du ein Feuerwerk abfeuern."
   },
   "tasks": {
     "checkShot": {
-      "name": "�",
-      "description": "�"
+      "name": "Prüfe, ob der Schlag im Loch landet",
+      "description": "Rolle den Ball entsprechend der Schlaglänge, und wenn er über dem Loch landet, lass ihn hineinfallen! Danach schieß ein Feuerwerk ab."
     }
   },
   "scenarios": {
     "tooShort": {
-      "name": "�",
-      "description": "�"
+      "name": "Schlag zu kurz",
+      "description": "Der Golfer schlägt den Ball 23. Er erreicht das Loch nicht."
     },
     "justTooShort": {
-      "name": "�",
-      "description": "�"
+      "name": "Knapp zu kurz",
+      "description": "Der Golfer schlägt den Ball 57, und er rollt knapp nicht hinein."
     },
     "justTooFar": {
-      "name": "�",
-      "description": "�"
+      "name": "Knapp zu weit",
+      "description": "Der Golfer schlägt den Ball 63, und er springt knapp auf der anderen Seite wieder heraus"
     },
     "tooLong": {
-      "name": "�",
-      "description": "�"
+      "name": "Schlag zu lang",
+      "description": "Der Golfer schlägt den Ball 68. Er rollt am Loch vorbei."
     },
     "justInsideLeft": {
-      "name": "�",
-      "description": "�"
+      "name": "Knapp im Loch",
+      "description": "Der Golfer schlägt den Ball 58. Er erreicht das Loch gerade noch!"
     },
     "justInsideRight": {
-      "name": "�",
-      "description": "�"
+      "name": "Fast zu weit, aber noch gut!",
+      "description": "Der Golfer schlägt den Ball 62. Er bleibt gerade noch im Loch!"
     }
   },
   "hints": {
     "howDoIRollRightDistance": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie rolle ich den Ball bei jedem Schlag die richtige Strecke?",
+      "answer": "Mit `getShotLength()` findest du heraus, wie weit der Golfer den Ball geschlagen hat. Speichere den Wert in einer Variable. Er sagt dir, wie oft du rollen musst."
     },
     "howDoIMoveOneStep": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie bewege ich den Ball Schritt für Schritt, statt ihn direkt ans Ende springen zu lassen?",
+      "answer": "Merke dir die `x`-Position des Balls in einer Variable. Erhöhe sie in jedem Durchlauf der Schleife um eins und rolle dann zur neuen Position."
     },
     "whenShouldBallDrop": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wann soll der Ball ins Loch fallen?",
+      "answer": "Nur wenn der Schlag im Loch landet. Prüfe, ob die Schlaglänge im gültigen Bereich liegt, indem du die untere und die obere Grenze zusammen in einer Bedingung testest."
     },
     "whenShouldFireworksFire": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wann soll das Feuerwerk abgefeuert werden?",
+      "answer": "Nur bei einem Schlag, der im Loch gelandet ist, und erst wenn der Ball unten angekommen ist. Halte das Hineinfallen und das Feuerwerk in derselben Bedingung zusammen."
     }
   },
   "functions": {
     "moveTo": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt den Ball zur Position **(x, y)**.",
+      "category": "Bewegung"
     },
     "getShotLength": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt die **Länge des Schlags** zurück, also wie viele Einheiten der Ball nach rechts rollt.",
+      "category": "Information"
     },
     "fireFireworks": {
-      "description": "�",
-      "category": "�"
+      "description": "Feuert ein Feuerwerk ab!",
+      "category": "Aktion"
     }
   },
   "describers": {
-    "moveTo": "�",
-    "getShotLength": "�",
-    "fireFireworks": "�"
+    "moveTo": "bewegte den Ball zur Position (${arg1}, ${arg2})",
+    "getShotLength": "ermittelte die Schlaglänge",
+    "fireFireworks": "feuerte ein Feuerwerk ab"
   }
 }

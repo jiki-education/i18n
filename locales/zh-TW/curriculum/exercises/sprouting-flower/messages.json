@@ -1,70 +1,70 @@
 {
   "checks": {
-    "firstFlowerHeadWrong": "�",
-    "finalFlowerHeadWrong": "�",
-    "firstPistilWrong": "�",
-    "finalPistilWrong": "�",
-    "firstStemWrong": "�",
-    "finalStemWrong": "�",
-    "firstLeftLeafWrong": "�",
-    "finalLeftLeafWrong": "�",
-    "firstRightLeafWrong": "�",
-    "finalRightLeafWrong": "�"
+    "firstFlowerHeadWrong": "第一個畫面的花冠不正確喔。",
+    "finalFlowerHeadWrong": "最後一個畫面的花冠不正確喔。",
+    "firstPistilWrong": "第一個畫面的花蕊不正確喔。",
+    "finalPistilWrong": "最後一個畫面的花蕊不正確喔。",
+    "firstStemWrong": "第一個畫面的花莖不正確喔。",
+    "finalStemWrong": "最後一個畫面的花莖不正確喔。",
+    "firstLeftLeafWrong": "第一個畫面的左邊葉子不正確喔。",
+    "finalLeftLeafWrong": "最後一個畫面的左邊葉子不正確喔。",
+    "firstRightLeafWrong": "第一個畫面的右邊葉子不正確喔。",
+    "finalRightLeafWrong": "最後一個畫面的右邊葉子不正確喔。"
   },
   "tasks": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "畫出場景",
+      "description": "讓花朵發芽。一步一步慢慢來！"
     }
   },
   "scenarios": {
     "drawSproutingFlower": {
-      "name": "�",
-      "description": "�"
+      "name": "讓花朵發芽",
+      "description": "一步一步慢慢來！"
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "排場景的時候，我該從哪裡開始？",
+      "answer": "先選定一個中心點。花朵的中心就是很好的基準點。花莖、花蕊和葉子都可以從它推算出來。這樣一來，整朵花在動畫過程中就會一直連在一起。"
     },
     "growEachIteration": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼讓花朵每疊代都往上移動又長大？",
+      "answer": "在迴圈主體的最前面，也就是還沒開始畫之前，先把`flowerCenterY`和`flowerRadius`更新成這個畫面的新數值。說明裡有寫每次要增加多少。重點是要在繪圖*之前*更新，而不是之後。"
     },
     "stemAttached": {
-      "question": "�",
-      "answer": "�"
+      "question": "花朵往上移動時，要怎麼讓花莖一直連在花朵上？",
+      "answer": "不要給花莖固定的頂端。它的頂端*就是*`flowerCenterY`。它的底端是地面。所以它的高度就是這兩點之間的距離。寬度則可以從這個高度推算出來。"
     },
     "leafSizing": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼設定葉子的大小，讓它們跟著花朵一起長大？",
+      "answer": "葉子的`radiusX`和`radiusY`是`flowerRadius`的幾分之幾。這樣它們就會一起縮放。把葉子的垂直位置綁在花莖上，而不是固定的畫布 Y 座標，這樣它們就會跟著花朵一起往上移動。"
     },
     "flowerNeverChanges": {
-      "question": "�",
-      "answer": "�"
+      "question": "我的花只畫了一次，之後就再也不變了。這是哪裡有問題？",
+      "answer": "你很可能在迴圈之前先設定了一次初始值，但沒有在迴圈*裡面*更新它們。迴圈主體每次疊代都必須更新你的變數，而且要在繪圖之前。"
     },
     "firstFlowerCoords": {
-      "question": "�",
-      "answer": "�"
+      "question": "可以給我第一朵花的座標，讓我對照檢查嗎？",
+      "answer": "第一次疊代時，各個圖形應該是：\n\n- 花朵：`circle(50, 89, 0.4)`\n- 花蕊：`circle(50, 89, 0.1)`\n- 花莖：`rectangle(49.95, 89, 0.1, 1)`\n- 左邊的葉子：`ellipse(49.75, 89.5, 0.2, 0.08)`\n- 右邊的葉子：`ellipse(50.25, 89.5, 0.2, 0.08)`\n\n切換拖曳軸上的資訊開關，就能看到你在那個畫面的數值。"
     },
     "finalFlowerCoords": {
-      "question": "�",
-      "answer": "�"
+      "question": "可以給我最後一朵花的座標，讓我對照檢查嗎？",
+      "answer": "最後一次疊代時，各個圖形應該是：\n\n- 花朵：`circle(50, 30, 24)`\n- 花蕊：`circle(50, 30, 6)`\n- 花莖：`rectangle(47, 30, 6, 60)`\n- 左邊的葉子：`ellipse(35, 60, 12, 4.8)`\n- 右邊的葉子：`ellipse(65, 60, 12, 4.8)`\n\n切換拖曳軸上的資訊開關，就能看到你在那個畫面的數值。"
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "在位置 (left, top) 畫一個**長方形**，並指定它的寬度、高度和顏色。這個位置代表長方形的左上角。",
+      "category": "繪製圖形"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "在圓心位置 (centerX, centerY) 畫一個**圓形**，並指定它的半徑和顏色。",
+      "category": "繪製圖形"
     },
     "ellipse": {
-      "description": "�",
-      "category": "�"
+      "description": "在中心位置 (centerX, centerY) 畫一個**橢圓形**，並指定它的 radiusX、radiusY 和顏色。",
+      "category": "繪製圖形"
     }
   }
 }

@@ -1,65 +1,65 @@
 {
   "checks": {
-    "sky": "�",
-    "ground": "�",
-    "leftWing": "�",
-    "rightWing": "�",
-    "outerBody": "�",
-    "innerBody": "�",
-    "head": "�",
-    "leftFace": "�",
-    "rightFace": "�",
-    "lowerFace": "�",
-    "leftEye": "�",
-    "leftIris": "�",
-    "rightEye": "�",
-    "rightIris": "�",
-    "leftFoot": "�",
-    "rightFoot": "�",
-    "nose": "�"
+    "sky": "天空出錯了。",
+    "ground": "地面出錯了。",
+    "leftWing": "左邊的翅膀好像不太對。",
+    "rightWing": "右邊的翅膀好像不太對。",
+    "outerBody": "身體外圍出錯了。",
+    "innerBody": "身體內部出錯了。",
+    "head": "頭部出錯了。",
+    "leftFace": "臉的左半邊看起來不太對。",
+    "rightFace": "臉的右半邊看起來不太對。",
+    "lowerFace": "臉的下半部看起來不太對。",
+    "leftEye": "左眼好像不太對。",
+    "leftIris": "左眼的虹膜好像不太對。",
+    "rightEye": "右眼好像不太對。",
+    "rightIris": "右眼的虹膜好像不太對。",
+    "leftFoot": "左腳的位置不太對。",
+    "rightFoot": "右腳的位置不太對。",
+    "nose": "鼻子不太對。"
   },
   "tasks": {
     "drawPenguin": {
-      "name": "�",
-      "description": "�"
+      "name": "畫出對稱的企鵝",
+      "description": "補上缺少的部分，讓企鵝圖左右對稱。"
     }
   },
   "scenarios": {
     "makePenguinSymmetrical": {
-      "name": "�",
-      "description": "�"
+      "name": "讓企鵝左右對稱",
+      "description": "修正所有 TODO 註解，讓企鵝左右對稱。"
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "我該從哪裡開始？",
+      "answer": "從最上面開始，一個一個處理 TODO 註解吧。"
     },
     "symmetryOnCanvas": {
-      "question": "�",
-      "answer": "�"
+      "question": "畫布上的對稱是怎麼運作的？",
+      "answer": "如果某樣東西的左邊緣是 20，它對稱的右邊緣就會是 80（100 - 20）。"
     },
     "noseTrouble": {
-      "question": "�",
-      "answer": "�"
+      "question": "為什麼鼻子一直畫不對？",
+      "answer": "鼻子不要新增一個三角形，而是要**修改**現有的三角形，讓它正確。你只需要改**一個**值。"
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "在（left, top）位置，用指定的寬度、高度和顏色畫一個矩形",
+      "category": "繪製圖形"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "以（centerX, centerY）為圓心，用指定的半徑和顏色畫一個圓",
+      "category": "繪製圖形"
     },
     "ellipse": {
-      "description": "�",
-      "category": "�"
+      "description": "以（centerX, centerY）為圓心，用水平半徑、垂直半徑和顏色畫一個橢圓",
+      "category": "繪製圖形"
     },
     "triangle": {
-      "description": "�",
-      "category": "�"
+      "description": "用三個頂點和一個顏色畫一個三角形",
+      "category": "繪製圖形"
     }
   }
 }

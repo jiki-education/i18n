@@ -1,65 +1,65 @@
 {
   "tasks": {
     "countChancersInQueue": {
-      "name": "�",
-      "description": "�"
+      "name": "Zähl, wer sein Glück versucht",
+      "description": "Schreib eine Funktion, die die Schlange und die Gästeliste entgegennimmt und zurückgibt, wie viele der Wartenden nicht auf der Gästeliste stehen."
     },
     "solveTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "Löse es in 9 Zeilen",
+      "description": "Bonus: Das lässt sich viel kompakter schreiben, als du vielleicht denkst. Versuch, es in 9 Zeilen Code oder weniger zu lösen."
     }
   },
   "scenarios": {
     "emptyQueue": {
-      "name": "�",
-      "description": "�"
+      "name": "Noch ist niemand aufgetaucht",
+      "description": "Eine leere Schlange, es wartet also niemand darauf, reingelassen zu werden."
     },
     "everyoneChancingIt": {
-      "name": "�",
-      "description": "�"
+      "name": "Die ganze Schlange versucht ihr Glück",
+      "description": "Eine Schlange, in der niemand von den Wartenden auf der Gästeliste steht."
     },
     "everyoneInvited": {
-      "name": "�",
-      "description": "�"
+      "name": "Alle sind eingeladen",
+      "description": "Eine Schlange, in der alle Wartenden auf der Gästeliste stehen."
     },
     "mixedQueue": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine gemischte Schlange",
+      "description": "Eine Schlange, in der einige der Wartenden eingeladen sind und andere nicht. Eine Person, die ihr Glück versucht, hat einen Namen, der einem Namen auf der Liste sehr ähnlich sieht."
     },
     "guestsWhoHaventArrived": {
-      "name": "�",
-      "description": "�"
+      "name": "Gäste stehen noch im Stau",
+      "description": "Eine Gästeliste mit vielen Namen, aber die meisten dieser Leute haben die Schlange noch nicht erreicht."
     },
     "longQueueShortList": {
-      "name": "�",
-      "description": "�"
+      "name": "Lange Schlange, kurze Liste",
+      "description": "Eine große Schlange draußen, aber nur ein paar Namen auf der Gästeliste."
     },
     "guestListBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "Kurz und knapp: eine gemischte Schlange",
+      "description": "Dieselbe gemischte Schlange wie vorher, aber diesmal versuchst du, es in 9 Zeilen Code oder weniger zu lösen."
     }
   },
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "Weiter so! Schau, ob du auf 9 Zeilen Code kommst."
   },
   "hints": {
     "keepingTrack": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was muss ich mir merken, während ich durchgehe?",
+      "answer": "Die Antwort ist eine einzige Zahl, und du kennst sie erst, wenn du alle gesehen hast. Frag dich also zwei Dinge: Welchen Wert sollte diese Zahl haben, bevor du überhaupt jemanden angeschaut hast, und was muss mit ihr passieren, wenn sich herausstellt, dass jemand **nicht** eingeladen ist?"
     },
     "whichList": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hier gibt es zwei Arrays. Welches arbeite ich durch?",
+      "answer": "Überleg, was die Antwort zählt. Es ist die Anzahl der Leute **in der Schlange**, also musst du die Schlange Person für Person durchgehen. Die Gästeliste gehst du nicht durch, sie ist das, womit du jede Person abgleichst."
     },
     "realLifeBouncer": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie würde ein echter Türsteher das mit einem Klemmbrett machen?",
+      "answer": "Stell dir vor, er steht mit dem Klemmbrett in der einen Hand vorne an der Schlange und arbeitet sich nach hinten vor. Die endgültige Zahl ruft er erst aus, wenn er bei der letzten Person angekommen ist. Was macht er unterwegs mit jeder Person, und was macht er mit denen, deren Namen er nicht findet?"
     }
   },
   "functions": {
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "Prüft, ob ein Array ein bestimmtes Element enthält",
+      "category": "Array-Operationen"
     }
   }
 }

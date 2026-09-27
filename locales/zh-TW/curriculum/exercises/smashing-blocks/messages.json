@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "wrongBlockCount": "你沒有建立剛好 5 個方塊。",
+    "notAllSmashed": "你沒有擊碎所有方塊。",
+    "tooManyBallMoves": "你移動球的次數比需要的還多喔！"
+  },
+  "tasks": {
+    "addAndSmashBlocks": {
+      "name": "加入並擊碎 5 個方塊",
+      "description": "在遊戲區域頂端建立 5 個方塊，再讓球彈跳把它們全部擊碎。等所有方塊都被擊碎後，就停止移動球。"
+    },
+    "differentDimensions": {
+      "name": "不同的尺寸",
+      "description": "在完整的打磚塊遊戲裡，球的半徑和方塊高度都可能改變。檢查你的程式碼在不同尺寸下是否也能正常運作。"
+    }
+  },
+  "scenarios": {
+    "addBlocks": {
+      "name": "加入並擊碎 5 個方塊",
+      "description": "在遊戲區域加入 5 個方塊，然後把它們擊碎！"
+    },
+    "differentDimensions": {
+      "name": "不同的尺寸",
+      "description": "檢查你的程式碼在尺寸改變後是否仍能正常運作！"
+    }
+  },
+  "hints": {
+    "createFiveBlocks": {
+      "question": "我要怎麼建立這 5 個方塊呢？",
+      "answer": "用一個`for`迴圈，例如`for (let x = 1; x <= 5; x++) { ... }`，並在裡面呼叫`new Block(left, top)`。"
+    },
+    "blockLeftPosition": {
+      "question": "我要怎麼算出每個方塊的`left`位置？",
+      "answer": "第一個在`8`，而每個方塊寬`16`、間距`1`，所以`left`是`8 + ((x - 1) * 17)`。"
+    },
+    "detectHit": {
+      "question": "我要怎麼偵測球撞到方塊？",
+      "answer": "檢查球的頂端邊緣是否等於方塊的底部邊緣（`block.top + block.height`），以及球是否和方塊在水平方向上對齊。"
+    },
+    "skipSmashed": {
+      "question": "我要怎麼跳過已經被擊碎的方塊？",
+      "answer": "在迴圈裡檢查`block.smashed`，如果它已經是 true，就用`continue`跳到下一個方塊。"
+    },
+    "stopWhenAllSmashed": {
+      "question": "所有方塊都消失後，我要怎麼讓球停下來？",
+      "answer": "寫一個小函式，當所有方塊的`smashed === true`時回傳 true。當它回傳 true 時，就用`break`跳出主迴圈。"
+    }
+  },
+  "describers": {
+    "moveBall": "根據球的速度移動球"
+  },
+  "functions": {
+    "ball": {
+      "description": "建立一個新的 Ball 實例，包含這些屬性：`cx`、`cy`（中心位置）、`radius`、`xVelocity`、`yVelocity`。",
+      "category": "物件"
+    },
+    "block": {
+      "description": "建立一個新的 Block 實例，包含這些屬性：`left`、`top`、`width`（16）、`height`、`smashed`（初始為 false）。",
+      "category": "物件"
+    },
+    "moveBall": {
+      "description": "根據目前的`xVelocity`和`yVelocity`移動球。",
+      "category": "移動"
+    },
+    "push": {
+      "description": "把一個元素加到陣列末端，直接改變原本的陣列。",
+      "category": "陣列"
+    }
+  }
+}

@@ -1,90 +1,90 @@
 {
   "tasks": {
     "sumTheDigits": {
-      "name": "�",
-      "description": "�"
+      "name": "Addiere die Ziffern",
+      "description": "Schreibe eine Funktion namens digitalRoot, die eine Zahl entgegennimmt und ihre Ziffern addiert. Bei Zahlen, die bereits aus einer einzelnen Ziffer bestehen, und bei Zahlen, deren Ziffern sich zu einer einzelnen Ziffer addieren, reicht dieser erste Durchlauf."
     },
     "collapseToSingleDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "Reduziere weiter, bis nur noch eine Ziffer übrig ist",
+      "description": "Manchmal bleibt nach dem einmaligen Addieren der Ziffern noch mehr als eine Ziffer übrig (zum Beispiel ergibt 942 die Summe 15). Addiere die Ziffern des Ergebnisses weiter, bis nur noch eine einzelne Ziffer übrig bleibt."
     },
     "keepItTight": {
-      "name": "�",
-      "description": "�"
+      "name": "Löse es in 10 Zeilen",
+      "description": "Deine Lösung funktioniert bereits. Für diesen Bonus versuch, sie in 10 Zeilen Code oder weniger zu lösen."
     }
   },
   "scenarios": {
     "drZero": {
-      "name": "�",
-      "description": "�"
+      "name": "Null",
+      "description": "Die digitale Wurzel von 0 ist 0."
     },
     "drSingleDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "Bereits eine einzelne Ziffer",
+      "description": "Eine Zahl, die bereits aus einer einzelnen Ziffer besteht, ist ihre eigene digitale Wurzel."
     },
     "drTwoDigits": {
-      "name": "�",
-      "description": "�"
+      "name": "Zwei Ziffern",
+      "description": "16 reduziert sich in einem einzigen Durchlauf auf 7 (1 + 6)."
     },
     "drThreeDigits": {
-      "name": "�",
-      "description": "�"
+      "name": "Drei Ziffern, ein Durchlauf",
+      "description": "132 reduziert sich in einem einzigen Durchlauf auf 6 (1 + 3 + 2)."
     },
     "drThirtyNine": {
-      "name": "�",
-      "description": "�"
+      "name": "Zwei Durchläufe nötig",
+      "description": "39 ergibt die Summe 12, und deren Ziffern ergeben 3."
     },
     "drTwoPasses": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine Zahl, die einen zweiten Durchlauf braucht",
+      "description": "942 ergibt die Summe 15, und deren Ziffern ergeben 6."
     },
     "drLarge": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine größere Zahl",
+      "description": "493193 reduziert sich bis auf 2."
     },
     "drNines": {
-      "name": "�",
-      "description": "�"
+      "name": "Lauter Neunen",
+      "description": "99999 ergibt die Summe 45, und deren Ziffern ergeben 9."
     },
     "drBonusTight": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine kurze, aufgeräumte Lösung",
+      "description": "Versuch, das in 10 Zeilen Code oder weniger zu lösen. 12345 reduziert sich auf 6 (1 + 2 + 3 + 4 + 5 = 15, dann 1 + 5 = 6)."
     }
   },
   "hints": {
     "whatIsIt": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was genau ist eine digitale Wurzel?",
+      "answer": "Addiere alle Ziffern der Zahl. Ergibt das eine einzelne Ziffer, dann ist das die Antwort. Ergibt es mehr als eine Ziffer, addierst du die Ziffern dieses Ergebnisses ebenfalls, und machst so lange weiter, bis nur noch eine einzelne Ziffer übrig bleibt."
     },
     "sumDigits": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie addiere ich die Ziffern einer Zahl?",
+      "answer": "Verwandle die Zahl in einen String, damit du sie mit einer `for...of`-Schleife Zeichen für Zeichen durchgehen kannst. Führe eine laufende Summe mit und addiere jede Ziffer dazu."
     },
     "digitsToNumbers": {
-      "question": "�",
-      "answer": "�"
+      "question": "Jede Ziffer ist aber ein Zeichen, keine Zahl.",
+      "answer": "Wenn du über den String läufst, ist jedes Zeichen (wie `\"4\"`) Text. Mit `Number(char)` machst du daraus die Zahl `4`, bevor du sie zu deiner Summe addierst."
     },
     "whichLoop": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie mache ich weiter, ohne zu wissen, wie viele Durchläufe ich brauche?",
+      "answer": "Du weißt vorher nicht, wie oft du die Ziffern addieren musst, deshalb passt eine `while`-Schleife perfekt. Wiederhole die Schleife so lange, wie die Zahl mehr als eine Ziffer hat."
     },
     "keepGoing": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wann höre ich auf?",
+      "answer": "Hör auf, sobald die Zahl eine einzelne Ziffer ist. Dann gib sie zurück."
     }
   },
   "checks": {
-    "mustUseWhile": "�",
-    "tooManyLines": "�"
+    "mustUseWhile": "Fast! Für diese Übung möchten wir, dass du eine `while`-Schleife verwendest, um so lange weiter zu reduzieren, bis nur noch eine einzelne Ziffer übrig bleibt.",
+    "tooManyLines": "Weiter so! Schau, ob du auf 10 Zeilen Code herunterkommst."
   },
   "functions": {
     "number": {
-      "description": "�",
-      "category": "�"
+      "description": "Wandelt einen String aus Ziffern in eine Zahl um",
+      "category": "Typumwandlung"
     },
     "string": {
-      "description": "�",
-      "category": "�"
+      "description": "Wandelt eine Zahl in einen String um",
+      "category": "Typumwandlung"
     }
   }
 }

@@ -1,88 +1,88 @@
 {
   "tasks": {
     "createAcronymFunction": {
-      "name": "�",
-      "description": "�"
+      "name": "建立縮寫函式",
+      "description": "寫一個函式，接收一個詞句，然後回傳它的縮寫：每個單字的第一個字母，並轉成大寫。單字之間用空格和連字號分隔，其他標點符號一律忽略。"
     },
     "solveTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "用 46 行解決",
+      "description": "加分題：把字母判斷和大小寫轉換抽成輔助函式，讓`acronym`重複使用，整個解法就能縮到 46 行。你能做到嗎？"
     }
   },
   "scenarios": {
     "png": {
-      "name": "�",
-      "description": "�"
+      "name": "基本縮寫：PNG",
+      "description": "把「Portable Network Graphics」轉換成「PNG」。"
     },
     "ror": {
-      "name": "�",
-      "description": "�"
+      "name": "小寫單字：ROR",
+      "description": "把「Ruby on Rails」轉換成「ROR」。"
     },
     "gimp": {
-      "name": "�",
-      "description": "�"
+      "name": "整串大寫的單字：GIMP",
+      "description": "把「GNU Image Manipulation Program」轉換成「GIMP」。"
     },
     "firstWordOnly": {
-      "name": "�",
-      "description": "�"
+      "name": "只有一個單字：H",
+      "description": "把「HyperText」轉換成「H」。"
     },
     "hyphenated": {
-      "name": "�",
-      "description": "�"
+      "name": "含連字號的詞句：CMOS",
+      "description": "把「Complementary metal-oxide semiconductor」轉換成「CMOS」。"
     },
     "fifo": {
-      "name": "�",
-      "description": "�"
+      "name": "以逗號分隔：FIFO",
+      "description": "把「First In, First Out」轉換成「FIFO」。"
     },
     "punctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "含有標點符號：PHT",
+      "description": "把「Portable, HyperText, Transmitter」轉換成「PHT」。"
     },
     "hc": {
-      "name": "�",
-      "description": "�"
+      "name": "含有撇號：HC",
+      "description": "把「Halley's Comet」轉換成「HC」。"
     },
     "simufta": {
-      "name": "�",
-      "description": "�"
+      "name": "連續的分隔符號：SIMUFTA",
+      "description": "把「Something - I made up from thin air」轉換成「SIMUFTA」。"
     },
     "trnt": {
-      "name": "�",
-      "description": "�"
+      "name": "底線強調：TRNT",
+      "description": "把「The Road _Not_ Taken」轉換成「TRNT」。"
     },
     "long": {
-      "name": "�",
-      "description": "�"
+      "name": "超長的一個：ROTFLSHTMDCOALM",
+      "description": "把「Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me」轉換成「ROTFLSHTMDCOALM」。"
     },
     "emoji": {
-      "name": "�",
-      "description": "�"
+      "name": "含有表情符號：HW",
+      "description": "把「Hello 👋 World」轉換成「HW」。"
     },
     "acronymBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "乾淨俐落",
+      "description": "最俐落的解法會重複使用它的輔助函式，並控制在 46 行內。你能找到嗎？"
     }
   },
   "checks": {
-    "tooManyLines": "�",
-    "noMethods": "�"
+    "tooManyLines": "繼續加油！看看能不能用更少的行數解出來。",
+    "noMethods": "這個練習的重點是自己動手打造工具。請不要使用任何內建方法來解題。"
   },
   "hints": {
     "pickLetters": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼挑出哪些字母會變成縮寫？",
+      "answer": "縮寫是由每個單字的開頭字母組成的：詞句的第一個字母，再加上每個空格或連字號之後的第一個字母。"
     },
     "findWordStarts": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼知道什麼時候開始一個新的單字？",
+      "answer": "沿著詞句一次前進一個字元，並隨時記住自己是不是在某個新單字的開頭。詞句的最開頭算一個，每個空格或連字號緊接著的位置也算。不是字母的東西（標點符號、底線、撇號）都要跳過，不能算成單字的開頭。"
     },
     "buildResult": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼一邊處理、一邊把結果拼出來？",
+      "answer": "從一個空字串開始，用`+`把每個挑選出來的字母加到最後面。"
     },
     "uppercaseLetters": {
-      "question": "�",
-      "answer": "�"
+      "question": "如果沒有內建的方法，我要怎麼把字母轉成大寫？",
+      "answer": "這裡沒有現成的大寫轉換工具。就像 Pangram 那樣，你可以把一份小寫字母表對上一份大寫字母表，把某個字母換成同一個位置上的字母。本來就已經是大寫的字母，維持原樣就好。"
     }
   }
 }

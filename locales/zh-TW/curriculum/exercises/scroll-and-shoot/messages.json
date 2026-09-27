@@ -1,74 +1,74 @@
 {
   "checks": {
-    "notShotAllAliens": "�",
-    "noRepeatWithArg": "�"
+    "notShotAllAliens": "你沒有把所有外星人都擊落。",
+    "noRepeatWithArg": "這個練習裡不能使用<code>repeat(n) {}</code>，你只能用沒有輸入的<code>repeat() {}</code>迴圈。"
   },
   "tasks": {
     "scrollAndShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "在畫面上來回移動，擊落每一個外星人",
+      "description": "讓雷射在畫面上來回移動，每次移動時檢查頭上是不是有外星人，有的話就把它擊落。不要移動到螢幕邊緣之外，也不要在沒有外星人時開火，否則你就輸了！一波接著一波，外星人會越來越密集。"
     }
   },
   "scenarios": {
     "oneAlien": {
-      "name": "�",
-      "description": "�"
+      "name": "一個外星人",
+      "description": "只有一個外星人要擊落"
     },
     "oneRow": {
-      "name": "�",
-      "description": "�"
+      "name": "稀疏的一排",
+      "description": "最下面一排散落著幾個外星人"
     },
     "twoRows": {
-      "name": "�",
-      "description": "�"
+      "name": "兩排",
+      "description": "外星人分布在兩排"
     },
     "threeRows": {
-      "name": "�",
-      "description": "�"
+      "name": "三排",
+      "description": "三排都有外星人"
     },
     "fullRows": {
-      "name": "�",
-      "description": "�"
+      "name": "滿滿三排",
+      "description": "擠得滿滿的三排，外星人還會不斷重生！"
     }
   },
   "hints": {
     "whereDoIStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "我該從哪裡開始？感覺要寫好多東西。",
+      "answer": "先把它拆成小步驟。一開始只要讓雷射左右移動就好，先別管發射。等移動沒問題了，再加上發射的邏輯。"
     },
     "trackLaserPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼知道雷射現在在哪裡？",
+      "answer": "用一個變數記下雷射的位置。每次迴圈疊代呼叫`moveLeft()`或`moveRight()`時，就更新這個變數。"
     },
     "whenToTurnAround": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼知道什麼時候該轉向？",
+      "answer": "用一個方向變數來記錄（例如`1`代表向右、`-1`代表向左）。當位置碰到左邊或右邊的邊界時，就把方向反過來。這跟《Rainbow Ball》裡的彈跳模式是一樣的。"
     },
     "whenToShoot": {
-      "question": "�",
-      "answer": "�"
+      "question": "什麼時候該呼叫`shoot()`？",
+      "answer": "呼叫`shoot()`之前，先用`isAlienAbove()`檢查。只有當它回傳`true`時才發射，否則會浪費彈藥，然後輸掉遊戲。"
     },
     "laserOverheating": {
-      "question": "�",
-      "answer": "�"
+      "question": "雷射一直過熱，該怎麼辦？",
+      "answer": "不要每次疊代都發射。每次射擊之間至少要移動一次，讓雷射砲有時間冷卻。"
     }
   },
   "functions": {
     "moveLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "把雷射砲**往左移動一格**。如果你想移動到螢幕左邊邊緣之外，就會輸掉遊戲喔！",
+      "category": "移動"
     },
     "moveRight": {
-      "description": "�",
-      "category": "�"
+      "description": "把雷射砲**往右移動一格**。如果你想移動到螢幕右邊邊緣之外，就會輸掉遊戲喔！",
+      "category": "移動"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "把雷射往上發射。**只有頭上有外星人時才能發射**，否則你會輸掉遊戲！雷射砲很容易過熱，所以再次發射前一定要先移動。",
+      "category": "動作"
     },
     "isAlienAbove": {
-      "description": "�",
-      "category": "�"
+      "description": "雷射砲正上方有外星人的話回傳`true`，沒有的話回傳`false`。發射前先用它檢查一下！",
+      "category": "偵測"
     }
   }
 }

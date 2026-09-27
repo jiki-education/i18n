@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "countNucleotides": {
+      "name": "Nukleotide zählen",
+      "description": "Schreibe eine Funktion, die zählt, wie oft jedes Nukleotid (A, C, G, T) in einem DNA-Strang vorkommt, und ein Wörterbuch mit den Zählwerten zurückgibt. Gib false zurück, wenn der Strang ungültige Zeichen enthält."
+    }
+  },
+  "scenarios": {
+    "nucleotideCountEmptyStrand": {
+      "name": "Leerer Strang",
+      "description": "Bei einem leeren Strang sollten alle Zählwerte null sein."
+    },
+    "nucleotideCountSingleNucleotide": {
+      "name": "Einzelnes Nukleotid",
+      "description": "Ein Strang mit einem einzelnen Zeichen sollte das Nukleotid korrekt zählen."
+    },
+    "nucleotideCountRepeatedNucleotide": {
+      "name": "Wiederholtes Nukleotid",
+      "description": "Ein Strang mit wiederholten Nukleotiden sollte die Vorkommen korrekt zählen."
+    },
+    "nucleotideCountMixedStrand": {
+      "name": "Gemischter Nukleotidstrang",
+      "description": "Ein Strang mit mehreren Nukleotiden sollte jedes Nukleotid korrekt zählen."
+    },
+    "nucleotideCountInvalidNucleotide": {
+      "name": "Ungültiges Nukleotid",
+      "description": "Ein Strang mit ungültigen Nukleotiden sollte false zurückgeben."
+    }
+  },
+  "hints": {
+    "setupCounts": {
+      "question": "Wie lege ich die Zählwerte an?",
+      "answer": "Beginne mit einem Wörterbuch, in dem alle vier Nukleotide (`A`, `C`, `G`, `T`) auf 0 gesetzt sind. Wenn du den Strang durchgehst, erhöhst du den passenden Zählwert jeweils um 1."
+    },
+    "validChars": {
+      "question": "Woher weiß ich, welche Zeichen gültig sind?",
+      "answer": "Die gültigen Zeichen sind genau die Schlüssel deines Wörterbuchs. Wenn du sie mit `keys()` holst, musst du das Nukleotidalphabet nicht zweimal aufschreiben."
+    },
+    "checkEach": {
+      "question": "Wie prüfe ich jedes Zeichen?",
+      "answer": "Geh den Strang Zeichen für Zeichen durch. Prüfe bei jedem Zeichen, ob es ein gültiges Nukleotid ist, bevor du es zählst."
+    },
+    "invalidChars": {
+      "question": "Was mache ich bei ungültigen Zeichen?",
+      "answer": "Die Aufgabenstellung verlangt, dass du sofort `false` zurückgibst. Sobald du ein ungültiges Zeichen findest, kannst du nicht mehr weitermachen. Hör einfach auf und gib false zurück."
+    }
+  },
+  "functions": {
+    "keys": {
+      "description": "Gibt eine Liste mit allen Schlüsseln des Wörterbuchs zurück",
+      "category": "Wörterbuchoperationen"
+    }
+  }
+}

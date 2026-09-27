@@ -1,63 +1,63 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "Deine Lösung hat zu viele Codezeilen. Kannst du sie kürzen?"
   },
   "tasks": {
     "calculateSignPrice": {
-      "name": "�",
-      "description": "�"
+      "name": "Schildpreis berechnen",
+      "description": "Schreib eine Funktion, die den Preis für ein Schild berechnet. Jeder Buchstabe kostet $12. Leerzeichen sind gratis und werden nicht mitgezählt. Gib das Ergebnis als formatierten String zurück."
     },
     "solveInNineLines": {
-      "name": "�",
-      "description": "�"
+      "name": "In 9 Codezeilen lösen",
+      "description": "Schaffst du es, diese Übung mit nur 9 Codezeilen zu lösen?"
     }
   },
   "scenarios": {
     "simpleWord": {
-      "name": "�",
-      "description": "�"
+      "name": "Einfaches Wort",
+      "description": "Ein einzelnes Wort ohne Leerzeichen."
     },
     "singleLetter": {
-      "name": "�",
-      "description": "�"
+      "name": "Einzelner Buchstabe",
+      "description": "Ein Schild mit nur einem Buchstaben."
     },
     "twoWords": {
-      "name": "�",
-      "description": "�"
+      "name": "Zwei Wörter",
+      "description": "Zwei Wörter mit einem Leerzeichen, das übersprungen werden soll."
     },
     "multipleSpaces": {
-      "name": "�",
-      "description": "�"
+      "name": "Mehrere Leerzeichen",
+      "description": "Mehrere Wörter mit mehreren Leerzeichen, die übersprungen werden sollen."
     },
     "longText": {
-      "name": "�",
-      "description": "�"
+      "name": "Langer Text",
+      "description": "Ein längeres Schild mit mehr Buchstaben."
     },
     "allSpaces": {
-      "name": "�",
-      "description": "�"
+      "name": "Nur Leerzeichen",
+      "description": "Ein Schild mit nur Leerzeichen hat keine Buchstaben, die berechnet werden."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "9 Codezeilen",
+      "description": "Löse die Übung mit nur 9 Codezeilen."
     }
   },
   "hints": {
     "whatCounting": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was zähle ich eigentlich?",
+      "answer": "Buchstaben. Genauer gesagt alles, was kein Leerzeichen ist. Du brauchst also einen Zähler, der bei jedem Zeichen im Schildtext hochzählt, das kein Leerzeichen ist."
     },
     "loopCharacters": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie gehe ich die Zeichen in einer Schleife durch?",
+      "answer": "Eine `for...of`-Schleife gibt dir nacheinander jedes Zeichen, sodass du sie dir eines nach dem anderen ansehen kannst."
     },
     "checkSpace": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie prüfe ich, ob ein Zeichen ein Leerzeichen ist?",
+      "answer": "Vergleiche innerhalb der Schleife das Zeichen in einer if-Anweisung mit `\" \"`. Zähle das Zeichen nur, wenn es kein Leerzeichen ist."
     },
     "buildResultString": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie setze ich den Ergebnis-String zusammen?",
+      "answer": "Nutze String-Verkettung oder Template-Strings. Schau in den Konzepten nach, wenn du dich daran nicht mehr erinnerst."
     }
   }
 }

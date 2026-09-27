@@ -1,0 +1,50 @@
+{
+  "tasks": {
+    "createShoppingList": {
+      "name": "建立購物清單",
+      "description": "寫一個函式，接受冰箱裡的內容和食譜的食材，回傳你需要買的食材（食譜裡有、但冰箱裡沒有的食材）。"
+    }
+  },
+  "scenarios": {
+    "emptyFridge": {
+      "name": "冰箱是空的",
+      "description": "冰箱空的時候，所有食材都得買。"
+    },
+    "youHaveEverything": {
+      "name": "食材都齊了",
+      "description": "當所有食材都有了，購物清單就是空的。"
+    },
+    "oneThing": {
+      "name": "一樣東西",
+      "description": "只差一樣食材的時候。"
+    },
+    "fewThings": {
+      "name": "幾樣東西",
+      "description": "少了几樣食材的時候。"
+    }
+  },
+  "hints": {
+    "realLifeApproach": {
+      "question": "在現實生活中，我會怎麼做？",
+      "answer": "你會照著食譜一樣一樣看過去，每一樣都確認冰箱裡有沒有。沒有的就寫進購物清單。你的程式也是這樣做喔。"
+    },
+    "checkFridgeItem": {
+      "question": "我要怎麼檢查冰箱裡有沒有某樣食材？",
+      "answer": "`includes`方法可以幫你做這件事。對冰箱呼叫它，把食材傳進去，就會回傳`true`或`false`。"
+    },
+    "buildShoppingList": {
+      "question": "我要怎麼把購物清單一步步建起來？",
+      "answer": "先從一個空陣列開始。食譜裡的每一樣食材，只要冰箱裡沒有，就用`push()`把它加進購物清單。"
+    }
+  },
+  "functions": {
+    "includes": {
+      "description": "檢查陣列裡是否包含某個元素，回傳 true 或 false。",
+      "category": "陣列"
+    },
+    "push": {
+      "description": "把一個元素加到陣列的末端，會直接改變原本的陣列。",
+      "category": "陣列"
+    }
+  }
+}

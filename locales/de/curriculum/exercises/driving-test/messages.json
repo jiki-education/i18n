@@ -1,63 +1,63 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "Deine Lösung hat zu viele Codezeilen. Schaffst du es, sie kürzer zu machen?"
   },
   "tasks": {
     "didTheyPass": {
-      "name": "�",
-      "description": "�"
+      "name": "Haben sie bestanden?",
+      "description": "Schreib eine Funktion, die die Bewertungen einer Fahrprüfung auswertet und feststellt, ob der Prüfling bestanden hat. Der Prüfling fällt durch, wenn er einen schweren Fehler (💥) oder fünf oder mehr kleine Fehler (❌) hat."
     },
     "solveInElevenLines": {
-      "name": "�",
-      "description": "�"
+      "name": "In 12 Zeilen Code lösen",
+      "description": "Schaffst du es, diese Übung mit nur 12 Zeilen Code zu lösen?"
     }
   },
   "scenarios": {
     "perfectMarks": {
-      "name": "�",
-      "description": "�"
+      "name": "Der perfekte Prüfling!",
+      "description": "Alles richtig gemacht, wow!"
     },
     "dangerous": {
-      "name": "�",
-      "description": "�"
+      "name": "Gefahr für die Gesellschaft",
+      "description": "Den dürfen wir nicht auf die Straße lassen!"
     },
     "oneBigMistake": {
-      "name": "�",
-      "description": "�"
+      "name": "Ein schwerer Fehler",
+      "description": "Ein einziger schwerer Fehler, und du bist durchgefallen!"
     },
     "scrapedThrough": {
-      "name": "�",
-      "description": "�"
+      "name": "Gerade noch bestanden",
+      "description": "Knapp, aber bestanden!"
     },
     "oneMistakeTooMany": {
-      "name": "�",
-      "description": "�"
+      "name": "Ein Fehler zu viel!",
+      "description": "All die kleinen Fehler haben sich summiert."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "12 Zeilen Code",
+      "description": "Löse die Übung mit nur 12 Zeilen Code."
     }
   },
   "hints": {
     "lookAtEachMark": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie schaue ich mir jede einzelne Bewertung an?",
+      "answer": "Geh den String der Bewertungen Zeichen für Zeichen durch. Jedes Zeichen ist entweder ✅, ❌ oder 💥."
     },
     "emojiInQuotes": {
-      "question": "�",
-      "answer": "�"
+      "question": "Warum beschwert sich mein Code über 💥?",
+      "answer": "Emojis wie 💥 und ❌ müssen trotzdem in Anführungszeichen gesetzt werden. Sie sind Zeichen in einem String, genau wie Buchstaben."
     },
     "majorFault": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was soll ich tun, wenn ich einen schweren Fehler (💥) sehe?",
+      "answer": "Ein einziger schwerer Fehler lässt dich durchfallen, egal was sonst noch passiert ist. Du kannst also sofort `false` zurückgeben, sobald du einen siehst. Du musst nicht weiterschauen."
     },
     "minorCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie gehe ich mit kleinen Fehlern um, bei denen die Anzahl zählt?",
+      "answer": "Führe eine Zählvariable und addiere 1 dazu, jedes Mal wenn du ein ❌ siehst. Die ✅ ignorierst du, sie ändern nichts."
     },
     "finalCheck": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was prüfe ich am Ende?",
+      "answer": "Wenn die Schleife fertig ist und du keinen schweren Fehler gesehen hast, ist die Prüfung bestanden, sofern es weniger als 5 kleine Fehler waren. Gib `true` zurück, wenn die Anzahl der kleinen Fehler unter 5 liegt, sonst `false`."
     }
   }
 }

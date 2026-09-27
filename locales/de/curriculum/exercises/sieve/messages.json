@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "implementSieve": {
+      "name": "Sieb implementieren",
+      "description": "Schreib eine Funktion namens `sieve`, die eine Zahl als Eingabewert entgegennimmt und mit dem Algorithmus „Sieb des Eratosthenes“ eine Liste aller Primzahlen zurückgibt, die kleiner oder gleich dieser Zahl sind."
+    }
+  },
+  "scenarios": {
+    "sieveNoPrimesUnderTwo": {
+      "name": "Keine Primzahlen unter zwei",
+      "description": "Es gibt keine Primzahlen kleiner als 2."
+    },
+    "sieveFirstPrime": {
+      "name": "Erste Primzahl finden",
+      "description": "Die erste Primzahl ist 2."
+    },
+    "sievePrimesUpTo10": {
+      "name": "Primzahlen bis 10 finden",
+      "description": "Finde die Primzahlen bis 10."
+    },
+    "sieveLimitIsPrime": {
+      "name": "Grenze ist eine Primzahl",
+      "description": "Finde die Primzahlen bis zu einer Grenze, die selbst eine Primzahl ist."
+    },
+    "sievePrimesUpTo100": {
+      "name": "Primzahlen bis 100 finden",
+      "description": "Finde alle Primzahlen bis 100."
+    }
+  },
+  "hints": {
+    "basicIdea": {
+      "question": "Was ist die Grundidee des Siebs?",
+      "answer": "Schreib alle Zahlen von 2 bis zu deiner Grenze auf. Nimm die 2. Sie ist eine Primzahl, aber streiche alle ihre Vielfachen durch (4, 6, 8 und so weiter). Geh zur nächsten unmarkierten Zahl weiter (3). Sie ist eine Primzahl, also streiche alle ihre Vielfachen durch. Wiederhole das. Was am Ende noch unmarkiert ist, ist eine Primzahl."
+    },
+    "representMarked": {
+      "question": "Wie stelle ich „markiert“ oder „unmarkiert“ dar?",
+      "answer": "Ein Wörterbuch, dessen Schlüssel die Zahl ist und dessen Wert mit wahr oder falsch für „markiert“ steht. Wenn du `marked[n]` nachschlägst, siehst du, ob n durchgestrichen wurde."
+    },
+    "crossOutMultiples": {
+      "question": "Wie streiche ich die Vielfachen einer Zahl durch?",
+      "answer": "Geh in einer Schleife durch die Vielfachen (n*2, n*3, n*4, ...) bis zur Grenze und markiere jedes davon in deinem Wörterbuch als nicht prim."
+    },
+    "collectAnswer": {
+      "question": "Wie sammle ich am Ende das Ergebnis ein?",
+      "answer": "Wenn du mit dem Markieren fertig bist, geh in einer Schleife von 2 bis zur Grenze. Jede Zahl, die noch unmarkiert ist, hängst du mit `push()` an die Ergebnisliste an."
+    }
+  },
+  "functions": {
+    "push": {
+      "description": "Fügt ein Element am Ende eines Arrays hinzu und verändert dabei das Array selbst.",
+      "category": "Array-Operationen"
+    }
+  }
+}

@@ -1,0 +1,264 @@
+WEBVTT
+
+NOTE en_md5 d53eb0ea7bb0ec1daa64bb73829462f2
+
+00:00:00.240 --> 00:00:03.700
+Willkommen zurück. Bisher war alles, was wir gemacht haben,
+
+00:00:03.720 --> 00:00:06.880
+linear aufgebaut: Jiki
+
+00:00:06.920 --> 00:00:10.660
+befolgt jeden Befehl der Reihe nach, von oben
+
+00:00:10.670 --> 00:00:14.220
+nach unten. In dieser Lektion schauen wir uns an,
+
+00:00:14.260 --> 00:00:16.330
+wie Jiki aus diesem
+
+00:00:16.460 --> 00:00:19.690
+strengen Ablauf von oben nach unten ausbrechen kann. Genauer gesagt:
+
+00:00:19.720 --> 00:00:21.800
+wie wir Jiki sagen können, dass er denselben
+
+00:00:21.880 --> 00:00:24.320
+Abschnitt Code viele Male
+
+00:00:24.360 --> 00:00:28.680
+hintereinander ausführen soll. Stell dir zum Beispiel vor, du bist im
+
+00:00:28.760 --> 00:00:31.180
+Labyrinth und willst 10 Schritte
+
+00:00:31.240 --> 00:00:34.240
+nach vorne gehen. Dafür gibt es die Funktion walk.
+
+00:00:34.280 --> 00:00:36.690
+Aber was, wenn
+
+00:00:36.740 --> 00:00:39.670
+es die nicht gäbe? Was, wenn du nur
+
+00:00:39.920 --> 00:00:44.700
+die Funktion move (bewegen) hättest? Statt move 10-mal
+
+00:00:44.760 --> 00:00:48.000
+hintereinander zu schreiben, was ziemlich eintönig wird,
+
+00:00:48.740 --> 00:00:50.420
+wollen wir
+
+00:00:50.500 --> 00:00:54.000
+sagen können: „Hey Jiki, mach das Nächste,
+
+00:00:54.120 --> 00:00:59.840
+was ich sage, 10-mal. Move.“ Um das
+
+00:00:59.900 --> 00:01:02.320
+im Code zu machen, brauchen wir
+
+00:01:02.480 --> 00:01:07.300
+unser erstes Schlüsselwort (keyword auf Englisch). Schlüsselwörter sind Befehle,
+
+00:01:07.340 --> 00:01:10.180
+die Jiki versteht. Sie sehen ein bisschen
+
+00:01:10.220 --> 00:01:13.980
+wie Maschinen aus, sind aber keine. Wenn Jiki
+
+00:01:14.020 --> 00:01:16.460
+ein Schlüsselwort sieht, sucht er nicht nach einer Maschine
+
+00:01:16.500 --> 00:01:18.920
+im Regal. Er weiß einfach,
+
+00:01:18.960 --> 00:01:23.300
+was zu tun ist. Es ist fest in seinem Kopf verankert.
+
+00:01:23.320 --> 00:01:25.700
+Im Laufe des Kurses lernen wir ungefähr 20 verschiedene
+
+00:01:25.740 --> 00:01:28.480
+Schlüsselwörter kennen, und das
+
+00:01:28.520 --> 00:01:32.560
+erste davon ist das Schlüsselwort repeat.
+
+00:01:32.580 --> 00:01:35.540
+Das Schlüsselwort repeat macht genau das, was ich gerade beschrieben habe.
+
+00:01:36.100 --> 00:01:40.580
+Es sagt Jiki: „Wiederhole das, was ich als Nächstes sage,
+
+00:01:40.700 --> 00:01:42.990
+so viele Male.“ Schau dir diesen
+
+00:01:43.080 --> 00:01:45.960
+Code an. Zuerst benutzen wir das
+
+00:01:46.000 --> 00:01:48.440
+Schlüsselwort repeat, um Jiki zu sagen, dass er
+
+00:01:48.480 --> 00:01:51.580
+etwas mehrmals tun wird. Dann schreiben wir
+
+00:01:51.680 --> 00:01:53.940
+in runde Klammern, wie oft Jiki
+
+00:01:53.980 --> 00:01:57.070
+die Sache wiederholen soll. Und dann
+
+00:01:57.100 --> 00:02:00.030
+kommen diese geschweiften Klammern, und
+
+00:02:00.040 --> 00:02:02.850
+in diesen geschweiften Klammern steht das,
+
+00:02:02.860 --> 00:02:06.020
+was Jiki wiederholen soll. Dieses Muster
+
+00:02:06.100 --> 00:02:09.320
+ist in der Programmierung unglaublich verbreitet. Wir schreiben ein
+
+00:02:09.380 --> 00:02:12.400
+Schlüsselwort, meistens mit einer Zusatzinformation,
+
+00:02:12.440 --> 00:02:14.549
+hier also, wie oft etwas passieren soll,
+
+00:02:14.580 --> 00:02:17.620
+und dahinter einen Block (code block auf Englisch) in geschweiften
+
+00:02:17.680 --> 00:02:20.880
+Klammern. Zurück in der Labyrinth-Welt:
+
+00:02:21.520 --> 00:02:25.220
+Statt move, move, move, move zu schreiben,
+
+00:02:25.260 --> 00:02:30.580
+können wir schreiben: Wiederhole viermal move. Jiki
+
+00:02:30.590 --> 00:02:32.860
+sieht diesen Code und benutzt die
+
+00:02:32.940 --> 00:02:36.870
+move-Maschine viermal hintereinander. Und
+
+00:02:36.900 --> 00:02:38.960
+wir sind nicht darauf beschränkt, nur eine Sache
+
+00:02:39.000 --> 00:02:41.800
+in die geschweiften Klammern zu schreiben. Jiki kann auch
+
+00:02:41.900 --> 00:02:45.320
+mehrere Dinge wiederholt tun. Wir können Jiki sagen, dass er
+
+00:02:45.460 --> 00:02:48.080
+move und dann turnLeft ausführen soll, und das
+
+00:02:48.120 --> 00:02:51.540
+Ganze viermal wiederholen. Wenn Jiki
+
+00:02:51.560 --> 00:02:54.000
+das sieht, benutzt er die move-Maschine, dann die
+
+00:02:54.060 --> 00:02:56.880
+turnLeft-Maschine, dann die move-Maschine, dann
+
+00:02:56.920 --> 00:02:59.340
+die turnLeft-Maschine, dann die move-Maschine
+
+00:02:59.430 --> 00:03:01.720
+und so weiter, bis er beides
+
+00:03:01.800 --> 00:03:07.160
+viermal gemacht hat. Diese Wiederholungsbefehle nennen wir Schleifen (loops auf Englisch).
+
+00:03:07.840 --> 00:03:09.540
+Es gibt viele verschiedene Schleifen,
+
+00:03:09.580 --> 00:03:11.980
+die wir benutzen können, und jede funktioniert ein bisschen anders.
+
+00:03:12.000 --> 00:03:15.210
+Wir schauen sie uns in diesem Kurs alle an.
+
+00:03:15.220 --> 00:03:17.710
+Eine Sache musst du noch wissen:
+
+00:03:17.760 --> 00:03:20.300
+Deinen Code ordentlich zu halten,
+
+00:03:20.480 --> 00:03:24.240
+wird wichtig, sobald du mit Schleifen arbeitest. Wenn
+
+00:03:24.280 --> 00:03:26.800
+dein Code eine gute visuelle Struktur hat,
+
+00:03:26.860 --> 00:03:28.940
+siehst du sofort, was passiert.
+
+00:03:29.660 --> 00:03:31.740
+Wenn nicht, wenn du also vergisst,
+
+00:03:31.780 --> 00:03:34.400
+sauber einzurücken, oder deine Einrückung
+
+00:03:34.460 --> 00:03:38.630
+durcheinanderbringst, wird es sehr schnell verwirrend. Deshalb
+
+00:03:38.660 --> 00:03:41.500
+haben wir in diesem Kurs eine feste Regel:
+
+00:03:41.600 --> 00:03:45.049
+Die öffnende geschweifte Klammer steht immer
+
+00:03:45.080 --> 00:03:48.430
+in derselben Zeile wie die repeat-Anweisung (statement auf Englisch).
+
+00:03:48.430 --> 00:03:50.860
+Die schließende geschweifte Klammer steht immer in einer
+
+00:03:50.940 --> 00:03:54.080
+eigenen Zeile nach der Anweisung. Und den Code
+
+00:03:54.120 --> 00:03:56.399
+dazwischen rückst du immer um zwei
+
+00:03:56.480 --> 00:04:00.120
+Leerzeichen ein. So bleibt alles schön ordentlich.
+
+00:04:01.020 --> 00:04:02.560
+Und wenn du es vergisst oder
+
+00:04:02.620 --> 00:04:04.360
+ein anderes Muster ausprobierst, bekommst du einen Fehler.
+
+00:04:06.100 --> 00:04:08.080
+In den nächsten Übungen ist dein Ziel,
+
+00:04:08.120 --> 00:04:11.060
+einige der Herausforderungen mit
+
+00:04:11.100 --> 00:04:13.720
+so wenigen Codezeilen wie möglich zu lösen, und
+
+00:04:13.780 --> 00:04:15.320
+dabei helfen dir
+
+00:04:15.380 --> 00:04:18.060
+repeat-Schleifen. Danach schauen wir uns an,
+
+00:04:18.070 --> 00:04:19.990
+wie wir die repeat-Schleife zusammen mit anderen
+
+00:04:20.019 --> 00:04:23.270
+Konzepten nutzen, um noch mächtigere
+
+00:04:23.320 --> 00:04:25.540
+Techniken kennenzulernen. Viel Spaß, und wir sehen uns
+
+00:04:25.580 --> 00:04:26.039
+bald wieder hier.

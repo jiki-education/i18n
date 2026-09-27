@@ -1,55 +1,55 @@
 {
   "checks": {
-    "notShotAllAliens": "�",
-    "functionNotDefined": "�",
-    "functionNotCalled": "�"
+    "notShotAllAliens": "Du hast nicht alle Aliens abgeschossen.",
+    "functionNotDefined": "Du musst eine Funktion <code>shootIfAlienAbove</code> definieren.",
+    "functionNotCalled": "Du hast <code>shootIfAlienAbove</code> definiert, aber du musst sie in deiner Lösung auch tatsächlich aufrufen."
   },
   "tasks": {
     "battleProcedures": {
-      "name": "�",
-      "description": "�"
+      "name": "Erstelle eine Funktion shootIfAlienAbove und gewinne damit das Spiel",
+      "description": "Lagere die Schusslogik in eine Funktion shootIfAlienAbove() aus und nutze sie dann zusammen mit der Bewegungslogik, um alle Aliens zu besiegen."
     }
   },
   "scenarios": {
     "battleProcedures": {
-      "name": "�",
-      "description": "�"
+      "name": "Kampfprozeduren",
+      "description": "Besiege alle Aliens mit deiner Funktion shootIfAlienAbove"
     }
   },
   "hints": {
     "wherePutFunction": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wo gehört die Funktion `shootIfAlienAbove` hin?",
+      "answer": "Definiere sie ganz oben in deinem Code, vor der Schleife. Sobald sie definiert ist, kannst du sie aus der Schleife heraus beliebig oft aufrufen."
     },
     "whatGoesInside": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was gehört in `shootIfAlienAbove` hinein?",
+      "answer": "Nutze eine `if`-Anweisung, die `isAlienAbove()` prüft. Wenn sie `true` zurückgibt, rufst du `shoot()` auf. Das ist der ganze Inhalt der Funktion."
     },
     "whatStaysInLoop": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was bleibt in der Schleife?",
+      "answer": "Die ganze Bewegungslogik bleibt in der Schleife, genau wie in der Übung zum Scrollen und Schießen. Bei jedem Durchlauf: Rufe `shootIfAlienAbove()` auf, bewege dann die Kanone und wechsle an den Rändern die Richtung."
     },
     "trackCannon": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie behalte ich im Blick, wo die Kanone ist und in welche Richtung sie gerade fährt?",
+      "answer": "Nutze zwei Variablen, die du bei jedem Durchlauf aktualisierst. Zum Beispiel eine Variable `position`, die hoch- oder runterzählt, und eine Variable `direction`, die `\"right\"` oder `\"left\"` ist und sich umdreht, wenn du an einen Rand stößt."
     }
   },
   "functions": {
     "moveLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt die Laserkanone **eine Position nach links**. Wenn du versuchst, über den linken Rand des Bildschirms hinauszufahren, verlierst du das Spiel!",
+      "category": "Bewegung"
     },
     "moveRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt die Laserkanone **eine Position nach rechts**. Wenn du versuchst, über den rechten Rand des Bildschirms hinauszufahren, verlierst du das Spiel!",
+      "category": "Bewegung"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Schießt den Laser nach oben. **Schieß nur, wenn ein Alien über dir ist**, sonst verlierst du das Spiel! Die Laserkanone überhitzt leicht, du musst dich also bewegen, bevor du wieder schießt.",
+      "category": "Aktion"
     },
     "isAlienAbove": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt `true` zurück, wenn sich direkt über der Laserkanone ein Alien befindet, und `false`, wenn nicht. Nutze das, um vor dem Schießen zu prüfen!",
+      "category": "Erkennung"
     }
   }
 }

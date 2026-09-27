@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 01e55797f6d7badd90ea909a2a995db9
+
+00:00:00.280 --> 00:00:03.680
+Willkommen zurück. Bisher hast du zwei Schlüsselwörter gelernt,
+
+00:00:03.800 --> 00:00:07.760
+zwei Befehle, die Jiki versteht: let und
+
+00:00:07.800 --> 00:00:10.720
+repeat. In diesem Video lernen wir
+
+00:00:10.820 --> 00:00:12.820
+ein neues Schlüsselwort kennen, und zwar
+
+00:00:12.900 --> 00:00:15.570
+eines, mit dem wir Jiki sagen können, dass er
+
+00:00:15.660 --> 00:00:20.400
+Dinge nur in bestimmten Situationen tun soll. Vielleicht schreibst du
+
+00:00:20.420 --> 00:00:22.850
+Code, der den Eingang einer
+
+00:00:22.860 --> 00:00:25.510
+Bar bewacht, vielleicht bist du Türsteher, und Jiki soll
+
+00:00:25.600 --> 00:00:28.880
+die Tür nur öffnen, wenn jemand passend angezogen ist.
+
+00:00:30.040 --> 00:00:32.470
+Oder vielleicht schreibst du Code, in dem du
+
+00:00:32.500 --> 00:00:34.990
+am Ende eines Rennens die Zielflagge
+
+00:00:35.020 --> 00:00:38.110
+schwenken darfst, aber Jiki muss
+
+00:00:38.160 --> 00:00:39.740
+wissen, dass er das nur
+
+00:00:39.780 --> 00:00:43.220
+in der letzten Runde tun soll. In solchen
+
+00:00:43.320 --> 00:00:46.080
+Situationen benutzen wir das Schlüsselwort if.
+
+00:00:47.760 --> 00:00:50.160
+Das Schlüsselwort if benutzen wir ganz
+
+00:00:50.220 --> 00:00:53.320
+ähnlich wie repeat. Wir schreiben
+
+00:00:53.380 --> 00:00:56.400
+eine Information in runde Klammern. Hier ist das
+
+00:00:56.940 --> 00:00:59.260
+die Bedingung (condition auf Englisch), die wir prüfen.
+
+00:00:59.330 --> 00:01:00.600
+Dazu gleich mehr.
+
+00:01:01.280 --> 00:01:03.040
+Und dann kommt in die geschweiften
+
+00:01:03.240 --> 00:01:06.100
+Klammern ein Block mit Code, den wir
+
+00:01:06.380 --> 00:01:10.520
+nur ausführen, wenn diese Bedingung wahr ist. Wie
+
+00:01:10.540 --> 00:01:13.620
+sehen diese Bedingungen nun aus? Normalerweise sind sie
+
+00:01:13.660 --> 00:01:16.580
+eine Art Vergleich (comparison auf Englisch). Wir vergleichen zwei Zahlen
+
+00:01:16.680 --> 00:01:19.300
+oder Strings und prüfen, ob das Ergebnis
+
+00:01:19.380 --> 00:01:23.580
+wahr oder falsch ist. Stell dir diese also als
+
+00:01:23.640 --> 00:01:26.580
+Aussagen (statements auf Englisch) vor, die du laut aussprechen könntest. Drei
+
+00:01:26.640 --> 00:01:30.620
+ist kleiner als fünf. Das ist wahr. Sieben ist
+
+00:01:30.680 --> 00:01:35.420
+kleiner als zwei. Das ist falsch. Wir benutzen Symbole,
+
+00:01:35.500 --> 00:01:38.480
+um diese Vergleiche zu schreiben. Die meisten kennst du
+
+00:01:38.520 --> 00:01:41.040
+wahrscheinlich schon aus dem Matheunterricht. Es gibt kleiner
+
+00:01:41.060 --> 00:01:44.140
+als, größer als, kleiner oder gleich,
+
+00:01:44.620 --> 00:01:46.940
+größer oder gleich, und
+
+00:01:47.000 --> 00:01:48.600
+außerdem eine Prüfung, ob zwei
+
+00:01:48.610 --> 00:01:51.570
+Dinge gleich sind. Und
+
+00:01:51.600 --> 00:01:54.360
+die sieht ein bisschen anders aus, als du es
+
+00:01:54.400 --> 00:01:58.440
+wahrscheinlich gewohnt bist, denn wir schreiben drei Gleichheitszeichen
+
+00:01:58.500 --> 00:02:00.580
+hintereinander, um zu prüfen, ob zwei
+
+00:02:00.680 --> 00:02:04.040
+Dinge gleich oder verschieden sind. Das
+
+00:02:04.080 --> 00:02:06.820
+hilft uns, es nicht mit dem Setzen
+
+00:02:06.900 --> 00:02:09.720
+oder Aktualisieren von Variablen zu verwechseln, wo
+
+00:02:09.780 --> 00:02:11.540
+ein Gleichheitszeichen bedeutet: Leg das
+
+00:02:11.580 --> 00:02:15.900
+in die Box. Merk dir einfach: drei Gleichheitszeichen zum Vergleichen.
+
+00:02:17.720 --> 00:02:21.140
+Auch Strings kannst du vergleichen. hello
+
+00:02:21.400 --> 00:02:24.630
+ist gleich hello. Das ist wahr. Die beiden Strings sind
+
+00:02:24.640 --> 00:02:27.300
+gleich. Aber sei hier vorsichtig, denn Jiki
+
+00:02:27.380 --> 00:02:31.320
+vergleicht jedes einzelne Zeichen (character auf Englisch) in beiden Strings,
+
+00:02:31.360 --> 00:02:34.720
+auf beiden Zetteln. Hello mit
+
+00:02:34.800 --> 00:02:38.420
+großem H ist also nicht gleich hello mit
+
+00:02:38.430 --> 00:02:41.430
+kleinem H. Das sind verschiedene Strings. Dieser Vergleich
+
+00:02:41.460 --> 00:02:44.000
+wäre also falsch, denn das große H
+
+00:02:44.460 --> 00:02:49.290
+und das kleine H sind verschiedene Zeichen.
+
+00:02:49.500 --> 00:02:51.390
+Übrigens: wahr und falsch
+
+00:02:51.420 --> 00:02:56.230
+heißen boolesche Werte (Booleans auf Englisch), wieder so ein technisch klingendes Wort. Aber
+
+00:02:56.280 --> 00:02:58.370
+es ist ganz einfach. Es ist nur eine formelle Art
+
+00:02:58.480 --> 00:03:01.080
+zu sagen, dass etwas entweder wahr oder
+
+00:03:01.140 --> 00:03:03.220
+falsch ist. Wenn du also mich oder
+
+00:03:03.260 --> 00:03:05.530
+jemand anderen „boolesche Werte“ sagen hörst, bedeutet das einfach
+
+00:03:05.580 --> 00:03:09.020
+wahr oder falsch. Okay, schauen wir uns das in
+
+00:03:09.040 --> 00:03:12.660
+Aktion an. Stell dir vor, wir bauen diesen Roboter-Türsteher für
+
+00:03:12.740 --> 00:03:15.360
+einen Club, und wir legen fest, dass der Türsteher
+
+00:03:15.400 --> 00:03:18.220
+die Tür nur öffnen soll, wenn die Person
+
+00:03:18.280 --> 00:03:22.560
+21 oder älter ist. Wir haben also eine
+
+00:03:22.640 --> 00:03:25.000
+Funktion askAge (nach dem Alter fragen), mit der wir
+
+00:03:25.020 --> 00:03:27.320
+jemandes Alter herausfinden können, und ihr
+
+00:03:27.340 --> 00:03:29.660
+Ergebnis speichern wir in einer Variablen namens age (Alter).
+
+00:03:30.620 --> 00:03:32.620
+Dann können wir sagen: Wenn dieses age
+
+00:03:33.100 --> 00:03:35.840
+größer als 20 ist, öffnen wir die Tür.
+
+00:03:36.780 --> 00:03:40.260
+Wenn askAge also 30 zurückgibt, öffnen
+
+00:03:40.300 --> 00:03:43.620
+wir sie, und wenn es 12 zurückgibt, nicht.
+
+00:03:45.440 --> 00:03:47.549
+In der nächsten Übung benutzt du
+
+00:03:47.600 --> 00:03:50.920
+die if-Anweisung, um in deinem Code Entscheidungen zu treffen.
+
+00:03:51.000 --> 00:03:54.120
+Du prüfst Bedingungen und führst bestimmten Code nur aus,
+
+00:03:54.160 --> 00:03:57.420
+wenn diese Bedingungen wahr sind. Die nächsten beiden Übungen
+
+00:03:57.430 --> 00:03:59.360
+sind ziemlich einfach, und danach machen wir
+
+00:03:59.440 --> 00:04:02.210
+mit ein paar komplexeren weiter. Wie
+
+00:04:02.280 --> 00:04:05.109
+immer baut alles in diesen Übungen nur auf dem auf, was wir
+
+00:04:05.120 --> 00:04:07.240
+schon besprochen haben. Wenn du nicht weiterweißt,
+
+00:04:07.420 --> 00:04:09.160
+schau dir die Konzept-Links unten in
+
+00:04:09.180 --> 00:04:11.960
+der Anleitung an und frisch alles auf, was du
+
+00:04:12.000 --> 00:04:14.200
+vielleicht vergessen hast. Viel Glück, wir sehen uns
+
+00:04:14.220 --> 00:04:14.990
+gleich wieder!

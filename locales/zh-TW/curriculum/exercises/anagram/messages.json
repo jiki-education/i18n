@@ -1,0 +1,78 @@
+{
+  "tasks": {
+    "findAnagrams": {
+      "name": "找出重組字",
+      "description": "寫一個函式，從候選陣列中找出目標單字的所有重組字。重組字就是把相同的字母重新排列。這個函式比對時不分大小寫，要排除目標單字本身，回傳的結果還要依字母順序排序。"
+    },
+    "sortedResults": {
+      "name": "依字母順序排序",
+      "description": "確保回傳的結果依字母順序排序（加分挑戰）。"
+    }
+  },
+  "scenarios": {
+    "noMatches": {
+      "name": "沒有符合的重組字",
+      "description": "如果候選單字裡沒有任何重組字，就回傳一個空陣列。"
+    },
+    "twoAnagrams": {
+      "name": "找出兩個重組字",
+      "description": "從候選陣列中找出兩個重組字。"
+    },
+    "noSubsets": {
+      "name": "不會把部分字母的單字當成重組字",
+      "description": "重組字必須把每個字母都剛好用上一次。"
+    },
+    "singleMatch": {
+      "name": "找出單一個重組字",
+      "description": "從陣列中找出一個重組字。"
+    },
+    "differentCase": {
+      "name": "找出多個大小寫不同的重組字",
+      "description": "不論大小寫，都應該能找出重組字。"
+    },
+    "caseInsensitive": {
+      "name": "比對重組字時不分大小寫",
+      "description": "大小寫不應該影響重組字的判斷。"
+    },
+    "notItself": {
+      "name": "單字不算自己的重組字（不分大小寫）",
+      "description": "一個單字不應該被當成自己的重組字。"
+    },
+    "otherThanItself": {
+      "name": "自己以外的單字可以互為重組字",
+      "description": "找出有效的重組字，並排除目標單字本身。"
+    },
+    "alphabeticalSorting": {
+      "name": "結果依字母順序排序",
+      "description": "確認重組字是依字母順序回傳的。"
+    }
+  },
+  "hints": {
+    "howToTellAnagrams": {
+      "question": "我要怎麼判斷兩個單字是不是重組字？",
+      "answer": "如果兩個單字含有完全相同的字母，只是排列順序不同，它們就是重組字。在程式裡最簡單的檢查方法，就是把兩個單字的字母都排序。如果排序後的結果一樣，它們就是重組字。"
+    },
+    "caseTrippingUp": {
+      "question": "為什麼字母明明對了，我的比對卻沒成功？",
+      "answer": "很可能是大小寫害你卡住了。「Stone」和「tones」應該要能配對，但兩者的大寫不一樣。比對之前，先把它們全部轉成小寫。"
+    },
+    "targetCountsAsItself": {
+      "question": "目標單字本身算是自己的重組字嗎？",
+      "answer": "不算，一個單字不是自己的重組字。用不分大小寫的比較方式，把目標單字從候選陣列裡篩掉，因為它可能以不同的大小寫出現。"
+    },
+    "collectingMatches": {
+      "question": "我要怎麼把找到的重組字收集起來？",
+      "answer": "先從一個空陣列開始，用`push()`把找到的每個重組字加進去。別忘了，回傳之前要先把結果依字母順序排序。"
+    }
+  },
+  "functions": {
+    "push": {
+      "description": "把一個元素加到陣列的最後面，並且直接改變原本的陣列。",
+      "category": "陣列操作"
+    },
+    "sortString": {
+      "description": "接收一個字串，回傳依字母順序排序後的字元",
+      "category": "字串操作"
+    }
+  }
+}

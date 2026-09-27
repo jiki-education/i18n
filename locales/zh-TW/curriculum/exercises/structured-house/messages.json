@@ -1,59 +1,59 @@
 {
   "checks": {
-    "frameWrong": "�",
-    "roofWrong": "�",
-    "leftWindowWrong": "�",
-    "rightWindowWrong": "�",
-    "doorWrong": "�",
-    "knobWrong": "�",
-    "doesNotScale": "�"
+    "frameWrong": "房子的主體不在正確的位置。",
+    "roofWrong": "屋頂不在正確的位置。",
+    "leftWindowWrong": "左邊的窗戶不在正確的位置。",
+    "rightWindowWrong": "右邊的窗戶不在正確的位置。",
+    "doorWrong": "門不在正確的位置。",
+    "knobWrong": "門把不在正確的位置。",
+    "doesNotScale": "當 houseWidth={{houseWidth}}、houseHeight={{houseHeight}} 時，你的房子沒有正確縮放。每個位置和尺寸都應該從 houseWidth 和 houseHeight 推導出來，而不是寫死的數字。"
   },
   "tasks": {
     "drawHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "畫出房子",
+      "description": "用`houseWidth`和`houseHeight`建出房子，讓它保持置中、牢牢站在草地上，而且不論多大都能維持正確的比例。"
     }
   },
   "scenarios": {
     "drawTheHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "畫出房子",
+      "description": "用 houseWidth 和 houseHeight 建出房子，讓它能正確縮放。"
     }
   },
   "hints": {
     "whereDoIStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "要從哪裡開始？",
+      "answer": "你已經有`houseWidth`、`houseHeight`和`canvasWidth`了。先算出主體需要的兩個東西：左邊緣（讓房子置中）和上邊緣（讓房子站在草地上）。之後每個形狀都可以從主體建出來。"
     },
     "keepCentered": {
-      "question": "�",
-      "answer": "�"
+      "question": "寬度改變時，要怎麼讓房子保持置中？",
+      "answer": "畫布的中間永遠是`canvasWidth / 2`。如果主體以那個點為中心，它的左邊緣就在中點往左半個寬度的地方。其他置中的東西（屋頂尖端、門）也可以用同一個中點。"
     },
     "keepPlantedOnGrass": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼讓房子牢牢站在草地上？",
+      "answer": "先找出房子底部該落在哪個 y 值（草地頂端再下面一點）。主體的上邊緣，就在那裡往上一個房子高度的位置。從底部往上算，房子變高時才會往天空長，而不是往下穿過草地。"
     },
     "sizeRoofWindowsDoor": {
-      "question": "�",
-      "answer": "�"
+      "question": "屋頂、窗戶和門的尺寸要怎麼算？",
+      "answer": "規格裡的每個尺寸，都是主體寬度或高度的幾分之一（例如「寬度的 1/5th」就是`houseWidth / 5`）。每個寬度都從`houseWidth`建出來，每個高度都從`houseHeight`建出來，這樣它們就會一起縮放。"
     },
     "breaksOnResize": {
-      "question": "�",
-      "answer": "�"
+      "question": "預設尺寸下看起來沒問題，但我一改尺寸就壞掉了。為什麼？",
+      "answer": "你大概在某個地方把數字寫死了，而不是推導出來的。找找看有沒有哪個字面值不是直接來自規格，例如畫布尺寸或草地高度。那個值幾乎一定應該從另一個變數推導出來。那個變數可能是錨點，也可能是已經從錨點建出來的東西，例如門的寬度。"
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "在 (left, top) 位置畫出一個矩形，並帶有指定的寬度、高度和顏色",
+      "category": "繪製圖形"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "畫出一個以 (centerX, centerY) 為圓心，並帶有指定半徑和顏色的圓形",
+      "category": "繪製圖形"
     },
     "triangle": {
-      "description": "�",
-      "category": "�"
+      "description": "用三個頂點和一個顏色畫出三角形",
+      "category": "繪製圖形"
     }
   }
 }

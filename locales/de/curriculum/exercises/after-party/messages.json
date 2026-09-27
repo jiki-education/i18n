@@ -1,78 +1,78 @@
 {
   "tasks": {
     "lookUpPlusOnes": {
-      "name": "�",
-      "description": "�"
+      "name": "Die Plus-Ones prüfen",
+      "description": "Jemand nennt dir seinen Vornamen. Gib die Anzahl der zusätzlichen Gäste zurück, die er mitbringen darf, oder `\"Not on the list!\"`, wenn er nicht eingeladen ist."
     }
   },
   "scenarios": {
     "emptyList": {
-      "name": "�",
-      "description": "�"
+      "name": "Leere Gästeliste",
+      "description": "Wenn die Liste leer ist, bringt niemand jemanden mit."
     },
     "nameMissing": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad wird abgewiesen",
+      "description": "Der Name steht gar nicht auf der Liste."
     },
     "namePresent": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad darf rein",
+      "description": "Brad ist eingeladen, und er kommt nicht allein."
     },
     "similarName": {
-      "name": "�",
-      "description": "�"
+      "name": "Knapp daneben",
+      "description": "Bradley ist nicht Brad, also bleibt Brad auf der falschen Seite des Absperrseils."
     },
     "doubleBarrelled": {
-      "name": "�",
-      "description": "�"
+      "name": "Ein Doppelname",
+      "description": "Der Name steht auf der Liste, aber er ist mit Bindestrich geschrieben."
     },
     "allowedNobody": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad ist solo unterwegs",
+      "description": "Brad ist definitiv eingeladen. Er bringt nur niemanden mit."
     },
     "twoBrads": {
-      "name": "�",
-      "description": "�"
+      "name": "Zwei Brads",
+      "description": "Heute Abend gibt es mehr als einen Brad auf der Liste, und der erste davon ist der, der gerade vor dir steht."
     },
     "cher": {
-      "name": "�",
-      "description": "�"
+      "name": "Cher ist in der Stadt",
+      "description": "Manche Leute haben nur einen Namen, und sie hat ein ganzes Gefolge mitgebracht."
     },
     "cheryl": {
-      "name": "�",
-      "description": "�"
+      "name": "Jetzt wird es knifflig",
+      "description": "Sind Cheryl Crow und Cher befreundet? Das spielt keine Rolle: Cheryl ist nicht Cher."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wo fange ich hier überhaupt an?",
+      "answer": "Stell dir vor, du stehst wirklich an der Tür. Jemand nennt einen Namen, und du liest das Klemmbrett von oben nach unten, bis du ihn findest. Dabei lohnt es sich zu bemerken, dass die Antwort, die du geben musst, nicht neben seinem Namen auf der Liste steht, die du gerade liest."
     },
     "twoLists": {
-      "question": "�",
-      "answer": "�"
+      "question": "Es gibt zwei Arrays. Wie hängen sie zusammen?",
+      "answer": "Was du darüber herausfindest, *wo* jemand in einem Array steht, gilt genauso für das andere. Eine Position ist nützlicher als ein Name, um damit weiterzuarbeiten."
     },
     "whatCountsAsAMatch": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wann gilt ein Vorname wirklich als Treffer?",
+      "answer": "„Brad“ sollte Brad Pitt reinlassen, aber nicht Bradley Cooper. Überlege, was sich bei diesen beiden Einträgen an der Stelle unterscheidet, an der die Buchstaben, die dir genannt wurden, zu Ende sind. Es gibt mehr als eine vernünftige Möglichkeit, diesen Vergleich anzustellen, also nimm die, die du dir selbst erklären kannst."
     },
     "noSurname": {
-      "question": "�",
-      "answer": "�"
+      "question": "Cher hat keinen Nachnamen. Bringt das etwas durcheinander?",
+      "answer": "Schau noch einmal darauf, was dein Vergleich bei einem Eintrag im Array voraussetzt. Wenn er voraussetzt, dass nach dem Vornamen immer noch etwas kommt, dann kommt ein Eintrag, der *nur* aus einem Vornamen besteht, nicht daran vorbei. Und umgekehrt sollte ein längerer Name keinen kürzeren Eintrag für sich beanspruchen können."
     },
     "notOnTheList": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was mache ich, wenn er nicht auf der Liste steht?",
+      "answer": "Dann bekommt er die Zeichenkette `\"Not on the list!\"`, genau so, wie sie geschrieben steht. Zwei Dinge sind hier einen Gedanken wert. Erstens: Ab wann kannst du *sicher* sein, dass jemand nicht auf der Liste steht? Zweitens: Das ist eine ganz andere Antwort als bei einem Gast, der eingeladen ist, aber niemanden mitbringen darf, also pass auf, dass deine Funktion die beiden nie verwechselt."
     }
   },
   "functions": {
     "length": {
-      "description": "�",
-      "category": "�"
+      "description": "Die Anzahl der Elemente in einem Array, dieselbe Eigenschaft length, die du schon bei Strings verwendet hast",
+      "category": "Array-Operationen"
     },
     "startsWith": {
-      "description": "�",
-      "category": "�"
+      "description": "Prüft, ob ein String mit einem kleineren String beginnt",
+      "category": "String-Operationen"
     }
   }
 }

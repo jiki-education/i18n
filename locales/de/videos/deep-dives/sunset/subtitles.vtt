@@ -1,0 +1,832 @@
+WEBVTT
+
+NOTE en_md5 c95948fc498cb52bc6b6826a80b63e6a
+
+00:00:00.493 --> 00:00:02.092
+Willkommen zu einem weiteren Deep Dive.
+
+00:00:03.532 --> 00:00:05.012
+Ich hoffe, dir hat diese Übung Spaß gemacht.
+
+00:00:05.012 --> 00:00:07.852
+Wenn du sie geschafft hast,
+ist es, finde ich, ziemlich befriedigend,
+
+00:00:07.932 --> 00:00:13.692
+diese Animationen zu sehen. Es gibt eine
+richtig gute Premium Challenge,
+
+00:00:13.692 --> 00:00:17.053
+nämlich die „Sprießende Blume“. Das ist
+
+00:00:18.253 --> 00:00:20.972
+eine anspruchsvollere, schwierigere davon,
+
+00:00:22.092 --> 00:00:24.533
+und ich weiß nicht mehr genau,
+ob du sie hier freischaltest oder nicht,
+
+00:00:24.533 --> 00:00:27.213
+aber ich kann sie dir wirklich empfehlen.
+Das ist eine echt spaßige Übung, aber
+
+00:00:28.132 --> 00:00:30.213
+es kann auch etwas frustrierend sein,
+sie richtig hinzubekommen.
+
+00:00:30.853 --> 00:00:36.853
+Diese Übungen sind gute Beispiele dafür:
+Wenn du die Anleitung liest und dich
+
+00:00:36.853 --> 00:00:37.813
+Schritt für Schritt durcharbeitest,
+
+00:00:39.253 --> 00:00:42.893
+sind sie, finde ich, nicht zu schwer. Aber
+wenn du nicht so genau liest,
+
+00:00:42.893 --> 00:00:44.292
+können sie ziemlich kompliziert werden.
+
+00:00:45.173 --> 00:00:48.292
+Darüber lohnt es sich
+also mal nachzudenken.
+
+00:00:48.292 --> 00:00:52.173
+Beim Programmieren allgemein willst du
+wirklich klar wissen, was du vorhast,
+
+00:00:52.173 --> 00:00:54.453
+bevor du loslegst und damit anfängst.
+
+00:00:55.033 --> 00:00:59.033
+Je klarer du siehst und je mehr du verstehst,
+bevor du anfängst, Code zu schreiben,
+
+00:00:59.273 --> 00:01:01.353
+desto leichter wird alles.
+
+00:01:02.073 --> 00:01:05.753
+Nimm dir also unbedingt eine Minute,
+um die Anleitung einmal durchzulesen,
+
+00:01:05.753 --> 00:01:08.393
+und sorg dafür, dass sie dir klar ist,
+bevor du anfängst zu schreiben.
+
+00:01:08.873 --> 00:01:12.712
+Hier zeichnen wir also diese Szene
+im Daumenkino-Stil, die du hier siehst.
+
+00:01:14.313 --> 00:01:15.912
+Und wir haben ein paar verschiedene Dinge.
+
+00:01:15.912 --> 00:01:19.433
+Wir zeichnen den Himmel,
+die Sonne, das Meer und den Sand.
+
+00:01:19.972 --> 00:01:22.313
+Und bei jedem davon
+ändern wir etwas.
+
+00:01:22.393 --> 00:01:26.722
+Wir lassen die Sonne wachsen. Sie beginnt
+bei 5 und wächst jedes Mal ein kleines bisschen.
+
+00:01:27.683 --> 00:01:34.643
+Und wir bewegen die Sonne, sie sinkt nach unten,
+und wir ändern die Farbe der Sonne.
+
+00:01:35.043 --> 00:01:37.602
+Dafür verwenden wir Rot, Grün und Blau.
+
+00:01:38.082 --> 00:01:42.563
+Und wir haben ... Das haben wir, oder besser
+ich, als Startwert empfohlen.
+
+00:01:42.802 --> 00:01:47.602
+Ich empfehle dir, den Grünanteil zu reduzieren,
+also den zweiten Wert: Rot, Grün, Blau, RGB,
+
+00:01:48.102 --> 00:01:51.933
+für einen schönen Effekt. Und dann
+noch die Farbe des Himmels.
+
+00:01:51.933 --> 00:01:54.013
+Da schlage ich HSL vor,
+
+00:01:55.373 --> 00:01:59.572
+Farbton, Sättigung. Und weiß ich das noch,
+heißt es Leuchtkraft oder Helligkeit?
+
+00:01:59.572 --> 00:02:01.373
+Ich glaube, Helligkeit, ja, Helligkeit.
+
+00:02:02.412 --> 00:02:04.412
+Mit HSL animieren wir den Himmel.
+
+00:02:05.783 --> 00:02:10.413
+Und das machen wir, indem wir den Farbton
+im Laufe der Animation erhöhen.
+
+00:02:12.413 --> 00:02:17.212
+Wie animieren wir also etwas? Im Grunde
+machen wir einfach mehrmals
+
+00:02:17.212 --> 00:02:20.973
+dasselbe. Wir beginnen mit unserem Himmel,
+unserer Sonne, unserem Meer und unserem Sand.
+
+00:02:21.443 --> 00:02:26.402
+Und dann zeichnen wir immer wieder
+neue Szenen darüber.
+
+00:02:26.483 --> 00:02:28.763
+Und jedes Mal verändern wir
+sie ein kleines bisschen.
+
+00:02:28.763 --> 00:02:30.323
+Führen wir das zum Start also einmal aus.
+
+00:02:30.402 --> 00:02:33.122
+Das ist immer eine gute Idee. Denk daran,
+den Startcode auszuführen.
+
+00:02:33.592 --> 00:02:36.483
+Ich blende diese Animation mal aus,
+weil sie etwas nervt.
+
+00:02:37.853 --> 00:02:40.562
+Du siehst also, am Anfang
+sieht das so aus.
+
+00:02:41.573 --> 00:02:43.522
+Und das ist schön.
+
+00:02:44.323 --> 00:02:47.923
+Wir sehen also, dass wir hier mit
+einem Radius von fünf beginnen sollen
+
+00:02:48.282 --> 00:02:51.002
+und dass er bei jeder Iteration
+um 0.2 wachsen soll.
+
+00:02:51.923 --> 00:02:53.802
+Fangen wir also damit an.
+
+00:02:54.763 --> 00:03:00.842
+Und wir haben 100 Iterationen.
+Machen wir also ein repeat,
+
+00:03:01.883 --> 00:03:02.923
+100-mal,
+
+00:03:04.763 --> 00:03:05.163
+und
+
+00:03:07.802 --> 00:03:11.883
+wir sagen, wir haben einen Radius
+von fünf, der sich ändern muss.
+
+00:03:12.203 --> 00:03:15.082
+Wie ändern wir also etwas? Wie lassen wir
+eine Zahl sich immer weiter verändern?
+
+00:03:15.242 --> 00:03:17.163
+Wir, wir nehmen eine Variable, eine Box.
+
+00:03:17.402 --> 00:03:21.002
+Nennen wir sie also sunRadius,
+
+00:03:22.923 --> 00:03:24.603
+und diese Kommentare können weg.
+
+00:03:24.763 --> 00:03:30.763
+Also sunRadius. Und sunRadius beginnt
+bei 5, und das hier können wir einfach ersetzen.
+
+00:03:30.923 --> 00:03:33.242
+Es ist immer eine gute Idee,
+deinen Code noch mal auszuführen.
+
+00:03:33.323 --> 00:03:36.842
+Kurz prüfen, Code ausführen. Er zeichnet
+100-mal dasselbe,
+
+00:03:37.242 --> 00:03:42.203
+alles wie erwartet. Und wir wollen,
+dass er jedes Mal um 0.2 wächst.
+
+00:03:43.082 --> 00:03:46.203
+Zeichnen wir also erst alles. Den Himmel,
+die Sonne, das Meer und den Sand.
+
+00:03:46.362 --> 00:03:48.842
+Und dann packen wir alle unsere
+Aktualisierungen ans Ende.
+
+00:03:48.923 --> 00:03:51.562
+Wir haben jetzt also sunRadius,
+und wir sagen,
+
+00:03:51.562 --> 00:03:54.763
+dass er jedes Mal um 0.2 wachsen soll.
+
+00:03:54.923 --> 00:03:58.362
+Das sollte jetzt heißen, dass unsere
+Sonne an derselben Position wächst,
+
+00:03:59.962 --> 00:04:01.723
+so wie hier. Wunderschön.
+
+00:04:03.082 --> 00:04:05.163
+Als Nächstes kommt die Position der Sonne.
+
+00:04:05.242 --> 00:04:07.242
+Sie startet bei 50, 10,
+
+00:04:08.193 --> 00:04:13.233
+du siehst hier 50, 10. Und wir sollen sie
+jedes Mal um eins am Himmel sinken lassen.
+
+00:04:13.233 --> 00:04:17.862
+Die 50 muss sich also nicht ändern,
+aber sunY
+
+00:04:19.632 --> 00:04:22.112
+soll sich ändern, ausgehend von 10.
+
+00:04:23.312 --> 00:04:26.112
+Legen wir dafür also mit let
+eine neue Box an.
+
+00:04:26.992 --> 00:04:29.072
+Und das hier fügen wir unten hinzu.
+
+00:04:29.072 --> 00:04:34.153
+sunY ist also sunY plus ... Sie sinkt
+jedes Mal tiefer, sie kommt weiter herunter.
+
+00:04:34.153 --> 00:04:35.153
+Wir addieren also eins.
+
+00:04:36.262 --> 00:04:40.983
+Wenn wir das ausführen, sollten wir jetzt sehen,
+dass die Sonne größer wird und herunterkommt,
+
+00:04:41.622 --> 00:04:42.742
+und das sieht richtig toll aus.
+
+00:04:43.622 --> 00:04:45.783
+Als Nächstes kommt die Farbe der Sonne.
+
+00:04:45.862 --> 00:04:51.942
+Dafür haben wir schon eine Variable,
+nämlich diese hier, das ist das RGB.
+
+00:04:51.942 --> 00:04:54.543
+Und ich habe diesen Startwert eingetragen und
+
+00:04:54.543 --> 00:04:58.423
+schlage vor, dass wir den Grünanteil
+jedes Mal um eins reduzieren.
+
+00:04:59.463 --> 00:04:59.862
+Also,
+
+00:05:01.072 --> 00:05:02.713
+wie machen wir das? Wie geht es am besten?
+
+00:05:02.713 --> 00:05:08.673
+Wir können nicht einfach dasselbe machen,
+also sunColor gleich sunColor minus eins,
+
+00:05:08.992 --> 00:05:10.833
+weil sunColor keine Zahl ist.
+
+00:05:11.872 --> 00:05:15.233
+Wir müssen also genau diesen
+einen Teil davon herauslösen.
+
+00:05:15.233 --> 00:05:19.473
+Wir haben Rot, Grün, Blau. Und dieses
+Grün ist der Teil, den wir herauslösen wollen.
+
+00:05:19.473 --> 00:05:23.872
+Sagen wir also let sunGreen gleich 237.
+
+00:05:26.692 --> 00:05:29.492
+Und dann können wir, statt
+sunColor zu verwenden,
+
+00:05:31.252 --> 00:05:35.413
+hier RGB mit unserem Rot,
+Grün und Blau schreiben,
+
+00:05:37.012 --> 00:05:39.333
+aber das Grün jedes Mal ändern.
+
+00:05:42.132 --> 00:05:49.012
+Wir sagen also sunGreen gleich
+das hier, jedes Mal minus eins.
+
+00:05:50.293 --> 00:05:51.733
+Denk mal darüber nach, was hier passiert.
+
+00:05:51.812 --> 00:05:53.733
+Jedes Mal, wenn wir durch diese Schleife gehen,
+
+00:05:54.062 --> 00:05:57.714
+haben wir immer dasselbe Rot und
+immer dasselbe Blau, 255
+
+00:05:57.771 --> 00:06:01.343
+und 0,
+aber das Grün ändern wir jedes Mal.
+
+00:06:03.343 --> 00:06:06.223
+Das fühlt sich für mich jetzt etwas unordentlich an.
+
+00:06:06.463 --> 00:06:10.382
+Eigentlich gefällt es mir ganz gut,
+hier einfach eine Variable zu haben,
+
+00:06:12.062 --> 00:06:12.783
+nämlich
+
+00:06:15.583 --> 00:06:16.622
+sunColor,
+
+00:06:18.382 --> 00:06:19.103
+und dazu
+
+00:06:20.122 --> 00:06:23.963
+ein ... Hoppla, Entschuldigung. Dazu ein sunRed
+
+00:06:26.202 --> 00:06:31.642
+mit 255, ein sunGreen und ein sunBlue mit null.
+
+00:06:35.963 --> 00:06:38.442
+Und dann geben wir uns eine richtige sunColor.
+
+00:06:38.442 --> 00:06:41.242
+Schieben wir das hier ein bisschen hin
+und bringen alles zusammen.
+
+00:06:44.043 --> 00:06:47.322
+Und dann aktualisieren wir jedes Mal
+
+00:06:50.442 --> 00:06:56.442
+hier sunGreen. Aber lass uns auch,
+kurz bevor wir hier die Sonne zeichnen,
+
+00:06:58.122 --> 00:06:59.163
+das hier noch mal aktualisieren.
+
+00:07:01.083 --> 00:07:02.122
+Machen wir das also so.
+
+00:07:05.802 --> 00:07:07.802
+Ich finde, so ist es etwas ordentlicher.
+
+00:07:08.202 --> 00:07:11.002
+Wir könnten es vielleicht auch einfach so machen.
+
+00:07:11.002 --> 00:07:12.322
+Ich. Ich weiß nicht. Was meinst du?
+
+00:07:13.043 --> 00:07:18.083
+Eine Frage an dich: Hättest du lieber
+sunColor als saubere Variable,
+
+00:07:18.322 --> 00:07:21.523
+oder schreibst du Rot,
+Grün, Blau lieber direkt hier hinein?
+
+00:07:22.403 --> 00:07:26.083
+Ich finde, beides ist gleich gut.
+Nehmen wir für dieses Beispiel das hier.
+
+00:07:26.963 --> 00:07:31.523
+Wir haben also Rot, Grün, Blau mit unserem
+sunRed, unserem sunGreen und unserem sunBlue,
+
+00:07:31.843 --> 00:07:35.682
+Rot, Grün und Blau. Und das Einzige,
+was wir hier ändern, ist das Grün.
+
+00:07:35.843 --> 00:07:37.843
+Das machen wir jedes Mal kleiner,
+
+00:07:39.103 --> 00:07:41.663
+und du siehst, dass
+alles immer röter wird.
+
+00:07:43.023 --> 00:07:45.583
+Dann müssen wir dasselbe für dieses HSL machen.
+
+00:07:46.543 --> 00:07:48.543
+Genau dasselbe Prinzip.
+
+00:07:50.783 --> 00:07:51.983
+Holen wir es hier herunter.
+
+00:07:55.023 --> 00:08:03.822
+Wir haben also sunHue mit 210. Wir haben
+sunSaturation mit 70.
+
+00:08:04.892 --> 00:08:07.052
+Wir haben die ... Nicht „sue“, sondern „sun“.
+
+00:08:07.452 --> 00:08:08.892
+Und wir haben sun ...
+
+00:08:10.173 --> 00:08:11.853
+Wie hatte ich es genannt? Lightness.
+
+00:08:12.492 --> 00:08:13.132
+Lightness,
+
+00:08:14.973 --> 00:08:16.333
+also sunLightness,
+
+00:08:17.452 --> 00:08:18.333
+mit 60.
+
+00:08:21.612 --> 00:08:24.012
+Und die schreiben wir jetzt hier direkt hinein.
+
+00:08:24.173 --> 00:08:27.612
+Wir haben also HSL mit sunHue,
+
+00:08:29.132 --> 00:08:31.632
+sunSaturation und sunLightness.
+
+00:08:35.312 --> 00:08:39.393
+Das sollte also immer noch funktionieren.
+Aber wir ändern die Farbe des Himmels nicht.
+
+00:08:39.472 --> 00:08:41.633
+Wir müssen also die Farbe des Himmels ändern.
+
+00:08:42.352 --> 00:08:45.472
+Empfohlen wird hier ein rosafarbener Sonnenuntergang.
+
+00:08:46.113 --> 00:08:48.673
+Was ergibt also einen rosafarbenen Sonnenuntergang?
+
+00:08:49.552 --> 00:08:50.033
+Wahrscheinlich,
+
+00:08:51.633 --> 00:08:54.753
+den Farbton zu ändern, genauer gesagt, ihn zu erhöhen.
+
+00:08:55.712 --> 00:08:59.472
+Probieren wir also ein paar Dinge aus.
+Sagen wir, skyHue
+
+00:08:59.832 --> 00:09:01.793
+wird zu skyHue plus eins.
+
+00:09:01.793 --> 00:09:03.513
+Wir erhöhen ihn also jedes Mal.
+
+00:09:05.273 --> 00:09:05.673
+Und
+
+00:09:07.033 --> 00:09:09.913
+was habe ich ... Ich habe es sun genannt,
+es sollte sky heißen.
+
+00:09:09.913 --> 00:09:11.273
+Gut gemacht, falls du das bemerkt hast.
+
+00:09:20.153 --> 00:09:23.753
+Okay, bitte schön. Am Ende haben wir
+ein richtig kräftiges Pink.
+
+00:09:27.043 --> 00:09:29.082
+So denke ich also
+über diese Übung nach.
+
+00:09:29.082 --> 00:09:32.322
+Und, hast du die Fragen bemerkt, die ich mir
+beim Durcharbeiten selbst gestellt habe?
+
+00:09:32.482 --> 00:09:37.202
+Das waren echte Fragen. Da denke ich
+wirklich nach: Hätte ich hier lieber
+
+00:09:38.003 --> 00:09:42.643
+eine Variable, etwa skyColor,
+die auf das hier gesetzt wird,
+
+00:09:42.722 --> 00:09:45.202
+damit diese Zeile ein bisschen
+lesbarer wird,
+
+00:09:45.442 --> 00:09:48.883
+oder finde ich diese Zeile
+so, wie sie ist, lesbar genug?
+
+00:09:50.003 --> 00:09:52.923
+Das ist eine Abwägung. Jeder wird dazu
+eine etwas andere Meinung haben.
+
+00:09:52.923 --> 00:09:56.482
+Wenn du in einer echten Firma arbeitest,
+gibt es meistens Gepflogenheiten,
+
+00:09:56.482 --> 00:09:59.562
+also die übliche Art, wie du
+und dein Team etwas machen.
+
+00:10:00.283 --> 00:10:02.763
+Manchmal gibt es sogar
+Standards, an die du dich hältst.
+
+00:10:04.842 --> 00:10:07.562
+In dieser Situation, bei diesen Übungen,
+darfst du selbst entscheiden.
+
+00:10:07.643 --> 00:10:10.922
+Ein großer Teil der Freude am Programmieren
+ist es, solche Entscheidungen zu treffen
+
+00:10:10.922 --> 00:10:12.842
+und auszuwählen, was du schön findest.
+
+00:10:13.643 --> 00:10:16.842
+Aber
+vom Konzept her fühlt sich das ziemlich gut an.
+
+00:10:17.202 --> 00:10:22.602
+Wir haben alle unsere Werte. Wir zeichnen den
+Himmel, wir zeichnen die Sonne, das Meer und den Sand.
+
+00:10:22.682 --> 00:10:24.602
+Und dann aktualisieren wir am Ende alles.
+
+00:10:25.283 --> 00:10:29.923
+Wir könnten diese Dinge auch, wenn wir wollten,
+weiter nach oben schieben, so wie hier,
+
+00:10:30.403 --> 00:10:32.163
+und es würde genauso funktionieren.
+
+00:10:32.482 --> 00:10:36.643
+Solange wir den Wert verwenden, bevor wir
+ihn aktualisieren, funktioniert das weiterhin.
+
+00:10:38.003 --> 00:10:40.643
+Findest du das schöner oder weniger schön?
+
+00:10:41.682 --> 00:10:44.643
+Mir persönlich gefällt dieser Ansatz besser.
+
+00:10:46.883 --> 00:10:50.243
+So wie hier,
+wo wir alle unsere Variablen aktualisieren.
+
+00:10:54.602 --> 00:10:55.722
+Bereit für den nächsten Durchlauf?
+
+00:10:58.023 --> 00:11:02.842
+Du kannst auch, wenn du willst,
+diesen ganzen Block an den Anfang schieben
+
+00:11:03.802 --> 00:11:07.562
+und stattdessen die Startwerte
+
+00:11:09.003 --> 00:11:12.602
+um denselben Betrag verringern. Aber in diesem
+Fall fühlt sich das für mich unordentlicher an.
+
+00:11:12.682 --> 00:11:16.403
+Das hier sind schöne runde Zahlen. Sonst
+müsstest du mit so etwas wie einem sunRadius
+
+00:11:16.403 --> 00:11:19.003
+von 4.8 starten, damit es funktioniert.
+
+00:11:19.602 --> 00:11:21.082
+Das finde ich hier also nicht so schön.
+
+00:11:21.082 --> 00:11:26.602
+Ich finde es übersichtlicher,
+alle diese Aktualisierungen am Ende zu machen.
+
+00:11:26.602 --> 00:11:30.802
+Worüber man aber nachdenken sollte:
+Wir aktualisieren jetzt alle Boxen
+
+00:11:31.442 --> 00:11:33.363
+einmal öfter, als wir es je brauchen.
+
+00:11:34.163 --> 00:11:37.923
+Wenn wir diesen Code ausführen und
+ganz ans Ende spulen,
+
+00:11:38.003 --> 00:11:41.442
+verwenden wir nur diese letzten vier Zeilen,
+in denen wir die Box aktualisieren,
+
+00:11:42.082 --> 00:11:45.523
+aber dann endet unser Programm.
+Den Wert verwenden wir nie,
+
+00:11:45.682 --> 00:11:47.523
+diesen letzten Wert, den wir in die Box legen.
+
+00:11:47.523 --> 00:11:54.702
+Wir verwenden nie diese 310 bei skyHue
+oder diese 25 bei sunRadius,
+
+00:11:54.702 --> 00:11:57.822
+die werden nie benutzt.
+Das ist also weniger effizient.
+
+00:11:57.822 --> 00:12:00.582
+Wir bitten den Computer,
+vier zusätzliche Dinge zu tun,
+
+00:12:01.623 --> 00:12:02.743
+ohne echten Grund,
+
+00:12:04.102 --> 00:12:08.263
+ohne rechnerischen Grund. Aber es gibt einen
+Grund für die Lesbarkeit, wie gesagt,
+
+00:12:08.342 --> 00:12:13.702
+denn für mich macht dieser schöne Startpunkt
+bei 5, 10, ein paar schöne runde Zahlen,
+
+00:12:13.942 --> 00:12:16.182
+das Programm hier
+viel lesbarer.
+
+00:12:17.413 --> 00:12:21.092
+Und vier Variablen zu setzen,
+zu aktualisieren, weißt du,
+
+00:12:21.332 --> 00:12:26.052
+das geht bei deinem Computer so schnell,
+so schnell kann ich gar nicht klicken.
+
+00:12:26.932 --> 00:12:28.653
+Es spielt also keine große Rolle,
+dass du das machst.
+
+00:12:28.653 --> 00:12:32.692
+Aber wenn du an größere
+und komplexere Programme denkst,
+
+00:12:33.173 --> 00:12:35.212
+solltest du auf solche Dinge
+achten.
+
+00:12:35.212 --> 00:12:39.413
+Mache ich das effektiv? Muss ich
+diese Aktualisierungen überhaupt machen?
+
+00:12:39.413 --> 00:12:40.773
+Sollte ich die Dinge umbauen,
+
+00:12:41.732 --> 00:12:42.373
+damit
+
+00:12:43.352 --> 00:12:46.993
+ich das vermeiden kann? Das sind die
+Abwägungen, die man herausfinden und
+
+00:12:46.993 --> 00:12:47.592
+durchdenken muss.
+
+00:12:48.873 --> 00:12:51.513
+Hoffentlich war das hilfreich für dich.
+
+00:12:51.663 --> 00:12:55.633
+Wie du siehst, gibt es erstens viele
+verschiedene Wege, Dinge umzusetzen, und
+
+00:12:55.633 --> 00:12:57.913
+die Abwägungen selbst zu erkunden,
+bringt dir sehr viel.
+
+00:12:58.153 --> 00:13:01.592
+Und zweitens
+mache ich auch Tippfehler und Fehler, schreibe
+
+00:13:01.913 --> 00:13:06.072
+sun statt sky, mache solche
+Fehler und bin kurz verwirrt.
+
+00:13:06.552 --> 00:13:08.952
+Vielleicht machst du auch so einen Fehler,
+und es dauert
+
+00:13:09.373 --> 00:13:13.212
+ein, zwei Minuten länger, bis du herausfindest,
+was falsch ist, was los ist,
+
+00:13:13.212 --> 00:13:16.572
+warum dein Code nicht funktioniert hat.
+Das ist völlig in Ordnung.
+
+00:13:17.133 --> 00:13:20.013
+Ich habe solche Fehler schon
+so oft gemacht,
+
+00:13:20.013 --> 00:13:24.893
+wahrscheinlich Hunderttausende Male, dass ich
+sofort weiß, was ich falsch gemacht habe.
+
+00:13:25.131 --> 00:13:28.972
+Aber als ich vor langer Zeit angefangen habe,
+hätte ich bei so einem Fehler
+
+00:13:28.972 --> 00:13:31.293
+vielleicht Stunden gebraucht,
+um herauszufinden, was falsch war.
+
+00:13:31.613 --> 00:13:34.133
+Lass dich also nicht entmutigen,
+wenn du Fehler machst, und
+
+00:13:34.133 --> 00:13:36.572
+lass dich auch nicht entmutigen,
+wenn du länger brauchst,
+
+00:13:36.572 --> 00:13:38.972
+um herauszufinden,
+warum du diese Fehler machst.
+
+00:13:39.052 --> 00:13:40.653
+Das gehört einfach zum Lernen dazu.
+
+00:13:41.192 --> 00:13:43.913
+Ich sage meinen Schülern immer:
+Jedes Mal, wenn du einen Fehler machst,
+
+00:13:43.913 --> 00:13:46.393
+tust du dir einen Gefallen,
+weil du dabei lernst.
+
+00:13:46.712 --> 00:13:50.153
+Jedes Mal, wenn du etwas auf Anhieb
+richtig machst, lernst du überhaupt nichts.
+
+00:13:50.153 --> 00:13:51.913
+Du weißt es ja schon. Du bringst es
+nicht in ...
+
+00:13:51.993 --> 00:13:53.592
+Du setzt nur etwas in die Praxis um.
+
+00:13:53.592 --> 00:13:55.873
+Du lernst eigentlich nichts daraus.
+
+00:13:55.873 --> 00:13:59.113
+Fehler sind also großartig.
+Fehler sind so etwas wie eine Superkraft.
+
+00:13:59.113 --> 00:14:01.072
+Je mehr Fehler du machst,
+
+00:14:01.072 --> 00:14:03.832
+desto besser wirst du auf lange Sicht
+als Entwickler oder Entwicklerin.
+
+00:14:03.913 --> 00:14:06.952
+Ich ermutige also immer zu Fehlern,
+solange sie nicht
+
+00:14:07.602 --> 00:14:10.202
+daher kommen, dass du nicht nachdenkst,
+solange
+
+00:14:10.202 --> 00:14:13.442
+du einfach Tippfehler
+oder Denkfehler machst.
+
+00:14:13.442 --> 00:14:15.643
+Die sind großartig.
+Aus denen lernst du.
+
+00:14:15.643 --> 00:14:18.482
+Aber wenn du merkst, dass du ständig
+nur Fehler machst,
+
+00:14:18.562 --> 00:14:20.163
+mach vielleicht einfach etwas langsamer.
+
+00:14:20.163 --> 00:14:23.842
+Und manchmal geht alles ein bisschen leichter,
+wenn man einfach langsamer macht.
+
+00:14:24.082 --> 00:14:27.523
+Danke fürs Zuschauen. Ich freue mich, dich
+bald in einem weiteren Deep Dive zu sehen.
+
+00:14:27.523 --> 00:14:28.243
+Bis bald.

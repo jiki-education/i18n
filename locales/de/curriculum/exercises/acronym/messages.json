@@ -1,88 +1,88 @@
 {
   "tasks": {
     "createAcronymFunction": {
-      "name": "�",
-      "description": "�"
+      "name": "Akronym-Funktion erstellen",
+      "description": "Schreibe eine Funktion, die eine Phrase entgegennimmt und ihr Akronym zurückgibt: den ersten Buchstaben jedes Wortes, in Großbuchstaben. Wörter werden durch Leerzeichen und Bindestriche getrennt, alle anderen Satzzeichen werden ignoriert."
     },
     "solveTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "In 46 Zeilen lösen",
+      "description": "Bonus: Wenn du das Prüfen auf Buchstaben und das Wechseln der Groß- und Kleinschreibung in Hilfsfunktionen auslagerst, die `acronym` wiederverwendet, passt die ganze Lösung in 46 Zeilen. Schaffst du es genauso?"
     }
   },
   "scenarios": {
     "png": {
-      "name": "�",
-      "description": "�"
+      "name": "Einfaches Akronym: PNG",
+      "description": "Wandle 'Portable Network Graphics' in 'PNG' um."
     },
     "ror": {
-      "name": "�",
-      "description": "�"
+      "name": "Wörter in Kleinbuchstaben: ROR",
+      "description": "Wandle 'Ruby on Rails' in 'ROR' um."
     },
     "gimp": {
-      "name": "�",
-      "description": "�"
+      "name": "Wort komplett in Großbuchstaben: GIMP",
+      "description": "Wandle 'GNU Image Manipulation Program' in 'GIMP' um."
     },
     "firstWordOnly": {
-      "name": "�",
-      "description": "�"
+      "name": "Ein einzelnes Wort: H",
+      "description": "Wandle 'HyperText' in 'H' um."
     },
     "hyphenated": {
-      "name": "�",
-      "description": "�"
+      "name": "Phrase mit Bindestrich: CMOS",
+      "description": "Wandle 'Complementary metal-oxide semiconductor' in 'CMOS' um."
     },
     "fifo": {
-      "name": "�",
-      "description": "�"
+      "name": "Mit Kommas getrennt: FIFO",
+      "description": "Wandle 'First In, First Out' in 'FIFO' um."
     },
     "punctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "Mit Satzzeichen: PHT",
+      "description": "Wandle 'Portable, HyperText, Transmitter' in 'PHT' um."
     },
     "hc": {
-      "name": "�",
-      "description": "�"
+      "name": "Mit einem Apostroph: HC",
+      "description": "Wandle 'Halley's Comet' in 'HC' um."
     },
     "simufta": {
-      "name": "�",
-      "description": "�"
+      "name": "Aufeinanderfolgende Trennzeichen: SIMUFTA",
+      "description": "Wandle 'Something - I made up from thin air' in 'SIMUFTA' um."
     },
     "trnt": {
-      "name": "�",
-      "description": "�"
+      "name": "Unterstriche zur Betonung: TRNT",
+      "description": "Wandle 'The Road _Not_ Taken' in 'TRNT' um."
     },
     "long": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine sehr lange Phrase: ROTFLSHTMDCOALM",
+      "description": "Wandle 'Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me' in 'ROTFLSHTMDCOALM' um."
     },
     "emoji": {
-      "name": "�",
-      "description": "�"
+      "name": "Mit einem Emoji: HW",
+      "description": "Wandle 'Hello 👋 World' in 'HW' um."
     },
     "acronymBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "Kurz und aufgeräumt",
+      "description": "Die aufgeräumteste Lösung verwendet ihre Hilfsfunktionen wieder und passt in 46 Zeilen. Findest du sie?"
     }
   },
   "checks": {
-    "tooManyLines": "�",
-    "noMethods": "�"
+    "tooManyLines": "Weiter so! Schaffst du es mit weniger Zeilen?",
+    "noMethods": "In dieser Übung geht es darum, die Tools selbst zu bauen. Löse sie ohne eingebaute Methoden."
   },
   "hints": {
     "pickLetters": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie finde ich heraus, welche Buchstaben das Akronym bilden?",
+      "answer": "Das Akronym besteht aus dem Buchstaben, mit dem jedes Wort beginnt: dem allerersten Buchstaben der Phrase und dem ersten Buchstaben nach jedem Leerzeichen oder Bindestrich."
     },
     "findWordStarts": {
-      "question": "�",
-      "answer": "�"
+      "question": "Woran erkenne ich, wann ein neues Wort beginnt?",
+      "answer": "Geh die Phrase Zeichen für Zeichen durch und behalte im Blick, ob du gerade am Anfang eines neuen Wortes bist. Das bist du ganz am Anfang und direkt nach jedem Leerzeichen oder Bindestrich. Alles, was kein Buchstabe ist (Satzzeichen, Unterstriche, Apostrophe), überspringst du, statt es als Wortanfang zu zählen."
     },
     "buildResult": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie baue ich das Ergebnis Schritt für Schritt auf?",
+      "answer": "Beginne mit einem leeren String und hänge jeden ausgewählten Buchstaben mit `+` am Ende an."
     },
     "uppercaseLetters": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie mache ich einen Buchstaben groß, wenn es dafür nichts Eingebautes gibt?",
+      "answer": "Hier gibt es keinen fertigen Großmacher. Genau wie bei Pangram kannst du ein Kleinbuchstaben-Alphabet einem Großbuchstaben-Alphabet gegenüberstellen und einen Buchstaben gegen den an derselben Position tauschen. Buchstaben, die schon groß sind, können bleiben, wie sie sind."
     }
   }
 }

@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 51f04781025bf1dbba2ded55c062926f
+
+00:00:00.140 --> 00:00:03.580
+Willkommen zurück. Bisher haben wir beim Erstellen von Variablen
+
+00:00:03.740 --> 00:00:06.560
+nur einfache Werte benutzt: eine Zahl wie
+
+00:00:06.840 --> 00:00:10.620
+50 oder einen String wie "yellow". Richtig mächtig
+
+00:00:10.660 --> 00:00:13.340
+werden Variablen, wenn wir sie
+
+00:00:13.440 --> 00:00:16.460
+miteinander kombinieren. So
+
+00:00:16.540 --> 00:00:19.000
+können wir sagen, dass der linke Rand
+
+00:00:19.040 --> 00:00:22.030
+des Rechtecks einen bestimmten Abstand
+
+00:00:22.080 --> 00:00:25.660
+zum Rand der Leinwand haben soll. Beim Programmieren
+
+00:00:25.720 --> 00:00:28.810
+können wir ganz normale, einfache Mathematik benutzen, also addieren,
+
+00:00:28.940 --> 00:00:32.340
+subtrahieren, multiplizieren und dividieren. Und wir können
+
+00:00:32.380 --> 00:00:35.140
+die Variablen, die wir schon gesetzt haben,
+
+00:00:35.200 --> 00:00:39.020
+dabei verwenden. Fangen wir damit an, dass wir
+
+00:00:39.060 --> 00:00:41.300
+ein Rechteck auf unsere Leinwand zeichnen wollen,
+
+00:00:41.960 --> 00:00:43.800
+und zwar mit einem Abstand von 10
+
+00:00:44.480 --> 00:00:46.980
+zum linken und rechten Rand und
+
+00:00:47.200 --> 00:00:48.960
+einem Abstand von 20 zum oberen und unteren Rand.
+
+00:00:49.900 --> 00:00:51.580
+Es liegt also in der Mitte
+
+00:00:51.620 --> 00:00:53.900
+der Leinwand und ist etwas breiter
+
+00:00:53.960 --> 00:00:57.740
+als hoch. Du erinnerst dich: Wenn wir ein
+
+00:00:57.760 --> 00:01:00.430
+Rechteck zeichnen, müssen wir seine left (links), top (oben),
+
+00:01:00.600 --> 00:01:02.510
+width (Breite) und height (Höhe) kennen, ebenso wie seine Farbe.
+
+00:01:03.360 --> 00:01:04.820
+Das können wir also erst einmal
+
+00:01:04.920 --> 00:01:08.320
+aufschreiben. Und jetzt müssen wir tatsächlich herausfinden,
+
+00:01:08.420 --> 00:01:10.220
+welche Werte left, top, width und height
+
+00:01:10.240 --> 00:01:13.100
+haben sollen. Setzen wir sie also. Left ist
+
+00:01:13.260 --> 00:01:15.660
+20. Äh, Entschuldigung, left ist 10. Top ist
+
+00:01:15.940 --> 00:01:18.920
+20. Und width? Nun ja, width ist die
+
+00:01:19.020 --> 00:01:22.020
+Größe der Leinwand, also 100, minus
+
+00:01:22.080 --> 00:01:23.340
+10 auf der linken und 10
+
+00:01:23.360 --> 00:01:26.100
+auf der rechten Seite, das ergibt 80. Und
+
+00:01:26.180 --> 00:01:29.040
+height ist die Höhe der Leinwand,
+
+00:01:29.080 --> 00:01:31.580
+die ebenfalls 100 beträgt, minus 20
+
+00:01:31.640 --> 00:01:33.660
+oben und 20 unten,
+
+00:01:33.960 --> 00:01:37.860
+also 60. Wir können diese Variablen also setzen: Left,
+
+00:01:37.920 --> 00:01:42.840
+10, top, 20, width, 80, height, 60.
+
+00:01:42.860 --> 00:01:44.880
+Das kommt dir hoffentlich ziemlich bekannt vor. Genau das
+
+00:01:44.920 --> 00:01:46.700
+hast du bisher in den
+
+00:01:46.740 --> 00:01:50.940
+Übungen gemacht. Aber was passiert, wenn wir
+
+00:01:50.960 --> 00:01:54.140
+das Rechteck nun etwas weiter nach innen verschieben
+
+00:01:54.160 --> 00:01:55.400
+und etwas kleiner machen wollen? Was, wenn es
+
+00:01:55.460 --> 00:01:57.040
+20 Abstand zum linken und
+
+00:01:57.100 --> 00:01:59.040
+rechten Rand und 30 zum oberen und
+
+00:01:59.060 --> 00:02:02.620
+unteren Rand haben soll? Dann müssen wir alles
+
+00:02:02.720 --> 00:02:06.320
+wieder neu ausrechnen. width ist jetzt 100 minus
+
+00:02:06.560 --> 00:02:10.280
+20 minus 20, und height ist 100
+
+00:02:10.360 --> 00:02:14.320
+minus 30 minus 30. Das ist eindeutig
+
+00:02:14.420 --> 00:02:17.280
+mehr Arbeit und mehr Rechnerei, als ich
+
+00:02:17.320 --> 00:02:20.400
+machen möchte. Also können wir stattdessen
+
+00:02:20.420 --> 00:02:24.000
+den Computer bitten, das für uns zu erledigen. Wir können
+
+00:02:24.060 --> 00:02:27.680
+width auf 100 minus
+
+00:02:27.840 --> 00:02:31.620
+left minus left setzen und height
+
+00:02:31.700 --> 00:02:34.720
+auf 100 minus top minus top,
+
+00:02:34.960 --> 00:02:37.580
+weil oben und unten gleich sind. Oder
+
+00:02:37.600 --> 00:02:40.980
+wir schreiben das als 100 minus
+
+00:02:41.240 --> 00:02:44.820
+left mal zwei, oder als 100 minus
+
+00:02:44.940 --> 00:02:48.620
+top mal zwei. Und wenn wir jetzt
+
+00:02:48.660 --> 00:02:52.040
+left oder top ändern, ändern sich auch width
+
+00:02:52.080 --> 00:02:54.860
+und height. Die Dinge fangen also an,
+
+00:02:54.900 --> 00:02:57.430
+sich aufeinander zu beziehen. Und was
+
+00:02:57.440 --> 00:03:00.960
+ist mit der Leinwand? Die ist jetzt 100. Aber was,
+
+00:03:01.020 --> 00:03:03.700
+wenn unsere Leinwand stattdessen 200 breit
+
+00:03:03.740 --> 00:03:06.540
+und 200 hoch wird? Dann sollten wir wohl
+
+00:03:06.620 --> 00:03:09.560
+eine Variable namens canvasSize (Leinwandgröße) anlegen
+
+00:03:09.580 --> 00:03:13.230
+und sie auf 100 setzen. Und jetzt ist left, Entschuldigung,
+
+00:03:13.260 --> 00:03:17.740
+unsere width gleich canvasSize minus left mal zwei,
+
+00:03:18.200 --> 00:03:22.160
+und unsere height ist canvasSize minus top mal
+
+00:03:22.200 --> 00:03:26.120
+zwei. Denken wir darüber nach, was Jiki tut,
+
+00:03:26.480 --> 00:03:30.580
+wenn wir let height gleich canvasSize minus
+
+00:03:30.700 --> 00:03:33.310
+top mal zwei schreiben. Er holt zuerst
+
+00:03:33.310 --> 00:03:35.220
+die Box top aus dem Regal
+
+00:03:35.260 --> 00:03:37.660
+und findet 20 darin. Dann holt er
+
+00:03:37.680 --> 00:03:40.160
+seinen Taschenrechner heraus und rechnet 20 mal zwei
+
+00:03:40.580 --> 00:03:42.740
+und merkt sich 40.
+
+00:03:43.720 --> 00:03:45.860
+Dann holt er die Box canvasSize
+
+00:03:45.900 --> 00:03:49.540
+aus dem Regal, findet 100 darin
+
+00:03:49.600 --> 00:03:52.780
+und rechnet aus, dass 100 minus 40 gleich 60 ist.
+
+00:03:53.840 --> 00:03:56.350
+Und jetzt weiß er: Eigentlich sagen wir
+
+00:03:56.400 --> 00:04:00.000
+let height gleich 60. Also befolgt er
+
+00:04:00.040 --> 00:04:02.320
+das let, holt eine neue Box, schreibt
+
+00:04:02.360 --> 00:04:04.440
+height darauf und legt 60
+
+00:04:04.580 --> 00:04:06.900
+hinein. Und wenn er height
+
+00:04:07.040 --> 00:04:09.600
+später benutzt, holt er einfach
+
+00:04:09.640 --> 00:04:13.720
+wieder die 60 heraus. Setz das alles in den
+
+00:04:13.820 --> 00:04:16.180
+nächsten Übungen in die Praxis um, dann wird es
+
+00:04:16.240 --> 00:04:18.649
+immer klarer. Und wenn du
+
+00:04:18.700 --> 00:04:22.070
+alles zum Laufen gebracht hast, spiel damit, die Werte
+
+00:04:22.100 --> 00:04:25.200
+der Variablen zu ändern, und schau, was passiert. Beobachte,
+
+00:04:25.220 --> 00:04:28.420
+wie sie wachsen und wie sie schrumpfen. Lass dir
+
+00:04:28.480 --> 00:04:31.480
+Zeit und denk über die Beziehungen zwischen den Dingen nach.
+
+00:04:31.500 --> 00:04:32.670
+Bis gleich!

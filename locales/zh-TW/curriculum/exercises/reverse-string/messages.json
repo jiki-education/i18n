@@ -1,60 +1,60 @@
 {
   "tasks": {
     "reverseStrings": {
-      "name": "�",
-      "description": "�"
+      "name": "反轉字串",
+      "description": "把字串反轉過來，讓它從右往左讀，而不是從左往右讀。"
     }
   },
   "scenarios": {
     "reverseEmptyString": {
-      "name": "�",
-      "description": "�"
+      "name": "空字串",
+      "description": "空字串反轉之後，應該回傳空字串。"
     },
     "reverseWord": {
-      "name": "�",
-      "description": "�"
+      "name": "一個單字",
+      "description": "反轉單字「robot」。"
     },
     "reverseCapitalizedWord": {
-      "name": "�",
-      "description": "�"
+      "name": "首字母大寫的單字",
+      "description": "反轉首字母大寫的單字「Ramen」。"
     },
     "reverseSentencePunctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "帶有標點符號的句子",
+      "description": "反轉帶有標點符號的句子「I'm hungry!」。"
     },
     "reversePalindrome": {
-      "name": "�",
-      "description": "�"
+      "name": "迴文",
+      "description": "迴文反轉之後還是同一個字串。"
     },
     "reverseEvenSizedWord": {
-      "name": "�",
-      "description": "�"
+      "name": "長度為偶數的單字",
+      "description": "反轉長度為偶數的單字「drawer」。"
     },
     "reverseWideCharacters": {
-      "name": "�",
-      "description": "�"
+      "name": "全形字元",
+      "description": "反轉 Unicode 的全形字元「子猫」。"
     },
     "reverseEmojiFamily": {
-      "name": "�",
-      "description": "�"
+      "name": "家庭表情符號",
+      "description": "反轉家庭表情符號。"
     },
     "reverseEmojiRainbowFlag": {
-      "name": "�",
-      "description": "�"
+      "name": "彩虹旗",
+      "description": "反轉之後就會變成彩虹旗。"
     }
   },
   "hints": {
     "reverseByHand": {
-      "question": "�",
-      "answer": "�"
+      "question": "如果自己動手，要怎麼反轉一個單字？",
+      "answer": "你會從左往右讀，但從右往左寫。換句話說，就是依序拿起每個字母，放到你目前寫好的內容前面。"
     },
     "mapToCode": {
-      "question": "�",
-      "answer": "�"
+      "question": "這要怎麼對應到程式碼？",
+      "answer": "用迴圈一個字元一個字元走過輸入字串。每遇到一個字元，就把它加到目前結果的最前面，用這種方式慢慢組出答案。也就是說，要放在結果的最前面，而不是最後面。"
     },
     "prepend": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼把字元「加到前面」，而不是接在後面？",
+      "answer": "用`+`運算子時，加到前面還是接在後面，差別只在順序。不要用`result + char`（這是接在後面），改用`char + result`（這是加到前面）。"
     }
   }
 }

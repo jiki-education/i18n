@@ -1,40 +1,40 @@
 {
   "describers": {
-    "move": "�"
+    "move": "bewegte die Laserkanone nach rechts"
   },
   "checks": {
-    "notShotAllAliens": "�"
+    "notShotAllAliens": "Du hast nicht alle Aliens abgeschossen."
   },
   "tasks": {
     "shootTheAliens": {
-      "name": "�",
-      "description": "�"
+      "name": "Schieß alle Aliens ab",
+      "description": "Bewege deine Laserkanone nach rechts und schieß jedes Alien ab, unter dem du vorbeikommst. Verfehle keines und fahr nicht über den Rand hinaus!"
     }
   },
   "scenarios": {
     "shootTheAliens": {
-      "name": "�",
-      "description": "�"
+      "name": "Schieß die Aliens ab",
+      "description": "Bewege dich nach rechts und schieß alle Aliens ab"
     }
   },
   "hints": {
     "whatDoINeedToDo": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was muss ich tun?",
+      "answer": "Wie im Labyrinth musst du deine Spielfigur bewegen (diesmal ist es ein Laser, keine Person). Aber du musst auch mit dem Laser schießen! Bewege den Laser unter ein Alien und schieß dann. Bewege dich dann weiter, bis du unter dem nächsten Alien bist, und schieß wieder. Mach so weiter, bis du das letzte Alien abgeschossen hast!"
     },
     "cantWasteAmmo": {
-      "question": "�",
-      "answer": "�"
+      "question": "Mir wird gesagt, ich darf keine Munition verschwenden.",
+      "answer": "Du solltest nur `shoot()` aufrufen, wenn du direkt unter einem Alien bist. Versuch es einen Schritt weiter (oder bist du vielleicht schon einen zu weit gegangen?)"
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt die Laserkanone **eine Position nach rechts**. Wenn du über den rechten Rand des Bildschirms hinausgehst, verlierst du!",
+      "category": "Bewegung"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Feuert den Laser nach oben. **Schieß nur, wenn ein Alien über dir ist**, sonst verlierst du das Spiel!",
+      "category": "Aktion"
     }
   }
 }

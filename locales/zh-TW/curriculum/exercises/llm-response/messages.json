@@ -1,0 +1,64 @@
+{
+  "errors": {
+    "blockedUrl": "哎呀，你嘗試抓取一個不在預期內的網址，所以被擋下來了。"
+  },
+  "describers": {
+    "fetch": "從提供的網址抓取資料"
+  },
+  "tasks": {
+    "formatLlmResponse": {
+      "name": "格式化回應",
+      "description": "建立一個 askLlm 函式，它接受一個問題，抓取 LLM 的回應，選出把握程度最高的答案，然後回傳格式化後的字串。"
+    }
+  },
+  "scenarios": {
+    "football": {
+      "name": "1966 年世界盃",
+      "description": "回傳一個非常重要問題的回應。"
+    },
+    "cooking": {
+      "name": "烹飪",
+      "description": "回傳烹飪問題的最佳回應！"
+    },
+    "ltc": {
+      "name": "學寫程式的網站",
+      "description": "回傳答案很明確的問題的最佳回應！"
+    }
+  },
+  "hints": {
+    "apiCall": {
+      "question": "我要怎麼發出 API 請求？",
+      "answer": "使用`fetch(url, params)`，其中`params`是一個字典`{ \"question\": question }`，並把你收到的問題當作引數傳進去。"
+    },
+    "responseShape": {
+      "question": "回應的資料長什麼樣子？",
+      "answer": "它是巢狀的。有一個`\"response\"`鍵，裡面是`\"answers\"`陣列（每個答案都是一個字典，裡面有`\"text\"`和`\"certainty\"`），另外還有一個`\"meta\"`鍵，裡面是像`\"500ms\"`這樣的`\"time\"`字串。"
+    },
+    "pickBest": {
+      "question": "我要怎麼挑出最好的答案？",
+      "answer": "用迴圈走過每個答案，記下`certainty`最高的那一個。要注意，certainty 的值是字串，所以比較之前，你得先把每一個轉成數字。"
+    },
+    "convertMs": {
+      "question": "我要怎麼把「500ms」轉換成秒？",
+      "answer": "把「ms」的部分去掉，只留下數字，再把它轉成數字，然後除以 1000。"
+    },
+    "putTogether": {
+      "question": "最後要怎麼把這些組合起來？",
+      "answer": "用字串串接（`+`）或樣板字串，把選中答案的文字和轉換後的時間，組成最後要回傳的格式化字串。"
+    }
+  },
+  "functions": {
+    "fetch": {
+      "description": "從 API 抓取資料。接受一個網址字串和一個參數字典，並把 API 的回應以字典回傳。",
+      "category": "API"
+    },
+    "stringToNumber": {
+      "description": "把字串轉換成數字",
+      "category": "型別轉換"
+    },
+    "numberToString": {
+      "description": "把數字轉換成字串",
+      "category": "型別轉換"
+    }
+  }
+}

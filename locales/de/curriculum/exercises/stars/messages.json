@@ -1,0 +1,79 @@
+{
+  "tasks": {
+    "drawStars": {
+      "name": "Zeichne eine Pyramide aus Sternen",
+      "description": "Schreibe eine Funktion layoutStars, die eine Anzahl von Reihen entgegennimmt und ein Array aus Strings baut, in dem jeder String einen Stern weniger hat als der vorherige, und zeichne es dann mit drawStars. Zum Beispiel zeichnet layoutStars(3) die Pyramide für [\"***\", \"**\", \"*\"]."
+    }
+  },
+  "scenarios": {
+    "count0": {
+      "name": "Anzahl ist 0",
+      "description": "Bei null Sternen wird nichts gezeichnet."
+    },
+    "count1": {
+      "name": "Anzahl ist 1",
+      "description": "Bei einer Anzahl von eins wird ein einzelner Stern gezeichnet."
+    },
+    "count3": {
+      "name": "Anzahl ist 3",
+      "description": "Bei einer Anzahl von drei wird eine Pyramide mit drei Reihen gezeichnet."
+    },
+    "count5": {
+      "name": "Anzahl ist 5",
+      "description": "Bei einer Anzahl von fünf wird eine Pyramide mit fünf Reihen gezeichnet."
+    },
+    "count10": {
+      "name": "Anzahl ist 10",
+      "description": "Bei einer Anzahl von zehn wird eine Pyramide mit zehn Reihen gezeichnet."
+    }
+  },
+  "hints": {
+    "shapeOfAnswer": {
+      "question": "Was baue ich da eigentlich?",
+      "answer": "Ein Array aus Strings, die längste Reihe zuerst, jeder String einen Stern kürzer als der vorherige, bis hinunter zu einem einzelnen Stern. Beim Zeichnen liegt die längste Reihe unten in der Pyramide. Bau zuerst das ganze Array auf und zeichne es dann mit `drawStars`."
+    },
+    "countingDown": {
+      "question": "Wie mache ich jede Reihe kürzer als die vorherige?",
+      "answer": "Die Längen müssen kleiner werden: Der erste String ist der längste, der letzte besteht aus einem einzelnen Stern. Eine Schleife, die vom Gesamtwert bis 1 herunterzählt, liefert dir nacheinander jede Länge."
+    },
+    "buildingEachRow": {
+      "question": "Wie baue ich einen String mit einer bestimmten Anzahl von Sternen?",
+      "answer": "Fang mit einem leeren String an und füge so lange jeweils ein `*` hinzu, bis die Länge stimmt. Dann schiebe diesen String mit `push` in dein Array, bevor du zur nächsten Reihe weitergehst."
+    }
+  },
+  "checks": {
+    "row1": "Die unterste Sternreihe stimmt nicht. Vergleiche sie mit dem blassen Umriss.",
+    "row2": "Die zweite Reihe von unten stimmt nicht. Vergleiche sie mit dem blassen Umriss.",
+    "row3": "Die dritte Reihe von unten stimmt nicht. Vergleiche sie mit dem blassen Umriss.",
+    "row4": "Die vierte Reihe von unten stimmt nicht. Vergleiche sie mit dem blassen Umriss.",
+    "row5": "Die fünfte Reihe von unten stimmt nicht. Vergleiche sie mit dem blassen Umriss.",
+    "row6": "Die sechste Reihe von unten stimmt nicht. Vergleiche sie mit dem blassen Umriss.",
+    "row7": "Die siebte Reihe von unten stimmt nicht. Vergleiche sie mit dem blassen Umriss.",
+    "row8": "Die achte Reihe von unten stimmt nicht. Vergleiche sie mit dem blassen Umriss.",
+    "row9": "Die neunte Reihe von unten stimmt nicht. Vergleiche sie mit dem blassen Umriss.",
+    "row10": "Die zehnte Reihe von unten stimmt nicht. Vergleiche sie mit dem blassen Umriss.",
+    "total": "Du hast insgesamt die falsche Anzahl an Sternen gezeichnet.",
+    "shouldBeEmpty": "Wenn die Anzahl 0 ist, darfst du keine Sterne zeichnen.",
+    "codeQuality": {
+      "mustUsePush": "Bau dein Array mit der push-Methode auf und füge dabei eine Reihe nach der anderen hinzu.",
+      "noHardcodedArray": "Du kannst das fertige Array nicht direkt hinschreiben. Bau es mit push Reihe für Reihe auf."
+    }
+  },
+  "errors": {
+    "notAnArray": "drawStars braucht ein Array aus Strings.",
+    "notStrings": "Jeder Eintrag im Array, das an drawStars übergeben wird, muss ein String sein."
+  },
+  "describers": {
+    "drawStars": "zeichnete die Pyramide aus Sternen auf die Leinwand"
+  },
+  "functions": {
+    "push": {
+      "description": "Fügt ein Element am Ende eines Arrays hinzu",
+      "category": "Arrays"
+    },
+    "drawStars": {
+      "description": "Zeichnet für jeden String im Array eine Sternreihe und nutzt dabei die Länge jedes Strings als Anzahl der Sterne in dieser Reihe",
+      "category": "Zeichnen"
+    }
+  }
+}

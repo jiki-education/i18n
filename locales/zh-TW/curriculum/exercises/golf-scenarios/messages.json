@@ -1,54 +1,54 @@
 {
   "checks": {
-    "wrongShotEnd": "�",
-    "missingPositions": "�"
+    "wrongShotEnd": "球最後沒有停在這一次擊球該停的位置。確認一下它有沒有滾完完整的擊球距離。",
+    "missingPositions": "球必須一次只移動一步，滾過每一個位置，不能直接跳到終點。"
   },
   "tasks": {
     "rollAndCelebrate": {
-      "name": "�",
-      "description": "�"
+      "name": "滾動球",
+      "description": "取得擊球距離，然後把球滾動相同的距離。"
     }
   },
   "scenarios": {
     "shortShot": {
-      "name": "�",
-      "description": "�"
+      "name": "短距離擊球（20）",
+      "description": "在這個情境中，`getShotLength()`會回傳 20。把球從發球台往前滾 20 步。"
     },
     "mediumShot": {
-      "name": "�",
-      "description": "�"
+      "name": "中距離擊球（35）",
+      "description": "在這個情境中，`getShotLength()`會回傳 35。把球從發球台往前滾 35 步。"
     },
     "longShot": {
-      "name": "�",
-      "description": "�"
+      "name": "長距離擊球（50）",
+      "description": "在這個情境中，`getShotLength()`會回傳 50。把球從發球台往前滾 50 步。"
     },
     "veryLongShot": {
-      "name": "�",
-      "description": "�"
+      "name": "超長距離擊球（60）",
+      "description": "在這個情境中，`getShotLength()`會回傳 60。把球從發球台往前滾 60 步。"
     }
   },
   "hints": {
     "notSureWhereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "我不知道該從哪裡開始",
+      "answer": "這就跟前面那個高爾夫練習一樣，那時候球的步數是固定的。唯一不同的是，現在的步數不再是固定的數字，而是來自 `getShotLength()`。以前你寫數字的地方，現在都可以改成函式的回傳值。"
     },
     "ballStopsShort": {
-      "question": "�",
-      "answer": "�"
+      "question": "我的球少走一步就停下來（不然就是多走了一步）",
+      "answer": "仔細想想你的起始位置，還有你總共滾了幾次。球一開始在發球台上，位置是 28，所以第一次滾動之後應該會到 29。從那裡開始，數到它最後該停下來的位置。"
     }
   },
   "functions": {
     "moveTo": {
-      "description": "�",
-      "category": "�"
+      "description": "把球移動到位置**x**。",
+      "category": "移動"
     },
     "getShotLength": {
-      "description": "�",
-      "category": "�"
+      "description": "回傳**擊球距離**，也就是球往右滾動多少單位。",
+      "category": "資訊"
     }
   },
   "describers": {
-    "moveTo": "�",
-    "getShotLength": "�"
+    "moveTo": "把球移動到了位置 ${arg1}",
+    "getShotLength": "取得了擊球距離"
   }
 }

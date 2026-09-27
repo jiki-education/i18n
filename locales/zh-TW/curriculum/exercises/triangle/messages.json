@@ -1,80 +1,80 @@
 {
   "tasks": {
     "invalidTriangles": {
-      "name": "�",
-      "description": "�"
+      "name": "不合法的三角形",
+      "description": "判斷不合法的三角形。只要有任何一條邊是 0，或任意兩條邊的和小於或等於第三條邊，這個三角形就不合法。"
     },
     "equilateralTriangles": {
-      "name": "�",
-      "description": "�"
+      "name": "等邊三角形",
+      "description": "判斷三條邊的長度都相同的等邊三角形。"
     },
     "isoscelesTriangles": {
-      "name": "�",
-      "description": "�"
+      "name": "等腰三角形",
+      "description": "判斷剛好有兩條邊的長度相同的等腰三角形。"
     },
     "scaleneTriangles": {
-      "name": "�",
-      "description": "�"
+      "name": "不等邊三角形",
+      "description": "判斷三條邊的長度都不相同的不等邊三角形。"
     }
   },
   "scenarios": {
     "invalidEquilateralAllZero": {
-      "name": "�",
-      "description": "�"
+      "name": "三條邊都是 0 的等邊三角形（0, 0, 0）",
+      "description": "三條邊都是 0 的三角形應該回傳\"invalid\"。"
     },
     "isoscelesFirstInequality": {
-      "name": "�",
-      "description": "�"
+      "name": "邊長不合法的等腰三角形（1, 1, 3）",
+      "description": "邊長太短的三角形應該回傳\"invalid\"。"
     },
     "isoscelesSecondInequality": {
-      "name": "�",
-      "description": "�"
+      "name": "邊長不合法的等腰三角形（1, 3, 1）",
+      "description": "邊長太短的三角形應該回傳\"invalid\"。"
     },
     "isoscelesThirdInequality": {
-      "name": "�",
-      "description": "�"
+      "name": "邊長不合法的等腰三角形（3, 1, 1）",
+      "description": "邊長太短的三角形應該回傳\"invalid\"。"
     },
     "scaleneTriangleInequality": {
-      "name": "�",
-      "description": "�"
+      "name": "邊長不合法的不等邊三角形（7, 3, 2）",
+      "description": "邊長太短的三角形應該回傳\"invalid\"。"
     },
     "validEquilateral": {
-      "name": "�",
-      "description": "�"
+      "name": "等邊三角形（2, 2, 2）",
+      "description": "三條邊的長度都相同的三角形應該回傳\"equilateral\"。"
     },
     "validIsoscelesFirstTwoEqual": {
-      "name": "�",
-      "description": "�"
+      "name": "等腰三角形（4, 4, 3）",
+      "description": "前兩條邊的長度相同的三角形應該回傳\"isosceles\"。"
     },
     "validIsoscelesLastTwoEqual": {
-      "name": "�",
-      "description": "�"
+      "name": "等腰三角形（3, 4, 4）",
+      "description": "後兩條邊的長度相同的三角形應該回傳\"isosceles\"。"
     },
     "validIsoscelesFirstAndLastEqual": {
-      "name": "�",
-      "description": "�"
+      "name": "等腰三角形（4, 3, 4）",
+      "description": "第一條邊和最後一條邊的長度相同的三角形應該回傳\"isosceles\"。"
     },
     "validScalene": {
-      "name": "�",
-      "description": "�"
+      "name": "不等邊三角形（5, 4, 6）",
+      "description": "三條邊的長度都不相同的三角形應該回傳\"scalene\"。"
     }
   },
   "hints": {
     "whatMakesInvalid": {
-      "question": "�",
-      "answer": "�"
+      "question": "什麼情況會讓三角形不合法？",
+      "answer": "有兩種情況。第一，任何一條邊是 0。第二，任意兩條邊的和小於或等於第三條邊（三角形不等式）。要先檢查這一點，因為把一個根本不是三角形的圖形分類並沒有意義。"
     },
     "checkOrder": {
-      "question": "�",
-      "answer": "�"
+      "question": "我應該按照什麼順序檢查這幾種類型？",
+      "answer": "從最明確的開始：等邊三角形（三條邊的長度都相同），接著是等腰三角形（任意兩條邊的長度相同），剩下的就是不等邊三角形。順序弄錯的話，等邊三角形會被誤判成等腰三角形。"
     },
     "checkAnyTwoEqual": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼檢查等腰三角形的「任意兩條邊的長度相同」？",
+      "answer": "做三次比較：a === b、b === c 或 a === c。只要其中一個成立就夠了。"
     },
     "knowScalene": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼知道它是不等邊三角形？",
+      "answer": "如果你已經排除了不合法、等邊和等腰，剩下的就只有不等邊三角形了。不用再檢查，直接回傳它就好。"
     }
   },
   "functions": {}

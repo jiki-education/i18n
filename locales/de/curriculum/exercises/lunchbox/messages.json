@@ -1,0 +1,69 @@
+{
+  "checks": {
+    "tooManyLines": "Deine Lösung hat zu viele Codezeilen. Schaffst du es, sie kürzer zu machen?"
+  },
+  "tasks": {
+    "packLunchbox": {
+      "name": "Pack die Pausenbox",
+      "description": "Verteile die Dinge auf Pausenbox und Rucksack: Pack so viele wie möglich in die Pausenbox, ohne ihr Fassungsvermögen zu überschreiten, und alles andere kommt in den Rucksack."
+    },
+    "solveInSixteenLines": {
+      "name": "In 16 Codezeilen lösen",
+      "description": "Schaffst du es, diese Übung mit nur 16 Codezeilen zu lösen?"
+    }
+  },
+  "scenarios": {
+    "everythingFits": {
+      "name": "Alles passt hinein",
+      "description": "Eine geräumige Pausenbox, in die alle Dinge passen, sodass der Rucksack leer bleibt."
+    },
+    "packTheMost": {
+      "name": "So viel wie möglich einpacken",
+      "description": "Der Platz ist knapp, also kommen die kleinen Dinge in die Pausenbox und die großen bleiben für den Rucksack übrig."
+    },
+    "justTheSnack": {
+      "name": "Nur der Snack",
+      "description": "Nur das allerkleinste Ding passt hinein, der Rest kommt in den Rucksack."
+    },
+    "nothingFits": {
+      "name": "Nichts passt hinein",
+      "description": "Sogar das kleinste Ding ist zu groß, also landet alles im Rucksack."
+    },
+    "emptyLunchbox": {
+      "name": "Leere Pausenbox",
+      "description": "Es gibt gar keine Dinge, also kommen Pausenbox und Rucksack beide leer zurück."
+    },
+    "bonus1": {
+      "name": "16 Codezeilen",
+      "description": "Löse die Übung mit nur 16 Codezeilen."
+    }
+  },
+  "hints": {
+    "readEachItem": {
+      "question": "Wie komme ich an den Namen und die Größe jedes Dings?",
+      "answer": "Jedes Ding ist ein Paar. Der erste Teil ist der Name und der zweite die Größe. Du kannst beide einzeln aus dem Ding herauslesen."
+    },
+    "fitTheMost": {
+      "question": "Wie packe ich so viele Dinge wie möglich hinein?",
+      "answer": "Überlege, welche Dinge du zuerst hineinpackst. Kleinere Dinge lassen mehr Platz für andere, deshalb solltest du sie vor den großen einpacken."
+    },
+    "goSmallestFirst": {
+      "question": "Die Dinge sind vom größten zum kleinsten aufgelistet. Wie gehe ich sie in umgekehrter Reihenfolge durch?",
+      "answer": "Es gibt eine Array-Methode, die dir eine umgekehrte Kopie eines Arrays zurückgibt. Dreh die Dinge zuerst um und arbeite sie dann in dieser neuen Reihenfolge durch."
+    },
+    "knowWhenFull": {
+      "question": "Wie entscheide ich, wohin jedes Ding kommt?",
+      "answer": "Führe eine laufende Summe der Größen, die du schon hinzugefügt hast. Prüfe vor jedem Ding, ob die Summe plus seine Größe noch ins Fassungsvermögen passt. Wenn ja, kommt es in die Pausenbox, sonst in den Rucksack."
+    }
+  },
+  "functions": {
+    "toReversed": {
+      "description": "Gibt eine Kopie des Arrays zurück, in der die Elemente in umgekehrter Reihenfolge stehen, ohne das Original zu verändern.",
+      "category": "Arrays"
+    },
+    "push": {
+      "description": "Hängt ein Element ans Ende eines Arrays an und verändert das Array dabei direkt.",
+      "category": "Arrays"
+    }
+  }
+}

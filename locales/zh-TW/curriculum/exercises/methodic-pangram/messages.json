@@ -1,82 +1,82 @@
 {
   "tasks": {
     "checkPangram": {
-      "name": "�",
-      "description": "�"
+      "name": "檢查全字母句",
+      "description": "寫一個函式，檢查一個句子是不是全字母句（包含字母表中每個字母至少一次）。檢查時不分大小寫。"
     }
   },
   "scenarios": {
     "pangramEmptySentence": {
-      "name": "�",
-      "description": "�"
+      "name": "空句子",
+      "description": "空句子不是全字母句。"
     },
     "pangramPerfectLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "完美的小寫",
+      "description": "完整的小寫字母表是全字母句。"
     },
     "pangramOnlyLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "只有小寫",
+      "description": "一個只含小寫字母、但涵蓋所有字母的句子是全字母句。"
     },
     "pangramMissingX": {
-      "name": "�",
-      "description": "�"
+      "name": "缺少字母「x」",
+      "description": "缺少字母「x」的句子不是全字母句。"
     },
     "pangramMissingH": {
-      "name": "�",
-      "description": "�"
+      "name": "缺少字母「h」",
+      "description": "缺少字母「h」的句子不是全字母句。"
     },
     "pangramMissingAM": {
-      "name": "�",
-      "description": "�"
+      "name": "缺少 a 到 m 之外的字母",
+      "description": "一個含有小寫與大寫「a」到「m」的字串不是全字母句。"
     },
     "pangramWithUnderscores": {
-      "name": "�",
-      "description": "�"
+      "name": "含有底線",
+      "description": "含有底線的全字母句。"
     },
     "pangramWithNumbers": {
-      "name": "�",
-      "description": "�"
+      "name": "含有數字",
+      "description": "含有數字的全字母句。"
     },
     "pangramNumbersReplacingLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "用數字取代字母",
+      "description": "字母被數字取代的句子不是全字母句。"
     },
     "pangramMixedCasePunctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "混合大小寫與標點",
+      "description": "混合大小寫與標點的全字母句。"
     },
     "pangramCaseInsensitive": {
-      "name": "�",
-      "description": "�"
+      "name": "不分大小寫但缺少字母",
+      "description": "一個不分大小寫、但沒有包含所有字母的句子，不是全字母句。"
     }
   },
   "hints": {
     "recall": {
-      "question": "�",
-      "answer": "�"
+      "question": "我已經自己解過這題了，到底有什麼改變？",
+      "answer": "邏輯完全一樣：把句子轉成小寫，然後檢查 a 到 z 的每個字母是不是都出現了。唯一改變的是你*怎麼*做這兩個步驟，現在你可以使用字串內建的方法，不必再自己寫輔助函式。"
     },
     "lowercaseMethod": {
-      "question": "�",
-      "answer": "�"
+      "question": "有內建的方法可以把字串轉成小寫嗎？",
+      "answer": "有。字串有一個 `toLowerCase()` 方法，會回傳一份小寫的副本。在開始時對句子呼叫它一次就好，不必自己逐字元跑迴圈。記得它回傳的是一個*新*字串，你需要把結果存起來。"
     },
     "includesMethod": {
-      "question": "�",
-      "answer": "�"
+      "question": "我還需要自己寫輔助函式來檢查某個字母是否存在嗎？",
+      "answer": "不用。字串有一個 `includes()` 方法，可以告訴你某個字串有沒有出現在另一個字串裡。把你上次寫的輔助函式換成 `sentence.includes(letter)` 就可以了。"
     },
     "stopEarly": {
-      "question": "�",
-      "answer": "�"
+      "question": "什麼時候可以提早停下來？",
+      "answer": "只要有一個字母缺少，就回傳 `false`，再檢查下去也沒有意義。要等整個字母表都確認過，才回傳 `true`。"
     }
   },
   "functions": {
     "toLowerCase": {
-      "description": "�",
-      "category": "�"
+      "description": "回傳字串的小寫副本",
+      "category": "字串操作"
     },
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "檢查字串是否包含另一個較短的字串",
+      "category": "字串操作"
     }
   }
 }

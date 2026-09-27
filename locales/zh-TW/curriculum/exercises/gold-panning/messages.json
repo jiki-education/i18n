@@ -1,55 +1,55 @@
 {
   "errors": {
-    "needsRecharge": "�",
-    "sellBeforeAnythingElse": "�",
-    "sellNumber": "�"
+    "needsRecharge": "機器人賣完之後需要充電。",
+    "sellBeforeAnythingElse": "機器人必須先去把金塊賣掉，才能做其他事情。",
+    "sellNumber": "賣出的金塊數量必須是數字"
   },
   "checks": {
-    "notSold": "�",
-    "wrongSoldTotal": "�"
+    "notSold": "你沒有把金塊賣掉。記得在淘金之後呼叫<code>sell()</code>。",
+    "wrongSoldTotal": "預期要賣出 {{expectedTotal}} 個金塊（{{panValues}}），但你賣出了 {{got}}。記得把每次淘金的結果加進你的累計總數。"
   },
   "tasks": {
     "panAndSell": {
-      "name": "�",
-      "description": "�"
+      "name": "淘金並賣掉收穫",
+      "description": "淘金 5 次收集金塊，一邊持續累計總數，最後在交易站把全部金塊賣掉。"
     }
   },
   "scenarios": {
     "randomPans": {
-      "name": "�",
-      "description": "�"
+      "name": "淘金並賣出",
+      "description": "淘金 5 次，每次淘到的金塊數量都是隨機的，然後賣出總數。"
     }
   },
   "hints": {
     "wrongSellAmount": {
-      "question": "�",
-      "answer": "�"
+      "question": "它說我賣出的金塊數量不對。",
+      "answer": "你要在最後一次把這 5 次淘到的金塊全部賣掉，而不是每淘一次就賣一次喔。"
     },
     "trackingTotal": {
-      "question": "�",
-      "answer": "�"
+      "question": "我用了好幾次淘金，但不知道要怎麼記錄自己有多少金塊。",
+      "answer": "想想你在最近的影片單元裡學過的東西。你需要用一個變數，記錄你在**所有**淘金過程中收集到的金塊**總**數。"
     },
     "fiveLines": {
-      "question": "�",
-      "answer": "�"
+      "question": "我讓它動起來了，但沒辦法縮到 5 行。",
+      "answer": "你的解法裡有重複的程式碼嗎？如果有，我們可以用什麼來減少重複呢？"
     },
     "stillFiveLines": {
-      "question": "�",
-      "answer": "�"
+      "question": "我還是沒辦法縮到 5 行程式碼。",
+      "answer": "你應該只需要用到一個變數。你有用到更多個嗎？"
     }
   },
   "describers": {
-    "pan": "�",
-    "sell": "�"
+    "pan": "淘了金，找到 ${return} 個金塊",
+    "sell": "在交易站賣出了 ${arg1} 個金塊"
   },
   "functions": {
     "pan": {
-      "description": "�",
-      "category": "�"
+      "description": "把你的淘金盤浸入河裡，並**回傳**找到的金塊數量。",
+      "category": "採礦"
     },
     "sell": {
-      "description": "�",
-      "category": "�"
+      "description": "在交易站賣出你的金塊。",
+      "category": "動作"
     }
   }
 }

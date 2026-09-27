@@ -1,67 +1,67 @@
 {
   "tasks": {
     "checkTheName": {
-      "name": "�",
-      "description": "�"
+      "name": "Prüf den Namen",
+      "description": "Schreib eine Funktion `handleGuest`, die prüft, ob der Name der Person mit den erlaubten Anfangsbuchstaben für die Party heute Abend beginnt. Gib `true` zurück, wenn ja, und `false`, wenn nicht."
     },
     "solveTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "Löse es in 20 Zeilen",
+      "description": "Bonus: Wenn du das Zählen der Länge in eine Hilfsfunktion auslagerst, die `handleGuest` wiederverwendet, passt die ganze Lösung in 20 Zeilen. Schaffst du es genauso knapp?"
     }
   },
   "scenarios": {
     "sarahSParty": {
-      "name": "�",
-      "description": "�"
+      "name": "S-Party: Sarah kommt",
+      "description": "Heute Abend sind nur Namen erlaubt, die mit „S“ beginnen. Sarah kommt rein!"
     },
     "bradSParty": {
-      "name": "�",
-      "description": "�"
+      "name": "S-Party: Brad kommt",
+      "description": "Heute Abend sind nur Namen erlaubt, die mit „S“ beginnen. Brad wird abgewiesen."
     },
     "bradleyBradParty": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad-Party: Bradley kommt",
+      "description": "Heute Abend sind nur Namen erlaubt, die mit „Brad“ beginnen. Bradley kommt rein!"
     },
     "bradBradleyParty": {
-      "name": "�",
-      "description": "�"
+      "name": "Bradley-Party: Brad kommt",
+      "description": "Heute Abend sind nur Namen erlaubt, die mit „Bradley“ beginnen. Brad ist zu kurz und wird deshalb nicht reingelassen."
     },
     "brianBradParty": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad-Party: Brian kommt",
+      "description": "Heute Abend sind nur Namen erlaubt, die mit „Brad“ beginnen. Brian wird abgewiesen."
     },
     "silence": {
-      "name": "�",
-      "description": "�"
+      "name": "S-Party: Stille ...",
+      "description": "Die Person sagt ihren Namen nicht. Ein leerer Name kann mit nichts beginnen. Weise sie ab!"
     },
     "cherCherParty": {
-      "name": "�",
-      "description": "�"
+      "name": "Cher-Party: Cher kommt",
+      "description": "Heute Abend sind nur Namen erlaubt, die mit „Cher“ beginnen. Chers Name ist genau „Cher“, also lass sie rein!"
     },
     "nicheNamedPartyBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "Kurz und knapp",
+      "description": "Die kürzeste Lösung passt in 20 Zeilen. Findest du sie?"
     }
   },
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "Bleib dran! Schaffst du es mit weniger Zeilen?"
   },
   "hints": {
     "checkStartsWith": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie prüfe ich, ob ein Name mit bestimmten Buchstaben beginnt?",
+      "answer": "Vergleiche jedes Zeichen des erlaubten Präfixes mit dem Zeichen an derselben Stelle im Namen. Wenn ein Zeichen abweicht, passt der Name nicht."
     },
     "loopCharacters": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie schaue ich mir jeweils ein Zeichen an?",
+      "answer": "Mit der String-Iteration gehst du einen String Zeichen für Zeichen durch."
     },
     "findEquivalentLetter": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie finde ich den entsprechenden Buchstaben im anderen Wort?",
+      "answer": "Nutze die Indexierung eines Strings, um einen bestimmten Buchstaben zu finden."
     },
     "longerAllowedPrefix": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was ist, wenn das erlaubte Präfix länger ist als der Name?",
+      "answer": "Diese Person kann nicht passen, also gib `false` zurück."
     }
   }
 }

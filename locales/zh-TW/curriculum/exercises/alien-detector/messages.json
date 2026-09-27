@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "notShotAlien": "你沒有擊落那個外星人。",
+    "notShotAllAliens": "你沒有擊落所有外星人。"
+  },
+  "tasks": {
+    "shootTheAliens": {
+      "name": "追蹤並擊落所有外星人",
+      "description": "用 getStartingAliensInRow() 取得外星人的位置，然後在畫面上移動，把他們一一擊落。透過更新陣列來記錄哪些外星人已經被你擊落。"
+    }
+  },
+  "scenarios": {
+    "oneAlien": {
+      "name": "擊落外星人",
+      "description": "最下面那一列只有一個外星人"
+    },
+    "oneRow": {
+      "name": "稀疏的一列",
+      "description": "最下面那一列有稀疏分布的外星人"
+    },
+    "twoRows": {
+      "name": "密集的兩列",
+      "description": "外星人分布在兩列上"
+    },
+    "threeRows": {
+      "name": "三列",
+      "description": "外星人分布在全部三列上"
+    },
+    "fullRows": {
+      "name": "排滿的三列",
+      "description": "三列滿滿的外星人"
+    }
+  },
+  "hints": {
+    "knowWhereAliens": {
+      "question": "如果沒有`isAlienAbove()`，我要怎麼知道外星人在哪裡？",
+      "answer": "在一開始先呼叫`getStartingAliensInRow(0)`、`getStartingAliensInRow(1)`和`getStartingAliensInRow(2)`各一次。每個都會回傳包含 11 個布林值的陣列，你可以把它存進變數，之後再讀取。"
+    },
+    "whichAlienAbove": {
+      "question": "我要怎麼知道我現在上方是哪個外星人？",
+      "answer": "用一個變數追蹤你水平方向的位置，每次移動就更新它。這個位置就是各列陣列裡的索引，所以`row1[position]`會告訴你第 1 列的上方有沒有外星人。"
+    },
+    "stopDoubleShoot": {
+      "question": "我要怎麼避免重複擊落同一個外星人？",
+      "answer": "呼叫`shoot()`之後，把那一列中對應的索引設成`false`。下一次跑迴圈時，同一個位置就會回報那裡沒有外星人。"
+    },
+    "whichRowToShoot": {
+      "question": "當上方有好幾個外星人疊在一起時，我該從哪一列擊落？",
+      "answer": "從最下面那一列開始往上檢查。擊落你這一欄裡最下面、還活著的外星人，然後在那一次疊代中就不再往上檢查其他列。"
+    }
+  },
+  "functions": {
+    "moveLeft": {
+      "description": "把雷射砲**向左移動一個位置**。如果你想移出畫面的左邊界，就會輸掉遊戲！",
+      "category": "移動"
+    },
+    "moveRight": {
+      "description": "把雷射砲**向右移動一個位置**。如果你想移出畫面的右邊界，就會輸掉遊戲！",
+      "category": "移動"
+    },
+    "shoot": {
+      "description": "把雷射往上射。**只有在上方有外星人時才能射擊**，不然就會輸掉遊戲！雷射砲很容易過熱，所以再次射擊之前一定要先移動。",
+      "category": "動作"
+    },
+    "getStartingAliensInRow": {
+      "description": "回傳包含 11 個布林值的陣列，代表練習**開始**時指定那一列的外星人位置。第`0`列是最下面那一列，`1`是中間那一列，`2`是最上面那一列。",
+      "category": "偵測"
+    }
+  }
+}

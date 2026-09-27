@@ -1,101 +1,101 @@
 {
   "tasks": {
     "encode": {
-      "name": "�",
-      "description": "�"
+      "name": "Einen String kodieren",
+      "description": "Schreibe eine Funktion namens `encode`, die durch den String läuft und zählt, wie oft sich jedes Zeichen hintereinander wiederholt. Ersetze jede Folge von zwei oder mehr gleichen Zeichen durch die Anzahl, gefolgt vom Zeichen. Einzelne Zeichen bleiben unverändert."
     },
     "decode": {
-      "name": "�",
-      "description": "�"
+      "name": "Einen String dekodieren",
+      "description": "Schreibe eine Funktion namens `decode`, die den Vorgang umkehrt. Lies die Zahl vor einem Zeichen und wiederhole das Zeichen so oft. Eine Anzahl kann mehr als eine Ziffer haben."
     }
   },
   "scenarios": {
     "rleEncodeEmpty": {
-      "name": "�",
-      "description": "�"
+      "name": "Einen leeren String kodieren",
+      "description": "Ein leerer String ergibt beim Kodieren wieder einen leeren String."
     },
     "rleEncodeSingles": {
-      "name": "�",
-      "description": "�"
+      "name": "Einzelne Zeichen werden nicht gezählt",
+      "description": "Zeichen, die nur einmal vorkommen, werden ohne Anzahl kodiert."
     },
     "rleEncodeNoSingles": {
-      "name": "�",
-      "description": "�"
+      "name": "Ein String ohne einzelne Zeichen",
+      "description": "Folgen wiederholter Zeichen werden durch eine Anzahl und das Zeichen ersetzt."
     },
     "rleEncodeMixed": {
-      "name": "�",
-      "description": "�"
+      "name": "Einzelne Zeichen gemischt mit Folgen",
+      "description": "Folgen und einzelne Zeichen können im selben String gemischt vorkommen."
     },
     "rleEncodeWhitespace": {
-      "name": "�",
-      "description": "�"
+      "name": "Leerzeichen im String",
+      "description": "Leerzeichen werden wie jedes andere Zeichen behandelt, auch in Folgen."
     },
     "rleEncodeLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "Kleinbuchstaben",
+      "description": "Das Kodieren funktioniert bei Kleinbuchstaben genauso."
     },
     "rleDecodeEmpty": {
-      "name": "�",
-      "description": "�"
+      "name": "Einen leeren String dekodieren",
+      "description": "Ein leerer String ergibt beim Dekodieren wieder einen leeren String."
     },
     "rleDecodeSingles": {
-      "name": "�",
-      "description": "�"
+      "name": "Einzelne Zeichen dekodieren",
+      "description": "Zeichen ohne Anzahl davor kommen einmal vor."
     },
     "rleDecodeNoSingles": {
-      "name": "�",
-      "description": "�"
+      "name": "Einen String aus Folgen dekodieren",
+      "description": "Eine Anzahl gefolgt von einem Zeichen wird zu so vielen Kopien des Zeichens."
     },
     "rleDecodeMixed": {
-      "name": "�",
-      "description": "�"
+      "name": "Einzelne Zeichen gemischt mit Folgen dekodieren",
+      "description": "Anzahlen mit mehr als einer Ziffer müssen vollständig gelesen werden, bevor sie aufgelöst werden."
     },
     "rleDecodeWhitespace": {
-      "name": "�",
-      "description": "�"
+      "name": "Leerzeichen dekodieren",
+      "description": "Leerzeichen werden wie jedes andere Zeichen wiederholt."
     },
     "rleDecodeLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "Kleinbuchstaben dekodieren",
+      "description": "Das Dekodieren funktioniert bei Kleinbuchstaben genauso."
     }
   },
   "hints": {
     "whatIsRle": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was macht Lauflängenkodierung eigentlich?",
+      "answer": "Sie fasst Folgen gleicher Zeichen zu einer Anzahl plus dem Zeichen zusammen. Aus `\"AAAA\"` wird `\"4A\"`. Ein einzelnes Zeichen bleibt ohne Zahl davor stehen, `\"B\"` bleibt also `\"B\"`."
     },
     "countRuns": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie zähle ich eine Folge wiederholter Zeichen?",
+      "answer": "Geh durch den String und merke dir das vorherige Zeichen und wie oft es sich wiederholt hat. Jedes Mal, wenn das Zeichen wechselt, schreibst du die fertige Folge auf und beginnst, das neue Zeichen zu zählen."
     },
     "singleChars": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie vermeide ich eine Anzahl bei einzelnen Zeichen?",
+      "answer": "Setz die Zahl nur davor, wenn die Anzahl größer als 1 ist. Ist ein Zeichen nur einmal vorgekommen, schreibst du nur das Zeichen."
     },
     "decodeDigits": {
-      "question": "�",
-      "answer": "�"
+      "question": "Woran erkenne ich beim Dekodieren, ob ein Zeichen eine Ziffer ist?",
+      "answer": "Prüf, ob das Zeichen in `0123456789` vorkommt, zum Beispiel mit `\"0123456789\".includes(char)`. Wenn ja, gehört es zu einer Anzahl. Wenn nicht, ist es das Zeichen, das wiederholt werden soll."
     },
     "decodeMultiDigit": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie lese ich eine Anzahl mit mehr als einer Ziffer, zum Beispiel 12?",
+      "answer": "Eine Anzahl wie `12` kommt Ziffer für Ziffer an, also baust du sie nach und nach auf, statt jede Ziffer einzeln zu behandeln. Jedes Mal, wenn eine weitere Ziffer auftaucht, muss die Zahl, die du bisher hast, um den Faktor zehn wachsen, damit Platz für die neue Ziffer ist, bevor du sie anhängst. `Number()` macht aus einem Ziffernzeichen eine Zahl, mit der du rechnen kannst."
     },
     "decodeRepeat": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie wiederhole ich das Zeichen genau so oft?",
+      "answer": "Sobald du auf ein Zeichen stößt, das keine Ziffer ist, verwendest du eine Schleife, die `count` Mal läuft und das Zeichen jedes Mal an dein Ergebnis anhängt. Danach setzt du die Anzahl wieder auf 0 zurück, bereit für die nächste Folge. Gab es keine Anzahl, behandelst du sie als 1."
     }
   },
   "functions": {
     "number": {
-      "description": "�",
-      "category": "�"
+      "description": "Einen String, der eine Ziffer enthält, in eine Zahl umwandeln",
+      "category": "Typumwandlung"
     },
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "Prüfen, ob ein String einen kleineren String enthält",
+      "category": "String-Operationen"
     }
   },
   "checks": {
-    "mustUseFor": "�"
+    "mustUseFor": "Fast! Für diese Übung möchten wir, dass du eine `for`-Schleife verwendest, um jedes Zeichen richtig oft zu wiederholen."
   }
 }

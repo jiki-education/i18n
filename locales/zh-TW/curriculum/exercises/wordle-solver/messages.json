@@ -1,0 +1,125 @@
+{
+  "checks": {
+    "repeatedGuess": "你重複猜了同一個單字。每一次猜測都應該運用先前猜測學到的線索，而且只要猜中了就該馬上停下來。",
+    "guessNotCommonWord": "第 {{row}} 次猜測是「{{word}}」，但這不是`commonWords()`裡的單字。",
+    "guessUsesAbsent": "第 {{row}} 次猜測是「{{word}}」，但先前的猜測已經顯示「{{letter}}」不在這個單字裡。",
+    "guessIgnoresCorrect": "第 {{row}} 次猜測是「{{word}}」，但先前的猜測已經顯示第 {{square}} 格是「{{letter}}」。",
+    "guessMissesPresent": "第 {{row}} 次猜測是「{{word}}」，但先前的猜測已經顯示「{{letter}}」出現在這個單字的某個位置，而「{{word}}」裡並沒有它。",
+    "guessRepeatsPresentSquare": "第 {{row}} 次猜測是「{{word}}」，但先前的猜測已經顯示「{{letter}}」在單字裡，只是不在第 {{square}} 格。",
+    "guessNotFirstFitting": "第 {{row}} 次猜測是「{{word}}」，但我們預期你猜的應該是「{{expected}}」。",
+    "guessAfterSolved": "前一次猜測已經猜中單字了，你的程式碼卻又做了第 {{row}} 次猜測。只要每個字母都正確，就該立刻停下來。",
+    "stoppedBeforeSolved": "你的程式碼只猜了 {{guesses}} 次就停下來，但還沒猜中單字。"
+  },
+  "tasks": {
+    "firstWord": {
+      "name": "讓正確的單字顯示出來",
+      "description": "第一個情境只要求你從`commonWords()`裡挑出第一個單字，也就是`which`。要通過這個情境，你只要猜這個單字，然後停下來就好。你可以先確認自己的程式接得對不對，再進入更複雜的情況。"
+    },
+    "handleWrong": {
+      "name": "處理完全猜錯的情況",
+      "description": "第一段流程接得很不錯喔！這個第二個情境要用兩次猜測。第一次同樣是陣列裡的第一個單字（永遠都是這樣！）。它會完全猜錯，所以你接著要往下找陣列裡的下一個單字，那個就會猜中！"
+    },
+    "handlePartial": {
+      "name": "處理部分正確的情況",
+      "description": "很好，我們有點進展了。接下來會越來越有趣。之後幾個情境的結果，會是`correct`和`absent`字母的混合。根據你目前找到的`correct`和`absent`字母，從陣列中挑出下一個最合適的單字。"
+    },
+    "handlePresent": {
+      "name": "處理`present`字母",
+      "description": "太棒了！現在是最後一個比較難的部分。你要把`present`字母也納入考量。祝你好運，你一定可以的！"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "全部正確",
+      "description": "處理第一次就全部猜中的情況。"
+    },
+    "entirelyWrong": {
+      "name": "一次猜錯，一次猜中",
+      "description": "處理猜錯的情況"
+    },
+    "twoNeeded": {
+      "name": "需要猜兩次",
+      "description": "處理猜錯的情況"
+    },
+    "threeNeeded": {
+      "name": "需要猜三次",
+      "description": "處理猜錯的情況"
+    },
+    "fourNeeded": {
+      "name": "需要猜四次",
+      "description": "處理猜錯的情況"
+    },
+    "present1": {
+      "name": "有些字母是`present`",
+      "description": "有點難的一題，因為有些字母是`present`。"
+    },
+    "present2": {
+      "name": "越來越接近了",
+      "description": "處理比較難的單字"
+    },
+    "present3": {
+      "name": "比較正常的一局",
+      "description": "現在總算有 Wordle 的感覺了"
+    },
+    "present4": {
+      "name": "又一次差一點",
+      "description": "它們最後走出不同的結果，挺有趣的！"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "到底該從哪裡開始？",
+      "answer": "先從猜`commonWords()`裡的第一個單字開始。先讓「猜一個單字、檢查結果」的迴圈順利跑起來，再來煩惱怎麼猜得更聰明。"
+    },
+    "readStates": {
+      "question": "要怎麼知道這次猜得怎麼樣？",
+      "answer": "`guess(word)`會回傳一個陣列，每個字母對應一個狀態：`\"correct\"`、`\"present\"`或`\"absent\"`。這個陣列是每次猜測唯一能帶給你的資訊，所以你所有已知的線索都必須從它來。"
+    },
+    "rememberLearned": {
+      "question": "要怎麼記住每一次猜測學到的東西？",
+      "answer": "在迴圈外面維護一份已知資訊：確定不在單字裡的字母、確定在單字裡但位置還不確定的字母，以及每個位置確定不是哪些字母。"
+    },
+    "pickNextGuess": {
+      "question": "要怎麼挑下一個要猜的單字？",
+      "answer": "篩選`commonWords()`：只留下把`correct`字母都放在正確位置的單字、包含每個`present`字母（但不能放在你已排除的位置），而且不含任何`absent`字母的單字。挑出第一個符合的。"
+    },
+    "whenToStop": {
+      "question": "什麼時候該停下來？",
+      "answer": "只要每個狀態都回傳`\"correct\"`，就立刻停下來；不然最多猜到`6`次為止。否則你會一路猜到超過盤面的最後一列。"
+    }
+  },
+  "functions": {
+    "guess": {
+      "description": "猜一個單字。它會把這個單字畫在盤面的下一列、塗上顏色，並回傳一個記錄每個字母狀態的陣列。",
+      "category": "Wordle"
+    },
+    "commonWords": {
+      "description": "回傳一個陣列，裡面有超過 100 個可以用來猜的五字母常用單字。",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "把一個元素加到陣列末端，會直接修改原本的陣列。",
+      "category": "陣列"
+    },
+    "arrayIncludes": {
+      "description": "檢查陣列裡是否包含某個項目。",
+      "category": "陣列"
+    },
+    "stringIncludes": {
+      "description": "檢查字串裡是否包含某個子字串。",
+      "category": "字串"
+    },
+    "arrayLength": {
+      "description": "陣列中項目的數量。",
+      "category": "陣列"
+    },
+    "stringLength": {
+      "description": "字串中字元的數量。",
+      "category": "字串"
+    }
+  },
+  "describers": {
+    "guess": "猜了一個單字",
+    "commonWords": "取得了常用單字陣列"
+  }
+}

@@ -1,0 +1,195 @@
+WEBVTT
+
+NOTE en_md5 e47167fc1482d0b37cf8c1318d2bbbbb
+
+00:00:00.100 --> 00:00:04.260
+Willkommen zurück. Wenn wir bisher mit der repeat-Schleife
+
+00:00:04.300 --> 00:00:06.910
+Dinge gezeichnet haben, hat jedes neue Ding,
+
+00:00:06.920 --> 00:00:10.310
+das wir gezeichnet haben, etwas zum Bild hinzugefügt. Wenn
+
+00:00:10.340 --> 00:00:12.360
+wir einen neuen Ziegelstein in eine Mauer gezeichnet haben,
+
+00:00:12.520 --> 00:00:15.840
+hat er eine Lücke gefüllt. Wenn wir 10
+
+00:00:15.900 --> 00:00:18.500
+Kreise gezeichnet haben, sehen wir 10 Kreise auf dem Bildschirm.
+
+00:00:19.300 --> 00:00:22.220
+Das ist wie bei einem Gemälde. Sobald du Farbe
+
+00:00:22.240 --> 00:00:24.580
+auf die Wand bringst, verschwindet sie nicht, wenn du
+
+00:00:24.640 --> 00:00:26.440
+daneben etwas Neues malst. Sie bleibt
+
+00:00:26.480 --> 00:00:30.320
+da. Aber was, wenn wir etwas so
+
+00:00:30.380 --> 00:00:33.980
+aussehen lassen wollen, als würde es sich bewegen? Hast du
+
+00:00:34.000 --> 00:00:36.150
+schon mal ein Daumenkino gesehen? Die waren total beliebt,
+
+00:00:36.160 --> 00:00:38.339
+als ich ein Kind war, heute weniger.
+
+00:00:38.380 --> 00:00:40.640
+Ein Daumenkino ist ein kleines Buch, in dem jede
+
+00:00:40.680 --> 00:00:44.440
+Seite eine etwas andere Zeichnung zeigt. Wenn du
+
+00:00:44.540 --> 00:00:47.640
+die Seiten schnell durchblätterst, sehen deine Augen,
+
+00:00:47.720 --> 00:00:51.170
+wie sich die Zeichnungen ändern, und dein Gehirn denkt, da würde sich
+
+00:00:51.340 --> 00:00:54.020
+etwas bewegen. Dabei bewegt sich gar nichts. Es sind einfach viele
+
+00:00:54.060 --> 00:00:58.530
+leicht unterschiedliche Bilder, eines nach dem anderen. Und
+
+00:00:58.560 --> 00:01:02.400
+genau so funktioniert Animation im Code.
+
+00:01:02.589 --> 00:01:05.500
+Der Trick ist derselbe. Bevor wir
+
+00:01:05.560 --> 00:01:08.920
+eine neue Szene zeichnen, übermalen wir die ganze
+
+00:01:08.960 --> 00:01:11.920
+Leinwand mit einer Hintergrundfarbe, ein bisschen so,
+
+00:01:11.960 --> 00:01:14.400
+als würden wir im Daumenkino eine frische Seite aufschlagen,
+
+00:01:15.320 --> 00:01:18.140
+und dann ändern wir die Szene
+
+00:01:18.180 --> 00:01:21.740
+ein klein wenig, sodass sie wie Bewegung aussieht. Nehmen wir
+
+00:01:21.780 --> 00:01:24.040
+also einen vertrauten Codeblock, in dem
+
+00:01:24.080 --> 00:01:27.520
+wir Kreise über den Bildschirm zeichnen. Wir
+
+00:01:27.560 --> 00:01:29.820
+legen eine Variable position an, und wir haben einen
+
+00:01:29.840 --> 00:01:31.900
+repeat-Block, in dem wir einen Kreis zeichnen und
+
+00:01:31.940 --> 00:01:33.640
+dann position um eins nach rechts verschieben.
+
+00:01:34.680 --> 00:01:37.110
+Wenn wir diesen repeat-Block 100-mal ausführen,
+
+00:01:37.500 --> 00:01:39.940
+sehen wir 100 Kreise über den
+
+00:01:39.960 --> 00:01:43.320
+Bildschirm verteilt. Schau mal, was passiert, wenn wir
+
+00:01:43.340 --> 00:01:47.440
+einfach ein schlichtes Rechteck zeichnen, jedes Mal bevor wir
+
+00:01:47.500 --> 00:01:51.260
+den Kreis zeichnen. Statt einer Spur aus
+
+00:01:51.300 --> 00:01:54.210
+Kreisen werden unsere Augen jetzt so ausgetrickst, dass sie
+
+00:01:54.380 --> 00:01:57.440
+einen einzigen Kreis sehen, der über den Bildschirm
+
+00:01:57.520 --> 00:02:01.000
+zu gleiten scheint. Jedes Mal, wenn wir durch die Schleife gehen,
+
+00:02:01.020 --> 00:02:04.060
+malen wir einen ganz neuen Hintergrund, überdecken
+
+00:02:04.260 --> 00:02:06.860
+alles, was vorher da war, und zeichnen dann
+
+00:02:06.960 --> 00:02:11.120
+den Kreis an seiner neuen Stelle. Jeder
+
+00:02:11.200 --> 00:02:14.540
+Durchlauf durch die Schleife ist wie eine neue
+
+00:02:14.600 --> 00:02:17.720
+Seite im Daumenkino. Und das
+
+00:02:17.740 --> 00:02:19.570
+Wichtigste dabei: Wir bewegen
+
+00:02:19.640 --> 00:02:22.390
+den Kreis nicht. Der Kreis ist kein Objekt,
+
+00:02:22.400 --> 00:02:25.250
+das hinübergleitet. Er ist nur eine Zeichnung. Bei jedem
+
+00:02:25.340 --> 00:02:27.220
+Durchlauf übermalen wir
+
+00:02:27.280 --> 00:02:29.350
+die alte Zeichnung und malen eine ganz neue,
+
+00:02:29.980 --> 00:02:32.120
+ein Stück weiter rechts. Dein Auge setzt
+
+00:02:32.180 --> 00:02:35.280
+alles zusammen und sieht eine Bewegung, aber in Wirklichkeit sind es
+
+00:02:35.360 --> 00:02:38.390
+einfach viele einzelne Zeichnungen, eine nach der anderen.
+
+00:02:40.080 --> 00:02:42.160
+In der nächsten Übung nutzt du
+
+00:02:42.200 --> 00:02:45.420
+diese Idee, um einen Sonnenuntergang zu gestalten. Du lässt
+
+00:02:45.460 --> 00:02:47.829
+die Sonne wandern, änderst ihre Größe, änderst ihre
+
+00:02:47.880 --> 00:02:50.100
+Farbe. Es ist immer dieselbe Technik. Lege ein paar
+
+00:02:50.220 --> 00:02:53.900
+Variablen fest, male einen frischen Hintergrund und zeichne alles.
+
+00:02:53.940 --> 00:02:57.190
+Aktualisiere die Variablen und wiederhole das Ganze. Und
+
+00:02:57.240 --> 00:02:59.170
+wenn du Premium-Mitglied bist, schaltest du nach
+
+00:02:59.170 --> 00:03:01.750
+dem Sonnenuntergang außerdem ein anspruchsvolleres
+
+00:03:01.800 --> 00:03:05.860
+Projekt frei, die „Sprießende Blume“. Dort kannst du
+
+00:03:05.940 --> 00:03:08.180
+dich richtig herausfordern, indem du all diese
+
+00:03:08.220 --> 00:03:11.360
+Dinge zusammenbringst. Das macht richtig Spaß. Viel
+
+00:03:11.400 --> 00:03:13.240
+Erfolg, und bis gleich!

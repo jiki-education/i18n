@@ -1,48 +1,48 @@
 {
   "checks": {
-    "base": "�",
-    "body": "�",
-    "head": "�",
-    "notResponsive": "�"
+    "base": "底部圓的位置或大小不對。檢查`baseRadius`和`baseY`。",
+    "body": "身體圓的位置或大小不對。檢查`bodyRadius`和`bodyY`。",
+    "head": "頭部圓的位置或大小不對。檢查`headRadius`和`headY`。",
+    "notResponsive": "當`size`是 {{size}} 時，你的程式碼沒辦法正確縮放。每個半徑和 Y 座標都應該從`size`推算出來。"
   },
   "tasks": {
     "buildRelationalSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "建立關聯式雪人",
+      "description": "所有尺寸和位置都從`size`推算出來，讓雪人能正確縮放。"
     }
   },
   "scenarios": {
     "buildRelationalSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "建立關聯式雪人",
+      "description": "每個半徑和 Y 座標都從`size`推算出來。"
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "我該從哪裡開始？",
+      "answer": "先從底部開始，因為只有它有固定的依據（畫布底部）。知道`baseY`之後，就可以把身體疊在底部上，再把頭疊在身體上。"
     },
     "baseSits": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼算出底部的位置？",
+      "answer": "底部圓的下緣距離畫面底部（Y=100）`size`。底部圓的圓心就從下緣再往上一個底部半徑的距離。"
     },
     "stackBody": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼把身體疊在底部上？",
+      "answer": "當兩個圓相切、一個正好在另一個正上方時，兩個圓心之間的距離就等於兩個半徑相加。"
     },
     "head": {
-      "question": "�",
-      "answer": "�"
+      "question": "那頭呢？",
+      "answer": "頭疊在身體上的方式和身體疊在底部上完全一樣。"
     },
     "whyDeriveFromSize": {
-      "question": "�",
-      "answer": "�"
+      "question": "為什麼所有東西都要從`size`推算出來？",
+      "answer": "如果直接把數字寫死，改變`size`時圓和圓之間就會出現縫隙或重疊。用算式推算，所有東西才能保持比例。"
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "以 (centerX, centerY) 為圓心，用指定的半徑和顏色畫一個圓",
+      "category": "繪製圖形"
     }
   }
 }

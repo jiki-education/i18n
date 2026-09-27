@@ -1,0 +1,207 @@
+WEBVTT
+
+NOTE en_md5 d39fabecd86df2df0d2b749f6d2241ba
+
+00:00:00.260 --> 00:00:02.070
+Willkommen zurück. Ich hoffe, du hattest Spaß mit
+
+00:00:02.120 --> 00:00:04.900
+dieser Flut an Übungen. Du machst fantastische
+
+00:00:04.940 --> 00:00:07.970
+Fortschritte. Gut gemacht. Dieses Video ist
+
+00:00:08.000 --> 00:00:10.740
+kurz. Du weißt schon, was Strings sind.
+
+00:00:10.940 --> 00:00:12.800
+Es sind Zettel mit Text
+
+00:00:12.840 --> 00:00:15.440
+darauf. Du benutzt sie schon den ganzen Kurs
+
+00:00:15.520 --> 00:00:18.960
+über. Aber bisher hast du jeden String
+
+00:00:19.100 --> 00:00:22.000
+direkt hingeschrieben. Was
+
+00:00:22.040 --> 00:00:24.620
+aber, wenn du einen String
+
+00:00:24.660 --> 00:00:28.500
+aus Variablen oder Bedingungen zusammenbauen willst? Wie machen wir
+
+00:00:28.560 --> 00:00:31.200
+das? Nun, es gibt zwei Wege,
+
+00:00:31.300 --> 00:00:34.520
+die ich dir zeigen werde. Der erste
+
+00:00:34.640 --> 00:00:38.370
+heißt String-Verkettung (string concatenation auf Englisch),
+
+00:00:38.460 --> 00:00:41.600
+eine vornehme, etwas verwirrende Art, zwei Strings zusammenzufügen.
+
+00:00:41.640 --> 00:00:46.120
+Stell dir vor, du hast zwei Wörter, „hello“ und
+
+00:00:46.160 --> 00:00:48.420
+„world“ (Welt), und du willst einen String erzeugen,
+
+00:00:48.440 --> 00:00:51.730
+der „hello world“ enthält. Du könntest einfach
+
+00:00:51.940 --> 00:00:54.460
+„hello world“ als einen String hinschreiben, aber du könntest
+
+00:00:54.540 --> 00:00:59.570
+auch „hello“ mit Leerzeichen plus „world“ schreiben, und das
+
+00:00:59.600 --> 00:01:03.260
+würde denselben String ergeben. Offensichtlich ist
+
+00:01:03.340 --> 00:01:05.340
+das in diesem Fall nicht besonders nützlich.
+
+00:01:05.940 --> 00:01:08.180
+Aber was, wenn wir eine Variable mit
+
+00:01:08.240 --> 00:01:10.420
+dem Namen von jemandem hätten und dieser Person
+
+00:01:10.460 --> 00:01:12.780
+Hallo sagen wollten? Stellen wir uns also eine
+
+00:01:12.820 --> 00:01:16.020
+Variable namens name vor. Sie enthält manchmal „Jeremy“
+
+00:01:16.060 --> 00:01:18.860
+und manchmal „Jiki“. Wir wollen mit dieser Variable
+
+00:01:18.920 --> 00:01:22.280
+„hello Jeremy“ oder „hello Jiki“ sagen.
+
+00:01:23.380 --> 00:01:25.860
+Das erreichen wir mit diesem Konzept der Verkettung,
+
+00:01:25.920 --> 00:01:30.600
+indem wir „hello“ plus name schreiben. Das
+
+00:01:30.620 --> 00:01:33.480
+gibt uns entweder „hello Jeremy“ oder „hello
+
+00:01:33.620 --> 00:01:37.320
+Jiki“ oder hallo an jede andere Person, je nachdem, was
+
+00:01:37.360 --> 00:01:41.000
+in der name-Box steckt. Wir können auch
+
+00:01:41.040 --> 00:01:44.220
+etwas namens String-Templates verwenden, um dasselbe
+
+00:01:44.280 --> 00:01:48.790
+zu erreichen. Das ist noch so ein unnötig vornehmes, verwirrendes Wort. Es
+
+00:01:48.840 --> 00:01:53.920
+bedeutet, Strings in andere Strings einzufügen. Statt
+
+00:01:53.960 --> 00:01:56.950
+Strings zusammenzusetzen, können wir also einen
+
+00:01:57.120 --> 00:02:00.830
+String oder ein Template haben, in dem Platz für andere
+
+00:02:00.900 --> 00:02:04.020
+Strings ist. Dazu
+
+00:02:04.040 --> 00:02:09.800
+verwenden wir Backticks statt Anführungszeichen. Backticks sind,
+
+00:02:09.880 --> 00:02:12.420
+wie der Name schon sagt, nach hinten geneigte Striche. Aber
+
+00:02:12.460 --> 00:02:15.080
+vielleicht hast du sie noch nie benutzt,
+
+00:02:15.120 --> 00:02:17.100
+deshalb musst du die richtige Taste auf
+
+00:02:17.140 --> 00:02:20.730
+deiner Tastatur erst finden. Wir benutzen sie, um ein
+
+00:02:20.800 --> 00:02:24.150
+Template zu erstellen, das andere Strings enthalten kann. Und um
+
+00:02:24.220 --> 00:02:27.220
+dann einen String in das Template einzusetzen,
+
+00:02:27.300 --> 00:02:30.540
+nutzen wir eine weitere seltsame Syntax aus Dollarzeichen und geschweiften Klammern.
+
+00:02:30.580 --> 00:02:33.160
+Um zum Beispiel dasselbe zu erreichen wie mit „hello“
+
+00:02:33.180 --> 00:02:36.200
+plus name, was wir eben gesehen haben,
+
+00:02:36.420 --> 00:02:40.700
+könnten wir, äh, könnten wir Backtick hello, Dollarzeichen,
+
+00:02:40.860 --> 00:02:45.180
+geschweifte Klammer, name, geschweifte Klammer, Backtick schreiben. Das sieht viel
+
+00:02:45.220 --> 00:02:46.560
+besser aus, als es klingt, wenn ich es sage.
+
+00:02:47.800 --> 00:02:50.520
+Und damit erreichst du genau dasselbe wie
+
+00:02:50.580 --> 00:02:53.320
+beim Zusammensetzen der Strings. Aber wenn
+
+00:02:53.390 --> 00:02:56.120
+mehrere Strings an einer Stelle
+
+00:02:56.160 --> 00:02:58.320
+zusammenkommen müssen, kann das viel effizienter sein.
+
+00:02:59.160 --> 00:03:00.049
+Es dauert ein bisschen,
+
+00:03:00.100 --> 00:03:02.380
+bis du dich an genau diese Syntax gewöhnt hast,
+
+00:03:02.900 --> 00:03:05.420
+aber daran ist wirklich nichts Kompliziertes.
+
+00:03:07.000 --> 00:03:09.140
+Ich habe dir jetzt zwei Übungen gegeben, um
+
+00:03:09.180 --> 00:03:11.780
+das zu üben. Die erste nutzt dasselbe
+
+00:03:11.840 --> 00:03:14.420
+„hello name“-Muster, das wir gerade gesehen haben. Du kannst
+
+00:03:14.460 --> 00:03:17.060
+sie entweder durch Zusammensetzen von Strings oder mit diesen Templates lösen,
+
+00:03:18.100 --> 00:03:20.640
+und ich schreibe beides als Erinnerung
+
+00:03:20.680 --> 00:03:23.880
+in die Anleitung. Die zweite Übung ist eine klassische
+
+00:03:24.100 --> 00:03:27.120
+Frage aus Vorstellungsgesprächen. Wenn du das lernst,
+
+00:03:27.200 --> 00:03:29.760
+bist du für künftige Vorstellungsgespräche gut gerüstet.
+
+00:03:30.620 --> 00:03:31.980
+Viel Glück, und wir sehen uns
+
+00:03:32.040 --> 00:03:32.380
+gleich wieder hier.

@@ -1,72 +1,72 @@
 {
   "tasks": {
     "checkPangram": {
-      "name": "�",
-      "description": "�"
+      "name": "檢查全字母句",
+      "description": "寫一個函式，檢查一個句子是不是全字母句（也就是字母表中的每個字母都至少出現一次）。檢查時不分大小寫。"
     }
   },
   "scenarios": {
     "pangramEmptySentence": {
-      "name": "�",
-      "description": "�"
+      "name": "空句子",
+      "description": "空句子不是全字母句。"
     },
     "pangramPerfectLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "完整的小寫字母表",
+      "description": "完整的小寫字母表就是全字母句。"
     },
     "pangramOnlyLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "只有小寫字母",
+      "description": "只使用小寫字母、卻涵蓋所有字母的句子就是全字母句。"
     },
     "pangramMissingX": {
-      "name": "�",
-      "description": "�"
+      "name": "缺少字母 x",
+      "description": "少了字母 x 的句子不是全字母句。"
     },
     "pangramMissingH": {
-      "name": "�",
-      "description": "�"
+      "name": "缺少字母 h",
+      "description": "少了字母 h 的句子不是全字母句。"
     },
     "pangramMissingAM": {
-      "name": "�",
-      "description": "�"
+      "name": "缺少 a-m 之後的字母",
+      "description": "只有大小寫 a 到 m 的字串不是全字母句。"
     },
     "pangramWithUnderscores": {
-      "name": "�",
-      "description": "�"
+      "name": "含有底線",
+      "description": "含有底線的全字母句。"
     },
     "pangramWithNumbers": {
-      "name": "�",
-      "description": "�"
+      "name": "含有數字",
+      "description": "含有數字的全字母句。"
     },
     "pangramNumbersReplacingLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "用數字取代字母",
+      "description": "把字母換成數字的句子不是全字母句。"
     },
     "pangramMixedCasePunctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "大小寫混合並含有標點",
+      "description": "大小寫混合並含有標點的全字母句。"
     },
     "pangramCaseInsensitive": {
-      "name": "�",
-      "description": "�"
+      "name": "不分大小寫但缺少字母",
+      "description": "不分大小寫、但沒有涵蓋所有字母的句子不是全字母句。"
     }
   },
   "hints": {
     "helpers": {
-      "question": "�",
-      "answer": "�"
+      "question": "有哪些輔助函式可以讓我輕鬆一點？",
+      "answer": "一個`includes()`輔助函式（用來問「這個字元有沒有出現在這個字串裡？」），再加上一個`toLowerCase()`輔助函式（讓大小寫的差異不會害你出錯），就可以讓主要邏輯簡短又清楚。"
     },
     "whyLowercase": {
-      "question": "�",
-      "answer": "�"
+      "question": "為什麼要把句子轉成小寫？",
+      "answer": "「The quick brown fox...」裡面同時有 T 和 t。如果你只拿小寫字母來比對，大寫字母就對不上。在一開始就把整個句子轉成小寫，這樣每次比較的標準都一致。"
     },
     "checkEveryLetter": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼檢查每個字母都在？",
+      "answer": "用迴圈走過字母表`\"abcdefghijklmnopqrstuvwxyz\"`裡的每一個字母。針對每個字母，用`includes()`檢查它有沒有出現在轉成小寫後的句子裡。"
     },
     "stopEarly": {
-      "question": "�",
-      "answer": "�"
+      "question": "什麼時候可以提早結束？",
+      "answer": "一旦發現有字母不見了，就直接回傳`false`。繼續檢查下去也沒有意義。要等整個字母表都確認過之後，才回傳`true`。"
     }
   }
 }

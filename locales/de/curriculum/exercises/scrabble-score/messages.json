@@ -1,0 +1,94 @@
+{
+  "tasks": {
+    "createLetterValuesFunction": {
+      "name": "Erstelle die Funktion letterValues",
+      "description": "Schreibe eine Funktion letterValues, die ein Wörterbuch zurückgibt, in dem jeder Großbuchstabe seinem Scrabble-Punktwert zugeordnet ist. Beginne mit der vorgegebenen Liste von Buchstabengruppen und ihren Werten und wandle sie in ein Wörterbuch um."
+    },
+    "singleLetters": {
+      "name": "Punkte für einzelne Buchstaben",
+      "description": "Schreibe eine Funktion scrabbleScore, die ein Wort entgegennimmt und seine gesamte Scrabble-Punktzahl zurückgibt. Sorge zuerst dafür, dass sie für einzelne Buchstaben funktioniert."
+    },
+    "words": {
+      "name": "Punkte für Wörter",
+      "description": "Jetzt soll scrabbleScore auch mit ganzen Wörtern unterschiedlicher Länge funktionieren."
+    },
+    "edgeCases": {
+      "name": "Randfälle behandeln",
+      "description": "Sorge zum Schluss dafür, dass deine Funktion Randfälle wie leere Strings und das ganze Alphabet richtig abdeckt."
+    }
+  },
+  "scenarios": {
+    "letterValues": {
+      "name": "Die Funktion letterValues",
+      "description": "Die Funktion letterValues sollte ein vollständiges Wörterbuch mit den Buchstabenwerten zurückgeben."
+    },
+    "scrabbleLowercaseLetter": {
+      "name": "Kleinbuchstabe",
+      "description": "Berechne die Punktzahl für einen einzelnen Kleinbuchstaben."
+    },
+    "scrabbleUppercaseLetter": {
+      "name": "Großbuchstabe",
+      "description": "Berechne die Punktzahl für einen einzelnen Großbuchstaben."
+    },
+    "scrabbleValuableLetter": {
+      "name": "Wertvoller Buchstabe",
+      "description": "Berechne die Punktzahl für einen wertvollen Buchstaben."
+    },
+    "scrabbleShortWord": {
+      "name": "Kurzes Wort",
+      "description": "Berechne die Punktzahl für ein kurzes Wort."
+    },
+    "scrabbleShortValuableWord": {
+      "name": "Kurzes, wertvolles Wort",
+      "description": "Berechne die Punktzahl für ein kurzes Wort mit wertvollen Buchstaben."
+    },
+    "scrabbleMediumWord": {
+      "name": "Mittellanges Wort",
+      "description": "Berechne die Punktzahl für ein mittellanges Wort."
+    },
+    "scrabbleMediumValuableWord": {
+      "name": "Mittellanges, wertvolles Wort",
+      "description": "Berechne die Punktzahl für ein mittellanges Wort mit wertvollen Buchstaben."
+    },
+    "scrabbleLongMixedCaseWord": {
+      "name": "Langes Wort mit gemischter Groß- und Kleinschreibung",
+      "description": "Berechne die Punktzahl für ein langes Wort mit gemischter Groß- und Kleinschreibung."
+    },
+    "scrabbleEnglishLikeWord": {
+      "name": "Englischähnliches Wort",
+      "description": "Berechne die Punktzahl für ein englischähnliches Wort."
+    },
+    "scrabbleEmptyInput": {
+      "name": "Leere Eingabe",
+      "description": "Berechne die Punktzahl für einen leeren String."
+    },
+    "scrabbleEntireAlphabet": {
+      "name": "Das ganze Alphabet",
+      "description": "Berechne die Punktzahl für einen String mit allen Buchstaben des Alphabets."
+    }
+  },
+  "hints": {
+    "startingPoint": {
+      "question": "Wo fange ich bei den Buchstabenwerten an?",
+      "answer": "Schreib die Zuordnung nicht mit 26 Zeilen von Hand. Beginne mit einer Liste von Gruppen, zum Beispiel `[\"AEIOULNRST\", \"DG\", \"BCMP\", \"FHVWY\", \"K\", \"JX\", \"QZ\"]`, und den passenden Werten `[1, 2, 3, 4, 5, 8, 10]`."
+    },
+    "buildLookup": {
+      "question": "Wie mache ich aus diesen Gruppen eine brauchbare Zuordnung?",
+      "answer": "Baue ein Wörterbuch, indem du durch die Buchstaben jeder Gruppe gehst und jeden einzelnen Buchstaben dem Wert der Gruppe zuordnest. Dann liefert dir `dict[\"A\"]` direkt `1`."
+    },
+    "lowercaseInput": {
+      "question": "Warum funktionieren meine Abfragen bei Kleinbuchstaben nicht?",
+      "answer": "Wenn deine Schlüssel im Wörterbuch Großbuchstaben sind, passt die Abfrage nach `'a'` nicht zu `'A'`. Wandle jeden Buchstaben in einen Großbuchstaben um, bevor du seinen Wert nachschlägst."
+    },
+    "addUpScore": {
+      "question": "Wie summiere ich die Punkte?",
+      "answer": "Geh das Wort in einer Schleife durch, schlage den Wert jedes Buchstabens in deinem Wörterbuch nach und addiere ihn zu einer laufenden Summe. Gib die Summe am Ende zurück."
+    }
+  },
+  "functions": {
+    "toUpperCase": {
+      "description": "Wandelt einen String in Großbuchstaben um",
+      "category": "String-Operationen"
+    }
+  }
+}

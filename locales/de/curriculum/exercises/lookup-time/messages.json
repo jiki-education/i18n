@@ -1,0 +1,68 @@
+{
+  "errors": {
+    "blockedUrl": "Oh nein, du hast versucht, eine unerwartete URL abzurufen, und sie wurde blockiert."
+  },
+  "describers": {
+    "fetch": "Ruft Daten von einer URL mit den angegebenen Parametern ab"
+  },
+  "tasks": {
+    "fetchAndFormatTime": {
+      "name": "Die Zeit abrufen und formatieren",
+      "description": "Schreibe eine Funktion, die einen Stadtnamen entgegennimmt, mit der API die Zeitdaten abruft und die Zeit als formatierten String zurückgibt."
+    },
+    "handleErrors": {
+      "name": "Fehler behandeln",
+      "description": "Gehe sauber mit Fehlerantworten um. Wenn die Antwort einen Schlüssel „error“ enthält, gib stattdessen die Fehlermeldung zurück."
+    }
+  },
+  "scenarios": {
+    "amsterdam": {
+      "name": "Amsterdam",
+      "description": "Gib die Zeit in Amsterdam zurück."
+    },
+    "tokyo": {
+      "name": "Tokio",
+      "description": "Gib die Zeit in Tokio zurück."
+    },
+    "lima": {
+      "name": "Lima",
+      "description": "Gib die Zeit in Lima zurück."
+    },
+    "error": {
+      "name": "Fehlerfall behandeln",
+      "description": "Behandle einen Fehler korrekt, wenn die Stadt nicht gefunden wird."
+    }
+  },
+  "hints": {
+    "callApi": {
+      "question": "Wie rufe ich die API eigentlich auf?",
+      "answer": "Nutze die Funktion `fetch(url, params)`. Die URL ist dir vorgegeben, und `params` ist ein Wörterbuch, das beschreibt, wonach du fragst."
+    },
+    "paramsShape": {
+      "question": "Wie sollten die `params` aussehen?",
+      "answer": "Ein Wörterbuch mit einem einzigen Schlüssel `\"city\"`, dessen Wert der Stadtname ist, den du als Argument bekommen hast."
+    },
+    "responseShape": {
+      "question": "Wie sieht die Antwort aus?",
+      "answer": "Die Antwort ist ein Wörterbuch. Wenn die Stadt nicht gefunden wurde, hat sie einen Schlüssel `\"error\"`. Sonst enthält sie die Zeitangaben, mit denen du den Ergebnis-String zusammensetzen kannst."
+    },
+    "handleError": {
+      "question": "Wie gehe ich mit dem Fehlerfall um?",
+      "answer": "Prüfe auf den Schlüssel `\"error\"`, bevor du versuchst, den Zeit-String zu bauen. Wenn der Fehlerschlüssel vorhanden ist, gib zurück, was die Aufgabe in diesem Fall verlangt."
+    },
+    "buildString": {
+      "question": "Wie baue ich den endgültigen String zusammen?",
+      "answer": "Nutze die Verkettung (`+`) oder einen Template-String, um die Daten aus der Antwort mit dem umgebenden Text in das Format zu bringen, das die Übung verlangt."
+    }
+  },
+  "functions": {
+    "fetch": {
+      "description": "Ruft Daten von einer URL mit den angegebenen Parametern ab und gibt ein Wörterbuch zurück",
+      "category": "API"
+    },
+    "hasKey": {
+      "description": "Prüft, ob ein Schlüssel in einem Wörterbuch vorhanden ist, und gibt wahr oder falsch zurück",
+      "category": "Wörterbuch-Operationen"
+    }
+  }
+}

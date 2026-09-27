@@ -1,56 +1,56 @@
 {
   "checks": {
-    "bottomLeft": "�",
-    "bottomRight": "�",
-    "secondRowFirst": "�",
-    "secondRowLast": "�",
-    "thirdRowMiddle": "�",
-    "fourthRowMiddle": "�",
-    "topLeft": "�",
-    "topRight": "�",
-    "brickCount": "�",
+    "bottomLeft": "左下角的長方形不正確。",
+    "bottomRight": "右下角的長方形不正確。",
+    "secondRowFirst": "從下面數來第二列的第一個長方形不正確。",
+    "secondRowLast": "從下面數來第二列的最後一個長方形不正確。",
+    "thirdRowMiddle": "從下面數來第三列中間的長方形不正確。",
+    "fourthRowMiddle": "從下面數來第四列中間的其中一個長方形不正確。",
+    "topLeft": "左上角的長方形不正確。",
+    "topRight": "右上角的長方形不正確。",
+    "brickCount": "這道牆應該剛好由 55 塊磚砌成。",
     "codeQuality": {
-      "rectangleCalledOnce": "�"
+      "rectangleCalledOnce": "你的程式碼裡多處使用了<code>rectangle</code>函式。它只能出現一次！"
     }
   },
   "tasks": {
     "buildWall": {
-      "name": "�",
-      "description": "�"
+      "name": "砌牆",
+      "description": "用巢狀迴圈砌出完整的牆，總共 55 塊磚。"
     }
   },
   "scenarios": {
     "buildWall": {
-      "name": "�",
-      "description": "�"
+      "name": "砌出由 55 塊磚組成的牆",
+      "description": "用巢狀迴圈排出完整的磚牆圖案。"
     }
   },
   "hints": {
     "onlyOneRectangleCall": {
-      "question": "�",
-      "answer": "�"
+      "question": "我只能呼叫`rectangle`一次。要怎麼畫出 55 塊磚呢？",
+      "answer": "把唯一的那一次`rectangle`呼叫放進迴圈裡。每一次疊代都會改變 x 和 y，讓新的磚畫在新的位置。"
     },
     "wholeGrid": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼畫出整片網格，而不只是其中一列？",
+      "answer": "使用巢狀迴圈。外層迴圈會逐一走過每一列（改變 y），內層迴圈則走過那一列裡的每一塊磚（改變 x）。"
     },
     "offsetRows": {
-      "question": "�",
-      "answer": "�"
+      "question": "每一列的偏移方式都不一樣，該怎麼處理呢？",
+      "answer": "仔細看看圖片。每隔一列就會往旁邊錯開，磚塊數量也不一樣。所以你要用不同的方式處理這兩種列，分別決定起始位置和磚塊數量。"
     },
     "oddEven": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼判斷列號是奇數還是偶數？",
+      "answer": "`%`（取餘數）運算子會算出相除之後的餘數。把列號除以 2，就能分辨奇數列和偶數列，接著就能在 `if` 裡判斷。"
     },
     "sizesAndSpacings": {
-      "question": "�",
-      "answer": "�"
+      "question": "尺寸和間距要用多少呢？",
+      "answer": "每一塊磚寬 `20`、高 `10`，所以在同一列裡，磚與磚之間的 x 增加 `20`，而列與列之間 y 改變 `10`。"
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "在位置 (left, top) 畫出指定寬度、高度和顏色的長方形",
+      "category": "繪製形狀"
     }
   }
 }

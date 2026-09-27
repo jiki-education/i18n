@@ -1,54 +1,54 @@
 {
   "tasks": {
     "encodeMessage": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine Nachricht verschlüsseln",
+      "description": "Schreibe eine encode-Funktion, die jeden Buchstaben einer Nachricht um einen bestimmten Betrag verschiebt. Leerzeichen bleiben Leerzeichen. Buchstaben, die über 'z' hinausgeschoben werden, springen wieder an den Anfang des Alphabets."
     }
   },
   "scenarios": {
     "caesarSimpleShift": {
-      "name": "�",
-      "description": "�"
+      "name": "Einfache Verschiebung um 1",
+      "description": "Verschiebe jeden Buchstaben um 1 nach vorne: a->b, b->c, c->d."
     },
     "caesarShiftBy3": {
-      "name": "�",
-      "description": "�"
+      "name": "Verschiebung um 3",
+      "description": "Verschiebe jeden Buchstaben um 3 nach vorne: h->k, e->h, l->o, o->r."
     },
     "caesarWrapAround": {
-      "name": "�",
-      "description": "�"
+      "name": "Am Alphabetende zurück zu 'a'",
+      "description": "Wenn die Verschiebung über 'z' hinausgeht, geht es wieder bei 'a' los: x->a, y->b, z->c."
     },
     "caesarWithSpaces": {
-      "name": "�",
-      "description": "�"
+      "name": "Nachricht mit Leerzeichen",
+      "description": "Leerzeichen bleiben Leerzeichen, nur Buchstaben werden verschoben."
     },
     "caesarRot13": {
-      "name": "�",
-      "description": "�"
+      "name": "ROT13-Verschlüsselung",
+      "description": "ROT13 ist ein Sonderfall der Caesar-Verschlüsselung mit einer Verschiebung von 13."
     }
   },
   "hints": {
     "shiftingLetterByN": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie kann ich mir das Verschieben eines Buchstabens um N Positionen vorstellen?",
+      "answer": "Jeder Buchstabe hat eine Position im Alphabet (a steht auf Position 0, b auf 1, und so weiter). Zum Verschieben suchst du diese Position, addierst den Verschiebungswert und machst aus der neuen Position wieder einen Buchstaben, indem du ihn im Alphabet nachschaust."
     },
     "letterPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie finde ich die Position eines Buchstabens im Alphabet?",
+      "answer": "Mit `indexOf` kannst du in einem String nach einem kleineren Stück suchen. Wenn du es auf den Alphabet-String anwendest, bekommst du die Position eines Buchstabens, oder -1, wenn der Buchstabe nicht gefunden wird. Andersherum kannst du mit der Position wieder in den Alphabet-String hineinindexieren, um den Buchstaben zu bekommen."
     },
     "wrapPastZ": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was passiert, wenn die Verschiebung über 'z' hinausgeht?",
+      "answer": "Dann muss es wieder bei 'a' beginnen. Der Modulo-Operator (`%`) ist dafür perfekt geeignet. Wenn du die Position modulo 26 nimmst, kommt jede Zahl wieder in den Bereich von 0 bis 25."
     },
     "applyToWholeMessage": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie wende ich das auf eine ganze Nachricht an?",
+      "answer": "Durchlaufe jeden Buchstaben der Nachricht in einer Schleife, verschiebe ihn mit deiner Hilfsfunktion für einzelne Buchstaben und setze das Ergebnis mit Verkettung (`+`) aus den verschobenen Buchstaben zusammen."
     }
   },
   "functions": {
     "indexOf": {
-      "description": "�",
-      "category": "�"
+      "description": "Findet die Position eines kleineren Strings innerhalb eines Strings, oder -1, wenn er nicht gefunden wird",
+      "category": "String-Operationen"
     }
   }
 }

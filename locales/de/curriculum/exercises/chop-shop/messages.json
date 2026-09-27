@@ -1,0 +1,48 @@
+{
+  "tasks": {
+    "canFitIn": {
+      "name": "Passt noch jemand rein?",
+      "description": "Schreib eine Funktion, die feststellt, ob ein neuer Kunde noch vor Ladenschluss bedient werden kann, wenn man die aktuelle Warteschlange und die verbleibende Zeit kennt."
+    }
+  },
+  "scenarios": {
+    "emptyQueue": {
+      "name": "Niemand in der Warteschlange",
+      "description": "Niemand in der Warteschlange, noch jede Menge Zeit."
+    },
+    "emptyQueueButNoTime": {
+      "name": "Spät am Tag",
+      "description": "Niemand in der Warteschlange, aber nicht genug Zeit."
+    },
+    "busyDayNoTime": {
+      "name": "Ein voller Tag",
+      "description": "Eine volle Warteschlange und nicht genug Zeit."
+    },
+    "busyDayButTime": {
+      "name": "Passt gerade noch rein",
+      "description": "Ein voller Tag, aber die Zeit reicht gerade noch."
+    },
+    "stillEarly": {
+      "name": "Noch früh",
+      "description": "Es ist noch früh am Tag."
+    },
+    "cuttingItFine": {
+      "name": "Gerade noch rechtzeitig",
+      "description": "Sie haben es gerade noch rechtzeitig geschafft!"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Wo soll ich anfangen? Bei der Warteschlange oder beim neuen Kunden?",
+      "answer": "Rechne zuerst aus, wie viel Zeit die Warteschlange frisst, und schau dann, was für den neuen Kunden übrig bleibt. Eine Hilfsfunktion, die den Namen eines Haarschnitts in seine Dauer (in Minuten) umwandelt, macht das viel übersichtlicher."
+    },
+    "subtractQueueTime": {
+      "question": "Wie ziehe ich die Zeit jedes Haarschnitts von der verbleibenden Zeit ab?",
+      "answer": "Geh die Warteschlange in einer Schleife durch. Suche für jeden Haarschnitt mit deiner Hilfsfunktion die Dauer heraus und zieh sie von deiner laufenden Summe der restlichen Tageszeit ab."
+    },
+    "decideIfFits": {
+      "question": "Wie entscheide ich, ob der neue Haarschnitt noch reinpasst?",
+      "answer": "Wenn du die Warteschlange abgearbeitet hast, vergleichst du die verbleibende Zeit mit der Dauer des neuen Haarschnitts. Wenn die Zeit des neuen Haarschnitts kleiner oder gleich der verbleibenden Zeit ist, passt er rein."
+    }
+  }
+}

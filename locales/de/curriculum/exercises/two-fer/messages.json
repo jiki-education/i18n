@@ -1,47 +1,47 @@
 {
   "checks": {
-    "moreThanSixLines": "�"
+    "moreThanSixLines": "Du hast mehr als sechs Codezeilen verwendet."
   },
   "tasks": {
     "createTwoFerFunction": {
-      "name": "�",
-      "description": "�"
+      "name": "twoFer-Funktion erstellen",
+      "description": "Schreibe eine Funktion twoFer, die einen Namen entgegennimmt und 'One for [name], one for me.' zurückgibt. Wenn kein Name angegeben ist (leerer String), setze 'you' statt des Namens ein."
     },
     "solveInSixLines": {
-      "name": "�",
-      "description": "�"
+      "name": "Mit sechs Codezeilen lösen",
+      "description": "Schaffst du es mit nur sechs Codezeilen?"
     }
   },
   "scenarios": {
     "twoFerDefault": {
-      "name": "�",
-      "description": "�"
+      "name": "Kein Name angegeben",
+      "description": "Es wird kein Name angegeben, also gib 'One for you, one for me.' zurück."
     },
     "twoFerAlice": {
-      "name": "�",
-      "description": "�"
+      "name": "Name ist Alice",
+      "description": "Ihr Name ist 'Alice', also gib 'One for Alice, one for me.' zurück."
     },
     "twoFerTom": {
-      "name": "�",
-      "description": "�"
+      "name": "Name ist Tom",
+      "description": "Sein Name ist 'Tom', also gib 'One for Tom, one for me.' zurück."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "Sechs Codezeilen",
+      "description": "Löse die Übung mit nur sechs Codezeilen."
     }
   },
   "hints": {
     "whatChanges": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was ändert sich je nach Eingabewert?",
+      "answer": "Nur eine Sache: der Name in der Mitte des Satzes. Wenn du einen Namen bekommen hast, nimm ihn. Wenn nicht, nimm den Standardwert `\"you\"`."
     },
     "checkGivenName": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie prüfe ich, ob ich einen Namen bekommen habe?",
+      "answer": "Eine if-Anweisung, die den Eingabewert mit dem leeren String `\"\"` vergleicht. Wenn er leer ist, nimm `\"you\"`. Sonst nimm den Eingabewert."
     },
     "buildSentence": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie setze ich den fertigen Satz zusammen?",
+      "answer": "Setze die drei Teile (`\"One for \"`, den gewählten Namen und `\", one for me.\"`) mit Verkettung (`+`) oder einem Template-String zusammen."
     }
   }
 }

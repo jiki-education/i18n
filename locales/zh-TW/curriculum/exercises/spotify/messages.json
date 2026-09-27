@@ -1,0 +1,57 @@
+{
+  "describers": {
+    "fetch": "從提供的網址取得資料"
+  },
+  "tasks": {
+    "formatResponse": {
+      "name": "格式化回應",
+      "description": "建立一個`favoriteArtists`函式，接受一個使用者名稱，從 Spotify API 取得資料，並回傳一句列出對方最喜歡的歌手的話。"
+    }
+  },
+  "scenarios": {
+    "spotifyFred": {
+      "name": "Fred 最喜歡的歌手",
+      "description": "取得並格式化 Fred 最喜歡的歌手。"
+    },
+    "spotifyIhid": {
+      "name": "iHiD 最喜歡的歌手",
+      "description": "取得並格式化 iHiD 最喜歡的歌手。"
+    },
+    "spotifyGriffin": {
+      "name": "griffin 躲起來了",
+      "description": "妥善處理使用者不存在時的錯誤。"
+    }
+  },
+  "hints": {
+    "fetchUserData": {
+      "question": "我要怎麼取得使用者的資料？",
+      "answer": "用`fetch()`搭配使用者請求的網址。這個網址是把基礎網址和你收到的使用者名稱串接起來組成的。"
+    },
+    "handleUnknownUser": {
+      "question": "如果使用者不存在，我該怎麼處理？",
+      "answer": "回傳的內容裡可能會有`\"error\"`這個鍵。在試著處理任何項目之前，先用`hasKey()`檢查有沒有這個鍵。如果有的話，就照規格回傳那種情況下該回傳的內容。"
+    },
+    "getArtistNames": {
+      "question": "我要怎麼從這些項目裡取得歌手名稱？",
+      "answer": "每個項目裡都有一個歌手 API 的網址。用迴圈跑過每一個項目，個別取得每個歌手的網址，再從每個歌手的回應裡取出歌手名稱。"
+    },
+    "buildFinalSentence": {
+      "question": "我要怎麼組出最後那句話？",
+      "answer": "用逗號把歌手名稱串起來，但在最後一個前面要放`\", and \"`（例如`\"Adele, Beyoncé, and Coldplay\"`）。迴圈跑到最後一個項目時要特別處理。"
+    }
+  },
+  "functions": {
+    "fetch": {
+      "description": "從 API 取得資料。接受一個網址字串和一個參數字典，並以字典的形式回傳 API 的回應。",
+      "category": "API"
+    },
+    "push": {
+      "description": "把一個元素加到陣列的最後面，直接改變原本的陣列。",
+      "category": "陣列操作"
+    },
+    "hasKey": {
+      "description": "檢查字典裡有沒有某個鍵，回傳 true 或 false",
+      "category": "字典操作"
+    }
+  }
+}

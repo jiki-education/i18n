@@ -1,0 +1,222 @@
+WEBVTT
+
+NOTE en_md5 10ad7187acecddbe0b148815fa3e3508
+
+00:00:00.180 --> 00:00:02.610
+Willkommen zurück. Die Funktionen, die du bisher
+
+00:00:02.800 --> 00:00:05.430
+gebaut hast, machen jedes Mal genau
+
+00:00:05.460 --> 00:00:10.760
+dasselbe. turn_around dreht immer zweimal nach links. shoot_if_alien_above
+
+00:00:10.800 --> 00:00:14.180
+prüft immer und schießt. Aber denk an die Funktionen,
+
+00:00:14.240 --> 00:00:16.140
+die du im Kurs schon benutzt hast, und daran, wie sie
+
+00:00:16.160 --> 00:00:19.480
+je nach Eingabewerten unterschiedliche Dinge tun. Rectangle
+
+00:00:19.520 --> 00:00:21.180
+nimmt left, top, width und
+
+00:00:21.240 --> 00:00:23.820
+height als Eingabewerte und zeichnet dann ein anderes
+
+00:00:23.900 --> 00:00:27.040
+Rechteck, je nachdem, was du ihm sagst.
+
+00:00:27.140 --> 00:00:29.200
+In diesem Video zeige ich dir, wie du
+
+00:00:29.320 --> 00:00:31.920
+auch deinen eigenen Funktionen Trichter hinzufügst.
+
+00:00:33.520 --> 00:00:35.020
+Dafür musst du zwei Dinge
+
+00:00:35.060 --> 00:00:38.080
+wissen. Erstens, wie das aussieht,
+
+00:00:38.140 --> 00:00:39.910
+also was du schreiben musst. Und
+
+00:00:40.040 --> 00:00:43.300
+zweitens, was dabei tatsächlich passiert. Der erste Teil
+
+00:00:43.360 --> 00:00:46.930
+ist ganz einfach. Du setzt einfach zwei
+
+00:00:46.940 --> 00:00:49.680
+runde Klammern und schreibst die Namen der Eingabewerte
+
+00:00:49.740 --> 00:00:52.720
+hinein, die du haben willst. Stell dir vor, wir bauen eine Funktion,
+
+00:00:52.840 --> 00:00:56.400
+die viele Male schießen soll. Nennen wir
+
+00:00:56.440 --> 00:01:01.500
+sie shoot_many. Wir schreiben function shoot_many, Klammer auf, num_shots,
+
+00:01:01.800 --> 00:01:06.280
+Klammer zu, geschweifte Klammern und dann etwas Code.
+
+00:01:06.300 --> 00:01:08.580
+Wenn du diese Funktion benutzen willst, schreibst du
+
+00:01:08.640 --> 00:01:10.640
+shoot_many 5, wenn du fünf Schüsse
+
+00:01:10.680 --> 00:01:13.180
+abgeben willst, oder shoot_many 2, wenn du
+
+00:01:13.300 --> 00:01:15.840
+zwei Schüsse willst. Und jetzt kommt der entscheidende
+
+00:01:15.920 --> 00:01:19.100
+Teil. Wenn der Code läuft: Was auch immer du
+
+00:01:19.160 --> 00:01:23.280
+in den Trichter wirfst, 5 oder 2, das nimmt
+
+00:01:23.300 --> 00:01:27.080
+Mini-Jiki, der mit dem Hut in der Funktion sitzt,
+
+00:01:27.260 --> 00:01:29.880
+und steckt es in eine Box namens num_shots.
+
+00:01:30.460 --> 00:01:32.670
+Dann stellt er diese Box in die Regale
+
+00:01:32.740 --> 00:01:34.940
+in der Funktion, damit du sie im Code
+
+00:01:34.960 --> 00:01:39.120
+der Funktion benutzen kannst. Ich sage das noch einmal.
+
+00:01:39.180 --> 00:01:42.110
+Wenn wir shoot_many 5 schreiben, um die Funktion zu benutzen,
+
+00:01:42.900 --> 00:01:45.520
+holt Jiki, der draußen steht,
+
+00:01:46.040 --> 00:01:48.040
+eine 5 und wirft sie in den Trichter
+
+00:01:48.180 --> 00:01:52.800
+von shoot_many. In der Maschine nimmt Mini-Jiki diese
+
+00:01:52.840 --> 00:01:54.700
+5 heraus und legt sie in eine Box
+
+00:01:54.780 --> 00:01:57.180
+namens num_shots, denn das ist der Name, den du
+
+00:01:57.220 --> 00:01:59.340
+diesem Trichter gegeben hast. Dann
+
+00:01:59.360 --> 00:02:02.300
+stellt er diese Box in die Regale in der
+
+00:02:02.340 --> 00:02:05.140
+Funktion, die in der Maschine steckt. Und dann kannst du
+
+00:02:05.200 --> 00:02:08.460
+innerhalb der Funktion die Box num_shots
+
+00:02:09.340 --> 00:02:11.360
+genauso benutzen wie jede andere Box.
+
+00:02:11.380 --> 00:02:14.540
+An dem Namen num_shots ist nichts Magisches. Wir hätten
+
+00:02:14.560 --> 00:02:16.820
+sie nennen können, wie wir wollten. Der Name ist
+
+00:02:16.900 --> 00:02:19.780
+nur ein Befehl an Mini-Jiki, in der Funktion
+
+00:02:19.880 --> 00:02:23.020
+immer eine Box mit dieser Aufschrift anzulegen
+
+00:02:23.030 --> 00:02:25.640
+und alles, was in diesen Trichter geworfen wird,
+
+00:02:25.720 --> 00:02:29.750
+in diese Box zu stecken. Und sobald ein Wert
+
+00:02:29.840 --> 00:02:31.170
+in dieser Box liegt, kannst du
+
+00:02:31.220 --> 00:02:33.590
+alles damit machen, was du sonst mit Boxen machst.
+
+00:02:33.620 --> 00:02:36.380
+Ich will den nächsten Übungen nicht vorgreifen, aber hier
+
+00:02:36.420 --> 00:02:39.100
+könntest du die Box num_shots in einer
+
+00:02:39.140 --> 00:02:41.200
+repeat-Schleife benutzen, um die richtige Anzahl
+
+00:02:41.240 --> 00:02:44.100
+an Schüssen abzugeben. Und du kannst auch mehr als
+
+00:02:44.200 --> 00:02:47.340
+einen Eingabewert haben. Trenne sie einfach
+
+00:02:47.380 --> 00:02:49.580
+mit Kommas. Wenn wir also eine Funktion namens
+
+00:02:49.640 --> 00:02:52.329
+draw_star bauen, die einen Stern anhand
+
+00:02:52.360 --> 00:02:55.000
+ihrer oberen linken Position zeichnet, schreibst du function
+
+00:02:55.160 --> 00:03:00.060
+draw_star, Klammer auf, left, Komma, top, Klammer zu, dann geschweifte
+
+00:03:00.080 --> 00:03:02.930
+Klammern und dann deinen Code. Und wenn
+
+00:03:02.960 --> 00:03:05.600
+die Funktion dann aufgerufen wird, packt Mini-Jiki
+
+00:03:05.640 --> 00:03:07.320
+die Werte, die in die Trichter
+
+00:03:07.380 --> 00:03:10.660
+geworfen werden, einfach in Boxen namens left und top
+
+00:03:10.680 --> 00:03:12.829
+und räumt sie dann in die Regale in der
+
+00:03:12.829 --> 00:03:16.160
+Funktion. Als Nächstes habe ich eine Übung für dich,
+
+00:03:16.200 --> 00:03:18.960
+und zwar sollst du die Funktion walk nachbauen,
+
+00:03:19.420 --> 00:03:21.160
+die wir in einer der ersten Lektionen hatten,
+
+00:03:21.240 --> 00:03:24.120
+bei der du walk 5 schreiben kannst, um
+
+00:03:24.160 --> 00:03:27.300
+fünf Schritte vorwärts zu gehen. Dabei schreibst du im Grunde
+
+00:03:27.320 --> 00:03:29.660
+genau denselben Code, den ich geschrieben habe,
+
+00:03:29.700 --> 00:03:31.960
+um das zu bauen. Viel Spaß, und wir sehen uns
+
+00:03:31.980 --> 00:03:32.620
+gleich wieder hier.

@@ -1,0 +1,94 @@
+{
+  "tasks": {
+    "basicWordCounting": {
+      "name": "基本情況",
+      "description": "寫一個 countWords 函式，接受一個句子，回傳一個字典，鍵是每個單字，值是它出現的次數。要能處理空格、逗號、標點符號和數字。"
+    },
+    "caseNormalization": {
+      "name": "大小寫正規化",
+      "description": "確保你的函式能正確處理大小寫混合的單字、把撇號視為單字的一部分，並能處理連續多個空格。"
+    },
+    "bonusApostrophes": {
+      "name": "加分題：撇號與引號",
+      "description": "處理特殊情況：撇號被當成單字外面的引號使用，而不是縮寫的一部分。只有出現在單字中間的撇號才要保留。"
+    }
+  },
+  "scenarios": {
+    "wordCountSingleWord": {
+      "name": "計算一個單字",
+      "description": "計算單一個單字。"
+    },
+    "wordCountMultipleUniqueWords": {
+      "name": "每個單字各一次",
+      "description": "計算句子中每個單字各出現一次的情況。"
+    },
+    "wordCountMultipleOccurrences": {
+      "name": "多次出現",
+      "description": "計算同一個單字出現多次的情況。"
+    },
+    "wordCountCrampedList": {
+      "name": "緊湊的清單",
+      "description": "處理格式緊湊的清單。"
+    },
+    "wordCountIgnorePunctuation": {
+      "name": "忽略標點符號",
+      "description": "計算單字時忽略標點符號。"
+    },
+    "wordCountIncludeNumbers": {
+      "name": "包含數字",
+      "description": "計算單字時也把數字算進去。"
+    },
+    "wordCountNormalizeCase": {
+      "name": "大小寫正規化",
+      "description": "不分大小寫地計算單字。"
+    },
+    "wordCountWithApostrophes": {
+      "name": "含撇號的單字",
+      "description": "正確處理含撇號的單字。"
+    },
+    "wordCountMultipleSpaces": {
+      "name": "多個空格",
+      "description": "正確處理連續多個空格。"
+    },
+    "wordCountWithApostrophesAndQuotations": {
+      "name": "含撇號與引號的單字",
+      "description": "處理含撇號與引號的單字。"
+    },
+    "wordCountApostropheWordVariation": {
+      "name": "撇號單字的變化",
+      "description": "正確計算含撇號單字的各種變化。"
+    }
+  },
+  "hints": {
+    "caseInsensitive": {
+      "question": "要怎麼讓計數不分大小寫？",
+      "answer": "在一開始就把整句轉成小寫。這樣「The」和「the」都會變成「the」，字典就會把它們算在一起。"
+    },
+    "splitWords": {
+      "question": "要怎麼把句子拆成一個個單字？",
+      "answer": "用迴圈依序走過每個字元。如果它是字母、數字或撇號，就屬於目前這個單字，把它附加在後面。否則（空格或標點符號）就代表這個單字結束了，把它放進你的單字陣列，然後重新開始下一個單字。"
+    },
+    "countEachWord": {
+      "question": "要怎麼計算每個單字？",
+      "answer": "用一個以單字為鍵的字典。對每個單字，檢查它是否已經是字典裡的鍵。如果是，就把它的次數加 1。如果還不是，就把它的次數設為 1。"
+    },
+    "checkKeyExists": {
+      "question": "要怎麼檢查某個鍵是否已經存在？",
+      "answer": "用`hasKey(dict, word)`。如果那個單字已經在字典裡，它會回傳 true。"
+    }
+  },
+  "functions": {
+    "toLowerCase": {
+      "description": "把字串轉成小寫",
+      "category": "字串操作"
+    },
+    "push": {
+      "description": "把一個元素加到陣列末端，並直接改變原本的陣列。",
+      "category": "陣列操作"
+    },
+    "hasKey": {
+      "description": "檢查字典裡是否存在某個鍵，回傳 true 或 false",
+      "category": "字典操作"
+    }
+  }
+}

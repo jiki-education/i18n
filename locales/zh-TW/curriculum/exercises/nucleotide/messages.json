@@ -1,62 +1,62 @@
 {
   "tasks": {
     "countNucleotide": {
-      "name": "�",
-      "description": "�"
+      "name": "計算核苷酸",
+      "description": "寫一個函式，計算某個核苷酸（A、C、G 或 T）在 DNA 鏈中出現的次數。如果核苷酸或鏈中有任何無效的字元，就回傳 -1。"
     }
   },
   "scenarios": {
     "nucleotideEmptyStrand": {
-      "name": "�",
-      "description": "�"
+      "name": "空鏈",
+      "description": "空鏈對任何有效的核苷酸都應該回傳 0。"
     },
     "nucleotideSingleMatch": {
-      "name": "�",
-      "description": "�"
+      "name": "單一核苷酸鏈",
+      "description": "只有一個字元的鏈，如果和目標核苷酸相符，就應該回傳 1。"
     },
     "nucleotideRepeated": {
-      "name": "�",
-      "description": "�"
+      "name": "重複的核苷酸",
+      "description": "由重複核苷酸組成的鏈，應該把它們全部算進去。"
     },
     "nucleotideMixedStrandA": {
-      "name": "�",
-      "description": "�"
+      "name": "計算混合鏈中的 A",
+      "description": "計算混合鏈中某個特定核苷酸的次數。"
     },
     "nucleotideMixedStrandT": {
-      "name": "�",
-      "description": "�"
+      "name": "計算混合鏈中的 T",
+      "description": "計算同一條鏈中另一種核苷酸的次數。"
     },
     "nucleotideInvalidNucleotide": {
-      "name": "�",
-      "description": "�"
+      "name": "無效的核苷酸",
+      "description": "無效的核苷酸字元應該回傳 -1。"
     },
     "nucleotideInvalidStrand": {
-      "name": "�",
-      "description": "�"
+      "name": "無效的鏈",
+      "description": "含有無效字元的鏈應該回傳 -1。"
     }
   },
   "hints": {
     "checkValid": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼檢查題目問到的字元是不是有效的？",
+      "answer": "字串有一個`includes()`方法，可以告訴你某個字串是不是出現在另一個字串裡。想判斷一個字元是不是有效的核苷酸，用它很方便。開始計算之前，先驗證一下。"
     },
     "invalidNucleotide": {
-      "question": "�",
-      "answer": "�"
+      "question": "如果核苷酸無效，我該怎麼辦？",
+      "answer": "立刻回傳`-1`。題目用這個值來表示輸入無效。"
     },
     "countOccurrences": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼計算鏈中出現的次數？",
+      "answer": "用迴圈走過鏈中的每一個字元。如果字元和你正在計算的核苷酸相同，就把計數器加 1。最後回傳計數器。"
     },
     "validateStrand": {
-      "question": "�",
-      "answer": "�"
+      "question": "鏈也需要驗證嗎？",
+      "answer": "需要。如果鏈中有任何字元不是有效的核苷酸，就回傳`-1`。計算之前，先檢查每一個字元。"
     }
   },
   "functions": {
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "檢查一個字串裡是否包含另一個較短的字串",
+      "category": "字串操作"
     }
   }
 }

@@ -1,40 +1,40 @@
 {
   "errors": {
-    "positionNotNumber": "�"
+    "positionNotNumber": "Die Position muss eine Zahl sein."
   },
   "checks": {
-    "ballNotAtEnd": "�",
-    "missingPositions": "�"
+    "ballNotAtEnd": "Der Ball hat das Loch nicht erreicht. Er ist an Position {{ballX}}, muss aber an Position 88 sein.",
+    "missingPositions": "Der Ball muss jede Position einzeln durchrollen und darf nicht direkt ans Ziel springen."
   },
   "tasks": {
     "rollBall": {
-      "name": "�",
-      "description": "�"
+      "name": "Rolle den Ball ins Loch",
+      "description": "Rolle den Ball ins Loch."
     }
   },
   "scenarios": {
     "rollBall": {
-      "name": "�",
-      "description": "�"
+      "name": "Rolle den Ball ins Loch",
+      "description": "Rolle den Ball ins Loch."
     }
   },
   "hints": {
     "dontKnowWhereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich weiß nicht, wo ich anfangen soll",
+      "answer": "Der Schlüssel ist, den Ball jedes Mal einen Schritt weiterzubewegen. Dafür kannst du eine Variable verwenden. Überlege, wie das funktionieren könnte."
     },
     "stillCantFigureItOut": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich komme immer noch nicht darauf",
+      "answer": "Du möchtest eine Variable anlegen, die verfolgt, wo der Ball gerade ist. Sie sollte dort starten, wo er jetzt ist, und dann viele Male um eins erhöht werden. Jedes Mal, wenn sie erhöht wird, solltest du `moveTo(...)` aufrufen und die Variable als Eingabewert verwenden."
     }
   },
   "functions": {
     "moveTo": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt den Ball an die **Position**.",
+      "category": "Bewegung"
     }
   },
   "describers": {
-    "moveTo": "�"
+    "moveTo": "bewegte den Ball an Position ${arg1}"
   }
 }

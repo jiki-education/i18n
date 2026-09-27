@@ -1,0 +1,267 @@
+WEBVTT
+
+NOTE en_md5 49411a7db976297a17fb5f2e027fcaff
+
+00:00:00.100 --> 00:00:03.060
+Willkommen zurück. Du benutzt die repeat-Schleife
+
+00:00:03.120 --> 00:00:05.160
+jetzt schon eine Weile und fühlst dich
+
+00:00:05.220 --> 00:00:08.640
+damit hoffentlich ziemlich wohl. Jetzt schauen wir uns
+
+00:00:08.680 --> 00:00:10.500
+etwas an, das in dieselbe Richtung geht,
+
+00:00:10.520 --> 00:00:13.220
+aber etwas komplexer ist. Sagen wir, wir wollen eine Reihe
+
+00:00:13.260 --> 00:00:15.740
+Blumen. Dann können wir so etwas schreiben.
+
+00:00:16.180 --> 00:00:18.720
+Wir legen eine Position fest, wir pflanzen eine Blume,
+
+00:00:18.760 --> 00:00:21.300
+wir erhöhen die Position um 10, wir wiederholen,
+
+00:00:22.000 --> 00:00:23.560
+und am Ende haben wir eine schöne, ordentliche Reihe
+
+00:00:23.680 --> 00:00:26.640
+Blumen. Aber was, wenn wir ein
+
+00:00:26.720 --> 00:00:30.240
+Gitter aus Blumen mit Reihen und Spalten wollen? Vielleicht
+
+00:00:30.320 --> 00:00:32.780
+vier Reihen mit fünf Blumen pro Reihe.
+
+00:00:35.000 --> 00:00:36.580
+Halt kurz an, pausiere vielleicht das
+
+00:00:36.620 --> 00:00:38.640
+Video für einen Moment und überleg dir,
+
+00:00:38.700 --> 00:00:42.380
+wie du das machen könntest. Wir haben
+
+00:00:42.440 --> 00:00:44.880
+eine Schleife, die eine Reihe Blumen zeichnet.
+
+00:00:45.980 --> 00:00:48.240
+Wie kannst du damit vier
+
+00:00:48.320 --> 00:00:50.660
+Reihen zeichnen? Oder was könnten wir tun, um vier
+
+00:00:50.700 --> 00:00:54.420
+Reihen zu zeichnen? Okay, hoffentlich hast du nachgedacht.
+
+00:00:55.440 --> 00:00:57.360
+Eine Möglichkeit wäre, diese Schleife einfach
+
+00:00:57.380 --> 00:01:00.680
+viermal zu kopieren und einzufügen und jedes Mal
+
+00:01:00.740 --> 00:01:03.260
+die obere Position zu ändern. Das würde
+
+00:01:03.320 --> 00:01:07.970
+funktionieren. Das wäre völlig in Ordnung. Aber es wiederholt sich, und
+
+00:01:07.980 --> 00:01:10.380
+es gibt einen besseren Weg. Wir wissen: Wenn sich Code
+
+00:01:10.420 --> 00:01:13.420
+wiederholt, können wir eine Schleife benutzen, um
+
+00:01:13.460 --> 00:01:17.920
+die Sache zu vereinfachen. Hier können wir also eine
+
+00:01:18.020 --> 00:01:21.840
+Schleife in eine andere Schleife stecken. Eine Schleife für die
+
+00:01:21.860 --> 00:01:24.840
+Reihen und eine für die Blumen in der
+
+00:01:24.880 --> 00:01:28.080
+jeweiligen Reihe. Fangen wir damit an, eine repeat-Schleife
+
+00:01:28.140 --> 00:01:30.360
+um unseren vorhandenen Code zu legen, damit du
+
+00:01:30.380 --> 00:01:32.220
+ein Gefühl dafür bekommst. Und wir
+
+00:01:32.260 --> 00:01:35.020
+wiederholen erst einmal nur ein Mal. Wir sagen Jiki also, er soll
+
+00:01:35.060 --> 00:01:38.680
+alles innerhalb dieser äußeren geschweiften Klammern einmal tun.
+
+00:01:39.800 --> 00:01:41.920
+Das hat genau denselben Effekt,
+
+00:01:42.000 --> 00:01:44.220
+als hätten wir diese äußere Schleife gar nicht. Wir
+
+00:01:44.280 --> 00:01:46.870
+sagen Jiki, er soll etwas einmal wiederholen, und das ist
+
+00:01:46.940 --> 00:01:48.440
+dasselbe, wie ihm zu sagen, er soll es
+
+00:01:48.480 --> 00:01:51.000
+ohne repeat tun. Aber ich zeige dir
+
+00:01:51.040 --> 00:01:53.000
+das, damit du siehst: So funktioniert dieser
+
+00:01:53.060 --> 00:01:55.500
+Code. Er ist legitim, gültiger Code. Wir haben
+
+00:01:55.560 --> 00:01:59.900
+eine Schleife in einer anderen Schleife. Was passiert
+
+00:01:59.940 --> 00:02:02.960
+also, wenn wir diese äußere Schleife auf
+
+00:02:03.000 --> 00:02:06.520
+zwei Wiederholungen umstellen? Dann führt Jiki
+
+00:02:06.560 --> 00:02:10.400
+das Ganze, also fünf Mal plant (pflanzen), zwei Mal aus. Er pflanzt
+
+00:02:10.440 --> 00:02:14.460
+10 Blumen. Aber alle diese Blumen
+
+00:02:14.500 --> 00:02:17.600
+landen in derselben Reihe. So wie
+
+00:02:17.660 --> 00:02:20.520
+wir die Position bei jeder Blume
+
+00:02:20.580 --> 00:02:22.180
+ein Stück von links nach rechts verschieben müssen,
+
+00:02:23.100 --> 00:02:26.240
+müssen wir nach jeder fertigen Reihe auch
+
+00:02:26.300 --> 00:02:28.660
+die vertikale Position verschieben.
+
+00:02:30.040 --> 00:02:32.540
+Wie machen wir das? Nun, wir
+
+00:02:32.580 --> 00:02:35.480
+können eine äußere Variable für die obere
+
+00:02:35.560 --> 00:02:39.970
+Position anlegen, sie in unserer plant-Funktion verwenden
+
+00:02:40.000 --> 00:02:42.880
+und sie nach jeder Reihe um 10 erhöhen.
+
+00:02:45.200 --> 00:02:46.920
+Denk einmal durch, welchen Wert
+
+00:02:46.960 --> 00:02:50.480
+sie jeweils hat. Die obere Position beginnt bei 10.
+
+00:02:50.520 --> 00:02:53.360
+Bei den ersten fünf Malen, die wir pflanzen, bleibt
+
+00:02:53.380 --> 00:02:56.720
+sie so. Die linke Position wächst. Und dann
+
+00:02:56.760 --> 00:02:59.720
+addieren wir noch einmal 10 dazu, zu dieser
+
+00:02:59.800 --> 00:03:03.480
+oberen Position, und wir pflanzen fünf weitere Blumen
+
+00:03:03.980 --> 00:03:07.120
+etwas tiefer. Wir setzen die linke
+
+00:03:07.140 --> 00:03:09.150
+Position wieder auf 10 zurück und
+
+00:03:09.180 --> 00:03:13.120
+erhöhen sie dann wieder bei jedem Durchlauf. Und jetzt
+
+00:03:13.140 --> 00:03:16.030
+können wir sagen: Wiederhole das vier Mal, und wir
+
+00:03:16.060 --> 00:03:20.360
+bekommen vier Reihen mit je fünf Pflanzen. Das
+
+00:03:20.420 --> 00:03:23.070
+Wichtigste ist: Jiki erledigt
+
+00:03:23.260 --> 00:03:26.160
+die ganze Arbeit in der inneren Schleife, bevor er
+
+00:03:26.220 --> 00:03:28.440
+zur äußeren Schleife zurückkommt. Er springt nicht
+
+00:03:28.500 --> 00:03:32.140
+ständig hin und her. Er schließt die innere
+
+00:03:32.200 --> 00:03:34.130
+Schleife ab und geht dann zum
+
+00:03:34.260 --> 00:03:37.660
+nächsten Schritt der äußeren Schleife über. In diesem
+
+00:03:37.680 --> 00:03:39.520
+Fall kannst du dir die
+
+00:03:39.620 --> 00:03:41.880
+äußere Schleife als die Steuerung der Gruppen oder der
+
+00:03:41.980 --> 00:03:44.720
+Reihe vorstellen, und die innere Schleife als die Steuerung
+
+00:03:44.820 --> 00:03:47.049
+jedes Elements in dieser Gruppe oder jedes Elements in
+
+00:03:47.080 --> 00:03:50.549
+dieser Reihe. In unserem Beispiel erzeugt die äußere
+
+00:03:50.600 --> 00:03:54.580
+Schleife vier Reihen, und die innere Schleife
+
+00:03:54.640 --> 00:03:57.760
+setzt fünf Pflanzen, also fünf Elemente, in jede Gruppe.
+
+00:03:59.280 --> 00:04:02.100
+In den nächsten Übungen nutzt du Schleifen
+
+00:04:02.180 --> 00:04:05.520
+in Schleifen, um Dinge zu bauen. Diese neuen Übungen
+
+00:04:05.580 --> 00:04:08.160
+geben dir Funktionen, mit denen du die einzelnen Teile zeichnest.
+
+00:04:08.540 --> 00:04:10.160
+Du musst nur die
+
+00:04:10.220 --> 00:04:11.829
+richtige Struktur der Schleifen herausfinden,
+
+00:04:11.860 --> 00:04:16.029
+damit es funktioniert. Alles, was in diesen Übungen vorkommt,
+
+00:04:16.060 --> 00:04:17.760
+haben wir gerade besprochen. Wenn du also
+
+00:04:17.800 --> 00:04:19.860
+nicht weiterkommst, schau dir dieses Video noch einmal an.
+
+00:04:20.660 --> 00:04:22.160
+Viel Erfolg, und wir sehen uns gleich
+
+00:04:22.180 --> 00:04:22.460
+wieder hier.

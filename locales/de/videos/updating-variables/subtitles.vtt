@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 e356df7bcabc2d9e377cede51ea7aaa5
+
+00:00:00.220 --> 00:00:04.200
+Willkommen zurück. Bisher haben wir, wenn wir Variablen erstellt haben,
+
+00:00:04.520 --> 00:00:07.100
+Werte in Boxen gelegt und sie später
+
+00:00:07.140 --> 00:00:10.059
+wieder herausgeholt. Das war sehr nützlich,
+
+00:00:10.130 --> 00:00:13.080
+um unseren Code klarer zu machen und um
+
+00:00:13.140 --> 00:00:15.520
+das Kopfrechnen zu verringern, das wir
+
+00:00:15.560 --> 00:00:18.720
+sonst vielleicht hätten anstellen müssen. Aber der eigentliche Nutzen
+
+00:00:18.780 --> 00:00:21.940
+von Variablen liegt darin, dass du ändern kannst,
+
+00:00:22.020 --> 00:00:24.760
+was in einer Box steckt, also was in der Variable steckt,
+
+00:00:24.800 --> 00:00:27.710
+während das Programm läuft. Auch wenn wir also
+
+00:00:27.740 --> 00:00:30.120
+dasselbe Stück Code mehrmals ausführen,
+
+00:00:30.660 --> 00:00:33.900
+kann sich das, was es tut, je nachdem ändern,
+
+00:00:33.940 --> 00:00:38.540
+was in den Boxen steckt. Sagen wir, wir wollen
+
+00:00:38.580 --> 00:00:41.020
+eine Blume in einem Garten pflanzen. Wir haben eine
+
+00:00:41.030 --> 00:00:44.340
+praktische Funktion plant (pflanzen) mit einem einzigen Eingabewert:
+
+00:00:44.380 --> 00:00:46.060
+die Position, an der wir die Blume
+
+00:00:46.100 --> 00:00:48.380
+platzieren wollen. Wenn wir also eine Blume
+
+00:00:48.400 --> 00:00:52.010
+10 vom Rand entfernt platzieren wollen, schreiben wir plant(10).
+
+00:00:52.010 --> 00:00:55.880
+Schön einfach. Was aber, wenn wir
+
+00:00:55.960 --> 00:00:59.340
+acht Blumen pflanzen wollen? Nun, wir könnten
+
+00:00:59.360 --> 00:01:02.210
+plant(10), plant(20), plant(30) und so
+
+00:01:02.260 --> 00:01:06.780
+weiter schreiben, aber das ist ziemlich mühsam. Und wir haben schon
+
+00:01:06.820 --> 00:01:10.350
+etwas kennengelernt, das uns hilft, diese Art
+
+00:01:10.380 --> 00:01:13.120
+von mühsamem Code zu ersetzen. Hoffentlich rattert dein Gehirn
+
+00:01:13.160 --> 00:01:15.640
+und ruft: „Nutze eine Schleife! Nutze einen
+
+00:01:15.680 --> 00:01:19.440
+repeat-Block!“ Genau so ist es. Also
+
+00:01:19.480 --> 00:01:22.120
+setzen wir die Position auf 10 und
+
+00:01:22.180 --> 00:01:25.200
+lassen dann einen repeat-Block
+
+00:01:25.240 --> 00:01:27.350
+acht Mal plant aufrufen, also die Funktion plant verwenden.
+
+00:01:28.900 --> 00:01:32.160
+Was, glaubst du, wird passieren? Nun, er
+
+00:01:32.180 --> 00:01:35.180
+wird acht Blumen pflanzen, aber er pflanzt
+
+00:01:35.200 --> 00:01:38.000
+sie jedes Mal an dieselbe Stelle, und das
+
+00:01:38.060 --> 00:01:41.140
+ist nicht wirklich das, was wir wollen. Halten wir also
+
+00:01:41.280 --> 00:01:42.960
+einen Moment inne und überlegen, was Jiki
+
+00:01:43.000 --> 00:01:45.420
+hier macht. Er baut eine Box mit
+
+00:01:45.460 --> 00:01:47.600
+der Beschriftung position. Er legt 10 hinein.
+
+00:01:48.180 --> 00:01:50.330
+Dann lässt er die plant-Maschine acht Mal laufen.
+
+00:01:51.420 --> 00:01:54.380
+Jedes Mal holt er den Wert aus
+
+00:01:54.400 --> 00:01:57.730
+der position-Box. Es ist immer 10, und jedes Mal
+
+00:01:57.760 --> 00:02:01.340
+steckt er dieselbe 10 hinein. Wir
+
+00:02:01.360 --> 00:02:03.400
+brauchen also eine Möglichkeit,
+
+00:02:03.460 --> 00:02:06.490
+jedes Mal ein Stück weiterzurücken. Nachdem wir
+
+00:02:06.540 --> 00:02:08.820
+eine Blume gepflanzt haben, wollen wir Jiki sagen,
+
+00:02:08.960 --> 00:02:12.200
+dass er die Position um 10 weiterrücken soll, damit wir
+
+00:02:12.300 --> 00:02:16.410
+die nächste Blume pflanzen können. Vergessen wir
+
+00:02:16.500 --> 00:02:18.800
+für einen Moment den Code: Wie sieht das
+
+00:02:18.900 --> 00:02:22.360
+logisch aus? Wenn ich
+
+00:02:22.440 --> 00:02:24.460
+zu dir sage: „Pflanze die erste Blume bei 10,
+
+00:02:24.620 --> 00:02:26.320
+dann die nächste bei 20, dann die nächste
+
+00:02:26.360 --> 00:02:29.140
+bei 30“, woher weiß dein Gehirn, dass
+
+00:02:29.180 --> 00:02:31.549
+die nächste bei 40
+
+00:02:32.320 --> 00:02:33.940
+und die übernächste
+
+00:02:33.960 --> 00:02:38.280
+bei 50 gepflanzt werden soll? Dein Gehirn
+
+00:02:38.340 --> 00:02:41.680
+behält die aktuelle Zahl im Auge, addiert
+
+00:02:41.740 --> 00:02:44.380
+10 dazu und aktualisiert dann diese Zahl
+
+00:02:44.440 --> 00:02:47.510
+in deinem Kopf. Und genau dasselbe
+
+00:02:47.520 --> 00:02:50.950
+können wir im Code machen. Dazu
+
+00:02:51.160 --> 00:02:54.380
+sagen wir: „Aktualisiere die position-Box, sodass sie
+
+00:02:54.440 --> 00:03:00.500
+den aktuellen Wert plus 10 enthält.“ Wenn
+
+00:03:00.560 --> 00:03:03.040
+Jiki das sieht, holt er die aktuelle Zahl
+
+00:03:03.120 --> 00:03:05.460
+aus der position-Box, addiert 10
+
+00:03:05.540 --> 00:03:08.570
+dazu, rechnet das also aus, indem er beide zusammenzählt,
+
+00:03:08.580 --> 00:03:10.720
+und legt das Ergebnis zurück in die Box,
+
+00:03:10.800 --> 00:03:14.000
+damit es beim nächsten Mal bereitliegt. Wenn wir das also
+
+00:03:14.060 --> 00:03:15.960
+in unser Programm einbauen, sodass wir jetzt sagen:
+
+00:03:16.220 --> 00:03:18.680
+„Setze den Anfangswert der Position
+
+00:03:18.700 --> 00:03:21.490
+auf 10“, dann acht Mal eine Blume
+
+00:03:22.040 --> 00:03:24.860
+an der Position pflanzen und danach die Position
+
+00:03:24.920 --> 00:03:28.360
+um 10 größer machen als vorher, dann funktioniert
+
+00:03:28.420 --> 00:03:30.640
+unser Code und wir bekommen acht Blumen mit Abstand zueinander.
+
+00:03:32.440 --> 00:03:35.400
+Beachte, dass dort kein let steht, wenn wir
+
+00:03:35.410 --> 00:03:38.980
+die Variable aktualisieren. Das ist wirklich wichtig. Wenn Jiki
+
+00:03:39.140 --> 00:03:42.400
+let sieht, erstellt er eine neue Box. Hier
+
+00:03:42.420 --> 00:03:44.560
+wollen wir aber keine neue Box erstellen.
+
+00:03:44.600 --> 00:03:46.480
+Wir wollen ändern, was in der Box steckt,
+
+00:03:46.540 --> 00:03:50.920
+die wir schon haben. Beachte auch, dass wir
+
+00:03:51.020 --> 00:03:54.320
+die Box nur einmal außerhalb der
+
+00:03:54.380 --> 00:03:57.500
+Schleife erstellen. Das ist wichtig. Erstelle die Box
+
+00:03:57.620 --> 00:03:59.720
+einmal am Anfang und aktualisiere sie dann
+
+00:03:59.760 --> 00:04:03.500
+bei jedem Durchlauf der Schleife. Okay. Wir haben
+
+00:04:03.560 --> 00:04:05.850
+in diesem Video ziemlich viel gelernt. Wir können
+
+00:04:05.900 --> 00:04:08.020
+ändern, was in Boxen steckt, und diese Möglichkeit
+
+00:04:08.080 --> 00:04:10.880
+nutzen, um etwas im Auge zu behalten, das sich
+
+00:04:10.940 --> 00:04:14.320
+mit der Zeit ändert. Dieses Muster wirst du ständig verwenden:
+
+00:04:14.420 --> 00:04:17.300
+eine Position verfolgen, zählen, wie oft etwas
+
+00:04:17.340 --> 00:04:21.240
+passiert ist, den Punktestand im Blick behalten. Immer wenn du dir
+
+00:04:21.260 --> 00:04:24.780
+etwas merken musst, das sich ändert, während dein Programm läuft,
+
+00:04:24.820 --> 00:04:27.520
+machst du es genau so. Jetzt kommen
+
+00:04:27.620 --> 00:04:29.460
+gleich ein paar Übungen, mit denen
+
+00:04:29.500 --> 00:04:32.060
+du das üben kannst. Schau dir dieses Video
+
+00:04:32.100 --> 00:04:33.760
+ruhig noch mal an, wenn du nicht weiterkommst.
+
+00:04:33.800 --> 00:04:36.420
+Das ist kein Schummeln. Dieses Thema kann sich
+
+00:04:36.460 --> 00:04:38.830
+ziemlich komplex anfühlen. Es wird klar werden, aber
+
+00:04:38.840 --> 00:04:40.510
+am Anfang kann es sich etwas viel anfühlen. Und
+
+00:04:40.540 --> 00:04:41.930
+hoffentlich bist du, wenn ich dich in
+
+00:04:41.930 --> 00:04:44.510
+ein paar Übungen wiedersehe,
+
+00:04:44.540 --> 00:04:46.090
+mit diesem Muster schon ein bisschen
+
+00:04:46.120 --> 00:04:48.600
+vertrauter und dein Selbstvertrauen wächst. Viel
+
+00:04:48.640 --> 00:04:48.800
+Glück.

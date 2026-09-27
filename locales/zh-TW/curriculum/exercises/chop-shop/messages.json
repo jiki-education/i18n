@@ -1,0 +1,48 @@
+{
+  "tasks": {
+    "canFitIn": {
+      "name": "排得下嗎？",
+      "description": "寫一個函式，根據目前的排隊名單和剩下的時間，判斷打烊前還能不能服務新客人。"
+    }
+  },
+  "scenarios": {
+    "emptyQueue": {
+      "name": "排隊名單上沒有人",
+      "description": "排隊名單上沒有人，時間還很充裕。"
+    },
+    "emptyQueueButNoTime": {
+      "name": "一天快結束了",
+      "description": "排隊名單上沒有人，但時間不夠。"
+    },
+    "busyDayNoTime": {
+      "name": "忙碌的一天",
+      "description": "排隊名單排得滿滿的，時間卻不夠。"
+    },
+    "busyDayButTime": {
+      "name": "剛好擠得進去",
+      "description": "一整天都很忙，但時間剛好夠。"
+    },
+    "stillEarly": {
+      "name": "還很早",
+      "description": "今天時間還早。"
+    },
+    "cuttingItFine": {
+      "name": "剛剛好來得及",
+      "description": "剛好趕上，來得及喔！"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "我該從哪裡開始？先看排隊名單，還是先看新客人？",
+      "answer": "先算出排隊名單會用掉多少時間，再看看還剩多少能給新客人。寫一個輔助函式，把髮型名稱轉成所需的分鐘數，這樣程式會清爽很多。"
+    },
+    "subtractQueueTime": {
+      "question": "我要怎麼把每個髮型需要的時間，從剩下的時間裡扣掉？",
+      "answer": "用迴圈走過排隊名單。每遇到一個髮型，就用你的輔助函式查出它需要的時間，再從今天剩餘的時間裡扣掉。"
+    },
+    "decideIfFits": {
+      "question": "我要怎麼判斷新客人的髮型排不排得下？",
+      "answer": "處理完排隊名單後，把剩下的時間和新髮型所需的時間拿來比較。如果新髮型需要的時間小於或等於剩下的時間，就排得下。"
+    }
+  }
+}

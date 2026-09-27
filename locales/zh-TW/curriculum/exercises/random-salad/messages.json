@@ -1,62 +1,66 @@
 {
   "errors": {
-    "leavesNumber": "�",
-    "tomatoesNumber": "�",
-    "croutonsNumber": "�",
-    "olivesNumber": "�"
+    "leavesNumber": "生菜葉的數量必須是數字。",
+    "tomatoesNumber": "番茄的數量必須是數字。",
+    "croutonsNumber": "麵包丁的數量必須是數字。",
+    "olivesNumber": "橄欖的數量必須是數字。"
   },
   "checks": {
-    "saladNotMade": "�",
-    "needLeavesRandomInt": "�",
-    "needTomatoesRandomInt": "�",
-    "needCroutonsRandomInt": "�",
-    "needOlivesRandomInt": "�"
+    "saladNotMade": "你還沒做出沙拉。請確認你有用四種食材呼叫<code>makeSalad()</code>。",
+    "needLeavesRandomInt": "生菜葉數量的邏輯不符合你和另一半說好的規則。",
+    "needTomatoesRandomInt": "番茄數量的邏輯不符合你和另一半說好的規則。",
+    "needCroutonsRandomInt": "麵包丁數量的邏輯不符合你和另一半說好的規則。",
+    "needOlivesRandomInt": "橄欖數量的邏輯不符合你和另一半說好的規則。"
   },
   "tasks": {
     "makeRandomSalad": {
-      "name": "�",
-      "description": "�"
+      "name": "做一份隨機沙拉",
+      "description": "用 Math.randomInt() 隨機產生每種食材的數量，再做出一份沙拉。"
     }
   },
   "scenarios": {
     "randomSalad": {
-      "name": "�",
-      "description": "�"
+      "name": "隨機沙拉",
+      "description": "用隨機份量的四種食材做出一份沙拉。"
     }
   },
   "hints": {
     "leavesExample": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼產生隨機數字？",
+      "answer": "`Math.randomInt(min, max)`會在你傳進去的兩個數字之間，隨機給你一個整數。例如`let score = Math.randomInt(1, 6)`會從 1 到 6 之間挑一個數字。把結果存進變數，之後就能拿來用。"
     },
     "leavesCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "我需要多少片生菜葉？",
+      "answer": "40 到 100 片之間。"
     },
     "tomatoesCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "我需要多少顆番茄？",
+      "answer": "至少要 5 顆，但不能超過生菜葉數量除以 5。"
     },
     "croutonsCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "我需要多少麵包丁？",
+      "answer": "至少要和番茄一樣多，最多是番茄數量的兩倍。"
     },
     "olivesCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "我需要多少顆橄欖？",
+      "answer": "至少 1 顆，最多是番茄數量的一半。"
     },
     "makeSalad": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼做出沙拉？",
+      "answer": "等你算好每種食材需要多少之後，照著`makeSalad()`定義中的參數順序，把四個變數傳進去。"
     }
   },
   "describers": {
-    "makeSalad": "�"
+    "makeSalad": "用 ${arg1} 片生菜葉、${arg2} 顆番茄、${arg3} 塊麵包丁和 ${arg4} 顆橄欖做了一份沙拉"
   },
   "functions": {
     "makeSalad": {
-      "description": "�",
-      "category": "�"
+      "description": "依照指定的份量，用四種食材做出一份沙拉。",
+      "category": "動作"
+    },
+    "randomInt": {
+      "description": "回傳 min 和 max 之間（包含頭尾兩個數字）的隨機整數。",
+      "category": "數字"
     }
   }
 }

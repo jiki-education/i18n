@@ -1,38 +1,38 @@
 {
   "checks": {
-    "wrongPosition": "�",
-    "notResponsive": "�"
+    "wrongPosition": "Die Sonne ist entweder an der falschen Stelle oder hat die falsche Größe. Prüfe deine Berechnungen für `sunX` und `sunY` und stell sicher, dass du `radius` an `circle` übergibst.",
+    "notResponsive": "Dein Code skaliert nicht richtig, wenn `gap` {{gap}} und `radius` {{radius}} sind. `sunX` und `sunY` sollten aus `gap` und `radius` abgeleitet werden und keine hardcodierten Zahlen sein."
   },
   "tasks": {
     "positionSun": {
-      "name": "�",
-      "description": "�"
+      "name": "Positioniere die Sonne",
+      "description": "Leite `sunX` und `sunY` aus `canvasSize`, `gap` und `radius` ab, damit die Sonne richtig skaliert."
     }
   },
   "scenarios": {
     "positionSun": {
-      "name": "�",
-      "description": "�"
+      "name": "Positioniere die Sonne",
+      "description": "Leite die Position der Sonne aus `gap` und `radius` ab, damit sie skaliert."
     }
   },
   "hints": {
     "sunXPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie soll ich mir die x-Koordinate der Sonne vorstellen?",
+      "answer": "Stell dir den rechten Rand der Leinwand vor. Der Rand der Sonne liegt `gap` links von diesem Rand. Die *Mitte* der Sonne liegt noch einen Radius weiter innen als dieser Rand."
     },
     "sunYPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie soll ich mir die y-Koordinate der Sonne vorstellen?",
+      "answer": "Es ist dieselbe Idee wie bei der x-Koordinate, nur dass du vom oberen Rand der Leinwand nach unten misst statt vom rechten Rand nach innen."
     },
     "whyNotHardcode": {
-      "question": "�",
-      "answer": "�"
+      "question": "Warum kann ich die Zahlen nicht einfach direkt hinschreiben?",
+      "answer": "Wenn du `sunX` und `sunY` hardcodierst, bleibt die Sonne an einer Stelle, wenn sich `gap` oder `radius` ändern. Wenn du sie aus `gap` und `radius` berechnest, bleibt die Sonne in der Ecke, egal welche Werte du wählst."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichnet einen Kreis mit dem Mittelpunkt (centerX, centerY) sowie dem angegebenen Radius und der angegebenen Farbe",
+      "category": "Formen zeichnen"
     }
   }
 }

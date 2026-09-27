@@ -1,59 +1,59 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "Deine Lösung hat zu viele Codezeilen. Schaffst du es, sie kürzer zu machen?"
   },
   "tasks": {
     "identifyEvenOrOdd": {
-      "name": "�",
-      "description": "�"
+      "name": "Gerade und ungerade Zahlen erkennen",
+      "description": "Schreib eine Funktion namens evenOrOdd, die eine Zahl entgegennimmt und \"Even\" zurückgibt, wenn sie durch 2 teilbar ist, sonst \"Odd\". Null ist gerade."
     },
     "solveInSixLines": {
-      "name": "�",
-      "description": "�"
+      "name": "In 6 Codezeilen lösen",
+      "description": "Schaffst du es, diese Übung mit nur 6 Codezeilen zu lösen?"
     }
   },
   "scenarios": {
     "number14": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 14",
+      "description": "14 ist eine gerade Zahl."
     },
     "number28": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 28",
+      "description": "28 ist eine gerade Zahl."
     },
     "numberMinus1": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl -1",
+      "description": "-1 ist eine ungerade Zahl."
     },
     "number17": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 17",
+      "description": "17 ist eine ungerade Zahl."
     },
     "number0": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 0",
+      "description": "Null zählt als gerade."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "6 Codezeilen",
+      "description": "Löse die Übung mit nur 6 Codezeilen."
     }
   },
   "hints": {
     "howToTell": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie erkenne ich im Code, ob eine Zahl gerade oder ungerade ist?",
+      "answer": "Mathematisch ist eine Zahl gerade, wenn sie sich genau durch 2 teilen lässt und nichts übrig bleibt, und ungerade, wenn ein Rest von 1 bleibt. Du brauchst also eine Möglichkeit, die Frage zu stellen: „Was bleibt übrig, wenn man durch 2 teilt?“"
     },
     "remainderOperator": {
-      "question": "�",
-      "answer": "�"
+      "question": "Gibt es einen Operator, der mir den Rest einer Division gibt?",
+      "answer": "Ja. Der Rest-Operator `%` (manchmal Modulo genannt) macht genau das. Zum Beispiel ergibt `14 % 2` den Wert `0` und `17 % 2` den Wert `1`. Er gibt zurück, was nach der Division der ersten Zahl durch die zweite übrig bleibt."
     },
     "turnIntoEvenOdd": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich habe jetzt den Rest. Wie mache ich daraus \"Even\" oder \"Odd\"?",
+      "answer": "Nutze eine `if`-Anweisung, um den Rest mit `0` zu vergleichen. Wenn `number % 2` gleich `0` ist, gib `\"Even\"` zurück. Sonst gib `\"Odd\"` zurück."
     },
     "zeroAndNegative": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich weiß nicht, wie ich 0 und negative Zahlen behandeln soll",
+      "answer": "Du brauchst dafür keinen Sonderfall. `0 % 2` ist `0`, also wird die Null automatisch als gerade behandelt. Und `-1 % 2` ist nicht null, also wird `-1` als ungerade behandelt, genau wie du es willst."
     }
   }
 }

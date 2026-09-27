@@ -1,80 +1,80 @@
 {
   "checks": {
-    "border": "�",
-    "topLeftWhite": "�",
-    "rightOfTopLeftDark": "�",
-    "bottomLeftDark": "�",
-    "bottomRightWhite": "�",
-    "charcoalPiece": "�",
-    "topRim": "�",
-    "whitePiece": "�",
-    "bottomRim": "�",
-    "rimRatio": "�",
-    "innerRatio": "�",
-    "noPieceOnLight": "�",
-    "middleRowsEmpty": "�"
+    "border": "Das Brett sollte rundherum einen Rahmen in der Farbe black haben.",
+    "topLeftWhite": "Das Feld oben links sollte white sein (es ist ein helles Feld).",
+    "rightOfTopLeftDark": "Das Feld rechts neben dem Feld oben links sollte dark brown sein (ein dunkles Feld).",
+    "bottomLeftDark": "Das Feld unten links sollte dark brown sein (ein dunkles Feld).",
+    "bottomRightWhite": "Das Feld unten rechts sollte white sein.",
+    "charcoalPiece": "Auf dem dunklen Feld in der obersten Reihe sollte ein Spielstein in charcoal stehen.",
+    "topRim": "Die Spielsteine in den oberen Reihen sollten rundherum einen Rand haben.",
+    "whitePiece": "Auf dem dunklen Feld in der untersten Reihe sollte ein Spielstein in white stehen.",
+    "bottomRim": "Die Spielsteine in den unteren Reihen sollten rundherum einen Rand haben.",
+    "rimRatio": "Der Rand eines Spielsteins sollte 80 % so breit sein wie sein Feld. Überprüfe den Radius des äußeren Kreises.",
+    "innerRatio": "Die Mitte eines Spielsteins sollte 75 % so breit sein wie der ganze Spielstein. Überprüfe den Radius des inneren Kreises.",
+    "noPieceOnLight": "Auf dem Feld oben links sollte kein Spielstein stehen. Spielsteine sitzen nur auf den dunklen Feldern.",
+    "middleRowsEmpty": "Die mittleren Reihen sollten leer sein. Nur die oberen und unteren Reihen haben Spielsteine."
   },
   "tasks": {
     "setUpTheBoard": {
-      "name": "�",
-      "description": "�"
+      "name": "Das Brett aufbauen",
+      "description": "Zeichne das Schachbrettmuster und stelle die Spielsteine auf die dunklen Felder der oberen und unteren Reihen. Sorge außerdem dafür, dass es für jede Brettgröße funktioniert."
     }
   },
   "scenarios": {
     "board8": {
-      "name": "�",
-      "description": "�"
+      "name": "Ein 8×8-Brett aufbauen",
+      "description": "Zeichne das klassische 8×8-Schachbrettmuster und stelle die Spielsteine für eine Partie bereit."
     },
     "board6": {
-      "name": "�",
-      "description": "�"
+      "name": "Ein 6×6-Brett aufbauen",
+      "description": "Derselbe Code sollte auch ein kleineres 6×6-Brett zeichnen können."
     },
     "board10": {
-      "name": "�",
-      "description": "�"
+      "name": "Ein 10×10-Brett aufbauen",
+      "description": "Und derselbe Code sollte auch ein größeres 10×10-Brett zeichnen können."
     }
   },
   "hints": {
     "wholeGrid": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie zeichne ich ein ganzes Raster aus Feldern statt nur ein einzelnes?",
+      "answer": "Nutze verschachtelte Schleifen: eine äußere Schleife, die durch die Reihen läuft, und eine innere Schleife, die durch die Spalten läuft. Zeichne bei jedem Durchlauf der inneren Schleife ein Feld."
     },
     "anyBoardSize": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie sorge ich dafür, dass es für jede Brettgröße funktioniert?",
+      "answer": "Wähle keine feste Feldgröße. Frag `getBoardSize()`, wie viele Felder es gibt, berechne daraus und aus dem verfügbaren Platz eine einzige `cell`-Größe und baue jede Position als Vielfaches davon auf."
     },
     "alternateColours": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie sorge ich dafür, dass die Felder abwechselnd verschiedene Farben haben?",
+      "answer": "Betrachte die Reihe und die Spalte eines Feldes zusammen. Mit dem Rest-Operator (`%`) kannst du jedes Feld anhand von `row` und `col` einer von zwei Gruppen zuordnen, und diese zwei Gruppen sind genau die hellen und die dunklen Felder."
     },
     "whichSquaresGetPieces": {
-      "question": "�",
-      "answer": "�"
+      "question": "Welche Felder bekommen Spielsteine?",
+      "answer": "Spielsteine sitzen nur auf den **dunklen** Feldern, du kannst also denselben Test wiederverwenden, mit dem du ihre Farbe bestimmt hast. Schränke ihn dann weiter auf die oberen und unteren Reihen ein, sodass die zwei mittleren Reihen leer bleiben."
     },
     "ridgedPiece": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie zeichne ich einen gerippten Spielstein?",
+      "answer": "Zeichne zwei Kreise mit demselben Mittelpunkt: einen größeren für den Rand und darüber einen etwas kleineren in der Farbe des Spielsteins. Lege beide Radien anhand der Feldgröße fest, damit die Spielsteine mit dem Brett skalieren."
     },
     "rimSize": {
-      "question": "�",
-      "answer": "�"
+      "question": "Die Größe des Rands sieht nicht wie im Beispiel aus.",
+      "answer": "Überprüfe, ob der innere Kreis 75 % des äußeren Kreises ist (und nicht 75 % des Feldes)."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichne ein Rechteck an der Position (left, top) mit der angegebenen Breite, Höhe und Farbe",
+      "category": "Formen zeichnen"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichne einen Kreis mit dem Mittelpunkt (centerX, centerY), dem angegebenen Radius und der angegebenen Farbe",
+      "category": "Formen zeichnen"
     },
     "getBoardSize": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt für das aktuelle Rätsel die Größe des Bretts zurück (die Anzahl der Felder entlang jeder Seite)",
+      "category": "Informationen"
     }
   },
   "describers": {
-    "getBoardSize": "�"
+    "getBoardSize": "hat die Größe des Bretts ermittelt (die Anzahl der Felder entlang jeder Seite)"
   }
 }

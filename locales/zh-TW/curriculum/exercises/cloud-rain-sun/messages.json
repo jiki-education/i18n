@@ -1,55 +1,55 @@
 {
   "checks": {
-    "sun": "�",
-    "cloudBody": "�",
-    "leftPuff": "�",
-    "leftCenterPuff": "�",
-    "rightCenterPuff": "�",
-    "rightPuff": "�",
-    "rainDrop": "�"
+    "sun": "太陽畫得不太對。",
+    "cloudBody": "雲的主體畫得不太對。",
+    "leftPuff": "左邊的雲朵畫得不太對。",
+    "leftCenterPuff": "中間偏左的雲朵畫得不太對。",
+    "rightCenterPuff": "中間偏右的雲朵畫得不太對。",
+    "rightPuff": "右邊的雲朵畫得不太對。",
+    "rainDrop": "其中一顆雨滴畫得不太對。"
   },
   "tasks": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "畫出天氣場景",
+      "description": "畫出包含黃色太陽、白色雲和藍色雨滴的天氣場景。"
     }
   },
   "scenarios": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "畫出天氣場景",
+      "description": "畫出包含太陽、雲和雨的完整天氣場景。"
     }
   },
   "hints": {
     "cloudShape": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼用簡單的形狀拼出蓬鬆的雲呢？",
+      "answer": "雲是一個長方形（已經幫你畫好，當作底部），沿著它的上緣放幾個`circle`，就能做出蓬鬆的輪廓。"
     },
     "raindropShape": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼用`ellipse`做出雨滴呢？",
+      "answer": "雨滴又高又細，所以垂直半徑比水平半徑大。水平半徑是`3`（唯一不能被 5 整除的數字）。"
     },
     "sunOnTop": {
-      "question": "�",
-      "answer": "�"
+      "question": "為什麼我的太陽會出現在雲的上面？",
+      "answer": "後畫的形狀會蓋在先畫的形狀前面。先畫太陽，再把雲畫上去，這樣雲看起來就會在太陽前面。"
     },
     "notMatchingTemplate": {
-      "question": "�",
-      "answer": "�"
+      "question": "為什麼我畫的圖對不上範本的線？",
+      "answer": "你畫的形狀應該剛好落在線的內側，而不是壓在線上。你需要的數字幾乎都能被 5 整除，所以如果形狀看起來有點偏，就試試最接近的 5 的倍數。"
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "在（left, top）的位置畫一個長方形，並指定寬度、高度和顏色",
+      "category": "繪製形狀"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "在（centerX, centerY）為圓心畫一個圓形，並指定半徑和顏色",
+      "category": "繪製形狀"
     },
     "ellipse": {
-      "description": "�",
-      "category": "�"
+      "description": "在（centerX, centerY）為圓心畫一個橢圓，並指定水平半徑 radiusX、垂直半徑 radiusY 和顏色",
+      "category": "繪製形狀"
     }
   }
 }

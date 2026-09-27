@@ -1,76 +1,76 @@
 {
   "checks": {
-    "totalCells": "�",
-    "groundWalls": "�",
-    "groundGlass": "�",
-    "groundEntrance": "�",
-    "floorWalls": "�",
-    "floorGlass": "�",
-    "roof": "�",
+    "totalCells": "Es sollten {{expected}} Zellen sein, aber es sind {{got}}.",
+    "groundWalls": "Das Erdgeschoss sollte Wände an den Positionen (17, 2) und (21, 2) haben.",
+    "groundGlass": "Das Erdgeschoss sollte Glas an den Positionen (18, 2) und (20, 2) haben.",
+    "groundEntrance": "Das Erdgeschoss sollte einen Eingang an Position (19, 2) haben.",
+    "floorWalls": "Stockwerk {{y}} sollte Wände an den Positionen (17, {{y}}) und (21, {{y}}) haben.",
+    "floorGlass": "Stockwerk {{y}} sollte Glas an den Positionen (18, {{y}}), (19, {{y}}) und (20, {{y}}) haben.",
+    "roof": "Das Dach bei y={{roofY}} sollte komplett aus Wänden bestehen.",
     "codeQuality": {
-      "allArgumentsAreVariables": "�"
+      "allArgumentsAreVariables": "Du solltest <strong>Variablen</strong> als Argumente an Funktionen übergeben, keine direkten Werte. Speichere die Werte zuerst in Variablen und übergib dann die Variablen."
     }
   },
   "tasks": {
     "buildSkyscraper": {
-      "name": "�",
-      "description": "�"
+      "name": "Baue den Wolkenkratzer",
+      "description": "Baue einen Wolkenkratzer mit der richtigen Anzahl an Stockwerken: unten ein Erdgeschoss mit Eingang, darüber Stockwerke mit Glas und oben ein Dach aus Wänden."
     }
   },
   "scenarios": {
     "floors6": {
-      "name": "�",
-      "description": "�"
+      "name": "6-stöckiger Wolkenkratzer",
+      "description": "Baue einen Wolkenkratzer mit 6 Stockwerken."
     },
     "floors8": {
-      "name": "�",
-      "description": "�"
+      "name": "8-stöckiger Wolkenkratzer",
+      "description": "Baue einen Wolkenkratzer mit 8 Stockwerken."
     },
     "floors10": {
-      "name": "�",
-      "description": "�"
+      "name": "10-stöckiger Wolkenkratzer",
+      "description": "Baue einen Wolkenkratzer mit 10 Stockwerken."
     },
     "floors12": {
-      "name": "�",
-      "description": "�"
+      "name": "12-stöckiger Wolkenkratzer",
+      "description": "Baue einen Wolkenkratzer mit 12 Stockwerken."
     },
     "floors16": {
-      "name": "�",
-      "description": "�"
+      "name": "16-stöckiger Wolkenkratzer",
+      "description": "Baue einen Wolkenkratzer mit 16 Stockwerken."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich weiß nicht, wo ich anfangen soll.",
+      "answer": "Versuche zuerst, eine Wand, etwas Glas und einen Eingang zu bauen, um zu prüfen, ob du die Funktionen verstanden hast. Baue dann das Erdgeschoss, das ist immer gleich. Nutze dann die Funktion `numFloors()`, um herauszufinden, wie viele Stockwerke es insgesamt gibt, und baue die restlichen Stockwerke und danach das Dach."
     },
     "tooManyTooFewFloors": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich habe zu viele oder zu wenige Stockwerke.",
+      "answer": "Wenn `numFloors()` 5 zurückgibt, sind das ein Eingangsstockwerk, 4 Glasstockwerke und ein Dach. Prüfe, ob deine Logik stimmt!"
     }
   },
   "functions": {
     "buildWall": {
-      "description": "�",
-      "category": "�"
+      "description": "Platziert ein **Wandsegment** an der Rasterposition (x, y).",
+      "category": "Bauen"
     },
     "buildGlass": {
-      "description": "�",
-      "category": "�"
+      "description": "Platziert ein **Glassegment** an der Rasterposition (x, y).",
+      "category": "Bauen"
     },
     "buildEntrance": {
-      "description": "�",
-      "category": "�"
+      "description": "Platziert einen **Eingang** an der Rasterposition (x, y).",
+      "category": "Bauen"
     },
     "numFloors": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt die **Anzahl der Stockwerke** für dieses Gebäude zurück.",
+      "category": "Info"
     }
   },
   "describers": {
-    "buildWall": "�",
-    "buildEntrance": "�",
-    "buildGlass": "�",
-    "numFloors": "�"
+    "buildWall": "baute eine Wand an Position (${arg1}, ${arg2})",
+    "buildEntrance": "baute einen Eingang an Position (${arg1}, ${arg2})",
+    "buildGlass": "baute ein Glassegment an Position (${arg1}, ${arg2})",
+    "numFloors": "ermittelte die Anzahl der Stockwerke"
   }
 }

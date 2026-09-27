@@ -119,6 +119,8 @@
       "MethodNotYetImplemented": "`{{method}}` 是一個有效的方法，但你現在還不能使用它喔。",
       "MethodNotYetAvailable": "`{{method}}` 方法在你目前的關卡還不能使用喔。繼續前進來解鎖這個功能吧！",
       "PropertyNotYetAvailable": "`{{property}}` 屬性在你目前的關卡還不能使用喔。繼續前進來解鎖這個功能吧！",
+      "InfiniteRecursionDetected": "函式`{{name}}`一次又一次地呼叫自己，始終沒有停下來。會用到自己的函式需要有停止的方法；沒有這個方法，它就會一直執行下去。",
+      "MaxTotalCallDepthReached": "你的函式一次又一次地互相呼叫，始終沒有停下來。在這個練習裡，同時最多可以有 {{max}} 個函式呼叫在等待。",
       "MaxIterationsReached": "你的程式碼執行太久了，為了防止無限迴圈，我們把它停下來了。在這個練習中，迴圈最多只能執行 {{max}} 次喔。",
       "RepeatCountMustBeNumber": "`repeat()` 需要一個數字，但得到了 {{type}} 喔。",
       "RepeatCountMustBeNonNegative": "`repeat()` 的次數必須是 0 或更大，但得到了 {{value}} 喔。",
@@ -147,9 +149,9 @@
       "DisabledFeatureIncludeListViolation": "`{{lexeme}}` 這個功能在你目前的關卡還不能使用喔。"
     },
     "stdlib": {
-      "StdlibExactArgs": "`{{functionName}}()` 有 {{expected}} 個投入口，但你只提供了 {{received}} 個東西放進去喔。",
-      "StdlibAtLeastArgs": "`{{functionName}}()` 至少有 {{minimum}} 個投入口，但你只提供了 {{received}} 個東西放進去喔。",
-      "StdlibArgRange": "`{{functionName}}()` 有 {{min}} 到 {{max}} 個投入口，但你只提供了 {{received}} 個東西放進去喔。",
+      "StdlibExactArgs": "`{{functionName}}()` 有 $t(phrases.slotCount, {\"count\": {{expected}} })，但你提供了 $t(phrases.inputCount, {\"count\": {{received}} }) 讓 Jiki 使用喔。",
+      "StdlibAtLeastArgs": "`{{functionName}}()` 至少需要 $t(phrases.slotCount, {\"count\": {{minimum}} })，但你提供了 $t(phrases.inputCount, {\"count\": {{received}} }) 讓 Jiki 使用喔。",
+      "StdlibArgRange": "`{{functionName}}()` 有 {{min}} 到 {{max}} 個投入口，但你提供了 $t(phrases.inputCount, {\"count\": {{received}} }) 讓 Jiki 使用喔。",
       "StdlibArgTypeMismatch": "`{{functionName}}()` 預期 {{argName}} 是一個 {{expected}}，但你給了它一個 {{received}} 喔。",
       "StdlibArgMustBeInteger": "`{{functionName}}()` 預期 {{argName}} 是一個整數，但你給了它 {{value}} 喔。",
       "MethodNotYetImplemented": "`{{method}}` 是一個有效的方法，但你現在還不能使用它喔。",
@@ -216,6 +218,18 @@
       "step_empty": "Jiki 檢查了這個物件，發現它是空的，所以決定在這行不再做任何事。",
       "step_put": "Jiki 把 {{value}} 放進盒子裡，然後把它放在架子上，準備在程式區塊裡使用。"
     },
+    "forStatement": {
+      "result_false": "條件的求值結果是<code>false</code>，所以迴圈停了。",
+      "result_no_condition": "這個迴圈沒有條件，所以迴圈主體又執行了一次。",
+      "result_true": "條件的求值結果是<code>true</code>，所以迴圈主體執行了。",
+      "step_decreased": "Jiki 把 {{name}} 從 {{oldValue}} 減少到 {{newValue}}。",
+      "step_decreased_evaluated": "Jiki 把 {{name}} 從 {{oldValue}} 減少到 {{newValue}}，接著對 {{expr}} 求值，判斷結果是 {{value}}。",
+      "step_false": "結果是<code>false</code>，所以 Jiki 決定停止迴圈。",
+      "step_increased": "Jiki 把 {{name}} 從 {{oldValue}} 增加到 {{newValue}}。",
+      "step_increased_evaluated": "Jiki 把 {{name}} 從 {{oldValue}} 增加到 {{newValue}}，接著對 {{expr}} 求值，判斷結果是 {{value}}。",
+      "step_no_condition": "沒有條件要檢查，所以 Jiki 決定執行迴圈主體。",
+      "step_true": "結果是<code>true</code>，所以 Jiki 決定執行迴圈主體。"
+    },
     "forOfStatement": {
       "result_empty": "這個 {{type}} 是空的，所以這行程式碼什麼都沒做。",
       "result_iteration_ordinal_one": "∅",
@@ -244,6 +258,9 @@
     },
     "memberExpression": {
       "array": "Jiki 取得了陣列中索引為 {{index}} 的項目，並判斷它是 {{value}}。",
+      "property": "Jiki 取得了 {{name}} 屬性，判斷結果是 {{value}}。",
+      "property_array": "Jiki 取得了陣列的 {{name}}，判斷結果是 {{value}}。",
+      "property_string": "Jiki 取得了字串的 {{name}}，判斷結果是 {{value}}。",
       "string": "Jiki 取得了字串中索引為 {{index}} 的字元，並判斷它是 {{value}}。"
     },
     "repeatStatement": {

@@ -1,65 +1,65 @@
 {
   "errors": {
-    "yearNumber": "�",
-    "yearInPast": "�",
-    "yearTooFarFuture": "�",
-    "balanceNumber": "�",
-    "moneyNumber": "�"
+    "yearNumber": "年份必須是數字",
+    "yearInPast": "我們沒辦法查過去幾年的股市！{{year}} 年已經過去了。",
+    "yearTooFarFuture": "我們無法得知 20 年以後的事！{{year}} 離現在太遠了。",
+    "balanceNumber": "餘額必須是數字",
+    "moneyNumber": "金額必須是數字"
   },
   "checks": {
-    "taxReportCount": "�",
-    "taxReportWrongYear": "�",
-    "taxReportWrongBalance": "�",
-    "wrongFinalBalance": "�",
-    "announcedMultipleTimes": "�"
+    "taxReportCount": "預期會有 20 筆稅務申報（每年一筆），但實際上有 {{got}} 筆。請確認你有在迴圈裡呼叫<code>reportTax()</code>。",
+    "taxReportWrongYear": "第 {{index}} 筆稅務申報是針對 {{actualYear}} 年，但應該是 {{expectedYear}} 年。",
+    "taxReportWrongBalance": "你申報的 {{year}} 年稅務金額有誤。應該是 ${{expected}}，但實際上是 ${{actual}}。",
+    "wrongFinalBalance": "預期最終餘額大約是 ${{expected}}，但實際上是 ${{got}}。請確認你在迴圈結束後呼叫了<code>announceToFamily()</code>。",
+    "announcedMultipleTimes": "你應該在 20 年結束後才向家人宣布<strong>一次</strong>，而不是每年都宣布。你總共呼叫了<code>announceToFamily()</code> {{count}} {{times}}。"
   },
   "tasks": {
     "growInvestment": {
-      "name": "�",
-      "description": "�"
+      "name": "在 20 年內讓投資成長",
+      "description": "從 $10 開始，模擬 20 年的股市成長，每年向稅務機關申報，最後把最終餘額向家人宣布。"
     }
   },
   "scenarios": {
     "twentyYears": {
-      "name": "�",
-      "description": "�"
+      "name": "20 年的成長",
+      "description": "投資 $10，並在 20 年的股市成長期間追蹤你的餘額。"
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "我不知道該從哪裡開始",
+      "answer": "你需要在接下來 20 年裡的每一年都使用`marketGrowth()`（從現在開始）。它會回傳一個像 5 這樣的數字（代表股市成長了 5%）。接著你要追蹤自己有多少錢，也就是從最初的 $10 開始，隨著成長率變化後的金額。"
     },
     "stillStuck": {
-      "question": "�",
-      "answer": "�"
+      "question": "我還是卡住了，完全不懂。",
+      "answer": "好的，那我們來寫一些程式碼，幫你起步。假設現在是 2026 年，你需要做類似這樣的事：\n\n```javascript\nlet money = 10\nlet growth = marketGrowth(2026)\n\n// 你需要依照成長率來增加 money。\n// 如果需要公式，可以看下一個提示。\nmoney = money + ???\nreportTax(2026, money)\n\n// 接著換 2027 年\nlet growth = marketGrowth(2027)\nmoney = money + ???\nreportTax(2027, money)\n\n// 接著換 2028 年\nlet growth = marketGrowth(2028)\nmoney = money + ???\nreportTax(2028, money)\n\n// 20 年後告訴家人\nannounceToFamily(money)\n```"
     },
     "formula": {
-      "question": "�",
-      "answer": "�"
+      "question": "追蹤成長的公式是什麼？我自己算不出來。",
+      "answer": "公式是：\n\n```javascript\nmoney = money * (100 + marketGrowth(year)) / 100\n```"
     },
     "wrongTaxReportCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "它說我申報的稅務筆數不對。",
+      "answer": "20 年應該要申報 20 筆稅務。用時間軸滑桿數一數你呼叫了幾次`reportTax()`。"
     }
   },
   "describers": {
-    "marketGrowth": "�",
-    "reportTax": "�",
-    "announceToFamily": "�"
+    "marketGrowth": "取得了 ${arg1} 年的股市成長 ${return}%",
+    "reportTax": "申報了 ${arg1} 年的稅務：$${arg2}",
+    "announceToFamily": "向家人宣布了 $${arg1}"
   },
   "functions": {
     "marketGrowth": {
-      "description": "�",
-      "category": "�"
+      "description": "回傳指定年份的股市成長百分比（介於 -25 到 40 之間）。每次你都需要用這個數字來**增加**你手上的錢。（所以 40 代表你的 $10 會變成 $14，而 -10 代表你的 $10 會降到 $9）",
+      "category": "動作"
     },
     "reportTax": {
-      "description": "�",
-      "category": "�"
+      "description": "申報指定年份的稅務。你應該每年呼叫一次，並傳入年份和你目前手上的金額。",
+      "category": "動作"
     },
     "announceToFamily": {
-      "description": "�",
-      "category": "�"
+      "description": "向家人宣布你的最終餘額。",
+      "category": "動作"
     }
   }
 }

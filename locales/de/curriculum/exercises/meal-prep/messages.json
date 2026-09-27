@@ -1,0 +1,50 @@
+{
+  "tasks": {
+    "createShoppingList": {
+      "name": "Einkaufsliste erstellen",
+      "description": "Schreibe eine Funktion, die den Inhalt deines Kühlschranks und die Zutaten eines Rezepts entgegennimmt und die Dinge zurückgibt, die du kaufen musst (also die Zutaten aus dem Rezept, die nicht im Kühlschrank sind)."
+    }
+  },
+  "scenarios": {
+    "emptyFridge": {
+      "name": "Leerer Kühlschrank",
+      "description": "Wenn der Kühlschrank leer ist, musst du alles kaufen."
+    },
+    "youHaveEverything": {
+      "name": "Du hast alles",
+      "description": "Wenn du alle Zutaten hast, bleibt die Einkaufsliste leer."
+    },
+    "oneThing": {
+      "name": "Eine Sache",
+      "description": "Wenn dir nur eine Zutat fehlt."
+    },
+    "fewThings": {
+      "name": "Ein paar Sachen",
+      "description": "Wenn dir ein paar Zutaten fehlen."
+    }
+  },
+  "hints": {
+    "realLifeApproach": {
+      "question": "Wie würde ich das im echten Leben machen?",
+      "answer": "Du gehst das Rezept Zutat für Zutat durch und schaust für jede im Kühlschrank nach. Was fehlt, kommt auf die Einkaufsliste. Genau das macht dein Code auch."
+    },
+    "checkFridgeItem": {
+      "question": "Wie prüfe ich, ob eine Zutat im Kühlschrank ist?",
+      "answer": "Die Methode `includes` erledigt das für dich. Wenn du sie auf dem Kühlschrank mit einer Zutat aufrufst, bekommst du `true` oder `false` zurück."
+    },
+    "buildShoppingList": {
+      "question": "Wie baue ich die Einkaufsliste auf?",
+      "answer": "Fang mit einem leeren Array an. Für jede Zutat aus dem Rezept, die nicht im Kühlschrank ist, schiebst du sie mit `push()` auf die Einkaufsliste."
+    }
+  },
+  "functions": {
+    "includes": {
+      "description": "Prüft, ob ein Array einen bestimmten Eintrag enthält, und gibt wahr oder falsch zurück.",
+      "category": "Arrays"
+    },
+    "push": {
+      "description": "Hängt ein Element an das Ende eines Arrays an. Das Array selbst wird dabei verändert.",
+      "category": "Arrays"
+    }
+  }
+}

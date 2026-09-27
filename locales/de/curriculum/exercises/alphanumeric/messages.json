@@ -1,8 +1,12 @@
 {
   "tasks": {
     "classifyString": {
-      "name": "�",
-      "description": "�"
+      "name": "Einen String einordnen",
+      "description": "Schreibe Hilfsfunktionen, die prüfen, ob ein String alphabetisch, numerisch oder alphanumerisch ist, und ordne damit den eingegebenen String ein."
+    },
+    "solveTightly": {
+      "name": "Löse es in 42 Zeilen",
+      "description": "Versuch, das in höchstens 42 Codezeilen zu lösen. Dieses Ziel ist nicht unbedingt die produktionsreifste Lösung, und es gibt auch kürzere Lösungen. Aber es ist ein gutes Ziel, auf das du hinarbeiten kannst."
     },
     "useContinue": {
       "name": "�",
@@ -11,24 +15,28 @@
   },
   "scenarios": {
     "duck": {
-      "name": "�",
-      "description": "�"
+      "name": "Duck",
+      "description": "Ein rein alphabetischer String sollte als \"Alpha\" eingeordnet werden."
     },
     "number": {
-      "name": "�",
-      "description": "�"
+      "name": "42",
+      "description": "Ein rein numerischer String sollte als \"Numeric\" eingeordnet werden."
     },
     "alphanumeric": {
-      "name": "�",
-      "description": "�"
+      "name": "Duck42",
+      "description": "Ein String mit sowohl Buchstaben als auch Zahlen sollte als \"Alphanumeric\" eingeordnet werden."
     },
     "notAlphanumeric1": {
-      "name": "�",
-      "description": "�"
+      "name": "It's not 42!",
+      "description": "Ein String mit Sonderzeichen sollte als \"Unknown\" eingeordnet werden."
     },
     "notAlphanumeric2": {
-      "name": "�",
-      "description": "�"
+      "name": "42 Rubber Duck!",
+      "description": "Ein String mit Leerzeichen und Sonderzeichen sollte als \"Unknown\" eingeordnet werden."
+    },
+    "alphanumericBonusLineCount": {
+      "name": "Kurz und knapp",
+      "description": "Versuch, das in höchstens 42 Codezeilen zu lösen."
     },
     "alphanumericUsesContinue": {
       "name": "�",
@@ -37,31 +45,41 @@
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wo soll ich anfangen, wenn ich mehrere Funktionen schreiben muss?",
+      "answer": "Fang mit der kleinsten Hilfsfunktion an. Jede Hilfsfunktion geht die Zeichen des Strings in einer Schleife durch und stellt bei jedem einzelnen dieselbe Ja/Nein-Frage. Wenn eine funktioniert, folgen die anderen demselben Muster."
     },
     "checkAllLetters": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie prüfe ich, ob jedes Zeichen der Eingabe ein Buchstabe ist?",
+      "answer": "Geh die Zeichen einzeln in einer Schleife durch und prüfe, ob jedes im Alphabet vorkommt. Genau das macht die `.includes()`-Methode eines Strings: `\"...\".includes(char)`. Denk daran, sowohl Klein- als auch Großbuchstaben einzubeziehen, sonst zählt ein Großbuchstabe wie das „D“ in „Duck“ nicht. Wenn ein Zeichen nicht im Alphabet vorkommt, ist der String nicht vollständig alphabetisch."
     },
     "checkAllDigits": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie mache ich dieselbe Prüfung für Ziffern?",
+      "answer": "Genau dasselbe Muster, nur prüfst du gegen `\"0123456789\"` statt gegen das Alphabet."
     },
     "alphanumericMeaning": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was bedeutet „alphanumerisch“? Muss beides vorkommen?",
+      "answer": "Alphanumerisch heißt, dass jedes Zeichen entweder ein Buchstabe ODER eine Ziffer ist. Für jedes Zeichen gilt also: Ist es ein Buchstabe, passt es, und ist es eine Ziffer, passt es auch. Mit `continue` machst du mit dem nächsten Zeichen weiter. Nur wenn es weder noch ist, darfst du den String ablehnen."
     },
     "pickingLabels": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie entscheide ich mich zwischen den vier Bezeichnungen in whatAmI()?",
+      "answer": "Ruf alle drei Hilfsfunktionen auf und arbeite mit if/else. Die Reihenfolge ist wichtig. Prüfe die strengeren Fälle („nur Buchstaben“ und „nur Ziffern“) vor „alphanumerisch“, dem lockereren Fall."
     }
   },
   "checks": {
-    "mustUseContinue": "�",
-    "tooManyLines": "�",
-    "useIsAlpha": "�",
-    "useIsNumeric": "�",
-    "useIsAlphanumeric": "�"
+    "tooManyLines": "Fast geschafft! Deine Lösung funktioniert, aber sie hat mehr als 42 Codezeilen.",
+    "useIsAlpha": "In dieser Übung sollst du eine Hilfsfunktion `isAlpha()` schreiben und sie verwenden, um den String einzuordnen.",
+    "useIsNumeric": "In dieser Übung sollst du eine Hilfsfunktion `isNumeric()` schreiben und sie verwenden, um den String einzuordnen.",
+    "useIsAlphanumeric": "In dieser Übung sollst du eine Hilfsfunktion `isAlphanumeric()` schreiben und sie verwenden, um den String einzuordnen.",
+    "mustUseContinue": "�"
+  },
+  "functions": {
+    "toLowerCase": {
+      "description": "Gibt eine Kopie eines Strings in Kleinbuchstaben zurück",
+      "category": "String-Operationen"
+    },
+    "includes": {
+      "description": "Prüft, ob ein String einen kleineren String enthält",
+      "category": "String-Operationen"
+    }
   }
 }

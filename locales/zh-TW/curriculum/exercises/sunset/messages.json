@@ -1,53 +1,53 @@
 {
   "checks": {
-    "sunWrongBeginning": "�",
-    "sunWrongMiddle": "�",
-    "sunWrongEnd": "�",
-    "skyNotChangingColor": "�",
-    "sunNotChangingColor": "�"
+    "sunWrongBeginning": "太陽在一開始的地方看起來不太對。",
+    "sunWrongMiddle": "太陽在中間的地方看起來不太對。",
+    "sunWrongEnd": "太陽在接近結尾的地方看起來不太對。",
+    "skyNotChangingColor": "天空的顏色似乎沒有在改變。",
+    "sunNotChangingColor": "太陽的顏色似乎沒有在改變。"
   },
   "tasks": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "製作日落動畫",
+      "description": "讓太陽和天空動起來，看起來就像太陽正在落下。太陽要逐漸變大並往下移動，同時太陽和天空的顏色都要改變。"
     }
   },
   "scenarios": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "讓太陽落下",
+      "description": "讓太陽和天空動起來，看起來就像太陽正在落下。"
     }
   },
   "hints": {
     "howToAnimate": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼做出動畫？",
+      "answer": "要做動畫，我們用的是翻頁書風格：每次都把整個場景重新畫在前一版上面。"
     },
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "我不知道該從哪裡開始。",
+      "answer": "你需要畫 100 次。所以先把你現有的繪圖函式放進一個會執行 100 次的 repeat 迴圈裡。接著，每跑一次迴圈，你都要改變那些變數（半徑、顏色等等）。"
     },
     "whereToPutVariables": {
-      "question": "�",
-      "answer": "�"
+      "question": "我的變數要放在哪裡？",
+      "answer": "你要在迴圈「之前」就設定好變數，然後在迴圈「裡面」、在畫圖形「之前」更新它們。想想 Jiki 每次建立盒子、再更新盒子的過程。"
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "以 (centerX, centerY) 為圓心，用指定的半徑和顏色畫一個圓。",
+      "category": "繪製圖形"
     },
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "在 (left, top) 的位置，用指定的寬度、高度和顏色畫一個矩形。",
+      "category": "繪製圖形"
     },
     "rgb": {
-      "description": "�",
-      "category": "�"
+      "description": "把 RGB 顏色數值（各為 0 到 255）轉換成十六進位色碼字串。",
+      "category": "顏色"
     },
     "hsl": {
-      "description": "�",
-      "category": "�"
+      "description": "把 HSL 顏色數值（色相 0-360、飽和度 0-100、亮度 0-100）轉換成十六進位色碼字串。",
+      "category": "顏色"
     }
   }
 }

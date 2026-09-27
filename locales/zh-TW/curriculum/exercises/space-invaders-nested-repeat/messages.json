@@ -1,37 +1,37 @@
 {
   "describers": {
-    "move": "�"
+    "move": "把雷射砲往右移動"
   },
   "checks": {
-    "notShotAllAliens": "�",
-    "tooManyLines": "�"
+    "notShotAllAliens": "你沒有消滅掉所有的外星人。",
+    "tooManyLines": "你的解答程式碼行數太多了。試試在一個 repeat 迴圈裡再放一個 repeat 迴圈，讓它短一點吧！"
   },
   "tasks": {
     "nestedRepeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "用巢狀 repeat 迴圈消滅所有外星人",
+      "description": "找出外星人位置裡的規律，並用一個 repeat 迴圈包住另一個 repeat 迴圈，在 7 行程式碼以內把它們全部消滅。"
     }
   },
   "scenarios": {
     "nestedRepeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "巢狀 repeat 與發射",
+      "description": "用巢狀 repeat 迴圈消滅所有外星人"
     }
   },
   "hints": {
     "cantGetTo7Lines": {
-      "question": "�",
-      "answer": "�"
+      "question": "我沒辦法把程式碼縮到 7 行以內。",
+      "answer": "把這一關想成兩個區塊，各自有一些必須發生的事。\n\n- 第一個區塊是內層區塊，我們在裡面發射 4 次，確保它只有 3 行。\n- 外層區塊是內層區塊，加上前後的移動。這個外層區塊也需要重複幾次。\n\n如果你把程式碼這樣組織，自然就會是 7 行程式碼。"
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "把雷射砲**往右移動一格**。如果移出畫面的右邊邊緣，你就輸了！",
+      "category": "移動"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "朝上發射雷射。**只有在外星人就在你上方時才發射**，不然你會輸掉遊戲！",
+      "category": "動作"
     }
   }
 }

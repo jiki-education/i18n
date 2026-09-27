@@ -1,54 +1,54 @@
 {
   "errors": {
-    "unknownDice": "�",
-    "announceNumber": "�",
-    "attackNumber": "�",
-    "damageNumber": "�"
+    "unknownDice": "Tut mir leid, Jiki hat gerade keinen Würfel mit {{sides}} Seiten zur Hand!",
+    "announceNumber": "Du kannst nur eine Zahl ansagen",
+    "attackNumber": "Der Angriff muss eine Zahl sein",
+    "damageNumber": "Der Schaden muss eine Zahl sein"
   },
   "describers": {
-    "roll": "�",
-    "announce": "�",
-    "strike": "�"
+    "roll": "würfelte und bekam ${return}",
+    "announce": "sagte ${arg1} an",
+    "strike": "traf den Goblin mit Angriff ${arg1} und Schaden ${arg2}"
   },
   "checks": {
-    "announcementCount": "�",
-    "firstAnnouncement": "�",
-    "secondAnnouncement": "�",
-    "thirdAnnouncement": "�",
-    "notStruck": "�",
-    "wrongAttack": "�",
-    "wrongDamage": "�"
+    "announcementCount": "Erwartet waren 3 Ansagen, aber es waren {{got}}. Sag jeden Würfelwurf an.",
+    "firstAnnouncement": "Die erste Ansage sollte {{attack}} sein (der Angriffswurf), aber es war {{got}}.",
+    "secondAnnouncement": "Die zweite Ansage sollte {{damage}} sein (der Basisschadenwurf), aber es war {{got}}.",
+    "thirdAnnouncement": "Die dritte Ansage sollte {{bonus}} sein (der Bonuswurf), aber es war {{got}}.",
+    "notStruck": "Du hast den Goblin nicht getroffen. Ruf unbedingt <code>strike()</code> auf.",
+    "wrongAttack": "Der Angriff sollte {{attack}} sein, aber es war {{got}}. Übergib den Angriffswurf an <code>strike()</code>.",
+    "wrongDamage": "Der Gesamtschaden sollte {{totalDamage}} sein ({{damage}} + {{bonus}}), aber es war {{got}}. Addiere Basisschaden und Bonusschaden."
   },
   "tasks": {
     "rollAndStrike": {
-      "name": "�",
-      "description": "�"
+      "name": "Würfle und triff den Goblin",
+      "description": "Wirf drei Würfel (einen 20-seitigen für den Angriff, einen 12-seitigen für den Basisschaden und einen 10-seitigen für den Bonus), sag jeden Wurf an und triff den Goblin dann mit deinem Angriffswurf und deinem Gesamtschaden (Basis + Bonus)."
     }
   },
   "scenarios": {
     "randomRolls": {
-      "name": "�",
-      "description": "�"
+      "name": "Würfeln und treffen",
+      "description": "Wirf den 20-seitigen Würfel für den Angriff, den 12-seitigen für den Basisschaden und den 10-seitigen für den Bonus. Triff den Goblin mit deinem Angriffswurf und deinem Gesamtschaden."
     }
   },
   "hints": {
     "chooseDie": {
-      "question": "�",
-      "answer": "�"
+      "question": "Woher weiß ich, welche Art von Würfel ich nehmen soll?",
+      "answer": "Für einen 20-seitigen Würfel gibst du 20 als Eingabewert an `roll`, z. B. `roll(20)`. Für einen 12-seitigen Würfel rufst du `roll(12)` auf."
     }
   },
   "functions": {
     "roll": {
-      "description": "�",
-      "category": "�"
+      "description": "Wirft einen Würfel mit der angegebenen Anzahl an Seiten und gibt das Ergebnis **zurück**.",
+      "category": "Würfel"
     },
     "announce": {
-      "description": "�",
-      "category": "�"
+      "description": "Sagt einen Würfelwurf an.",
+      "category": "Aktion"
     },
     "strike": {
-      "description": "�",
-      "category": "�"
+      "description": "Trifft den Goblin mit dem angegebenen Angriffswurf und dem Gesamtschaden.",
+      "category": "Aktion"
     }
   }
 }

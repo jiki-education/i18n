@@ -1,0 +1,97 @@
+{
+  "errors": {
+    "directionMustBeString": "direction muss ein String sein",
+    "invalidDirection": "Ungültige Richtung: {{dir}}. Verwende „ahead“, „left“, „right“ oder „down“.",
+    "emojisMustBeDictionary": "emojis muss ein Wörterbuch sein"
+  },
+  "describers": {
+    "look": "In eine Richtung schauen und sehen, was dort liegt",
+    "removeEmoji": "Das Emoji vom aktuellen Feld entfernen",
+    "announceEmojis": "Die gesammelten Emojis bekannt geben"
+  },
+  "checks": {
+    "notReachedEnd": "Du hast das Ende des Labyrinths nicht erreicht.",
+    "wrongEmojis": "Du hast die gesammelten Emojis nicht richtig bekannt gegeben. Wir haben das hier erwartet: <br/><code>{{expected}}</code>",
+    "reportedIncorrectly": "Du hast die gesammelten Emojis nicht richtig bekannt gegeben."
+  },
+  "tasks": {
+    "collectEmojis": {
+      "name": "Emojis sammeln",
+      "description": "Bewege dich durch das Labyrinth, sammle dabei Emojis und gib deine Beute bekannt, wenn du das Ziel erreichst."
+    },
+    "randomEmojis": {
+      "name": "Zufällige Emojis",
+      "description": "Meistere Labyrinthe mit zufälligen Emojis, die sich jedes Mal ändern!"
+    }
+  },
+  "scenarios": {
+    "diamonds": {
+      "name": "Sammle die Diamanten",
+      "description": "Sammle die Diamanten und gib sie bekannt."
+    },
+    "faces": {
+      "name": "Zwei Arten von Emojis!",
+      "description": "Sammle diesmal zwei Arten von Emojis!"
+    },
+    "poo": {
+      "name": "Vorsicht!",
+      "description": "Sammle die Tiere, aber nicht ihre Häufchen!"
+    },
+    "onlyOnce": {
+      "name": "Nur einmal!",
+      "description": "Achte darauf, dass du alles nur einmal einsammelst!"
+    },
+    "randomEmojis": {
+      "name": "Zufällige Emojis!",
+      "description": "Jedes Mal andere Emojis!"
+    }
+  },
+  "hints": {
+    "seeCurrentSquare": {
+      "question": "Wie sehe ich, was auf dem Feld ist, auf dem ich gerade stehe?",
+      "answer": "Benutze die neue Blickrichtung: `look(\"down\")`. Sie gibt das Emoji auf deinem aktuellen Feld zurück, also genau das, das du vielleicht einsammeln willst."
+    },
+    "specialEmojisToIgnore": {
+      "question": "Welche speziellen Emojis soll ich ignorieren?",
+      "answer": "Überspringe alles aus der Standardliste: `\"star\"`, `\"flag\"`, `\"white square\"`, `\"fire\"`, `\"poop\"`, `\"brick\"`. Jedes andere Emoji darfst du einsammeln."
+    },
+    "countingWithDictionary": {
+      "question": "Wie zähle ich Emojis mit einem Wörterbuch?",
+      "answer": "Benutze `hasKey(dict, emoji)`, um zu prüfen, ob du es schon gesehen hast. Wenn ja, addiere `1` zu `dict[emoji]`. Wenn nicht, setze `dict[emoji] = 1`, um die Zählung zu starten."
+    },
+    "avoidRecounting": {
+      "question": "Wie verhindere ich, dass ich dasselbe Emoji jedes Mal einsammle, wenn ich darauf trete?",
+      "answer": "Rufe direkt nach dem Zählen `removeEmoji()` auf. Das Feld wird leer, also wird es beim nächsten Durchlauf nicht noch einmal gezählt."
+    },
+    "reachingFlag": {
+      "question": "Was mache ich, wenn ich die Flagge erreiche?",
+      "answer": "Rufe `announceEmojis(result)` auf und übergib dein Wörterbuch als Argument. Mach das einmal, nachdem du auf das Zielfeld gezogen bist."
+    }
+  },
+  "functions": {
+    "move": {
+      "description": "Bewegt die Figur **einen Schritt vorwärts** in die aktuelle Richtung. Die Figur bewegt sich nur, wenn die Zielposition nicht von einer Wand blockiert wird.",
+      "category": "Bewegung"
+    },
+    "turnLeft": {
+      "description": "Dreht die Figur **um 90 Grad nach links** (gegen den Uhrzeigersinn). Das ändert die Richtung, in die die Figur schaut.",
+      "category": "Bewegung"
+    },
+    "turnRight": {
+      "description": "Dreht die Figur **um 90 Grad nach rechts** (im Uhrzeigersinn). Das ändert die Richtung, in die die Figur schaut.",
+      "category": "Bewegung"
+    },
+    "look": {
+      "description": "Gibt das **Emoji** in der angegebenen Richtung zurück. Benutze `\"ahead\"`, `\"left\"` oder `\"right\"`, um dich umzuschauen, oder `\"down\"`, um das aktuelle Feld zu sehen.",
+      "category": "Wahrnehmung"
+    },
+    "removeEmoji": {
+      "description": "Entfernt das Emoji vom **aktuellen Feld**. Benutze das nach dem Einsammeln eines Emojis, damit es nicht noch einmal gezählt wird.",
+      "category": "Einsammeln"
+    },
+    "announceEmojis": {
+      "description": "Gibt deine gesammelten Emojis bekannt. Übergib ein **Wörterbuch**, in dem die Schlüssel Emoji-Strings sind und die Werte die Anzahl angeben.",
+      "category": "Einsammeln"
+    }
+  }
+}

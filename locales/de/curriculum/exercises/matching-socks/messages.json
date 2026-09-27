@@ -1,0 +1,97 @@
+{
+  "tasks": {
+    "findMatchingSocks": {
+      "name": "Finde passende Socken",
+      "description": "Schreibe eine Funktion, die zwei Wäschekörbe mit Kleidung entgegennimmt (als Arrays von Strings) und ein Array mit allen Sockenpaaren zurückgibt, die sich in beiden Körben finden. Kleidungsstücke, die Socken sind, enden mit ' sock' und beginnen immer mit 'left ' oder 'right '."
+    },
+    "solveTightly": {
+      "name": "Löse es in 29 Zeilen",
+      "description": "Versuch, das mit 29 Codezeilen oder weniger zu lösen. Das ist nicht die kürzestmögliche Antwort, aber ein gutes Ziel, auf das du hinarbeiten kannst, wenn es erst einmal läuft."
+    }
+  },
+  "scenarios": {
+    "emptyBaskets": {
+      "name": "Leere Wäschekörbe",
+      "description": "Beide Wäschekörbe sind leer."
+    },
+    "nothingClean": {
+      "name": "Nichts Sauberes",
+      "description": "Es ist nichts Sauberes dabei."
+    },
+    "nothingDirty": {
+      "name": "Nichts Schmutziges",
+      "description": "Es ist nichts Schmutziges dabei."
+    },
+    "noSocks": {
+      "name": "Keine Socken",
+      "description": "Es gibt nirgends Socken."
+    },
+    "oneInEach": {
+      "name": "Je eine pro Korb",
+      "description": "In jedem Korb liegt eine passende Socke."
+    },
+    "aBigMix": {
+      "name": "Ein großer Mix!",
+      "description": "Ein Mix aus Kleidungsstücken mit mehreren passenden Paaren."
+    },
+    "someAddedPain": {
+      "name": "Kleinkram",
+      "description": "Ein paar Merkwürdigkeiten haben sich eingeschlichen."
+    },
+    "bonusLineCount": {
+      "name": "Eine kompakte Lösung",
+      "description": "Dieselbe Aufgabe, mit weniger Zeilen gelöst."
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Wo fange ich an, wenn ganz viele Teile zusammenspielen?",
+      "answer": "Versuch nicht, alles auf einmal zu schreiben. Zerlege das Problem in kleine Funktionen, die jeweils nur eine winzige Frage beantworten, bring jede für sich zum Laufen und setze sie dann zusammen."
+    },
+    "isItASock": {
+      "question": "Woran erkenne ich, ob etwas im Korb wirklich eine Socke ist?",
+      "answer": "Nicht alles, was eine Seite erwähnt, ist eine Socke, und nicht alles, was nach Socke aussieht, ist eine. Schau dir die Regeln genau an, nach denen die Beschreibungen aufgebaut sind, und prüfe beide Enden der Beschreibung, nicht nur den Anfang."
+    },
+    "compareSockPair": {
+      "question": "Wie vergleiche ich eine linke Socke mit ihrem rechten Partner?",
+      "answer": "Statt zwei Socken direkt zu vergleichen, überleg dir, wie der Partner einer Socke heißen würde, und suche dann danach. Strings haben eine eingebaute Methode, um ein Textstück durch ein anderes zu ersetzen; damit kannst du auch ein Stück abschneiden, indem du es durch nichts ersetzt."
+    },
+    "avoidDuplicates": {
+      "question": "Wie vermeide ich, dass ich dasselbe Paar zweimal zähle?",
+      "answer": "Jedes Paar wird zweimal entdeckt, einmal von jeder Seite. Bevor du einen Namen zu deinen Ergebnissen hinzufügst, prüf nach, ob er schon drinsteht."
+    },
+    "overallPlan": {
+      "question": "Wie sieht ein guter Gesamtplan aus?",
+      "answer": "Du kannst beide Körbe als einen großen Haufen behandeln. Geh ihn Stück für Stück durch und entscheide bei jedem Kleidungsstück, ob es in deine Antwort gehört."
+    }
+  },
+  "checks": {
+    "tooManyLines": "Fast geschafft! Deine Lösung funktioniert, aber sie hat mehr als 29 Codezeilen."
+  },
+  "functions": {
+    "startsWith": {
+      "description": "Prüft, ob ein String mit einem kürzeren String beginnt",
+      "category": "String-Operationen"
+    },
+    "endsWith": {
+      "description": "Prüft, ob ein String mit einem kürzeren String endet",
+      "category": "String-Operationen"
+    },
+    "replace": {
+      "description": "Gibt einen neuen String zurück, bei dem das erste Vorkommen eines Textstücks durch ein anderes Textstück ersetzt ist",
+      "category": "String-Operationen"
+    },
+    "concat": {
+      "description": "Fügt zwei Arrays zu einem neuen Array zusammen",
+      "category": "Array-Operationen"
+    },
+    "includes": {
+      "description": "Prüft, ob ein Array ein Element bereits enthält",
+      "category": "Array-Operationen"
+    },
+    "push": {
+      "description": "Fügt ein Element am Ende eines Arrays hinzu",
+      "category": "Array-Operationen"
+    }
+  }
+}

@@ -1,142 +1,142 @@
 {
   "tasks": {
     "validateBasicIsbn": {
-      "name": "�",
-      "description": "�"
+      "name": "驗證基本的 ISBN",
+      "description": "寫一個名為 isValidIsbn 的函式，它接收一個 ISBN-10 字串，有效就回傳 true，無效就回傳 false。ISBN-10 裡含有連字號，這些連字號應該被跳過。把每個數字乘上一個從 10 倒數到 1 的權重，全部加總，再檢查這個總和能不能被 11 整除。"
     },
     "handleXCheckDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "處理當作檢查碼的 X",
+      "description": "有時候 ISBN 會以 X 結尾，這個 X 代表數值 10。請更新你的函式，讓它能處理出現在最後一位的 X。"
     },
     "handleEdgeCases": {
-      "name": "�",
-      "description": "�"
+      "name": "處理邊界情況",
+      "description": "讓你的函式更強健：能處理沒有連字號的 ISBN、遇到無效字元就判定無效、X 出現在最後一位以外時也判定無效，並確保剛好處理了 10 位數字。"
     },
     "useContinue": {
-      "name": "�",
-      "description": "�"
+      "name": "獎勵：用 continue 跳過連字號",
+      "description": "與其只在字元是數字時才做事，不如用 continue 直接跳過連字號，繼續處理下一個字元。"
     }
   },
   "scenarios": {
     "isbnValid": {
-      "name": "�",
-      "description": "�"
+      "name": "有效的 ISBN",
+      "description": "有效的 ISBN-10 應該回傳 true。"
     },
     "isbnValidCheckDigitX": {
-      "name": "�",
-      "description": "�"
+      "name": "檢查碼為 X 的有效 ISBN",
+      "description": "檢查碼是 X 的有效 ISBN-10 應該回傳 true。"
     },
     "isbnValidNoDashes": {
-      "name": "�",
-      "description": "�"
+      "name": "沒有連字號的有效 ISBN",
+      "description": "沒有分隔用連字號的有效 ISBN-10 應該回傳 true。"
     },
     "isbnValidNoDashesXCheck": {
-      "name": "�",
-      "description": "�"
+      "name": "沒有連字號且檢查碼為 X 的有效 ISBN",
+      "description": "沒有連字號、檢查碼為 X 的有效 ISBN-10 應該回傳 true。"
     },
     "isbnInvalidCheckDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN 檢查碼錯誤",
+      "description": "檢查碼不正確的 ISBN-10 應該回傳 false。"
     },
     "isbnInvalidCharacter": {
-      "name": "�",
-      "description": "�"
+      "name": "檢查碼是 X 以外的字元",
+      "description": "含有無效字元的 ISBN-10 應該回傳 false。"
     },
     "isbnInvalidCharacterNotZero": {
-      "name": "�",
-      "description": "�"
+      "name": "無效的檢查碼不該被當成 0",
+      "description": "無效的檢查碼不應該被當成 0。"
     },
     "isbnInvalidNonNumeric": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN 中的無效字元",
+      "description": "ISBN 裡的無效字元不應該被忽略。"
     },
     "isbnInvalidXPosition": {
-      "name": "�",
-      "description": "�"
+      "name": "X 只能當作檢查碼",
+      "description": "X 只有在當作檢查碼時才有效。"
     },
     "isbnInvalidMissingCheckDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "缺少檢查碼的 ISBN",
+      "description": "缺少檢查碼的 ISBN-10 應該回傳 false。"
     },
     "isbnInvalidTooLong": {
-      "name": "�",
-      "description": "�"
+      "name": "太長的 ISBN",
+      "description": "太長的 ISBN-10 應該回傳 false。"
     },
     "isbnInvalidTooShort": {
-      "name": "�",
-      "description": "�"
+      "name": "太短的 ISBN",
+      "description": "太短的 ISBN-10 應該回傳 false。"
     },
     "isbnInvalidEmpty": {
-      "name": "�",
-      "description": "�"
+      "name": "空的 ISBN",
+      "description": "空的 ISBN 字串應該回傳 false。"
     },
     "isbnInvalidLengthNine": {
-      "name": "�",
-      "description": "�"
+      "name": "ISBN 只有 9 個字元",
+      "description": "長度為 9 個字元的輸入應該回傳 false。"
     },
     "isbnInvalidNonNumericBeforeCheck": {
-      "name": "�",
-      "description": "�"
+      "name": "檢查長度之前就出現無效字元",
+      "description": "在檢查長度之前，無效字元也不應該被忽略。"
     },
     "isbnInvalidExtraLength": {
-      "name": "�",
-      "description": "�"
+      "name": "輸入太長，但裡面含有有效的 ISBN",
+      "description": "長度超過 10 個字元的輸入應該回傳 false。"
     },
     "isbnBonusUseContinue": {
-      "name": "�",
-      "description": "�"
+      "name": "用 continue 跳過連字號",
+      "description": "你的解法可以運作，而且用 continue 跳過了連字號。"
     }
   },
   "hints": {
     "howChecked": {
-      "question": "�",
-      "answer": "�"
+      "question": "ISBN-10 到底是怎麼驗證的？",
+      "answer": "這 10 位數字每一位都會乘上一個遞減的權重。第一位乘 10，第二位乘 9，一路到最後一位乘 1。把這些乘積全部加起來。如果總和能被 11 整除，這個 ISBN 就是有效的。"
     },
     "dashes": {
-      "question": "�",
-      "answer": "�"
+      "question": "連字號要怎麼處理？",
+      "answer": "連字號只是為了讓人類好讀而已。直接全部跳過就好。它們不算一位數字，也不會讓你在權重上前進。"
     },
     "trackWeight": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼追蹤權重？",
+      "answer": "宣告一個從 10 開始的乘數變數。每次處理一位數字時，把它乘上目前的乘數，把乘積加到累計的總和裡，然後把乘數減 1。"
     },
     "stringToNumber": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼把字串變成數字？",
+      "answer": "你有兩個選擇。首先，這個練習希望你用的做法，是利用`indexOf`方法找出答案。先自己想想看。如果真的想不出來，就看下一則提示的答案。"
     },
     "stringToNumberAgain": {
-      "question": "�",
-      "answer": "�"
+      "question": "好啦，說真的，到底要怎麼把字串變成數字？",
+      "answer": "兩個選擇。首先，你可以用`Number()`函式（開頭字母是大寫的 N），所以`Number(\"5\")`會得到`5`。想複習的話，可以看看<a href=\"/concepts/type-conversion\" target=\"_blank\" rel=\"noopener noreferrer\">型別轉換</a>概念頁面。之後也很值得試試`indexOf`的巧妙用法。"
     },
     "handleX": {
-      "question": "�",
-      "answer": "�"
+      "question": "那 X 要怎麼處理？它又不是數字，對吧？",
+      "answer": "X 很特別。它代表數值 10，但只有在最後一個字元的位置才是這樣。當你在最後看到它時，就把它當成數值是 10 的數字；如果 X 出現在其他任何位置，就把這個 ISBN 判定為無效。"
     },
     "exactlyTenDigits": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼確認剛好有 10 位數字？",
+      "answer": "你的乘數從 10 開始，每處理一位數字就減 1。如果你剛好處理了 10 位數字，它最後會剛好是 0。如果不是，就代表位數不對，那就判定它無效。"
     },
     "finalCheck": {
-      "question": "�",
-      "answer": "�"
+      "question": "最後的驗證檢查是什麼？",
+      "answer": "全部處理完之後，如果總和能被 11 整除（也就是`sum % 11 == 0`），這個 ISBN 就是有效的。"
     }
   },
   "checks": {
-    "mustUseContinue": "�",
-    "tooManyLines": "�"
+    "mustUseContinue": "就差一點了！這個獎勵情境要用`continue`跳過連字號喔。",
+    "tooManyLines": "就差一點了！你的解法可以運作，只是稍微長了一點。"
   },
   "functions": {
     "number": {
-      "description": "�",
-      "category": "�"
+      "description": "把含有數字的字串轉換成數字",
+      "category": "型別轉換"
     },
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "檢查一個字串裡是否包含另一個較短的字串",
+      "category": "字串操作"
     },
     "indexOf": {
-      "description": "�",
-      "category": "�"
+      "description": "找出較短的字串在另一個字串中的位置，找不到時回傳 -1",
+      "category": "字串操作"
     }
   }
 }

@@ -1,55 +1,55 @@
 {
   "checks": {
-    "sun": "�",
-    "cloudBody": "�",
-    "leftPuff": "�",
-    "leftCenterPuff": "�",
-    "rightCenterPuff": "�",
-    "rightPuff": "�",
-    "rainDrop": "�"
+    "sun": "Die Sonne stimmt nicht.",
+    "cloudBody": "Die Basis der Wolke stimmt nicht.",
+    "leftPuff": "Der linke Wolkenbausch stimmt nicht.",
+    "leftCenterPuff": "Der linke mittlere Wolkenbausch stimmt nicht.",
+    "rightCenterPuff": "Der rechte mittlere Wolkenbausch stimmt nicht.",
+    "rightPuff": "Der rechte Wolkenbausch stimmt nicht.",
+    "rainDrop": "Einer der Regentropfen stimmt nicht."
   },
   "tasks": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "Zeichne die Wetterszene",
+      "description": "Erstelle eine Wetterszene mit einer gelben Sonne, einer weißen Wolke und blauen Regentropfen."
     }
   },
   "scenarios": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "Zeichne die Wetterszene",
+      "description": "Erstelle die vollständige Wetterszene mit Sonne, Wolke und Regen."
     }
   },
   "hints": {
     "cloudShape": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie setze ich die flauschige Wolkenform aus einfachen Formen zusammen?",
+      "answer": "Die Wolke besteht aus einem Rechteck (das schon als Basis für dich gezeichnet ist) und mehreren `circle`s entlang der oberen Kante, die der Wolke ihre wellige Umrandung geben."
     },
     "raindropShape": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie erstelle ich einen Regentropfen mit `ellipse`?",
+      "answer": "Regentropfen sind hoch und schmal, deshalb ist der vertikale Radius größer als der horizontale. Der horizontale Radius ist `3` (die einzige Zahl, die nicht durch 5 teilbar ist)."
     },
     "sunOnTop": {
-      "question": "�",
-      "answer": "�"
+      "question": "Warum ist meine Sonne vor der Wolke zu sehen?",
+      "answer": "Formen, die später gezeichnet werden, liegen vor den früheren. Zeichne zuerst die Sonne und danach die Wolke darüber, damit die Wolke vor der Sonne liegt."
     },
     "notMatchingTemplate": {
-      "question": "�",
-      "answer": "�"
+      "question": "Warum passt meine Zeichnung nicht zu den Linien der Vorlage?",
+      "answer": "Deine Formen sollten knapp innerhalb der Linien der Vorlage liegen, nicht auf ihnen. Fast jede Zahl, die du brauchst, ist durch 5 teilbar. Wenn eine Form leicht danebenliegt, probier das nächstgelegene Vielfache von 5."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichnet ein Rechteck an der Position (left, top) mit der angegebenen Breite, Höhe und Farbe",
+      "category": "Formen zeichnen"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichnet einen Kreis mit Mittelpunkt (centerX, centerY), dem angegebenen Radius und der angegebenen Farbe",
+      "category": "Formen zeichnen"
     },
     "ellipse": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichnet eine Ellipse mit Mittelpunkt (centerX, centerY), dem horizontalen Radius radiusX, dem vertikalen Radius radiusY und der Farbe",
+      "category": "Formen zeichnen"
     }
   }
 }

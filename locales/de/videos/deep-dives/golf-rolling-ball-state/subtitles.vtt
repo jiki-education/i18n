@@ -1,0 +1,711 @@
+WEBVTT
+
+NOTE en_md5 67040db223d368bf578fa7dd62694f9e
+
+00:00:00.338 --> 00:00:02.137
+Hallo. Willkommen zu einem weiteren Deep Dive.
+
+00:00:02.137 --> 00:00:06.097
+Auch diese Übung finden manche Leute
+ein bisschen kompliziert und
+
+00:00:06.097 --> 00:00:09.858
+bleiben daran hängen. Wenn du das also in
+der Oberfläche anschaust und feststeckst,
+
+00:00:10.817 --> 00:00:15.298
+gelten die üblichen Regeln. Schau zu, bis
+du weiterkommst, halte das Video dann an und
+
+00:00:15.298 --> 00:00:18.897
+mach selbst weiter. Wenn du es allein
+gelöst hast: Glückwunsch!
+
+00:00:18.897 --> 00:00:22.338
+Hier gibt es ein paar interessante Punkte,
+also schauen wir sie uns kurz an.
+
+00:00:22.978 --> 00:00:29.318
+Zuerst möchte ich etwas zu dieser
+Idee sagen, Dinge Schritt für Schritt zu bewegen.
+
+00:00:29.478 --> 00:00:33.398
+Bei dieser Übung geht es
+darum, dass wir Dinge
+
+00:00:34.037 --> 00:00:36.758
+immer wieder um einen Schritt bewegen, so wie hier.
+
+00:00:37.718 --> 00:00:40.838
+Machen wir noch ein paar. Sechs, sieben, acht.
+
+00:00:41.237 --> 00:00:42.917
+Gehen wir ganz bis 60.
+
+00:00:45.478 --> 00:00:48.277
+Auf diese Weise
+erzeugen wir eine Art Animation,
+
+00:00:48.677 --> 00:00:51.567
+bei der der Ball rollt, und zwar ganz flüssig.
+
+00:00:54.368 --> 00:00:58.408
+In einer früheren Übung hattest du einfach diese
+roll-Funktion, die das für dich erledigt hat.
+
+00:00:58.408 --> 00:01:02.207
+Du hast einfach „roll to 70“ gesagt,
+und sie hat den Ball losgerollt.
+
+00:01:03.408 --> 00:01:06.447
+Aber unter der Haube,
+wenn du diese roll-Funktion aufgerufen hast,
+
+00:01:06.528 --> 00:01:09.248
+passiert eigentlich
+genau das, was du hier siehst.
+
+00:01:10.367 --> 00:01:12.927
+Er kann nicht einfach von
+einem Punkt zum anderen rollen.
+
+00:01:13.087 --> 00:01:16.207
+Wir müssen jedes Pixel
+auf dem Bildschirm anzeigen.
+
+00:01:16.858 --> 00:01:21.257
+Jedes Mal, wenn du in einem Spiel siehst,
+dass sich etwas von A nach B bewegt,
+
+00:01:21.578 --> 00:01:26.778
+ist das immer eine Animation, bei der jeder Schritt,
+jedes Pixel festgelegt wird.
+
+00:01:26.858 --> 00:01:28.418
+Natürlich können wir Code schreiben,
+
+00:01:28.418 --> 00:01:32.537
+wie den Code, den wir in dieser
+Übung schreiben, um flüssige Animationen zu erzeugen,
+
+00:01:32.858 --> 00:01:35.257
+ohne jeden einzelnen Schritt
+von Hand schreiben zu müssen.
+
+00:01:35.737 --> 00:01:38.537
+Aber beim Animieren gehen wir
+immer diesen Weg
+
+00:01:38.537 --> 00:01:42.908
+und sagen: Wir müssen etwas
+durch all diese einzelnen Schritte bewegen,
+
+00:01:43.308 --> 00:01:45.947
+und wir können dabei
+unterschiedlich schnell sein.
+
+00:01:45.947 --> 00:01:48.587
+Du könntest dich zum Beispiel jedes Mal
+um ein halbes Pixel bewegen und dann
+
+00:01:48.587 --> 00:01:53.147
+auf 2 Pixel pro Schritt beschleunigen, damit etwas
+schneller oder langsamer wirkt.
+
+00:01:53.308 --> 00:01:56.587
+Du könntest auch mehr Pausen zwischen
+den ausgeführten Codezeilen einbauen.
+
+00:01:56.987 --> 00:02:00.587
+Aber wenn du an Animation
+in irgendeinem digitalen Format denkst,
+
+00:02:00.828 --> 00:02:03.628
+dann ist das genau die Art von Sache,
+die du eigentlich machst.
+
+00:02:04.507 --> 00:02:06.188
+Überlegen wir also, was
+wir hier erreichen wollen.
+
+00:02:06.188 --> 00:02:08.948
+Im Grunde wollen wir das machen,
+was wir in der
+
+00:02:08.948 --> 00:02:11.467
+vorherigen Übung beim
+Pflanzen der Blumen gemacht haben,
+
+00:02:11.548 --> 00:02:13.788
+als wir eine Position weitergeschoben haben.
+
+00:02:14.168 --> 00:02:17.687
+Nur schieben wir die Position diesmal
+nicht um 10 weiter wie beim letzten Mal,
+
+00:02:17.687 --> 00:02:19.768
+sondern nur
+um eins.
+
+00:02:20.967 --> 00:02:24.768
+Wir wollen dieses move to
+also ein paar Mal wiederholen.
+
+00:02:24.768 --> 00:02:27.687
+Sagen wir, wir wiederholen es
+fürs Erste 50 Mal,
+
+00:02:27.927 --> 00:02:30.967
+und wir wollen genau
+dasselbe Muster wie beim letzten Mal,
+
+00:02:30.967 --> 00:02:35.687
+also eine Variable für die Position. Sagen
+wir, sie startet vorerst bei 30.
+
+00:02:36.168 --> 00:02:40.568
+Dann wollen wir mit move to zur Position,
+und danach wollen wir
+
+00:02:40.967 --> 00:02:44.647
+die Position so ändern,
+dass sie jedes Mal um eins erhöht wird,
+
+00:02:46.568 --> 00:02:50.967
+so wie hier. Also: eine Variable setzen,
+dorthin bewegen, die Position aktualisieren,
+
+00:02:51.048 --> 00:02:52.328
+und schon bekommen wir diese Animation,
+
+00:02:53.448 --> 00:02:57.527
+wie wir sehen. Das funktioniert. Er startet
+hier, bewegt sich hierher und so weiter.
+
+00:02:58.328 --> 00:03:04.087
+Wenn wir also, wie hier, ein Golfspiel bauen,
+ist unser Ziel, den Ball vom Tee hier,
+
+00:03:04.087 --> 00:03:06.008
+wo er startet, ins Loch zu rollen.
+
+00:03:06.407 --> 00:03:08.008
+Wir wissen also, wo wir starten wollen.
+
+00:03:08.168 --> 00:03:14.087
+Die Startposition ist 28. Und wir
+wissen, dass wir eine bestimmte Anzahl
+
+00:03:14.487 --> 00:03:17.848
+Schritte bis ins Loch brauchen. Wie weit müssen wir also?
+
+00:03:18.798 --> 00:03:25.048
+Sagen wir, wir haben eine Entfernung,
+und die ist unser Ziel, also 88,
+
+00:03:25.527 --> 00:03:28.407
+minus unser Startpunkt, also 28.
+
+00:03:29.048 --> 00:03:31.608
+Und diese Entfernung können wir hier verwenden.
+
+00:03:32.328 --> 00:03:35.687
+Wir haben also eine Box
+für unsere Position.
+
+00:03:36.487 --> 00:03:38.967
+Und eine weitere Box für unsere Entfernung,
+
+00:03:40.717 --> 00:03:42.888
+und die wird auf 88 gesetzt, unser Ziel,
+
+00:03:44.008 --> 00:03:47.448
+minus die Startposition, also minus diese 28.
+
+00:03:47.927 --> 00:03:50.807
+Und dann wiederholen wir
+so oft, wie distance angibt.
+
+00:03:52.647 --> 00:03:55.527
+Das funktioniert noch nicht.
+Warum, dazu kommen wir gleich.
+
+00:03:55.687 --> 00:03:58.407
+Aber lass uns erst sicherstellen, dass wir
+verstehen, was hier passiert.
+
+00:03:58.407 --> 00:04:03.048
+Fangen wir am Anfang an. Wir haben
+eine position-Box, in der 28 liegt.
+
+00:04:03.818 --> 00:04:09.177
+Dann haben wir eine distance-Box. Zuerst
+holen wir position und nehmen 28 heraus.
+
+00:04:09.258 --> 00:04:13.698
+Für die Box, die wir gerade bauen, rechnen wir 88 minus 28.
+
+00:04:13.698 --> 00:04:19.257
+Das ergibt 60. Wir bauen eine neue Box namens
+distance und legen 60 hinein.
+
+00:04:19.257 --> 00:04:23.577
+Jetzt stehen also zwei Boxen im Regal,
+die position-Box und die distance-Box.
+
+00:04:24.218 --> 00:04:27.817
+Und wenn wir dann repeat aufrufen,
+schreiben wir hier keine Zahl hinein,
+
+00:04:28.057 --> 00:04:32.557
+sondern die Box. Und was passiert,
+wenn Jiki das sieht?
+
+00:04:32.557 --> 00:04:35.278
+Er geht los und holt die
+distance-Box aus dem Regal.
+
+00:04:35.437 --> 00:04:39.877
+Er nimmt 60 heraus und weiß,
+dass er diese Schleife 60 Mal wiederholen muss.
+
+00:04:39.877 --> 00:04:42.637
+Er prüft: Ist eins die aktuelle Zahl?
+
+00:04:42.718 --> 00:04:44.637
+Ist der aktuelle Schritt, eins, kleiner als 60?
+
+00:04:44.637 --> 00:04:48.557
+Ja, ist er. Also springt er
+hier hinein und legt los.
+
+00:04:49.598 --> 00:04:51.677
+Wir könnten das auch einfach von Hand machen.
+
+00:04:51.838 --> 00:04:55.757
+Wir könnten einfach „repeat 60 times“ schreiben,
+so wie du es vielleicht gemacht hast.
+
+00:04:57.038 --> 00:05:02.798
+Oder wir machen es auf diese etwas
+fortgeschrittenere Art und verwenden Wörter,
+
+00:05:02.798 --> 00:05:06.158
+also Boxen, damit unser Code
+ein bisschen deutlicher wird.
+
+00:05:06.158 --> 00:05:10.398
+Statt dieser magischen 60, bei der wir
+vielleicht nicht wissen, woher sie kommt
+
+00:05:11.117 --> 00:05:13.598
+und wohin sie führt, haben wir jetzt eine Variable.
+
+00:05:13.598 --> 00:05:17.997
+Und wir können noch eine Variable setzen,
+wenn wir wollen, eine Variable flag für die Fahne,
+
+00:05:18.077 --> 00:05:22.557
+also 88. Und jetzt ist die Entfernung
+Fahne minus Position.
+
+00:05:24.327 --> 00:05:26.447
+Es gibt noch eine Sache,
+bevor wir weitermachen,
+
+00:05:26.447 --> 00:05:32.048
+die du wirklich verstehen sollst,
+nämlich dass jedes Mal, wenn wir …
+
+00:05:32.048 --> 00:05:36.088
+Erinnerst du dich an diesen orangefarbenen
+Punkt von vorhin? Jedes Mal, wenn wir zu dieser Zeile kommen
+
+00:05:36.487 --> 00:05:42.088
+und Jiki distance aus dem Regal holt,
+ist der Wert immer noch 60.
+
+00:05:43.767 --> 00:05:49.848
+Das ist wirklich wichtig. Nur weil
+Jiki hier die position-Box aktualisiert hat,
+
+00:05:50.867 --> 00:05:53.187
+ändert sich die distance-Box nicht.
+
+00:05:54.067 --> 00:05:56.387
+Die beiden hängen nicht auf magische Weise zusammen.
+
+00:05:56.788 --> 00:05:59.108
+Es ist nicht wie in Mathe,
+wo man zum Beispiel
+
+00:05:59.827 --> 00:06:02.307
+Gleichungen hat, in denen Dinge
+miteinander zusammenhängen.
+
+00:06:03.108 --> 00:06:07.427
+position ist eine eigene Box.
+In ihr liegt jetzt 39.
+
+00:06:07.507 --> 00:06:10.507
+Wenn wir ein paar Schritte weitergehen,
+liegt 40 darin.
+
+00:06:10.507 --> 00:06:13.507
+Gehen wir noch ein paar weiter,
+liegt 41 darin.
+
+00:06:13.588 --> 00:06:16.548
+Der Inhalt dieser position-Box
+ändert sich also.
+
+00:06:17.197 --> 00:06:21.117
+Aber die distance-Box? Nirgendwo
+in diesem Code sagen wir:
+
+00:06:21.437 --> 00:06:23.278
+„Ändere den Inhalt der distance-Box.“
+
+00:06:23.437 --> 00:06:26.158
+Wir bauen die distance-Box nur ein einziges Mal, hier
+
+00:06:27.437 --> 00:06:33.197
+in dieser Zeile. Wir legen diesen Wert hinein,
+wir legen 60 in diese Box, und das war's.
+
+00:06:33.197 --> 00:06:35.038
+Wir ändern nie, was in dieser Box liegt.
+
+00:06:35.437 --> 00:06:39.197
+Auch wenn wir also ganz oft in die Box
+schauen, bei jeder Wiederholung,
+
+00:06:39.197 --> 00:06:40.237
+schauen wir in die Box,
+
+00:06:41.117 --> 00:06:43.197
+aber wir ändern nie, was darin liegt.
+
+00:06:44.257 --> 00:06:46.737
+Sorg also dafür, dass dir
+das wirklich klar ist.
+
+00:06:49.377 --> 00:06:52.577
+Okay. Das ergibt alles Sinn.
+Warum funktioniert der Code nicht?
+
+00:06:53.617 --> 00:06:57.098
+Warum funktioniert der Code nicht? Genau
+hier bleiben, glaube ich, manche hängen.
+
+00:06:57.098 --> 00:07:00.697
+Sie schreiben so etwas hier. Sie
+wissen nicht, warum es nicht funktioniert.
+
+00:07:00.697 --> 00:07:05.377
+Am Ende ändern sie dann diese
+27, um es irgendwie hinzubekommen.
+
+00:07:05.458 --> 00:07:07.737
+Und dann funktioniert vielleicht
+nichts von dem anderen Kram mehr.
+
+00:07:07.737 --> 00:07:10.627
+Sie müssen das hier machen,
+und es wird sehr chaotisch.
+
+00:07:10.627 --> 00:07:12.987
+Statt das zu tun,
+halten wir an, werden langsamer
+
+00:07:12.987 --> 00:07:15.427
+und überlegen, warum
+dieser Code nicht funktioniert.
+
+00:07:15.827 --> 00:07:18.108
+Lies also den Code. Warum funktioniert er nicht?
+
+00:07:18.108 --> 00:07:21.028
+Warum kommt der Ball nicht
+dort an, wo er hin muss?
+
+00:07:21.028 --> 00:07:24.387
+Er kommt bis 87, aber nicht bis 88.
+
+00:07:26.468 --> 00:07:28.788
+Dafür gibt es zwei mögliche Gründe.
+
+00:07:29.668 --> 00:07:33.108
+Vielleicht stimmt
+die Anzahl der Wiederholungen nicht.
+
+00:07:33.747 --> 00:07:36.548
+Wenn wir distance plus eins Mal wiederholen würden,
+
+00:07:37.528 --> 00:07:38.968
+kämen wir jetzt an unser Ziel.
+
+00:07:39.127 --> 00:07:41.608
+Aber das fühlt sich
+wirklich seltsam an. Warum sollten wir das tun?
+
+00:07:43.848 --> 00:07:45.367
+Der andere Grund könnte sein:
+
+00:07:46.487 --> 00:07:48.408
+Wohin haben wir den Ball eigentlich bewegt?
+
+00:07:48.728 --> 00:07:50.327
+Springen wir also hier rüber,
+
+00:07:51.208 --> 00:07:55.848
+führen unseren Code aus und gehen ganz
+zurück an den Anfang, hierher.
+
+00:07:56.327 --> 00:08:01.767
+Beim ersten Aufruf von move to
+rufen wir es mit der Position 28 auf.
+
+00:08:02.497 --> 00:08:04.497
+Hier siehst du: position ist 28.
+
+00:08:04.817 --> 00:08:09.778
+Wir verwenden move to 28,
+aber der Ball war schon bei 28.
+
+00:08:10.257 --> 00:08:13.377
+Der Ball ist also bei 28, und wir bewegen ihn zu 28.
+
+00:08:13.697 --> 00:08:17.778
+Und wenn wir dann ganz bis ans Ende
+gehen und schauen, wohin wir ihn bewegen,
+
+00:08:18.257 --> 00:08:20.658
+ist die allerletzte Stelle 87.
+
+00:08:21.137 --> 00:08:27.517
+Wir bewegen ihn also zu 28, wo er startet,
+machen das 60 Mal und landen dann
+
+00:08:28.288 --> 00:08:29.247
+ein Feld zu kurz.
+
+00:08:30.208 --> 00:08:32.048
+Erinnerst du dich, dass ich im
+letzten Deep-Dive-Video gesagt habe,
+
+00:08:32.368 --> 00:08:37.967
+dass es manchmal wirklich darauf ankommt,
+ob wir Dinge in dieser Reihenfolge machen
+
+00:08:38.368 --> 00:08:42.207
+oder andersherum? Das hier ist ein
+Beispiel, wo genau das der Fall ist.
+
+00:08:43.008 --> 00:08:47.168
+Wir haben die Position schon gesetzt,
+weil der Ball dort startet.
+
+00:08:47.327 --> 00:08:52.288
+Wenn wir zum Beispiel diesen ganzen Code löschen,
+steht der Ball bei 28 auf dem Tee.
+
+00:08:52.288 --> 00:08:53.168
+Er ist schon da.
+
+00:08:54.077 --> 00:08:58.638
+Wenn wir den Ball also zum ersten Mal
+bewegen, wollen wir ihn zu 29 bewegen.
+
+00:08:59.278 --> 00:09:02.158
+Wir könnten das hier auf 29 setzen und dann das hier machen,
+
+00:09:03.197 --> 00:09:07.758
+aber dann stimmt diese Entfernung nicht mehr,
+und unser Code ist einfach nicht mehr wahr, weil
+
+00:09:08.317 --> 00:09:12.878
+der Ball hier nicht bei 29 ist. Der
+Ball ist bei 28, oben auf dem Tee.
+
+00:09:14.317 --> 00:09:16.518
+Wir müssen also innerhalb dieser Schleife
+
+00:09:16.518 --> 00:09:20.857
+zuerst die Position aktualisieren, bevor
+wir den Ball animieren und dorthin bewegen.
+
+00:09:21.327 --> 00:09:22.288
+Und wenn wir das machen,
+
+00:09:24.927 --> 00:09:26.528
+mit der richtigen Zahl hier wieder eingesetzt,
+
+00:09:26.607 --> 00:09:28.927
+wenn wir das machen, funktioniert der Code.
+
+00:09:30.447 --> 00:09:33.567
+Fassen wir kurz zusammen,
+was wir hier haben.
+
+00:09:34.128 --> 00:09:38.368
+Wir haben ein paar Variablen gesetzt. Die
+Startposition des Balls, wo er auf dem Tee liegt,
+
+00:09:38.528 --> 00:09:41.447
+28,
+die Zahl, die wir bekommen. Dann die Fahne.
+
+00:09:41.447 --> 00:09:44.528
+Wo ist die Fahne? Bei 88,
+der Zahl, die wir bekommen.
+
+00:09:45.408 --> 00:09:47.648
+Wie weit müssen wir? Nun,
+wir müssen
+
+00:09:48.697 --> 00:09:51.658
+von der Position bis zur Fahne,
+also Fahne minus Position.
+
+00:09:52.538 --> 00:09:56.298
+So oft wiederholen wir.
+Und bei jeder Wiederholung
+
+00:09:56.298 --> 00:09:58.538
+müssen wir den Ball
+einen Schritt weiterbewegen und dann
+
+00:09:58.538 --> 00:10:01.097
+die Bewegung zu diesem Schritt animieren.
+
+00:10:03.258 --> 00:10:07.418
+Für viele wirkt das wie eine ziemlich
+einfache Übung.
+
+00:10:07.977 --> 00:10:11.697
+Aber tatsächlich gibt es viele Stellen,
+an denen man ziemlich hängen bleiben kann,
+
+00:10:11.697 --> 00:10:13.658
+und ich finde, viele
+Stellen, an denen man einfach
+
+00:10:13.658 --> 00:10:16.097
+anfängt, an Zahlen herumzuschrauben,
+statt tatsächlich
+
+00:10:16.097 --> 00:10:18.618
+langsamer zu machen und wirklich
+darüber nachzudenken, was passiert.
+
+00:10:19.378 --> 00:10:22.018
+Ich hoffe, du siehst in diesem Video,
+wie wertvoll es ist,
+
+00:10:22.018 --> 00:10:24.937
+diese Variablen zu setzen,
+und wie wir die
+
+00:10:24.937 --> 00:10:28.738
+Zahlen aus diesen Befehlen herausnehmen und
+sie hier als etwas solidere,
+
+00:10:28.977 --> 00:10:34.177
+solide Daten ablegen können. Beim Programmieren
+gibt es den Begriff „magische Zahlen“.
+
+00:10:34.177 --> 00:10:37.498
+Eine magische Zahl ist, wenn du
+einfach eine Zahl in deinem Code stehen hast.
+
+00:10:37.498 --> 00:10:39.298
+Zum Beispiel, wenn hier einfach diese 60 steht
+
+00:10:40.258 --> 00:10:44.018
+und wir nicht wissen, was diese Zahl bedeutet,
+aber sie irgendwie dafür sorgt, dass der Code läuft.
+
+00:10:44.837 --> 00:10:48.197
+Wann immer du so etwas hast, ist das ein
+wirklich gefährlicher, wir nennen das einen Smell,
+
+00:10:48.197 --> 00:10:51.477
+einen Code Smell. Es ist wirklich
+gefährlich, so etwas zu haben,
+
+00:10:52.197 --> 00:10:55.557
+weil du nicht wirklich weißt,
+was diese 60 macht.
+
+00:10:55.557 --> 00:10:57.317
+Jemand anders, der den Code liest,
+
+00:10:57.317 --> 00:10:59.638
+weiß auch nicht so recht,
+was diese 60 macht.
+
+00:11:00.597 --> 00:11:03.638
+Es ist viel besser,
+Variablen mit Bedeutung zu verwenden.
+
+00:11:04.038 --> 00:11:04.437
+Also,
+
+00:11:05.238 --> 00:11:08.878
+wir könnten das hier sogar Ballposition
+nennen und das hier
+
+00:11:08.878 --> 00:11:09.238
+Fahnenposition.
+
+00:11:10.607 --> 00:11:13.168
+Dann wird das hier zur Ballposition,
+das hier zur Fahnenposition.
+
+00:11:13.567 --> 00:11:15.648
+Und wir wollen die Ballposition verändern.
+
+00:11:16.927 --> 00:11:19.648
+Plötzlich ist wirklich klar,
+was diese Zahlen sind.
+
+00:11:20.048 --> 00:11:21.847
+Es ist ganz klar,
+dass wir den Ball bewegen.
+
+00:11:21.847 --> 00:11:24.368
+Der Code fängt an, für sich selbst zu sprechen.
+
+00:11:25.457 --> 00:11:29.807
+Wenn du also bei dieser Übung hängen geblieben bist,
+siehst du jetzt hoffentlich, warum.
+
+00:11:29.807 --> 00:11:33.168
+Es gibt viele, viele
+Möglichkeiten, sich festzufahren.
+
+00:11:33.168 --> 00:11:36.447
+Viele knifflige Stellen. Und wenn
+du es beim ersten Mal geschafft hast,
+
+00:11:36.447 --> 00:11:38.437
+richtig gut gemacht. Glückwunsch!
+
+00:11:38.477 --> 00:11:42.018
+Ich hoffe, das hat dich auch ein bisschen
+zum Nachdenken gebracht und
+
+00:11:42.717 --> 00:11:46.677
+manche Vorstellungen infrage gestellt,
+mit denen du in diese Übung gegangen bist.
+
+00:11:47.357 --> 00:11:50.638
+Viel Erfolg bei der nächsten,
+und ich freue mich darauf,
+
+00:11:50.638 --> 00:11:51.998
+dich im nächsten Deep-Dive-Video zu sehen.
+
+00:11:51.998 --> 00:11:52.837
+Danke fürs Zuschauen.

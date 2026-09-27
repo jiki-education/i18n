@@ -1,75 +1,76 @@
 {
   "checks": {
-    "moreThanOneLine": "�"
+    "moreThanOneLine": "你在函式裡用了超過一行的程式碼。",
+    "moreThanOneFunction": "你能只用一個函式解決這個練習嗎？"
   },
   "tasks": {
     "determineLeapYear": {
-      "name": "�",
-      "description": "�"
+      "name": "判斷年份是不是閏年",
+      "description": "寫一個叫做`isLeapYear`的函式，它接收一個年份作為輸入，如果這個年份是閏年就回傳`true`，不是的話就回傳`false`。"
     },
     "solveInOneLine": {
-      "name": "�",
-      "description": "�"
+      "name": "用一行程式碼解決",
+      "description": "你能不能在這個函式裡只用一行程式碼解決呢？"
     }
   },
   "scenarios": {
     "year2015": {
-      "name": "�",
-      "description": "�"
+      "name": "2015 年",
+      "description": "2015 不能被 4 整除，所以不是閏年。"
     },
     "year1970": {
-      "name": "�",
-      "description": "�"
+      "name": "1970 年",
+      "description": "1970 不能被 4 整除，所以不是閏年。"
     },
     "year2100": {
-      "name": "�",
-      "description": "�"
+      "name": "2100 年",
+      "description": "2100 能被 100 整除，但不能被 400 整除，所以不是閏年。"
     },
     "year1900": {
-      "name": "�",
-      "description": "�"
+      "name": "1900 年",
+      "description": "1900 能被 100 整除，但不能被 400 整除，所以不是閏年。"
     },
     "year1800": {
-      "name": "�",
-      "description": "�"
+      "name": "1800 年",
+      "description": "1800 能被 100 整除，但不能被 400 整除，所以不是閏年。"
     },
     "year2000": {
-      "name": "�",
-      "description": "�"
+      "name": "2000 年",
+      "description": "2000 能被 400 整除，所以是閏年。"
     },
     "year2400": {
-      "name": "�",
-      "description": "�"
+      "name": "2400 年",
+      "description": "2400 能被 400 整除，所以是閏年。"
     },
     "year1996": {
-      "name": "�",
-      "description": "�"
+      "name": "1996 年",
+      "description": "1996 能被 4 整除，但不能被 100 整除，所以是閏年。"
     },
     "year1960": {
-      "name": "�",
-      "description": "�"
+      "name": "1960 年",
+      "description": "1960 能被 4 整除，但不能被 100 整除，所以是閏年。"
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "一行程式碼",
+      "description": "在函式裡只用一行程式碼完成這個練習。"
     }
   },
   "hints": {
     "basicRule": {
-      "question": "�",
-      "answer": "�"
+      "question": "閏年的基本規則是什麼？",
+      "answer": "能被 4 整除的年份就是閏年。所以`year % 4 === 0`是判斷的起點。"
     },
     "exceptions": {
-      "question": "�",
-      "answer": "�"
+      "question": "有例外的情況嗎？",
+      "answer": "有的。能被 100 整除的年份並不是閏年，雖然它們也能被 4 整除。例如 1900 年就不是閏年。"
     },
     "exceptionsToExceptions": {
-      "question": "�",
-      "answer": "�"
+      "question": "例外也有例外嗎？",
+      "answer": "有的。能被 400 整除的年份還是閏年。例如 2000 年就是。所以規則是一層一層的：能被 4 整除，但不能被 100 整除，除非同時也能被 400 整除。"
     },
     "checkDivisibility": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼判斷能不能整除？",
+      "answer": "用餘數運算子`%`。當年份能被 4 整除、沒有剩下任何餘數時，`year % 4 === 0`就會成立。判斷 100 和 400 時也一樣。"
     }
   }
 }

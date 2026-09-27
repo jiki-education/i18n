@@ -1,65 +1,65 @@
 {
   "tasks": {
     "countChancersInQueue": {
-      "name": "�",
-      "description": "�"
+      "name": "數一數想碰運氣混進來的人",
+      "description": "寫一個函式，接收隊伍和賓客名單，回傳有多少排隊的人不在賓客名單上。"
     },
     "solveTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "用 9 行解決",
+      "description": "加分題：這題其實可以寫得比你想像中精簡很多。試試看能不能用 9 行程式碼以內解決。"
     }
   },
   "scenarios": {
     "emptyQueue": {
-      "name": "�",
-      "description": "�"
+      "name": "還沒有人來",
+      "description": "隊伍空空的，沒有人等著進場。"
     },
     "everyoneChancingIt": {
-      "name": "�",
-      "description": "�"
+      "name": "整條隊伍都想碰運氣",
+      "description": "隊伍裡排隊的人全都不在賓客名單上。"
     },
     "everyoneInvited": {
-      "name": "�",
-      "description": "�"
+      "name": "大家都在名單上",
+      "description": "隊伍裡每個排隊的人都在賓客名單上。"
     },
     "mixedQueue": {
-      "name": "�",
-      "description": "�"
+      "name": "混合的隊伍",
+      "description": "隊伍裡有些人受邀，有些人沒有。其中一個想碰運氣混進來的人，名字和名單上的某個名字很像。"
     },
     "guestsWhoHaventArrived": {
-      "name": "�",
-      "description": "�"
+      "name": "還塞在路上的賓客",
+      "description": "賓客名單上有很多名字，但大部分的人都還沒走到隊伍這裡。"
     },
     "longQueueShortList": {
-      "name": "�",
-      "description": "�"
+      "name": "長長的隊伍，短短的名單",
+      "description": "門口大排長龍，但賓客名單上只有兩三個名字。"
     },
     "guestListBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "乾淨俐落：混合的隊伍",
+      "description": "和前面一樣的混合隊伍，不過這次試試看能不能用 9 行程式碼以內解決。"
     }
   },
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "繼續加油！看看能不能縮到 9 行程式碼。"
   },
   "hints": {
     "keepingTrack": {
-      "question": "�",
-      "answer": "�"
+      "question": "我一路看下來，需要記住什麼？",
+      "answer": "答案是一個數字，而且在你把所有人都看過一遍之前，你不會知道它是多少。所以問自己兩件事：在你還沒看任何人之前，這個數字應該是多少？當發現某個人**不**在名單上時，這個數字又該怎麼變？"
     },
     "whichList": {
-      "question": "�",
-      "answer": "�"
+      "question": "這裡有兩個陣列。我該一個個走過的是哪一個？",
+      "answer": "想想看，答案數的是什麼。它數的是**隊伍裡**的人，所以你要一個個走過的，是隊伍。賓客名單不是讓你走過去的東西，而是你拿每個人去比對的依據。"
     },
     "realLifeBouncer": {
-      "question": "�",
-      "answer": "�"
+      "question": "真正的保鑣拿著點名板會怎麼做？",
+      "answer": "想像他們站在隊伍最前面，一手拿著點名板，一個個往後查。等到最後一個人查完了，才會喊出最後的數字。他們一路上對每個人做了什麼？對那些名字找不到的人又做了什麼？"
     }
   },
   "functions": {
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "檢查陣列裡是否包含某個元素",
+      "category": "陣列操作"
     }
   }
 }

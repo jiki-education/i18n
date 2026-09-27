@@ -1,0 +1,94 @@
+{
+  "tasks": {
+    "basicWordCounting": {
+      "name": "Einfache Fälle",
+      "description": "Schreibe eine Funktion countWords, die einen Satz als Eingabewert entgegennimmt und ein Wörterbuch zurückgibt, in dem die Wörter die Schlüssel und ihre Häufigkeiten die Werte sind. Behandle Leerzeichen, Kommas, Satzzeichen und Zahlen."
+    },
+    "caseNormalization": {
+      "name": "Groß- und Kleinschreibung vereinheitlichen",
+      "description": "Stelle sicher, dass deine Funktion Wörter mit gemischter Groß- und Kleinschreibung richtig behandelt, Apostrophe als Teil von Wörtern ansieht und mehrere Leerzeichen hintereinander verarbeitet."
+    },
+    "bonusApostrophes": {
+      "name": "Bonus: Apostrophe und Anführungszeichen",
+      "description": "Kümmere dich um Randfälle, in denen Apostrophe als Anführungszeichen um Wörter herum stehen und nicht als Teil von Kurzformen. Nur Apostrophe in der Mitte eines Wortes sollen erhalten bleiben."
+    }
+  },
+  "scenarios": {
+    "wordCountSingleWord": {
+      "name": "Ein einzelnes Wort zählen",
+      "description": "Zähle ein einzelnes Wort."
+    },
+    "wordCountMultipleUniqueWords": {
+      "name": "Jedes Wort einmal zählen",
+      "description": "Zähle jedes Wort in einem Satz einmal."
+    },
+    "wordCountMultipleOccurrences": {
+      "name": "Mehrere Vorkommen",
+      "description": "Zähle mehrere Vorkommen eines Wortes."
+    },
+    "wordCountCrampedList": {
+      "name": "Gedrängte Liste",
+      "description": "Verarbeite Listen mit gedrängter Formatierung."
+    },
+    "wordCountIgnorePunctuation": {
+      "name": "Satzzeichen ignorieren",
+      "description": "Ignoriere Satzzeichen beim Zählen der Wörter."
+    },
+    "wordCountIncludeNumbers": {
+      "name": "Zahlen mitzählen",
+      "description": "Zähle Wörter und berücksichtige dabei Zahlen."
+    },
+    "wordCountNormalizeCase": {
+      "name": "Groß- und Kleinschreibung vereinheitlichen",
+      "description": "Zähle Wörter unabhängig von der Groß- und Kleinschreibung."
+    },
+    "wordCountWithApostrophes": {
+      "name": "Wörter mit Apostrophen",
+      "description": "Behandle Wörter mit Apostrophen richtig."
+    },
+    "wordCountMultipleSpaces": {
+      "name": "Mehrere Leerzeichen",
+      "description": "Behandle mehrere Leerzeichen richtig."
+    },
+    "wordCountWithApostrophesAndQuotations": {
+      "name": "Wörter mit Apostrophen und Anführungszeichen",
+      "description": "Behandle Wörter mit Apostrophen und Anführungszeichen."
+    },
+    "wordCountApostropheWordVariation": {
+      "name": "Variationen von Wörtern mit Apostroph",
+      "description": "Zähle Variationen von Wörtern mit Apostrophen richtig."
+    }
+  },
+  "hints": {
+    "caseInsensitive": {
+      "question": "Wie zähle ich Wörter unabhängig von der Groß- und Kleinschreibung?",
+      "answer": "Wandle den ganzen Satz am Anfang einmal in Kleinbuchstaben um. Dann werden aus „The“ und „the“ beide „the“, und dein Wörterbuch zählt sie zusammen."
+    },
+    "splitWords": {
+      "question": "Wie zerlege ich den Satz in Wörter?",
+      "answer": "Gehe die Zeichen einzeln durch. Wenn ein Zeichen ein Buchstabe, eine Ziffer oder ein Apostroph ist, gehört es zum aktuellen Wort, also hängst du es an. Andernfalls (Leerzeichen, Satzzeichen) ist das Wort zu Ende: Dann fügst du es deiner Wortliste hinzu und fängst von vorne an."
+    },
+    "countEachWord": {
+      "question": "Wie zähle ich jedes Wort?",
+      "answer": "Nutze ein Wörterbuch, in dem die Wörter die Schlüssel sind. Prüfe für jedes Wort, ob es schon als Schlüssel existiert. Wenn ja, zählst du 1 zu seinem Zähler hinzu. Wenn nein, setzt du ihn auf 1."
+    },
+    "checkKeyExists": {
+      "question": "Wie prüfe ich, ob ein Schlüssel schon existiert?",
+      "answer": "Nutze `hasKey(dict, word)`. Die Funktion gibt wahr zurück, wenn dieses Wort schon im Wörterbuch steht."
+    }
+  },
+  "functions": {
+    "toLowerCase": {
+      "description": "Wandelt einen String in Kleinbuchstaben um",
+      "category": "String-Operationen"
+    },
+    "push": {
+      "description": "Hängt ein Element an das Ende eines Arrays an und verändert das Array dabei direkt.",
+      "category": "Array-Operationen"
+    },
+    "hasKey": {
+      "description": "Prüft, ob ein Schlüssel in einem Wörterbuch existiert, und gibt wahr oder falsch zurück",
+      "category": "Wörterbuch-Operationen"
+    }
+  }
+}

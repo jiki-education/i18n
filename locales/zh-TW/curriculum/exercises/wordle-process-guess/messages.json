@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "rowMismatch": "第 {{square}} 格的「{{letter}}」應該是「{{expected}}」，而不是「{{actual}}」。",
+    "rowNotColored": "這一列沒有上色。",
+    "rowWrongLength": "這一列拿到了 {{actual}} 個狀態，但一列需要 {{expected}} 個。"
+  },
+  "tasks": {
+    "processGuess": {
+      "name": "處理一次猜測",
+      "description": "建立一個叫做 processGuess 的函式，它接收一個目標單字和一次猜測，判斷每個字母的狀態（correct、present 或 absent），然後用結果呼叫 colorRow(1, states)。"
+    }
+  },
+  "scenarios": {
+    "allCorrect": {
+      "name": "全部正確",
+      "description": "處理完全正確的猜測"
+    },
+    "absent": {
+      "name": "有些字母不在單字裡",
+      "description": "處理有些字母不對的情況"
+    },
+    "present": {
+      "name": "有些字母在單字裡",
+      "description": "處理位置不對的字母"
+    },
+    "complex": {
+      "name": "複雜情況",
+      "description": "處理更複雜的情況"
+    },
+    "differentWord": {
+      "name": "不同的單字",
+      "description": "最後再試一個不同的單字！"
+    }
+  },
+  "hints": {
+    "compareLetters": {
+      "question": "我要怎麼把猜測裡的每個字母跟目標單字比較？",
+      "answer": "用迴圈依序走過位置`0`到`4`。每個位置都拿`guess[i]`和`target[i]`比較。"
+    },
+    "stateRules": {
+      "question": "字母什麼時候是`\"correct\"`、什麼時候是`\"present\"`、什麼時候是`\"absent\"`？",
+      "answer": "在這個練習的簡化規則下：如果`guess[i]`等於`target[i]`，就是`\"correct\"`。否則，如果這個字母有出現在`target`裡，就是`\"present\"`。如果都沒有，就是`\"absent\"`。"
+    },
+    "buildList": {
+      "question": "我要怎麼組出狀態的陣列？",
+      "answer": "先建立一個空陣列，然後在迴圈裡用`states.push(value)`，把每個狀態依序加到最後面。"
+    },
+    "finishedList": {
+      "question": "組好的陣列要放到哪裡？",
+      "answer": "把它傳給`colorRow(1, states)`，用你算出來的狀態替 Wordle 盤面的第一列上色。"
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "用指定的狀態替 Wordle 盤面上的一列上色。",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "把一個元素加到陣列的最後面，並直接改變原本的陣列。",
+      "category": "陣列"
+    },
+    "includes": {
+      "description": "檢查一個字串是否包含另一個字串，並回傳 true 或 false。",
+      "category": "字串"
+    }
+  },
+  "describers": {
+    "colorRow": "替 Wordle 盤面上的一列上色"
+  }
+}

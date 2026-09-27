@@ -1,54 +1,54 @@
 {
   "tasks": {
     "encodeMessage": {
-      "name": "�",
-      "description": "�"
+      "name": "編碼一則訊息",
+      "description": "寫一個`encode`函式，把訊息裡的每個字母位移指定的位移量。空格要保持為空格。位移超過「z」的字母，要繞回字母表的開頭。"
     }
   },
   "scenarios": {
     "caesarSimpleShift": {
-      "name": "�",
-      "description": "�"
+      "name": "簡單位移 1 格",
+      "description": "把每個字母往後位移 1 格：a 變成 b、b 變成 c、c 變成 d。"
     },
     "caesarShiftBy3": {
-      "name": "�",
-      "description": "�"
+      "name": "位移 3 格",
+      "description": "把每個字母往後位移 3 格：h 變成 k、e 變成 h、l 變成 o、o 變成 r。"
     },
     "caesarWrapAround": {
-      "name": "�",
-      "description": "�"
+      "name": "繞回字母表的開頭",
+      "description": "當位移超過「z」時，就會繞回開頭：x 變成 a、y 變成 b、z 變成 c。"
     },
     "caesarWithSpaces": {
-      "name": "�",
-      "description": "�"
+      "name": "含有空格的訊息",
+      "description": "空格要保持為空格，只有字母會位移。"
     },
     "caesarRot13": {
-      "name": "�",
-      "description": "�"
+      "name": "ROT13 加密",
+      "description": "ROT13 是凱撒密碼位移 13 格的特例。"
     }
   },
   "hints": {
     "shiftingLetterByN": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼理解「把一個字母位移 N 個位置」呢？",
+      "answer": "每個字母在字母表上都有一個位置（a 在位置 0，b 在位置 1，依此類推）。要位移時，先找出這個位置，加上位移量，再把新的位置拿去字母表裡查，變回對應的字母。"
     },
     "letterPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼找出一個字母在字母表裡的位置呢？",
+      "answer": "你可以用`indexOf`在字串裡搜尋比較小的一段。對字母表字串呼叫它，就會得到這個字母的位置；如果找不到這個字母，就會得到 -1。反過來，也可以用位置去索引字母表字串，取出對應的字母。"
     },
     "wrapPastZ": {
-      "question": "�",
-      "answer": "�"
+      "question": "位移超過「z」的時候會怎麼樣呢？",
+      "answer": "它得繞回「a」。取餘數運算子（`%`）正好適合這件事。把位置對 26 取餘數，就能把任何數字帶回 0 到 25 的範圍。"
     },
     "applyToWholeMessage": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼把這個做法套用到整則訊息呢？",
+      "answer": "用迴圈逐一走過訊息裡的每個字元，用你的單字母輔助函式來位移，再用串接（`+`）把位移後的字母組成結果字串。"
     }
   },
   "functions": {
     "indexOf": {
-      "description": "�",
-      "category": "�"
+      "description": "找出較小的字串在另一個字串裡的位置；如果找不到，就回傳 -1",
+      "category": "字串操作"
     }
   }
 }

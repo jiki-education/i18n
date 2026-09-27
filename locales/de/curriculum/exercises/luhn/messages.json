@@ -1,117 +1,117 @@
 {
   "tasks": {
     "doubleAndSum": {
-      "name": "�",
-      "description": "�"
+      "name": "Jede zweite Ziffer verdoppeln und addieren",
+      "description": "Schreibe eine Funktion namens `valid`, die Leerzeichen ignoriert, dann jede zweite Ziffer von rechts gezählt verdoppelt (bei einem Ergebnis über 9 ziehe 9 ab), alle Ziffern addiert und `true` zurückgibt, wenn die Summe durch 10 teilbar ist."
     },
     "spotInvalidNumbers": {
-      "name": "�",
-      "description": "�"
+      "name": "Ungültige Nummern erkennen",
+      "description": "Nummern, deren Ziffern alle gültig sind, deren Prüfsumme aber nicht durch 10 teilbar ist, sollen `false` zurückgeben."
     },
     "rejectBadInput": {
-      "name": "�",
-      "description": "�"
+      "name": "Ungültige Eingaben ablehnen",
+      "description": "Lehne Strings ab, die nur ein einzelnes Zeichen lang oder kürzer sind, und lehne jeden String ab, der ein Zeichen enthält, das keine Ziffer und kein Leerzeichen ist."
     }
   },
   "scenarios": {
     "luhnSimpleValid": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine einfache gültige Nummer",
+      "description": "Eine gültige Nummer soll `true` zurückgeben."
     },
     "luhnValidTwoDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "Gültige zweistellige Nummer",
+      "description": "Eine gültige zweistellige Nummer soll `true` zurückgeben."
     },
     "luhnValidCanadianSin": {
-      "name": "�",
-      "description": "�"
+      "name": "Gültige kanadische SIN",
+      "description": "Eine gültige Nummer mit Leerzeichen soll `true` zurückgeben."
     },
     "luhnValidEvenDigits": {
-      "name": "�",
-      "description": "�"
+      "name": "Gültige Nummer mit einer geraden Anzahl an Ziffern",
+      "description": "Eine gültige Nummer mit einer geraden Anzahl an Ziffern soll `true` zurückgeben."
     },
     "luhnValidVeryLong": {
-      "name": "�",
-      "description": "�"
+      "name": "Sehr lange Nummer",
+      "description": "Eine sehr lange gültige Nummer soll trotzdem `true` zurückgeben."
     },
     "luhnInvalidCanadianSin": {
-      "name": "�",
-      "description": "�"
+      "name": "Ungültige kanadische SIN",
+      "description": "Eine Nummer, deren Prüfsumme nicht aufgeht, soll `false` zurückgeben."
     },
     "luhnInvalidCreditCard": {
-      "name": "�",
-      "description": "�"
+      "name": "Ungültige Kreditkartennummer",
+      "description": "Eine ungültige Kreditkartennummer soll `false` zurückgeben."
     },
     "luhnInvalidLongRemainderDiv5": {
-      "name": "�",
-      "description": "�"
+      "name": "Ungültige lange Nummer mit einem Rest, der durch 5 teilbar ist",
+      "description": "Eine lange Nummer, deren Summe durch 5, aber nicht durch 10 teilbar ist, soll `false` zurückgeben."
     },
     "luhnSingleDigit": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine einzelne Ziffer ist ungültig",
+      "description": "Ein String mit einer einzigen Ziffer kann niemals gültig sein."
     },
     "luhnZeroWithSpace": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine einzelne Null mit einem Leerzeichen",
+      "description": "Eine einzelne Null mit einem Leerzeichen ist ungültig, weil nach dem Ignorieren der Leerzeichen nur eine Ziffer übrig bleibt."
     },
     "luhnTrailingLetter": {
-      "name": "�",
-      "description": "�"
+      "name": "Buchstabe am Ende",
+      "description": "Eine gültige Nummer mit einem angehängten Zeichen, das keine Ziffer ist, wird ungültig."
     },
     "luhnColon": {
-      "name": "�",
-      "description": "�"
+      "name": "Doppelpunkt",
+      "description": "Ein Doppelpunkt ist eins weniger als das Zeichen '0' und darf nicht als Ziffer behandelt werden."
     },
     "luhnPercent": {
-      "name": "�",
-      "description": "�"
+      "name": "Prozentzeichen in der Mitte",
+      "description": "Ein Zeichen in der Mitte, das keine Ziffer und kein Leerzeichen ist, macht die Nummer ungültig, selbst wenn die Ziffern allein eine durch 10 teilbare Summe ergeben würden."
     }
   },
   "hints": {
     "whatIsLuhn": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie funktioniert die Luhn-Prüfung eigentlich?",
+      "answer": "Ignoriere zuerst alle Leerzeichen. Verdopple dann, bei der rechtesten Ziffer beginnend und nach links wandernd, jede zweite Ziffer. Wird ein verdoppelter Wert größer als 9, ziehe 9 davon ab. Addiere alle so entstandenen Ziffern. Wenn diese Summe ohne Rest durch 10 teilbar ist, ist die Nummer gültig."
     },
     "stripSpaces": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was mache ich mit den Leerzeichen?",
+      "answer": "Leerzeichen sind nur für die Lesbarkeit da. Überspringe sie mit `continue`, damit sie nicht als Ziffern zählen und die Positionen der echten Ziffern nicht verschieben."
     },
     "rejectNonDigits": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie lehne ich ungültige Zeichen ab?",
+      "answer": "Wenn du dir jedes Zeichen ansiehst und es ist kein Leerzeichen und auch keine der Ziffern `0123456789`, dann kannst du sofort `false` zurückgeben. Praktisch ist die Prüfung `\"0123456789\".includes(char)`."
     },
     "everySecondDigit": {
-      "question": "�",
-      "answer": "�"
+      "question": "Welche Ziffern verdopple ich?",
+      "answer": "Jede zweite. Es hilft, zuerst einen sauberen String zu bilden, der nur die Ziffern enthält, und dann mit einem Index darüberzulaufen, damit du die Position jeder Ziffer kennst."
     },
     "fromTheRight": {
-      "question": "�",
-      "answer": "�"
+      "question": "Aber ich muss von rechts zählen, nicht von links.",
+      "answer": "Wenn dein sauberer Ziffern-String die Länge `len` hat und du an Index `i` stehst (von links ab 0 gezählt), dann ist sein Abstand von rechts `len - 1 - i`. Verdopple die Ziffer immer, wenn dieser Abstand ungerade ist."
     },
     "doublingOverNine": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was passiert, wenn das Verdoppeln eine zweistellige Zahl ergibt?",
+      "answer": "Wenn die Ziffer durch das Verdoppeln größer als 9 wird, ziehe 9 davon ab. Zum Beispiel wird aus 6 durch Verdoppeln 12, und 12 - 9 = 3. (Das ergibt dasselbe, wie wenn du die beiden Ziffern von 12 addierst.)"
     },
     "finalCheck": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie lautet die abschließende Gültigkeitsprüfung?",
+      "answer": "Addiere alle Ziffern (verdoppelt oder nicht) und prüfe, ob die Summe durch 10 teilbar ist, also `total % 10 === 0`. Denk daran, auch Strings abzulehnen, die nur eine Ziffer oder weniger haben."
     }
   },
   "checks": {
-    "mustUseFor": "�"
+    "mustUseFor": "Fast geschafft! Diese Übung möchte, dass du sie mit einer `for`-Schleife löst."
   },
   "functions": {
     "number": {
-      "description": "�",
-      "category": "�"
+      "description": "Wandelt einen String, der eine Ziffer enthält, in eine Zahl um",
+      "category": "Typumwandlung"
     },
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "Prüft, ob ein String einen kleineren String enthält",
+      "category": "String-Operationen"
     },
     "length": {
-      "description": "�",
-      "category": "�"
+      "description": "Die Anzahl der Zeichen in einem String",
+      "category": "String-Operationen"
     }
   }
 }

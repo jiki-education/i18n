@@ -1,0 +1,78 @@
+{
+  "tasks": {
+    "findAnagrams": {
+      "name": "Anagramme finden",
+      "description": "Schreibe eine Funktion, die alle Anagramme eines Zielworts aus einer Liste von Möglichkeiten findet. Ein Anagramm besteht aus denselben Buchstaben in anderer Reihenfolge. Die Funktion soll Groß- und Kleinschreibung ignorieren, das Zielwort selbst ausschließen und die Ergebnisse alphabetisch sortiert zurückgeben."
+    },
+    "sortedResults": {
+      "name": "Alphabetische Sortierung",
+      "description": "Sorge dafür, dass deine Ergebnisse in alphabetischer Reihenfolge zurückgegeben werden (Bonus-Aufgabe)."
+    }
+  },
+  "scenarios": {
+    "noMatches": {
+      "name": "Keine Treffer",
+      "description": "Wenn es unter den Kandidaten keine Anagramme gibt, gib eine leere Liste zurück."
+    },
+    "twoAnagrams": {
+      "name": "Erkennt zwei Anagramme",
+      "description": "Finde zwei Anagramme in einer Liste von Kandidaten."
+    },
+    "noSubsets": {
+      "name": "Erkennt keine Teilmengen von Anagrammen",
+      "description": "Ein Anagramm muss alle Buchstaben genau einmal verwenden."
+    },
+    "singleMatch": {
+      "name": "Erkennt ein einzelnes Anagramm",
+      "description": "Finde ein einzelnes Anagramm in einer Liste."
+    },
+    "differentCase": {
+      "name": "Erkennt mehrere Anagramme mit unterschiedlicher Groß- und Kleinschreibung",
+      "description": "Anagramme sollen unabhängig von der Groß- und Kleinschreibung erkannt werden."
+    },
+    "caseInsensitive": {
+      "name": "Erkennt Anagramme unabhängig von der Groß- und Kleinschreibung",
+      "description": "Die Groß- und Kleinschreibung soll die Anagrammerkennung nicht beeinflussen."
+    },
+    "notItself": {
+      "name": "Wörter sind keine Anagramme von sich selbst (unabhängig von Groß- und Kleinschreibung)",
+      "description": "Ein Wort soll nicht als Anagramm von sich selbst gelten."
+    },
+    "otherThanItself": {
+      "name": "Andere Wörter als das Wort selbst können Anagramme sein",
+      "description": "Erkenne gültige Anagramme, aber schließe das Zielwort selbst aus."
+    },
+    "alphabeticalSorting": {
+      "name": "Ergebnisse alphabetisch sortiert",
+      "description": "Stelle sicher, dass die Anagramme in alphabetischer Reihenfolge zurückgegeben werden."
+    }
+  },
+  "hints": {
+    "howToTellAnagrams": {
+      "question": "Wie finde ich heraus, ob zwei Wörter Anagramme sind?",
+      "answer": "Zwei Wörter sind Anagramme, wenn sie genau dieselben Buchstaben enthalten, egal in welcher Reihenfolge. Am einfachsten prüfst du das im Code, indem du die Buchstaben beider Wörter sortierst. Wenn die sortierten Versionen gleich sind, sind sie Anagramme."
+    },
+    "caseTrippingUp": {
+      "question": "Warum funktionieren meine Treffer nicht, obwohl die Buchstaben stimmen?",
+      "answer": "Wahrscheinlich macht dir die Groß- und Kleinschreibung einen Strich durch die Rechnung. „Stone“ und „tones“ sollten übereinstimmen, aber sie haben unterschiedliche Großbuchstaben. Wandle alles in Kleinbuchstaben um, bevor du vergleichst."
+    },
+    "targetCountsAsItself": {
+      "question": "Zählt das Zielwort selbst als Anagramm von sich selbst?",
+      "answer": "Nein, ein Wort ist kein Anagramm von sich selbst. Filtere das Zielwort mit einem Vergleich, der Groß- und Kleinschreibung ignoriert, aus deiner Kandidatenliste heraus, denn es könnte in einer anderen Schreibweise auftauchen."
+    },
+    "collectingMatches": {
+      "question": "Wie sammle ich die Treffer?",
+      "answer": "Beginne mit einer leeren Liste und füge mit `push()` jedes Anagramm hinzu, das du findest. Vergiss nicht, dass die Ergebnisse alphabetisch sortiert sein müssen, bevor du sie zurückgibst."
+    }
+  },
+  "functions": {
+    "push": {
+      "description": "Hängt ein Element an das Ende eines Arrays an und verändert das Array direkt.",
+      "category": "Array-Operationen"
+    },
+    "sortString": {
+      "description": "Nimmt einen String und gibt seine Zeichen alphabetisch sortiert zurück",
+      "category": "String-Operationen"
+    }
+  }
+}

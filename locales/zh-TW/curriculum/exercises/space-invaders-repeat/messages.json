@@ -1,49 +1,49 @@
 {
   "describers": {
-    "move": "�"
+    "move": "把雷射砲往右移動"
   },
   "checks": {
-    "notShotAllAliens": "�",
-    "tooManyLines": "�"
+    "notShotAllAliens": "你沒有把外星人全部擊落。",
+    "tooManyLines": "你的程式碼行數太多了。試著用 repeat 迴圈讓它更短吧！"
   },
   "tasks": {
     "repeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "用 repeat 迴圈擊落所有外星人",
+      "description": "找出外星人排列位置的規律，用 repeat 迴圈在 7 行程式碼以內把它們全部消滅。"
     }
   },
   "scenarios": {
     "repeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "重複並射擊",
+      "description": "用 repeat 迴圈擊落所有外星人"
     }
   },
   "hints": {
     "avoidRepeating": {
-      "question": "�",
-      "answer": "�"
+      "question": "怎麼做才能不要一直重複寫`move()`和`shoot()`？",
+      "answer": "用`repeat`迴圈。`repeat(n) { ... }`會把同一段程式碼執行`n`次。"
     },
     "repeatingPattern": {
-      "question": "�",
-      "answer": "�"
+      "question": "外星人排列位置的規律是什麼？",
+      "answer": "你的雷射砲一開始在外星人的左邊，外星人每隔一欄出現，每一欄疊了三個。所以每一欄的規律是：`move`、`move`、`shoot`、`shoot`、`shoot`。你先移動過空白的間隔，來到外星人所在的欄，再把三排全部擊落。這一組五個步驟，就是你要重複的動作。"
     },
     "howManyTimes": {
-      "question": "�",
-      "answer": "�"
+      "question": "這個規律要重複幾次？",
+      "answer": "數一數螢幕上有幾組外星人，把那個數字當成`repeat`的引數。"
     },
     "why7Lines": {
-      "question": "�",
-      "answer": "�"
+      "question": "為什麼目標只要求寫 7 行？",
+      "answer": "`repeat`的標頭佔一行，迴圈裡五個重複的動作佔五行，結尾的大括號再一行，加起來剛好七行。所有需要的東西都放在迴圈裡面，迴圈外面什麼都不用寫。如果你寫得比七行還多，那大概代表你還沒真正用上迴圈喔。"
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "把雷射砲**往右移動一格**。如果移出螢幕右邊，你就輸了！",
+      "category": "移動"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "向上發射雷射。**只有在你上方有外星人時才射擊**，否則你會輸掉遊戲！",
+      "category": "動作"
     }
   }
 }

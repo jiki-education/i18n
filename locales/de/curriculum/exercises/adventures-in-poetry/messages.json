@@ -1,0 +1,112 @@
+{
+  "errors": {
+    "endOfPath": "Der Dichter ist über das Ende des Pfades hinausgelaufen. Etwas hätte den Lauf schon vorher stoppen sollen.",
+    "isEmojiString": "Du kannst nur prüfen, ob ein Textstück ein Emoji ist.",
+    "reciteString": "Du kannst nur ein Textstück aufsagen."
+  },
+  "checks": {
+    "notRecited": "Der Dichter hat nie etwas aufgesagt. Achte darauf, dass du <code>recite()</code> aufrufst, sobald der Lauf vorbei ist.",
+    "wrongPoem": "Der Dichter hat aufgesagt:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>aber das Gedicht sollte so lauten:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "wrongSpacing": "Der Dichter hat die richtigen Wörter in der richtigen Reihenfolge gesammelt, aber die Leerzeichen stimmen nicht. Er hat aufgesagt:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>aber das Gedicht sollte so lauten:<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "noFunctions": "Schreib deine Lösung als einen einzigen Lauf, ohne eigene Funktionen zu definieren.",
+    "reciteOnce": "Der Dichter soll das Gedicht einmal aufsagen, nachdem der Lauf beendet ist.",
+    "tooDeeplyNested": "Dein Code ist zu tief verschachtelt. Du darfst nur zwei Ebenen verwenden, also eine Schleife mit einem <code>if</code> darin, aber nichts innerhalb dieses <code>if</code>.",
+    "noAndOrNot": "In dieser Übung geht es um eine andere Art, Entscheidungen zu treffen, deshalb sind <code>&&</code> und <code>!</code> hier nicht erlaubt. <code>||</code> ist in Ordnung.",
+    "needsContinue": "Deine Lösung muss <code>continue</code> verwenden.",
+    "needsBreak": "Deine Lösung muss <code>break</code> verwenden.",
+    "tooManyLines": "Deine Lösung ist länger als nötig. Schau, ob du sie kürzer bekommst, indem du jede Art von Feld an einer Stelle behandelst."
+  },
+  "tasks": {
+    "collectThePoem": {
+      "name": "Sammle das Gedicht und sag es auf",
+      "description": "Lauf den Pfad entlang, sammle die Wörter des Gedichts, halte an der richtigen Stelle an und sag auf, was du gesammelt hast."
+    },
+    "solveTightly": {
+      "name": "Mach es kompakter",
+      "description": "Löse denselben Lauf, aber halte deinen Code dabei unter der Zeilenbegrenzung."
+    }
+  },
+  "scenarios": {
+    "hope": {
+      "name": "Ein Pfad mit Lücken",
+      "description": "Sechs Wörter, dazwischen nur Gras, und am Ende eine Zielflagge."
+    },
+    "wandered": {
+      "name": "Deko auf dem Pfad",
+      "description": "Dieselbe Idee, aber jetzt wachsen zwischen den Wörtern Pflanzen und Tiere."
+    },
+    "mists": {
+      "name": "Deko neben der Flagge",
+      "description": "Ein Blatt liegt auf dem Feld direkt vor der Zielflagge."
+    },
+    "notLost": {
+      "name": "Genau sieben Wörter",
+      "description": "Eine Zeile mit sieben Wörtern, sodass der Dichter schon vor der Flagge aufhört."
+    },
+    "hopeContinued": {
+      "name": "Ein Gedicht, das zu lang ist",
+      "description": "Auf diesem Pfad liegen mehr als sieben Wörter, sodass der Dichter mitten in der Zeile aufhört."
+    },
+    "highlands": {
+      "name": "Ein Apostroph",
+      "description": "Eine Zeile von Burns, mit einem Apostroph auf einem eigenen Feld."
+    },
+    "heartScenery": {
+      "name": "Deko nach einem Apostroph",
+      "description": "Ein Pilz wächst zwischen dem Apostroph und dem Wort, an das er sich anschließt, sodass das, was sich die Leerzeichen merkt, ein übersprungenes Feld überstehen muss."
+    },
+    "tyger": {
+      "name": "Ein Komma",
+      "description": "Eine Zeile von Blake, mit einem Komma auf einem eigenen Feld."
+    },
+    "pleure": {
+      "name": "Kahles Gras am Anfang",
+      "description": "Eine Zeile von Verlaine, mit ein paar leeren Feldern, bevor das Gedicht beginnt."
+    },
+    "yasegaeru": {
+      "name": "Eine Zeile von Issa",
+      "description": "Sieben Wörter Haiku, mit einer Zeilenbegrenzung, damit deine Abfragen knapp bleiben. Findest du eine saubere Lösung, die nur 32 Zeilen lang ist? (Oder kürzer?)"
+    }
+  },
+  "hints": {
+    "scenery": {
+      "question": "Die Pflanzen und Tiere landen in meinem Gedicht.",
+      "answer": "Nur Wörter gehören ins Gedicht. Alles andere auf dem Pfad muss liegen bleiben, das heißt, deine Schleife muss zum nächsten Feld kommen, ohne etwas hinzuzufügen."
+    },
+    "flagSkipped": {
+      "question": "Mein Dichter hört nie auf zu laufen.",
+      "answer": "Die Zielflagge ist auch ein Emoji. Wenn du dich um die Deko kümmerst, bevor du dich um die Flagge kümmerst, wird die Flagge wie Deko behandelt und der Lauf endet nie. Die Reihenfolge ist wichtig."
+    },
+    "spacing": {
+      "question": "Meine Wörter kleben alle aneinander, oder am Anfang steht ein Leerzeichen.",
+      "answer": "Überleg, wann ein Leerzeichen gebraucht wird. Es wird **zwischen** zwei Wörtern gebraucht, nicht vor dem ersten, also muss sich etwas merken, ob schon etwas geschrieben wurde."
+    },
+    "apostrophe": {
+      "question": "Ich bekomme `heart ' s` statt `heart's`.",
+      "answer": "Ein Apostroph verbindet die Wörter links und rechts von ihm, also gehört weder davor noch danach ein Leerzeichen. Beim Komma ist es umgekehrt: davor kein Leerzeichen, danach eines."
+    },
+    "reciteOnce": {
+      "question": "Warum darf ich `recite()` nur einmal aufrufen?",
+      "answer": "Der Dichter sagt das fertige Gedicht auf, es gibt also nur einen Moment, in dem das passieren kann. Der Lauf kann auf mehr als eine Weise enden, und alle müssen an diesem selben Moment ankommen."
+    }
+  },
+  "describers": {
+    "move": "ging vorwärts und fand ${return}",
+    "isEmoji": "prüfte, ob ${arg1} ein Emoji war",
+    "recite": "sagte „${arg1}“ auf"
+  },
+  "functions": {
+    "move": {
+      "description": "Lässt den Dichter auf das nächste Feld vorrücken und **gibt zurück**, was darauf lag.",
+      "category": "Bewegung"
+    },
+    "isEmoji": {
+      "description": "Gibt `true` zurück, wenn das, was du ihr übergibst, ein Emoji ist.",
+      "category": "Prüfungen"
+    },
+    "recite": {
+      "description": "Lässt den Dichter ein Gedicht laut aufsagen.",
+      "category": "Aktion"
+    }
+  }
+}

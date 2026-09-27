@@ -1,0 +1,150 @@
+{
+  "errors": {
+    "widthMustBeNumber": "Die Breite muss eine Zahl sein",
+    "colorMustBeString": "Die Farbe muss ein String sein",
+    "textMustBeString": "Der Text muss ein String sein"
+  },
+  "checks": {
+    "gameOutlineWrongOrMissing": "Der Rahmen des Spielbretts fehlt oder ist falsch.",
+    "gridLine535To9535WrongOrMissing": "Die Rasterlinie von 5,35 bis 95,35 fehlt oder ist falsch.",
+    "gridLine565To9565WrongOrMissing": "Die Rasterlinie von 5,65 bis 95,65 fehlt oder ist falsch.",
+    "gridLine355To3595WrongOrMissing": "Die Rasterlinie von 35,5 bis 35,95 fehlt oder ist falsch.",
+    "gridLine655To6595WrongOrMissing": "Die Rasterlinie von 65,5 bis 65,95 fehlt oder ist falsch.",
+    "wroteWhileGameInProgress": "Du hast auf den Bildschirm geschrieben, obwohl das Spiel noch läuft.",
+    "crossLine7010To9030WrongOrMissing": "Die Linie des Kreuzes von 70,10 bis 90,30 fehlt oder ist falsch.",
+    "crossLine7030To9010WrongOrMissing": "Die Linie des Kreuzes von 70,30 bis 90,10 fehlt oder ist falsch.",
+    "crossLine4040To6060WrongOrMissing": "Die Linie des Kreuzes von 40,40 bis 60,60 fehlt oder ist falsch.",
+    "crossLine4060To6040WrongOrMissing": "Die Linie des Kreuzes von 40,60 bis 60,40 fehlt oder ist falsch.",
+    "nought8050MissingOrWrong": "Der Kreis bei 80,50 fehlt oder ist falsch.",
+    "nought2080MissingOrWrong": "Der Kreis bei 20,80 fehlt oder ist falsch.",
+    "drewResultsScreenGameNotEnded": "Du hast einen Ergebnisbildschirm gezeichnet, aber das Spiel ist noch nicht zu Ende.",
+    "nought2020MissingOrWrong": "Der Kreis bei 20,20 fehlt oder ist falsch.",
+    "crossLine4040To6060MissingOrWrong": "Die Linie des Kreuzes von 40,40 bis 60,60 fehlt oder ist falsch.",
+    "crossLine4060To6040MissingOrWrong": "Die Linie des Kreuzes von 40,60 bis 60,40 fehlt oder ist falsch.",
+    "nought5020MissingOrWrong": "Der Kreis bei 50,20 fehlt oder ist falsch.",
+    "crossLine7010To9030MissingOrWrong": "Die Linie des Kreuzes von 70,10 bis 90,30 fehlt oder ist falsch.",
+    "crossLine7030To9010MissingOrWrong": "Die Linie des Kreuzes von 70,30 bis 90,10 fehlt oder ist falsch.",
+    "crossLine1040To3060MissingOrWrong": "Die Linie des Kreuzes von 10,40 bis 30,60 fehlt oder ist falsch.",
+    "crossLine1060To3040MissingOrWrong": "Die Linie des Kreuzes von 10,60 bis 30,40 fehlt oder ist falsch.",
+    "nought8080MissingOrWrong": "Der Kreis bei 80,80 fehlt oder ist falsch.",
+    "crossLine4070To6090MissingOrWrong": "Die Linie des Kreuzes von 40,70 bis 60,90 fehlt oder ist falsch.",
+    "crossLine4090To6070MissingOrWrong": "Die Linie des Kreuzes von 40,90 bis 60,70 fehlt oder ist falsch.",
+    "didntWriteResultCorrectly": "Du hast das Ergebnis nicht richtig auf den Bildschirm geschrieben.",
+    "wroteToScreenMultipleTimes": "Du hast mehrmals auf den Bildschirm geschrieben.",
+    "didntDrawOverlayCorrectly": "Du hast das Overlay nicht richtig gezeichnet.",
+    "expectedCrossesGreyedOut": "Wir haben erwartet, dass die Kreuze hellgrau gefärbt sind.",
+    "expectedNoughtsGreyedOut": "Wir haben erwartet, dass die Kreise hellgrau gefärbt sind.",
+    "didntWriteInvalidMoveCorrectly": "Du hast den ungültigen Zug nicht richtig auf den Bildschirm geschrieben.",
+    "expectedCrossColorProgression": "Wir haben erwartet, dass die Kreuze während des Spiels schwarz aussehen und nach dem Sieg hellgrau, die Kreuze der Gewinnreihe aber violett.",
+    "crossLine4010To6030MissingOrWrong": "Die Linie des Kreuzes von 40,10 bis 60,30 fehlt oder ist falsch.",
+    "crossLine4030To6010MissingOrWrong": "Die Linie des Kreuzes von 40,30 bis 60,10 fehlt oder ist falsch.",
+    "nought8020MissingOrWrong": "Der Kreis bei 80,20 fehlt oder ist falsch.",
+    "nought5050MissingOrWrong": "Der Kreis bei 50,50 fehlt oder ist falsch.",
+    "crossLine7040To9060MissingOrWrong": "Die Linie des Kreuzes von 70,40 bis 90,60 fehlt oder ist falsch.",
+    "crossLine7060To9040MissingOrWrong": "Die Linie des Kreuzes von 70,60 bis 90,40 fehlt oder ist falsch.",
+    "expectedNoughtColorProgression": "Wir haben erwartet, dass die Kreise während des Spiels normal aussehen und nach dem Sieg hellgrau, die Kreise der Gewinnreihe aber violett.",
+    "addedBlockingCross": "Hast du das blockierende Kreuz hinzugefügt?",
+    "addedWinningCross": "Hast du das Kreuz auf das Feld gesetzt, das den Sieg bringt?",
+    "addedWinningNought": "Hast du den Kreis auf das Feld gesetzt, das den Sieg bringt?"
+  },
+  "tasks": {
+    "playTicTacToe": {
+      "name": "Baue das Spiel Tic Tac Toe",
+      "description": "Erstelle eine Funktion runGame(moves), die ein Spielbrett zeichnet, Steine setzt, ungültige Züge behandelt, Siege und Unentschieden erkennt und eine einfache KI für Züge mit einem „?“ umsetzt."
+    }
+  },
+  "scenarios": {
+    "partialGame": {
+      "name": "Die ersten Züge einer Partie",
+      "description": "Zeichne das Raster und setze die ersten Steine richtig. Das Spiel läuft noch."
+    },
+    "draw": {
+      "name": "Eine unentschiedene Partie",
+      "description": "Spiele eine vollständige Partie, die unentschieden endet. Alle Steine sollten hellgrau sein und es sollte eine Unentschieden-Meldung erscheinen."
+    },
+    "doublePlacementDuplicate": {
+      "name": "Ein „o“ auf ein „o“ setzen",
+      "description": "Wenn du einen Stein auf ein schon belegtes Feld setzt, sollte eine Fehlermeldung erscheinen."
+    },
+    "doublePlacementOnTop": {
+      "name": "Ein „x“ auf ein „o“ setzen",
+      "description": "Wenn du einen Stein auf den Stein des Gegners setzt, sollte eine Fehlermeldung erscheinen."
+    },
+    "winX": {
+      "name": "Die Kreuze gewinnen!",
+      "description": "Spiele eine Partie, in der die Kreuze gewinnen. Die Gewinnreihe sollte hervorgehoben sein."
+    },
+    "winO": {
+      "name": "Die Kreise gewinnen!",
+      "description": "Spiele eine Partie, in der die Kreise gewinnen. Die Kreise der Gewinnreihe sollten hervorgehoben sein."
+    },
+    "aiOFinish": {
+      "name": "KI beendet das Spiel für „o“",
+      "description": "Kann deine KI das Spiel erfolgreich zu Ende bringen?"
+    },
+    "aiXWin": {
+      "name": "KI gewinnt für „x“",
+      "description": "Kann deine KI eine Partie für die Kreuze gewinnen?"
+    },
+    "aiOWin": {
+      "name": "KI gewinnt für „o“",
+      "description": "Kann deine KI eine Partie für die Kreise gewinnen?"
+    },
+    "aiXBlock": {
+      "name": "KI blockiert für „x“",
+      "description": "Kann deine KI den Sieg des Gegners blockieren?"
+    },
+    "aiGame": {
+      "name": "KI-Partie",
+      "description": "Kann deine KI diese Partie bis zum Unentschieden durchspielen?"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "Wo soll ich bei so einer großen Übung anfangen?",
+      "answer": "Teile es auf. Zeichne zuerst das leere Raster (ein Rechteck und vier Linien). Schreib dann Hilfsfunktionen zum Zeichnen eines `o` und eines `x`. Darauf baust du die Spiellogik auf."
+    },
+    "trackSquares": {
+      "question": "Wie behalte ich den Überblick, welche Felder belegt sind?",
+      "answer": "Nutze eine 2D-Liste (eine Liste aus drei Listen mit je drei Einträgen), in der jede Zelle `\"o\"`, `\"x\"` oder eine leere Markierung enthält. Aktualisiere sie nach jedem Zug."
+    },
+    "whoseTurn": {
+      "question": "Woher weiß ich, wer an der Reihe ist?",
+      "answer": "Der erste Zug ist immer `\"o\"`, danach wechselt es sich ab. Zähle die Züge mit oder wechsle nach jedem Setzen eine Variable zwischen `\"o\"` und `\"x\"`."
+    },
+    "detectWin": {
+      "question": "Wie erkenne ich einen Sieg?",
+      "answer": "Prüfe nach jedem Zug alle 8 Gewinnlinien: 3 Zeilen, 3 Spalten und 2 Diagonalen. Prüfe bei jeder Linie, ob alle drei Felder dasselbe Symbol enthalten und dieses nicht leer ist."
+    },
+    "aiMove": {
+      "question": "Wie entscheidet die KI, was sie bei einem Zug mit `\"?\"` tun soll?",
+      "answer": "Probiere die Regeln der Reihe nach aus: Schau zuerst, ob es einen Zug gibt, der sofort gewinnt, dann, ob es einen gibt, der den Sieg des Gegners blockiert. Ansonsten wähle ein beliebiges leeres Feld."
+    }
+  },
+  "describers": {
+    "changeStroke": "setzte die Strichbreite auf ${arg1} und die Strichfarbe auf ${arg2}",
+    "write": "schrieb „${arg1}“ auf den Bildschirm"
+  },
+  "functions": {
+    "rectangle": {
+      "description": "Zeichne ein Rechteck an der Position (left, top) mit der angegebenen Breite, Höhe und Farbe",
+      "category": "Formen zeichnen"
+    },
+    "circle": {
+      "description": "Zeichne einen Kreis mit Mittelpunkt (centerX, centerY) mit dem angegebenen Radius und der angegebenen Farbe",
+      "category": "Formen zeichnen"
+    },
+    "line": {
+      "description": "Zeichne eine Linie von (x1, y1) nach (x2, y2) in der angegebenen Farbe",
+      "category": "Formen zeichnen"
+    },
+    "changeStroke": {
+      "description": "Setze die Strichbreite und die Strichfarbe für die folgenden Formen. Linien werden in der Strichfarbe gezeichnet.",
+      "category": "Strich-Einstellungen"
+    },
+    "write": {
+      "description": "Schreibe Text in Weiß in die Mitte des Bildschirms",
+      "category": "Text"
+    }
+  }
+}

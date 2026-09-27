@@ -1,0 +1,90 @@
+{
+  "tasks": {
+    "basicTranslations": {
+      "name": "Einfache Übersetzungen",
+      "description": "Übersetze einzelne Codons in die passenden Aminosäuren."
+    },
+    "multipleCodons": {
+      "name": "Mehrere Codons",
+      "description": "Übersetze RNA-Sequenzen, die aus mehreren Codons bestehen."
+    },
+    "stopCodonBehavior": {
+      "name": "Verhalten bei STOP-Codons",
+      "description": "Behandle STOP-Codons richtig: Die Translation endet, sobald ein STOP-Codon auftaucht."
+    }
+  },
+  "scenarios": {
+    "emptyRnaSequence": {
+      "name": "Leere RNA-Sequenz",
+      "description": "Eine leere RNA-Sequenz ergibt eine leere Liste von Aminosäuren."
+    },
+    "methionineSequence": {
+      "name": "Methionine-RNA-Sequenz",
+      "description": "Die RNA-Sequenz 'AUG' wird zu 'Methionine' übersetzt."
+    },
+    "phenylalanineSequence1": {
+      "name": "Phenylalanine-RNA-Sequenz 1",
+      "description": "Die RNA-Sequenz 'UUU' wird zu 'Phenylalanine' übersetzt."
+    },
+    "phenylalanineSequence2": {
+      "name": "Phenylalanine-RNA-Sequenz 2",
+      "description": "Die RNA-Sequenz 'UUC' wird zu 'Phenylalanine' übersetzt."
+    },
+    "leucineSequence1": {
+      "name": "Leucine-RNA-Sequenz 1",
+      "description": "Die RNA-Sequenz 'UUA' wird zu 'Leucine' übersetzt."
+    },
+    "leucineSequence2": {
+      "name": "Leucine-RNA-Sequenz 2",
+      "description": "Die RNA-Sequenz 'UUG' wird zu 'Leucine' übersetzt."
+    },
+    "sequenceTwoProteins": {
+      "name": "Sequenz aus zwei Protein-Codons",
+      "description": "Die RNA-Sequenz 'UUUUUU' ergibt ['Phenylalanine', 'Phenylalanine']."
+    },
+    "sequenceDifferentCodons": {
+      "name": "Sequenz aus zwei verschiedenen Protein-Codons",
+      "description": "Die RNA-Sequenz 'UUAUUG' ergibt ['Leucine', 'Leucine']."
+    },
+    "sequenceThreeProteins": {
+      "name": "Sequenz aus drei Proteinen",
+      "description": "Die RNA-Sequenz 'AUGUUUUGG' ergibt ['Methionine', 'Phenylalanine', 'Tryptophan']."
+    },
+    "stopCodonAtStart": {
+      "name": "STOP-Codon am Anfang",
+      "description": "Die Translation bricht ab, wenn ein STOP-Codon am Anfang der Sequenz steht."
+    },
+    "stopCodonAtEnd": {
+      "name": "STOP-Codon am Ende",
+      "description": "Die Translation bricht ab, wenn ein STOP-Codon am Ende der Sequenz steht."
+    },
+    "stopCodonInMiddle": {
+      "name": "STOP-Codon in der Mitte",
+      "description": "Die Translation bricht ab, wenn ein STOP-Codon mitten in der Sequenz steht."
+    }
+  },
+  "hints": {
+    "breakDown": {
+      "question": "Wie zerlege ich das in einzelne Schritte?",
+      "answer": "Zwei unabhängige Schritte. Zuerst zerlegst du die RNA-Sequenz in Codons (Gruppen aus 3 Zeichen). Danach übersetzt du jedes Codon in die passende Aminosäure. Die beiden Schritte getrennt zu lösen ist viel einfacher, als sie zu vermischen."
+    },
+    "lookup": {
+      "question": "Wie finde ich zu einem Codon die passende Aminosäure?",
+      "answer": "Ein Wörterbuch, das jedes Codon (z. B. `\"AUG\"`) seiner Aminosäure (z. B. `\"Methionine\"`) zuordnet, passt hier genau. STOP-Codons werden auf `\"STOP\"` abgebildet."
+    },
+    "splitChunks": {
+      "question": "Wie zerlege ich die Sequenz in Blöcke von 3 Zeichen?",
+      "answer": "Geh die Sequenz mit einem Positionszähler durch, der jedes Mal um 3 hochzählt. Nimm bei jedem Schritt die Teilzeichenkette der Länge 3 ab deiner Position. Das ist das aktuelle Codon."
+    },
+    "stopCodon": {
+      "question": "Was mache ich, wenn ich auf ein STOP-Codon stoße?",
+      "answer": "Hör ganz auf zu übersetzen. Mit `break` verlässt du die Schleife. Füge STOP nicht deiner Liste der Aminosäuren hinzu."
+    }
+  },
+  "functions": {
+    "push": {
+      "description": "Hängt ein Element ans Ende eines Arrays an und verändert das Array dabei direkt.",
+      "category": "Array-Operationen"
+    }
+  }
+}

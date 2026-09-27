@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "notShotAlien": "Du hast das Alien nicht abgeschossen.",
+    "notShotAllAliens": "Du hast nicht alle Aliens abgeschossen."
+  },
+  "tasks": {
+    "shootTheAliens": {
+      "name": "Behalte alle Aliens im Blick und schieß sie ab",
+      "description": "Rufe getStartingAliensInRow() auf, um die Alien-Positionen zu bekommen, und fahr dann über den Bildschirm und schieß sie ab. Behalte im Blick, welche Aliens du schon abgeschossen hast, indem du die Arrays aktualisierst."
+    }
+  },
+  "scenarios": {
+    "oneAlien": {
+      "name": "Schieß das Alien ab",
+      "description": "Ein einzelnes Alien in der untersten Reihe"
+    },
+    "oneRow": {
+      "name": "Eine dünn besetzte Reihe",
+      "description": "Vereinzelte Aliens in der untersten Reihe"
+    },
+    "twoRows": {
+      "name": "Zwei dicht besetzte Reihen",
+      "description": "Aliens über zwei Reihen verteilt"
+    },
+    "threeRows": {
+      "name": "Drei Reihen",
+      "description": "Aliens über alle drei Reihen verteilt"
+    },
+    "fullRows": {
+      "name": "Drei komplett gefüllte Reihen",
+      "description": "Drei voll gefüllte Reihen mit Aliens"
+    }
+  },
+  "hints": {
+    "knowWhereAliens": {
+      "question": "Woher weiß ich, wo die Aliens sind, wenn es `isAlienAbove()` nicht mehr gibt?",
+      "answer": "Rufe am Anfang einmal `getStartingAliensInRow(0)`, `getStartingAliensInRow(1)` und `getStartingAliensInRow(2)` auf. Jede gibt eine Liste mit 11 booleschen Werten zurück, die du in Variablen speichern und später lesen kannst."
+    },
+    "whichAlienAbove": {
+      "question": "Wie finde ich heraus, welches Alien gerade über mir ist?",
+      "answer": "Behalte deine horizontale Position in einer Variable und aktualisiere sie bei jedem Schritt. Diese Position ist der Index in die Reihen-Listen, `row1[position]` sagt dir also, ob in Reihe 1 ein Alien über dir ist."
+    },
+    "stopDoubleShoot": {
+      "question": "Wie verhindere ich, dass ich dasselbe Alien zweimal abschieße?",
+      "answer": "Setze nach dem Aufruf von `shoot()` diesen Index in der Reihe auf `false`. Beim nächsten Durchlauf der Schleife meldet dieselbe Position kein Alien mehr."
+    },
+    "whichRowToShoot": {
+      "question": "Aus welcher Reihe soll ich schießen, wenn mehrere Aliens übereinander über mir sind?",
+      "answer": "Prüfe die Reihen von unten nach oben. Schieß das unterste noch lebende Alien in deiner Spalte ab und hör für diesen Durchlauf auf, weitere Reihen zu prüfen."
+    }
+  },
+  "functions": {
+    "moveLeft": {
+      "description": "Bewegt die Laserkanone **eine Position nach links**. Wenn du versuchst, über den linken Rand des Bildschirms hinauszugehen, verlierst du das Spiel!",
+      "category": "Bewegung"
+    },
+    "moveRight": {
+      "description": "Bewegt die Laserkanone **eine Position nach rechts**. Wenn du versuchst, über den rechten Rand des Bildschirms hinauszugehen, verlierst du das Spiel!",
+      "category": "Bewegung"
+    },
+    "shoot": {
+      "description": "Schießt den Laser nach oben. **Schieß nur, wenn ein Alien über dir ist**, sonst verlierst du das Spiel! Die Laserkanone überhitzt leicht, du musst dich also bewegen, bevor du wieder schießt.",
+      "category": "Aktion"
+    },
+    "getStartingAliensInRow": {
+      "description": "Gibt eine Liste mit 11 booleschen Werten zurück, die die Alien-Positionen in der angegebenen Reihe zu **Beginn** der Übung darstellt. Reihe `0` ist die unterste Reihe, `1` die mittlere und `2` die oberste.",
+      "category": "Erkennung"
+    }
+  }
+}

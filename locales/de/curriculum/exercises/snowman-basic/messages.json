@@ -1,43 +1,43 @@
 {
   "checks": {
-    "baseCircle": "�",
-    "bodyCircle": "�",
-    "headCircle": "�"
+    "baseCircle": "Der Kreis für die Basis (unten) stimmt noch nicht.",
+    "bodyCircle": "Der Kreis für den Körper (in der Mitte) stimmt noch nicht.",
+    "headCircle": "Der Kreis für den Kopf (oben) stimmt noch nicht."
   },
   "tasks": {
     "buildSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "Baue den Schneemann",
+      "description": "Zeichne drei Kreise, um den Schneemann zu bauen."
     }
   },
   "scenarios": {
     "buildSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "Baue den Schneemann",
+      "description": "Zeichne drei Kreise, um den Schneemann zu bauen."
     }
   },
   "hints": {
     "howToDrawCircle": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie zeichne ich einen Kreis auf der Zeichenfläche?",
+      "answer": "Rufe `circle(centerX, centerY, radius)` auf. Dabei sind `centerX` und `centerY` die Koordinaten des Kreismittelpunkts und `radius` gibt an, wie groß der Kreis ist."
     },
     "circlesHorizontalPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wo sollen die Kreise waagerecht sitzen?",
+      "answer": "Alle drei Kreise haben denselben waagerechten Mittelpunkt, also ist `centerX` bei allen `50` (die Zeichenfläche ist `100` breit)."
     },
     "howToStackCircles": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie stapel ich die drei Kreise übereinander?",
+      "answer": "Der Kreis für die Basis ist der größte und sitzt weit unten (großes `centerY`). Jeder Kreis darüber hat ein kleineres `centerY` und einen kleineren `radius`."
     },
     "whatNumbersForRadii": {
-      "question": "�",
-      "answer": "�"
+      "question": "Welche Zahlen nehme ich für die Radien?",
+      "answer": "In dieser Übung sind alle Zahlen durch `5` teilbar. Versuch es mit einem Radius von etwa `20` für die Basis, `15` für den Körper und `10` für den Kopf, und passe sie an, bis sie zum Zielbild passen."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichnet einen Kreis mit dem Mittelpunkt (centerX, centerY) und dem angegebenen Radius",
+      "category": "Formen zeichnen"
     }
   }
 }

@@ -1,0 +1,94 @@
+{
+  "tasks": {
+    "createLetterValuesFunction": {
+      "name": "建立 letterValues 函式",
+      "description": "寫一個 letterValues 函式，回傳一個字典，把每個大寫字母對應到它的 Scrabble 分值。從我們提供的字母分組和對應分值陣列開始，把它轉換成字典。"
+    },
+    "singleLetters": {
+      "name": "計算單一字母的分數",
+      "description": "寫一個 scrabbleScore 函式，接收一個單字，回傳它的 Scrabble 總分。先讓它能正確處理單一字母。"
+    },
+    "words": {
+      "name": "計算單字的分數",
+      "description": "接著讓 scrabbleScore 能處理不同長度的完整單字。"
+    },
+    "edgeCases": {
+      "name": "處理邊界情況",
+      "description": "最後，確認你的函式能處理邊界情況，例如空字串和完整的字母表。"
+    }
+  },
+  "scenarios": {
+    "letterValues": {
+      "name": "letterValues 函式",
+      "description": "letterValues 函式應該回傳一份完整的字母分值字典。"
+    },
+    "scrabbleLowercaseLetter": {
+      "name": "小寫字母",
+      "description": "計算單一小寫字母的分數。"
+    },
+    "scrabbleUppercaseLetter": {
+      "name": "大寫字母",
+      "description": "計算單一大寫字母的分數。"
+    },
+    "scrabbleValuableLetter": {
+      "name": "高分字母",
+      "description": "計算一個高分字母的分數。"
+    },
+    "scrabbleShortWord": {
+      "name": "短單字",
+      "description": "計算一個短單字的分數。"
+    },
+    "scrabbleShortValuableWord": {
+      "name": "短的高分單字",
+      "description": "計算一個含有高分字母的短單字分數。"
+    },
+    "scrabbleMediumWord": {
+      "name": "中等長度單字",
+      "description": "計算一個中等長度單字的分數。"
+    },
+    "scrabbleMediumValuableWord": {
+      "name": "中等長度的高分單字",
+      "description": "計算一個含有高分字母的中等長度單字分數。"
+    },
+    "scrabbleLongMixedCaseWord": {
+      "name": "長的大小寫混合單字",
+      "description": "計算一個大小寫字母混合的長單字分數。"
+    },
+    "scrabbleEnglishLikeWord": {
+      "name": "類似英文的單字",
+      "description": "計算一個類似英文的單字分數。"
+    },
+    "scrabbleEmptyInput": {
+      "name": "空輸入",
+      "description": "計算空字串的分數。"
+    },
+    "scrabbleEntireAlphabet": {
+      "name": "整個字母表",
+      "description": "計算包含字母表每個字母的字串分數。"
+    }
+  },
+  "hints": {
+    "startingPoint": {
+      "question": "字母分值該從哪裡開始著手？",
+      "answer": "不要手動寫出 26 行的對照表。先從一份字母分組的陣列開始，例如`[\"AEIOULNRST\", \"DG\", \"BCMP\", \"FHVWY\", \"K\", \"JX\", \"QZ\"]`，以及它們對應的分值`[1, 2, 3, 4, 5, 8, 10]`。"
+    },
+    "buildLookup": {
+      "question": "要怎麼把這些分組變成可以查詢的東西？",
+      "answer": "走訪每個分組裡的字母，把每個字母對應到該分組的分值，就能建立出字典。這樣一來`dict[\"A\"]`就會直接給你`1`。"
+    },
+    "lowercaseInput": {
+      "question": "為什麼輸入小寫字母時查不到？",
+      "answer": "如果你的字典鍵是大寫字母，那查`'a'`就不會對應到`'A'`。查分值之前，先把每個字母轉成大寫。"
+    },
+    "addUpScore": {
+      "question": "要怎麼把分數加總起來？",
+      "answer": "用迴圈走過這個單字，在字典裡查出每個字母的分值，把它加到累計的總分上。最後回傳總分。"
+    }
+  },
+  "functions": {
+    "toUpperCase": {
+      "description": "把字串轉換成大寫",
+      "category": "字串操作"
+    }
+  }
+}

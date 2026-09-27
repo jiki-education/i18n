@@ -1,62 +1,62 @@
 {
   "tasks": {
     "countNucleotide": {
-      "name": "�",
-      "description": "�"
+      "name": "Ein Nukleotid zählen",
+      "description": "Schreibe eine Funktion, die zählt, wie oft ein bestimmtes Nukleotid (A, C, G oder T) in einem DNA-Strang vorkommt. Gib -1 zurück, wenn das Nukleotid oder ein Zeichen im Strang ungültig ist."
     }
   },
   "scenarios": {
     "nucleotideEmptyStrand": {
-      "name": "�",
-      "description": "�"
+      "name": "Leerer Strang",
+      "description": "Ein leerer Strang sollte für jedes gültige Nukleotid 0 zurückgeben."
     },
     "nucleotideSingleMatch": {
-      "name": "�",
-      "description": "�"
+      "name": "Strang mit einem einzigen Nukleotid",
+      "description": "Ein Strang aus einem einzigen Zeichen, das zum gesuchten Nukleotid passt, sollte 1 zurückgeben."
     },
     "nucleotideRepeated": {
-      "name": "�",
-      "description": "�"
+      "name": "Wiederholtes Nukleotid",
+      "description": "Ein Strang aus lauter gleichen Nukleotiden sollte alle davon zählen."
     },
     "nucleotideMixedStrandA": {
-      "name": "�",
-      "description": "�"
+      "name": "A in gemischtem Strang zählen",
+      "description": "Zähle ein bestimmtes Nukleotid in einem gemischten Strang."
     },
     "nucleotideMixedStrandT": {
-      "name": "�",
-      "description": "�"
+      "name": "T in gemischtem Strang zählen",
+      "description": "Zähle ein anderes Nukleotid im selben Strang."
     },
     "nucleotideInvalidNucleotide": {
-      "name": "�",
-      "description": "�"
+      "name": "Ungültiges Nukleotid",
+      "description": "Ein ungültiges Nukleotidzeichen sollte -1 zurückgeben."
     },
     "nucleotideInvalidStrand": {
-      "name": "�",
-      "description": "�"
+      "name": "Ungültiger Strang",
+      "description": "Ein Strang mit ungültigen Zeichen sollte -1 zurückgeben."
     }
   },
   "hints": {
     "checkValid": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie prüfe ich, ob das Zeichen, nach dem gefragt wird, gültig ist?",
+      "answer": "Strings haben eine Methode `includes()`, die dir sagt, ob ein String in einem anderen vorkommt. Damit kannst du praktisch prüfen, ob ein Zeichen zu den gültigen Nukleotiden gehört. Prüfe das, bevor du mit dem Zählen beginnst."
     },
     "invalidNucleotide": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was mache ich, wenn das Nukleotid ungültig ist?",
+      "answer": "Gib sofort `-1` zurück. Die Aufgabenstellung nutzt diesen Wert, um eine ungültige Eingabe zu signalisieren."
     },
     "countOccurrences": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie zähle ich die Vorkommen im Strang?",
+      "answer": "Geh jedes Zeichen des Strangs in einer Schleife durch. Wenn ein Zeichen mit dem Nukleotid übereinstimmt, das du zählst, erhöhe einen Zähler um 1. Gib den Zähler am Ende zurück."
     },
     "validateStrand": {
-      "question": "�",
-      "answer": "�"
+      "question": "Sollte ich den Strang auch prüfen?",
+      "answer": "Ja. Wenn irgendein Zeichen im Strang kein gültiges Nukleotid ist, gib `-1` zurück. Prüfe jedes Zeichen, bevor du zählst."
     }
   },
   "functions": {
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "Prüft, ob ein String einen kleineren String enthält",
+      "category": "String-Operationen"
     }
   }
 }

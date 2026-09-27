@@ -1,0 +1,90 @@
+{
+  "tasks": {
+    "basicTranslations": {
+      "name": "基本轉譯",
+      "description": "把單一密碼子轉譯成對應的胺基酸。"
+    },
+    "multipleCodons": {
+      "name": "多個密碼子",
+      "description": "轉譯包含多個密碼子的 RNA 序列。"
+    },
+    "stopCodonBehavior": {
+      "name": "終止密碼子的行為",
+      "description": "正確處理終止密碼子：遇到終止密碼子時，轉譯就應該停止。"
+    }
+  },
+  "scenarios": {
+    "emptyRnaSequence": {
+      "name": "空的 RNA 序列",
+      "description": "空的 RNA 序列應該得到空的蛋白質陣列。"
+    },
+    "methionineSequence": {
+      "name": "Methionine 的 RNA 序列",
+      "description": "RNA 序列「AUG」應該轉譯成「Methionine」。"
+    },
+    "phenylalanineSequence1": {
+      "name": "Phenylalanine 的 RNA 序列 1",
+      "description": "RNA 序列「UUU」應該轉譯成「Phenylalanine」。"
+    },
+    "phenylalanineSequence2": {
+      "name": "Phenylalanine 的 RNA 序列 2",
+      "description": "RNA 序列「UUC」應該轉譯成「Phenylalanine」。"
+    },
+    "leucineSequence1": {
+      "name": "Leucine 的 RNA 序列 1",
+      "description": "RNA 序列「UUA」應該轉譯成「Leucine」。"
+    },
+    "leucineSequence2": {
+      "name": "Leucine 的 RNA 序列 2",
+      "description": "RNA 序列「UUG」應該轉譯成「Leucine」。"
+    },
+    "sequenceTwoProteins": {
+      "name": "兩個蛋白質密碼子的序列",
+      "description": "RNA 序列「UUUUUU」應該轉譯成 ['Phenylalanine', 'Phenylalanine']。"
+    },
+    "sequenceDifferentCodons": {
+      "name": "兩個不同蛋白質密碼子的序列",
+      "description": "RNA 序列「UUAUUG」應該轉譯成 ['Leucine', 'Leucine']。"
+    },
+    "sequenceThreeProteins": {
+      "name": "三個蛋白質的序列",
+      "description": "RNA 序列「AUGUUUUGG」應該轉譯成 ['Methionine', 'Phenylalanine', 'Tryptophan']。"
+    },
+    "stopCodonAtStart": {
+      "name": "序列開頭的終止密碼子",
+      "description": "如果終止密碼子出現在序列開頭，轉譯就應該停止。"
+    },
+    "stopCodonAtEnd": {
+      "name": "序列結尾的終止密碼子",
+      "description": "如果終止密碼子出現在序列結尾，轉譯就應該停止。"
+    },
+    "stopCodonInMiddle": {
+      "name": "序列中間的終止密碼子",
+      "description": "如果終止密碼子出現在序列中間，轉譯就應該停止。"
+    }
+  },
+  "hints": {
+    "breakDown": {
+      "question": "我該怎麼拆解這個問題？",
+      "answer": "可以分成兩個獨立的步驟。首先，把 RNA 字串拆成密碼子（每 3 個字元一組）。接著，把每個密碼子轉譯成對應的胺基酸。分開處理會比混在一起簡單得多。"
+    },
+    "lookup": {
+      "question": "密碼子對應到胺基酸的部分，該怎麼查表？",
+      "answer": "用字典把每個密碼子（例如 `\"AUG\"`）對應到它的胺基酸（例如 `\"Methionine\"`），就是適合的做法。終止密碼子則對應到 `\"STOP\"`。"
+    },
+    "splitChunks": {
+      "question": "我該怎麼把字串切成每 3 個一組？",
+      "answer": "用一個位置計數器走過整個字串，每次加 3。每一步都從目前的位置取出長度 3 的子字串，那就是目前的密碼子。"
+    },
+    "stopCodon": {
+      "question": "遇到終止密碼子時，我該怎麼做？",
+      "answer": "完全停止轉譯。用 `break` 跳出迴圈。不要把 STOP 加進蛋白質陣列裡。"
+    }
+  },
+  "functions": {
+    "push": {
+      "description": "在陣列的末端加入一個元素，並直接修改原本的陣列。",
+      "category": "陣列操作"
+    }
+  }
+}

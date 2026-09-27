@@ -1,93 +1,93 @@
 {
   "checks": {
-    "totalCells": "�",
-    "wrongPosition": "�",
-    "wrongEntrance": "�",
-    "wrongGroundWalls": "�",
-    "wrongRoof": "�"
+    "totalCells": "預期總共要有 {{expectedTotal}} 格，但只找到 {{got}} 格。",
+    "wrongPosition": "第 {{building}} 棟建築物的位置不對。它從第 {{start}} 欄開始，但應該從第 {{expected}} 欄開始。",
+    "wrongEntrance": "第 {{building}} 棟建築物的入口位置不對。",
+    "wrongGroundWalls": "第 {{building}} 棟建築物的一樓側牆不對。",
+    "wrongRoof": "第 {{building}} 棟建築物的屋頂不完整。"
   },
   "tasks": {
     "buildSkyline": {
-      "name": "�",
-      "description": "�"
+      "name": "打造城市天際線",
+      "description": "蓋出好幾棟寬度和高度都隨機的建築物，打造一整座城市的天際線。"
     }
   },
   "scenarios": {
     "buildings1": {
-      "name": "�",
-      "description": "�"
+      "name": "1 棟建築物",
+      "description": "蓋一棟寬度和高度隨機的建築物。"
     },
     "buildings2": {
-      "name": "�",
-      "description": "�"
+      "name": "2 棟建築物",
+      "description": "蓋 2 棟寬度和高度隨機的建築物。"
     },
     "buildings3": {
-      "name": "�",
-      "description": "�"
+      "name": "3 棟建築物",
+      "description": "蓋 3 棟寬度和高度隨機的建築物。"
     },
     "buildings4": {
-      "name": "�",
-      "description": "�"
+      "name": "4 棟建築物",
+      "description": "蓋 4 棟寬度和高度隨機的建築物。"
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "這麼大的練習，我該從哪裡開始？",
+      "answer": "把它拆開來看。外層的結構就是每棟建築物跑一次迴圈。在那個迴圈裡，你依序畫三樣東西：一樓（含入口）、上面的樓層（只有牆和玻璃），還有平的屋頂。先讓第一個只有一棟建築物的情境通過，再來煩惱多棟建築物的情況。"
     },
     "buildingDimensions": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼知道每棟建築物該長什麼樣子？",
+      "answer": "在每棟建築物那一輪疊代開始時，先呼叫一次 `randomWidth()` 和 `randomNumFloors()`，並把兩個值都存進區域變數。再呼叫一次拿到的是*下一棟*建築物的值，所以不要在每一列裡面又呼叫一次。"
     },
     "trackPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼記住下一棟建築物該蓋在哪裡？",
+      "answer": "用一個變數記住目前這棟建築物最左邊的欄。一開始把它設成規格裡的左邊間距。蓋完一棟建築物之後，把它往前推進這棟建築物的寬度，再加上建築物之間的間距。橫向的位置狀態，就只要這一個變數。"
     },
     "groundFloorLayout": {
-      "question": "�",
-      "answer": "�"
+      "question": "一樓要怎麼排，才能讓入口落在中間？",
+      "answer": "沿著建築物一欄一欄往右走。最左邊和最右邊的欄是牆；中間全部是玻璃；其中一個中間的欄是入口。入口落在哪一欄，是由建築物的左邊界和寬度算出來的。"
     },
     "upperFloorsAndRoof": {
-      "question": "�",
-      "answer": "�"
+      "question": "上面的樓層和屋頂要怎麼畫？",
+      "answer": "上面每一層樓和一樓是同樣的樣式，只是沒有入口：兩側是牆，中間是玻璃。別忘了，一樓本身就算一層樓，所以你只要在它上面把剩下的樓層疊上去，`y` 值往上增加。屋頂則是在最上面用一整排實心的牆橫跨整個寬度，而且屋頂不算一層樓。"
     },
     "stuckError": {
-      "question": "�",
-      "answer": "�"
+      "question": "我的第二棟建築物出現「工人卡住了，這裡已經有一道牆」的錯誤，是哪裡不對？",
+      "answer": "你的第二棟建築物正試著蓋在第一棟上面，因為你沒有在兩棟建築物之間推進記錄欄位置的變數。畫完每棟建築物之後，在下一輪疊代開始前把它加上 `width + gap`。如果忘了加，每棟建築物都會從同一個左邊界開始，然後撞上前一棟。"
     }
   },
   "functions": {
     "buildWall": {
-      "description": "�",
-      "category": "�"
+      "description": "在格線位置 (x, y) 放一個**牆塊**。",
+      "category": "建築"
     },
     "buildGlass": {
-      "description": "�",
-      "category": "�"
+      "description": "在格線位置 (x, y) 放一片**玻璃**。",
+      "category": "建築"
     },
     "buildEntrance": {
-      "description": "�",
-      "category": "�"
+      "description": "在格線位置 (x, y) 放一個**入口**。",
+      "category": "建築"
     },
     "numBuildings": {
-      "description": "�",
-      "category": "�"
+      "description": "回傳要蓋的**建築物數量**。",
+      "category": "資訊"
     },
     "randomWidth": {
-      "description": "�",
-      "category": "�"
+      "description": "回傳**隨機的建築物寬度**：3、5 或 7。",
+      "category": "資訊"
     },
     "randomNumFloors": {
-      "description": "�",
-      "category": "�"
+      "description": "回傳 1 到 12 之間**隨機的樓層數**。",
+      "category": "資訊"
     }
   },
   "describers": {
-    "buildWall": "�",
-    "buildEntrance": "�",
-    "buildGlass": "�",
-    "numBuildings": "�",
-    "randomWidth": "�",
-    "randomNumFloors": "�"
+    "buildWall": "在位置 (${arg1}, ${arg2}) 蓋了一道牆",
+    "buildEntrance": "在位置 (${arg1}, ${arg2}) 蓋了一個入口",
+    "buildGlass": "在位置 (${arg1}, ${arg2}) 蓋了一片玻璃",
+    "numBuildings": "取得建築物的數量",
+    "randomWidth": "取得隨機的建築物寬度（3-7）",
+    "randomNumFloors": "取得隨機的樓層數（1-12）"
   }
 }

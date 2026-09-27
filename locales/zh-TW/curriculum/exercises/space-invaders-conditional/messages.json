@@ -1,68 +1,68 @@
 {
   "describers": {
-    "move": "�"
+    "move": "將雷射砲往右移動了一格"
   },
   "checks": {
-    "notShotAllAliens": "�"
+    "notShotAllAliens": "你沒有把所有外星人都擊落喔。"
   },
   "tasks": {
     "conditionalShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "用 `if` 敘述，只在上方有外星人時射擊",
+      "description": "橫越整個畫面，逐一檢查每個位置。上方有外星人就射擊；沒有就繼續往前移動。"
     }
   },
   "scenarios": {
     "conditional1": {
-      "name": "�",
-      "description": "�"
+      "name": "散落的外星人",
+      "description": "外星人散落在兩排上，中間有空隙"
     },
     "conditional2": {
-      "name": "�",
-      "description": "�"
+      "name": "稀疏的外星人",
+      "description": "外星人較少，空隙較大"
     },
     "conditional3": {
-      "name": "�",
-      "description": "�"
+      "name": "上下交錯",
+      "description": "外星人在上排和下排之間交錯排列"
     },
     "conditional4": {
-      "name": "�",
-      "description": "�"
+      "name": "集中在下排",
+      "description": "大多數外星人都在下排"
     },
     "conditional5": {
-      "name": "�",
-      "description": "�"
+      "name": "密集隊形",
+      "description": "許多外星人擠在兩排上"
     }
   },
   "hints": {
     "howToDecide": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼決定要不要射擊？",
+      "answer": "用 `if` 敘述檢查 `isAlienAbove()`。只有在它回傳 `true` 時才呼叫 `shoot()`。"
     },
     "whatIsAlienAboveGives": {
-      "question": "�",
-      "answer": "�"
+      "question": "`isAlienAbove()` 會回傳什麼？",
+      "answer": "如果雷射砲正上方有外星人，它會回傳 `true`，沒有的話回傳 `false`。你可以直接把它放進 `if` 的條件裡。"
     },
     "checkEveryColumn": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼檢查每一欄，又不用一直重複寫同樣的程式碼？",
+      "answer": "把「檢查、需要時才射擊」的邏輯包在 `repeat` 迴圈裡，並在每次疊代的最後呼叫 `move()`，滑向下一欄。"
     },
     "keepShootingEmpty": {
-      "question": "�",
-      "answer": "�"
+      "question": "我一直對空欄位射擊，然後就輸了。是哪裡出錯了？",
+      "answer": "確認 `shoot()` 放在 `if` 的區塊裡面，而不是在它後面。只有當 `isAlienAbove()` 是 `true` 時才應該呼叫。"
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "把雷射砲**往右移動一格**。如果移出畫面右邊，你就輸了！",
+      "category": "移動"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "向上發射雷射。**只在上方有外星人時才射擊**，不然就會輸掉遊戲喔！",
+      "category": "動作"
     },
     "isAlienAbove": {
-      "description": "�",
-      "category": "�"
+      "description": "如果雷射砲正上方有外星人，就回傳 `true`；沒有的話回傳 `false`。用它來在射擊前先檢查！",
+      "category": "偵測"
     }
   }
 }

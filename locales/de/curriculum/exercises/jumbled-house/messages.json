@@ -1,58 +1,58 @@
 {
   "checks": {
-    "frame": "�",
-    "roof": "�",
-    "leftWindow": "�",
-    "rightWindow": "�",
-    "door": "�",
-    "doorKnob": "�"
+    "frame": "Der Rahmen des Hauses stimmt nicht.",
+    "roof": "Das Dach des Hauses sitzt nicht an der richtigen Stelle.",
+    "leftWindow": "Der Rahmen des linken Fensters sitzt nicht an der richtigen Stelle.",
+    "rightWindow": "Der Rahmen des rechten Fensters sitzt nicht an der richtigen Stelle.",
+    "door": "Der Rahmen der Tür sitzt nicht an der richtigen Stelle.",
+    "doorKnob": "Der Türknauf sitzt nicht an der richtigen Stelle."
   },
   "tasks": {
     "arrangeHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "Das Haus richtig anordnen",
+      "description": "Ordne alle Formen an ihren richtigen Positionen an, sodass ein Haus entsteht. Arbeite die einzelnen Teile systematisch durch."
     }
   },
   "scenarios": {
     "drawTheHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "Das Haus zeichnen",
+      "description": "Ordne alle Formen an ihren richtigen Positionen an, sodass ein vollständiges Haus entsteht."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wo fange ich an?",
+      "answer": "Gehe die Formen der Reihe nach durch: Himmel, Gras, Hausrahmen, Dach, Fenster, Tür, Türknauf. Mach jedes Teil richtig, bevor du weitermachst."
     },
     "coordinates": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie funktionieren Koordinaten?",
+      "answer": "Die Koordinaten der Zeichenfläche reichen von (0,0) oben links bis (100,100) unten rechts. Bei Rechtecken geben left und top die obere linke Ecke an."
     },
     "roofPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie finde ich die Position des Daches heraus?",
+      "answer": "Das Dach ist ein Dreieck, das oben auf dem Hausrahmen sitzt. Überlege, wo die beiden unteren Eckpunkte liegen müssen, damit das Dach links und rechts übersteht, und wo die Spitze sitzt."
     },
     "windowPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie platziere ich die Fenster?",
+      "answer": "Jedes Fenster ist von den Rändern des Hausrahmens eingerückt. Nutze die Position und die Größe des Hausrahmens zusammen mit den Werten für den Abstand, um die obere linke Ecke jedes Fensters zu berechnen."
     },
     "centerDoor": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie zentriere ich die Tür?",
+      "answer": "Wenn du etwas in einer größeren Form zentrieren willst, denk an den Platz, der übrig bleibt. Wenn das Haus breiter ist als die Tür, verteilt sich der Zwischenraum gleichmäßig auf beide Seiten."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichne ein Rechteck an der Position (left, top) mit der angegebenen Breite, Höhe und Farbe",
+      "category": "Formen zeichnen"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichne einen Kreis mit dem Mittelpunkt (centerX, centerY), dem angegebenen Radius und einer Farbe",
+      "category": "Formen zeichnen"
     },
     "triangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichne ein Dreieck mit drei Eckpunkten und einer Farbe",
+      "category": "Formen zeichnen"
     }
   }
 }

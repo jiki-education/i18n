@@ -1,58 +1,58 @@
 {
   "checks": {
-    "frame": "�",
-    "roof": "�",
-    "leftWindow": "�",
-    "rightWindow": "�",
-    "door": "�",
-    "doorKnob": "�"
+    "frame": "房子的框架不正確。",
+    "roof": "房子屋頂的位置不正確。",
+    "leftWindow": "左邊窗戶的位置不正確。",
+    "rightWindow": "右邊窗戶的位置不正確。",
+    "door": "門的位置不正確。",
+    "doorKnob": "門把的位置不正確。"
   },
   "tasks": {
     "arrangeHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "正確排列房子",
+      "description": "把所有圖形重新排列到正確的位置，組成一棟房子。有條理地一個一個完成。"
     }
   },
   "scenarios": {
     "drawTheHouse": {
-      "name": "�",
-      "description": "�"
+      "name": "畫出房子",
+      "description": "把所有圖形排列到正確的位置，組成一棟完整的房子。"
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "我該從哪裡開始？",
+      "answer": "依照順序一個一個來：天空、草地、房子框架、屋頂、窗戶、門、門把。每一步都做對了，再繼續下一個。"
     },
     "coordinates": {
-      "question": "�",
-      "answer": "�"
+      "question": "座標是怎麼運作的？",
+      "answer": "畫布的座標從左上角的 (0,0) 到右下角的 (100,100)。對長方形來說，left 和 top 指的就是左上角。"
     },
     "roofPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼算出屋頂的位置？",
+      "answer": "屋頂是一個三角形，緊密地蓋在房子框架的上方。想想看：兩側各要向外突出多少，左右兩個底角就該在哪裡；還有尖端要擺在哪裡。"
     },
     "windowPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼擺放窗戶？",
+      "answer": "每扇窗戶都是從房子框架的邊緣往內縮。用房子框架的位置和大小，加上往內縮的數值，就能算出每扇窗戶的左上角。"
     },
     "centerDoor": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼把門置中？",
+      "answer": "想把一個東西放在大圖形的正中央，就要想想剩下多少空間。如果房子比門寬，兩邊剩下的空隙就會一樣大。"
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "在 (left, top) 的位置畫一個長方形，並指定它的寬度、高度和顏色",
+      "category": "繪製圖形"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "以 (centerX, centerY) 為圓心，畫一個指定半徑和顏色的圓形",
+      "category": "繪製圖形"
     },
     "triangle": {
-      "description": "�",
-      "category": "�"
+      "description": "用三個頂點和一個顏色畫出三角形",
+      "category": "繪製圖形"
     }
   }
 }

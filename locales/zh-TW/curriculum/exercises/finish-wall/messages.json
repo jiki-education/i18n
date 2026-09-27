@@ -1,36 +1,36 @@
 {
   "checks": {
-    "leftBrick": "�",
-    "secondBrick": "�",
-    "middleBrick": "�",
-    "fourthBrick": "�",
-    "rightBrick": "�",
+    "leftBrick": "左邊那塊磚不對喔。",
+    "secondBrick": "第二塊磚不對喔。",
+    "middleBrick": "中間那塊磚不對喔。",
+    "fourthBrick": "第四塊磚不對喔。",
+    "rightBrick": "右邊那塊磚不對喔。",
     "codeQuality": {
-      "rectangleCalledOnce": "�"
+      "rectangleCalledOnce": "你在程式碼裡多個地方都用了<code>rectangle</code>函式，它只能出現一次喔！"
     }
   },
   "tasks": {
     "finishWall": {
-      "name": "�",
-      "description": "�"
+      "name": "完成這道牆",
+      "description": "幫牆加上最上面那一層吧！"
     }
   },
   "scenarios": {
     "finishWall": {
-      "name": "�",
-      "description": "�"
+      "name": "把這道牆完成",
+      "description": "幫牆加上最上面那一層吧！"
     }
   },
   "hints": {
     "positionSecondBrick": {
-      "question": "�",
-      "answer": "�"
+      "question": "我想不出要怎麼把第二塊磚放在第一塊磚後面一點的位置",
+      "answer": "如果每塊磚寬 20，那第一塊就要放在 0，第二塊放在 20，第三塊放在 40，依此類推。你可以用乘法來做到這件事。想一想，你可以追蹤哪個變數，讓位置形成 0、20、40 這樣的規律呢？"
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "在位置（left, top）畫出指定寬、高和顏色的長方形",
+      "category": "繪製圖形"
     }
   }
 }

@@ -1,40 +1,40 @@
 {
   "errors": {
-    "positionNotNumber": "�"
+    "positionNotNumber": "位置必須是數字"
   },
   "checks": {
-    "ballNotAtEnd": "�",
-    "missingPositions": "�"
+    "ballNotAtEnd": "球還沒進洞。它目前在位置 {{ballX}}，但必須在位置 88。",
+    "missingPositions": "球必須一個位置一個位置地滾過去，不能直接跳到終點。"
   },
   "tasks": {
     "rollBall": {
-      "name": "�",
-      "description": "�"
+      "name": "把球滾進洞裡",
+      "description": "把球滾進洞裡。"
     }
   },
   "scenarios": {
     "rollBall": {
-      "name": "�",
-      "description": "�"
+      "name": "把球滾進洞裡",
+      "description": "把球滾進洞裡。"
     }
   },
   "hints": {
     "dontKnowWhereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "我不知道該從哪裡開始",
+      "answer": "關鍵是每次把球往前移動一格。你可以用一個變數來做到這件事。想想看這要怎麼寫。"
     },
     "stillCantFigureItOut": {
-      "question": "�",
-      "answer": "�"
+      "question": "我還是想不出來",
+      "answer": "你需要建立一個變數來追蹤球的位置。它一開始要是球現在的位置，然後重複很多次，每次增加 1。每增加一次，就把這個變數當成輸入來呼叫`moveTo(...)`。"
     }
   },
   "functions": {
     "moveTo": {
-      "description": "�",
-      "category": "�"
+      "description": "把球移動到指定的**位置**。",
+      "category": "移動"
     }
   },
   "describers": {
-    "moveTo": "�"
+    "moveTo": "把球移動到位置 ${arg1}"
   }
 }

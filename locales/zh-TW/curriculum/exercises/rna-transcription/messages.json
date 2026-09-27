@@ -1,0 +1,48 @@
+{
+  "tasks": {
+    "transcribeDnaToRna": {
+      "name": "將 DNA 轉錄成 RNA",
+      "description": "寫一個函式，接受一條 DNA 鏈，並回傳它的 RNA 互補序列。每個核苷酸都要換成它的互補核苷酸：G->C、C->G、T->A、A->U。"
+    }
+  },
+  "scenarios": {
+    "rnaEmptySequence": {
+      "name": "空的 RNA 序列",
+      "description": "空的 DNA 序列應該回傳空的 RNA 序列。"
+    },
+    "rnaCytosineToGuanine": {
+      "name": "胞嘧啶轉成鳥嘌呤",
+      "description": "胞嘧啶（C）的 RNA 互補是鳥嘌呤（G）。"
+    },
+    "rnaGuanineToCytosine": {
+      "name": "鳥嘌呤轉成胞嘧啶",
+      "description": "鳥嘌呤（G）的 RNA 互補是胞嘧啶（C）。"
+    },
+    "rnaThymineToAdenine": {
+      "name": "胸腺嘧啶轉成腺嘌呤",
+      "description": "胸腺嘧啶（T）的 RNA 互補是腺嘌呤（A）。"
+    },
+    "rnaAdenineToUracil": {
+      "name": "腺嘌呤轉成尿嘧啶",
+      "description": "腺嘌呤（A）的 RNA 互補是尿嘧啶（U）。"
+    },
+    "rnaFullSequence": {
+      "name": "完整的 RNA 互補序列",
+      "description": "把一整條 DNA 序列轉換成它的 RNA 互補序列。"
+    }
+  },
+  "hints": {
+    "transcriptionRule": {
+      "question": "轉錄的規則是什麼？",
+      "answer": "每個 DNA 核苷酸都對應到一個 RNA 核苷酸：G 對 C、C 對 G、T 對 A、A 對 U。你要做的，就是把這條規則套用到輸入裡的每一個字元。"
+    },
+    "mappingInCode": {
+      "question": "要怎麼在程式碼裡做這個對應？",
+      "answer": "其中一個做法是用兩條「平行」的字串：DNA 的`\"GCTA\"`和 RNA 的`\"CGAU\"`。一個 DNA 字母的 RNA 互補，就是 RNA 字串裡同一個位置的字母。你得先在 DNA 字串裡找到那個位置。"
+    },
+    "processStrand": {
+      "question": "要怎麼處理整條鏈？",
+      "answer": "用迴圈走過 DNA 字串的每一個字元，找出它的 RNA 互補，再用`+`串接的方式把它接到結果字串後面。"
+    }
+  }
+}

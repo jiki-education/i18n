@@ -1,103 +1,103 @@
 {
   "describers": {
-    "canMove": "�",
-    "canTurnLeft": "�",
-    "canTurnRight": "�"
+    "canMove": "Prüft, ob die Figur vorwärts gehen kann",
+    "canTurnLeft": "Prüft, ob links neben der Figur keine Wand ist",
+    "canTurnRight": "Prüft, ob rechts neben der Figur keine Wand ist"
   },
   "checks": {
-    "reachedEnd": "�",
-    "extraTurn": "�"
+    "reachedEnd": "Du hast das Ende des Labyrinths nicht erreicht.",
+    "extraTurn": "Am Ende scheinst du dich noch einmal unnötig gedreht zu haben."
   },
   "tasks": {
     "straightPath": {
-      "name": "�",
-      "description": "�"
+      "name": "Ein gerader Weg",
+      "description": "Geh vorwärts bis zum Ende des Labyrinths."
     },
     "turnLeft": {
-      "name": "�",
-      "description": "�"
+      "name": "Dreh nach links, wenn du kannst",
+      "description": "Wenn links ein Weg frei ist, dann nimm ihn!"
     },
     "turnRight": {
-      "name": "�",
-      "description": "�"
+      "name": "Dreh nach rechts, wenn du weder vorwärts noch nach links kannst",
+      "description": "Wenn weder links noch geradeaus ein Weg frei ist, nimm den Weg nach rechts."
     },
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "Dreh dich um, wenn es nicht anders geht",
+      "description": "In einer Sackgasse drehst du dich um. Wenn du weder nach links noch geradeaus noch nach rechts kannst, dreh dich um und geh vorwärts."
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "Bring die Figur ans Ende des Labyrinths",
+      "description": "Ein gerader Weg nach unten"
     },
     "leftTurn": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine einzige Drehung nach links",
+      "description": "Eine Drehung nach links bewältigen"
     },
     "rightTurn": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine einzige Drehung nach rechts",
+      "description": "Eine Drehung nach rechts bewältigen"
     },
     "forks": {
-      "name": "�",
-      "description": "�"
+      "name": "Wähl links, wenn du kannst, sonst rechts",
+      "description": "Ein Labyrinth mit Weggabelungen, das die Links-vor-Rechts-Regel testet"
     },
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "In der Sackgasse umdrehen",
+      "description": "Ein Labyrinth, in dem du dich umdrehen musst"
     },
     "forks2": {
-      "name": "�",
-      "description": "�"
+      "name": "Komplexes Labyrinth mit Weggabelungen und Sackgassen",
+      "description": "Ein komplexes Labyrinth, das den vollständigen Algorithmus testet"
     }
   },
   "hints": {
     "solveEachMaze": {
-      "question": "�",
-      "answer": "�"
+      "question": "Muss ich jedes Labyrinth einzeln lösen?",
+      "answer": "Nein. Du schreibst einen Algorithmus, der für jedes Labyrinth funktioniert, und derselbe Code läuft in jedem Szenario."
     },
     "runEveryStep": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie schaffe ich es, dass mein Code bei jedem Schritt im Labyrinth läuft?",
+      "answer": "Pack deine Logik in die repeat-Schleife. Sie führt deinen Code immer wieder aus, bis du das Ende erreichst. Du musst also nur beschreiben, was bei einem einzelnen Schritt zu tun ist."
     },
     "oneCheckPerStep": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie sorge ich dafür, dass bei jedem Schritt nur eine meiner Prüfungen ausgeführt wird?",
+      "answer": "Nutze eine einzige Kette aus `if`, `else if` und `else` statt mehrerer einzelner `if`-Anweisungen. So wird bei jedem Durchlauf der Schleife genau ein Zweig ausgeführt."
     },
     "stuckAfterTurn": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich drehe mich, aber die Figur bleibt auf derselben Stelle stehen.",
+      "answer": "Durch das Drehen ändert sich nur die Richtung, in die die Figur schaut, sie geht keinen Schritt. Nach dem Drehen musst du trotzdem noch `move()` aufrufen."
     },
     "turnAroundDeadEnd": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie drehe ich mich in einer Sackgasse um?",
+      "answer": "Es gibt keine Funktion zum Umdrehen. Wenn du dich zweimal in dieselbe Richtung drehst (zweimal nach links oder zweimal nach rechts), schaut die Figur wieder in die Richtung, aus der sie gekommen ist."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt die Figur **einen Schritt vorwärts** in die aktuelle Richtung. Die Figur bewegt sich nur, wenn an der Zielposition keine Wand ist.",
+      "category": "Bewegung"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Dreht die Figur **um 90 Grad nach links** (gegen den Uhrzeigersinn). Das ändert die Richtung, in die die Figur schaut.",
+      "category": "Bewegung"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Dreht die Figur **um 90 Grad nach rechts** (im Uhrzeigersinn). Das ändert die Richtung, in die die Figur schaut.",
+      "category": "Bewegung"
     },
     "canMove": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt **true** zurück, wenn vor der Figur keine Wand ist, sonst **false**.",
+      "category": "Wahrnehmung"
     },
     "canTurnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt **true** zurück, wenn links neben der Figur keine Wand ist, sonst **false**.",
+      "category": "Wahrnehmung"
     },
     "canTurnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt **true** zurück, wenn rechts neben der Figur keine Wand ist, sonst **false**.",
+      "category": "Wahrnehmung"
     }
   }
 }

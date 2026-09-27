@@ -1,93 +1,93 @@
 {
   "checks": {
-    "totalCells": "�",
-    "wrongPosition": "�",
-    "wrongEntrance": "�",
-    "wrongGroundWalls": "�",
-    "wrongRoof": "�"
+    "totalCells": "Insgesamt wurden {{expectedTotal}} Zellen erwartet, gefunden wurden {{got}}.",
+    "wrongPosition": "Gebäude {{building}} steht nicht an der richtigen Stelle. Es beginnt in Spalte {{start}}, sollte aber in Spalte {{expected}} beginnen.",
+    "wrongEntrance": "Gebäude {{building}}: Der Eingang ist an der falschen Stelle.",
+    "wrongGroundWalls": "Gebäude {{building}}: Die Seitenwände im Erdgeschoss stimmen nicht.",
+    "wrongRoof": "Gebäude {{building}}: Das Dach ist nicht vollständig."
   },
   "tasks": {
     "buildSkyline": {
-      "name": "�",
-      "description": "�"
+      "name": "Baue die Skyline der Stadt",
+      "description": "Baue mehrere Gebäude mit zufälligen Breiten und Höhen, um eine Skyline der Stadt zu erzeugen."
     }
   },
   "scenarios": {
     "buildings1": {
-      "name": "�",
-      "description": "�"
+      "name": "1 Gebäude",
+      "description": "Baue ein einzelnes Gebäude mit zufälliger Breite und Höhe."
     },
     "buildings2": {
-      "name": "�",
-      "description": "�"
+      "name": "2 Gebäude",
+      "description": "Baue 2 Gebäude mit zufälligen Breiten und Höhen."
     },
     "buildings3": {
-      "name": "�",
-      "description": "�"
+      "name": "3 Gebäude",
+      "description": "Baue 3 Gebäude mit zufälligen Breiten und Höhen."
     },
     "buildings4": {
-      "name": "�",
-      "description": "�"
+      "name": "4 Gebäude",
+      "description": "Baue 4 Gebäude mit zufälligen Breiten und Höhen."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wo fange ich bei so einer großen Übung an?",
+      "answer": "Teile sie auf. Die äußere Form ist eine Schleife pro Gebäude. Innerhalb dieser Schleife zeichnest du der Reihe nach drei Dinge: das Erdgeschoss (mit dem Eingang), die oberen Stockwerke (nur Wände und Glas) und das Flachdach. Bring zuerst das erste Szenario mit einem einzelnen Gebäude zum Laufen, bevor du dich um mehrere Gebäude kümmerst."
     },
     "buildingDimensions": {
-      "question": "�",
-      "answer": "�"
+      "question": "Woher weiß ich, wie jedes Gebäude aussehen soll?",
+      "answer": "Rufe `randomWidth()` und `randomNumFloors()` einmal zu Beginn jedes Gebäudedurchlaufs auf und speichere beide in lokalen Variablen. Ein erneuter Aufruf liefert dir die Werte des *nächsten* Gebäudes, also rufe sie innerhalb der Zeilen nicht noch einmal auf."
     },
     "trackPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie behalte ich im Blick, wo das nächste Gebäude hinkommt?",
+      "answer": "Halte eine einzige Variable für die linke Spalte des aktuellen Gebäudes. Beginne sie bei der linken Lücke aus der Vorgabe. Wenn du ein Gebäude fertig hast, erhöhe sie um die Breite dieses Gebäudes plus die Lücke zwischen den Gebäuden. Diese eine Variable ist der gesamte Zustand, den du für die horizontale Positionierung brauchst."
     },
     "groundFloorLayout": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie baue ich das Erdgeschoss mit dem Eingang in der Mitte auf?",
+      "answer": "Gehe das Gebäude Spalte für Spalte durch. Die erste und die letzte Spalte sind Wände; alles dazwischen ist Glas; eine Spalte in der Mitte ist der Eingang. Die Spalte des Eingangs ergibt sich aus dem linken Rand des Gebäudes und seiner Breite."
     },
     "upperFloorsAndRoof": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie zeichne ich die oberen Stockwerke und das Dach?",
+      "answer": "Jedes obere Stockwerk hat das gleiche Muster wie das Erdgeschoss, nur ohne den Eingang: Wände an den Seiten, dazwischen Glas. Denk daran, dass das Erdgeschoss schon als eines der Stockwerke zählt. Du stapelst also nur die übrigen darüber und gehst dabei in `y` nach oben. Das Dach ist dann eine durchgehende Reihe aus Wänden über die volle Breite ganz oben und zählt nicht als Stockwerk."
     },
     "stuckError": {
-      "question": "�",
-      "answer": "�"
+      "question": "Mein zweites Gebäude meldet den Fehler „Die Bauarbeiter stecken fest, hier steht schon eine Wand“. Was stimmt da nicht?",
+      "answer": "Dein zweites Gebäude versucht, auf dem ersten zu bauen, weil du deinen Spaltenzähler zwischen den Gebäuden nicht weiterrückst. Erhöhe ihn nach jedem gezeichneten Gebäude um `width + gap`, bevor der nächste Durchlauf beginnt. Wenn du das vergisst, beginnt jedes Gebäude am gleichen linken Rand und stößt mit dem vorherigen zusammen."
     }
   },
   "functions": {
     "buildWall": {
-      "description": "�",
-      "category": "�"
+      "description": "Setzt einen **Wandblock** an die Rasterposition (x, y).",
+      "category": "Bauen"
     },
     "buildGlass": {
-      "description": "�",
-      "category": "�"
+      "description": "Setzt eine **Glasplatte** an die Rasterposition (x, y).",
+      "category": "Bauen"
     },
     "buildEntrance": {
-      "description": "�",
-      "category": "�"
+      "description": "Setzt eine **Eingangstür** an die Rasterposition (x, y).",
+      "category": "Bauen"
     },
     "numBuildings": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt die **Anzahl der Gebäude** zurück, die du bauen musst.",
+      "category": "Info"
     },
     "randomWidth": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt eine **zufällige Gebäudebreite** zurück: 3, 5 oder 7.",
+      "category": "Info"
     },
     "randomNumFloors": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt eine **zufällige Anzahl an Stockwerken** zwischen 1 und 12 zurück.",
+      "category": "Info"
     }
   },
   "describers": {
-    "buildWall": "�",
-    "buildEntrance": "�",
-    "buildGlass": "�",
-    "numBuildings": "�",
-    "randomWidth": "�",
-    "randomNumFloors": "�"
+    "buildWall": "baute eine Wand an Position (${arg1}, ${arg2})",
+    "buildEntrance": "baute einen Eingang an Position (${arg1}, ${arg2})",
+    "buildGlass": "baute eine Glasplatte an Position (${arg1}, ${arg2})",
+    "numBuildings": "ermittelte die Anzahl der Gebäude",
+    "randomWidth": "ermittelte eine zufällige Gebäudebreite (3-7)",
+    "randomNumFloors": "ermittelte eine zufällige Anzahl an Stockwerken (1-12)"
   }
 }

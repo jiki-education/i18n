@@ -1,97 +1,97 @@
 {
   "tasks": {
     "findGuestTable": {
-      "name": "�",
-      "description": "�"
+      "name": "查出賓客坐在哪一桌",
+      "description": "寫一個函式，接收賓客全名的陣列、順序對應的桌名陣列，以及一位以稱謂加姓氏報到的賓客。回傳這位賓客所坐的桌子名稱；如果對方不在座位表上，就回傳 `\"No table found\"`。"
     },
     "solveTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "用 9 行程式碼解出來",
+      "description": "加分題：這題可以寫得比你想像中精簡得多。試著用 9 行程式碼或更少解出來。"
     }
   },
   "scenarios": {
     "emptyList": {
-      "name": "�",
-      "description": "�"
+      "name": "空的座位表",
+      "description": "座位表空的時候，沒有人有位置坐。"
     },
     "nameMissing": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad 被擋在門外",
+      "description": "這個名字不在座位表上。"
     },
     "namePresent": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad 被帶位入座",
+      "description": "Brad Pitt 在座位表上，所以 Mr Pitt 能拿到他該坐的桌次。"
     },
     "differentHonorific": {
-      "name": "�",
-      "description": "�"
+      "name": "王國的騎士",
+      "description": "不同的稱謂，而且這位賓客不是座位表上的第一位。"
     },
     "bondSeated": {
-      "name": "�",
-      "description": "�"
+      "name": "想必是 Mr Bond 吧",
+      "description": "James Bond 在座位表上。"
     },
     "bondNotSeated": {
-      "name": "�",
-      "description": "�"
+      "name": "嗯……想必是 Mr Bond？",
+      "description": "座位表上只有 Jason Bourne，沒有 James Bond。"
     },
     "partialSurname": {
-      "name": "�",
-      "description": "�"
+      "name": "不完全是 Mr Pitt",
+      "description": "Ada Spitt 和 Hugo Ross-Pitt 都不是 Mr Pitt，所以他在這裡沒有位子。"
     },
     "lloydWebber": {
-      "name": "�",
-      "description": "�"
+      "name": "那男爵呢？",
+      "description": "男爵 Lloyd Webber 的姓氏有 2 個詞。"
     },
     "markWebber": {
-      "name": "�",
-      "description": "�"
+      "name": "Mark 是那位男爵嗎？",
+      "description": "不同的 Webber 不算數，姓氏必須完全相符。"
     },
     "formalDinnerBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "乾淨俐落：Lord Doyle",
+      "description": "和之前一樣的座位表，不過這次試著用 9 行程式碼或更少解出來。"
     }
   },
   "hints": {
     "twoLists": {
-      "question": "�",
-      "answer": "�"
+      "question": "這 2 個陣列之間有什麼關係？",
+      "answer": "它們是一對的。第一位賓客坐第一桌，第二位賓客坐第二桌，依此類推。所以光是知道賓客*有沒有*在座位表上並不夠，你得知道他在座位表上的*哪個位置*。"
     },
     "comparingNames": {
-      "question": "�",
-      "answer": "�"
+      "question": "賓客說的是「Mr Pitt」，但座位表上寫的是「Brad Pitt」。我要怎麼比較這兩個？",
+      "answer": "這兩個字串永遠不會相等，所以直接比較行不通。想一想：賓客報上來的內容裡，哪個部分真的會出現在座位表上？而在座位表的那筆資料裡，你又會預期在哪裡找到它？"
     },
     "lookalikeSurnames": {
-      "question": "�",
-      "answer": "�"
+      "question": "姓氏有可能對到錯的賓客嗎？",
+      "answer": "非常有可能。把「Ada Spitt」和「Hugo Ross-Pitt」大聲唸出來，然後再想想 Mr Pitt。問問自己：在那筆資料裡，是什麼讓一個姓氏成為真正的姓氏，而不只是剛好落在它尾端的幾個字母？"
     },
     "noMatch": {
-      "question": "�",
-      "answer": "�"
+      "question": "如果沒有人符合，我該回傳什麼？",
+      "answer": "字串 `\"No table found\"`，一字不差。比較難的是要知道什麼時候才可以說出這句話。如果你只檢查了座位表上的第一位賓客，發現他不是你要找的人，這時你真的能確定他沒有坐在別的位子上嗎？"
     }
   },
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "繼續加油！看看能不能縮到 9 行程式碼。"
   },
   "functions": {
     "length": {
-      "description": "�",
-      "category": "�"
+      "description": "陣列裡有幾個項目，也就是你用在字串上的同一個 length 屬性",
+      "category": "陣列操作"
     },
     "split": {
-      "description": "�",
-      "category": "�"
+      "description": "把一個字串切成好幾段，組成一個陣列，遇到分隔字串就斷開",
+      "category": "字串操作"
     },
     "slice": {
-      "description": "�",
-      "category": "�"
+      "description": "從某個位置開始，用陣列的一部分做出一個新的陣列",
+      "category": "陣列操作"
     },
     "join": {
-      "description": "�",
-      "category": "�"
+      "description": "把陣列裡的項目接成一個字串，項目之間用分隔字串隔開",
+      "category": "陣列操作"
     },
     "endsWith": {
-      "description": "�",
-      "category": "�"
+      "description": "檢查一個字串是不是以另一個較短的字串結尾",
+      "category": "字串操作"
     }
   }
 }

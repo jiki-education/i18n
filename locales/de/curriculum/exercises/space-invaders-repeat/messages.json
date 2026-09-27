@@ -1,49 +1,49 @@
 {
   "describers": {
-    "move": "�"
+    "move": "bewegte die Laserkanone nach rechts"
   },
   "checks": {
-    "notShotAllAliens": "�",
-    "tooManyLines": "�"
+    "notShotAllAliens": "Du hast nicht alle Aliens abgeschossen.",
+    "tooManyLines": "Deine Lösung hat zu viele Zeilen Code. Versuch es mit einer repeat-Schleife, damit sie kürzer wird!"
   },
   "tasks": {
     "repeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "Nutze eine repeat-Schleife, um alle Aliens abzuschießen",
+      "description": "Finde das Muster in den Alien-Positionen und zerstöre mit einer repeat-Schleife alle Aliens in höchstens 7 Zeilen Code."
     }
   },
   "scenarios": {
     "repeatShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "Wiederholen und schießen",
+      "description": "Nutze eine repeat-Schleife, um alle Aliens abzuschießen"
     }
   },
   "hints": {
     "avoidRepeating": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie vermeide ich es, `move()` und `shoot()` immer wieder zu schreiben?",
+      "answer": "Nutze eine `repeat`-Schleife. `repeat(n) { ... }` führt denselben Block `n` Mal aus."
     },
     "repeatingPattern": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie sieht das wiederkehrende Muster in den Alien-Positionen aus?",
+      "answer": "Deine Laserkanone startet links neben den Aliens, und die Aliens sitzen in jeder zweiten Spalte, jeweils drei übereinander. Das Muster für jede Spalte ist also: `move`, `move`, `shoot`, `shoot`, `shoot`. Du fährst über die leere Lücke bis zur Alien-Spalte und schießt dann alle drei Reihen ab. Diese Fünfergruppe ist es, die du wiederholen willst."
     },
     "howManyTimes": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie oft soll ich das Muster wiederholen?",
+      "answer": "Zähle die Alien-Gruppen auf dem Bildschirm und nutze diese Zahl als Argument für `repeat`."
     },
     "why7Lines": {
-      "question": "�",
-      "answer": "�"
+      "question": "Warum verlangt die Aufgabe nur 7 Zeilen?",
+      "answer": "Eine Zeile für den `repeat`-Kopf, die fünf Aktionen darin und eine Zeile für die schließende geschweifte Klammer ergeben sieben. Alles, was du brauchst, passt in die Schleife, nichts steht außerhalb. Wenn du mehr Zeilen schreibst, nutzt du die Schleife wahrscheinlich noch nicht."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt die Laserkanone **eine Position nach rechts**. Wenn du über den rechten Bildschirmrand hinausfährst, verlierst du!",
+      "category": "Bewegung"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Feuert den Laser nach oben. **Schieß nur, wenn ein Alien über dir ist**, sonst verlierst du das Spiel!",
+      "category": "Aktion"
     }
   }
 }

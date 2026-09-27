@@ -1,0 +1,52 @@
+{
+  "checks": {
+    "wrongMoveCount": "Wir haben erwartet, dass der Ball das Spielfeld zweimal umrundet und wieder am selben Startpunkt landet.",
+    "missedLeftWall": "Der Ball hat die Mitte der linken Seite offenbar nicht berührt.",
+    "missedRightWall": "Der Ball hat die Mitte der rechten Seite offenbar nicht berührt.",
+    "missedTopMiddle": "Der Ball hat die Mitte der oberen Seite offenbar nicht berührt.",
+    "missedBottomMiddle": "Der Ball hat die Mitte der unteren Seite offenbar nicht berührt."
+  },
+  "tasks": {
+    "bounceBall": {
+      "name": "Lass den Ball abprallen",
+      "description": "Erstelle einen Ball und lass ihn von allen vier Wänden des Spielfelds abprallen."
+    }
+  },
+  "scenarios": {
+    "addBall": {
+      "name": "Füge den Ball hinzu",
+      "description": "Füge den Ball hinzu und lass ihn im Spielfeld abprallen."
+    }
+  },
+  "hints": {
+    "createBall": {
+      "question": "Wie bekomme ich einen Ball, mit dem ich arbeiten kann?",
+      "answer": "Erstelle ihn mit `new`: `let ball = new Ball()`. Übergib `ball` dann innerhalb der Schleife an `moveBall(ball)`, damit er sich bewegt."
+    },
+    "detectWall": {
+      "question": "Woran erkenne ich, dass der Ball eine Wand erreicht hat?",
+      "answer": "Der Rand des Balls ist `radius` von seinem Mittelpunkt entfernt. Für die linke Wand prüfst du `ball.cx - ball.radius <= 0`. Für die rechte Wand `ball.cx + ball.radius >= 100`."
+    },
+    "reverseVelocity": {
+      "question": "Was soll ich tun, wenn der Ball eine Wand trifft?",
+      "answer": "Setze die Geschwindigkeit so, dass er sich im nächsten Schritt in die andere Richtung bewegt. An der linken Wand setzt du `ball.xVelocity = 1`, an der rechten Wand `-1`. Verwende `=` und nicht `+=`, damit die Geschwindigkeit genau `1` oder `-1` bleibt."
+    },
+    "checkAllWalls": {
+      "question": "Warum entkommt mein Ball trotzdem manchmal?",
+      "answer": "Wahrscheinlich hast du nur zwei Wände geprüft. Füge dieselbe Prüfung für die obere Wand (`ball.cy - ball.radius <= 0`) und die untere Wand (`ball.cy + ball.radius >= 100`) hinzu und kehre dabei `yVelocity` statt `xVelocity` um."
+    }
+  },
+  "describers": {
+    "moveBall": "Bewegt den Ball entsprechend seiner Geschwindigkeit"
+  },
+  "functions": {
+    "ball": {
+      "description": "Erstellt eine neue Ball-Instanz mit den Eigenschaften: `cx`, `cy` (Mittelpunktposition), `radius`, `xVelocity` und `yVelocity`.",
+      "category": "Objekte"
+    },
+    "moveBall": {
+      "description": "Bewegt den Ball entsprechend seiner aktuellen `xVelocity` und `yVelocity`.",
+      "category": "Bewegung"
+    }
+  }
+}

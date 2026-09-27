@@ -1,0 +1,168 @@
+WEBVTT
+
+NOTE en_md5 cc1cedf75df71450fa8e0da4a289c70e
+
+00:00:00.100 --> 00:00:03.520
+Willkommen zurück. Bisher haben wir Variablen
+
+00:00:03.740 --> 00:00:06.760
+für Dinge benutzt, die eine Bedeutung haben: das Alter einer Person,
+
+00:00:06.860 --> 00:00:10.680
+die Uhrzeit, eine Farbe. Wir haben Variablen auch verändert,
+
+00:00:10.700 --> 00:00:14.900
+aber sie waren ziemlich statisch. Eine der
+
+00:00:14.940 --> 00:00:18.320
+häufigsten Verwendungen von Variablen beim Programmieren
+
+00:00:18.400 --> 00:00:22.020
+ist es aber, unseren Fortschritt bei einer Arbeit zu verfolgen.
+
+00:00:22.080 --> 00:00:24.280
+Stell dir vor, du baust eine Mauer, etwas, das du
+
+00:00:24.340 --> 00:00:26.880
+gleich selbst machst. Im echten Leben weißt du,
+
+00:00:26.940 --> 00:00:29.560
+in welcher Ziegelschicht du gerade baust:
+
+00:00:29.600 --> 00:00:31.540
+in der untersten, der obersten oder in einer
+
+00:00:31.580 --> 00:00:34.380
+in der Mitte. Und du weißt,
+
+00:00:34.420 --> 00:00:36.480
+welchen Ziegel du als Nächstes legen musst:
+
+00:00:36.520 --> 00:00:40.240
+den dritten, den vierten und so weiter.
+
+00:00:40.250 --> 00:00:43.240
+In der digitalen Welt brauchen wir genau dasselbe. Oder
+
+00:00:43.360 --> 00:00:47.070
+stell dir vor, du willst einen automatischen
+
+00:00:47.140 --> 00:00:50.220
+Space-Invaders-Bot bauen. Er muss wissen, wo er sich
+
+00:00:50.320 --> 00:00:52.220
+von links nach rechts gesehen
+
+00:00:52.260 --> 00:00:55.730
+auf dem Bildschirm befindet. In der Programmierung nennen wir das Zustand (state auf Englisch),
+
+00:00:56.240 --> 00:00:59.840
+kurz für die Frage: In welchem Zustand ist das hier? Zustand
+
+00:00:59.880 --> 00:01:02.510
+ist hilfreich, wenn man wissen will,
+
+00:01:02.600 --> 00:01:05.099
+was gerade los ist. Wirklich nützlich wird er aber,
+
+00:01:05.140 --> 00:01:08.250
+wenn wir ihn mit Bedingungen kombinieren. Wenn wir
+
+00:01:08.280 --> 00:01:10.660
+die Mauer bauen, müssen wir nach
+
+00:01:10.680 --> 00:01:13.780
+jedem Ziegel prüfen, ob wir
+
+00:01:13.820 --> 00:01:16.160
+den letzten Ziegel dieser Reihe gelegt haben. Wenn
+
+00:01:16.240 --> 00:01:17.520
+ja, gehen wir zur
+
+00:01:17.560 --> 00:01:19.200
+nächsten Reihe über und legen wieder den
+
+00:01:19.240 --> 00:01:22.310
+ersten Ziegel. Wenn wir unseren Space-Invaders-Bot bauen,
+
+00:01:22.440 --> 00:01:23.780
+müssen wir prüfen, ob wir am
+
+00:01:23.820 --> 00:01:26.020
+Rand des Bildschirms sind, bevor wir uns bewegen,
+
+00:01:26.140 --> 00:01:29.700
+und wenn ja, die Richtung umkehren. Und diese
+
+00:01:29.780 --> 00:01:32.360
+Richtung ist auch Zustand: eine Aufzeichnung davon, ob
+
+00:01:32.380 --> 00:01:35.800
+wir nach links oder nach rechts unterwegs sind. Wenn du
+
+00:01:35.900 --> 00:01:37.600
+weitergehst, wird Zustand einer der
+
+00:01:37.660 --> 00:01:41.220
+wichtigsten Teile des Programmierens. Es geht darum,
+
+00:01:41.360 --> 00:01:44.100
+zu wissen, wo etwas ist, in welchem Zustand es sich befindet
+
+00:01:44.500 --> 00:01:47.140
+oder wie weit wir in unserer Liste
+
+00:01:47.300 --> 00:01:49.960
+von Aufgaben sind. In den nächsten beiden Übungen
+
+00:01:49.980 --> 00:01:52.140
+wirst du mit Zustand eine Mauer bauen und
+
+00:01:52.180 --> 00:01:54.500
+Space Invaders spielen, mit den Ideen, die wir
+
+00:01:54.560 --> 00:01:58.890
+gerade besprochen haben. Es ist wirklich wichtig, dass du diese
+
+00:01:58.940 --> 00:02:03.780
+Übungen in kleine Schritte zerlegst. Überleg dir genau,
+
+00:02:03.840 --> 00:02:05.660
+was du wissen musst, um
+
+00:02:05.680 --> 00:02:07.740
+sie zu lösen: zum Beispiel, in welcher Ziegelschicht
+
+00:02:07.780 --> 00:02:09.360
+du gerade bist oder wo der
+
+00:02:09.420 --> 00:02:12.680
+aktuelle Ziegel liegt. Überleg dir, welche Regeln
+
+00:02:12.740 --> 00:02:15.000
+der Computer befolgen muss, um die
+
+00:02:15.060 --> 00:02:18.780
+ganze Mauer zu legen. Das hier ist jetzt echtes Programmieren.
+
+00:02:19.000 --> 00:02:20.760
+So etwas machen wir
+
+00:02:20.800 --> 00:02:24.120
+als Programmierer jeden Tag. Es wird
+
+00:02:24.160 --> 00:02:26.700
+komplexer, aber es macht auch mehr
+
+00:02:26.720 --> 00:02:29.860
+Spaß. Diese Muster brauchen am Anfang etwas Zeit,
+
+00:02:29.940 --> 00:02:32.160
+bis man sich an sie gewöhnt hat. Also lass
+
+00:02:32.180 --> 00:02:34.600
+dir Zeit, hab Spaß, und wir sehen uns
+
+00:02:34.640 --> 00:02:35.320
+gleich wieder hier.

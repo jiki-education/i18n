@@ -1,42 +1,42 @@
 {
   "checks": {
-    "notReachedEnd": "�",
-    "walkNotDefined": "�"
+    "notReachedEnd": "你還沒走到迷宮的終點喔。",
+    "walkNotDefined": "你應該定義一個<code>walk</code>函式，讓它接收步數，然後往前移動那麼多次。"
   },
   "tasks": {
     "writeWalk": {
-      "name": "�",
-      "description": "�"
+      "name": "寫一個 walk 函式",
+      "description": "定義一個叫做 walk 的函式，接收步數當作輸入，然後往前移動那麼多次。"
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "在迷宮中前進",
+      "description": "走 3 步，向左轉，走 2 步，向右轉，走 4 步，就能到達目標。"
     }
   },
   "hints": {
     "howToMoveForward": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼往前走呢？",
+      "answer": "使用`move()`函式。"
     },
     "howToMoveSpecificTimes": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼往前移動指定的次數呢？",
+      "answer": "你之前在其他練習裡也做過要重複某個動作指定次數的題目（想想看讓高爾夫球滾動指定距離那題）。這裡可以運用同樣的想法喔。"
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色朝目前的方向**往前移動一步**。只有目標位置沒有被牆擋住，角色才會移動。",
+      "category": "移動"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色**向左轉 90 度**（逆時針）。這會改變角色面朝的方向。",
+      "category": "移動"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色**向右轉 90 度**（順時針）。這會改變角色面朝的方向。",
+      "category": "移動"
     }
   }
 }

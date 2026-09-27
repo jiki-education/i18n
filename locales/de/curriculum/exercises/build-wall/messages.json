@@ -1,56 +1,56 @@
 {
   "checks": {
-    "bottomLeft": "�",
-    "bottomRight": "�",
-    "secondRowFirst": "�",
-    "secondRowLast": "�",
-    "thirdRowMiddle": "�",
-    "fourthRowMiddle": "�",
-    "topLeft": "�",
-    "topRight": "�",
-    "brickCount": "�",
+    "bottomLeft": "Das untere linke Rechteck ist nicht korrekt.",
+    "bottomRight": "Das untere rechte Rechteck ist nicht korrekt.",
+    "secondRowFirst": "Das erste Rechteck in der zweiten Reihe von unten ist nicht korrekt.",
+    "secondRowLast": "Das letzte Rechteck in der zweiten Reihe von unten ist nicht korrekt.",
+    "thirdRowMiddle": "Das mittlere Rechteck in der dritten Reihe von unten ist nicht korrekt.",
+    "fourthRowMiddle": "Eines der mittleren Rechtecke in der vierten Reihe von unten ist nicht korrekt.",
+    "topLeft": "Das obere linke Rechteck ist nicht korrekt.",
+    "topRight": "Das obere rechte Rechteck ist nicht korrekt.",
+    "brickCount": "Die Mauer sollte aus genau 55 Ziegeln bestehen.",
     "codeQuality": {
-      "rectangleCalledOnce": "�"
+      "rectangleCalledOnce": "Du verwendest die Funktion <code>rectangle</code> an mehreren Stellen in deinem Code. Sie sollte nur einmal vorkommen!"
     }
   },
   "tasks": {
     "buildWall": {
-      "name": "�",
-      "description": "�"
+      "name": "Baue die Mauer",
+      "description": "Baue mit verschachtelten Schleifen eine vollständige Mauer aus 55 Ziegeln."
     }
   },
   "scenarios": {
     "buildWall": {
-      "name": "�",
-      "description": "�"
+      "name": "Baue eine Mauer aus 55 Ziegeln",
+      "description": "Erzeuge mit verschachtelten Schleifen das Muster einer vollständigen Ziegelmauer."
     }
   },
   "hints": {
     "onlyOneRectangleCall": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich darf `rectangle` nur einmal aufrufen. Wie zeichne ich 55 Ziegel?",
+      "answer": "Setze den einen `rectangle`-Aufruf in eine Schleife. Bei jedem Durchlauf ändern sich x und y, sodass ein neuer Ziegel an einer neuen Stelle gezeichnet wird."
     },
     "wholeGrid": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie zeichne ich ein ganzes Raster und nicht nur eine Reihe?",
+      "answer": "Verwende verschachtelte Schleifen. Die äußere Schleife geht die Reihen durch (y ändert sich), und die innere Schleife geht die Ziegel in dieser Reihe durch (x ändert sich)."
     },
     "offsetRows": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie gehe ich damit um, dass die Reihen unterschiedlich versetzt sind?",
+      "answer": "Schau dir das Bild genau an. Jede zweite Reihe ist seitlich verschoben und hat eine andere Anzahl Ziegel. Du solltest die beiden Arten von Reihen also unterschiedlich behandeln und für jede eine Startposition und eine Ziegelanzahl wählen."
     },
     "oddEven": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie erkenne ich, ob eine Reihennummer ungerade oder gerade ist?",
+      "answer": "Der Operator `%` (Modulo) gibt dir den Rest nach dem Teilen. Wenn du eine Reihennummer durch 2 teilst, kannst du ungerade Reihen von geraden unterscheiden, und das kannst du dann in einem `if` prüfen."
     },
     "sizesAndSpacings": {
-      "question": "�",
-      "answer": "�"
+      "question": "Welche Größen und Abstände verwende ich?",
+      "answer": "Jeder Ziegel ist `20` breit und `10` hoch, x wächst also zwischen den Ziegeln einer Reihe um `20`, und y ändert sich zwischen den Reihen um `10`."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichne ein Rechteck an der Position (left, top) mit der angegebenen Breite, Höhe und Farbe",
+      "category": "Formen zeichnen"
     }
   }
 }

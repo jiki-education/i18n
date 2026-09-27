@@ -1,68 +1,68 @@
 {
   "describers": {
-    "move": "�"
+    "move": "bewegte die Laserkanone nach rechts"
   },
   "checks": {
-    "notShotAllAliens": "�"
+    "notShotAllAliens": "Du hast nicht alle Aliens abgeschossen."
   },
   "tasks": {
     "conditionalShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "Mit einer if-Anweisung nur schießen, wenn ein Alien über dir ist",
+      "description": "Beweg dich über den Bildschirm und prüfe jede Position. Wenn ein Alien über dir ist, schieß es ab. Wenn nicht, zieh einfach weiter."
     }
   },
   "scenarios": {
     "conditional1": {
-      "name": "�",
-      "description": "�"
+      "name": "Verstreute Aliens",
+      "description": "Aliens über zwei Reihen verteilt, mit Lücken"
     },
     "conditional2": {
-      "name": "�",
-      "description": "�"
+      "name": "Vereinzelte Aliens",
+      "description": "Weniger Aliens mit größeren Lücken"
     },
     "conditional3": {
-      "name": "�",
-      "description": "�"
+      "name": "Abwechselnde Reihen",
+      "description": "Aliens wechseln zwischen oberer und unterer Reihe"
     },
     "conditional4": {
-      "name": "�",
-      "description": "�"
+      "name": "Schwerpunkt unten",
+      "description": "Die meisten Aliens in der unteren Reihe"
     },
     "conditional5": {
-      "name": "�",
-      "description": "�"
+      "name": "Dichte Formation",
+      "description": "Viele Aliens dicht gedrängt in beiden Reihen"
     }
   },
   "hints": {
     "howToDecide": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie entscheide ich, ob ich schießen soll oder nicht?",
+      "answer": "Nutze eine `if`-Anweisung, die `isAlienAbove()` prüft. Ruf `shoot()` nur auf, wenn `isAlienAbove()` `true` zurückgibt."
     },
     "whatIsAlienAboveGives": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was gibt mir `isAlienAbove()` zurück?",
+      "answer": "Sie gibt `true` zurück, wenn sich direkt über deiner Laserkanone ein Alien befindet, und `false`, wenn nicht. Du kannst sie direkt in eine `if`-Bedingung schreiben."
     },
     "checkEveryColumn": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie prüfe ich jede Spalte, ohne denselben Code immer wieder zu schreiben?",
+      "answer": "Pack die Logik fürs Prüfen und eventuelle Schießen in eine `repeat`-Schleife und ruf am Ende jedes Durchlaufs `move()` auf, um zur nächsten Spalte weiterzurücken."
     },
     "keepShootingEmpty": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich schieße ständig auf leere Spalten und verliere. Was mache ich falsch?",
+      "answer": "Achte darauf, dass `shoot()` im `if`-Block steht und nicht danach. Der Aufruf darf nur passieren, wenn `isAlienAbove()` `true` ist."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt die Laserkanone **eine Position nach rechts**. Wenn du über den rechten Bildschirmrand hinausziehst, verlierst du!",
+      "category": "Bewegung"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Feuert den Laser nach oben. **Schieß nur, wenn ein Alien über dir ist**, sonst verlierst du das Spiel!",
+      "category": "Aktion"
     },
     "isAlienAbove": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt `true` zurück, wenn sich direkt über der Laserkanone ein Alien befindet, und `false`, wenn nicht. Prüf das, bevor du schießt!",
+      "category": "Erkennung"
     }
   }
 }

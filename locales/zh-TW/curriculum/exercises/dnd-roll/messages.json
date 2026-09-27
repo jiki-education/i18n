@@ -1,54 +1,54 @@
 {
   "errors": {
-    "unknownDice": "�",
-    "announceNumber": "�",
-    "attackNumber": "�",
-    "damageNumber": "�"
+    "unknownDice": "抱歉，Jiki 手邊沒有 {{sides}} 面的骰子喔！",
+    "announceNumber": "只能宣告數字喔",
+    "attackNumber": "攻擊分數必須是數字",
+    "damageNumber": "總傷害必須是數字"
   },
   "describers": {
-    "roll": "�",
-    "announce": "�",
-    "strike": "�"
+    "roll": "擲了一顆骰子，得到 ${return}",
+    "announce": "宣告了 ${arg1}",
+    "strike": "用攻擊分數 ${arg1} 和總傷害 ${arg2} 攻擊了哥布林"
   },
   "checks": {
-    "announcementCount": "�",
-    "firstAnnouncement": "�",
-    "secondAnnouncement": "�",
-    "thirdAnnouncement": "�",
-    "notStruck": "�",
-    "wrongAttack": "�",
-    "wrongDamage": "�"
+    "announcementCount": "預期要宣告 3 次，但得到 {{got}} 次。記得每一次擲骰都要宣告。",
+    "firstAnnouncement": "預期第一次宣告的數字是 {{attack}}（攻擊分數），但得到 {{got}}。",
+    "secondAnnouncement": "預期第二次宣告的數字是 {{damage}}（基礎傷害分數），但得到 {{got}}。",
+    "thirdAnnouncement": "預期第三次宣告的數字是 {{bonus}}（額外傷害分數），但得到 {{got}}。",
+    "notStruck": "你沒有攻擊哥布林。記得要呼叫<code>strike()</code>。",
+    "wrongAttack": "預期攻擊分數是 {{attack}}，但得到 {{got}}。把攻擊分數傳入<code>strike()</code>。",
+    "wrongDamage": "預期總傷害是 {{totalDamage}}（{{damage}} + {{bonus}}），但得到 {{got}}。把基礎傷害和額外傷害加起來。"
   },
   "tasks": {
     "rollAndStrike": {
-      "name": "�",
-      "description": "�"
+      "name": "擲骰並攻擊哥布林",
+      "description": "擲三顆骰子（攻擊用 d20、基礎傷害用 d12、額外傷害用 d10），每次擲骰都要宣告，然後用攻擊分數和總傷害（基礎傷害加額外傷害）攻擊哥布林。"
     }
   },
   "scenarios": {
     "randomRolls": {
-      "name": "�",
-      "description": "�"
+      "name": "擲骰並攻擊",
+      "description": "攻擊擲 d20，基礎傷害擲 d12，額外傷害擲 d10。用攻擊分數和總傷害攻擊哥布林。"
     }
   },
   "hints": {
     "chooseDie": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼選擇用哪一種骰子？",
+      "answer": "要擲 20 面骰，就把 20 當成`roll`的輸入，例如`roll(20)`。要擲 12 面骰，就呼叫`roll(12)`。"
     }
   },
   "functions": {
     "roll": {
-      "description": "�",
-      "category": "�"
+      "description": "擲出一顆指定面數的骰子，並**回傳**結果。",
+      "category": "骰子"
     },
     "announce": {
-      "description": "�",
-      "category": "�"
+      "description": "宣告一次擲骰的數字。",
+      "category": "動作"
     },
     "strike": {
-      "description": "�",
-      "category": "�"
+      "description": "用指定的攻擊分數和總傷害攻擊哥布林。",
+      "category": "動作"
     }
   }
 }

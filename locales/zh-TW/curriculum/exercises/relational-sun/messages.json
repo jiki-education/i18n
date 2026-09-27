@@ -1,38 +1,38 @@
 {
   "checks": {
-    "wrongPosition": "�",
-    "notResponsive": "�"
+    "wrongPosition": "太陽的位置或大小不對。檢查一下`sunX`和`sunY`的計算，並確認你有把`radius`傳給`circle`。",
+    "notResponsive": "當`gap`是 {{gap}}、`radius`是 {{radius}} 時，你的程式碼沒辦法正確縮放。`sunX`和`sunY`應該從`gap`和`radius`推算出來，而不是寫死的數字。"
   },
   "tasks": {
     "positionSun": {
-      "name": "�",
-      "description": "�"
+      "name": "放置太陽",
+      "description": "用`canvasSize`、`gap`和`radius`推算`sunX`和`sunY`，讓太陽能正確縮放。"
     }
   },
   "scenarios": {
     "positionSun": {
-      "name": "�",
-      "description": "�"
+      "name": "放置太陽",
+      "description": "用`gap`和`radius`推算太陽的位置，讓它能正確縮放。"
     }
   },
   "hints": {
     "sunXPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼想太陽的 x 座標呢？",
+      "answer": "想像畫布的右邊緣。太陽的邊緣就在那條邊緣往左`gap`的位置，而太陽的*中心*還要再往內一個半徑。"
     },
     "sunYPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼想太陽的 y 座標呢？",
+      "answer": "概念和 x 座標一樣，只是改成從畫布的上緣往下量，而不是從右緣往內量。"
     },
     "whyNotHardcode": {
-      "question": "�",
-      "answer": "�"
+      "question": "為什麼不能直接把數字寫進去？",
+      "answer": "如果把`sunX`和`sunY`寫死，當`gap`或`radius`改變時，太陽就會留在原地。改成用`gap`和`radius`算出它們，不管你把值改成多少，太陽都會待在角落。"
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "畫一個圓心在 (centerX, centerY)，並使用指定半徑和顏色的圓形。",
+      "category": "繪製圖形"
     }
   }
 }

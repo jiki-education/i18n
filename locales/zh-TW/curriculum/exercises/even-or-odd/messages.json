@@ -1,59 +1,59 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "你的解法程式碼行數太多了。可以把它縮短一點嗎？"
   },
   "tasks": {
     "identifyEvenOrOdd": {
-      "name": "�",
-      "description": "�"
+      "name": "判斷偶數和奇數",
+      "description": "寫一個叫做 evenOrOdd 的函式，它接受一個數字，如果這個數字可以被 2 整除就回傳 \"Even\"，否則回傳 \"Odd\"。零是偶數。"
     },
     "solveInSixLines": {
-      "name": "�",
-      "description": "�"
+      "name": "用 6 行程式碼解題",
+      "description": "你能只用 6 行程式碼解出這道練習嗎？"
     }
   },
   "scenarios": {
     "number14": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 14",
+      "description": "14 是偶數。"
     },
     "number28": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 28",
+      "description": "28 是偶數。"
     },
     "numberMinus1": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 -1",
+      "description": "-1 是奇數。"
     },
     "number17": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 17",
+      "description": "17 是奇數。"
     },
     "number0": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 0",
+      "description": "零算是偶數。"
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "6 行程式碼",
+      "description": "只用 6 行程式碼解出這道練習。"
     }
   },
   "hints": {
     "howToTell": {
-      "question": "�",
-      "answer": "�"
+      "question": "在程式碼裡要怎麼判斷一個數字是偶數還是奇數？",
+      "answer": "在數學上，一個數字如果能被 2 整除、沒有剩下任何東西，它就是偶數；如果除以 2 之後餘數是 1，它就是奇數。所以你需要一個方法來問：「除以 2 之後還剩下什麼？」"
     },
     "remainderOperator": {
-      "question": "�",
-      "answer": "�"
+      "question": "有沒有一個運算子可以算出除法之後的餘數？",
+      "answer": "有的。餘數運算子`%`（有時也叫做取模）做的就是這件事。例如`14 % 2`會得到`0`，而`17 % 2`會得到`1`。它會回傳第一個數字除以第二個數字之後剩下來的東西。"
     },
     "turnIntoEvenOdd": {
-      "question": "�",
-      "answer": "�"
+      "question": "我已經算出餘數了。接下來要怎麼把它變成 \"Even\" 或 \"Odd\"？",
+      "answer": "用`if`敘述把餘數和`0`做比較。如果`number % 2`等於`0`，就回傳`\"Even\"`；否則回傳`\"Odd\"`。"
     },
     "zeroAndNegative": {
-      "question": "�",
-      "answer": "�"
+      "question": "我搞不懂要怎麼處理 0 和負數",
+      "answer": "你不需要為它們做任何特別的處理。`0 % 2`是`0`，所以零會自動被當成偶數。而`-1 % 2`的結果不是零，所以`-1`會被當成奇數，這正是你要的結果。"
     }
   }
 }

@@ -1,0 +1,48 @@
+{
+  "tasks": {
+    "transcribeDnaToRna": {
+      "name": "DNA in RNA transkribieren",
+      "description": "Schreibe eine Funktion, die einen DNA-Strang entgegennimmt und dessen RNA-Komplement zurückgibt. Jedes Nukleotid sollte durch sein Komplement ersetzt werden: G->C, C->G, T->A, A->U."
+    }
+  },
+  "scenarios": {
+    "rnaEmptySequence": {
+      "name": "Leere RNA-Sequenz",
+      "description": "Eine leere DNA-Sequenz sollte eine leere RNA-Sequenz zurückgeben."
+    },
+    "rnaCytosineToGuanine": {
+      "name": "Cytosin zu Guanin",
+      "description": "Das RNA-Komplement von Cytosin (C) ist Guanin (G)."
+    },
+    "rnaGuanineToCytosine": {
+      "name": "Guanin zu Cytosin",
+      "description": "Das RNA-Komplement von Guanin (G) ist Cytosin (C)."
+    },
+    "rnaThymineToAdenine": {
+      "name": "Thymin zu Adenin",
+      "description": "Das RNA-Komplement von Thymin (T) ist Adenin (A)."
+    },
+    "rnaAdenineToUracil": {
+      "name": "Adenin zu Uracil",
+      "description": "Das RNA-Komplement von Adenin (A) ist Uracil (U)."
+    },
+    "rnaFullSequence": {
+      "name": "Vollständiges RNA-Komplement",
+      "description": "Wandle eine vollständige DNA-Sequenz in ihr RNA-Komplement um."
+    }
+  },
+  "hints": {
+    "transcriptionRule": {
+      "question": "Wie lautet die Transkriptionsregel?",
+      "answer": "Jedes DNA-Nukleotid entspricht genau einem RNA-Nukleotid: G zu C, C zu G, T zu A und A zu U. Deine Aufgabe ist es, diese Regel auf jedes Zeichen der Eingabe anzuwenden."
+    },
+    "mappingInCode": {
+      "question": "Wie setze ich diese Zuordnung im Code um?",
+      "answer": "Eine Möglichkeit sind zwei „parallele“ Strings, `\"GCTA\"` für DNA und `\"CGAU\"` für RNA. Das RNA-Komplement eines DNA-Buchstabens ist der Buchstabe an derselben Position im RNA-String. Zuerst musst du die Position im DNA-String finden."
+    },
+    "processStrand": {
+      "question": "Wie verarbeite ich den ganzen Strang?",
+      "answer": "Gehe jedes Zeichen des DNA-Strings in einer Schleife durch, finde sein RNA-Komplement und hänge es mit der Verkettung über `+` an einen Ergebnis-String an."
+    }
+  }
+}

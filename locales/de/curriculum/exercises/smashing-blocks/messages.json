@@ -1,0 +1,70 @@
+{
+  "checks": {
+    "wrongBlockCount": "Du hast nicht genau 5 Blöcke erstellt.",
+    "notAllSmashed": "Du hast nicht alle Blöcke zerschlagen.",
+    "tooManyBallMoves": "Du hast den Ball öfter bewegt als nötig!"
+  },
+  "tasks": {
+    "addAndSmashBlocks": {
+      "name": "5 Blöcke hinzufügen und zerschlagen",
+      "description": "Erstelle 5 Blöcke am oberen Rand des Spielfelds und lass den Ball dann so springen, dass er alle zerschlägt. Stoppe den Ball, sobald alle Blöcke zerschlagen sind."
+    },
+    "differentDimensions": {
+      "name": "Andere Abmessungen",
+      "description": "Im vollständigen Breakout-Spiel können sich der Radius des Balls und die Höhe der Blöcke ändern. Prüfe, ob dein Code mit anderen Abmessungen funktioniert."
+    }
+  },
+  "scenarios": {
+    "addBlocks": {
+      "name": "5 Blöcke hinzufügen und zerschlagen",
+      "description": "Füge 5 Blöcke zum Spielfeld hinzu und zerschlage sie dann!"
+    },
+    "differentDimensions": {
+      "name": "Andere Abmessungen",
+      "description": "Prüfe, ob dein Code auch dann noch funktioniert, wenn sich die Abmessungen ändern!"
+    }
+  },
+  "hints": {
+    "createFiveBlocks": {
+      "question": "Wie erstelle ich die fünf Blöcke?",
+      "answer": "Verwende eine `for`-Schleife, zum Beispiel `for (let x = 1; x <= 5; x++) { ... }`, und rufe darin `new Block(left, top)` auf."
+    },
+    "blockLeftPosition": {
+      "question": "Wie berechne ich die Position `left` für jeden Block?",
+      "answer": "Der erste sitzt bei `8`, und jeder Block ist `16` breit mit einem Abstand von `1`, also liegt `left` bei `8 + ((x - 1) * 17)`."
+    },
+    "detectHit": {
+      "question": "Wie erkenne ich, dass der Ball auf einen Block trifft?",
+      "answer": "Prüfe, ob die Oberkante des Balls genau auf der Unterkante des Blocks (`block.top + block.height`) liegt und ob der Ball waagerecht mit dem Block ausgerichtet ist."
+    },
+    "skipSmashed": {
+      "question": "Wie überspringe ich Blöcke, die schon zerschlagen sind?",
+      "answer": "Prüfe in deiner Schleife `block.smashed` und nutze `continue`, um zum nächsten Block zu springen, wenn er bereits true ist."
+    },
+    "stopWhenAllSmashed": {
+      "question": "Wie stoppe ich den Ball, wenn alle Blöcke weg sind?",
+      "answer": "Schreibe eine kleine Funktion, die true zurückgibt, wenn bei allen Blöcken `smashed === true` gilt. Wenn sie true zurückgibt, brich mit `break` aus der Hauptschleife aus."
+    }
+  },
+  "describers": {
+    "moveBall": "Bewegt den Ball entsprechend seiner Geschwindigkeit"
+  },
+  "functions": {
+    "ball": {
+      "description": "Erstellt eine neue Ball-Instanz mit den Eigenschaften: `cx`, `cy` (Mittelpunkt), `radius`, `xVelocity` und `yVelocity`.",
+      "category": "Objekte"
+    },
+    "block": {
+      "description": "Erstellt eine neue Block-Instanz mit den Eigenschaften: `left`, `top`, `width` (16), `height` und `smashed` (anfangs false).",
+      "category": "Objekte"
+    },
+    "moveBall": {
+      "description": "Bewegt den Ball entsprechend seiner aktuellen `xVelocity` und `yVelocity`.",
+      "category": "Bewegung"
+    },
+    "push": {
+      "description": "Fügt ein Element am Ende eines Arrays hinzu und verändert das Array dabei direkt.",
+      "category": "Arrays"
+    }
+  }
+}

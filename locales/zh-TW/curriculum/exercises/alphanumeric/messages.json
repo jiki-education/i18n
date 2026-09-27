@@ -1,8 +1,12 @@
 {
   "tasks": {
     "classifyString": {
-      "name": "�",
-      "description": "�"
+      "name": "將字串分類",
+      "description": "撰寫輔助函式，檢查字串是只有字母、只有數字，還是英數字，再用這些函式來分類輸入的字串。"
+    },
+    "solveTightly": {
+      "name": "用 42 行完成",
+      "description": "試著用 42 行以內的程式碼解決這道練習。這個目標不見得是最適合用在正式專案的解法，而且也有更短的解法，不過這是很值得努力挑戰的目標。"
     },
     "useContinue": {
       "name": "�",
@@ -11,24 +15,28 @@
   },
   "scenarios": {
     "duck": {
-      "name": "�",
-      "description": "�"
+      "name": "Duck",
+      "description": "只由字母組成的字串應該分類為「Alpha」。"
     },
     "number": {
-      "name": "�",
-      "description": "�"
+      "name": "42",
+      "description": "只由數字組成的字串應該分類為「Numeric」。"
     },
     "alphanumeric": {
-      "name": "�",
-      "description": "�"
+      "name": "Duck42",
+      "description": "同時有字母和數字的字串應該分類為「Alphanumeric」。"
     },
     "notAlphanumeric1": {
-      "name": "�",
-      "description": "�"
+      "name": "It's not 42!",
+      "description": "含有特殊符號的字串應該分類為「Unknown」。"
     },
     "notAlphanumeric2": {
-      "name": "�",
-      "description": "�"
+      "name": "42 Rubber Duck!",
+      "description": "含有空格和特殊符號的字串應該分類為「Unknown」。"
+    },
+    "alphanumericBonusLineCount": {
+      "name": "乾淨俐落",
+      "description": "試著用 42 行以內的程式碼完成這道練習。"
     },
     "alphanumericUsesContinue": {
       "name": "�",
@@ -37,31 +45,41 @@
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "要寫的函式有好幾個，我該從哪裡開始？",
+      "answer": "先從最簡單的那個輔助函式開始。每個輔助函式都會用迴圈走過字串裡的每一個字元，對每個字元問同一種是非題。先讓一個能正確運作，其他的照著同樣的模式寫就行了。"
     },
     "checkAllLetters": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼檢查輸入的每個字元都是字母？",
+      "answer": "用迴圈走過每個字元，檢查它有沒有出現在字母表裡。字串的 `.includes()` 方法正好可以回答這個問題：`\"...\".includes(char)`。記得小寫和大寫字母都要包含進去，否則像「Duck」裡的「D」這種大寫字母就不會被算進去。只要有任何一個字元不在字母表裡，它就不是全部由字母組成。"
     },
     "checkAllDigits": {
-      "question": "�",
-      "answer": "�"
+      "question": "數字要怎麼做同樣的檢查？",
+      "answer": "做法完全一樣，只是把字母表換成 `\"0123456789\"` 來檢查。"
     },
     "alphanumericMeaning": {
-      "question": "�",
-      "answer": "�"
+      "question": "「alphanumeric」是什麼意思？是指兩者都有嗎？",
+      "answer": "alphanumeric 的意思是每個字元不是字母，就是數字。所以對每個字元來說，是字母也可以，是數字也可以。用 `continue` 跳到下一個字元，只有兩者都不是的時候，才要拒絕。"
     },
     "pickingLabels": {
-      "question": "�",
-      "answer": "�"
+      "question": "在 whatAmI() 裡，要怎麼從四個標籤中挑出正確的那一個？",
+      "answer": "先呼叫三個輔助函式，再用 if/else 判斷。順序很重要：要先檢查比較嚴格的「只有字母」和「只有數字」，再檢查比較寬鬆的 alphanumeric。"
     }
   },
   "checks": {
-    "mustUseContinue": "�",
-    "tooManyLines": "�",
-    "useIsAlpha": "�",
-    "useIsNumeric": "�",
-    "useIsAlphanumeric": "�"
+    "tooManyLines": "就差一點了！你的解法可以正確運作，只是超過了 42 行程式碼。",
+    "useIsAlpha": "這道練習希望你先寫一個 `isAlpha()` 輔助函式，再用它來分類字串。",
+    "useIsNumeric": "這道練習希望你先寫一個 `isNumeric()` 輔助函式，再用它來分類字串。",
+    "useIsAlphanumeric": "這道練習希望你先寫一個 `isAlphanumeric()` 輔助函式，再用它來分類字串。",
+    "mustUseContinue": "�"
+  },
+  "functions": {
+    "toLowerCase": {
+      "description": "回傳字串的小寫副本",
+      "category": "字串操作"
+    },
+    "includes": {
+      "description": "檢查字串中是否包含另一個較小的字串",
+      "category": "字串操作"
+    }
   }
 }

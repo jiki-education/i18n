@@ -1,80 +1,80 @@
 {
   "tasks": {
     "invalidTriangles": {
-      "name": "�",
-      "description": "�"
+      "name": "Ungültige Dreiecke",
+      "description": "Erkenne ungültige Dreiecke. Ein Dreieck ist ungültig, wenn eine Seite 0 ist oder wenn die Summe zweier beliebiger Seiten kleiner oder gleich der dritten Seite ist."
     },
     "equilateralTriangles": {
-      "name": "�",
-      "description": "�"
+      "name": "Gleichseitige Dreiecke",
+      "description": "Erkenne gleichseitige Dreiecke, bei denen alle drei Seiten gleich lang sind."
     },
     "isoscelesTriangles": {
-      "name": "�",
-      "description": "�"
+      "name": "Gleichschenklige Dreiecke",
+      "description": "Erkenne gleichschenklige Dreiecke, bei denen genau zwei Seiten gleich lang sind."
     },
     "scaleneTriangles": {
-      "name": "�",
-      "description": "�"
+      "name": "Ungleichseitige Dreiecke",
+      "description": "Erkenne ungleichseitige Dreiecke, bei denen alle drei Seiten unterschiedlich lang sind."
     }
   },
   "scenarios": {
     "invalidEquilateralAllZero": {
-      "name": "�",
-      "description": "�"
+      "name": "Gleichseitig mit allen Seiten 0 (0, 0, 0)",
+      "description": "Ein Dreieck mit lauter Seiten 0 sollte \"invalid\" zurückgeben."
     },
     "isoscelesFirstInequality": {
-      "name": "�",
-      "description": "�"
+      "name": "Gleichschenklig mit ungültigen Seitenlängen (1, 1, 3)",
+      "description": "Ein Dreieck mit zu kurzen Seiten sollte \"invalid\" zurückgeben."
     },
     "isoscelesSecondInequality": {
-      "name": "�",
-      "description": "�"
+      "name": "Gleichschenklig mit ungültigen Seitenlängen (1, 3, 1)",
+      "description": "Ein Dreieck mit zu kurzen Seiten sollte \"invalid\" zurückgeben."
     },
     "isoscelesThirdInequality": {
-      "name": "�",
-      "description": "�"
+      "name": "Gleichschenklig mit ungültigen Seitenlängen (3, 1, 1)",
+      "description": "Ein Dreieck mit zu kurzen Seiten sollte \"invalid\" zurückgeben."
     },
     "scaleneTriangleInequality": {
-      "name": "�",
-      "description": "�"
+      "name": "Ungleichseitig mit ungültigen Seitenlängen (7, 3, 2)",
+      "description": "Ein Dreieck mit zu kurzen Seiten sollte \"invalid\" zurückgeben."
     },
     "validEquilateral": {
-      "name": "�",
-      "description": "�"
+      "name": "Gleichseitiges Dreieck (2, 2, 2)",
+      "description": "Ein Dreieck, bei dem alle Seiten gleich lang sind, sollte \"equilateral\" zurückgeben."
     },
     "validIsoscelesFirstTwoEqual": {
-      "name": "�",
-      "description": "�"
+      "name": "Gleichschenkliges Dreieck (4, 4, 3)",
+      "description": "Ein Dreieck, bei dem die ersten beiden Seiten gleich lang sind, sollte \"isosceles\" zurückgeben."
     },
     "validIsoscelesLastTwoEqual": {
-      "name": "�",
-      "description": "�"
+      "name": "Gleichschenkliges Dreieck (3, 4, 4)",
+      "description": "Ein Dreieck, bei dem die letzten beiden Seiten gleich lang sind, sollte \"isosceles\" zurückgeben."
     },
     "validIsoscelesFirstAndLastEqual": {
-      "name": "�",
-      "description": "�"
+      "name": "Gleichschenkliges Dreieck (4, 3, 4)",
+      "description": "Ein Dreieck, bei dem die erste und die letzte Seite gleich lang sind, sollte \"isosceles\" zurückgeben."
     },
     "validScalene": {
-      "name": "�",
-      "description": "�"
+      "name": "Ungleichseitiges Dreieck (5, 4, 6)",
+      "description": "Ein Dreieck, bei dem alle Seiten unterschiedlich lang sind, sollte \"scalene\" zurückgeben."
     }
   },
   "hints": {
     "whatMakesInvalid": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was macht ein Dreieck ungültig?",
+      "answer": "Zwei Dinge. Erstens: eine Seite ist 0. Zweitens: die Summe zweier beliebiger Seiten ist kleiner oder gleich der dritten (die Dreiecksungleichung). Prüf das zuerst, denn es hat keinen Sinn, eine Form zu klassifizieren, die gar kein Dreieck ist."
     },
     "checkOrder": {
-      "question": "�",
-      "answer": "�"
+      "question": "In welcher Reihenfolge sollte ich die Kategorien prüfen?",
+      "answer": "Zuerst das Spezifischste: gleichseitig (alle drei Seiten gleich lang), dann gleichschenklig (zwei beliebige Seiten gleich lang), und alles andere ist ungleichseitig. In der falschen Reihenfolge werden gleichseitige Dreiecke fälschlich als gleichschenklig eingestuft."
     },
     "checkAnyTwoEqual": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie prüfe ich bei gleichschenkligen Dreiecken, ob zwei beliebige Seiten gleich lang sind?",
+      "answer": "Drei Vergleiche: a === b, b === c oder a === c. Es reicht, wenn einer davon wahr ist."
     },
     "knowScalene": {
-      "question": "�",
-      "answer": "�"
+      "question": "Woran erkenne ich, dass es ungleichseitig ist?",
+      "answer": "Wenn du ungültig, gleichseitig und gleichschenklig ausgeschlossen hast, bleibt nur noch ungleichseitig übrig. Gib diesen Wert zurück, ohne weiter zu prüfen."
     }
   },
   "functions": {}

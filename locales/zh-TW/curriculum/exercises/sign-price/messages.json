@@ -1,63 +1,63 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "你的程式碼行數太多了。可以再縮短一點嗎？"
   },
   "tasks": {
     "calculateSignPrice": {
-      "name": "�",
-      "description": "�"
+      "name": "計算招牌價格",
+      "description": "寫一個計算招牌價格的函式。每個字母收費 $12，空格免費，不用計算在內。最後把結果組成格式化字串回傳。"
     },
     "solveInNineLines": {
-      "name": "�",
-      "description": "�"
+      "name": "用 9 行程式碼解題",
+      "description": "你能只用 9 行程式碼解出這道練習嗎？"
     }
   },
   "scenarios": {
     "simpleWord": {
-      "name": "�",
-      "description": "�"
+      "name": "簡單的詞",
+      "description": "一個沒有空格的詞。"
     },
     "singleLetter": {
-      "name": "�",
-      "description": "�"
+      "name": "單一字母",
+      "description": "招牌上只有一個字母。"
     },
     "twoWords": {
-      "name": "�",
-      "description": "�"
+      "name": "兩個詞",
+      "description": "兩個詞之間有一個應該跳過的空格。"
     },
     "multipleSpaces": {
-      "name": "�",
-      "description": "�"
+      "name": "多個空格",
+      "description": "好幾個詞，中間有幾個要跳過的空格。"
     },
     "longText": {
-      "name": "�",
-      "description": "�"
+      "name": "較長的文字",
+      "description": "字母比較多的長招牌。"
     },
     "allSpaces": {
-      "name": "�",
-      "description": "�"
+      "name": "全部是空格",
+      "description": "只有空格的招牌，沒有任何字母要收費。"
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "9 行程式碼",
+      "description": "只用 9 行程式碼解出這道練習。"
     }
   },
   "hints": {
     "whatCounting": {
-      "question": "�",
-      "answer": "�"
+      "question": "我到底在數什麼？",
+      "answer": "字母。精確來說，是任何不是空格的東西。所以你需要一個計數器，招牌文字裡每遇到一個不是空格的字元，就加一。"
     },
     "loopCharacters": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼用迴圈走過每個字元？",
+      "answer": "`for...of`迴圈會依序把每個字元交給你，讓你可以一個一個檢查。"
     },
     "checkSpace": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼檢查某個字元是不是空格？",
+      "answer": "在迴圈裡用`if`敘述把字元跟`\" \"`比較。只有在字元不是空格的時候才計算它。"
     },
     "buildResultString": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼組出結果字串？",
+      "answer": "可以用字串串接，也可以用樣板字串。需要複習的話，去看看相關的概念。"
     }
   }
 }

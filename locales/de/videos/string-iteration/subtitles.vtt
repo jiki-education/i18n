@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 488ab8c8dd77c6bec365ce44675868b7
+
+00:00:00.280 --> 00:00:02.640
+Willkommen zurück. In der letzten Lektion haben wir
+
+00:00:02.680 --> 00:00:04.680
+gelernt, wie du auf einen einzelnen Buchstaben
+
+00:00:04.700 --> 00:00:08.300
+eines Strings mit eckigen Klammern zugreifst. In dieser Lektion
+
+00:00:08.420 --> 00:00:10.120
+schauen wir uns an, wie du
+
+00:00:10.160 --> 00:00:13.160
+einen String durchläufst und dabei
+
+00:00:13.200 --> 00:00:15.660
+Buchstabe für Buchstabe herausbekommst. Und dafür
+
+00:00:15.720 --> 00:00:18.300
+brauchen wir eine neue Art von Schleife. Bisher
+
+00:00:18.360 --> 00:00:20.170
+haben wir die repeat-Schleife benutzt, und jetzt
+
+00:00:20.200 --> 00:00:22.720
+schauen wir uns die for-of-Schleife an.
+
+00:00:22.760 --> 00:00:26.880
+Das sind zwei neue Schlüsselwörter: for und of.
+
+00:00:27.000 --> 00:00:28.740
+Das Schlüsselwort for werden wir
+
+00:00:28.760 --> 00:00:30.360
+noch an einigen Stellen sehen.
+
+00:00:30.790 --> 00:00:32.580
+Es kann allein stehen, oder
+
+00:00:32.619 --> 00:00:35.380
+zusammen mit in oder of auftauchen.
+
+00:00:35.440 --> 00:00:37.160
+Für den Moment konzentrieren wir uns auf das letzte
+
+00:00:37.220 --> 00:00:40.120
+davon, auf of. Schauen wir uns also
+
+00:00:40.160 --> 00:00:43.280
+ein Stück Code an. Wir fangen damit an, dass wir
+
+00:00:43.340 --> 00:00:47.310
+eine Variable namens name mit dem String „Jeremy“ erstellen.
+
+00:00:47.380 --> 00:00:50.460
+Hier ist nichts neu. Dann kommt diese Zeile:
+
+00:00:50.540 --> 00:00:53.620
+for let letter of name. Darin passiert eine Menge,
+
+00:00:53.640 --> 00:00:55.480
+also gehen wir sie
+
+00:00:55.520 --> 00:00:59.240
+langsam durch. Zuerst haben wir das Schlüsselwort for.
+
+00:00:59.320 --> 00:01:00.980
+Das sagt Jiki, dass wir etwas
+
+00:01:01.060 --> 00:01:04.340
+wiederholen wollen. Also schaut er nach vorne, sieht of
+
+00:01:04.879 --> 00:01:06.320
+und weiß, dass wir eine
+
+00:01:06.580 --> 00:01:09.600
+for-of-Schleife machen wollen. Und das heißt: Statt
+
+00:01:09.720 --> 00:01:11.940
+eine repeat-Schleife zu benutzen, bei der wir sagen:
+
+00:01:12.020 --> 00:01:15.180
+„Lass uns zehnmal durchlaufen“, sagen wir:
+
+00:01:15.260 --> 00:01:17.380
+„Lass uns alle Buchstaben im String durchlaufen.“
+
+00:01:17.440 --> 00:01:20.990
+Genau das bedeutet for of. Dann haben wir
+
+00:01:21.060 --> 00:01:24.080
+diesen Teil mit let letter. Das ist genau dasselbe
+
+00:01:24.140 --> 00:01:25.860
+wie oben
+
+00:01:26.020 --> 00:01:29.320
+mit let name. Wir erstellen einfach eine Variable namens letter.
+
+00:01:30.240 --> 00:01:33.240
+Der Unterschied ist: Wir sagen nicht ausdrücklich,
+
+00:01:33.280 --> 00:01:35.280
+was hineinkommt, sondern wir sagen Jiki,
+
+00:01:35.320 --> 00:01:37.850
+dass er jeden Buchstaben des Strings
+
+00:01:37.900 --> 00:01:41.780
+nacheinander hineinlegen soll. Jiki sieht also
+
+00:01:41.880 --> 00:01:44.460
+for, prüft auf of und legt los. Er
+
+00:01:44.480 --> 00:01:46.140
+schaut sich den ersten Buchstaben im String an,
+
+00:01:46.480 --> 00:01:48.380
+in diesem Fall J, und legt ihn
+
+00:01:48.440 --> 00:01:50.840
+in eine neue Box namens letter. Die könnten wir
+
+00:01:50.880 --> 00:01:52.240
+übrigens nennen, wie wir wollen. Sie muss
+
+00:01:52.260 --> 00:01:53.920
+nicht letter heißen. Wir haben einfach beschlossen,
+
+00:01:53.960 --> 00:01:57.020
+sie hier letter zu nennen. Dann führt er den Code
+
+00:01:57.080 --> 00:01:58.960
+in den geschweiften Klammern aus. Hier kannst du
+
+00:01:59.000 --> 00:02:01.060
+alles machen, was du auch sonst im Code machst.
+
+00:02:01.540 --> 00:02:03.560
+Der einzige Unterschied ist, dass dieser Block
+
+00:02:03.640 --> 00:02:06.320
+einmal für jeden Buchstaben
+
+00:02:06.380 --> 00:02:07.900
+im String läuft und diese
+
+00:02:07.960 --> 00:02:11.940
+Variable darin verfügbar ist. Jedes Mal, wenn Jiki
+
+00:02:12.040 --> 00:02:15.000
+an die schließende geschweifte Klammer kommt, wirft er die letter-Box
+
+00:02:15.020 --> 00:02:16.740
+weg und erstellt eine neue,
+
+00:02:16.860 --> 00:02:19.220
+in die der nächste Buchstabe kommt. Beim ersten Mal
+
+00:02:19.340 --> 00:02:20.800
+wirft er also das J weg und legt
+
+00:02:20.920 --> 00:02:23.000
+stattdessen ein E in die Box. Dann macht er
+
+00:02:23.020 --> 00:02:25.740
+dasselbe mit R, dann mit E, dann mit M
+
+00:02:26.080 --> 00:02:28.790
+und dann mit Y. Sechs Buchstaben, sechs Runden
+
+00:02:28.840 --> 00:02:31.300
+durch die Schleife. Hoffentlich ergibt das Sinn. Es dauert
+
+00:02:31.340 --> 00:02:32.560
+ein bisschen, bis man sich
+
+00:02:32.600 --> 00:02:34.900
+an die Syntax gewöhnt hat, aber das Konzept
+
+00:02:34.920 --> 00:02:37.730
+ist wirklich nicht schwer. Als Nächstes kommen
+
+00:02:37.760 --> 00:02:40.250
+ein paar Übungen, bei denen du Strings durchläufst.
+
+00:02:40.250 --> 00:02:42.660
+Darin sollst du jeweils etwas anderes
+
+00:02:42.680 --> 00:02:44.980
+mit den Buchstaben machen, zum Beispiel zählen, wie viele
+
+00:02:45.000 --> 00:02:46.760
+Buchstaben es sind, oder die Position eines
+
+00:02:46.800 --> 00:02:49.260
+bestimmten Buchstabens finden. Du musst die verschiedenen
+
+00:02:49.320 --> 00:02:51.640
+Techniken, die du bisher gelernt hast, einsetzen und
+
+00:02:51.700 --> 00:02:57.060
+mit diesen Schleifen kombinieren. Die Übungen werden jetzt
+
+00:02:57.100 --> 00:03:00.000
+anspruchsvoller. Du kombinierst viele verschiedene Dinge,
+
+00:03:00.020 --> 00:03:02.420
+die du gelernt hast. Nimm dir ruhig Zeit dafür.
+
+00:03:02.500 --> 00:03:03.920
+Es kann eine Weile dauern,
+
+00:03:03.960 --> 00:03:06.160
+bis du eine davon geschafft hast. Lass dich nicht hetzen
+
+00:03:06.200 --> 00:03:08.840
+und sei nicht frustriert, wenn du nicht draufkommst.
+
+00:03:08.900 --> 00:03:10.920
+Sieh es einfach als Rätsel. Wenn du
+
+00:03:10.940 --> 00:03:12.640
+feststeckst, mach eine Pause, geh eine Runde
+
+00:03:12.650 --> 00:03:15.160
+spazieren und komm danach wieder. Du hast alles
+
+00:03:15.200 --> 00:03:16.790
+Wissen, das du dafür brauchst, und
+
+00:03:16.820 --> 00:03:18.870
+die Fähigkeiten, das hinzubekommen, aber du
+
+00:03:18.940 --> 00:03:21.520
+musst geduldig sein. Und denk immer daran: Du
+
+00:03:21.580 --> 00:03:23.320
+kannst die Hinweise nutzen, wenn du sie brauchst,
+
+00:03:23.900 --> 00:03:25.150
+aber heb sie dir
+
+00:03:25.200 --> 00:03:27.540
+als letzten Ausweg auf. Viel Glück, und wir sehen uns
+
+00:03:27.560 --> 00:03:28.060
+gleich wieder!

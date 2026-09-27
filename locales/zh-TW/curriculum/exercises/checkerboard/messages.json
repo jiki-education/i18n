@@ -1,80 +1,80 @@
 {
   "checks": {
-    "border": "�",
-    "topLeftWhite": "�",
-    "rightOfTopLeftDark": "�",
-    "bottomLeftDark": "�",
-    "bottomRightWhite": "�",
-    "charcoalPiece": "�",
-    "topRim": "�",
-    "whitePiece": "�",
-    "bottomRim": "�",
-    "rimRatio": "�",
-    "innerRatio": "�",
-    "noPieceOnLight": "�",
-    "middleRowsEmpty": "�"
+    "border": "棋盤四周應該有一圈 black 的邊框。",
+    "topLeftWhite": "左上角的格子應該是 white（它是淺色格）。",
+    "rightOfTopLeftDark": "左上角格子右邊的那一格應該是 dark brown（深色格）。",
+    "bottomLeftDark": "左下角的格子應該是 dark brown（深色格）。",
+    "bottomRightWhite": "右下角的格子應該是 white。",
+    "charcoalPiece": "最上面一列的深色格子上應該有一顆 charcoal 的棋子。",
+    "topRim": "上方幾列的棋子外面應該有一圈邊框。",
+    "whitePiece": "最下面一列的深色格子上應該有一顆 white 的棋子。",
+    "bottomRim": "下方幾列的棋子外面應該有一圈邊框。",
+    "rimRatio": "棋子邊框的寬度應該是格子的 80%，檢查一下外圈的半徑。",
+    "innerRatio": "棋子內圈的寬度應該是整顆棋子的 75%，檢查一下內圈的半徑。",
+    "noPieceOnLight": "左上角的格子不應該有棋子，棋子只會放在深色格子上。",
+    "middleRowsEmpty": "中間幾列應該是空的，只有上方和下方的幾列有棋子。"
   },
   "tasks": {
     "setUpTheBoard": {
-      "name": "�",
-      "description": "�"
+      "name": "擺好棋盤",
+      "description": "畫出棋盤，把棋子擺在上方和下方幾列的深色格子上，而且要能應付任何大小的棋盤。"
     }
   },
   "scenarios": {
     "board8": {
-      "name": "�",
-      "description": "�"
+      "name": "擺好 8×8 棋盤",
+      "description": "畫出經典的 8×8 棋盤，擺好棋子準備開局。"
     },
     "board6": {
-      "name": "�",
-      "description": "�"
+      "name": "擺好 6×6 棋盤",
+      "description": "同一份程式碼應該能縮小到比較小的 6×6 棋盤。"
     },
     "board10": {
-      "name": "�",
-      "description": "�"
+      "name": "擺好 10×10 棋盤",
+      "description": "而且應該能放大到比較大的 10×10 棋盤。"
     }
   },
   "hints": {
     "wholeGrid": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼畫出整片格子，而不是只畫一格？",
+      "answer": "用巢狀迴圈：外層迴圈走過每一列，內層迴圈走過每一欄。內層迴圈每跑一次，就畫一格。"
     },
     "anyBoardSize": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼讓它不管棋盤多大都能運作？",
+      "answer": "不要寫死格子的大小。用`getBoardSize()`問出棋盤有幾格，再從這個數字和可用空間算出單一`cell`的大小，然後把每個位置都用它的倍數算出來。"
     },
     "alternateColours": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼讓格子的顏色交錯？",
+      "answer": "把格子的列和欄一起看。餘數運算子（%）可以讓你用`row`和`col`把每一格分成兩組，這兩組正好就是淺色格和深色格。"
     },
     "whichSquaresGetPieces": {
-      "question": "�",
-      "answer": "�"
+      "question": "哪些格子會放棋子？",
+      "answer": "棋子只會放在**深色**格子上，所以你可以沿用判斷顏色時用的同一個條件。再把它縮小到只有上方和下方的幾列，中間兩列留空。"
     },
     "ridgedPiece": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼畫出有環狀紋路的棋子？",
+      "answer": "在同一個圓心畫兩個圓：先畫大一點的當邊框，再在上面畫稍微小一點、填棋子顏色的圓。兩個半徑都以格子大小為基準，棋子才會跟著棋盤一起縮放。"
     },
     "rimSize": {
-      "question": "�",
-      "answer": "�"
+      "question": "邊框的大小看起來和範例圖不一樣。",
+      "answer": "檢查一下內圈是不是外圈的 75%（不是格子的 75%）。"
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "在位置 (left, top) 畫出指定寬度、高度和顏色的矩形。",
+      "category": "繪製圖形"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "以 (centerX, centerY) 為圓心，畫出指定半徑和顏色的圓形。",
+      "category": "繪製圖形"
     },
     "getBoardSize": {
-      "description": "�",
-      "category": "�"
+      "description": "回傳目前這題棋盤的大小（每邊有幾格）。",
+      "category": "資訊"
     }
   },
   "describers": {
-    "getBoardSize": "�"
+    "getBoardSize": "取得了棋盤的大小（每邊有幾格）"
   }
 }

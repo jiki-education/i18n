@@ -1,75 +1,76 @@
 {
   "checks": {
-    "moreThanOneLine": "�"
+    "moreThanOneLine": "Du hast innerhalb der Funktion mehr als eine Zeile Code verwendet.",
+    "moreThanOneFunction": "Kannst du das mit nur einer Funktion lösen?"
   },
   "tasks": {
     "determineLeapYear": {
-      "name": "�",
-      "description": "�"
+      "name": "Finde heraus, ob das Jahr ein Schaltjahr ist",
+      "description": "Schreibe eine Funktion namens isLeapYear, die ein Jahr als Eingabewert bekommt und true zurückgibt, wenn es ein Schaltjahr ist, oder false, wenn nicht."
     },
     "solveInOneLine": {
-      "name": "�",
-      "description": "�"
+      "name": "In einer Zeile Code lösen",
+      "description": "Kannst du das mit nur einer Zeile Code innerhalb der Funktion lösen?"
     }
   },
   "scenarios": {
     "year2015": {
-      "name": "�",
-      "description": "�"
+      "name": "Jahr 2015",
+      "description": "2015 ist nicht durch 4 teilbar und deshalb kein Schaltjahr."
     },
     "year1970": {
-      "name": "�",
-      "description": "�"
+      "name": "Jahr 1970",
+      "description": "1970 ist nicht durch 4 teilbar und deshalb kein Schaltjahr."
     },
     "year2100": {
-      "name": "�",
-      "description": "�"
+      "name": "Jahr 2100",
+      "description": "2100 ist durch 100 teilbar, aber nicht durch 400, und deshalb kein Schaltjahr."
     },
     "year1900": {
-      "name": "�",
-      "description": "�"
+      "name": "Jahr 1900",
+      "description": "1900 ist durch 100 teilbar, aber nicht durch 400, und deshalb kein Schaltjahr."
     },
     "year1800": {
-      "name": "�",
-      "description": "�"
+      "name": "Jahr 1800",
+      "description": "1800 ist durch 100 teilbar, aber nicht durch 400, und deshalb kein Schaltjahr."
     },
     "year2000": {
-      "name": "�",
-      "description": "�"
+      "name": "Jahr 2000",
+      "description": "2000 ist durch 400 teilbar und deshalb ein Schaltjahr."
     },
     "year2400": {
-      "name": "�",
-      "description": "�"
+      "name": "Jahr 2400",
+      "description": "2400 ist durch 400 teilbar und deshalb ein Schaltjahr."
     },
     "year1996": {
-      "name": "�",
-      "description": "�"
+      "name": "Jahr 1996",
+      "description": "1996 ist durch 4 teilbar, aber nicht durch 100, und deshalb ein Schaltjahr."
     },
     "year1960": {
-      "name": "�",
-      "description": "�"
+      "name": "Jahr 1960",
+      "description": "1960 ist durch 4 teilbar, aber nicht durch 100, und deshalb ein Schaltjahr."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine Zeile Code",
+      "description": "Löse die Übung mit nur einer Zeile Code innerhalb der Funktion."
     }
   },
   "hints": {
     "basicRule": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie lautet die Grundregel für ein Schaltjahr?",
+      "answer": "Jahre, die durch 4 teilbar sind, sind Schaltjahre. `year % 4 === 0` ist also der erste Test."
     },
     "exceptions": {
-      "question": "�",
-      "answer": "�"
+      "question": "Gibt es Ausnahmen?",
+      "answer": "Ja. Jahre, die durch 100 teilbar sind, sind KEINE Schaltjahre, obwohl sie durch 4 teilbar sind. Zum Beispiel ist 1900 kein Schaltjahr."
     },
     "exceptionsToExceptions": {
-      "question": "�",
-      "answer": "�"
+      "question": "Gibt es Ausnahmen von der Ausnahme?",
+      "answer": "Ja. Jahre, die durch 400 teilbar sind, SIND doch Schaltjahre. Zum Beispiel 2000. Die Regel ist also gestaffelt: teilbar durch 4, aber nicht durch 100, außer auch durch 400."
     },
     "checkDivisibility": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie prüfe ich, ob eine Zahl teilbar ist?",
+      "answer": "Nutze den Rest-Operator `%`. `year % 4 === 0` ist wahr, wenn sich das Jahr genau durch 4 teilen lässt und nichts übrig bleibt. Dasselbe funktioniert mit 100 und 400."
     }
   }
 }

@@ -1,54 +1,54 @@
 {
   "checks": {
-    "wrongShotEnd": "�",
-    "missingPositions": "�"
+    "wrongShotEnd": "Der Ball ist bei diesem Schlag nicht an der richtigen Stelle angekommen. Prüfe, ob er die volle Schlaglänge zurücklegt.",
+    "missingPositions": "Der Ball muss Schritt für Schritt durch jede Position rollen und darf nicht direkt ans Ende springen."
   },
   "tasks": {
     "rollAndCelebrate": {
-      "name": "�",
-      "description": "�"
+      "name": "Rolle den Ball",
+      "description": "Ermittle die Schlaglänge und rolle den Ball um genau diesen Betrag nach rechts."
     }
   },
   "scenarios": {
     "shortShot": {
-      "name": "�",
-      "description": "�"
+      "name": "Kurzer Schlag (20)",
+      "description": "In diesem Szenario gibt `getShotLength()` 20 zurück. Rolle den Ball 20 Schritte vom Tee aus."
     },
     "mediumShot": {
-      "name": "�",
-      "description": "�"
+      "name": "Mittlerer Schlag (35)",
+      "description": "In diesem Szenario gibt `getShotLength()` 35 zurück. Rolle den Ball 35 Schritte vom Tee aus."
     },
     "longShot": {
-      "name": "�",
-      "description": "�"
+      "name": "Langer Schlag (50)",
+      "description": "In diesem Szenario gibt `getShotLength()` 50 zurück. Rolle den Ball 50 Schritte vom Tee aus."
     },
     "veryLongShot": {
-      "name": "�",
-      "description": "�"
+      "name": "Sehr langer Schlag (60)",
+      "description": "In diesem Szenario gibt `getShotLength()` 60 zurück. Rolle den Ball 60 Schritte vom Tee aus."
     }
   },
   "hints": {
     "notSureWhereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich weiß nicht, wo ich anfangen soll",
+      "answer": "Das ist genau wie in der vorherigen Golf-Übung, in der du den Ball eine feste Anzahl von Schritten gerollt hast. Der einzige Unterschied ist, dass die Anzahl der Schritte kein fester Wert mehr ist. Sie kommt jetzt aus `getShotLength()`. Überall, wo du vorher eine Zahl verwendet hast, kannst du jetzt das Ergebnis einer Funktion verwenden."
     },
     "ballStopsShort": {
-      "question": "�",
-      "answer": "�"
+      "question": "Mein Ball bleibt einen Schritt zu früh stehen (oder rollt einen zu weit)",
+      "answer": "Überlege genau, wo dein Ball startet und wie oft du rollst. Der Ball liegt auf dem Tee bei Position 28, nach dem ersten Rollen sollte er also bei 29 sein. Zähle von dort die Schritte bis zu der Position, an der er landen soll."
     }
   },
   "functions": {
     "moveTo": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt den Ball zu Position **x**.",
+      "category": "Bewegung"
     },
     "getShotLength": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt die **Schlaglänge** zurück, also wie viele Einheiten der Ball nach rechts rollt.",
+      "category": "Information"
     }
   },
   "describers": {
-    "moveTo": "�",
-    "getShotLength": "�"
+    "moveTo": "bewegte den Ball zu Position ${arg1}",
+    "getShotLength": "ermittelte die Schlaglänge"
   }
 }

@@ -1,51 +1,51 @@
 {
   "checks": {
-    "stripe1Purple": "�",
-    "stripe2Blue": "�",
-    "stripe3Yellow": "�",
-    "stripe4Green": "�",
-    "stripe5Yellow": "�",
-    "stripe6Blue": "�",
-    "stripe8Green": "�",
-    "stripe12Green": "�",
-    "stripe19Yellow": "�",
-    "stripe20Purple": "�",
-    "rectangleOnce": "�"
+    "stripe1Purple": "Streifen 1 ist ein Randstreifen, also sollte er purple sein.",
+    "stripe2Blue": "Streifen 2 sollte blue sein (seine Nummer ist gerade, aber kein Vielfaches von 4).",
+    "stripe3Yellow": "Streifen 3 sollte yellow sein (seine Nummer ist ungerade und er ist kein Randstreifen).",
+    "stripe4Green": "Streifen 4 sollte green sein. Seine Nummer ist ein Vielfaches von 4, also prüfe die Regel für Vielfache von 4 vor der Regel für gerade Zahlen.",
+    "stripe5Yellow": "Streifen 5 sollte yellow sein (seine Nummer ist ungerade und er ist kein Randstreifen).",
+    "stripe6Blue": "Streifen 6 sollte blue sein (seine Nummer ist gerade, aber kein Vielfaches von 4).",
+    "stripe8Green": "Streifen 8 sollte green sein (seine Nummer ist ein Vielfaches von 4).",
+    "stripe12Green": "Streifen 12 sollte green sein (seine Nummer ist ein Vielfaches von 4).",
+    "stripe19Yellow": "Streifen 19 sollte yellow sein (seine Nummer ist ungerade und er ist kein Randstreifen).",
+    "stripe20Purple": "Streifen 20 ist ein Randstreifen, also sollte er purple sein (obwohl seine Nummer gerade ist).",
+    "rectangleOnce": "Du verwendest die Funktion <code>rectangle</code> an mehr als einer Stelle. Sie sollte nur einmal vorkommen, und zwar in einer Schleife. Schreib nicht alle 20 Streifen einzeln von Hand hin!"
   },
   "tasks": {
     "weaveTheFabric": {
-      "name": "�",
-      "description": "�"
+      "name": "Stoff weben",
+      "description": "Zeichne 20 senkrechte Streifen. Die beiden Randstreifen sind purple, ansonsten gilt: Vielfache von 4 sind green, andere gerade Streifen blue und ungerade Streifen yellow."
     }
   },
   "scenarios": {
     "weaveTheFabric": {
-      "name": "�",
-      "description": "�"
+      "name": "Gestreiften Stoff weben",
+      "description": "Zeichne alle 20 Streifen in den richtigen Farben."
     }
   },
   "hints": {
     "howToDraw20Stripes": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie zeichne ich 20 Streifen an verschiedenen Stellen?",
+      "answer": "Führe einen Zähler mit (nenn ihn `i`) und erhöhe ihn in einer `repeat`-Schleife um eins. Streifen Nummer `i` ist `5` breit, seine linke Kante liegt also bei `(i - 1) * 5`. Zeichne dort ein `rectangle`, das `5` breit und `100` hoch ist."
     },
     "endStripesPurple": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie sorge ich dafür, dass nur die beiden Randstreifen purple sind?",
+      "answer": "Die Randstreifen sind der erste und der letzte Streifen. Ein einzelner Vergleich kann nicht prüfen, ob „ein Wert ODER ein anderer“ gilt, also verwendest du `||` (oder): Etwas wie `if (n === 3 || n === 7)` ist für beide Werte wahr. Wende das auf die Nummern der beiden Randstreifen an."
     },
     "multipleOf4VsEven": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie unterscheide ich ein Vielfaches von 4 von einer gewöhnlichen geraden Zahl?",
+      "answer": "Verwende den Rest-Operator `%`: `n % 4 === 0` ist nur für Vielfache von 4 wahr, und `n % 2 === 0` ist für alle geraden Zahlen wahr. Vielfache von 4 sind ebenfalls gerade, also prüfe die strengere Regel für Vielfache von 4 zuerst."
     },
     "stripe4Blue": {
-      "question": "�",
-      "answer": "�"
+      "question": "Streifen 4 wird blue, aber er sollte green sein. Warum?",
+      "answer": "Bei einer Kette aus `if` und `else if` kommt es auf die Reihenfolge an. 4 ist ein Vielfaches von 4 UND gerade. Wenn du also zuerst `i % 2 === 0` prüfst, wird der Streifen blue und erreicht die green-Regel nie. Prüfe die Regel für Vielfache von 4 vor der Regel für gerade Zahlen."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichne ein Rechteck an der Position (left, top) mit der angegebenen Breite, Höhe und Farbe",
+      "category": "Formen zeichnen"
     }
   }
 }

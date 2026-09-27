@@ -1,0 +1,74 @@
+{
+  "checks": {
+    "rowMismatchWithRow": "Das „{{letter}}“ sollte in Zeile {{row}}, Kästchen {{square}} „{{expected}}“ sein, nicht „{{actual}}“.",
+    "rowNotColoredWithRow": "Zeile {{row}} wurde nicht eingefärbt.",
+    "rowWrongLengthWithRow": "Zeile {{row}} hat {{actual}} Zustände bekommen, aber eine Zeile braucht {{expected}}."
+  },
+  "tasks": {
+    "processGame": {
+      "name": "Ein ganzes Spiel verarbeiten",
+      "description": "Erstelle eine Funktion namens processGame, die ein Zielwort und ein Array mit Versuchen entgegennimmt und für jeden Versuch colorRow mit den richtigen Zuständen aufruft."
+    },
+    "duplicateLetters": {
+      "name": "Bonus: Doppelte Buchstaben behandeln",
+      "description": "Es gibt eine Wordle-Regel, die wir bisher übersprungen haben. Wenn ein Buchstabe in deinem Versuch zweimal vorkommt, im Zielwort aber nur einmal, dann gilt: Steht einer von beiden an der richtigen Stelle, wird dieser grün und der andere grau. Sonst wird der erste gelb und der zweite grau. Dieselbe Idee lässt sich erweitern: dreimal in einem Versuch und zweimal im Wort heißt, dass zwei eingefärbt werden und der dritte grau wird. Fang mit dem ersten Bonus-Szenario an und löse es dann für das zweite vollständig. Es ist ein Bonus, du musst ihn also nicht abschließen!"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "Auf Anhieb!",
+      "description": "Behandle den Fall, dass der erste Versuch direkt richtig ist."
+    },
+    "twoGuesses": {
+      "name": "In zwei Versuchen geknackt",
+      "description": "Behandle zwei Versuche."
+    },
+    "threeGuesses": {
+      "name": "In drei Versuchen geschafft",
+      "description": "Behandle drei Versuche."
+    },
+    "phew": {
+      "name": "Puh!",
+      "description": "Puh! Das war knapp!"
+    },
+    "bonus1": {
+      "name": "Nur einmal gelb",
+      "description": "Wenn mehrere Buchstaben im Versuch vorkommen, aber nur einer im Zielwort, sollte nur einer gelb sein."
+    },
+    "bonus2": {
+      "name": "Schweizer Käse",
+      "description": "Das swiss hier zeigt, warum das wichtig ist!"
+    }
+  },
+  "hints": {
+    "reuseWork": {
+      "question": "Wie kann ich meinen Code aus `processGuess` wiederverwenden?",
+      "answer": "Für die Hauptszenarien ist es genau die Logik, die du schon geschrieben hast. Pack sie in eine Hilfsfunktion (oder kopiere sie) und rufe sie für jeden Versuch im Array auf. Die Bonus-Aufgabe ändert diese Logik, also kommst du zurück und bearbeitest die Hilfsfunktion, wenn du sie dir vornimmst."
+    },
+    "trackRow": {
+      "question": "Wie weiß ich, in welche Zeile jeder Versuch gehört?",
+      "answer": "Geh die Versuche mit einem Index in einer Schleife durch. Die Zeilennummer ist der Index plus `1` (denn `colorRow` erwartet Zeilen mit den Nummern `1-6`)."
+    },
+    "colorRow": {
+      "question": "Wie färbe ich die einzelnen Zeilen dann ein?",
+      "answer": "Sobald du das Array `states` für einen Versuch hast, rufe `colorRow(rowNumber, states)` auf."
+    },
+    "fewerGuesses": {
+      "question": "Was ist, wenn der Spieler weniger als 6 Versuche gemacht hat?",
+      "answer": "Färbe nur die Zeilen für die Versuche ein, die es gibt. Die Länge des Arrays sagt dir, wie viele du verarbeiten musst, also hörst du ganz automatisch an der richtigen Stelle auf."
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "Färbt eine Zeile auf dem Wordle-Spielfeld mit den angegebenen Zuständen ein.",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "Hängt ein Element ans Ende eines Arrays an und verändert das Array dabei direkt.",
+      "category": "Arrays"
+    }
+  },
+  "describers": {
+    "colorRow": "hat eine Zeile auf dem Wordle-Spielfeld eingefärbt"
+  }
+}

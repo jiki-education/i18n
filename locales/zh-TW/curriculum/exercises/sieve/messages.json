@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "implementSieve": {
+      "name": "實作篩法",
+      "description": "寫一個叫做 `sieve` 的函式，它會接受一個數字，並使用埃拉托斯特尼篩法，回傳一個包含所有小於或等於該數字之質數的陣列。"
+    }
+  },
+  "scenarios": {
+    "sieveNoPrimesUnderTwo": {
+      "name": "2 以下沒有質數",
+      "description": "沒有小於 2 的質數。"
+    },
+    "sieveFirstPrime": {
+      "name": "找出第一個質數",
+      "description": "第一個質數是 2。"
+    },
+    "sievePrimesUpTo10": {
+      "name": "找出 10 以內的質數",
+      "description": "找出 10 以內的所有質數。"
+    },
+    "sieveLimitIsPrime": {
+      "name": "上限本身是質數",
+      "description": "找出不超過某個上限的質數，而這個上限本身就是質數。"
+    },
+    "sievePrimesUpTo100": {
+      "name": "找出 100 以內的質數",
+      "description": "找出 100 以內的所有質數。"
+    }
+  },
+  "hints": {
+    "basicIdea": {
+      "question": "篩法的基本概念是什麼？",
+      "answer": "從 2 開始，把你指定數字以內的所有數字都寫下來。先看 2，它是質數，但把它的所有倍數（4、6、8 等等）劃掉。接著看下一個還沒被標記的數字 3，它是質數，所以也把它的所有倍數劃掉。不斷重複這些步驟。最後所有沒被標記的數字都是質數。"
+    },
+    "representMarked": {
+      "question": "我要怎麼表示『已標記』和『沒被標記』？",
+      "answer": "用一個以數字為鍵的字典，值用 true 或 false 表示有沒有被標記。查 `marked[n]` 就能知道 n 有沒有被劃掉。"
+    },
+    "crossOutMultiples": {
+      "question": "我要怎麼把一個數字的倍數劃掉？",
+      "answer": "用迴圈跑過所有不超過上限的倍數（n*2、n*3、n*4……），在字典裡把每一個都標記為非質數。"
+    },
+    "collectAnswer": {
+      "question": "最後要怎麼把答案收集起來？",
+      "answer": "標記完成後，用迴圈從 2 跑到上限。只要某個數字還沒被標記，就把它 `push()` 到結果陣列裡。"
+    }
+  },
+  "functions": {
+    "push": {
+      "description": "把一個元素加到陣列的最後面，直接改變原本的陣列。",
+      "category": "陣列操作"
+    }
+  }
+}

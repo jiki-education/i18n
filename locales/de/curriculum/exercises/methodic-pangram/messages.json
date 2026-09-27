@@ -1,82 +1,82 @@
 {
   "tasks": {
     "checkPangram": {
-      "name": "�",
-      "description": "�"
+      "name": "Pangram prüfen",
+      "description": "Schreibe eine Funktion, die prüft, ob ein Satz ein Pangram ist (also jeden Buchstaben des Alphabets mindestens einmal enthält). Die Prüfung soll die Groß- und Kleinschreibung nicht beachten."
     }
   },
   "scenarios": {
     "pangramEmptySentence": {
-      "name": "�",
-      "description": "�"
+      "name": "Leerer Satz",
+      "description": "Ein leerer Satz ist kein Pangram."
     },
     "pangramPerfectLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "Perfekte Kleinschreibung",
+      "description": "Ein perfektes Alphabet in Kleinbuchstaben ist ein Pangram."
     },
     "pangramOnlyLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "Nur Kleinbuchstaben",
+      "description": "Ein Satz, der nur Kleinbuchstaben enthält und damit alle Buchstaben abdeckt, ist ein Pangram."
     },
     "pangramMissingX": {
-      "name": "�",
-      "description": "�"
+      "name": "Fehlender Buchstabe „x“",
+      "description": "Ein Satz, in dem der Buchstabe „x“ fehlt, ist kein Pangram."
     },
     "pangramMissingH": {
-      "name": "�",
-      "description": "�"
+      "name": "Fehlender Buchstabe „h“",
+      "description": "Ein Satz, in dem der Buchstabe „h“ fehlt, ist kein Pangram."
     },
     "pangramMissingAM": {
-      "name": "�",
-      "description": "�"
+      "name": "Fehlende Buchstaben nach a-m",
+      "description": "Ein String, der nur die Buchstaben „a“ bis „m“ in Klein- und Großschreibung enthält, ist kein Pangram."
     },
     "pangramWithUnderscores": {
-      "name": "�",
-      "description": "�"
+      "name": "Mit Unterstrichen",
+      "description": "Ein Pangram-Satz mit Unterstrichen."
     },
     "pangramWithNumbers": {
-      "name": "�",
-      "description": "�"
+      "name": "Mit Zahlen",
+      "description": "Ein Pangram-Satz, der auch Zahlen enthält."
     },
     "pangramNumbersReplacingLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahlen statt Buchstaben",
+      "description": "Ein Satz, in dem Buchstaben durch Zahlen ersetzt wurden, ist kein Pangram."
     },
     "pangramMixedCasePunctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "Gemischte Schreibweise und Satzzeichen",
+      "description": "Ein Pangram mit gemischter Groß- und Kleinschreibung und Satzzeichen."
     },
     "pangramCaseInsensitive": {
-      "name": "�",
-      "description": "�"
+      "name": "Fehlende Buchstaben, Schreibweise egal",
+      "description": "Ein Satz, dem Buchstaben fehlen, ist auch ohne Beachtung der Groß- und Kleinschreibung kein Pangram."
     }
   },
   "hints": {
     "recall": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich habe das doch schon von Hand gelöst. Was ändert sich denn jetzt?",
+      "answer": "Die Logik bleibt gleich: Du wandelst den Satz in Kleinbuchstaben um und prüfst dann, ob jeder Buchstabe von a bis z vorkommt. Geändert hat sich nur, *wie* du diese beiden Schritte machst: Du kannst jetzt die eingebauten String-Methoden nutzen, statt deine eigenen Hilfsfunktionen zu schreiben."
     },
     "lowercaseMethod": {
-      "question": "�",
-      "answer": "�"
+      "question": "Gibt es eine eingebaute Möglichkeit, einen String in Kleinbuchstaben umzuwandeln?",
+      "answer": "Ja. Strings haben die Methode `toLowerCase()`, die eine Kopie in Kleinbuchstaben zurückgibt. Rufe sie gleich am Anfang einmal für den Satz auf, statt selbst über die Zeichen zu laufen. Denk daran: Sie gibt einen *neuen* String zurück, du musst das Ergebnis also speichern."
     },
     "includesMethod": {
-      "question": "�",
-      "answer": "�"
+      "question": "Brauche ich meine eigene Hilfsfunktion noch, um zu prüfen, ob ein Buchstabe vorkommt?",
+      "answer": "Nein. Strings haben die Methode `includes()`, die dir sagt, ob ein String in einem anderen vorkommt. Nutze `sentence.includes(letter)` statt der Hilfsfunktion, die du letztes Mal geschrieben hast."
     },
     "stopEarly": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wann kann ich früher aufhören?",
+      "answer": "Sobald ein Buchstabe fehlt, gib `false` zurück, dann musst du den Rest nicht mehr prüfen. Gib erst `true` zurück, wenn das ganze Alphabet bestätigt ist."
     }
   },
   "functions": {
     "toLowerCase": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt eine Kopie des Strings in Kleinbuchstaben zurück",
+      "category": "String-Operationen"
     },
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "Prüft, ob ein String einen kleineren String enthält",
+      "category": "String-Operationen"
     }
   }
 }

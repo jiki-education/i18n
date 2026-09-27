@@ -1,56 +1,56 @@
 {
   "checks": {
-    "age25NotLetIn": "�",
-    "age18LetIn": "�",
-    "age21NotLetIn": "�",
-    "age20LetIn": "�"
+    "age25NotLetIn": "這個人 25 歲，應該要讓他進場，卻沒有。",
+    "age18LetIn": "這個人 18 歲，不應該讓他進場，卻還是讓他進場了。",
+    "age21NotLetIn": "這個人 21 歲，應該要讓他進場，卻沒有。",
+    "age20LetIn": "這個人正好 20 歲，沒有超過 20 歲，所以不應該讓他進場，卻還是讓他進場了。"
   },
   "tasks": {
     "checkAge": {
-      "name": "�",
-      "description": "�"
+      "name": "檢查對方的年齡",
+      "description": "詢問對方的年齡，並檢查是否超過 20 歲。如果超過，就讓他進場。"
     }
   },
   "scenarios": {
     "age25": {
-      "name": "�",
-      "description": "�"
+      "name": "25 歲",
+      "description": "這個人 25 歲，應該讓他進場。"
     },
     "age18": {
-      "name": "�",
-      "description": "�"
+      "name": "18 歲",
+      "description": "這個人 18 歲，不應該讓他進場。"
     },
     "age21": {
-      "name": "�",
-      "description": "�"
+      "name": "21 歲",
+      "description": "這個人 21 歲，剛好超過 20 歲，應該讓他進場。"
     },
     "age20": {
-      "name": "�",
-      "description": "�"
+      "name": "20 歲",
+      "description": "這個人正好 20 歲，沒有超過 20 歲，所以不應該讓他進場。"
     }
   },
   "hints": {
     "askAge": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼知道對方的年齡？",
+      "answer": "使用`askAge()`函式。每個情境都會回傳不同的值。"
     },
     "ifStatement": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼根據情況做不同的事？",
+      "answer": "使用`if`敘述，需要更多幫助的話，可以去看看概念頁！"
     }
   },
   "describers": {
-    "askAge": "�",
-    "letIn": "�"
+    "askAge": "詢問了對方的年齡",
+    "letIn": "讓對方進場了"
   },
   "functions": {
     "askAge": {
-      "description": "�",
-      "category": "�"
+      "description": "回傳在外面等候的人的**年齡**。",
+      "category": "資訊"
     },
     "letIn": {
-      "description": "�",
-      "category": "�"
+      "description": "讓對方進場。",
+      "category": "動作"
     }
   }
 }

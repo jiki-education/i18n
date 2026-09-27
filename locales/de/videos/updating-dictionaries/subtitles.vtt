@@ -1,0 +1,186 @@
+WEBVTT
+
+NOTE en_md5 5da11fa63c77f04329255ba0ae3d5fdf
+
+00:00:00.120 --> 00:00:02.480
+Willkommen zurück. Du weißt jetzt, wie du
+
+00:00:02.540 --> 00:00:05.300
+ein Wörterbuch erstellst und Werte
+
+00:00:05.340 --> 00:00:08.840
+daraus herausbekommst. Aber was passiert, wenn sich die Daten ändern?
+
+00:00:08.880 --> 00:00:10.760
+Irgendwann werde ich älter.
+
+00:00:10.780 --> 00:00:13.060
+Dann bin ich nicht mehr 42, sondern 43.
+
+00:00:14.000 --> 00:00:16.160
+Wie aktualisieren wir das Wörterbuch? Nun,
+
+00:00:16.240 --> 00:00:18.000
+wir gehen fast genauso vor
+
+00:00:18.080 --> 00:00:20.600
+wie beim Suchen. Du weißt, dass wir etwas
+
+00:00:20.660 --> 00:00:22.860
+mit eckigen Klammern finden, um den Wert herauszuholen.
+
+00:00:23.620 --> 00:00:25.980
+Genauso können wir eckige Klammern zusammen
+
+00:00:26.020 --> 00:00:29.980
+mit einem Gleichheitszeichen verwenden, um das Wörterbuch zu aktualisieren.
+
+00:00:30.020 --> 00:00:32.920
+Jiki geht zur Box von person, holt
+
+00:00:32.960 --> 00:00:36.370
+die Notizbuchseite heraus, findet den Schlüssel age
+
+00:00:36.380 --> 00:00:38.560
+und radiert die 42 aus, die dort stand,
+
+00:00:38.580 --> 00:00:41.200
+schreibt 43 an ihre Stelle, und dann
+
+00:00:41.780 --> 00:00:43.089
+wandert die Seite aus dem Notizbuch zurück
+
+00:00:43.140 --> 00:00:47.800
+in die Box. Das verändert das Wörterbuch selbst.
+
+00:00:48.140 --> 00:00:50.880
+Jiki erstellt kein neues Wörterbuch, sondern verändert
+
+00:00:50.890 --> 00:00:54.420
+das Notizbuch, das schon in der Box lag.
+
+00:00:54.460 --> 00:00:56.310
+Und wenn du eine Information hinzufügen willst,
+
+00:00:56.400 --> 00:00:59.530
+die vorher nicht da war? Nun, du machst
+
+00:00:59.540 --> 00:01:02.160
+genau dasselbe. Wenn du einen Schlüssel angibst,
+
+00:01:02.200 --> 00:01:04.900
+den es nicht gibt, fügt Jiki einfach
+
+00:01:04.960 --> 00:01:07.340
+unten einen neuen Schlüssel mit diesem Wert hinzu.
+
+00:01:08.220 --> 00:01:10.200
+In diesem Fall öffnet er also das Notizbuch,
+
+00:01:10.580 --> 00:01:13.140
+sucht nach country, sieht, dass es nicht da ist,
+
+00:01:13.160 --> 00:01:14.680
+und schreibt unten eine neue Zeile hin:
+
+00:01:15.000 --> 00:01:16.880
+links country, rechts England.
+
+00:01:18.080 --> 00:01:20.580
+Also genau dieselbe Syntax wie beim Ändern
+
+00:01:20.620 --> 00:01:24.320
+eines Werts. Jiki kümmert sich automatisch um beides.
+
+00:01:24.360 --> 00:01:27.660
+Wenn der Schlüssel existiert, aktualisiert er ihn. Wenn nicht,
+
+00:01:27.740 --> 00:01:29.290
+fügt er ihn hinzu. Du musst nichts
+
+00:01:29.400 --> 00:01:33.040
+Besonderes tun. Und so wie du
+
+00:01:33.080 --> 00:01:35.120
+mit einem leeren Array starten und Dinge hineinschieben kannst,
+
+00:01:35.140 --> 00:01:37.240
+kannst du mit einem leeren Wörterbuch starten
+
+00:01:37.280 --> 00:01:40.340
+und Schlüssel einen nach dem anderen hinzufügen. Auch das ist ein
+
+00:01:40.400 --> 00:01:42.260
+sehr verbreitetes Muster. Du wirst es ständig sehen.
+
+00:01:43.800 --> 00:01:45.860
+Wörterbücher benutzt man häufig,
+
+00:01:45.940 --> 00:01:49.260
+um Dinge zu zählen. Du kannst als Schlüssel
+
+00:01:49.320 --> 00:01:50.720
+die Dinge angeben, die wir zählen
+
+00:01:50.800 --> 00:01:53.360
+wollen, und als Werte ihre Anzahl.
+
+00:01:53.400 --> 00:01:55.800
+Stell dir vor, du beobachtest Vögel und willst
+
+00:01:55.860 --> 00:01:57.780
+festhalten, wie viele du von jeder Vogelart
+
+00:01:57.820 --> 00:02:00.180
+gesehen hast. Jedes Mal, wenn du einen Vogel siehst,
+
+00:02:00.220 --> 00:02:02.740
+setzt du seinen Zähler auf eins. Und jedes
+
+00:02:02.800 --> 00:02:04.480
+weitere Mal, wenn du ihn siehst, holst du
+
+00:02:04.540 --> 00:02:07.160
+seinen aktuellen Wert und erhöhst ihn um eins.
+
+00:02:07.200 --> 00:02:08.800
+Damit dieses Muster funktioniert, brauchen wir
+
+00:02:08.840 --> 00:02:11.220
+eine Möglichkeit zu prüfen, ob das Wörterbuch
+
+00:02:11.300 --> 00:02:13.320
+diesen Schlüssel schon hat. Wenn ja, addieren wir
+
+00:02:13.360 --> 00:02:16.260
+eins dazu. Wenn es den Schlüssel nicht hat,
+
+00:02:16.620 --> 00:02:18.480
+müssen wir bei eins starten.
+
+00:02:19.560 --> 00:02:21.250
+Und dafür haben
+
+00:02:21.380 --> 00:02:25.380
+Wörterbücher eine Methode: die has-Methode. Du gibst
+
+00:02:25.440 --> 00:02:27.520
+einen Schlüssel an, der dich interessiert, und Jiki
+
+00:02:27.560 --> 00:02:30.060
+prüft, ob das Wörterbuch diesen Schlüssel hat
+
+00:02:30.100 --> 00:02:33.020
+oder nicht, und gibt dann entsprechend wahr oder falsch zurück.
+
+00:02:34.600 --> 00:02:36.210
+Jetzt kommen ein paar Übungen,
+
+00:02:36.220 --> 00:02:38.480
+in denen du all das anwendest. Viel Glück
+
+00:02:38.520 --> 00:02:39.800
+dabei, und wir sehen uns
+
+00:02:39.880 --> 00:02:40.130
+gleich wieder!

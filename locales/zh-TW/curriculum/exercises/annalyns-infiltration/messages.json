@@ -1,126 +1,126 @@
 {
   "checks": {
     "fastAttack": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "安娜琳在這裡<strong>應該</strong>迅速攻擊，但她沒有。騎士睡著了，所以她可以在他醒來前出手。",
+      "shouldNot": "安娜琳在這裡<strong>不應該</strong>迅速攻擊。騎士醒著，一出手就會被抓到。",
+      "tooMany": "安娜琳在這裡<strong>應該</strong>只迅速攻擊一次，但她做了 {{count}} 次。"
     },
     "spy": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "安娜琳在這裡<strong>應該</strong>偵查，但她沒有。營地裡至少有一個人醒著，值得偵查一下。",
+      "shouldNot": "安娜琳在這裡<strong>不應該</strong>偵查。所有人都睡著了，偵查也得不到什麼。",
+      "tooMany": "安娜琳在這裡<strong>應該</strong>只偵查一次，但她做了 {{count}} 次。"
     },
     "signal": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "安娜琳在這裡<strong>應該</strong>向人質打暗號，但她沒有。人質醒著，弓箭手睡著，所以暗號能傳進去。",
+      "shouldNot": "安娜琳在這裡<strong>不應該</strong>向人質打暗號。不是人質睡著，就是弓箭手醒著，所以打暗號會失敗。",
+      "tooMany": "安娜琳在這裡<strong>應該</strong>只向人質打一次暗號，但她做了 {{count}} 次。"
     },
     "free": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "安娜琳在這裡<strong>應該</strong>救出人質，但她沒有。她在這裡動手不會被抓到。",
+      "shouldNot": "安娜琳在這裡<strong>不應該</strong>嘗試救出人質。她會被抓住。",
+      "tooMany": "安娜琳在這裡<strong>應該</strong>只救出人質一次，但她做了 {{count}} 次。"
     }
   },
   "tasks": {
     "planTheRescue": {
-      "name": "�",
-      "description": "�"
+      "name": "規劃救援行動",
+      "description": "在每一個營地情境中，執行安娜琳能安全採取的所有行動：騎士睡著時迅速攻擊，至少有一個人醒著時偵查，人質醒著而弓箭手睡著時向人質打暗號，並透過聽話的狗或偷偷潛入這兩種方式救出人質。"
     }
   },
   "scenarios": {
     "allAsleepNaughtyDog": {
-      "name": "�",
-      "description": "�"
+      "name": "所有人都睡著，狗不乖",
+      "description": "整個營地都睡著了，但安娜琳的狗不乖，所以幫不上忙。"
     },
     "allAsleepBehavingDog": {
-      "name": "�",
-      "description": "�"
+      "name": "所有人都睡著，狗很乖",
+      "description": "整個營地都睡著了，安娜琳的狗也很乖。"
     },
     "knightAwakeNaughtyDog": {
-      "name": "�",
-      "description": "�"
+      "name": "只有騎士醒著",
+      "description": "騎士在守夜，弓箭手和人質都在睡。狗不乖。"
     },
     "prisonerAwakeNaughtyDog": {
-      "name": "�",
-      "description": "�"
+      "name": "只有人質醒著",
+      "description": "兩個綁匪都在睡，人質卻醒著躺著。狗不乖，偷偷潛入這條路可行。"
     },
     "archerAndPrisonerAwakeBehavingDog": {
-      "name": "�",
-      "description": "�"
+      "name": "弓箭手和人質醒著",
+      "description": "弓箭手在守夜，人質也醒著。狗很乖。"
     },
     "allAwakeBehavingDog": {
-      "name": "�",
-      "description": "�"
+      "name": "所有人都醒著，狗很乖",
+      "description": "整個營地都醒著。即使狗很乖，救人也並不安全。"
     }
   },
   "hints": {
     "checkCampState": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼查看營地的狀況？",
+      "answer": "你可以查看四件事，每一件都有一個回傳 `true` 或 `false` 的函式：\n\n- 騎士醒著嗎？`knightIsAwake()`\n- 弓箭手醒著嗎？`archerIsAwake()`\n- 人質醒著嗎？`prisonerIsAwake()`\n- 狗乖乖聽話嗎？`dogIsBehaving()`"
     },
     "performActions": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼讓安娜琳做出每一個行動？",
+      "answer": "一共有四個行動，每一個都有自己的函式：\n\n- 迅速攻擊：`fastAttack()`\n- 偵查營地：`spy()`\n- 向人質打暗號：`signalPrisoner()`\n- 救出人質：`freePrisoner()`"
     },
     "knightAsleep": {
-      "question": "�",
-      "answer": "�"
+      "question": "迅速攻擊必須在騎士睡著時才能進行。我要怎麼確認騎士是不是睡著了？",
+      "answer": "沒有 `isAsleep()` 這個函式，但睡著只是醒著的相反。用 `!` 把條件反過來。想像一下，我們想叫一個人在吃飽時停止進食，但我們只有 `isHungry()` 這個函式。我們可以把它反過來：\n\n```javascript\nif (!isHungry()) {\n  stopEating()\n}\n```\n\n用同樣的想法來確認騎士是不是睡著了。"
     },
     "spyAnyoneAwake": {
-      "question": "�",
-      "answer": "�"
+      "question": "只要其中至少有一個人醒著，偵查就能成立。這要怎麼寫？",
+      "answer": "用 `||`（or）把幾個檢查連起來，只要其中一個是 `true`，整個條件就是 `true`。例如，這個在有人餓了、渴了，或兩者都是的時候會執行：\n\n```javascript\nif (isHungry() || isThirsty()) {\n  rest()\n}\n```"
     },
     "signalBothConditions": {
-      "question": "�",
-      "answer": "�"
+      "question": "打暗號需要兩件事同時成立。我要怎麼把它們組合起來？",
+      "answer": "用 `&&`（and）連接，兩邊都必須是 `true`。例如，這個只會在有人又餓又渴的時候執行：\n\n```javascript\nif (isHungry() && isThirsty()) {\n  drink()\n}\n```"
     },
     "twoWaysToSucceed": {
-      "question": "�",
-      "answer": "�"
+      "question": "同一個行動有兩種完全不同的成功方式。這該怎麼處理？",
+      "answer": "任何一種方式單獨成立就夠了，所以你有兩個做法。\n\n第一種是為每種方式各寫一個 `if`，兩個都做同一個行動：\n\n```javascript\nif (isHungry() && hasSnack()) {\n  eat()\n}\nif (isThirsty() && hasSnack()) {\n  eat()\n}\n```\n\n第二種是把兩種方式合併成一個 `if`，中間用 `||`，並把每種方式的檢查用括號包起來，讓 `&&` 的部分先結合，再讓 `||` 分開：\n\n```javascript\nif ((isHungry() && hasSnack()) || (isThirsty() && hasSnack())) {\n  eat()\n}\n```\n\n先分別想出每種方式各自需要什麼條件，再挑你覺得比較清楚的那種寫法。"
     }
   },
   "describers": {
-    "knightIsAwake": "�",
-    "archerIsAwake": "�",
-    "prisonerIsAwake": "�",
-    "dogIsBehaving": "�",
-    "fastAttack": "�",
-    "spy": "�",
-    "signalPrisoner": "�",
-    "freePrisoner": "�"
+    "knightIsAwake": "檢查了騎士是否醒著",
+    "archerIsAwake": "檢查了弓箭手是否醒著",
+    "prisonerIsAwake": "檢查了人質是否醒著",
+    "dogIsBehaving": "檢查了安娜琳的狗是否乖乖聽話",
+    "fastAttack": "對騎士發動了迅速攻擊",
+    "spy": "偵查了這群人",
+    "signalPrisoner": "向人質打了暗號",
+    "freePrisoner": "救出了人質"
   },
   "functions": {
     "knightIsAwake": {
-      "description": "�",
-      "category": "�"
+      "description": "騎士醒著時回傳 `true`，睡著時回傳 `false`。",
+      "category": "資訊"
     },
     "archerIsAwake": {
-      "description": "�",
-      "category": "�"
+      "description": "弓箭手醒著時回傳 `true`，睡著時回傳 `false`。",
+      "category": "資訊"
     },
     "prisonerIsAwake": {
-      "description": "�",
-      "category": "�"
+      "description": "人質醒著時回傳 `true`，睡著時回傳 `false`。",
+      "category": "資訊"
     },
     "dogIsBehaving": {
-      "description": "�",
-      "category": "�"
+      "description": "安娜琳那隻（有點調皮的）狗乖乖聽話時回傳 `true`。",
+      "category": "資訊"
     },
     "fastAttack": {
-      "description": "�",
-      "category": "�"
+      "description": "對騎士發動迅速攻擊。",
+      "category": "行動"
     },
     "spy": {
-      "description": "�",
-      "category": "�"
+      "description": "偵查這群人。",
+      "category": "行動"
     },
     "signalPrisoner": {
-      "description": "�",
-      "category": "�"
+      "description": "用鳥叫聲向人質打暗號。",
+      "category": "行動"
     },
     "freePrisoner": {
-      "description": "�",
-      "category": "�"
+      "description": "偷偷溜進營地救出人質。",
+      "category": "行動"
     }
   }
 }

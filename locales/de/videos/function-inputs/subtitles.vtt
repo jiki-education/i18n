@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 2a23c8bcc4af2ee7d5bd8d5613681427
+
+00:00:00.200 --> 00:00:03.800
+Willkommen zurück. Hoffentlich fällt dir das Benutzen der Maschinen
+
+00:00:03.860 --> 00:00:07.160
+inzwischen ziemlich leicht. Bisher haben alle
+
+00:00:07.180 --> 00:00:09.140
+Maschinen, die du benutzt hast,
+
+00:00:09.380 --> 00:00:12.160
+move, turnLeft, shoot, jedes Mal
+
+00:00:12.240 --> 00:00:15.260
+dasselbe gemacht. Jedes Mal, wenn du
+
+00:00:15.340 --> 00:00:18.520
+move aufrufst, bewegt sich deine Figur. Jedes Mal, wenn du
+
+00:00:18.560 --> 00:00:22.010
+shoot aufrufst, schießt deine Figur. Aber eines der
+
+00:00:22.080 --> 00:00:25.560
+mächtigsten Dinge an Maschinen, also an Funktionen, ist,
+
+00:00:25.580 --> 00:00:27.520
+dass du bei vielen etwas
+
+00:00:27.560 --> 00:00:30.810
+hineinstecken kannst. Wenn du sie startest,
+
+00:00:31.000 --> 00:00:34.380
+verändert das, was sie tun. Schauen wir uns ein
+
+00:00:34.420 --> 00:00:38.420
+Beispiel an. Bisher haben wir Maschinen gesehen, die
+
+00:00:38.460 --> 00:00:40.480
+ein bisschen wie Boxen aussehen, wie
+
+00:00:40.490 --> 00:00:43.360
+diese move-Maschine. Aber manche Maschinen haben
+
+00:00:43.540 --> 00:00:47.200
+Trichter, wie diese walk-Maschine. Die walk-Maschine
+
+00:00:47.240 --> 00:00:49.260
+ist genau wie die move-Maschine. Sie bewegt
+
+00:00:49.280 --> 00:00:52.780
+die Figur nach vorn, nur dass Jiki den
+
+00:00:52.860 --> 00:00:56.320
+Trichter benutzen kann, um anzugeben, wie viele Schritte deine Figur
+
+00:00:56.340 --> 00:00:59.340
+nach vorn gehen soll. Statt also
+
+00:00:59.440 --> 00:01:02.120
+dreimal hintereinander die move-Funktion
+
+00:01:02.160 --> 00:01:05.920
+zu benutzen, move, move, move, kannst du jetzt
+
+00:01:05.960 --> 00:01:08.620
+einfach die walk-Funktion nehmen und Jiki sagen,
+
+00:01:08.640 --> 00:01:11.200
+er soll die Zahl drei in die Maschine stecken.
+
+00:01:12.960 --> 00:01:15.320
+Im Code schreiben wir weiterhin
+
+00:01:15.380 --> 00:01:17.260
+den Namen der Funktion, in diesem
+
+00:01:17.320 --> 00:01:19.920
+Fall walk, und wir setzen weiterhin die öffnende
+
+00:01:19.940 --> 00:01:23.740
+runde Klammer. Doch dann, vor der schließenden Klammer,
+
+00:01:23.780 --> 00:01:25.920
+sagen wir, was der Eingabewert sein soll.
+
+00:01:25.960 --> 00:01:27.690
+In diesem Fall soll der Eingabewert
+
+00:01:27.720 --> 00:01:30.920
+drei sein, also walk drei Schritte
+
+00:01:30.960 --> 00:01:34.240
+nach vorn. Wenn Jiki das sieht, holt er sich die
+
+00:01:34.260 --> 00:01:35.930
+Zahl drei, und du kannst dir diese
+
+00:01:35.960 --> 00:01:38.310
+Zahl wie eine kleine Münze vorstellen, und er
+
+00:01:38.340 --> 00:01:40.300
+steckt sie in den Trichter der
+
+00:01:40.320 --> 00:01:43.200
+Maschine, bevor er die Kurbel dreht, um
+
+00:01:43.220 --> 00:01:46.660
+sie zu starten. Gleich wirst du
+
+00:01:46.700 --> 00:01:49.660
+Übungen machen, in denen du Rechtecke und
+
+00:01:49.700 --> 00:01:53.000
+Kreise zeichnest. Bei diesen Funktionen musst du
+
+00:01:53.080 --> 00:01:57.110
+Jiki sagen, dass er mehrere verschiedene Zahlen hineinstecken soll, zum Beispiel,
+
+00:01:57.180 --> 00:01:59.380
+wie weit es vom linken Rand entfernt sein
+
+00:01:59.420 --> 00:02:00.840
+soll, wie weit vom oberen Rand,
+
+00:02:00.920 --> 00:02:03.160
+wie breit ein Rechteck ist
+
+00:02:03.240 --> 00:02:07.140
+und wie hoch. In Jikis Welt sind das
+
+00:02:07.160 --> 00:02:10.120
+einfach verschiedene Trichter, einer für jede
+
+00:02:10.160 --> 00:02:12.880
+dieser Zahlen. Im Code schreiben wir also einfach
+
+00:02:12.900 --> 00:02:15.120
+jede Zahl hin und setzen ein Komma
+
+00:02:15.200 --> 00:02:18.460
+dazwischen. Der Name der Funktion, eine
+
+00:02:18.540 --> 00:02:20.980
+öffnende Klammer, eine Zahl für jeden Eingabewert,
+
+00:02:21.300 --> 00:02:24.180
+alles mit Kommas getrennt, und dann schließen wir
+
+00:02:24.260 --> 00:02:27.380
+die Klammern. Wenn du eine
+
+00:02:27.420 --> 00:02:29.810
+Funktion mit der falschen Anzahl von Eingabewerten benutzt,
+
+00:02:29.840 --> 00:02:31.620
+bekommst du eine Fehlermeldung. Wenn du zum Beispiel
+
+00:02:31.660 --> 00:02:33.660
+einen Eingabewert in eine
+
+00:02:33.680 --> 00:02:36.080
+Maschine stecken willst, die gar keinen Trichter hat, sagt Jiki
+
+00:02:36.140 --> 00:02:38.060
+dir, dass das nicht geht. Und wenn du
+
+00:02:38.120 --> 00:02:39.640
+eine Maschine benutzt, die einen
+
+00:02:39.680 --> 00:02:41.840
+Trichter hat, aber Jiki nicht sagst, was
+
+00:02:41.880 --> 00:02:43.920
+er hineinstecken soll, hält er auch an und
+
+00:02:44.000 --> 00:02:46.960
+beschwert sich. Probier es aus, wenn du dich ein bisschen
+
+00:02:47.020 --> 00:02:50.380
+rebellisch fühlst, und schau, was passiert. Solche Fehler
+
+00:02:50.440 --> 00:02:52.370
+wirst du noch viele machen, wenn die Dinge
+
+00:02:52.400 --> 00:02:54.940
+komplizierter werden. Lass dich davon nicht stressen
+
+00:02:54.980 --> 00:02:57.170
+oder ärgern. Wir alle lernen, indem wir
+
+00:02:57.200 --> 00:03:00.080
+Fehler machen. Es ist buchstäblich der schnellste Weg, wie
+
+00:03:00.100 --> 00:03:03.600
+unser Gehirn Dinge wirklich verinnerlicht. Und jeder
+
+00:03:03.660 --> 00:03:06.320
+macht diese Fehler. Wir haben alle bei null angefangen,
+
+00:03:06.600 --> 00:03:10.340
+also mach dir keinen Stress. Bevor du loslegst,
+
+00:03:10.860 --> 00:03:12.910
+möchte ich noch eine Sache erwähnen.
+
+00:03:13.780 --> 00:03:16.400
+In diesen Übungen siehst du manchmal
+
+00:03:16.500 --> 00:03:19.660
+Zeilen, die mit zwei Schrägstrichen beginnen. Die
+
+00:03:19.700 --> 00:03:23.040
+heißen Kommentare. Das sind private Notizen nur für
+
+00:03:23.140 --> 00:03:26.420
+dich, die Jiki völlig ignoriert. Wenn
+
+00:03:26.480 --> 00:03:28.500
+Jiki also eine Zeile sieht, die mit diesen
+
+00:03:28.540 --> 00:03:31.130
+zwei Schrägstrichen beginnt, überspringt er sie einfach und
+
+00:03:31.140 --> 00:03:32.670
+macht mit der Zeile weiter, die
+
+00:03:32.700 --> 00:03:36.320
+als Nächstes kommt. Mit diesen Kommentaren kannst du
+
+00:03:36.340 --> 00:03:38.650
+deine eigenen Notizen schreiben. Sie sind wirklich
+
+00:03:38.700 --> 00:03:40.800
+nützlich, um dir ins Gedächtnis zu rufen, wie etwas funktioniert.
+
+00:03:41.580 --> 00:03:43.430
+Oft schreibe ich auch Kommentare für dich,
+
+00:03:43.560 --> 00:03:45.630
+damit sie dir beim Start einer Übung
+
+00:03:45.660 --> 00:03:48.120
+vielleicht vorschlagen, wo du Code schreiben solltest
+
+00:03:48.160 --> 00:03:50.109
+oder wie du etwas lösen kannst. Aber
+
+00:03:50.160 --> 00:03:51.880
+du kannst gerne
+
+00:03:51.980 --> 00:03:55.480
+auch eigene Kommentare hinzufügen. Wenn du
+
+00:03:55.520 --> 00:03:58.310
+weitermachst, schau unten in die Anweisungen,
+
+00:03:58.380 --> 00:04:00.980
+dort findest du Informationen zu den Funktionen, die
+
+00:04:01.020 --> 00:04:03.280
+du benutzen kannst, und genau, welche Eingabewerte
+
+00:04:03.320 --> 00:04:05.520
+du hineinstecken musst. Viel Spaß
+
+00:04:05.600 --> 00:04:07.020
+beim Ausprobieren dieser Eingabewerte, und wir sehen uns
+
+00:04:07.060 --> 00:04:07.740
+gleich wieder hier.

@@ -1,48 +1,48 @@
 {
   "checks": {
-    "base": "�",
-    "body": "�",
-    "head": "�",
-    "notResponsive": "�"
+    "base": "Der Kreis der Basis (unten) sitzt entweder an der falschen Stelle oder hat die falsche Größe. Prüfe `baseRadius` und `baseY`.",
+    "body": "Der Kreis des Körpers (in der Mitte) sitzt entweder an der falschen Stelle oder hat die falsche Größe. Prüfe `bodyRadius` und `bodyY`.",
+    "head": "Der Kreis des Kopfes (oben) sitzt entweder an der falschen Stelle oder hat die falsche Größe. Prüfe `headRadius` und `headY`.",
+    "notResponsive": "Dein Code skaliert nicht richtig, wenn `size` gleich {{size}} ist. Leite jeden Radius und jede y-Position von `size` ab."
   },
   "tasks": {
     "buildRelationalSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "Baue den relationalen Schneemann",
+      "description": "Leite alle Größen und Positionen von `size` ab, damit der Schneemann richtig mitwächst."
     }
   },
   "scenarios": {
     "buildRelationalSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "Baue den relationalen Schneemann",
+      "description": "Leite jeden Radius und jede y-Position von `size` ab."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wo soll ich anfangen?",
+      "answer": "Fang mit der Basis an, denn sie ist der einzige Kreis, der an etwas Festem verankert ist (dem unteren Rand der Zeichenfläche). Sobald du `baseY` kennst, kannst du den Körper darauf setzen und danach den Kopf auf den Körper."
     },
     "baseSits": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie finde ich heraus, wo die Basis sitzt?",
+      "answer": "Der unterste Punkt der Basis liegt `size` über dem Boden (Y=100). Der Mittelpunkt der Basis ist einen Basisradius weiter oben als ihr unterster Punkt."
     },
     "stackBody": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie setze ich den Körper auf die Basis?",
+      "answer": "Wenn sich zwei Kreise berühren und einer direkt über dem anderen sitzt, entspricht der Abstand ihrer Mittelpunkte der Summe ihrer beiden Radien."
     },
     "head": {
-      "question": "�",
-      "answer": "�"
+      "question": "Und was ist mit dem Kopf?",
+      "answer": "Der Kopf sitzt genauso auf dem Körper wie der Körper auf der Basis."
     },
     "whyDeriveFromSize": {
-      "question": "�",
-      "answer": "�"
+      "question": "Warum muss alles von `size` abgeleitet werden?",
+      "answer": "Wenn du eine Zahl fest einträgst, entstehen beim Ändern von `size` Lücken oder Überschneidungen zwischen den Kreisen. Mit Formeln bleibt alles im richtigen Verhältnis."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichnet einen Kreis mit dem Mittelpunkt (centerX, centerY) mit dem angegebenen Radius und der angegebenen Farbe",
+      "category": "Formen zeichnen"
     }
   }
 }

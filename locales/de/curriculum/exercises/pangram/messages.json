@@ -1,72 +1,72 @@
 {
   "tasks": {
     "checkPangram": {
-      "name": "�",
-      "description": "�"
+      "name": "Pangramm prüfen",
+      "description": "Schreibe eine Funktion, die prüft, ob ein Satz ein Pangramm ist (also jeden Buchstaben des Alphabets mindestens einmal enthält). Die Prüfung soll unabhängig von der Groß- und Kleinschreibung sein."
     }
   },
   "scenarios": {
     "pangramEmptySentence": {
-      "name": "�",
-      "description": "�"
+      "name": "Leerer Satz",
+      "description": "Ein leerer Satz ist kein Pangramm."
     },
     "pangramPerfectLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "Perfekte Kleinbuchstaben",
+      "description": "Ein perfektes Alphabet in Kleinbuchstaben ist ein Pangramm."
     },
     "pangramOnlyLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "Nur Kleinbuchstaben",
+      "description": "Ein Satz, der nur Kleinbuchstaben enthält und alle Buchstaben abdeckt, ist ein Pangramm."
     },
     "pangramMissingX": {
-      "name": "�",
-      "description": "�"
+      "name": "Fehlender Buchstabe 'x'",
+      "description": "Ein Satz, dem der Buchstabe 'x' fehlt, ist kein Pangramm."
     },
     "pangramMissingH": {
-      "name": "�",
-      "description": "�"
+      "name": "Fehlender Buchstabe 'h'",
+      "description": "Ein Satz, dem der Buchstabe 'h' fehlt, ist kein Pangramm."
     },
     "pangramMissingAM": {
-      "name": "�",
-      "description": "�"
+      "name": "Fehlende Buchstaben nach a-m",
+      "description": "Ein String mit 'a' bis 'm' in Klein- und Großbuchstaben ist kein Pangramm."
     },
     "pangramWithUnderscores": {
-      "name": "�",
-      "description": "�"
+      "name": "Mit Unterstrichen",
+      "description": "Ein Pangramm-Satz mit Unterstrichen."
     },
     "pangramWithNumbers": {
-      "name": "�",
-      "description": "�"
+      "name": "Mit Zahlen",
+      "description": "Ein Pangramm-Satz, der auch Zahlen enthält."
     },
     "pangramNumbersReplacingLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahlen statt Buchstaben",
+      "description": "Ein Satz, in dem Buchstaben durch Zahlen ersetzt sind, ist kein Pangramm."
     },
     "pangramMixedCasePunctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "Gemischte Groß- und Kleinschreibung und Satzzeichen",
+      "description": "Ein Pangramm mit gemischter Groß- und Kleinschreibung und Satzzeichen."
     },
     "pangramCaseInsensitive": {
-      "name": "�",
-      "description": "�"
+      "name": "Fehlende Buchstaben unabhängig von Groß- und Kleinschreibung",
+      "description": "Ein Satz, dem unabhängig von der Groß- und Kleinschreibung Buchstaben fehlen, ist kein Pangramm."
     }
   },
   "hints": {
     "helpers": {
-      "question": "�",
-      "answer": "�"
+      "question": "Welche Hilfsfunktionen ersparen mir hier Ärger?",
+      "answer": "Eine Hilfsfunktion `includes()` (die fragt: „Kommt dieses Zeichen in diesem String vor?“) und eine Hilfsfunktion `toLowerCase()` (damit dich Unterschiede bei der Groß- und Kleinschreibung nicht stolpern lassen) machen die eigentliche Logik kurz und klar."
     },
     "whyLowercase": {
-      "question": "�",
-      "answer": "�"
+      "question": "Warum sollte ich den Satz in Kleinbuchstaben umwandeln?",
+      "answer": "„The quick brown fox...“ enthält sowohl „T“ als auch „t“. Wenn du nur gegen Kleinbuchstaben prüfst, passen die Großbuchstaben nicht dazu. Wandle den Satz am Anfang einmal in Kleinbuchstaben um, damit jeder Vergleich einheitlich ist."
     },
     "checkEveryLetter": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie prüfe ich, ob jeder Buchstabe vorhanden ist?",
+      "answer": "Gehe in einer Schleife durch jeden Buchstaben des Alphabets `\"abcdefghijklmnopqrstuvwxyz\"`. Prüfe für jeden mit `includes()`, ob er in dem in Kleinbuchstaben umgewandelten Satz vorkommt."
     },
     "stopEarly": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wann kann ich früh aufhören?",
+      "answer": "Sobald du einen fehlenden Buchstaben findest, gib `false` zurück. Es bringt nichts, den Rest noch zu prüfen. Gib erst `true` zurück, wenn das ganze Alphabet bestätigt ist."
     }
   }
 }

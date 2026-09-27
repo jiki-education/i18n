@@ -1,43 +1,43 @@
 {
   "checks": {
-    "notReachedEnd": "�",
-    "tooManyLines": "�",
-    "oneLineOver": "�"
+    "notReachedEnd": "你沒有走到迷宮的終點。",
+    "tooManyLines": "你的解法程式碼行數太多了。找出連續的 `move()` 呼叫，把每一組換成 `repeat` 迴圈。",
+    "oneLineOver": "你只超出一行而已！`repeat` 迴圈不一定比較短：只重複兩三次的時候，用迴圈寫反而比直接寫出呼叫還多行，所以找找看有沒有哪個 `repeat` 其實沒有幫你省下任何行數。"
   },
   "tasks": {
     "solveMazeWithRepeat": {
-      "name": "�",
-      "description": "�"
+      "name": "用 `repeat` 迴圈重構迷宮的解法",
+      "description": "把連續的 `move()` 呼叫換成 `repeat` 迴圈，讓程式碼更短。"
     }
   },
   "scenarios": {
     "mazeRepeat1": {
-      "name": "�",
-      "description": "�"
+      "name": "用 `repeat` 迴圈重構迷宮的解法",
+      "description": "用 `repeat` 迴圈取代連續的 `move()` 呼叫。"
     }
   },
   "hints": {
     "noIdea": {
-      "question": "�",
-      "answer": "�"
+      "question": "我完全不知道該怎麼做",
+      "answer": "找出連續的 `move()` 呼叫。例如，與其寫：\n\n```javascript\nmove()\nmove()\nmove()\n```\n\n你可以寫成：\n\n```javascript\nrepeat(3) {\n  move()\n}\n```\n\n找出這些重複的群組，把它們換掉吧！"
     },
     "tooManyLines": {
-      "question": "�",
-      "answer": "�"
+      "question": "用了 `repeat` 還是太多行嗎？",
+      "answer": "用 `repeat` 一定比較好嗎？有時候，直接把兩次 `move()` 寫在一起反而更短喔。"
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色沿著目前的方向**往前走一步**。只有目標位置沒有被牆擋住時，角色才會移動。",
+      "category": "移動"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色**向左轉 90 度**（逆時針）。這會改變角色面朝的方向。",
+      "category": "移動"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色**向右轉 90 度**（順時針）。這會改變角色面朝的方向。",
+      "category": "移動"
     }
   }
 }

@@ -1,97 +1,97 @@
 {
   "tasks": {
     "findGuestTable": {
-      "name": "�",
-      "description": "�"
+      "name": "Finde den Tisch des Gastes",
+      "description": "Schreib eine Funktion, die das Array mit den vollständigen Namen der Gäste, das passende Array mit den Tischnamen und einen ankommenden Gast entgegennimmt, der mit einer Anrede und einem Nachnamen angekündigt wird. Gib den Namen des Tisches zurück, an dem dieser Gast sitzt, oder `\"No table found\"`, wenn er nicht auf dem Sitzplan steht."
     },
     "solveTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "Löse es in 9 Zeilen",
+      "description": "Bonus: Das lässt sich viel kompakter schreiben, als du vielleicht denkst. Versuch, es in 9 Zeilen Code oder weniger zu lösen."
     }
   },
   "scenarios": {
     "emptyList": {
-      "name": "�",
-      "description": "�"
+      "name": "Leerer Sitzplan",
+      "description": "Wenn der Sitzplan leer ist, sitzt niemand irgendwo."
     },
     "nameMissing": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad wird abgewiesen",
+      "description": "Der Name steht nicht auf dem Sitzplan."
     },
     "namePresent": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad wird zu seinem Platz gebracht",
+      "description": "Brad Pitt steht auf dem Sitzplan, also bekommt Mr Pitt seinen Tisch."
     },
     "differentHonorific": {
-      "name": "�",
-      "description": "�"
+      "name": "Ritter des Reiches",
+      "description": "Eine andere Anrede und ein Gast, der nicht an erster Stelle auf dem Sitzplan steht."
     },
     "bondSeated": {
-      "name": "�",
-      "description": "�"
+      "name": "Mr Bond, nehme ich an",
+      "description": "James Bond steht auf dem Sitzplan."
     },
     "bondNotSeated": {
-      "name": "�",
-      "description": "�"
+      "name": "Hmmm... Mr Bond, nehme ich an",
+      "description": "Nur Jason Bourne steht auf dem Sitzplan, nicht James Bond."
     },
     "partialSurname": {
-      "name": "�",
-      "description": "�"
+      "name": "Nicht ganz Mr Pitt",
+      "description": "Weder Ada Spitt noch Hugo Ross-Pitt ist Mr Pitt, also hat er hier keinen Platz."
     },
     "lloydWebber": {
-      "name": "�",
-      "description": "�"
+      "name": "Wie wäre es mit einem Baron?",
+      "description": "Baron Lloyd Webber hat zwei Wörter in seinem Nachnamen."
     },
     "markWebber": {
-      "name": "�",
-      "description": "�"
+      "name": "Ist Mark der Baron?",
+      "description": "Ein anderer Webber zählt nicht. Der Nachname muss vollständig übereinstimmen."
     },
     "formalDinnerBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "Sauber und knapp: Lord Doyle",
+      "description": "Derselbe Sitzplan wie vorher, aber diesmal versuch, es in 9 Zeilen Code oder weniger zu lösen."
     }
   },
   "hints": {
     "twoLists": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie hängen die beiden Arrays zusammen?",
+      "answer": "Sie bilden ein Paar. Der erste Gast sitzt am ersten Tisch, der zweite Gast am zweiten Tisch und so weiter. Es reicht also nicht zu wissen, *dass* ein Gast auf dem Sitzplan steht. Du musst wissen, *wo* auf dem Sitzplan er steht."
     },
     "comparingNames": {
-      "question": "�",
-      "answer": "�"
+      "question": "Der Gast sagt „Mr Pitt“, auf dem Sitzplan steht aber „Brad Pitt“. Wie vergleiche ich die beiden?",
+      "answer": "Diese beiden Strings sind nie gleich, ein direkter Vergleich bringt dich also nicht weiter. Überleg mal, welcher Teil von dem, was der Gast angekündigt hat, tatsächlich auf dem Sitzplan steht, und wo in dem Eintrag auf dem Sitzplan du ihn erwarten würdest."
     },
     "lookalikeSurnames": {
-      "question": "�",
-      "answer": "�"
+      "question": "Könnte ein Nachname zum falschen Gast passen?",
+      "answer": "Das kann durchaus passieren. Lies „Ada Spitt“ und „Hugo Ross-Pitt“ einmal laut vor und denk dann an Mr Pitt. Frag dich, was einen Nachnamen in dieser Zeile zu einem echten Nachnamen macht und nicht nur zu ein paar Buchstaben, die zufällig am Ende stehen."
     },
     "noMatch": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was soll ich zurückgeben, wenn niemand passt?",
+      "answer": "Den String `\"No table found\"`, genau so, wie er geschrieben steht. Schwieriger ist die Frage, wann du ihn zurückgeben darfst. Wenn du den allerersten Gast auf dem Sitzplan geprüft hast und er nicht der Gesuchte ist, weißt du dann schon, dass er nirgendwo sitzt?"
     }
   },
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "Weiter so! Schaffst du es, auf 9 Zeilen Code zu kommen?"
   },
   "functions": {
     "length": {
-      "description": "�",
-      "category": "�"
+      "description": "Die Anzahl der Elemente in einem Array: dieselbe Eigenschaft length, die du schon bei Strings verwendet hast.",
+      "category": "Array-Operationen"
     },
     "split": {
-      "description": "�",
-      "category": "�"
+      "description": "Zerlegt einen String in ein Array aus Teilen und bricht an jedem Trennzeichen.",
+      "category": "String-Operationen"
     },
     "slice": {
-      "description": "�",
-      "category": "�"
+      "description": "Erstellt ein neues Array aus einem Teil eines Arrays, beginnend an einer Position.",
+      "category": "Array-Operationen"
     },
     "join": {
-      "description": "�",
-      "category": "�"
+      "description": "Fügt die Elemente eines Arrays zu einem String zusammen, mit einem Trennzeichen dazwischen.",
+      "category": "Array-Operationen"
     },
     "endsWith": {
-      "description": "�",
-      "category": "�"
+      "description": "Prüft, ob ein String mit einem kleineren String endet.",
+      "category": "String-Operationen"
     }
   }
 }

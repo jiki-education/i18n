@@ -1,68 +1,68 @@
 {
   "checks": {
-    "noNestedLoops": "�",
-    "tooManyLines": "�"
+    "noNestedLoops": "盡量不要把一個迴圈放進另一個迴圈裡。把搜尋單一字母的動作搬進自己的函式，再從<code>isPangram</code>呼叫它。",
+    "tooManyLines": "就快好了！看看能不能靠輔助函式，用更少的行數解出來。"
   },
   "tasks": {
     "checkLowerPangram": {
-      "name": "�",
-      "description": "�"
+      "name": "檢查小寫全字母句",
+      "description": "寫一個函式，檢查一個小寫句子是否包含字母表中的每個字母。讓它呼叫一個小小的輔助函式來做逐字母的搜尋。"
     },
     "decomposeTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "用 16 行解出來",
+      "description": "加分題：把搜尋搬進輔助函式之後，整個解法只要 16 行。你能做到嗎？"
     }
   },
   "scenarios": {
     "lowerPangramEmpty": {
-      "name": "�",
-      "description": "�"
+      "name": "空句子",
+      "description": "空句子不是全字母句。"
     },
     "lowerPangramFullAlphabet": {
-      "name": "�",
-      "description": "�"
+      "name": "完整的小寫字母表",
+      "description": "完整的小寫字母表就是一個全字母句。"
     },
     "lowerPangramClassic": {
-      "name": "�",
-      "description": "�"
+      "name": "經典全字母句",
+      "description": "經典全字母句包含全部 26 個字母。"
     },
     "lowerPangramMissingX": {
-      "name": "�",
-      "description": "�"
+      "name": "缺少字母「x」",
+      "description": "少了字母「x」的句子不是全字母句。"
     },
     "lowerPangramMissingH": {
-      "name": "�",
-      "description": "�"
+      "name": "缺少字母「h」",
+      "description": "少了字母「h」的句子不是全字母句。"
     },
     "lowerPangramWithUnderscores": {
-      "name": "�",
-      "description": "�"
+      "name": "含有底線",
+      "description": "用底線取代空格的全字母句。"
     },
     "lowerPangramWithNumbers": {
-      "name": "�",
-      "description": "�"
+      "name": "含有數字",
+      "description": "夾雜數字的全字母句。"
     },
     "lowerPangramNumbersReplacingLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "數字取代字母",
+      "description": "字母被數字取代的句子不是全字母句。"
     },
     "lowerPangramBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "精簡俐落",
+      "description": "把搜尋搬進自己的函式之後，完整的解法只要 16 行。"
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "我該從哪裡開始？",
+      "answer": "你需要檢查字母表中的每個字母是否都在這個字串裡。所以你得做一些迴圈和比較。"
     },
     "checkEveryLetter": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼檢查字母表中的每個字母都在？",
+      "answer": "逐一走過`\"abcdefghijklmnopqrstuvwxyz\"`，一次一個字母。對每個字母，檢查句子是否包含它。"
     },
     "avoidNestedLoops": {
-      "question": "�",
-      "answer": "�"
+      "question": "我已經解出這個練習了，但不知道怎麼用輔助函式。",
+      "answer": "如果你已經解出來了，那你很可能有一個外層迴圈，裡面再一個內層迴圈。那個內層迴圈是在檢查某個東西是否包含另一個東西。把內層迴圈抽成一個叫做`includes(...)`的輔助函式，然後在外層迴圈裡呼叫它，應該是很好的做法。輔助函式就只是用一般方式定義的一般函式。"
     }
   }
 }

@@ -1,43 +1,43 @@
 {
   "errors": {
-    "walkExpectsNumber": "�"
+    "walkExpectsNumber": "walk() erwartet eine Anzahl von Schritten"
   },
   "describers": {
-    "walk": "�"
+    "walk": "Geht eine angegebene Anzahl von Schritten nach vorn"
   },
   "checks": {
-    "notReachedEnd": "�"
+    "notReachedEnd": "Du hast das Ende des Labyrinths nicht erreicht."
   },
   "tasks": {
     "solveMaze": {
-      "name": "�",
-      "description": "�"
+      "name": "Führe die Person zum Ende des Labyrinths",
+      "description": "Navigiere mit walk(), turnLeft() und turnRight() durch das Labyrinth und erreiche das grüne Zielfeld."
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "Führe die Person zum Ende des Labyrinths",
+      "description": "Deine Aufgabe ist es, das Ziel zu erreichen."
     }
   },
   "hints": {
     "moveNotWorking": {
-      "question": "�",
-      "answer": "�"
+      "question": "Warum funktioniert `move()` nicht mehr?",
+      "answer": "Jede Übung in Jiki hat andere Funktionen, die du benutzen kannst. In dieser Übung gibt es die Funktion `walk(...)`. Ersetze das `n` durch die Anzahl der Schritte, die du gehen willst. `walk(1)` macht also genau das Gleiche wie `move()` letztes Mal."
     }
   },
   "functions": {
     "walk": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt die Figur **in der aktuellen Richtung um die angegebene Anzahl von Schritten nach vorn**. Jeder Schritt bewegt sie ein Feld weiter. Wenn die Figur gegen eine Wand stößt, bleibt sie stehen und meldet einen Fehler.",
+      "category": "Bewegung"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Dreht die Figur **um 90 Grad nach links** (gegen den Uhrzeigersinn). Dadurch ändert sich die Richtung, in die die Figur schaut.",
+      "category": "Bewegung"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Dreht die Figur **um 90 Grad nach rechts** (im Uhrzeigersinn). Dadurch ändert sich die Richtung, in die die Figur schaut.",
+      "category": "Bewegung"
     }
   }
 }

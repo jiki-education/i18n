@@ -1,97 +1,97 @@
 {
   "errors": {
-    "alreadyIssued": "�"
+    "alreadyIssued": "你已經發過手環給這個人了，每個人只應該拿到一個。"
   },
   "checks": {
-    "childWristband": "�",
-    "teenWristband": "�",
-    "adultWristband": "�",
-    "seniorWristband": "�",
-    "boundary13": "�",
-    "boundary18": "�",
-    "boundary65": "�"
+    "childWristband": "這個人 8 歲。他應該拿到兒童手環，但拿到的是：{{got}}。",
+    "teenWristband": "這個人 15 歲。他應該拿到青少年手環，但拿到的是：{{got}}。",
+    "adultWristband": "這個人 30 歲。他應該拿到成人手環，但拿到的是：{{got}}。",
+    "seniorWristband": "這個人 70 歲。他應該拿到長者手環，但拿到的是：{{got}}。",
+    "boundary13": "這個人 13 歲。他應該拿到青少年手環（13 不小於 13，所以不算兒童），但拿到的是：{{got}}。",
+    "boundary18": "這個人 18 歲。他應該拿到成人手環（18 不小於 18，所以不算青少年），但拿到的是：{{got}}。",
+    "boundary65": "這個人 65 歲。他應該拿到長者手環（65 不小於 65，所以不算成人），但拿到的是：{{got}}。"
   },
   "tasks": {
     "assignWristband": {
-      "name": "�",
-      "description": "�"
+      "name": "發放正確的手環",
+      "description": "取得對方的年齡，發給他們正確的手環：兒童（13 歲以下）、青少年（13 到 17 歲）、成人（18 到 64 歲）或長者（65 歲以上）。"
     }
   },
   "scenarios": {
     "childAge8": {
-      "name": "�",
-      "description": "�"
+      "name": "8 歲（兒童）",
+      "description": "一位 8 歲的兒童。他應該拿到兒童手環。"
     },
     "teenAge15": {
-      "name": "�",
-      "description": "�"
+      "name": "15 歲（青少年）",
+      "description": "一位 15 歲的青少年。他應該拿到青少年手環。"
     },
     "adultAge30": {
-      "name": "�",
-      "description": "�"
+      "name": "30 歲（成人）",
+      "description": "一位 30 歲的成人。他應該拿到成人手環。"
     },
     "seniorAge70": {
-      "name": "�",
-      "description": "�"
+      "name": "70 歲（長者）",
+      "description": "一位 70 歲的長者。他應該拿到長者手環。"
     },
     "boundary13": {
-      "name": "�",
-      "description": "�"
+      "name": "13 歲（青少年）",
+      "description": "剛好 13 歲。他是青少年，不是兒童。"
     },
     "boundary18": {
-      "name": "�",
-      "description": "�"
+      "name": "18 歲（成人）",
+      "description": "剛好 18 歲。他是成人，不是青少年。"
     },
     "boundary65": {
-      "name": "�",
-      "description": "�"
+      "name": "65 歲（長者）",
+      "description": "剛好 65 歲。他是長者，不是成人。"
     }
   },
   "hints": {
     "gettingAge": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼取得對方的年齡？",
+      "answer": "呼叫`getAge()`，把結果放進變數裡，例如`let age = getAge()`。接著就能在條件裡把`age`跟數字做比較。"
     },
     "structureForRanges": {
-      "question": "�",
-      "answer": "�"
+      "question": "有好幾個年齡區間時，我該用哪種結構？",
+      "answer": "用 `if` / `else if` / `else` 組成的結構。每個分支負責一種手環，而且只會執行其中一個分支。"
     },
     "branchOrder": {
-      "question": "�",
-      "answer": "�"
+      "question": "分支的順序有差別嗎？",
+      "answer": "有差別。先判斷年紀最小的（`age < 13`），再來是 `age < 18`，最後是 `age < 65`。因為後面的分支只有在前面分支不成立時才會執行，所以不需要寫成像 `age >= 13 && age < 18` 這樣的條件。"
     },
     "seniorsElse": {
-      "question": "�",
-      "answer": "�"
+      "question": "那最後的長者呢？",
+      "answer": "長者不需要寫條件。直接用一個 `else` 呼叫 `giveSeniorWristband()`，就能涵蓋所有 65 歲以上的人。"
     }
   },
   "describers": {
-    "getAge": "�",
-    "giveChildWristband": "�",
-    "giveTeenWristband": "�",
-    "giveAdultWristband": "�",
-    "giveSeniorWristband": "�"
+    "getAge": "取得了對方的年齡",
+    "giveChildWristband": "發了兒童手環",
+    "giveTeenWristband": "發了青少年手環",
+    "giveAdultWristband": "發了成人手環",
+    "giveSeniorWristband": "發了長者手環"
   },
   "functions": {
     "getAge": {
-      "description": "�",
-      "category": "�"
+      "description": "回傳在外面等候的人的**年齡**。",
+      "category": "資訊"
     },
     "giveChildWristband": {
-      "description": "�",
-      "category": "�"
+      "description": "發給對方**兒童**手環（13 歲以下）。",
+      "category": "手環"
     },
     "giveTeenWristband": {
-      "description": "�",
-      "category": "�"
+      "description": "發給對方**青少年**手環（13 到 17 歲）。",
+      "category": "手環"
     },
     "giveAdultWristband": {
-      "description": "�",
-      "category": "�"
+      "description": "發給對方**成人**手環（18 到 64 歲）。",
+      "category": "手環"
     },
     "giveSeniorWristband": {
-      "description": "�",
-      "category": "�"
+      "description": "發給對方**長者**手環（65 歲以上）。",
+      "category": "手環"
     }
   }
 }

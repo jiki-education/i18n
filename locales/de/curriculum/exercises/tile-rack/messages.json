@@ -1,64 +1,64 @@
 {
   "tasks": {
     "findTilePosition": {
-      "name": "�",
-      "description": "�"
+      "name": "Position des Plättchens finden",
+      "description": "Schreibe eine Funktion, die die Position eines bestimmten Buchstabenplättchens auf dem Bänkchen findet. Wenn das Plättchen auf dem Bänkchen ist, gib \"Move to position X\" zurück, sonst \"Error: Tile not on rack\"."
     }
   },
   "scenarios": {
     "tileAtStart": {
-      "name": "�",
-      "description": "�"
+      "name": "Plättchen am Anfang",
+      "description": "Der Buchstabe ist das erste Plättchen auf dem Bänkchen."
     },
     "tileInMiddle": {
-      "name": "�",
-      "description": "�"
+      "name": "Plättchen in der Mitte",
+      "description": "Der Buchstabe liegt in der Mitte des Bänkchens."
     },
     "tileAtEnd": {
-      "name": "�",
-      "description": "�"
+      "name": "Plättchen am Ende",
+      "description": "Der Buchstabe ist das letzte Plättchen auf dem Bänkchen."
     },
     "tileNotFound": {
-      "name": "�",
-      "description": "�"
+      "name": "Plättchen nicht gefunden",
+      "description": "Der Buchstabe ist nicht auf dem Bänkchen."
     },
     "emptyRack": {
-      "name": "�",
-      "description": "�"
+      "name": "Leeres Bänkchen",
+      "description": "In einem leeren Bänkchen gibt es keine Plättchen zu finden."
     },
     "firstOfDuplicates": {
-      "name": "�",
-      "description": "�"
+      "name": "Erstes Vorkommen",
+      "description": "Wenn der Buchstabe mehrmals vorkommt, gib die erste Position zurück."
     },
     "longerRack": {
-      "name": "�",
-      "description": "�"
+      "name": "Längeres Bänkchen",
+      "description": "Ein Plättchen in einem längeren Bänkchen finden."
     }
   },
   "hints": {
     "trackPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie behalte ich im Blick, wo ich auf dem Bänkchen gerade bin?",
+      "answer": "Nutze eine Positionsvariable, die bei 1 beginnt. Jedes Mal, wenn du ein neues Plättchen anschaust, erhöhst du sie um 1."
     },
     "lookAtEachTile": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie schaue ich mir jedes Plättchen an?",
+      "answer": "Eine for-each-Schleife gibt dir nacheinander jedes Zeichen des Bänkchens."
     },
     "onFound": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was mache ich, wenn ich den Buchstaben gefunden habe?",
+      "answer": "Baue die Erfolgsmeldung. Wandle die Positionsnummer in einen String um und setze sie dann mit Konkatenation (`+`) oder einem Template-String mit dem Text zusammen, den die Übung verlangt. Gib den String sofort zurück. Du musst nicht weitersuchen."
     },
     "addNumberToString": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich kann eine Zahl nicht zu einem String hinzufügen",
+      "answer": "Du hast zwei Möglichkeiten kennengelernt, Strings zusammenzusetzen. Statt zu verketten, probier die andere Methode aus, die du gelernt hast."
     },
     "positionAlwaysWrong": {
-      "question": "�",
-      "answer": "�"
+      "question": "Warum ist meine Position immer falsch?",
+      "answer": "Achte darauf, dass du den Positionszähler bei jeder Iteration erhöhst und nicht nur manchmal. Sonst meldet jedes Plättchen dieselbe Position."
     },
     "notInRack": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was ist, wenn der Buchstabe nicht auf dem Bänkchen ist?",
+      "answer": "Gib die Fehlermeldung erst zurück, nachdem die Schleife durchgelaufen ist, ohne den Buchstaben zu finden. Wenn du den Fehler schon in der Schleife zurückgibst, gibst du nach dem ersten nicht passenden Plättchen auf."
     }
   }
 }

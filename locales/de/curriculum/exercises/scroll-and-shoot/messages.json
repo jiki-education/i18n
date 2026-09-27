@@ -1,74 +1,74 @@
 {
   "checks": {
-    "notShotAllAliens": "�",
-    "noRepeatWithArg": "�"
+    "notShotAllAliens": "Du hast nicht alle Aliens abgeschossen.",
+    "noRepeatWithArg": "Du kannst <code>repeat(n) {}</code> in dieser Übung nicht benutzen. Du darfst nur <code>repeat() {}</code>-Schleifen ohne Eingabewert verwenden."
   },
   "tasks": {
     "scrollAndShoot": {
-      "name": "�",
-      "description": "�"
+      "name": "Scrolle über den Bildschirm und schieß jedes Alien ab",
+      "description": "Bewege den Laser über den Bildschirm hin und her, prüfe, ob über dir ein Alien ist, und schieß es ab. Beweg dich nicht über den Rand hinaus und schieß nicht, wenn kein Alien da ist, sonst verlierst du! Mit jeder Welle wird es voller."
     }
   },
   "scenarios": {
     "oneAlien": {
-      "name": "�",
-      "description": "�"
+      "name": "Ein Alien",
+      "description": "Ein einzelnes Alien, das du abschießen musst"
     },
     "oneRow": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine dünn besetzte Reihe",
+      "description": "Ein paar verstreute Aliens in der untersten Reihe"
     },
     "twoRows": {
-      "name": "�",
-      "description": "�"
+      "name": "Zwei Reihen",
+      "description": "Aliens, verteilt auf zwei Reihen"
     },
     "threeRows": {
-      "name": "�",
-      "description": "�"
+      "name": "Drei Reihen",
+      "description": "Aliens in allen drei Reihen"
     },
     "fullRows": {
-      "name": "�",
-      "description": "�"
+      "name": "Volle Reihen",
+      "description": "Drei dicht gefüllte Reihen. Die Aliens kommen immer wieder zurück!"
     }
   },
   "hints": {
     "whereDoIStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wo fange ich an? Das klingt nach einer Menge.",
+      "answer": "Zerleg es in kleine Schritte. Bring den Laser zuerst dazu, sich von links nach rechts zu bewegen, und ignoriere das Schießen. Sobald die Bewegung funktioniert, fügst du die Logik fürs Schießen hinzu."
     },
     "trackLaserPosition": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie behalte ich im Blick, wo der Laser gerade ist?",
+      "answer": "Leg eine Variable für die Position des Lasers an. Aktualisiere sie bei jedem Durchlauf der Schleife, wenn du `moveLeft()` oder `moveRight()` aufrufst."
     },
     "whenToTurnAround": {
-      "question": "�",
-      "answer": "�"
+      "question": "Woran erkenne ich, wann ich umkehren muss?",
+      "answer": "Führ eine Richtungsvariable mit (zum Beispiel `1` für rechts, `-1` für links). Wenn die Position den linken oder rechten Rand erreicht, drehst du die Richtung um. Das ist dasselbe Abprall-Muster wie bei Rainbow Ball."
     },
     "whenToShoot": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wann sollte ich `shoot()` aufrufen?",
+      "answer": "Prüf vor dem Aufruf von `shoot()` mit `isAlienAbove()`, ob über dir ein Alien ist. Schieß nur, wenn sie `true` zurückgibt, sonst verschwendest du Munition und verlierst."
     },
     "laserOverheating": {
-      "question": "�",
-      "answer": "�"
+      "question": "Die Laserkanone überhitzt ständig. Was mache ich?",
+      "answer": "Schieß nicht bei jedem Durchlauf. Beweg dich zwischen den Schüssen mindestens einmal, damit die Kanone Zeit hat, abzukühlen."
     }
   },
   "functions": {
     "moveLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt die Laserkanone **um eine Position nach links**. Wenn du versuchst, über den linken Bildschirmrand hinauszugehen, verlierst du das Spiel!",
+      "category": "Bewegung"
     },
     "moveRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt die Laserkanone **um eine Position nach rechts**. Wenn du versuchst, über den rechten Bildschirmrand hinauszugehen, verlierst du das Spiel!",
+      "category": "Bewegung"
     },
     "shoot": {
-      "description": "�",
-      "category": "�"
+      "description": "Schießt den Laser nach oben. **Schieß nur, wenn über dir ein Alien ist**, sonst verlierst du das Spiel! Die Laserkanone überhitzt leicht, darum musst du dich bewegen, bevor du wieder schießt.",
+      "category": "Aktion"
     },
     "isAlienAbove": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt `true` zurück, wenn direkt über der Laserkanone ein Alien ist, und `false`, wenn nicht. Prüf damit, bevor du schießt!",
+      "category": "Erkennung"
     }
   }
 }

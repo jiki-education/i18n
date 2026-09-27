@@ -1,39 +1,39 @@
 {
   "checks": {
-    "baseCircle": "�",
-    "bodyCircle": "�",
-    "headCircle": "�"
+    "baseCircle": "Der untere Kreis (die Basis) stimmt noch nicht. Prüfe snowmanCenterX, baseCenterY und baseRadius.",
+    "bodyCircle": "Der mittlere Kreis (der Körper) stimmt noch nicht. Prüfe snowmanCenterX, bodyCenterY und bodyRadius.",
+    "headCircle": "Der obere Kreis (der Kopf) stimmt noch nicht. Prüfe snowmanCenterX, headCenterY und headRadius."
   },
   "tasks": {
     "buildSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "Baue den Schneemann",
+      "description": "Setze die Variablenwerte so, dass der Schneemann zum Zielbild passt."
     }
   },
   "scenarios": {
     "buildSnowman": {
-      "name": "�",
-      "description": "�"
+      "name": "Baue den Schneemann",
+      "description": "Setze die richtigen Variablenwerte ein, um den Schneemann zu zeichnen."
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich weiß nicht, wo ich anfangen soll",
+      "answer": "Der ursprüngliche Code zeichnet einen weißen Kreis auf der linken Seite. Du musst die Werte von snowmanCenterX, baseCenterY und baseRadius so ändern, dass er über dem unteren Kreis in der Vorlage liegt. Danach musst du Variablen für die anderen Kreise ergänzen."
     },
     "variableNotFoundError": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich bekomme eine Fehlermeldung wie „Jiki konnte keine Variable namens XXX finden“",
+      "answer": "Das bedeutet, dass du die Variable (die Box in Jikis Regalen) nicht mit dem Schlüsselwort `let` angelegt hast. Wenn Jiki den Code liest, der die Kreise zeichnet, erwartet er, dass die Boxen, auf die darin verwiesen wird, vorhanden sind, aber sie sind nicht da. Du musst sie also ergänzen."
     },
     "stillNotDeclaredError": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich habe die Variablen angelegt, bekomme aber immer noch einen Fehler wie „nicht deklariert“",
+      "answer": "Prüfe deine Schreibweise. Wahrscheinlich hast du dich vertippt. Denk daran, dass Groß- und Kleinschreibung wichtig ist: `bodycentery` ist nicht dasselbe wie `bodyCenterY`."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichnet einen Kreis mit dem Mittelpunkt (centerX, centerY), dem angegebenen Radius und der angegebenen Farbe",
+      "category": "Formen zeichnen"
     }
   }
 }

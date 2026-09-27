@@ -1,82 +1,82 @@
 {
   "checks": {
-    "wrongDistance": "�",
-    "missingPositions": "�",
-    "stayOnGrassPlain": "�",
-    "stayOnGrassOvershot": "�",
-    "droppedIncorrectly": "�",
-    "noFireworksPeriod": "�",
-    "noFireworksNoPeriod": "�",
-    "noFireworksAtEnd": "�",
-    "shouldFireFireworks": "�"
+    "wrongDistance": "這一擊球滾的距離不對。球應該從發球台滾出剛好等於擊球長度的距離。",
+    "missingPositions": "球必須一次一步地滾過每一個位置。",
+    "stayOnGrassPlain": "這一擊球應該留在草地上，不該掉進洞裡。",
+    "stayOnGrassOvershot": "球越過了洞口，所以應該留在草地上，不該掉進去。",
+    "droppedIncorrectly": "球到了洞口，但沒有正確地往下掉進洞裡。",
+    "noFireworksPeriod": "你不應該發射煙火。",
+    "noFireworksNoPeriod": "你不應該發射煙火",
+    "noFireworksAtEnd": "你不應該在最後發射煙火。",
+    "shouldFireFireworks": "你應該在最後發射煙火。"
   },
   "tasks": {
     "checkShot": {
-      "name": "�",
-      "description": "�"
+      "name": "檢查這一擊是否進洞",
+      "description": "依照擊球長度滾動球，如果球滾到洞口上方，就讓它掉進洞裡！接著發射煙火。"
     }
   },
   "scenarios": {
     "tooShort": {
-      "name": "�",
-      "description": "�"
+      "name": "擊球太短",
+      "description": "球員這一擊打了 23，球沒能滾到洞口。"
     },
     "justTooShort": {
-      "name": "�",
-      "description": "�"
+      "name": "就差一點，太短了",
+      "description": "球員這一擊打了 57，就差一點點沒滾進去。"
     },
     "justTooFar": {
-      "name": "�",
-      "description": "�"
+      "name": "就差一點，太遠了",
+      "description": "球員這一擊打了 63，球剛好從另一邊彈了出來"
     },
     "tooLong": {
-      "name": "�",
-      "description": "�"
+      "name": "擊球太長",
+      "description": "球員這一擊打了 68，球越過了洞口。"
     },
     "justInsideLeft": {
-      "name": "�",
-      "description": "�"
+      "name": "剛好進洞",
+      "description": "球員這一擊打了 58，球剛好滾到洞口！"
     },
     "justInsideRight": {
-      "name": "�",
-      "description": "�"
+      "name": "差點太遠，但沒問題！",
+      "description": "球員這一擊打了 62，球勉強留在了洞裡！"
     }
   },
   "hints": {
     "howDoIRollRightDistance": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼把球滾出每一擊正確的距離？",
+      "answer": "用`getShotLength()`查出球員把球打了多遠，再把它存進變數裡。這樣就知道要滾幾次。"
     },
     "howDoIMoveOneStep": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼讓球一步一步移動，而不是直接跳到終點？",
+      "answer": "用一個變數記住球的`x`位置。迴圈每跑一次，就把它加一，然後滾到新的位置。"
     },
     "whenShouldBallDrop": {
-      "question": "�",
-      "answer": "�"
+      "question": "球什麼時候該掉進洞裡？",
+      "answer": "只有在這一擊真的進洞時才要。把下限和上限放在同一個條件裡一起檢查，看看擊球長度是不是落在能進洞的範圍內。"
     },
     "whenShouldFireworksFire": {
-      "question": "�",
-      "answer": "�"
+      "question": "煙火什麼時候該發射？",
+      "answer": "只有在這一擊進洞，而且球已經完全掉到洞底之後才發射。把往下掉和發射煙火放在同一個條件裡。"
     }
   },
   "functions": {
     "moveTo": {
-      "description": "�",
-      "category": "�"
+      "description": "把球移動到位置 **(x, y)**。",
+      "category": "移動"
     },
     "getShotLength": {
-      "description": "�",
-      "category": "�"
+      "description": "回傳**擊球長度**，也就是球向右滾了多少單位。",
+      "category": "資訊"
     },
     "fireFireworks": {
-      "description": "�",
-      "category": "�"
+      "description": "發射慶祝的煙火！",
+      "category": "動作"
     }
   },
   "describers": {
-    "moveTo": "�",
-    "getShotLength": "�",
-    "fireFireworks": "�"
+    "moveTo": "把球移動到位置 (${arg1}, ${arg2})",
+    "getShotLength": "取得了擊球長度",
+    "fireFireworks": "發射了慶祝的煙火"
   }
 }

@@ -1,0 +1,64 @@
+{
+  "errors": {
+    "blockedUrl": "Oh nein, du hast versucht, eine unerwartete URL abzurufen, und sie wurde blockiert."
+  },
+  "describers": {
+    "fetch": "Daten von der angegebenen URL abgerufen"
+  },
+  "tasks": {
+    "formatLlmResponse": {
+      "name": "Die Antwort formatieren",
+      "description": "Erstelle eine Funktion namens askLlm, die eine Frage entgegennimmt, die LLM-Antwort abruft, die Antwort mit der höchsten Sicherheit auswählt und einen formatierten String zurückgibt."
+    }
+  },
+  "scenarios": {
+    "football": {
+      "name": "Die Weltmeisterschaft 1966",
+      "description": "Gib die Antwort auf eine sehr wichtige Frage zurück."
+    },
+    "cooking": {
+      "name": "Kochen",
+      "description": "Gib die beste Antwort auf eine Kochfrage zurück!"
+    },
+    "ltc": {
+      "name": "Learn to Code-Websites",
+      "description": "Gib die beste Antwort auf eine Frage mit einer eindeutigen Antwort zurück!"
+    }
+  },
+  "hints": {
+    "apiCall": {
+      "question": "Wie rufe ich die API auf?",
+      "answer": "Nutze `fetch(url, parameters)`, wobei `parameters` ein Wörterbuch `{ \"question\": question }` ist, und übergib die Frage, die du bekommen hast, als Argument."
+    },
+    "responseShape": {
+      "question": "Wie sehen die Antwortdaten aus?",
+      "answer": "Sie sind verschachtelt. Es gibt einen Schlüssel `\"response\"` mit einer Liste `\"answers\"` (jede Antwort ist ein Wörterbuch mit `\"text\"` und `\"certainty\"`) und einen Schlüssel `\"meta\"` mit einem String `\"time\"` wie `\"500ms\"`."
+    },
+    "pickBest": {
+      "question": "Wie wähle ich die beste Antwort aus?",
+      "answer": "Geh die Antworten in einer Schleife durch und behalte die mit der höchsten `certainty` im Auge. Beachte, dass die Werte von `certainty` Strings sind, du musst also jeden einzelnen in eine Zahl umwandeln, bevor du sie vergleichst."
+    },
+    "convertMs": {
+      "question": "Wie wandle ich '500ms' in Sekunden um?",
+      "answer": "Entferne den Teil 'ms', sodass nur die Ziffern übrig bleiben, wandle das in eine Zahl um und teile dann durch 1000."
+    },
+    "putTogether": {
+      "question": "Wie setze ich am Ende alles zusammen?",
+      "answer": "Nutze die Verkettung (`+`) oder einen Template-String, um den fertigen formatierten String aus dem Text der gewählten Antwort und der umgewandelten Zeit zusammenzubauen."
+    }
+  },
+  "functions": {
+    "fetch": {
+      "description": "Ruft Daten von einer API ab. Nimmt einen URL-String und ein Wörterbuch mit Parametern entgegen. Gibt die API-Antwort als Wörterbuch zurück.",
+      "category": "API"
+    },
+    "stringToNumber": {
+      "description": "Wandelt einen String in eine Zahl um",
+      "category": "Typumwandlung"
+    },
+    "numberToString": {
+      "description": "Wandelt eine Zahl in einen String um",
+      "category": "Typumwandlung"
+    }
+  }
+}

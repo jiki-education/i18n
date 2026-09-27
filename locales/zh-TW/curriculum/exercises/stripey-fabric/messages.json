@@ -1,51 +1,51 @@
 {
   "checks": {
-    "stripe1Purple": "�",
-    "stripe2Blue": "�",
-    "stripe3Yellow": "�",
-    "stripe4Green": "�",
-    "stripe5Yellow": "�",
-    "stripe6Blue": "�",
-    "stripe8Green": "�",
-    "stripe12Green": "�",
-    "stripe19Yellow": "�",
-    "stripe20Purple": "�",
-    "rectangleOnce": "�"
+    "stripe1Purple": "第 1 條條紋位在兩端，所以應該是 purple。",
+    "stripe2Blue": "第 2 條條紋應該是 blue（它是偶數，但不是 4 的倍數）。",
+    "stripe3Yellow": "第 3 條條紋應該是 yellow（它是奇數，而且不在兩端）。",
+    "stripe4Green": "第 4 條條紋應該是 green。它是 4 的倍數，所以要先檢查「4 的倍數」這條規則，再檢查偶數那條規則。",
+    "stripe5Yellow": "第 5 條條紋應該是 yellow（它是奇數，而且不在兩端）。",
+    "stripe6Blue": "第 6 條條紋應該是 blue（它是偶數，但不是 4 的倍數）。",
+    "stripe8Green": "第 8 條條紋應該是 green（它是 4 的倍數）。",
+    "stripe12Green": "第 12 條條紋應該是 green（它是 4 的倍數）。",
+    "stripe19Yellow": "第 19 條條紋應該是 yellow（它是奇數，而且不在兩端）。",
+    "stripe20Purple": "第 20 條條紋位在兩端，所以應該是 purple（雖然它是偶數）。",
+    "rectangleOnce": "你的程式碼裡，<code>rectangle</code>函式出現在不只一個地方。它只能出現一次，而且要寫在迴圈裡面，不要手寫出全部 20 條條紋！"
   },
   "tasks": {
     "weaveTheFabric": {
-      "name": "�",
-      "description": "�"
+      "name": "織出布料",
+      "description": "畫出 20 條垂直條紋。兩端的兩條條紋是 purple，其餘的規則是：4 的倍數是 green，其他偶數條紋是 blue，奇數條紋是 yellow。"
     }
   },
   "scenarios": {
     "weaveTheFabric": {
-      "name": "�",
-      "description": "�"
+      "name": "織出條紋布料",
+      "description": "畫出全部 20 條條紋，顏色都要正確。"
     }
   },
   "hints": {
     "howToDraw20Stripes": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼把 20 條條紋畫在不同位置？",
+      "answer": "準備一個計數器（就叫它 `i`），在 `repeat` 迴圈裡每跑一次就把它加一。第 `i` 條條紋寬 `5`，所以它的左邊界是 `(i - 1) * 5`。在那個位置畫一個寬 `5`、高 `100` 的 `rectangle`。"
     },
     "endStripesPurple": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼只讓兩端那兩條條紋變成 purple？",
+      "answer": "兩端的條紋就是第一條和最後一條。單一的比較沒辦法表達「是這個值，或是那個值」，所以要用 `||`（or）運算子：像 `if (n === 3 || n === 7)` 這樣寫，兩個值其中一個成立時結果就是 true。把同樣的做法套用在兩端那兩條條紋的編號上。"
     },
     "multipleOf4VsEven": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼分辨 4 的倍數和普通的偶數？",
+      "answer": "用 `%`（餘數）運算子：`n % 4 === 0` 只有在 4 的倍數時才會是 true，而 `n % 2 === 0` 對所有偶數都成立。4 的倍數同時也是偶數，所以要先檢查比較嚴格的「4 的倍數」規則。"
     },
     "stripe4Blue": {
-      "question": "�",
-      "answer": "�"
+      "question": "第 4 條條紋畫出來是 blue，但它應該是 green。為什麼？",
+      "answer": "在 `if` / `else if` 的串接裡，順序很重要。4 同時是 4 的倍數和偶數，所以如果你先檢查 `i % 2 === 0`，它就會變成 blue，永遠到不了 green 那條規則。要把「4 的倍數」的規則放在偶數規則前面。"
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "在位置 (left, top) 畫一個長方形，並指定它的寬度、高度和顏色。",
+      "category": "繪製圖形"
     }
   }
 }

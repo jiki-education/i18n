@@ -1,60 +1,60 @@
 {
   "checks": {
-    "flowerCount_zero": "�",
-    "flowerCount_one": "�",
+    "flowerCount_zero": "Der Hausbesitzer hat erwartet, dass keine Blumen gepflanzt werden. Du hast aber {{got}} gepflanzt.",
+    "flowerCount_one": "Der Hausbesitzer hat erwartet, dass {{count}} Blume gepflanzt wird. Du hast aber {{got}} gepflanzt.",
     "flowerCount_two": "∅",
     "flowerCount_few": "∅",
     "flowerCount_many": "∅",
-    "flowerCount_other": "�",
-    "flowerAtPosition": "�",
-    "strayFlower": "�"
+    "flowerCount_other": "Der Hausbesitzer hat erwartet, dass {{count}} Blumen gepflanzt werden. Du hast aber {{got}} gepflanzt.",
+    "flowerAtPosition": "An Position {{position}} sollte eine Blume sein, aber es war keine da.",
+    "strayFlower": "An Position {{position}} ist eine Blume, aber dort wollte der Hausbesitzer keine. Die Blumen sollen gleichmäßig verteilt sein."
   },
   "tasks": {
     "plantFlowersEvenly": {
-      "name": "�",
-      "description": "�"
+      "name": "Blumen gleichmäßig pflanzen",
+      "description": "Nutze askNumberOfFlowers(), um herauszufinden, wie viele Blumen du pflanzen sollst, berechne den Abstand und pflanze sie gleichmäßig verteilt."
     }
   },
   "scenarios": {
     "oneFlower": {
-      "name": "�",
-      "description": "�"
+      "name": "Der Hausbesitzer möchte 1 Blume",
+      "description": "In diesem Szenario gibt `askNumberOfFlowers()` 1 zurück. Pflanze 1 Blume an Position 50."
     },
     "threeFlowers": {
-      "name": "�",
-      "description": "�"
+      "name": "Der Hausbesitzer möchte 3 Blumen",
+      "description": "In diesem Szenario gibt `askNumberOfFlowers()` 3 zurück. Pflanze 3 Blumen an den Positionen 25, 50 und 75."
     },
     "fourFlowers": {
-      "name": "�",
-      "description": "�"
+      "name": "Der Hausbesitzer möchte 4 Blumen",
+      "description": "In diesem Szenario gibt `askNumberOfFlowers()` 4 zurück. Pflanze 4 Blumen an den Positionen 20, 40, 60 und 80."
     },
     "nineFlowers": {
-      "name": "�",
-      "description": "�"
+      "name": "Der Hausbesitzer möchte 9 Blumen",
+      "description": "In diesem Szenario gibt `askNumberOfFlowers()` 9 zurück. Pflanze 9 Blumen an den Positionen 10, 20, 30, 40, 50, 60, 70, 80 und 90."
     }
   },
   "hints": {
     "chooseGap": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie finde ich heraus, wo ich jede Blume pflanzen muss?",
+      "answer": "Zuerst berechnest du den Abstand zwischen den Blumen:\n\n```javascript\n100 / (numberOfFlowers + 1)\n```\n\nDie erste Blume kommt an diese Position, und jede weitere liegt einen Abstand weiter. Bei 3 Blumen ist der Abstand also 25, und sie kommen an die Positionen 25, 50 und 75."
     },
     "seeScenarios": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie sehe ich die verschiedenen Szenarien?",
+      "answer": "Klicke links auf die Punkte zwischen deinem Code und den Ergebnissen."
     }
   },
   "functions": {
     "askNumberOfFlowers": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt die **Anzahl der Blumen** zurück, die gepflanzt werden sollen.",
+      "category": "Gartenarbeit"
     },
     "plant": {
-      "description": "�",
-      "category": "�"
+      "description": "Pflanzt eine Blume an der angegebenen **Position**.",
+      "category": "Gartenarbeit"
     }
   },
   "describers": {
-    "askNumberOfFlowers": "�",
-    "plant": "�"
+    "askNumberOfFlowers": "fragte, wie viele Blumen gepflanzt werden sollen",
+    "plant": "pflanzte eine Blume an Position ${arg1}"
   }
 }

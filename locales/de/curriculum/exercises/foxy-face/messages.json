@@ -1,54 +1,54 @@
 {
   "checks": {
-    "leftCheek": "�",
-    "rightCheek": "�",
-    "leftEar": "�",
-    "rightEar": "�",
-    "leftFace": "�",
-    "rightFace": "�",
-    "nose": "�",
-    "leftFaceAboveEar": "�",
-    "rightFaceAboveEar": "�",
-    "noseAboveFace": "�"
+    "leftCheek": "Die linke Wange sollte ein weißes Dreieck an der richtigen Stelle sein.",
+    "rightCheek": "Die rechte Wange sollte ein weißes Dreieck an der richtigen Stelle sein.",
+    "leftEar": "Das linke Ohr sollte ein braunes Dreieck an der richtigen Stelle sein.",
+    "rightEar": "Das rechte Ohr sollte ein braunes Dreieck an der richtigen Stelle sein.",
+    "leftFace": "Die linke Gesichtshälfte sollte ein oranges Dreieck an der richtigen Stelle sein.",
+    "rightFace": "Die rechte Gesichtshälfte sollte ein oranges Dreieck an der richtigen Stelle sein.",
+    "nose": "Die Nase braucht zwei Dreiecke in der Farbe „charcoal“. Du kannst sie oben/unten oder links/rechts aufteilen.",
+    "leftFaceAboveEar": "Die linke Gesichtshälfte sollte **über** dem linken Ohr gezeichnet werden.",
+    "rightFaceAboveEar": "Die rechte Gesichtshälfte sollte **über** dem rechten Ohr gezeichnet werden.",
+    "noseAboveFace": "Die Nase sollte **über** dem Gesicht liegen."
   },
   "tasks": {
     "drawFox": {
-      "name": "�",
-      "description": "�"
+      "name": "Zeichne das Fuchsgesicht",
+      "description": "Baue mit Dreiecken ein geometrisches Fuchsgesicht auf dem grauen Hintergrund."
     }
   },
   "scenarios": {
     "drawFox": {
-      "name": "�",
-      "description": "�"
+      "name": "Zeichne das Fuchsgesicht",
+      "description": "Baue mit Dreiecken ein geometrisches Fuchsgesicht."
     }
   },
   "hints": {
     "callTriangle": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie rufe ich die Funktion `triangle` auf?",
+      "answer": "Übergib die 7 Eingabewerte in dieser Reihenfolge: die drei Eckpunkte (`x1, y1, x2, y2, x3, y3`) und danach den Farb-String, z. B. `triangle(50, 10, 30, 50, 70, 50, \"orange\")`."
     },
     "drawOrder": {
-      "question": "�",
-      "answer": "�"
+      "question": "In welcher Reihenfolge sollte ich die Teile zeichnen, damit sie richtig übereinanderliegen?",
+      "answer": "Später gezeichnete Formen liegen über den früheren. Zeichne zuerst die weißen Wangen, damit die orangen Gesichtshälften den größten Teil davon verdecken und nur die Spitzen der Wangen sichtbar bleiben."
     },
     "colors": {
-      "question": "�",
-      "answer": "�"
+      "question": "Welche Farbe gehört wohin?",
+      "answer": "Die Ohren sind `\"brown\"`, die Gesichtshälften sind `\"orange\"`, die Wangen sind `\"white\"` und die Nase ist `\"charcoal\"`. Denk daran, dass die Farben Strings sind, sie brauchen also Anführungszeichen."
     },
     "symmetry": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie finde ich die Koordinaten auf der rechten Seite heraus, ohne mit der Maus darüberzufahren?",
+      "answer": "Der Fuchs ist um die vertikale Mitte symmetrisch. Wenn ein Punkt auf der linken Seite bei x=`30` liegt und die Mitte bei x=`50`, dann liegt der Spiegelpunkt bei x=`70` (der gleiche Abstand auf der anderen Seite der Mitte). Die y-Werte bleiben gleich."
     },
     "multiplesOf5": {
-      "question": "�",
-      "answer": "�"
+      "question": "Warum funktionieren meine Koordinaten nicht?",
+      "answer": "Alle Werte, die du brauchst, sind durch 5 teilbar. Wenn ein Eckpunkt leicht daneben liegt, hast du wahrscheinlich eine Zahl wie `12` oder `38` verwendet. Runde sie auf das nächste Vielfache von 5 (`10`, `15`, `40` usw.)."
     }
   },
   "functions": {
     "triangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichnet ein Dreieck aus drei Eckpunkten und einer Farbe",
+      "category": "Formen zeichnen"
     }
   }
 }

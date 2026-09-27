@@ -1,62 +1,66 @@
 {
   "errors": {
-    "leavesNumber": "�",
-    "tomatoesNumber": "�",
-    "croutonsNumber": "�",
-    "olivesNumber": "�"
+    "leavesNumber": "Die Anzahl der Blätter muss eine Zahl sein",
+    "tomatoesNumber": "Die Anzahl der Tomaten muss eine Zahl sein",
+    "croutonsNumber": "Die Anzahl der Croutons muss eine Zahl sein",
+    "olivesNumber": "Die Anzahl der Oliven muss eine Zahl sein"
   },
   "checks": {
-    "saladNotMade": "�",
-    "needLeavesRandomInt": "�",
-    "needTomatoesRandomInt": "�",
-    "needCroutonsRandomInt": "�",
-    "needOlivesRandomInt": "�"
+    "saladNotMade": "Du hast den Salat nicht gemacht. Achte darauf, dass du <code>makeSalad()</code> mit allen vier Zutaten aufrufst.",
+    "needLeavesRandomInt": "Die Logik für die Anzahl der Blätter folgt nicht der Vereinbarung, die du mit deinem Partner getroffen hast.",
+    "needTomatoesRandomInt": "Die Logik für die Anzahl der Tomaten folgt nicht der Vereinbarung, die du mit deinem Partner getroffen hast.",
+    "needCroutonsRandomInt": "Die Logik für die Anzahl der Croutons folgt nicht der Vereinbarung, die du mit deinem Partner getroffen hast.",
+    "needOlivesRandomInt": "Die Logik für die Anzahl der Oliven folgt nicht der Vereinbarung, die du mit deinem Partner getroffen hast."
   },
   "tasks": {
     "makeRandomSalad": {
-      "name": "�",
-      "description": "�"
+      "name": "Mach einen zufälligen Salat",
+      "description": "Erzeuge mit Math.randomInt() für jede Zutat eine zufällige Menge und mach den Salat."
     }
   },
   "scenarios": {
     "randomSalad": {
-      "name": "�",
-      "description": "�"
+      "name": "Zufallssalat",
+      "description": "Stell einen Salat mit zufälligen Mengen jeder Zutat zusammen."
     }
   },
   "hints": {
     "leavesExample": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie erzeuge ich eine Zufallszahl?",
+      "answer": "`Math.randomInt(min, max)` gibt dir eine zufällige Ganzzahl zwischen den beiden Werten, die du übergibst. Zum Beispiel wählt `let score = Math.randomInt(1, 6)` eine Zahl von 1 bis 6. Speichere das Ergebnis in einer Variablen, damit du es später verwenden kannst."
     },
     "leavesCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie viele Blätter brauche ich?",
+      "answer": "Zwischen 40 und 100."
     },
     "tomatoesCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie viele Tomaten brauche ich?",
+      "answer": "Mindestens 5, aber höchstens Blätter / 5"
     },
     "croutonsCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie viele Croutons brauche ich?",
+      "answer": "Mindestens so viele wie Tomaten, höchstens doppelt so viele wie Tomaten"
     },
     "olivesCount": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie viele Oliven brauche ich?",
+      "answer": "Mindestens 1, höchstens halb so viele wie Tomaten"
     },
     "makeSalad": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie mache ich den Salat?",
+      "answer": "Sobald du weißt, wie viel du von jeder Zutat brauchst, übergib deine vier Variablen in der Reihenfolge an `makeSalad()`, die in seiner Signatur steht."
     }
   },
   "describers": {
-    "makeSalad": "�"
+    "makeSalad": "hat einen Salat mit ${arg1} Blättern, ${arg2} Tomaten, ${arg3} Croutons und ${arg4} Oliven gemacht"
   },
   "functions": {
     "makeSalad": {
-      "description": "�",
-      "category": "�"
+      "description": "Macht einen Salat aus den angegebenen Mengen jeder Zutat.",
+      "category": "Aktion"
+    },
+    "randomInt": {
+      "description": "Gibt eine zufällige Ganzzahl zwischen min und max zurück (beide eingeschlossen).",
+      "category": "Zahlen"
     }
   }
 }

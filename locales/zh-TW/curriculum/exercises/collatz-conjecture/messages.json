@@ -1,40 +1,40 @@
 {
   "tasks": {
     "calculateCollatzSteps": {
-      "name": "�",
-      "description": "�"
+      "name": "計算 Collatz 步數",
+      "description": "寫一個函式，接收一個數字，並依照 Collatz 猜想的規則，回傳從這個數字走到 1 需要幾步：如果是偶數，就除以 2；如果是奇數，就乘以 3，再加 1。"
     }
   },
   "scenarios": {
     "number1": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 1",
+      "description": "數字 1 需要零步。"
     },
     "number16": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 16",
+      "description": "遇到偶數就除以 2。"
     },
     "number12": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 12",
+      "description": "同時包含偶數和奇數的步驟。"
     },
     "number1000000": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 1000000",
+      "description": "包含大量偶數和奇數的步驟。"
     }
   },
   "hints": {
     "loopUntilOne": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼一直做下去，直到數字變成 1 呢？",
+      "answer": "用一個不帶數字的`repeat()`迴圈，它會一直重複，直到你用`return`跳出來為止。在迴圈裡，把數字換成序列中的下一個數字，等它變成 1 時就回傳。"
     },
     "chooseRule": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼判斷每一步該套用哪一條規則呢？",
+      "answer": "先檢查這個數字是不是偶數。取餘數的運算子就能做到這件事。`number % 2 === 0`代表它是偶數。如果是偶數，就把它除以 2；否則就執行`3 * number + 1`。"
     },
     "trackSteps": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼記錄答案（也就是步數）呢？",
+      "answer": "準備一個計數變數，記錄你總共套用過幾次規則。想一想，每繞一圈迴圈它應該怎麼變化，以及當數字變成 1 時，你的函式應該回傳什麼。"
     }
   }
 }

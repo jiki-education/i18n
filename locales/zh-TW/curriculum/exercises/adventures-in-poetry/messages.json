@@ -1,0 +1,112 @@
+{
+  "errors": {
+    "endOfPath": "詩人走出了路徑的盡頭。應該有東西在更早之前就讓這趟路停下來才對。",
+    "isEmojiString": "你只能檢查一段文字是不是 emoji。",
+    "reciteString": "你只能朗誦一段文字。"
+  },
+  "checks": {
+    "notRecited": "詩人什麼都沒有朗誦。記得在走完之後呼叫一次<code>recite()</code>。",
+    "wrongPoem": "詩人朗誦的是：<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>但這首詩應該是：<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "wrongSpacing": "詩人收集到的詞和順序都對，但空格不對。他朗誦的是：<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{got}}</pre>但這首詩應該是：<pre style=\"white-space: pre-wrap; margin: 6px 0; background: white; padding: 4px 7px; font-size: 13px; border-radius: 5px; border: 1px solid var(--color-red-200)\">{{expected}}</pre>",
+    "noFunctions": "把你的解法寫成一段走完的過程，不要自己定義任何函式。",
+    "reciteOnce": "詩人應該在走完之後，朗誦這首詩一次。",
+    "tooDeeplyNested": "你的程式碼縮排太深了。最多只能有兩層，也就是一個迴圈裡放一個<code>if</code>，但<code>if</code>裡面不能再放任何東西。",
+    "noAndOrNot": "這道練習練的是另一種下判斷的方式，所以這裡不能用<code>&&</code>和<code>!</code>。<code>||</code>倒是沒問題。",
+    "needsContinue": "你的解法必須用到<code>continue</code>。",
+    "needsBreak": "你的解法必須用到<code>break</code>。",
+    "tooManyLines": "你的解法比需要的還長。看看能不能把每一種格子都在同一個地方處理，讓程式碼再短一些。"
+  },
+  "tasks": {
+    "collectThePoem": {
+      "name": "收集詩並朗誦出來",
+      "description": "沿著路徑前進，收集詩裡的詞，在正確的地方停下來，然後朗誦你收集到的內容。"
+    },
+    "solveTightly": {
+      "name": "精簡你的解法",
+      "description": "解同一趟路，但要把程式碼縮到行數上限以內。"
+    }
+  },
+  "scenarios": {
+    "hope": {
+      "name": "有間隔的路徑",
+      "description": "六個詞之間只有光禿禿的草地，最後有一面格子旗。"
+    },
+    "wandered": {
+      "name": "路徑上的風景",
+      "description": "同樣的概念，但這次詞與詞之間長出了植物和生物。"
+    },
+    "mists": {
+      "name": "格子旗旁的風景",
+      "description": "格子旗前面的那一格上有一片葉子。"
+    },
+    "notLost": {
+      "name": "剛好七個詞",
+      "description": "這一行有七個詞，所以詩人還沒走到格子旗就會停下來。"
+    },
+    "hopeContinued": {
+      "name": "太長的詩",
+      "description": "這條路徑上有超過七個詞，所以詩人會走到一半就停下來。"
+    },
+    "highlands": {
+      "name": "撇號",
+      "description": "伯恩斯的一行詩，撇號單獨佔一格。"
+    },
+    "heartScenery": {
+      "name": "撇號後面的風景",
+      "description": "蘑菇長在撇號和它要接上的詞之間，所以負責記住空格的那部分得撐過一格被跳過的情況。"
+    },
+    "tyger": {
+      "name": "逗號",
+      "description": "布雷克的一行詩，逗號單獨佔一格。"
+    },
+    "pleure": {
+      "name": "開頭是光禿禿的草地",
+      "description": "魏爾倫的一行詩，詩開始之前有幾個空白格子。"
+    },
+    "yasegaeru": {
+      "name": "一茶的俳句",
+      "description": "七個詞的俳句，還有行數上限，逼你把各種判斷寫得緊密一點。你能寫出只有 32 行的俐落解法嗎？（還是更少？）"
+    }
+  },
+  "hints": {
+    "scenery": {
+      "question": "植物和生物都跑進我的詩裡了。",
+      "answer": "只有詞屬於這首詩。路徑上其他東西都該留在原地，這表示你的迴圈必須什麼都不加，直接走到下一格。"
+    },
+    "flagSkipped": {
+      "question": "我的詩人一直走個不停。",
+      "answer": "格子旗本身也是 emoji。如果你先處理風景，才處理格子旗，格子旗就會被當成風景，這趟路就走不完。順序很重要。"
+    },
+    "spacing": {
+      "question": "我的詞全都擠在一起，或是開頭多了一個空格。",
+      "answer": "想一想什麼時候才需要空格。空格要加在兩個詞**之間**，不是在第一個詞前面，所以得有東西記住目前是不是已經寫過任何詞了。"
+    },
+    "apostrophe": {
+      "question": "我拿到的是`heart ' s`，而不是`heart's`。",
+      "answer": "撇號會把它左右兩邊的詞接起來，所以它前面和後面都不該有空格。逗號剛好相反，前面不加空格，後面要加。"
+    },
+    "reciteOnce": {
+      "question": "為什麼`recite()`只能呼叫一次？",
+      "answer": "詩人朗誦的是完成後的詩，所以能朗誦的時機只有一個。這趟路結束的方式不只一種，而每一種都得走到同一個時機。"
+    }
+  },
+  "describers": {
+    "move": "往前走到下一格，發現了 ${return}",
+    "isEmoji": "檢查 ${arg1} 是不是 emoji",
+    "recite": "朗誦了「${arg1}」"
+  },
+  "functions": {
+    "move": {
+      "description": "讓詩人往前走一格，並**回傳**那一格上的東西。",
+      "category": "移動"
+    },
+    "isEmoji": {
+      "description": "如果你傳進去的東西是 emoji，就會回傳`true`。",
+      "category": "檢查"
+    },
+    "recite": {
+      "description": "讓詩人大聲朗誦一首詩。",
+      "category": "動作"
+    }
+  }
+}

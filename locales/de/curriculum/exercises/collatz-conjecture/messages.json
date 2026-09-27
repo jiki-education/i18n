@@ -1,40 +1,40 @@
 {
   "tasks": {
     "calculateCollatzSteps": {
-      "name": "�",
-      "description": "�"
+      "name": "Collatz-Schritte berechnen",
+      "description": "Schreibe eine Funktion, die eine Zahl entgegennimmt und zurückgibt, wie viele Schritte nötig sind, um nach den Regeln der Collatz-Vermutung zur 1 zu kommen: Ist die Zahl gerade, teile sie durch 2; ist sie ungerade, multipliziere sie mit 3 und addiere 1."
     }
   },
   "scenarios": {
     "number1": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 1",
+      "description": "Null Schritte für die 1."
     },
     "number16": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 16",
+      "description": "Teilen, weil die Zahl gerade ist."
     },
     "number12": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 12",
+      "description": "Schritte mit geraden und ungeraden Zahlen."
     },
     "number1000000": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 1000000",
+      "description": "Viele Schritte mit geraden und ungeraden Zahlen."
     }
   },
   "hints": {
     "loopUntilOne": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie mache ich weiter, bis die Zahl 1 erreicht?",
+      "answer": "Benutze eine `repeat()`-Schleife ohne Zahl. Sie wiederholt sich endlos, bis du sie mit `return` verlässt. Ersetze im Schleifenblock die Zahl durch die nächste Zahl der Folge und verlasse die Schleife mit `return`, sobald die Zahl 1 erreicht ist."
     },
     "chooseRule": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie entscheide ich, welche Regel ich bei jedem Schritt anwende?",
+      "answer": "Prüfe, ob die Zahl gerade ist. Der Modulo-Operator macht genau das. `number % 2 === 0` bedeutet, dass sie gerade ist. Wenn sie gerade ist, halbiere sie. Sonst rechne `3 * number + 1`."
     },
     "trackSteps": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie behalte ich die Antwort im Blick (die Anzahl der Schritte)?",
+      "answer": "Halte in einer Zählvariable fest, wie oft du die Regeln angewendet hast. Überlege, was bei jedem Schleifendurchlauf mit ihr passieren muss und was deine Funktion zurückgeben soll, wenn die Zahl 1 erreicht ist."
     }
   }
 }

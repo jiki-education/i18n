@@ -1,80 +1,80 @@
 {
   "errors": {
-    "hourNotNumber": "�",
-    "minutesNotNumber": "�",
-    "indicatorNotString": "�"
+    "hourNotNumber": "<code>hour</code> muss eine Zahl sein",
+    "minutesNotNumber": "<code>minutes</code> muss eine Zahl sein",
+    "indicatorNotString": "<code>indicator</code> muss ein String sein"
   },
   "checks": {
-    "notUpdated": "�",
-    "wrongTime": "�"
+    "notUpdated": "Die Uhr wurde nicht aktualisiert. Achte darauf, dass du die Funktion <code>displayTime</code> verwendest.",
+    "wrongTime": "Erwartet wurde „{{expected}}“, aber es kam „{{got}}“ heraus."
   },
   "tasks": {
     "displayTime": {
-      "name": "�",
-      "description": "�"
+      "name": "Zeige die Uhrzeit auf der Uhr an",
+      "description": "Hol dir die aktuelle Stunde und die aktuelle Minute, rechne sie ins 12-Stunden-Format mit am/pm um und zeige sie mit displayTime() an."
     }
   },
   "scenarios": {
     "morning1": {
-      "name": "�",
-      "description": "�"
+      "name": "Früher Morgen",
+      "description": "Zeige 6:35 als „6:35am“ an"
     },
     "morning2": {
-      "name": "�",
-      "description": "�"
+      "name": "Später Vormittag",
+      "description": "Zeige 11:04 als „11:04am“ an"
     },
     "afternoon1": {
-      "name": "�",
-      "description": "�"
+      "name": "Früher Nachmittag",
+      "description": "Zeige 12:19 als „12:19pm“ an"
     },
     "afternoon2": {
-      "name": "�",
-      "description": "�"
+      "name": "Später Abend",
+      "description": "Zeige 23:32 als „11:32pm“ an"
     },
     "midnight": {
-      "name": "�",
-      "description": "�"
+      "name": "Mitternacht",
+      "description": "Zeige Mitternacht als „12:00am“ an"
     },
     "noon": {
-      "name": "�",
-      "description": "�"
+      "name": "Mittag",
+      "description": "Zeige Mittag als „12:00pm“ an"
     },
     "now": {
-      "name": "�",
-      "description": "�"
+      "name": "Zeige die aktuelle Uhrzeit an",
+      "description": "Zeige die aktuelle Uhrzeit an"
     }
   },
   "hints": {
     "gettingStarted": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich weiß nicht, wie ich anfangen soll",
+      "answer": "Verwende `currentTimeHour()` und `currentTimeMinute()`, um die aktuelle Uhrzeit zu holen, und rufe dann `displayTime` mit diesen Werten und `\"am\"` als drittem Eingabewert auf (zum Beispiel `displayTime(hour, minutes, \"am\")`), um zu sehen, was passiert. Finde danach heraus, wie du das richtige Meridiem und die richtige Stundenanzeige einstellst."
     },
     "meridiem": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie funktioniert das Meridiem?",
+      "answer": "Stunden 0 bis 11 sind „am“, Stunden 12 bis 23 sind „pm“. Mitternacht (Stunde 0) soll als 12am angezeigt werden. Mittag (Stunde 12) soll als 12pm angezeigt werden."
     },
     "hourChange": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wann und warum muss sich die Stunde ändern?",
+      "answer": "Auf einer 12-Stunden-Uhr wird 13:00 als 1:00pm dargestellt und 14:00 als 2:00pm. Du musst also herausfinden, wie 13 zu 1 und 14 zu 2 wird, und die Uhr entsprechend anpassen!"
     }
   },
   "describers": {
-    "currentTimeHour": "�",
-    "currentTimeMinute": "�",
-    "displayTime": "�"
+    "currentTimeHour": "hat die aktuelle Stunde abgerufen",
+    "currentTimeMinute": "hat die aktuelle Minute abgerufen",
+    "displayTime": "hat die Uhrzeit auf der Uhr angezeigt"
   },
   "functions": {
     "currentTimeHour": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt die aktuelle Stunde im 24-Stunden-Format als Zahl zurück (zum Beispiel 23 für 11pm).",
+      "category": "Zeit"
     },
     "currentTimeMinute": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt die aktuelle Minute als Zahl zurück.",
+      "category": "Zeit"
     },
     "displayTime": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeigt die Uhrzeit auf der Digitaluhr an. Der Indikator sollte „am“ oder „pm“ sein.",
+      "category": "Aktion"
     }
   }
 }

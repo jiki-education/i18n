@@ -1,53 +1,53 @@
 {
   "checks": {
-    "housingWrong": "�",
-    "redWrong": "�",
-    "yellowWrong": "�",
-    "greenWrong": "�",
-    "doesntScale": "�"
+    "housingWrong": "外殼長方形的位置或尺寸不對。檢查`housingX`、`housingY`、`housingWidth`和`housingHeight`。",
+    "redWrong": "紅燈的位置或尺寸不對。檢查`redY`。",
+    "yellowWrong": "黃燈的位置或尺寸不對。檢查`yellowY`。",
+    "greenWrong": "綠燈的位置或尺寸不對。檢查`greenY`。",
+    "doesntScale": "當`radius`是 {{radius}} 時，你的程式碼無法正確縮放。每個位置和尺寸都應該從`center`和`radius`推導出來。"
   },
   "tasks": {
     "buildRelationalTrafficLights": {
-      "name": "�",
-      "description": "�"
+      "name": "打造相對紅綠燈",
+      "description": "所有位置和尺寸都從`center`和`radius`推導出來，讓紅綠燈能正確縮放。"
     }
   },
   "scenarios": {
     "buildRelationalTrafficLights": {
-      "name": "�",
-      "description": "�"
+      "name": "打造相對紅綠燈",
+      "description": "所有位置和尺寸都從`center`和`radius`推導出來。"
     }
   },
   "hints": {
     "howToWorkOutYellowCenter": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼算出黃燈的圓心？",
+      "answer": "你已經有一個代表`center`的變數了。你可以直接把`yellowY`設成它。"
     },
     "howToWorkOutRedCenter": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼算出紅燈的圓心？",
+      "answer": "如果兩個圓圈剛好碰在一起，它們的圓心相距多遠？把這個距離從`center`減掉，就能算出紅燈的圓心。"
     },
     "whereHousingStarts": {
-      "question": "�",
-      "answer": "�"
+      "question": "外殼長方形從哪裡開始？",
+      "answer": "如果你知道紅色圓圈的圓心，就能算出紅色圓圈的最頂端。外殼從紅色圓圈頂端再往上（也就是更前面）1 個 radius 的地方開始。同樣地，你可以先算出某個燈的左緣，再往左 1 個 radius，就是外殼的起點。"
     },
     "howBigHousing": {
-      "question": "�",
-      "answer": "�"
+      "question": "外殼要多大？",
+      "answer": "寬度是一個燈的寬度，左右再各加 1 個 radius 的內距。高度是每個燈 2 個 radius，上下再各加 1 個 radius 的內距。"
     },
     "whyMultipleOfSomething": {
-      "question": "�",
-      "answer": "�"
+      "question": "為什麼所有東西都必須是其他東西的倍數？",
+      "answer": "如果你把數字寫死，之後改變`radius`的時候，外殼的尺寸就會跟燈對不上。用包含`radius`和`center`的算式，才能讓整張圖保持正確的比例。"
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "在 (left, top) 的位置畫一個長方形，並指定它的寬度、高度和顏色",
+      "category": "繪製形狀"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "畫一個圓心在 (centerX, centerY) 的圓形，並指定它的 radius 和顏色",
+      "category": "繪製形狀"
     }
   }
 }

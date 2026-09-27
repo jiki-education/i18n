@@ -1,0 +1,69 @@
+{
+  "checks": {
+    "tooManyLines": "你的程式碼行數太多了，可以再縮短一點嗎？"
+  },
+  "tasks": {
+    "packLunchbox": {
+      "name": "裝便當盒",
+      "description": "把物品分成便當盒和背包兩邊：在不超過容量的前提下，盡可能把最多的物品塞進便當盒，其餘的全都放進背包。"
+    },
+    "solveInSixteenLines": {
+      "name": "用 16 行程式碼解題",
+      "description": "你能只用 16 行程式碼解出這道練習嗎？"
+    }
+  },
+  "scenarios": {
+    "everythingFits": {
+      "name": "全部都裝得下",
+      "description": "便當盒很寬敞，每個物品都裝得下，背包因此空著。"
+    },
+    "packTheMost": {
+      "name": "裝進最多物品",
+      "description": "空間很吃緊，所以小的物品放進便當盒，大的則留給背包。"
+    },
+    "justTheSnack": {
+      "name": "只裝得下點心",
+      "description": "只有最小的那個物品裝得下，其餘的都放進背包。"
+    },
+    "nothingFits": {
+      "name": "什麼都裝不下",
+      "description": "連最小的物品都太大，所以全部都得放進背包。"
+    },
+    "emptyLunchbox": {
+      "name": "空的便當盒",
+      "description": "完全沒有任何物品，所以便當盒和背包都會是空的。"
+    },
+    "bonus1": {
+      "name": "16 行程式碼",
+      "description": "只用 16 行程式碼解出這道練習。"
+    }
+  },
+  "hints": {
+    "readEachItem": {
+      "question": "我要怎麼取得每個物品的名稱和大小？",
+      "answer": "每個物品都是一組兩個元素。第一個是名稱，第二個是大小，所以你可以從物品裡一個一個把它們讀出來。"
+    },
+    "fitTheMost": {
+      "question": "要怎麼裝進最多的物品？",
+      "answer": "想想看該先放哪些物品。比較小的物品能留給其他物品更多空間，所以先處理它們、再處理大的，會更有幫助。"
+    },
+    "goSmallestFirst": {
+      "question": "物品是從大到小排的，我要怎麼改成從最小開始處理？",
+      "answer": "有一個陣列方法可以回傳把元素倒過來的陣列副本。先把物品倒過來，再照這個新順序處理。"
+    },
+    "knowWhenFull": {
+      "question": "我要怎麼決定每個物品該放哪裡？",
+      "answer": "持續累計你已經放進去的物品大小。要放進一個物品之前，先檢查目前總和加上它的大小是不是還在容量之內。如果還在，就放進便當盒；否則就放進背包。"
+    }
+  },
+  "functions": {
+    "toReversed": {
+      "description": "回傳一個元素順序顛倒的陣列副本，不會改變原本的陣列。",
+      "category": "陣列"
+    },
+    "push": {
+      "description": "把一個元素加到陣列末端，會直接改變原本的陣列。",
+      "category": "陣列"
+    }
+  }
+}

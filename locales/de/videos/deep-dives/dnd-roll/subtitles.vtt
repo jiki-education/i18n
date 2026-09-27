@@ -1,0 +1,387 @@
+WEBVTT
+
+NOTE en_md5 b8c6113399959b0244ec1b133a63a133
+
+00:00:01.028 --> 00:00:03.228
+Jetzt kommen wir zu den Übungen,
+
+00:00:03.228 --> 00:00:05.908
+bei denen man manchmal
+ein bisschen frustriert ist.
+
+00:00:06.628 --> 00:00:10.348
+Diese hier und die nächste sind die ersten,
+bei denen sich manche ein wenig
+
+00:00:10.348 --> 00:00:12.067
+ärgern und nicht ganz auf die Lösung kommen.
+
+00:00:12.067 --> 00:00:14.307
+Wenn du also frustriert bist,
+mach dir keine Sorgen.
+
+00:00:14.307 --> 00:00:15.987
+Anderen geht es genauso.
+
+00:00:16.147 --> 00:00:18.628
+Aber genau dabei lernst du
+auch unglaublich viel.
+
+00:00:18.867 --> 00:00:20.388
+Gut, dass du dir das Video anschaust.
+
+00:00:20.388 --> 00:00:23.748
+Gehen wir es gemeinsam durch. Wenn du
+die Übung gelöst hast und sie leicht fandest:
+
+00:00:24.237 --> 00:00:27.678
+Glückwunsch! Vielleicht lernst du trotzdem
+noch etwas, wenn wir sie uns anschauen.
+
+00:00:28.557 --> 00:00:30.038
+Worum geht es hier also?
+
+00:00:30.038 --> 00:00:33.838
+Wir bauen einen Bot, der
+Dungeons and Dragons spielen kann.
+
+00:00:33.917 --> 00:00:37.277
+Falls du Dungeons and Dragons nicht kennst:
+Man hat dabei viele Würfel.
+
+00:00:37.277 --> 00:00:39.037
+Du würfelst für alles Mögliche.
+
+00:00:39.628 --> 00:00:42.637
+Die Würfel entscheiden,
+ob etwas passiert oder nicht,
+
+00:00:42.957 --> 00:00:46.078
+wie stark du zuschlagen kannst
+und noch vieles mehr.
+
+00:00:46.557 --> 00:00:51.518
+In diesem Beispiel
+werfen wir drei verschiedene Würfel.
+
+00:00:52.497 --> 00:00:55.938
+Dafür haben wir eine Funktion roll,
+mit der wir einen Würfel werfen,
+
+00:00:55.938 --> 00:00:58.658
+und wir legen fest,
+wie viele Seiten der Würfel hat.
+
+00:00:58.658 --> 00:00:59.618
+Wir können also
+
+00:01:00.578 --> 00:01:03.218
+Falsch kopiert. Wir können roll
+
+00:01:04.578 --> 00:01:04.977
+20 schreiben,
+
+00:01:06.018 --> 00:01:11.218
+um einen 20-seitigen Würfel zu werfen.
+Das gibt uns einen Angriffswert.
+
+00:01:11.537 --> 00:01:14.337
+Halten wir kurz an und schauen,
+ob wir verstehen, was hier passiert.
+
+00:01:14.418 --> 00:01:16.737
+Wir haben also eine Funktion roll.
+
+00:01:17.628 --> 00:01:21.308
+Diese Funktion roll wird
+mit 20 als Eingabewert aufgerufen,
+
+00:01:21.308 --> 00:01:23.867
+also mit der Anzahl der Seiten des Würfels.
+
+00:01:24.108 --> 00:01:25.947
+Und dann gibt diese Funktion
+
+00:01:26.748 --> 00:01:30.628
+eine Zahl zwischen 1 und 20 zurück.
+Das ist unser Angriffswert.
+
+00:01:30.628 --> 00:01:32.748
+Führen wir das aus und schauen nach.
+
+00:01:33.307 --> 00:01:35.548
+Wir haben eine neue Box namens attack erstellt.
+
+00:01:36.028 --> 00:01:38.867
+Wir haben gewürfelt,
+und wir haben eine Eins zurückbekommen.
+
+00:01:38.867 --> 00:01:42.908
+Führen wir den Code noch mal aus und schauen
+wieder nach, gibt er diesmal 16 zurück.
+
+00:01:43.668 --> 00:01:46.468
+Führen wir ihn noch mal aus,
+gibt er diesmal eine Vier zurück.
+
+00:01:46.548 --> 00:01:49.707
+Wie bei einem echten Würfel
+bekommen wir bei jedem Wurf
+
+00:01:49.707 --> 00:01:51.347
+eine andere Zahl zurück.
+
+00:01:51.507 --> 00:01:54.308
+Und diese Zahl, egal welche es ist,
+
+00:01:54.947 --> 00:01:57.028
+speichern wir jedes Mal in der Box attack.
+
+00:01:57.347 --> 00:01:58.947
+Machen wir dasselbe für die anderen.
+
+00:01:59.028 --> 00:02:00.867
+Als Nächstes kommt der Basisschaden,
+
+00:02:01.427 --> 00:02:04.628
+und den bekommen wir mit
+einem 12-seitigen Würfel.
+
+00:02:04.787 --> 00:02:06.787
+Dann haben wir den Bonusschaden,
+
+00:02:07.987 --> 00:02:08.707
+und dafür
+
+00:02:09.508 --> 00:02:11.427
+werfen wir einen 10-seitigen Würfel.
+
+00:02:12.457 --> 00:02:14.138
+Wir führen das aus und schauen nach.
+
+00:02:14.138 --> 00:02:17.018
+Diesmal bekommen wir eine 8, wir bekommen ...
+
+00:02:17.578 --> 00:02:21.497
+Entschuldigung, wir bekommen 12,
+eine 7 und eine 8.
+
+00:02:22.298 --> 00:02:25.177
+Auch diese drei sind
+jedes Mal anders.
+
+00:02:26.298 --> 00:02:29.497
+Okay, als Nächstes
+brauchen wir unseren Gesamtschaden.
+
+00:02:29.497 --> 00:02:34.298
+Wir schreiben damage, und unser
+Schaden ist der Basisschaden
+
+00:02:36.698 --> 00:02:40.948
+plus der Bonusschaden. So.
+Jetzt haben wir unseren Gesamtschaden.
+
+00:02:40.948 --> 00:02:43.068
+Nein, nennen wir es
+lieber Gesamtschaden.
+
+00:02:43.467 --> 00:02:47.788
+Wir haben jetzt Angriffswert, Basisschaden,
+Bonusschaden und Gesamtschaden.
+
+00:02:49.228 --> 00:02:50.707
+Dann gibt es diese Anweisung:
+
+00:02:50.707 --> 00:02:56.068
+Nach jedem Würfelwurf musst du die
+gewürfelte Zahl den anderen ansagen,
+
+00:02:56.068 --> 00:02:57.627
+mit denen du spielst.
+
+00:02:57.867 --> 00:03:01.147
+Okay? Sagen wir also
+unseren Angriffswert an,
+
+00:03:02.268 --> 00:03:04.668
+und sagen wir auch unseren
+
+00:03:06.008 --> 00:03:09.048
+Basisschaden an. Und sagen wir
+unseren Bonusschaden an.
+
+00:03:11.768 --> 00:03:15.168
+Dann steht da: Wenn du versuchst zu treffen,
+ohne die Zahlen anzusagen,
+
+00:03:15.168 --> 00:03:16.247
+denken sie vielleicht, du schummelst.
+
+00:03:16.568 --> 00:03:18.807
+Du würdest natürlich nie schummeln,
+aber das ist nur fair.
+
+00:03:19.927 --> 00:03:22.888
+Okay. Zum Schluss
+treffen wir den Goblin
+
+00:03:23.207 --> 00:03:25.407
+mit Angriffswert und Gesamtschaden.
+
+00:03:25.407 --> 00:03:26.168
+Also strike
+
+00:03:27.288 --> 00:03:28.568
+mit deinem Angriffswert
+
+00:03:30.008 --> 00:03:31.927
+und deinem Gesamtschaden.
+
+00:03:34.247 --> 00:03:36.728
+Wir führen den Code aus. Und da haben wir's.
+
+00:03:36.728 --> 00:03:39.848
+Es funktioniert. Wir bekommen 3, 11 und 3.
+
+00:03:40.647 --> 00:03:42.048
+Das sind diesmal unsere Zahlen.
+
+00:03:42.048 --> 00:03:46.967
+Wenn wir hier draufklicken und das durchgehen,
+bekommen wir eine 3, eine 11
+
+00:03:48.328 --> 00:03:51.288
+und eine 3. Und wenn wir es noch mal ausführen,
+
+00:03:52.328 --> 00:03:54.247
+bekommen wir eine 3,
+eine 5 und eine 2.
+
+00:03:54.247 --> 00:03:58.008
+Wir können das Schritt für Schritt durchgehen
+und sehen, dass roll 20 eine 3 zurückgab.
+
+00:03:58.377 --> 00:03:59.818
+Die speichern wir in der Box attack.
+
+00:03:59.978 --> 00:04:02.777
+Wir holen die Box attack, nehmen die 3
+heraus und sagen sie an.
+
+00:04:03.018 --> 00:04:06.217
+roll 12 gab eine 5 zurück. Dasselbe noch mal.
+
+00:04:07.337 --> 00:04:09.258
+roll 10 gab diesmal eine 2 zurück.
+
+00:04:09.337 --> 00:04:12.978
+Wir sagen die 2 an
+und addieren sie dann.
+
+00:04:12.978 --> 00:04:16.377
+Wir holen den Basisschaden mit der 5
+und den Bonusschaden mit der 2.
+
+00:04:16.377 --> 00:04:19.577
+Wir addieren sie, bekommen die 7
+und haben unseren Gesamtschaden.
+
+00:04:19.737 --> 00:04:24.338
+Zum Schluss treffen wir, indem wir den
+Angriffswert mit der 3 und den Gesamtschaden
+
+00:04:24.338 --> 00:04:27.218
+mit der 7 holen. Dann kommt unsere Funktion strike.
+
+00:04:28.338 --> 00:04:30.817
+Jetzt hast du hoffentlich
+den ganzen Ablauf gesehen.
+
+00:04:31.458 --> 00:04:36.098
+Es ist nicht allzu kompliziert. Wie immer
+rate ich dir vor allem, die Dinge
+
+00:04:36.098 --> 00:04:38.017
+in diese einzelnen Schritte zu zerlegen.
+
+00:04:38.418 --> 00:04:41.858
+Besonders jetzt, wo wir Funktionen haben,
+die etwas zurückgeben,
+
+00:04:42.017 --> 00:04:44.377
+ist es wichtig, mit der rechten Seite
+
+00:04:44.377 --> 00:04:47.028
+des Gleichheitszeichens anzufangen
+und sie dir wirklich
+
+00:04:47.908 --> 00:04:50.817
+als eine Sache vorzustellen.
+Das nennen wir einen Ausdruck.
+
+00:04:51.387 --> 00:04:54.348
+Das ist etwas, das rechts
+vom Gleichheitszeichen passiert.
+
+00:04:55.148 --> 00:05:00.108
+Und es ist wichtig, diesen Ausdruck
+zuerst im Kopf durchzugehen.
+
+00:05:00.348 --> 00:05:03.627
+Das hier ist auch ein Ausdruck: das plus das.
+
+00:05:04.267 --> 00:05:06.267
+Dieser Teil hier wird also ausgeführt.
+
+00:05:06.267 --> 00:05:10.348
+Jiki führt ihn aus, indem er die Werte
+der beiden Boxen addiert.
+
+00:05:10.827 --> 00:05:14.427
+Und wenn er damit fertig ist,
+legt er das Ergebnis in diese Box.
+
+00:05:14.827 --> 00:05:17.307
+Stell dir das also als einen Schritt vor,
+
+00:05:17.307 --> 00:05:19.708
+und das Setzen der Box als den nächsten.
+
+00:05:20.408 --> 00:05:24.168
+Das ist der nächste Schritt. Zerleg es so,
+dann ist das Ganze hoffentlich
+
+00:05:24.487 --> 00:05:29.367
+ziemlich leicht. Viel Erfolg! Die nächste
+Übung ist wieder eine,
+
+00:05:29.367 --> 00:05:31.127
+bei der viele richtig frustriert sind.
+
+00:05:31.447 --> 00:05:33.687
+Versuch einfach anzuwenden,
+was du hier gelernt hast.
+
+00:05:33.687 --> 00:05:35.608
+Mach ein bisschen langsamer. Und
+
+00:05:36.408 --> 00:05:38.887
+hab keine Scheu, dir das Video anzuschauen,
+wenn du es brauchst.
+
+00:05:38.968 --> 00:05:41.687
+Aber versuch wirklich zuerst,
+die Übung selbst zu lösen.
+
+00:05:41.687 --> 00:05:44.807
+Und vergiss nicht, dass du auch
+den Tab „Frag Jiki“ nutzen kannst.
+
+00:05:45.048 --> 00:05:48.247
+Damit kannst du wunderbar
+Ideen ausprobieren und durchspielen.
+
+00:05:48.408 --> 00:05:51.208
+Probier es also unbedingt aus.
+Danke fürs Zuschauen!

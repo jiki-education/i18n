@@ -1,81 +1,81 @@
 {
   "describers": {
-    "canMove": "�",
-    "canTurnLeft": "�",
-    "canTurnRight": "�"
+    "canMove": "Prüft, ob sich die Figur vorwärts bewegen kann.",
+    "canTurnLeft": "Prüft, ob es links von der Figur einen Weg gibt.",
+    "canTurnRight": "Prüft, ob es rechts von der Figur einen Weg gibt."
   },
   "checks": {
-    "notReachedEnd": "�",
-    "turnAroundNotDefined": "�",
-    "turnAroundNotCalled": "�",
-    "maxLines": "�"
+    "notReachedEnd": "Du hast das Ende des Labyrinths nicht erreicht.",
+    "turnAroundNotDefined": "Du musst ganz oben in deinem Code eine Funktion <code>turnAround</code> definieren.",
+    "turnAroundNotCalled": "Du hast <code>turnAround</code> definiert, aber du musst sie auch wirklich in deiner letzten <code>else</code>-Anweisung aufrufen.",
+    "maxLines": "Dein Programm sollte höchstens 17 Codezeilen haben."
   },
   "tasks": {
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "An Sackgassen umdrehen",
+      "description": "Definiere ganz oben in deinem Code eine Funktion turnAround(), die zweimal turnLeft() aufruft, und setze sie dann in der letzten else-Anweisung ein. Dein Löser soll in allen drei Labyrinthen aus den Sackgassen herauskommen."
     },
     "bonusShortSolution": {
-      "name": "�",
-      "description": "�"
+      "name": "Bonus: Halte es kurz",
+      "description": "Löse ein Labyrinth mit zwei Sackgassen und halte dein ganzes Programm bei 17 Codezeilen oder weniger."
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine einzelne Sackgasse",
+      "description": "Ein gerader Gang mit einem Abstecher in eine Sackgasse, der ein Umdrehen erzwingt"
     },
     "maze2": {
-      "name": "�",
-      "description": "�"
+      "name": "Eine Sackgasse und eine Abbiegung",
+      "description": "Ein gewundener Weg mit einem Abstecher in eine Sackgasse, bevor er zum Ausgang abbiegt"
     },
     "maze3": {
-      "name": "�",
-      "description": "�"
+      "name": "Halte es kurz",
+      "description": "Sorge dafür, dass dein fertiges Programm aus 17 Codezeilen besteht."
     }
   },
   "hints": {
     "defineFunction": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie definiere ich eine neue Funktion?",
+      "answer": "Benutze das Schlüsselwort `function`, dann den Namen, runde Klammern für die Eingabewerte und einen Block in geschweiften Klammern, zum Beispiel `function turnAround() { ... }`."
     },
     "placement": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wo soll ich die Funktion definieren?",
+      "answer": "Setz sie ganz oben in deinen Code, noch vor die Schleife. Funktionen müssen definiert sein, bevor sie aufgerufen werden."
     },
     "turnAroundBody": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was gehört in `turnAround()` hinein?",
+      "answer": "Nur zwei Aufrufe von `turnLeft()`. Zwei Drehungen nach links und du schaust in die entgegengesetzte Richtung."
     },
     "useInSolver": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie setze ich meine neue Funktion im Labyrinth-Löser ein?",
+      "answer": "Suche in deiner bisherigen Lösung die `else`-Anweisung, in der du zweimal `turnLeft()` aufgerufen hast, und ersetze diese beiden Aufrufe durch einen einzigen Aufruf von `turnAround()`."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt die Figur **einen Schritt vorwärts** in die Richtung, in die sie gerade schaut. Läuft sie gegen eine Wand, endet dein Programm mit einem Fehler. Prüf also vorher, was vor ihr liegt!",
+      "category": "Bewegung"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Dreht die Figur **um 90 Grad nach links** (gegen den Uhrzeigersinn). Das ändert die Richtung, in die die Figur schaut.",
+      "category": "Bewegung"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Dreht die Figur **um 90 Grad nach rechts** (im Uhrzeigersinn). Das ändert die Richtung, in die die Figur schaut.",
+      "category": "Bewegung"
     },
     "canMove": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt **wahr** zurück, wenn sich vor der Figur keine Wand befindet, sonst **falsch**.",
+      "category": "Wahrnehmung"
     },
     "canTurnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt **wahr** zurück, wenn sich links neben der Figur keine Wand befindet, sonst **falsch**.",
+      "category": "Wahrnehmung"
     },
     "canTurnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt **wahr** zurück, wenn sich rechts neben der Figur keine Wand befindet, sonst **falsch**.",
+      "category": "Wahrnehmung"
     }
   }
 }

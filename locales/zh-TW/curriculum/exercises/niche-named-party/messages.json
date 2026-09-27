@@ -1,67 +1,67 @@
 {
   "tasks": {
     "checkTheName": {
-      "name": "�",
-      "description": "�"
+      "name": "檢查名字",
+      "description": "寫一個`handleGuest`函式，檢查這個人的名字是否以今晚派對允許的字母開頭。如果是就回傳`true`，不是就回傳`false`。"
     },
     "solveTightly": {
-      "name": "�",
-      "description": "�"
+      "name": "用 20 行解決",
+      "description": "加分題：把計算長度的部分抽成一個輔助函式，讓`handleGuest`重複使用，整個解法就能控制在 20 行內。你能做到嗎？"
     }
   },
   "scenarios": {
     "sarahSParty": {
-      "name": "�",
-      "description": "�"
+      "name": "S 派對：Sarah 來了",
+      "description": "今晚只允許名字以「S」開頭的人進場。Sarah 應該要能進場！"
     },
     "bradSParty": {
-      "name": "�",
-      "description": "�"
+      "name": "S 派對：Brad 來了",
+      "description": "今晚只允許名字以「S」開頭的人進場。Brad 應該要被擋在門外。"
     },
     "bradleyBradParty": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad 派對：Bradley 來了",
+      "description": "今晚只允許名字以「Brad」開頭的人進場。Bradley 應該要能進場！"
     },
     "bradBradleyParty": {
-      "name": "�",
-      "description": "�"
+      "name": "Bradley 派對：Brad 來了",
+      "description": "今晚只允許名字以「Bradley」開頭的人進場。Brad 太短了，所以不能進場。"
     },
     "brianBradParty": {
-      "name": "�",
-      "description": "�"
+      "name": "Brad 派對：Brian 來了",
+      "description": "今晚只允許名字以「Brad」開頭的人進場。Brian 應該要被擋在門外。"
     },
     "silence": {
-      "name": "�",
-      "description": "�"
+      "name": "S 派對：一片沉默……",
+      "description": "這個人沒說出自己的名字。空的名字沒辦法以任何字母開頭。把他擋在門外吧！"
     },
     "cherCherParty": {
-      "name": "�",
-      "description": "�"
+      "name": "Cher 派對：Cher 來了",
+      "description": "今晚只允許名字以「Cher」開頭的人進場。Cher 的名字正好就是「Cher」，讓她進場吧！"
     },
     "nicheNamedPartyBonusLineCount": {
-      "name": "�",
-      "description": "�"
+      "name": "乾淨俐落",
+      "description": "最短的解法只要 20 行。你能找到嗎？"
     }
   },
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "繼續加油！看看能不能用更少的行數解決。"
   },
   "hints": {
     "checkStartsWith": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼檢查名字是不是以某些字母開頭？",
+      "answer": "把允許開頭字母的每個字元，和名字中相同位置的字元逐一比較。只要有任何一個字元不一樣，名字就不符合。"
     },
     "loopCharacters": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼一次只看一個字元？",
+      "answer": "用字串疊代來逐字元走過一個字串。"
     },
     "findEquivalentLetter": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼找到另一個字裡對應的字母？",
+      "answer": "用字串索引找出特定的字母。"
     },
     "longerAllowedPrefix": {
-      "question": "�",
-      "answer": "�"
+      "question": "如果允許的開頭字母比名字還長呢？",
+      "answer": "這個人不可能符合，所以你應該回傳`false`。"
     }
   }
 }

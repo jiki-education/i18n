@@ -1,42 +1,42 @@
 {
   "checks": {
-    "uniqueColoredCircles": "�",
-    "uniquePositionedCircles": "�",
-    "radiiRange": "�",
-    "insideBox": "�",
-    "touchEdges": "�",
-    "saturationLightnessRange": "�"
+    "uniqueColoredCircles": "Es sollten mindestens 50 Kreise in unterschiedlichen Farben sein. Achte darauf, dass jeder Kreis eine zufällige Farbe hat.",
+    "uniquePositionedCircles": "Es sollten mindestens 30 verschiedene Positionen sein. Achte darauf, dass jeder Kreis eine zufällige Position hat.",
+    "radiiRange": "Alle Radien der Kreise müssen mindestens 1 und kleiner als 30 sein.",
+    "insideBox": "Die Kreise dürfen nicht aus der Box herausragen. Berücksichtige beim Wählen der Position den Radius jedes Kreises.",
+    "touchEdges": "Keiner deiner Kreise hat die Ränder der Leinwand berührt. Wenn du sicher bist, dass dein Code stimmt, kann es sein, dass die Zufallszahlen einfach keinen Kreis genau auf einen Rand gesetzt haben. Versuch es noch einmal!",
+    "saturationLightnessRange": "Sättigung und Helligkeit müssen beide zwischen 20 und 80 liegen."
   },
   "tasks": {
     "drawSplodges": {
-      "name": "�",
-      "description": "�"
+      "name": "Regenbogenkleckse zeichnen",
+      "description": "Zeichne 200 Kreise an zufälligen Positionen mit zufälligen Farben."
     }
   },
   "scenarios": {
     "rainbowSplodges": {
-      "name": "�",
-      "description": "�"
+      "name": "Regenbogenkleckse",
+      "description": "Zeichne 200 zufällig gefärbte Kreise an zufälligen Positionen."
     }
   },
   "hints": {
     "keepCirclesInBox": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie halte ich die Kreise in der Box?",
+      "answer": "Die Reihenfolge ist wichtig. Du musst dich zuerst für den Radius des Kreises entscheiden und dann dafür sorgen, dass seine linke und obere Position nie zulassen, dass er aus der Box geschoben wird."
     },
     "circlesEscapingBox": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich bekomme meine Kreise nicht in die Box",
+      "answer": "Denk daran, dass die Position eines Kreises sein Mittelpunkt ist. Du musst also den Radius mit einrechnen, damit der ganze Kreis innerhalb der Box bleibt. Wenn eine Position gerade bis 0 heruntergehen darf, ragt der Rand des Kreises um seinen Radius über die Box hinaus. Auf welchen Wert muss dieses Minimum also geändert werden, damit der Kreis nie außerhalb der Box liegt? Wende dieselbe Logik dann auf das Maximum an."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichne einen Kreis mit dem Mittelpunkt bei (centerX, centerY), dem angegebenen Radius und der angegebenen Farbe",
+      "category": "Formen zeichnen"
     },
     "hsl": {
-      "description": "�",
-      "category": "�"
+      "description": "Wandle HSL-Farbwerte (Farbton 0-360, Sättigung 0-100, Helligkeit 0-100) in einen Hex-Farbstring um",
+      "category": "Farben"
     }
   }
 }

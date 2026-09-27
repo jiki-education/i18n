@@ -1,60 +1,60 @@
 {
   "tasks": {
     "reverseStrings": {
-      "name": "�",
-      "description": "�"
+      "name": "Strings umdrehen",
+      "description": "Dreh einen String um, sodass er von rechts nach links statt von links nach rechts gelesen wird."
     }
   },
   "scenarios": {
     "reverseEmptyString": {
-      "name": "�",
-      "description": "�"
+      "name": "Leerer String",
+      "description": "Ein leerer String ergibt umgedreht wieder einen leeren String."
     },
     "reverseWord": {
-      "name": "�",
-      "description": "�"
+      "name": "Ein Wort",
+      "description": "Dreh das Wort „robot“ um."
     },
     "reverseCapitalizedWord": {
-      "name": "�",
-      "description": "�"
+      "name": "Ein großgeschriebenes Wort",
+      "description": "Dreh ein großgeschriebenes Wort um: „Ramen“."
     },
     "reverseSentencePunctuation": {
-      "name": "�",
-      "description": "�"
+      "name": "Satz mit Satzzeichen",
+      "description": "Dreh einen Satz mit Satzzeichen um: „I'm hungry!“"
     },
     "reversePalindrome": {
-      "name": "�",
-      "description": "�"
+      "name": "Palindrom",
+      "description": "Ein Palindrom bleibt gleich, wenn man es umdreht."
     },
     "reverseEvenSizedWord": {
-      "name": "�",
-      "description": "�"
+      "name": "Wort mit gerader Länge",
+      "description": "Dreh ein Wort mit gerader Länge um: „drawer“."
     },
     "reverseWideCharacters": {
-      "name": "�",
-      "description": "�"
+      "name": "Breite Zeichen",
+      "description": "Dreh breite Unicode-Zeichen um: „子猫“."
     },
     "reverseEmojiFamily": {
-      "name": "�",
-      "description": "�"
+      "name": "Emoji-Familie",
+      "description": "Dreh eine Emoji-Familie um."
     },
     "reverseEmojiRainbowFlag": {
-      "name": "�",
-      "description": "�"
+      "name": "Regenbogenflagge",
+      "description": "Erzeuge durch das Umdrehen eine Regenbogenflagge."
     }
   },
   "hints": {
     "reverseByHand": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie würde ich ein Wort von Hand umdrehen?",
+      "answer": "Du liest es von links nach rechts, schreibst es aber von rechts nach links. Oder anders gesagt: Du nimmst jeden Buchstaben der Reihe nach und stellst ihn vor das, was du bisher geschrieben hast."
     },
     "mapToCode": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie übersetzt sich das in Code?",
+      "answer": "Geh mit einer Schleife Zeichen für Zeichen durch den Eingabe-String. Für jedes Zeichen baust du das Ergebnis auf, indem du es vorne anfügst. Das heißt, du stellst es an den ANFANG deines Ergebnisses, nicht ans Ende."
     },
     "prepend": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie füge ich vorne an, statt hinten anzuhängen?",
+      "answer": "Mit dem `+`-Operator ist das Vorne-Anfügen nur eine Frage der Reihenfolge. Statt `result + char` (hängt hinten an) nimmst du `char + result` (hängt vorne an)."
     }
   }
 }

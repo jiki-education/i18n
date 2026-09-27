@@ -1,76 +1,76 @@
 {
   "checks": {
-    "totalCells": "�",
-    "groundWalls": "�",
-    "groundGlass": "�",
-    "groundEntrance": "�",
-    "floorWalls": "�",
-    "floorGlass": "�",
-    "roof": "�",
+    "totalCells": "預期應該有 {{expected}} 個格子，但實際找到 {{got}} 個。",
+    "groundWalls": "地面層應該在 (17, 2) 和 (21, 2) 這兩個位置有牆。",
+    "groundGlass": "地面層應該在 (18, 2) 和 (20, 2) 這兩個位置有玻璃。",
+    "groundEntrance": "地面層應該在 (19, 2) 這個位置有入口。",
+    "floorWalls": "第 {{y}} 層應該在 (17, {{y}}) 和 (21, {{y}}) 這兩個位置有牆。",
+    "floorGlass": "第 {{y}} 層應該在 (18, {{y}})、(19, {{y}}) 和 (20, {{y}}) 這三個位置有玻璃。",
+    "roof": "y={{roofY}} 的屋頂應該全部都是牆。",
     "codeQuality": {
-      "allArgumentsAreVariables": "�"
+      "allArgumentsAreVariables": "你應該把<strong>變數</strong>當作函式的引數，而不是直接寫字面值。先把值存進變數，再傳入這些變數。"
     }
   },
   "tasks": {
     "buildSkyscraper": {
-      "name": "�",
-      "description": "�"
+      "name": "建造摩天大樓",
+      "description": "建造一棟樓層數正確的摩天大樓，要有帶入口的地面層、帶玻璃的上層樓層，以及全是牆的屋頂。"
     }
   },
   "scenarios": {
     "floors6": {
-      "name": "�",
-      "description": "�"
+      "name": "6 層樓的摩天大樓",
+      "description": "建造一棟 6 層樓的摩天大樓。"
     },
     "floors8": {
-      "name": "�",
-      "description": "�"
+      "name": "8 層樓的摩天大樓",
+      "description": "建造一棟 8 層樓的摩天大樓。"
     },
     "floors10": {
-      "name": "�",
-      "description": "�"
+      "name": "10 層樓的摩天大樓",
+      "description": "建造一棟 10 層樓的摩天大樓。"
     },
     "floors12": {
-      "name": "�",
-      "description": "�"
+      "name": "12 層樓的摩天大樓",
+      "description": "建造一棟 12 層樓的摩天大樓。"
     },
     "floors16": {
-      "name": "�",
-      "description": "�"
+      "name": "16 層樓的摩天大樓",
+      "description": "建造一棟 16 層樓的摩天大樓。"
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "我不知道要從哪裡開始。",
+      "answer": "先試著畫一面牆、一些玻璃和一個入口，確認你了解這些函式的用法。接著畫地面層，這一層每次都一樣。然後用`numFloors()`函式找出總共有幾層樓，畫出剩下的樓層，最後畫屋頂。"
     },
     "tooManyTooFewFloors": {
-      "question": "�",
-      "answer": "�"
+      "question": "我的樓層太多或太少了。",
+      "answer": "如果`numFloors()`回傳 5，那應該是一層入口樓層、4 層玻璃樓層和一個屋頂。檢查一下你的邏輯對不對喔！"
     }
   },
   "functions": {
     "buildWall": {
-      "description": "�",
-      "category": "�"
+      "description": "在網格位置 (x, y) 放一個**牆塊**。",
+      "category": "建造"
     },
     "buildGlass": {
-      "description": "�",
-      "category": "�"
+      "description": "在網格位置 (x, y) 放一塊**玻璃面板**。",
+      "category": "建造"
     },
     "buildEntrance": {
-      "description": "�",
-      "category": "�"
+      "description": "在網格位置 (x, y) 放一個**入口**。",
+      "category": "建造"
     },
     "numFloors": {
-      "description": "�",
-      "category": "�"
+      "description": "回傳這棟建築物的**樓層數**。",
+      "category": "資訊"
     }
   },
   "describers": {
-    "buildWall": "�",
-    "buildEntrance": "�",
-    "buildGlass": "�",
-    "numFloors": "�"
+    "buildWall": "在位置 (${arg1}, ${arg2}) 蓋了一面牆",
+    "buildEntrance": "在位置 (${arg1}, ${arg2}) 蓋了一個入口",
+    "buildGlass": "在位置 (${arg1}, ${arg2}) 蓋了一塊玻璃面板",
+    "numFloors": "取得了樓層數"
   }
 }

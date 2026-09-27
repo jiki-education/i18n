@@ -1,103 +1,103 @@
 {
   "describers": {
-    "canMove": "�",
-    "canTurnLeft": "�",
-    "canTurnRight": "�"
+    "canMove": "檢查角色是否可以往前移動",
+    "canTurnLeft": "檢查角色左邊是否有路",
+    "canTurnRight": "檢查角色右邊是否有路"
   },
   "checks": {
-    "reachedEnd": "�",
-    "extraTurn": "�"
+    "reachedEnd": "你沒有走到迷宮的終點。",
+    "extraTurn": "你似乎在最後多轉了一次不必要的彎。"
   },
   "tasks": {
     "straightPath": {
-      "name": "�",
-      "description": "�"
+      "name": "一直線的路",
+      "description": "往前移動，走到迷宮的終點。"
     },
     "turnLeft": {
-      "name": "�",
-      "description": "�"
+      "name": "可以向左轉就向左轉",
+      "description": "如果左邊有路，就走那一條！"
     },
     "turnRight": {
-      "name": "�",
-      "description": "�"
+      "name": "不能直走或向左轉時，就向右轉",
+      "description": "如果左邊和前方都沒有路，就走右邊那一條。"
     },
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "需要時就掉頭",
+      "description": "遇到死路就掉頭。如果左邊、前方和右邊都走不通，就掉頭並往前移動。"
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "引導角色走到迷宮終點",
+      "description": "一條直線往下的路"
     },
     "leftTurn": {
-      "name": "�",
-      "description": "�"
+      "name": "一個左轉彎",
+      "description": "走過一個左轉彎"
     },
     "rightTurn": {
-      "name": "�",
-      "description": "�"
+      "name": "一個右轉彎",
+      "description": "走過一個右轉彎"
     },
     "forks": {
-      "name": "�",
-      "description": "�"
+      "name": "可以選左邊就選左邊，否則選右邊",
+      "description": "有岔路的迷宮，測試是否會優先選左邊"
     },
     "turnAround": {
-      "name": "�",
-      "description": "�"
+      "name": "在死路掉頭",
+      "description": "需要掉頭的迷宮"
     },
     "forks2": {
-      "name": "�",
-      "description": "�"
+      "name": "有岔路和死路的複雜迷宮",
+      "description": "測試完整演算法的複雜迷宮"
     }
   },
   "hints": {
     "solveEachMaze": {
-      "question": "�",
-      "answer": "�"
+      "question": "我需要分別解開每個迷宮嗎？",
+      "answer": "不用。你只要寫一個能解開任何迷宮的演算法，同一段程式碼就會在每個情境中執行。"
     },
     "runEveryStep": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼讓我的程式碼在迷宮的每一步都執行？",
+      "answer": "把你的邏輯包進`repeat`迴圈裡。它會不斷重複執行你的程式碼，直到你走到終點，所以你只需要描述單一步驟要做什麼。"
     },
     "oneCheckPerStep": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼確保每一步只會執行其中一個判斷？",
+      "answer": "使用單一組`if` / `else if` / `else`串接，而不是好幾個分開的`if`。這樣每跑一次迴圈，就只會執行其中一個分支。"
     },
     "stuckAfterTurn": {
-      "question": "�",
-      "answer": "�"
+      "question": "我轉向了，但角色卻卡在原地。",
+      "answer": "轉向只會改變角色面朝的方向，並不會移動一步。轉向之後，你還是需要呼叫`move()`。"
     },
     "turnAroundDeadEnd": {
-      "question": "�",
-      "answer": "�"
+      "question": "在死路要怎麼掉頭？",
+      "answer": "沒有可以直接掉頭的函式。朝同一個方向轉兩次（轉兩次左，或轉兩次右），角色就會面向來時的方向。"
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色沿著目前的方向**往前移動一步**。只有目標格子沒有被牆擋住時，角色才會移動。",
+      "category": "移動"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色**向左轉 90 度**（逆時針）。這會改變角色面朝的方向。",
+      "category": "移動"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "讓角色**向右轉 90 度**（順時針）。這會改變角色面朝的方向。",
+      "category": "移動"
     },
     "canMove": {
-      "description": "�",
-      "category": "�"
+      "description": "如果角色前方的格子不是牆，就回傳**true**，否則回傳**false**。",
+      "category": "感測"
     },
     "canTurnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "如果角色左邊的格子不是牆，就回傳**true**，否則回傳**false**。",
+      "category": "感測"
     },
     "canTurnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "如果角色右邊的格子不是牆，就回傳**true**，否則回傳**false**。",
+      "category": "感測"
     }
   }
 }

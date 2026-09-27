@@ -1,99 +1,99 @@
 {
   "checks": {
-    "moreThanSixteenLines": "�"
+    "moreThanSixteenLines": "你用了超過 16 行程式碼。"
   },
   "tasks": {
     "plings": {
-      "name": "�",
-      "description": "�"
+      "name": "Pling 的聲音",
+      "description": "先讓 Pling 的聲音正確。如果數字能被 3 整除，就回傳「Pling」。"
     },
     "plangs": {
-      "name": "�",
-      "description": "�"
+      "name": "Plang 的聲音",
+      "description": "接著讓 Plang 的聲音正確。如果數字能被 5 整除，就把「Plang」加進結果裡。如果同時能被 3 和 5 整除，就回傳「PlingPlang」。"
     },
     "plongs": {
-      "name": "�",
-      "description": "�"
+      "name": "Plong 的聲音",
+      "description": "再來讓 Plong 的聲音正確。如果數字能被 7 整除，就把「Plong」加進結果裡。一個數字可能同時被好幾個因數整除。"
     },
     "noSound": {
-      "name": "�",
-      "description": "�"
+      "name": "沒有雨滴聲的數字",
+      "description": "最後，如果數字不能被 3、5 或 7 整除，就把這個數字本身以字串回傳。"
     },
     "solveInSixteenLines": {
-      "name": "�",
-      "description": "�"
+      "name": "用 16 行程式碼解題",
+      "description": "你能只用 16 行程式碼解出這題嗎？"
     }
   },
   "scenarios": {
     "number3": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 3",
+      "description": "如果輸入 3，就回傳「Pling」。"
     },
     "number27": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 27",
+      "description": "如果輸入 27，就回傳「Pling」。"
     },
     "number5": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 5",
+      "description": "如果輸入 5，就回傳「Plang」。"
     },
     "number3125": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 3125",
+      "description": "如果輸入 3125，就回傳「Plang」。"
     },
     "number15": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 15",
+      "description": "如果輸入 15，就回傳「PlingPlang」。"
     },
     "number7": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 7",
+      "description": "如果輸入 7，就回傳「Plong」。"
     },
     "number21": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 21",
+      "description": "如果輸入 21，就回傳「PlingPlong」。"
     },
     "number35": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 35",
+      "description": "如果輸入 35，就回傳「PlangPlong」。"
     },
     "number105": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 105",
+      "description": "如果輸入 105，就回傳「PlingPlangPlong」。"
     },
     "number8": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 8",
+      "description": "如果輸入 8，就回傳「8」。"
     },
     "number52": {
-      "name": "�",
-      "description": "�"
+      "name": "數字 52",
+      "description": "如果輸入 52，就回傳「52」。"
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "16 行程式碼",
+      "description": "只用 16 行程式碼解出這個練習。"
     }
   },
   "hints": {
     "onlyOneSound": {
-      "question": "�",
-      "answer": "�"
+      "question": "為什麼我的函式只回傳一種聲音？",
+      "answer": "如果你在每個`if`裡都`return`，那麼只要遇到第一個能整除的除數，你就提前結束了。你要做的是把它們組合起來。不要急著回傳，改成把聲音接到結果字串後面，然後繼續往下做。"
     },
     "buildCombinedSound": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼把合併後的聲音組出來？",
+      "answer": "先準備一個空的結果字串。針對每個除數（3、5、7），如果它能整除這個數字，就用`+`串接，把對應的聲音接到結果的後面。"
     },
     "noneMatch": {
-      "question": "�",
-      "answer": "�"
+      "question": "如果沒有任何除數能整除呢？",
+      "answer": "如果三次檢查都做完，結果還是空的，那答案就是這個數字本身，以字串表示。把數字轉成字串，再回傳它。"
     },
     "convertToString": {
-      "question": "�",
-      "answer": "�"
+      "question": "我回傳的是數字，但它要我用字串回傳。該怎麼做？",
+      "answer": "數字和字串是不同的型別，即使看起來一樣。你可以用`${...}`把數字放進樣板字串裡，就能把它轉成字串。"
     },
     "howManyReturns": {
-      "question": "�",
-      "answer": "�"
+      "question": "我應該有幾個`return`敘述？",
+      "answer": "通常一到兩個就夠了。重點是讓這些 if 敘述去修改結果字串，最後在結尾把結果回傳一次。"
     }
   }
 }

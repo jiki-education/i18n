@@ -1,0 +1,150 @@
+{
+  "errors": {
+    "widthMustBeNumber": "寬度必須是數字",
+    "colorMustBeString": "顏色必須是字串",
+    "textMustBeString": "文字必須是字串"
+  },
+  "checks": {
+    "gameOutlineWrongOrMissing": "遊戲的外框錯誤或缺少。",
+    "gridLine535To9535WrongOrMissing": "從 5,35 到 95,35 的格線錯誤或缺少。",
+    "gridLine565To9565WrongOrMissing": "從 5,65 到 95,65 的格線錯誤或缺少。",
+    "gridLine355To3595WrongOrMissing": "從 35,5 到 35,95 的格線錯誤或缺少。",
+    "gridLine655To6595WrongOrMissing": "從 65,5 到 65,95 的格線錯誤或缺少。",
+    "wroteWhileGameInProgress": "遊戲還在進行中，你卻在螢幕上寫了東西。",
+    "crossLine7010To9030WrongOrMissing": "從 70,10 到 90,30 的叉叉線條錯誤或缺少。",
+    "crossLine7030To9010WrongOrMissing": "從 70,30 到 90,10 的叉叉線條錯誤或缺少。",
+    "crossLine4040To6060WrongOrMissing": "從 40,40 到 60,60 的叉叉線條錯誤或缺少。",
+    "crossLine4060To6040WrongOrMissing": "從 40,60 到 60,40 的叉叉線條錯誤或缺少。",
+    "nought8050MissingOrWrong": "位於 80,50 的圓圈缺少或錯誤。",
+    "nought2080MissingOrWrong": "位於 20,80 的圓圈缺少或錯誤。",
+    "drewResultsScreenGameNotEnded": "你畫了結果畫面，但遊戲還沒結束。",
+    "nought2020MissingOrWrong": "位於 20,20 的圓圈缺少或錯誤。",
+    "crossLine4040To6060MissingOrWrong": "從 40,40 到 60,60 的叉叉線條缺少或錯誤。",
+    "crossLine4060To6040MissingOrWrong": "從 40,60 到 60,40 的叉叉線條缺少或錯誤。",
+    "nought5020MissingOrWrong": "位於 50,20 的圓圈缺少或錯誤。",
+    "crossLine7010To9030MissingOrWrong": "從 70,10 到 90,30 的叉叉線條缺少或錯誤。",
+    "crossLine7030To9010MissingOrWrong": "從 70,30 到 90,10 的叉叉線條缺少或錯誤。",
+    "crossLine1040To3060MissingOrWrong": "從 10,40 到 30,60 的叉叉線條缺少或錯誤。",
+    "crossLine1060To3040MissingOrWrong": "從 10,60 到 30,40 的叉叉線條缺少或錯誤。",
+    "nought8080MissingOrWrong": "位於 80,80 的圓圈缺少或錯誤。",
+    "crossLine4070To6090MissingOrWrong": "從 40,70 到 60,90 的叉叉線條缺少或錯誤。",
+    "crossLine4090To6070MissingOrWrong": "從 40,90 到 60,70 的叉叉線條缺少或錯誤。",
+    "didntWriteResultCorrectly": "你沒有在螢幕上正確寫出結果。",
+    "wroteToScreenMultipleTimes": "你在螢幕上寫了好幾次。",
+    "didntDrawOverlayCorrectly": "你沒有正確畫出覆蓋層。",
+    "expectedCrossesGreyedOut": "我們預期叉叉會變成淺灰色。",
+    "expectedNoughtsGreyedOut": "我們預期圓圈會變成淺灰色。",
+    "didntWriteInvalidMoveCorrectly": "你沒有在螢幕上正確寫出不合法落子的訊息。",
+    "expectedCrossColorProgression": "我們預期遊戲進行中看到黑色叉叉，遊戲獲勝後則看到淺灰色叉叉和紫色的獲勝叉叉。",
+    "crossLine4010To6030MissingOrWrong": "從 40,10 到 60,30 的叉叉線條缺少或錯誤。",
+    "crossLine4030To6010MissingOrWrong": "從 40,30 到 60,10 的叉叉線條缺少或錯誤。",
+    "nought8020MissingOrWrong": "位於 80,20 的圓圈缺少或錯誤。",
+    "nought5050MissingOrWrong": "位於 50,50 的圓圈缺少或錯誤。",
+    "crossLine7040To9060MissingOrWrong": "從 70,40 到 90,60 的叉叉線條缺少或錯誤。",
+    "crossLine7060To9040MissingOrWrong": "從 70,60 到 90,40 的叉叉線條缺少或錯誤。",
+    "expectedNoughtColorProgression": "我們預期遊戲進行中看到正常的圓圈，遊戲獲勝後則看到淺灰色圓圈和紫色的獲勝圓圈。",
+    "addedBlockingCross": "你有加上擋下對手的叉叉嗎？",
+    "addedWinningCross": "你有在致勝的位置加上叉叉嗎？",
+    "addedWinningNought": "你有在致勝的位置加上圓圈嗎？"
+  },
+  "tasks": {
+    "playTicTacToe": {
+      "name": "打造井字遊戲",
+      "description": "建立一個 runGame(moves) 函式，它會畫出棋盤、放置棋子、處理不合法的一步、偵測獲勝與平手，並為 '?' 的落子實作基本的 AI。"
+    }
+  },
+  "scenarios": {
+    "partialGame": {
+      "name": "對局的前幾步",
+      "description": "畫出格線，並正確放置開頭的前幾枚棋子。遊戲還在進行中。"
+    },
+    "draw": {
+      "name": "平手的對局",
+      "description": "下完一整局，最後以平手收場。所有棋子都應該變成淺灰色，並顯示平手的訊息。"
+    },
+    "doublePlacementDuplicate": {
+      "name": "把 'o' 下在 'o' 上",
+      "description": "把棋子下在已經被佔用的格子上，應該顯示錯誤。"
+    },
+    "doublePlacementOnTop": {
+      "name": "把 'x' 下在 'o' 上",
+      "description": "把棋子下在對手的棋子上，應該顯示錯誤。"
+    },
+    "winX": {
+      "name": "叉叉獲勝！",
+      "description": "下一局由叉叉獲勝的遊戲。獲勝的那一線應該被標示出來。"
+    },
+    "winO": {
+      "name": "圓圈獲勝！",
+      "description": "下一局由圓圈獲勝的遊戲。獲勝的圓圈應該被標示出來。"
+    },
+    "aiOFinish": {
+      "name": "'o' 的 AI 完成對局",
+      "description": "你的 AI 能順利完成這局嗎？"
+    },
+    "aiXWin": {
+      "name": "'x' 的 AI 獲勝",
+      "description": "你的 AI 能替叉叉贏得一局嗎？"
+    },
+    "aiOWin": {
+      "name": "'o' 的 AI 獲勝",
+      "description": "你的 AI 能替圓圈贏得一局嗎？"
+    },
+    "aiXBlock": {
+      "name": "'x' 的 AI 擋下對手",
+      "description": "你的 AI 能擋下對手的致勝一步嗎？"
+    },
+    "aiGame": {
+      "name": "AI 對局",
+      "description": "你的 AI 能把這局下成平手嗎？"
+    }
+  },
+  "hints": {
+    "whereToStart": {
+      "question": "這麼大的練習，我該從哪裡開始？",
+      "answer": "把它拆開來。先畫出空白的格線（一個長方形加上四條線）。然後為畫 `o` 和 `x` 寫幾個輔助函式。遊戲邏輯就建立在這之上。"
+    },
+    "trackSquares": {
+      "question": "我要怎麼記錄哪些格子已經被佔用了？",
+      "answer": "用一個二維陣列（三個陣列組成的陣列，每個陣列裡有三個項目），每個格子放 `\"o\"`、`\"x\"` 或一個代表空白的標記。每次落子後就更新它。"
+    },
+    "whoseTurn": {
+      "question": "我要怎麼知道現在輪到誰？",
+      "answer": "第一步永遠是 `\"o\"`，之後就輪流交替。你可以記錄落子的次數，或是在每次落子後把變數在 `\"o\"` 和 `\"x\"` 之間切換。"
+    },
+    "detectWin": {
+      "question": "我要怎麼偵測獲勝？",
+      "answer": "每次落子後，檢查全部 8 條可能獲勝的線：3 條橫列、3 條直行，以及 2 條斜線。逐一檢查這三個格子裡的符號是不是都相同，而且不是空白的。"
+    },
+    "aiMove": {
+      "question": "遇到 `\"?\"` 的落子時，AI 要怎麼決定該下哪裡？",
+      "answer": "依照順序試這些規則：先看看有沒有能立刻獲勝的一步，再看看有沒有能擋下對手致勝的一步，否則就任選一個空白的格子。"
+    }
+  },
+  "describers": {
+    "changeStroke": "把線條寬度設為 ${arg1}，線條顏色設為 ${arg2}",
+    "write": "在螢幕上寫了 '${arg1}'"
+  },
+  "functions": {
+    "rectangle": {
+      "description": "在位置 (left, top) 畫一個長方形，使用指定的寬度、高度和顏色",
+      "category": "繪製圖形"
+    },
+    "circle": {
+      "description": "以 (centerX, centerY) 為圓心畫一個圓圈，使用指定的半徑和顏色",
+      "category": "繪製圖形"
+    },
+    "line": {
+      "description": "從 (x1, y1) 到 (x2, y2) 畫一條線，使用指定的顏色",
+      "category": "繪製圖形"
+    },
+    "changeStroke": {
+      "description": "設定後續圖形的線條寬度和顏色。線條會用這個線條顏色來畫。",
+      "category": "線條設定"
+    },
+    "write": {
+      "description": "用白色把文字寫在螢幕正中央",
+      "category": "文字"
+    }
+  }
+}

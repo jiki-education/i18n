@@ -1,57 +1,57 @@
 {
   "checks": {
-    "uniqueColoredCircles": "�",
-    "uniquePositionedCircles": "�",
-    "canvasCoverage": "�",
-    "hueBounced": "�",
-    "hueSweep": "�"
+    "uniqueColoredCircles": "Erwartet werden mindestens 50 Kreise mit unterschiedlichen Farben.",
+    "uniquePositionedCircles": "Erwartet werden mindestens 30 verschiedene Positionen.",
+    "canvasCoverage": "Der Ball hat nicht genug vom Canvas bemalt. Er sollte so lange springen, bis über 80 % bedeckt sind.",
+    "hueBounced": "Der Farbton hat 360 nicht erreicht und ist danach nicht wieder kleiner geworden.",
+    "hueSweep": "Die Regenbogenspur hat nicht alle Farben durchlaufen."
   },
   "tasks": {
     "rainbowBall": {
-      "name": "�",
-      "description": "�"
+      "name": "Erstelle einen springenden Regenbogenball",
+      "description": "Erstelle einen Ball, der über das Canvas springt und dabei eine Spur aus farbigen Kreisen hinterlässt, die alle Regenbogenfarben durchlaufen."
     }
   },
   "scenarios": {
     "rainbowBall": {
-      "name": "�",
-      "description": "�"
+      "name": "Regenbogenball",
+      "description": "Zeichnet eine Regenbogenspur aus verschiedenen Kreisen."
     }
   },
   "hints": {
     "stateToTrack": {
-      "question": "�",
-      "answer": "�"
+      "question": "Welchen Zustand muss ich verfolgen?",
+      "answer": "Die Position des Balls und die Art, wie er sich bewegt. Halte beides getrennt: eine Variable dafür, *wo* der Ball ist, und eine dafür, *wie* er sich verändert. Für den Farbton brauchst du seinen aktuellen Wert und eine Richtung, in die er sich bewegt."
     },
     "moveAndShift": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie bewege ich den Ball und verschiebe die Farbe bei jeder Iteration?",
+      "answer": "Addiere zu Beginn jeder Iteration deine Richtungsvariablen zur Position und zu `hue`. So steuern die Richtungsvariablen die Bewegung vollständig. Wenn du ihr Vorzeichen umdrehst oder ihre Größe änderst, ändert sich sofort, wie sich der Ball bewegt und wie sich die Farbe verschiebt."
     },
     "velocityTip": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich komme nicht darauf, wie das geht. Hast du einen Tipp?",
+      "answer": "Was sind das für Zahlen, um die sich `x` und `y` ändern? Sie sind eine Mischung aus Geschwindigkeit (die Größe der Zahl) und Richtung (ob sie den Ball nach vorn oder zurück bewegt). `2` wäre also eine Geschwindigkeit von 2 nach rechts oder unten. Und `-3` wäre eine Geschwindigkeit von 3 nach links oder oben. Eine Zahl, die Geschwindigkeit und Richtung angibt, nennt man **Velocity** (Zeit, deine Variablennamen zu aktualisieren?). Wenn du also die Richtung des Balls ändern willst, drehst du das Vorzeichen der Velocity um, von positiv zu negativ oder umgekehrt."
     },
     "bounceOffEdges": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie lasse ich den Ball von den Rändern abprallen?",
+      "answer": "Prüfe nach dem Aktualisieren der Position, ob `x` oder `y` die Grenze des Canvas überschritten hat. Wenn ja, drehst du die Richtungsvariable für diese Achse um. Wie groß der Bereich des Canvas ist, steht in den Anweisungen."
     },
     "randomBounceSpeed": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie gebe ich dem Abprallen jedes Mal eine neue zufällige Geschwindigkeit?",
+      "answer": "Wenn der Ball auf einen Rand trifft, setzt du die Richtungsvariable mit `Math.randomInt(min, max)`, statt nur ihr Vorzeichen umzudrehen. Wähle einen positiven Bereich, wenn er links oder oben abprallt, und einen negativen Bereich, wenn er rechts oder unten abprallt."
     },
     "cycleHue": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie lasse ich den Farbton durch den Regenbogen laufen?",
+      "answer": "Wende denselben Trick auf `hue` an wie auf die Position. Wenn der Wert seinen gültigen Bereich verlässt, drehst du `hueDirection` um. Dann läuft die Farbe von allein bis zum oberen Ende des Spektrums und wieder zurück."
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichnet einen Kreis mit dem Mittelpunkt (centerX, centerY), dem angegebenen Radius und der angegebenen Farbe",
+      "category": "Formen zeichnen"
     },
     "hsl": {
-      "description": "�",
-      "category": "�"
+      "description": "Wandelt HSL-Farbwerte (Farbton 0-360, Sättigung 0-100, Helligkeit 0-100) in einen Hex-Farbstring um",
+      "category": "Farben"
     }
   }
 }

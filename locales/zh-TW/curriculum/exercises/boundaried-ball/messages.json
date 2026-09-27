@@ -1,0 +1,52 @@
+{
+  "checks": {
+    "wrongMoveCount": "我們預期球會繞著遊戲區域移動兩圈，最後回到原本的起點。",
+    "missedLeftWall": "球似乎沒有碰到左側牆壁的中間。",
+    "missedRightWall": "球似乎沒有碰到右側牆壁的中間。",
+    "missedTopMiddle": "球似乎沒有碰到上方牆壁的中間。",
+    "missedBottomMiddle": "球似乎沒有碰到下方牆壁的中間。"
+  },
+  "tasks": {
+    "bounceBall": {
+      "name": "讓球彈來彈去",
+      "description": "建立一顆球，讓它從遊戲區域的四個牆壁反彈。"
+    }
+  },
+  "scenarios": {
+    "addBall": {
+      "name": "加入球",
+      "description": "加入球，讓它在遊戲區域裡彈跳。"
+    }
+  },
+  "hints": {
+    "createBall": {
+      "question": "我要怎麼建立一顆可以操作的球？",
+      "answer": "用`new`建立一顆：`let ball = new Ball()`。然後在迴圈裡把`ball`傳給`moveBall(ball)`，讓它移動。"
+    },
+    "detectWall": {
+      "question": "我要怎麼判斷球已經碰到牆壁了？",
+      "answer": "球的邊緣和球心相距`radius`。左邊牆壁要檢查`ball.cx - ball.radius <= 0`；右邊牆壁則是`ball.cx + ball.radius >= 100`。"
+    },
+    "reverseVelocity": {
+      "question": "球碰到牆壁時我該做什麼？",
+      "answer": "把速度設定成下一步往反方向移動。碰到左邊牆壁時設定`ball.xVelocity = 1`；碰到右邊牆壁時設定成`-1`。要用`=`，不要用`+=`，這樣速度才會剛好是`1`或`-1`。"
+    },
+    "checkAllWalls": {
+      "question": "為什麼我的球有時候還是會跑出遊戲區域？",
+      "answer": "你大概只檢查了兩面牆壁。用同樣的方式檢查上方（`ball.cy - ball.radius <= 0`）和下方（`ball.cy + ball.radius >= 100`），並反轉`yVelocity`，而不是`xVelocity`。"
+    }
+  },
+  "describers": {
+    "moveBall": "依照球的速度移動球"
+  },
+  "functions": {
+    "ball": {
+      "description": "建立一個新的 Ball 實例，屬性有：`cx`、`cy`（中心位置）、`radius`、`xVelocity`和`yVelocity`。",
+      "category": "物件"
+    },
+    "moveBall": {
+      "description": "依照球目前的`xVelocity`和`yVelocity`來移動它。",
+      "category": "移動"
+    }
+  }
+}

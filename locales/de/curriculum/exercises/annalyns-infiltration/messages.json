@@ -1,126 +1,126 @@
 {
   "checks": {
     "fastAttack": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "Annalyn <strong>sollte</strong> hier einen schnellen Angriff ausführen, aber sie hat es nicht getan. Der Ritter schläft, sie kann also zuschlagen, bevor er aufwacht.",
+      "shouldNot": "Annalyn <strong>sollte hier nicht</strong> einen schnellen Angriff ausführen. Der Ritter ist wach, sie würde dabei erwischt werden.",
+      "tooMany": "Annalyn <strong>sollte</strong> hier nur einmal einen schnellen Angriff ausführen, aber sie hat es {{count}} Mal gemacht."
     },
     "spy": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "Annalyn <strong>sollte</strong> hier ausspähen, aber sie hat es nicht getan. Mindestens eine Person im Lager ist wach, es gibt also etwas zu beobachten.",
+      "shouldNot": "Annalyn <strong>sollte hier nicht</strong> ausspähen. Alle schlafen, es gibt also nichts zu erfahren.",
+      "tooMany": "Annalyn <strong>sollte</strong> hier nur einmal ausspähen, aber sie hat es {{count}} Mal gemacht."
     },
     "signal": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "Annalyn <strong>sollte</strong> dem Gefangenen hier ein Signal geben, aber sie hat es nicht getan. Der Gefangene ist wach und der Bogenschütze schläft, das Signal kommt also durch.",
+      "shouldNot": "Annalyn <strong>sollte hier nicht</strong> dem Gefangenen ein Signal geben. Entweder schläft der Gefangene, oder der Bogenschütze ist wach, das Signal würde also scheitern.",
+      "tooMany": "Annalyn <strong>sollte</strong> dem Gefangenen hier nur einmal ein Signal geben, aber sie hat es {{count}} Mal gemacht."
     },
     "free": {
-      "should": "�",
-      "shouldNot": "�",
-      "tooMany": "�"
+      "should": "Annalyn <strong>sollte</strong> den Gefangenen hier befreien, aber sie hat es nicht getan. Sie kann es hier tun, ohne erwischt zu werden.",
+      "shouldNot": "Annalyn <strong>sollte hier nicht</strong> versuchen, den Gefangenen zu befreien. Sie würde erwischt werden.",
+      "tooMany": "Annalyn <strong>sollte</strong> den Gefangenen hier nur einmal befreien, aber sie hat es {{count}} Mal gemacht."
     }
   },
   "tasks": {
     "planTheRescue": {
-      "name": "�",
-      "description": "�"
+      "name": "Plane die Rettung",
+      "description": "Führe für jedes Lager jede Aktion aus, die Annalyn gefahrlos ausführen kann: einen schnellen Angriff, wenn der Ritter schläft, ausspähen, wenn mindestens einer von ihnen wach ist, dem Gefangenen ein Signal geben, wenn der Gefangene wach ist und der Bogenschütze schläft, und den Gefangenen befreien, entweder mithilfe des Hundes, wenn er sich benimmt, oder auf dem Schleichweg."
     }
   },
   "scenarios": {
     "allAsleepNaughtyDog": {
-      "name": "�",
-      "description": "�"
+      "name": "Alle schlafen, Hund benimmt sich nicht",
+      "description": "Das ganze Lager schläft, aber Annalyns Hund benimmt sich nicht, er ist also keine Hilfe."
     },
     "allAsleepBehavingDog": {
-      "name": "�",
-      "description": "�"
+      "name": "Alle schlafen, Hund benimmt sich",
+      "description": "Das ganze Lager schläft und Annalyns Hund benimmt sich."
     },
     "knightAwakeNaughtyDog": {
-      "name": "�",
-      "description": "�"
+      "name": "Nur der Ritter ist wach",
+      "description": "Der Ritter hält Wache, während der Bogenschütze und der Gefangene schlafen. Der Hund benimmt sich nicht."
     },
     "prisonerAwakeNaughtyDog": {
-      "name": "�",
-      "description": "�"
+      "name": "Nur der Gefangene ist wach",
+      "description": "Beide Entführer schlafen, während der Gefangene wach liegt. Der Hund benimmt sich nicht, der Schleichweg steht offen."
     },
     "archerAndPrisonerAwakeBehavingDog": {
-      "name": "�",
-      "description": "�"
+      "name": "Bogenschütze und Gefangener sind wach",
+      "description": "Der Bogenschütze hält Wache und der Gefangene ist ebenfalls wach. Der Hund benimmt sich."
     },
     "allAwakeBehavingDog": {
-      "name": "�",
-      "description": "�"
+      "name": "Alle sind wach, Hund benimmt sich",
+      "description": "Das ganze Lager ist hellwach. Selbst wenn der Hund sich benimmt, ist eine Befreiung nicht sicher."
     }
   },
   "hints": {
     "checkCampState": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie kann ich etwas über das Lager herausfinden?",
+      "answer": "Du kannst vier Dinge prüfen, jedes mit einer Funktion, die `true` oder `false` zurückgibt:\n\n- Ist der Ritter wach? `knightIsAwake()`\n- Ist der Bogenschütze wach? `archerIsAwake()`\n- Ist der Gefangene wach? `prisonerIsAwake()`\n- Benimmt sich der Hund? `dogIsBehaving()`"
     },
     "performActions": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie lasse ich Annalyn die einzelnen Aktionen ausführen?",
+      "answer": "Es gibt vier Aktionen, jede mit einer eigenen Funktion:\n\n- Einen schnellen Angriff ausführen: `fastAttack()`\n- Das Lager ausspähen: `spy()`\n- Dem Gefangenen ein Signal geben: `signalPrisoner()`\n- Den Gefangenen befreien: `freePrisoner()`"
     },
     "knightAsleep": {
-      "question": "�",
-      "answer": "�"
+      "question": "Für einen schnellen Angriff muss der Ritter SCHLAFEN. Wie prüfe ich das?",
+      "answer": "Es gibt keine `isAsleep()`-Funktion, aber schlafen ist einfach das Gegenteil von wach. Mit `!` kehrst du eine Bedingung um. Stell dir vor, wir wollen jemandem sagen, dass er mit dem Essen aufhören soll, wenn er satt ist, aber wir haben nur eine `isHungry()`-Funktion. Wir können sie umdrehen:\n\n```javascript\nif (!isHungry()) {\n  stopEating()\n}\n```\n\nWende dieselbe Idee an, um zu prüfen, ob der Ritter schläft."
     },
     "spyAnyoneAwake": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ausspähen funktioniert, wenn MINDESTENS EINER von ihnen wach ist. Wie schreibe ich das?",
+      "answer": "Setze `||` (oder) zwischen die Prüfungen, damit die ganze Bedingung `true` ist, wenn auch nur eine davon `true` ist. Zum Beispiel läuft das hier, wenn jemand hungrig oder durstig ist oder beides:\n\n```javascript\nif (isHungry() || isThirsty()) {\n  rest()\n}\n```"
     },
     "signalBothConditions": {
-      "question": "�",
-      "answer": "�"
+      "question": "Für das Signal müssen ZWEI Dinge gleichzeitig wahr sein. Wie kombiniere ich sie?",
+      "answer": "Nutze `&&` (und), damit beide Seiten `true` sein müssen. Zum Beispiel läuft das hier nur, wenn jemand hungrig UND durstig ist:\n\n```javascript\nif (isHungry() && isThirsty()) {\n  drink()\n}\n```"
     },
     "twoWaysToSucceed": {
-      "question": "�",
-      "answer": "�"
+      "question": "Eine Aktion kann auf zwei völlig verschiedene Arten gelingen. Wie gehe ich damit um?",
+      "answer": "Jede der beiden Arten reicht für sich allein, du hast also zwei Möglichkeiten.\n\nBei der ersten schreibst du für jede Art ein eigenes `if`, und beide führen dieselbe Aktion aus:\n\n```javascript\nif (isHungry() && hasSnack()) {\n  eat()\n}\nif (isThirsty() && hasSnack()) {\n  eat()\n}\n```\n\nBei der zweiten fasst du beide Arten in einem einzigen `if` mit `||` zusammen. Dabei setzt du die Prüfungen jeder Art in runde Klammern, damit sich die `&&`-Teile zuerst gruppieren, bevor `||` sie trennt:\n\n```javascript\nif ((isHungry() && hasSnack()) || (isThirsty() && hasSnack())) {\n  eat()\n}\n```\n\nÜberlege zuerst für jede Art einzeln, was sie voraussetzt, und nimm dann den Stil, der dir klarer erscheint."
     }
   },
   "describers": {
-    "knightIsAwake": "�",
-    "archerIsAwake": "�",
-    "prisonerIsAwake": "�",
-    "dogIsBehaving": "�",
-    "fastAttack": "�",
-    "spy": "�",
-    "signalPrisoner": "�",
-    "freePrisoner": "�"
+    "knightIsAwake": "hat geprüft, ob der Ritter wach ist",
+    "archerIsAwake": "hat geprüft, ob der Bogenschütze wach ist",
+    "prisonerIsAwake": "hat geprüft, ob der Gefangene wach ist",
+    "dogIsBehaving": "hat geprüft, ob Annalyns Hund sich benimmt",
+    "fastAttack": "hat einen schnellen Angriff auf den Ritter ausgeführt",
+    "spy": "hat die Gruppe ausgespäht",
+    "signalPrisoner": "hat dem Gefangenen ein Signal gegeben",
+    "freePrisoner": "hat den Gefangenen befreit"
   },
   "functions": {
     "knightIsAwake": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt `true` zurück, wenn der Ritter wach ist, und `false`, wenn er schläft.",
+      "category": "Informationen"
     },
     "archerIsAwake": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt `true` zurück, wenn der Bogenschütze wach ist, und `false`, wenn er schläft.",
+      "category": "Informationen"
     },
     "prisonerIsAwake": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt `true` zurück, wenn der Gefangene wach ist, und `false`, wenn er schläft.",
+      "category": "Informationen"
     },
     "dogIsBehaving": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt `true` zurück, wenn Annalyns (etwas frecher) Hund sich benimmt.",
+      "category": "Informationen"
     },
     "fastAttack": {
-      "description": "�",
-      "category": "�"
+      "description": "Führt einen schnellen Angriff auf den Ritter aus.",
+      "category": "Aktionen"
     },
     "spy": {
-      "description": "�",
-      "category": "�"
+      "description": "Späht die Gruppe aus.",
+      "category": "Aktionen"
     },
     "signalPrisoner": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt dem Gefangenen mit Vogelstimmen ein Signal.",
+      "category": "Aktionen"
     },
     "freePrisoner": {
-      "description": "�",
-      "category": "�"
+      "description": "Schleicht sich ins Lager, um den Gefangenen zu befreien.",
+      "category": "Aktionen"
     }
   }
 }

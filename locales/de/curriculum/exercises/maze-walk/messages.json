@@ -1,42 +1,42 @@
 {
   "checks": {
-    "notReachedEnd": "�",
-    "walkNotDefined": "�"
+    "notReachedEnd": "Du hast das Ende des Labyrinths nicht erreicht.",
+    "walkNotDefined": "Du solltest eine <code>walk</code>-Funktion definieren, die eine Anzahl von Schritten als Eingabewert nimmt und genau so oft vorwärtsgeht."
   },
   "tasks": {
     "writeWalk": {
-      "name": "�",
-      "description": "�"
+      "name": "Schreibe eine walk-Funktion",
+      "description": "Definiere eine Funktion namens walk, die eine Anzahl von Schritten als Eingabewert nimmt und genau so oft vorwärtsgeht."
     }
   },
   "scenarios": {
     "maze1": {
-      "name": "�",
-      "description": "�"
+      "name": "Durchquere das Labyrinth",
+      "description": "Gehe 3 Schritte, drehe dich nach links, gehe 2 Schritte, drehe dich nach rechts, gehe 4 Schritte, um das Ziel zu erreichen."
     }
   },
   "hints": {
     "howToMoveForward": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie gehe ich vorwärts?",
+      "answer": "Verwende die Funktion `move()`."
     },
     "howToMoveSpecificTimes": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie gehe ich eine bestimmte Anzahl von Schritten vorwärts?",
+      "answer": "Du hast schon andere Übungen gelöst, in denen du etwas eine bestimmte Anzahl von Malen tun musstest (denk daran, wie du den Golfball eine bestimmte Strecke rollen lassen hast). Nutze hier dieselben Ideen."
     }
   },
   "functions": {
     "move": {
-      "description": "�",
-      "category": "�"
+      "description": "Bewegt die Spielfigur **einen Schritt vorwärts** in die aktuelle Richtung. Die Spielfigur bewegt sich nur, wenn die Zielposition nicht von einer Wand blockiert ist.",
+      "category": "Bewegung"
     },
     "turnLeft": {
-      "description": "�",
-      "category": "�"
+      "description": "Dreht die Spielfigur **um 90 Grad nach links** (gegen den Uhrzeigersinn). Das ändert die Richtung, in die die Spielfigur schaut.",
+      "category": "Bewegung"
     },
     "turnRight": {
-      "description": "�",
-      "category": "�"
+      "description": "Dreht die Spielfigur **um 90 Grad nach rechts** (im Uhrzeigersinn). Das ändert die Richtung, in die die Spielfigur schaut.",
+      "category": "Bewegung"
     }
   }
 }

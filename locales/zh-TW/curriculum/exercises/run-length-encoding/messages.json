@@ -1,101 +1,101 @@
 {
   "tasks": {
     "encode": {
-      "name": "�",
-      "description": "�"
+      "name": "編碼字串",
+      "description": "寫一個叫做`encode`的函式，走過整個字串，計算每個字元連續重複了幾次。連續出現兩次以上的字元，就換成「數量後面接著那個字元」；只出現一次的字元則保持原樣。"
     },
     "decode": {
-      "name": "�",
-      "description": "�"
+      "name": "解碼字串",
+      "description": "寫一個叫做`decode`的函式，把這個過程反過來。讀取字元前面的數字，把那個字元重複那麼多次。數量可能不只一位數。"
     }
   },
   "scenarios": {
     "rleEncodeEmpty": {
-      "name": "�",
-      "description": "�"
+      "name": "編碼空字串",
+      "description": "編碼空字串會得到空字串。"
     },
     "rleEncodeSingles": {
-      "name": "�",
-      "description": "�"
+      "name": "單一字元不加數量",
+      "description": "只出現一次的字元，編碼時不會加上數量。"
     },
     "rleEncodeNoSingles": {
-      "name": "�",
-      "description": "�"
+      "name": "沒有單一字元的字串",
+      "description": "連續重複的字元會換成數量加上那個字元。"
     },
     "rleEncodeMixed": {
-      "name": "�",
-      "description": "�"
+      "name": "單一字元與連續重複混在一起",
+      "description": "同一個字串裡，可以同時有連續重複的字元和只出現一次的字元。"
     },
     "rleEncodeWhitespace": {
-      "name": "�",
-      "description": "�"
+      "name": "字串中的空白",
+      "description": "空白字元和其他字元一樣，連續重複時也一樣處理。"
     },
     "rleEncodeLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "小寫字元",
+      "description": "小寫字母的編碼方式也一樣。"
     },
     "rleDecodeEmpty": {
-      "name": "�",
-      "description": "�"
+      "name": "解碼空字串",
+      "description": "解碼空字串會得到空字串。"
     },
     "rleDecodeSingles": {
-      "name": "�",
-      "description": "�"
+      "name": "解碼單一字元",
+      "description": "前面沒有數量的字元，只會出現一次。"
     },
     "rleDecodeNoSingles": {
-      "name": "�",
-      "description": "�"
+      "name": "解碼整串連續重複的字元",
+      "description": "數量後面接著一個字元，會展開成那麼多個該字元。"
     },
     "rleDecodeMixed": {
-      "name": "�",
-      "description": "�"
+      "name": "解碼混有單一字元的字串",
+      "description": "不只一位數的數量，要完整讀完之後再展開。"
     },
     "rleDecodeWhitespace": {
-      "name": "�",
-      "description": "�"
+      "name": "解碼空白",
+      "description": "空白和其他字元一樣會展開。"
     },
     "rleDecodeLowercase": {
-      "name": "�",
-      "description": "�"
+      "name": "解碼小寫字元",
+      "description": "小寫字母的解碼方式也一樣。"
     }
   },
   "hints": {
     "whatIsRle": {
-      "question": "�",
-      "answer": "�"
+      "question": "遊程編碼到底在做什麼？",
+      "answer": "它會把連續重複的同一個字元壓成「數量加上那個字元」。`\"AAAA\"`會變成`\"4A\"`。只出現一次的字元保持原樣，前面不加數字，所以`\"B\"`還是`\"B\"`。"
     },
     "countRuns": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼計算連續重複的字元有幾個？",
+      "answer": "走過整個字串，一邊記住前一個字元，以及它已經重複了幾次。每當字元改變時，就把剛剛那一段寫出來，然後開始計算新的字元。"
     },
     "singleChars": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼避免幫只出現一次的字元加上數量？",
+      "answer": "只有在數量比 1 大的時候，才把數字寫在前面。如果一個字元只出現一次，就只寫那個字元。"
     },
     "decodeDigits": {
-      "question": "�",
-      "answer": "�"
+      "question": "解碼的時候，要怎麼知道一個字元是不是數字？",
+      "answer": "檢查這個字元是不是`0123456789`裡面的其中一個，例如用`\"0123456789\".includes(char)`。如果是，它就是數量的一部分。如果不是，它就是那個要重複的字元。"
     },
     "decodeMultiDigit": {
-      "question": "�",
-      "answer": "�"
+      "question": "像 12 這種不只一位數的數量，要怎麼讀？",
+      "answer": "像`12`這樣的數量，是一位數一位數進來的，所以要邊讀邊把它組起來，而不是把每一位分開處理。每當又多一位數字出現，你目前手上的數字要先乘以十，騰出位置，再把新的數字加進去。`Number()`會把一個數字字元變成可以拿來做運算的數字。"
     },
     "decodeRepeat": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼把字元重複正確的次數？",
+      "answer": "一旦遇到不是數字字元，就用一個跑`count`次的迴圈，每次把那個字元加到結果裡。接著把數量重設回 0，準備處理下一段。如果前面沒有數量，就當作 1。"
     }
   },
   "functions": {
     "number": {
-      "description": "�",
-      "category": "�"
+      "description": "把含有數字字元的字串轉換成數字",
+      "category": "型別轉換"
     },
     "includes": {
-      "description": "�",
-      "category": "�"
+      "description": "檢查字串裡是否包含另一個較短的字串",
+      "category": "字串操作"
     }
   },
   "checks": {
-    "mustUseFor": "�"
+    "mustUseFor": "差一點喔！這一題我們希望你用`for`迴圈，把每個字元重複正確的次數。"
   }
 }

@@ -1,60 +1,60 @@
 {
   "checks": {
-    "flowerCount_zero": "�",
+    "flowerCount_zero": "主人原本預期不會看到任何花，但你種了 {{got}} 朵。",
     "flowerCount_one": "∅",
     "flowerCount_two": "∅",
     "flowerCount_few": "∅",
     "flowerCount_many": "∅",
-    "flowerCount_other": "�",
-    "flowerAtPosition": "�",
-    "strayFlower": "�"
+    "flowerCount_other": "主人原本預期會看到 {{count}} 朵花，但你種了 {{got}} 朵。",
+    "flowerAtPosition": "預期在位置 {{position}} 有一朵花，但沒有找到。",
+    "strayFlower": "在位置 {{position}} 找到一朵花，但主人並沒有想要種在那裡。花朵應該平均地種在花園裡。"
   },
   "tasks": {
     "plantFlowersEvenly": {
-      "name": "�",
-      "description": "�"
+      "name": "平均種花",
+      "description": "使用 askNumberOfFlowers() 查出要種幾朵花，算出間隔，然後把它們平均種下。"
     }
   },
   "scenarios": {
     "oneFlower": {
-      "name": "�",
-      "description": "�"
+      "name": "主人想要 1 朵花",
+      "description": "在這個情境中，`askNumberOfFlowers()` 會回傳 1。在位置 50 種 1 朵花。"
     },
     "threeFlowers": {
-      "name": "�",
-      "description": "�"
+      "name": "主人想要 3 朵花",
+      "description": "在這個情境中，`askNumberOfFlowers()` 會回傳 3。在 25、50 和 75 的位置各種 1 朵花。"
     },
     "fourFlowers": {
-      "name": "�",
-      "description": "�"
+      "name": "主人想要 4 朵花",
+      "description": "在這個情境中，`askNumberOfFlowers()` 會回傳 4。在 20、40、60 和 80 的位置各種 1 朵花。"
     },
     "nineFlowers": {
-      "name": "�",
-      "description": "�"
+      "name": "主人想要 9 朵花",
+      "description": "在這個情境中，`askNumberOfFlowers()` 會回傳 9。在 10、20、30、40、50、60、70、80 和 90 的位置各種 1 朵花。"
     }
   },
   "hints": {
     "chooseGap": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼算出每一朵花要種在哪裡？",
+      "answer": "先算出花朵之間的間隔：\n\n```javascript\n100 / (numberOfFlowers + 1)\n```\n\n第一朵花就種在這個位置，接下來每一朵都再往前一個間隔。所以如果有 3 朵花，間隔是 25，就會種在 25、50 和 75。"
     },
     "seeScenarios": {
-      "question": "�",
-      "answer": "�"
+      "question": "我要怎麼看到不同的情境？",
+      "answer": "點一下左邊、程式碼和結果之間的那些圓點。"
     }
   },
   "functions": {
     "askNumberOfFlowers": {
-      "description": "�",
-      "category": "�"
+      "description": "回傳要種的**花朵數量**。",
+      "category": "園藝"
     },
     "plant": {
-      "description": "�",
-      "category": "�"
+      "description": "在指定的**位置**種下一朵花。",
+      "category": "園藝"
     }
   },
   "describers": {
-    "askNumberOfFlowers": "�",
-    "plant": "�"
+    "askNumberOfFlowers": "詢問了要種的花朵數量",
+    "plant": "在位置 ${arg1} 種了一朵花"
   }
 }

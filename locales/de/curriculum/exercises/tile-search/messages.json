@@ -1,71 +1,71 @@
 {
   "checks": {
-    "tooManyLines": "�"
+    "tooManyLines": "Deine Lösung hat zu viele Codezeilen. Schaffst du es, sie kürzer zu machen?"
   },
   "tasks": {
     "searchForTile": {
-      "name": "�",
-      "description": "�"
+      "name": "Nach einem Plättchen suchen",
+      "description": "Schreib eine Funktion, die prüft, ob ein bestimmtes Buchstabenplättchen im Rack ist. Gib true zurück, wenn es gefunden wird, sonst false."
     },
     "solveInEightLines": {
-      "name": "�",
-      "description": "�"
+      "name": "In 8 Zeilen Code lösen",
+      "description": "Schaffst du es, diese Übung mit nur 8 Zeilen Code zu lösen?"
     }
   },
   "scenarios": {
     "letterFoundAtStart": {
-      "name": "�",
-      "description": "�"
+      "name": "Buchstabe am Anfang",
+      "description": "Der Buchstabe ist das erste Plättchen im Rack."
     },
     "letterFoundInMiddle": {
-      "name": "�",
-      "description": "�"
+      "name": "Buchstabe in der Mitte",
+      "description": "Der Buchstabe ist in der Mitte des Racks."
     },
     "letterFoundAtEnd": {
-      "name": "�",
-      "description": "�"
+      "name": "Buchstabe am Ende",
+      "description": "Der Buchstabe ist das letzte Plättchen im Rack."
     },
     "letterNotFound": {
-      "name": "�",
-      "description": "�"
+      "name": "Buchstabe nicht gefunden",
+      "description": "Der Buchstabe ist nicht im Rack."
     },
     "emptyRack": {
-      "name": "�",
-      "description": "�"
+      "name": "Leeres Rack",
+      "description": "In einem leeren Rack gibt es keine Plättchen zu finden."
     },
     "duplicateLetters": {
-      "name": "�",
-      "description": "�"
+      "name": "Rack mit doppelten Buchstaben",
+      "description": "Der Buchstabe kommt zwischen doppelten Plättchen vor."
     },
     "singleTileFound": {
-      "name": "�",
-      "description": "�"
+      "name": "Einzelnes Plättchen gefunden",
+      "description": "Ein Rack mit einem einzigen passenden Plättchen."
     },
     "singleTileNotFound": {
-      "name": "�",
-      "description": "�"
+      "name": "Einzelnes Plättchen nicht gefunden",
+      "description": "Ein Rack mit einem einzigen Plättchen, das nicht passt."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "8 Zeilen Code",
+      "description": "Löse die Übung mit nur 8 Zeilen Code."
     }
   },
   "hints": {
     "byHand": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie würde ich das von Hand machen?",
+      "answer": "Du gehst den Heuhaufen Buchstabe für Buchstabe durch und vergleichst jeden mit der Nadel. Sobald du einen Treffer hast, hörst du auf. Wenn du am Ende angekommen bist, ohne einen Treffer zu haben, ist die Nadel nicht da."
     },
     "loopAndCompare": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie baue ich eine Schleife und vergleiche?",
+      "answer": "Eine for-of-Schleife gibt dir nacheinander jeden Buchstaben des Strings. Darin vergleicht eine if-Anweisung den aktuellen Buchstaben mit der Nadel."
     },
     "returnTrue": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wann sollte ich true zurückgeben?",
+      "answer": "Sobald du einen Treffer findest. Die restlichen Buchstaben musst du nicht mehr prüfen."
     },
     "returnFalse": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wann sollte ich false zurückgeben?",
+      "answer": "NUR nachdem die Schleife durchgelaufen ist, ohne einen Treffer zu finden. Ein häufiger Fehler ist, `return false` in die Schleife zu schreiben. Dann gibst du schon nach dem ersten nicht passenden Buchstaben auf, bevor du den Rest geprüft hast."
     }
   }
 }

@@ -1,97 +1,97 @@
 {
   "errors": {
-    "alreadyIssued": "�"
+    "alreadyIssued": "Du hast dieser Person schon ein Armband gegeben. Jede Person sollte nur eines bekommen."
   },
   "checks": {
-    "childWristband": "�",
-    "teenWristband": "�",
-    "adultWristband": "�",
-    "seniorWristband": "�",
-    "boundary13": "�",
-    "boundary18": "�",
-    "boundary65": "�"
+    "childWristband": "Die Person ist 8. Sie sollte ein Armband für Kinder bekommen, hat aber bekommen: {{got}}.",
+    "teenWristband": "Die Person ist 15. Sie sollte ein Armband für Jugendliche bekommen, hat aber bekommen: {{got}}.",
+    "adultWristband": "Die Person ist 30. Sie sollte ein Armband für Erwachsene bekommen, hat aber bekommen: {{got}}.",
+    "seniorWristband": "Die Person ist 70. Sie sollte ein Armband für Senioren bekommen, hat aber bekommen: {{got}}.",
+    "boundary13": "Die Person ist 13. Sie sollte ein Armband für Jugendliche bekommen (13 ist nicht kleiner als 13), hat aber bekommen: {{got}}.",
+    "boundary18": "Die Person ist 18. Sie sollte ein Armband für Erwachsene bekommen (18 ist nicht kleiner als 18), hat aber bekommen: {{got}}.",
+    "boundary65": "Die Person ist 65. Sie sollte ein Armband für Senioren bekommen (65 ist nicht kleiner als 65), hat aber bekommen: {{got}}."
   },
   "tasks": {
     "assignWristband": {
-      "name": "�",
-      "description": "�"
+      "name": "Das richtige Armband ausgeben",
+      "description": "Ermittle das Alter der Person und gib ihr das richtige Armband: Kind (unter 13), Jugendliche (13-17), Erwachsene (18-64) oder Senioren (65+)."
     }
   },
   "scenarios": {
     "childAge8": {
-      "name": "�",
-      "description": "�"
+      "name": "8 Jahre (Kind)",
+      "description": "Die Person ist 8 Jahre alt. Sie sollte ein Armband für Kinder bekommen."
     },
     "teenAge15": {
-      "name": "�",
-      "description": "�"
+      "name": "15 Jahre (Jugendliche)",
+      "description": "Die Person ist 15 Jahre alt. Sie sollte ein Armband für Jugendliche bekommen."
     },
     "adultAge30": {
-      "name": "�",
-      "description": "�"
+      "name": "30 Jahre (Erwachsene)",
+      "description": "Die Person ist 30 Jahre alt. Sie sollte ein Armband für Erwachsene bekommen."
     },
     "seniorAge70": {
-      "name": "�",
-      "description": "�"
+      "name": "70 Jahre (Senioren)",
+      "description": "Die Person ist 70 Jahre alt. Sie sollte ein Armband für Senioren bekommen."
     },
     "boundary13": {
-      "name": "�",
-      "description": "�"
+      "name": "13 Jahre (Jugendliche)",
+      "description": "Genau 13. Die Person zählt zu den Jugendlichen, nicht zu den Kindern."
     },
     "boundary18": {
-      "name": "�",
-      "description": "�"
+      "name": "18 Jahre (Erwachsene)",
+      "description": "Genau 18. Die Person zählt zu den Erwachsenen, nicht zu den Jugendlichen."
     },
     "boundary65": {
-      "name": "�",
-      "description": "�"
+      "name": "65 Jahre (Senioren)",
+      "description": "Genau 65. Die Person zählt zu den Senioren, nicht zu den Erwachsenen."
     }
   },
   "hints": {
     "gettingAge": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie bekomme ich das Alter der Person heraus?",
+      "answer": "Rufe `getAge()` auf und speichere das Ergebnis in einer Variable, z. B. `let age = getAge()`. Danach kannst du `age` in deinen Bedingungen mit Zahlen vergleichen."
     },
     "structureForRanges": {
-      "question": "�",
-      "answer": "�"
+      "question": "Welche Struktur verwende ich, wenn es mehrere Altersbereiche gibt?",
+      "answer": "Eine Kette aus `if` / `else if` / `else`. Jeder Zweig behandelt ein Armband, und nur ein Zweig wird ausgeführt."
     },
     "branchOrder": {
-      "question": "�",
-      "answer": "�"
+      "question": "Spielt die Reihenfolge der Zweige eine Rolle?",
+      "answer": "Ja. Fang mit dem jüngsten Alter an (`age < 13`), dann `age < 18`, dann `age < 65`. Weil jeder Zweig nur ausgeführt wird, wenn die vorherigen nicht zutrafen, brauchst du nichts wie `age >= 13 && age < 18` zu schreiben."
     },
     "seniorsElse": {
-      "question": "�",
-      "answer": "�"
+      "question": "Und was ist mit den Senioren am Ende?",
+      "answer": "Für sie brauchst du keine Bedingung. Ein einfaches `else`, das `giveSeniorWristband()` aufruft, erfasst alle Personen ab 65 Jahren."
     }
   },
   "describers": {
-    "getAge": "�",
-    "giveChildWristband": "�",
-    "giveTeenWristband": "�",
-    "giveAdultWristband": "�",
-    "giveSeniorWristband": "�"
+    "getAge": "hat das Alter der Person ermittelt",
+    "giveChildWristband": "hat ein Armband für Kinder ausgegeben",
+    "giveTeenWristband": "hat ein Armband für Jugendliche ausgegeben",
+    "giveAdultWristband": "hat ein Armband für Erwachsene ausgegeben",
+    "giveSeniorWristband": "hat ein Armband für Senioren ausgegeben"
   },
   "functions": {
     "getAge": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt das **Alter** der Person zurück, die draußen wartet.",
+      "category": "Informationen"
     },
     "giveChildWristband": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt der Person ein Armband für **Kinder** (unter 13).",
+      "category": "Armbänder"
     },
     "giveTeenWristband": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt der Person ein Armband für **Jugendliche** (13-17).",
+      "category": "Armbänder"
     },
     "giveAdultWristband": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt der Person ein Armband für **Erwachsene** (18-64).",
+      "category": "Armbänder"
     },
     "giveSeniorWristband": {
-      "description": "�",
-      "category": "�"
+      "description": "Gibt der Person ein Armband für **Senioren** (65+).",
+      "category": "Armbänder"
     }
   }
 }

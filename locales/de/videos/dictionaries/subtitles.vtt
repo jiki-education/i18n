@@ -1,0 +1,270 @@
+WEBVTT
+
+NOTE en_md5 c5187b46923e87c2aac86912c90dfb53
+
+00:00:00.100 --> 00:00:03.140
+Willkommen zurück! Hoffentlich fühlst du dich mit
+
+00:00:03.180 --> 00:00:06.810
+Arrays jetzt sicherer. Arrays sind unsere erste Wahl, wenn
+
+00:00:06.840 --> 00:00:09.740
+wir eine Liste von irgendetwas haben: eine Liste
+
+00:00:09.760 --> 00:00:11.560
+von Mentoren, eine Liste von Punktzahlen, eine Liste
+
+00:00:11.600 --> 00:00:14.420
+von Zutaten. Für jede Liste willst du
+
+00:00:14.440 --> 00:00:17.630
+ein Array benutzen. Aber es gibt noch eine andere Datenstruktur, die
+
+00:00:17.720 --> 00:00:20.060
+ebenfalls sehr verbreitet ist, wenn du etwas brauchst,
+
+00:00:20.070 --> 00:00:23.380
+das ein bisschen komplexer ist als eine Liste. Stell dir vor,
+
+00:00:23.420 --> 00:00:24.780
+wir wollen ein paar Informationen über mich speichern:
+
+00:00:25.500 --> 00:00:27.580
+meinen Namen, mein Alter, meinen Geburtsort.
+
+00:00:28.280 --> 00:00:30.140
+Du könntest dafür ein Array benutzen,
+
+00:00:30.150 --> 00:00:32.200
+aber dann ist nicht wirklich klar, was da
+
+00:00:32.240 --> 00:00:34.850
+eigentlich vor sich geht. Ist England mein
+
+00:00:34.880 --> 00:00:37.210
+Geburtsort oder mein Wohnort? Ist 42 mein
+
+00:00:37.300 --> 00:00:40.120
+Alter oder etwas anderes? Und wenn ich
+
+00:00:40.160 --> 00:00:42.050
+das benutzen will, muss ich mir merken,
+
+00:00:42.080 --> 00:00:44.740
+dass die erste Position für den Namen steht, die zweite
+
+00:00:44.780 --> 00:00:47.900
+für das Alter und die dritte für den Geburtsort.
+
+00:00:47.920 --> 00:00:49.840
+Das ist alles ein bisschen unübersichtlich, und zwar,
+
+00:00:49.880 --> 00:00:52.420
+weil das hier eigentlich keine Liste von Dingen ist.
+
+00:00:52.480 --> 00:00:55.769
+Es ist komplexer als das. Und genau da
+
+00:00:55.800 --> 00:00:58.500
+kommen Wörterbücher ins Spiel. Ein Wörterbuch ist eine
+
+00:00:58.560 --> 00:01:00.340
+neue Art von Datenstruktur. Es ist deine fünfte.
+
+00:01:00.420 --> 00:01:03.830
+Du kennst schon Strings, Zahlen, boolesche Werte, Arrays, und
+
+00:01:03.880 --> 00:01:06.200
+jetzt kommen Wörterbücher dazu. Ich möchte, dass du dir
+
+00:01:06.260 --> 00:01:08.620
+ein Wörterbuch wie eine Seite
+
+00:01:08.800 --> 00:01:12.180
+aus einem Spiralblock vorstellst. Auf der linken Seite stehen
+
+00:01:12.220 --> 00:01:15.460
+die Überschriften, die Wörter name, age, birthplace, und
+
+00:01:15.500 --> 00:01:18.400
+die nennen wir Schlüssel. Und auf der rechten
+
+00:01:18.480 --> 00:01:20.240
+Seite, neben jeder Überschrift, stehen die
+
+00:01:20.300 --> 00:01:24.520
+eigentlichen Daten, Jeremy, 42, England, und die nennen
+
+00:01:24.600 --> 00:01:28.300
+wir Werte. Genau wie ein Array
+
+00:01:28.340 --> 00:01:31.180
+ist ein Wörterbuch ein einziges Ding. Es ist eine Seite aus
+
+00:01:31.190 --> 00:01:33.830
+einem Notizblock. Und genau wie ein Array kann Jiki es
+
+00:01:33.840 --> 00:01:35.250
+in eine Variable stecken, in eine Box,
+
+00:01:35.720 --> 00:01:37.930
+oder als Eingabewert für eine Funktion benutzen, oder
+
+00:01:37.980 --> 00:01:39.540
+er kann ein Wörterbuch aus der
+
+00:01:39.560 --> 00:01:42.200
+Ausgaberutsche holen. So sieht ein Wörterbuch
+
+00:01:42.260 --> 00:01:45.080
+im Code aus. Wir benutzen geschweifte Klammern, um
+
+00:01:45.120 --> 00:01:47.490
+Anfang und Ende zu markieren, und
+
+00:01:47.520 --> 00:01:49.420
+innen drin stehen Paare, links ein
+
+00:01:49.480 --> 00:01:51.700
+Schlüssel, dann ein Doppelpunkt und rechts
+
+00:01:51.740 --> 00:01:53.860
+der Wert. Zwischen den Paaren steht jeweils
+
+00:01:53.900 --> 00:01:56.260
+ein Komma. Jiki sieht das also und
+
+00:01:56.280 --> 00:01:58.600
+holt seinen Spiralblock heraus. Er schreibt name,
+
+00:01:58.960 --> 00:02:02.100
+Jeremy, age, 42 und so weiter für jedes
+
+00:02:02.140 --> 00:02:04.440
+Paar auf. Und wenn er fertig ist, reißt er
+
+00:02:04.480 --> 00:02:06.320
+die Seite ab und legt sie in eine Box
+
+00:02:06.420 --> 00:02:09.360
+mit der Aufschrift person. Ein paar Regeln solltest du
+
+00:02:09.420 --> 00:02:12.060
+kennen. Schlüssel sind immer Strings. Sie müssen
+
+00:02:12.140 --> 00:02:14.620
+in Anführungszeichen stehen, und jeder Schlüssel muss
+
+00:02:14.680 --> 00:02:18.170
+einzigartig sein. Du kannst nicht zwei Schlüssel
+
+00:02:18.260 --> 00:02:21.420
+namens name im selben Wörterbuch haben. Die Werte
+
+00:02:21.480 --> 00:02:23.150
+dürfen gleich sein, wenn du willst,
+
+00:02:23.280 --> 00:02:25.810
+aber die Schlüssel müssen sich unterscheiden, und
+
+00:02:25.820 --> 00:02:27.600
+die Werte können alles Mögliche sein:
+
+00:02:27.680 --> 00:02:31.000
+Strings, Zahlen, boolesche Werte, Arrays oder sogar andere Wörterbücher.
+
+00:02:32.140 --> 00:02:34.540
+Du kannst auch ein leeres Wörterbuch haben,
+
+00:02:34.600 --> 00:02:37.220
+genau wie wir ein leeres Array hatten.
+
+00:02:37.280 --> 00:02:38.800
+Damit können wir anfangen und später
+
+00:02:38.820 --> 00:02:42.210
+darauf aufbauen. Okay, jetzt hast du also ein
+
+00:02:42.260 --> 00:02:44.160
+Wörterbuch, aber wie bekommst du etwas wieder
+
+00:02:44.220 --> 00:02:46.900
+heraus? Wir benutzen dieselbe Syntax
+
+00:02:46.920 --> 00:02:48.960
+mit eckigen Klammern wie bei Arrays und
+
+00:02:49.020 --> 00:02:52.980
+Strings, aber statt einer Positionsnummer
+
+00:02:53.020 --> 00:02:55.040
+setzen wir einen Schlüssel ein. Wenn wir also
+
+00:02:55.100 --> 00:02:57.390
+den Namen einer Person aus einem Wörterbuch holen wollen,
+
+00:02:57.940 --> 00:03:01.620
+schreiben wir die Variable person, eckige Klammern und
+
+00:03:01.640 --> 00:03:03.580
+darin den Schlüssel, hier name,
+
+00:03:03.660 --> 00:03:07.260
+in Anführungszeichen. Das sagt Jiki, dass er
+
+00:03:07.300 --> 00:03:09.970
+im Wörterbuch person nachsehen, den Schlüssel
+
+00:03:10.080 --> 00:03:12.900
+name finden und dessen Wert herausholen soll. Jiki
+
+00:03:13.040 --> 00:03:15.000
+geht zur Box person, nimmt die
+
+00:03:15.040 --> 00:03:17.340
+Seite aus dem Notizblock, geht alle
+
+00:03:17.400 --> 00:03:19.760
+Schlüssel durch, bis er name findet, liest
+
+00:03:19.800 --> 00:03:21.900
+dann den Wert Jeremy ab und legt ihn
+
+00:03:21.910 --> 00:03:27.540
+in eine neue Box namens name. Eckige Klammern
+
+00:03:27.580 --> 00:03:29.980
+bedeuten immer dasselbe: Du greifst in etwas hinein
+
+00:03:29.990 --> 00:03:32.370
+und holst etwas heraus. Bei Arrays und Strings
+
+00:03:32.960 --> 00:03:34.720
+benutzt du eine Zahl, um zu sagen, von welcher Position
+
+00:03:34.760 --> 00:03:37.580
+du etwas holen willst. Bei Wörterbüchern
+
+00:03:37.700 --> 00:03:40.140
+benutzt du einen String als Schlüssel. Es ist
+
+00:03:40.180 --> 00:03:43.340
+dieselbe Idee, nur mit leicht anderer Syntax. Okay,
+
+00:03:43.380 --> 00:03:45.390
+jetzt kommen ein paar Übungen, in denen du
+
+00:03:45.500 --> 00:03:47.640
+Wörterbücher erstellst und Werte aus ihnen ausliest.
+
+00:03:48.260 --> 00:03:50.160
+Du brauchst dafür nur das, was wir gerade besprochen haben:
+
+00:03:50.580 --> 00:03:52.660
+die geschweiften Klammern zum Erstellen, die eckigen Klammern
+
+00:03:52.680 --> 00:03:55.200
+zum Auslesen. Lass dir Zeit damit. Viel
+
+00:03:55.240 --> 00:03:56.820
+Glück, und bis gleich!

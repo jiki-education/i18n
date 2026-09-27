@@ -1,57 +1,57 @@
 {
   "checks": {
-    "uniqueColoredCircles": "�",
-    "uniquePositionedCircles": "�",
-    "canvasCoverage": "�",
-    "hueBounced": "�",
-    "hueSweep": "�"
+    "uniqueColoredCircles": "至少需要 50 個顏色各不相同的圓形。",
+    "uniquePositionedCircles": "至少需要 30 個不同的位置。",
+    "canvasCoverage": "這顆球沒有畫到足夠的畫布範圍。它應該持續彈跳，直到覆蓋超過 80% 的畫布。",
+    "hueBounced": "色相沒有先達到 360，再降回來。",
+    "hueSweep": "彩虹軌跡沒有掃過所有顏色。"
   },
   "tasks": {
     "rainbowBall": {
-      "name": "�",
-      "description": "�"
+      "name": "建立一顆會彈跳的彩虹球",
+      "description": "建立一顆在畫布上四處彈跳的球，沿途留下一串會循環彩虹色的繽紛圓形。"
     }
   },
   "scenarios": {
     "rainbowBall": {
-      "name": "�",
-      "description": "�"
+      "name": "彩虹球",
+      "description": "用不同的圓形畫出彩虹軌跡。"
     }
   },
   "hints": {
     "stateToTrack": {
-      "question": "�",
-      "answer": "�"
+      "question": "我需要追蹤哪些狀態呢？",
+      "answer": "球的位置，以及它怎麼移動。把這兩件事分開：用一個變數記錄球*在哪裡*，另一個變數記錄它*怎麼改變*。色相也是一樣的道理：你需要它目前的值，再加上它正在往哪個方向前進。"
     },
     "moveAndShift": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼讓球每一輪都移動，顏色也跟著改變呢？",
+      "answer": "在每一次迴圈疊代的開始，把你的方向變數加到位置和`hue`上。這樣一來，方向變數就能完全控制球的移動。改變它們的正負號或大小，就能立刻改變球怎麼移動、顏色怎麼變化。"
     },
     "velocityTip": {
-      "question": "�",
-      "answer": "�"
+      "question": "我想不出來該怎麼做，有什麼提示嗎？",
+      "answer": "`x`和`y`每次改變的這些數字到底是什麼？它們同時混合了速率（數字的大小）和方向（把球往前推還是往後推）。所以`2`就是速率 2，往右或往下移動；而`-3`就是速率 3，往左或往上移動。一個同時代表速率和距離的數字，就叫做**速度**（是不是該幫變數換個名稱了？）所以當你想改變球的方向時，就是改變速度的正負號，從正變成負，或反過來。"
     },
     "bounceOffEdges": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼讓球從邊緣彈回來呢？",
+      "answer": "更新完位置之後，檢查`x`或`y`是否已經越過畫布的邊界。如果越過了，就把那個軸的方向變數反過來。指令裡有說明畫布的範圍。"
     },
     "randomBounceSpeed": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼讓每次彈跳都有隨機的新速率呢？",
+      "answer": "當球撞到邊緣時，用`Math.randomInt(min, max)`來設定方向變數，而不是只把正負號反過來。從左邊或上面彈回來時，選一段正的範圍；從右邊或下面彈回來時，選一段負的範圍。"
     },
     "cycleHue": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼讓色相循環走過整個彩虹呢？",
+      "answer": "把用在位置上的同一招套用到`hue`上。當它超出有效範圍時，就把`hueDirection`反過來。這樣顏色就會自己掃到光譜的頂端，再降回來。"
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "以 (centerX, centerY) 為圓心，用指定的半徑和顏色畫一個圓形",
+      "category": "繪製圖形"
     },
     "hsl": {
-      "description": "�",
-      "category": "�"
+      "description": "把 HSL 顏色值（色相 0-360、飽和度 0-100、亮度 0-100）轉換成十六進位色碼字串",
+      "category": "顏色"
     }
   }
 }

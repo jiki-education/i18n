@@ -1,0 +1,57 @@
+{
+  "describers": {
+    "fetch": "Daten von der angegebenen URL abgerufen"
+  },
+  "tasks": {
+    "formatResponse": {
+      "name": "Antwort formatieren",
+      "description": "Erstelle eine Funktion namens favoriteArtists, die einen Nutzernamen entgegennimmt, die Daten des Nutzers von der Spotify-API abruft und einen formatierten Satz mit seinen Lieblingskünstlern zurückgibt."
+    }
+  },
+  "scenarios": {
+    "spotifyFred": {
+      "name": "Freds Lieblingskünstler",
+      "description": "Rufe Freds Lieblingskünstler ab und formatiere sie."
+    },
+    "spotifyIhid": {
+      "name": "iHiDs Lieblingskünstler",
+      "description": "Rufe iHiDs Lieblingskünstler ab und formatiere sie."
+    },
+    "spotifyGriffin": {
+      "name": "griffin versteckt sich",
+      "description": "Behandle den Fehler bei einem unbekannten Nutzer sauber."
+    }
+  },
+  "hints": {
+    "fetchUserData": {
+      "question": "Wie rufe ich die Daten des Nutzers ab?",
+      "answer": "Verwende `fetch()` mit der URL des Nutzer-Endpunkts. Die URL entsteht, indem du die Basis-URL mit dem Nutzernamen zusammensetzt, den du als Eingabe bekommst."
+    },
+    "handleUnknownUser": {
+      "question": "Wie gehe ich damit um, wenn es den Nutzer nicht gibt?",
+      "answer": "Die Antwort kommt vielleicht mit dem Schlüssel `\"error\"` zurück. Prüfe mit `hasKey()`, ob er vorhanden ist, bevor du versuchst, die Elemente zu verarbeiten. Wenn er da ist, gib in diesem Fall zurück, was die Aufgabe verlangt."
+    },
+    "getArtistNames": {
+      "question": "Wie bekomme ich die Künstlernamen aus den Elementen?",
+      "answer": "Jedes Element enthält die API-URL eines Künstlers. Gehe die Elemente in einer Schleife durch, rufe jede Künstler-URL einzeln ab und hol den Künstlernamen aus der jeweiligen Antwort heraus."
+    },
+    "buildFinalSentence": {
+      "question": "Wie baue ich den fertigen Satz zusammen?",
+      "answer": "Verbinde die Künstlernamen mit Kommas, aber setze `\", and \"` vor den allerletzten (zum Beispiel `\"Adele, Beyoncé, and Coldplay\"`). Für das letzte Element in der Schleife brauchst du eine gesonderte Behandlung."
+    }
+  },
+  "functions": {
+    "fetch": {
+      "description": "Ruft Daten von einer API ab. Nimmt eine URL als String und ein Wörterbuch mit Parametern entgegen. Gibt die Antwort der API als Wörterbuch zurück.",
+      "category": "API"
+    },
+    "push": {
+      "description": "Fügt ein Element am Ende eines Arrays hinzu und verändert das Array dabei an Ort und Stelle.",
+      "category": "Array-Operationen"
+    },
+    "hasKey": {
+      "description": "Prüft, ob ein Schlüssel in einem Wörterbuch existiert, und gibt wahr oder falsch zurück.",
+      "category": "Wörterbuch-Operationen"
+    }
+  }
+}

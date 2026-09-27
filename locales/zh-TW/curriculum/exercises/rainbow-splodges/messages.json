@@ -1,42 +1,42 @@
 {
   "checks": {
-    "uniqueColoredCircles": "�",
-    "uniquePositionedCircles": "�",
-    "radiiRange": "�",
-    "insideBox": "�",
-    "touchEdges": "�",
-    "saturationLightnessRange": "�"
+    "uniqueColoredCircles": "至少要畫出 50 個顏色互不重複的圓形。請確認每個圓形都有隨機的顏色。",
+    "uniquePositionedCircles": "至少要畫在 30 個不同的位置。請確認每個圓形的位置都是隨機的。",
+    "radiiRange": "所有圓形的半徑都必須至少為 1，而且小於 30。",
+    "insideBox": "圓形不能超出畫布外。決定位置的時候，要把圓形的半徑也一起考慮進去。",
+    "touchEdges": "你的圓形都沒有碰到畫布的邊緣。如果你很確定程式碼沒問題，那可能只是隨機的數字剛好沒有讓圓形落在邊緣上。再執行一次試試看吧！",
+    "saturationLightnessRange": "飽和度和亮度都必須介於 20 到 80 之間。"
   },
   "tasks": {
     "drawSplodges": {
-      "name": "�",
-      "description": "�"
+      "name": "畫出彩虹斑塊",
+      "description": "在隨機的位置畫出 200 個顏色隨機的圓形。"
     }
   },
   "scenarios": {
     "rainbowSplodges": {
-      "name": "�",
-      "description": "�"
+      "name": "彩虹斑塊",
+      "description": "在隨機的位置畫出 200 個顏色隨機的圓形。"
     }
   },
   "hints": {
     "keepCirclesInBox": {
-      "question": "�",
-      "answer": "�"
+      "question": "要怎麼讓圓形留在畫布裡呢？",
+      "answer": "順序很重要。你要先決定圓形的半徑，然後確認它的左邊和上方位置，永遠不會讓圓形被推到畫布外。"
     },
     "circlesEscapingBox": {
-      "question": "�",
-      "answer": "�"
+      "question": "我沒辦法讓圓形留在畫布裡",
+      "answer": "記得，圓形的位置指的是它的圓心，所以要讓整個圓形都留在畫布裡，就得把半徑也考慮進去。如果你現在讓位置最小可以是 0，圓形的邊緣就會凸出畫布外，凸出的距離正好是半徑。那麼這個最小值要改成多少，圓形才不會跑到畫布外呢？接著，把同樣的道理套用到最大值上。"
     }
   },
   "functions": {
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "以 (centerX, centerY) 為圓心，用指定的半徑和顏色畫出一個圓形",
+      "category": "繪製圖形"
     },
     "hsl": {
-      "description": "�",
-      "category": "�"
+      "description": "把 HSL 顏色值（色相 0-360、飽和度 0-100、亮度 0-100）轉換成十六進位的顏色字串",
+      "category": "顏色"
     }
   }
 }

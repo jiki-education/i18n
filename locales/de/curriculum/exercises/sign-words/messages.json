@@ -1,0 +1,54 @@
+{
+  "tasks": {
+    "signWords": {
+      "name": "Zerlege den Namen in Wörter",
+      "description": "Schreibe eine signWords-Funktion, die einen Firmennamen entgegennimmt und ein Array mit den Wörtern darin zurückgibt. Wörter sind durch Leerzeichen voneinander getrennt, und ein Kunde lässt manchmal versehentlich zusätzliche Leerzeichen stehen."
+    }
+  },
+  "scenarios": {
+    "singleWord": {
+      "name": "Ein Wort",
+      "description": "Ein Firmenname, der nur aus einem einzigen Wort besteht."
+    },
+    "twoWords": {
+      "name": "Zwei Wörter",
+      "description": "Ein Firmenname aus zwei Wörtern."
+    },
+    "longerName": {
+      "name": "Ein längerer Name",
+      "description": "Ein Firmenname mit vier Wörtern zum Drucken."
+    },
+    "doubleSpace": {
+      "name": "Eine schwere Hand auf der Leertaste",
+      "description": "Ein Kunde, der zwischen seinen Wörtern zwei Leerzeichen getippt hat."
+    }
+  },
+  "hints": {
+    "gettingStarted": {
+      "question": "Wie bekomme ich die Wörter aus dem Namen heraus?",
+      "answer": "Es gibt zwei Wege, und keiner davon ist besser. Du kannst den Namen Zeichen für Zeichen durchgehen und dabei jedes Wort Stück für Stück aufbauen, oder du bittest den String, sich an den Leerzeichen selbst zu zerlegen. Nimm den Weg, der dir klarer erscheint."
+    },
+    "buildingUpArray": {
+      "question": "Wie sammle ich die Wörter ein?",
+      "answer": "Fang mit einem leeren Array an, bevor du loslegst. Dann hängst du jedes fertige Wort mit push an sein Ende an, sobald du weißt, wie es lautet. Am Ende gibst du dieses Array zurück."
+    },
+    "doubleSpaces": {
+      "question": "Warum habe ich einen leeren String in meinem Array?",
+      "answer": "Zwei Leerzeichen hintereinander bedeuten, dass dazwischen gar nichts steht. Diese Lücke zählt also als Wort, wenn du nichts anderes festlegst. Prüf, ob ein Wort leer ist, bevor du es hinzufügst."
+    },
+    "missingLastWord": {
+      "question": "Warum fehlt mir das letzte Wort?",
+      "answer": "Wenn du die Wörter Zeichen für Zeichen aufbaust, ist das letzte Wort noch in Arbeit, wenn die Schleife endet, denn danach kommt kein Leerzeichen mehr, das dir sagt, dass es fertig ist. Es muss hinzugefügt werden, sobald die Schleife durch ist."
+    }
+  },
+  "functions": {
+    "split": {
+      "description": "Zerlegt einen String überall dort, wo er das Trennzeichen findet, und gibt ein Array mit den Teilstücken zurück.",
+      "category": "Strings"
+    },
+    "push": {
+      "description": "Hängt ein Element an das Ende eines Arrays an und verändert das Array dabei direkt.",
+      "category": "Arrays"
+    }
+  }
+}

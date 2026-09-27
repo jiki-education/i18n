@@ -1,0 +1,68 @@
+{
+  "errors": {
+    "blockedUrl": "哎呀，你嘗試抓取一個預期之外的 URL，結果被阻擋了。"
+  },
+  "describers": {
+    "fetch": "使用指定的參數，從 URL 取得資料"
+  },
+  "tasks": {
+    "fetchAndFormatTime": {
+      "name": "取得並格式化時間",
+      "description": "寫一個函式，接收城市名稱，使用 API 取得時間資料，再回傳格式化後的時間字串。"
+    },
+    "handleErrors": {
+      "name": "處理錯誤",
+      "description": "從容地處理錯誤回應。如果回應裡有 \"error\" 這個鍵，就回傳錯誤訊息，不要組出時間字串。"
+    }
+  },
+  "scenarios": {
+    "amsterdam": {
+      "name": "阿姆斯特丹",
+      "description": "回傳阿姆斯特丹的時間。"
+    },
+    "tokyo": {
+      "name": "東京",
+      "description": "回傳東京的時間。"
+    },
+    "lima": {
+      "name": "利馬",
+      "description": "回傳利馬的時間。"
+    },
+    "error": {
+      "name": "處理錯誤",
+      "description": "城市找不到時，正確地處理錯誤。"
+    }
+  },
+  "hints": {
+    "callApi": {
+      "question": "我要怎麼實際呼叫 API？",
+      "answer": "使用 `fetch(url, params)` 函式。URL 已經給你了，而 `params` 是一個字典，用來說明你想查詢的內容。"
+    },
+    "paramsShape": {
+      "question": "params 應該長什麼樣子？",
+      "answer": "一個只有一個鍵的字典，鍵是 `\"city\"`，它的值就是你以引數形式收到的城市名稱。"
+    },
+    "responseShape": {
+      "question": "回應會長什麼樣子？",
+      "answer": "它是一個字典。如果找不到城市，裡面就會有 `\"error\"` 鍵；否則它會包含時間資訊，你可以用這些資訊組出結果字串。"
+    },
+    "handleError": {
+      "question": "錯誤的情況要怎麼處理？",
+      "answer": "在試著組出時間字串之前，先檢查有沒有 `\"error\"` 鍵。如果這個錯誤鍵存在，就回傳題目在這種情況下要求的內容。"
+    },
+    "buildString": {
+      "question": "最後的字串要怎麼組出來？",
+      "answer": "用字串串接（`+`）或模板字串，把回應資料和周圍的文字組合成這個練習要的格式。"
+    }
+  },
+  "functions": {
+    "fetch": {
+      "description": "使用指定的參數從 URL 取得資料，並回傳一個字典",
+      "category": "API"
+    },
+    "hasKey": {
+      "description": "檢查字典裡是否存在某個鍵，回傳 true 或 false",
+      "category": "字典操作"
+    }
+  }
+}

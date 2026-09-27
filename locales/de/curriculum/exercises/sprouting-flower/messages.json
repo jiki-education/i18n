@@ -1,70 +1,70 @@
 {
   "checks": {
-    "firstFlowerHeadWrong": "�",
-    "finalFlowerHeadWrong": "�",
-    "firstPistilWrong": "�",
-    "finalPistilWrong": "�",
-    "firstStemWrong": "�",
-    "finalStemWrong": "�",
-    "firstLeftLeafWrong": "�",
-    "finalLeftLeafWrong": "�",
-    "firstRightLeafWrong": "�",
-    "finalRightLeafWrong": "�"
+    "firstFlowerHeadWrong": "Die Blüte im ersten Einzelbild ist nicht korrekt.",
+    "finalFlowerHeadWrong": "Die Blüte im letzten Einzelbild ist nicht korrekt.",
+    "firstPistilWrong": "Der Stempel im ersten Einzelbild ist nicht korrekt.",
+    "finalPistilWrong": "Der Stempel im letzten Einzelbild ist nicht korrekt.",
+    "firstStemWrong": "Der Stiel im ersten Einzelbild ist nicht korrekt.",
+    "finalStemWrong": "Der Stiel im letzten Einzelbild ist nicht korrekt.",
+    "firstLeftLeafWrong": "Das linke Blatt im ersten Einzelbild ist nicht korrekt.",
+    "finalLeftLeafWrong": "Das linke Blatt im letzten Einzelbild ist nicht korrekt.",
+    "firstRightLeafWrong": "Das rechte Blatt im ersten Einzelbild ist nicht korrekt.",
+    "finalRightLeafWrong": "Das rechte Blatt im letzten Einzelbild ist nicht korrekt."
   },
   "tasks": {
     "drawScene": {
-      "name": "�",
-      "description": "�"
+      "name": "Zeichne die Szene",
+      "description": "Lass die Blume sprießen. Geh Schritt für Schritt vor!"
     }
   },
   "scenarios": {
     "drawSproutingFlower": {
-      "name": "�",
-      "description": "�"
+      "name": "Lass die Blume sprießen",
+      "description": "Geh Schritt für Schritt vor!"
     }
   },
   "hints": {
     "whereToStart": {
-      "question": "�",
-      "answer": "�"
+      "question": "Womit fange ich an, wenn ich die Szene aufbaue?",
+      "answer": "Wähle einen zentralen Punkt. Der Mittelpunkt der Blume ist ein guter Anker. Stiel, Stempel und Blätter lassen sich alle davon ableiten. So bleiben alle Teile der Blume beim Animieren miteinander verbunden."
     },
     "growEachIteration": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie lasse ich die Blume bei jeder Iteration aufsteigen und wachsen?",
+      "answer": "Ganz oben im Schleifenblock, noch vor dem Zeichnen, aktualisierst du `flowerCenterY` und `flowerRadius` auf ihre neuen Werte für dieses Einzelbild. Die Werte stehen in der Anleitung. Wichtig ist, dass du *vor* den Zeichenaufrufen aktualisierst, nicht danach."
     },
     "stemAttached": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie halte ich den Stiel mit der Blume verbunden, wenn sie nach oben wandert?",
+      "answer": "Gib dem Stiel kein festes oberes Ende. Sein oberes Ende *ist* `flowerCenterY`. Sein unteres Ende ist der Boden. Seine Höhe ist also der Abstand zwischen beiden. Seine Breite kannst du dann aus dieser Höhe ableiten."
     },
     "leafSizing": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie bemesse ich die Blätter, damit sie mit der Blume wachsen?",
+      "answer": "Der `radiusX` und der `radiusY` der Blätter sind Bruchteile von `flowerRadius`. So skalieren sie gemeinsam. Verankere ihre vertikale Position am Stiel und nicht an einem festen Y-Wert der Zeichenfläche, dann wandern sie mit der Blume nach oben."
     },
     "flowerNeverChanges": {
-      "question": "�",
-      "answer": "�"
+      "question": "Meine Blume wird einmal gezeichnet und ändert sich dann nicht mehr. Was stimmt da nicht?",
+      "answer": "Wahrscheinlich setzt du die Startwerte einmal vor der Schleife, aktualisierst sie aber nicht *innerhalb* der Schleife. Der Schleifenblock muss deine Variablen bei jeder Iteration ändern, und zwar vor den Zeichenaufrufen."
     },
     "firstFlowerCoords": {
-      "question": "�",
-      "answer": "�"
+      "question": "Kannst du mir die Koordinaten für die erste Blume zum Abgleichen geben?",
+      "answer": "In der ersten Iteration sollten die Formen so aussehen:\n\n- Blüte: `circle(50, 89, 0.4)`\n- Stempel: `circle(50, 89, 0.1)`\n- Stiel: `rectangle(49.95, 89, 0.1, 1)`\n- Linkes Blatt: `ellipse(49.75, 89.5, 0.2, 0.08)`\n- Rechtes Blatt: `ellipse(50.25, 89.5, 0.2, 0.08)`\n\nKlick in der Wiedergabeleiste auf den Umschaltknopf für die Infos, um deine eigenen Werte in diesem Einzelbild zu sehen."
     },
     "finalFlowerCoords": {
-      "question": "�",
-      "answer": "�"
+      "question": "Kannst du mir die Koordinaten für die letzte Blume zum Abgleichen geben?",
+      "answer": "In der letzten Iteration sollten die Formen so aussehen:\n\n- Blüte: `circle(50, 30, 24)`\n- Stempel: `circle(50, 30, 6)`\n- Stiel: `rectangle(47, 30, 6, 60)`\n- Linkes Blatt: `ellipse(35, 60, 12, 4.8)`\n- Rechtes Blatt: `ellipse(65, 60, 12, 4.8)`\n\nKlick in der Wiedergabeleiste auf den Umschaltknopf für die Infos, um deine eigenen Werte in diesem Einzelbild zu sehen."
     }
   },
   "functions": {
     "rectangle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichnet ein **Rechteck** an der Position (left, top) mit der angegebenen Breite, Höhe und Farbe. Die Position steht für die obere linke Ecke des Rechtecks.",
+      "category": "Formen zeichnen"
     },
     "circle": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichnet einen **Kreis** an der Mittelpunktposition (centerX, centerY) mit dem angegebenen Radius und der angegebenen Farbe.",
+      "category": "Formen zeichnen"
     },
     "ellipse": {
-      "description": "�",
-      "category": "�"
+      "description": "Zeichnet eine **Ellipse** an der Mittelpunktposition (centerX, centerY) mit dem angegebenen radiusX, radiusY und der angegebenen Farbe.",
+      "category": "Formen zeichnen"
     }
   }
 }

@@ -1,99 +1,99 @@
 {
   "checks": {
-    "moreThanSixteenLines": "�"
+    "moreThanSixteenLines": "Du hast mehr als sechzehn Zeilen Code verwendet."
   },
   "tasks": {
     "plings": {
-      "name": "�",
-      "description": "�"
+      "name": "Plings",
+      "description": "Fang damit an, die Pling-Klänge richtig hinzubekommen. Wenn die Zahl durch 3 teilbar ist, gib „Pling“ zurück."
     },
     "plangs": {
-      "name": "�",
-      "description": "�"
+      "name": "Plangs",
+      "description": "Jetzt bring die Plang-Klänge in Ordnung. Wenn die Zahl durch 5 teilbar ist, füge „Plang“ zum Ergebnis hinzu. Wenn sie durch 3 und 5 teilbar ist, gib „PlingPlang“ zurück."
     },
     "plongs": {
-      "name": "�",
-      "description": "�"
+      "name": "Plongs",
+      "description": "Jetzt bring die Plong-Klänge in Ordnung. Wenn die Zahl durch 7 teilbar ist, füge „Plong“ zum Ergebnis hinzu. Zahlen können durch mehrere Faktoren teilbar sein."
     },
     "noSound": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahlen ohne Regentropfenklang",
+      "description": "Zum Schluss: Wenn die Zahl nicht durch 3, 5 oder 7 teilbar ist, gib die Zahl selbst als String zurück."
     },
     "solveInSixteenLines": {
-      "name": "�",
-      "description": "�"
+      "name": "In sechzehn Zeilen Code lösen",
+      "description": "Schaffst du es, das mit nur sechzehn Zeilen Code zu lösen?"
     }
   },
   "scenarios": {
     "number3": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 3",
+      "description": "Wenn 3 der Eingabewert ist, gib „Pling“ zurück."
     },
     "number27": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 27",
+      "description": "Wenn 27 der Eingabewert ist, gib „Pling“ zurück."
     },
     "number5": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 5",
+      "description": "Wenn 5 der Eingabewert ist, gib „Plang“ zurück."
     },
     "number3125": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 3125",
+      "description": "Wenn 3125 der Eingabewert ist, gib „Plang“ zurück."
     },
     "number15": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 15",
+      "description": "Wenn 15 der Eingabewert ist, gib „PlingPlang“ zurück."
     },
     "number7": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 7",
+      "description": "Wenn 7 der Eingabewert ist, gib „Plong“ zurück."
     },
     "number21": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 21",
+      "description": "Wenn 21 der Eingabewert ist, gib „PlingPlong“ zurück."
     },
     "number35": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 35",
+      "description": "Wenn 35 der Eingabewert ist, gib „PlangPlong“ zurück."
     },
     "number105": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 105",
+      "description": "Wenn 105 der Eingabewert ist, gib „PlingPlangPlong“ zurück."
     },
     "number8": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 8",
+      "description": "Wenn 8 der Eingabewert ist, gib „8“ zurück."
     },
     "number52": {
-      "name": "�",
-      "description": "�"
+      "name": "Zahl 52",
+      "description": "Wenn 52 der Eingabewert ist, gib „52“ zurück."
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "Sechzehn Zeilen Code",
+      "description": "Löse die Übung mit nur sechzehn Zeilen Code."
     }
   },
   "hints": {
     "onlyOneSound": {
-      "question": "�",
-      "answer": "�"
+      "question": "Warum gibt meine Funktion nur einen Klang zurück?",
+      "answer": "Wenn du in jedem `if` ein `return` machst, brichst du ab, sobald der erste Teiler passt. Du willst sie aber kombinieren. Statt zurückzugeben, hängst du den Klang an einen Ergebnis-String an und machst weiter."
     },
     "buildCombinedSound": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie baue ich den kombinierten Klang auf?",
+      "answer": "Fang mit einem leeren Ergebnis-String an. Für jeden Teiler (3, 5, 7) hängst du den passenden Klang mit Verkettung (`+`) ans Ende des Ergebnisses an, wenn er die Zahl teilt."
     },
     "noneMatch": {
-      "question": "�",
-      "answer": "�"
+      "question": "Was, wenn keiner der Teiler passt?",
+      "answer": "Wenn das Ergebnis nach allen drei Prüfungen immer noch leer ist, ist die Antwort einfach die Zahl selbst als String. Wandle die Zahl um und gib sie zurück."
     },
     "convertToString": {
-      "question": "�",
-      "answer": "�"
+      "question": "Ich gebe die Zahl zurück, aber sie soll als String zurückgegeben werden. Wie mache ich das?",
+      "answer": "Zahlen und Strings sind verschiedene Typen, auch wenn sie gleich aussehen. Du kannst eine Zahl in einen String umwandeln, indem du sie in einen Template-String mit `${...}` setzt."
     },
     "howManyReturns": {
-      "question": "�",
-      "answer": "�"
+      "question": "Wie viele return-Anweisungen sollte ich haben?",
+      "answer": "Normalerweise nur eine oder zwei. Der ganze Sinn ist, dass die if-Anweisungen den Ergebnis-String verändern und du das Ergebnis am Ende einmal zurückgibst."
     }
   }
 }

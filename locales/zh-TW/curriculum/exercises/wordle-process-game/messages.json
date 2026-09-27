@@ -1,0 +1,74 @@
+{
+  "checks": {
+    "rowMismatchWithRow": "第 {{row}} 列第 {{square}} 格的「{{letter}}」應該是「{{expected}}」，不是「{{actual}}」。",
+    "rowNotColoredWithRow": "第 {{row}} 列沒有上色。",
+    "rowWrongLengthWithRow": "第 {{row}} 列拿到了 {{actual}} 個狀態，但一列需要 {{expected}} 個。"
+  },
+  "tasks": {
+    "processGame": {
+      "name": "處理整場遊戲",
+      "description": "建立一個叫做 processGame 的函式，接受目標單字和一個由猜測組成的陣列，並為每一次猜測用正確的狀態呼叫 colorRow。"
+    },
+    "duplicateLetters": {
+      "name": "加分題：處理重複的字母",
+      "description": "有一個 Wordle 規則我們到現在都還沒提到。如果某個字母在你的猜測裡出現兩次，但在目標單字裡只出現一次，那麼只要其中一個在正確的位置，那一個就變成綠色，另一個變成灰色。否則第一個變成黃色，第二個變成灰色。同樣的道理也能放大來看：猜測裡有三個、目標單字裡只有兩個，就代表其中兩個會被上色，第三個變成灰色。先從第一個加分題情境開始，再在第二個情境裡把它完全解決。這是加分題，所以不一定要完成喔！"
+    }
+  },
+  "scenarios": {
+    "holeInOne": {
+      "name": "第一次就中！",
+      "description": "處理第一次就猜中的情況。"
+    },
+    "twoGuesses": {
+      "name": "兩次搞定",
+      "description": "處理兩次猜測的情況。"
+    },
+    "threeGuesses": {
+      "name": "三次成功",
+      "description": "處理三次猜測的情況。"
+    },
+    "phew": {
+      "name": "呼！",
+      "description": "呼！好險啊！"
+    },
+    "bonus1": {
+      "name": "只有一個黃色",
+      "description": "如果猜測裡有多個字母都是 present，但目標單字裡其實只有一個，那應該只有一個變成黃色。"
+    },
+    "bonus2": {
+      "name": "瑞士起司",
+      "description": "這裡的 swiss 就說明了為什麼這件事很重要！"
+    }
+  },
+  "hints": {
+    "reuseWork": {
+      "question": "我要怎麼重複使用我在 `processGuess` 裡寫的程式碼？",
+      "answer": "主要情境用的就是你之前寫過的那套邏輯。把它抽成一個輔助函式（或是直接複製），然後對陣列裡的每一個猜測呼叫它。加分題會改到那套邏輯，所以如果你要挑戰加分題，之後還會回來修改這個輔助函式。"
+    },
+    "trackRow": {
+      "question": "我要怎麼知道每一次猜測對應哪一列？",
+      "answer": "用一個索引跑過所有的猜測。列號就是索引加 `1`（因為 `colorRow` 預期的列號是 `1-6`）。"
+    },
+    "colorRow": {
+      "question": "那實際上要怎麼為每一列上色？",
+      "answer": "一旦你有了某次猜測的 `states` 陣列，就呼叫 `colorRow(rowNumber, states)`。"
+    },
+    "fewerGuesses": {
+      "question": "如果玩家猜的次數不到 6 次呢？",
+      "answer": "只為真正存在的猜測上色就好。陣列的長度會告訴你有幾筆要處理，所以你自然就會在對的地方停下來。"
+    }
+  },
+  "functions": {
+    "colorRow": {
+      "description": "用指定的狀態為 Wordle 盤面上的一列上色。",
+      "category": "Wordle"
+    },
+    "push": {
+      "description": "把一個元素加到陣列的末端，並直接改變原本的陣列。",
+      "category": "陣列"
+    }
+  },
+  "describers": {
+    "colorRow": "為 wordle 盤面上的一列上色"
+  }
+}
