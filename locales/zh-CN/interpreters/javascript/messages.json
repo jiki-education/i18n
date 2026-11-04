@@ -112,6 +112,7 @@
       "BracketNotationNotAllowedOnInstance": "类实例上不能用方括号，要用点号，比如`myObject.property`。",
       "NotCallable": "不能把 {{callableType}} 当作函数来调用。",
       "VariableNotDeclared": "Jiki 找不到名为`{{name}}`的变量。",
+      "VariableNotDeclaredWithSimilarNameSuggestion": "Jiki 找不到名为 `{{name}}` 的变量。你是不是想写 `{{suggestion}}`？",
       "ReturnOutsideFunction": "你用了`return`关键字，但你现在不在函数里。`return`语句只能写在函数内部。",
       "BreakOutsideLoop": "你用了`break`关键字，但你现在不在循环里。`break`语句只能写在 for 或 while 循环内部。",
       "ContinueOutsideLoop": "你用了`continue`关键字，但你现在不在循环里。`continue`语句只能写在 for 或 while 循环内部。",
@@ -130,11 +131,11 @@
       "UnaryTypeCoercionNotAllowed": "不允许进行类型转换：`{{operator}}`运算符不能用在 {{operand}} 上。",
       "ComparisonRequiresNumber": "`{{operator}}`运算符要求两边的值都是数字。",
       "NodeNotAllowed": "在你当前的学习关卡里不允许使用 {{nodeType}}。",
-      "InvalidNumberOfArguments_none": "`{{function}}()` 函数不需要在括号里放任何内容，所以不能把`{{args}}`放进去。试着只写`{{function}}()`。",
       "InvalidNumberOfArguments_exact": "这个函数有 $t(phrases.slotCount, {\"count\": {{expected}} })，但你给了它 $t(phrases.inputCount, {\"count\": {{got}} })。",
       "InvalidNumberOfArguments_atLeast": "这个函数至少需要 $t(phrases.slotCount, {\"count\": {{expected}} })，但你给了它 $t(phrases.inputCount, {\"count\": {{got}} })。",
       "InvalidNumberOfArguments_range": "这个函数的投入口数量在 {{min}} 到 {{max}} 之间，但你给了它 $t(phrases.inputCount, {\"count\": {{got}} })。",
       "FunctionNotFound": "Jiki 找不到名为`{{name}}`的函数。",
+      "FunctionNotFoundWithSimilarNameSuggestion": "Jiki 找不到名为 `{{name}}` 的函数。你是不是想写 `{{suggestion}}`？",
       "LogicErrorInExecution": "{{message}}",
       "ForInLoopTargetNotObject": "for...in 循环需要遍历一个对象，但你提供的是值为 {{value}} 的 {{type}}。",
       "InOperatorRequiresObject": "`in`运算符要求右边是对象或字典，但你给它的是一个 {{type}}。",
@@ -143,7 +144,8 @@
       "InWithArrayNotAllowed": "虽然`in`关键字可以用在数组上，但那属于更高级的用法。现在先只用它来操作字典吧。",
       "ClassNotFound": "类`{{name}}`没有定义。",
       "PropertyNotFoundOnInstance": "`{{className}}`的实例上不存在`{{property}}`属性。",
-      "UnexpectedUncalledFunction": "你提到了`{{name}}`函数，但并没有真正调用它。是不是忘了在最后加上`()`？"
+      "UnexpectedUncalledFunction": "你提到了`{{name}}`函数，但并没有真正调用它。是不是忘了在最后加上`()`？",
+      "InvalidNumberOfArguments_none": "`{{function}}()` 函数不需要在括号里放任何内容，所以不能把`{{args}}`放进去。试着只写`{{function}}()`。"
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "`{{lexeme}}`功能在你当前的关卡里还不能使用。",

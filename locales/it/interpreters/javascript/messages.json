@@ -112,6 +112,7 @@
       "BracketNotationNotAllowedOnInstance": "Non puoi usare le parentesi quadre su un'istanza di classe - usa il punto invece, come `myObject.property`.",
       "NotCallable": "Non puoi usare {{callableType}} come una funzione e provare a eseguirla.",
       "VariableNotDeclared": "Jiki non ha trovato una variabile chiamata `{{name}}`.",
+      "VariableNotDeclaredWithSimilarNameSuggestion": "Jiki non è riuscito a trovare una variabile chiamata `{{name}}`. Intendevi `{{suggestion}}`?",
       "ReturnOutsideFunction": "Hai usato la parola chiave `return`, ma non sei all'interno di una funzione. Le istruzioni `return` possono essere usate solo all'interno delle funzioni.",
       "BreakOutsideLoop": "Hai usato la parola chiave `break`, ma non sei all'interno di un ciclo. Le istruzioni `break` possono essere usate solo all'interno dei cicli `for` o `while`.",
       "ContinueOutsideLoop": "Hai usato la parola chiave `continue`, ma non sei all'interno di un ciclo. Le istruzioni `continue` possono essere usate solo all'interno dei cicli `for` o `while`.",
@@ -130,11 +131,11 @@
       "UnaryTypeCoercionNotAllowed": "La coercizione di tipo non è consentita: l'operatore `{{operator}}` non può essere applicato a un {{operand}}.",
       "ComparisonRequiresNumber": "L'operatore `{{operator}}` richiede che entrambi i valori siano numeri.",
       "NodeNotAllowed": "{{nodeType}} non è consentito al tuo livello di apprendimento attuale.",
-      "InvalidNumberOfArguments_none": "La funzione `{{function}}()` non si aspetta niente dentro le sue parentesi, quindi non puoi metterci `{{args}}`. Prova a scrivere semplicemente `{{function}}()`.",
       "InvalidNumberOfArguments_exact": "Questa funzione ha $t(phrases.slotCount, {\"count\": {{expected}} }) ma hai fornito $t(phrases.inputCount, {\"count\": {{got}} }) da usare con essa.",
       "InvalidNumberOfArguments_atLeast": "Questa funzione ha bisogno di almeno $t(phrases.slotCount, {\"count\": {{expected}} }) ma hai fornito $t(phrases.inputCount, {\"count\": {{got}} }) da usare con essa.",
       "InvalidNumberOfArguments_range": "Questa funzione ha tra {{min}} e {{max}} slot di input ma hai fornito $t(phrases.inputCount, {\"count\": {{got}} }) da usare con essa.",
       "FunctionNotFound": "Jiki non ha trovato una funzione chiamata `{{name}}`.",
+      "FunctionNotFoundWithSimilarNameSuggestion": "Jiki non è riuscito a trovare una funzione chiamata `{{name}}`. Intendevi `{{suggestion}}`?",
       "LogicErrorInExecution": "{{message}}",
       "ForInLoopTargetNotObject": "Il ciclo `for...in` richiede un oggetto su cui iterare, ma hai fornito un {{type}} con valore {{value}}.",
       "InOperatorRequiresObject": "L'operatore `in` richiede un oggetto/dizionario sul lato destro, ma invece gli hai dato un {{type}}.",
@@ -143,7 +144,8 @@
       "InWithArrayNotAllowed": "Sebbene la parola chiave `in` possa essere usata con gli array, è una funzionalità più avanzata. Per ora, limitati a usarla solo con i dizionari.",
       "ClassNotFound": "La classe `{{name}}` non è definita.",
       "PropertyNotFoundOnInstance": "La proprietà `{{property}}` non esiste sulle istanze di `{{className}}`.",
-      "UnexpectedUncalledFunction": "Hai fatto riferimento alla funzione `{{name}}` ma non l'hai effettivamente usata. Hai dimenticato di aggiungere `()` alla fine?"
+      "UnexpectedUncalledFunction": "Hai fatto riferimento alla funzione `{{name}}` ma non l'hai effettivamente usata. Hai dimenticato di aggiungere `()` alla fine?",
+      "InvalidNumberOfArguments_none": "La funzione `{{function}}()` non si aspetta niente dentro le sue parentesi, quindi non puoi metterci `{{args}}`. Prova a scrivere semplicemente `{{function}}()`."
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "La funzionalità `{{lexeme}}` non è ancora disponibile al tuo livello attuale.",

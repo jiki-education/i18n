@@ -112,6 +112,7 @@
       "BracketNotationNotAllowedOnInstance": "На екземплярі класу не можна використовувати квадратні дужки: використайте натомість крапку, наприклад `myObject.property`.",
       "NotCallable": "Не можна використовувати {{callableType}} як функцію й намагатися його запустити.",
       "VariableNotDeclared": "Jiki не знайшов змінної з назвою `{{name}}`.",
+      "VariableNotDeclaredWithSimilarNameSuggestion": "Jiki не знайшов змінної з назвою `{{name}}`. Можливо, малося на увазі `{{suggestion}}`?",
       "ReturnOutsideFunction": "Тут використано ключове слово `return`, але код не перебуває всередині функції. Інструкції return можна використовувати лише всередині функцій.",
       "BreakOutsideLoop": "Тут використано ключове слово `break`, але код не перебуває всередині циклу. Інструкції break можна використовувати лише всередині циклів for або while.",
       "ContinueOutsideLoop": "Тут використано ключове слово `continue`, але код не перебуває всередині циклу. Інструкції continue можна використовувати лише всередині циклів for або while.",
@@ -130,11 +131,11 @@
       "UnaryTypeCoercionNotAllowed": "Неявне перетворення типів не дозволене: оператор `{{operator}}` не можна застосувати до {{operand}}.",
       "ComparisonRequiresNumber": "Оператор `{{operator}}` вимагає, щоб обидва значення були числами.",
       "NodeNotAllowed": "{{nodeType}} не дозволено на поточному рівні навчання.",
-      "InvalidNumberOfArguments_none": "Функція `{{function}}()` не приймає нічого в дужках, тож туди не можна вписати `{{args}}`. Спробуймо просто написати `{{function}}()`.",
       "InvalidNumberOfArguments_exact": "У цієї функції $t(phrases.slotCount, {\"count\": {{expected}} }), але Jiki отримав для роботи з нею $t(phrases.inputCount, {\"count\": {{got}} }).",
       "InvalidNumberOfArguments_atLeast": "Цій функції потрібно щонайменше $t(phrases.slotCount, {\"count\": {{expected}} }), але Jiki отримав для роботи з нею $t(phrases.inputCount, {\"count\": {{got}} }).",
       "InvalidNumberOfArguments_range": "У цієї функції від {{min}} до {{max}} вхідних щілин, але Jiki отримав для роботи з нею $t(phrases.inputCount, {\"count\": {{got}} }).",
       "FunctionNotFound": "Jiki не знайшов функції з назвою `{{name}}`.",
+      "FunctionNotFoundWithSimilarNameSuggestion": "Jiki не знайшов функції з назвою `{{name}}`. Можливо, малося на увазі `{{suggestion}}`?",
       "LogicErrorInExecution": "{{message}}",
       "ForInLoopTargetNotObject": "Циклу for...in потрібен обʼєкт для перебору, але він отримав {{type}} зі значенням {{value}}.",
       "InOperatorRequiresObject": "Оператору `in` праворуч потрібен обʼєкт (словник), але натомість він отримав {{type}}.",
@@ -143,7 +144,8 @@
       "InWithArrayNotAllowed": "Хоча ключове слово `in` можна використовувати з масивами, це складніша можливість. Поки що використовуйте його лише зі словниками.",
       "ClassNotFound": "Клас `{{name}}` не визначено.",
       "PropertyNotFoundOnInstance": "Властивості `{{property}}` не існує в екземплярів класу `{{className}}`.",
-      "UnexpectedUncalledFunction": "Тут згадано функцію `{{name}}`, але насправді її не використано. Здається, у кінці бракує `()`."
+      "UnexpectedUncalledFunction": "Тут згадано функцію `{{name}}`, але насправді її не використано. Здається, у кінці бракує `()`.",
+      "InvalidNumberOfArguments_none": "Функція `{{function}}()` не приймає нічого в дужках, тож туди не можна вписати `{{args}}`. Спробуймо просто написати `{{function}}()`."
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "Можливість `{{lexeme}}` поки що недоступна на поточному рівні.",

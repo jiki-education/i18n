@@ -112,6 +112,7 @@
       "BracketNotationNotAllowedOnInstance": "クラスのインスタンスに角括弧は使えません。`myObject.property`のようにドットを使ってください。",
       "NotCallable": "{{callableType}}を関数のように実行することはできません。",
       "VariableNotDeclared": "Jikiは`{{name}}`という変数を見つけられませんでした。",
+      "VariableNotDeclaredWithSimilarNameSuggestion": "Jikiは`{{name}}`という名前の変数を見つけられませんでした。もしかして`{{suggestion}}`のことではないでしょうか。",
       "ReturnOutsideFunction": "`return`キーワードを使いましたが、関数の中ではありません。`return`文は関数の中でしか使えません。",
       "BreakOutsideLoop": "`break`キーワードを使いましたが、ループの中ではありません。`break`文は`for`ループか`while`ループの中でしか使えません。",
       "ContinueOutsideLoop": "`continue`キーワードを使いましたが、ループの中ではありません。`continue`文は`for`ループか`while`ループの中でしか使えません。",
@@ -130,11 +131,11 @@
       "UnaryTypeCoercionNotAllowed": "型の自動変換はできません。`{{operator}}`演算子は{{operand}}には使えません。",
       "ComparisonRequiresNumber": "`{{operator}}`演算子は、両方の値が数値である必要があります。",
       "NodeNotAllowed": "{{nodeType}}は、今の学習レベルではまだ使えません。",
-      "InvalidNumberOfArguments_none": "`{{function}}()`関数は括弧の中に何も必要としないので、そこに`{{args}}`を入れることはできません。`{{function}}()`とだけ書いてみましょう。",
       "InvalidNumberOfArguments_exact": "この関数には$t(phrases.slotCount, {\"count\": {{expected}} })がありますが、Jikiに渡されたのは$t(phrases.inputCount, {\"count\": {{got}} })です。",
       "InvalidNumberOfArguments_atLeast": "この関数には少なくとも$t(phrases.slotCount, {\"count\": {{expected}} })が必要ですが、Jikiに渡されたのは$t(phrases.inputCount, {\"count\": {{got}} })です。",
       "InvalidNumberOfArguments_range": "この関数には{{min}}から{{max}}個の差し込み口がありますが、Jikiに渡されたのは$t(phrases.inputCount, {\"count\": {{got}} })です。",
       "FunctionNotFound": "Jikiは`{{name}}`という関数を見つけられませんでした。",
+      "FunctionNotFoundWithSimilarNameSuggestion": "Jikiは`{{name}}`という名前の関数を見つけられませんでした。もしかして`{{suggestion}}`のことではないでしょうか。",
       "LogicErrorInExecution": "{{message}}",
       "ForInLoopTargetNotObject": "`for...in`ループには、繰り返しの対象となるオブジェクトが必要ですが、{{value}}という値の{{type}}が渡されました。",
       "InOperatorRequiresObject": "`in`演算子は、右側にオブジェクト（辞書）が必要ですが、渡されたのは{{type}}です。",
@@ -143,7 +144,8 @@
       "InWithArrayNotAllowed": "`in`キーワードは配列にも使えますが、これはもっと高度な機能です。今はまだ、辞書でだけ使うようにしましょう。",
       "ClassNotFound": "クラス`{{name}}`は定義されていません。",
       "PropertyNotFoundOnInstance": "`{{className}}`のインスタンスに、プロパティ`{{property}}`は存在しません。",
-      "UnexpectedUncalledFunction": "関数`{{name}}`を参照していますが、実際には使っていません。最後に`()`を付け忘れていませんか？"
+      "UnexpectedUncalledFunction": "関数`{{name}}`を参照していますが、実際には使っていません。最後に`()`を付け忘れていませんか？",
+      "InvalidNumberOfArguments_none": "`{{function}}()`関数は括弧の中に何も必要としないので、そこに`{{args}}`を入れることはできません。`{{function}}()`とだけ書いてみましょう。"
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "`{{lexeme}}`という機能は、今のレベルではまだ使えません。",

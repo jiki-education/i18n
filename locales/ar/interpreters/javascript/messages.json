@@ -112,6 +112,7 @@
       "BracketNotationNotAllowedOnInstance": "لا يمكنك استخدام الأقواس المربعة مع نسخة من صنف، استخدم النقطة بدلًا منها، مثل `myObject.property`.",
       "NotCallable": "لا يمكنك استخدام `{{callableType}}` كدالة ومحاولة تشغيله.",
       "VariableNotDeclared": "لم يتمكن Jiki من العثور على متغير باسم `{{name}}`.",
+      "VariableNotDeclaredWithSimilarNameSuggestion": "لم يستطع Jiki العثور على متغير باسم `{{name}}`. هل تقصد `{{suggestion}}`؟",
       "ReturnOutsideFunction": "استخدمت الكلمة المفتاحية `return`، لكنك لست داخل دالة. لا يمكن استخدام عبارات `return` إلا داخل الدوال.",
       "BreakOutsideLoop": "استخدمت الكلمة المفتاحية `break`، لكنك لست داخل حلقة. لا يمكن استخدام عبارات `break` إلا داخل حلقات `for` أو `while`.",
       "ContinueOutsideLoop": "استخدمت الكلمة المفتاحية `continue`، لكنك لست داخل حلقة. لا يمكن استخدام عبارات `continue` إلا داخل حلقات `for` أو `while`.",
@@ -130,11 +131,11 @@
       "UnaryTypeCoercionNotAllowed": "لا يُسمح بالتحويل القسري للنوع: لا يمكن تطبيق العامل `{{operator}}` على `{{operand}}`.",
       "ComparisonRequiresNumber": "يتطلب العامل `{{operator}}` أن تكون القيمتان عددين.",
       "NodeNotAllowed": "`{{nodeType}}` غير مسموح به في مستوى تعلّمك الحالي.",
-      "InvalidNumberOfArguments_none": "دالة `{{function}}()` لا تتوقع أي شيء داخل القوسين الهلاليين، لذا لا يمكنك وضع `{{args}}` هناك. جرّب فقط كتابة `{{function}}()`.",
       "InvalidNumberOfArguments_exact": "هذه الدالة لديها $t(phrases.slotCount, {\"count\": {{expected}} }) لكنك قدّمت $t(phrases.inputCount, {\"count\": {{got}} }) ليستخدمها Jiki.",
       "InvalidNumberOfArguments_atLeast": "تحتاج هذه الدالة إلى ما لا يقل عن $t(phrases.slotCount, {\"count\": {{expected}} })، لكنك قدّمت $t(phrases.inputCount, {\"count\": {{got}} }) ليستخدمها Jiki.",
       "InvalidNumberOfArguments_range": "هذه الدالة لديها ما بين {{min}} و{{max}} من فتحات الإدخال، لكنك قدّمت $t(phrases.inputCount, {\"count\": {{got}} }) ليستخدمها Jiki.",
       "FunctionNotFound": "لم يتمكن Jiki من العثور على دالة باسم `{{name}}`.",
+      "FunctionNotFoundWithSimilarNameSuggestion": "لم يستطع Jiki العثور على دالة باسم `{{name}}`. هل تقصد `{{suggestion}}`؟",
       "LogicErrorInExecution": "{{message}}",
       "ForInLoopTargetNotObject": "تحتاج حلقة `for...in` إلى كائن للتكرار عليه، لكنك قدّمت `{{type}}` بقيمة `{{value}}`.",
       "InOperatorRequiresObject": "يتطلب العامل `in` كائنًا أو قاموسًا على الجانب الأيمن، لكنك أعطيته `{{type}}` بدلًا من ذلك.",
@@ -143,7 +144,8 @@
       "InWithArrayNotAllowed": "رغم أن الكلمة المفتاحية `in` يمكن استخدامها مع المصفوفات، فإنها ميزة أكثر تقدمًا. في الوقت الحالي، التزم باستخدامها مع القواميس فقط.",
       "ClassNotFound": "الصنف `{{name}}` غير معرّف.",
       "PropertyNotFoundOnInstance": "الخاصية `{{property}}` غير موجودة في نسخ الصنف `{{className}}`.",
-      "UnexpectedUncalledFunction": "أشرت إلى الدالة `{{name}}` لكنك لم تستخدمها فعليًا. هل نسيت إضافة `()` في النهاية؟"
+      "UnexpectedUncalledFunction": "أشرت إلى الدالة `{{name}}` لكنك لم تستخدمها فعليًا. هل نسيت إضافة `()` في النهاية؟",
+      "InvalidNumberOfArguments_none": "دالة `{{function}}()` لا تتوقع أي شيء داخل القوسين الهلاليين، لذا لا يمكنك وضع `{{args}}` هناك. جرّب فقط كتابة `{{function}}()`."
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "ميزة `{{lexeme}}` غير متاحة بعد في مستواك الحالي.",
