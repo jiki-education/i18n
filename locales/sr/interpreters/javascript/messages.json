@@ -23,10 +23,12 @@
       "MissingRightBraceAfterBlock": "Nedostaje zatvorena vitičasta zagrada `}` posle bloka.",
       "MissingRightBraceInTemplateLiteral": "Džiki nije mogao da nađe zatvorenu vitičastu zagradu (`}`) u ovom šablonskom stringu. Proveri da negde ne nedostaje ili da se nije potkrala greška u kucanju. Ispravan oblik je ``` `...${...}...` ```.",
       "MissingRightBracketInArray": "Nedostaje zatvorena uglasta zagrada `]` na kraju niza.",
+      "MissingCommaBetweenArrayElements": "Da li ti nedostaje zarez `,` između elemenata u ovom nizu?",
       "MissingRightBracketInMemberAccess": "Nedostaje zatvorena uglasta zagrada `]` posle indeksa niza.",
       "MissingRightParenthesisAfterExpression": "Nedostaje zatvorena zagrada `)` posle izraza.",
       "MissingRightParenthesisAfterIfCondition": "Nedostaje zatvorena zagrada `)` posle uslova u if naredbi.",
       "MissingRightParenthesisAfterFunctionCall": "Da li nedostaje zatvorena zagrada `)` u pozivu funkcije {{function}}?",
+      "MissingCommaBetweenFunctionArguments": "Da li ti nedostaje zarez `,` između ulaza kada pozivaš funkciju {{function}}?",
       "MissingEndOfLine": "Džiki nije očekivao da se `{{current}}` pojavi ovde posle `{{previous}}`.",
       "MissingVariableName": "Nedostaje ime promenljive u deklaraciji. Posle `let` moraš da navedeš ime.",
       "MultipleStatementsPerLine": "U Jikiju možeš da staviš samo jednu naredbu po liniji. Ne možeš da razdvajaš više naredbi tačka-zarezima. Stavi drugu naredbu u posebnu liniju.",
@@ -131,6 +133,7 @@
       "UnaryTypeCoercionNotAllowed": "Implicitna konverzija tipova nije dozvoljena: operator `{{operator}}` ne može da se primeni na {{operand}}.",
       "ComparisonRequiresNumber": "Operator `{{operator}}` zahteva da obe vrednosti budu brojevi.",
       "NodeNotAllowed": "{{nodeType}} nije dozvoljeno na tvom trenutnom nivou učenja.",
+      "InvalidNumberOfArguments_none": "Funkcija `{{function}}()` ne očekuje ništa unutar svojih zagrada, pa tu ne možeš da staviš `{{args}}`. Probaj da napišeš samo `{{function}}()`.",
       "InvalidNumberOfArguments_exact": "Ova funkcija ima $t(phrases.slotCount, {\"count\": {{expected}} }), ali Džikiju daješ $t(phrases.inputCount, {\"count\": {{got}} }) da upotrebi sa njom.",
       "InvalidNumberOfArguments_atLeast": "Ovoj funkciji treba najmanje $t(phrases.slotCount, {\"count\": {{expected}} }), ali Džikiju daješ $t(phrases.inputCount, {\"count\": {{got}} }) da upotrebi sa njom.",
       "InvalidNumberOfArguments_range": "Ova funkcija ima između {{min}} i {{max}} ulaznih otvora, ali Džikiju daješ $t(phrases.inputCount, {\"count\": {{got}} }) da upotrebi sa njom.",
@@ -144,8 +147,7 @@
       "InWithArrayNotAllowed": "Iako ključna reč `in` može da se koristi sa nizovima, to je naprednija funkcionalnost. Za sada je koristi samo sa rečnicima.",
       "ClassNotFound": "Klasa `{{name}}` nije definisana.",
       "PropertyNotFoundOnInstance": "Svojstvo `{{property}}` ne postoji na instancama klase `{{className}}`.",
-      "UnexpectedUncalledFunction": "Pominješ funkciju `{{name}}`, ali je zapravo ne koristiš. Da li na kraju nedostaju `()`?",
-      "InvalidNumberOfArguments_none": "Funkcija `{{function}}()` ne očekuje ništa unutar svojih zagrada, pa tu ne možeš da staviš `{{args}}`. Probaj da napišeš samo `{{function}}()`."
+      "UnexpectedUncalledFunction": "Pominješ funkciju `{{name}}`, ali je zapravo ne koristiš. Da li na kraju nedostaju `()`?"
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "Funkcionalnost `{{lexeme}}` još nije dostupna na tvom trenutnom nivou.",

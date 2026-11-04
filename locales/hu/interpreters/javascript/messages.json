@@ -23,10 +23,12 @@
       "MissingRightBraceAfterBlock": "Hiányzik a záró kapcsos zárójel `}` a blokk után.",
       "MissingRightBraceInTemplateLiteral": "Jiki nem talált záró kapcsos zárójelet (`}`) ebben a template literálban. Nézd meg, nem hagytad-e ki, vagy nem gépelted-e el. A helyes forma: ``` `...${...}...` ```.",
       "MissingRightBracketInArray": "Hiányzik a záró szögletes zárójel `]` a tömb lezárásához.",
+      "MissingCommaBetweenArrayElements": "Nem felejtettél el vesszőt `,` tenni a tömb elemei közé?",
       "MissingRightBracketInMemberAccess": "Hiányzik a záró szögletes zárójel `]` a tömbindex után.",
       "MissingRightParenthesisAfterExpression": "Hiányzik a záró zárójel `)` a kifejezés után.",
       "MissingRightParenthesisAfterIfCondition": "Hiányzik a záró zárójel `)` az if feltétele után.",
       "MissingRightParenthesisAfterFunctionCall": "Nem felejtetted el a záró zárójelet `)` a(z) {{function}} függvény meghívásakor?",
+      "MissingCommaBetweenFunctionArguments": "Nem felejtettél el vesszőt `,` tenni a bemenetek közé, amikor meghívod a {{function}} függvényt?",
       "MissingEndOfLine": "Jiki nem számított arra, hogy a(z) `{{previous}}` után `{{current}}` következik.",
       "MissingVariableName": "Hiányzik a változó neve a deklarációból. A `let` után meg kell adnod egy nevet.",
       "MultipleStatementsPerLine": "A Jikiben soronként csak egy utasítást írhatsz. Több utasítást nem választhatsz el pontosvesszőkkel. Kérlek, tedd a második utasítást külön sorba.",
@@ -131,6 +133,7 @@
       "UnaryTypeCoercionNotAllowed": "Az automatikus típuskonverzió nem megengedett: a(z) `{{operator}}` operátor nem alkalmazható {{operand}} típusra.",
       "ComparisonRequiresNumber": "A(z) `{{operator}}` operátorhoz mindkét értéknek számnak kell lennie.",
       "NodeNotAllowed": "{{nodeType}} a jelenlegi szinteden nem megengedett.",
+      "InvalidNumberOfArguments_none": "A `{{function}}()` függvény nem vár semmit a zárójelei között, ezért oda nem kerülhet `{{args}}`. Próbáld meg egyszerűen így írni: `{{function}}()`.",
       "InvalidNumberOfArguments_exact": "Ez a függvény $t(phrases.slotCount, {\"count\": {{expected}} }) tartalmaz, te viszont $t(phrases.inputCount, {\"count\": {{got}} }) adtál meg Jikinek hozzá.",
       "InvalidNumberOfArguments_atLeast": "Ez a függvény legalább $t(phrases.slotCount, {\"count\": {{expected}} }) igényel, te viszont $t(phrases.inputCount, {\"count\": {{got}} }) adtál meg Jikinek hozzá.",
       "InvalidNumberOfArguments_range": "Ennek a függvénynek {{min}} és {{max}} közötti számú bemeneti nyílása van, te viszont $t(phrases.inputCount, {\"count\": {{got}} }) adtál meg Jikinek hozzá.",
@@ -144,8 +147,7 @@
       "InWithArrayNotAllowed": "Bár az `in` kulcsszó tömbökkel is használható, ez egy haladóbb funkció. Egyelőre használd csak szótárakkal.",
       "ClassNotFound": "A `{{name}}` osztály nincs definiálva.",
       "PropertyNotFoundOnInstance": "A `{{property}}` tulajdonság nem létezik a `{{className}}` osztály példányain.",
-      "UnexpectedUncalledFunction": "Hivatkoztál a `{{name}}` függvényre, de valójában nem használtad. Nem felejtetted el a `()` jelet a végéről?",
-      "InvalidNumberOfArguments_none": "A `{{function}}()` függvény nem vár semmit a zárójelei között, ezért oda nem kerülhet `{{args}}`. Próbáld meg egyszerűen így írni: `{{function}}()`."
+      "UnexpectedUncalledFunction": "Hivatkoztál a `{{name}}` függvényre, de valójában nem használtad. Nem felejtetted el a `()` jelet a végéről?"
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "A `{{lexeme}}` funkció a jelenlegi szinteden még nem érhető el.",

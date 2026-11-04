@@ -23,10 +23,12 @@
       "MissingRightBraceAfterBlock": "ブロック文のあとに閉じ波括弧`}`がありません。",
       "MissingRightBraceInTemplateLiteral": "Jikiは、このテンプレートリテラルの中で閉じ波括弧（`}`）を見つけられませんでした。書き忘れや打ちまちがいがないか確認してみましょう。正しい形は``` `...${...}...` ```です。",
       "MissingRightBracketInArray": "配列を閉じるための閉じ角括弧`]`がありません。",
+      "MissingCommaBetweenArrayElements": "この配列の要素と要素の間に、`,`を書き忘れていませんか？",
       "MissingRightBracketInMemberAccess": "配列のインデックスのあとに閉じ角括弧`]`がありません。",
       "MissingRightParenthesisAfterExpression": "式のあとに閉じ括弧`)`がありません。",
       "MissingRightParenthesisAfterIfCondition": "`if`の条件のあとに閉じ括弧`)`がありません。",
       "MissingRightParenthesisAfterFunctionCall": "{{function}}関数を呼び出すときに、閉じ括弧`)`を忘れていませんか？",
+      "MissingCommaBetweenFunctionArguments": "{{function}}関数を呼び出すときに、入力と入力の間に`,`を書き忘れていませんか？",
       "MissingEndOfLine": "Jikiは、`{{previous}}`のあとに`{{current}}`が来るとは思っていませんでした。",
       "MissingVariableName": "宣言に変数名がありません。`let`のあとには名前を書く必要があります。",
       "MultipleStatementsPerLine": "Jikiでは、1行に書ける文は1つだけです。複数の文をセミコロンで区切ることはできません。2つ目の文は、別の行に書いてください。",
@@ -131,6 +133,7 @@
       "UnaryTypeCoercionNotAllowed": "型の自動変換はできません。`{{operator}}`演算子は{{operand}}には使えません。",
       "ComparisonRequiresNumber": "`{{operator}}`演算子は、両方の値が数値である必要があります。",
       "NodeNotAllowed": "{{nodeType}}は、今の学習レベルではまだ使えません。",
+      "InvalidNumberOfArguments_none": "`{{function}}()`関数は括弧の中に何も必要としないので、そこに`{{args}}`を入れることはできません。`{{function}}()`とだけ書いてみましょう。",
       "InvalidNumberOfArguments_exact": "この関数には$t(phrases.slotCount, {\"count\": {{expected}} })がありますが、Jikiに渡されたのは$t(phrases.inputCount, {\"count\": {{got}} })です。",
       "InvalidNumberOfArguments_atLeast": "この関数には少なくとも$t(phrases.slotCount, {\"count\": {{expected}} })が必要ですが、Jikiに渡されたのは$t(phrases.inputCount, {\"count\": {{got}} })です。",
       "InvalidNumberOfArguments_range": "この関数には{{min}}から{{max}}個の差し込み口がありますが、Jikiに渡されたのは$t(phrases.inputCount, {\"count\": {{got}} })です。",
@@ -144,8 +147,7 @@
       "InWithArrayNotAllowed": "`in`キーワードは配列にも使えますが、これはもっと高度な機能です。今はまだ、辞書でだけ使うようにしましょう。",
       "ClassNotFound": "クラス`{{name}}`は定義されていません。",
       "PropertyNotFoundOnInstance": "`{{className}}`のインスタンスに、プロパティ`{{property}}`は存在しません。",
-      "UnexpectedUncalledFunction": "関数`{{name}}`を参照していますが、実際には使っていません。最後に`()`を付け忘れていませんか？",
-      "InvalidNumberOfArguments_none": "`{{function}}()`関数は括弧の中に何も必要としないので、そこに`{{args}}`を入れることはできません。`{{function}}()`とだけ書いてみましょう。"
+      "UnexpectedUncalledFunction": "関数`{{name}}`を参照していますが、実際には使っていません。最後に`()`を付け忘れていませんか？"
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "`{{lexeme}}`という機能は、今のレベルではまだ使えません。",

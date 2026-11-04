@@ -23,10 +23,12 @@
       "MissingRightBraceAfterBlock": "ব্লক স্টেটমেন্টের পরে শেষের বন্ধনী `}` নেই।",
       "MissingRightBraceInTemplateLiteral": "এই টেমপ্লেট লিটারালে জিকি কোনো শেষের বন্ধনী (`}`) খুঁজে পায়নি। আপনি সেটি বাদ দিয়েছেন নাকি লিখতে ভুল করেছেন, দেখে নিন। সঠিক গঠনটি হলো ``` `...${...}...` ```।",
       "MissingRightBracketInArray": "অ্যারেটি বন্ধ করার জন্য শেষের বন্ধনী `]` নেই।",
+      "MissingCommaBetweenArrayElements": "এই অ্যারেটির আইটেমগুলোর মাঝে কি আপনি কমা `,` দিতে ভুলে গেছেন?",
       "MissingRightBracketInMemberAccess": "অ্যারে ইনডেক্সের পরে শেষের বন্ধনী `]` নেই।",
       "MissingRightParenthesisAfterExpression": "এক্সপ্রেশনের পরে শেষের বন্ধনী `)` নেই।",
       "MissingRightParenthesisAfterIfCondition": "if-এর শর্তের পরে শেষের বন্ধনী `)` নেই।",
       "MissingRightParenthesisAfterFunctionCall": "{{function}} ফাংশনটি কল করার সময় আপনি কি শেষের বন্ধনী `)` দিতে ভুলে গেছেন?",
+      "MissingCommaBetweenFunctionArguments": "{{function}} ফাংশনটি কল করার সময় ইনপুটগুলোর মাঝে কি আপনি কমা `,` দিতে ভুলে গেছেন?",
       "MissingEndOfLine": "জিকি আশা করেনি যে `{{previous}}`-এর পরে এখানে `{{current}}` আসবে।",
       "MissingVariableName": "ডিক্লারেশনে ভ্যারিয়েবলের নাম নেই। `let`-এর পরে আপনাকে একটি নাম দিতে হবে।",
       "MultipleStatementsPerLine": "জিকিতে প্রতি লাইনে শুধু একটি স্টেটমেন্ট লেখা যায়। সেমিকোলন দিয়ে একাধিক স্টেটমেন্ট আলাদা করা যায় না। অনুগ্রহ করে দ্বিতীয় স্টেটমেন্টটি আলাদা একটি লাইনে লিখুন।",
@@ -131,6 +133,7 @@
       "UnaryTypeCoercionNotAllowed": "স্বয়ংক্রিয় টাইপ রূপান্তর করা যায় না: `{{operator}}` অপারেটরটি {{operand}}-এর ওপর প্রয়োগ করা যায় না।",
       "ComparisonRequiresNumber": "`{{operator}}` অপারেটরের জন্য দুটি মানকেই সংখ্যা হতে হবে।",
       "NodeNotAllowed": "আপনার বর্তমান শেখার লেভেলে {{nodeType}} ব্যবহার করা যায় না।",
+      "InvalidNumberOfArguments_none": "`{{function}}()` ফাংশনটি তার বন্ধনীর ভেতরে কোনো কিছু নেয় না, তাই আপনি সেখানে `{{args}}` দিতে পারবেন না। শুধু `{{function}}()` লিখে দেখুন।",
       "InvalidNumberOfArguments_exact": "এই ফাংশনটিতে $t(phrases.slotCount, {\"count\": {{expected}} }) আছে, কিন্তু জিকিকে এর সাথে ব্যবহারের জন্য আপনি $t(phrases.inputCount, {\"count\": {{got}} }) দিয়েছেন।",
       "InvalidNumberOfArguments_atLeast": "এই ফাংশনটির জন্য কমপক্ষে $t(phrases.slotCount, {\"count\": {{expected}} }) দরকার, কিন্তু জিকিকে এর সাথে ব্যবহারের জন্য আপনি $t(phrases.inputCount, {\"count\": {{got}} }) দিয়েছেন।",
       "InvalidNumberOfArguments_range": "এই ফাংশনটিতে {{min}} থেকে {{max}}টি ইনপুট স্লট আছে, কিন্তু জিকিকে এর সাথে ব্যবহারের জন্য আপনি $t(phrases.inputCount, {\"count\": {{got}} }) দিয়েছেন।",
@@ -144,8 +147,7 @@
       "InWithArrayNotAllowed": "`in` কিওয়ার্ডটি অ্যারের সাথেও ব্যবহার করা গেলেও এটি একটু অ্যাডভান্সড ফিচার। আপাতত এটি শুধু ডিকশনারির সাথেই ব্যবহার করুন।",
       "ClassNotFound": "`{{name}}` ক্লাসটি ডিফাইন করা হয়নি।",
       "PropertyNotFoundOnInstance": "`{{className}}`-এর ইনস্ট্যান্সে `{{property}}` প্রপার্টিটি নেই।",
-      "UnexpectedUncalledFunction": "আপনি `{{name}}` ফাংশনটির উল্লেখ করেছেন, কিন্তু আসলে সেটি ব্যবহার করেননি। আপনি কি শেষে `()` যোগ করতে ভুলে গেছেন?",
-      "InvalidNumberOfArguments_none": "`{{function}}()` ফাংশনটি তার বন্ধনীর ভেতরে কোনো কিছু নেয় না, তাই আপনি সেখানে `{{args}}` দিতে পারবেন না। শুধু `{{function}}()` লিখে দেখুন।"
+      "UnexpectedUncalledFunction": "আপনি `{{name}}` ফাংশনটির উল্লেখ করেছেন, কিন্তু আসলে সেটি ব্যবহার করেননি। আপনি কি শেষে `()` যোগ করতে ভুলে গেছেন?"
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "`{{lexeme}}` ফিচারটি আপনার বর্তমান লেভেলে এখনো পাওয়া যাচ্ছে না।",

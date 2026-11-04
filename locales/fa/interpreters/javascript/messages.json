@@ -23,10 +23,12 @@
       "MissingRightBraceAfterBlock": "آکولاد بسته `}` بعد از دستور بلوک فراموش شده است.",
       "MissingRightBraceInTemplateLiteral": "جیکی نتوانست یک آکولاد بسته (`}`) در این رشته‌ی قالب پیدا کند. بررسی کنید که شاید جا انداخته یا اشتباه تایپی داشته باشید. شکل صحیح ``` `...${...}...` ``` است.",
       "MissingRightBracketInArray": "کروشه بسته `]` برای بستن زنجیر فراموش شده است.",
+      "MissingCommaBetweenArrayElements": "آیا فراموش کردید بین عنصرهای این آرایه ویرگول `,` بگذارید؟",
       "MissingRightBracketInMemberAccess": "کروشه بسته `]` بعد از اندیس زنجیر فراموش شده است.",
       "MissingRightParenthesisAfterExpression": "پرانتز بسته `)` بعد از عبارت فراموش شده است.",
       "MissingRightParenthesisAfterIfCondition": "پرانتز بسته `)` بعد از شرط if فراموش شده است.",
       "MissingRightParenthesisAfterFunctionCall": "آیا هنگام فراخوانی تابع {{function}}، پرانتز بسته `)` را فراموش کردید؟",
+      "MissingCommaBetweenFunctionArguments": "آیا فراموش کردید هنگام فراخوانی تابع {{function}} بین ورودی‌ها ویرگول `,` بگذارید؟",
       "MissingEndOfLine": "جیکی انتظار نداشت `{{current}}` اینجا بعد از `{{previous}}` ظاهر شود.",
       "MissingVariableName": "نام متغیر در تعریف فراموش شده است. باید بعد از `let` یک نام ارائه دهید.",
       "MultipleStatementsPerLine": "در جیکی، فقط می‌توانید یک دستور در هر خط قرار دهید. نمی‌توانید چند دستور را با نقطه‌ویرگول جدا کنید. لطفاً دستور دوم را در خط خودش بگذارید.",
@@ -131,6 +133,7 @@
       "UnaryTypeCoercionNotAllowed": "تبدیل اجباری نوع مجاز نیست: عملگر `{{operator}}` نمی‌تواند روی یک {{operand}} اعمال شود.",
       "ComparisonRequiresNumber": "عملگر `{{operator}}` نیاز دارد هر دو مقدار عدد باشند.",
       "NodeNotAllowed": "{{nodeType}} در سطح یادگیری فعلی شما مجاز نیست.",
+      "InvalidNumberOfArguments_none": "تابع `{{function}}()` انتظار ندارد چیزی داخل پرانتزهایش باشد، بنابراین نمی‌توانید `{{args}}` را آنجا بگذارید. کافی است فقط `{{function}}()` را بنویسید.",
       "InvalidNumberOfArguments_exact": "این تابع $t(phrases.slotCount, {\"count\": {{expected}} }) دارد اما شما $t(phrases.inputCount, {\"count\": {{got}} }) برای جیکی فراهم کردید تا با آن استفاده کند.",
       "InvalidNumberOfArguments_atLeast": "این تابع حداقل $t(phrases.slotCount, {\"count\": {{expected}} }) نیاز دارد اما شما $t(phrases.inputCount, {\"count\": {{got}} }) برای جیکی فراهم کردید تا با آن استفاده کند.",
       "InvalidNumberOfArguments_range": "این تابع بین {{min}} و {{max}} دهانه ورودی دارد اما شما $t(phrases.inputCount, {\"count\": {{got}} }) برای جیکی فراهم کردید تا با آن استفاده کند.",
@@ -144,8 +147,7 @@
       "InWithArrayNotAllowed": "اگرچه کلیدواژه‌ی `in` را می‌توان با زنجیرها استفاده کرد، اما یک ویژگی پیشرفته‌تر است. در حال حاضر، فقط با دیکشنری‌ها از آن استفاده کنید.",
       "ClassNotFound": "کلاس `{{name}}` تعریف نشده است.",
       "PropertyNotFoundOnInstance": "ویژگی `{{property}}` روی نمونه‌های `{{className}}` وجود ندارد.",
-      "UnexpectedUncalledFunction": "به تابع `{{name}}` اشاره کردید اما در واقع از آن استفاده نکردید. آیا فراموش کردید `()` را در انتها اضافه کنید؟",
-      "InvalidNumberOfArguments_none": "تابع `{{function}}()` انتظار ندارد چیزی داخل پرانتزهایش باشد، بنابراین نمی‌توانید `{{args}}` را آنجا بگذارید. کافی است فقط `{{function}}()` را بنویسید."
+      "UnexpectedUncalledFunction": "به تابع `{{name}}` اشاره کردید اما در واقع از آن استفاده نکردید. آیا فراموش کردید `()` را در انتها اضافه کنید؟"
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "ویژگی `{{lexeme}}` هنوز در سطح فعلی شما در دسترس نیست.",

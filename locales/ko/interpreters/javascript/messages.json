@@ -23,10 +23,12 @@
       "MissingRightBraceAfterBlock": "블록 문 뒤에 닫는 중괄호 `}`가 없어요.",
       "MissingRightBraceInTemplateLiteral": "이 템플릿 리터럴에서 닫는 중괄호(`}`)를 찾을 수 없어요. 빠뜨렸거나 오타가 났는지 확인해 보세요. 올바른 형태는 ``` `...${...}...` ```이에요.",
       "MissingRightBracketInArray": "배열을 닫는 `]`가 없어요.",
+      "MissingCommaBetweenArrayElements": "혹시 이 배열의 항목 사이에 쉼표 `,`를 빠뜨리지 않았나요?",
       "MissingRightBracketInMemberAccess": "배열 인덱스 뒤에 닫는 대괄호 `]`가 없어요.",
       "MissingRightParenthesisAfterExpression": "표현식 뒤에 닫는 괄호 `)`가 없어요.",
       "MissingRightParenthesisAfterIfCondition": "`if` 조건 뒤에 닫는 괄호 `)`가 없어요.",
       "MissingRightParenthesisAfterFunctionCall": "{{function}} 함수를 호출할 때 닫는 괄호 `)`를 잊으셨나요?",
+      "MissingCommaBetweenFunctionArguments": "혹시 {{function}} 함수를 호출할 때 입력값 사이에 쉼표 `,`를 빠뜨리지 않았나요?",
       "MissingEndOfLine": "Jiki가 `{{previous}}` 뒤에 `{{current}}`이 여기 나타날 거라고 예상하지 못했어요.",
       "MissingVariableName": "변수 선언에 변수명이 빠졌어요. `let` 뒤에 이름을 반드시 적어야 해요.",
       "MultipleStatementsPerLine": "Jiki에서는 한 줄에 하나의 문만 쓸 수 있어요. 세미콜론으로 여러 문을 구분할 수 없어요. 두 번째 문은 다음 줄에 따로 적어주세요.",
@@ -131,6 +133,7 @@
       "UnaryTypeCoercionNotAllowed": "타입 강제 변환을 할 수 없어요: `{{operator}}` 연산자는 {{operand}}에 적용할 수 없어요.",
       "ComparisonRequiresNumber": "`{{operator}}` 연산자는 두 값이 모두 숫자여야 해요.",
       "NodeNotAllowed": "{{nodeType}}은(는) 현재 학습 레벨에서 허용되지 않아요.",
+      "InvalidNumberOfArguments_none": "`{{function}}()` 함수는 괄호 안에 아무것도 받지 않아요. 그래서 `{{args}}` 같은 값은 거기에 넣을 수 없어요. 그냥 `{{function}}()`라고 써 봐요.",
       "InvalidNumberOfArguments_exact": "이 함수에는 $t(phrases.slotCount, {\"count\": {{expected}} })이(가) 있지만, Jiki가 사용할 $t(phrases.inputCount, {\"count\": {{got}} })을(를) 제공했어요.",
       "InvalidNumberOfArguments_atLeast": "이 함수에는 최소 $t(phrases.slotCount, {\"count\": {{expected}} })이(가) 필요하지만, Jiki가 사용할 $t(phrases.inputCount, {\"count\": {{got}} })을(를) 제공했어요.",
       "InvalidNumberOfArguments_range": "이 함수에는 {{min}}개에서 {{max}}개 사이의 투입구가 있지만, Jiki가 사용할 $t(phrases.inputCount, {\"count\": {{got}} })을(를) 제공했어요.",
@@ -144,8 +147,7 @@
       "InWithArrayNotAllowed": "`in` 키워드는 배열과 함께 사용할 수 있지만, 더 고급 기능이에요. 지금은 딕셔너리에서만 사용하는 데 집중해 주세요.",
       "ClassNotFound": "클래스 `{{name}}`이(가) 정의되지 않았어요.",
       "PropertyNotFoundOnInstance": "`{{className}}`의 인스턴스에는 `{{property}}` 속성이 존재하지 않아요.",
-      "UnexpectedUncalledFunction": "`{{name}}` 함수를 참조했지만 실제로 사용하지 않았어요. 끝에 `()`를 붙이는 걸 잊으셨나요?",
-      "InvalidNumberOfArguments_none": "`{{function}}()` 함수는 괄호 안에 아무것도 받지 않아요. 그래서 `{{args}}` 같은 값은 거기에 넣을 수 없어요. 그냥 `{{function}}()`라고 써 봐요."
+      "UnexpectedUncalledFunction": "`{{name}}` 함수를 참조했지만 실제로 사용하지 않았어요. 끝에 `()`를 붙이는 걸 잊으셨나요?"
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "`{{lexeme}}` 기능은 아직 현재 레벨에서 사용할 수 없어요.",

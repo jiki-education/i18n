@@ -23,10 +23,12 @@
       "MissingRightBraceAfterBlock": "Бракує закривної фігурної дужки `}` після блоку коду.",
       "MissingRightBraceInTemplateLiteral": "Jiki не знайшов закривної фігурної дужки (`}`) у цьому шаблонному рядку. Перевірте, чи її не пропущено і чи немає одруку. Правильна форма: ``` `...${...}...` ```.",
       "MissingRightBracketInArray": "Бракує закривної квадратної дужки `]`, щоб закрити масив.",
+      "MissingCommaBetweenArrayElements": "Можливо, ми забули кому `,` між елементами цього масиву?",
       "MissingRightBracketInMemberAccess": "Бракує закривної квадратної дужки `]` після індексу масиву.",
       "MissingRightParenthesisAfterExpression": "Бракує закривної дужки `)` після виразу.",
       "MissingRightParenthesisAfterIfCondition": "Бракує закривної дужки `)` після умови if.",
       "MissingRightParenthesisAfterFunctionCall": "Здається, під час виклику функції {{function}} пропущено закривну дужку `)`.",
+      "MissingCommaBetweenFunctionArguments": "Можливо, ми забули кому `,` між вхідними даними, коли викликаємо функцію {{function}}?",
       "MissingEndOfLine": "Jiki не очікував, що `{{current}}` зʼявиться тут після `{{previous}}`.",
       "MissingVariableName": "В оголошенні бракує назви змінної. Після `let` потрібно вказати назву.",
       "MultipleStatementsPerLine": "У Jiki на одному рядку може бути лише одна інструкція. Розділяти кілька інструкцій крапкою з комою не можна. Перенесіть, будь ласка, другу інструкцію на окремий рядок.",
@@ -131,6 +133,7 @@
       "UnaryTypeCoercionNotAllowed": "Неявне перетворення типів не дозволене: оператор `{{operator}}` не можна застосувати до {{operand}}.",
       "ComparisonRequiresNumber": "Оператор `{{operator}}` вимагає, щоб обидва значення були числами.",
       "NodeNotAllowed": "{{nodeType}} не дозволено на поточному рівні навчання.",
+      "InvalidNumberOfArguments_none": "Функція `{{function}}()` не приймає нічого в дужках, тож туди не можна вписати `{{args}}`. Спробуймо просто написати `{{function}}()`.",
       "InvalidNumberOfArguments_exact": "У цієї функції $t(phrases.slotCount, {\"count\": {{expected}} }), але Jiki отримав для роботи з нею $t(phrases.inputCount, {\"count\": {{got}} }).",
       "InvalidNumberOfArguments_atLeast": "Цій функції потрібно щонайменше $t(phrases.slotCount, {\"count\": {{expected}} }), але Jiki отримав для роботи з нею $t(phrases.inputCount, {\"count\": {{got}} }).",
       "InvalidNumberOfArguments_range": "У цієї функції від {{min}} до {{max}} вхідних щілин, але Jiki отримав для роботи з нею $t(phrases.inputCount, {\"count\": {{got}} }).",
@@ -144,8 +147,7 @@
       "InWithArrayNotAllowed": "Хоча ключове слово `in` можна використовувати з масивами, це складніша можливість. Поки що використовуйте його лише зі словниками.",
       "ClassNotFound": "Клас `{{name}}` не визначено.",
       "PropertyNotFoundOnInstance": "Властивості `{{property}}` не існує в екземплярів класу `{{className}}`.",
-      "UnexpectedUncalledFunction": "Тут згадано функцію `{{name}}`, але насправді її не використано. Здається, у кінці бракує `()`.",
-      "InvalidNumberOfArguments_none": "Функція `{{function}}()` не приймає нічого в дужках, тож туди не можна вписати `{{args}}`. Спробуймо просто написати `{{function}}()`."
+      "UnexpectedUncalledFunction": "Тут згадано функцію `{{name}}`, але насправді її не використано. Здається, у кінці бракує `()`."
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "Можливість `{{lexeme}}` поки що недоступна на поточному рівні.",

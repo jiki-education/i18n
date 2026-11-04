@@ -23,10 +23,12 @@
       "MissingRightBraceAfterBlock": "Λείπει το δεξί άγκιστρο `}` μετά την εντολή μπλοκ.",
       "MissingRightBraceInTemplateLiteral": "Ο Jiki δεν μπόρεσε να βρει ένα δεξί άγκιστρο (`}`) σε αυτό το template literal. Έλεγξε μήπως το ξέχασες ή έκανες τυπογραφικό λάθος. Η σωστή μορφή είναι ``` `...${...}...` ```.",
       "MissingRightBracketInArray": "Λείπει η δεξιά αγκύλη `]` για να κλείσει ο πίνακας.",
+      "MissingCommaBetweenArrayElements": "Μήπως ξέχασες ένα κόμμα `,` ανάμεσα στα στοιχεία αυτού του πίνακα;",
       "MissingRightBracketInMemberAccess": "Λείπει η δεξιά αγκύλη `]` μετά τη θέση του πίνακα.",
       "MissingRightParenthesisAfterExpression": "Λείπει η δεξιά παρένθεση `)` μετά την έκφραση.",
       "MissingRightParenthesisAfterIfCondition": "Λείπει η δεξιά παρένθεση `)` μετά τη συνθήκη της if.",
       "MissingRightParenthesisAfterFunctionCall": "Μήπως ξέχασες τη δεξιά παρένθεση `)` όταν καλείς τη συνάρτηση {{function}};",
+      "MissingCommaBetweenFunctionArguments": "Μήπως ξέχασες ένα κόμμα `,` ανάμεσα στα ορίσματα όταν κάλεσες τη συνάρτηση {{function}};",
       "MissingEndOfLine": "Ο Jiki δεν περίμενε να εμφανιστεί το `{{current}}` εδώ μετά το `{{previous}}`.",
       "MissingVariableName": "Λείπει το όνομα μεταβλητής στη δήλωση. Πρέπει να δώσεις ένα όνομα μετά το `let`.",
       "MultipleStatementsPerLine": "Στο Jiki, μπορείς να βάλεις μόνο μία εντολή ανά γραμμή. Δεν μπορείς να διαχωρίσεις πολλαπλές εντολές με ερωτηματικά. Παρακαλώ βάλε τη δεύτερη εντολή στη δική της γραμμή.",
@@ -131,6 +133,7 @@
       "UnaryTypeCoercionNotAllowed": "Η εξαναγκασμένη μετατροπή τύπου δεν επιτρέπεται: ο τελεστής `{{operator}}` δεν μπορεί να εφαρμοστεί σε ένα {{operand}}.",
       "ComparisonRequiresNumber": "Ο τελεστής `{{operator}}` απαιτεί και οι δύο τιμές να είναι αριθμοί.",
       "NodeNotAllowed": "Το {{nodeType}} δεν επιτρέπεται στο τρέχον επίπεδο μάθησής σου.",
+      "InvalidNumberOfArguments_none": "Η συνάρτηση `{{function}}()` δεν περιμένει τίποτα μέσα στις παρενθέσεις της, οπότε δεν μπορείς να βάλεις `{{args}}` εκεί. Δοκίμασε να γράψεις απλώς `{{function}}()`.",
       "InvalidNumberOfArguments_exact": "Αυτή η συνάρτηση έχει $t(phrases.slotCount, {\"count\": {{expected}} }) αλλά έδωσες $t(phrases.inputCount, {\"count\": {{got}} }) για να τα χρησιμοποιήσει ο Jiki.",
       "InvalidNumberOfArguments_atLeast": "Αυτή η συνάρτηση χρειάζεται τουλάχιστον $t(phrases.slotCount, {\"count\": {{expected}} }) αλλά έδωσες $t(phrases.inputCount, {\"count\": {{got}} }) για να τα χρησιμοποιήσει ο Jiki.",
       "InvalidNumberOfArguments_range": "Αυτή η συνάρτηση έχει μεταξύ {{min}} και {{max}} θυρίδες εισόδου, αλλά έδωσες $t(phrases.inputCount, {\"count\": {{got}} }) για να τα χρησιμοποιήσει ο Jiki.",
@@ -144,8 +147,7 @@
       "InWithArrayNotAllowed": "Αν και η λέξη-κλειδί `in` μπορεί να χρησιμοποιηθεί με πίνακες, είναι μια πιο προχωρημένη δυνατότητα. Για την ώρα, περιορίσου στο να τη χρησιμοποιείς μόνο με λεξικά.",
       "ClassNotFound": "Η κλάση `{{name}}` δεν έχει οριστεί.",
       "PropertyNotFoundOnInstance": "Η ιδιότητα `{{property}}` δεν υπάρχει στα στιγμιότυπα της `{{className}}`.",
-      "UnexpectedUncalledFunction": "Αναφέρθηκες στη συνάρτηση `{{name}}` αλλά στην πραγματικότητα δεν τη χρησιμοποίησες. Μήπως ξέχασες να προσθέσεις `()` στο τέλος;",
-      "InvalidNumberOfArguments_none": "Η συνάρτηση `{{function}}()` δεν περιμένει τίποτα μέσα στις παρενθέσεις της, οπότε δεν μπορείς να βάλεις `{{args}}` εκεί. Δοκίμασε να γράψεις απλώς `{{function}}()`."
+      "UnexpectedUncalledFunction": "Αναφέρθηκες στη συνάρτηση `{{name}}` αλλά στην πραγματικότητα δεν τη χρησιμοποίησες. Μήπως ξέχασες να προσθέσεις `()` στο τέλος;"
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "Η δυνατότητα `{{lexeme}}` δεν είναι ακόμη διαθέσιμη στο τρέχον επίπεδό σου.",

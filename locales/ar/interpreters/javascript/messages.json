@@ -23,10 +23,12 @@
       "MissingRightBraceAfterBlock": "قوس الإغلاق المعقوف `}` مفقود بعد عبارة الكتلة.",
       "MissingRightBraceInTemplateLiteral": "لم يجد Jiki قوس إغلاق معقوف (`}`) في سلسلة القالب هذه. تحقق من أنك لم تنسه أو تخطئ في كتابته. الشكل الصحيح هو ``` `...${...}...` ```.",
       "MissingRightBracketInArray": "قوس الإغلاق المربع `]` مفقود لإغلاق المصفوفة.",
+      "MissingCommaBetweenArrayElements": "هل نسيت فاصلة `,` بين العناصر في هذه المصفوفة؟",
       "MissingRightBracketInMemberAccess": "قوس الإغلاق المربع `]` مفقود بعد فهرس المصفوفة.",
       "MissingRightParenthesisAfterExpression": "قوس الإغلاق الهلالي `)` مفقود بعد التعبير.",
       "MissingRightParenthesisAfterIfCondition": "قوس الإغلاق الهلالي `)` مفقود بعد شرط `if`.",
       "MissingRightParenthesisAfterFunctionCall": "هل نسيت قوس الإغلاق الهلالي `)` عند استدعاء الدالة {{function}}؟",
+      "MissingCommaBetweenFunctionArguments": "هل نسيت فاصلة `,` بين المدخلات عند استدعاء الدالة {{function}}؟",
       "MissingEndOfLine": "لم يكن Jiki يتوقع ظهور `{{current}}` هنا بعد `{{previous}}`.",
       "MissingVariableName": "اسم المتغير مفقود في التعريف. يجب أن تعطي اسمًا بعد `let`.",
       "MultipleStatementsPerLine": "في Jiki، يمكنك وضع عبارة واحدة فقط في كل سطر. لا يمكنك الفصل بين عدة عبارات بفاصلة منقوطة. من فضلك ضع العبارة الثانية في سطر منفصل.",
@@ -131,6 +133,7 @@
       "UnaryTypeCoercionNotAllowed": "لا يُسمح بالتحويل القسري للنوع: لا يمكن تطبيق العامل `{{operator}}` على `{{operand}}`.",
       "ComparisonRequiresNumber": "يتطلب العامل `{{operator}}` أن تكون القيمتان عددين.",
       "NodeNotAllowed": "`{{nodeType}}` غير مسموح به في مستوى تعلّمك الحالي.",
+      "InvalidNumberOfArguments_none": "دالة `{{function}}()` لا تتوقع أي شيء داخل القوسين الهلاليين، لذا لا يمكنك وضع `{{args}}` هناك. جرّب فقط كتابة `{{function}}()`.",
       "InvalidNumberOfArguments_exact": "هذه الدالة لديها $t(phrases.slotCount, {\"count\": {{expected}} }) لكنك قدّمت $t(phrases.inputCount, {\"count\": {{got}} }) ليستخدمها Jiki.",
       "InvalidNumberOfArguments_atLeast": "تحتاج هذه الدالة إلى ما لا يقل عن $t(phrases.slotCount, {\"count\": {{expected}} })، لكنك قدّمت $t(phrases.inputCount, {\"count\": {{got}} }) ليستخدمها Jiki.",
       "InvalidNumberOfArguments_range": "هذه الدالة لديها ما بين {{min}} و{{max}} من فتحات الإدخال، لكنك قدّمت $t(phrases.inputCount, {\"count\": {{got}} }) ليستخدمها Jiki.",
@@ -144,8 +147,7 @@
       "InWithArrayNotAllowed": "رغم أن الكلمة المفتاحية `in` يمكن استخدامها مع المصفوفات، فإنها ميزة أكثر تقدمًا. في الوقت الحالي، التزم باستخدامها مع القواميس فقط.",
       "ClassNotFound": "الصنف `{{name}}` غير معرّف.",
       "PropertyNotFoundOnInstance": "الخاصية `{{property}}` غير موجودة في نسخ الصنف `{{className}}`.",
-      "UnexpectedUncalledFunction": "أشرت إلى الدالة `{{name}}` لكنك لم تستخدمها فعليًا. هل نسيت إضافة `()` في النهاية؟",
-      "InvalidNumberOfArguments_none": "دالة `{{function}}()` لا تتوقع أي شيء داخل القوسين الهلاليين، لذا لا يمكنك وضع `{{args}}` هناك. جرّب فقط كتابة `{{function}}()`."
+      "UnexpectedUncalledFunction": "أشرت إلى الدالة `{{name}}` لكنك لم تستخدمها فعليًا. هل نسيت إضافة `()` في النهاية؟"
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "ميزة `{{lexeme}}` غير متاحة بعد في مستواك الحالي.",

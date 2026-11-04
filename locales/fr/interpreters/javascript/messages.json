@@ -23,10 +23,12 @@
       "MissingRightBraceAfterBlock": "Il manque l'accolade fermante `}` après le bloc de code.",
       "MissingRightBraceInTemplateLiteral": "Jiki n'a pas trouvé d'accolade fermante (`}`) dans ce template literal. Vérifie si tu ne l'as pas oubliée ou fait une faute de frappe. La forme correcte est ``` `...${...}...` ```.",
       "MissingRightBracketInArray": "Il manque le crochet fermant `]` pour fermer le tableau.",
+      "MissingCommaBetweenArrayElements": "As-tu oublié une virgule `,` entre les éléments de ce tableau ?",
       "MissingRightBracketInMemberAccess": "Il manque le crochet fermant `]` après l'indice du tableau.",
       "MissingRightParenthesisAfterExpression": "Il manque la parenthèse fermante `)` après l'expression.",
       "MissingRightParenthesisAfterIfCondition": "Il manque la parenthèse fermante `)` après la condition du if.",
       "MissingRightParenthesisAfterFunctionCall": "As-tu oublié la parenthèse fermante `)` en appelant la fonction {{function}} ?",
+      "MissingCommaBetweenFunctionArguments": "As-tu oublié une virgule `,` entre les paramètres lors de l'appel de la fonction {{function}} ?",
       "MissingEndOfLine": "Jiki ne s'attendait pas à trouver `{{current}}` ici, après le `{{previous}}`.",
       "MissingVariableName": "Il manque le nom de la variable dans la déclaration. Tu dois fournir un nom après `let`.",
       "MultipleStatementsPerLine": "Dans Jiki, tu ne peux mettre qu'une seule instruction par ligne. Tu ne peux pas séparer plusieurs instructions par des points-virgules. Mets la deuxième instruction sur sa propre ligne.",
@@ -131,6 +133,7 @@
       "UnaryTypeCoercionNotAllowed": "La conversion implicite de types n'est pas autorisée : l'opérateur `{{operator}}` ne peut pas s'appliquer à une valeur de type {{operand}}.",
       "ComparisonRequiresNumber": "L'opérateur `{{operator}}` exige que les deux valeurs soient des nombres.",
       "NodeNotAllowed": "{{nodeType}} n'est pas autorisé à ton niveau d'apprentissage actuel.",
+      "InvalidNumberOfArguments_none": "La fonction `{{function}}()` n’attend rien entre ses parenthèses, donc tu ne peux pas y mettre `{{args}}`. Essaie simplement d’écrire `{{function}}()`.",
       "InvalidNumberOfArguments_exact": "Cette fonction prend $t(phrases.slotCount, {\"count\": {{expected}} }), mais $t(phrases.inputCount, {\"count\": {{got}} }) à Jiki.",
       "InvalidNumberOfArguments_atLeast": "Cette fonction a besoin d'au moins $t(phrases.slotCount, {\"count\": {{expected}} }), mais $t(phrases.inputCount, {\"count\": {{got}} }) à Jiki.",
       "InvalidNumberOfArguments_range": "Cette fonction prend entre {{min}} et {{max}} paramètres, mais $t(phrases.inputCount, {\"count\": {{got}} }) à Jiki.",
@@ -144,8 +147,7 @@
       "InWithArrayNotAllowed": "Même si le mot-clé `in` peut s'utiliser avec des tableaux, c'est une fonctionnalité plus avancée. Pour l'instant, contente-toi de l'utiliser avec des dictionnaires.",
       "ClassNotFound": "La classe `{{name}}` n'est pas définie.",
       "PropertyNotFoundOnInstance": "La propriété `{{property}}` n'existe pas sur les instances de `{{className}}`.",
-      "UnexpectedUncalledFunction": "Tu as fait référence à la fonction `{{name}}`, mais tu ne l'as pas vraiment utilisée. As-tu oublié d'ajouter `()` à la fin ?",
-      "InvalidNumberOfArguments_none": "La fonction `{{function}}()` n’attend rien entre ses parenthèses, donc tu ne peux pas y mettre `{{args}}`. Essaie simplement d’écrire `{{function}}()`."
+      "UnexpectedUncalledFunction": "Tu as fait référence à la fonction `{{name}}`, mais tu ne l'as pas vraiment utilisée. As-tu oublié d'ajouter `()` à la fin ?"
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "La fonctionnalité `{{lexeme}}` n'est pas encore disponible à ton niveau actuel.",

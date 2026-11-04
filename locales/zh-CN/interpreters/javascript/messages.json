@@ -23,10 +23,12 @@
       "MissingRightBraceAfterBlock": "代码块后面缺少右花括号`}`。",
       "MissingRightBraceInTemplateLiteral": "这个模板字符串里，Jiki 找不到右花括号（`}`）。检查一下是不是漏写了或者打错了。正确的形式是 ``` `...${...}...` ```。",
       "MissingRightBracketInArray": "缺少右方括号`]`，数组没有闭合。",
+      "MissingCommaBetweenArrayElements": "是不是忘了在这个数组的各项之间加逗号`,`？",
       "MissingRightBracketInMemberAccess": "数组下标后面缺少右方括号`]`。",
       "MissingRightParenthesisAfterExpression": "表达式后面缺少右括号`)`。",
       "MissingRightParenthesisAfterIfCondition": "`if`条件后面缺少右括号`)`。",
       "MissingRightParenthesisAfterFunctionCall": "调用 {{function}} 函数时，是不是忘了右括号`)`？",
+      "MissingCommaBetweenFunctionArguments": "调用 {{function}} 函数时，是不是忘了在各个输入之间加逗号`,`？",
       "MissingEndOfLine": "Jiki 没想到`{{previous}}`后面会出现`{{current}}`。",
       "MissingVariableName": "声明中缺少变量名。`let`后面必须写上变量名。",
       "MultipleStatementsPerLine": "在 Jiki 里，一行只能写一条语句。也不能用分号把多条语句分开。请把第二条语句单独放一行。",
@@ -131,6 +133,7 @@
       "UnaryTypeCoercionNotAllowed": "不允许进行类型转换：`{{operator}}`运算符不能用在 {{operand}} 上。",
       "ComparisonRequiresNumber": "`{{operator}}`运算符要求两边的值都是数字。",
       "NodeNotAllowed": "在你当前的学习关卡里不允许使用 {{nodeType}}。",
+      "InvalidNumberOfArguments_none": "`{{function}}()` 函数不需要在括号里放任何内容，所以不能把`{{args}}`放进去。试着只写`{{function}}()`。",
       "InvalidNumberOfArguments_exact": "这个函数有 $t(phrases.slotCount, {\"count\": {{expected}} })，但你给了它 $t(phrases.inputCount, {\"count\": {{got}} })。",
       "InvalidNumberOfArguments_atLeast": "这个函数至少需要 $t(phrases.slotCount, {\"count\": {{expected}} })，但你给了它 $t(phrases.inputCount, {\"count\": {{got}} })。",
       "InvalidNumberOfArguments_range": "这个函数的投入口数量在 {{min}} 到 {{max}} 之间，但你给了它 $t(phrases.inputCount, {\"count\": {{got}} })。",
@@ -144,8 +147,7 @@
       "InWithArrayNotAllowed": "虽然`in`关键字可以用在数组上，但那属于更高级的用法。现在先只用它来操作字典吧。",
       "ClassNotFound": "类`{{name}}`没有定义。",
       "PropertyNotFoundOnInstance": "`{{className}}`的实例上不存在`{{property}}`属性。",
-      "UnexpectedUncalledFunction": "你提到了`{{name}}`函数，但并没有真正调用它。是不是忘了在最后加上`()`？",
-      "InvalidNumberOfArguments_none": "`{{function}}()` 函数不需要在括号里放任何内容，所以不能把`{{args}}`放进去。试着只写`{{function}}()`。"
+      "UnexpectedUncalledFunction": "你提到了`{{name}}`函数，但并没有真正调用它。是不是忘了在最后加上`()`？"
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "`{{lexeme}}`功能在你当前的关卡里还不能使用。",

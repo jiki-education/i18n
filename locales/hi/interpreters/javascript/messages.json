@@ -23,10 +23,12 @@
       "MissingRightBraceAfterBlock": "ब्लॉक स्टेटमेंट के बाद बंद करने वाला ब्रेस `}` नहीं है।",
       "MissingRightBraceInTemplateLiteral": "Jiki को इस टेम्पलेट लिटरल में बंद करने वाला ब्रेस (`}`) नहीं मिला। जाँचिए कि कहीं आपने उसे छोड़ तो नहीं दिया या टाइपो तो नहीं है। सही आकार ``` `...${...}...` ``` है।",
       "MissingRightBracketInArray": "ऐरे को बंद करने के लिए `]` ब्रैकेट नहीं है।",
+      "MissingCommaBetweenArrayElements": "क्या आप इस ऐरे के एलिमेंट के बीच कॉमा `,` लगाना भूल गए?",
       "MissingRightBracketInMemberAccess": "ऐरे इंडेक्स के बाद बंद करने वाला ब्रैकेट `]` नहीं है।",
       "MissingRightParenthesisAfterExpression": "एक्सप्रेशन के बाद बंद करने वाला कोष्ठक `)` नहीं है।",
       "MissingRightParenthesisAfterIfCondition": "`if` की शर्त के बाद बंद करने वाला कोष्ठक `)` नहीं है।",
       "MissingRightParenthesisAfterFunctionCall": "क्या आप {{function}} फंक्शन को कॉल करते समय बंद करने वाला कोष्ठक `)` लगाना भूल गए?",
+      "MissingCommaBetweenFunctionArguments": "क्या {{function}} फंक्शन को कॉल करते समय आप इनपुट के बीच कॉमा `,` लगाना भूल गए?",
       "MissingEndOfLine": "Jiki को `{{previous}}` के बाद यहाँ `{{current}}` दिखने की उम्मीद नहीं थी।",
       "MissingVariableName": "डिक्लेरेशन में वेरिएबल का नाम नहीं है। `let` के बाद एक नाम देना ज़रूरी है।",
       "MultipleStatementsPerLine": "Jiki में, आप हर लाइन पर सिर्फ एक स्टेटमेंट रख सकते हैं। आप अर्धविराम लगाकर कई स्टेटमेंट अलग नहीं कर सकते। कृपया दूसरा स्टेटमेंट उसकी अपनी लाइन पर रखें।",
@@ -131,6 +133,7 @@
       "UnaryTypeCoercionNotAllowed": "टाइप कोएर्शन की अनुमति नहीं है: `{{operator}}` ऑपरेटर किसी {{operand}} पर लागू नहीं किया जा सकता।",
       "ComparisonRequiresNumber": "`{{operator}}` ऑपरेटर को दोनों वैल्यू संख्या होनी चाहिए।",
       "NodeNotAllowed": "{{nodeType}} आपके मौजूदा सीखने के लेवल पर अनुमति नहीं है।",
+      "InvalidNumberOfArguments_none": "`{{function}}()` फंक्शन अपने ब्रैकेट के अंदर कुछ भी नहीं लेता, इसलिए आप वहाँ `{{args}}` नहीं डाल सकते। बस `{{function}}()` लिखकर देखिए।",
       "InvalidNumberOfArguments_exact": "इस फंक्शन में $t(phrases.slotCount, {\"count\": {{expected}} }) हैं लेकिन आपने Jiki को इसके साथ इस्तेमाल करने के लिए $t(phrases.inputCount, {\"count\": {{got}} }) दिए।",
       "InvalidNumberOfArguments_atLeast": "इस फंक्शन को कम से कम $t(phrases.slotCount, {\"count\": {{expected}} }) चाहिए लेकिन आपने Jiki को इसके साथ इस्तेमाल करने के लिए $t(phrases.inputCount, {\"count\": {{got}} }) दिए।",
       "InvalidNumberOfArguments_range": "इस फंक्शन में {{min}} से {{max}} के बीच इनपुट स्लॉट हैं लेकिन आपने Jiki को इसके साथ इस्तेमाल करने के लिए $t(phrases.inputCount, {\"count\": {{got}} }) दिए।",
@@ -144,8 +147,7 @@
       "InWithArrayNotAllowed": "हालाँकि `in` कीवर्ड ऐरे के साथ इस्तेमाल किया जा सकता है, लेकिन यह एक ज़्यादा उन्नत सुविधा है। फिलहाल, इसे सिर्फ डिक्शनरी के साथ इस्तेमाल करें।",
       "ClassNotFound": "`{{name}}` क्लास परिभाषित नहीं है।",
       "PropertyNotFoundOnInstance": "प्रॉपर्टी `{{property}}` `{{className}}` के इंस्टेंस पर मौजूद नहीं है।",
-      "UnexpectedUncalledFunction": "आपने `{{name}}` फंक्शन का नाम लिखा लेकिन उसे वास्तव में इस्तेमाल नहीं किया। क्या आप अंत में `()` लगाना भूल गए?",
-      "InvalidNumberOfArguments_none": "`{{function}}()` फंक्शन अपने ब्रैकेट के अंदर कुछ भी नहीं लेता, इसलिए आप वहाँ `{{args}}` नहीं डाल सकते। बस `{{function}}()` लिखकर देखिए।"
+      "UnexpectedUncalledFunction": "आपने `{{name}}` फंक्शन का नाम लिखा लेकिन उसे वास्तव में इस्तेमाल नहीं किया। क्या आप अंत में `()` लगाना भूल गए?"
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "`{{lexeme}}` सुविधा अभी आपके मौजूदा लेवल पर उपलब्ध नहीं है।",

@@ -23,10 +23,12 @@
       "MissingRightBraceAfterBlock": "Fehlende schließende geschweifte Klammer `}` nach dem Block.",
       "MissingRightBraceInTemplateLiteral": "Jiki konnte in diesem Template-String keine schließende geschweifte Klammer (`}`) finden. Prüfe, ob du sie übersehen hast oder ob ein Tippfehler vorliegt. Die richtige Form ist ``` `...${...}...` ```.",
       "MissingRightBracketInArray": "Fehlende schließende eckige Klammer `]` zum Schließen des Arrays.",
+      "MissingCommaBetweenArrayElements": "Hast du ein Komma `,` zwischen den Elementen in diesem Array vergessen?",
       "MissingRightBracketInMemberAccess": "Fehlende schließende eckige Klammer `]` nach dem Array-Index.",
       "MissingRightParenthesisAfterExpression": "Fehlende schließende runde Klammer `)` nach dem Ausdruck.",
       "MissingRightParenthesisAfterIfCondition": "Fehlende schließende runde Klammer `)` nach der `if`-Bedingung.",
       "MissingRightParenthesisAfterFunctionCall": "Hast du beim Aufruf der Funktion {{function}} die schließende runde Klammer `)` vergessen?",
+      "MissingCommaBetweenFunctionArguments": "Hast du beim Aufruf der Funktion {{function}} ein Komma `,` zwischen den Eingabewerten vergessen?",
       "MissingEndOfLine": "Jiki hat nicht erwartet, dass `{{current}}` hier nach `{{previous}}` auftaucht.",
       "MissingVariableName": "Fehlender Variablenname in der Deklaration. Du musst nach `let` einen Namen angeben.",
       "MultipleStatementsPerLine": "In Jiki kannst du nur eine Anweisung pro Zeile schreiben. Du kannst mehrere Anweisungen nicht mit Semikolons trennen. Bitte setze die zweite Anweisung in eine eigene Zeile.",
@@ -131,6 +133,7 @@
       "UnaryTypeCoercionNotAllowed": "Typumwandlung ist nicht erlaubt: Der Operator `{{operator}}` lässt sich nicht auf einen Wert vom Typ {{operand}} anwenden.",
       "ComparisonRequiresNumber": "Der Operator `{{operator}}` erfordert, dass beide Werte Zahlen sind.",
       "NodeNotAllowed": "{{nodeType}} ist auf deinem aktuellen Lernlevel nicht erlaubt.",
+      "InvalidNumberOfArguments_none": "Die Funktion `{{function}}()` erwartet nichts in ihren runden Klammern, deshalb kannst du `{{args}}` dort nicht hineinschreiben. Schreib einfach nur `{{function}}()`.",
       "InvalidNumberOfArguments_exact": "Diese Funktion hat $t(phrases.slotCount, {\"count\": {{expected}} }), aber du hast Jiki $t(phrases.inputCount, {\"count\": {{got}} }) dafür gegeben.",
       "InvalidNumberOfArguments_atLeast": "Diese Funktion braucht mindestens $t(phrases.slotCount, {\"count\": {{expected}} }), aber du hast Jiki $t(phrases.inputCount, {\"count\": {{got}} }) dafür gegeben.",
       "InvalidNumberOfArguments_range": "Diese Funktion hat zwischen {{min}} und {{max}} Trichter, aber du hast Jiki $t(phrases.inputCount, {\"count\": {{got}} }) dafür gegeben.",
@@ -144,8 +147,7 @@
       "InWithArrayNotAllowed": "Das Schlüsselwort `in` kann zwar auch mit Arrays verwendet werden, aber das ist ein fortgeschrittenes Thema. Bleib vorerst dabei, es nur mit Wörterbüchern zu verwenden.",
       "ClassNotFound": "Die Klasse `{{name}}` ist nicht definiert.",
       "PropertyNotFoundOnInstance": "Die Eigenschaft `{{property}}` gibt es nicht bei Instanzen von `{{className}}`.",
-      "UnexpectedUncalledFunction": "Du hast auf die Funktion `{{name}}` verwiesen, sie aber nicht wirklich verwendet. Hast du vergessen, `()` am Ende anzuhängen?",
-      "InvalidNumberOfArguments_none": "Die Funktion `{{function}}()` erwartet nichts in ihren runden Klammern, deshalb kannst du `{{args}}` dort nicht hineinschreiben. Schreib einfach nur `{{function}}()`."
+      "UnexpectedUncalledFunction": "Du hast auf die Funktion `{{name}}` verwiesen, sie aber nicht wirklich verwendet. Hast du vergessen, `()` am Ende anzuhängen?"
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "Das Feature `{{lexeme}}` ist auf deinem aktuellen Lernlevel noch nicht verfügbar.",

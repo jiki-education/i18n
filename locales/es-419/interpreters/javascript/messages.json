@@ -23,10 +23,12 @@
       "MissingRightBraceAfterBlock": "Falta la llave de cierre `}` después de la sentencia de bloque.",
       "MissingRightBraceInTemplateLiteral": "Jiki no pudo encontrar una llave de cierre (`}`) en este literal de plantilla. Revisa en caso de que se te haya pasado o hayas cometido un error tipográfico. La forma correcta es ``` `...${...}...` ```.",
       "MissingRightBracketInArray": "Falta el corchete de cierre `]` para cerrar el array.",
+      "MissingCommaBetweenArrayElements": "¿Olvidaste una coma `,` entre los elementos de este array?",
       "MissingRightBracketInMemberAccess": "Falta el corchete de cierre `]` después del índice del array.",
       "MissingRightParenthesisAfterExpression": "Falta el paréntesis de cierre `)` después de la expresión.",
       "MissingRightParenthesisAfterIfCondition": "Falta el paréntesis de cierre `)` después de la condición del if.",
       "MissingRightParenthesisAfterFunctionCall": "¿Olvidaste el paréntesis de cierre `)` al llamar a la función {{function}}?",
+      "MissingCommaBetweenFunctionArguments": "¿Olvidaste una coma `,` entre los argumentos cuando llamaste a la función {{function}}?",
       "MissingEndOfLine": "Jiki no esperaba que `{{current}}` apareciera aquí después de `{{previous}}`.",
       "MissingVariableName": "Falta el nombre de la variable en la declaración. Debes proporcionar un nombre después de `let`.",
       "MultipleStatementsPerLine": "En Jiki, solo puedes poner una sentencia por línea. No puedes separar varias sentencias con punto y coma. Por favor coloca la segunda sentencia en su propia línea.",
@@ -131,6 +133,7 @@
       "UnaryTypeCoercionNotAllowed": "La coerción de tipos no está permitida: el operador `{{operator}}` no puede aplicarse a un {{operand}}.",
       "ComparisonRequiresNumber": "El operador `{{operator}}` requiere que ambos valores sean números.",
       "NodeNotAllowed": "{{nodeType}} no está permitido en tu nivel de aprendizaje actual.",
+      "InvalidNumberOfArguments_none": "La función `{{function}}()` no espera nada dentro de sus paréntesis, así que no puedes poner `{{args}}` ahí. Prueba escribiendo solo `{{function}}()`.",
       "InvalidNumberOfArguments_exact": "Esta función tiene $t(phrases.slotCount, {\"count\": {{expected}} }) pero proporcionaste $t(phrases.inputCount, {\"count\": {{got}} }) para que Jiki las use.",
       "InvalidNumberOfArguments_atLeast": "Esta función necesita al menos $t(phrases.slotCount, {\"count\": {{expected}} }) pero proporcionaste $t(phrases.inputCount, {\"count\": {{got}} }) para que Jiki las use.",
       "InvalidNumberOfArguments_range": "Esta función tiene entre {{min}} y {{max}} ranuras de entrada, pero proporcionaste $t(phrases.inputCount, {\"count\": {{got}} }) para que Jiki las use.",
@@ -144,8 +147,7 @@
       "InWithArrayNotAllowed": "Aunque la palabra clave `in` puede usarse con arrays, es una funcionalidad más avanzada. Por ahora, limítate a usarla solo con diccionarios.",
       "ClassNotFound": "La clase `{{name}}` no está definida.",
       "PropertyNotFoundOnInstance": "La propiedad `{{property}}` no existe en las instancias de `{{className}}`.",
-      "UnexpectedUncalledFunction": "Hiciste referencia a la función `{{name}}` pero en realidad no la usaste. ¿Olvidaste agregar `()` al final?",
-      "InvalidNumberOfArguments_none": "La función `{{function}}()` no espera nada dentro de sus paréntesis, así que no puedes poner `{{args}}` ahí. Prueba escribiendo solo `{{function}}()`."
+      "UnexpectedUncalledFunction": "Hiciste referencia a la función `{{name}}` pero en realidad no la usaste. ¿Olvidaste agregar `()` al final?"
     },
     "disabledLanguageFeature": {
       "DisabledFeatureExcludeListViolation": "La funcionalidad `{{lexeme}}` no está disponible aún en tu nivel actual.",
