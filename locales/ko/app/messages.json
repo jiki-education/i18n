@@ -99,7 +99,6 @@
     "loading": "불러오는 중...",
     "verifying": "확인 중...",
     "sending": "보내는 중...",
-    "perMonth": "/월",
     "validation": {
       "emailInvalid": "올바른 이메일 주소를 입력해 주세요",
       "passwordRequired": "비밀번호를 입력해 주세요",
@@ -171,7 +170,8 @@
       "shareOn": "{network}에 공유하기",
       "copyLink": "링크 복사",
       "copied": "링크를 복사했어요"
-    }
+    },
+    "perMonth": "/월"
   },
   "build": {
     "upcomingStreams": {
@@ -318,7 +318,7 @@
       "title": "설정",
       "description": "계정과 환경설정을 관리해요.",
       "tabAccount": "계정",
-      "tabSubscription": "구독",
+      "tabSubscription": "결제",
       "tabNotifications": "알림",
       "tabLearning": "학습",
       "tabDanger": "위험 구역"
@@ -395,6 +395,9 @@
       "columnMethod": "결제 수단",
       "downloadReceipt": "영수증 다운로드",
       "typeRecurring": "정기 결제",
+      "typePremiumUpgrade": "프리미엄 업그레이드",
+      "refunded": "환불됨",
+      "disputed": "이의 제기됨",
       "dateUnavailable": "날짜 정보 없음"
     },
     "profile": {
@@ -434,9 +437,9 @@
       "helpTranslate": "Jiki 번역 돕기"
     },
     "subscriptionSection": {
-      "loadingCardTitle": "구독",
-      "loadingCardDescription": "구독 플랜과 결제 정보를 관리해요",
-      "loadingData": "구독 정보를 불러오는 중이에요..."
+      "loadingCardTitle": "결제",
+      "loadingCardDescription": "프리미엄 멤버십과 결제 정보를 관리해요",
+      "loadingData": "결제 정보를 불러오는 중이에요..."
     },
     "benefits": {
       "activeSubtitle": "매일 이런 혜택을 누리고 있어요",
@@ -446,6 +449,8 @@
       "activeHeading": "<highlight>프리미엄</highlight> 혜택을 누리고 있어요",
       "cancellingHeading": "<highlight>프리미엄</highlight> 혜택을 놓치지 마세요",
       "footer": "궁금한 점이 있나요? <includedLink>포함된 내용</includedLink>을 알아보거나 <supportLink>지원팀에 문의</supportLink>해요.",
+      "resubscribeAtPrice": "지금 <strong>{price}</strong>만 내고 다시 구독하고, Jiki의 지원과 함께 코딩 여정을 이어가요.",
+      "resubscribeWithoutPrice": "지금 다시 구독하고 Jiki의 지원과 함께 코딩 여정을 이어가요.",
       "resubscribe": "지금 <price></price>만 내고 다시 구독하고, Jiki의 지원과 함께 코딩 여정을 이어가요."
     },
     "cancelSectionPanel": {
@@ -458,18 +463,16 @@
       "planName": "Jiki 프리미엄",
       "upgrade": "프리미엄으로 업그레이드",
       "headline": "<highlight>더 나은</highlight> 학습 방법을 열어봐요",
+      "lifetimeNote": "한 번만 결제하면 평생 이용할 수 있어요.",
       "dailyNote": "하루에 <price></price>밖에 들지 않아요"
     },
-    "neverSubscribed": {
-      "heading": "플랜 업그레이드",
-      "subtitle": "프리미엄 플랜으로 고급 기능과 더 나은 학습 경험을 열어봐요.",
-      "featuresLabel": "프리미엄 플랜 기능",
-      "upgradeAriaLabel": "{plan} 플랜으로 업그레이드",
-      "upgrade": "프리미엄으로 업그레이드"
+    "purchasePending": {
+      "title": "결제가 진행 중이에요",
+      "description": "프리미엄 구매를 확인하려고 결제 대행사의 승인을 기다리고 있어요. 은행 결제는 며칠 걸릴 수 있어요. 승인이 완료되는 대로 프리미엄을 열어 드리고 이메일로 알려 드릴게요."
     },
     "errorBoundary": {
-      "title": "구독 시스템 오류",
-      "messagePart1": "구독 정보를 불러오는 데 문제가 생겼어요. 결제 시스템의 일시적인 문제일 수 있어요.",
+      "title": "결제 정보 오류",
+      "messagePart1": "결제 정보를 불러오는 데 문제가 생겼어요. 결제 시스템의 일시적인 문제일 수 있어요.",
       "messagePart2": "페이지를 새로고침해 보고, 문제가 계속되면 지원팀에 문의해 주세요.",
       "refresh": "페이지 새로고침",
       "detailsSummary": "오류 상세 정보 (개발용)"
@@ -529,20 +532,34 @@
       "statusSessionExpired": "세션 만료",
       "statusNotSubscribed": "미구독",
       "currentPlan": "현재 요금제",
+      "lifetime": "<plan>Jiki 프리미엄</plan>을 평생 이용할 수 있어요. 갱신할 것은 없어요.",
+      "premiumIncluded": "<plan>Jiki 프리미엄</plan>을 이용 중이에요.",
+      "subscribedWithPrice": "<plan>Jiki {tier}</plan> 플랜을 <strong>{price}</strong>에 이용 중이에요.",
+      "subscribed": "<plan>Jiki {tier}</plan> 플랜을 이용 중이에요.",
+      "nextBillingDate": "<strong>{date}</strong>에 다음 결제가 진행돼요.",
+      "pricePerMonth": "{price}/월",
+      "pricePerYear": "{price}/년",
       "cancellingMessage": "Jiki 프리미엄 구독이 해지됐어요.",
       "currentPlanAriaLabel": "현재 요금제: {plan} 요금제",
       "statusAriaLabel": "구독 상태: {status}",
-      "messageCanceled": "결제 기간이 끝날 때까지 서비스를 계속 이용할 수 있어요",
       "messagePaymentFailed": "결제에 실패했어요. 결제 수단을 변경해 주세요",
-      "messageCancelling": "해지가 예약됐어요. 결제 기간이 끝날 때까지 이용할 수 있어요",
       "messageIncomplete": "결제 설정이 완료되지 않았어요. 설정을 마무리해 주세요",
-      "messageIncompleteExpired": "이전 결제 세션이 만료됐어요. 구독을 새로 시작해 주세요",
-      "active": "<plan>Jiki {tier}</plan> 요금제를 월 <strong><price></price></strong>에 구독하고 있어요.",
-      "activeWithBilling": "<plan>Jiki {tier}</plan> 요금제를 월 <strong><price></price></strong>에 구독하고 있어요. 다음 결제일은 <strong>{date}</strong>예요.",
       "cancellingRemaining": "모든 프리미엄 기능을 마음껏 이용할 수 있는 기간이 <strong>{count, plural, other {#일}}</strong> 남았어요.",
       "cancellingEnds": "프리미엄 요금제는 <strong>{date}</strong>에 종료돼요.",
       "free": "<strong>무료</strong> 요금제를 이용하고 있어요. 모든 콘텐츠를 이용할 수 있고, 연습 문제 하나는 Jiki에게 질문하기로 도움을 받을 수 있어요.",
-      "planLabel": "{tier} 요금제"
+      "planLabel": "{tier} 요금제",
+      "messageCanceled": "결제 기간이 끝날 때까지 서비스를 계속 이용할 수 있어요",
+      "messageCancelling": "해지가 예약됐어요. 결제 기간이 끝날 때까지 이용할 수 있어요",
+      "messageIncompleteExpired": "이전 결제 세션이 만료됐어요. 구독을 새로 시작해 주세요",
+      "active": "<plan>Jiki {tier}</plan> 요금제를 월 <strong><price></price></strong>에 구독하고 있어요.",
+      "activeWithBilling": "<plan>Jiki {tier}</plan> 요금제를 월 <strong><price></price></strong>에 구독하고 있어요. 다음 결제일은 <strong>{date}</strong>예요."
+    },
+    "neverSubscribed": {
+      "heading": "플랜 업그레이드",
+      "subtitle": "프리미엄 플랜으로 고급 기능과 더 나은 학습 경험을 열어봐요.",
+      "featuresLabel": "프리미엄 플랜 기능",
+      "upgradeAriaLabel": "{plan} 플랜으로 업그레이드",
+      "upgrade": "프리미엄으로 업그레이드"
     }
   },
   "landing": {
@@ -753,7 +770,7 @@
       "q5a1": "부트캠프에 함께해 주셔서 감사해요! Jiki는 우리 부트캠프가 발전한 다음 단계예요. 풀었던 연습 문제 대부분이 더 많은 문제와 함께 Jiki에 들어와 있어요. 3시간짜리 영상도 보기 편하도록 5~10분씩 잘게 나눴어요!",
       "q5a2": "부트캠프 회원이라면 Jiki 프리미엄 평생 이용권을 자동으로 받아요. 처음 시작하는 코딩 배우기 강의부터 앞으로 나올 강의까지 모두 적용돼요.",
       "intro": "가장 많이 받는 질문들을 모았어요. 여기에 없는 질문이 있나요? <link>이메일로 알려 주세요!</link>",
-      "q1a2": "<strong>Jiki 프리미엄</strong>은 <price></price>(국가별로 가격이 달라요)이며, 다음을 모두 이용할 수 있어요:"
+      "q1a2": "<strong>Jiki 프리미엄</strong>은 <price></price>(국가별로 가격이 달라요)의 일회성 결제이며, 다음을 모두 이용할 수 있어요:"
     },
     "latestNews": {
       "heading": "최신 소식",
@@ -770,6 +787,7 @@
       "basic": "베이직",
       "premium": "프리미엄",
       "free": "무료",
+      "oneTime": "1회 결제",
       "perMonth": "월 요금"
     },
     "planBadge": {
@@ -823,18 +841,20 @@
       "title": "자주 묻는 질문",
       "q1": "Jiki를 무료로 써볼 수 있나요?",
       "a1": "네! 무료로 가입해서 베이직 요금제를 원하는 만큼 쓸 수 있어요. 전체 이용이 필요할 때 언제든 프리미엄으로 업그레이드하면 돼요. 의무는 없어요.",
-      "q2": "최소 약정 기간이 있나요?",
-      "a2": "최소 약정은 없어요. 프리미엄은 매달 결제되고, 계정 설정에서 언제든 해지할 수 있어요.",
-      "q3": "프리미엄 구독을 해지하면 어떻게 되나요?",
-      "a3": "현재 결제 기간이 끝날 때까지는 프리미엄을 계속 이용할 수 있고, 그다음에는 베이직 요금제로 돌아가요. 진행 상황은 그대로 남고, 프리미엄 전용 기능만 쓸 수 없게 돼요.",
+      "q2": "프리미엄은 구독인가요?",
+      "a2": "아니에요. 프리미엄은 일회성 결제예요. 한 번만 결제하면 갱신이나 해지할 필요 없이 평생 프리미엄을 이용할 수 있어요.",
+      "q3": "평생 이용이란 무슨 뜻인가요?",
+      "a3": "프리미엄 이용 권한은 만료되지 않고, 다시 결제되지도 않아요. 나중에 추가되는 기능까지 포함해서 모든 프리미엄 기능을 계속 이용할 수 있어요.",
       "q4": "학생이나 프리미엄을 감당하기 어려운 분들을 위한 할인이 있나요?",
-      "q5": "나중에 업그레이드하거나 다운그레이드할 수 있나요?",
-      "a5": "물론이죠. 계정에서 언제든 프리미엄으로 업그레이드할 수 있고, 원할 때 똑같이 쉽게 해지할 수 있어요.",
+      "q5": "나중에 업그레이드할 수 있나요?",
+      "a5": "물론이죠. 계정에서 언제든 프리미엄으로 업그레이드할 수 있어요.",
       "a4": "Jiki는 누구나 이용할 수 있었으면 해요. 비용이 부담된다면 <link>연락해 주세요</link>. 도울 수 있는 방법을 찾아볼게요."
     },
     "cta": {
       "alreadyPremiumTitle": "이미 프리미엄 회원이에요",
       "alreadyPremiumDesc": "Jiki를 응원해 주셔서 감사해요. 모든 것을 마음껏 이용해요!",
+      "pendingTitle": "결제가 진행 중이에요",
+      "pendingDesc": "결제가 승인되는 대로 프리미엄을 열어 드릴게요.",
       "upgradeTitle": "배우는 속도를 높일 준비 됐어요?",
       "upgradeDesc": "프리미엄으로 업그레이드하고 Jiki가 제공하는 모든 것을 이용해요.",
       "upgradeButton": "프리미엄으로 업그레이드",
@@ -1072,7 +1092,7 @@
     },
     "settings": {
       "title": "설정 - Jiki",
-      "description": "계정 설정, 구독 및 환경설정을 관리하세요."
+      "description": "계정 설정, 프리미엄 멤버십 및 환경설정을 관리하세요."
     },
     "checkEmail": {
       "title": "이메일 확인 - Jiki",
@@ -1212,6 +1232,8 @@
     "no_exercism_link": "이 계정은 Exercism과 연결돼 있지 않아요",
     "invalid_product": "구매할 수 없는 요금제예요",
     "existing_subscription": "이미 활성 구독이 있어요",
+    "already_premium": "이미 프리미엄을 이용 중이에요",
+    "purchase_pending": "이전 결제가 아직 처리 중이에요. 승인이 완료되는 대로 프리미엄을 열어 드릴게요.",
     "invalid_return_url": "올바른 페이지로 돌려보내지 못했어요",
     "checkout_failed": "결제를 시작하지 못했어요. 다시 시도해 주세요.",
     "no_customer": "결제 정보를 찾을 수 없어요",
@@ -1273,7 +1295,6 @@
   "toasts": {
     "subscription": {
       "loginRequired": "계정을 업그레이드하려면 로그인해 주세요",
-      "checkoutFailed": "결제를 시작하지 못했어요. 다시 시도해 주세요.",
       "alreadyPremium": "이미 프리미엄 등급이에요",
       "checkoutSessionFailed": "결제 세션을 만들지 못했어요",
       "portalFailed": "고객 포털을 열지 못했어요",
@@ -1281,7 +1302,8 @@
       "cancelFailed": "구독을 취소하지 못했어요",
       "reactivated": "구독을 다시 활성화했어요!",
       "reactivateFailed": "구독을 다시 활성화하지 못했어요",
-      "paymentPortalFailed": "결제 포털을 열지 못했어요"
+      "paymentPortalFailed": "결제 포털을 열지 못했어요",
+      "checkoutFailed": "결제를 시작하지 못했어요. 다시 시도해 주세요."
     },
     "auth": {
       "sessionExpired": "세션이 만료되었어요. 다시 로그인해 주세요."
@@ -1320,33 +1342,6 @@
       "badge": "Premium 회원",
       "description": "업그레이드해 주셔서 감사합니다! 이제 Jiki와의 무제한 채팅, 프로젝트, Learn to Build 등 모든 Premium 혜택을 이용하실 수 있어요!",
       "title": "<highlight>Premium</highlight>에 오신 것을 환영합니다!"
-    },
-    "subscriptionSuccess": {
-      "chatGate": {
-        "title": "AI 채팅에 오신 것을 환영합니다!",
-        "description": "AI 어시스턴트가 이제 잠금 해제되어 코딩 연습 문제를 도와드릴 준비가 되었어요.",
-        "feature1": "코드에 대해 질문하기",
-        "feature2": "복잡한 개념에 대한 설명 받기",
-        "feature3": "맞춤형 힌트와 가이드 받기"
-      },
-      "featureGate": {
-        "title": "기능 잠금 해제!",
-        "description": "이제 학습 경험을 향상시킬 프리미엄 기능을 이용하실 수 있어요."
-      },
-      "settings": {
-        "title": "{tier}에 오신 것을 환영합니다!",
-        "description": "구독이 활성화되었어요. 설정에서 새로운 기능을 살펴보세요."
-      },
-      "general": {
-        "title": "{tier}에 오신 것을 환영합니다!",
-        "description": "플랜을 업그레이드해 주셔서 감사합니다. 이제 모든 프리미엄 기능을 이용하실 수 있어요."
-      },
-      "planLabel": "{tier} 플랜",
-      "whatYouCanDo": "이제 할 수 있는 일:",
-      "getStarted": "시작하기",
-      "continueLearning": "학습 계속하기",
-      "skipForNow": "나중에 하기",
-      "renewalNotice": "구독은 {date}에 자동으로 갱신됩니다. 설정에서 구독을 관리하세요."
     },
     "confirmation": {
       "defaultTitle": "확인",
@@ -1407,31 +1402,6 @@
       "skipMessage": "이 영상은 Jiki를 최대한 활용하는 데 도움이 돼요. 정말 건너뛰시겠어요?",
       "skipConfirm": "영상 건너뛰기",
       "skipCancel": "계속 시청하기"
-    },
-    "subscription": {
-      "chatGate": {
-        "headline": "AI 채팅 어시스턴트 잠금 해제하기",
-        "description": "AI 어시스턴트로부터 코딩 연습 문제에 대한 즉각적인 도움을 받으세요."
-      },
-      "featureGate": {
-        "headlineFallback": "Premium 기능",
-        "headline": "{feature} 잠금 해제",
-        "description": "고급 기능과 향상된 학습 경험을 이용하려면 플랜을 업그레이드하세요."
-      },
-      "settings": {
-        "headline": "플랜 선택하기",
-        "description": "학습 목표에 가장 적합한 구독 플랜을 선택하세요."
-      },
-      "general": {
-        "headline": "플랜 업그레이드하기",
-        "description": "학습 목표에 맞는 플랜을 선택하고 고급 기능을 잠금 해제하세요."
-      },
-      "unlockWith": "{feature}으로 잠금 해제할 수 있는 것:",
-      "recommended": "추천",
-      "choosePremium": "Premium 선택",
-      "subscribeAriaLabel": "{plan} 플랜 구독하기",
-      "renewNotice": "구독은 매월 자동으로 갱신됩니다. 설정에서 언제든지 취소할 수 있어요.",
-      "notNow": "나중에 할게요"
     },
     "walkthroughConfirm": {
       "title": "먼저 직접 풀어볼까요?",
@@ -1518,15 +1488,16 @@
       "userAvatarAlt": "사용자",
       "upgrade": "Premium으로 업그레이드",
       "planName": "Jiki Premium",
-      "featureLearnToBuild": "<strong>Learn to Build</strong> 전체 이용",
-      "featureChallenges": "더 어려운 <strong>챌린지</strong> 도전하기",
+      "lifetimeNote": "한 번만 결제해요. 구독은 없어요.",
+      "pendingNote": "결제가 아직 처리 중이에요. 승인이 완료되는 대로 프리미엄을 열어 드리고 이메일로 알려 드릴게요.",
+      "featureChallenges": "<strong>프리미엄 챌린지</strong> 잠금 해제하기",
       "featureAi": "Jiki의 무제한 <strong>AI 지원</strong>",
       "featureLivestreams": "참여할 수 있는 정기 <strong>Q&A 라이브 스트리밍</strong>",
-      "featureCertificates": "강의 <strong>수료증</strong> 받기",
+      "featureCertificates": "정식 <strong>수료증</strong> 받기",
       "featureAdFree": "<strong>광고 없는</strong> 학습 경험",
       "featureEarlyAccess": "새 기능 <strong>얼리 액세스</strong>",
       "basic": {
-        "subheading": "Premium으로 업그레이드하여 취업 준비를 앞당기세요.",
+        "subheading": "프리미엄 이용자는 <strong>완주할 확률이 26배 더 높아요</strong>. 중간에 막혀서 그만두지 마세요!",
         "planName": "기본 플랜",
         "planPrice": "평생 무료",
         "feature1": "80개 이상의 코딩 연습 문제",
@@ -1535,6 +1506,7 @@
         "note": "+ 추가 학습 자원을 위한 공개 YouTube 동영상과 커뮤니티 포럼 이용 가능.",
         "headline": "학습을 <highlight>가속화</highlight>하세요!"
       },
+      "featureLearnToBuild": "<strong>Learn to Build</strong> 전체 이용",
       "dailyNote": "(하루에 <price></price>에 불과해요)"
     },
     "subscriptionCheckout": {
@@ -1545,10 +1517,10 @@
       "paymentInfoAriaLabel": "결제 정보",
       "pay": "결제하기",
       "orderTitle": "Jiki {tier}",
-      "orderBilling": "매월 청구. 언제든지 취소 가능.",
-      "perMonthShort": "/월",
+      "orderBilling": "일회성 결제. 프리미엄 평생 이용.",
       "securedBy": "<stripe>Stripe</stripe>으로 보호됨",
-      "error": "오류: {message}"
+      "error": "오류: {message}",
+      "perMonthShort": "/월"
     },
     "calendarSubscribe": {
       "title": "캘린더 구독",
@@ -1564,6 +1536,58 @@
       "intro": "그림 연습이 어떻게 이루어지고 어떻게 푸는지 짧은 영상으로 살펴봐요. 이 영상은 설명 맨 아래에서도 볼 수 있어요.",
       "close": "시작해 볼까요",
       "watchAlt": "소개 영상 보기"
+    },
+    "subscriptionSuccess": {
+      "chatGate": {
+        "title": "AI 채팅에 오신 것을 환영합니다!",
+        "description": "AI 어시스턴트가 이제 잠금 해제되어 코딩 연습 문제를 도와드릴 준비가 되었어요.",
+        "feature1": "코드에 대해 질문하기",
+        "feature2": "복잡한 개념에 대한 설명 받기",
+        "feature3": "맞춤형 힌트와 가이드 받기"
+      },
+      "featureGate": {
+        "title": "기능 잠금 해제!",
+        "description": "이제 학습 경험을 향상시킬 프리미엄 기능을 이용하실 수 있어요."
+      },
+      "settings": {
+        "title": "{tier}에 오신 것을 환영합니다!",
+        "description": "구독이 활성화되었어요. 설정에서 새로운 기능을 살펴보세요."
+      },
+      "general": {
+        "title": "{tier}에 오신 것을 환영합니다!",
+        "description": "플랜을 업그레이드해 주셔서 감사합니다. 이제 모든 프리미엄 기능을 이용하실 수 있어요."
+      },
+      "planLabel": "{tier} 플랜",
+      "whatYouCanDo": "이제 할 수 있는 일:",
+      "getStarted": "시작하기",
+      "continueLearning": "학습 계속하기",
+      "skipForNow": "나중에 하기",
+      "renewalNotice": "구독은 {date}에 자동으로 갱신됩니다. 설정에서 구독을 관리하세요."
+    },
+    "subscription": {
+      "chatGate": {
+        "headline": "AI 채팅 어시스턴트 잠금 해제하기",
+        "description": "AI 어시스턴트로부터 코딩 연습 문제에 대한 즉각적인 도움을 받으세요."
+      },
+      "featureGate": {
+        "headlineFallback": "Premium 기능",
+        "headline": "{feature} 잠금 해제",
+        "description": "고급 기능과 향상된 학습 경험을 이용하려면 플랜을 업그레이드하세요."
+      },
+      "settings": {
+        "headline": "플랜 선택하기",
+        "description": "학습 목표에 가장 적합한 구독 플랜을 선택하세요."
+      },
+      "general": {
+        "headline": "플랜 업그레이드하기",
+        "description": "학습 목표에 맞는 플랜을 선택하고 고급 기능을 잠금 해제하세요."
+      },
+      "unlockWith": "{feature}으로 잠금 해제할 수 있는 것:",
+      "recommended": "추천",
+      "choosePremium": "Premium 선택",
+      "subscribeAriaLabel": "{plan} 플랜 구독하기",
+      "renewNotice": "구독은 매월 자동으로 갱신됩니다. 설정에서 언제든지 취소할 수 있어요.",
+      "notNow": "나중에 할게요"
     }
   },
   "challenge": {
@@ -1777,6 +1801,7 @@
     "freeUserLimitReached": {
       "description": "무료 대화를 모두 사용했어요. Jiki의 도움으로 개념, 디버깅, 연습 문제 진행을 계속하세요.",
       "upgradeButton": "Jiki Premium으로 업그레이드",
+      "oneTimePrice": "<price></price>만 내면 평생 이용할 수 있어요!",
       "price": "단 <price></price>!"
     },
     "lockedFooter": {

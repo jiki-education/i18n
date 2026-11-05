@@ -3,9 +3,9 @@ title: "FAQ"
 excerpt: "Les questions fréquentes sur Jiki, nos cours et Jiki Premium."
 tags: ["support"]
 seo:
-  description: "Les questions fréquentes sur Jiki, notre plateforme d'apprentissage du code, nos cours et l'abonnement Jiki Premium."
+  description: "Les questions fréquentes sur Jiki, notre plateforme d'apprentissage du code, nos cours et Jiki Premium."
   keywords: ["faq", "questions fréquentes", "jiki", "assistance", "premium"]
-en_md5: c773051f2136ec2c1a51efe1199e6e8a
+en_md5: a61a0869adc157915004c4dd66e141ee
 ---
 
 ## À propos du cours
@@ -14,7 +14,7 @@ en_md5: c773051f2136ec2c1a51efe1199e6e8a
 
 Les exercices Learn to Code, qui forment le cœur du programme d'apprentissage du code, sont entièrement gratuits. Pas de carte bancaire, pas de période d'essai, pas de piège.
 
-Jiki Premium est proposé à un tarif adapté à chaque pays et débloque l'accès complet à Learn to Build, aux projets Jiki, à l'aide illimitée de l'IA Ask Jiki, à des sessions régulières de questions-réponses en direct auxquelles tu peux participer, à des certificats pour les cours, à un apprentissage sans publicité et à un accès anticipé aux nouvelles fonctionnalités.
+Jiki Premium est un paiement unique, dont le tarif dépend de ton pays : il débloque l'accès complet à Learn to Build, aux projets Jiki, à l'aide illimitée de l'IA Ask Jiki, à des sessions régulières de questions-réponses en direct auxquelles tu peux participer, à des certificats pour les cours, à un apprentissage sans publicité et à un accès anticipé aux nouvelles fonctionnalités.
 
 ### Combien de temps devrai-je consacrer au cours chaque semaine ?
 
@@ -44,21 +44,25 @@ En tant que membre du Bootcamp, tu obtiendras automatiquement Jiki Premium à vi
 
 Oui ! Tu peux t'inscrire gratuitement et utiliser l'offre Basic aussi longtemps que tu veux. Passe à Premium quand tu as besoin de l'accès complet, sans aucune obligation.
 
-### Y a-t-il une durée d'engagement minimale ?
+### Premium est-il un abonnement ?
 
-Aucun engagement minimum. Premium est facturé chaque mois et tu peux résilier à tout moment depuis les paramètres de ton compte.
+Non. Premium est un paiement unique. Tu paies une seule fois et tu gardes Premium à vie, sans renouvellement et sans rien à résilier.
 
-### Que se passe-t-il si je résilie mon abonnement Premium ?
+### Que signifie « accès à vie » ?
 
-Tu gardes l'accès Premium jusqu'à la fin de ta période de facturation en cours, puis ton compte repasse à l'offre Basic. Tu ne perds rien de ta progression, tu perds seulement l'accès aux fonctionnalités réservées à Premium.
+Ton accès Premium n'expire jamais et tu ne seras plus jamais prélevé. Tu conserves toutes les fonctionnalités Premium, y compris celles qu'on ajoutera plus tard.
 
-### Proposez-vous des réductions pour les étudiants ou pour ceux qui ne peuvent pas se payer Premium ?
+### J'ai déjà un abonnement Premium. Que devient mon abonnement ?
+
+Rien ne change. Ton abonnement continue exactement comme il est, et tu peux le gérer ou le résilier à tout moment depuis les paramètres de ton compte.
+
+### Proposes-tu des réductions pour les étudiants ou pour ceux qui ne peuvent pas se payer Premium ?
 
 On veut que Jiki soit accessible à tout le monde. Si le prix est un obstacle, [contacte-nous](/articles/support) et on fera notre possible pour t'aider.
 
-### Puis-je passer à une offre supérieure ou inférieure plus tard ?
+### Puis-je passer à Premium plus tard ?
 
-Bien sûr. Tu peux passer à Premium à tout moment depuis ton compte, et résilier tout aussi facilement quand tu le souhaites.
+Bien sûr. Tu peux passer à Premium à tout moment depuis ton compte.
 
 ## Encore des questions ?
 

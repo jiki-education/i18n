@@ -99,7 +99,6 @@
     "loading": "Caricamento...",
     "verifying": "Verifica in corso...",
     "sending": "Invio in corso...",
-    "perMonth": "/mese",
     "validation": {
       "emailInvalid": "Inserisci un indirizzo email valido",
       "passwordRequired": "La password è obbligatoria",
@@ -171,7 +170,8 @@
       "shareOn": "Condividi su {network}",
       "copyLink": "Copia link",
       "copied": "Link copiato"
-    }
+    },
+    "perMonth": "/mese"
   },
   "build": {
     "upcomingStreams": {
@@ -318,7 +318,7 @@
       "title": "Impostazioni",
       "description": "Gestisci il tuo account e le tue preferenze.",
       "tabAccount": "Account",
-      "tabSubscription": "Abbonamento",
+      "tabSubscription": "Fatturazione",
       "tabNotifications": "Notifiche",
       "tabLearning": "Apprendimento",
       "tabDanger": "Zona pericolosa"
@@ -395,6 +395,9 @@
       "columnMethod": "Metodo",
       "downloadReceipt": "Scarica ricevuta",
       "typeRecurring": "Ricorrente",
+      "typePremiumUpgrade": "Passaggio a Premium",
+      "refunded": "Rimborsato",
+      "disputed": "Contestato",
       "dateUnavailable": "Data non disponibile"
     },
     "profile": {
@@ -434,9 +437,9 @@
       "helpTranslate": "Aiuta a tradurre Jiki"
     },
     "subscriptionSection": {
-      "loadingCardTitle": "Abbonamento",
-      "loadingCardDescription": "Gestisci il tuo piano di abbonamento e i dettagli di fatturazione",
-      "loadingData": "Caricamento dati dell'abbonamento..."
+      "loadingCardTitle": "Fatturazione",
+      "loadingCardDescription": "Gestisci il tuo accesso Premium e i pagamenti",
+      "loadingData": "Caricamento dei dettagli di fatturazione..."
     },
     "benefits": {
       "activeSubtitle": "Ecco cosa sblocchi ogni giorno",
@@ -446,6 +449,8 @@
       "activeHeading": "Stai usufruendo dei vantaggi <highlight>Premium</highlight>",
       "cancellingHeading": "Non perdere i tuoi vantaggi <highlight>Premium</highlight>",
       "footer": "Hai una domanda? Scopri di più su <includedLink>cosa è incluso</includedLink> o <supportLink>contatta il supporto</supportLink>.",
+      "resubscribeAtPrice": "Riabbonati ora per soli <strong>{price}</strong> e continua il tuo percorso di programmazione con il supporto di Jiki.",
+      "resubscribeWithoutPrice": "Riabbonati ora e continua il tuo percorso di programmazione con il supporto di Jiki.",
       "resubscribe": "Riabbonati ora a soli <price></price> e continua il tuo viaggio nella programmazione con il supporto di Jiki."
     },
     "cancelSectionPanel": {
@@ -458,18 +463,16 @@
       "planName": "Jiki Premium",
       "upgrade": "Passa a Premium",
       "headline": "Sblocca un modo <highlight>migliore</highlight> per imparare",
+      "lifetimeNote": "Pagamento una tantum. Tuo per sempre.",
       "dailyNote": "Solo <price></price> al giorno"
     },
-    "neverSubscribed": {
-      "heading": "Aggiorna il tuo piano",
-      "subtitle": "Sblocca funzionalità avanzate ed esperienze di apprendimento migliorate con i nostri piani premium.",
-      "featuresLabel": "Funzionalità del piano Premium",
-      "upgradeAriaLabel": "Passa al piano {plan}",
-      "upgrade": "Passa a Premium"
+    "purchasePending": {
+      "title": "Il tuo pagamento è in arrivo",
+      "description": "Stiamo aspettando che il tuo fornitore di pagamenti confermi l'acquisto di Premium. I pagamenti bancari possono richiedere qualche giorno. Sbloccheremo Premium e ti invieremo un'email non appena il pagamento sarà andato a buon fine."
     },
     "errorBoundary": {
-      "title": "Errore del sistema di abbonamento",
-      "messagePart1": "Stiamo riscontrando problemi nel caricare le informazioni sul tuo abbonamento. Potrebbe essere un problema temporaneo con il nostro sistema di pagamento.",
+      "title": "Errore nei dettagli di fatturazione",
+      "messagePart1": "Stiamo riscontrando problemi nel caricare i tuoi dettagli di fatturazione. Potrebbe essere un problema temporaneo con il nostro sistema di pagamento.",
       "messagePart2": "Prova ad aggiornare la pagina o contatta il supporto se il problema persiste.",
       "refresh": "Aggiorna pagina",
       "detailsSummary": "Dettagli errore (sviluppo)"
@@ -529,20 +532,34 @@
       "statusSessionExpired": "Sessione scaduta",
       "statusNotSubscribed": "Non iscritto",
       "currentPlan": "Piano attuale",
+      "lifetime": "Hai <plan>Jiki Premium</plan> a vita. Non c'è nulla da rinnovare.",
+      "premiumIncluded": "Hai <plan>Jiki Premium</plan>.",
+      "subscribedWithPrice": "Sei sul piano <plan>Jiki {tier}</plan> a <strong>{price}</strong>.",
+      "subscribed": "Sei sul piano <plan>Jiki {tier}</plan>.",
+      "nextBillingDate": "La prossima data di fatturazione è <strong>{date}</strong>.",
+      "pricePerMonth": "{price}/mese",
+      "pricePerYear": "{price}/anno",
       "cancellingMessage": "Il tuo abbonamento Jiki Premium è stato annullato.",
       "currentPlanAriaLabel": "Piano attuale: piano {plan}",
       "statusAriaLabel": "Stato dell'abbonamento: {status}",
-      "messageCanceled": "Il servizio continua fino alla fine del periodo",
       "messagePaymentFailed": "Pagamento non riuscito - aggiorna il metodo di pagamento",
-      "messageCancelling": "Annullamento programmato - accesso fino alla fine del periodo",
       "messageIncomplete": "Configurazione pagamento incompleta - completa la configurazione",
-      "messageIncompleteExpired": "La sessione di pagamento precedente è scaduta - avvia un nuovo abbonamento",
-      "active": "Sei nel piano <plan>Jiki {tier}</plan> a <strong><price></price>/mese</strong>.",
-      "activeWithBilling": "Sei nel piano <plan>Jiki {tier}</plan> a <strong><price></price>/mese</strong>. La prossima data di fatturazione è il <strong>{date}</strong>.",
       "cancellingRemaining": "Ti restano <strong>{count, plural, one {# giorno} other {# giorni}}</strong> per usufruire di tutte le funzionalità Premium.",
       "cancellingEnds": "Il tuo piano Premium terminerà il <strong>{date}</strong>.",
       "free": "Sei nel piano <strong>Gratuito</strong>. Questo ti dà accesso a tutti i contenuti oltre ad Ask Jiki per aiutarti in un esercizio.",
-      "planLabel": "Piano {tier}"
+      "planLabel": "Piano {tier}",
+      "messageCanceled": "Il servizio continua fino alla fine del periodo",
+      "messageCancelling": "Annullamento programmato - accesso fino alla fine del periodo",
+      "messageIncompleteExpired": "La sessione di pagamento precedente è scaduta - avvia un nuovo abbonamento",
+      "active": "Sei nel piano <plan>Jiki {tier}</plan> a <strong><price></price>/mese</strong>.",
+      "activeWithBilling": "Sei nel piano <plan>Jiki {tier}</plan> a <strong><price></price>/mese</strong>. La prossima data di fatturazione è il <strong>{date}</strong>."
+    },
+    "neverSubscribed": {
+      "heading": "Aggiorna il tuo piano",
+      "subtitle": "Sblocca funzionalità avanzate ed esperienze di apprendimento migliorate con i nostri piani premium.",
+      "featuresLabel": "Funzionalità del piano Premium",
+      "upgradeAriaLabel": "Passa al piano {plan}",
+      "upgrade": "Passa a Premium"
     }
   },
   "landing": {
@@ -753,7 +770,7 @@
       "q5a1": "Grazie per aver fatto parte del Bootcamp! Jiki è la fase successiva nell'evoluzione del nostro Bootcamp. La maggior parte degli esercizi che hai risolto apparirà in Jiki insieme a molti altri. Abbiamo anche suddiviso i video di 3 ore in parti più piccole, da 5-10 minuti, per rendere la visione più semplice!",
       "q5a2": "Come membro del Bootcamp, riceverai automaticamente Jiki Premium a vita. Questo vale sia per il corso iniziale Impara a Programmare che per i corsi futuri.",
       "intro": "Queste sono le domande che ci vengono poste più spesso. La tua domanda non ha risposta qui? <link>Mandaci un'email!</link>",
-      "q1a2": "<strong>Jiki Premium</strong> costa <price></price> (prezzo variabile in base al paese) e sblocca:"
+      "q1a2": "<strong>Jiki Premium</strong> è un pagamento unico di <price></price> (prezzo variabile in base al paese) e sblocca:"
     },
     "latestNews": {
       "heading": "Le nostre ultime notizie",
@@ -770,6 +787,7 @@
       "basic": "Base",
       "premium": "Premium",
       "free": "Gratuito",
+      "oneTime": "pagamento una tantum",
       "perMonth": "al mese"
     },
     "planBadge": {
@@ -823,18 +841,20 @@
       "title": "Domande frequenti",
       "q1": "Posso provare Jiki gratuitamente?",
       "a1": "Sì! Puoi iscriverti gratuitamente e utilizzare il piano Basic per tutto il tempo che vuoi. Passa a Premium quando hai bisogno dell'accesso completo — senza alcun obbligo.",
-      "q2": "C'è una durata minima del contratto?",
-      "a2": "Nessun contratto minimo — Premium viene fatturato mensilmente e puoi annullare in qualsiasi momento dalle impostazioni del tuo account.",
-      "q3": "Cosa succede se annullo il mio abbonamento Premium?",
-      "a3": "Manterrai l'accesso Premium fino alla fine del periodo di fatturazione corrente, poi il tuo account tornerà al piano Basic. Non perdi i tuoi progressi — perdi solo l'accesso alle funzionalità esclusive Premium.",
+      "q2": "Premium è un abbonamento?",
+      "a2": "No. Premium è un pagamento unico. Paghi una sola volta e mantieni Premium per sempre, senza rinnovi e senza nulla da annullare.",
+      "q3": "Cosa significa accesso a vita?",
+      "a3": "Il tuo accesso Premium non scade mai e non ti verrà richiesto nessun altro pagamento. Mantieni tutte le funzionalità Premium, incluse quelle che aggiungeremo in futuro.",
       "q4": "Offrite sconti per studenti o per chi non può permettersi Premium?",
-      "q5": "Posso passare a un piano superiore o inferiore in seguito?",
-      "a5": "Assolutamente sì. Puoi passare a Premium in qualsiasi momento dal tuo account e puoi annullare altrettanto facilmente quando vuoi.",
+      "q5": "Posso effettuare l'upgrade in seguito?",
+      "a5": "Assolutamente sì. Puoi passare a Premium in qualsiasi momento dal tuo account.",
       "a4": "Vogliamo che Jiki sia accessibile a tutti. Se il costo è un ostacolo, <link>contattaci</link> e faremo il possibile per aiutarti."
     },
     "cta": {
       "alreadyPremiumTitle": "Sei già un membro Premium",
       "alreadyPremiumDesc": "Grazie per supportare Jiki — goditi l'accesso completo a tutto!",
+      "pendingTitle": "Il tuo pagamento è in arrivo",
+      "pendingDesc": "Sbloccheremo Premium non appena il pagamento sarà andato a buon fine.",
       "upgradeTitle": "Pronto ad accelerare il tuo apprendimento?",
       "upgradeDesc": "Passa a Premium e sblocca tutto ciò che Jiki ha da offrire.",
       "upgradeButton": "Passa a Premium",
@@ -1072,7 +1092,7 @@
     },
     "settings": {
       "title": "Impostazioni - Jiki",
-      "description": "Gestisci le impostazioni del tuo account, l'abbonamento e le preferenze."
+      "description": "Gestisci le impostazioni del tuo account, il tuo accesso Premium e le preferenze."
     },
     "checkEmail": {
       "title": "Controlla la tua email - Jiki",
@@ -1212,6 +1232,8 @@
     "no_exercism_link": "Questo account non è collegato a Exercism",
     "invalid_product": "Quello non è un piano che puoi acquistare",
     "existing_subscription": "Hai già un abbonamento attivo",
+    "already_premium": "Hai già Premium",
+    "purchase_pending": "Il tuo pagamento precedente è ancora in elaborazione. Sbloccheremo Premium non appena sarà andato a buon fine.",
     "invalid_return_url": "Non siamo riusciti a riportarti alla pagina giusta",
     "checkout_failed": "Non siamo riusciti ad avviare il pagamento. Riprova.",
     "no_customer": "Non siamo riusciti a trovare i tuoi dati di fatturazione",
@@ -1273,7 +1295,6 @@
   "toasts": {
     "subscription": {
       "loginRequired": "Accedi per aggiornare il tuo account",
-      "checkoutFailed": "Impossibile avviare il processo di pagamento. Riprova.",
       "alreadyPremium": "Già nel piano Premium",
       "checkoutSessionFailed": "Impossibile creare la sessione di pagamento",
       "portalFailed": "Impossibile aprire il portale clienti",
@@ -1281,7 +1302,8 @@
       "cancelFailed": "Impossibile annullare l'abbonamento",
       "reactivated": "Abbonamento riattivato!",
       "reactivateFailed": "Impossibile riattivare l'abbonamento",
-      "paymentPortalFailed": "Impossibile aprire il portale di pagamento"
+      "paymentPortalFailed": "Impossibile aprire il portale di pagamento",
+      "checkoutFailed": "Impossibile avviare il processo di pagamento. Riprova."
     },
     "auth": {
       "sessionExpired": "La tua sessione è scaduta. Effettua di nuovo l'accesso."
@@ -1320,33 +1342,6 @@
       "badge": "Membro Premium",
       "description": "Grazie per essere passato a Premium! Ora hai accesso a tutti i vantaggi Premium, incluse le chat illimitate con Jiki, Projects e Learn to Build!",
       "title": "Ti diamo il benvenuto in <highlight>Premium!</highlight>"
-    },
-    "subscriptionSuccess": {
-      "chatGate": {
-        "title": "Ti diamo il benvenuto nella Chat AI!",
-        "description": "Il tuo assistente AI è ora sbloccato e pronto ad aiutarti con i tuoi esercizi di programmazione.",
-        "feature1": "Fai domande sul tuo codice",
-        "feature2": "Ricevi spiegazioni sui concetti più complessi",
-        "feature3": "Ottieni suggerimenti e indicazioni personalizzati"
-      },
-      "featureGate": {
-        "title": "Funzionalità sbloccata!",
-        "description": "Ora hai accesso alle funzionalità premium che arricchiranno la tua esperienza di apprendimento."
-      },
-      "settings": {
-        "title": "Ti diamo il benvenuto in {tier}!",
-        "description": "Il tuo abbonamento è stato attivato. Esplora le nuove funzionalità nelle impostazioni."
-      },
-      "general": {
-        "title": "Ti diamo il benvenuto in {tier}!",
-        "description": "Grazie per aver fatto l'upgrade del tuo piano. Ora hai accesso a tutte le funzionalità premium."
-      },
-      "planLabel": "Piano {tier}",
-      "whatYouCanDo": "Ecco cosa puoi fare ora:",
-      "getStarted": "Inizia",
-      "continueLearning": "Continua a imparare",
-      "skipForNow": "Salta per ora",
-      "renewalNotice": "Il tuo abbonamento si rinnoverà automaticamente il {date}. Gestisci il tuo abbonamento nelle Impostazioni."
     },
     "confirmation": {
       "defaultTitle": "Conferma l'azione",
@@ -1407,31 +1402,6 @@
       "skipMessage": "Questo video ti aiuta a sfruttare Jiki al meglio. Vuoi davvero saltarlo?",
       "skipConfirm": "Salta il video",
       "skipCancel": "Continua a guardare"
-    },
-    "subscription": {
-      "chatGate": {
-        "headline": "Sblocca l'assistente Chat AI",
-        "description": "Ricevi aiuto immediato con i tuoi esercizi di programmazione dal nostro assistente AI."
-      },
-      "featureGate": {
-        "headlineFallback": "Funzionalità Premium",
-        "headline": "Sblocca {feature}",
-        "description": "Fai l'upgrade del tuo piano per accedere a funzionalità avanzate e a un'esperienza di apprendimento più ricca."
-      },
-      "settings": {
-        "headline": "Scegli il tuo piano",
-        "description": "Seleziona il piano di abbonamento più adatto alle tue esigenze di apprendimento."
-      },
-      "general": {
-        "headline": "Fai l'upgrade del tuo piano",
-        "description": "Scegli il piano più adatto ai tuoi obiettivi di apprendimento e sblocca le funzionalità avanzate."
-      },
-      "unlockWith": "Ecco cosa sbloccherai con {feature}:",
-      "recommended": "Consigliato",
-      "choosePremium": "Scegli Premium",
-      "subscribeAriaLabel": "Abbonati al piano {plan}",
-      "renewNotice": "Il tuo abbonamento si rinnoverà automaticamente ogni mese. Puoi disdire in qualsiasi momento dalle impostazioni.",
-      "notNow": "Non ora, magari più tardi"
     },
     "walkthroughConfirm": {
       "title": "Vuoi prima provare a risolverlo per conto tuo?",
@@ -1518,15 +1488,16 @@
       "userAvatarAlt": "Utente",
       "upgrade": "Passa a Premium",
       "planName": "Jiki Premium",
-      "featureLearnToBuild": "Accesso completo a <strong>Learn to Build</strong>",
-      "featureChallenges": "Affronta <strong>Sfide</strong> più impegnative",
+      "lifetimeNote": "Pagamento una tantum. Nessun abbonamento.",
+      "pendingNote": "Il tuo pagamento è ancora in elaborazione. Sbloccheremo Premium e ti invieremo un'email non appena sarà andato a buon fine.",
+      "featureChallenges": "Sblocca le <strong>Sfide Premium</strong>",
       "featureAi": "<strong>Supporto AI</strong> illimitato da Jiki",
       "featureLivestreams": "<strong>Dirette di domande e risposte</strong> regolari a cui partecipare",
-      "featureCertificates": "Ottieni <strong>certificati</strong> per i corsi",
+      "featureCertificates": "Ottieni un <strong>certificato di completamento</strong> ufficiale",
       "featureAdFree": "Esperienza di apprendimento <strong>senza pubblicità</strong>",
       "featureEarlyAccess": "<strong>Accesso anticipato</strong> alle nuove funzionalità",
       "basic": {
-        "subheading": "Passa a Premium per accelerare la tua preparazione al mondo del lavoro.",
+        "subheading": "Chi ha Premium ha <strong>26 volte più probabilità di completare il corso</strong>. Non restare bloccato e abbandonare!",
         "planName": "Piano Basic",
         "planPrice": "Gratis per sempre",
         "feature1": "Oltre 80 esercizi di programmazione",
@@ -1535,6 +1506,7 @@
         "note": "+ Accesso ai video pubblici su YouTube e ai forum della community per altre risorse di apprendimento.",
         "headline": "<highlight>Accelera</highlight> il tuo apprendimento!"
       },
+      "featureLearnToBuild": "Accesso completo a <strong>Learn to Build</strong>",
       "dailyNote": "(Sono solo <price></price> al giorno)"
     },
     "subscriptionCheckout": {
@@ -1545,10 +1517,10 @@
       "paymentInfoAriaLabel": "Informazioni di pagamento",
       "pay": "Paga",
       "orderTitle": "Jiki {tier}",
-      "orderBilling": "Fatturazione mensile. Disdici quando vuoi.",
-      "perMonthShort": "/mese",
+      "orderBilling": "Pagamento unico. Premium per sempre.",
       "securedBy": "Protetto da <stripe>stripe</stripe>",
-      "error": "Errore: {message}"
+      "error": "Errore: {message}",
+      "perMonthShort": "/mese"
     },
     "calendarSubscribe": {
       "title": "Iscriviti al calendario",
@@ -1564,6 +1536,58 @@
       "intro": "Guarda questa breve introduzione a come funzionano gli esercizi di disegno e a come risolverli. Puoi anche vederla in fondo alle istruzioni.",
       "close": "Iniziamo",
       "watchAlt": "Guarda l'introduzione"
+    },
+    "subscriptionSuccess": {
+      "chatGate": {
+        "title": "Ti diamo il benvenuto nella Chat AI!",
+        "description": "Il tuo assistente AI è ora sbloccato e pronto ad aiutarti con i tuoi esercizi di programmazione.",
+        "feature1": "Fai domande sul tuo codice",
+        "feature2": "Ricevi spiegazioni sui concetti più complessi",
+        "feature3": "Ottieni suggerimenti e indicazioni personalizzati"
+      },
+      "featureGate": {
+        "title": "Funzionalità sbloccata!",
+        "description": "Ora hai accesso alle funzionalità premium che arricchiranno la tua esperienza di apprendimento."
+      },
+      "settings": {
+        "title": "Ti diamo il benvenuto in {tier}!",
+        "description": "Il tuo abbonamento è stato attivato. Esplora le nuove funzionalità nelle impostazioni."
+      },
+      "general": {
+        "title": "Ti diamo il benvenuto in {tier}!",
+        "description": "Grazie per aver fatto l'upgrade del tuo piano. Ora hai accesso a tutte le funzionalità premium."
+      },
+      "planLabel": "Piano {tier}",
+      "whatYouCanDo": "Ecco cosa puoi fare ora:",
+      "getStarted": "Inizia",
+      "continueLearning": "Continua a imparare",
+      "skipForNow": "Salta per ora",
+      "renewalNotice": "Il tuo abbonamento si rinnoverà automaticamente il {date}. Gestisci il tuo abbonamento nelle Impostazioni."
+    },
+    "subscription": {
+      "chatGate": {
+        "headline": "Sblocca l'assistente Chat AI",
+        "description": "Ricevi aiuto immediato con i tuoi esercizi di programmazione dal nostro assistente AI."
+      },
+      "featureGate": {
+        "headlineFallback": "Funzionalità Premium",
+        "headline": "Sblocca {feature}",
+        "description": "Fai l'upgrade del tuo piano per accedere a funzionalità avanzate e a un'esperienza di apprendimento più ricca."
+      },
+      "settings": {
+        "headline": "Scegli il tuo piano",
+        "description": "Seleziona il piano di abbonamento più adatto alle tue esigenze di apprendimento."
+      },
+      "general": {
+        "headline": "Fai l'upgrade del tuo piano",
+        "description": "Scegli il piano più adatto ai tuoi obiettivi di apprendimento e sblocca le funzionalità avanzate."
+      },
+      "unlockWith": "Ecco cosa sbloccherai con {feature}:",
+      "recommended": "Consigliato",
+      "choosePremium": "Scegli Premium",
+      "subscribeAriaLabel": "Abbonati al piano {plan}",
+      "renewNotice": "Il tuo abbonamento si rinnoverà automaticamente ogni mese. Puoi disdire in qualsiasi momento dalle impostazioni.",
+      "notNow": "Non ora, magari più tardi"
     }
   },
   "challenge": {
@@ -1606,15 +1630,15 @@
           "locked": "Bloccata",
           "inProgress": "In corso"
         },
-        "bonus": {
-          "completed": "Bonus completato",
-          "available": "Bonus disponibile"
-        },
         "type": {
           "video": "Video",
           "quiz": "Quiz",
           "choice": "Scelta",
           "exercise": "Esercizio"
+        },
+        "bonus": {
+          "completed": "Bonus completato",
+          "available": "Bonus disponibile"
         }
       },
       "scrollToActive": {
@@ -1781,6 +1805,7 @@
     "freeUserLimitReached": {
       "description": "Hai usato la tua conversazione gratuita. Continua a imparare con l'aiuto di Jiki: concetti, debugging e supporto per andare avanti negli esercizi.",
       "upgradeButton": "Passa a Jiki Premium",
+      "oneTimePrice": "Solo <price></price> per l'accesso a vita!",
       "price": "Solo <price></price>!"
     },
     "lockedFooter": {

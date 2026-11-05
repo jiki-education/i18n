@@ -99,7 +99,6 @@
     "loading": "読み込み中...",
     "verifying": "確認中...",
     "sending": "送信中...",
-    "perMonth": "/月",
     "validation": {
       "emailInvalid": "有効なメールアドレスを入力してください",
       "passwordRequired": "パスワードは必須です",
@@ -171,7 +170,8 @@
       "shareOn": "{network}でシェア",
       "copyLink": "リンクをコピー",
       "copied": "リンクをコピーしました"
-    }
+    },
+    "perMonth": "/月"
   },
   "build": {
     "upcomingStreams": {
@@ -318,7 +318,7 @@
       "title": "設定",
       "description": "アカウントと設定を管理します。",
       "tabAccount": "アカウント",
-      "tabSubscription": "サブスクリプション",
+      "tabSubscription": "お支払い",
       "tabNotifications": "通知",
       "tabLearning": "学習",
       "tabDanger": "注意エリア"
@@ -395,6 +395,9 @@
       "columnMethod": "方法",
       "downloadReceipt": "領収書をダウンロード",
       "typeRecurring": "定期",
+      "typePremiumUpgrade": "プレミアムアップグレード",
+      "refunded": "返金済み",
+      "disputed": "異議申し立て中",
       "dateUnavailable": "日付不明"
     },
     "profile": {
@@ -434,9 +437,9 @@
       "helpTranslate": "Jikiの翻訳に協力する"
     },
     "subscriptionSection": {
-      "loadingCardTitle": "サブスクリプション",
-      "loadingCardDescription": "ご利用のプランと請求情報を管理します",
-      "loadingData": "サブスクリプション情報を読み込み中..."
+      "loadingCardTitle": "お支払い",
+      "loadingCardDescription": "プレミアム会員情報とお支払いを管理します",
+      "loadingData": "お支払い情報を読み込み中..."
     },
     "benefits": {
       "activeSubtitle": "毎日アンロックしている特典",
@@ -446,6 +449,8 @@
       "activeHeading": "<highlight>プレミアム</highlight>の特典をお楽しみいただいています",
       "cancellingHeading": "<highlight>プレミアム</highlight>の特典を失わないでください",
       "footer": "ご質問がありますか？<includedLink>特典の詳細</includedLink>または<supportLink>サポートに連絡</supportLink>。",
+      "resubscribeAtPrice": "今すぐ<strong>{price}</strong>で再登録して、Jikiのサポートを受けながらプログラミングの旅を続けましょう。",
+      "resubscribeWithoutPrice": "今すぐ再登録して、Jikiのサポートを受けながらプログラミングの旅を続けましょう。",
       "resubscribe": "今すぐ<price></price>で再登録して、Jikiのサポートでプログラミングの旅を続けましょう。"
     },
     "cancelSectionPanel": {
@@ -458,18 +463,16 @@
       "planName": "Jikiプレミアム",
       "upgrade": "プレミアムにアップグレード",
       "headline": "より<highlight>良い</highlight>学習方法をアンロック",
+      "lifetimeNote": "1回のお支払いで、一生お使いいただけます。",
       "dailyNote": "1日あたりわずか<price></price>"
     },
-    "neverSubscribed": {
-      "heading": "プランをアップグレード",
-      "subtitle": "プレミアムプランで高度な機能と充実した学習体験をアンロックしましょう。",
-      "featuresLabel": "プレミアムプランの特長",
-      "upgradeAriaLabel": "{plan}プランにアップグレード",
-      "upgrade": "プレミアムにアップグレード"
+    "purchasePending": {
+      "title": "お支払いは処理中です",
+      "description": "プレミアムのご購入について、決済代行会社からの確認を待っています。銀行振込の場合、反映まで数日かかることがあります。確認が取れ次第、プレミアムが使えるようになり、メールでお知らせします。"
     },
     "errorBoundary": {
-      "title": "サブスクリプションシステムエラー",
-      "messagePart1": "サブスクリプション情報の読み込みに問題が発生しています。支払いシステムの一時的な問題の可能性があります。",
+      "title": "お支払い情報エラー",
+      "messagePart1": "お支払い情報の読み込みに問題が発生しています。支払いシステムの一時的な問題の可能性があります。",
       "messagePart2": "ページを更新するか、問題が続く場合はサポートにお問い合わせください。",
       "refresh": "ページを更新",
       "detailsSummary": "エラー詳細 (開発用)"
@@ -529,20 +532,34 @@
       "statusSessionExpired": "セッション切れ",
       "statusNotSubscribed": "未登録",
       "currentPlan": "現在のプラン",
+      "lifetime": "<plan>Jiki Premium</plan>を一生お使いいただけます。更新の必要はありません。",
+      "premiumIncluded": "<plan>Jiki Premium</plan>をご利用いただけます。",
+      "subscribedWithPrice": "<strong>{price}</strong>で<plan>Jiki {tier}</plan>プランをご利用中です。",
+      "subscribed": "<plan>Jiki {tier}</plan>プランをご利用中です。",
+      "nextBillingDate": "次回のお支払日は<strong>{date}</strong>です。",
+      "pricePerMonth": "{price}/月",
+      "pricePerYear": "{price}/年",
       "cancellingMessage": "Jikiプレミアムのご利用がキャンセルされました。",
       "currentPlanAriaLabel": "現在のプラン: {plan}プラン",
       "statusAriaLabel": "サブスクリプションステータス: {status}",
-      "messageCanceled": "期間終了までサービスは継続されます",
       "messagePaymentFailed": "支払い失敗 - お支払い方法を更新してください",
-      "messageCancelling": "キャンセル予定 - 期間終了までアクセス可能",
       "messageIncomplete": "支払い設定が未完了です - 設定を完了してください",
-      "messageIncompleteExpired": "前回のチェックアウトセッションが期限切れです - 新しいサブスクリプションを開始してください",
-      "active": "現在、<plan>Jiki {tier}</plan>プランを<strong><price></price>/月</strong>でご利用中です。",
-      "activeWithBilling": "現在、<plan>Jiki {tier}</plan>プランを<strong><price></price>/月</strong>でご利用中です。次回請求日は<strong>{date}</strong>です。",
       "cancellingRemaining": "プレミアム機能を引き続きご利用いただける期間はあと<strong>{count}日</strong>です。",
       "cancellingEnds": "プレミアムプランは<strong>{date}</strong>に終了します。",
       "free": "現在<strong>無料</strong>プランをご利用中です。すべてのコンテンツに加え、一つの演習でAsk Jikiを利用できます。",
-      "planLabel": "{tier}プラン"
+      "planLabel": "{tier}プラン",
+      "messageCanceled": "期間終了までサービスは継続されます",
+      "messageCancelling": "キャンセル予定 - 期間終了までアクセス可能",
+      "messageIncompleteExpired": "前回のチェックアウトセッションが期限切れです - 新しいサブスクリプションを開始してください",
+      "active": "現在、<plan>Jiki {tier}</plan>プランを<strong><price></price>/月</strong>でご利用中です。",
+      "activeWithBilling": "現在、<plan>Jiki {tier}</plan>プランを<strong><price></price>/月</strong>でご利用中です。次回請求日は<strong>{date}</strong>です。"
+    },
+    "neverSubscribed": {
+      "heading": "プランをアップグレード",
+      "subtitle": "プレミアムプランで高度な機能と充実した学習体験をアンロックしましょう。",
+      "featuresLabel": "プレミアムプランの特長",
+      "upgradeAriaLabel": "{plan}プランにアップグレード",
+      "upgrade": "プレミアムにアップグレード"
     }
   },
   "landing": {
@@ -753,7 +770,7 @@
       "q5a1": "ブートキャンプに参加してくれてありがとうございます！　Jikiは、ブートキャンプが進化した次のステップです。解いた演習のほとんどは、さらにたくさんの演習とともにJikiに登場します。3時間の動画も、5〜10分の小さなチャプターに分けて見やすくしました！",
       "q5a2": "ブートキャンプのメンバーには、Jikiプレミアムの生涯アクセスが自動的に付与されます。これは最初の「コードを学ぼう」コースにも、今後のコースにも適用されます。",
       "intro": "特によく寄せられる質問をまとめました。ここにない質問はありますか？　<link>メールでお問い合わせください！</link>",
-      "q1a2": "<strong>Jikiプレミアム</strong>は<price></price>（国ごとに価格が設定されます）で、次の機能が使えるようになります。"
+      "q1a2": "<strong>Jikiプレミアム</strong>は<price></price>（国ごとに価格が設定されます）の買い切り価格で、次の機能が使えるようになります。"
     },
     "latestNews": {
       "heading": "最新のお知らせ",
@@ -770,6 +787,7 @@
       "basic": "ベーシック",
       "premium": "プレミアム",
       "free": "無料",
+      "oneTime": "1回のお支払い",
       "perMonth": "/月"
     },
     "planBadge": {
@@ -823,18 +841,20 @@
       "title": "よくある質問",
       "q1": "Jikiを無料で試せますか？",
       "a1": "はい！無料でサインアップして、ベーシックプランを好きなだけご利用いただけます。フルアクセスが必要になったらいつでもプレミアムにアップグレードできます。義務はありません。",
-      "q2": "最低契約期間はありますか？",
-      "a2": "最低契約期間はありません。プレミアムは月額課金で、アカウント設定からいつでもキャンセルできます。",
-      "q3": "プレミアムサブスクリプションをキャンセルするとどうなりますか？",
-      "a3": "現在の請求期間が終了するまではプレミアムアクセスが維持され、その後アカウントはベーシックプランに戻ります。進行状況は失われません。プレミアム専用機能へのアクセスのみが失われます。",
+      "q2": "プレミアムはサブスクリプションですか？",
+      "a2": "いいえ。プレミアムは買い切り制です。一度のお支払いで、更新も解約も不要で、プレミアムを永続的にご利用いただけます。",
+      "q3": "永久利用とはどういう意味ですか？",
+      "a3": "プレミアムへのアクセスは期限切れになることがなく、再度料金が発生することもありません。後から追加される機能も含め、すべてのプレミアム機能をずっとご利用いただけます。",
       "q4": "学生やプレミアムを購入できない方への割引はありますか？",
-      "q5": "後でアップグレードまたはダウングレードできますか？",
-      "a5": "もちろんです。アカウントからいつでもプレミアムにアップグレードでき、同じくらい簡単にいつでもキャンセルできます。",
+      "q5": "後でアップグレードできますか？",
+      "a5": "もちろんです。アカウントからいつでもプレミアムにアップグレードできます。",
       "a4": "Jikiを誰でも利用できるようにしたいと考えています。費用が障壁となっている場合は、<link>ご連絡</link>いただければできる限りサポートします。"
     },
     "cta": {
       "alreadyPremiumTitle": "すでにプレミアムメンバーです",
       "alreadyPremiumDesc": "Jikiのサポートに感謝します。すべてにフルアクセスをお楽しみください！",
+      "pendingTitle": "お支払いは処理中です",
+      "pendingDesc": "お支払いの確認が取れ次第、プレミアムが使えるようになります。",
       "upgradeTitle": "学習を加速する準備はできましたか？",
       "upgradeDesc": "プレミアムにアップグレードして、Jikiのすべてをアンロックしましょう。",
       "upgradeButton": "プレミアムにアップグレード",
@@ -1072,7 +1092,7 @@
     },
     "settings": {
       "title": "設定 - Jiki",
-      "description": "アカウント設定、サブスクリプション、環境設定を管理します。"
+      "description": "アカウント設定、プレミアム会員情報、環境設定を管理します。"
     },
     "checkEmail": {
       "title": "メールを確認してください - Jiki",
@@ -1212,6 +1232,8 @@
     "no_exercism_link": "このアカウントはExercismと連携していません",
     "invalid_product": "それは購入できるプランではありません",
     "existing_subscription": "すでに有効なサブスクリプションがあります",
+    "already_premium": "すでにプレミアムをご利用中です",
+    "purchase_pending": "前回のお支払いをまだ処理しています。確認が取れ次第、プレミアムが使えるようになります。",
     "invalid_return_url": "正しいページに戻すことができませんでした",
     "checkout_failed": "購入手続きを開始できませんでした。もう一度お試しください。",
     "no_customer": "請求情報が見つかりませんでした",
@@ -1273,7 +1295,6 @@
   "toasts": {
     "subscription": {
       "loginRequired": "アップグレードにはログインが必要です",
-      "checkoutFailed": "チェックアウトの開始に失敗しました。再試行してください。",
       "alreadyPremium": "既にプレミアムプランです",
       "checkoutSessionFailed": "チェックアウトセッションの作成に失敗しました",
       "portalFailed": "カスタマーポータルを開けませんでした",
@@ -1281,7 +1302,8 @@
       "cancelFailed": "サブスクリプションのキャンセルに失敗しました",
       "reactivated": "サブスクリプションが再開されました！",
       "reactivateFailed": "サブスクリプションの再開に失敗しました",
-      "paymentPortalFailed": "支払いポータルを開けませんでした"
+      "paymentPortalFailed": "支払いポータルを開けませんでした",
+      "checkoutFailed": "チェックアウトの開始に失敗しました。再試行してください。"
     },
     "auth": {
       "sessionExpired": "セッションの期限が切れました。再度ログインしてください。"
@@ -1320,33 +1342,6 @@
       "badge": "プレミアム会員",
       "description": "アップグレードありがとうございます！Jiki とのチャット無制限、プロジェクト、「開発を学ぶ」など、プレミアムのすべての特典が利用できるようになりました！",
       "title": "<highlight>プレミアム</highlight>へようこそ！"
-    },
-    "subscriptionSuccess": {
-      "chatGate": {
-        "title": "AI チャットへようこそ！",
-        "description": "AI アシスタントがアンロックされ、演習のサポートを受けられるようになりました。",
-        "feature1": "コードについて質問する",
-        "feature2": "難しい概念の解説を聞く",
-        "feature3": "一人ひとりに合わせたヒントとアドバイスをもらう"
-      },
-      "featureGate": {
-        "title": "機能がアンロックされました！",
-        "description": "学習体験を高めるプレミアム機能が利用できるようになりました。"
-      },
-      "settings": {
-        "title": "{tier} へようこそ！",
-        "description": "サブスクリプションが有効になりました。設定画面から新しい機能を確認してみましょう。"
-      },
-      "general": {
-        "title": "{tier} へようこそ！",
-        "description": "プランのアップグレードありがとうございます。すべてのプレミアム機能が利用できるようになりました。"
-      },
-      "planLabel": "{tier} プラン",
-      "whatYouCanDo": "できるようになったこと：",
-      "getStarted": "始める",
-      "continueLearning": "学習を続ける",
-      "skipForNow": "今はスキップ",
-      "renewalNotice": "サブスクリプションは {date} に自動更新されます。設定画面からいつでも管理できます。"
     },
     "confirmation": {
       "defaultTitle": "操作の確認",
@@ -1407,31 +1402,6 @@
       "skipMessage": "この動画では、Jiki を最大限に活用するコツを紹介しています。本当にスキップしますか？",
       "skipConfirm": "動画をスキップ",
       "skipCancel": "続きを見る"
-    },
-    "subscription": {
-      "chatGate": {
-        "headline": "AI チャットアシスタントをアンロック",
-        "description": "AI アシスタントから、演習のサポートをすぐに受けられます。"
-      },
-      "featureGate": {
-        "headlineFallback": "プレミアム機能",
-        "headline": "{feature} をアンロック",
-        "description": "プランをアップグレードして、高度な機能とより充実した学習体験を手に入れましょう。"
-      },
-      "settings": {
-        "headline": "プランを選択",
-        "description": "学習ニーズに合ったサブスクリプションプランを選びましょう。"
-      },
-      "general": {
-        "headline": "プランをアップグレード",
-        "description": "学習の目標に合ったプランを選んで、高度な機能をアンロックしましょう。"
-      },
-      "unlockWith": "{feature} でできるようになること：",
-      "recommended": "おすすめ",
-      "choosePremium": "プレミアムを選ぶ",
-      "subscribeAriaLabel": "{plan} プランに登録",
-      "renewNotice": "サブスクリプションは毎月自動更新されます。設定からいつでもキャンセルできます。",
-      "notNow": "今はやめておく"
     },
     "walkthroughConfirm": {
       "title": "まずは自分で解いてみませんか？",
@@ -1518,15 +1488,16 @@
       "userAvatarAlt": "ユーザー",
       "upgrade": "プレミアムにアップグレード",
       "planName": "Jiki プレミアム",
-      "featureLearnToBuild": "<strong>開発を学ぶ</strong>コンテンツへのフルアクセス",
-      "featureChallenges": "より難しい<strong>チャレンジ</strong>に挑戦できる",
+      "lifetimeNote": "1回のお支払いのみ。サブスクリプションはありません。",
+      "pendingNote": "お支払いをまだ処理しています。確認が取れ次第、プレミアムが使えるようになり、メールでお知らせします。",
+      "featureChallenges": "<strong>プレミアムチャレンジ</strong>を解放できる",
       "featureAi": "Jiki からの<strong>AI サポート</strong>が無制限",
       "featureLivestreams": "定期開催の<strong>質疑応答ライブ配信</strong>に参加できる",
-      "featureCertificates": "コースの<strong>修了証明書</strong>を取得できる",
+      "featureCertificates": "公式の<strong>修了証明書</strong>を取得できる",
       "featureAdFree": "<strong>広告なし</strong>の学習体験",
       "featureEarlyAccess": "新機能への<strong>先行アクセス</strong>",
       "basic": {
-        "subheading": "プレミアムにアップグレードして、仕事で通用するレベルへの道のりを加速させましょう。",
+        "subheading": "プレミアム利用者は<strong>修了率が26倍高くなります</strong>。挫折してやめてしまわないように。",
         "planName": "ベーシックプラン",
         "planPrice": "ずっと無料",
         "feature1": "80 以上のプログラミング演習",
@@ -1535,6 +1506,7 @@
         "note": "+ 公開 YouTube 動画やコミュニティフォーラムも学習に活用できます。",
         "headline": "学習を<highlight>加速</highlight>させましょう！"
       },
+      "featureLearnToBuild": "<strong>開発を学ぶ</strong>コンテンツへのフルアクセス",
       "dailyNote": "（1 日あたりわずか <price></price>）"
     },
     "subscriptionCheckout": {
@@ -1545,10 +1517,10 @@
       "paymentInfoAriaLabel": "お支払い情報",
       "pay": "支払う",
       "orderTitle": "Jiki {tier}",
-      "orderBilling": "毎月のお支払いです。いつでもキャンセルできます。",
-      "perMonthShort": "/月",
+      "orderBilling": "買い切り。プレミアムを一生利用できます。",
       "securedBy": "<stripe>stripe</stripe> による安全な決済",
-      "error": "エラー: {message}"
+      "error": "エラー: {message}",
+      "perMonthShort": "/月"
     },
     "calendarSubscribe": {
       "title": "カレンダーに登録",
@@ -1564,6 +1536,58 @@
       "intro": "お絵かき演習の仕組みと解き方を、短い動画で紹介します。この動画は、説明のいちばん下でも見られます。",
       "close": "さっそく始めましょう",
       "watchAlt": "紹介動画を見る"
+    },
+    "subscriptionSuccess": {
+      "chatGate": {
+        "title": "AI チャットへようこそ！",
+        "description": "AI アシスタントがアンロックされ、演習のサポートを受けられるようになりました。",
+        "feature1": "コードについて質問する",
+        "feature2": "難しい概念の解説を聞く",
+        "feature3": "一人ひとりに合わせたヒントとアドバイスをもらう"
+      },
+      "featureGate": {
+        "title": "機能がアンロックされました！",
+        "description": "学習体験を高めるプレミアム機能が利用できるようになりました。"
+      },
+      "settings": {
+        "title": "{tier} へようこそ！",
+        "description": "サブスクリプションが有効になりました。設定画面から新しい機能を確認してみましょう。"
+      },
+      "general": {
+        "title": "{tier} へようこそ！",
+        "description": "プランのアップグレードありがとうございます。すべてのプレミアム機能が利用できるようになりました。"
+      },
+      "planLabel": "{tier} プラン",
+      "whatYouCanDo": "できるようになったこと：",
+      "getStarted": "始める",
+      "continueLearning": "学習を続ける",
+      "skipForNow": "今はスキップ",
+      "renewalNotice": "サブスクリプションは {date} に自動更新されます。設定画面からいつでも管理できます。"
+    },
+    "subscription": {
+      "chatGate": {
+        "headline": "AI チャットアシスタントをアンロック",
+        "description": "AI アシスタントから、演習のサポートをすぐに受けられます。"
+      },
+      "featureGate": {
+        "headlineFallback": "プレミアム機能",
+        "headline": "{feature} をアンロック",
+        "description": "プランをアップグレードして、高度な機能とより充実した学習体験を手に入れましょう。"
+      },
+      "settings": {
+        "headline": "プランを選択",
+        "description": "学習ニーズに合ったサブスクリプションプランを選びましょう。"
+      },
+      "general": {
+        "headline": "プランをアップグレード",
+        "description": "学習の目標に合ったプランを選んで、高度な機能をアンロックしましょう。"
+      },
+      "unlockWith": "{feature} でできるようになること：",
+      "recommended": "おすすめ",
+      "choosePremium": "プレミアムを選ぶ",
+      "subscribeAriaLabel": "{plan} プランに登録",
+      "renewNotice": "サブスクリプションは毎月自動更新されます。設定からいつでもキャンセルできます。",
+      "notNow": "今はやめておく"
     }
   },
   "challenge": {
@@ -1777,6 +1801,7 @@
     "freeUserLimitReached": {
       "description": "無料の会話を使い切りました。Jiki のサポートで、概念の理解、デバッグ、演習の攻略をさらに進めましょう。",
       "upgradeButton": "Jiki プレミアムにアップグレード",
+      "oneTimePrice": "たったの<price></price>で一生使えます！",
       "price": "わずか <price></price>！"
     },
     "lockedFooter": {

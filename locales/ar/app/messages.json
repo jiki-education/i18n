@@ -99,7 +99,6 @@
     "loading": "جارٍ التحميل...",
     "verifying": "جارٍ التحقق...",
     "sending": "جارٍ الإرسال...",
-    "perMonth": "/شهر",
     "validation": {
       "emailInvalid": "يرجى إدخال بريد إلكتروني صالح",
       "passwordRequired": "كلمة المرور مطلوبة",
@@ -171,7 +170,8 @@
       "shareOn": "شارك على {network}",
       "copyLink": "نسخ الرابط",
       "copied": "تم نسخ الرابط"
-    }
+    },
+    "perMonth": "/شهر"
   },
   "build": {
     "upcomingStreams": {
@@ -318,7 +318,7 @@
       "title": "الإعدادات",
       "description": "أدِر حسابك وتفضيلاتك.",
       "tabAccount": "الحساب",
-      "tabSubscription": "الاشتراك",
+      "tabSubscription": "الفوترة",
       "tabNotifications": "الإشعارات",
       "tabLearning": "التعلّم",
       "tabDanger": "منطقة الخطر"
@@ -395,6 +395,9 @@
       "columnMethod": "الوسيلة",
       "downloadReceipt": "تنزيل الإيصال",
       "typeRecurring": "متكرر",
+      "typePremiumUpgrade": "ترقية إلى بريميوم",
+      "refunded": "مستردّ",
+      "disputed": "قيد الاعتراض",
       "dateUnavailable": "التاريخ غير متاح"
     },
     "profile": {
@@ -434,9 +437,9 @@
       "helpTranslate": "ساعد في ترجمة Jiki"
     },
     "subscriptionSection": {
-      "loadingCardTitle": "الاشتراك",
-      "loadingCardDescription": "أدِر خطة اشتراكك وتفاصيل الفوترة",
-      "loadingData": "جارٍ تحميل بيانات الاشتراك..."
+      "loadingCardTitle": "الفوترة",
+      "loadingCardDescription": "أدِر عضويتك في المميّزة ومدفوعاتك",
+      "loadingData": "جارٍ تحميل تفاصيل الفوترة..."
     },
     "benefits": {
       "activeSubtitle": "إليك ما تفتحه كل يوم",
@@ -446,6 +449,8 @@
       "activeHeading": "أنت تستمتع بمزايا <highlight>بريميوم</highlight>",
       "cancellingHeading": "لا تفقد مزايا <highlight>بريميوم</highlight>",
       "footer": "لديك سؤال؟ اعرف المزيد عن <includedLink>ما يشمله الاشتراك</includedLink> أو <supportLink>تواصل مع الدعم</supportLink>.",
+      "resubscribeAtPrice": "أعد الاشتراك الآن مقابل <strong>{price}</strong> فقط، وواصل رحلتك في البرمجة بدعم من Jiki.",
+      "resubscribeWithoutPrice": "أعد الاشتراك الآن وواصل رحلتك في البرمجة بدعم من Jiki.",
       "resubscribe": "أعد الاشتراك الآن مقابل <price></price> فقط، وواصل رحلتك في البرمجة بدعم Jiki."
     },
     "cancelSectionPanel": {
@@ -458,18 +463,16 @@
       "planName": "Jiki بريميوم",
       "upgrade": "الترقية إلى بريميوم",
       "headline": "افتح أسلوبًا <highlight>أفضل</highlight> للتعلّم",
+      "lifetimeNote": "دفعة واحدة. ملكك مدى الحياة.",
       "dailyNote": "هذا فقط <price></price> في اليوم"
     },
-    "neverSubscribed": {
-      "heading": "ارتقِ بخطتك",
-      "subtitle": "افتح مزايا متقدمة وتجارب تعلّم محسّنة مع خطط بريميوم.",
-      "featuresLabel": "مزايا خطة بريميوم",
-      "upgradeAriaLabel": "الترقية إلى خطة {plan}",
-      "upgrade": "الترقية إلى بريميوم"
+    "purchasePending": {
+      "title": "دفعتك في الطريق",
+      "description": "ننتظر من مزوّد الدفع تأكيد عملية شراء بريميوم. قد تستغرق المدفوعات البنكية بضعة أيام. سنفتح لك بريميوم ونرسل إليك بريدًا إلكترونيًا بمجرد تأكيد الدفع."
     },
     "errorBoundary": {
-      "title": "خطأ في نظام الاشتراك",
-      "messagePart1": "نواجه مشكلات في تحميل معلومات اشتراكك. قد تكون هذه مشكلة مؤقتة في نظام الدفع لدينا.",
+      "title": "خطأ في تفاصيل الفوترة",
+      "messagePart1": "نواجه مشكلة في تحميل تفاصيل فوترتك. قد تكون هذه مشكلة مؤقتة في نظام الدفع لدينا.",
       "messagePart2": "يرجى محاولة تحديث الصفحة، أو تواصل مع الدعم إذا استمرت المشكلة.",
       "refresh": "تحديث الصفحة",
       "detailsSummary": "تفاصيل الخطأ (بيئة التطوير)"
@@ -529,20 +532,34 @@
       "statusSessionExpired": "انتهت الجلسة",
       "statusNotSubscribed": "غير مشترك",
       "currentPlan": "الخطة الحالية",
+      "lifetime": "لديك <plan>Jiki بريميوم</plan> مدى الحياة. لا شيء يحتاج إلى تجديد.",
+      "premiumIncluded": "لديك <plan>Jiki بريميوم</plan>.",
+      "subscribedWithPrice": "أنت مشترك في خطة <plan>Jiki {tier}</plan> بسعر <strong>{price}</strong>.",
+      "subscribed": "أنت مشترك في خطة <plan>Jiki {tier}</plan>.",
+      "nextBillingDate": "موعد الفاتورة القادمة هو <strong>{date}</strong>.",
+      "pricePerMonth": "{price}/شهر",
+      "pricePerYear": "{price}/سنة",
       "cancellingMessage": "تم إلغاء اشتراكك في Jiki بريميوم.",
       "currentPlanAriaLabel": "الخطة الحالية: خطة {plan}",
       "statusAriaLabel": "حالة الاشتراك: {status}",
-      "messageCanceled": "تستمر الخدمة حتى نهاية الفترة",
       "messagePaymentFailed": "فشل الدفع، يرجى تحديث طريقة الدفع",
-      "messageCancelling": "تم جدولة الإلغاء، ويبقى الوصول متاحًا حتى نهاية الفترة",
       "messageIncomplete": "لم يكتمل إعداد الدفع، يرجى إكمال الإعداد",
-      "messageIncompleteExpired": "انتهت جلسة الدفع السابقة، يرجى بدء اشتراك جديد",
-      "active": "أنت على خطة <plan>Jiki {tier}</plan> بسعر <strong><price></price>/شهر</strong>.",
-      "activeWithBilling": "أنت على خطة <plan>Jiki {tier}</plan> بسعر <strong><price></price>/شهر</strong>. تاريخ الفاتورة التالية هو <strong>{date}</strong>.",
       "cancellingRemaining": "يتبقّى لك <strong>{count, plural, one {يوم واحد} two {يومان} few {# أيام} many {# يومًا} other {# يوم}}</strong> للاستمتاع بكل مزايا بريميوم.",
       "cancellingEnds": "ستنتهي خطة بريميوم في <strong>{date}</strong>.",
       "free": "أنت على الخطة <strong>المجانية</strong>. تمنحك كل المحتوى، إضافة إلى «اسأل Jiki» لمساعدتك في تمرين واحد.",
-      "planLabel": "خطة {tier}"
+      "planLabel": "خطة {tier}",
+      "messageCanceled": "تستمر الخدمة حتى نهاية الفترة",
+      "messageCancelling": "تم جدولة الإلغاء، ويبقى الوصول متاحًا حتى نهاية الفترة",
+      "messageIncompleteExpired": "انتهت جلسة الدفع السابقة، يرجى بدء اشتراك جديد",
+      "active": "أنت على خطة <plan>Jiki {tier}</plan> بسعر <strong><price></price>/شهر</strong>.",
+      "activeWithBilling": "أنت على خطة <plan>Jiki {tier}</plan> بسعر <strong><price></price>/شهر</strong>. تاريخ الفاتورة التالية هو <strong>{date}</strong>."
+    },
+    "neverSubscribed": {
+      "heading": "ارتقِ بخطتك",
+      "subtitle": "افتح مزايا متقدمة وتجارب تعلّم محسّنة مع خطط بريميوم.",
+      "featuresLabel": "مزايا خطة بريميوم",
+      "upgradeAriaLabel": "الترقية إلى خطة {plan}",
+      "upgrade": "الترقية إلى بريميوم"
     }
   },
   "landing": {
@@ -753,7 +770,7 @@
       "q5a1": "شكرًا لأنك كنت جزءًا من المخيّم التدريبي! Jiki هو المرحلة التالية في تطوّر مخيّمنا التدريبي. معظم التمارين التي حللتها ستظهر في Jiki مع الكثير غيرها. كما جزّأنا الفيديوهات التي تستغرق 3 ساعات إلى مقاطع أصغر من 5 إلى 10 دقائق لتسهيل المشاهدة!",
       "q5a2": "بصفتك عضوًا في المخيّم التدريبي، ستحصل تلقائيًا على باقة Jiki المميّزة مدى الحياة. وينطبق ذلك على دورة تعلّم البرمجة الأولى والدورات المستقبلية.",
       "intro": "هذه أكثر الأسئلة التي تصلنا. لم تجد إجابة سؤالك هنا؟ <link>راسلنا بالبريد الإلكتروني!</link>",
-      "q1a2": "<strong>باقة Jiki المميّزة</strong> بسعر <price></price> (يختلف السعر حسب البلد) وتفتح لك:"
+      "q1a2": "<strong>باقة Jiki المميّزة</strong> هي دفعة واحدة بقيمة <price></price> (يختلف السعر حسب البلد) وتفتح لك:"
     },
     "latestNews": {
       "heading": "آخر أخبارنا",
@@ -770,6 +787,7 @@
       "basic": "الأساسية",
       "premium": "المميّزة",
       "free": "المجانية",
+      "oneTime": "دفعة واحدة",
       "perMonth": "شهريًا"
     },
     "planBadge": {
@@ -823,18 +841,20 @@
       "title": "الأسئلة الشائعة",
       "q1": "هل يمكنني تجربة Jiki مجانًا؟",
       "a1": "نعم! يمكنك التسجيل مجانًا واستخدام الخطة الأساسية للمدة التي تريد. وارتقِ إلى المميّزة متى احتجت وصولًا كاملًا، دون أي التزام.",
-      "q2": "هل هناك حد أدنى لمدة الاشتراك؟",
-      "a2": "لا يوجد حد أدنى للاشتراك. يُحتسب اشتراك المميّزة شهريًا، ويمكنك الإلغاء في أي وقت من إعدادات حسابك.",
-      "q3": "ماذا يحدث إذا ألغيت اشتراك المميّزة؟",
-      "a3": "ستحتفظ بوصول المميّزة حتى نهاية فترة الفوترة الحالية، ثم يعود حسابك إلى الخطة الأساسية. لن تفقد أيًا من تقدّمك، بل تفقد فقط الوصول إلى الميزات الخاصة بالمميّزة.",
+      "q2": "هل المميّزة اشتراك؟",
+      "a2": "لا. المميّزة دفعة واحدة. تدفع مرة واحدة فقط وتحتفظ بالمميّزة مدى الحياة، بلا تجديد وبلا شيء تُلغيه.",
+      "q3": "ما معنى الوصول مدى الحياة؟",
+      "a3": "وصولك إلى المميّزة لا ينتهي أبدًا ولن تُحاسَب مرة أخرى. تحتفظ بجميع ميزات المميّزة، بما في ذلك ما نضيفه لاحقًا.",
       "q4": "هل تقدّمون خصومات للطلاب أو لمن لا يستطيع تحمّل تكلفة المميّزة؟",
-      "q5": "هل يمكنني الترقية أو التخفيض لاحقًا؟",
-      "a5": "بالتأكيد. يمكنك الترقية إلى المميّزة في أي وقت من حسابك، ويمكنك الإلغاء بالسهولة نفسها وقتما تشاء.",
+      "q5": "هل يمكنني الترقية لاحقًا؟",
+      "a5": "بالتأكيد. يمكنك الترقية إلى المميّزة في أي وقت من حسابك.",
       "a4": "نريد أن يكون Jiki في متناول الجميع. إذا كانت التكلفة عائقًا، <link>تواصل معنا</link> وسنفعل ما بوسعنا لمساعدتك."
     },
     "cta": {
       "alreadyPremiumTitle": "أنت مشترك في المميّزة بالفعل",
       "alreadyPremiumDesc": "شكرًا لدعمك Jiki، استمتع بوصول كامل إلى كل شيء!",
+      "pendingTitle": "دفعتك في الطريق",
+      "pendingDesc": "سنفتح لك بريميوم بمجرد تأكيد دفعتك.",
       "upgradeTitle": "جاهز لتسريع تعلّمك؟",
       "upgradeDesc": "ارتقِ إلى المميّزة وافتح كل ما يقدّمه Jiki.",
       "upgradeButton": "الترقية إلى المميّزة",
@@ -1072,7 +1092,7 @@
     },
     "settings": {
       "title": "الإعدادات - Jiki",
-      "description": "أدر إعدادات حسابك واشتراكك وتفضيلاتك."
+      "description": "أدر إعدادات حسابك وعضويتك في المميّزة وتفضيلاتك."
     },
     "checkEmail": {
       "title": "تحقّق من بريدك الإلكتروني - Jiki",
@@ -1212,6 +1232,8 @@
     "no_exercism_link": "هذا الحساب غير مرتبط بـ Exercism",
     "invalid_product": "هذه ليست خطة يمكنك شراؤها",
     "existing_subscription": "لديك بالفعل اشتراك نشط",
+    "already_premium": "لديك بريميوم بالفعل",
+    "purchase_pending": "لا تزال دفعتك السابقة قيد المعالجة. سنفتح لك بريميوم بمجرد تأكيدها.",
     "invalid_return_url": "لم نتمكن من إعادتك إلى الصفحة الصحيحة",
     "checkout_failed": "لم نتمكن من بدء عملية الدفع. يرجى المحاولة مرة أخرى.",
     "no_customer": "لم نتمكن من العثور على بيانات الفوترة الخاصة بك",
@@ -1273,7 +1295,6 @@
   "toasts": {
     "subscription": {
       "loginRequired": "يرجى تسجيل الدخول لترقية حسابك",
-      "checkoutFailed": "فشل بدء عملية الدفع. يرجى المحاولة مرة أخرى.",
       "alreadyPremium": "أنت بالفعل في الخطة المميزة",
       "checkoutSessionFailed": "فشل إنشاء جلسة الدفع",
       "portalFailed": "فشل فتح بوابة العميل",
@@ -1281,7 +1302,8 @@
       "cancelFailed": "فشل إلغاء الاشتراك",
       "reactivated": "تم إعادة تنشيط الاشتراك!",
       "reactivateFailed": "فشل إعادة تنشيط الاشتراك",
-      "paymentPortalFailed": "فشل فتح بوابة الدفع"
+      "paymentPortalFailed": "فشل فتح بوابة الدفع",
+      "checkoutFailed": "فشل بدء عملية الدفع. يرجى المحاولة مرة أخرى."
     },
     "auth": {
       "sessionExpired": "انتهت صلاحية جلستك. يرجى تسجيل الدخول مرة أخرى."
@@ -1320,33 +1342,6 @@
       "badge": "عضو Premium",
       "description": "شكرًا لترقية اشتراكك! أصبح بإمكانك الآن الاستفادة من جميع مزايا Premium، بما في ذلك محادثات غير محدودة مع Jiki، والمشاريع، وميزة Learn to Build!",
       "title": "مرحبًا بك في <highlight>Premium!</highlight>"
-    },
-    "subscriptionSuccess": {
-      "chatGate": {
-        "title": "مرحبًا بك في دردشة الذكاء الاصطناعي!",
-        "description": "أصبح مساعد الذكاء الاصطناعي متاحًا الآن وجاهزًا لمساعدتك في تمارين البرمجة.",
-        "feature1": "اطرح أسئلة حول كودك",
-        "feature2": "احصل على شروحات للمفاهيم المعقّدة",
-        "feature3": "احصل على تلميحات وإرشادات مخصّصة لك"
-      },
-      "featureGate": {
-        "title": "تم فتح الميزة!",
-        "description": "أصبح بإمكانك الآن استخدام ميزات Premium التي سترتقي بتجربة تعلّمك."
-      },
-      "settings": {
-        "title": "مرحبًا بك في {tier}!",
-        "description": "تم تفعيل اشتراكك. استكشف ميزاتك الجديدة في الإعدادات."
-      },
-      "general": {
-        "title": "مرحبًا بك في {tier}!",
-        "description": "شكرًا لترقية خطتك. أصبح بإمكانك الآن الوصول إلى جميع الميزات المتقدمة."
-      },
-      "planLabel": "خطة {tier}",
-      "whatYouCanDo": "ما يمكنك فعله الآن:",
-      "getStarted": "ابدأ الآن",
-      "continueLearning": "واصل التعلّم",
-      "skipForNow": "تخطّي الآن",
-      "renewalNotice": "سيتجدد اشتراكك تلقائيًا في {date}. يمكنك إدارة اشتراكك من الإعدادات."
     },
     "confirmation": {
       "defaultTitle": "تأكيد الإجراء",
@@ -1407,31 +1402,6 @@
       "skipMessage": "يساعدك هذا الفيديو على تحقيق أقصى استفادة من Jiki. هل أنت متأكد من أنك تريد تخطيه؟",
       "skipConfirm": "تخطي الفيديو",
       "skipCancel": "مواصلة المشاهدة"
-    },
-    "subscription": {
-      "chatGate": {
-        "headline": "افتح مساعد الدردشة بالذكاء الاصطناعي",
-        "description": "احصل على مساعدة فورية في تمارين البرمجة من مساعد الذكاء الاصطناعي لدينا."
-      },
-      "featureGate": {
-        "headlineFallback": "ميزات Premium",
-        "headline": "افتح {feature}",
-        "description": "رقِّ خطتك للوصول إلى ميزات متقدمة وتجربة تعلّم أفضل."
-      },
-      "settings": {
-        "headline": "اختر خطتك",
-        "description": "اختر خطة الاشتراك الأنسب لاحتياجاتك التعليمية."
-      },
-      "general": {
-        "headline": "رقِّ خطتك",
-        "description": "اختر الخطة التي تناسب أهدافك التعليمية وافتح ميزات متقدمة."
-      },
-      "unlockWith": "ما ستفتحه مع {feature}:",
-      "recommended": "موصى بها",
-      "choosePremium": "اختر Premium",
-      "subscribeAriaLabel": "الاشتراك في خطة {plan}",
-      "renewNotice": "سيتجدد اشتراكك تلقائيًا كل شهر. يمكنك الإلغاء في أي وقت من الإعدادات.",
-      "notNow": "ليس الآن، ربما لاحقًا"
     },
     "walkthroughConfirm": {
       "title": "هل تريد محاولة حلّه بنفسك أولًا؟",
@@ -1518,15 +1488,16 @@
       "userAvatarAlt": "المستخدم",
       "upgrade": "الترقية إلى Premium",
       "planName": "Jiki Premium",
-      "featureLearnToBuild": "وصول كامل إلى <strong>Learn to Build</strong>",
-      "featureChallenges": "خوض <strong>تحديات</strong> أصعب",
+      "lifetimeNote": "دفعة واحدة. بدون اشتراك.",
+      "pendingNote": "لا تزال دفعتك قيد المعالجة. سنفتح لك بريميوم ونرسل إليك بريدًا إلكترونيًا بمجرد تأكيدها.",
+      "featureChallenges": "افتح <strong>تحديات المميّزة</strong>",
       "featureAi": "<strong>دعم ذكاء اصطناعي</strong> غير محدود من Jiki",
       "featureLivestreams": "جلسات <strong>بث مباشر للأسئلة والأجوبة</strong> منتظمة يمكنك حضورها",
-      "featureCertificates": "احصل على <strong>شهادات</strong> عند إتمام الدورات",
+      "featureCertificates": "احصل على <strong>شهادة إتمام</strong> رسمية",
       "featureAdFree": "تجربة تعلّم <strong>خالية من الإعلانات</strong>",
       "featureEarlyAccess": "<strong>وصول مبكر</strong> إلى الميزات الجديدة",
       "basic": {
-        "subheading": "رقِّ حسابك إلى Premium لتسريع طريقك نحو الجاهزية لسوق العمل.",
+        "subheading": "مستخدمو Premium <strong>أكثر عرضة بـ26 مرة لإتمام المسار</strong>. لا تتعثّر وتستسلم!",
         "planName": "الخطة الأساسية",
         "planPrice": "مجانية للأبد",
         "feature1": "أكثر من 80 تمرينًا برمجيًا",
@@ -1535,6 +1506,7 @@
         "note": "+ وصول إلى فيديوهات YouTube العامة ومنتديات المجتمع كموارد تعليمية إضافية.",
         "headline": "<highlight>سرّع</highlight> تعلّمك!"
       },
+      "featureLearnToBuild": "وصول كامل إلى <strong>Learn to Build</strong>",
       "dailyNote": "(أي ما يعادل <price></price> فقط في اليوم)"
     },
     "subscriptionCheckout": {
@@ -1545,10 +1517,10 @@
       "paymentInfoAriaLabel": "معلومات الدفع",
       "pay": "ادفع",
       "orderTitle": "Jiki {tier}",
-      "orderBilling": "فوترة شهرية. يمكنك الإلغاء في أي وقت.",
-      "perMonthShort": "/شهر",
+      "orderBilling": "دفعة واحدة. المميّزة مدى الحياة.",
       "securedBy": "محمي بواسطة <stripe>stripe</stripe>",
-      "error": "خطأ: {message}"
+      "error": "خطأ: {message}",
+      "perMonthShort": "/شهر"
     },
     "calendarSubscribe": {
       "title": "الاشتراك في التقويم",
@@ -1564,6 +1536,58 @@
       "intro": "شاهد هذا التعريف السريع بكيفية عمل تمارين الرسم وكيفية حلها. يمكنك أيضًا رؤيته في أسفل التعليمات.",
       "close": "لنبدأ",
       "watchAlt": "شاهد المقدمة"
+    },
+    "subscriptionSuccess": {
+      "chatGate": {
+        "title": "مرحبًا بك في دردشة الذكاء الاصطناعي!",
+        "description": "أصبح مساعد الذكاء الاصطناعي متاحًا الآن وجاهزًا لمساعدتك في تمارين البرمجة.",
+        "feature1": "اطرح أسئلة حول كودك",
+        "feature2": "احصل على شروحات للمفاهيم المعقّدة",
+        "feature3": "احصل على تلميحات وإرشادات مخصّصة لك"
+      },
+      "featureGate": {
+        "title": "تم فتح الميزة!",
+        "description": "أصبح بإمكانك الآن استخدام ميزات Premium التي سترتقي بتجربة تعلّمك."
+      },
+      "settings": {
+        "title": "مرحبًا بك في {tier}!",
+        "description": "تم تفعيل اشتراكك. استكشف ميزاتك الجديدة في الإعدادات."
+      },
+      "general": {
+        "title": "مرحبًا بك في {tier}!",
+        "description": "شكرًا لترقية خطتك. أصبح بإمكانك الآن الوصول إلى جميع الميزات المتقدمة."
+      },
+      "planLabel": "خطة {tier}",
+      "whatYouCanDo": "ما يمكنك فعله الآن:",
+      "getStarted": "ابدأ الآن",
+      "continueLearning": "واصل التعلّم",
+      "skipForNow": "تخطّي الآن",
+      "renewalNotice": "سيتجدد اشتراكك تلقائيًا في {date}. يمكنك إدارة اشتراكك من الإعدادات."
+    },
+    "subscription": {
+      "chatGate": {
+        "headline": "افتح مساعد الدردشة بالذكاء الاصطناعي",
+        "description": "احصل على مساعدة فورية في تمارين البرمجة من مساعد الذكاء الاصطناعي لدينا."
+      },
+      "featureGate": {
+        "headlineFallback": "ميزات Premium",
+        "headline": "افتح {feature}",
+        "description": "رقِّ خطتك للوصول إلى ميزات متقدمة وتجربة تعلّم أفضل."
+      },
+      "settings": {
+        "headline": "اختر خطتك",
+        "description": "اختر خطة الاشتراك الأنسب لاحتياجاتك التعليمية."
+      },
+      "general": {
+        "headline": "رقِّ خطتك",
+        "description": "اختر الخطة التي تناسب أهدافك التعليمية وافتح ميزات متقدمة."
+      },
+      "unlockWith": "ما ستفتحه مع {feature}:",
+      "recommended": "موصى بها",
+      "choosePremium": "اختر Premium",
+      "subscribeAriaLabel": "الاشتراك في خطة {plan}",
+      "renewNotice": "سيتجدد اشتراكك تلقائيًا كل شهر. يمكنك الإلغاء في أي وقت من الإعدادات.",
+      "notNow": "ليس الآن، ربما لاحقًا"
     }
   },
   "challenge": {
@@ -1777,6 +1801,7 @@
     "freeUserLimitReached": {
       "description": "لقد استخدمت محادثتك المجانية. واصل التعلّم بمساعدة Jiki في فهم المفاهيم وتصحيح الأخطاء والتقدم في التمارين.",
       "upgradeButton": "الترقية إلى Jiki Premium",
+      "oneTimePrice": "فقط <price></price> للوصول مدى الحياة!",
       "price": "فقط <price></price>!"
     },
     "lockedFooter": {

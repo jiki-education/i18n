@@ -3,18 +3,18 @@ title: "Gyakori kérdések"
 excerpt: "Gyakori kérdések a Jikiről, a kurzusainkról és a Jiki Premiumról."
 tags: ["support"]
 seo:
-  description: "Gyakori kérdések a Jikiről, a programozást tanító platformunkról, a kurzusainkról és a Jiki Premium-előfizetésről."
+  description: "Gyakori kérdések a Jikiről, a programozást tanító platformunkról, a kurzusainkról és a Jiki Premiumról."
   keywords: ["gyakori kérdések", "gyik", "jiki", "támogatás", "prémium"]
-en_md5: c773051f2136ec2c1a51efe1199e6e8a
+en_md5: a61a0869adc157915004c4dd66e141ee
 ---
 
 ## A kurzusról
 
 ### Mennyibe kerül?
 
-A Tanulj meg programozni feladatok – a programozástanulás központi része – teljesen ingyenesek. Nincs szükség bankkártyára, nincs próbaidőszak, és nem rejt semmilyen csalafintaságot.
+A Tanulj meg programozni feladatok, amelyek a programozástanulás központi részét alkotják, teljesen ingyenesek. Nincs szükség bankkártyára, nincs próbaidőszak, és nincs semmilyen csalafintaság.
 
-A Jiki Premium ára országonként változik, és teljes hozzáférést biztosít a Tanulj fejleszteni tanfolyamhoz, a Jiki Projects-hez, a korlátlan Kérdezd Jikit AI-segítséghez, a rendszeres élő kérdés-felelet alkalmakhoz, amelyekbe becsatlakozhatsz, a kurzusok tanúsítványaihoz, a reklámmentes tanulási élményhez, valamint az új funkciók korai eléréséhez.
+A Jiki Premium egyszeri befizetés, amelynek árát az országodhoz igazítjuk, és teljes hozzáférést biztosít a Tanulj fejleszteni tanfolyamhoz, a Jiki Projects-hez, a Kérdezd Jikit funkció korlátlan AI-segítségéhez, a rendszeres élő kérdés-felelet alkalmakhoz, amelyekbe becsatlakozhatsz, a kurzusok tanúsítványaihoz, a reklámmentes tanulási élményhez, valamint az új funkciók korai eléréséhez.
 
 ### Mennyi időt kell hetente a kurzusra fordítanom?
 
@@ -34,7 +34,7 @@ Az első Tanulj fejleszteni alkalom június közepén lesz. Miután beléptél, 
 
 ### Már jelentkeztem a Bootcampre, ez más?
 
-Köszönjük, hogy részt vettél a Bootcampben! A Jiki a Bootcampünk továbbfejlesztett, következő lépcsője. A legtöbb korábban megoldott feladat megjelenik a Jikiben, és még sok más is. Emellett a 3 órás videókat 5-10 perces részekre bontottuk, hogy könnyebb legyen őket végignézni.
+Köszönjük, hogy részt vettél a Bootcampben! A Jiki a Bootcampünk fejlődésének következő szakasza. A legtöbb korábban megoldott feladat megjelenik a Jikiben, és még sok más is. Emellett a 3 órás videókat 5-10 perces részekre bontottuk, hogy könnyebb legyen őket végignézni.
 
 A Bootcamp tagjaként automatikusan megkapod az életre szóló Jiki Premiumot. Ez vonatkozik az első Tanulj meg programozni kurzusra és a későbbi kurzusokra is.
 
@@ -44,21 +44,25 @@ A Bootcamp tagjaként automatikusan megkapod az életre szóló Jiki Premiumot. 
 
 Igen! Ingyen regisztrálhatsz, és az Alapcsomagot addig használhatod, ameddig csak szeretnéd. Bármikor frissíthetsz Prémium csomagra, ha teljes hozzáférésre van szükséged, és ez semmilyen kötelezettséggel nem jár.
 
-### Van minimális szerződési időszak?
+### A Prémium egy előfizetés?
 
-Nincs minimális szerződési idő. A Prémium csomagot havonta számlázzuk, és bármikor lemondhatod a fiókod beállításaiból.
+Nem. A Prémium egyszeri befizetés: egyszer fizetsz érte, és életed végéig megtartod. Nincs megújítás, és nincs mit lemondanod.
 
-### Mi történik, ha lemondom a Prémium előfizetésem?
+### Mit jelent az életre szóló hozzáférés?
 
-A jelenlegi számlázási időszak végéig megtartod a prémium hozzáférést, majd a fiókod visszavált az Alapcsomagra. Nem veszítesz el semmit a haladásodból, csupán elveszíted a hozzáférést a kizárólag prémium előfizetők számára elérhető funkciókhoz.
+A Prémium hozzáférésed soha nem jár le, és többé nem vonunk le pénzt. Minden prémium funkciót megtartasz, azokat is, amelyeket csak később adunk hozzá.
+
+### Már előfizettem a Prémiumra. Mi lesz az előfizetésemmel?
+
+Semmi sem változik. Az előfizetésed pontosan úgy folytatódik, ahogy van, és a fiókod beállításaiból bármikor kezelheted vagy lemondhatod.
 
 ### Kínáltok kedvezményt diákoknak vagy azoknak, akik nem engedhetik meg maguknak a Prémium csomagot?
 
 Szeretnénk, ha a Jiki mindenki számára elérhető lenne. Ha az ár akadályt jelent, kérjük, [vedd fel velünk a kapcsolatot](/articles/support), és segítünk, amiben tudunk.
 
-### Később is frissíthetek, vagy lemondhatok?
+### Később is frissíthetek?
 
-Természetesen. Bármikor frissíthetsz Prémium csomagra a fiókodból, és ugyanilyen egyszerűen le is mondhatod, amikor csak szeretnéd.
+Természetesen. Bármikor frissíthetsz Prémium csomagra a fiókodból.
 
 ## Maradt még kérdésed?
 

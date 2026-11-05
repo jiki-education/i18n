@@ -99,7 +99,6 @@
     "loading": "Betöltés...",
     "verifying": "Ellenőrzés...",
     "sending": "Küldés...",
-    "perMonth": "/hó",
     "validation": {
       "emailInvalid": "Adj meg egy érvényes e-mail-címet",
       "passwordRequired": "A jelszó megadása kötelező",
@@ -171,7 +170,8 @@
       "shareOn": "Oszd meg a {network} oldalon",
       "copyLink": "Link másolása",
       "copied": "Link másolva"
-    }
+    },
+    "perMonth": "/hó"
   },
   "build": {
     "upcomingStreams": {
@@ -318,7 +318,7 @@
       "title": "Beállítások",
       "description": "Kezeld a fiókod és a beállításaid.",
       "tabAccount": "Fiók",
-      "tabSubscription": "Előfizetés",
+      "tabSubscription": "Számlázás",
       "tabNotifications": "Értesítések",
       "tabLearning": "Tanulás",
       "tabDanger": "Veszélyzóna"
@@ -395,6 +395,9 @@
       "columnMethod": "Mód",
       "downloadReceipt": "Nyugta letöltése",
       "typeRecurring": "Ismétlődő",
+      "typePremiumUpgrade": "Prémium-frissítés",
+      "refunded": "Visszatérítve",
+      "disputed": "Vitatott",
       "dateUnavailable": "Dátum nem elérhető"
     },
     "profile": {
@@ -434,9 +437,9 @@
       "helpTranslate": "Segíts lefordítani a Jikit"
     },
     "subscriptionSection": {
-      "loadingCardTitle": "Előfizetés",
-      "loadingCardDescription": "Kezeld az előfizetési csomagod és a számlázási adataid",
-      "loadingData": "Előfizetési adatok betöltése..."
+      "loadingCardTitle": "Számlázás",
+      "loadingCardDescription": "Kezeld a Premium-tagságodat és a fizetéseidet",
+      "loadingData": "Számlázási adataid betöltése..."
     },
     "benefits": {
       "activeSubtitle": "Ezt kapod minden nap",
@@ -446,6 +449,8 @@
       "activeHeading": "Élvezed a <highlight>Premium</highlight> előnyeit",
       "cancellingHeading": "Ne veszítsd el a <highlight>Premium</highlight> előnyeit",
       "footer": "Kérdésed van? Nézd meg, <includedLink>mit tartalmaz a csomag</includedLink>, vagy <supportLink>írj az ügyfélszolgálatnak</supportLink>.",
+      "resubscribeAtPrice": "Iratkozz be újra mindössze <strong>{price}</strong> összegért, és folytasd programozási utadat Jiki támogatásával.",
+      "resubscribeWithoutPrice": "Iratkozz be újra, és folytasd programozási utadat Jiki támogatásával.",
       "resubscribe": "Fizess elő újra mindössze <price></price> áron, és folytasd a programozási utad Jiki támogatásával."
     },
     "cancelSectionPanel": {
@@ -458,18 +463,16 @@
       "planName": "Jiki Premium",
       "upgrade": "Váltás Premiumra",
       "headline": "Fedezz fel egy <highlight>jobb</highlight> tanulási módot",
+      "lifetimeNote": "Egyszeri fizetés. Örökre a tiéd.",
       "dailyNote": "Ez naponta csak <price></price>"
     },
-    "neverSubscribed": {
-      "heading": "Válts nagyobb csomagra",
-      "subtitle": "Oldj fel haladó funkciókat és teljesebb tanulási élményt a prémium csomagjainkkal.",
-      "featuresLabel": "A Premium csomag funkciói",
-      "upgradeAriaLabel": "Váltás a {plan} csomagra",
-      "upgrade": "Váltás Premiumra"
+    "purchasePending": {
+      "title": "A fizetésed úton van",
+      "description": "Arra várunk, hogy a fizetési szolgáltatód megerősítse a Prémium-vásárlásodat. A banki utalások néhány napig is eltarthatnak. Amint megérkezik a pénz, feloldjuk a Prémiumot, és e-mailt küldünk."
     },
     "errorBoundary": {
-      "title": "Előfizetési rendszerhiba",
-      "messagePart1": "Nem sikerül betölteni az előfizetési adataidat. Ez átmeneti hiba lehet a fizetési rendszerünkben.",
+      "title": "Hiba a számlázási adatokban",
+      "messagePart1": "Nem sikerül betölteni a számlázási adataidat. Ez átmeneti hiba lehet a fizetési rendszerünkben.",
       "messagePart2": "Frissítsd az oldalt, vagy ha a hiba továbbra is fennáll, írj az ügyfélszolgálatnak.",
       "refresh": "Oldal frissítése",
       "detailsSummary": "Hiba részletei (fejlesztői)"
@@ -529,20 +532,34 @@
       "statusSessionExpired": "A munkamenet lejárt",
       "statusNotSubscribed": "Nincs előfizetés",
       "currentPlan": "Jelenlegi csomag",
+      "lifetime": "A <plan>Jiki Prémium</plan> csomagod örökre szól. Nincs mit megújítani.",
+      "premiumIncluded": "<plan>Jiki Prémium</plan> csomagod van.",
+      "subscribedWithPrice": "Előfizettél a <plan>Jiki {tier}</plan> csomagra <strong>{price}</strong> áron.",
+      "subscribed": "Előfizettél a <plan>Jiki {tier}</plan> csomagra.",
+      "nextBillingDate": "A következő számlázás napja: <strong>{date}</strong>.",
+      "pricePerMonth": "{price}/hó",
+      "pricePerYear": "{price}/év",
       "cancellingMessage": "A Jiki Premium előfizetésed le lett mondva.",
       "currentPlanAriaLabel": "Jelenlegi csomag: {plan} csomag",
       "statusAriaLabel": "Előfizetés állapota: {status}",
-      "messageCanceled": "A szolgáltatás az időszak végéig elérhető",
       "messagePaymentFailed": "Sikertelen fizetés, frissítsd a fizetési módot",
-      "messageCancelling": "Lemondás ütemezve, hozzáférés az időszak végéig",
       "messageIncomplete": "A fizetés beállítása hiányos, fejezd be a beállítást",
-      "messageIncompleteExpired": "A korábbi fizetési munkamenet lejárt, indíts új előfizetést",
-      "active": "A <plan>Jiki {tier}</plan> csomagot használod <strong>havi <price></price></strong> áron.",
-      "activeWithBilling": "A <plan>Jiki {tier}</plan> csomagot használod <strong>havi <price></price></strong> áron. A következő számlázási dátum: <strong>{date}</strong>.",
       "cancellingRemaining": "Még <strong>{count, plural, one {# napod} other {# napod}}</strong> van hátra, hogy élvezd az összes Premium funkciót.",
       "cancellingEnds": "A Premium csomagod ekkor jár le: <strong>{date}</strong>.",
       "free": "Az <strong>Ingyenes</strong> csomagot használod. Ezzel minden tartalomhoz hozzáférsz, és egy feladatnál a Kérdezd Jikit funkció is segít neked.",
-      "planLabel": "{tier} csomag"
+      "planLabel": "{tier} csomag",
+      "messageCanceled": "A szolgáltatás az időszak végéig elérhető",
+      "messageCancelling": "Lemondás ütemezve, hozzáférés az időszak végéig",
+      "messageIncompleteExpired": "A korábbi fizetési munkamenet lejárt, indíts új előfizetést",
+      "active": "A <plan>Jiki {tier}</plan> csomagot használod <strong>havi <price></price></strong> áron.",
+      "activeWithBilling": "A <plan>Jiki {tier}</plan> csomagot használod <strong>havi <price></price></strong> áron. A következő számlázási dátum: <strong>{date}</strong>."
+    },
+    "neverSubscribed": {
+      "heading": "Válts nagyobb csomagra",
+      "subtitle": "Oldj fel haladó funkciókat és teljesebb tanulási élményt a prémium csomagjainkkal.",
+      "featuresLabel": "A Premium csomag funkciói",
+      "upgradeAriaLabel": "Váltás a {plan} csomagra",
+      "upgrade": "Váltás Premiumra"
     }
   },
   "landing": {
@@ -753,7 +770,7 @@
       "q5a1": "Köszönjük, hogy részt vettél a Bootcampben! A Jiki a Bootcamp fejlődésének következő állomása. A legtöbb feladat, amit megoldottál, a Jikiben is megjelenik, sok újdonsággal együtt. A 3 órás videókat ráadásul rövidebb, 5-10 perces részekre bontottuk, hogy könnyebb legyen nézni őket!",
       "q5a2": "A Bootcamp tagjaként automatikusan életre szóló Jiki Premiumot kapsz. Ez az első Tanulj meg programozni kurzusra és a jövőbeli kurzusokra is vonatkozik.",
       "intro": "Ezeket a kérdéseket kapjuk a leggyakrabban. Nem találod a választ a kérdésedre? <link>Írj nekünk egy e-mailt!</link>",
-      "q1a2": "A <strong>Jiki Premium</strong> ára <price></price> (az árat országonként igazítjuk), és a következőket nyitja meg:"
+      "q1a2": "A <strong>Jiki Premium</strong> egyszeri <price></price> összegű befizetés (az árat országonként igazítjuk), és a következőket nyitja meg:"
     },
     "latestNews": {
       "heading": "Legfrissebb híreink",
@@ -770,6 +787,7 @@
       "basic": "Alap",
       "premium": "Prémium",
       "free": "Ingyenes",
+      "oneTime": "egyszeri fizetés",
       "perMonth": "havonta"
     },
     "planBadge": {
@@ -823,18 +841,20 @@
       "title": "Gyakran ismételt kérdések",
       "q1": "Kipróbálhatom a Jikit ingyen?",
       "a1": "Igen! Ingyen regisztrálhatsz, és addig használhatod a Basic csomagot, ameddig csak szeretnéd. Amikor teljes hozzáférésre van szükséged, bármikor válthatsz Premiumra, semmire sem kötelez.",
-      "q2": "Van minimális szerződési idő?",
-      "a2": "Nincs minimális szerződési idő. A Premium havonta fizetendő, és bármikor lemondhatod a fiókbeállításaidban.",
-      "q3": "Mi történik, ha lemondom a Premium-előfizetésemet?",
-      "a3": "A jelenlegi számlázási időszak végéig megmarad a Premium-hozzáférésed, utána a fiókod visszakerül a Basic csomagra. A haladásodból semmit sem veszítesz el, csak a Premium-funkciókhoz nem férsz hozzá többé.",
+      "q2": "A Premium egy előfizetés?",
+      "a2": "Nem. A Premium egyszeri befizetés. Egyszer fizetsz, és örökre megtartod a Premiumot, nincs megújítás és nincs mit lemondanod.",
+      "q3": "Mit jelent az élethosszig tartó hozzáférés?",
+      "a3": "A Premium-hozzáférésed sosem jár le, és nem vonunk le tőled újra pénzt. Megtartod az összes Premium-funkciót, még azokat is, amelyeket később adunk hozzá.",
       "q4": "Adtok kedvezményt diákoknak vagy azoknak, akik nem engedhetik meg maguknak a Premiumot?",
-      "q5": "Válthatok később nagyobb vagy kisebb csomagra?",
-      "a5": "Természetesen. A fiókodból bármikor válthatsz Premiumra, és ugyanilyen egyszerűen le is mondhatod, amikor csak szeretnéd.",
+      "q5": "Később is válthatok Premiumra?",
+      "a5": "Természetesen. A fiókodból bármikor válthatsz Premiumra.",
       "a4": "Szeretnénk, ha a Jiki mindenki számára elérhető lenne. Ha az ár akadályt jelent, <link>írj nekünk</link>, és igyekszünk segíteni."
     },
     "cta": {
       "alreadyPremiumTitle": "Már Premium-tag vagy",
       "alreadyPremiumDesc": "Köszönjük, hogy támogatod a Jikit! Élvezd a teljes hozzáférést mindenhez!",
+      "pendingTitle": "A fizetésed úton van",
+      "pendingDesc": "Amint megérkezik a fizetésed, feloldjuk a Prémiumot.",
       "upgradeTitle": "Készen állsz felgyorsítani a tanulásod?",
       "upgradeDesc": "Válts Premiumra, és nyisd meg mindazt, amit a Jiki kínál.",
       "upgradeButton": "Váltás Premiumra",
@@ -1072,7 +1092,7 @@
     },
     "settings": {
       "title": "Beállítások - Jiki",
-      "description": "Kezeld a fiókbeállításaidat, az előfizetésedet és a preferenciáidat."
+      "description": "Kezeld a fiókbeállításaidat, a Premium-tagságodat és a preferenciáidat."
     },
     "checkEmail": {
       "title": "Nézd meg az e-mailjeidet - Jiki",
@@ -1212,6 +1232,8 @@
     "no_exercism_link": "Ez a fiók nincs összekapcsolva az Exercismmel.",
     "invalid_product": "Ez nem megvásárolható csomag.",
     "existing_subscription": "Már van aktív előfizetésed.",
+    "already_premium": "Már megvan a Prémiumod",
+    "purchase_pending": "A korábbi fizetésed még feldolgozás alatt van. Amint megérkezik, feloldjuk a Prémiumot.",
     "invalid_return_url": "Nem tudtunk visszaküldeni a megfelelő oldalra.",
     "checkout_failed": "Nem sikerült elindítani a fizetési folyamatot. Próbáld újra.",
     "no_customer": "Nem találtuk a számlázási adataidat.",
@@ -1273,7 +1295,6 @@
   "toasts": {
     "subscription": {
       "loginRequired": "Jelentkezz be a csomagváltáshoz",
-      "checkoutFailed": "Nem sikerült elindítani a fizetési folyamatot. Próbáld újra.",
       "alreadyPremium": "Már a Premium csomagot használod",
       "checkoutSessionFailed": "Nem sikerült létrehozni a fizetési munkamenetet",
       "portalFailed": "Nem sikerült megnyitni az ügyfélportált",
@@ -1281,7 +1302,8 @@
       "cancelFailed": "Nem sikerült lemondani az előfizetést",
       "reactivated": "Előfizetés újraaktiválva!",
       "reactivateFailed": "Nem sikerült újraaktiválni az előfizetést",
-      "paymentPortalFailed": "Nem sikerült megnyitni a fizetési portált"
+      "paymentPortalFailed": "Nem sikerült megnyitni a fizetési portált",
+      "checkoutFailed": "Nem sikerült elindítani a fizetési folyamatot. Próbáld újra."
     },
     "auth": {
       "sessionExpired": "A munkameneted lejárt. Jelentkezz be újra."
@@ -1320,33 +1342,6 @@
       "badge": "Premium tag",
       "description": "Köszönjük, hogy előfizettél! Mostantól hozzáférsz az összes Premium előnyhöz, köztük a korlátlan beszélgetésekhez Jikivel, a Projektekhez és a Tanulj fejleszteni szálhoz!",
       "title": "Üdvözlünk a <highlight>Premiumban!</highlight>"
-    },
-    "subscriptionSuccess": {
-      "chatGate": {
-        "title": "Üdvözlünk az AI-csevegésben!",
-        "description": "Az AI-asszisztensed mostantól elérhető, és készen áll, hogy segítsen a programozási feladatokban.",
-        "feature1": "Kérdezz a kódodról",
-        "feature2": "Kapj magyarázatot az összetettebb fogalmakhoz",
-        "feature3": "Kapj személyre szabott tippeket és útmutatást"
-      },
-      "featureGate": {
-        "title": "Funkció feloldva!",
-        "description": "Mostantól hozzáférsz azokhoz a prémium funkciókhoz, amelyek még jobbá teszik a tanulást."
-      },
-      "settings": {
-        "title": "Üdvözlünk a {tier} csomagban!",
-        "description": "Az előfizetésed aktív. Fedezd fel az új funkcióidat a beállításokban."
-      },
-      "general": {
-        "title": "Üdvözlünk a {tier} csomagban!",
-        "description": "Köszönjük, hogy előfizettél! Mostantól minden prémium funkcióhoz hozzáférsz."
-      },
-      "planLabel": "{tier} csomag",
-      "whatYouCanDo": "Íme, mit tehetsz mostantól:",
-      "getStarted": "Kezdjük el",
-      "continueLearning": "Tanulás folytatása",
-      "skipForNow": "Most kihagyom",
-      "renewalNotice": "Az előfizetésed {date} napján automatikusan megújul. Az előfizetésedet a Beállításokban kezelheted."
     },
     "confirmation": {
       "defaultTitle": "Megerősítés",
@@ -1407,31 +1402,6 @@
       "skipMessage": "Ez a videó segít, hogy a legtöbbet hozd ki a Jikiből. Biztosan kihagyod?",
       "skipConfirm": "Videó kihagyása",
       "skipCancel": "Tovább nézem"
-    },
-    "subscription": {
-      "chatGate": {
-        "headline": "Oldd fel az AI-asszisztenst",
-        "description": "Kapj azonnali segítséget a programozási feladatokhoz az AI-asszisztensünktől."
-      },
-      "featureGate": {
-        "headlineFallback": "Prémium funkciók",
-        "headline": "{feature} feloldása",
-        "description": "Válts nagyobb csomagra, hogy hozzáférj a haladó funkciókhoz, és még többet hozz ki a tanulásból."
-      },
-      "settings": {
-        "headline": "Válassz csomagot",
-        "description": "Válaszd ki azt az előfizetési csomagot, amelyik a legjobban illik a tanulási céljaidhoz."
-      },
-      "general": {
-        "headline": "Válts nagyobb csomagra",
-        "description": "Válaszd ki a tanulási céljaidhoz illő csomagot, és oldd fel a haladó funkciókat."
-      },
-      "unlockWith": "Amit a(z) {feature} feloldásával kapsz:",
-      "recommended": "Ajánlott",
-      "choosePremium": "Premium választása",
-      "subscribeAriaLabel": "Előfizetés a(z) {plan} csomagra",
-      "renewNotice": "Az előfizetésed minden hónapban automatikusan megújul. Bármikor lemondhatod a beállításokban.",
-      "notNow": "Most nem, talán később"
     },
     "walkthroughConfirm": {
       "title": "Előbb megpróbálod egyedül megoldani?",
@@ -1518,15 +1488,16 @@
       "userAvatarAlt": "Felhasználó",
       "upgrade": "Válts Premiumra",
       "planName": "Jiki Premium",
-      "featureLearnToBuild": "A <strong>Tanulj fejleszteni</strong> teljes tartalma",
-      "featureChallenges": "Vágj bele a nehezebb <strong>kihívásokba</strong>",
+      "lifetimeNote": "Egyszeri fizetés. Nincs előfizetés.",
+      "pendingNote": "A fizetésed még feldolgozás alatt van. Amint megérkezik, feloldjuk a Prémiumot, és e-mailt küldünk.",
+      "featureChallenges": "Oldd fel a <strong>Premium kihívásokat</strong>",
       "featureAi": "Korlátlan <strong>AI-támogatás</strong> Jikitől",
       "featureLivestreams": "Rendszeres <strong>kérdés-felelet élő adások</strong>, amikhez csatlakozhatsz",
-      "featureCertificates": "Szerezz <strong>tanúsítványt</strong> a kurzusok elvégzéséért",
+      "featureCertificates": "Szerezz hivatalos <strong>teljesítési tanúsítványt</strong>",
       "featureAdFree": "<strong>Reklámmentes</strong> tanulási élmény",
       "featureEarlyAccess": "<strong>Korai hozzáférés</strong> az új funkciókhoz",
       "basic": {
-        "subheading": "Válts Premiumra, és gyorsítsd fel az utad a munkára kész tudásig.",
+        "subheading": "A Premium-felhasználóknak <strong>26-szor nagyobb esélyük van a befejezésre</strong>. Ne akadj el, és ne add fel!",
         "planName": "Basic csomag",
         "planPrice": "Örökre ingyenes",
         "feature1": "Több mint 80 programozási feladat",
@@ -1535,6 +1506,7 @@
         "note": "+ Hozzáférés a nyilvános YouTube-videókhoz és a közösségi fórumokhoz további tanulási lehetőségekért.",
         "headline": "<highlight>Gyorsítsd fel</highlight> a tanulásod!"
       },
+      "featureLearnToBuild": "A <strong>Tanulj fejleszteni</strong> teljes tartalma",
       "dailyNote": "(Ez naponta csak <price></price>)"
     },
     "subscriptionCheckout": {
@@ -1545,10 +1517,10 @@
       "paymentInfoAriaLabel": "Fizetési adatok",
       "pay": "Fizetés",
       "orderTitle": "Jiki {tier}",
-      "orderBilling": "Havi számlázás. Bármikor lemondhatod.",
-      "perMonthShort": "/hó",
+      "orderBilling": "Egyszeri fizetés. Premium örökre.",
       "securedBy": "Biztosítja: <stripe>stripe</stripe>",
-      "error": "Hiba: {message}"
+      "error": "Hiba: {message}",
+      "perMonthShort": "/hó"
     },
     "calendarSubscribe": {
       "title": "Feliratkozás a naptárra",
@@ -1564,6 +1536,58 @@
       "intro": "Nézd meg ezt a rövid bemutatót, amiből megtudod, hogyan működnek a rajzfeladatok, és hogyan oldhatod meg őket. Az utasítások alján is megtalálod.",
       "close": "Kezdjük el!",
       "watchAlt": "Nézd meg a bemutatót"
+    },
+    "subscriptionSuccess": {
+      "chatGate": {
+        "title": "Üdvözlünk az AI-csevegésben!",
+        "description": "Az AI-asszisztensed mostantól elérhető, és készen áll, hogy segítsen a programozási feladatokban.",
+        "feature1": "Kérdezz a kódodról",
+        "feature2": "Kapj magyarázatot az összetettebb fogalmakhoz",
+        "feature3": "Kapj személyre szabott tippeket és útmutatást"
+      },
+      "featureGate": {
+        "title": "Funkció feloldva!",
+        "description": "Mostantól hozzáférsz azokhoz a prémium funkciókhoz, amelyek még jobbá teszik a tanulást."
+      },
+      "settings": {
+        "title": "Üdvözlünk a {tier} csomagban!",
+        "description": "Az előfizetésed aktív. Fedezd fel az új funkcióidat a beállításokban."
+      },
+      "general": {
+        "title": "Üdvözlünk a {tier} csomagban!",
+        "description": "Köszönjük, hogy előfizettél! Mostantól minden prémium funkcióhoz hozzáférsz."
+      },
+      "planLabel": "{tier} csomag",
+      "whatYouCanDo": "Íme, mit tehetsz mostantól:",
+      "getStarted": "Kezdjük el",
+      "continueLearning": "Tanulás folytatása",
+      "skipForNow": "Most kihagyom",
+      "renewalNotice": "Az előfizetésed {date} napján automatikusan megújul. Az előfizetésedet a Beállításokban kezelheted."
+    },
+    "subscription": {
+      "chatGate": {
+        "headline": "Oldd fel az AI-asszisztenst",
+        "description": "Kapj azonnali segítséget a programozási feladatokhoz az AI-asszisztensünktől."
+      },
+      "featureGate": {
+        "headlineFallback": "Prémium funkciók",
+        "headline": "{feature} feloldása",
+        "description": "Válts nagyobb csomagra, hogy hozzáférj a haladó funkciókhoz, és még többet hozz ki a tanulásból."
+      },
+      "settings": {
+        "headline": "Válassz csomagot",
+        "description": "Válaszd ki azt az előfizetési csomagot, amelyik a legjobban illik a tanulási céljaidhoz."
+      },
+      "general": {
+        "headline": "Válts nagyobb csomagra",
+        "description": "Válaszd ki a tanulási céljaidhoz illő csomagot, és oldd fel a haladó funkciókat."
+      },
+      "unlockWith": "Amit a(z) {feature} feloldásával kapsz:",
+      "recommended": "Ajánlott",
+      "choosePremium": "Premium választása",
+      "subscribeAriaLabel": "Előfizetés a(z) {plan} csomagra",
+      "renewNotice": "Az előfizetésed minden hónapban automatikusan megújul. Bármikor lemondhatod a beállításokban.",
+      "notNow": "Most nem, talán később"
     }
   },
   "challenge": {
@@ -1606,15 +1630,15 @@
           "locked": "Zárolva",
           "inProgress": "Folyamatban"
         },
-        "bonus": {
-          "completed": "Bónusz teljesítve",
-          "available": "Bónusz elérhető"
-        },
         "type": {
           "video": "Videó",
           "quiz": "Kvíz",
           "choice": "Választás",
           "exercise": "Feladat"
+        },
+        "bonus": {
+          "completed": "Bónusz teljesítve",
+          "available": "Bónusz elérhető"
         }
       },
       "scrollToActive": {
@@ -1781,6 +1805,7 @@
     "freeUserLimitReached": {
       "description": "Felhasználtad az ingyenes beszélgetésedet. Folytasd a tanulást Jiki segítségével: kérdezz a fogalmakról, a hibakeresésről és arról, hogyan haladj tovább a feladatokkal.",
       "upgradeButton": "Válts Jiki Premiumra",
+      "oneTimePrice": "Mindössze <price></price> az örökös hozzáférésért!",
       "price": "Mindössze <price></price>!"
     },
     "lockedFooter": {

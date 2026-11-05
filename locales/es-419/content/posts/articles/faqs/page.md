@@ -3,9 +3,9 @@ title: "Preguntas frecuentes"
 excerpt: "Preguntas frecuentes sobre Jiki, nuestros cursos y Jiki Premium."
 tags: ["support"]
 seo:
-  description: "Preguntas frecuentes sobre Jiki, nuestra plataforma para aprender a programar, los cursos y la suscripción a Jiki Premium."
+  description: "Preguntas frecuentes sobre Jiki, nuestra plataforma para aprender a programar, los cursos y Jiki Premium."
   keywords: ["preguntas frecuentes", "preguntas frecuentes", "jiki", "soporte", "premium"]
-en_md5: c773051f2136ec2c1a51efe1199e6e8a
+en_md5: a61a0869adc157915004c4dd66e141ee
 ---
 
 ## Sobre el curso
@@ -14,7 +14,7 @@ en_md5: c773051f2136ec2c1a51efe1199e6e8a
 
 Los ejercicios de Learn to Code, que forman el núcleo del plan de estudios para aprender a programar, son completamente gratis. Sin tarjeta, sin período de prueba, sin condiciones ocultas.
 
-Jiki Premium tiene un precio por país y te da acceso completo a Learn to Build, Jiki Projects, soporte ilimitado de Ask Jiki AI, transmisiones en vivo de preguntas y respuestas a las que puedes unirte, certificados de los cursos, una experiencia de aprendizaje sin anuncios y acceso anticipado a nuevas funcionalidades.
+Jiki Premium es un pago único, con un precio que depende del país, y te da acceso completo a Learn to Build, Jiki Projects, soporte ilimitado de Ask Jiki AI, transmisiones periódicas en vivo de preguntas y respuestas a las que puedes unirte, certificados de los cursos, una experiencia de aprendizaje sin anuncios y acceso anticipado a nuevas funcionalidades.
 
 ### ¿Cuánto tiempo tendré que dedicar cada semana al curso?
 
@@ -22,7 +22,7 @@ Puedes dedicar tanto tiempo como quieras. La mayoría completa Learn to Code en 
 
 ### ¿Qué tan difícil es el curso? ¿Qué tan inteligente hay que ser?
 
-El curso está diseñado para ser accesible para todas las personas, sin importar tu experiencia previa. No creemos que tengas que ser «inteligente» para aprender a programar. Pero sí necesitas esforzarte y estar dispuesto a aceptar el desafío.
+El curso está diseñado para ser accesible para todas las personas, sin importar tu experiencia previa. No creemos que tengas que ser «inteligente» para aprender a programar. Pero sí necesitas esforzarte y tener ganas de que te pongan a prueba.
 
 Si te esfuerzas, pides ayuda cuando te atasques y aceptas el desafío, te sorprenderá lo lejos que puedes llegar en poco tiempo.
 
@@ -42,23 +42,27 @@ Como miembro del Bootcamp, recibirás automáticamente Jiki Premium de por vida.
 
 ### ¿Puedo probar Jiki gratis?
 
-¡Sí! Puedes registrarte gratis y usar el plan Basic todo el tiempo que quieras. Actualízate a Premium cuando necesites acceso completo, sin compromiso.
+¡Sí! Puedes registrarte gratis y usar el plan Basic todo el tiempo que quieras. Pásate a Premium cuando necesites acceso completo, sin compromiso.
 
-### ¿Hay un tiempo mínimo de contrato?
+### ¿Premium es una suscripción?
 
-No hay tiempo mínimo de contrato. Premium se factura mensualmente y puedes cancelar en cualquier momento desde la configuración de tu cuenta.
+No. Premium es un pago único. Pagas una vez y conservas Premium de por vida, sin renovaciones y sin nada que cancelar.
 
-### ¿Qué pasa si cancelo mi suscripción a Premium?
+### ¿Qué significa acceso de por vida?
 
-Conservarás el acceso a Premium hasta el final del período de facturación actual y luego tu cuenta volverá al plan Basic. No pierdes nada de tu progreso, solo pierdes el acceso a las funcionalidades exclusivas de Premium.
+Tu acceso Premium nunca vence y no se te volverá a cobrar. Conservas todas las funcionalidades de Premium, incluidas las que agreguemos más adelante.
+
+### Ya tengo una suscripción a Premium. ¿Qué pasa con mi suscripción?
+
+Nada cambia. Tu suscripción sigue tal como está y puedes gestionarla o cancelarla desde la configuración de tu cuenta cuando quieras.
 
 ### ¿Ofrecen descuentos para estudiantes o para quienes no pueden pagar Premium?
 
 Queremos que Jiki sea accesible para todas las personas. Si el costo es un obstáculo, [ponte en contacto](/articles/support) y haremos lo que esté a nuestro alcance para ayudar.
 
-### ¿Puedo subir o bajar de plan más adelante?
+### ¿Puedo pasarme a Premium más adelante?
 
-Por supuesto. Puedes pasarte a Premium en cualquier momento desde tu cuenta, y cancelar es igual de fácil cuando quieras.
+Por supuesto. Puedes pasarte a Premium en cualquier momento desde tu cuenta.
 
 ## ¿Todavía tienes preguntas?
 

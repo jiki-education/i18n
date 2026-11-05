@@ -3,9 +3,9 @@ title: "Häufige Fragen"
 excerpt: "Häufig gestellte Fragen zu Jiki, unseren Kursen und Jiki Premium."
 tags: ["support"]
 seo:
-  description: "Häufig gestellte Fragen zu Jiki, unserer Plattform zum Programmierenlernen, unseren Kursen und dem Abo Jiki Premium."
+  description: "Häufig gestellte Fragen zu Jiki, unserer Plattform zum Programmierenlernen, unseren Kursen und Jiki Premium."
   keywords: ["faq", "häufige fragen", "jiki", "support", "premium"]
-en_md5: c773051f2136ec2c1a51efe1199e6e8a
+en_md5: a61a0869adc157915004c4dd66e141ee
 ---
 
 ## Über den Kurs
@@ -14,7 +14,7 @@ en_md5: c773051f2136ec2c1a51efe1199e6e8a
 
 Die Übungen in Learn to Code, die den Kern des Lehrplans zum Programmierenlernen bilden, sind komplett kostenlos. Keine Kreditkarte, keine Testphase, kein Haken.
 
-Der Preis für Jiki Premium richtet sich nach dem Land und schaltet vollen Zugang frei zu: Learn to Build, Jiki Projects, unbegrenztem Support durch Ask Jiki AI, regelmäßigen Frage-und-Antwort-Livestreams, bei denen du dabei sein kannst, Zertifikaten für Kurse, einem werbefreien Lernerlebnis und frühem Zugang zu neuen Funktionen.
+Jiki Premium ist eine Einmalzahlung, deren Preis sich nach dem Land richtet. Damit schaltest du vollen Zugang frei zu: Learn to Build, Jiki Projects, unbegrenztem Support durch Ask Jiki AI, regelmäßigen Frage-und-Antwort-Livestreams, bei denen du dabei sein kannst, Zertifikaten für Kurse, einem werbefreien Lernerlebnis und frühem Zugang zu neuen Funktionen.
 
 ### Wie viel Zeit muss ich jede Woche für den Kurs einplanen?
 
@@ -44,21 +44,25 @@ Als Mitglied des Bootcamps bekommst du automatisch Jiki Premium for Life. Das gi
 
 Ja! Du kannst dich kostenlos anmelden und den Basic-Tarif so lange nutzen, wie du möchtest. Wechsle zu Premium, wann immer du vollen Zugang brauchst, ganz ohne Verpflichtung.
 
-### Gibt es eine Mindestvertragslaufzeit?
+### Ist Premium ein Abo?
 
-Keine Mindestlaufzeit. Premium wird monatlich abgerechnet, und du kannst jederzeit in deinen Kontoeinstellungen kündigen.
+Nein. Premium ist eine Einmalzahlung. Du zahlst einmal und behältst Premium lebenslang, ohne Verlängerungen und ohne etwas kündigen zu müssen.
 
-### Was passiert, wenn ich mein Premium-Abo kündige?
+### Was bedeutet lebenslanger Zugang?
 
-Du behältst den Premium-Zugang bis zum Ende deines aktuellen Abrechnungszeitraums. Danach wechselt dein Konto zurück zum Basic-Tarif. Dein Fortschritt geht nicht verloren, du verlierst nur den Zugang zu den Premium-Funktionen.
+Dein Premium-Zugang läuft nie ab, und du wirst nicht noch einmal belastet. Du behältst jede Premium-Funktion, auch die, die wir später hinzufügen.
+
+### Ich habe bereits ein Premium-Abo. Was passiert mit meinem Abo?
+
+Nichts ändert sich. Dein Abo läuft genau wie bisher weiter, und du kannst es jederzeit in deinen Kontoeinstellungen verwalten oder kündigen.
 
 ### Gibt es Rabatte für Studierende oder für alle, die sich Premium nicht leisten können?
 
 Wir möchten, dass Jiki für alle zugänglich ist. Wenn der Preis ein Hindernis ist, [melde dich bei uns](/articles/support), und wir helfen, so gut wir können.
 
-### Kann ich später upgraden oder downgraden?
+### Kann ich später upgraden?
 
-Auf jeden Fall. Du kannst jederzeit in deinem Konto zu Premium upgraden und genauso einfach kündigen, wann immer du möchtest.
+Auf jeden Fall. Du kannst jederzeit in deinem Konto zu Premium upgraden.
 
 ## Noch Fragen?
 

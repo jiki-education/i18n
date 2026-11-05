@@ -99,7 +99,6 @@
     "loading": "加载中...",
     "verifying": "验证中...",
     "sending": "发送中...",
-    "perMonth": "/月",
     "validation": {
       "emailInvalid": "请输入有效的电子邮箱地址",
       "passwordRequired": "请输入密码",
@@ -171,7 +170,8 @@
       "shareOn": "分享到 {network}",
       "copyLink": "复制链接",
       "copied": "链接已复制"
-    }
+    },
+    "perMonth": "/月"
   },
   "build": {
     "upcomingStreams": {
@@ -318,7 +318,7 @@
       "title": "设置",
       "description": "管理你的账号和偏好设置。",
       "tabAccount": "账号",
-      "tabSubscription": "订阅",
+      "tabSubscription": "账单",
       "tabNotifications": "通知",
       "tabLearning": "学习",
       "tabDanger": "危险区域"
@@ -395,6 +395,9 @@
       "columnMethod": "支付方式",
       "downloadReceipt": "下载收据",
       "typeRecurring": "定期",
+      "typePremiumUpgrade": "高级版升级",
+      "refunded": "已退款",
+      "disputed": "争议中",
       "dateUnavailable": "日期不可用"
     },
     "profile": {
@@ -434,9 +437,9 @@
       "helpTranslate": "帮助翻译 Jiki"
     },
     "subscriptionSection": {
-      "loadingCardTitle": "订阅",
-      "loadingCardDescription": "管理你的订阅方案和账单信息",
-      "loadingData": "正在加载订阅数据……"
+      "loadingCardTitle": "账单",
+      "loadingCardDescription": "管理你的高级版会员资格和付款",
+      "loadingData": "正在加载你的账单信息……"
     },
     "benefits": {
       "activeSubtitle": "这是你每天解锁的内容",
@@ -446,6 +449,8 @@
       "activeHeading": "你正在享受<highlight>高级版</highlight>权益",
       "cancellingHeading": "别失去你的<highlight>高级版</highlight>权益",
       "footer": "有疑问？了解<includedLink>包含哪些内容</includedLink>，或者<supportLink>联系客服</supportLink>。",
+      "resubscribeAtPrice": "现在只需<strong>{price}</strong>就能重新订阅，在 Jiki 的帮助下继续你的编程之旅。",
+      "resubscribeWithoutPrice": "现在就重新订阅，在 Jiki 的帮助下继续你的编程之旅。",
       "resubscribe": "现在只需<price></price>就能重新订阅，在 Jiki 的陪伴下继续你的编程之旅。"
     },
     "cancelSectionPanel": {
@@ -458,18 +463,16 @@
       "planName": "Jiki 高级版",
       "upgrade": "升级到高级版",
       "headline": "解锁<highlight>更好</highlight>的学习方式",
+      "lifetimeNote": "一次性付款，终身拥有。",
       "dailyNote": "每天只要<price></price>"
     },
-    "neverSubscribed": {
-      "heading": "升级你的套餐",
-      "subtitle": "订阅我们的高级版套餐，解锁进阶功能和更好的学习体验。",
-      "featuresLabel": "高级版套餐功能",
-      "upgradeAriaLabel": "升级到{plan}套餐",
-      "upgrade": "升级到高级版"
+    "purchasePending": {
+      "title": "你的付款正在路上",
+      "description": "我们正在等待你的支付服务商确认这次高级版购买。银行付款可能需要几天时间。一旦款项到账，我们会立即开通高级版，并给你发邮件。"
     },
     "errorBoundary": {
-      "title": "订阅系统错误",
-      "messagePart1": "我们在加载你的订阅信息时遇到了问题。这可能是我们的支付系统出现了暂时性故障。",
+      "title": "账单信息错误",
+      "messagePart1": "我们在加载你的账单信息时遇到了问题。这可能是我们的支付系统出现了暂时性故障。",
       "messagePart2": "请试着刷新页面；如果问题仍然存在，请联系客服。",
       "refresh": "刷新页面",
       "detailsSummary": "错误详情（开发）"
@@ -529,20 +532,34 @@
       "statusSessionExpired": "会话已过期",
       "statusNotSubscribed": "未订阅",
       "currentPlan": "当前套餐",
+      "lifetime": "你拥有终身<plan>Jiki 高级版</plan>，无需续订。",
+      "premiumIncluded": "你已拥有<plan>Jiki 高级版</plan>。",
+      "subscribedWithPrice": "你正在使用<plan>Jiki {tier}</plan>方案，价格为<strong>{price}</strong>。",
+      "subscribed": "你正在使用<plan>Jiki {tier}</plan>方案。",
+      "nextBillingDate": "下次扣款日期是<strong>{date}</strong>。",
+      "pricePerMonth": "{price}/月",
+      "pricePerYear": "{price}/年",
       "cancellingMessage": "你的 Jiki 高级版订阅已取消。",
       "currentPlanAriaLabel": "当前套餐：{plan}",
       "statusAriaLabel": "订阅状态：{status}",
-      "messageCanceled": "服务将持续到本周期结束",
       "messagePaymentFailed": "支付失败，请更新支付方式",
-      "messageCancelling": "已安排取消，可使用至本周期结束",
       "messageIncomplete": "支付设置未完成，请完成设置",
-      "messageIncompleteExpired": "之前的结账会话已过期，请重新开始订阅",
-      "active": "你当前使用的是<plan>Jiki {tier}</plan>套餐，每月<strong><price></price></strong>。",
-      "activeWithBilling": "你当前使用的是<plan>Jiki {tier}</plan>套餐，每月<strong><price></price></strong>。下次扣费日期是<strong>{date}</strong>。",
       "cancellingRemaining": "你还有<strong>{count, plural, other {# 天}}</strong>可以继续享用全部高级版功能。",
       "cancellingEnds": "你的高级版套餐将于<strong>{date}</strong>结束。",
       "free": "你当前使用的是<strong>免费版</strong>套餐。你可以使用全部内容，还能让“问 Jiki”帮你完成一个练习。",
-      "planLabel": "{tier} 套餐"
+      "planLabel": "{tier} 套餐",
+      "messageCanceled": "服务将持续到本周期结束",
+      "messageCancelling": "已安排取消，可使用至本周期结束",
+      "messageIncompleteExpired": "之前的结账会话已过期，请重新开始订阅",
+      "active": "你当前使用的是<plan>Jiki {tier}</plan>套餐，每月<strong><price></price></strong>。",
+      "activeWithBilling": "你当前使用的是<plan>Jiki {tier}</plan>套餐，每月<strong><price></price></strong>。下次扣费日期是<strong>{date}</strong>。"
+    },
+    "neverSubscribed": {
+      "heading": "升级你的套餐",
+      "subtitle": "订阅我们的高级版套餐，解锁进阶功能和更好的学习体验。",
+      "featuresLabel": "高级版套餐功能",
+      "upgradeAriaLabel": "升级到{plan}套餐",
+      "upgrade": "升级到高级版"
     }
   },
   "landing": {
@@ -753,7 +770,7 @@
       "q5a1": "感谢你加入训练营！Jiki 是训练营进化的下一个阶段。你做过的大部分练习都会出现在 Jiki 里，而且还有更多新内容。我们还把 3 小时的视频拆成了 5 到 10 分钟的小段，看起来更轻松！",
       "q5a2": "作为训练营成员，你会自动获得终身 Jiki 高级版。这适用于最初的学编程课程，以及未来的所有课程。",
       "intro": "以下是我们被问得最多的问题。这里没有解答你的疑问？<link>给我们发封邮件吧！</link>",
-      "q1a2": "<strong>Jiki 高级版</strong>的价格是<price></price>（按国家/地区定价），可以解锁："
+      "q1a2": "<strong>Jiki 高级版</strong>只需一次性付款<price></price>（按国家/地区定价），即可解锁："
     },
     "latestNews": {
       "heading": "最新动态",
@@ -770,6 +787,7 @@
       "basic": "基础版",
       "premium": "高级版",
       "free": "免费",
+      "oneTime": "一次性付款",
       "perMonth": "每月"
     },
     "planBadge": {
@@ -823,18 +841,20 @@
       "title": "常见问题",
       "q1": "我可以免费试用 Jiki 吗？",
       "a1": "可以！你可以免费注册，无限制地使用基础版。需要完整权限时随时升级到高级版，没有任何强制要求。",
-      "q2": "有最短订阅期限吗？",
-      "a2": "没有最短期限。高级版按月计费，你可以随时在账户设置中取消。",
-      "q3": "如果我取消高级版订阅，会怎么样？",
-      "a3": "在当前计费周期结束前，你仍可继续使用高级版，之后账户会回到基础版。你的学习进度不会丢失，只是不能再使用高级版专属功能。",
+      "q2": "高级版是订阅制吗？",
+      "a2": "不是。高级版是一次性付款，只需付款一次，即可永久保留高级版，无需续费，也无需取消。",
+      "q3": "终身使用是什么意思？",
+      "a3": "你的高级版权限永不过期，也不会再次向你收费。你将保留所有高级版功能，包括我们之后新增的功能。",
       "q4": "学生或无力负担高级版的人有折扣吗？",
-      "q5": "之后可以升级或降级吗？",
-      "a5": "当然可以。你可以随时在账户中升级到高级版，也可以随时轻松取消。",
+      "q5": "之后可以升级吗？",
+      "a5": "当然可以。你可以随时在账户中升级到高级版。",
       "a4": "我们希望每个人都能用上 Jiki。如果费用是个障碍，请<link>联系我们</link>，我们会尽力帮忙。"
     },
     "cta": {
       "alreadyPremiumTitle": "你已经是高级版会员了",
       "alreadyPremiumDesc": "感谢你支持 Jiki，尽情享用全部内容吧！",
+      "pendingTitle": "你的付款正在路上",
+      "pendingDesc": "款项一到账，我们就会立即开通高级版。",
       "upgradeTitle": "准备好加速你的学习了吗？",
       "upgradeDesc": "升级到高级版，解锁 Jiki 的全部内容。",
       "upgradeButton": "升级到高级版",
@@ -1072,7 +1092,7 @@
     },
     "settings": {
       "title": "设置 - Jiki",
-      "description": "管理你的账户设置、订阅和偏好。"
+      "description": "管理你的账户设置、高级版会员资格和偏好。"
     },
     "checkEmail": {
       "title": "查看你的邮箱 - Jiki",
@@ -1212,6 +1232,8 @@
     "no_exercism_link": "这个账号没有关联 Exercism",
     "invalid_product": "这不是可以购买的订阅方案",
     "existing_subscription": "你已经有一个生效中的订阅",
+    "already_premium": "你已经拥有高级版了",
+    "purchase_pending": "你之前的付款还在处理中。一旦款项到账，我们就会立即开通高级版。",
     "invalid_return_url": "我们无法将你带回正确的页面",
     "checkout_failed": "我们无法开始你的结账。请重试。",
     "no_customer": "我们找不到你的账单信息",
@@ -1273,7 +1295,6 @@
   "toasts": {
     "subscription": {
       "loginRequired": "请先登录，再升级你的账号",
-      "checkoutFailed": "无法启动结账流程，请重试。",
       "alreadyPremium": "已经是高级会员",
       "checkoutSessionFailed": "无法创建结账会话",
       "portalFailed": "无法打开客户门户",
@@ -1281,7 +1302,8 @@
       "cancelFailed": "取消订阅失败",
       "reactivated": "订阅已重新激活！",
       "reactivateFailed": "重新激活订阅失败",
-      "paymentPortalFailed": "无法打开支付门户"
+      "paymentPortalFailed": "无法打开支付门户",
+      "checkoutFailed": "无法启动结账流程，请重试。"
     },
     "auth": {
       "sessionExpired": "你的登录状态已过期，请重新登录。"
@@ -1320,33 +1342,6 @@
       "badge": "Premium 会员",
       "description": "感谢升级！你现在可以使用所有 Premium 权益，包括不限次数的 Jiki 对话、项目和学习构建！",
       "title": "欢迎加入<highlight>Premium！</highlight>"
-    },
-    "subscriptionSuccess": {
-      "chatGate": {
-        "title": "欢迎使用 AI 对话！",
-        "description": "你的 AI 助手已解锁，随时可以在编程练习中帮你。",
-        "feature1": "针对你的代码提问",
-        "feature2": "获取复杂概念的讲解",
-        "feature3": "获得个性化的提示和指导"
-      },
-      "featureGate": {
-        "title": "功能已解锁！",
-        "description": "你现在可以使用各种高级功能，让学习体验更上一层楼。"
-      },
-      "settings": {
-        "title": "欢迎加入 {tier}！",
-        "description": "你的订阅已生效。到设置中探索你的新功能吧。"
-      },
-      "general": {
-        "title": "欢迎加入 {tier}！",
-        "description": "感谢升级方案。你现在可以使用所有高级功能。"
-      },
-      "planLabel": "{tier} 方案",
-      "whatYouCanDo": "你现在可以：",
-      "getStarted": "开始使用",
-      "continueLearning": "继续学习",
-      "skipForNow": "暂时跳过",
-      "renewalNotice": "你的订阅将于 {date} 自动续订。你可以在设置中管理订阅。"
     },
     "confirmation": {
       "defaultTitle": "确认操作",
@@ -1407,31 +1402,6 @@
       "skipMessage": "这段视频能帮你更好地使用 Jiki。确定要跳过吗？",
       "skipConfirm": "跳过视频",
       "skipCancel": "继续观看"
-    },
-    "subscription": {
-      "chatGate": {
-        "headline": "解锁 AI 对话助手",
-        "description": "让我们的 AI 助手即时帮你解决编程练习中的问题。"
-      },
-      "featureGate": {
-        "headlineFallback": "Premium 功能",
-        "headline": "解锁 {feature}",
-        "description": "升级方案，使用高级功能，获得更好的学习体验。"
-      },
-      "settings": {
-        "headline": "选择你的方案",
-        "description": "选择最适合你学习需要的订阅方案。"
-      },
-      "general": {
-        "headline": "升级你的方案",
-        "description": "选择符合你学习目标的方案，解锁高级功能。"
-      },
-      "unlockWith": "{feature} 将为你解锁：",
-      "recommended": "推荐",
-      "choosePremium": "选择 Premium",
-      "subscribeAriaLabel": "订阅 {plan} 方案",
-      "renewNotice": "你的订阅将每月自动续订。你可以随时在设置中取消。",
-      "notNow": "暂时不用，以后再说"
     },
     "walkthroughConfirm": {
       "title": "先自己试着解决？",
@@ -1518,15 +1488,16 @@
       "userAvatarAlt": "用户",
       "upgrade": "升级到 Premium",
       "planName": "Jiki Premium",
-      "featureLearnToBuild": "完整使用<strong>学习构建</strong>",
-      "featureChallenges": "迎接更难的<strong>挑战</strong>",
+      "lifetimeNote": "一次性付款，无需订阅。",
+      "pendingNote": "你的付款还在处理中。一旦款项到账，我们会立即开通高级版，并给你发邮件。",
+      "featureChallenges": "解锁<strong>高级版挑战</strong>",
       "featureAi": "来自 Jiki 的不限量<strong>AI 支持</strong>",
       "featureLivestreams": "可参加定期的<strong>问答直播</strong>",
-      "featureCertificates": "获得课程<strong>证书</strong>",
+      "featureCertificates": "获得官方<strong>完成证书</strong>",
       "featureAdFree": "<strong>无广告</strong>的学习体验",
       "featureEarlyAccess": "<strong>抢先体验</strong>新功能",
       "basic": {
-        "subheading": "升级到 Premium，加速迈向可就业水平。",
+        "subheading": "高级版用户<strong>完成课程的概率要高 26 倍</strong>。别卡住放弃！",
         "planName": "基础方案",
         "planPrice": "永久免费",
         "feature1": "80 多道编程练习",
@@ -1535,6 +1506,7 @@
         "note": "+ 可观看公开的 YouTube 视频、访问社区论坛，获取更多学习资源。",
         "headline": "为你的学习<highlight>提速</highlight>！"
       },
+      "featureLearnToBuild": "完整使用<strong>学习构建</strong>",
       "dailyNote": "（每天只要<price></price>）"
     },
     "subscriptionCheckout": {
@@ -1545,10 +1517,10 @@
       "paymentInfoAriaLabel": "付款信息",
       "pay": "支付",
       "orderTitle": "Jiki {tier}",
-      "orderBilling": "按月计费。随时可取消。",
-      "perMonthShort": "/月",
+      "orderBilling": "一次性付款，高级版终身有效。",
       "securedBy": "由<stripe>stripe</stripe>提供安全保障",
-      "error": "错误：{message}"
+      "error": "错误：{message}",
+      "perMonthShort": "/月"
     },
     "calendarSubscribe": {
       "title": "订阅日历",
@@ -1564,6 +1536,58 @@
       "intro": "观看这段简短介绍，了解绘画练习是如何运作的，以及如何完成它们。你也可以在说明的底部看到它。",
       "close": "我们开始吧",
       "watchAlt": "观看介绍"
+    },
+    "subscriptionSuccess": {
+      "chatGate": {
+        "title": "欢迎使用 AI 对话！",
+        "description": "你的 AI 助手已解锁，随时可以在编程练习中帮你。",
+        "feature1": "针对你的代码提问",
+        "feature2": "获取复杂概念的讲解",
+        "feature3": "获得个性化的提示和指导"
+      },
+      "featureGate": {
+        "title": "功能已解锁！",
+        "description": "你现在可以使用各种高级功能，让学习体验更上一层楼。"
+      },
+      "settings": {
+        "title": "欢迎加入 {tier}！",
+        "description": "你的订阅已生效。到设置中探索你的新功能吧。"
+      },
+      "general": {
+        "title": "欢迎加入 {tier}！",
+        "description": "感谢升级方案。你现在可以使用所有高级功能。"
+      },
+      "planLabel": "{tier} 方案",
+      "whatYouCanDo": "你现在可以：",
+      "getStarted": "开始使用",
+      "continueLearning": "继续学习",
+      "skipForNow": "暂时跳过",
+      "renewalNotice": "你的订阅将于 {date} 自动续订。你可以在设置中管理订阅。"
+    },
+    "subscription": {
+      "chatGate": {
+        "headline": "解锁 AI 对话助手",
+        "description": "让我们的 AI 助手即时帮你解决编程练习中的问题。"
+      },
+      "featureGate": {
+        "headlineFallback": "Premium 功能",
+        "headline": "解锁 {feature}",
+        "description": "升级方案，使用高级功能，获得更好的学习体验。"
+      },
+      "settings": {
+        "headline": "选择你的方案",
+        "description": "选择最适合你学习需要的订阅方案。"
+      },
+      "general": {
+        "headline": "升级你的方案",
+        "description": "选择符合你学习目标的方案，解锁高级功能。"
+      },
+      "unlockWith": "{feature} 将为你解锁：",
+      "recommended": "推荐",
+      "choosePremium": "选择 Premium",
+      "subscribeAriaLabel": "订阅 {plan} 方案",
+      "renewNotice": "你的订阅将每月自动续订。你可以随时在设置中取消。",
+      "notNow": "暂时不用，以后再说"
     }
   },
   "challenge": {
@@ -1777,6 +1801,7 @@
     "freeUserLimitReached": {
       "description": "你已经用完了免费对话。升级后可以继续让 Jiki 帮你理解概念、调试代码、推进练习。",
       "upgradeButton": "升级到 Jiki Premium",
+      "oneTimePrice": "只需<price></price>，即可终身使用！",
       "price": "只需<price></price>！"
     },
     "lockedFooter": {

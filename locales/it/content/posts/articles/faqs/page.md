@@ -1,11 +1,11 @@
 ---
-title: "FAQs"
+title: "Domande frequenti"
 excerpt: "Domande frequenti su Jiki, i nostri corsi e Jiki Premium."
 tags: ["support"]
 seo:
-  description: "Domande frequenti su Jiki, la nostra piattaforma per imparare a programmare, i corsi e l'abbonamento Jiki Premium."
+  description: "Domande frequenti su Jiki, la nostra piattaforma per imparare a programmare, i corsi e Jiki Premium."
   keywords: ["faqs", "domande frequenti", "jiki", "supporto", "premium"]
-en_md5: c773051f2136ec2c1a51efe1199e6e8a
+en_md5: a61a0869adc157915004c4dd66e141ee
 ---
 
 ## Il corso
@@ -14,7 +14,7 @@ en_md5: c773051f2136ec2c1a51efe1199e6e8a
 
 Gli esercizi Learn to Code, che costituiscono il nucleo del percorso per imparare a programmare, sono completamente gratuiti. Nessuna carta, nessuna prova, nessun trucco.
 
-Jiki Premium ha un prezzo variabile in base al Paese e sblocca l'accesso completo a Learn to Build, Jiki Projects, supporto illimitato di Ask Jiki AI, regolari livestream di domande e risposte a cui puoi partecipare, certificati per i corsi, un'esperienza di apprendimento senza pubblicità e accesso anticipato alle nuove funzionalità.
+Jiki Premium è un pagamento una tantum, il cui prezzo varia in base al Paese, e sblocca l'accesso completo a Learn to Build, Jiki Projects, supporto illimitato di Ask Jiki AI, regolari livestream di domande e risposte a cui puoi partecipare, certificati per i corsi, un'esperienza di apprendimento senza pubblicità e accesso anticipato alle nuove funzionalità.
 
 ### Quanto tempo dovrò dedicare al corso ogni settimana?
 
@@ -22,7 +22,7 @@ Puoi dedicare tutto il tempo che vuoi, o anche poco. La maggior parte delle pers
 
 ### Quanto è difficile il corso? Quanto devo essere intelligente?
 
-Il corso è progettato per essere accessibile a chiunque, indipendentemente dal tuo background. Non crediamo che tu debba essere "intelligente" per imparare a programmare. Ma devi impegnarti ed essere disposto ad affrontare le sfide.
+Il corso è progettato per essere accessibile a chiunque, indipendentemente dal tuo background. Non crediamo che tu debba essere «intelligente» per imparare a programmare. Ma devi impegnarti ed essere disposto ad affrontare le sfide.
 
 Se ti impegni, chiedi aiuto quando ti blocchi e accogli la sfida, resterai stupito di quanto potrai andare lontano in poco tempo.
 
@@ -44,21 +44,25 @@ Come membro del Bootcamp, riceverai automaticamente Jiki Premium a vita. Questo 
 
 Sì! Puoi iscriverti gratuitamente e usare il piano Basic per tutto il tempo che vuoi. Passa a Premium in qualsiasi momento quando hai bisogno dell'accesso completo: non c'è alcun obbligo.
 
-### C'è una durata minima del contratto?
+### Premium è un abbonamento?
 
-Nessuna durata minima. Premium viene fatturato mensilmente e puoi annullare l'abbonamento in qualsiasi momento dalle impostazioni del tuo account.
+No. Premium è un pagamento una tantum. Paghi una volta sola e mantieni Premium a vita: nessun rinnovo e nulla da disdire.
 
-### Cosa succede se annullo il mio abbonamento Premium?
+### Cosa significa accesso a vita?
 
-Manterrai l'accesso Premium fino alla fine del periodo di fatturazione corrente, poi il tuo account tornerà al piano Basic. Non perdi i tuoi progressi, perdi solo l'accesso alle funzionalità esclusive Premium.
+Il tuo accesso Premium non scade mai e non ti verrà addebitato altro. Mantieni tutte le funzionalità Premium, comprese quelle che aggiungeremo in futuro.
+
+### Ho già un abbonamento a Premium. Cosa succede al mio abbonamento?
+
+Non cambia nulla. Il tuo abbonamento continua esattamente com'è e puoi gestirlo o annullarlo dalle impostazioni del tuo account quando vuoi.
 
 ### Offrite sconti per studenti o per chi non può permettersi Premium?
 
 Vogliamo che Jiki sia accessibile a tutti. Se il costo è un ostacolo, [contattaci](/articles/support) e faremo il possibile per aiutarti.
 
-### Posso passare a Premium o tornare al Basic in seguito?
+### Posso passare a Premium in seguito?
 
-Assolutamente sì. Puoi passare a Premium in qualsiasi momento dal tuo account, e puoi annullare l'abbonamento con la stessa facilità quando vuoi.
+Assolutamente sì. Puoi passare a Premium in qualsiasi momento dal tuo account.
 
 ## Hai ancora domande?
 

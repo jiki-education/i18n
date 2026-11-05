@@ -99,7 +99,6 @@
     "loading": "Wird geladen...",
     "verifying": "Wird geprüft...",
     "sending": "Wird gesendet...",
-    "perMonth": "/Monat",
     "validation": {
       "emailInvalid": "Bitte gib eine gültige E-Mail-Adresse ein",
       "passwordRequired": "Passwort ist erforderlich",
@@ -171,7 +170,8 @@
       "shareOn": "Auf {network} teilen",
       "copyLink": "Link kopieren",
       "copied": "Link kopiert"
-    }
+    },
+    "perMonth": "/Monat"
   },
   "build": {
     "upcomingStreams": {
@@ -318,7 +318,7 @@
       "title": "Einstellungen",
       "description": "Verwalte dein Konto und deine Einstellungen.",
       "tabAccount": "Konto",
-      "tabSubscription": "Abo",
+      "tabSubscription": "Abrechnung",
       "tabNotifications": "Benachrichtigungen",
       "tabLearning": "Lernen",
       "tabDanger": "Gefahrenzone"
@@ -395,6 +395,9 @@
       "columnMethod": "Zahlungsmethode",
       "downloadReceipt": "Beleg herunterladen",
       "typeRecurring": "Wiederkehrend",
+      "typePremiumUpgrade": "Premium-Upgrade",
+      "refunded": "Erstattet",
+      "disputed": "Angefochten",
       "dateUnavailable": "Datum nicht verfügbar"
     },
     "profile": {
@@ -434,9 +437,9 @@
       "helpTranslate": "Hilf mit, Jiki zu übersetzen"
     },
     "subscriptionSection": {
-      "loadingCardTitle": "Abo",
-      "loadingCardDescription": "Verwalte deinen Abo-Plan und deine Zahlungsdaten",
-      "loadingData": "Abo-Daten werden geladen..."
+      "loadingCardTitle": "Abrechnung",
+      "loadingCardDescription": "Verwalte deine Premium-Mitgliedschaft und deine Zahlungen",
+      "loadingData": "Deine Abrechnungsdetails werden geladen..."
     },
     "benefits": {
       "activeSubtitle": "Diese Vorteile nutzt du jeden Tag",
@@ -446,6 +449,8 @@
       "activeHeading": "Du genießt alle <highlight>Premium</highlight>-Vorteile",
       "cancellingHeading": "Verlier deine <highlight>Premium</highlight>-Vorteile nicht",
       "footer": "Noch Fragen? Erfahre mehr darüber, <includedLink>was enthalten ist</includedLink>, oder <supportLink>kontaktiere den Support</supportLink>.",
+      "resubscribeAtPrice": "Abonniere jetzt erneut für nur <strong>{price}</strong> und setze deine Programmierreise mit Jikis Unterstützung fort.",
+      "resubscribeWithoutPrice": "Abonniere jetzt erneut und setze deine Programmierreise mit Jikis Unterstützung fort.",
       "resubscribe": "Abonniere jetzt wieder für nur <price></price> und setz deine Programmierreise mit Jikis Unterstützung fort."
     },
     "cancelSectionPanel": {
@@ -458,18 +463,16 @@
       "planName": "Jiki Premium",
       "upgrade": "Auf Premium upgraden",
       "headline": "Schalte eine <highlight>bessere</highlight> Art zu lernen frei",
+      "lifetimeNote": "Einmalige Zahlung. Für immer dein.",
       "dailyNote": "Das sind nur <price></price> pro Tag"
     },
-    "neverSubscribed": {
-      "heading": "Upgrade deinen Plan",
-      "subtitle": "Schalte mit unseren Premium-Plänen erweiterte Features und ein besseres Lernerlebnis frei.",
-      "featuresLabel": "Features des Premium-Plans",
-      "upgradeAriaLabel": "Auf den {plan}-Plan upgraden",
-      "upgrade": "Auf Premium upgraden"
+    "purchasePending": {
+      "title": "Deine Zahlung ist unterwegs",
+      "description": "Wir warten darauf, dass dein Zahlungsanbieter deinen Premium-Kauf bestätigt. Bankzahlungen können ein paar Tage dauern. Sobald die Zahlung eingegangen ist, schalten wir Premium frei und schicken dir eine E-Mail."
     },
     "errorBoundary": {
-      "title": "Fehler im Abo-System",
-      "messagePart1": "Beim Laden deiner Abo-Informationen gibt es gerade Probleme. Das könnte eine vorübergehende Störung unseres Zahlungssystems sein.",
+      "title": "Fehler bei den Abrechnungsdetails",
+      "messagePart1": "Beim Laden deiner Abrechnungsdetails gibt es gerade Probleme. Das könnte eine vorübergehende Störung unseres Zahlungssystems sein.",
       "messagePart2": "Bitte lade die Seite neu oder wende dich an den Support, wenn das Problem weiter besteht.",
       "refresh": "Seite neu laden",
       "detailsSummary": "Fehlerdetails (Entwicklung)"
@@ -529,20 +532,34 @@
       "statusSessionExpired": "Sitzung abgelaufen",
       "statusNotSubscribed": "Kein Abo",
       "currentPlan": "Aktueller Plan",
+      "lifetime": "Du hast <plan>Jiki Premium</plan> auf Lebenszeit. Es gibt nichts zu verlängern.",
+      "premiumIncluded": "Du hast <plan>Jiki Premium</plan>.",
+      "subscribedWithPrice": "Du hast das <plan>Jiki {tier}</plan>-Abo für <strong>{price}</strong>.",
+      "subscribed": "Du hast das <plan>Jiki {tier}</plan>-Abo.",
+      "nextBillingDate": "Deine nächste Abrechnung ist am <strong>{date}</strong>.",
+      "pricePerMonth": "{price}/Monat",
+      "pricePerYear": "{price}/Jahr",
       "cancellingMessage": "Dein Jiki-Premium-Abo wurde gekündigt.",
       "currentPlanAriaLabel": "Aktueller Plan: {plan}-Plan",
       "statusAriaLabel": "Abo-Status: {status}",
-      "messageCanceled": "Der Service läuft bis zum Ende des Abrechnungszeitraums weiter",
       "messagePaymentFailed": "Zahlung fehlgeschlagen. Bitte aktualisiere deine Zahlungsmethode",
-      "messageCancelling": "Kündigung vorgemerkt. Zugriff bis zum Ende des Abrechnungszeitraums",
       "messageIncomplete": "Zahlungseinrichtung unvollständig. Bitte schließe die Einrichtung ab",
-      "messageIncompleteExpired": "Die vorherige Checkout-Sitzung ist abgelaufen. Bitte starte ein neues Abo",
-      "active": "Du nutzt den <plan>Jiki {tier}</plan>-Plan für <strong><price></price>/Monat</strong>.",
-      "activeWithBilling": "Du nutzt den <plan>Jiki {tier}</plan>-Plan für <strong><price></price>/Monat</strong>. Deine nächste Abrechnung ist am <strong>{date}</strong>.",
       "cancellingRemaining": "Du kannst noch <strong>{count, plural, one {# Tag} other {# Tage}}</strong> alle Premium-Features nutzen.",
       "cancellingEnds": "Dein Premium-Plan endet am <strong>{date}</strong>.",
       "free": "Du nutzt den <strong>kostenlosen</strong> Plan. Damit bekommst du alle Inhalte plus „Frag Jiki“ als Hilfe bei einer Übung.",
-      "planLabel": "{tier}-Plan"
+      "planLabel": "{tier}-Plan",
+      "messageCanceled": "Der Service läuft bis zum Ende des Abrechnungszeitraums weiter",
+      "messageCancelling": "Kündigung vorgemerkt. Zugriff bis zum Ende des Abrechnungszeitraums",
+      "messageIncompleteExpired": "Die vorherige Checkout-Sitzung ist abgelaufen. Bitte starte ein neues Abo",
+      "active": "Du nutzt den <plan>Jiki {tier}</plan>-Plan für <strong><price></price>/Monat</strong>.",
+      "activeWithBilling": "Du nutzt den <plan>Jiki {tier}</plan>-Plan für <strong><price></price>/Monat</strong>. Deine nächste Abrechnung ist am <strong>{date}</strong>."
+    },
+    "neverSubscribed": {
+      "heading": "Upgrade deinen Plan",
+      "subtitle": "Schalte mit unseren Premium-Plänen erweiterte Features und ein besseres Lernerlebnis frei.",
+      "featuresLabel": "Features des Premium-Plans",
+      "upgradeAriaLabel": "Auf den {plan}-Plan upgraden",
+      "upgrade": "Auf Premium upgraden"
     }
   },
   "landing": {
@@ -753,7 +770,7 @@
       "q5a1": "Danke, dass du beim Bootcamp dabei bist! Jiki ist die nächste Stufe in der Entwicklung unseres Bootcamps. Die meisten Übungen, die du gelöst hast, tauchen in Jiki wieder auf, zusammen mit vielen neuen. Außerdem haben wir die 3-Stunden-Videos in kleinere Häppchen von 5 bis 10 Minuten aufgeteilt, damit sie leichter anzuschauen sind!",
       "q5a2": "Als Bootcamp-Mitglied bekommst du automatisch Jiki Premium auf Lebenszeit. Das gilt sowohl für den ersten Kurs „Programmieren lernen“ als auch für künftige Kurse.",
       "intro": "Das sind die Fragen, die uns am häufigsten gestellt werden. Deine Frage ist nicht dabei? <link>Schreib uns eine E-Mail!</link>",
-      "q1a2": "<strong>Jiki Premium</strong> kostet <price></price> (der Preis hängt vom Land ab) und schaltet frei:"
+      "q1a2": "<strong>Jiki Premium</strong> kostet einmalig <price></price> (der Preis hängt vom Land ab) und schaltet frei:"
     },
     "latestNews": {
       "heading": "Unsere neuesten Nachrichten",
@@ -770,6 +787,7 @@
       "basic": "Basic",
       "premium": "Premium",
       "free": "Kostenlos",
+      "oneTime": "einmalige Zahlung",
       "perMonth": "pro Monat"
     },
     "planBadge": {
@@ -823,18 +841,20 @@
       "title": "Häufig gestellte Fragen",
       "q1": "Kann ich Jiki kostenlos ausprobieren?",
       "a1": "Ja! Du kannst dich kostenlos registrieren und den Basic-Plan so lange nutzen, wie du möchtest. Upgrade auf Premium, wann immer du vollen Zugriff brauchst. Ganz ohne Verpflichtung.",
-      "q2": "Gibt es eine Mindestlaufzeit?",
-      "a2": "Keine Mindestlaufzeit. Premium wird monatlich abgerechnet, und du kannst jederzeit in deinen Kontoeinstellungen kündigen.",
-      "q3": "Was passiert, wenn ich mein Premium-Abo kündige?",
-      "a3": "Du behältst deinen Premium-Zugang bis zum Ende deines aktuellen Abrechnungszeitraums, danach wechselt dein Konto zurück auf den Basic-Plan. Dein Fortschritt bleibt vollständig erhalten. Du verlierst nur den Zugriff auf die Premium-Features.",
+      "q2": "Ist Premium ein Abo?",
+      "a2": "Nein. Premium ist eine einmalige Zahlung. Du zahlst einmal und hast Premium für immer, ohne Verlängerung und ohne etwas zu kündigen.",
+      "q3": "Was bedeutet lebenslanger Zugang?",
+      "a3": "Dein Premium-Zugang läuft nie ab, und du wirst nie wieder belastet. Du behältst alle Premium-Funktionen, auch die, die wir später hinzufügen.",
       "q4": "Gibt es Rabatte für Studierende oder Menschen, die sich Premium nicht leisten können?",
-      "q5": "Kann ich später upgraden oder downgraden?",
-      "a5": "Auf jeden Fall. Du kannst jederzeit über dein Konto auf Premium upgraden und genauso einfach wieder kündigen, wann immer du möchtest.",
+      "q5": "Kann ich später upgraden?",
+      "a5": "Auf jeden Fall. Du kannst jederzeit über dein Konto auf Premium upgraden.",
       "a4": "Wir möchten, dass Jiki für alle zugänglich ist. Wenn die Kosten ein Hindernis sind, <link>melde dich bei uns</link> und wir schauen, wie wir helfen können."
     },
     "cta": {
       "alreadyPremiumTitle": "Du bist schon Premium-Mitglied",
       "alreadyPremiumDesc": "Danke, dass du Jiki unterstützt. Genieß den vollen Zugriff auf alles!",
+      "pendingTitle": "Deine Zahlung ist unterwegs",
+      "pendingDesc": "Sobald deine Zahlung eingegangen ist, schalten wir Premium frei.",
       "upgradeTitle": "Bereit, schneller zu lernen?",
       "upgradeDesc": "Upgrade auf Premium und schalte alles frei, was Jiki zu bieten hat.",
       "upgradeButton": "Auf Premium upgraden",
@@ -1072,7 +1092,7 @@
     },
     "settings": {
       "title": "Einstellungen - Jiki",
-      "description": "Verwalte deine Kontoeinstellungen, dein Abo und deine Präferenzen."
+      "description": "Verwalte deine Kontoeinstellungen, deine Premium-Mitgliedschaft und deine Präferenzen."
     },
     "checkEmail": {
       "title": "Schau in dein Postfach - Jiki",
@@ -1212,6 +1232,8 @@
     "no_exercism_link": "Dieses Konto ist nicht mit Exercism verknüpft",
     "invalid_product": "Diesen Plan kannst du nicht kaufen",
     "existing_subscription": "Du hast bereits ein aktives Abo",
+    "already_premium": "Du hast schon Premium",
+    "purchase_pending": "Deine frühere Zahlung wird noch verarbeitet. Sobald sie eingegangen ist, schalten wir Premium frei.",
     "invalid_return_url": "Wir konnten dich nicht zur richtigen Seite zurückleiten",
     "checkout_failed": "Wir konnten deinen Bezahlvorgang nicht starten. Bitte versuch es noch einmal.",
     "no_customer": "Wir konnten deine Rechnungsdaten nicht finden",
@@ -1273,7 +1295,6 @@
   "toasts": {
     "subscription": {
       "loginRequired": "Bitte melde dich an, um dein Konto zu upgraden",
-      "checkoutFailed": "Der Bezahlvorgang konnte nicht gestartet werden. Bitte versuch es noch einmal.",
       "alreadyPremium": "Du bist schon auf dem Premium-Plan",
       "checkoutSessionFailed": "Checkout-Sitzung konnte nicht erstellt werden",
       "portalFailed": "Kundenportal konnte nicht geöffnet werden",
@@ -1281,7 +1302,8 @@
       "cancelFailed": "Abo konnte nicht gekündigt werden",
       "reactivated": "Abo wieder aktiviert!",
       "reactivateFailed": "Abo konnte nicht wieder aktiviert werden",
-      "paymentPortalFailed": "Zahlungsportal konnte nicht geöffnet werden"
+      "paymentPortalFailed": "Zahlungsportal konnte nicht geöffnet werden",
+      "checkoutFailed": "Der Bezahlvorgang konnte nicht gestartet werden. Bitte versuch es noch einmal."
     },
     "auth": {
       "sessionExpired": "Deine Sitzung ist abgelaufen. Bitte melde dich erneut an."
@@ -1320,33 +1342,6 @@
       "badge": "Premium-Mitglied",
       "description": "Danke für dein Upgrade! Du hast jetzt Zugriff auf alle Premium-Vorteile, darunter unbegrenzte Chats mit Jiki, Projekte und „Entwickeln lernen“!",
       "title": "Willkommen bei <highlight>Premium!</highlight>"
-    },
-    "subscriptionSuccess": {
-      "chatGate": {
-        "title": "Willkommen beim KI-Chat!",
-        "description": "Dein KI-Assistent ist jetzt freigeschaltet und hilft dir bei deinen Programmierübungen.",
-        "feature1": "Stell Fragen zu deinem Code",
-        "feature2": "Lass dir schwierige Konzepte erklären",
-        "feature3": "Bekomme persönliche Hinweise und Unterstützung"
-      },
-      "featureGate": {
-        "title": "Feature freigeschaltet!",
-        "description": "Du hast jetzt Zugriff auf Premium-Features, die dein Lernerlebnis verbessern."
-      },
-      "settings": {
-        "title": "Willkommen bei {tier}!",
-        "description": "Dein Abo ist jetzt aktiv. Entdecke deine neuen Features in den Einstellungen."
-      },
-      "general": {
-        "title": "Willkommen bei {tier}!",
-        "description": "Danke für dein Upgrade. Du hast jetzt Zugriff auf alle Premium-Features."
-      },
-      "planLabel": "{tier}-Plan",
-      "whatYouCanDo": "Das kannst du jetzt tun:",
-      "getStarted": "Loslegen",
-      "continueLearning": "Weiterlernen",
-      "skipForNow": "Vorerst überspringen",
-      "renewalNotice": "Dein Abo verlängert sich automatisch am {date}. Verwalte dein Abo in den Einstellungen."
     },
     "confirmation": {
       "defaultTitle": "Aktion bestätigen",
@@ -1407,31 +1402,6 @@
       "skipMessage": "Dieses Video hilft dir, das Beste aus Jiki herauszuholen. Willst du es wirklich überspringen?",
       "skipConfirm": "Video überspringen",
       "skipCancel": "Weiterschauen"
-    },
-    "subscription": {
-      "chatGate": {
-        "headline": "Schalte den KI-Chat-Assistenten frei",
-        "description": "Hol dir sofort Hilfe bei deinen Programmierübungen von unserem KI-Assistenten."
-      },
-      "featureGate": {
-        "headlineFallback": "Premium-Features",
-        "headline": "Schalte {feature} frei",
-        "description": "Upgrade deinen Plan und erhalte Zugriff auf erweiterte Features und ein besseres Lernerlebnis."
-      },
-      "settings": {
-        "headline": "Wähle deinen Plan",
-        "description": "Wähle das Abo, das am besten zu deinen Lernzielen passt."
-      },
-      "general": {
-        "headline": "Upgrade deinen Plan",
-        "description": "Wähle den Plan, der zu deinen Lernzielen passt, und schalte erweiterte Features frei."
-      },
-      "unlockWith": "Das schaltest du mit {feature} frei:",
-      "recommended": "Empfohlen",
-      "choosePremium": "Premium wählen",
-      "subscribeAriaLabel": "{plan}-Plan abonnieren",
-      "renewNotice": "Dein Abo verlängert sich automatisch jeden Monat. Du kannst jederzeit in den Einstellungen kündigen.",
-      "notNow": "Jetzt nicht, vielleicht später"
     },
     "walkthroughConfirm": {
       "title": "Erst mal selbst versuchen?",
@@ -1518,15 +1488,16 @@
       "userAvatarAlt": "Benutzer",
       "upgrade": "Auf Premium upgraden",
       "planName": "Jiki Premium",
-      "featureLearnToBuild": "Voller Zugriff auf <strong>Entwickeln lernen</strong>",
-      "featureChallenges": "Stell dich härteren <strong>Challenges</strong>",
+      "lifetimeNote": "Einmalige Zahlung. Kein Abo.",
+      "pendingNote": "Deine Zahlung wird noch verarbeitet. Sobald sie eingegangen ist, schalten wir Premium frei und schicken dir eine E-Mail.",
+      "featureChallenges": "Schalte <strong>Premium-Challenges</strong> frei",
       "featureAi": "Unbegrenzte <strong>KI-Unterstützung</strong> von Jiki",
       "featureLivestreams": "Regelmäßige <strong>Q&A-Livestreams</strong> zum Mitmachen",
-      "featureCertificates": "Erhalte <strong>Zertifikate</strong> für Kurse",
+      "featureCertificates": "Erhalte ein offizielles <strong>Abschlusszertifikat</strong>",
       "featureAdFree": "<strong>Werbefreies</strong> Lernen",
       "featureEarlyAccess": "<strong>Früher Zugriff</strong> auf neue Features",
       "basic": {
-        "subheading": "Upgrade auf Premium und komm schneller ans Ziel: fit für den Job.",
+        "subheading": "Premium-Nutzer sind <strong>26-mal wahrscheinlicher</strong>, den Kurs abzuschließen. Bleib nicht stecken und gib nicht auf!",
         "planName": "Basic-Plan",
         "planPrice": "Für immer kostenlos",
         "feature1": "Über 80 Programmierübungen",
@@ -1535,6 +1506,7 @@
         "note": "+ Zugriff auf öffentliche YouTube-Videos und Community-Foren als zusätzliche Lernressourcen.",
         "headline": "<highlight>Beschleunige</highlight> dein Lernen!"
       },
+      "featureLearnToBuild": "Voller Zugriff auf <strong>Entwickeln lernen</strong>",
       "dailyNote": "(Das sind nur <price></price> pro Tag)"
     },
     "subscriptionCheckout": {
@@ -1545,10 +1517,10 @@
       "paymentInfoAriaLabel": "Zahlungsinformationen",
       "pay": "Bezahlen",
       "orderTitle": "Jiki {tier}",
-      "orderBilling": "Monatliche Abrechnung. Jederzeit kündbar.",
-      "perMonthShort": "/Monat",
+      "orderBilling": "Einmalige Zahlung. Premium für immer.",
       "securedBy": "Gesichert durch <stripe>stripe</stripe>",
-      "error": "Fehler: {message}"
+      "error": "Fehler: {message}",
+      "perMonthShort": "/Monat"
     },
     "calendarSubscribe": {
       "title": "Kalender abonnieren",
@@ -1564,6 +1536,58 @@
       "intro": "Sieh dir diese kurze Einführung an, wie Zeichenübungen funktionieren und wie du sie löst. Du findest sie auch unten in der Anleitung.",
       "close": "Los geht's",
       "watchAlt": "Die Einführung ansehen"
+    },
+    "subscriptionSuccess": {
+      "chatGate": {
+        "title": "Willkommen beim KI-Chat!",
+        "description": "Dein KI-Assistent ist jetzt freigeschaltet und hilft dir bei deinen Programmierübungen.",
+        "feature1": "Stell Fragen zu deinem Code",
+        "feature2": "Lass dir schwierige Konzepte erklären",
+        "feature3": "Bekomme persönliche Hinweise und Unterstützung"
+      },
+      "featureGate": {
+        "title": "Feature freigeschaltet!",
+        "description": "Du hast jetzt Zugriff auf Premium-Features, die dein Lernerlebnis verbessern."
+      },
+      "settings": {
+        "title": "Willkommen bei {tier}!",
+        "description": "Dein Abo ist jetzt aktiv. Entdecke deine neuen Features in den Einstellungen."
+      },
+      "general": {
+        "title": "Willkommen bei {tier}!",
+        "description": "Danke für dein Upgrade. Du hast jetzt Zugriff auf alle Premium-Features."
+      },
+      "planLabel": "{tier}-Plan",
+      "whatYouCanDo": "Das kannst du jetzt tun:",
+      "getStarted": "Loslegen",
+      "continueLearning": "Weiterlernen",
+      "skipForNow": "Vorerst überspringen",
+      "renewalNotice": "Dein Abo verlängert sich automatisch am {date}. Verwalte dein Abo in den Einstellungen."
+    },
+    "subscription": {
+      "chatGate": {
+        "headline": "Schalte den KI-Chat-Assistenten frei",
+        "description": "Hol dir sofort Hilfe bei deinen Programmierübungen von unserem KI-Assistenten."
+      },
+      "featureGate": {
+        "headlineFallback": "Premium-Features",
+        "headline": "Schalte {feature} frei",
+        "description": "Upgrade deinen Plan und erhalte Zugriff auf erweiterte Features und ein besseres Lernerlebnis."
+      },
+      "settings": {
+        "headline": "Wähle deinen Plan",
+        "description": "Wähle das Abo, das am besten zu deinen Lernzielen passt."
+      },
+      "general": {
+        "headline": "Upgrade deinen Plan",
+        "description": "Wähle den Plan, der zu deinen Lernzielen passt, und schalte erweiterte Features frei."
+      },
+      "unlockWith": "Das schaltest du mit {feature} frei:",
+      "recommended": "Empfohlen",
+      "choosePremium": "Premium wählen",
+      "subscribeAriaLabel": "{plan}-Plan abonnieren",
+      "renewNotice": "Dein Abo verlängert sich automatisch jeden Monat. Du kannst jederzeit in den Einstellungen kündigen.",
+      "notNow": "Jetzt nicht, vielleicht später"
     }
   },
   "challenge": {
@@ -1777,6 +1801,7 @@
     "freeUserLimitReached": {
       "description": "Du hast dein kostenloses Gespräch aufgebraucht. Lerne mit Jikis Hilfe weiter: bei Konzepten, beim Debuggen und beim Weiterkommen in Übungen.",
       "upgradeButton": "Auf Jiki Premium upgraden",
+      "oneTimePrice": "Nur <price></price> für lebenslangen Zugang!",
       "price": "Nur <price></price>!"
     },
     "lockedFooter": {

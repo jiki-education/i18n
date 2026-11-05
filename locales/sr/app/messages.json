@@ -99,7 +99,6 @@
     "loading": "Učitavanje...",
     "verifying": "Verifikacija u toku...",
     "sending": "Slanje...",
-    "perMonth": "/mesečno",
     "validation": {
       "emailInvalid": "Unesi ispravnu imejl adresu",
       "passwordRequired": "Lozinka je obavezna",
@@ -171,7 +170,8 @@
       "shareOn": "Podeli na {network}",
       "copyLink": "Kopiraj link",
       "copied": "Link je kopiran"
-    }
+    },
+    "perMonth": "/mesečno"
   },
   "build": {
     "upcomingStreams": {
@@ -318,7 +318,7 @@
       "title": "Podešavanja",
       "description": "Upravljaj svojim nalogom i opcijama.",
       "tabAccount": "Nalog",
-      "tabSubscription": "Pretplata",
+      "tabSubscription": "Naplata",
       "tabNotifications": "Obaveštenja",
       "tabLearning": "Učenje",
       "tabDanger": "Opasna zona"
@@ -395,6 +395,9 @@
       "columnMethod": "Način",
       "downloadReceipt": "Preuzmi potvrdu",
       "typeRecurring": "Periodično",
+      "typePremiumUpgrade": "Nadogradnja na Premium",
+      "refunded": "Vraćen novac",
+      "disputed": "Sporno",
       "dateUnavailable": "Datum nije dostupan"
     },
     "profile": {
@@ -434,9 +437,9 @@
       "helpTranslate": "Pomozi da prevedemo Jiki"
     },
     "subscriptionSection": {
-      "loadingCardTitle": "Pretplata",
-      "loadingCardDescription": "Upravljaj svojim planom pretplate i podacima za naplatu",
-      "loadingData": "Učitavanje podataka o pretplati..."
+      "loadingCardTitle": "Naplata",
+      "loadingCardDescription": "Upravljaj svojim Premium članstvom i uplatama",
+      "loadingData": "Učitavanje podataka o naplati..."
     },
     "benefits": {
       "activeSubtitle": "Evo šta svakog dana otključavaš",
@@ -446,6 +449,8 @@
       "activeHeading": "Uživaš u <highlight>Premium</highlight> pogodnostima",
       "cancellingHeading": "Ne gubi svoje <highlight>Premium</highlight> pogodnosti",
       "footer": "Imaš pitanje? Saznaj više o <includedLink>onome što je uključeno</includedLink> ili <supportLink>kontaktiraj podršku</supportLink>.",
+      "resubscribeAtPrice": "Pretplati se ponovo već za <strong>{price}</strong> i nastavi da učiš programiranje uz podršku Jikija.",
+      "resubscribeWithoutPrice": "Pretplati se ponovo i nastavi da učiš programiranje uz podršku Jikija.",
       "resubscribe": "Pretplati se ponovo za samo <price></price> i nastavi svoje programersko putovanje uz Džikijevu podršku."
     },
     "cancelSectionPanel": {
@@ -458,18 +463,16 @@
       "planName": "Jiki Premium",
       "upgrade": "Pređi na Premium",
       "headline": "Otključaj <highlight>bolji</highlight> način učenja",
+      "lifetimeNote": "Jednokratno plaćanje. Tvoje za ceo život.",
       "dailyNote": "To je samo <price></price> dnevno"
     },
-    "neverSubscribed": {
-      "heading": "Pređi na bolji plan",
-      "subtitle": "Otključaj napredne funkcionalnosti i unapređeno iskustvo učenja uz naše premium planove.",
-      "featuresLabel": "Funkcionalnosti premium plana",
-      "upgradeAriaLabel": "Pređi na plan {plan}",
-      "upgrade": "Pređi na Premium"
+    "purchasePending": {
+      "title": "Tvoje plaćanje je na putu",
+      "description": "Čekamo da tvoj pružalac platnih usluga potvrdi kupovinu Premium paketa. Bankovna plaćanja mogu da potraju nekoliko dana. Otključaćemo Premium i poslati ti mejl čim uplata prođe."
     },
     "errorBoundary": {
-      "title": "Greška u sistemu pretplate",
-      "messagePart1": "Imamo problema sa učitavanjem podataka o tvojoj pretplati. Možda je to privremeni problem sa našim sistemom plaćanja.",
+      "title": "Greška u podacima o naplati",
+      "messagePart1": "Imamo problema sa učitavanjem podataka o naplati. Možda je to privremeni problem sa našim sistemom plaćanja.",
       "messagePart2": "Probaj da osvežiš stranicu ili kontaktiraj podršku ako problem potraje.",
       "refresh": "Osveži stranicu",
       "detailsSummary": "Detalji greške (razvoj)"
@@ -529,20 +532,34 @@
       "statusSessionExpired": "Sesija je istekla",
       "statusNotSubscribed": "Bez pretplate",
       "currentPlan": "Trenutni plan",
+      "lifetime": "Imaš <plan>Jiki Premium</plan> za ceo život. Nema šta da se obnavlja.",
+      "premiumIncluded": "Imaš <plan>Jiki Premium</plan>.",
+      "subscribedWithPrice": "Na paketu si <plan>Jiki {tier}</plan> po ceni od <strong>{price}</strong>.",
+      "subscribed": "Na paketu si <plan>Jiki {tier}</plan>.",
+      "nextBillingDate": "Datum sledećeg naplaćivanja je <strong>{date}</strong>.",
+      "pricePerMonth": "{price} mesečno",
+      "pricePerYear": "{price} godišnje",
       "cancellingMessage": "Tvoja pretplata na Jiki Premium je otkazana.",
       "currentPlanAriaLabel": "Trenutni plan: {plan}",
       "statusAriaLabel": "Status pretplate: {status}",
-      "messageCanceled": "Usluga traje do kraja perioda",
       "messagePaymentFailed": "Plaćanje nije uspelo - ažuriraj način plaćanja",
-      "messageCancelling": "Otkazivanje je zakazano - pristup do kraja perioda",
       "messageIncomplete": "Podešavanje plaćanja nije završeno - dovrši ga",
-      "messageIncompleteExpired": "Prethodna sesija plaćanja je istekla - pokreni novu pretplatu",
-      "active": "Koristiš plan <plan>Jiki {tier}</plan> za <strong><price></price> mesečno</strong>.",
-      "activeWithBilling": "Koristiš plan <plan>Jiki {tier}</plan> za <strong><price></price> mesečno</strong>. Datum sledećeg plaćanja je <strong>{date}</strong>.",
       "cancellingRemaining": "Ostalo ti je <strong>{count, plural, one {# dan} few {# dana} other {# dana}}</strong> da uživaš u svim Premium funkcionalnostima.",
       "cancellingEnds": "Tvoj Premium plan ističe <strong>{date}</strong>.",
       "free": "Koristiš <strong>besplatni</strong> plan. On ti daje sav sadržaj, plus Pitaj Džikija, koji ti pomaže na jednoj vežbi.",
-      "planLabel": "{tier} plan"
+      "planLabel": "{tier} plan",
+      "messageCanceled": "Usluga traje do kraja perioda",
+      "messageCancelling": "Otkazivanje je zakazano - pristup do kraja perioda",
+      "messageIncompleteExpired": "Prethodna sesija plaćanja je istekla - pokreni novu pretplatu",
+      "active": "Koristiš plan <plan>Jiki {tier}</plan> za <strong><price></price> mesečno</strong>.",
+      "activeWithBilling": "Koristiš plan <plan>Jiki {tier}</plan> za <strong><price></price> mesečno</strong>. Datum sledećeg plaćanja je <strong>{date}</strong>."
+    },
+    "neverSubscribed": {
+      "heading": "Pređi na bolji plan",
+      "subtitle": "Otključaj napredne funkcionalnosti i unapređeno iskustvo učenja uz naše premium planove.",
+      "featuresLabel": "Funkcionalnosti premium plana",
+      "upgradeAriaLabel": "Pređi na plan {plan}",
+      "upgrade": "Pređi na Premium"
     }
   },
   "landing": {
@@ -753,7 +770,7 @@
       "q5a1": "Hvala što si deo butkampa! Jiki je sledeća etapa u razvoju našeg butkampa. Većina vežbi koje rešavaš na butkampu pojaviće se u Jikiju, uz još mnogo toga. Trosatne video snimke smo podelili na manje delove od 5 do 10 minuta, da gledanje bude lakše!",
       "q5a2": "Kao član butkampa, automatski dobijaš Jiki Premijum doživotno. To važi i za početni kurs Nauči da programiraš i za sve buduće kurseve.",
       "intro": "Ovo su pitanja koja nam najčešće postavljaju. Nema odgovora na tvoje pitanje? <link>Pošalji nam mejl!</link>",
-      "q1a2": "<strong>Jiki Premijum</strong> košta <price></price> (cena zavisi od zemlje) i otključava:"
+      "q1a2": "<strong>Jiki Premijum</strong> je jednokratna uplata od <price></price> (cena zavisi od zemlje) i otključava:"
     },
     "latestNews": {
       "heading": "Naše najnovije vesti",
@@ -770,6 +787,7 @@
       "basic": "Osnovni",
       "premium": "Premijum",
       "free": "Besplatno",
+      "oneTime": "jednokratno plaćanje",
       "perMonth": "mesečno"
     },
     "planBadge": {
@@ -823,18 +841,20 @@
       "title": "Često postavljana pitanja",
       "q1": "Mogu li besplatno da isprobam Jiki?",
       "a1": "Da! Možeš besplatno da se registruješ i koristiš Osnovni plan koliko god želiš. Pređi na Premijum kad ti zatreba potpun pristup, bez ikakve obaveze.",
-      "q2": "Postoji li minimalno trajanje ugovora?",
-      "a2": "Nema minimalnog ugovora. Premijum se naplaćuje mesečno i možeš da otkažeš u svakom trenutku u podešavanjima naloga.",
-      "q3": "Šta se dešava ako otkažem pretplatu na Premijum?",
-      "a3": "Zadržaćeš pristup Premijumu do kraja tekućeg obračunskog perioda, a zatim se tvoj nalog vraća na Osnovni plan. Ništa od napretka ne gubiš, samo gubiš pristup funkcionalnostima koje postoje isključivo u Premijumu.",
+      "q2": "Da li je Premijum pretplata?",
+      "a2": "Ne. Premijum je jednokratna uplata. Platiš jednom i zadržavaš Premijum zauvek, bez obnavljanja i bez otkazivanja.",
+      "q3": "Šta znači pristup zauvek?",
+      "a3": "Tvoj pristup Premijumu nikada ne ističe i neće te ponovo naplatiti. Zadržavaš sve Premium funkcionalnosti, uključujući one koje dodamo kasnije.",
       "q4": "Da li ima popusta za studente ili one koji ne mogu da priušte Premijum?",
-      "q5": "Mogu li kasnije da pređem na veći ili manji plan?",
-      "a5": "Naravno. Na Premijum možeš da pređeš u svakom trenutku iz svog naloga, a možeš i da otkažeš jednako lako kad god želiš.",
+      "q5": "Mogu li kasnije da nadogradim?",
+      "a5": "Naravno. Na Premijum možeš da pređeš u svakom trenutku iz svog naloga.",
       "a4": "Želimo da Jiki bude dostupan svima. Ako je cena prepreka, <link>javi nam se</link> i pomoći ćemo koliko možemo."
     },
     "cta": {
       "alreadyPremiumTitle": "Već si član Premijuma",
       "alreadyPremiumDesc": "Hvala što podržavaš Jiki i uživaj u potpunom pristupu svemu!",
+      "pendingTitle": "Tvoje plaćanje je na putu",
+      "pendingDesc": "Otključaćemo Premium čim uplata prođe.",
       "upgradeTitle": "Hoćeš da ubrzaš svoje učenje?",
       "upgradeDesc": "Pređi na Premijum i otključaj sve što Jiki nudi.",
       "upgradeButton": "Pređi na Premijum",
@@ -1072,7 +1092,7 @@
     },
     "settings": {
       "title": "Podešavanja - Jiki",
-      "description": "Upravljaj podešavanjima naloga, pretplatom i ličnim izborima."
+      "description": "Upravljaj podešavanjima naloga, Premium članstvom i ličnim izborima."
     },
     "checkEmail": {
       "title": "Proveri svoj mejl - Jiki",
@@ -1212,6 +1232,8 @@
     "no_exercism_link": "Ovaj nalog nije povezan sa Exercism-om",
     "invalid_product": "To nije paket koji možeš da kupiš",
     "existing_subscription": "Već imaš aktivnu pretplatu",
+    "already_premium": "Već imaš Premium",
+    "purchase_pending": "Tvoje prethodno plaćanje se još obrađuje. Otključaćemo Premium čim uplata prođe.",
     "invalid_return_url": "Nismo uspeli da te vratimo na pravu stranicu",
     "checkout_failed": "Nismo uspeli da pokrenemo plaćanje. Pokušaj ponovo.",
     "no_customer": "Nismo uspeli da pronađemo tvoje podatke za naplatu",
@@ -1273,7 +1295,6 @@
   "toasts": {
     "subscription": {
       "loginRequired": "Prijavi se da nadogradiš svoj nalog",
-      "checkoutFailed": "Pokretanje plaćanja nije uspelo. Pokušaj ponovo.",
       "alreadyPremium": "Već si na Premium paketu",
       "checkoutSessionFailed": "Kreiranje sesije plaćanja nije uspelo",
       "portalFailed": "Otvaranje korisničkog portala nije uspelo",
@@ -1281,7 +1302,8 @@
       "cancelFailed": "Otkazivanje pretplate nije uspelo",
       "reactivated": "Pretplata je ponovo aktivirana!",
       "reactivateFailed": "Ponovno aktiviranje pretplate nije uspelo",
-      "paymentPortalFailed": "Otvaranje portala za plaćanje nije uspelo"
+      "paymentPortalFailed": "Otvaranje portala za plaćanje nije uspelo",
+      "checkoutFailed": "Pokretanje plaćanja nije uspelo. Pokušaj ponovo."
     },
     "auth": {
       "sessionExpired": "Tvoja sesija je istekla. Prijavi se ponovo."
@@ -1320,33 +1342,6 @@
       "badge": "Premium član",
       "description": "Hvala na nadogradnji! Sada imaš pristup svim Premium pogodnostima, uključujući neograničene razgovore sa Džikijem, Projekte i Learn to Build!",
       "title": "<highlight>Premium</highlight> je tvoj!"
-    },
-    "subscriptionSuccess": {
-      "chatGate": {
-        "title": "AI čet te čeka!",
-        "description": "Tvoj AI asistent je sada otključan i spreman da ti pomogne sa vežbama programiranja.",
-        "feature1": "Postavljaj pitanja o svom kodu",
-        "feature2": "Dobijaj objašnjenja složenih koncepata",
-        "feature3": "Primaj personalizovane savete i smernice"
-      },
-      "featureGate": {
-        "title": "Funkcionalnost otključana!",
-        "description": "Sada imaš pristup premium funkcionalnostima koje će unaprediti tvoje učenje."
-      },
-      "settings": {
-        "title": "{tier} je tvoj!",
-        "description": "Tvoja pretplata je aktivirana. Istraži nove funkcionalnosti u podešavanjima."
-      },
-      "general": {
-        "title": "{tier} je tvoj!",
-        "description": "Hvala na nadogradnji plana. Sada imaš pristup svim premium funkcionalnostima."
-      },
-      "planLabel": "{tier} plan",
-      "whatYouCanDo": "Šta sada možeš:",
-      "getStarted": "Počni",
-      "continueLearning": "Nastavi sa učenjem",
-      "skipForNow": "Preskoči za sada",
-      "renewalNotice": "Tvoja pretplata će se automatski obnoviti {date}. Pretplatom upravljaš u podešavanjima."
     },
     "confirmation": {
       "defaultTitle": "Potvrdi radnju",
@@ -1407,31 +1402,6 @@
       "skipMessage": "Ovaj video ti pomaže da izvučeš najviše iz Džikija. Sigurno želiš da ga preskočiš?",
       "skipConfirm": "Preskoči video",
       "skipCancel": "Nastavi da gledaš"
-    },
-    "subscription": {
-      "chatGate": {
-        "headline": "Otključaj AI čet asistenta",
-        "description": "Dobij trenutnu pomoć sa vežbama programiranja od našeg AI asistenta."
-      },
-      "featureGate": {
-        "headlineFallback": "Premium funkcionalnosti",
-        "headline": "Otključaj {feature}",
-        "description": "Nadogradi svoj plan za pristup naprednim funkcionalnostima i još bolje iskustvo učenja."
-      },
-      "settings": {
-        "headline": "Izaberi svoj plan",
-        "description": "Izaberi plan pretplate koji najbolje odgovara tvom učenju."
-      },
-      "general": {
-        "headline": "Nadogradi svoj plan",
-        "description": "Izaberi plan koji odgovara tvojim ciljevima učenja i otključaj napredne funkcionalnosti."
-      },
-      "unlockWith": "Šta ćeš otključati uz {feature}:",
-      "recommended": "Preporučeno",
-      "choosePremium": "Izaberi Premium",
-      "subscribeAriaLabel": "Pretplati se na {plan} plan",
-      "renewNotice": "Pretplata se automatski obnavlja svakog meseca. Možeš je otkazati bilo kada u podešavanjima.",
-      "notNow": "Ne sada, možda kasnije"
     },
     "walkthroughConfirm": {
       "title": "Hoćeš prvo da probaš samostalno?",
@@ -1518,15 +1488,16 @@
       "userAvatarAlt": "Korisnik",
       "upgrade": "Pređi na Premium",
       "planName": "Jiki Premium",
-      "featureLearnToBuild": "Pun pristup <strong>Learn to Build</strong> sadržaju",
-      "featureChallenges": "Isprobaj teže <strong>izazove</strong>",
+      "lifetimeNote": "Jednokratno plaćanje. Bez pretplate.",
+      "pendingNote": "Tvoje plaćanje se još obrađuje. Otključaćemo Premium i poslati ti mejl čim uplata prođe.",
+      "featureChallenges": "Otključaj <strong>Premium izazove</strong>",
       "featureAi": "Neograničena <strong>AI podrška</strong> od Džikija",
       "featureLivestreams": "Redovni <strong>Q&A prenosi uživo</strong> kojima se možeš priključiti",
-      "featureCertificates": "Osvoji <strong>sertifikate</strong> za kurseve",
+      "featureCertificates": "Dobij zvaničan <strong>sertifikat o završetku</strong>",
       "featureAdFree": "Učenje <strong>bez reklama</strong>",
       "featureEarlyAccess": "<strong>Rani pristup</strong> novim funkcionalnostima",
       "basic": {
-        "subheading": "Pređi na Premium i ubrzaj svoj put do posla.",
+        "subheading": "Premium korisnici imaju <strong>26 puta veću šansu da završe</strong>. Ne zaglavljuj se i ne odustaj!",
         "planName": "Basic plan",
         "planPrice": "Zauvek besplatno",
         "feature1": "Preko 80 vežbi programiranja",
@@ -1535,6 +1506,7 @@
         "note": "+ Pristup javnim YouTube snimcima i forumima zajednice za dodatne resurse za učenje.",
         "headline": "<highlight>Ubrzaj</highlight> svoje učenje!"
       },
+      "featureLearnToBuild": "Pun pristup <strong>Learn to Build</strong> sadržaju",
       "dailyNote": "(To je samo <price></price> dnevno)"
     },
     "subscriptionCheckout": {
@@ -1545,10 +1517,10 @@
       "paymentInfoAriaLabel": "Podaci o plaćanju",
       "pay": "Plati",
       "orderTitle": "Jiki {tier}",
-      "orderBilling": "Naplata je mesečna. Otkaži bilo kada.",
-      "perMonthShort": "/mes.",
+      "orderBilling": "Jednokratna uplata. Premium zauvek.",
       "securedBy": "Obezbeđuje <stripe>stripe</stripe>",
-      "error": "Greška: {message}"
+      "error": "Greška: {message}",
+      "perMonthShort": "/mes."
     },
     "calendarSubscribe": {
       "title": "Pretplati se na kalendar",
@@ -1564,6 +1536,58 @@
       "intro": "Pogledaj ovaj kratki uvod u to kako funkcionišu vežbe crtanja i kako da ih rešiš. Možeš da ga pogledaš i na dnu uputstava.",
       "close": "Hajde da počnemo",
       "watchAlt": "Pogledaj uvod"
+    },
+    "subscriptionSuccess": {
+      "chatGate": {
+        "title": "AI čet te čeka!",
+        "description": "Tvoj AI asistent je sada otključan i spreman da ti pomogne sa vežbama programiranja.",
+        "feature1": "Postavljaj pitanja o svom kodu",
+        "feature2": "Dobijaj objašnjenja složenih koncepata",
+        "feature3": "Primaj personalizovane savete i smernice"
+      },
+      "featureGate": {
+        "title": "Funkcionalnost otključana!",
+        "description": "Sada imaš pristup premium funkcionalnostima koje će unaprediti tvoje učenje."
+      },
+      "settings": {
+        "title": "{tier} je tvoj!",
+        "description": "Tvoja pretplata je aktivirana. Istraži nove funkcionalnosti u podešavanjima."
+      },
+      "general": {
+        "title": "{tier} je tvoj!",
+        "description": "Hvala na nadogradnji plana. Sada imaš pristup svim premium funkcionalnostima."
+      },
+      "planLabel": "{tier} plan",
+      "whatYouCanDo": "Šta sada možeš:",
+      "getStarted": "Počni",
+      "continueLearning": "Nastavi sa učenjem",
+      "skipForNow": "Preskoči za sada",
+      "renewalNotice": "Tvoja pretplata će se automatski obnoviti {date}. Pretplatom upravljaš u podešavanjima."
+    },
+    "subscription": {
+      "chatGate": {
+        "headline": "Otključaj AI čet asistenta",
+        "description": "Dobij trenutnu pomoć sa vežbama programiranja od našeg AI asistenta."
+      },
+      "featureGate": {
+        "headlineFallback": "Premium funkcionalnosti",
+        "headline": "Otključaj {feature}",
+        "description": "Nadogradi svoj plan za pristup naprednim funkcionalnostima i još bolje iskustvo učenja."
+      },
+      "settings": {
+        "headline": "Izaberi svoj plan",
+        "description": "Izaberi plan pretplate koji najbolje odgovara tvom učenju."
+      },
+      "general": {
+        "headline": "Nadogradi svoj plan",
+        "description": "Izaberi plan koji odgovara tvojim ciljevima učenja i otključaj napredne funkcionalnosti."
+      },
+      "unlockWith": "Šta ćeš otključati uz {feature}:",
+      "recommended": "Preporučeno",
+      "choosePremium": "Izaberi Premium",
+      "subscribeAriaLabel": "Pretplati se na {plan} plan",
+      "renewNotice": "Pretplata se automatski obnavlja svakog meseca. Možeš je otkazati bilo kada u podešavanjima.",
+      "notNow": "Ne sada, možda kasnije"
     }
   },
   "challenge": {
@@ -1777,6 +1801,7 @@
     "freeUserLimitReached": {
       "description": "Tvoj besplatni razgovor je iskorišćen. Nastavi da učiš uz Džikijevu pomoć oko koncepata, ispravljanja grešaka i napredovanja kroz vežbe.",
       "upgradeButton": "Pređi na Jiki Premium",
+      "oneTimePrice": "Samo <price></price> za doživotni pristup!",
       "price": "Samo <price></price>!"
     },
     "lockedFooter": {
