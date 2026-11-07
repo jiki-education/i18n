@@ -5,7 +5,7 @@ tags: ["jiki", "learn-to-code", "beginners", "story"]
 seo:
   description: "La historia detrás de Jiki: por qué creé una nueva plataforma para aprender a programar después de años al frente de Exercism, y mi visión para ayudar a principiantes."
   keywords: ["jiki", "aprender a programar", "principiantes", "exercism", "bootcamp de programación"]
-en_md5: 62c6e8e363795859b8e096214cbbe903
+en_md5: 7def035f857e5cf8d507ac1611b2ae51
 ---
 
 ¡Hola a todos!
@@ -16,7 +16,7 @@ Quería contarte sobre este viaje. Por qué existe Jiki, por qué invertimos nue
 
 ## Antes de Jiki, existía Exercism
 
-Para quienes no lo saben, pasé la última década construyendo **[Exercism](https://exercism.org)**. Exercism es una plataforma que ayuda a los desarrolladores a profundizar sus habilidades y aprender nuevos lenguajes de programación. Ha sido un enorme esfuerzo colaborativo con miles de personas enviando código, cientos de mantenedores desarrollando recorridos de lenguajes y miles de mentores apoyando a otros desarrolladores. Millones de personas la han usado para mejorar su programación, y es algo de lo que estoy muy orgulloso.
+Para quienes no lo saben, pasé la última década construyendo **[Exercism](https://exercism.org)**. Exercism es una plataforma que ayuda a los desarrolladores a profundizar sus habilidades y aprender nuevos lenguajes de programación. Ha sido un enorme esfuerzo colaborativo con miles de personas enviando código, cientos de mantenedores desarrollando rutas de lenguajes y miles de mentores apoyando a otros desarrolladores. Millones de personas la han usado para mejorar su programación, y es algo de lo que estoy muy orgulloso.
 
 Pero aunque Exercism fue diseñada para desarrolladores que ya saben programar, **seguíamos atrayendo a principiantes absolutos**. De hecho, en el último conteo, más de **500 personas al día** se registran en Exercism sin haber escrito nunca una línea de código. Y Exercism realmente no les funciona porque no fue creada para ellos, así que los enviamos a otro lado.
 
@@ -42,7 +42,7 @@ Por eso Jiki se basa en **proyectos desde el primer día**. No pasas meses hacie
 
 ### El Bootcamp
 
-En enero de 2025, hice un Bootcamp para 1,000 estudiantes. Aprendieron un lenguaje de programación que escribí específicamente para el bootcamp (llamado JikiScript). Cada semana tenían unas 3 horas de enseñanza en vivo, luego algunos ejercicios para resolver, y luego una sesión de «Labs» de 3 horas, donde revisábamos los ejercicios juntos, hacían preguntas, etc.
+En enero de 2025, hice un Bootcamp para 1.000 estudiantes. Aprendieron un lenguaje de programación que escribí específicamente para el bootcamp (llamado JikiScript). Cada semana tenían unas 3 horas de enseñanza en vivo, luego algunos ejercicios para resolver, y luego una sesión de «Labs» de 3 horas, donde revisábamos los ejercicios juntos, hacían preguntas, etc.
 
 Fue una experiencia muy divertida y aprendí muchísimo. También fue increíblemente intenso porque estaba escribiendo un lenguaje de programación, ejercicios y lecciones, además de hacer 6 horas de transmisión en vivo y docenas de horas de soporte cada semana. ¡Un enorme agradecimiento a los voluntarios que me ayudaron con esto!
 
@@ -76,7 +76,7 @@ La última decisión que tuve que tomar fue el precio.
 
 Sabía al 100% que quería que Jiki fuera gratuito. El objetivo principal es ayudar a las personas que lo necesitan. Pero también aprendí de Exercism que es muy difícil mantener algo cuando no entra suficiente dinero para financiarlo (**GRACIAS** a todas las personas que donan a Exercism: ¡vosotros hicisteis posible Jiki!).
 
-Así que decidí adoptar un modelo Freemium. El núcleo de Jiki es gratuito: los vídeos y ejercicios están disponibles para todo el mundo. Pero hay algunas funcionalidades extra interesantes (asistente de IA, algunos proyectos adicionales, transmisiones en vivo, contenido detrás de cámaras, etc.) a las que se puede acceder por una pequeña tarifa mensual ($9.99 ajustados según la ubicación usando la [Paridad del Poder Adquisitivo](https://en.wikipedia.org/wiki/Purchasing_power_parity)). Es una cantidad asequible para la mayoría de las personas del mundo, así que si queréis apoyar lo que hacemos o acceder a esas funcionalidades, es una excelente forma de empezar.
+Así que decidí adoptar un modelo Freemium. El núcleo de Jiki es gratuito: los vídeos y ejercicios están disponibles para todo el mundo. Pero hay algunas funcionalidades extra interesantes (asistente de IA, algunos proyectos adicionales, transmisiones en vivo, contenido detrás de cámaras, etc.) a las que se puede acceder por un pequeño pago único ($29,99, ajustado según la ubicación usando la [Paridad del Poder Adquisitivo](https://en.wikipedia.org/wiki/Purchasing_power_parity)). Es una cantidad asequible para la mayoría de las personas del mundo, así que si quieres apoyar lo que hacemos o acceder a esas funcionalidades, es una excelente forma de empezar.
 
 ## Luego llegó la programación agentiva
 

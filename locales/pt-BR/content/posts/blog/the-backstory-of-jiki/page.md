@@ -5,7 +5,7 @@ tags: ["jiki", "learn-to-code", "beginners", "story"]
 seo:
   description: "A história por trás do Jiki: por que criei uma nova plataforma para aprender a programar depois de anos gerenciando o Exercism, e a minha visão para ajudar iniciantes."
   keywords: ["jiki", "aprender a programar", "iniciantes", "exercism", "bootcamp de programação"]
-en_md5: 62c6e8e363795859b8e096214cbbe903
+en_md5: 7def035f857e5cf8d507ac1611b2ae51
 ---
 
 Olá a todos!
@@ -58,7 +58,7 @@ Isso significa que, enquanto você está aprendendo, você encontra coisas que o
 
 Mas eu removi os foot-guns.
 
-Escrevi intérpretes personalizados para as duas linguagens que simplesmente tiram o ruído. Você não pode mais usar `var` em JavaScript. Você não pode usar arrow functions até estar realmente confortável com funções normais. Você não pode escrever `[] + {}` e esperar obter algo que não seja um erro. Se for provável que alguém esteja fazendo algo sem querer neste ponto do seu percurso de aprendizado, isso está desativado. E, à medida que você progride, a gente ativa mais recursos e mais capacidades. Isso deu uma quantidade enorme de trabalho, mas acho que vai fazer uma grande diferença.
+Escrevi intérpretes personalizados para as duas linguagens que simplesmente tiram o ruído. Você não pode mais usar `var` em JavaScript. Você não pode usar arrow functions até estar realmente confortável com funções normais. Você não pode escrever `[] + {}` e esperar obter algo que não seja um erro. Se for provável que alguém esteja fazendo algo sem querer neste ponto do seu percurso de aprendizado, isso está desativado. E, à medida que você progride, a gente ativa mais recursos e mais capacidades. Isso deu um trabalho **enorme**, mas acho que vai fazer uma grande diferença.
 
 ### i18n
 
@@ -74,7 +74,7 @@ A última decisão que eu tive que tomar foi o preço.
 
 Eu sabia 100% que queria que o Jiki fosse gratuito. O objetivo de tudo isso é ajudar quem precisa de ajuda. Mas também aprendi com o Exercism que é muito difícil manter algo quando não entra dinheiro suficiente para financiar (**OBRIGADO** a todas as pessoas que doam ao Exercism: vocês tornaram o Jiki possível!!)
 
-Por isso, decidi adotar um modelo Freemium. O núcleo do Jiki é gratuito: os vídeos e os exercícios estão disponíveis para todo mundo. Mas há alguns recursos extras muito interessantes (suporte de IA, alguns projetos bônus, transmissões ao vivo, conteúdo de bastidores, etc.) que as pessoas podem acessar por uma pequena mensalidade (9,99 dólares, ajustados conforme a localização através da [Paridade do Poder de Compra](https://en.wikipedia.org/wiki/Purchasing_power_parity)). É um valor acessível para a maioria das pessoas no mundo, então, se elas quiserem apoiar o que estamos fazendo ou acessar esses recursos, é uma ótima forma de começar.
+Por isso, decidi adotar um modelo Freemium. O núcleo do Jiki é gratuito: os vídeos e os exercícios estão disponíveis para todo mundo. Mas há alguns recursos extras muito interessantes (suporte de IA, alguns projetos bônus, transmissões ao vivo, conteúdo de bastidores, etc.) que as pessoas podem acessar por um pequeno pagamento único (29,99 dólares, ajustado conforme a localização através da [Paridade do Poder de Compra](https://en.wikipedia.org/wiki/Purchasing_power_parity)). É um valor acessível para a maioria das pessoas no mundo, então, se elas quiserem apoiar o que estamos fazendo ou acessar esses recursos, é uma ótima forma de começar.
 
 ## Depois chegou a programação com agentes de IA
 

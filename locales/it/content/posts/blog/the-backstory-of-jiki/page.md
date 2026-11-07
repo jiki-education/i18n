@@ -5,7 +5,7 @@ tags: ["jiki", "learn-to-code", "beginners", "story"]
 seo:
   description: "La storia dietro Jiki: perché ho creato una nuova piattaforma per imparare a programmare dopo anni di gestione di Exercism, e la mia visione per aiutare i principianti."
   keywords: ["jiki", "imparare a programmare", "principianti", "exercism", "bootcamp di programmazione"]
-en_md5: 62c6e8e363795859b8e096214cbbe903
+en_md5: 7def035f857e5cf8d507ac1611b2ae51
 ---
 
 Ciao a tutti!
@@ -18,13 +18,13 @@ Volevo raccontarti di questo viaggio. Perché esiste Jiki, perché abbiamo inves
 
 Per chi non lo sapesse, ho trascorso l'ultimo decennio a costruire **[Exercism](https://exercism.org)**. Exercism è una piattaforma che aiuta gli sviluppatori ad approfondire le proprie competenze e a imparare nuovi linguaggi di programmazione. È stato un enorme sforzo collaborativo con migliaia di persone che hanno contribuito al codice, centinaia di manutentori che hanno costruito percorsi per diversi linguaggi, e migliaia di mentori che hanno supportato altri sviluppatori. Milioni di persone l'hanno usata per migliorare le proprie capacità di programmazione, ed è qualcosa di cui sono davvero orgoglioso.
 
-Ma, benché Exercism fosse pensata per sviluppatori che sanno già programmare, **continuavamo ad attrarre principianti assoluti**. Infatti, stando agli ultimi dati, oltre **500 persone al giorno** si iscrivevano a Exercism senza aver mai scritto una sola riga di codice. Ed Exercism non funziona per loro, perché non è stata creata per loro: quindi li mandavamo via.
+Ma, benché Exercism fosse pensata per sviluppatori che sanno già programmare, **continuavamo ad attrarre principianti assoluti**. Infatti, stando agli ultimi dati, oltre **500 persone al giorno** si iscrivono a Exercism senza aver mai scritto una sola riga di codice. Ed Exercism non funziona per loro, perché non è stata creata per loro: quindi li mandiamo via.
 
 E questo è un peccato.
 
 La mia motivazione con Exercism è sempre stata legata alla **mobilità sociale**: aiutare le persone che hanno più bisogno di aiuto. Credo che la programmazione sia una competenza fondamentale che quasi tutti dovrebbero imparare. Per alcuni può diventare una carriera, ma per tutti insegna il pensiero critico, la risoluzione dei problemi, e fornisce un insieme di competenze utili in quasi ogni tipo di lavoro digitale. In breve, credo che la programmazione cambi davvero la vita e apra porte che altrimenti resterebbero chiuse. Perciò, vedere questi principianti arrivare, pieni di entusiasmo, e poi dover dire loro «mi dispiace, questa non fa ancora per te», mi sembrava un mio fallimento.
 
-Ho iniziato a esplorare il panorama del "imparare a programmare" per capire cosa esistesse per loro. Ho parlato con molti dei principianti che si iscrivevano e ho iniziato a esaminare le risorse disponibili. E provando quelle risorse, mi sono reso conto che mancava qualcosa. La maggior parte non va al cuore di ciò che, secondo me, è davvero la programmazione: **divertirsi a risolvere problemi**.
+Ho iniziato a esplorare il panorama dell'«imparare a programmare» per capire cosa esistesse per loro. Ho parlato con molti dei principianti che si iscrivevano e ho iniziato a esaminare le risorse disponibili. E provando quelle risorse, mi sono reso conto che mancava qualcosa. La maggior parte non va al cuore di ciò che, secondo me, è davvero la programmazione: **divertirsi a risolvere problemi**.
 
 Invece, ti danno video da guardare, quiz da fare, forse un piccolo esercizio di programmazione, e un certificato alla fine. Ti insegnano sintassi e teoria, ma non ti fanno davvero **costruire** qualcosa. E credo che sia per questo che così tante persone abbandonano. Non è che programmare sia troppo difficile, è che il modo in cui viene insegnato non sembra affatto programmare.
 
@@ -36,7 +36,7 @@ Così ho deciso di fare qualcosa al riguardo.
 
 Quando penso a come ho imparato a programmare, non è stato attraverso corsi o tutorial. Ho iniziato a otto anni, molto prima di avere Internet. Ho imparato **costruendo giochi**. Prendevo qualunque cosa ossessionasse la mia mente infantile in quel periodo (c'erano molti Star Trek e maghi) e lo trasformavo in un gioco a caso. Poi, crescendo, creavo siti web e piccoli strumenti per me stesso, qualunque cosa trovassi interessante. Non avevo un programma di studi. Semplicemente costruivo cose, mi bloccavo, risolvevo il problema, e costruivo altre cose.
 
-Quell'esperienza ha plasmato tutto il mio modo di pensare all'apprendimento. Credo che le persone imparino a programmare **programmando**, non guardando qualcun altro farlo, non rispondendo a domande a scelta multipla, non scrivendo una riga di codice per "completare" un esercizio, ma scrivendo veri programmi e risolvendo problemi reali.
+Quell'esperienza ha plasmato tutto il mio modo di pensare all'apprendimento. Credo che le persone imparino a programmare **programmando**, non guardando qualcun altro farlo, non rispondendo a domande a scelta multipla, non scrivendo una riga di codice per «completare» un esercizio, ma scrivendo veri programmi e risolvendo problemi reali.
 
 Ecco perché Jiki è costruito attorno ai **progetti fin dal primo giorno**. Non stai facendo minuscoli esercizi di cinque righe per mesi e mesi. Stai costruendo cose: giochi, animazioni, strumenti, e scrivendo **decine, poi centinaia** di righe di codice nei primi mesi. È impegnativo, ma è il tipo di sfida che ti fa sentire come se stessi davvero diventando un programmatore.
 
@@ -52,13 +52,13 @@ Fondamentalmente, ciò che ho imparato è che il ritmo che avevo creato era trop
 
 Credo fermamente che imparare a programmare sia reso molto più difficile dal fatto che devi anche imparare un linguaggio di programmazione allo stesso tempo. Probabilmente suona come un'affermazione un po' strana, ma seguitemi.
 
-I linguaggi di programmazione sono progettati per professionisti. Contengono numerose funzionalità "avanzate" che permettono a noi sviluppatori di lavorare più in fretta e in modo più efficiente. Inoltre, tendono ad avere un sacco di bagaglio storico (JavaScript in particolare ne soffre molto): funzionalità che avrebbero dovuto essere eliminate dal linguaggio molto tempo fa, ma che devono restare per supportare il codice legacy.
+I linguaggi di programmazione sono progettati per professionisti. Contengono numerose funzionalità «avanzate» che permettono a noi sviluppatori di lavorare più in fretta e in modo più efficiente. Inoltre, tendono ad avere un sacco di bagaglio storico (JavaScript in particolare ne soffre molto): funzionalità che avrebbero dovuto essere eliminate dal linguaggio molto tempo fa, ma che devono restare per supportare il codice legacy.
 
 Questo significa che, mentre impari, ti imbatti in cose che sono molto avanzate o semplicemente strane. Le chiamiamo armi a doppio taglio (cose con cui puoi spararti sui piedi). Quando ho organizzato il bootcamp, ho deciso di scrivere un nuovo linguaggio senza armi a doppio taglio (chiamato JikiScript). Tuttavia, uno dei feedback che ho ricevuto è stato che era frustrante imparare un linguaggio che poi non potevi usare nel mondo reale. Quindi per Jiki, ho deciso di insegnare tramite JavaScript o Python (stesso programma, puoi scegliere il linguaggio).
 
 Ma ho eliminato le armi a doppio taglio.
 
-Ho scritto interpreti personalizzati per entrambi i linguaggi che eliminano il rumore. Non puoi più usare `var` in JavaScript. Non puoi usare le funzioni freccia finché non sei davvero a tuo agio con le funzioni normali. Non puoi scrivere `[] + {}` aspettandoti altro che un errore. Se è probabile che qualcuno stia facendo qualcosa involontariamente in questa fase del suo percorso di apprendimento, viene disabilitato. E man mano che avanzi, abilitiamo più funzionalità. È stato un **SACCO** di lavoro, ma credo che farà una grande differenza.
+Ho scritto interpreti personalizzati per entrambi i linguaggi che eliminano il rumore. Non puoi più usare `var` in JavaScript. Non puoi usare le funzioni freccia finché non sei davvero a tuo agio con le funzioni normali. Non puoi scrivere `[] + {}` aspettandoti altro che un errore. Se è probabile che qualcuno stia facendo qualcosa involontariamente in questa fase del suo percorso di apprendimento, viene disabilitato. E man mano che avanzi, abilitiamo sempre più funzionalità. È stato un **SACCO** di lavoro, ma credo che farà una grande differenza.
 
 ### i18n
 
@@ -74,7 +74,7 @@ L'ultima decisione da prendere è stata il prezzo.
 
 Sapevo al 100% che volevo che Jiki fosse gratuito. L'intero scopo è aiutare le persone che hanno bisogno di aiuto. Ma ho anche imparato da Exercism che è molto difficile gestire qualcosa quando i soldi che arrivano non sono sufficienti a finanziarlo (**GRAZIE** a tutti coloro che donano a Exercism: avete reso possibile Jiki!!)
 
-Così ho deciso di adottare un approccio Freemium. Il nucleo di Jiki è gratuito: i video e gli esercizi sono disponibili per tutti. Ma ci sono alcune piacevoli funzionalità extra (supporto IA, alcuni progetti bonus, dirette streaming, contenuti dietro le quinte, ecc.) a cui le persone possono accedere con una piccola quota mensile ($9,99, adeguata in base alla posizione geografica utilizzando la [parità di potere d'acquisto](https://en.wikipedia.org/wiki/Purchasing_power_parity)). È una cifra che è accessibile alla maggior parte delle persone nel mondo, quindi se qualcuno vuole sostenere il nostro lavoro, o vuole accedere a quelle funzionalità, è un ottimo modo per iniziare.
+Così ho deciso di adottare un approccio Freemium. Il nucleo di Jiki è gratuito: i video e gli esercizi sono disponibili per tutti. Ma ci sono alcune piacevoli funzionalità extra (supporto IA, alcuni progetti bonus, dirette streaming, contenuti dietro le quinte, ecc.) a cui le persone possono accedere con un piccolo pagamento una tantum ($29,99, adeguato in base alla località usando la [parità di potere d'acquisto](https://en.wikipedia.org/wiki/Purchasing_power_parity)). È una cifra che è accessibile alla maggior parte delle persone nel mondo, quindi se qualcuno vuole sostenere il nostro lavoro, o vuole accedere a quelle funzionalità, è un ottimo modo per iniziare.
 
 ## Poi è arrivata la programmazione agentica
 
@@ -86,7 +86,7 @@ Ma, ed è un grosso ma, gli esseri umani sono ancora necessari per progettare il
 
 Così Jiki insegna entrambe le cose. Insegna i fondamenti della programmazione, perché hai ancora bisogno di capire cosa sta facendo la tua IA. Ma ti insegna anche a costruire: come funzionano i siti web sotto il cofano, come progettare database, come architettare il software. Tutto ciò che ti serve per creare cose concrete. Se vuoi trovare un lavoro nel settore tech, queste sono le competenze da padroneggiare. E se vuoi solo creare cose, questo ti insegnerà a farlo in modo che tu capisca, senza trasformarsi in un caos di spaghetti.
 
-### Cos'è Jiki e dove voglio che arrivi
+## Cos'è Jiki e dove voglio che arrivi
 
 Jiki è una piattaforma per imparare a programmare, progettata per essere molto interattiva e divertente. È pensata per principianti: persone che programmano da meno di un anno e vogliono costruire basi molto solide. Impari costruendo progetti in un ambiente personalizzato, progettato appositamente per aiutarti a capire cosa sta succedendo.
 

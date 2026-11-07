@@ -5,7 +5,7 @@ tags: ["jiki", "learn-to-code", "beginners", "story"]
 seo:
   description: "Die Geschichte hinter Jiki: Warum ich nach Jahren mit Exercism eine neue Plattform zum Programmierenlernen gebaut habe und meine Vision, Anfängern zu helfen."
   keywords: ["jiki", "programmieren lernen", "anfänger", "exercism", "coding bootcamp"]
-en_md5: 62c6e8e363795859b8e096214cbbe903
+en_md5: 7def035f857e5cf8d507ac1611b2ae51
 ---
 
 Hallo zusammen!
@@ -22,9 +22,9 @@ Aber obwohl Exercism für Entwickler gedacht war, die bereits programmieren kön
 
 Und das ist echt mies.
 
-Meine Motivation bei Exercism war schon immer die **soziale Mobilität**: Menschen zu helfen, die diese Hilfe am meisten brauchen. Ich glaube, dass Programmieren eine Kernkompetenz ist, die fast jeder lernen sollte. Für manche kann es ein Beruf sein, aber für alle lehrt es kritisches Denken und Problemlösen und gibt dir Fähigkeiten, die in fast jeder digitalen Arbeit helfen. Kurz gesagt: Ich glaube, Programmieren verändert wirklich Leben und öffnet Türen, die sonst vielleicht verschlossen bleiben würden. Diese Anfänger voller Begeisterung ankommen zu sehen und ihnen dann sagen zu müssen „Sorry, das ist noch nichts für dich", fühlte sich für mich wie ein Versagen an.
+Meine Motivation bei Exercism war schon immer die **soziale Mobilität**: Menschen zu helfen, die diese Hilfe am meisten brauchen. Ich glaube, dass Programmieren eine Kernkompetenz ist, die fast jeder lernen sollte. Für manche kann es ein Beruf sein, aber für alle lehrt es kritisches Denken und Problemlösen und gibt dir Fähigkeiten, die in fast jeder digitalen Arbeit helfen. Kurz gesagt: Ich glaube, Programmieren verändert wirklich Leben und öffnet Türen, die sonst vielleicht verschlossen bleiben würden. Diese Anfänger voller Begeisterung ankommen zu sehen und ihnen dann sagen zu müssen „Sorry, das ist noch nichts für dich“, fühlte sich für mich wie ein Versagen an.
 
-Ich fing an, die „Programmieren lernen"-Landschaft zu erkunden, um zu verstehen, was es dort für sie gab. Ich habe mit vielen der Anfänger gesprochen, die sich anmeldeten, und angefangen, mir die vorhandenen Ressourcen anzuschauen. Und als ich diese Ressourcen ausprobierte, merkte ich, dass etwas fehlte. Die meisten von ihnen treffen nicht den Kern dessen, was Programmieren meiner Meinung nach wirklich ist: **Spaß am Problemlösen**.
+Ich fing an, die „Programmieren lernen“-Landschaft zu erkunden, um zu verstehen, was es dort für sie gab. Ich habe mit vielen der Anfänger gesprochen, die sich anmeldeten, und angefangen, mir die vorhandenen Ressourcen anzuschauen. Und als ich diese Ressourcen ausprobierte, merkte ich, dass etwas fehlte. Die meisten von ihnen treffen nicht den Kern dessen, was Programmieren meiner Meinung nach wirklich ist: **Spaß am Problemlösen**.
 
 Stattdessen bekommst du Videos, die du dir anschaust, Quizze, die du beantwortest, vielleicht eine kleine Programmierübung und am Ende ein Zertifikat. Sie bringen dir Syntax und Theorie bei, aber sie bringen dich nicht wirklich dazu, **Dinge zu bauen**. Und ich glaube, deshalb geben so viele Leute auf. Es liegt nicht daran, dass Programmieren zu schwer ist, sondern daran, dass sich die Art, wie es ihnen beigebracht wird, überhaupt nicht wie Programmieren anfühlt.
 
@@ -36,13 +36,13 @@ Also habe ich beschlossen, etwas dagegen zu tun.
 
 Wenn ich darüber nachdenke, wie ich Programmieren gelernt habe, dann war es nicht durch Kurse oder Tutorials. Ich habe mit acht Jahren angefangen, lange bevor ich Internet hatte. Ich habe gelernt, indem ich **Spiele gebaut** habe. Ich nahm, wovon mein kindliches Gehirn damals auch immer besessen war (es gab jede Menge Star Trek und Zauberer), und machte irgendein Spiel daraus. Als ich älter wurde, baute ich Websites und kleine Tools für mich, je nachdem, was ich gerade interessant fand. Ich hatte keinen Lehrplan. Ich habe einfach Sachen gebaut, bin nicht weitergekommen, habe eine Lösung gefunden und noch mehr Sachen gebaut.
 
-Diese Erfahrung hat alles geprägt, wie ich über das Lernen denke. Ich glaube, Menschen lernen Programmieren durch **Programmieren**: nicht indem sie jemand anderem dabei zuschauen, nicht indem sie Multiple-Choice-Fragen beantworten, nicht indem sie eine Zeile Code schreiben, um eine Übung „abzuschließen", sondern indem sie tatsächlich echte Programme schreiben und Probleme lösen.
+Diese Erfahrung hat alles geprägt, wie ich über das Lernen denke. Ich glaube, Menschen lernen Programmieren durch **Programmieren**: nicht indem sie jemand anderem dabei zuschauen, nicht indem sie Multiple-Choice-Fragen beantworten, nicht indem sie eine Zeile Code schreiben, um eine Übung „abzuschließen“, sondern indem sie tatsächlich echte Programme schreiben und Probleme lösen.
 
 Deshalb dreht sich bei Jiki vom ersten Tag an alles um **Projekte**. Du machst nicht monatelang winzige Übungen mit fünf Zeilen. Du baust Dinge: Spiele, Animationen, Tools. Und du schreibst in deinen ersten paar Monaten **Dutzende, dann Hunderte** Zeilen Code. Das ist anspruchsvoll, aber es ist die Art von Herausforderung, bei der du das Gefühl hast, wirklich ein Programmierer zu werden.
 
 ### Das Bootcamp
 
-Im Januar 2025 habe ich ein Bootcamp für 1.000 Teilnehmende veranstaltet. Sie lernten eine Programmiersprache, die ich eigens für das Bootcamp geschrieben hatte (namens JikiScript). Jede Woche gab es etwa 3 Stunden Live-Unterricht, dann hatten sie ein paar Übungen zu lösen und anschließend eine dreistündige „Labs"-Session, in der wir die Übungen gemeinsam durchgingen, Fragen stellten und so weiter.
+Im Januar 2025 habe ich ein Bootcamp für 1.000 Teilnehmende veranstaltet. Sie lernten eine Programmiersprache, die ich eigens für das Bootcamp geschrieben hatte (namens JikiScript). Jede Woche gab es etwa 3 Stunden Live-Unterricht, dann hatten sie ein paar Übungen zu lösen und anschließend eine dreistündige „Labs“-Session, in der wir die Übungen gemeinsam durchgingen, Fragen stellten und so weiter.
 
 Es war eine richtig tolle Erfahrung und ich habe jede Menge daraus gelernt. Es war außerdem wahnsinnig intensiv, weil ich eine Programmiersprache, Übungen und Lektionen schrieb und dazu jede Woche 6 Stunden Live-Streaming machte und Dutzende Stunden Support leistete. Ein riesiges Dankeschön an die Freiwilligen, die mir dabei geholfen haben!!
 
@@ -52,7 +52,7 @@ Was ich vor allem gelernt habe: Das Tempo, das ich vorgab, war viel zu schnell. 
 
 Ich bin fest davon überzeugt, dass das Programmierenlernen deutlich schwerer wird, wenn du gleichzeitig auch noch eine Programmiersprache lernen musst. Das klingt wahrscheinlich nach einer ziemlich seltsamen Aussage, aber bleib dran.
 
-Programmiersprachen sind für Profis gemacht. Sie enthalten zahlreiche „fortgeschrittene" Features, mit denen wir als Entwickler schneller und effizienter arbeiten können. Außerdem schleppen sie jede Menge historischen Ballast mit sich herum (JavaScript leidet besonders darunter): Features, die längst aus der Sprache hätten entfernt werden sollen, aber aus Gründen der Abwärtskompatibilität bleiben müssen.
+Programmiersprachen sind für Profis gemacht. Sie enthalten zahlreiche „fortgeschrittene“ Features, mit denen wir als Entwickler schneller und effizienter arbeiten können. Außerdem schleppen sie jede Menge historischen Ballast mit sich herum (JavaScript leidet besonders darunter): Features, die längst aus der Sprache hätten entfernt werden sollen, aber aus Gründen der Abwärtskompatibilität bleiben müssen.
 
 Das heißt, beim Lernen stößt du auf Dinge, die entweder sehr fortgeschritten oder einfach nur seltsam sind. Wir nennen sie Fußangeln (Dinge, mit denen du dir selbst ins Knie schießen kannst). Als ich das Bootcamp veranstaltete, beschloss ich, eine neue Sprache ohne Fußangeln zu schreiben (namens JikiScript). Eine Rückmeldung war allerdings, dass es frustrierend ist, eine Sprache zu lernen, die man dann in der echten Welt nicht einsetzen kann. Für Jiki habe ich mich deshalb entschieden, entweder JavaScript oder Python zu unterrichten (gleicher Lehrplan, du suchst dir die Sprache aus).
 
@@ -74,7 +74,7 @@ Die letzte Entscheidung, die ich treffen musste, war der Preis.
 
 Ich war mir zu 100 % sicher, dass Jiki kostenlos sein sollte. Es geht doch gerade darum, Menschen zu helfen, die Hilfe brauchen. Aber ich habe bei Exercism auch gelernt, dass es wirklich schwer ist, etwas am Laufen zu halten, wenn nicht genug Geld hereinkommt, um es zu finanzieren (**DANKE** an alle, die an Exercism spenden, ihr habt Jiki möglich gemacht!!)
 
-Also habe ich mich für einen Freemium-Ansatz entschieden. Der Kern von Jiki ist kostenlos: Die Videos und Übungen sind für alle verfügbar. Aber es gibt ein paar schöne Extra-Features (KI-Support, einige Bonusprojekte, Live-Streams, Inhalte hinter den Kulissen und so weiter), auf die du für einen kleinen monatlichen Betrag zugreifen kannst (9,99 $, angepasst an den jeweiligen Ort über [Kaufkraftparität](https://en.wikipedia.org/wiki/Purchasing_power_parity)). Das ist ein Betrag, den sich die meisten Menschen auf der Welt leisten können. Wenn du also unsere Arbeit unterstützen oder Zugriff auf diese Features haben möchtest, ist das ein großartiger Einstieg.
+Also habe ich mich für einen Freemium-Ansatz entschieden. Der Kern von Jiki ist kostenlos: Die Videos und Übungen sind für alle verfügbar. Aber es gibt ein paar schöne Extra-Features (KI-Support, einige Bonusprojekte, Live-Streams, Inhalte hinter den Kulissen und so weiter), auf die du für einen kleinen einmaligen Betrag zugreifen kannst (29,99 $, angepasst an den jeweiligen Ort über [Kaufkraftparität](https://en.wikipedia.org/wiki/Purchasing_power_parity)). Das ist ein Betrag, den sich die meisten Menschen auf der Welt leisten können. Wenn du also unsere Arbeit unterstützen oder Zugriff auf diese Features haben möchtest, ist das ein großartiger Einstieg.
 
 ## Dann kam das agentische Coding
 

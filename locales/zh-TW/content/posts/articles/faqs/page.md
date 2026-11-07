@@ -3,9 +3,9 @@ title: "常見問題"
 excerpt: "關於 Jiki、我們的課程，以及 Jiki Premium 的常見問題。"
 tags: ["support"]
 seo:
-  description: "關於 Jiki、我們的程式設計學習平台、課程與 Jiki Premium 訂閱的常見問題。"
-  keywords: ["faq", "常見問題", "jiki", "支援", "premium"]
-en_md5: a61a0869adc157915004c4dd66e141ee
+  description: "關於 Jiki、我們的程式設計學習平台、課程與 Jiki Premium 的常見問題。"
+  keywords: ["faqs", "常見問題", "jiki", "支援", "premium"]
+en_md5: c0707bb8b7ba85b225bb90881f00ace8
 ---
 
 ## 關於課程

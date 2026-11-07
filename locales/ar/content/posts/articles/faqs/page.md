@@ -5,7 +5,7 @@ tags: ["support"]
 seo:
   description: "الأسئلة الشائعة حول Jiki، منصتنا لتعلّم البرمجة، والدورات وJiki Premium."
   keywords: ["الأسئلة الشائعة", "أسئلة متكررة", "jiki", "الدعم", "premium"]
-en_md5: a61a0869adc157915004c4dd66e141ee
+en_md5: c0707bb8b7ba85b225bb90881f00ace8
 ---
 
 ## حول الدورة

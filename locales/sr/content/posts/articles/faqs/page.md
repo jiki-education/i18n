@@ -3,9 +3,9 @@ title: "Često postavljana pitanja"
 excerpt: "Često postavljana pitanja o Jikiju, našim kursevima i Jiki Premium-u."
 tags: ["support"]
 seo:
-  description: "Često postavljana pitanja o Jikiju, našoj platformi za učenje programiranja, kursevima i pretplati na Jiki Premium."
-  keywords: ["često postavljana pitanja", "jiki", "podrška", "premium"]
-en_md5: a61a0869adc157915004c4dd66e141ee
+  description: "Često postavljana pitanja o Jikiju, našoj platformi za učenje programiranja, kursevima i Jiki Premium-u."
+  keywords: ["faq", "često postavljana pitanja", "jiki", "podrška", "premium"]
+en_md5: c0707bb8b7ba85b225bb90881f00ace8
 ---
 
 ## O kursu

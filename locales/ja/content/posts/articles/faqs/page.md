@@ -5,7 +5,7 @@ tags: ["support"]
 seo:
   description: "Jiki（プログラミング学習プラットフォーム）、コース、Jiki Premiumに関するよくある質問。"
   keywords: ["faq", "よくある質問", "Jiki", "サポート", "Premium"]
-en_md5: a61a0869adc157915004c4dd66e141ee
+en_md5: c0707bb8b7ba85b225bb90881f00ace8
 ---
 
 ## コースについて

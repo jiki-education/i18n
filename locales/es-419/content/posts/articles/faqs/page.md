@@ -4,8 +4,8 @@ excerpt: "Preguntas frecuentes sobre Jiki, nuestros cursos y Jiki Premium."
 tags: ["support"]
 seo:
   description: "Preguntas frecuentes sobre Jiki, nuestra plataforma para aprender a programar, los cursos y Jiki Premium."
-  keywords: ["preguntas frecuentes", "preguntas frecuentes", "jiki", "soporte", "premium"]
-en_md5: a61a0869adc157915004c4dd66e141ee
+  keywords: ["faqs", "preguntas frecuentes", "jiki", "soporte", "premium"]
+en_md5: c0707bb8b7ba85b225bb90881f00ace8
 ---
 
 ## Sobre el curso

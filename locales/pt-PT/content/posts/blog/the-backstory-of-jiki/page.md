@@ -5,7 +5,7 @@ tags: ["jiki", "learn-to-code", "beginners", "story"]
 seo:
   description: "A história por trás do Jiki: porque criei uma nova plataforma para aprender a programar depois de anos a gerir o Exercism, e a minha visão para ajudar principiantes."
   keywords: ["jiki", "aprender a programar", "principiantes", "exercism", "bootcamp de programação"]
-en_md5: 62c6e8e363795859b8e096214cbbe903
+en_md5: 7def035f857e5cf8d507ac1611b2ae51
 ---
 
 Olá a todos!
@@ -74,7 +74,7 @@ A última decisão que tive de tomar foi o preço.
 
 Sabia a 100% que queria que o Jiki fosse gratuito. O objetivo de tudo isto é ajudar quem precisa de ajuda. Mas também aprendi com o Exercism que é muito difícil manter algo quando não entra dinheiro suficiente para o financiar (**OBRIGADO** a todas as pessoas que doam ao Exercism: tornaram o Jiki possível!!)
 
-Por isso, decidi adotar um modelo Freemium. O núcleo do Jiki é gratuito: os vídeos e os exercícios estão disponíveis para toda a gente. Mas há algumas funcionalidades extra muito interessantes (apoio de IA, alguns projetos bónus, transmissões em direto, conteúdo de bastidores, etc.) a que as pessoas podem aceder por uma pequena mensalidade (9,99 dólares, ajustados conforme a localização através da [Paridade do Poder de Compra](https://en.wikipedia.org/wiki/Purchasing_power_parity)). É um valor acessível para a maioria das pessoas no mundo, por isso, se quiserem apoiar o que estamos a fazer ou aceder a essas funcionalidades, é uma ótima forma de começar.
+Por isso, decidi adotar um modelo Freemium. O núcleo do Jiki é gratuito: os vídeos e os exercícios estão disponíveis para toda a gente. Mas há algumas funcionalidades extra muito interessantes (apoio de IA, alguns projetos bónus, transmissões em direto, conteúdo de bastidores, etc.) a que as pessoas podem aceder por um pequeno pagamento único (29,99 dólares, ajustados conforme a localização através da [Paridade do Poder de Compra](https://en.wikipedia.org/wiki/Purchasing_power_parity)). É um valor acessível para a maioria das pessoas no mundo, por isso, se quiserem apoiar o que estamos a fazer ou aceder a essas funcionalidades, é uma ótima forma de começar.
 
 ## Depois chegou a programação com agentes de IA
 

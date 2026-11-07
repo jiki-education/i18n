@@ -5,7 +5,7 @@ tags: ["jiki", "learn-to-code", "beginners", "story"]
 seo:
   description: "A Jiki mögötti történet - miért építettem egy új tanulj meg programozni platformot évekig tartó Exercism üzemeltetés után, és az elképzelésem a kezdők segítéséről."
   keywords: ["jiki", "tanulj meg programozni", "kezdők", "exercism", "programozó bootcamp"]
-en_md5: 62c6e8e363795859b8e096214cbbe903
+en_md5: 7def035f857e5cf8d507ac1611b2ae51
 ---
 
 Sziasztok!
@@ -34,7 +34,7 @@ Ehelyett videókat kapsz, kvízeket tölthetsz ki, talán egy kis kódolási fel
 
 ### A Jikit a tapasztalataimra alapozva
 
-Ha arra gondolok, hogy én hogyan tanultam kódolni, az nem tanfolyamokon vagy tutorialokban történt. Nyolcévesen kezdtem, jóval az internet előtt. **Játékok építésével** tanultam. Ami éppen lekötötte a gyermeki fantáziámat (sok Star Trek és varázsló volt), abból csináltam valami véletlenszerű játékot. Aztán ahogy idősebb lettem, weboldalakat és kis eszközöket készítettem magamnak – bármit, ami érdekesnek tűnt. Nem volt tantervem. Csak csináltam dolgokat, elakadtam, rájöttem, aztán még több dolgot csináltam.
+Ha arra gondolok, hogy én hogyan tanultam kódolni, az nem tanfolyamokon vagy tutorialokban történt. Nyolcévesen kezdtem, jóval az internet előtt. **Játékok építésével** tanultam. Ami éppen lekötte a gyermeki fantáziámat (sok Star Trek és varázsló volt), abból csináltam valami véletlenszerű játékot. Aztán ahogy idősebb lettem, weboldalakat és kis eszközöket készítettem magamnak – bármit, ami érdekesnek tűnt. Nem volt tantervem. Csak csináltam dolgokat, elakadtam, rájöttem, aztán még több dolgot csináltam.
 
 Ez a tapasztalat alapvetően meghatározza, ahogy a tanulásról gondolkodom. Hiszem, hogy az ember úgy tanul meg programozni, ha **programozik** – nem azáltal, hogy másokat néz, nem feleletválasztós kérdésekkel, nem azzal, hogy egyetlen kódsort ír egy feladat „befejezéséhez”, hanem valódi programokat írva és problémákat megoldva.
 
@@ -74,7 +74,7 @@ Az utolsó döntés, amit meg kellett hoznom, az árazás volt.
 
 100%-ig tudtam, hogy a Jikit ingyenessé akarom tenni. Az egész lényege az, hogy segítsünk azoknak, akiknek segítségre van szükségük. De az Exercismből azt is megtanultam, hogy nagyon nehéz üzemeltetni valamit, ha nincs elég bevétel a finanszírozására (**KÖSZÖNET** mindenkinek, aki adományoz az Exercismnek – ti tettétek lehetővé a Jikit!!)
 
-Úgy döntöttem, hogy a freemium modellt választom. A Jiki alapvető része ingyenes – a videók és a feladatok mindenki számára elérhetőek. De vannak néhány remek extra funkció (AI-támogatás, néhány bónusz projekt, élő közvetítések, kulisszák mögötti tartalmak, stb.), amelyeket az emberek egy kis havidíjért érhetnek el (9,99 USD, a [vásárlóerő-paritás](https://en.wikipedia.org/wiki/Purchasing_power_parity) alapján, helytől függően módosítva). Ez egy olyan összeg, ami a világ legtöbb embere számára megfizethető, így ha valaki szeretné támogatni, amit csinálunk, vagy hozzáférni ezekhez a funkciókhoz, az egy nagyszerű módja az indulásnak.
+Úgy döntöttem, hogy a freemium modellt választom. A Jiki alapvető része ingyenes – a videók és a feladatok mindenki számára elérhetőek. De van néhány remek extra funkció (AI-támogatás, néhány bónusz projekt, élő közvetítések, kulisszák mögötti tartalmak, stb.), amelyekhez az emberek egy kis egyszeri összegért hozzáférhetnek (29,99 USD, a [vásárlóerő-paritás](https://en.wikipedia.org/wiki/Purchasing_power_parity) alapján, helytől függően módosítva). Ez egy olyan összeg, ami a világ legtöbb embere számára megfizethető, így ha valaki szeretné támogatni, amit csinálunk, vagy hozzáférni ezekhez a funkciókhoz, az egy nagyszerű módja az indulásnak.
 
 ## Aztán jött az agentikus programozás
 

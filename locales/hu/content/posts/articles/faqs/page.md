@@ -5,20 +5,20 @@ tags: ["support"]
 seo:
   description: "Gyakori kérdések a Jikiről, a programozást tanító platformunkról, a kurzusainkról és a Jiki Premiumról."
   keywords: ["gyakori kérdések", "gyik", "jiki", "támogatás", "prémium"]
-en_md5: a61a0869adc157915004c4dd66e141ee
+en_md5: c0707bb8b7ba85b225bb90881f00ace8
 ---
 
 ## A kurzusról
 
 ### Mennyibe kerül?
 
-A Tanulj meg programozni feladatok, amelyek a programozástanulás központi részét alkotják, teljesen ingyenesek. Nincs szükség bankkártyára, nincs próbaidőszak, és nincs semmilyen csalafintaság.
+A Tanulj meg programozni feladatok, amelyek a programozástanulás központi részét alkotják, teljesen ingyenesek. Nincs szükség bankkártyára, nincs próbaidőszak, és nincs semmilyen trükk.
 
 A Jiki Premium egyszeri befizetés, amelynek árát az országodhoz igazítjuk, és teljes hozzáférést biztosít a Tanulj fejleszteni tanfolyamhoz, a Jiki Projects-hez, a Kérdezd Jikit funkció korlátlan AI-segítségéhez, a rendszeres élő kérdés-felelet alkalmakhoz, amelyekbe becsatlakozhatsz, a kurzusok tanúsítványaihoz, a reklámmentes tanulási élményhez, valamint az új funkciók korai eléréséhez.
 
 ### Mennyi időt kell hetente a kurzusra fordítanom?
 
-Annyi időt töltesz vele, amennyit szeretnél. A legtöbben 12-20 hét alatt elvégzik a Tanulj meg programozni kurzust, heti kb. 5-10 óra ráfordítással. A Tanulj fejleszteni folyamatosan zajlik, így akkor kapcsolódsz be, amikor új epizódok jelennek meg, és akkor csatlakozol az élő közvetítésekhez, amikor neked a legmegfelelőbb.
+Annyi időt töltesz vele, amennyit szeretnél. A legtöbben 12-20 hét alatt elvégzik a Tanulj meg programozni kurzust, heti kb. 5-10 óra ráfordítással. A Tanulj fejleszteni folyamatosan zajlik, így akkor kapcsolódsz be, amikor új epizódok jelennek meg, és akkor csatlakozol az élő közvetítésekhez, amikor neked megfelel.
 
 ### Mennyire nehéz a kurzus? Mennyire kell okosnak lennem?
 
@@ -50,7 +50,7 @@ Nem. A Prémium egyszeri befizetés: egyszer fizetsz érte, és életed végéig
 
 ### Mit jelent az életre szóló hozzáférés?
 
-A Prémium hozzáférésed soha nem jár le, és többé nem vonunk le pénzt. Minden prémium funkciót megtartasz, azokat is, amelyeket csak később adunk hozzá.
+A Prémium hozzáférésed soha nem jár le, és többé nem vonunk le pénzt. Minden Prémium funkciót megtartasz, azokat is, amelyeket csak később adunk hozzá.
 
 ### Már előfizettem a Prémiumra. Mi lesz az előfizetésemmel?
 
@@ -58,7 +58,7 @@ Semmi sem változik. Az előfizetésed pontosan úgy folytatódik, ahogy van, é
 
 ### Kínáltok kedvezményt diákoknak vagy azoknak, akik nem engedhetik meg maguknak a Prémium csomagot?
 
-Szeretnénk, ha a Jiki mindenki számára elérhető lenne. Ha az ár akadályt jelent, kérjük, [vedd fel velünk a kapcsolatot](/articles/support), és segítünk, amiben tudunk.
+Szeretnénk, ha a Jiki mindenki számára elérhető lenne. Ha az ár akadályt jelent, [vedd fel velünk a kapcsolatot](/articles/support), és segítünk, amiben tudunk.
 
 ### Később is frissíthetek?
 

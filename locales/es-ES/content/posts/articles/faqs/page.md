@@ -5,7 +5,7 @@ tags: ["support"]
 seo:
   description: "Preguntas frecuentes sobre Jiki, nuestra plataforma para aprender a programar, los cursos y Jiki Premium."
   keywords: ["faqs", "preguntas frecuentes", "jiki", "soporte", "premium"]
-en_md5: a61a0869adc157915004c4dd66e141ee
+en_md5: c0707bb8b7ba85b225bb90881f00ace8
 ---
 
 ## Sobre el curso
@@ -14,11 +14,11 @@ en_md5: a61a0869adc157915004c4dd66e141ee
 
 Los ejercicios de Learn to Code, que forman el núcleo del plan de estudios para aprender a programar, son completamente gratis. Sin tarjeta, sin período de prueba, sin condiciones ocultas.
 
-Jiki Premium es un pago único, con un precio que depende del país, y te da acceso completo a Learn to Build, Jiki Projects, soporte ilimitado de Ask Jiki AI, transmisiones periódicas en directo de preguntas y respuestas a las que puedes unirte, certificados de los cursos, una experiencia de aprendizaje sin anuncios y acceso anticipado a nuevas funcionalidades.
+Jiki Premium es un pago único, con un precio que depende del país, y te da acceso completo a Learn to Build, Jiki Projects, soporte ilimitado de Ask Jiki AI, emisiones periódicas en directo de preguntas y respuestas a las que puedes unirte, certificados de los cursos, una experiencia de aprendizaje sin anuncios y acceso anticipado a nuevas funcionalidades.
 
 ### ¿Cuánto tiempo tendré que dedicar cada semana al curso?
 
-Puedes dedicar tanto tiempo como quieras. La mayoría completa Learn to Code en 12 a 20 semanas, dedicando de 5 a 10 horas por semana. Learn to Build es continuo: puedes entrar y salir cuando se publiquen nuevos episodios y unirte a las transmisiones en directo cuando más te convenga.
+Puedes dedicar tanto tiempo como quieras. La mayoría completa Learn to Code en 12 a 20 semanas, dedicando de 5 a 10 horas por semana. Learn to Build es continuo: puedes entrar y salir cuando se publiquen nuevos episodios y unirte a las emisiones en directo cuando más te convenga.
 
 ### ¿Cómo de difícil es el curso? ¿Cómo de inteligente hay que ser?
 
@@ -42,7 +42,7 @@ Como miembro del Bootcamp, recibirás automáticamente Jiki Premium de por vida.
 
 ### ¿Puedo probar Jiki gratis?
 
-¡Sí! Puedes registrarte gratis y usar el plan Basic todo el tiempo que quieras. Actualízate a Premium cuando necesites acceso completo, sin compromiso.
+¡Sí! Puedes registrarte gratis y usar el plan Basic todo el tiempo que quieras. Pásate a Premium cuando necesites acceso completo, sin compromiso.
 
 ### ¿Premium es una suscripción?
 
@@ -60,7 +60,7 @@ Nada cambia. Tu suscripción sigue exactamente igual y puedes gestionarla o canc
 
 Queremos que Jiki sea accesible para todas las personas. Si el coste es un obstáculo, [ponte en contacto](/articles/support) y haremos lo que esté a nuestro alcance para ayudar.
 
-### ¿Puedo mejorar mi plan más adelante?
+### ¿Puedo pasarme a Premium más adelante?
 
 Por supuesto. Puedes pasarte a Premium en cualquier momento desde tu cuenta.
 

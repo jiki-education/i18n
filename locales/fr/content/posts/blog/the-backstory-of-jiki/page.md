@@ -5,7 +5,7 @@ tags: ["jiki", "learn-to-code", "beginners", "story"]
 seo:
   description: "L'histoire derrière Jiki : pourquoi j'ai créé une nouvelle plateforme d'apprentissage du code après des années à diriger Exercism, et ma vision pour aider les débutants."
   keywords: ["jiki", "apprendre à coder", "débutants", "exercism", "bootcamp de programmation"]
-en_md5: 62c6e8e363795859b8e096214cbbe903
+en_md5: 7def035f857e5cf8d507ac1611b2ae51
 ---
 
 Salut tout le monde !
@@ -74,7 +74,7 @@ La dernière décision à prendre concernait le prix.
 
 Je savais à 100 % que je voulais que Jiki soit gratuit. Tout l'intérêt est d'aider les personnes qui en ont besoin. Mais Exercism m'a aussi appris qu'il est très difficile de faire tourner un projet quand il n'y a pas assez d'argent qui rentre pour le financer (**MERCI** à toutes les personnes qui font des dons à Exercism : vous avez rendu Jiki possible !!)
 
-J'ai donc opté pour une approche freemium. L'essentiel de Jiki est gratuit : les vidéos et les exercices sont accessibles à tout le monde. Mais quelques fonctionnalités bonus (l'assistance par IA, des projets supplémentaires, des diffusions en direct, du contenu sur les coulisses, etc.) sont accessibles pour un petit abonnement mensuel (9,99 $, ajusté selon l'endroit où tu vis grâce à la [parité de pouvoir d'achat](https://en.wikipedia.org/wiki/Purchasing_power_parity)). C'est un montant abordable pour la plupart des gens dans le monde : si tu veux soutenir ce que nous faisons, ou accéder à ces fonctionnalités, c'est un excellent point de départ.
+J'ai donc opté pour une approche freemium. L'essentiel de Jiki est gratuit : les vidéos et les exercices sont accessibles à tout le monde. Mais quelques fonctionnalités bonus (l'assistance par IA, des projets supplémentaires, des diffusions en direct, du contenu sur les coulisses, etc.) sont accessibles pour un petit paiement unique (29,99 $, ajusté selon l'endroit où tu vis grâce à la [parité de pouvoir d'achat](https://en.wikipedia.org/wiki/Purchasing_power_parity)). C'est un montant abordable pour la plupart des gens dans le monde : si tu veux soutenir ce que nous faisons, ou accéder à ces fonctionnalités, c'est un excellent point de départ.
 
 ## Puis est arrivée la programmation agentique
 

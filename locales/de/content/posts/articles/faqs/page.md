@@ -5,7 +5,7 @@ tags: ["support"]
 seo:
   description: "Häufig gestellte Fragen zu Jiki, unserer Plattform zum Programmierenlernen, unseren Kursen und Jiki Premium."
   keywords: ["faq", "häufige fragen", "jiki", "support", "premium"]
-en_md5: a61a0869adc157915004c4dd66e141ee
+en_md5: c0707bb8b7ba85b225bb90881f00ace8
 ---
 
 ## Über den Kurs
