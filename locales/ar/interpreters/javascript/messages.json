@@ -139,6 +139,9 @@
       "InvalidNumberOfArguments_exact": "هذه الدالة لديها $t(phrases.slotCount, {\"count\": {{expected}} }) لكنك قدّمت $t(phrases.inputCount, {\"count\": {{got}} }) ليستخدمها Jiki.",
       "InvalidNumberOfArguments_atLeast": "تحتاج هذه الدالة إلى ما لا يقل عن $t(phrases.slotCount, {\"count\": {{expected}} })، لكنك قدّمت $t(phrases.inputCount, {\"count\": {{got}} }) ليستخدمها Jiki.",
       "InvalidNumberOfArguments_range": "هذه الدالة لديها ما بين {{min}} و{{max}} من فتحات الإدخال، لكنك قدّمت $t(phrases.inputCount, {\"count\": {{got}} }) ليستخدمها Jiki.",
+      "TestedFunctionHasWrongNumberOfParameters": "تحتاج دالة `{{function}}` إلى $t(phrases.inputCount, {\"count\": {{expected}} })، لكن عدد المدخلات التي تأخذها الدالة حاليًا $t(phrases.takenInputCount, {\"count\": {{got}} }).",
+      "TestedFunctionHasWrongName": "يتوقع Jiki دالة باسم `{{expected}}`، لكن اسم دالتك `{{actual}}`.",
+      "TestedFunctionNotDefined": "تحتاج اختبارات Jiki إلى دالة باسم `{{name}}`، لكن الكود لا يعرّف أي دالة.",
       "FunctionNotFound": "لم يتمكن Jiki من العثور على دالة باسم `{{name}}`.",
       "FunctionNotFoundWithSimilarNameSuggestion": "لم يستطع Jiki العثور على دالة باسم `{{name}}`. هل تقصد `{{suggestion}}`؟",
       "LogicErrorInExecution": "{{message}}",
@@ -178,7 +181,13 @@
     "inputCount_two": "مدخلَين",
     "inputCount_few": "{{count}} مدخلات",
     "inputCount_many": "{{count}} مدخلًا",
-    "inputCount_other": "{{count}} مدخل"
+    "inputCount_other": "{{count}} مدخل",
+    "takenInputCount_zero": "لا شيء",
+    "takenInputCount_one": "1",
+    "takenInputCount_two": "{{count}}",
+    "takenInputCount_few": "{{count}}",
+    "takenInputCount_many": "{{count}}",
+    "takenInputCount_other": "{{count}}"
   },
   "description": {
     "assignmentExpression": {

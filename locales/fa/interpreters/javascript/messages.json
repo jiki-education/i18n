@@ -139,6 +139,9 @@
       "InvalidNumberOfArguments_exact": "این تابع $t(phrases.slotCount, {\"count\": {{expected}} }) دارد اما شما $t(phrases.inputCount, {\"count\": {{got}} }) برای جیکی فراهم کردید تا با آن استفاده کند.",
       "InvalidNumberOfArguments_atLeast": "این تابع حداقل $t(phrases.slotCount, {\"count\": {{expected}} }) نیاز دارد اما شما $t(phrases.inputCount, {\"count\": {{got}} }) برای جیکی فراهم کردید تا با آن استفاده کند.",
       "InvalidNumberOfArguments_range": "این تابع بین {{min}} و {{max}} دهانه ورودی دارد اما شما $t(phrases.inputCount, {\"count\": {{got}} }) برای جیکی فراهم کردید تا با آن استفاده کند.",
+      "TestedFunctionHasWrongNumberOfParameters": "تابع `{{function}}` شما باید $t(phrases.inputCount, {\"count\": {{expected}} }) داشته باشد، اما در حال حاضر تعداد ورودی‌هایش $t(phrases.takenInputCount, {\"count\": {{got}} }) است.",
+      "TestedFunctionHasWrongName": "جیکی انتظار دارد تابعی به اسم `{{expected}}` وجود داشته باشد، اما اسم تابع شما `{{actual}}` است.",
+      "TestedFunctionNotDefined": "تست‌های جیکی به تابعی به اسم `{{name}}` نیاز دارند، اما کد شما چنین تابعی را تعریف نکرده است.",
       "FunctionNotFound": "جیکی نتوانست تابعی به نام `{{name}}` پیدا کند.",
       "FunctionNotFoundWithSimilarNameSuggestion": "جیکی تابعی به اسم `{{name}}` پیدا نکرد. آیا منظورتان `{{suggestion}}` بود؟",
       "LogicErrorInExecution": "{{message}}",
@@ -178,7 +181,13 @@
     "inputCount_two": "∅",
     "inputCount_few": "∅",
     "inputCount_many": "∅",
-    "inputCount_other": "{{count}} ورودی"
+    "inputCount_other": "{{count}} ورودی",
+    "takenInputCount_zero": "صفر",
+    "takenInputCount_one": "۱",
+    "takenInputCount_two": "∅",
+    "takenInputCount_few": "∅",
+    "takenInputCount_many": "∅",
+    "takenInputCount_other": "{{count}}"
   },
   "description": {
     "assignmentExpression": {

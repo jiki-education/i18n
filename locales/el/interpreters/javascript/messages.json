@@ -139,6 +139,9 @@
       "InvalidNumberOfArguments_exact": "Αυτή η συνάρτηση έχει $t(phrases.slotCount, {\"count\": {{expected}} }) αλλά έδωσες $t(phrases.inputCount, {\"count\": {{got}} }) για να τα χρησιμοποιήσει ο Jiki.",
       "InvalidNumberOfArguments_atLeast": "Αυτή η συνάρτηση χρειάζεται τουλάχιστον $t(phrases.slotCount, {\"count\": {{expected}} }) αλλά έδωσες $t(phrases.inputCount, {\"count\": {{got}} }) για να τα χρησιμοποιήσει ο Jiki.",
       "InvalidNumberOfArguments_range": "Αυτή η συνάρτηση έχει μεταξύ {{min}} και {{max}} θυρίδες εισόδου, αλλά έδωσες $t(phrases.inputCount, {\"count\": {{got}} }) για να τα χρησιμοποιήσει ο Jiki.",
+      "TestedFunctionHasWrongNumberOfParameters": "Η συνάρτησή σου `{{function}}` πρέπει να δέχεται $t(phrases.inputCount, {\"count\": {{expected}} }), αλλά αυτή τη στιγμή δέχεται $t(phrases.takenInputCount, {\"count\": {{got}} }).",
+      "TestedFunctionHasWrongName": "Το Jiki περιμένει μια συνάρτηση με το όνομα `{{expected}}`, αλλά η δική σου συνάρτηση ονομάζεται `{{actual}}`.",
+      "TestedFunctionNotDefined": "Τα τεστ του Jiki χρειάζονται μια συνάρτηση με το όνομα `{{name}}`, αλλά ο κώδικάς σου δεν ορίζει καμία.",
       "FunctionNotFound": "Ο Jiki δεν μπόρεσε να βρει μια συνάρτηση με το όνομα `{{name}}`.",
       "FunctionNotFoundWithSimilarNameSuggestion": "Το Jiki δεν μπόρεσε να βρει μια συνάρτηση με το όνομα `{{name}}`. Μήπως εννοούσες `{{suggestion}}`;",
       "LogicErrorInExecution": "{{message}}",
@@ -178,7 +181,13 @@
     "inputCount_two": "∅",
     "inputCount_few": "∅",
     "inputCount_many": "∅",
-    "inputCount_other": "{{count}} είσοδοι"
+    "inputCount_other": "{{count}} είσοδοι",
+    "takenInputCount_zero": "μηδέν",
+    "takenInputCount_one": "1",
+    "takenInputCount_two": "∅",
+    "takenInputCount_few": "∅",
+    "takenInputCount_many": "∅",
+    "takenInputCount_other": "{{count}}"
   },
   "description": {
     "assignmentExpression": {

@@ -139,6 +139,9 @@
       "InvalidNumberOfArguments_exact": "這個函式有 $t(phrases.slotCount, {\"count\": {{expected}} })，但你提供了 $t(phrases.inputCount, {\"count\": {{got}} }) 讓 Jiki 使用喔。",
       "InvalidNumberOfArguments_atLeast": "這個函式至少需要 $t(phrases.slotCount, {\"count\": {{expected}} })，但你提供了 $t(phrases.inputCount, {\"count\": {{got}} }) 讓 Jiki 使用喔。",
       "InvalidNumberOfArguments_range": "這個函式有 {{min}} 到 {{max}} 個投入口，但你提供了 $t(phrases.inputCount, {\"count\": {{got}} }) 讓 Jiki 使用喔。",
+      "TestedFunctionHasWrongNumberOfParameters": "你的`{{function}}`函式需要 $t(phrases.inputCount, {\"count\": {{expected}} })，但它目前 $t(phrases.takenInputCount, {\"count\": {{got}} })。",
+      "TestedFunctionHasWrongName": "Jiki 期待的是叫做`{{expected}}`的函式，但你的函式叫做`{{actual}}`。",
+      "TestedFunctionNotDefined": "Jiki 的測試需要一個叫做`{{name}}`的函式，但你的程式碼並沒有定義它。",
       "FunctionNotFound": "Jiki 找不到叫做 `{{name}}` 的函式喔。",
       "FunctionNotFoundWithSimilarNameSuggestion": "Jiki 找不到叫做`{{name}}`的函式。你是不是想用`{{suggestion}}`？",
       "LogicErrorInExecution": "{{message}}",
@@ -178,7 +181,13 @@
     "inputCount_two": "∅",
     "inputCount_few": "∅",
     "inputCount_many": "∅",
-    "inputCount_other": "{{count}} 個輸入"
+    "inputCount_other": "{{count}} 個輸入",
+    "takenInputCount_zero": "一個都沒有",
+    "takenInputCount_one": "∅",
+    "takenInputCount_two": "∅",
+    "takenInputCount_few": "∅",
+    "takenInputCount_many": "∅",
+    "takenInputCount_other": "有 {{count}} 個"
   },
   "description": {
     "assignmentExpression": {

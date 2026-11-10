@@ -139,6 +139,9 @@
       "InvalidNumberOfArguments_exact": "У цієї функції $t(phrases.slotCount, {\"count\": {{expected}} }), але Jiki отримав для роботи з нею $t(phrases.inputCount, {\"count\": {{got}} }).",
       "InvalidNumberOfArguments_atLeast": "Цій функції потрібно щонайменше $t(phrases.slotCount, {\"count\": {{expected}} }), але Jiki отримав для роботи з нею $t(phrases.inputCount, {\"count\": {{got}} }).",
       "InvalidNumberOfArguments_range": "У цієї функції від {{min}} до {{max}} вхідних щілин, але Jiki отримав для роботи з нею $t(phrases.inputCount, {\"count\": {{got}} }).",
+      "TestedFunctionHasWrongNumberOfParameters": "Функція `{{function}}` має приймати $t(phrases.inputCount, {\"count\": {{expected}} }), але зараз вона приймає $t(phrases.takenInputCount, {\"count\": {{got}} }).",
+      "TestedFunctionHasWrongName": "Jiki очікує функцію з назвою `{{expected}}`, але функція в коді має назву `{{actual}}`.",
+      "TestedFunctionNotDefined": "Тестам Jiki потрібна функція з назвою `{{name}}`, але в коді такої функції не визначено.",
       "FunctionNotFound": "Jiki не знайшов функції з назвою `{{name}}`.",
       "FunctionNotFoundWithSimilarNameSuggestion": "Jiki не знайшов функції з назвою `{{name}}`. Можливо, малося на увазі `{{suggestion}}`?",
       "LogicErrorInExecution": "{{message}}",
@@ -178,7 +181,13 @@
     "inputCount_two": "∅",
     "inputCount_few": "{{count}} вхідні значення",
     "inputCount_many": "{{count}} вхідних значень",
-    "inputCount_other": "{{count}} вхідних значень"
+    "inputCount_other": "{{count}} вхідних значень",
+    "takenInputCount_zero": "нуль",
+    "takenInputCount_one": "1",
+    "takenInputCount_two": "∅",
+    "takenInputCount_few": "{{count}}",
+    "takenInputCount_many": "{{count}}",
+    "takenInputCount_other": "{{count}}"
   },
   "description": {
     "assignmentExpression": {

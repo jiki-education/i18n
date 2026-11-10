@@ -139,6 +139,9 @@
       "InvalidNumberOfArguments_exact": "Esta função tem $t(phrases.slotCount, {\"count\": {{expected}} }), mas forneceste $t(phrases.inputCount, {\"count\": {{got}} }) para o Jiki usar com ela.",
       "InvalidNumberOfArguments_atLeast": "Esta função precisa de pelo menos $t(phrases.slotCount, {\"count\": {{expected}} }), mas forneceste $t(phrases.inputCount, {\"count\": {{got}} }) para o Jiki usar com ela.",
       "InvalidNumberOfArguments_range": "Esta função tem entre {{min}} e {{max}} fendas, mas forneceste $t(phrases.inputCount, {\"count\": {{got}} }) para o Jiki usar com ela.",
+      "TestedFunctionHasWrongNumberOfParameters": "A tua função `{{function}}` precisa de receber $t(phrases.inputCount, {\"count\": {{expected}} }), mas neste momento recebe $t(phrases.takenInputCount, {\"count\": {{got}} }).",
+      "TestedFunctionHasWrongName": "O Jiki espera uma função com o nome `{{expected}}`, mas a tua função chama-se `{{actual}}`.",
+      "TestedFunctionNotDefined": "Os testes do Jiki precisam de uma função com o nome `{{name}}`, mas o teu código não define nenhuma.",
       "FunctionNotFound": "O Jiki não conseguiu encontrar uma função chamada `{{name}}`.",
       "FunctionNotFoundWithSimilarNameSuggestion": "O Jiki não encontrou uma função chamada `{{name}}`. Querias dizer `{{suggestion}}`?",
       "LogicErrorInExecution": "{{message}}",
@@ -178,7 +181,13 @@
     "inputCount_two": "∅",
     "inputCount_few": "∅",
     "inputCount_many": "{{count}} entradas",
-    "inputCount_other": "{{count}} entradas"
+    "inputCount_other": "{{count}} entradas",
+    "takenInputCount_zero": "nenhum",
+    "takenInputCount_one": "1",
+    "takenInputCount_two": "∅",
+    "takenInputCount_few": "∅",
+    "takenInputCount_many": "{{count}}",
+    "takenInputCount_other": "{{count}}"
   },
   "description": {
     "assignmentExpression": {

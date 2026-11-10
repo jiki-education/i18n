@@ -139,6 +139,9 @@
       "InvalidNumberOfArguments_exact": "इस फंक्शन में $t(phrases.slotCount, {\"count\": {{expected}} }) हैं लेकिन आपने Jiki को इसके साथ इस्तेमाल करने के लिए $t(phrases.inputCount, {\"count\": {{got}} }) दिए।",
       "InvalidNumberOfArguments_atLeast": "इस फंक्शन को कम से कम $t(phrases.slotCount, {\"count\": {{expected}} }) चाहिए लेकिन आपने Jiki को इसके साथ इस्तेमाल करने के लिए $t(phrases.inputCount, {\"count\": {{got}} }) दिए।",
       "InvalidNumberOfArguments_range": "इस फंक्शन में {{min}} से {{max}} के बीच इनपुट स्लॉट हैं लेकिन आपने Jiki को इसके साथ इस्तेमाल करने के लिए $t(phrases.inputCount, {\"count\": {{got}} }) दिए।",
+      "TestedFunctionHasWrongNumberOfParameters": "आपके `{{function}}` फंक्शन को $t(phrases.inputCount, {\"count\": {{expected}} }) लेने चाहिए, लेकिन अभी वह $t(phrases.takenInputCount, {\"count\": {{got}} }) लेता है।",
+      "TestedFunctionHasWrongName": "Jiki को `{{expected}}` नाम का फंक्शन चाहिए, लेकिन आपके फंक्शन का नाम `{{actual}}` है।",
+      "TestedFunctionNotDefined": "Jiki के टेस्ट को `{{name}}` नाम का फंक्शन चाहिए, लेकिन आपके कोड में ऐसा कोई फंक्शन नहीं बनाया गया है।",
       "FunctionNotFound": "Jiki को `{{name}}` नाम का कोई फंक्शन नहीं मिला।",
       "FunctionNotFoundWithSimilarNameSuggestion": "Jiki को `{{name}}` नाम का कोई फंक्शन नहीं मिला। क्या आप `{{suggestion}}` लिखना चाहते थे?",
       "LogicErrorInExecution": "{{message}}",
@@ -178,7 +181,13 @@
     "inputCount_two": "∅",
     "inputCount_few": "∅",
     "inputCount_many": "∅",
-    "inputCount_other": "{{count}} इनपुट"
+    "inputCount_other": "{{count}} इनपुट",
+    "takenInputCount_zero": "कोई नहीं",
+    "takenInputCount_one": "1",
+    "takenInputCount_two": "∅",
+    "takenInputCount_few": "∅",
+    "takenInputCount_many": "∅",
+    "takenInputCount_other": "{{count}}"
   },
   "description": {
     "assignmentExpression": {

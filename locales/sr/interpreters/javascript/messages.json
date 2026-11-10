@@ -139,6 +139,9 @@
       "InvalidNumberOfArguments_exact": "Ova funkcija ima $t(phrases.slotCount, {\"count\": {{expected}} }), ali Džikiju daješ $t(phrases.inputCount, {\"count\": {{got}} }) da upotrebi sa njom.",
       "InvalidNumberOfArguments_atLeast": "Ovoj funkciji treba najmanje $t(phrases.slotCount, {\"count\": {{expected}} }), ali Džikiju daješ $t(phrases.inputCount, {\"count\": {{got}} }) da upotrebi sa njom.",
       "InvalidNumberOfArguments_range": "Ova funkcija ima između {{min}} i {{max}} ulaznih otvora, ali Džikiju daješ $t(phrases.inputCount, {\"count\": {{got}} }) da upotrebi sa njom.",
+      "TestedFunctionHasWrongNumberOfParameters": "Tvoja funkcija `{{function}}` treba da prima $t(phrases.inputCount, {\"count\": {{expected}} }), ali trenutno prima $t(phrases.takenInputCount, {\"count\": {{got}} }).",
+      "TestedFunctionHasWrongName": "Džiki očekuje funkciju koja se zove `{{expected}}`, ali tvoja funkcija se zove `{{actual}}`.",
+      "TestedFunctionNotDefined": "Džikijevi testovi traže funkciju koja se zove `{{name}}`, ali tvoj kod takvu funkciju ne definiše.",
       "FunctionNotFound": "Džiki nije mogao da nađe funkciju sa imenom `{{name}}`.",
       "FunctionNotFoundWithSimilarNameSuggestion": "Džiki nije mogao da pronađe funkciju po imenu `{{name}}`. Da li je trebalo da bude `{{suggestion}}`?",
       "LogicErrorInExecution": "{{message}}",
@@ -178,7 +181,13 @@
     "inputCount_two": "∅",
     "inputCount_few": "{{count}} ulaza",
     "inputCount_many": "∅",
-    "inputCount_other": "{{count}} ulaza"
+    "inputCount_other": "{{count}} ulaza",
+    "takenInputCount_zero": "0 ulaznih otvora",
+    "takenInputCount_one": "1 ulazni otvor",
+    "takenInputCount_two": "∅",
+    "takenInputCount_few": "{{count}} ulazna otvora",
+    "takenInputCount_many": "∅",
+    "takenInputCount_other": "{{count}} ulaznih otvora"
   },
   "description": {
     "assignmentExpression": {

@@ -139,6 +139,9 @@
       "InvalidNumberOfArguments_exact": "Ez a függvény $t(phrases.slotCount, {\"count\": {{expected}} }) tartalmaz, te viszont $t(phrases.inputCount, {\"count\": {{got}} }) adtál meg Jikinek hozzá.",
       "InvalidNumberOfArguments_atLeast": "Ez a függvény legalább $t(phrases.slotCount, {\"count\": {{expected}} }) igényel, te viszont $t(phrases.inputCount, {\"count\": {{got}} }) adtál meg Jikinek hozzá.",
       "InvalidNumberOfArguments_range": "Ennek a függvénynek {{min}} és {{max}} közötti számú bemeneti nyílása van, te viszont $t(phrases.inputCount, {\"count\": {{got}} }) adtál meg Jikinek hozzá.",
+      "TestedFunctionHasWrongNumberOfParameters": "A `{{function}}` függvényednek $t(phrases.inputCount, {\"count\": {{expected}} }) kell, de jelenleg $t(phrases.takenInputCount, {\"count\": {{got}} }) van benne.",
+      "TestedFunctionHasWrongName": "A Jiki egy `{{expected}}` nevű függvényt vár, de a függvényed neve `{{actual}}`.",
+      "TestedFunctionNotDefined": "A Jiki tesztjeihez egy `{{name}}` nevű függvény kell, de a kódodban nincs ilyen.",
       "FunctionNotFound": "Jiki nem talált `{{name}}` nevű függvényt.",
       "FunctionNotFoundWithSimilarNameSuggestion": "Jiki nem talált egy `{{name}}` nevű függvényt. Esetleg a `{{suggestion}}`-re gondoltál?",
       "LogicErrorInExecution": "{{message}}",
@@ -178,7 +181,13 @@
     "inputCount_two": "∅",
     "inputCount_few": "∅",
     "inputCount_many": "∅",
-    "inputCount_other": "{{count}} bemenetet"
+    "inputCount_other": "{{count}} bemenetet",
+    "takenInputCount_zero": "egyetlen bemeneti nyílás sem",
+    "takenInputCount_one": "egy bemeneti nyílás",
+    "takenInputCount_two": "∅",
+    "takenInputCount_few": "∅",
+    "takenInputCount_many": "∅",
+    "takenInputCount_other": "{{count}} bemeneti nyílás"
   },
   "description": {
     "assignmentExpression": {

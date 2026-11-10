@@ -139,6 +139,9 @@
       "InvalidNumberOfArguments_exact": "এই ফাংশনটিতে $t(phrases.slotCount, {\"count\": {{expected}} }) আছে, কিন্তু জিকিকে এর সাথে ব্যবহারের জন্য আপনি $t(phrases.inputCount, {\"count\": {{got}} }) দিয়েছেন।",
       "InvalidNumberOfArguments_atLeast": "এই ফাংশনটির জন্য কমপক্ষে $t(phrases.slotCount, {\"count\": {{expected}} }) দরকার, কিন্তু জিকিকে এর সাথে ব্যবহারের জন্য আপনি $t(phrases.inputCount, {\"count\": {{got}} }) দিয়েছেন।",
       "InvalidNumberOfArguments_range": "এই ফাংশনটিতে {{min}} থেকে {{max}}টি ইনপুট স্লট আছে, কিন্তু জিকিকে এর সাথে ব্যবহারের জন্য আপনি $t(phrases.inputCount, {\"count\": {{got}} }) দিয়েছেন।",
+      "TestedFunctionHasWrongNumberOfParameters": "আপনার `{{function}}` ফাংশনটিতে $t(phrases.inputCount, {\"count\": {{expected}} }) থাকা দরকার, কিন্তু এখন $t(phrases.takenInputCount, {\"count\": {{got}} })।",
+      "TestedFunctionHasWrongName": "জিকি `{{expected}}` নামের একটি ফাংশন আশা করে, কিন্তু আপনার ফাংশনের নাম `{{actual}}`।",
+      "TestedFunctionNotDefined": "জিকির টেস্টের জন্য `{{name}}` নামের একটি ফাংশন দরকার, কিন্তু আপনার কোডে এমন কোনো ফাংশন ডিফাইন করা নেই।",
       "FunctionNotFound": "জিকি `{{name}}` নামের কোনো ফাংশন খুঁজে পায়নি।",
       "FunctionNotFoundWithSimilarNameSuggestion": "জিকি `{{name}}` নামের কোনো ফাংশন খুঁজে পায়নি। আপনি কি `{{suggestion}}` বোঝাতে চেয়েছেন?",
       "LogicErrorInExecution": "{{message}}",
@@ -178,7 +181,13 @@
     "inputCount_two": "∅",
     "inputCount_few": "∅",
     "inputCount_many": "∅",
-    "inputCount_other": "{{count}}টি ইনপুট"
+    "inputCount_other": "{{count}}টি ইনপুট",
+    "takenInputCount_zero": "একটিও নেই",
+    "takenInputCount_one": "একটি আছে",
+    "takenInputCount_two": "∅",
+    "takenInputCount_few": "∅",
+    "takenInputCount_many": "∅",
+    "takenInputCount_other": "{{count}}টি আছে"
   },
   "description": {
     "assignmentExpression": {

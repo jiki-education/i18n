@@ -139,6 +139,9 @@
       "InvalidNumberOfArguments_exact": "この関数には$t(phrases.slotCount, {\"count\": {{expected}} })がありますが、Jikiに渡されたのは$t(phrases.inputCount, {\"count\": {{got}} })です。",
       "InvalidNumberOfArguments_atLeast": "この関数には少なくとも$t(phrases.slotCount, {\"count\": {{expected}} })が必要ですが、Jikiに渡されたのは$t(phrases.inputCount, {\"count\": {{got}} })です。",
       "InvalidNumberOfArguments_range": "この関数には{{min}}から{{max}}個の差し込み口がありますが、Jikiに渡されたのは$t(phrases.inputCount, {\"count\": {{got}} })です。",
+      "TestedFunctionHasWrongNumberOfParameters": "`{{function}}`関数は$t(phrases.inputCount, {\"count\": {{expected}} })を受け取る必要がありますが、現在は$t(phrases.takenInputCount, {\"count\": {{got}} })しか受け取っていません。",
+      "TestedFunctionHasWrongName": "Jikiは`{{expected}}`という名前の関数を期待していますが、関数の名前は`{{actual}}`になっています。",
+      "TestedFunctionNotDefined": "Jikiのテストには`{{name}}`という関数が必要ですが、コードの中にその関数が定義されていません。",
       "FunctionNotFound": "Jikiは`{{name}}`という関数を見つけられませんでした。",
       "FunctionNotFoundWithSimilarNameSuggestion": "Jikiは`{{name}}`という名前の関数を見つけられませんでした。もしかして`{{suggestion}}`のことではないでしょうか。",
       "LogicErrorInExecution": "{{message}}",
@@ -178,7 +181,13 @@
     "inputCount_two": "∅",
     "inputCount_few": "∅",
     "inputCount_many": "∅",
-    "inputCount_other": "{{count}}個の入力"
+    "inputCount_other": "{{count}}個の入力",
+    "takenInputCount_zero": "0個",
+    "takenInputCount_one": "∅",
+    "takenInputCount_two": "∅",
+    "takenInputCount_few": "∅",
+    "takenInputCount_many": "∅",
+    "takenInputCount_other": "{{count}}個"
   },
   "description": {
     "assignmentExpression": {

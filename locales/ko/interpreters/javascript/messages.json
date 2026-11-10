@@ -139,6 +139,9 @@
       "InvalidNumberOfArguments_exact": "이 함수에는 $t(phrases.slotCount, {\"count\": {{expected}} })이(가) 있지만, Jiki가 사용할 $t(phrases.inputCount, {\"count\": {{got}} })을(를) 제공했어요.",
       "InvalidNumberOfArguments_atLeast": "이 함수에는 최소 $t(phrases.slotCount, {\"count\": {{expected}} })이(가) 필요하지만, Jiki가 사용할 $t(phrases.inputCount, {\"count\": {{got}} })을(를) 제공했어요.",
       "InvalidNumberOfArguments_range": "이 함수에는 {{min}}개에서 {{max}}개 사이의 투입구가 있지만, Jiki가 사용할 $t(phrases.inputCount, {\"count\": {{got}} })을(를) 제공했어요.",
+      "TestedFunctionHasWrongNumberOfParameters": "`{{function}}` 함수가 받아야 하는 입력은 $t(phrases.inputCount, {\"count\": {{expected}} })인데, 지금은 $t(phrases.takenInputCount, {\"count\": {{got}} })예요.",
+      "TestedFunctionHasWrongName": "Jiki는 `{{expected}}`라는 함수가 있어야 하는데, 작성한 함수 이름은 `{{actual}}`예요.",
+      "TestedFunctionNotDefined": "Jiki의 테스트에는 `{{name}}`라는 함수가 필요한데, 코드에는 그 함수가 없어요.",
       "FunctionNotFound": "Jiki가 `{{name}}`이라는 함수를 찾을 수 없었어요.",
       "FunctionNotFoundWithSimilarNameSuggestion": "Jiki가 `{{name}}`이라는 함수를 찾지 못했어요. 혹시 `{{suggestion}}`을(를) 의도하셨나요?",
       "LogicErrorInExecution": "{{message}}",
@@ -178,7 +181,13 @@
     "inputCount_two": "∅",
     "inputCount_few": "∅",
     "inputCount_many": "∅",
-    "inputCount_other": "입력 {{count}}개"
+    "inputCount_other": "입력 {{count}}개",
+    "takenInputCount_zero": "0개",
+    "takenInputCount_one": "∅",
+    "takenInputCount_two": "∅",
+    "takenInputCount_few": "∅",
+    "takenInputCount_many": "∅",
+    "takenInputCount_other": "{{count}}개"
   },
   "description": {
     "assignmentExpression": {
