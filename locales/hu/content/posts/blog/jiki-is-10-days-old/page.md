@@ -5,7 +5,7 @@ tags: ["jiki", "beta", "update", "milestone"]
 seo:
   description: "Tíz napja indult el a Jiki nyílt bétája: ezrek regisztráltak, közel 25 000 lecke befejezve, átdolgozott feladatok, és egy pillantás a jövőre."
   keywords: ["jiki", "Tanulj meg programozni", "beta", "frissítés"]
-en_md5: 0516f06c7acded488fce4e6788644ac0
+en_md5: 19c95590ad2adf9ad1cab87de277e78a
 ---
 
 A Jiki ma 10 napos! Korai mérföldkő, de jó alkalom arra, hogy egy pillanatra megálljunk és visszanézzünk!
@@ -19,8 +19,6 @@ A bétatesztelőink találtak néhány hibát, és néhány dolgot, amin lehetne
 Sokan használták a „Kérdezd Jikit” funkciót is, több ezer beszélgetés zajlott. Alig várom, hogy átnézzek közülük jó néhányat, hogy az AI-t fejlesszem, de a mai napon a saját tesztjeim alapján kiadtam néhány fejlesztést, amitől remélhetőleg Jiki egy kicsit okosabb lesz!
 
 Néhány power-testerünk (tapasztaltabb fejlesztő) elérte a 7. mérföldkövet, ahol a tartalom egyelőre véget ér. A következő napokban kiadom a következő mérföldköveket, így hamarosan lesz még mivel játszanotok!
-
-Nagyon izgatott vagyok, hogy néhány hét múlva elindítjuk a „Tanulj fejleszteni” szekciót!
 
 Ha élvezed a Jikit, kérlek fontold meg, hogy előfizetsz a **[Premium](https://jiki.io/premium)** csomagra, hogy támogass minket.
 

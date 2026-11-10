@@ -4,8 +4,8 @@ excerpt: "Modelos, tokens, ventanas de contexto y las demás ideas que necesitas
 tags: ["agentic-coding"]
 seo:
   description: "Los conceptos fundamentales de la programación agéntica explicados para principiantes: qué son los modelos de IA y los tokens, cómo funcionan las ventanas de contexto y por qué los agentes a veces se equivocan."
-  keywords: ["conceptos de programación agéntica", "llm", "tokens", "context window", "ai models", "prompts", "hallucinations"]
-en_md5: d963e01d7934f4003d436029d1808fc8
+  keywords: ["conceptos de programación agéntica", "llm", "tokens", "ventana de contexto", "modelos de ia", "prompts", "alucinaciones"]
+en_md5: 4133804b88528c6fcfd12bb34864b867
 ---
 
 ## Introducción
@@ -70,4 +70,4 @@ Un aspecto más que conviene saber, sobre todo en los planes gratuitos: los mode
 
 ## Esa es la base
 
-Los modelos son los «cerebros», los tokens son la moneda, el contexto es la memoria, los prompts son el volante y el bucle es lo que lo convierte en un agente. Todo lo demás lo aprenderás ensuciándote las manos, que es justo lo que te sugerimos que hagas. Si todavía no has configurado una herramienta, nuestra [guía de instalación](/guides/installing-an-agentic-coding-platform) te la dejará lista en diez minutos. Luego mira la primera sesión de [Frontend Basics](/build/frontend-basics/setting-up-the-project) en Aprende a Construir para verlo todo en funcionamiento.
+Los modelos son los «cerebros», los tokens son la moneda, el contexto es la memoria, los prompts son el volante y el bucle es lo que lo convierte en un agente. Todo lo demás lo aprenderás ensuciándote las manos, que es justo lo que te sugerimos que hagas. Si todavía no has configurado una herramienta, nuestra [guía de instalación](/guides/installing-an-agentic-coding-platform) te la dejará lista en diez minutos.

@@ -6,7 +6,7 @@ seo:
   description: "O código costumava ser o guardião da entrada no mercado de tech. Em 2026, os LLMs escrevem o código e o seu valor está em saber construir as coisas corretamente. Veja como entrar no mercado de tech."
   keywords:
     ["como entrar no mercado de tech", "entrar no mercado de tech em 2026", "aprender a programar", "carreiras em tech", "programação com IA", "LLMs", "Jiki"]
-en_md5: d599444eaa258a866a62affc6dd0ae1f
+en_md5: 97e72fe48a7ff5994923a94cd0220620
 ---
 
 ## Introdução
@@ -37,7 +37,7 @@ Você não precisa mais tecer manualmente. Você tem um tear superinteligente qu
 
 ### Então, o que é que eu preciso fazer?
 
-O seu novo ciclo é:
+O seu novo laço é:
 
 1. Crie alguma coisa.
 2. Entenda como funciona (tanto o código quanto as ideias).
@@ -64,6 +64,6 @@ Todos os dias, quando uso o Claude Code, ele faz coisas que, para mim, estão ob
 
 Você precisa de **alguém que te ensine** como tudo funciona e quais são os caminhos mentais certos a seguir. Depois, você precisa construir coisas, cometer erros, ver o que acontece quando o Claude te atrapalhar e aprender com isso, para conseguir acrescentar valor a uma empresa que está construindo coisas. Você precisa compreender a tecnologia, compreender como o software é construído, aprender a ler código para entender o que está acontecendo e se sentir confiante com todo o fluxo e o processo de criar coisas.
 
-E o [Jiki](https://jiki.io) ensina tudo isso para você. Siga o nosso percurso Aprenda a Programar para dominar as bases da programação e depois **venha aprender a construir coisas comigo**. Entenda por que você precisa do GitHub e como ele funciona, como a Cloudflare te protege, como conceber autenticação segura, como criar bancos de dados eficientes, como construir front-ends ultrarrápidos e back-ends sólidos como rocha. Aprenda a publicar o que você cria de forma que se recupere se falhar. Aprenda tudo isso comigo. **E divirta-se muito pelo caminho.**
+E o [Jiki](https://jiki.io) te ensina a primeira parte. Siga o nosso curso Aprenda a Programar para dominar as bases da programação de verdade e, quando você passar a construir coisas com um LLM, entender o que ele está fazendo. **E divirta-se muito pelo caminho.**
 
 A gente se vê lá dentro!

@@ -5,7 +5,7 @@ tags: ["jiki", "exercism", "i18n", "translatathon", "community"]
 seo:
   description: "加入 Jiki 與 Exercism 翻譯松：7 月 31 日到 8 月 2 日的社群週末，一起把 Jiki 和 Exercism 翻譯成越多語言越好。"
   keywords: ["jiki", "exercism", "翻譯松", "翻譯", "i18n", "學習寫程式"]
-en_md5: 7c65f35e78d02a36af1265d049cfe726
+en_md5: bde2e50835a943c64618f9c4bd558ef6
 ---
 
 ## 重點摘要
@@ -44,7 +44,7 @@ _我們要在 **7 月 31 日星期五到 8 月 2 日星期日** 這個週末，�
 
 一旦某種語言達到這個程度，我就能把整個 Jiki 大量翻譯成那個語言：每一個單元、每一個練習、每一則錯誤訊息，還有每一支影片的字幕。這就是每種語言在星期日晚上的目標。
 
-如果你看過[《Learn to Build》第一集](https://jiki.io/projects/build-your-personal-homepage)，就見過這件事實際運作的樣子：我在直播上當場把歐洲葡萄牙語從零開始建起來。
+如果你看過第一場 Learn to Build 直播，就見過這件事實際運作的樣子：我在直播上當場把歐洲葡萄牙語從零開始建起來。
 
 ### 如果我的語言還沒列在上面呢？
 
@@ -59,7 +59,7 @@ _我們要在 **7 月 31 日星期五到 8 月 2 日星期日** 這個週末，�
 想參與的話：
 
 1. **加入[開幕直播](https://youtube.com/live/UAxC5J4H2n0)**，時間是 7 月 31 日星期五 UTC 下午 1 點。
-2. **進到**[Discord 上的 #translation 頻道](https://discord.gg/JFty3vbqRZ)**。週末我們都會在那裡工作，也是和其他說你母語的人討論詞彙的最佳地點。
+2. **進到[Discord 上的 #translation 頻道](https://discord.gg/JFty3vbqRZ)**。週末我們都會在那裡工作，也是和其他說你母語的人討論詞彙的最佳地點。
 3. **把討論出的結論貼到[論壇](https://forum.jiki.io/c/i18n/67)**。AI 實際上學習的來源就是論壇，所以你在 Discord 上談定的任何事，最後都要放到那裡。
 
 每位貢獻者都會在 Jiki 和 Exercism 上獲得一枚**專屬的限量翻譯松徽章**，作為感謝。

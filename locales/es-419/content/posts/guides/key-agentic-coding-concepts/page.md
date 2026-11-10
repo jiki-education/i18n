@@ -4,15 +4,15 @@ excerpt: "Modelos, tokens, ventanas de contexto y las demás ideas que necesitas
 tags: ["agentic-coding"]
 seo:
   description: "Los conceptos fundamentales de la programación agéntica explicados para principiantes: qué son los modelos de IA y los tokens, cómo funcionan las ventanas de contexto y por qué los agentes a veces se equivocan."
-  keywords: ["conceptos de programación agéntica", "llm", "tokens", "context window", "ai models", "prompts", "hallucinations"]
-en_md5: d963e01d7934f4003d436029d1808fc8
+  keywords: ["conceptos de programación agéntica", "llm", "tokens", "ventana de contexto", "modelos de IA", "prompts", "alucinaciones"]
+en_md5: 4133804b88528c6fcfd12bb34864b867
 ---
 
 ## Introducción
 
 Damos por hecho que ya tienes OpenCode o algo similar instalado. Si no es así, primero sigue nuestra guía sobre [cómo instalar una plataforma de programación agéntica](/guides/installing-an-agentic-coding-platform).
 
-Puedes usar una herramienta de programación agéntica sin entender cómo funciona, igual que puedes conducir un coche sin saber qué hace el embrague. Pero tener una noción ayuda muchísimo. Explica por qué la herramienta a veces parece brillante y otras desconcertante, por qué algunas cosas cuestan dinero y cómo conseguir resultados mucho mejores. Estos son los conceptos que vale la pena conocer.
+Puedes usar una herramienta de programación agéntica sin entender cómo funciona, igual que puedes conducir un auto sin saber qué hace el embrague. Pero tener una noción ayuda muchísimo. Explica por qué la herramienta a veces parece brillante y otras desconcertante, por qué algunas cosas cuestan dinero y cómo conseguir resultados mucho mejores. Estos son los conceptos que vale la pena conocer.
 
 ## Modelos
 
@@ -38,7 +38,7 @@ Un modelo no tiene memoria. Cada vez que envías un mensaje, la herramienta mand
 
 De ahí se siguen dos cosas prácticas:
 
-- **Las sesiones largas se degradan.** A medida que la conversación crece, el contexto se llena de desvíos antiguos y contenidos obsoletos de archivos. Los modelos empeoran notablemente su atención cuando el contexto está saturado. Cuando un agente empieza a cometer errores tontos al final de una sesión larga, muchas veces no es que sea lerdo, es que se está ahogando.
+- **Las sesiones largas se degradan.** A medida que la conversación crece, el contexto se llena de desvíos antiguos y contenidos obsoletos de archivos. A los modelos les cuesta notablemente más prestar atención cuando el contexto está saturado. Cuando un agente empieza a cometer errores tontos al final de una sesión larga, muchas veces no es que sea lerdo, es que se está ahogando.
 - **Empezar de nuevo es gratis.** Iniciar una sesión nueva con una petición limpia y bien formulada suele ser mejor que seguir adelante en una sesión atiborrada. No le tengas apego al historial de conversación.
 
 ## Prompts
@@ -70,4 +70,4 @@ Un aspecto más que conviene saber, sobre todo en los planes gratuitos: los mode
 
 ## Esa es la base
 
-Los modelos son los «cerebros», los tokens son la moneda, el contexto es la memoria, los prompts son el volante y el bucle es lo que lo convierte en un agente. Todo lo demás lo aprenderás ensuciándote las manos, que es justo lo que te sugerimos que hagas. Si todavía no has configurado una herramienta, nuestra [guía de instalación](/guides/installing-an-agentic-coding-platform) te la dejará lista en diez minutos. Luego mira la primera sesión de [Frontend Basics](/build/frontend-basics/setting-up-the-project) en Aprende a Construir para verlo todo en funcionamiento.
+Los modelos son los «cerebros», los tokens son la moneda, el contexto es la memoria, los prompts son el volante y el bucle es lo que lo convierte en un agente. Todo lo demás lo aprenderás ensuciándote las manos, que es justo lo que te sugerimos que hagas. Si todavía no has configurado una herramienta, nuestra [guía de instalación](/guides/installing-an-agentic-coding-platform) te pondrá en marcha en diez minutos.

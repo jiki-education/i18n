@@ -5,7 +5,7 @@ tags: ["support"]
 seo:
   description: "Domande frequenti su Jiki, la nostra piattaforma per imparare a programmare, i corsi e Jiki Premium."
   keywords: ["faqs", "domande frequenti", "jiki", "supporto", "premium"]
-en_md5: c0707bb8b7ba85b225bb90881f00ace8
+en_md5: d95c17ebd4744af98eded3767acf105f
 ---
 
 ## Il corso
@@ -14,11 +14,11 @@ en_md5: c0707bb8b7ba85b225bb90881f00ace8
 
 Gli esercizi Learn to Code, che costituiscono il nucleo del percorso per imparare a programmare, sono completamente gratuiti. Nessuna carta, nessuna prova, nessun trucco.
 
-Jiki Premium è un pagamento una tantum, il cui prezzo varia in base al Paese, e sblocca l'accesso completo a Learn to Build, Jiki Projects, supporto illimitato di Ask Jiki AI, regolari livestream di domande e risposte a cui puoi partecipare, certificati per i corsi, un'esperienza di apprendimento senza pubblicità e accesso anticipato alle nuove funzionalità.
+Jiki Premium è un pagamento una tantum, il cui prezzo varia in base al Paese, e sblocca Jiki Challenges, il supporto illimitato di Ask Jiki AI, regolari livestream di domande e risposte a cui puoi partecipare, certificati per i corsi, un'esperienza di apprendimento senza pubblicità e l'accesso anticipato alle nuove funzionalità.
 
 ### Quanto tempo dovrò dedicare al corso ogni settimana?
 
-Puoi dedicare tutto il tempo che vuoi, o anche poco. La maggior parte delle persone completa Learn to Code in 12-20 settimane, con circa 5-10 ore a settimana. Learn to Build è in corso, quindi puoi seguirlo quando preferisci man mano che escono nuovi episodi e partecipare ai livestream quando ti fa comodo.
+Puoi dedicare tutto il tempo che vuoi, o anche poco. La maggior parte delle persone completa il corso in 8-12 settimane, con circa 5-10 ore a settimana.
 
 ### Quanto è difficile il corso? Quanto devo essere intelligente?
 
@@ -29,8 +29,6 @@ Se ti impegni, chiedi aiuto quando ti blocchi e accogli la sfida, resterai stupi
 ### Jiki è già disponibile?
 
 Sì, puoi iscriverti e iniziare oggi stesso il percorso gratuito Learn to Code.
-
-La prima sessione di Learn to Build sarà a metà giugno. Puoi iscriverti per ricevere un promemoria una volta dentro.
 
 ### Mi sono già iscritto al Bootcamp: è diverso?
 

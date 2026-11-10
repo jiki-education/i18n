@@ -5,7 +5,7 @@ tags: ["jiki", "exercism", "i18n", "translatathon", "community"]
 seo:
   description: "Mach mit beim Jiki- & Exercism-Translatathon, einem Community-Wochenende, an dem wir beide Plattformen in so viele Sprachen wie möglich übersetzen, vom 31. Juli bis 2. August."
   keywords: ["jiki", "exercism", "translatathon", "Übersetzung", "i18n", "Programmieren lernen"]
-en_md5: 7c65f35e78d02a36af1265d049cfe726
+en_md5: bde2e50835a943c64618f9c4bd558ef6
 ---
 
 ## TL;DR
@@ -36,15 +36,15 @@ Wir nutzen LLMs (große Sprachmodelle), und zwar eine Mischung aus mehreren, um 
 
 So läuft es ab:
 
-1. **Wir einigen uns auf ein Glossar.** Das sind die Fachbegriffe, die wir überall einheitlich verwenden. Wie nennen wir eine „Funktion" oder eine „Variable" in deiner Sprache? Damit fangen wir am Freitag an.
+1. **Wir einigen uns auf ein Glossar.** Das sind die Fachbegriffe, die wir überall einheitlich verwenden. Wie nennen wir eine „Funktion“ oder eine „Variable“ in deiner Sprache? Damit fangen wir am Freitag an.
 2. **Ich poste Beispielübersetzungen.** Einen Blogbeitrag, eine Konzeptseite, ein paar Video-Untertitel, erzeugt mit deinem Glossar.
-3. **Du sagst uns, was nicht stimmt.** Dieses Wort klingt seltsam. Das sagt doch keiner so. Dieser Satz ist zu formell. Du musst nicht erklären, warum: „Das hört sich einfach falsch an" ist schon echt nützliches Feedback.
+3. **Du sagst uns, was nicht stimmt.** Dieses Wort klingt seltsam. Das sagt doch keiner so. Dieser Satz ist zu formell. Du musst nicht erklären, warum: „Das hört sich einfach falsch an“ ist schon echt nützliches Feedback.
 4. **Die KI lernt aus deinen Korrekturen**, und ich poste ein neues Beispiel.
 5. **Wir wiederholen das**, bis sich alles natürlich liest.
 
 Sobald eine Sprache so weit ist, kann ich ganz Jiki auf einmal in sie übersetzen: jede Lektion, jede Übung, jede Fehlermeldung und Untertitel für jedes Video. Das ist das Ziel für jede Sprache bis Sonntagabend.
 
-Wenn du [Episode 1 von Learn to Build](https://jiki.io/projects/build-your-personal-homepage) gesehen hast, hast du ein bisschen davon in Aktion erlebt, als ich Europäisches Portugiesisch live im Stream von null auf aufgebaut habe.
+Wenn du den ersten Learn-to-Build-Livestream gesehen hast, hast du ein bisschen davon in Aktion erlebt, als ich Europäisches Portugiesisch live im Stream von null auf aufgebaut habe.
 
 ### Was, wenn meine Sprache noch nicht dabei ist?
 

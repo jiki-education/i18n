@@ -60,13 +60,12 @@
     "sidebar": {
       "groups": {
         "learnToCode": "Aprender a programar",
-        "learnToBuild": "Aprender a construir",
         "community": "Comunidade",
-        "more": "Mais"
+        "more": "Mais",
+        "learnToBuild": "Aprender a construir"
       },
       "nav": {
         "learn": "Fundamentos de programação",
-        "build": "Projetos",
         "challenges": "Desafios",
         "concepts": "Conceitos de programação",
         "achievements": "Conquistas",
@@ -77,7 +76,8 @@
         "settings": "Definições",
         "help": "Ajuda",
         "upgrade": "Passa a Premium",
-        "logOut": "Terminar sessão"
+        "logOut": "Terminar sessão",
+        "build": "Projetos"
       },
       "premiumPill": "Premium"
     },
@@ -172,17 +172,6 @@
       "copied": "Link copiado"
     },
     "perMonth": "/mês"
-  },
-  "build": {
-    "upcomingStreams": {
-      "heading": "Próximas sessões em direto",
-      "toBeAnnounced": "A anunciar",
-      "subscribeButton": "Subscrever o calendário"
-    },
-    "hub": {
-      "title": "Aprende a Construir - Projetos",
-      "description": "Constrói projetos reais do zero com o Jeremy. Aprende tudo o que ele sabe!"
-    }
   },
   "auth": {
     "oauth": {
@@ -353,13 +342,13 @@
       "title": "Cancelar a tua subscrição?",
       "message": "Odiávamos ver-te partir! Se cancelares, perderás o acesso ao Premium no final do teu período de faturação atual.",
       "benefitsTitle": "Atualmente estás a usufruir de:",
+      "keep": "Manter a minha subscrição",
+      "cancel": "Cancelar subscrição",
+      "defaultBillingPeriodEnd": "o fim do teu período de faturação",
       "benefit1": "Ajuda ilimitada de IA do Jiki",
       "benefit2": "Todos os projetos e percursos de aprendizagem",
       "benefit3": "Certificados de conclusão",
-      "benefit4": "Experiência sem anúncios",
-      "keep": "Manter a minha subscrição",
-      "cancel": "Cancelar subscrição",
-      "defaultBillingPeriodEnd": "o fim do teu período de faturação"
+      "benefit4": "Experiência sem anúncios"
     },
     "cancelSuccess": {
       "title": "Subscrição cancelada",
@@ -574,28 +563,20 @@
   },
   "landing": {
     "hero": {
-      "tagline": "Aprende as competências de que precisas para criar coisas fantásticas, ser produtivo e <strong>manter-te relevante em {year}.</strong>",
+      "tagline": "Tutoriais que vais mesmo ver. Exercícios de que vais mesmo gostar. <strong>Do zero a competente em 3 meses.</strong> E é grátis!",
       "loadingVideo": "A carregar o vídeo",
       "playVideo": "Reproduzir vídeo",
       "watchPrompt": "Ler não é a tua cena? <strong>Clica em reproduzir</strong> e eu conto-te tudo o que precisas de saber!",
-      "headline": "A forma moderna de aprender a <highlight>programar e construir</highlight>",
+      "headline": "A forma divertida de <highlight>aprender a programar!</highlight>",
+      "audienceAbsoluteBeginners": "<name>Principiantes absolutos</name> que querem <u>começar depressa</u>.",
+      "audienceRepeatBeginners": "<name>Quem recomeça</name> que só quer que <u>faça sentido</u>.",
+      "audienceJuniors": "<name>Programadores júnior</name> que querem <u>reforçar os fundamentos</u>.",
       "audienceBeginners": "<name>Iniciantes</name> que tentam encontrar a melhor e mais rápida forma de aprender",
-      "audienceJuniors": "<name>Programadores júnior</name> que querem acelerar os seus conhecimentos",
       "audienceEntrepreneurs": "<name>Empreendedores e Vibe Coders</name> que querem construir antes de contratar"
     },
-    "twoHalves": {
-      "eyebrow": "As tuas duas competências essenciais",
-      "heading": "As duas metades de ser programador",
-      "intro": "O Jiki ensina-te <strong>a programar</strong> (da forma mais divertida e eficaz!) e a <strong>construir coisas reais</strong> usando as mesmas tecnologias que os profissionais usam. <strong>Desde o primeiro dia.</strong>",
-      "codeHeading": "Aprende a <word>Programar</word>",
-      "codeBody": "Todos os conceitos essenciais, com explicações detalhadas em vídeo e centenas de exercícios e projetos para praticares",
-      "buildHeading": "Aprende a <word>Construir</word>",
-      "buildBody": "Aprende as tecnologias que os profissionais usam desde o primeiro dia: bases de dados, autenticação, frontends, backends e muito mais!",
-      "techLabel": "Aprende tecnologias, incluindo:"
-    },
     "learnToCode": {
-      "heading": "Aprende a <word>Programar</word>",
-      "intro": "Domina a programação, a competência essencial que usamos para comunicar os nossos desejos a um computador. Vamos ajudar-te a <highlight>construir bases sólidas de programação</highlight>.",
+      "heading": "Domina os fundamentos da programação",
+      "intro": "Aprender devia parecer <highlight>brincadeira, não trabalho</highlight>. No Jiki, resolves puzzles, crias jogos e aprendes na prática.",
       "demo": {
         "stageDescription": "Uma animação da aplicação Jiki: um aluno corre um exercício de space invaders, o código move o canhão laser para fora da grelha, ele pede ajuda ao Jiki, corrige o limite de 20 para 11 e o exercício passa.",
         "run": "Correr código",
@@ -668,32 +649,6 @@
       "flowerFlipbook": "Flipbook de flores",
       "footnote": "...e isto é só as primeiras semanas!"
     },
-    "learnToBuild": {
-      "heading": "Aprende a <word>Construir</word>",
-      "intro": "Aprende rapidamente tecnologias essenciais como bases de dados, autenticação, frontends, backends e muito mais usando programação agêntica moderna.",
-      "livestreamsLead": "Transmissões interativas de ensino",
-      "livestreamsDetail": "Preso num conceito ou no teu próprio projeto? Obtém resposta nas <strong>transmissões regulares</strong>, com perguntas reais da comunidade.",
-      "technologiesLead": "Projetos reais, não falsos.",
-      "technologiesDetail": "Aprende enquanto o Jeremy constrói projetos reais do zero, explicando cada decisão, e acompanha com as tuas próprias ideias.",
-      "portfolioLead": "Aprende uma vasta gama de tecnologias",
-      "portfolioDetail": "Construir uma aplicação moderna envolve interagir com muitos sistemas diferentes: autenticação, APIs, backend, frontend. Vamos ensinar-te tudo isso.",
-      "liveQaAlt": "Jeremy a apresentar uma sessão de perguntas e respostas ao vivo do Jiki",
-      "topicsLabel": "Põe as mãos na massa com:",
-      "databases": "Bases de dados",
-      "auth": "Autenticação",
-      "frontendBackend": "Frontend vs backend",
-      "apis": "APIs",
-      "deployment": "Publicação",
-      "llmIntegration": "Integração de LLM",
-      "liveQa_fred": "Finalmente consegui pôr isto a funcionar. Levei três tentativas, mas consegui.",
-      "liveQa_oleksandra": "Alguém pode explicar closures outra vez? Percebo a sintaxe, só não vejo porque é que alguém quereria uma.",
-      "liveQa_shaun": "Ah, isso agora faz sentido.",
-      "liveQa_lukas": "Acabei de publicar o meu primeiro projeto. Sinceramente, não pensava que chegasse tão longe.",
-      "joinLive": "Participa na discussão ao vivo",
-      "catchUp": "Ver mais tarde",
-      "getSupport": "Obter apoio",
-      "liveQa_drac": "A explicação mais clara disto que encontrei em qualquer lado 🙌"
-    },
     "outcomes": {
       "bubble": "No fim do curso",
       "heading": "Com o que vais sair",
@@ -702,15 +657,17 @@
       "certificateBody": "Receberás um certificado verificável que podes adicionar ao teu currículo e à secção Certificações do teu perfil do LinkedIn. E saberás que o ganhaste!",
       "certificateAlt": "Certificado de conclusão do curso Jiki",
       "shareOnLinkedIn": "Partilhar no LinkedIn",
-      "portfolioTitle": "Um portefólio diversificado de projetos reais",
-      "portfolioBody": "Constrói projetos reais que correspondem aos teus interesses. Não uma aplicação genérica de lista de tarefas, mas aplicações reais que mostram a tua criatividade, engenho e conhecimento.",
+      "thinkingTitle": "Capacidade de pensamento crítico melhorada",
+      "thinkingBody": "Este é um curso prático que te obriga a lutar com os problemas. Vai melhorar a tua capacidade de resolução de problemas e o teu pensamento crítico. Útil para toda a vida.",
       "habitTracker": "Rastreador de hábitos pessoal",
       "homepage": "Base digital",
       "recipeBox": "Planeador de receitas",
       "dashboard": "Painel de dados",
-      "understandingTitle": "Compreensão de como tudo funciona",
+      "understandingTitle": "Bases sólidas de programação",
       "understandingBody": "O Jiki dar-te-á bases reais e sólidas para construíres uma carreira. Lê código desconhecido, raciocina sobre como funciona e sê capaz de detetar erros rapidamente.",
-      "codeNote": "Saberás como construir jogos como o Wordle do zero"
+      "codeNote": "Saberás como construir jogos como o Wordle do zero",
+      "portfolioTitle": "Um portefólio diversificado de projetos reais",
+      "portfolioBody": "Constrói projetos reais que correspondem aos teus interesses. Não uma aplicação genérica de lista de tarefas, mas aplicações reais que mostram a tua criatividade, engenho e conhecimento."
     },
     "meetJeremy": {
       "portraitAlt": "Jeremy Walker",
@@ -733,9 +690,9 @@
     },
     "printRow": {
       "joinNote": "Participa na ação!",
-      "spaceInvaders": "space invaders",
-      "breakout": "breakout",
-      "maze": "labirinto",
+      "spaceInvaders": "Space Invaders",
+      "breakout": "Breakout",
+      "maze": "Labirinto",
       "heading": "Pronto para fazeres o teu primeiro?",
       "body": "Aprende a programar e a construir projetos reais desde o primeiro dia, com o Jeremy a guiar-te em cada passo.",
       "free": "Mais de 100 horas de conteúdo gratuito",
@@ -761,31 +718,67 @@
       "heading": "Perguntas frequentes",
       "q1": "Quanto custa?",
       "q1a1": "Os exercícios <strong>Aprende a Programar</strong> - o currículo essencial de aprender a programar - são <strong>completamente gratuitos</strong>. Sem cartão, sem período experimental, sem rasteiras.",
-      "q1Item1": "Acesso total a <strong>Aprende a Construir</strong>",
-      "q1Item2": "Combina as tuas competências em <strong>Projetos Jiki</strong>",
+      "q1Item2": "Desbloqueia os <strong>Desafios</strong> Premium",
       "q1Item3": "Apoio ilimitado de IA <strong>Ask Jiki</strong>",
       "q1Item4": "<strong>Transmissões de P&R</strong> regulares em que podes participar",
       "q1Item5": "Ganha <strong>certificados</strong> dos cursos",
       "q1Item6": "Uma experiência de aprendizagem <strong>sem anúncios</strong>",
       "q1Item7": "<strong>Acesso antecipado</strong> a novas funcionalidades",
       "q2": "Quanto tempo preciso de dedicar por semana ao curso?",
-      "q2a": "Podes dedicar tanto ou tão pouco tempo quanto quiseres. A maioria das pessoas conclui o <strong>Aprende a Programar</strong> em 12 a 20 semanas, com cerca de 5 a 10 horas por semana. O <strong>Aprende a Construir</strong> é contínuo - podes entrar e sair à medida que novos episódios são lançados, e participar nas transmissões em direto quando te convier.",
+      "q2a": "Podes dedicar tanto ou tão pouco tempo quanto quiseres. A maioria das pessoas conclui o <strong>Aprende a Programar</strong> em cerca de 3 meses, com 5 a 10 horas por semana.",
       "q3": "Quão difícil é o curso? Quão inteligente preciso de ser?",
       "q3a1": "O curso foi concebido para ser acessível a todos, independentemente da tua formação. Não acreditamos que precises de ser \"inteligente\" para aprender a programar. Mas precisas de te esforçar e de estar disposto a ser desafiado.",
       "q3a2": "Mas se te esforçares, pedires ajuda quando ficares preso e abraçares o desafio, ficarás surpreendido com o quão longe podes chegar em pouco tempo.",
       "q4": "O Jiki está disponível agora?",
       "q4a1": "Sim - podes registar-te e começar hoje o currículo gratuito Aprende a Programar.",
-      "q4a2": "A primeira sessão <strong>Aprende a Construir</strong> será em <strong>meados de junho</strong>. Podes inscrever-te para receberes um lembrete assim que estiveres lá dentro.",
       "q5": "Já me inscrevi no Bootcamp - isto é diferente?",
       "q5a1": "Obrigado por fazeres parte do Bootcamp! O Jiki é a próxima etapa na evolução do nosso Bootcamp. A maioria dos exercícios que resolveste aparecerá no Jiki, juntamente com muitos mais. Também dividimos os vídeos de 3 horas em partes mais pequenas de 5 a 10 minutos para facilitar a visualização!",
       "q5a2": "Como membro do Bootcamp, receberás automaticamente o Jiki Premium vitalício. Isto aplica-se tanto ao curso inicial Aprende a Programar como a cursos futuros.",
       "intro": "Estas são as perguntas que mais nos fazem. A tua pergunta não está respondida aqui? <link>Envia-nos um email!</link>",
-      "q1a2": "O <strong>Jiki Premium</strong> custa um pagamento único de <price></price> (preço definido por país) e desbloqueia:"
+      "q1a2": "O <strong>Jiki Premium</strong> custa um pagamento único de <price></price> (preço definido por país) e desbloqueia:",
+      "q1Item1": "Acesso total a <strong>Aprende a Construir</strong>",
+      "q4a2": "A primeira sessão <strong>Aprende a Construir</strong> será em <strong>meados de junho</strong>. Podes inscrever-te para receberes um lembrete assim que estiveres lá dentro."
     },
     "latestNews": {
       "heading": "As nossas últimas notícias",
       "byAuthor": "por {name}",
       "subheading": "Mantém-te a par do que está a acontecer no Jiki no <link>nosso blogue</link>."
+    },
+    "twoHalves": {
+      "eyebrow": "As tuas duas competências essenciais",
+      "heading": "As duas metades de ser programador",
+      "intro": "O Jiki ensina-te <strong>a programar</strong> (da forma mais divertida e eficaz!) e a <strong>construir coisas reais</strong> usando as mesmas tecnologias que os profissionais usam. <strong>Desde o primeiro dia.</strong>",
+      "codeHeading": "Aprende a <word>Programar</word>",
+      "codeBody": "Todos os conceitos essenciais, com explicações detalhadas em vídeo e centenas de exercícios e projetos para praticares",
+      "buildHeading": "Aprende a <word>Construir</word>",
+      "buildBody": "Aprende as tecnologias que os profissionais usam desde o primeiro dia: bases de dados, autenticação, frontends, backends e muito mais!",
+      "techLabel": "Aprende tecnologias, incluindo:"
+    },
+    "learnToBuild": {
+      "heading": "Aprende a <word>Construir</word>",
+      "intro": "Aprende rapidamente tecnologias essenciais como bases de dados, autenticação, frontends, backends e muito mais usando programação agêntica moderna.",
+      "livestreamsLead": "Transmissões interativas de ensino",
+      "livestreamsDetail": "Preso num conceito ou no teu próprio projeto? Obtém resposta nas <strong>transmissões regulares</strong>, com perguntas reais da comunidade.",
+      "technologiesLead": "Projetos reais, não falsos.",
+      "technologiesDetail": "Aprende enquanto o Jeremy constrói projetos reais do zero, explicando cada decisão, e acompanha com as tuas próprias ideias.",
+      "portfolioLead": "Aprende uma vasta gama de tecnologias",
+      "portfolioDetail": "Construir uma aplicação moderna envolve interagir com muitos sistemas diferentes: autenticação, APIs, backend, frontend. Vamos ensinar-te tudo isso.",
+      "liveQaAlt": "Jeremy a apresentar uma sessão de perguntas e respostas ao vivo do Jiki",
+      "topicsLabel": "Põe as mãos na massa com:",
+      "databases": "Bases de dados",
+      "auth": "Autenticação",
+      "frontendBackend": "Frontend vs backend",
+      "apis": "APIs",
+      "deployment": "Publicação",
+      "llmIntegration": "Integração de LLM",
+      "liveQa_fred": "Finalmente consegui pôr isto a funcionar. Levei três tentativas, mas consegui.",
+      "liveQa_oleksandra": "Alguém pode explicar closures outra vez? Percebo a sintaxe, só não vejo porque é que alguém quereria uma.",
+      "liveQa_shaun": "Ah, isso agora faz sentido.",
+      "liveQa_lukas": "Acabei de publicar o meu primeiro projeto. Sinceramente, não pensava que chegasse tão longe.",
+      "joinLive": "Participa na discussão ao vivo",
+      "catchUp": "Ver mais tarde",
+      "getSupport": "Obter apoio",
+      "liveQa_drac": "A explicação mais clara disto que encontrei em qualquer lado 🙌"
     }
   },
   "premium": {
@@ -812,16 +805,16 @@
     "values": {
       "oneConversation": "1 conversa",
       "unlimited": "Ilimitado",
-      "firstEpisodes": "Primeiros episódios",
       "fullAccess": "Acesso total",
+      "firstEpisodes": "Primeiros episódios",
       "sampleEpisode": "Episódio de amostra"
     },
     "categories": {
       "codingFundamentals": "Aprende a Programar",
-      "buildWithJeremy": "Aprende a Construir",
       "support": "Apoio",
       "certificates": "Certificados",
-      "experience": "Experiência"
+      "experience": "Experiência",
+      "buildWithJeremy": "Aprende a Construir"
     },
     "features": {
       "codingExercisesTitle": "Exercícios de programação",
@@ -832,20 +825,20 @@
       "jikiChallengesDesc": "Aceita desafios mais difíceis que levam as tuas competências mais longe.",
       "askJikiTitle": "Ask Jiki",
       "askJikiDesc": "Desbloqueia-te com dicas e explicações do Jiki alimentadas por IA.",
-      "buildingFundamentalsTitle": "Série Building Fundamentals",
-      "buildingFundamentalsDesc": "Vê o Jeremy construir uma plataforma web do zero - servidores, bases de dados, autenticação e muito mais.",
-      "howThingsWorkTitle": "Série How Things Work",
-      "howThingsWorkDesc": "Mergulhos profundos nas partes mais complexas do Exercism e do Jiki, e porque são construídos dessa forma.",
       "earlyAccessTitle": "Acesso antecipado a novas funcionalidades",
       "earlyAccessDesc": "Experimenta novas funcionalidades antes de toda a gente.",
       "communityForumsTitle": "Fóruns da comunidade",
       "communityForumsDesc": "Faz perguntas e aprende ao lado de outros estudantes do Jiki.",
       "livestreamsTitle": "Transmissões de P&R com o Jeremy",
-      "livestreamsDesc": "Participa em sessões de perguntas e respostas ao vivo onde o Jeremy responde às tuas perguntas sobre programação e construção.",
+      "livestreamsDesc": "Participa em sessões de perguntas e respostas ao vivo onde o Jeremy responde às tuas perguntas sobre programação.",
       "certificatesTitle": "Ganha certificados dos cursos",
       "certificatesDesc": "Mostra o que aprendeste com certificados partilháveis.",
       "adFreeTitle": "Aprendizagem sem anúncios",
-      "adFreeDesc": "Concentra-te na aprendizagem sem distrações."
+      "adFreeDesc": "Concentra-te na aprendizagem sem distrações.",
+      "buildingFundamentalsTitle": "Série Building Fundamentals",
+      "buildingFundamentalsDesc": "Vê o Jeremy construir uma plataforma web do zero - servidores, bases de dados, autenticação e muito mais.",
+      "howThingsWorkTitle": "Série How Things Work",
+      "howThingsWorkDesc": "Mergulhos profundos nas partes mais complexas do Exercism e do Jiki, e porque são construídos dessa forma."
     },
     "faq": {
       "title": "Perguntas frequentes",
@@ -888,94 +881,6 @@
       "prioritySupportDescription": "Obtém respostas mais rápidas quando precisares de ajuda",
       "earlyAccessTitle": "Acesso antecipado",
       "earlyAccessDescription": "Sê o primeiro a experimentar novas funcionalidades e conteúdos"
-    }
-  },
-  "roadmap": {
-    "page": {
-      "heading": "Roadmap",
-      "subheading": "Para onde o Jiki se dirige. Uma visão trimestre a trimestre do que estamos a lançar, do que vem a seguir e do que ainda estamos a sonhar.",
-      "disclaimer": "Este roadmap é um instantâneo dos nossos planos atuais. As prioridades mudam à medida que aprendemos com a nossa comunidade, pelo que as datas e o âmbito podem mudar."
-    },
-    "status": {
-      "shipped": "Lançado",
-      "inProgress": "Em curso",
-      "planned": "Planeado"
-    },
-    "changelog": {
-      "title": "Registo de alterações",
-      "subtitle": "Melhorias recentes que lançámos no Jiki.",
-      "learnToBuildLaunch": {
-        "date": "11 de julho de 2026",
-        "title": "Lançámos Aprende a Construir",
-        "description": "A nova série do Jeremy, onde ele constrói projetos reais e úteis do zero ao lado dos alunos, está agora no ar."
-      },
-      "milestones6To10": {
-        "date": "Julho de 2026",
-        "title": "Lançámos os Marcos 6-10 em Aprende a Programar",
-        "description": "Cinco novos marcos estão agora no ar no percurso Aprende a Programar, estendendo a jornada bem para além dos fundamentos."
-      },
-      "jikiLaunch": {
-        "date": "7 de junho de 2026",
-        "title": "Lançámos o Jiki!",
-        "description": "O Jiki está oficialmente no ar (embora em beta!)"
-      }
-    },
-    "phases": {
-      "now": {
-        "label": "Agora",
-        "timeframe": "Julho de 2026",
-        "summary": "No que estamos focados este mês.",
-        "learnToBuild": {
-          "title": "Lançámos Aprende a Construir",
-          "description": "A nova série do Jeremy já está no ar, onde ele constrói projetos reais e úteis do zero ao lado dos alunos. Cada projeto é dividido em lições curtas que mostram não apenas o código, mas o pensamento, os erros e as decisões por trás da criação de software."
-        },
-        "launchBugs": {
-          "title": "A limar bugs de lançamento",
-          "description": "Agora que o Jiki está no ar, estamos a corrigir bugs e a suavizar arestas à medida que alunos reais usam a plataforma. Espera um fluxo constante de pequenas correções e melhorias de qualidade de vida em toda a aplicação."
-        },
-        "earlyFeedback": {
-          "title": "A responder a feedback inicial",
-          "description": "Estamos a ler cada mensagem, tópico de suporte e sugestão que chega. Os feedbacks com maior impacto estão a ser transformados em ajustes e pequenas funcionalidades para que a experiência melhore semana após semana."
-        },
-        "foundations": {
-          "title": "A estabilizar as fundações",
-          "description": "Nos bastidores, estamos a reforçar a fiabilidade, o desempenho e a observabilidade para termos uma base sólida sobre a qual construir a próxima vaga de funcionalidades. Menos visível, mas o trabalho mais importante que podemos fazer agora."
-        }
-      },
-      "next": {
-        "label": "A seguir",
-        "timeframe": "T3 2026",
-        "summary": "Desenhado e em fila.",
-        "betaToLive": {
-          "title": "Passar de Beta para Totalmente Ativo",
-          "description": "O Jiki está atualmente em beta. Assim que a poeira do lançamento assentar, retiraremos a etiqueta beta e passaremos a um produto totalmente ativo, com garantias mais fortes de fiabilidade, uma história de preços mais clara e um fluxo de integração polido. É também quando enviaremos o email de lançamento à comunidade Exercism e iniciaremos campanhas promocionais com os nossos parceiros."
-        },
-        "deepDiveVideos": {
-          "title": "Adicionar vídeos Deep Dive",
-          "description": "Vídeos longos que vão além das lições essenciais para explorar conceitos em profundidade real. Perfeitos para alunos que querem compreender o porquê por trás do como, e ver como as ideias se ligam ao mundo mais vasto da programação."
-        },
-        "newLanguages": {
-          "title": "Lançar múltiplas novas línguas",
-          "description": "A partir de agosto, vamos levar o Jiki aos alunos na sua própria língua, traduzindo toda a interface e currículo, não apenas as páginas de marketing. Começa com a nossa <link>translatathon comunitária</link> no fim de semana de 31 de julho a 2 de agosto."
-        },
-        "pythonVersion": {
-          "title": "Lançar a versão Python",
-          "description": "Chegando em setembro, um percurso Python totalmente desenvolvido que espelha a profundidade do nosso currículo JavaScript. Mesma filosofia de exercícios, mesmo visualizador passo a passo, mesmo nível de acabamento, mas com Python como língua de instrução."
-        }
-      },
-      "future": {
-        "label": "Futuro",
-        "timeframe": "T4 2026",
-        "summary": "No horizonte. Sujeito a alterações à medida que aprendemos.",
-        "moreLanguages": {
-          "title": "Adicionar mais línguas",
-          "description": "Com base na primeira vaga de agosto, continuaremos a traduzir o Jiki para mais línguas faladas ao longo do resto do ano, para que ainda mais alunos possam usar a plataforma na sua língua materna. Daremos prioridade com base na procura da comunidade e onde podemos ter o maior impacto."
-        },
-        "sql": {
-          "title": "Lançar SQL",
-          "description": "Mais tarde no ano, adicionaremos SQL ao Jiki, dando aos alunos uma forma prática de compreender bases de dados e consultas com a mesma abordagem passo a passo, aprender fazendo, do resto do currículo."
-        }
-      }
     }
   },
   "misc": {
@@ -1088,10 +993,6 @@
       "title": "Conquistas - Jiki",
       "description": "Acompanha o teu progresso e desbloqueia conquistas à medida que aprendes a programar."
     },
-    "build": {
-      "title": "Aprende a construir - Jiki",
-      "description": "Vê séries de vídeos sobre a construção de projetos reais, análises aprofundadas de como as coisas funcionam e sessões de perguntas e respostas em direto."
-    },
     "dashboard": {
       "title": "Painel - Jiki",
       "description": "Acompanha o teu progresso, continua os exercícios de programação e vê as tuas conquistas."
@@ -1138,15 +1039,11 @@
     },
     "home": {
       "title": "Jiki - Aprende a programar de forma divertida",
-      "description": "A melhor forma de aprender a programar e a construir na era da inteligência artificial! Pela equipa por detrás do Exercism"
+      "description": "A melhor forma de aprender a programar na era da inteligência artificial! Pela equipa por detrás do Exercism"
     },
     "premium": {
       "title": "Premium - Jiki",
       "description": "Acelera o teu caminho até estares pronto para o mercado de trabalho com o Jiki Premium. Acesso completo a cursos, projetos, apoio de IA e muito mais."
-    },
-    "roadmap": {
-      "title": "Roadmap - Jiki",
-      "description": "O que vamos construir a seguir no Jiki. Uma visão, trimestre a trimestre, dos próximos cursos, projetos e funcionalidades."
     },
     "testimonials": {
       "title": "Testemunhos - Jiki",
@@ -1180,6 +1077,14 @@
     },
     "exercises": {
       "notFound": "Exercício não encontrado"
+    },
+    "build": {
+      "title": "Aprende a construir - Jiki",
+      "description": "Vê séries de vídeos sobre a construção de projetos reais, análises aprofundadas de como as coisas funcionam e sessões de perguntas e respostas em direto."
+    },
+    "roadmap": {
+      "title": "Roadmap - Jiki",
+      "description": "O que vamos construir a seguir no Jiki. Uma visão, trimestre a trimestre, dos próximos cursos, projetos e funcionalidades."
     }
   },
   "apiErrors": {
@@ -1350,7 +1255,7 @@
   "modals": {
     "welcomeToPremium": {
       "badge": "Membro Premium",
-      "description": "Obrigado por teres atualizado o teu plano! Agora tens acesso a todos os benefícios Premium, incluindo conversas ilimitadas com o Jiki, os Projetos e o Learn to Build!",
+      "description": "Obrigado por teres atualizado o teu plano! Agora tens acesso a todos os benefícios Premium, incluindo conversas ilimitadas com o Jiki e todos os Desafios.",
       "title": "Bem-vindo ao <highlight>Premium!</highlight>"
     },
     "confirmation": {
@@ -1404,14 +1309,6 @@
     "exerciseSuccess": {
       "defaultTitle": "Parabéns!",
       "defaultMessage": "Todos os testes passaram! Concluíste este exercício com sucesso."
-    },
-    "welcome": {
-      "title": "Bem-vindo ao Jiki!",
-      "subtitle": "Vê este vídeo curto para começares.",
-      "skipTitle": "Saltar o vídeo de boas-vindas?",
-      "skipMessage": "Este vídeo ajuda-te a tirar o máximo partido do Jiki. Tens a certeza de que queres saltá-lo?",
-      "skipConfirm": "Saltar vídeo",
-      "skipCancel": "Continuar a ver"
     },
     "walkthroughConfirm": {
       "title": "Queres tentar resolver primeiro?",
@@ -1580,6 +1477,20 @@
       "error": "Erro: {message}",
       "perMonthShort": "/mês"
     },
+    "exerciseIntroVideo": {
+      "title": "Bem-vindo ao teu primeiro exercício de desenho",
+      "intro": "Vê esta introdução rápida sobre como funcionam os exercícios de desenho e como os resolves. Também a podes ver no fundo das instruções.",
+      "close": "Vamos começar",
+      "watchAlt": "Vê a introdução"
+    },
+    "welcome": {
+      "title": "Bem-vindo ao Jiki!",
+      "subtitle": "Vê este vídeo curto para começares.",
+      "skipTitle": "Saltar o vídeo de boas-vindas?",
+      "skipMessage": "Este vídeo ajuda-te a tirar o máximo partido do Jiki. Tens a certeza de que queres saltá-lo?",
+      "skipConfirm": "Saltar vídeo",
+      "skipCancel": "Continuar a ver"
+    },
     "calendarSubscribe": {
       "title": "Subscrever o calendário",
       "description": "Adiciona as sessões em direto do Jiki ao teu calendário. As novas sessões aparecem automaticamente à medida que forem agendadas.",
@@ -1588,12 +1499,6 @@
       "otherLabel": "Outlook e outros calendários",
       "otherHelp": "Copia esta ligação e adiciona-a como calendário subscrito.",
       "copied": "Copiado"
-    },
-    "exerciseIntroVideo": {
-      "title": "Bem-vindo ao teu primeiro exercício de desenho",
-      "intro": "Vê esta introdução rápida sobre como funcionam os exercícios de desenho e como os resolves. Também a podes ver no fundo das instruções.",
-      "close": "Vamos começar",
-      "watchAlt": "Vê a introdução"
     },
     "subscriptionSuccess": {
       "chatGate": {
@@ -1715,6 +1620,41 @@
       "upsell": {
         "title": "Novos desafios à tua espera!",
         "description": "Combina as tuas competências e desafia-te com os Desafios Premium."
+      },
+      "premiumUpsell": {
+        "label": "Jiki Premium",
+        "completionStat": "Os utilizadores Premium têm <strong>26 vezes mais probabilidades de concluir o curso</strong>.",
+        "price": "Apenas <price></price>. <muted>Pagamento único, sem subscrição.</muted>",
+        "upgrade": "Passa para o Premium",
+        "pendingNote": "O teu pagamento ainda está a ser processado. Vamos desbloquear o Premium e enviar-te um email assim que ficar concluído.",
+        "accelerate": {
+          "heading": "<highlight>Acelera</highlight> a tua aprendizagem!",
+          "benefits": "<strong>Recebes:</strong> Desafios Premium, Perguntas ao Jiki ilimitadas, Análises aprofundadas ilimitadas, um certificado oficial, sem anúncios e muito mais!"
+        },
+        "testimonials": {
+          "heading": "Junta-te à <highlight>equipa Premium</highlight>",
+          "show": "Mostrar testemunho {number}",
+          "quotes": {
+            "veronika": "O preço era inacreditável e, agora, a meio do percurso, posso dizer com orgulho que já estou há quase três meses sem ChatGPT! 🙂",
+            "abhinav": "O desconto de paridade do poder de compra tornou-o ainda mais acessível. Obrigado por o porem ao nosso alcance.",
+            "laura": "Tem sido fantástico interagir com a comunidade, com os exercícios, com os mentores e com o Jeremy.",
+            "kazzybits": "A forma como penso sobre o pensar, e sobre a resolução de problemas em geral, mudou radicalmente.",
+            "nilophars": "A representação visual, a criação de modelos mentais, o feedback dos mentores e os exercícios interativos têm sido incrivelmente valiosos.",
+            "jj": "Desde a interface divertida e elegante até às aulas ao vivo e aos laboratórios ou às discussões no Discord, tudo se junta para criar uma experiência de aprendizagem excelente."
+          },
+          "roles": {
+            "veronika": "Programadora júnior",
+            "abhinav": "Principiante",
+            "laura": "Estava no inferno dos tutoriais",
+            "kazzybits": "Principiante",
+            "jj": "Programador júnior"
+          }
+        },
+        "neverGetStuck": {
+          "heading": "<highlight>Nunca</highlight> mais fiques preso",
+          "text": "Com o Premium, o Jiki está presente em todos os exercícios para te orientar na direção certa.",
+          "statNumber": "26x"
+        }
       },
       "userProfile": {
         "premiumMember": "Membro Premium"
@@ -2013,31 +1953,6 @@
       "finishTooltip": "Termina de ver para continuares"
     }
   },
-  "projects": {
-    "projectCard": {
-      "comingSoon": "Em breve",
-      "comingSoonLabel": "Em breve"
-    },
-    "episodeCard": {
-      "premium": "Premium"
-    },
-    "episodeSummary": {
-      "heading": "Episódio em resumo",
-      "whereWeStart": "Onde começamos",
-      "whereWeEnd": "Onde acabamos",
-      "whatWeCover": "O que cobrimos"
-    },
-    "projectPage": {
-      "backToAllProjects": "← Voltar a <strong>Todos os Projetos</strong>"
-    },
-    "episodePage": {
-      "backToProject": "← Voltar a <strong>{title}</strong>",
-      "relevantGuidesDescription": "Guias que podem ser úteis quando resolveres este passo do processo."
-    },
-    "relevantGuides": {
-      "heading": "Guias relevantes"
-    }
-  },
   "guides": {
     "guidesContent": {
       "pageHeading": "Guias e tutoriais",
@@ -2066,11 +1981,11 @@
     "relatedGuides": {
       "heading": "Guias relacionados"
     },
-    "featuredInProjects": {
-      "heading": "Destacado em Projetos"
-    },
     "metadata": {
       "notFoundTitle": "Guia não encontrado"
+    },
+    "featuredInProjects": {
+      "heading": "Destacado em Projetos"
     }
   },
   "unsubscribe": {
@@ -2325,6 +2240,130 @@
         "description": "Os blocos de construção que este exercício te dá para trabalhares."
       },
       "banner": "👋 Olá! Este é um exercício do Jiki - <signup>regista-te grátis</signup> e resolve-o tu mesmo."
+    }
+  },
+  "build": {
+    "upcomingStreams": {
+      "heading": "Próximas sessões em direto",
+      "toBeAnnounced": "A anunciar",
+      "subscribeButton": "Subscrever o calendário"
+    },
+    "hub": {
+      "title": "Aprende a Construir - Projetos",
+      "description": "Constrói projetos reais do zero com o Jeremy. Aprende tudo o que ele sabe!"
+    }
+  },
+  "roadmap": {
+    "page": {
+      "heading": "Roadmap",
+      "subheading": "Para onde o Jiki se dirige. Uma visão trimestre a trimestre do que estamos a lançar, do que vem a seguir e do que ainda estamos a sonhar.",
+      "disclaimer": "Este roadmap é um instantâneo dos nossos planos atuais. As prioridades mudam à medida que aprendemos com a nossa comunidade, pelo que as datas e o âmbito podem mudar."
+    },
+    "status": {
+      "shipped": "Lançado",
+      "inProgress": "Em curso",
+      "planned": "Planeado"
+    },
+    "changelog": {
+      "title": "Registo de alterações",
+      "subtitle": "Melhorias recentes que lançámos no Jiki.",
+      "learnToBuildLaunch": {
+        "date": "11 de julho de 2026",
+        "title": "Lançámos Aprende a Construir",
+        "description": "A nova série do Jeremy, onde ele constrói projetos reais e úteis do zero ao lado dos alunos, está agora no ar."
+      },
+      "milestones6To10": {
+        "date": "Julho de 2026",
+        "title": "Lançámos os Marcos 6-10 em Aprende a Programar",
+        "description": "Cinco novos marcos estão agora no ar no percurso Aprende a Programar, estendendo a jornada bem para além dos fundamentos."
+      },
+      "jikiLaunch": {
+        "date": "7 de junho de 2026",
+        "title": "Lançámos o Jiki!",
+        "description": "O Jiki está oficialmente no ar (embora em beta!)"
+      }
+    },
+    "phases": {
+      "now": {
+        "label": "Agora",
+        "timeframe": "Julho de 2026",
+        "summary": "No que estamos focados este mês.",
+        "learnToBuild": {
+          "title": "Lançámos Aprende a Construir",
+          "description": "A nova série do Jeremy já está no ar, onde ele constrói projetos reais e úteis do zero ao lado dos alunos. Cada projeto é dividido em lições curtas que mostram não apenas o código, mas o pensamento, os erros e as decisões por trás da criação de software."
+        },
+        "launchBugs": {
+          "title": "A limar bugs de lançamento",
+          "description": "Agora que o Jiki está no ar, estamos a corrigir bugs e a suavizar arestas à medida que alunos reais usam a plataforma. Espera um fluxo constante de pequenas correções e melhorias de qualidade de vida em toda a aplicação."
+        },
+        "earlyFeedback": {
+          "title": "A responder a feedback inicial",
+          "description": "Estamos a ler cada mensagem, tópico de suporte e sugestão que chega. Os feedbacks com maior impacto estão a ser transformados em ajustes e pequenas funcionalidades para que a experiência melhore semana após semana."
+        },
+        "foundations": {
+          "title": "A estabilizar as fundações",
+          "description": "Nos bastidores, estamos a reforçar a fiabilidade, o desempenho e a observabilidade para termos uma base sólida sobre a qual construir a próxima vaga de funcionalidades. Menos visível, mas o trabalho mais importante que podemos fazer agora."
+        }
+      },
+      "next": {
+        "label": "A seguir",
+        "timeframe": "T3 2026",
+        "summary": "Desenhado e em fila.",
+        "betaToLive": {
+          "title": "Passar de Beta para Totalmente Ativo",
+          "description": "O Jiki está atualmente em beta. Assim que a poeira do lançamento assentar, retiraremos a etiqueta beta e passaremos a um produto totalmente ativo, com garantias mais fortes de fiabilidade, uma história de preços mais clara e um fluxo de integração polido. É também quando enviaremos o email de lançamento à comunidade Exercism e iniciaremos campanhas promocionais com os nossos parceiros."
+        },
+        "deepDiveVideos": {
+          "title": "Adicionar vídeos Deep Dive",
+          "description": "Vídeos longos que vão além das lições essenciais para explorar conceitos em profundidade real. Perfeitos para alunos que querem compreender o porquê por trás do como, e ver como as ideias se ligam ao mundo mais vasto da programação."
+        },
+        "newLanguages": {
+          "title": "Lançar múltiplas novas línguas",
+          "description": "A partir de agosto, vamos levar o Jiki aos alunos na sua própria língua, traduzindo toda a interface e currículo, não apenas as páginas de marketing. Começa com a nossa <link>translatathon comunitária</link> no fim de semana de 31 de julho a 2 de agosto."
+        },
+        "pythonVersion": {
+          "title": "Lançar a versão Python",
+          "description": "Chegando em setembro, um percurso Python totalmente desenvolvido que espelha a profundidade do nosso currículo JavaScript. Mesma filosofia de exercícios, mesmo visualizador passo a passo, mesmo nível de acabamento, mas com Python como língua de instrução."
+        }
+      },
+      "future": {
+        "label": "Futuro",
+        "timeframe": "T4 2026",
+        "summary": "No horizonte. Sujeito a alterações à medida que aprendemos.",
+        "moreLanguages": {
+          "title": "Adicionar mais línguas",
+          "description": "Com base na primeira vaga de agosto, continuaremos a traduzir o Jiki para mais línguas faladas ao longo do resto do ano, para que ainda mais alunos possam usar a plataforma na sua língua materna. Daremos prioridade com base na procura da comunidade e onde podemos ter o maior impacto."
+        },
+        "sql": {
+          "title": "Lançar SQL",
+          "description": "Mais tarde no ano, adicionaremos SQL ao Jiki, dando aos alunos uma forma prática de compreender bases de dados e consultas com a mesma abordagem passo a passo, aprender fazendo, do resto do currículo."
+        }
+      }
+    }
+  },
+  "projects": {
+    "projectCard": {
+      "comingSoon": "Em breve",
+      "comingSoonLabel": "Em breve"
+    },
+    "episodeCard": {
+      "premium": "Premium"
+    },
+    "episodeSummary": {
+      "heading": "Episódio em resumo",
+      "whereWeStart": "Onde começamos",
+      "whereWeEnd": "Onde acabamos",
+      "whatWeCover": "O que cobrimos"
+    },
+    "projectPage": {
+      "backToAllProjects": "← Voltar a <strong>Todos os Projetos</strong>"
+    },
+    "episodePage": {
+      "backToProject": "← Voltar a <strong>{title}</strong>",
+      "relevantGuidesDescription": "Guias que podem ser úteis quando resolveres este passo do processo."
+    },
+    "relevantGuides": {
+      "heading": "Guias relevantes"
     }
   }
 }

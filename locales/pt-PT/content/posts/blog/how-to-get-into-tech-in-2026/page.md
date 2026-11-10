@@ -6,7 +6,7 @@ seo:
   description: "O código costumava ser o guardião da entrada no setor tecnológico. Em 2026, os LLMs escrevem o código e o teu valor está em saberes construir as coisas corretamente. Eis como entrar no setor tecnológico."
   keywords:
     ["como entrar no setor tecnológico", "entrar no setor tecnológico em 2026", "aprender a programar", "carreiras no setor tecnológico", "programação com IA", "LLMs", "Jiki"]
-en_md5: d599444eaa258a866a62affc6dd0ae1f
+en_md5: 97e72fe48a7ff5994923a94cd0220620
 ---
 
 ## Introdução
@@ -29,7 +29,7 @@ Mas agora, graças aos LLMs, tudo isto está a mudar.
 
 Dentro de 5 anos, **ninguém te vai contratar pelas tuas competências de programação.** Elas são irrelevantes. Quase não escrevi uma linha de código no último ano, mas, através do Claude, produzi centenas de milhares de linhas de código. E funcionam. Organizam-se de forma coerente e dão vida a plataformas como o [Jiki](https://jiki.io), e já resolveram inúmeros bugs no [Exercism](https://exercism.org), no [Kaido](https://kaido.org) e no [Giki](https://gikiactions.com). Mas só o fazem porque eu sei o que estou a fazer. Sem a orientação de uma pessoa, não teriam chegado até aqui.
 
-O valor de uma pessoa que programa não está na sua capacidade de escrever código ([embora continues a precisar de saber como!](/blog/should-i-still-learn-to-code-in-2026)). Está na sua **capacidade de fazer as coisas como deve ser**.
+O valor de quem programa não está na sua capacidade de escrever código ([embora continues a precisar de saber como!](/blog/should-i-still-learn-to-code-in-2026)). Está na sua **capacidade de fazer as coisas como deve ser**.
 
 E isto sempre foi verdade. As pessoas que desenvolvem software sempre foram contratadas pela capacidade de criar software, de desenvolver sistemas, de resolver bugs. **Nunca foram contratadas por saberem escrever código muito bem.** Escrever código exige perícia, mas apenas como um mecanismo para exprimir um design conceptual mais profundo.
 
@@ -64,6 +64,6 @@ Todos os dias, quando uso o Claude Code, ele faz coisas que, para mim, estão ob
 
 Precisas de **alguém que te ensine** como tudo funciona e quais são os caminhos mentais certos a seguir. Depois, precisas de construir coisas, cometer erros, ver o que acontece quando o Claude te tramar e aprender com isso, para conseguires acrescentar valor a uma empresa que está a construir coisas. Precisas de compreender a tecnologia, de compreender como o software é construído, de aprender a ler código para perceberes o que se está a passar e de te sentires confiante com todo o fluxo e o processo de criar coisas.
 
-E o [Jiki](https://jiki.io) ensina-te tudo isso. Segue o nosso percurso Aprende a Programar para dominares as bases da programação e depois **vem aprender a construir coisas comigo**. Percebe porque precisas do GitHub e como funciona, como a Cloudflare te protege, como conceber autenticação segura, como criar bases de dados eficientes, como construir front-ends ultrarrápidos e back-ends sólidos como rocha. Aprende a publicar o que crias de forma a que recupere se falhar. Aprende tudo isto comigo. **E diverte-te imenso pelo caminho.**
+E o [Jiki](https://jiki.io) ensina-te a primeira parte. Segue o nosso curso Aprende a Programar para dominares bem as bases da programação. Assim, quando passares a construir coisas com um LLM, vais perceber o que ele está a fazer. **E diverte-te imenso pelo caminho.**
 
 Vemo-nos lá dentro!

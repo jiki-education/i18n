@@ -5,7 +5,7 @@ tags: ["agentic-coding"]
 seo:
   description: "為初學者解說代理式程式設計的核心概念：AI 模型和 Token 是什麼、上下文視窗如何運作，以及代理為什麼有時會出錯。"
   keywords: ["代理式程式設計概念", "llm", "token", "上下文視窗", "AI 模型", "提示詞", "幻覺"]
-en_md5: d963e01d7934f4003d436029d1808fc8
+en_md5: 4133804b88528c6fcfd12bb34864b867
 ---
 
 ## 簡介
@@ -70,4 +70,4 @@ Token 之所以重要，有一個很重要的原因：**它們就是你要付費
 
 ## 以上就是基礎
 
-模型是「大腦」，Token 是貨幣，上下文是記憶，提示詞是方向盤，而迴圈正是讓它成為代理的關鍵。其他的東西，你會在實際動手的過程中慢慢上手，而這正是我們建議你現在去做的事。如果你還沒安裝好工具，我們的[安裝指南](/guides/installing-an-agentic-coding-platform)能在 10 分鐘內帶你完成。接著到 Learn to Build 觀看第一堂[前端基礎](/build/frontend-basics/setting-up-the-project)課程，看看這一切實際運作的樣子。
+模型是「大腦」，Token 是貨幣，上下文是記憶，提示詞是方向盤，而迴圈正是讓它成為代理的關鍵。其他的東西，你會在實際動手的過程中慢慢上手，而這正是我們建議你現在去做的事。如果你還沒安裝好工具，我們的[安裝指南](/guides/installing-an-agentic-coding-platform)能在 10 分鐘內帶你完成。

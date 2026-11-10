@@ -4,8 +4,8 @@ excerpt: "Modelos, tokens, janelas de contexto e as restantes noções de que pr
 tags: ["agentic-coding"]
 seo:
   description: "Os conceitos fundamentais por trás da programação com agentes, explicados para principiantes: o que são os modelos de IA e os tokens, como funcionam as janelas de contexto e porque é que os agentes às vezes erram."
-  keywords: ["conceitos de programação com agentes", "llm", "tokens", "janela de contexto", "modelos de ia", "prompts", "alucinações"]
-en_md5: d963e01d7934f4003d436029d1808fc8
+  keywords: ["conceitos de programação com agentes", "llm", "tokens", "janela de contexto", "modelos de IA", "prompts", "alucinações"]
+en_md5: 4133804b88528c6fcfd12bb34864b867
 ---
 
 ## Introdução
@@ -70,4 +70,4 @@ Há mais uma coisa que vale a pena saber, sobretudo nos planos gratuitos: os mod
 
 ## Esta é a base
 
-Os modelos são os "cérebros", os tokens são a moeda, o contexto é a memória, os prompts são o volante e o ciclo é o que faz dele um agente. Todo o resto vais aprender pondo as mãos na massa, o que é exatamente aquilo que te sugerimos que faças. Se ainda não configuraste uma ferramenta, o nosso [guia de instalação](/guides/installing-an-agentic-coding-platform) vai deixar-te pronto em dez minutos. Depois, vê a primeira sessão de [Noções Básicas de Frontend](/build/frontend-basics/setting-up-the-project) no curso Aprende a Construir para veres tudo em ação.
+Os modelos são os "cérebros", os tokens são a moeda, o contexto é a memória, os prompts são o volante e o ciclo é o que faz dele um agente. Todo o resto vais aprender pondo as mãos na massa, o que é exatamente aquilo que te sugerimos que faças. Se ainda não configuraste uma ferramenta, o nosso [guia de instalação](/guides/installing-an-agentic-coding-platform) vai deixar-te pronto em dez minutos.

@@ -4,8 +4,8 @@ excerpt: "Les modèles, les tokens, la fenêtre de contexte et les autres notion
 tags: ["agentic-coding"]
 seo:
   description: "Les concepts fondamentaux de la programmation agentique expliqués aux débutants : ce que sont les modèles d'IA et les tokens, comment fonctionne la fenêtre de contexte, et pourquoi les agents se trompent parfois."
-  keywords: ["concepts de programmation agentique", "llm", "tokens", "fenêtre de contexte", "modèles d'ia", "prompts", "hallucinations"]
-en_md5: d963e01d7934f4003d436029d1808fc8
+  keywords: ["concepts de programmation agentique", "llm", "tokens", "fenêtre de contexte", "modèles d'IA", "prompts", "hallucinations"]
+en_md5: 4133804b88528c6fcfd12bb34864b867
 ---
 
 ## Introduction
@@ -51,7 +51,7 @@ Un bon prompt dit trois choses : ce que tu cherches à obtenir, ce qui se passe 
 
 Ce qui distingue un agent d'un chatbot, c'est la **boucle**. Quand tu confies une tâche à un agent, il ne se contente pas de répondre : il travaille.
 
-1. Il décide de ce qu'il a besoin de savoir, et utilise des **outils** (lire des fichiers, chercher, lancer des commandes) pour le découvrir.
+1. Il décide de ce dont il a besoin de savoir, et utilise des **outils** (lire des fichiers, chercher, lancer des commandes) pour le découvrir.
 2. Il fait une modification.
 3. Il vérifie son propre travail, en général en exécutant ton code ou tes tests.
 4. Si quelque chose a échoué, il retourne à l'étape 1 avec les nouvelles informations.
@@ -70,4 +70,4 @@ Une dernière chose à savoir, surtout sur les offres gratuites : les modèles g
 
 ## Voilà les fondations
 
-Les modèles sont le « cerveau », les tokens la monnaie, le contexte la mémoire, les prompts le volant, et la boucle ce qui en fait un agent. Tout le reste, tu l'apprendras en mettant les mains dans le cambouis, et c'est exactement ce qu'on te suggère d'aller faire. Si tu n'as pas encore installé d'outil, notre [guide d'installation](/guides/installing-an-agentic-coding-platform) t'y amène en dix minutes. Regarde ensuite la première session de [Frontend Basics](/build/frontend-basics/setting-up-the-project) dans Learn to Build pour voir tout cela en action.
+Les modèles sont le « cerveau », les tokens la monnaie, le contexte la mémoire, les prompts le volant, et la boucle ce qui en fait un agent. Tout le reste, tu l'apprendras en mettant les mains dans le cambouis, et c'est exactement ce qu'on te suggère d'aller faire. Si tu n'as pas encore installé d'outil, notre [guide d'installation](/guides/installing-an-agentic-coding-platform) t'y amène en dix minutes.

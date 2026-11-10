@@ -60,13 +60,12 @@
     "sidebar": {
       "groups": {
         "learnToCode": "學習寫程式",
-        "learnToBuild": "學習開發",
         "community": "社群",
-        "more": "更多"
+        "more": "更多",
+        "learnToBuild": "學習開發"
       },
       "nav": {
         "learn": "程式設計基礎",
-        "build": "專案",
         "challenges": "挑戰",
         "concepts": "程式設計概念",
         "achievements": "成就",
@@ -77,7 +76,8 @@
         "settings": "設定",
         "help": "說明",
         "upgrade": "升級至 Premium",
-        "logOut": "登出"
+        "logOut": "登出",
+        "build": "專案"
       },
       "premiumPill": "進階版"
     },
@@ -172,17 +172,6 @@
       "copied": "已複製連結"
     },
     "perMonth": "/月"
-  },
-  "build": {
-    "upcomingStreams": {
-      "heading": "即將開始的直播",
-      "toBeAnnounced": "即將公布",
-      "subscribeButton": "訂閱行事曆"
-    },
-    "hub": {
-      "title": "學會打造 - 專案",
-      "description": "跟著 Jeremy 從零開始打造真實專案。學會他所知道的一切！"
-    }
   },
   "auth": {
     "oauth": {
@@ -353,13 +342,13 @@
       "title": "確定要取消訂閱嗎？",
       "message": "我們實在不希望你離開！如果取消，你會在目前計費週期結束時失去進階版的存取權限。",
       "benefitsTitle": "你目前享有的內容：",
+      "keep": "保留我的訂閱",
+      "cancel": "取消訂閱",
+      "defaultBillingPeriodEnd": "你的計費週期結束日",
       "benefit1": "Jiki 不限次數的 AI 協助",
       "benefit2": "所有專案與學習路徑",
       "benefit3": "完課證書",
-      "benefit4": "無廣告體驗",
-      "keep": "保留我的訂閱",
-      "cancel": "取消訂閱",
-      "defaultBillingPeriodEnd": "你的計費週期結束日"
+      "benefit4": "無廣告體驗"
     },
     "cancelSuccess": {
       "title": "訂閱已取消",
@@ -574,28 +563,20 @@
   },
   "landing": {
     "hero": {
-      "tagline": "學會你所需的技能，打造出色的作品、提升生產力，並<strong>在 {year} 保持競爭力。</strong>",
+      "tagline": "你真的會看完的教學。你真的會喜歡的練習。<strong>3 個月從零基礎到能自己寫程式。</strong>而且還免費！",
       "loadingVideo": "影片載入中",
       "playVideo": "播放影片",
       "watchPrompt": "不喜歡閱讀嗎？<strong>按下播放</strong>，我會告訴你所有你需要知道的事！",
-      "headline": "學習<highlight>寫程式與打造產品</highlight>的現代方式",
+      "headline": "用有趣的方式<highlight>學會寫程式！</highlight>",
+      "audienceAbsoluteBeginners": "<name>完全新手</name>，想<u>快速起步</u>的人。",
+      "audienceRepeatBeginners": "<name>重新開始的人</name>，希望一切<u>終於說得通</u>的人。",
+      "audienceJuniors": "<name>初階開發者</name>，想<u>打穩基本功</u>的人。",
       "audienceBeginners": "<name>初學者</name>，正在尋找最快、最好的學習方式",
-      "audienceJuniors": "<name>初階開發者</name>，想加速累積知識",
       "audienceEntrepreneurs": "<name>創業者與 Vibe Coder</name>，想在雇用別人之前先自己動手做"
     },
-    "twoHalves": {
-      "eyebrow": "你的兩項核心技能",
-      "heading": "開發者的兩項核心能力",
-      "intro": "Jiki 教你<strong>如何寫程式</strong>（用最有趣、最有效的方式！），以及如何用專業人士使用的相同技術<strong>打造真實的東西</strong>。<strong>從第一天就開始。</strong>",
-      "codeHeading": "學會<word>寫程式</word>",
-      "codeBody": "每個核心概念都有詳盡的影片解說，還有數百個練習與專案可以實際動手做",
-      "buildHeading": "學會<word>打造</word>",
-      "buildBody": "從第一天就學習專業人士使用的技術：資料庫、身分驗證、前端、後端等等！",
-      "techLabel": "學習的技術包括："
-    },
     "learnToCode": {
-      "heading": "學會<word>寫程式</word>",
-      "intro": "精通程式設計這項核心技能，用它把我們的需求傳達給電腦。我們會協助你<highlight>打下扎實的程式設計基礎</highlight>。",
+      "heading": "掌握程式設計基礎",
+      "intro": "學習本來就該像<highlight>玩，而不是工作</highlight>。在 Jiki，你會解謎題、做遊戲，在練習中學會寫程式。",
       "demo": {
         "stageDescription": "一段 Jiki 應用程式的動畫：學習者執行一個太空侵略者練習，程式碼把雷射砲移出格線邊緣，他向 Jiki 求助，把邊界值從 20 改成 11，練習就通過了。",
         "run": "執行程式",
@@ -668,32 +649,6 @@
       "flowerFlipbook": "花朵翻頁動畫",
       "footnote": "……而這還只是前幾週而已！"
     },
-    "learnToBuild": {
-      "heading": "學會<word>打造</word>",
-      "intro": "透過現代化的代理式程式設計，快速學會資料庫、身分驗證、前端、後端等核心技術。",
-      "livestreamsLead": "互動式教學直播",
-      "livestreamsDetail": "卡在某個概念或自己的專案上嗎？在<strong>定期直播</strong>中獲得解答，還有社群提出的真實問題。",
-      "technologiesLead": "真實的專案，不是假想範例。",
-      "technologiesDetail": "跟著 Jeremy 從零開始打造真實專案，他會解釋每個決定，你也可以用自己的想法一起實作。",
-      "portfolioLead": "學習各種不同的技術",
-      "portfolioDetail": "打造現代應用程式需要與許多不同系統互動：身分驗證、API、後端、前端。這些我們都會教你。",
-      "liveQaAlt": "Jeremy 主持 Jiki 直播問答的畫面",
-      "topicsLabel": "實際動手玩玩：",
-      "databases": "資料庫",
-      "auth": "身分驗證",
-      "frontendBackend": "前端與後端",
-      "apis": "API",
-      "deployment": "部署",
-      "llmIntegration": "LLM 整合",
-      "liveQa_fred": "終於成功了。試了三次才搞定。",
-      "liveQa_oleksandra": "有人可以再解釋一次閉包嗎？語法我看得懂，只是不懂為什麼會需要它。",
-      "liveQa_shaun": "啊，這樣終於說得通了。",
-      "liveQa_lukas": "剛部署了我的第一個專案。真的沒想到自己能走到這一步。",
-      "joinLive": "加入直播討論",
-      "catchUp": "之後再補看",
-      "getSupport": "取得協助",
-      "liveQa_drac": "這是我看過最清楚的解釋 🙌"
-    },
     "outcomes": {
       "bubble": "課程結束時",
       "heading": "你將會帶走什麼",
@@ -702,15 +657,17 @@
       "certificateBody": "你會收到一張可驗證的證書，可以放進履歷和 LinkedIn 個人檔案的證照區。而且你會知道自己確實有資格拿到它！",
       "certificateAlt": "Jiki 課程完課證書",
       "shareOnLinkedIn": "分享到 LinkedIn",
-      "portfolioTitle": "多元的真實專案作品集",
-      "portfolioBody": "打造符合你興趣的真實專案。不是千篇一律的待辦清單應用程式，而是能展現你的創意、巧思與知識的實際作品。",
+      "thinkingTitle": "更強的批判性思考能力",
+      "thinkingBody": "這是一門實作導向的課程，會逼你真正動手和問題搏鬥。它會磨練你的解題能力和批判性思考能力，而且一輩子都用得上。",
       "habitTracker": "個人習慣追蹤器",
       "homepage": "個人數位首頁",
       "recipeBox": "食譜規劃工具",
       "dashboard": "資料儀表板",
-      "understandingTitle": "真正了解一切是怎麼運作的",
+      "understandingTitle": "扎實的程式設計基礎",
       "understandingBody": "Jiki 會給你扎實穩固的基礎，讓你建立自己的職涯。你能讀懂陌生的程式碼、推理出它的運作方式，並且快速找出 bug。",
-      "codeNote": "你將會知道如何從零開始打造像 Wordle 這樣的遊戲"
+      "codeNote": "你將會知道如何從零開始打造像 Wordle 這樣的遊戲",
+      "portfolioTitle": "多元的真實專案作品集",
+      "portfolioBody": "打造符合你興趣的真實專案。不是千篇一律的待辦清單應用程式，而是能展現你的創意、巧思與知識的實際作品。"
     },
     "meetJeremy": {
       "portraitAlt": "Jeremy Walker",
@@ -761,31 +718,67 @@
       "heading": "常見問題",
       "q1": "費用是多少？",
       "q1a1": "<strong>學會寫程式</strong>的練習，也就是核心的程式設計課程，是<strong>完全免費</strong>的。不用信用卡、沒有試用期、也沒有任何陷阱。",
-      "q1Item1": "完整使用<strong>學會打造</strong>的內容",
-      "q1Item2": "在<strong>Jiki 專案</strong>中整合你的技能",
+      "q1Item2": "解鎖 Premium <strong>挑戰</strong>",
       "q1Item3": "不限次數的<strong>問 Jiki</strong> AI 協助",
       "q1Item4": "可以參加的定期<strong>直播問答</strong>",
       "q1Item5": "取得課程<strong>證書</strong>",
       "q1Item6": "<strong>無廣告</strong>的學習體驗",
       "q1Item7": "新功能的<strong>搶先體驗</strong>",
       "q2": "我每週需要花多少時間在課程上？",
-      "q2a": "你想花多少時間都可以。大多數人每週投入約 5 到 10 小時，會在 12 到 20 週內完成<strong>學會寫程式</strong>。<strong>學會打造</strong>則是持續進行的，新集數上線時你可以隨時回來看，也能在方便的時候參加直播。",
+      "q2a": "你想花多少時間都可以。大多數人每週投入約 5 到 10 小時，大約 3 個月就能完成<strong>學會寫程式</strong>。",
       "q3": "這門課程有多難？我需要多聰明？",
       "q3a1": "這門課程的設計適合每個人，無論你的背景是什麼。我們不認為學寫程式需要多「聰明」，但你必須願意投入心力，並且接受挑戰。",
       "q3a2": "但只要你肯投入、卡住時願意求助，並擁抱挑戰，你會驚訝自己在短短時間內能走得多遠。",
       "q4": "Jiki 現在可以使用了嗎？",
       "q4a1": "可以。你現在就可以註冊，開始免費的學會寫程式課程。",
-      "q4a2": "第一場<strong>學會打造</strong>課程會在<strong>六月中</strong>開始。註冊進入後，你可以登記提醒通知。",
       "q5": "我已經報名過 Bootcamp 了，這有什麼不同嗎？",
       "q5a1": "謝謝你參與 Bootcamp！Jiki 是我們 Bootcamp 演進的下一階段。你解過的大部分練習都會出現在 Jiki 上，而且還有更多。我們也把 3 小時的影片拆成 5 到 10 分鐘的小片段，讓你更容易觀看！",
       "q5a2": "身為 Bootcamp 的成員，你將自動獲得終身 Jiki 進階版。這適用於最初的學會寫程式課程以及未來的課程。",
       "intro": "這些是我們最常被問到的問題。這裡沒有解答你的疑問嗎？<link>寄封信給我們吧！</link>",
-      "q1a2": "<strong>Jiki 進階版</strong>只需一次性付款<price></price>（依國家定價），即可解鎖："
+      "q1a2": "<strong>Jiki 進階版</strong>只需一次性付款<price></price>（依國家定價），即可解鎖：",
+      "q1Item1": "完整使用<strong>學會打造</strong>的內容",
+      "q4a2": "第一場<strong>學會打造</strong>課程會在<strong>六月中</strong>開始。註冊進入後，你可以登記提醒通知。"
     },
     "latestNews": {
       "heading": "最新消息",
       "byAuthor": "作者：{name}",
       "subheading": "在<link>我們的部落格</link>掌握 Jiki 的最新動態。"
+    },
+    "twoHalves": {
+      "eyebrow": "你的兩項核心技能",
+      "heading": "開發者的兩項核心能力",
+      "intro": "Jiki 教你<strong>如何寫程式</strong>（用最有趣、最有效的方式！），以及如何用專業人士使用的相同技術<strong>打造真實的東西</strong>。<strong>從第一天就開始。</strong>",
+      "codeHeading": "學會<word>寫程式</word>",
+      "codeBody": "每個核心概念都有詳盡的影片解說，還有數百個練習與專案可以實際動手做",
+      "buildHeading": "學會<word>打造</word>",
+      "buildBody": "從第一天就學習專業人士使用的技術：資料庫、身分驗證、前端、後端等等！",
+      "techLabel": "學習的技術包括："
+    },
+    "learnToBuild": {
+      "heading": "學會<word>打造</word>",
+      "intro": "透過現代化的代理式程式設計，快速學會資料庫、身分驗證、前端、後端等核心技術。",
+      "livestreamsLead": "互動式教學直播",
+      "livestreamsDetail": "卡在某個概念或自己的專案上嗎？在<strong>定期直播</strong>中獲得解答，還有社群提出的真實問題。",
+      "technologiesLead": "真實的專案，不是假想範例。",
+      "technologiesDetail": "跟著 Jeremy 從零開始打造真實專案，他會解釋每個決定，你也可以用自己的想法一起實作。",
+      "portfolioLead": "學習各種不同的技術",
+      "portfolioDetail": "打造現代應用程式需要與許多不同系統互動：身分驗證、API、後端、前端。這些我們都會教你。",
+      "liveQaAlt": "Jeremy 主持 Jiki 直播問答的畫面",
+      "topicsLabel": "實際動手玩玩：",
+      "databases": "資料庫",
+      "auth": "身分驗證",
+      "frontendBackend": "前端與後端",
+      "apis": "API",
+      "deployment": "部署",
+      "llmIntegration": "LLM 整合",
+      "liveQa_fred": "終於成功了。試了三次才搞定。",
+      "liveQa_oleksandra": "有人可以再解釋一次閉包嗎？語法我看得懂，只是不懂為什麼會需要它。",
+      "liveQa_shaun": "啊，這樣終於說得通了。",
+      "liveQa_lukas": "剛部署了我的第一個專案。真的沒想到自己能走到這一步。",
+      "joinLive": "加入直播討論",
+      "catchUp": "之後再補看",
+      "getSupport": "取得協助",
+      "liveQa_drac": "這是我看過最清楚的解釋 🙌"
     }
   },
   "premium": {
@@ -812,16 +805,16 @@
     "values": {
       "oneConversation": "1 次對話",
       "unlimited": "不限次數",
-      "firstEpisodes": "前幾集",
       "fullAccess": "完整使用權",
+      "firstEpisodes": "前幾集",
       "sampleEpisode": "試看集數"
     },
     "categories": {
       "codingFundamentals": "學會寫程式",
-      "buildWithJeremy": "學會打造",
       "support": "支援",
       "certificates": "證書",
-      "experience": "體驗"
+      "experience": "體驗",
+      "buildWithJeremy": "學會打造"
     },
     "features": {
       "codingExercisesTitle": "程式設計練習",
@@ -832,20 +825,20 @@
       "jikiChallengesDesc": "挑戰更困難的題目，把你的能力再往上推。",
       "askJikiTitle": "問 Jiki",
       "askJikiDesc": "透過 Jiki 的 AI 提示與解說，幫你突破卡關。",
-      "buildingFundamentalsTitle": "打造基礎系列",
-      "buildingFundamentalsDesc": "看 Jeremy 從零開始打造一個網路平台：伺服器、資料庫、身分驗證等等。",
-      "howThingsWorkTitle": "運作原理系列",
-      "howThingsWorkDesc": "深入探討 Exercism 與 Jiki 中比較棘手的部分，以及它們為什麼這樣設計。",
       "earlyAccessTitle": "新功能搶先體驗",
       "earlyAccessDesc": "比其他人更早試用新功能。",
       "communityForumsTitle": "社群論壇",
       "communityForumsDesc": "提問，並和其他 Jiki 學員一起學習。",
       "livestreamsTitle": "與 Jeremy 的直播問答",
-      "livestreamsDesc": "參加直播問答，讓 Jeremy 回答你關於寫程式與打造專案的問題。",
+      "livestreamsDesc": "參加直播問答，讓 Jeremy 回答你關於寫程式的問題。",
       "certificatesTitle": "取得課程證書",
       "certificatesDesc": "用可分享的證書展現你的學習成果。",
       "adFreeTitle": "無廣告學習",
-      "adFreeDesc": "專心學習，不受干擾。"
+      "adFreeDesc": "專心學習，不受干擾。",
+      "buildingFundamentalsTitle": "打造基礎系列",
+      "buildingFundamentalsDesc": "看 Jeremy 從零開始打造一個網路平台：伺服器、資料庫、身分驗證等等。",
+      "howThingsWorkTitle": "運作原理系列",
+      "howThingsWorkDesc": "深入探討 Exercism 與 Jiki 中比較棘手的部分，以及它們為什麼這樣設計。"
     },
     "faq": {
       "title": "常見問題",
@@ -888,94 +881,6 @@
       "prioritySupportDescription": "需要協助時能更快得到回覆",
       "earlyAccessTitle": "搶先體驗",
       "earlyAccessDescription": "第一時間試用新功能與新內容"
-    }
-  },
-  "roadmap": {
-    "page": {
-      "heading": "發展藍圖",
-      "subheading": "Jiki 的未來方向。以每一季為單位，看看我們正在推出什麼、接下來要做什麼，以及還在構思中的點子。",
-      "disclaimer": "這份藍圖是我們目前計畫的縮影。隨著我們從社群中學習，優先順序會調整，因此日期與範圍都可能變動。"
-    },
-    "status": {
-      "shipped": "已推出",
-      "inProgress": "進行中",
-      "planned": "規劃中"
-    },
-    "changelog": {
-      "title": "更新紀錄",
-      "subtitle": "我們最近在 Jiki 上推出的改進。",
-      "learnToBuildLaunch": {
-        "date": "2026 年 7 月 11 日",
-        "title": "推出學會打造",
-        "description": "Jeremy 的全新系列已經上線，他會和學習者一起從零開始打造真實又實用的專案。"
-      },
-      "milestones6To10": {
-        "date": "2026 年 7 月",
-        "title": "學會寫程式推出第 6 到第 10 個里程碑",
-        "description": "學會寫程式學習路徑上新增了五個里程碑，把學習旅程遠遠延伸到基礎知識之外。"
-      },
-      "jikiLaunch": {
-        "date": "2026 年 6 月 7 日",
-        "title": "Jiki 正式上線！",
-        "description": "Jiki 正式上線了（雖然還是 beta 版！）"
-      }
-    },
-    "phases": {
-      "now": {
-        "label": "現在",
-        "timeframe": "2026 年 7 月",
-        "summary": "這個月我們專注的事情。",
-        "learnToBuild": {
-          "title": "推出學會打造",
-          "description": "Jeremy 的全新系列已經上線，他會和學習者一起從零開始打造真實又實用的專案。每個專案都拆成一小段一小段的課程，不只展示程式碼，也展示打造軟體過程中的思考、錯誤與決定。"
-        },
-        "launchBugs": {
-          "title": "解決上線後的各種問題",
-          "description": "Jiki 上線後，我們正隨著真實學習者的使用，一一消滅 bug、磨平粗糙的地方。你可以期待整個應用程式持續有各種小修正與使用體驗的改善。"
-        },
-        "earlyFeedback": {
-          "title": "回應初期回饋",
-          "description": "我們會閱讀每一則訊息、客服討論串與建議。最有影響力的回饋會被轉化成調整與小功能，讓體驗每週都在進步。"
-        },
-        "foundations": {
-          "title": "穩固基礎",
-          "description": "在幕後，我們正在強化可靠性、效能與可觀測性，好為下一波功能打下穩固的基礎。這些工作比較不顯眼，卻是我們現在最重要的事。"
-        }
-      },
-      "next": {
-        "label": "接下來",
-        "timeframe": "2026 年第三季",
-        "summary": "已設計完成，排入待辦。",
-        "betaToLive": {
-          "title": "從 Beta 版正式進入正式版",
-          "description": "Jiki 目前是 beta 版。等上線的塵埃落定，我們會拿掉 beta 標籤，正式成為完整上線的產品，並提供更可靠的保證、更清楚的定價說明，以及更完善的新手引導流程。屆時我們也會寄出上線通知信給 Exercism 社群，並與合作夥伴一起展開宣傳。"
-        },
-        "deepDiveVideos": {
-          "title": "新增深入探索影片",
-          "description": "比核心課程更進一步的長篇影片，深入探索各種概念。適合想了解「為什麼」而不只是「怎麼做」，並想看看這些概念如何連結到更廣大的程式設計世界的學習者。"
-        },
-        "newLanguages": {
-          "title": "推出多種新語言",
-          "description": "從八月開始，我們要把 Jiki 帶給使用自己語言的學習者，翻譯整個介面與課程內容，而不只是行銷頁面。這一切會從 7 月 31 日到 8 月 2 日週末的<link>社群翻譯松</link>開始。"
-        },
-        "pythonVersion": {
-          "title": "推出 Python 版本",
-          "description": "九月登場，完整的 Python 學習路徑，深度與我們的 JavaScript 課程相同。相同的練習理念、相同的逐步視覺化工具、相同的精緻程度，只是改用 Python 作為教學語言。"
-        }
-      },
-      "future": {
-        "label": "未來",
-        "timeframe": "2026 年第四季",
-        "summary": "即將到來，並會隨著我們的學習而調整。",
-        "moreLanguages": {
-          "title": "新增更多語言",
-          "description": "在八月的第一波之後，我們會在今年剩下的時間繼續把 Jiki 翻譯成更多語言，讓更多學習者能用自己的母語使用這個平台。我們會依據社群的需求，以及哪裡能帶來最大影響來決定優先順序。"
-        },
-        "sql": {
-          "title": "推出 SQL",
-          "description": "今年稍晚，我們會在 Jiki 中加入 SQL，讓學習者用實際動手的方式了解資料庫與查詢，並採用與課程其他部分相同的逐步說明、從做中學的做法。"
-        }
-      }
     }
   },
   "misc": {
@@ -1088,10 +993,6 @@
       "title": "成就 - Jiki",
       "description": "在學習寫程式的過程中追蹤你的進度並解鎖成就。"
     },
-    "build": {
-      "title": "學習開發 - Jiki",
-      "description": "觀看關於開發真實專案的系列影片、深入探討運作原理，以及直播問答。"
-    },
     "dashboard": {
       "title": "儀表板 - Jiki",
       "description": "追蹤你的學習進度、繼續寫程式練習，並查看你的成就。"
@@ -1138,15 +1039,11 @@
     },
     "home": {
       "title": "Jiki - 用有趣的方式學習寫程式",
-      "description": "在 LLM 時代學習寫程式與開發的最佳方式！由 Exercism 團隊打造"
+      "description": "在 LLM 時代學習寫程式的最佳方式！由 Exercism 團隊打造"
     },
     "premium": {
       "title": "進階版 - Jiki",
       "description": "透過 Jiki 進階版加速你成為即戰力的路程。完整存取課程、專案、AI 支援等豐富內容。"
-    },
-    "roadmap": {
-      "title": "開發藍圖 - Jiki",
-      "description": "Jiki 接下來要開發的內容。按季預覽即將推出的課程、專案與功能。"
     },
     "testimonials": {
       "title": "學員評價 - Jiki",
@@ -1180,6 +1077,14 @@
     },
     "exercises": {
       "notFound": "找不到練習"
+    },
+    "build": {
+      "title": "學習開發 - Jiki",
+      "description": "觀看關於開發真實專案的系列影片、深入探討運作原理，以及直播問答。"
+    },
+    "roadmap": {
+      "title": "開發藍圖 - Jiki",
+      "description": "Jiki 接下來要開發的內容。按季預覽即將推出的課程、專案與功能。"
     }
   },
   "apiErrors": {
@@ -1350,7 +1255,7 @@
   "modals": {
     "welcomeToPremium": {
       "badge": "Premium 會員",
-      "description": "感謝升級！你現在可以使用所有 Premium 專屬福利，包含與 Jiki 無限制對話、專案，以及學習開發！",
+      "description": "感謝升級！你現在可以使用所有 Premium 專屬福利，包含與 Jiki 無限制對話，以及所有挑戰！",
       "title": "歡迎加入 <highlight>Premium！</highlight>"
     },
     "confirmation": {
@@ -1404,14 +1309,6 @@
     "exerciseSuccess": {
       "defaultTitle": "恭喜！",
       "defaultMessage": "所有測試皆已通過！你已成功完成這個練習。"
-    },
-    "welcome": {
-      "title": "歡迎來到 Jiki！",
-      "subtitle": "觀看這段簡短的影片來開始吧。",
-      "skipTitle": "要跳過歡迎影片嗎？",
-      "skipMessage": "這段影片能幫助你充分利用 Jiki。你確定要跳過嗎？",
-      "skipConfirm": "跳過影片",
-      "skipCancel": "繼續觀看"
     },
     "walkthroughConfirm": {
       "title": "要不要先試著自己解題看看？",
@@ -1580,6 +1477,20 @@
       "error": "錯誤：{message}",
       "perMonthShort": "/月"
     },
+    "exerciseIntroVideo": {
+      "title": "歡迎來到你的第一個繪圖練習",
+      "intro": "看看這段簡短介紹，了解繪圖練習怎麼運作、又該怎麼解。你也可以在說明的最下方看到這段影片。",
+      "close": "我們開始吧",
+      "watchAlt": "觀看介紹"
+    },
+    "welcome": {
+      "title": "歡迎來到 Jiki！",
+      "subtitle": "觀看這段簡短的影片來開始吧。",
+      "skipTitle": "要跳過歡迎影片嗎？",
+      "skipMessage": "這段影片能幫助你充分利用 Jiki。你確定要跳過嗎？",
+      "skipConfirm": "跳過影片",
+      "skipCancel": "繼續觀看"
+    },
     "calendarSubscribe": {
       "title": "訂閱日曆",
       "description": "將 Jiki 的直播課程加入你的日曆。排定新課程時會自動顯示。",
@@ -1588,12 +1499,6 @@
       "otherLabel": "Outlook 與其他日曆",
       "otherHelp": "複製此連結並將其新增為訂閱日曆。",
       "copied": "已複製"
-    },
-    "exerciseIntroVideo": {
-      "title": "歡迎來到你的第一個繪圖練習",
-      "intro": "看看這段簡短介紹，了解繪圖練習怎麼運作、又該怎麼解。你也可以在說明的最下方看到這段影片。",
-      "close": "我們開始吧",
-      "watchAlt": "觀看介紹"
     },
     "subscriptionSuccess": {
       "chatGate": {
@@ -1715,6 +1620,41 @@
       "upsell": {
         "title": "新挑戰等著你！",
         "description": "結合你的技能，透過 Premium 挑戰來挑戰自己。"
+      },
+      "premiumUpsell": {
+        "label": "Jiki 進階版",
+        "completionStat": "進階版會員<strong>完成課程的機率高出 26 倍</strong>。",
+        "price": "只要<price></price>。<muted>一次付清，不用訂閱。</muted>",
+        "upgrade": "升級到進階版",
+        "pendingNote": "你的付款還在處理中。一確認完成，我們就會開通進階版，並寄信通知你。",
+        "accelerate": {
+          "heading": "<highlight>加速</highlight>你的學習！",
+          "benefits": "<strong>你會得到：</strong>進階版挑戰、無限次使用「問 Jiki」、無限次深度探索、官方證書、零廣告，還有更多！"
+        },
+        "testimonials": {
+          "heading": "加入<highlight>進階版行列</highlight>",
+          "show": "顯示第 {number} 則推薦",
+          "quotes": {
+            "veronika": "價格便宜到難以置信，現在課程走了一半，我可以很驕傲地說，我已經快三個月沒碰 ChatGPT 了！🙂",
+            "abhinav": "購買力平價折扣讓它變得更親民了。謝謝你們讓大家都學得起。",
+            "laura": "社群、練習、導師，還有 Jeremy，跟他們互動的體驗都很棒。",
+            "kazzybits": "我對「思考」這件事的看法，還有我面對問題的整體方式，都徹底改變了。",
+            "nilophars": "視覺化的呈現、心智模型的建立、導師的回饋，還有互動式練習，都非常有價值。",
+            "jj": "從有趣又俐落的介面，到直播課程、實作工作坊和 Discord 討論，這些全部加起來，就是一流的學習體驗。"
+          },
+          "roles": {
+            "veronika": "初階開發者",
+            "abhinav": "新手",
+            "laura": "曾困在教學地獄裡",
+            "kazzybits": "新手",
+            "jj": "初階開發者"
+          }
+        },
+        "neverGetStuck": {
+          "heading": "<highlight>再也</highlight>不會卡住",
+          "text": "有了進階版，每一道練習都有 Jiki 在旁邊，輕輕推你往正確的方向走。",
+          "statNumber": "26 倍"
+        }
       },
       "userProfile": {
         "premiumMember": "Premium 會員"
@@ -2013,31 +1953,6 @@
       "finishTooltip": "看完影片以繼續"
     }
   },
-  "projects": {
-    "projectCard": {
-      "comingSoon": "即將推出",
-      "comingSoonLabel": "即將推出"
-    },
-    "episodeCard": {
-      "premium": "進階版"
-    },
-    "episodeSummary": {
-      "heading": "本集摘要",
-      "whereWeStart": "起點",
-      "whereWeEnd": "終點",
-      "whatWeCover": "涵蓋內容"
-    },
-    "projectPage": {
-      "backToAllProjects": "← 回到<strong>所有專案</strong>"
-    },
-    "episodePage": {
-      "backToProject": "← 回到<strong>{title}</strong>",
-      "relevantGuidesDescription": "在解決這個步驟時可能對你有幫助的指南。"
-    },
-    "relevantGuides": {
-      "heading": "相關指南"
-    }
-  },
   "guides": {
     "guidesContent": {
       "pageHeading": "指南與操作說明",
@@ -2066,11 +1981,11 @@
     "relatedGuides": {
       "heading": "相關指南"
     },
-    "featuredInProjects": {
-      "heading": "專案中的精選指南"
-    },
     "metadata": {
       "notFoundTitle": "找不到指南"
+    },
+    "featuredInProjects": {
+      "heading": "專案中的精選指南"
     }
   },
   "unsubscribe": {
@@ -2323,6 +2238,130 @@
         "heading": "你會用到的函式",
         "description": "這個練習提供給你的基礎元件。"
       }
+    }
+  },
+  "build": {
+    "upcomingStreams": {
+      "heading": "即將開始的直播",
+      "toBeAnnounced": "即將公布",
+      "subscribeButton": "訂閱行事曆"
+    },
+    "hub": {
+      "title": "學會打造 - 專案",
+      "description": "跟著 Jeremy 從零開始打造真實專案。學會他所知道的一切！"
+    }
+  },
+  "roadmap": {
+    "page": {
+      "heading": "發展藍圖",
+      "subheading": "Jiki 的未來方向。以每一季為單位，看看我們正在推出什麼、接下來要做什麼，以及還在構思中的點子。",
+      "disclaimer": "這份藍圖是我們目前計畫的縮影。隨著我們從社群中學習，優先順序會調整，因此日期與範圍都可能變動。"
+    },
+    "status": {
+      "shipped": "已推出",
+      "inProgress": "進行中",
+      "planned": "規劃中"
+    },
+    "changelog": {
+      "title": "更新紀錄",
+      "subtitle": "我們最近在 Jiki 上推出的改進。",
+      "learnToBuildLaunch": {
+        "date": "2026 年 7 月 11 日",
+        "title": "推出學會打造",
+        "description": "Jeremy 的全新系列已經上線，他會和學習者一起從零開始打造真實又實用的專案。"
+      },
+      "milestones6To10": {
+        "date": "2026 年 7 月",
+        "title": "學會寫程式推出第 6 到第 10 個里程碑",
+        "description": "學會寫程式學習路徑上新增了五個里程碑，把學習旅程遠遠延伸到基礎知識之外。"
+      },
+      "jikiLaunch": {
+        "date": "2026 年 6 月 7 日",
+        "title": "Jiki 正式上線！",
+        "description": "Jiki 正式上線了（雖然還是 beta 版！）"
+      }
+    },
+    "phases": {
+      "now": {
+        "label": "現在",
+        "timeframe": "2026 年 7 月",
+        "summary": "這個月我們專注的事情。",
+        "learnToBuild": {
+          "title": "推出學會打造",
+          "description": "Jeremy 的全新系列已經上線，他會和學習者一起從零開始打造真實又實用的專案。每個專案都拆成一小段一小段的課程，不只展示程式碼，也展示打造軟體過程中的思考、錯誤與決定。"
+        },
+        "launchBugs": {
+          "title": "解決上線後的各種問題",
+          "description": "Jiki 上線後，我們正隨著真實學習者的使用，一一消滅 bug、磨平粗糙的地方。你可以期待整個應用程式持續有各種小修正與使用體驗的改善。"
+        },
+        "earlyFeedback": {
+          "title": "回應初期回饋",
+          "description": "我們會閱讀每一則訊息、客服討論串與建議。最有影響力的回饋會被轉化成調整與小功能，讓體驗每週都在進步。"
+        },
+        "foundations": {
+          "title": "穩固基礎",
+          "description": "在幕後，我們正在強化可靠性、效能與可觀測性，好為下一波功能打下穩固的基礎。這些工作比較不顯眼，卻是我們現在最重要的事。"
+        }
+      },
+      "next": {
+        "label": "接下來",
+        "timeframe": "2026 年第三季",
+        "summary": "已設計完成，排入待辦。",
+        "betaToLive": {
+          "title": "從 Beta 版正式進入正式版",
+          "description": "Jiki 目前是 beta 版。等上線的塵埃落定，我們會拿掉 beta 標籤，正式成為完整上線的產品，並提供更可靠的保證、更清楚的定價說明，以及更完善的新手引導流程。屆時我們也會寄出上線通知信給 Exercism 社群，並與合作夥伴一起展開宣傳。"
+        },
+        "deepDiveVideos": {
+          "title": "新增深入探索影片",
+          "description": "比核心課程更進一步的長篇影片，深入探索各種概念。適合想了解「為什麼」而不只是「怎麼做」，並想看看這些概念如何連結到更廣大的程式設計世界的學習者。"
+        },
+        "newLanguages": {
+          "title": "推出多種新語言",
+          "description": "從八月開始，我們要把 Jiki 帶給使用自己語言的學習者，翻譯整個介面與課程內容，而不只是行銷頁面。這一切會從 7 月 31 日到 8 月 2 日週末的<link>社群翻譯松</link>開始。"
+        },
+        "pythonVersion": {
+          "title": "推出 Python 版本",
+          "description": "九月登場，完整的 Python 學習路徑，深度與我們的 JavaScript 課程相同。相同的練習理念、相同的逐步視覺化工具、相同的精緻程度，只是改用 Python 作為教學語言。"
+        }
+      },
+      "future": {
+        "label": "未來",
+        "timeframe": "2026 年第四季",
+        "summary": "即將到來，並會隨著我們的學習而調整。",
+        "moreLanguages": {
+          "title": "新增更多語言",
+          "description": "在八月的第一波之後，我們會在今年剩下的時間繼續把 Jiki 翻譯成更多語言，讓更多學習者能用自己的母語使用這個平台。我們會依據社群的需求，以及哪裡能帶來最大影響來決定優先順序。"
+        },
+        "sql": {
+          "title": "推出 SQL",
+          "description": "今年稍晚，我們會在 Jiki 中加入 SQL，讓學習者用實際動手的方式了解資料庫與查詢，並採用與課程其他部分相同的逐步說明、從做中學的做法。"
+        }
+      }
+    }
+  },
+  "projects": {
+    "projectCard": {
+      "comingSoon": "即將推出",
+      "comingSoonLabel": "即將推出"
+    },
+    "episodeCard": {
+      "premium": "進階版"
+    },
+    "episodeSummary": {
+      "heading": "本集摘要",
+      "whereWeStart": "起點",
+      "whereWeEnd": "終點",
+      "whatWeCover": "涵蓋內容"
+    },
+    "projectPage": {
+      "backToAllProjects": "← 回到<strong>所有專案</strong>"
+    },
+    "episodePage": {
+      "backToProject": "← 回到<strong>{title}</strong>",
+      "relevantGuidesDescription": "在解決這個步驟時可能對你有幫助的指南。"
+    },
+    "relevantGuides": {
+      "heading": "相關指南"
     }
   }
 }

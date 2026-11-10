@@ -5,7 +5,7 @@ tags: ["support"]
 seo:
   description: "Perguntas frequentes sobre o Jiki, a nossa plataforma para aprender a programar, os cursos e o Jiki Premium."
   keywords: ["perguntas frequentes", "faqs", "jiki", "apoio", "premium"]
-en_md5: c0707bb8b7ba85b225bb90881f00ace8
+en_md5: d95c17ebd4744af98eded3767acf105f
 ---
 
 ## Sobre o curso
@@ -14,11 +14,11 @@ en_md5: c0707bb8b7ba85b225bb90881f00ace8
 
 Os exercícios do Aprende a Programar, que formam o núcleo do currículo de aprendizagem de programação, são totalmente gratuitos. Sem cartão, sem período experimental, sem letras pequenas.
 
-O Jiki Premium é um pagamento único, com preços por país, e desbloqueia o acesso total ao Aprende a Construir, aos Projetos Jiki e ao apoio ilimitado do Ask Jiki AI. Inclui também sessões regulares de perguntas e respostas em direto, em que podes participar, certificados dos cursos, uma experiência de aprendizagem sem publicidade e acesso antecipado a novas funcionalidades.
+O Jiki Premium é um pagamento único, com preços por país, e desbloqueia os Jiki Challenges, o apoio ilimitado do Ask Jiki AI, sessões regulares de perguntas e respostas em direto em que podes participar, certificados dos cursos, uma experiência de aprendizagem sem publicidade e acesso antecipado a novas funcionalidades.
 
 ### Quanto tempo preciso de dedicar ao curso por semana?
 
-Podes dedicar tanto tempo quanto quiseres, muito ou pouco. A maioria das pessoas termina o Aprende a Programar em 12 a 20 semanas, com cerca de 5 a 10 horas por semana. O Aprende a Construir está sempre em curso, por isso podes acompanhar ao teu ritmo à medida que saem novos episódios e participar nas sessões em direto quando te der jeito.
+Podes dedicar-lhe o tempo que quiseres, muito ou pouco. A maioria das pessoas termina o curso em 8 a 12 semanas, com cerca de 5 a 10 horas por semana.
 
 ### O curso é difícil? Preciso de ser muito inteligente?
 
@@ -29,8 +29,6 @@ Se te esforçares, pedires ajuda quando ficares preso e aceitares o desafio, vai
 ### O Jiki já está disponível?
 
 Sim, podes criar uma conta e começar hoje mesmo o currículo gratuito do Aprende a Programar.
-
-A primeira sessão do Aprende a Construir será em meados de junho. Depois de entrares, podes inscrever-te para receber um lembrete.
 
 ### Já me inscrevi no Bootcamp. Isto é diferente?
 

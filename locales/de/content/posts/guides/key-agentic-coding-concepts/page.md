@@ -5,7 +5,7 @@ tags: ["agentic-coding"]
 seo:
   description: "Die wichtigsten Konzepte hinter dem Agentic Coding, für Einsteiger erklärt: was KI-Modelle und Tokens sind, wie Kontextfenster funktionieren und warum Agenten manchmal Fehler machen."
   keywords: ["Agentic-Coding-Konzepte", "LLM", "Tokens", "Kontextfenster", "KI-Modelle", "Prompts", "Halluzinationen"]
-en_md5: d963e01d7934f4003d436029d1808fc8
+en_md5: 4133804b88528c6fcfd12bb34864b867
 ---
 
 ## Einleitung
@@ -70,4 +70,4 @@ Eine Sache noch, die du wissen solltest, besonders bei kostenlosen Tarifen: Kost
 
 ## Das ist das Fundament
 
-Modelle sind das „Gehirn", Tokens sind die Währung, der Kontext ist das Gedächtnis, Prompts sind das Lenkrad, und die Schleife macht es erst zum Agenten. Alles Weitere lernst du, indem du dich selbst hineinkniest, und genau dazu raten wir dir. Wenn du noch kein Tool eingerichtet hast, bringt dich unsere [Installationsanleitung](/guides/installing-an-agentic-coding-platform) in zehn Minuten ans Ziel. Schau dir dann die erste Sitzung von [Frontend Basics](/build/frontend-basics/setting-up-the-project) in Learn to Build an, um das alles in Aktion zu sehen.
+Modelle sind das „Gehirn", Tokens sind die Währung, der Kontext ist das Gedächtnis, Prompts sind das Lenkrad, und die Schleife macht es erst zum Agenten. Alles Weitere lernst du, indem du dich selbst hineinkniest, und genau dazu raten wir dir. Wenn du noch kein Tool eingerichtet hast, bringt dich unsere [Installationsanleitung](/guides/installing-an-agentic-coding-platform) in zehn Minuten ans Ziel.

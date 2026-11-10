@@ -1,11 +1,11 @@
 ---
 title: "Jiki faz hoje 10 (dias)!"
-excerpt: "O Jiki faz hoje 10 dias. Um balanço dos nossos primeiros dez dias de beta aberta: as inscrições, as aulas concluídas, os erros que corrigimos e o que vem a seguir."
+excerpt: "O Jiki faz hoje 10 dias. Um balanço dos nossos primeiros dez dias de beta aberta: as inscrições, as aulas concluídas, os bugs que corrigimos e o que vem a seguir."
 tags: ["jiki", "beta", "update", "milestone"]
 seo:
   description: "Dez dias de beta aberta do Jiki: milhares de inscrições, quase 25 000 aulas concluídas, exercícios reformulados e uma antevisão do que vem a seguir."
   keywords: ["jiki", "aprender a programar", "beta", "atualização"]
-en_md5: 0516f06c7acded488fce4e6788644ac0
+en_md5: 19c95590ad2adf9ad1cab87de277e78a
 ---
 
 O Jiki faz hoje 10 dias. É um marco inicial, mas merece uma pausa para refletir!
@@ -19,8 +19,6 @@ Os nossos utilizadores beta encontraram alguns bugs e algumas coisas que podem s
 Também tem havido muitas pessoas a usar o «Pergunta ao Jiki», com milhares de conversas. Estou ansioso por ler muitas delas para melhorar a inteligência artificial, mas hoje já publiquei algumas melhorias com base nos meus próprios testes, o que, espero, deve tornar o Jiki um pouco mais inteligente!
 
 Alguns dos nossos testadores avançados (programadores mais experientes) já chegaram ao marco 7, onde o conteúdo faz uma pausa. Vou lançar os próximos marcos nos próximos dias, por isso em breve terás mais coisas para experimentares!
-
-Estou mesmo entusiasmado por lançar a secção «Aprende a Construir» daqui a algumas semanas!
 
 Se estás a gostar do Jiki, pensa em subscrever o **[Premium](https://jiki.io/premium)** para nos apoiares.
 

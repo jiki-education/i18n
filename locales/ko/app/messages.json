@@ -60,13 +60,12 @@
     "sidebar": {
       "groups": {
         "learnToCode": "코딩 배우기",
-        "learnToBuild": "만들면서 배우기",
         "community": "커뮤니티",
-        "more": "더 보기"
+        "more": "더 보기",
+        "learnToBuild": "만들면서 배우기"
       },
       "nav": {
         "learn": "코딩 기초",
-        "build": "프로젝트",
         "challenges": "챌린지",
         "concepts": "코딩 개념",
         "achievements": "달성 기록",
@@ -77,7 +76,8 @@
         "settings": "설정",
         "help": "도움말",
         "upgrade": "Premium으로 업그레이드",
-        "logOut": "로그아웃"
+        "logOut": "로그아웃",
+        "build": "프로젝트"
       },
       "premiumPill": "프리미엄"
     },
@@ -172,17 +172,6 @@
       "copied": "링크를 복사했어요"
     },
     "perMonth": "/월"
-  },
-  "build": {
-    "upcomingStreams": {
-      "heading": "다가오는 라이브 세션",
-      "toBeAnnounced": "추후 공지 예정",
-      "subscribeButton": "캘린더 구독하기"
-    },
-    "hub": {
-      "title": "만들면서 배우기 - 프로젝트",
-      "description": "Jeremy와 함께 처음부터 실제 프로젝트를 만들어 봐요. 그가 아는 모든 것을 배워요!"
-    }
   },
   "auth": {
     "oauth": {
@@ -353,13 +342,13 @@
       "title": "구독을 취소할까요?",
       "message": "떠나신다니 정말 아쉬워요! 취소하면 현재 결제 기간이 끝나는 시점에 프리미엄 이용 권한을 잃게 돼요.",
       "benefitsTitle": "지금 누리고 있는 혜택:",
+      "keep": "구독 유지하기",
+      "cancel": "구독 취소하기",
+      "defaultBillingPeriodEnd": "결제 기간 종료일",
       "benefit1": "Jiki의 무제한 AI 도움",
       "benefit2": "모든 프로젝트와 학습 경로",
       "benefit3": "수료 증명서",
-      "benefit4": "광고 없는 이용",
-      "keep": "구독 유지하기",
-      "cancel": "구독 취소하기",
-      "defaultBillingPeriodEnd": "결제 기간 종료일"
+      "benefit4": "광고 없는 이용"
     },
     "cancelSuccess": {
       "title": "구독이 취소됐어요",
@@ -574,28 +563,20 @@
   },
   "landing": {
     "hero": {
-      "tagline": "멋진 걸 만들고, 생산적으로 일하고, <strong>{year}년에도 계속 앞서 나가는</strong> 데 필요한 기술을 배워요.",
+      "tagline": "정말 보고 싶어지는 튜토리얼, 정말 즐거운 연습 문제. <strong>3개월이면 초보에서 실력자로.</strong> 게다가 무료예요!",
       "loadingVideo": "동영상 불러오는 중",
       "playVideo": "동영상 재생",
       "watchPrompt": "읽는 게 잘 안 맞아요? <strong>재생 버튼을 눌러 봐요</strong>. 필요한 걸 다 알려줄게요!",
-      "headline": "<highlight>코딩과 만들기</highlight>를 배우는 현대적인 방법",
+      "headline": "즐겁게 <highlight>코딩을 배워요!</highlight>",
+      "audienceAbsoluteBeginners": "<name>완전 초보자</name>로 <u>빠르게 시작</u>하고 싶은 분.",
+      "audienceRepeatBeginners": "<name>다시 시작하는 분</name>으로 <u>제대로 이해</u>되길 바라는 분.",
+      "audienceJuniors": "<name>주니어 개발자</name>로 <u>기초를 다시 다지고</u> 싶은 분.",
       "audienceBeginners": "가장 빠르고 좋은 학습 방법을 찾는 <name>입문자</name>",
-      "audienceJuniors": "실력을 빠르게 키우고 싶은 <name>주니어 개발자</name>",
       "audienceEntrepreneurs": "사람을 뽑기 전에 직접 만들어 보고 싶은 <name>창업가와 바이브 코더</name>"
     },
-    "twoHalves": {
-      "eyebrow": "두 가지 핵심 기술",
-      "heading": "개발자가 되기 위한 두 갈래",
-      "intro": "Jiki는 <strong>코딩하는 법</strong>을 (가장 재미있고 효과적인 방법으로!) 알려주고, 전문가들이 쓰는 것과 똑같은 기술로 <strong>실제로 무언가를 만드는 법</strong>도 알려줘요. <strong>첫날부터요.</strong>",
-      "codeHeading": "<word>코딩</word> 배우기",
-      "codeBody": "모든 핵심 개념을 자세한 동영상 설명과 함께 배우고, 수백 개의 연습 문제와 프로젝트로 연습해요",
-      "buildHeading": "<word>만들기</word> 배우기",
-      "buildBody": "첫날부터 전문가들이 쓰는 기술을 배워요. 데이터베이스, 인증, 프런트엔드, 백엔드 등등!",
-      "techLabel": "이런 기술을 배워요:"
-    },
     "learnToCode": {
-      "heading": "<word>코딩</word> 배우기",
-      "intro": "컴퓨터에 원하는 것을 전달할 때 쓰는 핵심 기술인 코딩을 익혀요. <highlight>탄탄한 코딩 기초</highlight>를 쌓도록 도와줄게요.",
+      "heading": "코딩 기초 다지기",
+      "intro": "배움은 <highlight>일이 아니라 놀이</highlight>처럼 느껴져야 해요. Jiki에서는 퍼즐을 풀고, 게임을 만들고, 직접 해보면서 배워요.",
       "demo": {
         "stageDescription": "Jiki 앱 애니메이션: 학습자가 스페이스 인베이더 연습 문제를 실행하면 코드가 레이저 대포를 격자 밖으로 움직여요. 학습자가 Jiki에게 도움을 청하고, 경계값을 20에서 11로 고치면 연습 문제를 통과해요.",
         "run": "코드 실행",
@@ -668,32 +649,6 @@
       "flowerFlipbook": "꽃 플립북",
       "footnote": "…그리고 이건 첫 몇 주에 불과해요!"
     },
-    "learnToBuild": {
-      "heading": "<word>만들기</word> 배우기",
-      "intro": "최신 에이전트 코딩을 활용해 데이터베이스, 인증, 프런트엔드, 백엔드 같은 핵심 기술을 빠르게 배워요.",
-      "livestreamsLead": "인터랙티브 라이브 강의",
-      "livestreamsDetail": "개념이나 내 프로젝트에서 막혔나요? 커뮤니티의 실제 질문과 함께 <strong>정기 라이브 방송</strong>에서 답을 얻어요.",
-      "technologiesLead": "가짜가 아닌 진짜 프로젝트.",
-      "technologiesDetail": "Jeremy가 실제 프로젝트를 처음부터 만들며 모든 결정을 설명하는 걸 보면서, 자기 아이디어로 따라 만들어 봐요.",
-      "portfolioLead": "다양한 기술을 폭넓게 배워요",
-      "portfolioDetail": "최신 앱을 만들려면 인증, API, 백엔드, 프런트엔드 등 여러 시스템을 다뤄야 해요. 이 모든 걸 알려줄게요.",
-      "liveQaAlt": "Jiki 라이브 질의응답을 진행하는 Jeremy",
-      "topicsLabel": "직접 다뤄볼 것들:",
-      "databases": "데이터베이스",
-      "auth": "인증",
-      "frontendBackend": "프런트엔드와 백엔드",
-      "apis": "API",
-      "deployment": "배포",
-      "llmIntegration": "LLM 연동",
-      "liveQa_fred": "드디어 됐어요. 세 번이나 시도했지만 결국 해냈어요.",
-      "liveQa_oleksandra": "클로저를 다시 설명해 줄 분 있나요? 문법은 알겠는데, 왜 쓰는 건지 모르겠어요.",
-      "liveQa_shaun": "아, 이제야 이해됐어요.",
-      "liveQa_lukas": "방금 첫 프로젝트를 배포했어요. 여기까지 올 줄은 정말 몰랐어요.",
-      "joinLive": "라이브 토론 참여하기",
-      "catchUp": "나중에 다시 보기",
-      "getSupport": "지원받기",
-      "liveQa_drac": "이걸 이렇게 명쾌하게 설명한 곳은 처음이에요 🙌"
-    },
     "outcomes": {
       "bubble": "강의가 끝나면",
       "heading": "과정을 마치면 얻는 것",
@@ -702,15 +657,17 @@
       "certificateBody": "이력서와 LinkedIn 프로필의 자격 항목에 추가할 수 있는 검증 가능한 수료증을 받아요. 그리고 이 수료증이 정말 노력으로 얻은 것이라는 걸 알게 될 거예요!",
       "certificateAlt": "Jiki 강의 수료증",
       "shareOnLinkedIn": "LinkedIn에 공유하기",
-      "portfolioTitle": "다양한 실제 프로젝트 포트폴리오",
-      "portfolioBody": "관심사에 맞는 실제 프로젝트를 만들어요. 흔한 할 일 목록 앱이 아니라, 창의성과 아이디어, 실력을 보여줄 수 있는 진짜 앱이에요.",
+      "thinkingTitle": "비판적 사고력 향상",
+      "thinkingBody": "직접 손으로 해보는 강의라 문제와 씨름하게 돼요. 문제 해결력과 비판적 사고력이 자라고, 살아가면서 두루 쓸모가 있어요.",
       "habitTracker": "개인 습관 트래커",
       "homepage": "나의 디지털 홈",
       "recipeBox": "레시피 플래너",
       "dashboard": "데이터 대시보드",
-      "understandingTitle": "모든 것이 어떻게 돌아가는지에 대한 이해",
+      "understandingTitle": "탄탄한 코딩 기초",
       "understandingBody": "Jiki는 커리어를 쌓을 수 있는 탄탄한 기초를 만들어 줘요. 낯선 코드를 읽고, 어떻게 동작하는지 추론하고, 버그를 빠르게 찾아낼 수 있게 돼요.",
-      "codeNote": "Wordle 같은 게임을 처음부터 만드는 법도 알게 돼요"
+      "codeNote": "Wordle 같은 게임을 처음부터 만드는 법도 알게 돼요",
+      "portfolioTitle": "다양한 실제 프로젝트 포트폴리오",
+      "portfolioBody": "관심사에 맞는 실제 프로젝트를 만들어요. 흔한 할 일 목록 앱이 아니라, 창의성과 아이디어, 실력을 보여줄 수 있는 진짜 앱이에요."
     },
     "meetJeremy": {
       "portraitAlt": "Jeremy Walker",
@@ -761,31 +718,67 @@
       "heading": "자주 묻는 질문",
       "q1": "비용이 얼마나 들어요?",
       "q1a1": "<strong>코딩 배우기</strong> 연습 문제, 즉 핵심 코딩 학습 커리큘럼은 <strong>완전히 무료</strong>예요. 카드 등록도, 체험 기간도, 숨은 조건도 없어요.",
-      "q1Item1": "<strong>만들기 배우기</strong> 전체 이용",
-      "q1Item2": "<strong>Jiki 프로젝트</strong>에서 실력 합치기",
+      "q1Item2": "프리미엄 <strong>챌린지</strong> 열기",
       "q1Item3": "<strong>Jiki에게 묻기</strong> AI 도움 무제한",
       "q1Item4": "참여할 수 있는 정기 <strong>질문과 답변 라이브 방송</strong>",
       "q1Item5": "강의를 마치면 <strong>인증서</strong> 받기",
       "q1Item6": "<strong>광고 없는</strong> 학습 경험",
       "q1Item7": "새 기능 <strong>우선 체험</strong>",
       "q2": "이 강의에 매주 얼마나 시간을 써야 하나요?",
-      "q2a": "원하는 만큼 시간을 쓰면 돼요. 대부분 <strong>코딩 배우기</strong>를 주당 5~10시간씩 12~20주 안에 끝내요. <strong>만들기 배우기</strong>는 계속 이어지니까, 새 에피소드가 올라올 때 원하는 때에 들여다보고, 형편에 맞게 라이브 방송에도 참여하면 돼요.",
+      "q2a": "원하는 만큼 시간을 쓰면 돼요. 대부분 <strong>코딩 배우기</strong>를 주당 5~10시간씩 3개월 정도면 끝내요.",
       "q3": "강의는 얼마나 어려워요? 얼마나 똑똑해야 하나요?",
       "q3a1": "이 강의는 어떤 배경이든 누구나 할 수 있도록 만들었어요. 코딩을 배우는 데 \"똑똑해야\" 한다고 생각하지 않아요. 다만 노력을 기울이고, 어려움에 맞설 마음은 있어야 해요.",
       "q3a2": "그런데 노력을 기울이고, 막힐 때 도움을 청하고, 어려움을 즐긴다면 짧은 시간에 얼마나 멀리 갈 수 있는지 스스로 놀라게 될 거예요.",
       "q4": "Jiki는 지금 이용할 수 있나요?",
       "q4a1": "네, 지금 가입해서 무료 코딩 배우기 커리큘럼을 바로 시작할 수 있어요.",
-      "q4a2": "첫 <strong>만들기 배우기</strong> 세션은 <strong>6월 중순</strong>에 열려요. 가입하고 들어오면 알림을 신청할 수 있어요.",
       "q5": "부트캠프에 이미 가입했는데, Jiki는 다른 건가요?",
       "q5a1": "부트캠프에 함께해 주셔서 감사해요! Jiki는 우리 부트캠프가 발전한 다음 단계예요. 풀었던 연습 문제 대부분이 더 많은 문제와 함께 Jiki에 들어와 있어요. 3시간짜리 영상도 보기 편하도록 5~10분씩 잘게 나눴어요!",
       "q5a2": "부트캠프 회원이라면 Jiki 프리미엄 평생 이용권을 자동으로 받아요. 처음 시작하는 코딩 배우기 강의부터 앞으로 나올 강의까지 모두 적용돼요.",
       "intro": "가장 많이 받는 질문들을 모았어요. 여기에 없는 질문이 있나요? <link>이메일로 알려 주세요!</link>",
-      "q1a2": "<strong>Jiki 프리미엄</strong>은 <price></price>(국가별로 가격이 달라요)의 일회성 결제이며, 다음을 모두 이용할 수 있어요:"
+      "q1a2": "<strong>Jiki 프리미엄</strong>은 <price></price>(국가별로 가격이 달라요)의 일회성 결제이며, 다음을 모두 이용할 수 있어요:",
+      "q1Item1": "<strong>만들기 배우기</strong> 전체 이용",
+      "q4a2": "첫 <strong>만들기 배우기</strong> 세션은 <strong>6월 중순</strong>에 열려요. 가입하고 들어오면 알림을 신청할 수 있어요."
     },
     "latestNews": {
       "heading": "최신 소식",
       "byAuthor": "{name} 님의 글",
       "subheading": "Jiki의 소식을 <link>블로그</link>에서 계속 확인해요."
+    },
+    "twoHalves": {
+      "eyebrow": "두 가지 핵심 기술",
+      "heading": "개발자가 되기 위한 두 갈래",
+      "intro": "Jiki는 <strong>코딩하는 법</strong>을 (가장 재미있고 효과적인 방법으로!) 알려주고, 전문가들이 쓰는 것과 똑같은 기술로 <strong>실제로 무언가를 만드는 법</strong>도 알려줘요. <strong>첫날부터요.</strong>",
+      "codeHeading": "<word>코딩</word> 배우기",
+      "codeBody": "모든 핵심 개념을 자세한 동영상 설명과 함께 배우고, 수백 개의 연습 문제와 프로젝트로 연습해요",
+      "buildHeading": "<word>만들기</word> 배우기",
+      "buildBody": "첫날부터 전문가들이 쓰는 기술을 배워요. 데이터베이스, 인증, 프런트엔드, 백엔드 등등!",
+      "techLabel": "이런 기술을 배워요:"
+    },
+    "learnToBuild": {
+      "heading": "<word>만들기</word> 배우기",
+      "intro": "최신 에이전트 코딩을 활용해 데이터베이스, 인증, 프런트엔드, 백엔드 같은 핵심 기술을 빠르게 배워요.",
+      "livestreamsLead": "인터랙티브 라이브 강의",
+      "livestreamsDetail": "개념이나 내 프로젝트에서 막혔나요? 커뮤니티의 실제 질문과 함께 <strong>정기 라이브 방송</strong>에서 답을 얻어요.",
+      "technologiesLead": "가짜가 아닌 진짜 프로젝트.",
+      "technologiesDetail": "Jeremy가 실제 프로젝트를 처음부터 만들며 모든 결정을 설명하는 걸 보면서, 자기 아이디어로 따라 만들어 봐요.",
+      "portfolioLead": "다양한 기술을 폭넓게 배워요",
+      "portfolioDetail": "최신 앱을 만들려면 인증, API, 백엔드, 프런트엔드 등 여러 시스템을 다뤄야 해요. 이 모든 걸 알려줄게요.",
+      "liveQaAlt": "Jiki 라이브 질의응답을 진행하는 Jeremy",
+      "topicsLabel": "직접 다뤄볼 것들:",
+      "databases": "데이터베이스",
+      "auth": "인증",
+      "frontendBackend": "프런트엔드와 백엔드",
+      "apis": "API",
+      "deployment": "배포",
+      "llmIntegration": "LLM 연동",
+      "liveQa_fred": "드디어 됐어요. 세 번이나 시도했지만 결국 해냈어요.",
+      "liveQa_oleksandra": "클로저를 다시 설명해 줄 분 있나요? 문법은 알겠는데, 왜 쓰는 건지 모르겠어요.",
+      "liveQa_shaun": "아, 이제야 이해됐어요.",
+      "liveQa_lukas": "방금 첫 프로젝트를 배포했어요. 여기까지 올 줄은 정말 몰랐어요.",
+      "joinLive": "라이브 토론 참여하기",
+      "catchUp": "나중에 다시 보기",
+      "getSupport": "지원받기",
+      "liveQa_drac": "이걸 이렇게 명쾌하게 설명한 곳은 처음이에요 🙌"
     }
   },
   "premium": {
@@ -812,16 +805,16 @@
     "values": {
       "oneConversation": "대화 1회",
       "unlimited": "무제한",
-      "firstEpisodes": "첫 에피소드",
       "fullAccess": "전체 이용",
+      "firstEpisodes": "첫 에피소드",
       "sampleEpisode": "맛보기 에피소드"
     },
     "categories": {
       "codingFundamentals": "코딩 배우기",
-      "buildWithJeremy": "만들기 배우기",
       "support": "지원",
       "certificates": "인증서",
-      "experience": "경험"
+      "experience": "경험",
+      "buildWithJeremy": "만들기 배우기"
     },
     "features": {
       "codingExercisesTitle": "코딩 연습 문제",
@@ -832,20 +825,20 @@
       "jikiChallengesDesc": "실력을 더 밀어 올리는 어려운 도전 과제에 나서 봐요.",
       "askJikiTitle": "Jiki에게 묻기",
       "askJikiDesc": "막혔을 때 Jiki에게 AI 힌트와 설명을 받아요.",
-      "buildingFundamentalsTitle": "만들기의 기초 시리즈",
-      "buildingFundamentalsDesc": "Jeremy가 웹 플랫폼을 처음부터 만드는 과정을 지켜봐요. 서버, 데이터베이스, 인증 등등.",
-      "howThingsWorkTitle": "어떻게 돌아갈까 시리즈",
-      "howThingsWorkDesc": "Exercism과 Jiki의 까다로운 부분과, 그것을 왜 그렇게 만들었는지 깊이 파고들어요.",
       "earlyAccessTitle": "새 기능 우선 체험",
       "earlyAccessDesc": "누구보다 먼저 새 기능을 써볼 수 있어요.",
       "communityForumsTitle": "커뮤니티 포럼",
       "communityForumsDesc": "질문을 올리고 다른 Jiki 수강생들과 함께 배워요.",
       "livestreamsTitle": "Jeremy와 함께하는 질문과 답변 라이브 방송",
-      "livestreamsDesc": "Jeremy가 코딩과 개발에 대한 질문에 답해 주는 라이브 질문과 답변 시간에 참여해요.",
+      "livestreamsDesc": "Jeremy가 코딩 질문에 답해 주는 라이브 질문과 답변 시간에 참여해요.",
       "certificatesTitle": "강의 수료 인증서 받기",
       "certificatesDesc": "공유할 수 있는 인증서로 배운 것을 자랑해요.",
       "adFreeTitle": "광고 없는 학습",
-      "adFreeDesc": "방해 요소 없이 학습에 집중해요."
+      "adFreeDesc": "방해 요소 없이 학습에 집중해요.",
+      "buildingFundamentalsTitle": "만들기의 기초 시리즈",
+      "buildingFundamentalsDesc": "Jeremy가 웹 플랫폼을 처음부터 만드는 과정을 지켜봐요. 서버, 데이터베이스, 인증 등등.",
+      "howThingsWorkTitle": "어떻게 돌아갈까 시리즈",
+      "howThingsWorkDesc": "Exercism과 Jiki의 까다로운 부분과, 그것을 왜 그렇게 만들었는지 깊이 파고들어요."
     },
     "faq": {
       "title": "자주 묻는 질문",
@@ -888,94 +881,6 @@
       "prioritySupportDescription": "도움이 필요할 때 더 빠른 답변을 받아요",
       "earlyAccessTitle": "우선 체험",
       "earlyAccessDescription": "새 기능과 콘텐츠를 가장 먼저 써봐요"
-    }
-  },
-  "roadmap": {
-    "page": {
-      "heading": "로드맵",
-      "subheading": "Jiki가 향하는 곳. 무엇을 출시했고, 다음은 무엇이며, 아직 무엇을 꿈꾸고 있는지 분기별로 보여줘요.",
-      "disclaimer": "이 로드맵은 현재 계획을 담은 스냅샷이에요. 커뮤니티에서 배우며 우선순위가 바뀌기 때문에 일정과 범위는 달라질 수 있어요."
-    },
-    "status": {
-      "shipped": "출시됨",
-      "inProgress": "진행 중",
-      "planned": "계획됨"
-    },
-    "changelog": {
-      "title": "업데이트 내역",
-      "subtitle": "최근 Jiki에 적용한 개선 사항이에요.",
-      "learnToBuildLaunch": {
-        "date": "2026년 7월 11일",
-        "title": "만들기 배우기 출시",
-        "description": "Jeremy가 수강생들과 함께 실제로 쓸모 있는 프로젝트를 처음부터 만들어 가는 새 시리즈가 공개됐어요."
-      },
-      "milestones6To10": {
-        "date": "2026년 7월",
-        "title": "코딩 배우기에 마일스톤 6~10 출시",
-        "description": "코딩 배우기 트랙에 새로운 마일스톤 다섯 개가 공개됐어요. 기초를 훨씬 넘어서는 여정이 이어져요."
-      },
-      "jikiLaunch": {
-        "date": "2026년 6월 7일",
-        "title": "Jiki 출시!",
-        "description": "Jiki가 공식적으로 출시됐어요 (아직 베타 버전이긴 하지만요!)"
-      }
-    },
-    "phases": {
-      "now": {
-        "label": "지금",
-        "timeframe": "2026년 7월",
-        "summary": "이번 달에 집중하고 있는 것들이에요.",
-        "learnToBuild": {
-          "title": "만들면서 배우기 출시",
-          "description": "Jeremy의 새로운 시리즈가 공개됐어요. 학습자들과 함께 실제로 쓸모 있는 프로젝트를 처음부터 만들어 나가는 시리즈예요. 각 프로젝트는 짧게 나눈 레슨으로 구성되어 있고, 코드뿐 아니라 소프트웨어를 완성해 나가는 과정의 사고, 실수, 결정까지 함께 보여줘요."
-        },
-        "launchBugs": {
-          "title": "출시 후 버그 잡기",
-          "description": "Jiki가 출시된 지금, 실제 학습자들이 플랫폼을 쓰면서 발견되는 버그를 잡고 거친 부분을 다듬고 있어요. 앱 전반에 걸쳐 작은 수정과 사용성 개선이 꾸준히 이어질 거예요."
-        },
-        "earlyFeedback": {
-          "title": "초기 피드백에 대응하기",
-          "description": "들어오는 모든 메시지와 지원 문의, 제안을 하나하나 읽고 있어요. 영향력이 큰 피드백은 개선 사항과 작은 기능으로 반영되어, 경험이 매주 나아지고 있어요."
-        },
-        "foundations": {
-          "title": "기반 다지기",
-          "description": "눈에 잘 보이지 않는 곳에서 안정성과 성능, 관측 가능성을 다듬으며 다음 기능들을 올릴 단단한 기반을 만들고 있어요. 겉으로는 잘 드러나지 않지만, 지금 우리가 할 수 있는 가장 중요한 일이에요."
-        }
-      },
-      "next": {
-        "label": "다음",
-        "timeframe": "2026년 3분기",
-        "summary": "설계를 마치고 순서를 기다리고 있어요.",
-        "betaToLive": {
-          "title": "베타에서 정식 출시로",
-          "description": "Jiki는 현재 베타 버전이에요. 출시 초기의 소란이 가라앉으면 베타 딱지를 떼고 정식 제품으로 거듭나요. 안정성에 대한 더 확실한 보장, 더 명확한 가격 정책, 매끄러운 시작 흐름을 갖추게 되죠. 이때 Exercism 커뮤니티에 출시 이메일을 보내고, 파트너들과 함께 홍보도 시작해요."
-        },
-        "deepDiveVideos": {
-          "title": "심층 탐구 영상 추가",
-          "description": "핵심 레슨을 넘어 개념을 깊이 있게 파고드는 장편 영상이에요. 어떻게 하는지 그 이면의 왜를 이해하고, 배운 개념이 프로그래밍이라는 더 넓은 세계와 어떻게 이어지는지 보고 싶은 학습자에게 딱이에요."
-        },
-        "newLanguages": {
-          "title": "여러 새로운 언어 출시",
-          "description": "8월부터 학습자들이 자기 언어로 Jiki를 쓸 수 있게 해요. 마케팅 페이지뿐 아니라 인터페이스와 커리큘럼 전체를 번역해요. 7월 31일부터 8월 2일 주말에 열리는 <link>커뮤니티 번역 마라톤</link>으로 시작해요."
-        },
-        "pythonVersion": {
-          "title": "Python 버전 출시",
-          "description": "9월에 찾아오는 Python 트랙은 JavaScript 커리큘럼과 같은 깊이를 갖춘 완전한 과정이에요. 연습 문제 철학도, 한 단계씩 따라가는 시각화 도구도, 완성도도 그대로지만 가르치는 언어가 Python이에요."
-        }
-      },
-      "future": {
-        "label": "앞으로",
-        "timeframe": "2026년 4분기",
-        "summary": "곧 다가올 계획이에요. 배워 나가면서 바뀔 수 있어요.",
-        "moreLanguages": {
-          "title": "더 많은 언어 추가",
-          "description": "8월의 첫 물결을 이어, 남은 한 해 동안 Jiki를 더 많은 언어로 번역해 나가요. 그래서 더 많은 학습자가 모국어로 플랫폼을 쓸 수 있게 되죠. 커뮤니티의 수요와 임팩트가 가장 큰 곳을 기준으로 우선순위를 정할 거예요."
-        },
-        "sql": {
-          "title": "SQL 출시",
-          "description": "올해 후반에는 Jiki에 SQL을 더해요. 나머지 커리큘럼과 같은 한 단계씩 따라가며 직접 해보는 방식으로 데이터베이스와 쿼리를 이해할 수 있게 해줘요."
-        }
-      }
     }
   },
   "misc": {
@@ -1088,10 +993,6 @@
       "title": "업적 - Jiki",
       "description": "코딩을 배우며 진행 상황을 추적하고 업적을 해제하세요."
     },
-    "build": {
-      "title": "만들기 배우기 - Jiki",
-      "description": "실제 프로젝트 제작, 작동 원리 심층 분석, 실시간 질의응답 세션을 다루는 비디오 시리즈를 시청하세요."
-    },
     "dashboard": {
       "title": "대시보드 - Jiki",
       "description": "학습 진도를 추적하고, 코딩 연습을 이어가며, 업적을 확인하세요."
@@ -1138,15 +1039,11 @@
     },
     "home": {
       "title": "Jiki - 코딩을 재미있게 배우세요",
-      "description": "LLM 시대에 코딩과 제작을 배우는 최고의 방법! Exercism을 만든 팀이 제공합니다."
+      "description": "LLM 시대에 코딩을 배우는 최고의 방법! Exercism을 만든 팀이 제공합니다."
     },
     "premium": {
       "title": "프리미엄 - Jiki",
       "description": "Jiki 프리미엄으로 취업 준비 속도를 높여 보세요. 모든 강의, 프로젝트, AI 지원 등을 자유롭게 이용할 수 있어요."
-    },
-    "roadmap": {
-      "title": "로드맵 - Jiki",
-      "description": "Jiki에서 무엇을 준비하고 있는지 분기별로 안내합니다. 다가오는 강의, 프로젝트, 기능을 살펴보세요."
     },
     "testimonials": {
       "title": "후기 - Jiki",
@@ -1180,6 +1077,14 @@
     },
     "exercises": {
       "notFound": "연습 문제를 찾을 수 없어요"
+    },
+    "build": {
+      "title": "만들기 배우기 - Jiki",
+      "description": "실제 프로젝트 제작, 작동 원리 심층 분석, 실시간 질의응답 세션을 다루는 비디오 시리즈를 시청하세요."
+    },
+    "roadmap": {
+      "title": "로드맵 - Jiki",
+      "description": "Jiki에서 무엇을 준비하고 있는지 분기별로 안내합니다. 다가오는 강의, 프로젝트, 기능을 살펴보세요."
     }
   },
   "apiErrors": {
@@ -1350,7 +1255,7 @@
   "modals": {
     "welcomeToPremium": {
       "badge": "Premium 회원",
-      "description": "업그레이드해 주셔서 감사합니다! 이제 Jiki와의 무제한 채팅, 프로젝트, Learn to Build 등 모든 Premium 혜택을 이용하실 수 있어요!",
+      "description": "업그레이드해 주셔서 감사합니다! 이제 Jiki와의 무제한 채팅과 모든 챌린지 등 모든 Premium 혜택을 이용하실 수 있어요!",
       "title": "<highlight>Premium</highlight>에 오신 것을 환영합니다!"
     },
     "confirmation": {
@@ -1404,14 +1309,6 @@
     "exerciseSuccess": {
       "defaultTitle": "축하합니다!",
       "defaultMessage": "모든 테스트를 통과했어요! 이 연습 문제를 성공적으로 완료했어요."
-    },
-    "welcome": {
-      "title": "Jiki에 오신 것을 환영합니다!",
-      "subtitle": "시작하려면 이 짧은 영상을 시청하세요.",
-      "skipTitle": "환영 영상을 건너뛸까요?",
-      "skipMessage": "이 영상은 Jiki를 최대한 활용하는 데 도움이 돼요. 정말 건너뛰시겠어요?",
-      "skipConfirm": "영상 건너뛰기",
-      "skipCancel": "계속 시청하기"
     },
     "walkthroughConfirm": {
       "title": "먼저 직접 풀어볼까요?",
@@ -1580,6 +1477,20 @@
       "error": "오류: {message}",
       "perMonthShort": "/월"
     },
+    "exerciseIntroVideo": {
+      "title": "첫 번째 그림 연습에 오신 것을 환영해요",
+      "intro": "그림 연습이 어떻게 이루어지고 어떻게 푸는지 짧은 영상으로 살펴봐요. 이 영상은 설명 맨 아래에서도 볼 수 있어요.",
+      "close": "시작해 볼까요",
+      "watchAlt": "소개 영상 보기"
+    },
+    "welcome": {
+      "title": "Jiki에 오신 것을 환영합니다!",
+      "subtitle": "시작하려면 이 짧은 영상을 시청하세요.",
+      "skipTitle": "환영 영상을 건너뛸까요?",
+      "skipMessage": "이 영상은 Jiki를 최대한 활용하는 데 도움이 돼요. 정말 건너뛰시겠어요?",
+      "skipConfirm": "영상 건너뛰기",
+      "skipCancel": "계속 시청하기"
+    },
     "calendarSubscribe": {
       "title": "캘린더 구독",
       "description": "Jiki의 라이브 세션을 캘린더에 추가하세요. 새 세션이 예약되면 자동으로 표시됩니다.",
@@ -1588,12 +1499,6 @@
       "otherLabel": "Outlook 및 기타 캘린더",
       "otherHelp": "이 링크를 복사하여 구독 캘린더로 추가하세요.",
       "copied": "복사됨"
-    },
-    "exerciseIntroVideo": {
-      "title": "첫 번째 그림 연습에 오신 것을 환영해요",
-      "intro": "그림 연습이 어떻게 이루어지고 어떻게 푸는지 짧은 영상으로 살펴봐요. 이 영상은 설명 맨 아래에서도 볼 수 있어요.",
-      "close": "시작해 볼까요",
-      "watchAlt": "소개 영상 보기"
     },
     "subscriptionSuccess": {
       "chatGate": {
@@ -1715,6 +1620,41 @@
       "upsell": {
         "title": "새로운 챌린지가 기다리고 있어요!",
         "description": "기술을 결합하여 Premium 챌린지에 도전하세요."
+      },
+      "premiumUpsell": {
+        "label": "Jiki 프리미엄",
+        "completionStat": "프리미엄 사용자는 <strong>강의를 끝낼 확률이 26배 더 높아요</strong>.",
+        "price": "<price></price>만 결제하면 돼요. <muted>한 번만 내면 되고, 구독이 아니에요.</muted>",
+        "upgrade": "프리미엄으로 업그레이드",
+        "pendingNote": "결제를 아직 처리하고 있어요. 승인이 끝나는 대로 프리미엄을 열어 드리고 이메일로 알려 드릴게요.",
+        "accelerate": {
+          "heading": "<highlight>학습 속도</highlight>를 높여요!",
+          "benefits": "<strong>받을 수 있는 것:</strong> 프리미엄 챌린지, Jiki에게 무제한 질문, 무제한 딥다이브, 공식 수료증, 광고 없음까지!"
+        },
+        "testimonials": {
+          "heading": "<highlight>프리미엄 팀</highlight>에 합류해요",
+          "show": "후기 {number} 보기",
+          "quotes": {
+            "veronika": "가격이 정말 믿기 힘들 정도였어요. 지금은 절반쯤 왔는데, 거의 석 달째 ChatGPT 없이 지내고 있다고 자랑스럽게 말할 수 있어요! 🙂",
+            "abhinav": "구매력 평가 할인 덕분에 더 부담 없어졌어요. 누구나 접할 수 있게 해주셔서 고마워요.",
+            "laura": "커뮤니티, 연습 문제, 멘토, 그리고 Jeremy까지 모두 함께 어울리기 좋았어요.",
+            "kazzybits": "사고하는 방법과 문제 해결 전반을 바라보는 시각이 완전히 달라졌어요.",
+            "nilophars": "시각적인 표현, 머릿속 모형 만들기, 멘토 피드백, 상호작용 연습 문제까지 모두 정말 값졌어요.",
+            "jj": "재미있고 깔끔한 인터페이스부터 라이브 수업과 실습, 디스코드 토론까지, 모두 어우러져 최고의 학습 경험을 만들어 줘요."
+          },
+          "roles": {
+            "veronika": "주니어 개발자",
+            "abhinav": "초보자",
+            "laura": "튜토리얼 지옥 탈출자",
+            "kazzybits": "초보자",
+            "jj": "주니어 개발자"
+          }
+        },
+        "neverGetStuck": {
+          "heading": "<highlight>다시는</highlight> 막히지 않아요",
+          "text": "프리미엄에서는 모든 연습 문제마다 Jiki가 올바른 방향으로 살짝 밀어 줘요.",
+          "statNumber": "26배"
+        }
       },
       "userProfile": {
         "premiumMember": "Premium 회원"
@@ -2013,31 +1953,6 @@
       "finishTooltip": "계속하려면 시청을 완료하세요"
     }
   },
-  "projects": {
-    "projectCard": {
-      "comingSoon": "곧 공개",
-      "comingSoonLabel": "곧 공개"
-    },
-    "episodeCard": {
-      "premium": "프리미엄"
-    },
-    "episodeSummary": {
-      "heading": "에피소드 요약",
-      "whereWeStart": "시작 지점",
-      "whereWeEnd": "도착 지점",
-      "whatWeCover": "다루는 내용"
-    },
-    "projectPage": {
-      "backToAllProjects": "← <strong>모든 프로젝트</strong>로 돌아가기"
-    },
-    "episodePage": {
-      "backToProject": "← <strong>{title}</strong>(으)로 돌아가기",
-      "relevantGuidesDescription": "이 단계를 해결할 때 도움이 될 만한 가이드예요."
-    },
-    "relevantGuides": {
-      "heading": "도움이 되는 가이드"
-    }
-  },
   "guides": {
     "guidesContent": {
       "pageHeading": "가이드와 사용법",
@@ -2066,11 +1981,11 @@
     "relatedGuides": {
       "heading": "관련 가이드"
     },
-    "featuredInProjects": {
-      "heading": "프로젝트에서 소개된 가이드"
-    },
     "metadata": {
       "notFoundTitle": "가이드를 찾을 수 없어요"
+    },
+    "featuredInProjects": {
+      "heading": "프로젝트에서 소개된 가이드"
     }
   },
   "unsubscribe": {
@@ -2323,6 +2238,130 @@
         "heading": "사용할 함수",
         "description": "이 연습 문제에서 사용할 기본 구성 요소예요."
       }
+    }
+  },
+  "build": {
+    "upcomingStreams": {
+      "heading": "다가오는 라이브 세션",
+      "toBeAnnounced": "추후 공지 예정",
+      "subscribeButton": "캘린더 구독하기"
+    },
+    "hub": {
+      "title": "만들면서 배우기 - 프로젝트",
+      "description": "Jeremy와 함께 처음부터 실제 프로젝트를 만들어 봐요. 그가 아는 모든 것을 배워요!"
+    }
+  },
+  "roadmap": {
+    "page": {
+      "heading": "로드맵",
+      "subheading": "Jiki가 향하는 곳. 무엇을 출시했고, 다음은 무엇이며, 아직 무엇을 꿈꾸고 있는지 분기별로 보여줘요.",
+      "disclaimer": "이 로드맵은 현재 계획을 담은 스냅샷이에요. 커뮤니티에서 배우며 우선순위가 바뀌기 때문에 일정과 범위는 달라질 수 있어요."
+    },
+    "status": {
+      "shipped": "출시됨",
+      "inProgress": "진행 중",
+      "planned": "계획됨"
+    },
+    "changelog": {
+      "title": "업데이트 내역",
+      "subtitle": "최근 Jiki에 적용한 개선 사항이에요.",
+      "learnToBuildLaunch": {
+        "date": "2026년 7월 11일",
+        "title": "만들기 배우기 출시",
+        "description": "Jeremy가 수강생들과 함께 실제로 쓸모 있는 프로젝트를 처음부터 만들어 가는 새 시리즈가 공개됐어요."
+      },
+      "milestones6To10": {
+        "date": "2026년 7월",
+        "title": "코딩 배우기에 마일스톤 6~10 출시",
+        "description": "코딩 배우기 트랙에 새로운 마일스톤 다섯 개가 공개됐어요. 기초를 훨씬 넘어서는 여정이 이어져요."
+      },
+      "jikiLaunch": {
+        "date": "2026년 6월 7일",
+        "title": "Jiki 출시!",
+        "description": "Jiki가 공식적으로 출시됐어요 (아직 베타 버전이긴 하지만요!)"
+      }
+    },
+    "phases": {
+      "now": {
+        "label": "지금",
+        "timeframe": "2026년 7월",
+        "summary": "이번 달에 집중하고 있는 것들이에요.",
+        "learnToBuild": {
+          "title": "만들면서 배우기 출시",
+          "description": "Jeremy의 새로운 시리즈가 공개됐어요. 학습자들과 함께 실제로 쓸모 있는 프로젝트를 처음부터 만들어 나가는 시리즈예요. 각 프로젝트는 짧게 나눈 레슨으로 구성되어 있고, 코드뿐 아니라 소프트웨어를 완성해 나가는 과정의 사고, 실수, 결정까지 함께 보여줘요."
+        },
+        "launchBugs": {
+          "title": "출시 후 버그 잡기",
+          "description": "Jiki가 출시된 지금, 실제 학습자들이 플랫폼을 쓰면서 발견되는 버그를 잡고 거친 부분을 다듬고 있어요. 앱 전반에 걸쳐 작은 수정과 사용성 개선이 꾸준히 이어질 거예요."
+        },
+        "earlyFeedback": {
+          "title": "초기 피드백에 대응하기",
+          "description": "들어오는 모든 메시지와 지원 문의, 제안을 하나하나 읽고 있어요. 영향력이 큰 피드백은 개선 사항과 작은 기능으로 반영되어, 경험이 매주 나아지고 있어요."
+        },
+        "foundations": {
+          "title": "기반 다지기",
+          "description": "눈에 잘 보이지 않는 곳에서 안정성과 성능, 관측 가능성을 다듬으며 다음 기능들을 올릴 단단한 기반을 만들고 있어요. 겉으로는 잘 드러나지 않지만, 지금 우리가 할 수 있는 가장 중요한 일이에요."
+        }
+      },
+      "next": {
+        "label": "다음",
+        "timeframe": "2026년 3분기",
+        "summary": "설계를 마치고 순서를 기다리고 있어요.",
+        "betaToLive": {
+          "title": "베타에서 정식 출시로",
+          "description": "Jiki는 현재 베타 버전이에요. 출시 초기의 소란이 가라앉으면 베타 딱지를 떼고 정식 제품으로 거듭나요. 안정성에 대한 더 확실한 보장, 더 명확한 가격 정책, 매끄러운 시작 흐름을 갖추게 되죠. 이때 Exercism 커뮤니티에 출시 이메일을 보내고, 파트너들과 함께 홍보도 시작해요."
+        },
+        "deepDiveVideos": {
+          "title": "심층 탐구 영상 추가",
+          "description": "핵심 레슨을 넘어 개념을 깊이 있게 파고드는 장편 영상이에요. 어떻게 하는지 그 이면의 왜를 이해하고, 배운 개념이 프로그래밍이라는 더 넓은 세계와 어떻게 이어지는지 보고 싶은 학습자에게 딱이에요."
+        },
+        "newLanguages": {
+          "title": "여러 새로운 언어 출시",
+          "description": "8월부터 학습자들이 자기 언어로 Jiki를 쓸 수 있게 해요. 마케팅 페이지뿐 아니라 인터페이스와 커리큘럼 전체를 번역해요. 7월 31일부터 8월 2일 주말에 열리는 <link>커뮤니티 번역 마라톤</link>으로 시작해요."
+        },
+        "pythonVersion": {
+          "title": "Python 버전 출시",
+          "description": "9월에 찾아오는 Python 트랙은 JavaScript 커리큘럼과 같은 깊이를 갖춘 완전한 과정이에요. 연습 문제 철학도, 한 단계씩 따라가는 시각화 도구도, 완성도도 그대로지만 가르치는 언어가 Python이에요."
+        }
+      },
+      "future": {
+        "label": "앞으로",
+        "timeframe": "2026년 4분기",
+        "summary": "곧 다가올 계획이에요. 배워 나가면서 바뀔 수 있어요.",
+        "moreLanguages": {
+          "title": "더 많은 언어 추가",
+          "description": "8월의 첫 물결을 이어, 남은 한 해 동안 Jiki를 더 많은 언어로 번역해 나가요. 그래서 더 많은 학습자가 모국어로 플랫폼을 쓸 수 있게 되죠. 커뮤니티의 수요와 임팩트가 가장 큰 곳을 기준으로 우선순위를 정할 거예요."
+        },
+        "sql": {
+          "title": "SQL 출시",
+          "description": "올해 후반에는 Jiki에 SQL을 더해요. 나머지 커리큘럼과 같은 한 단계씩 따라가며 직접 해보는 방식으로 데이터베이스와 쿼리를 이해할 수 있게 해줘요."
+        }
+      }
+    }
+  },
+  "projects": {
+    "projectCard": {
+      "comingSoon": "곧 공개",
+      "comingSoonLabel": "곧 공개"
+    },
+    "episodeCard": {
+      "premium": "프리미엄"
+    },
+    "episodeSummary": {
+      "heading": "에피소드 요약",
+      "whereWeStart": "시작 지점",
+      "whereWeEnd": "도착 지점",
+      "whatWeCover": "다루는 내용"
+    },
+    "projectPage": {
+      "backToAllProjects": "← <strong>모든 프로젝트</strong>로 돌아가기"
+    },
+    "episodePage": {
+      "backToProject": "← <strong>{title}</strong>(으)로 돌아가기",
+      "relevantGuidesDescription": "이 단계를 해결할 때 도움이 될 만한 가이드예요."
+    },
+    "relevantGuides": {
+      "heading": "도움이 되는 가이드"
     }
   }
 }

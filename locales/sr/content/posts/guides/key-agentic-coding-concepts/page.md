@@ -5,7 +5,7 @@ tags: ["agentic-coding"]
 seo:
   description: "Osnovni koncepti agentskog programiranja objašnjeni za početnike: šta su AI modeli i tokeni, kako funkcionišu kontekstni prozori i zašto agenti ponekad greše."
   keywords: ["koncepti agentskog programiranja", "llm", "tokeni", "kontekstni prozor", "ai modeli", "promptovi", "halucinacije"]
-en_md5: d963e01d7934f4003d436029d1808fc8
+en_md5: 4133804b88528c6fcfd12bb34864b867
 ---
 
 ## Uvod
@@ -28,7 +28,7 @@ Ne postoji trajni „najbolji model”. Tabela se menja svakih nekoliko meseci, 
 
 ## Tokeni
 
-Modeli ne čitaju slova niti reči. Oni čitaju **tokene**: male delove teksta, u proseku otprilike tri četvrtine reči. “Understanding” je jedan token. “Misunderstanding” bi mogao da bude tri. Sve što pošalješ modelu biva iseckano u tokene, a sve što model napiše vraća se token po token. Zato odgovore vidiš kao tok reči, a ne odjednom.
+Modeli ne čitaju slova niti reči. Oni čitaju **tokene**: male delove teksta, u proseku otprilike tri četvrtine reči. „Understanding” je jedan token. „Misunderstanding” bi mogao da bude tri. Sve što pošalješ modelu biva iseckano u tokene, a sve što model napiše vraća se token po token. Zato odgovore vidiš kao tok reči, a ne odjednom.
 
 Tokeni su važni iz jednog velikog razloga: **upravo za njih plaćaš**. Cene modela se navode po milion tokena, i za ono što model pročita („ulazni podaci”) i za ono što napiše („izlazni podaci”). Kada agent pročita pet tvojih fajlova sa kodom, to može da bude desetine hiljada ulaznih tokena. Zato besplatne verzije imaju ograničenja, a rad agenta na velikom projektu košta više nego odgovaranje na jedno kratko pitanje.
 
@@ -38,7 +38,7 @@ Model nema memoriju. Svaki put kada pošalješ poruku, alat šalje *kompletnu do
 
 Iz ovoga slede dve praktične stvari:
 
-- **Duge sesije se degradiraju.** Kako razgovor raste, kontekst se puni starim skretanjima i zastarelim sadržajem fajlova. Modeli postaju merljivo lošiji u obraćanju pažnje kada im je kontekst pretrpan. Kada agent počne da pravi glupe greške kasno u dugoj sesiji, često nije da je glup – nego se davi.
+- **Duge sesije se degradiraju.** Kako razgovor raste, kontekst se puni starim skretanjima i zastarelim sadržajem fajlova. Modeli postaju merljivo lošiji u obraćanju pažnje kada im je kontekst pretrpan. Kada agent počne da pravi glupe greške kasno u dugoj sesiji, često nije da je glup, nego se davi.
 - **Sveži počeci su besplatni.** Započinjanje nove sesije sa čistim, dobro sročenim zahtevom često donosi bolje rezultate nego nastavljanje u pretrpanoj. Nemoj da budeš sentimentalan prema istoriji razgovora.
 
 ## Promptovi
@@ -49,7 +49,7 @@ Dobar prompt govori tri stvari: šta pokušavaš da postigneš, šta se zapravo 
 
 ## Agentska petlja
 
-Ono što agenta razdvaja od čet-bota jeste **petlja**. Kada agentu daš zadatak, on ne odgovori samo tako. On radi:
+Ono što agenta razdvaja od čet-bota jeste **petlja**. Kada agentu daš zadatak, on ne odgovara samo tako. On radi:
 
 1. Odlučuje šta treba da zna, i koristi **alate** (čitanje fajlova, pretragu, izvršavanje komandi) da to sazna.
 2. Pravi izmenu.
@@ -70,4 +70,4 @@ Još jedna stvar koju vredi znati, posebno na besplatnim planovima: besplatni mo
 
 ## To je osnova
 
-Modeli su „mozak”, tokeni su valuta, kontekst je memorija, promptovi su volan, a petlja je ono što od toga čini agenta. Sve ostalo ćeš naučiti kroz praksu, a to je upravo ono što ti predlažemo da uradiš. Ako još uvek nisi podesio alat, naš [vodič za instalaciju](/guides/installing-an-agentic-coding-platform) će te dovesti do toga za deset minuta. Zatim pogledaj prvu sesiju [Frontend Basics](/build/frontend-basics/setting-up-the-project) u delu Nauči da gradiš da bi sve to video na delu.
+Modeli su „mozak”, tokeni su valuta, kontekst je memorija, promptovi su volan, a petlja je ono što od toga čini agenta. Sve ostalo ćeš naučiti kroz praksu, a to je upravo ono što ti predlažemo da uradiš. Ako još uvek nisi podesio alat, naš [vodič za instalaciju](/guides/installing-an-agentic-coding-platform) će te dovesti do toga za deset minuta.

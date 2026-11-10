@@ -5,7 +5,7 @@ tags: ["jiki", "beta", "update", "milestone"]
 seo:
   description: "Zehn Tage offene Beta von Jiki: Tausende Anmeldungen, fast 25.000 abgeschlossene Lektionen, überarbeitete Übungen und ein Blick darauf, was als Nächstes kommt."
   keywords: ["jiki", "programmieren lernen", "beta", "update"]
-en_md5: 0516f06c7acded488fce4e6788644ac0
+en_md5: 19c95590ad2adf9ad1cab87de277e78a
 ---
 
 Jiki wird heute 10 Tage alt. Ein früher Meilenstein, aber ein guter Anlass, kurz innezuhalten und zurückzublicken!
@@ -19,8 +19,6 @@ Unsere Beta-Nutzer haben ein paar Bugs und ein paar Dinge gefunden, die sich ver
 Viele Leute haben außerdem „Ask Jiki“ genutzt, es gab Tausende Gespräche. Ich freue mich darauf, viele davon durchzulesen, um die KI zu verbessern. Auf Basis meiner eigenen Tests habe ich heute aber schon ein paar Verbesserungen ausgerollt, die Jiki hoffentlich ein bisschen schlauer machen!
 
 Ein paar unserer Power-Tester (erfahrenere Entwickler) haben Meilenstein 7 erreicht, wo die Inhalte erst einmal aufhören. Die nächsten Meilensteine veröffentliche ich in den nächsten Tagen, es gibt also bald mehr zum Ausprobieren!
-
-Ich freue mich riesig darauf, in ein paar Wochen den Bereich „Learn to Build“ zu starten!
 
 Wenn dir Jiki gefällt, denk bitte darüber nach, **[Premium](https://jiki.io/premium)** abzuschließen, um uns zu unterstützen.
 

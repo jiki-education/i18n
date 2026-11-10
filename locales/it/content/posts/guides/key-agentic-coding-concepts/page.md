@@ -5,7 +5,7 @@ tags: ["agentic-coding"]
 seo:
   description: "I concetti fondamentali alla base del coding agentico spiegati per principianti: cosa sono i modelli IA e i token, come funzionano le finestre di contesto e perché gli agenti a volte sbagliano."
   keywords: ["concetti di coding agentico", "llm", "token", "finestra di contesto", "modelli ia", "prompt", "allucinazioni"]
-en_md5: d963e01d7934f4003d436029d1808fc8
+en_md5: 4133804b88528c6fcfd12bb34864b867
 ---
 
 ## Introduzione
@@ -30,7 +30,7 @@ Non esiste un «modello migliore» permanente. La classifica si rimescola ogni p
 
 I modelli non leggono lettere o parole. Leggono **token**: piccoli pezzi di testo, in media tre quarti di parola ciascuno. «Understanding» è un token. «Misunderstanding» potrebbe essere tre token. Tutto ciò che invii a un modello viene suddiviso in token, e tutto ciò che scrive torna indietro token per token. Ecco perché vedi le risposte apparire come un flusso di parole, invece che tutte insieme.
 
-I token contano per un motivo importante: **sono ciò per cui paghi**. I prezzi dei modelli sono espressi per milione di token, sia per ciò che il modello legge («input») sia per ciò che scrive («output»). Quando un agente legge cinque file del tuo codice, potrebbero essere decine di migliaia di token in input. Per questo i piani gratuiti hanno dei limiti e perché un agente che lavora su un progetto grande costa di più di uno che risponde a una domanda veloce.
+I token contano per un motivo importante: **sono ciò per cui paghi**. I prezzi dei modelli sono espressi per milione di token, sia per ciò che il modello legge («input») sia per ciò che scrive («output»). Quando un agente legge cinque file del tuo codice, potrebbero essere decine di migliaia di token in input. Ecco perché i piani gratuiti hanno dei limiti, e perché un agente che lavora su un progetto grande costa di più di uno che risponde a una domanda veloce.
 
 ## La finestra di contesto
 
@@ -70,4 +70,4 @@ Un’ultima cosa che vale la pena sapere, specialmente per i piani gratuiti: i m
 
 ## Queste sono le fondamenta
 
-I modelli sono i «cervelli», i token sono la valuta, il contesto è la memoria, i prompt sono il volante e il ciclo è ciò che rende agente un agente. Tutto il resto lo imparerai sporcandoti le mani, ed è esattamente ciò che ti suggeriamo di fare. Se non hai ancora configurato uno strumento, la nostra [guida all’installazione](/guides/installing-an-agentic-coding-platform) ti porterà lì in dieci minuti. Poi guarda la prima sessione di [Frontend Basics](/build/frontend-basics/setting-up-the-project) in Learn to Build per vedere tutto in azione.
+I modelli sono i «cervelli», i token sono la valuta, il contesto è la memoria, i prompt sono il volante e il ciclo è ciò che rende agente un agente. Tutto il resto lo imparerai sporcandoti le mani, ed è esattamente ciò che ti suggeriamo di fare. Se non hai ancora configurato uno strumento, la nostra [guida all’installazione](/guides/installing-an-agentic-coding-platform) ti porterà lì in dieci minuti.

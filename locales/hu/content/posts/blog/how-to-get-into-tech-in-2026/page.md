@@ -14,7 +14,7 @@ seo:
       "LLM",
       "jiki"
     ]
-en_md5: d599444eaa258a866a62affc6dd0ae1f
+en_md5: 97e72fe48a7ff5994923a94cd0220620
 ---
 
 ## Bevezetés
@@ -33,7 +33,7 @@ Egy ponton eljutsz oda, hogy munkára jelentkezhessél. Ott azt mérték fel, me
 
 **A kód mindig is kapuőr volt.** Amit el kellett sajátítanod, hogy bármit csinálhass. Szó szerint nem tudtál egyetlen technológiát sem használni anélkül, hogy tudtál volna kódot írni hozzá. Nem kaptál munkát, ha nem volt szilárd programozási tudásod.
 
-De most, az LLM-eknek (nagy nyelvi modelleknek) köszönhetően, mindez változik.
+De most az LLM-eknek köszönhetően mindez változik.
 
 5 éven belül **senki sem fog felbérelni a programozási készségeidért.** Azok már irrelevánssá váltak. Az elmúlt évben alig írtam saját kódsort, de Claude-on keresztül több százezer sornyi kódot generáltam. És működnek. Koherensen illeszkednek egymáshoz, olyan platformokat hajtanak, mint a [Jiki](https://jiki.io), és számtalan hibát oldottak meg az [Exercism](https://exercism.org)-ban, a [Kaido](https://kaido.org)-ban és a [Giki](https://gikiactions.com)-ban. De csak azért működnek így, mert tudom, mit csinálok. Emberi irányítás nélkül idáig nem jutottak volna el.
 
@@ -64,14 +64,14 @@ Claude-dal triviális dolog azt mondani: »Csinálj nekem egy főoldalt«, majd 
 
 Ellenállnod kell annak a kísértésnek, hogy megkérj Claude-ot, készítsen valamit, aztán jól érezd magad **a kis dopaminlökettől**. Fel kell ismerned, hogy csak azért, mert Claude elkészített valamit, nem feltétlenül adtál értéket. Valójában az elején szó szerint ugyanazt csinálod, amit bárki más is megtehetne.
 
-De egy valódi vízió kidolgozása, annak megértése és megtervezése, hogy az összes elem hogyan illeszkedik egymáshoz, majd képesnek lenni sikeresen [irányítani egy LLM-et](/guides/what-is-agentic-coding), hogy elkészítse, tartva a helyes pályán, tudva, hol megy félre, vagy okoz majd gondot később... **Ez valódi készség.**
+De egy valódi vízió kidolgozása, annak megértése és megtervezése, hogy az összes elem hogyan illeszkedik egymáshoz, majd képesnek lenni rá, hogy sikeresen [agentikus programozást használva](/guides/what-is-agentic-coding) elkészítsd, a helyes pályán tartsd, és tudd, hol megy félre, vagy hol okoz majd később gondot... **Ez valódi készség.**
 
-Minden nap, amikor Claude Code-ot használok, olyan dolgokat csinál, amelyek számomra nyilvánvalóan hibásak. Megpróbál olyan utakra vinni, amelyek a szuboptimálistól az egyenesen rosszakig terjednek. De annyira megkönnyíti a dolgot, és annyit helyesen végez el, hogy eleinte nehéz észrevenni ezeket. Ahogy ezek a modellek egyre inkább önálló futtatásra terveznek, a fejlesztő értéke egyre inkább az irányításban és felügyeletben rejlik.
+Minden nap, amikor Claude Code-ot használok, olyan dolgokat csinál, amelyek számomra nyilvánvalóan hibásak. Megpróbál olyan utakra vinni, amelyek a szuboptimálistól az egyenesen rosszakig terjednek. De annyira megkönnyíti a dolgot, és annyit helyesen végez el, hogy eleinte nehéz észrevenni ezeket. És ahogy ezeket a modelleket egyre inkább önálló futtatásra tervezik, a fejlesztő értéke egyre inkább az irányításban és a felügyeletben rejlik.
 
 ### Fejleszd magadat
 
 Szükséged van **valakire, aki megtanítja**, hogyan működik minden, és milyen gondolati utakat kövess. Aztán dolgokat kell építened, hibákat elkövetned, meglátnod, mi történik, amikor Claude félrevezet, és tanulnod ezekből. Hogy értéket adhass egy olyan cégnek, amely dolgokat épít. Meg kell értened a technológiát, meg kell értened, hogyan épül a szoftver, meg kell tanulnod olvasni a kódot, hogy megértsd, mi folyik, és magabiztosnak kell érezned magadat az egész folyamatban.
 
-A [Jiki](https://jiki.io) mindezt megtanítja neked. Kövesd a Programozási alapok tanulási útvonalát az alapok elsajátításához, majd **gyere, és tanuld meg velem, hogyan kell dolgokat építeni**. Értsd meg, miért van szükséged a GitHubra és hogyan működik, hogyan véd meg a Cloudflare, hogyan tervezz biztonságos hitelesítést, hogyan készíts hatékony adatbázisokat, hogyan építs villámgyors frontendeket és szilárd backendeket. Tanuld meg, hogyan telepítsd ki az alkalmazásaidat úgy, hogy összeomlás esetén automatikusan helyreálljanak. Tanuld meg mindezt velem. **És nagyon jól szórakozz közben.**
+A [Jiki](https://jiki.io) pedig megtanítja neked az első részt. Kövesd a „Tanulj meg programozni” kurzusunkat, hogy rendesen elsajátítsd a programozás alapjait, és amikor rátérsz arra, hogy LLM-mel építs dolgokat, megértsd, mit csinál. **És rengeteget szórakozz közben.**
 
 Találkozunk bent!

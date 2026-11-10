@@ -5,7 +5,7 @@ tags: ["jiki", "learn-to-code", "llms", "beginners", "careers"]
 seo:
   description: "El código solía ser la barrera de entrada al sector tech. En 2026, los grandes modelos de lenguaje escriben el código y tu valor está en saber cómo construir las cosas correctamente. Así es como se entra en el sector tech."
   keywords: ["cómo entrar en el sector tech", "entrar en el sector tech en 2026", "aprender a programar", "carreras en tecnología", "programar con IA", "LLMs", "jiki"]
-en_md5: d599444eaa258a866a62affc6dd0ae1f
+en_md5: 97e72fe48a7ff5994923a94cd0220620
 ---
 
 ## Introducción
@@ -63,6 +63,6 @@ Cada día que uso Claude Code, hace cosas que para mí son claramente incorrecta
 
 Necesitas **a alguien que te enseñe** cómo funciona todo y los caminos mentales correctos a seguir. Después necesitas construir cosas, cometer errores, ver qué pasa cuando Claude te mete en problemas, y aprender de esas experiencias. Para que puedas aportar valor a una empresa que construye cosas. Necesitas entender la tecnología, entender cómo se construye el software, aprender a leer código para poder comprender lo que está pasando, y sentirte con confianza en todo el flujo y el proceso de crear cosas.
 
-Y [Jiki](https://jiki.io) te enseñará todo eso. Sigue nuestra ruta Aprende a Programar para dominar los fundamentos de la programación, y luego **ven a aprender a construir cosas conmigo**. Entiende por qué necesitas GitHub y cómo funciona, cómo Cloudflare te protegerá, cómo diseñar autenticación segura, cómo hacer bases de datos eficientes, cómo construir front-ends ultrarrápidos y back-ends sólidos como una roca. Aprende a desplegar cosas para que se recuperen si fallan. Aprende todo esto conmigo. **Y diviértete muchísimo en el camino.**
+Y [Jiki](https://jiki.io) te enseñará la primera parte. Sigue nuestro curso Aprende a Programar para asentar bien los conceptos básicos de programación, de modo que cuando pases a construir cosas con un gran modelo de lenguaje entiendas qué está haciendo. **Y diviértete un montón por el camino.**
 
 ¡Te veo dentro!

@@ -5,7 +5,7 @@ tags: ["jiki", "exercism", "i18n", "translatathon", "community"]
 seo:
   description: "Junte-se ao Translatathon do Jiki e do Exercism: um fim de semana comunitário para traduzir as duas plataformas para o maior número de línguas possível, de 31 de julho a 2 de agosto."
   keywords: ["jiki", "exercism", "translatathon", "tradução", "i18n", "aprenda a programar"]
-en_md5: 7c65f35e78d02a36af1265d049cfe726
+en_md5: bde2e50835a943c64618f9c4bd558ef6
 ---
 
 ## Resumo
@@ -44,11 +44,11 @@ Estamos usando uma mistura de grandes modelos de linguagem para traduzir as plat
 
 Quando uma língua chega a esse ponto, posso traduzir o Jiki inteiro para essa língua de uma só vez: todas as lições, todos os exercícios, todas as mensagens de erro e as legendas de todos os vídeos. É esse o objetivo para cada língua até domingo à noite.
 
-Se você viu o [Episódio 1 do Learn to Build](https://jiki.io/projects/build-your-personal-homepage), viu um pouco disso em ação quando arranquei com o português europeu ao vivo na transmissão.
+Se você assistiu à primeira transmissão ao vivo do Learn to Build, viu um pouco disso em ação quando comecei o português europeu do zero ao vivo.
 
 ### E se a minha língua ainda não estiver listada?
 
-Publique no [fórum](https://forum.jiki.io/c/i18n/67) e nós arrancamos com ela: uma seção do fórum para a sua língua e um glossário inicial para discutir. E, se você conhecer outros falantes nativos que queiram ajudar, peça para eles publicarem também. Quanto mais pessoas trabalharem numa língua, melhor ela vai ficar.
+Publique no [fórum](https://forum.jiki.io/c/i18n/67) e a gente cria ela do zero: uma seção do fórum para a sua língua e um glossário inicial para discutir. E, se você conhecer outros falantes nativos que queiram ajudar, peça para eles publicarem também. Quanto mais pessoas trabalharem numa língua, melhor ela vai ficar.
 
 ### Preciso ter conhecimentos técnicos?
 

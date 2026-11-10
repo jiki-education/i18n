@@ -5,7 +5,7 @@ tags: ["jiki", "beta", "update", "milestone"]
 seo:
   description: "Diez días de la beta abierta de Jiki: miles de inscripciones, casi 25.000 lecciones completadas, ejercicios reelaborados y una mirada a lo que viene."
   keywords: ["jiki", "aprender a programar", "beta", "actualización"]
-en_md5: 0516f06c7acded488fce4e6788644ac0
+en_md5: 19c95590ad2adf9ad1cab87de277e78a
 ---
 
 Jiki cumple 10 días hoy. ¡Un hito temprano, pero bueno para detenerse un momento a reflexionar!
@@ -19,8 +19,6 @@ Nuestros usuarios de la beta han encontrado algunos bugs y algunas cosas que se 
 También ha habido mucha gente usando «Ask Jiki», miles de conversaciones. Tengo muchas ganas de leer muchas de ellas para mejorar la IA, pero hoy ya he lanzado algunas mejoras basadas en mis propias pruebas, ¡lo que espero que haga que Jiki sea un poco más inteligente!
 
 Algunos de nuestros probadores avanzados (desarrolladores con más experiencia) ya alcanzaron el hito 7, donde el contenido hace una pausa. En los próximos días iré lanzando los próximos hitos, ¡así que pronto tendrás más con lo que divertirte!
-
-¡Me entusiasma mucho lanzar la sección «Learn to Build» en unas semanas!
 
 Si estás disfrutando de Jiki, considera suscribirte a **[Premium](https://jiki.io/premium)** para apoyarnos.
 

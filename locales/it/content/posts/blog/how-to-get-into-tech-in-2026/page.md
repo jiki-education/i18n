@@ -6,7 +6,7 @@ seo:
   description: "Un tempo il codice era il guardiano per entrare nel settore tech. Nel 2026, i LLM scrivono il codice e il tuo valore sta nel saper costruire le cose bene. Ecco come entrare nel settore tech."
   keywords:
     ["come entrare nel settore tech", "entrare nel settore tech nel 2026", "imparare a programmare", "carriere nel settore tech", "programmare con l'IA", "LLM", "jiki"]
-en_md5: d599444eaa258a866a62affc6dd0ae1f
+en_md5: 97e72fe48a7ff5994923a94cd0220620
 ---
 
 ## Introduzione
@@ -64,6 +64,6 @@ Ogni giorno che uso Claude Code, fa cose che per me sono palesemente sbagliate. 
 
 Hai bisogno di **qualcuno che ti insegni** come funziona tutto e i percorsi mentali giusti da seguire. Poi devi costruire cose, fare errori, vedere cosa succede quando Claude ti mette nei pasticci e imparare da quelle esperienze. In modo da poter aggiungere valore a un'azienda che costruisce cose. Devi capire la tecnologia, capire come viene sviluppato il software, imparare a leggere il codice per capire cosa sta succedendo e sentirti sicuro dell'intero flusso e processo di creazione.
 
-E [Jiki](https://jiki.io) ti insegnerà tutto questo. Segui il nostro percorso Impara a programmare per acquisire le basi della programmazione, poi **vieni a imparare a costruire cose con me**. Comprendi perché hai bisogno di GitHub e come funziona, come Cloudflare ti proteggerà, come progettare un'autenticazione sicura, come creare database efficienti, come costruire front-end velocissimi e back-end solidissimi. Impara a rilasciare le cose in modo che si riparino da sole se si bloccano. Impara tutto questo con me. **E divertiti un sacco lungo la strada.**
+E [Jiki](https://jiki.io) ti insegnerà la prima parte. Segui il nostro corso Impara a programmare per acquisire le basi della programmazione come si deve, così che quando passerai a costruire cose con un LLM capirai cosa sta facendo. **E divertiti un sacco lungo la strada.**
 
-Ci vediamo su Jiki!
+Ci vediamo dentro!

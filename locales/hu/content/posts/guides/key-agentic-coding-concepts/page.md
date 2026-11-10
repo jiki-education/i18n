@@ -1,11 +1,11 @@
 ---
 title: Az agentikus programozás legfontosabb fogalmai
-excerpt: Modellek, tokenek, kontextusablakok és egyéb ötletek, amelyeket meg kell értened, hogy jól használhasd az AI kódoló ágenseket.
+excerpt: Modellek, tokenek, kontextusablakok és egyéb ötletek, amelyeket meg kell értened, hogy jól használhasd az AI-programozó ágenseket.
 tags: ["agentic-coding"]
 seo:
   description: "Az agentikus programozás alapfogalmai kezdőknek magyarázva: mik az AI-modellek és a tokenek, hogyan működnek a kontextusablakok, és miért hibáznak néha az ágensek."
   keywords: ["agentikus programozási fogalmak", "LLM", "tokenek", "kontextusablak", "AI-modellek", "promptok", "hallucinációk"]
-en_md5: d963e01d7934f4003d436029d1808fc8
+en_md5: 4133804b88528c6fcfd12bb34864b867
 ---
 
 ## Bevezetés
@@ -20,7 +20,7 @@ A modell (vagy LLM, azaz „nagy nyelvi modell”) a tényleges mesterséges int
 
 Rengeteg modell létezik, különböző cégek készítik, és három olyan szempontból különböznek, ami számodra is fontos:
 
-- **Képesség.** A nagyobb, újabb modellek jobban értenek meg bonyolult problémákat és pontosabb kódot írnak. A legjobbak (amelyeket gyakran „frontier” modelleknek neveznek) érezhetően okosabbak a többinél.
+- **Képesség.** A nagyobb, újabb modellek jobban megértik a bonyolult problémákat, és pontosabb kódot írnak. A legjobbak (amelyeket gyakran „frontier” modelleknek neveznek) érezhetően okosabbak a többinél.
 - **Sebesség.** A kisebb modellek gyorsabban válaszolnak. Egyszerű kérdéseknél a gyors modell gyakran kellemesebb élmény.
 - **Költség.** A legjobb modellek futtatása akár ötvenszer többe is kerülhet, mint a teljesen elfogadhatóaké. Ezért használnak az ingyenes szintek kisebb vagy promóciós modelleket.
 
@@ -70,4 +70,4 @@ Még egy dolog, amit érdemes tudni, különösen az ingyenes szintek esetében:
 
 ## Ezek az alapok
 
-A modellek az „agyak”, a tokenek a fizetőeszköz, a kontextus a memória, a promptok a kormánykerék, a hurok pedig az, ami ágenssé teszi. Minden mást úgy fogsz megtanulni, ha beleveted magad, és pontosan ezt javasoljuk. Ha még nem állítottál be egy eszközt, a [telepítési útmutatónk](/guides/installing-an-agentic-coding-platform) tíz perc alatt elvezet odáig. Ezután nézd meg a Tanulj fejleszteni során az első [Frontend Basics](/build/frontend-basics/setting-up-the-project) leckét, hogy lásd mindezt működés közben.
+A modellek az „agyak”, a tokenek a fizetőeszköz, a kontextus a memória, a promptok a kormánykerék, a hurok pedig az, ami ágenssé teszi. Minden mást úgy fogsz megtanulni, ha beleveted magad, és pontosan ezt javasoljuk. Ha még nem állítottál be egy eszközt, a [telepítési útmutatónk](/guides/installing-an-agentic-coding-platform) tíz perc alatt elvezet odáig.

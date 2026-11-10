@@ -6,7 +6,7 @@ seo:
   description: "Code war früher der Türsteher in die Tech-Branche. 2026 schreiben LLMs den Code, und dein Wert liegt darin, dass du weißt, wie man Dinge richtig baut. So kommst du in die Tech-Branche."
   keywords:
     ["wie du in die Tech-Branche einsteigst", "2026 in die Tech-Branche einsteigen", "Programmieren lernen", "Karriere in der Tech-Branche", "KI-Coding", "LLMs", "jiki"]
-en_md5: d599444eaa258a866a62affc6dd0ae1f
+en_md5: 97e72fe48a7ff5994923a94cd0220620
 ---
 
 ## Einleitung
@@ -52,7 +52,7 @@ Und dieses Spielen und Lernen muss an den Grenzen deines Wissens stattfinden. Du
 
 ### Die Stolperfalle
 
-Mit Claude ist es ein Kinderspiel, zu sagen „Mach mir eine Startseite" und dann Schritt für Schritt zu sagen „Mach diese grüne Box stattdessen blau" oder „Mach die Schrift ein bisschen größer". **Das erfordert so gut wie kein Können.**
+Mit Claude ist es ein Kinderspiel, zu sagen „Mach mir eine Startseite“ und dann Schritt für Schritt zu sagen „Mach diese grüne Box stattdessen blau“ oder „Mach die Schrift ein bisschen größer“. **Das erfordert so gut wie kein Können.**
 
 Du musst dem Drang widerstehen, Claude etwas bauen zu lassen und dich dann über **den kleinen Dopamin-Kick** zu freuen, den du dabei bekommst. Du musst erkennen: Nur weil Claude etwas gebaut hat, hast du noch lange keinen Wert geschaffen. Tatsächlich machst du am Anfang buchstäblich genau das, was jeder andere auch könnte.
 
@@ -64,6 +64,6 @@ Jeden Tag, an dem ich Claude Code benutze, macht es Dinge, die für mich offensi
 
 Du brauchst **jemanden, der dir beibringt**, wie alles funktioniert und welche Denkwege die richtigen sind. Dann musst du Dinge bauen, Fehler machen, sehen, was passiert, wenn Claude dich reinlegt, und daraus lernen. So kannst du einem Unternehmen, das Dinge baut, echten Wert liefern. Du musst Technologie verstehen, verstehen, wie Software gebaut wird, lernen, Code zu lesen, um zu begreifen, was passiert, und dich mit dem ganzen Ablauf und Prozess des Bauens sicher fühlen.
 
-Und [Jiki](https://jiki.io) bringt dir das alles bei. Folge unserem Lernpfad „Programmieren lernen", um dir die Grundlagen zu erarbeiten, und dann **komm und lerne mit mir, Dinge zu bauen**. Verstehe, warum du GitHub brauchst und wie es funktioniert, wie Cloudflare dich schützt, wie du sichere Authentifizierung entwirfst, wie du effiziente Datenbanken baust, wie du blitzschnelle Frontends und felsenfeste Backends entwickelst. Lerne, wie du Dinge ausrollst, sodass sie sich erholen, wenn sie abstürzen. Lerne all das mit mir. **Und hab dabei jede Menge Spaß.**
+Und [Jiki](https://jiki.io) bringt dir den ersten Teil bei. Folge unserem Kurs „Programmieren lernen“, um die Grundlagen des Programmierens richtig zu lernen. Dann verstehst du auch, was das LLM tut, wenn du später mit ihm Dinge baust. **Und hab dabei jede Menge Spaß.**
 
 Wir sehen uns drinnen!

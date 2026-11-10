@@ -5,7 +5,7 @@ tags: ["support"]
 seo:
   description: "Često postavljana pitanja o Jikiju, našoj platformi za učenje programiranja, kursevima i Jiki Premium-u."
   keywords: ["faq", "često postavljana pitanja", "jiki", "podrška", "premium"]
-en_md5: c0707bb8b7ba85b225bb90881f00ace8
+en_md5: d95c17ebd4744af98eded3767acf105f
 ---
 
 ## O kursu
@@ -14,11 +14,11 @@ en_md5: c0707bb8b7ba85b225bb90881f00ace8
 
 Vežbe „Learn to Code“, koje čine osnovni kurikulum učenja programiranja, potpuno su besplatne. Bez kartice, bez probnog perioda, bez caka.
 
-Jiki Premium je jednokratno plaćanje, čija se cena razlikuje od zemlje do zemlje, i otključava pun pristup kursevima „Learn to Build“, Jiki projektima, neograničenoj Ask Jiki AI podršci, redovnim Q&A prenosima uživo kojima možeš da se pridružiš, sertifikatima za kurseve, iskustvu učenja bez reklama i ranom pristupu novim funkcionalnostima.
+Jiki Premium je jednokratno plaćanje, čija se cena razlikuje od zemlje do zemlje, i otključava Jiki izazove, neograničenu Ask Jiki AI podršku, redovne Q&A prenose uživo kojima možeš da se pridružiš, sertifikate za kurseve, iskustvo učenja bez reklama i rani pristup novim funkcionalnostima.
 
 ### Koliko vremena treba da posvetim kursu svake nedelje?
 
-Možeš da provedeš koliko god želiš, mnogo ili malo. Većina ljudi završi „Learn to Code“ za 12 do 20 nedelja, uz otprilike 5 do 10 sati nedeljno. „Learn to Build“ je trajan kurs, pa možeš povremeno da ga pratiš kako nove epizode izlaze i da se pridružiš prenosima uživo kad ti odgovara.
+Možeš da provedeš koliko god želiš, mnogo ili malo. Većina ljudi završi „Learn to Code“ za 8 do 12 nedelja, uz otprilike 5 do 10 sati nedeljno.
 
 ### Koliko je kurs težak? Koliko pameti treba?
 
@@ -29,8 +29,6 @@ Ako se potrudiš, zatražiš pomoć kada zapneš i prihvatiš izazov, iznenadić
 ### Da li je Jiki već dostupan?
 
 Da, možeš da se prijaviš i započneš besplatni „Learn to Code“ kurikulum već danas.
-
-Prva sesija „Learn to Build“ biće sredinom juna. Kada uđeš na platformu, možeš da se prijaviš za podsetnik.
 
 ### Već sam na Butkampu, da li je ovo drugačije?
 

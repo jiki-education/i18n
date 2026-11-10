@@ -5,7 +5,7 @@ tags: ["support"]
 seo:
   description: "Gyakori kérdések a Jikiről, a programozást tanító platformunkról, a kurzusainkról és a Jiki Premiumról."
   keywords: ["gyakori kérdések", "gyik", "jiki", "támogatás", "prémium"]
-en_md5: c0707bb8b7ba85b225bb90881f00ace8
+en_md5: d95c17ebd4744af98eded3767acf105f
 ---
 
 ## A kurzusról
@@ -14,11 +14,11 @@ en_md5: c0707bb8b7ba85b225bb90881f00ace8
 
 A Tanulj meg programozni feladatok, amelyek a programozástanulás központi részét alkotják, teljesen ingyenesek. Nincs szükség bankkártyára, nincs próbaidőszak, és nincs semmilyen trükk.
 
-A Jiki Premium egyszeri befizetés, amelynek árát az országodhoz igazítjuk, és teljes hozzáférést biztosít a Tanulj fejleszteni tanfolyamhoz, a Jiki Projects-hez, a Kérdezd Jikit funkció korlátlan AI-segítségéhez, a rendszeres élő kérdés-felelet alkalmakhoz, amelyekbe becsatlakozhatsz, a kurzusok tanúsítványaihoz, a reklámmentes tanulási élményhez, valamint az új funkciók korai eléréséhez.
+A Jiki Premium egyszeri befizetés, amelynek árát az országodhoz igazítjuk. Megvásárlásával hozzáférést kapsz a Jiki kihívásokhoz, a Kérdezd Jikit funkció korlátlan AI-segítségéhez, a rendszeres élő kérdés-felelet alkalmakhoz, amelyekbe becsatlakozhatsz, a kurzusok tanúsítványaihoz, a reklámmentes tanulási élményhez, valamint az új funkciók korai eléréséhez.
 
 ### Mennyi időt kell hetente a kurzusra fordítanom?
 
-Annyi időt töltesz vele, amennyit szeretnél. A legtöbben 12-20 hét alatt elvégzik a Tanulj meg programozni kurzust, heti kb. 5-10 óra ráfordítással. A Tanulj fejleszteni folyamatosan zajlik, így akkor kapcsolódsz be, amikor új epizódok jelennek meg, és akkor csatlakozol az élő közvetítésekhez, amikor neked megfelel.
+Annyi időt töltesz vele, amennyit szeretnél. A legtöbben 8-12 hét alatt elvégzik a kurzust, heti nagyjából 5-10 óra ráfordítással.
 
 ### Mennyire nehéz a kurzus? Mennyire kell okosnak lennem?
 
@@ -29,8 +29,6 @@ Ha energiát fektetsz bele, segítséget kérsz, amikor elakadsz, és elfogadod 
 ### Elérhető már a Jiki?
 
 Igen, regisztrálhatsz, és még ma elkezdheted az ingyenes Tanulj meg programozni tananyagot.
-
-Az első Tanulj fejleszteni alkalom június közepén lesz. Miután beléptél, feliratkozhatsz egy emlékeztetőre.
 
 ### Már jelentkeztem a Bootcampre, ez más?
 

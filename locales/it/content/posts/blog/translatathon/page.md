@@ -5,7 +5,7 @@ tags: ["jiki", "exercism", "i18n", "translatathon", "community"]
 seo:
   description: "Partecipa alla Translatathon Jiki & Exercism, un weekend comunitario per tradurre entrambe le piattaforme in quante più lingue possibile, dal 31 luglio al 2 agosto."
   keywords: ["jiki", "exercism", "translatathon", "traduzione", "i18n", "imparare a programmare"]
-en_md5: 7c65f35e78d02a36af1265d049cfe726
+en_md5: bde2e50835a943c64618f9c4bd558ef6
 ---
 
 ## In breve
@@ -44,7 +44,7 @@ Ecco come funziona:
 
 Una volta che una lingua arriva a quel punto, posso tradurre in blocco tutto Jiki: ogni lezione, ogni esercizio, ogni messaggio di errore e i sottotitoli di ogni video. Questo è l'obiettivo per ogni lingua entro domenica sera.
 
-Se hai visto l'[Episodio 1 di Learn to Build](https://jiki.io/projects/build-your-personal-homepage), hai visto un po' di questo processo in azione quando ho avviato il portoghese europeo in diretta.
+Se hai visto la prima diretta streaming di Learn to Build, hai visto qualcosa di tutto questo in azione quando ho avviato il portoghese europeo in diretta.
 
 ### E se la mia lingua non è ancora elencata?
 

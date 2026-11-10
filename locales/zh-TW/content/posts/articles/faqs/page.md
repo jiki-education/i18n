@@ -5,7 +5,7 @@ tags: ["support"]
 seo:
   description: "關於 Jiki、我們的程式設計學習平台、課程與 Jiki Premium 的常見問題。"
   keywords: ["faqs", "常見問題", "jiki", "支援", "premium"]
-en_md5: c0707bb8b7ba85b225bb90881f00ace8
+en_md5: d95c17ebd4744af98eded3767acf105f
 ---
 
 ## 關於課程
@@ -14,11 +14,11 @@ en_md5: c0707bb8b7ba85b225bb90881f00ace8
 
 Learn to Code 的練習是程式設計課程大綱的核心，完全免費。不用信用卡、不用試用期，也沒有任何附帶條件。
 
-Jiki Premium 是依國家定價的一次性付款，開通後可完整使用 Learn to Build、Jiki Projects，享有無限的 Ask Jiki AI 支援、可參加的定期 Q&A 直播、課程證書、無廣告的學習體驗，以及新功能的搶先體驗。
+Jiki Premium 是依國家定價的一次性付款，開通後可解鎖 Jiki Challenges，並享有無限的 Ask Jiki AI 支援、可參加的定期 Q&A 直播、課程證書、無廣告的學習體驗，以及新功能的搶先體驗。
 
 ### 這門課程每週需要花多少時間？
 
-你想花多少時間都可以，長短完全由你決定。大多數人會在 12 到 20 週內完成 Learn to Code，平均每週約 5 到 10 小時。Learn to Build 是持續進行的，所以你可以隨著新集數上線隨時進來看看、隨時休息，也可以在方便的時候參加直播。
+你想花多少時間都可以，長短完全由你決定。大多數人會在 8 到 12 週內完成這門課程，平均每週約 5 到 10 小時。
 
 ### 這門課程有多難？我需要有多聰明？
 
@@ -29,8 +29,6 @@ Jiki Premium 是依國家定價的一次性付款，開通後可完整使用 Lea
 ### Jiki 現在可以用了嗎？
 
 可以，你今天就能註冊，開始免費的 Learn to Code 課程大綱。
-
-第一場 Learn to Build 會在六月中登場。等你註冊進入後，就能設定提醒通知。
 
 ### 我已經報名過 Bootcamp 了，這有什麼不同嗎？
 

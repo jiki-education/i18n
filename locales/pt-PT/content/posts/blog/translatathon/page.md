@@ -5,7 +5,7 @@ tags: ["jiki", "exercism", "i18n", "translatathon", "community"]
 seo:
   description: "Junta-te ao Translatathon do Jiki e do Exercism: um fim de semana comunitário para traduzir as duas plataformas para o maior número de línguas possível, de 31 de julho a 2 de agosto."
   keywords: ["jiki", "exercism", "translatathon", "tradução", "i18n", "aprende a programar"]
-en_md5: 7c65f35e78d02a36af1265d049cfe726
+en_md5: bde2e50835a943c64618f9c4bd558ef6
 ---
 
 ## Resumo
@@ -16,7 +16,7 @@ _Estamos a traduzir o Jiki e o Exercism para o maior número de línguas possív
 
 [Mais do que nunca](https://jiki.io/blog/should-i-still-learn-to-code-in-2026), acredito que a programação e a construção de competências [abrem oportunidades enormes](https://jiki.io/blog/how-to-get-into-tech-in-2026). Queremos ajudar o maior número possível de pessoas a adquirir essas competências, e poder aprender na **tua própria língua** faz uma enorme diferença.
 
-A maioria das pessoas no mundo não fala inglês, mas a maior parte dos recursos de programação só existe em inglês. Por isso, estamos a traduzir o Jiki inteiro: a interface, os vídeos, os exercícios, até as **mensagens de erro** que recebes da própria linguagem de programação.
+A maioria das pessoas no mundo não fala inglês, mas a maior parte dos recursos de programação só existe em inglês. Por isso, estamos a traduzir o Jiki inteiro: a interface, os vídeos, os exercícios, até às **mensagens de erro** que recebes da própria linguagem de programação.
 
 E não é só o Jiki. O Exercism também está pronto para ser traduzido, com o mesmo processo e os mesmos glossários, por isso vamos trabalhar nas **duas plataformas** ao mesmo tempo.
 
@@ -32,7 +32,7 @@ Para cada língua, esperamos contar com pelo menos **três falantes nativos**, d
 
 ## Como é que isto funciona, na prática?
 
-Estamos a usar uma mistura de grandes modelos de linguagem para traduzir as plataformas, mas com guias e glossários rigorosos que vamos criar. Estamos a trabalhar em ciclo: traduzimos, **recebemos comentários de pessoas**, atualizamos os sistemas e repetimos. Até ficarmos satisfeitos.
+Estamos a usar grandes modelos de linguagem (LLMs, uma mistura deles) para traduzir as plataformas, mas com guias e glossários rigorosos que vamos criar. Estamos a trabalhar em ciclo: traduzimos, **recebemos comentários de pessoas**, atualizamos os sistemas e repetimos. Até ficarmos satisfeitos.
 
 É assim que vai funcionar:
 
@@ -44,7 +44,7 @@ Estamos a usar uma mistura de grandes modelos de linguagem para traduzir as plat
 
 Quando uma língua chega a esse ponto, posso traduzir o Jiki inteiro para essa língua de uma só vez: todas as lições, todos os exercícios, todas as mensagens de erro e as legendas de todos os vídeos. É esse o objetivo para cada língua até domingo à noite.
 
-Se viste o [Episódio 1 do Learn to Build](https://jiki.io/projects/build-your-personal-homepage), viste um pouco disto em ação quando arranquei com o português europeu em direto na transmissão.
+Se viste a primeira transmissão em direto do Learn to Build, viste um pouco disto em ação quando arranquei com o português europeu durante a transmissão.
 
 ### E se a minha língua ainda não estiver listada?
 

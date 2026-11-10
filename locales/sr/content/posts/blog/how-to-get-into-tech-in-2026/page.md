@@ -5,7 +5,7 @@ tags: ["jiki", "learn-to-code", "llms", "beginners", "careers"]
 seo:
   description: "Nekada je kod bio čuvar ulaza u IT. U 2026. LLM-ovi pišu kod, a tvoja vrednost je u znanju kako da pravilno gradiš stvari. Evo kako da uđeš u IT."
   keywords: ["kako ući u IT", "ući u IT u 2026", "učenje programiranja", "IT karijere", "AI kodiranje", "LLM-ovi", "jiki"]
-en_md5: d599444eaa258a866a62affc6dd0ae1f
+en_md5: 97e72fe48a7ff5994923a94cd0220620
 ---
 
 ## Uvod
@@ -26,7 +26,7 @@ U nekom trenutku bio bi spreman da se prijaviš za posao. I testirali bi te koli
 
 Ali sada, zahvaljujući LLM-ovima, sve se to menja.
 
-Za 5 godina **niko te neće zaposliti zbog tvojih veština programiranja.** One su nebitne. Ja sam u poslednjih godinu dana jedva napisao ijedan red code-a, ali sam uz pomoć Claude-a isporučio stotine hiljada redova code-a. I oni rade. Stoje zajedno na koherentan način i pokreću platforme poput [Jikija](https://jiki.io) i rešile su bezbroj bug-ova na [Exercism](https://exercism.org)-u, [Kaido](https://kaido.org)-u i [Gikiju](https://gikiactions.com). Ali to rade samo zato što ja znam šta radim. Bez vođstva čoveka, ne bi dotle stigli.
+Za 5 godina **niko te neće zaposliti zbog tvojih veština programiranja.** One su nebitne. Ja sam u poslednjih godinu dana jedva napisao ijedan red code-a, ali sam uz pomoć Claude-a isporučio stotine hiljada redova code-a. I oni rade. Stoje zajedno na koherentan način, pokreću platforme kao što je [Jiki](https://jiki.io) i rešili su bezbroj bug-ova u [Exercism](https://exercism.org)-u, [Kaido](https://kaido.org)-u i [Giki](https://gikiactions.com)-ju. Ali to rade samo zato što ja znam šta radim. Bez vođstva čoveka, ne bi dotle stigli.
 
 Vrednost programera nije u njegovoj sposobnosti da piše code ([mada i dalje moraš da znaš kako!](/blog/should-i-still-learn-to-code-in-2026)). Ona je u njegovoj **sposobnosti da pravilno pravi stvari**.
 
@@ -51,7 +51,7 @@ I to igranje i učenje treba da se odvija na granicama tvog znanja. Moraš staln
 
 ### Zamka
 
-Sa Claude-om je trivijalno reći "Napravi mi početnu stranicu" i potom iterativno "Neka taj zeleni okvir bude plav" ili "Neka veličina fonta bude malo veća". **To praktično ne zahteva nikakvu veštinu.**
+Sa Claude-om je trivijalno reći „Napravi mi početnu stranicu“, a onda u krug ponavljati „Neka taj zeleni okvir bude plav“ ili „Neka veličina fonta bude malo veća“. **To praktično ne zahteva nikakvu veštinu.**
 
 Moraš se odupreti porivu da tražiš od Claude-a da napravi nešto i onda se osećaš dobro zbog **malog dopaminskog naleta koji dobijaš**. Moraš da shvatiš da to što je Claude nešto napravio ne znači nužno da si ti dodao bilo kakvu vrednost. Zapravo, na početku bukvalno radiš isto što bi mogao da uradi bilo ko.
 
@@ -63,6 +63,6 @@ Svakog dana dok koristim Claude Code, on radi stvari koje su meni očigledno pog
 
 Potreban ti je **neko da te nauči** kako sve funkcioniše i kojim ispravnim mentalnim stazama da ideš. Zatim treba da praviš stvari, praviš greške, vidiš šta se desi kada te Claude zezne, i učiš iz tih iskustava. Tako da možeš da doneseš vrednost kompaniji koja gradi stvari. Treba da razumeš tehnologiju, razumeš kako se softver gradi, naučiš da čitaš code da bi razumeo šta se dešava, i stekneš samopouzdanje u celokupnom toku i procesu pravljenja stvari.
 
-A [Jiki](https://jiki.io) će te svemu tome naučiti. Prati našu putanju "Nauči da programiraš" da savladaš osnove programiranja, a zatim **dođi i nauči da praviš stvari sa mnom**. Razumej zašto ti je potreban GitHub i kako funkcioniše, kako će te Cloudflare štititi, kako da dizajniraš sigurnu autentifikaciju, kako da napraviš efikasne baze podataka, kako da izgradiš munjevito brze front-endove i neprobojne back-endove. Nauči kako da postaviš stvari na server tako da se oporave ako padnu. Sve to nauči sa mnom. **I zabavi se usput.**
+A prvi deo će te naučiti [Jiki](https://jiki.io). Prati naš kurs „Nauči da programiraš“ da pravilno savladaš osnove programiranja, tako da, kada pređeš na pravljenje stvari uz pomoć LLM-a, razumeš šta on radi. **I usput se odlično zabavi.**
 
 Vidimo se unutra!

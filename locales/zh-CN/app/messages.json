@@ -60,13 +60,12 @@
     "sidebar": {
       "groups": {
         "learnToCode": "学习编程",
-        "learnToBuild": "学习构建",
         "community": "社区",
-        "more": "更多"
+        "more": "更多",
+        "learnToBuild": "学习构建"
       },
       "nav": {
         "learn": "编程基础",
-        "build": "项目",
         "challenges": "挑战",
         "concepts": "编程概念",
         "achievements": "成就",
@@ -77,7 +76,8 @@
         "settings": "设置",
         "help": "帮助",
         "upgrade": "升级到 Premium",
-        "logOut": "退出登录"
+        "logOut": "退出登录",
+        "build": "项目"
       },
       "premiumPill": "高级版"
     },
@@ -172,17 +172,6 @@
       "copied": "链接已复制"
     },
     "perMonth": "/月"
-  },
-  "build": {
-    "upcomingStreams": {
-      "heading": "即将开始的直播",
-      "toBeAnnounced": "待公布",
-      "subscribeButton": "订阅日历"
-    },
-    "hub": {
-      "title": "学习构建 - 项目",
-      "description": "和 Jeremy 一起从零开始构建真实项目。学会他知道的一切！"
-    }
   },
   "auth": {
     "oauth": {
@@ -353,13 +342,13 @@
       "title": "确定要取消订阅吗？",
       "message": "我们不想看到你离开！如果取消订阅，你将在当前计费周期结束后失去高级版的使用权限。",
       "benefitsTitle": "你目前享有：",
+      "keep": "保留订阅",
+      "cancel": "取消订阅",
+      "defaultBillingPeriodEnd": "你的计费周期结束日期",
       "benefit1": "Jiki 提供的无限 AI 帮助",
       "benefit2": "所有项目和学习路径",
       "benefit3": "结业证书",
-      "benefit4": "无广告体验",
-      "keep": "保留订阅",
-      "cancel": "取消订阅",
-      "defaultBillingPeriodEnd": "你的计费周期结束日期"
+      "benefit4": "无广告体验"
     },
     "cancelSuccess": {
       "title": "订阅已取消",
@@ -574,28 +563,20 @@
   },
   "landing": {
     "hero": {
-      "tagline": "学习你需要的技能，去创造出色的作品、保持高效，并在 {year} 年<strong>保持竞争力。</strong>",
+      "tagline": "你真的会看完的教程。你真的会喜欢的练习。<strong>3 个月从零基础到独立编程。</strong>而且还免费！",
       "loadingVideo": "正在加载视频",
       "playVideo": "播放视频",
       "watchPrompt": "不喜欢读文字？<strong>点一下播放</strong>，我把你想知道的都讲给你听！",
-      "headline": "学习<highlight>编程与构建</highlight>的现代方式",
+      "headline": "用有趣的方式<highlight>学会编程！</highlight>",
+      "audienceAbsoluteBeginners": "<name>零基础新手</name>，想<u>快速上手</u>。",
+      "audienceRepeatBeginners": "<name>重新开始的人</name>，希望这次<u>终于能弄明白</u>。",
+      "audienceJuniors": "<name>初级开发者</name>，想<u>打牢基础</u>。",
       "audienceBeginners": "<name>初学者</name>，想找到最快最好的学习方式",
-      "audienceJuniors": "<name>初级开发者</name>，想快速提升知识水平",
       "audienceEntrepreneurs": "<name>创业者和氛围编程者</name>，想在招人之前先自己做出产品"
     },
-    "twoHalves": {
-      "eyebrow": "你的两项核心技能",
-      "heading": "成为开发者的两半",
-      "intro": "Jiki 教你<strong>如何编程</strong>（用最有趣、最有效的方式！），也教你用专业开发者日常使用的技术<strong>做出真正的作品</strong>。<strong>从第一天开始。</strong>",
-      "codeHeading": "学习<word>编程</word>",
-      "codeBody": "每个核心概念都有详细的视频讲解，还有上百个练习和项目供你动手实践",
-      "buildHeading": "学习<word>构建</word>",
-      "buildBody": "从第一天起就学习专业开发者使用的技术：数据库、身份验证、前端、后端，还有更多！",
-      "techLabel": "你将学到的技术包括："
-    },
     "learnToCode": {
-      "heading": "学习<word>编程</word>",
-      "intro": "掌握编程这项核心技能，它是我们向计算机表达需求的方式。我们会帮你<highlight>打下扎实的编程基础</highlight>。",
+      "heading": "掌握编程基础",
+      "intro": "学习本该像<highlight>玩，而不是工作</highlight>。在 Jiki，你会解谜题、做游戏，在练习中学会编程。",
       "demo": {
         "stageDescription": "Jiki 应用的一段动画：一位学习者运行一个太空侵略者练习，代码把激光炮移出了网格边缘，学习者向 Jiki 求助，把边界值从 20 修正为 11，练习就通过了。",
         "run": "运行代码",
@@ -668,32 +649,6 @@
       "flowerFlipbook": "花朵翻页书",
       "footnote": "……而这还只是前几周！"
     },
-    "learnToBuild": {
-      "heading": "学会<word>构建</word>",
-      "intro": "用现代的智能体编程，快速学会数据库、身份验证、前端、后端等核心技术。",
-      "livestreamsLead": "互动式教学直播",
-      "livestreamsDetail": "卡在某个概念或自己的项目上？在<strong>定期直播</strong>里找到答案，还有来自社区的真实问题。",
-      "technologiesLead": "真实项目，不是假项目。",
-      "technologiesDetail": "看 Jeremy 从零开始构建真实项目、解释每一个决定，你可以跟着一起动手实现自己的想法。",
-      "portfolioLead": "学习各种各样的技术",
-      "portfolioDetail": "构建一个现代应用要和各种不同的系统打交道：身份验证、API、后端、前端。这些我们都会教你。",
-      "liveQaAlt": "Jeremy 主持 Jiki 直播问答",
-      "topicsLabel": "动手实践：",
-      "databases": "数据库",
-      "auth": "身份验证",
-      "frontendBackend": "前端与后端",
-      "apis": "API",
-      "deployment": "部署",
-      "llmIntegration": "LLM 集成",
-      "liveQa_fred": "终于跑通了。试了三次才成功。",
-      "liveQa_oleksandra": "谁能再讲一下闭包？语法我懂，就是不明白为什么要用它。",
-      "liveQa_shaun": "啊，这样一说就明白了。",
-      "liveQa_lukas": "刚部署了我的第一个项目。真没想到自己能做到这一步。",
-      "joinLive": "加入直播讨论",
-      "catchUp": "稍后补看",
-      "getSupport": "获取支持",
-      "liveQa_drac": "这是我见过讲得最清楚的解释 🙌"
-    },
     "outcomes": {
       "bubble": "课程结束时",
       "heading": "你会收获什么",
@@ -702,15 +657,17 @@
       "certificateBody": "你会得到一份可验证的证书，可以添加到你的简历和 LinkedIn 个人资料的认证板块。而且你会知道自己实至名归！",
       "certificateAlt": "Jiki 课程结业证书",
       "shareOnLinkedIn": "在 LinkedIn 上分享",
-      "portfolioTitle": "丰富多样的真实项目作品集",
-      "portfolioBody": "做真正符合你兴趣的项目。不是千篇一律的待办清单应用，而是能展现你的创造力、聪明才智和知识的真正应用。",
+      "thinkingTitle": "批判性思维得到提升",
+      "thinkingBody": "这是一门动手实践的课程，会逼着你亲自和问题较劲。它能提升你解决问题和批判性思维的能力，在生活的方方面面都用得上。",
       "habitTracker": "个人习惯追踪器",
       "homepage": "数字大本营",
       "recipeBox": "食谱规划器",
       "dashboard": "数据仪表盘",
-      "understandingTitle": "理解一切是如何运作的",
+      "understandingTitle": "扎实的编程基础",
       "understandingBody": "Jiki 会为你打下扎实的基础，让你可以在此基础上建立自己的职业生涯。能读懂不熟悉的代码，推理出它的运作方式，并快速发现 bug。",
-      "codeNote": "你将学会从零开始做出像 Wordle 这样的游戏"
+      "codeNote": "你将学会从零开始做出像 Wordle 这样的游戏",
+      "portfolioTitle": "丰富多样的真实项目作品集",
+      "portfolioBody": "做真正符合你兴趣的项目。不是千篇一律的待办清单应用，而是能展现你的创造力、聪明才智和知识的真正应用。"
     },
     "meetJeremy": {
       "portraitAlt": "Jeremy Walker",
@@ -761,31 +718,67 @@
       "heading": "常见问题",
       "q1": "要花多少钱？",
       "q1a1": "<strong>学编程</strong>的练习，也就是核心的编程入门课程体系，是<strong>完全免费</strong>的。不用信用卡，没有试用期，更没有隐藏条件。",
-      "q1Item1": "<strong>学构建</strong>的完整访问权限",
-      "q1Item2": "在<strong>Jiki 项目</strong>中综合运用你的技能",
+      "q1Item2": "解锁 Premium <strong>挑战</strong>",
       "q1Item3": "<strong>向 Jiki 提问</strong>的 AI 支持，次数不限",
       "q1Item4": "定期举办<strong>直播答疑</strong>，你可以参加",
       "q1Item5": "获得课程<strong>证书</strong>",
       "q1Item6": "<strong>无广告</strong>的学习体验",
       "q1Item7": "<strong>抢先体验</strong>新功能",
       "q2": "这门课程每周需要花多少时间？",
-      "q2a": "花多少时间都可以，完全由你决定。大多数人每周花 5 到 10 小时，12 到 20 周就能学完<strong>学编程</strong>。<strong>学构建</strong>会持续更新，新内容上线后你可以随时来看，也可以在自己方便的时候参加直播。",
+      "q2a": "花多少时间都可以，完全由你决定。大多数人每周花 5 到 10 小时，大约 3 个月就能学完<strong>学编程</strong>。",
       "q3": "这门课程有多难？我需要有多聪明？",
       "q3a1": "这门课程面向所有人设计，无论你的背景如何都能上手。我们相信，学编程不需要你有多“聪明”。但你确实需要付出努力，并且愿意接受挑战。",
       "q3a2": "但只要你肯付出努力，遇到卡壳时主动求助，并且拥抱挑战，你会惊讶地发现自己在短时间内能走多远。",
       "q4": "Jiki 现在上线了吗？",
       "q4a1": "可以。今天注册，就能开始学习免费的学编程课程体系。",
-      "q4a2": "第一期<strong>学构建</strong>将在<strong>六月中旬</strong>开始。进入平台后，你就可以订阅提醒。",
       "q5": "我已经报名了训练营，这个和训练营有什么区别吗？",
       "q5a1": "感谢你加入训练营！Jiki 是训练营进化的下一个阶段。你做过的大部分练习都会出现在 Jiki 里，而且还有更多新内容。我们还把 3 小时的视频拆成了 5 到 10 分钟的小段，看起来更轻松！",
       "q5a2": "作为训练营成员，你会自动获得终身 Jiki 高级版。这适用于最初的学编程课程，以及未来的所有课程。",
       "intro": "以下是我们被问得最多的问题。这里没有解答你的疑问？<link>给我们发封邮件吧！</link>",
-      "q1a2": "<strong>Jiki 高级版</strong>只需一次性付款<price></price>（按国家/地区定价），即可解锁："
+      "q1a2": "<strong>Jiki 高级版</strong>只需一次性付款<price></price>（按国家/地区定价），即可解锁：",
+      "q1Item1": "<strong>学构建</strong>的完整访问权限",
+      "q4a2": "第一期<strong>学构建</strong>将在<strong>六月中旬</strong>开始。进入平台后，你就可以订阅提醒。"
     },
     "latestNews": {
       "heading": "最新动态",
       "byAuthor": "作者：{name}",
       "subheading": "在<link>我们的博客</link>里，随时了解 Jiki 的最新动态。"
+    },
+    "twoHalves": {
+      "eyebrow": "你的两项核心技能",
+      "heading": "成为开发者的两半",
+      "intro": "Jiki 教你<strong>如何编程</strong>（用最有趣、最有效的方式！），也教你用专业开发者日常使用的技术<strong>做出真正的作品</strong>。<strong>从第一天开始。</strong>",
+      "codeHeading": "学习<word>编程</word>",
+      "codeBody": "每个核心概念都有详细的视频讲解，还有上百个练习和项目供你动手实践",
+      "buildHeading": "学习<word>构建</word>",
+      "buildBody": "从第一天起就学习专业开发者使用的技术：数据库、身份验证、前端、后端，还有更多！",
+      "techLabel": "你将学到的技术包括："
+    },
+    "learnToBuild": {
+      "heading": "学会<word>构建</word>",
+      "intro": "用现代的智能体编程，快速学会数据库、身份验证、前端、后端等核心技术。",
+      "livestreamsLead": "互动式教学直播",
+      "livestreamsDetail": "卡在某个概念或自己的项目上？在<strong>定期直播</strong>里找到答案，还有来自社区的真实问题。",
+      "technologiesLead": "真实项目，不是假项目。",
+      "technologiesDetail": "看 Jeremy 从零开始构建真实项目、解释每一个决定，你可以跟着一起动手实现自己的想法。",
+      "portfolioLead": "学习各种各样的技术",
+      "portfolioDetail": "构建一个现代应用要和各种不同的系统打交道：身份验证、API、后端、前端。这些我们都会教你。",
+      "liveQaAlt": "Jeremy 主持 Jiki 直播问答",
+      "topicsLabel": "动手实践：",
+      "databases": "数据库",
+      "auth": "身份验证",
+      "frontendBackend": "前端与后端",
+      "apis": "API",
+      "deployment": "部署",
+      "llmIntegration": "LLM 集成",
+      "liveQa_fred": "终于跑通了。试了三次才成功。",
+      "liveQa_oleksandra": "谁能再讲一下闭包？语法我懂，就是不明白为什么要用它。",
+      "liveQa_shaun": "啊，这样一说就明白了。",
+      "liveQa_lukas": "刚部署了我的第一个项目。真没想到自己能做到这一步。",
+      "joinLive": "加入直播讨论",
+      "catchUp": "稍后补看",
+      "getSupport": "获取支持",
+      "liveQa_drac": "这是我见过讲得最清楚的解释 🙌"
     }
   },
   "premium": {
@@ -812,16 +805,16 @@
     "values": {
       "oneConversation": "1 次对话",
       "unlimited": "无限",
-      "firstEpisodes": "前几集",
       "fullAccess": "完整权限",
+      "firstEpisodes": "前几集",
       "sampleEpisode": "试看单集"
     },
     "categories": {
       "codingFundamentals": "学编程",
-      "buildWithJeremy": "学构建",
       "support": "支持",
       "certificates": "证书",
-      "experience": "体验"
+      "experience": "体验",
+      "buildWithJeremy": "学构建"
     },
     "features": {
       "codingExercisesTitle": "编程练习",
@@ -832,20 +825,20 @@
       "jikiChallengesDesc": "挑战更难的题目，把技能推向更高水平。",
       "askJikiTitle": "问 Jiki",
       "askJikiDesc": "Jiki 提供 AI 驱动的提示和讲解，帮你摆脱卡壳。",
-      "buildingFundamentalsTitle": "构建基础系列",
-      "buildingFundamentalsDesc": "看 Jeremy 从零搭建一个 Web 平台：服务器、数据库、身份验证等等。",
-      "howThingsWorkTitle": "工作原理系列",
-      "howThingsWorkDesc": "深入讲解 Exercism 和 Jiki 中比较棘手的部分，以及它们为什么这样设计。",
       "earlyAccessTitle": "新功能抢先体验",
       "earlyAccessDesc": "比别人更早试用新功能。",
       "communityForumsTitle": "社区论坛",
       "communityForumsDesc": "提问交流，和其他 Jiki 学员一起学习。",
       "livestreamsTitle": "与 Jeremy 的问答直播",
-      "livestreamsDesc": "参加直播问答，Jeremy 会解答你在编程和构建中遇到的问题。",
+      "livestreamsDesc": "参加直播问答，Jeremy 会解答你在编程中遇到的问题。",
       "certificatesTitle": "获得课程证书",
       "certificatesDesc": "用可分享的证书展示你的学习成果。",
       "adFreeTitle": "无广告学习",
-      "adFreeDesc": "专心学习，不受打扰。"
+      "adFreeDesc": "专心学习，不受打扰。",
+      "buildingFundamentalsTitle": "构建基础系列",
+      "buildingFundamentalsDesc": "看 Jeremy 从零搭建一个 Web 平台：服务器、数据库、身份验证等等。",
+      "howThingsWorkTitle": "工作原理系列",
+      "howThingsWorkDesc": "深入讲解 Exercism 和 Jiki 中比较棘手的部分，以及它们为什么这样设计。"
     },
     "faq": {
       "title": "常见问题",
@@ -888,94 +881,6 @@
       "prioritySupportDescription": "需要帮助时，获得更快的回复",
       "earlyAccessTitle": "抢先体验",
       "earlyAccessDescription": "第一时间体验新功能和新内容"
-    }
-  },
-  "roadmap": {
-    "page": {
-      "heading": "路线图",
-      "subheading": "Jiki 要往哪里走。按季度看看我们已经发布什么、接下来做什么，以及我们还在构想什么。",
-      "disclaimer": "这份路线图是我们当前计划的快照。随着我们从社区中学习，优先顺序会发生变化，因此时间和范围都可能调整。"
-    },
-    "status": {
-      "shipped": "已发布",
-      "inProgress": "进行中",
-      "planned": "计划中"
-    },
-    "changelog": {
-      "title": "更新日志",
-      "subtitle": "我们最近为 Jiki 带来的改进。",
-      "learnToBuildLaunch": {
-        "date": "2026 年 7 月 11 日",
-        "title": "推出《学会构建》",
-        "description": "Jeremy 的全新系列已经上线，他在其中和学习者一起从零开始构建真实、有用的项目。"
-      },
-      "milestones6To10": {
-        "date": "2026 年 7 月",
-        "title": "推出《学会编程》的里程碑 6 至 10",
-        "description": "《学会编程》学习路线上线了五个新里程碑，把学习之旅远远延伸到基础之外。"
-      },
-      "jikiLaunch": {
-        "date": "2026 年 6 月 7 日",
-        "title": "Jiki 正式上线！",
-        "description": "Jiki 正式上线了（虽然还是测试版！）"
-      }
-    },
-    "phases": {
-      "now": {
-        "label": "现在",
-        "timeframe": "2026 年 7 月",
-        "summary": "这个月我们专注的事情。",
-        "learnToBuild": {
-          "title": "推出《学会构建》",
-          "description": "Jeremy 的全新系列已经上线，他在其中和学习者一起从零开始构建真实、有用的项目。每个项目都拆成短小的课程，展示的不只是代码，还有打造软件过程中的思考、失误和决策。"
-        },
-        "launchBugs": {
-          "title": "解决上线初期的 bug",
-          "description": "Jiki 上线后，随着真实学习者开始使用平台，我们正在消灭 bug、打磨粗糙的地方。你可以期待整个应用持续不断的小修复和体验改进。"
-        },
-        "earlyFeedback": {
-          "title": "回应早期反馈",
-          "description": "我们阅读收到的每一条消息、支持帖子和建议。最有价值的反馈正在被转化成调整和小功能，让体验一周比一周更好。"
-        },
-        "foundations": {
-          "title": "稳固基础",
-          "description": "在幕后，我们正在加强可靠性、性能和可观测性，为下一波功能打下坚如磐石的基础。虽然不那么显眼，却是我们当下能做的最重要的工作。"
-        }
-      },
-      "next": {
-        "label": "接下来",
-        "timeframe": "2026 年第三季度",
-        "summary": "已经设计好，排上了日程。",
-        "betaToLive": {
-          "title": "从测试版走向正式版",
-          "description": "Jiki 目前处于测试版。等上线的忙碌平息后，我们会去掉测试版标签，升级为正式产品，提供更可靠的稳定性保障、更清晰的定价方案和更完善的新手引导流程。届时我们也会向 Exercism 社区发送上线邮件，并与合作伙伴一起启动推广。"
-        },
-        "deepDiveVideos": {
-          "title": "加入深入探索视频",
-          "description": "长视频，超越核心课程，深入探索各种概念。非常适合想弄懂“怎么做”背后的“为什么”，并看看这些想法如何与更广阔的编程世界相连的学习者。"
-        },
-        "newLanguages": {
-          "title": "上线多种新语言",
-          "description": "从 8 月开始，我们会把 Jiki 带给用母语学习的人，翻译整个界面和课程体系，而不只是营销页面。这一切会从 7 月 31 日到 8 月 2 日那个周末的<link>社区翻译马拉松</link>开始。"
-        },
-        "pythonVersion": {
-          "title": "上线 Python 版本",
-          "description": "9 月推出，一条成熟的 Python 学习路线，深度与我们 JavaScript 课程体系相当。一样的练习理念，一样的单步可视化工具，一样的打磨水准，只是换成 Python 作为教学语言。"
-        }
-      },
-      "future": {
-        "label": "未来",
-        "timeframe": "2026 年第四季度",
-        "summary": "已经在地平线上。随着我们的了解，可能会调整。",
-        "moreLanguages": {
-          "title": "加入更多语言",
-          "description": "在 8 月第一波的基础上，我们会在今年余下的时间里继续把 Jiki 翻译成更多语言，让更多学习者能用母语使用这个平台。我们会根据社区的需求和能产生最大影响的地方来决定优先级。"
-        },
-        "sql": {
-          "title": "上线 SQL",
-          "description": "今年晚些时候，我们会在 Jiki 中加入 SQL，让学习者亲手理解数据库和查询，方式和课程体系的其他部分一样：逐步推进，边做边学。"
-        }
-      }
     }
   },
   "misc": {
@@ -1088,10 +993,6 @@
       "title": "成就 - Jiki",
       "description": "跟踪你的学习进度，在学习编程的过程中解锁成就。"
     },
-    "build": {
-      "title": "学习构建 - Jiki",
-      "description": "观看关于构建真实项目、深入探索工作原理和现场问答的视频系列。"
-    },
     "dashboard": {
       "title": "仪表盘 - Jiki",
       "description": "跟踪学习进度，继续编程练习，并查看成就。"
@@ -1138,15 +1039,11 @@
     },
     "home": {
       "title": "Jiki - 趣味学编程",
-      "description": "在 LLM 时代学习编程和构建的最佳方式！由 Exercism 背后的团队打造。"
+      "description": "在 LLM 时代学习编程的最佳方式！由 Exercism 背后的团队打造。"
     },
     "premium": {
       "title": "高级版 - Jiki",
       "description": "通过 Jiki 高级版加速你走向就业准备之路。完全访问课程、项目、AI 支持等。"
-    },
-    "roadmap": {
-      "title": "路线图 - Jiki",
-      "description": "我们在 Jiki 上接下来要构建的内容。按季度查看即将推出的课程、项目和功能。"
     },
     "testimonials": {
       "title": "用户评价 - Jiki",
@@ -1180,6 +1077,14 @@
     },
     "exercises": {
       "notFound": "未找到练习"
+    },
+    "build": {
+      "title": "学习构建 - Jiki",
+      "description": "观看关于构建真实项目、深入探索工作原理和现场问答的视频系列。"
+    },
+    "roadmap": {
+      "title": "路线图 - Jiki",
+      "description": "我们在 Jiki 上接下来要构建的内容。按季度查看即将推出的课程、项目和功能。"
     }
   },
   "apiErrors": {
@@ -1350,7 +1255,7 @@
   "modals": {
     "welcomeToPremium": {
       "badge": "Premium 会员",
-      "description": "感谢升级！你现在可以使用所有 Premium 权益，包括不限次数的 Jiki 对话、项目和学习构建！",
+      "description": "感谢升级！你现在可以使用所有 Premium 权益，包括不限次数的 Jiki 对话，以及全部挑战！",
       "title": "欢迎加入<highlight>Premium！</highlight>"
     },
     "confirmation": {
@@ -1404,14 +1309,6 @@
     "exerciseSuccess": {
       "defaultTitle": "恭喜你！",
       "defaultMessage": "所有测试都通过了！你已成功完成这道练习。"
-    },
-    "welcome": {
-      "title": "欢迎来到 Jiki！",
-      "subtitle": "观看这段简短的视频，快速上手。",
-      "skipTitle": "要跳过欢迎视频吗？",
-      "skipMessage": "这段视频能帮你更好地使用 Jiki。确定要跳过吗？",
-      "skipConfirm": "跳过视频",
-      "skipCancel": "继续观看"
     },
     "walkthroughConfirm": {
       "title": "先自己试着解决？",
@@ -1580,6 +1477,20 @@
       "error": "错误：{message}",
       "perMonthShort": "/月"
     },
+    "exerciseIntroVideo": {
+      "title": "欢迎来到你的第一个绘画练习",
+      "intro": "观看这段简短介绍，了解绘画练习是如何运作的，以及如何完成它们。你也可以在说明的底部看到它。",
+      "close": "我们开始吧",
+      "watchAlt": "观看介绍"
+    },
+    "welcome": {
+      "title": "欢迎来到 Jiki！",
+      "subtitle": "观看这段简短的视频，快速上手。",
+      "skipTitle": "要跳过欢迎视频吗？",
+      "skipMessage": "这段视频能帮你更好地使用 Jiki。确定要跳过吗？",
+      "skipConfirm": "跳过视频",
+      "skipCancel": "继续观看"
+    },
     "calendarSubscribe": {
       "title": "订阅日历",
       "description": "把 Jiki 的直播课加入你的日历。新排期会自动出现在日历里。",
@@ -1588,12 +1499,6 @@
       "otherLabel": "Outlook 和其他日历",
       "otherHelp": "复制此链接，把它添加为订阅日历。",
       "copied": "已复制"
-    },
-    "exerciseIntroVideo": {
-      "title": "欢迎来到你的第一个绘画练习",
-      "intro": "观看这段简短介绍，了解绘画练习是如何运作的，以及如何完成它们。你也可以在说明的底部看到它。",
-      "close": "我们开始吧",
-      "watchAlt": "观看介绍"
     },
     "subscriptionSuccess": {
       "chatGate": {
@@ -1715,6 +1620,41 @@
       "upsell": {
         "title": "新挑战来了！",
         "description": "综合运用你的技能，迎接 Premium 挑战。"
+      },
+      "premiumUpsell": {
+        "label": "Jiki 高级版",
+        "completionStat": "高级版用户<strong>完成课程的可能性是其他人的 26 倍</strong>。",
+        "price": "只需<price></price>。<muted>一次性付费，无需订阅。</muted>",
+        "upgrade": "升级到高级版",
+        "pendingNote": "你的付款还在处理中。一旦到账，我们会立即开通高级版，并给你发邮件。",
+        "accelerate": {
+          "heading": "<highlight>加速</highlight>你的学习！",
+          "benefits": "<strong>你将获得：</strong>高级版挑战、无限次向 Jiki 提问、无限次深度解析、官方证书、无广告，以及更多！"
+        },
+        "testimonials": {
+          "heading": "加入<highlight>高级版团队</highlight>",
+          "show": "显示第 {number} 条评价",
+          "quotes": {
+            "veronika": "价格便宜得难以置信。现在课程学了一半，我可以自豪地说，我已经快三个月没用 ChatGPT 了！🙂",
+            "abhinav": "购买力平价折扣让它更实惠了。谢谢你们让它变得人人负担得起。",
+            "laura": "社区、练习、导师，还有 Jeremy，和他们互动都非常棒。",
+            "kazzybits": "我对思考本身的看法，以及对解决问题的一般看法，都发生了巨大的变化。",
+            "nilophars": "可视化呈现、思维模型的建立、导师反馈，还有互动练习，都非常有价值。",
+            "jj": "从有趣又精致的界面，到直播课、实验室和 Discord 讨论，这一切加在一起，构成了极佳的学习体验。"
+          },
+          "roles": {
+            "veronika": "初级开发者",
+            "abhinav": "初学者",
+            "laura": "曾陷入教程地狱",
+            "kazzybits": "初学者",
+            "jj": "初级开发者"
+          }
+        },
+        "neverGetStuck": {
+          "heading": "<highlight>再也不会</highlight>卡住",
+          "text": "有了高级版，每道练习都有 Jiki 陪着你，把你往正确的方向推一把。",
+          "statNumber": "26 倍"
+        }
       },
       "userProfile": {
         "premiumMember": "Premium 会员"
@@ -2013,31 +1953,6 @@
       "finishTooltip": "看完视频才能继续"
     }
   },
-  "projects": {
-    "projectCard": {
-      "comingSoon": "即将推出",
-      "comingSoonLabel": "即将推出"
-    },
-    "episodeCard": {
-      "premium": "高级版"
-    },
-    "episodeSummary": {
-      "heading": "本期概要",
-      "whereWeStart": "起点",
-      "whereWeEnd": "终点",
-      "whatWeCover": "涵盖内容"
-    },
-    "projectPage": {
-      "backToAllProjects": "← 返回<strong>所有项目</strong>"
-    },
-    "episodePage": {
-      "backToProject": "← 返回<strong>{title}</strong>",
-      "relevantGuidesDescription": "在完成这一步时，这些指南可能会对你有帮助。"
-    },
-    "relevantGuides": {
-      "heading": "相关指南"
-    }
-  },
   "guides": {
     "guidesContent": {
       "pageHeading": "指南与操作教程",
@@ -2066,11 +1981,11 @@
     "relatedGuides": {
       "heading": "相关指南"
     },
-    "featuredInProjects": {
-      "heading": "收录于项目"
-    },
     "metadata": {
       "notFoundTitle": "未找到指南"
+    },
+    "featuredInProjects": {
+      "heading": "收录于项目"
     }
   },
   "unsubscribe": {
@@ -2323,6 +2238,130 @@
         "heading": "你会用到的函数",
         "description": "这些是这道练习为你提供的基础积木。"
       }
+    }
+  },
+  "build": {
+    "upcomingStreams": {
+      "heading": "即将开始的直播",
+      "toBeAnnounced": "待公布",
+      "subscribeButton": "订阅日历"
+    },
+    "hub": {
+      "title": "学习构建 - 项目",
+      "description": "和 Jeremy 一起从零开始构建真实项目。学会他知道的一切！"
+    }
+  },
+  "roadmap": {
+    "page": {
+      "heading": "路线图",
+      "subheading": "Jiki 要往哪里走。按季度看看我们已经发布什么、接下来做什么，以及我们还在构想什么。",
+      "disclaimer": "这份路线图是我们当前计划的快照。随着我们从社区中学习，优先顺序会发生变化，因此时间和范围都可能调整。"
+    },
+    "status": {
+      "shipped": "已发布",
+      "inProgress": "进行中",
+      "planned": "计划中"
+    },
+    "changelog": {
+      "title": "更新日志",
+      "subtitle": "我们最近为 Jiki 带来的改进。",
+      "learnToBuildLaunch": {
+        "date": "2026 年 7 月 11 日",
+        "title": "推出《学会构建》",
+        "description": "Jeremy 的全新系列已经上线，他在其中和学习者一起从零开始构建真实、有用的项目。"
+      },
+      "milestones6To10": {
+        "date": "2026 年 7 月",
+        "title": "推出《学会编程》的里程碑 6 至 10",
+        "description": "《学会编程》学习路线上线了五个新里程碑，把学习之旅远远延伸到基础之外。"
+      },
+      "jikiLaunch": {
+        "date": "2026 年 6 月 7 日",
+        "title": "Jiki 正式上线！",
+        "description": "Jiki 正式上线了（虽然还是测试版！）"
+      }
+    },
+    "phases": {
+      "now": {
+        "label": "现在",
+        "timeframe": "2026 年 7 月",
+        "summary": "这个月我们专注的事情。",
+        "learnToBuild": {
+          "title": "推出《学会构建》",
+          "description": "Jeremy 的全新系列已经上线，他在其中和学习者一起从零开始构建真实、有用的项目。每个项目都拆成短小的课程，展示的不只是代码，还有打造软件过程中的思考、失误和决策。"
+        },
+        "launchBugs": {
+          "title": "解决上线初期的 bug",
+          "description": "Jiki 上线后，随着真实学习者开始使用平台，我们正在消灭 bug、打磨粗糙的地方。你可以期待整个应用持续不断的小修复和体验改进。"
+        },
+        "earlyFeedback": {
+          "title": "回应早期反馈",
+          "description": "我们阅读收到的每一条消息、支持帖子和建议。最有价值的反馈正在被转化成调整和小功能，让体验一周比一周更好。"
+        },
+        "foundations": {
+          "title": "稳固基础",
+          "description": "在幕后，我们正在加强可靠性、性能和可观测性，为下一波功能打下坚如磐石的基础。虽然不那么显眼，却是我们当下能做的最重要的工作。"
+        }
+      },
+      "next": {
+        "label": "接下来",
+        "timeframe": "2026 年第三季度",
+        "summary": "已经设计好，排上了日程。",
+        "betaToLive": {
+          "title": "从测试版走向正式版",
+          "description": "Jiki 目前处于测试版。等上线的忙碌平息后，我们会去掉测试版标签，升级为正式产品，提供更可靠的稳定性保障、更清晰的定价方案和更完善的新手引导流程。届时我们也会向 Exercism 社区发送上线邮件，并与合作伙伴一起启动推广。"
+        },
+        "deepDiveVideos": {
+          "title": "加入深入探索视频",
+          "description": "长视频，超越核心课程，深入探索各种概念。非常适合想弄懂“怎么做”背后的“为什么”，并看看这些想法如何与更广阔的编程世界相连的学习者。"
+        },
+        "newLanguages": {
+          "title": "上线多种新语言",
+          "description": "从 8 月开始，我们会把 Jiki 带给用母语学习的人，翻译整个界面和课程体系，而不只是营销页面。这一切会从 7 月 31 日到 8 月 2 日那个周末的<link>社区翻译马拉松</link>开始。"
+        },
+        "pythonVersion": {
+          "title": "上线 Python 版本",
+          "description": "9 月推出，一条成熟的 Python 学习路线，深度与我们 JavaScript 课程体系相当。一样的练习理念，一样的单步可视化工具，一样的打磨水准，只是换成 Python 作为教学语言。"
+        }
+      },
+      "future": {
+        "label": "未来",
+        "timeframe": "2026 年第四季度",
+        "summary": "已经在地平线上。随着我们的了解，可能会调整。",
+        "moreLanguages": {
+          "title": "加入更多语言",
+          "description": "在 8 月第一波的基础上，我们会在今年余下的时间里继续把 Jiki 翻译成更多语言，让更多学习者能用母语使用这个平台。我们会根据社区的需求和能产生最大影响的地方来决定优先级。"
+        },
+        "sql": {
+          "title": "上线 SQL",
+          "description": "今年晚些时候，我们会在 Jiki 中加入 SQL，让学习者亲手理解数据库和查询，方式和课程体系的其他部分一样：逐步推进，边做边学。"
+        }
+      }
+    }
+  },
+  "projects": {
+    "projectCard": {
+      "comingSoon": "即将推出",
+      "comingSoonLabel": "即将推出"
+    },
+    "episodeCard": {
+      "premium": "高级版"
+    },
+    "episodeSummary": {
+      "heading": "本期概要",
+      "whereWeStart": "起点",
+      "whereWeEnd": "终点",
+      "whatWeCover": "涵盖内容"
+    },
+    "projectPage": {
+      "backToAllProjects": "← 返回<strong>所有项目</strong>"
+    },
+    "episodePage": {
+      "backToProject": "← 返回<strong>{title}</strong>",
+      "relevantGuidesDescription": "在完成这一步时，这些指南可能会对你有帮助。"
+    },
+    "relevantGuides": {
+      "heading": "相关指南"
     }
   }
 }

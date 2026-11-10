@@ -60,13 +60,12 @@
     "sidebar": {
       "groups": {
         "learnToCode": "Nauči da programiraš",
-        "learnToBuild": "Nauči da praviš",
         "community": "Zajednica",
-        "more": "Više"
+        "more": "Više",
+        "learnToBuild": "Nauči da praviš"
       },
       "nav": {
         "learn": "Osnove programiranja",
-        "build": "Projekti",
         "challenges": "Izazovi",
         "concepts": "Koncepti programiranja",
         "achievements": "Dostignuća",
@@ -77,7 +76,8 @@
         "settings": "Podešavanja",
         "help": "Pomoć",
         "upgrade": "Pređi na Premium",
-        "logOut": "Odjavi se"
+        "logOut": "Odjavi se",
+        "build": "Projekti"
       },
       "premiumPill": "Premijum"
     },
@@ -172,17 +172,6 @@
       "copied": "Link je kopiran"
     },
     "perMonth": "/mesečno"
-  },
-  "build": {
-    "upcomingStreams": {
-      "heading": "Predstojeće sesije uživo",
-      "toBeAnnounced": "Biće objavljeno",
-      "subscribeButton": "Pretplati se na kalendar"
-    },
-    "hub": {
-      "title": "Nauči da gradiš - Projekti",
-      "description": "Gradi prave projekte od nule uz Džeremija. Nauči sve što on zna!"
-    }
   },
   "auth": {
     "oauth": {
@@ -353,13 +342,13 @@
       "title": "Da otkažeš pretplatu?",
       "message": "Bilo bi nam žao da odeš! Ako otkažeš, izgubićeš pristup Premium-u na kraju trenutnog obračunskog perioda.",
       "benefitsTitle": "Trenutno uživaš u:",
+      "keep": "Zadrži moju pretplatu",
+      "cancel": "Otkaži pretplatu",
+      "defaultBillingPeriodEnd": "kraj tvog obračunskog perioda",
       "benefit1": "Neograničena AI pomoć od Džikija",
       "benefit2": "Svi projekti i putanje za učenje",
       "benefit3": "Sertifikati o završetku",
-      "benefit4": "Iskustvo bez reklama",
-      "keep": "Zadrži moju pretplatu",
-      "cancel": "Otkaži pretplatu",
-      "defaultBillingPeriodEnd": "kraj tvog obračunskog perioda"
+      "benefit4": "Iskustvo bez reklama"
     },
     "cancelSuccess": {
       "title": "Pretplata otkazana",
@@ -574,28 +563,20 @@
   },
   "landing": {
     "hero": {
-      "tagline": "Nauči veštine koje su ti potrebne da stvaraš sjajne stvari, radiš produktivno i <strong>ostaneš u toku i u {year}.</strong>",
+      "tagline": "Tutorijali koje ćeš zaista gledati. Vežbe koje će ti se zaista dopasti. <strong>Od nule do samostalnog programiranja za 3 meseca.</strong> I to besplatno!",
       "loadingVideo": "Učitavanje videa",
       "playVideo": "Pusti video",
       "watchPrompt": "Čitanje nije tvoja stvar? <strong>Pusti video</strong> i reći ću ti sve što treba da znaš!",
-      "headline": "Savremen način da naučiš da <highlight>programiraš i gradiš</highlight>",
+      "headline": "Zabavan način da <highlight>naučiš da programiraš!</highlight>",
+      "audienceAbsoluteBeginners": "<name>Apsolutni početnici</name> koji žele da <u>brzo počnu</u>.",
+      "audienceRepeatBeginners": "<name>Oni koji kreću ispočetka</name> koji žele da im <u>sve konačno bude jasno</u>.",
+      "audienceJuniors": "<name>Junior programeri</name> koji žele da <u>utvrde osnove</u>.",
       "audienceBeginners": "<name>Početnici</name> koji traže najbolji i najbrži način da nauče",
-      "audienceJuniors": "<name>Junior programeri</name> koji žele da ubrzaju svoje znanje",
       "audienceEntrepreneurs": "<name>Preduzetnici i Vibe Coders</name> koji žele da grade pre nego što zaposle"
     },
-    "twoHalves": {
-      "eyebrow": "Tvoje dve osnovne veštine",
-      "heading": "Dve polovine onoga što znači biti programer",
-      "intro": "Jiki te uči <strong>kako da programiraš</strong> (na najzabavniji i najefikasniji način!) i kako da <strong>gradiš prave stvari</strong> koristeći iste tehnologije koje koriste profesionalci. <strong>Od prvog dana.</strong>",
-      "codeHeading": "Nauči da <word>programiraš</word>",
-      "codeBody": "Svaki osnovni koncept, uz detaljna video objašnjenja, i stotine vežbi i projekata za uvežbavanje",
-      "buildHeading": "Nauči da <word>gradiš</word>",
-      "buildBody": "Nauči tehnologije koje profesionalci koriste od prvog dana: baze podataka, autentifikacija, frontend, backend i još mnogo toga!",
-      "techLabel": "Nauči tehnologije kao što su:"
-    },
     "learnToCode": {
-      "heading": "Nauči da <word>programiraš</word>",
-      "intro": "Savladaj programiranje, osnovnu veštinu kojom prenosimo svoje želje računaru. Pomoći ćemo ti da <highlight>izgradiš čvrste temelje programiranja</highlight>.",
+      "heading": "Savladaj osnove programiranja",
+      "intro": "Učenje treba da bude <highlight>igra, a ne posao</highlight>. Na Jikiju rešavaš zagonetke, praviš igre i učiš kroz praksu.",
       "demo": {
         "stageDescription": "Animacija Jiki aplikacije: učenik pokreće vežbu Space Invaders, kod pomera laserski top izvan ivice mreže, učenik pita Džikija za pomoć, ispravlja granicu sa 20 na 11 i vežba prolazi.",
         "run": "Pokreni kod",
@@ -668,32 +649,6 @@
       "flowerFlipbook": "Cvetni flipbuk",
       "footnote": "…a to je samo prvih nekoliko nedelja!"
     },
-    "learnToBuild": {
-      "heading": "Nauči da <word>gradiš</word>",
-      "intro": "Brzo nauči osnovne tehnologije kao što su baze podataka, autentifikacija, frontend, backend i još mnogo toga, uz moderno agentno programiranje.",
-      "livestreamsLead": "Interaktivni nastavni lajv strimovi",
-      "livestreamsDetail": "Ako se zaglaviš na nekom konceptu ili na svom projektu, odgovor dobijaš na <strong>redovnim lajv strimovima</strong>, uz prava pitanja iz zajednice.",
-      "technologiesLead": "Pravi projekti, ne lažni.",
-      "technologiesDetail": "Uči dok Džeremi gradi prave projekte od nule, objašnjavajući svaku odluku, a ti prati sa svojim idejama.",
-      "portfolioLead": "Nauči širok spektar tehnologija",
-      "portfolioDetail": "Pravljenje moderne aplikacije znači rad sa mnogo različitih sistema: autentifikacija, API-ji, backend, frontend. Naučićemo te svemu tome.",
-      "liveQaAlt": "Džeremi vodi lajv Jiki sesiju pitanja i odgovora",
-      "topicsLabel": "Upoznaj iz prve ruke:",
-      "databases": "Baze podataka",
-      "auth": "Autentifikacija",
-      "frontendBackend": "Frontend naspram backenda",
-      "apis": "API-ji",
-      "deployment": "Postavljanje na server",
-      "llmIntegration": "Integracija LLM modela",
-      "liveQa_fred": "Konačno radi. Trebalo mi je tri pokušaja, ali uspelo je.",
-      "liveQa_oleksandra": "Može li neko ponovo da objasni closure? Razumem sintaksu, ali ne vidim zašto bi ga iko ikada koristio.",
-      "liveQa_shaun": "Aha, sad to zapravo ima smisla.",
-      "liveQa_lukas": "Upravo sam postavio svoj prvi projekat na server. Iskreno, nisam mislio da ću dogurati ovako daleko.",
-      "joinLive": "Pridruži se lajv diskusiji",
-      "catchUp": "Pogledaj kasnije",
-      "getSupport": "Dobij podršku",
-      "liveQa_drac": "Najjasnije objašnjenje ovoga koje sam igde našao 🙌"
-    },
     "outcomes": {
       "bubble": "Na kraju kursa",
       "heading": "Šta ćeš poneti sa sobom",
@@ -702,15 +657,17 @@
       "certificateBody": "Dobićeš sertifikat koji možeš da dodaš u svoju biografiju i u odeljak Certifications na LinkedIn profilu. I znaćeš da je zaslužen!",
       "certificateAlt": "Sertifikat o završetku Jiki kursa",
       "shareOnLinkedIn": "Podeli na LinkedIn-u",
-      "portfolioTitle": "Raznovrstan portfolio pravih projekata",
-      "portfolioBody": "Pravi projekte koji odgovaraju tvojim interesovanjima. Ne generička aplikacija sa listom obaveza, već prave aplikacije koje pokazuju tvoju kreativnost, snalažljivost i znanje.",
+      "thinkingTitle": "Unapređeno kritičko mišljenje",
+      "thinkingBody": "Ovo je praktičan kurs koji te tera da se rveš sa problemima. Unaprediće tvoje veštine rešavanja problema i kritičkog mišljenja. Korisno u celom životu.",
       "habitTracker": "Praćenje ličnih navika",
       "homepage": "Digitalni dom",
       "recipeBox": "Planer recepata",
       "dashboard": "Dashboard sa podacima",
-      "understandingTitle": "Razumevanje kako sve to funkcioniše",
+      "understandingTitle": "Čvrsti temelji programiranja",
       "understandingBody": "Jiki će ti dati prave, čvrste temelje na kojima možeš da izgradiš karijeru. Čitaj nepoznati kod, razmišljaj o tome kako radi i brzo uočavaj bugove.",
-      "codeNote": "Znaćeš kako da napraviš igre poput Wordle-a od nule"
+      "codeNote": "Znaćeš kako da napraviš igre poput Wordle-a od nule",
+      "portfolioTitle": "Raznovrstan portfolio pravih projekata",
+      "portfolioBody": "Pravi projekte koji odgovaraju tvojim interesovanjima. Ne generička aplikacija sa listom obaveza, već prave aplikacije koje pokazuju tvoju kreativnost, snalažljivost i znanje."
     },
     "meetJeremy": {
       "portraitAlt": "Džeremi Voker",
@@ -733,9 +690,9 @@
     },
     "printRow": {
       "joinNote": "Pridruži se akciji!",
-      "spaceInvaders": "svemirski napadači",
-      "breakout": "proboj",
-      "maze": "lavirint",
+      "spaceInvaders": "Svemirski napadači",
+      "breakout": "Proboj",
+      "maze": "Lavirint",
       "heading": "Hoćeš da napraviš svoju prvu igru?",
       "body": "Nauči da pišeš kod i gradi prave projekte od prvog dana, a Džeremi te vodi na svakom koraku.",
       "free": "Više od 100 sati besplatnog sadržaja",
@@ -761,31 +718,67 @@
       "heading": "Često postavljana pitanja",
       "q1": "Koliko košta?",
       "q1a1": "Vežbe u programu <strong>Nauči da programiraš</strong>, koji je osnovni kurikulum za učenje programiranja, <strong>potpuno su besplatne</strong>. Bez kartice, bez probnog perioda, bez skrivenih uslova.",
-      "q1Item1": "Potpun pristup programu <strong>Nauči da gradiš</strong>",
-      "q1Item2": "Spoji svoje veštine u <strong>Jiki projektima</strong>",
+      "q1Item2": "Otključaj Premium <strong>izazove</strong>",
       "q1Item3": "Neograničena <strong>Pitaj Džikija</strong> AI podrška",
       "q1Item4": "Redovni <strong>prenosi uživo sa pitanjima i odgovorima</strong> kojima možeš da se pridružiš",
       "q1Item5": "Zaradi <strong>sertifikate</strong> za kurseve",
       "q1Item6": "Iskustvo učenja <strong>bez reklama</strong>",
       "q1Item7": "<strong>Rani pristup</strong> novim funkcionalnostima",
       "q2": "Koliko vremena nedeljno treba da provedem na kursu?",
-      "q2a": "Možeš da provedeš koliko god želiš, mnogo ili malo. Većina ljudi pređe <strong>Nauči da programiraš</strong> za 12 do 20 nedelja, uz oko 5 do 10 sati nedeljno. <strong>Nauči da gradiš</strong> stalno traje, pa možeš da uskočiš i izađeš kako izlaze nove epizode i da se pridružiš prenosima uživo kad ti odgovara.",
+      "q2a": "Možeš da provedeš koliko god želiš, mnogo ili malo. Većina ljudi pređe <strong>Nauči da programiraš</strong> za oko 3 meseca, uz 5 do 10 sati nedeljno.",
       "q3": "Koliko je kurs težak? Moram li da budem genije?",
       "q3a1": "Kurs je napravljen tako da bude pristupačan svima, bez obzira na predznanje. Ne verujemo da je za učenje programiranja potrebna neka posebna „pamet“. Ali moraš da uložiš trud i da prihvatiš izazov.",
       "q3a2": "Ali ako uložiš trud, potražiš pomoć kad zapneš i prihvatiš izazov, iznenadićeš se koliko daleko možeš da stigneš za kratko vreme.",
       "q4": "Da li je Jiki već dostupan?",
       "q4a1": "Da, možeš da se registruješ i da danas počneš besplatni kurikulum Nauči da programiraš.",
-      "q4a2": "Prva sesija <strong>Nauči da gradiš</strong> biće <strong>sredinom juna</strong>. Možeš da se prijaviš za podsetnik kada uđeš unutra.",
       "q5": "Već sam na butkampu. Da li je ovo nešto drugo?",
       "q5a1": "Hvala što si deo butkampa! Jiki je sledeća etapa u razvoju našeg butkampa. Većina vežbi koje rešavaš na butkampu pojaviće se u Jikiju, uz još mnogo toga. Trosatne video snimke smo podelili na manje delove od 5 do 10 minuta, da gledanje bude lakše!",
       "q5a2": "Kao član butkampa, automatski dobijaš Jiki Premijum doživotno. To važi i za početni kurs Nauči da programiraš i za sve buduće kurseve.",
       "intro": "Ovo su pitanja koja nam najčešće postavljaju. Nema odgovora na tvoje pitanje? <link>Pošalji nam mejl!</link>",
-      "q1a2": "<strong>Jiki Premijum</strong> je jednokratna uplata od <price></price> (cena zavisi od zemlje) i otključava:"
+      "q1a2": "<strong>Jiki Premijum</strong> je jednokratna uplata od <price></price> (cena zavisi od zemlje) i otključava:",
+      "q1Item1": "Potpun pristup programu <strong>Nauči da gradiš</strong>",
+      "q4a2": "Prva sesija <strong>Nauči da gradiš</strong> biće <strong>sredinom juna</strong>. Možeš da se prijaviš za podsetnik kada uđeš unutra."
     },
     "latestNews": {
       "heading": "Naše najnovije vesti",
       "byAuthor": "autor: {name}",
       "subheading": "Prati šta se dešava u Jikiju na <link>našem blogu</link>."
+    },
+    "twoHalves": {
+      "eyebrow": "Tvoje dve osnovne veštine",
+      "heading": "Dve polovine onoga što znači biti programer",
+      "intro": "Jiki te uči <strong>kako da programiraš</strong> (na najzabavniji i najefikasniji način!) i kako da <strong>gradiš prave stvari</strong> koristeći iste tehnologije koje koriste profesionalci. <strong>Od prvog dana.</strong>",
+      "codeHeading": "Nauči da <word>programiraš</word>",
+      "codeBody": "Svaki osnovni koncept, uz detaljna video objašnjenja, i stotine vežbi i projekata za uvežbavanje",
+      "buildHeading": "Nauči da <word>gradiš</word>",
+      "buildBody": "Nauči tehnologije koje profesionalci koriste od prvog dana: baze podataka, autentifikacija, frontend, backend i još mnogo toga!",
+      "techLabel": "Nauči tehnologije kao što su:"
+    },
+    "learnToBuild": {
+      "heading": "Nauči da <word>gradiš</word>",
+      "intro": "Brzo nauči osnovne tehnologije kao što su baze podataka, autentifikacija, frontend, backend i još mnogo toga, uz moderno agentno programiranje.",
+      "livestreamsLead": "Interaktivni nastavni lajv strimovi",
+      "livestreamsDetail": "Ako se zaglaviš na nekom konceptu ili na svom projektu, odgovor dobijaš na <strong>redovnim lajv strimovima</strong>, uz prava pitanja iz zajednice.",
+      "technologiesLead": "Pravi projekti, ne lažni.",
+      "technologiesDetail": "Uči dok Džeremi gradi prave projekte od nule, objašnjavajući svaku odluku, a ti prati sa svojim idejama.",
+      "portfolioLead": "Nauči širok spektar tehnologija",
+      "portfolioDetail": "Pravljenje moderne aplikacije znači rad sa mnogo različitih sistema: autentifikacija, API-ji, backend, frontend. Naučićemo te svemu tome.",
+      "liveQaAlt": "Džeremi vodi lajv Jiki sesiju pitanja i odgovora",
+      "topicsLabel": "Upoznaj iz prve ruke:",
+      "databases": "Baze podataka",
+      "auth": "Autentifikacija",
+      "frontendBackend": "Frontend naspram backenda",
+      "apis": "API-ji",
+      "deployment": "Postavljanje na server",
+      "llmIntegration": "Integracija LLM modela",
+      "liveQa_fred": "Konačno radi. Trebalo mi je tri pokušaja, ali uspelo je.",
+      "liveQa_oleksandra": "Može li neko ponovo da objasni closure? Razumem sintaksu, ali ne vidim zašto bi ga iko ikada koristio.",
+      "liveQa_shaun": "Aha, sad to zapravo ima smisla.",
+      "liveQa_lukas": "Upravo sam postavio svoj prvi projekat na server. Iskreno, nisam mislio da ću dogurati ovako daleko.",
+      "joinLive": "Pridruži se lajv diskusiji",
+      "catchUp": "Pogledaj kasnije",
+      "getSupport": "Dobij podršku",
+      "liveQa_drac": "Najjasnije objašnjenje ovoga koje sam igde našao 🙌"
     }
   },
   "premium": {
@@ -812,16 +805,16 @@
     "values": {
       "oneConversation": "1 razgovor",
       "unlimited": "Neograničeno",
-      "firstEpisodes": "Prve epizode",
       "fullAccess": "Potpun pristup",
+      "firstEpisodes": "Prve epizode",
       "sampleEpisode": "Probna epizoda"
     },
     "categories": {
       "codingFundamentals": "Nauči da programiraš",
-      "buildWithJeremy": "Nauči da gradiš",
       "support": "Podrška",
       "certificates": "Sertifikati",
-      "experience": "Iskustvo"
+      "experience": "Iskustvo",
+      "buildWithJeremy": "Nauči da gradiš"
     },
     "features": {
       "codingExercisesTitle": "Vežbe programiranja",
@@ -832,20 +825,20 @@
       "jikiChallengesDesc": "Prihvati teže izazove koji guraju tvoje veštine dalje.",
       "askJikiTitle": "Pitaj Džikija",
       "askJikiDesc": "Reši zastoj uz AI nagoveštaje i objašnjenja od Džikija.",
-      "buildingFundamentalsTitle": "Serijal Osnove građenja",
-      "buildingFundamentalsDesc": "Gledaj kako Džeremi gradi web platformu od nule: serveri, baze podataka, autentifikacija i još mnogo toga.",
-      "howThingsWorkTitle": "Serijal Kako stvari funkcionišu",
-      "howThingsWorkDesc": "Dubinski pogled u zamršenije delove Exercism-a i Jikija i objašnjenje zašto su napravljeni tako.",
       "earlyAccessTitle": "Rani pristup novim funkcionalnostima",
       "earlyAccessDesc": "Isprobaj nove funkcionalnosti pre svih ostalih.",
       "communityForumsTitle": "Forumi zajednice",
       "communityForumsDesc": "Postavljaj pitanja i uči zajedno sa drugim Jiki učenicima.",
       "livestreamsTitle": "Prenosi uživo sa Džeremijem: pitanja i odgovori",
-      "livestreamsDesc": "Pridruži se sesijama pitanja i odgovora uživo, gde Džeremi odgovara na tvoja pitanja o programiranju i građenju.",
+      "livestreamsDesc": "Pridruži se sesijama pitanja i odgovora uživo, gde Džeremi odgovara na tvoja pitanja o programiranju.",
       "certificatesTitle": "Zaradi sertifikate za kurseve",
       "certificatesDesc": "Pokaži svoje znanje uz sertifikate koje možeš da podeliš.",
       "adFreeTitle": "Učenje bez reklama",
-      "adFreeDesc": "Usredsredi se na učenje bez ometanja."
+      "adFreeDesc": "Usredsredi se na učenje bez ometanja.",
+      "buildingFundamentalsTitle": "Serijal Osnove građenja",
+      "buildingFundamentalsDesc": "Gledaj kako Džeremi gradi web platformu od nule: serveri, baze podataka, autentifikacija i još mnogo toga.",
+      "howThingsWorkTitle": "Serijal Kako stvari funkcionišu",
+      "howThingsWorkDesc": "Dubinski pogled u zamršenije delove Exercism-a i Jikija i objašnjenje zašto su napravljeni tako."
     },
     "faq": {
       "title": "Često postavljana pitanja",
@@ -888,94 +881,6 @@
       "prioritySupportDescription": "Dobij brže odgovore kad ti treba pomoć",
       "earlyAccessTitle": "Rani pristup",
       "earlyAccessDescription": "Isprobaj nove funkcionalnosti i sadržaj među prvima"
-    }
-  },
-  "roadmap": {
-    "page": {
-      "heading": "Plan razvoja",
-      "subheading": "Kuda ide Jiki. Pregled po kvartalima šta isporučujemo, šta sledi i o čemu još sanjamo.",
-      "disclaimer": "Ovaj plan razvoja je snimak naših trenutnih planova. Prioriteti se menjaju dok učimo od naše zajednice, pa se datumi i obim mogu promeniti."
-    },
-    "status": {
-      "shipped": "Isporučeno",
-      "inProgress": "U toku",
-      "planned": "Planirano"
-    },
-    "changelog": {
-      "title": "Dnevnik promena",
-      "subtitle": "Nedavna poboljšanja koja smo isporučili u Jikiju.",
-      "learnToBuildLaunch": {
-        "date": "11. jul 2026.",
-        "title": "Pokrenut Nauči da gradiš",
-        "description": "Novi Džeremijev serijal, u kome od nule gradi prave, korisne projekte zajedno sa učenicima, sada je dostupan."
-      },
-      "milestones6To10": {
-        "date": "jul 2026.",
-        "title": "Objavljene etape od 6 do 10 na stazi Nauči da programiraš",
-        "description": "Pet novih etapa sada je dostupno na stazi Nauči da programiraš i vodi te mnogo dalje od osnova."
-      },
-      "jikiLaunch": {
-        "date": "7. jun 2026.",
-        "title": "Jiki je pokrenut!",
-        "description": "Jiki je zvanično aktivan (iako još u beta verziji!)"
-      }
-    },
-    "phases": {
-      "now": {
-        "label": "Sada",
-        "timeframe": "jul 2026.",
-        "summary": "Na čemu se fokusiramo ovog meseca.",
-        "learnToBuild": {
-          "title": "Pokrenut je „Uči da gradiš“",
-          "description": "Džeremijeva potpuno nova serija je sada dostupna, a u njoj on od nule gradi stvarne, korisne projekte zajedno sa polaznicima. Svaki projekat je podeljen na kratke lekcije koje pokazuju ne samo kod, već i razmišljanje, greške i odluke koje stoje iza isporuke softvera."
-        },
-        "launchBugs": {
-          "title": "Otklanjamo greške nakon pokretanja",
-          "description": "Pošto je Jiki sada aktivan, otklanjamo greške i peglamo hrapave ivice dok pravi polaznici koriste platformu. Očekuj stalan niz malih ispravki i poboljšanja koja olakšavaju korišćenje cele aplikacije."
-        },
-        "earlyFeedback": {
-          "title": "Reagujemo na prve povratne informacije",
-          "description": "Čitamo svaku poruku, temu u podršci i predlog koji stigne. Najkorisnije povratne informacije pretvaramo u sitne izmene i male funkcionalnosti, tako da se iskustvo poboljšava iz nedelje u nedelju."
-        },
-        "foundations": {
-          "title": "Stabilizujemo temelje",
-          "description": "Iza kulisa učvršćujemo pouzdanost, performanse i nadzor, kako bismo imali čvrst temelj za sledeći talas funkcionalnosti. Manje vidljivo, ali najvažniji posao koji trenutno možemo da radimo."
-        }
-      },
-      "next": {
-        "label": "Sledeće",
-        "timeframe": "3. kvartal 2026.",
-        "summary": "Osmišljeno i već u planu.",
-        "betaToLive": {
-          "title": "Prelazak iz beta verzije u punu verziju",
-          "description": "Jiki je trenutno u beta verziji. Kada se prašina oko pokretanja slegne, uklonićemo oznaku beta i preći u punu verziju proizvoda, sa jačim garancijama pouzdanosti, jasnijom pričom o cenama i doteranim procesom uvođenja korisnika. Tada ćemo poslati i mejl o pokretanju Exercism zajednici i pokrenuti promotivne kampanje sa našim partnerima."
-        },
-        "deepDiveVideos": {
-          "title": "Dodajemo dubinske video snimke",
-          "description": "Dugački video snimci koji prevazilaze osnovne lekcije i detaljno istražuju koncepte. Idealni za polaznike koji žele da razumeju zašto nešto radimo tako kako radimo i da vide kako se ideje povezuju sa širim svetom programiranja."
-        },
-        "newLanguages": {
-          "title": "Pokrećemo više novih jezika",
-          "description": "Od avgusta Jiki postaje dostupan polaznicima na njihovom jeziku: prevodimo ceo interfejs i kurikulum, a ne samo marketinške stranice. Sve počinje <link>prevodilačkim maratonom zajednice</link> tokom vikenda od 31. jula do 2. avgusta."
-        },
-        "pythonVersion": {
-          "title": "Pokrećemo Python verziju",
-          "description": "U septembru stiže potpuno razvijena Python staza koja prati dubinu našeg JavaScript kurikuluma. Ista filozofija vežbi, isti vizuelni pregled korak po korak, isti nivo doteranosti, samo što je jezik na kom se uči Python."
-        }
-      },
-      "future": {
-        "label": "Budućnost",
-        "timeframe": "4. kvartal 2026.",
-        "summary": "Na vidiku. Plan se može menjati kako budemo saznavali više.",
-        "moreLanguages": {
-          "title": "Dodajemo još jezika",
-          "description": "Nadovezujući se na prvi talas u avgustu, nastavljamo da prevodimo Jiki na još govornih jezika do kraja godine, kako bi još više polaznika moglo da koristi platformu na maternjem jeziku. Prioritet ćemo određivati prema interesovanju zajednice i prema tome gde možemo da napravimo najveći efekat."
-        },
-        "sql": {
-          "title": "Pokrećemo SQL",
-          "description": "Kasnije tokom godine na platformu Jiki dodajemo i SQL, koji polaznicima daje praktičan način da razumeju baze podataka i upite, uz isti pristup korak po korak i učenje kroz rad kao u ostatku kurikuluma."
-        }
-      }
     }
   },
   "misc": {
@@ -1088,10 +993,6 @@
       "title": "Dostignuća - Jiki",
       "description": "Prati svoj napredak i otključavaj dostignuća dok učiš da programiraš."
     },
-    "build": {
-      "title": "Uči da gradiš - Jiki",
-      "description": "Gledaj video serije o izradi stvarnih projekata, dubinske analize toga kako stvari funkcionišu i sesije pitanja i odgovora uživo."
-    },
     "dashboard": {
       "title": "Kontrolna tabla - Jiki",
       "description": "Prati svoj napredak u učenju, nastavi sa vežbama programiranja i pregledaj svoja dostignuća."
@@ -1138,15 +1039,11 @@
     },
     "home": {
       "title": "Jiki - nauči da programiraš na zabavan način",
-      "description": "Najbolji način da naučiš da programiraš i gradiš u eri velikih jezičkih modela! Od tima koji stoji iza Exercism-a"
+      "description": "Najbolji način da naučiš da programiraš u eri velikih jezičkih modela! Od tima koji stoji iza Exercism-a"
     },
     "premium": {
       "title": "Premijum - Jiki",
       "description": "Ubrzaj svoj put do spremnosti za posao uz Jiki Premijum. Pun pristup kursevima, projektima, podršci veštačke inteligencije i još mnogo toga."
-    },
-    "roadmap": {
-      "title": "Plan razvoja - Jiki",
-      "description": "Šta sledeće gradimo na platformi Jiki. Pogled iz kvartala u kvartal na predstojeće kurseve, projekte i funkcionalnosti."
     },
     "testimonials": {
       "title": "Utisci polaznika - Jiki",
@@ -1180,6 +1077,14 @@
     },
     "exercises": {
       "notFound": "Vežba nije pronađena"
+    },
+    "build": {
+      "title": "Uči da gradiš - Jiki",
+      "description": "Gledaj video serije o izradi stvarnih projekata, dubinske analize toga kako stvari funkcionišu i sesije pitanja i odgovora uživo."
+    },
+    "roadmap": {
+      "title": "Plan razvoja - Jiki",
+      "description": "Šta sledeće gradimo na platformi Jiki. Pogled iz kvartala u kvartal na predstojeće kurseve, projekte i funkcionalnosti."
     }
   },
   "apiErrors": {
@@ -1350,7 +1255,7 @@
   "modals": {
     "welcomeToPremium": {
       "badge": "Premium član",
-      "description": "Hvala na nadogradnji! Sada imaš pristup svim Premium pogodnostima, uključujući neograničene razgovore sa Džikijem, Projekte i Learn to Build!",
+      "description": "Hvala na nadogradnji! Sada imaš pristup svim Premium pogodnostima, uključujući neograničene razgovore sa Džikijem i sve izazove.",
       "title": "<highlight>Premium</highlight> je tvoj!"
     },
     "confirmation": {
@@ -1404,14 +1309,6 @@
     "exerciseSuccess": {
       "defaultTitle": "Čestitamo!",
       "defaultMessage": "Svi testovi su prošli! Vežba je uspešno završena."
-    },
-    "welcome": {
-      "title": "Upoznaj Džikija!",
-      "subtitle": "Pogledaj ovaj kratak video za početak.",
-      "skipTitle": "Preskačeš uvodni video?",
-      "skipMessage": "Ovaj video ti pomaže da izvučeš najviše iz Džikija. Sigurno želiš da ga preskočiš?",
-      "skipConfirm": "Preskoči video",
-      "skipCancel": "Nastavi da gledaš"
     },
     "walkthroughConfirm": {
       "title": "Hoćeš prvo da probaš samostalno?",
@@ -1580,6 +1477,20 @@
       "error": "Greška: {message}",
       "perMonthShort": "/mes."
     },
+    "exerciseIntroVideo": {
+      "title": "Tvoja prva vežba crtanja",
+      "intro": "Pogledaj ovaj kratki uvod u to kako funkcionišu vežbe crtanja i kako da ih rešiš. Možeš da ga pogledaš i na dnu uputstava.",
+      "close": "Hajde da počnemo",
+      "watchAlt": "Pogledaj uvod"
+    },
+    "welcome": {
+      "title": "Upoznaj Džikija!",
+      "subtitle": "Pogledaj ovaj kratak video za početak.",
+      "skipTitle": "Preskačeš uvodni video?",
+      "skipMessage": "Ovaj video ti pomaže da izvučeš najviše iz Džikija. Sigurno želiš da ga preskočiš?",
+      "skipConfirm": "Preskoči video",
+      "skipCancel": "Nastavi da gledaš"
+    },
     "calendarSubscribe": {
       "title": "Pretplati se na kalendar",
       "description": "Dodaj Jikijeve sesije uživo u svoj kalendar. Nove sesije se pojavljuju automatski čim budu zakazane.",
@@ -1588,12 +1499,6 @@
       "otherLabel": "Outlook i drugi kalendari",
       "otherHelp": "Kopiraj ovaj link i dodaj ga kao pretplaćeni kalendar.",
       "copied": "Kopirano"
-    },
-    "exerciseIntroVideo": {
-      "title": "Tvoja prva vežba crtanja",
-      "intro": "Pogledaj ovaj kratki uvod u to kako funkcionišu vežbe crtanja i kako da ih rešiš. Možeš da ga pogledaš i na dnu uputstava.",
-      "close": "Hajde da počnemo",
-      "watchAlt": "Pogledaj uvod"
     },
     "subscriptionSuccess": {
       "chatGate": {
@@ -1715,6 +1620,41 @@
       "upsell": {
         "title": "Novi izazovi te čekaju!",
         "description": "Udruži svoje veštine i oprobaj se u Premium izazovima."
+      },
+      "premiumUpsell": {
+        "label": "Jiki Premium",
+        "completionStat": "Korisnici Premiuma imaju <strong>26 puta veću šansu da završe kurs</strong>.",
+        "price": "Samo <price></price>. <muted>Jednokratno, bez pretplate.</muted>",
+        "upgrade": "Pređi na Premium",
+        "pendingNote": "Tvoje plaćanje se još obrađuje. Otključaćemo Premium i poslaćemo ti imejl čim bude odobreno.",
+        "accelerate": {
+          "heading": "<highlight>Ubrzaj</highlight> svoje učenje!",
+          "benefits": "<strong>Dobijaš:</strong> Premium izazove, neograničeno Pitaj Džikija, neograničene Dubinske zarone, zvanični sertifikat, bez reklama i još mnogo toga!"
+        },
+        "testimonials": {
+          "heading": "Pridruži se <highlight>Premium timu</highlight>",
+          "show": "Prikaži utisak {number}",
+          "quotes": {
+            "veronika": "Povoljna cena je bila neverovatna, a sada, na pola kursa, mogu ponosno da kažem da sam skoro tri meseca bez ChatGPT-a! 🙂",
+            "abhinav": "Popust po paritetu kupovne moći učinio ga je još pristupačnijim. Hvala što ste ga učinili dostupnim.",
+            "laura": "Sjajno je bilo sarađivati sa zajednicom, na vežbama, sa mentorima i sa Džeremijem.",
+            "kazzybits": "Način na koji razmišljam o razmišljanju, i o rešavanju problema uopšte, dramatično se promenio.",
+            "nilophars": "Vizuelni prikaz, stvaranje mentalnih modela, povratne informacije mentora i interaktivne vežbe bili su neverovatno korisni.",
+            "jj": "Od zabavnog i doteranog interfejsa, preko časova uživo i laboratorija, do diskusija na Discordu, sve se to spaja u vrhunsko iskustvo učenja."
+          },
+          "roles": {
+            "veronika": "Junior programer",
+            "abhinav": "Početnik",
+            "laura": "Iz pakla tutorijala",
+            "kazzybits": "Početnik",
+            "jj": "Junior programer"
+          }
+        },
+        "neverGetStuck": {
+          "heading": "<highlight>Nikad</highlight> više ne zapni",
+          "text": "Uz Premium je Džiki tu na svakoj vežbi da te usmeri u pravom smeru.",
+          "statNumber": "26x"
+        }
       },
       "userProfile": {
         "premiumMember": "Premium član"
@@ -2013,31 +1953,6 @@
       "finishTooltip": "Odgledaj do kraja da nastaviš"
     }
   },
-  "projects": {
-    "projectCard": {
-      "comingSoon": "Uskoro",
-      "comingSoonLabel": "Uskoro"
-    },
-    "episodeCard": {
-      "premium": "Premium"
-    },
-    "episodeSummary": {
-      "heading": "Epizoda ukratko",
-      "whereWeStart": "Odakle počinjemo",
-      "whereWeEnd": "Gde stižemo",
-      "whatWeCover": "Šta obrađujemo"
-    },
-    "projectPage": {
-      "backToAllProjects": "← Nazad na <strong>sve projekte</strong>"
-    },
-    "episodePage": {
-      "backToProject": "← Nazad na <strong>{title}</strong>",
-      "relevantGuidesDescription": "Vodiči koji ti mogu biti korisni kada rešavaš ovaj korak u procesu."
-    },
-    "relevantGuides": {
-      "heading": "Povezani vodiči"
-    }
-  },
   "guides": {
     "guidesContent": {
       "pageHeading": "Vodiči i uputstva",
@@ -2066,11 +1981,11 @@
     "relatedGuides": {
       "heading": "Povezani vodiči"
     },
-    "featuredInProjects": {
-      "heading": "Istaknuto u projektima"
-    },
     "metadata": {
       "notFoundTitle": "Vodič nije pronađen"
+    },
+    "featuredInProjects": {
+      "heading": "Istaknuto u projektima"
     }
   },
   "unsubscribe": {
@@ -2323,6 +2238,130 @@
         "heading": "Funkcije koje ćeš koristiti",
         "description": "Gradivni blokovi koje ti ova vežba stavlja na raspolaganje."
       }
+    }
+  },
+  "build": {
+    "upcomingStreams": {
+      "heading": "Predstojeće sesije uživo",
+      "toBeAnnounced": "Biće objavljeno",
+      "subscribeButton": "Pretplati se na kalendar"
+    },
+    "hub": {
+      "title": "Nauči da gradiš - Projekti",
+      "description": "Gradi prave projekte od nule uz Džeremija. Nauči sve što on zna!"
+    }
+  },
+  "roadmap": {
+    "page": {
+      "heading": "Plan razvoja",
+      "subheading": "Kuda ide Jiki. Pregled po kvartalima šta isporučujemo, šta sledi i o čemu još sanjamo.",
+      "disclaimer": "Ovaj plan razvoja je snimak naših trenutnih planova. Prioriteti se menjaju dok učimo od naše zajednice, pa se datumi i obim mogu promeniti."
+    },
+    "status": {
+      "shipped": "Isporučeno",
+      "inProgress": "U toku",
+      "planned": "Planirano"
+    },
+    "changelog": {
+      "title": "Dnevnik promena",
+      "subtitle": "Nedavna poboljšanja koja smo isporučili u Jikiju.",
+      "learnToBuildLaunch": {
+        "date": "11. jul 2026.",
+        "title": "Pokrenut Nauči da gradiš",
+        "description": "Novi Džeremijev serijal, u kome od nule gradi prave, korisne projekte zajedno sa učenicima, sada je dostupan."
+      },
+      "milestones6To10": {
+        "date": "jul 2026.",
+        "title": "Objavljene etape od 6 do 10 na stazi Nauči da programiraš",
+        "description": "Pet novih etapa sada je dostupno na stazi Nauči da programiraš i vodi te mnogo dalje od osnova."
+      },
+      "jikiLaunch": {
+        "date": "7. jun 2026.",
+        "title": "Jiki je pokrenut!",
+        "description": "Jiki je zvanično aktivan (iako još u beta verziji!)"
+      }
+    },
+    "phases": {
+      "now": {
+        "label": "Sada",
+        "timeframe": "jul 2026.",
+        "summary": "Na čemu se fokusiramo ovog meseca.",
+        "learnToBuild": {
+          "title": "Pokrenut je „Uči da gradiš“",
+          "description": "Džeremijeva potpuno nova serija je sada dostupna, a u njoj on od nule gradi stvarne, korisne projekte zajedno sa polaznicima. Svaki projekat je podeljen na kratke lekcije koje pokazuju ne samo kod, već i razmišljanje, greške i odluke koje stoje iza isporuke softvera."
+        },
+        "launchBugs": {
+          "title": "Otklanjamo greške nakon pokretanja",
+          "description": "Pošto je Jiki sada aktivan, otklanjamo greške i peglamo hrapave ivice dok pravi polaznici koriste platformu. Očekuj stalan niz malih ispravki i poboljšanja koja olakšavaju korišćenje cele aplikacije."
+        },
+        "earlyFeedback": {
+          "title": "Reagujemo na prve povratne informacije",
+          "description": "Čitamo svaku poruku, temu u podršci i predlog koji stigne. Najkorisnije povratne informacije pretvaramo u sitne izmene i male funkcionalnosti, tako da se iskustvo poboljšava iz nedelje u nedelju."
+        },
+        "foundations": {
+          "title": "Stabilizujemo temelje",
+          "description": "Iza kulisa učvršćujemo pouzdanost, performanse i nadzor, kako bismo imali čvrst temelj za sledeći talas funkcionalnosti. Manje vidljivo, ali najvažniji posao koji trenutno možemo da radimo."
+        }
+      },
+      "next": {
+        "label": "Sledeće",
+        "timeframe": "3. kvartal 2026.",
+        "summary": "Osmišljeno i već u planu.",
+        "betaToLive": {
+          "title": "Prelazak iz beta verzije u punu verziju",
+          "description": "Jiki je trenutno u beta verziji. Kada se prašina oko pokretanja slegne, uklonićemo oznaku beta i preći u punu verziju proizvoda, sa jačim garancijama pouzdanosti, jasnijom pričom o cenama i doteranim procesom uvođenja korisnika. Tada ćemo poslati i mejl o pokretanju Exercism zajednici i pokrenuti promotivne kampanje sa našim partnerima."
+        },
+        "deepDiveVideos": {
+          "title": "Dodajemo dubinske video snimke",
+          "description": "Dugački video snimci koji prevazilaze osnovne lekcije i detaljno istražuju koncepte. Idealni za polaznike koji žele da razumeju zašto nešto radimo tako kako radimo i da vide kako se ideje povezuju sa širim svetom programiranja."
+        },
+        "newLanguages": {
+          "title": "Pokrećemo više novih jezika",
+          "description": "Od avgusta Jiki postaje dostupan polaznicima na njihovom jeziku: prevodimo ceo interfejs i kurikulum, a ne samo marketinške stranice. Sve počinje <link>prevodilačkim maratonom zajednice</link> tokom vikenda od 31. jula do 2. avgusta."
+        },
+        "pythonVersion": {
+          "title": "Pokrećemo Python verziju",
+          "description": "U septembru stiže potpuno razvijena Python staza koja prati dubinu našeg JavaScript kurikuluma. Ista filozofija vežbi, isti vizuelni pregled korak po korak, isti nivo doteranosti, samo što je jezik na kom se uči Python."
+        }
+      },
+      "future": {
+        "label": "Budućnost",
+        "timeframe": "4. kvartal 2026.",
+        "summary": "Na vidiku. Plan se može menjati kako budemo saznavali više.",
+        "moreLanguages": {
+          "title": "Dodajemo još jezika",
+          "description": "Nadovezujući se na prvi talas u avgustu, nastavljamo da prevodimo Jiki na još govornih jezika do kraja godine, kako bi još više polaznika moglo da koristi platformu na maternjem jeziku. Prioritet ćemo određivati prema interesovanju zajednice i prema tome gde možemo da napravimo najveći efekat."
+        },
+        "sql": {
+          "title": "Pokrećemo SQL",
+          "description": "Kasnije tokom godine na platformu Jiki dodajemo i SQL, koji polaznicima daje praktičan način da razumeju baze podataka i upite, uz isti pristup korak po korak i učenje kroz rad kao u ostatku kurikuluma."
+        }
+      }
+    }
+  },
+  "projects": {
+    "projectCard": {
+      "comingSoon": "Uskoro",
+      "comingSoonLabel": "Uskoro"
+    },
+    "episodeCard": {
+      "premium": "Premium"
+    },
+    "episodeSummary": {
+      "heading": "Epizoda ukratko",
+      "whereWeStart": "Odakle počinjemo",
+      "whereWeEnd": "Gde stižemo",
+      "whatWeCover": "Šta obrađujemo"
+    },
+    "projectPage": {
+      "backToAllProjects": "← Nazad na <strong>sve projekte</strong>"
+    },
+    "episodePage": {
+      "backToProject": "← Nazad na <strong>{title}</strong>",
+      "relevantGuidesDescription": "Vodiči koji ti mogu biti korisni kada rešavaš ovaj korak u procesu."
+    },
+    "relevantGuides": {
+      "heading": "Povezani vodiči"
     }
   }
 }
