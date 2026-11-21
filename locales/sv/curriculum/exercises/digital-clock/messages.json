@@ -1,80 +1,80 @@
 {
   "errors": {
-    "hourNotNumber": "�",
-    "minutesNotNumber": "�",
-    "indicatorNotString": "�"
+    "hourNotNumber": "<code>hour</code> måste vara ett tal",
+    "minutesNotNumber": "<code>minutes</code> måste vara ett tal",
+    "indicatorNotString": "<code>indicator</code> måste vara en sträng"
   },
   "checks": {
-    "notUpdated": "�",
-    "wrongTime": "�"
+    "notUpdated": "Klockan blev inte uppdaterad. Se till att du använder funktionen <code>displayTime</code>.",
+    "wrongTime": "Förväntade ”{{expected}}” men fick ”{{got}}”"
   },
   "tasks": {
     "displayTime": {
-      "name": "�",
-      "description": "�"
+      "name": "Visa tiden på klockan",
+      "description": "Hämta den aktuella timmen och minuten, gör om dem till 12-timmarsformat med am/pm och visa tiden med displayTime()."
     }
   },
   "scenarios": {
     "morning1": {
-      "name": "�",
-      "description": "�"
+      "name": "Tidig morgon",
+      "description": "Visa 6:35 som ”6:35am”"
     },
     "morning2": {
-      "name": "�",
-      "description": "�"
+      "name": "Sen förmiddag",
+      "description": "Visa 11:04 som ”11:04am”"
     },
     "afternoon1": {
-      "name": "�",
-      "description": "�"
+      "name": "Tidig eftermiddag",
+      "description": "Visa 12:19 som ”12:19pm”"
     },
     "afternoon2": {
-      "name": "�",
-      "description": "�"
+      "name": "Sen kväll",
+      "description": "Visa 23:32 som ”11:32pm”"
     },
     "midnight": {
-      "name": "�",
-      "description": "�"
+      "name": "Midnatt",
+      "description": "Visa midnatt som ”12:00am”"
     },
     "noon": {
-      "name": "�",
-      "description": "�"
+      "name": "Mitt på dagen",
+      "description": "Visa klockan 12 på dagen som ”12:00pm”"
     },
     "now": {
-      "name": "�",
-      "description": "�"
+      "name": "Visa den aktuella tiden",
+      "description": "Visa den aktuella tiden"
     }
   },
   "hints": {
     "gettingStarted": {
-      "question": "�",
-      "answer": "�"
+      "question": "Jag vet inte hur jag ska börja",
+      "answer": "Använd `currentTimeHour()` och `currentTimeMinute()` för att hämta den aktuella tiden. Anropa sedan `displayTime` med de värdena och `\"am\"` som tredje indata (till exempel `displayTime(hour, minutes, \"am\")`) för att se vad som händer. Fundera sedan ut hur du ska få rätt meridiem och rätt timme att visas."
     },
     "meridiem": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hur fungerar meridiem?",
+      "answer": "Timmarna 0–11 är ”am” och timmarna 12–23 är ”pm”. Midnatt (timme 0) ska visas som 12am. Klockan 12 på dagen ska visas som 12pm."
     },
     "hourChange": {
-      "question": "�",
-      "answer": "�"
+      "question": "När och varför behöver timmen ändras?",
+      "answer": "På en klocka med 12 timmar visas 13:00 som 1:00pm och 14:00 som 2:00pm. Du behöver alltså komma på sambandet mellan 13->1 och 14->2 och så vidare, och ändra klockan därefter!"
     }
   },
   "describers": {
-    "currentTimeHour": "�",
-    "currentTimeMinute": "�",
-    "displayTime": "�"
+    "currentTimeHour": "hämtade den aktuella timmen",
+    "currentTimeMinute": "hämtade den aktuella minuten",
+    "displayTime": "visade tiden på klockan"
   },
   "functions": {
     "currentTimeHour": {
-      "description": "�",
-      "category": "�"
+      "description": "Returnerar den aktuella timmen i 24-timmarsformat (till exempel 23 för 11pm) som ett tal.",
+      "category": "Tid"
     },
     "currentTimeMinute": {
-      "description": "�",
-      "category": "�"
+      "description": "Returnerar den aktuella minuten som ett tal.",
+      "category": "Tid"
     },
     "displayTime": {
-      "description": "�",
-      "category": "�"
+      "description": "Visar tiden på digitalklockan. Indikatorn ska vara ”am” eller ”pm”.",
+      "category": "Åtgärd"
     }
   }
 }

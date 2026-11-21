@@ -1,47 +1,47 @@
 {
   "checks": {
-    "moreThanSixLines": "�"
+    "moreThanSixLines": "Du använde fler än sex rader kod."
   },
   "tasks": {
     "createTwoFerFunction": {
-      "name": "�",
-      "description": "�"
+      "name": "Skapa twoFer-funktionen",
+      "description": "Skriv en funktion som heter twoFer, som tar ett namn och returnerar ”One for [name], one for me.”. Om inget namn ges (en tom sträng) använder du ”you” i stället för namnet."
     },
     "solveInSixLines": {
-      "name": "�",
-      "description": "�"
+      "name": "Lös med sex rader kod",
+      "description": "Kan du lösa det här med bara sex rader kod?"
     }
   },
   "scenarios": {
     "twoFerDefault": {
-      "name": "�",
-      "description": "�"
+      "name": "Inget namn angivet",
+      "description": "Inget namn anges, så returnera ”One for you, one for me.”"
     },
     "twoFerAlice": {
-      "name": "�",
-      "description": "�"
+      "name": "Namn angivet som Alice",
+      "description": "Hon heter ”Alice”, så returnera ”One for Alice, one for me.”"
     },
     "twoFerTom": {
-      "name": "�",
-      "description": "�"
+      "name": "Namn angivet som Tom",
+      "description": "Han heter ”Tom”, så returnera ”One for Tom, one for me.”"
     },
     "bonus1": {
-      "name": "�",
-      "description": "�"
+      "name": "Sex rader kod",
+      "description": "Lös övningen med bara sex rader kod."
     }
   },
   "hints": {
     "whatChanges": {
-      "question": "�",
-      "answer": "�"
+      "question": "Vad är det som ändras beroende på indata?",
+      "answer": "Bara en sak. Namnet i mitten av meningen. Om du fick ett namn använder du det. Annars använder du standardvärdet `\"you\"`."
     },
     "checkGivenName": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hur kollar jag om jag fick ett namn?",
+      "answer": "En `if`-sats som jämför indata med den tomma strängen `\"\"`. Om den är tom använder du `\"you\"`. Annars använder du indata."
     },
     "buildSentence": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hur bygger jag den färdiga meningen?",
+      "answer": "Sätt ihop de tre delarna (`\"One for \"`, det valda namnet och `\", one for me.\"`) med sammanfogning (`+`) eller en strängmall."
     }
   }
 }

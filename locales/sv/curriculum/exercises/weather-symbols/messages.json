@@ -1,68 +1,68 @@
 {
   "checks": {
-    "dayIsntCorrect": "�"
+    "dayIsntCorrect": "Vädret för {{day}} stämmer inte."
   },
   "tasks": {
     "drawForecast": {
-      "name": "�",
-      "description": "�"
+      "name": "Rita prognosen",
+      "description": "Rita varje dags väder i en egen låda, och använd dagens position i arrayen som lådnummer."
     }
   },
   "scenarios": {
     "mixedWeek": {
-      "name": "�",
-      "description": "�"
+      "name": "En blandad vecka",
+      "description": "Lite av varje under de sex dagarna."
     },
     "sunnyWeek": {
-      "name": "�",
-      "description": "�"
+      "name": "En solig vecka",
+      "description": "Massor av solsken, med ett par molnigare dagar."
     },
     "rainyWeek": {
-      "name": "�",
-      "description": "�"
+      "name": "En regnig vecka",
+      "description": "En blöt vecka med moln och regn."
     },
     "snowyWeek": {
-      "name": "�",
-      "description": "�"
+      "name": "En snöig vecka",
+      "description": "En kall vecka full av snö."
     }
   },
   "hints": {
     "loopWithIndex": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hur går jag igenom dagarna och vet vilken låda varje dag hamnar i?",
+      "answer": "Loopa igenom `days` med en räknare som går från `0` upp till `days.length - 1`. Den räknaren är lådnumret för varje dag."
     },
     "descriptionToSymbols": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hur gör jag om en beskrivning som `\"Miserable 😩\"` till symboler?",
+      "answer": "Jämför beskrivningen med var och en av de möjliga och välj den lista med symboler som stämmer, till exempel `[\"cloud\", \"rain\"]`. I instruktionerna listas varje beskrivning och dess symboler."
     },
     "weekdaysList": {
-      "question": "�",
-      "answer": "�"
+      "question": "Hur får jag fram veckodagens namn för varje låda?",
+      "answer": "Gör en array med de sex veckodagarna i ordning, från `\"Monday\"` till `\"Saturday\"`, och läs av den på din nuvarande position med samma räknare som du använder som lådnummer."
     },
     "passArgs": {
-      "question": "�",
-      "answer": "�"
+      "question": "Vad skickar jag till `draw`?",
+      "answer": "Tre saker: lådnumret (din räknare), veckodagens namn för den lådan och arrayen med symboler för den dagen."
     },
     "tidyWithHelper": {
-      "question": "�",
-      "answer": "�"
+      "question": "Min loop börjar bli lång. Hur kan jag snygga till den?",
+      "answer": "Du kan flytta matchningen mellan beskrivning och symboler till en egen funktion och anropa den från loopen. Det är frivilligt, men det håller loopen kort och lättläst."
     }
   },
   "functions": {
     "draw": {
-      "description": "�",
-      "category": "�"
+      "description": "Ritar de angivna vädersymbolerna i en prognoslåda. Tar lådnumret (0 till 5), veckodagens namn som lådan märks med och arrayen med symboler.",
+      "category": "Rita"
     }
   },
   "describers": {
-    "draw": "�"
+    "draw": "ritade ${arg3} i lådan för ${arg2}"
   },
   "errors": {
-    "elementsMustBeList": "�",
-    "elementsMustBeStrings": "�",
-    "unknownElement": "�",
-    "indexMustBeNumber": "�",
-    "indexOutOfRange": "�",
-    "dayMustBeString": "�"
+    "elementsMustBeList": "Vädersymbolerna (det tredje argumentet till draw) måste vara en array, som [\"sun\", \"cloud\"].",
+    "elementsMustBeStrings": "Alla vädersymboler i arrayen måste vara strängar, som \"sun\" eller \"rain\".",
+    "unknownElement": "\"{{element}}\" är ingen vädersymbol. Använd \"sun\", \"cloud\", \"rain\" eller \"snow\".",
+    "indexMustBeNumber": "Lådnumret (det första argumentet till draw) måste vara ett tal.",
+    "indexOutOfRange": "Lådnumret måste vara ett heltal mellan 0 och {{max}}.",
+    "dayMustBeString": "Veckodagen (det andra argumentet till draw) måste vara text, som \"Monday\"."
   }
 }
