@@ -1,847 +1,925 @@
 WEBVTT
 
-NOTE en_md5 a16ed41cc1e87ec52048dc1953b6c08e
+NOTE en_md5 3444df0fcca33c086487f13e47f69d4f
 
-00:00:00.578 --> 00:00:04.777
+00:00:00.079 --> 00:00:02.899
+Szia, üdv az első mélymerülésedben. Szóval
+
+00:00:02.939 --> 00:00:04.839
+ezek a videók kicsit mások, mint az eddig
+
+00:00:04.880 --> 00:00:08.159
+látott oktatóvideók. Hosszabbak,
+
+00:00:08.179 --> 00:00:11.440
+sokkal kevésbé strukturáltak. Ööö, ha itt
+
+00:00:11.460 --> 00:00:13.100
+befejeztem, csak én leszek egy
+
+00:00:13.140 --> 00:00:15.939
+laptopon, és beszélgetek veled, elmagyarázok
+
+00:00:16.000 --> 00:00:18.680
+néhány dolgot mélyebben, valószínűleg elkalandozom
+
+00:00:18.720 --> 00:00:21.280
+egy kicsit, talán csapongok is,
+
+00:00:21.319 --> 00:00:23.479
+de remélhetőleg több betekintést adok
+
+00:00:23.559 --> 00:00:27.600
+abba, hogyan gondolkodom a kódról. Na, ezeket
+
+00:00:27.620 --> 00:00:30.419
+a mélymerüléseket megnézni teljesen opcionális. Előreugorhatsz
+
+00:00:30.500 --> 00:00:32.519
+bennük, visszatekerheted
+
+00:00:32.580 --> 00:00:34.479
+őket, hogy újra megnézd. Figyelmen kívül is hagyhatod
+
+00:00:34.540 --> 00:00:37.799
+őket teljesen, és rá se kattinthatsz rájuk.
+
+00:00:37.860 --> 00:00:40.059
+De amikor ezt a kurzust
+
+00:00:40.119 --> 00:00:42.939
+bootcampként tartottuk, az emberek azt mondták, hogy ezek a videók
+
+00:00:42.979 --> 00:00:45.200
+talán a legértékesebb részei voltak az
+
+00:00:45.260 --> 00:00:47.099
+egésznek, mert betekintést adott nekik
+
+00:00:47.139 --> 00:00:49.139
+abba, hogyan gondolkodom. És ahogy korábban is mondtam,
+
+00:00:49.200 --> 00:00:51.339
+ennek a kurzusnak nagy része arról szól, hogy
+
+00:00:51.420 --> 00:00:53.759
+megtanítsunk fejlesztőként, mint
+
+00:00:53.799 --> 00:00:56.419
+kódolóként gondolkodni. Szóval próbálj ki néhányat
+
+00:00:56.459 --> 00:00:58.319
+a videókból, amikor felbukkannak, és nézd meg, mit
+
+00:00:58.360 --> 00:01:00.740
+gondolsz. Most pedig győződj meg róla, hogy van
+
+00:01:00.799 --> 00:01:02.720
+egy jó csésze teád vagy kávéd. Dőlj
+
+00:01:02.779 --> 00:01:04.360
+hátra, és kezdjünk bele
+
+00:01:05.004 --> 00:01:09.203
 Oké, szóval ezekben a mélymerülésekben
 egyszerűen megoldom a feladatot, pont úgy,
 
-00:00:04.777 --> 00:00:06.817
+00:01:09.203 --> 00:01:11.243
 ahogy akkor tenném,
 ha most látnám először.
 
-00:00:07.137 --> 00:00:10.657
+00:01:11.563 --> 00:01:15.083
 Szándékosan igyekeztem jó ideig
 nem ránézni az egyes feladatokra.
 
-00:00:11.098 --> 00:00:13.657
+00:01:15.524 --> 00:01:18.083
 Aztán visszajövök,
 és egyszerűen kitalálom a megoldást,
 
-00:00:13.657 --> 00:00:15.458
+00:01:18.083 --> 00:01:19.884
 úgyhogy nincs bemagolt megoldásom.
 
-00:00:15.938 --> 00:00:19.057
+00:01:20.364 --> 00:01:23.483
 Ugyanúgy állok neki,
 ahogy remélhetőleg te is nekiálltál.
 
-00:00:19.538 --> 00:00:22.897
+00:01:23.964 --> 00:01:27.323
 Ennek az értéke viszont nem abban van,
 hogy látod, milyen kódot írok,
 
-00:00:23.057 --> 00:00:25.057
+00:01:27.483 --> 00:01:29.483
 legalábbis biztosan nem ezeknél a korai feladatoknál.
 
-00:00:25.138 --> 00:00:28.487
+00:01:29.564 --> 00:01:32.913
 Valószínűleg pontosan ugyanazt
 a kódot írom, amit te írtál.
 
-00:00:29.207 --> 00:00:33.167
+00:01:33.633 --> 00:01:37.593
 A fő cél, legalábbis az elején, az, hogy
 te elgondolkodj azon, hogyan állj neki a
 
-00:00:33.167 --> 00:00:37.207
+00:01:37.593 --> 00:01:41.633
 problémáknak, én pedig elmondjam,
 hogyan állok nekik én.
 
-00:00:37.698 --> 00:00:42.207
+00:01:42.124 --> 00:01:46.633
 Ahogy haladunk előre a kurzusban,
 egy problémához nagyon sokféleképpen
 
-00:00:42.207 --> 00:00:45.847
+00:01:46.633 --> 00:01:50.273
 lehet majd hozzáállni. Van, aminek
 előnye van, van, aminek hátránya.
 
-00:00:46.328 --> 00:00:50.567
+00:01:50.754 --> 00:01:54.993
 És az időnk jó részét azzal töltjük, hogy
 bejárjuk ezeket a gondolkodásmódokat.
 
-00:00:51.557 --> 00:00:55.247
+00:01:55.983 --> 00:01:59.673
 És ezt a logikát,
 ezt a problémamegoldást
 
-00:00:55.567 --> 00:00:57.728
+00:01:59.993 --> 00:02:02.154
 a programozás minden területére átviheted.
 
-00:00:57.968 --> 00:01:00.688
+00:02:02.394 --> 00:02:05.114
 Amikor arról beszélünk,
 hogy dolgokat, platformokat építünk,
 
-00:01:00.688 --> 00:01:04.768
+00:02:05.114 --> 00:02:09.194
 rengeteg különböző darabból, amiket
 összerakunk, talán nem is kóddal,
 
-00:01:04.927 --> 00:01:07.727
+00:02:09.353 --> 00:02:12.153
 talán LLM-ekkel íratjuk meg
 a kód egy részét,
 
-00:01:08.207 --> 00:01:12.847
+00:02:12.633 --> 00:02:17.273
 a gondolkodásmódunk az az egy állandó
 dolog, amitől jó lesz az eredmény.
 
-00:01:13.808 --> 00:01:16.528
+00:02:18.234 --> 00:02:20.954
 Szóval ha semmi mást nem viszel
 magaddal ebből a kurzusból,
 
-00:01:16.847 --> 00:01:20.447
+00:02:21.273 --> 00:02:24.873
 azt az egyet remélem, elviszed,
 hogy hogyan gondolkodunk.
 
-00:01:21.558 --> 00:01:22.998
+00:02:25.984 --> 00:02:27.424
 Szóval, egyszerű feladat,
 
-00:01:24.117 --> 00:01:26.757
+00:02:28.543 --> 00:02:31.183
 lehet, hogy nem tűnt egyszerűnek,
 de, de azért elég egyszerű.
 
-00:01:26.918 --> 00:01:29.477
+00:02:31.344 --> 00:02:33.903
 És, csak egy rókafejet próbálunk megrajzolni,
 
-00:01:29.918 --> 00:01:33.317
+00:02:34.344 --> 00:02:37.743
 és van egy csomó háromszögünk, amit meg kell rajzolni.
 
-00:01:34.278 --> 00:01:37.197
+00:02:38.704 --> 00:02:41.623
 Szóval, nézem az útmutatót.
 
-00:01:37.197 --> 00:01:39.197
+00:02:41.623 --> 00:02:43.623
 Elmondja, hogyan kell háromszöget rajzolni.
 
-00:01:39.197 --> 00:01:44.677
+00:02:43.623 --> 00:02:49.103
 Ezt jól ismerem. És,
 elmondja a különböző színeket is.
 
-00:01:44.677 --> 00:01:48.798
+00:02:49.103 --> 00:02:53.224
 Van tehát white, brown,
 orange és charcoal, ezeket használhatjuk.
 
-00:01:48.798 --> 00:01:52.668
+00:02:53.224 --> 00:02:57.094
 És van két white pofánk, két brown
 fülünk, két orange arcfelünk,
 
-00:01:53.138 --> 00:01:56.177
+00:02:57.564 --> 00:03:00.603
 és egy orrunk,
 de az két háromszögből áll.
 
-00:01:58.578 --> 00:02:03.298
+00:03:03.004 --> 00:03:07.724
 És írtam ide egy megjegyzést, hogy,
 használhatod, ráviheted az egeret,
 
-00:02:03.378 --> 00:02:07.938
+00:03:07.804 --> 00:03:12.364
 ezeket használnod kell. És még,
 az összes szám osztható 5-tel.
 
-00:02:08.018 --> 00:02:10.737
+00:03:12.444 --> 00:03:15.163
 És az egyetlen dolog, amit
 itt használunk, ez a triangle.
 
-00:02:11.858 --> 00:02:14.497
+00:03:16.284 --> 00:03:18.923
 Szóval ha meg akarnám ezt rajzolni, hogyan fognék hozzá?
 
-00:02:14.657 --> 00:02:17.777
+00:03:19.083 --> 00:03:22.203
 Hát, azzal kezdeném, hogy
 oké, kell egy, háromszög.
 
-00:02:18.018 --> 00:02:20.777
+00:03:22.444 --> 00:03:25.203
 Szóval leírom, hogy triangle,
 triangle, a triangle függvényhez.
 
-00:02:21.018 --> 00:02:25.337
+00:03:25.444 --> 00:03:29.763
 És kell a három pont. Az
 első pont itt fent 10, 6.
 
-00:02:25.418 --> 00:02:29.617
+00:03:29.844 --> 00:03:34.043
 Szóval tudom, hogy az 10, 5. Egy dolgot
 szeretek csinálni: azt, hogy
 
-00:02:29.617 --> 00:02:31.657
+00:03:34.043 --> 00:03:36.083
 ezeket szóköz nélkül egymás mellé teszem.
 
-00:02:32.217 --> 00:02:37.018
+00:03:36.643 --> 00:03:41.444
 Így valahogy látom, hogy ez egy
 koordinátapár, aztán hagyok egy szóközt a
 
-00:02:37.497 --> 00:02:42.138
+00:03:41.923 --> 00:03:46.564
 koordinátapárok között. Ez elég jól
 működik ebben a triangle függvényben.
 
-00:02:42.377 --> 00:02:45.737
+00:03:46.803 --> 00:03:50.163
 De ez megint egy elég hasznos dolog,
 hogy elgondolkodj azon, a whitespace,
 
-00:02:46.677 --> 00:02:51.018
+00:03:51.103 --> 00:03:55.444
 és a whitespace alatt a szóközöket,
 a sortöréseket, a tabokat értjük,
 
-00:02:51.877 --> 00:02:56.758
+00:03:56.303 --> 00:04:01.184
 hogyan teszi olvashatóbbá a kódodat
 magadnak és másoknak is.
 
-00:02:57.717 --> 00:03:00.758
+00:04:02.143 --> 00:04:05.184
 Szóval, szép kis minta.
 A két koordinátát tedd össze,
 
-00:03:00.758 --> 00:03:04.117
+00:04:05.184 --> 00:04:08.543
 aztán hagyj közöttük egy kis helyet,
 hogy elváljanak a koordináták.
 
-00:03:04.598 --> 00:03:07.157
+00:04:09.024 --> 00:04:11.583
 Nem számít, hogy ez a kettő
 közül melyik a második koordinátám.
 
-00:03:07.157 --> 00:03:09.957
+00:04:11.583 --> 00:04:14.383
 De én itt lejjebb jövök, 10, 40-hez.
 
-00:03:10.758 --> 00:03:14.677
+00:04:15.184 --> 00:04:19.103
 És végül itt van ez
 az egy idekint, ami 50, 40.
 
-00:03:15.397 --> 00:03:17.358
+00:04:19.823 --> 00:04:21.784
 Egy dolgot megmutatok,
 lehet, hogy nem láttad,
 
-00:03:17.358 --> 00:03:21.717
+00:04:21.784 --> 00:04:26.143
 de a számok fölött megjelenik egy
 nyíl, amivel görgetni tudod ezt.
 
-00:03:22.038 --> 00:03:25.177
+00:04:26.464 --> 00:04:29.603
 Ez később kicsit hasznosabb
 lesz, amikor színeket
 
-00:03:25.177 --> 00:03:28.937
+00:04:29.603 --> 00:04:33.363
 meg ilyesmiket nézünk,
 elég hasznos kis
 
-00:03:28.937 --> 00:03:29.617
+00:04:33.363 --> 00:04:34.043
 funkció tud lenni.
 
-00:03:30.427 --> 00:03:33.217
+00:04:34.853 --> 00:04:37.643
 Szóval ez a háromszögünk ehhez a bal fülhöz.
 
-00:03:34.098 --> 00:03:37.457
+00:04:38.524 --> 00:04:41.883
 Látjuk, hogy a bal fülnek, brown, színűnek kell lennie.
 
-00:03:38.177 --> 00:03:41.897
+00:04:42.603 --> 00:04:46.323
 Szóval beírjuk, hogy brown.
 És akkor ez adja meg a bal fület.
 
-00:03:41.897 --> 00:03:43.698
+00:04:46.323 --> 00:04:48.124
 És rögtön le is ellenőrzöm.
 
-00:03:43.698 --> 00:03:49.057
+00:04:48.124 --> 00:04:53.483
 Megnyomom a Kód futtatása gombot. Látom,
 hogy ez a háromszög nagyjából jól néz ki.
 
-00:03:49.647 --> 00:03:53.407
+00:04:54.073 --> 00:04:57.833
 És ha kiveszem ezt a sort,
 ha kikommentelem két perjellel,
 
-00:03:53.568 --> 00:03:56.807
+00:04:57.994 --> 00:05:01.233
 tényleg látjuk, hogy eltűnik.
 
-00:03:56.807 --> 00:04:01.087
+00:05:01.233 --> 00:05:05.513
 Szóval látjuk, hogy jól működik.
 Megvan ez, mehetünk tovább.
 
-00:04:01.487 --> 00:04:03.647
+00:05:05.913 --> 00:05:08.073
 Jöjjön az arc bal oldala.
 
-00:04:04.768 --> 00:04:10.807
+00:05:09.194 --> 00:05:15.233
 Az arc egy orange rész. Szóval
 nincs mögötte árnyékolt rész.
 
-00:04:10.807 --> 00:04:12.687
+00:05:15.233 --> 00:05:17.113
 Csak az arc jobb oldala van meg.
 
-00:04:13.247 --> 00:04:15.407
+00:05:17.673 --> 00:05:19.833
 Szóval gondoljuk végig.
 Kell egy triangle.
 
-00:04:16.478 --> 00:04:19.517
+00:05:20.904 --> 00:05:23.943
 És ha megnézem a képet,
 látom, hogy szimmetrikus.
 
-00:04:20.077 --> 00:04:22.317
+00:05:24.503 --> 00:05:26.743
 Ezt a szimmetria fogalmat
 használni fogjuk a
 
-00:04:22.317 --> 00:04:23.997
+00:05:26.743 --> 00:05:28.423
 következő feladatok közül néhányban.
 
-00:04:24.237 --> 00:04:27.317
+00:05:28.663 --> 00:05:31.743
 De látjuk, hogy a
 középső pont ugyanaz lesz.
 
-00:04:27.317 --> 00:04:31.677
+00:05:31.743 --> 00:05:36.103
 Szóval 50, 30-nál kezdődik,
 és itt lent ugyanott ér véget,
 
-00:04:31.677 --> 00:04:34.077
+00:05:36.103 --> 00:05:38.503
 ami szerintem 50, 95.
 
-00:04:34.877 --> 00:04:38.478
+00:05:39.303 --> 00:05:42.904
 És akkor ki kell találnunk,
 hogy itt kint hova fog kerülni.
 
-00:04:39.278 --> 00:04:45.117
+00:05:43.704 --> 00:05:49.543
 Ezt úgy látjuk, hogy rávisszük az egeret
 erre a pontra: az X 90, az Y pedig 40.
 
-00:04:46.057 --> 00:04:50.697
+00:05:50.483 --> 00:05:55.123
 Szóval lesz egy valamennyi X,
 és lesz egy valamennyi 40,
 
-00:04:51.177 --> 00:04:53.338
+00:05:55.603 --> 00:05:57.764
 és orange lesz.
 
-00:04:54.858 --> 00:04:57.577
+00:05:59.284 --> 00:06:02.003
 De mi lesz az egyik kérdőjel helyén,
 mit írunk ide?
 
-00:04:57.817 --> 00:05:01.978
+00:06:02.243 --> 00:06:06.404
 Hát, nézem, és látom,
 hogy ez a rajzterület 100-as,
 
-00:05:01.978 --> 00:05:03.497
+00:06:06.404 --> 00:06:07.923
 szóval idáig, 100-ig ér ki.
 
-00:05:04.298 --> 00:05:08.057
+00:06:08.724 --> 00:06:12.483
 És,
 ez 90. Vagyis itt van egy 10-es rés.
 
-00:05:08.858 --> 00:05:12.458
+00:06:13.284 --> 00:06:16.884
 Szóval tudom, hogy ezen az oldalon
 is ugyanez a 10-es rés lesz.
 
-00:05:13.177 --> 00:05:14.377
+00:06:17.603 --> 00:06:18.803
 És tudom, hogy
 
-00:05:15.497 --> 00:05:20.218
+00:06:19.923 --> 00:06:24.644
 0 meg 10 az 10,
 szóval tudom, hogy ez 10 lesz.
 
-00:05:20.858 --> 00:05:25.658
+00:06:25.284 --> 00:06:30.084
 És megnyomhatom a Kód futtatása gombot.
 És szerintem egy jó orange háromszöget kapok.
 
-00:05:26.858 --> 00:05:31.497
+00:06:31.284 --> 00:06:35.923
 Aztán megrajzolom a bal pofát.
 Itt egyszerűen csak másolok és beillesztek.
 
-00:05:31.887 --> 00:05:35.017
+00:06:36.313 --> 00:06:39.443
 Fogjuk ezt a háromszöget.
 Töröljük ki ezt az egészet.
 
-00:05:35.487 --> 00:05:38.937
+00:06:39.913 --> 00:06:43.363
 Megvan a triangle függvényünk,
 szóval nem kell újra begépelnem.
 
-00:05:39.827 --> 00:05:43.267
+00:06:44.253 --> 00:06:47.693
 És a bal pofánk white lesz.
 
-00:05:43.827 --> 00:05:48.387
+00:06:48.253 --> 00:06:52.813
 Szóval megmérem. Ez tehát 10, 40,
 
-00:05:50.228 --> 00:05:52.867
+00:06:54.654 --> 00:06:57.293
 ez pedig 5, 60.
 
-00:05:53.668 --> 00:05:55.627
+00:06:58.094 --> 00:07:00.053
 Kihagytam egy vesszőt. Szóval ez valami más.
 
-00:05:55.627 --> 00:05:58.708
+00:07:00.053 --> 00:07:03.134
 Kis tipp. Nézd, ez itt nem piros.
 
-00:05:58.788 --> 00:06:03.028
+00:07:03.214 --> 00:07:07.454
 Ez valahogy rossz színű.
 Ezt hívják szintaxiskiemelésnek.
 
-00:06:03.187 --> 00:06:08.108
+00:07:07.613 --> 00:07:12.534
 Ez egy szakkifejezés, amit használunk.
 De a színek, amiket látsz, szintaxiskiemelési
 
-00:06:08.108 --> 00:06:08.627
+00:07:12.534 --> 00:07:13.053
 színek.
 
-00:06:09.627 --> 00:06:14.267
+00:07:14.053 --> 00:07:18.693
 Szóval az, hogy ez nem piros, jól jelzi
 neked, hogy valamit elrontottál.
 
-00:06:14.507 --> 00:06:17.228
+00:07:18.933 --> 00:07:21.654
 Szóval ha valaha látsz valamit,
 ami rossz színűnek tűnik,
 
-00:06:17.307 --> 00:06:19.947
+00:07:21.733 --> 00:07:24.373
 az arra utal, hogy
 talán kihagytál egy vesszőt.
 
-00:06:20.108 --> 00:06:23.468
+00:07:24.534 --> 00:07:27.894
 Talán. Ha idejövünk, és nem zárjuk be
 ezeket az idézőjeleket, láthatod, hogy
 
-00:06:23.867 --> 00:06:28.588
+00:07:28.293 --> 00:07:33.014
 ez a zárójel zöld lesz, ami azt
 jelzi, hogy hiányzik pár idézőjel.
 
-00:06:28.987 --> 00:06:31.548
+00:07:33.413 --> 00:07:35.974
 Szóval ezek a színek tényleg
 nagyon hasznosak lesznek, mint
 
-00:06:31.548 --> 00:06:35.148
+00:07:35.974 --> 00:07:39.574
 kis gyorssegédek az agyadban,
 hogy észrevedd, valami nem stimmel.
 
-00:06:36.798 --> 00:06:38.718
+00:07:41.224 --> 00:07:43.144
 Szóval beteszem a vesszőt. És ez orange lesz.
 
-00:06:38.798 --> 00:06:46.158
+00:07:43.224 --> 00:07:50.584
 Tehát 10, 40, 5, 60. És akkor itt
 lent vagyunk megint, ami 50 és 95.
 
-00:06:47.517 --> 00:06:52.317
+00:07:51.943 --> 00:07:56.743
 És mondhatjuk, hogy white.
 Hozzáadjuk ezt, és ez jó.
 
-00:06:54.798 --> 00:06:59.838
+00:07:59.224 --> 00:08:04.264
 Oké. Jobb fül. Szóval most már
 rendes szimmetria-terepen vagyunk.
 
-00:07:00.237 --> 00:07:04.798
+00:08:04.663 --> 00:08:09.224
 Szóval tudjuk a jobb fület. Azt kérdezi: ki
 tudod ezt találni egérrel való rámutatás nélkül?
 
-00:07:06.158 --> 00:07:09.117
+00:08:10.584 --> 00:08:13.543
 Szóval igen, ki tudjuk
 ezt találni rámutatás nélkül.
 
-00:07:09.437 --> 00:07:14.038
+00:08:13.863 --> 00:08:18.464
 Ha rámutattál, és úgy csináltad meg, el tudsz
 gondolkodni azon, hogyan lehetne máshogy?
 
-00:07:14.038 --> 00:07:17.517
+00:08:18.464 --> 00:08:21.943
 És el tudsz gondolkodni azon, hogy talán
 azt használod, amit itt csináltunk, ahol
 
-00:07:18.317 --> 00:07:21.598
+00:08:22.743 --> 00:08:26.024
 a bal pofát úgy rajzoltam meg,
 hogy a jobb pofát néztem.
 
-00:07:21.598 --> 00:07:23.598
+00:08:26.024 --> 00:08:28.024
 Hogyan használhatnánk ezt? Ugyanez az elv?
 
-00:07:23.598 --> 00:07:26.478
+00:08:28.024 --> 00:08:30.904
 Ha meg akarod állítani egy pillanatra,
 és elgondolkodni ezen, nyugodtan,
 
-00:07:27.437 --> 00:07:33.598
+00:08:31.863 --> 00:08:38.024
 különben elmondom. Szóval,
 tudjuk, hogy a bal fül 10-nél kezdődik.
 
-00:07:33.827 --> 00:07:35.588
+00:08:38.253 --> 00:08:40.014
 És látjuk, hogy megvan ez a 10, 5.
 
-00:07:36.468 --> 00:07:40.468
+00:08:40.894 --> 00:08:44.894
 És tudjuk, ahogy korábban mondtuk,
 hogy 0 meg 10 az 10.
 
-00:07:40.627 --> 00:07:43.187
+00:08:45.053 --> 00:08:47.613
 És kiszámoltuk, hogy ez a pofa 90-nél ér véget,
 
-00:07:43.987 --> 00:07:47.588
+00:08:48.413 --> 00:08:52.014
 mert van egy 10-es rése,
 és ugyanez a rés van itt is.
 
-00:07:47.987 --> 00:07:50.468
+00:08:52.413 --> 00:08:54.894
 Szóval tudjuk, hogy ennek a fülnek 90-nek kell lennie,
 
-00:07:51.668 --> 00:07:56.548
+00:08:56.094 --> 00:09:00.974
 és, tudjuk, hogy egyenesen
 lemegy 90-ig, és tudjuk, hogy
 
-00:07:57.017 --> 00:07:59.267
+00:09:01.443 --> 00:09:03.693
 egészen középre, 50-ig jön be.
 
-00:07:59.987 --> 00:08:03.028
+00:09:04.413 --> 00:09:07.454
 Szóval megfordíthatjuk, és ugyanaz a
 
-00:08:04.228 --> 00:08:07.627
+00:09:08.654 --> 00:09:12.053
 háromszögünk van. Aztán megcsinálhatjuk
 az arc jobb oldalát.
 
-00:08:07.627 --> 00:08:12.307
+00:09:12.053 --> 00:09:16.733
 És megint meg tudjuk csinálni rámutatás
 nélkül, csak ezt a 10-et 90-re cseréljük, mert
 
-00:08:12.307 --> 00:08:18.028
+00:09:16.733 --> 00:09:22.454
 szimmetrikus. Aztán megcsinálhatjuk a
 jobb pofát, és a jobb pofánál megint
 
-00:08:18.028 --> 00:08:24.548
+00:09:22.454 --> 00:09:28.974
 szimmetriát akarunk. Szóval ebből 90 lesz,
 ebből 95, ez pedig marad 50,
 
-00:08:25.117 --> 00:08:26.637
+00:09:29.543 --> 00:09:31.063
 és így kapunk egy white pofát.
 
-00:08:27.117 --> 00:08:28.798
+00:09:31.543 --> 00:09:33.224
 Aztán kell az orrunk,
 
-00:08:29.918 --> 00:08:34.557
+00:09:34.344 --> 00:09:38.983
 az orrunk charcoal,
 szóval jöhet a triangle.
 
-00:08:35.518 --> 00:08:39.597
+00:09:39.944 --> 00:09:44.023
 És ezt kicsit elrontottam
 magamnak, mert
 
-00:08:39.597 --> 00:08:41.557
+00:09:44.023 --> 00:09:45.983
 rárajzoltam a tetejére. De tudunk.
 
-00:08:41.557 --> 00:08:46.317
+00:09:45.983 --> 00:09:50.743
 Szóval két lehetőséged van. Egy:
 kikommentelheted az egész kódodat.
 
-00:08:46.798 --> 00:08:49.677
+00:09:51.224 --> 00:09:54.103
 Szóval beteszel, pár megjegyzést
 
-00:08:51.128 --> 00:08:51.607
+00:09:55.554 --> 00:09:56.033
 valahogy így,
 
-00:08:52.488 --> 00:08:54.648
+00:09:56.914 --> 00:09:59.074
 és ezzel el tudod
 
-00:08:56.408 --> 00:09:00.447
+00:10:00.834 --> 00:10:04.873
 kommentelni ezt az egyet. Szóval ha valaha
 ilyet kapsz, talán elgépeltél valamit.
 
-00:09:00.447 --> 00:09:04.368
+00:10:04.873 --> 00:10:08.794
 Nem kell megijedni. Csak nyomd meg a Kód
 futtatása gombot, kommenteld ki, ami rossz,
 
-00:09:04.368 --> 00:09:06.168
+00:10:08.794 --> 00:10:10.594
 nyomd meg újra, és visszajön.
 
-00:09:06.807 --> 00:09:11.207
+00:10:11.233 --> 00:10:15.633
 Szóval itt látjuk, hogy ennek 50-nek és 85-nek kell lennie.
 
-00:09:12.727 --> 00:09:16.327
+00:10:17.153 --> 00:10:20.753
 Tehát 50 és 85. Aztán
 ezeket visszatehetjük.
 
-00:09:17.548 --> 00:09:17.847
+00:10:21.974 --> 00:10:22.273
 És.
 
-00:09:21.927 --> 00:09:25.048
+00:10:26.353 --> 00:10:29.474
 Valahogy sikerült letörölnöm
 a triangle szót erről az elsőről.
 
-00:09:25.687 --> 00:09:26.327
+00:10:30.113 --> 00:10:30.753
 Oké,
 
-00:09:29.847 --> 00:09:32.248
+00:10:34.273 --> 00:10:36.674
 szóval mérjük meg ezt. Tehát 40, 90.
 
-00:09:33.447 --> 00:09:37.768
+00:10:37.873 --> 00:10:42.194
 És tudjuk, hogy szimmetrikus. Szóval
 rögtön tudjuk, hogy a következő
 
-00:09:37.768 --> 00:09:43.788
+00:10:42.194 --> 00:10:48.214
 60, 90 lesz. És tudjuk, hogy ez charcoal,
 ezt a szót nehezen írom le helyesen.
 
-00:09:44.508 --> 00:09:49.467
+00:10:48.934 --> 00:10:53.893
 Megvan a felső orr, az orr teteje,
 aztán megvan az orr alja.
 
-00:09:49.788 --> 00:09:55.628
+00:10:54.214 --> 00:11:00.054
 És ez,
 egy szimmetrikus háromszög erre a felső háromszögre.
 
-00:09:56.028 --> 00:10:00.107
+00:11:00.454 --> 00:11:04.533
 Szóval ez pontosan,
 ugyanolyan alakú lesz, mint ez,
 
-00:10:00.508 --> 00:10:03.067
+00:11:04.934 --> 00:11:07.493
 de míg ez 85-től 90-ig megy,
 
-00:10:03.467 --> 00:10:08.648
+00:11:07.893 --> 00:11:13.074
 tudjuk, hogy ennek 90-től
 95-ig kell mennie, mert megint,
 
-00:10:08.807 --> 00:10:12.408
+00:11:13.233 --> 00:11:16.834
 a 90-re gondolhatunk úgy, mint a
 középvonalra: 5 fölötte, 5 alatta.
 
-00:10:13.447 --> 00:10:16.168
+00:11:17.873 --> 00:11:20.594
 És megvan az orr alja,
 és minden átmegy.
 
-00:10:16.727 --> 00:10:19.967
+00:11:21.153 --> 00:11:24.393
 Aztán kitörölném ezeket a TODO-kat.
 
-00:10:19.967 --> 00:10:22.408
+00:11:24.393 --> 00:11:26.834
 Próbáljuk meg szépen rendben tartani a kódunkat.
 
-00:10:23.368 --> 00:10:27.368
+00:11:27.794 --> 00:11:31.794
 És mellesleg, néhány ilyen videóban
 látni fogod ezt a dolgot itt lent.
 
-00:10:27.368 --> 00:10:30.327
+00:11:31.794 --> 00:11:34.753
 Ez csak azért van, mert
 helyben, a saját gépemen futtatom,
 
-00:10:30.648 --> 00:10:32.087
+00:11:35.074 --> 00:11:36.513
 nem pedig a Jiki weboldalán.
 
-00:10:32.408 --> 00:10:35.048
+00:11:36.834 --> 00:11:39.474
 Van bekapcsolva néhány extra hibakeresési dolgom.
 
-00:10:35.128 --> 00:10:38.398
+00:11:39.554 --> 00:11:42.824
 Szóval ha bármi ilyet látsz odalent,
 nyugodtan hagyd figyelmen kívül.
 
-00:10:40.158 --> 00:10:42.398
+00:11:44.584 --> 00:11:46.824
 Oké, szóval megvan a szép rendes kódunk.
 
-00:10:42.398 --> 00:10:45.197
+00:11:46.824 --> 00:11:49.623
 Ezt kidobhatjuk. Ki tudod ezt
 is találni rámutatás nélkül?
 
-00:10:45.677 --> 00:10:48.437
+00:11:50.103 --> 00:11:52.863
 És ez itt már a kódunk dokumentálása.
 
-00:10:48.437 --> 00:10:50.477
+00:11:52.863 --> 00:11:54.903
 Ez azt mondja, hogy ez a bal fül.
 
-00:10:50.477 --> 00:10:53.118
+00:11:54.903 --> 00:11:57.544
 És valószínűleg át is írnám ezeket,
 hogy csak annyi legyen bennük, hogy „a”.
 
-00:10:53.677 --> 00:10:55.357
+00:11:58.103 --> 00:11:59.783
 Mert igazából nem azt akarjuk,
 hogy utasítások legyenek,
 
-00:10:55.357 --> 00:10:57.837
+00:11:59.783 --> 00:12:02.263
 hanem hogy leírják,
 mit csinál a kód.
 
-00:10:57.918 --> 00:11:00.158
+00:12:02.344 --> 00:12:04.584
 De válaszd azt,
 ami neked a legérthetőbb.
 
-00:11:00.638 --> 00:11:03.918
+00:12:05.064 --> 00:12:08.344
 De ha vannak ilyen megjegyzések,
 amik csak elmagyarázzák, mik ezek a dolgok.
 
-00:11:03.918 --> 00:11:05.998
+00:12:08.344 --> 00:12:10.424
 Sőt, ezt talán egyszerűen elnevezem orrnak.
 
-00:11:06.548 --> 00:11:09.587
+00:12:10.974 --> 00:12:14.013
 És lenne két ilyen sorom,
 és ez elég magától értetődő,
 
-00:11:10.707 --> 00:11:12.307
+00:12:15.133 --> 00:12:16.733
 és akár csoportosíthatom is a dolgokat.
 
-00:11:12.307 --> 00:11:15.587
+00:12:16.733 --> 00:12:20.013
 Azt is mondhatom, hogy oké,
 a két fület egymás mellé akarom,
 
-00:11:15.908 --> 00:11:20.628
+00:12:20.334 --> 00:12:25.054
 és csak annyit írok, hogy „a fülek”,
 és az arc részeit is együtt akarom,
 
-00:11:21.217 --> 00:11:25.028
+00:12:25.643 --> 00:12:29.454
 és a pofákat is együtt akarom,
 
-00:11:25.908 --> 00:11:26.548
+00:12:30.334 --> 00:12:30.974
 valahogy így.
 
-00:11:28.307 --> 00:11:31.628
+00:12:32.733 --> 00:12:36.054
 És ez így is működik,
 csak most egy kicsit rendezettebb.
 
-00:11:31.628 --> 00:11:33.827
+00:12:36.054 --> 00:12:38.253
 És a szimmetriát is
 kicsit jobban látod.
 
-00:11:34.467 --> 00:11:36.827
+00:12:38.893 --> 00:12:41.253
 Szóval mindig szánj pár percet arra,
 amikor megoldottál egy
 
-00:11:36.827 --> 00:11:39.168
+00:12:41.253 --> 00:12:43.594
 feladatot, hogy tényleg
 büszke legyél rá.
 
-00:11:39.168 --> 00:11:43.168
+00:12:43.594 --> 00:12:47.594
 Tedd rendbe, csináld meg szépen,
 és látod, mennyivel
 
-00:11:43.168 --> 00:11:45.408
+00:12:47.594 --> 00:12:49.834
 áttekinthetőbb így, hogy ez
 a két sor egymás mellett van.
 
-00:11:45.837 --> 00:11:49.087
+00:12:50.263 --> 00:12:53.513
 Ettől az egész egy kicsit tisztábbnak érződik.
 
-00:11:49.087 --> 00:11:52.207
+00:12:53.513 --> 00:12:56.633
 Még egy utolsó dolog,
 mielőtt befejezzük, itt lent van.
 
-00:11:52.207 --> 00:11:55.087
+00:12:56.633 --> 00:12:59.513
 Ezt itt lent
 csak félrehúzom az útból.
 
-00:11:55.807 --> 00:11:59.488
+00:13:00.233 --> 00:13:03.914
 Látod ezt a sávot? Lehet, hogy
 még nem használtad ezt a sávot,
 
-00:11:59.567 --> 00:12:02.048
+00:13:03.993 --> 00:13:06.474
 de ezt hívjuk csúszkának.
 
-00:12:02.687 --> 00:12:04.607
+00:13:07.113 --> 00:13:09.033
 Ez később nagyon hasznos lesz neked.
 
-00:12:05.008 --> 00:12:09.207
+00:13:09.434 --> 00:13:13.633
 Amit lehetővé tesz, az az, hogy
 lépkedj a kód sorai között.
 
-00:12:09.207 --> 00:12:09.567
+00:13:13.633 --> 00:13:13.993
 Például
 
-00:12:10.677 --> 00:12:14.918
+00:13:15.103 --> 00:13:19.344
 egyszerre csak egyet. Szóval ahelyett, hogy
 az egész arcot látnád, tényleg
 
-00:12:15.398 --> 00:12:17.878
+00:13:19.824 --> 00:13:22.304
 végig tudsz lépkedni, és látod,
 mit csinál a kód minden egyes sora.
 
-00:12:18.278 --> 00:12:21.197
+00:13:22.704 --> 00:13:25.623
 És amikor olyan programokat
 írsz, amikben 200
 
-00:12:21.197 --> 00:12:24.557
+00:13:25.623 --> 00:13:28.983
 sor kód van, vagy
 amik ugyanazt a kódot
 
-00:12:24.557 --> 00:12:26.998
+00:13:28.983 --> 00:13:31.424
 nagyon sokszor lefuttatják,
 és talán ezer,
 
-00:12:27.398 --> 00:12:29.597
+00:13:31.824 --> 00:13:34.023
 tízezer dolog történik
 a programodban, és
 
-00:12:29.597 --> 00:12:31.317
+00:13:34.023 --> 00:13:35.743
 ezekhez a feladatokhoz hamarosan eljutunk.
 
-00:12:31.798 --> 00:12:36.518
+00:13:36.224 --> 00:13:40.944
 Ez neked szuper,
 szuper hasznos lesz.
 
-00:12:37.457 --> 00:12:41.937
+00:13:41.883 --> 00:13:46.363
 Van itt fent ez a kis
 információs panel kapcsoló is.
 
-00:12:42.018 --> 00:12:46.538
+00:13:46.444 --> 00:13:50.964
 És megint, ahogy sokkal
 bonyolultabb kódunk lesz,
 
-00:12:46.538 --> 00:12:48.577
+00:13:50.964 --> 00:13:53.003
 ebben rengeteg lépés
 lesz, és sokkal
 
-00:12:48.577 --> 00:12:50.418
+00:13:53.003 --> 00:13:54.844
 mélyebbre megy,
 és sokkal bonyolultabb lesz.
 
-00:12:51.057 --> 00:12:54.097
+00:13:55.483 --> 00:13:58.523
 De egyelőre csak azt
 látod, hogy megmondja: Jiki
 
-00:12:54.177 --> 00:12:57.658
+00:13:58.603 --> 00:14:02.084
 a triangle függvényt használta
 ezekkel a paraméterekkel.
 
-00:12:57.658 --> 00:13:00.857
+00:14:02.084 --> 00:14:05.283
 Ezekre a dolgokra is rávihetsz
 egeret, például a triangle-re.
 
-00:13:00.857 --> 00:13:04.738
+00:14:05.283 --> 00:14:09.164
 És látod, hogy itt kiemeli azt a szót,
 amire rámutatsz, és kiemeli az egész sort.
 
-00:13:05.357 --> 00:13:08.638
+00:14:09.783 --> 00:14:13.064
 Megint, lehet, hogy ez még nem
 tűnik túl hasznosnak, de később,
 
-00:13:08.638 --> 00:13:11.398
+00:14:13.064 --> 00:14:15.824
 amikor talán 20
 lépésed van, és ki akarod
 
-00:13:11.398 --> 00:13:14.638
+00:14:15.824 --> 00:14:19.064
 találni, pontosan mi történik
 ennek a kódsornak minden pontján,
 
-00:13:14.798 --> 00:13:16.477
+00:14:19.224 --> 00:14:20.903
 ez nagyon jól fog neked működni.
 
-00:13:17.437 --> 00:13:19.998
+00:14:21.863 --> 00:14:24.424
 Szóval, igen, és megnyomhatod
 ezt a lejátszás gombot is.
 
-00:13:20.107 --> 00:13:22.317
+00:14:24.533 --> 00:14:26.743
 Csak hogy lejátszd, végigjátszd a dolgokat.
 
-00:13:22.868 --> 00:13:26.248
+00:14:27.294 --> 00:14:30.674
 És ha visszamész a Space
 Invaders játékodhoz, amit,
 
-00:13:26.248 --> 00:13:30.038
+00:14:30.674 --> 00:14:34.464
 amit korábban megcsináltál,
 most kipróbálhatod, visszamehetsz,
 
-00:13:30.038 --> 00:13:32.957
+00:14:34.464 --> 00:14:37.383
 használhatod a csúszkát,
 nézheted, ahogy a Space Invaderseket lelövik,
 
-00:13:33.197 --> 00:13:35.557
+00:14:37.623 --> 00:14:39.983
 vagy bemehetsz a labirintusba,
 és ott is használhatod a csúszkát,
 
-00:13:35.557 --> 00:13:38.837
+00:14:39.983 --> 00:14:43.263
 mozgathatod előre-hátra, és nézheted,
 ahogy a figurád megoldja a labirintust.
 
-00:13:38.837 --> 00:13:41.597
+00:14:43.263 --> 00:14:46.023
 Aztán megnyomhatod újra a lejátszást,
 hogy lefusson az egész animáció.
 
-00:13:41.837 --> 00:13:47.077
+00:14:46.263 --> 00:14:51.503
 Szóval, tényleg hasznos kis eszköz.
 Van mögötte még több
 
-00:13:47.077 --> 00:13:50.077
+00:14:51.503 --> 00:14:54.503
 bonyolultság is, amire egy
 későbbi mélymerülésben visszatérünk.
 
-00:13:50.398 --> 00:13:52.238
+00:14:54.824 --> 00:14:56.664
 De egyelőre remélem, hasznos volt.
 
-00:13:52.427 --> 00:13:57.677
+00:14:56.853 --> 00:15:02.103
 Alig várom, hogy tényleg belemerüljünk
 később néhány bonyolult feladatba.
 
-00:13:58.107 --> 00:14:01.947
+00:15:02.533 --> 00:15:06.373
 De most magadra hagylak. Remélem, élvezni
 fogod a következő rajzolós feladatokat.
 
-00:14:02.347 --> 00:14:04.427
+00:15:06.773 --> 00:15:08.853
 Próbálj folyamatosan azon
 gondolkodni, hogyan gondolkodsz.
 
-00:14:04.748 --> 00:14:09.388
+00:15:09.174 --> 00:15:13.814
 Szánj rá időt, tedd rendbe a kódodat,
 és, igen, remekül fogod csinálni.
 
-00:14:09.467 --> 00:14:10.347
+00:15:13.893 --> 00:15:14.773
 Köszönöm, hogy megnézted.

@@ -1,687 +1,765 @@
 WEBVTT
 
-NOTE en_md5 a16ed41cc1e87ec52048dc1953b6c08e
+NOTE en_md5 3444df0fcca33c086487f13e47f69d4f
 
-00:00:00.578 --> 00:00:04.777
+00:00:00.079 --> 00:00:02.899
+Ciao, benvenuto al tuo primo approfondimento. Questi
+
+00:00:02.939 --> 00:00:04.839
+video sono un po' diversi dai
+
+00:00:04.880 --> 00:00:08.159
+video didattici visti finora. Sono più lunghi
+
+00:00:08.179 --> 00:00:11.440
+e molto meno strutturati. Quando avrò
+
+00:00:11.460 --> 00:00:13.100
+finito qui, ci sarò solo io
+
+00:00:13.140 --> 00:00:15.939
+davanti al portatile, a chiacchierare con te
+
+00:00:16.000 --> 00:00:18.680
+e a spiegare alcune idee più a fondo,
+
+00:00:18.720 --> 00:00:21.280
+divagando un po', forse dilungandomi troppo,
+
+00:00:21.319 --> 00:00:23.479
+ma sperando di darti un'idea più chiara
+
+00:00:23.559 --> 00:00:27.600
+di come ragiono sul codice. Guardare
+
+00:00:27.620 --> 00:00:30.419
+questi approfondimenti è del tutto facoltativo. Puoi
+
+00:00:30.500 --> 00:00:32.519
+saltarne delle parti, puoi tornare indietro
+
+00:00:32.580 --> 00:00:34.479
+per rivedere qualcosa, puoi ignorarli
+
+00:00:34.540 --> 00:00:37.799
+del tutto e non aprirli nemmeno.
+
+00:00:37.860 --> 00:00:40.059
+Ma quando abbiamo tenuto questo corso come
+
+00:00:40.119 --> 00:00:42.939
+boot camp, mi hanno detto che questi video
+
+00:00:42.979 --> 00:00:45.200
+erano forse la parte più preziosa
+
+00:00:45.260 --> 00:00:47.099
+di tutto, perché facevano capire
+
+00:00:47.139 --> 00:00:49.139
+come ragiono. E come ho già detto,
+
+00:00:49.200 --> 00:00:51.339
+una parte importante di questo corso è
+
+00:00:51.420 --> 00:00:53.759
+insegnarti a pensare come uno sviluppatore, come
+
+00:00:53.799 --> 00:00:56.419
+chi scrive codice. Quindi prova a guardarne
+
+00:00:56.459 --> 00:00:58.319
+qualcuno quando compare, e vedi
+
+00:00:58.360 --> 00:01:00.740
+che ne pensi. Per ora, prepàrati
+
+00:01:00.799 --> 00:01:02.720
+una bella tazza di tè o di caffè. Mettiti
+
+00:01:02.779 --> 00:01:04.360
+comodo e cominciamo
+
+00:01:05.004 --> 00:01:09.203
 Okay, allora, in questi approfondimenti risolverò l'esercizio esattamente come
 
-00:00:04.777 --> 00:00:06.817
+00:01:09.203 --> 00:01:11.243
 lo farei se lo vedessi per la prima volta.
 
-00:00:07.137 --> 00:00:10.657
+00:01:11.563 --> 00:01:15.083
 Ho deliberatamente cercato di non guardare ogni esercizio per un bel po'.
 
-00:00:11.098 --> 00:00:13.657
+00:01:15.524 --> 00:01:18.083
 E poi torno e me lo risolvo lì per lì,
 
-00:00:13.657 --> 00:00:15.458
+00:01:18.083 --> 00:01:19.884
 così non ho una soluzione memorizzata.
 
-00:00:15.938 --> 00:00:19.057
+00:01:20.364 --> 00:01:23.483
 Lo affronto come, spero, l'hai affrontato tu.
 
-00:00:19.538 --> 00:00:22.897
+00:01:23.964 --> 00:01:27.323
 Il valore di tutto questo, però, non è vedere che codice scrivo io, almeno,
 
-00:00:23.057 --> 00:00:25.057
+00:01:27.483 --> 00:01:29.483
 di sicuro non per questi primi esercizi.
 
-00:00:25.138 --> 00:00:28.487
+00:01:29.564 --> 00:01:32.913
 Probabilmente scriverò esattamente lo stesso codice che hai scritto tu.
 
-00:00:29.207 --> 00:00:33.167
+00:01:33.633 --> 00:01:37.593
 L'obiettivo principale, almeno all'inizio, è che tu pensi a come affrontare i
 
-00:00:33.167 --> 00:00:37.207
+00:01:37.593 --> 00:01:41.633
 problemi e che io ti spieghi come li affronto io.
 
-00:00:37.698 --> 00:00:42.207
+00:01:42.124 --> 00:01:46.633
 Andando avanti nel corso, ci saranno tantissimi modi diversi di
 
-00:00:42.207 --> 00:00:45.847
+00:01:46.633 --> 00:01:50.273
 affrontare un problema. Alcuni con dei pro, altri con dei contro.
 
-00:00:46.328 --> 00:00:50.567
+00:01:50.754 --> 00:01:54.993
 E passeremo molto del nostro tempo a esplorare questi modi diversi di pensare.
 
-00:00:51.557 --> 00:00:55.247
+00:01:55.983 --> 00:01:59.673
 E questa logica, questo modo di risolvere i problemi, puoi portarlo
 
-00:00:55.567 --> 00:00:57.728
+00:01:59.993 --> 00:02:02.154
 in tutti i diversi ambiti della programmazione.
 
-00:00:57.968 --> 00:01:00.688
+00:02:02.394 --> 00:02:05.114
 Quando parliamo di costruire cose, piattaforme,
 
-00:01:00.688 --> 00:01:04.768
+00:02:05.114 --> 00:02:09.194
 con tutti questi pezzi diversi che mettiamo insieme, magari senza nemmeno usare codice,
 
-00:01:04.927 --> 00:01:07.727
+00:02:09.353 --> 00:02:12.153
 magari facendo scrivere una parte del codice a un LLM,
 
-00:01:08.207 --> 00:01:12.847
+00:02:12.633 --> 00:02:17.273
 il modo in cui pensiamo è l'unica costante che ci porta a buoni risultati.
 
-00:01:13.808 --> 00:01:16.528
+00:02:18.234 --> 00:02:20.954
 Quindi se da tutto questo corso non ti resta nient'altro,
 
-00:01:16.847 --> 00:01:20.447
+00:02:21.273 --> 00:02:24.873
 l'unica cosa che spero ti porti via è come ragioniamo.
 
-00:01:21.558 --> 00:01:22.998
+00:02:25.984 --> 00:02:27.424
 Allora, esercizio semplice,
 
-00:01:24.117 --> 00:01:26.757
+00:02:28.543 --> 00:02:31.183
 magari non ti è sembrato semplice, ma, ma è abbastanza semplice.
 
-00:01:26.918 --> 00:01:29.477
+00:02:31.344 --> 00:02:33.903
 E, dobbiamo solo disegnare la faccia di una volpe,
 
-00:01:29.918 --> 00:01:33.317
+00:02:34.344 --> 00:02:37.743
 e abbiamo una serie di triangoli da disegnare.
 
-00:01:34.278 --> 00:01:37.197
+00:02:38.704 --> 00:02:41.623
 Allora, sto guardando le istruzioni.
 
-00:01:37.197 --> 00:01:39.197
+00:02:41.623 --> 00:02:43.623
 Mi dicono come disegnare un triangolo.
 
-00:01:39.197 --> 00:01:44.677
+00:02:43.623 --> 00:02:49.103
 Questa è una cosa che conosco bene. E, mi dicono alcuni dei colori diversi.
 
-00:01:44.677 --> 00:01:48.798
+00:02:49.103 --> 00:02:53.224
 Quindi abbiamo "white", "brown", "orange" e "charcoal", che possiamo usare.
 
-00:01:48.798 --> 00:01:52.668
+00:02:53.224 --> 00:02:57.094
 E abbiamo due guance "white", due orecchie "brown", due metà della faccia "orange",
 
-00:01:53.138 --> 00:01:56.177
+00:02:57.564 --> 00:03:00.603
 e poi un naso, ma fatto di due triangoli.
 
-00:01:58.578 --> 00:02:03.298
+00:03:03.004 --> 00:03:07.724
 E poi qui ho scritto una nota: che puoi usare, puoi passare il mouse,
 
-00:02:03.378 --> 00:02:07.938
+00:03:07.804 --> 00:03:12.364
 dovresti usarli. E poi, tutti i numeri sono divisibili per 5.
 
-00:02:08.018 --> 00:02:10.737
+00:03:12.444 --> 00:03:15.163
 E l'unica cosa che usiamo qui è questo triangle.
 
-00:02:11.858 --> 00:02:14.497
+00:03:16.284 --> 00:03:18.923
 Quindi se dovessi disegnarlo, come farei?
 
-00:02:14.657 --> 00:02:17.777
+00:03:19.083 --> 00:03:22.203
 Beh, inizierei dicendo, okay, mi serve un, triangolo.
 
-00:02:18.018 --> 00:02:20.777
+00:03:22.444 --> 00:03:25.203
 Quindi scrivo triangle, triangle per la funzione triangle.
 
-00:02:21.018 --> 00:02:25.337
+00:03:25.444 --> 00:03:29.763
 E mi servono i tre punti. Quindi il primo punto qui in alto vedo 10, 6.
 
-00:02:25.418 --> 00:02:29.617
+00:03:29.844 --> 00:03:34.043
 Quindi so che è 10, 5. Una cosa che mi piace fare è mettere,
 
-00:02:29.617 --> 00:02:31.657
+00:03:34.043 --> 00:03:36.083
 questi due vicini, senza spazio.
 
-00:02:32.217 --> 00:02:37.018
+00:03:36.643 --> 00:03:41.444
 Così vedo che è una coppia di coordinate, e poi lasciare uno spazio tra le
 
-00:02:37.497 --> 00:02:42.138
+00:03:41.923 --> 00:03:46.564
 coppie di coordinate. In questa funzione triangle funziona piuttosto bene.
 
-00:02:42.377 --> 00:02:45.737
+00:03:46.803 --> 00:03:50.163
 Ma è anche un'occasione utile per pensare a come gli spazi bianchi,
 
-00:02:46.677 --> 00:02:51.018
+00:03:51.103 --> 00:03:55.444
 e per spazi bianchi intendiamo spazi, a capo, tabulazioni, tutte queste cose,
 
-00:02:51.877 --> 00:02:56.758
+00:03:56.303 --> 00:04:01.184
 come rendono il codice più leggibile, per te e anche per le altre persone.
 
-00:02:57.717 --> 00:03:00.758
+00:04:02.143 --> 00:04:05.184
 Quindi, bello schema. Metti insieme le due coordinate,
 
-00:03:00.758 --> 00:03:04.117
+00:04:05.184 --> 00:04:08.543
 poi lascia un piccolo spazio tra loro per separare le coordinate.
 
-00:03:04.598 --> 00:03:07.157
+00:04:09.024 --> 00:04:11.583
 Non, non importa quale di questi due sia la mia seconda coordinata.
 
-00:03:07.157 --> 00:03:09.957
+00:04:11.583 --> 00:04:14.383
 Ma io scendo qui, per 10, 40.
 
-00:03:10.758 --> 00:03:14.677
+00:04:15.184 --> 00:04:19.103
 E poi, infine, ho questo qui, che è 50, 40.
 
-00:03:15.397 --> 00:03:17.358
+00:04:19.823 --> 00:04:21.784
 Una cosa che ti mostro, magari non l'hai vista,
 
-00:03:17.358 --> 00:03:21.717
+00:04:21.784 --> 00:04:26.143
 c'è una freccia che compare sopra i numeri e che puoi usare per farli scorrere.
 
-00:03:22.038 --> 00:03:25.177
+00:04:26.464 --> 00:04:29.603
 Diventa un po' più utile più avanti, quando guardiamo
 
-00:03:25.177 --> 00:03:28.937
+00:04:29.603 --> 00:04:33.363
 certi colori e cose del genere, può essere una funzionalità
 
-00:03:28.937 --> 00:03:29.617
+00:04:33.363 --> 00:04:34.043
 abbastanza comoda.
 
-00:03:30.427 --> 00:03:33.217
+00:04:34.853 --> 00:04:37.643
 Quindi questo è il nostro triangolo per l'orecchio sinistro.
 
-00:03:34.098 --> 00:03:37.457
+00:04:38.524 --> 00:04:41.883
 Vediamo che l'orecchio sinistro deve essere "brown".
 
-00:03:38.177 --> 00:03:41.897
+00:04:42.603 --> 00:04:46.323
 Quindi scriviamo brown. E questo dovrebbe darmi l'orecchio sinistro.
 
-00:03:41.897 --> 00:03:43.698
+00:04:46.323 --> 00:04:48.124
 E lo controllo subito.
 
-00:03:43.698 --> 00:03:49.057
+00:04:48.124 --> 00:04:53.483
 Quindi premo "Esegui il codice". E vedo che questo triangolo sembra giusto.
 
-00:03:49.647 --> 00:03:53.407
+00:04:54.073 --> 00:04:57.833
 E se tolgo questa riga, se la trasformo in commento mettendo due barre,
 
-00:03:53.568 --> 00:03:56.807
+00:04:57.994 --> 00:05:01.233
 possiamo vedere che sparisce.
 
-00:03:56.807 --> 00:04:01.087
+00:05:01.233 --> 00:05:05.513
 Quindi vediamo che ha funzionato. Abbiamo questo e possiamo andare avanti.
 
-00:04:01.487 --> 00:04:03.647
+00:05:05.913 --> 00:05:08.073
 Quindi adesso la parte sinistra della faccia.
 
-00:04:04.768 --> 00:04:10.807
+00:05:09.194 --> 00:05:15.233
 La faccia è la parte arancione. Qui dietro non abbiamo un'ombreggiatura.
 
-00:04:10.807 --> 00:04:12.687
+00:05:15.233 --> 00:05:17.113
 Abbiamo solo il lato destro della faccia.
 
-00:04:13.247 --> 00:04:15.407
+00:05:17.673 --> 00:05:19.833
 Quindi ragioniamoci. Ci serve triangle.
 
-00:04:16.478 --> 00:04:19.517
+00:05:20.904 --> 00:05:23.943
 E se guardo l'immagine, vedo che è simmetrica.
 
-00:04:20.077 --> 00:04:22.317
+00:05:24.503 --> 00:05:26.743
 Questo concetto di simmetria lo useremo in un
 
-00:04:22.317 --> 00:04:23.997
+00:05:26.743 --> 00:05:28.423
 paio di questi esercizi che arrivano fra poco.
 
-00:04:24.237 --> 00:04:27.317
+00:05:28.663 --> 00:05:31.743
 Ma vediamo che il punto centrale sarà lo stesso.
 
-00:04:27.317 --> 00:04:31.677
+00:05:31.743 --> 00:05:36.103
 Quindi partirà da 50, 30 e finirà quaggiù allo stesso,
 
-00:04:31.677 --> 00:04:34.077
+00:05:36.103 --> 00:05:38.503
 che a occhio mi sembra 50, 95.
 
-00:04:34.877 --> 00:04:38.478
+00:05:39.303 --> 00:05:42.904
 E quindi dobbiamo capire dove va a finire qui.
 
-00:04:39.278 --> 00:04:45.117
+00:05:43.704 --> 00:05:49.543
 E lo vediamo passando il mouse su questo punto, che ha una X di 90 e una Y di 40.
 
-00:04:46.057 --> 00:04:50.697
+00:05:50.483 --> 00:05:55.123
 Quindi sarà qualcosa X e sarà qualcosa 40
 
-00:04:51.177 --> 00:04:53.338
+00:05:55.603 --> 00:05:57.764
 e sarà "orange".
 
-00:04:54.858 --> 00:04:57.577
+00:05:59.284 --> 00:06:02.003
 Ma questi punti interrogativi cosa sono, cosa ci mettiamo qui?
 
-00:04:57.817 --> 00:05:01.978
+00:06:02.243 --> 00:06:06.404
 Beh, guardo e vedo che quest'area di disegno è 100,
 
-00:05:01.978 --> 00:05:03.497
+00:06:06.404 --> 00:06:07.923
 quindi qui arriva fino a 100.
 
-00:05:04.298 --> 00:05:08.057
+00:06:08.724 --> 00:06:12.483
 E, questo è 90. Quindi qui c'è uno spazio di 10.
 
-00:05:08.858 --> 00:05:12.458
+00:06:13.284 --> 00:06:16.884
 Quindi so che avremo lo stesso spazio di 10 anche da questo lato.
 
-00:05:13.177 --> 00:05:14.377
+00:06:17.603 --> 00:06:18.803
 E so che
 
-00:05:15.497 --> 00:05:20.218
+00:06:19.923 --> 00:06:24.644
 0 più 10 fa 10, quindi so che questo sarà 10.
 
-00:05:20.858 --> 00:05:25.658
+00:06:25.284 --> 00:06:30.084
 E posso premere "Esegui il codice". E ottengo quello che mi sembra un bel triangolo arancione.
 
-00:05:26.858 --> 00:05:31.497
+00:06:31.284 --> 00:06:35.923
 Poi disegno la guancia sinistra. Qui sto solo copiando e incollando.
 
-00:05:31.887 --> 00:05:35.017
+00:06:36.313 --> 00:06:39.443
 Prendiamo questo triangolo. Cancelliamo tutta questa roba.
 
-00:05:35.487 --> 00:05:38.937
+00:06:39.913 --> 00:06:43.363
 Abbiamo la nostra funzione triangle, così non devo riscriverla.
 
-00:05:39.827 --> 00:05:43.267
+00:06:44.253 --> 00:06:47.693
 E la nostra guancia sinistra sarà "white".
 
-00:05:43.827 --> 00:05:48.387
+00:06:48.253 --> 00:06:52.813
 Quindi posso misurare. Allora, questo è 10, 40,
 
-00:05:50.228 --> 00:05:52.867
+00:06:54.654 --> 00:06:57.293
 e questo è 5, 60.
 
-00:05:53.668 --> 00:05:55.627
+00:06:58.094 --> 00:07:00.053
 Mi è sfuggita una virgola. Quindi questo è un'altra cosa.
 
-00:05:55.627 --> 00:05:58.708
+00:07:00.053 --> 00:07:03.134
 Piccolo consiglio. Guarda come questo non è rosso.
 
-00:05:58.788 --> 00:06:03.028
+00:07:03.214 --> 00:07:07.454
 È come se fosse del colore sbagliato. Si chiama evidenziazione della sintassi.
 
-00:06:03.187 --> 00:06:08.108
+00:07:07.613 --> 00:07:12.534
 È un termine tecnico che usiamo. Ma i colori che vedi sono i colori dell'evidenziazione
 
-00:06:08.108 --> 00:06:08.627
+00:07:12.534 --> 00:07:13.053
 della sintassi.
 
-00:06:09.627 --> 00:06:14.267
+00:07:14.053 --> 00:07:18.693
 Quindi il fatto che questo non sia rosso ti dice chiaramente che hai sbagliato qualcosa.
 
-00:06:14.507 --> 00:06:17.228
+00:07:18.933 --> 00:07:21.654
 Quindi se ti capita di vedere qualcosa che sembra del colore sbagliato,
 
-00:06:17.307 --> 00:06:19.947
+00:07:21.733 --> 00:07:24.373
 è un segnale che magari ti è sfuggita una virgola.
 
-00:06:20.108 --> 00:06:23.468
+00:07:24.534 --> 00:07:27.894
 Magari. Se andiamo qui e non chiudiamo queste virgolette, vedi che
 
-00:06:23.867 --> 00:06:28.588
+00:07:28.293 --> 00:07:33.014
 questa parentesi diventa verde, e questo indica che ti mancano delle virgolette.
 
-00:06:28.987 --> 00:06:31.548
+00:07:33.413 --> 00:07:35.974
 Quindi questi colori diventano davvero utili, come
 
-00:06:31.548 --> 00:06:35.148
+00:07:35.974 --> 00:07:39.574
 piccole scorciatoie mentali per accorgerti che qualcosa non va.
 
-00:06:36.798 --> 00:06:38.718
+00:07:41.224 --> 00:07:43.144
 Quindi mettiamo la virgola. E questo diventa arancione.
 
-00:06:38.798 --> 00:06:46.158
+00:07:43.224 --> 00:07:50.584
 Allora, 10, 40, 5, 60. E poi torniamo quaggiù, che è 50 e 95.
 
-00:06:47.517 --> 00:06:52.317
+00:07:51.943 --> 00:07:56.743
 E possiamo dire white. E aggiungiamo questo, e va bene.
 
-00:06:54.798 --> 00:06:59.838
+00:07:59.224 --> 00:08:04.264
 Okay. Orecchio destro. Adesso siamo in pieno territorio della simmetria.
 
-00:07:00.237 --> 00:07:04.798
+00:08:04.663 --> 00:08:09.224
 Allora, sappiamo per l'orecchio destro. Dice: riesci a capirlo senza passare il mouse?
 
-00:07:06.158 --> 00:07:09.117
+00:08:10.584 --> 00:08:13.543
 E, sì, riusciamo a capirlo senza passare il mouse.
 
-00:07:09.437 --> 00:07:14.038
+00:08:13.863 --> 00:08:18.464
 Se hai passato il mouse e l'hai fatto così, riesci a pensare a un altro modo?
 
-00:07:14.038 --> 00:07:17.517
+00:08:18.464 --> 00:08:21.943
 E riesci a pensare di usare quello che abbiamo appena fatto qui, dove
 
-00:07:18.317 --> 00:07:21.598
+00:08:22.743 --> 00:08:26.024
 ho, disegnato la guancia sinistra guardando la guancia destra.
 
-00:07:21.598 --> 00:07:23.598
+00:08:26.024 --> 00:08:28.024
 Come potremmo usarlo? Lo stesso principio?
 
-00:07:23.598 --> 00:07:26.478
+00:08:28.024 --> 00:08:30.904
 Se vuoi metterlo in pausa un attimo e pensarci, puoi farlo,
 
-00:07:27.437 --> 00:07:33.598
+00:08:31.863 --> 00:08:38.024
 altrimenti te lo dico io. Allora, sappiamo che l'orecchio sinistro parte da 10.
 
-00:07:33.827 --> 00:07:35.588
+00:08:38.253 --> 00:08:40.014
 E vediamo che abbiamo questo 10, 5.
 
-00:07:36.468 --> 00:07:40.468
+00:08:40.894 --> 00:08:44.894
 E quindi sappiamo, l'abbiamo detto prima, che 0 più 10 fa 10.
 
-00:07:40.627 --> 00:07:43.187
+00:08:45.053 --> 00:08:47.613
 E avevamo capito che questa guancia finisce a 90
 
-00:07:43.987 --> 00:07:47.588
+00:08:48.413 --> 00:08:52.014
 perché ha uno spazio di 10 e lo stesso spazio è qui.
 
-00:07:47.987 --> 00:07:50.468
+00:08:52.413 --> 00:08:54.894
 Quindi sappiamo che questo orecchio dovrebbe essere 90
 
-00:07:51.668 --> 00:07:56.548
+00:08:56.094 --> 00:09:00.974
 e, sappiamo che scende dritto fino a 90 e sappiamo che
 
-00:07:57.017 --> 00:07:59.267
+00:09:01.443 --> 00:09:03.693
 arriva fino in mezzo, a 50.
 
-00:07:59.987 --> 00:08:03.028
+00:09:04.413 --> 00:09:07.454
 Quindi possiamo ribaltarlo e abbiamo lo stesso
 
-00:08:04.228 --> 00:08:07.627
+00:09:08.654 --> 00:09:12.053
 triangolo. Poi possiamo fare la parte destra della faccia.
 
-00:08:07.627 --> 00:08:12.307
+00:09:12.053 --> 00:09:16.733
 E di nuovo possiamo farlo senza passare il mouse, cambiando solo questo 10 in 90 perché è
 
-00:08:12.307 --> 00:08:18.028
+00:09:16.733 --> 00:09:22.454
 simmetrico. E poi possiamo fare la guancia destra, e per la guancia destra, di nuovo,
 
-00:08:18.028 --> 00:08:24.548
+00:09:22.454 --> 00:09:28.974
 vogliamo la simmetria. Quindi questo diventa 90, questo diventa 95 e questo resta a 50
 
-00:08:25.117 --> 00:08:26.637
+00:09:29.543 --> 00:09:31.063
 e questo ci dà una guancia bianca.
 
-00:08:27.117 --> 00:08:28.798
+00:09:31.543 --> 00:09:33.224
 E poi ci serve il naso,
 
-00:08:29.918 --> 00:08:34.557
+00:09:34.344 --> 00:09:38.983
 il nostro naso è "charcoal", quindi possiamo fare triangle.
 
-00:08:35.518 --> 00:08:39.597
+00:09:39.944 --> 00:09:44.023
 E mi sono un po' rovinato le cose da solo, perché ci ho
 
-00:08:39.597 --> 00:08:41.557
+00:09:44.023 --> 00:09:45.983
 disegnato sopra. Ma possiamo.
 
-00:08:41.557 --> 00:08:46.317
+00:09:45.983 --> 00:09:50.743
 Quindi hai due possibilità. Una, puoi trasformare in commento tutto il codice.
 
-00:08:46.798 --> 00:08:49.677
+00:09:51.224 --> 00:09:54.103
 Quindi puoi mettere, qualche commento
 
-00:08:51.128 --> 00:08:51.607
+00:09:55.554 --> 00:09:56.033
 così
 
-00:08:52.488 --> 00:08:54.648
+00:09:56.914 --> 00:09:59.074
 e questo ti permetterà di,
 
-00:08:56.408 --> 00:09:00.447
+00:10:00.834 --> 00:10:04.873
 trasformare questo in commento. Quindi se ti capita, magari hai fatto un errore di battitura.
 
-00:09:00.447 --> 00:09:04.368
+00:10:04.873 --> 00:10:08.794
 Non serve spaventarsi. Premi "Esegui il codice", trasforma in commento quello che è sbagliato,
 
-00:09:04.368 --> 00:09:06.168
+00:10:08.794 --> 00:10:10.594
 premi di nuovo "Esegui il codice" e torna tutto.
 
-00:09:06.807 --> 00:09:11.207
+00:10:11.233 --> 00:10:15.633
 Quindi qui vediamo che questo dovrebbe essere 50 e 85.
 
-00:09:12.727 --> 00:09:16.327
+00:10:17.153 --> 00:10:20.753
 Allora, 50 e 85. E poi possiamo rimettere questi.
 
-00:09:17.548 --> 00:09:17.847
+00:10:21.974 --> 00:10:22.273
 E.
 
-00:09:21.927 --> 00:09:25.048
+00:10:26.353 --> 00:10:29.474
 In qualche modo ho cancellato la parola triangle da questo primo.
 
-00:09:25.687 --> 00:09:26.327
+00:10:30.113 --> 00:10:30.753
 Okay,
 
-00:09:29.847 --> 00:09:32.248
+00:10:34.273 --> 00:10:36.674
 allora misuriamo. Quindi 40, 90.
 
-00:09:33.447 --> 00:09:37.768
+00:10:37.873 --> 00:10:42.194
 E sappiamo che è simmetrico. Quindi sappiamo subito che il prossimo sarà
 
-00:09:37.768 --> 00:09:43.788
+00:10:42.194 --> 00:10:48.214
 60, 90. E sappiamo che questo è charcoal, una parola che faccio fatica a scrivere.
 
-00:09:44.508 --> 00:09:49.467
+00:10:48.934 --> 00:10:53.893
 Abbiamo la parte alta del naso e poi abbiamo la parte bassa.
 
-00:09:49.788 --> 00:09:55.628
+00:10:54.214 --> 00:11:00.054
 E questo è, un triangolo simmetrico rispetto al triangolo di sopra.
 
-00:09:56.028 --> 00:10:00.107
+00:11:00.454 --> 00:11:04.533
 Quindi avrà esattamente, la stessa forma di questo,
 
-00:10:00.508 --> 00:10:03.067
+00:11:04.934 --> 00:11:07.493
 ma mentre questo va da 85 a 90,
 
-00:10:03.467 --> 00:10:08.648
+00:11:07.893 --> 00:11:13.074
 sappiamo che questo deve andare da 90 a 95 perché, di nuovo,
 
-00:10:08.807 --> 00:10:12.408
+00:11:13.233 --> 00:11:16.834
 possiamo pensare a 90 come alla linea centrale, 5 sopra, 5 sotto.
 
-00:10:13.447 --> 00:10:16.168
+00:11:17.873 --> 00:11:20.594
 E abbiamo la parte bassa del naso, e passa tutto.
 
-00:10:16.727 --> 00:10:19.967
+00:11:21.153 --> 00:11:24.393
 E poi toglierei questi TODO.
 
-00:10:19.967 --> 00:10:22.408
+00:11:24.393 --> 00:11:26.834
 Cerchiamo di tenere il codice bello ordinato.
 
-00:10:23.368 --> 00:10:27.368
+00:11:27.794 --> 00:11:31.794
 E a proposito, in alcuni di questi video vedrai questa cosa quaggiù.
 
-00:10:27.368 --> 00:10:30.327
+00:11:31.794 --> 00:11:34.753
 È solo perché sto lavorando in locale sul mio computer
 
-00:10:30.648 --> 00:10:32.087
+00:11:35.074 --> 00:11:36.513
 invece che sul sito di Jiki.
 
-00:10:32.408 --> 00:10:35.048
+00:11:36.834 --> 00:11:39.474
 Ho attivato alcune cose extra per il debug.
 
-00:10:35.128 --> 00:10:38.398
+00:11:39.554 --> 00:11:42.824
 Quindi se vedi roba del genere lì sotto, puoi tranquillamente ignorarla.
 
-00:10:40.158 --> 00:10:42.398
+00:11:44.584 --> 00:11:46.824
 Okay, quindi abbiamo un codice bello ordinato.
 
-00:10:42.398 --> 00:10:45.197
+00:11:46.824 --> 00:11:49.623
 Possiamo togliere questo. Riesci a capire anche questo senza passare il mouse?
 
-00:10:45.677 --> 00:10:48.437
+00:11:50.103 --> 00:11:52.863
 E adesso, questo sta documentando il nostro codice.
 
-00:10:48.437 --> 00:10:50.477
+00:11:52.863 --> 00:11:54.903
 Quindi qui dice che questo è l'orecchio sinistro.
 
-00:10:50.477 --> 00:10:53.118
+00:11:54.903 --> 00:11:57.544
 E in realtà probabilmente cambierei questi e lascerei solo il nome della cosa.
 
-00:10:53.677 --> 00:10:55.357
+00:11:58.103 --> 00:11:59.783
 Perché non vogliamo davvero che siano istruzioni,
 
-00:10:55.357 --> 00:10:57.837
+00:11:59.783 --> 00:12:02.263
 vogliamo solo che descrivano quello che fa il codice.
 
-00:10:57.918 --> 00:11:00.158
+00:12:02.344 --> 00:12:04.584
 Ma puoi scegliere quello che ti risulta più chiaro.
 
-00:11:00.638 --> 00:11:03.918
+00:12:05.064 --> 00:12:08.344
 Però avere questi commenti che spiegano semplicemente cosa sono le cose.
 
-00:11:03.918 --> 00:11:05.998
+00:12:08.344 --> 00:12:10.424
 Anzi, magari questo lo chiamo semplicemente «il naso».
 
-00:11:06.548 --> 00:11:09.587
+00:12:10.974 --> 00:12:14.013
 E avrei due righe così, e si spiega abbastanza da sé,
 
-00:11:10.707 --> 00:11:12.307
+00:12:15.133 --> 00:12:16.733
 e tanto vale raggruppare le cose.
 
-00:11:12.307 --> 00:11:15.587
+00:12:16.733 --> 00:12:20.013
 Potrei anche dire, okay, voglio le due orecchie insieme
 
-00:11:15.908 --> 00:11:20.628
+00:12:20.334 --> 00:12:25.054
 e scrivere solo «le orecchie», e voglio le parti della faccia insieme.
 
-00:11:21.217 --> 00:11:25.028
+00:12:25.643 --> 00:12:29.454
 E voglio le guance insieme,
 
-00:11:25.908 --> 00:11:26.548
+00:12:30.334 --> 00:12:30.974
 così.
 
-00:11:28.307 --> 00:11:31.628
+00:12:32.733 --> 00:12:36.054
 E funziona ancora tutto, ma adesso è un po' più ordinato.
 
-00:11:31.628 --> 00:11:33.827
+00:12:36.054 --> 00:12:38.253
 E si vede anche un po' meglio la simmetria.
 
-00:11:34.467 --> 00:11:36.827
+00:12:38.893 --> 00:12:41.253
 Quindi prenditi sempre qualche minuto, quando hai risolto un
 
-00:11:36.827 --> 00:11:39.168
+00:12:41.253 --> 00:12:43.594
 esercizio, per cercare di esserne davvero orgoglioso.
 
-00:11:39.168 --> 00:11:43.168
+00:12:43.594 --> 00:12:47.594
 Mettilo in ordine, rendilo davvero pulito, e vedi quanto
 
-00:11:43.168 --> 00:11:45.408
+00:12:47.594 --> 00:12:49.834
 è più chiaro con queste due righe una accanto all'altra.
 
-00:11:45.837 --> 00:11:49.087
+00:12:50.263 --> 00:12:53.513
 Fa sembrare tutto un po' più pulito.
 
-00:11:49.087 --> 00:11:52.207
+00:12:53.513 --> 00:12:56.633
 Un'ultima cosa prima di finire, è quaggiù.
 
-00:11:52.207 --> 00:11:55.087
+00:12:56.633 --> 00:12:59.513
 Sposto solo questo per toglierlo di mezzo, quaggiù.
 
-00:11:55.807 --> 00:11:59.488
+00:13:00.233 --> 00:13:03.914
 Vedi questa barra? Magari non l'hai ancora usata,
 
-00:11:59.567 --> 00:12:02.048
+00:13:03.993 --> 00:13:06.474
 ma è quello che chiamiamo lo scrubber.
 
-00:12:02.687 --> 00:12:04.607
+00:13:07.113 --> 00:13:09.033
 Ti sarà utilissimo più avanti.
 
-00:12:05.008 --> 00:12:09.207
+00:13:09.434 --> 00:13:13.633
 Ma quello che ti permette di fare è passare da una riga di codice all'altra.
 
-00:12:09.207 --> 00:12:09.567
+00:13:13.633 --> 00:13:13.993
 Tipo
 
-00:12:10.677 --> 00:12:14.918
+00:13:15.103 --> 00:13:19.344
 farne una alla volta. Quindi invece di vedere solo la faccia intera, puoi davvero
 
-00:12:15.398 --> 00:12:17.878
+00:13:19.824 --> 00:13:22.304
 procedere passo passo e vedere cosa fa ogni riga di codice.
 
-00:12:18.278 --> 00:12:21.197
+00:13:22.704 --> 00:13:25.623
 E quando scriverai programmi che hanno 200
 
-00:12:21.197 --> 00:12:24.557
+00:13:25.623 --> 00:13:28.983
 righe di codice, o che eseguono lo stesso codice tante e
 
-00:12:24.557 --> 00:12:26.998
+00:13:28.983 --> 00:13:31.424
 tante volte, e magari ci sono tipo mille,
 
-00:12:27.398 --> 00:12:29.597
+00:13:31.824 --> 00:13:34.023
 diecimila cose che succedono nel programma, e
 
-00:12:29.597 --> 00:12:31.317
+00:13:34.023 --> 00:13:35.743
 a quegli esercizi ci arriviamo fra un po'.
 
-00:12:31.798 --> 00:12:36.518
+00:13:36.224 --> 00:13:40.944
 Questo diventa una cosa super, super utile da fare.
 
-00:12:37.457 --> 00:12:41.937
+00:13:41.883 --> 00:13:46.363
 Poi abbiamo anche questo pulsante per il pannello informazioni, qui in alto.
 
-00:12:42.018 --> 00:12:46.538
+00:13:46.444 --> 00:13:50.964
 E di nuovo, quando avremo un codice molto più complicato,
 
-00:12:46.538 --> 00:12:48.577
+00:13:50.964 --> 00:13:53.003
 questo avrà tantissimi passaggi e diventerà
 
-00:12:48.577 --> 00:12:50.418
+00:13:53.003 --> 00:13:54.844
 molto più dettagliato e molto più complicato.
 
-00:12:51.057 --> 00:12:54.097
+00:13:55.483 --> 00:13:58.523
 Ma per ora vedi solo che ti dice che Jiki
 
-00:12:54.177 --> 00:12:57.658
+00:13:58.603 --> 00:14:02.084
 ha usato la funzione triangle con questi parametri diversi.
 
-00:12:57.658 --> 00:13:00.857
+00:14:02.084 --> 00:14:05.283
 Puoi anche passare il mouse su queste cose, per esempio su triangle.
 
-00:13:00.857 --> 00:13:04.738
+00:14:05.283 --> 00:14:09.164
 E vedi che qui evidenzia la parola su cui passi il mouse ed evidenzia tutta la riga.
 
-00:13:05.357 --> 00:13:08.638
+00:14:09.783 --> 00:14:13.064
 Di nuovo, magari adesso non sembra utilissimo, ma più avanti,
 
-00:13:08.638 --> 00:13:11.398
+00:14:13.064 --> 00:14:15.824
 quando avrai magari 20 passaggi e vorrai
 
-00:13:11.398 --> 00:13:14.638
+00:14:15.824 --> 00:14:19.064
 capire esattamente cosa succede in ogni punto di questa riga di codice,
 
-00:13:14.798 --> 00:13:16.477
+00:14:19.224 --> 00:14:20.903
 questo ti tornerà davvero molto utile.
 
-00:13:17.437 --> 00:13:19.998
+00:14:21.863 --> 00:14:24.424
 Quindi, sì, e puoi anche premere questo pulsante di riproduzione.
 
-00:13:20.107 --> 00:13:22.317
+00:14:24.533 --> 00:14:26.743
 Giusto per far scorrere le cose.
 
-00:13:22.868 --> 00:13:26.248
+00:14:27.294 --> 00:14:30.674
 E se torni al gioco di Space Invaders che hai,
 
-00:13:26.248 --> 00:13:30.038
+00:14:30.674 --> 00:14:34.464
 che hai fatto in precedenza, puoi provarlo adesso e puoi tornare indietro,
 
-00:13:30.038 --> 00:13:32.957
+00:14:34.464 --> 00:14:37.383
 usare lo scrubber, puoi guardare gli Space Invaders che vengono colpiti,
 
-00:13:33.197 --> 00:13:35.557
+00:14:37.623 --> 00:14:39.983
 oppure puoi andare nel labirinto e usare lo scrubber,
 
-00:13:35.557 --> 00:13:38.837
+00:14:39.983 --> 00:14:43.263
 andare avanti e indietro per guardare il personaggio che risolve il labirinto.
 
-00:13:38.837 --> 00:13:41.597
+00:14:43.263 --> 00:14:46.023
 E poi puoi premere di nuovo play per far scorrere tutta l'animazione.
 
-00:13:41.837 --> 00:13:47.077
+00:14:46.263 --> 00:14:51.503
 Quindi, uno strumento davvero utile. Dietro c'è anche altra complessità
 
-00:13:47.077 --> 00:13:50.077
+00:14:51.503 --> 00:14:54.503
 su cui torneremo in un approfondimento più avanti.
 
-00:13:50.398 --> 00:13:52.238
+00:14:54.824 --> 00:14:56.664
 Ma per ora, spero che sia stato utile.
 
-00:13:52.427 --> 00:13:57.677
+00:14:56.853 --> 00:15:02.103
 Non vedo l'ora di arrivare a esercizi complessi in cui immergerci davvero.
 
-00:13:58.107 --> 00:14:01.947
+00:15:02.533 --> 00:15:06.373
 Ma ti lascio fare. Spero che ti piacciano i prossimi esercizi di disegno.
 
-00:14:02.347 --> 00:14:04.427
+00:15:06.773 --> 00:15:08.853
 Continua a pensare a come stai pensando.
 
-00:14:04.748 --> 00:14:09.388
+00:15:09.174 --> 00:15:13.814
 Prenditi il tuo tempo, tieni il codice ordinato e, sì, andrà benissimo.
 
-00:14:09.467 --> 00:14:10.347
+00:15:13.893 --> 00:15:14.773
 Grazie per aver guardato.
