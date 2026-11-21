@@ -18,7 +18,7 @@ Então um array contém várias coisas, mas é uma coisa só, uma unidade: um ú
 
 O Jiki pode pegar esse array, essa corrente, e colocar em uma caixa, do mesmo jeito que ele coloca uma string em uma caixa ou um número em uma caixa.
 
-Ele pode colocá-lo na fenda de uma máquina. Pode puxá-lo da boca da máquina. O array é uma coisa só, e o Jiki trabalha com ele exatamente do mesmo jeito que trabalha com strings, números e tudo o mais que você viu até agora.
+Ele pode colocá-lo na fenda de entrada de uma máquina. Pode puxá-lo da boca da máquina. O array é uma coisa só, e o Jiki trabalha com ele exatamente do mesmo jeito que trabalha com strings, números e tudo o mais que você viu até agora.
 
 Agora, no código, um array também se parece um pouco com uma corrente. Ele tem um colchete em cada ponta e, entre eles, vários itens encadeados uns aos outros, separados por vírgulas.
 
