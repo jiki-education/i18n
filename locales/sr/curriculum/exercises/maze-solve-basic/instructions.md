@@ -6,7 +6,7 @@ en_md5: bbd838559fba4dcf527a55ba135703cd
 
 Drago nam je što si tu! Ovo je tvoja prva vežba.
 
-Cilj ove vežbe je da se upoznaš sa tim kako funkcioniše okruženje za učenje. Tvoj zadatak je da rešiš lavirint koji vidiš sa leve strane, tako što ćeš malom liku davati instrukcije. Napišeš sve instrukcije koje lik treba da prati, a zatim klikneš na **Pokreni kod** da bi ih on izvršio.
+Cilj ove vežbe je da se upoznaš kako funkcioniše okruženje za učenje. Tvoj zadatak je da rešiš lavirint koji vidiš sa leve strane, tako što ćeš malom liku davati instrukcije. Napišeš sve instrukcije koje lik treba da prati, a zatim klikneš na **Pokreni kod** da bi ih on izvršio.
 
 Tri instrukcije koje možeš da koristiš su:
 
