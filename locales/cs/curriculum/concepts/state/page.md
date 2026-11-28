@@ -1,0 +1,11 @@
+---
+title: "Práce se stavem"
+description: "Spojení příkazů `if` s proměnnými, které se postupně mění, aby program za běhu reagoval a choval se jinak."
+en_md5: e866d50be6bc7494f10e01341c40347b
+---
+
+Vítej zpátky. Dosud jsme proměnné používali na věci, které něco znamenají: něčí věk, čas, barvu. Proměnné jsme sice měnili, ale pořád šlo o poměrně statické věci. Jedno z nejčastějších použití proměnných v programování ale je sledovat, jak daleko jsme v nějaké práci. Představ si, že stavíš zeď, což si za chvíli vyzkoušíš. V reálném životě máš přehled o tom, ve které vrstvě cihel zrovna stavíš, jestli v té spodní, horní nebo někde uprostřed, a taky o tom, kterou cihlu položíš jako další, třetí, čtvrtou a tak dál. To samé potřebujeme i v digitálním světě. Nebo si představ, že vytváříš automatického bota na Space Invaders. Ten musí vědět, kde přesně na obrazovce zleva doprava se nachází. V programování tomu říkáme stav (anglicky _state_), zkratka pro otázku, v jakém stavu se něco nachází.
+
+Stav se hodí, když potřebuješ vědět, co se děje, ale opravdu užitečný je ve chvíli, kdy ho spojíme s větvením. Když stavíme zeď, musíme po každé cihle zkontrolovat, jestli jsme právě nepoložili poslední cihlu v té řadě. Pokud ano, přesuneme se na další řadu a začneme zase první cihlou. Když stavíme bota na Space Invaders, musíme před každým pohybem zkontrolovat, jestli nejsme na okraji obrazovky, a pokud ano, otočit směr. A ten směr je taky stav, záznam o tom, jestli jedeme doleva, nebo doprava.
+
+Jak budeš postupovat dál, stav se stane jednou z nejdůležitějších součástí programování: vědět, kde se něco nachází, v jakém je to stavu nebo jak daleko jsme ve svém seznamu úkolů. V následujících dvou cvičeních použiješ stav ke stavbě zdi a ke hraní Space Invaders, a to pomocí myšlenek, o kterých jsme právě mluvili. Je opravdu důležité rozdělit si tato cvičení na malé kroky. Promysli si, co všechno potřebuješ vědět, aby to šlo vyřešit: třeba v jaké vrstvě cihel jsi nebo kde je aktuální cihla. Promysli si taky pravidla, která má počítač dodržet, aby postavil celou zeď. Tohle je už skutečné programování. Přesně tohle děláme jako programátoři každý den. Je to čím dál složitější, ale taky čím dál zábavnější. Na tyhle vzorce si člověk nejdřív chvíli zvyká, tak si na to dej čas a bav se.

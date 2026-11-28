@@ -1,0 +1,11 @@
+---
+title: "Korištenje stanja"
+description: "Kombiniranje naredbi if s varijablama koje se mijenjaju tijekom vremena, kako bi tvoj program tijekom izvođenja reagirao i ponašao se drugačije."
+en_md5: e866d50be6bc7494f10e01341c40347b
+---
+
+Drago mi je što si opet tu. Do sada smo varijable koristili za stvari koje imaju neko značenje: nečije godine, vrijeme, boju. Varijable smo mijenjali, ali su uglavnom bile prilično statične. Ipak, jedna od najčešćih upotreba varijabli u programiranju jest praćenje napretka tijekom nekog posla. Zamisli da gradiš zid, a to ćeš uskoro i raditi. U stvarnom životu znaš na kojem sloju cigli radiš, na donjem, gornjem ili nekom u sredini, i znaš koju ciglu trebaš položiti sljedeću: treću, četvrtu i tako dalje. Isto nam treba i u digitalnom svijetu. Ili zamisli da pokušavaš napraviti automatskog bota za Space Invaders. Mora znati gdje se nalazi na zaslonu, gledano slijeva nadesno. U programiranju to zovemo stanje (_state_ na engleskom). To je skraćeni način da kažemo u kojem se stanju nešto nalazi.
+
+Stanje pomaže da znamo što se događa, ali postaje stvarno korisno kad ga spojimo s uvjetnim grananjem. Ako gradimo zid, nakon svake cigle moramo provjeriti jesmo li položili posljednju ciglu u tom redu, pa ako jesmo, prelazimo na sljedeći red i vraćamo se na polaganje prve cigle. Ako gradimo bota za Space Invaders, prije svakog pomicanja moramo provjeriti jesmo li na rubu zaslona i, ako jesmo, promijeniti smjer. I taj smjer je stanje, zapis o tome krećemo li se lijevo ili desno.
+
+Kako napreduješ, stanje će biti jedan od najvažnijih dijelova programiranja: ideja da znamo gdje je nešto, u kojem je stanju ili koliko smo daleko odmakli na popisu zadataka. U sljedeće dvije vježbe koristit ćeš stanje da sagradiš zid i odigraš Space Invaders, primjenjujući ideje o kojima smo upravo govorili. Zaista je važno raščlaniti te vježbe na male korake. Promisli točno što trebaš znati da ih riješiš, stvari poput sloja cigli na kojem se nalaziš ili pozicije cigle koju upravo polažeš. Promisli i pravila koja računalo treba slijediti da sagradi cijeli zid. Ovo je sada pravo programiranje. To je nešto što kao programeri radimo svaki dan. Postaje sve složenije, ali i sve zabavnije. Na takve obrasce se isprva treba malo naviknuti, zato ne žuri i dobro se zabavi.
