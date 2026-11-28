@@ -1,0 +1,339 @@
+WEBVTT
+
+NOTE en_md5 d4b8c72f7a92dfb1d6fb4eb412fdc752
+
+00:00:00.400 --> 00:00:03.469
+Chào mừng bạn quay lại. Tới giờ chúng ta đã xem hai loại vòng lặp,
+
+00:00:03.780 --> 00:00:06.580
+vòng lặp repeat và vòng lặp for-of.
+
+00:00:06.620 --> 00:00:08.109
+Trong bài học này, chúng ta sẽ xem
+
+00:00:08.200 --> 00:00:10.940
+thêm hai vòng lặp nữa và hai kỹ thuật hữu ích
+
+00:00:11.000 --> 00:00:14.140
+khi dùng vòng lặp. Có thể bạn còn nhớ, ngay từ đầu
+
+00:00:14.200 --> 00:00:15.980
+mình đã nói rằng vòng lặp repeat
+
+00:00:16.020 --> 00:00:18.690
+thực ra không tồn tại trong JavaScript. Nó chỉ là một thứ
+
+00:00:18.860 --> 00:00:20.340
+mình thêm vào để cuộc sống của bạn dễ dàng hơn
+
+00:00:20.380 --> 00:00:23.190
+một chút trong lúc chúng ta mới bắt đầu. Vậy
+
+00:00:23.200 --> 00:00:25.580
+chúng ta dùng gì thay vào đó? Chúng ta dùng một
+
+00:00:25.660 --> 00:00:28.150
+vòng lặp for bình thường, trông như thế này.
+
+00:00:29.380 --> 00:00:30.920
+Hy vọng bạn thấy được vì sao
+
+00:00:30.940 --> 00:00:32.940
+vào ngày đầu tiên, nhìn nó có thể
+
+00:00:32.960 --> 00:00:35.120
+hơi đáng sợ. Nhưng giờ bạn đã có đủ
+
+00:00:35.140 --> 00:00:37.280
+kiến thức để thấy thoải mái với nó.
+
+00:00:37.360 --> 00:00:40.340
+Vậy chúng ta cùng chia nhỏ nó ra nhé. Một vòng lặp for
+
+00:00:40.360 --> 00:00:44.620
+có ba thành phần: phần khởi tạo, điều kiện, và
+
+00:00:44.640 --> 00:00:49.769
+phần tăng. Phần khởi tạo, tức đoạn let i =
+
+00:00:49.840 --> 00:00:52.220
+0 này, chạy ở đầu
+
+00:00:52.260 --> 00:00:54.920
+cả vòng lặp. Nó chỉ chạy một lần, và
+
+00:00:54.980 --> 00:00:58.240
+ở đây nó tạo ra một cái hộp tên là i,
+
+00:00:58.340 --> 00:01:02.520
+đặt giá trị bằng 0. Đoạn tiếp theo, đứng trước điều kiện,
+
+00:01:03.240 --> 00:01:08.600
+chạy mỗi lần ngay trước mỗi lần lặp. Nếu
+
+00:01:08.640 --> 00:01:11.100
+điều kiện đúng thì chúng ta chạy vòng lặp
+
+00:01:11.110 --> 00:01:15.580
+tiếp. Nếu không đúng thì chúng ta không chạy. Và
+
+00:01:15.660 --> 00:01:18.580
+cuối cùng là phần tăng, chính là i++.
+
+00:01:19.400 --> 00:01:21.420
+i++ có nghĩa giống hệt
+
+00:01:21.460 --> 00:01:24.420
+i = i + 1. Đó chỉ là
+
+00:01:24.460 --> 00:01:26.880
+cách viết tắt, một cách để tăng i thêm
+
+00:01:26.940 --> 00:01:31.200
+một đơn vị mỗi lần. Vậy trong ví dụ này, chúng ta
+
+00:01:31.280 --> 00:01:34.200
+đặt i bằng 0. Chúng ta kiểm tra xem i
+
+00:01:34.240 --> 00:01:36.300
+có nhỏ hơn 2 không, đúng là có,
+
+00:01:36.380 --> 00:01:38.360
+nên chúng ta chạy vòng lặp. Rồi ở
+
+00:01:38.400 --> 00:01:41.640
+cuối, chúng ta tăng i thêm một, nên
+
+00:01:42.060 --> 00:01:44.380
+i thành 1. 0 cộng 1 bằng 1.
+
+00:01:45.500 --> 00:01:47.400
+Rồi chúng ta lại đi tiếp. Chúng ta kiểm tra xem
+
+00:01:47.580 --> 00:01:50.780
+1 có nhỏ hơn 2 không. Đúng vậy, nên
+
+00:01:50.800 --> 00:01:52.580
+chúng ta chạy vòng lặp. Rồi ở
+
+00:01:52.620 --> 00:01:55.140
+cuối, chúng ta lại tăng i. Giờ nó là
+
+00:01:55.240 --> 00:01:58.300
+2, 1 cộng 1 bằng 2. Rồi
+
+00:01:58.340 --> 00:02:00.440
+đến lần thứ ba. Lần này chúng ta
+
+00:02:00.480 --> 00:02:02.970
+kiểm tra xem 2 có nhỏ hơn 2 không, và
+
+00:02:02.980 --> 00:02:05.680
+không phải vậy, nên chúng ta không chạy vòng lặp nữa,
+
+00:02:05.780 --> 00:02:07.140
+và thực ra là chúng ta đã xong vòng lặp rồi.
+
+00:02:07.540 --> 00:02:10.539
+Chúng ta chỉ chuyển sang phần code bên dưới.
+
+00:02:10.640 --> 00:02:13.360
+Vậy là chúng ta đã chạy vòng lặp hai lần, và
+
+00:02:13.400 --> 00:02:16.100
+đó là điều hữu ích cần biết. Miễn là
+
+00:02:16.140 --> 00:02:18.320
+chúng ta bắt đầu từ 0 và có
+
+00:02:18.360 --> 00:02:21.460
+điều kiện "nhỏ hơn", thì số chúng ta đặt
+
+00:02:21.520 --> 00:02:23.780
+ở đó, ở đây là 2, chính là số
+
+00:02:23.840 --> 00:02:26.530
+lần vòng lặp sẽ chạy. Vậy cái này
+
+00:02:26.580 --> 00:02:28.900
+giống như viết repeat 2.
+
+00:02:30.440 --> 00:02:33.020
+Vậy nó không khó, nhưng nó rối rắm hơn
+
+00:02:33.060 --> 00:02:38.120
+nhiều so với việc chỉ viết repeat 2. Vòng lặp
+
+00:02:38.180 --> 00:02:40.380
+tiếp theo bạn cần biết là vòng lặp while.
+
+00:02:41.420 --> 00:02:45.800
+Nó có nghĩa là: "Chừng nào một điều kiện còn đúng, hãy chạy vòng lặp."
+
+00:02:45.840 --> 00:02:47.190
+Giả sử có một luật quy định
+
+00:02:47.190 --> 00:02:49.710
+bạn chỉ được bắn năm lần trong Space
+
+00:02:49.740 --> 00:02:52.130
+Invaders. Thế là ở đây chúng ta có một vòng lặp
+
+00:02:52.160 --> 00:02:54.170
+kiểu: chừng nào số lần bắn còn nhỏ
+
+00:02:54.200 --> 00:02:56.940
+hơn năm, thì vòng lặp cứ chạy và người chơi
+
+00:02:56.960 --> 00:03:00.340
+vẫn chơi được. Mỗi lần có người bắn,
+
+00:03:00.680 --> 00:03:04.000
+chúng ta tăng numShots thêm một, và cuối cùng
+
+00:03:04.480 --> 00:03:06.040
+sẽ chạm mốc năm, thế là vòng lặp thoát ra.
+
+00:03:07.100 --> 00:03:08.880
+Giờ thì có một vấn đề: với vòng lặp while,
+
+00:03:08.920 --> 00:03:11.440
+bạn rất dễ tạo ra những lỗi khiến
+
+00:03:11.480 --> 00:03:14.040
+vòng lặp không bao giờ kết thúc. Người ta gọi đó là
+
+00:03:14.120 --> 00:03:15.890
+vòng lặp vô hạn, và đây là một trong những
+
+00:03:15.940 --> 00:03:20.010
+lỗi phổ biến nhất trong các chương trình. Khi máy tính của bạn chậm
+
+00:03:20.020 --> 00:03:23.020
+đi, quạt bắt đầu quay, mọi thứ ồn ào,
+
+00:03:23.060 --> 00:03:25.860
+thì thường là do ai đó đã để lại một vòng lặp vô hạn
+
+00:03:25.880 --> 00:03:29.380
+không bao giờ kết thúc trong code của họ. Được rồi,
+
+00:03:29.460 --> 00:03:32.280
+thêm hai từ khóa nữa trong video siêu tốc này. Từ khóa
+
+00:03:32.320 --> 00:03:35.300
+đầu tiên là break. Bạn có thể dùng
+
+00:03:35.320 --> 00:03:37.680
+nó ở bất kỳ đâu trong thân của bất kỳ vòng lặp nào.
+
+00:03:38.760 --> 00:03:40.720
+Phần nằm giữa hai dấu ngoặc nhọn chính là
+
+00:03:40.780 --> 00:03:43.840
+thân vòng lặp. Khi Jiki nhìn thấy từ khóa này, cậu ấy sẽ thoát
+
+00:03:43.880 --> 00:03:46.100
+khỏi vòng lặp ngay lập tức và chuyển
+
+00:03:46.160 --> 00:03:48.780
+sang đoạn code bên dưới vòng lặp. Vậy
+
+00:03:48.880 --> 00:03:50.600
+nếu chúng ta có một yêu cầu là chạy
+
+00:03:50.660 --> 00:03:53.280
+vòng lặp này 50 lần, nhưng lại muốn dừng
+
+00:03:53.420 --> 00:03:55.960
+khi người dùng đã bắn năm lần, thì chúng ta có thể
+
+00:03:56.000 --> 00:03:58.140
+đặt một vòng lặp for ở trên cùng
+
+00:03:58.200 --> 00:04:00.940
+đi từ i = 0 đến khi còn nhỏ hơn
+
+00:04:01.120 --> 00:04:03.300
+50. Nhưng sau đó, chúng ta có thể đặt một điều kiện
+
+00:04:03.340 --> 00:04:04.720
+ở giữa vòng lặp, kiểu
+
+00:04:04.880 --> 00:04:07.720
+nếu numShots lớn hơn hoặc bằng
+
+00:04:07.780 --> 00:04:12.520
+năm thì break, dừng vòng lặp lại. Có
+
+00:04:12.560 --> 00:04:14.880
+những lúc chúng ta muốn bỏ qua một
+
+00:04:14.890 --> 00:04:18.600
+lần lặp cụ thể thay vì thoát hẳn khỏi vòng lặp. Hãy tưởng tượng chúng ta
+
+00:04:18.680 --> 00:04:20.780
+chỉ muốn làm gì đó với các số lẻ.
+
+00:04:21.600 --> 00:04:22.930
+Chúng ta muốn nói được rằng nếu
+
+00:04:23.020 --> 00:04:25.780
+i là số lẻ thì lần này
+
+00:04:25.840 --> 00:04:28.380
+đừng chạy vòng lặp. Nhưng chúng ta không muốn thoát hẳn
+
+00:04:28.420 --> 00:04:30.280
+khỏi vòng lặp. Chúng ta chỉ muốn bỏ qua
+
+00:04:30.320 --> 00:04:32.670
+riêng lần lặp này rồi xem đến
+
+00:04:32.720 --> 00:04:35.600
+lần tiếp theo. Và để làm việc đó, chúng ta có một
+
+00:04:35.640 --> 00:04:40.380
+từ khóa khác tên là continue. Khi Jiki thấy continue, cậu ấy
+
+00:04:40.420 --> 00:04:42.180
+chỉ nhảy về đầu
+
+00:04:42.220 --> 00:04:44.820
+vòng lặp để sang lần lặp tiếp theo. Vậy nên trong
+
+00:04:44.860 --> 00:04:47.200
+vòng lặp for-of, nếu thấy continue thì cậu ấy
+
+00:04:47.260 --> 00:04:48.580
+chuyển sang phần tử tiếp theo trong
+
+00:04:48.640 --> 00:04:51.780
+danh sách. Còn trong vòng lặp for, cậu ấy chạy đến
+
+00:04:51.840 --> 00:04:54.400
+phần tăng i++ rồi
+
+00:04:54.480 --> 00:04:57.980
+bắt đầu lần lặp tiếp theo. Vậy là chúng ta đã có vòng lặp for,
+
+00:04:58.060 --> 00:05:00.800
+vòng lặp while, break và continue. Video này có
+
+00:05:00.840 --> 00:05:02.440
+rất nhiều thông tin, nhưng bạn có thể quay
+
+00:05:02.500 --> 00:05:04.550
+lại xem bất cứ lúc nào bạn muốn, và
+
+00:05:04.580 --> 00:05:07.080
+mỗi chủ đề cũng đều có trang khái niệm riêng.
+
+00:05:07.800 --> 00:05:09.800
+Hãy thử áp dụng tất cả những ý tưởng đó vào
+
+00:05:09.820 --> 00:05:12.220
+mấy bài tập tiếp theo nhé. Chúc bạn may mắn và vui vẻ,
+
+00:05:12.680 --> 00:05:14.060
+lát nữa mình gặp lại bạn ở đây nhé.

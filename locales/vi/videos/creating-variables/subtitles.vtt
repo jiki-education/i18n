@@ -1,0 +1,396 @@
+WEBVTT
+
+NOTE en_md5 9ba87f0c52699c431570792318049b06
+
+00:00:00.220 --> 00:00:04.109
+Chào mừng bạn quay lại. Giờ chắc bạn đã dùng hàm
+
+00:00:04.280 --> 00:00:07.870
+và vòng lặp repeat khá thành thạo rồi. Vậy trong
+
+00:00:07.900 --> 00:00:10.080
+buổi này, chúng ta sẽ chuyển sang một chủ đề
+
+00:00:10.100 --> 00:00:12.610
+cực kỳ quan trọng khác, thứ mà bạn sẽ dùng
+
+00:00:12.640 --> 00:00:14.880
+trong hầu như mọi chương trình bạn viết, và
+
+00:00:14.940 --> 00:00:19.220
+chủ đề đó là biến. Biến là thứ giúp chúng ta
+
+00:00:19.460 --> 00:00:22.700
+lưu trữ thông tin. Khi lập trình, chúng ta thường cần
+
+00:00:22.760 --> 00:00:25.420
+lưu lại một số hay một chuỗi để
+
+00:00:25.500 --> 00:00:27.780
+dùng sau, và biến là cách chúng ta làm
+
+00:00:27.800 --> 00:00:30.480
+việc đó. Vậy chúng ta cùng lùi ra xa một chút
+
+00:00:30.580 --> 00:00:32.880
+để nhìn nhà kho của Jiki, bạn sẽ thấy cậu ấy có
+
+00:00:32.940 --> 00:00:35.780
+thêm một bộ kệ nữa. Chúng ta đã quen với
+
+00:00:35.800 --> 00:00:37.160
+bộ kệ đầu tiên,
+
+00:00:37.180 --> 00:00:39.680
+nơi đặt các hàm, những cỗ máy nhỏ như move
+
+00:00:39.700 --> 00:00:42.140
+và rectangle. Nhưng ở bộ kệ
+
+00:00:42.160 --> 00:00:44.710
+thứ hai này, không phải máy móc mà là rất nhiều
+
+00:00:44.760 --> 00:00:47.860
+cái hộp, và những cái hộp này chính là thứ chúng ta
+
+00:00:47.900 --> 00:00:50.080
+gọi là biến. Bạn có thể bảo Jiki cất
+
+00:00:50.140 --> 00:00:52.460
+bất cứ thứ gì vào những cái hộp này, rồi sau đó
+
+00:00:52.580 --> 00:00:54.940
+nhờ cậu ấy lấy ra. Mỗi
+
+00:00:54.980 --> 00:00:57.480
+cái hộp đều có tên, giống hệt như
+
+00:00:57.520 --> 00:01:00.020
+hàm có tên, và mỗi hộp chỉ chứa
+
+00:01:00.140 --> 00:01:03.000
+đúng một thứ. Hiện tại thì đó là một số
+
+00:01:03.380 --> 00:01:05.320
+hoặc một chuỗi. Nhưng lát nữa trong khóa học,
+
+00:01:05.340 --> 00:01:07.480
+chúng ta sẽ xem cách cất những thứ phức tạp hơn
+
+00:01:07.540 --> 00:01:10.800
+vào đó. Vậy làm sao để bảo Jiki
+
+00:01:10.860 --> 00:01:12.500
+tạo một cái hộp và bỏ thứ gì đó vào trong?
+
+00:01:13.240 --> 00:01:16.920
+Chúng ta dùng từ khóa let. Từ khóa let
+
+00:01:17.000 --> 00:01:19.200
+báo cho Jiki biết là cậu ấy cần tạo
+
+00:01:19.300 --> 00:01:21.860
+một cái hộp mới. Bạn có thể hình dung cậu ấy bóc
+
+00:01:21.900 --> 00:01:23.760
+một cái hộp các-tông ra khỏi vỏ,
+
+00:01:23.800 --> 00:01:26.320
+lắp lại thành hộp, rồi nhìn vào thứ đứng
+
+00:01:26.440 --> 00:01:28.840
+sau chữ let, đó chính là nhãn
+
+00:01:28.880 --> 00:01:30.620
+mà cậu ấy dán lên hộp, trong
+
+00:01:30.720 --> 00:01:32.940
+trường hợp này là name. Thế là cậu ấy rút bút ra,
+
+00:01:33.220 --> 00:01:36.260
+viết name lên nhãn. Rồi
+
+00:01:36.320 --> 00:01:38.360
+cậu ấy nhìn vào thứ đứng sau dấu
+
+00:01:38.440 --> 00:01:41.020
+bằng. Trong trường hợp này là tên của mình, Jeremy,
+
+00:01:41.740 --> 00:01:43.960
+và vì Jeremy là một chuỗi, một chuỗi,
+
+00:01:44.340 --> 00:01:45.640
+cậu ấy lấy một mảnh giấy và
+
+00:01:45.660 --> 00:01:48.830
+viết Jeremy lên đó. Nó chỉ là một chuỗi,
+
+00:01:48.900 --> 00:01:50.460
+giống hệt những màu bạn vẫn
+
+00:01:50.520 --> 00:01:52.660
+dùng từ trước tới giờ, rồi cậu ấy bỏ mảnh
+
+00:01:52.700 --> 00:01:56.410
+giấy đó vào hộp. Vậy là chúng ta đã
+
+00:01:56.460 --> 00:01:58.260
+bảo cậu ấy tạo một cái hộp,
+
+00:01:58.300 --> 00:02:00.120
+dán nhãn lên đó và bỏ thứ gì đó vào trong,
+
+00:02:00.640 --> 00:02:02.300
+và giờ cậu ấy mang cái hộp
+
+00:02:02.380 --> 00:02:05.140
+đặt lên kệ. Và rồi bất cứ lúc nào khác
+
+00:02:05.220 --> 00:02:07.980
+trong chương trình, Jiki có thể ra
+
+00:02:08.020 --> 00:02:09.840
+lấy cái hộp đó xuống khỏi kệ, xem
+
+00:02:09.979 --> 00:02:11.900
+bên trong có gì, và lát nữa chúng ta sẽ nói
+
+00:02:11.940 --> 00:02:14.580
+đến chuyện đó. Nhưng bây giờ, mình thực sự
+
+00:02:14.660 --> 00:02:16.540
+muốn bạn bắt đầu xây dựng mô hình
+
+00:02:16.580 --> 00:02:19.120
+tư duy này. Mình đã lập trình từ rất lâu rồi, vậy mà
+
+00:02:19.180 --> 00:02:21.790
+khi viết code mình vẫn hình dung là mình đang bỏ
+
+00:02:21.820 --> 00:02:23.680
+thứ gì đó vào hộp
+
+00:02:23.720 --> 00:02:26.340
+để lát nữa lấy ra. Khi thấy
+
+00:02:26.400 --> 00:02:28.570
+từ khóa let, mình thực sự muốn bạn nghĩ rằng:
+
+00:02:28.690 --> 00:02:31.460
+"À, nghĩa là mình đang tạo một cái hộp mới."
+
+00:02:33.520 --> 00:02:34.530
+Mình muốn nói thêm một chút
+
+00:02:34.580 --> 00:02:37.210
+về tên biến, tức là những nhãn dán trên
+
+00:02:37.260 --> 00:02:40.140
+các cái hộp. Về chuyện này thì có
+
+00:02:40.180 --> 00:02:44.740
+vài quy tắc. Thứ nhất, tên biến không được có dấu cách.
+
+00:02:44.780 --> 00:02:47.580
+Nếu muốn dùng nhiều từ
+
+00:02:47.700 --> 00:02:49.859
+cho nhãn của hộp, chúng ta dồn
+
+00:02:49.920 --> 00:02:51.900
+các từ sát vào nhau, và
+
+00:02:51.980 --> 00:02:55.180
+đổi chữ cái đầu của mỗi từ
+
+00:02:55.220 --> 00:02:57.520
+thành chữ in hoa. Cách viết này gọi là camel
+
+00:02:57.680 --> 00:03:00.660
+case. Hãy hình dung những cái bướu trên lưng lạc đà đẩy
+
+00:03:00.740 --> 00:03:02.540
+chữ cái đầu của mỗi từ mới
+
+00:03:02.580 --> 00:03:05.260
+lên thành chữ in hoa. Vậy nếu bạn
+
+00:03:05.340 --> 00:03:08.290
+muốn một cái nhãn là my name, thay vì
+
+00:03:08.320 --> 00:03:10.920
+viết hai từ có dấu cách, chúng ta viết
+
+00:03:10.960 --> 00:03:13.400
+liền thành một từ với chữ N in hoa.
+
+00:03:15.200 --> 00:03:17.960
+Ngoài ra, mỗi tên biến phải là duy nhất.
+
+00:03:18.020 --> 00:03:20.180
+Không thể có hai cái hộp cùng một nhãn,
+
+00:03:20.860 --> 00:03:23.180
+và biến cũng không được trùng tên
+
+00:03:23.240 --> 00:03:26.140
+với hàm. Nếu bạn quên, Jiki sẽ
+
+00:03:26.180 --> 00:03:28.040
+bối rối và báo lỗi cho bạn.
+
+00:03:29.660 --> 00:03:31.210
+Được rồi, vậy hãy xem khi nào
+
+00:03:31.280 --> 00:03:34.160
+chúng ta muốn dùng đến biến. Giả sử chúng ta đang
+
+00:03:34.200 --> 00:03:36.920
+vẽ mặt trời trên bầu trời. Chúng ta
+
+00:03:36.980 --> 00:03:39.490
+biết là có thể dùng hàm circle và
+
+00:03:39.580 --> 00:03:43.480
+truyền cho nó bốn đầu vào. Đó là left, top, radius
+
+00:03:43.680 --> 00:03:47.000
+và color. Nhưng khi vẽ nhiều
+
+00:03:47.040 --> 00:03:49.160
+thứ và có đủ loại con số rải rác
+
+00:03:49.180 --> 00:03:51.740
+khắp code, thì rất khó
+
+00:03:51.780 --> 00:03:55.020
+theo dõi và đọc. Vì thế, thay vào đó,
+
+00:03:55.280 --> 00:03:57.500
+chúng ta có thể tạo biến cho từng thứ:
+
+00:03:57.600 --> 00:04:00.760
+left, top, radius và color, rồi sau đó
+
+00:04:00.860 --> 00:04:04.560
+dùng đến các biến đó. Mục tiêu cuối cùng
+
+00:04:04.620 --> 00:04:06.380
+ở đây là dùng được
+
+00:04:06.420 --> 00:04:11.200
+hàm circle với những cái tên hộp
+
+00:04:11.220 --> 00:04:14.590
+dễ đọc, và khi Jiki thấy những cái tên đó, cậu ấy sẽ
+
+00:04:14.620 --> 00:04:16.480
+biết là phải lấy hộp từ trên kệ xuống
+
+00:04:16.560 --> 00:04:20.459
+và dùng thứ bên trong. Vậy chúng ta
+
+00:04:20.519 --> 00:04:22.550
+cùng tạo biến cho những giá trị này. Bắt đầu với
+
+00:04:22.550 --> 00:04:25.050
+vị trí bên trái của mặt trời. Chúng ta tạo,
+
+00:04:25.580 --> 00:04:27.350
+à, chúng ta dùng từ khóa let để
+
+00:04:27.350 --> 00:04:29.700
+bảo Jiki tạo một cái hộp mới tên là
+
+00:04:29.740 --> 00:04:32.310
+leftPosition. Bạn để ý cách viết camel case ở đây
+
+00:04:32.500 --> 00:04:35.180
+với chữ P in hoa nhé? Rồi chúng ta cho
+
+00:04:35.260 --> 00:04:38.560
+Jiki biết con số nào sẽ nằm trong hộp. Cậu ấy
+
+00:04:38.580 --> 00:04:40.340
+đặt cái hộp đó lên kệ, rồi làm tiếp
+
+00:04:40.420 --> 00:04:43.020
+như vậy với topPosition, radius
+
+00:04:43.180 --> 00:04:46.540
+và color. Giờ thì bất cứ lúc nào trong
+
+00:04:46.620 --> 00:04:48.870
+code, chúng ta cũng có thể dùng lại các biến này,
+
+00:04:49.000 --> 00:04:51.400
+và Jiki sẽ lấy các giá trị ra
+
+00:04:51.440 --> 00:04:53.530
+và đặt vào máy. Một điều tuyệt vời
+
+00:04:53.640 --> 00:04:56.120
+nữa của biến là mỗi khi chúng ta
+
+00:04:56.160 --> 00:04:58.960
+muốn vẽ thứ gì đó ở cùng vị trí
+
+00:04:59.000 --> 00:05:01.620
+với mặt trời, chúng ta có thể dùng lại đúng
+
+00:05:01.680 --> 00:05:04.980
+hai biến leftPosition và topPosition đó. Lấy một
+
+00:05:05.000 --> 00:05:07.660
+ví dụ khác. Hãy hình dung bạn đang xây một bức tường
+
+00:05:07.700 --> 00:05:10.200
+gồm 30 viên gạch, và bạn muốn mọi
+
+00:05:10.220 --> 00:05:11.840
+viên gạch đều có cùng chiều rộng và
+
+00:05:11.880 --> 00:05:14.270
+chiều cao. Sẽ tốt hơn nhiều
+
+00:05:14.360 --> 00:05:17.100
+nếu tạo biến cho chiều rộng và chiều cao
+
+00:05:17.280 --> 00:05:19.580
+ngay đầu code, rồi
+
+00:05:19.660 --> 00:05:21.590
+dùng lại chúng trong phần còn lại
+
+00:05:21.640 --> 00:05:23.900
+của code. Bởi vì nếu sau đó bạn muốn
+
+00:05:23.980 --> 00:05:25.960
+đổi chiều rộng hay chiều cao, bạn
+
+00:05:26.020 --> 00:05:28.260
+chỉ cần sửa ở một chỗ, và mọi thứ
+
+00:05:28.380 --> 00:05:33.100
+khác sẽ tự cập nhật. Trong vài bài tập tới,
+
+00:05:33.260 --> 00:05:35.980
+bạn sẽ dùng biến để viết
+
+00:05:36.060 --> 00:05:38.840
+code gọn gàng và dễ đọc hơn. Và khi bạn đã
+
+00:05:38.880 --> 00:05:41.910
+quen với việc tạo và sử dụng biến, chúng ta sẽ
+
+00:05:41.960 --> 00:05:44.280
+xem cách một biến có thể dựa vào
+
+00:05:44.320 --> 00:05:46.920
+các biến khác, và đó là lúc mọi thứ trở nên thật sự mạnh mẽ.
+
+00:05:47.620 --> 00:05:50.110
+Nhưng giờ thì bạn hãy luyện tập với các bài tập này nhé,
+
+00:05:50.520 --> 00:05:51.880
+lát nữa mình gặp lại bạn ở đây.

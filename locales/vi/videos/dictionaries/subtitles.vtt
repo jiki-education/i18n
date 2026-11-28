@@ -1,0 +1,270 @@
+WEBVTT
+
+NOTE en_md5 c5187b46923e87c2aac86912c90dfb53
+
+00:00:00.100 --> 00:00:03.140
+Chào mừng bạn quay lại. Hy vọng giờ bạn đã thấy quen hơn với
+
+00:00:03.180 --> 00:00:06.810
+mảng rồi. Mảng luôn là lựa chọn quen thuộc của chúng ta khi
+
+00:00:06.840 --> 00:00:09.740
+cần một danh sách bất cứ thứ gì, nào là danh sách
+
+00:00:09.760 --> 00:00:11.560
+mentor, danh sách điểm, danh sách
+
+00:00:11.600 --> 00:00:14.420
+nguyên liệu. Bất kỳ danh sách nào, bạn cũng nên dùng
+
+00:00:14.440 --> 00:00:17.630
+mảng. Nhưng còn một cấu trúc dữ liệu khác
+
+00:00:17.720 --> 00:00:20.060
+cũng rất phổ biến, dành cho khi bạn muốn một thứ
+
+00:00:20.070 --> 00:00:23.380
+phức tạp hơn một danh sách một chút. Hãy tưởng tượng
+
+00:00:23.420 --> 00:00:24.780
+chúng ta muốn lưu vài thông tin về mình:
+
+00:00:25.500 --> 00:00:27.580
+tên, tuổi, nơi sinh.
+
+00:00:28.280 --> 00:00:30.140
+Bạn có thể dùng mảng để lưu,
+
+00:00:30.150 --> 00:00:32.200
+nhưng làm vậy thì không rõ ràng lắm
+
+00:00:32.240 --> 00:00:34.850
+chuyện gì đang diễn ra. England là nơi mình
+
+00:00:34.880 --> 00:00:37.210
+sinh ra hay nơi mình đang sống? 42 là
+
+00:00:37.300 --> 00:00:40.120
+tuổi mình hay thứ gì khác? Và nếu muốn
+
+00:00:40.160 --> 00:00:42.050
+dùng dữ liệu này, mình phải nhớ rằng
+
+00:00:42.080 --> 00:00:44.740
+vị trí đầu tiên là tên, vị trí thứ hai
+
+00:00:44.780 --> 00:00:47.900
+là tuổi, vị trí thứ ba là nơi sinh.
+
+00:00:47.920 --> 00:00:49.840
+Mọi thứ hơi lộn xộn, mà lộn xộn
+
+00:00:49.880 --> 00:00:52.420
+là vì đây không hẳn là một danh sách các thứ.
+
+00:00:52.480 --> 00:00:55.769
+Nó phức tạp hơn thế. Và đó là
+
+00:00:55.800 --> 00:00:58.500
+lúc từ điển xuất hiện. Từ điển là một
+
+00:00:58.560 --> 00:01:00.340
+kiểu cấu trúc dữ liệu mới. Đây là kiểu
+
+00:01:00.420 --> 00:01:03.830
+thứ năm của bạn. Bạn đã có chuỗi, số, kiểu logic, mảng, và
+
+00:01:03.880 --> 00:01:06.200
+giờ là từ điển. Và mình muốn bạn nghĩ
+
+00:01:06.260 --> 00:01:08.620
+về từ điển giống như một trang
+
+00:01:08.800 --> 00:01:12.180
+của cuốn sổ lò xo. Bên trái là
+
+00:01:12.220 --> 00:01:15.460
+các tiêu đề, tức những chữ name, age, birthplace, và
+
+00:01:15.500 --> 00:01:18.400
+chúng ta gọi đó là khóa. Còn bên phải,
+
+00:01:18.480 --> 00:01:20.240
+cạnh mỗi tiêu đề, là
+
+00:01:20.300 --> 00:01:24.520
+dữ liệu thật sự: Jeremy, 42, England, và chúng ta gọi
+
+00:01:24.600 --> 00:01:28.300
+đó là giá trị. Giống như mảng,
+
+00:01:28.340 --> 00:01:31.180
+từ điển là một thứ duy nhất. Nó là một trang
+
+00:01:31.190 --> 00:01:33.830
+của cuốn sổ. Và cũng giống như mảng, Jiki có thể
+
+00:01:33.840 --> 00:01:35.250
+đặt nó vào một biến, vào một cái hộp,
+
+00:01:35.720 --> 00:01:37.930
+hoặc làm đầu vào cho một hàm,
+
+00:01:37.980 --> 00:01:39.540
+hay lấy một từ điển ra từ
+
+00:01:39.560 --> 00:01:42.200
+máng trượt. Vậy từ điển trông
+
+00:01:42.260 --> 00:01:45.080
+như thế nào trong code? Chúng ta dùng dấu ngoặc nhọn để
+
+00:01:45.120 --> 00:01:47.490
+đánh dấu chỗ bắt đầu và chỗ kết thúc, rồi
+
+00:01:47.520 --> 00:01:49.420
+bên trong là các cặp: khóa bên
+
+00:01:49.480 --> 00:01:51.700
+trái, dấu hai chấm, rồi giá trị
+
+00:01:51.740 --> 00:01:53.860
+bên phải. Và có dấu phẩy giữa
+
+00:01:53.900 --> 00:01:56.260
+mỗi cặp. Jiki thấy vậy thì
+
+00:01:56.280 --> 00:01:58.600
+lấy cuốn sổ lò xo ra. Cậu ấy viết name,
+
+00:01:58.960 --> 00:02:02.100
+Jeremy, age, 42, cứ thế với từng
+
+00:02:02.140 --> 00:02:04.440
+cặp. Xong việc, cậu ấy xé
+
+00:02:04.480 --> 00:02:06.320
+trang giấy ra và đặt vào một cái hộp
+
+00:02:06.420 --> 00:02:09.360
+dán nhãn person (người). Có vài quy tắc
+
+00:02:09.420 --> 00:02:12.060
+cần biết. Khóa luôn là chuỗi. Khóa phải nằm
+
+00:02:12.140 --> 00:02:14.620
+trong dấu ngoặc kép, và mỗi khóa phải là
+
+00:02:14.680 --> 00:02:18.170
+duy nhất. Bạn không thể có hai khóa
+
+00:02:18.260 --> 00:02:21.420
+cùng tên name trong một từ điển. Các giá trị
+
+00:02:21.480 --> 00:02:23.150
+có thể trùng nhau nếu bạn muốn,
+
+00:02:23.280 --> 00:02:25.810
+nhưng các khóa thì phải khác nhau, và
+
+00:02:25.820 --> 00:02:27.600
+giá trị có thể là bất cứ thứ gì. Có thể là
+
+00:02:27.680 --> 00:02:31.000
+chuỗi, số, kiểu logic, mảng, hoặc thậm chí là những từ điển khác.
+
+00:02:32.140 --> 00:02:34.540
+Bạn cũng có thể có một từ điển rỗng,
+
+00:02:34.600 --> 00:02:37.220
+giống như chúng ta đã có mảng rỗng,
+
+00:02:37.280 --> 00:02:38.800
+rồi bắt đầu từ đó và xây dựng
+
+00:02:38.820 --> 00:02:42.210
+thêm sau. Vậy là bạn đã có một
+
+00:02:42.260 --> 00:02:44.160
+từ điển, nhưng làm sao lấy thứ gì đó
+
+00:02:44.220 --> 00:02:46.900
+ra khỏi nó? Chúng ta dùng cú pháp
+
+00:02:46.920 --> 00:02:48.960
+dấu ngoặc vuông giống như với mảng và
+
+00:02:49.020 --> 00:02:52.980
+chuỗi, nhưng thay vì số vị trí,
+
+00:02:53.020 --> 00:02:55.040
+ta đặt vào một khóa. Vậy nếu muốn
+
+00:02:55.100 --> 00:02:57.390
+lấy tên của ai đó ra khỏi từ điển,
+
+00:02:57.940 --> 00:03:01.620
+ta viết biến person, dấu ngoặc vuông, rồi
+
+00:03:01.640 --> 00:03:03.580
+đến khóa, ở đây là name, đặt trong
+
+00:03:03.660 --> 00:03:07.260
+dấu ngoặc kép. Câu này bảo Jiki tìm
+
+00:03:07.300 --> 00:03:09.970
+trong từ điển person, tìm khóa
+
+00:03:10.080 --> 00:03:12.900
+name, rồi lấy giá trị của nó ra. Jiki
+
+00:03:13.040 --> 00:03:15.000
+đi đến cái hộp person, lấy
+
+00:03:15.040 --> 00:03:17.340
+trang giấy trong cuốn sổ ra, quét qua tất cả các
+
+00:03:17.400 --> 00:03:19.760
+khóa cho đến khi tìm thấy name, rồi đọc
+
+00:03:19.800 --> 00:03:21.900
+giá trị Jeremy và đặt vào
+
+00:03:21.910 --> 00:03:27.540
+một cái hộp mới tên là name. Dấu ngoặc vuông luôn
+
+00:03:27.580 --> 00:03:29.980
+mang cùng một ý nghĩa. Bạn thò tay vào một thứ gì đó
+
+00:03:29.990 --> 00:03:32.370
+và lấy ra một thứ. Với mảng và chuỗi,
+
+00:03:32.960 --> 00:03:34.720
+bạn dùng một con số để nói mình muốn lấy
+
+00:03:34.760 --> 00:03:37.580
+thứ gì đó từ vị trí nào. Với từ điển,
+
+00:03:37.700 --> 00:03:40.140
+bạn dùng một chuỗi làm khóa. Vẫn là
+
+00:03:40.180 --> 00:03:43.340
+ý tưởng đó, chỉ khác cú pháp một chút. Vậy là
+
+00:03:43.380 --> 00:03:45.390
+bạn có vài bài tập để luyện
+
+00:03:45.500 --> 00:03:47.640
+tạo từ điển và đọc giá trị ra khỏi chúng.
+
+00:03:48.260 --> 00:03:50.160
+Mọi thứ bạn cần đều là những gì chúng ta vừa học:
+
+00:03:50.580 --> 00:03:52.660
+dấu ngoặc nhọn để tạo, dấu ngoặc vuông
+
+00:03:52.680 --> 00:03:55.200
+để truy cập. Cứ từ từ nhé. Chúc
+
+00:03:55.240 --> 00:03:56.820
+may mắn, hẹn sớm gặp lại bạn ở đây nhé

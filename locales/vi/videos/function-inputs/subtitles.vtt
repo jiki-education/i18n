@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 2a23c8bcc4af2ee7d5bd8d5613681427
+
+00:00:00.200 --> 00:00:03.800
+Chào mừng bạn quay lại. Hy vọng giờ việc dùng máy
+
+00:00:03.860 --> 00:00:07.160
+đã khá dễ với bạn rồi. Đến giờ, tất cả
+
+00:00:07.180 --> 00:00:09.140
+những loại máy khác nhau mà bạn đã dùng,
+
+00:00:09.380 --> 00:00:12.160
+move, turnLeft, shoot, lần nào cũng làm
+
+00:00:12.240 --> 00:00:15.260
+cùng một việc. Mỗi lần bạn
+
+00:00:15.340 --> 00:00:18.520
+gọi move, nhân vật của bạn di chuyển. Mỗi lần bạn
+
+00:00:18.560 --> 00:00:22.010
+shoot, nhân vật của bạn bắn. Nhưng một trong
+
+00:00:22.080 --> 00:00:25.560
+những điều mạnh mẽ hơn của máy, của hàm,
+
+00:00:25.580 --> 00:00:27.520
+là nhiều cái cho phép bạn đưa
+
+00:00:27.560 --> 00:00:30.810
+thông tin vào bên trong. Và khi bạn chạy chúng,
+
+00:00:31.000 --> 00:00:34.380
+thông tin đó thay đổi việc chúng làm. Cùng xem
+
+00:00:34.420 --> 00:00:38.420
+một ví dụ nhé. Đến giờ, chúng ta đã gặp những cái máy trông
+
+00:00:38.460 --> 00:00:40.480
+hơi giống, hơi giống cái hộp, như
+
+00:00:40.490 --> 00:00:43.360
+máy move này. Nhưng một số máy thì có
+
+00:00:43.540 --> 00:00:47.200
+khe, như máy walk này. Máy walk
+
+00:00:47.240 --> 00:00:49.260
+giống hệt máy move. Nó đưa
+
+00:00:49.280 --> 00:00:52.780
+nhân vật tiến về phía trước, chỉ khác là Jiki có thể dùng
+
+00:00:52.860 --> 00:00:56.320
+khe để chỉ định nhân vật của bạn
+
+00:00:56.340 --> 00:00:59.340
+đi bao nhiêu bước. Vậy nên thay vì phải
+
+00:00:59.440 --> 00:01:02.120
+dùng hàm move ba lần
+
+00:01:02.160 --> 00:01:05.920
+liên tiếp, move, move, move, giờ bạn
+
+00:01:05.960 --> 00:01:08.620
+chỉ cần dùng hàm walk và bảo Jiki
+
+00:01:08.640 --> 00:01:11.200
+đưa số ba vào máy.
+
+00:01:12.960 --> 00:01:15.320
+Để làm điều này trong code, chúng ta vẫn
+
+00:01:15.380 --> 00:01:17.260
+viết tên của hàm, ở đây
+
+00:01:17.320 --> 00:01:19.920
+là walk, và vẫn đặt dấu ngoặc đơn
+
+00:01:19.940 --> 00:01:23.740
+mở. Nhưng sau đó, trước dấu ngoặc đơn đóng, chúng ta
+
+00:01:23.780 --> 00:01:25.920
+nói đầu vào là gì.
+
+00:01:25.960 --> 00:01:27.690
+Trong trường hợp này, chúng ta muốn đầu vào
+
+00:01:27.720 --> 00:01:30.920
+là ba, để nói walk tiến ba bước
+
+00:01:30.960 --> 00:01:34.240
+về phía trước. Khi Jiki thấy dòng đó, cậu ấy sẽ lấy
+
+00:01:34.260 --> 00:01:35.930
+số ba. Bạn có thể nghĩ
+
+00:01:35.960 --> 00:01:38.310
+số đó giống như một đồng xu nhỏ, và cậu ấy sẽ
+
+00:01:38.340 --> 00:01:40.300
+đặt nó vào khe đầu vào của
+
+00:01:40.320 --> 00:01:43.200
+máy trước khi vặn tay quay để bật
+
+00:01:43.220 --> 00:01:46.660
+máy lên. Lát nữa, bạn sẽ
+
+00:01:46.700 --> 00:01:49.660
+làm vài bài tập vẽ hình chữ nhật và
+
+00:01:49.700 --> 00:01:53.000
+hình tròn. Với những hàm đó, bạn cần bảo
+
+00:01:53.080 --> 00:01:57.110
+Jiki đưa vào nhiều con số khác nhau, chỉ định những thứ
+
+00:01:57.180 --> 00:01:59.380
+như cách mép trái bao xa,
+
+00:01:59.420 --> 00:02:00.840
+cách mép trên bao xa,
+
+00:02:00.920 --> 00:02:03.160
+ờ, chiều rộng của hình chữ nhật,
+
+00:02:03.240 --> 00:02:07.140
+chiều cao của hình chữ nhật. Trong thế giới của Jiki, đó
+
+00:02:07.160 --> 00:02:10.120
+chỉ là những khe khác nhau, mỗi
+
+00:02:10.160 --> 00:02:12.880
+con số một khe. Vậy trong code, chúng ta chỉ
+
+00:02:12.900 --> 00:02:15.120
+viết từng con số rồi đặt dấu phẩy
+
+00:02:15.200 --> 00:02:18.460
+ở giữa. Tên của hàm, một
+
+00:02:18.540 --> 00:02:20.980
+dấu ngoặc đơn, một con số cho mỗi đầu vào,
+
+00:02:21.300 --> 00:02:24.180
+tất cả cách nhau bằng dấu phẩy, rồi chúng ta
+
+00:02:24.260 --> 00:02:27.380
+đóng ngoặc. Nếu bạn dùng một
+
+00:02:27.420 --> 00:02:29.810
+hàm với sai số lượng đầu vào, bạn
+
+00:02:29.840 --> 00:02:31.620
+sẽ nhận được lỗi. Ví dụ, nếu
+
+00:02:31.660 --> 00:02:33.660
+bạn đưa một đầu vào vào một
+
+00:02:33.680 --> 00:02:36.080
+cái máy không có khe, Jiki sẽ
+
+00:02:36.140 --> 00:02:38.060
+bảo bạn là không được. Còn nếu bạn
+
+00:02:38.120 --> 00:02:39.640
+dùng một cái máy có
+
+00:02:39.680 --> 00:02:41.840
+khe đầu vào mà không nói cho Jiki biết
+
+00:02:41.880 --> 00:02:43.920
+phải đưa gì vào, cậu ấy cũng sẽ dừng lại và
+
+00:02:44.000 --> 00:02:46.960
+phàn nàn. Bạn thử xem nếu thấy hơi
+
+00:02:47.020 --> 00:02:50.380
+nổi loạn, rồi xem chuyện gì xảy ra. Bạn sẽ mắc
+
+00:02:50.440 --> 00:02:52.370
+rất nhiều lỗi như vậy khi mọi thứ
+
+00:02:52.400 --> 00:02:54.940
+trở nên phức tạp hơn. Cố đừng căng thẳng
+
+00:02:54.980 --> 00:02:57.170
+hay khó chịu vì điều đó. Chúng ta đều học được từ
+
+00:02:57.200 --> 00:03:00.080
+những lỗi sai. Đó thật sự là cách nhanh nhất để
+
+00:03:00.100 --> 00:03:03.600
+não chúng ta ghi nhớ mọi thứ. Và ai cũng
+
+00:03:03.660 --> 00:03:06.320
+mắc những lỗi này. Chúng ta đều bắt đầu từ con số không,
+
+00:03:06.600 --> 00:03:10.340
+nên đừng căng thẳng nhé. Trước khi bạn bắt tay vào làm,
+
+00:03:10.860 --> 00:03:12.910
+còn một điều nữa mình muốn nhắc.
+
+00:03:13.780 --> 00:03:16.400
+Đôi khi trong những bài tập này, bạn sẽ thấy
+
+00:03:16.500 --> 00:03:19.660
+những dòng bắt đầu bằng hai dấu gạch chéo.
+
+00:03:19.700 --> 00:03:23.040
+Người ta gọi đó là chú thích. Đây là ghi chú riêng chỉ dành cho
+
+00:03:23.140 --> 00:03:26.420
+bạn, và Jiki sẽ hoàn toàn bỏ qua. Nếu
+
+00:03:26.480 --> 00:03:28.500
+Jiki thấy một dòng bắt đầu bằng
+
+00:03:28.540 --> 00:03:31.130
+hai dấu gạch chéo này, cậu ấy sẽ bước qua nó
+
+00:03:31.140 --> 00:03:32.670
+và đi tiếp sang dòng
+
+00:03:32.700 --> 00:03:36.320
+tiếp theo. Những chú thích này cho bạn cách
+
+00:03:36.340 --> 00:03:38.650
+viết ghi chú cho chính mình. Chúng rất
+
+00:03:38.700 --> 00:03:40.800
+hữu ích để nhắc bạn cách mọi thứ hoạt động.
+
+00:03:41.580 --> 00:03:43.430
+Mình cũng thường viết sẵn chú thích cho bạn,
+
+00:03:43.560 --> 00:03:45.630
+nên khi bạn bắt đầu một bài tập,
+
+00:03:45.660 --> 00:03:48.120
+bạn có thể thấy gợi ý về chỗ cần viết code
+
+00:03:48.160 --> 00:03:50.109
+hoặc cách giải quyết vấn đề. Nhưng
+
+00:03:50.160 --> 00:03:51.880
+bạn cứ thoải mái
+
+00:03:51.980 --> 00:03:55.480
+thêm chú thích của riêng bạn nhé. Khi bạn
+
+00:03:55.520 --> 00:03:58.310
+học tiếp, hãy xem phần cuối của hướng dẫn,
+
+00:03:58.380 --> 00:04:00.980
+bạn sẽ thấy thông tin về những hàm
+
+00:04:01.020 --> 00:04:03.280
+bạn có thể dùng, cụ thể là những đầu vào
+
+00:04:03.320 --> 00:04:05.520
+bạn cần đưa vào. Chúc bạn vui khi
+
+00:04:05.600 --> 00:04:07.020
+thử những đầu vào đó, và lát nữa
+
+00:04:07.060 --> 00:04:07.740
+mình gặp lại bạn ở đây nhé.

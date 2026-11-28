@@ -1,0 +1,267 @@
+WEBVTT
+
+NOTE en_md5 49411a7db976297a17fb5f2e027fcaff
+
+00:00:00.100 --> 00:00:03.060
+Chào mừng bạn quay lại. Bạn đã dùng vòng lặp repeat
+
+00:00:03.120 --> 00:00:05.160
+được một thời gian rồi, và hy vọng là bạn
+
+00:00:05.220 --> 00:00:08.640
+đã khá quen tay với nó. Giờ chúng ta sẽ
+
+00:00:08.680 --> 00:00:10.500
+xem một thứ liên quan, phức tạp
+
+00:00:10.520 --> 00:00:13.220
+hơn một chút. Giả sử chúng ta muốn có một hàng
+
+00:00:13.260 --> 00:00:15.740
+hoa. Chúng ta có thể viết đại loại như thế này.
+
+00:00:16.180 --> 00:00:18.720
+Đặt một vị trí, trồng một bông hoa,
+
+00:00:18.760 --> 00:00:21.300
+tăng vị trí thêm 10, lặp lại,
+
+00:00:22.000 --> 00:00:23.560
+và cuối cùng ta có một hàng hoa
+
+00:00:23.680 --> 00:00:26.640
+gọn gàng, đẹp mắt. Nhưng nếu chúng ta muốn một
+
+00:00:26.720 --> 00:00:30.240
+lưới hoa với đủ hàng và cột thì sao? Có thể là
+
+00:00:30.320 --> 00:00:32.780
+bốn hàng, mỗi hàng năm bông hoa.
+
+00:00:35.000 --> 00:00:36.580
+Bạn dừng lại một chút, có thể tạm dừng
+
+00:00:36.620 --> 00:00:38.640
+video một lát, và thử nghĩ xem
+
+00:00:38.700 --> 00:00:42.380
+bạn sẽ làm việc này thế nào. Chúng ta đã có
+
+00:00:42.440 --> 00:00:44.880
+một vòng lặp vẽ một hàng hoa.
+
+00:00:45.980 --> 00:00:48.240
+Làm sao dùng nó để vẽ bốn
+
+00:00:48.320 --> 00:00:50.660
+hàng? Hay chúng ta có thể làm gì để vẽ
+
+00:00:50.700 --> 00:00:54.420
+bốn hàng? Được rồi, hy vọng bạn đã nghĩ xong.
+
+00:00:55.440 --> 00:00:57.360
+Một cách là cứ sao chép
+
+00:00:57.380 --> 00:01:00.680
+đoạn vòng lặp đó ra bốn lần rồi đổi
+
+00:01:00.740 --> 00:01:03.260
+vị trí phía trên cho từng đoạn. Cách đó vẫn
+
+00:01:03.320 --> 00:01:07.970
+chạy được. Cũng ổn thôi. Nhưng nó lặp đi lặp lại, và
+
+00:01:07.980 --> 00:01:10.380
+có cách hay hơn. Chúng ta biết rằng khi code
+
+00:01:10.420 --> 00:01:13.420
+bị lặp đi lặp lại thì có thể dùng vòng lặp để
+
+00:01:13.460 --> 00:01:17.920
+làm gọn lại. Vậy ở đây chúng ta có thể dùng một
+
+00:01:18.020 --> 00:01:21.840
+vòng lặp bên trong một vòng lặp khác. Một vòng lặp cho các
+
+00:01:21.860 --> 00:01:24.840
+hàng, một vòng lặp cho số hoa trên
+
+00:01:24.880 --> 00:01:28.080
+hàng đó. Chúng ta bắt đầu bằng cách bọc một vòng lặp repeat
+
+00:01:28.140 --> 00:01:30.360
+quanh đoạn code hiện có để bạn
+
+00:01:30.380 --> 00:01:32.220
+làm quen nhé. Và mình sẽ chỉ
+
+00:01:32.260 --> 00:01:35.020
+cho lặp một lần thôi. Nghĩa là chúng ta bảo Jiki
+
+00:01:35.060 --> 00:01:38.680
+làm mọi thứ bên trong cặp ngoặc nhọn ngoài cùng đúng một lần.
+
+00:01:39.800 --> 00:01:41.920
+Như vậy thì hiệu quả y hệt như
+
+00:01:42.000 --> 00:01:44.220
+khi không có vòng lặp ngoài này. Bảo
+
+00:01:44.280 --> 00:01:46.870
+Jiki lặp lại một việc đúng một lần
+
+00:01:46.940 --> 00:01:48.440
+cũng giống như bảo cậu ấy làm
+
+00:01:48.480 --> 00:01:51.000
+việc đó mà không có repeat. Nhưng mình cho bạn xem
+
+00:01:51.040 --> 00:01:53.000
+điều này để thấy đây chính là cách
+
+00:01:53.060 --> 00:01:55.500
+đoạn code này vận hành. Nó là code hợp lệ. Chúng ta có
+
+00:01:55.560 --> 00:01:59.900
+một vòng lặp nằm trong một vòng lặp khác. Vậy điều gì
+
+00:01:59.940 --> 00:02:02.960
+xảy ra nếu ta đổi vòng lặp ngoài thành
+
+00:02:03.000 --> 00:02:06.520
+lặp hai lần? Lúc này Jiki sẽ chạy
+
+00:02:06.560 --> 00:02:10.400
+nguyên cái cụm "plant năm lần" đó hai lượt. Cậu ấy sẽ trồng
+
+00:02:10.440 --> 00:02:14.460
+10 bông hoa. Nhưng tất cả số hoa đó
+
+00:02:14.500 --> 00:02:17.600
+đều nằm trên cùng một hàng. Vậy cũng
+
+00:02:17.660 --> 00:02:20.520
+giống như việc ta cần dịch vị trí
+
+00:02:20.580 --> 00:02:22.180
+từ trái sang phải một chút mỗi lần,
+
+00:02:23.100 --> 00:02:26.240
+sau khi vẽ xong một hàng hoa, ta cũng
+
+00:02:26.300 --> 00:02:28.660
+cần dịch vị trí theo chiều dọc.
+
+00:02:30.040 --> 00:02:32.540
+Vậy làm thế nào? Chúng ta
+
+00:02:32.580 --> 00:02:35.480
+có thể thêm một biến bên ngoài cho vị trí
+
+00:02:35.560 --> 00:02:39.970
+phía trên, dùng biến đó trong hàm plant,
+
+00:02:40.000 --> 00:02:42.880
+rồi tăng nó thêm 10 sau mỗi hàng.
+
+00:02:45.200 --> 00:02:46.920
+Bạn thử nghĩ xem giá trị đó bằng bao nhiêu
+
+00:02:46.960 --> 00:02:50.480
+ở từng thời điểm. Vị trí phía trên bắt đầu từ 10.
+
+00:02:50.520 --> 00:02:53.360
+Trong năm lần trồng đầu tiên, nó giữ
+
+00:02:53.380 --> 00:02:56.720
+nguyên như vậy. Vị trí bên trái tăng dần. Rồi
+
+00:02:56.760 --> 00:02:59.720
+ta cộng thêm 10 vào
+
+00:02:59.800 --> 00:03:03.480
+vị trí phía trên, và trồng thêm năm bông hoa
+
+00:03:03.980 --> 00:03:07.120
+thấp xuống một chút. Ta đặt vị trí bên trái
+
+00:03:07.140 --> 00:03:09.150
+trở lại 10, rồi lại
+
+00:03:09.180 --> 00:03:13.120
+tăng dần sau mỗi lần. Và giờ ta
+
+00:03:13.140 --> 00:03:16.030
+chỉ cần nói lặp bốn lần, thế là
+
+00:03:16.060 --> 00:03:20.360
+có bốn hàng, mỗi hàng năm cây hoa.
+
+00:03:20.420 --> 00:03:23.070
+Điều quan trọng cần hiểu là Jiki làm xong
+
+00:03:23.260 --> 00:03:26.160
+hết mọi việc trong vòng lặp trong rồi mới
+
+00:03:26.220 --> 00:03:28.440
+quay lại vòng lặp ngoài. Cậu ấy không
+
+00:03:28.500 --> 00:03:32.140
+chạy qua chạy lại giữa hai vòng. Cậu ấy chạy hết vòng lặp
+
+00:03:32.200 --> 00:03:34.130
+trong, rồi mới sang
+
+00:03:34.260 --> 00:03:37.660
+bước tiếp theo của vòng lặp ngoài. Trong
+
+00:03:37.680 --> 00:03:39.520
+trường hợp này, bạn có thể hình dung
+
+00:03:39.620 --> 00:03:41.880
+vòng lặp ngoài điều khiển các nhóm, tức là các
+
+00:03:41.980 --> 00:03:44.720
+hàng, còn vòng lặp trong điều khiển từng
+
+00:03:44.820 --> 00:03:47.049
+mục trong nhóm đó, tức là từng bông hoa
+
+00:03:47.080 --> 00:03:50.549
+trong hàng. Trong ví dụ của chúng ta, vòng lặp
+
+00:03:50.600 --> 00:03:54.580
+ngoài tạo ra bốn hàng, và vòng lặp trong
+
+00:03:54.640 --> 00:03:57.760
+đặt năm cây hoa, tức năm mục, vào mỗi nhóm.
+
+00:03:59.280 --> 00:04:02.100
+Trong các bài tập tiếp theo, bạn sẽ dùng vòng lặp
+
+00:04:02.180 --> 00:04:05.520
+trong vòng lặp để tạo ra đủ thứ. Những bài tập mới này sẽ
+
+00:04:05.580 --> 00:04:08.160
+cho bạn sẵn các hàm để vẽ từng chi tiết riêng lẻ.
+
+00:04:08.540 --> 00:04:10.160
+Việc của bạn chỉ là tìm ra
+
+00:04:10.220 --> 00:04:11.829
+cấu trúc đúng của các vòng lặp để mọi thứ
+
+00:04:11.860 --> 00:04:16.029
+chạy được. Mọi thứ trong những bài tập này đều nằm trong
+
+00:04:16.060 --> 00:04:17.760
+phần chúng ta vừa nói. Nên nếu bạn
+
+00:04:17.800 --> 00:04:19.860
+gặp khó, cứ xem lại video này nhé.
+
+00:04:20.660 --> 00:04:22.160
+Chúc bạn may mắn, và lát nữa
+
+00:04:22.180 --> 00:04:22.460
+mình gặp lại bạn ở đây nhé.

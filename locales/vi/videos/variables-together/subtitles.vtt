@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 51f04781025bf1dbba2ded55c062926f
+
+00:00:00.140 --> 00:00:03.580
+Chào mừng bạn quay lại. Đến giờ, khi tạo biến,
+
+00:00:03.740 --> 00:00:06.560
+chúng ta mới chỉ dùng những giá trị đơn giản: một số như
+
+00:00:06.840 --> 00:00:10.620
+50 hay một chuỗi như "yellow". Biến
+
+00:00:10.660 --> 00:00:13.340
+sẽ mạnh hơn nhiều khi ta
+
+00:00:13.440 --> 00:00:16.460
+dùng chúng kết hợp với nhau. Chẳng hạn,
+
+00:00:16.540 --> 00:00:19.000
+ta có thể nói cạnh trái của
+
+00:00:19.040 --> 00:00:22.030
+hình chữ nhật phải cách
+
+00:00:22.080 --> 00:00:25.660
+mép canvas một khoảng nhất định. Trong lập trình,
+
+00:00:25.720 --> 00:00:28.810
+chúng ta dùng được những phép toán cơ bản quen thuộc như cộng,
+
+00:00:28.940 --> 00:00:32.340
+trừ, nhân, chia, và có thể đưa
+
+00:00:32.380 --> 00:00:35.140
+cả những biến đã tạo
+
+00:00:35.200 --> 00:00:39.020
+vào trong đó. Chúng ta bắt đầu nhé: giả sử ta
+
+00:00:39.060 --> 00:00:41.300
+muốn vẽ một hình chữ nhật trên canvas,
+
+00:00:41.960 --> 00:00:43.800
+và muốn nó cách mép trái
+
+00:00:44.480 --> 00:00:46.980
+và mép phải 10 đơn vị,
+
+00:00:47.200 --> 00:00:48.960
+cách mép trên và mép dưới 20 đơn vị.
+
+00:00:49.900 --> 00:00:51.580
+Như vậy nó sẽ nằm ở giữa
+
+00:00:51.620 --> 00:00:53.900
+canvas, hơi dài hơn
+
+00:00:53.960 --> 00:00:57.740
+chiều cao của nó. Bạn còn nhớ, khi vẽ một
+
+00:00:57.760 --> 00:01:00.430
+hình chữ nhật, ta cần biết left, top,
+
+00:01:00.600 --> 00:01:02.510
+width và height của nó, cùng với màu sắc.
+
+00:01:03.360 --> 00:01:04.820
+Vậy nên ta có thể bắt đầu bằng việc
+
+00:01:04.920 --> 00:01:08.320
+viết chúng ra. Giờ ta cần
+
+00:01:08.420 --> 00:01:10.220
+tính xem left, top, width và height
+
+00:01:10.240 --> 00:01:13.100
+nên bằng bao nhiêu. Cùng đặt giá trị cho chúng nào. left là
+
+00:01:13.260 --> 00:01:15.660
+20. À, xin lỗi, left là 10. top là
+
+00:01:15.940 --> 00:01:18.920
+20. Còn width thì... width là
+
+00:01:19.020 --> 00:01:22.020
+kích thước của canvas, tức 100, trừ đi
+
+00:01:22.080 --> 00:01:23.340
+10 bên trái và 10
+
+00:01:23.360 --> 00:01:26.100
+bên phải, ra 80. Còn
+
+00:01:26.180 --> 00:01:29.040
+height là chiều cao của canvas,
+
+00:01:29.080 --> 00:01:31.580
+cũng là 100, trừ đi 20
+
+00:01:31.640 --> 00:01:33.660
+ở trên và 20 ở dưới,
+
+00:01:33.960 --> 00:01:37.860
+ra 60. Vậy là ta đặt được các biến đó: left
+
+00:01:37.920 --> 00:01:42.840
+10, top 20, width 80, height 60.
+
+00:01:42.860 --> 00:01:44.880
+Mong là bạn thấy việc này khá quen. Đó là
+
+00:01:44.920 --> 00:01:46.700
+những gì bạn vẫn làm từ đầu đến giờ trong
+
+00:01:46.740 --> 00:01:50.940
+các bài tập. Nhưng chuyện gì xảy ra nếu giờ ta muốn
+
+00:01:50.960 --> 00:01:54.140
+thu hình chữ nhật vào một chút, làm
+
+00:01:54.160 --> 00:01:55.400
+nó nhỏ đi một chút? Nếu ta muốn
+
+00:01:55.460 --> 00:01:57.040
+nó cách trái
+
+00:01:57.100 --> 00:01:59.040
+phải 20 và cách trên
+
+00:01:59.060 --> 00:02:02.620
+dưới 30 thì sao? Ta lại phải tính lại
+
+00:02:02.720 --> 00:02:06.320
+từ đầu mọi thứ. width giờ là 100 trừ
+
+00:02:06.560 --> 00:02:10.280
+20 trừ 20, còn height là 100
+
+00:02:10.360 --> 00:02:14.320
+trừ 30 trừ 30. Đúng là
+
+00:02:14.420 --> 00:02:17.280
+nhiều việc và nhiều phép tính hơn mình muốn
+
+00:02:17.320 --> 00:02:20.400
+làm. Vậy nên thay vào đó, ta có thể bảo
+
+00:02:20.420 --> 00:02:24.000
+máy tính làm hộ. Ta có thể
+
+00:02:24.060 --> 00:02:27.680
+đặt width bằng 100 trừ
+
+00:02:27.840 --> 00:02:31.620
+left trừ left, và height
+
+00:02:31.700 --> 00:02:34.720
+bằng 100 trừ top trừ top,
+
+00:02:34.960 --> 00:02:37.580
+vì trên và dưới là như nhau. Hoặc
+
+00:02:37.600 --> 00:02:40.980
+viết gọn lại thành 100 trừ
+
+00:02:41.240 --> 00:02:44.820
+left nhân 2, hay 100 trừ
+
+00:02:44.940 --> 00:02:48.620
+top nhân 2. Giờ nếu ta đổi
+
+00:02:48.660 --> 00:02:52.040
+left hoặc top thì width và
+
+00:02:52.080 --> 00:02:54.860
+height cũng đổi theo. Mọi thứ
+
+00:02:54.900 --> 00:02:57.430
+bắt đầu có liên hệ với nhau. Còn
+
+00:02:57.440 --> 00:03:00.960
+canvas thì sao? Hiện nó là 100. Nhưng
+
+00:03:01.020 --> 00:03:03.700
+nếu canvas của ta đổi thành rộng 200
+
+00:03:03.740 --> 00:03:06.540
+và cao 200 thì sao? Khi đó có lẽ ta nên tạo
+
+00:03:06.620 --> 00:03:09.560
+một biến tên là canvasSize và gán cho nó
+
+00:03:09.580 --> 00:03:13.230
+giá trị 100. Giờ left của ta, à xin lỗi,
+
+00:03:13.260 --> 00:03:17.740
+width của ta là canvasSize trừ left nhân 2,
+
+00:03:18.200 --> 00:03:22.160
+còn height là canvasSize trừ top nhân
+
+00:03:22.200 --> 00:03:26.120
+2. Cùng nghĩ xem Jiki làm gì
+
+00:03:26.480 --> 00:03:30.580
+khi ta viết let height bằng canvasSize trừ
+
+00:03:30.700 --> 00:03:33.310
+top nhân 2. Đầu tiên, cậu ấy lấy
+
+00:03:33.310 --> 00:03:35.220
+chiếc hộp top xuống khỏi kệ,
+
+00:03:35.260 --> 00:03:37.660
+thấy trong đó có 20, rồi lôi
+
+00:03:37.680 --> 00:03:40.160
+máy tính bỏ túi ra, tính 20 nhân 2,
+
+00:03:40.580 --> 00:03:42.740
+và ghi nhớ trong đầu kết quả là 40.
+
+00:03:43.720 --> 00:03:45.860
+Sau đó cậu ấy lấy chiếc hộp canvasSize
+
+00:03:45.900 --> 00:03:49.540
+xuống khỏi kệ, thấy trong đó có 100, và
+
+00:03:49.600 --> 00:03:52.780
+tính ra 100 trừ 40 bằng 60.
+
+00:03:53.840 --> 00:03:56.350
+Giờ cậu ấy hiểu rằng thật ra ta đang nói:
+
+00:03:56.400 --> 00:04:00.000
+let height bằng 60. Thế là cậu ấy làm theo
+
+00:04:00.040 --> 00:04:02.320
+lệnh let, lấy một chiếc hộp mới, viết
+
+00:04:02.360 --> 00:04:04.440
+height lên đó, rồi đặt 60
+
+00:04:04.580 --> 00:04:06.900
+vào trong. Về sau, khi cần dùng height,
+
+00:04:07.040 --> 00:04:09.600
+cậu ấy chỉ việc lấy 60
+
+00:04:09.640 --> 00:04:13.720
+ra. Hãy thử áp dụng tất cả những điều này trong
+
+00:04:13.820 --> 00:04:16.180
+vài bài tập tiếp theo, rồi mọi thứ sẽ
+
+00:04:16.240 --> 00:04:18.649
+ngày càng rõ ràng hơn. Ngoài ra, khi
+
+00:04:18.700 --> 00:04:22.070
+mọi thứ đã chạy được, bạn hãy thử đổi giá trị của
+
+00:04:22.100 --> 00:04:25.200
+các biến xem điều gì xảy ra. Xem
+
+00:04:25.220 --> 00:04:28.420
+chúng lớn lên và nhỏ đi thế nào. Cứ
+
+00:04:28.480 --> 00:04:31.480
+từ từ, nghĩ về mối liên hệ giữa mọi thứ,
+
+00:04:31.500 --> 00:04:32.670
+hẹn gặp lại bạn ở đây sớm nhé.

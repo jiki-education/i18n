@@ -1,0 +1,405 @@
+WEBVTT
+
+NOTE en_md5 f8c737461bf364654b8a618e515caeb8
+
+00:00:00.140 --> 00:00:02.210
+Chào mừng bạn quay lại. Giờ chúng ta sẽ
+
+00:00:02.400 --> 00:00:04.400
+rẽ ngang một chút, đi đường vòng một chút
+
+00:00:04.460 --> 00:00:06.480
+để xem một thứ bạn sẽ cần
+
+00:00:06.540 --> 00:00:08.850
+biết nếu bạn có bao giờ làm gì đó mang tính hình ảnh
+
+00:00:08.880 --> 00:00:10.860
+bằng code. Và kể cả khi bạn muốn trở thành
+
+00:00:10.900 --> 00:00:12.460
+nhà khoa học dữ liệu và thấy mấy chuyện
+
+00:00:12.560 --> 00:00:16.180
+vẽ vời này hơi nhàm chán, thì truyền đạt dữ liệu
+
+00:00:16.219 --> 00:00:19.180
+bằng hình ảnh vẫn là một kỹ năng quan trọng, nên
+
+00:00:19.220 --> 00:00:21.790
+rất đáng để học. Trong video này, chúng ta
+
+00:00:21.840 --> 00:00:24.220
+sẽ cùng xem hai cách khác nhau để
+
+00:00:24.260 --> 00:00:28.670
+biểu diễn màu sắc. Bạn đã dùng màu
+
+00:00:28.680 --> 00:00:31.640
+bằng tên gọi như red hay yellow
+
+00:00:31.700 --> 00:00:33.800
+làm đầu vào cuối cùng trong các hàm vẽ của mình rồi,
+
+00:00:35.400 --> 00:00:37.300
+và đó là một cách hay để
+
+00:00:37.360 --> 00:00:40.320
+dùng màu nhanh, nhưng nó khá hạn chế.
+
+00:00:40.330 --> 00:00:42.350
+Chỉ có một vài màu có tên
+
+00:00:42.380 --> 00:00:44.370
+là chúng ta dùng được thôi. Vậy nên giờ chúng ta cùng xem
+
+00:00:44.400 --> 00:00:46.880
+hai cách biểu diễn bất kỳ màu nào bạn
+
+00:00:46.960 --> 00:00:49.960
+muốn, và hai cách đó có tên là RGB và
+
+00:00:50.180 --> 00:00:54.920
+HSL. RGB cho phép chúng ta nghĩ về màu sắc
+
+00:00:54.980 --> 00:00:57.100
+như một hỗn hợp của đỏ, xanh lá và xanh dương.
+
+00:00:57.300 --> 00:01:00.210
+Đó là ý nghĩa của RGB: đỏ (red), xanh lá (green), xanh dương (blue).
+
+00:01:01.280 --> 00:01:04.040
+Nếu bạn còn nhớ chuyện trộn màu vẽ ở trường, thì
+
+00:01:04.099 --> 00:01:06.730
+ý tưởng cũng tương tự, chỉ khác là
+
+00:01:06.760 --> 00:01:11.580
+chúng ta trộn ánh sáng chứ không phải sơn. Trong nhiều bài tập sau đây,
+
+00:01:11.640 --> 00:01:14.440
+bạn sẽ có một hàm tên là rgb.
+
+00:01:15.280 --> 00:01:16.960
+Hàm này nhận ba con số
+
+00:01:17.000 --> 00:01:20.040
+làm đầu vào, một cho đỏ, một cho xanh lá,
+
+00:01:20.080 --> 00:01:22.240
+một cho xanh dương, rồi trả về
+
+00:01:22.320 --> 00:01:26.900
+một màu. Những con số bạn có thể dùng
+
+00:01:26.980 --> 00:01:32.940
+làm đầu vào nằm trong khoảng từ 0 đến 255. Số 0 nghĩa là
+
+00:01:33.040 --> 00:01:35.440
+mình không muốn chút màu đó nào, còn
+
+00:01:35.620 --> 00:01:38.420
+255 nghĩa là pha càng nhiều màu đó
+
+00:01:38.460 --> 00:01:41.460
+càng tốt. Vậy nếu chúng ta gọi
+
+00:01:41.540 --> 00:01:45.550
+hàm rgb với 255, 0 và 0
+
+00:01:45.600 --> 00:01:48.190
+làm đầu vào, thì điều chúng ta muốn nói là mình muốn
+
+00:01:48.240 --> 00:01:50.440
+toàn bộ màu đỏ. Nhớ rằng 255 là
+
+00:01:50.460 --> 00:01:52.880
+con số lớn nhất bạn có thể đặt vào đó.
+
+00:01:52.900 --> 00:01:54.800
+Nhưng chúng ta không muốn chút xanh lá
+
+00:01:54.820 --> 00:01:57.420
+hay xanh dương nào, nên cả hai đều bằng 0.
+
+00:01:57.460 --> 00:02:00.880
+Thế là chúng ta nhận được màu đỏ, và có thể lưu
+
+00:02:00.900 --> 00:02:03.360
+màu đỏ đó vào một biến rồi dùng nó
+
+00:02:03.380 --> 00:02:05.340
+trong hàm circle, giống như chúng ta
+
+00:02:05.400 --> 00:02:08.840
+vẫn làm với các chuỗi tên màu. Vậy
+
+00:02:08.880 --> 00:02:10.759
+nếu chúng ta gọi hàm rgb với
+
+00:02:10.900 --> 00:02:15.340
+0, 255 và 0 thì sao? Lúc này chúng ta đang nói: không đỏ,
+
+00:02:15.880 --> 00:02:18.310
+toàn bộ xanh lá, không xanh dương. Thế là ta được
+
+00:02:18.320 --> 00:02:21.440
+một hình tròn màu xanh lá. Còn nếu muốn
+
+00:02:21.640 --> 00:02:25.320
+màu vàng thì sao? Vàng là sự pha trộn của đỏ
+
+00:02:25.620 --> 00:02:27.940
+và xanh lá. Nên chúng ta có thể nói: cho mình
+
+00:02:28.020 --> 00:02:29.840
+toàn bộ đỏ, toàn bộ xanh lá
+
+00:02:30.180 --> 00:02:32.120
+và không xanh dương, thế là ta được
+
+00:02:32.200 --> 00:02:35.200
+màu vàng. Chúng ta cũng có thể dùng
+
+00:02:35.240 --> 00:02:37.730
+những con số nhỏ hơn. Nếu muốn một chút đỏ,
+
+00:02:38.300 --> 00:02:41.150
+không xanh lá và nhiều xanh dương, ta sẽ được
+
+00:02:41.200 --> 00:02:45.080
+màu tím. Còn nhiều đỏ, một chút xanh lá,
+
+00:02:45.380 --> 00:02:47.000
+thêm một chút xanh dương nữa, ta được
+
+00:02:47.040 --> 00:02:51.360
+màu hồng. Đó là RGB. Chúng ta trộn đỏ, xanh lá
+
+00:02:51.500 --> 00:02:56.060
+và xanh dương để có các tổ hợp khác nhau.
+
+00:02:56.100 --> 00:02:58.960
+Giờ chúng ta cùng xem HSL, một cách hoàn toàn
+
+00:02:58.980 --> 00:03:03.060
+khác để nghĩ về màu sắc. HSL là viết tắt
+
+00:03:03.100 --> 00:03:08.200
+của tông màu (hue), độ bão hòa (saturation) và độ sáng (lightness). Tương tự như
+
+00:03:08.280 --> 00:03:11.900
+RGB, bạn có một hàm tên là hsl
+
+00:03:11.920 --> 00:03:14.590
+nhận ba con số, một cho tông màu, một cho
+
+00:03:14.640 --> 00:03:17.100
+độ bão hòa và một cho độ sáng, rồi
+
+00:03:17.120 --> 00:03:20.420
+trả về một màu. Vậy chúng ta cùng xem
+
+00:03:20.480 --> 00:03:25.160
+ba từ đó nghĩa là gì. Tông màu là
+
+00:03:25.200 --> 00:03:28.080
+sắc thái của màu mà bạn muốn, và
+
+00:03:28.120 --> 00:03:32.300
+nó chạy từ 0 đến 360.
+
+00:03:32.320 --> 00:03:34.200
+Bạn thử tưởng tượng một cầu vồng xem. Đó là cách mình hay nghĩ
+
+00:03:34.260 --> 00:03:36.200
+về nó. Bên trái là màu đỏ,
+
+00:03:36.700 --> 00:03:39.220
+rồi đến cam, vàng, xanh lá, xanh dương,
+
+00:03:39.400 --> 00:03:41.320
+tím, và thật ra là quay vòng
+
+00:03:41.340 --> 00:03:44.760
+lại về đỏ. Nên nếu bạn nói 0
+
+00:03:45.140 --> 00:03:47.100
+thì bạn bắt đầu ở bên trái, và đó là
+
+00:03:47.180 --> 00:03:50.700
+màu đỏ. Nếu bạn nói 120 thì bạn đang xin
+
+00:03:50.740 --> 00:03:54.580
+màu xanh lá. 230 là xanh dương. Bạn cũng có thể nghĩ
+
+00:03:54.620 --> 00:03:57.470
+về nó như một vòng tròn màu, và
+
+00:03:57.500 --> 00:03:59.500
+360 thật ra chính là vòng tròn đó: số
+
+00:03:59.540 --> 00:04:02.440
+độ trong một vòng tròn. Mình thì luôn
+
+00:04:02.480 --> 00:04:04.360
+tra cứu những con số mình cần, nên
+
+00:04:04.440 --> 00:04:07.000
+bạn đừng lo phải cố ghi nhớ
+
+00:04:07.060 --> 00:04:09.340
+mấy thứ này, chỉ là biết chuyện gì
+
+00:04:09.380 --> 00:04:11.720
+đang diễn ra thì vẫn hay hơn. Vậy đó là tông màu,
+
+00:04:11.780 --> 00:04:16.019
+tức sắc thái. Tiếp theo là độ bão hòa, tức
+
+00:04:16.060 --> 00:04:18.920
+mức độ sống động của màu. Nó chạy từ 0
+
+00:04:19.019 --> 00:04:22.060
+đến 100. Ở mức 0, bạn chỉ nhận được màu xám.
+
+00:04:22.400 --> 00:04:24.440
+Không có màu sắc, không có chút sắc độ
+
+00:04:24.500 --> 00:04:28.160
+nào trong đó cả. Ở mức 100, bạn có màu đầy đủ,
+
+00:04:28.360 --> 00:04:32.660
+rực rỡ và sống động. Rồi đến độ sáng. Độ sáng
+
+00:04:32.700 --> 00:04:34.860
+cho biết màu sáng đến đâu, và nó
+
+00:04:34.960 --> 00:04:37.600
+cũng chạy từ 0 đến 100.
+
+00:04:37.740 --> 00:04:40.200
+Ở mức 0, bạn nhận được màu đen. Dù bạn chọn
+
+00:04:40.260 --> 00:04:43.460
+tông màu nào thì vẫn ra màu đen, vì trong đó
+
+00:04:43.480 --> 00:04:46.500
+không có ánh sáng. Còn ở mức 100, bạn nhận được màu trắng.
+
+00:04:46.980 --> 00:04:49.000
+Bất kể mọi thứ khác ra sao, nó chỉ toàn
+
+00:04:49.060 --> 00:04:52.420
+ánh sáng, nên là màu trắng. Còn 50 nằm đúng ở
+
+00:04:52.460 --> 00:04:55.490
+giữa, là mức màu bình thường. Bạn có thể
+
+00:04:55.520 --> 00:04:57.550
+nghĩ về nó như một thanh trượt để làm
+
+00:04:57.580 --> 00:05:01.260
+màu sáng hơn hoặc tối hơn.
+
+00:05:01.320 --> 00:05:03.840
+Vậy nếu muốn một hình tròn màu đỏ bình thường, thứ mà
+
+00:05:03.860 --> 00:05:07.680
+với RGB chúng ta sẽ viết là 255, 0, 0,
+
+00:05:07.720 --> 00:05:10.640
+toàn bộ đỏ, không xanh lá, không xanh dương, thì ở đây
+
+00:05:10.680 --> 00:05:15.560
+chúng ta sẽ dùng 0, 100, 50. Số 0 cho
+
+00:05:15.600 --> 00:05:19.290
+tông đỏ, 100 cho độ bão hòa, tức màu đầy đủ,
+
+00:05:19.800 --> 00:05:22.060
+và 50 cho độ sáng, một mức sáng
+
+00:05:22.080 --> 00:05:25.240
+bình thường. Nếu muốn đổi thành
+
+00:05:25.250 --> 00:05:27.800
+hình tròn màu xanh lá, chúng ta chỉ cần đổi
+
+00:05:27.880 --> 00:05:30.700
+tông màu thành 120. Nếu muốn
+
+00:05:30.740 --> 00:05:33.260
+màu xanh lá đậm hơn, chúng ta giảm
+
+00:05:33.270 --> 00:05:37.340
+độ sáng xuống 25. Nếu muốn
+
+00:05:37.380 --> 00:05:39.360
+màu xanh lá dịu hơn, chúng ta
+
+00:05:39.440 --> 00:05:40.780
+bớt màu đi,
+
+00:05:40.920 --> 00:05:43.860
+tức là giảm độ bão hòa, ví dụ xuống 30.
+
+00:05:46.500 --> 00:05:48.800
+Nếu bạn muốn một màu hồng tươi rực rỡ, thì
+
+00:05:48.860 --> 00:05:52.080
+tông màu khoảng 300 là màu hồng. Sau đó
+
+00:05:52.120 --> 00:05:55.680
+chúng ta nâng độ bão hòa lên 100
+
+00:05:55.720 --> 00:05:57.560
+cho thật sống động, và cũng đẩy
+
+00:05:57.620 --> 00:06:01.290
+độ sáng lên khoảng 60. Vậy là chúng ta có
+
+00:06:01.340 --> 00:06:03.660
+hai cách khác nhau để biểu diễn màu sắc, và chúng
+
+00:06:03.760 --> 00:06:07.830
+hữu ích trong những tình huống khác nhau. RGB rất hợp khi
+
+00:06:07.900 --> 00:06:12.160
+bạn muốn chỉnh một thành phần cụ thể:
+
+00:06:12.500 --> 00:06:14.380
+bao nhiêu đỏ, bao nhiêu xanh lá, bao nhiêu
+
+00:06:14.400 --> 00:06:17.540
+xanh dương. HSL rất hợp khi bạn muốn
+
+00:06:17.600 --> 00:06:20.060
+chuyển dần qua các màu. Nếu bạn muốn có một cầu vồng,
+
+00:06:20.100 --> 00:06:23.440
+bạn chỉ cần tăng dần tông màu.
+
+00:06:23.460 --> 00:06:25.360
+Trong vài bài tập tiếp theo, bạn sẽ dùng
+
+00:06:25.400 --> 00:06:27.500
+cả hai cách này cùng với vài vòng lặp và
+
+00:06:27.960 --> 00:06:31.020
+việc cập nhật biến để tạo ra một cầu vồng và
+
+00:06:31.080 --> 00:06:33.280
+một cảnh hoàng hôn. Mình sẽ nhắc lại mọi
+
+00:06:33.320 --> 00:06:36.400
+chi tiết trong phần hướng dẫn của bài tập, nên đừng lo
+
+00:06:36.460 --> 00:06:40.140
+nếu bạn chưa nhớ hết những điều này nhé.
+
+00:06:40.180 --> 00:06:41.640
+Chúc bạn may mắn, học vui vẻ, và hẹn gặp lại
+
+00:06:41.660 --> 00:06:42.060
+bạn sớm nhé.

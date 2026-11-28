@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 9d89d6259cdafb0e4850d658df9bd781
+
+00:00:00.140 --> 00:00:02.440
+Chào mừng bạn quay lại. Bạn đã đến một cột mốc
+
+00:00:02.520 --> 00:00:05.280
+khá quan trọng trong khóa học rồi đấy. Bạn đã dùng
+
+00:00:05.440 --> 00:00:08.060
+số, chuỗi và kiểu logic, tức là cách gọi
+
+00:00:08.120 --> 00:00:10.500
+mỹ miều của đúng và sai, và chúng ta gọi
+
+00:00:10.540 --> 00:00:13.350
+những thứ đó là các kiểu dữ liệu. Nhưng trong video này,
+
+00:00:13.400 --> 00:00:16.260
+chúng ta sẽ thêm kiểu dữ liệu phức hợp
+
+00:00:16.340 --> 00:00:20.080
+đầu tiên. Đó là kiểu dữ liệu có thể chứa
+
+00:00:20.180 --> 00:00:23.300
+nhiều thứ chứ không chỉ một thứ, và
+
+00:00:23.380 --> 00:00:26.780
+kiểu dữ liệu phức hợp này có tên là mảng.
+
+00:00:28.220 --> 00:00:30.280
+Giờ thì, khi nghe đến từ mảng,
+
+00:00:30.320 --> 00:00:33.060
+mình muốn bạn nghĩ đến một dây xích ngoài đời thật
+
+00:00:33.440 --> 00:00:36.800
+giữ nhiều thứ gắn chặt với nhau. Những thứ
+
+00:00:36.820 --> 00:00:39.520
+nó đang giữ có thể là bất cứ gì: chuỗi, số, kiểu logic,
+
+00:00:40.100 --> 00:00:42.360
+thậm chí cả những mảng khác, cả những thứ bạn chưa
+
+00:00:42.440 --> 00:00:44.280
+học tới, nhưng chưa cần lo về điều đó
+
+00:00:44.320 --> 00:00:47.440
+lúc này. Mọi thứ trong dây xích này đều nằm
+
+00:00:47.500 --> 00:00:50.320
+theo thứ tự, đúng thứ tự mà chúng nối vào nhau.
+
+00:00:51.180 --> 00:00:54.860
+Vậy là một mảng chứa nhiều thứ, nhưng
+
+00:00:54.920 --> 00:00:58.800
+cả mảng là một thứ vững chắc, một thứ liền khối, một
+
+00:00:58.840 --> 00:01:01.440
+mảng với nhiều phần tử ở bên trong.
+
+00:01:03.320 --> 00:01:06.090
+Jiki có thể lấy mảng đó, dây xích đó,
+
+00:01:06.160 --> 00:01:08.060
+đặt vào một cái hộp, giống như cậu ấy
+
+00:01:08.120 --> 00:01:09.300
+có thể đặt một chuỗi vào hộp hay
+
+00:01:09.320 --> 00:01:11.580
+một số vào hộp. Cậu ấy có thể đặt
+
+00:01:11.600 --> 00:01:13.340
+nó vào khe của một cái máy.
+
+00:01:13.900 --> 00:01:15.320
+Cậu ấy có thể lấy nó ra
+
+00:01:15.330 --> 00:01:18.860
+từ máng trượt. Mảng này là một thứ, và Jiki
+
+00:01:18.900 --> 00:01:20.800
+làm việc với nó y hệt như cách
+
+00:01:21.280 --> 00:01:23.840
+cậu ấy làm việc với chuỗi, số, và mọi thứ khác bạn đã
+
+00:01:23.880 --> 00:01:27.920
+thấy đến giờ. Giờ thì trong code, mảng
+
+00:01:28.020 --> 00:01:30.240
+cũng trông hơi giống một dây xích.
+
+00:01:30.300 --> 00:01:32.420
+Nó có một dấu ngoặc vuông ở mỗi đầu,
+
+00:01:32.880 --> 00:01:34.770
+rồi nhiều mục nối
+
+00:01:34.800 --> 00:01:38.420
+với nhau, ngăn cách bằng dấu phẩy. Ví dụ, nếu
+
+00:01:38.440 --> 00:01:40.590
+chúng ta muốn tạo một mảng chứa
+
+00:01:40.600 --> 00:01:42.480
+tên của vài mentor,
+
+00:01:43.100 --> 00:01:46.440
+chúng ta có thể tạo một cái hộp tên là mentors
+
+00:01:46.460 --> 00:01:49.260
+và đặt dây xích đó vào trong. Chúng ta
+
+00:01:49.280 --> 00:01:52.900
+viết let mentors =, y hệt
+
+00:01:53.140 --> 00:01:55.300
+như với bất kỳ cái hộp nào khác,
+
+00:01:55.320 --> 00:01:57.860
+rồi đến một dấu ngoặc vuông mở, nhiều
+
+00:01:57.920 --> 00:02:00.480
+phần tử là tên từng người, ngăn cách bằng dấu phẩy,
+
+00:02:00.500 --> 00:02:02.700
+rồi một dấu ngoặc vuông đóng. Khi Jiki thấy
+
+00:02:02.760 --> 00:02:04.730
+dòng này, cậu ấy đi lấy bốn tờ
+
+00:02:04.820 --> 00:02:07.760
+giấy, mỗi tên một tờ, rồi lấy một
+
+00:02:07.840 --> 00:02:10.650
+dây xích mới, nối tất cả chúng lại,
+
+00:02:10.680 --> 00:02:12.800
+và đặt dây xích đó vào hộp
+
+00:02:12.860 --> 00:02:16.580
+mentors. Bạn có thể đặt bất cứ thứ gì vào mảng: chuỗi,
+
+00:02:16.660 --> 00:02:19.820
+số, kiểu logic, thậm chí cả một mớ thứ trộn lẫn.
+
+00:02:19.860 --> 00:02:22.900
+Đây đều là những ví dụ về những mảng hoàn toàn hợp lệ.
+
+00:02:24.800 --> 00:02:27.320
+Bạn cũng có thể tạo một mảng rỗng. Nó
+
+00:02:27.380 --> 00:02:30.080
+chỉ là một dây xích không có phần tử nào. Nó vẫn
+
+00:02:30.140 --> 00:02:31.760
+là một thứ có thật. Nó vẫn có đủ
+
+00:02:31.820 --> 00:02:33.800
+hai đầu. Nó vẫn là một dây xích. Chỉ là
+
+00:02:33.860 --> 00:02:36.160
+bên trong nó không có mục nào. Nhưng
+
+00:02:36.200 --> 00:02:38.400
+bạn vẫn có thể đặt mảng rỗng này
+
+00:02:38.420 --> 00:02:40.260
+vào một cái hộp, lấy nó ra và dùng
+
+00:02:40.280 --> 00:02:44.120
+sau. Được rồi, vậy là bạn có thể tạo
+
+00:02:44.160 --> 00:02:46.850
+mảng bằng cú pháp dấu ngoặc vuông, nhưng
+
+00:02:46.860 --> 00:02:48.820
+thật ra chúng ta dùng chúng thế nào? Làm sao
+
+00:02:48.880 --> 00:02:50.910
+để xem bên trong có gì và lấy đồ
+
+00:02:50.980 --> 00:02:53.829
+ra? Cũng y hệt cách chúng ta làm
+
+00:02:53.860 --> 00:02:55.410
+khi muốn lấy các chữ cái ra khỏi
+
+00:02:55.440 --> 00:02:58.040
+chuỗi. Chúng ta dùng cú pháp dấu ngoặc vuông
+
+00:02:58.100 --> 00:03:00.980
+với số ở bên trong. Quay lại
+
+00:03:01.020 --> 00:03:03.020
+danh sách mentor nào. Nếu muốn
+
+00:03:03.060 --> 00:03:05.560
+lấy người đầu tiên ra, chúng ta viết
+
+00:03:05.800 --> 00:03:08.720
+mentors[0]. Nhớ là trong JavaScript,
+
+00:03:08.880 --> 00:03:13.280
+chúng ta đếm từ 0. Chúng ta cũng có thể lặp
+
+00:03:13.290 --> 00:03:15.190
+qua một mảng y hệt như cách
+
+00:03:15.220 --> 00:03:18.460
+chúng ta lặp qua chuỗi trước đây, bằng for-of.
+
+00:03:19.400 --> 00:03:21.580
+Mảng hoạt động y hệt như vậy.
+
+00:03:21.680 --> 00:03:23.980
+Chỉ khác là lần này, thay vì lấy
+
+00:03:24.040 --> 00:03:26.720
+một chữ cái ra, chúng ta lấy ra thứ
+
+00:03:26.780 --> 00:03:28.900
+đang nằm trong mảng. Trong ví dụ này, đó là
+
+00:03:28.940 --> 00:03:31.620
+tên của mentor. Vậy là lần đầu tiên
+
+00:03:31.680 --> 00:03:34.280
+chúng ta cảm ơn ai đó, chúng ta cảm ơn DJ. Lần thứ hai,
+
+00:03:34.320 --> 00:03:38.400
+chúng ta cảm ơn Becky, v.v. Chúng ta
+
+00:03:38.460 --> 00:03:41.500
+cũng có thể dùng thuộc tính length trên mảng,
+
+00:03:41.560 --> 00:03:43.940
+giống như chúng ta đã học với chuỗi. Nếu
+
+00:03:43.980 --> 00:03:45.980
+trong hộp mentors có một mảng gồm bốn chuỗi
+
+00:03:46.100 --> 00:03:50.040
+và bạn viết mentors.length, nó sẽ trả về 4.
+
+00:03:50.980 --> 00:03:53.500
+Và chúng ta cũng dùng includes
+
+00:03:53.520 --> 00:03:56.180
+trên mảng y hệt như vậy. Chúng ta viết
+
+00:03:56.540 --> 00:03:59.880
+mentors.includes("DJ") thì nó trả về true. Nhưng nếu
+
+00:03:59.960 --> 00:04:03.600
+viết mentors.includes("Frank") thì nó trả về false.
+
+00:04:05.080 --> 00:04:07.360
+Mọi thứ hoạt động y hệt như với chuỗi.
+
+00:04:07.420 --> 00:04:09.640
+Chỉ là chúng ta đang làm việc với các phần tử
+
+00:04:09.660 --> 00:04:12.160
+của mảng, chứ không phải các chữ cái của chuỗi.
+
+00:04:14.140 --> 00:04:17.160
+Trong hai bài tập tiếp theo, bạn sẽ thử
+
+00:04:17.200 --> 00:04:19.540
+những kỹ thuật khác nhau này. Bạn sẽ cần
+
+00:04:19.560 --> 00:04:21.130
+suy nghĩ xem bạn cần lấy
+
+00:04:21.300 --> 00:04:23.680
+một phần tử ra khỏi mảng bằng
+
+00:04:23.720 --> 00:04:26.220
+cú pháp dấu ngoặc vuông, hay muốn
+
+00:04:26.280 --> 00:04:28.820
+lặp qua tất cả các phần tử, kiểm tra hay xử lý
+
+00:04:28.880 --> 00:04:31.860
+lần lượt từng cái. Như mọi khi, nếu bạn
+
+00:04:31.920 --> 00:04:34.040
+bị kẹt, hãy xem gợi ý nhé. Hẹn gặp lại
+
+00:04:34.080 --> 00:04:34.860
+bạn ở đây sớm thôi.

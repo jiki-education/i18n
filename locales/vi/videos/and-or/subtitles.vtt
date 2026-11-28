@@ -1,0 +1,204 @@
+WEBVTT
+
+NOTE en_md5 54c871cb5fb9450d2d15334c3f48a372
+
+00:00:00.120 --> 00:00:02.700
+Chào mừng bạn quay lại. Giờ bạn đã biết cách
+
+00:00:02.760 --> 00:00:05.780
+dùng câu lệnh if, else, else if để đưa ra
+
+00:00:05.820 --> 00:00:09.260
+quyết định trong code. Nếu mình nhờ bạn
+
+00:00:09.340 --> 00:00:11.620
+mở cửa chỉ khi người đó
+
+00:00:11.720 --> 00:00:14.420
+trên 20 tuổi, chắc bạn biết ngay
+
+00:00:14.460 --> 00:00:17.080
+phải làm gì. Nhưng nếu bạn
+
+00:00:17.140 --> 00:00:20.250
+cần kiểm tra xem người đó có trên 20 tuổi
+
+00:00:20.560 --> 00:00:23.790
+và đang mặc đúng bộ trang phục không thì sao? Tức là
+
+00:00:23.820 --> 00:00:27.120
+bạn phải kiểm tra hai điều kiện khác nhau cùng một lúc.
+
+00:00:27.160 --> 00:00:30.940
+Bạn sẽ làm thế nào? Thử nghĩ xem. Được rồi.
+
+00:00:31.100 --> 00:00:33.820
+Có thể bạn sẽ viết một câu lệnh if
+
+00:00:33.880 --> 00:00:36.520
+lồng nhau, giống như những vòng lặp lồng nhau
+
+00:00:36.540 --> 00:00:39.680
+hồi trước. Bạn nói, nếu age
+
+00:00:39.720 --> 00:00:43.400
+lớn hơn 20 thì chúng ta bước vào khối
+
+00:00:43.440 --> 00:00:47.360
+lệnh này, rồi thêm một if nữa: outfit bằng
+
+00:00:47.400 --> 00:00:50.660
+disco, rồi thêm một dấu ngoặc nhọn và một
+
+00:00:50.700 --> 00:00:54.380
+khối lệnh mới. Cách đó vẫn chạy được, nhưng
+
+00:00:54.400 --> 00:00:57.200
+khá rối, nhất là khi bạn muốn có
+
+00:00:57.300 --> 00:01:00.350
+thật nhiều điều kiện. May thay, có một cách dễ hơn:
+
+00:01:00.940 --> 00:01:02.760
+điều kiện có thể có
+
+00:01:02.820 --> 00:01:06.130
+nhiều phần. Thay vì chỉ kiểm tra
+
+00:01:06.220 --> 00:01:08.020
+một thứ trong điều kiện, chúng ta có thể kiểm tra
+
+00:01:08.080 --> 00:01:11.360
+hai, ba hoặc nhiều thứ hơn. Và để
+
+00:01:11.400 --> 00:01:14.000
+làm được vậy, chúng ta cần dùng từ khóa and.
+
+00:01:14.100 --> 00:01:18.180
+Đáng buồn là trong JavaScript, từ khóa and
+
+00:01:18.280 --> 00:01:20.880
+thật ra không phải là chữ and như
+
+00:01:20.900 --> 00:01:23.480
+ở một số ngôn ngữ khác. Thay vào đó, bạn phải viết
+
+00:01:23.520 --> 00:01:26.800
+hai dấu & cạnh nhau. Bạn
+
+00:01:26.820 --> 00:01:29.180
+đành phải nhớ điều này thôi. Hơi khó chịu, nhưng
+
+00:01:29.220 --> 00:01:30.640
+nó là như vậy, rồi bạn sẽ
+
+00:01:30.700 --> 00:01:33.830
+quen. Vậy là chúng ta có thể dùng nó
+
+00:01:33.860 --> 00:01:36.790
+để tạo ra một điều kiện phức tạp hơn. Chúng ta
+
+00:01:36.840 --> 00:01:40.080
+nói nếu age lớn hơn 20 và
+
+00:01:40.600 --> 00:01:43.280
+outfit là disco thì mình đi tiếp.
+
+00:01:43.980 --> 00:01:46.440
+Còn nếu age nhỏ hơn 20 hoặc
+
+00:01:46.500 --> 00:01:49.360
+outfit không phải disco thì cả câu lệnh,
+
+00:01:49.420 --> 00:01:52.360
+cả điều kiện đều là sai. Nếu bạn từng
+
+00:01:52.380 --> 00:01:55.080
+học về logic, từng làm mấy mạch điện tử hay
+
+00:01:55.140 --> 00:01:57.560
+học toán cao hơn một chút thì điều này
+
+00:01:57.600 --> 00:01:59.920
+sẽ rất tự nhiên với bạn. Còn nếu chưa
+
+00:01:59.980 --> 00:02:02.620
+thì bạn sẽ nắm được nhanh thôi. Chúng ta
+
+00:02:02.680 --> 00:02:06.420
+cũng có thể dùng or, và một lần nữa, đáng tiếc là
+
+00:02:06.480 --> 00:02:09.479
+JavaScript không có từ khóa or tử tế nào. Thay vào đó,
+
+00:02:09.520 --> 00:02:11.340
+chúng ta phải dùng hai dấu gạch đứng đặt
+
+00:02:11.380 --> 00:02:14.360
+cạnh nhau để chỉ phép hoặc. Trông nó kỳ kỳ,
+
+00:02:14.560 --> 00:02:16.310
+nhưng thật ra không kỳ chút nào. Bạn sẽ, bạn sẽ
+
+00:02:16.340 --> 00:02:19.600
+quen với nó thôi. Vậy là chúng ta có thể nói:
+
+00:02:19.680 --> 00:02:22.740
+nếu ai đó trên 20 tuổi hoặc đang mặc
+
+00:02:22.780 --> 00:02:25.440
+đồ disco thì được vào. Thế là
+
+00:02:25.480 --> 00:02:27.820
+chúng ta sẽ có một bữa tiệc vui nhộn với những đứa trẻ mặc đồ disco
+
+00:02:27.920 --> 00:02:31.060
+và những người lớn ăn mặc xuề xòa, nghe cũng hợp lý đấy.
+
+00:02:32.240 --> 00:02:34.580
+Có một điều khiến người ta hay vấp
+
+00:02:34.640 --> 00:02:37.660
+khi dùng cả and lẫn or, đó là
+
+00:02:37.760 --> 00:02:41.020
+mỗi bên của and/or đều phải là
+
+00:02:41.060 --> 00:02:44.200
+một phép so sánh hoàn chỉnh. Vì vậy, kể cả khi bạn
+
+00:02:44.240 --> 00:02:47.500
+so sánh cùng một biến ở hai bên, bạn
+
+00:02:47.620 --> 00:02:50.400
+vẫn phải viết lại biến đó. Bạn không thể viết: nếu
+
+00:02:50.420 --> 00:02:53.560
+age lớn hơn 13 và nhỏ hơn
+
+00:02:53.780 --> 00:02:57.310
+20. Bạn phải viết: nếu age
+
+00:02:57.340 --> 00:03:00.840
+lớn hơn 13 và age lớn... à, nhỏ
+
+00:03:01.040 --> 00:03:04.200
+hơn 20. Hai bên đều phải là
+
+00:03:04.240 --> 00:03:09.040
+những phép so sánh hoàn chỉnh. Trong các bài tập tiếp theo, bạn sẽ
+
+00:03:09.080 --> 00:03:12.060
+tiếp tục dùng and và or để kết hợp
+
+00:03:12.100 --> 00:03:14.720
+các điều kiện. Bạn cần nghĩ xem khi nào cả hai
+
+00:03:14.740 --> 00:03:17.230
+điều kiện đều quan trọng, và khi nào chỉ cần một
+
+00:03:17.260 --> 00:03:19.790
+trong hai điều kiện đúng. Chúc bạn may mắn, và lát nữa
+
+00:03:19.820 --> 00:03:20.660
+mình gặp lại bạn ở đây nhé.

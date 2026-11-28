@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 e356df7bcabc2d9e377cede51ea7aaa5
+
+00:00:00.220 --> 00:00:04.200
+Chào mừng bạn quay lại. Cho đến giờ, khi tạo biến,
+
+00:00:04.520 --> 00:00:07.100
+chúng ta đặt giá trị vào những cái hộp
+
+00:00:07.140 --> 00:00:10.059
+rồi sau đó lấy chúng ra. Điều đó thật sự hữu ích:
+
+00:00:10.130 --> 00:00:13.080
+nó giúp code của chúng ta rõ ràng hơn
+
+00:00:13.140 --> 00:00:15.520
+và giúp bớt đi mấy phép tính nhẩm
+
+00:00:15.560 --> 00:00:18.720
+mà không thì chúng ta phải làm. Nhưng giá trị thật sự
+
+00:00:18.780 --> 00:00:21.940
+của biến nằm ở chỗ chúng ta có thể thay đổi
+
+00:00:22.020 --> 00:00:24.760
+thứ trong hộp, tức là giá trị của biến,
+
+00:00:24.800 --> 00:00:27.710
+trong suốt quá trình chương trình chạy. Vậy nên dù
+
+00:00:27.740 --> 00:00:30.120
+chúng ta có chạy đi chạy lại cùng một đoạn code,
+
+00:00:30.660 --> 00:00:33.900
+việc nó làm vẫn có thể khác đi tùy theo thứ
+
+00:00:33.940 --> 00:00:38.540
+đang nằm trong các cái hộp. Giả sử chúng ta muốn trồng
+
+00:00:38.580 --> 00:00:41.020
+một bông hoa trong vườn. Chúng ta có một
+
+00:00:41.030 --> 00:00:44.340
+hàm plant (trồng) rất tiện, chỉ nhận một đầu vào
+
+00:00:44.380 --> 00:00:46.060
+là vị trí chúng ta muốn đặt
+
+00:00:46.100 --> 00:00:48.380
+bông hoa. Vậy nếu muốn đặt một
+
+00:00:48.400 --> 00:00:52.010
+bông hoa cách mép vườn 10 đơn vị, chúng ta viết plant(10)
+
+00:00:52.010 --> 00:00:55.880
+Đơn giản và dễ hiểu. Còn nếu chúng ta
+
+00:00:55.960 --> 00:00:59.340
+muốn trồng tám bông hoa thì sao? Chúng ta có thể
+
+00:00:59.360 --> 00:01:02.210
+viết plant(10), plant(20), plant(30),
+
+00:01:02.260 --> 00:01:06.780
+v.v., nhưng như thế khá tẻ nhạt. Mà chúng ta đã
+
+00:01:06.820 --> 00:01:10.350
+học về một thứ giúp thay thế
+
+00:01:10.380 --> 00:01:13.120
+kiểu code tẻ nhạt này rồi. Hy vọng là bộ não bạn
+
+00:01:13.160 --> 00:01:15.640
+đang quay cuồng và hét lên: "Dùng vòng lặp đi! Dùng một
+
+00:01:15.680 --> 00:01:19.440
+khối repeat đi!" Ừ, chính xác là vậy. Vậy
+
+00:01:19.480 --> 00:01:22.120
+hãy đặt vị trí là 10,
+
+00:01:22.180 --> 00:01:25.200
+rồi cho một khối repeat gọi
+
+00:01:25.240 --> 00:01:27.350
+plant, tức là dùng hàm plant, tám lần.
+
+00:01:28.900 --> 00:01:32.160
+Bạn nghĩ điều gì sẽ xảy ra? Thì nó
+
+00:01:32.180 --> 00:01:35.180
+sẽ trồng tám bông hoa, nhưng lần nào
+
+00:01:35.200 --> 00:01:38.000
+cũng trồng ở đúng một chỗ,
+
+00:01:38.060 --> 00:01:41.140
+mà đó không phải điều chúng ta muốn. Vậy chúng ta hãy
+
+00:01:41.280 --> 00:01:42.960
+dành một chút thời gian xem Jiki
+
+00:01:43.000 --> 00:01:45.420
+đang làm gì. Cậu ấy tạo một cái hộp
+
+00:01:45.460 --> 00:01:47.600
+dán nhãn position. Cậu ấy đặt 10 vào đó.
+
+00:01:48.180 --> 00:01:50.330
+Rồi cậu ấy chạy cái máy plant tám lần.
+
+00:01:51.420 --> 00:01:54.380
+Mỗi lần, cậu ấy lấy giá trị ra
+
+00:01:54.400 --> 00:01:57.730
+khỏi hộp position. Lúc nào cũng là 10, và lần nào
+
+00:01:57.760 --> 00:02:01.340
+cậu ấy cũng đặt đúng số 10 đó vào. Vậy
+
+00:02:01.360 --> 00:02:03.400
+thứ chúng ta cần là một cách
+
+00:02:03.460 --> 00:02:06.490
+để mỗi lần nhích thêm một chút. Sau khi
+
+00:02:06.540 --> 00:02:08.820
+trồng xong một bông hoa, chúng ta muốn bảo Jiki
+
+00:02:08.960 --> 00:02:12.200
+nhích vị trí thêm 10, sẵn sàng
+
+00:02:12.300 --> 00:02:16.410
+trồng bông tiếp theo. Vậy tạm gác
+
+00:02:16.500 --> 00:02:18.800
+code sang một bên, về mặt logic
+
+00:02:18.900 --> 00:02:22.360
+thì việc đó trông như thế nào? Nếu mình nói
+
+00:02:22.440 --> 00:02:24.460
+với bạn: "Trồng bông đầu tiên ở 10,
+
+00:02:24.620 --> 00:02:26.320
+rồi bông tiếp theo ở 20, rồi bông sau nữa
+
+00:02:26.360 --> 00:02:29.140
+ở 30", thì làm sao bộ não bạn biết rằng
+
+00:02:29.180 --> 00:02:31.549
+bông kế tiếp phải trồng ở 40
+
+00:02:32.320 --> 00:02:33.940
+và bông sau đó phải trồng
+
+00:02:33.960 --> 00:02:38.280
+ở 50? Bộ não bạn đang làm là
+
+00:02:38.340 --> 00:02:41.680
+theo dõi con số hiện tại, cộng thêm
+
+00:02:41.740 --> 00:02:44.380
+10 vào đó, rồi cập nhật con số mới
+
+00:02:44.440 --> 00:02:47.510
+trong đầu. Và chúng ta có thể làm
+
+00:02:47.520 --> 00:02:50.950
+y hệt như vậy trong code. Để làm điều đó,
+
+00:02:51.160 --> 00:02:54.380
+chúng ta nói: "Cập nhật hộp position
+
+00:02:54.440 --> 00:03:00.500
+thành giá trị hiện tại của position cộng thêm 10." Khi
+
+00:03:00.560 --> 00:03:03.040
+Jiki thấy dòng này, cậu ấy sẽ lấy con số hiện tại
+
+00:03:03.120 --> 00:03:05.460
+ra khỏi hộp position, cộng thêm 10,
+
+00:03:05.540 --> 00:03:08.570
+làm phép tính đó, cộng hai số lại với nhau,
+
+00:03:08.580 --> 00:03:10.720
+rồi đặt kết quả trở lại hộp
+
+00:03:10.800 --> 00:03:14.000
+để dùng cho lần sau. Vậy nếu thêm dòng này
+
+00:03:14.060 --> 00:03:15.960
+vào chương trình, để giờ chúng ta nói:
+
+00:03:16.220 --> 00:03:18.680
+"Đặt giá trị ban đầu của vị trí
+
+00:03:18.700 --> 00:03:21.490
+là 10", rồi tám lần trồng một bông hoa
+
+00:03:22.040 --> 00:03:24.860
+ở vị trí đó, rồi đổi vị trí
+
+00:03:24.920 --> 00:03:28.360
+thành lớn hơn trước 10 đơn vị, thì code của chúng ta
+
+00:03:28.420 --> 00:03:30.640
+chạy đúng, và chúng ta có tám bông hoa cách đều nhau.
+
+00:03:32.440 --> 00:03:35.400
+Bạn để ý là không có let (khai báo biến) khi chúng ta
+
+00:03:35.410 --> 00:03:38.980
+cập nhật biến. Điều đó rất quan trọng. Khi Jiki thấy
+
+00:03:39.140 --> 00:03:42.400
+let, cậu ấy tạo một cái hộp mới. Nhưng ở đây,
+
+00:03:42.420 --> 00:03:44.560
+chúng ta không muốn tạo hộp mới.
+
+00:03:44.600 --> 00:03:46.480
+Chúng ta muốn thay đổi thứ bên trong
+
+00:03:46.540 --> 00:03:50.920
+cái hộp mà mình đã có. Cũng để ý là chúng ta
+
+00:03:51.020 --> 00:03:54.320
+chỉ tạo cái hộp một lần ở bên ngoài
+
+00:03:54.380 --> 00:03:57.500
+vòng lặp. Điều đó quan trọng, bạn nhớ nhé. Tạo hộp
+
+00:03:57.620 --> 00:03:59.720
+một lần ở trên cùng, rồi cập nhật nó
+
+00:03:59.760 --> 00:04:03.500
+mỗi khi vòng lặp chạy. Được rồi. Chúng ta đã học
+
+00:04:03.560 --> 00:04:05.850
+khá nhiều trong video này. Chúng ta có thể
+
+00:04:05.900 --> 00:04:08.020
+cập nhật thứ bên trong các cái hộp, và có thể dùng
+
+00:04:08.080 --> 00:04:10.880
+sức mạnh đó để theo dõi một thứ thay đổi
+
+00:04:10.940 --> 00:04:14.320
+theo thời gian. Bạn sẽ dùng cách làm này liên tục:
+
+00:04:14.420 --> 00:04:17.300
+theo dõi vị trí, đếm xem một việc
+
+00:04:17.340 --> 00:04:21.240
+đã xảy ra bao nhiêu lần, giữ điểm số. Mỗi khi bạn cần ghi nhớ
+
+00:04:21.260 --> 00:04:24.780
+một thứ thay đổi trong lúc chương trình chạy,
+
+00:04:24.820 --> 00:04:27.520
+đây là cách để làm điều đó. Sắp tới sẽ có
+
+00:04:27.620 --> 00:04:29.460
+vài bài tập
+
+00:04:29.500 --> 00:04:32.060
+để bạn luyện tập phần này. Nếu bị kẹt
+
+00:04:32.100 --> 00:04:33.760
+thì cứ xem lại video này nhé.
+
+00:04:33.800 --> 00:04:36.420
+Làm vậy không phải gian lận đâu. Chủ đề này có thể
+
+00:04:36.460 --> 00:04:38.830
+khiến bạn thấy khá phức tạp. Rồi nó sẽ rõ thôi, nhưng lúc đầu
+
+00:04:38.840 --> 00:04:40.510
+có thể hơi quá tải một chút. Và
+
+00:04:40.540 --> 00:04:41.930
+mình hy vọng, đến khi gặp lại bạn
+
+00:04:41.930 --> 00:04:44.510
+sau vài bài tập nữa, bạn sẽ bắt đầu
+
+00:04:44.540 --> 00:04:46.090
+thấy quen với cách làm này hơn
+
+00:04:46.120 --> 00:04:48.600
+và sự tự tin của bạn cũng sẽ tăng lên. Chúc bạn
+
+00:04:48.640 --> 00:04:48.800
+may mắn nhé.

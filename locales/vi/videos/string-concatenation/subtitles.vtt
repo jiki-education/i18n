@@ -1,0 +1,207 @@
+WEBVTT
+
+NOTE en_md5 d39fabecd86df2df0d2b749f6d2241ba
+
+00:00:00.260 --> 00:00:02.070
+Chào mừng bạn quay lại. Hy vọng bạn đã thấy vui
+
+00:00:02.120 --> 00:00:04.900
+với loạt bài tập vừa rồi. Bạn đang tiến bộ
+
+00:00:04.940 --> 00:00:07.970
+rất tuyệt đấy. Làm tốt lắm. Video này sẽ
+
+00:00:08.000 --> 00:00:10.740
+ngắn thôi. Bạn đã biết chuỗi là gì rồi.
+
+00:00:10.940 --> 00:00:12.800
+Chuỗi là những mẩu giấy có ghi chữ
+
+00:00:12.840 --> 00:00:15.440
+trên đó. Bạn đã dùng chúng suốt khóa học
+
+00:00:15.520 --> 00:00:18.960
+đến giờ. Nhưng từ đầu đến giờ, chuỗi nào bạn dùng
+
+00:00:19.100 --> 00:00:22.000
+cũng là chuỗi bạn viết ra trực tiếp. Vậy
+
+00:00:22.040 --> 00:00:24.620
+nếu bạn muốn tạo một chuỗi
+
+00:00:24.660 --> 00:00:28.500
+dựa trên các biến hoặc điều kiện thì sao? Chúng ta
+
+00:00:28.560 --> 00:00:31.200
+làm việc đó thế nào? Có hai cách
+
+00:00:31.300 --> 00:00:34.520
+mà mình sẽ chỉ cho bạn. Cách thứ nhất
+
+00:00:34.640 --> 00:00:38.370
+có tên là nối chuỗi (tiếng Anh: string concatenation),
+
+00:00:38.460 --> 00:00:41.600
+nghe hoa mỹ và hơi khó hiểu, nhưng chỉ là cộng hai chuỗi
+
+00:00:41.640 --> 00:00:46.120
+lại với nhau. Hãy tưởng tượng bạn có hai từ, hello và
+
+00:00:46.160 --> 00:00:48.420
+world, và bạn muốn tạo một chuỗi
+
+00:00:48.440 --> 00:00:51.730
+chứa hello world. Bạn có thể chỉ cần viết ra
+
+00:00:51.940 --> 00:00:54.460
+hello world như một chuỗi, nhưng cũng có thể
+
+00:00:54.540 --> 00:00:59.570
+viết hello cộng dấu cách world, và kết quả
+
+00:00:59.600 --> 00:01:03.260
+là chuỗi y hệt. Dĩ nhiên,
+
+00:01:03.340 --> 00:01:05.340
+trong tình huống này thì cách đó chưa hữu ích lắm.
+
+00:01:05.940 --> 00:01:08.180
+Nhưng nếu chúng ta có một biến
+
+00:01:08.240 --> 00:01:10.420
+chứa tên của ai đó và muốn
+
+00:01:10.460 --> 00:01:12.780
+chào họ thì sao? Vậy hãy tưởng tượng chúng ta có một
+
+00:01:12.820 --> 00:01:16.020
+biến tên là name, lúc thì nó chứa Jeremy
+
+00:01:16.060 --> 00:01:18.860
+lúc khác lại chứa Jiki. Chúng ta muốn nói
+
+00:01:18.920 --> 00:01:22.280
+hello Jeremy hoặc hello Jiki bằng biến đó.
+
+00:01:23.380 --> 00:01:25.860
+Chúng ta có thể làm được điều này nhờ khái niệm
+
+00:01:25.920 --> 00:01:30.600
+nối chuỗi, bằng cách viết hello cộng name, và
+
+00:01:30.620 --> 00:01:33.480
+kết quả sẽ là hello Jeremy hoặc hello
+
+00:01:33.620 --> 00:01:37.320
+Jiki, hoặc lời chào cho bất kỳ ai khác, tùy vào
+
+00:01:37.360 --> 00:01:41.000
+thứ nằm trong hộp name. Chúng ta cũng có thể dùng
+
+00:01:41.040 --> 00:01:44.220
+một thứ gọi là template literal (mẫu chuỗi) để làm
+
+00:01:44.280 --> 00:01:48.790
+điều tương tự. Lại một từ hoa mỹ, khó hiểu không cần thiết,
+
+00:01:48.840 --> 00:01:53.920
+nghĩa là chèn chuỗi này vào chuỗi khác. Vậy là
+
+00:01:53.960 --> 00:01:56.950
+thay vì cộng các chuỗi lại với nhau, chúng ta có thể có
+
+00:01:57.120 --> 00:02:00.830
+một chuỗi, hay một mẫu, với những chỗ trống để đặt
+
+00:02:00.900 --> 00:02:04.020
+các chuỗi khác vào bên trong. Để làm vậy,
+
+00:02:04.040 --> 00:02:09.800
+chúng ta dùng dấu backtick thay cho dấu ngoặc kép. Backtick là
+
+00:02:09.880 --> 00:02:12.420
+dấu tích viết ngược, đúng như cái tên, nhưng
+
+00:02:12.460 --> 00:02:15.080
+rất có thể bạn chưa từng dùng nó bao giờ, nên
+
+00:02:15.120 --> 00:02:17.100
+bạn cần tìm đúng phím
+
+00:02:17.140 --> 00:02:20.730
+trên bàn phím của mình. Chúng ta dùng chúng để tạo ra
+
+00:02:20.800 --> 00:02:24.150
+một mẫu có thể chứa các chuỗi khác. Rồi
+
+00:02:24.220 --> 00:02:27.220
+để chèn một chuỗi vào mẫu, chúng ta
+
+00:02:27.300 --> 00:02:30.540
+dùng thêm một cú pháp kỳ lạ gồm dấu đô la và dấu ngoặc nhọn.
+
+00:02:30.580 --> 00:02:33.160
+Ví dụ, để làm đúng điều mà hello
+
+00:02:33.180 --> 00:02:36.200
+cộng name vừa làm, chúng ta có thể
+
+00:02:36.420 --> 00:02:40.700
+dùng... chúng ta có thể viết backtick hello, dấu đô la,
+
+00:02:40.860 --> 00:02:45.180
+ngoặc nhọn, name, ngoặc nhọn, backtick. Nhìn thì
+
+00:02:45.220 --> 00:02:46.560
+dễ hơn nhiều so với khi mình đọc ra.
+
+00:02:47.800 --> 00:02:50.520
+Và nó làm đúng y như
+
+00:02:50.580 --> 00:02:53.320
+khi cộng các chuỗi lại với nhau. Nhưng khi bạn có
+
+00:02:53.390 --> 00:02:56.120
+nhiều chuỗi mà tất cả đều cần ghép vào một
+
+00:02:56.160 --> 00:02:58.320
+chỗ, cách này hiệu quả hơn nhiều.
+
+00:02:59.160 --> 00:03:00.049
+Bạn sẽ mất một chút
+
+00:03:00.100 --> 00:03:02.380
+thời gian để quen với đúng cú pháp này,
+
+00:03:02.900 --> 00:03:05.420
+nhưng thật ra nó chẳng có gì phức tạp cả.
+
+00:03:07.000 --> 00:03:09.140
+Mình đã chuẩn bị cho bạn hai bài tập để luyện
+
+00:03:09.180 --> 00:03:11.780
+những thứ này. Bài đầu tiên dùng đúng kiểu
+
+00:03:11.840 --> 00:03:14.420
+chào kèm tên mà chúng ta vừa xem. Bạn có thể
+
+00:03:14.460 --> 00:03:17.060
+làm bằng cách nối chuỗi hoặc dùng mẫu chuỗi,
+
+00:03:18.100 --> 00:03:20.640
+và mình sẽ ghi cả hai vào phần hướng dẫn
+
+00:03:20.680 --> 00:03:23.880
+để bạn nhớ. Bài tập thứ hai là một câu hỏi
+
+00:03:24.100 --> 00:03:27.120
+phỏng vấn xin việc kinh điển. Học được bài này
+
+00:03:27.200 --> 00:03:29.760
+bạn sẽ sẵn sàng cho mọi buổi phỏng vấn sau này.
+
+00:03:30.620 --> 00:03:31.980
+Chúc bạn may mắn nhé, lát nữa
+
+00:03:32.040 --> 00:03:32.380
+mình gặp lại bạn ở đây.

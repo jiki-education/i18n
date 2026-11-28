@@ -1,0 +1,141 @@
+WEBVTT
+
+NOTE en_md5 bda06700bc7cace998c9ec1d94e9d2aa
+
+00:00:00.160 --> 00:00:03.500
+Chào mừng bạn quay lại. Trong lập trình, chúng ta thường muốn
+
+00:00:03.660 --> 00:00:06.940
+dùng một hàm và mỗi lần gọi lại nhận về một số
+
+00:00:07.020 --> 00:00:11.400
+ngẫu nhiên khác nhau. Điều này hữu ích trong
+
+00:00:11.460 --> 00:00:13.960
+đủ mọi tình huống, nhưng đặc biệt là
+
+00:00:14.020 --> 00:00:16.370
+trong mật mã học, nơi người ta thường làm
+
+00:00:16.379 --> 00:00:19.270
+những việc như tạo mã để chia sẻ giữa các máy với nhau,
+
+00:00:20.040 --> 00:00:21.660
+và những mã đó phải ngẫu nhiên
+
+00:00:21.680 --> 00:00:24.980
+thì mới không bị bẻ khóa. Để giúp bạn việc này,
+
+00:00:25.320 --> 00:00:27.160
+trong suốt phần còn lại của khóa học, bạn có
+
+00:00:27.200 --> 00:00:33.420
+một hàm tên là Math.randomInt. Bạn có thể để ý thấy
+
+00:00:33.440 --> 00:00:34.920
+có một dấu chấm ở giữa tên hàm.
+
+00:00:36.240 --> 00:00:38.660
+Khi bạn có nhiều hàm hơn,
+
+00:00:38.700 --> 00:00:41.040
+chúng ta có thể sắp xếp chúng thành từng nhóm
+
+00:00:41.080 --> 00:00:43.980
+cho gọn gàng, và phần Math là
+
+00:00:44.100 --> 00:00:46.720
+tên của nhóm mà hàm này
+
+00:00:46.780 --> 00:00:49.550
+thuộc về. Nó cho Jiki biết cần tìm ở khu nào
+
+00:00:49.600 --> 00:00:51.340
+trên kệ, trong trường hợp này là
+
+00:00:51.350 --> 00:00:54.490
+khu Math. Dấu chấm chỉ có nghĩa là hãy vào
+
+00:00:54.520 --> 00:00:57.440
+khu này và tìm hàm đó. Bạn đừng bận tâm
+
+00:00:57.480 --> 00:00:59.920
+quá nhiều về chuyện này lúc này. Hướng dẫn
+
+00:00:59.940 --> 00:01:03.020
+bài tập sẽ luôn cho bạn biết có những hàm nào
+
+00:01:03.060 --> 00:01:06.740
+và dùng chúng ra sao. Điều quan trọng
+
+00:01:06.800 --> 00:01:09.940
+cần hiểu là khi Jiki dùng
+
+00:01:09.980 --> 00:01:12.380
+hàm này, mỗi lần chạy cậu ấy sẽ nhận được
+
+00:01:12.460 --> 00:01:15.400
+một số khác nhau, nhưng có một
+
+00:01:15.440 --> 00:01:19.760
+ràng buộc. Hàm có hai đầu vào. Đầu vào thứ nhất
+
+00:01:19.940 --> 00:01:22.120
+là số nhỏ nhất mà chiếc máy được phép
+
+00:01:22.160 --> 00:01:25.220
+trả về, còn đầu vào thứ hai là số lớn nhất
+
+00:01:25.300 --> 00:01:28.160
+mà chiếc máy được phép trả về. Vậy
+
+00:01:28.240 --> 00:01:31.740
+nếu bạn dùng hàm Math.randomInt với 10
+
+00:01:32.080 --> 00:01:36.820
+và 13, bạn sẽ luôn nhận về 10, 11, 12
+
+00:01:37.200 --> 00:01:40.280
+hoặc 13. Nhưng mỗi lần
+
+00:01:40.340 --> 00:01:44.120
+sẽ là một số khác nhau. Vậy hãy tưởng tượng
+
+00:01:44.160 --> 00:01:46.200
+bạn muốn vẽ một hình tròn ở một
+
+00:01:46.240 --> 00:01:49.420
+vị trí ngẫu nhiên trên canvas. Bạn có thể dùng
+
+00:01:49.500 --> 00:01:52.500
+Math.randomInt để nhận được giá trị khác nhau cho left
+
+00:01:52.640 --> 00:01:56.920
+và top một cách ngẫu nhiên mỗi lần, nhưng giới hạn
+
+00:01:56.960 --> 00:01:59.500
+trong khoảng, ví dụ, 10 và 90, để chúng không
+
+00:01:59.560 --> 00:02:02.960
+chồng lên nhau hay vượt ra ngoài canvas. Mỗi lần
+
+00:02:03.020 --> 00:02:05.020
+bạn chạy đoạn code này, hình tròn sẽ
+
+00:02:05.060 --> 00:02:08.460
+xuất hiện ở một chỗ hơi khác một chút. Chúng ta sẽ
+
+00:02:08.560 --> 00:02:12.320
+bắt đầu với một bài tập làm món salad đơn giản để
+
+00:02:12.460 --> 00:02:14.680
+bạn làm quen với khái niệm số ngẫu nhiên,
+
+00:02:15.400 --> 00:02:17.600
+rồi trong vài bài tập tiếp theo, chúng ta
+
+00:02:17.640 --> 00:02:20.120
+sẽ bắt đầu làm những thứ khá thú vị với
+
+00:02:20.160 --> 00:02:22.019
+chúng. Lát nữa gặp lại bạn ở đây nhé.

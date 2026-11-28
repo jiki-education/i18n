@@ -1,0 +1,264 @@
+WEBVTT
+
+NOTE en_md5 d53eb0ea7bb0ec1daa64bb73829462f2
+
+00:00:00.240 --> 00:00:03.700
+Chào mừng bạn quay lại. Từ đầu đến giờ, mọi thứ chúng ta
+
+00:00:03.720 --> 00:00:06.880
+viết đều theo kiểu tuyến tính, Jiki
+
+00:00:06.920 --> 00:00:10.660
+theo từng chỉ dẫn theo thứ tự từ trên
+
+00:00:10.670 --> 00:00:14.220
+xuống dưới. Trong bài này, chúng ta sẽ xem
+
+00:00:14.260 --> 00:00:16.330
+cách Jiki thoát khỏi
+
+00:00:16.460 --> 00:00:19.690
+luồng từ trên xuống dưới cứng nhắc này, và cụ thể là cách
+
+00:00:19.720 --> 00:00:21.800
+bảo Jiki chạy đi chạy lại cùng
+
+00:00:21.880 --> 00:00:24.320
+một đoạn code nhiều lần
+
+00:00:24.360 --> 00:00:28.680
+liên tiếp. Ví dụ nhé, tưởng tượng bạn đang ở trong
+
+00:00:28.760 --> 00:00:31.180
+mê cung và muốn tiến lên phía trước 10 bước.
+
+00:00:31.240 --> 00:00:34.240
+Trước đó mình đã đưa bạn hàm walk
+
+00:00:34.280 --> 00:00:36.690
+để giúp việc này, nhưng nếu
+
+00:00:36.740 --> 00:00:39.670
+hàm đó không tồn tại thì sao? Nếu bạn chỉ có
+
+00:00:39.920 --> 00:00:44.700
+hàm move thì sao? Thay vì viết move 10
+
+00:00:44.760 --> 00:00:48.000
+lần liên tiếp, nghe rất nhàm chán,
+
+00:00:48.740 --> 00:00:50.420
+điều chúng ta cần làm
+
+00:00:50.500 --> 00:00:54.000
+là nói: "Này Jiki, làm việc mình nói ngay sau đây
+
+00:00:54.120 --> 00:00:59.840
+10 lần nhé. Move." Để làm điều này
+
+00:00:59.900 --> 00:01:02.320
+trong code, chúng ta cần
+
+00:01:02.480 --> 00:01:07.300
+dùng từ khóa đầu tiên. Từ khóa là những chỉ dẫn
+
+00:01:07.340 --> 00:01:10.180
+mà Jiki hiểu. Chúng trông hơi
+
+00:01:10.220 --> 00:01:13.980
+giống những cái máy, nhưng không phải. Khi Jiki thấy
+
+00:01:14.020 --> 00:01:16.460
+một từ khóa, cậu ấy không tìm một cái máy
+
+00:01:16.500 --> 00:01:18.920
+trên kệ, mà chỉ biết là phải làm
+
+00:01:18.960 --> 00:01:23.300
+gì đó. Điều đó nằm sẵn trong não cậu ấy. Và
+
+00:01:23.320 --> 00:01:25.700
+có khoảng 20 từ khóa khác nhau mà chúng ta
+
+00:01:25.740 --> 00:01:28.480
+sẽ học trong khóa học này, và
+
+00:01:28.520 --> 00:01:32.560
+từ khóa đầu tiên là repeat.
+
+00:01:32.580 --> 00:01:35.540
+Từ khóa repeat làm đúng điều mình vừa nói.
+
+00:01:36.100 --> 00:01:40.580
+Nó bảo Jiki: "Làm việc mình nói ngay sau đây
+
+00:01:40.700 --> 00:01:42.990
+nhiều lần như thế này." Bạn xem đoạn
+
+00:01:43.080 --> 00:01:45.960
+code này nhé. Đầu tiên, chúng ta dùng
+
+00:01:46.000 --> 00:01:48.440
+từ khóa repeat để báo cho Jiki biết cậu ấy sắp
+
+00:01:48.480 --> 00:01:51.580
+làm một việc gì đó nhiều lần. Sau đó, chúng ta ghi
+
+00:01:51.680 --> 00:01:53.940
+số lần muốn Jiki
+
+00:01:53.980 --> 00:01:57.070
+lặp lại việc đó vào trong dấu ngoặc đơn, rồi
+
+00:01:57.100 --> 00:02:00.030
+đến cặp dấu ngoặc nhọn này, và
+
+00:02:00.040 --> 00:02:02.850
+bên trong cặp ngoặc nhọn đó là những việc
+
+00:02:02.860 --> 00:02:06.020
+chúng ta muốn Jiki lặp lại. Kiểu mẫu này
+
+00:02:06.100 --> 00:02:09.320
+cực kỳ phổ biến trong lập trình. Chúng ta chỉ ra một
+
+00:02:09.380 --> 00:02:12.400
+từ khóa, thường kèm theo vài thông tin, như
+
+00:02:12.440 --> 00:02:14.549
+số lần làm một việc trong
+
+00:02:14.580 --> 00:02:17.620
+trường hợp này, rồi đến một khối lệnh trong dấu ngoặc
+
+00:02:17.680 --> 00:02:20.880
+nhọn. Quay lại với thế giới mê cung,
+
+00:02:21.520 --> 00:02:25.220
+thay vì viết move, move, move, move,
+
+00:02:25.260 --> 00:02:30.580
+chúng ta có thể viết repeat bốn lần move. Jiki sẽ
+
+00:02:30.590 --> 00:02:32.860
+thấy đoạn code đó và dùng
+
+00:02:32.940 --> 00:02:36.870
+cái máy move bốn lần liên tiếp. Và
+
+00:02:36.900 --> 00:02:38.960
+chúng ta cũng không nhất thiết chỉ có một việc
+
+00:02:39.000 --> 00:02:41.800
+trong cặp ngoặc nhọn đó. Jiki có thể
+
+00:02:41.900 --> 00:02:45.320
+lặp đi lặp lại nhiều việc. Chúng ta có thể bảo Jiki
+
+00:02:45.460 --> 00:02:48.080
+move, rồi turnLeft, và lặp lại
+
+00:02:48.120 --> 00:02:51.540
+toàn bộ chừng đó bốn lần. Nếu Jiki thấy
+
+00:02:51.560 --> 00:02:54.000
+đoạn này, cậu ấy sẽ dùng cái máy move, rồi
+
+00:02:54.060 --> 00:02:56.880
+cái máy turnLeft, rồi cái máy move, rồi
+
+00:02:56.920 --> 00:02:59.340
+cái máy turnLeft, rồi cái máy move,
+
+00:02:59.430 --> 00:03:01.720
+vân vân, cho đến khi làm xong cả hai việc
+
+00:03:01.800 --> 00:03:07.160
+bốn lần. Chúng ta gọi những chỉ dẫn lặp này là vòng lặp,
+
+00:03:07.840 --> 00:03:09.540
+và có rất nhiều vòng lặp khác nhau
+
+00:03:09.580 --> 00:03:11.980
+để dùng, mỗi loại hoạt động hơi khác nhau.
+
+00:03:12.000 --> 00:03:15.210
+Chúng ta sẽ tìm hiểu hết trong khóa học này.
+
+00:03:15.220 --> 00:03:17.710
+Còn một điều nữa cần biết,
+
+00:03:17.760 --> 00:03:20.300
+đó là việc giữ code gọn gàng ngăn nắp
+
+00:03:20.480 --> 00:03:24.240
+trở nên thiết yếu khi làm việc với vòng lặp. Khi
+
+00:03:24.280 --> 00:03:26.800
+code của bạn có cấu trúc thị giác tốt,
+
+00:03:26.860 --> 00:03:28.940
+bạn rất dễ thấy điều gì đang diễn ra.
+
+00:03:29.660 --> 00:03:31.740
+Còn nếu không, nếu bạn quên
+
+00:03:31.780 --> 00:03:34.400
+thụt lề cho đẹp hoặc thụt lề
+
+00:03:34.460 --> 00:03:38.630
+lung tung, mọi thứ rối lên rất nhanh. Vì vậy trong
+
+00:03:38.660 --> 00:03:41.500
+khóa học này, chúng ta luôn có một quy tắc.
+
+00:03:41.600 --> 00:03:45.049
+Bạn luôn đặt dấu ngoặc nhọn mở
+
+00:03:45.080 --> 00:03:48.430
+trên cùng dòng với câu lệnh repeat.
+
+00:03:48.430 --> 00:03:50.860
+Bạn luôn đặt dấu ngoặc nhọn đóng trên
+
+00:03:50.940 --> 00:03:54.080
+một dòng riêng sau câu lệnh, và luôn
+
+00:03:54.120 --> 00:03:56.399
+thụt lề đoạn code ở giữa hai dấu ngoặc đó
+
+00:03:56.480 --> 00:04:00.120
+hai dấu cách. Như vậy mọi thứ sẽ luôn gọn gàng,
+
+00:04:01.020 --> 00:04:02.560
+và nếu bạn quên hoặc làm theo
+
+00:04:02.620 --> 00:04:04.360
+kiểu khác, bạn sẽ gặp lỗi đấy.
+
+00:04:06.100 --> 00:04:08.080
+Trong vài bài tập tiếp theo, mục tiêu của bạn là
+
+00:04:08.120 --> 00:04:11.060
+giải một số thử thách bằng
+
+00:04:11.100 --> 00:04:13.720
+càng ít dòng code càng tốt, và
+
+00:04:13.780 --> 00:04:15.320
+bạn có thể dùng vòng lặp repeat để hỗ trợ
+
+00:04:15.380 --> 00:04:18.060
+việc đó. Sau đó, chúng ta sẽ tìm hiểu cách
+
+00:04:18.070 --> 00:04:19.990
+dùng vòng lặp repeat cùng với một số
+
+00:04:20.019 --> 00:04:23.270
+khái niệm khác để bắt đầu thấy những kỹ thuật
+
+00:04:23.320 --> 00:04:25.540
+mạnh mẽ hơn nhiều. Chúc bạn học vui, hẹn gặp lại
+
+00:04:25.580 --> 00:04:26.039
+bạn sớm nhé.

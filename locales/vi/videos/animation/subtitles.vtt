@@ -1,0 +1,195 @@
+WEBVTT
+
+NOTE en_md5 e47167fc1482d0b37cf8c1318d2bbbbb
+
+00:00:00.100 --> 00:00:04.260
+Chào mừng bạn quay lại. Đến giờ, khi dùng vòng lặp
+
+00:00:04.300 --> 00:00:06.910
+repeat (lặp lại) để vẽ, mỗi thứ mới
+
+00:00:06.920 --> 00:00:10.310
+vẽ ra đều thêm một cái gì đó vào bức hình. Nếu
+
+00:00:10.340 --> 00:00:12.360
+chúng ta vẽ thêm một viên gạch vào bức tường
+
+00:00:12.520 --> 00:00:15.840
+thì nó lấp vào một chỗ trống. Nếu chúng ta vẽ 10
+
+00:00:15.900 --> 00:00:18.500
+hình tròn thì trên màn hình hiện ra 10 hình tròn.
+
+00:00:19.300 --> 00:00:22.220
+Nó giống như một bức tranh. Một khi bạn đã sơn
+
+00:00:22.240 --> 00:00:24.580
+lên tường thì chỗ sơn đó không biến mất khi bạn
+
+00:00:24.640 --> 00:00:26.440
+vẽ thêm thứ gì khác bên cạnh. Nó vẫn
+
+00:00:26.480 --> 00:00:30.320
+ở đó. Nhưng nếu chúng ta muốn làm cho
+
+00:00:30.380 --> 00:00:33.980
+thứ gì đó trông như đang di chuyển thì sao? Bạn đã bao giờ
+
+00:00:34.000 --> 00:00:36.150
+thấy một cuốn sách lật chưa? Loại sách này rất phổ biến
+
+00:00:36.160 --> 00:00:38.339
+hồi mình còn nhỏ, còn bây giờ thì ít hơn.
+
+00:00:38.380 --> 00:00:40.640
+Sách lật là một cuốn sách nhỏ mà mỗi
+
+00:00:40.680 --> 00:00:44.440
+trang có một hình vẽ hơi khác nhau. Khi bạn
+
+00:00:44.540 --> 00:00:47.640
+lật các trang thật nhanh, mắt bạn thấy
+
+00:00:47.720 --> 00:00:51.170
+hình vẽ thay đổi, và não bạn nghĩ rằng có thứ gì đó
+
+00:00:51.340 --> 00:00:54.020
+đang chuyển động. Thật ra nó không hề chuyển động. Đó chỉ là rất nhiều
+
+00:00:54.060 --> 00:00:58.530
+bức hình hơi khác nhau, nối tiếp nhau. Và
+
+00:00:58.560 --> 00:01:02.400
+hoạt ảnh trong code cũng hoạt động đúng như vậy.
+
+00:01:02.589 --> 00:01:05.500
+Mẹo giống hệt nhau. Trước khi vẽ
+
+00:01:05.560 --> 00:01:08.920
+một cảnh mới, chúng ta tô phủ toàn bộ
+
+00:01:08.960 --> 00:01:11.920
+khung vẽ bằng một màu nền, hơi giống như
+
+00:01:11.960 --> 00:01:14.400
+mở một trang mới trong cuốn sách lật của mình,
+
+00:01:15.320 --> 00:01:18.140
+rồi sau đó thay đổi cảnh một chút
+
+00:01:18.180 --> 00:01:21.740
+để trông như đang chuyển động. Vậy nếu
+
+00:01:21.780 --> 00:01:24.040
+lấy một khối lệnh quen thuộc, trong đó
+
+00:01:24.080 --> 00:01:27.520
+chúng ta vẽ các hình tròn ngang màn hình, ta
+
+00:01:27.560 --> 00:01:29.820
+đặt một biến position (vị trí), và có một
+
+00:01:29.840 --> 00:01:31.900
+khối repeat, trong đó ta vẽ một hình tròn
+
+00:01:31.940 --> 00:01:33.640
+rồi dịch position sang phải một đơn vị.
+
+00:01:34.680 --> 00:01:37.110
+Nếu chạy khối repeat đó 100 lần,
+
+00:01:37.500 --> 00:01:39.940
+chúng ta sẽ thấy 100 hình tròn trải ngang
+
+00:01:39.960 --> 00:01:43.320
+màn hình. Giờ hãy xem điều gì xảy ra nếu
+
+00:01:43.340 --> 00:01:47.440
+mỗi lần trước khi vẽ hình tròn, chúng ta
+
+00:01:47.500 --> 00:01:51.260
+thêm vào một hình chữ nhật đơn giản. Thay vì một vệt
+
+00:01:51.300 --> 00:01:54.210
+các hình tròn, mắt chúng ta giờ bị đánh lừa và thấy
+
+00:01:54.380 --> 00:01:57.440
+một hình tròn như đang lướt ngang
+
+00:01:57.520 --> 00:02:01.000
+màn hình. Mỗi lần đi qua vòng lặp,
+
+00:02:01.020 --> 00:02:04.060
+chúng ta tô một nền hoàn toàn mới, che đi
+
+00:02:04.260 --> 00:02:06.860
+mọi thứ đã có trước đó, rồi vẽ
+
+00:02:06.960 --> 00:02:11.120
+hình tròn ở vị trí mới của nó. Mỗi
+
+00:02:11.200 --> 00:02:14.540
+lần lặp giống như một
+
+00:02:14.600 --> 00:02:17.720
+trang mới trong cuốn sách lật. Và điều
+
+00:02:17.740 --> 00:02:19.570
+quan trọng cần hiểu ở đây là chúng ta không hề
+
+00:02:19.640 --> 00:02:22.390
+di chuyển hình tròn. Hình tròn không phải một vật thể
+
+00:02:22.400 --> 00:02:25.250
+trượt ngang màn hình. Nó chỉ là một hình vẽ. Mỗi
+
+00:02:25.340 --> 00:02:27.220
+lần lặp, chúng ta tô đè lên
+
+00:02:27.280 --> 00:02:29.350
+hình vẽ cũ và tạo ra một hình vẽ hoàn toàn mới,
+
+00:02:29.980 --> 00:02:32.120
+nhích sang phải một chút. Mắt bạn ghép
+
+00:02:32.180 --> 00:02:35.280
+tất cả lại và thấy chuyển động, nhưng thật ra đó
+
+00:02:35.360 --> 00:02:38.390
+chỉ là rất nhiều hình vẽ riêng lẻ, nối tiếp nhau.
+
+00:02:40.080 --> 00:02:42.160
+Trong bài tập tiếp theo, bạn sẽ dùng
+
+00:02:42.200 --> 00:02:45.420
+ý tưởng này để tạo ra một cảnh hoàng hôn. Bạn sẽ cho
+
+00:02:45.460 --> 00:02:47.829
+mặt trời di chuyển, đổi kích thước, đổi
+
+00:02:47.880 --> 00:02:50.100
+màu sắc. Tất cả đều là cùng một kỹ thuật. Đặt vài
+
+00:02:50.220 --> 00:02:53.900
+biến, tô một nền mới, rồi vẽ mọi thứ.
+
+00:02:53.940 --> 00:02:57.190
+Cập nhật các biến, rồi lặp lại. Và nếu
+
+00:02:57.240 --> 00:02:59.170
+bạn là thành viên Premium, khi hoàn thành
+
+00:02:59.170 --> 00:03:01.750
+bài hoàng hôn, bạn còn mở khóa được một
+
+00:03:01.800 --> 00:03:05.860
+dự án phức tạp hơn tên là "Bông hoa nảy mầm", nơi bạn có thể
+
+00:03:05.940 --> 00:03:08.180
+thật sự thử thách bản thân bằng cách kết hợp tất cả
+
+00:03:08.220 --> 00:03:11.360
+những điều này lại với nhau. Dự án đó vui lắm. Chúc
+
+00:03:11.400 --> 00:03:13.240
+bạn may mắn, hẹn gặp lại bạn ở đây sớm nhé.

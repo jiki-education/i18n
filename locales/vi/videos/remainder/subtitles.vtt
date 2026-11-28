@@ -1,0 +1,306 @@
+WEBVTT
+
+NOTE en_md5 b4eb2e2746e8dbff369b3b0fac465f74
+
+00:00:00.160 --> 00:00:03.900
+Chào mừng bạn quay lại. Đến giờ, chúng ta đã dùng phép cộng, phép trừ,
+
+00:00:03.980 --> 00:00:07.760
+phép nhân và phép chia khi làm toán.
+
+00:00:08.800 --> 00:00:11.400
+Trong video này, chúng ta sẽ làm quen thêm một toán tử nữa,
+
+00:00:11.660 --> 00:00:16.940
+đó là toán tử chia lấy dư. Toán tử chia lấy dư có nhiệm vụ
+
+00:00:17.020 --> 00:00:21.060
+cho bạn số dư, đúng như tên gọi, khi bạn
+
+00:00:21.140 --> 00:00:24.120
+chia hai số, và chúng ta viết nó bằng
+
+00:00:24.200 --> 00:00:27.980
+dấu phần trăm. Vậy nếu viết 10
+
+00:00:28.000 --> 00:00:31.480
+phần trăm 4, là chúng ta đang hỏi:
+
+00:00:31.540 --> 00:00:34.340
+"Chia 10 cho 4 thì còn thừa lại bao nhiêu?"
+
+00:00:35.020 --> 00:00:37.890
+Câu trả lời là hai. Hãy tưởng tượng bạn có
+
+00:00:37.960 --> 00:00:40.629
+10 viên kẹo, hay hạt gì đó cũng được, và
+
+00:00:40.640 --> 00:00:42.700
+bạn muốn chia đều cho bốn
+
+00:00:42.800 --> 00:00:46.390
+người. Mỗi người được hai viên, và rồi
+
+00:00:46.440 --> 00:00:48.500
+cuối cùng còn thừa lại hai viên. Và
+
+00:00:48.700 --> 00:00:51.360
+phần thừa lại đó chính là số dư. Đó là thứ
+
+00:00:51.400 --> 00:00:54.750
+mà dấu phần trăm này cho bạn. Một
+
+00:00:54.780 --> 00:00:56.840
+lý do khiến chúng ta dùng toán tử này khá thường xuyên
+
+00:00:56.860 --> 00:00:59.500
+khi lập trình là nó cho biết
+
+00:00:59.560 --> 00:01:02.360
+một số có chia hết hay không, và cách dùng
+
+00:01:02.420 --> 00:01:04.490
+phổ biến nhất mà bạn sẽ thấy là
+
+00:01:04.580 --> 00:01:06.220
+kiểm tra xem một số là chẵn
+
+00:01:06.280 --> 00:01:09.900
+hay lẻ. Như bạn biết đấy, số chẵn
+
+00:01:09.960 --> 00:01:13.620
+đều chia hết cho hai. Số lẻ thì
+
+00:01:13.740 --> 00:01:15.580
+khi chia cho hai luôn còn dư một.
+
+00:01:17.660 --> 00:01:19.500
+Vậy nếu bạn lấy bốn, sáu hay
+
+00:01:19.580 --> 00:01:21.620
+tám, chia cho hai
+
+00:01:21.680 --> 00:01:23.800
+thì đều không còn dư. Còn năm,
+
+00:01:23.840 --> 00:01:26.140
+bảy hay chín, chia cho
+
+00:01:26.180 --> 00:01:27.780
+hai thì lúc nào cũng còn dư một.
+
+00:01:27.820 --> 00:01:31.420
+Vậy khi viết if something phần trăm
+
+00:01:31.840 --> 00:01:36.300
+2 bằng 0, chúng ta đang hỏi: "Số này
+
+00:01:36.600 --> 00:01:39.560
+có phải số chẵn không?" Điều đó hữu ích
+
+00:01:39.600 --> 00:01:43.100
+cho rất nhiều thứ. Hãy tưởng tượng bạn tạo những sọc
+
+00:01:43.620 --> 00:01:46.180
+có màu khác nhau, hay chia đôi
+
+00:01:46.220 --> 00:01:49.260
+một hàng người, cho mỗi người rẽ sang một trong hai hướng
+
+00:01:49.320 --> 00:01:52.240
+khi họ đi về phía bạn. Một điều
+
+00:01:52.300 --> 00:01:54.020
+cần lưu ý: bạn có thể nghe người ta gọi
+
+00:01:54.080 --> 00:01:58.480
+từ khóa số dư này là toán tử modulo.
+
+00:01:58.520 --> 00:02:02.280
+Modulo và số dư cơ bản là một. Có
+
+00:02:02.340 --> 00:02:04.440
+vài khác biệt nhỏ mà có lẽ bạn
+
+00:02:04.460 --> 00:02:07.900
+chẳng bao giờ cần bận tâm, nên tạm thời
+
+00:02:07.940 --> 00:02:10.120
+chúng ta cứ coi nó là toán tử chia lấy dư,
+
+00:02:10.240 --> 00:02:13.520
+vì như vậy dễ hiểu hơn nhiều. Được rồi, điều thứ hai
+
+00:02:13.560 --> 00:02:16.860
+trong video này. Đến giờ, khi so sánh
+
+00:02:16.900 --> 00:02:20.020
+hai thứ để xem chúng có bằng nhau không, chúng ta đã dùng
+
+00:02:20.060 --> 00:02:23.940
+ba dấu bằng. Nhưng đôi khi, chúng ta muốn
+
+00:02:23.980 --> 00:02:26.980
+kiểm tra xem hai thứ có khác nhau không, và
+
+00:02:27.100 --> 00:02:30.020
+để làm vậy, chúng ta dùng một dấu chấm than theo sau là
+
+00:02:30.100 --> 00:02:33.400
+hai dấu bằng. Và nhìn chung, trong lập trình,
+
+00:02:33.480 --> 00:02:36.260
+dấu chấm than, hay bang, như mình nghĩ
+
+00:02:36.320 --> 00:02:40.480
+bạn bè Mỹ vẫn gọi, có nghĩa là not. Vậy thử tưởng tượng
+
+00:02:40.520 --> 00:02:42.480
+bạn làm việc trong một cửa hàng, và ban quản lý
+
+00:02:42.540 --> 00:02:45.840
+quyết định không cho ai ăn mặc kiểu disco
+
+00:02:45.880 --> 00:02:49.680
+bước vào. Chúng ta có thể nói: "Nếu trang phục
+
+00:02:49.760 --> 00:02:53.940
+không phải đồ disco thì mở cửa." Câu lệnh if
+
+00:02:54.020 --> 00:02:57.250
+hoạt động y hệt như vậy. Chỉ có điều là
+
+00:02:57.320 --> 00:03:00.420
+điều kiện trả về đúng nếu hai thứ
+
+00:03:00.600 --> 00:03:03.880
+khác nhau, và trả về sai nếu chúng
+
+00:03:03.940 --> 00:03:06.820
+giống nhau. Vậy nên chúng ta có thể viết y hệt ý đó
+
+00:03:06.880 --> 00:03:09.260
+bằng cách nói: "Nếu trang phục là đồ disco
+
+00:03:09.660 --> 00:03:13.150
+thì không làm gì cả. Ngược lại thì mở cửa." Nhưng nhìn chung,
+
+00:03:13.300 --> 00:03:16.160
+dùng toán tử not thì dễ hơn
+
+00:03:16.280 --> 00:03:19.060
+và gọn hơn, giúp bạn thực sự hiểu và nói đúng điều
+
+00:03:19.100 --> 00:03:22.540
+mình muốn. Được rồi, còn một điều nữa, liên quan
+
+00:03:22.549 --> 00:03:24.760
+đến thứ chúng ta vừa xem, nhưng hơi
+
+00:03:24.800 --> 00:03:29.049
+khác một chút. Đôi khi bạn sẽ có một biến đang là
+
+00:03:29.120 --> 00:03:31.620
+đúng, và bạn muốn lật nó thành
+
+00:03:31.680 --> 00:03:34.480
+sai, hoặc bạn có một thứ đang là sai,
+
+00:03:34.960 --> 00:03:36.220
+và bạn muốn lật nó thành
+
+00:03:36.260 --> 00:03:38.780
+đúng. Chúng ta có thể dùng điều này để theo
+
+00:03:38.880 --> 00:03:41.940
+dõi một thứ gì đó. Vậy thử tưởng tượng chúng ta có một thứ
+
+00:03:42.040 --> 00:03:44.120
+nảy từ trái sang phải, và có
+
+00:03:44.180 --> 00:03:48.079
+một biến tên là movingRight, biến này là đúng khi
+
+00:03:48.120 --> 00:03:51.420
+bạn cần đi sang phải. Nhưng khi
+
+00:03:51.460 --> 00:03:53.150
+chạm mép phải, bạn lại muốn
+
+00:03:53.180 --> 00:03:57.040
+chuyển đổi nó thành sai. Vậy là chúng ta có thể
+
+00:03:57.100 --> 00:04:01.300
+làm điều này bằng cách nói: "Nếu movingRight bằng đúng
+
+00:04:01.900 --> 00:04:06.430
+thì movingRight bằng sai. Ngược lại, movingRight bằng đúng." Đó là
+
+00:04:06.440 --> 00:04:08.940
+một cách chuyển đổi biến. Jiki
+
+00:04:08.980 --> 00:04:11.450
+sẽ nhìn vào movingRight để xem nó là
+
+00:04:11.480 --> 00:04:14.220
+đúng hay sai, rồi tính ra
+
+00:04:14.280 --> 00:04:16.480
+giá trị ngược lại và đặt giá trị đó trở lại
+
+00:04:16.500 --> 00:04:19.780
+trong hộp. Nhưng có một cách gọn gàng hơn để
+
+00:04:19.820 --> 00:04:22.100
+làm việc này, đó là dùng chính
+
+00:04:22.120 --> 00:04:24.960
+dấu chấm than, hay bang, mà chúng ta vừa thấy.
+
+00:04:26.020 --> 00:04:30.780
+Chúng ta có thể viết movingRight bằng not movingRight, và
+
+00:04:30.800 --> 00:04:34.640
+thế là nó lật giá trị. Not movingRight nghĩa là giá trị ngược lại
+
+00:04:34.680 --> 00:04:37.650
+với bất cứ thứ gì trước đó. Vậy nếu movingRight trước đó
+
+00:04:37.700 --> 00:04:40.860
+là đúng thì giờ nó là sai. Nếu trước đó là sai
+
+00:04:41.280 --> 00:04:44.220
+thì giờ nó là đúng. Jiki lấy thứ đang nằm
+
+00:04:44.240 --> 00:04:47.960
+trong hộp, và dấu chấm than đó bảo cậu ấy
+
+00:04:48.000 --> 00:04:49.860
+tìm giá trị ngược lại. Ngược của đúng
+
+00:04:49.920 --> 00:04:51.840
+là sai. Ngược của sai là đúng,
+
+00:04:52.640 --> 00:04:53.820
+rồi cậu ấy đặt nó trở lại
+
+00:04:53.860 --> 00:04:57.100
+trong hộp. Cách này giống hệt
+
+00:04:57.220 --> 00:05:00.060
+câu lệnh if else dài dòng kia, nhưng
+
+00:05:00.140 --> 00:05:03.650
+viết gọn và súc tích hơn nhiều. Trong
+
+00:05:03.680 --> 00:05:06.260
+các bài tập tiếp theo, bạn sẽ dùng những
+
+00:05:06.300 --> 00:05:08.420
+thứ mới này, cùng với mọi thứ khác bạn đã biết.
+
+00:05:09.340 --> 00:05:10.680
+Chúc bạn vui vẻ với chúng, và hẹn gặp lại bạn
+
+00:05:10.720 --> 00:05:11.420
+ở đây sau ít phút nhé.

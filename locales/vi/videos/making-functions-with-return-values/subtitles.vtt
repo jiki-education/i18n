@@ -1,0 +1,189 @@
+WEBVTT
+
+NOTE en_md5 f4b6546cdc3ad8dde1f9b6b1f3ff5008
+
+00:00:00.120 --> 00:00:02.660
+Chào mừng bạn quay lại. Giờ bạn đã biết cách
+
+00:00:02.740 --> 00:00:06.640
+tạo hàm có đầu vào và không có đầu vào. Chỉ còn một
+
+00:00:06.780 --> 00:00:08.480
+điều cuối cùng cần học nữa thôi, và sau đó bạn sẽ
+
+00:00:08.520 --> 00:00:11.780
+trở thành chuyên gia tạo hàm. Đó là
+
+00:00:11.860 --> 00:00:14.160
+cách cho hàm của bạn một máng trượt.
+
+00:00:15.000 --> 00:00:17.020
+Bạn đã dùng rất nhiều hàm trả về
+
+00:00:17.060 --> 00:00:20.400
+giá trị rồi. isAlienAbove trả về cho bạn đúng hoặc sai.
+
+00:00:20.500 --> 00:00:24.940
+Math.randomInt(1, 10) trả về cho bạn một số ngẫu nhiên.
+
+00:00:26.100 --> 00:00:28.780
+Khi Jiki dùng những hàm đó, có thứ gì đó nhảy
+
+00:00:28.860 --> 00:00:30.980
+ra từ máng trượt đầu ra, và cậu ấy có thể
+
+00:00:31.000 --> 00:00:34.180
+lấy nó để dùng. Vậy nên để làm được điều đó,
+
+00:00:34.220 --> 00:00:36.890
+chúng ta cần thêm một từ khóa mới, đó là
+
+00:00:36.920 --> 00:00:40.900
+từ khóa return. Từ khóa return bảo Mini
+
+00:00:40.980 --> 00:00:43.320
+Jiki đẩy một thứ gì đó ra khỏi máng
+
+00:00:43.330 --> 00:00:46.230
+trượt. Vậy chúng ta cùng tạo một hàm,
+
+00:00:46.260 --> 00:00:48.760
+đặt tên là meaningOfLife. Công việc của hàm này
+
+00:00:48.920 --> 00:00:51.089
+luôn luôn chỉ là trả về số
+
+00:00:51.360 --> 00:00:54.200
+42. Nó không có đầu vào nào. Vậy bạn
+
+00:00:54.240 --> 00:00:58.839
+có thể viết function meaningOfLife, dấu ngoặc nhọn,
+
+00:00:58.879 --> 00:01:02.339
+rồi một dòng bên trong hàm đó là return
+
+00:01:02.399 --> 00:01:06.539
+42. Dòng đó bảo Mini Jiki đẩy
+
+00:01:06.579 --> 00:01:09.539
+số 42 qua máng trượt rồi
+
+00:01:09.679 --> 00:01:13.559
+dừng lại. Điều này rất quan trọng. Từ khóa return
+
+00:01:13.659 --> 00:01:17.079
+bảo Mini Jiki làm hai việc. Thứ nhất,
+
+00:01:17.500 --> 00:01:19.639
+đặt một thứ gì đó vào máng trượt, và
+
+00:01:19.779 --> 00:01:22.779
+thứ hai, sau đó dừng lại. Ngay khi bạn
+
+00:01:22.920 --> 00:01:26.579
+dùng từ khóa return, hàm sẽ kết thúc. Mini Jiki
+
+00:01:26.619 --> 00:01:30.059
+sẽ không làm gì thêm nữa. Nhân tiện, nếu bạn chưa
+
+00:01:30.139 --> 00:01:32.540
+biết "ý nghĩa của sự sống" ám chỉ điều gì, thì nó đến từ
+
+00:01:32.579 --> 00:01:34.880
+một cuốn sách nổi tiếng, giờ đã thành phim, tên là
+
+00:01:34.899 --> 00:01:37.840
+The Hitchhiker's Guide to the Galaxy. Mình khuyên bạn
+
+00:01:37.879 --> 00:01:39.819
+nên đọc thử. Còn bây giờ, bạn không cần bận tâm
+
+00:01:39.860 --> 00:01:43.799
+quá nhiều về ý nghĩa của số 42 đâu. Cùng
+
+00:01:43.879 --> 00:01:47.819
+xem một ví dụ phức tạp hơn một chút, trong đó
+
+00:01:47.879 --> 00:01:50.439
+chúng ta có một hàm vừa có đầu vào
+
+00:01:50.520 --> 00:01:52.479
+vừa có máng trượt. Chúng ta vẫn dùng
+
+00:01:52.539 --> 00:01:54.520
+ý tưởng cũ, một hàm tên là meaningOfLife,
+
+00:01:54.599 --> 00:01:57.239
+và lần này nó có một khe
+
+00:01:57.299 --> 00:02:00.439
+tên là age. Nếu ai đó từ 18 tuổi trở lên,
+
+00:02:00.559 --> 00:02:01.839
+thì chúng ta sẽ nói với họ rằng ý nghĩa của
+
+00:02:01.939 --> 00:02:05.639
+sự sống là 42. Nếu không, chúng ta chỉ trả về
+
+00:02:05.699 --> 00:02:09.019
+chuỗi "Sorry, too young". Phần định nghĩa hàm
+
+00:02:09.059 --> 00:02:12.679
+rất giống trước. function meaningOfLife, rồi
+
+00:02:12.699 --> 00:02:15.379
+khe age trong dấu ngoặc đơn, rồi
+
+00:02:15.419 --> 00:02:18.339
+một dấu ngoặc nhọn. Nhưng giờ chúng ta cần một
+
+00:02:18.400 --> 00:02:20.459
+câu lệnh if bên trong để có thể nói rằng:
+
+00:02:20.619 --> 00:02:23.019
+"Nếu age lớn hơn hoặc bằng
+
+00:02:23.080 --> 00:02:27.499
+18 thì trả về 42. Nếu không thì trả về 'Sorry,
+
+00:02:27.540 --> 00:02:30.719
+too young'." Giờ nếu chúng ta dùng hàm đó
+
+00:02:30.779 --> 00:02:33.759
+bằng cách viết meaningOfLife(15), chúng ta sẽ nhận lại
+
+00:02:33.799 --> 00:02:37.119
+chuỗi "Sorry, too young". Còn nếu
+
+00:02:37.220 --> 00:02:40.060
+dùng meaningOfLife(30), chúng ta sẽ nhận
+
+00:02:40.100 --> 00:02:43.800
+lại số 42. Đây chính là cách
+
+00:02:43.820 --> 00:02:46.800
+lập trình vận hành ở tầng cốt lõi. Chúng ta tạo ra thật nhiều
+
+00:02:46.900 --> 00:02:49.360
+khối nhỏ như thế, rồi ghép
+
+00:02:49.370 --> 00:02:52.960
+chúng lại thành chương trình. Giờ mình sẽ cho bạn
+
+00:02:53.140 --> 00:02:55.190
+làm liền một loạt bài tập. Có lẽ đây là
+
+00:02:55.220 --> 00:02:57.700
+loạt bài dài nhất bạn từng gặp. Các bài này sẽ
+
+00:02:57.780 --> 00:03:00.600
+dùng mọi thứ bạn vừa học ở đây cùng với nhiều
+
+00:03:00.640 --> 00:03:04.120
+điều khác chúng ta đã học trước đó. Chúc bạn học vui nhé.
+
+00:03:04.560 --> 00:03:05.960
+Chúc may mắn, lát nữa mình gặp lại bạn
+
+00:03:06.000 --> 00:03:06.310
+ở đây nhé.

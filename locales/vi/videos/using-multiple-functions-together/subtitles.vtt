@@ -1,0 +1,177 @@
+WEBVTT
+
+NOTE en_md5 a59a1b57ba6073109ec594f8e88d8ef2
+
+00:00:00.000 --> 00:00:03.662
+Chào mừng bạn quay lại. Đến giờ, khi bạn viết hàm,
+
+00:00:04.173 --> 00:00:06.032
+mỗi hàm gần như tự đứng
+
+00:00:06.113 --> 00:00:08.353
+một mình và chứa toàn bộ phần logic
+
+00:00:08.373 --> 00:00:11.003
+cần thiết để hoạt động. Trong bài này,
+
+00:00:11.033 --> 00:00:13.453
+chúng ta sẽ xem cách chia nhỏ hàm ra,
+
+00:00:13.473 --> 00:00:16.493
+để có những hàm nhỏ hơn làm việc cùng nhau,
+
+00:00:16.563 --> 00:00:18.893
+thay vì những hàm to ôm đồm
+
+00:00:18.953 --> 00:00:22.253
+đủ thứ. Trong lập trình có một nguyên tắc chung:
+
+00:00:22.293 --> 00:00:24.313
+bạn muốn mỗi hàm làm
+
+00:00:24.413 --> 00:00:27.533
+ít nhất có thể. Chúng ta gọi đó là
+
+00:00:27.713 --> 00:00:31.333
+hàm có trách nhiệm duy nhất. Mỗi hàm chỉ nên làm một
+
+00:00:31.413 --> 00:00:34.113
+việc, và dùng các hàm khác cho
+
+00:00:34.253 --> 00:00:36.913
+những phần nhỏ bên trong việc đó. Vậy cùng xem
+
+00:00:36.953 --> 00:00:40.393
+một ví dụ nhé. Hãy tưởng tượng chúng ta có một hàm
+
+00:00:40.433 --> 00:00:43.613
+nhận nhiệm vụ trả về một chuỗi
+
+00:00:43.653 --> 00:00:46.193
+mô tả một cái tên. Bản đơn giản sẽ trông
+
+00:00:46.233 --> 00:00:48.893
+như thế này. Chúng ta có một vòng lặp đếm,
+
+00:00:48.933 --> 00:00:52.033
+thứ mà bạn đã viết rồi, sau đó là một template chuỗi
+
+00:00:52.073 --> 00:00:55.553
+ghép kết quả lại. Cách này chạy
+
+00:00:55.573 --> 00:00:58.023
+tốt, nhưng nó đang làm hai việc.
+
+00:00:58.113 --> 00:01:01.723
+Một việc khá chung chung là đếm, và một việc rất
+
+00:01:01.893 --> 00:01:04.873
+cụ thể là dựng nên chuỗi này
+
+00:01:04.893 --> 00:01:09.102
+theo một định dạng nhất định. Sẽ hay hơn nhiều nếu tách
+
+00:01:09.133 --> 00:01:12.263
+nó thành hai hàm: một hàm lo
+
+00:01:12.293 --> 00:01:15.893
+việc đếm, một hàm lo việc mô tả
+
+00:01:15.903 --> 00:01:19.133
+cái tên theo đúng định dạng này. Và sau đó
+
+00:01:19.173 --> 00:01:23.323
+chúng ta có thể dùng lại hàm đếm chung chung đó
+
+00:01:23.333 --> 00:01:27.083
+trong việc định dạng chuỗi này, mà còn ở bất kỳ
+
+00:01:27.173 --> 00:01:29.412
+chỗ nào khác cần đến. Mỗi khi cần đếm
+
+00:01:29.473 --> 00:01:32.333
+chữ cái trong một chuỗi, hàm đó hoàn toàn tách khỏi
+
+00:01:32.393 --> 00:01:35.633
+mọi thứ liên quan đến việc in ra.
+
+00:01:35.653 --> 00:01:39.813
+Bạn có thể đọc riêng từng hàm và hiểu ngay
+
+00:01:39.873 --> 00:01:43.153
+mỗi hàm làm gì. Khi hàm của bạn
+
+00:01:43.193 --> 00:01:45.203
+ngày càng phức tạp và bạn có nhiều
+
+00:01:45.203 --> 00:01:47.513
+hàm hơn, kỹ thuật này chính là
+
+00:01:47.573 --> 00:01:51.793
+khác biệt giữa code gọn gàng, dễ đọc
+
+00:01:52.013 --> 00:01:54.833
+với một mớ lộn xộn, rối rắm. Có một điều
+
+00:01:54.853 --> 00:01:56.553
+mình đã nói qua vài lần rồi,
+
+00:01:56.593 --> 00:01:58.793
+nhưng mình muốn nhắc lại ở đây:
+
+00:01:58.853 --> 00:02:02.213
+bất cứ thứ gì bạn tạo ra bên trong một hàm
+
+00:02:02.253 --> 00:02:05.933
+thì các hàm khác không truy cập được, trừ khi bạn cố ý
+
+00:02:05.973 --> 00:02:09.313
+trả về nó. Vậy nên nếu bạn thử tham chiếu
+
+00:02:09.333 --> 00:02:14.053
+biến count từ bên trong describeName
+
+00:02:14.113 --> 00:02:15.763
+thì không được, vì nó thuộc về
+
+00:02:15.833 --> 00:02:19.633
+hàm kia. Trong JavaScript, chúng ta có thể tạo
+
+00:02:19.693 --> 00:02:22.553
+biến ở trên cùng, phía trên mọi thứ,
+
+00:02:22.613 --> 00:02:25.713
+để các hàm dùng chung, nhưng mình thật sự khuyên bạn
+
+00:02:25.873 --> 00:02:27.973
+đừng làm vậy trừ khi có lý do
+
+00:02:27.993 --> 00:02:32.193
+rất chính đáng. Bạn càng giữ cho mỗi hàm độc lập,
+
+00:02:32.253 --> 00:02:34.253
+và từ kỹ thuật để chỉ điều đó là thuần túy,
+
+00:02:34.553 --> 00:02:38.393
+tức là hàm thuần túy, thì code của bạn sẽ càng sạch,
+
+00:02:38.413 --> 00:02:40.493
+và bạn sẽ tạo ra và gặp
+
+00:02:40.533 --> 00:02:42.763
+càng ít lỗi hơn. Trong vài bài tập tới,
+
+00:02:42.773 --> 00:02:45.213
+bạn sẽ viết những hàm làm việc cùng nhau để
+
+00:02:45.313 --> 00:02:48.613
+giải quyết bài toán, hàm này gọi hàm kia, mỗi hàm
+
+00:02:48.693 --> 00:02:51.613
+làm một việc nhỏ của riêng nó. Bạn cứ thong thả
+
+00:02:51.633 --> 00:02:53.113
+làm nhé, hẹn gặp lại bạn ở đây
+
+00:02:53.153 --> 00:02:53.433
+sớm thôi.
