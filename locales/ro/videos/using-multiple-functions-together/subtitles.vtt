@@ -1,0 +1,177 @@
+WEBVTT
+
+NOTE en_md5 a59a1b57ba6073109ec594f8e88d8ef2
+
+00:00:00.000 --> 00:00:03.662
+Bine ai revenit. Până acum, când ai scris funcții,
+
+00:00:04.173 --> 00:00:06.032
+fiecare s-a descurcat cam
+
+00:00:06.113 --> 00:00:08.353
+de una singură și a conținut toată logica
+
+00:00:08.373 --> 00:00:11.003
+de care avea nevoie ca să funcționeze. În lecția asta,
+
+00:00:11.033 --> 00:00:13.453
+hai să vedem cum să împărțim funcțiile, astfel
+
+00:00:13.473 --> 00:00:16.493
+încât să avem funcții mai mici care lucrează împreună,
+
+00:00:16.563 --> 00:00:18.893
+în loc de funcții mari în care se întâmplă
+
+00:00:18.953 --> 00:00:22.253
+o mulțime de lucruri. Ca regulă generală în programare,
+
+00:00:22.293 --> 00:00:24.313
+vrei ca fiecare funcție să facă
+
+00:00:24.413 --> 00:00:27.533
+minimul posibil. Asta înseamnă ca o funcție să aibă
+
+00:00:27.713 --> 00:00:31.333
+o responsabilitate unică. Fiecare funcție ar trebui să facă un singur
+
+00:00:31.413 --> 00:00:34.113
+lucru și să folosească alte funcții pentru diferitele
+
+00:00:34.253 --> 00:00:36.913
+sub-părți ale acestuia. Hai să vedem un
+
+00:00:36.953 --> 00:00:40.393
+exemplu. Imaginează-ți că avem o funcție al cărei rol
+
+00:00:40.433 --> 00:00:43.613
+este să returneze un string care descrie
+
+00:00:43.653 --> 00:00:46.193
+un nume. O variantă simplă ar arăta
+
+00:00:46.233 --> 00:00:48.893
+așa. Avem o buclă de numărare, ceva
+
+00:00:48.933 --> 00:00:52.033
+ce ai mai scris deja, și apoi un șablon de string
+
+00:00:52.073 --> 00:00:55.553
+care pune rezultatul cap la cap. Funcționează
+
+00:00:55.573 --> 00:00:58.023
+bine, dar face două lucruri. Face
+
+00:00:58.113 --> 00:01:01.723
+un lucru destul de generic, numărătoarea, și altul foarte
+
+00:01:01.893 --> 00:01:04.873
+specific, construiește acest string într-un
+
+00:01:04.893 --> 00:01:09.102
+anumit format. Ar fi mult mai frumos să împărțim
+
+00:01:09.133 --> 00:01:12.263
+asta în două funcții: una responsabilă cu
+
+00:01:12.293 --> 00:01:15.893
+numărarea și una responsabilă cu descrierea
+
+00:01:15.903 --> 00:01:19.133
+unui nume în acest format anume. Și
+
+00:01:19.173 --> 00:01:23.323
+apoi putem refolosi acea funcție generică de numărare în
+
+00:01:23.333 --> 00:01:27.083
+formatarea acestui string, dar și în orice alt
+
+00:01:27.173 --> 00:01:29.412
+loc unde avem nevoie. Ori de câte ori trebuie să numărăm
+
+00:01:29.473 --> 00:01:32.333
+literele dintr-un string, funcția e complet separată de
+
+00:01:32.393 --> 00:01:35.633
+orice ține de afișare. Poți
+
+00:01:35.653 --> 00:01:39.813
+citi ambele funcții separat și înțelegi imediat
+
+00:01:39.873 --> 00:01:43.153
+ce face fiecare. Pe măsură ce funcțiile tale
+
+00:01:43.193 --> 00:01:45.203
+devin mai complexe și ai tot mai
+
+00:01:45.203 --> 00:01:47.513
+multe, această tehnică face
+
+00:01:47.573 --> 00:01:51.793
+diferența între cod curat și ușor de citit
+
+00:01:52.013 --> 00:01:54.833
+și haos total. Mai e un lucru
+
+00:01:54.853 --> 00:01:56.553
+pe care l-am atins de câteva ori, dar
+
+00:01:56.593 --> 00:01:58.793
+vreau să-l amintesc din nou aici, și anume
+
+00:01:58.853 --> 00:02:02.213
+că nimic din ce creezi în interiorul unei funcții nu
+
+00:02:02.253 --> 00:02:05.933
+poate fi accesat de alte funcții decât dacă îl
+
+00:02:05.973 --> 00:02:09.313
+returnezi în mod deliberat. Deci dacă încerci să faci referire
+
+00:02:09.333 --> 00:02:14.053
+la variabila count din interiorul lui describeName, nu
+
+00:02:14.113 --> 00:02:15.763
+poți, pentru că ea aparține
+
+00:02:15.833 --> 00:02:19.633
+celeilalte funcții. În JavaScript, putem crea
+
+00:02:19.693 --> 00:02:22.553
+variabile sus, deasupra tuturor, care sunt
+
+00:02:22.613 --> 00:02:25.713
+partajate între funcții, dar îți recomand insistent
+
+00:02:25.873 --> 00:02:27.973
+să nu faci asta decât dacă există un motiv
+
+00:02:27.993 --> 00:02:32.193
+foarte bun. Cu cât păstrezi fiecare funcție independentă,
+
+00:02:32.253 --> 00:02:34.253
+iar cuvântul tehnic pentru asta este pură,
+
+00:02:34.553 --> 00:02:38.393
+adică funcții pure, cu atât codul tău va fi mai curat
+
+00:02:38.413 --> 00:02:40.493
+și vei crea și vei avea mai puține
+
+00:02:40.533 --> 00:02:42.763
+bug-uri. În următoarele exerciții,
+
+00:02:42.773 --> 00:02:45.213
+vei scrie funcții care lucrează împreună ca să
+
+00:02:45.313 --> 00:02:48.613
+rezolve probleme, o funcție apelând-o pe alta, fiecare
+
+00:02:48.693 --> 00:02:51.613
+făcându-și propria treabă mică. Nu te grăbi
+
+00:02:51.633 --> 00:02:53.113
+cu ele, și ne vedem aici
+
+00:02:53.153 --> 00:02:53.433
+în curând

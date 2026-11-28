@@ -1,0 +1,270 @@
+WEBVTT
+
+NOTE en_md5 c5187b46923e87c2aac86912c90dfb53
+
+00:00:00.100 --> 00:00:03.140
+Bine ai revenit. Sper că te simți mai sigur pe
+
+00:00:03.180 --> 00:00:06.810
+matrice acum. Matricea este prima noastră opțiune când
+
+00:00:06.840 --> 00:00:09.740
+avem o listă de orice fel: o listă
+
+00:00:09.760 --> 00:00:11.560
+de mentori, o listă de scoruri, o listă
+
+00:00:11.600 --> 00:00:14.420
+de ingrediente. Orice listă, vrei să folosești
+
+00:00:14.440 --> 00:00:17.630
+o matrice. Dar mai există o structură de date
+
+00:00:17.720 --> 00:00:20.060
+la fel de des întâlnită, pentru când vrei ceva
+
+00:00:20.070 --> 00:00:23.380
+ceva mai complex decât o listă. Imaginează-ți
+
+00:00:23.420 --> 00:00:24.780
+că vrem să stocăm câteva informații despre mine:
+
+00:00:25.500 --> 00:00:27.580
+numele meu, vârsta mea, locul unde m-am născut.
+
+00:00:28.280 --> 00:00:30.140
+Ai putea folosi o matrice pentru asta,
+
+00:00:30.150 --> 00:00:32.200
+dar nu prea se înțelege ce se întâmplă
+
+00:00:32.240 --> 00:00:34.850
+când faci asta. Anglia este locul unde m-am
+
+00:00:34.880 --> 00:00:37.210
+născut sau unde locuiesc? 42 este vârsta
+
+00:00:37.300 --> 00:00:40.120
+mea sau altceva? Și dacă vreau
+
+00:00:40.160 --> 00:00:42.050
+să folosesc asta, trebuie să țin minte că
+
+00:00:42.080 --> 00:00:44.740
+prima poziție este pentru nume, a doua
+
+00:00:44.780 --> 00:00:47.900
+pentru vârstă, a treia pentru locul nașterii.
+
+00:00:47.920 --> 00:00:49.840
+E cam încurcat, și e încurcat
+
+00:00:49.880 --> 00:00:52.420
+pentru că asta nu e de fapt o listă de lucruri.
+
+00:00:52.480 --> 00:00:55.769
+E mai complex decât atât. Și aici
+
+00:00:55.800 --> 00:00:58.500
+intră în scenă dicționarele. Un dicționar este un
+
+00:00:58.560 --> 00:01:00.340
+tip nou de structură de date. Este al cincilea
+
+00:01:00.420 --> 00:01:03.830
+tip. Ai stringuri, numere, Boolean, matrice, iar
+
+00:01:03.880 --> 00:01:06.200
+acum și dicționare. Și vreau să te gândești
+
+00:01:06.260 --> 00:01:08.620
+la un dicționar ca la o foaie dintr-un
+
+00:01:08.800 --> 00:01:12.180
+caiet cu spirală. În partea stângă ai
+
+00:01:12.220 --> 00:01:15.460
+titlurile, cuvintele name, age, birthplace, și
+
+00:01:15.500 --> 00:01:18.400
+pe acestea le numim chei. Iar în partea
+
+00:01:18.480 --> 00:01:20.240
+dreaptă, lângă fiecare titlu, ai
+
+00:01:20.300 --> 00:01:24.520
+datele propriu-zise, Jeremy, 42, England, și pe
+
+00:01:24.600 --> 00:01:28.300
+acestea le numim valori. La fel ca matricele,
+
+00:01:28.340 --> 00:01:31.180
+un dicționar este un singur lucru. Este o pagină
+
+00:01:31.190 --> 00:01:33.830
+dintr-un caiet. Și la fel ca matricele, Jiki
+
+00:01:33.840 --> 00:01:35.250
+îl poate pune într-o variabilă, într-o cutie,
+
+00:01:35.720 --> 00:01:37.930
+sau ca intrare pentru o funcție, ori
+
+00:01:37.980 --> 00:01:39.540
+poate scoate un dicționar din
+
+00:01:39.560 --> 00:01:42.200
+toboganul de ieșire. Deci iată cum arată
+
+00:01:42.260 --> 00:01:45.080
+un dicționar în cod. Folosim acolade pentru
+
+00:01:45.120 --> 00:01:47.490
+a marca începutul și sfârșitul, iar
+
+00:01:47.520 --> 00:01:49.420
+înăuntru ai perechi: o cheie în
+
+00:01:49.480 --> 00:01:51.700
+stânga, două puncte, apoi valoarea în
+
+00:01:51.740 --> 00:01:53.860
+dreapta. Și avem o virgulă între
+
+00:01:53.900 --> 00:01:56.260
+fiecare pereche. Jiki vede asta și
+
+00:01:56.280 --> 00:01:58.600
+își scoate caietul cu spirală. Scrie name,
+
+00:01:58.960 --> 00:02:02.100
+Jeremy, age, 42 și așa mai departe pentru fiecare
+
+00:02:02.140 --> 00:02:04.440
+pereche. Iar când termină, rupe
+
+00:02:04.480 --> 00:02:06.320
+foaia din caiet și o pune într-o cutie
+
+00:02:06.420 --> 00:02:09.360
+cu eticheta person. Sunt câteva reguli
+
+00:02:09.420 --> 00:02:12.060
+de știut. Cheile sunt întotdeauna stringuri. Trebuie
+
+00:02:12.140 --> 00:02:14.620
+să aibă ghilimele în jurul lor, iar fiecare cheie
+
+00:02:14.680 --> 00:02:18.170
+trebuie să fie unică. Nu poți avea două chei
+
+00:02:18.260 --> 00:02:21.420
+numite name în același dicționar. Valorile
+
+00:02:21.480 --> 00:02:23.150
+pot fi la fel, dacă vrei,
+
+00:02:23.280 --> 00:02:25.810
+dar cheile trebuie să fie diferite. Iar
+
+00:02:25.820 --> 00:02:27.600
+valorile pot fi orice. Pot fi
+
+00:02:27.680 --> 00:02:31.000
+stringuri, numere, Boolean, matrice sau chiar alte dicționare.
+
+00:02:32.140 --> 00:02:34.540
+Poți avea și un dicționar gol, la fel
+
+00:02:34.600 --> 00:02:37.220
+cum am avut o matrice goală,
+
+00:02:37.280 --> 00:02:38.800
+și putem porni de la el și-l putem
+
+00:02:38.820 --> 00:02:42.210
+completa mai târziu. Bun, deci ai un
+
+00:02:42.260 --> 00:02:44.160
+dicționar, dar cum scoți ceva
+
+00:02:44.220 --> 00:02:46.900
+din el? Folosim aceeași sintaxă cu paranteze
+
+00:02:46.920 --> 00:02:48.960
+pătrate ca la matrice și
+
+00:02:49.020 --> 00:02:52.980
+stringuri, dar în loc de un număr de poziție,
+
+00:02:53.020 --> 00:02:55.040
+punem o cheie. Deci, dacă vrem
+
+00:02:55.100 --> 00:02:57.390
+să scoatem numele cuiva dintr-un dicționar,
+
+00:02:57.940 --> 00:03:01.620
+scriem variabila person, paranteze pătrate,
+
+00:03:01.640 --> 00:03:03.580
+apoi cheia, în cazul ăsta name, între
+
+00:03:03.660 --> 00:03:07.260
+ghilimele. Iar asta îi spune lui Jiki să se uite
+
+00:03:07.300 --> 00:03:09.970
+în dicționarul person, să găsească cheia
+
+00:03:10.080 --> 00:03:12.900
+name și să scoată valoarea ei. Jiki
+
+00:03:13.040 --> 00:03:15.000
+merge la cutia person, scoate
+
+00:03:15.040 --> 00:03:17.340
+pagina din caiet, se uită prin toate
+
+00:03:17.400 --> 00:03:19.760
+cheile până o găsește pe name, apoi citește
+
+00:03:19.800 --> 00:03:21.900
+valoarea Jeremy și o pune
+
+00:03:21.910 --> 00:03:27.540
+într-o cutie nouă numită name. Parantezele pătrate
+
+00:03:27.580 --> 00:03:29.980
+înseamnă mereu același lucru. Întinzi mâna în ceva
+
+00:03:29.990 --> 00:03:32.370
+și scoți ceva afară. Cu matricele și stringurile,
+
+00:03:32.960 --> 00:03:34.720
+folosești un număr ca să spui din ce poziție
+
+00:03:34.760 --> 00:03:37.580
+vrei să scoți ceva. Cu dicționarele,
+
+00:03:37.700 --> 00:03:40.140
+folosești un string drept cheie. Este
+
+00:03:40.180 --> 00:03:43.340
+aceeași idee, doar sintaxa e puțin diferită. Bun, deci
+
+00:03:43.380 --> 00:03:45.390
+ai câteva exerciții ca să exersezi
+
+00:03:45.500 --> 00:03:47.640
+crearea dicționarelor și citirea valorilor din ele.
+
+00:03:48.260 --> 00:03:50.160
+Tot ce-ți trebuie este ce tocmai am discutat:
+
+00:03:50.580 --> 00:03:52.660
+acoladele pentru creare, parantezele pătrate
+
+00:03:52.680 --> 00:03:55.200
+pentru acces. Ia-ți timp pentru ele. Baftă
+
+00:03:55.240 --> 00:03:56.820
+și ne vedem aici în curând.

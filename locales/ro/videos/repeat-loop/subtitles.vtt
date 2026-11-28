@@ -1,0 +1,264 @@
+WEBVTT
+
+NOTE en_md5 d53eb0ea7bb0ec1daa64bb73829462f2
+
+00:00:00.240 --> 00:00:03.700
+Bine ai revenit. Până acum, am scris totul
+
+00:00:03.720 --> 00:00:06.880
+într-un mod liniar, în care Jiki
+
+00:00:06.920 --> 00:00:10.660
+urmează fiecare instrucțiune în ordine, de sus
+
+00:00:10.670 --> 00:00:14.220
+în jos. În lecția asta, hai să vedem
+
+00:00:14.260 --> 00:00:16.330
+cum poate Jiki să iasă din acest
+
+00:00:16.460 --> 00:00:19.690
+flux strict de sus în jos și, mai precis, cum
+
+00:00:19.720 --> 00:00:21.800
+îi putem spune lui Jiki să ruleze aceeași
+
+00:00:21.880 --> 00:00:24.320
+secțiune de cod de multe ori
+
+00:00:24.360 --> 00:00:28.680
+la rând. De exemplu, imaginează-ți că ești în
+
+00:00:28.760 --> 00:00:31.180
+labirint și vrei să înaintezi 10 pași.
+
+00:00:31.240 --> 00:00:34.240
+Mai devreme ți-am dat funcția walk
+
+00:00:34.280 --> 00:00:36.690
+care te ajută cu asta, dar ce faci dacă
+
+00:00:36.740 --> 00:00:39.670
+nu ar exista? Ce faci dacă ai avea doar
+
+00:00:39.920 --> 00:00:44.700
+funcția move? În loc să scriem move de 10
+
+00:00:44.760 --> 00:00:48.000
+ori la rând, ceea ce devine foarte repetitiv,
+
+00:00:48.740 --> 00:00:50.420
+avem nevoie să putem
+
+00:00:50.500 --> 00:00:54.000
+spune: „Hei, Jiki, fă de 10 ori următorul
+
+00:00:54.120 --> 00:00:59.840
+lucru pe care ți-l spun. Move.” Ca să facem asta
+
+00:00:59.900 --> 00:01:02.320
+în cod, trebuie să
+
+00:01:02.480 --> 00:01:07.300
+folosim primul nostru cuvânt-cheie, iar cuvintele-cheie sunt instrucțiuni
+
+00:01:07.340 --> 00:01:10.180
+pe care Jiki le înțelege. Seamănă puțin
+
+00:01:10.220 --> 00:01:13.980
+cu niște mașini, dar nu sunt. Când Jiki vede
+
+00:01:14.020 --> 00:01:16.460
+un cuvânt-cheie, nu caută o mașină
+
+00:01:16.500 --> 00:01:18.920
+pe raft, ci pur și simplu știe să facă
+
+00:01:18.960 --> 00:01:23.300
+ceva. E înscris în creierul lui. Și
+
+00:01:23.320 --> 00:01:25.700
+sunt cam 20 de cuvinte-cheie diferite
+
+00:01:25.740 --> 00:01:28.480
+pe care le vom învăța pe parcursul cursului, iar
+
+00:01:28.520 --> 00:01:32.560
+primul dintre ele este cuvântul-cheie repeat.
+
+00:01:32.580 --> 00:01:35.540
+Cuvântul-cheie repeat face exact ce am spus mai sus.
+
+00:01:36.100 --> 00:01:40.580
+Îi spune lui Jiki: „Repetă de atâtea ori
+
+00:01:40.700 --> 00:01:42.990
+orice îți spun eu în continuare.” Hai să ne uităm la
+
+00:01:43.080 --> 00:01:45.960
+codul acesta. Mai întâi, folosim
+
+00:01:46.000 --> 00:01:48.440
+cuvântul-cheie repeat ca să-i spunem lui Jiki
+
+00:01:48.480 --> 00:01:51.580
+că va face ceva de mai multe ori. Apoi punem între paranteze rotunde
+
+00:01:51.680 --> 00:01:53.940
+de câte ori vrei ca Jiki
+
+00:01:53.980 --> 00:01:57.070
+să repete lucrul respectiv, iar apoi
+
+00:01:57.100 --> 00:02:00.030
+avem acoladele astea,
+
+00:02:00.040 --> 00:02:02.850
+iar înăuntrul acoladelor sunt lucrurile pe care
+
+00:02:02.860 --> 00:02:06.020
+vrem ca Jiki să le repete. Acest tipar
+
+00:02:06.100 --> 00:02:09.320
+este incredibil de des întâlnit în programare. Precizăm un
+
+00:02:09.380 --> 00:02:12.400
+cuvânt-cheie, de obicei împreună cu o informație, cum ar fi
+
+00:02:12.440 --> 00:02:14.549
+de câte ori să se facă ceva, în
+
+00:02:14.580 --> 00:02:17.620
+cazul nostru, și apoi un bloc de cod între
+
+00:02:17.680 --> 00:02:20.880
+acolade. Așa că, întorcându-ne în lumea labirintului,
+
+00:02:21.520 --> 00:02:25.220
+în loc să scriem move, move, move, move,
+
+00:02:25.260 --> 00:02:30.580
+putem scrie „repetă de patru ori move”. Jiki va
+
+00:02:30.590 --> 00:02:32.860
+vedea codul acela și va folosi
+
+00:02:32.940 --> 00:02:36.870
+mașina move de patru ori la rând.
+
+00:02:36.900 --> 00:02:38.960
+Și nu suntem limitați la un singur lucru
+
+00:02:39.000 --> 00:02:41.800
+între acele acolade. Jiki poate face
+
+00:02:41.900 --> 00:02:45.320
+mai multe lucruri în mod repetat. Îi putem spune lui Jiki
+
+00:02:45.460 --> 00:02:48.080
+să facă move, apoi turnLeft, și să repete
+
+00:02:48.120 --> 00:02:51.540
+totul de patru ori. Dacă Jiki vede
+
+00:02:51.560 --> 00:02:54.000
+asta, va folosi mașina move, apoi
+
+00:02:54.060 --> 00:02:56.880
+mașina turnLeft, apoi mașina move, apoi
+
+00:02:56.920 --> 00:02:59.340
+mașina turnLeft, apoi mașina move
+
+00:02:59.430 --> 00:03:01.720
+și tot așa, până când le face pe amândouă
+
+00:03:01.800 --> 00:03:07.160
+de patru ori. Pe aceste instrucțiuni care se repetă le numim bucle,
+
+00:03:07.840 --> 00:03:09.540
+și există o mulțime de bucle diferite
+
+00:03:09.580 --> 00:03:11.980
+pe care le putem folosi, fiecare funcționând puțin altfel.
+
+00:03:12.000 --> 00:03:15.210
+Le vom explora pe toate în acest curs.
+
+00:03:15.220 --> 00:03:17.710
+Mai e un lucru de știut:
+
+00:03:17.760 --> 00:03:20.300
+păstrarea codului curat și ordonat
+
+00:03:20.480 --> 00:03:24.240
+devine esențială când lucrezi cu bucle. Când
+
+00:03:24.280 --> 00:03:26.800
+ai o structură vizuală bună în cod,
+
+00:03:26.860 --> 00:03:28.940
+îți este foarte ușor să vezi ce se întâmplă.
+
+00:03:29.660 --> 00:03:31.740
+Dar dacă nu, dacă uiți
+
+00:03:31.780 --> 00:03:34.400
+să indentezi frumos sau îți încurci
+
+00:03:34.460 --> 00:03:38.630
+indentarea, lucrurile devin confuze foarte repede. Așa că
+
+00:03:38.660 --> 00:03:41.500
+în cursul acesta avem mereu o regulă.
+
+00:03:41.600 --> 00:03:45.049
+Pune întotdeauna acolada de început pe
+
+00:03:45.080 --> 00:03:48.430
+aceeași linie cu instrucțiunea repeat.
+
+00:03:48.430 --> 00:03:50.860
+Pune întotdeauna acolada de final pe o linie
+
+00:03:50.940 --> 00:03:54.080
+separată, după instrucțiune, și
+
+00:03:54.120 --> 00:03:56.399
+indentează întotdeauna codul dintre ele cu două
+
+00:03:56.480 --> 00:04:00.120
+spații. Astfel, totul va rămâne foarte ordonat,
+
+00:04:01.020 --> 00:04:02.560
+iar dacă uiți sau încerci să urmezi
+
+00:04:02.620 --> 00:04:04.360
+un alt tipar, vei primi o eroare.
+
+00:04:06.100 --> 00:04:08.080
+În următoarele câteva exerciții, scopul tău este
+
+00:04:08.120 --> 00:04:11.060
+să rezolvi unele dintre provocări folosind
+
+00:04:11.100 --> 00:04:13.720
+cât mai puține linii de cod,
+
+00:04:13.780 --> 00:04:15.320
+iar buclele repeat te pot ajuta
+
+00:04:15.380 --> 00:04:18.060
+cu asta. Apoi o să vedem cum să începem
+
+00:04:18.070 --> 00:04:19.990
+să folosim bucla repeat împreună cu alte
+
+00:04:20.019 --> 00:04:23.270
+noțiuni, ca să descoperim niște tehnici
+
+00:04:23.320 --> 00:04:25.540
+mult mai puternice. Distrează-te și ne vedem
+
+00:04:25.580 --> 00:04:26.039
+aici în curând.

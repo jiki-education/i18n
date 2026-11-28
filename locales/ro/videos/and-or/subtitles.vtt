@@ -1,0 +1,204 @@
+WEBVTT
+
+NOTE en_md5 54c871cb5fb9450d2d15334c3f48a372
+
+00:00:00.120 --> 00:00:02.700
+Bine ai revenit. Acum știi să folosești
+
+00:00:02.760 --> 00:00:05.780
+condițiile if, else și else if ca să iei
+
+00:00:05.820 --> 00:00:09.260
+decizii în cod. Dacă ți-aș cere
+
+00:00:09.340 --> 00:00:11.620
+să deschizi ușa doar dacă cineva are
+
+00:00:11.720 --> 00:00:14.420
+peste 20 de ani, probabil ai ști
+
+00:00:14.460 --> 00:00:17.080
+ce să faci. Dar dacă ar trebui
+
+00:00:17.140 --> 00:00:20.250
+să verifici dacă cineva are peste 20 de ani
+
+00:00:20.560 --> 00:00:23.790
+și poartă ținuta potrivită? Adică trebuie
+
+00:00:23.820 --> 00:00:27.120
+să verifici două condiții diferite deodată. Cum
+
+00:00:27.160 --> 00:00:30.940
+ai face asta? Gândește-te puțin. Bun.
+
+00:00:31.100 --> 00:00:33.820
+Ei bine, poate ai putea folosi un if
+
+00:00:33.880 --> 00:00:36.520
+imbricat, cam ca buclele imbricate
+
+00:00:36.540 --> 00:00:39.680
+de mai devreme. Ai putea spune: dacă age este
+
+00:00:39.720 --> 00:00:43.400
+mai mare decât 20, intrăm în acest
+
+00:00:43.440 --> 00:00:47.360
+bloc de cod, apoi încă un if: dacă outfit este egal cu
+
+00:00:47.400 --> 00:00:50.660
+disco, apoi încă o acoladă și un nou
+
+00:00:50.700 --> 00:00:54.380
+bloc de cod. Ar funcționa, dar devine
+
+00:00:54.400 --> 00:00:57.200
+destul de încâlcit, mai ales când ai
+
+00:00:57.300 --> 00:01:00.350
+multe condiții. Din fericire, există o cale mai simplă:
+
+00:01:00.940 --> 00:01:02.760
+să putem avea condiții
+
+00:01:02.820 --> 00:01:06.130
+formate din mai multe părți. În loc să verificăm
+
+00:01:06.220 --> 00:01:08.020
+un singur lucru în condiție, putem verifica
+
+00:01:08.080 --> 00:01:11.360
+două, trei sau mai multe. Și ca
+
+00:01:11.400 --> 00:01:14.000
+să facem asta, trebuie să folosim cuvântul-cheie
+
+00:01:14.100 --> 00:01:18.180
+and. Din păcate, în JavaScript, cuvântul-cheie and
+
+00:01:18.280 --> 00:01:20.880
+nu este chiar cuvântul and, cum se întâmplă
+
+00:01:20.900 --> 00:01:23.480
+în alte limbaje. În schimb, trebuie să scrii
+
+00:01:23.520 --> 00:01:26.800
+două ampersanduri unul lângă altul. Va trebui
+
+00:01:26.820 --> 00:01:29.180
+pur și simplu să ții minte asta. E enervant, dar
+
+00:01:29.220 --> 00:01:30.640
+asta e, și te vei
+
+00:01:30.700 --> 00:01:33.830
+obișnui. Așa că putem folosi lucrul acesta
+
+00:01:33.860 --> 00:01:36.790
+ca să construim o condiție mai complexă. Putem
+
+00:01:36.840 --> 00:01:40.080
+spune: dacă age este mai mare decât 20 și
+
+00:01:40.600 --> 00:01:43.280
+outfit este disco, atunci mergem mai departe.
+
+00:01:43.980 --> 00:01:46.440
+Dacă age este mai mic decât 20 sau
+
+00:01:46.500 --> 00:01:49.360
+outfit nu este disco, atunci întreaga instrucțiune,
+
+00:01:49.420 --> 00:01:52.360
+întreaga condiție este falsă. Dacă ai
+
+00:01:52.380 --> 00:01:55.080
+studiat logică, poate ai construit circuite electronice sau
+
+00:01:55.140 --> 00:01:57.560
+ai făcut matematică mai avansată, lucrurile astea
+
+00:01:57.600 --> 00:01:59.920
+ți se vor părea foarte naturale. Dacă nu,
+
+00:01:59.980 --> 00:02:02.620
+le vei prinde repede. Putem
+
+00:02:02.680 --> 00:02:06.420
+folosi și or, dar, din nou, din păcate, nu există
+
+00:02:06.480 --> 00:02:09.479
+un cuvânt-cheie or drăguț în JavaScript. În schimb,
+
+00:02:09.520 --> 00:02:11.340
+trebuie să folosim aceste două bare una lângă
+
+00:02:11.380 --> 00:02:14.360
+alta ca să spunem sau. Arată ciudat,
+
+00:02:14.560 --> 00:02:16.310
+dar de fapt nu e. Te vei
+
+00:02:16.340 --> 00:02:19.600
+obișnui. Așa că acum putem spune:
+
+00:02:19.680 --> 00:02:22.740
+dacă cineva are peste 20 de ani sau e
+
+00:02:22.780 --> 00:02:25.440
+în ținută de disco, poate intra. Așa că
+
+00:02:25.480 --> 00:02:27.820
+o să avem o petrecere distractivă, cu copii în ținute de disco
+
+00:02:27.920 --> 00:02:31.060
+și adulți îmbrăcați neatent, ceea ce sună rezonabil.
+
+00:02:32.240 --> 00:02:34.580
+Acum, e un lucru care îi încurcă pe mulți
+
+00:02:34.640 --> 00:02:37.660
+atât la and, cât și la or:
+
+00:02:37.760 --> 00:02:41.020
+fiecare parte a lui and/or trebuie să
+
+00:02:41.060 --> 00:02:44.200
+fie o comparație completă. Așa că, chiar dacă
+
+00:02:44.240 --> 00:02:47.500
+compari aceeași variabilă pe ambele părți,
+
+00:02:47.620 --> 00:02:50.400
+trebuie să o repeți. Nu poți scrie: dacă
+
+00:02:50.420 --> 00:02:53.560
+age este mai mare decât 13 și mai mic decât
+
+00:02:53.780 --> 00:02:57.310
+20. Trebuie să scrii: dacă age este
+
+00:02:57.340 --> 00:03:00.840
+mai mare decât 13 și age este mai mic
+
+00:03:01.040 --> 00:03:04.200
+decât 20. Ai nevoie ca ambele părți să fie
+
+00:03:04.240 --> 00:03:09.040
+comparații complete. În exercițiile următoare, vei
+
+00:03:09.080 --> 00:03:12.060
+folosi în continuare and și or ca să combini
+
+00:03:12.100 --> 00:03:14.720
+condiții. Trebuie să te gândești când contează ambele
+
+00:03:14.740 --> 00:03:17.230
+condiții și când doar una dintre ele
+
+00:03:17.260 --> 00:03:19.790
+trebuie să fie adevărată. Mult noroc și ne
+
+00:03:19.820 --> 00:03:20.660
+vedem aici în curând.

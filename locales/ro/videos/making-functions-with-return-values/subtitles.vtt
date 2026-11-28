@@ -1,0 +1,189 @@
+WEBVTT
+
+NOTE en_md5 f4b6546cdc3ad8dde1f9b6b1f3ff5008
+
+00:00:00.120 --> 00:00:02.660
+Bine ai revenit. Acum știi să
+
+00:00:02.740 --> 00:00:06.640
+creezi funcții cu și fără intrări. Mai rămâne un singur
+
+00:00:06.780 --> 00:00:08.480
+lucru de învățat, iar după aceea
+
+00:00:08.520 --> 00:00:11.780
+vei fi un expert în făcut funcții. Acel lucru este
+
+00:00:11.860 --> 00:00:14.160
+cum să-ți dotezi funcțiile cu un tobogan de ieșire.
+
+00:00:15.000 --> 00:00:17.020
+Ai folosit deja multe funcții care returnează
+
+00:00:17.060 --> 00:00:20.400
+lucruri. isAlienAbove îți dă înapoi adevărat sau fals.
+
+00:00:20.500 --> 00:00:24.940
+Math.randomInt(1, 10) îți dă înapoi un număr aleatoriu.
+
+00:00:26.100 --> 00:00:28.780
+Când Jiki folosește acele funcții, ceva sare
+
+00:00:28.860 --> 00:00:30.980
+din toboganul de ieșire, iar apoi el poate
+
+00:00:31.000 --> 00:00:34.180
+să meargă și să-l folosească. Așadar, ca să facem asta,
+
+00:00:34.220 --> 00:00:36.890
+ne trebuie un alt cuvânt-cheie nou, și anume
+
+00:00:36.920 --> 00:00:40.900
+cuvântul-cheie return. Cuvântul-cheie return îi spune lui mini-Jiki
+
+00:00:40.980 --> 00:00:43.320
+să împingă ceva pe toboganul
+
+00:00:43.330 --> 00:00:46.230
+de ieșire. Hai să facem o funcție și
+
+00:00:46.260 --> 00:00:48.760
+să-i spunem meaningOfLife (sensul vieții), iar treaba
+
+00:00:48.920 --> 00:00:51.089
+acestei funcții este mereu doar să returneze numărul
+
+00:00:51.360 --> 00:00:54.200
+42. Nu are nicio intrare. Deci poți
+
+00:00:54.240 --> 00:00:58.839
+scrie function meaningOfLife, acolade, și
+
+00:00:58.879 --> 00:01:02.339
+apoi, în interiorul funcției, o singură linie: return
+
+00:01:02.399 --> 00:01:06.539
+42. Linia asta îi spune lui mini-Jiki să împingă
+
+00:01:06.579 --> 00:01:09.539
+numărul 42 pe toboganul de ieșire și apoi
+
+00:01:09.679 --> 00:01:13.559
+să se oprească. E important să reții asta. Cuvântul-cheie return
+
+00:01:13.659 --> 00:01:17.079
+îi spune lui mini-Jiki să facă două lucruri. Mai întâi,
+
+00:01:17.500 --> 00:01:19.639
+să pună ceva pe toboganul de ieșire, iar
+
+00:01:19.779 --> 00:01:22.779
+apoi, să se oprească. Imediat ce
+
+00:01:22.920 --> 00:01:26.579
+folosești cuvântul-cheie return, funcția se termină. Mini-Jiki
+
+00:01:26.619 --> 00:01:30.059
+nu mai face nimic altceva. Apropo, dacă nu
+
+00:01:30.139 --> 00:01:32.540
+știi de unde vine referința la sensul vieții, e dintr-o
+
+00:01:32.579 --> 00:01:34.880
+carte celebră, acum și film, numită
+
+00:01:34.899 --> 00:01:37.840
+Ghidul autostopistului galactic. Îți recomand s-o
+
+00:01:37.879 --> 00:01:39.819
+citești. Nu-ți face prea multe griji
+
+00:01:39.860 --> 00:01:43.799
+deocamdată în legătură cu ce înseamnă 42. Hai să
+
+00:01:43.879 --> 00:01:47.819
+ne uităm la un exemplu puțin mai complex, cu
+
+00:01:47.879 --> 00:01:50.439
+o funcție care are și o intrare
+
+00:01:50.520 --> 00:01:52.479
+și un tobogan de ieșire. Păstrăm aceeași
+
+00:01:52.539 --> 00:01:54.520
+idee, o funcție numită meaningOfLife,
+
+00:01:54.599 --> 00:01:57.239
+iar aceasta are o fantă de intrare
+
+00:01:57.299 --> 00:02:00.439
+numită age. Dacă cineva are 18 ani sau mai mult,
+
+00:02:00.559 --> 00:02:01.839
+îi spunem că sensul
+
+00:02:01.939 --> 00:02:05.639
+vieții este 42. Altfel, returnăm doar
+
+00:02:05.699 --> 00:02:09.019
+stringul „Sorry, too young”. Definiția funcției
+
+00:02:09.059 --> 00:02:12.679
+e foarte asemănătoare. function meaningOfLife, apoi
+
+00:02:12.699 --> 00:02:15.379
+fanta de intrare age, între paranteze, și apoi
+
+00:02:15.419 --> 00:02:18.339
+o acoladă. Dar acum ne trebuie o
+
+00:02:18.400 --> 00:02:20.459
+condiție if în interior, ca să putem spune:
+
+00:02:20.619 --> 00:02:23.019
+„Dacă vârsta este mai mare sau egală cu
+
+00:02:23.080 --> 00:02:27.499
+18, returnăm 42. Altfel, returnăm «Sorry,
+
+00:02:27.540 --> 00:02:30.719
+too young».” Acum, dacă folosim funcția
+
+00:02:30.779 --> 00:02:33.759
+scriind meaningOfLife(15), primim înapoi
+
+00:02:33.799 --> 00:02:37.119
+stringul „Sorry, too young”. Iar dacă o
+
+00:02:37.220 --> 00:02:40.060
+folosim cu meaningOfLife(30), primim
+
+00:02:40.100 --> 00:02:43.800
+înapoi numărul 42. Așa funcționează
+
+00:02:43.820 --> 00:02:46.800
+programarea în esența ei. Creăm o mulțime
+
+00:02:46.900 --> 00:02:49.360
+de piese mici de construcție și apoi le
+
+00:02:49.370 --> 00:02:52.960
+îmbinăm în programe. Acum îți dau
+
+00:02:53.140 --> 00:02:55.190
+câteva exerciții la rând. E
+
+00:02:55.220 --> 00:02:57.700
+probabil cea mai lungă serie de până acum, în care
+
+00:02:57.780 --> 00:03:00.600
+vei folosi tot ce ai învățat aici, alături de multe
+
+00:03:00.640 --> 00:03:04.120
+alte lucruri pe care le-am văzut înainte. Distracție plăcută.
+
+00:03:04.560 --> 00:03:05.960
+Baftă și ne vedem înapoi aici
+
+00:03:06.000 --> 00:03:06.310
+în curând.

@@ -1,0 +1,339 @@
+WEBVTT
+
+NOTE en_md5 d4b8c72f7a92dfb1d6fb4eb412fdc752
+
+00:00:00.400 --> 00:00:03.469
+Bine ai revenit. Până acum ne-am uitat la două bucle,
+
+00:00:03.780 --> 00:00:06.580
+bucla repeat și bucla for-of.
+
+00:00:06.620 --> 00:00:08.109
+În lecția asta o să ne uităm la
+
+00:00:08.200 --> 00:00:10.940
+încă două bucle și la două tehnici utile pentru
+
+00:00:11.000 --> 00:00:14.140
+bucle. Poate îți amintești că am spus
+
+00:00:14.200 --> 00:00:15.980
+chiar la început că bucla repeat
+
+00:00:16.020 --> 00:00:18.690
+nu există de fapt în JavaScript. E doar ceva
+
+00:00:18.860 --> 00:00:20.340
+adăugat de mine ca să îți facă viața puțin
+
+00:00:20.380 --> 00:00:23.190
+mai ușoară la început. Deci ce
+
+00:00:23.200 --> 00:00:25.580
+folosim în schimb? Păi, folosim o
+
+00:00:25.660 --> 00:00:28.150
+buclă for normală, care arată așa.
+
+00:00:29.380 --> 00:00:30.920
+Sper că vezi de ce ar fi putut
+
+00:00:30.940 --> 00:00:32.940
+fi puțin intimidant în prima zi
+
+00:00:32.960 --> 00:00:35.120
+pentru tine. Dar acum ai toate
+
+00:00:35.140 --> 00:00:37.280
+cunoștințele ca să te simți în largul tău cu asta.
+
+00:00:37.360 --> 00:00:40.340
+Hai să o descompunem. O buclă for
+
+00:00:40.360 --> 00:00:44.620
+are trei componente: un inițializator, o condiție și
+
+00:00:44.640 --> 00:00:49.769
+o incrementare. Inițializatorul, partea asta let i egal cu
+
+00:00:49.840 --> 00:00:52.220
+zero, rulează la începutul
+
+00:00:52.260 --> 00:00:54.920
+întregii bucle. Rulează doar o dată, iar
+
+00:00:54.980 --> 00:00:58.240
+aici creează o cutie numită i, cu valoarea
+
+00:00:58.340 --> 00:01:02.520
+zero. Partea următoare, cea dinaintea condiției,
+
+00:01:03.240 --> 00:01:08.600
+rulează înainte de fiecare iterație a buclei. Dacă
+
+00:01:08.640 --> 00:01:11.100
+condiția este adevărată, rulăm bucla
+
+00:01:11.110 --> 00:01:15.580
+din nou. Dacă nu, nu. Și apoi,
+
+00:01:15.660 --> 00:01:18.580
+în final, vine incrementarea, adică i plus plus.
+
+00:01:19.400 --> 00:01:21.420
+i plus plus înseamnă exact același lucru
+
+00:01:21.460 --> 00:01:24.420
+ca i egal cu i plus unu. E doar
+
+00:01:24.460 --> 00:01:26.880
+o formă prescurtată, un mod de a crește i cu
+
+00:01:26.940 --> 00:01:31.200
+unu de fiecare dată. Deci, în acest exemplu,
+
+00:01:31.280 --> 00:01:34.200
+punem i la zero. Verificăm dacă i
+
+00:01:34.240 --> 00:01:36.300
+este mai mic decât doi, așa este,
+
+00:01:36.380 --> 00:01:38.360
+deci rulăm bucla. Și apoi, la
+
+00:01:38.400 --> 00:01:41.640
+final, creștem i cu unu, așa că
+
+00:01:42.060 --> 00:01:44.380
+i devine unu. Zero plus unu fac unu.
+
+00:01:45.500 --> 00:01:47.400
+Și apoi o luăm de la capăt. Verificăm dacă
+
+00:01:47.580 --> 00:01:50.780
+unu este mai mic decât doi. Este, așa că
+
+00:01:50.800 --> 00:01:52.580
+rulăm bucla. Și apoi, la
+
+00:01:52.620 --> 00:01:55.140
+final, creștem i din nou. Acum este
+
+00:01:55.240 --> 00:01:58.300
+doi: unu plus unu fac doi. Și apoi
+
+00:01:58.340 --> 00:02:00.440
+mergem a treia oară. De data asta
+
+00:02:00.480 --> 00:02:02.970
+verificăm dacă doi este mai mic decât doi,
+
+00:02:02.980 --> 00:02:05.680
+și nu este, așa că nu rulăm bucla
+
+00:02:05.780 --> 00:02:07.140
+și, de fapt, am terminat cu bucla.
+
+00:02:07.540 --> 00:02:10.539
+Trecem pur și simplu la codul de dedesubt.
+
+00:02:10.640 --> 00:02:13.360
+Deci am rulat bucla de două ori, iar
+
+00:02:13.400 --> 00:02:16.100
+asta e un lucru util de știut. Atâta timp
+
+00:02:16.140 --> 00:02:18.320
+cât pornim de la zero și avem o
+
+00:02:18.360 --> 00:02:21.460
+condiție „mai mic decât”, numărul pe care îl punem
+
+00:02:21.520 --> 00:02:23.780
+acolo, aici doi, este de câte
+
+00:02:23.840 --> 00:02:26.530
+ori se va rula bucla. Deci asta
+
+00:02:26.580 --> 00:02:28.900
+e la fel ca și cum ai spune repeat doi.
+
+00:02:30.440 --> 00:02:33.020
+Așadar nu e greu, dar e mult mai
+
+00:02:33.060 --> 00:02:38.120
+încâlcit decât să scrii doar repeat doi. Următoarea
+
+00:02:38.180 --> 00:02:40.380
+buclă despre care trebuie să afli este bucla while.
+
+00:02:41.420 --> 00:02:45.800
+Asta spune: „Cât timp o condiție este îndeplinită, rulează bucla.”
+
+00:02:45.840 --> 00:02:47.190
+Așa că am putea avea o regulă care spune
+
+00:02:47.190 --> 00:02:49.710
+că poți trage doar de cinci ori în Space
+
+00:02:49.740 --> 00:02:52.130
+Invaders. Atunci am avea aici o buclă care
+
+00:02:52.160 --> 00:02:54.170
+spune: cât timp numărul de focuri este mai mic
+
+00:02:54.200 --> 00:02:56.940
+decât cinci, rulează o buclă care îi permite cuiva
+
+00:02:56.960 --> 00:03:00.340
+să joace jocul. De fiecare dată când cineva trage,
+
+00:03:00.680 --> 00:03:04.000
+creștem numShots cu unu, iar într-un final
+
+00:03:04.480 --> 00:03:06.040
+ajungem la cinci și bucla se oprește.
+
+00:03:07.100 --> 00:03:08.880
+O problemă cu buclele while este că
+
+00:03:08.920 --> 00:03:11.440
+e destul de ușor să ai buguri din cauza cărora
+
+00:03:11.480 --> 00:03:14.040
+bucla nu se termină niciodată. Acestea se numesc
+
+00:03:14.120 --> 00:03:15.890
+bucle infinite și sunt printre cele mai
+
+00:03:15.940 --> 00:03:20.010
+frecvente buguri din programe. Când calculatorul tău devine
+
+00:03:20.020 --> 00:03:23.020
+lent, ventilatoarele încep să se învârtă, totul devine zgomotos,
+
+00:03:23.060 --> 00:03:25.860
+de multe ori e pentru că cineva a lăsat o buclă infinită
+
+00:03:25.880 --> 00:03:29.380
+care nu se termină niciodată în codul lui. Bun, încă două
+
+00:03:29.460 --> 00:03:32.280
+cuvinte-cheie în acest videoclip rapid. Primul
+
+00:03:32.320 --> 00:03:35.300
+este cuvântul-cheie break. Îl poți folosi
+
+00:03:35.320 --> 00:03:37.680
+oriunde în corpul oricărei bucle.
+
+00:03:38.760 --> 00:03:40.720
+Bucata dintre acolade, aceea e
+
+00:03:40.780 --> 00:03:43.840
+corpul. Iar când Jiki vede break, iese
+
+00:03:43.880 --> 00:03:46.100
+imediat din buclă și trece
+
+00:03:46.160 --> 00:03:48.780
+la orice cod vine după buclă. Deci,
+
+00:03:48.880 --> 00:03:50.600
+dacă avem o constrângere care spune să rulăm
+
+00:03:50.660 --> 00:03:53.280
+bucla asta de 50 de ori, dar vrem să ne oprim
+
+00:03:53.420 --> 00:03:55.960
+dacă utilizatorul trage de cinci ori, putem
+
+00:03:56.000 --> 00:03:58.140
+avea o buclă for la început, care
+
+00:03:58.200 --> 00:04:00.940
+numără de la i egal cu zero până la mai puțin de
+
+00:04:01.120 --> 00:04:03.300
+50. Dar apoi putem avea o condiție
+
+00:04:03.340 --> 00:04:04.720
+la mijlocul buclei, care spune:
+
+00:04:04.880 --> 00:04:07.720
+dacă numShots este mai mare sau egal cu
+
+00:04:07.780 --> 00:04:12.520
+cinci, atunci break, oprește bucla. Sunt
+
+00:04:12.560 --> 00:04:14.880
+momente când vrem să sărim peste o
+
+00:04:14.890 --> 00:04:18.600
+anumită iterație a buclei. Imaginează-ți că
+
+00:04:18.680 --> 00:04:20.780
+vrem să facem ceva doar pentru numerele impare.
+
+00:04:21.600 --> 00:04:22.930
+Vrem să putem spune: dacă
+
+00:04:23.020 --> 00:04:25.780
+i este impar, nu rula bucla de data
+
+00:04:25.840 --> 00:04:28.380
+asta. Dar nu vrem să ieșim complet
+
+00:04:28.420 --> 00:04:30.280
+din buclă. Vrem doar să sărim peste
+
+00:04:30.320 --> 00:04:32.670
+această singură iterație și apoi să ne uităm la
+
+00:04:32.720 --> 00:04:35.600
+următoarea. Iar pentru asta avem un alt
+
+00:04:35.640 --> 00:04:40.380
+cuvânt-cheie: continue. Când Jiki vede continue,
+
+00:04:40.420 --> 00:04:42.180
+sare înapoi la începutul
+
+00:04:42.220 --> 00:04:44.820
+buclei pentru următoarea iterație. Așa că, într-o
+
+00:04:44.860 --> 00:04:47.200
+buclă for-of, dacă vede continue,
+
+00:04:47.260 --> 00:04:48.580
+trece la următorul element din
+
+00:04:48.640 --> 00:04:51.780
+listă. Într-o buclă for, ajunge la
+
+00:04:51.840 --> 00:04:54.400
+incrementarea, adică i plus plus, și apoi
+
+00:04:54.480 --> 00:04:57.980
+începe următoarea iterație. Deci avem buclele for,
+
+00:04:58.060 --> 00:05:00.800
+buclele while, break și continue. Multe
+
+00:05:00.840 --> 00:05:02.440
+informații în videoclipul ăsta, dar poți reveni
+
+00:05:02.500 --> 00:05:04.550
+la el oricând vrei, și
+
+00:05:04.580 --> 00:05:07.080
+există și pagini de noțiuni pentru fiecare subiect.
+
+00:05:07.800 --> 00:05:09.800
+Încearcă să pui toate ideile astea în practică în
+
+00:05:09.820 --> 00:05:12.220
+următoarele exerciții. Mult succes, distracție plăcută,
+
+00:05:12.680 --> 00:05:14.060
+și ne vedem aici în curând.

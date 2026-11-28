@@ -1,0 +1,405 @@
+WEBVTT
+
+NOTE en_md5 f8c737461bf364654b8a618e515caeb8
+
+00:00:00.140 --> 00:00:02.210
+Bine ai revenit. Bun, acum o să facem
+
+00:00:02.400 --> 00:00:04.400
+un mic pas lateral, un ocol,
+
+00:00:04.460 --> 00:00:06.480
+și o să ne uităm la ceva ce va trebui să
+
+00:00:06.540 --> 00:00:08.850
+știi dacă faci vreodată ceva vizual
+
+00:00:08.880 --> 00:00:10.860
+cu cod. Și chiar dacă vrei să devii
+
+00:00:10.900 --> 00:00:12.460
+data scientist și ți se pare că toată
+
+00:00:12.560 --> 00:00:16.180
+partea de desen e cam plictisitoare, să comunici date
+
+00:00:16.219 --> 00:00:19.180
+prin imagini este o abilitate esențială, așa că
+
+00:00:19.220 --> 00:00:21.790
+merită s-o înveți. În videoclipul ăsta
+
+00:00:21.840 --> 00:00:24.220
+o să vedem două moduri diferite de a
+
+00:00:24.260 --> 00:00:28.670
+exprima culorile. Până acum ai folosit culorile
+
+00:00:28.680 --> 00:00:31.640
+cu numele lor, ca roșu sau galben,
+
+00:00:31.700 --> 00:00:33.800
+ca ultima intrare în funcțiile tale de desen,
+
+00:00:35.400 --> 00:00:37.300
+și a fost o cale comodă de a
+
+00:00:37.360 --> 00:00:40.320
+folosi repede culori, dar e destul de limitativă.
+
+00:00:40.330 --> 00:00:42.350
+Există doar câteva culori cu nume
+
+00:00:42.380 --> 00:00:44.370
+pe care le putem folosi. Așa că acum hai să vedem
+
+00:00:44.400 --> 00:00:46.880
+două moduri de a exprima orice culoare
+
+00:00:46.960 --> 00:00:49.960
+vrei, iar acestea două se numesc RGB și
+
+00:00:50.180 --> 00:00:54.920
+HSL. RGB ne lasă să gândim culorile
+
+00:00:54.980 --> 00:00:57.100
+ca un amestec de roșu, verde și albastru.
+
+00:00:57.300 --> 00:01:00.210
+RGB vine de la red, green, blue: roșu, verde, albastru.
+
+00:01:01.280 --> 00:01:04.040
+Dacă îți amintești cum amestecai vopselele la școală,
+
+00:01:04.099 --> 00:01:06.730
+ideea e asemănătoare, doar că în loc de vopsea
+
+00:01:06.760 --> 00:01:11.580
+amestecăm lumină. În multe dintre exercițiile
+
+00:01:11.640 --> 00:01:14.440
+care urmează o să ai o funcție numită rgb,
+
+00:01:15.280 --> 00:01:16.960
+care primește trei numere ca
+
+00:01:17.000 --> 00:01:20.040
+intrări, unul pentru roșu, unul pentru verde,
+
+00:01:20.080 --> 00:01:22.240
+unul pentru albastru, iar la final returnează o
+
+00:01:22.320 --> 00:01:26.900
+culoare. Numerele pe care le poți folosi ca
+
+00:01:26.980 --> 00:01:32.940
+intrări merg de la zero la 255. Zero înseamnă
+
+00:01:33.040 --> 00:01:35.440
+că nu vrei deloc din culoarea aceea, iar
+
+00:01:35.620 --> 00:01:38.420
+255 înseamnă să amesteci cât mai mult
+
+00:01:38.460 --> 00:01:41.460
+din ea. Deci dacă folosim
+
+00:01:41.540 --> 00:01:45.550
+funcția rgb cu 255, zero și zero ca
+
+00:01:45.600 --> 00:01:48.190
+intrări, ceea ce spunem este că vrem
+
+00:01:48.240 --> 00:01:50.440
+tot roșul. Ține minte că 255 este
+
+00:01:50.460 --> 00:01:52.880
+cel mai mare număr pe care îl poți pune acolo.
+
+00:01:52.900 --> 00:01:54.800
+Dar nu vrem deloc verde și nici
+
+00:01:54.820 --> 00:01:57.420
+albastru, așa că amândouă sunt zero. Așa că
+
+00:01:57.460 --> 00:02:00.880
+obținem roșu, iar roșul acela îl putem stoca
+
+00:02:00.900 --> 00:02:03.360
+într-o variabilă și apoi îl putem folosi
+
+00:02:03.380 --> 00:02:05.340
+în funcția circle, exact așa cum am făcut
+
+00:02:05.400 --> 00:02:08.840
+deja cu numele de culori scrise ca stringuri. Și
+
+00:02:08.880 --> 00:02:10.759
+dacă folosim funcția rgb cu
+
+00:02:10.900 --> 00:02:15.340
+zero, 255, zero? Acum spunem: deloc roșu,
+
+00:02:15.880 --> 00:02:18.310
+tot verdele, deloc albastru. Așa că obținem
+
+00:02:18.320 --> 00:02:21.440
+un cerc verde. Și dacă vrem
+
+00:02:21.640 --> 00:02:25.320
+galben? Galbenul este un amestec de roșu
+
+00:02:25.620 --> 00:02:27.940
+și verde. Așa că putem spune: dă-mi
+
+00:02:28.020 --> 00:02:29.840
+tot roșul, tot verdele
+
+00:02:30.180 --> 00:02:32.120
+și deloc albastru, iar asta ne va da
+
+00:02:32.200 --> 00:02:35.200
+galben. Și putem folosi
+
+00:02:35.240 --> 00:02:37.730
+numere mai mici. Deci dacă vrem puțin roșu,
+
+00:02:38.300 --> 00:02:41.150
+deloc verde și mult albastru, obținem
+
+00:02:41.200 --> 00:02:45.080
+violet. Și mult roșu, puțin verde,
+
+00:02:45.380 --> 00:02:47.000
+un pic mai mult albastru, asta ne dă
+
+00:02:47.040 --> 00:02:51.360
+un roz. Așadar, acesta este RGB. Amestecăm roșu, verde
+
+00:02:51.500 --> 00:02:56.060
+și albastru ca să obținem diferite combinații.
+
+00:02:56.100 --> 00:02:58.960
+Hai să ne uităm acum la HSL, care ne oferă
+
+00:02:58.980 --> 00:03:03.060
+un mod complet diferit de a gândi culorile.
+
+00:03:03.100 --> 00:03:08.200
+HSL vine de la nuanță (hue), saturație (saturation) și luminozitate (lightness).
+
+00:03:08.280 --> 00:03:11.900
+Și, la fel ca la RGB, ai o funcție numită hsl care
+
+00:03:11.920 --> 00:03:14.590
+primește trei numere, unul pentru nuanță, unul pentru
+
+00:03:14.640 --> 00:03:17.100
+saturație și unul pentru luminozitate, iar la final
+
+00:03:17.120 --> 00:03:20.420
+returnează o culoare. Așa că hai să vedem
+
+00:03:20.480 --> 00:03:25.160
+ce înseamnă aceste trei cuvinte. Nuanța este
+
+00:03:25.200 --> 00:03:28.080
+tonul de culoare pe care îl vrei și
+
+00:03:28.120 --> 00:03:32.300
+merge de la zero până la 360.
+
+00:03:32.320 --> 00:03:34.200
+Poate imaginează-ți un curcubeu. Așa mă gândesc
+
+00:03:34.260 --> 00:03:36.200
+eu la asta. În stânga avem roșu,
+
+00:03:36.700 --> 00:03:39.220
+apoi portocaliu, galben, verde, albastru,
+
+00:03:39.400 --> 00:03:41.320
+violet și, de fapt, ajungem
+
+00:03:41.340 --> 00:03:44.760
+înapoi la roșu. Deci dacă spui zero,
+
+00:03:45.140 --> 00:03:47.100
+începi din stânga, iar acela este
+
+00:03:47.180 --> 00:03:50.700
+roșu. Dacă spui 120, ceri
+
+00:03:50.740 --> 00:03:54.580
+verde. 230 este albastru. Poți să te gândești
+
+00:03:54.620 --> 00:03:57.470
+la asta și ca la o roată de culori, care este
+
+00:03:57.500 --> 00:03:59.500
+de fapt ce reprezintă 360. Este numărul
+
+00:03:59.540 --> 00:04:02.440
+de grade dintr-un cerc. Eu mereu
+
+00:04:02.480 --> 00:04:04.360
+caut numerele de care am nevoie, așa că
+
+00:04:04.440 --> 00:04:07.000
+nu-ți face griji prea mult încercând să memorezi
+
+00:04:07.060 --> 00:04:09.340
+asta, dar e bine să înțelegi ce
+
+00:04:09.380 --> 00:04:11.720
+se întâmplă. Deci aceasta este nuanța, adică
+
+00:04:11.780 --> 00:04:16.019
+tonul. Urmează saturația, care este cât
+
+00:04:16.060 --> 00:04:18.920
+de vie este culoarea. Merge de la zero
+
+00:04:19.019 --> 00:04:22.060
+la 100. La zero obții doar gri.
+
+00:04:22.400 --> 00:04:24.440
+Nu există nicio culoare, niciun ton
+
+00:04:24.500 --> 00:04:28.160
+acolo. La 100 obții culoare plină, vie,
+
+00:04:28.360 --> 00:04:32.660
+vibrantă. Și apoi avem luminozitatea.
+
+00:04:32.700 --> 00:04:34.860
+Luminozitatea este cât de aprinsă este culoarea și
+
+00:04:34.960 --> 00:04:37.600
+merge tot de la zero la 100.
+
+00:04:37.740 --> 00:04:40.200
+La zero obții negru. Indiferent de nuanța
+
+00:04:40.260 --> 00:04:43.460
+pe care ai ales-o, obții negru. Nu există lumină
+
+00:04:43.480 --> 00:04:46.500
+în el. Iar la 100 obții alb.
+
+00:04:46.980 --> 00:04:49.000
+Indiferent de orice altceva, e plin
+
+00:04:49.060 --> 00:04:52.420
+de lumină, deci e alb. 50 este exact la
+
+00:04:52.460 --> 00:04:55.490
+mijloc, culoarea normală. Așa că poți
+
+00:04:55.520 --> 00:04:57.550
+să te gândești la asta ca la un glisor care face
+
+00:04:57.580 --> 00:05:01.260
+culoarea mai deschisă sau mai închisă. Deci dacă
+
+00:05:01.320 --> 00:05:03.840
+vrem un cerc roșu normal, pe care l-am fi
+
+00:05:03.860 --> 00:05:07.680
+scris ca 255, zero, zero cu RGB, tot
+
+00:05:07.720 --> 00:05:10.640
+roșul, deloc verde, deloc albastru, aici
+
+00:05:10.680 --> 00:05:15.560
+am folosi zero, 100, 50. Zero pentru
+
+00:05:15.600 --> 00:05:19.290
+nuanța roșie, 100 pentru saturație, culoare plină,
+
+00:05:19.800 --> 00:05:22.060
+și 50 pentru luminozitate, adică un nivel
+
+00:05:22.080 --> 00:05:25.240
+normal de luminozitate. Dacă vrem să facem din el
+
+00:05:25.250 --> 00:05:27.800
+un cerc verde, putem schimba pur și simplu
+
+00:05:27.880 --> 00:05:30.700
+nuanța la 120. Dacă vrem să
+
+00:05:30.740 --> 00:05:33.260
+facem un verde mai închis, putem reduce
+
+00:05:33.270 --> 00:05:37.340
+luminozitatea la 25. Dacă vrem
+
+00:05:37.380 --> 00:05:39.360
+să facem un verde mai spălăcit, putem
+
+00:05:39.440 --> 00:05:40.780
+scoate puțină culoare, puțină
+
+00:05:40.920 --> 00:05:43.860
+saturație, să zicem să o coborâm la 30.
+
+00:05:46.500 --> 00:05:48.800
+Dacă vrei un roz aprins și intens, o
+
+00:05:48.860 --> 00:05:52.080
+nuanță de aproximativ 300 este roz, apoi
+
+00:05:52.120 --> 00:05:55.680
+urcăm saturația la 100 ca
+
+00:05:55.720 --> 00:05:57.560
+să fie cu adevărat vie și creștem și
+
+00:05:57.620 --> 00:06:01.290
+luminozitatea, până la vreo 60. Deci avem
+
+00:06:01.340 --> 00:06:03.660
+două moduri diferite de a exprima culoarea și sunt
+
+00:06:03.760 --> 00:06:07.830
+utile în situații diferite. RGB este grozav când
+
+00:06:07.900 --> 00:06:12.160
+vrei să reglezi o componentă anume,
+
+00:06:12.500 --> 00:06:14.380
+cât roșu, cât verde, cât
+
+00:06:14.400 --> 00:06:17.540
+albastru. HSL este grozav când vrei să
+
+00:06:17.600 --> 00:06:20.060
+treci prin mai multe culori. Dacă vrei un curcubeu,
+
+00:06:20.100 --> 00:06:23.440
+poți pur și simplu să crești nuanța tot mai mult.
+
+00:06:23.460 --> 00:06:25.360
+În următoarele câteva exerciții o să folosești
+
+00:06:25.400 --> 00:06:27.500
+amândouă modurile, împreună cu niște bucle și
+
+00:06:27.960 --> 00:06:31.020
+actualizând niște variabile, ca să creezi un curcubeu și
+
+00:06:31.080 --> 00:06:33.280
+un apus de soare. O să-ți reamintesc toate
+
+00:06:33.320 --> 00:06:36.400
+detaliile în instrucțiunile exercițiului, așa că nu-ți face griji
+
+00:06:36.460 --> 00:06:40.140
+dacă nu ai memorat încă toate astea.
+
+00:06:40.180 --> 00:06:41.640
+Baftă, distrează-te și ne vedem
+
+00:06:41.660 --> 00:06:42.060
+aici în curând.

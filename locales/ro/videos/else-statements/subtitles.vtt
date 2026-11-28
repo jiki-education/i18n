@@ -1,0 +1,246 @@
+WEBVTT
+
+NOTE en_md5 8f7393dfe843d0e2ba5227cef441168a
+
+00:00:00.140 --> 00:00:02.860
+Bine ai revenit. Ai folosit deja condiții if
+
+00:00:03.240 --> 00:00:05.920
+ca să verifici anumite lucruri și să rulezi cod doar
+
+00:00:05.960 --> 00:00:08.800
+atunci când ceva este adevărat. Acum hai să îl cunoaștem
+
+00:00:09.080 --> 00:00:13.500
+pe complicele lui if: else. Deci, cu o
+
+00:00:13.560 --> 00:00:16.100
+condiție if, Jiki rulează blocul de cod atunci când
+
+00:00:16.140 --> 00:00:19.310
+condiția este adevărată și sare peste acel
+
+00:00:19.340 --> 00:00:22.210
+bloc când este falsă. Dar dacă
+
+00:00:22.240 --> 00:00:24.060
+vrei ca Jiki să facă un lucru
+
+00:00:24.100 --> 00:00:26.740
+atunci când condiția este adevărată și altceva
+
+00:00:26.750 --> 00:00:30.300
+când este falsă? Pentru asta există
+
+00:00:30.340 --> 00:00:33.180
+else. Putem pune o clauză else după
+
+00:00:33.200 --> 00:00:36.440
+acolada de închidere a lui if, iar Jiki o va
+
+00:00:36.480 --> 00:00:39.230
+rula dacă condiția din if este falsă.
+
+00:00:40.060 --> 00:00:42.370
+Așa că, revenind la exemplul cu portarul de la club,
+
+00:00:42.930 --> 00:00:44.840
+avem acum opțiunea să deschidem
+
+00:00:44.860 --> 00:00:48.670
+ușa sau să întoarcem pe cineva din drum, ceea ce e
+
+00:00:48.680 --> 00:00:51.440
+probabil mai bine decât să îl ignorăm complet, cum
+
+00:00:51.480 --> 00:00:54.560
+făceam înainte. Gândește-te la asta ca la o
+
+00:00:54.580 --> 00:00:56.780
+bifurcație de drum. Jiki ajunge la bifurcație,
+
+00:00:57.000 --> 00:00:58.820
+verifică condiția, iar apoi poate
+
+00:00:58.860 --> 00:01:01.020
+merge într-o parte dacă e adevărată sau
+
+00:01:01.060 --> 00:01:03.000
+în cealaltă parte dacă e falsă.
+
+00:01:03.760 --> 00:01:07.050
+Dar nu merge niciodată în ambele. Dar dacă
+
+00:01:07.100 --> 00:01:10.730
+ai mai mult de două posibilități? Imaginează-ți
+
+00:01:10.780 --> 00:01:14.340
+că portarul nostru vinde bilete. Sub treisprezece ani,
+
+00:01:14.360 --> 00:01:17.460
+primești un bilet de copil. Între treisprezece și douăzeci,
+
+00:01:17.520 --> 00:01:19.820
+primești un bilet de adolescent. Douăzeci sau peste,
+
+00:01:19.860 --> 00:01:21.920
+e bilet de adult. Deci acum ai trei rezultate
+
+00:01:22.000 --> 00:01:25.700
+diferite. Pentru asta, putem adăuga încă o
+
+00:01:25.760 --> 00:01:28.640
+condiție if după else. Așa că putem
+
+00:01:28.680 --> 00:01:32.420
+spune: „Dacă asta, atunci fă asta. else if
+
+00:01:32.560 --> 00:01:36.160
+asta, atunci fă asta. else, fă asta.”
+
+00:01:37.040 --> 00:01:39.120
+În exemplul acesta, Jiki ajunge
+
+00:01:39.280 --> 00:01:43.120
+la if și verifică prima condiție. E șaisprezece
+
+00:01:43.460 --> 00:01:47.380
+mai mic decât treisprezece? Nu. Așa că trece mai departe
+
+00:01:47.420 --> 00:01:51.000
+la else if. E șaisprezece mai mic decât
+
+00:01:51.040 --> 00:01:55.800
+douăzeci? Da, e adevărat. Așa că rulează blocul
+
+00:01:55.820 --> 00:01:58.960
+acela și dă un bilet de adolescent. Dar
+
+00:01:59.000 --> 00:02:02.340
+apoi s-a terminat. Nu mai verifică nimic altceva.
+
+00:02:03.020 --> 00:02:05.000
+Nu se uită deloc la ultimul
+
+00:02:05.080 --> 00:02:08.600
+else. Odată ce Jiki găsește o condiție adevărată,
+
+00:02:09.080 --> 00:02:11.480
+rulează blocul acela și sare peste tot
+
+00:02:11.540 --> 00:02:14.980
+ce e dedesubt. Ăsta e lucrul esențial
+
+00:02:15.000 --> 00:02:18.380
+de înțeles. Nu rulează niciodată mai mult de un singur bloc. Jiki
+
+00:02:18.390 --> 00:02:20.980
+parcurge lanțul în jos, găsește prima condiție
+
+00:02:21.020 --> 00:02:24.400
+adevărată, rulează blocul acela și trece mai departe. Acum,
+
+00:02:24.420 --> 00:02:25.980
+mai e un lucru pe care trebuie
+
+00:02:26.020 --> 00:02:29.020
+să-l înțelegi bine, pentru că aici multă lume se încurcă. E o
+
+00:02:29.220 --> 00:02:33.800
+diferență subtilă, dar foarte importantă, între a scrie două
+
+00:02:33.960 --> 00:02:39.120
+condiții if separate și a folosi else if.
+
+00:02:39.180 --> 00:02:41.390
+Imaginează-ți că facem un program care dă
+
+00:02:41.440 --> 00:02:44.989
+un premiu de bază sau un premiu bonus, în funcție
+
+00:02:45.020 --> 00:02:48.660
+de punctajul cuiva. Uită-te la cele două variante.
+
+00:02:49.660 --> 00:02:53.360
+Una folosește else și cealaltă... else, scuze.
+
+00:02:53.460 --> 00:02:55.800
+Una folosește else if, cealaltă folosește
+
+00:02:55.880 --> 00:03:00.240
+două condiții if. Ce se va întâmpla diferit? Stai
+
+00:03:00.280 --> 00:03:02.140
+o clipă și gândește-te la asta. Poate pune
+
+00:03:02.180 --> 00:03:06.570
+videoclipul pe pauză. Deci în primul caz, cu
+
+00:03:06.600 --> 00:03:10.340
+else if, verificăm dacă punctajul e mare
+
+00:03:10.400 --> 00:03:12.860
+și dăm premiul bonus, iar apoi nu mai
+
+00:03:12.920 --> 00:03:15.720
+rulăm else if. Așa că persoana care
+
+00:03:15.760 --> 00:03:18.120
+are peste o sută de puncte primește
+
+00:03:18.160 --> 00:03:21.850
+doar premiul bonus. Dar în al doilea
+
+00:03:21.880 --> 00:03:25.840
+exemplu, cele două condiții if sunt complet independente. Ambele
+
+00:03:25.920 --> 00:03:29.860
+rulează și ambele sunt adevărate. Așa că
+
+00:03:29.900 --> 00:03:33.280
+persoana primește două premii. În
+
+00:03:33.340 --> 00:03:35.700
+primul caz, un premiu. În al doilea,
+
+00:03:35.840 --> 00:03:38.380
+două premii. Oprește-te o clipă ca să te
+
+00:03:38.440 --> 00:03:42.990
+asiguri că ai înțeles bine. De asemenea, e interesant
+
+00:03:43.040 --> 00:03:45.850
+de observat că oricare dintre variante poate fi corectă, în funcție
+
+00:03:45.880 --> 00:03:48.060
+de cum e gândit jocul. Poate
+
+00:03:48.100 --> 00:03:50.600
+concurentul primește un premiu normal plus
+
+00:03:50.660 --> 00:03:54.160
+unul bonus, sau poate trece direct
+
+00:03:54.200 --> 00:03:56.780
+la premiul bonus. Niciuna dintre cele două bucăți de cod nu e
+
+00:03:56.820 --> 00:04:00.060
+corectă sau greșită. Sunt doar utile în situații
+
+00:04:00.120 --> 00:04:03.620
+diferite. Dar trebuie
+
+00:04:03.640 --> 00:04:05.560
+să știi pe care vrei
+
+00:04:05.640 --> 00:04:08.960
+să o folosești. Așa că în următoarele exerciții
+
+00:04:09.000 --> 00:04:11.320
+o să folosești if, else if și else ca să
+
+00:04:11.380 --> 00:04:14.340
+gestionezi situații diferite. Mult noroc. Ne vedem
+
+00:04:14.360 --> 00:04:15.040
+aici în curând.

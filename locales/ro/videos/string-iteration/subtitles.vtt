@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 488ab8c8dd77c6bec365ce44675868b7
+
+00:00:00.280 --> 00:00:02.640
+Bine ai revenit. În lecția trecută
+
+00:00:02.680 --> 00:00:04.680
+am învățat cum să accesăm o singură literă dintr-un
+
+00:00:04.700 --> 00:00:08.300
+string folosind paranteze pătrate. În lecția asta
+
+00:00:08.420 --> 00:00:10.120
+o să vedem cum să parcurgem
+
+00:00:10.160 --> 00:00:13.160
+un string cu o buclă, scoțând fiecare literă
+
+00:00:13.200 --> 00:00:15.660
+pe rând. Iar pentru asta
+
+00:00:15.720 --> 00:00:18.300
+ne trebuie un tip nou de buclă. Până acum
+
+00:00:18.360 --> 00:00:20.170
+am folosit bucla repeat, iar acum
+
+00:00:20.200 --> 00:00:22.720
+o să folosim ceva numit buclă for of.
+
+00:00:22.760 --> 00:00:26.880
+Sunt două cuvinte-cheie noi: for și of.
+
+00:00:27.000 --> 00:00:28.740
+Cuvântul-cheie for o să îl vedem
+
+00:00:28.760 --> 00:00:30.360
+în destul de multe locuri de acum înainte.
+
+00:00:30.790 --> 00:00:32.580
+Poate sta singur sau poate
+
+00:00:32.619 --> 00:00:35.380
+fi însoțit de in sau de of.
+
+00:00:35.440 --> 00:00:37.160
+Deocamdată ne concentrăm pe
+
+00:00:37.220 --> 00:00:40.120
+ultimul, of. Așa că hai să ne uităm
+
+00:00:40.160 --> 00:00:43.280
+la niște cod. Începem prin a crea
+
+00:00:43.340 --> 00:00:47.310
+o variabilă numită name, care conține stringul Jeremy.
+
+00:00:47.380 --> 00:00:50.460
+Nimic nou până aici. Apoi avem linia asta,
+
+00:00:50.540 --> 00:00:53.620
+for let letter of name, și acolo
+
+00:00:53.640 --> 00:00:55.480
+se întâmplă o mulțime de lucruri, așa că
+
+00:00:55.520 --> 00:00:59.240
+hai să o luăm încet. Mai întâi avem cuvântul-cheie for.
+
+00:00:59.320 --> 00:01:00.980
+El îi spune lui Jiki că vrem
+
+00:01:01.060 --> 00:01:04.340
+să facem o buclă. Așa că se uită înainte, vede of
+
+00:01:04.879 --> 00:01:06.320
+și știe că vrem
+
+00:01:06.580 --> 00:01:09.600
+o buclă for of. Iar asta înseamnă că, în loc
+
+00:01:09.720 --> 00:01:11.940
+să folosim o buclă repeat în care spunem
+
+00:01:12.020 --> 00:01:15.180
+„Hai să repetăm de 10 ori”, spunem „Hai să trecem
+
+00:01:15.260 --> 00:01:17.380
+prin toate literele din string”.
+
+00:01:17.440 --> 00:01:20.990
+Asta înseamnă for of. Apoi avem
+
+00:01:21.060 --> 00:01:24.080
+partea asta cu let letter. Este exact la fel
+
+00:01:24.140 --> 00:01:25.860
+ca ce avem mai sus, cu let
+
+00:01:26.020 --> 00:01:29.320
+name. Pur și simplu creăm o variabilă numită letter.
+
+00:01:30.240 --> 00:01:33.240
+Diferența este că, în loc să spunem explicit
+
+00:01:33.280 --> 00:01:35.280
+ce anume intră în ea, îi cerem lui Jiki
+
+00:01:35.320 --> 00:01:37.850
+să pună în ea fiecare literă din string,
+
+00:01:37.900 --> 00:01:41.780
+pe rând. Deci Jiki vede
+
+00:01:41.880 --> 00:01:44.460
+for, verifică dacă există of și se apucă de treabă.
+
+00:01:44.480 --> 00:01:46.140
+Se uită la prima literă din string,
+
+00:01:46.480 --> 00:01:48.380
+în cazul acesta J, și o pune
+
+00:01:48.440 --> 00:01:50.840
+într-o cutie nouă numită letter.
+
+00:01:50.880 --> 00:01:52.240
+Apropo, i-am fi putut spune oricum.
+
+00:01:52.260 --> 00:01:53.920
+Nu trebuie să fie neapărat letter.
+
+00:01:53.960 --> 00:01:57.020
+Aici am hotărât pur și simplu să o numim letter.
+
+00:01:57.080 --> 00:01:58.960
+Apoi rulează codul din interiorul acoladelor,
+
+00:01:59.000 --> 00:02:01.060
+iar acolo poți face orice ai face oriunde altundeva în cod.
+
+00:02:01.540 --> 00:02:03.560
+Singura diferență este că blocul acesta
+
+00:02:03.640 --> 00:02:06.320
+de cod se va rula o dată pentru fiecare literă
+
+00:02:06.380 --> 00:02:07.900
+din string și va avea
+
+00:02:07.960 --> 00:02:11.940
+la dispoziție variabila asta. De fiecare dată când Jiki
+
+00:02:12.040 --> 00:02:15.000
+ajunge la acolada de închidere, aruncă cutia
+
+00:02:15.020 --> 00:02:16.740
+letter și creează una nouă,
+
+00:02:16.860 --> 00:02:19.220
+cu următoarea literă în ea. Așa că prima dată
+
+00:02:19.340 --> 00:02:20.800
+aruncă J și pune
+
+00:02:20.920 --> 00:02:23.000
+în cutie un e. Apoi face
+
+00:02:23.020 --> 00:02:25.740
+la fel pentru r, apoi e, apoi m,
+
+00:02:26.080 --> 00:02:28.790
+apoi y. Șase litere, șase treceri
+
+00:02:28.840 --> 00:02:31.300
+prin buclă. Sper că are sens. O să îți trebuiască
+
+00:02:31.340 --> 00:02:32.560
+puțin timp să te obișnuiești
+
+00:02:32.600 --> 00:02:34.900
+cu sintaxa, dar nu e
+
+00:02:34.920 --> 00:02:37.730
+o noțiune chiar atât de grea. Urmează
+
+00:02:37.760 --> 00:02:40.250
+câteva exerciții în care parcurgi
+
+00:02:40.250 --> 00:02:42.660
+stringuri. Fiecare îți va cere să faci altceva
+
+00:02:42.680 --> 00:02:44.980
+cu literele, poate să numeri câte litere
+
+00:02:45.000 --> 00:02:46.760
+sunt sau să găsești poziția
+
+00:02:46.800 --> 00:02:49.260
+unei anumite litere. Trebuie să folosești diferitele
+
+00:02:49.320 --> 00:02:51.640
+tehnici învățate până acum și să le combini
+
+00:02:51.700 --> 00:02:57.060
+cu bucla asta. Exercițiile devin
+
+00:02:57.100 --> 00:03:00.000
+tot mai dificile. Combini multe lucruri diferite
+
+00:03:00.020 --> 00:03:02.420
+pe care le-ai învățat. Ia-o încet cu ele.
+
+00:03:02.500 --> 00:03:03.920
+S-ar putea să îți ia ceva timp
+
+00:03:03.960 --> 00:03:06.160
+să termini fiecare exercițiu. Încearcă să nu te grăbești
+
+00:03:06.200 --> 00:03:08.840
+și să nu te enervezi dacă nu îți iese.
+
+00:03:08.900 --> 00:03:10.920
+Tratează-l ca pe un puzzle. Dacă
+
+00:03:10.940 --> 00:03:12.640
+te blochezi, poți să faci o pauză, să ieși
+
+00:03:12.650 --> 00:03:15.160
+la o plimbare și să revii după. Ai toate
+
+00:03:15.200 --> 00:03:16.790
+cunoștințele de care ai nevoie
+
+00:03:16.820 --> 00:03:18.870
+și abilitățile ca să reușești, dar
+
+00:03:18.940 --> 00:03:21.520
+va trebui să ai răbdare. Și ține minte mereu:
+
+00:03:21.580 --> 00:03:23.320
+poți folosi indiciile dacă ai nevoie,
+
+00:03:23.900 --> 00:03:25.150
+dar încearcă să le păstrezi
+
+00:03:25.200 --> 00:03:27.540
+ca ultimă soluție. Mult succes, și ne vedem
+
+00:03:27.560 --> 00:03:28.060
+aici în curând.

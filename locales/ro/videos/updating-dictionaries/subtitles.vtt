@@ -1,0 +1,186 @@
+WEBVTT
+
+NOTE en_md5 5da11fa63c77f04329255ba0ae3d5fdf
+
+00:00:00.120 --> 00:00:02.480
+Bine ai revenit. Acum știi cum să
+
+00:00:02.540 --> 00:00:05.300
+creezi un dicționar și cum să scoți valori
+
+00:00:05.340 --> 00:00:08.840
+din el. Dar ce se întâmplă dacă datele se schimbă?
+
+00:00:08.880 --> 00:00:10.760
+La un moment dat, o să fac un an mai mult.
+
+00:00:10.780 --> 00:00:13.060
+N-o să mai fiu 42, o să fiu 43.
+
+00:00:14.000 --> 00:00:16.160
+Cum actualizăm dicționarul? Păi, folosim
+
+00:00:16.240 --> 00:00:18.000
+o metodă foarte asemănătoare cu cea prin care
+
+00:00:18.080 --> 00:00:20.600
+căutăm ceva. Știi că găsim o valoare
+
+00:00:20.660 --> 00:00:22.860
+folosind paranteze pătrate, ca să o scoatem afară.
+
+00:00:23.620 --> 00:00:25.980
+Ei bine, putem folosi și paranteze pătrate urmate
+
+00:00:26.020 --> 00:00:29.980
+de un semn egal ca să actualizăm dicționarul.
+
+00:00:30.020 --> 00:00:32.920
+Jiki merge la cutia person, scoate
+
+00:00:32.960 --> 00:00:36.370
+pagina de caiet, caută cheia age,
+
+00:00:36.380 --> 00:00:38.560
+apoi șterge 42 care era acolo
+
+00:00:38.580 --> 00:00:41.200
+și scrie 43 în locul lui, iar apoi
+
+00:00:41.780 --> 00:00:43.089
+pagina de caiet se întoarce în
+
+00:00:43.140 --> 00:00:47.800
+cutie. Aici se schimbă dicționarul însuși. Jiki
+
+00:00:48.140 --> 00:00:50.880
+nu face un dicționar nou, ci modifică
+
+00:00:50.890 --> 00:00:54.420
+caietul care era deja în cutie.
+
+00:00:54.460 --> 00:00:56.310
+Și dacă vrei să adaugi o informație care
+
+00:00:56.400 --> 00:00:59.530
+nu era acolo înainte? Păi, poți face exact
+
+00:00:59.540 --> 00:01:02.160
+același lucru. Dacă specifici o cheie
+
+00:01:02.200 --> 00:01:04.900
+care nu există, Jiki pur și simplu adaugă o
+
+00:01:04.960 --> 00:01:07.340
+cheie nouă la sfârșit, cu valoarea respectivă.
+
+00:01:08.220 --> 00:01:10.200
+Așa că, în cazul acesta, deschide caietul,
+
+00:01:10.580 --> 00:01:13.140
+caută country, vede că nu e acolo
+
+00:01:13.160 --> 00:01:14.680
+și adaugă o linie nouă la sfârșit:
+
+00:01:15.000 --> 00:01:16.880
+country în stânga, England în dreapta.
+
+00:01:18.080 --> 00:01:20.580
+Deci exact aceeași sintaxă ca la schimbarea
+
+00:01:20.620 --> 00:01:24.320
+unei valori. Jiki se ocupă de amândouă automat. Dacă cheia
+
+00:01:24.360 --> 00:01:27.660
+există, o actualizează. Dacă nu există,
+
+00:01:27.740 --> 00:01:29.290
+o adaugă. Nu trebuie să faci nimic
+
+00:01:29.400 --> 00:01:33.040
+special. Și, la fel cum poți porni de la
+
+00:01:33.080 --> 00:01:35.120
+o matrice goală și poți împinge lucruri în ea,
+
+00:01:35.140 --> 00:01:37.240
+poți porni de la un dicționar gol și poți adăuga
+
+00:01:37.280 --> 00:01:40.340
+chei una câte una. Din nou, este un tipar
+
+00:01:40.400 --> 00:01:42.260
+foarte frecvent. O să-l vezi tot timpul.
+
+00:01:43.800 --> 00:01:45.860
+Una dintre utilizările obișnuite ale dicționarelor
+
+00:01:45.940 --> 00:01:49.260
+este să ții numărătoarea unor lucruri. Poți pune ca chei
+
+00:01:49.320 --> 00:01:50.720
+lucrurile pe care vrei să le numeri,
+
+00:01:50.800 --> 00:01:53.360
+iar ca valori numărul lor.
+
+00:01:53.400 --> 00:01:55.800
+Imaginează-ți că te uiți la păsări și vrei să ții
+
+00:01:55.860 --> 00:01:57.780
+evidența câte păsări din fiecare fel
+
+00:01:57.820 --> 00:02:00.180
+ai văzut. De fiecare dată când vezi o pasăre,
+
+00:02:00.220 --> 00:02:02.740
+îi pui numărul la unu, iar apoi, de fiecare
+
+00:02:02.800 --> 00:02:04.480
+dată când o mai vezi, iei
+
+00:02:04.540 --> 00:02:07.160
+valoarea curentă și o mărești cu unu.
+
+00:02:07.200 --> 00:02:08.800
+Ca să funcționeze acest tipar, avem nevoie de o modalitate
+
+00:02:08.840 --> 00:02:11.220
+de a verifica dacă dicționarul are deja
+
+00:02:11.300 --> 00:02:13.320
+cheia respectivă, caz în care adăugăm unu
+
+00:02:13.360 --> 00:02:16.260
+la valoarea ei, iar dacă nu are cheia,
+
+00:02:16.620 --> 00:02:18.480
+trebuie să pornim de la unu.
+
+00:02:19.560 --> 00:02:21.250
+Iar pentru asta avem
+
+00:02:21.380 --> 00:02:25.380
+o metodă pe dicționare: metoda has (are). Specifici
+
+00:02:25.440 --> 00:02:27.520
+o cheie care te interesează, iar Jiki
+
+00:02:27.560 --> 00:02:30.060
+verifică dacă dicționarul are sau nu acea cheie
+
+00:02:30.100 --> 00:02:33.020
+și apoi returnează adevărat sau fals, după caz.
+
+00:02:34.600 --> 00:02:36.210
+Urmează acum câteva exerciții care
+
+00:02:36.220 --> 00:02:38.480
+folosesc toate astea. Succes
+
+00:02:38.520 --> 00:02:39.800
+la ele și ne vedem din nou aici
+
+00:02:39.880 --> 00:02:40.130
+în curând.

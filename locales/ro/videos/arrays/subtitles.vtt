@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 9d89d6259cdafb0e4850d658df9bd781
+
+00:00:00.140 --> 00:00:02.440
+Bine ai revenit. Ai ajuns la un moment
+
+00:00:02.520 --> 00:00:05.280
+destul de important în curs. Ai folosit
+
+00:00:05.440 --> 00:00:08.060
+numere, stringuri și valori Boolean, vorba
+
+00:00:08.120 --> 00:00:10.500
+pretențioasă pentru adevărat și fals, și le
+
+00:00:10.540 --> 00:00:13.350
+numim tipuri de date. Dar în acest video
+
+00:00:13.400 --> 00:00:16.260
+vom adăuga primul nostru tip de date
+
+00:00:16.340 --> 00:00:20.080
+compus. Adică un tip de date care poate conține
+
+00:00:20.180 --> 00:00:23.300
+mai multe lucruri, nu doar unul singur, iar acest
+
+00:00:23.380 --> 00:00:26.780
+tip de date compus se numește matrice.
+
+00:00:28.220 --> 00:00:30.280
+Când auzi cuvântul matrice,
+
+00:00:30.320 --> 00:00:33.060
+vreau să te gândești la un lanț fizic
+
+00:00:33.440 --> 00:00:36.800
+care ține multe lucruri împreună. Lucrurile
+
+00:00:36.820 --> 00:00:39.520
+pe care le ține pot fi orice: stringuri, numere, valori Boolean,
+
+00:00:40.100 --> 00:00:42.360
+chiar și alte matrice, chiar și lucruri
+
+00:00:42.440 --> 00:00:44.280
+pe care nu le-ai învățat încă, dar hai să nu
+
+00:00:44.320 --> 00:00:47.440
+ne facem griji deocamdată. Totul în acest lanț
+
+00:00:47.500 --> 00:00:50.320
+este în ordine, ordinea în care sunt legate.
+
+00:00:51.180 --> 00:00:54.860
+Deci o matrice conține multe lucruri, dar
+
+00:00:54.920 --> 00:00:58.800
+este un singur element solid, un singur lucru,
+
+00:00:58.840 --> 00:01:01.440
+o matrice cu multe elemente înăuntru.
+
+00:01:03.320 --> 00:01:06.090
+Jiki poate lua acea matrice, acel lanț, și
+
+00:01:06.160 --> 00:01:08.060
+o poate pune într-o cutie, exact cum
+
+00:01:08.120 --> 00:01:09.300
+poate pune un string într-o cutie sau
+
+00:01:09.320 --> 00:01:11.580
+un număr într-o cutie. O poate pune
+
+00:01:11.600 --> 00:01:13.340
+în fanta de intrare a unei mașini.
+
+00:01:13.900 --> 00:01:15.320
+O poate scoate din toboganul
+
+00:01:15.330 --> 00:01:18.860
+de ieșire. Această matrice este un singur lucru, iar Jiki
+
+00:01:18.900 --> 00:01:20.800
+lucrează cu ea exact în același fel
+
+00:01:21.280 --> 00:01:23.840
+în care lucrează cu stringuri, numere, cu tot ce ai
+
+00:01:23.880 --> 00:01:27.920
+văzut până acum. În cod, o matrice
+
+00:01:28.020 --> 00:01:30.240
+arată și ea puțin ca un lanț.
+
+00:01:30.300 --> 00:01:32.420
+Are câte o paranteză pătrată la fiecare capăt
+
+00:01:32.880 --> 00:01:34.770
+și apoi multe elemente legate
+
+00:01:34.800 --> 00:01:38.420
+împreună, separate prin virgule. De exemplu, dacă
+
+00:01:38.440 --> 00:01:40.590
+am vrea să creăm o matrice
+
+00:01:40.600 --> 00:01:42.480
+cu numele câtorva dintre mentorii noștri,
+
+00:01:43.100 --> 00:01:46.440
+am putea construi o cutie numită mentors
+
+00:01:46.460 --> 00:01:49.260
+și am pune acel lanț înăuntru.
+
+00:01:49.280 --> 00:01:52.900
+Am scrie let mentors =, exact
+
+00:01:53.140 --> 00:01:55.300
+ca la orice altă cutie, și
+
+00:01:55.320 --> 00:01:57.860
+apoi o paranteză pătrată de deschidere, o mulțime
+
+00:01:57.920 --> 00:02:00.480
+de elemente, numele separate prin virgule, și
+
+00:02:00.500 --> 00:02:02.700
+apoi o paranteză pătrată de închidere. Când Jiki vede
+
+00:02:02.760 --> 00:02:04.730
+asta, se duce și ia patru foi
+
+00:02:04.820 --> 00:02:07.760
+de hârtie, una pentru fiecare nume, apoi ia
+
+00:02:07.840 --> 00:02:10.650
+un lanț nou și le leagă pe toate la un loc,
+
+00:02:10.680 --> 00:02:12.800
+iar apoi pune lanțul în cutia
+
+00:02:12.860 --> 00:02:16.580
+mentors. Poți pune orice într-o matrice: stringuri,
+
+00:02:16.660 --> 00:02:19.820
+numere, valori Boolean, chiar și un amestec. Toate
+
+00:02:19.860 --> 00:02:22.900
+acestea sunt exemple de matrice complet valide.
+
+00:02:24.800 --> 00:02:27.320
+Poți crea și o matrice goală.
+
+00:02:27.380 --> 00:02:30.080
+Este doar un lanț fără niciun element. Este tot
+
+00:02:30.140 --> 00:02:31.760
+un lucru real. Are tot ambele
+
+00:02:31.820 --> 00:02:33.800
+capete. Este tot un lanț. Doar că
+
+00:02:33.860 --> 00:02:36.160
+nu are nimic înăuntru. Dar
+
+00:02:36.200 --> 00:02:38.400
+poți pune și această matrice goală
+
+00:02:38.420 --> 00:02:40.260
+într-o cutie, o poți scoate și o poți
+
+00:02:40.280 --> 00:02:44.120
+folosi mai târziu. Deci poți crea o
+
+00:02:44.160 --> 00:02:46.850
+matrice cu sintaxa cu paranteze pătrate, dar cum
+
+00:02:46.860 --> 00:02:48.820
+le folosim de fapt? Cum
+
+00:02:48.880 --> 00:02:50.910
+verificăm ce este înăuntru și cum scoatem
+
+00:02:50.980 --> 00:02:53.829
+lucruri afară? Exact la fel cum am făcut
+
+00:02:53.860 --> 00:02:55.410
+când am vrut să scoatem litere
+
+00:02:55.440 --> 00:02:58.040
+dintr-un string. Putem folosi sintaxa cu paranteze
+
+00:02:58.100 --> 00:03:00.980
+pătrate, cu numere înăuntru. Hai să ne întoarcem
+
+00:03:01.020 --> 00:03:03.020
+la lista noastră de mentori. Dacă vrem
+
+00:03:03.060 --> 00:03:05.560
+să-l scoatem pe primul, scriem mentors,
+
+00:03:05.800 --> 00:03:08.720
+paranteză pătrată, zero. Ține minte că numărăm de la
+
+00:03:08.880 --> 00:03:13.280
+zero în JavaScript. Și putem parcurge
+
+00:03:13.290 --> 00:03:15.190
+o matrice exact în același fel
+
+00:03:15.220 --> 00:03:18.460
+în care am parcurs stringuri, folosind for of.
+
+00:03:19.400 --> 00:03:21.580
+Matricele funcționează exact la fel.
+
+00:03:21.680 --> 00:03:23.980
+Singura diferență este că de data asta, în loc
+
+00:03:24.040 --> 00:03:26.720
+să scoatem o literă, scoatem orice element
+
+00:03:26.780 --> 00:03:28.900
+era în matrice. În acest exemplu,
+
+00:03:28.940 --> 00:03:31.620
+numele mentorului. Așa că prima dată
+
+00:03:31.680 --> 00:03:34.280
+când mulțumim cuiva, îi mulțumim lui DJ. A doua
+
+00:03:34.320 --> 00:03:38.400
+oară, îi mulțumim lui Becky, și așa mai departe.
+
+00:03:38.460 --> 00:03:41.500
+Putem folosi și proprietatea length pe matrice, exact
+
+00:03:41.560 --> 00:03:43.940
+cum am învățat la stringuri. Dacă
+
+00:03:43.980 --> 00:03:45.980
+avem o matrice cu patru stringuri în
+
+00:03:46.100 --> 00:03:50.040
+cutia mentors și scriem mentors.length, va returna patru.
+
+00:03:50.980 --> 00:03:53.500
+Și putem folosi includes exact la fel
+
+00:03:53.520 --> 00:03:56.180
+și pe matrice. Putem spune mentors.includes,
+
+00:03:56.540 --> 00:03:59.880
+paranteze, DJ, și va returna true. Dar dacă
+
+00:03:59.960 --> 00:04:03.600
+spunem mentors.includes Frank, va returna false.
+
+00:04:05.080 --> 00:04:07.360
+Totul funcționează exact la fel ca la stringuri.
+
+00:04:07.420 --> 00:04:09.640
+Doar că lucrăm cu elementele
+
+00:04:09.660 --> 00:04:12.160
+unei matrice, nu cu literele unui string.
+
+00:04:14.140 --> 00:04:17.160
+În următoarele două exerciții vei încerca
+
+00:04:17.200 --> 00:04:19.540
+aceste tehnici diferite. Va trebui
+
+00:04:19.560 --> 00:04:21.130
+să te gândești dacă trebuie să scoți
+
+00:04:21.300 --> 00:04:23.680
+un singur element din matrice folosind
+
+00:04:23.720 --> 00:04:26.220
+sintaxa cu paranteze pătrate sau dacă vrei
+
+00:04:26.280 --> 00:04:28.820
+să parcurgi toate elementele, verificându-l
+
+00:04:28.880 --> 00:04:31.860
+sau folosindu-l pe fiecare pe rând. Ca de obicei, dacă
+
+00:04:31.920 --> 00:04:34.040
+te blochezi, uită-te la indiciile, și ne
+
+00:04:34.080 --> 00:04:34.860
+vedem aici în curând.

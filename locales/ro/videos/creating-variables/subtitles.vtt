@@ -1,0 +1,396 @@
+WEBVTT
+
+NOTE en_md5 9ba87f0c52699c431570792318049b06
+
+00:00:00.220 --> 00:00:04.109
+Bine ai revenit. Sper că acum folosești funcțiile
+
+00:00:04.280 --> 00:00:07.870
+și buclele repeat destul de sigur pe tine. Așa că, în
+
+00:00:07.900 --> 00:00:10.080
+lecția asta, trecem la un alt subiect absolut
+
+00:00:10.100 --> 00:00:12.610
+esențial, pe care o să-l folosești
+
+00:00:12.640 --> 00:00:14.880
+probabil în fiecare program pe care îl vei scrie, iar
+
+00:00:14.940 --> 00:00:19.220
+subiectul acesta sunt variabilele (engl. variables). Variabilele
+
+00:00:19.460 --> 00:00:22.700
+ne permit să stocăm informații. Când programăm, avem des nevoie
+
+00:00:22.760 --> 00:00:25.420
+să stocăm un număr sau un string ca să
+
+00:00:25.500 --> 00:00:27.780
+le folosim mai târziu, iar variabilele sunt felul în care
+
+00:00:27.800 --> 00:00:30.480
+facem asta. Hai să facem un pas în spate
+
+00:00:30.580 --> 00:00:32.880
+în depozitul lui Jiki: o să vezi că are
+
+00:00:32.940 --> 00:00:35.780
+un alt set de rafturi. Primul set de rafturi
+
+00:00:35.800 --> 00:00:37.160
+ne este deja familiar, cel pe care stau
+
+00:00:37.180 --> 00:00:39.680
+funcțiile, mașinile acelea mici ca move
+
+00:00:39.700 --> 00:00:42.140
+și rectangle. Dar pe al doilea set de
+
+00:00:42.160 --> 00:00:44.710
+rafturi, în loc de mașini, vezi o mulțime
+
+00:00:44.760 --> 00:00:47.860
+de cutii, iar cutiile acestea sunt ceea ce
+
+00:00:47.900 --> 00:00:50.080
+numim variabile. Poți să îi spui lui Jiki să pună
+
+00:00:50.140 --> 00:00:52.460
+orice în cutiile astea și, mai târziu,
+
+00:00:52.580 --> 00:00:54.940
+să ți-l dea înapoi. Fiecare
+
+00:00:54.980 --> 00:00:57.480
+cutie are un nume, exact
+
+00:00:57.520 --> 00:01:00.020
+ca funcțiile, și fiecare cutie conține
+
+00:01:00.140 --> 00:01:03.000
+un singur lucru. Deocamdată, fie un număr,
+
+00:01:03.380 --> 00:01:05.320
+fie un string. Dar vom vedea cum să punem
+
+00:01:05.340 --> 00:01:07.480
+în ele lucruri mai complexe mai departe în
+
+00:01:07.540 --> 00:01:10.800
+curs. Deci cum îi spunem lui Jiki
+
+00:01:10.860 --> 00:01:12.500
+să facă o cutie și să pună ceva în ea?
+
+00:01:13.240 --> 00:01:16.920
+Folosim cuvântul-cheie let. Cuvântul-cheie let
+
+00:01:17.000 --> 00:01:19.200
+îi spune lui Jiki că trebuie să facă o
+
+00:01:19.300 --> 00:01:21.860
+cutie nouă. Ți-l poți imagina desfăcând o
+
+00:01:21.900 --> 00:01:23.760
+cutie de carton din ambalaj, asamblând-o,
+
+00:01:23.800 --> 00:01:26.320
+apoi uitându-se la ce urmează
+
+00:01:26.440 --> 00:01:28.840
+după cuvântul let: acela este eticheta
+
+00:01:28.880 --> 00:01:30.620
+pe care o pune pe cutie, în cazul
+
+00:01:30.720 --> 00:01:32.940
+nostru, name (nume). Așa că își scoate pixul
+
+00:01:33.220 --> 00:01:36.260
+și scrie name pe etichetă. Apoi
+
+00:01:36.320 --> 00:01:38.360
+se uită la ce urmează după semnul
+
+00:01:38.440 --> 00:01:41.020
+egal. În cazul acesta, e numele meu, Jeremy,
+
+00:01:41.740 --> 00:01:43.960
+și, fiindcă Jeremy este un string, un string,
+
+00:01:44.340 --> 00:01:45.640
+ia o foaie de hârtie și
+
+00:01:45.660 --> 00:01:48.830
+scrie Jeremy pe ea. Este doar un string,
+
+00:01:48.900 --> 00:01:50.460
+exact ca culorile cu care ai
+
+00:01:50.520 --> 00:01:52.660
+lucrat, iar apoi pune foaia
+
+00:01:52.700 --> 00:01:56.410
+de hârtie în cutie. Deci i-am, i-am
+
+00:01:56.460 --> 00:01:58.260
+spus să facă o cutie, să pună o
+
+00:01:58.300 --> 00:02:00.120
+etichetă pe ea și să pună ceva în ea,
+
+00:02:00.640 --> 00:02:02.300
+iar acum o duce și o așază
+
+00:02:02.380 --> 00:02:05.140
+pe raft. Iar în orice alt
+
+00:02:05.220 --> 00:02:07.980
+moment din programul tău, Jiki poate să
+
+00:02:08.020 --> 00:02:09.840
+ia cutia de pe raft și să se uite
+
+00:02:09.979 --> 00:02:11.900
+ce este în ea, și ajungem la asta
+
+00:02:11.940 --> 00:02:14.580
+imediat. Dar deocamdată, chiar
+
+00:02:14.660 --> 00:02:16.540
+vreau să începi să îți construiești acest model
+
+00:02:16.580 --> 00:02:19.120
+mental. Eu programez de o veșnicie și încă
+
+00:02:19.180 --> 00:02:21.790
+îmi imaginez, când scriu cod, că pun
+
+00:02:21.820 --> 00:02:23.680
+ceva într-o cutie și că o să
+
+00:02:23.720 --> 00:02:26.340
+scot acel ceva mai târziu. Când vezi
+
+00:02:26.400 --> 00:02:28.570
+cuvântul-cheie let, chiar vreau să te gândești:
+
+00:02:28.690 --> 00:02:31.460
+„Bine, asta înseamnă că fac o cutie nouă.”
+
+00:02:33.520 --> 00:02:34.530
+Vreau să vorbim puțin
+
+00:02:34.580 --> 00:02:37.210
+despre numele variabilelor, adică etichetele de pe
+
+00:02:37.260 --> 00:02:40.140
+aceste cutii. Avem câteva reguli în privința
+
+00:02:40.180 --> 00:02:44.740
+lor. În primul rând, numele variabilelor nu pot conține
+
+00:02:44.780 --> 00:02:47.580
+spații. Dacă vrei să folosești mai multe cuvinte
+
+00:02:47.700 --> 00:02:49.859
+pentru eticheta unei cutii, lipim
+
+00:02:49.920 --> 00:02:51.900
+cuvintele unul de altul și
+
+00:02:51.980 --> 00:02:55.180
+transformăm prima literă a fiecărui cuvânt
+
+00:02:55.220 --> 00:02:57.520
+în majusculă. Asta se numește camel
+
+00:02:57.680 --> 00:03:00.660
+case. Imaginează-ți cocoașele unei cămile care împing
+
+00:03:00.740 --> 00:03:02.540
+în sus prima literă a fiecărui cuvânt nou,
+
+00:03:02.580 --> 00:03:05.260
+ca să devină majusculă. Așa că, dacă
+
+00:03:05.340 --> 00:03:08.290
+vrei o etichetă care să însemne numele meu, în loc
+
+00:03:08.320 --> 00:03:10.920
+să scriem două cuvinte cu spațiu între ele, o scriem
+
+00:03:10.960 --> 00:03:13.400
+ca pe un singur cuvânt, cu N majuscul.
+
+00:03:15.200 --> 00:03:17.960
+De asemenea, fiecare nume de variabilă trebuie să fie unic. Nu
+
+00:03:18.020 --> 00:03:20.180
+poți avea două cutii cu aceeași etichetă
+
+00:03:20.860 --> 00:03:23.180
+și nici variabile cu același nume
+
+00:03:23.240 --> 00:03:26.140
+ca funcțiile. Dacă uiți, Jiki se
+
+00:03:26.180 --> 00:03:28.040
+încurcă și îți dă un mesaj de eroare.
+
+00:03:29.660 --> 00:03:31.210
+Bun, hai să vedem unde am putea
+
+00:03:31.280 --> 00:03:34.160
+vrea să folosim o variabilă. Să zicem că
+
+00:03:34.200 --> 00:03:36.920
+desenăm un soare pe cer. Știm
+
+00:03:36.980 --> 00:03:39.490
+că putem folosi funcția circle și
+
+00:03:39.580 --> 00:03:43.480
+să îi dăm patru intrări. Adică left, top, radius
+
+00:03:43.680 --> 00:03:47.000
+și color. Dar, pe măsură ce desenăm o mulțime de
+
+00:03:47.040 --> 00:03:49.160
+lucruri și avem toate numerele astea împrăștiate
+
+00:03:49.180 --> 00:03:51.740
+prin cod, poate fi foarte greu
+
+00:03:51.780 --> 00:03:55.020
+să le ții evidența și să citești codul. Așa că, în schimb,
+
+00:03:55.280 --> 00:03:57.500
+putem crea variabile pentru fiecare dintre
+
+00:03:57.600 --> 00:04:00.760
+left, top, radius și color, iar apoi să ne referim
+
+00:04:00.860 --> 00:04:04.560
+la ele mai târziu. Deci scopul final
+
+00:04:04.620 --> 00:04:06.380
+aici este să putem folosi
+
+00:04:06.420 --> 00:04:11.200
+funcția circle și să îi dăm nume de cutii frumoase,
+
+00:04:11.220 --> 00:04:14.590
+lesne de citit; când Jiki vede acele nume,
+
+00:04:14.620 --> 00:04:16.480
+știe să ia cutiile de pe rafturi
+
+00:04:16.560 --> 00:04:20.459
+și să folosească ce este în ele. Hai
+
+00:04:20.519 --> 00:04:22.550
+să creăm niște variabile pentru acestea. Începem cu
+
+00:04:22.550 --> 00:04:25.050
+poziția din stânga a soarelui. Creăm,
+
+00:04:25.580 --> 00:04:27.350
+ăă, folosim cuvântul-cheie let ca
+
+00:04:27.350 --> 00:04:29.700
+să îi spunem lui Jiki să creeze o cutie nouă numită
+
+00:04:29.740 --> 00:04:32.310
+leftPosition. Ăă, observă camel case-ul de acolo,
+
+00:04:32.500 --> 00:04:35.180
+cu P majuscul. Și îi spunem
+
+00:04:35.260 --> 00:04:38.560
+lui Jiki ce număr intră în cutie. El
+
+00:04:38.580 --> 00:04:40.340
+o pune pe rafturi, apoi trece mai departe
+
+00:04:40.420 --> 00:04:43.020
+și face la fel pentru topPosition, radius
+
+00:04:43.180 --> 00:04:46.540
+și color. Acum, în orice moment al
+
+00:04:46.620 --> 00:04:48.870
+codului, putem reveni la aceste variabile,
+
+00:04:49.000 --> 00:04:51.400
+iar Jiki va scoate valorile și
+
+00:04:51.440 --> 00:04:53.530
+le va pune într-o mașină. Celălalt lucru
+
+00:04:53.640 --> 00:04:56.120
+grozav la variabile este că, oricând
+
+00:04:56.160 --> 00:04:58.960
+vrem să desenăm ceva în aceeași poziție
+
+00:04:59.000 --> 00:05:01.620
+ca soarele, putem refolosi aceleași
+
+00:05:01.680 --> 00:05:04.980
+variabile leftPosition și topPosition. Să luăm
+
+00:05:05.000 --> 00:05:07.660
+un alt exemplu. Imaginează-ți că ridici un zid
+
+00:05:07.700 --> 00:05:10.200
+cu 30 de cărămizi și vrei ca toate
+
+00:05:10.220 --> 00:05:11.840
+cărămizile să aibă aceeași lățime și
+
+00:05:11.880 --> 00:05:14.270
+aceeași înălțime. Este mult
+
+00:05:14.360 --> 00:05:17.100
+mai bine să creezi variabile pentru lățime și înălțime
+
+00:05:17.280 --> 00:05:19.580
+la începutul codului și apoi
+
+00:05:19.660 --> 00:05:21.590
+să te raportezi la ele în restul
+
+00:05:21.640 --> 00:05:23.900
+codului. Pentru că, dacă vrei apoi
+
+00:05:23.980 --> 00:05:25.960
+să schimbi lățimea sau înălțimea,
+
+00:05:26.020 --> 00:05:28.260
+o schimbi într-un singur loc și tot
+
+00:05:28.380 --> 00:05:33.100
+restul se actualizează. În următoarele exerciții,
+
+00:05:33.260 --> 00:05:35.980
+o să folosești variabile ca să scrii
+
+00:05:36.060 --> 00:05:38.840
+cod mai ordonat și mai ușor de citit. Iar după ce
+
+00:05:38.880 --> 00:05:41.910
+te obișnuiești să creezi și să folosești variabile, o să
+
+00:05:41.960 --> 00:05:44.280
+vedem cum variabilele pot face referire la alte
+
+00:05:44.320 --> 00:05:46.920
+variabile, și atunci lucrurile devin cu adevărat puternice.
+
+00:05:47.620 --> 00:05:50.110
+Dar deocamdată, mergi să exersezi cu aceste exerciții,
+
+00:05:50.520 --> 00:05:51.880
+și ne vedem aici în curând.
