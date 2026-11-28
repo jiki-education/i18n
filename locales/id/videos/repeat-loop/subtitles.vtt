@@ -1,0 +1,264 @@
+WEBVTT
+
+NOTE en_md5 d53eb0ea7bb0ec1daa64bb73829462f2
+
+00:00:00.240 --> 00:00:03.700
+Selamat datang kembali. Sejauh ini, semua yang kita lakukan
+
+00:00:03.720 --> 00:00:06.880
+ditulis secara linear: Jiki
+
+00:00:06.920 --> 00:00:10.660
+mengikuti setiap instruksi secara berurutan dari atas
+
+00:00:10.670 --> 00:00:14.220
+ke bawah. Di sesi ini, kita akan melihat
+
+00:00:14.260 --> 00:00:16.330
+bagaimana Jiki bisa keluar dari
+
+00:00:16.460 --> 00:00:19.690
+alur atas-ke-bawah yang kaku ini, khususnya bagaimana
+
+00:00:19.720 --> 00:00:21.800
+kita bisa menyuruh Jiki menjalankan
+
+00:00:21.880 --> 00:00:24.320
+bagian kode yang sama berkali-kali
+
+00:00:24.360 --> 00:00:28.680
+secara berturut-turut. Misalnya, bayangkan kamu sedang berada di
+
+00:00:28.760 --> 00:00:31.180
+labirin dan ingin maju 10 langkah.
+
+00:00:31.240 --> 00:00:34.240
+Nah, sebelumnya aku sudah memberimu fungsi
+
+00:00:34.280 --> 00:00:36.690
+walk untuk membantu, tapi bagaimana kalau
+
+00:00:36.740 --> 00:00:39.670
+fungsi itu tidak ada? Bagaimana kalau kamu hanya punya
+
+00:00:39.920 --> 00:00:44.700
+fungsi move? Daripada menulis move 10
+
+00:00:44.760 --> 00:00:48.000
+kali berturut-turut, yang sangat repetitif,
+
+00:00:48.740 --> 00:00:50.420
+yang kita perlukan adalah cara
+
+00:00:50.500 --> 00:00:54.000
+untuk berkata, “Hei, Jiki, lakukan hal berikutnya
+
+00:00:54.120 --> 00:00:59.840
+yang aku katakan sebanyak 10 kali. Move.” Untuk melakukannya
+
+00:00:59.900 --> 00:01:02.320
+dalam kode, kita perlu
+
+00:01:02.480 --> 00:01:07.300
+menggunakan kata kunci pertama kita. Kata kunci adalah instruksi
+
+00:01:07.340 --> 00:01:10.180
+yang dipahami Jiki. Bentuknya sedikit
+
+00:01:10.220 --> 00:01:13.980
+mirip mesin, tapi sebenarnya bukan. Saat Jiki melihat
+
+00:01:14.020 --> 00:01:16.460
+kata kunci, dia tidak mencari mesin
+
+00:01:16.500 --> 00:01:18.920
+di rak, dia langsung tahu harus melakukan
+
+00:01:18.960 --> 00:01:23.300
+sesuatu. Kemampuan itu sudah tertanam di otaknya. Dan
+
+00:01:23.320 --> 00:01:25.700
+ada sekitar 20 kata kunci berbeda yang akan
+
+00:01:25.740 --> 00:01:28.480
+kita pelajari selama kursus ini, dan yang
+
+00:01:28.520 --> 00:01:32.560
+pertama adalah kata kunci repeat. Kata
+
+00:01:32.580 --> 00:01:35.540
+kunci repeat melakukan persis seperti yang kukatakan tadi.
+
+00:01:36.100 --> 00:01:40.580
+Ia memberi tahu Jiki, “Ulangi sebanyak ini apa pun
+
+00:01:40.700 --> 00:01:42.990
+yang aku katakan berikutnya.” Coba lihat kode
+
+00:01:43.080 --> 00:01:45.960
+ini. Pertama, kita menggunakan kata
+
+00:01:46.000 --> 00:01:48.440
+kunci repeat untuk memberi tahu Jiki bahwa dia akan
+
+00:01:48.480 --> 00:01:51.580
+melakukan sesuatu beberapa kali. Lalu kita menuliskan
+
+00:01:51.680 --> 00:01:53.940
+berapa kali kita ingin Jiki
+
+00:01:53.980 --> 00:01:57.070
+mengulanginya di dalam tanda kurung, dan setelah itu
+
+00:01:57.100 --> 00:02:00.030
+ada tanda kurung kurawal ini, dan
+
+00:02:00.040 --> 00:02:02.850
+di dalam tanda kurung kurawal itulah hal-hal yang
+
+00:02:02.860 --> 00:02:06.020
+kita ingin Jiki ulangi. Nah, pola ini
+
+00:02:06.100 --> 00:02:09.320
+sangat umum dalam pemrograman. Kita menuliskan sebuah
+
+00:02:09.380 --> 00:02:12.400
+kata kunci, biasanya disertai informasi tertentu, seperti
+
+00:02:12.440 --> 00:02:14.549
+berapa kali sesuatu harus dilakukan dalam
+
+00:02:14.580 --> 00:02:17.620
+hal ini, lalu sebuah blok kode di dalam tanda
+
+00:02:17.680 --> 00:02:20.880
+kurung kurawal. Jadi, kembali ke dunia labirin,
+
+00:02:21.520 --> 00:02:25.220
+daripada menulis move, move, move, move, kita
+
+00:02:25.260 --> 00:02:30.580
+bisa menulis ulangi empat kali move. Jiki akan
+
+00:02:30.590 --> 00:02:32.860
+melihat kode itu dan menggunakan
+
+00:02:32.940 --> 00:02:36.870
+mesin move empat kali berturut-turut. Dan
+
+00:02:36.900 --> 00:02:38.960
+kita tidak terbatas hanya menaruh satu hal
+
+00:02:39.000 --> 00:02:41.800
+di dalam tanda kurung kurawal itu. Jiki bisa melakukan
+
+00:02:41.900 --> 00:02:45.320
+beberapa hal secara berulang. Kita bisa menyuruh Jiki untuk
+
+00:02:45.460 --> 00:02:48.080
+move, lalu turnLeft, dan mengulangi
+
+00:02:48.120 --> 00:02:51.540
+seluruh rangkaian itu empat kali. Kalau Jiki melihat
+
+00:02:51.560 --> 00:02:54.000
+kode ini, dia akan menggunakan mesin move, lalu
+
+00:02:54.060 --> 00:02:56.880
+mesin turnLeft, lalu mesin move, lalu
+
+00:02:56.920 --> 00:02:59.340
+mesin turnLeft, lalu mesin move,
+
+00:02:59.430 --> 00:03:01.720
+dan seterusnya, sampai dia selesai melakukan keduanya
+
+00:03:01.800 --> 00:03:07.160
+empat kali. Instruksi repeat semacam ini kita sebut perulangan,
+
+00:03:07.840 --> 00:03:09.540
+dan ada banyak jenis perulangan yang
+
+00:03:09.580 --> 00:03:11.980
+bisa kita gunakan, masing-masing bekerja sedikit berbeda.
+
+00:03:12.000 --> 00:03:15.210
+Semuanya akan kita pelajari di kursus ini. Nah,
+
+00:03:15.220 --> 00:03:17.710
+ada satu hal lagi yang perlu kamu tahu, yaitu
+
+00:03:17.760 --> 00:03:20.300
+menjaga kode tetap rapi
+
+00:03:20.480 --> 00:03:24.240
+menjadi sangat penting saat bekerja dengan perulangan. Kalau
+
+00:03:24.280 --> 00:03:26.800
+struktur visual kodemu bagus,
+
+00:03:26.860 --> 00:03:28.940
+apa yang sedang terjadi jadi sangat mudah dilihat.
+
+00:03:29.660 --> 00:03:31.740
+Tapi kalau tidak, kalau kamu lupa
+
+00:03:31.780 --> 00:03:34.400
+membuat indentasi dengan rapi atau indentasimu
+
+00:03:34.460 --> 00:03:38.630
+campur aduk, semuanya cepat sekali jadi membingungkan. Karena itu,
+
+00:03:38.660 --> 00:03:41.500
+di kursus ini kita selalu punya satu aturan.
+
+00:03:41.600 --> 00:03:45.049
+Tanda kurung kurawal pembuka selalu ditaruh
+
+00:03:45.080 --> 00:03:48.430
+di baris yang sama dengan pernyataan repeat.
+
+00:03:48.430 --> 00:03:50.860
+Tanda kurung kurawal penutup selalu ditaruh di
+
+00:03:50.940 --> 00:03:54.080
+barisnya sendiri setelah pernyataan itu, dan kode
+
+00:03:54.120 --> 00:03:56.399
+di antara keduanya selalu diberi indentasi dua
+
+00:03:56.480 --> 00:04:00.120
+spasi. Dengan begitu semuanya akan tetap rapi,
+
+00:04:01.020 --> 00:04:02.560
+dan kalau kamu lupa atau mencoba mengikuti
+
+00:04:02.620 --> 00:04:04.360
+pola lain, kamu akan mendapatkan error.
+
+00:04:06.100 --> 00:04:08.080
+Di beberapa latihan berikutnya, tujuanmu adalah
+
+00:04:08.120 --> 00:04:11.060
+menyelesaikan beberapa tantangan dengan
+
+00:04:11.100 --> 00:04:13.720
+baris kode sesedikit mungkin, dan
+
+00:04:13.780 --> 00:04:15.320
+kamu bisa memakai perulangan repeat untuk membantu
+
+00:04:15.380 --> 00:04:18.060
+hal itu. Setelah itu, kita akan mempelajari cara
+
+00:04:18.070 --> 00:04:19.990
+menggunakan perulangan repeat bersama
+
+00:04:20.019 --> 00:04:23.270
+konsep lain untuk mulai melihat teknik-teknik
+
+00:04:23.320 --> 00:04:25.540
+yang jauh lebih ampuh. Selamat bersenang-senang, dan sampai jumpa
+
+00:04:25.580 --> 00:04:26.039
+lagi di sini sebentar lagi.

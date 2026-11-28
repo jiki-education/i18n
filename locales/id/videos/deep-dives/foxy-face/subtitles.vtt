@@ -1,0 +1,925 @@
+WEBVTT
+
+NOTE en_md5 3444df0fcca33c086487f13e47f69d4f
+
+00:00:00.079 --> 00:00:02.899
+Hai, selamat datang di deep dive pertamamu. Nah,
+
+00:00:02.939 --> 00:00:04.839
+video-video ini agak berbeda dari
+
+00:00:04.880 --> 00:00:08.159
+video materi yang sudah kamu tonton. Durasinya lebih panjang,
+
+00:00:08.179 --> 00:00:11.440
+dan jauh lebih santai, tidak terlalu terstruktur. Setelah aku
+
+00:00:11.460 --> 00:00:13.100
+selesai di sini, isinya cuma aku
+
+00:00:13.140 --> 00:00:15.939
+di depan laptop, ngobrol denganmu, menjelaskan
+
+00:00:16.000 --> 00:00:18.680
+beberapa ide dengan lebih mendalam, mungkin sesekali
+
+00:00:18.720 --> 00:00:21.280
+keluar topik, mungkin sedikit melantur,
+
+00:00:21.319 --> 00:00:23.479
+tapi semoga bisa memberimu gambaran lebih jelas
+
+00:00:23.559 --> 00:00:27.600
+tentang cara aku memikirkan kode. Nah, menonton
+
+00:00:27.620 --> 00:00:30.419
+deep dive ini sepenuhnya opsional. Kamu bisa
+
+00:00:30.500 --> 00:00:32.519
+mempercepatnya. Kamu bisa memutar ulang
+
+00:00:32.580 --> 00:00:34.479
+untuk menonton bagian tertentu lagi. Kamu juga bisa mengabaikannya
+
+00:00:34.540 --> 00:00:37.799
+sama sekali, bahkan tidak mengekliknya.
+
+00:00:37.860 --> 00:00:40.059
+Tapi waktu kursus ini kami jalankan
+
+00:00:40.119 --> 00:00:42.939
+sebagai bootcamp, para peserta bilang video-video ini
+
+00:00:42.979 --> 00:00:45.200
+mungkin bagian paling berharga dari
+
+00:00:45.260 --> 00:00:47.099
+seluruh kursus, karena mereka jadi bisa melihat
+
+00:00:47.139 --> 00:00:49.139
+cara aku berpikir. Dan seperti yang sudah
+
+00:00:49.200 --> 00:00:51.339
+aku bilang sebelumnya, bagian besar dari kursus ini
+
+00:00:51.420 --> 00:00:53.759
+adalah mengajarimu berpikir seperti developer,
+
+00:00:53.799 --> 00:00:56.419
+seperti seorang programmer. Jadi, coba tonton beberapa
+
+00:00:56.459 --> 00:00:58.319
+video ini saat muncul, lalu lihat
+
+00:00:58.360 --> 00:01:00.740
+bagaimana menurutmu. Untuk sekarang, pastikan kamu sudah
+
+00:01:00.799 --> 00:01:02.720
+siap dengan secangkir teh atau kopi. Duduk
+
+00:01:02.779 --> 00:01:04.360
+santai, dan mari kita mulai
+
+00:01:05.004 --> 00:01:09.203
+Oke, jadi di deep dive ini, aku akan
+mengerjakan latihannya persis seperti
+
+00:01:09.203 --> 00:01:11.243
+kalau aku baru pertama
+kali melihatnya.
+
+00:01:11.563 --> 00:01:15.083
+Aku sengaja tidak melihat setiap
+latihan selama cukup lama.
+
+00:01:15.524 --> 00:01:18.083
+Lalu aku kembali dan
+memecahkannya dari awal,
+
+00:01:18.083 --> 00:01:19.884
+jadi aku tidak hafal solusinya.
+
+00:01:20.364 --> 00:01:23.483
+Aku mengerjakannya seperti
+semoga kamu juga mengerjakannya.
+
+00:01:23.964 --> 00:01:27.323
+Tapi yang berharga di sini bukanlah
+melihat kode apa yang aku tulis,
+
+00:01:27.483 --> 00:01:29.483
+apalagi untuk latihan-latihan awal ini.
+
+00:01:29.564 --> 00:01:32.913
+Kodeku mungkin akan persis
+sama dengan kode yang kamu tulis.
+
+00:01:33.633 --> 00:01:37.593
+Tujuan utamanya, setidaknya di awal,
+adalah supaya kamu memikirkan cara
+
+00:01:37.593 --> 00:01:41.633
+menghadapi masalah, dan supaya aku bisa
+menjelaskan cara aku menghadapinya.
+
+00:01:42.124 --> 00:01:46.633
+Semakin jauh kita di kursus ini,
+akan ada banyak cara berbeda
+
+00:01:46.633 --> 00:01:50.273
+untuk menghadapi satu masalah.
+Ada yang kelebihannya, ada yang kekurangannya.
+
+00:01:50.754 --> 00:01:54.993
+Dan banyak waktu kita akan dipakai untuk
+menjelajahi cara-cara berpikir itu.
+
+00:01:55.983 --> 00:01:59.673
+Dan logika ini, cara
+memecahkan masalah ini,
+
+00:01:59.993 --> 00:02:02.154
+bisa kamu bawa ke semua bidang pemrograman.
+
+00:02:02.394 --> 00:02:05.114
+Saat kita bicara soal membangun
+sesuatu, membangun platform,
+
+00:02:05.114 --> 00:02:09.194
+dengan semua bagian berbeda yang kita
+rangkai, mungkin malah tanpa kode,
+
+00:02:09.353 --> 00:02:12.153
+mungkin kita menyuruh LLM
+menulis sebagian kodenya,
+
+00:02:12.633 --> 00:02:17.273
+cara kita berpikir adalah satu hal yang
+selalu tetap dan membuat hasilnya bagus.
+
+00:02:18.234 --> 00:02:20.954
+Jadi, kalaupun kamu tidak mengambil
+apa-apa lagi dari kursus ini,
+
+00:02:21.273 --> 00:02:24.873
+satu hal yang aku harap kamu bawa
+adalah cara kita berpikir.
+
+00:02:25.984 --> 00:02:27.424
+Jadi, latihannya sederhana,
+
+00:02:28.543 --> 00:02:31.183
+mungkin tidak terasa sederhana,
+tapi sebenarnya cukup sederhana.
+
+00:02:31.344 --> 00:02:33.903
+Kita cuma mencoba menggambar wajah rubah,
+
+00:02:34.344 --> 00:02:37.743
+dan ada beberapa segitiga yang perlu kita gambar.
+
+00:02:38.704 --> 00:02:41.623
+Jadi, aku sedang melihat instruksinya.
+
+00:02:41.623 --> 00:02:43.623
+Di situ dijelaskan cara menggambar segitiga.
+
+00:02:43.623 --> 00:02:49.103
+Ini sesuatu yang sudah aku kuasai. Lalu
+ada juga beberapa warna yang berbeda.
+
+00:02:49.103 --> 00:02:53.224
+Jadi ada white, brown,
+orange, dan charcoal yang bisa kita pakai.
+
+00:02:53.224 --> 00:02:57.094
+Ada dua pipi putih, dua telinga
+cokelat, dua belahan wajah oranye,
+
+00:02:57.564 --> 00:03:00.603
+lalu satu hidung,
+tapi terdiri dari dua segitiga.
+
+00:03:03.004 --> 00:03:07.724
+Lalu aku menulis catatan di sini bahwa
+kamu bisa hover di gambarnya,
+
+00:03:07.804 --> 00:03:12.364
+dan sebaiknya kamu pakai itu. Selain itu,
+semua angkanya habis dibagi 5.
+
+00:03:12.444 --> 00:03:15.163
+Dan satu-satunya yang kita
+pakai di sini adalah segitiga ini.
+
+00:03:16.284 --> 00:03:18.923
+Jadi, kalau aku menggambar ini, bagaimana caranya?
+
+00:03:19.083 --> 00:03:22.203
+Nah, aku akan mulai dengan berpikir,
+oke, aku butuh segitiga.
+
+00:03:22.444 --> 00:03:25.203
+Jadi aku tulis triangle,
+triangle untuk fungsi triangle.
+
+00:03:25.444 --> 00:03:29.763
+Dan aku butuh tiga titik. Titik pertama
+di atas sini, aku lihat 10, 6.
+
+00:03:29.844 --> 00:03:34.043
+Jadi aku tahu itu 10, 5. Satu hal yang
+aku suka lakukan adalah menaruh
+
+00:03:34.043 --> 00:03:36.083
+keduanya berdampingan tanpa spasi.
+
+00:03:36.643 --> 00:03:41.444
+Jadi aku bisa melihat ini sepasang
+koordinat, lalu memberi spasi di antara
+
+00:03:41.923 --> 00:03:46.564
+pasangan koordinatnya. Cara itu
+cocok sekali untuk fungsi triangle ini.
+
+00:03:46.803 --> 00:03:50.163
+Tapi ini juga bagus untuk memikirkan
+lagi bagaimana whitespace,
+
+00:03:51.103 --> 00:03:55.444
+dan yang dimaksud dengan whitespace adalah
+spasi, baris baru, tab, semua hal itu,
+
+00:03:56.303 --> 00:04:01.184
+bisa membuat kodemu lebih mudah dibaca,
+untuk dirimu sendiri dan juga orang lain.
+
+00:04:02.143 --> 00:04:05.184
+Jadi, ini pola kecil yang bagus.
+Satukan dua angka koordinatnya,
+
+00:04:05.184 --> 00:04:08.543
+lalu beri sedikit spasi di antaranya
+untuk memisahkan koordinat.
+
+00:04:09.024 --> 00:04:11.583
+Tidak masalah yang mana dari dua ini
+yang jadi koordinat keduaku.
+
+00:04:11.583 --> 00:04:14.383
+Tapi aku akan turun ke sini, ke 10, 40.
+
+00:04:15.184 --> 00:04:19.103
+Lalu terakhir, ada yang
+di sebelah sini, yaitu 50, 40.
+
+00:04:19.823 --> 00:04:21.784
+Satu hal yang mau aku tunjukkan,
+mungkin belum kamu lihat,
+
+00:04:21.784 --> 00:04:26.143
+ada panah yang muncul di atas angka
+yang bisa kamu pakai untuk menggeser nilainya.
+
+00:04:26.464 --> 00:04:29.603
+Ini akan lebih berguna nanti,
+saat kita melihat
+
+00:04:29.603 --> 00:04:33.363
+warna-warna dan hal semacamnya,
+bisa jadi fitur kecil
+
+00:04:33.363 --> 00:04:34.043
+yang cukup berguna.
+
+00:04:34.853 --> 00:04:37.643
+Jadi, ini segitiga kita untuk telinga kiri.
+
+00:04:38.524 --> 00:04:41.883
+Kita lihat telinga kirinya harus cokelat.
+
+00:04:42.603 --> 00:04:46.323
+Jadi kita ketik brown. Lalu itu
+seharusnya menghasilkan telinga kiri.
+
+00:04:46.323 --> 00:04:48.124
+Dan aku langsung memeriksanya.
+
+00:04:48.124 --> 00:04:53.483
+Jadi aku tekan Jalankan Kode. Aku lihat
+segitiga ini kelihatannya sudah pas.
+
+00:04:54.073 --> 00:04:57.833
+Dan kalau aku hapus baris ini, kalau aku
+jadikan komentar dengan dua garis miring,
+
+00:04:57.994 --> 00:05:01.233
+kita bisa lihat segitiganya hilang.
+
+00:05:01.233 --> 00:05:05.513
+Jadi kita tahu ini berhasil.
+Bagian ini sudah beres, kita bisa lanjut.
+
+00:05:05.913 --> 00:05:08.073
+Jadi, berikutnya bagian kiri wajah.
+
+00:05:09.194 --> 00:05:15.233
+Wajahnya adalah bagian oranye. Jadi
+tidak ada bagian bayangan di belakangnya.
+
+00:05:15.233 --> 00:05:17.113
+Kita hanya punya sisi kanan wajah.
+
+00:05:17.673 --> 00:05:19.833
+Jadi mari kita pikirkan ini.
+Kita butuh triangle.
+
+00:05:20.904 --> 00:05:23.943
+Dan kalau aku lihat gambarnya,
+aku lihat gambarnya simetris.
+
+00:05:24.503 --> 00:05:26.743
+Konsep simetri ini akan
+kita pakai di beberapa
+
+00:05:26.743 --> 00:05:28.423
+latihan yang akan datang.
+
+00:05:28.663 --> 00:05:31.743
+Tapi kita bisa lihat bahwa titik
+tengahnya akan sama.
+
+00:05:31.743 --> 00:05:36.103
+Jadi mulainya di 50, 30, dan
+berakhir di bawah sini di titik yang sama,
+
+00:05:36.103 --> 00:05:38.503
+yang menurutku kelihatannya 50, 95.
+
+00:05:39.303 --> 00:05:42.904
+Lalu kita perlu mencari tahu
+titik di sebelah sini ada di mana.
+
+00:05:43.704 --> 00:05:49.543
+Kita bisa melihatnya dengan hover di titik
+ini, yaitu X-nya 90 dan Y-nya 40.
+
+00:05:50.483 --> 00:05:55.123
+Jadi X-nya sesuatu,
+dan Y-nya 40,
+
+00:05:55.603 --> 00:05:57.764
+dan warnanya oranye.
+
+00:05:59.284 --> 00:06:02.003
+Tapi tanda tanya yang satu ini,
+apa yang kita taruh di sini?
+
+00:06:02.243 --> 00:06:06.404
+Nah, aku lihat-lihat,
+kanvas ini lebarnya 100,
+
+00:06:06.404 --> 00:06:07.923
+jadi sampai ke sini, ke 100.
+
+00:06:08.724 --> 00:06:12.483
+Dan ini 90.
+Jadi ada jarak 10 di sini.
+
+00:06:13.284 --> 00:06:16.884
+Jadi aku tahu di sisi ini juga
+akan ada jarak yang sama, yaitu 10.
+
+00:06:17.603 --> 00:06:18.803
+Dan aku tahu bahwa
+
+00:06:19.923 --> 00:06:24.644
+0 tambah 10 itu 10,
+jadi aku tahu yang ini akan 10.
+
+00:06:25.284 --> 00:06:30.084
+Lalu aku tekan Jalankan Kode. Hasilnya,
+menurutku, segitiga oranye yang bagus.
+
+00:06:31.284 --> 00:06:35.923
+Berikutnya aku menggambar pipi kiri.
+Di sini aku cuma salin dan tempel.
+
+00:06:36.313 --> 00:06:39.443
+Ambil segitiga ini. Hapus
+semua yang ini.
+
+00:06:39.913 --> 00:06:43.363
+Fungsi triangle-nya sudah ada,
+jadi aku tidak perlu mengetiknya lagi.
+
+00:06:44.253 --> 00:06:47.693
+Dan pipi kiri kita akan berwarna putih.
+
+00:06:48.253 --> 00:06:52.813
+Jadi aku bisa mengukurnya. Ini 10, 40,
+
+00:06:54.654 --> 00:06:57.293
+dan ini 5, 60.
+
+00:06:58.094 --> 00:07:00.053
+Aku lupa satu koma. Jadi ini jadi lain.
+
+00:07:00.053 --> 00:07:03.134
+Tips kecil. Lihat, ini tidak merah.
+
+00:07:03.214 --> 00:07:07.454
+Warnanya seperti salah.
+Itu namanya syntax highlighting.
+
+00:07:07.613 --> 00:07:12.534
+Itu istilah teknis yang kita pakai. Tapi
+warna-warna yang kamu lihat adalah warna
+
+00:07:12.534 --> 00:07:13.053
+syntax highlighting.
+
+00:07:14.053 --> 00:07:18.693
+Jadi, kalau ini tidak merah, itu tanda
+yang jelas bahwa ada yang salah.
+
+00:07:18.933 --> 00:07:21.654
+Jadi kalau kamu melihat sesuatu
+yang warnanya kelihatan salah,
+
+00:07:21.733 --> 00:07:24.373
+itu tanda bahwa
+mungkin kamu lupa satu koma.
+
+00:07:24.534 --> 00:07:27.894
+Mungkin. Kalau kita ke sini dan tanda kutip
+ini tidak kita tutup, kamu bisa lihat
+
+00:07:28.293 --> 00:07:33.014
+tanda kurung ini jadi hijau,
+yang menandakan ada tanda kutip yang kurang.
+
+00:07:33.413 --> 00:07:35.974
+Jadi warna-warna ini ternyata
+sangat berguna sebagai
+
+00:07:35.974 --> 00:07:39.574
+jalan pintas kecil di otakmu
+untuk menyadari ada yang salah.
+
+00:07:41.224 --> 00:07:43.144
+Jadi tambahkan komanya. Dan ini jadi oranye.
+
+00:07:43.224 --> 00:07:50.584
+Jadi 10, 40, 5, 60. Lalu kita kembali
+ke bawah sini, yaitu 50 dan 95.
+
+00:07:51.943 --> 00:07:56.743
+Lalu kita tulis white. Kita
+tambahkan ini, dan hasilnya bagus.
+
+00:07:59.224 --> 00:08:04.264
+Oke. Telinga kanan. Sekarang kita
+benar-benar masuk ke urusan simetri.
+
+00:08:04.663 --> 00:08:09.224
+Jadi untuk telinga kanan, di sini tertulis,
+bisakah kamu memecahkannya tanpa hover?
+
+00:08:10.584 --> 00:08:13.543
+Jadi, ya,
+kita bisa memecahkannya tanpa hover.
+
+00:08:13.863 --> 00:08:18.464
+Kalau kamu memakai hover, bisakah kamu
+memikirkan cara lain untuk melakukannya?
+
+00:08:18.464 --> 00:08:21.943
+Dan bisakah kamu memikirkan cara
+memakai apa yang baru kita lakukan, saat
+
+00:08:22.743 --> 00:08:26.024
+aku menggambar pipi kiri dengan
+melihat pipi kanan?
+
+00:08:26.024 --> 00:08:28.024
+Bagaimana kita memakainya? Prinsip yang sama?
+
+00:08:28.024 --> 00:08:30.904
+Kalau kamu mau berhenti sebentar
+dan memikirkannya, silakan,
+
+00:08:31.863 --> 00:08:38.024
+kalau tidak, aku akan beri tahu. Jadi,
+kita tahu telinga kiri mulai di 10.
+
+00:08:38.253 --> 00:08:40.014
+Dan kita lihat ada 10, 5 ini.
+
+00:08:40.894 --> 00:08:44.894
+Kita tahu, seperti yang kita bilang tadi,
+0 tambah 10 itu 10.
+
+00:08:45.053 --> 00:08:47.613
+Dan kita sudah tahu pipi ini berakhir di 90
+
+00:08:48.413 --> 00:08:52.014
+karena ada jarak 10,
+dan jarak yang sama ada di sini.
+
+00:08:52.413 --> 00:08:54.894
+Jadi kita tahu telinga ini seharusnya 90,
+
+00:08:56.094 --> 00:09:00.974
+dan kita tahu ia turun lurus
+ke 90, dan kita tahu ia
+
+00:09:01.443 --> 00:09:03.693
+masuk sampai ke tengah, di 50.
+
+00:09:04.413 --> 00:09:07.454
+Jadi kita bisa membaliknya, dan kita dapat
+
+00:09:08.654 --> 00:09:12.053
+segitiga yang sama. Lalu kita bisa
+membuat bagian kanan wajah.
+
+00:09:12.053 --> 00:09:16.733
+Dan lagi-lagi kita bisa melakukannya tanpa hover,
+cukup mengubah 10 ini jadi 90 karena
+
+00:09:16.733 --> 00:09:22.454
+gambarnya simetris. Lalu kita bisa membuat
+pipi kanan, dan untuk pipi kanan pun,
+
+00:09:22.454 --> 00:09:28.974
+kita mau simetri. Jadi ini jadi 90,
+ini jadi 95, dan ini tetap 50,
+
+00:09:29.543 --> 00:09:31.063
+dan hasilnya pipi putih.
+
+00:09:31.543 --> 00:09:33.224
+Lalu kita butuh hidungnya,
+
+00:09:34.344 --> 00:09:38.983
+hidung kita warnanya charcoal,
+jadi kita bisa tulis triangle.
+
+00:09:39.944 --> 00:09:44.023
+Dan aku agak merusaknya
+sendiri karena aku
+
+00:09:44.023 --> 00:09:45.983
+menggambar di atasnya. Tapi kita bisa.
+
+00:09:45.983 --> 00:09:50.743
+Jadi kamu punya dua pilihan. Pertama,
+kamu bisa jadikan semua kodemu komentar.
+
+00:09:51.224 --> 00:09:54.103
+Jadi kamu bisa tambahkan beberapa komentar
+
+00:09:55.554 --> 00:09:56.033
+seperti ini,
+
+00:09:56.914 --> 00:09:59.074
+dan itu memungkinkanmu
+
+00:10:00.834 --> 00:10:04.873
+menjadikan yang ini komentar. Jadi kalau kamu
+mengalami ini, mungkin kamu salah ketik.
+
+00:10:04.873 --> 00:10:08.794
+Kamu tidak perlu takut. Tekan saja
+Jalankan Kode, jadikan yang salah komentar,
+
+00:10:08.794 --> 00:10:10.594
+tekan Jalankan Kode lagi, gambarnya kembali.
+
+00:10:11.233 --> 00:10:15.633
+Jadi di sini kita bisa lihat ini seharusnya 50 dan 85.
+
+00:10:17.153 --> 00:10:20.753
+Jadi 50 dan 85. Lalu kita
+bisa kembalikan yang ini.
+
+00:10:21.974 --> 00:10:22.273
+Dan.
+
+00:10:26.353 --> 00:10:29.474
+Entah bagaimana aku malah menghapus
+kata triangle dari yang pertama.
+
+00:10:30.113 --> 00:10:30.753
+Oke,
+
+00:10:34.273 --> 00:10:36.674
+jadi mari kita ukur ini. Jadi 40, 90.
+
+00:10:37.873 --> 00:10:42.194
+Dan kita tahu ini simetris. Jadi kita
+langsung tahu yang berikutnya akan
+
+00:10:42.194 --> 00:10:48.214
+60, 90. Dan kita tahu ini charcoal,
+kata yang susah sekali aku eja.
+
+00:10:48.934 --> 00:10:53.893
+Kita sudah punya bagian atas hidung,
+lalu ada bagian bawah hidung.
+
+00:10:54.214 --> 00:11:00.054
+Dan ini segitiga yang
+simetris dengan segitiga atas ini.
+
+00:11:00.454 --> 00:11:04.533
+Jadi bentuknya akan persis
+sama dengan yang ini,
+
+00:11:04.934 --> 00:11:07.493
+tapi kalau yang ini dari 85 ke 90,
+
+00:11:07.893 --> 00:11:13.074
+kita tahu yang ini harus
+dari 90 ke 95, karena lagi-lagi,
+
+00:11:13.233 --> 00:11:16.834
+kita bisa anggap 90 sebagai garis tengahnya,
+5 di atas, 5 di bawah.
+
+00:11:17.873 --> 00:11:20.594
+Dan bagian bawah hidung sudah jadi,
+dan semuanya lulus.
+
+00:11:21.153 --> 00:11:24.393
+Lalu aku akan menghapus TODO ini.
+
+00:11:24.393 --> 00:11:26.834
+Mari kita jaga kode kita tetap rapi.
+
+00:11:27.794 --> 00:11:31.794
+Oh ya, di beberapa video ini
+kamu akan melihat sesuatu di bawah sini.
+
+00:11:31.794 --> 00:11:34.753
+Itu cuma karena aku
+menjalankannya di komputerku sendiri,
+
+00:11:35.074 --> 00:11:36.513
+bukan di situs Jiki.
+
+00:11:36.834 --> 00:11:39.474
+Aku menyalakan beberapa fitur debugging tambahan.
+
+00:11:39.554 --> 00:11:42.824
+Jadi kalau kamu melihat yang seperti itu
+di bawah sana, abaikan saja.
+
+00:11:44.584 --> 00:11:46.824
+Oke, jadi kode kita sudah rapi.
+
+00:11:46.824 --> 00:11:49.623
+Yang ini bisa kita hapus. Bisakah kamu
+memecahkan ini tanpa hover juga?
+
+00:11:50.103 --> 00:11:52.863
+Dan sekarang ini mendokumentasikan kode kita.
+
+00:11:52.863 --> 00:11:54.903
+Jadi ini bilang bahwa ini telinga kiri.
+
+00:11:54.903 --> 00:11:57.544
+Dan mungkin sebenarnya aku akan mengubah
+ini supaya cukup menyebut bagiannya.
+
+00:11:58.103 --> 00:11:59.783
+Karena kita tidak ingin
+komentarnya jadi instruksi,
+
+00:11:59.783 --> 00:12:02.263
+kita cuma ingin komentarnya menjelaskan
+apa yang dilakukan kodenya.
+
+00:12:02.344 --> 00:12:04.584
+Tapi kamu bisa pilih
+mana yang paling jelas untukmu.
+
+00:12:05.064 --> 00:12:08.344
+Tapi dengan komentar yang
+cuma menjelaskan bagian apa ini.
+
+00:12:08.344 --> 00:12:10.424
+Mungkin yang ini aku sebut hidung saja.
+
+00:12:10.974 --> 00:12:14.013
+Dan aku akan punya dua baris seperti ini,
+dan itu sudah cukup jelas,
+
+00:12:15.133 --> 00:12:16.733
+dan sekalian saja aku kelompokkan.
+
+00:12:16.733 --> 00:12:20.013
+Aku mungkin juga bilang, oke,
+aku mau kedua telinga dikumpulkan,
+
+00:12:20.334 --> 00:12:25.054
+cukup tulis telinga, dan aku mau
+bagian-bagian wajah dikumpulkan,
+
+00:12:25.643 --> 00:12:29.454
+dan aku mau pipi-pipinya dikumpulkan
+
+00:12:30.334 --> 00:12:30.974
+seperti ini.
+
+00:12:32.733 --> 00:12:36.054
+Dan semuanya masih jalan,
+tapi sekarang sedikit lebih rapi.
+
+00:12:36.054 --> 00:12:38.253
+Simetrinya juga jadi
+sedikit lebih kelihatan.
+
+00:12:38.893 --> 00:12:41.253
+Jadi, selalu luangkan beberapa menit
+setelah kamu menyelesaikan
+
+00:12:41.253 --> 00:12:43.594
+latihan, supaya kamu bisa
+benar-benar bangga dengannya.
+
+00:12:43.594 --> 00:12:47.594
+Rapikan, buat jadi benar-benar
+teratur, dan kamu bisa lihat jauh lebih
+
+00:12:47.594 --> 00:12:49.834
+jelas dengan dua baris
+ini berdampingan.
+
+00:12:50.263 --> 00:12:53.513
+Semuanya jadi terasa sedikit lebih bersih.
+
+00:12:53.513 --> 00:12:56.633
+Satu hal terakhir sebelum
+kita selesai, ada di bawah sini.
+
+00:12:56.633 --> 00:12:59.513
+Aku pindahkan dulu yang ini
+supaya tidak menghalangi.
+
+00:13:00.233 --> 00:13:03.914
+Kamu lihat bilah ini? Mungkin kamu
+belum pernah memakai bilah ini,
+
+00:13:03.993 --> 00:13:06.474
+tapi ini yang kita sebut scrubber.
+
+00:13:07.113 --> 00:13:09.033
+Ini akan sangat berguna untukmu nanti.
+
+00:13:09.434 --> 00:13:13.633
+Dengan scrubber, kamu bisa melangkah
+dari satu baris kode ke baris berikutnya.
+
+00:13:13.633 --> 00:13:13.993
+Jadi
+
+00:13:15.103 --> 00:13:19.344
+satu per satu. Jadi alih-alih langsung
+melihat seluruh wajahnya, kamu bisa
+
+00:13:19.824 --> 00:13:22.304
+menelusurinya langkah demi langkah dan melihat
+apa yang dilakukan setiap baris kode.
+
+00:13:22.704 --> 00:13:25.623
+Dan saat kamu menulis
+program yang punya 200
+
+00:13:25.623 --> 00:13:28.983
+baris kode, atau yang menjalankan
+kode yang sama
+
+00:13:28.983 --> 00:13:31.424
+berulang-ulang kali, dan mungkin
+ada seribu,
+
+00:13:31.824 --> 00:13:34.023
+sepuluh ribu hal yang terjadi
+di programmu, dan
+
+00:13:34.023 --> 00:13:35.743
+kita akan sampai ke latihan itu sebentar lagi,
+
+00:13:36.224 --> 00:13:40.944
+scrubber ini jadi
+sangat, sangat berguna untukmu.
+
+00:13:41.883 --> 00:13:46.363
+Lalu ada juga tombol kecil panel
+informasi di atas sini.
+
+00:13:46.444 --> 00:13:50.964
+Dan lagi-lagi, saat kodenya
+jauh lebih rumit,
+
+00:13:50.964 --> 00:13:53.003
+panel ini akan punya banyak
+langkah, dan isinya jadi
+
+00:13:53.003 --> 00:13:54.844
+jauh lebih mendalam dan
+jauh lebih rumit.
+
+00:13:55.483 --> 00:13:58.523
+Tapi untuk sekarang, kamu bisa
+lihat panel ini bilang bahwa Jiki
+
+00:13:58.603 --> 00:14:02.084
+memakai fungsi triangle dengan
+parameter-parameter yang berbeda ini.
+
+00:14:02.084 --> 00:14:05.283
+Kamu juga bisa hover di bagian-bagian ini,
+misalnya hover di triangle.
+
+00:14:05.283 --> 00:14:09.164
+Dan kamu akan lihat kata yang kamu hover
+disorot di sini, dan seluruh barisnya juga disorot.
+
+00:14:09.783 --> 00:14:13.064
+Lagi-lagi, mungkin ini belum kelihatan terlalu berguna,
+tapi nanti,
+
+00:14:13.064 --> 00:14:15.824
+saat kamu punya mungkin 20
+langkah dan kamu ingin
+
+00:14:15.824 --> 00:14:19.064
+mencari tahu persis apa yang terjadi
+di setiap titik di baris kode ini,
+
+00:14:19.224 --> 00:14:20.903
+ini akan sangat membantumu.
+
+00:14:21.863 --> 00:14:24.424
+Jadi, ya, dan kamu juga bisa
+menekan tombol putar ini.
+
+00:14:24.533 --> 00:14:26.743
+Untuk memutar semuanya sampai selesai.
+
+00:14:27.294 --> 00:14:30.674
+Dan kalau kamu kembali ke game
+Space Invaders yang sudah
+
+00:14:30.674 --> 00:14:34.464
+kamu kerjakan sebelumnya,
+kamu bisa mencobanya sekarang, kembali ke sana,
+
+00:14:34.464 --> 00:14:37.383
+pakai scrubber-nya,
+dan menonton para Space Invaders ditembak,
+
+00:14:37.623 --> 00:14:39.983
+atau kamu bisa masuk ke labirin
+dan memakai scrubber itu,
+
+00:14:39.983 --> 00:14:43.263
+maju dan mundur untuk melihat
+karaktermu menyelesaikan labirinnya.
+
+00:14:43.263 --> 00:14:46.023
+Lalu kamu bisa tekan putar lagi
+untuk memutar seluruh animasinya.
+
+00:14:46.263 --> 00:14:51.503
+Jadi, ini alat kecil yang sangat berguna. Masih ada
+hal yang lebih rumit di baliknya
+
+00:14:51.503 --> 00:14:54.503
+yang akan kita bahas lagi
+di deep dive berikutnya.
+
+00:14:54.824 --> 00:14:56.664
+Tapi untuk sekarang, semoga ini bermanfaat.
+
+00:14:56.853 --> 00:15:02.103
+Aku tidak sabar menunggu saat kita benar-benar
+menyelami latihan-latihan yang rumit nanti.
+
+00:15:02.533 --> 00:15:06.373
+Tapi sekarang giliranmu. Semoga kamu
+menikmati latihan menggambar berikutnya.
+
+00:15:06.773 --> 00:15:08.853
+Terus coba pikirkan
+bagaimana cara kamu berpikir.
+
+00:15:09.174 --> 00:15:13.814
+Santai saja, buat kodemu rapi,
+dan, ya, kamu pasti bisa.
+
+00:15:13.893 --> 00:15:14.773
+Terima kasih sudah menonton.

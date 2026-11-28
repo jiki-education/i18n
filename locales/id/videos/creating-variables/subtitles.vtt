@@ -1,0 +1,396 @@
+WEBVTT
+
+NOTE en_md5 9ba87f0c52699c431570792318049b06
+
+00:00:00.220 --> 00:00:04.109
+Selamat datang kembali. Semoga sekarang kamu sudah bisa memakai fungsi
+
+00:00:04.280 --> 00:00:07.870
+dan perulangan repeat dengan cukup percaya diri. Jadi di
+
+00:00:07.900 --> 00:00:10.080
+sesi ini, kita akan lanjut ke topik lain yang sangat
+
+00:00:10.100 --> 00:00:12.610
+penting, yang akan kamu pakai di
+
+00:00:12.640 --> 00:00:14.880
+hampir setiap program yang kamu tulis, dan
+
+00:00:14.940 --> 00:00:19.220
+topik itu adalah variabel. Variabel adalah cara kita
+
+00:00:19.460 --> 00:00:22.700
+menyimpan informasi. Saat menulis kode, kita sering perlu
+
+00:00:22.760 --> 00:00:25.420
+menyimpan sebuah angka atau string untuk
+
+00:00:25.500 --> 00:00:27.780
+dipakai nanti, dan variabel adalah cara kita
+
+00:00:27.800 --> 00:00:30.480
+melakukannya. Jadi mari kita mundur sedikit di
+
+00:00:30.580 --> 00:00:32.880
+gudang Jiki, dan kamu akan melihat dia punya
+
+00:00:32.940 --> 00:00:35.780
+satu set rak lagi. Kita sudah kenal dengan
+
+00:00:35.800 --> 00:00:37.160
+rak pertama yang berisi
+
+00:00:37.180 --> 00:00:39.680
+fungsi-fungsi, mesin-mesin kecil seperti move
+
+00:00:39.700 --> 00:00:42.140
+dan rectangle. Tapi di rak kedua
+
+00:00:42.160 --> 00:00:44.710
+ini, alih-alih mesin, kamu bisa melihat banyak
+
+00:00:44.760 --> 00:00:47.860
+kotak, dan kotak-kotak inilah yang kita
+
+00:00:47.900 --> 00:00:50.080
+sebut variabel. Kamu bisa menyuruh Jiki menyimpan
+
+00:00:50.140 --> 00:00:52.460
+apa saja di dalam kotak-kotak ini, lalu nanti
+
+00:00:52.580 --> 00:00:54.940
+memintanya mengambil isinya kembali. Setiap
+
+00:00:54.980 --> 00:00:57.480
+kotak punya nama, persis seperti
+
+00:00:57.520 --> 00:01:00.020
+fungsi yang punya nama, dan setiap kotak hanya berisi
+
+00:01:00.140 --> 00:01:03.000
+satu hal. Untuk saat ini, entah angka
+
+00:01:03.380 --> 00:01:05.320
+atau string. Tapi cara menyimpan
+
+00:01:05.340 --> 00:01:07.480
+hal-hal yang lebih kompleks di dalamnya akan kita bahas
+
+00:01:07.540 --> 00:01:10.800
+nanti di kursus ini. Jadi bagaimana cara kita menyuruh Jiki
+
+00:01:10.860 --> 00:01:12.500
+membuat kotak dan memasukkan sesuatu ke dalamnya?
+
+00:01:13.240 --> 00:01:16.920
+Kita menggunakan kata kunci let. Kata kunci let
+
+00:01:17.000 --> 00:01:19.200
+memberi tahu Jiki bahwa dia perlu membuat
+
+00:01:19.300 --> 00:01:21.860
+kotak baru. Kamu bisa membayangkan dia mengeluarkan
+
+00:01:21.900 --> 00:01:23.760
+kotak kardus dari bungkusnya, merakitnya,
+
+00:01:23.800 --> 00:01:26.320
+lalu dia melihat apa yang ada
+
+00:01:26.440 --> 00:01:28.840
+setelah kata let, dan itulah label
+
+00:01:28.880 --> 00:01:30.620
+yang dia tempelkan di kotaknya, dalam
+
+00:01:30.720 --> 00:01:32.940
+hal ini, name. Jadi dia mengambil pulpennya
+
+00:01:33.220 --> 00:01:36.260
+dan menulis name di labelnya. Lalu
+
+00:01:36.320 --> 00:01:38.360
+dia melihat apa yang ada setelah tanda
+
+00:01:38.440 --> 00:01:41.020
+sama dengan. Dalam hal ini, itu namaku, Jeremy,
+
+00:01:41.740 --> 00:01:43.960
+dan karena Jeremy adalah string,
+
+00:01:44.340 --> 00:01:45.640
+dia mengambil selembar kertas, dan
+
+00:01:45.660 --> 00:01:48.830
+menulis Jeremy di atasnya. Itu cuma string,
+
+00:01:48.900 --> 00:01:50.460
+persis seperti warna-warna yang sudah kamu
+
+00:01:50.520 --> 00:01:52.660
+pakai selama ini, lalu dia memasukkan
+
+00:01:52.700 --> 00:01:56.410
+kertas itu ke dalam kotaknya. Jadi kita sudah
+
+00:01:56.460 --> 00:01:58.260
+menyuruhnya membuat kotak, menempelkan
+
+00:01:58.300 --> 00:02:00.120
+label, dan memasukkan sesuatu ke dalamnya,
+
+00:02:00.640 --> 00:02:02.300
+dan sekarang dia pergi menaruh kotak itu
+
+00:02:02.380 --> 00:02:05.140
+di rak. Lalu kapan pun
+
+00:02:05.220 --> 00:02:07.980
+di programmu, Jiki bisa pergi
+
+00:02:08.020 --> 00:02:09.840
+mengambil kotak itu dari rak, melihat
+
+00:02:09.979 --> 00:02:11.900
+apa isinya, dan itu akan kita bahas
+
+00:02:11.940 --> 00:02:14.580
+sebentar lagi. Tapi untuk sekarang, aku benar-benar
+
+00:02:14.660 --> 00:02:16.540
+ingin kamu mulai membangun model
+
+00:02:16.580 --> 00:02:19.120
+mental ini. Aku sudah lama sekali menulis kode, dan aku masih
+
+00:02:19.180 --> 00:02:21.790
+membayangkan saat menulis kode bahwa aku sedang memasukkan
+
+00:02:21.820 --> 00:02:23.680
+sesuatu ke dalam kotak, dan akan
+
+00:02:23.720 --> 00:02:26.340
+mengambilnya lagi nanti. Saat kamu melihat
+
+00:02:26.400 --> 00:02:28.570
+kata kunci let itu, benar-benar pikirkan,
+
+00:02:28.690 --> 00:02:31.460
+“Oke, berarti aku sedang membuat kotak baru.”
+
+00:02:33.520 --> 00:02:34.530
+Aku ingin bicara sebentar
+
+00:02:34.580 --> 00:02:37.210
+soal nama variabel, label di
+
+00:02:37.260 --> 00:02:40.140
+kotak-kotak ini. Ada beberapa aturan
+
+00:02:40.180 --> 00:02:44.740
+tentangnya. Pertama, nama variabel tidak boleh mengandung
+
+00:02:44.780 --> 00:02:47.580
+spasi. Kalau kamu ingin memakai beberapa kata
+
+00:02:47.700 --> 00:02:49.859
+untuk label sebuah kotak, kita rapatkan
+
+00:02:49.920 --> 00:02:51.900
+kata-katanya, dan huruf pertama
+
+00:02:51.980 --> 00:02:55.180
+setiap kata kita ubah
+
+00:02:55.220 --> 00:02:57.520
+menjadi huruf kapital. Ini kita sebut camel
+
+00:02:57.680 --> 00:03:00.660
+case. Bayangkan punuk-punuk unta mendorong
+
+00:03:00.740 --> 00:03:02.540
+huruf pertama setiap kata baru
+
+00:03:02.580 --> 00:03:05.260
+sehingga menjadi huruf kapital. Jadi kalau kamu
+
+00:03:05.340 --> 00:03:08.290
+ingin label “my name”, alih-alih
+
+00:03:08.320 --> 00:03:10.920
+menulis dua kata dengan spasi, kita menulisnya
+
+00:03:10.960 --> 00:03:13.400
+sebagai satu kata dengan huruf N kapital.
+
+00:03:15.200 --> 00:03:17.960
+Selain itu, setiap nama variabel harus unik. Kamu
+
+00:03:18.020 --> 00:03:20.180
+tidak boleh punya dua kotak dengan label yang sama,
+
+00:03:20.860 --> 00:03:23.180
+dan variabel juga tidak boleh punya nama yang sama
+
+00:03:23.240 --> 00:03:26.140
+dengan fungsi. Kalau kamu lupa, Jiki akan
+
+00:03:26.180 --> 00:03:28.040
+bingung dan memberimu pesan error.
+
+00:03:29.660 --> 00:03:31.210
+Oke, sekarang mari kita lihat di mana kita mungkin
+
+00:03:31.280 --> 00:03:34.160
+ingin memakai variabel. Misalnya kita sedang
+
+00:03:34.200 --> 00:03:36.920
+menggambar matahari di langit. Nah, kita
+
+00:03:36.980 --> 00:03:39.490
+tahu kita bisa memakai fungsi circle dan
+
+00:03:39.580 --> 00:03:43.480
+memberinya empat input: left, top, radius,
+
+00:03:43.680 --> 00:03:47.000
+dan color. Tapi begitu kita menggambar banyak
+
+00:03:47.040 --> 00:03:49.160
+hal dan semua angka ini bertebaran
+
+00:03:49.180 --> 00:03:51.740
+di seluruh kode kita, kodenya bisa jadi sangat sulit
+
+00:03:51.780 --> 00:03:55.020
+diikuti dan dibaca. Jadi sebagai gantinya,
+
+00:03:55.280 --> 00:03:57.500
+kita bisa membuat variabel untuk masing-masing
+
+00:03:57.600 --> 00:04:00.760
+left, top, radius, dan color, lalu merujuk
+
+00:04:00.860 --> 00:04:04.560
+ke variabel-variabel itu nanti. Jadi tujuan akhir kita
+
+00:04:04.620 --> 00:04:06.380
+di sini adalah bisa memakai
+
+00:04:06.420 --> 00:04:11.200
+fungsi circle sambil menyebutkan nama-nama kotak
+
+00:04:11.220 --> 00:04:14.590
+yang enak dibaca, dan saat Jiki melihat nama-nama itu, dia
+
+00:04:14.620 --> 00:04:16.480
+tahu harus mengambil kotaknya dari rak
+
+00:04:16.560 --> 00:04:20.459
+dan memakai apa pun isinya. Jadi mari kita
+
+00:04:20.519 --> 00:04:22.550
+buat beberapa variabel untuk ini. Kita mulai dengan
+
+00:04:22.550 --> 00:04:25.050
+posisi kiri matahari. Kita buat,
+
+00:04:25.580 --> 00:04:27.350
+eh, kita pakai kata kunci let untuk
+
+00:04:27.350 --> 00:04:29.700
+menyuruh Jiki membuat kotak baru bernama
+
+00:04:29.740 --> 00:04:32.310
+leftPosition. Perhatikan camel case di sana,
+
+00:04:32.500 --> 00:04:35.180
+dengan huruf P kapital. Lalu kita beri tahu
+
+00:04:35.260 --> 00:04:38.560
+Jiki angka apa yang masuk ke kotak itu. Dia
+
+00:04:38.580 --> 00:04:40.340
+menaruhnya di rak, lalu lanjut
+
+00:04:40.420 --> 00:04:43.020
+melakukan hal yang sama untuk topPosition, radius,
+
+00:04:43.180 --> 00:04:46.540
+dan color. Nah, kapan pun di
+
+00:04:46.620 --> 00:04:48.870
+kode kita, kita bisa merujuk kembali ke variabel-variabel ini,
+
+00:04:49.000 --> 00:04:51.400
+dan Jiki akan mengambil nilainya dan
+
+00:04:51.440 --> 00:04:53.530
+memasukkannya ke dalam mesin. Hal hebat
+
+00:04:53.640 --> 00:04:56.120
+lain dari variabel adalah kapan pun kita
+
+00:04:56.160 --> 00:04:58.960
+ingin menggambar sesuatu di posisi yang sama
+
+00:04:59.000 --> 00:05:01.620
+dengan matahari, kita bisa memakai ulang
+
+00:05:01.680 --> 00:05:04.980
+variabel leftPosition dan topPosition yang sama. Ambil
+
+00:05:05.000 --> 00:05:07.660
+contoh lain. Bayangkan kamu sedang membangun tembok
+
+00:05:07.700 --> 00:05:10.200
+dengan 30 batu bata, dan kamu ingin semua
+
+00:05:10.220 --> 00:05:11.840
+batanya punya lebar dan
+
+00:05:11.880 --> 00:05:14.270
+tinggi yang sama. Jauh lebih baik
+
+00:05:14.360 --> 00:05:17.100
+membuat variabel untuk lebar dan tinggi
+
+00:05:17.280 --> 00:05:19.580
+di awal kodemu, lalu
+
+00:05:19.660 --> 00:05:21.590
+merujuk kembali ke variabel-variabel itu di sisa
+
+00:05:21.640 --> 00:05:23.900
+kodemu. Karena kalau nanti kamu ingin
+
+00:05:23.980 --> 00:05:25.960
+mengubah lebar atau tingginya, kamu
+
+00:05:26.020 --> 00:05:28.260
+cukup mengubahnya di satu tempat, dan semua
+
+00:05:28.380 --> 00:05:33.100
+yang lain akan ikut terbarui. Di beberapa latihan berikutnya,
+
+00:05:33.260 --> 00:05:35.980
+kamu akan memakai variabel untuk menulis
+
+00:05:36.060 --> 00:05:38.840
+kode yang lebih rapi dan lebih mudah dibaca. Dan begitu kamu
+
+00:05:38.880 --> 00:05:41.910
+sudah terbiasa membuat dan memakai variabel, kita akan
+
+00:05:41.960 --> 00:05:44.280
+melihat bagaimana variabel bisa merujuk ke variabel
+
+00:05:44.320 --> 00:05:46.920
+lain, dan di situlah semuanya jadi sangat ampuh.
+
+00:05:47.620 --> 00:05:50.110
+Tapi untuk sekarang, ayo berlatih dengan latihan-latihan ini,
+
+00:05:50.520 --> 00:05:51.880
+dan sampai jumpa lagi di sini sebentar lagi.

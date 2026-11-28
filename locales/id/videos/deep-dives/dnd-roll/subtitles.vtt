@@ -1,0 +1,390 @@
+WEBVTT
+
+NOTE en_md5 b8c6113399959b0244ec1b133a63a133
+
+00:00:01.028 --> 00:00:03.228
+Nah, sekarang kita mulai masuk
+ke latihan-latihan yang
+
+00:00:03.228 --> 00:00:05.908
+kadang bikin orang
+agak frustrasi.
+
+00:00:06.628 --> 00:00:10.348
+Latihan ini dan latihan berikutnya adalah
+yang pertama yang bisa bikin orang agak
+
+00:00:10.348 --> 00:00:12.067
+kesal karena belum bisa memecahkannya.
+
+00:00:12.067 --> 00:00:14.307
+Jadi kalau kamu merasa frustrasi,
+jangan khawatir.
+
+00:00:14.307 --> 00:00:15.987
+Orang lain juga merasakannya.
+
+00:00:16.147 --> 00:00:18.628
+Tapi itu juga kesempatan belajar
+yang sangat besar.
+
+00:00:18.867 --> 00:00:20.388
+Jadi, bagus kamu menonton video ini.
+
+00:00:20.388 --> 00:00:23.748
+Mari kita kerjakan bersama. Kalau kamu
+sudah menyelesaikannya dengan lancar,
+
+00:00:24.237 --> 00:00:27.678
+selamat! Mungkin kamu tetap bisa
+belajar sesuatu dari pembahasan ini.
+
+00:00:28.557 --> 00:00:30.038
+Jadi, apa yang mau kita lakukan di sini?
+
+00:00:30.038 --> 00:00:33.838
+Kita sedang membuat bot
+yang bisa bermain Dungeons and Dragons.
+
+00:00:33.917 --> 00:00:37.277
+Kalau kamu belum pernah memainkan Dungeons
+and Dragons, kamu dapat banyak dadu.
+
+00:00:37.277 --> 00:00:39.037
+Kamu melempar dadu untuk berbagai hal.
+
+00:00:39.628 --> 00:00:42.637
+Dadu itu menentukan apakah sesuatu
+akan terjadi atau tidak,
+
+00:00:42.957 --> 00:00:46.078
+seberapa kuat seranganmu,
+dan macam-macam hal lainnya.
+
+00:00:46.557 --> 00:00:51.518
+Di contoh ini,
+kita melempar tiga dadu yang berbeda.
+
+00:00:52.497 --> 00:00:55.938
+Jadi kita punya fungsi roll
+untuk melempar dadu,
+
+00:00:55.938 --> 00:00:58.658
+dan kita memilih berapa
+sisi yang dimiliki dadu itu.
+
+00:00:58.658 --> 00:00:59.618
+Jadi kita bisa menulis
+
+00:01:00.578 --> 00:01:03.218
+salah, salah salin. Kita bisa menulis roll
+
+00:01:04.578 --> 00:01:04.977
+20
+
+00:01:06.018 --> 00:01:11.218
+untuk dadu bersisi 20. Dan itu
+akan memberi kita nilai serangan.
+
+00:01:11.537 --> 00:01:14.337
+Mari kita berhenti sebentar dan memastikan
+kita paham apa yang terjadi di sini.
+
+00:01:14.418 --> 00:01:16.737
+Jadi kita punya fungsi roll,
+
+00:01:17.628 --> 00:01:21.308
+fungsi roll itu dipanggil
+dengan 20 sebagai input,
+
+00:01:21.308 --> 00:01:23.867
+yaitu jumlah sisi dadunya.
+
+00:01:24.108 --> 00:01:25.947
+Lalu fungsi itu mengembalikan
+
+00:01:26.748 --> 00:01:30.628
+angka antara 1 dan 20,
+yang akan menjadi nilai serangan kita.
+
+00:01:30.628 --> 00:01:32.748
+Jadi coba kita jalankan lalu periksa.
+
+00:01:33.307 --> 00:01:35.548
+Kita sudah membuat kotak baru bernama attack.
+
+00:01:36.028 --> 00:01:38.867
+Kita melempar dadu dan
+hasilnya satu.
+
+00:01:38.867 --> 00:01:42.908
+Kalau kita jalankan kodenya lagi dan periksa,
+kali ini hasilnya 16.
+
+00:01:43.668 --> 00:01:46.468
+Kalau kita jalankan lagi,
+kali ini hasilnya empat.
+
+00:01:46.548 --> 00:01:49.707
+Jadi persis seperti dadu sungguhan,
+setiap kali kita melemparnya,
+
+00:01:49.707 --> 00:01:51.347
+kita mendapat angka yang berbeda.
+
+00:01:51.507 --> 00:01:54.308
+Dan kita selalu menyimpan angka itu,
+berapa pun nilainya,
+
+00:01:54.947 --> 00:01:57.028
+kita menyimpannya di kotak attack ini.
+
+00:01:57.347 --> 00:01:58.947
+Lalu kita lakukan hal yang sama untuk yang lain.
+
+00:01:59.028 --> 00:02:00.867
+Kita akan membuat damage dasar
+
+00:02:01.427 --> 00:02:04.628
+dengan melempar
+dadu bersisi 12.
+
+00:02:04.787 --> 00:02:06.787
+Lalu ada damage bonus,
+
+00:02:07.987 --> 00:02:08.707
+yaitu dengan
+
+00:02:09.508 --> 00:02:11.427
+melempar dadu bersisi sepuluh.
+
+00:02:12.457 --> 00:02:14.138
+Kita bisa menjalankannya lalu memeriksa.
+
+00:02:14.138 --> 00:02:17.018
+Kali ini kita dapat 8, kita dapat...
+
+00:02:17.578 --> 00:02:21.497
+Maaf, kita dapat 12,
+lalu 7, lalu 8.
+
+00:02:22.298 --> 00:02:25.177
+Ketiganya juga akan
+berbeda setiap kali.
+
+00:02:26.298 --> 00:02:29.497
+Oke,
+selanjutnya kita perlu menghitung total damage.
+
+00:02:29.497 --> 00:02:34.298
+Jadi kita tulis damage, dan
+damage kita adalah damage dasar
+
+00:02:36.698 --> 00:02:40.948
+ditambah damage bonus. Nah,
+sekarang kita punya total damage.
+
+00:02:40.948 --> 00:02:43.068
+Sebenarnya, mari kita namai
+total damage saja.
+
+00:02:43.467 --> 00:02:47.788
+Jadi kita punya attack, damage dasar,
+damage bonus, dan total damage.
+
+00:02:49.228 --> 00:02:50.707
+Lalu ada instruksi ini.
+
+00:02:50.707 --> 00:02:56.068
+Setiap kali kamu melempar dadu, kamu perlu
+mengumumkan angka yang kamu dapat kepada
+
+00:02:56.068 --> 00:02:57.627
+orang-orang yang bermain bersamamu.
+
+00:02:57.867 --> 00:03:01.147
+Oke? Jadi mari kita umumkan attack,
+
+00:03:02.268 --> 00:03:04.668
+lalu kita umumkan juga
+
+00:03:06.008 --> 00:03:09.048
+damage dasar. Dan kita
+umumkan damage bonus.
+
+00:03:11.768 --> 00:03:15.168
+Lalu tertulis, kalau kamu menyerang
+tanpa mengumumkan angkanya,
+
+00:03:15.168 --> 00:03:16.247
+mereka bisa mengira kamu curang.
+
+00:03:16.568 --> 00:03:18.807
+Aku yakin kamu tidak akan pernah curang,
+tapi masuk akal juga.
+
+00:03:19.927 --> 00:03:22.888
+Oke. Lalu langkah terakhir
+adalah menyerang Goblin
+
+00:03:23.207 --> 00:03:25.407
+dengan attack dan total damage-mu.
+
+00:03:25.407 --> 00:03:26.168
+Jadi strike,
+
+00:03:27.288 --> 00:03:28.568
+dengan attack
+
+00:03:30.008 --> 00:03:31.927
+dan total damage.
+
+00:03:34.247 --> 00:03:36.728
+Lalu kita bisa menjalankan kodenya. Dan ini dia.
+
+00:03:36.728 --> 00:03:39.848
+Berhasil. Kita dapat tiga, 11, dan tiga.
+
+00:03:40.647 --> 00:03:42.048
+Itu angka kita kali ini.
+
+00:03:42.048 --> 00:03:46.967
+Kalau kita klik ini dan kita telusuri,
+kita dapat tiga, kita dapat 11,
+
+00:03:48.328 --> 00:03:51.288
+dan kita dapat tiga. Kalau kita jalankan lagi,
+
+00:03:52.328 --> 00:03:54.247
+kita akan dapat tiga,
+lima, dan dua.
+
+00:03:54.247 --> 00:03:58.008
+Kita bisa menjalankannya langkah demi langkah dan
+melihat roll 20 mengembalikan tiga.
+
+00:03:58.377 --> 00:03:59.818
+Kita simpan itu di kotak attack.
+
+00:03:59.978 --> 00:04:02.777
+Kita ambil kotak attack,
+ada tiga di dalamnya, lalu kita umumkan.
+
+00:04:03.018 --> 00:04:06.217
+roll 12 mengembalikan lima. Sama lagi.
+
+00:04:07.337 --> 00:04:09.258
+roll 10 kali ini mengembalikan dua.
+
+00:04:09.337 --> 00:04:12.978
+Jadi kita umumkan dua itu,
+lalu kita jumlahkan,
+
+00:04:12.978 --> 00:04:16.377
+kita ambil damage dasar dan dapat lima,
+damage bonus dan dapat dua.
+
+00:04:16.377 --> 00:04:19.577
+Kita jumlahkan, dapat tujuh,
+jadilah total damage kita.
+
+00:04:19.737 --> 00:04:24.338
+Lalu terakhir kita menyerang dengan mengambil
+attack yang berisi 3 dan total
+
+00:04:24.338 --> 00:04:27.218
+damage yang berisi 7. Lalu fungsi strike kita.
+
+00:04:28.338 --> 00:04:30.817
+Semoga sekarang setelah
+melihat pembahasan ini,
+
+00:04:31.458 --> 00:04:36.098
+kamu lihat ini tidak terlalu rumit. Seperti biasa,
+saran besarku: pastikan kamu memecah
+
+00:04:36.098 --> 00:04:38.017
+masalahnya menjadi langkah-langkah terpisah.
+
+00:04:38.418 --> 00:04:41.858
+Apalagi sekarang kita mulai memakai
+fungsi yang mengembalikan sesuatu.
+
+00:04:42.017 --> 00:04:44.377
+Penting untuk mulai
+dari sisi kanan
+
+00:04:44.377 --> 00:04:47.028
+tanda sama dengan dan
+benar-benar menganggapnya sebagai
+
+00:04:47.908 --> 00:04:50.817
+satu hal di kepalamu. Kita
+menyebutnya ekspresi.
+
+00:04:51.387 --> 00:04:54.348
+Ekspresi adalah sesuatu yang terjadi di
+sisi kanan tanda sama dengan.
+
+00:04:55.148 --> 00:05:00.108
+Dan penting untuk memproses
+ekspresi itu di kepalamu lebih dulu.
+
+00:05:00.348 --> 00:05:03.627
+Ini juga ekspresi, yang ini ditambah yang ini.
+
+00:05:04.267 --> 00:05:06.267
+Jadi bagian ini yang dijalankan.
+
+00:05:06.267 --> 00:05:10.348
+Jiki menjalankannya dengan menjumlahkan
+nilai kedua kotak itu.
+
+00:05:10.827 --> 00:05:14.427
+Setelah selesai,
+barulah dia memasukkannya ke kotak ini.
+
+00:05:14.827 --> 00:05:17.307
+Jadi pastikan kamu menganggap
+ini sebagai satu langkah, dan
+
+00:05:17.307 --> 00:05:19.708
+mengisi kotaknya sebagai langkah berikutnya.
+
+00:05:20.408 --> 00:05:24.168
+Ini langkah berikutnya. Pecah seperti
+itu, dan semoga semuanya
+
+00:05:24.487 --> 00:05:29.367
+akan cukup mudah. Semoga berhasil. Latihan
+berikutnya yang akan kamu kerjakan juga
+
+00:05:29.367 --> 00:05:31.127
+sering bikin orang frustrasi.
+
+00:05:31.447 --> 00:05:33.687
+Coba terapkan saja
+apa yang sudah kamu pelajari di sini.
+
+00:05:33.687 --> 00:05:35.608
+Pelan-pelan saja. Dan,
+
+00:05:36.408 --> 00:05:38.887
+jangan ragu menonton
+videonya kalau memang perlu.
+
+00:05:38.968 --> 00:05:41.687
+Tapi cobalah dulu
+menyelesaikannya sendiri.
+
+00:05:41.687 --> 00:05:44.807
+Dan jangan lupa, kamu juga bisa memakai
+tab Tanya Jiki ini.
+
+00:05:45.048 --> 00:05:48.247
+Itu cara yang sangat berguna untuk
+menjelajah dan bertukar ide.
+
+00:05:48.408 --> 00:05:51.208
+Jadi pasti coba, ya.
+Terima kasih sudah menonton.
