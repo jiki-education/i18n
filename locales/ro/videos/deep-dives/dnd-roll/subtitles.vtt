@@ -1,0 +1,388 @@
+WEBVTT
+
+NOTE en_md5 b8c6113399959b0244ec1b133a63a133
+
+00:00:01.028 --> 00:00:03.228
+Acum ajungem la
+exercițiile la care
+
+00:00:03.228 --> 00:00:05.908
+oamenii se pot simți
+uneori un pic frustrați.
+
+00:00:06.628 --> 00:00:10.348
+Acesta și următorul sunt cam primele
+la care oamenii se enervează puțin
+
+00:00:10.348 --> 00:00:12.067
+și nu prea reușesc să le rezolve.
+
+00:00:12.067 --> 00:00:14.307
+Deci, dacă te simți frustrat,
+nu-ți face griji.
+
+00:00:14.307 --> 00:00:15.987
+Și alții se simt frustrați.
+
+00:00:16.147 --> 00:00:18.628
+Dar e și o ocazie
+uriașă să înveți ceva.
+
+00:00:18.867 --> 00:00:20.388
+Așa că bravo că te uiți la video.
+
+00:00:20.388 --> 00:00:23.748
+Hai să-l rezolvăm împreună. Dacă l-ai
+rezolvat deja și ți s-a părut ușor, super.
+
+00:00:24.237 --> 00:00:27.678
+Felicitări. Poate tot o să înveți
+ceva cât ne uităm la el.
+
+00:00:28.557 --> 00:00:30.038
+Deci, ce încercăm să facem aici?
+
+00:00:30.038 --> 00:00:33.838
+Ei bine, construim un bot
+care poate juca Dungeons and Dragons.
+
+00:00:33.917 --> 00:00:37.277
+În Dungeons and Dragons, dacă n-ai
+jucat niciodată, ai o grămadă de zaruri.
+
+00:00:37.277 --> 00:00:39.037
+Arunci zarurile pentru tot felul de lucruri.
+
+00:00:39.628 --> 00:00:42.637
+Ele îți spun dacă un lucru
+se va întâmpla sau nu,
+
+00:00:42.957 --> 00:00:46.078
+câtă forță ai când lovești,
+tot felul de lucruri.
+
+00:00:46.557 --> 00:00:51.518
+În exemplul acesta,
+aruncăm trei zaruri diferite.
+
+00:00:52.497 --> 00:00:55.938
+Avem o funcție roll
+cu care aruncăm un zar
+
+00:00:55.938 --> 00:00:58.658
+și alegem câte
+fețe are zarul.
+
+00:00:58.658 --> 00:00:59.618
+Deci putem scrie
+
+00:01:00.578 --> 00:01:03.218
+greșit, copy-paste. Putem scrie roll
+
+00:01:04.578 --> 00:01:04.977
+20
+
+00:01:06.018 --> 00:01:11.218
+ca să avem un zar cu 20 de fețe. Și asta
+ne va da un scor de atac.
+
+00:01:11.537 --> 00:01:14.337
+Hai să ne oprim puțin și să ne asigurăm
+că înțelegem ce se întâmplă aici.
+
+00:01:14.418 --> 00:01:16.737
+Avem o funcție roll,
+
+00:01:17.628 --> 00:01:21.308
+funcția roll e
+apelată cu 20 ca intrare,
+
+00:01:21.308 --> 00:01:23.867
+adică numărul de fețe ale zarului.
+
+00:01:24.108 --> 00:01:25.947
+Apoi funcția aceea returnează
+
+00:01:26.748 --> 00:01:30.628
+un număr între 1 și 20,
+care va fi scorul nostru de atac.
+
+00:01:30.628 --> 00:01:32.748
+Hai să rulăm asta și să verificăm.
+
+00:01:33.307 --> 00:01:35.548
+Am creat o cutie nouă numită attack.
+
+00:01:36.028 --> 00:01:38.867
+Am aruncat zarul și
+ne-a dat înapoi 1.
+
+00:01:38.867 --> 00:01:42.908
+Dacă rulăm codul din nou și verificăm,
+de data asta returnează 16.
+
+00:01:43.668 --> 00:01:46.468
+Dacă rulăm codul din nou,
+de data asta returnează 4.
+
+00:01:46.548 --> 00:01:49.707
+Deci, exact ca la un zar adevărat,
+de fiecare dată când îl aruncăm,
+
+00:01:49.707 --> 00:01:51.347
+primim înapoi alt număr.
+
+00:01:51.507 --> 00:01:54.308
+Și de fiecare dată stocăm numărul acela,
+oricare ar fi,
+
+00:01:54.947 --> 00:01:57.028
+îl stocăm în cutia attack.
+
+00:01:57.347 --> 00:01:58.947
+Acum hai să facem la fel și pentru celelalte.
+
+00:01:59.028 --> 00:02:00.867
+Calculăm daunele de bază,
+
+00:02:01.427 --> 00:02:04.628
+care se obține
+aruncând un zar cu 12 fețe.
+
+00:02:04.787 --> 00:02:06.787
+Apoi avem daunele bonus,
+
+00:02:07.987 --> 00:02:08.707
+care se obține
+
+00:02:09.508 --> 00:02:11.427
+aruncând un zar cu 10 fețe.
+
+00:02:12.457 --> 00:02:14.138
+Putem rula și putem verifica.
+
+00:02:14.138 --> 00:02:17.018
+De data asta primim un 8, primim un...
+
+00:02:17.578 --> 00:02:21.497
+Pardon, primim 12,
+primim un 7 și primim un 8.
+
+00:02:22.298 --> 00:02:25.177
+Și astea, toate trei,
+vor fi diferite de fiecare dată.
+
+00:02:26.298 --> 00:02:29.497
+Bun,
+acum trebuie să calculăm daunele totale.
+
+00:02:29.497 --> 00:02:34.298
+Scriem damage, iar
+daunele noastre sunt daunele de bază
+
+00:02:36.698 --> 00:02:40.948
+plus daunele bonus. Deci
+acum avem daunele totale.
+
+00:02:40.948 --> 00:02:43.068
+De fapt, hai să-i spunem. Hai să-i spunem totalDamage.
+
+00:02:43.467 --> 00:02:47.788
+Deci avem atacul, daunele de bază,
+daunele bonus și daunele totale.
+
+00:02:49.228 --> 00:02:50.707
+Apoi avem instrucțiunea asta.
+
+00:02:50.707 --> 00:02:56.068
+După fiecare aruncare a zarului, trebuie
+să anunți numărul pe care l-ai obținut
+
+00:02:56.068 --> 00:02:57.627
+celorlalți cu care joci.
+
+00:02:57.867 --> 00:03:01.147
+Bun? Hai să anunțăm atacul,
+
+00:03:02.268 --> 00:03:04.668
+și hai să anunțăm și
+
+00:03:06.008 --> 00:03:09.048
+daunele de bază. Și hai să
+anunțăm daunele bonus.
+
+00:03:11.768 --> 00:03:15.168
+Apoi scrie că, dacă încerci să lovești
+fără să anunți numerele,
+
+00:03:15.168 --> 00:03:16.247
+ceilalți ar putea crede că trișezi.
+
+00:03:16.568 --> 00:03:18.807
+Sunt sigur că n-ai trișa niciodată,
+dar e corect așa.
+
+00:03:19.927 --> 00:03:22.888
+Bun. Și ultimul lucru
+e să lovești goblinul
+
+00:03:23.207 --> 00:03:25.407
+cu atacul și daunele totale.
+
+00:03:25.407 --> 00:03:26.168
+Deci strike
+
+00:03:27.288 --> 00:03:28.568
+cu atacul
+
+00:03:30.008 --> 00:03:31.927
+și daunele totale.
+
+00:03:34.247 --> 00:03:36.728
+Și putem rula codul. Și gata.
+
+00:03:36.728 --> 00:03:39.848
+Funcționează. Primim 3, 11 și 3.
+
+00:03:40.647 --> 00:03:42.048
+Acestea sunt numerele de data asta.
+
+00:03:42.048 --> 00:03:46.967
+Dacă dăm click aici și ne uităm prin pași,
+primim un 3, primim un 11
+
+00:03:48.328 --> 00:03:51.288
+și primim un 3. Și dacă rulăm din nou,
+
+00:03:52.328 --> 00:03:54.247
+o să primim un 3,
+un 5 și un 2.
+
+00:03:54.247 --> 00:03:58.008
+Putem parcurge pas cu pas și
+vedem că roll 20 a returnat un 3.
+
+00:03:58.377 --> 00:03:59.818
+Îl stocăm în cutia attack.
+
+00:03:59.978 --> 00:04:02.777
+Luăm cutia attack,
+scoatem 3 din ea și îl anunțăm.
+
+00:04:03.018 --> 00:04:06.217
+roll 12 a returnat un 5. La fel.
+
+00:04:07.337 --> 00:04:09.258
+roll 10 a returnat de data asta un 2.
+
+00:04:09.337 --> 00:04:12.978
+Deci anunțăm acel 2,
+apoi le adunăm,
+
+00:04:12.978 --> 00:04:16.377
+luăm daunele de bază și primim 5,
+daunele bonus și primim 2.
+
+00:04:16.377 --> 00:04:19.577
+Le adunăm, primim 7,
+și avem daunele totale.
+
+00:04:19.737 --> 00:04:24.338
+Și, în final, lovim luând
+atacul cu 3 și daunele
+
+00:04:24.338 --> 00:04:27.218
+totale cu 7. Apoi funcția noastră strike.
+
+00:04:28.338 --> 00:04:30.817
+Sper că acum, după ce
+ai văzut rezolvarea,
+
+00:04:31.458 --> 00:04:36.098
+nu ți se pare prea complicat. Ca de obicei, sfatul meu
+important e să împarți
+
+00:04:36.098 --> 00:04:38.017
+lucrurile în pașii aceștia diferiți.
+
+00:04:38.418 --> 00:04:41.858
+Mai ales acum, când avem
+funcții care returnează ceva.
+
+00:04:42.017 --> 00:04:44.377
+E important să începi
+cu partea din dreapta
+
+00:04:44.377 --> 00:04:47.028
+a semnului egal și
+să te gândești la ea ca la
+
+00:04:47.908 --> 00:04:50.817
+un singur lucru în mintea ta. Asta
+se numește expresie.
+
+00:04:51.387 --> 00:04:54.348
+E ceva ce se întâmplă
+în partea dreaptă a semnului egal.
+
+00:04:55.148 --> 00:05:00.108
+Și e important să procesezi
+mai întâi expresia aceea în minte.
+
+00:05:00.348 --> 00:05:03.627
+Și asta e o expresie, asta plus asta.
+
+00:05:04.267 --> 00:05:06.267
+Deci bucata asta de aici se rulează prima.
+
+00:05:06.267 --> 00:05:10.348
+Jiki o rulează adunând cele două. Valorile
+celor două cutii.
+
+00:05:10.827 --> 00:05:14.427
+Și după ce a terminat,
+merge și pune rezultatul în cutia asta.
+
+00:05:14.827 --> 00:05:17.307
+Deci gândește-te la asta
+ca la un pas, iar
+
+00:05:17.307 --> 00:05:19.708
+la setarea cutiei ca la următorul.
+
+00:05:20.408 --> 00:05:24.168
+Acesta e pasul următor. Împarte totul
+așa și, sper,
+
+00:05:24.487 --> 00:05:29.367
+o să fie destul de ușor. Baftă! Următorul
+exercițiu pe care îl vei face e tot unul
+
+00:05:29.367 --> 00:05:31.127
+la care oamenii se pot frustra foarte tare.
+
+00:05:31.447 --> 00:05:33.687
+Încearcă să pui în practică
+ce ai învățat aici.
+
+00:05:33.687 --> 00:05:35.608
+Ia-o mai încet. Și
+
+00:05:36.408 --> 00:05:38.887
+nu-ți fie teamă să te uiți
+la video dacă ai nevoie.
+
+00:05:38.968 --> 00:05:41.687
+Dar chiar încearcă,
+încearcă să-l rezolvi singur.
+
+00:05:41.687 --> 00:05:44.807
+Și nu uita, poți folosi
+și fila Întreabă-l pe Jiki.
+
+00:05:45.048 --> 00:05:48.247
+E o metodă foarte utilă
+să explorezi și să testezi idei.
+
+00:05:48.408 --> 00:05:51.208
+Așa că merită să încerci. Mulțumesc că te-ai uitat.

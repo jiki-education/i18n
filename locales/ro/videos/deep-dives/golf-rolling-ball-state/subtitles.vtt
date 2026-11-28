@@ -1,0 +1,710 @@
+WEBVTT
+
+NOTE en_md5 67040db223d368bf578fa7dd62694f9e
+
+00:00:00.338 --> 00:00:02.137
+Salut. Bine ai venit la încă un Deep Dive.
+
+00:00:02.137 --> 00:00:06.097
+Și exercițiul ăsta e unul la care, din nou, unii
+oameni se încurcă puțin și
+
+00:00:06.097 --> 00:00:09.858
+se blochează. Deci dacă te uiți la asta
+în interfață și te-ai blocat,
+
+00:00:10.817 --> 00:00:15.298
+se aplică aceleași reguli ca de obicei. Uită-te
+până te deblochezi, apoi pune pauză și
+
+00:00:15.298 --> 00:00:18.897
+continuă singur. Dacă l-ai rezolvat
+singur, felicitări.
+
+00:00:18.897 --> 00:00:22.338
+Sunt câteva lucruri interesante
+aici, așa că hai să aruncăm o privire.
+
+00:00:22.978 --> 00:00:29.318
+Deci, în primul rând, vreau să spun ceva despre
+ideea asta de a muta lucrurile câte un pas pe rând.
+
+00:00:29.478 --> 00:00:33.398
+Ideea exercițiului ăstuia
+este că mutăm lucrurile
+
+00:00:34.037 --> 00:00:36.758
+în mod repetat, câte un pas, uite așa.
+
+00:00:37.718 --> 00:00:40.838
+Hai să mai facem câțiva. Șase, șapte, opt.
+
+00:00:41.237 --> 00:00:42.917
+Hai să mergem până la 60.
+
+00:00:45.478 --> 00:00:48.277
+Făcând asta,
+creăm un fel de animație
+
+00:00:48.677 --> 00:00:51.567
+în care mingea se rostogolește lin.
+
+00:00:54.368 --> 00:00:58.408
+Într-un exercițiu anterior, aveai doar funcția
+roll_to, care făcea asta în locul tău.
+
+00:00:58.408 --> 00:01:02.207
+Spuneai doar ceva de genul roll_to 70
+și mingea se rostogolea.
+
+00:01:03.408 --> 00:01:06.447
+Dar în culise,
+când apelai funcția roll_to,
+
+00:01:06.528 --> 00:01:09.248
+ce se întâmplă de fapt este
+exact ce vezi aici.
+
+00:01:10.367 --> 00:01:12.927
+Nu se poate rostogoli pur și simplu
+dintr-un punct în altul.
+
+00:01:13.087 --> 00:01:16.207
+Trebuie să afișăm fiecare pixel
+pe ecran.
+
+00:01:16.858 --> 00:01:21.257
+Deci de fiecare dată când vezi, în orice joc,
+ceva care se mișcă de la A la B,
+
+00:01:21.578 --> 00:01:26.778
+e mereu o animație în care fiecare pas,
+fiecare pixel se definește separat.
+
+00:01:26.858 --> 00:01:28.418
+Bineînțeles, putem scrie cod,
+
+00:01:28.418 --> 00:01:32.537
+ca cel pe care îl scriem în
+exercițiul ăsta, ca să facem animații line
+
+00:01:32.858 --> 00:01:35.257
+fără să scriem
+pas cu pas cu pas.
+
+00:01:35.737 --> 00:01:38.537
+Dar mereu trecem
+prin procesul ăsta când
+
+00:01:38.537 --> 00:01:42.908
+animăm: spunem că trebuie să mutăm ceva
+prin toți pașii ăștia diferiți
+
+00:01:43.308 --> 00:01:45.947
+și ne putem mișca
+cu viteze diferite.
+
+00:01:45.947 --> 00:01:48.587
+Știi, poți să te muți o jumătate
+de pixel de fiecare dată și apoi
+
+00:01:48.587 --> 00:01:53.147
+să accelerezi la 2 pixeli de fiecare dată, ca ceva
+să pară că merge mai repede sau mai încet.
+
+00:01:53.308 --> 00:01:56.587
+Poți să adaugi mai multe pauze între
+liniile de cod care rulează.
+
+00:01:56.987 --> 00:02:00.587
+Dar când te gândești la animație
+în orice fel de format digital,
+
+00:02:00.828 --> 00:02:03.628
+cam asta e ce faci
+de fapt.
+
+00:02:04.507 --> 00:02:06.188
+Deci hai să ne gândim la ce
+încercăm să facem aici.
+
+00:02:06.188 --> 00:02:08.948
+Ei bine, practic încercăm
+să facem ce am făcut în
+
+00:02:08.948 --> 00:02:11.467
+exercițiul anterior, cu
+plantatul florilor,
+
+00:02:11.548 --> 00:02:13.788
+unde mutam o poziție mai departe.
+
+00:02:14.168 --> 00:02:17.687
+Dar în loc să mutăm poziția
+cu 10, ca data trecută,
+
+00:02:17.687 --> 00:02:19.768
+o s-o mutăm doar
+cu unu.
+
+00:02:20.967 --> 00:02:24.768
+Deci vrem să repetăm
+move_to de câteva ori.
+
+00:02:24.768 --> 00:02:27.687
+Să zicem că vrem să-l repetăm
+de 50 de ori, pentru început,
+
+00:02:27.927 --> 00:02:30.967
+și vrem să avem exact
+același tipar ca data trecută,
+
+00:02:30.967 --> 00:02:35.687
+adică o variabilă position. Să zicem
+că o pornim deocamdată de la 30.
+
+00:02:36.168 --> 00:02:40.568
+Și vrem să mutăm la position,
+și apoi vrem să mutăm...
+
+00:02:40.967 --> 00:02:44.647
+Vrem să schimbăm position
+ca să crească cu unu de fiecare dată,
+
+00:02:46.568 --> 00:02:50.967
+uite așa. Deci setăm o variabilă,
+mutăm la ea, actualizăm poziția,
+
+00:02:51.048 --> 00:02:52.328
+și obținem animația asta,
+
+00:02:53.448 --> 00:02:57.527
+ca să vedem. Funcționează. Pornește de
+aici, se animă până aici și așa mai departe.
+
+00:02:58.328 --> 00:03:04.087
+Deci dacă facem un joc de golf, cum facem,
+scopul nostru e s-o rostogolim de pe tee, de aici,
+
+00:03:04.087 --> 00:03:06.008
+de unde pornește mingea, până în gaură.
+
+00:03:06.407 --> 00:03:08.008
+Deci știm de unde vrem să pornim.
+
+00:03:08.168 --> 00:03:14.087
+Poziția de start este 28. Și
+știm că trebuie să ne mutăm un număr de
+
+00:03:14.487 --> 00:03:17.848
+pași până în gaură. Deci cât de mult ne mutăm?
+
+00:03:18.798 --> 00:03:25.048
+Să zicem că avem distance,
+iar distance este ținta noastră, adică 88,
+
+00:03:25.527 --> 00:03:28.407
+minus punctul de start, adică 28.
+
+00:03:29.048 --> 00:03:31.608
+Și putem folosi distance aici.
+
+00:03:32.328 --> 00:03:35.687
+Deci putem spune că avem o cutie,
+care este position.
+
+00:03:36.487 --> 00:03:38.967
+Mai avem o cutie, care este distance,
+
+00:03:40.717 --> 00:03:42.888
+și e setată la 88, care e ținta noastră,
+
+00:03:44.008 --> 00:03:47.448
+minus poziția de la care
+pornim, minus 28 ăsta.
+
+00:03:47.927 --> 00:03:50.807
+Și apoi o să repetăm
+de distance ori.
+
+00:03:52.647 --> 00:03:55.527
+Acum, asta nu va funcționa încă.
+Ajungem imediat la motiv.
+
+00:03:55.687 --> 00:03:58.407
+Dar hai să ne asigurăm că
+înțelegem ce se întâmplă aici.
+
+00:03:58.407 --> 00:04:03.048
+Hai să începem cu începutul. Avem
+o cutie position cu 28 în ea.
+
+00:04:03.818 --> 00:04:09.177
+Apoi avem o cutie distance. Începem
+prin a lua position și a scoate 28 din ea.
+
+00:04:09.258 --> 00:04:13.698
+Cu cutia pe care tocmai am făcut-o, facem 88 minus 28.
+
+00:04:13.698 --> 00:04:19.257
+Obținem 60. Creăm o cutie nouă numită
+distance și apoi punem 60 în cutia aia.
+
+00:04:19.257 --> 00:04:23.577
+Deci acum avem două cutii pe rafturi,
+cutia position și cutia distance.
+
+00:04:24.218 --> 00:04:27.817
+Și apoi, când apelăm repeat,
+în loc să punem un număr aici,
+
+00:04:28.057 --> 00:04:32.557
+punem cutia aici. Și deci
+ce se întâmplă când Jiki vede asta?
+
+00:04:32.557 --> 00:04:35.278
+Ei bine, se duce și ia
+cutia distance de pe raft.
+
+00:04:35.437 --> 00:04:39.877
+Scoate 60 din ea și știe că
+trebuie să repete bucla asta de 60 de ori.
+
+00:04:39.877 --> 00:04:42.637
+Verifică numărul curent, adică unu.
+
+00:04:42.718 --> 00:04:44.637
+Pasul curent, unu, e mai mic decât 60?
+
+00:04:44.637 --> 00:04:48.557
+Da, este. Și deci sare
+aici și începe să lucreze la asta.
+
+00:04:49.598 --> 00:04:51.677
+Am putea face asta manual.
+
+00:04:51.838 --> 00:04:55.757
+Am putea spune pur și simplu repeat de 60 de ori,
+ceea ce poate ai făcut și tu.
+
+00:04:57.038 --> 00:05:02.798
+Sau putem face asta în felul ăsta
+puțin mai avansat, în care folosim cuvinte,
+
+00:05:02.798 --> 00:05:06.158
+folosim cutii ca să facem codul
+ceva mai explicit.
+
+00:05:06.158 --> 00:05:10.398
+Deci în loc să avem 60 ăsta magic,
+despre care poate nu știm de unde
+
+00:05:11.117 --> 00:05:13.598
+și până unde ne duce, avem de fapt o variabilă.
+
+00:05:13.598 --> 00:05:17.997
+Și putem seta încă o variabilă,
+dacă vrem, o variabilă flag, pentru steag,
+
+00:05:18.077 --> 00:05:22.557
+care e 88. Și acum distance
+este flag minus position.
+
+00:05:24.327 --> 00:05:26.447
+Mai e un lucru înainte
+să mergem mai departe,
+
+00:05:26.447 --> 00:05:32.048
+vreau să mă asigur că înțelegi bine,
+și anume că de fiecare dată, dacă...
+
+00:05:32.048 --> 00:05:36.088
+Ții minte că ți-am arătat punctul ăsta portocaliu?
+De fiecare dată când ajungem la linia asta
+
+00:05:36.487 --> 00:05:42.088
+și Jiki ia distance de pe raft,
+valoarea ei e tot 60.
+
+00:05:43.767 --> 00:05:49.848
+Asta e foarte important. Deci doar pentru că
+Jiki a actualizat cutia position aici,
+
+00:05:50.867 --> 00:05:53.187
+asta nu actualizează cutia distance.
+
+00:05:54.067 --> 00:05:56.387
+Cele două nu sunt legate magic una de alta.
+
+00:05:56.788 --> 00:05:59.108
+Nu e ca la matematică,
+unde ai, știi,
+
+00:05:59.827 --> 00:06:02.307
+ecuații în care lucrurile
+sunt legate între ele.
+
+00:06:03.108 --> 00:06:07.427
+position e o cutie de sine stătătoare.
+Acum are 39 în ea.
+
+00:06:07.507 --> 00:06:10.507
+Dacă mergem câțiva pași înainte,
+o să aibă 40 în ea.
+
+00:06:10.507 --> 00:06:13.507
+Dacă mai mergem câțiva,
+o să aibă 41 în ea.
+
+00:06:13.588 --> 00:06:16.548
+Deci conținutul cutiei position
+se schimbă.
+
+00:06:17.197 --> 00:06:21.117
+Dar cutia distance... Nicăieri
+în codul ăsta nu spunem
+
+00:06:21.437 --> 00:06:23.278
+să se schimbe ce e în cutia distance.
+
+00:06:23.437 --> 00:06:26.158
+Creăm cutia distance doar aici,
+
+00:06:27.437 --> 00:06:33.197
+pe linia asta. Și punem valoarea asta în ea,
+punem 60 în cutia asta, și gata.
+
+00:06:33.197 --> 00:06:35.038
+Nu schimbăm niciodată ce e în cutia aia.
+
+00:06:35.437 --> 00:06:39.197
+Deci chiar dacă ne uităm în cutie de multe
+ori, de fiecare dată când repetăm,
+
+00:06:39.197 --> 00:06:40.237
+ne uităm în cutie,
+
+00:06:41.117 --> 00:06:43.197
+nu schimbăm niciodată ce e în ea.
+
+00:06:44.257 --> 00:06:46.737
+Așa că asigură-te că
+ai înțeles foarte clar asta.
+
+00:06:49.377 --> 00:06:52.577
+Bun. Deci totul are sens.
+De ce nu funcționează codul?
+
+00:06:53.617 --> 00:06:57.098
+De ce nu funcționează codul? Aici cred
+că se blochează unii oameni.
+
+00:06:57.098 --> 00:07:00.697
+Scriu ceva de genul ăsta. Nu
+știu de ce nu funcționează.
+
+00:07:00.697 --> 00:07:05.377
+Ajung să schimbe, de exemplu,
+27 ăsta ca să încerce să-l facă să meargă.
+
+00:07:05.458 --> 00:07:07.737
+Și poate că apoi nimic
+din restul nu mai merge.
+
+00:07:07.737 --> 00:07:10.627
+Trebuie să facă asta,
+și totul devine foarte încâlcit.
+
+00:07:10.627 --> 00:07:12.987
+În loc să facem asta,
+hai să ne oprim, să încetinim,
+
+00:07:12.987 --> 00:07:15.427
+să ne gândim de ce
+nu funcționează codul ăsta.
+
+00:07:15.827 --> 00:07:18.108
+Deci citește codul. De ce nu funcționează?
+
+00:07:18.108 --> 00:07:21.028
+De ce nu ajunge mingea
+unde trebuie să ajungă?
+
+00:07:21.028 --> 00:07:24.387
+Ajunge la 87, nu ajunge la 88.
+
+00:07:26.468 --> 00:07:28.788
+Sunt două motive posibile. Ar putea fi greșit.
+
+00:07:29.668 --> 00:07:33.108
+Am putea repeta
+de un număr greșit de ori.
+
+00:07:33.747 --> 00:07:36.548
+Deci dacă am repeta de distance plus unu ori,
+
+00:07:37.528 --> 00:07:38.968
+acum am ajunge unde vrem.
+
+00:07:39.127 --> 00:07:41.608
+Dar asta pare foarte ciudat.
+De ce am face asta?
+
+00:07:43.848 --> 00:07:45.367
+Dar cealaltă problemă ar putea fi
+
+00:07:46.487 --> 00:07:48.408
+unde ne mutam, de fapt?
+
+00:07:48.728 --> 00:07:50.327
+Deci hai să sărim aici,
+
+00:07:51.208 --> 00:07:55.848
+să rulăm codul. Și hai să mergem tot
+drumul înapoi la început și să venim aici.
+
+00:07:56.327 --> 00:08:01.767
+Deci prima dată când apelăm move_to,
+o apelăm cu position egal cu 28.
+
+00:08:02.497 --> 00:08:04.497
+Poți vedea aici că position este 28.
+
+00:08:04.817 --> 00:08:09.778
+Folosim move_to 28,
+dar mingea era deja la 28.
+
+00:08:10.257 --> 00:08:13.377
+Deci mingea e la 28. O mutăm la 28.
+
+00:08:13.697 --> 00:08:17.778
+Și apoi, dacă mergem tot drumul până la
+final și ne uităm unde ne mutăm,
+
+00:08:18.257 --> 00:08:20.658
+ultimul loc în care ne mutăm este 87.
+
+00:08:21.137 --> 00:08:27.517
+Deci ne mutăm la 28, de unde pornește,
+mergem de 60 de ori și ajungem
+
+00:08:28.288 --> 00:08:29.247
+la un pătrățel de țintă.
+
+00:08:30.208 --> 00:08:32.048
+Ții minte că în ultimul
+videoclip Deep Dive
+
+00:08:32.368 --> 00:08:37.967
+am zis că uneori contează foarte mult
+dacă facem lucrurile în ordinea asta
+
+00:08:38.368 --> 00:08:42.207
+sau invers? Ăsta e un
+exemplu în care se întâmplă asta.
+
+00:08:43.008 --> 00:08:47.168
+Aici avem deja o poziție setată,
+pentru că acolo pornește mingea.
+
+00:08:47.327 --> 00:08:52.288
+Dacă ștergem, să zicem, tot codul ăsta,
+mingea pornește de pe tee, de la 28.
+
+00:08:52.288 --> 00:08:53.168
+E deja acolo.
+
+00:08:54.077 --> 00:08:58.638
+Deci când mutăm mingea, prima dată
+când o mutăm, vrem s-o mutăm la 29.
+
+00:08:59.278 --> 00:09:02.158
+Am putea seta asta la 29 și apoi să facem asta,
+
+00:09:03.197 --> 00:09:07.758
+dar atunci distance se strică,
+iar codul nostru nu mai e adevărat, pentru că
+
+00:09:08.317 --> 00:09:12.878
+mingea nu e la 29 aici. Mingea
+e la 28, pe tee.
+
+00:09:14.317 --> 00:09:16.518
+Deci ce trebuie să facem e ca în bucla asta
+
+00:09:16.518 --> 00:09:20.857
+să actualizăm mai întâi poziția, înainte
+să animăm mingea și s-o mutăm acolo.
+
+00:09:21.327 --> 00:09:22.288
+Și dacă facem asta,
+
+00:09:24.927 --> 00:09:26.528
+cu asta pusă înapoi la numărul corect...
+
+00:09:26.607 --> 00:09:28.927
+Dacă facem asta, codul funcționează.
+
+00:09:30.447 --> 00:09:33.567
+Deci hai să recapitulăm
+repede ce avem aici.
+
+00:09:34.128 --> 00:09:38.368
+Am setat niște variabile. Poziția inițială
+a mingii, unde se află pe tee,
+
+00:09:38.528 --> 00:09:41.447
+28, numărul pe care
+l-am primit. Avem steagul.
+
+00:09:41.447 --> 00:09:44.528
+Unde e steagul? E la numărul 88,
+numărul pe care l-am primit.
+
+00:09:45.408 --> 00:09:47.648
+Cât de departe trebuie să mergem? Păi,
+trebuie să mergem
+
+00:09:48.697 --> 00:09:51.658
+de la poziție la steag,
+deci steagul minus poziția,
+
+00:09:52.538 --> 00:09:56.298
+ca să parcurgem distanța aia,
+de atâtea ori. De fiecare dată
+
+00:09:56.298 --> 00:09:58.538
+trebuie să mutăm mingea
+un pas înainte și apoi
+
+00:09:58.538 --> 00:10:01.097
+să animăm mișcarea până la pasul ăla.
+
+00:10:03.258 --> 00:10:07.418
+Deci multora li se pare că ăsta
+e un exercițiu destul de simplu.
+
+00:10:07.977 --> 00:10:11.697
+Dar de fapt sunt multe locuri
+în care te poți bloca destul de tare,
+
+00:10:11.697 --> 00:10:13.658
+și cred că sunt multe locuri în care poți
+
+00:10:13.658 --> 00:10:16.097
+să începi să umbli la numere
+în loc să
+
+00:10:16.097 --> 00:10:18.618
+încetinești și să te gândești
+cu adevărat la ce se întâmplă.
+
+00:10:19.378 --> 00:10:22.018
+Deci sper că în videoclipul ăsta
+vezi cât de util este
+
+00:10:22.018 --> 00:10:24.937
+să setezi variabilele astea
+și cum putem scoate
+
+00:10:24.937 --> 00:10:28.738
+numerele din instrucțiunile astea și
+să le punem aici ca niște date mai solide,
+
+00:10:28.977 --> 00:10:34.177
+mai solide. În programare avem
+o expresie: numere magice.
+
+00:10:34.177 --> 00:10:37.498
+Un număr magic e atunci când
+ai pur și simplu un număr în cod.
+
+00:10:37.498 --> 00:10:39.298
+De exemplu, dacă avem doar 60 ăsta aici
+
+00:10:40.258 --> 00:10:44.018
+și nu știm ce e numărul ăsta,
+dar cumva face codul să meargă.
+
+00:10:44.837 --> 00:10:48.197
+Ori de câte ori ai așa ceva, e foarte
+periculos. Îi spunem un „miros”,
+
+00:10:48.197 --> 00:10:51.477
+un „miros în cod”. E foarte
+periculos când ai așa ceva,
+
+00:10:52.197 --> 00:10:55.557
+pentru că nu știi de fapt
+ce face 60 ăla.
+
+00:10:55.557 --> 00:10:57.317
+Cineva care vine și citește codul
+
+00:10:57.317 --> 00:10:59.638
+nu știe nici el
+ce face 60 ăsta.
+
+00:11:00.597 --> 00:11:03.638
+E mult mai bine să folosești
+variabile cu un înțeles clar.
+
+00:11:04.038 --> 00:11:04.437
+Deci,
+
+00:11:05.238 --> 00:11:08.878
+am putea chiar, știi, să-i spunem ăsteia
+ball_position și ăsteia
+
+00:11:08.878 --> 00:11:09.238
+flag_position.
+
+00:11:10.607 --> 00:11:13.168
+Deci asta devine ball_position,
+iar asta flag_position.
+
+00:11:13.567 --> 00:11:15.648
+Și vrem să mutăm ball_position.
+
+00:11:16.927 --> 00:11:19.648
+Dintr-odată e foarte clar
+ce sunt numerele astea.
+
+00:11:20.048 --> 00:11:21.847
+E foarte clar că
+mutăm mingea.
+
+00:11:21.847 --> 00:11:24.368
+Codul începe să vorbească singur.
+
+00:11:25.457 --> 00:11:29.807
+Deci dacă te-ai blocat la exercițiul ăsta,
+sper că vezi de ce.
+
+00:11:29.807 --> 00:11:33.168
+Sunt multe, multe
+feluri în care te poți bloca.
+
+00:11:33.168 --> 00:11:36.447
+Multe detalii delicate aici. Și dacă
+ai reușit din prima,
+
+00:11:36.447 --> 00:11:38.437
+foarte bine, felicitări.
+
+00:11:38.477 --> 00:11:42.018
+Sper că asta te-a făcut și pe tine
+să te gândești puțin și să pui la îndoială
+
+00:11:42.717 --> 00:11:46.677
+câteva dintre ideile pe care poate
+le aveai când ai început exercițiul.
+
+00:11:47.357 --> 00:11:50.638
+Mult succes la următorul și abia aștept
+
+00:11:50.638 --> 00:11:51.998
+să ne vedem în următorul videoclip Deep Dive.
+
+00:11:51.998 --> 00:11:52.837
+Mersi că te-ai uitat.

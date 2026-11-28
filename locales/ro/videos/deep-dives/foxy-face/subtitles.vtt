@@ -1,0 +1,925 @@
+WEBVTT
+
+NOTE en_md5 3444df0fcca33c086487f13e47f69d4f
+
+00:00:00.079 --> 00:00:02.899
+Salut, bine ai venit la primul tău Deep Dive. Deci
+
+00:00:02.939 --> 00:00:04.839
+videoclipurile astea sunt puțin diferite de
+
+00:00:04.880 --> 00:00:08.159
+videoclipurile explicative de până acum. Sunt mai lungi,
+
+00:00:08.179 --> 00:00:11.440
+mult, mult mai puțin structurate. După ce termin
+
+00:00:11.460 --> 00:00:13.100
+aici, o să fiu doar eu, la
+
+00:00:13.140 --> 00:00:15.939
+un laptop, stând de vorbă cu tine, explicându-ți
+
+00:00:16.000 --> 00:00:18.680
+niște idei mai în profunzime, probabil abătându-mă
+
+00:00:18.720 --> 00:00:21.280
+de la subiect din când în când, poate divagând puțin,
+
+00:00:21.319 --> 00:00:23.479
+dar sper că oferindu-ți o imagine mai clară
+
+00:00:23.559 --> 00:00:27.600
+despre cum gândesc eu codul. Să urmărești
+
+00:00:27.620 --> 00:00:30.419
+aceste Deep Dive-uri e complet opțional. Poți
+
+00:00:30.500 --> 00:00:32.519
+să derulezi înainte prin ele. Poți să dai înapoi
+
+00:00:32.580 --> 00:00:34.479
+ca să revezi anumite părți. Poți să le ignori
+
+00:00:34.540 --> 00:00:37.799
+de tot și să nici nu dai click pe ele.
+
+00:00:37.860 --> 00:00:40.059
+Dar când am ținut cursul ăsta ca
+
+00:00:40.119 --> 00:00:42.939
+bootcamp, oamenii mi-au spus că videoclipurile astea
+
+00:00:42.979 --> 00:00:45.200
+au fost poate partea cea mai valoroasă
+
+00:00:45.260 --> 00:00:47.099
+a întregului curs, pentru că le-au arătat
+
+00:00:47.139 --> 00:00:49.139
+cum gândesc eu. Și, cum am mai spus
+
+00:00:49.200 --> 00:00:51.339
+înainte, o mare parte din cursul ăsta înseamnă
+
+00:00:51.420 --> 00:00:53.759
+să te învăț să gândești ca un programator, ca
+
+00:00:53.799 --> 00:00:56.419
+cineva care scrie cod. Așa că încearcă câteva
+
+00:00:56.459 --> 00:00:58.319
+dintre videoclipuri când apar și vezi ce
+
+00:00:58.360 --> 00:01:00.740
+părere ai. Deocamdată, asigură-te că ai
+
+00:01:00.799 --> 00:01:02.720
+o ceașcă bună de ceai sau de cafea. Așază-te
+
+00:01:02.779 --> 00:01:04.360
+comod și hai să ne apucăm de treabă.
+
+00:01:05.004 --> 00:01:09.203
+Bun, deci în aceste Deep Dive-uri o să rezolv
+exercițiul exact cum l-aș rezolva
+
+00:01:09.203 --> 00:01:11.243
+dacă l-aș vedea
+pentru prima dată.
+
+00:01:11.563 --> 00:01:15.083
+Am evitat intenționat să mă uit
+la fiecare exercițiu o bună bucată de vreme.
+
+00:01:15.524 --> 00:01:18.083
+Și acum revin la el
+și îl rezolv pe loc,
+
+00:01:18.083 --> 00:01:19.884
+ca să nu am o soluție învățată pe de rost.
+
+00:01:20.364 --> 00:01:23.483
+Abordez exercițiul așa cum
+sper că l-ai abordat și tu.
+
+00:01:23.964 --> 00:01:27.323
+Valoarea asta nu stă, totuși,
+în codul pe care îl scriu, cel puțin
+
+00:01:27.483 --> 00:01:29.483
+sigur nu la primele exerciții.
+
+00:01:29.564 --> 00:01:32.913
+Probabil o să scriu exact
+același cod pe care l-ai scris și tu.
+
+00:01:33.633 --> 00:01:37.593
+Scopul principal, cel puțin la început,
+e să te gândești cum să abordezi
+
+00:01:37.593 --> 00:01:41.633
+problemele, iar eu să-ți explic
+cum le abordez eu.
+
+00:01:42.124 --> 00:01:46.633
+Pe măsură ce avansăm în curs,
+o să existe multe moduri diferite de a
+
+00:01:46.633 --> 00:01:50.273
+aborda o problemă. Unele cu avantaje,
+altele cu dezavantaje.
+
+00:01:50.754 --> 00:01:54.993
+Și o mare parte din timp o vom petrece
+explorând aceste moduri diferite de a gândi.
+
+00:01:55.983 --> 00:01:59.673
+Iar logica asta,
+felul ăsta de a rezolva probleme,
+
+00:01:59.993 --> 00:02:02.154
+îl poți duce în toate zonele programării.
+
+00:02:02.394 --> 00:02:05.114
+Când vorbim despre a construi lucruri,
+platforme,
+
+00:02:05.114 --> 00:02:09.194
+din toate piesele astea diferite pe care
+le punem cap la cap, poate nici măcar cu cod,
+
+00:02:09.353 --> 00:02:12.153
+poate punem un AI
+să scrie o parte din cod pentru noi,
+
+00:02:12.633 --> 00:02:17.273
+felul în care gândim e singurul lucru constant
+care ne aduce rezultate bune.
+
+00:02:18.234 --> 00:02:20.954
+Așa că, dacă nu rămâi cu nimic altceva
+din tot cursul ăsta,
+
+00:02:21.273 --> 00:02:24.873
+singurul lucru pe care sper
+să-l iei cu tine e felul în care gândim.
+
+00:02:25.984 --> 00:02:27.424
+Deci, un exercițiu simplu,
+
+00:02:28.543 --> 00:02:31.183
+poate nu ți s-a părut simplu,
+dar, dar chiar e destul de simplu.
+
+00:02:31.344 --> 00:02:33.903
+Încercăm doar să desenăm fața unei vulpi
+
+00:02:34.344 --> 00:02:37.743
+și avem de desenat o serie de triunghiuri.
+
+00:02:38.704 --> 00:02:41.623
+Deci mă uit la instrucțiuni.
+
+00:02:41.623 --> 00:02:43.623
+Îmi spun cum să desenez un triunghi.
+
+00:02:43.623 --> 00:02:49.103
+Asta știu bine. Și
+îmi spun și câteva dintre culori.
+
+00:02:49.103 --> 00:02:53.224
+Avem white, brown,
+orange și charcoal, pe care le putem folosi.
+
+00:02:53.224 --> 00:02:57.094
+Și avem doi obraji albi,
+două urechi maro, două jumătăți de față portocalii
+
+00:02:57.564 --> 00:03:00.603
+și apoi un nas,
+dar format din două triunghiuri.
+
+00:03:03.004 --> 00:03:07.724
+Și apoi am notat aici că
+poți folosi, poți trece cu mouse-ul,
+
+00:03:07.804 --> 00:03:12.364
+ar trebui să folosești asta. Și, în plus,
+toate numerele sunt divizibile cu 5.
+
+00:03:12.444 --> 00:03:15.163
+Și singurul lucru pe care îl
+folosim aici e acest triunghi.
+
+00:03:16.284 --> 00:03:18.923
+Deci, dacă ar fi să desenez asta, cum aș face?
+
+00:03:19.083 --> 00:03:22.203
+Ei bine, aș începe prin a-mi spune:
+bun, am nevoie de un triunghi.
+
+00:03:22.444 --> 00:03:25.203
+Așa că scriu triangle,
+triangle pentru funcția triangle.
+
+00:03:25.444 --> 00:03:29.763
+Și am nevoie de cele trei puncte.
+Primul punct, aici sus, văd 10, 6.
+
+00:03:29.844 --> 00:03:34.043
+Deci știu că e 10, 5. Un lucru
+pe care îmi place să-l fac e să pun
+
+00:03:34.043 --> 00:03:36.083
+numerele astea unul lângă altul, fără spațiu.
+
+00:03:36.643 --> 00:03:41.444
+Așa văd cumva că e o pereche
+de coordonate, și apoi las un spațiu între
+
+00:03:41.923 --> 00:03:46.564
+perechile de coordonate. Merge destul
+de bine la funcția asta, triangle.
+
+00:03:46.803 --> 00:03:50.163
+Dar e și un lucru destul de util
+la care să te gândești: cum spațiile albe,
+
+00:03:51.103 --> 00:03:55.444
+și prin spații albe înțelegem spații,
+rânduri noi, taburi, toate lucrurile astea,
+
+00:03:56.303 --> 00:04:01.184
+îți fac codul mai ușor de citit
+pentru tine și pentru alții.
+
+00:04:02.143 --> 00:04:05.184
+Deci, un mic tipar util. Pui
+cele două coordonate împreună,
+
+00:04:05.184 --> 00:04:08.543
+apoi lași un mic spațiu între
+ele ca să separi coordonatele.
+
+00:04:09.024 --> 00:04:11.583
+Nu contează care dintre
+aceste două e a doua mea coordonată.
+
+00:04:11.583 --> 00:04:14.383
+Dar o să cobor aici, la 10, 40.
+
+00:04:15.184 --> 00:04:19.103
+Și, în final, am punctul
+ăsta de aici, care e 50, 40.
+
+00:04:19.823 --> 00:04:21.784
+Un lucru pe care vreau să ți-l arăt,
+poate nu l-ai observat:
+
+00:04:21.784 --> 00:04:26.143
+deasupra numerelor apare o săgeată
+pe care o poți folosi ca să le modifici.
+
+00:04:26.464 --> 00:04:29.603
+Asta devine mai utilă
+mai târziu, când o să lucrăm cu
+
+00:04:29.603 --> 00:04:33.363
+culori și alte lucruri de genul ăsta,
+poate fi o funcționalitate
+
+00:04:33.363 --> 00:04:34.043
+destul de utilă.
+
+00:04:34.853 --> 00:04:37.643
+Deci ăsta e triunghiul pentru urechea stângă.
+
+00:04:38.524 --> 00:04:41.883
+Vedem că urechea stângă ar trebui să fie maro.
+
+00:04:42.603 --> 00:04:46.323
+Așa că scriem brown. Și asta
+ar trebui să-mi dea urechea stângă.
+
+00:04:46.323 --> 00:04:48.124
+Și verific imediat.
+
+00:04:48.124 --> 00:04:53.483
+Apăs „Rulează codul”. Și văd
+că triunghiul arată cam cum trebuie.
+
+00:04:54.073 --> 00:04:57.833
+Și dacă scot linia asta,
+dacă o comentez punând două slash-uri,
+
+00:04:57.994 --> 00:05:01.233
+vedem că, într-adevăr, dispare.
+
+00:05:01.233 --> 00:05:05.513
+Deci vedem că a mers bine.
+Avem asta și putem continua.
+
+00:05:05.913 --> 00:05:08.073
+Urmează partea stângă a feței.
+
+00:05:09.194 --> 00:05:15.233
+Fața e o bucată portocalie. Deci
+nu avem nicio parte umbrită în spatele ei.
+
+00:05:15.233 --> 00:05:17.113
+Avem doar partea dreaptă a feței.
+
+00:05:17.673 --> 00:05:19.833
+Hai să ne gândim.
+Avem nevoie de triangle.
+
+00:05:20.904 --> 00:05:23.943
+Și, dacă mă uit la imagine,
+văd că e simetrică.
+
+00:05:24.503 --> 00:05:26.743
+Ideea asta de simetrie
+o vom folosi în
+
+00:05:26.743 --> 00:05:28.423
+câteva dintre exercițiile care urmează.
+
+00:05:28.663 --> 00:05:31.743
+Dar vedem că punctul din centru
+o să fie același.
+
+00:05:31.743 --> 00:05:36.103
+Deci o să înceapă la 50, 30 și
+o să se termine aici jos, în același loc,
+
+00:05:36.103 --> 00:05:38.503
+care mie îmi pare a fi 50, 95.
+
+00:05:39.303 --> 00:05:42.904
+Și apoi trebuie să ne dăm seama
+unde o să ajungă aici.
+
+00:05:43.704 --> 00:05:49.543
+Și vedem asta trecând cu mouse-ul peste
+punctul ăsta, care are X 90 și Y 40.
+
+00:05:50.483 --> 00:05:55.123
+Deci o să fie un X oarecare
+și o să fie ceva cu 40
+
+00:05:55.603 --> 00:05:57.764
+și o să fie portocaliu.
+
+00:05:59.284 --> 00:06:02.003
+Dar ce e la unul dintre semnele astea de întrebare,
+ce punem aici?
+
+00:06:02.243 --> 00:06:06.404
+Ei bine, mă uit și
+văd că pânza asta are 100,
+
+00:06:06.404 --> 00:06:07.923
+deci ajunge până aici, la 100.
+
+00:06:08.724 --> 00:06:12.483
+Și
+ăsta e 90. Deci aici e o distanță de 10.
+
+00:06:13.284 --> 00:06:16.884
+Deci știu că o să avem aceeași
+distanță de 10 și pe partea asta.
+
+00:06:17.603 --> 00:06:18.803
+Și știu că
+
+00:06:19.923 --> 00:06:24.644
+0 plus 10 e 10,
+deci știu că asta o să fie 10.
+
+00:06:25.284 --> 00:06:30.084
+Și pot apăsa „Rulează codul”. Și obțin ceva ce
+mi se pare un triunghi portocaliu reușit.
+
+00:06:31.284 --> 00:06:35.923
+Apoi desenez obrazul stâng.
+Copiez și lipesc aici.
+
+00:06:36.313 --> 00:06:39.443
+Luăm triunghiul ăsta.
+Ștergem toate chestiile astea.
+
+00:06:39.913 --> 00:06:43.363
+Avem funcția triangle,
+deci nu trebuie s-o scriu din nou.
+
+00:06:44.253 --> 00:06:47.693
+Și obrazul stâng o să fie alb.
+
+00:06:48.253 --> 00:06:52.813
+Pot să măsor asta. Asta e 10, 40,
+
+00:06:54.654 --> 00:06:57.293
+și asta e 5, 60.
+
+00:06:58.094 --> 00:07:00.053
+Am uitat o virgulă. Deci asta e altceva.
+
+00:07:00.053 --> 00:07:03.134
+Un mic sfat. Vezi că asta nu e roșu?
+
+00:07:03.214 --> 00:07:07.454
+E cumva culoarea greșită.
+Asta se numește evidențierea sintaxei.
+
+00:07:07.613 --> 00:07:12.534
+E un termen tehnic pe care îl folosim. Dar
+culorile pe care le vezi sunt culorile
+
+00:07:12.534 --> 00:07:13.053
+evidențierii sintaxei.
+
+00:07:14.053 --> 00:07:18.693
+Faptul că asta nu e roșu e un semn bun
+că ai greșit ceva.
+
+00:07:18.933 --> 00:07:21.654
+Deci, dacă vezi vreodată ceva
+care pare să aibă culoarea greșită,
+
+00:07:21.733 --> 00:07:24.373
+e un semn că
+poate ai uitat o virgulă.
+
+00:07:24.534 --> 00:07:27.894
+Poate. Dacă mergem aici și nu
+închidem ghilimelele, vezi că
+
+00:07:28.293 --> 00:07:33.014
+paranteza asta devine verde,
+ceea ce arată că îți lipsesc niște ghilimele.
+
+00:07:33.413 --> 00:07:35.974
+Deci culorile astea devin
+chiar foarte utile, ca niște
+
+00:07:35.974 --> 00:07:39.574
+mici scurtături în mintea ta
+ca să observi că ceva e greșit.
+
+00:07:41.224 --> 00:07:43.144
+Pun virgula. Și asta devine portocaliu.
+
+00:07:43.224 --> 00:07:50.584
+Deci 10, 40, 5, 60. Și apoi revenim
+aici jos, la 50 și 95.
+
+00:07:51.943 --> 00:07:56.743
+Și putem scrie white. Și
+adăugăm asta și e bine.
+
+00:07:59.224 --> 00:08:04.264
+Bun. Urechea dreaptă. Acum suntem
+cu adevărat în zona simetriei, cumva.
+
+00:08:04.663 --> 00:08:09.224
+Deci, pentru urechea dreaptă, scrie:
+poți să-ți dai seama fără să treci cu mouse-ul?
+
+00:08:10.584 --> 00:08:13.543
+Deci da,
+putem să ne dăm seama fără să trecem cu mouse-ul.
+
+00:08:13.863 --> 00:08:18.464
+Dacă ai trecut cu mouse-ul și ai făcut așa,
+te poți gândi cum altfel ai putea face?
+
+00:08:18.464 --> 00:08:21.943
+Și te poți gândi cum să folosești
+ce tocmai am făcut aici, unde
+
+00:08:22.743 --> 00:08:26.024
+am desenat obrazul stâng
+uitându-mă la obrazul drept?
+
+00:08:26.024 --> 00:08:28.024
+Cum am putea folosi asta? Același principiu?
+
+00:08:28.024 --> 00:08:30.904
+Dacă vrei să pui pauză o secundă
+și să te gândești la asta, poți s-o faci;
+
+00:08:31.863 --> 00:08:38.024
+altfel, îți spun eu. Deci
+știm că aici urechea stângă începe la 10.
+
+00:08:38.253 --> 00:08:40.014
+Și vedem că avem 10, 5.
+
+00:08:40.894 --> 00:08:44.894
+Și știm, cum am spus mai devreme,
+că 0 plus 10 e 10.
+
+00:08:45.053 --> 00:08:47.613
+Și ne-am dat seama că obrazul ăsta se termină la 90
+
+00:08:48.413 --> 00:08:52.014
+pentru că are o distanță de 10
+și aceeași distanță e și aici.
+
+00:08:52.413 --> 00:08:54.894
+Deci știm că urechea asta ar trebui să fie la 90
+
+00:08:56.094 --> 00:09:00.974
+și știm că merge drept
+în jos până la 90 și știm că
+
+00:09:01.443 --> 00:09:03.693
+vine tot drumul până la mijloc, la 50.
+
+00:09:04.413 --> 00:09:07.454
+Deci putem inversa asta și avem același
+
+00:09:08.654 --> 00:09:12.053
+triunghi. Apoi putem face
+partea dreaptă a feței.
+
+00:09:12.053 --> 00:09:16.733
+Și, din nou, putem face asta fără mouse,
+schimbând doar 10 în 90, pentru că e
+
+00:09:16.733 --> 00:09:22.454
+simetric. Apoi putem face
+obrazul drept, și la obrazul drept, din nou,
+
+00:09:22.454 --> 00:09:28.974
+vrem simetrie. Deci asta devine 90,
+asta devine 95 și asta rămâne 50
+
+00:09:29.543 --> 00:09:31.063
+și asta ne dă un obraz alb.
+
+00:09:31.543 --> 00:09:33.224
+Și apoi avem nevoie de nas,
+
+00:09:34.344 --> 00:09:38.983
+iar nasul e charcoal,
+deci putem scrie triangle.
+
+00:09:39.944 --> 00:09:44.023
+Și mi-am cam stricat puțin
+treaba, pentru că am
+
+00:09:44.023 --> 00:09:45.983
+desenat peste el. Dar se poate.
+
+00:09:45.983 --> 00:09:50.743
+Deci ai două variante. Unu,
+poți pur și simplu să comentezi tot codul.
+
+00:09:51.224 --> 00:09:54.103
+Poți să pui niște comentarii
+
+00:09:55.554 --> 00:09:56.033
+așa
+
+00:09:56.914 --> 00:09:59.074
+și asta îți permite să
+
+00:10:00.834 --> 00:10:04.873
+comentezi linia asta. Deci, dacă vreodată
+ți se întâmplă asta, poate ai greșit ceva la scris,
+
+00:10:04.873 --> 00:10:08.794
+nu trebuie să te sperii. Apasă
+„Rulează codul”, comentează ce e greșit,
+
+00:10:08.794 --> 00:10:10.594
+apasă din nou „Rulează codul” și totul revine.
+
+00:10:11.233 --> 00:10:15.633
+Deci aici vedem că asta ar trebui să fie 50 și 85.
+
+00:10:17.153 --> 00:10:20.753
+Deci 50 și 85. Și apoi
+putem pune astea la loc.
+
+00:10:21.974 --> 00:10:22.273
+Și.
+
+00:10:26.353 --> 00:10:29.474
+Am reușit cumva să șterg
+cuvântul triangle de pe primul rând.
+
+00:10:30.113 --> 00:10:30.753
+Bun,
+
+00:10:34.273 --> 00:10:36.674
+hai să măsurăm asta. Deci 40, 90.
+
+00:10:37.873 --> 00:10:42.194
+Și știm că e simetric. Deci imediat
+știm că următorul o să fie
+
+00:10:42.194 --> 00:10:48.214
+60, 90. Și știm că asta e charcoal,
+un cuvânt pe care îl scriu greu.
+
+00:10:48.934 --> 00:10:53.893
+Avem partea de sus a nasului și
+apoi avem partea de jos a nasului.
+
+00:10:54.214 --> 00:11:00.054
+Și ăsta e un triunghi
+simetric față de triunghiul de sus.
+
+00:11:00.454 --> 00:11:04.533
+Deci o să aibă exact
+aceeași formă ca ăsta,
+
+00:11:04.934 --> 00:11:07.493
+doar că ăsta merge de la 85 la 90.
+
+00:11:07.893 --> 00:11:13.074
+Știm că ăsta trebuie să meargă
+de la 90 la 95 pentru că, din nou,
+
+00:11:13.233 --> 00:11:16.834
+ne putem gândi la 90 ca la linia din mijloc,
+5 deasupra, 5 dedesubt.
+
+00:11:17.873 --> 00:11:20.594
+Și avem partea de jos a nasului
+și totul trece.
+
+00:11:21.153 --> 00:11:24.393
+Și apoi aș șterge TODO-urile astea.
+
+00:11:24.393 --> 00:11:26.834
+Hai să încercăm să ne păstrăm codul curat și ordonat.
+
+00:11:27.794 --> 00:11:31.794
+Și, apropo, în unele dintre videoclipurile astea
+o să vezi chestia asta aici jos.
+
+00:11:31.794 --> 00:11:34.753
+E doar pentru că
+rulez local, pe calculatorul meu,
+
+00:11:35.074 --> 00:11:36.513
+și nu pe site-ul Jiki.
+
+00:11:36.834 --> 00:11:39.474
+Am activat niște instrumente suplimentare de depanare.
+
+00:11:39.554 --> 00:11:42.824
+Deci, dacă vezi așa ceva acolo jos,
+poți să ignori.
+
+00:11:44.584 --> 00:11:46.824
+Bun, deci avem un cod frumos și ordonat.
+
+00:11:46.824 --> 00:11:49.623
+Putem scăpa de asta. Poți să-ți dai seama
+și de asta fără să treci cu mouse-ul?
+
+00:11:50.103 --> 00:11:52.863
+Și acum asta ne documentează codul.
+
+00:11:52.863 --> 00:11:54.903
+Deci asta spune că aici e urechea stângă.
+
+00:11:54.903 --> 00:11:57.544
+Și probabil le-aș schimba de fapt
+pe astea ca să spună doar ce e fiecare.
+
+00:11:58.103 --> 00:11:59.783
+Pentru că nu vrem ca ele
+să fie instrucțiuni,
+
+00:11:59.783 --> 00:12:02.263
+vrem doar să descrie
+ce face codul.
+
+00:12:02.344 --> 00:12:04.584
+Dar poți alege
+ce ți se pare ție cel mai clar.
+
+00:12:05.064 --> 00:12:08.344
+Dar e bine să ai comentarii care
+explică pur și simplu ce sunt lucrurile.
+
+00:12:08.344 --> 00:12:10.424
+Poate că de fapt o să-i spun doar nasul.
+
+00:12:10.974 --> 00:12:14.013
+Și aș avea două rânduri așa
+și se înțelege de la sine
+
+00:12:15.133 --> 00:12:16.733
+și aș putea la fel de bine să grupez lucrurile.
+
+00:12:16.733 --> 00:12:20.013
+Aș putea să spun: bun,
+vreau cele două urechi împreună
+
+00:12:20.334 --> 00:12:25.054
+și să scriu doar „urechile”, și vreau
+părțile feței împreună.
+
+00:12:25.643 --> 00:12:29.454
+Și vreau obrajii împreună
+
+00:12:30.334 --> 00:12:30.974
+așa.
+
+00:12:32.733 --> 00:12:36.054
+Și totul merge în continuare,
+dar acum e puțin mai ordonat.
+
+00:12:36.054 --> 00:12:38.253
+Se vede și simetria
+puțin mai bine.
+
+00:12:38.893 --> 00:12:41.253
+Așa că ia-ți mereu câteva minute
+după ce ai rezolvat un
+
+00:12:41.253 --> 00:12:43.594
+exercițiu, ca să încerci
+să fii cu adevărat mândru de el.
+
+00:12:43.594 --> 00:12:47.594
+Fă-l ordonat,
+fă-l cu adevărat îngrijit și vei vedea cu cât
+
+00:12:47.594 --> 00:12:49.834
+e mai clar cu aceste două
+rânduri unul lângă altul.
+
+00:12:50.263 --> 00:12:53.513
+Totul pare pur și simplu puțin mai curat.
+
+00:12:53.513 --> 00:12:56.633
+Un ultim lucru înainte
+să terminăm, aici jos.
+
+00:12:56.633 --> 00:12:59.513
+O să mut asta puțin
+din cale, aici jos.
+
+00:13:00.233 --> 00:13:03.914
+Vezi bara asta? Poate
+n-ai folosit-o încă,
+
+00:13:03.993 --> 00:13:06.474
+dar asta e ceea ce numim bara de derulare.
+
+00:13:07.113 --> 00:13:09.033
+O să-ți fie foarte utilă mai târziu.
+
+00:13:09.434 --> 00:13:13.633
+Ce îți permite ea e să
+treci pe rând prin fiecare rând de cod.
+
+00:13:13.633 --> 00:13:13.993
+Adică
+
+00:13:15.103 --> 00:13:19.344
+câte unul pe rând. Deci, în loc să
+vezi doar fața întreagă, poți de fapt
+
+00:13:19.824 --> 00:13:22.304
+să parcurgi pas cu pas și să vezi ce
+face fiecare rând de cod.
+
+00:13:22.704 --> 00:13:25.623
+Și când scrii
+programe care au 200
+
+00:13:25.623 --> 00:13:28.983
+de rânduri de cod sau care rulează
+același cod de foarte
+
+00:13:28.983 --> 00:13:31.424
+multe ori și poate
+se întâmplă vreo mie,
+
+00:13:31.824 --> 00:13:34.023
+zece mii de lucruri
+în programul tău, și
+
+00:13:34.023 --> 00:13:35.743
+o să ajungem curând la exercițiile alea,
+
+00:13:36.224 --> 00:13:40.944
+asta devine super,
+super utilă pentru tine.
+
+00:13:41.883 --> 00:13:46.363
+Mai avem și panoul ăsta mic de informații,
+pe care îl poți activa, aici sus.
+
+00:13:46.444 --> 00:13:50.964
+Și, din nou, când o să avem cod
+mult mai complicat,
+
+00:13:50.964 --> 00:13:53.003
+o să aibă o mulțime
+de pași și devine
+
+00:13:53.003 --> 00:13:54.844
+mult mai detaliat și
+mult mai complicat.
+
+00:13:55.483 --> 00:13:58.523
+Dar deocamdată poți
+vedea doar că îți spune că Jiki
+
+00:13:58.603 --> 00:14:02.084
+a folosit funcția triangle cu
+acești parametri diferiți.
+
+00:14:02.084 --> 00:14:05.283
+Poți trece cu mouse-ul și peste lucrurile astea,
+de exemplu peste triangle.
+
+00:14:05.283 --> 00:14:09.164
+Și vei vedea că aici evidențiază cuvântul
+peste care treci și evidențiază tot rândul.
+
+00:14:09.783 --> 00:14:13.064
+Din nou, poate nu pare încă super util,
+dar mai târziu,
+
+00:14:13.064 --> 00:14:15.824
+când o să ai poate 20
+de pași și vei vrea să
+
+00:14:15.824 --> 00:14:19.064
+înțelegi exact ce se întâmplă
+în fiecare punct al acestui rând de cod,
+
+00:14:19.224 --> 00:14:20.903
+asta o să-ți fie de mare ajutor.
+
+00:14:21.863 --> 00:14:24.424
+Deci, da, și poți să apeși
+și butonul ăsta de redare.
+
+00:14:24.533 --> 00:14:26.743
+Doar ca să redai, să redai totul.
+
+00:14:27.294 --> 00:14:30.674
+Și, dacă te întorci la jocul
+Space Invaders pe care l-ai,
+
+00:14:30.674 --> 00:14:34.464
+pe care l-ai făcut mai devreme,
+poți să încerci acum, poți să te întorci,
+
+00:14:34.464 --> 00:14:37.383
+să folosești bara de derulare,
+poți să urmărești cum sunt doborâți invadatorii,
+
+00:14:37.623 --> 00:14:39.983
+sau poți să intri în labirint
+și să folosești bara de derulare acolo,
+
+00:14:39.983 --> 00:14:43.263
+să te miști înainte și înapoi ca să urmărești
+cum personajul tău rezolvă labirintul.
+
+00:14:43.263 --> 00:14:46.023
+Și apoi poți să apeși din nou pe redare
+ca să rulezi toată animația.
+
+00:14:46.263 --> 00:14:51.503
+Deci un mic instrument foarte util. Există
+mai multă complexitate acolo, în spate,
+
+00:14:51.503 --> 00:14:54.503
+la care o să revenim
+într-un Deep Dive viitor.
+
+00:14:54.824 --> 00:14:56.664
+Dar deocamdată sper că ți-a fost util.
+
+00:14:56.853 --> 00:15:02.103
+Abia aștept să ajungem să ne
+scufundăm cu adevărat în exerciții complexe, mai târziu.
+
+00:15:02.533 --> 00:15:06.373
+Dar te las acum. Sper
+să-ți placă următoarele exerciții de desen.
+
+00:15:06.773 --> 00:15:08.853
+Continuă să te gândești
+la cum gândești.
+
+00:15:09.174 --> 00:15:13.814
+Ia-ți timp, păstrează-ți codul ordonat
+și, da, o să te descurci foarte bine.
+
+00:15:13.893 --> 00:15:14.773
+Mulțumesc că te-ai uitat.

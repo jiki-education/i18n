@@ -1,0 +1,359 @@
+WEBVTT
+
+NOTE en_md5 37cae67403778109e44f86b67a556520
+
+00:00:00.456 --> 00:00:02.255
+Bun, bun venit la încă un Deep Dive.
+
+00:00:02.255 --> 00:00:04.695
+De data asta ne uităm la pinguin.
+
+00:00:04.936 --> 00:00:09.375
+Sper că te-ai uitat
+la exercițiul cu fața de vulpe, unde
+
+00:00:09.375 --> 00:00:13.336
+am vorbit puțin despre simetrie,
+care te-ar fi ajutat la exercițiul ăsta,
+
+00:00:13.336 --> 00:00:17.655
+dacă l-ai văzut. Cred că exercițiul
+ăsta n-a fost prea greu.
+
+00:00:17.995 --> 00:00:22.295
+Elipsele sunt puțin ciudate.
+Îți ia ceva timp să te obișnuiești cu ele.
+
+00:00:22.716 --> 00:00:25.495
+Dar odată ce te-ai obișnuit,
+sunt destul de simple.
+
+00:00:26.126 --> 00:00:28.765
+Dar lucrul cel mai important
+la exercițiul ăsta era să-l
+
+00:00:29.076 --> 00:00:34.765
+rezolvi doar cu logică. Fără să măsori,
+fără să ghicești,
+
+00:00:34.765 --> 00:00:38.125
+doar cu logică. Și despre logică
+e vorba în programare.
+
+00:00:38.765 --> 00:00:41.286
+Și una dintre instrucțiunile
+pe care ți le-am dat a fost
+
+00:00:41.286 --> 00:00:44.125
+să începi exercițiul apăsând „Rulează codul”.
+
+00:00:44.286 --> 00:00:47.646
+E un sfat foarte util
+în general.
+
+00:00:47.646 --> 00:00:52.206
+Merită mereu să începi un exercițiu
+apăsând „Rulează codul” și să vezi ce se întâmplă.
+
+00:00:52.625 --> 00:00:55.185
+Deseori există o stare de pornire,
+ceva de văzut.
+
+00:00:55.506 --> 00:00:57.185
+E pur și simplu un obicei bun.
+
+00:00:58.865 --> 00:01:02.506
+Deci hai să construim câte ceva.
+Vrem să facem aripa dreaptă.
+
+00:01:02.506 --> 00:01:05.426
+Mai întâi trebuie să înțelegem
+ce se întâmplă cu aripa stângă.
+
+00:01:05.665 --> 00:01:10.066
+Cum ți-am arătat înainte, bara de derulare
+ajută mult aici. Dacă ne întoarcem
+
+00:01:10.066 --> 00:01:16.146
+la momentul în care avem doar aripa stângă,
+putem să ne gândim la
+
+00:01:17.025 --> 00:01:18.786
+elipsa asta separat.
+
+00:01:19.975 --> 00:01:25.256
+Dacă facem aripa dreaptă,
+ce anume vrem de fapt să schimbăm?
+
+00:01:26.775 --> 00:01:32.055
+Hai să copiem elipsele. Păi,
+vrem să aibă aceeași lățime,
+
+00:01:32.775 --> 00:01:35.975
+deci raza pe X rămâne la fel,
+adică bucata asta.
+
+00:01:36.296 --> 00:01:39.975
+Și vrem aceeași înălțime,
+deci și raza pe Y rămâne la fel.
+
+00:01:40.695 --> 00:01:44.376
+Și vrem să înceapă
+la aceeași poziție pe verticală,
+
+00:01:45.245 --> 00:01:48.046
+deci și centrul pe Y
+rămâne la fel.
+
+00:01:48.766 --> 00:01:53.646
+Deci singurul lucru care trebuie de fapt
+schimbat e 28-ul ăsta, adică
+
+00:01:54.135 --> 00:01:56.206
+cât de departe e de stânga.
+
+00:01:57.325 --> 00:02:03.646
+Și trebuie să ne gândim cum s-o mutăm
+din centrul ei din stânga
+
+00:02:03.805 --> 00:02:05.885
+în centrul ei din dreapta.
+
+00:02:07.006 --> 00:02:12.205
+Dacă distanța asta e 28 de la zero,
+tot ce trebuie să ne întrebăm e cât face 100
+
+00:02:13.026 --> 00:02:16.066
+minus 28. Vrem s-o mutăm cu 28 spre interior.
+
+00:02:16.866 --> 00:02:19.825
+Sper că poți face asta în minte.
+
+00:02:19.906 --> 00:02:21.665
+Dar dacă punem
+
+00:02:23.156 --> 00:02:24.066
+72,
+
+00:02:25.346 --> 00:02:26.786
+mie mi se pare corect.
+
+00:02:27.665 --> 00:02:31.105
+Poți oricând să iei un calculator
+și să faci socotelile așa.
+
+00:02:31.586 --> 00:02:33.906
+Și acum avem aripi simetrice.
+
+00:02:34.225 --> 00:02:36.145
+Apoi aici jos ni se spune, bun.
+
+00:02:36.145 --> 00:02:38.866
+Următorul lucru: partea dreaptă
+a feței nu arată bine.
+
+00:02:39.216 --> 00:02:41.616
+Bun. Păi, asta pentru că încă
+n-am făcut partea dreaptă a feței.
+
+00:02:42.096 --> 00:02:44.015
+Deci hai să facem partea dreaptă a feței.
+
+00:02:45.295 --> 00:02:49.056
+Deci, partea dreaptă a feței.
+Hai să avansăm pas cu pas prin cod.
+
+00:02:49.135 --> 00:02:51.536
+Avansăm până ajungem la
+
+00:02:54.735 --> 00:02:58.575
+partea stângă a feței. Partea dreaptă
+e exact ca înainte.
+
+00:02:58.895 --> 00:03:04.096
+Aceeași lățime, aceeași înălțime,
+aceeași poziție pe axa verticală.
+
+00:03:04.175 --> 00:03:05.776
+Doar valoarea asta se schimbă.
+
+00:03:06.556 --> 00:03:13.436
+Și dacă ne gândim iar la centre,
+de la zero la 41 înseamnă 100 minus 41,
+
+00:03:13.915 --> 00:03:15.996
+adică 59.
+
+00:03:17.116 --> 00:03:20.795
+Acum avem o față centrală
+frumos simetrică.
+
+00:03:22.156 --> 00:03:26.556
+Acum ni se spune că ochiul drept
+pare puțin în neregulă, așa că trecem
+
+00:03:26.955 --> 00:03:31.355
+la ochiul drept. Aici avem
+două linii pentru ochiul drept
+
+00:03:32.325 --> 00:03:34.605
+și e exact la fel. Astea sunt cercuri.
+
+00:03:34.605 --> 00:03:37.846
+Vrem aceeași rază,
+pentru că vrem aceeași mărime.
+
+00:03:37.846 --> 00:03:41.006
+Hai să ne întoarcem și să le desenăm.
+
+00:03:41.006 --> 00:03:43.445
+Deci vrem ca raza să fie la fel.
+
+00:03:43.445 --> 00:03:45.286
+Un cerc mare și un cerc mic.
+
+00:03:45.445 --> 00:03:49.045
+Vrem ca poziția pe axa Y
+să fie la fel,
+
+00:03:49.045 --> 00:03:51.686
+dar vrem să le inversăm pe axa X.
+
+00:03:52.006 --> 00:03:58.885
+Deci 100 minus 42 face 58,
+iar 100 minus 43 face 57.
+
+00:03:59.406 --> 00:04:02.445
+Facem asta și avem
+niște ochi frumos inversați.
+
+00:04:03.645 --> 00:04:08.605
+Apoi urmează piciorul drept. Din nou,
+păstrează-ți codul curat și ordonat.
+
+00:04:08.605 --> 00:04:10.925
+Adaugă piciorul drept. Același principiu.
+
+00:04:11.165 --> 00:04:17.005
+Dacă rulăm, vedem cum se desenează
+piciorul stâng aici. Piciorul drept:
+
+00:04:17.485 --> 00:04:20.925
+aceeași lățime, în ambele direcții,
+aceeași înălțime, aceeași distanță,
+
+00:04:21.326 --> 00:04:24.786
+piciorul drept: 100 minus 40 face 60. Și.
+
+00:04:24.855 --> 00:04:26.696
+Și în sfârșit, nasul nu e bine.
+
+00:04:27.016 --> 00:04:30.295
+O să vezi că am spus
+că nasul trebuie să fie simetric.
+
+00:04:30.805 --> 00:04:34.456
+Și undeva în instrucțiuni
+îți spunem să
+
+00:04:36.216 --> 00:04:39.136
+schimbi coordonatele din mijloc,
+nu să adaugi un triunghi nou.
+
+00:04:39.136 --> 00:04:41.415
+Unii se blochează aici.
+
+00:04:42.536 --> 00:04:47.336
+Știm că acum ăsta e în jurul
+punctului central pe X,
+
+00:04:47.735 --> 00:04:50.935
+și vrem să-l schimbăm. Deci în loc
+să fie un triunghi ca ăsta,
+
+00:04:51.175 --> 00:04:54.855
+devine un triunghi ca ăsta.
+Deci în loc de punctul central de aici,
+
+00:04:55.206 --> 00:04:57.286
+vrem să mutăm punctul ăsta încoace.
+
+00:04:57.766 --> 00:05:01.125
+Și asta e tot doar 46 de la stânga.
+
+00:05:01.365 --> 00:05:07.526
+Vrem 46 de la dreapta,
+adică 100 minus 46, adică 54.
+
+00:05:08.326 --> 00:05:12.805
+Apăsăm „Rulează codul”. Felicitări,
+avem un pinguin care funcționează.
+
+00:05:13.685 --> 00:05:15.925
+Sper că și tu l-ai rezolvat tot așa.
+
+00:05:16.005 --> 00:05:20.886
+Sper că n-ai ghicit
+și ai folosit doar puțină logică.
+
+00:05:21.346 --> 00:05:25.846
+Poate că la un moment dat ai încercat
+și tu un lucru logic,
+
+00:05:26.185 --> 00:05:31.386
+să scrii 100 minus 54. Pardon,
+100 minus 46.
+
+00:05:31.466 --> 00:05:33.266
+Ar fi fost un lucru
+perfect rezonabil
+
+00:05:33.266 --> 00:05:36.505
+de făcut. Doar că, pentru că
+nu te-am învățat încă asta,
+
+00:05:36.745 --> 00:05:39.346
+e dezactivat deocamdată în exercițiul ăsta.
+
+00:05:39.346 --> 00:05:40.505
+De fapt,
+
+00:05:41.305 --> 00:05:43.225
+și asta e dezactivat în exercițiul ăsta.
+
+00:05:43.865 --> 00:05:47.105
+Deocamdată, Jiki nu te lasă
+să folosești plus sau
+
+00:05:47.105 --> 00:05:51.065
+minus sau lucruri de felul ăsta, dar o să
+poți în exercițiile următoare.
+
+00:05:51.065 --> 00:05:55.065
+Dar deocamdată vreau să te încurajez
+să faci doar ce te-am învățat.
+
+00:05:55.466 --> 00:05:58.985
+Așa că trebuie să faci
+calculele astea în minte.
+
+00:05:59.225 --> 00:06:04.266
+Și 100 minus 46 face 54. Și asta facem.
+
+00:06:04.925 --> 00:06:09.026
+Sper că a fost destul de simplu.
+Iar dacă ți-a fost greu,
+
+00:06:09.026 --> 00:06:12.586
+sper că videoclipul ăsta
+ți-a arătat cum să te gândești la el.
+
+00:06:12.846 --> 00:06:16.906
+Cum să încetinești și să abordezi
+problema puțin mai logic.
+
+00:06:17.225 --> 00:06:18.865
+Ne vedem la următorul Deep Dive.
+
+00:06:18.865 --> 00:06:19.625
+Mersi că te-ai uitat.
