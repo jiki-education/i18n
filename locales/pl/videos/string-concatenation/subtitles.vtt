@@ -1,0 +1,207 @@
+WEBVTT
+
+NOTE en_md5 d39fabecd86df2df0d2b749f6d2241ba
+
+00:00:00.260 --> 00:00:02.070
+Witaj ponownie. Mam nadzieję, że ta lawina
+
+00:00:02.120 --> 00:00:04.900
+ćwiczeń sprawiła Ci frajdę. Robisz fantastyczne
+
+00:00:04.940 --> 00:00:07.970
+postępy. Brawo! Ten film będzie
+
+00:00:08.000 --> 00:00:10.740
+krótki. Wiesz już, czym są ciągi znaków.
+
+00:00:10.940 --> 00:00:12.800
+To kawałki papieru z zapisanym na nich
+
+00:00:12.840 --> 00:00:15.440
+tekstem. Używasz ich przez cały kurs.
+
+00:00:15.520 --> 00:00:18.960
+Ale do tej pory każdy używany przez Ciebie string
+
+00:00:19.100 --> 00:00:22.000
+był wpisywany bezpośrednio. Co
+
+00:00:22.040 --> 00:00:24.620
+się stanie, jeśli zechcesz zbudować string
+
+00:00:24.660 --> 00:00:28.500
+na podstawie zmiennych lub warunków? Jak
+
+00:00:28.560 --> 00:00:31.200
+to zrobić? Cóż, są na to dwa sposoby,
+
+00:00:31.300 --> 00:00:34.520
+które Ci pokażę. Pierwszy z nich
+
+00:00:34.640 --> 00:00:38.370
+to konkatenacja ciągów znaków, co jest wyszukanym
+
+00:00:38.460 --> 00:00:41.600
+i nieco mylącym określeniem na łączenie dwóch stringów
+
+00:00:41.640 --> 00:00:46.120
+ze sobą. Wyobraź sobie, że masz dwa słowa: „hello” i
+
+00:00:46.160 --> 00:00:48.420
+„world”, i chcesz utworzyć string
+
+00:00:48.440 --> 00:00:51.730
+zawierający „hello world”. Możesz po prostu wpisać
+
+00:00:51.940 --> 00:00:54.460
+„hello world” jako jeden string, ale możesz
+
+00:00:54.540 --> 00:00:59.570
+też napisać „hello” ze spacją plus „world”, co
+
+00:00:59.600 --> 00:01:03.260
+da Ci ten sam string. Oczywiście
+
+00:01:03.340 --> 00:01:05.340
+w tym przypadku nie jest to zbyt przydatne.
+
+00:01:05.940 --> 00:01:08.180
+Ale co, jeśli mielibyśmy zmienną
+
+00:01:08.240 --> 00:01:10.420
+z czyimś imieniem i chcielibyśmy się
+
+00:01:10.460 --> 00:01:12.780
+z tą osobą przywitać? Wyobraź sobie więc, że mamy
+
+00:01:12.820 --> 00:01:16.020
+zmienną o nazwie name, która czasami zawiera Jeremy,
+
+00:01:16.060 --> 00:01:18.860
+a innym razem Jiki. Chcemy powiedzieć
+
+00:01:18.920 --> 00:01:22.280
+„hello Jeremy” lub „hello Jiki”, używając tej zmiennej.
+
+00:01:23.380 --> 00:01:25.860
+Cóż, możemy to osiągnąć, wykorzystując koncepcję
+
+00:01:25.920 --> 00:01:30.600
+konkatenacji i pisząc „hello” plus name, co
+
+00:01:30.620 --> 00:01:33.480
+da nam „hello Jeremy”, albo
+
+00:01:33.620 --> 00:01:37.320
+„hello Jiki”, albo przywitanie z kimś innym, zależnie od tego,
+
+00:01:37.360 --> 00:01:41.000
+co jest w pudełku name. Możemy też
+
+00:01:41.040 --> 00:01:44.220
+użyć czegoś, co nazywa się literałami szablonowymi,
+
+00:01:44.280 --> 00:01:48.790
+żeby uzyskać to samo. To kolejna niepotrzebnie wyszukana, myląca nazwa, która
+
+00:01:48.840 --> 00:01:53.920
+oznacza wstawianie stringów do innych stringów. Zamiast
+
+00:01:53.960 --> 00:01:56.950
+łączyć stringi ze sobą, możemy użyć
+
+00:01:57.120 --> 00:02:00.830
+stringa lub szablonu, który ma w środku miejsca na inne
+
+00:02:00.900 --> 00:02:04.020
+stringi. Żeby to zrobić,
+
+00:02:04.040 --> 00:02:09.800
+używamy backticków zamiast cudzysłowów. Backticki to
+
+00:02:09.880 --> 00:02:12.420
+odwrócone apostrofy, jak sama nazwa wskazuje, ale
+
+00:02:12.460 --> 00:02:15.080
+całkiem możliwe, że to dla Ciebie nowość, więc
+
+00:02:15.120 --> 00:02:17.100
+musisz znaleźć odpowiedni klawisz
+
+00:02:17.140 --> 00:02:20.730
+na klawiaturze. Za ich pomocą tworzymy
+
+00:02:20.800 --> 00:02:24.150
+szablon, który może zawierać inne stringi. A potem,
+
+00:02:24.220 --> 00:02:27.220
+żeby wstawić string do szablonu,
+
+00:02:27.300 --> 00:02:30.540
+używamy kolejnej dziwnej składni: dolara i nawiasów klamrowych.
+
+00:02:30.580 --> 00:02:33.160
+Na przykład, żeby uzyskać to samo „hello”
+
+00:02:33.180 --> 00:02:36.200
+plus name, które przed chwilą widzieliśmy, możemy
+
+00:02:36.420 --> 00:02:40.700
+użyć... możemy napisać: backtick, hello, znak dolara,
+
+00:02:40.860 --> 00:02:45.180
+nawias klamrowy, name, nawias klamrowy, backtick. Wygląda to dużo
+
+00:02:45.220 --> 00:02:46.560
+lepiej, niż brzmi, kiedy to mówię.
+
+00:02:47.800 --> 00:02:50.520
+To robi dokładnie to samo, co
+
+00:02:50.580 --> 00:02:53.320
+dodawanie stringów do siebie. Ale kiedy
+
+00:02:53.390 --> 00:02:56.120
+stringów jest wiele i wszystkie muszą trafić w jedno
+
+00:02:56.160 --> 00:02:58.320
+miejsce, takie rozwiązanie bywa znacznie bardziej efektywne.
+
+00:02:59.160 --> 00:03:00.049
+Trochę czasu zajmie Ci
+
+00:03:00.100 --> 00:03:02.380
+przyzwyczajenie się do tej konkretnej składni,
+
+00:03:02.900 --> 00:03:05.420
+ale nie ma w niej nic naprawdę skomplikowanego.
+
+00:03:07.000 --> 00:03:09.140
+Masz teraz dwa ćwiczenia, żeby to
+
+00:03:09.180 --> 00:03:11.780
+przećwiczyć. Pierwsze opiera się na tym samym
+
+00:03:11.840 --> 00:03:14.420
+schemacie powitania z imieniem, który już znasz. Możesz
+
+00:03:14.460 --> 00:03:17.060
+je rozwiązać, dodając stringi albo używając szablonów,
+
+00:03:18.100 --> 00:03:20.640
+a oba warianty przypomnę
+
+00:03:20.680 --> 00:03:23.880
+w instrukcji. Drugie ćwiczenie to klasyczne
+
+00:03:24.100 --> 00:03:27.120
+pytanie z rozmowy o pracę. Dzięki temu
+
+00:03:27.200 --> 00:03:29.760
+dobrze przygotujesz się do każdej przyszłej rozmowy o pracę.
+
+00:03:30.620 --> 00:03:31.980
+Powodzenia! Do zobaczenia
+
+00:03:32.040 --> 00:03:32.380
+wkrótce.

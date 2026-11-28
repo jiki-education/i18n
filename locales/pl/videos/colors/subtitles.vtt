@@ -1,0 +1,405 @@
+WEBVTT
+
+NOTE en_md5 f8c737461bf364654b8a618e515caeb8
+
+00:00:00.140 --> 00:00:02.210
+Witaj z powrotem. Zrobimy teraz
+
+00:00:02.400 --> 00:00:04.400
+mały krok w bok, taki objazd,
+
+00:00:04.460 --> 00:00:06.480
+i zobaczymy coś, co trzeba
+
+00:00:06.540 --> 00:00:08.850
+znać, jeśli robisz z kodem coś
+
+00:00:08.880 --> 00:00:10.860
+wizualnego. A nawet jeśli chcesz zostać
+
+00:00:10.900 --> 00:00:12.460
+specjalistą od danych i całe to
+
+00:00:12.560 --> 00:00:16.180
+rysowanie wydaje Ci się trochę nudne, przekazywanie danych
+
+00:00:16.219 --> 00:00:19.180
+obrazami to kluczowa umiejętność, więc
+
+00:00:19.220 --> 00:00:21.790
+warto się jej nauczyć. W tym filmie
+
+00:00:21.840 --> 00:00:24.220
+zobaczymy dwa różne sposoby
+
+00:00:24.260 --> 00:00:28.670
+wyrażania kolorów. Używasz już kolorów
+
+00:00:28.680 --> 00:00:31.640
+po nazwie, takich jak red czy yellow,
+
+00:00:31.700 --> 00:00:33.800
+jako ostatnich danych wejściowych funkcji rysujących.
+
+00:00:35.400 --> 00:00:37.300
+To wygodny sposób
+
+00:00:37.360 --> 00:00:40.320
+na szybkie sięgnięcie po kolor, ale dość ograniczający.
+
+00:00:40.330 --> 00:00:42.350
+Nazwanych kolorów mamy
+
+00:00:42.380 --> 00:00:44.370
+tylko garstkę. Dlatego teraz zobaczymy
+
+00:00:44.400 --> 00:00:46.880
+dwa sposoby wyrażenia dowolnego
+
+00:00:46.960 --> 00:00:49.960
+koloru. Nazywają się RGB i
+
+00:00:50.180 --> 00:00:54.920
+HSL. RGB pozwala myśleć o kolorze
+
+00:00:54.980 --> 00:00:57.100
+jako o mieszaninie czerwieni, zieleni i błękitu.
+
+00:00:57.300 --> 00:01:00.210
+Skrót RGB to po angielsku: red, green, blue.
+
+00:01:01.280 --> 00:01:04.040
+Jeśli pamiętasz mieszanie farb w szkole,
+
+00:01:04.099 --> 00:01:06.730
+to podobny pomysł, tylko zamiast farby
+
+00:01:06.760 --> 00:01:11.580
+mieszamy światło. W wielu kolejnych ćwiczeniach
+
+00:01:11.640 --> 00:01:14.440
+spotkasz funkcję o nazwie rgb.
+
+00:01:15.280 --> 00:01:16.960
+Przyjmie trzy liczby jako
+
+00:01:17.000 --> 00:01:20.040
+dane wejściowe: jedną dla czerwieni, jedną dla zieleni
+
+00:01:20.080 --> 00:01:22.240
+i jedną dla błękitu, a zwróci
+
+00:01:22.320 --> 00:01:26.900
+kolor. Liczby, których możesz użyć jako
+
+00:01:26.980 --> 00:01:32.940
+danych wejściowych, mieszczą się w zakresie od zera do 255. Zero znaczy
+
+00:01:33.040 --> 00:01:35.440
+„nie chcę w ogóle tego koloru”, a
+
+00:01:35.620 --> 00:01:38.420
+255 znaczy „wmieszaj tyle tego koloru,
+
+00:01:38.460 --> 00:01:41.460
+ile się da”. Jeśli więc wywołamy
+
+00:01:41.540 --> 00:01:45.550
+funkcję rgb z 255, zerem i zerem
+
+00:01:45.600 --> 00:01:48.190
+jako danymi wejściowymi, mówimy:
+
+00:01:48.240 --> 00:01:50.440
+chcę całą czerwień. Pamiętaj, że 255 to
+
+00:01:50.460 --> 00:01:52.880
+największa liczba, jaką można tam podać.
+
+00:01:52.900 --> 00:01:54.800
+Nie chcemy jednak ani zieleni,
+
+00:01:54.820 --> 00:01:57.420
+ani błękitu, więc oba są zerami.
+
+00:01:57.460 --> 00:02:00.880
+Dostajemy czerwony kolor i możemy zapisać
+
+00:02:00.900 --> 00:02:03.360
+tę czerwień w zmiennej, a potem użyć jej
+
+00:02:03.380 --> 00:02:05.340
+w funkcji circle tak samo, jak dotąd
+
+00:02:05.400 --> 00:02:08.840
+robiliśmy z nazwanymi stringami. A co,
+
+00:02:08.880 --> 00:02:10.759
+jeśli wywołamy funkcję rgb
+
+00:02:10.900 --> 00:02:15.340
+z zerem, 255 i zerem? Mówimy wtedy: żadnej czerwieni,
+
+00:02:15.880 --> 00:02:18.310
+cała zieleń, żadnego błękitu. Dostajemy
+
+00:02:18.320 --> 00:02:21.440
+zielone koło. A jeśli chcemy
+
+00:02:21.640 --> 00:02:25.320
+żółty? Żółty to mieszanka czerwieni
+
+00:02:25.620 --> 00:02:27.940
+i zieleni. Mówimy więc: daj mi
+
+00:02:28.020 --> 00:02:29.840
+całą czerwień, całą zieleń
+
+00:02:30.180 --> 00:02:32.120
+i zero błękitu, i wychodzi
+
+00:02:32.200 --> 00:02:35.200
+żółty. Możemy też używać
+
+00:02:35.240 --> 00:02:37.730
+mniejszych liczb. Jeśli chcemy trochę czerwieni,
+
+00:02:38.300 --> 00:02:41.150
+zero zieleni i dużo błękitu, dostaniemy
+
+00:02:41.200 --> 00:02:45.080
+fiolet. A dużo czerwieni, trochę zieleni
+
+00:02:45.380 --> 00:02:47.000
+i jeszcze trochę więcej błękitu daje
+
+00:02:47.040 --> 00:02:51.360
+róż. To właśnie RGB: mieszamy czerwień, zieleń
+
+00:02:51.500 --> 00:02:56.060
+i błękit, żeby uzyskać różne kombinacje. Teraz
+
+00:02:56.100 --> 00:02:58.960
+zobaczmy HSL, czyli zupełnie
+
+00:02:58.980 --> 00:03:03.060
+inny sposób myślenia o kolorach. HSL to
+
+00:03:03.100 --> 00:03:08.200
+barwa (ang. hue), nasycenie (ang. saturation) i jasność (ang. lightness).
+
+00:03:08.280 --> 00:03:11.900
+Podobnie jak przy RGB mamy funkcję hsl,
+
+00:03:11.920 --> 00:03:14.590
+która przyjmuje trzy liczby: jedną dla barwy, jedną
+
+00:03:14.640 --> 00:03:17.100
+dla nasycenia i jedną dla jasności,
+
+00:03:17.120 --> 00:03:20.420
+a zwraca kolor. Rozłóżmy więc
+
+00:03:20.480 --> 00:03:25.160
+te trzy słowa na części. Barwa to
+
+00:03:25.200 --> 00:03:28.080
+odcień koloru, jakiego chcesz użyć,
+
+00:03:28.120 --> 00:03:32.300
+i przyjmuje wartości od zera do 360.
+
+00:03:32.320 --> 00:03:34.200
+Wyobraź sobie tęczę. Ja myślę
+
+00:03:34.260 --> 00:03:36.200
+o tym właśnie tak. Po lewej mamy czerwień,
+
+00:03:36.700 --> 00:03:39.220
+potem pomarańcz, żółć, zieleń, błękit,
+
+00:03:39.400 --> 00:03:41.320
+fiolet i tak naprawdę wracamy
+
+00:03:41.340 --> 00:03:44.760
+do czerwieni. Jeśli podasz zero,
+
+00:03:45.140 --> 00:03:47.100
+zaczynasz po lewej, czyli masz
+
+00:03:47.180 --> 00:03:50.700
+czerwony. Jeśli podasz 120, prosisz o
+
+00:03:50.740 --> 00:03:54.580
+zieleń. 230 to błękit. Możesz też myśleć
+
+00:03:54.620 --> 00:03:57.470
+o tym jak o kole barw, i to
+
+00:03:57.500 --> 00:03:59.500
+właśnie naprawdę oznacza 360: liczbę
+
+00:03:59.540 --> 00:04:02.440
+stopni w kole. Ja zawsze
+
+00:04:02.480 --> 00:04:04.360
+po prostu sprawdzam liczby, których potrzebuję,
+
+00:04:04.440 --> 00:04:07.000
+więc nie przejmuj się za bardzo zapamiętywaniem
+
+00:04:07.060 --> 00:04:09.340
+ich. Dobrze jednak wiedzieć, o co
+
+00:04:09.380 --> 00:04:11.720
+w tym chodzi. To była barwa, czyli
+
+00:04:11.780 --> 00:04:16.019
+odcień. Dalej mamy nasycenie, czyli to, jak
+
+00:04:16.060 --> 00:04:18.920
+żywy jest kolor. Przyjmuje wartości od zera
+
+00:04:19.019 --> 00:04:22.060
+do 100. Przy zerze masz po prostu szarość:
+
+00:04:22.400 --> 00:04:24.440
+żadnego koloru, żadnego tonu,
+
+00:04:24.500 --> 00:04:28.160
+zupełnie nic. Przy 100 dostajesz pełny, żywy,
+
+00:04:28.360 --> 00:04:32.660
+nasycony kolor. Potem mamy jasność. Jasność
+
+00:04:32.700 --> 00:04:34.860
+mówi, jak jasny jest kolor, i również
+
+00:04:34.960 --> 00:04:37.600
+przyjmuje wartości od zera do 100. Przy
+
+00:04:37.740 --> 00:04:40.200
+zerze dostajesz czerń. Niezależnie od wybranej
+
+00:04:40.260 --> 00:04:43.460
+barwy dostajesz czerń. Nie ma w niej
+
+00:04:43.480 --> 00:04:46.500
+światła. Przy 100 dostajesz biel.
+
+00:04:46.980 --> 00:04:49.000
+Niezależnie od wszystkiego innego kolor jest pełen
+
+00:04:49.060 --> 00:04:52.420
+światła, więc jest biały. 50 to dokładnie
+
+00:04:52.460 --> 00:04:55.490
+środek, normalny kolor. Możesz
+
+00:04:55.520 --> 00:04:57.550
+myśleć o tym jak o suwaku, którym
+
+00:04:57.580 --> 00:05:01.260
+rozjaśnia się albo przyciemnia kolor. Jeśli więc
+
+00:05:01.320 --> 00:05:03.840
+chcemy normalne czerwone koło, które
+
+00:05:03.860 --> 00:05:07.680
+w RGB zapisalibyśmy jako 255, zero, zero
+
+00:05:07.720 --> 00:05:10.640
+(cała czerwień, zero zieleni, zero błękitu),
+
+00:05:10.680 --> 00:05:15.560
+tutaj użyjemy zera, 100 i 50. Zero dla
+
+00:05:15.600 --> 00:05:19.290
+czerwonej barwy, 100 dla nasycenia, czyli pełny kolor,
+
+00:05:19.800 --> 00:05:22.060
+i 50 dla jasności, czyli normalny
+
+00:05:22.080 --> 00:05:25.240
+poziom jasności. Jeśli chcemy zrobić z tego
+
+00:05:25.250 --> 00:05:27.800
+zielone koło, wystarczy zmienić
+
+00:05:27.880 --> 00:05:30.700
+barwę na 120. Jeśli chcemy
+
+00:05:30.740 --> 00:05:33.260
+ciemniejszą zieleń, obniżamy
+
+00:05:33.270 --> 00:05:37.340
+jasność do 25. Jeśli chcemy
+
+00:05:37.380 --> 00:05:39.360
+bardziej wyblakłą zieleń, możemy
+
+00:05:39.440 --> 00:05:40.780
+ująć trochę koloru, trochę
+
+00:05:40.920 --> 00:05:43.860
+nasycenia, powiedzmy zejść do 30.
+
+00:05:46.500 --> 00:05:48.800
+Jeśli chcesz jasny, gorący róż,
+
+00:05:48.860 --> 00:05:52.080
+barwa około 300 to róż. Potem
+
+00:05:52.120 --> 00:05:55.680
+podnosimy nasycenie do 100,
+
+00:05:55.720 --> 00:05:57.560
+żeby kolor był naprawdę żywy, i podbijamy też
+
+00:05:57.620 --> 00:06:01.290
+jasność, do około 60. Mamy więc
+
+00:06:01.340 --> 00:06:03.660
+dwa różne sposoby wyrażania koloru i oba
+
+00:06:03.760 --> 00:06:07.830
+przydają się w różnych sytuacjach. RGB świetnie się sprawdza,
+
+00:06:07.900 --> 00:06:12.160
+gdy chcesz dostroić jeden konkretny składnik:
+
+00:06:12.500 --> 00:06:14.380
+ile czerwieni, ile zieleni, ile
+
+00:06:14.400 --> 00:06:17.540
+błękitu. HSL jest świetny, gdy chcesz
+
+00:06:17.600 --> 00:06:20.060
+przechodzić przez kolejne kolory. Jeśli chcesz tęczę,
+
+00:06:20.100 --> 00:06:23.440
+wystarczy cały czas zwiększać barwę.
+
+00:06:23.460 --> 00:06:25.360
+W kolejnych ćwiczeniach użyjesz
+
+00:06:25.400 --> 00:06:27.500
+obu tych sposobów razem z pętlami
+
+00:06:27.960 --> 00:06:31.020
+i aktualizowaniem zmiennych, żeby stworzyć tęczę
+
+00:06:31.080 --> 00:06:33.280
+i zachód słońca. Wszystkie szczegóły
+
+00:06:33.320 --> 00:06:36.400
+przypomnę w instrukcjach ćwiczeń, więc nie martw się,
+
+00:06:36.460 --> 00:06:40.140
+jeśli jeszcze tego nie pamiętasz. Powodzenia,
+
+00:06:40.180 --> 00:06:41.640
+baw się dobrze i do zobaczenia
+
+00:06:41.660 --> 00:06:42.060
+wkrótce.

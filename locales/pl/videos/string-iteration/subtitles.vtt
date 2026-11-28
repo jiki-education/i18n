@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 488ab8c8dd77c6bec365ce44675868b7
+
+00:00:00.280 --> 00:00:02.640
+Witaj ponownie. W poprzedniej lekcji
+
+00:00:02.680 --> 00:00:04.680
+nauczyliśmy się, jak dostać się do pojedynczej litery
+
+00:00:04.700 --> 00:00:08.300
+stringa za pomocą nawiasów kwadratowych. W tej lekcji
+
+00:00:08.420 --> 00:00:10.120
+zobaczymy, jak przejść pętlą
+
+00:00:10.160 --> 00:00:13.160
+przez string, wyciągając z niego po jednej
+
+00:00:13.200 --> 00:00:15.660
+literze naraz. A żeby to zrobić,
+
+00:00:15.720 --> 00:00:18.300
+potrzebujemy nowego rodzaju pętli. Do tej pory
+
+00:00:18.360 --> 00:00:20.170
+używaliśmy pętli repeat, a teraz
+
+00:00:20.200 --> 00:00:22.720
+użyjemy czegoś, co nazywa się pętlą for of.
+
+00:00:22.760 --> 00:00:26.880
+To dwa nowe słowa kluczowe: for i of.
+
+00:00:27.000 --> 00:00:28.740
+Słowo kluczowe for zobaczymy jeszcze
+
+00:00:28.760 --> 00:00:30.360
+w całkiem wielu miejscach w dalszej części kursu.
+
+00:00:30.790 --> 00:00:32.580
+Może występować samo albo
+
+00:00:32.619 --> 00:00:35.380
+w parze z in lub of.
+
+00:00:35.440 --> 00:00:37.160
+Na razie skupmy się na tym ostatnim,
+
+00:00:37.220 --> 00:00:40.120
+czyli of. Zobaczmy więc
+
+00:00:40.160 --> 00:00:43.280
+jakiś kod. Zaczniemy od utworzenia
+
+00:00:43.340 --> 00:00:47.310
+zmiennej o nazwie name, która zawiera string Jeremy.
+
+00:00:47.380 --> 00:00:50.460
+Nic nowego. Potem mamy tę linię:
+
+00:00:50.540 --> 00:00:53.620
+for let letter of name, w której dużo
+
+00:00:53.640 --> 00:00:55.480
+się dzieje, więc omówmy ją
+
+00:00:55.520 --> 00:00:59.240
+spokojnie, krok po kroku. Po pierwsze mamy słowo kluczowe for.
+
+00:00:59.320 --> 00:01:00.980
+Mówi ono Jikiemu, że chcemy
+
+00:01:01.060 --> 00:01:04.340
+zapętlić jakieś instrukcje. Jiki patrzy więc dalej, widzi of
+
+00:01:04.879 --> 00:01:06.320
+i wie, że chcemy użyć
+
+00:01:06.580 --> 00:01:09.600
+pętli typu for of. To znaczy, że zamiast
+
+00:01:09.720 --> 00:01:11.940
+pętli repeat, w której mówimy „powtórzmy
+
+00:01:12.020 --> 00:01:15.180
+10 razy”, mówimy „przejdźmy
+
+00:01:15.260 --> 00:01:17.380
+przez wszystkie litery stringa”.
+
+00:01:17.440 --> 00:01:20.990
+Właśnie to oznacza for of. Potem mamy ten
+
+00:01:21.060 --> 00:01:24.080
+fragment z let letter. To dokładnie to samo
+
+00:01:24.140 --> 00:01:25.860
+co powyżej, przy let
+
+00:01:26.020 --> 00:01:29.320
+name. Po prostu tworzymy zmienną o nazwie letter.
+
+00:01:30.240 --> 00:01:33.240
+Różnica polega na tym, że zamiast mówić wprost,
+
+00:01:33.280 --> 00:01:35.280
+co ma się w niej znaleźć, prosimy Jikiego,
+
+00:01:35.320 --> 00:01:37.850
+żeby wkładał do niej kolejne litery stringa,
+
+00:01:37.900 --> 00:01:41.780
+jedną po drugiej. Jiki widzi więc
+
+00:01:41.880 --> 00:01:44.460
+for, sprawdza, czy jest of, i rusza do pracy.
+
+00:01:44.480 --> 00:01:46.140
+Patrzy na pierwszą literę stringa,
+
+00:01:46.480 --> 00:01:48.380
+w tym przypadku J, i wkłada ją
+
+00:01:48.440 --> 00:01:50.840
+do nowego pudełka o nazwie letter. Moglibyśmy
+
+00:01:50.880 --> 00:01:52.240
+je nazwać dowolnie. To nie
+
+00:01:52.260 --> 00:01:53.920
+musi być letter. Po prostu tutaj
+
+00:01:53.960 --> 00:01:57.020
+zdecydowaliśmy się na letter. Potem Jiki uruchamia kod
+
+00:01:57.080 --> 00:01:58.960
+w nawiasach klamrowych, a Ty możesz
+
+00:01:59.000 --> 00:02:01.060
+tam robić wszystko to, co wszędzie indziej w kodzie.
+
+00:02:01.540 --> 00:02:03.560
+Jedyna różnica jest taka, że ten blok
+
+00:02:03.640 --> 00:02:06.320
+kodu wykona się raz dla każdej litery
+
+00:02:06.380 --> 00:02:07.900
+stringa i będzie miał
+
+00:02:07.960 --> 00:02:11.940
+dostęp do tej zmiennej. Za każdym razem, gdy Jiki dociera do
+
+00:02:12.040 --> 00:02:15.000
+zamykającego nawiasu klamrowego, wyrzuca pudełko
+
+00:02:15.020 --> 00:02:16.740
+letter i tworzy nowe,
+
+00:02:16.860 --> 00:02:19.220
+z kolejną literą w środku. Za pierwszym razem
+
+00:02:19.340 --> 00:02:20.800
+wyrzuci więc J i włoży
+
+00:02:20.920 --> 00:02:23.000
+do pudełka e. Potem zrobi
+
+00:02:23.020 --> 00:02:25.740
+to samo z r, następnie z e, m
+
+00:02:26.080 --> 00:02:28.790
+i y. Sześć liter, sześć przejść
+
+00:02:28.840 --> 00:02:31.300
+przez pętlę. Mam nadzieję, że to jasne. Trochę
+
+00:02:31.340 --> 00:02:32.560
+czasu potrzeba,
+
+00:02:32.600 --> 00:02:34.900
+żeby przyzwyczaić się do tej składni, ale to naprawdę
+
+00:02:34.920 --> 00:02:37.730
+nie jest trudne pojęcie. Teraz czeka Cię
+
+00:02:37.760 --> 00:02:40.250
+kilka ćwiczeń, w których przechodzisz przez
+
+00:02:40.250 --> 00:02:42.660
+stringi. Każde poprosi Cię o zrobienie czegoś innego
+
+00:02:42.680 --> 00:02:44.980
+z literami, na przykład o policzenie, ile ich jest,
+
+00:02:45.000 --> 00:02:46.760
+albo o znalezienie pozycji
+
+00:02:46.800 --> 00:02:49.260
+konkretnej litery. Trzeba będzie użyć różnych
+
+00:02:49.320 --> 00:02:51.640
+technik, które już znasz, i połączyć je
+
+00:02:51.700 --> 00:02:57.060
+z tym rodzajem pętli. Te ćwiczenia robią się coraz
+
+00:02:57.100 --> 00:03:00.000
+trudniejsze. Łączysz w nich wiele różnych rzeczy,
+
+00:03:00.020 --> 00:03:02.420
+które już znasz. Nie spiesz się z nimi.
+
+00:03:02.500 --> 00:03:03.920
+Każde z nich może
+
+00:03:03.960 --> 00:03:06.160
+zająć Ci dłuższą chwilę. Nie poganiaj się
+
+00:03:06.200 --> 00:03:08.840
+i nie złość się, jeśli coś nie wychodzi.
+
+00:03:08.900 --> 00:03:10.920
+Traktuj to po prostu jak łamigłówkę. Jeśli
+
+00:03:10.940 --> 00:03:12.640
+utkniesz, możesz zrobić przerwę,
+
+00:03:12.650 --> 00:03:15.160
+pójść na spacer i wrócić później. Masz
+
+00:03:15.200 --> 00:03:16.790
+całą wiedzę potrzebną do tego
+
+00:03:16.820 --> 00:03:18.870
+i umiejętności, żeby sobie poradzić, ale
+
+00:03:18.940 --> 00:03:21.520
+musisz uzbroić się w cierpliwość. I zawsze pamiętaj,
+
+00:03:21.580 --> 00:03:23.320
+że możesz skorzystać z podpowiedzi, jeśli trzeba,
+
+00:03:23.900 --> 00:03:25.150
+ale traktuj je jako ostatnią
+
+00:03:25.200 --> 00:03:27.540
+deskę ratunku. Powodzenia, do zobaczenia
+
+00:03:27.560 --> 00:03:28.060
+niedługo!

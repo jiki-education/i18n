@@ -1,0 +1,168 @@
+WEBVTT
+
+NOTE en_md5 cc1cedf75df71450fa8e0da4a289c70e
+
+00:00:00.100 --> 00:00:03.520
+Witaj ponownie. Do tej pory używaliśmy zmiennych
+
+00:00:03.740 --> 00:00:06.760
+do rzeczy, które mają jakieś znaczenie: czyjegoś wieku,
+
+00:00:06.860 --> 00:00:10.680
+godziny, koloru. Zmienialiśmy ich wartości, ale
+
+00:00:10.700 --> 00:00:14.900
+były to rzeczy dość statyczne. Tymczasem jednym
+
+00:00:14.940 --> 00:00:18.320
+z najczęstszych zastosowań zmiennych w programowaniu
+
+00:00:18.400 --> 00:00:22.020
+jest śledzenie postępów w trakcie wykonywania zadania.
+
+00:00:22.080 --> 00:00:24.280
+Wyobraź sobie, że budujesz mur, czym za chwilę
+
+00:00:24.340 --> 00:00:26.880
+się zajmiesz. W prawdziwym życiu cały czas
+
+00:00:26.940 --> 00:00:29.560
+wiadomo, którą warstwę cegieł się układa:
+
+00:00:29.600 --> 00:00:31.540
+dolną czy górną, którąś
+
+00:00:31.580 --> 00:00:34.380
+pośrodku, i wiadomo też,
+
+00:00:34.420 --> 00:00:36.480
+którą cegłę trzeba położyć jako następną:
+
+00:00:36.520 --> 00:00:40.240
+trzecią, czwartą i tak dalej. W cyfrowym świecie
+
+00:00:40.250 --> 00:00:43.240
+potrzebujemy dokładnie tego samego. Albo
+
+00:00:43.360 --> 00:00:47.070
+wyobraź sobie, że tworzysz automatycznego bota
+
+00:00:47.140 --> 00:00:50.220
+do gry Space Invaders. Musi on wiedzieć, gdzie
+
+00:00:50.320 --> 00:00:52.220
+znajduje się na ekranie, od lewej
+
+00:00:52.260 --> 00:00:55.730
+do prawej. W programowaniu nazywamy to stanem (ang. state),
+
+00:00:56.240 --> 00:00:59.840
+czyli w skrócie: w jakim stanie coś się znajduje. Stan
+
+00:00:59.880 --> 00:01:02.510
+pomaga wiedzieć, co się dzieje,
+
+00:01:02.600 --> 00:01:05.099
+ale naprawdę przydatny staje się wtedy,
+
+00:01:05.140 --> 00:01:08.250
+gdy połączymy go z instrukcjami warunkowymi. Budując
+
+00:01:08.280 --> 00:01:10.660
+mur, po każdej cegle trzeba
+
+00:01:10.680 --> 00:01:13.780
+sprawdzić, czy nie została właśnie położona
+
+00:01:13.820 --> 00:01:16.160
+ostatnia cegła w danym rzędzie, a jeśli
+
+00:01:16.240 --> 00:01:17.520
+tak, przejść do
+
+00:01:17.560 --> 00:01:19.200
+następnego rzędu i wrócić do układania
+
+00:01:19.240 --> 00:01:22.310
+pierwszej cegły. Budując bota do Space Invaders,
+
+00:01:22.440 --> 00:01:23.780
+przed ruchem trzeba sprawdzić,
+
+00:01:23.820 --> 00:01:26.020
+czy nie jesteśmy na krawędzi ekranu,
+
+00:01:26.140 --> 00:01:29.700
+a jeśli tak, zmienić kierunek. Kierunek
+
+00:01:29.780 --> 00:01:32.360
+też jest stanem: to zapis tego,
+
+00:01:32.380 --> 00:01:35.800
+czy poruszamy się w lewo, czy w prawo. Z czasem
+
+00:01:35.900 --> 00:01:37.600
+stan okaże się jedną
+
+00:01:37.660 --> 00:01:41.220
+z najważniejszych części programowania: chodzi o
+
+00:01:41.360 --> 00:01:44.100
+wiedzę, gdzie coś się znajduje, w jakim jest stanie
+
+00:01:44.500 --> 00:01:47.140
+i jak daleko jesteśmy
+
+00:01:47.300 --> 00:01:49.960
+z naszą listą zadań. W dwóch kolejnych ćwiczeniach
+
+00:01:49.980 --> 00:01:52.140
+użyjesz stanu, żeby zbudować mur
+
+00:01:52.180 --> 00:01:54.500
+i zagrać w Space Invaders, wykorzystując pomysły,
+
+00:01:54.560 --> 00:01:58.890
+o których właśnie mówiliśmy. Bardzo ważne jest, żeby rozbić te
+
+00:01:58.940 --> 00:02:03.780
+ćwiczenia na małe kroki. Przemyśl dokładnie,
+
+00:02:03.840 --> 00:02:05.660
+co trzeba wiedzieć,
+
+00:02:05.680 --> 00:02:07.740
+żeby je rozwiązać: na przykład którą warstwę cegieł
+
+00:02:07.780 --> 00:02:09.360
+układasz albo gdzie leży
+
+00:02:09.420 --> 00:02:12.680
+aktualna cegła. Przemyśl zasady,
+
+00:02:12.740 --> 00:02:15.000
+których komputer musi przestrzegać,
+
+00:02:15.060 --> 00:02:18.780
+żeby ułożyć cały mur. To już prawdziwe programowanie.
+
+00:02:19.000 --> 00:02:20.760
+To właśnie takie rzeczy
+
+00:02:20.800 --> 00:02:24.120
+robimy na co dzień jako programiści. Wszystko
+
+00:02:24.160 --> 00:02:26.700
+staje się bardziej złożone, ale i daje coraz więcej
+
+00:02:26.720 --> 00:02:29.860
+frajdy. Te schematy wymagają na początku trochę czasu,
+
+00:02:29.940 --> 00:02:32.160
+żeby się do nich przyzwyczaić, więc
+
+00:02:32.180 --> 00:02:34.600
+nie spiesz się, baw się dobrze i do zobaczenia
+
+00:02:34.640 --> 00:02:35.320
+wkrótce.

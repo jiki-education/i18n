@@ -1,0 +1,141 @@
+WEBVTT
+
+NOTE en_md5 bda06700bc7cace998c9ec1d94e9d2aa
+
+00:00:00.160 --> 00:00:03.500
+Witaj z powrotem. Często w programowaniu chcemy
+
+00:00:03.660 --> 00:00:06.940
+użyć funkcji i za każdym razem otrzymać
+
+00:00:07.020 --> 00:00:11.400
+inną liczbę losową. Przydaje się to
+
+00:00:11.460 --> 00:00:13.960
+na wiele sposobów i w wielu miejscach, ale szczególnie
+
+00:00:14.020 --> 00:00:16.370
+w kryptografii, gdzie robi się mnóstwo
+
+00:00:16.379 --> 00:00:19.270
+rzeczy, na przykład tworzy kody do udostępniania między komputerami,
+
+00:00:20.040 --> 00:00:21.660
+i te kody muszą być losowe,
+
+00:00:21.680 --> 00:00:24.980
+żeby nie dało się ich złamać. Żeby Ci to ułatwić,
+
+00:00:25.320 --> 00:00:27.160
+przez resztę kursu masz
+
+00:00:27.200 --> 00:00:33.420
+do dyspozycji funkcję o nazwie Math.randomInt. Możesz zauważyć,
+
+00:00:33.440 --> 00:00:34.920
+że w środku jest kropka.
+
+00:00:36.240 --> 00:00:38.660
+Gdy masz dostęp do coraz większej liczby funkcji,
+
+00:00:38.700 --> 00:00:41.040
+dzielimy je na różne grupy, żeby zachować
+
+00:00:41.080 --> 00:00:43.980
+porządek, a fragment Math to
+
+00:00:44.100 --> 00:00:46.720
+nazwa grupy, do której należy
+
+00:00:46.780 --> 00:00:49.550
+ta funkcja. Mówi Jikiemu, w której sekcji
+
+00:00:49.600 --> 00:00:51.340
+półek ma szukać, w tym wypadku
+
+00:00:51.350 --> 00:00:54.490
+w sekcji Math. Kropka oznacza po prostu: przejdź do
+
+00:00:54.520 --> 00:00:57.440
+tej sekcji i znajdź funkcję. Na razie
+
+00:00:57.480 --> 00:00:59.920
+się tym zbytnio nie przejmuj. Instrukcje
+
+00:00:59.940 --> 00:01:03.020
+do ćwiczeń zawsze powiedzą Ci, jakie funkcje są
+
+00:01:03.060 --> 00:01:06.740
+dostępne i jak ich używać. Najważniejsze,
+
+00:01:06.800 --> 00:01:09.940
+żeby zrozumieć, że gdy Jiki użyje
+
+00:01:09.980 --> 00:01:12.380
+tej funkcji, to za każdym razem, gdy ją uruchomi,
+
+00:01:12.460 --> 00:01:15.400
+dostanie inną liczbę, ale z jednym
+
+00:01:15.440 --> 00:01:19.760
+ograniczeniem. Funkcja przyjmuje dwie dane wejściowe. Pierwsza
+
+00:01:19.940 --> 00:01:22.120
+to najmniejsza liczba, jaką maszyna może
+
+00:01:22.160 --> 00:01:25.220
+zwrócić, a druga to największa
+
+00:01:25.300 --> 00:01:28.160
+liczba, jaką maszyna może zwrócić.
+
+00:01:28.240 --> 00:01:31.740
+Więc jeśli użyjesz funkcji Math.randomInt z liczbami 10
+
+00:01:32.080 --> 00:01:36.820
+i 13, zawsze dostaniesz z powrotem 10, 11, 12
+
+00:01:37.200 --> 00:01:40.280
+albo 13. Ale za każdym razem
+
+00:01:40.340 --> 00:01:44.120
+będzie to inna liczba. Wyobraź sobie,
+
+00:01:44.160 --> 00:01:46.200
+że chcesz narysować koło
+
+00:01:46.240 --> 00:01:49.420
+w losowym miejscu na planszy. Możesz użyć
+
+00:01:49.500 --> 00:01:52.500
+Math.randomInt, żeby dostawać inne wartości dla left
+
+00:01:52.640 --> 00:01:56.920
+i top, za każdym razem losowe, ale z granicami,
+
+00:01:56.960 --> 00:01:59.500
+powiedzmy, 10 i 90, żeby koło nigdy
+
+00:01:59.560 --> 00:02:02.960
+nie wyszło poza planszę. Za każdym razem,
+
+00:02:03.020 --> 00:02:05.020
+gdy uruchomisz ten kod, koło zostanie
+
+00:02:05.060 --> 00:02:08.460
+narysowane w trochę innym miejscu. Zaczniemy
+
+00:02:08.560 --> 00:02:12.320
+od prostego ćwiczenia ze składaniem sałatki, żeby
+
+00:02:12.460 --> 00:02:14.680
+oswoić Cię z liczbami losowymi,
+
+00:02:15.400 --> 00:02:17.600
+a potem w kolejnych kilku ćwiczeniach
+
+00:02:17.640 --> 00:02:20.120
+zaczniemy robić z nimi całkiem fajne
+
+00:02:20.160 --> 00:02:22.019
+rzeczy. Do zobaczenia tu wkrótce.

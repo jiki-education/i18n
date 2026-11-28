@@ -1,0 +1,195 @@
+WEBVTT
+
+NOTE en_md5 e47167fc1482d0b37cf8c1318d2bbbbb
+
+00:00:00.100 --> 00:00:04.260
+Witaj ponownie. Do tej pory, gdy rysujemy
+
+00:00:04.300 --> 00:00:06.910
+za pomocą pętli repeat, każda nowa rzecz,
+
+00:00:06.920 --> 00:00:10.310
+którą narysujemy, coś dodaje do obrazu. Jeśli
+
+00:00:10.340 --> 00:00:12.360
+narysujemy nową cegłę w murze,
+
+00:00:12.520 --> 00:00:15.840
+wypełni ona lukę. Jeśli narysujemy 10
+
+00:00:15.900 --> 00:00:18.500
+kółek, na ekranie zobaczymy 10 kółek.
+
+00:00:19.300 --> 00:00:22.220
+To jak obraz. Gdy położysz farbę
+
+00:00:22.240 --> 00:00:24.580
+na ścianie, nie znika ona, kiedy
+
+00:00:24.640 --> 00:00:26.440
+obok malujesz coś nowego. Zostaje.
+
+00:00:26.480 --> 00:00:30.320
+Ale co, jeśli chcemy, żeby
+
+00:00:30.380 --> 00:00:33.980
+coś wyglądało, jakby się poruszało? Czy zdarzyło Ci się
+
+00:00:34.000 --> 00:00:36.150
+zobaczyć flipbook? Były bardzo popularne
+
+00:00:36.160 --> 00:00:38.339
+w czasach mojego dzieciństwa, dziś już rzadziej.
+
+00:00:38.380 --> 00:00:40.640
+Flipbook to taka mała książeczka, w której każda
+
+00:00:40.680 --> 00:00:44.440
+kartka ma trochę inny rysunek. Kiedy
+
+00:00:44.540 --> 00:00:47.640
+szybko przerzucasz kartki, Twoje oczy widzą,
+
+00:00:47.720 --> 00:00:51.170
+że rysunki się zmieniają, a mózg myśli, że coś
+
+00:00:51.340 --> 00:00:54.020
+się porusza. W rzeczywistości nic się nie porusza.
+
+00:00:54.060 --> 00:00:58.530
+To po prostu mnóstwo trochę różnych obrazków, jeden po drugim. I
+
+00:00:58.560 --> 00:01:02.400
+dokładnie tak działa animacja w kodzie.
+
+00:01:02.589 --> 00:01:05.500
+Sztuczka jest ta sama. Zanim narysujemy
+
+00:01:05.560 --> 00:01:08.920
+nową scenę, zamalowujemy całą
+
+00:01:08.960 --> 00:01:11.920
+planszę kolorem tła, trochę jakbyśmy
+
+00:01:11.960 --> 00:01:14.400
+zaczynali nową kartkę we flipbooku,
+
+00:01:15.320 --> 00:01:18.140
+a potem wprowadzamy drobną zmianę
+
+00:01:18.180 --> 00:01:21.740
+w scenie, żeby sprawiała wrażenie ruchu. Weźmy więc
+
+00:01:21.780 --> 00:01:24.040
+dobrze znany blok kodu, w którym
+
+00:01:24.080 --> 00:01:27.520
+rysujemy kółka w poprzek ekranu:
+
+00:01:27.560 --> 00:01:29.820
+ustawiamy zmienną position i mamy
+
+00:01:29.840 --> 00:01:31.900
+blok repeat, w którym rysujemy kółko,
+
+00:01:31.940 --> 00:01:33.640
+a potem przesuwamy position o jeden w prawo.
+
+00:01:34.680 --> 00:01:37.110
+Jeśli uruchomimy ten blok repeat 100 razy,
+
+00:01:37.500 --> 00:01:39.940
+zobaczymy 100 kółek
+
+00:01:39.960 --> 00:01:43.320
+w poprzek ekranu. A teraz zobacz, co się dzieje,
+
+00:01:43.340 --> 00:01:47.440
+jeśli za każdym razem dodamy jeden zwykły prostokąt,
+
+00:01:47.500 --> 00:01:51.260
+zanim narysujemy kółko. Zamiast szeregu
+
+00:01:51.300 --> 00:01:54.210
+kółek nasze oczy dają się teraz oszukać i widzą
+
+00:01:54.380 --> 00:01:57.440
+jedno kółko, które zdaje się sunąć
+
+00:01:57.520 --> 00:02:01.000
+przez ekran. Za każdym razem, gdy przechodzimy przez pętlę,
+
+00:02:01.020 --> 00:02:04.060
+malujemy zupełnie nowe tło, zakrywając
+
+00:02:04.260 --> 00:02:06.860
+wszystko, co było wcześniej, a potem rysujemy
+
+00:02:06.960 --> 00:02:11.120
+kółko w jego nowym miejscu. Każde
+
+00:02:11.200 --> 00:02:14.540
+przejście przez pętlę to jak nowa
+
+00:02:14.600 --> 00:02:17.720
+kartka we flipbooku. Najważniejsze,
+
+00:02:17.740 --> 00:02:19.570
+co trzeba tu zrozumieć, to fakt, że nie
+
+00:02:19.640 --> 00:02:22.390
+przesuwamy kółka. Kółko nie jest obiektem,
+
+00:02:22.400 --> 00:02:25.250
+który się przesuwa. To tylko rysunek. Za każdym
+
+00:02:25.340 --> 00:02:27.220
+przejściem przez pętlę zamalowujemy
+
+00:02:27.280 --> 00:02:29.350
+stary rysunek i tworzymy zupełnie nowy,
+
+00:02:29.980 --> 00:02:32.120
+trochę dalej w prawo. Twoje oko składa to
+
+00:02:32.180 --> 00:02:35.280
+wszystko w całość i widzi ruch, ale w rzeczywistości to
+
+00:02:35.360 --> 00:02:38.390
+po prostu mnóstwo osobnych rysunków, jeden po drugim.
+
+00:02:40.080 --> 00:02:42.160
+W następnym ćwiczeniu wykorzystasz
+
+00:02:42.200 --> 00:02:45.420
+ten pomysł, żeby stworzyć zachód słońca. Przesuwasz
+
+00:02:45.460 --> 00:02:47.829
+słońce, zmieniasz jego rozmiar, zmieniasz jego
+
+00:02:47.880 --> 00:02:50.100
+kolor. To ta sama technika. Ustaw kilka
+
+00:02:50.220 --> 00:02:53.900
+zmiennych, pomaluj świeże tło i narysuj wszystko.
+
+00:02:53.940 --> 00:02:57.190
+Zaktualizuj zmienne i powtórz. A jeśli
+
+00:02:57.240 --> 00:02:59.170
+jesteś członkiem Premium, po ukończeniu
+
+00:02:59.170 --> 00:03:01.750
+zachodu słońca odblokujesz też bardziej
+
+00:03:01.800 --> 00:03:05.860
+złożony projekt „Kiełkujący kwiat”, w którym możesz
+
+00:03:05.940 --> 00:03:08.180
+naprawdę się sprawdzić, łącząc wszystkie te
+
+00:03:08.220 --> 00:03:11.360
+elementy. To naprawdę fajny projekt. Powodzenia
+
+00:03:11.400 --> 00:03:13.240
+i do zobaczenia tu wkrótce.

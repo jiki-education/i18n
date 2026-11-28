@@ -1,0 +1,222 @@
+WEBVTT
+
+NOTE en_md5 6ff1da8907b7499eb2c565476fd62b73
+
+00:00:00.160 --> 00:00:02.940
+Witaj ponownie. Do tej pory, myśląc o
+
+00:00:03.180 --> 00:00:05.540
+stringach i liczbach, traktowaliśmy je jako
+
+00:00:05.600 --> 00:00:10.140
+całkiem statyczne rzeczy. I choć rzeczywiście takie są,
+
+00:00:10.180 --> 00:00:13.260
+mają też w sobie mnóstwo funkcjonalności,
+
+00:00:13.540 --> 00:00:16.240
+z których Jiki może korzystać. A z czasem
+
+00:00:16.320 --> 00:00:18.790
+poznamy te funkcjonalności,
+
+00:00:18.840 --> 00:00:20.940
+te zdolności, które mają
+
+00:00:20.980 --> 00:00:23.690
+i które potrafią bardzo ułatwić Ci życie.
+
+00:00:23.700 --> 00:00:26.100
+Przyjrzymy się dwóm rodzajom
+
+00:00:26.160 --> 00:00:30.220
+takich zdolności: właściwościom i metodom. Zacznijmy
+
+00:00:30.240 --> 00:00:34.750
+od właściwości. Właściwości to fakty o rzeczach,
+
+00:00:34.800 --> 00:00:37.370
+o które możemy poprosić
+
+00:00:37.400 --> 00:00:40.800
+Jikiego. Na przykład stringi mają właściwość
+
+00:00:40.840 --> 00:00:43.500
+o nazwie length, dzięki której Jiki może nam powiedzieć,
+
+00:00:43.540 --> 00:00:46.020
+jak długi jest string. Zamiast więc
+
+00:00:46.060 --> 00:00:48.100
+przechodzić pętlą po wszystkich literach,
+
+00:00:48.140 --> 00:00:50.380
+żeby sprawdzić, jak duży jest string,
+
+00:00:50.400 --> 00:00:52.300
+możemy po prostu zapytać Jikiego.
+
+00:00:53.700 --> 00:00:55.620
+A żeby to zrobić, używamy nowej
+
+00:00:55.700 --> 00:00:59.080
+składni: kropki. Na przykład, jeśli
+
+00:00:59.100 --> 00:01:01.460
+mamy string Jeremy i chcemy
+
+00:01:01.500 --> 00:01:05.540
+poznać jego długość, możemy napisać Jeremy.length,
+
+00:01:07.240 --> 00:01:10.200
+i to wszystko. Kiedy Jiki tworzy string,
+
+00:01:10.400 --> 00:01:12.500
+liczy litery i po prostu
+
+00:01:12.540 --> 00:01:14.240
+zapisuje gdzieś w rogu liczbę mówiącą,
+
+00:01:14.260 --> 00:01:16.580
+ile ich jest. A potem, kiedy używamy
+
+00:01:16.620 --> 00:01:19.960
+właściwości length, Jiki po prostu sprawdza,
+
+00:01:20.040 --> 00:01:23.130
+jaka to była liczba. Więc w naszym przykładzie Jeremy.length,
+
+00:01:23.220 --> 00:01:27.480
+kiedy Jiki tworzy string Jeremy,
+
+00:01:27.560 --> 00:01:29.510
+liczy litery, zapisuje liczbę sześć
+
+00:01:29.540 --> 00:01:32.580
+w rogu, a potem, kiedy piszemy Jeremy.length,
+
+00:01:33.060 --> 00:01:35.060
+idzie i to sprawdza. Właściwości możesz
+
+00:01:35.080 --> 00:01:37.980
+więc traktować jak fakty
+
+00:01:38.020 --> 00:01:41.160
+o danej rzeczy. Mówiłem, że mamy właściwości
+
+00:01:41.220 --> 00:01:44.880
+i metody, więc czym są metody? Metody to
+
+00:01:44.920 --> 00:01:49.590
+funkcje, które należą do stringa. Zamiast
+
+00:01:49.600 --> 00:01:52.120
+pisać funkcję, do której przekazujemy
+
+00:01:52.180 --> 00:01:54.960
+string jako dane wejściowe, możemy
+
+00:01:55.060 --> 00:01:59.020
+użyć metody bezpośrednio na stringu. Na
+
+00:01:59.080 --> 00:02:01.700
+przykład pamiętasz może funkcję, która
+
+00:02:01.760 --> 00:02:04.700
+sprawdza, czy w stringu znajduje się
+
+00:02:04.760 --> 00:02:07.580
+konkretna litera? Otóż stringi mają
+
+00:02:07.720 --> 00:02:11.320
+metodę includes, która robi dokładnie to samo, i
+
+00:02:11.360 --> 00:02:13.440
+można jej użyć tą samą notacją kropkową,
+
+00:02:13.480 --> 00:02:16.530
+co przy właściwościach. Różnica polega na tym,
+
+00:02:16.540 --> 00:02:18.280
+że metody zapisujemy jak
+
+00:02:18.360 --> 00:02:21.989
+funkcje: z nawiasami i danymi wejściowymi. Możemy więc
+
+00:02:22.000 --> 00:02:26.520
+napisać tak i dostaniemy z powrotem true, bo w Jeremy
+
+00:02:26.560 --> 00:02:28.840
+jest litera e. Metody
+
+00:02:28.880 --> 00:02:31.840
+różnią się od właściwości tym, że nie są statycznymi faktami.
+
+00:02:32.500 --> 00:02:34.680
+To po prostu funkcje. Możesz myśleć o nich
+
+00:02:34.720 --> 00:02:37.260
+jak o funkcjach, które mają wbudowane pudełko
+
+00:02:37.300 --> 00:02:40.850
+z tym stringiem w środku. Jak dokładnie
+
+00:02:40.880 --> 00:02:43.150
+działają, na razie nie ma większego znaczenia.
+
+00:02:43.160 --> 00:02:45.200
+Ich tworzeniem zajmiesz się dopiero za jakiś czas.
+
+00:02:45.240 --> 00:02:47.720
+Wystarczy wiedzieć, że metodę
+
+00:02:47.780 --> 00:02:50.200
+wywołuje się kropką, a potem
+
+00:02:50.240 --> 00:02:53.070
+zwykłą składnią funkcji. W przypadku stringów
+
+00:02:53.100 --> 00:02:55.160
+warto wiedzieć jeszcze jedno: metody nie zmieniają
+
+00:02:55.200 --> 00:02:58.400
+niczego w samym stringu. Na przykład istnieje
+
+00:02:58.480 --> 00:03:01.560
+metoda toUpperCase, która zwraca string
+
+00:03:01.660 --> 00:03:04.010
+zapisany wielkimi literami. Nie zmienia to jednak
+
+00:03:04.060 --> 00:03:06.960
+oryginalnego stringa. Ten wciąż zawiera Jeremy
+
+00:03:07.120 --> 00:03:10.100
+zapisane tylko z wielkim J na początku. Jiki
+
+00:03:10.140 --> 00:03:13.120
+tworzy za to nowy string, w całości wielkimi literami.
+
+00:03:14.480 --> 00:03:16.040
+Z czasem pokażę Ci
+
+00:03:16.120 --> 00:03:18.100
+mnóstwo różnych właściwości i metod,
+
+00:03:18.140 --> 00:03:20.810
+z których możesz korzystać. Uważnie czytaj instrukcje
+
+00:03:20.840 --> 00:03:23.410
+ćwiczeń, żeby poznać wszystkie
+
+00:03:23.440 --> 00:03:26.380
+te rzeczy. Ale najpierw wrócimy
+
+00:03:26.420 --> 00:03:29.380
+do wcześniejszego ćwiczenia z pangramem, tym razem
+
+00:03:29.420 --> 00:03:32.600
+w nieco bardziej złożonej wersji. Baw się dobrze.
+
+00:03:32.640 --> 00:03:33.470
+Do zobaczenia tu wkrótce.

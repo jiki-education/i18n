@@ -1,0 +1,339 @@
+WEBVTT
+
+NOTE en_md5 d4b8c72f7a92dfb1d6fb4eb412fdc752
+
+00:00:00.400 --> 00:00:03.469
+Witaj z powrotem. Znasz już dwie pętle:
+
+00:00:03.780 --> 00:00:06.580
+pętlę repeat i pętlę for...of.
+
+00:00:06.620 --> 00:00:08.109
+W tej lekcji poznamy
+
+00:00:08.200 --> 00:00:10.940
+dwie kolejne pętle i dwie przydatne techniki
+
+00:00:11.000 --> 00:00:14.140
+pracy z pętlami. Może pamiętasz, jak wspominałem
+
+00:00:14.200 --> 00:00:15.980
+na samym początku, że pętla repeat
+
+00:00:16.020 --> 00:00:18.690
+tak naprawdę nie istnieje w języku JavaScript. To coś,
+
+00:00:18.860 --> 00:00:20.340
+co dodałem, żeby trochę ułatwić Ci
+
+00:00:20.380 --> 00:00:23.190
+życie na starcie. Co więc
+
+00:00:23.200 --> 00:00:25.580
+stosujemy zamiast niej? Zwykłą
+
+00:00:25.660 --> 00:00:28.150
+pętlę for, która wygląda tak.
+
+00:00:29.380 --> 00:00:30.920
+Mam nadzieję, że widać, dlaczego pierwszego dnia
+
+00:00:30.940 --> 00:00:32.940
+mogło to być dla Ciebie nieco
+
+00:00:32.960 --> 00:00:35.120
+onieśmielające. Ale teraz masz już całą
+
+00:00:35.140 --> 00:00:37.280
+wiedzę, której potrzebujesz, żeby poczuć się z tym swobodnie.
+
+00:00:37.360 --> 00:00:40.340
+Rozłóżmy to więc na części. Pętla for
+
+00:00:40.360 --> 00:00:44.620
+składa się z trzech części: inicjalizacji, warunku
+
+00:00:44.640 --> 00:00:49.769
+i inkrementacji. Inicjalizacja, ten fragment let i równa się
+
+00:00:49.840 --> 00:00:52.220
+zero, wykonuje się na początku
+
+00:00:52.260 --> 00:00:54.920
+całej pętli. Wykonuje się tylko raz, a
+
+00:00:54.980 --> 00:00:58.240
+tutaj tworzy pudełko o nazwie i,
+
+00:00:58.340 --> 00:01:02.520
+w którym jest zero. Kolejny fragment, warunek,
+
+00:01:03.240 --> 00:01:08.600
+sprawdzany jest przed każdą iteracją pętli. Jeśli
+
+00:01:08.640 --> 00:01:11.100
+warunek jest prawdziwy, uruchamiamy pętlę
+
+00:01:11.110 --> 00:01:15.580
+jeszcze raz. Jeśli nie, to nie. I
+
+00:01:15.660 --> 00:01:18.580
+wreszcie inkrementacja, czyli i plus plus.
+
+00:01:19.400 --> 00:01:21.420
+Zapis i plus plus znaczy dokładnie to samo
+
+00:01:21.460 --> 00:01:24.420
+co i równa się i plus jeden. To tylko
+
+00:01:24.460 --> 00:01:26.880
+skrót, sposób na zwiększenie i o
+
+00:01:26.940 --> 00:01:31.200
+jeden za każdym razem. W tym przykładzie
+
+00:01:31.280 --> 00:01:34.200
+ustawiamy i na zero. Sprawdzamy, czy i
+
+00:01:34.240 --> 00:01:36.300
+jest mniejsze od dwóch. Jest,
+
+00:01:36.380 --> 00:01:38.360
+więc uruchamiamy pętlę. A potem na
+
+00:01:38.400 --> 00:01:41.640
+końcu zwiększamy i o jeden, więc
+
+00:01:42.060 --> 00:01:44.380
+i przyjmuje wartość jeden. Zero plus jeden to jeden.
+
+00:01:45.500 --> 00:01:47.400
+I ruszamy od nowa. Sprawdzamy, czy
+
+00:01:47.580 --> 00:01:50.780
+jeden jest mniejszy od dwóch. Jest, więc
+
+00:01:50.800 --> 00:01:52.580
+uruchamiamy pętlę. A potem na
+
+00:01:52.620 --> 00:01:55.140
+końcu znowu zwiększamy i. Teraz jest
+
+00:01:55.240 --> 00:01:58.300
+dwa, jeden plus jeden równa się dwa. I wtedy
+
+00:01:58.340 --> 00:02:00.440
+ruszamy trzeci raz. Tym razem
+
+00:02:00.480 --> 00:02:02.970
+sprawdzamy, czy dwa jest mniejsze od dwóch,
+
+00:02:02.980 --> 00:02:05.680
+i nie jest, więc nie uruchamiamy pętli
+
+00:02:05.780 --> 00:02:07.140
+i właściwie to już koniec pętli.
+
+00:02:07.540 --> 00:02:10.539
+Przechodzimy po prostu do kodu poniżej.
+
+00:02:10.640 --> 00:02:13.360
+Uruchomiliśmy więc pętlę dwa razy
+
+00:02:13.400 --> 00:02:16.100
+i warto o tym wiedzieć. Jeśli
+
+00:02:16.140 --> 00:02:18.320
+zaczniemy od zera i mamy
+
+00:02:18.360 --> 00:02:21.460
+warunek „mniejsze niż”, to liczba, którą tam
+
+00:02:21.520 --> 00:02:23.780
+wpiszemy, w tym przypadku dwa, to liczba
+
+00:02:23.840 --> 00:02:26.530
+powtórzeń pętli. Czyli jest to
+
+00:02:26.580 --> 00:02:28.900
+to samo, co zapisać repeat 2.
+
+00:02:30.440 --> 00:02:33.020
+Nie jest to więc trudne, ale znacznie bardziej
+
+00:02:33.060 --> 00:02:38.120
+zawiłe niż zwykłe repeat 2. Następna
+
+00:02:38.180 --> 00:02:40.380
+pętla, którą warto poznać, to pętla while.
+
+00:02:41.420 --> 00:02:45.800
+Ta pętla mówi: „Dopóki jakiś warunek jest spełniony, wykonuj pętlę”.
+
+00:02:45.840 --> 00:02:47.190
+Załóżmy więc, że mamy zasadę:
+
+00:02:47.190 --> 00:02:49.710
+w Space Invaders można strzelać
+
+00:02:49.740 --> 00:02:52.130
+tylko pięć razy. Mielibyśmy wtedy pętlę,
+
+00:02:52.160 --> 00:02:54.170
+która mówi: dopóki liczba strzałów jest mniejsza
+
+00:02:54.200 --> 00:02:56.940
+niż pięć, wykonuj pętlę pozwalającą
+
+00:02:56.960 --> 00:03:00.340
+grać. Za każdym razem, gdy ktoś strzela,
+
+00:03:00.680 --> 00:03:04.000
+zwiększamy numShots o jeden. W końcu
+
+00:03:04.480 --> 00:03:06.040
+osiągniemy pięć i pętla się zakończy.
+
+00:03:07.100 --> 00:03:08.880
+Pętle while mają jednak pewien problem:
+
+00:03:08.920 --> 00:03:11.440
+bardzo łatwo o buga, przez którego
+
+00:03:11.480 --> 00:03:14.040
+pętla nigdy się nie kończy. Takie pętle nazywamy
+
+00:03:14.120 --> 00:03:15.890
+pętlami nieskończonymi i są one jednym
+
+00:03:15.940 --> 00:03:20.010
+z najczęstszych bugów w programach. Kiedy komputer
+
+00:03:20.020 --> 00:03:23.020
+zwalnia, wentylatory zaczynają się kręcić, wszystko robi się głośne,
+
+00:03:23.060 --> 00:03:25.860
+to często dlatego, że ktoś zostawił w kodzie
+
+00:03:25.880 --> 00:03:29.380
+pętlę nieskończoną. No dobrze, jeszcze dwa
+
+00:03:29.460 --> 00:03:32.280
+słowa kluczowe w tym błyskawicznym filmie. Pierwsze
+
+00:03:32.320 --> 00:03:35.300
+to słowo kluczowe break. Można je zastosować
+
+00:03:35.320 --> 00:03:37.680
+w dowolnym miejscu ciała dowolnej pętli.
+
+00:03:38.760 --> 00:03:40.720
+Fragment między nawiasami klamrowymi to właśnie
+
+00:03:40.780 --> 00:03:43.840
+ciało pętli. A kiedy Jiki go zobaczy,
+
+00:03:43.880 --> 00:03:46.100
+natychmiast wychodzi z pętli i przechodzi
+
+00:03:46.160 --> 00:03:48.780
+do kodu, który jest poniżej. Załóżmy więc,
+
+00:03:48.880 --> 00:03:50.600
+że mamy wymóg: pętla ma się wykonać
+
+00:03:50.660 --> 00:03:53.280
+50 razy, ale chcemy ją zatrzymać,
+
+00:03:53.420 --> 00:03:55.960
+kiedy użytkownik strzeli pięć razy. Wtedy możemy
+
+00:03:56.000 --> 00:03:58.140
+na górze umieścić pętlę for, która
+
+00:03:58.200 --> 00:04:00.940
+liczy od zera, dopóki i jest mniejsze niż
+
+00:04:01.120 --> 00:04:03.300
+50. Ale możemy też umieścić warunek
+
+00:04:03.340 --> 00:04:04.720
+w środku pętli, który mówi:
+
+00:04:04.880 --> 00:04:07.720
+jeśli numShots jest większe lub równe
+
+00:04:07.780 --> 00:04:12.520
+pięciu, to break, czyli zatrzymaj pętlę. Czasami
+
+00:04:12.560 --> 00:04:14.880
+chcemy zamiast tego pominąć
+
+00:04:14.890 --> 00:04:18.600
+konkretną iterację pętli. Wyobraź sobie, że
+
+00:04:18.680 --> 00:04:20.780
+chcemy coś zrobić tylko dla liczb nieparzystych.
+
+00:04:21.600 --> 00:04:22.930
+Chcemy móc powiedzieć: jeśli
+
+00:04:23.020 --> 00:04:25.780
+i jest nieparzyste, nie wykonuj tej
+
+00:04:25.840 --> 00:04:28.380
+iteracji. Ale nie chcemy całkiem wychodzić
+
+00:04:28.420 --> 00:04:30.280
+z pętli. Chcemy tylko pominąć
+
+00:04:30.320 --> 00:04:32.670
+tę jedną iterację i spojrzeć na
+
+00:04:32.720 --> 00:04:35.600
+następną. I właśnie do tego mamy kolejne
+
+00:04:35.640 --> 00:04:40.380
+słowo kluczowe: continue. Kiedy Jiki widzi continue,
+
+00:04:40.420 --> 00:04:42.180
+po prostu wraca na początek
+
+00:04:42.220 --> 00:04:44.820
+pętli i zaczyna kolejną iterację. Więc w
+
+00:04:44.860 --> 00:04:47.200
+pętli for...of, jeśli natrafi na continue,
+
+00:04:47.260 --> 00:04:48.580
+przechodzi do kolejnego elementu
+
+00:04:48.640 --> 00:04:51.780
+tablicy. W pętli for trafia na
+
+00:04:51.840 --> 00:04:54.400
+inkrementację i plus plus, a potem
+
+00:04:54.480 --> 00:04:57.980
+zaczyna kolejną iterację. Mamy więc pętle for,
+
+00:04:58.060 --> 00:05:00.800
+pętle while, break i continue. W tym filmie
+
+00:05:00.840 --> 00:05:02.440
+jest dużo informacji, ale możesz do niego
+
+00:05:02.500 --> 00:05:04.550
+wrócić, kiedy tylko zechcesz,
+
+00:05:04.580 --> 00:05:07.080
+a każdy temat ma też swoją stronę pojęcia.
+
+00:05:07.800 --> 00:05:09.800
+Spróbuj wykorzystać wszystkie te pomysły w praktyce
+
+00:05:09.820 --> 00:05:12.220
+w kolejnych ćwiczeniach. Powodzenia, baw się dobrze
+
+00:05:12.680 --> 00:05:14.060
+i do zobaczenia tu wkrótce.

@@ -1,0 +1,267 @@
+WEBVTT
+
+NOTE en_md5 49411a7db976297a17fb5f2e027fcaff
+
+00:00:00.100 --> 00:00:03.060
+Witaj z powrotem. Pętli repeat
+
+00:00:03.120 --> 00:00:05.160
+używasz już od jakiegoś czasu i mam nadzieję,
+
+00:00:05.220 --> 00:00:08.640
+że czujesz się z nią całkiem pewnie. Teraz
+
+00:00:08.680 --> 00:00:10.500
+zajmiemy się czymś pokrewnym, ale odrobinę
+
+00:00:10.520 --> 00:00:13.220
+bardziej złożonym. Załóżmy, że chcemy rząd
+
+00:00:13.260 --> 00:00:15.740
+kwiatów. Możemy napisać coś takiego.
+
+00:00:16.180 --> 00:00:18.720
+Ustawiamy pozycję, sadzimy kwiat,
+
+00:00:18.760 --> 00:00:21.300
+zwiększamy pozycję o 10, powtarzamy
+
+00:00:22.000 --> 00:00:23.560
+i w końcu mamy ładny, równy rząd
+
+00:00:23.680 --> 00:00:26.640
+kwiatów. A co, jeśli chcemy
+
+00:00:26.720 --> 00:00:30.240
+siatkę kwiatów z rzędami i kolumnami? Na przykład
+
+00:00:30.320 --> 00:00:32.780
+cztery rzędy po pięć kwiatów w każdym.
+
+00:00:35.000 --> 00:00:36.580
+Zatrzymaj się na chwilę, możesz nawet
+
+00:00:36.620 --> 00:00:38.640
+na moment zatrzymać film, i zastanów się,
+
+00:00:38.700 --> 00:00:42.380
+jak można to zrobić. Mamy
+
+00:00:42.440 --> 00:00:44.880
+pętlę, która rysuje jeden rząd kwiatów.
+
+00:00:45.980 --> 00:00:48.240
+Jak wykorzystać ją do narysowania czterech
+
+00:00:48.320 --> 00:00:50.660
+rzędów? Albo co można zrobić, żeby narysować
+
+00:00:50.700 --> 00:00:54.420
+cztery rzędy? Dobrze, mam nadzieję, że masz już jakiś pomysł.
+
+00:00:55.440 --> 00:00:57.360
+Jedną z opcji jest po prostu skopiowanie
+
+00:00:57.380 --> 00:01:00.680
+tej pętli cztery razy i zmiana
+
+00:01:00.740 --> 00:01:03.260
+górnej pozycji w każdej z nich. To by
+
+00:01:03.320 --> 00:01:07.970
+zadziałało. Byłoby w porządku. Ale to się powtarza,
+
+00:01:07.980 --> 00:01:10.380
+a jest na to lepszy sposób. Wiemy, że kiedy kod
+
+00:01:10.420 --> 00:01:13.420
+się powtarza, można użyć pętli,
+
+00:01:13.460 --> 00:01:17.920
+żeby go uprościć. Tutaj możemy więc użyć jednej
+
+00:01:18.020 --> 00:01:21.840
+pętli wewnątrz drugiej. Jednej pętli na
+
+00:01:21.860 --> 00:01:24.840
+rzędy i jednej na kwiaty
+
+00:01:24.880 --> 00:01:28.080
+w danym rzędzie. Zacznijmy od dodania pętli
+
+00:01:28.140 --> 00:01:30.360
+repeat wokół naszego kodu, żeby
+
+00:01:30.380 --> 00:01:32.220
+poczuć, jak to działa. I powtórzymy
+
+00:01:32.260 --> 00:01:35.020
+tylko raz. Mówimy więc Jikiemu, żeby
+
+00:01:35.060 --> 00:01:38.680
+wykonał raz wszystko w tych zewnętrznych nawiasach klamrowych.
+
+00:01:39.800 --> 00:01:41.920
+To daje dokładnie taki sam efekt,
+
+00:01:42.000 --> 00:01:44.220
+jak brak tej zewnętrznej pętli. Mówimy
+
+00:01:44.280 --> 00:01:46.870
+Jikiemu, żeby coś powtórzył raz, a to
+
+00:01:46.940 --> 00:01:48.440
+dokładnie to samo, co kazać mu zrobić
+
+00:01:48.480 --> 00:01:51.000
+to bez repeat. Ale pokazuję Ci to,
+
+00:01:51.040 --> 00:01:53.000
+żeby pokazać, że tak właśnie działa
+
+00:01:53.060 --> 00:01:55.500
+ten kod. To legalny, poprawny kod. Mamy
+
+00:01:55.560 --> 00:01:59.900
+jedną pętlę wewnątrz drugiej. A co
+
+00:01:59.940 --> 00:02:02.960
+się stanie, jeśli zmienimy tę zewnętrzną pętlę tak,
+
+00:02:03.000 --> 00:02:06.520
+żeby powtarzała dwa razy? Wtedy Jiki wykona
+
+00:02:06.560 --> 00:02:10.400
+dwa razy całe to powtórzenie: plant pięć razy. Posadzi
+
+00:02:10.440 --> 00:02:14.460
+10 kwiatów. Ale wszystkie te kwiaty będą
+
+00:02:14.500 --> 00:02:17.600
+w tym samym rzędzie. Tak samo,
+
+00:02:17.660 --> 00:02:20.520
+jak musimy za każdym razem przesuwać
+
+00:02:20.580 --> 00:02:22.180
+pozycję trochę z lewej na prawą,
+
+00:02:23.100 --> 00:02:26.240
+tak po narysowaniu każdego pełnego rzędu
+
+00:02:26.300 --> 00:02:28.660
+musimy też przesunąć pozycję pionową.
+
+00:02:30.040 --> 00:02:32.540
+Jak to zrobić? Możemy
+
+00:02:32.580 --> 00:02:35.480
+dodać zewnętrzną zmienną na górną
+
+00:02:35.560 --> 00:02:39.970
+pozycję, użyć jej w naszej funkcji plant,
+
+00:02:40.000 --> 00:02:42.880
+a potem zwiększać ją o 10 po każdym rzędzie.
+
+00:02:45.200 --> 00:02:46.920
+Prześledźmy, jaka jest wartość
+
+00:02:46.960 --> 00:02:50.480
+w każdym momencie. Górna pozycja zaczyna się od 10.
+
+00:02:50.520 --> 00:02:53.360
+Przez pierwsze pięć sadzeń zostaje
+
+00:02:53.380 --> 00:02:56.720
+taka sama. Lewa pozycja rośnie. Potem
+
+00:02:56.760 --> 00:02:59.720
+dodajemy kolejne 10
+
+00:02:59.800 --> 00:03:03.480
+do górnej pozycji i sadzimy pięć kolejnych kwiatów
+
+00:03:03.980 --> 00:03:07.120
+trochę niżej. Lewą pozycję
+
+00:03:07.140 --> 00:03:09.150
+znowu ustawiamy na 10, a potem
+
+00:03:09.180 --> 00:03:13.120
+znów ją zwiększamy za każdym razem. A teraz
+
+00:03:13.140 --> 00:03:16.030
+możemy powiedzieć: powtórz to cztery razy,
+
+00:03:16.060 --> 00:03:20.360
+i dostaniemy cztery rzędy po pięć roślin.
+
+00:03:20.420 --> 00:03:23.070
+Najważniejsze jest to, że Jiki kończy
+
+00:03:23.260 --> 00:03:26.160
+całą pracę w pętli wewnętrznej, zanim
+
+00:03:26.220 --> 00:03:28.440
+wróci do pętli zewnętrznej. Nie
+
+00:03:28.500 --> 00:03:32.140
+skacze tam i z powrotem. Kończy pętlę
+
+00:03:32.200 --> 00:03:34.130
+wewnętrzną i przechodzi do
+
+00:03:34.260 --> 00:03:37.660
+kolejnego kroku pętli zewnętrznej.
+
+00:03:37.680 --> 00:03:39.520
+W tej sytuacji można traktować
+
+00:03:39.620 --> 00:03:41.880
+pętlę zewnętrzną jako tę, która kontroluje grupy,
+
+00:03:41.980 --> 00:03:44.720
+czyli rzędy, a pętlę wewnętrzną jako tę, która kontroluje
+
+00:03:44.820 --> 00:03:47.049
+każdy element tej grupy, czyli każdy element
+
+00:03:47.080 --> 00:03:50.549
+w rzędzie. W naszym przykładzie pętla zewnętrzna
+
+00:03:50.600 --> 00:03:54.580
+tworzy cztery rzędy, a pętla wewnętrzna
+
+00:03:54.640 --> 00:03:57.760
+umieszcza pięć roślin, pięć elementów w każdej grupie.
+
+00:03:59.280 --> 00:04:02.100
+W kolejnych ćwiczeniach użyjesz pętli w pętlach,
+
+00:04:02.180 --> 00:04:05.520
+żeby coś zbudować. Te nowe ćwiczenia
+
+00:04:05.580 --> 00:04:08.160
+dadzą Ci funkcje do rysowania poszczególnych części.
+
+00:04:08.540 --> 00:04:10.160
+Twoim zadaniem jest tylko wymyślenie
+
+00:04:10.220 --> 00:04:11.829
+właściwej struktury pętli, żeby
+
+00:04:11.860 --> 00:04:16.029
+wszystko zadziałało. Wszystko w tych ćwiczeniach
+
+00:04:16.060 --> 00:04:17.760
+zostało omówione przed chwilą. Jeśli więc
+
+00:04:17.800 --> 00:04:19.860
+utkniesz, wróć do tego filmu.
+
+00:04:20.660 --> 00:04:22.160
+Powodzenia. Do zobaczenia tu
+
+00:04:22.180 --> 00:04:22.460
+wkrótce.

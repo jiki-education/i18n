@@ -1,0 +1,270 @@
+WEBVTT
+
+NOTE en_md5 c5187b46923e87c2aac86912c90dfb53
+
+00:00:00.100 --> 00:00:03.140
+Witaj ponownie. Mam nadzieję, że czujesz się już pewniej
+
+00:00:03.180 --> 00:00:06.810
+z tablicami. Tablica to nasz pierwszy wybór, gdy
+
+00:00:06.840 --> 00:00:09.740
+mamy listę czegokolwiek: listę
+
+00:00:09.760 --> 00:00:11.560
+mentorów, listę wyników, listę
+
+00:00:11.600 --> 00:00:14.420
+składników, po prostu jakąś listę. Wtedy sięgamy
+
+00:00:14.440 --> 00:00:17.630
+po tablicę. Jest jednak inna struktura danych,
+
+00:00:17.720 --> 00:00:20.060
+która też bywa bardzo przydatna, gdy potrzebujemy czegoś
+
+00:00:20.070 --> 00:00:23.380
+trochę bardziej złożonego niż lista. Wyobraźmy sobie,
+
+00:00:23.420 --> 00:00:24.780
+że chcemy zapisać kilka informacji o mnie:
+
+00:00:25.500 --> 00:00:27.580
+moje imię, mój wiek, miejsce, w którym się urodziłem.
+
+00:00:28.280 --> 00:00:30.140
+Można do tego użyć tablicy,
+
+00:00:30.150 --> 00:00:32.200
+ale wtedy nie bardzo wiadomo,
+
+00:00:32.240 --> 00:00:34.850
+co jest czym. Czy Anglia to miejsce, w którym się
+
+00:00:34.880 --> 00:00:37.210
+urodziłem, czy to, gdzie mieszkam? Czy 42 to mój
+
+00:00:37.300 --> 00:00:40.120
+wiek, czy coś innego? A jeśli chcę
+
+00:00:40.160 --> 00:00:42.050
+z tego skorzystać, muszę pamiętać, że
+
+00:00:42.080 --> 00:00:44.740
+pierwsza pozycja to imię, druga
+
+00:00:44.780 --> 00:00:47.900
+to wiek, a trzecia to miejsce urodzenia.
+
+00:00:47.920 --> 00:00:49.840
+Jest w tym trochę bałaganu, i ten bałagan
+
+00:00:49.880 --> 00:00:52.420
+bierze się stąd, że to wcale nie jest lista rzeczy.
+
+00:00:52.480 --> 00:00:55.769
+To coś bardziej złożonego. I tu właśnie
+
+00:00:55.800 --> 00:00:58.500
+wkraczają słowniki. Słownik to
+
+00:00:58.560 --> 00:01:00.340
+nowy rodzaj struktury danych. Piąty
+
+00:01:00.420 --> 00:01:03.830
+z kolei: mamy stringi, liczby, wartości logiczne, tablice,
+
+00:01:03.880 --> 00:01:06.200
+a teraz jeszcze słowniki. A słownik wyobraź sobie
+
+00:01:06.260 --> 00:01:08.620
+jako kartkę
+
+00:01:08.800 --> 00:01:12.180
+z notesu spiralnego. Po lewej stronie masz
+
+00:01:12.220 --> 00:01:15.460
+nagłówki, czyli słowa name, age, birthplace,
+
+00:01:15.500 --> 00:01:18.400
+i to je nazywamy kluczami. Po prawej stronie,
+
+00:01:18.480 --> 00:01:20.240
+obok każdego nagłówka, masz
+
+00:01:20.300 --> 00:01:24.520
+właściwe dane: Jeremy, 42, England, i to nazywamy
+
+00:01:24.600 --> 00:01:28.300
+wartościami. Tak jak tablica,
+
+00:01:28.340 --> 00:01:31.180
+słownik jest jedną rzeczą. To jedna kartka
+
+00:01:31.190 --> 00:01:33.830
+z notesu. I tak jak tablicę, Jiki może
+
+00:01:33.840 --> 00:01:35.250
+włożyć go do zmiennej, do pudełka
+
+00:01:35.720 --> 00:01:37.930
+albo podać jako dane wejściowe do funkcji,
+
+00:01:37.980 --> 00:01:39.540
+a także wyjąć słownik
+
+00:01:39.560 --> 00:01:42.200
+z kanału zwrotnego. Oto jak słownik wygląda
+
+00:01:42.260 --> 00:01:45.080
+w kodzie. Używamy nawiasów klamrowych,
+
+00:01:45.120 --> 00:01:47.490
+żeby zaznaczyć początek i koniec, a
+
+00:01:47.520 --> 00:01:49.420
+w środku mamy pary: klucz po
+
+00:01:49.480 --> 00:01:51.700
+lewej, dwukropek i wartość
+
+00:01:51.740 --> 00:01:53.860
+po prawej. Między każdą parą
+
+00:01:53.900 --> 00:01:56.260
+stawiamy przecinek. Jiki to widzi,
+
+00:01:56.280 --> 00:01:58.600
+wyciąga swój notes spiralny i zapisuje name,
+
+00:01:58.960 --> 00:02:02.100
+Jeremy, age, 42 i tak dalej,
+
+00:02:02.140 --> 00:02:04.440
+para po parze. A kiedy skończy, wyrywa
+
+00:02:04.480 --> 00:02:06.320
+kartkę i wkłada ją do pudełka
+
+00:02:06.420 --> 00:02:09.360
+z etykietą person. Jest kilka zasad,
+
+00:02:09.420 --> 00:02:12.060
+o których warto wiedzieć. Klucze to zawsze stringi. Muszą być
+
+00:02:12.140 --> 00:02:14.620
+w cudzysłowie, a każdy klucz musi być
+
+00:02:14.680 --> 00:02:18.170
+unikalny. W jednym słowniku nie mogą
+
+00:02:18.260 --> 00:02:21.420
+się znaleźć dwa klucze o nazwie name. Wartości
+
+00:02:21.480 --> 00:02:23.150
+mogą być takie same, jeśli chcesz,
+
+00:02:23.280 --> 00:02:25.810
+ale klucze muszą się różnić,
+
+00:02:25.820 --> 00:02:27.600
+a wartościami może być wszystko:
+
+00:02:27.680 --> 00:02:31.000
+stringi, liczby, wartości logiczne, tablice, a nawet inne słowniki.
+
+00:02:32.140 --> 00:02:34.540
+Możesz też mieć pusty słownik,
+
+00:02:34.600 --> 00:02:37.220
+tak jak mieliśmy pustą tablicę,
+
+00:02:37.280 --> 00:02:38.800
+i zacząć od niego, a potem
+
+00:02:38.820 --> 00:02:42.210
+go rozbudowywać. Dobrze, skoro mamy już
+
+00:02:42.260 --> 00:02:44.160
+słownik, to jak wyciągnąć z niego
+
+00:02:44.220 --> 00:02:46.900
+coś z powrotem? Używamy tej samej składni
+
+00:02:46.920 --> 00:02:48.960
+z nawiasami kwadratowymi co przy tablicach
+
+00:02:49.020 --> 00:02:52.980
+i stringach, ale zamiast numeru pozycji
+
+00:02:53.020 --> 00:02:55.040
+podajemy klucz. Jeśli więc chcemy
+
+00:02:55.100 --> 00:02:57.390
+wyciągnąć ze słownika czyjeś imię,
+
+00:02:57.940 --> 00:03:01.620
+piszemy zmienną person, nawiasy kwadratowe,
+
+00:03:01.640 --> 00:03:03.580
+a w nich klucz, w tym przypadku name,
+
+00:03:03.660 --> 00:03:07.260
+w cudzysłowie. To mówi Jikiemu, żeby zajrzał
+
+00:03:07.300 --> 00:03:09.970
+do słownika person, odnalazł klucz
+
+00:03:10.080 --> 00:03:12.900
+name i wydobył jego wartość. Jiki
+
+00:03:13.040 --> 00:03:15.000
+podchodzi do pudełka person, wyjmuje
+
+00:03:15.040 --> 00:03:17.340
+kartkę z notesu, przegląda wszystkie
+
+00:03:17.400 --> 00:03:19.760
+klucze, aż trafi na name, odczytuje
+
+00:03:19.800 --> 00:03:21.900
+wartość Jeremy i wkłada ją
+
+00:03:21.910 --> 00:03:27.540
+do nowego pudełka o nazwie name. Nawiasy kwadratowe zawsze
+
+00:03:27.580 --> 00:03:29.980
+znaczą to samo: sięgasz do czegoś
+
+00:03:29.990 --> 00:03:32.370
+i coś z tego wyciągasz. W tablicach i stringach
+
+00:03:32.960 --> 00:03:34.720
+podajesz liczbę, żeby wskazać pozycję,
+
+00:03:34.760 --> 00:03:37.580
+z której chcesz coś wyciągnąć. W słownikach
+
+00:03:37.700 --> 00:03:40.140
+jako klucza używasz stringa. To ta
+
+00:03:40.180 --> 00:03:43.340
+sama idea, tylko trochę inna składnia. Dobrze,
+
+00:03:43.380 --> 00:03:45.390
+przed Tobą kilka ćwiczeń, w których poćwiczysz
+
+00:03:45.500 --> 00:03:47.640
+tworzenie słowników i odczytywanie z nich wartości.
+
+00:03:48.260 --> 00:03:50.160
+Wszystko, czego potrzebujesz, właśnie omówiliśmy:
+
+00:03:50.580 --> 00:03:52.660
+nawiasy klamrowe do tworzenia, nawiasy kwadratowe
+
+00:03:52.680 --> 00:03:55.200
+do odczytu. Nie spiesz się. Powodzenia
+
+00:03:55.240 --> 00:03:56.820
+i do zobaczenia tu wkrótce.

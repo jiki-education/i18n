@@ -1,0 +1,186 @@
+WEBVTT
+
+NOTE en_md5 5da11fa63c77f04329255ba0ae3d5fdf
+
+00:00:00.120 --> 00:00:02.480
+Witaj ponownie. Wiesz już, jak
+
+00:00:02.540 --> 00:00:05.300
+stworzyć słownik i wydobyć z niego
+
+00:00:05.340 --> 00:00:08.840
+wartości. Ale co się dzieje, kiedy dane się zmieniają?
+
+00:00:08.880 --> 00:00:10.760
+Z czasem będę starszy.
+
+00:00:10.780 --> 00:00:13.060
+Nie 42, tylko 43.
+
+00:00:14.000 --> 00:00:16.160
+Jak zaktualizować słownik? W bardzo
+
+00:00:16.240 --> 00:00:18.000
+podobny sposób do tego, w jaki
+
+00:00:18.080 --> 00:00:20.600
+czegoś szukamy. Pamiętasz, że szukamy
+
+00:00:20.660 --> 00:00:22.860
+za pomocą nawiasów kwadratowych, żeby wydobyć wartość.
+
+00:00:23.620 --> 00:00:25.980
+Otóż nawiasów kwadratowych możemy też użyć
+
+00:00:26.020 --> 00:00:29.980
+razem ze znakiem równości, żeby zaktualizować słownik.
+
+00:00:30.020 --> 00:00:32.920
+Jiki podchodzi do pudełka osoby, wyjmuje
+
+00:00:32.960 --> 00:00:36.370
+kartkę z zeszytu, znajduje klucz age,
+
+00:00:36.380 --> 00:00:38.560
+a potem ściera 42, które tam było,
+
+00:00:38.580 --> 00:00:41.200
+i wpisuje w jego miejsce 43, po czym
+
+00:00:41.780 --> 00:00:43.089
+kartka z zeszytu wraca
+
+00:00:43.140 --> 00:00:47.800
+do pudełka. To właśnie jest zmienianie samego słownika. Jiki
+
+00:00:48.140 --> 00:00:50.880
+nie tworzy nowego słownika, tylko zmienia
+
+00:00:50.890 --> 00:00:54.420
+zeszyt, który już był w pudełku. A co,
+
+00:00:54.460 --> 00:00:56.310
+jeśli chcesz dodać informację, której
+
+00:00:56.400 --> 00:00:59.530
+wcześniej nie było? Możesz zrobić dokładnie
+
+00:00:59.540 --> 00:01:02.160
+to samo. Jeśli podasz klucz,
+
+00:01:02.200 --> 00:01:04.900
+którego nie ma, Jiki po prostu doda
+
+00:01:04.960 --> 00:01:07.340
+na dole nowy klucz z tą wartością.
+
+00:01:08.220 --> 00:01:10.200
+W tym przypadku otworzy zeszyt,
+
+00:01:10.580 --> 00:01:13.140
+poszuka country, stwierdzi, że go nie ma,
+
+00:01:13.160 --> 00:01:14.680
+a potem doda na dole nową linijkę:
+
+00:01:15.000 --> 00:01:16.880
+country po lewej, England po prawej.
+
+00:01:18.080 --> 00:01:20.580
+Czyli dokładnie ta sama składnia, co przy zmianie
+
+00:01:20.620 --> 00:01:24.320
+wartości. Jiki sam ogarnia oba przypadki. Jeśli klucz
+
+00:01:24.360 --> 00:01:27.660
+istnieje, aktualizuje go. Jeśli nie,
+
+00:01:27.740 --> 00:01:29.290
+dodaje go. Nie musisz robić niczego
+
+00:01:29.400 --> 00:01:33.040
+specjalnego. I tak jak możesz zacząć
+
+00:01:33.080 --> 00:01:35.120
+od pustej tablicy i dodawać do niej elementy,
+
+00:01:35.140 --> 00:01:37.240
+tak możesz zacząć od pustego słownika i dodawać
+
+00:01:37.280 --> 00:01:40.340
+klucze jeden po drugim. To znowu bardzo
+
+00:01:40.400 --> 00:01:42.260
+częsty schemat. Spotkasz go na każdym kroku.
+
+00:01:43.800 --> 00:01:45.860
+Jedno z częstych zastosowań słowników
+
+00:01:45.940 --> 00:01:49.260
+to liczenie różnych rzeczy. Kluczami mogą być
+
+00:01:49.320 --> 00:01:50.720
+rzeczy, które chcemy
+
+00:01:50.800 --> 00:01:53.360
+policzyć, a wartościami ich liczby.
+
+00:01:53.400 --> 00:01:55.800
+Wyobraź sobie, że obserwujesz ptaki i chcesz
+
+00:01:55.860 --> 00:01:57.780
+zliczać, ile razy zauważysz
+
+00:01:57.820 --> 00:02:00.180
+każdego z nich. Za każdym razem, gdy widzisz ptaka,
+
+00:02:00.220 --> 00:02:02.740
+ustawiasz jego licznik na jeden, a potem,
+
+00:02:02.800 --> 00:02:04.480
+przy każdym kolejnym spotkaniu, bierzesz jego
+
+00:02:04.540 --> 00:02:07.160
+aktualną wartość i zwiększasz ją o jeden.
+
+00:02:07.200 --> 00:02:08.800
+Żeby ten schemat zadziałał, potrzebujemy sposobu,
+
+00:02:08.840 --> 00:02:11.220
+żeby sprawdzić, czy słownik ma już
+
+00:02:11.300 --> 00:02:13.320
+ten klucz, i wtedy dodać do niego jeden,
+
+00:02:13.360 --> 00:02:16.260
+a jeśli klucza nie ma,
+
+00:02:16.620 --> 00:02:18.480
+zacząć od jedynki.
+
+00:02:19.560 --> 00:02:21.250
+I żeby to zrobić, mamy
+
+00:02:21.380 --> 00:02:25.380
+w słownikach metodę, metodę has. Podajesz
+
+00:02:25.440 --> 00:02:27.520
+klucz, który Cię interesuje, a Jiki
+
+00:02:27.560 --> 00:02:30.060
+sprawdza, czy słownik go ma,
+
+00:02:30.100 --> 00:02:33.020
+czy nie, i odpowiednio zwraca prawdę albo fałsz.
+
+00:02:34.600 --> 00:02:36.210
+Przed Tobą kilka ćwiczeń, które
+
+00:02:36.220 --> 00:02:38.480
+wykorzystają to wszystko. Powodzenia
+
+00:02:38.520 --> 00:02:39.800
+i do zobaczenia tu
+
+00:02:39.880 --> 00:02:40.130
+wkrótce.
