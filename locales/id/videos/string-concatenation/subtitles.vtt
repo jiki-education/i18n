@@ -1,0 +1,207 @@
+WEBVTT
+
+NOTE en_md5 d39fabecd86df2df0d2b749f6d2241ba
+
+00:00:00.260 --> 00:00:02.070
+Selamat datang kembali. Aku harap kamu menikmati
+
+00:00:02.120 --> 00:00:04.900
+rentetan latihan tadi. Kemajuanmu luar biasa.
+
+00:00:04.940 --> 00:00:07.970
+Kerja bagus. Nah, video kali ini
+
+00:00:08.000 --> 00:00:10.740
+cukup singkat. Kamu sudah tahu apa itu string.
+
+00:00:10.940 --> 00:00:12.800
+String itu seperti potongan kertas
+
+00:00:12.840 --> 00:00:15.440
+yang bertuliskan teks. Kamu sudah memakainya sepanjang kursus
+
+00:00:15.520 --> 00:00:18.960
+ini. Tapi sejauh ini, semua string yang kamu pakai
+
+00:00:19.100 --> 00:00:22.000
+adalah string yang kamu tulis langsung.
+
+00:00:22.040 --> 00:00:24.620
+Bagaimana kalau kamu ingin menyusun string
+
+00:00:24.660 --> 00:00:28.500
+berdasarkan variabel atau kondisi?
+
+00:00:28.560 --> 00:00:31.200
+Bagaimana caranya? Nah, ada dua cara
+
+00:00:31.300 --> 00:00:34.520
+yang akan aku tunjukkan. Cara pertama
+
+00:00:34.640 --> 00:00:38.370
+disebut penggabungan string, istilah yang terdengar mentereng
+
+00:00:38.460 --> 00:00:41.600
+dan agak membingungkan untuk sekadar menyebut menggabungkan dua string.
+
+00:00:41.640 --> 00:00:46.120
+Bayangkan kamu punya dua kata, hello dan
+
+00:00:46.160 --> 00:00:48.420
+world, dan kamu ingin membuat string
+
+00:00:48.440 --> 00:00:51.730
+yang berisi hello world. Kamu bisa saja langsung menulis
+
+00:00:51.940 --> 00:00:54.460
+hello world sebagai satu string, tapi kamu juga bisa
+
+00:00:54.540 --> 00:00:59.570
+menulis hello plus spasi world, dan
+
+00:00:59.600 --> 00:01:03.260
+hasilnya adalah string yang sama. Nah, jelas
+
+00:01:03.340 --> 00:01:05.340
+dalam kasus ini cara itu belum begitu berguna.
+
+00:01:05.940 --> 00:01:08.180
+Tapi bagaimana kalau kita punya variabel
+
+00:01:08.240 --> 00:01:10.420
+yang berisi nama seseorang dan kita ingin
+
+00:01:10.460 --> 00:01:12.780
+menyapa orang itu? Jadi, bayangkan kita punya
+
+00:01:12.820 --> 00:01:16.020
+variabel bernama name, yang kadang berisi Jeremy
+
+00:01:16.060 --> 00:01:18.860
+dan kadang berisi Jiki. Kita ingin mengucapkan
+
+00:01:18.920 --> 00:01:22.280
+hello Jeremy atau hello Jiki dengan menggunakan variabel itu.
+
+00:01:23.380 --> 00:01:25.860
+Nah, kita bisa melakukannya dengan konsep penggabungan
+
+00:01:25.920 --> 00:01:30.600
+ini, dengan menulis hello plus name, dan
+
+00:01:30.620 --> 00:01:33.480
+hasilnya nanti hello Jeremy atau hello
+
+00:01:33.620 --> 00:01:37.320
+Jiki, atau sapaan untuk siapa pun juga, tergantung apa yang ada
+
+00:01:37.360 --> 00:01:41.000
+di dalam kotak name. Kita juga bisa memakai
+
+00:01:41.040 --> 00:01:44.220
+sesuatu yang disebut template literal untuk mendapatkan hasil yang sama.
+
+00:01:44.280 --> 00:01:48.790
+Itu satu lagi istilah mentereng dan membingungkan yang
+
+00:01:48.840 --> 00:01:53.920
+artinya menyisipkan string ke dalam string lain. Jadi,
+
+00:01:53.960 --> 00:01:56.950
+daripada menggabungkan string satu per satu, kita bisa membuat
+
+00:01:57.120 --> 00:02:00.830
+string atau template yang punya ruang untuk string
+
+00:02:00.900 --> 00:02:04.020
+lain di dalamnya. Nah, untuk melakukannya,
+
+00:02:04.040 --> 00:02:09.800
+kita memakai backtick, alih-alih tanda kutip. Sesuai namanya,
+
+00:02:09.880 --> 00:02:12.420
+backtick itu tanda kutip yang dibalik, tapi
+
+00:02:12.460 --> 00:02:15.080
+bisa jadi kamu belum pernah memakainya sama sekali, jadi
+
+00:02:15.120 --> 00:02:17.100
+kamu perlu mencari tombol yang tepat
+
+00:02:17.140 --> 00:02:20.730
+di keyboard-mu. Dengan backtick, kita membuat
+
+00:02:20.800 --> 00:02:24.150
+template yang bisa memuat string lain. Lalu
+
+00:02:24.220 --> 00:02:27.220
+untuk menyisipkan string ke dalam template itu,
+
+00:02:27.300 --> 00:02:30.540
+kita memakai sintaks aneh lainnya, yaitu tanda dolar dan kurung kurawal.
+
+00:02:30.580 --> 00:02:33.160
+Contohnya, untuk mendapatkan hasil yang sama seperti hello
+
+00:02:33.180 --> 00:02:36.200
+plus name yang tadi kita lihat, kita bisa
+
+00:02:36.420 --> 00:02:40.700
+menulis backtick hello, tanda dolar,
+
+00:02:40.860 --> 00:02:45.180
+kurung kurawal, name, kurung kurawal, backtick. Tulisannya jauh
+
+00:02:45.220 --> 00:02:46.560
+lebih bagus daripada saat aku mengucapkannya.
+
+00:02:47.800 --> 00:02:50.520
+Dan itu melakukan hal yang persis sama dengan
+
+00:02:50.580 --> 00:02:53.320
+menggabungkan string satu sama lain. Tapi kalau ada
+
+00:02:53.390 --> 00:02:56.120
+banyak string yang semuanya harus disatukan di satu
+
+00:02:56.160 --> 00:02:58.320
+tempat, cara ini bisa jauh lebih efisien.
+
+00:02:59.160 --> 00:03:00.049
+Kamu butuh sedikit
+
+00:03:00.100 --> 00:03:02.380
+waktu untuk terbiasa dengan sintaks yang satu ini,
+
+00:03:02.900 --> 00:03:05.420
+tapi sebenarnya tidak ada yang terlalu rumit.
+
+00:03:07.000 --> 00:03:09.140
+Sekarang aku sudah memberimu dua latihan
+
+00:03:09.180 --> 00:03:11.780
+untuk mempraktikkan semua ini. Latihan pertama memakai
+
+00:03:11.840 --> 00:03:14.420
+pola hello name yang baru saja kita lihat. Kamu bisa
+
+00:03:14.460 --> 00:03:17.060
+mengerjakannya dengan menggabungkan string atau memakai template ini,
+
+00:03:18.100 --> 00:03:20.640
+dan aku akan mencantumkan keduanya di instruksi
+
+00:03:20.680 --> 00:03:23.880
+sebagai pengingat. Latihan kedua adalah
+
+00:03:24.100 --> 00:03:27.120
+pertanyaan wawancara kerja yang klasik. Jadi, mempelajarinya
+
+00:03:27.200 --> 00:03:29.760
+akan membekalimu untuk wawancara kerja apa pun nanti.
+
+00:03:30.620 --> 00:03:31.980
+Semoga berhasil, dan sampai jumpa lagi di sini
+
+00:03:32.040 --> 00:03:32.380
+sebentar lagi.

@@ -1,0 +1,339 @@
+WEBVTT
+
+NOTE en_md5 d4b8c72f7a92dfb1d6fb4eb412fdc752
+
+00:00:00.400 --> 00:00:03.469
+Selamat datang kembali. Kita sudah melihat dua perulangan,
+
+00:00:03.780 --> 00:00:06.580
+perulangan repeat dan perulangan for-of.
+
+00:00:06.620 --> 00:00:08.109
+Di materi ini, kita akan melihat
+
+00:00:08.200 --> 00:00:10.940
+dua perulangan lagi dan dua teknik berguna
+
+00:00:11.000 --> 00:00:14.140
+untuk perulangan. Nah, kamu mungkin ingat aku pernah bilang
+
+00:00:14.200 --> 00:00:15.980
+di awal sekali bahwa perulangan repeat
+
+00:00:16.020 --> 00:00:18.690
+sebenarnya tidak benar-benar ada di JavaScript. Itu cuma
+
+00:00:18.860 --> 00:00:20.340
+tambahan dariku supaya hidupmu sedikit
+
+00:00:20.380 --> 00:00:23.190
+lebih mudah selama kita baru mulai. Jadi, kita
+
+00:00:23.200 --> 00:00:25.580
+pakai apa sebagai gantinya? Kita pakai
+
+00:00:25.660 --> 00:00:28.150
+perulangan for biasa, dan bentuknya seperti ini.
+
+00:00:29.380 --> 00:00:30.920
+Semoga kamu bisa lihat kenapa ini mungkin
+
+00:00:30.940 --> 00:00:32.940
+terasa agak menakutkan di hari pertamamu.
+
+00:00:32.960 --> 00:00:35.120
+Tapi sekarang kamu sudah punya semua
+
+00:00:35.140 --> 00:00:37.280
+pengetahuan yang kamu butuhkan untuk nyaman dengan ini.
+
+00:00:37.360 --> 00:00:40.340
+Jadi mari kita bedah satu per satu. Perulangan for
+
+00:00:40.360 --> 00:00:44.620
+punya tiga komponen: inisialisasi, kondisi, dan
+
+00:00:44.640 --> 00:00:49.769
+penambahan (increment). Bagian inisialisasi, yaitu let i = 0
+
+00:00:49.840 --> 00:00:52.220
+ini, dijalankan di awal
+
+00:00:52.260 --> 00:00:54.920
+seluruh perulangan. Ia hanya berjalan sekali, dan
+
+00:00:54.980 --> 00:00:58.240
+di sini ia membuat sebuah kotak bernama i yang diisi
+
+00:00:58.340 --> 00:01:02.520
+dengan nol. Bagian berikutnya, yaitu kondisi,
+
+00:01:03.240 --> 00:01:08.600
+dijalankan setiap kali, tepat sebelum tiap iterasi perulangan. Kalau
+
+00:01:08.640 --> 00:01:11.100
+kondisinya benar, kita jalankan perulangannya
+
+00:01:11.110 --> 00:01:15.580
+lagi. Kalau tidak, kita tidak menjalankannya. Dan
+
+00:01:15.660 --> 00:01:18.580
+yang terakhir adalah penambahan, yaitu i++.
+
+00:01:19.400 --> 00:01:21.420
+Nah, i++ artinya sama
+
+00:01:21.460 --> 00:01:24.420
+dengan i = i + 1. Itu hanya
+
+00:01:24.460 --> 00:01:26.880
+singkatan, cara untuk menambah i sebanyak
+
+00:01:26.940 --> 00:01:31.200
+satu setiap kali. Jadi dalam contoh ini, kita
+
+00:01:31.280 --> 00:01:34.200
+isi i dengan nol. Kita cek apakah i
+
+00:01:34.240 --> 00:01:36.300
+kurang dari dua, ternyata iya,
+
+00:01:36.380 --> 00:01:38.360
+jadi kita jalankan perulangannya. Lalu di
+
+00:01:38.400 --> 00:01:41.640
+akhir, kita tambah i dengan satu, jadi
+
+00:01:42.060 --> 00:01:44.380
+i sekarang bernilai satu. Nol ditambah satu sama dengan satu.
+
+00:01:45.500 --> 00:01:47.400
+Lalu kita jalan lagi. Kita cek apakah
+
+00:01:47.580 --> 00:01:50.780
+satu kurang dari dua. Ternyata iya, jadi
+
+00:01:50.800 --> 00:01:52.580
+kita jalankan perulangannya. Lalu di
+
+00:01:52.620 --> 00:01:55.140
+akhir, kita tambah i lagi. Sekarang nilainya
+
+00:01:55.240 --> 00:01:58.300
+dua, satu ditambah satu sama dengan dua. Lalu
+
+00:01:58.340 --> 00:02:00.440
+kita masuk putaran ketiga. Kali ini kita
+
+00:02:00.480 --> 00:02:02.970
+cek apakah dua kurang dari dua, dan
+
+00:02:02.980 --> 00:02:05.680
+ternyata tidak, jadi kita tidak menjalankan perulangannya,
+
+00:02:05.780 --> 00:02:07.140
+dan sebenarnya perulangannya sudah selesai sampai di situ.
+
+00:02:07.540 --> 00:02:10.539
+Kita tinggal lanjut ke kode apa pun di bawahnya.
+
+00:02:10.640 --> 00:02:13.360
+Jadi kita sudah menjalankan perulangan itu dua kali, dan
+
+00:02:13.400 --> 00:02:16.100
+itu hal yang berguna untuk diketahui. Selama
+
+00:02:16.140 --> 00:02:18.320
+kita mulai dari nol dan punya
+
+00:02:18.360 --> 00:02:21.460
+kondisi kurang dari, angka yang kita taruh
+
+00:02:21.520 --> 00:02:23.780
+di situ, dua dalam contoh ini, adalah berapa
+
+00:02:23.840 --> 00:02:26.530
+kali perulangan itu akan dijalankan. Jadi ini
+
+00:02:26.580 --> 00:02:28.900
+sama saja dengan menulis repeat(2).
+
+00:02:30.440 --> 00:02:33.020
+Jadi sebenarnya tidak sulit, tapi jauh lebih
+
+00:02:33.060 --> 00:02:38.120
+berbelit daripada sekadar menulis repeat(2). Perulangan
+
+00:02:38.180 --> 00:02:40.380
+berikutnya yang perlu kamu ketahui adalah perulangan while.
+
+00:02:41.420 --> 00:02:45.800
+Maksudnya: “Selama suatu kondisi terpenuhi, jalankan perulangannya.”
+
+00:02:45.840 --> 00:02:47.190
+Jadi, misalnya kita punya aturan yang mengatakan
+
+00:02:47.190 --> 00:02:49.710
+kamu hanya boleh menembak lima kali di Space
+
+00:02:49.740 --> 00:02:52.130
+Invaders. Kita akan punya perulangan di sini yang
+
+00:02:52.160 --> 00:02:54.170
+bunyinya, nah, selama jumlah tembakan masih kurang
+
+00:02:54.200 --> 00:02:56.940
+dari lima, jalankan perulangan yang membuat pemain
+
+00:02:56.960 --> 00:03:00.340
+bisa memainkan gamenya. Setiap kali seseorang menembak,
+
+00:03:00.680 --> 00:03:04.000
+kita menambah numShots sebanyak satu, dan akhirnya
+
+00:03:04.480 --> 00:03:06.040
+kita mencapai lima lalu perulangannya berhenti.
+
+00:03:07.100 --> 00:03:08.880
+Nah, satu masalah dengan perulangan while adalah
+
+00:03:08.920 --> 00:03:11.440
+betapa mudahnya muncul bug yang membuat
+
+00:03:11.480 --> 00:03:14.040
+perulangan tidak pernah berhenti. Ini disebut
+
+00:03:14.120 --> 00:03:15.890
+perulangan tanpa henti (infinite loop), dan ini salah satu
+
+00:03:15.940 --> 00:03:20.010
+bug paling umum dalam program. Saat komputermu melambat,
+
+00:03:20.020 --> 00:03:23.020
+kipasnya mulai berputar kencang, semuanya jadi berisik,
+
+00:03:23.060 --> 00:03:25.860
+itu sering kali karena ada orang yang meninggalkan perulangan tanpa henti
+
+00:03:25.880 --> 00:03:29.380
+di kodenya. Oke, dua
+
+00:03:29.460 --> 00:03:32.280
+kata kunci lagi di video kilat ini. Yang
+
+00:03:32.320 --> 00:03:35.300
+pertama adalah kata kunci break. Kamu bisa memakainya
+
+00:03:35.320 --> 00:03:37.680
+di mana saja di dalam badan perulangan apa pun.
+
+00:03:38.760 --> 00:03:40.720
+Bagian di antara tanda kurung kurawal, itulah
+
+00:03:40.780 --> 00:03:43.840
+badannya. Dan saat Jiki melihatnya, dia akan
+
+00:03:43.880 --> 00:03:46.100
+langsung keluar dari perulangan itu dan lanjut
+
+00:03:46.160 --> 00:03:48.780
+ke kode apa pun di bawah perulangan. Jadi,
+
+00:03:48.880 --> 00:03:50.600
+kalau kita punya batasan yang berbunyi “jalankan
+
+00:03:50.660 --> 00:03:53.280
+perulangan ini 50 kali”, tapi kita mau berhenti
+
+00:03:53.420 --> 00:03:55.960
+kalau pengguna menembak lima kali, kita bisa
+
+00:03:56.000 --> 00:03:58.140
+menaruh perulangan for di bagian atas yang
+
+00:03:58.200 --> 00:04:00.940
+berjalan dari i = 0 sampai kurang dari
+
+00:04:01.120 --> 00:04:03.300
+50. Tapi kemudian, kita bisa menaruh kondisi
+
+00:04:03.340 --> 00:04:04.720
+di tengah perulangan yang bunyinya
+
+00:04:04.880 --> 00:04:07.720
+kalau numShots lebih besar dari atau sama dengan
+
+00:04:07.780 --> 00:04:12.520
+lima, maka break, hentikan perulangannya. Ada
+
+00:04:12.560 --> 00:04:14.880
+kalanya kita ingin melewati
+
+00:04:14.890 --> 00:04:18.600
+satu iterasi tertentu dalam perulangan. Bayangkan kita
+
+00:04:18.680 --> 00:04:20.780
+hanya ingin melakukan sesuatu untuk angka ganjil.
+
+00:04:21.600 --> 00:04:22.930
+Kita ingin bisa mengatakan: kalau
+
+00:04:23.020 --> 00:04:25.780
+i ganjil, jangan jalankan perulangan
+
+00:04:25.840 --> 00:04:28.380
+kali ini. Tapi kita tidak ingin keluar sepenuhnya
+
+00:04:28.420 --> 00:04:30.280
+dari perulangan. Kita hanya ingin melewati
+
+00:04:30.320 --> 00:04:32.670
+satu iterasi ini, lalu lanjut melihat
+
+00:04:32.720 --> 00:04:35.600
+iterasi berikutnya. Untuk itu, ada satu
+
+00:04:35.640 --> 00:04:40.380
+kata kunci lagi yang bernama continue. Saat Jiki melihat continue, dia
+
+00:04:40.420 --> 00:04:42.180
+langsung melompat kembali ke awal
+
+00:04:42.220 --> 00:04:44.820
+perulangan untuk iterasi berikutnya. Jadi di
+
+00:04:44.860 --> 00:04:47.200
+perulangan for-of, kalau dia melihat continue, dia
+
+00:04:47.260 --> 00:04:48.580
+lanjut ke item berikutnya dalam
+
+00:04:48.640 --> 00:04:51.780
+daftar. Di perulangan for, dia menjalankan
+
+00:04:51.840 --> 00:04:54.400
+penambahan i++, lalu
+
+00:04:54.480 --> 00:04:57.980
+memulai iterasi berikutnya. Jadi kita sudah punya perulangan for,
+
+00:04:58.060 --> 00:05:00.800
+perulangan while, break, dan continue. Banyak
+
+00:05:00.840 --> 00:05:02.440
+informasi di video ini, tapi kamu bisa kembali
+
+00:05:02.500 --> 00:05:04.550
+dan mengeceknya kapan pun kamu mau, dan
+
+00:05:04.580 --> 00:05:07.080
+ada halaman konsep untuk tiap topik juga.
+
+00:05:07.800 --> 00:05:09.800
+Coba praktikkan semua ide itu di
+
+00:05:09.820 --> 00:05:12.220
+beberapa latihan berikutnya. Semoga berhasil, selamat bersenang-senang,
+
+00:05:12.680 --> 00:05:14.060
+dan sampai jumpa lagi di sini sebentar lagi.

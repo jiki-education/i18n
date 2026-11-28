@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 51f04781025bf1dbba2ded55c062926f
+
+00:00:00.140 --> 00:00:03.580
+Selamat datang kembali. Sejauh ini, saat membuat variabel,
+
+00:00:03.740 --> 00:00:06.560
+kita hanya memakai nilai-nilai sederhana: angka seperti
+
+00:00:06.840 --> 00:00:10.620
+50 atau string seperti yellow. Variabel
+
+00:00:10.660 --> 00:00:13.340
+jadi jauh lebih kuat ketika kita bisa
+
+00:00:13.440 --> 00:00:16.460
+memakainya dalam kombinasi satu sama lain. Misalnya,
+
+00:00:16.540 --> 00:00:19.000
+kita bisa mengatakan bahwa tepi kiri
+
+00:00:19.040 --> 00:00:22.030
+persegi panjang harus berjarak tertentu dari
+
+00:00:22.080 --> 00:00:25.660
+tepi kanvas. Dalam pemrograman, kita
+
+00:00:25.720 --> 00:00:28.810
+bisa memakai matematika biasa: menjumlahkan,
+
+00:00:28.940 --> 00:00:32.340
+mengurangkan, mengalikan, dan membagi. Variabel-variabel
+
+00:00:32.380 --> 00:00:35.140
+yang sudah kita buat pun bisa kita pakai
+
+00:00:35.200 --> 00:00:39.020
+di dalamnya. Mari kita mulai dengan membayangkan kita
+
+00:00:39.060 --> 00:00:41.300
+ingin menggambar persegi panjang di kanvas,
+
+00:00:41.960 --> 00:00:43.800
+dengan jarak 10
+
+00:00:44.480 --> 00:00:46.980
+dari kiri dan dari kanan, serta
+
+00:00:47.200 --> 00:00:48.960
+20 dari atas dan dari bawah.
+
+00:00:49.900 --> 00:00:51.580
+Jadi persegi panjang itu akan berada di tengah
+
+00:00:51.620 --> 00:00:53.900
+kanvas, sedikit lebih panjang daripada
+
+00:00:53.960 --> 00:00:57.740
+tingginya. Kamu pasti ingat, saat menggambar
+
+00:00:57.760 --> 00:01:00.430
+persegi panjang, kita perlu tahu left (kiri), top (atas),
+
+00:01:00.600 --> 00:01:02.510
+width (lebar), dan height (tinggi), juga warnanya.
+
+00:01:03.360 --> 00:01:04.820
+Jadi kita bisa mulai dengan
+
+00:01:04.920 --> 00:01:08.320
+menuliskannya. Sekarang kita perlu benar-benar
+
+00:01:08.420 --> 00:01:10.220
+menghitung berapa nilai left, top, width,
+
+00:01:10.240 --> 00:01:13.100
+dan height-nya. Mari kita tentukan. Left adalah
+
+00:01:13.260 --> 00:01:15.660
+20. Eh, maaf, left adalah 10. Top adalah
+
+00:01:15.940 --> 00:01:18.920
+20. Untuk width, ukurannya adalah
+
+00:01:19.020 --> 00:01:22.020
+lebar kanvas, yaitu 100, dikurangi
+
+00:01:22.080 --> 00:01:23.340
+10 di kiri dan 10
+
+00:01:23.360 --> 00:01:26.100
+di kanan, jadi 80. Lalu
+
+00:01:26.180 --> 00:01:29.040
+height adalah tinggi kanvas, yang
+
+00:01:29.080 --> 00:01:31.580
+juga 100, dikurangi 20 di
+
+00:01:31.640 --> 00:01:33.660
+atas dan 20 di bawah, jadi
+
+00:01:33.960 --> 00:01:37.860
+60. Jadi kita bisa menetapkan variabel-variabel itu. Left,
+
+00:01:37.920 --> 00:01:42.840
+10, top, 20, width, 80, height, 60.
+
+00:01:42.860 --> 00:01:44.880
+Semoga ini sudah cukup akrab bagimu. Inilah
+
+00:01:44.920 --> 00:01:46.700
+yang sudah kamu kerjakan selama ini di
+
+00:01:46.740 --> 00:01:50.940
+latihan-latihan. Tapi apa yang terjadi kalau sekarang kita ingin
+
+00:01:50.960 --> 00:01:54.140
+memindahkan persegi panjang itu sedikit ke dalam,
+
+00:01:54.160 --> 00:01:55.400
+membuatnya sedikit lebih kecil? Kalau kita ingin
+
+00:01:55.460 --> 00:01:57.040
+jaraknya 20 dari kiri dan
+
+00:01:57.100 --> 00:01:59.040
+kanan serta 30 dari atas dan
+
+00:01:59.060 --> 00:02:02.620
+bawah? Kita harus menghitung semuanya
+
+00:02:02.720 --> 00:02:06.320
+lagi dari awal. Width sekarang 100 dikurangi
+
+00:02:06.560 --> 00:02:10.280
+20 dikurangi 20, dan height 100
+
+00:02:10.360 --> 00:02:14.320
+dikurangi 30 dikurangi 30. Ini jelas
+
+00:02:14.420 --> 00:02:17.280
+lebih banyak kerjaan dan matematika daripada yang
+
+00:02:17.320 --> 00:02:20.400
+mau aku kerjakan. Jadi, lebih baik kita suruh
+
+00:02:20.420 --> 00:02:24.000
+komputer yang mengerjakannya. Kita bisa
+
+00:02:24.060 --> 00:02:27.680
+menetapkan width sebagai 100 dikurangi
+
+00:02:27.840 --> 00:02:31.620
+left dikurangi left, dan height
+
+00:02:31.700 --> 00:02:34.720
+sebagai 100 dikurangi top dikurangi top,
+
+00:02:34.960 --> 00:02:37.580
+karena jarak atas dan bawahnya sama. Atau
+
+00:02:37.600 --> 00:02:40.980
+kita bisa menuliskannya sebagai 100 dikurangi
+
+00:02:41.240 --> 00:02:44.820
+left dikali dua, atau 100 dikurangi
+
+00:02:44.940 --> 00:02:48.620
+top dikali dua. Sekarang kalau kita mengubah
+
+00:02:48.660 --> 00:02:52.040
+left atau top, width dan
+
+00:02:52.080 --> 00:02:54.860
+height juga akan ikut berubah. Jadi nilainya
+
+00:02:54.900 --> 00:02:57.430
+mulai saling berhubungan. Lalu bagaimana
+
+00:02:57.440 --> 00:03:00.960
+dengan kanvasnya? Sekarang ukurannya 100. Tapi bagaimana
+
+00:03:01.020 --> 00:03:03.700
+kalau kanvas kita berubah menjadi 200
+
+00:03:03.740 --> 00:03:06.540
+untuk lebar dan tingginya? Sebaiknya kita membuat
+
+00:03:06.620 --> 00:03:09.560
+variabel bernama canvasSize (ukuran kanvas) dan mengisinya
+
+00:03:09.580 --> 00:03:13.230
+dengan 100. Sekarang left kita, eh, maaf,
+
+00:03:13.260 --> 00:03:17.740
+width kita adalah canvasSize dikurangi left dikali dua,
+
+00:03:18.200 --> 00:03:22.160
+dan height kita adalah canvasSize dikurangi top
+
+00:03:22.200 --> 00:03:26.120
+dikali dua. Mari kita pikirkan apa yang Jiki lakukan
+
+00:03:26.480 --> 00:03:30.580
+saat kita menulis let height sama dengan canvasSize dikurangi
+
+00:03:30.700 --> 00:03:33.310
+top dikali dua. Pertama, dia mengambil
+
+00:03:33.310 --> 00:03:35.220
+kotak top dari rak, dan dia
+
+00:03:35.260 --> 00:03:37.660
+menemukan 20 di dalamnya, lalu mengeluarkan
+
+00:03:37.680 --> 00:03:40.160
+kalkulator sakunya dan menghitung 20 dikali dua,
+
+00:03:40.580 --> 00:03:42.740
+lalu mencatat 40 dalam pikirannya.
+
+00:03:43.720 --> 00:03:45.860
+Lalu dia mengambil kotak canvasSize dari
+
+00:03:45.900 --> 00:03:49.540
+rak, menemukan 100 di dalamnya, dan dia
+
+00:03:49.600 --> 00:03:52.780
+menghitung bahwa 100 dikurangi 40 adalah 60.
+
+00:03:53.840 --> 00:03:56.350
+Sekarang dia tahu bahwa yang sebenarnya kita maksud
+
+00:03:56.400 --> 00:04:00.000
+adalah let height sama dengan 60. Jadi dia menjalankan
+
+00:04:00.040 --> 00:04:02.320
+perintah let itu: mengambil kotak baru, menulis
+
+00:04:02.360 --> 00:04:04.440
+height di atasnya, lalu memasukkan 60
+
+00:04:04.580 --> 00:04:06.900
+ke dalamnya. Nanti, saat dia memakai height,
+
+00:04:07.040 --> 00:04:09.600
+dia cukup mengambil angka 60 itu
+
+00:04:09.640 --> 00:04:13.720
+lagi. Coba praktikkan semua ini di
+
+00:04:13.820 --> 00:04:16.180
+beberapa latihan berikutnya, dan semuanya akan
+
+00:04:16.240 --> 00:04:18.649
+makin lama makin jelas. Selain itu, setelah
+
+00:04:18.700 --> 00:04:22.070
+semuanya berjalan, cobalah mengubah nilai-nilai
+
+00:04:22.100 --> 00:04:25.200
+variabel itu dan lihat apa yang terjadi. Perhatikan bagaimana
+
+00:04:25.220 --> 00:04:28.420
+nilainya membesar dan mengecil. Luangkan
+
+00:04:28.480 --> 00:04:31.480
+waktumu, pikirkan hubungan antara satu hal dengan yang lain,
+
+00:04:31.500 --> 00:04:32.670
+dan sampai jumpa lagi di sini sebentar lagi.

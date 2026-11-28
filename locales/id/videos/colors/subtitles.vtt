@@ -1,0 +1,405 @@
+WEBVTT
+
+NOTE en_md5 f8c737461bf364654b8a618e515caeb8
+
+00:00:00.140 --> 00:00:02.210
+Selamat datang kembali. Oke, sekarang kita akan
+
+00:00:02.400 --> 00:00:04.400
+sedikit menyimpang, mengambil jalan memutar
+
+00:00:04.460 --> 00:00:06.480
+sebentar, dan melihat sesuatu yang perlu kamu
+
+00:00:06.540 --> 00:00:08.850
+ketahui kalau kamu suatu saat membuat sesuatu yang visual dengan
+
+00:00:08.880 --> 00:00:10.860
+kode. Dan walaupun kamu ingin menjadi
+
+00:00:10.900 --> 00:00:12.460
+data scientist dan menganggap semua urusan
+
+00:00:12.560 --> 00:00:16.180
+menggambar ini agak membosankan, menyampaikan data
+
+00:00:16.219 --> 00:00:19.180
+lewat visual tetap keterampilan penting, jadi
+
+00:00:19.220 --> 00:00:21.790
+sangat bagus untuk dipelajari. Di video ini, kita
+
+00:00:21.840 --> 00:00:24.220
+akan melihat dua cara berbeda untuk
+
+00:00:24.260 --> 00:00:28.670
+menyatakan warna. Nah, kamu sudah memakai warna
+
+00:00:28.680 --> 00:00:31.640
+dengan namanya, seperti “red” atau “yellow”,
+
+00:00:31.700 --> 00:00:33.800
+sebagai input terakhir di fungsi menggambarmu,
+
+00:00:35.400 --> 00:00:37.300
+dan itu cara yang praktis untuk
+
+00:00:37.360 --> 00:00:40.320
+cepat memakai warna, tapi cukup terbatas.
+
+00:00:40.330 --> 00:00:42.350
+Nama warna yang bisa kita pakai
+
+00:00:42.380 --> 00:00:44.370
+hanya sedikit. Jadi sekarang kita akan melihat
+
+00:00:44.400 --> 00:00:46.880
+dua cara untuk menyatakan warna apa pun yang kamu
+
+00:00:46.960 --> 00:00:49.960
+mau, dan keduanya disebut RGB dan
+
+00:00:50.180 --> 00:00:54.920
+HSL. Jadi RGB membuat kita bisa membayangkan warna
+
+00:00:54.980 --> 00:00:57.100
+sebagai campuran merah, hijau, dan biru.
+
+00:00:57.300 --> 00:01:00.210
+Itulah kepanjangan RGB: merah (red), hijau (green), biru (blue).
+
+00:01:01.280 --> 00:01:04.040
+Kalau kamu ingat pelajaran mencampur cat di sekolah,
+
+00:01:04.099 --> 00:01:06.730
+idenya mirip, hanya saja yang kita campur bukan cat,
+
+00:01:06.760 --> 00:01:11.580
+melainkan cahaya. Di banyak latihan setelah
+
+00:01:11.640 --> 00:01:14.440
+ini, kamu akan menemukan fungsi bernama rgb,
+
+00:01:15.280 --> 00:01:16.960
+yang menerima tiga angka sebagai
+
+00:01:17.000 --> 00:01:20.040
+input, satu untuk merah, satu untuk hijau, satu
+
+00:01:20.080 --> 00:01:22.240
+untuk biru, lalu mengembalikan sebuah
+
+00:01:22.320 --> 00:01:26.900
+warna. Angka yang bisa kamu pakai sebagai
+
+00:01:26.980 --> 00:01:32.940
+input berkisar dari nol sampai 255. Nol berarti
+
+00:01:33.040 --> 00:01:35.440
+aku tidak mau warna itu sama sekali, dan
+
+00:01:35.620 --> 00:01:38.420
+255 berarti campur sebanyak mungkin
+
+00:01:38.460 --> 00:01:41.460
+warna itu. Jadi kalau kita memakai
+
+00:01:41.540 --> 00:01:45.550
+fungsi rgb dengan 255, nol, dan nol sebagai
+
+00:01:45.600 --> 00:01:48.190
+input, artinya aku mau
+
+00:01:48.240 --> 00:01:50.440
+semua merahnya. Ingat, 255 adalah
+
+00:01:50.460 --> 00:01:52.880
+angka terbesar yang bisa kamu masukkan.
+
+00:01:52.900 --> 00:01:54.800
+Tapi kita tidak mau hijau atau
+
+00:01:54.820 --> 00:01:57.420
+biru, jadi keduanya nol. Jadi hasilnya
+
+00:01:57.460 --> 00:02:00.880
+keluar warna merah, dan kita bisa menyimpan
+
+00:02:00.900 --> 00:02:03.360
+merah itu di sebuah variabel lalu memakainya
+
+00:02:03.380 --> 00:02:05.340
+di fungsi circle seperti yang sudah
+
+00:02:05.400 --> 00:02:08.840
+kita lakukan dengan string nama warna. Lalu bagaimana
+
+00:02:08.880 --> 00:02:10.759
+kalau kita memakai fungsi rgb dengan
+
+00:02:10.900 --> 00:02:15.340
+nol, 255, nol? Sekarang artinya tidak ada merah,
+
+00:02:15.880 --> 00:02:18.310
+semua hijau, tidak ada biru. Jadi kita mendapat
+
+00:02:18.320 --> 00:02:21.440
+lingkaran hijau. Bagaimana kalau kita mau
+
+00:02:21.640 --> 00:02:25.320
+kuning? Kuning adalah campuran merah
+
+00:02:25.620 --> 00:02:27.940
+dan hijau. Jadi kita bisa bilang beri aku
+
+00:02:28.020 --> 00:02:29.840
+semua merah, semua hijau,
+
+00:02:30.180 --> 00:02:32.120
+dan tidak ada biru, dan itu akan menghasilkan
+
+00:02:32.200 --> 00:02:35.200
+kuning. Kita juga bisa memakai
+
+00:02:35.240 --> 00:02:37.730
+angka yang lebih kecil. Jadi kalau kita mau sedikit merah,
+
+00:02:38.300 --> 00:02:41.150
+tidak ada hijau, dan banyak biru, kita akan mendapat
+
+00:02:41.200 --> 00:02:45.080
+ungu. Lalu banyak merah, sedikit hijau,
+
+00:02:45.380 --> 00:02:47.000
+biru agak lebih banyak, itu menghasilkan
+
+00:02:47.040 --> 00:02:51.360
+merah muda. Jadi itulah RGB. Kita mencampur merah, hijau,
+
+00:02:51.500 --> 00:02:56.060
+dan biru untuk mendapat berbagai kombinasi. Sekarang mari kita
+
+00:02:56.100 --> 00:02:58.960
+lihat HSL, yang memberi kita cara berpikir
+
+00:02:58.980 --> 00:03:03.060
+yang sama sekali berbeda tentang warna. HSL adalah
+
+00:03:03.100 --> 00:03:08.200
+singkatan dari hue (H), saturasi (S), dan kecerahan (L). Sama seperti
+
+00:03:08.280 --> 00:03:11.900
+RGB, kamu punya fungsi bernama hsl yang
+
+00:03:11.920 --> 00:03:14.590
+menerima tiga angka, satu untuk hue, satu untuk
+
+00:03:14.640 --> 00:03:17.100
+saturasi, dan satu untuk kecerahan, lalu
+
+00:03:17.120 --> 00:03:20.420
+mengembalikan sebuah warna. Mari kita urai
+
+00:03:20.480 --> 00:03:25.160
+arti ketiga kata itu. Hue adalah
+
+00:03:25.200 --> 00:03:28.080
+nuansa warna yang kamu mau, dan
+
+00:03:28.120 --> 00:03:32.300
+nilainya dari nol sampai 360. Coba
+
+00:03:32.320 --> 00:03:34.200
+bayangkan pelangi. Beginilah cara aku
+
+00:03:34.260 --> 00:03:36.200
+memikirkannya. Di sebelah kiri ada merah,
+
+00:03:36.700 --> 00:03:39.220
+lalu oranye, kuning, hijau, biru,
+
+00:03:39.400 --> 00:03:41.320
+ungu, dan sebenarnya kita kembali
+
+00:03:41.340 --> 00:03:44.760
+lagi ke merah. Jadi kalau kamu bilang nol,
+
+00:03:45.140 --> 00:03:47.100
+kamu mulai dari kiri, dan itu
+
+00:03:47.180 --> 00:03:50.700
+merah. Kalau kamu bilang 120, kamu meminta
+
+00:03:50.740 --> 00:03:54.580
+hijau. 230 adalah biru. Kamu juga bisa
+
+00:03:54.620 --> 00:03:57.470
+menganggapnya sebagai roda warna, dan itulah
+
+00:03:57.500 --> 00:03:59.500
+sebenarnya angka 360 itu. Itu adalah jumlah
+
+00:03:59.540 --> 00:04:02.440
+derajat dalam lingkaran. Nah, aku selalu
+
+00:04:02.480 --> 00:04:04.360
+mencari angka yang aku mau di internet, jadi
+
+00:04:04.440 --> 00:04:07.000
+tidak perlu terlalu khawatir menghafalnya,
+
+00:04:07.060 --> 00:04:09.340
+tapi senang juga tahu apa yang
+
+00:04:09.380 --> 00:04:11.720
+sedang terjadi. Jadi itulah hue, yaitu
+
+00:04:11.780 --> 00:04:16.019
+nuansanya. Berikutnya ada saturasi, yaitu seberapa
+
+00:04:16.060 --> 00:04:18.920
+hidup warnanya. Nilainya dari nol
+
+00:04:19.019 --> 00:04:22.060
+sampai 100. Di angka nol, kamu hanya mendapat abu-abu.
+
+00:04:22.400 --> 00:04:24.440
+Tidak ada warna, tidak ada ton
+
+00:04:24.500 --> 00:04:28.160
+sama sekali di situ. Di angka 100, kamu mendapat warna penuh, hidup,
+
+00:04:28.360 --> 00:04:32.660
+dan menyala. Lalu ada kecerahan. Kecerahan
+
+00:04:32.700 --> 00:04:34.860
+adalah seberapa terang warnanya, dan nilainya
+
+00:04:34.960 --> 00:04:37.600
+juga dari nol sampai 100. Di angka
+
+00:04:37.740 --> 00:04:40.200
+nol, kamu mendapat hitam. Apa pun hue
+
+00:04:40.260 --> 00:04:43.460
+yang kamu pilih, hasilnya hitam. Tidak ada cahaya
+
+00:04:43.480 --> 00:04:46.500
+di dalamnya. Dan di angka 100, kamu mendapat putih.
+
+00:04:46.980 --> 00:04:49.000
+Apa pun yang lain, semuanya penuh
+
+00:04:49.060 --> 00:04:52.420
+cahaya, jadi putih. Angka 50 tepat di
+
+00:04:52.460 --> 00:04:55.490
+tengah, warna yang normal. Jadi kamu bisa
+
+00:04:55.520 --> 00:04:57.550
+membayangkan ini sebagai slider untuk membuat
+
+00:04:57.580 --> 00:05:01.260
+warna lebih terang atau lebih gelap. Jadi kalau kita
+
+00:05:01.320 --> 00:05:03.840
+mau lingkaran merah biasa, yang dengan RGB
+
+00:05:03.860 --> 00:05:07.680
+kita tulis sebagai 255, nol, nol, yaitu semua
+
+00:05:07.720 --> 00:05:10.640
+merah, tanpa hijau, tanpa biru, di sini
+
+00:05:10.680 --> 00:05:15.560
+kita memakai nol, 100, 50. Nol untuk
+
+00:05:15.600 --> 00:05:19.290
+hue merah, 100 untuk saturasi, warna penuh,
+
+00:05:19.800 --> 00:05:22.060
+dan 50 untuk kecerahan, yang merupakan tingkat
+
+00:05:22.080 --> 00:05:25.240
+kecerahan normal. Kalau kita mau menjadikannya
+
+00:05:25.250 --> 00:05:27.800
+lingkaran hijau, kita cukup mengubah
+
+00:05:27.880 --> 00:05:30.700
+hue-nya menjadi 120. Kalau kita mau
+
+00:05:30.740 --> 00:05:33.260
+membuatnya hijau yang lebih gelap, kita bisa menurunkan
+
+00:05:33.270 --> 00:05:37.340
+kecerahannya sampai 25. Kalau kita mau
+
+00:05:37.380 --> 00:05:39.360
+membuatnya hijau yang lebih kusam, kita bisa
+
+00:05:39.440 --> 00:05:40.780
+mengurangi sebagian warnanya, sebagian
+
+00:05:40.920 --> 00:05:43.860
+saturasinya, misalnya menurunkannya ke 30.
+
+00:05:46.500 --> 00:05:48.800
+Kalau kamu mau merah muda cerah yang menyala,
+
+00:05:48.860 --> 00:05:52.080
+hue sekitar 300 adalah merah muda, lalu
+
+00:05:52.120 --> 00:05:55.680
+kita naikkan saturasinya ke 100 supaya
+
+00:05:55.720 --> 00:05:57.560
+benar-benar hidup, dan kita juga menaikkan
+
+00:05:57.620 --> 00:06:01.290
+kecerahannya ke sekitar 60. Jadi kita punya
+
+00:06:01.340 --> 00:06:03.660
+dua cara berbeda untuk menyatakan warna, dan keduanya
+
+00:06:03.760 --> 00:06:07.830
+berguna di situasi yang berbeda. RGB bagus saat
+
+00:06:07.900 --> 00:06:12.160
+kamu ingin mengatur satu komponen tertentu:
+
+00:06:12.500 --> 00:06:14.380
+seberapa banyak merah, seberapa banyak hijau, seberapa banyak
+
+00:06:14.400 --> 00:06:17.540
+biru. HSL bagus saat kamu ingin
+
+00:06:17.600 --> 00:06:20.060
+berputar-putar melewati warna-warna. Kalau kamu mau pelangi,
+
+00:06:20.100 --> 00:06:23.440
+kamu cukup terus menaikkan hue-nya. Di
+
+00:06:23.460 --> 00:06:25.360
+beberapa latihan berikutnya, kamu akan memakai
+
+00:06:25.400 --> 00:06:27.500
+keduanya, bersama beberapa perulangan dan
+
+00:06:27.960 --> 00:06:31.020
+memperbarui beberapa variabel, untuk membuat pelangi dan
+
+00:06:31.080 --> 00:06:33.280
+matahari terbenam. Aku akan mengingatkanmu semua
+
+00:06:33.320 --> 00:06:36.400
+detailnya di instruksi latihan, jadi jangan khawatir
+
+00:06:36.460 --> 00:06:40.140
+kalau kamu belum menghafal semua ini. Semoga
+
+00:06:40.180 --> 00:06:41.640
+berhasil, selamat bersenang-senang, dan sampai jumpa
+
+00:06:41.660 --> 00:06:42.060
+lagi di sini sebentar lagi.

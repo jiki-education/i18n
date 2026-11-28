@@ -1,0 +1,246 @@
+WEBVTT
+
+NOTE en_md5 8f7393dfe843d0e2ba5227cef441168a
+
+00:00:00.140 --> 00:00:02.860
+Oke, selamat datang kembali. Kamu sudah memakai percabangan if
+
+00:00:03.240 --> 00:00:05.920
+untuk memeriksa kondisi dan menjalankan kode hanya ketika
+
+00:00:05.960 --> 00:00:08.800
+sesuatu bernilai benar. Sekarang, mari kita berkenalan dengan
+
+00:00:09.080 --> 00:00:13.500
+pasangan setia if, yaitu else. Jadi, dengan
+
+00:00:13.560 --> 00:00:16.100
+percabangan if, Jiki menjalankan blok kode ketika
+
+00:00:16.140 --> 00:00:19.310
+kondisinya benar, dan melewati blok kode
+
+00:00:19.340 --> 00:00:22.210
+itu ketika kondisinya salah. Tapi bagaimana
+
+00:00:22.240 --> 00:00:24.060
+kalau kamu ingin Jiki melakukan satu hal
+
+00:00:24.100 --> 00:00:26.740
+ketika kondisinya benar dan hal yang berbeda
+
+00:00:26.750 --> 00:00:30.300
+ketika kondisinya salah? Itulah gunanya
+
+00:00:30.340 --> 00:00:33.180
+else. Kita bisa menaruh klausa else setelah
+
+00:00:33.200 --> 00:00:36.440
+tanda kurung kurawal penutup if, dan Jiki akan
+
+00:00:36.480 --> 00:00:39.230
+menjalankannya kalau kondisi if tersebut salah.
+
+00:00:40.060 --> 00:00:42.370
+Jadi, kembali ke contoh penjaga pintu klub tadi,
+
+00:00:42.930 --> 00:00:44.840
+sekarang kita punya pilihan untuk membukakan
+
+00:00:44.860 --> 00:00:48.670
+pintu atau menyuruh seseorang pergi, yang
+
+00:00:48.680 --> 00:00:51.440
+jelas lebih baik daripada mengabaikannya begitu saja
+
+00:00:51.480 --> 00:00:54.560
+seperti sebelumnya. Bayangkan seperti
+
+00:00:54.580 --> 00:00:56.780
+persimpangan jalan. Jiki sampai di persimpangan ini,
+
+00:00:57.000 --> 00:00:58.820
+dia memeriksa kondisinya, lalu dia bisa
+
+00:00:58.860 --> 00:01:01.020
+mengambil satu jalan kalau kondisinya benar, atau
+
+00:01:01.060 --> 00:01:03.000
+jalan yang lain kalau kondisinya salah.
+
+00:01:03.760 --> 00:01:07.050
+Tapi dia tidak pernah mengambil dua-duanya. Tapi bagaimana
+
+00:01:07.100 --> 00:01:10.730
+kalau kemungkinannya lebih dari dua? Bayangkan
+
+00:01:10.780 --> 00:01:14.340
+penjaga pintu kita sedang menjual tiket. Kalau umurmu di bawah tiga belas,
+
+00:01:14.360 --> 00:01:17.460
+kamu dapat tiket anak. Antara tiga belas sampai dua puluh,
+
+00:01:17.520 --> 00:01:19.820
+kamu dapat tiket remaja. Dua puluh ke atas,
+
+00:01:19.860 --> 00:01:21.920
+tiket dewasa. Jadi sekarang ada tiga hasil
+
+00:01:22.000 --> 00:01:25.700
+yang berbeda. Untuk itu, kita bisa menambahkan
+
+00:01:25.760 --> 00:01:28.640
+percabangan if lagi setelah else. Jadi kita bisa
+
+00:01:28.680 --> 00:01:32.420
+bilang, “Kalau ini, lakukan ini. Kalau bukan, tapi yang itu,
+
+00:01:32.560 --> 00:01:36.160
+lakukan itu. Kalau bukan keduanya, lakukan hal yang satu lagi.”
+
+00:01:37.040 --> 00:01:39.120
+Nah, dalam contoh ini, Jiki akan melihat
+
+00:01:39.280 --> 00:01:43.120
+if dan memeriksa kondisi pertama. Apakah enam belas
+
+00:01:43.460 --> 00:01:47.380
+kurang dari tiga belas? Tidak. Jadi dia lanjut
+
+00:01:47.420 --> 00:01:51.000
+ke else if. Apakah enam belas kurang dari
+
+00:01:51.040 --> 00:01:55.800
+dua puluh? Ya, benar. Jadi dia menjalankan
+
+00:01:55.820 --> 00:01:58.960
+blok itu dan memberikan tiket remaja. Tapi
+
+00:01:59.000 --> 00:02:02.340
+sampai di situ saja. Dia tidak memeriksa apa pun lagi.
+
+00:02:03.020 --> 00:02:05.000
+Dia sama sekali tidak melihat else
+
+00:02:05.080 --> 00:02:08.600
+terakhir itu. Begitu Jiki menemukan kondisi yang bernilai benar,
+
+00:02:09.080 --> 00:02:11.480
+dia menjalankan blok itu, dan melewati semua
+
+00:02:11.540 --> 00:02:14.980
+yang ada di bawahnya. Inilah hal kunci
+
+00:02:15.000 --> 00:02:18.380
+yang perlu dipahami. Hanya satu blok yang akan dijalankan. Jiki
+
+00:02:18.390 --> 00:02:20.980
+menelusuri rantai ini dari atas ke bawah, menemukan kondisi pertama
+
+00:02:21.020 --> 00:02:24.400
+yang benar, menjalankan blok itu, lalu beranjak. Sekarang,
+
+00:02:24.420 --> 00:02:25.980
+ada satu hal yang benar-benar perlu kamu pahami,
+
+00:02:26.020 --> 00:02:29.020
+karena inilah yang sering bikin orang tersandung. Ada
+
+00:02:29.220 --> 00:02:33.800
+perbedaan yang halus tapi sangat penting antara menulis dua
+
+00:02:33.960 --> 00:02:39.120
+percabangan if terpisah dan menggunakan else if. Jadi
+
+00:02:39.180 --> 00:02:41.390
+bayangkan kita membuat program yang memberikan
+
+00:02:41.440 --> 00:02:44.989
+hadiah dasar atau hadiah bonus tergantung
+
+00:02:45.020 --> 00:02:48.660
+skor seseorang. Perhatikan dua kemungkinan ini.
+
+00:02:49.660 --> 00:02:53.360
+Yang satu memakai else dan yang lain... else, maaf.
+
+00:02:53.460 --> 00:02:55.800
+Yang satu memakai else if, yang lain memakai
+
+00:02:55.880 --> 00:03:00.240
+dua if terpisah. Apa yang akan terjadi secara berbeda? Coba luangkan
+
+00:03:00.280 --> 00:03:02.140
+waktu sebentar untuk memikirkannya. Mungkin jeda dulu
+
+00:03:02.180 --> 00:03:06.570
+videonya. Jadi pada kasus pertama, dengan
+
+00:03:06.600 --> 00:03:10.340
+else if, kita memeriksa apakah skornya tinggi
+
+00:03:10.400 --> 00:03:12.860
+lalu memberikan hadiah bonus, dan setelah itu
+
+00:03:12.920 --> 00:03:15.720
+bagian else if tidak dijalankan. Jadi orang
+
+00:03:15.760 --> 00:03:18.120
+yang skornya di atas seratus hanya
+
+00:03:18.160 --> 00:03:21.850
+mendapat hadiah bonus. Tapi pada contoh
+
+00:03:21.880 --> 00:03:25.840
+kedua, kedua if itu sepenuhnya independen. Keduanya
+
+00:03:25.920 --> 00:03:29.860
+akan dijalankan dan keduanya bernilai benar. Jadi
+
+00:03:29.900 --> 00:03:33.280
+orang ini mendapat dua hadiah. Pada
+
+00:03:33.340 --> 00:03:35.700
+contoh pertama, satu hadiah. Pada contoh kedua,
+
+00:03:35.840 --> 00:03:38.380
+dua hadiah. Luangkan waktu sebentar untuk benar-benar
+
+00:03:38.440 --> 00:03:42.990
+memastikan kamu memahaminya. Menarik juga
+
+00:03:43.040 --> 00:03:45.850
+untuk dicatat bahwa keduanya bisa saja benar, tergantung
+
+00:03:45.880 --> 00:03:48.060
+bagaimana permainannya dirancang. Mungkin
+
+00:03:48.100 --> 00:03:50.600
+pesertanya mendapat hadiah biasa plus
+
+00:03:50.660 --> 00:03:54.160
+hadiah bonus, atau mungkin hadiahnya hanya dinaikkan
+
+00:03:54.200 --> 00:03:56.780
+menjadi hadiah bonus. Kedua potongan kode itu
+
+00:03:56.820 --> 00:04:00.060
+tidak ada yang benar atau salah. Keduanya hanya berguna di situasi
+
+00:04:00.120 --> 00:04:03.620
+yang berbeda. Tapi kamu perlu
+
+00:04:03.640 --> 00:04:05.560
+tahu mana yang ingin
+
+00:04:05.640 --> 00:04:08.960
+kamu pakai. Jadi di latihan-latihan berikutnya, kamu akan
+
+00:04:09.000 --> 00:04:11.320
+memakai if, else if, dan else untuk
+
+00:04:11.380 --> 00:04:14.340
+menangani berbagai situasi. Semoga berhasil, dan sampai jumpa
+
+00:04:14.360 --> 00:04:15.040
+lagi di sini sebentar lagi.

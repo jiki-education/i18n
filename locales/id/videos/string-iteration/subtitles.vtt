@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 488ab8c8dd77c6bec365ce44675868b7
+
+00:00:00.280 --> 00:00:02.640
+Selamat datang kembali. Di materi sebelumnya, kita
+
+00:00:02.680 --> 00:00:04.680
+sudah belajar cara mengakses satu huruf dari
+
+00:00:04.700 --> 00:00:08.300
+sebuah string dengan tanda kurung siku. Di materi ini,
+
+00:00:08.420 --> 00:00:10.120
+kita akan melihat bagaimana menelusuri
+
+00:00:10.160 --> 00:00:13.160
+sebuah string, mengeluarkan setiap hurufnya satu
+
+00:00:13.200 --> 00:00:15.660
+per satu. Dan untuk melakukannya, kita
+
+00:00:15.720 --> 00:00:18.300
+butuh jenis perulangan yang baru. Sejauh ini,
+
+00:00:18.360 --> 00:00:20.170
+kita sudah memakai perulangan repeat, dan sekarang kita
+
+00:00:20.200 --> 00:00:22.720
+akan memakai sesuatu yang disebut perulangan for of.
+
+00:00:22.760 --> 00:00:26.880
+Itu berarti dua kata kunci baru: for dan of.
+
+00:00:27.000 --> 00:00:28.740
+Kata kunci for adalah salah satu yang akan
+
+00:00:28.760 --> 00:00:30.360
+sering kita jumpai ke depannya.
+
+00:00:30.790 --> 00:00:32.580
+Ia bisa berdiri sendiri, atau
+
+00:00:32.619 --> 00:00:35.380
+dipasangkan dengan in atau of. Untuk
+
+00:00:35.440 --> 00:00:37.160
+sekarang, kita fokus ke yang terakhir
+
+00:00:37.220 --> 00:00:40.120
+dulu, of. Jadi, mari kita lihat
+
+00:00:40.160 --> 00:00:43.280
+code-nya. Kita mulai dengan membuat
+
+00:00:43.340 --> 00:00:47.310
+variabel bernama name yang berisi string Jeremy. Tidak ada
+
+00:00:47.380 --> 00:00:50.460
+yang baru di sini. Lalu ada baris ini, for
+
+00:00:50.540 --> 00:00:53.620
+let letter of name, dan di situ banyak
+
+00:00:53.640 --> 00:00:55.480
+yang terjadi, jadi mari kita bahas
+
+00:00:55.520 --> 00:00:59.240
+pelan-pelan. Pertama, ada kata kunci for. Itu
+
+00:00:59.320 --> 00:01:00.980
+memberi tahu Jiki bahwa kita ingin melakukan
+
+00:01:01.060 --> 00:01:04.340
+perulangan. Jadi dia melihat ke depan, menemukan of,
+
+00:01:04.879 --> 00:01:06.320
+dan tahu bahwa kita ingin melakukan
+
+00:01:06.580 --> 00:01:09.600
+perulangan for of. Artinya, alih-alih
+
+00:01:09.720 --> 00:01:11.940
+memakai perulangan repeat dengan berkata, “Mari kita
+
+00:01:12.020 --> 00:01:15.180
+ulang 10 kali,” kita berkata, “Mari kita telusuri
+
+00:01:15.260 --> 00:01:17.380
+semua huruf dalam string itu.”
+
+00:01:17.440 --> 00:01:20.990
+Itulah arti for of. Lalu ada
+
+00:01:21.060 --> 00:01:24.080
+bagian let letter ini. Ini persis sama
+
+00:01:24.140 --> 00:01:25.860
+dengan yang ada di atasnya, let
+
+00:01:26.020 --> 00:01:29.320
+name. Kita hanya membuat variabel bernama letter.
+
+00:01:30.240 --> 00:01:33.240
+Bedanya, kita tidak menyebutkan secara eksplisit
+
+00:01:33.280 --> 00:01:35.280
+apa isinya, melainkan meminta Jiki
+
+00:01:35.320 --> 00:01:37.850
+memasukkan setiap huruf dalam string itu
+
+00:01:37.900 --> 00:01:41.780
+ke sana satu per satu. Jadi Jiki melihat
+
+00:01:41.880 --> 00:01:44.460
+for, memeriksa of, lalu mulai bekerja. Dia
+
+00:01:44.480 --> 00:01:46.140
+melihat huruf pertama dalam string,
+
+00:01:46.480 --> 00:01:48.380
+dalam kasus ini J, dan menaruhnya di
+
+00:01:48.440 --> 00:01:50.840
+kotak baru bernama letter. Omong-omong,
+
+00:01:50.880 --> 00:01:52.240
+namanya boleh apa saja. Tidak harus
+
+00:01:52.260 --> 00:01:53.920
+letter. Di sini kita memutuskan untuk
+
+00:01:53.960 --> 00:01:57.020
+menyebutnya letter. Lalu dia menjalankan code
+
+00:01:57.080 --> 00:01:58.960
+di dalam tanda kurung kurawal, dan di sini kamu bisa
+
+00:01:59.000 --> 00:02:01.060
+melakukan apa pun yang biasa kamu lakukan di code lain.
+
+00:02:01.540 --> 00:02:03.560
+Bedanya hanya satu: blok kode ini
+
+00:02:03.640 --> 00:02:06.320
+akan berjalan sekali untuk setiap huruf
+
+00:02:06.380 --> 00:02:07.900
+dalam string, dan variabel tadi
+
+00:02:07.960 --> 00:02:11.940
+tersedia di dalamnya. Setiap kali Jiki sampai di
+
+00:02:12.040 --> 00:02:15.000
+tanda kurung kurawal penutup, dia membuang kotak
+
+00:02:15.020 --> 00:02:16.740
+letter dan membuat kotak baru yang
+
+00:02:16.860 --> 00:02:19.220
+berisi huruf berikutnya. Jadi pada putaran pertama,
+
+00:02:19.340 --> 00:02:20.800
+dia membuang J dan menggantinya
+
+00:02:20.920 --> 00:02:23.000
+dengan e di dalam kotak. Lalu dia melakukan
+
+00:02:23.020 --> 00:02:25.740
+hal yang sama untuk r, lalu e, lalu m,
+
+00:02:26.080 --> 00:02:28.790
+lalu y. Enam huruf, enam kali
+
+00:02:28.840 --> 00:02:31.300
+putaran. Semoga ini masuk akal. Butuh
+
+00:02:31.340 --> 00:02:32.560
+sedikit waktu untuk terbiasa dengan
+
+00:02:32.600 --> 00:02:34.900
+sintaksisnya, tapi sebenarnya konsepnya
+
+00:02:34.920 --> 00:02:37.730
+tidak sesulit itu. Selanjutnya, ada
+
+00:02:37.760 --> 00:02:40.250
+beberapa latihan yang semuanya tentang menelusuri
+
+00:02:40.250 --> 00:02:42.660
+string. Latihan-latihan ini akan memintamu melakukan hal berbeda
+
+00:02:42.680 --> 00:02:44.980
+dengan huruf-hurufnya, mungkin menghitung ada berapa huruf
+
+00:02:45.000 --> 00:02:46.760
+atau mencari posisi sebuah
+
+00:02:46.800 --> 00:02:49.260
+huruf tertentu. Kamu perlu memakai berbagai
+
+00:02:49.320 --> 00:02:51.640
+teknik yang sudah kamu pelajari dan menggabungkannya
+
+00:02:51.700 --> 00:02:57.060
+dengan perulangan ini. Latihan-latihan ini sekarang makin
+
+00:02:57.100 --> 00:03:00.000
+menantang. Kamu menggabungkan banyak hal berbeda
+
+00:03:00.020 --> 00:03:02.420
+yang sudah kamu pelajari. Silakan luangkan waktu.
+
+00:03:02.500 --> 00:03:03.920
+Mungkin butuh waktu cukup lama untuk menyelesaikan
+
+00:03:03.960 --> 00:03:06.160
+masing-masing. Jangan terburu-buru atau
+
+00:03:06.200 --> 00:03:08.840
+frustrasi kalau belum bisa memecahkannya. Anggap
+
+00:03:08.900 --> 00:03:10.920
+saja seperti teka-teki. Kalau kamu
+
+00:03:10.940 --> 00:03:12.640
+macet, kamu bisa istirahat dulu,
+
+00:03:12.650 --> 00:03:15.160
+jalan-jalan sebentar, lalu kembali lagi. Kamu sudah punya
+
+00:03:15.200 --> 00:03:16.790
+semua pengetahuan yang kamu butuhkan untuk ini
+
+00:03:16.820 --> 00:03:18.870
+dan keterampilan untuk melakukannya, tapi kamu
+
+00:03:18.940 --> 00:03:21.520
+harus sabar. Dan selalu ingat, kamu
+
+00:03:21.580 --> 00:03:23.320
+boleh memakai petunjuk-petunjuk itu kalau perlu,
+
+00:03:23.900 --> 00:03:25.150
+tapi coba jadikan itu sebagai pilihan
+
+00:03:25.200 --> 00:03:27.540
+terakhir. Semoga berhasil, dan sampai jumpa lagi
+
+00:03:27.560 --> 00:03:28.060
+di sini sebentar lagi.

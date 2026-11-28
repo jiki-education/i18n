@@ -1,0 +1,168 @@
+WEBVTT
+
+NOTE en_md5 cc1cedf75df71450fa8e0da4a289c70e
+
+00:00:00.100 --> 00:00:03.520
+Selamat datang kembali. Sejauh ini, kita sudah menggunakan variabel
+
+00:00:03.740 --> 00:00:06.760
+untuk hal-hal yang punya makna tertentu: usia seseorang,
+
+00:00:06.860 --> 00:00:10.680
+waktu, sebuah warna. Kita sudah memperbarui nilai variabel, tapi
+
+00:00:10.700 --> 00:00:14.900
+isinya cenderung tetap. Padahal, salah satu
+
+00:00:14.940 --> 00:00:18.320
+penggunaan variabel yang paling umum dalam pemrograman
+
+00:00:18.400 --> 00:00:22.020
+adalah melacak kemajuan kita sepanjang suatu pekerjaan.
+
+00:00:22.080 --> 00:00:24.280
+Bayangkan kamu sedang membangun tembok, hal yang akan kamu lakukan
+
+00:00:24.340 --> 00:00:26.880
+sebentar lagi. Di dunia nyata, kamu akan sadar
+
+00:00:26.940 --> 00:00:29.560
+sedang berada di lapisan bata yang mana:
+
+00:00:29.600 --> 00:00:31.540
+lapisan paling bawah, paling atas, atau salah satu
+
+00:00:31.580 --> 00:00:34.380
+di tengah. Kamu juga akan tahu
+
+00:00:34.420 --> 00:00:36.480
+bata mana yang harus dipasang berikutnya:
+
+00:00:36.520 --> 00:00:40.240
+ketiga, keempat, dan seterusnya. Kita juga butuh
+
+00:00:40.250 --> 00:00:43.240
+hal yang sama di dunia digital. Atau
+
+00:00:43.360 --> 00:00:47.070
+bayangkan kamu sedang membuat bot Space
+
+00:00:47.140 --> 00:00:50.220
+Invaders otomatis. Bot itu perlu tahu posisinya
+
+00:00:50.320 --> 00:00:52.220
+dari kiri ke kanan
+
+00:00:52.260 --> 00:00:55.730
+di layar. Dalam pemrograman, kita menyebutnya state,
+
+00:00:56.240 --> 00:00:59.840
+kependekan dari “ini sedang dalam keadaan apa”. State
+
+00:00:59.880 --> 00:01:02.510
+berguna untuk mengetahui apa yang sedang
+
+00:01:02.600 --> 00:01:05.099
+terjadi, tapi manfaatnya benar-benar terasa
+
+00:01:05.140 --> 00:01:08.250
+saat kita menggabungkannya dengan percabangan. Kalau kita sedang
+
+00:01:08.280 --> 00:01:10.660
+membangun tembok, setelah
+
+00:01:10.680 --> 00:01:13.780
+memasang setiap bata kita perlu memeriksa apakah
+
+00:01:13.820 --> 00:01:16.160
+bata itu bata terakhir di baris tersebut. Kalau
+
+00:01:16.240 --> 00:01:17.520
+iya, kita perlu pindah ke
+
+00:01:17.560 --> 00:01:19.200
+baris berikutnya dan kembali memasang
+
+00:01:19.240 --> 00:01:22.310
+bata pertama. Kalau kita sedang membuat bot Space Invaders,
+
+00:01:22.440 --> 00:01:23.780
+kita perlu memeriksa apakah kita sudah di
+
+00:01:23.820 --> 00:01:26.020
+tepi layar sebelum bergerak,
+
+00:01:26.140 --> 00:01:29.700
+lalu berbalik arah kalau memang iya. Arah itu
+
+00:01:29.780 --> 00:01:32.360
+juga state: catatan apakah
+
+00:01:32.380 --> 00:01:35.800
+kita sedang bergerak ke kiri atau ke kanan. Seiring kamu melangkah
+
+00:01:35.900 --> 00:01:37.600
+maju, state akan jadi salah satu
+
+00:01:37.660 --> 00:01:41.220
+bagian terpenting dalam pemrograman: gagasan untuk
+
+00:01:41.360 --> 00:01:44.100
+mengetahui di mana sesuatu berada, sedang dalam keadaan apa,
+
+00:01:44.500 --> 00:01:47.140
+atau sudah sejauh mana kita menyelesaikan
+
+00:01:47.300 --> 00:01:49.960
+daftar tugas. Di dua latihan berikutnya,
+
+00:01:49.980 --> 00:01:52.140
+kamu akan menggunakan state untuk membangun tembok dan
+
+00:01:52.180 --> 00:01:54.500
+memainkan Space Invaders dengan ide-ide yang
+
+00:01:54.560 --> 00:01:58.890
+baru saja kita bahas. Penting sekali memecah
+
+00:01:58.940 --> 00:02:03.780
+latihan-latihan ini menjadi langkah-langkah kecil. Pikirkan baik-baik
+
+00:02:03.840 --> 00:02:05.660
+apa saja yang perlu kamu ketahui
+
+00:02:05.680 --> 00:02:07.740
+untuk menyelesaikannya, misalnya lapisan bata
+
+00:02:07.780 --> 00:02:09.360
+tempatmu berada atau posisi
+
+00:02:09.420 --> 00:02:12.680
+bata saat ini. Pikirkan juga aturan yang
+
+00:02:12.740 --> 00:02:15.000
+harus diikuti komputer untuk menyusun
+
+00:02:15.060 --> 00:02:18.780
+seluruh tembok. Ini sudah pemrograman sungguhan.
+
+00:02:19.000 --> 00:02:20.760
+Inilah jenis pekerjaan yang
+
+00:02:20.800 --> 00:02:24.120
+kita lakukan setiap hari sebagai programmer.
+
+00:02:24.160 --> 00:02:26.700
+Semakin kompleks, tapi juga semakin
+
+00:02:26.720 --> 00:02:29.860
+seru. Pola-pola seperti ini butuh waktu
+
+00:02:29.940 --> 00:02:32.160
+untuk terbiasa, jadi
+
+00:02:32.180 --> 00:02:34.600
+jangan terburu-buru, bersenang-senanglah, dan sampai jumpa
+
+00:02:34.640 --> 00:02:35.320
+lagi di sini sebentar lagi.

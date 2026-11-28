@@ -1,0 +1,186 @@
+WEBVTT
+
+NOTE en_md5 5da11fa63c77f04329255ba0ae3d5fdf
+
+00:00:00.120 --> 00:00:02.480
+Selamat datang kembali. Sekarang kamu sudah tahu cara
+
+00:00:02.540 --> 00:00:05.300
+membuat dictionary dan mengambil nilai
+
+00:00:05.340 --> 00:00:08.840
+darinya. Tapi apa yang terjadi kalau datanya berubah?
+
+00:00:08.880 --> 00:00:10.760
+Suatu saat nanti, umurku akan bertambah.
+
+00:00:10.780 --> 00:00:13.060
+Umurku bukan lagi 42, tapi 43.
+
+00:00:14.000 --> 00:00:16.160
+Jadi bagaimana cara memperbarui dictionary? Nah, kita
+
+00:00:16.240 --> 00:00:18.000
+pakai cara yang sangat mirip dengan saat
+
+00:00:18.080 --> 00:00:20.600
+mencari sesuatu. Kamu tahu kan, kita mencari sesuatu
+
+00:00:20.660 --> 00:00:22.860
+dengan tanda kurung siku untuk mengambil nilainya.
+
+00:00:23.620 --> 00:00:25.980
+Nah, kita juga bisa memakai tanda kurung siku yang diikuti
+
+00:00:26.020 --> 00:00:29.980
+tanda sama dengan untuk memperbarui dictionary.
+
+00:00:30.020 --> 00:00:32.920
+Jiki menuju kotak person, mengeluarkan
+
+00:00:32.960 --> 00:00:36.370
+halaman buku catatan, menemukan key age, lalu
+
+00:00:36.380 --> 00:00:38.560
+menghapus 42 yang ada di sana
+
+00:00:38.580 --> 00:00:41.200
+dan menulis 43 di tempatnya, kemudian
+
+00:00:41.780 --> 00:00:43.089
+halaman buku catatan itu kembali masuk ke
+
+00:00:43.140 --> 00:00:47.800
+kotak. Ini mengubah dictionary itu sendiri. Jiki
+
+00:00:48.140 --> 00:00:50.880
+tidak membuat dictionary baru. Dia mengubah
+
+00:00:50.890 --> 00:00:54.420
+buku catatan yang sudah ada di dalam kotak. Bagaimana
+
+00:00:54.460 --> 00:00:56.310
+kalau kamu ingin menambahkan informasi yang
+
+00:00:56.400 --> 00:00:59.530
+sebelumnya belum ada? Nah, kamu bisa melakukan hal
+
+00:00:59.540 --> 00:01:02.160
+yang persis sama. Kalau kamu menentukan key
+
+00:01:02.200 --> 00:01:04.900
+yang belum ada, Jiki akan langsung menambahkan
+
+00:01:04.960 --> 00:01:07.340
+key baru di bagian bawah dengan nilai itu.
+
+00:01:08.220 --> 00:01:10.200
+Jadi dalam kasus ini, dia akan membuka buku catatannya,
+
+00:01:10.580 --> 00:01:13.140
+mencari country, melihat bahwa key itu tidak ada, lalu
+
+00:01:13.160 --> 00:01:14.680
+menambahkan baris baru di bagian bawah,
+
+00:01:15.000 --> 00:01:16.880
+country di kiri, England di kanan.
+
+00:01:18.080 --> 00:01:20.580
+Jadi sintaksnya persis sama dengan saat mengubah
+
+00:01:20.620 --> 00:01:24.320
+nilai. Jiki menangani keduanya secara otomatis. Kalau key-nya
+
+00:01:24.360 --> 00:01:27.660
+sudah ada, dia memperbaruinya. Kalau belum ada, dia
+
+00:01:27.740 --> 00:01:29.290
+menambahkannya. Kamu tidak perlu melakukan apa pun
+
+00:01:29.400 --> 00:01:33.040
+secara khusus. Dan sama seperti kamu bisa mulai dengan
+
+00:01:33.080 --> 00:01:35.120
+array kosong lalu push sesuatu ke dalamnya,
+
+00:01:35.140 --> 00:01:37.240
+kamu juga bisa mulai dengan dictionary kosong dan menambahkan
+
+00:01:37.280 --> 00:01:40.340
+key satu per satu. Lagi-lagi, ini pola yang
+
+00:01:40.400 --> 00:01:42.260
+sangat umum. Kamu akan sering melihatnya.
+
+00:01:43.800 --> 00:01:45.860
+Salah satu penggunaan dictionary yang umum adalah
+
+00:01:45.940 --> 00:01:49.260
+untuk menyimpan hitungan banyak hal. Kamu bisa menentukan key
+
+00:01:49.320 --> 00:01:50.720
+sebagai hal-hal yang ingin kita
+
+00:01:50.800 --> 00:01:53.360
+hitung, dan nilainya sebagai jumlah hitungannya. Jadi
+
+00:01:53.400 --> 00:01:55.800
+bayangkan kamu sedang mengamati burung dan ingin
+
+00:01:55.860 --> 00:01:57.780
+melacak berapa banyak setiap jenis burung yang sudah kamu
+
+00:01:57.820 --> 00:02:00.180
+lihat. Setiap kali kamu melihat seekor burung, kamu
+
+00:02:00.220 --> 00:02:02.740
+menetapkan hitungannya menjadi satu, lalu setiap
+
+00:02:02.800 --> 00:02:04.480
+kali kamu melihatnya lagi, kamu mengambil
+
+00:02:04.540 --> 00:02:07.160
+nilai saat ini dan menambahkannya satu. Supaya
+
+00:02:07.200 --> 00:02:08.800
+pola ini berhasil, kita butuh cara
+
+00:02:08.840 --> 00:02:11.220
+untuk memeriksa apakah dictionary sudah punya
+
+00:02:11.300 --> 00:02:13.320
+key itu, sehingga kita tinggal menambahkan satu,
+
+00:02:13.360 --> 00:02:16.260
+atau kalau key itu belum ada,
+
+00:02:16.620 --> 00:02:18.480
+kita perlu memulainya dari satu.
+
+00:02:19.560 --> 00:02:21.250
+Dan untuk melakukan itu, kita punya
+
+00:02:21.380 --> 00:02:25.380
+sebuah method pada dictionary, yaitu method has. Kamu menentukan
+
+00:02:25.440 --> 00:02:27.520
+key yang kamu minati, dan Jiki akan
+
+00:02:27.560 --> 00:02:30.060
+memeriksa apakah dictionary punya key itu atau
+
+00:02:30.100 --> 00:02:33.020
+tidak, lalu mengembalikan benar atau salah sesuai hasilnya.
+
+00:02:34.600 --> 00:02:36.210
+Sebentar lagi ada beberapa latihan yang
+
+00:02:36.220 --> 00:02:38.480
+akan memakai semua ini. Semoga berhasil
+
+00:02:38.520 --> 00:02:39.800
+mengerjakannya, dan sampai jumpa lagi
+
+00:02:39.880 --> 00:02:40.130
+di sini nanti.

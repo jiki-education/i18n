@@ -1,0 +1,189 @@
+WEBVTT
+
+NOTE en_md5 85b5a694c9e806f0735e3ee2c8b94eab
+
+00:00:00.240 --> 00:00:03.080
+Selamat datang kembali. Oke, sejauh ini kita sudah melihat
+
+00:00:03.120 --> 00:00:06.580
+fungsi-fungsi yang melakukan sesuatu di dunia nyata. Jadi,
+
+00:00:06.620 --> 00:00:09.800
+fungsi circle menggambar sebuah lingkaran. Fungsi move
+
+00:00:09.900 --> 00:00:13.640
+memindahkan karaktermu. Tapi ada juga fungsi yang bekerja
+
+00:00:13.840 --> 00:00:17.960
+dengan cara berbeda. Alih-alih melakukan sesuatu di luar sana, fungsi ini memberimu
+
+00:00:18.000 --> 00:00:20.430
+sesuatu yang bisa kamu pakai di dalam
+
+00:00:20.460 --> 00:00:24.700
+code. Saat sebuah fungsi memberikan sesuatu kembali
+
+00:00:24.740 --> 00:00:26.840
+kepada Jiki untuk dipakai di dalam code, kita
+
+00:00:26.880 --> 00:00:29.640
+katakan bahwa fungsi itu mengembalikan sesuatu. Fungsi itu
+
+00:00:29.650 --> 00:00:34.310
+mengembalikan sesuatu keluar kepada Jiki. Kamu bisa
+
+00:00:34.340 --> 00:00:36.720
+membayangkan mesin-mesin ini punya saluran
+
+00:00:36.760 --> 00:00:39.340
+keluaran. Kita sudah punya lubang tempat
+
+00:00:39.390 --> 00:00:41.620
+memasukkan benda, tapi mesinnya juga bisa
+
+00:00:41.700 --> 00:00:44.860
+punya satu lubang keluaran, atau saluran
+
+00:00:44.900 --> 00:00:47.560
+tempat sesuatu bisa keluar lagi. Saat
+
+00:00:47.600 --> 00:00:49.840
+Jiki menekan tombol di mesin itu,
+
+00:00:49.880 --> 00:00:52.600
+mesinnya berdengung dan bekerja, lalu ada sesuatu yang muncul
+
+00:00:52.640 --> 00:00:54.060
+keluar dari saluran itu pada akhirnya. Bisa
+
+00:00:54.100 --> 00:00:56.760
+berupa angka. Bisa juga berupa string.
+
+00:00:56.780 --> 00:00:59.600
+Intinya, itu sesuatu yang bisa ditangkap dan
+
+00:00:59.780 --> 00:01:05.540
+dipakai oleh Jiki. Sebagian besar fungsi, mungkin 95% di antaranya, mengembalikan
+
+00:01:05.600 --> 00:01:08.740
+sesuatu. Mungkin fungsi itu menghitung sesuatu untukmu
+
+00:01:08.860 --> 00:01:11.460
+lalu mengembalikan nilainya, atau menggabungkan
+
+00:01:11.540 --> 00:01:13.980
+beberapa string lalu memberimu
+
+00:01:14.020 --> 00:01:16.900
+string hasilnya. Atau mungkin fungsi itu memberimu
+
+00:01:16.940 --> 00:01:19.140
+waktu saat ini setiap kali kamu menjalankan
+
+00:01:19.180 --> 00:01:21.690
+mesin tersebut. Mari kita lihat contoh yang terakhir ini.
+
+00:01:21.690 --> 00:01:23.880
+Misalkan kita punya fungsi bernama
+
+00:01:24.000 --> 00:01:27.690
+getCurrentTime. Setiap kali Jiki menjalankan mesinnya,
+
+00:01:27.720 --> 00:01:29.920
+secarik kertas meluncur keluar dari saluran
+
+00:01:29.980 --> 00:01:32.400
+keluaran dengan waktu tertulis di atasnya, mungkin
+
+00:01:32.460 --> 00:01:36.300
+14:35. Lalu nilai yang dikembalikan itu
+
+00:01:36.340 --> 00:01:39.740
+bisa kita masukkan ke dalam kotak dengan let. Kalau kita
+
+00:01:39.780 --> 00:01:43.980
+menulis let time sama dengan getCurrentTime, Jiki
+
+00:01:44.020 --> 00:01:46.820
+akan menjalankan mesinnya, mengambil waktu saat ini
+
+00:01:46.840 --> 00:01:48.940
+dari saluran, lalu menyimpannya di dalam
+
+00:01:49.000 --> 00:01:53.640
+kotak bernama time. Nah, penting untuk dipahami
+
+00:01:53.700 --> 00:01:56.080
+bahwa kertas yang dimasukkan Jiki
+
+00:01:56.180 --> 00:01:59.680
+ke dalam kotak sudah tetap pada saat itu juga.
+
+00:01:59.740 --> 00:02:01.940
+Walaupun waktu sebenarnya berubah selama
+
+00:02:01.980 --> 00:02:04.500
+programmu berjalan, kotaknya tetap berisi
+
+00:02:04.540 --> 00:02:08.380
+kertas bertuliskan 14:35 itu.
+
+00:02:08.449 --> 00:02:10.920
+Begitu sesuatu sudah masuk ke dalam kotak,
+
+00:02:11.000 --> 00:02:15.140
+isinya tetap. Tidak akan berubah secara ajaib.
+
+00:02:15.200 --> 00:02:16.980
+Kalau nanti kita ingin memasukkan waktu saat ini
+
+00:02:17.040 --> 00:02:19.420
+ke dalam kotak itu lagi, kita perlu
+
+00:02:19.500 --> 00:02:22.860
+memakai fungsi getCurrentTime lagi
+
+00:02:22.920 --> 00:02:27.100
+untuk mengambilnya. Sebagian besar fungsi yang mengembalikan sesuatu
+
+00:02:27.420 --> 00:02:29.950
+juga punya input. Misalnya, kita mungkin punya
+
+00:02:30.060 --> 00:02:33.430
+fungsi join yang menerima dua string sebagai
+
+00:02:33.480 --> 00:02:36.350
+input dan mengembalikannya dalam keadaan sudah tergabung dengan
+
+00:02:36.420 --> 00:02:39.600
+satu spasi. Jadi kalau kita memakai mesin join
+
+00:02:39.660 --> 00:02:43.920
+dengan input "Hello" dan "World",
+
+00:02:44.000 --> 00:02:46.160
+dari saluran akan keluar satu string
+
+00:02:46.200 --> 00:02:50.710
+bertuliskan "Hello World". Di latihan-latihan
+
+00:02:50.760 --> 00:02:55.100
+berikutnya ini, kamu akan memakai fungsi yang mengembalikan sesuatu.
+
+00:02:55.160 --> 00:02:57.200
+Kamu perlu menyimpan nilai yang dikembalikan
+
+00:02:57.220 --> 00:02:59.400
+fungsi-fungsi itu dan memakainya di tempat yang tepat
+
+00:02:59.480 --> 00:03:02.300
+di dalam code. Petunjuknya akan memberitahumu
+
+00:03:02.360 --> 00:03:04.780
+semua yang perlu kamu ketahui, jadi jangan khawatir.
+
+00:03:04.800 --> 00:03:06.540
+Semoga berhasil, dan sampai jumpa lagi di sini
+
+00:03:06.580 --> 00:03:07.200
+sebentar lagi.

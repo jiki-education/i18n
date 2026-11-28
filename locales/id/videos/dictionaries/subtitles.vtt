@@ -1,0 +1,270 @@
+WEBVTT
+
+NOTE en_md5 c5187b46923e87c2aac86912c90dfb53
+
+00:00:00.100 --> 00:00:03.140
+Selamat datang kembali. Semoga sekarang kamu sudah lebih nyaman
+
+00:00:03.180 --> 00:00:06.810
+dengan array. Array adalah pilihan andalan kita
+
+00:00:06.840 --> 00:00:09.740
+kalau kita punya daftar apa saja, entah daftar
+
+00:00:09.760 --> 00:00:11.560
+mentor, daftar skor, atau daftar
+
+00:00:11.600 --> 00:00:14.420
+bahan masakan. Daftar apa pun itu, pakai saja
+
+00:00:14.440 --> 00:00:17.630
+array. Tapi ada struktur data lain yang
+
+00:00:17.720 --> 00:00:20.060
+juga sangat umum dipakai kalau kamu butuh sesuatu
+
+00:00:20.070 --> 00:00:23.380
+yang sedikit lebih rumit daripada daftar. Bayangkan
+
+00:00:23.420 --> 00:00:24.780
+kita ingin menyimpan beberapa informasi tentangku:
+
+00:00:25.500 --> 00:00:27.580
+namaku, umurku, dan tempat aku lahir.
+
+00:00:28.280 --> 00:00:30.140
+Nah, kamu bisa memakai array untuk itu,
+
+00:00:30.150 --> 00:00:32.200
+tapi isinya jadi kurang jelas maksudnya
+
+00:00:32.240 --> 00:00:34.850
+kalau begitu. Apakah Inggris itu tempat aku
+
+00:00:34.880 --> 00:00:37.210
+lahir atau tempat aku tinggal? Apakah 42 itu
+
+00:00:37.300 --> 00:00:40.120
+umurku atau sesuatu yang lain? Dan kalau aku ingin
+
+00:00:40.160 --> 00:00:42.050
+memakai data ini, aku harus ingat bahwa
+
+00:00:42.080 --> 00:00:44.740
+posisi pertama untuk name, posisi kedua
+
+00:00:44.780 --> 00:00:47.900
+untuk age, posisi ketiga untuk birthplace.
+
+00:00:47.920 --> 00:00:49.840
+Semuanya agak berantakan, dan berantakan
+
+00:00:49.880 --> 00:00:52.420
+karena ini sebenarnya bukan daftar.
+
+00:00:52.480 --> 00:00:55.769
+Ini lebih rumit daripada itu. Dan di sinilah
+
+00:00:55.800 --> 00:00:58.500
+dictionary berperan. Dictionary adalah
+
+00:00:58.560 --> 00:01:00.340
+struktur data jenis baru. Ini yang kelima
+
+00:01:00.420 --> 00:01:03.830
+bagimu. Kamu sudah punya string, angka, Boolean, array, dan
+
+00:01:03.880 --> 00:01:06.200
+sekarang dictionary. Dan aku ingin kamu membayangkan
+
+00:01:06.260 --> 00:01:08.620
+dictionary sebagai selembar kertas dari
+
+00:01:08.800 --> 00:01:12.180
+buku catatan spiral. Di sisi kiri ada
+
+00:01:12.220 --> 00:01:15.460
+judulnya, yaitu kata name, age, birthplace, dan
+
+00:01:15.500 --> 00:01:18.400
+itulah yang kita sebut key. Dan di sisi
+
+00:01:18.480 --> 00:01:20.240
+kanan, di samping setiap judul, ada
+
+00:01:20.300 --> 00:01:24.520
+data sebenarnya: Jeremy, 42, England, dan itulah
+
+00:01:24.600 --> 00:01:28.300
+yang kita sebut nilai. Nah, sama seperti array,
+
+00:01:28.340 --> 00:01:31.180
+dictionary itu satu benda. Satu halaman dari
+
+00:01:31.190 --> 00:01:33.830
+buku catatan. Dan sama seperti array, Jiki bisa
+
+00:01:33.840 --> 00:01:35.250
+menyimpannya di variabel, di dalam kotak,
+
+00:01:35.720 --> 00:01:37.930
+atau sebagai input untuk sebuah fungsi, atau
+
+00:01:37.980 --> 00:01:39.540
+dia bisa mengeluarkan dictionary dari
+
+00:01:39.560 --> 00:01:42.200
+saluran keluaran. Jadi, seperti inilah bentuk dictionary
+
+00:01:42.260 --> 00:01:45.080
+di dalam code. Kita memakai tanda kurung kurawal untuk
+
+00:01:45.120 --> 00:01:47.490
+menandai awal dan akhirnya, lalu
+
+00:01:47.520 --> 00:01:49.420
+di dalamnya ada pasangan-pasangan: key di sebelah
+
+00:01:49.480 --> 00:01:51.700
+kiri, titik dua, lalu nilainya di sebelah
+
+00:01:51.740 --> 00:01:53.860
+kanan, dan ada koma di antara
+
+00:01:53.900 --> 00:01:56.260
+setiap pasangan. Jadi saat Jiki melihat ini,
+
+00:01:56.280 --> 00:01:58.600
+dia mengeluarkan buku catatan spiralnya. Dia menulis name,
+
+00:01:58.960 --> 00:02:02.100
+Jeremy, age, 42, dan seterusnya untuk setiap
+
+00:02:02.140 --> 00:02:04.440
+pasangan. Setelah selesai, dia merobek
+
+00:02:04.480 --> 00:02:06.320
+lembaran itu dan meletakkannya di dalam kotak
+
+00:02:06.420 --> 00:02:09.360
+berlabel person. Nah, ada beberapa aturan yang
+
+00:02:09.420 --> 00:02:12.060
+perlu kamu tahu. Key selalu berupa string. Key harus
+
+00:02:12.140 --> 00:02:14.620
+diapit tanda kutip, dan setiap key harus
+
+00:02:14.680 --> 00:02:18.170
+unik. Kamu tidak bisa punya dua key bernama
+
+00:02:18.260 --> 00:02:21.420
+name di dictionary yang sama. Nilainya
+
+00:02:21.480 --> 00:02:23.150
+boleh sama kalau kamu mau,
+
+00:02:23.280 --> 00:02:25.810
+tapi key-nya harus berbeda, dan
+
+00:02:25.820 --> 00:02:27.600
+nilainya bisa apa saja. Bisa
+
+00:02:27.680 --> 00:02:31.000
+string, angka, Boolean, array, atau bahkan dictionary lain.
+
+00:02:32.140 --> 00:02:34.540
+Kamu juga bisa punya dictionary kosong,
+
+00:02:34.600 --> 00:02:37.220
+sama seperti array kosong tadi,
+
+00:02:37.280 --> 00:02:38.800
+dan kita bisa mulai dari situ lalu
+
+00:02:38.820 --> 00:02:42.210
+menambahinya nanti. Oke, jadi kamu sudah punya
+
+00:02:42.260 --> 00:02:44.160
+dictionary, tapi bagaimana cara mengambil sesuatu
+
+00:02:44.220 --> 00:02:46.900
+darinya? Kita memakai sintaks tanda kurung
+
+00:02:46.920 --> 00:02:48.960
+siku yang sama seperti pada array dan
+
+00:02:49.020 --> 00:02:52.980
+string, tapi alih-alih nomor posisi, kita
+
+00:02:53.020 --> 00:02:55.040
+menuliskan key. Jadi kalau kita ingin
+
+00:02:55.100 --> 00:02:57.390
+mengambil nama seseorang dari sebuah dictionary,
+
+00:02:57.940 --> 00:03:01.620
+kita menulis variabel person, tanda kurung siku, lalu
+
+00:03:01.640 --> 00:03:03.580
+key-nya, dalam hal ini name, dengan
+
+00:03:03.660 --> 00:03:07.260
+tanda kutip di dalamnya. Itu memberi tahu Jiki untuk mencari
+
+00:03:07.300 --> 00:03:09.970
+di dictionary person, menemukan key untuk
+
+00:03:10.080 --> 00:03:12.900
+name, lalu mengambil nilainya. Jiki
+
+00:03:13.040 --> 00:03:15.000
+pergi ke kotak person, mengeluarkan
+
+00:03:15.040 --> 00:03:17.340
+halaman dari buku catatan itu, memeriksa semua
+
+00:03:17.400 --> 00:03:19.760
+key sampai dia menemukan name, lalu membaca
+
+00:03:19.800 --> 00:03:21.900
+nilainya, Jeremy, dan meletakkannya di
+
+00:03:21.910 --> 00:03:27.540
+kotak baru bernama name. Tanda kurung siku selalu
+
+00:03:27.580 --> 00:03:29.980
+punya arti yang sama. Kamu sedang merogoh sesuatu
+
+00:03:29.990 --> 00:03:32.370
+dan mengambil isinya. Dengan array dan string,
+
+00:03:32.960 --> 00:03:34.720
+kamu memakai angka untuk menyebut posisi mana
+
+00:03:34.760 --> 00:03:37.580
+yang ingin kamu ambil. Dengan dictionary, kamu
+
+00:03:37.700 --> 00:03:40.140
+memakai string sebagai key. Idenya
+
+00:03:40.180 --> 00:03:43.340
+sama, hanya sintaksnya sedikit berbeda. Oke, jadi
+
+00:03:43.380 --> 00:03:45.390
+kamu punya beberapa latihan untuk berlatih
+
+00:03:45.500 --> 00:03:47.640
+membuat dictionary dan membaca nilai darinya.
+
+00:03:48.260 --> 00:03:50.160
+Semua yang kamu butuhkan sudah kita bahas tadi:
+
+00:03:50.580 --> 00:03:52.660
+tanda kurung kurawal untuk membuat, tanda kurung siku
+
+00:03:52.680 --> 00:03:55.200
+untuk mengakses. Kerjakan pelan-pelan saja. Semoga
+
+00:03:55.240 --> 00:03:56.820
+berhasil, dan sampai jumpa lagi di sini sebentar lagi.

@@ -1,0 +1,204 @@
+WEBVTT
+
+NOTE en_md5 54c871cb5fb9450d2d15334c3f48a372
+
+00:00:00.120 --> 00:00:02.700
+Selamat datang kembali. Sekarang kamu sudah tahu cara
+
+00:00:02.760 --> 00:00:05.780
+memakai percabangan if, else, dan else if untuk
+
+00:00:05.820 --> 00:00:09.260
+membuat keputusan dalam kodemu. Kalau aku memintamu
+
+00:00:09.340 --> 00:00:11.620
+membuka pintu hanya jika ada orang
+
+00:00:11.720 --> 00:00:14.420
+yang usianya di atas 20 tahun, kamu mungkin
+
+00:00:14.460 --> 00:00:17.080
+sudah tahu harus berbuat apa. Tapi bagaimana kalau kamu
+
+00:00:17.140 --> 00:00:20.250
+perlu memeriksa apakah seseorang berusia di atas 20 tahun
+
+00:00:20.560 --> 00:00:23.790
+dan memakai pakaian yang benar? Jadi kamu harus
+
+00:00:23.820 --> 00:00:27.120
+memeriksa dua kondisi yang berbeda sekaligus.
+
+00:00:27.160 --> 00:00:30.940
+Bagaimana caramu melakukannya? Coba pikirkan. Oke.
+
+00:00:31.100 --> 00:00:33.820
+Nah, mungkin kamu bisa memakai percabangan if
+
+00:00:33.880 --> 00:00:36.520
+yang bersarang, mirip dengan perulangan bersarang
+
+00:00:36.540 --> 00:00:39.680
+yang pernah kita pakai. Jadi kamu bisa bilang, kalau age
+
+00:00:39.720 --> 00:00:43.400
+lebih besar dari 20, kita masuk ke
+
+00:00:43.440 --> 00:00:47.360
+blok kode ini, lalu satu lagi if kalau outfit sama dengan
+
+00:00:47.400 --> 00:00:50.660
+disco, lalu satu tanda kurung kurawal lagi
+
+00:00:50.700 --> 00:00:54.380
+dan blok kode baru. Cara itu memang berhasil, tapi hasilnya
+
+00:00:54.400 --> 00:00:57.200
+jadi cukup berantakan, apalagi kalau kamu punya
+
+00:00:57.300 --> 00:01:00.350
+banyak percabangan. Syukurlah, ada cara yang lebih mudah,
+
+00:01:00.940 --> 00:01:02.760
+yaitu dengan membuat kondisi
+
+00:01:02.820 --> 00:01:06.130
+yang punya beberapa bagian. Daripada hanya memeriksa
+
+00:01:06.220 --> 00:01:08.020
+satu hal dalam kondisi, kita bisa memeriksa
+
+00:01:08.080 --> 00:01:11.360
+dua, tiga, atau bahkan lebih banyak hal. Untuk
+
+00:01:11.400 --> 00:01:14.000
+melakukannya, kita perlu memakai kata kunci
+
+00:01:14.100 --> 00:01:18.180
+and. Sayangnya, di JavaScript, kata kunci and
+
+00:01:18.280 --> 00:01:20.880
+sebenarnya bukanlah kata and, padahal
+
+00:01:20.900 --> 00:01:23.480
+di beberapa bahasa lain memang begitu. Sebagai gantinya,
+
+00:01:23.520 --> 00:01:26.800
+kamu harus menaruh dua ampersand bersebelahan.
+
+00:01:26.820 --> 00:01:29.180
+Mau tidak mau, kamu harus mengingat ini. Memang menjengkelkan,
+
+00:01:29.220 --> 00:01:30.640
+tapi begitulah adanya, dan lama-lama
+
+00:01:30.700 --> 00:01:33.830
+kamu akan terbiasa. Jadi kita bisa memakai ini
+
+00:01:33.860 --> 00:01:36.790
+untuk membuat kondisi yang lebih rumit. Kita bisa
+
+00:01:36.840 --> 00:01:40.080
+bilang, kalau age lebih besar dari 20 dan
+
+00:01:40.600 --> 00:01:43.280
+outfit-nya disco, maka kita lanjut.
+
+00:01:43.980 --> 00:01:46.440
+Kalau age kurang dari 20 atau
+
+00:01:46.500 --> 00:01:49.360
+outfit-nya bukan disco, maka seluruh pernyataan itu,
+
+00:01:49.420 --> 00:01:52.360
+seluruh kondisinya, jadi salah. Kalau kamu pernah
+
+00:01:52.380 --> 00:01:55.080
+belajar logika, mungkin pernah membuat rangkaian elektronik,
+
+00:01:55.140 --> 00:01:57.560
+atau pernah mendalami matematika yang lebih lanjut,
+
+00:01:57.600 --> 00:01:59.920
+ini akan terasa sangat wajar. Kalau belum,
+
+00:01:59.980 --> 00:02:02.620
+kamu akan cepat memahaminya. Kita
+
+00:02:02.680 --> 00:02:06.420
+juga bisa memakai or, dan lagi-lagi, sayangnya,
+
+00:02:06.480 --> 00:02:09.479
+JavaScript tidak punya kata kunci or yang praktis. Sebagai gantinya,
+
+00:02:09.520 --> 00:02:11.340
+kita harus memakai dua garis vertikal
+
+00:02:11.380 --> 00:02:14.360
+yang berdampingan ini untuk berarti “atau”. Kelihatannya aneh,
+
+00:02:14.560 --> 00:02:16.310
+tapi sebenarnya tidak. Kamu akan
+
+00:02:16.340 --> 00:02:19.600
+terbiasa. Jadi sekarang kita bisa bilang,
+
+00:02:19.680 --> 00:02:22.740
+kalau seseorang berusia di atas 20 tahun atau dia memakai
+
+00:02:22.780 --> 00:02:25.440
+pakaian disko, maka dia boleh masuk. Jadi
+
+00:02:25.480 --> 00:02:27.820
+kita akan berpesta seru dengan anak-anak berpakaian disko
+
+00:02:27.920 --> 00:02:31.060
+dan orang dewasa berpakaian seadanya, yang kedengarannya masuk akal.
+
+00:02:32.240 --> 00:02:34.580
+Nah, ada satu hal yang sering bikin orang tersandung,
+
+00:02:34.640 --> 00:02:37.660
+baik pada and maupun or, yaitu
+
+00:02:37.760 --> 00:02:41.020
+setiap sisi dari and/or harus
+
+00:02:41.060 --> 00:02:44.200
+berupa perbandingan yang lengkap. Jadi walaupun kamu
+
+00:02:44.240 --> 00:02:47.500
+membandingkan variabel yang sama di kedua sisi, kamu
+
+00:02:47.620 --> 00:02:50.400
+tetap harus mengulanginya. Kamu tidak bisa menulis if
+
+00:02:50.420 --> 00:02:53.560
+age is greater than 13 and less than
+
+00:02:53.780 --> 00:02:57.310
+20. Kamu harus menulis if age is
+
+00:02:57.340 --> 00:03:00.840
+greater than 13 and age is less
+
+00:03:01.040 --> 00:03:04.200
+than 20. Kedua sisi harus berupa
+
+00:03:04.240 --> 00:03:09.040
+perbandingan yang lengkap. Di latihan berikutnya, kamu akan
+
+00:03:09.080 --> 00:03:12.060
+terus memakai and dan or untuk menggabungkan
+
+00:03:12.100 --> 00:03:14.720
+kondisi. Kamu perlu memikirkan kapan kedua
+
+00:03:14.740 --> 00:03:17.230
+kondisi sama-sama penting dan kapan hanya salah satunya
+
+00:03:17.260 --> 00:03:19.790
+yang perlu bernilai benar. Semoga berhasil, dan
+
+00:03:19.820 --> 00:03:20.660
+sampai jumpa lagi sebentar lagi.

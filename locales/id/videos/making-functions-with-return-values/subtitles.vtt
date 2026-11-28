@@ -1,0 +1,189 @@
+WEBVTT
+
+NOTE en_md5 f4b6546cdc3ad8dde1f9b6b1f3ff5008
+
+00:00:00.120 --> 00:00:02.660
+Selamat datang kembali. Sekarang kamu sudah tahu cara
+
+00:00:02.740 --> 00:00:06.640
+membuat fungsi dengan maupun tanpa input. Tinggal satu
+
+00:00:06.780 --> 00:00:08.480
+hal terakhir yang perlu dipelajari, dan setelah itu kamu akan
+
+00:00:08.520 --> 00:00:11.780
+jadi ahli pembuat fungsi. Hal itu adalah
+
+00:00:11.860 --> 00:00:14.160
+cara memberi fungsimu saluran keluaran.
+
+00:00:15.000 --> 00:00:17.020
+Kamu sudah banyak memakai fungsi yang mengembalikan
+
+00:00:17.060 --> 00:00:20.400
+sesuatu. isAlienAbove memberimu nilai benar atau salah.
+
+00:00:20.500 --> 00:00:24.940
+Math.randomInt(1, 10) memberimu angka acak.
+
+00:00:26.100 --> 00:00:28.780
+Saat Jiki memakai fungsi-fungsi itu, ada sesuatu yang muncul
+
+00:00:28.860 --> 00:00:30.980
+keluar dari saluran keluaran, lalu bisa
+
+00:00:31.000 --> 00:00:34.180
+dia pakai. Jadi untuk melakukannya,
+
+00:00:34.220 --> 00:00:36.890
+kita butuh satu kata kunci baru lagi, yaitu
+
+00:00:36.920 --> 00:00:40.900
+kata kunci return. Kata kunci return memberi tahu Mini
+
+00:00:40.980 --> 00:00:43.320
+Jiki untuk mendorong sesuatu keluar dari
+
+00:00:43.330 --> 00:00:46.230
+saluran. Jadi mari kita buat sebuah fungsi, dan
+
+00:00:46.260 --> 00:00:48.760
+kita beri nama meaningOfLife (makna hidup). Tugas fungsi ini
+
+00:00:48.920 --> 00:00:51.089
+selalu hanya mengembalikan angka
+
+00:00:51.360 --> 00:00:54.200
+42. Fungsi ini tidak punya input. Jadi kamu
+
+00:00:54.240 --> 00:00:58.839
+bisa menulis function meaningOfLife, tanda kurung kurawal, lalu
+
+00:00:58.879 --> 00:01:02.339
+satu baris di dalam fungsi itu, yaitu return
+
+00:01:02.399 --> 00:01:06.539
+42. Baris itu memberi tahu Mini Jiki untuk mendorong
+
+00:01:06.579 --> 00:01:09.539
+angka 42 keluar melalui saluran, lalu
+
+00:01:09.679 --> 00:01:13.559
+berhenti. Ini penting untuk diingat. Kata kunci return
+
+00:01:13.659 --> 00:01:17.079
+memberi tahu Mini Jiki untuk melakukan dua hal. Pertama,
+
+00:01:17.500 --> 00:01:19.639
+menaruh sesuatu di saluran keluaran, dan
+
+00:01:19.779 --> 00:01:22.779
+kedua, lalu berhenti. Begitu kamu
+
+00:01:22.920 --> 00:01:26.579
+memakai kata kunci return, fungsinya selesai. Mini Jiki
+
+00:01:26.619 --> 00:01:30.059
+tidak akan melakukan apa-apa lagi. Nah, kalau kamu belum
+
+00:01:30.139 --> 00:01:32.540
+tahu asal referensi makna hidup ini, asalnya dari
+
+00:01:32.579 --> 00:01:34.880
+buku terkenal, yang sekarang juga jadi film, berjudul
+
+00:01:34.899 --> 00:01:37.840
+The Hitchhiker's Guide to the Galaxy. Aku sarankan kamu membacanya.
+
+00:01:37.879 --> 00:01:39.819
+Eh, kamu tidak perlu terlalu
+
+00:01:39.860 --> 00:01:43.799
+memikirkan arti 42 sekarang. Mari kita
+
+00:01:43.879 --> 00:01:47.819
+lihat contoh yang sedikit lebih rumit, yaitu
+
+00:01:47.879 --> 00:01:50.439
+fungsi yang punya input
+
+00:01:50.520 --> 00:01:52.479
+sekaligus saluran keluaran. Kita pakai
+
+00:01:52.539 --> 00:01:54.520
+ide yang sama, yaitu fungsi bernama meaningOfLife,
+
+00:01:54.599 --> 00:01:57.239
+dan kali ini fungsinya punya lubang
+
+00:01:57.299 --> 00:02:00.439
+bernama age. Kalau seseorang berusia 18 tahun atau lebih,
+
+00:02:00.559 --> 00:02:01.839
+kita akan memberi tahu dia bahwa makna
+
+00:02:01.939 --> 00:02:05.639
+hidup adalah 42. Kalau tidak, kita cukup mengembalikan
+
+00:02:05.699 --> 00:02:09.019
+string “Sorry, too young.” Definisi fungsinya
+
+00:02:09.059 --> 00:02:12.679
+sangat mirip. function meaningOfLife, lalu
+
+00:02:12.699 --> 00:02:15.379
+lubang age, tanda kurung lagi, lalu
+
+00:02:15.419 --> 00:02:18.339
+tanda kurung kurawal. Tapi sekarang kita butuh
+
+00:02:18.400 --> 00:02:20.459
+percabangan if di dalamnya supaya kita bisa bilang,
+
+00:02:20.619 --> 00:02:23.019
+“Kalau age lebih besar dari atau sama dengan
+
+00:02:23.080 --> 00:02:27.499
+18, kita kembalikan 42. Kalau tidak, kita kembalikan ‘Sorry,
+
+00:02:27.540 --> 00:02:30.719
+too young.’” Nah, kalau kita memakai fungsi itu
+
+00:02:30.779 --> 00:02:33.759
+dengan menulis meaningOfLife(15), kita akan menerima
+
+00:02:33.799 --> 00:02:37.119
+string “Sorry, too young.” Dan kalau kita
+
+00:02:37.220 --> 00:02:40.060
+memakainya dengan meaningOfLife(30), kita akan menerima
+
+00:02:40.100 --> 00:02:43.800
+angka 42. Jadi beginilah cara kerja
+
+00:02:43.820 --> 00:02:46.800
+pemrograman pada intinya. Kita membuat banyak
+
+00:02:46.900 --> 00:02:49.360
+blok bangunan kecil seperti ini, lalu menyusunnya
+
+00:02:49.370 --> 00:02:52.960
+menjadi program. Aku akan memberimu
+
+00:02:53.140 --> 00:02:55.190
+beberapa latihan berturut-turut sekarang. Ini
+
+00:02:55.220 --> 00:02:57.700
+mungkin deretan latihan terpanjang yang pernah kamu kerjakan, dan
+
+00:02:57.780 --> 00:03:00.600
+latihan-latihan itu memakai semua yang kamu pelajari di sini bersama banyak
+
+00:03:00.640 --> 00:03:04.120
+hal lain yang sudah kita bahas sebelumnya. Selamat bersenang-senang.
+
+00:03:04.560 --> 00:03:05.960
+Semoga berhasil, dan sampai jumpa lagi di sini
+
+00:03:06.000 --> 00:03:06.310
+sebentar lagi.
