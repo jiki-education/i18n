@@ -1,0 +1,927 @@
+WEBVTT
+
+NOTE en_md5 3444df0fcca33c086487f13e47f69d4f
+
+00:00:00.079 --> 00:00:02.899
+Cześć, witaj w pierwszym odcinku Deep Dive.
+
+00:00:02.939 --> 00:00:04.839
+Te nagrania trochę różnią się od
+
+00:00:04.880 --> 00:00:08.159
+filmów instruktażowych, które już znasz. Są dłuższe
+
+00:00:08.179 --> 00:00:11.440
+i dużo mniej uporządkowane. Gdy skończę
+
+00:00:11.460 --> 00:00:13.100
+ten wstęp, zostanę tylko ja
+
+00:00:13.140 --> 00:00:15.939
+z laptopem. Pogadamy sobie, wyjaśnię
+
+00:00:16.000 --> 00:00:18.680
+Ci dokładniej kilka pomysłów, pewnie zboczę
+
+00:00:18.720 --> 00:00:21.280
+parę razy z tematu, może trochę się rozgadam,
+
+00:00:21.319 --> 00:00:23.479
+ale mam nadzieję, że lepiej zrozumiesz,
+
+00:00:23.559 --> 00:00:27.600
+jak myślę o kodzie. Oglądanie
+
+00:00:27.620 --> 00:00:30.419
+tych odcinków jest całkowicie opcjonalne. Możesz
+
+00:00:30.500 --> 00:00:32.519
+je przewijać do przodu. Możesz wracać,
+
+00:00:32.580 --> 00:00:34.479
+żeby obejrzeć coś jeszcze raz. Możesz je
+
+00:00:34.540 --> 00:00:37.799
+całkiem pominąć, nawet w nie nie klikając.
+
+00:00:37.860 --> 00:00:40.059
+Ale kiedy prowadziliśmy ten kurs
+
+00:00:40.119 --> 00:00:42.939
+jako bootcamp, uczestnicy mówili mi, że te nagrania
+
+00:00:42.979 --> 00:00:45.200
+były chyba najcenniejszą częścią
+
+00:00:45.260 --> 00:00:47.099
+całego kursu, bo pokazywały im,
+
+00:00:47.139 --> 00:00:49.139
+jak myślę. A jak już mówiłem
+
+00:00:49.200 --> 00:00:51.339
+wcześniej, ważną częścią tego kursu jest
+
+00:00:51.420 --> 00:00:53.759
+nauczenie Cię myślenia jak programista,
+
+00:00:53.799 --> 00:00:56.419
+jak ktoś, kto pisze kod. Spróbuj więc obejrzeć kilka
+
+00:00:56.459 --> 00:00:58.319
+takich odcinków, kiedy się pojawią, i zobacz,
+
+00:00:58.360 --> 00:01:00.740
+co o nich myślisz. A na razie przygotuj sobie
+
+00:01:00.799 --> 00:01:02.720
+filiżankę dobrej herbaty albo kawy. Rozsiądź się
+
+00:01:02.779 --> 00:01:04.360
+wygodnie i zaczynajmy.
+
+00:01:05.004 --> 00:01:09.203
+Dobra, w tych odcinkach po prostu
+rozwiązuję ćwiczenie dokładnie tak,
+
+00:01:09.203 --> 00:01:11.243
+jakbym widział je
+po raz pierwszy.
+
+00:01:11.563 --> 00:01:15.083
+Celowo przez dłuższy czas
+nie zaglądałem do tych ćwiczeń.
+
+00:01:15.524 --> 00:01:18.083
+Teraz do nich wracam
+i po prostu je rozgryzam,
+
+00:01:18.083 --> 00:01:19.884
+więc nie znam rozwiązania na pamięć.
+
+00:01:20.364 --> 00:01:23.483
+Podchodzę do tego tak, jak,
+mam nadzieję, Ty do tego podchodzisz.
+
+00:01:23.964 --> 00:01:27.323
+Wartość tego nie polega jednak
+na tym, jaki kod piszę,
+
+00:01:27.483 --> 00:01:29.483
+przynajmniej nie przy tych pierwszych ćwiczeniach.
+
+00:01:29.564 --> 00:01:32.913
+Pewnie napiszę dokładnie
+taki sam kod jak Ty.
+
+00:01:33.633 --> 00:01:37.593
+Głównym celem, przynajmniej na początku, jest
+skłonić Cię do myślenia o tym, jak podchodzić do
+
+00:01:37.593 --> 00:01:41.633
+problemów, a ja opowiem Ci,
+jak sam do nich podchodzę.
+
+00:01:42.124 --> 00:01:46.633
+W dalszej części kursu pojawi się
+mnóstwo różnych sposobów na
+
+00:01:46.633 --> 00:01:50.273
+podejście do problemu. Jedne mają zalety,
+inne wady.
+
+00:01:50.754 --> 00:01:54.993
+Sporo czasu poświęcimy na poznawanie
+tych różnych sposobów myślenia.
+
+00:01:55.983 --> 00:01:59.673
+Tę logikę, to rozwiązywanie problemów,
+można przenieść
+
+00:01:59.993 --> 00:02:02.154
+na wszystkie obszary programowania.
+
+00:02:02.394 --> 00:02:05.114
+Kiedy mówimy o budowaniu różnych rzeczy,
+platform,
+
+00:02:05.114 --> 00:02:09.194
+z wieloma elementami, które składamy w całość,
+może nawet bez pisania kodu,
+
+00:02:09.353 --> 00:02:12.153
+może część kodu piszą za nas
+duże modele językowe,
+
+00:02:12.633 --> 00:02:17.273
+to sposób myślenia jest tą jedną stałą,
+która daje dobre wyniki.
+
+00:02:18.234 --> 00:02:20.954
+Więc jeśli z całego tego kursu
+nie wyniesiesz nic innego,
+
+00:02:21.273 --> 00:02:24.873
+to mam nadzieję, że zapamiętasz
+przynajmniej to, jak myślimy.
+
+00:02:25.984 --> 00:02:27.424
+To proste ćwiczenie.
+
+00:02:28.543 --> 00:02:31.183
+Może nie wydawało się proste,
+ale tak naprawdę jest całkiem proste.
+
+00:02:31.344 --> 00:02:33.903
+Próbujemy po prostu narysować lisi pyszczek
+
+00:02:34.344 --> 00:02:37.743
+i mamy do narysowania kilka trójkątów.
+
+00:02:38.704 --> 00:02:41.623
+Patrzę na treść ćwiczenia.
+
+00:02:41.623 --> 00:02:43.623
+Mówi mi, jak narysować trójkąt.
+
+00:02:43.623 --> 00:02:49.103
+To coś, co dobrze znam. Podaje też
+kilka różnych kolorów.
+
+00:02:49.103 --> 00:02:53.224
+Mamy white, brown,
+orange i charcoal, których możemy użyć.
+
+00:02:53.224 --> 00:02:57.094
+Mamy dwa białe policzki, dwoje brązowych uszu,
+dwie pomarańczowe połowy pyszczka
+
+00:02:57.564 --> 00:03:00.603
+i jeden nos,
+ale złożony z dwóch trójkątów.
+
+00:03:03.004 --> 00:03:07.724
+Zapisałem tu też uwagę, że możesz,
+że możesz najeżdżać kursorem,
+
+00:03:07.804 --> 00:03:12.364
+i warto z tego korzystać. Do tego
+wszystkie liczby są podzielne przez 5.
+
+00:03:12.444 --> 00:03:15.163
+A jedyne, czego tu używamy,
+to ten trójkąt.
+
+00:03:16.284 --> 00:03:18.923
+Jak bym to narysował?
+
+00:03:19.083 --> 00:03:22.203
+Zacząłbym od tego, że
+potrzebuję trójkąta.
+
+00:03:22.444 --> 00:03:25.203
+Piszę więc triangle,
+triangle, czyli funkcję triangle.
+
+00:03:25.444 --> 00:03:29.763
+Potrzebuję trzech punktów. Pierwszy punkt
+tu na górze to, jak widzę, 10, 6.
+
+00:03:29.844 --> 00:03:34.043
+Wiem więc, że to 10, 5. Lubię
+zapisywać
+
+00:03:34.043 --> 00:03:36.083
+te dwie liczby obok siebie bez spacji.
+
+00:03:36.643 --> 00:03:41.444
+Wtedy widzę, że to para
+współrzędnych, a potem zostawiam spację między
+
+00:03:41.923 --> 00:03:46.564
+parami współrzędnych. W funkcji triangle
+sprawdza się to całkiem dobrze.
+
+00:03:46.803 --> 00:03:50.163
+Ale warto też znów się zastanowić,
+jak białe znaki,
+
+00:03:51.103 --> 00:03:55.444
+a przez białe znaki rozumiemy spacje,
+nowe linie, tabulatory i tak dalej,
+
+00:03:56.303 --> 00:04:01.184
+sprawiają, że kod jest czytelniejszy
+dla Ciebie i dla innych osób.
+
+00:04:02.143 --> 00:04:05.184
+Fajny mały wzorzec. Zapisz dwie
+współrzędne razem,
+
+00:04:05.184 --> 00:04:08.543
+a potem zostaw mały odstęp,
+żeby oddzielić od siebie pary.
+
+00:04:09.024 --> 00:04:11.583
+Nie ma znaczenia, który z tych dwóch
+punktów będzie drugi.
+
+00:04:11.583 --> 00:04:14.383
+Ja zjadę tu na dół, do 10, 40.
+
+00:04:15.184 --> 00:04:19.103
+I na koniec mam ten tutaj,
+czyli 50, 40.
+
+00:04:19.823 --> 00:04:21.784
+Pokażę Ci jeszcze coś,
+czego możesz nie znać:
+
+00:04:21.784 --> 00:04:26.143
+nad liczbami pojawia się strzałka,
+dzięki której można je przewijać.
+
+00:04:26.464 --> 00:04:29.603
+Przyda się to bardziej później,
+kiedy zajmiemy się
+
+00:04:29.603 --> 00:04:33.363
+kolorami i podobnymi rzeczami.
+To całkiem przydatna mała
+
+00:04:33.363 --> 00:04:34.043
+funkcjonalność.
+
+00:04:34.853 --> 00:04:37.643
+To jest nasz trójkąt dla lewego ucha.
+
+00:04:38.524 --> 00:04:41.883
+Widzimy, że lewe ucho
+ma być brązowe.
+
+00:04:42.603 --> 00:04:46.323
+Wpisujemy więc brown. I to powinno
+dać mi lewe ucho.
+
+00:04:46.323 --> 00:04:48.124
+Od razu to sprawdzam.
+
+00:04:48.124 --> 00:04:53.483
+Klikam „Uruchom kod”. Widzę,
+że ten trójkąt wygląda mniej więcej dobrze.
+
+00:04:54.073 --> 00:04:57.833
+A jeśli usunę tę linię, czyli zakomentuję ją,
+wstawiając dwa ukośniki,
+
+00:04:57.994 --> 00:05:01.233
+widać, że trójkąt znika.
+
+00:05:01.233 --> 00:05:05.513
+Czyli zadziałało.
+Mamy to i możemy iść dalej.
+
+00:05:05.913 --> 00:05:08.073
+Teraz lewa część pyszczka.
+
+00:05:09.194 --> 00:05:15.233
+Pyszczek to pomarańczowa część.
+Nie mamy pod nią zarysu.
+
+00:05:15.233 --> 00:05:17.113
+Mamy tylko prawą stronę pyszczka.
+
+00:05:17.673 --> 00:05:19.833
+Zastanówmy się. Potrzebujemy triangle.
+
+00:05:20.904 --> 00:05:23.943
+Kiedy patrzę na obrazek,
+widzę, że jest symetryczny.
+
+00:05:24.503 --> 00:05:26.743
+Z symetrii będziemy korzystać
+
+00:05:26.743 --> 00:05:28.423
+w kilku kolejnych ćwiczeniach.
+
+00:05:28.663 --> 00:05:31.743
+Widać, że punkt środkowy
+będzie taki sam.
+
+00:05:31.743 --> 00:05:36.103
+Zacznie się w 50, 30
+i skończy tu na dole w tym samym miejscu,
+
+00:05:36.103 --> 00:05:38.503
+czyli, jak mi się wydaje, w 50, 95.
+
+00:05:39.303 --> 00:05:42.904
+Teraz musimy ustalić,
+gdzie ma sięgać tutaj.
+
+00:05:43.704 --> 00:05:49.543
+Widać to po najechaniu kursorem na ten punkt:
+X wynosi 90, a Y wynosi 40.
+
+00:05:50.483 --> 00:05:55.123
+Czyli X będzie jakiś,
+a Y wyniesie 40,
+
+00:05:55.603 --> 00:05:57.764
+a kolor to orange.
+
+00:05:59.284 --> 00:06:02.003
+Ale co wstawić w miejsce
+tego znaku zapytania?
+
+00:06:02.243 --> 00:06:06.404
+Patrzę i widzę,
+że ta plansza ma 100,
+
+00:06:06.404 --> 00:06:07.923
+czyli sięga tutaj do 100.
+
+00:06:08.724 --> 00:06:12.483
+A to jest 90.
+Czyli jest tu odstęp 10.
+
+00:06:13.284 --> 00:06:16.884
+Wiem więc, że po tej stronie
+też będzie odstęp 10.
+
+00:06:17.603 --> 00:06:18.803
+I wiem, że
+
+00:06:19.923 --> 00:06:24.644
+0 plus 10 to 10,
+więc tutaj będzie 10.
+
+00:06:25.284 --> 00:06:30.084
+Klikam „Uruchom kod”. I dostaję coś,
+co wygląda na dobry pomarańczowy trójkąt.
+
+00:06:31.284 --> 00:06:35.923
+Teraz rysuję lewy policzek.
+Po prostu kopiuję i wklejam.
+
+00:06:36.313 --> 00:06:39.443
+Weźmy ten trójkąt.
+Usuńmy to wszystko.
+
+00:06:39.913 --> 00:06:43.363
+Mamy naszą funkcję triangle,
+więc nie muszę jej znów wpisywać.
+
+00:06:44.253 --> 00:06:47.693
+Lewy policzek będzie biały.
+
+00:06:48.253 --> 00:06:52.813
+Mogę to zmierzyć. To jest 10, 40,
+
+00:06:54.654 --> 00:06:57.293
+a to 5, 60.
+
+00:06:58.094 --> 00:07:00.053
+Pominąłem przecinek.
+To jest coś innego.
+
+00:07:00.053 --> 00:07:03.134
+Mała wskazówka. Zobacz,
+że to nie jest czerwone.
+
+00:07:03.214 --> 00:07:07.454
+Ma jakby zły kolor.
+To się nazywa podświetlanie składni.
+
+00:07:07.613 --> 00:07:12.534
+To fachowe określenie.
+Kolory, które widzisz, to kolory
+
+00:07:12.534 --> 00:07:13.053
+podświetlania składni.
+
+00:07:14.053 --> 00:07:18.693
+To, że coś nie jest czerwone,
+dobrze sygnalizuje, że coś jest nie tak.
+
+00:07:18.933 --> 00:07:21.654
+Jeśli więc zobaczysz coś,
+co ma zły kolor,
+
+00:07:21.733 --> 00:07:24.373
+to znak, że może
+brakuje przecinka.
+
+00:07:24.534 --> 00:07:27.894
+Może. Jeśli tutaj
+nie zamkniemy cudzysłowu, widać, że
+
+00:07:28.293 --> 00:07:33.014
+ten nawias robi się zielony,
+co oznacza, że brakuje cudzysłowu.
+
+00:07:33.413 --> 00:07:35.974
+Te kolory stają się naprawdę
+przydatne jako takie
+
+00:07:35.974 --> 00:07:39.574
+małe skróty w głowie,
+dzięki którym widać, że coś jest nie tak.
+
+00:07:41.224 --> 00:07:43.144
+Wstawiam przecinek.
+I to robi się pomarańczowe.
+
+00:07:43.224 --> 00:07:50.584
+Czyli 10, 40, 5, 60. Potem wracamy
+tu na dół, czyli 50 i 95.
+
+00:07:51.943 --> 00:07:56.743
+Wpisujemy white.
+Dodajemy to i jest dobrze.
+
+00:07:59.224 --> 00:08:04.264
+Dobra. Prawe ucho. Teraz jesteśmy
+już naprawdę w świecie symetrii.
+
+00:08:04.663 --> 00:08:09.224
+Przy prawym uchu jest pytanie: czy dasz radę
+ustalić to bez najeżdżania kursorem?
+
+00:08:10.584 --> 00:08:13.543
+Tak, da się to ustalić
+bez najeżdżania kursorem.
+
+00:08:13.863 --> 00:08:18.464
+Jeśli używasz kursora, zastanów się,
+jak jeszcze można to zrobić.
+
+00:08:18.464 --> 00:08:21.943
+I czy dałoby się wykorzystać to,
+co właśnie zrobiliśmy tutaj, gdzie
+
+00:08:22.743 --> 00:08:26.024
+narysowałem lewy policzek,
+patrząc na prawy.
+
+00:08:26.024 --> 00:08:28.024
+Jak możemy to wykorzystać?
+Ta sama zasada?
+
+00:08:28.024 --> 00:08:30.904
+Jeśli chcesz na chwilę zatrzymać film
+i to przemyśleć, możesz to zrobić,
+
+00:08:31.863 --> 00:08:38.024
+a jeśli nie, to Ci powiem. Wiemy,
+że lewe ucho zaczyna się w 10.
+
+00:08:38.253 --> 00:08:40.014
+Widzimy, że mamy tu 10, 5.
+
+00:08:40.894 --> 00:08:44.894
+Mówiliśmy już wcześniej,
+że 0 plus 10 to 10.
+
+00:08:45.053 --> 00:08:47.613
+Ustaliliśmy, że ten policzek
+kończy się w 90,
+
+00:08:48.413 --> 00:08:52.014
+bo ma odstęp 10,
+a tutaj jest taki sam odstęp.
+
+00:08:52.413 --> 00:08:54.894
+Wiemy więc, że to ucho
+powinno być w 90,
+
+00:08:56.094 --> 00:09:00.974
+wiemy, że schodzi prosto w dół
+do 90, i wiemy, że
+
+00:09:01.443 --> 00:09:03.693
+dochodzi aż do środka, do 50.
+
+00:09:04.413 --> 00:09:07.454
+Możemy to odwrócić i mamy taki sam
+
+00:09:08.654 --> 00:09:12.053
+trójkąt. Potem możemy zrobić
+prawą część pyszczka.
+
+00:09:12.053 --> 00:09:16.733
+Znów obejdzie się bez kursora,
+wystarczy zmienić to 10 na 90, bo to jest
+
+00:09:16.733 --> 00:09:22.454
+symetryczne. Potem prawy policzek,
+i przy prawym policzku znów
+
+00:09:22.454 --> 00:09:28.974
+chcemy symetrii. To zmienia się na 90,
+to na 95, a to zostaje 50,
+
+00:09:29.543 --> 00:09:31.063
+i mamy biały policzek.
+
+00:09:31.543 --> 00:09:33.224
+Potem potrzebujemy nosa.
+
+00:09:34.344 --> 00:09:38.983
+Nos ma kolor charcoal,
+więc piszemy triangle.
+
+00:09:39.944 --> 00:09:44.023
+Trochę sam sobie to popsułem, bo
+
+00:09:44.023 --> 00:09:45.983
+narysowałem coś na wierzchu. Ale da się.
+
+00:09:45.983 --> 00:09:50.743
+Masz dwie opcje. Po pierwsze,
+możesz zakomentować cały kod.
+
+00:09:51.224 --> 00:09:54.103
+Możesz po prostu dodać komentarze,
+
+00:09:55.554 --> 00:09:56.033
+o tak,
+
+00:09:56.914 --> 00:09:59.074
+i dzięki temu możesz
+
+00:10:00.834 --> 00:10:04.873
+zakomentować tę linię. Jeśli kiedyś to zobaczysz,
+może to po prostu literówka.
+
+00:10:04.873 --> 00:10:08.794
+Nie ma się czego bać. Kliknij „Uruchom kod”,
+zakomentuj to, co jest nie tak,
+
+00:10:08.794 --> 00:10:10.594
+kliknij „Uruchom kod” jeszcze raz i wszystko wraca.
+
+00:10:11.233 --> 00:10:15.633
+Tutaj widać, że to powinno być 50 i 85.
+
+00:10:17.153 --> 00:10:20.753
+Czyli 50 i 85. A potem
+możemy przywrócić te linie.
+
+00:10:21.974 --> 00:10:22.273
+I.
+
+00:10:26.353 --> 00:10:29.474
+Jakoś udało mi się usunąć słowo
+triangle z tej pierwszej linii.
+
+00:10:30.113 --> 00:10:30.753
+Dobra,
+
+00:10:34.273 --> 00:10:36.674
+zmierzmy to. Czyli 40, 90.
+
+00:10:37.873 --> 00:10:42.194
+Wiemy, że to jest symetryczne. Od razu
+wiemy więc, że następny punkt to
+
+00:10:42.194 --> 00:10:48.214
+60, 90. I wiemy, że to charcoal,
+słowo, które ciężko mi przeliterować.
+
+00:10:48.934 --> 00:10:53.893
+Mamy górną część nosa,
+a potem dolną część nosa.
+
+00:10:54.214 --> 00:11:00.054
+To jest trójkąt symetryczny
+do tego górnego trójkąta.
+
+00:11:00.454 --> 00:11:04.533
+Będzie miał dokładnie
+taki sam kształt jak ten,
+
+00:11:04.934 --> 00:11:07.493
+ale tamten idzie od 85 do 90.
+
+00:11:07.893 --> 00:11:13.074
+Wiemy, że ten ma iść
+od 90 do 95, bo znowu
+
+00:11:13.233 --> 00:11:16.834
+możemy traktować 90 jako linię środkową:
+5 nad nią, 5 pod nią.
+
+00:11:17.873 --> 00:11:20.594
+Mamy dolną część nosa
+i wszystko jest zaliczone.
+
+00:11:21.153 --> 00:11:24.393
+Potem usunąłbym te TODO.
+
+00:11:24.393 --> 00:11:26.834
+Starajmy się, żeby kod był
+ładny i uporządkowany.
+
+00:11:27.794 --> 00:11:31.794
+A tak przy okazji, w niektórych odcinkach
+zobaczysz tę rzecz tu na dole.
+
+00:11:31.794 --> 00:11:34.753
+To dlatego, że uruchamiam wszystko
+lokalnie na swoim komputerze,
+
+00:11:35.074 --> 00:11:36.513
+a nie na stronie Jiki.
+
+00:11:36.834 --> 00:11:39.474
+Mam włączone dodatkowe
+narzędzia do debugowania.
+
+00:11:39.554 --> 00:11:42.824
+Jeśli więc zobaczysz coś takiego na dole,
+po prostu to zignoruj.
+
+00:11:44.584 --> 00:11:46.824
+Dobra, mamy ładny, uporządkowany kod.
+
+00:11:46.824 --> 00:11:49.623
+Możemy usunąć też to: „Czy dasz radę
+ustalić to bez najeżdżania kursorem?”
+
+00:11:50.103 --> 00:11:52.863
+Teraz te komentarze dokumentują nasz kod.
+
+00:11:52.863 --> 00:11:54.903
+Ten mówi, że to jest lewe ucho.
+
+00:11:54.903 --> 00:11:57.544
+Właściwie pewnie zmieniłbym je
+na same nazwy części.
+
+00:11:58.103 --> 00:11:59.783
+Bo nie chcemy, żeby były poleceniami,
+
+00:11:59.783 --> 00:12:02.263
+chcemy, żeby opisywały,
+co robi kod.
+
+00:12:02.344 --> 00:12:04.584
+Ale wybierz to,
+co jest dla Ciebie najjaśniejsze.
+
+00:12:05.064 --> 00:12:08.344
+W każdym razie warto mieć komentarze,
+które wyjaśniają, czym są poszczególne rzeczy.
+
+00:12:08.344 --> 00:12:10.424
+Ten właściwie nazwę po prostu „nos”.
+
+00:12:10.974 --> 00:12:14.013
+Mam dwie takie linie
+i to jest dość oczywiste,
+
+00:12:15.133 --> 00:12:16.733
+a przy okazji mogę pogrupować elementy.
+
+00:12:16.733 --> 00:12:20.013
+Mogę też uznać,
+że chcę mieć oba uszy razem,
+
+00:12:20.334 --> 00:12:25.054
+i napisać po prostu „uszy”,
+a części pyszczka też razem.
+
+00:12:25.643 --> 00:12:29.454
+I policzki razem,
+
+00:12:30.334 --> 00:12:30.974
+o tak.
+
+00:12:32.733 --> 00:12:36.054
+Wszystko nadal działa,
+ale teraz jest trochę porządniej.
+
+00:12:36.054 --> 00:12:38.253
+Lepiej też widać symetrię.
+
+00:12:38.893 --> 00:12:41.253
+Zawsze poświęć kilka minut
+po rozwiązaniu
+
+00:12:41.253 --> 00:12:43.594
+ćwiczenia, żeby poczuć
+z niego prawdziwą dumę.
+
+00:12:43.594 --> 00:12:47.594
+Uporządkuj kod, zadbaj, żeby był
+naprawdę schludny. Widać, o ile
+
+00:12:47.594 --> 00:12:49.834
+jest czytelniej, kiedy te dwie linie
+są obok siebie.
+
+00:12:50.263 --> 00:12:53.513
+Wszystko wydaje się
+od razu trochę czystsze.
+
+00:12:53.513 --> 00:12:56.633
+Jeszcze jedna rzecz przed końcem,
+tu na dole.
+
+00:12:56.633 --> 00:12:59.513
+Przesunę to tylko
+z drogi, tu na dół.
+
+00:13:00.233 --> 00:13:03.914
+Widzisz ten pasek? Może jeszcze
+nie zdarzyło Ci się go używać,
+
+00:13:03.993 --> 00:13:06.474
+ale to jest coś, co nazywamy suwakiem.
+
+00:13:07.113 --> 00:13:09.033
+Później bardzo Ci się przyda.
+
+00:13:09.434 --> 00:13:13.633
+Pozwala przechodzić krok po kroku
+przez kolejne linie kodu.
+
+00:13:13.633 --> 00:13:13.993
+Na przykład
+
+00:13:15.103 --> 00:13:19.344
+po jednej naraz. Zamiast widzieć
+od razu cały pyszczek, możesz
+
+00:13:19.824 --> 00:13:22.304
+przejść krok po kroku i zobaczyć,
+co robi każda linia kodu.
+
+00:13:22.704 --> 00:13:25.623
+A kiedy piszesz programy, które mają 200
+
+00:13:25.623 --> 00:13:28.983
+linii kodu albo uruchamiają ten sam kod
+
+00:13:28.983 --> 00:13:31.424
+wiele, wiele razy i dzieje się w nich
+powiedzmy tysiąc,
+
+00:13:31.824 --> 00:13:34.023
+dziesięć tysięcy rzeczy, a
+
+00:13:34.023 --> 00:13:35.743
+do takich ćwiczeń niedługo dojdziemy,
+
+00:13:36.224 --> 00:13:40.944
+to staje się
+naprawdę, naprawdę przydatne.
+
+00:13:41.883 --> 00:13:46.363
+Mamy tu też u góry przełącznik
+panelu informacyjnego.
+
+00:13:46.444 --> 00:13:50.964
+I znów, kiedy kod będzie
+dużo bardziej skomplikowany,
+
+00:13:50.964 --> 00:13:53.003
+pojawi się tu mnóstwo kroków
+i zrobi się
+
+00:13:53.003 --> 00:13:54.844
+dużo bardziej szczegółowo
+i dużo bardziej skomplikowanie.
+
+00:13:55.483 --> 00:13:58.523
+Ale na razie widać tylko,
+że mówi Ci, że Jiki
+
+00:13:58.603 --> 00:14:02.084
+użył funkcji triangle
+z tymi różnymi argumentami.
+
+00:14:02.084 --> 00:14:05.283
+Możesz też najeżdżać na nie kursorem,
+na przykład na triangle.
+
+00:14:05.283 --> 00:14:09.164
+Zobaczysz, że podświetla się tu to słowo
+i podświetla się cała linia.
+
+00:14:09.783 --> 00:14:13.064
+Znów, może to się jeszcze nie wydawać
+bardzo przydatne, ale później,
+
+00:14:13.064 --> 00:14:15.824
+kiedy pojawi się może 20 kroków
+i zechcesz
+
+00:14:15.824 --> 00:14:19.064
+dokładnie ustalić, co się dzieje
+w każdym miejscu tej linii kodu,
+
+00:14:19.224 --> 00:14:20.903
+to naprawdę Ci się przyda.
+
+00:14:21.863 --> 00:14:24.424
+No i możesz też po prostu
+kliknąć ten przycisk odtwarzania,
+
+00:14:24.533 --> 00:14:26.743
+żeby odtworzyć wszystko po kolei.
+
+00:14:27.294 --> 00:14:30.674
+A jeśli wrócisz do swojej gry
+Space Invaders, tej,
+
+00:14:30.674 --> 00:14:34.464
+tej z wcześniejszych ćwiczeń, możesz
+to teraz wypróbować, możesz się cofnąć,
+
+00:14:34.464 --> 00:14:37.383
+użyć suwaka,
+patrzeć, jak kosmici są zestrzeliwani,
+
+00:14:37.623 --> 00:14:39.983
+albo wejść do labiryntu
+i użyć tego suwaka,
+
+00:14:39.983 --> 00:14:43.263
+przesuwać się w tył i w przód i patrzeć,
+jak Twój ludzik przechodzi labirynt.
+
+00:14:43.263 --> 00:14:46.023
+A potem znów kliknąć odtwarzanie,
+żeby obejrzeć całą animację.
+
+00:14:46.263 --> 00:14:51.503
+To naprawdę przydatne małe narzędzie.
+Kryje się za nim więcej złożoności,
+
+00:14:51.503 --> 00:14:54.503
+do której wrócimy
+w jednym z kolejnych odcinków.
+
+00:14:54.824 --> 00:14:56.664
+Ale na razie mam nadzieję, że to się przydało.
+
+00:14:56.853 --> 00:15:02.103
+Nie mogę się doczekać, aż później
+zagłębimy się w naprawdę złożone ćwiczenia.
+
+00:15:02.533 --> 00:15:06.373
+Ale teraz zostawiam Cię z tym. Mam nadzieję,
+że spodobają Ci się kolejne ćwiczenia z rysowania.
+
+00:15:06.773 --> 00:15:08.853
+Ciągle zastanawiaj się nad tym,
+jak myślisz.
+
+00:15:09.174 --> 00:15:13.814
+Nie spiesz się, dbaj o porządek w kodzie
+i na pewno świetnie Ci pójdzie.
+
+00:15:13.893 --> 00:15:14.773
+Dzięki za obejrzenie.

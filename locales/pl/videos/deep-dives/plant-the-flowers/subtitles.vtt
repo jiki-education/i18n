@@ -1,0 +1,403 @@
+WEBVTT
+
+NOTE en_md5 9247bff9de74f40326d826673828fc84
+
+00:00:00.396 --> 00:00:05.035
+Witaj w kolejnym deep dive. Mam nadzieję,
+że te ćwiczenia sprawiają Ci frajdę.
+
+00:00:05.275 --> 00:00:07.275
+To pierwsze ćwiczenie,
+w którym naprawdę
+
+00:00:07.275 --> 00:00:09.555
+zaczynamy łączyć
+kilka różnych pojęć.
+
+00:00:09.555 --> 00:00:12.476
+Moim zdaniem to całkiem fajne,
+zabawne ćwiczenie.
+
+00:00:14.635 --> 00:00:15.996
+Szybko je z Tobą przejdę.
+
+00:00:16.655 --> 00:00:18.955
+Omawialiśmy je też
+w filmie z lekcją.
+
+00:00:18.955 --> 00:00:24.396
+Ale przyjrzyjmy się mu. Wiemy więc,
+że chcemy coś zrobić dziewięć razy.
+
+00:00:24.475 --> 00:00:27.905
+To nasza pierwsza wskazówka.
+Chcemy posadzić dziewięć kwiatów
+
+00:00:28.385 --> 00:00:30.986
+i wiemy, w jakich miejscach
+chcemy je posadzić.
+
+00:00:30.986 --> 00:00:35.265
+10, 20, 30, 40, 50, 60, 70, 80 i 90.
+
+00:00:36.466 --> 00:00:39.786
+Widać więc pewnie, że dzieli je
+zawsze odstęp 10.
+
+00:00:39.786 --> 00:00:44.225
+I mówimy to tutaj wprost. Pierwszy
+kwiat na 10, drugi kwiat na 20.
+
+00:00:44.865 --> 00:00:47.466
+Chcemy więc coś powtarzać. No dobrze,
+
+00:00:47.466 --> 00:00:49.345
+zróbmy to na chwilę
+bez powtarzania.
+
+00:00:49.345 --> 00:00:53.345
+Po prostu to przemyślmy. Ręczny
+sposób, żeby to zrobić bez
+
+00:00:54.176 --> 00:00:57.295
+użycia repeat, wygląda tak.
+Jest potwornie nudny,
+
+00:00:59.536 --> 00:01:01.456
+ale warto zobaczyć ten wzorzec.
+
+00:01:01.456 --> 00:01:03.456
+Sadzimy więc coś w ten sposób.
+
+00:01:04.016 --> 00:01:08.096
+Chcemy więc móc powiedzieć:
+dobrze, powtórzmy to dziewięć razy.
+
+00:01:10.096 --> 00:01:10.495
+I
+
+00:01:11.456 --> 00:01:14.695
+chcemy po prostu zrobić to. Ale
+za pierwszym razem ma to być 10.
+
+00:01:14.695 --> 00:01:17.055
+Następnym razem 20. Potem 30.
+
+00:01:17.376 --> 00:01:19.135
+Do tego potrzebujemy zmiennej.
+
+00:01:19.135 --> 00:01:20.896
+Potrzebujemy pudełka,
+które przechowa naszą wartość.
+
+00:01:21.055 --> 00:01:24.016
+Musimy za każdym razem
+zapisać w tym pudełku nową wartość.
+
+00:01:24.525 --> 00:01:27.165
+A potem musimy ją wyjąć
+i przekazać do funkcji plant.
+
+00:01:28.046 --> 00:01:32.126
+Mamy tu podpowiedź,
+jak możemy nazwać tę zmienną.
+
+00:01:32.126 --> 00:01:34.046
+position. Ale możemy
+nazwać ją, jak chcemy.
+
+00:01:34.126 --> 00:01:35.245
+Przyjmijmy jednak position.
+
+00:01:36.046 --> 00:01:38.365
+I ustawmy ją na zero.
+
+00:01:38.846 --> 00:01:43.566
+A potem za każdym razem na początku
+pętli będziemy dodawać do niej 10
+
+00:01:44.206 --> 00:01:47.566
+i będziemy jej potem
+używać w funkcji.
+
+00:01:48.126 --> 00:01:52.046
+I to wszystko. Ładnie i prosto,
+ale zobaczmy, co się tu
+
+00:01:52.046 --> 00:01:54.516
+naprawdę dzieje. Niech te
+piękne kwiaty sobie zakwitną.
+
+00:01:54.665 --> 00:01:55.546
+Rozkwitną. Dobrze,
+
+00:01:56.426 --> 00:01:59.146
+użyjmy suwaka i szybko
+przejrzyjmy to krok po kroku,
+
+00:01:59.546 --> 00:02:01.546
+żeby mieć pewność, że mamy
+dobry model mentalny.
+
+00:02:01.786 --> 00:02:06.346
+Tworzymy więc nową zmienną,
+nowe pudełko, jak to nazywamy, o nazwie position.
+
+00:02:06.426 --> 00:02:11.026
+I wkładamy do niego zero.
+Potem powtarzamy dziewięć razy.
+
+00:02:11.026 --> 00:02:12.105
+I za pierwszym razem
+
+00:02:13.385 --> 00:02:18.346
+zaczynamy, wchodzimy do środka
+i bierzemy pudełko position.
+
+00:02:18.985 --> 00:02:21.306
+Patrzymy, co w nim jest,
+a teraz jest tam 0.
+
+00:02:22.306 --> 00:02:26.306
+Potem liczymy 0 plus 10,
+co daje nam 10.
+
+00:02:26.945 --> 00:02:30.306
+A potem wkładamy 10
+z powrotem do tego samego pudełka.
+
+00:02:30.705 --> 00:02:33.985
+Bierzemy pudełko, zaglądamy do niego,
+widzimy, że jest tam zero.
+
+00:02:33.985 --> 00:02:38.145
+Liczymy zero plus 10, dostajemy 10
+i wkładamy je z powrotem do pudełka.
+
+00:02:38.145 --> 00:02:41.985
+To tylko jeden krok. I to
+jest cały ten krok.
+
+00:02:43.105 --> 00:02:44.906
+Potem przechodzimy
+do następnej linijki kodu.
+
+00:02:44.906 --> 00:02:48.635
+Do następnego kroku. Teraz
+znowu zdejmujemy pudełko z półki.
+
+00:02:48.876 --> 00:02:52.795
+Wyjmujemy z niego 10. A potem
+używamy tego plant, tutaj z 10,
+
+00:02:52.955 --> 00:02:57.116
+żeby posadzić roślinę
+na pozycji 10. Potem znowu to przechodzimy.
+
+00:02:57.116 --> 00:02:58.876
+Powtarzamy. To jest drugi raz.
+
+00:03:00.475 --> 00:03:04.876
+Zdejmujemy pudełko z półki. Wyjmujemy 10,
+które włożyliśmy tam ostatnio.
+
+00:03:05.036 --> 00:03:08.716
+Liczymy 10 plus 10, dostajemy 20
+i wkładamy je z powrotem do pudełka.
+
+00:03:09.276 --> 00:03:12.556
+Potem idziemy dalej
+i wywołujemy plant z 20.
+
+00:03:15.735 --> 00:03:19.336
+Trzeci raz, wchodzimy. Tym razem
+w pudełku jest już 20.
+
+00:03:19.336 --> 00:03:21.735
+Dodajemy więc 10, mamy 30 i tak dalej.
+
+00:03:23.175 --> 00:03:24.295
+Jak widać,
+
+00:03:26.216 --> 00:03:27.575
+sam pomysł jest dość
+
+00:03:28.376 --> 00:03:31.895
+prosty. Weź pudełko, zobacz, co w nim jest,
+zrób coś z tym,
+
+00:03:31.895 --> 00:03:32.936
+włóż to z powrotem do pudełka.
+
+00:03:34.616 --> 00:03:37.575
+Ale jeśli nie rozdzielisz
+tych kroków jeden po drugim,
+
+00:03:37.575 --> 00:03:39.735
+łatwo się pogubić,
+trzymając to wszystko w głowie.
+
+00:03:39.816 --> 00:03:41.936
+Bardzo ważne jest, żeby
+na koniec pomyśleć tak:
+
+00:03:41.936 --> 00:03:43.975
+Jiki wziął pudełko, coś z nim zrobił.
+
+00:03:44.056 --> 00:03:46.996
+Odłożył pudełko. Teraz po prostu
+siedzi sobie i odpoczywa,
+
+00:03:46.996 --> 00:03:48.675
+czekając na następną linijkę kodu.
+
+00:03:48.915 --> 00:03:53.635
+To, że następna linijka kodu też
+używa tego pudełka, jest raczej bez znaczenia.
+
+00:03:53.635 --> 00:03:55.436
+Nie warto się nad tym
+za bardzo zastanawiać.
+
+00:03:55.436 --> 00:03:58.836
+Traktuj w głowie każdą linijkę kodu
+osobno.
+
+00:03:59.475 --> 00:04:00.996
+Chcę Ci pokazać jeszcze jedną rzecz:
+
+00:04:01.955 --> 00:04:05.556
+możemy też zrobić to tak.
+To również jest poprawne rozwiązanie.
+
+00:04:06.195 --> 00:04:09.795
+Jeśli zaskakuje Cię, że to poprawne
+rozwiązanie, po prostu to przemyśl.
+
+00:04:09.876 --> 00:04:12.276
+Zastanów się nad tym
+i nad tym, dlaczego tak jest,
+
+00:04:13.265 --> 00:04:15.026
+a ja zaraz przez to przejdę.
+
+00:04:15.825 --> 00:04:18.706
+Tym razem tworzymy
+pudełko i wkładamy do niego 10.
+
+00:04:19.346 --> 00:04:21.985
+Potem powtarzamy coś dziewięć razy.
+
+00:04:22.706 --> 00:04:26.386
+Od razu sadzimy,
+więc idziemy i bierzemy pudełko.
+
+00:04:26.386 --> 00:04:28.065
+Jest w nim 10, używamy tego.
+
+00:04:28.545 --> 00:04:30.466
+A potem idziemy dalej.
+
+00:04:30.625 --> 00:04:34.906
+I robimy drugi krok, czyli teraz
+bierzemy pudełko i wyjmujemy 10.
+
+00:04:34.985 --> 00:04:38.305
+10 plus 10 to 20,
+wkładamy 20 z powrotem do pudełka.
+
+00:04:39.165 --> 00:04:42.326
+Potem znowu powtarzamy, teraz
+sadzimy i używamy 20.
+
+00:04:42.326 --> 00:04:44.206
+To dokładnie ten sam pomysł.
+
+00:04:44.446 --> 00:04:49.086
+Po prostu aktualizujemy wartość w pudełku
+dopiero po tym, jak jej użyliśmy.
+
+00:04:49.805 --> 00:04:52.045
+Czy jedno z tych rozwiązań jest dobre,
+a drugie złe?
+
+00:04:52.365 --> 00:04:55.165
+Nie, oba są całkowicie w porządku.
+
+00:04:55.886 --> 00:04:58.685
+Ja osobiście trochę
+bardziej wolę
+
+00:04:59.086 --> 00:05:01.165
+to, co jest teraz na ekranie.
+
+00:05:01.675 --> 00:05:04.605
+Jakiś czas temu napisałem
+o tym post na forum.
+
+00:05:04.716 --> 00:05:09.245
+Nie będę go teraz całego omawiać,
+bo moim zdaniem potrzeba trochę więcej wiedzy,
+
+00:05:09.245 --> 00:05:10.725
+żeby miał on sens.
+
+00:05:11.125 --> 00:05:11.526
+Ale
+
+00:05:12.406 --> 00:05:13.805
+pobaw się obydwoma sposobami.
+
+00:05:13.805 --> 00:05:17.446
+Zobacz, który z tych dwóch
+stylów jest wygodny.
+
+00:05:17.605 --> 00:05:21.446
+Wygodny dla Ciebie. Jak mówiłem,
+żaden nie jest ani dobry, ani zły.
+
+00:05:21.446 --> 00:05:23.526
+Różni ludzie mają różne
+zdania na temat tego, co najlepsze.
+
+00:05:24.086 --> 00:05:28.725
+No ale eksperymentuj z oboma,
+kiedy będziemy przechodzić przez kolejne ćwiczenia.
+
+00:05:29.276 --> 00:05:32.565
+Czasami jeden będzie
+wyraźnie lepszy od drugiego.
+
+00:05:32.565 --> 00:05:36.725
+Na przykład może oszczędzić Ci pracy,
+jeśli zrobisz jedno najpierw, a drugie potem.
+
+00:05:36.886 --> 00:05:39.365
+Na pewno zobaczysz to
+w bardziej złożonych ćwiczeniach.
+
+00:05:39.855 --> 00:05:42.725
+No ale po prostu nabierz nawyku
+eksperymentowania z takimi rzeczami,
+
+00:05:42.725 --> 00:05:43.846
+bawienia się nimi
+
+00:05:44.966 --> 00:05:47.766
+i wyrabiania sobie zdania
+na temat tego, co najlepsze.
+
+00:05:47.766 --> 00:05:49.685
+A swoje zdanie zawsze
+możesz później zmienić.
+
+00:05:50.115 --> 00:05:52.725
+To jak najbardziej dozwolone.
+Dzięki za obejrzenie.
+
+00:05:53.336 --> 00:05:55.005
+Do zobaczenia
+w następnym filmie.
+
+00:05:55.005 --> 00:05:55.685
+Na razie, cześć.

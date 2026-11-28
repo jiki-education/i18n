@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 51f04781025bf1dbba2ded55c062926f
+
+00:00:00.140 --> 00:00:03.580
+Witaj z powrotem. Do tej pory, tworząc zmienne,
+
+00:00:03.740 --> 00:00:06.560
+używaliśmy po prostu prostych wartości: liczby takiej jak
+
+00:00:06.840 --> 00:00:10.620
+50 lub ciągu znaków takiego jak yellow. Zmienne
+
+00:00:10.660 --> 00:00:13.340
+zyskują jednak na sile, gdy możemy
+
+00:00:13.440 --> 00:00:16.460
+łączyć je ze sobą. Na przykład
+
+00:00:16.540 --> 00:00:19.000
+wtedy, gdy chcemy określić, że lewa krawędź
+
+00:00:19.040 --> 00:00:22.030
+prostokąta powinna być w konkretnej odległości
+
+00:00:22.080 --> 00:00:25.660
+od krawędzi planszy. W programowaniu
+
+00:00:25.720 --> 00:00:28.810
+możemy korzystać z prostych działań matematycznych: dodawania,
+
+00:00:28.940 --> 00:00:32.340
+odejmowania, mnożenia i dzielenia. Możemy też
+
+00:00:32.380 --> 00:00:35.140
+wykorzystywać w nich zmienne, które już
+
+00:00:35.200 --> 00:00:39.020
+wcześniej utworzyliśmy. Załóżmy, że
+
+00:00:39.060 --> 00:00:41.300
+chcemy narysować prostokąt na naszej planszy
+
+00:00:41.960 --> 00:00:43.800
+i chcemy, aby zaczynał się 10 jednostek
+
+00:00:44.480 --> 00:00:46.980
+od lewej i od prawej krawędzi oraz
+
+00:00:47.200 --> 00:00:48.960
+20 od górnej i dolnej.
+
+00:00:49.900 --> 00:00:51.580
+Znajdzie się więc na środku
+
+00:00:51.620 --> 00:00:53.900
+planszy i będzie nieco szerszy niż wyższy.
+
+00:00:53.960 --> 00:00:57.740
+Pamiętasz pewnie, że kiedy rysujemy
+
+00:00:57.760 --> 00:01:00.430
+prostokąt, musimy znać jego left, top,
+
+00:01:00.600 --> 00:01:02.510
+width i height, a także jego kolor.
+
+00:01:03.360 --> 00:01:04.820
+Możemy więc zacząć od ich
+
+00:01:04.920 --> 00:01:08.320
+wypisania. Teraz musimy obliczyć,
+
+00:01:08.420 --> 00:01:10.220
+ile powinny wynosić left, top, width
+
+00:01:10.240 --> 00:01:13.100
+i height. Przypiszmy je więc. Left to
+
+00:01:13.260 --> 00:01:15.660
+20. Przepraszam, left to 10. Top to
+
+00:01:15.940 --> 00:01:18.920
+20. A width? Width to
+
+00:01:19.020 --> 00:01:22.020
+rozmiar planszy, czyli 100, minus
+
+00:01:22.080 --> 00:01:23.340
+10 z lewej i 10
+
+00:01:23.360 --> 00:01:26.100
+z prawej strony, co daje 80. Natomiast
+
+00:01:26.180 --> 00:01:29.040
+height to wysokość planszy, czyli
+
+00:01:29.080 --> 00:01:31.580
+również 100, minus 20
+
+00:01:31.640 --> 00:01:33.660
+na górze i 20 na dole, a zatem
+
+00:01:33.960 --> 00:01:37.860
+60. Możemy więc przypisać te zmienne: left
+
+00:01:37.920 --> 00:01:42.840
+10, top 20, width 80, height 60.
+
+00:01:42.860 --> 00:01:44.880
+Mam nadzieję, że to już coś znajomego. Tak właśnie
+
+00:01:44.920 --> 00:01:46.700
+pracujemy od początku
+
+00:01:46.740 --> 00:01:50.940
+w ćwiczeniach. Ale co się stanie, jeśli zechcemy
+
+00:01:50.960 --> 00:01:54.140
+przesunąć prostokąt nieco do środka
+
+00:01:54.160 --> 00:01:55.400
+i trochę go zmniejszyć? Co, jeśli zechcemy
+
+00:01:55.460 --> 00:01:57.040
+oddalić go o 20 od lewej i
+
+00:01:57.100 --> 00:01:59.040
+prawej strony oraz o 30 od góry i
+
+00:01:59.060 --> 00:02:02.620
+dołu? Musielibyśmy policzyć wszystko
+
+00:02:02.720 --> 00:02:06.320
+od nowa. Wartość width wynosiłaby wtedy 100 minus
+
+00:02:06.560 --> 00:02:10.280
+20 minus 20, a height
+
+00:02:10.360 --> 00:02:14.320
+100 minus 30 minus 30. To zdecydowanie
+
+00:02:14.420 --> 00:02:17.280
+więcej pracy i liczenia, niż ktokolwiek
+
+00:02:17.320 --> 00:02:20.400
+by chciał. Zamiast tego możemy zlecić
+
+00:02:20.420 --> 00:02:24.000
+to zadanie komputerowi. Możemy
+
+00:02:24.060 --> 00:02:27.680
+ustawić width jako 100 minus
+
+00:02:27.840 --> 00:02:31.620
+left minus left, a height
+
+00:02:31.700 --> 00:02:34.720
+jako 100 minus top minus top,
+
+00:02:34.960 --> 00:02:37.580
+bo od góry i od dołu jest tyle samo. Możemy
+
+00:02:37.600 --> 00:02:40.980
+też zapisać to jako 100 minus
+
+00:02:41.240 --> 00:02:44.820
+left razy dwa, lub 100 minus
+
+00:02:44.940 --> 00:02:48.620
+top razy dwa. Teraz, jeśli zmienimy
+
+00:02:48.660 --> 00:02:52.040
+left lub top, wartości width i
+
+00:02:52.080 --> 00:02:54.860
+height również ulegną zmianie. Elementy zaczynają
+
+00:02:54.900 --> 00:02:57.430
+więc być od siebie zależne. A co
+
+00:02:57.440 --> 00:03:00.960
+z planszą? Obecnie jej rozmiar to 100. Ale co,
+
+00:03:01.020 --> 00:03:03.700
+jeśli zmieni się on na 200 szerokości
+
+00:03:03.740 --> 00:03:06.540
+i wysokości? Wtedy powinniśmy utworzyć
+
+00:03:06.620 --> 00:03:09.560
+zmienną o nazwie canvasSize i ustawić jej wartość
+
+00:03:09.580 --> 00:03:13.230
+na 100. Teraz nasze left to, przepraszam,
+
+00:03:13.260 --> 00:03:17.740
+nasze width to canvasSize minus left razy dwa,
+
+00:03:18.200 --> 00:03:22.160
+a height to canvasSize minus top razy
+
+00:03:22.200 --> 00:03:26.120
+dwa. Zastanówmy się, co robi Jiki,
+
+00:03:26.480 --> 00:03:30.580
+kiedy piszemy, że let height równa się canvasSize minus
+
+00:03:30.700 --> 00:03:33.310
+top razy dwa. Zaczyna od zdjęcia
+
+00:03:33.310 --> 00:03:35.220
+z półki pudełka top
+
+00:03:35.260 --> 00:03:37.660
+i znajduje w nim 20. Wyciąga
+
+00:03:37.680 --> 00:03:40.160
+swój kieszonkowy kalkulator, mnoży 20 przez dwa
+
+00:03:40.580 --> 00:03:42.740
+i zapamiętuje wynik 40.
+
+00:03:43.720 --> 00:03:45.860
+Następnie zdejmuje z półki pudełko
+
+00:03:45.900 --> 00:03:49.540
+canvasSize, znajduje w nim 100
+
+00:03:49.600 --> 00:03:52.780
+i oblicza, że 100 minus 40 to 60.
+
+00:03:53.840 --> 00:03:56.350
+Teraz już wie, że tak naprawdę
+
+00:03:56.400 --> 00:04:00.000
+chcemy przypisać zmiennej height wartość 60. Wykonuje więc
+
+00:04:00.040 --> 00:04:02.320
+instrukcję let: bierze nowe pudełko,
+
+00:04:02.360 --> 00:04:04.440
+pisze na nim height, a potem wkłada
+
+00:04:04.580 --> 00:04:06.900
+do niego 60. Kiedy później użyje height,
+
+00:04:07.040 --> 00:04:09.600
+po prostu ponownie wyciągnie z niego
+
+00:04:09.640 --> 00:04:13.720
+to 60. Spróbuj zastosować to wszystko w praktyce
+
+00:04:13.820 --> 00:04:16.180
+w kolejnych ćwiczeniach, a z każdym razem
+
+00:04:16.240 --> 00:04:18.649
+będzie to coraz jaśniejsze. Kiedy już
+
+00:04:18.700 --> 00:04:22.070
+wszystko będzie działać, spróbuj pozmieniać wartości
+
+00:04:22.100 --> 00:04:25.200
+zmiennych i zobacz, co się stanie. Obserwuj, jak
+
+00:04:25.220 --> 00:04:28.420
+elementy rosną i maleją. Nie
+
+00:04:28.480 --> 00:04:31.480
+spiesz się, zastanów się nad relacjami między nimi.
+
+00:04:31.500 --> 00:04:32.670
+Do zobaczenia wkrótce!

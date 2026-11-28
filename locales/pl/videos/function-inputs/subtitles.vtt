@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 2a23c8bcc4af2ee7d5bd8d5613681427
+
+00:00:00.200 --> 00:00:03.800
+Witaj z powrotem. Mam nadzieję, że korzystanie z maszyn
+
+00:00:03.860 --> 00:00:07.160
+przychodzi Ci już dość łatwo. Do tej pory wszystkie
+
+00:00:07.180 --> 00:00:09.140
+rodzaje maszyn, których używasz,
+
+00:00:09.380 --> 00:00:12.160
+move, turnLeft, shoot, za każdym razem robiły
+
+00:00:12.240 --> 00:00:15.260
+dokładnie to samo. Za każdym razem, gdy
+
+00:00:15.340 --> 00:00:18.520
+wywołujesz move, Twój ludzik się porusza. Gdy
+
+00:00:18.560 --> 00:00:22.010
+wywołujesz shoot, ludzik strzela. Jednak jedną z
+
+00:00:22.080 --> 00:00:25.560
+najpotężniejszych cech maszyn, czyli funkcji, jest
+
+00:00:25.580 --> 00:00:27.520
+to, że wiele z nich pozwala wprowadzić
+
+00:00:27.560 --> 00:00:30.810
+do nich pewne informacje, które po uruchomieniu
+
+00:00:31.000 --> 00:00:34.380
+zmieniają sposób ich działania. Zobaczmy
+
+00:00:34.420 --> 00:00:38.420
+przykład. Do tej pory widzieliśmy maszyny, które wyglądają
+
+00:00:38.460 --> 00:00:40.480
+trochę, tak trochę jak pudełka, tak jak
+
+00:00:40.490 --> 00:00:43.360
+ta o nazwie move. Ale niektóre maszyny mają
+
+00:00:43.540 --> 00:00:47.200
+otwory wejściowe, tak jak ta maszyna walk. Maszyna walk
+
+00:00:47.240 --> 00:00:49.260
+jest bardzo podobna do maszyny move. Przesuwa
+
+00:00:49.280 --> 00:00:52.780
+ludzika do przodu, z tą różnicą, że Jiki może użyć
+
+00:00:52.860 --> 00:00:56.320
+otworu wejściowego, aby określić, ile kroków
+
+00:00:56.340 --> 00:00:59.340
+do przodu ma przejść Twój ludzik. Zamiast więc
+
+00:00:59.440 --> 00:01:02.120
+używać funkcji move trzy razy
+
+00:01:02.160 --> 00:01:05.920
+z rzędu: move, move, move, możesz teraz
+
+00:01:05.960 --> 00:01:08.620
+po prostu użyć funkcji walk i kazać Jikiemu
+
+00:01:08.640 --> 00:01:11.200
+wrzucić do maszyny liczbę trzy.
+
+00:01:12.960 --> 00:01:15.320
+Aby zrobić to w kodzie, nadal
+
+00:01:15.380 --> 00:01:17.260
+piszemy nazwę funkcji, w tym
+
+00:01:17.320 --> 00:01:19.920
+przypadku walk, i nadal wstawiamy nawias
+
+00:01:19.940 --> 00:01:23.740
+otwierający. Jednak przed nawiasem zamykającym
+
+00:01:23.780 --> 00:01:25.920
+określamy, jakie mają być dane wejściowe.
+
+00:01:25.960 --> 00:01:27.690
+W tym przypadku chcemy, aby danymi wejściowymi
+
+00:01:27.720 --> 00:01:30.920
+była liczba trzy, czyli: przejdź trzy kroki
+
+00:01:30.960 --> 00:01:34.240
+do przodu. Kiedy Jiki to zobaczy, weźmie
+
+00:01:34.260 --> 00:01:35.930
+liczbę trzy. Możesz myśleć o niej
+
+00:01:35.960 --> 00:01:38.310
+jak o małej monecie. Jiki
+
+00:01:38.340 --> 00:01:40.300
+wrzuci ją do otworu wejściowego
+
+00:01:40.320 --> 00:01:43.200
+maszyny, zanim zakręci korbą, aby ją
+
+00:01:43.220 --> 00:01:46.660
+uruchomić. Za chwilę
+
+00:01:46.700 --> 00:01:49.660
+zrobisz kilka ćwiczeń, w których rysujesz prostokąty i
+
+00:01:49.700 --> 00:01:53.000
+koła. W przypadku tych funkcji musisz kazać
+
+00:01:53.080 --> 00:01:57.110
+Jikiemu wprowadzić kilka różnych liczb, określających takie rzeczy,
+
+00:01:57.180 --> 00:01:59.380
+jak odległość od lewej
+
+00:01:59.420 --> 00:02:00.840
+krawędzi, odległość od górnej
+
+00:02:00.920 --> 00:02:03.160
+krawędzi, szerokość prostokąta
+
+00:02:03.240 --> 00:02:07.140
+czy jego wysokość. W świecie Jikiego
+
+00:02:07.160 --> 00:02:10.120
+to po prostu różne otwory wejściowe, po jednym dla każdej
+
+00:02:10.160 --> 00:02:12.880
+z tych liczb. W naszym kodzie po prostu
+
+00:02:12.900 --> 00:02:15.120
+wpisujemy każdą liczbę i stawiamy przecinek
+
+00:02:15.200 --> 00:02:18.460
+między nimi. Nazwa funkcji,
+
+00:02:18.540 --> 00:02:20.980
+nawias, liczba dla każdych danych wejściowych,
+
+00:02:21.300 --> 00:02:24.180
+wszystko oddzielone przecinkami, a na koniec zamykamy
+
+00:02:24.260 --> 00:02:27.380
+nawiasy. Jeśli spróbujesz użyć
+
+00:02:27.420 --> 00:02:29.810
+funkcji z niewłaściwą liczbą danych wejściowych,
+
+00:02:29.840 --> 00:02:31.620
+otrzymasz błąd. Na przykład, jeśli
+
+00:02:31.660 --> 00:02:33.660
+spróbujesz wprowadzić dane do
+
+00:02:33.680 --> 00:02:36.080
+maszyny, która nie ma otworu wejściowego, Jiki
+
+00:02:36.140 --> 00:02:38.060
+powie Ci, że nie możesz tego zrobić. A jeśli
+
+00:02:38.120 --> 00:02:39.640
+spróbujesz użyć maszyny, która ma
+
+00:02:39.680 --> 00:02:41.840
+otwór wejściowy, ale nie powiesz Jikiemu, co
+
+00:02:41.880 --> 00:02:43.920
+ma do niego wrzucić, on również się zatrzyma i
+
+00:02:44.000 --> 00:02:46.960
+będzie narzekać. Spróbuj, jeśli czujesz w sobie odrobinę
+
+00:02:47.020 --> 00:02:50.380
+buntu, i zobacz, co się stanie. Zaczniesz popełniać
+
+00:02:50.440 --> 00:02:52.370
+wiele takich błędów, w miarę jak rzeczy
+
+00:02:52.400 --> 00:02:54.940
+będą się komplikować. Postaraj się tym nie stresować
+
+00:02:54.980 --> 00:02:57.170
+ani nie denerwować. Wszyscy uczymy się
+
+00:02:57.200 --> 00:03:00.080
+na błędach. To dosłownie najszybszy sposób, w jaki
+
+00:03:00.100 --> 00:03:03.600
+nasze mózgi mogą naprawdę przyswoić wiedzę. Każdy
+
+00:03:03.660 --> 00:03:06.320
+popełnia takie błędy. Wszyscy zaczynaliśmy od zera,
+
+00:03:06.600 --> 00:03:10.340
+więc nie stresuj się. Zanim zaczniesz,
+
+00:03:10.860 --> 00:03:12.910
+chcę wspomnieć o jeszcze jednej rzeczy.
+
+00:03:13.780 --> 00:03:16.400
+Czasami w tych ćwiczeniach zobaczysz
+
+00:03:16.500 --> 00:03:19.660
+linie zaczynające się od dwóch ukośników.
+
+00:03:19.700 --> 00:03:23.040
+Nazywa się je komentarzami. Są to prywatne notatki tylko dla
+
+00:03:23.140 --> 00:03:26.420
+Ciebie, które Jiki całkowicie zignoruje. Jeśli więc
+
+00:03:26.480 --> 00:03:28.500
+Jiki zobaczy linię zaczynającą się od tych
+
+00:03:28.540 --> 00:03:31.130
+dwóch ukośników, po prostu ją przeskoczy
+
+00:03:31.140 --> 00:03:32.670
+i przejdzie do
+
+00:03:32.700 --> 00:03:36.320
+następnej. Komentarze dają Ci możliwość
+
+00:03:36.340 --> 00:03:38.650
+pisania własnych notatek. Są bardzo
+
+00:03:38.700 --> 00:03:40.800
+przydatne, aby przypomnieć sobie, jak coś działa.
+
+00:03:41.580 --> 00:03:43.430
+Często piszę też komentarze dla Ciebie,
+
+00:03:43.560 --> 00:03:45.630
+więc gdy zaczynasz ćwiczenie,
+
+00:03:45.660 --> 00:03:48.120
+mogą one podpowiadać, gdzie musisz napisać kod
+
+00:03:48.160 --> 00:03:50.109
+lub jak coś rozwiązać. Ale
+
+00:03:50.160 --> 00:03:51.880
+śmiało, nie krępuj się i
+
+00:03:51.980 --> 00:03:55.480
+dodawaj też własne komentarze. W miarę
+
+00:03:55.520 --> 00:03:58.310
+postępów zaglądaj na dół instrukcji,
+
+00:03:58.380 --> 00:04:00.980
+a znajdziesz tam informacje o funkcjach,
+
+00:04:01.020 --> 00:04:03.280
+których możesz użyć, i o tym, jakie dokładnie dane wejściowe
+
+00:04:03.320 --> 00:04:05.520
+musisz do nich wprowadzić. Baw się dobrze,
+
+00:04:05.600 --> 00:04:07.020
+testując te dane wejściowe. Do zobaczenia
+
+00:04:07.060 --> 00:04:07.740
+tu wkrótce.

@@ -1,0 +1,389 @@
+WEBVTT
+
+NOTE en_md5 b8c6113399959b0244ec1b133a63a133
+
+00:00:01.028 --> 00:00:03.228
+Wchodzimy teraz w ćwiczenia,
+przy których
+
+00:00:03.228 --> 00:00:05.908
+ludzie czasem potrafią się
+trochę sfrustrować.
+
+00:00:06.628 --> 00:00:10.348
+To i następne to pierwsze ćwiczenia,
+przy których ludzie potrafią się trochę
+
+00:00:10.348 --> 00:00:12.067
+zdenerwować, bo nie mogą ich rozgryźć.
+
+00:00:12.067 --> 00:00:14.307
+Więc jeśli czujesz frustrację,
+nie przejmuj się.
+
+00:00:14.307 --> 00:00:15.987
+Inni też czują frustrację.
+
+00:00:16.147 --> 00:00:18.628
+Ale to też świetna
+okazja do nauki.
+
+00:00:18.867 --> 00:00:20.388
+Dobrze, że oglądasz ten film.
+
+00:00:20.388 --> 00:00:23.748
+Przejdźmy przez to razem. Jeśli masz to
+już rozwiązane, jeśli poszło Ci łatwo,
+
+00:00:24.237 --> 00:00:27.678
+gratulacje. Może i tak czegoś się
+nauczysz, patrząc, jak to robimy.
+
+00:00:28.557 --> 00:00:30.038
+Co więc próbujemy tu zrobić?
+
+00:00:30.038 --> 00:00:33.838
+Budujemy bota, który
+potrafi grać w Dungeons & Dragons.
+
+00:00:33.917 --> 00:00:37.277
+Jeśli nie znasz Dungeons & Dragons:
+masz tam mnóstwo kostek.
+
+00:00:37.277 --> 00:00:39.037
+Rzucasz nimi w różnych sytuacjach.
+
+00:00:39.628 --> 00:00:42.637
+Pokazują, czy coś
+się wydarzy, czy nie,
+
+00:00:42.957 --> 00:00:46.078
+z jaką siłą możesz coś uderzyć,
+i wiele innych rzeczy.
+
+00:00:46.557 --> 00:00:51.518
+W tym przykładzie
+rzucamy trzema różnymi kostkami.
+
+00:00:52.497 --> 00:00:55.938
+Mamy więc funkcję roll,
+która rzuca kostką,
+
+00:00:55.938 --> 00:00:58.658
+a my wybieramy, ile ścianek
+ma ta kostka.
+
+00:00:58.658 --> 00:00:59.618
+Możemy więc napisać
+
+00:01:00.578 --> 00:01:03.218
+Źle skopiowane. Możemy napisać roll
+
+00:01:04.578 --> 00:01:04.977
+20,
+
+00:01:06.018 --> 00:01:11.218
+żeby dostać kostkę o 20 ściankach. I to
+da nam wynik ataku.
+
+00:01:11.537 --> 00:01:14.337
+Zatrzymajmy się na chwilę i upewnijmy się,
+że rozumiemy, co się tu dzieje.
+
+00:01:14.418 --> 00:01:16.737
+Mamy funkcję roll,
+
+00:01:17.628 --> 00:01:21.308
+a ta funkcja roll jest
+wywoływana z 20 jako danymi wejściowymi,
+
+00:01:21.308 --> 00:01:23.867
+czyli z liczbą ścianek kostki.
+
+00:01:24.108 --> 00:01:25.947
+A potem ta funkcja zwraca
+
+00:01:26.748 --> 00:01:30.628
+liczbę od 1 do 20,
+która będzie naszym wynikiem ataku.
+
+00:01:30.628 --> 00:01:32.748
+Uruchommy to i sprawdźmy.
+
+00:01:33.307 --> 00:01:35.548
+Mamy nowe pudełko o nazwie attack.
+
+00:01:36.028 --> 00:01:38.867
+Rzucamy kostką
+i dostajemy z powrotem jedynkę.
+
+00:01:38.867 --> 00:01:42.908
+Jeśli uruchomimy ten kod jeszcze raz i sprawdzimy,
+tym razem zwraca 16.
+
+00:01:43.668 --> 00:01:46.468
+Uruchamiamy kod jeszcze raz,
+tym razem zwraca 4.
+
+00:01:46.548 --> 00:01:49.707
+Więc tak jak prawdziwa kostka,
+za każdym razem, gdy nią rzucamy,
+
+00:01:49.707 --> 00:01:51.347
+daje nam inną liczbę.
+
+00:01:51.507 --> 00:01:54.308
+I zawsze po prostu zapisujemy tę liczbę,
+jakakolwiek by była,
+
+00:01:54.947 --> 00:01:57.028
+zapisujemy ją w tym pudełku attack.
+
+00:01:57.347 --> 00:01:58.947
+Zróbmy teraz to samo dla pozostałych.
+
+00:01:59.028 --> 00:02:00.867
+Teraz obrażenia podstawowe,
+
+00:02:01.427 --> 00:02:04.628
+a uzyskamy je, rzucając
+kostką o 12 ściankach.
+
+00:02:04.787 --> 00:02:06.787
+Potem mamy obrażenia dodatkowe,
+
+00:02:07.987 --> 00:02:08.707
+które uzyskamy,
+
+00:02:09.508 --> 00:02:11.427
+rzucając kostką o 10 ściankach.
+
+00:02:12.457 --> 00:02:14.138
+Możemy to uruchomić i sprawdzić.
+
+00:02:14.138 --> 00:02:17.018
+Tym razem dostajemy 8, dostajemy...
+
+00:02:17.578 --> 00:02:21.497
+Przepraszam, dostajemy 12,
+dostajemy 7 i dostajemy 8.
+
+00:02:22.298 --> 00:02:25.177
+Wszystkie trzy znowu
+będą za każdym razem inne.
+
+00:02:26.298 --> 00:02:29.497
+Dobrze, teraz musimy
+policzyć łączne obrażenia.
+
+00:02:29.497 --> 00:02:34.298
+Piszemy damage, a nasze
+obrażenia to obrażenia podstawowe
+
+00:02:36.698 --> 00:02:40.948
+plus obrażenia dodatkowe. Więc mamy już
+nasze łączne obrażenia.
+
+00:02:40.948 --> 00:02:43.068
+Albo nie, nazwijmy to
+łącznymi obrażeniami (total damage).
+
+00:02:43.467 --> 00:02:47.788
+Mamy więc atak, obrażenia podstawowe,
+obrażenia dodatkowe i łączne obrażenia.
+
+00:02:49.228 --> 00:02:50.707
+A potem mamy taką instrukcję.
+
+00:02:50.707 --> 00:02:56.068
+Po każdym rzucie kostką musisz
+ogłosić wyrzuconą liczbę
+
+00:02:56.068 --> 00:02:57.627
+pozostałym osobom, z którymi grasz.
+
+00:02:57.867 --> 00:03:01.147
+Dobrze? Ogłośmy więc nasz atak,
+
+00:03:02.268 --> 00:03:04.668
+ogłośmy też nasze
+
+00:03:06.008 --> 00:03:09.048
+obrażenia podstawowe. I ogłośmy
+nasze obrażenia dodatkowe.
+
+00:03:11.768 --> 00:03:15.168
+A dalej jest napisane: jeśli spróbujesz
+zadać cios bez ogłoszenia liczb,
+
+00:03:15.168 --> 00:03:16.247
+inni mogą pomyśleć, że oszukujesz.
+
+00:03:16.568 --> 00:03:18.807
+Wiem, że nigdy nie oszukujesz,
+ale to w sumie uczciwe.
+
+00:03:19.927 --> 00:03:22.888
+Dobrze. A ostatnia rzecz
+to zadać cios goblinowi
+
+00:03:23.207 --> 00:03:25.407
+swoim atakiem i łącznymi obrażeniami.
+
+00:03:25.407 --> 00:03:26.168
+Więc strike
+
+00:03:27.288 --> 00:03:28.568
+z atakiem
+
+00:03:30.008 --> 00:03:31.927
+i łącznymi obrażeniami.
+
+00:03:34.247 --> 00:03:36.728
+Możemy uruchomić kod. No i proszę.
+
+00:03:36.728 --> 00:03:39.848
+Działa. Dostajemy 3, 11 i 3.
+
+00:03:40.647 --> 00:03:42.048
+To nasze liczby tym razem.
+
+00:03:42.048 --> 00:03:46.967
+Jeśli w to klikniemy i przejrzymy,
+dostajemy 3, dostajemy 11
+
+00:03:48.328 --> 00:03:51.288
+i dostajemy 3. A jeśli uruchomimy to jeszcze raz,
+
+00:03:52.328 --> 00:03:54.247
+dostaniemy 3, 5 i 2.
+
+00:03:54.247 --> 00:03:58.008
+Możemy przejść przez to krok po kroku
+i zobaczyć, że roll 20 zwróciło 3.
+
+00:03:58.377 --> 00:03:59.818
+Zapisujemy to w pudełku attack.
+
+00:03:59.978 --> 00:04:02.777
+Bierzemy pudełko attack,
+wyjmujemy z niego 3 i je ogłaszamy.
+
+00:04:03.018 --> 00:04:06.217
+roll 12 zwróciło 5. Tak samo.
+
+00:04:07.337 --> 00:04:09.258
+roll 10 tym razem zwróciło 2.
+
+00:04:09.337 --> 00:04:12.978
+Ogłaszamy więc tę dwójkę,
+dodajemy je do siebie,
+
+00:04:12.978 --> 00:04:16.377
+bierzemy obrażenia podstawowe i dostajemy 5,
+obrażenia dodatkowe i dostajemy 2.
+
+00:04:16.377 --> 00:04:19.577
+Dodajemy je, dostajemy 7,
+mamy nasze łączne obrażenia.
+
+00:04:19.737 --> 00:04:24.338
+I na koniec zadajemy cios, biorąc
+atak z 3 i łączne
+
+00:04:24.338 --> 00:04:27.218
+obrażenia z 7. Potem nasza funkcja strike.
+
+00:04:28.338 --> 00:04:30.817
+Mam nadzieję, że po tym
+przejściu przez kod widać,
+
+00:04:31.458 --> 00:04:36.098
+że to nie jest zbyt skomplikowane. Jak zawsze
+moja główna rada: rozbijaj
+
+00:04:36.098 --> 00:04:38.017
+wszystko na takie osobne kroki.
+
+00:04:38.418 --> 00:04:41.858
+Zwłaszcza teraz, gdy pojawiają się
+funkcje, które coś zwracają.
+
+00:04:42.017 --> 00:04:44.377
+Ważne jest, żeby zacząć
+od prawej strony
+
+00:04:44.377 --> 00:04:47.028
+znaku równości i naprawdę
+myśleć o tym jako o
+
+00:04:47.908 --> 00:04:50.817
+jednej rzeczy w głowie. Nazywamy
+to wyrażeniem.
+
+00:04:51.387 --> 00:04:54.348
+To coś, co dzieje się
+po prawej stronie znaku równości.
+
+00:04:55.148 --> 00:05:00.108
+I ważne jest, żeby najpierw
+przetworzyć to wyrażenie w głowie.
+
+00:05:00.348 --> 00:05:03.627
+To też jest wyrażenie: to plus to.
+
+00:05:04.267 --> 00:05:06.267
+Więc ten fragment tutaj jest uruchamiany.
+
+00:05:06.267 --> 00:05:10.348
+Jiki uruchamia go, dodając do siebie
+wartości z tych dwóch pudełek.
+
+00:05:10.827 --> 00:05:14.427
+A gdy już to zrobi,
+wkłada wynik do tego pudełka.
+
+00:05:14.827 --> 00:05:17.307
+Pamiętaj więc, żeby myśleć o tym
+jak o jednym kroku,
+
+00:05:17.307 --> 00:05:19.708
+a o ustawieniu pudełka
+jak o następnym.
+
+00:05:20.408 --> 00:05:24.168
+To jest następny krok. Rozbijaj to
+w ten sposób, a wtedy, mam nadzieję,
+
+00:05:24.487 --> 00:05:29.367
+wszystko będzie dość proste. Powodzenia.
+Następne ćwiczenie to kolejne,
+
+00:05:29.367 --> 00:05:31.127
+przy którym ludzie potrafią się mocno sfrustrować.
+
+00:05:31.447 --> 00:05:33.687
+Spróbuj po prostu zastosować w praktyce
+to, co tu zobaczyliśmy.
+
+00:05:33.687 --> 00:05:35.608
+Trochę zwolnij. I
+
+00:05:36.408 --> 00:05:38.887
+nie bój się obejrzeć filmu,
+jeśli naprawdę go potrzebujesz.
+
+00:05:38.968 --> 00:05:41.687
+Ale spróbuj najpierw
+rozwiązać je samodzielnie.
+
+00:05:41.687 --> 00:05:44.807
+I nie zapominaj, że możesz też
+korzystać z zakładki „Zapytaj Jikiego”.
+
+00:05:45.048 --> 00:05:48.247
+To naprawdę przydatny sposób, żeby coś
+zbadać i przerzucić się pomysłami.
+
+00:05:48.408 --> 00:05:51.208
+Więc koniecznie spróbuj. Dzięki za obejrzenie.

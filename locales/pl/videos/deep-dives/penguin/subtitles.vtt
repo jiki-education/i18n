@@ -1,0 +1,360 @@
+WEBVTT
+
+NOTE en_md5 37cae67403778109e44f86b67a556520
+
+00:00:00.456 --> 00:00:02.255
+Dobrze, witaj w kolejnym deep dive.
+
+00:00:02.255 --> 00:00:04.695
+Tym razem przyglądamy się ćwiczeniu „Pingwin”.
+
+00:00:04.936 --> 00:00:09.375
+Mam nadzieję, że ćwiczenie
+„Lisi pyszczek” jest już za Tobą. Mówiliśmy w nim
+
+00:00:09.375 --> 00:00:13.336
+trochę o symetrii, a to przydaje się
+w tym ćwiczeniu, jeśli
+
+00:00:13.336 --> 00:00:17.655
+je znasz. Mam nadzieję, że to ćwiczenie
+nie było zbyt trudne.
+
+00:00:17.995 --> 00:00:22.295
+Elipsy są trochę dziwne.
+Trzeba się do nich trochę przyzwyczaić.
+
+00:00:22.716 --> 00:00:25.495
+Ale kiedy już się do nich przyzwyczaisz,
+są całkiem proste.
+
+00:00:26.126 --> 00:00:28.765
+Ale w tym ćwiczeniu najważniejsze
+było dla mnie to, żeby
+
+00:00:29.076 --> 00:00:34.765
+rozwiązać je samą logiką,
+bez mierzenia i bez zgadywania,
+
+00:00:34.765 --> 00:00:38.125
+tylko logiką. A w programowaniu
+chodzi właśnie o logikę.
+
+00:00:38.765 --> 00:00:41.286
+Jedno z poleceń,
+które Ci dałem, mówiło, żeby
+
+00:00:41.286 --> 00:00:44.125
+zacząć ćwiczenie od kliknięcia
+„Uruchom kod”.
+
+00:00:44.286 --> 00:00:47.646
+To w ogóle bardzo
+przydatna wskazówka.
+
+00:00:47.646 --> 00:00:52.206
+Zawsze warto zacząć ćwiczenie od kliknięcia
+„Uruchom kod” i zobaczyć, co się stanie.
+
+00:00:52.625 --> 00:00:55.185
+Często jest jakiś stan początkowy,
+coś do zobaczenia,
+
+00:00:55.506 --> 00:00:57.185
+więc to po prostu dobry nawyk.
+
+00:00:58.865 --> 00:01:02.506
+Zabierzmy się do pracy. Chcemy
+narysować prawe skrzydło.
+
+00:01:02.506 --> 00:01:05.426
+Najpierw trzeba zrozumieć,
+co się dzieje z lewym skrzydłem.
+
+00:01:05.665 --> 00:01:10.066
+Jak już Ci pokazywałem, bardzo pomaga
+tu suwak. Jeśli cofniemy się
+
+00:01:10.066 --> 00:01:16.146
+do miejsca, gdzie mamy tylko lewe skrzydło,
+możemy po prostu przeanalizować
+
+00:01:17.025 --> 00:01:18.786
+tę elipsę w oderwaniu od reszty.
+
+00:01:19.975 --> 00:01:25.256
+A jeśli robimy prawe skrzydło,
+co właściwie chcemy zmienić?
+
+00:01:26.775 --> 00:01:32.055
+Skopiujmy nasze elipsy. Chcemy,
+żeby miała tę samą szerokość,
+
+00:01:32.775 --> 00:01:35.975
+więc promień X ma zostać taki sam,
+czyli ten fragment.
+
+00:01:36.296 --> 00:01:39.975
+Chcemy też tej samej wysokości,
+więc promień Y też zostaje bez zmian.
+
+00:01:40.695 --> 00:01:44.376
+I chcemy, żeby zaczynała się
+w tym samym miejscu w pionie,
+
+00:01:45.245 --> 00:01:48.046
+więc środek Y też
+powinien zostać taki sam.
+
+00:01:48.766 --> 00:01:53.646
+Jedyne, co naprawdę musi się zmienić,
+to ta liczba 28, czyli
+
+00:01:54.135 --> 00:01:56.206
+odległość od lewej krawędzi.
+
+00:01:57.325 --> 00:02:03.646
+Musimy więc pomyśleć, jak przenieść
+jej punkt środkowy z lewej strony
+
+00:02:03.805 --> 00:02:05.885
+w odpowiednie miejsce po prawej.
+
+00:02:07.006 --> 00:02:12.205
+Jeśli ta odległość to 28 od zera,
+wystarczy zapytać: ile to jest 100
+
+00:02:13.026 --> 00:02:16.066
+minus 28? Chcemy ją ustawić
+28 od prawej krawędzi.
+
+00:02:16.866 --> 00:02:19.825
+Mam nadzieję, że policzysz to w pamięci.
+
+00:02:19.906 --> 00:02:21.665
+Ale wynik
+
+00:02:23.156 --> 00:02:24.066
+72
+
+00:02:25.346 --> 00:02:26.786
+wydaje mi się w porządku.
+
+00:02:27.665 --> 00:02:31.105
+Zawsze możesz też sięgnąć po kalkulator
+i tak to policzyć.
+
+00:02:31.586 --> 00:02:33.906
+I mamy symetryczne skrzydła.
+
+00:02:34.225 --> 00:02:36.145
+A tu na dole dostajemy informację.
+
+00:02:36.145 --> 00:02:38.866
+Następna rzecz: prawa strona twarzy
+nie wygląda prawidłowo.
+
+00:02:39.216 --> 00:02:41.616
+No tak. To dlatego, że nie mamy
+jeszcze prawej strony twarzy.
+
+00:02:42.096 --> 00:02:44.015
+Zróbmy więc prawą stronę twarzy.
+
+00:02:45.295 --> 00:02:49.056
+Prawa strona twarzy. Uruchommy kod
+i przechodźmy klatka po klatce.
+
+00:02:49.135 --> 00:02:51.536
+Idźmy dalej, aż dojdziemy do
+
+00:02:54.735 --> 00:02:58.575
+lewej strony twarzy. Prawa strona
+twarzy jest dokładnie taka sama.
+
+00:02:58.895 --> 00:03:04.096
+Ta sama szerokość, ta sama wysokość,
+ta sama pozycja na osi pionowej.
+
+00:03:04.175 --> 00:03:05.776
+Zmienia się tylko ta jedna wartość.
+
+00:03:06.556 --> 00:03:13.436
+Jeśli znów myślimy o punktach środkowych,
+od zera do 41, to liczymy 100 minus 41,
+
+00:03:13.915 --> 00:03:15.996
+czyli 59.
+
+00:03:17.116 --> 00:03:20.795
+Mamy teraz ładną,
+symetryczną twarz na środku.
+
+00:03:22.156 --> 00:03:26.556
+Teraz dowiadujemy się, że z prawym okiem
+coś jest nie tak, więc zjedźmy niżej
+
+00:03:26.955 --> 00:03:31.355
+do prawego oka. Prawe oko
+to dwie linie kodu
+
+00:03:32.325 --> 00:03:34.605
+i dokładnie to samo. To są koła.
+
+00:03:34.605 --> 00:03:37.846
+Promień ma być taki sam,
+bo oko ma mieć ten sam rozmiar.
+
+00:03:37.846 --> 00:03:41.006
+Cofnijmy się i narysujmy je.
+
+00:03:41.006 --> 00:03:43.445
+Chcemy więc tego samego promienia.
+
+00:03:43.445 --> 00:03:45.286
+Jedno duże koło i jedno małe.
+
+00:03:45.445 --> 00:03:49.045
+Pozycja na osi Y ma być taka sama,
+
+00:03:49.045 --> 00:03:51.686
+ale na osi X chcemy je odbić.
+
+00:03:52.006 --> 00:03:58.885
+Czyli 100 minus 42 to 58,
+a 100 minus 43 to 57.
+
+00:03:59.406 --> 00:04:02.445
+Robimy to i mamy ładne,
+lustrzanie odbite oczy.
+
+00:04:03.645 --> 00:04:08.605
+Potem mamy prawą stopę. I znowu:
+dbaj o porządek w kodzie.
+
+00:04:08.605 --> 00:04:10.925
+Dodaj prawą stopę. Ta sama zasada.
+
+00:04:11.165 --> 00:04:17.005
+Uruchamiamy kod i tutaj rysuje się
+lewa stopa. Prawa stopa:
+
+00:04:17.485 --> 00:04:20.925
+ta sama szerokość w obu kierunkach,
+ta sama wysokość, ta sama odległość,
+
+00:04:21.326 --> 00:04:24.786
+prawa stopa: 100 minus 40 to 60. I...
+
+00:04:24.855 --> 00:04:26.696
+I na koniec nos jest nie tak.
+
+00:04:27.016 --> 00:04:30.295
+Zobaczysz, że według nas
+nos powinien być symetryczny.
+
+00:04:30.805 --> 00:04:34.456
+A gdzieś w treści ćwiczenia
+prosimy Cię, żeby
+
+00:04:36.216 --> 00:04:39.136
+zmienić środkowe współrzędne
+i nie dodawać nowego trójkąta.
+
+00:04:39.136 --> 00:04:41.415
+Niektórzy się na tym zacinają.
+
+00:04:42.536 --> 00:04:47.336
+Wiemy, że teraz ten punkt jest
+mniej więcej na środku osi X,
+
+00:04:47.735 --> 00:04:50.935
+a chcemy to zmienić. Zamiast
+trójkąta takiego jak ten,
+
+00:04:51.175 --> 00:04:54.855
+ma powstać trójkąt taki jak ten.
+Zamiast tego punktu na środku
+
+00:04:55.206 --> 00:04:57.286
+chcemy przesunąć ten punkt tutaj.
+
+00:04:57.766 --> 00:05:01.125
+Ten jest po prostu 46 od lewej.
+
+00:05:01.365 --> 00:05:07.526
+Chcemy 46 od prawej,
+czyli 100 minus 46, a to 54.
+
+00:05:08.326 --> 00:05:12.805
+Klikamy „Uruchom kod”. Gratulacje,
+mamy działającego pingwina.
+
+00:05:13.685 --> 00:05:15.925
+Mam nadzieję, że u Ciebie
+rozwiązanie wyglądało podobnie.
+
+00:05:16.005 --> 00:05:20.886
+Mam nadzieję, że bez zgadywania,
+tylko z odrobiną logiki.
+
+00:05:21.346 --> 00:05:25.846
+Może w którymś momencie przyszło Ci
+do głowy też coś logicznego,
+
+00:05:26.185 --> 00:05:31.386
+czyli napisanie 100 minus 54.
+Przepraszam, 100 minus 46.
+
+00:05:31.466 --> 00:05:33.266
+To byłoby całkowicie rozsądne
+
+00:05:33.266 --> 00:05:36.505
+rozwiązanie. Tyle że jeszcze
+Cię tego nie nauczyłem.
+
+00:05:36.745 --> 00:05:39.346
+Dlatego w tym ćwiczeniu jest to wyłączone.
+
+00:05:39.346 --> 00:05:40.505
+Właściwie
+
+00:05:41.305 --> 00:05:43.225
+to też jest wyłączone w tym ćwiczeniu.
+
+00:05:43.865 --> 00:05:47.105
+Na razie Jiki nie pozwala Ci
+używać plusa ani
+
+00:05:47.105 --> 00:05:51.065
+minusa ani podobnych rzeczy, ale w kolejnych
+ćwiczeniach będzie to dozwolone.
+
+00:05:51.065 --> 00:05:55.065
+Na razie zachęcam Cię, żeby robić
+tylko to, czego Cię nauczyłem.
+
+00:05:55.466 --> 00:05:58.985
+Te obliczenia musisz więc
+zrobić w pamięci.
+
+00:05:59.225 --> 00:06:04.266
+A 100 minus 46 to 54. I tak to wpisujemy.
+
+00:06:04.925 --> 00:06:09.026
+Mam nadzieję, że było to dość proste.
+A jeśli sprawiło Ci trudność,
+
+00:06:09.026 --> 00:06:12.586
+to mam nadzieję, że ten film pokazał Ci,
+jak o tym myśleć.
+
+00:06:12.846 --> 00:06:16.906
+Jak zwolnić i podejść
+do problemu bardziej logicznie.
+
+00:06:17.225 --> 00:06:18.865
+Do zobaczenia w kolejnym deep dive.
+
+00:06:18.865 --> 00:06:19.625
+Dzięki za obejrzenie.

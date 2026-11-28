@@ -1,0 +1,513 @@
+WEBVTT
+
+NOTE en_md5 a50eb6189c3de32cc6a17ee23be96f14
+
+00:00:00.462 --> 00:00:05.581
+Cześć. To pierwsze ćwiczenie w Jiki,
+
+00:00:05.902 --> 00:00:08.381
+na którym sporo osób naprawdę utyka.
+
+00:00:09.422 --> 00:00:12.862
+Na innych ćwiczeniach ludzie też czasem się zacinają,
+ale jakoś sobie radzą.
+
+00:00:13.102 --> 00:00:18.382
+To pierwsze, z którym, jak myślę,
+często mają prawdziwy problem.
+
+00:00:19.181 --> 00:00:20.821
+Nie wiem, czy udało Ci się je rozwiązać.
+
+00:00:20.821 --> 00:00:24.181
+Jeśli tak, gratulacje.
+Jeśli jeszcze nie,
+
+00:00:24.181 --> 00:00:27.501
+jeśli jesteś w połowie, wskazówki nie pomogły
+i nie wiesz, co dalej,
+
+00:00:27.501 --> 00:00:31.852
+i oglądasz ten film, żeby to rozgryźć,
+to zupełnie w porządku.
+
+00:00:31.852 --> 00:00:35.051
+Pokażę Ci krok po kroku,
+jak sam rozwiązuję to ćwiczenie.
+
+00:00:35.292 --> 00:00:39.212
+Jeśli w którymś momencie coś Ci się rozjaśni
+i pomyślisz: „OK,
+
+00:00:39.212 --> 00:00:42.612
+już rozumiem”, to śmiało, zatrzymaj film
+i dokończ ćwiczenie.
+
+00:00:42.612 --> 00:00:45.292
+Resztę filmu zawsze możesz
+obejrzeć później.
+
+00:00:46.082 --> 00:00:49.731
+Ale weźmy się za to powoli.
+Co tu właściwie robimy?
+
+00:00:49.731 --> 00:00:51.771
+Próbujemy zbudować bałwana.
+
+00:00:52.621 --> 00:00:55.771
+Bałwana budowaliśmy już
+w poprzednim ćwiczeniu,
+
+00:00:55.771 --> 00:01:00.731
+ale tym razem budujemy go
+z użyciem jednej zmiennej size,
+
+00:01:01.031 --> 00:01:02.712
+na której opiera się cała reszta.
+
+00:01:02.951 --> 00:01:06.552
+A kiedy zmieniamy zmienną size,
+jak widać tutaj,
+
+00:01:06.552 --> 00:01:10.311
+bałwan rośnie od malutkiego
+do dużo większego.
+
+00:01:11.912 --> 00:01:16.311
+Dostajesz ode mnie zmienną snowman_x
+i zmienną size.
+
+00:01:16.632 --> 00:01:17.992
+Obie te zmienne są
+
+00:01:19.191 --> 00:01:23.432
+zablokowane. Choć tę akurat możesz zmienić
+na dowolną wartość.
+
+00:01:24.061 --> 00:01:25.831
+Na początek ma wartość cztery.
+
+00:01:27.841 --> 00:01:32.322
+Obowiązują zwykłe zasady. Lewy górny róg
+planszy to 0, 0, tutaj na górze,
+
+00:01:32.481 --> 00:01:35.921
+a prawy dolny róg planszy
+to 100, tutaj na dole.
+
+00:01:37.441 --> 00:01:40.962
+Jak wspomniałem, masz gotowe
+zmienne snowman_x i size.
+
+00:01:40.962 --> 00:01:45.602
+Ale najważniejsze jest to: wszystkie
+pozostałe zmienne musisz wyprowadzić
+
+00:01:45.921 --> 00:01:49.721
+za pomocą wyrażeń arytmetycznych.
+To dość zawiłe zdanie.
+
+00:01:49.721 --> 00:01:52.962
+Może potem wrócę i spróbuję
+napisać je
+
+00:01:53.281 --> 00:01:56.081
+trochę przyjaźniejszym językiem.
+Ale zastanówmy się, co ono znaczy.
+
+00:01:57.201 --> 00:02:02.242
+Co to znaczy wyprowadzić zmienną?
+Brzmi to dość skomplikowanie.
+
+00:02:02.402 --> 00:02:06.721
+Oznacza to po prostu, że bierzemy
+zmienną size, czyli tutaj cztery,
+
+00:02:06.962 --> 00:02:10.481
+i mówimy, że wszystkie pozostałe
+zmienne to coś w rodzaju
+
+00:02:10.972 --> 00:02:15.201
+size razy pięć albo size podzielone przez dwa.
+
+00:02:15.521 --> 00:02:20.241
+Czyli pozostałe zmienne używają size
+w swoich obliczeniach.
+
+00:02:20.562 --> 00:02:22.162
+Tylko tyle znaczy „wyprowadzić”.
+
+00:02:23.162 --> 00:02:25.961
+A wyrażenia arytmetyczne to plus, minus, dzielenie
+
+00:02:27.081 --> 00:02:30.201
+i mnożenie. Dalej mamy
+kilka podanych zasad.
+
+00:02:30.201 --> 00:02:33.801
+Promień głowy to size razy dwa.
+
+00:02:33.801 --> 00:02:38.122
+Dobra, więc piszemy po prostu:
+promień głowy to size razy 2,
+
+00:02:38.681 --> 00:02:45.162
+promień tułowia to size razy 3,
+a promień podstawy to size razy 4.
+
+00:02:46.521 --> 00:02:51.592
+Na dole mamy już linijki kodu,
+które tworzą te koła.
+
+00:02:52.111 --> 00:02:57.301
+Możemy więc uruchomić kod,
+rzucić okiem i zobaczyć, że mamy,
+
+00:02:57.701 --> 00:02:59.141
+jeśli wrócimy na początek,
+
+00:03:00.102 --> 00:03:01.981
+definiujemy je po kolei, aż do końca.
+
+00:03:01.981 --> 00:03:04.741
+Na razie wszystkie po prostu
+stoją na pozycjach zero.
+
+00:03:04.901 --> 00:03:08.581
+Ale gdy narysujemy głowę,
+na górze pojawia się małe koło.
+
+00:03:08.741 --> 00:03:12.181
+Gdy narysujemy tułów,
+widać większe koło.
+
+00:03:12.181 --> 00:03:15.141
+A gdy narysujemy podstawę,
+widać naprawdę duże koło.
+
+00:03:15.622 --> 00:03:18.021
+Przypomnę Ci jeszcze raz:
+zawsze korzystaj z
+
+00:03:18.102 --> 00:03:20.181
+tego suwaka na dole
+i przechodź przez kod krok po kroku.
+
+00:03:20.181 --> 00:03:21.861
+To naprawdę bardzo ułatwia życie.
+
+00:03:22.951 --> 00:03:24.312
+Dobra,
+
+00:03:25.671 --> 00:03:28.951
+następny punkt. Koła powinny
+się ze sobą stykać.
+
+00:03:29.271 --> 00:03:34.151
+Tułów stoi tuż nad podstawą,
+a głowa tuż nad tułowiem.
+
+00:03:34.872 --> 00:03:37.352
+Widać to na tych obrazkach.
+
+00:03:37.512 --> 00:03:43.111
+Duża podstawa styka się ze średnim tułowiem,
+a tułów z głową.
+
+00:03:44.312 --> 00:03:50.401
+I ostatnia rzecz: spód podstawy
+znajduje się size od dołu planszy.
+
+00:03:50.562 --> 00:03:55.361
+Musimy się więc chwilę zastanowić,
+co tu właściwie robimy.
+
+00:03:55.762 --> 00:03:57.722
+Mówimy, że chcemy...
+
+00:03:57.722 --> 00:03:59.282
+Chcemy budować od dołu.
+
+00:03:59.282 --> 00:04:04.521
+To dość ważne. Spód koła podstawy
+jest size od dołu.
+
+00:04:04.521 --> 00:04:06.401
+Musimy więc budować od dołu.
+
+00:04:07.282 --> 00:04:11.002
+Czyli spód podstawy. Spód...
+
+00:04:11.002 --> 00:04:16.072
+Tak, spód podstawy będzie na 100,
+czyli tutaj na samym dole,
+
+00:04:16.471 --> 00:04:19.672
+minus size. Od tego możemy zacząć.
+
+00:04:20.151 --> 00:04:23.341
+To da nam spód tego koła.
+
+00:04:25.031 --> 00:04:28.911
+Ale jak pamiętasz, jeśli zjedziesz niżej
+i zajrzysz do opisu tego,
+
+00:04:28.911 --> 00:04:32.391
+jak tworzy się koło, zobaczysz,
+że trzeba podać środek.
+
+00:04:33.112 --> 00:04:36.151
+Podajemy dwie współrzędne środka,
+promień i kolor.
+
+00:04:36.471 --> 00:04:42.541
+Jeśli mamy tu na dole 100
+i przesuwamy się trochę w górę o size, to
+
+00:04:42.942 --> 00:04:47.262
+środek musi być o promień dalej,
+czyli o tę odległość.
+
+00:04:47.742 --> 00:04:50.942
+Możemy więc dopisać:
+minus promień podstawy.
+
+00:04:51.982 --> 00:04:55.101
+Pomyśl o tym tak: mamy 100 na dole,
+
+00:04:55.502 --> 00:04:57.661
+minus size, żeby trochę podnieść koło.
+
+00:04:57.822 --> 00:05:01.822
+A potem ustawiamy punkt środkowy,
+który jest o promień podstawy wyżej.
+
+00:05:02.302 --> 00:05:06.141
+Gdy to zrobimy, widać już
+koło na dole.
+
+00:05:07.351 --> 00:05:11.031
+Dobra, teraz trzeba przesunąć tułów,
+żeby się z nim stykał.
+
+00:05:11.752 --> 00:05:15.432
+Działa tu ta sama logika.
+Gdybyśmy powiedzieli:
+
+00:05:15.591 --> 00:05:19.992
+Y tułowia to Y podstawy,
+to po prostu nałożylibyśmy je na siebie.
+
+00:05:20.791 --> 00:05:26.471
+Musimy więc przesunąć go w górę o tę odległość,
+promień podstawy, aż tutaj.
+
+00:05:26.632 --> 00:05:28.151
+A potem jeszcze raz w górę
+
+00:05:30.312 --> 00:05:33.831
+o jego własny promień.
+Możemy więc napisać, że to...
+
+00:05:34.041 --> 00:05:38.762
+to Y podstawy minus promień podstawy
+minus promień tułowia.
+
+00:05:39.802 --> 00:05:42.841
+To ustawi go tutaj.
+I został jeszcze jeden.
+
+00:05:43.081 --> 00:05:46.841
+Jeśli Twoje rozwiązanie wygląda inaczej,
+zatrzymaj na chwilę film i przemyśl,
+
+00:05:48.471 --> 00:05:50.041
+jak dokładnie to zrobić.
+
+00:05:51.482 --> 00:05:55.562
+Mamy więc... Wyobraź sobie, że bierzemy głowę
+i stawiamy ją pośrodku.
+
+00:05:55.562 --> 00:05:58.482
+Głowa zaczyna więc na Y tułowia.
+
+00:05:58.482 --> 00:05:59.641
+Czyli jest narysowana tutaj.
+
+00:06:00.992 --> 00:06:02.992
+Trzeba ją przesunąć o tę odległość w górę.
+
+00:06:03.711 --> 00:06:08.351
+To promień tułowia. A potem
+trzeba ją przesunąć o tę odległość w górę.
+
+00:06:08.591 --> 00:06:13.471
+I to jest promień głowy. Dokładnie tak samo:
+promień tułowia minus promień głowy.
+
+00:06:15.151 --> 00:06:17.471
+I tak dostajemy bałwana.
+
+00:06:17.552 --> 00:06:20.351
+Najważniejsza jest tu zmienna size.
+
+00:06:20.591 --> 00:06:24.831
+Możemy teraz zmienić size na dwa
+i bałwan się zmniejsza.
+
+00:06:24.831 --> 00:06:26.192
+I wszystko do siebie pasuje.
+
+00:06:27.002 --> 00:06:29.882
+Jeśli zmienimy na 3, wszystko pasuje.
+
+00:06:30.201 --> 00:06:33.721
+Jeśli zmienimy na 5,
+wszystko nadal pasuje.
+
+00:06:34.922 --> 00:06:36.841
+Nie ma tu żadnej magii.
+
+00:06:36.841 --> 00:06:39.802
+Nic nie jest tak naprawdę
+przyklejone do niczego innego.
+
+00:06:40.122 --> 00:06:42.880
+Po prostu bierzemy wartość size.
+
+00:06:42.880 --> 00:06:44.922
+Wyjmujemy liczbę z tego pudełka,
+
+00:06:45.721 --> 00:06:48.442
+wykonujemy na niej działanie,
+mnożymy przez dwa,
+
+00:06:48.442 --> 00:06:51.002
+i wkładamy wynik do nowego pudełka
+o nazwie head_radius.
+
+00:06:51.322 --> 00:06:54.281
+A tutaj na dole, kiedy obliczamy head_y,
+
+00:06:54.362 --> 00:06:58.362
+po prostu zaglądamy do tamtego pudełka
+i wyjmujemy to, co w nim było.
+
+00:06:58.521 --> 00:07:01.081
+Widać to, gdy klikasz krok po kroku.
+
+00:07:01.882 --> 00:07:04.601
+Bardzo przydaje się tu
+ten opis po prawej stronie.
+
+00:07:04.601 --> 00:07:07.161
+Naprawdę polecam poświęcić chwilę
+na jego przeczytanie.
+
+00:07:07.961 --> 00:07:12.122
+Widzisz, tutaj mówimy Ci,
+co się stało w tej linijce kodu.
+
+00:07:12.362 --> 00:07:14.762
+Utworzyliśmy nową zmienną o nazwie head_y.
+
+00:07:15.242 --> 00:07:18.762
+Możesz najechać na nią kursorem.
+Wtedy widać dokładnie, co
+
+00:07:19.002 --> 00:07:22.041
+podświetlamy: head_y.
+I ustawiamy jej wartość na 15.
+
+00:07:23.502 --> 00:07:26.781
+Wzięliśmy body_y z półki
+i wyjęliśmy z niej 40.
+
+00:07:26.781 --> 00:07:29.262
+Wzięliśmy body_radius i wyjęliśmy 15.
+
+00:07:29.742 --> 00:07:33.701
+Potem policzyliśmy 40 minus 15.
+Widzisz, że podświetlamy całe to
+
+00:07:33.701 --> 00:07:35.101
+wyrażenie, żeby łatwiej było
+zapamiętać, co to jest.
+
+00:07:35.341 --> 00:07:39.422
+Wyszło 25. Potem wzięliśmy head_radius
+i wyjęliśmy 10.
+
+00:07:39.581 --> 00:07:42.221
+Policzyliśmy 25 minus 10 i wyszło 15.
+
+00:07:42.622 --> 00:07:45.982
+Potem utworzyliśmy nowe pudełko
+i włożyliśmy do niego 15.
+
+00:07:47.101 --> 00:07:47.502
+Tak więc
+
+00:07:49.552 --> 00:07:53.951
+te objaśnienia bardzo Ci pomogą,
+bo mówią dokładnie, co się dzieje.
+
+00:07:53.951 --> 00:07:58.591
+Prostszy przykład: tutaj wyjęliśmy size,
+policzyliśmy 5 razy 4,
+
+00:07:58.752 --> 00:08:00.711
+wyszło 20. Potem utworzyliśmy nowe pudełko.
+
+00:08:00.711 --> 00:08:04.911
+Włożyliśmy to do pudełka. Jeśli utkniesz,
+naprawdę polecam zwolnić,
+
+00:08:05.151 --> 00:08:08.752
+przejść wszystko suwakiem
+i przyjrzeć się informacjom po prawej.
+
+00:08:08.752 --> 00:08:13.271
+Tu też widać funkcję circle
+ze snowman_x, w którym
+
+00:08:13.271 --> 00:08:16.721
+jest 50, z head_y, w którym jest 15,
+i z head_radius, który ma 10.
+
+00:08:16.721 --> 00:08:19.641
+Widać więc, czym to się
+ostatecznie staje.
+
+00:08:19.641 --> 00:08:22.081
+Staje się tym: 50, 15, 10, white.
+
+00:08:22.961 --> 00:08:26.322
+Naprawdę polecam zwolnić
+i przyjrzeć się temu dokładnie.
+
+00:08:26.891 --> 00:08:29.442
+Mam jednak nadzieję, że udało Ci się
+to rozwiązać.
+
+00:08:29.442 --> 00:08:32.481
+Jeśli tak, to gratulacje.
+
+00:08:33.121 --> 00:08:37.442
+Używasz już arytmetyki,
+używasz zmiennych.
+
+00:08:37.601 --> 00:08:39.522
+To świetna sprawa.
+To są podstawowe cegiełki.
+
+00:08:39.522 --> 00:08:42.481
+Teraz zbudujemy z nich
+kolejne naprawdę fajne rzeczy.
+
+00:08:42.802 --> 00:08:45.081
+Dzięki za obejrzenie. Mam nadzieję,
+że spodoba Ci się następna lekcja.
+
+00:08:45.081 --> 00:08:45.802
+Na razie, cześć!

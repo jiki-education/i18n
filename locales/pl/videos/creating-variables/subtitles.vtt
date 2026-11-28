@@ -1,0 +1,396 @@
+WEBVTT
+
+NOTE en_md5 9ba87f0c52699c431570792318049b06
+
+00:00:00.220 --> 00:00:04.109
+Witaj z powrotem. Mam nadzieję, że funkcje
+
+00:00:04.280 --> 00:00:07.870
+i pętle repeat nie sprawiają Ci już trudności. W tej
+
+00:00:07.900 --> 00:00:10.080
+lekcji przejdziemy do kolejnego, absolutnie
+
+00:00:10.100 --> 00:00:12.610
+kluczowego tematu, z którego skorzystasz
+
+00:00:12.640 --> 00:00:14.880
+pewnie w każdym programie, jaki napiszesz. Tym
+
+00:00:14.940 --> 00:00:19.220
+tematem są zmienne. Zmienne pozwalają nam
+
+00:00:19.460 --> 00:00:22.700
+przechowywać informacje. Podczas pisania kodu często trzeba
+
+00:00:22.760 --> 00:00:25.420
+zachować jakąś liczbę albo string
+
+00:00:25.500 --> 00:00:27.780
+na później, i właśnie do tego służą
+
+00:00:27.800 --> 00:00:30.480
+zmienne. Spójrzmy teraz z szerszej perspektywy
+
+00:00:30.580 --> 00:00:32.880
+na magazyn Jikiego. Zobaczysz, że jest tam
+
+00:00:32.940 --> 00:00:35.780
+jeszcze jeden zestaw półek. Pierwszy zestaw
+
+00:00:35.800 --> 00:00:37.160
+już znasz: to tam
+
+00:00:37.180 --> 00:00:39.680
+stoją funkcje, nasze małe maszyny, takie jak move
+
+00:00:39.700 --> 00:00:42.140
+czy rectangle. Ale na drugim zestawie
+
+00:00:42.160 --> 00:00:44.710
+półek zamiast maszyn znajdziesz mnóstwo
+
+00:00:44.760 --> 00:00:47.860
+pudełek. To właśnie te pudełka
+
+00:00:47.900 --> 00:00:50.080
+nazywamy zmiennymi. Możesz kazać Jikiemu schować
+
+00:00:50.140 --> 00:00:52.460
+w takim pudełku, co tylko chcesz, a później
+
+00:00:52.580 --> 00:00:54.940
+poprosić go, żeby to z niego wyjął. Każde
+
+00:00:54.980 --> 00:00:57.480
+pudełko ma nazwę, dokładnie tak samo jak
+
+00:00:57.520 --> 00:01:00.020
+funkcje, i w każdym pudełku mieści się
+
+00:01:00.140 --> 00:01:03.000
+tylko jedna rzecz. Na razie liczba
+
+00:01:03.380 --> 00:01:05.320
+albo string. Ale w dalszej części
+
+00:01:05.340 --> 00:01:07.480
+kursu zobaczymy, jak przechowywać w nich
+
+00:01:07.540 --> 00:01:10.800
+bardziej złożone dane. Jak więc powiedzieć Jikiemu,
+
+00:01:10.860 --> 00:01:12.500
+żeby stworzył pudełko i coś do niego włożył?
+
+00:01:13.240 --> 00:01:16.920
+Używamy słowa kluczowego let. Słowo kluczowe let
+
+00:01:17.000 --> 00:01:19.200
+daje Jikiemu znać, że ma przygotować
+
+00:01:19.300 --> 00:01:21.860
+nowe pudełko. Wyobraź sobie, jak wyjmuje
+
+00:01:21.900 --> 00:01:23.760
+kartonowe pudełko z opakowania, składa je
+
+00:01:23.800 --> 00:01:26.320
+w całość, a potem patrzy, co stoi
+
+00:01:26.440 --> 00:01:28.840
+za słowem let. To etykieta,
+
+00:01:28.880 --> 00:01:30.620
+którą naklei na pudełko, w tym
+
+00:01:30.720 --> 00:01:32.940
+przypadku name. Bierze więc długopis
+
+00:01:33.220 --> 00:01:36.260
+i pisze na etykiecie name. Następnie
+
+00:01:36.320 --> 00:01:38.360
+sprawdza, co znajduje się za znakiem
+
+00:01:38.440 --> 00:01:41.020
+równości. Tutaj jest to moje imię, Jeremy,
+
+00:01:41.740 --> 00:01:43.960
+a ponieważ Jeremy to string, string,
+
+00:01:44.340 --> 00:01:45.640
+Jiki bierze kartkę papieru
+
+00:01:45.660 --> 00:01:48.830
+i zapisuje na niej Jeremy. To zwykły string,
+
+00:01:48.900 --> 00:01:50.460
+dokładnie tak jak kolory, z którymi
+
+00:01:50.520 --> 00:01:52.660
+pracujesz, a potem wkłada tę kartkę
+
+00:01:52.700 --> 00:01:56.410
+do pudełka. Poprosiliśmy go więc,
+
+00:01:56.460 --> 00:01:58.260
+żeby przygotował pudełko, nakleił
+
+00:01:58.300 --> 00:02:00.120
+etykietę i włożył coś do środka,
+
+00:02:00.640 --> 00:02:02.300
+a teraz Jiki odkłada pudełko
+
+00:02:02.380 --> 00:02:05.140
+na półkę. Od tej chwili w dowolnym
+
+00:02:05.220 --> 00:02:07.980
+momencie programu Jiki może podejść
+
+00:02:08.020 --> 00:02:09.840
+i zdjąć to pudełko z półki, zajrzeć,
+
+00:02:09.979 --> 00:02:11.900
+co jest w środku, ale do tego dojdziemy
+
+00:02:11.940 --> 00:02:14.580
+za chwilę. Na razie naprawdę
+
+00:02:14.660 --> 00:02:16.540
+chcę, żeby zaczął Ci się kształtować ten model
+
+00:02:16.580 --> 00:02:19.120
+mentalny. Programuję od lat i wciąż
+
+00:02:19.180 --> 00:02:21.790
+wyobrażam sobie, pisząc kod, że wkładam
+
+00:02:21.820 --> 00:02:23.680
+coś do pudełka, żeby
+
+00:02:23.720 --> 00:02:26.340
+później to wyjąć. Kiedy widzisz
+
+00:02:26.400 --> 00:02:28.570
+słowo kluczowe let, naprawdę pomyśl:
+
+00:02:28.690 --> 00:02:31.460
+„Aha, czyli przygotowuję teraz nowe pudełko”.
+
+00:02:33.520 --> 00:02:34.530
+Chcę na chwilę
+
+00:02:34.580 --> 00:02:37.210
+opowiedzieć o nazwach zmiennych, czyli o etykietach na
+
+00:02:37.260 --> 00:02:40.140
+tych pudełkach. Obowiązuje tu parę
+
+00:02:40.180 --> 00:02:44.740
+zasad. Po pierwsze, nazwy zmiennych nie mogą zawierać
+
+00:02:44.780 --> 00:02:47.580
+spacji. Jeśli chcesz, żeby etykieta pudełka
+
+00:02:47.700 --> 00:02:49.859
+składała się z kilku słów, łączymy
+
+00:02:49.920 --> 00:02:51.900
+te słowa ze sobą, a
+
+00:02:51.980 --> 00:02:55.180
+pierwszą literę każdego słowa zmieniamy
+
+00:02:55.220 --> 00:02:57.520
+na wielką. Nazywamy to camel
+
+00:02:57.680 --> 00:03:00.660
+case. Wyobraź sobie garby wielbłąda, które wypychają
+
+00:03:00.740 --> 00:03:02.540
+w górę pierwszą literę każdego kolejnego słowa,
+
+00:03:02.580 --> 00:03:05.260
+tak że staje się wielka. Jeśli więc
+
+00:03:05.340 --> 00:03:08.290
+chcesz etykiety „moje imię”, zamiast
+
+00:03:08.320 --> 00:03:10.920
+pisać dwa słowa ze spacją, zapisujemy
+
+00:03:10.960 --> 00:03:13.400
+je jako jedno słowo, myName, z wielką literą N.
+
+00:03:15.200 --> 00:03:17.960
+Poza tym każda zmienna musi mieć unikalną nazwę. Nie
+
+00:03:18.020 --> 00:03:20.180
+mogą istnieć dwa pudełka z tą samą etykietą,
+
+00:03:20.860 --> 00:03:23.180
+a zmienna nie może też nazywać się
+
+00:03:23.240 --> 00:03:26.140
+tak samo jak funkcja. Jeśli o tym zapomnisz, Jiki
+
+00:03:26.180 --> 00:03:28.040
+się pogubi i zwróci komunikat o błędzie.
+
+00:03:29.660 --> 00:03:31.210
+Dobrze, zobaczmy teraz, gdzie zmienna
+
+00:03:31.280 --> 00:03:34.160
+może się przydać. Powiedzmy, że
+
+00:03:34.200 --> 00:03:36.920
+rysujemy słońce na niebie. Wiemy już,
+
+00:03:36.980 --> 00:03:39.490
+że można użyć funkcji circle i
+
+00:03:39.580 --> 00:03:43.480
+przekazać jej cztery dane wejściowe: left, top, radius
+
+00:03:43.680 --> 00:03:47.000
+i color. Ale gdy rysujemy coraz
+
+00:03:47.040 --> 00:03:49.160
+więcej elementów, a liczby są porozrzucane
+
+00:03:49.180 --> 00:03:51.740
+po całym kodzie, bardzo trudno
+
+00:03:51.780 --> 00:03:55.020
+się w nim połapać i go czytać. Zamiast tego
+
+00:03:55.280 --> 00:03:57.500
+możemy więc utworzyć osobne zmienne dla
+
+00:03:57.600 --> 00:04:00.760
+left, top, radius i color, a potem odwoływać
+
+00:04:00.860 --> 00:04:04.560
+się do nich. Naszym celem
+
+00:04:04.620 --> 00:04:06.380
+jest więc wywołanie
+
+00:04:06.420 --> 00:04:11.200
+funkcji circle z ładnymi, czytelnymi nazwami
+
+00:04:11.220 --> 00:04:14.590
+pudełek. Kiedy Jiki zobaczy te nazwy,
+
+00:04:14.620 --> 00:04:16.480
+będzie wiedział, że ma zdjąć pudełka z półek
+
+00:04:16.560 --> 00:04:20.459
+i użyć tego, co jest w środku. Utwórzmy
+
+00:04:20.519 --> 00:04:22.550
+więc te zmienne. Zaczynamy od
+
+00:04:22.550 --> 00:04:25.050
+pozycji słońca od lewej. Tworzymy,
+
+00:04:25.580 --> 00:04:27.350
+eee, słowem kluczowym let
+
+00:04:27.350 --> 00:04:29.700
+mówimy Jikiemu, żeby utworzył nowe pudełko o nazwie
+
+00:04:29.740 --> 00:04:32.310
+leftPosition. Zwróć uwagę na camel case
+
+00:04:32.500 --> 00:04:35.180
+i wielkie P. Mówimy też
+
+00:04:35.260 --> 00:04:38.560
+Jikiemu, jaka liczba trafia do pudełka. Jiki
+
+00:04:38.580 --> 00:04:40.340
+odkłada je na półki, a potem robi
+
+00:04:40.420 --> 00:04:43.020
+to samo dla topPosition, radius
+
+00:04:43.180 --> 00:04:46.540
+i color. Teraz w dowolnym miejscu
+
+00:04:46.620 --> 00:04:48.870
+w kodzie możemy odwołać się do tych zmiennych,
+
+00:04:49.000 --> 00:04:51.400
+a Jiki wyjmie z nich wartości
+
+00:04:51.440 --> 00:04:53.530
+i włoży je do maszyny. Zmienne mają jeszcze
+
+00:04:53.640 --> 00:04:56.120
+jedną wielką zaletę: kiedy tylko
+
+00:04:56.160 --> 00:04:58.960
+chcemy narysować coś w tym samym miejscu
+
+00:04:59.000 --> 00:05:01.620
+co słońce, możemy ponownie użyć tych samych
+
+00:05:01.680 --> 00:05:04.980
+zmiennych leftPosition i topPosition. Weźmy
+
+00:05:05.000 --> 00:05:07.660
+inny przykład. Wyobraź sobie, że budujesz mur
+
+00:05:07.700 --> 00:05:10.200
+z 30 cegieł i chcesz, żeby wszystkie
+
+00:05:10.220 --> 00:05:11.840
+cegły miały tę samą szerokość
+
+00:05:11.880 --> 00:05:14.270
+i wysokość. O wiele lepiej
+
+00:05:14.360 --> 00:05:17.100
+jest utworzyć zmienne dla szerokości i wysokości
+
+00:05:17.280 --> 00:05:19.580
+na początku kodu, a potem
+
+00:05:19.660 --> 00:05:21.590
+odwoływać się do nich w dalszej części
+
+00:05:21.640 --> 00:05:23.900
+kodu. Bo jeśli zechcesz później
+
+00:05:23.980 --> 00:05:25.960
+zmienić szerokość albo wysokość, wystarczy
+
+00:05:26.020 --> 00:05:28.260
+zrobić to w jednym miejscu, a cała reszta
+
+00:05:28.380 --> 00:05:33.100
+zaktualizuje się sama. W kolejnych ćwiczeniach
+
+00:05:33.260 --> 00:05:35.980
+użyjesz zmiennych, żeby pisać
+
+00:05:36.060 --> 00:05:38.840
+schludniejszy i czytelniejszy kod. A kiedy już
+
+00:05:38.880 --> 00:05:41.910
+poczujesz się pewnie w tworzeniu i używaniu zmiennych,
+
+00:05:41.960 --> 00:05:44.280
+zobaczymy, jak zmienne mogą odwoływać się do innych
+
+00:05:44.320 --> 00:05:46.920
+zmiennych, i wtedy ich możliwości naprawdę rosną.
+
+00:05:47.620 --> 00:05:50.110
+Ale na razie przećwicz to w tych ćwiczeniach,
+
+00:05:50.520 --> 00:05:51.880
+do zobaczenia wkrótce.

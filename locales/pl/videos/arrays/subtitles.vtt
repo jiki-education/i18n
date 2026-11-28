@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 9d89d6259cdafb0e4850d658df9bd781
+
+00:00:00.140 --> 00:00:02.440
+Witaj ponownie. Przed Tobą dość ważny
+
+00:00:02.520 --> 00:00:05.280
+etap kursu. Używasz już
+
+00:00:05.440 --> 00:00:08.060
+liczb, stringów i wartości logicznych, czyli
+
+00:00:08.120 --> 00:00:10.500
+eleganckiego określenia na prawdę i fałsz. Wszystko to
+
+00:00:10.540 --> 00:00:13.350
+nazywamy typami danych. Ale w tym filmie
+
+00:00:13.400 --> 00:00:16.260
+poznasz pierwszy złożony typ
+
+00:00:16.340 --> 00:00:20.080
+danych. To typ danych, który może zawierać
+
+00:00:20.180 --> 00:00:23.300
+wiele rzeczy naraz, nie tylko jedną. Ten
+
+00:00:23.380 --> 00:00:26.780
+złożony typ danych nazywa się tablicą.
+
+00:00:28.220 --> 00:00:30.280
+Gdy słyszysz słowo „tablica”,
+
+00:00:30.320 --> 00:00:33.060
+wyobraź sobie fizyczny łańcuch,
+
+00:00:33.440 --> 00:00:36.800
+który łączy wiele rzeczy. Te rzeczy
+
+00:00:36.820 --> 00:00:39.520
+mogą być czymkolwiek: stringami, liczbami, wartościami logicznymi,
+
+00:00:40.100 --> 00:00:42.360
+nawet innymi tablicami, a nawet rzeczami,
+
+00:00:42.440 --> 00:00:44.280
+których jeszcze nie znasz. Ale na razie
+
+00:00:44.320 --> 00:00:47.440
+nie musisz się tym przejmować. Wszystko w tym łańcuchu
+
+00:00:47.500 --> 00:00:50.320
+ma swoją kolejność, taką, w jakiej zostało połączone.
+
+00:00:51.180 --> 00:00:54.860
+Tablica zawiera więc wiele rzeczy, ale
+
+00:00:54.920 --> 00:00:58.800
+sama jest jednym solidnym elementem, jedną całością,
+
+00:00:58.840 --> 00:01:01.440
+jedną tablicą z wieloma elementami w środku.
+
+00:01:03.320 --> 00:01:06.090
+Jiki może wziąć tę tablicę, ten łańcuch,
+
+00:01:06.160 --> 00:01:08.060
+i włożyć go do pudełka, tak samo, jak
+
+00:01:08.120 --> 00:01:09.300
+wkłada do pudełka string
+
+00:01:09.320 --> 00:01:11.580
+albo liczbę. Może ją włożyć
+
+00:01:11.600 --> 00:01:13.340
+do otworu wejściowego maszyny.
+
+00:01:13.900 --> 00:01:15.320
+Może ją wyciągnąć z kanału
+
+00:01:15.330 --> 00:01:18.860
+zwrotnego. Tablica jest jedną rzeczą i Jiki
+
+00:01:18.900 --> 00:01:20.800
+pracuje z nią dokładnie tak samo,
+
+00:01:21.280 --> 00:01:23.840
+jak ze stringami, liczbami i wszystkim innym,
+
+00:01:23.880 --> 00:01:27.920
+co już znasz. W kodzie tablica
+
+00:01:28.020 --> 00:01:30.240
+też trochę przypomina łańcuch.
+
+00:01:30.300 --> 00:01:32.420
+Ma nawias kwadratowy na każdym końcu,
+
+00:01:32.880 --> 00:01:34.770
+a pomiędzy nimi wiele elementów połączonych
+
+00:01:34.800 --> 00:01:38.420
+ze sobą, oddzielonych przecinkami. Na przykład
+
+00:01:38.440 --> 00:01:40.590
+gdybyśmy chcieli stworzyć tablicę
+
+00:01:40.600 --> 00:01:42.480
+z imionami kilku naszych mentorów,
+
+00:01:43.100 --> 00:01:46.440
+moglibyśmy przygotować pudełko o nazwie mentors
+
+00:01:46.460 --> 00:01:49.260
+i włożyć do niego ten łańcuch.
+
+00:01:49.280 --> 00:01:52.900
+Napisalibyśmy let mentors =, dokładnie tak samo
+
+00:01:53.140 --> 00:01:55.300
+jak przy każdym innym pudełku,
+
+00:01:55.320 --> 00:01:57.860
+potem otwierający nawias kwadratowy,
+
+00:01:57.920 --> 00:02:00.480
+wiele elementów, czyli imiona oddzielone przecinkami,
+
+00:02:00.500 --> 00:02:02.700
+i na końcu zamykający nawias kwadratowy. Gdy Jiki
+
+00:02:02.760 --> 00:02:04.730
+to widzi, bierze cztery kartki
+
+00:02:04.820 --> 00:02:07.760
+papieru, po jednej na każde imię, potem bierze
+
+00:02:07.840 --> 00:02:10.650
+nowy łańcuch i łączy je wszystkie razem,
+
+00:02:10.680 --> 00:02:12.800
+a na końcu wkłada ten łańcuch do pudełka
+
+00:02:12.860 --> 00:02:16.580
+mentors. Do tablicy można włożyć cokolwiek: stringi,
+
+00:02:16.660 --> 00:02:19.820
+liczby, wartości logiczne, a nawet mieszankę różnych rzeczy.
+
+00:02:19.860 --> 00:02:22.900
+To wszystko są przykłady całkowicie poprawnych tablic.
+
+00:02:24.800 --> 00:02:27.320
+Można też stworzyć pustą tablicę.
+
+00:02:27.380 --> 00:02:30.080
+To po prostu łańcuch bez elementów. Wciąż
+
+00:02:30.140 --> 00:02:31.760
+jest prawdziwą rzeczą. Wciąż ma oba
+
+00:02:31.820 --> 00:02:33.800
+końce. Wciąż jest łańcuchem. Po prostu
+
+00:02:33.860 --> 00:02:36.160
+nie ma nic w środku. Ale
+
+00:02:36.200 --> 00:02:38.400
+taką pustą tablicę nadal można włożyć
+
+00:02:38.420 --> 00:02:40.260
+do pudełka, wyjąć ją i użyć
+
+00:02:40.280 --> 00:02:44.120
+później. Dobrze, tablicę można więc stworzyć
+
+00:02:44.160 --> 00:02:46.850
+za pomocą składni z nawiasami kwadratowymi, ale jak
+
+00:02:46.860 --> 00:02:48.820
+z niej korzystać? Jak
+
+00:02:48.880 --> 00:02:50.910
+sprawdzić, co jest w środku, i jak coś
+
+00:02:50.980 --> 00:02:53.829
+z niej wyciągnąć? Dokładnie tak samo,
+
+00:02:53.860 --> 00:02:55.410
+jak przy wyciąganiu liter
+
+00:02:55.440 --> 00:02:58.040
+ze stringa. Używa się składni z nawiasami
+
+00:02:58.100 --> 00:03:00.980
+kwadratowymi i liczbą w środku. Wróćmy
+
+00:03:01.020 --> 00:03:03.020
+do naszej listy mentorów. Jeśli chcemy
+
+00:03:03.060 --> 00:03:05.560
+wyciągnąć pierwszego z nich, piszemy mentors
+
+00:03:05.800 --> 00:03:08.720
+[0]. Pamiętaj, że liczymy od
+
+00:03:08.880 --> 00:03:13.280
+zera w języku JavaScript. Możemy też iterować
+
+00:03:13.290 --> 00:03:15.190
+po tablicy dokładnie tak samo,
+
+00:03:15.220 --> 00:03:18.460
+jak wcześniej po stringach, za pomocą pętli for...of.
+
+00:03:19.400 --> 00:03:21.580
+Z tablicami działa to dokładnie tak samo.
+
+00:03:21.680 --> 00:03:23.980
+Jedyna różnica jest taka, że tym razem zamiast
+
+00:03:24.040 --> 00:03:26.720
+litery dostajemy to, co było
+
+00:03:26.780 --> 00:03:28.900
+elementem tablicy. W tym przykładzie
+
+00:03:28.940 --> 00:03:31.620
+imię mentora. Za pierwszym razem
+
+00:03:31.680 --> 00:03:34.280
+dziękujemy więc DJ. Za drugim
+
+00:03:34.320 --> 00:03:38.400
+Becky, i tak dalej. Na tablicach
+
+00:03:38.460 --> 00:03:41.500
+możemy też używać właściwości length,
+
+00:03:41.560 --> 00:03:43.940
+tak samo jak na stringach. Jeśli
+
+00:03:43.980 --> 00:03:45.980
+w pudełku mentors mamy tablicę
+
+00:03:46.100 --> 00:03:50.040
+z czterema stringami i napiszemy mentors.length, zwróci nam cztery.
+
+00:03:50.980 --> 00:03:53.500
+Dokładnie tak samo działa na tablicach
+
+00:03:53.520 --> 00:03:56.180
+includes. Możemy napisać mentors.includes
+
+00:03:56.540 --> 00:03:59.880
+("DJ") i zwróci true. Ale jeśli
+
+00:03:59.960 --> 00:04:03.600
+napiszemy mentors.includes("Frank"), zwróci false.
+
+00:04:05.080 --> 00:04:07.360
+Wszystko działa dokładnie tak samo jak ze stringami.
+
+00:04:07.420 --> 00:04:09.640
+Po prostu tym razem pracujemy z elementami
+
+00:04:09.660 --> 00:04:12.160
+tablicy, a nie z literami stringa.
+
+00:04:14.140 --> 00:04:17.160
+W dwóch kolejnych ćwiczeniach wypróbujesz
+
+00:04:17.200 --> 00:04:19.540
+te różne techniki. Trzeba będzie
+
+00:04:19.560 --> 00:04:21.130
+zastanowić się, czy chcesz wyciągnąć
+
+00:04:21.300 --> 00:04:23.680
+jeden element z tablicy za pomocą
+
+00:04:23.720 --> 00:04:26.220
+składni z nawiasami kwadratowymi, czy raczej
+
+00:04:26.280 --> 00:04:28.820
+przejść pętlą po wszystkich elementach i sprawdzić
+
+00:04:28.880 --> 00:04:31.860
+lub obsłużyć każdy z nich po kolei. Jak zawsze, jeśli
+
+00:04:31.920 --> 00:04:34.040
+utkniesz, zajrzyj do podpowiedzi. Do zobaczenia
+
+00:04:34.080 --> 00:04:34.860
+wkrótce!
