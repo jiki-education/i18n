@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 9d89d6259cdafb0e4850d658df9bd781
+
+00:00:00.140 --> 00:00:02.440
+Benvingut de nou. Has arribat a una fita
+
+00:00:02.520 --> 00:00:05.280
+força important del curs. Has estat fent servir,
+
+00:00:05.440 --> 00:00:08.060
+doncs, nombres, cordes i booleans (la paraula
+
+00:00:08.120 --> 00:00:10.500
+fina per dir «cert» i «fals»), i tot això
+
+00:00:10.540 --> 00:00:13.350
+ho anomenem tipus de dades. Però en aquest vídeo
+
+00:00:13.400 --> 00:00:16.260
+hi afegirem el nostre primer tipus de dades
+
+00:00:16.340 --> 00:00:20.080
+compost. És un tipus de dades que pot contenir
+
+00:00:20.180 --> 00:00:23.300
+diverses coses, no només una de sola, i aquest
+
+00:00:23.380 --> 00:00:26.780
+tipus compost, aquest tipus de dades, es diu llista.
+
+00:00:28.220 --> 00:00:30.280
+Quan sentis la paraula «array», vull
+
+00:00:30.320 --> 00:00:33.060
+que pensis en una filera física
+
+00:00:33.440 --> 00:00:36.800
+que subjecta moltes coses juntes. Allò que
+
+00:00:36.820 --> 00:00:39.520
+subjecta pot ser qualsevol cosa: cordes, nombres, booleans,
+
+00:00:40.100 --> 00:00:42.360
+fins i tot altres llistes, fins i tot coses que encara no
+
+00:00:42.440 --> 00:00:44.280
+has après, però això no ens ha de preocupar
+
+00:00:44.320 --> 00:00:47.440
+ara. Tot el que hi ha en aquesta filera està
+
+00:00:47.500 --> 00:00:50.320
+ordenat, en l'ordre en què s'ha enfilat.
+
+00:00:51.180 --> 00:00:54.860
+Així que una llista conté moltes coses, però
+
+00:00:54.920 --> 00:00:58.800
+és un sol element sòlid, una sola cosa sòlida,
+
+00:00:58.840 --> 00:01:01.440
+una sola llista amb molts elements a dins.
+
+00:01:03.320 --> 00:01:06.090
+El Jiki pot agafar aquesta llista, aquesta filera,
+
+00:01:06.160 --> 00:01:08.060
+i ficar-la en una capsa, igual que
+
+00:01:08.120 --> 00:01:09.300
+pot ficar una corda en una capsa
+
+00:01:09.320 --> 00:01:11.580
+o un nombre en una capsa. La pot posar
+
+00:01:11.600 --> 00:01:13.340
+a la ranura d'entrada d'una màquina.
+
+00:01:13.900 --> 00:01:15.320
+La pot treure pel conducte
+
+00:01:15.330 --> 00:01:18.860
+de sortida. Aquesta llista és una sola cosa, i el Jiki
+
+00:01:18.900 --> 00:01:20.800
+hi treballa exactament de la mateixa manera
+
+00:01:21.280 --> 00:01:23.840
+com treballa amb cordes, nombres i tota la resta que has
+
+00:01:23.880 --> 00:01:27.920
+vist fins ara. Ara bé, en codi, una llista
+
+00:01:28.020 --> 00:01:30.240
+també s'assembla una mica a una filera.
+
+00:01:30.300 --> 00:01:32.420
+Té un claudàtor a cada extrem
+
+00:01:32.880 --> 00:01:34.770
+i després molts elements enfilats,
+
+00:01:34.800 --> 00:01:38.420
+separats per comes. Per exemple, si
+
+00:01:38.440 --> 00:01:40.590
+volguéssim crear una llista amb
+
+00:01:40.600 --> 00:01:42.480
+els noms d'alguns dels nostres mentors,
+
+00:01:43.100 --> 00:01:46.440
+podríem muntar una capsa anomenada mentors
+
+00:01:46.460 --> 00:01:49.260
+i ficar-hi aquesta filera a dins.
+
+00:01:49.280 --> 00:01:52.900
+Escriuríem let mentors =, exactament igual
+
+00:01:53.140 --> 00:01:55.300
+que amb qualsevol altra capsa, i
+
+00:01:55.320 --> 00:01:57.860
+després tindríem un claudàtor d'obertura,
+
+00:01:57.920 --> 00:02:00.480
+molts elements, els seus noms separats per comes, i
+
+00:02:00.500 --> 00:02:02.700
+finalment un claudàtor de tancament. Quan el Jiki
+
+00:02:02.760 --> 00:02:04.730
+ho veu, va a buscar quatre
+
+00:02:04.820 --> 00:02:07.760
+papers, un per a cada nom, després agafa
+
+00:02:07.840 --> 00:02:10.650
+una filera nova i els enfila tots, i
+
+00:02:10.680 --> 00:02:12.800
+finalment posa aquesta filera a la capsa
+
+00:02:12.860 --> 00:02:16.580
+mentors. Pots posar qualsevol cosa en una llista: cordes,
+
+00:02:16.660 --> 00:02:19.820
+nombres, booleans, fins i tot una barreja de coses.
+
+00:02:19.860 --> 00:02:22.900
+Aquests són exemples ben diferents de llistes del tot vàlides.
+
+00:02:24.800 --> 00:02:27.320
+També pots crear una llista buida.
+
+00:02:27.380 --> 00:02:30.080
+És només una filera sense elements. Continua sent
+
+00:02:30.140 --> 00:02:31.760
+una cosa real. Encara té tots dos
+
+00:02:31.820 --> 00:02:33.800
+extrems. Continua sent una filera. Només passa que
+
+00:02:33.860 --> 00:02:36.160
+no té cap element a dins. Però
+
+00:02:36.200 --> 00:02:38.400
+tot i així pots ficar aquesta llista buida
+
+00:02:38.420 --> 00:02:40.260
+en una capsa, treure-la
+
+00:02:40.280 --> 00:02:44.120
+i fer-la servir més endavant. D'acord, així que pots crear una
+
+00:02:44.160 --> 00:02:46.850
+llista amb la sintaxi dels claudàtors, però com
+
+00:02:46.860 --> 00:02:48.820
+les fem servir de debò? Com
+
+00:02:48.880 --> 00:02:50.910
+mirem què tenen a dins i com en traiem
+
+00:02:50.980 --> 00:02:53.829
+coses? Doncs exactament igual que
+
+00:02:53.860 --> 00:02:55.410
+quan volíem treure lletres
+
+00:02:55.440 --> 00:02:58.040
+d'una corda. Podem fer servir la sintaxi
+
+00:02:58.100 --> 00:03:00.980
+dels claudàtors amb nombres a dins. Tornem, doncs,
+
+00:03:01.020 --> 00:03:03.020
+a la nostra llista de mentors. Si en volem
+
+00:03:03.060 --> 00:03:05.560
+treure el primer, escrivim mentors,
+
+00:03:05.800 --> 00:03:08.720
+claudàtor, zero. Recorda que en JavaScript
+
+00:03:08.880 --> 00:03:13.280
+comptem a partir de zero. I també podem recórrer
+
+00:03:13.290 --> 00:03:15.190
+una llista exactament de la mateixa manera
+
+00:03:15.220 --> 00:03:18.460
+com recorríem les cordes abans, fent servir for-of.
+
+00:03:19.400 --> 00:03:21.580
+Les llistes funcionen exactament igual. L'única
+
+00:03:21.680 --> 00:03:23.980
+diferència és que aquesta vegada, en lloc de treure
+
+00:03:24.040 --> 00:03:26.720
+una lletra, traiem el que sigui
+
+00:03:26.780 --> 00:03:28.900
+que hi hagi a la llista. En aquest exemple, el
+
+00:03:28.940 --> 00:03:31.620
+nom del mentor. Així, el primer cop
+
+00:03:31.680 --> 00:03:34.280
+que donem les gràcies a algú, les donem a DJ. El segon
+
+00:03:34.320 --> 00:03:38.400
+cop, les donem a Becky, etcètera. També
+
+00:03:38.460 --> 00:03:41.500
+podem fer servir la propietat length amb les llistes,
+
+00:03:41.560 --> 00:03:43.940
+tal com vam aprendre amb les cordes. Si
+
+00:03:43.980 --> 00:03:45.980
+tenim una llista amb quatre cordes a la
+
+00:03:46.100 --> 00:03:50.040
+capsa mentors i escrivim mentors.length, retornarà quatre.
+
+00:03:50.980 --> 00:03:53.500
+I també podem fer servir includes exactament igual
+
+00:03:53.520 --> 00:03:56.180
+amb les llistes. Podem escriure mentors.includes
+
+00:03:56.540 --> 00:03:59.880
+amb DJ entre parèntesis, i retornarà true. Però si
+
+00:03:59.960 --> 00:04:03.600
+escrivim mentors.includes amb Frank, retornarà false.
+
+00:04:05.080 --> 00:04:07.360
+Tot funciona exactament igual que amb les cordes.
+
+00:04:07.420 --> 00:04:09.640
+L'única cosa és que ara treballem amb els elements
+
+00:04:09.660 --> 00:04:12.160
+d'una llista, no amb les lletres d'una corda.
+
+00:04:14.140 --> 00:04:17.160
+Als dos exercicis següents provaràs
+
+00:04:17.200 --> 00:04:19.540
+aquestes diferents tècniques. Hauràs de
+
+00:04:19.560 --> 00:04:21.130
+pensar si necessites treure un
+
+00:04:21.300 --> 00:04:23.680
+sol element de la llista amb la
+
+00:04:23.720 --> 00:04:26.220
+sintaxi dels claudàtors o si vols
+
+00:04:26.280 --> 00:04:28.820
+recórrer tots els elements i revisar-los
+
+00:04:28.880 --> 00:04:31.860
+o fer-hi alguna cosa, un per un. Com sempre, si
+
+00:04:31.920 --> 00:04:34.040
+t'encalles, mira les pistes, i ens veiem
+
+00:04:34.080 --> 00:04:34.860
+aquí de nou ben aviat.

@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 51f04781025bf1dbba2ded55c062926f
+
+00:00:00.140 --> 00:00:03.580
+Hola de nou. Fins ara, quan hem creat variables,
+
+00:00:03.740 --> 00:00:06.560
+només hem fet servir valors simples: un nombre com
+
+00:00:06.840 --> 00:00:10.620
+50 o una corda com yellow. On les variables
+
+00:00:10.660 --> 00:00:13.340
+es tornen molt més potents és quan les podem
+
+00:00:13.440 --> 00:00:16.460
+combinar entre elles. És a dir,
+
+00:00:16.540 --> 00:00:19.000
+quan podem dir que la vora esquerra
+
+00:00:19.040 --> 00:00:22.030
+del rectangle ha d'estar a una certa distància
+
+00:00:22.080 --> 00:00:25.660
+de la vora del llenç. En programació,
+
+00:00:25.720 --> 00:00:28.810
+podem fer servir les matemàtiques bàsiques, coses com sumar,
+
+00:00:28.940 --> 00:00:32.340
+restar, multiplicar i dividir, i hi podem fer servir
+
+00:00:32.380 --> 00:00:35.140
+les variables que ja hem creat.
+
+00:00:35.200 --> 00:00:39.020
+Comencem, eh, dient que
+
+00:00:39.060 --> 00:00:41.300
+volem dibuixar un rectangle al llenç,
+
+00:00:41.960 --> 00:00:43.800
+i el volem a 10
+
+00:00:44.480 --> 00:00:46.980
+de la vora esquerra i de la dreta, i
+
+00:00:47.200 --> 00:00:48.960
+a 20 de la vora superior i de la inferior.
+
+00:00:49.900 --> 00:00:51.580
+Així quedarà al mig
+
+00:00:51.620 --> 00:00:53.900
+del llenç, una mica més llarg
+
+00:00:53.960 --> 00:00:57.740
+que alt. Recordaràs que, quan dibuixem un
+
+00:00:57.760 --> 00:01:00.430
+rectangle, necessitem saber el left, el top,
+
+00:01:00.600 --> 00:01:02.510
+el width i el height, a més del color.
+
+00:01:03.360 --> 00:01:04.820
+Així que podem començar
+
+00:01:04.920 --> 00:01:08.320
+escrivint-ho. I ara hem d'esbrinar de debò
+
+00:01:08.420 --> 00:01:10.220
+quins valors han de tenir el left, el top, el width
+
+00:01:10.240 --> 00:01:13.100
+i el height. Doncs els hi posem. Left és
+
+00:01:13.260 --> 00:01:15.660
+20. Eh, perdó, left és 10. Top és
+
+00:01:15.940 --> 00:01:18.920
+20. El width, bé, el width és la
+
+00:01:19.020 --> 00:01:22.020
+mida del llenç, que és 100, menys
+
+00:01:22.080 --> 00:01:23.340
+els 10 de l'esquerra i els 10
+
+00:01:23.360 --> 00:01:26.100
+de la dreta, així que són 80. I el
+
+00:01:26.180 --> 00:01:29.040
+height és l'alçada del llenç, que
+
+00:01:29.080 --> 00:01:31.580
+també és 100, menys els 20
+
+00:01:31.640 --> 00:01:33.660
+de dalt i els 20 de baix, o sigui
+
+00:01:33.960 --> 00:01:37.860
+60. Així que podem assignar aquestes variables. Left,
+
+00:01:37.920 --> 00:01:42.840
+10, top, 20, width, 80, height, 60. I
+
+00:01:42.860 --> 00:01:44.880
+segurament això ja et sona força. És
+
+00:01:44.920 --> 00:01:46.700
+el que has anat fent fins ara
+
+00:01:46.740 --> 00:01:50.940
+als exercicis. Però què passa ara si volem
+
+00:01:50.960 --> 00:01:54.140
+fer entrar una mica el rectangle, fer-lo
+
+00:01:54.160 --> 00:01:55.400
+una mica més petit? Si el volem
+
+00:01:55.460 --> 00:01:57.040
+a 20 de les vores esquerra i
+
+00:01:57.100 --> 00:01:59.040
+dreta i a 30 de les vores superior i
+
+00:01:59.060 --> 00:02:02.620
+inferior? Hem de tornar a calcular-ho
+
+00:02:02.720 --> 00:02:06.320
+tot. El width ara és 100 menys
+
+00:02:06.560 --> 00:02:10.280
+20 menys 20, i el height és 100
+
+00:02:10.360 --> 00:02:14.320
+menys 30 menys 30, i sens dubte
+
+00:02:14.420 --> 00:02:17.280
+és més feina i més càlculs dels que
+
+00:02:17.320 --> 00:02:20.400
+vull fer. Així que, en lloc d'això, podem demanar a
+
+00:02:20.420 --> 00:02:24.000
+l'ordinador que ho faci per nosaltres. Podem
+
+00:02:24.060 --> 00:02:27.680
+definir el width com a 100 menys
+
+00:02:27.840 --> 00:02:31.620
+el left menys el left, i el height
+
+00:02:31.700 --> 00:02:34.720
+com a 100 menys el top menys el top,
+
+00:02:34.960 --> 00:02:37.580
+perquè dalt i baix són iguals. O
+
+00:02:37.600 --> 00:02:40.980
+ho podem escriure com a 100 menys
+
+00:02:41.240 --> 00:02:44.820
+el left per dos, o 100 menys
+
+00:02:44.940 --> 00:02:48.620
+el top per dos. I ara, si canviem
+
+00:02:48.660 --> 00:02:52.040
+el left o el top, el width i
+
+00:02:52.080 --> 00:02:54.860
+el height també canviaran. Les coses
+
+00:02:54.900 --> 00:02:57.430
+comencen a relacionar-se entre elles. I
+
+00:02:57.440 --> 00:03:00.960
+el llenç? Ara fa 100. Però i
+
+00:03:01.020 --> 00:03:03.700
+si el nostre llenç passa a fer 200 d'amplada
+
+00:03:03.740 --> 00:03:06.540
+i d'alçada? Doncs segurament hauríem de crear
+
+00:03:06.620 --> 00:03:09.560
+una variable anomenada canvasSize i posar-hi
+
+00:03:09.580 --> 00:03:13.230
+100. I ara el nostre left és, perdó,
+
+00:03:13.260 --> 00:03:17.740
+el nostre width és canvasSize menys left per dos,
+
+00:03:18.200 --> 00:03:22.160
+i el nostre height és canvasSize menys top
+
+00:03:22.200 --> 00:03:26.120
+per dos. Pensem en què fa el Jiki
+
+00:03:26.480 --> 00:03:30.580
+quan escrivim let height igual a canvasSize menys
+
+00:03:30.700 --> 00:03:33.310
+top per dos. Doncs comença agafant
+
+00:03:33.310 --> 00:03:35.220
+la capsa top del prestatge,
+
+00:03:35.260 --> 00:03:37.660
+hi troba 20, i treu
+
+00:03:37.680 --> 00:03:40.160
+la calculadora de butxaca i fa 20 per dos,
+
+00:03:40.580 --> 00:03:42.740
+i pren nota mentalment de 40.
+
+00:03:43.720 --> 00:03:45.860
+I després agafa la capsa canvasSize
+
+00:03:45.900 --> 00:03:49.540
+del prestatge, hi troba 100, i
+
+00:03:49.600 --> 00:03:52.780
+calcula que 100 menys 40 és 60.
+
+00:03:53.840 --> 00:03:56.350
+I ara ja sap que, en realitat, el que li diem
+
+00:03:56.400 --> 00:04:00.000
+és let height igual a 60. Així que obeeix
+
+00:04:00.040 --> 00:04:02.320
+el let: agafa una capsa nova, hi escriu
+
+00:04:02.360 --> 00:04:04.440
+height i hi posa 60
+
+00:04:04.580 --> 00:04:06.900
+a dins. I després, quan utilitza height
+
+00:04:07.040 --> 00:04:09.600
+més endavant, només n'ha de tornar a treure
+
+00:04:09.640 --> 00:04:13.720
+el 60. Prova de posar tot això en pràctica
+
+00:04:13.820 --> 00:04:16.180
+en els propers exercicis i cada cop
+
+00:04:16.240 --> 00:04:18.649
+ho veuràs més clar. I, a més, quan ho tinguis
+
+00:04:18.700 --> 00:04:22.070
+tot funcionant, prova de canviar els valors de
+
+00:04:22.100 --> 00:04:25.200
+les variables i mira què passa. Fixa't com
+
+00:04:25.220 --> 00:04:28.420
+creixen i com s'encongeixen. Pren-t'ho
+
+00:04:28.480 --> 00:04:31.480
+amb calma, pensa en les relacions entre les coses, i
+
+00:04:31.500 --> 00:04:32.670
+ens veiem aquí d'aquí a una estona.

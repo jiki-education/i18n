@@ -1,0 +1,195 @@
+WEBVTT
+
+NOTE en_md5 e47167fc1482d0b37cf8c1318d2bbbbb
+
+00:00:00.100 --> 00:00:04.260
+Benvingut de nou. Fins ara, quan hem fet servir el bucle
+
+00:00:04.300 --> 00:00:06.910
+repeat per dibuixar coses, cada cosa nova que
+
+00:00:06.920 --> 00:00:10.310
+dibuixàvem afegia alguna cosa a la imatge. Si
+
+00:00:10.340 --> 00:00:12.360
+dibuixàvem un maó nou en una paret,
+
+00:00:12.520 --> 00:00:15.840
+omplia un forat. Si dibuixàvem 10
+
+00:00:15.900 --> 00:00:18.500
+cercles, veiem 10 cercles a la pantalla.
+
+00:00:19.300 --> 00:00:22.220
+És com una pintura. Un cop has posat pintura
+
+00:00:22.240 --> 00:00:24.580
+a la paret, no desapareix quan
+
+00:00:24.640 --> 00:00:26.440
+pintes una altra cosa al costat. Es queda
+
+00:00:26.480 --> 00:00:30.320
+allà. Però i si volem fer que
+
+00:00:30.380 --> 00:00:33.980
+alguna cosa sembli que es mou? Has vist mai
+
+00:00:34.000 --> 00:00:36.150
+un llibre de passar pàgines? Eren molt populars
+
+00:00:36.160 --> 00:00:38.339
+quan jo era petit, ara no tant.
+
+00:00:38.380 --> 00:00:40.640
+Un llibre de passar pàgines és un llibret on cada
+
+00:00:40.680 --> 00:00:44.440
+pàgina té un dibuix una mica diferent. A mesura que
+
+00:00:44.540 --> 00:00:47.640
+passes les pàgines de pressa, els teus ulls veuen
+
+00:00:47.720 --> 00:00:51.170
+com canvien els dibuixos, i el teu cervell pensa que alguna cosa
+
+00:00:51.340 --> 00:00:54.020
+es mou. En realitat no es mou. Només són un munt
+
+00:00:54.060 --> 00:00:58.530
+d'imatges una mica diferents, una rere l'altra. I
+
+00:00:58.560 --> 00:01:02.400
+així és exactament com funciona l'animació al codi.
+
+00:01:02.589 --> 00:01:05.500
+El truc és el mateix. Abans de dibuixar
+
+00:01:05.560 --> 00:01:08.920
+una escena nova, pintem tot
+
+00:01:08.960 --> 00:01:11.920
+el llenç amb un color de fons, una mica com
+
+00:01:11.960 --> 00:01:14.400
+començar una pàgina nova al nostre llibre de passar pàgines,
+
+00:01:15.320 --> 00:01:18.140
+i després fem un petit canvi
+
+00:01:18.180 --> 00:01:21.740
+a l'escena perquè sembli moviment. Així que, si
+
+00:01:21.780 --> 00:01:24.040
+agafem un bloc de codi que ja coneixem, on
+
+00:01:24.080 --> 00:01:27.520
+dibuixem cercles per tota la pantalla,
+
+00:01:27.560 --> 00:01:29.820
+establim una variable de posició i tenim un
+
+00:01:29.840 --> 00:01:31.900
+bloc repeat on dibuixem un cercle i
+
+00:01:31.940 --> 00:01:33.640
+després movem la posició una unitat cap a la dreta.
+
+00:01:34.680 --> 00:01:37.110
+Si executem aquest bloc repeat 100 vegades,
+
+00:01:37.500 --> 00:01:39.940
+veurem 100 cercles per tota
+
+00:01:39.960 --> 00:01:43.320
+la pantalla. Ara mira què passa si
+
+00:01:43.340 --> 00:01:47.440
+afegim un simple rectangle abans de dibuixar
+
+00:01:47.500 --> 00:01:51.260
+el cercle cada vegada. En lloc d'un rastre de
+
+00:01:51.300 --> 00:01:54.210
+cercles, ara els nostres ulls s'enganyen i veuen
+
+00:01:54.380 --> 00:01:57.440
+un sol cercle que sembla lliscar per
+
+00:01:57.520 --> 00:02:01.000
+la pantalla. Cada vegada que passem pel bucle,
+
+00:02:01.020 --> 00:02:04.060
+pintem un fons completament nou, tapem
+
+00:02:04.260 --> 00:02:06.860
+tot el que hi havia abans i després dibuixem
+
+00:02:06.960 --> 00:02:11.120
+el cercle a la seva nova posició. Cada
+
+00:02:11.200 --> 00:02:14.540
+volta del bucle és com una pàgina
+
+00:02:14.600 --> 00:02:17.720
+nova del llibre de passar pàgines. I la clau
+
+00:02:17.740 --> 00:02:19.570
+per entendre-ho és que no estem
+
+00:02:19.640 --> 00:02:22.390
+movent el cercle. El cercle no és un objecte
+
+00:02:22.400 --> 00:02:25.250
+que llisqui per la pantalla. És només un dibuix. Cada
+
+00:02:25.340 --> 00:02:27.220
+vegada que passem pel bucle, pintem a sobre del
+
+00:02:27.280 --> 00:02:29.350
+dibuix vell i en fem un de nou,
+
+00:02:29.980 --> 00:02:32.120
+una mica més a la dreta. El teu ull ho
+
+00:02:32.180 --> 00:02:35.280
+ajunta tot i veu moviment, però en realitat
+
+00:02:35.360 --> 00:02:38.390
+només són un munt de dibuixos separats, un rere l'altre.
+
+00:02:40.080 --> 00:02:42.160
+Al pròxim exercici, faràs servir
+
+00:02:42.200 --> 00:02:45.420
+aquesta idea per crear una posta de sol. Faràs que
+
+00:02:45.460 --> 00:02:47.829
+el sol es mogui, li canviaràs la mida, li canviaràs
+
+00:02:47.880 --> 00:02:50.100
+el color. És tota la mateixa tècnica. Defineixes unes quantes
+
+00:02:50.220 --> 00:02:53.900
+variables, pintes un fons nou i ho dibuixes tot.
+
+00:02:53.940 --> 00:02:57.190
+Actualitzes les variables i ho tornes a fer. I
+
+00:02:57.240 --> 00:02:59.170
+si ets membre Premium, quan acabis
+
+00:02:59.170 --> 00:03:01.750
+la posta de sol, també desbloquejaràs un
+
+00:03:01.800 --> 00:03:05.860
+projecte més complex, la flor que brota, on
+
+00:03:05.940 --> 00:03:08.180
+et pots posar a prova de debò ajuntant totes
+
+00:03:08.220 --> 00:03:11.360
+aquestes coses. És un projecte molt divertit. Bona
+
+00:03:11.400 --> 00:03:13.240
+sort, i ens veiem aquí d'aquí a una estona.

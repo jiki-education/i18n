@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 488ab8c8dd77c6bec365ce44675868b7
+
+00:00:00.280 --> 00:00:02.640
+Benvingut de nou. A la lliçó anterior,
+
+00:00:02.680 --> 00:00:04.680
+vam veure com accedir a una sola lletra
+
+00:00:04.700 --> 00:00:08.300
+d'una corda fent servir claudàtors. En aquesta lliçó,
+
+00:00:08.420 --> 00:00:10.120
+veurem com recórrer
+
+00:00:10.160 --> 00:00:13.160
+una corda per anar traient cada lletra,
+
+00:00:13.200 --> 00:00:15.660
+una a una. I per fer-ho,
+
+00:00:15.720 --> 00:00:18.300
+necessitem un tipus de bucle nou. Fins ara,
+
+00:00:18.360 --> 00:00:20.170
+hem fet servir el bucle repeat, i ara
+
+00:00:20.200 --> 00:00:22.720
+farem servir un bucle que s'anomena for of.
+
+00:00:22.760 --> 00:00:26.880
+Són dues paraules clau noves: for i of. La
+
+00:00:27.000 --> 00:00:28.740
+paraula clau for és una que veurem en
+
+00:00:28.760 --> 00:00:30.360
+força llocs a mesura que avancem.
+
+00:00:30.790 --> 00:00:32.580
+Pot anar tota sola, o
+
+00:00:32.619 --> 00:00:35.380
+acompanyada de in o de of. Per
+
+00:00:35.440 --> 00:00:37.160
+ara, ens centrarem en aquesta
+
+00:00:37.220 --> 00:00:40.120
+última, of. Així que donem una ullada
+
+00:00:40.160 --> 00:00:43.280
+a una mica de codi. Comencem creant una
+
+00:00:43.340 --> 00:00:47.310
+variable anomenada name que conté la corda Jeremy. Aquí no hi ha
+
+00:00:47.380 --> 00:00:50.460
+res de nou. Després tenim aquesta línia, for
+
+00:00:50.540 --> 00:00:53.620
+let letter of name, i hi passen moltes
+
+00:00:53.640 --> 00:00:55.480
+coses, així que repassem-la
+
+00:00:55.520 --> 00:00:59.240
+amb calma. Primer de tot, tenim la paraula clau for. Això
+
+00:00:59.320 --> 00:01:00.980
+li diu al Jiki que volem fer
+
+00:01:01.060 --> 00:01:04.340
+un bucle. Ell mira endavant, veu of
+
+00:01:04.879 --> 00:01:06.320
+i ja sap que volem fer
+
+00:01:06.580 --> 00:01:09.600
+un bucle «for of». I això vol dir que, en lloc de
+
+00:01:09.720 --> 00:01:11.940
+fer servir un bucle repeat en què diem «fes-ho
+
+00:01:12.020 --> 00:01:15.180
+10 vegades», diem «recorre
+
+00:01:15.260 --> 00:01:17.380
+totes les lletres de la corda».
+
+00:01:17.440 --> 00:01:20.990
+Això és el que vol dir «for of». Després tenim aquest
+
+00:01:21.060 --> 00:01:24.080
+tros de let letter. És exactament el mateix
+
+00:01:24.140 --> 00:01:25.860
+que tenim més amunt amb let
+
+00:01:26.020 --> 00:01:29.320
+name. Simplement estem creant una variable que es diu letter.
+
+00:01:30.240 --> 00:01:33.240
+La diferència és que, en lloc de dir explícitament
+
+00:01:33.280 --> 00:01:35.280
+què hi va, li diem al Jiki
+
+00:01:35.320 --> 00:01:37.850
+que hi posi cada lletra de la corda,
+
+00:01:37.900 --> 00:01:41.780
+una a una. Així que el Jiki veu
+
+00:01:41.880 --> 00:01:44.460
+for, comprova que hi hagi of i es posa en marxa.
+
+00:01:44.480 --> 00:01:46.140
+Mira la primera lletra de la corda,
+
+00:01:46.480 --> 00:01:48.380
+la J en aquest cas, i la posa en
+
+00:01:48.440 --> 00:01:50.840
+una capsa nova que es diu letter. Per cert, podríem
+
+00:01:50.880 --> 00:01:52.240
+dir-li com vulguem. No cal
+
+00:01:52.260 --> 00:01:53.920
+que sigui letter. Aquí hem decidit
+
+00:01:53.960 --> 00:01:57.020
+dir-li letter. Després executa el codi
+
+00:01:57.080 --> 00:01:58.960
+que hi ha dins de les claus, i aquí hi pots fer
+
+00:01:59.000 --> 00:02:01.060
+qualsevol cosa que faries a qualsevol altre lloc del codi.
+
+00:02:01.540 --> 00:02:03.560
+L'única diferència és que aquest bloc de
+
+00:02:03.640 --> 00:02:06.320
+codi s'executarà una vegada per a cada lletra
+
+00:02:06.380 --> 00:02:07.900
+de la corda, i tindrà aquesta
+
+00:02:07.960 --> 00:02:11.940
+variable disponible. Cada vegada que el Jiki arriba a la
+
+00:02:12.040 --> 00:02:15.000
+clau de tancament, llença la capsa
+
+00:02:15.020 --> 00:02:16.740
+letter i en crea una de nova amb la
+
+00:02:16.860 --> 00:02:19.220
+lletra següent. Així, la primera vegada,
+
+00:02:19.340 --> 00:02:20.800
+llençarà la J i posarà una
+
+00:02:20.920 --> 00:02:23.000
+E a la capsa. Després farà
+
+00:02:23.020 --> 00:02:25.740
+el mateix amb la R, després la E, després la M,
+
+00:02:26.080 --> 00:02:28.790
+després la Y. Sis lletres, sis voltes al
+
+00:02:28.840 --> 00:02:31.300
+bucle. Espero que s'entengui. Costa una
+
+00:02:31.340 --> 00:02:32.560
+mica acostumar-se a
+
+00:02:32.600 --> 00:02:34.900
+la sintaxi, però no és un concepte
+
+00:02:34.920 --> 00:02:37.730
+gaire difícil. Ara tens
+
+00:02:37.760 --> 00:02:40.250
+uns quants exercicis en què hauràs de recórrer
+
+00:02:40.250 --> 00:02:42.660
+cordes. Cadascun et demanarà fer una cosa diferent
+
+00:02:42.680 --> 00:02:44.980
+amb les lletres, com ara comptar quantes lletres
+
+00:02:45.000 --> 00:02:46.760
+hi ha o trobar la posició d'una
+
+00:02:46.800 --> 00:02:49.260
+lletra concreta. Hauràs de fer servir les diferents
+
+00:02:49.320 --> 00:02:51.640
+tècniques que has après fins ara i combinar-les
+
+00:02:51.700 --> 00:02:57.060
+amb aquest bucle. Aquests exercicis comencen a ser més
+
+00:02:57.100 --> 00:03:00.000
+difícils. Hi combines moltes coses diferents
+
+00:03:00.020 --> 00:03:02.420
+que has après. Pren-t'hi el temps que calgui.
+
+00:03:02.500 --> 00:03:03.920
+Potser et costarà una estona acabar
+
+00:03:03.960 --> 00:03:06.160
+cadascun. Intenta no anar amb presses ni
+
+00:03:06.200 --> 00:03:08.840
+frustrar-te si no te'n surts. Simplement
+
+00:03:08.900 --> 00:03:10.920
+pren-t'ho com un trencaclosques. Si t'encalles,
+
+00:03:10.940 --> 00:03:12.640
+pots fer una pausa, anar a fer
+
+00:03:12.650 --> 00:03:15.160
+una volta i tornar-hi després. Tens tots
+
+00:03:15.200 --> 00:03:16.790
+els coneixements que necessites per fer-ho i
+
+00:03:16.820 --> 00:03:18.870
+les habilitats per aconseguir-ho, però hauràs
+
+00:03:18.940 --> 00:03:21.520
+de tenir paciència. I recorda sempre que
+
+00:03:21.580 --> 00:03:23.320
+pots fer servir les pistes si ho necessites,
+
+00:03:23.900 --> 00:03:25.150
+però intenta reservar-les com a últim
+
+00:03:25.200 --> 00:03:27.540
+recurs. Molta sort, i ens tornem a veure
+
+00:03:27.560 --> 00:03:28.060
+aquí aviat.

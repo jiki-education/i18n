@@ -1,0 +1,264 @@
+WEBVTT
+
+NOTE en_md5 d53eb0ea7bb0ec1daa64bb73829462f2
+
+00:00:00.240 --> 00:00:03.700
+Benvingut de nou. Fins ara, ho hem escrit tot
+
+00:00:03.720 --> 00:00:06.880
+d'una manera lineal, on el Jiki
+
+00:00:06.920 --> 00:00:10.660
+segueix cada instrucció en ordre, de dalt
+
+00:00:10.670 --> 00:00:14.220
+a baix. Ara veurem
+
+00:00:14.260 --> 00:00:16.330
+com el Jiki pot sortir d'aquest
+
+00:00:16.460 --> 00:00:19.690
+flux estricte de dalt a baix i, més concretament,
+
+00:00:19.720 --> 00:00:21.800
+com podem dir al Jiki que executi el mateix
+
+00:00:21.880 --> 00:00:24.320
+tros de codi moltes vegades
+
+00:00:24.360 --> 00:00:28.680
+seguides. Per exemple, imagina que ets al
+
+00:00:28.760 --> 00:00:31.180
+laberint i vols avançar 10 passos.
+
+00:00:31.240 --> 00:00:34.240
+Abans et vaig donar la funció walk
+
+00:00:34.280 --> 00:00:36.690
+perquè t'ajudés amb això, però i si
+
+00:00:36.740 --> 00:00:39.670
+no existís? I si només tinguessis
+
+00:00:39.920 --> 00:00:44.700
+la funció move? En lloc d'escriure move 10
+
+00:00:44.760 --> 00:00:48.000
+vegades seguides, cosa que es fa molt repetitiva,
+
+00:00:48.740 --> 00:00:50.420
+el que necessitem
+
+00:00:50.500 --> 00:00:54.000
+és poder dir: «Ei, Jiki, fes 10 vegades
+
+00:00:54.120 --> 00:00:59.840
+el que et digui tot seguit. Move.» Per fer això
+
+00:00:59.900 --> 00:01:02.320
+en codi, hem de poder
+
+00:01:02.480 --> 00:01:07.300
+fer servir la nostra primera paraula clau, i les paraules clau són instruccions
+
+00:01:07.340 --> 00:01:10.180
+que el Jiki entén. S'assemblen una mica
+
+00:01:10.220 --> 00:01:13.980
+a les màquines, però no ho són. Quan el Jiki veu
+
+00:01:14.020 --> 00:01:16.460
+una paraula clau, no busca cap màquina
+
+00:01:16.500 --> 00:01:18.920
+al prestatge: simplement sap que ha de fer
+
+00:01:18.960 --> 00:01:23.300
+alguna cosa. Ho porta incorporat al cervell. I
+
+00:01:23.320 --> 00:01:25.700
+hi ha unes vint paraules clau diferents
+
+00:01:25.740 --> 00:01:28.480
+que aprendrem durant el curs, i la
+
+00:01:28.520 --> 00:01:32.560
+primera de totes és la paraula clau repeat.
+
+00:01:32.580 --> 00:01:35.540
+La paraula clau repeat fa exactament el que he dit abans.
+
+00:01:36.100 --> 00:01:40.580
+Li diu al Jiki: «Repeteix això tantes vegades
+
+00:01:40.700 --> 00:01:42.990
+com et digui tot seguit». Fes un cop d'ull a aquest
+
+00:01:43.080 --> 00:01:45.960
+codi. Primer, fem servir la
+
+00:01:46.000 --> 00:01:48.440
+paraula clau repeat per dir al Jiki que
+
+00:01:48.480 --> 00:01:51.580
+farà una cosa diverses vegades. Després hi posem
+
+00:01:51.680 --> 00:01:53.940
+quantes vegades vols que el Jiki
+
+00:01:53.980 --> 00:01:57.070
+repeteixi la cosa, entre parèntesis, i tot seguit
+
+00:01:57.100 --> 00:02:00.030
+tenim aquestes claus, i
+
+00:02:00.040 --> 00:02:02.850
+dins de les claus hi ha les coses que
+
+00:02:02.860 --> 00:02:06.020
+volem que el Jiki repeteixi. Aquest patró
+
+00:02:06.100 --> 00:02:09.320
+és increïblement comú en programació. Especifiquem una
+
+00:02:09.380 --> 00:02:12.400
+paraula clau, normalment amb una mica d'informació, com ara
+
+00:02:12.440 --> 00:02:14.549
+quantes vegades fer una cosa, en aquest
+
+00:02:14.580 --> 00:02:17.620
+cas, i després un bloc de codi entre
+
+00:02:17.680 --> 00:02:20.880
+claus. Així que, tornant al món del laberint,
+
+00:02:21.520 --> 00:02:25.220
+en lloc d'escriure move, move, move, move,
+
+00:02:25.260 --> 00:02:30.580
+podem escriure repeat quatre vegades move. El Jiki
+
+00:02:30.590 --> 00:02:32.860
+veurà aquest codi i farà servir la
+
+00:02:32.940 --> 00:02:36.870
+màquina move quatre vegades seguides. I
+
+00:02:36.900 --> 00:02:38.960
+no estem limitats a tenir només una cosa
+
+00:02:39.000 --> 00:02:41.800
+dins d'aquestes claus. El Jiki pot fer
+
+00:02:41.900 --> 00:02:45.320
+diverses coses de manera repetida. Podem dir al Jiki que
+
+00:02:45.460 --> 00:02:48.080
+faci move, després turnLeft, i que repeteixi
+
+00:02:48.120 --> 00:02:51.540
+tot això quatre vegades. Si el Jiki veu
+
+00:02:51.560 --> 00:02:54.000
+això, farà servir la màquina move, després la
+
+00:02:54.060 --> 00:02:56.880
+màquina turnLeft, després la màquina move, després
+
+00:02:56.920 --> 00:02:59.340
+la màquina turnLeft, després la màquina move,
+
+00:02:59.430 --> 00:03:01.720
+etcètera, fins que hagi fet les dues coses
+
+00:03:01.800 --> 00:03:07.160
+quatre vegades. Aquestes instruccions de repetició les anomenem bucles,
+
+00:03:07.840 --> 00:03:09.540
+i hi ha molts bucles diferents que
+
+00:03:09.580 --> 00:03:11.980
+podem fer servir i que funcionen una mica diferent.
+
+00:03:12.000 --> 00:03:15.210
+Els explorarem tots en aquest curs.
+
+00:03:15.220 --> 00:03:17.710
+Hi ha una cosa més a saber:
+
+00:03:17.760 --> 00:03:20.300
+mantenir el codi net i endreçat
+
+00:03:20.480 --> 00:03:24.240
+es torna essencial quan treballes amb bucles. Quan el teu
+
+00:03:24.280 --> 00:03:26.800
+codi té una bona estructura visual,
+
+00:03:26.860 --> 00:03:28.940
+és molt fàcil veure què hi passa.
+
+00:03:29.660 --> 00:03:31.740
+Però si no la té, si t'oblides de
+
+00:03:31.780 --> 00:03:34.400
+sagnar les coses bé o et barreges amb el sagnat,
+
+00:03:34.460 --> 00:03:38.630
+les coses es tornen confuses molt de pressa. Així que, en
+
+00:03:38.660 --> 00:03:41.500
+aquest curs, sempre tenim una regla.
+
+00:03:41.600 --> 00:03:45.049
+La clau d'obertura sempre va
+
+00:03:45.080 --> 00:03:48.430
+a la mateixa línia que la sentència repeat.
+
+00:03:48.430 --> 00:03:50.860
+La clau de tancament sempre va en una línia
+
+00:03:50.940 --> 00:03:54.080
+pròpia després de la sentència, i el codi
+
+00:03:54.120 --> 00:03:56.399
+que hi ha entremig sempre va sagnat amb dos
+
+00:03:56.480 --> 00:04:00.120
+espais. Així tot quedarà ben endreçat,
+
+00:04:01.020 --> 00:04:02.560
+i si te n'oblides o intentes seguir
+
+00:04:02.620 --> 00:04:04.360
+un patró diferent, et sortirà un error.
+
+00:04:06.100 --> 00:04:08.080
+En els pròxims exercicis, el teu objectiu és
+
+00:04:08.120 --> 00:04:11.060
+resoldre alguns dels reptes amb
+
+00:04:11.100 --> 00:04:13.720
+el mínim de línies de codi possible, i
+
+00:04:13.780 --> 00:04:15.320
+pots fer servir bucles repeat per ajudar-te
+
+00:04:15.380 --> 00:04:18.060
+amb això. Després veurem com començar
+
+00:04:18.070 --> 00:04:19.990
+a fer servir el bucle repeat juntament amb altres
+
+00:04:20.019 --> 00:04:23.270
+conceptes per descobrir tècniques
+
+00:04:23.320 --> 00:04:25.540
+molt més potents. Diverteix-te,
+
+00:04:25.580 --> 00:04:26.039
+i fins ben aviat!

@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 e356df7bcabc2d9e377cede51ea7aaa5
+
+00:00:00.220 --> 00:00:04.200
+Hola de nou. Fins ara, quan hem creat variables,
+
+00:00:04.520 --> 00:00:07.100
+hem posat valors dins de capses i després
+
+00:00:07.140 --> 00:00:10.059
+els hem recuperat més tard. Això ens ha estat molt útil per
+
+00:00:10.130 --> 00:00:13.080
+donar claredat al nostre codi i per reduir
+
+00:00:13.140 --> 00:00:15.520
+part del càlcul mental que, si no,
+
+00:00:15.560 --> 00:00:18.720
+hauríem hagut de fer. Però el valor real
+
+00:00:18.780 --> 00:00:21.940
+de les variables ve de la capacitat de canviar
+
+00:00:22.020 --> 00:00:24.760
+què hi ha dins d'una capsa, què hi ha dins de la variable,
+
+00:00:24.800 --> 00:00:27.710
+al llarg d'un programa. Així, tot i que
+
+00:00:27.740 --> 00:00:30.120
+executem el mateix tros de codi diverses vegades,
+
+00:00:30.660 --> 00:00:33.900
+el que fa pot canviar segons què hi hagi
+
+00:00:33.940 --> 00:00:38.540
+dins de les capses. Imagina't que volem plantar
+
+00:00:38.580 --> 00:00:41.020
+una flor en un jardí. Tenim una
+
+00:00:41.030 --> 00:00:44.340
+funció plant (plantar) molt pràctica que té una sola entrada
+
+00:00:44.380 --> 00:00:46.060
+per a la posició on volem col·locar
+
+00:00:46.100 --> 00:00:48.380
+la flor. Així, si volem col·locar una
+
+00:00:48.400 --> 00:00:52.010
+flor a 10 de la vora, escrivim plant(10).
+
+00:00:52.010 --> 00:00:55.880
+Ben senzill. I si
+
+00:00:55.960 --> 00:00:59.340
+volem plantar vuit flors? Doncs podríem
+
+00:00:59.360 --> 00:01:02.210
+escriure plant(10), plant(20), plant(30),
+
+00:01:02.260 --> 00:01:06.780
+etcètera, però és força feixuc. I ja
+
+00:01:06.820 --> 00:01:10.350
+hem après una cosa que ens ajuda a substituir aquesta
+
+00:01:10.380 --> 00:01:13.120
+mena de codi tan feixuc. Segurament el teu cervell
+
+00:01:13.160 --> 00:01:15.640
+va a mil i crida: «Fes servir un bucle! Fes servir un
+
+00:01:15.680 --> 00:01:19.440
+bloc de repetició!». I tens tota la raó. Així que
+
+00:01:19.480 --> 00:01:22.120
+posem la posició a 10 i
+
+00:01:22.180 --> 00:01:25.200
+després tenim un bloc de repetició on cridem
+
+00:01:25.240 --> 00:01:27.350
+plant, on fem servir la funció plant, vuit vegades.
+
+00:01:28.900 --> 00:01:32.160
+Què creus que passarà? Doncs
+
+00:01:32.180 --> 00:01:35.180
+plantarà vuit flors, però les plantarà
+
+00:01:35.200 --> 00:01:38.000
+al mateix lloc cada vegada, que
+
+00:01:38.060 --> 00:01:41.140
+no és ben bé el que volem. Així que
+
+00:01:41.280 --> 00:01:42.960
+parem un moment a pensar què fa
+
+00:01:43.000 --> 00:01:45.420
+el Jiki aquí. Crea una capsa amb
+
+00:01:45.460 --> 00:01:47.600
+l'etiqueta posició. Hi posa un 10.
+
+00:01:48.180 --> 00:01:50.330
+Després fa funcionar la màquina plant vuit vegades.
+
+00:01:51.420 --> 00:01:54.380
+Cada vegada, treu el valor de
+
+00:01:54.400 --> 00:01:57.730
+la capsa de la posició. Sempre és 10, i hi
+
+00:01:57.760 --> 00:02:01.340
+posa el mateix 10 cada cop. Així que
+
+00:02:01.360 --> 00:02:03.400
+el que necessitem és una manera d'avançar
+
+00:02:03.460 --> 00:02:06.490
+una mica cada vegada. Després de
+
+00:02:06.540 --> 00:02:08.820
+plantar una flor, volem dir al Jiki
+
+00:02:08.960 --> 00:02:12.200
+que mogui la posició 10 endavant, per estar a punt de
+
+00:02:12.300 --> 00:02:16.410
+plantar la flor següent. Així que, deixant
+
+00:02:16.500 --> 00:02:18.800
+el codi de banda un moment, com es veu,
+
+00:02:18.900 --> 00:02:22.360
+això, en termes lògics? Si et dic
+
+00:02:22.440 --> 00:02:24.460
+«Planta la primera flor a 10,
+
+00:02:24.620 --> 00:02:26.320
+després la següent a 20 i després la següent
+
+00:02:26.360 --> 00:02:29.140
+a 30», com sap el teu cervell que
+
+00:02:29.180 --> 00:02:31.549
+la propera s'ha de plantar a 40
+
+00:02:32.320 --> 00:02:33.940
+i la següent s'ha de plantar
+
+00:02:33.960 --> 00:02:38.280
+a 50? El que fa el teu cervell és
+
+00:02:38.340 --> 00:02:41.680
+anar seguint el número actual, sumar-hi
+
+00:02:41.740 --> 00:02:44.380
+10 i després actualitzar aquest número
+
+00:02:44.440 --> 00:02:47.510
+dins del teu cervell. I podem fer exactament
+
+00:02:47.520 --> 00:02:50.950
+el mateix en codi. Per fer-ho,
+
+00:02:51.160 --> 00:02:54.380
+diem: «Actualitza la capsa de la posició perquè
+
+00:02:54.440 --> 00:03:00.500
+tingui el valor actual de la posició més 10». Quan
+
+00:03:00.560 --> 00:03:03.040
+el Jiki ho vegi, traurà el número actual
+
+00:03:03.120 --> 00:03:05.460
+de la capsa de la posició, hi sumarà 10,
+
+00:03:05.540 --> 00:03:08.570
+farà aquest càlcul, els sumarà, i
+
+00:03:08.580 --> 00:03:10.720
+després tornarà a posar el resultat dins de la capsa
+
+00:03:10.800 --> 00:03:14.000
+per a la propera vegada. Així que, si afegim això
+
+00:03:14.060 --> 00:03:15.960
+al nostre programa, de manera que ara diem
+
+00:03:16.220 --> 00:03:18.680
+«Posa el valor inicial de la posició
+
+00:03:18.700 --> 00:03:21.490
+a 10», després, vuit vegades, plantem una flor
+
+00:03:22.040 --> 00:03:24.860
+a la posició, i després canviem la posició
+
+00:03:24.920 --> 00:03:28.360
+perquè sigui 10 més gran que abans, el nostre codi
+
+00:03:28.420 --> 00:03:30.640
+funciona i obtenim vuit flors ben espaiades.
+
+00:03:32.440 --> 00:03:35.400
+Fixa't que no hi ha cap let quan actualitzem
+
+00:03:35.410 --> 00:03:38.980
+la variable. Això és molt important. Quan el Jiki veu
+
+00:03:39.140 --> 00:03:42.400
+let, crea una capsa nova. Però aquí
+
+00:03:42.420 --> 00:03:44.560
+no volem crear una capsa nova.
+
+00:03:44.600 --> 00:03:46.480
+El que volem és canviar què hi ha dins de la capsa
+
+00:03:46.540 --> 00:03:50.920
+que ja tenim. Fixa't també que
+
+00:03:51.020 --> 00:03:54.320
+només creem la capsa una vegada, fora del
+
+00:03:54.380 --> 00:03:57.500
+bucle. Val la pena recordar-ho. Crea la capsa
+
+00:03:57.620 --> 00:03:59.720
+una vegada a dalt, i després actualitza-la
+
+00:03:59.760 --> 00:04:03.500
+cada vegada que s'executi el bucle. D'acord. Hem vist
+
+00:04:03.560 --> 00:04:05.850
+moltes coses en aquest vídeo. Podem
+
+00:04:05.900 --> 00:04:08.020
+actualitzar què hi ha dins de les capses, i podem fer servir
+
+00:04:08.080 --> 00:04:10.880
+aquest poder per seguir una cosa que canvia amb
+
+00:04:10.940 --> 00:04:14.320
+el temps. Faràs servir aquest patró constantment:
+
+00:04:14.420 --> 00:04:17.300
+seguir una posició, comptar quantes vegades
+
+00:04:17.340 --> 00:04:21.240
+ha passat una cosa, portar la puntuació. Sempre que hagis de recordar
+
+00:04:21.260 --> 00:04:24.780
+una cosa que canvia mentre el programa s'executa,
+
+00:04:24.820 --> 00:04:27.520
+així és com es fa. Ara vindran
+
+00:04:27.620 --> 00:04:29.460
+uns quants exercicis que et
+
+00:04:29.500 --> 00:04:32.060
+serviran per practicar-ho. Pots tornar a mirar
+
+00:04:32.100 --> 00:04:33.760
+aquest vídeo si et quedes encallat.
+
+00:04:33.800 --> 00:04:36.420
+No és fer trampes. Aquest tema pot semblar força
+
+00:04:36.460 --> 00:04:38.830
+complex. Ja veuràs com s'aclareix, però al
+
+00:04:38.840 --> 00:04:40.510
+principi pot semblar una mica massa. I
+
+00:04:40.540 --> 00:04:41.930
+espero que, quan et torni a veure d'aquí
+
+00:04:41.930 --> 00:04:44.510
+a un parell d'exercicis, ja comencis
+
+00:04:44.540 --> 00:04:46.090
+a familiaritzar-te una mica més
+
+00:04:46.120 --> 00:04:48.600
+amb aquest patró i que la teva confiança vagi creixent. Molta
+
+00:04:48.640 --> 00:04:48.800
+sort.

@@ -1,0 +1,222 @@
+WEBVTT
+
+NOTE en_md5 10ad7187acecddbe0b148815fa3e3508
+
+00:00:00.180 --> 00:00:02.610
+Benvingut de nou. Les funcions que has creat fins
+
+00:00:02.800 --> 00:00:05.430
+ara sempre fan exactament el mateix cada
+
+00:00:05.460 --> 00:00:10.760
+vegada. turn_around sempre gira a l'esquerra dues vegades. shoot_if_alien_above sempre
+
+00:00:10.800 --> 00:00:14.180
+comprova i dispara. Però pensa en les funcions
+
+00:00:14.240 --> 00:00:16.140
+que has anat utilitzant al llarg del curs, com
+
+00:00:16.160 --> 00:00:19.480
+fan coses diferents segons les entrades. Rectangle
+
+00:00:19.520 --> 00:00:21.180
+rep com a entrades l'esquerra, la part superior,
+
+00:00:21.240 --> 00:00:23.820
+l'amplada i l'alçada, i després dibuixa un
+
+00:00:23.900 --> 00:00:27.040
+rectangle diferent segons el que li diguis. En
+
+00:00:27.140 --> 00:00:29.200
+aquest vídeo, et mostraré com afegir
+
+00:00:29.320 --> 00:00:31.920
+ranures d'entrada també a les teves pròpies funcions.
+
+00:00:33.520 --> 00:00:35.020
+Per fer-ho, cal que sàpigues
+
+00:00:35.060 --> 00:00:38.080
+dues coses. La primera és com es veu això
+
+00:00:38.140 --> 00:00:39.910
+en la pràctica, què has d'escriure, i la
+
+00:00:40.040 --> 00:00:43.300
+segona és què passa realment. La primera part
+
+00:00:43.360 --> 00:00:46.930
+és força senzilla. Només cal que hi afegeixis uns
+
+00:00:46.940 --> 00:00:49.680
+parèntesis normals i després els noms de les entrades
+
+00:00:49.740 --> 00:00:52.720
+que vulguis. Així que imagina't que creem una funció
+
+00:00:52.840 --> 00:00:56.400
+que, eh, ha de disparar moltes vegades. L'anomenarem
+
+00:00:56.440 --> 00:01:01.500
+shoot_many. Escriuríem function shoot_many, obre parèntesi, num_shots,
+
+00:01:01.800 --> 00:01:06.280
+tanca parèntesi, claus i després una mica de codi. Quan
+
+00:01:06.300 --> 00:01:08.580
+vulguis utilitzar aquesta funció, escriuràs
+
+00:01:08.640 --> 00:01:10.640
+shoot_many 5 si vols disparar cinc
+
+00:01:10.680 --> 00:01:13.180
+trets, o shoot_many 2 si en vols
+
+00:01:13.300 --> 00:01:15.840
+disparar dos. Ara ve la part
+
+00:01:15.920 --> 00:01:19.100
+clau. Quan el codi s'executa, el que posis
+
+00:01:19.160 --> 00:01:23.280
+en aquesta entrada, 5 o 2, el mini-Jiki, el que
+
+00:01:23.300 --> 00:01:27.080
+porta el barret i és dins de la funció, agafa aquesta entrada
+
+00:01:27.260 --> 00:01:29.880
+i la posa en una capsa anomenada num_shots,
+
+00:01:30.460 --> 00:01:32.670
+i després posa aquesta capsa als prestatges
+
+00:01:32.740 --> 00:01:34.940
+dins de la funció perquè la facis servir
+
+00:01:34.960 --> 00:01:39.120
+al codi de la funció. Ho repeteixo. Quan
+
+00:01:39.180 --> 00:01:42.110
+escrivim shoot_many 5 per utilitzar la funció,
+
+00:01:42.900 --> 00:01:45.520
+el Jiki de fora va a buscar un
+
+00:01:46.040 --> 00:01:48.040
+5 i el posa a la ranura d'entrada
+
+00:01:48.180 --> 00:01:52.800
+de shoot_many. Dins de la màquina, el mini-Jiki treu aquell
+
+00:01:52.840 --> 00:01:54.700
+5 i el posa en una capsa
+
+00:01:54.780 --> 00:01:57.180
+anomenada num_shots, perquè aquest és el nom que
+
+00:01:57.220 --> 00:01:59.340
+has donat a aquella ranura d'entrada, i després
+
+00:01:59.360 --> 00:02:02.300
+posa aquesta capsa als prestatges dins de la
+
+00:02:02.340 --> 00:02:05.140
+funció, dins de la màquina. I després, dins de la
+
+00:02:05.200 --> 00:02:08.460
+funció, pots fer servir la capsa num_shots
+
+00:02:09.340 --> 00:02:11.360
+igual que faries servir qualsevol altra capsa.
+
+00:02:11.380 --> 00:02:14.540
+El nom num_shots no té res de màgic. Podríem
+
+00:02:14.560 --> 00:02:16.820
+haver-lo anomenat com volguéssim. Només
+
+00:02:16.900 --> 00:02:19.780
+és una instrucció perquè el mini-Jiki creï sempre
+
+00:02:19.880 --> 00:02:23.020
+una capsa amb aquesta etiqueta dins
+
+00:02:23.030 --> 00:02:25.640
+de la funció i hi posi el que es passi per aquella
+
+00:02:25.720 --> 00:02:29.750
+ranura. I un cop tens
+
+00:02:29.840 --> 00:02:31.170
+un valor en aquesta capsa, pots fer
+
+00:02:31.220 --> 00:02:33.590
+qualsevol cosa que faries normalment amb capses.
+
+00:02:33.620 --> 00:02:36.380
+No t'avançaré els exercicis que vénen, però aquí
+
+00:02:36.420 --> 00:02:39.100
+podries fer servir la capsa num_shots com a part
+
+00:02:39.140 --> 00:02:41.200
+d'un bucle repeat per disparar el nombre correcte
+
+00:02:41.240 --> 00:02:44.100
+de vegades. I també pots tenir més
+
+00:02:44.200 --> 00:02:47.340
+d'una entrada. Eh, només cal separar-les amb
+
+00:02:47.380 --> 00:02:49.580
+comes. Així, si tenim una funció anomenada
+
+00:02:49.640 --> 00:02:52.329
+draw_star, feta per nosaltres, que dibuixa una estrella segons
+
+00:02:52.360 --> 00:02:55.000
+la seva posició a dalt a l'esquerra, escriuries function
+
+00:02:55.160 --> 00:03:00.060
+draw_star, obre parèntesi, left, coma, top, tanca parèntesi, després
+
+00:03:00.080 --> 00:03:02.930
+claus, i després el teu codi. I després, quan
+
+00:03:02.960 --> 00:03:05.600
+es crida la funció, el mini-Jiki
+
+00:03:05.640 --> 00:03:07.320
+guardarà els valors que es passen per les
+
+00:03:07.380 --> 00:03:10.660
+entrades en capses anomenades left i top,
+
+00:03:10.680 --> 00:03:12.829
+i després les guardarà als prestatges dins de la
+
+00:03:12.829 --> 00:03:16.160
+funció. T'he preparat un exercici per
+
+00:03:16.200 --> 00:03:18.960
+ara, i és reproduir la funció walk
+
+00:03:19.420 --> 00:03:21.160
+que vam veure en una de les primeres lliçons,
+
+00:03:21.240 --> 00:03:24.120
+on pots escriure walk 5 per avançar
+
+00:03:24.160 --> 00:03:27.300
+cinc passos. I aquí escriuràs bàsicament
+
+00:03:27.320 --> 00:03:29.660
+exactament el mateix codi que vaig escriure jo per
+
+00:03:29.700 --> 00:03:31.960
+fer-la. Diverteix-te, i ens veiem
+
+00:03:31.980 --> 00:03:32.620
+aquí d'aquí a poc.

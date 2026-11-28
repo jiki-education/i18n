@@ -1,0 +1,267 @@
+WEBVTT
+
+NOTE en_md5 49411a7db976297a17fb5f2e027fcaff
+
+00:00:00.100 --> 00:00:03.060
+Benvingut de nou. Ja fa una estona que fas servir
+
+00:00:03.120 --> 00:00:05.160
+el bucle repeat, i espero que ja
+
+00:00:05.220 --> 00:00:08.640
+t'hi sentis prou còmode. Ara veurem
+
+00:00:08.680 --> 00:00:10.500
+una cosa relacionada, una mica
+
+00:00:10.520 --> 00:00:13.220
+més complexa. Diguem que volem una fila
+
+00:00:13.260 --> 00:00:15.740
+de flors. Podem escriure una cosa com aquesta.
+
+00:00:16.180 --> 00:00:18.720
+Fixem una posició, plantem una flor,
+
+00:00:18.760 --> 00:00:21.300
+augmentem la posició en 10, ho repetim
+
+00:00:22.000 --> 00:00:23.560
+i acabem amb una fila
+
+00:00:23.680 --> 00:00:26.640
+de flors ben endreçada. Però, i si volem una
+
+00:00:26.720 --> 00:00:30.240
+graella de flors amb files i columnes? Potser
+
+00:00:30.320 --> 00:00:32.780
+quatre files amb cinc flors a cada fila.
+
+00:00:35.000 --> 00:00:36.580
+Atura't un moment, potser posa
+
+00:00:36.620 --> 00:00:38.640
+el vídeo en pausa un moment, i pensa
+
+00:00:38.700 --> 00:00:42.380
+com ho podries fer. Tenim
+
+00:00:42.440 --> 00:00:44.880
+un bucle que dibuixa una fila de flors.
+
+00:00:45.980 --> 00:00:48.240
+Com el pots fer servir per dibuixar quatre
+
+00:00:48.320 --> 00:00:50.660
+files? O què podríem fer per dibuixar
+
+00:00:50.700 --> 00:00:54.420
+quatre files? D'acord, espero que hi hagis pensat.
+
+00:00:55.440 --> 00:00:57.360
+Una opció seria simplement copiar
+
+00:00:57.380 --> 00:01:00.680
+i enganxar aquest bucle quatre vegades i canviar
+
+00:01:00.740 --> 00:01:03.260
+la posició superior de cada una. I això
+
+00:01:03.320 --> 00:01:07.970
+funcionaria. Estaria bé. Però és repetitiu, i
+
+00:01:07.980 --> 00:01:10.380
+hi ha una manera millor. Ja sabem que, quan el codi
+
+00:01:10.420 --> 00:01:13.420
+és repetitiu, podem fer servir un bucle per
+
+00:01:13.460 --> 00:01:17.920
+simplificar les coses. Així que aquí podem fer servir un
+
+00:01:18.020 --> 00:01:21.840
+bucle dins d'un altre bucle. Un bucle per a les
+
+00:01:21.860 --> 00:01:24.840
+files i un altre per a les flors d'aquella
+
+00:01:24.880 --> 00:01:28.080
+fila. Comencem afegint un bucle repeat
+
+00:01:28.140 --> 00:01:30.360
+al voltant del codi que ja tenim, perquè
+
+00:01:30.380 --> 00:01:32.220
+et facis una idea. I el
+
+00:01:32.260 --> 00:01:35.020
+repetirem només una vegada. És a dir, li diem al Jiki que
+
+00:01:35.060 --> 00:01:38.680
+faci una vegada tot el que hi ha dins d'aquestes claus exteriors.
+
+00:01:39.800 --> 00:01:41.920
+Així que això té exactament el mateix efecte que
+
+00:01:42.000 --> 00:01:44.220
+no tenir cap bucle extern. Li
+
+00:01:44.280 --> 00:01:46.870
+estem dient al Jiki que repeteixi una cosa una vegada, i això
+
+00:01:46.940 --> 00:01:48.440
+és el mateix que dir-li al Jiki que
+
+00:01:48.480 --> 00:01:51.000
+ho faci sense el repeat. Però t'ho ensenyo
+
+00:01:51.040 --> 00:01:53.000
+perquè vegis que aquest
+
+00:01:53.060 --> 00:01:55.500
+codi funciona així. És codi legítim i vàlid. Tenim
+
+00:01:55.560 --> 00:01:59.900
+un bucle dins d'un altre bucle. Així que ara,
+
+00:01:59.940 --> 00:02:02.960
+què passa si canviem aquest bucle extern
+
+00:02:03.000 --> 00:02:06.520
+perquè es repeteixi dues vegades? Doncs que el Jiki executarà
+
+00:02:06.560 --> 00:02:10.400
+dues vegades tota la seqüència de cinc plant. Plantarà
+
+00:02:10.440 --> 00:02:14.460
+10 flors. Però totes aquestes flors
+
+00:02:14.500 --> 00:02:17.600
+seran a la mateixa fila. Així que, de la
+
+00:02:17.660 --> 00:02:20.520
+mateixa manera que hem de moure la posició
+
+00:02:20.580 --> 00:02:22.180
+d'esquerra a dreta una mica cada vegada,
+
+00:02:23.100 --> 00:02:26.240
+després de dibuixar cada fila sencera, també
+
+00:02:26.300 --> 00:02:28.660
+cal moure la posició vertical.
+
+00:02:30.040 --> 00:02:32.540
+I com ho fem? Doncs
+
+00:02:32.580 --> 00:02:35.480
+podem afegir una variable externa per a la posició
+
+00:02:35.560 --> 00:02:39.970
+superior, fer-la servir a la nostra funció plant i
+
+00:02:40.000 --> 00:02:42.880
+després augmentar-la en 10 després de cada fila.
+
+00:02:45.200 --> 00:02:46.920
+Pensa en quin valor té
+
+00:02:46.960 --> 00:02:50.480
+en cada moment. La posició superior comença a 10.
+
+00:02:50.520 --> 00:02:53.360
+Les primeres cinc vegades que plantem, es
+
+00:02:53.380 --> 00:02:56.720
+queda igual. La posició esquerra va augmentant. I després
+
+00:02:56.760 --> 00:02:59.720
+hi sumem 10 més, a aquesta
+
+00:02:59.800 --> 00:03:03.480
+posició superior, i plantem cinc flors més
+
+00:03:03.980 --> 00:03:07.120
+una mica més avall. Tornem a posar la posició
+
+00:03:07.140 --> 00:03:09.150
+esquerra a 10, i després
+
+00:03:09.180 --> 00:03:13.120
+la tornem a augmentar cada vegada. I ara
+
+00:03:13.140 --> 00:03:16.030
+podem dir que ho repeteixi quatre vegades, i
+
+00:03:16.060 --> 00:03:20.360
+tindrem quatre files de cinc plantes.
+
+00:03:20.420 --> 00:03:23.070
+La clau és entendre que el Jiki acaba
+
+00:03:23.260 --> 00:03:26.160
+tota la feina del bucle intern abans
+
+00:03:26.220 --> 00:03:28.440
+de tornar al bucle extern. No
+
+00:03:28.500 --> 00:03:32.140
+va saltant d'un costat a l'altre. Completa el bucle
+
+00:03:32.200 --> 00:03:34.130
+intern i després passa al
+
+00:03:34.260 --> 00:03:37.660
+següent pas del bucle extern. En aquesta
+
+00:03:37.680 --> 00:03:39.520
+situació, pots pensar en el
+
+00:03:39.620 --> 00:03:41.880
+bucle extern com el que controla els grups o la
+
+00:03:41.980 --> 00:03:44.720
+fila, i en el bucle intern com el que controla cada
+
+00:03:44.820 --> 00:03:47.049
+element d'aquest grup o cada element
+
+00:03:47.080 --> 00:03:50.549
+d'aquesta fila. Així, al nostre exemple, el bucle
+
+00:03:50.600 --> 00:03:54.580
+extern crea quatre files, i el bucle intern
+
+00:03:54.640 --> 00:03:57.760
+hi posa cinc plantes, cinc elements a cada grup.
+
+00:03:59.280 --> 00:04:02.100
+En els exercicis següents, faràs servir bucles dins
+
+00:04:02.180 --> 00:04:05.520
+de bucles per construir coses. Aquests exercicis nous
+
+00:04:05.580 --> 00:04:08.160
+et donaran funcions per dibuixar cada una de les peces.
+
+00:04:08.540 --> 00:04:10.160
+La teva feina és només trobar
+
+00:04:10.220 --> 00:04:11.829
+l'estructura correcta dels bucles perquè
+
+00:04:11.860 --> 00:04:16.029
+funcioni. Tot el que hi ha en aquests exercicis
+
+00:04:16.060 --> 00:04:17.760
+ho acabem de veure. Així que, si
+
+00:04:17.800 --> 00:04:19.860
+t'encalles, torna a mirar aquest vídeo.
+
+00:04:20.660 --> 00:04:22.160
+Molta sort, i ens tornem a veure aquí
+
+00:04:22.180 --> 00:04:22.460
+ben aviat.

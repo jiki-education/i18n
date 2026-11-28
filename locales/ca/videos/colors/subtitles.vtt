@@ -1,0 +1,405 @@
+WEBVTT
+
+NOTE en_md5 f8c737461bf364654b8a618e515caeb8
+
+00:00:00.140 --> 00:00:02.210
+Benvingut de nou. Bé, ara farem
+
+00:00:02.400 --> 00:00:04.400
+una petita marrada, un desviament,
+
+00:00:04.460 --> 00:00:06.480
+per mirar una cosa que t'anirà bé
+
+00:00:06.540 --> 00:00:08.850
+saber si mai fas res de visual amb
+
+00:00:08.880 --> 00:00:10.860
+codi. I, fins i tot si vols ser
+
+00:00:10.900 --> 00:00:12.460
+científic de dades i tot això de
+
+00:00:12.560 --> 00:00:16.180
+dibuixar et sembla una mica avorrit, comunicar dades
+
+00:00:16.219 --> 00:00:19.180
+amb elements visuals és una habilitat clau, així que
+
+00:00:19.220 --> 00:00:21.790
+val molt la pena aprendre-ho. En aquest vídeo
+
+00:00:21.840 --> 00:00:24.220
+mirarem dues maneres diferents
+
+00:00:24.260 --> 00:00:28.670
+d'expressar els colors. Ja has fet servir colors
+
+00:00:28.680 --> 00:00:31.640
+amb el seu nom, com ara vermell o groc,
+
+00:00:31.700 --> 00:00:33.800
+com a última entrada de les teves funcions de dibuix,
+
+00:00:35.400 --> 00:00:37.300
+i ha estat una bona manera de
+
+00:00:37.360 --> 00:00:40.320
+fer servir colors ràpidament, però és bastant limitat.
+
+00:00:40.330 --> 00:00:42.350
+Només hi ha un grapat de colors amb nom
+
+00:00:42.380 --> 00:00:44.370
+que podem fer servir. Així que ara mirarem
+
+00:00:44.400 --> 00:00:46.880
+dues maneres d'expressar qualsevol color que
+
+00:00:46.960 --> 00:00:49.960
+vulguis, i es diuen RGB i
+
+00:00:50.180 --> 00:00:54.920
+HSL. RGB ens permet pensar en els colors
+
+00:00:54.980 --> 00:00:57.100
+com una barreja de vermell, verd i blau.
+
+00:00:57.300 --> 00:01:00.210
+RGB vol dir red, green, blue: vermell, verd, blau.
+
+00:01:01.280 --> 00:01:04.040
+Si recordes quan barrejaves pintures a l'escola,
+
+00:01:04.099 --> 00:01:06.730
+la idea és semblant, excepte que en lloc de pintura
+
+00:01:06.760 --> 00:01:11.580
+barregem llum. En molts dels exercicis que venen
+
+00:01:11.640 --> 00:01:14.440
+després, tindràs una funció anomenada rgb,
+
+00:01:15.280 --> 00:01:16.960
+que prendrà tres nombres com a
+
+00:01:17.000 --> 00:01:20.040
+entrades, un per al vermell, un per al verd i un
+
+00:01:20.080 --> 00:01:22.240
+per al blau, i retornarà un
+
+00:01:22.320 --> 00:01:26.900
+color. Els nombres que pots fer servir com a
+
+00:01:26.980 --> 00:01:32.940
+entrades van del zero al 255. El zero vol dir
+
+00:01:33.040 --> 00:01:35.440
+que no vull gens d'aquell color, i
+
+00:01:35.620 --> 00:01:38.420
+255 vol dir barrejar tant com es pugui
+
+00:01:38.460 --> 00:01:41.460
+d'aquell color. Així, si fem servir la
+
+00:01:41.540 --> 00:01:45.550
+funció rgb amb 255, zero i zero com a
+
+00:01:45.600 --> 00:01:48.190
+entrades, estem dient que volem
+
+00:01:48.240 --> 00:01:50.440
+tot el vermell. Recorda que 255 és
+
+00:01:50.460 --> 00:01:52.880
+el nombre més gran que hi pots posar.
+
+00:01:52.900 --> 00:01:54.800
+Però no volem gens de verd ni
+
+00:01:54.820 --> 00:01:57.420
+de blau, així que tots dos són zero. Doncs
+
+00:01:57.460 --> 00:02:00.880
+obtenim vermell, i podem guardar aquest
+
+00:02:00.900 --> 00:02:03.360
+vermell en una variable i fer-lo servir després
+
+00:02:03.380 --> 00:02:05.340
+a la funció circle, tal com ja hem fet
+
+00:02:05.400 --> 00:02:08.840
+amb els noms dels colors. I què passa
+
+00:02:08.880 --> 00:02:10.759
+si fem servir la funció rgb amb
+
+00:02:10.900 --> 00:02:15.340
+zero, 255 i zero? Ara diem: gens de vermell,
+
+00:02:15.880 --> 00:02:18.310
+tot el verd, gens de blau. Així que obtenim
+
+00:02:18.320 --> 00:02:21.440
+un cercle verd. I si volem
+
+00:02:21.640 --> 00:02:25.320
+groc? El groc és una barreja de vermell
+
+00:02:25.620 --> 00:02:27.940
+i verd. Podem dir: dona'm
+
+00:02:28.020 --> 00:02:29.840
+tot el vermell, tot el verd
+
+00:02:30.180 --> 00:02:32.120
+i gens de blau, i això ens donarà
+
+00:02:32.200 --> 00:02:35.200
+groc. També podem fer servir
+
+00:02:35.240 --> 00:02:37.730
+nombres més petits. Si volem una mica de vermell,
+
+00:02:38.300 --> 00:02:41.150
+gens de verd i molt de blau, obtindrem
+
+00:02:41.200 --> 00:02:45.080
+porpra. I molt de vermell, una mica de verd
+
+00:02:45.380 --> 00:02:47.000
+i una mica més de blau ens dona
+
+00:02:47.040 --> 00:02:51.360
+un rosa. Així doncs, això és RGB. Barregem vermell, verd
+
+00:02:51.500 --> 00:02:56.060
+i blau per obtenir combinacions diferents. Ara
+
+00:02:56.100 --> 00:02:58.960
+mirem HSL, que ens dona una manera completament
+
+00:02:58.980 --> 00:03:03.060
+diferent de pensar en els colors. HSL
+
+00:03:03.100 --> 00:03:08.200
+vol dir hue, saturation, lightness: to, saturació i lluminositat.
+
+00:03:08.280 --> 00:03:11.900
+I, igual que amb RGB, tens una funció anomenada hsl que
+
+00:03:11.920 --> 00:03:14.590
+pren tres nombres, un per al to, un per a
+
+00:03:14.640 --> 00:03:17.100
+la saturació i un per a la lluminositat, i
+
+00:03:17.120 --> 00:03:20.420
+retorna un color. Desglossem, doncs,
+
+00:03:20.480 --> 00:03:25.160
+què volen dir aquestes tres paraules. El to és
+
+00:03:25.200 --> 00:03:28.080
+el matís de color que vols, i
+
+00:03:28.120 --> 00:03:32.300
+va del zero fins a 360. Potser
+
+00:03:32.320 --> 00:03:34.200
+imagina't un arc de Sant Martí. Així és com
+
+00:03:34.260 --> 00:03:36.200
+ho penso jo. A l'esquerra tenim el vermell,
+
+00:03:36.700 --> 00:03:39.220
+i després tenim el taronja, el groc, el verd, el blau,
+
+00:03:39.400 --> 00:03:41.320
+el porpra i, de fet, tornem
+
+00:03:41.340 --> 00:03:44.760
+cap al vermell. Així, si dius zero,
+
+00:03:45.140 --> 00:03:47.100
+comences per l'esquerra, i això és el
+
+00:03:47.180 --> 00:03:50.700
+vermell. Si dius 120, estàs demanant
+
+00:03:50.740 --> 00:03:54.580
+verd. 230 és blau. També ho pots pensar
+
+00:03:54.620 --> 00:03:57.470
+com un cercle cromàtic, que és
+
+00:03:57.500 --> 00:03:59.500
+el que són realment els 360. És el nombre
+
+00:03:59.540 --> 00:04:02.440
+de graus del cercle. Jo sempre
+
+00:04:02.480 --> 00:04:04.360
+miro els nombres que vull, així que
+
+00:04:04.440 --> 00:04:07.000
+no et preocupis gaire per memoritzar-ho,
+
+00:04:07.060 --> 00:04:09.340
+però va bé saber què
+
+00:04:09.380 --> 00:04:11.720
+passa. Això és el to, que és el
+
+00:04:11.780 --> 00:04:16.019
+matís. Després tenim la saturació, que és com
+
+00:04:16.060 --> 00:04:18.920
+de viu és el color. Va del zero
+
+00:04:19.019 --> 00:04:22.060
+al 100. A zero, només obtens gris.
+
+00:04:22.400 --> 00:04:24.440
+No hi ha gens de color,
+
+00:04:24.500 --> 00:04:28.160
+ni cap to. A 100, obtens un color ple, viu
+
+00:04:28.360 --> 00:04:32.660
+i vibrant. I després tenim la lluminositat. La lluminositat
+
+00:04:32.700 --> 00:04:34.860
+és com de clar és el color, i
+
+00:04:34.960 --> 00:04:37.600
+també va del zero al 100. A
+
+00:04:37.740 --> 00:04:40.200
+zero, obtens negre. Passi el que passi amb el to
+
+00:04:40.260 --> 00:04:43.460
+que hagis triat, obtens negre. No hi ha llum.
+
+00:04:43.480 --> 00:04:46.500
+I a 100, obtens blanc.
+
+00:04:46.980 --> 00:04:49.000
+Independentment de la resta, està ple
+
+00:04:49.060 --> 00:04:52.420
+de llum, així que és blanc. 50 és just
+
+00:04:52.460 --> 00:04:55.490
+al mig, el color normal. Així que ho pots
+
+00:04:55.520 --> 00:04:57.550
+pensar com un lliscador per fer
+
+00:04:57.580 --> 00:05:01.260
+el color més clar o més fosc. Així, si
+
+00:05:01.320 --> 00:05:03.840
+volem un cercle vermell normal, que
+
+00:05:03.860 --> 00:05:07.680
+amb RGB hauríem escrit com a 255, zero i zero,
+
+00:05:07.720 --> 00:05:10.640
+tot el vermell, gens de verd, gens de blau, aquí
+
+00:05:10.680 --> 00:05:15.560
+faríem servir zero, 100 i 50. Zero per al
+
+00:05:15.600 --> 00:05:19.290
+to vermell, 100 per a la saturació, color ple,
+
+00:05:19.800 --> 00:05:22.060
+i 50 per a la brillantor, que és un nivell
+
+00:05:22.080 --> 00:05:25.240
+de brillantor normal. Si volem convertir-lo
+
+00:05:25.250 --> 00:05:27.800
+en un cercle verd, només cal canviar
+
+00:05:27.880 --> 00:05:30.700
+aquest to per 120. Si el volem
+
+00:05:30.740 --> 00:05:33.260
+fer un verd més fosc, podem baixar
+
+00:05:33.270 --> 00:05:37.340
+la lluminositat fins a 25. Si el volem
+
+00:05:37.380 --> 00:05:39.360
+fer un verd més apagat, podem
+
+00:05:39.440 --> 00:05:40.780
+treure-li una mica de color, una mica de
+
+00:05:40.920 --> 00:05:43.860
+saturació, per exemple baixar-la fins a 30.
+
+00:05:46.500 --> 00:05:48.800
+Si vols un rosa intens i cridaner,
+
+00:05:48.860 --> 00:05:52.080
+un to d'uns 300 és rosa, i llavors
+
+00:05:52.120 --> 00:05:55.680
+pugem la saturació a 100
+
+00:05:55.720 --> 00:05:57.560
+per fer-lo ben viu, i també apugem la
+
+00:05:57.620 --> 00:06:01.290
+lluminositat fins a uns 60. Així que tenim
+
+00:06:01.340 --> 00:06:03.660
+dues maneres diferents d'expressar el color, i són
+
+00:06:03.760 --> 00:06:07.830
+útils en situacions diferents. RGB és fantàstic quan
+
+00:06:07.900 --> 00:06:12.160
+vols ajustar un component concret:
+
+00:06:12.500 --> 00:06:14.380
+quant de vermell, quant de verd, quant
+
+00:06:14.400 --> 00:06:17.540
+de blau. HSL és fantàstic quan vols
+
+00:06:17.600 --> 00:06:20.060
+recórrer colors en cicle. Si vols un arc de Sant Martí,
+
+00:06:20.100 --> 00:06:23.440
+només has d'anar augmentant el to.
+
+00:06:23.460 --> 00:06:25.360
+Als propers exercicis, faràs servir
+
+00:06:25.400 --> 00:06:27.500
+tots dos sistemes, amb alguns bucles i
+
+00:06:27.960 --> 00:06:31.020
+actualitzant variables, per crear un arc de Sant Martí i
+
+00:06:31.080 --> 00:06:33.280
+una posta de sol. Et recordaré tots els
+
+00:06:33.320 --> 00:06:36.400
+detalls a les instruccions de l'exercici, així que no et preocupis
+
+00:06:36.460 --> 00:06:40.140
+si encara no ho has memoritzat tot. Molta
+
+00:06:40.180 --> 00:06:41.640
+sort, diverteix-te, i ens veiem
+
+00:06:41.660 --> 00:06:42.060
+aquí de nou ben aviat.

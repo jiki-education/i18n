@@ -1,0 +1,396 @@
+WEBVTT
+
+NOTE en_md5 9ba87f0c52699c431570792318049b06
+
+00:00:00.220 --> 00:00:04.109
+Benvingut de nou. Ara, amb sort, ja saps fer servir funcions
+
+00:00:04.280 --> 00:00:07.870
+i bucles repeat amb força seguretat. Així que en aquesta
+
+00:00:07.900 --> 00:00:10.080
+sessió passarem a un altre tema absolutament
+
+00:00:10.100 --> 00:00:12.610
+crucial que faràs servir
+
+00:00:12.640 --> 00:00:14.880
+segurament en tots els programes que escriguis, i aquest
+
+00:00:14.940 --> 00:00:19.220
+tema són les variables. Les variables són el que ens permet
+
+00:00:19.460 --> 00:00:22.700
+guardar informació. Quan programem, sovint necessitem
+
+00:00:22.760 --> 00:00:25.420
+guardar un número o una corda per
+
+00:00:25.500 --> 00:00:27.780
+fer-los servir més endavant, i les variables són com
+
+00:00:27.800 --> 00:00:30.480
+ho fem. Així que allarguem la vista una mica dins
+
+00:00:30.580 --> 00:00:32.880
+del magatzem del Jiki i veuràs que té
+
+00:00:32.940 --> 00:00:35.780
+un altre conjunt de prestatges. Ja coneixem
+
+00:00:35.800 --> 00:00:37.160
+el primer conjunt de prestatges, on hi ha
+
+00:00:37.180 --> 00:00:39.680
+les funcions, aquestes màquines petites com move
+
+00:00:39.700 --> 00:00:42.140
+i rectangle. Però en aquest segon conjunt de
+
+00:00:42.160 --> 00:00:44.710
+prestatges, en lloc de màquines, hi veuràs un munt
+
+00:00:44.760 --> 00:00:47.860
+de capses, i aquestes capses són el que
+
+00:00:47.900 --> 00:00:50.080
+anomenem variables. Pots dir al Jiki que guardi
+
+00:00:50.140 --> 00:00:52.460
+qualsevol cosa en aquestes capses i, més endavant,
+
+00:00:52.580 --> 00:00:54.940
+demanar-li que ho torni a treure. Cada
+
+00:00:54.980 --> 00:00:57.480
+capsa té un nom, exactament igual que
+
+00:00:57.520 --> 00:01:00.020
+les funcions tenen un nom, i cada capsa conté
+
+00:01:00.140 --> 00:01:03.000
+només una cosa. De moment, o bé un número
+
+00:01:03.380 --> 00:01:05.320
+o bé una corda. Però més endavant veurem com guardar-hi
+
+00:01:05.340 --> 00:01:07.480
+coses més complexes, al llarg
+
+00:01:07.540 --> 00:01:10.800
+del curs. I com li diem al Jiki
+
+00:01:10.860 --> 00:01:12.500
+que faci una capsa i hi posi alguna cosa?
+
+00:01:13.240 --> 00:01:16.920
+Fem servir la paraula clau let. La paraula clau let
+
+00:01:17.000 --> 00:01:19.200
+li diu al Jiki que ha de fer una
+
+00:01:19.300 --> 00:01:21.860
+capsa nova. Et pots imaginar que desembolcalla
+
+00:01:21.900 --> 00:01:23.760
+una capsa de cartró, la munta
+
+00:01:23.800 --> 00:01:26.320
+i després mira què ve
+
+00:01:26.440 --> 00:01:28.840
+després de la paraula let: això és l'etiqueta
+
+00:01:28.880 --> 00:01:30.620
+que posa a la capsa, en aquest
+
+00:01:30.720 --> 00:01:32.940
+cas, name. Així que treu el bolígraf
+
+00:01:33.220 --> 00:01:36.260
+i escriu name a l'etiqueta. Després
+
+00:01:36.320 --> 00:01:38.360
+mira què ve després del signe
+
+00:01:38.440 --> 00:01:41.020
+igual. En aquest cas, és el meu nom, Jeremy,
+
+00:01:41.740 --> 00:01:43.960
+i com que Jeremy és una corda, una corda,
+
+00:01:44.340 --> 00:01:45.640
+agafa un tros de paper i
+
+00:01:45.660 --> 00:01:48.830
+hi escriu Jeremy. És només una corda,
+
+00:01:48.900 --> 00:01:50.460
+exactament igual que els colors amb què has estat
+
+00:01:50.520 --> 00:01:52.660
+treballant, i després posa aquest tros
+
+00:01:52.700 --> 00:01:56.410
+de paper dins de la capsa. Així que ja, ja
+
+00:01:56.460 --> 00:01:58.260
+li hem dit que faci una capsa, que hi posi
+
+00:01:58.300 --> 00:02:00.120
+una etiqueta i que hi posi alguna cosa,
+
+00:02:00.640 --> 00:02:02.300
+i ara ell va i col·loca la capsa
+
+00:02:02.380 --> 00:02:05.140
+al prestatge. I després, en qualsevol altre
+
+00:02:05.220 --> 00:02:07.980
+moment del teu programa, el Jiki pot anar a
+
+00:02:08.020 --> 00:02:09.840
+agafar aquella capsa del prestatge i mirar
+
+00:02:09.979 --> 00:02:11.900
+què hi ha a dins, i d'això en parlarem
+
+00:02:11.940 --> 00:02:14.580
+d'aquí a un moment. Però de moment, de veritat
+
+00:02:14.660 --> 00:02:16.540
+vull que comencis a construir aquest model
+
+00:02:16.580 --> 00:02:19.120
+mental. Fa una eternitat que programo i encara
+
+00:02:19.180 --> 00:02:21.790
+m'imagino, quan escric codi, que poso
+
+00:02:21.820 --> 00:02:23.680
+una cosa dins d'una capsa i que
+
+00:02:23.720 --> 00:02:26.340
+la trauré més endavant. Quan vegis aquesta
+
+00:02:26.400 --> 00:02:28.570
+paraula clau let, de veritat vull que pensis:
+
+00:02:28.690 --> 00:02:31.460
+«Molt bé, això vol dir que estic fent una capsa nova.»
+
+00:02:33.520 --> 00:02:34.530
+Vull parlar un minut
+
+00:02:34.580 --> 00:02:37.210
+dels noms de les variables, les etiquetes d'aquestes
+
+00:02:37.260 --> 00:02:40.140
+capses. Tenim unes quantes regles
+
+00:02:40.180 --> 00:02:44.740
+al respecte. Primer, els noms de les variables no poden tenir
+
+00:02:44.780 --> 00:02:47.580
+espais. Si vols fer servir diverses paraules
+
+00:02:47.700 --> 00:02:49.859
+per a l'etiqueta d'una capsa, posem
+
+00:02:49.920 --> 00:02:51.900
+les paraules enganxades les unes amb les altres i
+
+00:02:51.980 --> 00:02:55.180
+canviem la primera lletra de cada paraula
+
+00:02:55.220 --> 00:02:57.520
+per una majúscula. Això s'anomena camel
+
+00:02:57.680 --> 00:03:00.660
+case. Imagina't les gepes d'un camell empenyent
+
+00:03:00.740 --> 00:03:02.540
+cap amunt la primera lletra de cada paraula nova
+
+00:03:02.580 --> 00:03:05.260
+per convertir-la en majúscula. Així que si
+
+00:03:05.340 --> 00:03:08.290
+vols una etiqueta que sigui el meu nom, en lloc
+
+00:03:08.320 --> 00:03:10.920
+d'escriure dues paraules amb un espai, ho escrivim
+
+00:03:10.960 --> 00:03:13.400
+com una sola paraula amb la N en majúscula.
+
+00:03:15.200 --> 00:03:17.960
+A més, cada nom de variable ha de ser únic.
+
+00:03:18.020 --> 00:03:20.180
+No pots tenir dues capses amb la mateixa etiqueta,
+
+00:03:20.860 --> 00:03:23.180
+i les variables tampoc poden tenir el mateix nom
+
+00:03:23.240 --> 00:03:26.140
+que les funcions. Si te n'oblides, el Jiki es farà
+
+00:03:26.180 --> 00:03:28.040
+un embolic i et donarà un missatge d'error.
+
+00:03:29.660 --> 00:03:31.210
+Molt bé, doncs vegem on ens pot
+
+00:03:31.280 --> 00:03:34.160
+interessar fer servir una variable. Diguem que estem
+
+00:03:34.200 --> 00:03:36.920
+dibuixant un sol al cel. Ara,
+
+00:03:36.980 --> 00:03:39.490
+sabem que podem fer servir la funció circle i
+
+00:03:39.580 --> 00:03:43.480
+donar-li quatre entrades: left, top, radius
+
+00:03:43.680 --> 00:03:47.000
+i color. Però quan dibuixem un munt de
+
+00:03:47.040 --> 00:03:49.160
+coses i tenim tots aquests números escampats
+
+00:03:49.180 --> 00:03:51.740
+pel codi, pot ser molt difícil
+
+00:03:51.780 --> 00:03:55.020
+de seguir i de llegir. Així que, en lloc d'això,
+
+00:03:55.280 --> 00:03:57.500
+podem crear variables per a
+
+00:03:57.600 --> 00:04:00.760
+l'esquerra, el dalt, el radius i el color, i després
+
+00:04:00.860 --> 00:04:04.560
+fer referència a aquestes variables. L'objectiu final
+
+00:04:04.620 --> 00:04:06.380
+és poder fer servir la
+
+00:04:06.420 --> 00:04:11.200
+funció circle i indicar-hi noms de capses bonics
+
+00:04:11.220 --> 00:04:14.590
+i llegibles, i quan el Jiki vegi aquests noms,
+
+00:04:14.620 --> 00:04:16.480
+sabrà que ha d'agafar les capses dels prestatges
+
+00:04:16.560 --> 00:04:20.459
+i fer servir el que hi hagi a dins. Doncs
+
+00:04:20.519 --> 00:04:22.550
+creem algunes variables per a això. Comencem per
+
+00:04:22.550 --> 00:04:25.050
+la posició esquerra del sol. Creem,
+
+00:04:25.580 --> 00:04:27.350
+eh, fem, fem servir la paraula clau let per
+
+00:04:27.350 --> 00:04:29.700
+dir al Jiki que creï una capsa nova anomenada
+
+00:04:29.740 --> 00:04:32.310
+leftPosition. Eh, fixa't en el camel case,
+
+00:04:32.500 --> 00:04:35.180
+amb la cam... la P majúscula. I li diem
+
+00:04:35.260 --> 00:04:38.560
+al Jiki quin número va dins de la capsa. Ell
+
+00:04:38.580 --> 00:04:40.340
+ho posa als prestatges i després passa
+
+00:04:40.420 --> 00:04:43.020
+a fer el mateix per a topPosition, radius
+
+00:04:43.180 --> 00:04:46.540
+i color. Ara, en qualsevol moment del
+
+00:04:46.620 --> 00:04:48.870
+codi, podem tornar a fer referència a aquestes variables,
+
+00:04:49.000 --> 00:04:51.400
+i el Jiki en traurà els valors i
+
+00:04:51.440 --> 00:04:53.530
+els posarà dins d'una màquina. L'altra gran
+
+00:04:53.640 --> 00:04:56.120
+cosa de les variables és que, sempre que
+
+00:04:56.160 --> 00:04:58.960
+vulguem dibuixar alguna cosa a la mateixa posició
+
+00:04:59.000 --> 00:05:01.620
+que el sol, podem reutilitzar aquestes mateixes
+
+00:05:01.680 --> 00:05:04.980
+variables leftPosition i topPosition. Posem
+
+00:05:05.000 --> 00:05:07.660
+un altre exemple. Imagina't que estàs construint una paret
+
+00:05:07.700 --> 00:05:10.200
+que té 30 maons, i vols que tots
+
+00:05:10.220 --> 00:05:11.840
+els maons tinguin la mateixa amplada i
+
+00:05:11.880 --> 00:05:14.270
+la mateixa altura. És m... és molt millor
+
+00:05:14.360 --> 00:05:17.100
+crear variables per a l'amplada i l'altura
+
+00:05:17.280 --> 00:05:19.580
+al començament del codi i després
+
+00:05:19.660 --> 00:05:21.590
+fer-hi referència al llarg de la resta
+
+00:05:21.640 --> 00:05:23.900
+del codi. Perquè si després vols
+
+00:05:23.980 --> 00:05:25.960
+canviar l'amplada o l'altura, només
+
+00:05:26.020 --> 00:05:28.260
+ho has de canviar en un lloc, i tota la resta
+
+00:05:28.380 --> 00:05:33.100
+s'actualitzarà. Als pròxims exercicis
+
+00:05:33.260 --> 00:05:35.980
+faràs servir variables per escriure
+
+00:05:36.060 --> 00:05:38.840
+codi més endreçat i més llegible. I quan
+
+00:05:38.880 --> 00:05:41.910
+et sentis còmode creant i fent servir variables,
+
+00:05:41.960 --> 00:05:44.280
+veurem com les variables poden fer referència a altres
+
+00:05:44.320 --> 00:05:46.920
+variables, i és aquí quan la cosa es posa molt potent.
+
+00:05:47.620 --> 00:05:50.110
+Però de moment, ves a practicar amb aquests exercicis,
+
+00:05:50.520 --> 00:05:51.880
+i ens veiem aquí d'aquí a una estona.

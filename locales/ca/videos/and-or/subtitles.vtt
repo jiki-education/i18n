@@ -1,0 +1,204 @@
+WEBVTT
+
+NOTE en_md5 54c871cb5fb9450d2d15334c3f48a372
+
+00:00:00.120 --> 00:00:02.700
+Hola de nou. Ara ja saps fer servir
+
+00:00:02.760 --> 00:00:05.780
+les sentències if, else i else if per prendre
+
+00:00:05.820 --> 00:00:09.260
+decisions al teu codi. Si et demanés
+
+00:00:09.340 --> 00:00:11.620
+que obrissis la porta només si algú
+
+00:00:11.720 --> 00:00:14.420
+té més de 20 anys, segurament sabries
+
+00:00:14.460 --> 00:00:17.080
+què fer. Però i si
+
+00:00:17.140 --> 00:00:20.250
+haguessis de comprovar que algú té més de 20 anys
+
+00:00:20.560 --> 00:00:23.790
+i que porta la roba adequada? Aleshores has de
+
+00:00:23.820 --> 00:00:27.120
+comprovar dues condicions diferents alhora. Com
+
+00:00:27.160 --> 00:00:30.940
+ho faries? Pensa-hi una mica. D'acord.
+
+00:00:31.100 --> 00:00:33.820
+Doncs potser podries fer servir una sentència if
+
+00:00:33.880 --> 00:00:36.520
+imbricada, una mica com els bucles imbricats
+
+00:00:36.540 --> 00:00:39.680
+que teníem abans. Podries dir: si age
+
+00:00:39.720 --> 00:00:43.400
+és més gran que 20, aleshores entrem en aquest
+
+00:00:43.440 --> 00:00:47.360
+bloc de codi, i després un altre if, si outfit és igual a
+
+00:00:47.400 --> 00:00:50.660
+disco, i una altra clau i un bloc
+
+00:00:50.700 --> 00:00:54.380
+de codi nou. Funcionaria, però queda
+
+00:00:54.400 --> 00:00:57.200
+força desordenat, sobretot quan vols tenir
+
+00:00:57.300 --> 00:01:00.350
+molts condicionals. Per sort, hi ha una manera més fàcil:
+
+00:01:00.940 --> 00:01:02.760
+poder tenir condicions
+
+00:01:02.820 --> 00:01:06.130
+amb diverses parts. En lloc de comprovar només
+
+00:01:06.220 --> 00:01:08.020
+una cosa dins la condició, en podem comprovar
+
+00:01:08.080 --> 00:01:11.360
+dues, tres o més. I per
+
+00:01:11.400 --> 00:01:14.000
+fer-ho, hem de fer servir la paraula
+
+00:01:14.100 --> 00:01:18.180
+clau and. Doncs bé, malauradament, a JavaScript la paraula clau and
+
+00:01:18.280 --> 00:01:20.880
+no és de fet la paraula and, com sí que passa
+
+00:01:20.900 --> 00:01:23.480
+en alguns llenguatges. En lloc d'això, has de posar
+
+00:01:23.520 --> 00:01:26.800
+dos ampersands l'un al costat de l'altre.
+
+00:01:26.820 --> 00:01:29.180
+T'ho hauràs de recordar i punt. És empipador, però
+
+00:01:29.220 --> 00:01:30.640
+és el que hi ha, i t'hi
+
+00:01:30.700 --> 00:01:33.830
+acostumaràs. Així que ho podem fer servir
+
+00:01:33.860 --> 00:01:36.790
+per crear una condició més complexa. Podem
+
+00:01:36.840 --> 00:01:40.080
+dir que si age és més gran que 20 i
+
+00:01:40.600 --> 00:01:43.280
+outfit és disco, aleshores continuem.
+
+00:01:43.980 --> 00:01:46.440
+Si age és més petit que 20 o
+
+00:01:46.500 --> 00:01:49.360
+outfit no és disco, aleshores tota l'afirmació,
+
+00:01:49.420 --> 00:01:52.360
+tota la condició, és falsa. Si mai
+
+00:01:52.380 --> 00:01:55.080
+has estudiat lògica, potser has muntat algun circuit electrònic o
+
+00:01:55.140 --> 00:01:57.560
+has fet matemàtiques més avançades,
+
+00:01:57.600 --> 00:01:59.920
+això et semblarà molt natural. Si no,
+
+00:01:59.980 --> 00:02:02.620
+ho aprendràs de seguida. També
+
+00:02:02.680 --> 00:02:06.420
+podem fer servir or i, malauradament, passa el mateix:
+
+00:02:06.480 --> 00:02:09.479
+en JavaScript no hi ha cap paraula clau or que quedi bé. En lloc d'això,
+
+00:02:09.520 --> 00:02:11.340
+hem de fer servir aquestes dues barres
+
+00:02:11.380 --> 00:02:14.360
+juntes per dir «o». Sembla estrany,
+
+00:02:14.560 --> 00:02:16.310
+però no ho és gens. Ja t'hi,
+
+00:02:16.340 --> 00:02:19.600
+ja t'hi acostumaràs. Així que ara podem dir que,
+
+00:02:19.680 --> 00:02:22.740
+si algú té més de 20 anys o porta
+
+00:02:22.780 --> 00:02:25.440
+roba de discoteca, pot entrar. Així que
+
+00:02:25.480 --> 00:02:27.820
+tindrem una festa ben divertida amb criatures vestides de discoteca
+
+00:02:27.920 --> 00:02:31.060
+i adults mal vestits, cosa que sona raonable.
+
+00:02:32.240 --> 00:02:34.580
+Ara bé, hi ha una cosa que fa ensopegar la gent
+
+00:02:34.640 --> 00:02:37.660
+tant amb l'and com amb l'or, i és que
+
+00:02:37.760 --> 00:02:41.020
+cada costat d'un and o d'un or ha de
+
+00:02:41.060 --> 00:02:44.200
+ser una comparació completa. Així que, fins i tot si
+
+00:02:44.240 --> 00:02:47.500
+compares la mateixa variable als dos costats,
+
+00:02:47.620 --> 00:02:50.400
+l'has de repetir. No pots escriure if
+
+00:02:50.420 --> 00:02:53.560
+age is greater than 13 and less than
+
+00:02:53.780 --> 00:02:57.310
+20. Has d'escriure if age is
+
+00:02:57.340 --> 00:03:00.840
+greater than 13 and age is gr- less
+
+00:03:01.040 --> 00:03:04.200
+than 20. Necessites que els dos costats siguin
+
+00:03:04.240 --> 00:03:09.040
+comparacions completes. En els exercicis següents,
+
+00:03:09.080 --> 00:03:12.060
+continuaràs fent servir and i or per combinar
+
+00:03:12.100 --> 00:03:14.720
+condicionals. Cal que pensis quan importen
+
+00:03:14.740 --> 00:03:17.230
+les dues condicions i quan només una d'elles
+
+00:03:17.260 --> 00:03:19.790
+ha de ser certa. Molta sort, i ens
+
+00:03:19.820 --> 00:03:20.660
+veiem aquí d'aquí a una estona.

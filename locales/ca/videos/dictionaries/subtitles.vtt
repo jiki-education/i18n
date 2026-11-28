@@ -1,0 +1,270 @@
+WEBVTT
+
+NOTE en_md5 c5187b46923e87c2aac86912c90dfb53
+
+00:00:00.100 --> 00:00:03.140
+Hola de nou. Espero que ja et sentis més còmode
+
+00:00:03.180 --> 00:00:06.810
+amb les llistes. Les llistes són la nostra primera opció quan
+
+00:00:06.840 --> 00:00:09.740
+tenim una llista de qualsevol cosa: una llista
+
+00:00:09.760 --> 00:00:11.560
+de mentors, una llista de puntuacions, una llista
+
+00:00:11.600 --> 00:00:14.420
+d'ingredients. Per a qualsevol llista, fes servir
+
+00:00:14.440 --> 00:00:17.630
+una llista. Però hi ha una altra estructura de dades
+
+00:00:17.720 --> 00:00:20.060
+que també és molt habitual quan vols una cosa
+
+00:00:20.070 --> 00:00:23.380
+una mica més complexa que una llista. Imagina't
+
+00:00:23.420 --> 00:00:24.780
+que volem guardar una mica d'informació sobre mi:
+
+00:00:25.500 --> 00:00:27.580
+el meu nom, la meva edat i on vaig néixer.
+
+00:00:28.280 --> 00:00:30.140
+Podries fer servir una llista,
+
+00:00:30.150 --> 00:00:32.200
+però no queda gaire clar què està passant
+
+00:00:32.240 --> 00:00:34.850
+si ho fas. Anglaterra és on vaig
+
+00:00:34.880 --> 00:00:37.210
+néixer o on visc? El 42 és la meva
+
+00:00:37.300 --> 00:00:40.120
+edat o una altra cosa? I si ho vull
+
+00:00:40.160 --> 00:00:42.050
+fer servir, he de recordar que
+
+00:00:42.080 --> 00:00:44.740
+la primera posició és per al nom, la segona
+
+00:00:44.780 --> 00:00:47.900
+és per a l'edat i la tercera, per al lloc de naixement.
+
+00:00:47.920 --> 00:00:49.840
+Tot plegat és una mica desordenat, i és desordenat
+
+00:00:49.880 --> 00:00:52.420
+perquè això no és ben bé una llista de coses.
+
+00:00:52.480 --> 00:00:55.769
+És més complex que tot això. I aquí és
+
+00:00:55.800 --> 00:00:58.500
+on entren els diccionaris. Un diccionari és un
+
+00:00:58.560 --> 00:01:00.340
+tipus nou d'estructura de dades. És el cinquè
+
+00:01:00.420 --> 00:01:03.830
+que veus. Tens les cordes, els nombres, els booleans, les llistes i
+
+00:01:03.880 --> 00:01:06.200
+ara els diccionaris. I vull que t'imaginis
+
+00:01:06.260 --> 00:01:08.620
+un diccionari com un full d'una
+
+00:01:08.800 --> 00:01:12.180
+llibreta d'espiral. A l'esquerra tens
+
+00:01:12.220 --> 00:01:15.460
+els encapçalaments, les paraules name, age i birthplace,
+
+00:01:15.500 --> 00:01:18.400
+i a aquests els anomenem claus. I a la dreta,
+
+00:01:18.480 --> 00:01:20.240
+al costat de cada encapçalament, tens les
+
+00:01:20.300 --> 00:01:24.520
+dades de veritat: Jeremy, 42, England, i a aquestes
+
+00:01:24.600 --> 00:01:28.300
+les anomenem valors. Igual que les llistes,
+
+00:01:28.340 --> 00:01:31.180
+un diccionari és una sola cosa. És una pàgina
+
+00:01:31.190 --> 00:01:33.830
+d'una llibreta. I igual que les llistes, el Jiki el pot
+
+00:01:33.840 --> 00:01:35.250
+posar en una variable, en una capsa,
+
+00:01:35.720 --> 00:01:37.930
+o com a entrada d'una funció, o
+
+00:01:37.980 --> 00:01:39.540
+pot treure un diccionari pel
+
+00:01:39.560 --> 00:01:42.200
+conducte de sortida. I així és com es veu
+
+00:01:42.260 --> 00:01:45.080
+un diccionari en codi. Fem servir claus arrissades per
+
+00:01:45.120 --> 00:01:47.490
+marcar on comença i on acaba, i
+
+00:01:47.520 --> 00:01:49.420
+a dins hi ha parelles: una clau a
+
+00:01:49.480 --> 00:01:51.700
+l'esquerra, dos punts i el valor
+
+00:01:51.740 --> 00:01:53.860
+a la dreta. I entre cada parella
+
+00:01:53.900 --> 00:01:56.260
+hi ha una coma. Així que el Jiki ho veu i
+
+00:01:56.280 --> 00:01:58.600
+treu la seva llibreta d'espiral. Hi escriu name,
+
+00:01:58.960 --> 00:02:02.100
+Jeremy, age, 42, i així amb cada
+
+00:02:02.140 --> 00:02:04.440
+parella. I quan ha acabat, arrenca
+
+00:02:04.480 --> 00:02:06.320
+el full i el fica en una capsa
+
+00:02:06.420 --> 00:02:09.360
+amb l'etiqueta person. Hi ha unes quantes regles
+
+00:02:09.420 --> 00:02:12.060
+que cal conèixer. Les claus sempre són cordes. Han de portar
+
+00:02:12.140 --> 00:02:14.620
+cometes al voltant, i cada clau ha de ser
+
+00:02:14.680 --> 00:02:18.170
+única. No pots tenir dues claus
+
+00:02:18.260 --> 00:02:21.420
+que es diguin name dins del mateix diccionari. Els valors
+
+00:02:21.480 --> 00:02:23.150
+poden ser iguals si vols,
+
+00:02:23.280 --> 00:02:25.810
+però les claus han de ser diferents, i
+
+00:02:25.820 --> 00:02:27.600
+els valors poden ser qualsevol cosa. Poden ser
+
+00:02:27.680 --> 00:02:31.000
+cordes, nombres, booleans, llistes o fins i tot altres diccionaris.
+
+00:02:32.140 --> 00:02:34.540
+També pots tenir un diccionari buit,
+
+00:02:34.600 --> 00:02:37.220
+igual que teníem una llista buida,
+
+00:02:37.280 --> 00:02:38.800
+i podem començar amb ell i anar-lo
+
+00:02:38.820 --> 00:02:42.210
+ampliant més endavant. D'acord, ja tens un
+
+00:02:42.260 --> 00:02:44.160
+diccionari, però com hi treus alguna cosa
+
+00:02:44.220 --> 00:02:46.900
+de dins? Fem servir la mateixa sintaxi
+
+00:02:46.920 --> 00:02:48.960
+de claudàtors que amb les llistes i
+
+00:02:49.020 --> 00:02:52.980
+les cordes, però en lloc d'un número de posició,
+
+00:02:53.020 --> 00:02:55.040
+hi posem una clau. Així, si volem
+
+00:02:55.100 --> 00:02:57.390
+treure el nom d'algú d'un diccionari,
+
+00:02:57.940 --> 00:03:01.620
+escrivim la variable person, claudàtors i,
+
+00:03:01.640 --> 00:03:03.580
+a dins, la clau, en aquest cas name,
+
+00:03:03.660 --> 00:03:07.260
+entre cometes. I això li diu al Jiki que busqui
+
+00:03:07.300 --> 00:03:09.970
+en el diccionari person, que trobi la clau
+
+00:03:10.080 --> 00:03:12.900
+name i que en tregui el valor. El Jiki
+
+00:03:13.040 --> 00:03:15.000
+va a la capsa person, en treu la
+
+00:03:15.040 --> 00:03:17.340
+pàgina de la llibreta, repassa totes les
+
+00:03:17.400 --> 00:03:19.760
+claus fins que troba name i llavors llegeix
+
+00:03:19.800 --> 00:03:21.900
+el valor, Jeremy, i el posa en
+
+00:03:21.910 --> 00:03:27.540
+una capsa nova que es diu name. Els claudàtors sempre
+
+00:03:27.580 --> 00:03:29.980
+volen dir el mateix: fiques la mà dins d'alguna cosa
+
+00:03:29.990 --> 00:03:32.370
+i en treus una altra. Amb les llistes i les cordes,
+
+00:03:32.960 --> 00:03:34.720
+fas servir un número per dir de quina posició
+
+00:03:34.760 --> 00:03:37.580
+vols treure alguna cosa. Amb els diccionaris,
+
+00:03:37.700 --> 00:03:40.140
+fas servir una corda com a clau. És la
+
+00:03:40.180 --> 00:03:43.340
+mateixa idea, només que amb una sintaxi una mica diferent. D'acord,
+
+00:03:43.380 --> 00:03:45.390
+ara tens un parell d'exercicis per practicar
+
+00:03:45.500 --> 00:03:47.640
+com es creen diccionaris i com se'n llegeixen els valors.
+
+00:03:48.260 --> 00:03:50.160
+Tot el que necessites és el que acabem de veure:
+
+00:03:50.580 --> 00:03:52.660
+les claus arrissades per crear i els claudàtors
+
+00:03:52.680 --> 00:03:55.200
+per accedir-hi. Pren-t'ho amb calma. Molta
+
+00:03:55.240 --> 00:03:56.820
+sort, i ens veiem aquí d'aquí a poc.

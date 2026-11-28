@@ -1,0 +1,177 @@
+WEBVTT
+
+NOTE en_md5 a59a1b57ba6073109ec594f8e88d8ef2
+
+00:00:00.000 --> 00:00:03.662
+Hola de nou. Fins ara, quan has escrit funcions,
+
+00:00:04.173 --> 00:00:06.032
+cadascuna s'ha aguantat bastant bé
+
+00:00:06.113 --> 00:00:08.353
+tota sola i contenia tota la lògica
+
+00:00:08.373 --> 00:00:11.003
+que necessitava per funcionar. En aquesta lliçó,
+
+00:00:11.033 --> 00:00:13.453
+veurem com dividir les funcions per
+
+00:00:13.473 --> 00:00:16.493
+tenir funcions més petites que treballen juntes,
+
+00:00:16.563 --> 00:00:18.893
+en lloc de funcions grans que fan moltes
+
+00:00:18.953 --> 00:00:22.253
+coses alhora. Com a regla general en programació,
+
+00:00:22.293 --> 00:00:24.313
+vols que cada funció faci el mínim
+
+00:00:24.413 --> 00:00:27.533
+possible. Diem que una funció té una
+
+00:00:27.713 --> 00:00:31.333
+responsabilitat única. Cada funció hauria de fer només una
+
+00:00:31.413 --> 00:00:34.113
+cosa i fer servir altres funcions per a les diferents
+
+00:00:34.253 --> 00:00:36.913
+sub-parts d'aquesta. Doncs mirem un
+
+00:00:36.953 --> 00:00:40.393
+exemple. Imagina que tenim una funció la feina de la qual
+
+00:00:40.433 --> 00:00:43.613
+és retornar un text que descrigui
+
+00:00:43.653 --> 00:00:46.193
+un nom. Una versió senzilla seria
+
+00:00:46.233 --> 00:00:48.893
+així. Tenim un bucle de recompte, una cosa
+
+00:00:48.933 --> 00:00:52.033
+que ja has escrit, i després una plantilla de text
+
+00:00:52.073 --> 00:00:55.553
+que ajunta les peces del resultat. Això funciona
+
+00:00:55.573 --> 00:00:58.023
+bé, però fa dues coses. Fa
+
+00:00:58.113 --> 00:01:01.723
+una cosa força genèrica, comptar, i una altra de molt
+
+00:01:01.893 --> 00:01:04.873
+específica, construir aquest text amb un
+
+00:01:04.893 --> 00:01:09.102
+format concret. Seria molt millor dividir-ho
+
+00:01:09.133 --> 00:01:12.263
+en dues funcions: una que s'encarregui
+
+00:01:12.293 --> 00:01:15.893
+del recompte i una altra que s'encarregui de descriure
+
+00:01:15.903 --> 00:01:19.133
+un nom amb aquest format concret. I després
+
+00:01:19.173 --> 00:01:23.323
+podem reutilitzar aquesta funció genèrica de recompte
+
+00:01:23.333 --> 00:01:27.083
+en aquest formatatge del text, però també a qualsevol altre
+
+00:01:27.173 --> 00:01:29.412
+lloc on la necessitem. Sempre que hàgim de comptar
+
+00:01:29.473 --> 00:01:32.333
+les lletres d'un text, està totalment deslligada
+
+00:01:32.393 --> 00:01:35.633
+de tot el que tingui a veure amb imprimir-lo. Pots
+
+00:01:35.653 --> 00:01:39.813
+llegir les dues funcions per separat i entendre de seguida
+
+00:01:39.873 --> 00:01:43.153
+què fa cadascuna. A mesura que les teves funcions
+
+00:01:43.193 --> 00:01:45.203
+es tornin més complexes i en tinguis
+
+00:01:45.203 --> 00:01:47.513
+més, aquesta tècnica és la
+
+00:01:47.573 --> 00:01:51.793
+diferència entre tenir un codi net i llegible
+
+00:01:52.013 --> 00:01:54.833
+o tenir un embolic total. Hi ha una cosa
+
+00:01:54.853 --> 00:01:56.553
+que ja he comentat unes quantes vegades, però
+
+00:01:56.593 --> 00:01:58.793
+la vull tornar a esmentar aquí:
+
+00:01:58.853 --> 00:02:02.213
+tot el que crees dins d'una funció,
+
+00:02:02.253 --> 00:02:05.933
+les altres funcions no hi poden accedir tret que
+
+00:02:05.973 --> 00:02:09.313
+ho retornis expressament. Així que si intentes
+
+00:02:09.333 --> 00:02:14.053
+fer referència a la variable count (recompte) des de dins de describeName (descriu el nom),
+
+00:02:14.113 --> 00:02:15.763
+no podràs, perquè pertany
+
+00:02:15.833 --> 00:02:19.633
+a l'altra funció. A JavaScript, podem crear
+
+00:02:19.693 --> 00:02:22.553
+variables a dalt de tot, per sobre de tot,
+
+00:02:22.613 --> 00:02:25.713
+que es comparteixen entre funcions, però et recomano de debò
+
+00:02:25.873 --> 00:02:27.973
+que no ho facis tret que hi hagi una molt bona
+
+00:02:27.993 --> 00:02:32.193
+raó. Com més independent mantinguis cada funció,
+
+00:02:32.253 --> 00:02:34.253
+i la paraula tècnica per a això és «pura»,
+
+00:02:34.553 --> 00:02:38.393
+funcions pures, més net serà el teu codi
+
+00:02:38.413 --> 00:02:40.493
+i menys errors crearàs
+
+00:02:40.533 --> 00:02:42.763
+i tindràs. En els pròxims exercicis,
+
+00:02:42.773 --> 00:02:45.213
+escriuràs funcions que treballen juntes per
+
+00:02:45.313 --> 00:02:48.613
+resoldre problemes, una funció que en crida una altra, cadascuna
+
+00:02:48.693 --> 00:02:51.613
+fent la seva petita feina. Fes-los
+
+00:02:51.633 --> 00:02:53.113
+amb calma, i ens veiem aquí
+
+00:02:53.153 --> 00:02:53.433
+d'aquí a una estona.

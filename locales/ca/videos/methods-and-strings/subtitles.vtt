@@ -1,0 +1,222 @@
+WEBVTT
+
+NOTE en_md5 6ff1da8907b7499eb2c565476fd62b73
+
+00:00:00.160 --> 00:00:02.940
+Hola de nou. Fins ara, quan hem pensat en
+
+00:00:03.180 --> 00:00:05.540
+cordes o en nombres, els hem considerat
+
+00:00:05.600 --> 00:00:10.140
+coses força estàtiques. I, tot i que ho són,
+
+00:00:10.180 --> 00:00:13.260
+també porten incorporades moltes funcionalitats
+
+00:00:13.540 --> 00:00:16.240
+que el Jiki pot fer servir. I a mesura que
+
+00:00:16.320 --> 00:00:18.790
+avancem, anirem aprenent aquestes funcionalitats,
+
+00:00:18.840 --> 00:00:20.940
+aquest tipus de capacitats que tenen
+
+00:00:20.980 --> 00:00:23.690
+i que et fan la vida molt més fàcil.
+
+00:00:23.700 --> 00:00:26.100
+Hi ha dos tipus de capacitats que
+
+00:00:26.160 --> 00:00:30.220
+mirarem: les propietats i els mètodes. Comencem
+
+00:00:30.240 --> 00:00:34.750
+per les propietats. Les propietats són fets que
+
+00:00:34.800 --> 00:00:37.370
+podem demanar al Jiki que ens expliqui
+
+00:00:37.400 --> 00:00:40.800
+sobre les coses. Per exemple, les cordes tenen una propietat
+
+00:00:40.840 --> 00:00:43.500
+anomenada length, que el Jiki pot fer servir per dir-nos
+
+00:00:43.540 --> 00:00:46.020
+com de llarga és una corda. Així, en lloc
+
+00:00:46.060 --> 00:00:48.100
+d'haver de recórrer totes les lletres amb un bucle
+
+00:00:48.140 --> 00:00:50.380
+per esbrinar com de llarga és una corda,
+
+00:00:50.400 --> 00:00:52.300
+simplement podem demanar-ho al Jiki.
+
+00:00:53.700 --> 00:00:55.620
+I per fer-ho, fem servir una forma
+
+00:00:55.700 --> 00:00:59.080
+de sintaxi nova: un punt. Per exemple, si
+
+00:00:59.100 --> 00:01:01.460
+tenim la corda Jeremy i en volem
+
+00:01:01.500 --> 00:01:05.540
+saber la longitud, podem escriure Jeremy.length,
+
+00:01:07.240 --> 00:01:10.200
+i ja està. Quan el Jiki crea una corda,
+
+00:01:10.400 --> 00:01:12.500
+compta les lletres i bàsicament
+
+00:01:12.540 --> 00:01:14.240
+escriu un número a la cantonada amb quantes
+
+00:01:14.260 --> 00:01:16.580
+n'hi ha. I després, quan fem servir
+
+00:01:16.620 --> 00:01:19.960
+la propietat length, el Jiki hi va i comprova
+
+00:01:20.040 --> 00:01:23.130
+quin era aquell número. Així, en el nostre exemple de Jeremy.length,
+
+00:01:23.220 --> 00:01:27.480
+quan el Jiki crea la corda Jeremy,
+
+00:01:27.560 --> 00:01:29.510
+compta les lletres, escriu el número sis a
+
+00:01:29.540 --> 00:01:32.580
+la cantonada i, després, quan escrivim Jeremy.length,
+
+00:01:33.060 --> 00:01:35.060
+hi va i ho comprova. Així que pots
+
+00:01:35.080 --> 00:01:37.980
+pensar en les propietats com si fossin fets sobre
+
+00:01:38.020 --> 00:01:41.160
+aquella cosa. Ara bé, he dit que teníem propietats
+
+00:01:41.220 --> 00:01:44.880
+i mètodes. Doncs, què són els mètodes? Els mètodes són
+
+00:01:44.920 --> 00:01:49.590
+funcions que pertanyen a la corda. Així, en lloc
+
+00:01:49.600 --> 00:01:52.120
+d'escriure nosaltres una funció a la qual posem
+
+00:01:52.180 --> 00:01:54.960
+una corda com a entrada, podem
+
+00:01:55.060 --> 00:01:59.020
+fer servir un mètode directament sobre la corda. Per
+
+00:01:59.080 --> 00:02:01.700
+exemple, te'n recordes de la funció que vas escriure, en què
+
+00:02:01.760 --> 00:02:04.700
+comprovaves si una corda tenia una lletra concreta
+
+00:02:04.760 --> 00:02:07.580
+a dins? Doncs resulta que les cordes tenen un
+
+00:02:07.720 --> 00:02:11.320
+mètode anomenat includes que fa precisament això, i el
+
+00:02:11.360 --> 00:02:13.440
+podem fer servir amb la mateixa sintaxi de punt
+
+00:02:13.480 --> 00:02:16.530
+que has vist per a les propietats. La diferència és que,
+
+00:02:16.540 --> 00:02:18.280
+quan els escrivim, els escrivim com
+
+00:02:18.360 --> 00:02:21.989
+a funcions, amb parèntesis i entrades. Així, podem
+
+00:02:22.000 --> 00:02:26.520
+escriure-ho, i rebrem true, ja que Jeremy
+
+00:02:26.560 --> 00:02:28.840
+té una E a dins. Ara bé, aquests són
+
+00:02:28.880 --> 00:02:31.840
+diferents de les propietats perquè no són fets estàtics.
+
+00:02:32.500 --> 00:02:34.680
+Són funcions, de veritat. Els pots imaginar
+
+00:02:34.720 --> 00:02:37.260
+com a funcions que tenen una capsa incorporada
+
+00:02:37.300 --> 00:02:40.850
+amb la corda a dins. Com
+
+00:02:40.880 --> 00:02:43.150
+funcionen no té gaire importància ara mateix. No
+
+00:02:43.160 --> 00:02:45.200
+els construiràs fins d'aquí a un temps. Tot
+
+00:02:45.240 --> 00:02:47.720
+el que necessites saber és que
+
+00:02:47.780 --> 00:02:50.200
+per fer servir un mètode poses un punt i després
+
+00:02:50.240 --> 00:02:53.070
+la sintaxi normal de les funcions. Una cosa que has de saber
+
+00:02:53.100 --> 00:02:55.160
+sobre les cordes és que els mètodes no canvien
+
+00:02:55.200 --> 00:02:58.400
+res de dins la corda. Per exemple, hi ha
+
+00:02:58.480 --> 00:03:01.560
+un mètode toUpperCase, que retorna la corda amb
+
+00:03:01.660 --> 00:03:04.010
+totes les lletres en majúscules. Però això no
+
+00:03:04.060 --> 00:03:06.960
+canvia la corda original. Aquesta encara conté Jeremy,
+
+00:03:07.120 --> 00:03:10.100
+escrit només amb la J majúscula. El que fa el Jiki
+
+00:03:10.140 --> 00:03:13.120
+és crear una corda nova, tota en majúscules.
+
+00:03:14.480 --> 00:03:16.040
+Ara, a mesura que avancem, et presentaré
+
+00:03:16.120 --> 00:03:18.100
+moltes propietats i mètodes diferents
+
+00:03:18.140 --> 00:03:20.810
+que pots fer servir. Llegeix bé les instruccions
+
+00:03:20.840 --> 00:03:23.410
+dels exercicis per conèixer totes
+
+00:03:23.440 --> 00:03:26.380
+aquestes coses. Però primer, tornarem
+
+00:03:26.420 --> 00:03:29.380
+a l'exercici del pangrama d'abans, però amb una
+
+00:03:29.420 --> 00:03:32.600
+mica més de complexitat. Que t'hi diverteixis! Ens
+
+00:03:32.640 --> 00:03:33.470
+veiem aquí d'aquí a una estona.
