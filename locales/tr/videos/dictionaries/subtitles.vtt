@@ -1,0 +1,270 @@
+WEBVTT
+
+NOTE en_md5 c5187b46923e87c2aac86912c90dfb53
+
+00:00:00.100 --> 00:00:03.140
+Tekrar hoş geldiniz. Umarım artık kendinizi
+
+00:00:03.180 --> 00:00:06.810
+dizilerle daha rahat hissediyorsunuzdur. Elimizde
+
+00:00:06.840 --> 00:00:09.740
+bir şeylerin listesi olduğunda, mentor
+
+00:00:09.760 --> 00:00:11.560
+listesi, puan listesi, malzeme
+
+00:00:11.600 --> 00:00:14.420
+listesi, herhangi bir liste, ilk tercihimiz
+
+00:00:14.440 --> 00:00:17.630
+hep dizilerdir. Ama bir listeden
+
+00:00:17.720 --> 00:00:20.060
+biraz daha karmaşık bir şey istediğinizde
+
+00:00:20.070 --> 00:00:23.380
+çok sık kullanılan bir veri yapısı daha var. Hadi
+
+00:00:23.420 --> 00:00:24.780
+benimle ilgili birkaç bilgi saklamak istediğimizi düşünelim:
+
+00:00:25.500 --> 00:00:27.580
+adım, yaşım, doğduğum yer.
+
+00:00:28.280 --> 00:00:30.140
+Bunun için bir dizi kullanabilirsiniz,
+
+00:00:30.150 --> 00:00:32.200
+ama böyle yaptığınızda ne olup bittiği
+
+00:00:32.240 --> 00:00:34.850
+pek de anlaşılmaz. İngiltere doğduğum yer mi,
+
+00:00:34.880 --> 00:00:37.210
+yoksa yaşadığım yer mi? 42 yaşım mı,
+
+00:00:37.300 --> 00:00:40.120
+yoksa başka bir şey mi? Bir de bunu
+
+00:00:40.160 --> 00:00:42.050
+kullanmak istersem şunu hatırlamam gerekir:
+
+00:00:42.080 --> 00:00:44.740
+ilk konum ada, ikincisi
+
+00:00:44.780 --> 00:00:47.900
+yaşa, üçüncüsü doğum yerine ait.
+
+00:00:47.920 --> 00:00:49.840
+Hepsi biraz dağınık, üstelik dağınık olmasının
+
+00:00:49.880 --> 00:00:52.420
+nedeni de bunun aslında bir şeylerin listesi olmaması.
+
+00:00:52.480 --> 00:00:55.769
+Bundan daha karmaşık bir şey bu. İşte burada
+
+00:00:55.800 --> 00:00:58.500
+sözlükler devreye girer. Sözlük
+
+00:00:58.560 --> 00:01:00.340
+yeni bir veri yapısı türüdür; beşinciniz.
+
+00:01:00.420 --> 00:01:03.830
+Karakter dizileri, sayılar, Boolean değerler, diziler ve
+
+00:01:03.880 --> 00:01:06.200
+şimdi de sözlükler. Sözlüğü
+
+00:01:06.260 --> 00:01:08.620
+spiralli bir not defterinin
+
+00:01:08.800 --> 00:01:12.180
+bir sayfası gibi düşünmenizi istiyorum. Sol tarafta
+
+00:01:12.220 --> 00:01:15.460
+başlıklar var: name, age, birthplace sözcükleri.
+
+00:01:15.500 --> 00:01:18.400
+Bunlara anahtarlar diyoruz. Sağ tarafta,
+
+00:01:18.480 --> 00:01:20.240
+her başlığın yanında da
+
+00:01:20.300 --> 00:01:24.520
+asıl veriler var: Jeremy, 42, England. Bunlara da
+
+00:01:24.600 --> 00:01:28.300
+değerler diyoruz. Tıpkı diziler gibi
+
+00:01:28.340 --> 00:01:31.180
+sözlük de tek bir şeydir; not defterinden
+
+00:01:31.190 --> 00:01:33.830
+koparılmış tek bir sayfa. Yine tıpkı dizilerde olduğu gibi
+
+00:01:33.840 --> 00:01:35.250
+Jiki bunu bir değişkene, bir kutuya
+
+00:01:35.720 --> 00:01:37.930
+ya da bir fonksiyonun para deliğine koyabilir;
+
+00:01:37.980 --> 00:01:39.540
+kaydıraktan da bir
+
+00:01:39.560 --> 00:01:42.200
+sözlük çıkarabilir. Peki sözlük kodda
+
+00:01:42.260 --> 00:01:45.080
+nasıl görünür? Başlangıcı ve bitişi göstermek için
+
+00:01:45.120 --> 00:01:47.490
+süslü parantez kullanırız,
+
+00:01:47.520 --> 00:01:49.420
+içinde de çiftler vardır: solda
+
+00:01:49.480 --> 00:01:51.700
+anahtar, ardından iki nokta üst üste,
+
+00:01:51.740 --> 00:01:53.860
+sağda da değer. Her çiftin arasına
+
+00:01:53.900 --> 00:01:56.260
+virgül koyarız. Jiki bunu görünce
+
+00:01:56.280 --> 00:01:58.600
+spiralli not defterini çıkarır. Her çift için name,
+
+00:01:58.960 --> 00:02:02.100
+Jeremy, age, 42 ve devamını
+
+00:02:02.140 --> 00:02:04.440
+yazar. İşi bitince
+
+00:02:04.480 --> 00:02:06.320
+sayfayı koparır ve person (kişi)
+
+00:02:06.420 --> 00:02:09.360
+etiketli bir kutuya koyar. Bilmeniz gereken
+
+00:02:09.420 --> 00:02:12.060
+birkaç kural var. Anahtarlar her zaman karakter dizisidir.
+
+00:02:12.140 --> 00:02:14.620
+Tırnak içine alınmaları gerekir ve her anahtar
+
+00:02:14.680 --> 00:02:18.170
+benzersiz olmalıdır. Aynı sözlükte
+
+00:02:18.260 --> 00:02:21.420
+name adında iki anahtar olamaz. İsterseniz
+
+00:02:21.480 --> 00:02:23.150
+değerler aynı olabilir,
+
+00:02:23.280 --> 00:02:25.810
+ama anahtarlar farklı olmak zorundadır.
+
+00:02:25.820 --> 00:02:27.600
+Değerler her şey olabilir:
+
+00:02:27.680 --> 00:02:31.000
+karakter dizileri, sayılar, Boolean değerler, diziler, hatta başka sözlükler.
+
+00:02:32.140 --> 00:02:34.540
+Boş bir dizimiz olabildiği gibi
+
+00:02:34.600 --> 00:02:37.220
+boş bir sözlüğümüz de olabilir;
+
+00:02:37.280 --> 00:02:38.800
+onunla başlayıp sonra üzerine
+
+00:02:38.820 --> 00:02:42.210
+inşa edebiliriz. Peki, artık bir
+
+00:02:42.260 --> 00:02:44.160
+sözlüğünüz var, ama ondan
+
+00:02:44.220 --> 00:02:46.900
+nasıl bir şey çıkarırsınız? Dizilerde ve
+
+00:02:46.920 --> 00:02:48.960
+karakter dizilerinde kullandığımız köşeli parantez
+
+00:02:49.020 --> 00:02:52.980
+sözdizimini kullanırız, ama konum numarası yerine
+
+00:02:53.020 --> 00:02:55.040
+anahtar koyarız. Yani bir sözlükten
+
+00:02:55.100 --> 00:02:57.390
+birinin adını almak istiyorsak
+
+00:02:57.940 --> 00:03:01.620
+person değişkenini, köşeli parantezleri
+
+00:03:01.640 --> 00:03:03.580
+ve içine de anahtarı, burada name anahtarını,
+
+00:03:03.660 --> 00:03:07.260
+tırnak içinde yazarız. Bu, Jiki'ye
+
+00:03:07.300 --> 00:03:09.970
+person sözlüğüne bakmasını, name
+
+00:03:10.080 --> 00:03:12.900
+anahtarını bulmasını ve değerini çıkarmasını söyler.
+
+00:03:13.040 --> 00:03:15.000
+Jiki person kutusuna gider,
+
+00:03:15.040 --> 00:03:17.340
+not defterinden çıkan sayfayı alır,
+
+00:03:17.400 --> 00:03:19.760
+name anahtarını bulana kadar bütün anahtarları tarar,
+
+00:03:19.800 --> 00:03:21.900
+sonra Jeremy değerini okur ve
+
+00:03:21.910 --> 00:03:27.540
+name adında yeni bir kutuya koyar. Köşeli parantezler
+
+00:03:27.580 --> 00:03:29.980
+her zaman aynı şeyi anlatır: bir şeyin içine uzanıp
+
+00:03:29.990 --> 00:03:32.370
+oradan bir şey çıkarırsınız. Dizilerde ve karakter dizilerinde,
+
+00:03:32.960 --> 00:03:34.720
+bir şeyi hangi konumdan
+
+00:03:34.760 --> 00:03:37.580
+almak istediğinizi söylemek için sayı kullanırsınız. Sözlüklerde ise
+
+00:03:37.700 --> 00:03:40.140
+anahtar için bir karakter dizisi kullanırsınız.
+
+00:03:40.180 --> 00:03:43.340
+Aynı fikir, sadece sözdizimi biraz farklı. Evet,
+
+00:03:43.380 --> 00:03:45.390
+şimdi sözlük oluşturmayı ve onlardan değer
+
+00:03:45.500 --> 00:03:47.640
+okumayı pekiştirmeniz için birkaç alıştırmanız var.
+
+00:03:48.260 --> 00:03:50.160
+İhtiyacınız olan her şeyi az önce gördük:
+
+00:03:50.580 --> 00:03:52.660
+oluşturmak için süslü parantezler, erişmek için
+
+00:03:52.680 --> 00:03:55.200
+köşeli parantezler. Acele etmeyin. Bol
+
+00:03:55.240 --> 00:03:56.820
+şans, birazdan burada görüşürüz.

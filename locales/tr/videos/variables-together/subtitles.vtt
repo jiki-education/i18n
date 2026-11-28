@@ -1,0 +1,273 @@
+WEBVTT
+
+NOTE en_md5 51f04781025bf1dbba2ded55c062926f
+
+00:00:00.140 --> 00:00:03.580
+Tekrar hoş geldiniz. Şimdiye kadar değişken oluşturduğumuzda
+
+00:00:03.740 --> 00:00:06.560
+yalnızca basit değerler kullandık: 50 gibi
+
+00:00:06.840 --> 00:00:10.620
+bir sayı ya da “yellow” gibi bir karakter dizisi.
+
+00:00:10.660 --> 00:00:13.340
+Değişkenler asıl gücünü, onları
+
+00:00:13.440 --> 00:00:16.460
+birbirleriyle birlikte kullanabildiğimizde gösterir.
+
+00:00:16.540 --> 00:00:19.000
+Yani dikdörtgenin sol kenarının
+
+00:00:19.040 --> 00:00:22.030
+tuvalin kenarından belirli bir uzaklıkta
+
+00:00:22.080 --> 00:00:25.660
+olması gerektiğini söyleyebildiğimizde. Programlamada
+
+00:00:25.720 --> 00:00:28.810
+normal, temel matematiği kullanabiliriz: toplama,
+
+00:00:28.940 --> 00:00:32.340
+çıkarma, çarpma, bölme gibi işlemler. Bunların
+
+00:00:32.380 --> 00:00:35.140
+bir parçası olarak önceden tanımladığımız
+
+00:00:35.200 --> 00:00:39.020
+değişkenleri de kullanabiliriz. Önce tuvalimize
+
+00:00:39.060 --> 00:00:41.300
+bir dikdörtgen çizmek istediğimizi söyleyerek başlayalım.
+
+00:00:41.960 --> 00:00:43.800
+Soldan ve sağdan 10
+
+00:00:44.480 --> 00:00:46.980
+içeride, üstten ve alttan da
+
+00:00:47.200 --> 00:00:48.960
+20 içeride başlasın istiyoruz.
+
+00:00:49.900 --> 00:00:51.580
+Yani tuvalin
+
+00:00:51.620 --> 00:00:53.900
+ortasında olacak, genişliği
+
+00:00:53.960 --> 00:00:57.740
+yüksekliğinden biraz daha fazla. Hatırlarsanız,
+
+00:00:57.760 --> 00:01:00.430
+bir dikdörtgen çizdiğimizde left, top,
+
+00:01:00.600 --> 00:01:02.510
+width ve height değerlerini, bir de rengini bilmemiz gerekir.
+
+00:01:03.360 --> 00:01:04.820
+O halde bunları yazarak
+
+00:01:04.920 --> 00:01:08.320
+başlayabiliriz. Ve şimdi left, top,
+
+00:01:08.420 --> 00:01:10.220
+width ve height değerlerinin ne olması
+
+00:01:10.240 --> 00:01:13.100
+gerektiğini hesaplamamız gerekiyor. O halde belirleyelim.
+
+00:01:13.260 --> 00:01:15.660
+left 20. Pardon, left 10. top
+
+00:01:15.940 --> 00:01:18.920
+20. width ise, şey, width
+
+00:01:19.020 --> 00:01:22.020
+tuvalin boyutudur, yani 100, eksi
+
+00:01:22.080 --> 00:01:23.340
+soldaki 10 ve
+
+00:01:23.360 --> 00:01:26.100
+sağdaki 10, bu da 80 eder.
+
+00:01:26.180 --> 00:01:29.040
+height ise tuvalin yüksekliğidir,
+
+00:01:29.080 --> 00:01:31.580
+o da 100, eksi üstteki 20
+
+00:01:31.640 --> 00:01:33.660
+ve alttaki 20, yani
+
+00:01:33.960 --> 00:01:37.860
+60. Yani bu değişkenleri tanımlayabiliriz. left
+
+00:01:37.920 --> 00:01:42.840
+10, top 20, width 80, height 60.
+
+00:01:42.860 --> 00:01:44.880
+Umarım bu size epey tanıdık geliyordur.
+
+00:01:44.920 --> 00:01:46.700
+Şimdiye kadar alıştırmalarda
+
+00:01:46.740 --> 00:01:50.940
+yaptığınız şey bu. Peki şimdi
+
+00:01:50.960 --> 00:01:54.140
+dikdörtgeni biraz içeri almak,
+
+00:01:54.160 --> 00:01:55.400
+biraz küçültmek istersek ne olur?
+
+00:01:55.460 --> 00:01:57.040
+Diyelim soldan ve sağdan 20,
+
+00:01:57.100 --> 00:01:59.040
+üstten ve alttan
+
+00:01:59.060 --> 00:02:02.620
+30 içeri almak istiyoruz. Her şeyi
+
+00:02:02.720 --> 00:02:06.320
+baştan hesaplamamız gerekir. width artık 100 eksi
+
+00:02:06.560 --> 00:02:10.280
+20 eksi 20, height ise 100
+
+00:02:10.360 --> 00:02:14.320
+eksi 30 eksi 30. Bu da kesinlikle
+
+00:02:14.420 --> 00:02:17.280
+benim yapmak istediğimden çok daha fazla
+
+00:02:17.320 --> 00:02:20.400
+iş ve matematik. Bunun yerine
+
+00:02:20.420 --> 00:02:24.000
+bilgisayara bunu bizim için yapmasını söyleyebiliriz.
+
+00:02:24.060 --> 00:02:27.680
+width değerini 100 eksi
+
+00:02:27.840 --> 00:02:31.620
+left eksi left olarak, height değerini de
+
+00:02:31.700 --> 00:02:34.720
+100 eksi top eksi top olarak belirleyebiliriz,
+
+00:02:34.960 --> 00:02:37.580
+çünkü üst ve alt aynı. Ya da
+
+00:02:37.600 --> 00:02:40.980
+bunu 100 eksi
+
+00:02:41.240 --> 00:02:44.820
+left çarpı iki, veya 100 eksi
+
+00:02:44.940 --> 00:02:48.620
+top çarpı iki diye yazabiliriz. Artık
+
+00:02:48.660 --> 00:02:52.040
+left ya da top değerini değiştirirsek, width ve
+
+00:02:52.080 --> 00:02:54.860
+height de değişir. Yani işler
+
+00:02:54.900 --> 00:02:57.430
+birbirine bağlanmaya başlıyor. Peki ya
+
+00:02:57.440 --> 00:03:00.960
+tuval? O şimdi 100. Ama ya
+
+00:03:01.020 --> 00:03:03.700
+tuvalimiz 200 genişliğinde
+
+00:03:03.740 --> 00:03:06.540
+ve 200 yüksekliğinde olsaydı? O zaman muhtemelen
+
+00:03:06.620 --> 00:03:09.560
+canvasSize (tuval boyutu) adında bir değişken tanımlayıp
+
+00:03:09.580 --> 00:03:13.230
+onu 100 yapmalıyız. Artık left değerimiz, pardon,
+
+00:03:13.260 --> 00:03:17.740
+width değerimiz canvasSize eksi left çarpı iki,
+
+00:03:18.200 --> 00:03:22.160
+height değerimiz de canvasSize eksi top çarpı
+
+00:03:22.200 --> 00:03:26.120
+iki. Şimdi Jiki'nin ne yaptığını düşünelim:
+
+00:03:26.480 --> 00:03:30.580
+let height eşittir canvas eksi
+
+00:03:30.700 --> 00:03:33.310
+top çarpı iki yazdığımızda. Önce
+
+00:03:33.310 --> 00:03:35.220
+top kutusunu raftan alır,
+
+00:03:35.260 --> 00:03:37.660
+içinde 20 bulur,
+
+00:03:37.680 --> 00:03:40.160
+cep hesap makinesini çıkarıp 20 çarpı ikiyi hesaplar
+
+00:03:40.580 --> 00:03:42.740
+ve aklına 40'ı not eder.
+
+00:03:43.720 --> 00:03:45.860
+Sonra canvas kutusunu
+
+00:03:45.900 --> 00:03:49.540
+raftan alır, içinde 100 bulur
+
+00:03:49.600 --> 00:03:52.780
+ve 100 eksi 40'ın 60 ettiğini hesaplar.
+
+00:03:53.840 --> 00:03:56.350
+Artık aslında söylediğimiz şeyin
+
+00:03:56.400 --> 00:04:00.000
+let height eşittir 60 olduğunu bilir. O yüzden
+
+00:04:00.040 --> 00:04:02.320
+let anahtar kelimesine uyar, yeni bir kutu alır,
+
+00:04:02.360 --> 00:04:04.440
+üzerine height yazar ve içine
+
+00:04:04.580 --> 00:04:06.900
+60 koyar. Sonra height değerini
+
+00:04:07.040 --> 00:04:09.600
+ileride kullandığında yalnızca 60'ı
+
+00:04:09.640 --> 00:04:13.720
+geri çıkarır. Bunların hepsini
+
+00:04:13.820 --> 00:04:16.180
+sonraki birkaç alıştırmada uygulamaya dökün,
+
+00:04:16.240 --> 00:04:18.649
+giderek daha net hale gelecek. Ayrıca
+
+00:04:18.700 --> 00:04:22.070
+her şey çalışmaya başladığında, değişkenlerin değerlerini
+
+00:04:22.100 --> 00:04:25.200
+değiştirip neler olduğuna bakın. Nasıl
+
+00:04:25.220 --> 00:04:28.420
+büyüdüklerini ve nasıl küçüldüklerini izleyin.
+
+00:04:28.480 --> 00:04:31.480
+Acele etmeyin, şeyler arasındaki ilişkileri düşünün,
+
+00:04:31.500 --> 00:04:32.670
+birazdan burada görüşürüz.

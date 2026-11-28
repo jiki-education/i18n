@@ -1,0 +1,267 @@
+WEBVTT
+
+NOTE en_md5 49411a7db976297a17fb5f2e027fcaff
+
+00:00:00.100 --> 00:00:03.060
+Tekrar hoş geldiniz. Bir süredir repeat
+
+00:00:03.120 --> 00:00:05.160
+döngüsünü kullanıyorsunuz ve umarım artık
+
+00:00:05.220 --> 00:00:08.640
+onunla epey rahatsınızdır. Şimdi bununla ilgili
+
+00:00:08.680 --> 00:00:10.500
+biraz daha karmaşık bir şeye
+
+00:00:10.520 --> 00:00:13.220
+bakacağız. Diyelim ki bir sıra
+
+00:00:13.260 --> 00:00:15.740
+çiçek istiyoruz. Şöyle bir şey yazabiliriz.
+
+00:00:16.180 --> 00:00:18.720
+Bir konum belirleriz, bir çiçek dikeriz,
+
+00:00:18.760 --> 00:00:21.300
+konumu 10 artırırız, bunu tekrarlarız
+
+00:00:22.000 --> 00:00:23.560
+ve sonunda dümdüz, düzenli bir
+
+00:00:23.680 --> 00:00:26.640
+çiçek sırası elde ederiz. Ama ya
+
+00:00:26.720 --> 00:00:30.240
+satırları ve sütunları olan bir çiçek ızgarası istiyorsak? Belki
+
+00:00:30.320 --> 00:00:32.780
+dört sıra, her sırada beş çiçek.
+
+00:00:35.000 --> 00:00:36.580
+Bir saniye durun, belki videoyu
+
+00:00:36.620 --> 00:00:38.640
+bir saniyeliğine duraklatın ve bunu nasıl
+
+00:00:38.700 --> 00:00:42.380
+yapabileceğinizi bir düşünün.
+
+00:00:42.440 --> 00:00:44.880
+Bir sıra çiçek çizen bir döngümüz var.
+
+00:00:45.980 --> 00:00:48.240
+Bunu dört sıra çizmek için nasıl
+
+00:00:48.320 --> 00:00:50.660
+kullanabiliriz? Ya da dört sıra çizmek için
+
+00:00:50.700 --> 00:00:54.420
+ne yapabiliriz? Tamam, umarım biraz düşünmüşsünüzdür.
+
+00:00:55.440 --> 00:00:57.360
+Bir seçenek, o döngüyü dört kez
+
+00:00:57.380 --> 00:01:00.680
+kopyalayıp yapıştırmak ve her birinde
+
+00:01:00.740 --> 00:01:03.260
+üst konumu değiştirmek olabilir. Bu da
+
+00:01:03.320 --> 00:01:07.970
+çalışır. Sorun olmaz. Ama aynı şeyi tekrar tekrar yazmış oluruz ve
+
+00:01:07.980 --> 00:01:10.380
+daha iyi bir yol var. Kod tekrarlıysa,
+
+00:01:10.420 --> 00:01:13.420
+işleri basitleştirmek için bir döngü
+
+00:01:13.460 --> 00:01:17.920
+kullanabileceğimizi biliyoruz. Yani burada bir
+
+00:01:18.020 --> 00:01:21.840
+döngüyü başka bir döngünün içinde kullanabiliriz. Biri
+
+00:01:21.860 --> 00:01:24.840
+sıralar için, diğeri o sıradaki
+
+00:01:24.880 --> 00:01:28.080
+çiçekler için. O yüzden mevcut kodumuzun etrafına
+
+00:01:28.140 --> 00:01:30.360
+bir repeat döngüsü ekleyerek başlayalım, böylece
+
+00:01:30.380 --> 00:01:32.220
+mantığı hissedebilirsiniz. Sadece
+
+00:01:32.260 --> 00:01:35.020
+bir kez tekrar ettireceğiz. Yani Jiki'ye
+
+00:01:35.060 --> 00:01:38.680
+bu dış süslü parantezlerin içindeki her şeyi bir kez yapmasını söylüyoruz.
+
+00:01:39.800 --> 00:01:41.920
+Bu da dış döngü hiç yokmuş
+
+00:01:42.000 --> 00:01:44.220
+gibi tamamen aynı sonucu verir.
+
+00:01:44.280 --> 00:01:46.870
+Jiki'ye bir şeyi bir kez tekrar etmesini söylemek,
+
+00:01:46.940 --> 00:01:48.440
+repeat olmadan yapmasını
+
+00:01:48.480 --> 00:01:51.000
+söylemekle aynı şey. Ama bunu size
+
+00:01:51.040 --> 00:01:53.000
+kodun bu şekilde çalıştığını göstermek için
+
+00:01:53.060 --> 00:01:55.500
+gösteriyorum. Bu geçerli, düzgün bir kod.
+
+00:01:55.560 --> 00:01:59.900
+Bir döngü başka bir döngünün içinde. Peki şimdi
+
+00:01:59.940 --> 00:02:02.960
+dış döngüyü iki kez tekrar edecek şekilde
+
+00:02:03.000 --> 00:02:06.520
+değiştirirsek ne olur? Artık Jiki,
+
+00:02:06.560 --> 00:02:10.400
+plant (dikmek) işini beş kez yapan şeyin tamamını iki kez çalıştırır.
+
+00:02:10.440 --> 00:02:14.460
+10 çiçek diker. Ama bu çiçeklerin hepsi
+
+00:02:14.500 --> 00:02:17.600
+aynı sırada kalır. Nasıl
+
+00:02:17.660 --> 00:02:20.520
+her seferinde konumu soldan sağa
+
+00:02:20.580 --> 00:02:22.180
+biraz kaydırmamız gerekiyorsa,
+
+00:02:23.100 --> 00:02:26.240
+her tam sırayı çizdikten sonra
+
+00:02:26.300 --> 00:02:28.660
+dikey konumu da kaydırmamız gerekir.
+
+00:02:30.040 --> 00:02:32.540
+Peki bunu nasıl yaparız? Şöyle:
+
+00:02:32.580 --> 00:02:35.480
+üst konum için dışarıda bir değişken ekleyebilir,
+
+00:02:35.560 --> 00:02:39.970
+bunu plant fonksiyonumuzda kullanabilir ve
+
+00:02:40.000 --> 00:02:42.880
+her sıradan sonra 10 artırabiliriz.
+
+00:02:45.200 --> 00:02:46.920
+Şimdi her adımda değerin ne olduğunu
+
+00:02:46.960 --> 00:02:50.480
+bir düşünelim. Üst konum 10 ile başlar.
+
+00:02:50.520 --> 00:02:53.360
+Diktiğimiz ilk beş sefer boyunca
+
+00:02:53.380 --> 00:02:56.720
+öyle kalır. Sol konum artar. Sonra
+
+00:02:56.760 --> 00:02:59.720
+üst konuma bir 10 daha
+
+00:02:59.800 --> 00:03:03.480
+ekleriz ve beş çiçek daha dikeriz,
+
+00:03:03.980 --> 00:03:07.120
+biraz daha aşağıya. Sol konumu
+
+00:03:07.140 --> 00:03:09.150
+yeniden 10'a döndürürüz ve sonra
+
+00:03:09.180 --> 00:03:13.120
+her seferinde tekrar artırırız. Ve şimdi
+
+00:03:13.140 --> 00:03:16.030
+bunu dört kez tekrarla diyebiliriz ve
+
+00:03:16.060 --> 00:03:20.360
+karşımıza beş bitkiden oluşan dört sıra çıkar. Burada
+
+00:03:20.420 --> 00:03:23.070
+anlaşılması gereken en önemli şey şu: Jiki
+
+00:03:23.260 --> 00:03:26.160
+tüm işi önce iç döngüde bitirir,
+
+00:03:26.220 --> 00:03:28.440
+ancak ondan sonra dış döngüye döner.
+
+00:03:28.500 --> 00:03:32.140
+İleri geri zıplamaz. İç
+
+00:03:32.200 --> 00:03:34.130
+döngüyü tamamlar, sonra
+
+00:03:34.260 --> 00:03:37.660
+dış döngünün bir sonraki adımına geçer. Bu
+
+00:03:37.680 --> 00:03:39.520
+durumda dış döngüyü
+
+00:03:39.620 --> 00:03:41.880
+grupları ya da sıraları kontrol eden,
+
+00:03:41.980 --> 00:03:44.720
+iç döngüyü de o gruptaki her öğeyi
+
+00:03:44.820 --> 00:03:47.049
+ya da o sıradaki her öğeyi
+
+00:03:47.080 --> 00:03:50.549
+kontrol eden şey olarak düşünebilirsiniz. Yani örneğimizde
+
+00:03:50.600 --> 00:03:54.580
+dış döngü dört sıra oluşturur, iç döngü ise
+
+00:03:54.640 --> 00:03:57.760
+beş bitkiyi, yani her gruba beş öğeyi yerleştirir.
+
+00:03:59.280 --> 00:04:02.100
+Sonraki alıştırmalarda bir şeyler oluşturmak için
+
+00:04:02.180 --> 00:04:05.520
+iç içe döngüler kullanacaksınız. Bu yeni alıştırmalar
+
+00:04:05.580 --> 00:04:08.160
+size parçaları tek tek çizecek fonksiyonlar verecek.
+
+00:04:08.540 --> 00:04:10.160
+Sizin işiniz yalnızca, işe yaraması için
+
+00:04:10.220 --> 00:04:11.829
+döngülerin doğru yapısını
+
+00:04:11.860 --> 00:04:16.029
+bulmak. Bu alıştırmalardaki her şey
+
+00:04:16.060 --> 00:04:17.760
+az önce konuştuklarımızın içinde var. Yani
+
+00:04:17.800 --> 00:04:19.860
+takılırsanız bu videoya geri dönün.
+
+00:04:20.660 --> 00:04:22.160
+İyi şanslar, birazdan burada
+
+00:04:22.180 --> 00:04:22.460
+görüşmek üzere.

@@ -1,0 +1,252 @@
+WEBVTT
+
+NOTE en_md5 488ab8c8dd77c6bec365ce44675868b7
+
+00:00:00.280 --> 00:00:02.640
+Tekrar hoş geldiniz. Geçen derste,
+
+00:00:02.680 --> 00:00:04.680
+bir karakter dizisinin tek bir harfine
+
+00:00:04.700 --> 00:00:08.300
+köşeli parantezlerle nasıl erişeceğimizi öğrendik. Bu derste ise
+
+00:00:08.420 --> 00:00:10.120
+bir karakter dizisinde
+
+00:00:10.160 --> 00:00:13.160
+nasıl döngü kuracağımıza, yani her harfi
+
+00:00:13.200 --> 00:00:15.660
+tek tek nasıl dışarı alacağımıza bakacağız. Bunun için
+
+00:00:15.720 --> 00:00:18.300
+yeni bir döngü tipine ihtiyacımız var. Şimdiye kadar
+
+00:00:18.360 --> 00:00:20.170
+repeat döngüsünü kullandık, şimdi ise
+
+00:00:20.200 --> 00:00:22.720
+for-of döngüsü adı verilen bir şeyi kullanacağız.
+
+00:00:22.760 --> 00:00:26.880
+Burada iki yeni anahtar kelime var: for ve of.
+
+00:00:27.000 --> 00:00:28.740
+for anahtar kelimesi, ilerledikçe
+
+00:00:28.760 --> 00:00:30.360
+epey yerde karşımıza çıkacak.
+
+00:00:30.790 --> 00:00:32.580
+Tek başına durabilir ya da
+
+00:00:32.619 --> 00:00:35.380
+in veya of ile birlikte gelebilir.
+
+00:00:35.440 --> 00:00:37.160
+Şimdilik sonuncusuna,
+
+00:00:37.220 --> 00:00:40.120
+yani of üzerine odaklanacağız. Hadi şimdi
+
+00:00:40.160 --> 00:00:43.280
+biraz koda bakalım. Önce
+
+00:00:43.340 --> 00:00:47.310
+içinde Jeremy karakter dizisini tutan name adında bir değişken oluşturalım.
+
+00:00:47.380 --> 00:00:50.460
+Burada yeni bir şey yok. Sonra şu satır geliyor:
+
+00:00:50.540 --> 00:00:53.620
+for let letter of name. Burada olan biten
+
+00:00:53.640 --> 00:00:55.480
+çok şey var, o yüzden adım adım
+
+00:00:55.520 --> 00:00:59.240
+inceleyelim. Önce for anahtar kelimesi var. Bu,
+
+00:00:59.320 --> 00:01:00.980
+Jiki'ye döngü kurmak
+
+00:01:01.060 --> 00:01:04.340
+istediğimizi söyler. O da ileriye bakar, of görür
+
+00:01:04.879 --> 00:01:06.320
+ve bizim
+
+00:01:06.580 --> 00:01:09.600
+for-of döngüsü kurmak istediğimizi anlar. Yani
+
+00:01:09.720 --> 00:01:11.940
+repeat döngüsünde olduğu gibi “10 kez
+
+00:01:12.020 --> 00:01:15.180
+döngü kuralım” demek yerine, “karakter dizisindeki
+
+00:01:15.260 --> 00:01:17.380
+bütün harfler üzerinde döngü kuralım” diyoruz.
+
+00:01:17.440 --> 00:01:20.990
+for-of bu anlama gelir. Sonra
+
+00:01:21.060 --> 00:01:24.080
+let letter kısmı geliyor. Bu, tam olarak
+
+00:01:24.140 --> 00:01:25.860
+yukarıdaki let
+
+00:01:26.020 --> 00:01:29.320
+name ile aynı. Sadece letter adında bir değişken oluşturuyoruz.
+
+00:01:30.240 --> 00:01:33.240
+Fark şu: içine ne gireceğini açıkça
+
+00:01:33.280 --> 00:01:35.280
+söylemek yerine, Jiki'ye
+
+00:01:35.320 --> 00:01:37.850
+karakter dizisindeki her harfi
+
+00:01:37.900 --> 00:01:41.780
+tek tek içine koymasını söylüyoruz. Yani Jiki
+
+00:01:41.880 --> 00:01:44.460
+for anahtar kelimesini görür, of var mı diye bakar ve işe koyulur.
+
+00:01:44.480 --> 00:01:46.140
+Karakter dizisindeki ilk harfe bakar,
+
+00:01:46.480 --> 00:01:48.380
+burada bu J, ve onu
+
+00:01:48.440 --> 00:01:50.840
+letter adında yeni bir kutuya koyar. Bu arada,
+
+00:01:50.880 --> 00:01:52.240
+o değişkene istediğimiz adı verebiliriz. İllaki
+
+00:01:52.260 --> 00:01:53.920
+letter olmak zorunda değil. Biz burada ona
+
+00:01:53.960 --> 00:01:57.020
+letter demeye karar verdik. Sonra
+
+00:01:57.080 --> 00:01:58.960
+süslü parantezlerin içindeki kodu çalıştırır. Burada,
+
+00:01:59.000 --> 00:02:01.060
+kodun herhangi bir yerinde yapacağınız her şeyi yapabilirsiniz.
+
+00:02:01.540 --> 00:02:03.560
+Tek fark, bu kod bloğunun
+
+00:02:03.640 --> 00:02:06.320
+karakter dizisindeki her harf için
+
+00:02:06.380 --> 00:02:07.900
+bir kez çalışacak olması ve bu
+
+00:02:07.960 --> 00:02:11.940
+değişkenin orada hazır bulunması. Jiki her seferinde
+
+00:02:12.040 --> 00:02:15.000
+kapanış süslü parantezine geldiğinde letter
+
+00:02:15.020 --> 00:02:16.740
+kutusunu atar ve içine bir sonraki harfi
+
+00:02:16.860 --> 00:02:19.220
+koyduğu yeni bir kutu oluşturur. Yani ilk seferde
+
+00:02:19.340 --> 00:02:20.800
+J harfini atar ve kutuya onun yerine
+
+00:02:20.920 --> 00:02:23.000
+e koyar. Sonra aynısını
+
+00:02:23.020 --> 00:02:25.740
+r, sonra e, sonra m,
+
+00:02:26.080 --> 00:02:28.790
+sonra y için yapar. Altı harf, döngüde
+
+00:02:28.840 --> 00:02:31.300
+altı tur. Umarım anlaşılmıştır. Sözdizimine
+
+00:02:31.340 --> 00:02:32.560
+alışmak biraz
+
+00:02:32.600 --> 00:02:34.900
+zaman alır ama aslında o kadar da zor
+
+00:02:34.920 --> 00:02:37.730
+bir kavram değil. Sırada, hepsi
+
+00:02:37.760 --> 00:02:40.250
+karakter dizilerinin içinden adım adım geçmeyi içeren
+
+00:02:40.250 --> 00:02:42.660
+birkaç alıştırma var. Harflerle farklı şeyler
+
+00:02:42.680 --> 00:02:44.980
+yapmanız istenecek, belki kaç harf olduğunu
+
+00:02:45.000 --> 00:02:46.760
+sayacaksınız ya da belirli bir harfin
+
+00:02:46.800 --> 00:02:49.260
+konumunu bulacaksınız. Şimdiye kadar öğrendiğiniz
+
+00:02:49.320 --> 00:02:51.640
+farklı teknikleri kullanıp
+
+00:02:51.700 --> 00:02:57.060
+bunları bu döngüyle birleştirmeniz gerekiyor. Bu alıştırmalar artık
+
+00:02:57.100 --> 00:03:00.000
+giderek zorlaşıyor. Öğrendiğiniz birçok farklı şeyi
+
+00:03:00.020 --> 00:03:02.420
+bir araya getiriyorsunuz. Kendinize zaman tanıyın.
+
+00:03:02.500 --> 00:03:03.920
+Her birini tamamlamanız
+
+00:03:03.960 --> 00:03:06.160
+biraz zaman alabilir. Çözemezseniz
+
+00:03:06.200 --> 00:03:08.840
+aceleye kapılmayın ya da sinirlenmeyin. Bunu
+
+00:03:08.900 --> 00:03:10.920
+bir bulmaca gibi düşünün. Takılırsanız
+
+00:03:10.940 --> 00:03:12.640
+ara verebilir, yürüyüşe çıkabilir,
+
+00:03:12.650 --> 00:03:15.160
+sonra geri dönebilirsiniz. Bunu yapmak için
+
+00:03:15.200 --> 00:03:16.790
+gereken tüm bilgiye
+
+00:03:16.820 --> 00:03:18.870
+ve altından kalkacak becerilere sahipsiniz, ama
+
+00:03:18.940 --> 00:03:21.520
+sabırlı olmanız gerekecek. Ve şunu hiç unutmayın:
+
+00:03:21.580 --> 00:03:23.320
+ihtiyaç duyarsanız ipuçlarını kullanabilirsiniz,
+
+00:03:23.900 --> 00:03:25.150
+ama onları son çare
+
+00:03:25.200 --> 00:03:27.540
+olarak saklamaya çalışın. Bol şans, yakında
+
+00:03:27.560 --> 00:03:28.060
+yine burada görüşürüz.

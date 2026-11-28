@@ -1,0 +1,189 @@
+WEBVTT
+
+NOTE en_md5 f4b6546cdc3ad8dde1f9b6b1f3ff5008
+
+00:00:00.120 --> 00:00:02.660
+Tekrar hoş geldiniz. Artık girdisi olan
+
+00:00:02.740 --> 00:00:06.640
+ve olmayan fonksiyonlar oluşturmayı biliyorsunuz. Öğrenecek
+
+00:00:06.780 --> 00:00:08.480
+son bir şey kaldı, ondan sonra
+
+00:00:08.520 --> 00:00:11.780
+fonksiyon yapma uzmanı olacaksınız. O son şey de
+
+00:00:11.860 --> 00:00:14.160
+fonksiyonlarınıza bir kaydırak kazandırmak.
+
+00:00:15.000 --> 00:00:17.020
+Zaten bir şeyler döndüren bir sürü
+
+00:00:17.060 --> 00:00:20.400
+fonksiyon kullandınız. isAlienAbove size doğru ya da yanlış verir.
+
+00:00:20.500 --> 00:00:24.940
+Math.randomInt(1, 10) size rastgele bir sayı verir.
+
+00:00:26.100 --> 00:00:28.780
+Jiki bu fonksiyonları kullandığında
+
+00:00:28.860 --> 00:00:30.980
+kaydıraktan bir şey çıkıyor, sonra
+
+00:00:31.000 --> 00:00:34.180
+gidip onu kullanabiliyor. Bunu yapmak için
+
+00:00:34.220 --> 00:00:36.890
+yeni bir anahtar kelimeye daha ihtiyacımız var:
+
+00:00:36.920 --> 00:00:40.900
+return anahtar kelimesi. Bu anahtar kelime Mini
+
+00:00:40.980 --> 00:00:43.320
+Jiki'ye kaydıraktan bir şey
+
+00:00:43.330 --> 00:00:46.230
+itmesini söyler. Hadi bir fonksiyon yapalım
+
+00:00:46.260 --> 00:00:48.760
+ve adını meaningOfLife (hayatın anlamı) koyalım. Bu fonksiyonun
+
+00:00:48.920 --> 00:00:51.089
+işi her zaman sadece
+
+00:00:51.360 --> 00:00:54.200
+42 sayısını döndürmek. Hiç girdisi yok. Şöyle
+
+00:00:54.240 --> 00:00:58.839
+yazıyoruz: function meaningOfLife, süslü parantezler ve
+
+00:00:58.879 --> 00:01:02.339
+sonra fonksiyonun içinde tek bir satır:
+
+00:01:02.399 --> 00:01:06.539
+return 42. Bu satır Mini Jiki'ye
+
+00:01:06.579 --> 00:01:09.539
+42 sayısını kaydıraktan itmesini ve sonra
+
+00:01:09.679 --> 00:01:13.559
+durmasını söyler. Bunu duymanız önemli. Bu return
+
+00:01:13.659 --> 00:01:17.079
+anahtar kelimesi Mini Jiki'ye iki şey söyler. Birincisi,
+
+00:01:17.500 --> 00:01:19.639
+kaydırağa bir şey koymak,
+
+00:01:19.779 --> 00:01:22.779
+ikincisi de ardından durmak. Fonksiyon,
+
+00:01:22.920 --> 00:01:26.579
+return anahtar kelimesini kullandığınız anda biter. Mini Jiki
+
+00:01:26.619 --> 00:01:30.059
+başka hiçbir şey yapmaz. Bu arada, hayatın anlamı
+
+00:01:30.139 --> 00:01:32.540
+göndermesini bilmiyorsanız, bu
+
+00:01:32.579 --> 00:01:34.880
+artık filmi de olan ünlü bir kitaptan geliyor:
+
+00:01:34.899 --> 00:01:37.840
+Otostopçunun Galaksi Rehberi. Okumanızı
+
+00:01:37.879 --> 00:01:39.819
+tavsiye ederim. 42'nin ne anlama geldiği
+
+00:01:39.860 --> 00:01:43.799
+konusunda şimdilik fazla kafa yormayın. Biraz daha
+
+00:01:43.879 --> 00:01:47.819
+karmaşık bir örneğe bakalım. Bu örnekte
+
+00:01:47.879 --> 00:01:50.439
+hem girdisi
+
+00:01:50.520 --> 00:01:52.479
+hem de kaydırağı olan bir fonksiyonumuz var. Yine
+
+00:01:52.539 --> 00:01:54.520
+aynı fikirden gidelim, meaningOfLife adında
+
+00:01:54.599 --> 00:01:57.239
+bir fonksiyon. Ama bu sefer age (yaş) adında
+
+00:01:57.299 --> 00:02:00.439
+bir para deliği var. Biri 18 yaşında ya da daha büyükse,
+
+00:02:00.559 --> 00:02:01.839
+ona hayatın anlamının
+
+00:02:01.939 --> 00:02:05.639
+42 olduğunu söyleyeceğiz. Değilse sadece
+
+00:02:05.699 --> 00:02:09.019
+"Sorry, too young" karakter dizisini döndüreceğiz. Fonksiyon tanımı
+
+00:02:09.059 --> 00:02:12.679
+çok benzer: function meaningOfLife, sonra
+
+00:02:12.699 --> 00:02:15.379
+parantezlerin içinde age para deliği, ardından
+
+00:02:15.419 --> 00:02:18.339
+bir süslü parantez. Ama şimdi içeride
+
+00:02:18.400 --> 00:02:20.459
+bir if deyimine ihtiyacımız var, böylece şunu diyebiliriz:
+
+00:02:20.619 --> 00:02:23.019
+yaş 18'e eşit ya da
+
+00:02:23.080 --> 00:02:27.499
+daha büyükse 42 döndürürüz. Değilse "Sorry,
+
+00:02:27.540 --> 00:02:30.719
+too young" döndürürüz. Şimdi bu fonksiyonu
+
+00:02:30.779 --> 00:02:33.759
+meaningOfLife(15) yazarak kullanırsak,
+
+00:02:33.799 --> 00:02:37.119
+"Sorry, too young" karakter dizisini geri alırız. Eğer
+
+00:02:37.220 --> 00:02:40.060
+meaningOfLife(30) ile kullanırsak,
+
+00:02:40.100 --> 00:02:43.800
+42 sayısını geri alırız. Programlama temelde
+
+00:02:43.820 --> 00:02:46.800
+tam olarak böyle işler. Bu küçük yapı taşlarından
+
+00:02:46.900 --> 00:02:49.360
+bir sürü oluştururuz, sonra onları
+
+00:02:49.370 --> 00:02:52.960
+birleştirip programlar yaparız. Şimdi size
+
+00:02:53.140 --> 00:02:55.190
+arka arkaya birkaç alıştırma vereceğim.
+
+00:02:55.220 --> 00:02:57.700
+Muhtemelen şimdiye kadarki en uzun seri bu. Bu alıştırmalarda
+
+00:02:57.780 --> 00:03:00.600
+burada öğrendiğiniz her şeyi, daha önce
+
+00:03:00.640 --> 00:03:04.120
+gördüğümüz birçok başka şeyle birlikte kullanacaksınız. İyi eğlenceler.
+
+00:03:04.560 --> 00:03:05.960
+İyi şanslar, birazdan
+
+00:03:06.000 --> 00:03:06.310
+burada görüşürüz.

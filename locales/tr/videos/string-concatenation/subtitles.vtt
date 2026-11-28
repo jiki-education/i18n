@@ -1,0 +1,207 @@
+WEBVTT
+
+NOTE en_md5 d39fabecd86df2df0d2b749f6d2241ba
+
+00:00:00.260 --> 00:00:02.070
+Tekrar hoş geldiniz. Umarım o yoğun
+
+00:00:02.120 --> 00:00:04.900
+alıştırma serisi keyifli geçmiştir. Harika
+
+00:00:04.940 --> 00:00:07.970
+ilerliyorsunuz, tebrikler. Bu video kısa olacak.
+
+00:00:08.000 --> 00:00:10.740
+Karakter dizilerinin ne olduğunu artık biliyorsunuz.
+
+00:00:10.940 --> 00:00:12.800
+Onlar, üzerinde metin bulunan
+
+00:00:12.840 --> 00:00:15.440
+kâğıt parçalarıdır. Kurs boyunca da onları
+
+00:00:15.520 --> 00:00:18.960
+kullanıyorsunuz. Ama şimdiye kadar kullandığınız her
+
+00:00:19.100 --> 00:00:22.000
+karakter dizisi, doğrudan kendiniz yazdığınız bir diziydi.
+
+00:00:22.040 --> 00:00:24.620
+Peki bir karakter dizisini
+
+00:00:24.660 --> 00:00:28.500
+değişkenlere ya da koşullara göre oluşturmak isterseniz ne olur?
+
+00:00:28.560 --> 00:00:31.200
+Bunu nasıl yaparız? Size göstereceğim
+
+00:00:31.300 --> 00:00:34.520
+iki yol var. Birincisine
+
+00:00:34.640 --> 00:00:38.370
+karakter dizisi birleştirme (İngilizce: string concatenation) denir. Bu,
+
+00:00:38.460 --> 00:00:41.600
+iki karakter dizisini birbirine eklemenin süslü ve biraz kafa
+
+00:00:41.640 --> 00:00:46.120
+karıştırıcı bir ifadesi. Diyelim ki elimizde
+
+00:00:46.160 --> 00:00:48.420
+hello ve world diye iki kelime var ve
+
+00:00:48.440 --> 00:00:51.730
+hello world içeren bir karakter dizisi oluşturmak istiyoruz.
+
+00:00:51.940 --> 00:00:54.460
+Doğrudan "hello world" yazabilirsiniz, ama
+
+00:00:54.540 --> 00:00:59.570
+"hello " + "world" de yazabilirsiniz ve bu
+
+00:00:59.600 --> 00:01:03.260
+size aynı karakter dizisini verir. Açıkçası
+
+00:01:03.340 --> 00:01:05.340
+bu senaryoda pek işe yaramaz.
+
+00:01:05.940 --> 00:01:08.180
+Ama ya birinin adını içeren
+
+00:01:08.240 --> 00:01:10.420
+bir değişkenimiz olsaydı ve o kişiye
+
+00:01:10.460 --> 00:01:12.780
+merhaba demek isteseydik? Diyelim ki
+
+00:01:12.820 --> 00:01:16.020
+name adında bir değişkenimiz var ve bazen Jeremy,
+
+00:01:16.060 --> 00:01:18.860
+bazen de Jiki içeriyor. Bu değişkeni kullanarak
+
+00:01:18.920 --> 00:01:22.280
+hello Jeremy ya da hello Jiki demek istiyoruz.
+
+00:01:23.380 --> 00:01:25.860
+İşte bunu bu birleştirme kavramıyla
+
+00:01:25.920 --> 00:01:30.600
+yapabiliriz: "hello " + name yazarız ve bu
+
+00:01:30.620 --> 00:01:33.480
+bize ya hello Jeremy ya hello
+
+00:01:33.620 --> 00:01:37.320
+Jiki ya da başka birine merhaba diyen bir dizi verir.
+
+00:01:37.360 --> 00:01:41.000
+Bu, name kutusunun içinde ne olduğuna bağlı. Aynı şeyi
+
+00:01:41.040 --> 00:01:44.220
+şablon dizeleri (İngilizce: template literals) denen bir şeyle de
+
+00:01:44.280 --> 00:01:48.790
+yapabiliriz. Bu da gereksizce süslü, kafa karıştırıcı bir ifade;
+
+00:01:48.840 --> 00:01:53.920
+karakter dizilerini başka karakter dizilerinin içine eklemek demek.
+
+00:01:53.960 --> 00:01:56.950
+Yani karakter dizilerini birbirine eklemek yerine,
+
+00:01:57.120 --> 00:02:00.830
+içinde başka karakter dizilerine yer açılmış
+
+00:02:00.900 --> 00:02:04.020
+bir karakter dizimiz ya da şablonumuz olabilir. Bunun için
+
+00:02:04.040 --> 00:02:09.800
+tırnak işaretleri yerine ters tırnak (İngilizce: backtick) kullanırız. Ters tırnaklar,
+
+00:02:09.880 --> 00:02:12.420
+adından da anlaşılacağı gibi geriye yatık tik işaretleridir,
+
+00:02:12.460 --> 00:02:15.080
+ama bunları daha önce hiç kullanmamış olabilirsiniz,
+
+00:02:15.120 --> 00:02:17.100
+o yüzden klavyenizde doğru
+
+00:02:17.140 --> 00:02:20.730
+tuşu bulmanız gerekir. Onları kullanarak
+
+00:02:20.800 --> 00:02:24.150
+başka karakter dizileri barındırabilen bir şablon oluştururuz.
+
+00:02:24.220 --> 00:02:27.220
+Sonra da şablonun içine bir karakter dizisi yerleştirmek için
+
+00:02:27.300 --> 00:02:30.540
+dolar ve süslü parantezlerden oluşan tuhaf bir sözdizimi kullanırız.
+
+00:02:30.580 --> 00:02:33.160
+Örneğin, az önce gördüğümüz
+
+00:02:33.180 --> 00:02:36.200
+"hello " + name işleminin aynısını yapmak için
+
+00:02:36.420 --> 00:02:40.700
+şöyle yazabiliriz: ters tırnak, hello, dolar işareti,
+
+00:02:40.860 --> 00:02:45.180
+süslü parantez, name, süslü parantez, ters tırnak. Bu,
+
+00:02:45.220 --> 00:02:46.560
+yazılınca söylendiğinden çok daha iyi görünüyor.
+
+00:02:47.800 --> 00:02:50.520
+Bu da tam olarak karakter dizilerini
+
+00:02:50.580 --> 00:02:53.320
+birbirine eklemekle aynı şeyi yapar. Ama birden çok
+
+00:02:53.390 --> 00:02:56.120
+karakter dizisini bir araya getirmeniz gerektiğinde,
+
+00:02:56.160 --> 00:02:58.320
+bu yöntem çok daha verimli olabilir.
+
+00:02:59.160 --> 00:03:00.049
+Bu sözdizimine tam olarak
+
+00:03:00.100 --> 00:03:02.380
+alışmanız biraz zaman alacak,
+
+00:03:02.900 --> 00:03:05.420
+ama aslında o kadar da karmaşık bir yanı yok.
+
+00:03:07.000 --> 00:03:09.140
+Bunları pratik yapmanız için şimdi
+
+00:03:09.180 --> 00:03:11.780
+size iki alıştırma verdim. Birincisi, az önce
+
+00:03:11.840 --> 00:03:14.420
+gördüğümüz hello name kalıbının aynısını kullanıyor.
+
+00:03:14.460 --> 00:03:17.060
+İster karakter dizilerini ekleyerek ister bu şablonlarla yapabilirsiniz;
+
+00:03:18.100 --> 00:03:20.640
+hatırlatma olsun diye ikisini de
+
+00:03:20.680 --> 00:03:23.880
+talimatlara ekleyeceğim. İkinci alıştırma ise
+
+00:03:24.100 --> 00:03:27.120
+klasik bir iş görüşmesi sorusu. Yani bunu öğrenmek,
+
+00:03:27.200 --> 00:03:29.760
+ileride gireceğiniz iş görüşmelerine hazırlıklı olmanızı sağlayacak.
+
+00:03:30.620 --> 00:03:31.980
+Kolay gelsin, birazdan burada
+
+00:03:32.040 --> 00:03:32.380
+görüşürüz.

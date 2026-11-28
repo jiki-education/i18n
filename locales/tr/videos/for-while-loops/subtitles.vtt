@@ -1,0 +1,339 @@
+WEBVTT
+
+NOTE en_md5 d4b8c72f7a92dfb1d6fb4eb412fdc752
+
+00:00:00.400 --> 00:00:03.469
+Tekrar hoş geldiniz. Şimdiye kadar iki döngüye baktık:
+
+00:00:03.780 --> 00:00:06.580
+repeat döngüsü ve for-of döngüsü.
+
+00:00:06.620 --> 00:00:08.109
+Bu derste
+
+00:00:08.200 --> 00:00:10.940
+iki döngüye daha ve döngülerle kullanılan iki işe yarar
+
+00:00:11.000 --> 00:00:14.140
+tekniğe bakacağız. En başta söylediğimi
+
+00:00:14.200 --> 00:00:15.980
+hatırlıyor olabilirsiniz: repeat döngüsü
+
+00:00:16.020 --> 00:00:18.690
+JavaScript'te aslında yok. O sadece,
+
+00:00:18.860 --> 00:00:20.340
+daha işin başındayken hayatınızı
+
+00:00:20.380 --> 00:00:23.190
+birazcık kolaylaştırmak için eklediğim bir şey. Peki onun
+
+00:00:23.200 --> 00:00:25.580
+yerine ne kullanıyoruz? Normal bir
+
+00:00:25.660 --> 00:00:28.150
+for döngüsü kullanıyoruz ve o şöyle görünür.
+
+00:00:29.380 --> 00:00:30.920
+İlk günde bunun sizin için neden
+
+00:00:30.940 --> 00:00:32.940
+biraz göz korkutucu geldiğini
+
+00:00:32.960 --> 00:00:35.120
+umarım anlıyorsunuzdur. Ama artık
+
+00:00:35.140 --> 00:00:37.280
+bununla başa çıkmanız için gereken tüm bilgiye sahipsiniz.
+
+00:00:37.360 --> 00:00:40.340
+Hadi parçalara ayıralım. Bir for döngüsünün
+
+00:00:40.360 --> 00:00:44.620
+üç bileşeni vardır: başlatıcı, koşul ve
+
+00:00:44.640 --> 00:00:49.769
+artırıcı. Başlatıcı, yani şu let i = 0
+
+00:00:49.840 --> 00:00:52.220
+kısmı, döngünün en
+
+00:00:52.260 --> 00:00:54.920
+başında çalışır. Sadece bir kez çalışır ve
+
+00:00:54.980 --> 00:00:58.240
+burada sıfıra ayarlanmış
+
+00:00:58.340 --> 00:01:02.520
+i adında bir kutu oluşturur. Sıradaki parça, yani koşul,
+
+00:01:03.240 --> 00:01:08.600
+her döngü yinelemesinden önce çalışır.
+
+00:01:08.640 --> 00:01:11.100
+Koşul doğruysa döngüyü
+
+00:01:11.110 --> 00:01:15.580
+yeniden çalıştırırız. Değilse çalıştırmayız. Ve
+
+00:01:15.660 --> 00:01:18.580
+son olarak artırıcı gelir: i++.
+
+00:01:19.400 --> 00:01:21.420
+i++ tam olarak
+
+00:01:21.460 --> 00:01:24.420
+i = i + 1 ile aynı anlama gelir. Sadece
+
+00:01:24.460 --> 00:01:26.880
+bir kısayoldur, i değerini her seferinde
+
+00:01:26.940 --> 00:01:31.200
+bir artırmanın bir yolu. Yani bu örnekte
+
+00:01:31.280 --> 00:01:34.200
+i değerini sıfıra ayarlıyoruz. i değerinin
+
+00:01:34.240 --> 00:01:36.300
+ikiden küçük olup olmadığını kontrol ediyoruz. Küçük,
+
+00:01:36.380 --> 00:01:38.360
+o yüzden döngüyü çalıştırıyoruz. Sonra
+
+00:01:38.400 --> 00:01:41.640
+en sonda i değerini bir artırıyoruz,
+
+00:01:42.060 --> 00:01:44.380
+böylece i bir oluyor. Sıfır artı bir, bir eder.
+
+00:01:45.500 --> 00:01:47.400
+Sonra yeniden başa dönüyoruz.
+
+00:01:47.580 --> 00:01:50.780
+Birin ikiden küçük olup olmadığını kontrol ediyoruz. Küçük,
+
+00:01:50.800 --> 00:01:52.580
+o yüzden döngüyü çalıştırıyoruz. Sonra
+
+00:01:52.620 --> 00:01:55.140
+en sonda i değerini yine artırıyoruz. Şimdi
+
+00:01:55.240 --> 00:01:58.300
+iki oldu: bir artı bir, iki eder. Sonra
+
+00:01:58.340 --> 00:02:00.440
+üçüncü kez başa dönüyoruz. Bu kez
+
+00:02:00.480 --> 00:02:02.970
+ikinin ikiden küçük olup olmadığını kontrol ediyoruz.
+
+00:02:02.980 --> 00:02:05.680
+Değil, o yüzden döngüyü çalıştırmıyoruz
+
+00:02:05.780 --> 00:02:07.140
+ve aslında döngüyle işimiz bitiyor.
+
+00:02:07.540 --> 00:02:10.539
+Sadece alttaki koda geçiyoruz.
+
+00:02:10.640 --> 00:02:13.360
+Yani döngüyü iki kez çalıştırdık ve
+
+00:02:13.400 --> 00:02:16.100
+bunu bilmek işe yarar. Sıfırdan
+
+00:02:16.140 --> 00:02:18.320
+başladığımız ve “küçüktür” koşulunu
+
+00:02:18.360 --> 00:02:21.460
+kullandığımız sürece, oraya yazdığımız sayı,
+
+00:02:21.520 --> 00:02:23.780
+yani bu örnekte iki, döngünün kaç kez
+
+00:02:23.840 --> 00:02:26.530
+çalışacağını verir. Yani bu,
+
+00:02:26.580 --> 00:02:28.900
+repeat 2 demekle aynı şey.
+
+00:02:30.440 --> 00:02:33.020
+Zor değil, ama
+
+00:02:33.060 --> 00:02:38.120
+repeat 2 yazmaktan çok daha dolambaçlı. Sırada
+
+00:02:38.180 --> 00:02:40.380
+öğreneceğimiz döngü while döngüsü.
+
+00:02:41.420 --> 00:02:45.800
+Bu, “Bir koşul doğru olduğu sürece döngüyü çalıştır” demek.
+
+00:02:45.840 --> 00:02:47.190
+Diyelim ki Space Invaders'ta
+
+00:02:47.190 --> 00:02:49.710
+yalnızca beş kez ateş edilebileceğini
+
+00:02:49.740 --> 00:02:52.130
+söyleyen bir kural var. O zaman burada
+
+00:02:52.160 --> 00:02:54.170
+“ateş sayısı beşten az olduğu sürece” diyen
+
+00:02:54.200 --> 00:02:56.940
+ve oyunun oynanmasına
+
+00:02:56.960 --> 00:03:00.340
+izin veren bir döngümüz olur. Her ateş edişte
+
+00:03:00.680 --> 00:03:04.000
+numShots değerini bir artırırız ve sonunda
+
+00:03:04.480 --> 00:03:06.040
+beşe ulaşırız, döngü de sona erer.
+
+00:03:07.100 --> 00:03:08.880
+Şimdi, while döngülerinin bir sorunu var:
+
+00:03:08.920 --> 00:03:11.440
+döngünün hiç bitmemesine yol açan
+
+00:03:11.480 --> 00:03:14.040
+bug'ların ortaya çıkması oldukça kolay. Bu tür döngülere
+
+00:03:14.120 --> 00:03:15.890
+sonsuz döngü denir ve bunlar programlardaki
+
+00:03:15.940 --> 00:03:20.010
+en yaygın bug'lardan biridir. Bilgisayarınız yavaşladığında,
+
+00:03:20.020 --> 00:03:23.020
+fanları dönmeye başladığında, her yer gürültüye boğulduğunda,
+
+00:03:23.060 --> 00:03:25.860
+bunun nedeni genellikle birinin kodunda
+
+00:03:25.880 --> 00:03:29.380
+hiç bitmeyen bir sonsuz döngü bırakmış olmasıdır. Tamam,
+
+00:03:29.460 --> 00:03:32.280
+bu hızlı videoda iki anahtar kelime daha var.
+
+00:03:32.320 --> 00:03:35.300
+İlki break anahtar kelimesi. Bu, herhangi bir
+
+00:03:35.320 --> 00:03:37.680
+döngünün gövdesinde, herhangi bir yerde kullanılabilir.
+
+00:03:38.760 --> 00:03:40.720
+Süslü parantezlerin arasında kalan kısım
+
+00:03:40.780 --> 00:03:43.840
+gövdedir. Jiki bunu gördüğünde döngüden
+
+00:03:43.880 --> 00:03:46.100
+hemen çıkar ve döngünün altında
+
+00:03:46.160 --> 00:03:48.780
+ne kod varsa ona geçer.
+
+00:03:48.880 --> 00:03:50.600
+Diyelim ki bu döngüyü 50 kez
+
+00:03:50.660 --> 00:03:53.280
+çalıştırmamızı söyleyen bir kısıtımız var, ama
+
+00:03:53.420 --> 00:03:55.960
+kullanıcı beş kez ateş ederse durmak istiyoruz.
+
+00:03:56.000 --> 00:03:58.140
+O zaman en üstte, i = 0'dan başlayıp
+
+00:03:58.200 --> 00:04:00.940
+i 50'den küçük olduğu sürece çalışan
+
+00:04:01.120 --> 00:04:03.300
+bir for döngüsü koyabiliriz. Ama sonra
+
+00:04:03.340 --> 00:04:04.720
+döngünün ortasına şunu söyleyen bir koşul koyabiliriz:
+
+00:04:04.880 --> 00:04:07.720
+numShots beşten büyük ya da
+
+00:04:07.780 --> 00:04:12.520
+beşe eşitse, break ile döngüyü durdur. Bazen
+
+00:04:12.560 --> 00:04:14.880
+bir döngüden tamamen çıkmak yerine yalnızca
+
+00:04:14.890 --> 00:04:18.600
+belirli bir yinelemeyi atlamak isteyebiliriz. Diyelim ki
+
+00:04:18.680 --> 00:04:20.780
+sadece tek sayılar için bir şeyler yapmak istiyoruz.
+
+00:04:21.600 --> 00:04:22.930
+“i tek sayıysa
+
+00:04:23.020 --> 00:04:25.780
+bu sefer döngüyü çalıştırmayalım”
+
+00:04:25.840 --> 00:04:28.380
+diyebilmek isteriz. Ama döngüden tamamen
+
+00:04:28.420 --> 00:04:30.280
+çıkmak istemeyiz. Yalnızca bu tek
+
+00:04:30.320 --> 00:04:32.670
+yinelemeyi atlayıp sonra
+
+00:04:32.720 --> 00:04:35.600
+bir sonrakine bakmak isteriz. Bunun için de
+
+00:04:35.640 --> 00:04:40.380
+continue adında başka bir anahtar kelimemiz var. Jiki continue gördüğünde,
+
+00:04:40.420 --> 00:04:42.180
+bir sonraki yineleme için doğrudan
+
+00:04:42.220 --> 00:04:44.820
+döngünün başına döner. Yani bir
+
+00:04:44.860 --> 00:04:47.200
+for-of döngüsünde continue görürse,
+
+00:04:47.260 --> 00:04:48.580
+dizideki bir sonraki
+
+00:04:48.640 --> 00:04:51.780
+öğeye geçer. Bir for döngüsünde ise
+
+00:04:51.840 --> 00:04:54.400
+i++ artırımına uğrar ve ardından
+
+00:04:54.480 --> 00:04:57.980
+bir sonraki yinelemeye başlar. Böylece elimizde
+
+00:04:58.060 --> 00:05:00.800
+for döngüleri, while döngüleri, break ve continue var. Bu videoda
+
+00:05:00.840 --> 00:05:02.440
+çok fazla bilgi var, ama istediğiniz zaman
+
+00:05:02.500 --> 00:05:04.550
+geri gelip tekrar bakabilirsiniz, ayrıca
+
+00:05:04.580 --> 00:05:07.080
+her konu için kavram sayfaları da var.
+
+00:05:07.800 --> 00:05:09.800
+Tüm bu fikirleri sonraki birkaç
+
+00:05:09.820 --> 00:05:12.220
+alıştırmada uygulamaya dökün. Bol şans, iyi eğlenceler,
+
+00:05:12.680 --> 00:05:14.060
+birazdan burada görüşürüz.

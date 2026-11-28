@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 9d89d6259cdafb0e4850d658df9bd781
+
+00:00:00.140 --> 00:00:02.440
+Tekrar hoş geldiniz. Kursta oldukça önemli bir
+
+00:00:02.520 --> 00:00:05.280
+dönüm noktasına geldiniz. Şimdiye kadar
+
+00:00:05.440 --> 00:00:08.060
+sayılarla, karakter dizileriyle ve Boolean'larla
+
+00:00:08.120 --> 00:00:10.500
+çalıştınız. Boolean, doğru ve yanlışın süslü adıdır.
+
+00:00:10.540 --> 00:00:13.350
+Bunlara farklı veri tipleri diyoruz. Ama bu videoda
+
+00:00:13.400 --> 00:00:16.260
+ilk bileşik veri tipimizi
+
+00:00:16.340 --> 00:00:20.080
+ekliyoruz. Yani birden fazla şey içerebilen,
+
+00:00:20.180 --> 00:00:23.300
+tek bir şeyle sınırlı olmayan bir veri tipi.
+
+00:00:23.380 --> 00:00:26.780
+Bu veri tipinin adı dizi (İngilizce: array).
+
+00:00:28.220 --> 00:00:30.280
+Dizi kelimesini duyduğunuzda
+
+00:00:30.320 --> 00:00:33.060
+aklınıza somut bir zincir gelsin,
+
+00:00:33.440 --> 00:00:36.800
+bir sürü şeyi bir arada tutan bir zincir. Zincirin
+
+00:00:36.820 --> 00:00:39.520
+tuttuğu şeyler her şey olabilir: karakter dizileri, sayılar, Boolean'lar,
+
+00:00:40.100 --> 00:00:42.360
+hatta başka diziler, hatta henüz
+
+00:00:42.440 --> 00:00:44.280
+öğrenmediğiniz şeyler bile. Ama şimdilik
+
+00:00:44.320 --> 00:00:47.440
+bunlara kafa yormayalım. Bu zincirdeki her şey
+
+00:00:47.500 --> 00:00:50.320
+bir düzen içindedir, zincire takıldıkları sırayla.
+
+00:00:51.180 --> 00:00:54.860
+Yani bir dizi bir sürü şey içerir, ama
+
+00:00:54.920 --> 00:00:58.800
+tek parça bir öğedir, tek parça bir şeydir:
+
+00:00:58.840 --> 00:01:01.440
+içinde bir sürü öğe barındıran tek bir dizi.
+
+00:01:03.320 --> 00:01:06.090
+Jiki bu diziyi, bu zinciri alıp
+
+00:01:06.160 --> 00:01:08.060
+bir kutuya koyabilir; tıpkı
+
+00:01:08.120 --> 00:01:09.300
+bir karakter dizisini ya da
+
+00:01:09.320 --> 00:01:11.580
+bir sayıyı kutuya koyabildiği gibi. Onu bir
+
+00:01:11.600 --> 00:01:13.340
+makinenin para deliğine atabilir.
+
+00:01:13.900 --> 00:01:15.320
+Kaydıraktan
+
+00:01:15.330 --> 00:01:18.860
+çıkarıp alabilir. Bu dizi tek bir şeydir ve Jiki
+
+00:01:18.900 --> 00:01:20.800
+onunla, tıpkı
+
+00:01:21.280 --> 00:01:23.840
+karakter dizileriyle, sayılarla ve şimdiye kadar
+
+00:01:23.880 --> 00:01:27.920
+gördüğünüz her şeyle çalıştığı gibi çalışır. Kodda ise dizi de
+
+00:01:28.020 --> 00:01:30.240
+birazcık zincire benzer.
+
+00:01:30.300 --> 00:01:32.420
+İki ucunda birer köşeli parantez vardır,
+
+00:01:32.880 --> 00:01:34.770
+arada da birbirine zincirlenmiş,
+
+00:01:34.800 --> 00:01:38.420
+virgüllerle ayrılmış bir sürü öğe durur. Örneğin
+
+00:01:38.440 --> 00:01:40.590
+mentorlarımızdan bazılarının
+
+00:01:40.600 --> 00:01:42.480
+adlarıyla bir dizi oluşturmak istesek,
+
+00:01:43.100 --> 00:01:46.440
+mentors adında bir kutu hazırlayıp
+
+00:01:46.460 --> 00:01:49.260
+zinciri içine koyabiliriz.
+
+00:01:49.280 --> 00:01:52.900
+let mentors = diye yazarız, tıpkı
+
+00:01:53.140 --> 00:01:55.300
+başka bir kutuda yaptığımız gibi; ardından
+
+00:01:55.320 --> 00:01:57.860
+açılış köşeli parantezi, virgüllerle
+
+00:01:57.920 --> 00:02:00.480
+ayrılmış bir sürü öğe, yani adlar,
+
+00:02:00.500 --> 00:02:02.700
+ve sonunda kapanış köşeli parantezi gelir. Jiki bunu
+
+00:02:02.760 --> 00:02:04.730
+gördüğünde gidip dört kâğıt alır,
+
+00:02:04.820 --> 00:02:07.760
+her ad için bir tane. Sonra yeni bir
+
+00:02:07.840 --> 00:02:10.650
+zincir alıp hepsini birbirine zincirler
+
+00:02:10.680 --> 00:02:12.800
+ve o zinciri mentors
+
+00:02:12.860 --> 00:02:16.580
+kutusuna koyar. Bir diziye her şeyi koyabilirsiniz: karakter dizileri,
+
+00:02:16.660 --> 00:02:19.820
+sayılar, Boolean'lar, hatta karışık bir şeyler bile.
+
+00:02:19.860 --> 00:02:22.900
+Bunların hepsi tamamen geçerli dizilerin birer örneğidir.
+
+00:02:24.800 --> 00:02:27.320
+Boş bir dizi de oluşturabilirsiniz.
+
+00:02:27.380 --> 00:02:30.080
+O, öğesi olmayan bir zincirdir sadece. Yine de
+
+00:02:30.140 --> 00:02:31.760
+gerçek bir şeydir. İki ucu da
+
+00:02:31.820 --> 00:02:33.800
+yerindedir. Hâlâ bir zincirdir. Sadece
+
+00:02:33.860 --> 00:02:36.160
+içinde hiçbir öğe yoktur. Ama
+
+00:02:36.200 --> 00:02:38.400
+bu boş diziyi yine de
+
+00:02:38.420 --> 00:02:40.260
+bir kutuya koyabilir, sonra çıkarıp
+
+00:02:40.280 --> 00:02:44.120
+kullanabilirsiniz. Yani köşeli parantez sözdizimiyle
+
+00:02:44.160 --> 00:02:46.850
+bir dizi oluşturabiliyoruz. Peki bunları
+
+00:02:46.860 --> 00:02:48.820
+gerçekten nasıl kullanırız? İçlerinde
+
+00:02:48.880 --> 00:02:50.910
+ne olduğunu nasıl kontrol eder, içlerinden
+
+00:02:50.980 --> 00:02:53.829
+bir şeyleri nasıl alırız? Daha önce
+
+00:02:53.860 --> 00:02:55.410
+bir karakter dizisinden harfleri
+
+00:02:55.440 --> 00:02:58.040
+çıkarmak istediğimizde yaptığımızın aynısıyla. Köşeli parantez
+
+00:02:58.100 --> 00:03:00.980
+sözdizimini, içine sayı yazarak kullanabiliriz. Şimdi
+
+00:03:01.020 --> 00:03:03.020
+mentor dizimize geri dönelim.
+
+00:03:03.060 --> 00:03:05.560
+İlkini almak istiyorsak mentors
+
+00:03:05.800 --> 00:03:08.720
+köşeli parantez sıfır yazarız. JavaScript'te
+
+00:03:08.880 --> 00:03:13.280
+saymaya sıfırdan başladığımızı unutmayalım. Bir dizinin içinde de,
+
+00:03:13.290 --> 00:03:15.190
+daha önce karakter dizilerinin
+
+00:03:15.220 --> 00:03:18.460
+içinde gezindiğimiz gibi, for-of döngüsüyle gezinebiliriz.
+
+00:03:19.400 --> 00:03:21.580
+Diziler de tamamen aynı şekilde çalışır.
+
+00:03:21.680 --> 00:03:23.980
+Tek fark, bu kez bir harf
+
+00:03:24.040 --> 00:03:26.720
+almak yerine dizideki öğe
+
+00:03:26.780 --> 00:03:28.900
+her neyse onu alıyoruz. Bu örnekte
+
+00:03:28.940 --> 00:03:31.620
+mentorun adını. Yani ilk seferde
+
+00:03:31.680 --> 00:03:34.280
+teşekkür ettiğimiz kişi DJ. İkinci
+
+00:03:34.320 --> 00:03:38.400
+seferde Becky, ve böyle devam eder.
+
+00:03:38.460 --> 00:03:41.500
+Dizilerde de length özelliğini kullanabiliriz,
+
+00:03:41.560 --> 00:03:43.940
+tıpkı karakter dizilerinde öğrendiğimiz gibi.
+
+00:03:43.980 --> 00:03:45.980
+mentors kutusunda dört karakter dizisi olan
+
+00:03:46.100 --> 00:03:50.040
+bir dizimiz varsa ve mentors.length yazarsak, dört döndürür.
+
+00:03:50.980 --> 00:03:53.500
+includes da dizilerde
+
+00:03:53.520 --> 00:03:56.180
+tamamen aynı şekilde kullanılır. mentors.includes
+
+00:03:56.540 --> 00:03:59.880
+parantez DJ dersek true döndürür. Ama
+
+00:03:59.960 --> 00:04:03.600
+mentors.includes Frank dersek false döndürür.
+
+00:04:05.080 --> 00:04:07.360
+Her şey karakter dizileriyle tamamen aynı şekilde çalışır.
+
+00:04:07.420 --> 00:04:09.640
+Tek fark, bu kez bir karakter dizisinin
+
+00:04:09.660 --> 00:04:12.160
+harfleriyle değil, bir dizinin öğeleriyle çalışıyoruz.
+
+00:04:14.140 --> 00:04:17.160
+Sonraki iki alıştırmada
+
+00:04:17.200 --> 00:04:19.540
+bu farklı teknikleri deneyeceksiniz.
+
+00:04:19.560 --> 00:04:21.130
+Şunu düşünmeniz gerekecek: dizinin
+
+00:04:21.300 --> 00:04:23.680
+tek bir öğesini köşeli parantez
+
+00:04:23.720 --> 00:04:26.220
+sözdizimiyle mi alacaksınız, yoksa
+
+00:04:26.280 --> 00:04:28.820
+tüm öğelerde döngüyle gezinip her birini
+
+00:04:28.880 --> 00:04:31.860
+sırayla kontrol mü edeceksiniz? Her zamanki gibi,
+
+00:04:31.920 --> 00:04:34.040
+takılırsanız ipuçlarına bakın. Birazdan
+
+00:04:34.080 --> 00:04:34.860
+burada görüşürüz.

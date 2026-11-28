@@ -1,0 +1,168 @@
+WEBVTT
+
+NOTE en_md5 cc1cedf75df71450fa8e0da4a289c70e
+
+00:00:00.100 --> 00:00:03.520
+Tekrar hoş geldiniz. Şimdiye kadar değişkenleri
+
+00:00:03.740 --> 00:00:06.760
+bir anlamı olan şeyler için kullandık: birinin yaşı,
+
+00:00:06.860 --> 00:00:10.680
+saat, bir renk. Değişkenleri güncelledik, ama
+
+00:00:10.700 --> 00:00:14.900
+bunlar görece durağan şeylerdi. Oysa kodlamada
+
+00:00:14.940 --> 00:00:18.320
+değişkenlerin en yaygın kullanımlarından biri,
+
+00:00:18.400 --> 00:00:22.020
+bir iş boyunca ilerlememizi takip etmektir.
+
+00:00:22.080 --> 00:00:24.280
+Bir duvar ördüğünüzü hayal edin; birazdan
+
+00:00:24.340 --> 00:00:26.880
+yapacağınız bir şey. Gerçek hayatta
+
+00:00:26.940 --> 00:00:29.560
+tuğlaların hangi sırasını ördüğünüzün farkında olursunuz:
+
+00:00:29.600 --> 00:00:31.540
+en alt sıra mı, en üst sıra mı,
+
+00:00:31.580 --> 00:00:34.380
+ortadaki sıralardan biri mi. Ayrıca
+
+00:00:34.420 --> 00:00:36.480
+bir sonra hangi tuğlayı koyacağınızı da bilirsiniz:
+
+00:00:36.520 --> 00:00:40.240
+üçüncüyü, dördüncüyü vb. Dijital dünyada da
+
+00:00:40.250 --> 00:00:43.240
+aynı şeye ihtiyacımız var. Ya da
+
+00:00:43.360 --> 00:00:47.070
+otomatik bir Space Invaders botu
+
+00:00:47.140 --> 00:00:50.220
+yapmaya çalıştığınızı hayal edin. Botun
+
+00:00:50.320 --> 00:00:52.220
+ekranda soldan sağa
+
+00:00:52.260 --> 00:00:55.730
+nerede olduğunu bilmesi gerekir. Programlamada buna durum (İngilizce: state) diyoruz;
+
+00:00:56.240 --> 00:00:59.840
+“bu hangi durumda?” demenin kısa yolu. Durum,
+
+00:00:59.880 --> 00:01:02.510
+neler olup bittiğini bilmek açısından
+
+00:01:02.600 --> 00:01:05.099
+işe yarar; ama asıl gerçekten faydalı olduğu yer,
+
+00:01:05.140 --> 00:01:08.250
+onu koşullarla birleştirdiğimiz zamandır.
+
+00:01:08.280 --> 00:01:10.660
+Duvarı örüyorsak, her tuğladan sonra
+
+00:01:10.680 --> 00:01:13.780
+o sıradaki son tuğlayı
+
+00:01:13.820 --> 00:01:16.160
+koyup koymadığımızı kontrol etmemiz gerekir;
+
+00:01:16.240 --> 00:01:17.520
+koyduysak bir sonraki
+
+00:01:17.560 --> 00:01:19.200
+sıraya geçip yeniden ilk tuğlayı
+
+00:01:19.240 --> 00:01:22.310
+koymaya dönmemiz gerekir. Space Invaders
+
+00:01:22.440 --> 00:01:23.780
+botumuzu yapıyorsak, hareket etmeden önce
+
+00:01:23.820 --> 00:01:26.020
+ekranın kenarında olup olmadığımızı
+
+00:01:26.140 --> 00:01:29.700
+kontrol etmemiz ve öyleysek yönü tersine çevirmemiz gerekir.
+
+00:01:29.780 --> 00:01:32.360
+O yön de bir durumdur: sola mı
+
+00:01:32.380 --> 00:01:35.800
+yoksa sağa mı gittiğimizin kaydı. İlerledikçe
+
+00:01:35.900 --> 00:01:37.600
+durum, programlamanın
+
+00:01:37.660 --> 00:01:41.220
+en can alıcı parçalarından biri olacak:
+
+00:01:41.360 --> 00:01:44.100
+bir şeyin nerede olduğunu, hangi durumda bulunduğunu
+
+00:01:44.500 --> 00:01:47.140
+ya da görev listemizde
+
+00:01:47.300 --> 00:01:49.960
+ne kadar ilerlediğimizi bilme fikri. Önümüzdeki iki alıştırmada,
+
+00:01:49.980 --> 00:01:52.140
+durumla bir duvar örecek ve
+
+00:01:52.180 --> 00:01:54.500
+Space Invaders oynayacaksınız, az önce
+
+00:01:54.560 --> 00:01:58.890
+konuştuğumuz fikirleri kullanarak. Bu alıştırmaları
+
+00:01:58.940 --> 00:02:03.780
+küçük adımlara bölmek gerçekten çok önemli.
+
+00:02:03.840 --> 00:02:05.660
+Onları çözmek için tam olarak
+
+00:02:05.680 --> 00:02:07.740
+neyi bilmeniz gerektiğini düşünün: tuğlaların
+
+00:02:07.780 --> 00:02:09.360
+hangi sırasında olduğunuz ya da
+
+00:02:09.420 --> 00:02:12.680
+elinizdeki tuğlanın konumu gibi. Duvarın tamamını
+
+00:02:12.740 --> 00:02:15.000
+örmek için bilgisayarın izlemesini
+
+00:02:15.060 --> 00:02:18.780
+istediğiniz kuralları düşünün. Bu artık gerçek programlama.
+
+00:02:19.000 --> 00:02:20.760
+Programcı olarak her gün
+
+00:02:20.800 --> 00:02:24.120
+yaptığımız şey tam da bu türden işler.
+
+00:02:24.160 --> 00:02:26.700
+İş giderek karmaşıklaşıyor, ama aynı zamanda
+
+00:02:26.720 --> 00:02:29.860
+daha da eğlenceli hale geliyor. Bu kalıplara
+
+00:02:29.940 --> 00:02:32.160
+alışmak ilk başta biraz zaman alır;
+
+00:02:32.180 --> 00:02:34.600
+o yüzden acele etmeyin, keyfini çıkarın,
+
+00:02:34.640 --> 00:02:35.320
+birazdan yine görüşürüz.

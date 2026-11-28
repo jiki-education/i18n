@@ -1,0 +1,297 @@
+WEBVTT
+
+NOTE en_md5 e356df7bcabc2d9e377cede51ea7aaa5
+
+00:00:00.220 --> 00:00:04.200
+Tekrar hoş geldiniz. Şu ana kadar değişken oluşturduğumuzda
+
+00:00:04.520 --> 00:00:07.100
+değerleri kutulara koyduk ve sonra da
+
+00:00:07.140 --> 00:00:10.059
+oradan çıkardık. Bu, hem kodumuzu
+
+00:00:10.130 --> 00:00:13.080
+daha anlaşılır hale getirmek hem de
+
+00:00:13.140 --> 00:00:15.520
+aksi halde kafamızda yapmak zorunda
+
+00:00:15.560 --> 00:00:18.720
+kalacağımız hesapları azaltmak için çok işe yaradı. Ama
+
+00:00:18.780 --> 00:00:21.940
+değişkenlerin asıl değeri, bir program boyunca
+
+00:00:22.020 --> 00:00:24.760
+kutunun içindekini, yani değişkenin içindekini
+
+00:00:24.800 --> 00:00:27.710
+değiştirebilme yeteneğinden gelir. Yani
+
+00:00:27.740 --> 00:00:30.120
+aynı kod parçasını birden fazla kez çalıştırsak bile,
+
+00:00:30.660 --> 00:00:33.900
+yaptığı iş, kutuların
+
+00:00:33.940 --> 00:00:38.540
+içindekine göre değişebilir. Diyelim ki
+
+00:00:38.580 --> 00:00:41.020
+bir bahçeye çiçek dikmek istiyoruz. Elimizde,
+
+00:00:41.030 --> 00:00:44.340
+çiçeği yerleştirmek istediğimiz konum için
+
+00:00:44.380 --> 00:00:46.060
+tek bir girdisi olan kullanışlı bir
+
+00:00:46.100 --> 00:00:48.380
+plant fonksiyonu var. Yani çiçeği
+
+00:00:48.400 --> 00:00:52.010
+kenardan 10 uzaklığa yerleştirmek istiyorsak plant(10) yazarız.
+
+00:00:52.010 --> 00:00:55.880
+Gayet basit. Peki
+
+00:00:55.960 --> 00:00:59.340
+sekiz çiçek dikmek istesek? Şöyle
+
+00:00:59.360 --> 00:01:02.210
+plant(10), plant(20), plant(30) ve böyle
+
+00:01:02.260 --> 00:01:06.780
+devam edenleri yazabiliriz, ama bu epey sıkıcı olur. Zaten
+
+00:01:06.820 --> 00:01:10.350
+bu tür sıkıcı kodların yerini almamıza
+
+00:01:10.380 --> 00:01:13.120
+yardımcı olan bir şeyi öğrendik. Umarım beyniniz şu an
+
+00:01:13.160 --> 00:01:15.640
+dönüp duruyor ve “Döngü kullanın! repeat
+
+00:01:15.680 --> 00:01:19.440
+bloğu kullanın!” diye bağırıyordur. Evet, tam olarak öyle. Öyleyse
+
+00:01:19.480 --> 00:01:22.120
+konumu 10 yapalım ve
+
+00:01:22.180 --> 00:01:25.200
+sonra plant fonksiyonunu
+
+00:01:25.240 --> 00:01:27.350
+sekiz kez çağırdığımız bir repeat bloğu kullanalım.
+
+00:01:28.900 --> 00:01:32.160
+Sizce ne olacak? Kod
+
+00:01:32.180 --> 00:01:35.180
+sekiz çiçek dikecek, ama
+
+00:01:35.200 --> 00:01:38.000
+her seferinde aynı noktaya dikecek,
+
+00:01:38.060 --> 00:01:41.140
+ki bu tam olarak istediğimiz şey değil. Gelin
+
+00:01:41.280 --> 00:01:42.960
+bir an için Jiki'nin
+
+00:01:43.000 --> 00:01:45.420
+burada ne yaptığını düşünelim. Üzerinde
+
+00:01:45.460 --> 00:01:47.600
+konum etiketi olan bir kutu oluşturuyor. İçine 10 koyuyor.
+
+00:01:48.180 --> 00:01:50.330
+Sonra plant makinesini sekiz kez çalıştırıyor.
+
+00:01:51.420 --> 00:01:54.380
+Her seferinde konum kutusundaki
+
+00:01:54.400 --> 00:01:57.730
+değeri çıkarıyor. Bu değer hep 10 ve
+
+00:01:57.760 --> 00:02:01.340
+her seferinde aynı 10'u makineye veriyor. Yani
+
+00:02:01.360 --> 00:02:03.400
+ihtiyacımız olan şey,
+
+00:02:03.460 --> 00:02:06.490
+her seferinde biraz ilerlemenin bir yolu. Bir çiçek
+
+00:02:06.540 --> 00:02:08.820
+diktikten sonra, Jiki'ye konumu
+
+00:02:08.960 --> 00:02:12.200
+10 ilerletmesini söylemek istiyoruz, böylece
+
+00:02:12.300 --> 00:02:16.410
+sıradaki çiçeği dikmeye hazır olur. Şimdi
+
+00:02:16.500 --> 00:02:18.800
+kodu bir an unutalım: bunu yapmak
+
+00:02:18.900 --> 00:02:22.360
+mantıksal olarak nasıl görünür? Size
+
+00:02:22.440 --> 00:02:24.460
+“İlk çiçeği 10'a dikin,
+
+00:02:24.620 --> 00:02:26.320
+sonrakini 20'ye, ondan sonrakini de
+
+00:02:26.360 --> 00:02:29.140
+30'a” dersem, beyniniz
+
+00:02:29.180 --> 00:02:31.549
+bir sonrakinin 40'a,
+
+00:02:32.320 --> 00:02:33.940
+ondan sonrakinin de
+
+00:02:33.960 --> 00:02:38.280
+50'ye dikilmesi gerektiğini nereden biliyor? Beyninizin yaptığı şey,
+
+00:02:38.340 --> 00:02:41.680
+o anki sayıyı takip etmek, ona
+
+00:02:41.740 --> 00:02:44.380
+10 eklemek ve sonra bu sayıyı
+
+00:02:44.440 --> 00:02:47.510
+beyninizde güncellemek. Aynı şeyi
+
+00:02:47.520 --> 00:02:50.950
+kodda da tam olarak yapabiliriz. Bunu yapmak için
+
+00:02:51.160 --> 00:02:54.380
+şöyle deriz: “Konum kutusunu,
+
+00:02:54.440 --> 00:03:00.500
+mevcut konum değeri artı 10 olacak şekilde güncelle.” Jiki
+
+00:03:00.560 --> 00:03:03.040
+bunu gördüğünde konum kutusundan
+
+00:03:03.120 --> 00:03:05.460
+o anki sayıyı çıkarır, üzerine
+
+00:03:05.540 --> 00:03:08.570
+10 ekler, yani o aritmetiği yapar, sayıları toplar ve
+
+00:03:08.580 --> 00:03:10.720
+sonucu bir dahaki sefere kullanmak üzere
+
+00:03:10.800 --> 00:03:14.000
+kutuya geri koyar. Bunu programımıza
+
+00:03:14.060 --> 00:03:15.960
+eklersek, yani artık
+
+00:03:16.220 --> 00:03:18.680
+“konumun başlangıç değeri
+
+00:03:18.700 --> 00:03:21.490
+10 olsun” deyip sekiz kez
+
+00:03:22.040 --> 00:03:24.860
+o konuma çiçek dikersek ve sonra konumu
+
+00:03:24.920 --> 00:03:28.360
+öncekinden 10 fazla olacak şekilde değiştirirsek, kodumuz
+
+00:03:28.420 --> 00:03:30.640
+çalışır ve aralıklı sekiz çiçek elde ederiz.
+
+00:03:32.440 --> 00:03:35.400
+Değişkeni güncellerken
+
+00:03:35.410 --> 00:03:38.980
+let kullanmadığımıza dikkat edin. Bu gerçekten önemli. Jiki
+
+00:03:39.140 --> 00:03:42.400
+let gördüğünde yeni bir kutu oluşturur. Ama burada
+
+00:03:42.420 --> 00:03:44.560
+yeni bir kutu oluşturmak istemiyoruz.
+
+00:03:44.600 --> 00:03:46.480
+Zaten elimizde olan kutunun
+
+00:03:46.540 --> 00:03:50.920
+içindekini değiştirmek istiyoruz. Ayrıca kutuyu
+
+00:03:51.020 --> 00:03:54.320
+döngünün dışında yalnızca bir kez
+
+00:03:54.380 --> 00:03:57.500
+oluşturduğumuza dikkat edin. Bunu hatırlamak önemli. Kutuyu
+
+00:03:57.620 --> 00:03:59.720
+en başta bir kez oluşturun, sonra
+
+00:03:59.760 --> 00:04:03.500
+döngü her çalıştığında onu güncelleyin. Tamam. Bu videoda
+
+00:04:03.560 --> 00:04:05.850
+epey çok şey gördük. Kutuların
+
+00:04:05.900 --> 00:04:08.020
+içindekini güncelleyebiliriz ve bu gücü
+
+00:04:08.080 --> 00:04:10.880
+zamanla değişen bir şeyi
+
+00:04:10.940 --> 00:04:14.320
+takip etmek için kullanabiliriz. Bu kalıbı sürekli kullanacaksınız:
+
+00:04:14.420 --> 00:04:17.300
+bir konumu takip ederken, bir şeyin kaç kez
+
+00:04:17.340 --> 00:04:21.240
+gerçekleştiğini sayarken, puan tutarken. Programınız çalışırken
+
+00:04:21.260 --> 00:04:24.780
+değişen bir şeyi aklınızda tutmanız gerektiğinde,
+
+00:04:24.820 --> 00:04:27.520
+yapmanız gereken tam olarak budur. Şimdi
+
+00:04:27.620 --> 00:04:29.460
+bunu pratik yapabileceğiniz
+
+00:04:29.500 --> 00:04:32.060
+birkaç alıştırma geliyor. Takılırsanız
+
+00:04:32.100 --> 00:04:33.760
+bu videoya geri dönüp bakabilirsiniz.
+
+00:04:33.800 --> 00:04:36.420
+Bu hile sayılmaz. Bu konu
+
+00:04:36.460 --> 00:04:38.830
+oldukça karmaşık gelebilir. Zamanla netleşecek, ama
+
+00:04:38.840 --> 00:04:40.510
+ilk başta biraz fazla gelebilir.
+
+00:04:40.540 --> 00:04:41.930
+Umarım birkaç alıştırma sonra
+
+00:04:41.930 --> 00:04:44.510
+sizi gördüğümde
+
+00:04:44.540 --> 00:04:46.090
+bu kalıba biraz daha alışmış,
+
+00:04:46.120 --> 00:04:48.600
+kendinize güveniniz de artmış olur. Bol
+
+00:04:48.640 --> 00:04:48.800
+şans.

@@ -1,0 +1,234 @@
+WEBVTT
+
+NOTE en_md5 bd726eea0809593d0cd98aa7f3d0000e
+
+00:00:00.160 --> 00:00:03.260
+Tekrar hoş geldiniz. Şimdiye kadar hep
+
+00:00:03.300 --> 00:00:05.960
+bizim için yapılmış fonksiyonları kullandık: circle,
+
+00:00:06.080 --> 00:00:09.459
+rectangle, moveRight, shoot gibi. Bunların hepsi
+
+00:00:09.500 --> 00:00:12.220
+yapılmış ve Jiki'nin raflarına
+
+00:00:12.260 --> 00:00:14.920
+konmuş fonksiyonlar. Ama artık
+
+00:00:14.960 --> 00:00:18.460
+kendi fonksiyonlarımızı yapmaya başlamanın tam zamanı. Bunu
+
+00:00:18.500 --> 00:00:20.030
+nasıl yapacağımızı göstermek için
+
+00:00:20.120 --> 00:00:23.180
+labirent için yeni bir fonksiyon yapacağız,
+
+00:00:23.220 --> 00:00:27.330
+adı walk5. Bu fonksiyon karakteri her zaman
+
+00:00:27.340 --> 00:00:29.500
+beş adım ileri götürecek.
+
+00:00:30.030 --> 00:00:32.220
+Dünyanın en işe yarar fonksiyonu
+
+00:00:32.240 --> 00:00:34.200
+değil kuşkusuz, ama başlamak için
+
+00:00:34.240 --> 00:00:37.140
+kolay ve güzel bir örnek. Yani
+
+00:00:37.740 --> 00:00:39.140
+karakteri beş adım ileri götürecek
+
+00:00:39.180 --> 00:00:42.040
+biraz kod yazmanızı istesem,
+
+00:00:42.140 --> 00:00:46.190
+ya beş kez move yazabilirdiniz
+
+00:00:46.260 --> 00:00:48.390
+ya da bir repeat döngüsü kullanabilirdiniz. Bu
+
+00:00:48.420 --> 00:00:50.700
+örnekte işi basit tutmak için
+
+00:00:50.740 --> 00:00:53.260
+arka arkaya beş kez move
+
+00:00:53.320 --> 00:00:56.040
+yazma yolunu seçeceğiz. İşte
+
+00:00:56.100 --> 00:01:00.070
+fonksiyonumuzun içinde olmasını istediğimiz şey bu. Şimdi
+
+00:01:00.220 --> 00:01:03.000
+bunun altına, Jiki'ye bu fonksiyonu
+
+00:01:03.100 --> 00:01:05.260
+kullanmasını söyleyen bir satır ekleyelim. Bunu defalarca gördük.
+
+00:01:06.340 --> 00:01:08.100
+Sonraki işimiz
+
+00:01:08.180 --> 00:01:10.840
+bu ilk beş satırı
+
+00:01:11.020 --> 00:01:14.060
+bir fonksiyonun içine sarmak olacak. Öyle ki Jiki
+
+00:01:14.120 --> 00:01:17.860
+walk5 fonksiyonunu kullandığında çalışan şey
+
+00:01:17.980 --> 00:01:21.400
+bu ilk beş satır kod olsun. Bu beş satırı,
+
+00:01:21.440 --> 00:01:23.640
+yani bu beş hareketi bir fonksiyona
+
+00:01:23.680 --> 00:01:26.290
+dönüştürmek için yeni bir anahtar kelime kullanmamız gerekiyor:
+
+00:01:26.820 --> 00:01:30.280
+function anahtar kelimesi. function
+
+00:01:30.300 --> 00:01:32.480
+anahtar kelimesini kullandığımızda iki
+
+00:01:32.500 --> 00:01:36.100
+şey yapmamız gerekir. Birincisi, fonksiyonun adını belirtmek.
+
+00:01:36.160 --> 00:01:39.660
+Burada bu ad walk5. İkincisi,
+
+00:01:39.720 --> 00:01:42.310
+süslü parantezlerle bir kodu sarmak. Bu kod
+
+00:01:42.410 --> 00:01:44.380
+“fonksiyonun içinde şunu yapmalısın”
+
+00:01:44.400 --> 00:01:47.540
+der. Bunu kodumuza eklediğimizde
+
+00:01:47.580 --> 00:01:49.960
+Jiki'ye walk5 adında bir fonksiyon
+
+00:01:50.000 --> 00:01:53.400
+oluşturmasını söylemiş oluruz; o da walk5
+
+00:01:53.460 --> 00:01:56.080
+kullanıldığında bu beş satır
+
+00:01:56.100 --> 00:02:00.340
+kodu çalıştırır. Jiki function anahtar kelimesini gördüğünde
+
+00:02:00.380 --> 00:02:02.240
+gider ve yeni bir
+
+00:02:02.320 --> 00:02:05.560
+fonksiyon yapar, bu talimatları makinenin
+
+00:02:05.600 --> 00:02:08.039
+içindeki beyaz tahtaya yazar
+
+00:02:08.100 --> 00:02:10.580
+ve makineye walk5 etiketini yapıştırır. Sonra da
+
+00:02:10.660 --> 00:02:13.760
+bu fonksiyonu, oradaki diğer bütün
+
+00:02:13.780 --> 00:02:14.760
+fonksiyonların yanına, raflara koyar.
+
+00:02:15.580 --> 00:02:18.080
+Oluşturduğunuz bu fonksiyonun
+
+00:02:18.140 --> 00:02:20.120
+yerleşik olanlardan hiçbir özel farkı yok.
+
+00:02:20.489 --> 00:02:22.080
+Hepsi raflarında
+
+00:02:22.140 --> 00:02:25.700
+yan yana duruyor. Fonksiyonu
+
+00:02:25.720 --> 00:02:29.600
+kullandığınızda, yani walk5() yazdığınızda, Jiki
+
+00:02:29.620 --> 00:02:31.340
+makineyi raftan alıp
+
+00:02:31.350 --> 00:02:33.960
+tıpkı diğer fonksiyonlarda
+
+00:02:34.040 --> 00:02:36.160
+olduğu gibi kullanır.
+
+00:02:36.740 --> 00:02:39.380
+Her makinenin içinde
+
+00:02:39.480 --> 00:02:42.329
+mini bir Jiki'nin yaşadığını hayal edebilirsiniz. Mini Jiki'nin
+
+00:02:42.360 --> 00:02:44.920
+kafasında her zaman şu havalı şapka vardır. O mini
+
+00:02:45.000 --> 00:02:47.450
+Jiki de dışarıdaki normal Jiki ile
+
+00:02:47.480 --> 00:02:50.600
+tamamen aynı şekilde çalışır, talimatları
+
+00:02:50.640 --> 00:02:54.560
+aynı şekilde takip eder. Burada anlaşılması gereken
+
+00:02:54.580 --> 00:02:57.310
+önemli bir nokta var: Jiki fonksiyonu oluştururken
+
+00:02:57.900 --> 00:03:00.560
+kodu aslında çalıştırmaz. Sadece
+
+00:03:00.580 --> 00:03:03.840
+o kodu, sonra kullanmak üzere yazar.
+
+00:03:03.880 --> 00:03:06.160
+function anahtar kelimesini yazdığınızda
+
+00:03:06.200 --> 00:03:09.640
+labirentteki karakter henüz hareket etmez. Jiki
+
+00:03:09.650 --> 00:03:11.560
+makineyi yapmış ve
+
+00:03:11.600 --> 00:03:14.080
+raflara koymuştur. Karakterin gerçekten hareket etmesi,
+
+00:03:14.140 --> 00:03:16.960
+ancak ona walk5() yazarak makineyi
+
+00:03:17.020 --> 00:03:20.880
+kullanmasını söylediğinizde gerçekleşir. Şimdi
+
+00:03:20.980 --> 00:03:24.340
+size iki alıştırma vereceğim, böylece
+
+00:03:24.360 --> 00:03:27.080
+bu kavrama alışacaksınız. Biraz
+
+00:03:27.100 --> 00:03:30.280
+karmaşık kodları daha küçük fonksiyonlara ayırmanız gerekecek.
+
+00:03:30.320 --> 00:03:32.740
+Umarım sonunda kodunuzun ne kadar
+
+00:03:32.780 --> 00:03:34.940
+güzel göründüğünü fark edersiniz. Sonra
+
+00:03:34.980 --> 00:03:36.620
+kısa süre içinde burada görüşürüz ve girdi alan
+
+00:03:36.660 --> 00:03:38.660
+fonksiyonları nasıl oluşturabileceğimize bakacağız.

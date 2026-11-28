@@ -1,0 +1,405 @@
+WEBVTT
+
+NOTE en_md5 f8c737461bf364654b8a618e515caeb8
+
+00:00:00.140 --> 00:00:02.210
+Tekrar hoş geldiniz. Şimdi küçük bir
+
+00:00:02.400 --> 00:00:04.400
+ara verip yolumuzdan biraz sapacağız
+
+00:00:04.460 --> 00:00:06.480
+ve kodla görsel bir şey yapacaksanız
+
+00:00:06.540 --> 00:00:08.850
+bilmeniz gereken bir konuya bakacağız.
+
+00:00:08.880 --> 00:00:10.860
+Hatta veri bilimci olmak isteyip
+
+00:00:10.900 --> 00:00:12.460
+bütün bu çizim işlerini
+
+00:00:12.560 --> 00:00:16.180
+biraz sıkıcı bulsanız bile, veriyi
+
+00:00:16.219 --> 00:00:19.180
+görsellerle aktarmak önemli bir beceridir, yani
+
+00:00:19.220 --> 00:00:21.790
+öğrenmeye gerçekten değer. Bu videoda
+
+00:00:21.840 --> 00:00:24.220
+renkleri ifade etmenin
+
+00:00:24.260 --> 00:00:28.670
+iki farklı yoluna bakacağız. Şimdiye kadar renkleri
+
+00:00:28.680 --> 00:00:31.640
+kırmızı ya da sarı gibi isimleriyle,
+
+00:00:31.700 --> 00:00:33.800
+çizim fonksiyonlarınızın son girdisi olarak kullandınız
+
+00:00:35.400 --> 00:00:37.300
+ve bu, renkleri hızlıca kullanmanın
+
+00:00:37.360 --> 00:00:40.320
+güzel bir yoluydu, ama oldukça sınırlayıcı.
+
+00:00:40.330 --> 00:00:42.350
+Kullanabileceğimiz sadece birkaç
+
+00:00:42.380 --> 00:00:44.370
+isimli renk var. Şimdi ise
+
+00:00:44.400 --> 00:00:46.880
+istediğiniz her rengi ifade etmenin
+
+00:00:46.960 --> 00:00:49.960
+iki yoluna bakacağız. Bu ikisinin adı RGB ve
+
+00:00:50.180 --> 00:00:54.920
+HSL. RGB, renkleri
+
+00:00:54.980 --> 00:00:57.100
+kırmızı, yeşil ve mavinin bir karışımı olarak düşünmemizi sağlar.
+
+00:00:57.300 --> 00:01:00.210
+RGB'nin açılımı da budur: red, green, blue, yani kırmızı, yeşil, mavi.
+
+00:01:01.280 --> 00:01:04.040
+Okulda boya karıştırmayı hatırlıyorsanız,
+
+00:01:04.099 --> 00:01:06.730
+bu benzer bir fikir. Tek fark, boya yerine
+
+00:01:06.760 --> 00:01:11.580
+ışığı karıştırıyoruz. Bundan sonraki birçok alıştırmada
+
+00:01:11.640 --> 00:01:14.440
+rgb adında bir fonksiyonunuz olacak.
+
+00:01:15.280 --> 00:01:16.960
+Girdi olarak üç sayı alacak:
+
+00:01:17.000 --> 00:01:20.040
+biri kırmızı, biri yeşil,
+
+00:01:20.080 --> 00:01:22.240
+biri mavi için. Ve size bir
+
+00:01:22.320 --> 00:01:26.900
+renk döndürecek. Girdi olarak kullanabileceğiniz
+
+00:01:26.980 --> 00:01:32.940
+sayılar sıfır ile 255 arasında değişir. Sıfır,
+
+00:01:33.040 --> 00:01:35.440
+“o renkten hiç istemiyorum” demektir;
+
+00:01:35.620 --> 00:01:38.420
+255 ise “o renkten olabildiğince
+
+00:01:38.460 --> 00:01:41.460
+çok karıştır” demektir. Yani
+
+00:01:41.540 --> 00:01:45.550
+rgb fonksiyonunu girdi olarak 255, sıfır ve sıfırla
+
+00:01:45.600 --> 00:01:48.190
+kullanırsak, söylediğimiz şey
+
+00:01:48.240 --> 00:01:50.440
+“kırmızının tamamını istiyorum” olur. Unutmayın, 255
+
+00:01:50.460 --> 00:01:52.880
+oraya koyabileceğiniz en büyük sayıdır.
+
+00:01:52.900 --> 00:01:54.800
+Ama yeşilden de
+
+00:01:54.820 --> 00:01:57.420
+maviden de hiç istemiyoruz, o yüzden ikisi de sıfır.
+
+00:01:57.460 --> 00:02:00.880
+Böylece kırmızı elde ederiz ve bu kırmızıyı
+
+00:02:00.900 --> 00:02:03.360
+bir değişkende saklayıp
+
+00:02:03.380 --> 00:02:05.340
+tıpkı şimdiye kadar isimli karakter dizileriyle
+
+00:02:05.400 --> 00:02:08.840
+yaptığımız gibi circle fonksiyonunda kullanabiliriz. Peki
+
+00:02:08.880 --> 00:02:10.759
+rgb fonksiyonunu
+
+00:02:10.900 --> 00:02:15.340
+sıfır, 255, sıfırla kullanırsak ne olur? Bu sefer “kırmızı yok,
+
+00:02:15.880 --> 00:02:18.310
+yeşilin tamamı var, mavi yok” demiş oluruz. Böylece
+
+00:02:18.320 --> 00:02:21.440
+yeşil bir daire elde ederiz. Peki
+
+00:02:21.640 --> 00:02:25.320
+sarı istersek? Sarı, kırmızıyla
+
+00:02:25.620 --> 00:02:27.940
+yeşilin karışımıdır. Yani “bana
+
+00:02:28.020 --> 00:02:29.840
+kırmızının tamamını, yeşilin tamamını ver,
+
+00:02:30.180 --> 00:02:32.120
+mavi de olmasın” diyebiliriz ve bu bize
+
+00:02:32.200 --> 00:02:35.200
+sarıyı verir. Daha küçük
+
+00:02:35.240 --> 00:02:37.730
+sayılar da kullanabiliriz. Biraz kırmızı,
+
+00:02:38.300 --> 00:02:41.150
+hiç yeşil ve bolca mavi istersek
+
+00:02:41.200 --> 00:02:45.080
+mor elde ederiz. Bolca kırmızı, azıcık yeşil,
+
+00:02:45.380 --> 00:02:47.000
+biraz daha fazla mavi ise bize
+
+00:02:47.040 --> 00:02:51.360
+pembeyi verir. İşte RGB bu. Kırmızı, yeşil
+
+00:02:51.500 --> 00:02:56.060
+ve maviyi karıştırarak farklı kombinasyonlar elde ederiz. Şimdi de
+
+00:02:56.100 --> 00:02:58.960
+renkler hakkında düşünmenin tamamen
+
+00:02:58.980 --> 00:03:03.060
+farklı bir yolunu veren HSL'ye bakalım. HSL'nin açılımı
+
+00:03:03.100 --> 00:03:08.200
+hue, saturation, lightness: renk tonu, doygunluk ve açıklık. Tıpkı
+
+00:03:08.280 --> 00:03:11.900
+RGB'de olduğu gibi, hsl adında bir fonksiyonunuz var;
+
+00:03:11.920 --> 00:03:14.590
+üç sayı alır: biri renk tonu,
+
+00:03:14.640 --> 00:03:17.100
+biri doygunluk, biri açıklık için. Ve bir
+
+00:03:17.120 --> 00:03:20.420
+renk döndürür. Şimdi bu üç kelimenin
+
+00:03:20.480 --> 00:03:25.160
+ne anlama geldiğini tek tek açalım. Renk tonu,
+
+00:03:25.200 --> 00:03:28.080
+istediğiniz rengin hangi tonda olduğunu belirtir
+
+00:03:28.120 --> 00:03:32.300
+ve sıfırdan 360'a kadar gider. Belki
+
+00:03:32.320 --> 00:03:34.200
+bir gökkuşağı hayal edebilirsiniz. Ben de
+
+00:03:34.260 --> 00:03:36.200
+böyle düşünüyorum. Solda kırmızı var,
+
+00:03:36.700 --> 00:03:39.220
+sonra turuncu, sarı, yeşil, mavi,
+
+00:03:39.400 --> 00:03:41.320
+mor geliyor ve aslında
+
+00:03:41.340 --> 00:03:44.760
+baştan kırmızıya kadar dönüyoruz. Yani sıfır derseniz
+
+00:03:45.140 --> 00:03:47.100
+soldan başlarsınız ve o
+
+00:03:47.180 --> 00:03:50.700
+kırmızıdır. 120 derseniz
+
+00:03:50.740 --> 00:03:54.580
+yeşil istemiş olursunuz. 230 mavidir. Bunu
+
+00:03:54.620 --> 00:03:57.470
+bir renk çemberi olarak da düşünebilirsiniz;
+
+00:03:57.500 --> 00:03:59.500
+360'ın gerçekte anlattığı şey budur. Çemberdeki
+
+00:03:59.540 --> 00:04:02.440
+derece sayısıdır. Ben istediğim
+
+00:04:02.480 --> 00:04:04.360
+sayılara her zaman bakarım, o yüzden
+
+00:04:04.440 --> 00:04:07.000
+bunları ezberlemeye çalışmak konusunda
+
+00:04:07.060 --> 00:04:09.340
+fazla endişelenmeyin; ama neler olup
+
+00:04:09.380 --> 00:04:11.720
+bittiğini bilmek de güzel. İşte bu da renk tonu,
+
+00:04:11.780 --> 00:04:16.019
+yani rengin tonu. Şimdi sırada doygunluk var;
+
+00:04:16.060 --> 00:04:18.920
+rengin ne kadar canlı olduğunu belirtir. Sıfırdan
+
+00:04:19.019 --> 00:04:22.060
+100'e kadar gider. Sıfırda sadece gri elde edersiniz.
+
+00:04:22.400 --> 00:04:24.440
+İçinde hiç renk yok,
+
+00:04:24.500 --> 00:04:28.160
+hiç ton yok. 100'de ise dolu, canlı,
+
+00:04:28.360 --> 00:04:32.660
+capcanlı bir renk elde edersiniz. Ve sonra açıklık var. Açıklık,
+
+00:04:32.700 --> 00:04:34.860
+rengin ne kadar açık ya da koyu olduğunu belirtir ve
+
+00:04:34.960 --> 00:04:37.600
+o da sıfırdan 100'e kadar gider.
+
+00:04:37.740 --> 00:04:40.200
+Sıfırda siyah elde edersiniz. Hangi renk tonunu
+
+00:04:40.260 --> 00:04:43.460
+seçmiş olursanız olun, siyah elde edersiniz. İçinde hiç
+
+00:04:43.480 --> 00:04:46.500
+ışık yoktur. 100'de ise beyaz elde edersiniz.
+
+00:04:46.980 --> 00:04:49.000
+Başka her şey ne olursa olsun,
+
+00:04:49.060 --> 00:04:52.420
+ışık doludur, yani beyazdır. 50 tam
+
+00:04:52.460 --> 00:04:55.490
+ortadadır, normal renktir. Yani bunu,
+
+00:04:55.520 --> 00:04:57.550
+rengi daha açık ya da daha koyu
+
+00:04:57.580 --> 00:05:01.260
+yapmaya yarayan bir kaydırıcı olarak düşünebilirsiniz. Yani
+
+00:05:01.320 --> 00:05:03.840
+normal kırmızı bir daire istiyorsak,
+
+00:05:03.860 --> 00:05:07.680
+ki RGB'de bunu 255, sıfır, sıfır diye yazardık,
+
+00:05:07.720 --> 00:05:10.640
+kırmızının tamamı, yeşil yok, mavi yok,
+
+00:05:10.680 --> 00:05:15.560
+burada sıfır, 100, 50 kullanırız. Kırmızı renk tonu
+
+00:05:15.600 --> 00:05:19.290
+için sıfır, doygunluk için 100, yani tam renk,
+
+00:05:19.800 --> 00:05:22.060
+ve açıklık için de 50; bu, normal bir
+
+00:05:22.080 --> 00:05:25.240
+açıklık seviyesidir. Bunu
+
+00:05:25.250 --> 00:05:27.800
+yeşil bir daireye çevirmek istersek, sadece
+
+00:05:27.880 --> 00:05:30.700
+renk tonunu 120 yapmamız yeter.
+
+00:05:30.740 --> 00:05:33.260
+Daha koyu bir yeşil yapmak istersek,
+
+00:05:33.270 --> 00:05:37.340
+açıklığı 25'e kadar düşürebiliriz.
+
+00:05:37.380 --> 00:05:39.360
+Daha soluk bir yeşil istersek,
+
+00:05:39.440 --> 00:05:40.780
+rengin birazını, yani
+
+00:05:40.920 --> 00:05:43.860
+doygunluğun bir kısmını çıkarabiliriz; diyelim ki 30'a düşürelim.
+
+00:05:46.500 --> 00:05:48.800
+Parlak, canlı bir pembe istiyorsanız,
+
+00:05:48.860 --> 00:05:52.080
+300 civarı bir renk tonu pembedir; sonra
+
+00:05:52.120 --> 00:05:55.680
+doygunluğu 100'e çıkarırız,
+
+00:05:55.720 --> 00:05:57.560
+gerçekten canlı olsun diye. Açıklığı da
+
+00:05:57.620 --> 00:06:01.290
+60 civarına yükseltiriz. Yani
+
+00:06:01.340 --> 00:06:03.660
+renk ifade etmenin iki farklı yolu var ve bunlar
+
+00:06:03.760 --> 00:06:07.830
+farklı durumlarda işe yarar. Belirli bir
+
+00:06:07.900 --> 00:06:12.160
+bileşeni ayarlamak istediğinizde RGB harikadır:
+
+00:06:12.500 --> 00:06:14.380
+ne kadar kırmızı, ne kadar yeşil, ne kadar
+
+00:06:14.400 --> 00:06:17.540
+mavi. Renkler arasında
+
+00:06:17.600 --> 00:06:20.060
+dönmek istediğinizde ise HSL harikadır. Bir gökkuşağı istiyorsanız,
+
+00:06:20.100 --> 00:06:23.440
+renk tonunu artırmaya devam edebilirsiniz.
+
+00:06:23.460 --> 00:06:25.360
+Sonraki birkaç alıştırmada
+
+00:06:25.400 --> 00:06:27.500
+ikisini de, biraz döngü ve
+
+00:06:27.960 --> 00:06:31.020
+değişken güncellemeyle birlikte kullanarak bir gökkuşağı ve
+
+00:06:31.080 --> 00:06:33.280
+bir gün batımı oluşturacaksınız. Bütün
+
+00:06:33.320 --> 00:06:36.400
+ayrıntıları alıştırma talimatlarında hatırlatacağım, o yüzden
+
+00:06:36.460 --> 00:06:40.140
+hepsini henüz ezberlemediyseniz endişelenmeyin. Bol
+
+00:06:40.180 --> 00:06:41.640
+şans, iyi eğlenceler, yakında burada
+
+00:06:41.660 --> 00:06:42.060
+görüşmek üzere.
