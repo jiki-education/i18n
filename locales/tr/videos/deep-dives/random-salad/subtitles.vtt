@@ -1,0 +1,377 @@
+WEBVTT
+
+NOTE en_md5 7b37e00e9bfb162d5c3033b9ffc6d876
+
+00:00:00.234 --> 00:00:02.394
+Merhaba, yeni bir derinlemesine incelemeye hoş geldiniz.
+
+00:00:02.714 --> 00:00:05.514
+Bu videoda “Rastgele Salata” alıştırmasına bakıyoruz.
+
+00:00:05.993 --> 00:00:11.273
+Bu, rastgele sayılar kullanarak
+salata yaptığınız bir alıştırma.
+
+00:00:12.173 --> 00:00:16.393
+Burada ne yapacağınızı anlatan
+bir talimat listesi var.
+
+00:00:16.474 --> 00:00:19.193
+Asıl kullandığınız şey de
+şu makeSalad
+
+00:00:19.193 --> 00:00:22.553
+fonksiyonu. Belirli miktarda yaprak,
+belirli miktarda domates,
+
+00:00:22.634 --> 00:00:25.993
+belirli miktarda kruton ve
+belirli miktarda zeytin alıyor.
+
+00:00:26.544 --> 00:00:30.623
+Sizin göreviniz de rastgele sayılarla
+bu farklı malzemelerin
+
+00:00:30.853 --> 00:00:35.863
+miktarlarını üretmek. Bunun için de
+şu Math.randomInt fonksiyonunu
+
+00:00:35.863 --> 00:00:36.384
+kullanacağız.
+
+00:00:37.584 --> 00:00:41.624
+Başlangıç kodunda size bu makeSalad çağrısını
+
+00:00:41.624 --> 00:00:44.183
+koda sabit yazdığım
+birkaç rastgele sayıyla veriyorum.
+
+00:00:44.183 --> 00:00:49.344
+Bunu çalıştırınca salatanın
+sizin için oluşturulduğunu görüyoruz.
+
+00:00:49.643 --> 00:00:55.234
+Bakın, biraz yaprak, biraz,
+biraz domates, burada biraz kruton
+
+00:00:55.314 --> 00:00:56.993
+ve biraz da zeytin dilimi var.
+
+00:00:58.243 --> 00:01:02.594
+Bir salatayı oluşturan görselleri
+seçerken çok eğlendim.
+
+00:01:03.503 --> 00:01:07.834
+Perde arkasında zamanınızı emen
+o küçük işlerin hepsi işte,
+
+00:01:07.834 --> 00:01:12.274
+bu alıştırma için sizin adınıza
+salata yaprağı görselleri seçmek gibi.
+
+00:01:13.713 --> 00:01:16.114
+Peki, burada ne yapmaya çalışıyoruz?
+
+00:01:16.433 --> 00:01:21.614
+Şu yaprakların, domateslerin,
+
+00:01:21.614 --> 00:01:24.373
+krutonların ve zeytinlerin miktarını bulacağız.
+Ama uymamız gereken bazı kurallar var.
+
+00:01:25.013 --> 00:01:29.093
+O zaman şununla başlayalım. Hatta
+bunları dışarı çıkaralım ve
+
+00:01:30.853 --> 00:01:33.013
+bunlar için birkaç değişken oluşturalım.
+
+00:01:33.813 --> 00:01:38.293
+Yapraklar için bir değişken istiyoruz,
+şimdilik 100 yapalım.
+
+00:01:38.614 --> 00:01:42.614
+Domatesler için bir değişken istiyoruz,
+şimdilik 10 yapalım.
+
+00:01:42.933 --> 00:01:46.293
+Krutonlar için de 8 değerinde bir değişken.
+
+00:01:46.674 --> 00:01:51.153
+Zeytinler için de 5 yapacağımız
+bir değişken oluşturalım.
+
+00:01:52.034 --> 00:01:53.793
+Çalışıyor mu bakalım. Evet, çalışıyor.
+
+00:01:54.513 --> 00:01:58.513
+Önce kodu mantıklı bir
+temel şekle sokalım.
+
+00:01:59.953 --> 00:02:01.394
+Umarım bunların hepsi çok açıktır.
+
+00:02:01.634 --> 00:02:04.834
+Bu noktada bolca değişken ve
+bolca fonksiyon kullandınız.
+
+00:02:04.834 --> 00:02:06.114
+Yani bu gayet açık olmalı.
+
+00:02:06.433 --> 00:02:09.234
+Yapraklarla başlayacağız.
+
+00:02:09.234 --> 00:02:11.873
+40 ile 100 arasında yaprak gerekiyor.
+
+00:02:12.153 --> 00:02:19.354
+Bunu da şu Math.randomInt fonksiyonuyla,
+40 ile 100 arasında yaprak için yapıyoruz.
+
+00:02:20.954 --> 00:02:24.074
+İşte, burada biraz yaprak var.
+
+00:02:24.794 --> 00:02:25.193
+Peki
+
+00:02:26.633 --> 00:02:28.873
+aslında burada ne oluyor? Bu nokta ne?
+
+00:02:29.383 --> 00:02:32.473
+Bu iki sayı ne? Hadi bunlardan
+kısaca bahsedelim.
+
+00:02:32.633 --> 00:02:33.033
+Şimdi
+
+00:02:34.153 --> 00:02:36.794
+buna ad alanı diyoruz.
+
+00:02:37.843 --> 00:02:41.843
+Aslında JavaScript'te muhtemelen
+aynı zamanda bir sabit,
+
+00:02:42.084 --> 00:02:47.443
+ama sonuçta birkaç farklı şeyi bir araya
+toplamak için kullandığımız bir şey:
+
+00:02:48.443 --> 00:02:49.123
+fonksiyonları.
+
+00:02:50.243 --> 00:02:52.204
+Hatta bu bir metot bile olabilir.
+
+00:02:52.204 --> 00:02:55.644
+Aslında bazı dillerde bu, sanırım
+bir ad alanındaki fonksiyon olurdu.
+
+00:02:55.644 --> 00:02:57.764
+Bazı dillerde ise bir sabit
+üzerindeki metot olurdu.
+
+00:02:57.924 --> 00:02:59.843
+Bunların hiçbiri şu an sizin için
+pek önemli değil.
+
+00:03:00.003 --> 00:03:02.084
+Bunların hepsini çok daha
+ileride ele alacağız.
+
+00:03:02.324 --> 00:03:05.283
+Şimdilik önemli olan şu: Math,
+
+00:03:05.683 --> 00:03:08.723
+kullanacağımız bir tür
+fonksiyon demeti gibi düşünülebilir.
+
+00:03:09.283 --> 00:03:13.204
+Burada kullandığımız bu fonksiyonlardan
+birinin adı da randomInt.
+
+00:03:13.604 --> 00:03:16.123
+randomInt de size yalnızca
+bir tam sayı verir.
+
+00:03:16.123 --> 00:03:22.883
+Tam sayı, küsuratsız bir sayıdır. 1,
+2, 3, 4 gibi. 1,5 ya da 7,6 değildir.
+
+00:03:23.364 --> 00:03:27.683
+Yani bu tam sayı değil, bu da değil.
+
+00:03:28.084 --> 00:03:30.003
+Ama mesela
+
+00:03:30.894 --> 00:03:34.574
+56 ya da 556 olursa, bu bir tam sayıdır.
+
+00:03:35.454 --> 00:03:39.774
+Bunlara kayan noktalı sayı,
+bunlara da tam sayı diyoruz.
+
+00:03:40.653 --> 00:03:45.693
+Başka dillerde buna
+ondalıklı sayı da diyebilirsiniz.
+
+00:03:46.813 --> 00:03:49.933
+Ondalıklı, çünkü içinde
+ondalık ayırıcı var.
+
+00:03:50.014 --> 00:03:51.093
+Ama bunlara bakmayacağız.
+
+00:03:51.093 --> 00:03:55.054
+JavaScript'te bunlar yok. JavaScript'te
+yalnızca bu iki tür sayı var.
+
+00:03:56.114 --> 00:04:00.104
+Yani randomInt bize
+bir tam sayı döndürür,
+
+00:04:01.223 --> 00:04:04.024
+ama o yalnızca bir fonksiyon. Bunu
+bir fonksiyon olarak düşünebilirsiniz.
+
+00:04:04.024 --> 00:04:08.424
+Sadece başında, içinde nokta olan
+bu ad alanı gibi bir şey var.
+
+00:04:09.783 --> 00:04:14.903
+Domatesler için şunu diyoruz:
+beş domates gerekiyor, ama
+
+00:04:15.223 --> 00:04:18.343
+her beş yaprağa birden fazla olmamalı.
+Peki, o zaman
+
+00:04:19.624 --> 00:04:23.374
+rastgele sayıda domates gerekiyor,
+şu aralıkta olacak,
+
+00:04:24.303 --> 00:04:26.814
+her beş yaprağa birden fazla değil.
+
+00:04:27.053 --> 00:04:31.694
+Yani yapraklar bölü beş olacak.
+
+00:04:31.774 --> 00:04:33.064
+Bu bizim üst sınırımız,
+
+00:04:33.894 --> 00:04:38.254
+olabilecek en fazla miktar.
+Alt sınırımız da beş domates.
+
+00:04:38.814 --> 00:04:39.454
+Yani istediğimiz,
+
+00:04:40.574 --> 00:04:45.213
+beş ile yapraklar bölü beş
+arasında bir sayı.
+
+00:04:46.814 --> 00:04:49.053
+Bu da randomInt.
+
+00:04:50.103 --> 00:04:52.903
+Tamam, domateslerimiz böylece hazır.
+
+00:04:53.384 --> 00:04:54.903
+Şimdi krutonlar lazım.
+
+00:04:55.704 --> 00:04:58.543
+Domates suyunu emmesi için
+kruton olmalı,
+
+00:04:58.543 --> 00:05:02.264
+ama çok fazla kruton da olamaz,
+yoksa bir kâse ekmek olur.
+
+00:05:02.663 --> 00:05:06.504
+Yani en az domates kadar
+krutonumuz olacak.
+
+00:05:06.663 --> 00:05:11.384
+Yani kruton sayısının alt sınırı
+domates sayısı,
+
+00:05:11.783 --> 00:05:16.423
+ama iki katından fazla değil. Yani
+üst sınırımız domatesler çarpı iki.
+
+00:05:18.403 --> 00:05:20.163
+Ve son olarak zeytinler.
+
+00:05:22.564 --> 00:05:25.603
+Zeytinin tadı güçlüdür,
+o yüzden az kullanmak istiyoruz.
+
+00:05:25.684 --> 00:05:27.684
+En az bir zeytin istiyoruz,
+
+00:05:29.444 --> 00:05:34.163
+yani en az bir, ama domates
+sayısının yarısından fazla değil,
+
+00:05:34.963 --> 00:05:37.603
+yani domatesler bölü ikiden fazla değil.
+
+00:05:38.803 --> 00:05:41.124
+Böylece rastgele salatamız hazır,
+
+00:05:42.494 --> 00:05:44.334
+artık her seferinde biraz farklı.
+
+00:05:44.494 --> 00:05:47.374
+Nasıl çalıştığını görmek için birini
+hızlıca adım adım inceleyebiliriz.
+
+00:05:47.853 --> 00:05:53.374
+40 ile 100 arasında herhangi bir yaprak
+sayısı seçiyoruz ve 72 geliyor.
+
+00:05:54.014 --> 00:06:02.973
+Sonra 5 ile 14,4 arasında bir sayı
+istiyoruz, yani 72 bölü 5.
+
+00:06:03.533 --> 00:06:05.574
+Bu durumda bize 11 veriyor.
+
+00:06:05.574 --> 00:06:13.093
+Yani 11 domates geliyor, sonra da
+11 ile 22 arasında bir sayı alıyoruz,
+
+00:06:13.213 --> 00:06:18.713
+11 çarpı 2 domates. Ve son olarak
+1 ile
+
+00:06:19.514 --> 00:06:23.994
+domates sayısının yarısı, yani 5,5 arasında
+bir sayı alıyoruz ve 4 geliyor.
+
+00:06:24.473 --> 00:06:30.713
+Sonuçta elde ettiğimiz değerler
+72, 11, 13 ve 4.
+
+00:06:32.793 --> 00:06:34.634
+Rastgele salata işte böyle yapılır.
+
+00:06:35.994 --> 00:06:38.673
+Umarım çok zor değildir.
+Mantığı adım adım takip ederseniz,
+
+00:06:38.673 --> 00:06:39.913
+pek zor olmamalı.
+
+00:06:41.574 --> 00:06:44.134
+Ama sorunuz olursa ya da
+anlamadığınız bir şey olursa,
+
+00:06:44.134 --> 00:06:47.894
+lütfen gelip forumda sorun ya da
+YouTube videosuna yorum bırakın.
+
+00:06:48.213 --> 00:06:51.093
+İzlediğiniz için teşekkürler. Yakında başka
+bir derinlemesine inceleme videosunda görüşürüz.
+
+00:06:51.093 --> 00:06:51.814
+Şimdilik hoşça kalın.

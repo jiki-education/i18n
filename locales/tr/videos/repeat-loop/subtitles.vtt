@@ -1,0 +1,264 @@
+WEBVTT
+
+NOTE en_md5 d53eb0ea7bb0ec1daa64bb73829462f2
+
+00:00:00.240 --> 00:00:03.700
+Tekrar hoş geldiniz. Şimdiye kadar her şeyi
+
+00:00:03.720 --> 00:00:06.880
+doğrusal bir şekilde yazdık:
+
+00:00:06.920 --> 00:00:10.660
+Jiki her talimatı yukarıdan aşağıya
+
+00:00:10.670 --> 00:00:14.220
+sırayla takip etti. Şimdi
+
+00:00:14.260 --> 00:00:16.330
+Jiki'nin bu katı yukarıdan aşağıya
+
+00:00:16.460 --> 00:00:19.690
+akışın dışına nasıl çıkabileceğine bakacağız.
+
+00:00:19.720 --> 00:00:21.800
+Özellikle de Jiki'ye aynı kod bölümünü
+
+00:00:21.880 --> 00:00:24.320
+art arda birçok kez çalıştırmasını
+
+00:00:24.360 --> 00:00:28.680
+nasıl söyleyebileceğimizi göreceğiz. Örneğin
+
+00:00:28.760 --> 00:00:31.180
+labirentte olduğunuzu ve 10 adım
+
+00:00:31.240 --> 00:00:34.240
+ilerlemek istediğinizi düşünün. Daha önce size
+
+00:00:34.280 --> 00:00:36.690
+bunun için walk fonksiyonunu vermiştim, ama ya
+
+00:00:36.740 --> 00:00:39.670
+bu fonksiyon olmasaydı? Ya elinizde
+
+00:00:39.920 --> 00:00:44.700
+yalnızca move fonksiyonu olsaydı? Art arda 10 kez
+
+00:00:44.760 --> 00:00:48.000
+move yazmak çok tekrarlı olur.
+
+00:00:48.740 --> 00:00:50.420
+Bunun yerine
+
+00:00:50.500 --> 00:00:54.000
+şöyle diyebilmemiz gerekiyor: “Hey Jiki,
+
+00:00:54.120 --> 00:00:59.840
+şimdi söyleyeceğim şeyi 10 kez yap. Move.” Bunu
+
+00:00:59.900 --> 00:01:02.320
+kodda yapabilmek için
+
+00:01:02.480 --> 00:01:07.300
+ilk anahtar kelimemizi kullanmamız gerekiyor. Anahtar kelimeler,
+
+00:01:07.340 --> 00:01:10.180
+Jiki'nin anladığı talimatlardır. Biraz
+
+00:01:10.220 --> 00:01:13.980
+makinelere benzerler ama makine değildirler. Jiki
+
+00:01:14.020 --> 00:01:16.460
+bir anahtar kelime gördüğünde
+
+00:01:16.500 --> 00:01:18.920
+rafta bir makine aramaz; onun yerine
+
+00:01:18.960 --> 00:01:23.300
+ne yapacağını zaten bilir. Bu, beynine işlenmiştir.
+
+00:01:23.320 --> 00:01:25.700
+Kurs boyunca öğreneceğimiz yaklaşık
+
+00:01:25.740 --> 00:01:28.480
+20 farklı anahtar kelime var
+
+00:01:28.520 --> 00:01:32.560
+ve bunların ilki repeat anahtar kelimesi.
+
+00:01:32.580 --> 00:01:35.540
+Bu anahtar kelime tam olarak az önce söylediğim şeyi yapıyor.
+
+00:01:36.100 --> 00:01:40.580
+Jiki'ye “Bundan sonra söyleyeceğim şeyi
+
+00:01:40.700 --> 00:01:42.990
+şu kadar kez tekrarla” diyor. Şu koda
+
+00:01:43.080 --> 00:01:45.960
+bir bakalım. Önce
+
+00:01:46.000 --> 00:01:48.440
+Jiki'ye bir şeyi birden çok kez yapacağını
+
+00:01:48.480 --> 00:01:51.580
+söylemek için repeat anahtar kelimesini kullanıyoruz. Sonra
+
+00:01:51.680 --> 00:01:53.940
+Jiki'nin o şeyi kaç kez tekrarlamasını
+
+00:01:53.980 --> 00:01:57.070
+istediğimizi normal parantezlerin içine yazıyoruz.
+
+00:01:57.100 --> 00:02:00.030
+Ardından da şu süslü parantezler geliyor
+
+00:02:00.040 --> 00:02:02.850
+ve Jiki'nin tekrarlamasını istediğimiz şeyler
+
+00:02:02.860 --> 00:02:06.020
+bu süslü parantezlerin içinde duruyor. Bu kalıp
+
+00:02:06.100 --> 00:02:09.320
+programlamada inanılmaz derecede yaygındır. Bir
+
+00:02:09.380 --> 00:02:12.400
+anahtar kelime belirtiriz, genellikle yanında bir bilgi olur
+
+00:02:12.440 --> 00:02:14.549
+(bu örnekte bir şeyin kaç kez
+
+00:02:14.580 --> 00:02:17.620
+yapılacağı), ardından da süslü parantezler
+
+00:02:17.680 --> 00:02:20.880
+içinde bir kod bloğu gelir. Labirent dünyasına dönersek,
+
+00:02:21.520 --> 00:02:25.220
+move, move, move, move yazmak yerine
+
+00:02:25.260 --> 00:02:30.580
+dört kez move tekrarla diyebiliriz. Jiki
+
+00:02:30.590 --> 00:02:32.860
+bu kodu görecek ve
+
+00:02:32.940 --> 00:02:36.870
+move makinesini art arda dört kez kullanacak.
+
+00:02:36.900 --> 00:02:38.960
+Üstelik o süslü parantezlerin içine yalnızca
+
+00:02:39.000 --> 00:02:41.800
+tek bir şey koymakla da sınırlı değiliz. Jiki
+
+00:02:41.900 --> 00:02:45.320
+birden çok şeyi tekrar tekrar yapabilir. Jiki'ye
+
+00:02:45.460 --> 00:02:48.080
+önce move, sonra turnLeft yapmasını
+
+00:02:48.120 --> 00:02:51.540
+ve bütün bunları dört kez tekrarlamasını söyleyebiliriz. Jiki
+
+00:02:51.560 --> 00:02:54.000
+bunu görürse move makinesini, sonra
+
+00:02:54.060 --> 00:02:56.880
+turnLeft makinesini, sonra yine move makinesini,
+
+00:02:56.920 --> 00:02:59.340
+sonra yine turnLeft makinesini, sonra yine move makinesini
+
+00:02:59.430 --> 00:03:01.720
+kullanır ve ikisini de dörder kez
+
+00:03:01.800 --> 00:03:07.160
+yapana kadar böyle devam eder. Bu tekrar talimatlarına döngü diyoruz.
+
+00:03:07.840 --> 00:03:09.540
+Kullanabileceğimiz,
+
+00:03:09.580 --> 00:03:11.980
+her biri biraz farklı çalışan birçok farklı döngü var.
+
+00:03:12.000 --> 00:03:15.210
+Hepsini bu kursta inceleyeceğiz. Şimdi,
+
+00:03:15.220 --> 00:03:17.710
+bilmeniz gereken bir şey daha var:
+
+00:03:17.760 --> 00:03:20.300
+döngülerle çalışırken kodunuzu düzenli ve derli toplu
+
+00:03:20.480 --> 00:03:24.240
+tutmak vazgeçilmez hale gelir. Kodunuzun
+
+00:03:24.280 --> 00:03:26.800
+görsel yapısı iyi olduğunda
+
+00:03:26.860 --> 00:03:28.940
+neler olduğunu görmek çok kolaylaşır.
+
+00:03:29.660 --> 00:03:31.740
+Ama olmadığında, yani
+
+00:03:31.780 --> 00:03:34.400
+girintileri düzgün yapmayı unuttuğunuzda ya da
+
+00:03:34.460 --> 00:03:38.630
+girintileri karıştırdığınızda işler çok hızlı karışır. Bu yüzden
+
+00:03:38.660 --> 00:03:41.500
+bu kursta her zaman geçerli bir kuralımız var.
+
+00:03:41.600 --> 00:03:45.049
+Açılış süslü parantezini her zaman
+
+00:03:45.080 --> 00:03:48.430
+repeat deyimi ile aynı satıra koyarsınız.
+
+00:03:48.430 --> 00:03:50.860
+Kapanış süslü parantezini her zaman
+
+00:03:50.940 --> 00:03:54.080
+deyimden sonra kendi satırına koyarsınız
+
+00:03:54.120 --> 00:03:56.399
+ve aradaki kodu her zaman
+
+00:03:56.480 --> 00:04:00.120
+iki boşluk girintilersiniz. Böylece her şey gerçekten derli toplu kalır;
+
+00:04:01.020 --> 00:04:02.560
+unutur ya da farklı
+
+00:04:02.620 --> 00:04:04.360
+bir düzen denerseniz hata alırsınız.
+
+00:04:06.100 --> 00:04:08.080
+Sonraki birkaç alıştırmada amacınız,
+
+00:04:08.120 --> 00:04:11.060
+bazı görevleri
+
+00:04:11.100 --> 00:04:13.720
+olabildiğince az kod satırıyla çözmek
+
+00:04:13.780 --> 00:04:15.320
+ve bunun için
+
+00:04:15.380 --> 00:04:18.060
+repeat döngülerinden yararlanabilirsiniz. Ardından
+
+00:04:18.070 --> 00:04:19.990
+repeat döngüsünü başka
+
+00:04:20.019 --> 00:04:23.270
+kavramlarla birlikte kullanarak çok daha güçlü
+
+00:04:23.320 --> 00:04:25.540
+tekniklere bakacağız. İyi eğlenceler,
+
+00:04:25.580 --> 00:04:26.039
+yakında görüşmek üzere.

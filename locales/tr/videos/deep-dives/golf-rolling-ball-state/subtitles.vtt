@@ -1,0 +1,714 @@
+WEBVTT
+
+NOTE en_md5 67040db223d368bf578fa7dd62694f9e
+
+00:00:00.338 --> 00:00:02.137
+Merhaba, yeni bir derinlemesine incelemeye hoş geldiniz.
+
+00:00:02.137 --> 00:00:06.097
+Bu alıştırma da yine bazen insanların
+biraz karmaşık bulduğu ve
+
+00:00:06.097 --> 00:00:09.858
+takıldığı bir alıştırma. Bunu arayüzde
+izliyorsanız ve takıldıysanız,
+
+00:00:10.817 --> 00:00:15.298
+her zamanki kurallar geçerli. Takıldığınız
+yeri aşana kadar izleyin, sonra durdurun ve
+
+00:00:15.298 --> 00:00:18.897
+devam edin. Kendi başınıza çözdüyseniz,
+tebrikler.
+
+00:00:18.897 --> 00:00:22.338
+Burada birkaç ilginç nokta var,
+o yüzden hızlıca bir bakalım.
+
+00:00:22.978 --> 00:00:29.318
+Öncelikle şunu söylemek istiyorum: Şu,
+nesneleri adım adım hareket ettirme fikri.
+
+00:00:29.478 --> 00:00:33.398
+Bu alıştırmanın amacı,
+nesneleri tekrar tekrar
+
+00:00:34.037 --> 00:00:36.758
+birer adım hareket ettirmek, işte böyle.
+
+00:00:37.718 --> 00:00:40.838
+Birkaç tane daha yapalım. Altı, yedi, sekiz.
+
+00:00:41.237 --> 00:00:42.917
+60'a kadar gidelim.
+
+00:00:45.478 --> 00:00:48.277
+Böylece, topun yuvarlandığı ve
+
+00:00:48.677 --> 00:00:51.567
+akıcı bir şekilde yuvarlandığı bir animasyon elde ediyoruz.
+
+00:00:54.368 --> 00:00:58.408
+Önceki bir alıştırmada, bunu sizin yerinize
+yapan bir roll fonksiyonu vardı.
+
+00:00:58.408 --> 00:01:02.207
+Örneğin 70'e yuvarla diyordunuz
+ve top yuvarlanıp gidiyordu.
+
+00:01:03.408 --> 00:01:06.447
+Ama perde arkasında,
+o roll fonksiyonunu çağırdığınızda,
+
+00:01:06.528 --> 00:01:09.248
+aslında olan şey tam olarak
+burada gördüğünüz şey.
+
+00:01:10.367 --> 00:01:12.927
+Top bir noktadan diğerine
+öylece yuvarlanamaz.
+
+00:01:13.087 --> 00:01:16.207
+Ekranda her pikseli
+göstermemiz gerekir.
+
+00:01:16.858 --> 00:01:21.257
+Yani herhangi bir oyunda A'dan B'ye
+hareket eden bir şey gördüğünüzde,
+
+00:01:21.578 --> 00:01:26.778
+bu her zaman her adımın, her pikselin
+tek tek belirlendiği bir animasyondur.
+
+00:01:26.858 --> 00:01:28.418
+Elbette kod yazabiliriz,
+
+00:01:28.418 --> 00:01:32.537
+bu alıştırmada yazdığımız kod gibi,
+ve adım adım tek tek yazmak zorunda
+
+00:01:32.858 --> 00:01:35.257
+kalmadan akıcı
+animasyonlar yapabiliriz.
+
+00:01:35.737 --> 00:01:38.537
+Ama animasyon yaparken
+her zaman şu süreçten geçeriz:
+
+00:01:38.537 --> 00:01:42.908
+Bir şeyi tüm bu farklı adımlardan
+geçirerek hareket ettirmemiz gerekir
+
+00:01:43.308 --> 00:01:45.947
+ve farklı hızlarda
+hareket ettirebiliriz.
+
+00:01:45.947 --> 00:01:48.587
+Mesela her seferinde yarım piksel
+ilerleyip sonra
+
+00:01:48.587 --> 00:01:53.147
+her seferinde 2 piksele hızlanarak bir şeyin
+daha hızlı ya da yavaş gittiğini gösterebiliriz.
+
+00:01:53.308 --> 00:01:56.587
+Çalışan her kod satırı arasına
+daha fazla bekleme ekleyebiliriz.
+
+00:01:56.987 --> 00:02:00.587
+Ama herhangi bir dijital ortamda
+animasyon yapmayı düşündüğünüzde,
+
+00:02:00.828 --> 00:02:03.628
+aslında yaptığınız şey
+bu tür bir şeydir.
+
+00:02:04.507 --> 00:02:06.188
+Peki burada ne yapmaya
+çalıştığımızı düşünelim.
+
+00:02:06.188 --> 00:02:08.948
+Temelde önceki alıştırmada,
+çiçek dikme alıştırmasında
+
+00:02:08.948 --> 00:02:11.467
+yaptığımız şeyi yapmaya
+çalışıyoruz.
+
+00:02:11.548 --> 00:02:13.788
+Orada bir konumu ilerletiyorduk.
+
+00:02:14.168 --> 00:02:17.687
+Ama geçen seferki gibi konumu
+10 ilerletmek yerine,
+
+00:02:17.687 --> 00:02:19.768
+konumu sadece bir
+ilerleteceğiz.
+
+00:02:20.967 --> 00:02:24.768
+Yani bu move_to'yu birkaç kez
+tekrarlamak istiyoruz.
+
+00:02:24.768 --> 00:02:27.687
+Diyelim ki başlangıç için
+50 kez tekrarlamak istiyoruz
+
+00:02:27.927 --> 00:02:30.967
+ve geçen seferkiyle
+tamamen aynı kalıbı istiyoruz,
+
+00:02:30.967 --> 00:02:35.687
+yani bir position değişkeni. Şimdilik
+bunu 30'dan başlatalım diyelim.
+
+00:02:36.168 --> 00:02:40.568
+Ve position'a gitmek istiyoruz,
+sonra da şunu yapmak istiyoruz:
+
+00:02:40.967 --> 00:02:44.647
+position'ı her seferinde bir
+artacak şekilde değiştirmek,
+
+00:02:46.568 --> 00:02:50.967
+işte böyle. Yani bir değişken tanımlıyoruz,
+oraya gidiyoruz, konumu güncelliyoruz
+
+00:02:51.048 --> 00:02:52.328
+ve bu animasyonu elde ediyoruz.
+
+00:02:53.448 --> 00:02:57.527
+Görebiliyoruz, çalışıyor. Buradan başlıyor,
+buraya doğru hareket ediyor, vesaire.
+
+00:02:58.328 --> 00:03:04.087
+Yaptığımız gibi bir golf oyunu yapıyorsak,
+amacımız topu buradaki tee'den,
+
+00:03:04.087 --> 00:03:06.008
+topun başladığı yerden deliğe yuvarlamak.
+
+00:03:06.407 --> 00:03:08.008
+Nereden başlamak istediğimizi biliyoruz.
+
+00:03:08.168 --> 00:03:14.087
+Başlangıç konumu 28. Ve deliğe ulaşmak için
+belirli sayıda adım
+
+00:03:14.487 --> 00:03:17.848
+ilerlememiz gerektiğini biliyoruz.
+Peki ne kadar ilerleyeceğiz?
+
+00:03:18.798 --> 00:03:25.048
+Diyelim ki bir distance'ımız var ve
+mesafemiz hedefimiz olan 88
+
+00:03:25.527 --> 00:03:28.407
+eksi başlangıç noktamız olan 28.
+
+00:03:29.048 --> 00:03:31.608
+Bu distance'ı burada kullanabiliriz.
+
+00:03:32.328 --> 00:03:35.687
+Yani bir kutumuz var,
+o da position.
+
+00:03:36.487 --> 00:03:38.967
+Bir kutumuz daha var, o da distance,
+
+00:03:40.717 --> 00:03:42.888
+ve değeri hedefimiz olan 88
+
+00:03:44.008 --> 00:03:47.448
+eksi başladığımız konum,
+yani eksi bu 28.
+
+00:03:47.927 --> 00:03:50.807
+Sonra da distance kadar
+tekrarlayacağız.
+
+00:03:52.647 --> 00:03:55.527
+Bu henüz çalışmayacak.
+Nedenine birazdan geleceğiz.
+
+00:03:55.687 --> 00:03:58.407
+Ama önce burada ne olduğunu
+anladığımızdan emin olalım.
+
+00:03:58.407 --> 00:04:03.048
+Baştan başlayalım. İçinde 28 olan
+bir position kutumuz var.
+
+00:04:03.818 --> 00:04:09.177
+Sonra bir distance kutumuz var. Önce
+position'ı alıp içinden 28'i çıkarıyoruz.
+
+00:04:09.258 --> 00:04:13.698
+Az önce yaptığımız bu kutu için
+88 eksi 28 yapıyoruz.
+
+00:04:13.698 --> 00:04:19.257
+60 elde ediyoruz. distance adında yeni bir kutu
+oluşturuyoruz ve içine 60 koyuyoruz.
+
+00:04:19.257 --> 00:04:23.577
+Artık raflarda iki kutumuz var:
+position kutusu ve distance kutusu.
+
+00:04:24.218 --> 00:04:27.817
+Sonra repeat'i çağırdığımızda,
+buraya bir sayı koymak yerine
+
+00:04:28.057 --> 00:04:32.557
+kutuyu koyuyoruz. Peki Jiki
+bunu gördüğünde ne olur?
+
+00:04:32.557 --> 00:04:35.278
+Gidip distance kutusunu
+raftan alır.
+
+00:04:35.437 --> 00:04:39.877
+İçinden 60'ı çıkarır ve bu döngüyü
+60 kez tekrarlaması gerektiğini bilir.
+
+00:04:39.877 --> 00:04:42.637
+Şu anki sayının bir
+olup olmadığına bakar.
+
+00:04:42.718 --> 00:04:44.637
+Şu anki adım 60'tan küçük mü?
+
+00:04:44.637 --> 00:04:48.557
+Evet, küçük. Bu yüzden içeri
+atlar ve bunun üzerinde çalışmaya başlar.
+
+00:04:49.598 --> 00:04:51.677
+Bunu elle de yapabilirdik.
+
+00:04:51.838 --> 00:04:55.757
+Doğrudan repeat 60 times diyebilirdik,
+belki siz de öyle yapmışsınızdır.
+
+00:04:57.038 --> 00:05:02.798
+Ya da bunu biraz daha ileri düzey
+bir şekilde, kelimeler kullanarak,
+
+00:05:02.798 --> 00:05:06.158
+kodumuzu biraz daha açık hâle getirmek
+için kutular kullanarak yapabiliriz.
+
+00:05:06.158 --> 00:05:10.398
+Böylece nereden nereye
+gittiğini bilmeyebileceğimiz
+
+00:05:11.117 --> 00:05:13.598
+bu sihirli 60 yerine, elimizde bir değişken olur.
+
+00:05:13.598 --> 00:05:17.997
+İstersek bir değişken daha tanımlayabiliriz,
+bayrak için bir değişken,
+
+00:05:18.077 --> 00:05:22.557
+yani 88. Artık mesafe,
+flag eksi position.
+
+00:05:24.327 --> 00:05:26.447
+Daha ileri gitmeden önce
+bir şey daha var,
+
+00:05:26.447 --> 00:05:32.048
+gerçekten anladığınızdan emin olmak istiyorum.
+O da şu: Her seferinde...
+
+00:05:32.048 --> 00:05:36.088
+Daha önce size bu turuncu noktayı anlattığımı
+hatırlayın. Her seferinde bu satıra geldiğimizde
+
+00:05:36.487 --> 00:05:42.088
+ve Jiki distance'ı raftan aldığında,
+değeri hâlâ 60.
+
+00:05:43.767 --> 00:05:49.848
+Bu gerçekten önemli. Jiki burada
+position kutusunu güncelledi diye,
+
+00:05:50.867 --> 00:05:53.187
+bu distance kutusunu güncellemez.
+
+00:05:54.067 --> 00:05:56.387
+Bu ikisi sihirli bir şekilde birbirine bağlı değil.
+
+00:05:56.788 --> 00:05:59.108
+Matematikteki gibi değil,
+orada mesela
+
+00:05:59.827 --> 00:06:02.307
+nesnelerin birbirine bağlı
+olduğu denklemler vardır.
+
+00:06:03.108 --> 00:06:07.427
+position kendi başına bir kutu.
+Şu an içinde 39 var.
+
+00:06:07.507 --> 00:06:10.507
+Birkaç adım ilerlersek,
+içinde 40 olacak.
+
+00:06:10.507 --> 00:06:13.507
+Birkaç adım daha ilerlersek,
+içinde 41 olacak.
+
+00:06:13.588 --> 00:06:16.548
+Yani bu position kutusunun
+içindeki şey değişiyor.
+
+00:06:17.197 --> 00:06:21.117
+Ama distance kutusu... Bu kodun
+hiçbir yerinde distance kutusunun
+
+00:06:21.437 --> 00:06:23.278
+içindekini değiştir demiyoruz.
+
+00:06:23.437 --> 00:06:26.158
+distance kutusunu sadece
+burada oluşturuyoruz,
+
+00:06:27.437 --> 00:06:33.197
+bu satırda. Ve içine bu değeri koyuyoruz,
+bu kutuya 60 koyuyoruz, o kadar.
+
+00:06:33.197 --> 00:06:35.038
+O kutunun içindekini hiç değiştirmiyoruz.
+
+00:06:35.437 --> 00:06:39.197
+Yani kutunun içine defalarca baksak da,
+her tekrarda kutunun
+
+00:06:39.197 --> 00:06:40.237
+içine bakıyoruz,
+
+00:06:41.117 --> 00:06:43.197
+ama içindekini hiç değiştirmiyoruz.
+
+00:06:44.257 --> 00:06:46.737
+Bunu iyice anladığınızdan
+emin olun.
+
+00:06:49.377 --> 00:06:52.577
+Tamam. Bunların hepsi mantıklı.
+Peki kod neden çalışmıyor?
+
+00:06:53.617 --> 00:06:57.098
+Kod neden çalışmıyor? Bence bazı insanlar
+tam da burada takılıyor.
+
+00:06:57.098 --> 00:07:00.697
+Buna benzer bir şey yazıyorlar.
+Neden çalışmadığını bilmiyorlar.
+
+00:07:00.697 --> 00:07:05.377
+Sonunda çalıştırmaya çalışırken
+bu 27'yi falan değiştiriyorlar.
+
+00:07:05.458 --> 00:07:07.737
+Sonra belki diğer kısımların
+hiçbiri çalışmıyor.
+
+00:07:07.737 --> 00:07:10.627
+Bunu yapmak zorunda kalıyorlar
+ve iş çok karışıyor.
+
+00:07:10.627 --> 00:07:12.987
+Bunu yapmak yerine,
+duralım, yavaşlayalım
+
+00:07:12.987 --> 00:07:15.427
+ve bu kodun neden çalışmadığını
+düşünelim.
+
+00:07:15.827 --> 00:07:18.108
+Kodu okuyun. Neden çalışmıyor?
+
+00:07:18.108 --> 00:07:21.028
+Top neden varması gereken
+yere varmıyor?
+
+00:07:21.028 --> 00:07:24.387
+87'ye varıyor, 88'e varmıyor.
+
+00:07:26.468 --> 00:07:28.788
+İki sebep olabilir. Bir şey yanlış olabilir.
+
+00:07:29.668 --> 00:07:33.108
+Yanlış sayıda
+tekrar ediyor olabiliriz.
+
+00:07:33.747 --> 00:07:36.548
+distance artı bir kez
+tekrarlasaydık,
+
+00:07:37.528 --> 00:07:38.968
+şimdi gitmek istediğimiz yere varırdık.
+
+00:07:39.127 --> 00:07:41.608
+Ama bu çok tuhaf geliyor.
+Bunu neden yapıyoruz ki?
+
+00:07:43.848 --> 00:07:45.367
+Diğer sebep de şu olabilir:
+
+00:07:46.487 --> 00:07:48.408
+Aslında nereye gidiyorduk?
+
+00:07:48.728 --> 00:07:50.327
+Şuraya geçelim,
+
+00:07:51.208 --> 00:07:55.848
+kodumuzu çalıştıralım. Ve en başa
+kadar gidip buraya gelelim.
+
+00:07:56.327 --> 00:08:01.767
+move_to'yu ilk çağırdığımızda,
+position 28 iken çağırıyoruz.
+
+00:08:02.497 --> 00:08:04.497
+Burada position'ın 28 olduğunu görebilirsiniz.
+
+00:08:04.817 --> 00:08:09.778
+move_to 28 yapıyoruz,
+ama top zaten 28'deydi.
+
+00:08:10.257 --> 00:08:13.377
+Yani top 28'de. Onu 28'e götürüyoruz.
+
+00:08:13.697 --> 00:08:17.778
+Sonra en sona kadar gidip
+nereye gittiğimize bakarsak,
+
+00:08:18.257 --> 00:08:20.658
+gittiğimiz en son yer 87.
+
+00:08:21.137 --> 00:08:27.517
+Yani başladığı yer olan 28'e gidiyoruz,
+60 kez ilerliyoruz ve sonunda
+
+00:08:28.288 --> 00:08:29.247
+bir kare eksik kalıyoruz.
+
+00:08:30.208 --> 00:08:32.048
+Son derinlemesine inceleme
+videosunda ne dediğimi hatırlıyor musunuz?
+
+00:08:32.368 --> 00:08:37.967
+Bazen bir şeyleri bu sırayla mı
+yoksa öbür sırayla mı yaptığımızın
+
+00:08:38.368 --> 00:08:42.207
+gerçekten önemli olduğunu söylemiştim.
+İşte bu, öyle olduğu durumlara bir örnek.
+
+00:08:43.008 --> 00:08:47.168
+Burada zaten belirlenmiş bir konumumuz var,
+çünkü top orada başlıyor.
+
+00:08:47.327 --> 00:08:52.288
+Mesela bu kodun hepsini silersek,
+top tee'nin üzerinde, 28'de başlıyor.
+
+00:08:52.288 --> 00:08:53.168
+Zaten orada.
+
+00:08:54.077 --> 00:08:58.638
+Yani topu hareket ettirdiğimizde,
+ilk seferde onu 29'a götürmek istiyoruz.
+
+00:08:59.278 --> 00:09:02.158
+Bunu 29 yapıp sonra
+şunu yapabilirdik,
+
+00:09:03.197 --> 00:09:07.758
+ama o zaman bu distance bozulur
+ve kodumuz artık doğru olmaz, çünkü
+
+00:09:08.317 --> 00:09:12.878
+top burada 29'da değil.
+Top tee'nin üzerinde, 28'de.
+
+00:09:14.317 --> 00:09:16.518
+Yani yapmamız gereken şu: Bu döngünün içinde,
+
+00:09:16.518 --> 00:09:20.857
+topu oraya hareket ettirip canlandırmadan
+önce konumu güncellememiz gerekiyor.
+
+00:09:21.327 --> 00:09:22.288
+Bunu yaparsak,
+
+00:09:24.927 --> 00:09:26.528
+bunu da doğru sayıya geri ayarlayarak,
+
+00:09:26.607 --> 00:09:28.927
+bunu yaparsak kod çalışıyor.
+
+00:09:30.447 --> 00:09:33.567
+Burada elimizde ne olduğunu
+hızlıca özetleyelim.
+
+00:09:34.128 --> 00:09:38.368
+Birkaç değişken tanımladık. Topun başlangıç
+konumu, yani tee'nin üzerindeki yeri:
+
+00:09:38.528 --> 00:09:41.447
+28, bize verilen sayı.
+Bir de bayrağımız var.
+
+00:09:41.447 --> 00:09:44.528
+Bayrak nerede? 88 numarada,
+bize verilen sayı.
+
+00:09:45.408 --> 00:09:47.648
+Ne kadar gitmemiz gerekiyor?
+Şöyle, konumdan
+
+00:09:48.697 --> 00:09:51.658
+bayrağa gitmemiz gerekiyor,
+yani flag eksi position,
+
+00:09:52.538 --> 00:09:56.298
+böylece o mesafeyi, o kadar kez gidebiliriz.
+Her seferinde
+
+00:09:56.298 --> 00:09:58.538
+topu bir adım ileri götürmemiz
+ve sonra o adıma
+
+00:09:58.538 --> 00:10:01.097
+hareketi canlandırmamız gerekiyor.
+
+00:10:03.258 --> 00:10:07.418
+Bu, birçoğunuza oldukça basit
+görünen bir alıştırma.
+
+00:10:07.977 --> 00:10:11.697
+Ama aslında bu alıştırmada epey takılabileceğiniz
+birçok yer var
+
+00:10:11.697 --> 00:10:13.658
+ve bence gerçekten yavaşlayıp
+
+00:10:13.658 --> 00:10:16.097
+neler olduğunu iyice düşünmek yerine
+
+00:10:16.097 --> 00:10:18.618
+sayılarla oynamaya başlayabileceğiniz
+birçok yer var.
+
+00:10:19.378 --> 00:10:22.018
+Umarım bu videoda bu değişkenleri
+
+00:10:22.018 --> 00:10:24.937
+tanımlamanın değerini ve
+sayıları bu talimatlardan
+
+00:10:24.937 --> 00:10:28.738
+çıkarıp buraya daha sağlam veriler
+olarak nasıl koyabileceğimizi,
+
+00:10:28.977 --> 00:10:34.177
+sağlam veriler olarak, görebilmişsinizdir. Programlamada
+sihirli sayılar (magic numbers) diye bir ifade var.
+
+00:10:34.177 --> 00:10:37.498
+Sihirli sayı, kodunuzda öylece
+bir sayının durmasıdır.
+
+00:10:37.498 --> 00:10:39.298
+Mesela burada sadece bu 60 olsa
+
+00:10:40.258 --> 00:10:44.018
+ve bu sayının ne olduğunu bilmesek,
+ama kodu bir şekilde çalıştırsa.
+
+00:10:44.837 --> 00:10:48.197
+Böyle bir şey olduğunda bu gerçekten tehlikelidir,
+buna koku diyoruz,
+
+00:10:48.197 --> 00:10:51.477
+kod kokusu (code smell). Bu gerçekten
+tehlikelidir, çünkü
+
+00:10:52.197 --> 00:10:55.557
+o 60'ın aslında ne işe yaradığını
+bilmiyorsunuz.
+
+00:10:55.557 --> 00:10:57.317
+Gelip kodu okuyan başka biri de
+
+00:10:57.317 --> 00:10:59.638
+bu 60'ın ne işe yaradığını
+tam bilmez.
+
+00:11:00.597 --> 00:11:03.638
+Anlamı olan değişkenler
+kullanmak çok daha iyidir.
+
+00:11:04.038 --> 00:11:04.437
+Yani,
+
+00:11:05.238 --> 00:11:08.878
+hatta buna topun konumu, buna da
+bayrağın konumu
+
+00:11:08.878 --> 00:11:09.238
+diyebiliriz.
+
+00:11:10.607 --> 00:11:13.168
+Böylece bu, topun konumu ve
+bayrağın konumu olur.
+
+00:11:13.567 --> 00:11:15.648
+Ve topun konumunu ilerletmek istiyoruz.
+
+00:11:16.927 --> 00:11:19.648
+Birden bu sayıların ne olduğu
+gerçekten çok belirgin oluyor.
+
+00:11:20.048 --> 00:11:21.847
+Topu hareket ettirdiğimiz
+gerçekten çok belli.
+
+00:11:21.847 --> 00:11:24.368
+Kod kendini anlatmaya başlıyor.
+
+00:11:25.457 --> 00:11:29.807
+Bu alıştırmada takıldıysanız,
+umarım nedenini görebiliyorsunuzdur.
+
+00:11:29.807 --> 00:11:33.168
+Takılıp kalmanın çok,
+çok fazla yolu var.
+
+00:11:33.168 --> 00:11:36.447
+Burada pek çok ince ayrıntı var.
+İlk seferde başardıysanız,
+
+00:11:36.447 --> 00:11:38.437
+gerçekten çok iyi, tebrikler.
+
+00:11:38.477 --> 00:11:42.018
+Umarım bu video sizi biraz düşündürmüş
+ve bu alıştırmaya gelirken
+
+00:11:42.717 --> 00:11:46.677
+sahip olduğunuz bazı fikirleri
+sorgulatmıştır.
+
+00:11:47.357 --> 00:11:50.638
+Bir sonrakinde bol şans,
+bir sonraki derinlemesine
+
+00:11:50.638 --> 00:11:51.998
+inceleme videosunda görüşmek üzere.
+
+00:11:51.998 --> 00:11:52.837
+İzlediğiniz için teşekkürler.

@@ -1,0 +1,914 @@
+WEBVTT
+
+NOTE en_md5 3444df0fcca33c086487f13e47f69d4f
+
+00:00:00.079 --> 00:00:02.899
+Merhaba, ilk derinlemesine incelemenize hoş geldiniz.
+
+00:00:02.939 --> 00:00:04.839
+Bu videolar, şimdiye kadar izlediğiniz
+
+00:00:04.880 --> 00:00:08.159
+ders videolarından biraz farklı. Daha uzunlar,
+
+00:00:08.179 --> 00:00:11.440
+çok daha az yapılandırılmışlar. Buradaki
+
+00:00:11.460 --> 00:00:13.100
+girişi bitirince sadece ben olacağım,
+
+00:00:13.140 --> 00:00:15.939
+bir dizüstü bilgisayarın başında sizinle sohbet edeceğim,
+
+00:00:16.000 --> 00:00:18.680
+bazı fikirleri daha derinlemesine anlatacağım,
+
+00:00:18.720 --> 00:00:21.280
+muhtemelen birkaç kez konudan sapacağım,
+belki biraz da lafı uzatacağım,
+
+00:00:21.319 --> 00:00:23.479
+ama umarım kod hakkında nasıl düşündüğüme
+
+00:00:23.559 --> 00:00:27.600
+dair size daha fazla fikir vereceğim. Bu
+
+00:00:27.620 --> 00:00:30.419
+derinlemesine incelemeleri izlemek tamamen isteğe bağlı.
+
+00:00:30.500 --> 00:00:32.519
+İleri sarabilirsiniz. Bir şeyi tekrar izlemek için
+
+00:00:32.580 --> 00:00:34.479
+geri sarabilirsiniz. Onları tamamen görmezden gelip
+
+00:00:34.540 --> 00:00:37.799
+hiç tıklamayabilirsiniz bile.
+
+00:00:37.860 --> 00:00:40.059
+Ama bu kursu bir bootcamp olarak
+
+00:00:40.119 --> 00:00:42.939
+yürüttüğümüzde, insanlar bana bu videoların
+
+00:00:42.979 --> 00:00:45.200
+belki de bütün kursun en değerli
+
+00:00:45.260 --> 00:00:47.099
+kısmı olduğunu söyledi, çünkü nasıl düşündüğümü
+
+00:00:47.139 --> 00:00:49.139
+görmelerini sağladı. Daha önce de söylediğim gibi,
+
+00:00:49.200 --> 00:00:51.339
+bu kursun büyük bir kısmı size
+
+00:00:51.420 --> 00:00:53.759
+bir yazılımcı gibi, kod yazan biri gibi
+
+00:00:53.799 --> 00:00:56.419
+düşünmeyi öğretmek. O yüzden karşınıza çıktıkça
+
+00:00:56.459 --> 00:00:58.319
+birkaç videoyu deneyin, ne düşündüğünüze
+
+00:00:58.360 --> 00:01:00.740
+bir bakın. Şimdilik güzel bir fincan çay ya da
+
+00:01:00.799 --> 00:01:02.720
+kahve aldığınızdan emin olun. Arkanıza
+
+00:01:02.779 --> 00:01:04.360
+yaslanın ve başlayalım.
+
+00:01:05.004 --> 00:01:09.203
+Evet, bu derinlemesine incelemelerde
+alıştırmayı öylece çözeceğim,
+
+00:01:09.203 --> 00:01:11.243
+sanki ilk kez görüyormuşum gibi.
+
+00:01:11.563 --> 00:01:15.083
+Bilerek her alıştırmaya
+uzun süre bakmamaya çalıştım.
+
+00:01:15.524 --> 00:01:18.083
+Sonra geri dönüp
+çözümü baştan buluyorum,
+
+00:01:18.083 --> 00:01:19.884
+böylece ezberlenmiş bir çözümüm olmuyor.
+
+00:01:20.364 --> 00:01:23.483
+Buna, umarım sizin de
+yaklaştığınız şekilde yaklaşıyorum.
+
+00:01:23.964 --> 00:01:27.323
+Ama buradaki değer, en azından
+hangi kodu yazdığımı görmek değil,
+
+00:01:27.483 --> 00:01:29.483
+bu ilk alıştırmalarda kesinlikle değil.
+
+00:01:29.564 --> 00:01:32.913
+Muhtemelen sizin yazdığınız kodun
+tıpatıp aynısını yazacağım.
+
+00:01:33.633 --> 00:01:37.593
+Asıl amaç, en azından başlangıçta,
+sizin problemlere nasıl yaklaşacağınızı
+
+00:01:37.593 --> 00:01:41.633
+düşünmeniz, benim de problemlere
+nasıl yaklaştığımı size anlatmam.
+
+00:01:42.124 --> 00:01:46.633
+Kursta ilerledikçe bir probleme
+yaklaşmanın pek çok farklı yolu
+
+00:01:46.633 --> 00:01:50.273
+olacak. Bazılarının artıları,
+bazılarının eksileri var.
+
+00:01:50.754 --> 00:01:54.993
+Zamanımızın büyük kısmını da bu farklı
+düşünme yollarını keşfetmekle geçireceğiz.
+
+00:01:55.983 --> 00:01:59.673
+Bu mantığı, bu problem çözme becerisini
+
+00:01:59.993 --> 00:02:02.154
+kodlamanın tüm farklı alanlarına taşıyabilirsiniz.
+
+00:02:02.394 --> 00:02:05.114
+Bir şeyler, platformlar inşa etmekten,
+
+00:02:05.114 --> 00:02:09.194
+bir araya getirdiğimiz bütün o farklı parçalardan
+bahsettiğimizde, belki kod bile kullanmadan,
+
+00:02:09.353 --> 00:02:12.153
+belki kodun bir kısmını bizim için
+büyük dil modellerine yazdırırken,
+
+00:02:12.633 --> 00:02:17.273
+iyi sonuçlar almamızı sağlayan
+tek sabit şey, düşünme biçimimizdir.
+
+00:02:18.234 --> 00:02:20.954
+Yani bu kurstan başka hiçbir şey
+almasanız bile,
+
+00:02:21.273 --> 00:02:24.873
+yanınızda götürmenizi umduğum tek şey
+nasıl düşündüğümüz.
+
+00:02:25.984 --> 00:02:27.424
+Basit bir alıştırma,
+
+00:02:28.543 --> 00:02:31.183
+basit gelmemiş olabilir,
+ama aslında oldukça basit.
+
+00:02:31.344 --> 00:02:33.903
+Sadece bir tilki yüzü çizmeye çalışıyoruz
+
+00:02:34.344 --> 00:02:37.743
+ve çizmemiz gereken bir dizi üçgen var.
+
+00:02:38.704 --> 00:02:41.623
+Talimatlara bakıyorum.
+
+00:02:41.623 --> 00:02:43.623
+Üçgenin nasıl çizileceğini anlatıyor.
+
+00:02:43.623 --> 00:02:49.103
+Bunu iyi biliyorum. Ayrıca
+bazı farklı renkleri de söylüyor.
+
+00:02:49.103 --> 00:02:53.224
+Kullanabileceğimiz renkler beyaz,
+kahverengi, turuncu ve kömür grisi.
+
+00:02:53.224 --> 00:02:57.094
+İki beyaz yanağımız, iki kahverengi kulağımız,
+iki turuncu yüz yarımız var,
+
+00:02:57.564 --> 00:03:00.603
+bir de iki üçgenden oluşan
+tek bir burnumuz.
+
+00:03:03.004 --> 00:03:07.724
+Burada da bir not düşmüşüm:
+fareyle üzerine gelebilirsiniz,
+
+00:03:07.804 --> 00:03:12.364
+bunu kullanmalısınız. Ayrıca
+bütün sayılar 5'e bölünebiliyor.
+
+00:03:12.444 --> 00:03:15.163
+Burada kullandığımız tek şey de
+bu triangle fonksiyonu.
+
+00:03:16.284 --> 00:03:18.923
+Peki bunu ben çizecek olsam
+nasıl yapardım?
+
+00:03:19.083 --> 00:03:22.203
+Önce şöyle derdim:
+tamam, bir üçgene ihtiyacım var.
+
+00:03:22.444 --> 00:03:25.203
+O yüzden triangle yazıyorum,
+triangle fonksiyonu için triangle.
+
+00:03:25.444 --> 00:03:29.763
+Üç noktaya da ihtiyacım var. Yukarıdaki
+ilk noktada 10, 6 görüyorum.
+
+00:03:29.844 --> 00:03:34.043
+Demek ki 10, 5. Yapmayı oldukça
+sevdiğim bir şey,
+
+00:03:34.043 --> 00:03:36.083
+bunları aralarında boşluk
+olmadan yan yana koymak.
+
+00:03:36.643 --> 00:03:41.444
+Böylece bunun bir koordinat çifti olduğunu
+görebiliyorum, sonra da
+
+00:03:41.923 --> 00:03:46.564
+koordinat çiftlerinin arasına boşluk bırakıyorum.
+Bu, triangle fonksiyonunda gayet iyi işliyor.
+
+00:03:46.803 --> 00:03:50.163
+Ama şunu düşünmek de yine
+oldukça faydalı: boşluk karakterleri
+
+00:03:51.103 --> 00:03:55.444
+(boşluk karakterleri derken boşlukları,
+yeni satırları, sekmeleri kastediyoruz)
+
+00:03:56.303 --> 00:04:01.184
+kodunuzu hem sizin hem de başkaları
+için nasıl daha okunur kılıyor?
+
+00:04:02.143 --> 00:04:05.184
+Yani güzel, küçük bir kalıp.
+İki koordinatı bitişik yazın,
+
+00:04:05.184 --> 00:04:08.543
+sonra koordinatları ayırmak için
+aralarına küçük bir boşluk bırakın.
+
+00:04:09.024 --> 00:04:11.583
+Bu ikisinden hangisinin ikinci
+koordinatım olduğu fark etmez.
+
+00:04:11.583 --> 00:04:14.383
+Ama 10, 40 için aşağıya ineceğim.
+
+00:04:15.184 --> 00:04:19.103
+Son olarak da şuradaki
+50, 40 var.
+
+00:04:19.823 --> 00:04:21.784
+Görmemiş olabileceğiniz
+bir şey göstereyim:
+
+00:04:21.784 --> 00:04:26.143
+sayıların üstünde bir ok çıkıyor,
+bununla değeri kaydırabilirsiniz.
+
+00:04:26.464 --> 00:04:29.603
+Bu, ileride renklere ve bu tür
+
+00:04:29.603 --> 00:04:33.363
+şeylere baktığımızda daha faydalı olacak,
+oldukça kullanışlı küçük bir
+
+00:04:33.363 --> 00:04:34.043
+özellik.
+
+00:04:34.853 --> 00:04:37.643
+Bu, sol kulak için üçgenimiz.
+
+00:04:38.524 --> 00:04:41.883
+Sol kulağın kahverengi
+olması gerektiğini görüyoruz.
+
+00:04:42.603 --> 00:04:46.323
+O yüzden brown yazıyoruz. Bu da
+bana sol kulağı vermeli.
+
+00:04:46.323 --> 00:04:48.124
+Hemen de kontrol edeceğim.
+
+00:04:48.124 --> 00:04:53.483
+“Kodu çalıştır” düğmesine basıyorum. Bu üçgenin
+aşağı yukarı doğru göründüğünü görüyorum.
+
+00:04:54.073 --> 00:04:57.833
+Bu satırı kaldırırsam, yani iki eğik çizgi
+koyarak yorum satırına alırsam,
+
+00:04:57.994 --> 00:05:01.233
+kaybolduğunu görebiliyoruz.
+
+00:05:01.233 --> 00:05:05.513
+Demek ki iyi çalışmış.
+Bu tamam, devam edebiliriz.
+
+00:05:05.913 --> 00:05:08.073
+Sırada yüzün sol tarafı var.
+
+00:05:09.194 --> 00:05:15.233
+Yüz turuncu bir parça. Bunun
+arkasında gölgeli bir parça yok.
+
+00:05:15.233 --> 00:05:17.113
+Sadece yüzün sağ tarafı var.
+
+00:05:17.673 --> 00:05:19.833
+Bunu bir düşünelim.
+Bize triangle fonksiyonu lazım.
+
+00:05:20.904 --> 00:05:23.943
+Resme bakınca
+simetrik olduğunu görüyorum.
+
+00:05:24.503 --> 00:05:26.743
+Bu simetri kavramını önümüzdeki
+
+00:05:26.743 --> 00:05:28.423
+birkaç alıştırmada kullanacağız.
+
+00:05:28.663 --> 00:05:31.743
+Merkez noktanın aynı
+olacağını görebiliyoruz.
+
+00:05:31.743 --> 00:05:36.103
+50, 30'dan başlayacak ve
+aşağıda yine aynı yerde bitecek,
+
+00:05:36.103 --> 00:05:38.503
+bana 50, 95 gibi görünüyor.
+
+00:05:39.303 --> 00:05:42.904
+Sonra buradaki noktanın nereye
+geleceğini bulmamız gerekiyor.
+
+00:05:43.704 --> 00:05:49.543
+Fareyle bu noktanın üzerine gelince görebiliyoruz:
+X değeri 90, Y değeri 40.
+
+00:05:50.483 --> 00:05:55.123
+Yani bir X değeri olacak, bir de 40
+
+00:05:55.603 --> 00:05:57.764
+ve turuncu olacak.
+
+00:05:59.284 --> 00:06:02.003
+Peki şu soru işaretlerinden biri ne,
+buraya ne yazacağız?
+
+00:06:02.243 --> 00:06:06.404
+Bakıyorum ve bu tuvalin
+100 olduğunu görüyorum,
+
+00:06:06.404 --> 00:06:07.923
+yani buraya, 100'e kadar uzanıyor.
+
+00:06:08.724 --> 00:06:12.483
+Bu da 90. Yani burada
+10'luk bir boşluk var.
+
+00:06:13.284 --> 00:06:16.884
+Demek ki bu tarafta da aynı
+10'luk boşluk olacak.
+
+00:06:17.603 --> 00:06:18.803
+Ve biliyorum ki
+
+00:06:19.923 --> 00:06:24.644
+0 artı 10, 10 eder,
+yani bunun 10 olacağını biliyorum.
+
+00:06:25.284 --> 00:06:30.084
+“Kodu çalıştır” düğmesine basıyorum ve bana
+güzel görünen turuncu bir üçgen çıkıyor.
+
+00:06:31.284 --> 00:06:35.923
+Sırada sol yanak var.
+Burada sadece kopyalayıp yapıştırıyorum.
+
+00:06:36.313 --> 00:06:39.443
+Bu üçgeni alalım.
+Bunların hepsini silelim.
+
+00:06:39.913 --> 00:06:43.363
+Elimizde triangle fonksiyonu var,
+bu yüzden tekrar yazmama gerek yok.
+
+00:06:44.253 --> 00:06:47.693
+Sol yanağımız da beyaz olacak.
+
+00:06:48.253 --> 00:06:52.813
+Bunu ölçebilirim. Bu 10, 40,
+
+00:06:54.654 --> 00:06:57.293
+bu da 5, 60.
+
+00:06:58.094 --> 00:07:00.053
+Bir virgülü unuttum.
+Bu yüzden bu başka bir şey oldu.
+
+00:07:00.053 --> 00:07:03.134
+Küçük bir ipucu. Bunun
+kırmızı olmadığını görüyor musunuz?
+
+00:07:03.214 --> 00:07:07.454
+Yanlış renkte gibi.
+Buna sözdizimi vurgulama denir.
+
+00:07:07.613 --> 00:07:12.534
+Kullandığımız teknik bir terim.
+Gördüğünüz renkler sözdizimi vurgulama
+
+00:07:12.534 --> 00:07:13.053
+renkleri.
+
+00:07:14.053 --> 00:07:18.693
+Bunun kırmızı olmaması, bir şeyi yanlış
+yaptığınızın iyi bir işareti.
+
+00:07:18.933 --> 00:07:21.654
+Yani yanlış renkte görünen
+bir şey görürseniz,
+
+00:07:21.733 --> 00:07:24.373
+bu belki bir virgülü
+unuttuğunuzun işaretidir.
+
+00:07:24.534 --> 00:07:27.894
+Belki. Buraya gelip bu tırnakları
+kapatmazsak, görebileceğiniz gibi
+
+00:07:28.293 --> 00:07:33.014
+bu parantez yeşile dönüyor, bu da
+bazı tırnakların eksik olduğunu gösteriyor.
+
+00:07:33.413 --> 00:07:35.974
+Yani bu renkler aslında çok işe yarıyor,
+
+00:07:35.974 --> 00:07:39.574
+bir şeylerin ters gittiğini fark ettiren
+beyninizdeki küçük kısayollar gibi.
+
+00:07:41.224 --> 00:07:43.144
+Virgülü ekleyelim.
+Bu da turuncuya dönüyor.
+
+00:07:43.224 --> 00:07:50.584
+Yani 10, 40, 5, 60. Sonra yine
+aşağıya dönüyoruz, burası 50 ve 95.
+
+00:07:51.943 --> 00:07:56.743
+Rengi white yazabiliriz.
+Bunu ekliyoruz ve oldu.
+
+00:07:59.224 --> 00:08:04.264
+Tamam. Sağ kulak. Artık tam
+anlamıyla simetri dünyasındayız.
+
+00:08:04.663 --> 00:08:09.224
+Sağ kulak için şunu soruyor: bunu fareyle
+üzerine gelmeden bulabilir misiniz?
+
+00:08:10.584 --> 00:08:13.543
+Evet, bunu fareyle üzerine
+gelmeden bulabiliriz.
+
+00:08:13.863 --> 00:08:18.464
+Siz fareyle üzerine gelerek yaptıysanız,
+başka nasıl yapabileceğinizi düşünebilir misiniz?
+
+00:08:18.464 --> 00:08:21.943
+Belki az önce burada yaptığımız
+şeyi kullanmayı düşünebilir misiniz?
+
+00:08:22.743 --> 00:08:26.024
+Sağ yanağa bakarak
+sol yanağı çizmiştim.
+
+00:08:26.024 --> 00:08:28.024
+Bunu nasıl kullanabiliriz?
+Aynı prensibi?
+
+00:08:28.024 --> 00:08:30.904
+Bir saniye durdurup bunu düşünmek
+isterseniz, durdurabilirsiniz,
+
+00:08:31.863 --> 00:08:38.024
+yoksa ben söyleyeceğim. Burada sol
+kulağın 10'dan başladığını biliyoruz.
+
+00:08:38.253 --> 00:08:40.014
+Şu 10, 5'i de görebiliyoruz.
+
+00:08:40.894 --> 00:08:44.894
+Daha önce de söylemiştik,
+0 artı 10, 10 eder.
+
+00:08:45.053 --> 00:08:47.613
+Bu yanağın da 90'da bittiğini bulmuştuk,
+
+00:08:48.413 --> 00:08:52.014
+çünkü 10'luk bir boşluk var
+ve aynı boşluk burada da var.
+
+00:08:52.413 --> 00:08:54.894
+Yani bu kulağın 90 olması gerektiğini biliyoruz
+
+00:08:56.094 --> 00:09:00.974
+ve dümdüz aşağıya, 90'a indiğini biliyoruz,
+
+00:09:01.443 --> 00:09:03.693
+ayrıca ta ortaya, 50'ye kadar geldiğini de.
+
+00:09:04.413 --> 00:09:07.454
+Yani bunu tersine çevirebiliriz ve aynı
+
+00:09:08.654 --> 00:09:12.053
+üçgeni elde ederiz. Sonra yüzün
+sağ tarafını yapabiliriz.
+
+00:09:12.053 --> 00:09:16.733
+Bunu da yine fareyle üzerine gelmeden
+yapabiliriz, sadece bu 10'u 90 yaparak,
+
+00:09:16.733 --> 00:09:22.454
+çünkü simetrik. Sonra sağ yanağı
+yapabiliriz, sağ yanakta da yine
+
+00:09:22.454 --> 00:09:28.974
+simetri istiyoruz. Bu 90 oluyor,
+bu 95 oluyor, bu da 50'de kalıyor
+
+00:09:29.543 --> 00:09:31.063
+ve bu bize beyaz bir yanak veriyor.
+
+00:09:31.543 --> 00:09:33.224
+Sonra burnumuz lazım,
+
+00:09:34.344 --> 00:09:38.983
+burnumuz kömür grisi,
+yani yine triangle yazabiliriz.
+
+00:09:39.944 --> 00:09:44.023
+Burada işimi biraz bozdum,
+çünkü bunun
+
+00:09:44.023 --> 00:09:45.983
+tam üstüne çizdim. Ama yapabiliriz.
+
+00:09:45.983 --> 00:09:50.743
+İki seçeneğiniz var. Birincisi,
+bütün kodunuzu yorum satırına alabilirsiniz.
+
+00:09:51.224 --> 00:09:54.103
+Yani şuraya birkaç yorum
+
+00:09:55.554 --> 00:09:56.033
+koyabilirsiniz, böyle,
+
+00:09:56.914 --> 00:09:59.074
+bu sayede de
+
+00:10:00.834 --> 00:10:04.873
+bunu yorum satırına alabilirsiniz. Bununla karşılaşırsanız,
+belki bir yazım hatası yapmışsınızdır.
+
+00:10:04.873 --> 00:10:08.794
+Korkmanıza gerek yok. “Kodu çalıştır” düğmesine
+basın, yanlış olanı yorum satırına alın,
+
+00:10:08.794 --> 00:10:10.594
+yeniden “Kodu çalıştır” düğmesine basın, geri gelir.
+
+00:10:11.233 --> 00:10:15.633
+Burada bunun 50 ve 85 olması
+gerektiğini görebiliyoruz.
+
+00:10:17.153 --> 00:10:20.753
+Yani 50 ve 85. Sonra bunları
+yeniden geri koyabiliriz.
+
+00:10:21.974 --> 00:10:22.273
+Ve.
+
+00:10:26.353 --> 00:10:29.474
+Bir şekilde bu ilk satırdaki
+triangle kelimesini silmeyi başarmışım.
+
+00:10:30.113 --> 00:10:30.753
+Tamam,
+
+00:10:34.273 --> 00:10:36.674
+bunu ölçelim. 40, 90.
+
+00:10:37.873 --> 00:10:42.194
+Simetrik olduğunu biliyoruz. Yani hemen
+bir sonrakinin
+
+00:10:42.194 --> 00:10:48.214
+60, 90 olacağını biliyoruz. Bunun da charcoal olduğunu
+biliyoruz, yazmakta zorlandığım bir kelime.
+
+00:10:48.934 --> 00:10:53.893
+Burnun üst kısmı tamam,
+sırada burnun alt kısmı var.
+
+00:10:54.214 --> 00:11:00.054
+Bu da üstteki üçgene göre
+simetrik bir üçgen.
+
+00:11:00.454 --> 00:11:04.533
+Yani bununla tıpatıp
+aynı şekilde olacak,
+
+00:11:04.934 --> 00:11:07.493
+ama bu 85'ten 90'a giderken
+
+00:11:07.893 --> 00:11:13.074
+bunun 90'dan 95'e gitmesi gerektiğini
+biliyoruz, çünkü yine
+
+00:11:13.233 --> 00:11:16.834
+90'ı orta çizgi olarak düşünebiliriz,
+5 yukarısı, 5 aşağısı.
+
+00:11:17.873 --> 00:11:20.594
+Burnun alt kısmı da tamam
+ve her şey geçiyor.
+
+00:11:21.153 --> 00:11:24.393
+Sonra bu TODO'ları silerdim.
+
+00:11:24.393 --> 00:11:26.834
+Kodumuzu güzel ve derli toplu
+tutmaya çalışalım.
+
+00:11:27.794 --> 00:11:31.794
+Bu arada, bu videoların bazılarında
+aşağıdaki şu şeyi göreceksiniz.
+
+00:11:31.794 --> 00:11:34.753
+Bunun tek nedeni, kodu Jiki web sitesi yerine
+
+00:11:35.074 --> 00:11:36.513
+kendi bilgisayarımda yerel olarak çalıştırmam.
+
+00:11:36.834 --> 00:11:39.474
+Bazı ek hata ayıklama araçlarını açtım.
+
+00:11:39.554 --> 00:11:42.824
+Yani aşağıda bunlardan birini görürseniz,
+görmezden gelebilirsiniz.
+
+00:11:44.584 --> 00:11:46.824
+Tamam, artık güzel ve derli toplu bir kodumuz var.
+
+00:11:46.824 --> 00:11:49.623
+Bundan kurtulabiliriz. “Bunu fareyle
+üzerine gelmeden de bulabilir misiniz?”
+
+00:11:50.103 --> 00:11:52.863
+Şimdi bu, kodumuzu belgeliyor.
+
+00:11:52.863 --> 00:11:54.903
+Bu, bunun sol kulak olduğunu söylüyor.
+
+00:11:54.903 --> 00:11:57.544
+Aslında bunları muhtemelen
+“The ...” diye değiştirirdim.
+
+00:11:58.103 --> 00:11:59.783
+Çünkü bunların talimat olmasını pek istemiyoruz,
+
+00:11:59.783 --> 00:12:02.263
+sadece kodun ne yaptığını
+anlatmalarını istiyoruz.
+
+00:12:02.344 --> 00:12:04.584
+Ama size hangisi en açık geliyorsa
+onu seçebilirsiniz.
+
+00:12:05.064 --> 00:12:08.344
+Yine de şeylerin ne olduğunu
+açıklayan bu yorumların olması iyi.
+
+00:12:08.344 --> 00:12:10.424
+Hatta buna da belki
+sadece “the nose” derim.
+
+00:12:10.974 --> 00:12:14.013
+Böyle iki satırım olurdu
+ve bu oldukça açıklayıcı,
+
+00:12:15.133 --> 00:12:16.733
+bir şeyleri gruplasam da olur.
+
+00:12:16.733 --> 00:12:20.013
+Şöyle de diyebilirim: tamam,
+iki kulağı bir arada istiyorum
+
+00:12:20.334 --> 00:12:25.054
+ve sadece “the ears” diyorum,
+yüzün parçalarını da bir arada istiyorum.
+
+00:12:25.643 --> 00:12:29.454
+Yanakları da bir arada istiyorum,
+
+00:12:30.334 --> 00:12:30.974
+böyle.
+
+00:12:32.733 --> 00:12:36.054
+Hepsi hâlâ çalışıyor,
+ama artık biraz daha derli toplu.
+
+00:12:36.054 --> 00:12:38.253
+Simetriyi de biraz daha iyi görebiliyorsunuz.
+
+00:12:38.893 --> 00:12:41.253
+Bir alıştırmayı çözdüğünüzde
+
+00:12:41.253 --> 00:12:43.594
+her zaman birkaç dakika ayırıp
+onunla gurur duymaya çalışın.
+
+00:12:43.594 --> 00:12:47.594
+Toparlayın, gerçekten düzenli hale getirin,
+
+00:12:47.594 --> 00:12:49.834
+bu iki satır yan yana olunca ne kadar
+daha anlaşılır olduğunu görebilirsiniz.
+
+00:12:50.263 --> 00:12:53.513
+Her şeyin biraz daha temiz
+görünmesini sağlıyor.
+
+00:12:53.513 --> 00:12:56.633
+Bitirmeden önce son bir şey,
+o da aşağıda.
+
+00:12:56.633 --> 00:12:59.513
+Bunu aşağıda yoldan çekeceğim.
+
+00:13:00.233 --> 00:13:03.914
+Şu çubuğu görüyor musunuz? Bu çubuğu
+henüz kullanmamış olabilirsiniz,
+
+00:13:03.993 --> 00:13:06.474
+ama buna oynatma çubuğu diyoruz.
+
+00:13:07.113 --> 00:13:09.033
+Bu, ileride çok işinize yarayacak.
+
+00:13:09.434 --> 00:13:13.633
+Kodun satırları arasında
+adım adım ilerlemenizi sağlıyor.
+
+00:13:13.633 --> 00:13:13.993
+Yani
+
+00:13:15.103 --> 00:13:19.344
+her seferinde bir satır. Yani bütün yüzü
+bir anda görmek yerine
+
+00:13:19.824 --> 00:13:22.304
+adım adım ilerleyip her kod satırının
+ne yaptığını görebilirsiniz.
+
+00:13:22.704 --> 00:13:25.623
+200 satır kodu olan
+
+00:13:25.623 --> 00:13:28.983
+ya da aynı kodu defalarca
+
+00:13:28.983 --> 00:13:31.424
+çalıştıran programlar yazdığınızda,
+belki programınızda bin,
+
+00:13:31.824 --> 00:13:34.023
+on bin şey olurken (o alıştırmalara
+
+00:13:34.023 --> 00:13:35.743
+birazdan geleceğiz),
+
+00:13:36.224 --> 00:13:40.944
+bu sizin için çok ama çok faydalı hale geliyor.
+
+00:13:41.883 --> 00:13:46.363
+Yukarıda bir de şu küçük
+bilgi paneli düğmesi var.
+
+00:13:46.444 --> 00:13:50.964
+Yine, kodumuz çok daha karmaşık hale geldikçe
+
+00:13:50.964 --> 00:13:53.003
+burada pek çok adım olacak
+ve çok daha
+
+00:13:53.003 --> 00:13:54.844
+ayrıntılı, çok daha karmaşık hale gelecek.
+
+00:13:55.483 --> 00:13:58.523
+Ama şimdilik size Jiki'nin
+
+00:13:58.603 --> 00:14:02.084
+triangle fonksiyonunu bu farklı parametrelerle
+kullandığını söylediğini görebilirsiniz.
+
+00:14:02.084 --> 00:14:05.283
+Fareyle bunların üzerine de gelebilirsiniz,
+mesela triangle kelimesinin üzerine.
+
+00:14:05.283 --> 00:14:09.164
+Burada üzerine geldiğiniz kelimeyi
+ve bütün satırı vurguladığını göreceksiniz.
+
+00:14:09.783 --> 00:14:13.064
+Bu yine henüz çok faydalı
+görünmeyebilir, ama ileride,
+
+00:14:13.064 --> 00:14:15.824
+belki 20 adımınız olduğunda ve
+
+00:14:15.824 --> 00:14:19.064
+bu kod satırının her noktasında tam olarak
+ne olduğunu anlamak istediğinizde,
+
+00:14:19.224 --> 00:14:20.903
+bu çok işinize yarayacak.
+
+00:14:21.863 --> 00:14:24.424
+Evet, ayrıca şu oynat düğmesine
+de basabilirsiniz.
+
+00:14:24.533 --> 00:14:26.743
+Her şeyi baştan sona oynatmak için.
+
+00:14:27.294 --> 00:14:30.674
+Space Invaders oyununuza dönerseniz,
+
+00:14:30.674 --> 00:14:34.464
+yani daha önce yaptığınız oyuna, bunu şimdi
+deneyebilirsiniz, geri gidip
+
+00:14:34.464 --> 00:14:37.383
+oynatma çubuğunu kullanarak
+uzaylıların vurulmasını izleyebilirsiniz,
+
+00:14:37.623 --> 00:14:39.983
+ya da labirente girip
+o oynatma çubuğunu kullanarak
+
+00:14:39.983 --> 00:14:43.263
+ileri geri giderek karakterinizin
+labirenti çözüşünü izleyebilirsiniz.
+
+00:14:43.263 --> 00:14:46.023
+Sonra bütün animasyonu oynatmak için
+yeniden oynat düğmesine basabilirsiniz.
+
+00:14:46.263 --> 00:14:51.503
+Yani gerçekten kullanışlı küçük bir araç.
+Arkasında daha fazla ayrıntı da var,
+
+00:14:51.503 --> 00:14:54.503
+ona sonraki bir derinlemesine
+incelemede döneceğiz.
+
+00:14:54.824 --> 00:14:56.664
+Ama şimdilik umarım faydalı olmuştur.
+
+00:14:56.853 --> 00:15:02.103
+İleride karmaşık alıştırmalara gerçekten
+dalacağımız zamanı dört gözle bekliyorum.
+
+00:15:02.533 --> 00:15:06.373
+Ama sizi işinizle baş başa bırakıyorum. Umarım
+sıradaki çizim alıştırmalarından keyif alırsınız.
+
+00:15:06.773 --> 00:15:08.853
+Nasıl düşündüğünüzü düşünmeye
+devam edin.
+
+00:15:09.174 --> 00:15:13.814
+Acele etmeyin, kodunuzu derli toplu tutun
+ve harika iş çıkaracaksınız.
+
+00:15:13.893 --> 00:15:14.773
+İzlediğiniz için teşekkürler.

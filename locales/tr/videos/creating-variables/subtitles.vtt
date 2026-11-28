@@ -1,0 +1,396 @@
+WEBVTT
+
+NOTE en_md5 9ba87f0c52699c431570792318049b06
+
+00:00:00.220 --> 00:00:04.109
+Tekrar hoş geldiniz. Umarım artık fonksiyonları
+
+00:00:04.280 --> 00:00:07.870
+ve repeat döngülerini epey rahat kullanabiliyorsunuzdur. Bu
+
+00:00:07.900 --> 00:00:10.080
+derste son derece önemli başka bir konuya
+
+00:00:10.100 --> 00:00:12.610
+geçiyoruz. Muhtemelen yazacağınız
+
+00:00:12.640 --> 00:00:14.880
+her programda kullanacağınız bu konu
+
+00:00:14.940 --> 00:00:19.220
+değişkenler. Değişkenler bilgi
+
+00:00:19.460 --> 00:00:22.700
+saklamamızı sağlar. Kod yazarken çoğu zaman
+
+00:00:22.760 --> 00:00:25.420
+bir sayıyı veya bir karakter dizisini daha sonra
+
+00:00:25.500 --> 00:00:27.780
+kullanmak üzere saklamamız gerekir ve bunu
+
+00:00:27.800 --> 00:00:30.480
+değişkenlerle yaparız. Şimdi Jiki'nin deposunda
+
+00:00:30.580 --> 00:00:32.880
+biraz geriye çekilip bakalım: Jiki'nin
+
+00:00:32.940 --> 00:00:35.780
+bir raf takımı daha olduğunu göreceksiniz. İlk
+
+00:00:35.800 --> 00:00:37.160
+raf takımını zaten tanıyoruz; üzerinde
+
+00:00:37.180 --> 00:00:39.680
+fonksiyonlar duruyor, yani move
+
+00:00:39.700 --> 00:00:42.140
+ve rectangle gibi küçük makineler. Ama bu ikinci
+
+00:00:42.160 --> 00:00:44.710
+raf takımında makineler yerine bir sürü
+
+00:00:44.760 --> 00:00:47.860
+kutu görüyorsunuz ve işte bu kutulara
+
+00:00:47.900 --> 00:00:50.080
+değişken diyoruz. Jiki'ye bu kutulara
+
+00:00:50.140 --> 00:00:52.460
+herhangi bir şey koymasını söyleyebilir, daha sonra da
+
+00:00:52.580 --> 00:00:54.940
+tekrar çıkarmasını isteyebilirsiniz. Tıpkı
+
+00:00:54.980 --> 00:00:57.480
+fonksiyonların bir adı olduğu gibi
+
+00:00:57.520 --> 00:01:00.020
+her kutunun da bir adı vardır ve her kutunun içinde
+
+00:01:00.140 --> 00:01:03.000
+yalnızca tek bir şey bulunur. Şimdilik ya bir sayı
+
+00:01:03.380 --> 00:01:05.320
+ya da bir karakter dizisi. Kutularda daha karmaşık
+
+00:01:05.340 --> 00:01:07.480
+şeyler saklamayı da kursun ilerleyen
+
+00:01:07.540 --> 00:01:10.800
+bölümlerinde göreceğiz. Peki Jiki'ye
+
+00:01:10.860 --> 00:01:12.500
+bir kutu yapıp içine bir şey koymasını nasıl söyleriz?
+
+00:01:13.240 --> 00:01:16.920
+let anahtar kelimesini kullanırız. let anahtar kelimesi
+
+00:01:17.000 --> 00:01:19.200
+Jiki'ye yeni bir kutu
+
+00:01:19.300 --> 00:01:21.860
+yapması gerektiğini söyler. Onu bir karton kutuyu
+
+00:01:21.900 --> 00:01:23.760
+ambalajından çıkarıp katlarını açarken
+
+00:01:23.800 --> 00:01:26.320
+hayal edebilirsiniz. Sonra let kelimesinden
+
+00:01:26.440 --> 00:01:28.840
+sonra gelene bakar; bu, kutuya yapıştıracağı
+
+00:01:28.880 --> 00:01:30.620
+etikettir, bu örnekte
+
+00:01:30.720 --> 00:01:32.940
+name. Kalemini çıkarır
+
+00:01:33.220 --> 00:01:36.260
+ve etikete name yazar. Ardından
+
+00:01:36.320 --> 00:01:38.360
+eşittir işaretinden sonra gelene
+
+00:01:38.440 --> 00:01:41.020
+bakar. Bu örnekte bu benim adım, Jeremy.
+
+00:01:41.740 --> 00:01:43.960
+Jeremy bir karakter dizisi olduğu için
+
+00:01:44.340 --> 00:01:45.640
+Jiki bir kâğıt parçası alır ve
+
+00:01:45.660 --> 00:01:48.830
+üzerine Jeremy yazar. Bu sadece bir karakter dizisi,
+
+00:01:48.900 --> 00:01:50.460
+şimdiye kadar çalıştığınız renklerle
+
+00:01:50.520 --> 00:01:52.660
+tıpatıp aynı türden. Sonra o kâğıt
+
+00:01:52.700 --> 00:01:56.410
+parçasını kutunun içine koyar. Böylece
+
+00:01:56.460 --> 00:01:58.260
+ona bir kutu yapmasını, üzerine bir
+
+00:01:58.300 --> 00:02:00.120
+etiket yapıştırmasını ve içine bir şey koymasını söylemiş olduk.
+
+00:02:00.640 --> 00:02:02.300
+Şimdi de gidip kutuyu
+
+00:02:02.380 --> 00:02:05.140
+rafa koyuyor. Sonra programınızın herhangi bir
+
+00:02:05.220 --> 00:02:07.980
+başka yerinde Jiki gidip
+
+00:02:08.020 --> 00:02:09.840
+o kutuyu raftan alabilir,
+
+00:02:09.979 --> 00:02:11.900
+içine bakabilir; buna
+
+00:02:11.940 --> 00:02:14.580
+birazdan geleceğiz. Ama şimdilik
+
+00:02:14.660 --> 00:02:16.540
+bu zihinsel modeli kurmaya başlamanızı
+
+00:02:16.580 --> 00:02:19.120
+gerçekten istiyorum. Yıllardır kod yazıyorum ve
+
+00:02:19.180 --> 00:02:21.790
+hâlâ kod yazarken bir kutuya
+
+00:02:21.820 --> 00:02:23.680
+bir şey koyduğumu ve onu
+
+00:02:23.720 --> 00:02:26.340
+daha sonra geri çıkaracağımı hayal ediyorum. O
+
+00:02:26.400 --> 00:02:28.570
+let anahtar kelimesini gördüğünüzde gerçekten şöyle düşünün:
+
+00:02:28.690 --> 00:02:31.460
+“Tamam, demek ki yeni bir kutu yapıyorum.”
+
+00:02:33.520 --> 00:02:34.530
+Bir dakika şundan bahsetmek istiyorum:
+
+00:02:34.580 --> 00:02:37.210
+değişkenlerin adları, yani bu kutuların üzerindeki
+
+00:02:37.260 --> 00:02:40.140
+etiketler. Bunlarla ilgili birkaç
+
+00:02:40.180 --> 00:02:44.740
+kuralımız var. Öncelikle değişken adlarında boşluk
+
+00:02:44.780 --> 00:02:47.580
+olamaz. Bir kutunun etiketinde birden fazla
+
+00:02:47.700 --> 00:02:49.859
+kelime kullanmak istiyorsanız kelimeleri
+
+00:02:49.920 --> 00:02:51.900
+birbirine yapıştırır ve
+
+00:02:51.980 --> 00:02:55.180
+her kelimenin ilk harfini
+
+00:02:55.220 --> 00:02:57.520
+büyük harfe çeviririz. Buna
+
+00:02:57.680 --> 00:03:00.660
+camel case (deve notasyonu) diyoruz. Devenin
+
+00:03:00.740 --> 00:03:02.540
+hörgüçlerinin her yeni kelimenin ilk harfini
+
+00:03:02.580 --> 00:03:05.260
+yukarı itip büyük harfe dönüştürdüğünü
+
+00:03:05.340 --> 00:03:08.290
+hayal edin. Yani etiket olarak
+
+00:03:08.320 --> 00:03:10.920
+benim adımı kullanmak isterseniz, iki kelimeyi
+
+00:03:10.960 --> 00:03:13.400
+boşluklu yazmak yerine N harfi büyük, tek kelime yazarız: myName.
+
+00:03:15.200 --> 00:03:17.960
+Ayrıca her değişken adı benzersiz olmalıdır.
+
+00:03:18.020 --> 00:03:20.180
+Aynı etikete sahip iki kutunuz olamaz;
+
+00:03:20.860 --> 00:03:23.180
+değişkenler fonksiyonlarla da aynı adı
+
+00:03:23.240 --> 00:03:26.140
+taşıyamaz. Bunu unutursanız Jiki'nin
+
+00:03:26.180 --> 00:03:28.040
+kafası karışır ve size bir hata mesajı verir.
+
+00:03:29.660 --> 00:03:31.210
+Peki, şimdi bir değişkeni nerede kullanmak
+
+00:03:31.280 --> 00:03:34.160
+isteyebileceğimize bakalım. Diyelim ki
+
+00:03:34.200 --> 00:03:36.920
+gökyüzüne bir güneş çiziyoruz.
+
+00:03:36.980 --> 00:03:39.490
+circle fonksiyonunu kullanıp ona
+
+00:03:39.580 --> 00:03:43.480
+dört girdi verebileceğimizi biliyoruz: left, top, radius
+
+00:03:43.680 --> 00:03:47.000
+ve color. Ama pek çok şey
+
+00:03:47.040 --> 00:03:49.160
+çizdikçe ve tüm bu sayılar kodumuzun
+
+00:03:49.180 --> 00:03:51.740
+her yerine dağıldıkça, kodu takip etmek
+
+00:03:51.780 --> 00:03:55.020
+ve okumak gerçekten zorlaşabilir. Bunun yerine
+
+00:03:55.280 --> 00:03:57.500
+her biri için birer değişken oluşturabiliriz:
+
+00:03:57.600 --> 00:04:00.760
+sol konum, üst konum, radius ve color. Sonra da
+
+00:04:00.860 --> 00:04:04.560
+o değişkenlere başvururuz. Buradaki asıl hedefimiz,
+
+00:04:04.620 --> 00:04:06.380
+circle fonksiyonunu kullanırken
+
+00:04:06.420 --> 00:04:11.200
+kutuların güzel, okunaklı adlarını
+
+00:04:11.220 --> 00:04:14.590
+yazabilmek. Jiki bu adları gördüğünde
+
+00:04:14.620 --> 00:04:16.480
+kutuları raflardan alıp
+
+00:04:16.560 --> 00:04:20.459
+içlerindekini kullanması gerektiğini bilecek. Öyleyse
+
+00:04:20.519 --> 00:04:22.550
+bunlar için birkaç değişken oluşturalım. Önce
+
+00:04:22.550 --> 00:04:25.050
+güneşin sol konumuyla başlıyoruz. Oluşturuyoruz,
+
+00:04:25.580 --> 00:04:27.350
+ııı, let anahtar kelimesini kullanarak
+
+00:04:27.350 --> 00:04:29.700
+Jiki'ye yeni bir kutu yapmasını söylüyoruz:
+
+00:04:29.740 --> 00:04:32.310
+leftPosition. Buradaki deve notasyonuna,
+
+00:04:32.500 --> 00:04:35.180
+yani büyük P harfine dikkat edin. Sonra
+
+00:04:35.260 --> 00:04:38.560
+Jiki'ye kutuya hangi sayının gireceğini söylüyoruz. Jiki
+
+00:04:38.580 --> 00:04:40.340
+kutuyu raflara koyuyor, ardından
+
+00:04:40.420 --> 00:04:43.020
+aynısını topPosition, radius
+
+00:04:43.180 --> 00:04:46.540
+ve color için de yapıyor. Artık kodumuzun
+
+00:04:46.620 --> 00:04:48.870
+herhangi bir yerinde bu değişkenlere yeniden başvurabiliriz;
+
+00:04:49.000 --> 00:04:51.400
+Jiki de değerleri kutulardan çıkarıp
+
+00:04:51.440 --> 00:04:53.530
+bir makineye koyar. Değişkenlerin bir diğer
+
+00:04:53.640 --> 00:04:56.120
+güzel yanı da şu: ne zaman
+
+00:04:56.160 --> 00:04:58.960
+güneşle aynı konumda bir şey
+
+00:04:59.000 --> 00:05:01.620
+çizmek istesek, aynı
+
+00:05:01.680 --> 00:05:04.980
+leftPosition ve topPosition değişkenlerini yeniden kullanabiliriz. Farklı
+
+00:05:05.000 --> 00:05:07.660
+bir örnek düşünelim. Bir duvar ördüğünüzü,
+
+00:05:07.700 --> 00:05:10.200
+duvarda 30 tuğla olduğunu ve tüm
+
+00:05:10.220 --> 00:05:11.840
+tuğlaların aynı genişlikte,
+
+00:05:11.880 --> 00:05:14.270
+aynı yükseklikte olmasını istediğinizi hayal edin.
+
+00:05:14.360 --> 00:05:17.100
+Genişlik ve yükseklik için birer değişkeni
+
+00:05:17.280 --> 00:05:19.580
+kodunuzun başında oluşturup
+
+00:05:19.660 --> 00:05:21.590
+kodunuzun geri kalanında hep
+
+00:05:21.640 --> 00:05:23.900
+onlara başvurmak çok daha iyidir. Çünkü daha sonra
+
+00:05:23.980 --> 00:05:25.960
+genişliği veya yüksekliği değiştirmek isterseniz,
+
+00:05:26.020 --> 00:05:28.260
+tek bir yerde değiştirmeniz yeterli olur ve geri kalan
+
+00:05:28.380 --> 00:05:33.100
+her şey kendiliğinden güncellenir. Sonraki birkaç alıştırmada
+
+00:05:33.260 --> 00:05:35.980
+daha düzenli ve okunaklı kod yazmak için
+
+00:05:36.060 --> 00:05:38.840
+değişkenler kullanacaksınız. Değişken oluşturmaya
+
+00:05:38.880 --> 00:05:41.910
+ve kullanmaya alıştıktan sonra da
+
+00:05:41.960 --> 00:05:44.280
+değişkenlerin başka değişkenlere nasıl başvurabildiğine
+
+00:05:44.320 --> 00:05:46.920
+bakacağız. İşte asıl güç o zaman ortaya çıkıyor.
+
+00:05:47.620 --> 00:05:50.110
+Ama şimdilik gidip bu alıştırmalarla pratik yapın,
+
+00:05:50.520 --> 00:05:51.880
+birazdan burada görüşürüz.

@@ -1,0 +1,388 @@
+WEBVTT
+
+NOTE en_md5 b8c6113399959b0244ec1b133a63a133
+
+00:00:01.028 --> 00:00:03.228
+Artık insanların zaman zaman
+biraz zorlanabildiği
+
+00:00:03.228 --> 00:00:05.908
+alıştırmalara geliyoruz.
+
+00:00:06.628 --> 00:00:10.348
+Bu ve bir sonraki, insanların biraz
+canını sıkmaya başlayan ilk alıştırmalar;
+
+00:00:10.348 --> 00:00:12.067
+bazıları bir türlü çözemiyor.
+
+00:00:12.067 --> 00:00:14.307
+Kendinizi zorlanmış hissediyorsanız
+endişelenmeyin.
+
+00:00:14.307 --> 00:00:15.987
+Başkaları da zorlanıyor.
+
+00:00:16.147 --> 00:00:18.628
+Ama bu aynı zamanda müthiş bir
+öğrenme fırsatı.
+
+00:00:18.867 --> 00:00:20.388
+Videoyu izlediğiniz için tebrikler.
+
+00:00:20.388 --> 00:00:23.748
+Hadi birlikte çözelim. Bunu zaten
+çözdüyseniz, kolay geldiyse, ne güzel.
+
+00:00:24.237 --> 00:00:27.678
+Tebrikler. Belki yine de birlikte
+bakarken yeni bir şey öğrenirsiniz.
+
+00:00:28.557 --> 00:00:30.038
+Peki burada ne yapmaya çalışıyoruz?
+
+00:00:30.038 --> 00:00:33.838
+Dungeons and Dragons oynayabilen
+bir bot geliştiriyoruz.
+
+00:00:33.917 --> 00:00:37.277
+Dungeons and Dragons'ı oynamadıysanız
+anlatayım: elinizde bir sürü zar olur.
+
+00:00:37.277 --> 00:00:39.037
+Farklı şeyler için zar atarsınız.
+
+00:00:39.628 --> 00:00:42.637
+Zarlar bir şeyin olup olmayacağını,
+
+00:00:42.957 --> 00:00:46.078
+bir şeye ne kadar güçlü vuracağınızı,
+her türlü şeyi belirler.
+
+00:00:46.557 --> 00:00:51.518
+Bu örnekte
+üç farklı zar atıyoruz.
+
+00:00:52.497 --> 00:00:55.938
+Bir roll fonksiyonumuz var,
+onunla zar atıyoruz
+
+00:00:55.938 --> 00:00:58.658
+ve zarın kaç yüzlü
+olacağını seçiyoruz.
+
+00:00:58.658 --> 00:00:59.618
+Şöyle yazabiliriz:
+
+00:01:00.578 --> 00:01:03.218
+yanlış kopyalayıp yapıştırdım. Şöyle: roll
+
+00:01:04.578 --> 00:01:04.977
+20
+
+00:01:06.018 --> 00:01:11.218
+ve 20 yüzlü bir zar atıyoruz. Bu da
+bize bir saldırı puanı verecek.
+
+00:01:11.537 --> 00:01:14.337
+Bir duralım ve burada ne olduğunu
+anladığımızdan emin olalım.
+
+00:01:14.418 --> 00:01:16.737
+Bir roll fonksiyonumuz var.
+
+00:01:17.628 --> 00:01:21.308
+Bu roll fonksiyonu girdi olarak
+20 ile çağrılıyor,
+
+00:01:21.308 --> 00:01:23.867
+yani zarın kaç yüzü olduğuyla.
+
+00:01:24.108 --> 00:01:25.947
+Sonra bu fonksiyon
+
+00:01:26.748 --> 00:01:30.628
+1 ile 20 arasında bir sayı döndürüyor,
+bu da bizim saldırı puanımız olacak.
+
+00:01:30.628 --> 00:01:32.748
+Şimdi bunu çalıştırıp bakalım.
+
+00:01:33.307 --> 00:01:35.548
+attack adında yeni bir kutu oluşturduk.
+
+00:01:36.028 --> 00:01:38.867
+Zarı attık ve
+bize bir verdi.
+
+00:01:38.867 --> 00:01:42.908
+Kodu yeniden çalıştırıp tekrar bakarsak,
+bu sefer 16 döndürüyor.
+
+00:01:43.668 --> 00:01:46.468
+Kodu bir kez daha çalıştırırsak,
+bu sefer dört döndürüyor.
+
+00:01:46.548 --> 00:01:49.707
+Yani tıpkı gerçek bir zar gibi,
+her attığımızda
+
+00:01:49.707 --> 00:01:51.347
+farklı bir sayı geri alıyoruz.
+
+00:01:51.507 --> 00:01:54.308
+O sayı her neyse,
+her seferinde onu saklıyoruz,
+
+00:01:54.947 --> 00:01:57.028
+bu attack kutusunda saklıyoruz.
+
+00:01:57.347 --> 00:01:58.947
+Şimdi aynısını diğerleri için yapalım.
+
+00:01:59.028 --> 00:02:00.867
+Bir temel hasarımız olacak,
+
+00:02:01.427 --> 00:02:04.628
+bunu da 12 yüzlü
+bir zar atarak bulacağız.
+
+00:02:04.787 --> 00:02:06.787
+Sonra bir de bonus hasarımız var,
+
+00:02:07.987 --> 00:02:08.707
+bunu da
+
+00:02:09.508 --> 00:02:11.427
+10 yüzlü bir zar atarak buluyoruz.
+
+00:02:12.457 --> 00:02:14.138
+Bunu çalıştırıp bakabiliriz.
+
+00:02:14.138 --> 00:02:17.018
+Bu sefer 8 geldi, sonra...
+
+00:02:17.578 --> 00:02:21.497
+Pardon, 12 geldi,
+sonra 7 ve 8 geldi.
+
+00:02:22.298 --> 00:02:25.177
+Bu üçü de yine
+her seferinde farklı olacak.
+
+00:02:26.298 --> 00:02:29.497
+Tamam, sıradaki işimiz
+toplam hasarımızı bulmak.
+
+00:02:29.497 --> 00:02:34.298
+Hasarımız
+temel hasar
+
+00:02:36.698 --> 00:02:40.948
+artı bonus hasar. Böylece
+toplam hasarımızı bulduk.
+
+00:02:40.948 --> 00:02:43.068
+Aslında adına... evet,
+adına toplam hasar diyelim.
+
+00:02:43.467 --> 00:02:47.788
+Artık saldırı puanımız, temel hasarımız,
+bonus hasarımız ve toplam hasarımız var.
+
+00:02:49.228 --> 00:02:50.707
+Sonra şu talimat geliyor:
+
+00:02:50.707 --> 00:02:56.068
+Her zar attığınızda, attığınız sayıyı
+birlikte oynadığınız
+
+00:02:56.068 --> 00:02:57.627
+diğer kişilere duyurmanız gerekiyor.
+
+00:02:57.867 --> 00:03:01.147
+Tamam mı? Saldırı puanımızı duyuralım,
+
+00:03:02.268 --> 00:03:04.668
+ayrıca
+
+00:03:06.008 --> 00:03:09.048
+temel hasarımızı da duyuralım. Bonus
+hasarımızı da duyuralım.
+
+00:03:11.768 --> 00:03:15.168
+Sonra şöyle diyor: sayıları duyurmadan
+vurmaya çalışırsanız,
+
+00:03:15.168 --> 00:03:16.247
+hile yaptığınızı düşünebilirler.
+
+00:03:16.568 --> 00:03:18.807
+Siz asla hile yapmazsınız eminim,
+ama haksız da sayılmazlar.
+
+00:03:19.927 --> 00:03:22.888
+Tamam. Son adım da goblini
+
+00:03:23.207 --> 00:03:25.407
+saldırı puanınız ve
+toplam hasarınızla vurmak.
+
+00:03:25.407 --> 00:03:26.168
+Yani strike ile
+
+00:03:27.288 --> 00:03:28.568
+saldırı puanımızla
+
+00:03:30.008 --> 00:03:31.927
+ve toplam hasarımızla vuruyoruz.
+
+00:03:34.247 --> 00:03:36.728
+Kodu çalıştırabiliriz. İşte oldu.
+
+00:03:36.728 --> 00:03:39.848
+Çalışıyor. Üç, 11 ve üç geldi.
+
+00:03:40.647 --> 00:03:42.048
+Bu seferki sayılarımız bunlar.
+
+00:03:42.048 --> 00:03:46.967
+Buna tıklayıp adım adım bakarsak,
+bir üç, bir 11
+
+00:03:48.328 --> 00:03:51.288
+ve bir üç görüyoruz. Bir daha çalıştırırsak
+
+00:03:52.328 --> 00:03:54.247
+bu sefer üç, beş
+ve iki gelecek.
+
+00:03:54.247 --> 00:03:58.008
+Adım adım ilerleyip roll 20
+çağrısının üç döndürdüğünü görebiliriz.
+
+00:03:58.377 --> 00:03:59.818
+Bunu attack kutusunda saklıyoruz.
+
+00:03:59.978 --> 00:04:02.777
+attack kutusunu alıyoruz,
+içindeki üçü çıkarıp duyuruyoruz.
+
+00:04:03.018 --> 00:04:06.217
+roll 12 çağrısı beş döndürdü. Yine aynısı.
+
+00:04:07.337 --> 00:04:09.258
+roll 10 çağrısı bu sefer iki döndürdü.
+
+00:04:09.337 --> 00:04:12.978
+O ikiyi duyuruyoruz,
+sonra ikisini topluyoruz:
+
+00:04:12.978 --> 00:04:16.377
+temel hasardan beşi,
+bonus hasardan ikiyi alıyoruz.
+
+00:04:16.377 --> 00:04:19.577
+Bunları toplayıp yediyi buluyoruz,
+toplam hasarımız bu.
+
+00:04:19.737 --> 00:04:24.338
+Son olarak da içinde 3 olan
+saldırı puanını ve içinde 7 olan
+
+00:04:24.338 --> 00:04:27.218
+toplam hasarı alıp
+strike fonksiyonumuzla vuruyoruz.
+
+00:04:28.338 --> 00:04:30.817
+Umarım bu çözümü
+izlemek faydalı olmuştur.
+
+00:04:31.458 --> 00:04:36.098
+Çok karmaşık değil. Her zamanki gibi
+en büyük tavsiyem, işleri
+
+00:04:36.098 --> 00:04:38.017
+bu farklı adımlara bölmeniz.
+
+00:04:38.418 --> 00:04:41.858
+Hele ki artık bir şeyler
+döndüren fonksiyonlara geçtiğimiz için,
+
+00:04:42.017 --> 00:04:44.377
+eşittir işaretinin sağ tarafıyla
+
+00:04:44.377 --> 00:04:47.028
+başlamak ve bunu kafanızda
+gerçekten
+
+00:04:47.908 --> 00:04:50.817
+tek bir şey olarak düşünmek önemli.
+Buna ifade diyoruz.
+
+00:04:51.387 --> 00:04:54.348
+İfade, eşittir işaretinin
+sağ tarafında olan şeydir.
+
+00:04:55.148 --> 00:05:00.108
+Ve o ifadeyi önce kafanızda
+işlemeniz önemli.
+
+00:05:00.348 --> 00:05:03.627
+Bu da bir ifade: şu artı şu.
+
+00:05:04.267 --> 00:05:06.267
+Yani buradaki kısım çalıştırılıyor.
+
+00:05:06.267 --> 00:05:10.348
+Jiki bunu iki kutunun değerlerini
+birbirine ekleyerek çalıştırıyor.
+
+00:05:10.827 --> 00:05:14.427
+Bunu yaptıktan sonra da
+gidip sonucu bu kutuya koyuyor.
+
+00:05:14.827 --> 00:05:17.307
+O yüzden bunu bir adım olarak,
+
+00:05:17.307 --> 00:05:19.708
+kutuya değer koymayı da
+bir sonraki adım olarak düşünün.
+
+00:05:20.408 --> 00:05:24.168
+Bu bir sonraki adım. İşi böyle
+parçalara bölerseniz umarım her şey
+
+00:05:24.487 --> 00:05:29.367
+oldukça kolay olacak. Bol şans. Bir sonraki
+alıştırma da insanların gerçekten
+
+00:05:29.367 --> 00:05:31.127
+çok zorlanabildiği bir alıştırma.
+
+00:05:31.447 --> 00:05:33.687
+Burada öğrendiklerinizi
+uygulamaya çalışın.
+
+00:05:33.687 --> 00:05:35.608
+Biraz yavaşlayın. Ve
+
+00:05:36.408 --> 00:05:38.887
+gerçekten ihtiyacınız olursa
+videoyu izlemekten çekinmeyin.
+
+00:05:38.968 --> 00:05:41.687
+Ama önce kendiniz
+çözmeyi deneyin.
+
+00:05:41.687 --> 00:05:44.807
+Unutmayın, şu Jiki'ye Sor
+sekmesini de kullanabilirsiniz.
+
+00:05:45.048 --> 00:05:48.247
+Fikirleri keşfetmek ve fikir alışverişi
+yapmak için gerçekten çok faydalı.
+
+00:05:48.408 --> 00:05:51.208
+Mutlaka bir deneyin.
+İzlediğiniz için teşekkürler.

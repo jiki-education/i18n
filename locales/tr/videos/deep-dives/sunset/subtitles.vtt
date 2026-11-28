@@ -1,0 +1,811 @@
+WEBVTT
+
+NOTE en_md5 c95948fc498cb52bc6b6826a80b63e6a
+
+00:00:00.493 --> 00:00:02.092
+Yeni bir derinlemesine incelemeye hoş geldiniz.
+
+00:00:03.532 --> 00:00:05.012
+Umarım bu alıştırmayı sevmişsinizdir.
+
+00:00:05.012 --> 00:00:07.852
+Tamamladıysanız, bence bu animasyonların
+gerçekleştiğini görmek oldukça tatmin edici.
+
+00:00:07.932 --> 00:00:13.692
+Premium görevlerden biri de
+gerçekten çok güzel:
+
+00:00:13.692 --> 00:00:17.053
+“Filizlenen Çiçek”. Bu,
+
+00:00:18.253 --> 00:00:20.972
+bu tür alıştırmaların daha zorlu olanlarından biri.
+
+00:00:22.092 --> 00:00:24.533
+Burada mı açılıyor, yoksa açılmıyor mu,
+hatırlayamıyorum,
+
+00:00:24.533 --> 00:00:27.213
+ama kesinlikle tavsiye ederim.
+Çok eğlenceli bir alıştırma, ama
+
+00:00:28.132 --> 00:00:30.213
+doğru yapmak biraz sinir bozucu da olabilir.
+
+00:00:30.853 --> 00:00:36.853
+Bu alıştırmalar iyi birer örnek:
+talimatları okuyup
+
+00:00:36.853 --> 00:00:37.813
+talimatlar üzerinden adım adım ilerlerseniz,
+
+00:00:39.253 --> 00:00:42.893
+çok zor olduklarını düşünmüyorum. Ama her şeyi
+dikkatlice okumazsanız,
+
+00:00:42.893 --> 00:00:44.292
+epey karmaşık bir hale gelebilirler.
+
+00:00:45.173 --> 00:00:48.292
+Bu, üzerine düşünmeye değer bir nokta.
+
+00:00:48.292 --> 00:00:52.173
+Genel olarak programlamada, işe girişip
+yapmaya başlamadan önce
+
+00:00:52.173 --> 00:00:54.453
+ne yaptığınızı çok net bilmeniz gerekir.
+
+00:00:55.033 --> 00:00:59.033
+Kod yazmaya başlamadan önce ne kadar netlik
+ve anlayışa sahip olursanız,
+
+00:00:59.273 --> 00:01:01.353
+her şey o kadar kolaylaşır.
+
+00:01:02.073 --> 00:01:05.753
+O yüzden talimatları bir kez baştan sona
+okumak için mutlaka bir dakikanızı ayırın
+
+00:01:05.753 --> 00:01:08.393
+ve yazmaya başlamadan önce
+her şeyin net olduğundan emin olun.
+
+00:01:08.873 --> 00:01:12.712
+Burada, gördüğünüz gibi, hareketli resim
+defteri tarzında bir sahne çiziyoruz.
+
+00:01:14.313 --> 00:01:15.912
+Birkaç farklı şeyimiz var.
+
+00:01:15.912 --> 00:01:19.433
+Gökyüzünü, güneşi, denizi
+ve kumu çiziyoruz.
+
+00:01:19.972 --> 00:01:22.313
+Ve bunların her birinde
+bir şeyi değiştiriyoruz.
+
+00:01:22.393 --> 00:01:26.722
+Güneşi büyütüyoruz. 5'ten başlıyor
+ve her seferinde biraz büyüyor.
+
+00:01:27.683 --> 00:01:34.643
+Güneşi hareket ettiriyoruz, aşağı iniyor,
+ve güneşin rengini değiştiriyoruz.
+
+00:01:35.043 --> 00:01:37.602
+Bunun için kırmızı, yeşil ve mavi renkleri kullanıyoruz.
+
+00:01:38.082 --> 00:01:42.563
+Başlangıç noktası olarak
+bunu önerdik, daha doğrusu ben önerdim.
+
+00:01:42.802 --> 00:01:47.602
+Güzel bir etki için yeşili, yani ikinci değeri
+azaltmanızı öneriyorum: kırmızı, yeşil, mavi, RGB.
+
+00:01:48.102 --> 00:01:51.933
+Bir de gökyüzünün rengi var.
+
+00:01:51.933 --> 00:01:54.013
+Bunun için HSL kullanmanızı öneriyorum:
+
+00:01:55.373 --> 00:01:59.572
+renk tonu, doygunluk ve... hatırlıyor muyum?
+Parlaklık mıydı, açıklık mı?
+
+00:01:59.572 --> 00:02:01.373
+Sanırım açıklık, evet, açıklık.
+
+00:02:02.412 --> 00:02:04.412
+Gökyüzünü HSL ile hareketlendireceğiz.
+
+00:02:05.783 --> 00:02:10.413
+Bunu da animasyon boyunca
+renk tonunu artırarak yapacağız.
+
+00:02:12.413 --> 00:02:17.212
+Peki bir şeyi nasıl hareketlendiririz? Aslında
+aynı şeyi defalarca
+
+00:02:17.212 --> 00:02:20.973
+yapıyoruz. Gökyüzümüz, güneşimiz,
+denizimiz ve kumumuzla başlıyoruz.
+
+00:02:21.443 --> 00:02:26.402
+Sonra bunların üzerine
+yeni sahneler çizmeye devam ediyoruz.
+
+00:02:26.483 --> 00:02:28.763
+Ve her seferinde bunlarda
+küçük değişiklikler yapıyoruz.
+
+00:02:28.763 --> 00:02:30.323
+Önce bunu bir çalıştıralım.
+
+00:02:30.402 --> 00:02:33.122
+Bu her zaman iyi bir fikir.
+Başlangıç kodunu çalıştırmayı unutmayın.
+
+00:02:33.592 --> 00:02:36.483
+Şu animasyonu gizleyeceğim,
+çünkü biraz rahatsız edici.
+
+00:02:37.853 --> 00:02:40.562
+Gördüğünüz gibi başlangıçta böyle görünüyor.
+
+00:02:41.573 --> 00:02:43.522
+Güzel.
+
+00:02:44.323 --> 00:02:47.923
+Burada 5 yarıçapla başlamamız
+
+00:02:48.282 --> 00:02:51.002
+ve her turda 0,2 büyümemiz gerektiğini görüyoruz.
+
+00:02:51.923 --> 00:02:53.802
+Hadi önce bunu yapalım.
+
+00:02:54.763 --> 00:03:00.842
+100 turumuz var.
+O zaman bir repeat yazalım,
+
+00:03:01.883 --> 00:03:02.923
+100 kez,
+
+00:03:04.763 --> 00:03:05.163
+ve
+
+00:03:07.802 --> 00:03:11.883
+değişmesi gereken 5 değerinde
+bir yarıçapımız olduğunu söyleyelim.
+
+00:03:12.203 --> 00:03:15.082
+Peki bir şeyi nasıl değiştiririz?
+Bir sayıyı nasıl sürekli değiştiririz?
+
+00:03:15.242 --> 00:03:17.163
+Bir değişken kullanırız, bir kutu kullanırız.
+
+00:03:17.402 --> 00:03:21.002
+Buna sunRadius diyelim,
+
+00:03:22.923 --> 00:03:24.603
+bu yorumları da silebiliriz.
+
+00:03:24.763 --> 00:03:30.763
+Evet, sunRadius. sunRadius 5'ten
+başlıyor, bunu da onunla değiştirebiliriz.
+
+00:03:30.923 --> 00:03:33.242
+Kodunuzu yeniden çalıştırmak
+her zaman iyi bir fikirdir.
+
+00:03:33.323 --> 00:03:36.842
+Kontrol edin, kodunuzu çalıştırın.
+Aynı şeyi 100 kez çiziyor,
+
+00:03:37.242 --> 00:03:42.203
+her şey beklendiği gibi. Şimdi de
+her seferinde 0,2 büyütmek istiyoruz.
+
+00:03:43.082 --> 00:03:46.203
+Çizimimizi yapalım: gökyüzü,
+güneş, deniz ve kum.
+
+00:03:46.362 --> 00:03:48.842
+Sonra da tüm güncellemelerimizi sona koyalım.
+
+00:03:48.923 --> 00:03:51.562
+Artık sunRadius değişkenimiz var
+
+00:03:51.562 --> 00:03:54.763
+ve her seferinde onu 0,2 büyütmek istediğimizi söyleyeceğiz.
+
+00:03:54.923 --> 00:03:58.362
+Bu da güneşimizin aynı konumda
+büyümesi demek,
+
+00:03:59.962 --> 00:04:01.723
+işte böyle. Harika.
+
+00:04:03.082 --> 00:04:05.163
+Sıradaki şey güneşin konumu.
+
+00:04:05.242 --> 00:04:07.242
+50, 10'dan başlıyor,
+
+00:04:08.193 --> 00:04:13.233
+burada 50, 10'u görebilirsiniz. Her seferinde
+gökyüzünde 1 aşağı indirmemiz gerekiyor.
+
+00:04:13.233 --> 00:04:17.862
+Yani bu 50'nin değişmesine gerek yok,
+ama sunY
+
+00:04:19.632 --> 00:04:22.112
+10'dan başlayarak değişmeli.
+
+00:04:23.312 --> 00:04:26.112
+Bunun için let ile
+yeni bir kutu oluşturalım.
+
+00:04:26.992 --> 00:04:29.072
+Bunu da en alta ekleyelim.
+
+00:04:29.072 --> 00:04:34.153
+sunY, sunY artı... Her seferinde daha aşağıda,
+yani daha da aşağı iniyor.
+
+00:04:34.153 --> 00:04:35.153
+O yüzden 1 ekleyeceğiz.
+
+00:04:36.262 --> 00:04:40.983
+Şimdi bunu çalıştırırsak güneşin
+büyüdüğünü ve aşağı indiğini görmeliyiz.
+
+00:04:41.622 --> 00:04:42.742
+Bu oldukça güzel görünüyor.
+
+00:04:43.622 --> 00:04:45.783
+Sırada güneşin rengi var.
+
+00:04:45.862 --> 00:04:51.942
+Bunun için zaten bir değişkenimiz var:
+şu RGB olan değişken.
+
+00:04:51.942 --> 00:04:54.543
+Bu başlangıç değerini koydum ve
+
+00:04:54.543 --> 00:04:58.423
+her seferinde bu yeşili 1 azaltmayı öneriyorum.
+
+00:04:59.463 --> 00:04:59.862
+Peki,
+
+00:05:01.072 --> 00:05:02.713
+bunu nasıl yapacağız? En iyi yol ne?
+
+00:05:02.713 --> 00:05:08.673
+Aynı şeyi yapıp, sunColor eşittir
+sunColor eksi 1 diyemeyiz,
+
+00:05:08.992 --> 00:05:10.833
+çünkü sunColor bir sayı değil.
+
+00:05:11.872 --> 00:05:15.233
+Bunun sadece bu tek kısmını ayırmamız gerekiyor.
+
+00:05:15.233 --> 00:05:19.473
+Kırmızı, yeşil, mavi var.
+Ayırmak istediğimiz kısım bu yeşil.
+
+00:05:19.473 --> 00:05:23.872
+O zaman let sunGreen eşittir 237 diyelim.
+
+00:05:26.692 --> 00:05:29.492
+Sonra burada sunColor kullanmak yerine
+
+00:05:31.252 --> 00:05:35.413
+kırmızı, yeşil ve mavimizle
+RGB diyebiliriz,
+
+00:05:37.012 --> 00:05:39.333
+ama yeşili her seferinde değiştirebiliriz.
+
+00:05:42.132 --> 00:05:49.012
+sunGreen eşittir bu,
+eksi 1 diyebiliriz, her seferinde.
+
+00:05:50.293 --> 00:05:51.733
+Burada ne olduğunu bir düşünün.
+
+00:05:51.812 --> 00:05:53.733
+Bu döngüden her geçtiğimizde
+
+00:05:54.062 --> 00:05:57.714
+kırmızı hep aynı, mavi de hep aynı:
+255
+
+00:05:57.771 --> 00:06:01.343
+ve 0. Ama yeşili
+her seferinde değiştiriyoruz.
+
+00:06:03.343 --> 00:06:06.223
+Bu bana biraz dağınık geliyor.
+
+00:06:06.463 --> 00:06:10.382
+Aslında burada bir değişken
+olmasını daha çok seviyorum,
+
+00:06:12.062 --> 00:06:12.783
+yani
+
+00:06:15.583 --> 00:06:16.622
+sunColor,
+
+00:06:18.382 --> 00:06:19.103
+ve bir de
+
+00:06:20.122 --> 00:06:23.963
+bir... Pardon. Bir sunRed
+
+00:06:26.202 --> 00:06:31.642
+255, bir sunGreen ve
+0 değerinde bir sunBlue olsun.
+
+00:06:35.963 --> 00:06:38.442
+Ve kendimize gerçek bir sunColor verelim.
+
+00:06:38.442 --> 00:06:41.242
+Bunları biraz taşıyıp hepsini bir araya getirelim.
+
+00:06:44.043 --> 00:06:47.322
+Sonra her seferinde
+
+00:06:50.442 --> 00:06:56.442
+burada sunGreen'i güncelliyoruz. Ama ayrıca
+güneşi çizmeden hemen önce
+
+00:06:58.122 --> 00:06:59.163
+bunu bir daha güncelleyelim.
+
+00:07:01.083 --> 00:07:02.122
+Hadi yapalım.
+
+00:07:05.802 --> 00:07:07.802
+Bence bu biraz daha derli toplu.
+
+00:07:08.202 --> 00:07:11.002
+Ya da belki şöyle de yapabiliriz.
+
+00:07:11.002 --> 00:07:12.322
+Bilmiyorum. Siz ne düşünüyorsunuz?
+
+00:07:13.043 --> 00:07:18.083
+Size bir soru: sunColor'ın temiz
+bir değişken olmasını mı tercih edersiniz,
+
+00:07:18.322 --> 00:07:21.523
+yoksa kırmızı, yeşil, maviyi
+doğrudan buraya yazmayı mı?
+
+00:07:22.403 --> 00:07:26.083
+Bence ikisi de aynı.
+Bu örnekte bununla devam edelim.
+
+00:07:26.963 --> 00:07:31.523
+Yani sunRed, sunGreen ve sunBlue ile
+bir kırmızı, yeşil, mavimiz var.
+
+00:07:31.843 --> 00:07:35.682
+Kırmızı, yeşil ve mavi. Burada
+değiştirdiğimiz tek değer yeşil.
+
+00:07:35.843 --> 00:07:37.843
+Onu her seferinde küçültüyoruz
+
+00:07:39.103 --> 00:07:41.663
+ve gördüğünüz gibi
+giderek daha kırmızı oluyor.
+
+00:07:43.023 --> 00:07:45.583
+Sonra aynısını bu HSL için de yapmamız gerekiyor.
+
+00:07:46.543 --> 00:07:48.543
+Tamamen aynı mantık.
+
+00:07:50.783 --> 00:07:51.983
+Bunu buraya indirelim.
+
+00:07:55.023 --> 00:08:03.822
+sunHue 210. Bir de
+sunSaturation, 70.
+
+00:08:04.892 --> 00:08:07.052
+Bir... Sue değil, sun.
+
+00:08:07.452 --> 00:08:08.892
+Ve bir de sun...
+
+00:08:10.173 --> 00:08:11.853
+ne demiştim? Açıklık.
+
+00:08:12.492 --> 00:08:13.132
+Açıklık,
+
+00:08:14.973 --> 00:08:16.333
+güneşin açıklığı,
+
+00:08:17.452 --> 00:08:18.333
+60.
+
+00:08:21.612 --> 00:08:24.012
+Sonra bunları doğrudan buraya yazmak istiyoruz.
+
+00:08:24.173 --> 00:08:27.612
+HSL'nin içinde sunHue,
+
+00:08:29.132 --> 00:08:31.632
+sunSaturation ve sunLightness var.
+
+00:08:35.312 --> 00:08:39.393
+Bu yine çalışmalı. Ama gökyüzünün
+rengini değiştirmiyoruz.
+
+00:08:39.472 --> 00:08:41.633
+Gökyüzünün rengini değiştirmemiz gerekiyor.
+
+00:08:42.352 --> 00:08:45.472
+Burada pembe bir gün batımı öneriliyor.
+
+00:08:46.113 --> 00:08:48.673
+Peki pembe bir gün batımını ne verir?
+
+00:08:49.552 --> 00:08:50.033
+Muhtemelen
+
+00:08:51.633 --> 00:08:54.753
+renk tonunu değiştirmek,
+yani renk tonunu artırmak.
+
+00:08:55.712 --> 00:08:59.472
+Birkaç şey deneyelim.
+Diyelim ki skyHue
+
+00:08:59.832 --> 00:09:01.793
+skyHue artı 1 olacak.
+
+00:09:01.793 --> 00:09:03.513
+Yani bunu her seferinde artıracağız.
+
+00:09:05.273 --> 00:09:05.673
+Ve
+
+00:09:07.033 --> 00:09:09.913
+ne yapmışım? Sun demişim,
+sky olmalıydı.
+
+00:09:09.913 --> 00:09:11.273
+Fark ettiyseniz, aferin size.
+
+00:09:20.153 --> 00:09:23.753
+Tamam, işte oldu. Sonunda
+parlak bir pembe elde ediyoruz.
+
+00:09:27.043 --> 00:09:29.082
+Bu alıştırmayı ben böyle düşünüyorum.
+
+00:09:29.082 --> 00:09:32.322
+Üzerinde çalışırken kendime sorduğum
+soruları fark ettiniz mi?
+
+00:09:32.482 --> 00:09:37.202
+Bunlar gerçek sorulardı. Kendi kendime
+şunu düşünüyordum: Burada,
+
+00:09:38.003 --> 00:09:42.643
+bu satırı biraz daha okunabilir yapmak için
+
+00:09:42.722 --> 00:09:45.202
+şuna atanmış skyColor gibi
+bir değişken olmasını mı tercih ederim,
+
+00:09:45.442 --> 00:09:48.883
+yoksa bu satırın olduğu haliyle
+yeterince okunabilir olduğunu mu düşünürüm?
+
+00:09:50.003 --> 00:09:52.923
+Bu bir tercih meselesi. Herkesin
+biraz farklı bir görüşü olacaktır.
+
+00:09:52.923 --> 00:09:56.482
+Gerçek bir şirkette çalıştığınızda
+genelde belli alışkanlıklar olur,
+
+00:09:56.482 --> 00:09:59.562
+sizin ve ekibinizin bir şeyi
+yaparken izlediği olağan bir yol olur.
+
+00:10:00.283 --> 00:10:02.763
+Bazen uymanız gereken
+standartlar bile olur.
+
+00:10:04.842 --> 00:10:07.562
+Bu durumda, bu alıştırmalarda,
+seçim sizin.
+
+00:10:07.643 --> 00:10:10.922
+Programlamanın keyfinin büyük bir kısmı
+bu kararları vermek,
+
+00:10:10.922 --> 00:10:12.842
+neyi güzel bulduğunuzu seçmektir.
+
+00:10:13.643 --> 00:10:16.842
+Ama bence kavramsal olarak
+bu oldukça iyi duruyor.
+
+00:10:17.202 --> 00:10:22.602
+Tüm değerlerimiz hazır. Gökyüzünü çiziyoruz,
+güneşi, denizi ve kumu çiziyoruz.
+
+00:10:22.682 --> 00:10:24.602
+Sonra da her şeyi en sonda güncelliyoruz.
+
+00:10:25.283 --> 00:10:29.923
+İstersek bunları böyle
+daha yukarı da taşıyabiliriz,
+
+00:10:30.403 --> 00:10:32.163
+bu yine tamamen aynı şekilde çalışır.
+
+00:10:32.482 --> 00:10:36.643
+Değeri güncellemeden önce kullandığımız
+sürece, bu yine çalışır.
+
+00:10:38.003 --> 00:10:40.643
+Sizce bu daha mı güzel, daha mı az güzel?
+
+00:10:41.682 --> 00:10:44.643
+Ben kişisel olarak bu yaklaşımı tercih ediyorum.
+
+00:10:46.883 --> 00:10:50.243
+Böyle, tüm değişkenlerimizi
+güncellediğimiz yaklaşımı.
+
+00:10:54.602 --> 00:10:55.722
+Böylece bir sonraki tura hazırız.
+
+00:10:58.023 --> 00:11:02.842
+İsterseniz bu bloğun tamamını
+başa da taşıyabilirsiniz
+
+00:11:03.802 --> 00:11:07.562
+ve onun yerine bu başlangıç değerlerini
+
+00:11:09.003 --> 00:11:12.602
+aynı miktarda azaltabilirsiniz. Ama bu
+durumda bu bana daha dağınık geliyor.
+
+00:11:12.682 --> 00:11:16.403
+Bunlar güzel, yuvarlak sayılar. Çalışması için
+başlangıçta 4,8 gibi bir
+
+00:11:16.403 --> 00:11:19.003
+sunRadius kullanmanız gerekirdi.
+
+00:11:19.602 --> 00:11:21.082
+Bence burada bu o kadar güzel değil.
+
+00:11:21.082 --> 00:11:26.602
+Bence tüm bu güncellemeleri
+sonda yapmak daha anlaşılır.
+
+00:11:26.602 --> 00:11:30.802
+Yine de düşünülmesi gereken bir şey var:
+artık tüm kutuları
+
+00:11:31.442 --> 00:11:33.363
+gerektiğinden bir kez fazla güncelliyoruz.
+
+00:11:34.163 --> 00:11:37.923
+Bu kodu çalıştırıp oynatma çubuğunu
+en sona kadar sürüklersek,
+
+00:11:38.003 --> 00:11:41.442
+kutuyu güncellediğimiz bu son dört satırı
+kullanıyoruz,
+
+00:11:42.082 --> 00:11:45.523
+ama sonra programımız bitiyor.
+Değeri hiç kullanmıyoruz,
+
+00:11:45.682 --> 00:11:47.523
+kutuya koyduğumuz bu son değeri.
+
+00:11:47.523 --> 00:11:54.702
+skyHue'daki bu 310'u da,
+sunRadius'taki bu 25'i de hiç kullanmıyoruz,
+
+00:11:54.702 --> 00:11:57.822
+hiç kullanılmıyorlar.
+Yani bu daha az verimli.
+
+00:11:57.822 --> 00:12:00.582
+Bilgisayardan dört fazladan iş yapmasını istiyoruz,
+
+00:12:01.623 --> 00:12:02.743
+hem de gerçek bir sebep olmadan,
+
+00:12:04.102 --> 00:12:08.263
+hesaplama açısından hiçbir sebep olmadan. Ama
+dediğim gibi, okunabilirlik açısından bir sebep var,
+
+00:12:08.342 --> 00:12:13.702
+çünkü bana göre 5, 10 gibi güzel,
+yuvarlak sayılarla başlamak
+
+00:12:13.942 --> 00:12:16.182
+buradaki programı
+çok daha okunabilir yapıyor.
+
+00:12:17.413 --> 00:12:21.092
+Ayrıca dört değişkeni
+güncellemek, biliyorsunuz,
+
+00:12:21.332 --> 00:12:26.052
+bilgisayarınız bunu o kadar hızlı yapıyor ki
+ben o hızda tıklayamam bile.
+
+00:12:26.932 --> 00:12:28.653
+Yani bunu yapmanız pek önemli değil.
+
+00:12:28.653 --> 00:12:32.692
+Ama daha büyük ve daha karmaşık
+programlar düşündüğünüzde,
+
+00:12:33.173 --> 00:12:35.212
+bu tür şeylere dikkat etmek istersiniz.
+
+00:12:35.212 --> 00:12:39.413
+Bunu verimli yapıyor muyum?
+Bu güncellemeleri yapmam gerekiyor mu?
+
+00:12:39.413 --> 00:12:40.773
+Bunu yapmaktan kaçınabilmek için
+
+00:12:41.732 --> 00:12:42.373
+her şeyi
+
+00:12:43.352 --> 00:12:46.993
+yeniden düzenlemeli miyim? Bunlar,
+üzerinde düşünüp karar vermeniz gereken
+
+00:12:46.993 --> 00:12:47.592
+türden tercihler.
+
+00:12:48.873 --> 00:12:51.513
+Umarım bu faydalı bir oturum olmuştur.
+
+00:12:51.663 --> 00:12:55.633
+Gördüğünüz gibi, birincisi, bir şeyi
+yapmanın birçok farklı yolu var
+
+00:12:55.633 --> 00:12:57.913
+ve bu tercihleri keşfetmeniz
+işin değerinin büyük bir kısmı.
+
+00:12:58.153 --> 00:13:01.592
+İkincisi, ben de yazım hataları
+ve başka hatalar yapıyorum, sky yerine
+
+00:13:01.913 --> 00:13:06.072
+sun yazıyorum, bu tür hatalar yapıyorum
+ve bir anlığına kafam karışıyor.
+
+00:13:06.552 --> 00:13:08.952
+Siz de böyle bir hata yapabilirsiniz
+ve neyin yanlış olduğunu,
+
+00:13:09.373 --> 00:13:13.212
+neler olup bittiğini anlamak bir iki
+dakikanızı daha alabilir,
+
+00:13:13.212 --> 00:13:16.572
+kodunuzun neden çalışmadığını.
+Böyle olursa hiç sorun değil.
+
+00:13:17.133 --> 00:13:20.013
+Ben bu tür hataları o kadar çok yaptım ki,
+
+00:13:20.013 --> 00:13:24.893
+muhtemelen yüz binlerce kez, ne yanlış
+yaptığımı hemen anlıyorum.
+
+00:13:25.131 --> 00:13:28.972
+Ama yıllar önce yeni başladığımda,
+böyle bir hata yapsaydım,
+
+00:13:28.972 --> 00:13:31.293
+neyin yanlış olduğunu anlamam
+saatlerimi alabilirdi.
+
+00:13:31.613 --> 00:13:34.133
+O yüzden hata yaptığınızda cesaretiniz kırılmasın,
+
+00:13:34.133 --> 00:13:36.572
+bu hataları neden yaptığınızı
+
+00:13:36.572 --> 00:13:38.972
+anlamanız uzun sürerse de
+cesaretiniz kırılmasın.
+
+00:13:39.052 --> 00:13:40.653
+Bu, öğrenme sürecinin bir parçası.
+
+00:13:41.192 --> 00:13:43.913
+Öğrencilerime hep şunu söylerim:
+Her hata yaptığınızda
+
+00:13:43.913 --> 00:13:46.393
+kendinize bir iyilik yapıyorsunuz,
+çünkü öğreniyorsunuz.
+
+00:13:46.712 --> 00:13:50.153
+Bir şeyi ilk seferde doğru yaptığınızda
+hiç öğrenmiyorsunuz.
+
+00:13:50.153 --> 00:13:51.913
+Onu zaten biliyorsunuz.
+
+00:13:51.993 --> 00:13:53.592
+Sadece bildiğiniz bir şeyi uyguluyorsunuz.
+
+00:13:53.592 --> 00:13:55.873
+Aslında ondan bir şey öğrenmiyorsunuz.
+
+00:13:55.873 --> 00:13:59.113
+Yani hatalar harika.
+Hatalar adeta bir süper güç.
+
+00:13:59.113 --> 00:14:01.072
+Ne kadar çok hata yaparsanız,
+
+00:14:01.072 --> 00:14:03.832
+uzun vadede o kadar iyi
+bir geliştirici olursunuz.
+
+00:14:03.913 --> 00:14:06.952
+O yüzden hataları hep teşvik ederim,
+yeter ki
+
+00:14:07.602 --> 00:14:10.202
+düşünmediğiniz için olmasın,
+
+00:14:10.202 --> 00:14:13.442
+sadece yazım hataları ya da
+kavramsal hatalar olsun.
+
+00:14:13.442 --> 00:14:15.643
+Bunlar harika şeyler.
+Onlardan öğrenirsiniz.
+
+00:14:15.643 --> 00:14:18.482
+Ama sürekli hata yaptığınızı fark ederseniz,
+
+00:14:18.562 --> 00:14:20.163
+belki biraz yavaşlayın.
+
+00:14:20.163 --> 00:14:23.842
+Bazen yavaşlamak her şeyi
+biraz daha kolaylaştırır.
+
+00:14:24.082 --> 00:14:27.523
+İzlediğiniz için teşekkürler. Bir sonraki
+derinlemesine incelemede görüşmek üzere.
+
+00:14:27.523 --> 00:14:28.243
+Şimdilik hoşça kalın.
