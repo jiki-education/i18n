@@ -1,0 +1,517 @@
+WEBVTT
+
+NOTE en_md5 a50eb6189c3de32cc6a17ee23be96f14
+
+00:00:00.462 --> 00:00:05.581
+Hola. Aquest és el primer
+exercici del Jiki en què
+
+00:00:05.902 --> 00:00:08.381
+força gent es queda encallada de veritat.
+
+00:00:09.422 --> 00:00:12.862
+Suposo que hi ha altres exercicis en què la
+gent es pot encallar i aconsegueix sortir-se'n.
+
+00:00:13.102 --> 00:00:18.382
+Aquest és el primer exercici amb què,
+crec, la gent sovint té dificultats.
+
+00:00:19.181 --> 00:00:20.821
+Així que no sé si l'has resolt.
+
+00:00:20.821 --> 00:00:24.181
+Si ho has fet, enhorabona.
+Si no l'has resolt,
+
+00:00:24.181 --> 00:00:27.501
+si estàs a mig camí i has mirat les
+pistes i no aconsegueixes treure-te'n,
+
+00:00:27.501 --> 00:00:31.852
+i estàs mirant aquest vídeo per intentar
+esbrinar-ho, no passa absolutament res.
+
+00:00:31.852 --> 00:00:35.051
+T'explicaré pas a pas com
+resolc aquest exercici.
+
+00:00:35.292 --> 00:00:39.212
+Si arribem a un punt en què et
+desencallo alguna cosa i penses: «Val,
+
+00:00:39.212 --> 00:00:42.612
+ja ho entenc», pots anar a
+acabar-lo: pausa el vídeo i acaba'l.
+
+00:00:42.612 --> 00:00:45.292
+I sempre pots mirar la
+resta del vídeo després.
+
+00:00:46.082 --> 00:00:49.731
+Però anem a poc a poc. Doncs,
+què intentem fer aquí?
+
+00:00:49.731 --> 00:00:51.771
+estem intentant construir un ninot de neu.
+
+00:00:52.621 --> 00:00:55.771
+Ja hem construït un ninot de
+neu a l'exercici anterior,
+
+00:00:55.771 --> 00:01:00.731
+però aquesta vegada intentem construir un ninot
+de neu fent servir una única variable size
+
+00:01:01.031 --> 00:01:02.712
+de la qual depèn tota la resta.
+
+00:01:02.951 --> 00:01:06.552
+I després, a mesura que canviem la
+variable size, com pots veure aquí,
+
+00:01:06.552 --> 00:01:10.311
+el ninot de neu creix, de ser molt
+petit passa a ser molt més gran.
+
+00:01:11.912 --> 00:01:16.311
+Així que t'he donat aquest snowman
+X i t'he donat aquest size.
+
+00:01:16.632 --> 00:01:17.992
+Totes dues són
+
+00:01:19.191 --> 00:01:23.432
+variables bloquejades. Tot i que
+aquesta la pots canviar pel que vulguis.
+
+00:01:24.061 --> 00:01:25.831
+Però comencem amb quatre.
+
+00:01:27.841 --> 00:01:32.322
+Així que s'apliquen les regles de sempre. La cantonada
+superior esquerra del llenç és 0, 0, aquí dalt,
+
+00:01:32.481 --> 00:01:35.921
+i la cantonada inferior dreta
+del llenç és 100, aquí baix.
+
+00:01:37.441 --> 00:01:40.962
+Com t'he dit, tens aquestes
+variables snowman i size ja escrites.
+
+00:01:40.962 --> 00:01:45.602
+Però aquí hi ha la clau. Has de
+derivar totes les altres variables
+
+00:01:45.921 --> 00:01:49.721
+fent servir expressions aritmètiques.
+Aquesta frase és una mica complexa.
+
+00:01:49.721 --> 00:01:52.962
+Potser hi tornaré després i
+intentaré escriure aquesta frase
+
+00:01:53.281 --> 00:01:56.081
+d'una manera una mica més
+agradable. Però pensem què vol dir.
+
+00:01:57.201 --> 00:02:02.242
+Què vol dir derivar una
+variable, que sona tan complicat?
+
+00:02:02.402 --> 00:02:06.721
+Doncs només vol dir que agafarem
+la variable size d'aquí, quatre,
+
+00:02:06.962 --> 00:02:10.481
+i direm que totes les altres
+variables són coses com
+
+00:02:10.972 --> 00:02:15.201
+size per cinc, o size dividit per dos.
+
+00:02:15.521 --> 00:02:20.241
+És a dir, les altres variables fan
+servir size com a part del seu càlcul.
+
+00:02:20.562 --> 00:02:22.162
+Això és tot el que vol dir derivar
+
+00:02:23.162 --> 00:02:25.961
+i expressions aritmètiques.
+Sumar, restar, dividir,
+
+00:02:27.081 --> 00:02:30.201
+multiplicar. I llavors ens
+donen unes quantes regles.
+
+00:02:30.201 --> 00:02:33.801
+El radi del cap és size per dos.
+
+00:02:33.801 --> 00:02:38.122
+Val, doncs podem escriure que
+head radius és size per 2,
+
+00:02:38.681 --> 00:02:45.162
+que body radius és size per 3,
+i que base radius és size per 4.
+
+00:02:46.521 --> 00:02:51.592
+Val, aquí baix ja tenim les línies
+de codi que creen aquests cercles.
+
+00:02:52.111 --> 00:02:57.301
+Així que podem executar el codi i
+fer-hi un cop d'ull, i veiem que tenim,
+
+00:02:57.701 --> 00:02:59.141
+si tornem a l'inici,
+
+00:03:00.102 --> 00:03:01.981
+anem definint tots aquests cercles.
+
+00:03:01.981 --> 00:03:04.741
+De moment, tots són a
+aquestes posicions zero.
+
+00:03:04.901 --> 00:03:08.581
+Però si dibuixem el cap, veiem que
+apareix un cercle petit aquí dalt.
+
+00:03:08.741 --> 00:03:12.181
+I si dibuixem el cos,
+veiem un cercle més gran.
+
+00:03:12.181 --> 00:03:15.141
+I si dibuixem la base,
+veiem un cercle molt gran.
+
+00:03:15.622 --> 00:03:18.021
+Així que t'ho recordo una
+altra vegada: fes servir sempre
+
+00:03:18.102 --> 00:03:20.181
+aquesta barra d'aquí
+baix i avança pas a pas.
+
+00:03:20.181 --> 00:03:21.861
+Et fa la vida molt més fàcil.
+
+00:03:22.951 --> 00:03:24.312
+Val, doncs,
+
+00:03:25.671 --> 00:03:28.951
+la instrucció següent. Els
+cercles s'han de tocar.
+
+00:03:29.271 --> 00:03:34.151
+El cos queda just a sobre de la base,
+i el cap queda just a sobre del cos.
+
+00:03:34.872 --> 00:03:37.352
+Ho pots veure en aquestes imatges d'aquí.
+
+00:03:37.512 --> 00:03:43.111
+Tenim una base gran que toca un
+cos mitjà, que toca un cap mitjà.
+
+00:03:44.312 --> 00:03:50.401
+I l'última cosa és que la part de baix
+de la base queda a size de baix de tot.
+
+00:03:50.562 --> 00:03:55.361
+Val, així que hem de pensar
+una mica què estem fent aquí.
+
+00:03:55.762 --> 00:03:57.722
+Doncs diem que volem...
+
+00:03:57.722 --> 00:03:59.282
+I volem construir des de baix.
+
+00:03:59.282 --> 00:04:04.521
+Això és força important. La part de baix del
+cercle de la base queda a size de baix de tot.
+
+00:04:04.521 --> 00:04:06.401
+Així que hem de construir des de baix.
+
+00:04:07.282 --> 00:04:11.002
+Doncs la part de baix de la
+base. La part de baix de...
+
+00:04:11.002 --> 00:04:16.072
+Sí, la part de baix de la base serà
+100, que és la part de baix d'aquí,
+
+00:04:16.471 --> 00:04:19.672
+menys size. Així que
+podem començar amb això.
+
+00:04:20.151 --> 00:04:23.341
+Això ens donarà la part
+de baix d'aquest cercle.
+
+00:04:25.031 --> 00:04:28.911
+Però si te'n recordes, si baixes
+i mires l'especificació de
+
+00:04:28.911 --> 00:04:32.391
+com fer un cercle, hem
+d'especificar els centres.
+
+00:04:33.112 --> 00:04:36.151
+És a dir, especifiquem els dos
+centres, el radi i el color.
+
+00:04:36.471 --> 00:04:42.541
+Així que si aquí baix tenim 100 i després
+pugem una mica fins a size, llavors
+
+00:04:42.942 --> 00:04:47.262
+hem de posar el centre a una distància
+igual al radi, que és aquesta distància.
+
+00:04:47.742 --> 00:04:50.942
+Llavors podem dir menys
+el radi de la base.
+
+00:04:51.982 --> 00:04:55.101
+Pensa-ho. Tenim 100 a baix,
+
+00:04:55.502 --> 00:04:57.661
+menys size per pujar-ho una mica.
+
+00:04:57.822 --> 00:05:01.822
+I després volem posar el punt central, que
+és a una distància igual al radi de la base.
+
+00:05:02.302 --> 00:05:06.141
+Si fem això, ara veiem que
+tenim un cercle a baix.
+
+00:05:07.351 --> 00:05:11.031
+Val, ara hem de moure el
+cos perquè toqui aquest.
+
+00:05:11.752 --> 00:05:15.432
+S'aplica la mateixa lògica. Si dèiem, val,
+
+00:05:15.591 --> 00:05:19.992
+que la Y del cos és la Y de la base,
+el posaríem just a sobre de la base.
+
+00:05:20.791 --> 00:05:26.471
+Així que l'hem de pujar aquesta
+distància, el radi de la base, fins aquí.
+
+00:05:26.632 --> 00:05:28.151
+I després l'hem de tornar a pujar
+
+00:05:30.312 --> 00:05:33.831
+el seu propi radi. Així que
+podem dir, val, això és la...
+
+00:05:34.041 --> 00:05:38.762
+Aquesta és la Y de la base menys el
+radi de la base, menys el radi del cos.
+
+00:05:39.802 --> 00:05:42.841
+Això el posarà aquí. I ens en falta un.
+
+00:05:43.081 --> 00:05:46.841
+Si no ho has fet així, pausa
+el vídeo un moment i pensa
+
+00:05:48.471 --> 00:05:50.041
+exactament com ho faries.
+
+00:05:51.482 --> 00:05:55.562
+Així que tenim... Imagina que
+agafem el cap i el posem al mig.
+
+00:05:55.562 --> 00:05:58.482
+El cap comença a la Y del cos.
+
+00:05:58.482 --> 00:05:59.641
+Així que s'ha dibuixat aquí.
+
+00:06:00.992 --> 00:06:02.992
+L'hem de pujar aquesta distància.
+
+00:06:03.711 --> 00:06:08.351
+Això és el radi del cos. I després
+l'hem de pujar aquesta distància.
+
+00:06:08.591 --> 00:06:13.471
+I això és el radi del cap. És el
+mateix: radi del cos menys radi del cap.
+
+00:06:15.151 --> 00:06:17.471
+I això ens donarà un ninot de neu.
+
+00:06:17.552 --> 00:06:20.351
+Ara, la clau és aquesta variable size.
+
+00:06:20.591 --> 00:06:24.831
+Podem canviar ara la variable size
+a dos i el ninot de neu s'encongeix.
+
+00:06:24.831 --> 00:06:26.192
+I tot està relacionat.
+
+00:06:27.002 --> 00:06:29.882
+Si la canviem a 3, tot està relacionat.
+
+00:06:30.201 --> 00:06:33.721
+Si la canviem a 5, tot
+continua relacionat.
+
+00:06:34.922 --> 00:06:36.841
+Aquí no hi ha cap màgia.
+
+00:06:36.841 --> 00:06:39.802
+En realitat, res no està enganxat a res.
+
+00:06:40.122 --> 00:06:42.880
+Simplement agafem el valor size.
+
+00:06:42.880 --> 00:06:44.922
+Traiem el número d'aquesta capsa,
+
+00:06:45.721 --> 00:06:48.442
+hi fem una mica d'aritmètica,
+el multipliquem per dos,
+
+00:06:48.442 --> 00:06:51.002
+i després el posem en una capsa
+nova anomenada head radius.
+
+00:06:51.322 --> 00:06:54.281
+I després aquí baix, quan calculem head Y,
+
+00:06:54.362 --> 00:06:58.362
+doncs mirem dins d'aquella
+capsa i traiem el que hi havia.
+
+00:06:58.521 --> 00:07:01.081
+I ho pots veure clicant pas a pas:
+
+00:07:01.882 --> 00:07:04.601
+aquesta informació de la
+dreta és molt útil aquí.
+
+00:07:04.601 --> 00:07:07.161
+I et recomano de veritat que et
+prenguis el temps de llegir això.
+
+00:07:07.961 --> 00:07:12.122
+Mira, aquí et diem què ha passat
+en aquesta línia de codi.
+
+00:07:12.362 --> 00:07:14.762
+Hem creat una variable
+nova anomenada head Y.
+
+00:07:15.242 --> 00:07:18.762
+Mira, hi pots passar el ratolí per
+sobre, i et mostra exactament què
+
+00:07:19.002 --> 00:07:22.041
+estem ressaltant: head Y.
+I li donem el valor 15.
+
+00:07:23.502 --> 00:07:26.781
+Així que hem agafat body Y del
+prestatge i n'hem tret un 40.
+
+00:07:26.781 --> 00:07:29.262
+Hem agafat body radius i n'hem tret un 15.
+
+00:07:29.742 --> 00:07:33.701
+Llavors hem fet 40 menys 15. Pots
+veure que estem ressaltant tot això
+
+00:07:33.701 --> 00:07:35.101
+perquè recordis què és.
+
+00:07:35.341 --> 00:07:39.422
+I hem obtingut 25. Després hem agafat
+head radius i n'hem tret un 10.
+
+00:07:39.581 --> 00:07:42.221
+I llavors hem fet 25 menys
+10 i hem obtingut 15.
+
+00:07:42.622 --> 00:07:45.982
+Després hem creat aquesta
+capsa nova i hi hem posat 15.
+
+00:07:47.101 --> 00:07:47.502
+Així que
+
+00:07:49.552 --> 00:07:53.951
+aquestes explicacions et són molt
+útils, et diuen exactament què passa.
+
+00:07:53.951 --> 00:07:58.591
+Una de més senzilla com aquesta,
+on hem tret size, hem fet 5 per 4,
+
+00:07:58.752 --> 00:08:00.711
+hem obtingut 20. Després
+hem creat una capsa nova.
+
+00:08:00.711 --> 00:08:04.911
+L'hem posat a la capsa. Et recomano de
+veritat que, si t'encalles, vagis a poc a poc,
+
+00:08:05.151 --> 00:08:08.752
+avançant amb la barra, mirant
+aquesta informació de la dreta;
+
+00:08:08.752 --> 00:08:13.271
+aquí també pots veure que tenim la
+funció circle amb snowman X, que
+
+00:08:13.271 --> 00:08:16.721
+té 50 a dins, head Y que té
+15, head radius que té 10.
+
+00:08:16.721 --> 00:08:19.641
+Així que aquí pots veure en què
+es converteix això realment.
+
+00:08:19.641 --> 00:08:22.081
+Es converteix en 50, 15, 10, white.
+
+00:08:22.961 --> 00:08:26.322
+Així que et recomano de veritat anar
+a poc a poc i mirar-ho amb detall.
+
+00:08:26.891 --> 00:08:29.442
+Espero, però, que hagis
+aconseguit resoldre-ho.
+
+00:08:29.442 --> 00:08:32.481
+Enhorabona si ho has aconseguit.
+
+00:08:33.121 --> 00:08:37.442
+I sí, ara ja fas servir
+aritmètica, fas servir variables.
+
+00:08:37.601 --> 00:08:39.522
+Això està molt bé. Aquests
+són els blocs de construcció.
+
+00:08:39.522 --> 00:08:42.481
+Ara construirem algunes coses
+més molt xules amb tot això.
+
+00:08:42.802 --> 00:08:45.081
+Gràcies per mirar el vídeo. Espero
+que gaudeixis de la propera lliçó.
+
+00:08:45.081 --> 00:08:45.802
+Adéu per ara.

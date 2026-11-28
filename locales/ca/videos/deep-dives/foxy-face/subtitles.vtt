@@ -1,0 +1,923 @@
+WEBVTT
+
+NOTE en_md5 3444df0fcca33c086487f13e47f69d4f
+
+00:00:00.079 --> 00:00:02.899
+Ei, benvingut a la teva primera anàlisi a fons. Aquests
+
+00:00:02.939 --> 00:00:04.839
+vídeos són una mica diferents dels
+
+00:00:04.880 --> 00:00:08.159
+vídeos didàctics que has vist fins ara. Són més llargs
+
+00:00:08.179 --> 00:00:11.440
+i molt menys estructurats. Quan hagi
+
+00:00:11.460 --> 00:00:13.100
+acabat aquí, només seré jo amb
+
+00:00:13.140 --> 00:00:15.939
+un portàtil fent-la petar amb tu, explicant
+
+00:00:16.000 --> 00:00:18.680
+algunes idees més a fons, segurament anant-me'n
+
+00:00:18.720 --> 00:00:21.280
+per les branques i potser divagant una mica,
+
+00:00:21.319 --> 00:00:23.479
+però, tant de bo, ajudant-te a entendre millor
+
+00:00:23.559 --> 00:00:27.600
+com penso el codi. Mirar
+
+00:00:27.620 --> 00:00:30.419
+aquestes anàlisis a fons és totalment opcional. Pots
+
+00:00:30.500 --> 00:00:32.519
+avançar-les. Pots tirar enrere
+
+00:00:32.580 --> 00:00:34.479
+per tornar a veure alguna cosa. Pots ignorar-les
+
+00:00:34.540 --> 00:00:37.799
+del tot i no fer-hi ni clic.
+
+00:00:37.860 --> 00:00:40.059
+Però quan vam fer aquest curs com a
+
+00:00:40.119 --> 00:00:42.939
+bootcamp, la gent em va dir que aquests vídeos
+
+00:00:42.979 --> 00:00:45.200
+eren potser la part més valuosa de
+
+00:00:45.260 --> 00:00:47.099
+tot plegat, perquè els permetien veure
+
+00:00:47.139 --> 00:00:49.139
+com penso. I, com ja he dit
+
+00:00:49.200 --> 00:00:51.339
+abans, una gran part d'aquest curs és
+
+00:00:51.420 --> 00:00:53.759
+ensenyar-te a pensar com un desenvolupador, com
+
+00:00:53.799 --> 00:00:56.419
+un programador. Així que prova alguns
+
+00:00:56.459 --> 00:00:58.319
+d'aquests vídeos quan surtin, a veure què
+
+00:00:58.360 --> 00:01:00.740
+et semblen. De moment, assegura't que tens
+
+00:01:00.799 --> 00:01:02.720
+una bona tassa de te o de cafè. Posa't còmode
+
+00:01:02.779 --> 00:01:04.360
+i som-hi.
+
+00:01:05.004 --> 00:01:09.203
+D'acord, en aquestes anàlisis a fons, simplement
+resoldré l'exercici tal com ho faria
+
+00:01:09.203 --> 00:01:11.243
+si el veiés
+per primera vegada.
+
+00:01:11.563 --> 00:01:15.083
+He intentat expressament no mirar
+cap exercici durant força temps.
+
+00:01:15.524 --> 00:01:18.083
+I ara hi torno
+i el vaig resolent
+
+00:01:18.083 --> 00:01:19.884
+perquè no tingui cap solució memoritzada.
+
+00:01:20.364 --> 00:01:23.483
+L'abordo tal com espero
+que l'hagis abordat tu.
+
+00:01:23.964 --> 00:01:27.323
+Però el valor d'això no és veure
+quin codi escric, almenys
+
+00:01:27.483 --> 00:01:29.483
+no pas en aquests primers exercicis.
+
+00:01:29.564 --> 00:01:32.913
+Segurament escriuré exactament
+el mateix codi que vas escriure tu.
+
+00:01:33.633 --> 00:01:37.593
+L'objectiu principal, almenys al principi, és
+que pensis com abordar els
+
+00:01:37.593 --> 00:01:41.633
+problemes i que jo t'expliqui
+com els abordo.
+
+00:01:42.124 --> 00:01:46.633
+A mesura que avancem en el curs,
+hi haurà moltes maneres diferents
+
+00:01:46.633 --> 00:01:50.273
+d'abordar un problema. Unes amb avantatges,
+d'altres amb inconvenients.
+
+00:01:50.754 --> 00:01:54.993
+I passarem molt de temps
+explorant aquestes maneres de pensar.
+
+00:01:55.983 --> 00:01:59.673
+I aquesta lògica,
+aquesta resolució de problemes,
+
+00:01:59.993 --> 00:02:02.154
+la pots portar a totes les àrees de la programació.
+
+00:02:02.394 --> 00:02:05.114
+Quan parlem de construir coses,
+plataformes,
+
+00:02:05.114 --> 00:02:09.194
+amb totes aquestes peces que
+anem ajuntant, potser sense fer servir codi,
+
+00:02:09.353 --> 00:02:12.153
+potser fent que els models de llenguatge
+ens escriguin part del codi,
+
+00:02:12.633 --> 00:02:17.273
+la manera com pensem és l'única cosa constant
+que fa que tinguem bons resultats.
+
+00:02:18.234 --> 00:02:20.954
+Així que si no t'emportes res més
+de tot aquest curs,
+
+00:02:21.273 --> 00:02:24.873
+l'única cosa que espero
+que t'enduguis és com pensem.
+
+00:02:25.984 --> 00:02:27.424
+Doncs és un exercici senzill,
+
+00:02:28.543 --> 00:02:31.183
+potser no t'ha semblat senzill,
+però ho és bastant.
+
+00:02:31.344 --> 00:02:33.903
+Simplement intentem dibuixar la cara d'una guineu,
+
+00:02:34.344 --> 00:02:37.743
+i tenim una sèrie de triangles per dibuixar.
+
+00:02:38.704 --> 00:02:41.623
+Doncs miro les instruccions.
+
+00:02:41.623 --> 00:02:43.623
+M'expliquen com dibuixar un triangle.
+
+00:02:43.623 --> 00:02:49.103
+Això ho conec bé. I
+m'indiquen alguns dels colors.
+
+00:02:49.103 --> 00:02:53.224
+Tenim «white», «brown»,
+«orange» i «charcoal», que podem fer servir.
+
+00:02:53.224 --> 00:02:57.094
+I tenim dues galtes blanques, dues orelles marrons,
+dues meitats de la cara taronges,
+
+00:02:57.564 --> 00:03:00.603
+i després un nas,
+però fet de dos triangles.
+
+00:03:03.004 --> 00:03:07.724
+I aquí he deixat una nota que diu
+que pots, que pots passar el ratolí per sobre,
+
+00:03:07.804 --> 00:03:12.364
+que ho hauries de fer. I també
+que tots els números són divisibles per 5.
+
+00:03:12.444 --> 00:03:15.163
+I l'única cosa que fem servir aquí
+és aquest triangle.
+
+00:03:16.284 --> 00:03:18.923
+Doncs, si l'hagués de dibuixar, com ho faria?
+
+00:03:19.083 --> 00:03:22.203
+Doncs començaria dient:
+d'acord, necessito un triangle.
+
+00:03:22.444 --> 00:03:25.203
+Així que escric triangle,
+triangle per a la funció triangle.
+
+00:03:25.444 --> 00:03:29.763
+I necessito els tres punts. El
+primer punt, aquí dalt, veig 10, 6.
+
+00:03:29.844 --> 00:03:34.043
+Així que sé que és 10, 5. Una cosa
+que m'agrada bastant fer és posar
+
+00:03:34.043 --> 00:03:36.083
+aquests dos números junts, sense espai.
+
+00:03:36.643 --> 00:03:41.444
+Així veig més o menys que és un parell
+de coordenades, i després deixo un espai entre els
+
+00:03:41.923 --> 00:03:46.564
+parells de coordenades. Això queda
+força bé en aquesta funció triangle.
+
+00:03:46.803 --> 00:03:50.163
+Però també és útil, un cop més,
+pensar en com els espais en blanc,
+
+00:03:51.103 --> 00:03:55.444
+i per espais en blanc volem dir espais,
+salts de línia, tabulacions, totes aquestes coses,
+
+00:03:56.303 --> 00:04:01.184
+fan que el teu codi sigui més llegible
+per a tu i també per a altres persones.
+
+00:04:02.143 --> 00:04:05.184
+Doncs, un patró ben útil. Posa
+les dues coordenades juntes,
+
+00:04:05.184 --> 00:04:08.543
+i després deixa un petit espai
+per separar cada parell de coordenades.
+
+00:04:09.024 --> 00:04:11.583
+No importa quin d'aquests
+dos és la meva segona coordenada.
+
+00:04:11.583 --> 00:04:14.383
+Però baixaré aquí, al 10, 40.
+
+00:04:15.184 --> 00:04:19.103
+I finalment tinc aquest
+d'aquí, que és 50, 40.
+
+00:04:19.823 --> 00:04:21.784
+Una cosa que et vull ensenyar
+i que potser no has vist:
+
+00:04:21.784 --> 00:04:26.143
+hi ha una fletxa que apareix sobre els números
+i que pots fer servir per anar-los canviant.
+
+00:04:26.464 --> 00:04:29.603
+Això serà més útil
+més endavant, quan mirem
+
+00:04:29.603 --> 00:04:33.363
+alguns colors i coses així,
+pot ser una petita
+
+00:04:33.363 --> 00:04:34.043
+funcionalitat força útil.
+
+00:04:34.853 --> 00:04:37.643
+Doncs aquest és el triangle d'aquesta orella esquerra.
+
+00:04:38.524 --> 00:04:41.883
+Veiem que l'orella esquerra hauria de ser marró.
+
+00:04:42.603 --> 00:04:46.323
+Així que escrivim «brown». I això
+m'hauria de donar l'orella esquerra.
+
+00:04:46.323 --> 00:04:48.124
+I de seguida ho comprovaré.
+
+00:04:48.124 --> 00:04:53.483
+Faré clic a «Executa el codi». Veuré
+que aquest triangle sembla més o menys correcte.
+
+00:04:54.073 --> 00:04:57.833
+I si elimino aquesta línia,
+si la comento posant-hi dues barres,
+
+00:04:57.994 --> 00:05:01.233
+podem veure que desapareix.
+
+00:05:01.233 --> 00:05:05.513
+Així que veiem que ha funcionat bé.
+Ja ho tenim i podem continuar.
+
+00:05:05.913 --> 00:05:08.073
+Ara toca la part esquerra de la cara.
+
+00:05:09.194 --> 00:05:15.233
+La cara és una part taronja. Així que
+no tenim cap ombra al darrere.
+
+00:05:15.233 --> 00:05:17.113
+Només tenim el costat dret de la cara.
+
+00:05:17.673 --> 00:05:19.833
+Pensem-hi una mica.
+Necessitem triangle.
+
+00:05:20.904 --> 00:05:23.943
+I si miro la imatge,
+veig que és simètrica.
+
+00:05:24.503 --> 00:05:26.743
+Aquest concepte de simetria
+el farem servir en un
+
+00:05:26.743 --> 00:05:28.423
+parell dels exercicis que vindran.
+
+00:05:28.663 --> 00:05:31.743
+Però veiem que el punt
+central serà el mateix.
+
+00:05:31.743 --> 00:05:36.103
+Així que començarà a 50, 30 i
+acabarà aquí baix, al mateix punt,
+
+00:05:36.103 --> 00:05:38.503
+que em sembla que és 50, 95.
+
+00:05:39.303 --> 00:05:42.904
+I llavors hem d'esbrinar
+on anirà per aquí.
+
+00:05:43.704 --> 00:05:49.543
+I ho podem veure passant el ratolí per sobre d'aquest
+punt, que té una X de 90 i una Y de 40.
+
+00:05:50.483 --> 00:05:55.123
+Així que tindrà una X per decidir
+i després un 40
+
+00:05:55.603 --> 00:05:57.764
+i serà «orange».
+
+00:05:59.284 --> 00:06:02.003
+Però quin d'aquests interrogants,
+què hi posem aquí?
+
+00:06:02.243 --> 00:06:06.404
+Doncs miro i
+veig que aquest llenç fa 100,
+
+00:06:06.404 --> 00:06:07.923
+així que arriba fins aquí, a 100.
+
+00:06:08.724 --> 00:06:12.483
+I aquest és 90.
+Així que aquí hi ha un espai de 10.
+
+00:06:13.284 --> 00:06:16.884
+Així que sé que tindrem el mateix
+espai de 10 en aquest costat.
+
+00:06:17.603 --> 00:06:18.803
+I sé que
+
+00:06:19.923 --> 00:06:24.644
+0 més 10 és 10,
+així que sé que aquest serà 10.
+
+00:06:25.284 --> 00:06:30.084
+I puc fer clic a «Executa el codi». I tinc el que
+em sembla un bon triangle taronja.
+
+00:06:31.284 --> 00:06:35.923
+Ara dibuixo la galta esquerra.
+Aquí només copio i enganxo.
+
+00:06:36.313 --> 00:06:39.443
+Agafem aquest triangle.
+Esborrem totes aquestes coses.
+
+00:06:39.913 --> 00:06:43.363
+Tenim la funció triangle,
+per tant no l'he de tornar a escriure.
+
+00:06:44.253 --> 00:06:47.693
+I la galta esquerra serà blanca.
+
+00:06:48.253 --> 00:06:52.813
+Així que ho puc mesurar. Aquest és 10, 40,
+
+00:06:54.654 --> 00:06:57.293
+i aquest és 5, 60.
+
+00:06:58.094 --> 00:07:00.053
+M'he deixat una coma. Així que això és una altra cosa.
+
+00:07:00.053 --> 00:07:03.134
+Un petit consell. Mira que això no és vermell.
+
+00:07:03.214 --> 00:07:07.454
+Té un color que no toca.
+Això s'anomena ressaltat de sintaxi.
+
+00:07:07.613 --> 00:07:12.534
+És una expressió tècnica que fem servir. Però
+els colors que veus són colors de ressaltat
+
+00:07:12.534 --> 00:07:13.053
+de sintaxi.
+
+00:07:14.053 --> 00:07:18.693
+Així que, si això no és vermell, és un bon senyal
+que has fet alguna cosa malament.
+
+00:07:18.933 --> 00:07:21.654
+Així que, si mai veus alguna cosa
+que sembla del color que no toca,
+
+00:07:21.733 --> 00:07:24.373
+és un senyal que
+potser t'has deixat una coma.
+
+00:07:24.534 --> 00:07:27.894
+Potser. Si anem aquí i no hem
+tancat aquestes cometes, pots veure que
+
+00:07:28.293 --> 00:07:33.014
+aquest parèntesi es torna verd,
+cosa que indica que et falten cometes.
+
+00:07:33.413 --> 00:07:35.974
+Així que aquests colors acaben sent molt útils
+com a
+
+00:07:35.974 --> 00:07:39.574
+petites dreceres al cervell per
+adonar-te que alguna cosa no va bé.
+
+00:07:41.224 --> 00:07:43.144
+Doncs poso la coma. I això es torna taronja.
+
+00:07:43.224 --> 00:07:50.584
+Doncs 10, 40, 5, 60. I després tornem
+aquí baix, que és 50 i 95.
+
+00:07:51.943 --> 00:07:56.743
+I podem dir «white». I
+ho afegim i ja està bé.
+
+00:07:59.224 --> 00:08:04.264
+D'acord. L'orella dreta. Ara sí que som
+en territori de simetria, per dir-ho així.
+
+00:08:04.663 --> 00:08:09.224
+Doncs sabem que per a l'orella dreta... Diu:
+pots resoldre-ho sense passar el ratolí per sobre?
+
+00:08:10.584 --> 00:08:13.543
+Doncs sí,
+ho podem resoldre sense passar el ratolí per sobre.
+
+00:08:13.863 --> 00:08:18.464
+Si has passat el ratolí per sobre i ho has fet així,
+se t'acut com més ho podries fer?
+
+00:08:18.464 --> 00:08:21.943
+I se t'acut com fer servir
+el que acabem de fer aquí, quan
+
+00:08:22.743 --> 00:08:26.024
+he dibuixat la galta esquerra
+mirant la galta dreta?
+
+00:08:26.024 --> 00:08:28.024
+Com podríem fer servir el mateix principi?
+
+00:08:28.024 --> 00:08:30.904
+Si vols fer una pausa un moment
+i pensar-hi, endavant;
+
+00:08:31.863 --> 00:08:38.024
+si no, t'ho explico. Doncs,
+sabem que l'orella esquerra comença a 10.
+
+00:08:38.253 --> 00:08:40.014
+I veiem que tenim aquest 10, 5.
+
+00:08:40.894 --> 00:08:44.894
+I sabem que abans hem dit
+que 0 més 10 és 10.
+
+00:08:45.053 --> 00:08:47.613
+I hem vist que aquesta galta acaba a 90
+
+00:08:48.413 --> 00:08:52.014
+perquè té un espai de 10
+i aquest mateix espai és aquí.
+
+00:08:52.413 --> 00:08:54.894
+Així que sabem que aquesta orella hauria de ser 90
+
+00:08:56.094 --> 00:09:00.974
+i sabem que baixa recta
+fins a 90 i sabem que
+
+00:09:01.443 --> 00:09:03.693
+arriba fins al mig, a 50.
+
+00:09:04.413 --> 00:09:07.454
+Així que ho podem invertir i tenim el mateix
+
+00:09:08.654 --> 00:09:12.053
+triangle. Després podem fer
+la part dreta de la cara.
+
+00:09:12.053 --> 00:09:16.733
+I, un cop més, ho podem fer sense passar el ratolí,
+només canviant aquest 10 per 90 perquè és
+
+00:09:16.733 --> 00:09:22.454
+simètric. I després podem fer
+la galta dreta, i amb la galta dreta, un altre cop,
+
+00:09:22.454 --> 00:09:28.974
+volem simetria. Així que aquest passa a 90,
+aquest passa a 95 i aquest es queda a 50
+
+00:09:29.543 --> 00:09:31.063
+i això ens dona una galta blanca.
+
+00:09:31.543 --> 00:09:33.224
+I després necessitem el nas,
+
+00:09:34.344 --> 00:09:38.983
+el nas és «charcoal»,
+per tant podem fer triangle.
+
+00:09:39.944 --> 00:09:44.023
+I m'ho he espatllat una
+mica perquè l'he
+
+00:09:44.023 --> 00:09:45.983
+dibuixat a sobre. Però podem...
+
+00:09:45.983 --> 00:09:50.743
+Tens dues opcions. Una,
+podries comentar tot el teu codi.
+
+00:09:51.224 --> 00:09:54.103
+Podries posar uns quants comentaris
+
+00:09:55.554 --> 00:09:56.033
+així
+
+00:09:56.914 --> 00:09:59.074
+i això et permetrà
+
+00:10:00.834 --> 00:10:04.873
+comentar aquesta línia. Si mai et passa això,
+potser has fet un error d'escriptura.
+
+00:10:04.873 --> 00:10:08.794
+No cal que t'espantis. Fes clic a «Executa el codi»,
+comenta el que estigui malament,
+
+00:10:08.794 --> 00:10:10.594
+torna a fer clic a «Executa el codi» i tot torna.
+
+00:10:11.233 --> 00:10:15.633
+Aquí veiem que això hauria de ser 50 i 85.
+
+00:10:17.153 --> 00:10:20.753
+Doncs 50 i 85. I després
+ho podem tornar a posar.
+
+00:10:21.974 --> 00:10:22.273
+I...
+
+00:10:26.353 --> 00:10:29.474
+D'alguna manera he esborrat la
+paraula triangle del primer.
+
+00:10:30.113 --> 00:10:30.753
+D'acord,
+
+00:10:34.273 --> 00:10:36.674
+mesurem això. Doncs 40, 90.
+
+00:10:37.873 --> 00:10:42.194
+I sabem que és simètric. Així que de
+seguida sabem que el següent serà
+
+00:10:42.194 --> 00:10:48.214
+60, 90. I sabem que és «charcoal»,
+una paraula que em costa escriure.
+
+00:10:48.934 --> 00:10:53.893
+Tenim la part de dalt del nas i
+després tenim la part de baix del nas.
+
+00:10:54.214 --> 00:11:00.054
+I aquest és un triangle
+simètric respecte del de dalt.
+
+00:11:00.454 --> 00:11:04.533
+Així que tindrà exactament
+la mateixa forma que aquest,
+
+00:11:04.934 --> 00:11:07.493
+però, mentre que aquest va de 85 a 90,
+
+00:11:07.893 --> 00:11:13.074
+sabem que aquest ha d'anar
+de 90 a 95 perquè, un cop més,
+
+00:11:13.233 --> 00:11:16.834
+podem pensar en el 90 com la línia del mig,
+5 per sobre, 5 per sota.
+
+00:11:17.873 --> 00:11:20.594
+I ja tenim la part de baix del nas
+i tot passa.
+
+00:11:21.153 --> 00:11:24.393
+I després trauria aquests TODO.
+
+00:11:24.393 --> 00:11:26.834
+Intentem mantenir el codi net i endreçat.
+
+00:11:27.794 --> 00:11:31.794
+I, per cert, en alguns d'aquests vídeos
+veuràs aquesta cosa aquí baix.
+
+00:11:31.794 --> 00:11:34.753
+És només perquè ho estic
+executant en local al meu ordinador
+
+00:11:35.074 --> 00:11:36.513
+i no al web de Jiki.
+
+00:11:36.834 --> 00:11:39.474
+Tinc activades algunes eines extra de depuració.
+
+00:11:39.554 --> 00:11:42.824
+Així que si hi veus alguna cosa a baix,
+no en facis cas.
+
+00:11:44.584 --> 00:11:46.824
+D'acord, ja tenim un codi ben endreçat.
+
+00:11:46.824 --> 00:11:49.623
+Ens podem desfer d'això. «Pots resoldre això
+sense passar el ratolí per sobre?», també.
+
+00:11:50.103 --> 00:11:52.863
+I ara això documenta el nostre codi.
+
+00:11:52.863 --> 00:11:54.903
+Diu que això és l'orella esquerra.
+
+00:11:54.903 --> 00:11:57.544
+I, de fet, segurament canviaria aquests
+perquè només diguessin què són.
+
+00:11:58.103 --> 00:11:59.783
+Perquè no volem que siguin instruccions,
+
+00:11:59.783 --> 00:12:02.263
+només volem que descriguin
+el que fa el codi.
+
+00:12:02.344 --> 00:12:04.584
+Però pots triar el que
+et sembli més clar.
+
+00:12:05.064 --> 00:12:08.344
+Però tenir aquests comentaris que
+simplement expliquen què és cada cosa...
+
+00:12:08.344 --> 00:12:10.424
+De fet, potser això ho anomenaré simplement el nas.
+
+00:12:10.974 --> 00:12:14.013
+I tindria dues línies així,
+i això s'explica força sol
+
+00:12:15.133 --> 00:12:16.733
+i, ja posats, agruparia les coses.
+
+00:12:16.733 --> 00:12:20.013
+També podria dir: d'acord,
+vull les dues orelles juntes
+
+00:12:20.334 --> 00:12:25.054
+i posar simplement «les orelles», i vull
+les parts de la cara juntes.
+
+00:12:25.643 --> 00:12:29.454
+I vull les galtes juntes
+
+00:12:30.334 --> 00:12:30.974
+així.
+
+00:12:32.733 --> 00:12:36.054
+I tot continua funcionant,
+però ara està una mica més endreçat.
+
+00:12:36.054 --> 00:12:38.253
+També es veu una mica millor la simetria.
+
+00:12:38.893 --> 00:12:41.253
+Així que dedica sempre uns minuts,
+quan hagis resolt un
+
+00:12:41.253 --> 00:12:43.594
+exercici, a intentar
+sentir-te'n molt orgullós.
+
+00:12:43.594 --> 00:12:47.594
+Endreça'l,
+fes-lo ben polit, i veuràs com
+
+00:12:47.594 --> 00:12:49.834
+és més clar amb aquestes dues
+línies una al costat de l'altra.
+
+00:12:50.263 --> 00:12:53.513
+Fa que tot sembli una mica més net.
+
+00:12:53.513 --> 00:12:56.633
+Una última cosa abans
+d'acabar és aquí baix.
+
+00:12:56.633 --> 00:12:59.513
+Mouré això una mica
+perquè no faci nosa, aquí baix.
+
+00:13:00.233 --> 00:13:03.914
+Veus aquesta barra? Potser
+encara no l'has fet servir,
+
+00:13:03.993 --> 00:13:06.474
+però és el que anomenem el control de reproducció.
+
+00:13:07.113 --> 00:13:09.033
+Més endavant et serà molt útil.
+
+00:13:09.434 --> 00:13:13.633
+Però el que et permet fer és
+avançar d'una línia de codi a la següent.
+
+00:13:13.633 --> 00:13:13.993
+Com ara
+
+00:13:15.103 --> 00:13:19.344
+anar-les fent d'una en una. Així, en lloc de
+veure només la cara sencera, pots
+
+00:13:19.824 --> 00:13:22.304
+anar pas a pas i veure
+què fa cada línia de codi.
+
+00:13:22.704 --> 00:13:25.623
+I quan escriguis
+programes que tinguin 200
+
+00:13:25.623 --> 00:13:28.983
+línies de codi o que executin
+el mateix codi moltes i
+
+00:13:28.983 --> 00:13:31.424
+moltes vegades, i potser
+hi ha mil,
+
+00:13:31.824 --> 00:13:34.023
+deu mil coses passant
+al teu programa, i
+
+00:13:34.023 --> 00:13:35.743
+ja arribarem a aquests exercicis d'aquí a poc,
+
+00:13:36.224 --> 00:13:40.944
+això et serà
+super, superútil.
+
+00:13:41.883 --> 00:13:46.363
+També tenim aquí dalt aquest
+petit panell d'informació que es pot activar.
+
+00:13:46.444 --> 00:13:50.964
+I, un cop més, quan tinguem
+codi molt més complicat,
+
+00:13:50.964 --> 00:13:53.003
+això tindrà molts passos
+i anirà molt
+
+00:13:53.003 --> 00:13:54.844
+més a fons i serà
+molt més complicat.
+
+00:13:55.483 --> 00:13:58.523
+Però, de moment, pots veure
+que et diu que el Jiki
+
+00:13:58.603 --> 00:14:02.084
+ha fet servir la funció triangle
+amb aquests paràmetres diferents.
+
+00:14:02.084 --> 00:14:05.283
+També pots passar el ratolí per sobre d'aquestes coses,
+com ara per sobre de triangle.
+
+00:14:05.283 --> 00:14:09.164
+I veuràs que aquí ressalta la paraula
+i ressalta tota la línia.
+
+00:14:09.783 --> 00:14:13.064
+Un cop més, potser encara no sembla gaire útil,
+però més endavant,
+
+00:14:13.064 --> 00:14:15.824
+quan tinguis potser 20
+passos i vulguis
+
+00:14:15.824 --> 00:14:19.064
+esbrinar exactament què passa
+en cada punt d'aquesta línia de codi,
+
+00:14:19.224 --> 00:14:20.903
+això t'anirà molt bé.
+
+00:14:21.863 --> 00:14:24.424
+Doncs sí, i també pots fer
+clic a aquest botó de reproduir.
+
+00:14:24.533 --> 00:14:26.743
+Per reproduir-ho tot de cap a cap.
+
+00:14:27.294 --> 00:14:30.674
+I si tornes al teu joc de Space
+Invaders que has,
+
+00:14:30.674 --> 00:14:34.464
+que has fet abans,
+ara ho pots provar i pots tornar enrere,
+
+00:14:34.464 --> 00:14:37.383
+fer servir el control de reproducció,
+pots veure com abats els Space Invaders,
+
+00:14:37.623 --> 00:14:39.983
+o pots anar al laberint
+i fer servir el control de reproducció,
+
+00:14:39.983 --> 00:14:43.263
+moure't endavant i enrere per veure
+com el teu personatge resol el laberint.
+
+00:14:43.263 --> 00:14:46.023
+I després pots tornar a fer clic a reproduir
+per veure tota l'animació.
+
+00:14:46.263 --> 00:14:51.503
+Doncs és una eineta molt útil. Hi ha
+més complexitat amagada al darrere,
+
+00:14:51.503 --> 00:14:54.503
+que ja tornarem a veure
+en una altra anàlisi a fons.
+
+00:14:54.824 --> 00:14:56.664
+Però, de moment, espero que t'hagi estat útil.
+
+00:14:56.853 --> 00:15:02.103
+Tinc ganes d'arribar al moment de ficar-nos de debò
+en exercicis complexos més endavant.
+
+00:15:02.533 --> 00:15:06.373
+Però ara et deixo. Espero que
+gaudeixis dels propers exercicis de dibuix.
+
+00:15:06.773 --> 00:15:08.853
+Continua intentant pensar
+en com penses.
+
+00:15:09.174 --> 00:15:13.814
+Pren-te el teu temps, mantén el codi endreçat
+i, sí, ho faràs molt bé.
+
+00:15:13.893 --> 00:15:14.773
+Gràcies per veure el vídeo.

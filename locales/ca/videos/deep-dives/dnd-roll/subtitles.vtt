@@ -1,0 +1,389 @@
+WEBVTT
+
+NOTE en_md5 b8c6113399959b0244ec1b133a63a133
+
+00:00:01.028 --> 00:00:03.228
+Ara arribem als exercicis
+
+00:00:03.228 --> 00:00:05.908
+que de vegades poden
+frustrar una mica.
+
+00:00:06.628 --> 00:00:10.348
+Aquest i el següent són els primers
+amb què la gent es pot enfadar una mica
+
+00:00:10.348 --> 00:00:12.067
+perquè no acaba de saber resoldre'ls.
+
+00:00:12.067 --> 00:00:14.307
+Així que, si et sents frustrat,
+no et preocupis.
+
+00:00:14.307 --> 00:00:15.987
+A altra gent també li passa.
+
+00:00:16.147 --> 00:00:18.628
+Però també és una gran
+oportunitat per aprendre.
+
+00:00:18.867 --> 00:00:20.388
+Molt bé per mirar el vídeo.
+
+00:00:20.388 --> 00:00:23.748
+Resolem-lo junts. Si ja l'has
+resolt i t'ha semblat fàcil,
+
+00:00:24.237 --> 00:00:27.678
+enhorabona. Potser encara aprendràs
+alguna cosa si el mirem junts.
+
+00:00:28.557 --> 00:00:30.038
+Doncs, què intentem fer aquí?
+
+00:00:30.038 --> 00:00:33.838
+Doncs construïm aquest bot
+que pot jugar a Dungeons & Dragons.
+
+00:00:33.917 --> 00:00:37.277
+Si no hi has jugat mai, a Dungeons
+& Dragons tens un munt de daus.
+
+00:00:37.277 --> 00:00:39.037
+Llances els daus per a coses diferents.
+
+00:00:39.628 --> 00:00:42.637
+Et diuen si les coses
+passaran o no,
+
+00:00:42.957 --> 00:00:46.078
+quanta força tens per colpejar
+coses, tota mena de coses.
+
+00:00:46.557 --> 00:00:51.518
+En aquest exemple,
+llancem tres daus diferents.
+
+00:00:52.497 --> 00:00:55.938
+Tenim una funció roll
+amb què llancem un dau
+
+00:00:55.938 --> 00:00:58.658
+i triem el nombre
+de cares del dau.
+
+00:00:58.658 --> 00:00:59.618
+Així, podem dir
+
+00:01:00.578 --> 00:01:03.218
+ui, he copiat malament. Podem dir roll
+
+00:01:04.578 --> 00:01:04.977
+20
+
+00:01:06.018 --> 00:01:11.218
+per tenir un dau de 20 cares. I això
+ens donarà una puntuació d'atac.
+
+00:01:11.537 --> 00:01:14.337
+Aturem-nos un moment per assegurar-nos
+que entenem què passa aquí.
+
+00:01:14.418 --> 00:01:16.737
+Tenim una funció roll,
+
+00:01:17.628 --> 00:01:21.308
+i cridem aquesta funció roll
+amb el 20 com a entrada,
+
+00:01:21.308 --> 00:01:23.867
+que és el nombre de cares que té el dau.
+
+00:01:24.108 --> 00:01:25.947
+I aleshores aquesta funció retorna
+
+00:01:26.748 --> 00:01:30.628
+un nombre entre 1 i 20,
+que serà la nostra puntuació d'atac.
+
+00:01:30.628 --> 00:01:32.748
+Executem-ho i comprovem-ho.
+
+00:01:33.307 --> 00:01:35.548
+Hem creat una capsa nova anomenada attack.
+
+00:01:36.028 --> 00:01:38.867
+Hem llançat el dau i
+ens ha retornat un 1.
+
+00:01:38.867 --> 00:01:42.908
+Si tornem a executar el codi i ho comprovem,
+aquesta vegada retorna 16.
+
+00:01:43.668 --> 00:01:46.468
+Si executem el codi un altre cop,
+aquesta vegada retorna 4.
+
+00:01:46.548 --> 00:01:49.707
+Igual que un dau de veritat,
+cada vegada que el llancem
+
+00:01:49.707 --> 00:01:51.347
+ens retorna un nombre diferent.
+
+00:01:51.507 --> 00:01:54.308
+I sempre guardem aquest nombre,
+sigui quin sigui,
+
+00:01:54.947 --> 00:01:57.028
+el guardem en aquesta capsa attack.
+
+00:01:57.347 --> 00:01:58.947
+Ara fem el mateix amb els altres.
+
+00:01:59.028 --> 00:02:00.867
+Farem un dany base,
+
+00:02:01.427 --> 00:02:04.628
+i el traurem llançant
+un dau de 12 cares.
+
+00:02:04.787 --> 00:02:06.787
+I després tenim el dany extra,
+
+00:02:07.987 --> 00:02:08.707
+que és
+
+00:02:09.508 --> 00:02:11.427
+llançar un dau de 10 cares.
+
+00:02:12.457 --> 00:02:14.138
+Podem executar-ho i comprovar-ho.
+
+00:02:14.138 --> 00:02:17.018
+Aquesta vegada traiem un 8, traiem un...
+
+00:02:17.578 --> 00:02:21.497
+Perdó, traiem un 12,
+traiem un 7 i traiem un 8.
+
+00:02:22.298 --> 00:02:25.177
+Tots tres, un altre cop,
+seran diferents cada vegada.
+
+00:02:26.298 --> 00:02:29.497
+D'acord,
+ara hem de calcular el dany total.
+
+00:02:29.497 --> 00:02:34.298
+Diem damage, i el nostre
+dany és el dany base
+
+00:02:36.698 --> 00:02:40.948
+més el dany extra. Així que
+ara tenim el dany total.
+
+00:02:40.948 --> 00:02:43.068
+Bé, diguem-li... Bé,
+diguem-li dany total.
+
+00:02:43.467 --> 00:02:47.788
+Ja tenim l'atac, el dany base,
+el dany extra i el dany total.
+
+00:02:49.228 --> 00:02:50.707
+I després tenim aquesta instrucció:
+
+00:02:50.707 --> 00:02:56.068
+cada vegada que llancis un dau, has
+d'anunciar el nombre que t'ha sortit
+
+00:02:56.068 --> 00:02:57.627
+a la resta de jugadors.
+
+00:02:57.867 --> 00:03:01.147
+D'acord? Doncs anunciem l'atac,
+
+00:03:02.268 --> 00:03:04.668
+i anunciem també
+
+00:03:06.008 --> 00:03:09.048
+el dany base. I anunciem
+el dany extra.
+
+00:03:11.768 --> 00:03:15.168
+I després diu que si intentes atacar
+sense anunciar els nombres,
+
+00:03:15.168 --> 00:03:16.247
+potser pensaran que fas trampa.
+
+00:03:16.568 --> 00:03:18.807
+Segur que tu no faries mai trampa,
+però és raonable.
+
+00:03:19.927 --> 00:03:22.888
+D'acord. I l'últim pas
+és atacar el follet
+
+00:03:23.207 --> 00:03:25.407
+amb el teu atac i el dany total.
+
+00:03:25.407 --> 00:03:26.168
+Doncs strike
+
+00:03:27.288 --> 00:03:28.568
+amb l'atac
+
+00:03:30.008 --> 00:03:31.927
+i el dany total.
+
+00:03:34.247 --> 00:03:36.728
+I podem executar el codi. I ja està.
+
+00:03:36.728 --> 00:03:39.848
+Funciona. Traiem un 3, un 11 i un 3.
+
+00:03:40.647 --> 00:03:42.048
+Aquests són els nombres d'aquesta vegada.
+
+00:03:42.048 --> 00:03:46.967
+Si cliquem aquí i ho repassem,
+traiem un 3, traiem un 11
+
+00:03:48.328 --> 00:03:51.288
+i traiem un 3. I si ho tornem a executar,
+
+00:03:52.328 --> 00:03:54.247
+traurem un 3,
+un 5 i un 2.
+
+00:03:54.247 --> 00:03:58.008
+I ho podem anar seguint pas a pas
+i veure que roll 20 ha retornat un 3.
+
+00:03:58.377 --> 00:03:59.818
+El guardem a la capsa attack.
+
+00:03:59.978 --> 00:04:02.777
+Agafem la capsa attack,
+en traiem el 3 i l'anunciem.
+
+00:04:03.018 --> 00:04:06.217
+roll 12 ha retornat un 5. El mateix.
+
+00:04:07.337 --> 00:04:09.258
+roll 10, aquesta vegada, ha retornat un 2.
+
+00:04:09.337 --> 00:04:12.978
+Anunciem aquest 2,
+els sumem,
+
+00:04:12.978 --> 00:04:16.377
+agafem el dany base i en traiem el 5,
+el dany extra i en traiem el 2.
+
+00:04:16.377 --> 00:04:19.577
+Els sumem, obtenim el 7,
+i ja tenim el dany total.
+
+00:04:19.737 --> 00:04:24.338
+I finalment ataquem agafant
+l'atac amb el 3 i el dany
+
+00:04:24.338 --> 00:04:27.218
+total amb el 7. Després, la funció strike.
+
+00:04:28.338 --> 00:04:30.817
+Ara que has vist
+com es resol,
+
+00:04:31.458 --> 00:04:36.098
+espero que vegis que no és gaire complicat.
+Com sempre, el meu gran consell és que
+
+00:04:36.098 --> 00:04:38.017
+ho descomponguis en aquests passos diferents.
+
+00:04:38.418 --> 00:04:41.858
+I sobretot ara que tenim
+funcions que retornen coses.
+
+00:04:42.017 --> 00:04:44.377
+És important començar
+per la banda dreta
+
+00:04:44.377 --> 00:04:47.028
+del signe d'igual i
+pensar-hi de debò com
+
+00:04:47.908 --> 00:04:50.817
+una sola cosa al teu cap.
+Això ho anomenem una expressió.
+
+00:04:51.387 --> 00:04:54.348
+És una cosa que passa a la
+banda dreta d'un signe d'igual.
+
+00:04:55.148 --> 00:05:00.108
+I és important processar primer
+aquesta expressió al teu cap.
+
+00:05:00.348 --> 00:05:03.627
+Això també és una expressió, això més això.
+
+00:05:04.267 --> 00:05:06.267
+Aquest tros d'aquí s'executa.
+
+00:05:06.267 --> 00:05:10.348
+El Jiki l'executa sumant els valors
+de les dues capses.
+
+00:05:10.827 --> 00:05:14.427
+I un cop ho ha fet,
+va i ho posa en aquesta capsa.
+
+00:05:14.827 --> 00:05:17.307
+Així que pensa en això
+com un pas, i
+
+00:05:17.307 --> 00:05:19.708
+després posar-ho a la capsa com el següent.
+
+00:05:20.408 --> 00:05:24.168
+Aquest és el pas següent. Descompon-ho
+així i, amb sort, les coses
+
+00:05:24.487 --> 00:05:29.367
+seran força fàcils. Bona sort. El proper
+exercici que faràs és un altre
+
+00:05:29.367 --> 00:05:31.127
+amb què la gent es pot frustrar molt.
+
+00:05:31.447 --> 00:05:33.687
+Intenta posar en pràctica
+el que has après aquí.
+
+00:05:33.687 --> 00:05:35.608
+Ves una mica més a poc a poc. I
+
+00:05:36.408 --> 00:05:38.887
+no tinguis por de mirar el
+vídeo si el necessites.
+
+00:05:38.968 --> 00:05:41.687
+Però intenta-ho,
+intenta resoldre'l tu mateix.
+
+00:05:41.687 --> 00:05:44.807
+I no oblidis que també pots fer servir
+la pestanya Pregunta al Jiki.
+
+00:05:45.048 --> 00:05:48.247
+És una manera molt útil d'explorar
+i de provar idees.
+
+00:05:48.408 --> 00:05:51.208
+Així que fes-ne la prova, de debò.
+Gràcies per mirar el vídeo.

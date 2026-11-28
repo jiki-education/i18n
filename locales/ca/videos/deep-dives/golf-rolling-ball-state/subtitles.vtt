@@ -1,0 +1,711 @@
+WEBVTT
+
+NOTE en_md5 67040db223d368bf578fa7dd62694f9e
+
+00:00:00.338 --> 00:00:02.137
+Hola! Benvingut a una altra anàlisi a fons.
+
+00:00:02.137 --> 00:00:06.097
+Aquest és un altre exercici que, de vegades,
+a la gent li sembla una mica complicat i
+
+00:00:06.097 --> 00:00:09.858
+s'hi encalla. Així que, si el mires
+a la interfície i t'has encallat,
+
+00:00:10.817 --> 00:00:15.298
+les normes són les de sempre. Mira'l fins
+que et desencallis, i llavors posa'l en pausa i
+
+00:00:15.298 --> 00:00:18.897
+continua. Si te n'has sortit
+tot sol, felicitats.
+
+00:00:18.897 --> 00:00:22.338
+Hi ha un parell de coses interessants
+aquí, així que fem-hi una ullada ràpida.
+
+00:00:22.978 --> 00:00:29.318
+Primer de tot, vull parlar d'aquesta
+idea de moure les coses pas a pas.
+
+00:00:29.478 --> 00:00:33.398
+La gràcia d'aquest exercici
+és que anem movent les coses
+
+00:00:34.037 --> 00:00:36.758
+repetidament, un pas cada vegada, així.
+
+00:00:37.718 --> 00:00:40.838
+Fem-ne uns quants més. Sis, set, vuit.
+
+00:00:41.237 --> 00:00:42.917
+Anem fins al 60.
+
+00:00:45.478 --> 00:00:48.277
+I, fent això,
+creem una mena d'animació
+
+00:00:48.677 --> 00:00:51.567
+en què la bola roda, i roda suaument.
+
+00:00:54.368 --> 00:00:58.408
+En un exercici anterior, tenies aquesta
+funció roll, que ho feia per tu.
+
+00:00:58.408 --> 00:01:02.207
+Simplement deies «roll fins al 70»,
+i la bola sortia rodolant.
+
+00:01:03.408 --> 00:01:06.447
+Però, per sota, quan
+cridaves aquesta funció roll,
+
+00:01:06.528 --> 00:01:09.248
+el que passa de debò és
+exactament el que veus aquí.
+
+00:01:10.367 --> 00:01:12.927
+No pot rodar així com així
+d'un punt a un altre.
+
+00:01:13.087 --> 00:01:16.207
+Hem de mostrar cada píxel
+a la pantalla.
+
+00:01:16.858 --> 00:01:21.257
+Així que, en qualsevol joc, sempre que veus
+alguna cosa que es mou de A a B,
+
+00:01:21.578 --> 00:01:26.778
+es tracta sempre d'una animació en què cada pas,
+cada píxel, està definit.
+
+00:01:26.858 --> 00:01:28.418
+Ara bé, evidentment podem escriure codi,
+
+00:01:28.418 --> 00:01:32.537
+com el que escrivim en aquest
+exercici, per fer animacions suaus
+
+00:01:32.858 --> 00:01:35.257
+sense haver d'escriure-les
+pas a pas a pas.
+
+00:01:35.737 --> 00:01:38.537
+Però, quan animem, sempre
+passem per aquest procés
+
+00:01:38.537 --> 00:01:42.908
+de dir que hem de moure alguna cosa
+per tots aquests passos diferents,
+
+00:01:43.308 --> 00:01:45.947
+i ho podem moure
+a velocitats diferents.
+
+00:01:45.947 --> 00:01:48.587
+Per exemple, pots moure mig
+píxel cada vegada i després
+
+00:01:48.587 --> 00:01:53.147
+accelerar a 2 píxels cada vegada perquè alguna cosa
+sembli que va més de pressa o més a poc a poc.
+
+00:01:53.308 --> 00:01:56.587
+Pots afegir més pauses entre
+cada línia de codi que s'executa.
+
+00:01:56.987 --> 00:02:00.587
+Però quan penses en animar
+en qualsevol format digital,
+
+00:02:00.828 --> 00:02:03.628
+això és el que, de fet,
+estàs fent.
+
+00:02:04.507 --> 00:02:06.188
+Doncs pensem què és el que
+volem fer aquí.
+
+00:02:06.188 --> 00:02:08.948
+Bé, bàsicament volem
+fer el mateix que a
+
+00:02:08.948 --> 00:02:11.467
+l'exercici anterior, el de
+plantar les flors,
+
+00:02:11.548 --> 00:02:13.788
+on anàvem avançant una posició.
+
+00:02:14.168 --> 00:02:17.687
+Però, en comptes d'avançar la posició
+10 cada vegada, com l'última vegada,
+
+00:02:17.687 --> 00:02:19.768
+només l'avançarem
+d'un en un.
+
+00:02:20.967 --> 00:02:24.768
+Volem repetir aquest
+move_to unes quantes vegades.
+
+00:02:24.768 --> 00:02:27.687
+Diguem que, per començar, el volem
+repetir 50 vegades,
+
+00:02:27.927 --> 00:02:30.967
+i volem exactament el
+mateix patró de l'última vegada,
+
+00:02:30.967 --> 00:02:35.687
+que és una variable de posició. Diguem
+que, de moment, la fem començar a 30.
+
+00:02:36.168 --> 00:02:40.568
+I volem moure'ns a la posició,
+i després volem moure.
+
+00:02:40.967 --> 00:02:44.647
+Volem canviar la posició perquè
+augmenti d'un en un cada vegada,
+
+00:02:46.568 --> 00:02:50.967
+així. Doncs definim una variable,
+ens hi movem, actualitzem la posició,
+
+00:02:51.048 --> 00:02:52.328
+i obtindrem aquesta animació,
+
+00:02:53.448 --> 00:02:57.527
+com podem veure. Funciona. Comença per
+aquí, s'anima cap aquí, etcètera.
+
+00:02:58.328 --> 00:03:04.087
+Si estem fent un joc de golf, que és el cas,
+el nostre objectiu és fer-la rodar des del tee, aquí,
+
+00:03:04.087 --> 00:03:06.008
+on comença la bola, fins al forat.
+
+00:03:06.407 --> 00:03:08.008
+Sabem on volem començar.
+
+00:03:08.168 --> 00:03:14.087
+La posició inicial és el 28. I
+sabem que ens hem de moure un cert nombre de
+
+00:03:14.487 --> 00:03:17.848
+passos fins al forat. Quant ens hem de moure, doncs?
+
+00:03:18.798 --> 00:03:25.048
+Diguem que tenim la distància,
+i la distància és el nostre objectiu, que és 88,
+
+00:03:25.527 --> 00:03:28.407
+menys el punt de partida, que és 28.
+
+00:03:29.048 --> 00:03:31.608
+I podem fer servir aquesta distància aquí.
+
+00:03:32.328 --> 00:03:35.687
+Podem dir que tenim una capsa,
+que és la posició.
+
+00:03:36.487 --> 00:03:38.967
+Tenim una altra capsa, que és la distància,
+
+00:03:40.717 --> 00:03:42.888
+i val 88, que és el nostre objectiu,
+
+00:03:44.008 --> 00:03:47.448
+menys la posició en què
+comencem, menys aquest 28.
+
+00:03:47.927 --> 00:03:50.807
+I després repetirem
+tantes vegades com digui la distància.
+
+00:03:52.647 --> 00:03:55.527
+Ara bé, encara no funcionarà.
+De seguida veurem per què.
+
+00:03:55.687 --> 00:03:58.407
+Però primer assegurem-nos
+que entenem què passa aquí.
+
+00:03:58.407 --> 00:04:03.048
+Comencem pel principi. Tenim
+una capsa de posició amb un 28 a dins.
+
+00:04:03.818 --> 00:04:09.177
+Després tenim una capsa de distància. Comencem
+agafant la posició i traient-ne el 28.
+
+00:04:09.258 --> 00:04:13.698
+Amb aquesta capsa que acabem de fer, fem 88 menys 28.
+
+00:04:13.698 --> 00:04:19.257
+Ens dona 60. Creem una capsa nova anomenada
+distància, i hi posem el 60.
+
+00:04:19.257 --> 00:04:23.577
+Així que ara tenim dues capses als prestatges,
+la capsa de posició i la de distància.
+
+00:04:24.218 --> 00:04:27.817
+I llavors, quan cridem repeat,
+en comptes de posar-hi un número,
+
+00:04:28.057 --> 00:04:32.557
+hi posem la capsa. I què
+passa quan el Jiki veu això?
+
+00:04:32.557 --> 00:04:35.278
+Doncs va a buscar la capsa
+de distància al prestatge.
+
+00:04:35.437 --> 00:04:39.877
+En treu el 60 i sap que
+ha de repetir aquest bucle 60 vegades.
+
+00:04:39.877 --> 00:04:42.637
+Comprova el número actual.
+
+00:04:42.718 --> 00:04:44.637
+El pas actual, l'u, és menor que 60?
+
+00:04:44.637 --> 00:04:48.557
+Sí que ho és. I llavors salta
+aquí dins i s'hi posa a treballar.
+
+00:04:49.598 --> 00:04:51.677
+Ho podríem fer a mà.
+
+00:04:51.838 --> 00:04:55.757
+Podríem dir simplement repeat 60 vegades,
+que potser és el que has fet tu.
+
+00:04:57.038 --> 00:05:02.798
+O ho podem fer d'aquesta manera una mica
+més avançada, en què fem servir paraules,
+
+00:05:02.798 --> 00:05:06.158
+fem servir capses perquè el codi
+sigui una mica més explícit.
+
+00:05:06.158 --> 00:05:10.398
+Així, en comptes de tenir aquest 60 màgic
+que potser no sabem d'on surt
+
+00:05:11.117 --> 00:05:13.598
+ni on va, tenim una variable.
+
+00:05:13.598 --> 00:05:17.997
+I, si volem, podem definir una altra
+variable, una variable per a la bandera,
+
+00:05:18.077 --> 00:05:22.557
+que val 88. I ara la distància
+és la bandera menys la posició.
+
+00:05:24.327 --> 00:05:26.447
+Hi ha una cosa més abans d'anar més lluny,
+
+00:05:26.447 --> 00:05:32.048
+que vull assegurar-me que entens de debò,
+i és que cada vegada, si...
+
+00:05:32.048 --> 00:05:36.088
+Recordes que abans et vaig parlar d'aquest
+punt taronja? Cada vegada que arribem a aquesta línia
+
+00:05:36.487 --> 00:05:42.088
+i el Jiki agafa la distància del prestatge,
+el seu valor continua sent 60.
+
+00:05:43.767 --> 00:05:49.848
+Això és molt important. Que el Jiki
+hagi actualitzat aquí la capsa de posició
+
+00:05:50.867 --> 00:05:53.187
+no actualitza la capsa de distància.
+
+00:05:54.067 --> 00:05:56.387
+Aquestes dues coses no estan relacionades per art de màgia.
+
+00:05:56.788 --> 00:05:59.108
+No és com a les matemàtiques,
+on tens, per exemple,
+
+00:05:59.827 --> 00:06:02.307
+equacions en què les coses estan
+relacionades entre si.
+
+00:06:03.108 --> 00:06:07.427
+La posició és una capsa independent.
+Ara hi ha un 39 a dins.
+
+00:06:07.507 --> 00:06:10.507
+Si avancem uns quants passos,
+hi haurà un 40.
+
+00:06:10.507 --> 00:06:13.507
+Si n'avancem uns quants més,
+hi haurà un 41.
+
+00:06:13.588 --> 00:06:16.548
+Així que el que hi ha dins
+d'aquesta capsa de posició va canviant.
+
+00:06:17.197 --> 00:06:21.117
+Però la capsa de distància... Enlloc
+d'aquest codi no diem
+
+00:06:21.437 --> 00:06:23.278
+que canviï el que hi ha a la capsa de distància.
+
+00:06:23.437 --> 00:06:26.158
+Només creem la capsa de distància aquí,
+
+00:06:27.437 --> 00:06:33.197
+en aquesta línia. Hi posem aquest valor,
+hi posem un 60, i prou.
+
+00:06:33.197 --> 00:06:35.038
+No canviem mai el que hi ha en aquesta capsa.
+
+00:06:35.437 --> 00:06:39.197
+Així que, tot i que mirem dins la capsa moltes
+vegades, cada vegada que repetim
+
+00:06:39.197 --> 00:06:40.237
+mirem dins la capsa,
+
+00:06:41.117 --> 00:06:43.197
+però no canviem mai el que hi ha a dins.
+
+00:06:44.257 --> 00:06:46.737
+Assegura't que això
+ho tens molt clar.
+
+00:06:49.377 --> 00:06:52.577
+D'acord. Tot això té sentit.
+Per què no funciona el codi?
+
+00:06:53.617 --> 00:06:57.098
+Per què no funciona el codi? Aquí és on
+crec que alguna gent s'encalla.
+
+00:06:57.098 --> 00:07:00.697
+Escriuen una cosa així i no
+saben per què no funciona.
+
+00:07:00.697 --> 00:07:05.377
+Acaben canviant, per exemple,
+aquest 27 per intentar que funcioni.
+
+00:07:05.458 --> 00:07:07.737
+I potser llavors ja no
+funciona res més d'això.
+
+00:07:07.737 --> 00:07:10.627
+Han de fer això altre,
+i tot s'embolica molt.
+
+00:07:10.627 --> 00:07:12.987
+En comptes de fer això,
+aturem-nos, anem a poc a poc,
+
+00:07:12.987 --> 00:07:15.427
+i pensem per què
+aquest codi no funciona.
+
+00:07:15.827 --> 00:07:18.108
+Llegeix el codi. Per què no funciona?
+
+00:07:18.108 --> 00:07:21.028
+Per què la bola no arriba
+allà on ha d'arribar?
+
+00:07:21.028 --> 00:07:24.387
+Arriba al 87, no arriba al 88.
+
+00:07:26.468 --> 00:07:28.788
+Hi ha dues raons. Podria estar malament.
+
+00:07:29.668 --> 00:07:33.108
+Podríem estar repetint-ho
+un nombre de vegades equivocat.
+
+00:07:33.747 --> 00:07:36.548
+Si repetíssim distància més u,
+
+00:07:37.528 --> 00:07:38.968
+ara sí que arribaríem on anem.
+
+00:07:39.127 --> 00:07:41.608
+Però això fa una sensació
+molt estranya. Per què ho fem?
+
+00:07:43.848 --> 00:07:45.367
+Però l'altra cosa podria ser
+
+00:07:46.487 --> 00:07:48.408
+on ens estàvem movent, de fet?
+
+00:07:48.728 --> 00:07:50.327
+Anem cap aquí,
+
+00:07:51.208 --> 00:07:55.848
+executem el codi. I anem fins
+al principi de tot i venim aquí.
+
+00:07:56.327 --> 00:08:01.767
+La primera vegada que cridem move_to,
+la cridem amb la posició a 28.
+
+00:08:02.497 --> 00:08:04.497
+Aquí veus que la posició és 28.
+
+00:08:04.817 --> 00:08:09.778
+Fem move_to(28),
+però la bola ja era al 28.
+
+00:08:10.257 --> 00:08:13.377
+La bola és al 28. La movem al 28.
+
+00:08:13.697 --> 00:08:17.778
+I després, si anem fins
+al final i mirem on ens movem,
+
+00:08:18.257 --> 00:08:20.658
+l'últim lloc on ens movem és el 87.
+
+00:08:21.137 --> 00:08:27.517
+Així que ens movem al 28, on comença,
+ho fem 60 vegades i acabem
+
+00:08:28.288 --> 00:08:29.247
+a una casella de l'objectiu.
+
+00:08:30.208 --> 00:08:32.048
+Recordes que, a l'últim
+vídeo d'anàlisi a fons,
+
+00:08:32.368 --> 00:08:37.967
+et vaig dir que de vegades importa molt
+si fem les coses en aquest ordre
+
+00:08:38.368 --> 00:08:42.207
+o en l'ordre contrari? Aquest és
+un exemple d'un cas així,
+
+00:08:43.008 --> 00:08:47.168
+aquí. Ja tenim una posició definida,
+perquè és on comença la bola.
+
+00:08:47.327 --> 00:08:52.288
+Si, per exemple, esborrem tot aquest codi,
+la bola comença al tee, al 28.
+
+00:08:52.288 --> 00:08:53.168
+Ja hi és.
+
+00:08:54.077 --> 00:08:58.638
+Així que, quan movem la bola, la primera
+vegada que la movem, la volem moure al 29.
+
+00:08:59.278 --> 00:09:02.158
+Podríem posar-hi 29 i després fer això,
+
+00:09:03.197 --> 00:09:07.758
+però llavors aquesta distància es trencarà,
+i el nostre codi ja no serà cert, perquè
+
+00:09:08.317 --> 00:09:12.878
+la bola no és al 29 aquí. La
+bola és al 28, a sobre del tee.
+
+00:09:14.317 --> 00:09:16.518
+Així que el que hem de fer és, dins d'aquest bucle,
+
+00:09:16.518 --> 00:09:20.857
+actualitzar primer la posició abans
+d'animar la bola i moure-la allà.
+
+00:09:21.327 --> 00:09:22.288
+I si fem això,
+
+00:09:24.927 --> 00:09:26.528
+amb aquest número tornat al valor correcte,
+
+00:09:26.607 --> 00:09:28.927
+si fem això, el codi funciona.
+
+00:09:30.447 --> 00:09:33.567
+Fem un resum ràpid
+del que tenim aquí.
+
+00:09:34.128 --> 00:09:38.368
+Hem definit unes quantes variables. La posició
+inicial de la bola, on és al tee,
+
+00:09:38.528 --> 00:09:41.447
+el 28,
+el número que ens donen. Tenim la bandera.
+
+00:09:41.447 --> 00:09:44.528
+On és la bandera? És al número 88,
+el número que ens donen.
+
+00:09:45.408 --> 00:09:47.648
+Quant hem d'avançar? Doncs
+hem d'anar
+
+00:09:48.697 --> 00:09:51.658
+de la posició a la bandera,
+és a dir, la bandera menys la posició,
+
+00:09:52.538 --> 00:09:56.298
+i així podem recórrer aquesta distància,
+aquestes vegades. Cada vegada,
+
+00:09:56.298 --> 00:09:58.538
+hem de moure la bola
+un pas endavant i després
+
+00:09:58.538 --> 00:10:01.097
+animar el moviment fins a aquest pas.
+
+00:10:03.258 --> 00:10:07.418
+Aquest exercici pot semblar força
+senzill a molta gent.
+
+00:10:07.977 --> 00:10:11.697
+Però, de fet, hi ha molts punts
+en què et pots encallar força,
+
+00:10:11.697 --> 00:10:13.658
+i crec que molts punts en què
+simplement pots
+
+00:10:13.658 --> 00:10:16.097
+començar a tocar números a cegues
+en comptes de
+
+00:10:16.097 --> 00:10:18.618
+anar a poc a poc i pensar
+de debò què està passant.
+
+00:10:19.378 --> 00:10:22.018
+Així que espero que en aquest vídeo
+vegis el valor de
+
+00:10:22.018 --> 00:10:24.937
+definir aquestes variables
+i com podem treure
+
+00:10:24.937 --> 00:10:28.738
+els números d'aquestes instruccions i
+posar-los aquí com a dades més sòlides,
+
+00:10:28.977 --> 00:10:34.177
+dades sòlides. A programació tenim
+una expressió: nombres màgics.
+
+00:10:34.177 --> 00:10:37.498
+I un nombre màgic és quan
+hi ha un número enmig del codi, sense més.
+
+00:10:37.498 --> 00:10:39.298
+Per exemple, si aquí tenim aquest 60
+
+00:10:40.258 --> 00:10:44.018
+i no sabem què és aquest número,
+però d'alguna manera fa que el codi funcioni.
+
+00:10:44.837 --> 00:10:48.197
+Sempre que tens això, és molt
+perillós. En diem una mala olor,
+
+00:10:48.197 --> 00:10:51.477
+una mala olor del codi. És molt
+perillós quan tens això
+
+00:10:52.197 --> 00:10:55.557
+perquè no saps ben bé
+què fa aquest 60.
+
+00:10:55.557 --> 00:10:57.317
+Algú altre que vingui a llegir el codi
+
+00:10:57.317 --> 00:10:59.638
+tampoc no sabrà ben bé
+què fa aquest 60.
+
+00:11:00.597 --> 00:11:03.638
+És molt millor fer servir
+variables que tinguin significat.
+
+00:11:04.038 --> 00:11:04.437
+Així que,
+
+00:11:05.238 --> 00:11:08.878
+fins i tot podríem anomenar això la
+posició de la bola, i això la posició
+
+00:11:08.878 --> 00:11:09.238
+de la bandera.
+
+00:11:10.607 --> 00:11:13.168
+Llavors això es converteix en la posició
+de la bola i la posició de la bandera.
+
+00:11:13.567 --> 00:11:15.648
+I volem moure la posició de la bola.
+
+00:11:16.927 --> 00:11:19.648
+De sobte queda molt clar
+què són aquests números.
+
+00:11:20.048 --> 00:11:21.847
+Queda molt clar que
+estem movent la bola.
+
+00:11:21.847 --> 00:11:24.368
+El codi comença a parlar per si mateix.
+
+00:11:25.457 --> 00:11:29.807
+Així que, si t'has encallat amb aquest exercici,
+espero que ara vegis per què.
+
+00:11:29.807 --> 00:11:33.168
+Hi ha moltes, moltes
+maneres d'encallar-se.
+
+00:11:33.168 --> 00:11:36.447
+Molts detalls delicats. I si
+te n'has sortit a la primera,
+
+00:11:36.447 --> 00:11:38.437
+molt ben fet. Felicitats.
+
+00:11:38.477 --> 00:11:42.018
+Espero que això també t'hagi fet
+pensar una mica i qüestionar
+
+00:11:42.717 --> 00:11:46.677
+algunes de les idees que potser
+tenies en començar aquest exercici.
+
+00:11:47.357 --> 00:11:50.638
+Molta sort amb el següent
+i tinc ganes de
+
+00:11:50.638 --> 00:11:51.998
+veure't al pròxim vídeo d'anàlisi a fons.
+
+00:11:51.998 --> 00:11:52.837
+Gràcies per mirar el vídeo.

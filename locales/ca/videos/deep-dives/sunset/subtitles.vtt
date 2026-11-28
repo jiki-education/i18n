@@ -1,0 +1,832 @@
+WEBVTT
+
+NOTE en_md5 c95948fc498cb52bc6b6826a80b63e6a
+
+00:00:00.493 --> 00:00:02.092
+Benvingut a una altra anàlisi a fons.
+
+00:00:03.532 --> 00:00:05.012
+Espero que t'hagi agradat aquest exercici.
+
+00:00:05.012 --> 00:00:07.852
+Si l'has acabat,
+crec que és força satisfactori veure
+
+00:00:07.932 --> 00:00:13.692
+com passen aquestes animacions. N'hi ha un de molt bo,
+un dels reptes premium,
+
+00:00:13.692 --> 00:00:17.053
+que és el de la flor que creix, que és
+
+00:00:18.253 --> 00:00:20.972
+un dels més difícils d'aquest tipus,
+
+00:00:22.092 --> 00:00:24.533
+i no recordo si
+el desbloqueges aquí o no,
+
+00:00:24.533 --> 00:00:27.213
+però te'l recomano molt.
+És un exercici molt divertit, però
+
+00:00:28.132 --> 00:00:30.213
+també pot ser una mica frustrant
+encertar-lo.
+
+00:00:30.853 --> 00:00:36.853
+Així que aquests exercicis són bons exemples
+de casos en què, si llegeixes les instruccions i
+
+00:00:36.853 --> 00:00:37.813
+les vas seguint pas a pas,
+
+00:00:39.253 --> 00:00:42.893
+crec que no són gaire difícils, però si
+no llegeixes les coses amb atenció,
+
+00:00:42.893 --> 00:00:44.292
+es poden complicar força.
+
+00:00:45.173 --> 00:00:48.292
+Així que és una bona cosa
+per tenir en compte.
+
+00:00:48.292 --> 00:00:52.173
+En programació en general, de debò
+que vols tenir clar què faràs
+
+00:00:52.173 --> 00:00:54.453
+abans de posar-t'hi i començar a fer-ho.
+
+00:00:55.033 --> 00:00:59.033
+Com més clar ho tinguis, com més
+ho entenguis abans d'escriure codi,
+
+00:00:59.273 --> 00:01:01.353
+més fàcil serà tot.
+
+00:01:02.073 --> 00:01:05.753
+Així que dedica un minut a llegir
+les instruccions, encara que sigui un cop,
+
+00:01:05.753 --> 00:01:08.393
+i assegura't que les tens clares
+abans de començar a escriure.
+
+00:01:08.873 --> 00:01:12.712
+Aquí dibuixem aquesta mena
+d'escena animada que veus.
+
+00:01:14.313 --> 00:01:15.912
+I tenim unes quantes coses diferents.
+
+00:01:15.912 --> 00:01:19.433
+Dibuixem el cel,
+el sol, el mar i la sorra.
+
+00:01:19.972 --> 00:01:22.313
+I per a cadascuna
+canviem alguna cosa.
+
+00:01:22.393 --> 00:01:26.722
+Fem créixer el sol. Comença a 5
+i creix una mica cada vegada.
+
+00:01:27.683 --> 00:01:34.643
+I movem el sol: baixa,
+i també en canviem el color.
+
+00:01:35.043 --> 00:01:37.602
+Fem servir colors vermell, verd i blau.
+
+00:01:38.082 --> 00:01:42.563
+I... Això ho hem recomanat, o ho he
+recomanat jo, com a punt de partida.
+
+00:01:42.802 --> 00:01:47.602
+Et recomano reduir el verd,
+el segon de vermell, verd, blau, RGB,
+
+00:01:48.102 --> 00:01:51.933
+per aconseguir un efecte bonic. I després
+també el color del cel.
+
+00:01:51.933 --> 00:01:54.013
+Et suggereixo fer servir HSL,
+
+00:01:55.373 --> 00:01:59.572
+to, saturació... I me'n recordo?
+És lluminància o lluminositat?
+
+00:01:59.572 --> 00:02:01.373
+Crec que és lluminositat, sí, lluminositat.
+
+00:02:02.412 --> 00:02:04.412
+HSL per animar el cel.
+
+00:02:05.783 --> 00:02:10.413
+I ho farem augmentant
+el to al llarg de l'animació.
+
+00:02:12.413 --> 00:02:17.212
+I com s'anima una cosa? Doncs bàsicament
+fem el mateix moltes
+
+00:02:17.212 --> 00:02:20.973
+vegades. Comencem amb el cel,
+el sol, el mar i la sorra.
+
+00:02:21.443 --> 00:02:26.402
+I després anirem dibuixant
+escenes noves a sobre.
+
+00:02:26.483 --> 00:02:28.763
+I cada vegada les retocarem
+una mica.
+
+00:02:28.763 --> 00:02:30.323
+Per començar, executem-ho.
+
+00:02:30.402 --> 00:02:33.122
+Sempre és bona idea. Recorda
+executar el codi inicial.
+
+00:02:33.592 --> 00:02:36.483
+Amagaré aquesta animació,
+perquè molesta una mica.
+
+00:02:37.853 --> 00:02:40.562
+Veus que comença
+així.
+
+00:02:41.573 --> 00:02:43.522
+Que està bé.
+
+00:02:44.323 --> 00:02:47.923
+Veiem que hem de començar
+amb un radi de cinc aquí
+
+00:02:48.282 --> 00:02:51.002
+i que ha de créixer
+0,2 a cada iteració.
+
+00:02:51.923 --> 00:02:53.802
+Comencem fent això,
+
+00:02:54.763 --> 00:03:00.842
+i tenim 100 iteracions.
+Fem un repeat
+
+00:03:01.883 --> 00:03:02.923
+100 vegades
+
+00:03:04.763 --> 00:03:05.163
+i
+
+00:03:07.802 --> 00:03:11.883
+direm que tenim un
+radi de cinc que ha de canviar.
+
+00:03:12.203 --> 00:03:15.082
+I com es canvia una cosa?
+Com fem que un nombre vagi evolucionant?
+
+00:03:15.242 --> 00:03:17.163
+Fem servir una variable, una capsa.
+
+00:03:17.402 --> 00:03:21.002
+Diguem-li radi del sol,
+
+00:03:22.923 --> 00:03:24.603
+i podem treure aquests comentaris.
+
+00:03:24.763 --> 00:03:30.763
+El radi del sol. El radi del sol
+comença a 5 i podem substituir això.
+
+00:03:30.923 --> 00:03:33.242
+Sempre és bona idea
+tornar a executar el codi.
+
+00:03:33.323 --> 00:03:36.842
+Comprova-ho, executa el codi.
+Dibuixa el mateix 100 vegades,
+
+00:03:37.242 --> 00:03:42.203
+tot com esperàvem. I volem
+que creixi 0,2 cada vegada.
+
+00:03:43.082 --> 00:03:46.203
+Fem el dibuix. El cel,
+el sol, el mar i la sorra.
+
+00:03:46.362 --> 00:03:48.842
+I posem totes les
+actualitzacions al final.
+
+00:03:48.923 --> 00:03:51.562
+Ara tenim aquest radi
+del sol i direm
+
+00:03:51.562 --> 00:03:54.763
+que cada vegada volem que creixi 0,2.
+
+00:03:54.923 --> 00:03:58.362
+Això hauria de fer que el
+sol creixi a la mateixa posició,
+
+00:03:59.962 --> 00:04:01.723
+així. Preciós.
+
+00:04:03.082 --> 00:04:05.163
+El següent és la posició del sol.
+
+00:04:05.242 --> 00:04:07.242
+Comença a 50, 10,
+
+00:04:08.193 --> 00:04:13.233
+ho veus aquí, 50, 10. I l'hem de fer
+baixar en el cel una unitat cada vegada,
+
+00:04:13.233 --> 00:04:17.862
+així que aquest 50 no ha
+de canviar, però la y del sol
+
+00:04:19.632 --> 00:04:22.112
+sí, començant per 10.
+
+00:04:23.312 --> 00:04:26.112
+Assegurem-nos de crear
+una capsa nova per a això amb let.
+
+00:04:26.992 --> 00:04:29.072
+I afegim això al final.
+
+00:04:29.072 --> 00:04:34.153
+La y del sol és la y del sol més... Cada cop
+és més avall, així que va baixant.
+
+00:04:34.153 --> 00:04:35.153
+Així que hi sumarem u.
+
+00:04:36.262 --> 00:04:40.983
+Ara, si ho executem, hauríem de veure que el
+sol es fa més gran i baixa,
+
+00:04:41.622 --> 00:04:42.742
+i queda força bé.
+
+00:04:43.622 --> 00:04:45.783
+Ara ve el color del sol.
+
+00:04:45.862 --> 00:04:51.942
+Ja tenim una variable per a això,
+que és aquesta, la de l'RGB.
+
+00:04:51.942 --> 00:04:54.543
+Hi he posat aquest valor inicial i
+
+00:04:54.543 --> 00:04:58.423
+et suggereixo que cada vegada
+reduïm aquest verd en u.
+
+00:04:59.463 --> 00:04:59.862
+Així que
+
+00:05:01.072 --> 00:05:02.713
+com ho fem? Quina és la millor manera?
+
+00:05:02.713 --> 00:05:08.673
+No podem fer el mateix d'abans, com ara
+color del sol igual a color del sol menys u,
+
+00:05:08.992 --> 00:05:10.833
+perquè el color del sol no és un nombre.
+
+00:05:11.872 --> 00:05:15.233
+Hem d'aïllar només
+aquesta part.
+
+00:05:15.233 --> 00:05:19.473
+Tenim vermell, verd, blau. I aquest
+verd és la part que volem aïllar.
+
+00:05:19.473 --> 00:05:23.872
+Diguem let verd del sol igual a 237.
+
+00:05:26.692 --> 00:05:29.492
+I llavors el que podem fer és,
+en lloc de fer servir el color del sol
+
+00:05:31.252 --> 00:05:35.413
+aquí, posar RGB amb el nostre vermell,
+verd i blau,
+
+00:05:37.012 --> 00:05:39.333
+però canviant el verd cada vegada.
+
+00:05:42.132 --> 00:05:49.012
+Diem que el verd del sol és
+això menys u cada vegada.
+
+00:05:50.293 --> 00:05:51.733
+Pensa què passa aquí.
+
+00:05:51.812 --> 00:05:53.733
+Cada vegada que passem per aquest bucle,
+
+00:05:54.062 --> 00:05:57.714
+tenim sempre el mateix vermell i
+sempre el mateix blau, 255
+
+00:05:57.771 --> 00:06:01.343
+i 0,
+però canviem el verd cada vegada.
+
+00:06:03.343 --> 00:06:06.223
+Ara bé, això em sembla una mica desordenat.
+
+00:06:06.463 --> 00:06:10.382
+De fet, crec que m'agrada més
+tenir aquí una variable,
+
+00:06:12.062 --> 00:06:12.783
+que sigui
+
+00:06:15.583 --> 00:06:16.622
+el color del sol,
+
+00:06:18.382 --> 00:06:19.103
+i tenir
+
+00:06:20.122 --> 00:06:23.963
+un... Ui, perdó. Tenir un vermell del sol
+
+00:06:26.202 --> 00:06:31.642
+a 255, un verd del sol i un blau del sol a zero.
+
+00:06:35.963 --> 00:06:38.442
+I tenir un color del sol de veritat.
+
+00:06:38.442 --> 00:06:41.242
+Movem això una mica
+i ho ajuntem tot.
+
+00:06:44.043 --> 00:06:47.322
+I després cada vegada actualitzem el
+
+00:06:50.442 --> 00:06:56.442
+verd del sol aquí. Però també,
+just abans de dibuixar el sol aquí,
+
+00:06:58.122 --> 00:06:59.163
+tornem a actualitzar això.
+
+00:07:01.083 --> 00:07:02.122
+Fem-ho.
+
+00:07:05.802 --> 00:07:07.802
+Crec que així queda una mica més polit.
+
+00:07:08.202 --> 00:07:11.002
+També podríem fer simplement això.
+
+00:07:11.002 --> 00:07:12.322
+No... no ho sé. Tu què en penses?
+
+00:07:13.043 --> 00:07:18.083
+Una pregunta per a tu. Prefereixes tenir
+el color del sol en una variable neta,
+
+00:07:18.322 --> 00:07:21.523
+o prefereixes posar el vermell,
+verd i blau directament aquí?
+
+00:07:22.403 --> 00:07:26.083
+Crec que són equivalents.
+Quedem-nos amb això per a aquest exemple.
+
+00:07:26.963 --> 00:07:31.523
+Tenim un vermell, verd, blau amb el
+vermell, el verd i el blau del sol.
+
+00:07:31.843 --> 00:07:35.682
+Vermell, verd i blau. I l'únic
+que canviem aquí és el verd.
+
+00:07:35.843 --> 00:07:37.843
+El fem més petit cada vegada,
+
+00:07:39.103 --> 00:07:41.663
+i veus que es va
+tornant cada cop més vermell.
+
+00:07:43.023 --> 00:07:45.583
+Després hem de fer el mateix amb aquest HSL.
+
+00:07:46.543 --> 00:07:48.543
+Exactament el mateix principi.
+
+00:07:50.783 --> 00:07:51.983
+Portem-ho aquí baix.
+
+00:07:55.023 --> 00:08:03.822
+Tenim el to del sol a 210. Tenim la
+saturació del sol a 70.
+
+00:08:04.892 --> 00:08:07.052
+Tenim la... Perdó, la del sol.
+
+00:08:07.452 --> 00:08:08.892
+I tenim la del sol,
+
+00:08:10.173 --> 00:08:11.853
+què havia dit que era? Lluminositat.
+
+00:08:12.492 --> 00:08:13.132
+Lluminositat,
+
+00:08:14.973 --> 00:08:16.333
+la lluminositat del sol
+
+00:08:17.452 --> 00:08:18.333
+a 60.
+
+00:08:21.612 --> 00:08:24.012
+I ara volem posar-los directament aquí.
+
+00:08:24.173 --> 00:08:27.612
+Tenim HSL amb el to del sol,
+
+00:08:29.132 --> 00:08:31.632
+la saturació del sol i la lluminositat del sol.
+
+00:08:35.312 --> 00:08:39.393
+Això hauria de continuar funcionant. Però
+no canviem el color del cel.
+
+00:08:39.472 --> 00:08:41.633
+Així que hem de canviar el color del cel.
+
+00:08:42.352 --> 00:08:45.472
+Aquí es recomana una posta de sol rosa.
+
+00:08:46.113 --> 00:08:48.673
+I què ens dona una posta de sol rosa?
+
+00:08:49.552 --> 00:08:50.033
+Probablement
+
+00:08:51.633 --> 00:08:54.753
+canviar el to, o sigui, augmentar el to.
+
+00:08:55.712 --> 00:08:59.472
+Provem unes quantes coses.
+Diguem que el to del cel
+
+00:08:59.832 --> 00:09:01.793
+serà el to del cel més u.
+
+00:09:01.793 --> 00:09:03.513
+L'anirem augmentant cada vegada.
+
+00:09:05.273 --> 00:09:05.673
+I
+
+00:09:07.033 --> 00:09:09.913
+què he...? Li he dit
+sol, i hauria de ser cel.
+
+00:09:09.913 --> 00:09:11.273
+Molt bé si te n'has adonat.
+
+00:09:20.153 --> 00:09:23.753
+D'acord, ja està. Acabem
+amb un rosa molt viu.
+
+00:09:27.043 --> 00:09:29.082
+Així és com penso
+aquest exercici.
+
+00:09:29.082 --> 00:09:32.322
+I has vist les preguntes que em
+feia mentre l'anava resolent?
+
+00:09:32.482 --> 00:09:37.202
+Eren preguntes de veritat.
+Era jo pensant: «Prefereixo tenir
+
+00:09:38.003 --> 00:09:42.643
+aquí una variable, com ara color del cel,
+amb aquest valor,
+
+00:09:42.722 --> 00:09:45.202
+per intentar que aquesta línia sigui
+una mica més llegible,
+
+00:09:45.442 --> 00:09:48.883
+o crec que aquesta línia ja és
+prou llegible tal com està?»
+
+00:09:50.003 --> 00:09:52.923
+És un compromís. Cadascú
+hi tindrà opinions una mica diferents.
+
+00:09:52.923 --> 00:09:56.482
+Quan treballes en una empresa de debò,
+sol haver-hi unes normes,
+
+00:09:56.482 --> 00:09:59.562
+sol haver-hi la manera habitual
+de fer les coses amb el teu equip.
+
+00:10:00.283 --> 00:10:02.763
+De vegades fins i tot hi ha
+estàndards que has de seguir.
+
+00:10:04.842 --> 00:10:07.562
+En aquest cas, en aquests exercicis,
+tries tu.
+
+00:10:07.643 --> 00:10:10.922
+Bona part de la gràcia de programar
+és prendre aquestes decisions,
+
+00:10:10.922 --> 00:10:12.842
+triar el que a tu et sembla bonic.
+
+00:10:13.643 --> 00:10:16.842
+Però,
+conceptualment, crec que això està força bé.
+
+00:10:17.202 --> 00:10:22.602
+Tenim tots els valors. Dibuixem el
+cel, el sol, el mar i la sorra.
+
+00:10:22.682 --> 00:10:24.602
+I després ho actualitzem tot al final.
+
+00:10:25.283 --> 00:10:29.923
+Si volguéssim, també podríem
+pujar aquestes coses més amunt, així,
+
+00:10:30.403 --> 00:10:32.163
+i funcionaria exactament igual.
+
+00:10:32.482 --> 00:10:36.643
+Mentre fem servir el valor abans
+d'actualitzar-lo, continuarà funcionant.
+
+00:10:38.003 --> 00:10:40.643
+Et sembla que així queda millor o pitjor?
+
+00:10:41.682 --> 00:10:44.643
+Personalment, prefereixo aquesta manera.
+
+00:10:46.883 --> 00:10:50.243
+Així,
+on actualitzem totes les variables
+
+00:10:54.602 --> 00:10:55.722
+a punt per a la volta següent del bucle.
+
+00:10:58.023 --> 00:11:02.842
+També pots, si vols,
+moure tot aquest bloc al principi
+
+00:11:03.802 --> 00:11:07.562
+i, en canvi, reduir aquests punts de partida
+
+00:11:09.003 --> 00:11:12.602
+en la mateixa quantitat. Però en aquest
+cas em sembla més desordenat.
+
+00:11:12.682 --> 00:11:16.403
+Aquests són nombres rodons. Hauries
+de començar amb un radi del sol
+
+00:11:16.403 --> 00:11:19.003
+de 4,8 perquè funcionés.
+
+00:11:19.602 --> 00:11:21.082
+Així que aquí no em sembla tan bonic.
+
+00:11:21.082 --> 00:11:26.602
+Crec que és més clar
+fer totes aquestes actualitzacions al final.
+
+00:11:26.602 --> 00:11:30.802
+L'única cosa a tenir en compte, però, és
+que ara actualitzem totes les capses
+
+00:11:31.442 --> 00:11:33.363
+una vegada més de les que cal.
+
+00:11:34.163 --> 00:11:37.923
+Si executem aquest codi i
+anem fins al final de tot,
+
+00:11:38.003 --> 00:11:41.442
+només fem servir aquestes últimes quatre
+línies on actualitzem la capsa,
+
+00:11:42.082 --> 00:11:45.523
+però llavors el programa s'acaba.
+No fem servir mai el valor,
+
+00:11:45.682 --> 00:11:47.523
+aquest últim valor que hem posat a la capsa.
+
+00:11:47.523 --> 00:11:54.702
+No fem servir mai aquest 310 del to del
+cel ni aquest 25 del radi del sol,
+
+00:11:54.702 --> 00:11:57.822
+no s'arriben a fer servir. Així que
+això és menys eficient.
+
+00:11:57.822 --> 00:12:00.582
+Demanem a l'ordinador
+que faci quatre coses de més
+
+00:12:01.623 --> 00:12:02.743
+sense cap motiu real,
+
+00:12:04.102 --> 00:12:08.263
+sense cap motiu computacional. Però sí que
+hi ha un motiu de llegibilitat, com deia,
+
+00:12:08.342 --> 00:12:13.702
+perquè per a mi, tenir un bon punt
+de partida a 5, 10, uns nombres rodons,
+
+00:12:13.942 --> 00:12:16.182
+fa que el programa sigui
+molt més llegible.
+
+00:12:17.413 --> 00:12:21.092
+I assignar,
+actualitzar quatre variables, saps,
+
+00:12:21.332 --> 00:12:26.052
+és que ni tan sols puc fer clic prou ràpid
+per seguir com de ràpid ho fa l'ordinador.
+
+00:12:26.932 --> 00:12:28.653
+Així que no importa gaire
+que ho facis.
+
+00:12:28.653 --> 00:12:32.692
+Però quan pensis en programes
+més grans i més complexos,
+
+00:12:33.173 --> 00:12:35.212
+són coses d'aquestes que
+has de vigilar.
+
+00:12:35.212 --> 00:12:39.413
+Ho faig de manera eficient?
+Cal que faci aquestes actualitzacions?
+
+00:12:39.413 --> 00:12:40.773
+Hauria de reestructurar les coses
+
+00:12:41.732 --> 00:12:42.373
+perquè
+
+00:12:43.352 --> 00:12:46.993
+em pugui estalviar això? Aquests són els
+compromisos que cal resoldre i
+
+00:12:46.993 --> 00:12:47.592
+rumiar.
+
+00:12:48.873 --> 00:12:51.513
+Espero que aquesta sessió t'hagi estat útil.
+
+00:12:51.663 --> 00:12:55.633
+Com veus, primer, hi ha moltes
+maneres diferents de fer les coses, i
+
+00:12:55.633 --> 00:12:57.913
+explorar tu mateix aquests compromisos
+és una gran part del valor.
+
+00:12:58.153 --> 00:13:01.592
+I segon,
+jo també faig errors tipogràfics i equivocacions, i escric
+
+00:13:01.913 --> 00:13:06.072
+sol en lloc de cel, i m'equivoco
+així i em confonc un moment.
+
+00:13:06.552 --> 00:13:08.952
+Potser fas un error com
+aquest i et costa
+
+00:13:09.373 --> 00:13:13.212
+un o dos minuts més esbrinar per què...
+què falla, què passa,
+
+00:13:13.212 --> 00:13:16.572
+per què el codi no funcionava.
+Si és així, no passa absolutament res.
+
+00:13:17.133 --> 00:13:20.013
+Només he...
+he fet errors com aquest tantes,
+
+00:13:20.013 --> 00:13:24.893
+segurament centenars de milers de vegades,
+que de seguida sé què he fet malament.
+
+00:13:25.131 --> 00:13:28.972
+Però quan, saps, jo començava, fa molt
+de temps, si feia un error així,
+
+00:13:28.972 --> 00:13:31.293
+potser em costava hores
+esbrinar què fallava.
+
+00:13:31.613 --> 00:13:34.133
+Així que no et desanimis
+si t'equivoques, i
+
+00:13:34.133 --> 00:13:36.572
+no et desanimis si
+et costa més
+
+00:13:36.572 --> 00:13:38.972
+entendre per què
+t'equivoques.
+
+00:13:39.052 --> 00:13:40.653
+Forma part del procés d'aprenentatge.
+
+00:13:41.192 --> 00:13:43.913
+Sempre dic als meus alumnes que
+cada vegada que t'equivoques,
+
+00:13:43.913 --> 00:13:46.393
+et fas un favor,
+perquè aprens.
+
+00:13:46.712 --> 00:13:50.153
+Cada vegada que encertes una cosa
+a la primera, no aprens res.
+
+00:13:50.153 --> 00:13:51.913
+Ja ho saps. No ho estàs
+posant en...
+
+00:13:51.993 --> 00:13:53.592
+només estàs posant en pràctica una cosa.
+
+00:13:53.592 --> 00:13:55.873
+En realitat no n'aprens res.
+
+00:13:55.873 --> 00:13:59.113
+Així que els errors són fantàstics.
+Els errors són com un superpoder.
+
+00:13:59.113 --> 00:14:01.072
+Com més errors facis, millor
+
+00:14:01.072 --> 00:14:03.832
+desenvolupador
+seràs a la llarga.
+
+00:14:03.913 --> 00:14:06.952
+Així que jo sempre animo a equivocar-se,
+sempre que no sigui
+
+00:14:07.602 --> 00:14:10.202
+perquè no
+estàs pensant, sempre que
+
+00:14:10.202 --> 00:14:13.442
+només siguin
+errors tipogràfics o conceptuals.
+
+00:14:13.442 --> 00:14:15.643
+Aquests errors són fantàstics.
+N'aprendràs.
+
+00:14:15.643 --> 00:14:18.482
+Però si veus que tota
+l'estona t'equivoques,
+
+00:14:18.562 --> 00:14:20.163
+potser alenteix una mica.
+
+00:14:20.163 --> 00:14:23.842
+I de vegades alentir el ritme
+fa que tot vagi una mica més fàcil.
+
+00:14:24.082 --> 00:14:27.523
+Gràcies per mirar el vídeo. Tinc ganes de
+veure't aviat en una altra anàlisi a fons.
+
+00:14:27.523 --> 00:14:28.243
+Fins aviat.
